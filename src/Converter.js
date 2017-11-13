@@ -19,7 +19,7 @@ export default class Converter {
    * importing to XML
    * 
    * @param  {string} name The tag name for the root element
-   * @return {{DOMElement, createElement}}
+   * @return {{dom: DOMElement, $$: function}}
    */
   _createDOM (name) {
     let doc = DefaultDOMElement.createDocument('xml')
