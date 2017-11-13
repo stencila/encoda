@@ -24,3 +24,32 @@ Excel |
 Open Document Spreadsheet |
 **Functions** |
 JsDoc | [#1](https://github.com/stencila/convert/issues/1) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg)
+
+## Development
+
+1. Clone the repo
+
+```bash
+git clone https://github.com/stencila/convert.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Test
+
+```bash
+npm test
+```
+
+or use `node make test:browser -w` and open `test/index.html` in your browser.  
+
+
+4. Build
+
+```bash
+node make
+```

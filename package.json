@@ -1,0 +1,37 @@
+{
+  "name": "convert",
+  "version": "0.1.0",
+  "description": "Converters for Stencila components",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "node make",
+    "test": "node make test",
+    "test-browser": "node make test:browser -w"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/stencila/convert#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stencila/convert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stencila/convert/issues"
+  },
+  "dependencies": {
+    "doctrine": "^2.0.0",
+    "js-beautify": "^1.7.4",
+    "jsbeautify": "^0.3.6",
+    "substance": "^1.0.0-beta.7-preview.11"
+  },
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "istanbul": "^0.4.5",
+    "memfs": "^2.5.8",
+    "substance-bundler": "^0.18.5",
+    "tape": "^4.8.0"
+  }
+}
