@@ -14,7 +14,14 @@ export default class Converter {
     )
   }
 
-  _createDom (name) {
+  /**
+   * Create a DOM document and root element for
+   * importing to XML
+   * 
+   * @param  {string} name The tag name for the root element
+   * @return {{DOMElement, createElement}}
+   */
+  _createDOM (name) {
     let doc = DefaultDOMElement.createDocument('xml')
     let $$ = doc.createElement.bind(doc)
     let dom = $$(name)

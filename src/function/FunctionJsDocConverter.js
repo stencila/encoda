@@ -10,7 +10,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
 
     const tags = doctrine.parse(jsdoc).tags
     
-    const {dom, $$} = this._createDom()
+    const {dom, $$} = this._createDOM()
 
     function importFirst(title, property) {
       const tag = tags.filter((tag) => tag.title === title)[0]
