@@ -19,10 +19,26 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       if (tag) dom.append($$(title).text(tag[property || 'description']))
     }
 
-    function importAll(title, property) {
-      tags.filter((tag) => tag.title === title).forEach((tag) => {
-        dom.append($$(title).text(tag[property || 'description']))
+    function importAuthors() {
+      const authors = $$('authors')
+      tags.filter((tag) => tag.title === 'author').forEach((tag) => {
+        authors.append(
+          $$('author').text(tag.description)
+        )
       })
+      dom.append(authors)
+    }
+
+    function importExamples() {
+      const examples = $$('examples')
+      tags.filter((tag) => tag.title === 'example').forEach((tag) => {
+        examples.append(
+          $$('example').append(
+            $$('usage').text(tag.description)
+          )
+        )
+      })
+      dom.append(examples)
     }
 
     function importParams() {
@@ -57,12 +73,43 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       }
     }
 
+    function importReturn() {
+      const tag = tags.filter((tag) => tag.title === 'return')[0]
+      if (tag) {
+        const returnEl = $$('return')
+        if (tag.type) {
+          let type
+          switch (tag.type.type) {
+            case 'NameExpression':
+              type = tag.type.name
+              break
+            default:
+              throw new Error('Unhandled parameter type: ' + tag.type.type)
+          }
+          returnEl.attr('type', type)
+        }
+        if (tag.description) returnEl.append($$('description').text(tag.description))
+        dom.append(returnEl)
+      }
+    }
+
+    function importImplems() {
+      const implems = $$('implems')
+      tags.filter((tag) => tag.title === 'implem').forEach((tag) => {
+        implems.append($$('implem').attr('language', tag.description))
+      })
+      dom.append(implems)
+    }
+
     importFirst('name', 'name')
-    importAll('author')
+    importAuthors('author')
     importFirst('title')
     importFirst('summary')
     importFirst('description')
+    importExamples()
     importParams()
+    importReturn()
+    importImplems()
 
     const xml = beautifyHtml(dom.serialize(), {
       void_elements: [] // No, 'self-closing', void tags for XML
