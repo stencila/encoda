@@ -5,12 +5,19 @@ let fs = require('fs')
 const EXTERNALS = [
   'doctrine',
   'js-beautify',
+  'memfs',
   'substance'
 ]
 const TEST_EXTERNALS = EXTERNALS.concat([
-  'memfs',
   'tape'
 ])
+const GLOBALS = {
+  'doctrine': 'doctrine',
+  'js-beautify': 'jsbeautify',
+  'memfs': 'memfs',
+  'substance': 'substance',
+  'tape': 'tape'
+}
 const BROWSERIFY = [
   'doctrine',
   'js-beautify',
@@ -18,10 +25,26 @@ const BROWSERIFY = [
   'tape'
 ]
 
-b.task('default', ['clean', 'test'])
+b.task('default', ['clean', 'test', 'build'])
 
 b.task('clean', () => {
   b.rm('tmp')
+})
+
+b.task('build', () => {
+  b.js('./src/index.js', {
+    targets: [{
+      dest: './build/stencila-convert.js',
+      format: 'umd',
+      moduleName: 'stencilaConvert',
+    }, {
+      dest: './build/stencila-convert.cjs.js',
+      format: 'cjs'
+    }],
+    external: EXTERNALS,
+    globals: GLOBALS,
+    json: true
+  })
 })
 
 b.task('test', () => {
@@ -56,13 +79,7 @@ b.task('test:browser', ['browserify'], () => {
       moduleName: 'tests',
     },
     external: TEST_EXTERNALS,
-    globals: {
-      'doctrine': 'doctrine',
-      'js-beautify': 'jsbeautify',
-      'substance': 'substance',
-      'tape': 'tape',
-      'memfs': 'memfs',
-    }
+    globals: GLOBALS
   })
 })
 

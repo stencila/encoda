@@ -1,8 +1,9 @@
 {
-  "name": "convert",
+  "name": "stencila-convert",
   "version": "0.1.0",
   "description": "Converters for Stencila components",
-  "main": "index.js",
+  "main": "build/stencila-convert.cjs.js",
+  "jsnext:main": "src/index.js",
   "directories": {
     "test": "test"
   },
