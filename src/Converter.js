@@ -1,4 +1,5 @@
 import { DefaultDOMElement } from 'substance'
+import { Volume } from 'memfs'
 
 export default class Converter {
 
@@ -9,6 +10,30 @@ export default class Converter {
   }
 
   export (from, path, to, name) {
+    return Promise.reject(
+      new Error('Not implemented')
+    )
+  }
+
+  /**
+   * Convert
+   *
+   * A convenience wrapper around `import` that takes and returns
+   * a string of the 'main' source and sink files.
+   * 
+   * @param  {string} content The content to convert
+   * @return {string}         The converted content
+   */
+  load (content) {
+    const from = new Volume()
+    from.writeFileSync('/temp', content)
+    const to = new Volume()
+    return this.import(from, '/temp', to, '/temp').then((main) => {
+      return to.readFileSync(main, 'utf8')
+    })
+  }
+
+  dump (from, path) {
     return Promise.reject(
       new Error('Not implemented')
     )

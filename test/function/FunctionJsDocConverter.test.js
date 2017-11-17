@@ -1,20 +1,50 @@
 import test from 'tape'
-import { Volume } from 'memfs'
 
 import FunctionJsDocConverter from '../../src/function/FunctionJsDocConverter'
 
-const conv = new FunctionJsDocConverter()
+const converter = new FunctionJsDocConverter()
 
-test('import', (assert) => {
-  const jsdoc = `
-@name function_name
+function testImport(name, jsdoc, xml) {
+  test(name, (assert) => {
+    converter.load(jsdoc).then((result) => {
+      assert.equal(result.trim(), xml.trim())
+      assert.end()
+    })
+  })
+}
+
+
+testImport(
+'FunctionJsDocConverter.import param',
+`@param {type} name Description`,
+`<function>
+    <params>
+        <param name="name" type="type">
+            <description>Description</description>
+        </param>
+    </params>
+</function>`
+)
+
+testImport(
+'FunctionJsDocConverter.import param array type',
+`@param {array.<type>} name Description`,
+`<function>
+    <params>
+        <param name="name" type="array[type]">
+            <description>Description</description>
+        </param>
+    </params>
+</function>`
+)
+
+testImport(
+'FunctionJsDocConverter.import complete',
+`@name function_name
 
 @title Function name
 
 @summary The function summary
-
-@author Joe Bloggs
-@author Jane Doe
 
 @description
 
@@ -37,15 +67,11 @@ function_name(param1, param2=42)
 
 @implem js
 @implem r
-  `
 
-  const xml = `
-<function>
+@author Joe Bloggs
+@author Jane Doe`,
+`<function>
     <name>function_name</name>
-    <authors>
-        <author>Joe Bloggs</author>
-        <author>Jane Doe</author>
-    </authors>
     <title>Function name</title>
     <summary>The function summary</summary>
     <description>The function description which may be several paragraphs. Here is the second paragraph. This could be **Markdown**, but that is not support right now.</description>
@@ -77,15 +103,9 @@ function_name(param1, param2=42)
         <implem language="js" />
         <implem language="r" />
     </implems>
-</function>
-  `.trim()
-
-  const from = new Volume()
-  const to = new Volume()
-  from.writeFileSync('/test.txt', jsdoc)
-  conv.import(from, '/test.txt', to, '/test').then(() => {
-    const xmlGot = to.readFileSync('/test.fun.xml', 'utf8')
-    assert.equal(xmlGot, xml)
-    assert.end()
-  })
-})
+    <authors>
+        <author>Joe Bloggs</author>
+        <author>Jane Doe</author>
+    </authors>
+</function>`
+)
