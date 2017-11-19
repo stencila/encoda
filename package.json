@@ -1,6 +1,6 @@
 {
   "name": "stencila-convert",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Converters for Stencila components",
   "main": "build/stencila-convert.cjs.js",
   "jsnext:main": "src/index.js",
@@ -27,12 +27,12 @@
     "doctrine": "^2.0.0",
     "js-beautify": "^1.7.4",
     "jsbeautify": "^0.3.6",
+    "memfs": "^2.5.8",
     "substance": "^1.0.0-beta.7-preview.11"
   },
   "devDependencies": {
     "browserify": "^14.5.0",
     "istanbul": "^0.4.5",
-    "memfs": "^2.5.8",
     "substance-bundler": "^0.18.5",
     "tape": "^4.8.0"
   }
