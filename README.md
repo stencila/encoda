@@ -32,27 +32,27 @@ JsDoc | [#1](https://github.com/stencila/convert/issues/1) | ![alpha](https://im
 
 1. Clone the repo
 
-```bash
-git clone https://github.com/stencila/convert.git
-```
+    ```bash
+    git clone https://github.com/stencila/convert.git
+    ```
 
 2. Install dependencies
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 3. Test
 
-```bash
-npm test
-```
+    ```bash
+    npm test
+    ```
 
-or use `node make test:browser -w` and open `test/index.html` in your browser.  
+    or use `node make test:browser -w` and open `test/index.html` in your browser.  
 
 
 4. Build
 
-```bash
-node make
-```
+    ```bash
+    node make
+    ```
