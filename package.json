@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "prepare": "node make",
     "build": "node make",
     "test": "node make test",
     "test-browser": "node make test:browser -w"
