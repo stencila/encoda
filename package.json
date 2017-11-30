@@ -11,7 +11,8 @@
     "prepare": "node make",
     "build": "node make",
     "test": "node make test",
-    "test-browser": "node make test:browser -w"
+    "test-browser": "node make test:browser -w",
+    "cover": "node make cover"
   },
   "author": "",
   "license": "Apache-2.0",
