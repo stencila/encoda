@@ -13,10 +13,11 @@ export default class FunctionJsDocConverter extends FunctionConverter {
     }).tags
 
     const {dom, $$} = this._createDOM()
+    const encode = this._encodeChars
 
     function importFirst(title, property) {
       const tag = tags.filter((tag) => tag.title === title)[0]
-      if (tag) dom.append($$(title).text(tag[property || 'description']))
+      if (tag) dom.append($$(title).text(encode(tag[property || 'description'])))
     }
 
     function importExamples() {
@@ -24,7 +25,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       tags.filter((tag) => tag.title === 'example').forEach((tag) => {
         examples.append(
           $$('example').append(
-            $$('usage').text(tag.description)
+            $$('usage').text(encode(tag.description))
           )
         )
       })
@@ -51,14 +52,14 @@ export default class FunctionJsDocConverter extends FunctionConverter {
               break
             case 'OptionalType':
               type = tag.type.expression.name
-              param.append($$('default').text(tag.default ? tag.default : 'null'))
+              param.append($$('default').text(encode(tag.default ? tag.default : 'null')))
               break
             default:
               throw new Error('Unhandled parameter type: ' + tag.type.type)
           }
           param.attr('type', type)
         }
-        if (tag.description) param.append($$('description').text(tag.description))
+        if (tag.description) param.append($$('description').text(encode(tag.description)))
         params.append(param)
       })
       if (params.children.length) dom.append(params)
@@ -79,7 +80,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
           }
           returnEl.attr('type', type)
         }
-        if (tag.description) returnEl.append($$('description').text(tag.description))
+        if (tag.description) returnEl.append($$('description').text(encode(tag.description)))
         dom.append(returnEl)
       }
     }
@@ -96,7 +97,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       const authors = $$('authors')
       tags.filter((tag) => tag.title === 'author').forEach((tag) => {
         authors.append(
-          $$('author').text(tag.description)
+          $$('author').text(encode(tag.description))
         )
       })
       if (authors.children.length) dom.append(authors)

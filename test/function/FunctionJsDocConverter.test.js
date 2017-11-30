@@ -39,6 +39,18 @@ testImport(
 )
 
 testImport(
+'FunctionJsDocConverter.import special characters',
+`@example x < 5 && y < 5`,
+`<function>
+    <examples>
+        <example>
+            <usage>x &lt; 5 &amp;&amp; y &lt; 5</usage>
+        </example>
+    </examples>
+</function>`
+)
+
+testImport(
 'FunctionJsDocConverter.import complete',
 `@name function_name
 
@@ -93,7 +105,7 @@ function_name(param1, param2=42)
             <description>Param3 has a default value.</description>
         </param>
         <param name="param4" type="any">
-            <description>Asterisk means type is "any".</description>
+            <description>Asterisk means type is &quot;any&quot;.</description>
         </param>
     </params>
     <return type="typeReturn">
