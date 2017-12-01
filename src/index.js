@@ -1,1 +1,1 @@
-export * from './function/index.js'
+export * from './function'

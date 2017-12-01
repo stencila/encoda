@@ -1,7 +1,7 @@
-const { DefaultDOMElement } = require('substance')
-const { Volume } = require('memfs')
+import { DefaultDOMElement } from 'substance'
+import { Volume } from 'memfs'
 
-class Converter {
+export default class Converter {
 
   import (from, path, to, name) {
     return Promise.reject(
@@ -55,5 +55,3 @@ class Converter {
   }
 
 }
-
-module.exports = Converter
