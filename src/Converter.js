@@ -54,4 +54,19 @@ export default class Converter {
     return {dom, $$}
   }
 
+  /**
+   * Encode certain characters that cause parsing errors in XML and HTML 
+   * as character entities
+   * 
+   * @param  {string} text Text to encode
+   * @return {string}      Encoded text
+   */
+  _encodeChars (text) {
+    return text.replace(/&/g, '&amp;')
+               .replace(/</g, '&lt;')
+               .replace(/>/g, '&gt;')
+               .replace(/"/g, '&quot;')
+               .replace(/'/g, '&apos;')
+  }
+
 }
