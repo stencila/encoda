@@ -1,9 +1,11 @@
-import Converter from '../Converter'
+const Converter = require('../Converter')
 
-export default class FunctionConverter extends Converter {
+class FunctionConverter extends Converter {
 
   _createDOM () {
     return super._createDOM('function')
   }
 
 }
+
+module.exports = FunctionConverter

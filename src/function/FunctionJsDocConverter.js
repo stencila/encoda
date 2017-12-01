@@ -1,9 +1,10 @@
-import doctrine from 'doctrine'
-import {html as beautifyHtml} from 'js-beautify'
+const doctrine = require('doctrine')
+const {html} = require('js-beautify')
+const beautifyHtml = html
 
-import FunctionConverter from './FunctionConverter'
+const FunctionConverter = require('./FunctionConverter')
 
-export default class FunctionJsDocConverter extends FunctionConverter {
+class FunctionJsDocConverter extends FunctionConverter {
 
   import (from, path, to, name) {
     const jsdoc = from.readFileSync(path, 'utf8')
@@ -122,3 +123,5 @@ export default class FunctionJsDocConverter extends FunctionConverter {
   }
 
 }
+
+module.exports = FunctionJsDocConverter

@@ -2,19 +2,15 @@
   "name": "stencila-convert",
   "version": "0.1.2",
   "description": "Converters for Stencila components",
-  "main": "build/stencila-convert.cjs.js",
-  "jsnext:main": "src/index.js",
+  "main": "src/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "prepare": "node make",
-    "build": "node make",
-    "test": "node make test",
-    "test-browser": "node make test:browser -w",
-    "cover": "node make cover"
+    "test": "tape test/**/*.test.js | tap-difflet",
+    "cover": "istanbul cover test/**/*.test.js",
+    "clean": "rimraf coverage"
   },
-  "author": "",
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",
   "repository": {
@@ -27,14 +23,13 @@
   "dependencies": {
     "doctrine": "^2.0.0",
     "js-beautify": "^1.7.4",
-    "jsbeautify": "^0.3.6",
     "memfs": "^2.5.8",
     "substance": "^1.0.0-beta.7-preview.11"
   },
   "devDependencies": {
-    "browserify": "^14.5.0",
     "istanbul": "^0.4.5",
-    "substance-bundler": "^0.18.5",
+    "rimraf": "^2.6.2",
+    "tap-difflet": "^0.7.0",
     "tape": "^4.8.0"
   }
 }

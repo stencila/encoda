@@ -1,6 +1,6 @@
-import test from 'tape'
+const test = require('tape')
 
-import FunctionJsDocConverter from '../../src/function/FunctionJsDocConverter'
+const FunctionJsDocConverter = require('../../src/function/FunctionJsDocConverter')
 
 const converter = new FunctionJsDocConverter()
 
