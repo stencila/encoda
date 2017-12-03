@@ -3,12 +3,14 @@ import { Volume } from 'memfs'
 
 export default class Converter {
   import (from, path, to, name) {
+    /* istanbul ignore next */
     return Promise.reject(
       new Error('Not implemented')
     )
   }
 
   export (from, path, to, name) {
+    /* istanbul ignore next */
     return Promise.reject(
       new Error('Not implemented')
     )
@@ -33,6 +35,7 @@ export default class Converter {
   }
 
   dump (from, path) {
+    /* istanbul ignore next */
     return Promise.reject(
       new Error('Not implemented')
     )

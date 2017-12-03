@@ -37,6 +37,26 @@ testImport(
 </function>`
 )
 
+test('FunctionJsDocConverter.import unknown param type', (assert) => {
+  converter.load('@param {(This|Or|That)} name').then(() => {
+    assert.fail('should error')
+    assert.end()
+  }).catch((error) => {
+    assert.equal(error.message, 'Unhandled @param type specification: UnionType')
+    assert.end()
+  })
+})
+
+test('FunctionJsDocConverter.import unknown return type', (assert) => {
+  converter.load('@return {(This|Or|That)} name').then(() => {
+    assert.fail('should error')
+    assert.end()
+  }).catch((error) => {
+    assert.equal(error.message, 'Unhandled @return type specification: UnionType')
+    assert.end()
+  })
+})
+
 testImport(
 'FunctionJsDocConverter.import special characters',
 `@example x < 5 && y < 5`,
