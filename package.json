@@ -25,9 +25,11 @@
   },
   "dependencies": {
     "@std/esm": "^0.17.3",
+    "cheerio": "^1.0.0-rc.2",
     "doctrine": "^2.0.0",
     "js-beautify": "^1.7.4",
     "memfs": "^2.5.8",
+    "papaparse": "^4.3.6",
     "substance": "^1.0.0-beta.7-preview.11"
   },
   "devDependencies": {

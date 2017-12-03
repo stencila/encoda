@@ -1,4 +1,5 @@
-import * as d3 from 'd3'
+import papa from 'papaparse'
+import path_ from 'path'
 
 import SheetConverter from './SheetConverter'
 
@@ -14,76 +15,49 @@ export default class SheetDSVConverter extends SheetConverter {
   /**
    * @override
    */
-  match (path, storer) { // eslint-disable-line
-    let {ext} = this._parsePath(path)
-    return Promise.resolve(['csv', 'tsv', 'psv'].indexOf(ext) >= 0)
+  match (volume, path) {
+    return new Promise((resolve) => {
+      const ext = path_.extname(path)
+      const matched = ['.csv', '.tsv', '.psv'].indexOf(ext) > -1
+      return resolve(matched)
+    })
   }
 
   /**
    * @override
    */
-  import (path, storer, buffer) { // eslint-disable-line
-    let {$sheet, $$} = this._importCreateElement()
-    return this._importReadData(path, storer).then(data => {
-      $sheet.append(
-        this._importFieldsFromData(data, $$)
-      )
-      $sheet.append(
-        this._importValuesFromData(data, $$)
-      )
-      return this._importWriteBuffer($sheet, buffer)
-    })
-  }
+  import (from, path, to, name) {
+    return new Promise((resolve, reject) => {
+      from.readFile(path, 'utf8', (err, dsv) => {
+        if (err) return reject(err)
+        const result = papa.parse(dsv.trim(), {
+          header: true
+        })
+        const rows = result.data
+        const names = Object.keys(rows[0])
 
-  /**
-   * Helper method to read a DSV file and return
-   * an array or objects
-   */
-  _importReadData (path, storer) {
-    // Preliminary implementation to be finalised once
-    // XML schema for Sheets is finalised.
-    // May use an alternative CSV parser
-    return storer.readFile(path).then(data => {
-      return d3.csvParse(data)
-    })
-  }
+        const xml = this._xmlCreate()
 
-  /**
-   * Helper method to convert an array of objects
-   * into a `Sheet` `<fields>` element.
-   */
-  _importFieldsFromData (data, $$) {
-    let $fields = $$('fields')
-    for (let field of Object.keys(data[0])) {
-      let $value = $$('field').attr({
-        name: field
+        const columnsEl = xml.find('meta columns')
+        names.forEach((name) => {
+          columnsEl.append(xml.create('<column>').attr('name', name))
+        })
+
+        const dataEl = xml.find('data')
+        rows.forEach((row) => {
+          const rowEl = xml.create('<row>')
+          names.forEach((name) => {
+            rowEl.append(xml.create('<cell>').text(row[name]))
+          })
+          dataEl.append(rowEl)
+        })
+
+        const main = name + '.sheet.xml'
+        to.writeFile(main, xml.dump(), 'utf8', (err) => {
+          if (err) return reject(err)
+          return resolve(main)
+        })
       })
-      $fields.append($value)
-    }
-    return $fields
-  }
-
-  /**
-   * Helper method to convert an array of objects
-   * into a `Sheet` `<values>` element.
-   */
-  _importValuesFromData (data, $$) {
-    let $values = $$('values')
-    for (let row of data) {
-      let $row = $$('row')
-      for (let field of Object.keys(row)) {
-        let $value = $$('value').text(row[field])
-        $row.append($value)
-      }
-      $values.append($row)
-    }
-    return $values
-  }
-
-  /**
-   * @override
-   */
-  export (path, storer, buffer) { // eslint-disable-line
-    throw new Error('SheetDSVConverter.export() not yet implemented')
+    })
   }
 }

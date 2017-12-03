@@ -1,72 +1,81 @@
 import test from 'tape'
+import { Volume } from 'memfs'
 
 import SheetDSVConverter from '../../src/sheet/SheetDSVConverter'
-import MemoryStorer from '../../src/host/MemoryStorer'
 
-test('SheetDSVConverter:match', t => {
-  let c = new SheetDSVConverter()
-  let storer = new MemoryStorer()
+let converter = new SheetDSVConverter()
 
-  t.plan(4)
+test('SheetDSVConverter.match', (assert) => {
+  let volume = new Volume()
 
-  c.match('data.csv', storer).then(result => {
-    t.ok(result)
+  assert.plan(4)
+
+  converter.match(volume, 'data.csv').then((result) => {
+    assert.ok(result)
   }, 'a CSV file')
 
-  c.match('data.tsv', storer).then(result => {
-    t.ok(result)
+  converter.match(volume, 'data.tsv').then((result) => {
+    assert.ok(result)
   }, 'a TSV file')
 
-  c.match('data.psv', storer).then(result => {
-    t.ok(result)
+  converter.match(volume, 'data.psv').then((result) => {
+    assert.ok(result)
   }, 'a PSV file')
 
-  c.match('data.xlsx', storer).then(result => {
-    t.notOk(result)
+  converter.match(volume, 'data.xlsx').then((result) => {
+    assert.notOk(result)
   }, 'not a DSV file')
 })
 
-test('SheetDSVConverter:import', t => {
-  let csv = `col1,col2
+function testLoad (name, dsv, xml) {
+  test(name, (assert) => {
+    converter.load(dsv).then((result) => {
+      assert.equal(result.trim(), xml.trim())
+      assert.end()
+    })
+  })
+}
+
+testLoad('SheetDSVConverter.load',
+`col1,col2
 "a",1
 "b",2
 "c",3
-`
-  let xml = `<sheet>
-  <fields>
-    <field name="col1"/>
-    <field name="col2"/>
-  </fields>
-  <values>
+`,
+`<sheet>
+  <meta>
+    <name/>
+    <title/>
+    <description/>
+    <columns>
+      <column name="col1" />
+      <column name="col2" />
+    </columns>
+  </meta>
+  <data>
     <row>
-      <value>a</value>
-      <value>1</value>
+      <cell>a</cell>
+      <cell>1</cell>
     </row>
     <row>
-      <value>b</value>
-      <value>2</value>
+      <cell>b</cell>
+      <cell>2</cell>
     </row>
     <row>
-      <value>c</value>
-      <value>3</value>
+      <cell>c</cell>
+      <cell>3</cell>
     </row>
-  </values>
-</sheet>`.replace(/ {2}|\n/g, '')
+  </data>
+</sheet>`
+)
 
-  let c = new SheetDSVConverter()
-  let storer = new MemoryStorer({ 'data.csv': csv })
-  let buffer = new MemoryStorer()
-
-  c.import('data.csv', storer, buffer).then(() => {
-    buffer.readFile('sheet.xml').then(data => {
-      t.equal(data, xml)
-      t.end()
-    })
+test('SheetDSVConverter.export', (assert) => {
+  let converter = new SheetDSVConverter()
+  converter.export().then(() => {
+    assert.fail('should fail')
+    assert.end()
+  }).catch((error) => {
+    assert.equal(error.message, 'Not implemented')
+    assert.end()
   })
-})
-
-test('SheetDSVConverter:export', t => {
-  let c = new SheetDSVConverter()
-  t.throws(c.export, 'SheetDSVConverter.export() not yet implemented')
-  t.end()
 })
