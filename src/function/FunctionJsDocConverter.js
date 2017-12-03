@@ -4,7 +4,6 @@ import {html as beautifyHtml} from 'js-beautify'
 import FunctionConverter from './FunctionConverter'
 
 export default class FunctionJsDocConverter extends FunctionConverter {
-
   import (from, path, to, name) {
     const jsdoc = from.readFileSync(path, 'utf8')
 
@@ -15,12 +14,12 @@ export default class FunctionJsDocConverter extends FunctionConverter {
     const {dom, $$} = this._createDOM()
     const encode = this._encodeChars
 
-    function importFirst(title, property) {
+    function importFirst (title, property) {
       const tag = tags.filter((tag) => tag.title === title)[0]
       if (tag) dom.append($$(title).text(encode(tag[property || 'description'])))
     }
 
-    function importExamples() {
+    function importExamples () {
       const examples = $$('examples')
       tags.filter((tag) => tag.title === 'example').forEach((tag) => {
         examples.append(
@@ -32,7 +31,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       if (examples.children.length) dom.append(examples)
     }
 
-    function importParams() {
+    function importParams () {
       const params = $$('params')
       tags.filter((tag) => tag.title === 'param').forEach((tag) => {
         const param = $$('param')
@@ -47,7 +46,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
               type = tag.type.name
               break
             case 'TypeApplication':
-              type = tag.type.expression.name + '[' + 
+              type = tag.type.expression.name + '[' +
                      tag.type.applications.map((application) => application.name).join(',') + ']'
               break
             case 'OptionalType':
@@ -65,7 +64,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       if (params.children.length) dom.append(params)
     }
 
-    function importReturn() {
+    function importReturn () {
       const tag = tags.filter((tag) => tag.title === 'return')[0]
       if (tag) {
         const returnEl = $$('return')
@@ -85,7 +84,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       }
     }
 
-    function importImplems() {
+    function importImplems () {
       const implems = $$('implems')
       tags.filter((tag) => tag.title === 'implem').forEach((tag) => {
         implems.append($$('implem').attr('language', tag.description))
@@ -93,7 +92,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       if (implems.children.length) dom.append(implems)
     }
 
-    function importAuthors() {
+    function importAuthors () {
       const authors = $$('authors')
       tags.filter((tag) => tag.title === 'author').forEach((tag) => {
         authors.append(
@@ -121,5 +120,4 @@ export default class FunctionJsDocConverter extends FunctionConverter {
 
     return Promise.resolve(main)
   }
-
 }

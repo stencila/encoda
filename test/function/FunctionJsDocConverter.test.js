@@ -4,7 +4,7 @@ import FunctionJsDocConverter from '../../src/function/FunctionJsDocConverter'
 
 const converter = new FunctionJsDocConverter()
 
-function testImport(name, jsdoc, xml) {
+function testImport (name, jsdoc, xml) {
   test(name, (assert) => {
     converter.load(jsdoc).then((result) => {
       assert.equal(result.trim(), xml.trim())
@@ -12,7 +12,6 @@ function testImport(name, jsdoc, xml) {
     })
   })
 }
-
 
 testImport(
 'FunctionJsDocConverter.import param',

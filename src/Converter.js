@@ -2,7 +2,6 @@ import { DefaultDOMElement } from 'substance'
 import { Volume } from 'memfs'
 
 export default class Converter {
-
   import (from, path, to, name) {
     return Promise.reject(
       new Error('Not implemented')
@@ -20,7 +19,7 @@ export default class Converter {
    *
    * A convenience wrapper around `import` that takes and returns
    * a string of the 'main' source and sink files.
-   * 
+   *
    * @param  {string} content The content to convert
    * @return {string}         The converted content
    */
@@ -42,7 +41,7 @@ export default class Converter {
   /**
    * Create a DOM document and root element for
    * importing to XML
-   * 
+   *
    * @param  {string} name The tag name for the root element
    * @return {{dom: DOMElement, $$: function}}
    */
@@ -55,9 +54,9 @@ export default class Converter {
   }
 
   /**
-   * Encode certain characters that cause parsing errors in XML and HTML 
+   * Encode certain characters that cause parsing errors in XML and HTML
    * as character entities
-   * 
+   *
    * @param  {string} text Text to encode
    * @return {string}      Encoded text
    */
@@ -68,5 +67,4 @@ export default class Converter {
                .replace(/"/g, '&quot;')
                .replace(/'/g, '&apos;')
   }
-
 }

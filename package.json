@@ -9,7 +9,8 @@
   },
   "@std/esm": "cjs",
   "scripts": {
-    "test": "tape -r @std/esm test/**/*.test.js | tap-difflet",
+    "lint": "standard",
+    "test": "npm run lint && tape -r @std/esm test/**/*.test.js | tap-difflet",
     "cover": "nyc --require @std/esm npm test",
     "clean": "rimraf coverage"
   },
@@ -33,6 +34,7 @@
     "istanbul": "^0.4.5",
     "nyc": "^11.3.0",
     "rimraf": "^2.6.2",
+    "standard": "^10.0.3",
     "tap-difflet": "^0.7.0",
     "tape": "^4.8.0"
   }
