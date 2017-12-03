@@ -4,7 +4,7 @@ import SheetDSVConverter from './SheetDSVConverter'
  * Converter to import/export a Sheet from/to Tabular Data Package (TDP)
  *
  * The [TDP specification](https://specs.frictionlessdata.io/tabular-data-package/)
- * is a [Data Package](https://specs.frictionlessdata.io/data-package/) (represented by a 
+ * is a [Data Package](https://specs.frictionlessdata.io/data-package/) (represented by a
  * `datapackage.json` file) that has:
  *
  *  - at least one resource in the resources array
@@ -16,7 +16,6 @@ import SheetDSVConverter from './SheetDSVConverter'
  * - a CSV file
  */
 export default class SheetTDPConverter extends SheetDSVConverter {
-
   /**
    * @override
    */
@@ -25,7 +24,7 @@ export default class SheetTDPConverter extends SheetDSVConverter {
 
     // Is this a `datapackage.json`?
     if (file === 'datapackage.json') return Promise.resolve(true)
-    
+
     // Is this a CSV file with a sibling `datapackage.json`?
     if (ext === 'csv') {
       return storer.readDir(dir).then(files => {
@@ -51,7 +50,7 @@ export default class SheetTDPConverter extends SheetDSVConverter {
     return storer.readFile(datapackageFile).then(data => {
       let pkg = JSON.parse(data)
 
-      // Get the resource for the imported file 
+      // Get the resource for the imported file
       let resource
       if (file === 'datapackage.json') {
         // Currently use the first resource. In the future, the user
@@ -95,7 +94,6 @@ export default class SheetTDPConverter extends SheetDSVConverter {
         )
         return this._importWriteBuffer($sheet, buffer)
       })
-
     })
   }
 
@@ -105,5 +103,4 @@ export default class SheetTDPConverter extends SheetDSVConverter {
   export (path, storer, buffer) { // eslint-disable-line
     throw new Error('SheetTDPConverter.export() not yet implemented')
   }
-
 }

@@ -9,7 +9,7 @@ test('SheetXLSXConverter:match', t => {
   let c = new SheetXLSXConverter()
 
   t.plan(2)
-  
+
   c.match('data.xlsx').then(result => {
     t.ok(result)
   }, 'a XLSX file')
@@ -43,7 +43,7 @@ test('SheetXLSXConverter:import', t => {
             <value>3</value>
         </row>
     </values>
-</sheet>`.replace(/ {2}|\n/g,'')
+</sheet>`.replace(/ {2}|\n/g, '')
 
   c.import('tests/sheet/fixtures/simple.xlsx', storer, buffer).then(() => {
     buffer.readFile('sheet.xml').then(content => {
@@ -114,7 +114,7 @@ test('SheetXLSXConverter:_importWorksheetToSheet', t => {
     <oddHeader>"Times New Roman,Regular"</oddHeader>
     <oddFooter>"Times New Roman,Regular"</oddFooter>
   </headerFooter>
-</worksheet>`.replace(/ {2}|\n/g,'')
+</worksheet>`.replace(/ {2}|\n/g, '')
 
   let sharedStrings = `<sst count="5" uniqueCount="5">
   <si>
@@ -132,7 +132,7 @@ test('SheetXLSXConverter:_importWorksheetToSheet', t => {
   <si>
     <t xml:space="preserve">c</t>
   </si>
-</sst>`.replace(/ {2}|\n/g,'')
+</sst>`.replace(/ {2}|\n/g, '')
 
   let sheet = `<sheet>
   <fields>
@@ -153,7 +153,7 @@ test('SheetXLSXConverter:_importWorksheetToSheet', t => {
       <value>3</value>
     </row>
   </values>
-</sheet>`.replace(/ {2}|\n/g,'')
+</sheet>`.replace(/ {2}|\n/g, '')
 
   let c = new SheetXLSXConverter()
   t.equal(

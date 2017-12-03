@@ -8,7 +8,6 @@ import SheetConverter from './SheetConverter'
  *
  */
 export default class SheetODSConverter extends SheetConverter {
-
   /**
    * @override
    */
@@ -34,11 +33,11 @@ export default class SheetODSConverter extends SheetConverter {
   /**
    * Helper method to convert an ODS `<office:document-content>` root element
    * into a Sheet `<sheet>` element.
-   * 
+   *
    * @param  {string} content - XML string of the `content.xml` file
    * @return {DOMElement}
    */
-  _importSheetFromContent(content) {
+  _importSheetFromContent (content) {
     let {$sheet, $$} = this._importCreateElement()
     let $fields = $$('fields')
     let $values = $$('values')
@@ -51,17 +50,17 @@ export default class SheetODSConverter extends SheetConverter {
     //    let $table = $content.find('office:body office:spreadsheet table:table')
     // does not work because namespaced tag names are not supported
     // Is there a better way to do this?
-    let $documentContent = $content.getChildren().filter(node => node.name === "office:document-content")[0]
-    let $body = $documentContent.getChildren().filter(node => node.name === "office:body")[0]
-    let $spreadsheet = $body.getChildren().filter(node => node.name === "office:spreadsheet")[0]
-    let $table = $spreadsheet.getChildren().filter(node => node.name === "table:table")[0]
+    let $documentContent = $content.getChildren().filter(node => node.name === 'office:document-content')[0]
+    let $body = $documentContent.getChildren().filter(node => node.name === 'office:body')[0]
+    let $spreadsheet = $body.getChildren().filter(node => node.name === 'office:spreadsheet')[0]
+    let $table = $spreadsheet.getChildren().filter(node => node.name === 'table:table')[0]
 
     let rowNum = 0
-    for (let $tableRow of $table.getChildren().filter(node => node.name === "table:table-row")) {
+    for (let $tableRow of $table.getChildren().filter(node => node.name === 'table:table-row')) {
       let headerRow = false
       let $row = $$('row')
       let colNum = 0
-      for (let $tableCell of $tableRow.getChildren().filter(node => node.name === "table:table-cell")) {
+      for (let $tableCell of $tableRow.getChildren().filter(node => node.name === 'table:table-cell')) {
         let value = $tableCell.text()
         let type = $tableCell.attr('office:value-type')
 
@@ -78,7 +77,7 @@ export default class SheetODSConverter extends SheetConverter {
           let $value = $$('value').text(value)
           $row.append($value)
         }
-        
+
         colNum = colNum + 1
       }
       if (!headerRow) $values.append($row)
@@ -87,7 +86,7 @@ export default class SheetODSConverter extends SheetConverter {
     }
     $sheet.append($fields)
     $sheet.append($values)
-   
+
     return $sheet
   }
 
@@ -97,5 +96,4 @@ export default class SheetODSConverter extends SheetConverter {
   export (path, storer, buffer) { // eslint-disable-line
     throw new Error('SheetODSConverter.export() not yet implemented')
   }
-
 }

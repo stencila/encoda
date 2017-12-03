@@ -8,7 +8,6 @@ import SheetConverter from './SheetConverter'
  *
  */
 export default class SheetXLSXConverter extends SheetConverter {
-
   /**
    * @override
    */
@@ -36,18 +35,18 @@ export default class SheetXLSXConverter extends SheetConverter {
   /**
    * Helper method to convert an XSLX `<worksheet>` element
    * into a Sheet `<sheet>` element.
-   * 
+   *
    * @param  {string} worksheet - XML string of the `xl/worksheets/sheet1.xml` file (or other sheet)
    * @param  {string} sharedStrings - XML string of the `xl/sharedStrings.xml` file
    * @return {DOMElement}
    */
-  _importSheetFromWorksheet(worksheet, sharedStrings) {
+  _importSheetFromWorksheet (worksheet, sharedStrings) {
     let {$sheet, $$} = this._importCreateElement()
     let $fields = $$('fields')
     let $values = $$('values')
 
     let $worksheet = DefaultDOMElement.parseXML(worksheet).find('worksheet')
-    
+
     // Create an array of strings to access as cell values
     let $sst = DefaultDOMElement.parseXML(sharedStrings).find('sst')
     let strings = $sst.getChildren().map($si => $si.find('t').text())
@@ -61,7 +60,7 @@ export default class SheetXLSXConverter extends SheetConverter {
       for (let $c of $row.findAll('c')) {
         let value = $c.text()
         let type = $c.attr('t')
-        
+
         // If necessary convert the value to corresponding type
         if (type === 's') {
           value = strings[value]
@@ -74,13 +73,13 @@ export default class SheetXLSXConverter extends SheetConverter {
         }
 
         if (headerRow) {
-          let $field = $$('field').attr('name',value)
+          let $field = $$('field').attr('name', value)
           $fields.append($field)
         } else {
           let $value = $$('value').text(value)
           $row_.append($value)
         }
-        
+
         colNum = colNum + 1
       }
       if (!headerRow) $values.append($row_)
@@ -99,5 +98,4 @@ export default class SheetXLSXConverter extends SheetConverter {
   export (path, storer, buffer) { // eslint-disable-line
     throw new Error('SheetXLSXConverter.export() not yet implemented')
   }
-
 }

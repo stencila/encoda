@@ -11,7 +11,6 @@ import SheetConverter from './SheetConverter'
  * Converts to/from Stencila's internal XML buffer format for Sheets
  */
 export default class SheetDSVConverter extends SheetConverter {
-
   /**
    * @override
    */
@@ -42,7 +41,7 @@ export default class SheetDSVConverter extends SheetConverter {
    */
   _importReadData (path, storer) {
     // Preliminary implementation to be finalised once
-    // XML schema for Sheets is finalised. 
+    // XML schema for Sheets is finalised.
     // May use an alternative CSV parser
     return storer.readFile(path).then(data => {
       return d3.csvParse(data)
@@ -71,7 +70,7 @@ export default class SheetDSVConverter extends SheetConverter {
   _importValuesFromData (data, $$) {
     let $values = $$('values')
     for (let row of data) {
-      let $row = $$('row') 
+      let $row = $$('row')
       for (let field of Object.keys(row)) {
         let $value = $$('value').text(row[field])
         $row.append($value)
@@ -87,5 +86,4 @@ export default class SheetDSVConverter extends SheetConverter {
   export (path, storer, buffer) { // eslint-disable-line
     throw new Error('SheetDSVConverter.export() not yet implemented')
   }
-
 }

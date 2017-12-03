@@ -8,7 +8,7 @@ test('SheetDSVConverter:match', t => {
   let storer = new MemoryStorer()
 
   t.plan(4)
-  
+
   c.match('data.csv', storer).then(result => {
     t.ok(result)
   }, 'a CSV file')
@@ -51,7 +51,7 @@ test('SheetDSVConverter:import', t => {
       <value>3</value>
     </row>
   </values>
-</sheet>`.replace(/ {2}|\n/g,'')
+</sheet>`.replace(/ {2}|\n/g, '')
 
   let c = new SheetDSVConverter()
   let storer = new MemoryStorer({ 'data.csv': csv })

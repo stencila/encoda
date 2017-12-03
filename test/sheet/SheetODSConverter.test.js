@@ -9,7 +9,7 @@ test('SheetODSConverter:match', t => {
   let c = new SheetODSConverter()
 
   t.plan(2)
-  
+
   c.match('data.ods').then(result => {
     t.ok(result)
   }, 'an ODS file')
@@ -43,7 +43,7 @@ test('SheetODSConverter:import', t => {
             <value>3</value>
         </row>
     </values>
-</sheet>`.replace(/ {2}|\n/g,'')
+</sheet>`.replace(/ {2}|\n/g, '')
 
   c.import('tests/sheet/fixtures/simple.ods', storer, buffer).then(() => {
     buffer.readFile('sheet.xml').then(content => {
@@ -104,7 +104,7 @@ test('SheetODSConverter:_importSheetFromContent', t => {
       <table:named-expressions/>
     </office:spreadsheet>
   </office:body>
-</office:document-content>`.replace(/ {2}|\n/g,'')
+</office:document-content>`.replace(/ {2}|\n/g, '')
 
   let sheet = `<sheet>
   <fields>
@@ -125,7 +125,7 @@ test('SheetODSConverter:_importSheetFromContent', t => {
       <value>3</value>
     </row>
   </values>
-</sheet>`.replace(/ {2}|\n/g,'')
+</sheet>`.replace(/ {2}|\n/g, '')
 
   let c = new SheetODSConverter()
   t.equal(

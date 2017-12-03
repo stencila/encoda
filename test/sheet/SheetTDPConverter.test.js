@@ -5,7 +5,7 @@ import MemoryStorer from '../../src/host/MemoryStorer'
 
 test('SheetTDPConverter:match', t => {
   let c = new SheetTDPConverter()
-  
+
   let storer1 = new MemoryStorer({
     'datapackage.json': '{}',
     'data.csv': 'col1,col2\n1,2\n3,4\n'
@@ -16,7 +16,7 @@ test('SheetTDPConverter:match', t => {
   })
 
   t.plan(4)
-  
+
   c.match('datapackage.json', storer1).then(result => {
     t.ok(result)
   })
@@ -38,7 +38,7 @@ test('SheetTDPConverter:import', t => {
   let datapackage = {
     resources: [{
       path: 'data.csv',
-      name : 'data-name',
+      name: 'data-name',
       schema: {
         fields: [
           {
@@ -79,7 +79,7 @@ test('SheetTDPConverter:import', t => {
       <value>3</value>
     </row>
   </values>
-</sheet>`.replace(/ {2}|\n/g,'')
+</sheet>`.replace(/ {2}|\n/g, '')
 
   let c = new SheetTDPConverter()
   let storer = new MemoryStorer({

@@ -3,7 +3,6 @@ import { DefaultDOMElement } from 'substance'
 import Converter from '../Converter'
 
 export default class SheetConverter extends Converter {
-
   _importCreateElement () {
     let xml = DefaultDOMElement.createDocument('xml')
     let $$ = xml.createElement.bind(xml)
