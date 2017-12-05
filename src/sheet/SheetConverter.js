@@ -1,6 +1,5 @@
-import xml from '../util/xml'
-
 import Converter from '../Converter'
+import xml from '../util/xml'
 
 export default class SheetConverter extends Converter {
   load () {

@@ -1,9 +1,9 @@
+import fs from 'fs'
 import JSZip from 'jszip'
-import path_ from 'path'
+import path from 'path'
 
 import SheetConverter from './SheetConverter'
 import xml from '../util/xml'
-import fs from '../util/fs'
 
 /**
  * Converter to import/export a Sheet from/to an Open Document Spreadsheet (ODS) file
@@ -13,9 +13,9 @@ export default class SheetODSConverter extends SheetConverter {
   /**
    * @override
    */
-  match (path) {
+  match (path_) {
     return new Promise((resolve) => {
-      const ext = path_.extname(path)
+      const ext = path.extname(path_)
       return resolve(ext === '.ods')
     })
   }
@@ -23,13 +23,15 @@ export default class SheetODSConverter extends SheetConverter {
   /**
    * @override
    */
-  import (from, to, fromFs = fs, toFs = fs) {
+  import (from, to, fromFs = fs, toFs = null) {
+    toFs = toFs || fromFs
+
     return Promise.resolve().then(() => {
       // Handling parsing of unzipped XML during development
       if (from.slice(-11) === 'content.xml') {
-        return fromFs.readFileAsync(from, 'utf8')
+        return this.read(fromFs, from, 'utf8')
       } else {
-        return fromFs.readFileAsync(from).then((data) => {
+        return this.read(fromFs, from).then((data) => {
           return JSZip.loadAsync(data)
         }).then((zip) => {
           return zip.file('content.xml').async('string')
@@ -61,10 +63,10 @@ export default class SheetODSConverter extends SheetConverter {
         sheetData.append(sheetRow)
       })
 
-      return toFs.writeFileAsync(
-        path_.join(to, 'index.sheet.xml'),
-        this.dump(sheet)
-      )
+      const main = path.join(to, 'index.sheet.xml')
+      return this.write(toFs, main, this.dump(sheet)).then(() => {
+        return main
+      })
     })
   }
 }

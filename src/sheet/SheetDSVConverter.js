@@ -1,8 +1,8 @@
+import fs from 'fs'
 import papa from 'papaparse'
-import path_ from 'path'
+import path from 'path'
 
 import SheetConverter from './SheetConverter'
-import fs from '../util/fs'
 
 /**
  * Converter to import/export a Sheet from/to a delimiter separated values (DSV) file
@@ -16,9 +16,9 @@ export default class SheetDSVConverter extends SheetConverter {
   /**
    * @override
    */
-  match (path) {
+  match (path_) {
     return new Promise((resolve) => {
-      const ext = path_.extname(path)
+      const ext = path.extname(path_)
       const matched = ['.csv', '.tsv', '.psv'].indexOf(ext) > -1
       return resolve(matched)
     })
@@ -27,8 +27,10 @@ export default class SheetDSVConverter extends SheetConverter {
   /**
    * @override
    */
-  import (from, to, fromFs = fs, toFs = fs, options = {}) {
-    return fromFs.readFileAsync(from, {encoding: 'utf8'}).then((content) => {
+  import (from, to, fromFs = fs, toFs = null, options = {}) {
+    toFs = toFs || fromFs
+
+    return this.read(fromFs, from, 'utf8').then((content) => {
       options.header = options.header === true
 
       const result = papa.parse(content.trim(), {
@@ -55,10 +57,10 @@ export default class SheetDSVConverter extends SheetConverter {
         dataEl.append(rowEl)
       })
 
-      return toFs.writeFileAsync(
-        path_.join(to, 'index.sheet.xml'),
-        this.dump(sheet)
-      )
+      const main = path.join(to, 'index.sheet.xml')
+      return this.write(toFs, main, this.dump(sheet)).then(() => {
+        return main
+      })
     })
   }
 }

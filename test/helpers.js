@@ -1,7 +1,8 @@
 import fs from 'fs'
 import glob from 'glob'
+import memfs from 'memfs'
 import path from 'path'
-import temp from 'temp'
+import tmp from 'tmp'
 import test from 'tape'
 
 export default function helpers (converter, type) {
@@ -29,7 +30,7 @@ export default function helpers (converter, type) {
     testImport: function (from, expected) {
       const fromPath = path.join(__dirname, type, 'fixtures', from)
       const expectedPath = path.join(__dirname, type, 'fixtures', expected)
-      const toPath = temp.mkdirSync()
+      const toPath = tmp.dirSync().name
       converter.import(fromPath, toPath).then(() => {
         test(name + '.import ' + from, (assert) => {
           glob(expectedPath + '/**/*', (err, files) => {
@@ -43,6 +44,20 @@ export default function helpers (converter, type) {
             })
             assert.end()
           })
+        })
+      })
+    },
+
+    testImportString: function (name, content, expected) {
+      test(name, (assert) => {
+        const fs = memfs.Volume.fromJSON({
+          '/content.txt': content
+        })
+        return converter.import('/content.txt', '/', fs).then((main) => {
+          return fs.readFileSync(main, 'utf8')
+        }).then((actual) => {
+          assert.equal(actual, expected)
+          assert.end()
         })
       })
     }

@@ -1,74 +1,81 @@
 import doctrine from 'doctrine'
-import {html as beautifyHtml} from 'js-beautify'
+import path from 'path'
+import fs from 'fs'
 
 import FunctionConverter from './FunctionConverter'
 
 export default class FunctionJsDocConverter extends FunctionConverter {
-  import (from, path, to, name) {
-    return new Promise((resolve, reject) => {
-      const jsdoc = from.readFileSync(path, 'utf8')
+  import (from, to, fromFs = fs, toFs = null, options = {}) {
+    toFs = toFs || fromFs
 
+    return this.read(fromFs, from, 'utf8').then((jsdoc) => {
       const tags = doctrine.parse(jsdoc, {
         sloppy: true // allow optional parameters to be specified in brackets
       }).tags
 
-      const {dom, $$} = this._createDOM()
-      const encode = this._encodeChars
+      const func = this.load()
+      const funcRoot = func('function')
 
       function importFirst (title, property) {
         const tag = tags.filter((tag) => tag.title === title)[0]
-        if (tag) dom.append($$(title).text(encode(tag[property || 'description'])))
+        if (tag) funcRoot.append(func('<' + title + '>').text(tag[property || 'description']))
       }
 
       function importExamples () {
-        const examples = $$('examples')
-        tags.filter((tag) => tag.title === 'example').forEach((tag) => {
-          examples.append(
-            $$('example').append(
-              $$('usage').text(encode(tag.description))
+        const tags_ = tags.filter((tag) => tag.title === 'example')
+        if (tags_.length) {
+          const examples = func('<examples>')
+          tags_.forEach((tag) => {
+            examples.append(
+              func('<example>').append(
+                func('<usage>').text(tag.description)
+              )
             )
-          )
-        })
-        if (examples.children.length) dom.append(examples)
+          })
+          funcRoot.append(examples)
+        }
       }
 
       function importParams () {
-        const params = $$('params')
-        tags.filter((tag) => tag.title === 'param').forEach((tag) => {
-          const param = $$('param')
-          if (tag.name) param.attr('name', tag.name)
-          if (tag.type) {
-            let type
-            switch (tag.type.type) {
-              case 'AllLiteral':
-                type = 'any'
-                break
-              case 'NameExpression':
-                type = tag.type.name
-                break
-              case 'TypeApplication':
-                type = tag.type.expression.name + '[' +
-                       tag.type.applications.map((application) => application.name).join(',') + ']'
-                break
-              case 'OptionalType':
-                type = tag.type.expression.name
-                param.append($$('default').text(encode(tag.default ? tag.default : 'null')))
-                break
-              default:
-                throw new Error('Unhandled @param type specification: ' + tag.type.type)
+        const tags_ = tags.filter((tag) => tag.title === 'param')
+        if (tags_.length) {
+          const params = func('<params>')
+          tags_.forEach((tag) => {
+            const param = func('<param>')
+            if (tag.name) param.attr('name', tag.name)
+            if (tag.type) {
+              let type
+              switch (tag.type.type) {
+                case 'AllLiteral':
+                  type = 'any'
+                  break
+                case 'NameExpression':
+                  type = tag.type.name
+                  break
+                case 'TypeApplication':
+                  type = tag.type.expression.name + '[' +
+                         tag.type.applications.map((application) => application.name).join(',') + ']'
+                  break
+                case 'OptionalType':
+                  type = tag.type.expression.name
+                  param.append(func('<default>').text(tag.default ? tag.default : 'null'))
+                  break
+                default:
+                  throw new Error('Unhandled @param type specification: ' + tag.type.type)
+              }
+              param.attr('type', type)
             }
-            param.attr('type', type)
-          }
-          if (tag.description) param.append($$('description').text(encode(tag.description)))
-          params.append(param)
-        })
-        if (params.children.length) dom.append(params)
+            if (tag.description) param.append(func('<description>').text(tag.description))
+            params.append(param)
+          })
+          funcRoot.append(params)
+        }
       }
 
       function importReturn () {
         const tag = tags.filter((tag) => tag.title === 'return')[0]
         if (tag) {
-          const returnEl = $$('return')
+          const returnEl = func('<return>')
           if (tag.type) {
             let type
             switch (tag.type.type) {
@@ -80,27 +87,33 @@ export default class FunctionJsDocConverter extends FunctionConverter {
             }
             returnEl.attr('type', type)
           }
-          if (tag.description) returnEl.append($$('description').text(encode(tag.description)))
-          dom.append(returnEl)
+          if (tag.description) returnEl.append(func('<description>').text(tag.description))
+          funcRoot.append(returnEl)
         }
       }
 
       function importImplems () {
-        const implems = $$('implems')
-        tags.filter((tag) => tag.title === 'implem').forEach((tag) => {
-          implems.append($$('implem').attr('language', tag.description))
-        })
-        if (implems.children.length) dom.append(implems)
+        const tags_ = tags.filter((tag) => tag.title === 'implem')
+        if (tags_.length) {
+          const implems = func('<implems>')
+          tags_.forEach((tag) => {
+            implems.append(func('<implem>').attr('language', tag.description))
+          })
+          funcRoot.append(implems)
+        }
       }
 
       function importAuthors () {
-        const authors = $$('authors')
-        tags.filter((tag) => tag.title === 'author').forEach((tag) => {
-          authors.append(
-            $$('author').text(encode(tag.description))
-          )
-        })
-        if (authors.children.length) dom.append(authors)
+        const tags_ = tags.filter((tag) => tag.title === 'author')
+        if (tags_.length) {
+          const authors = func('<authors>')
+          tags_.forEach((tag) => {
+            authors.append(
+              func('<author>').text(tag.description)
+            )
+          })
+          funcRoot.append(authors)
+        }
       }
 
       importFirst('name', 'name')
@@ -113,13 +126,10 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       importImplems()
       importAuthors('author')
 
-      const main = name + '.fun.xml'
-      const xml = beautifyHtml(dom.serialize(), {
-        void_elements: [] // No, 'self-closing', void tags for XML
+      const main = path.join(to, 'index.fun.xml')
+      return this.write(toFs, main, this.dump(func)).then(() => {
+        return main
       })
-      to.writeFileSync(main, xml, 'utf8')
-
-      return resolve(main)
     })
   }
 }
