@@ -8,12 +8,12 @@ export default class FunctionJsDocConverter extends FunctionConverter {
   import (from, to, fromFs = fs, toFs = null, options = {}) {
     toFs = toFs || fromFs
 
-    return this.read(fromFs, from, 'utf8').then((jsdoc) => {
+    return this.readFile(fromFs, from, 'utf8').then((jsdoc) => {
       const tags = doctrine.parse(jsdoc, {
         sloppy: true // allow optional parameters to be specified in brackets
       }).tags
 
-      const func = this.load()
+      const func = this.loadXml()
       const funcRoot = func('function')
 
       function importFirst (title, property) {
@@ -127,7 +127,7 @@ export default class FunctionJsDocConverter extends FunctionConverter {
       importAuthors('author')
 
       const main = path.join(to, 'index.fun.xml')
-      return this.write(toFs, main, this.dump(func)).then(() => {
+      return this.writeFile(toFs, main, this.dumpXml(func)).then(() => {
         return main
       })
     })

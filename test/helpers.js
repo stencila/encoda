@@ -60,6 +60,19 @@ export default function helpers (converter, type) {
           assert.end()
         })
       })
+    },
+
+    testExportString: function (name, filename, content, expected) {
+      test(name, (assert) => {
+        const fs = memfs.vol
+        fs.writeFileSync('/' + filename, content)
+        return converter.export('/', '/actual.txt', fs).then((main) => {
+          return fs.readFileSync(main, 'utf8')
+        }).then((actual) => {
+          assert.equal(actual, expected)
+          assert.end()
+        })
+      })
     }
   }
 }

@@ -2,8 +2,8 @@ import Converter from '../Converter'
 import xml from '../util/xml'
 
 export default class SheetConverter extends Converter {
-  load () {
-    return xml.load(`
+  loadXml (data) {
+    data = data || `
       <sheet>
         <meta>
           <name></name>
@@ -13,10 +13,11 @@ export default class SheetConverter extends Converter {
         </meta>
         <data></data>
       </sheet>
-    `)
+    `
+    return xml.load(data)
   }
 
-  dump (sheet) {
+  dumpXml (sheet) {
     return xml.dump(sheet) + '\n'
   }
 }

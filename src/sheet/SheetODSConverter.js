@@ -29,9 +29,9 @@ export default class SheetODSConverter extends SheetConverter {
     return Promise.resolve().then(() => {
       // Handling parsing of unzipped XML during development
       if (from.slice(-11) === 'content.xml') {
-        return this.read(fromFs, from, 'utf8')
+        return this.readFile(fromFs, from, 'utf8')
       } else {
-        return this.read(fromFs, from).then((data) => {
+        return this.readFile(fromFs, from).then((data) => {
           return JSZip.loadAsync(data)
         }).then((zip) => {
           return zip.file('content.xml').async('string')
@@ -47,7 +47,7 @@ export default class SheetODSConverter extends SheetConverter {
         content.replace(/<(\/?)([a-z]+):/g, '<$1$2_')
       )
 
-      const sheet = this.load()
+      const sheet = this.loadXml()
       const sheetData = sheet('data')
 
       const odsTable = ods('office_document-content office_body office_spreadsheet table_table')
@@ -64,7 +64,7 @@ export default class SheetODSConverter extends SheetConverter {
       })
 
       const main = path.join(to, 'index.sheet.xml')
-      return this.write(toFs, main, this.dump(sheet)).then(() => {
+      return this.writeFile(toFs, main, this.dumpXml(sheet)).then(() => {
         return main
       })
     })

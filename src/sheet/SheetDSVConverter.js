@@ -30,7 +30,7 @@ export default class SheetDSVConverter extends SheetConverter {
   import (from, to, fromFs = fs, toFs = null, options = {}) {
     toFs = toFs || fromFs
 
-    return this.read(fromFs, from, 'utf8').then((content) => {
+    return this.readFile(fromFs, from, 'utf8').then((content) => {
       options.header = options.header === true
 
       const result = papa.parse(content.trim(), {
@@ -39,7 +39,7 @@ export default class SheetDSVConverter extends SheetConverter {
       const rows = result.data
       const names = Object.keys(rows[0])
 
-      const sheet = this.load()
+      const sheet = this.loadXml()
 
       if (options.header) {
         const columnsEl = sheet('meta columns')
@@ -58,7 +58,7 @@ export default class SheetDSVConverter extends SheetConverter {
       })
 
       const main = path.join(to, 'index.sheet.xml')
-      return this.write(toFs, main, this.dump(sheet)).then(() => {
+      return this.writeFile(toFs, main, this.dumpXml(sheet)).then(() => {
         return main
       })
     })
