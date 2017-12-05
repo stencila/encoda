@@ -10,7 +10,7 @@
   "@std/esm": "cjs",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && tape -r @std/esm test/**/*.test.js | tap-difflet",
+    "test": "tape -r @std/esm test/**/*.test.js | tap-difflet",
     "cover": "nyc --require @std/esm --reporter=lcov --reporter=text npm test",
     "clean": "rimraf coverage"
   },
