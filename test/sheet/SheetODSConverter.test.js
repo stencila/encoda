@@ -9,5 +9,5 @@ testMatch(
   ['data.csv']
 )
 
-testImport('simple.ods-content.xml', 'simple.sheet')
-testImport('simple.ods', 'simple.sheet')
+testImport('simple/simple.ods-content.xml', 'simple/simple.sheet')
+testImport('simple/simple.ods', 'simple/simple.sheet')

@@ -9,4 +9,4 @@ testMatch(
   ['data.xlsx']
 )
 
-testImport('simple.csv', 'simple.sheet', { header: false })
+testImport('simple/simple.csv', 'simple/simple.sheet', { header: false })
