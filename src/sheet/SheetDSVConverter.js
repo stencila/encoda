@@ -2,7 +2,7 @@ import papa from 'papaparse'
 import path_ from 'path'
 
 import SheetConverter from './SheetConverter'
-import fs from '../util/fsAsync'
+import fs from '../util/fs'
 
 /**
  * Converter to import/export a Sheet from/to a delimiter separated values (DSV) file
@@ -28,36 +28,37 @@ export default class SheetDSVConverter extends SheetConverter {
    * @override
    */
   import (from, to, fromFs = fs, toFs = fs, options = {}) {
-    return fromFs.readFileAsync(from, {encoding: 'utf8'}).then((dsv) => {
+    return fromFs.readFileAsync(from, {encoding: 'utf8'}).then((content) => {
       options.header = options.header === true
 
-      const result = papa.parse(dsv.trim(), {
+      const result = papa.parse(content.trim(), {
         header: options.header
       })
       const rows = result.data
       const names = Object.keys(rows[0])
 
-      const xml = this._xmlCreate()
+      const sheet = this.load()
 
       if (options.header) {
-        const columnsEl = xml.find('meta columns')
+        const columnsEl = sheet('meta columns')
         names.forEach((name) => {
-          columnsEl.append(xml.create('<column>').attr('name', name))
+          columnsEl.append(sheet('<column>').attr('name', name))
         })
       }
 
-      const dataEl = xml.find('data')
+      const dataEl = sheet('data')
       rows.forEach((row) => {
-        const rowEl = xml.create('<row>')
+        const rowEl = sheet('<row>')
         names.forEach((name) => {
-          rowEl.append(xml.create('<cell>').text(row[name]))
+          rowEl.append(sheet('<cell>').text(row[name]))
         })
         dataEl.append(rowEl)
       })
 
-      const toPath = path_.join(to, 'index.sheet.xml')
-      const toXml = xml.dump() + '\n'
-      return toFs.writeFileAsync(toPath, toXml)
+      return toFs.writeFileAsync(
+        path_.join(to, 'index.sheet.xml'),
+        this.dump(sheet)
+      )
     })
   }
 }

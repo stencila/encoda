@@ -1,10 +1,10 @@
-import XMLDocument from '../util/XMLDocument'
+import xml from '../util/xml'
 
 import Converter from '../Converter'
 
 export default class SheetConverter extends Converter {
-  _xmlCreate () {
-    return new XMLDocument(`
+  load () {
+    return xml.load(`
       <sheet>
         <meta>
           <name></name>
@@ -15,5 +15,9 @@ export default class SheetConverter extends Converter {
         <data></data>
       </sheet>
     `)
+  }
+
+  dump (sheet) {
+    return xml.dump(sheet) + '\n'
   }
 }

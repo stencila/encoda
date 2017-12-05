@@ -1,10 +1,9 @@
-import $ from 'cheerio'
 import JSZip from 'jszip'
 import path_ from 'path'
 
 import SheetConverter from './SheetConverter'
-import XMLDocument from '../util/XMLDocument'
-import fs from '../util/fsAsync'
+import xml from '../util/xml'
+import fs from '../util/fs'
 
 /**
  * Converter to import/export a Sheet from/to an Open Document Spreadsheet (ODS) file
@@ -37,27 +36,35 @@ export default class SheetODSConverter extends SheetConverter {
         })
       }
     }).then(content => {
-      // Replace semicolon of tag namespacing with and underscore
-      const odsXml = content.replace(/<(\/?)([a-z]+):/g, '<$1$2_')
-      const ods = new XMLDocument(odsXml)
+      const ods = xml.load(
+        // Replace semicolon of tag namespacing with an underscore to allow use
+        // of CSS selectors e.g.
+        //   office:document-content
+        // becomes
+        //   office_document-content
+        content.replace(/<(\/?)([a-z]+):/g, '<$1$2_')
+      )
 
-      const xml = this._xmlCreate()
-      const xmlData = xml.find('data')
+      const sheet = this.load()
+      const sheetData = sheet('data')
 
-      const odsTable = ods.find('office_document-content office_body office_spreadsheet table_table')
+      const odsTable = ods('office_document-content office_body office_spreadsheet table_table')
       odsTable.find('table_table-row').each((index, elem) => {
-        const odsRow = $(elem)
-        const xmlRow = xml.create('<row>')
+        const odsRow = ods(elem)
+        const sheetRow = sheet('<row>')
         odsRow.find('table_table-cell').each((index, elem) => {
-          const odsCell = $(elem)
+          const odsCell = ods(elem)
           const text = odsCell.find('text_p').text()
-          const xmlCell = xml.create('<cell>').text(text)
-          xmlRow.append(xmlCell)
+          const sheetCell = sheet('<cell>').text(text)
+          sheetRow.append(sheetCell)
         })
-        xmlData.append(xmlRow)
+        sheetData.append(sheetRow)
       })
 
-      return toFs.writeFileAsync(path_.join(to, 'index.sheet.xml'), xml.dump() + '\n')
+      return toFs.writeFileAsync(
+        path_.join(to, 'index.sheet.xml'),
+        this.dump(sheet)
+      )
     })
   }
 }
