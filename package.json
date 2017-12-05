@@ -33,11 +33,14 @@
     "substance": "^1.0.0-beta.7-preview.11"
   },
   "devDependencies": {
+    "glob": "^7.1.2",
     "istanbul": "^0.4.5",
+    "jszip": "^3.1.5",
     "nyc": "^11.3.0",
     "rimraf": "^2.6.2",
     "standard": "^10.0.3",
     "tap-difflet": "^0.7.0",
-    "tape": "^4.8.0"
+    "tape": "^4.8.0",
+    "temp": "^0.8.3"
   }
 }
