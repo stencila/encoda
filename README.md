@@ -3,6 +3,7 @@
 ![Experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
 [![NPM](http://img.shields.io/npm/v/stencila-convert.svg?style=flat)](https://www.npmjs.com/package/stencila-convert)
 [![Build status](https://travis-ci.org/stencila/convert.svg?branch=master)](https://travis-ci.org/stencila/convert)
+[![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni?svg=true)](https://ci.appveyor.com/project/nokome/convert)
 [![Code coverage](https://codecov.io/gh/stencila/convert/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/convert)
 [![Dependency status](https://david-dm.org/stencila/convert.svg)](https://david-dm.org/stencila/convert)
 [![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
