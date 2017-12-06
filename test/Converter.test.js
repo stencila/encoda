@@ -42,9 +42,9 @@ test('Converter.import', (assert) => {
     assert.ok(volume.statSync(path, 'utf8'), 'necessary pathTo directories are created')
   })
 
-  converter.import('/', '/', volume).then((path) => {
-    assert.equal(path, '/internal.txt', 'if pathTo is a folder then returns a default filename')
-    assert.equal(volume.readFileSync(path, 'utf8'), content, 'if pathFrom is a folder then uses a default filename')
+  converter.import('/', '/', volume).then((pathTo) => {
+    assert.equal(pathTo, path.join('/', 'internal.txt'), 'if pathTo is a folder then returns a default filename')
+    assert.equal(volume.readFileSync(pathTo, 'utf8'), content, 'if pathFrom is a folder then uses a default filename')
   })
 })
 
@@ -56,9 +56,9 @@ test('Converter.export', (assert) => {
 
   assert.plan(2)
 
-  converter.export('/', '/', volume).then((path) => {
-    assert.equal(path, '/external.txt', 'if pathTo is a folder then returns a default filename')
-    assert.equal(volume.readFileSync(path, 'utf8'), content, 'if pathFrom is a folder then uses a default filename')
+  converter.export('/', '/', volume).then((pathTo) => {
+    assert.equal(pathTo, path.join('/', 'external.txt'), 'if pathTo is a folder then returns a default filename')
+    assert.equal(volume.readFileSync(pathTo, 'utf8'), content, 'if pathFrom is a folder then uses a default filename')
   })
 })
 
