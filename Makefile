@@ -10,6 +10,9 @@ test:
 	npm test
 .PHONY: test
 
+test-diffs:
+	npm run test-diffs
+
 cover:
 	npm run cover
 

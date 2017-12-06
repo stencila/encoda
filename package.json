@@ -11,7 +11,8 @@
   "scripts": {
     "postinstall": "node -r @std/esm src/helpers",
     "lint": "standard",
-    "test": "tape -r @std/esm test/**/*.test.js | tap-difflet",
+    "test": "tape -r @std/esm test/**/*.test.js | tap-spec",
+    "test-diffs": "npm test | tap-difflet",
     "cover": "nyc --require @std/esm --reporter=lcov --reporter=text npm test",
     "clean": "rimraf coverage"
   },
@@ -42,6 +43,7 @@
     "rimraf": "^2.6.2",
     "standard": "^10.0.3",
     "tap-difflet": "^0.7.0",
+    "tap-spec": "^4.1.1",
     "tape": "^4.8.0",
     "tmp": "0.0.33"
   }
