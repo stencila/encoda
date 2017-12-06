@@ -28,17 +28,17 @@ export default function helpers (converter, type) {
     },
 
     testImport: function (from, expected) {
-      const fromPath = path.join(__dirname, type, 'fixtures', from)
-      const expectedPath = path.join(__dirname, type, 'fixtures', expected)
-      const toPath = tmp.dirSync().name
-      converter.import(fromPath, toPath).then(() => {
+      const pathFrom = path.join(__dirname, type, 'fixtures', from)
+      const pathExpected = path.join(__dirname, type, 'fixtures', expected)
+      const pathTo = tmp.dirSync().name
+      converter.import(pathFrom, pathTo).then(() => {
         test(name + '.import ' + from, (assert) => {
-          glob(expectedPath + '/**/*', (err, files) => {
+          glob(pathExpected + '/**/*', (err, files) => {
             if (err) assert.fail(err.message)
             files.forEach((file) => {
-              const relativePath = path.relative(expectedPath, file)
+              const relativePath = path.relative(pathExpected, file)
+              const actualPath = path.join(pathTo, relativePath)
               const expected = fs.readFileSync(file, 'utf8')
-              const actualPath = path.join(toPath, relativePath)
               const actual = fs.readFileSync(actualPath, 'utf8')
               assert.equal(actual, expected, `file "${relativePath}" should be the same`)
             })
@@ -48,14 +48,9 @@ export default function helpers (converter, type) {
       })
     },
 
-    testImportString: function (name, content, expected) {
+    testLoad: function (name, content, expected) {
       test(name, (assert) => {
-        const fs = memfs.Volume.fromJSON({
-          '/content.txt': content
-        })
-        return converter.import('/content.txt', '/', fs).then((main) => {
-          return fs.readFileSync(main, 'utf8')
-        }).then((actual) => {
+        return converter.load(content).then((actual) => {
           assert.equal(actual, expected)
           assert.end()
         })
