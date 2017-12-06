@@ -10,7 +10,7 @@ testMatch(
 )
 
 testLoad(
-  'load simple',
+  'SheetDSVConverter.load simple',
   'A,B\n1,2\n3,4',
   `<sheet>
   <meta>

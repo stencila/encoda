@@ -5,7 +5,7 @@ const converter = new DocumentMarkdownConverter()
 const { testLoad } = helpers(converter, 'sheet')
 
 testLoad(
-'paragraphs',
+'DocumentMarkdownConverter.load paragraphs',
 `
 Paragraph 1
 
@@ -21,7 +21,7 @@ Paragraph 2
 )
 
 testLoad(
-'heading',
+'DocumentMarkdownConverter.load heading',
 `
 Heading
 =======
@@ -38,7 +38,7 @@ Paragraph
 )
 
 testLoad(
-'subheading',
+'DocumentMarkdownConverter.load subheading',
 `
 Heading 1
 =========
@@ -61,7 +61,7 @@ Paragraph
 )
 
 testLoad(
-'link',
+'DocumentMarkdownConverter.load link',
 `
 [link](https://stenci.la/)
 `,
@@ -75,7 +75,7 @@ testLoad(
 Skipping these tests until stencila/pandoc is integrated here
 
 testLoad(
-'figure',
+'DocumentMarkdownConverter.load figure',
 `
 ::: {#fig .fig}
 ::: {.caption}
@@ -100,7 +100,7 @@ Caption
 )
 
 testLoad(
-'table',
+'DocumentMarkdownConverter.load table',
 `
 ::: {#table .table-wrap}
 ::: {.caption}
