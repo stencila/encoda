@@ -5,7 +5,7 @@ export default class SheetConverter extends Converter {
     return 'index.sheet.xml'
   }
 
-  createDom (data) {
+  createDom () {
     return this.loadXml(`
       <sheet>
         <meta>

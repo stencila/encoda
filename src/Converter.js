@@ -6,6 +6,13 @@ import path from 'path'
 import {html as beautifyHtml} from 'js-beautify'
 
 export default class Converter {
+  matchExtensions (pathFrom, extensions) {
+    const ext = path.extname(pathFrom).substring(1)
+    return Promise.resolve(
+      extensions.indexOf(ext) > -1
+    )
+  }
+
   get fileInternal () {
     return 'internal.txt'
   }
@@ -130,7 +137,7 @@ export default class Converter {
 
   writeXml (path, dom, volume = fs, options = {}) {
     return this.dumpXml(dom, options).then((xml) => {
-      return this.writeFile(path, xml + '\n', volume, options)
+      return this.writeFile(path, xml, volume, options)
     })
   }
 }

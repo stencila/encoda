@@ -33,8 +33,7 @@ testLoad(
       <cell>4</cell>
     </row>
   </data>
-</sheet>
-`
+</sheet>`
 )
 
 testImport('simple/simple.csv', 'simple/simple.sheet', { header: false })

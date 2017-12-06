@@ -1,5 +1,4 @@
 import papa from 'papaparse'
-import path from 'path'
 
 import SheetConverter from './SheetConverter'
 
@@ -12,16 +11,11 @@ import SheetConverter from './SheetConverter'
  * Converts to/from Stencila's internal XML buffer format for Sheets
  */
 export default class SheetDSVConverter extends SheetConverter {
-
   /**
    * @override
    */
-  match (path_) {
-    return new Promise((resolve) => {
-      const ext = path.extname(path_)
-      const matched = ['.csv', '.tsv', '.psv'].indexOf(ext) > -1
-      return resolve(matched)
-    })
+  match (path) {
+    return this.matchExtensions(path, ['csv', 'tsv', 'psv'])
   }
 
   get fileExternal () {
