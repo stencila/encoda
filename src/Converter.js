@@ -63,19 +63,19 @@ export default class Converter {
     })
   }
 
-  load (content) {
+  load (content, options = {}) {
     const volume = new memfs.Volume()
-    return this.writeFile('/content.tmp', content, volume).then(() => {
-      return this.import('/content.tmp', '/imported.tmp', volume).then((path) => {
+    return this.writeFile('/content.tmp', content, volume, options).then(() => {
+      return this.import('/content.tmp', '/imported.tmp', volume, volume, options).then((path) => {
         return this.readFile(path, volume)
       })
     })
   }
 
-  dump (content) {
+  dump (content, options = {}) {
     const volume = new memfs.Volume()
-    return this.writeFile('/content.tmp', content, volume).then(() => {
-      return this.export('/content.tmp', '/exported.tmp', volume).then((path) => {
+    return this.writeFile('/content.tmp', content, volume, options).then(() => {
+      return this.export('/content.tmp', '/exported.tmp', volume, volume, options).then((path) => {
         return this.readFile(path, volume)
       })
     })

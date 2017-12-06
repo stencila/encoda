@@ -17,7 +17,8 @@ Paragraph 2
 <p>
   Paragraph 2
 </p>
-`
+`,
+{ eol: 'lf' }
 )
 
 testLoad(
@@ -34,7 +35,8 @@ Paragraph
     Paragraph
   </p>
 </sec>
-`
+`,
+{ eol: 'lf' }
 )
 
 testLoad(
@@ -57,7 +59,8 @@ Paragraph
     </p>
   </sec>
 </sec>
-`
+`,
+{ eol: 'lf' }
 )
 
 testLoad(
@@ -68,7 +71,8 @@ testLoad(
 `<p>
   <ext-link ext-link-type="uri" xlink:href="https://stenci.la/">link</ext-link>
 </p>
-`
+`,
+{ eol: 'lf' }
 )
 
 /*
@@ -96,7 +100,8 @@ Caption
   </caption>
   <graphic mimetype="image" mime-subtype="jpeg" xlink:href="fig.jpg" />
 </fig>
-`
+`,
+{ eol: 'lf' }
 )
 
 testLoad(
@@ -153,7 +158,8 @@ Caption
     </tbody>
   </table>
 </table-wrap>
-`
+`,
+{ eol: 'lf' }
 )
 
 */

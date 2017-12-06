@@ -47,13 +47,13 @@ export default function helpers (converter, type) {
       })
     },
 
-    testLoad: function (name, content, expected) {
+    testLoad: function (name, content, expected, options = {}) {
       test(name, (assert) => {
-        return converter.load(content).then((actual) => {
+        return converter.load(content, options).then((actual) => {
           assert.equal(actual, expected)
           assert.end()
         }).catch((error) => {
-          console.log(error)
+          console.error(error)
           assert.fail(error.message)
           assert.end()
         })
