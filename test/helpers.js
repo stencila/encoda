@@ -1,6 +1,5 @@
 import fs from 'fs'
 import glob from 'glob'
-import memfs from 'memfs'
 import path from 'path'
 import tmp from 'tmp'
 import test from 'tape'
@@ -52,6 +51,10 @@ export default function helpers (converter, type) {
       test(name, (assert) => {
         return converter.load(content).then((actual) => {
           assert.equal(actual, expected)
+          assert.end()
+        }).catch((error) => {
+          console.log(error)
+          assert.fail(error.message)
           assert.end()
         })
       })

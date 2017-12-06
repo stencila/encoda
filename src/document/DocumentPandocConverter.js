@@ -1,45 +1,28 @@
 import DocumentConverter from './DocumentConverter'
-var pandoc = require('node-pandoc')
+import pandoc from '../helpers/pandoc'
 
 export default class DocumentPandocConverter extends DocumentConverter {
-  pandocFormat () { return "jats" }
-  addExtension () { return ".jats.xml" }
-  import (from, path, to, name) {
-
-    const src = from.readFileSync(path, 'utf8')
-    const args = '-r ' + this.pandocFormat() + ' -w jats'
-
-    return new Promise((resolve, reject)=> {
-      const callback = (err, result)=> {
-        if (err) {
-          reject(err)
-        }
-        else {
-          const main = name + '.jats.xml'
-          to.writeFileSync(main, result, 'utf8')
-          resolve(main)
-        }
-      }
-      pandoc(src, args, callback)
+  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    return this.prepareImport(...arguments).then(({ pathFrom, pathTo, volumeFrom, volumeTo }) => {
+      return this.readFile(pathFrom, volumeFrom).then((content) => {
+        return pandoc.spawn(content, ['-r', this.pandocFormat(), '-w', 'jats'])
+      }).then(result => {
+        return this.writeFile(pathTo, result, volumeTo).then(() => {
+          return pathTo
+        })
+      })
     })
   }
+
   export (from, path, to, name) {
-
-    const src = from.readFileSync(path, 'utf8')
-    const args = '-r jats -w ' + this.pandocFormat()
-
-    return new Promise((resolve, reject)=> {
-      const callback = (err, result)=> {
-        if (err) {
-          reject(err)
-        }
-        else {
-          const main = this.addExtension(name)
-          to.writeFileSync(main, result, 'utf8')
-          resolve(main)
-        }
-      }
-      pandoc(src, args, callback)
+    return this.prepareExport(...arguments).then(({ pathFrom, pathTo, volumeFrom, volumeTo }) => {
+      return this.readFile(pathFrom, volumeFrom).then((content) => {
+        return pandoc.spawn(content, ['-r', 'jats', '-w', this.pandocFormat()])
+      }).then(result => {
+        return this.writeFile(pathTo, result, volumeTo).then(() => {
+          return pathTo
+        })
+      })
     })
   }
 }
