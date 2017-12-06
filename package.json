@@ -9,6 +9,7 @@
   },
   "@std/esm": "cjs",
   "scripts": {
+    "postinstall": "node -r @std/esm src/helpers",
     "lint": "standard",
     "test": "tape -r @std/esm test/**/*.test.js | tap-difflet",
     "cover": "nyc --require @std/esm --reporter=lcov --reporter=text npm test",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "@std/esm": "^0.17.3",
+    "bin-wrapper": "^3.0.2",
     "cheerio": "^1.0.0-rc.2",
     "doctrine": "^2.0.0",
     "js-beautify": "^1.7.4",
