@@ -48,27 +48,18 @@ export default function helpers (converter, type) {
       })
     },
 
-    testImportString: function (name, content, expected) {
+    testLoad: function (name, content, expected) {
       test(name, (assert) => {
-        const fs = memfs.Volume.fromJSON({
-          '/content.txt': content
-        })
-        return converter.import('/content.txt', '/', fs).then((main) => {
-          return fs.readFileSync(main, 'utf8')
-        }).then((actual) => {
+        return converter.load(content).then((actual) => {
           assert.equal(actual, expected)
           assert.end()
         })
       })
     },
 
-    testExportString: function (name, filename, content, expected) {
+    testDump: function (name, content, expected) {
       test(name, (assert) => {
-        const fs = memfs.vol
-        fs.writeFileSync('/' + filename, content)
-        return converter.export('/', '/actual.txt', fs).then((main) => {
-          return fs.readFileSync(main, 'utf8')
-        }).then((actual) => {
+        return converter.dump(content).then((actual) => {
           assert.equal(actual, expected)
           assert.end()
         })

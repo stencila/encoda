@@ -1,4 +1,3 @@
-import fs from 'fs'
 import papa from 'papaparse'
 import path from 'path'
 
@@ -13,6 +12,7 @@ import SheetConverter from './SheetConverter'
  * Converts to/from Stencila's internal XML buffer format for Sheets
  */
 export default class SheetDSVConverter extends SheetConverter {
+
   /**
    * @override
    */
@@ -24,42 +24,46 @@ export default class SheetDSVConverter extends SheetConverter {
     })
   }
 
+  get fileExternal () {
+    // TODO file extension based on format
+    return 'external.txt'
+  }
+
   /**
    * @override
    */
-  import (from, to, fromFs = fs, toFs = null, options = {}) {
-    toFs = toFs || fromFs
+  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    return this.prepareImport(...arguments).then(({ pathFrom, pathTo, volumeFrom, volumeTo }) => {
+      return this.readFile(pathFrom, volumeFrom, options).then((content) => {
+        options.header = options.header === true
 
-    return this.readFile(fromFs, from, 'utf8').then((content) => {
-      options.header = options.header === true
-
-      const result = papa.parse(content.trim(), {
-        header: options.header
-      })
-      const rows = result.data
-      const names = Object.keys(rows[0])
-
-      const sheet = this.loadXml()
-
-      if (options.header) {
-        const columnsEl = sheet('meta columns')
-        names.forEach((name) => {
-          columnsEl.append(sheet('<column>').attr('name', name))
+        const result = papa.parse(content.trim(), {
+          header: options.header
         })
-      }
+        const rows = result.data
+        const names = Object.keys(rows[0])
 
-      const dataEl = sheet('data')
-      rows.forEach((row) => {
-        const rowEl = sheet('<row>')
-        names.forEach((name) => {
-          rowEl.append(sheet('<cell>').text(row[name]))
+        return this.createDom().then((dom) => {
+          if (options.header) {
+            const columnsEl = dom('meta columns')
+            names.forEach((name) => {
+              columnsEl.append(dom('<column>').attr('name', name))
+            })
+          }
+
+          const dataEl = dom('data')
+          rows.forEach((row) => {
+            const rowEl = dom('<row>')
+            names.forEach((name) => {
+              rowEl.append(dom('<cell>').text(row[name]))
+            })
+            dataEl.append(rowEl)
+          })
+
+          return this.writeXml(pathTo, dom, volumeTo).then(() => {
+            return pathTo
+          })
         })
-        dataEl.append(rowEl)
-      })
-
-      const main = path.join(to, 'index.sheet.xml')
-      return this.writeFile(toFs, main, this.dumpXml(sheet)).then(() => {
-        return main
       })
     })
   }

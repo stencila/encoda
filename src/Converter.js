@@ -130,7 +130,7 @@ export default class Converter {
 
   writeXml (path, dom, volume = fs, options = {}) {
     return this.dumpXml(dom, options).then((xml) => {
-      return this.writeFile(path, xml, volume, options)
+      return this.writeFile(path, xml + '\n', volume, options)
     })
   }
 }

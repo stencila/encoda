@@ -1,9 +1,12 @@
 import Converter from '../Converter'
-import xml from '../util/xml'
 
 export default class SheetConverter extends Converter {
-  loadXml (data) {
-    data = data || `
+  get fileInternal () {
+    return 'index.sheet.xml'
+  }
+
+  createDom (data) {
+    return this.loadXml(`
       <sheet>
         <meta>
           <name></name>
@@ -13,11 +16,6 @@ export default class SheetConverter extends Converter {
         </meta>
         <data></data>
       </sheet>
-    `
-    return xml.load(data)
-  }
-
-  dumpXml (sheet) {
-    return xml.dump(sheet) + '\n'
+    `)
   }
 }
