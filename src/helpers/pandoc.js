@@ -1,7 +1,7 @@
-import BinWrapper from 'bin-wrapper'
-import fs from 'fs'
-import path from 'path'
-import childProcess from 'child_process'
+const BinWrapper = require('bin-wrapper')
+const fs = require('fs')
+const path = require('path')
+const childProcess = require('child_process')
 
 const pandoc = new BinWrapper({ global: false })
   .src('https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-linux.tar.gz', 'linux', 'x64')
@@ -45,4 +45,4 @@ pandoc.spawn = function (input, args) {
   })
 }
 
-export default pandoc
+module.exports = pandoc

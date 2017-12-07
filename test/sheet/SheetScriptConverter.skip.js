@@ -1,5 +1,5 @@
-import SheetScriptConverter from '../../src/sheet/SheetScriptConverter'
-import helpers from '../helpers'
+const SheetScriptConverter = require('../../src/sheet/SheetScriptConverter')
+const helpers = require('../helpers')
 
 const converter = new SheetScriptConverter()
 const { testExportString } = helpers(converter, 'sheet')

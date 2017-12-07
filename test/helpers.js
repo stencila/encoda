@@ -1,10 +1,10 @@
-import fs from 'fs'
-import glob from 'glob'
-import path from 'path'
-import tmp from 'tmp'
-import test from 'tape'
+const fs = require('fs')
+const glob = require('glob')
+const path = require('path')
+const tmp = require('tmp')
+const test = require('tape')
 
-export default function helpers (converter, type) {
+function helpers (converter, type) {
   const name = converter.constructor.name
 
   return {
@@ -70,3 +70,5 @@ export default function helpers (converter, type) {
     }
   }
 }
+
+module.exports = helpers

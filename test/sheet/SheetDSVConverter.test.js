@@ -1,5 +1,5 @@
-import SheetDSVConverter from '../../src/sheet/SheetDSVConverter'
-import helpers from '../helpers'
+const SheetDSVConverter = require('../../src/sheet/SheetDSVConverter')
+const helpers = require('../helpers')
 
 const converter = new SheetDSVConverter()
 const { testMatch, testLoad, testImport } = helpers(converter, 'sheet')

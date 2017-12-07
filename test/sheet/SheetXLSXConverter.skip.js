@@ -1,9 +1,9 @@
-import test from 'tape'
+const test = require('tape')
 
-import SheetXLSXConverter from '../../src/sheet/SheetXLSXConverter'
-import MemoryStorer from '../../src/host/MemoryStorer'
+const SheetXLSXConverter = require('../../src/sheet/SheetXLSXConverter')
+const MemoryStorer = require('../../src/host/MemoryStorer')
 
-import fixtures from '../../tmp/test-fixtures'
+const fixtures = require('../../tmp/test-fixtures')
 
 test('SheetXLSXConverter:match', t => {
   let c = new SheetXLSXConverter()

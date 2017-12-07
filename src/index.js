@@ -1,1 +1,5 @@
-export * from './function'
+function convert () {
+
+}
+
+module.exports = convert

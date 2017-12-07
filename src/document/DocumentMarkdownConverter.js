@@ -1,6 +1,6 @@
-import DocumentPandocConverter from './DocumentPandocConverter'
+const DocumentPandocConverter = require('./DocumentPandocConverter')
 
-export default class DocumentMarkdownConverter extends DocumentPandocConverter {
+class DocumentMarkdownConverter extends DocumentPandocConverter {
   pandocFormat () {
     return [
       'markdown_github',
@@ -15,3 +15,5 @@ export default class DocumentMarkdownConverter extends DocumentPandocConverter {
     ].join('+')
   }
 }
+
+module.exports = DocumentMarkdownConverter

@@ -1,4 +1,6 @@
-import Converter from '../Converter'
+const Converter = require('../Converter')
 
-export default class DocumentConverter extends Converter {
+class DocumentConverter extends Converter {
 }
+
+module.exports = DocumentConverter

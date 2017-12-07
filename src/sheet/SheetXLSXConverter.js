@@ -1,13 +1,13 @@
-import { DefaultDOMElement } from 'substance'
-import JSZip from 'jszip'
+const { DefaultDOMElement } = require('substance')
+const JSZip = require('jszip')
 
-import SheetConverter from './SheetConverter'
+const SheetConverter = require('./SheetConverter')
 
 /**
  * Converter to import/export a Sheet from/to an XSLX files
  *
  */
-export default class SheetXLSXConverter extends SheetConverter {
+class SheetXLSXConverter extends SheetConverter {
   /**
    * @override
    */
@@ -99,3 +99,5 @@ export default class SheetXLSXConverter extends SheetConverter {
     throw new Error('SheetXLSXConverter.export() not yet implemented')
   }
 }
+
+module.exports = SheetXLSXConverter

@@ -1,11 +1,11 @@
-import cheerio from 'cheerio'
-import fs from 'fs'
-import memfs from 'memfs'
-import mkdirp from 'mkdirp'
-import path from 'path'
-import {html as beautifyHtml} from 'js-beautify'
+const cheerio = require('cheerio')
+const fs = require('fs')
+const memfs = require('memfs')
+const mkdirp = require('mkdirp')
+const path = require('path')
+const beautifyHtml = require('js-beautify').html
 
-export default class Converter {
+class Converter {
   matchExtensions (pathFrom, extensions) {
     const ext = path.extname(pathFrom).substring(1)
     return Promise.resolve(
@@ -141,3 +141,5 @@ export default class Converter {
     })
   }
 }
+
+module.exports = Converter

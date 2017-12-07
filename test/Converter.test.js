@@ -1,8 +1,8 @@
-import test from 'tape'
-import path from 'path'
-import memfs from 'memfs'
+const test = require('tape')
+const path = require('path')
+const memfs = require('memfs')
 
-import Converter from '../src/Converter'
+const Converter = require('../src/Converter')
 
 const converter = new Converter()
 

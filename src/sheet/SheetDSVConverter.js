@@ -1,6 +1,6 @@
-import papa from 'papaparse'
+const papa = require('papaparse')
 
-import SheetConverter from './SheetConverter'
+const SheetConverter = require('./SheetConverter')
 
 /**
  * Converter to import/export a Sheet from/to a delimiter separated values (DSV) file
@@ -10,7 +10,7 @@ import SheetConverter from './SheetConverter'
  *
  * Converts to/from Stencila's internal XML buffer format for Sheets
  */
-export default class SheetDSVConverter extends SheetConverter {
+class SheetDSVConverter extends SheetConverter {
   /**
    * @override
    */
@@ -62,3 +62,5 @@ export default class SheetDSVConverter extends SheetConverter {
     })
   }
 }
+
+module.exports = SheetDSVConverter

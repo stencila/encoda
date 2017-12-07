@@ -1,7 +1,9 @@
-import Converter from '../Converter'
+const Converter = require('../Converter')
 
-export default class FunctionConverter extends Converter {
+class FunctionConverter extends Converter {
   createDom () {
     return this.loadMXL(`<function/>`)
   }
 }
+
+module.exports = FunctionConverter

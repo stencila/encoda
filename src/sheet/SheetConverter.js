@@ -1,6 +1,6 @@
-import Converter from '../Converter'
+const Converter = require('../Converter')
 
-export default class SheetConverter extends Converter {
+class SheetConverter extends Converter {
   get fileInternal () {
     return 'index.sheet.xml'
   }
@@ -19,3 +19,5 @@ export default class SheetConverter extends Converter {
     `)
   }
 }
+
+module.exports = SheetConverter

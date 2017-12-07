@@ -1,8 +1,8 @@
-import test from 'tape'
-import memfs from 'memfs'
+const test = require('tape')
+const memfs = require('memfs')
 
-import FunctionJsDocConverter from '../../src/function/FunctionJsDocConverter'
-import helpers from '../helpers'
+const FunctionJsDocConverter = require('../../src/function/FunctionJsDocConverter')
+const helpers = require('../helpers')
 
 const converter = new FunctionJsDocConverter()
 const { testImportString } = helpers(converter, 'sheet')

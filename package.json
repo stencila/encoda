@@ -2,18 +2,16 @@
   "name": "stencila-convert",
   "version": "0.29.0",
   "description": "Converters for Stencila components",
-  "main": "index.js",
-  "module": "src/index.js",
+  "main": "src/index.js",
   "directories": {
     "test": "test"
   },
-  "@std/esm": "cjs",
   "scripts": {
-    "postinstall": "node -r @std/esm src/helpers",
+    "postinstall": "node src/helpers",
     "lint": "standard",
-    "test": "tape -r @std/esm \"test/**/*.test.js\" | tap-spec",
+    "test": "tape \"test/**/*.test.js\" | tap-spec",
     "test-diffs": "npm test | tap-difflet",
-    "cover": "nyc --require @std/esm --reporter=lcov --reporter=text npm test",
+    "cover": "nyc --reporter=lcov --reporter=text npm test",
     "clean": "rimraf coverage"
   },
   "license": "Apache-2.0",
@@ -26,7 +24,6 @@
     "url": "https://github.com/stencila/convert/issues"
   },
   "dependencies": {
-    "@std/esm": "^0.17.3",
     "bin-wrapper": "^3.0.2",
     "cheerio": "^1.0.0-rc.2",
     "doctrine": "^2.0.0",

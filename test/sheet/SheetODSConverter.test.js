@@ -1,5 +1,5 @@
-import SheetODSConverter from '../../src/sheet/SheetODSConverter'
-import helpers from '../helpers'
+const SheetODSConverter = require('../../src/sheet/SheetODSConverter')
+const helpers = require('../helpers')
 
 const converter = new SheetODSConverter()
 const { testMatch, testImport } = helpers(converter, 'sheet')

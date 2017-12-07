@@ -1,12 +1,12 @@
-import JSZip from 'jszip'
+const JSZip = require('jszip')
 
-import SheetConverter from './SheetConverter'
+const SheetConverter = require('./SheetConverter')
 
 /**
  * Converter to import/export a Sheet from/to an Open Document Spreadsheet (ODS) file
  *
  */
-export default class SheetODSConverter extends SheetConverter {
+class SheetODSConverter extends SheetConverter {
   /**
    * @override
    */
@@ -65,3 +65,5 @@ export default class SheetODSConverter extends SheetConverter {
     })
   }
 }
+
+module.exports = SheetODSConverter

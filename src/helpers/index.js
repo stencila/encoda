@@ -1,1 +1,5 @@
-export {default as pandoc} from './pandoc'
+const pandoc = require('./pandoc')
+
+module.exports = {
+  pandoc
+}

@@ -1,9 +1,9 @@
-import fs from 'fs'
-import path from 'path'
+const fs = require('fs')
+const path = require('path')
 
-import SheetConverter from './SheetConverter'
+const SheetConverter = require('./SheetConverter')
 
-export default class SheetScriptConverter extends SheetConverter {
+class SheetScriptConverter extends SheetConverter {
   import (from, to, fromFs = fs, toFs = null, options = {}) {
     toFs = toFs || fromFs
 
@@ -35,3 +35,5 @@ export default class SheetScriptConverter extends SheetConverter {
     })
   }
 }
+
+module.exports = SheetScriptConverter

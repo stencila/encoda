@@ -1,5 +1,5 @@
-import DocumentMarkdownConverter from '../../src/document/DocumentMarkdownConverter'
-import helpers from '../helpers'
+const DocumentMarkdownConverter = require('../../src/document/DocumentMarkdownConverter')
+const helpers = require('../helpers')
 
 const converter = new DocumentMarkdownConverter()
 const { testLoad } = helpers(converter, 'sheet')

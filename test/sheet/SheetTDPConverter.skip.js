@@ -1,7 +1,7 @@
-import test from 'tape'
+const test = require('tape')
 
-import SheetTDPConverter from '../../src/sheet/SheetTDPConverter'
-import MemoryStorer from '../../src/host/MemoryStorer'
+const SheetTDPConverter = require('../../src/sheet/SheetTDPConverter')
+const MemoryStorer = require('../../src/host/MemoryStorer')
 
 test('SheetTDPConverter:match', t => {
   let c = new SheetTDPConverter()

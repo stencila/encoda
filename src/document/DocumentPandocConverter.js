@@ -1,7 +1,7 @@
-import DocumentConverter from './DocumentConverter'
-import pandoc from '../helpers/pandoc'
+const DocumentConverter = require('./DocumentConverter')
+const pandoc = require('../helpers/pandoc')
 
-export default class DocumentPandocConverter extends DocumentConverter {
+class DocumentPandocConverter extends DocumentConverter {
   pandocArgs (args, options) {
     return args.concat([
       // Line endings : --eol=crlf|lf|native
@@ -41,3 +41,5 @@ export default class DocumentPandocConverter extends DocumentConverter {
     })
   }
 }
+
+module.exports = DocumentPandocConverter

@@ -1,10 +1,10 @@
-import doctrine from 'doctrine'
-import path from 'path'
-import fs from 'fs'
+const doctrine = require('doctrine')
+const path = require('path')
+const fs = require('fs')
 
-import FunctionConverter from './FunctionConverter'
+const FunctionConverter = require('./FunctionConverter')
 
-export default class FunctionJsDocConverter extends FunctionConverter {
+class FunctionJsDocConverter extends FunctionConverter {
   import (from, to, fromFs = fs, toFs = null, options = {}) {
     toFs = toFs || fromFs
 
@@ -133,3 +133,5 @@ export default class FunctionJsDocConverter extends FunctionConverter {
     })
   }
 }
+
+module.exports = FunctionJsDocConverter
