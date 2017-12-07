@@ -13,6 +13,14 @@ class Converter {
     )
   }
 
+  canImport (pathFrom) {
+    return Promise.resolve(false)
+  }
+
+  canExport (pathTo) {
+    return Promise.resolve(false)
+  }
+
   get fileInternal () {
     return 'internal.txt'
   }

@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "bin": "./bin/stencila-convert.js",
   "scripts": {
     "postinstall": "node src/helpers",
     "lint": "standard",

@@ -1,1 +1,5 @@
-export { default as FunctionJsDocConverter } from './FunctionJsDocConverter'
+const FunctionJsDocConverter = require('./FunctionJsDocConverter')
+
+module.exports = {
+  FunctionJsDocConverter
+}
