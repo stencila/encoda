@@ -10,8 +10,11 @@ class SheetODSConverter extends SheetConverter {
   /**
    * @override
    */
-  match (path) {
-    return this.matchExtensions(path, 'ods')
+  canImport (pathFrom) {
+    return Promise.resolve(
+      pathFrom.slice(-4) === '.ods' ||
+      pathFrom.slice(-16) === '.ods-content.xml'
+    )
   }
 
   /**
@@ -21,7 +24,7 @@ class SheetODSConverter extends SheetConverter {
     return this.prepareImport(...arguments).then(({ pathFrom, pathTo, volumeFrom, volumeTo }) => {
       return Promise.resolve().then(() => {
         // Handling parsing of unzipped XML during development
-        if (pathFrom.slice(-11) === 'content.xml') {
+        if (pathFrom.slice(-16) === '.ods-content.xml') {
           return this.readFile(pathFrom, volumeFrom, options)
         } else {
           return this.readFile(pathFrom, volumeFrom, { encoding: 'binary' }).then((data) => {
@@ -43,7 +46,7 @@ class SheetODSConverter extends SheetConverter {
         const odsTable = ods('office_document-content office_body office_spreadsheet table_table')
         const odsRows = odsTable.find('table_table-row')
 
-        this.createDom().then((dom) => {
+        return this.createDom().then((dom) => {
           const sheetData = dom('sheet data')
           odsRows.each((index, elem) => {
             const odsRow = ods(elem)

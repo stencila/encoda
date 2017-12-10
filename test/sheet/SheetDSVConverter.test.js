@@ -2,9 +2,9 @@ const SheetDSVConverter = require('../../src/sheet/SheetDSVConverter')
 const helpers = require('../helpers')
 
 const converter = new SheetDSVConverter()
-const { testMatch, testLoad, testImport } = helpers(converter, 'sheet')
+const { testCanImport, testLoad, testImport } = helpers(converter, 'sheet')
 
-testMatch(
+testCanImport(
   ['data.csv', 'data.tsv', 'data.psv'],
   ['data.xlsx']
 )
@@ -36,4 +36,6 @@ testLoad(
 </sheet>`
 )
 
-testImport('simple/simple.csv', 'simple/simple.sheet', { header: false })
+testImport('simple/csv/simple.csv', 'simple/stencila/simple.sheet.xml', { header: false })
+testImport('simple/tsv/simple.tsv', 'simple/stencila/simple.sheet.xml', { header: false })
+testImport('simple/psv/simple.psv', 'simple/stencila/simple.sheet.xml', { header: false })

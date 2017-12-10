@@ -2,12 +2,11 @@ const SheetODSConverter = require('../../src/sheet/SheetODSConverter')
 const helpers = require('../helpers')
 
 const converter = new SheetODSConverter()
-const { testMatch, testImport } = helpers(converter, 'sheet')
+const { testCanImport, testImport } = helpers(converter, 'sheet')
 
-testMatch(
-  ['data.ods'],
+testCanImport(
+  ['data.ods', 'data.ods-content.xml'],
   ['data.csv']
 )
 
-testImport('simple/simple.ods-content.xml', 'simple/simple.sheet')
-testImport('simple/simple.ods', 'simple/simple.sheet')
+testImport('simple/ods/simple.ods', 'simple/stencila/simple.sheet.xml')

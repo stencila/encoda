@@ -15,14 +15,10 @@ class SheetDSVConverter extends SheetConverter {
     return this.matchExtensions(pathFrom, ['csv', 'tsv', 'psv'])
   }
 
-  get fileExternal () {
-    // TODO file extension based on format
-    return 'external.txt'
+  canExport (pathFrom) {
+    return Promise.resolve(pathFrom.slice(-9), ['.sheet.xml'])
   }
 
-  /**
-   * @override
-   */
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     return this.prepareImport(...arguments).then(({ pathFrom, pathTo, volumeFrom, volumeTo }) => {
       return this.readFile(pathFrom, volumeFrom, options).then((content) => {

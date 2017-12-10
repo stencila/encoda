@@ -11,9 +11,10 @@ class SheetXLSXConverter extends SheetConverter {
   /**
    * @override
    */
-  match (path) {
-    let {ext} = this._parsePath(path)
-    return Promise.resolve(ext === 'xlsx')
+  canImport (pathFrom) {
+    return Promise.resolve(
+      pathFrom.slice(-5) === '.xlsx'
+    )
   }
 
   /**
