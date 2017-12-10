@@ -8,41 +8,63 @@ function helpers (converter, type) {
   const name = converter.constructor.name
 
   return {
-    testMatch: function (ok, notOk, volume = null) {
-      test(name + '.match', (assert) => {
+    testCanImport: function (ok, notOk, volume = null) {
+      test(name + '.canImport', (assert) => {
         assert.plan(ok.length + notOk.length)
 
         ok.forEach((path) => {
-          converter.match(path).then((result) => {
-            assert.ok(result, `path "${path}" should match`)
+          converter.canImport(path).then((result) => {
+            assert.ok(result, `path "${path}" should canImport`)
           })
         })
 
         notOk.forEach((path) => {
-          converter.match(path).then((result) => {
-            assert.notOk(result, `path "${path}" should not match`)
+          converter.canImport(path).then((result) => {
+            assert.notOk(result, `path "${path}" should not canImport`)
           })
         })
       })
     },
 
     testImport: function (from, expected) {
-      const pathFrom = path.join(__dirname, type, 'fixtures', from)
-      const pathExpected = path.join(__dirname, type, 'fixtures', expected)
-      const pathTo = tmp.dirSync().name
-      converter.import(pathFrom, pathTo).then(() => {
-        test(name + '.import ' + from, (assert) => {
-          glob(pathExpected + '/**/*', (err, files) => {
+      test(name + '.import ' + from, (assert) => {
+        const pathFrom = path.join(__dirname, type, 'fixtures', from)
+        fs.accessSync(pathFrom)
+
+        const pathExpected = path.join(__dirname, type, 'fixtures', expected)
+        fs.accessSync(pathExpected)
+        const dirExpected = path.dirname(pathExpected)
+
+        const pathTo = path.join(tmp.dirSync().name, path.basename(expected))
+        const dirTo = path.dirname(pathTo)
+
+        converter.import(pathFrom, pathTo).then((result) => {
+          assert.pass('imported to ' + pathTo)
+          glob(dirExpected + '/**/*', (err, filesExpected) => {
             if (err) assert.fail(err.message)
-            files.forEach((file) => {
-              const relativePath = path.relative(pathExpected, file)
-              const actualPath = path.join(pathTo, relativePath)
-              const expected = fs.readFileSync(file, 'utf8')
-              const actual = fs.readFileSync(actualPath, 'utf8')
-              assert.equal(actual, expected, `file "${relativePath}" should be the same`)
+            glob(dirTo + '/**/*', (err, filesActual) => {
+              if (err) assert.fail(err.message)
+
+              assert.deepEqual(
+                filesExpected.map(file => path.relative(pathExpected, file)),
+                filesActual.map(file => path.relative(pathTo, file)),
+                'file list should be the same'
+              )
+
+              filesExpected.forEach((fileExpected) => {
+                const pathRelative = path.relative(pathExpected, fileExpected)
+                const fileActual = path.join(pathTo, pathRelative)
+                const expected = fs.readFileSync(fileExpected).toString()
+                const actual = fs.readFileSync(fileActual).toString()
+                assert.ok(expected === actual, `Actual file ${fileActual} equal to expected file ${fileExpected}`)
+              })
+
+              assert.end()
             })
-            assert.end()
           })
+        }).catch((error) => {
+          assert.fail(error.message)
+          assert.end()
         })
       })
     },
@@ -55,15 +77,6 @@ function helpers (converter, type) {
         }).catch((error) => {
           console.error(error)
           assert.fail(error.message)
-          assert.end()
-        })
-      })
-    },
-
-    testDump: function (name, content, expected) {
-      test(name, (assert) => {
-        return converter.dump(content).then((actual) => {
-          assert.equal(actual, expected)
           assert.end()
         })
       })

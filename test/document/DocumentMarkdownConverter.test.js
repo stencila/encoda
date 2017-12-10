@@ -2,7 +2,7 @@ const DocumentMarkdownConverter = require('../../src/document/DocumentMarkdownCo
 const helpers = require('../helpers')
 
 const converter = new DocumentMarkdownConverter()
-const { testLoad } = helpers(converter, 'sheet')
+const { testLoad, testImport } = helpers(converter, 'document')
 
 testLoad(
 'DocumentMarkdownConverter.load paragraphs',
@@ -163,3 +163,5 @@ Caption
 )
 
 */
+
+testImport('paragraph/md/paragraph.md', 'paragraph/stencila/paragraph.jats.xml')

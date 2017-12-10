@@ -13,11 +13,11 @@ class Converter {
     )
   }
 
-  canImport (pathFrom) {
+  canImport (pathFrom, volumeFrom) {
     return Promise.resolve(false)
   }
 
-  canExport (pathTo) {
+  canExport (pathTo, volumeTo) {
     return Promise.resolve(false)
   }
 
@@ -29,24 +29,45 @@ class Converter {
     return 'external.txt'
   }
 
+  /**
+   * Prepare arguments for import or export
+   *
+   * @param  {boolean} importing  Is this preparing for an import?
+   * @param  {string}  pathFrom   The path to import/export from
+   * @param  {string}  pathTo     The path to import/export to
+   * @param  {fs}      volumeFrom File system to import/export from
+   * @param  {fs}      volumeTo   File system to import/export to
+   * @return {Promise}            Resolves to updated `{pathFrom, pathTo, volumeFrom, volumeTo}`
+   */
   prepare (importing, pathFrom, pathTo, volumeFrom, volumeTo) {
     return new Promise((resolve) => {
-      volumeFrom = volumeFrom || fs
-      volumeTo = volumeTo || volumeFrom
+      if (!pathFrom) throw new Error('Parameter `pathFrom` is required')
       if (path.extname(pathFrom) === '') {
         pathFrom = path.join(pathFrom, importing ? this.fileExternal : this.fileInternal)
       }
       if (path.extname(pathTo) === '') {
         pathTo = path.join(pathTo, importing ? this.fileInternal : this.fileExternal)
       }
+      volumeFrom = volumeFrom || fs
+      volumeTo = volumeTo || volumeFrom
       return resolve({pathFrom, pathTo, volumeFrom, volumeTo})
     })
   }
 
+  /**
+   * Prepare arguments for import
+   *
+   * @see prepare
+   */
   prepareImport () {
     return this.prepare(true, ...arguments)
   }
 
+  /**
+   * Prepare arguments for export
+   *
+   * @see prepare
+   */
   prepareExport () {
     return this.prepare(false, ...arguments)
   }
