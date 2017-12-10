@@ -3,14 +3,11 @@
   "version": "0.29.0",
   "description": "Converters for Stencila components",
   "main": "src/index.js",
-  "directories": {
-    "test": "test"
-  },
   "bin": "./bin/stencila-convert.js",
   "scripts": {
     "postinstall": "node src/helpers",
     "lint": "standard",
-    "test": "tape \"test/**/*.test.js\" | tap-spec",
+    "test": "tape \"tests/**/*.test.js\" | tap-spec",
     "test-diffs": "npm test | tap-difflet",
     "cover": "nyc --reporter=lcov --reporter=text npm test",
     "clean": "rimraf coverage"

@@ -8,7 +8,6 @@ lint:
 
 test:
 	npm test
-.PHONY: test
 
 test-diffs:
 	npm run test-diffs
