@@ -3,6 +3,8 @@ const SheetDSVConverter = require('./SheetDSVConverter')
 /**
  * Converter to import/export a Sheet from/to Tabular Data Package (TDP)
  *
+ * @description
+ *
  * The [TDP specification](https://specs.frictionlessdata.io/tabular-data-package/)
  * is a [Data Package](https://specs.frictionlessdata.io/data-package/) (represented by a
  * `datapackage.json` file) that has:

@@ -5,6 +5,9 @@ const mkdirp = require('mkdirp')
 const path = require('path')
 const beautifyHtml = require('js-beautify').html
 
+/**
+ * Base converter class
+ */
 class Converter {
   matchExtensions (pathFrom, extensions) {
     const ext = path.extname(pathFrom).substring(1)
