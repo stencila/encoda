@@ -2,9 +2,11 @@ const SheetXLSXConverter = require('../../src/sheet/SheetXLSXConverter')
 const helpers = require('../helpers')
 
 const converter = new SheetXLSXConverter()
-const { testCanImport } = helpers(converter, 'sheet')
+const { testCanImport, testImport } = helpers(converter, 'sheet')
 
 testCanImport(
-  ['data.xlsx'], // OK
-  ['data.csv'] // not OK
+  ['data.xlsx'],
+  ['data.foo', 'data.csv']
 )
+
+testImport('simple/xlsx/simple.xlsx', 'simple/stencila/simple.sheet.xml')
