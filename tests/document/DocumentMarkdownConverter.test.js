@@ -75,9 +75,6 @@ testLoad(
 { eol: 'lf' }
 )
 
-/*
-Skipping these tests until stencila/pandoc is integrated here
-
 testLoad(
 'DocumentMarkdownConverter.load figure',
 `
@@ -161,7 +158,5 @@ Caption
 `,
 { eol: 'lf' }
 )
-
-*/
 
 testImport('paragraph/md/paragraph.md', 'paragraph/stencila/paragraph.jats.xml')

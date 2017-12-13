@@ -4,9 +4,9 @@ const path = require('path')
 const childProcess = require('child_process')
 
 const pandoc = new BinWrapper({ global: false })
-  .src('https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-linux.tar.gz', 'linux', 'x64')
-  .src('https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-macOS.zip', 'darwin')
-  .src('https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-windows.zip', 'win32')
+  .src('https://github.com/stencila/pandoc/releases/download/jats-8/pandoc-linux.tar.gz', 'linux', 'x64')
+  .src('https://github.com/stencila/pandoc/releases/download/jats-8/pandoc-macOS.zip', 'darwin')
+  .src('https://github.com/stencila/pandoc/releases/download/jats-8/pandoc-windows-i386.zip', 'win32')
   .dest(path.join(__dirname, '..', '..', 'vendor'))
   .use(process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc')
 
