@@ -5,9 +5,19 @@ const FunctionJsDocConverter = require('../../src/function/FunctionJsDocConverte
 const helpers = require('../helpers')
 
 const converter = new FunctionJsDocConverter()
-const { testImportString } = helpers(converter, 'sheet')
+const { testCanImport, testCanExport, testLoad } = helpers(converter, 'function')
 
-testImportString(
+testCanImport(
+  ['sum.fun.txt'], // Can import
+  ['foo.bar'] // Can't import
+)
+
+testCanExport(
+  [], // Can't export export anything
+  ['foo.fun.xml'] // Can't export export anything
+)
+
+testLoad(
 'FunctionJsDocConverter.import param',
 `@param {type} name Description`,
 `<function>
@@ -16,11 +26,9 @@ testImportString(
       <description>Description</description>
     </param>
   </params>
-</function>
-`
-)
+</function>`)
 
-testImportString(
+testLoad(
 'FunctionJsDocConverter.import param array type',
 `@param {array.<type>} name Description`,
 `<function>
@@ -29,14 +37,13 @@ testImportString(
       <description>Description</description>
     </param>
   </params>
-</function>
-`)
+</function>`)
 
 test('FunctionJsDocConverter.import unknown param type', (assert) => {
-  const fs = memfs.Volume.fromJSON({
+  const volume = memfs.Volume.fromJSON({
     '/from.txt': '@param {(This|Or|That)} name'
   })
-  converter.import('/from.txt', '/to.txt', fs).then(() => {
+  converter.import('/from.txt', '/to.txt', volume).then(() => {
     assert.fail('should error')
     assert.end()
   }).catch((error) => {
@@ -46,10 +53,10 @@ test('FunctionJsDocConverter.import unknown param type', (assert) => {
 })
 
 test('FunctionJsDocConverter.import unknown return type', (assert) => {
-  const fs = memfs.Volume.fromJSON({
+  const volume = memfs.Volume.fromJSON({
     '/from.txt': '@return {(This|Or|That)} name'
   })
-  converter.import('/from.txt', '/to.txt', fs).then(() => {
+  converter.import('/from.txt', '/to.txt', volume).then(() => {
     assert.fail('should error')
     assert.end()
   }).catch((error) => {
@@ -58,7 +65,7 @@ test('FunctionJsDocConverter.import unknown return type', (assert) => {
   })
 })
 
-testImportString(
+testLoad(
 'FunctionJsDocConverter.import special characters',
 `@example x < 5 && y < 5`,
 `<function>
@@ -67,10 +74,9 @@ testImportString(
       <usage>x &lt; 5 &amp;&amp; y &lt; 5</usage>
     </example>
   </examples>
-</function>
-`)
+</function>`)
 
-testImportString(
+testLoad(
 'FunctionJsDocConverter.import complete',
 `@name function_name
 
@@ -117,11 +123,11 @@ function_name(param1, param2=42)
       <description>Description for param1.</description>
     </param>
     <param name="param2" type="type2">
-      <default>null</default>
+      <default type="null">null</default>
       <description>Param2 is optional (i.e. default value is null)</description>
     </param>
     <param name="param3" type="type3">
-      <default>default3</default>
+      <default type="type3">default3</default>
       <description>Param3 has a default value.</description>
     </param>
     <param name="param4" type="any">
@@ -139,5 +145,4 @@ function_name(param1, param2=42)
     <author>Joe Bloggs</author>
     <author>Jane Doe</author>
   </authors>
-</function>
-`)
+</function>`)

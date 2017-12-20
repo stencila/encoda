@@ -2,7 +2,7 @@ const Converter = require('../Converter')
 
 class FunctionConverter extends Converter {
   createDom () {
-    return this.loadMXL(`<function/>`)
+    return this.loadXml(`<function/>`)
   }
 }
 

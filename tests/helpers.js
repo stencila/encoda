@@ -57,13 +57,31 @@ function helpers (converter, type) {
 
         ok.forEach((path) => {
           converter.canImport(path).then((result) => {
-            assert.ok(result, `path "${path}" should canImport`)
+            assert.ok(result, `should be able to import file "${path}"`)
           })
         })
 
         notOk.forEach((path) => {
           converter.canImport(path).then((result) => {
-            assert.notOk(result, `path "${path}" should not canImport`)
+            assert.notOk(result, `should not be able to import file "${path}"`)
+          })
+        })
+      })
+    },
+
+    testCanExport: function (ok, notOk, volume = null) {
+      test(name + '.canExport', (assert) => {
+        assert.plan(ok.length + notOk.length)
+
+        ok.forEach((path) => {
+          converter.canExport(path).then((result) => {
+            assert.ok(result, `should be able to export file "${path}"`)
+          })
+        })
+
+        notOk.forEach((path) => {
+          converter.canExport(path).then((result) => {
+            assert.notOk(result, `should be able to export file "${path}"`)
           })
         })
       })
