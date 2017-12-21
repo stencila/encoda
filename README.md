@@ -11,6 +11,21 @@
 
 Convert Stencila Documents, Sheets and Funcitons to other formats.
 
+### Use
+
+This package is integrated into the Stencila command line tool [`stencila/cli`](https://github.com/stencila/cli). That's the most convenient way to use converters e.g.
+
+```bash
+stencila convert document.md document.rdc
+```
+
+But you can also use this package directly e.g.
+
+```bash
+npm install stencila-convert -g
+stencila-convert document.md document.rdc
+```
+
 ### Status
 
 The following table lists the status of converters that have been developed, are in development, or are being considered for development. We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, +1 the relevant issue, or create an issue if there isn't one yet. Or, send us a pull request!
@@ -33,7 +48,7 @@ Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-al
 **Functions** | |
 JsDoc | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
 
-### Development
+### Develop
 
 1. Clone the repo
 
@@ -47,17 +62,30 @@ JsDoc | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
     npm install
     ```
 
-3. Test
+#### Testing
 
-    ```bash
-    npm test
-    ```
+Run the test suite:
 
-    or use `node make test:browser -w` and open `test/index.html` in your browser.  
+```bash
+npm test # or make test
+```
 
+Or, run a single test file:
 
-4. Build
+Run the test suite:
 
-    ```bash
-    node make
-    ```
+```bash
+npm run test-one -- tests/function/FunctionJsDocConverter.test.js
+```
+
+To get coverage statistics:
+
+```bash
+npm run cover # or make cover
+```
+
+Or, manually test conversion using the bin script:
+
+```bash
+bin/stencila-convert.js tests/document/fixtures/paragraph/md/paragraph.md temp.pdf
+```

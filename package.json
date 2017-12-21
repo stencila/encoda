@@ -8,6 +8,7 @@
     "postinstall": "node src/helpers",
     "lint": "standard",
     "test": "tape \"tests/**/*.test.js\" | tap-spec",
+    "test-one": "tape",
     "test-diffs": "npm test | tap-difflet",
     "cover": "nyc --reporter=lcov --reporter=text npm test",
     "clean": "rimraf coverage"
