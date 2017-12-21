@@ -12,4 +12,8 @@ if (!pathTo || !pathFrom) {
   process.exit(1)
 }
 
-convert(pathFrom, pathTo)
+convert(pathFrom, pathTo).then(() => {
+  console.log(`Converted from "${pathFrom}" to "${pathTo}"`)
+}).catch((error) => {
+  console.error(error)
+})

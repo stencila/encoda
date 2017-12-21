@@ -1,12 +1,8 @@
 const DocumentPandocConverter = require('./DocumentPandocConverter')
 
-class DocumentMarkdownConverter extends DocumentPandocConverter {
-  canImport (pathFrom) {
-    return this.matchExtensions(pathFrom, ['md'])
-  }
-
-  canExport (pathTo) {
-    return this.matchExtensions(pathTo, ['md'])
+class DocumentMdConverter extends DocumentPandocConverter {
+  extensions () {
+    return ['md']
   }
 
   pandocFormat () {
@@ -24,4 +20,4 @@ class DocumentMarkdownConverter extends DocumentPandocConverter {
   }
 }
 
-module.exports = DocumentMarkdownConverter
+module.exports = DocumentMdConverter

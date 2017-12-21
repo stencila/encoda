@@ -1,11 +1,11 @@
-const DocumentMarkdownConverter = require('../../src/document/DocumentMarkdownConverter')
+const DocumentMdConverter = require('../../src/document/DocumentMdConverter')
 const helpers = require('../helpers')
 
-const converter = new DocumentMarkdownConverter()
+const converter = new DocumentMdConverter()
 const { testLoad, testImport } = helpers(converter, 'document')
 
 testLoad(
-'DocumentMarkdownConverter.load paragraphs',
+'DocumentMdConverter.load paragraphs',
 `
 Paragraph 1
 
@@ -22,7 +22,7 @@ Paragraph 2
 )
 
 testLoad(
-'DocumentMarkdownConverter.load heading',
+'DocumentMdConverter.load heading',
 `
 Heading
 =======
@@ -40,7 +40,7 @@ Paragraph
 )
 
 testLoad(
-'DocumentMarkdownConverter.load subheading',
+'DocumentMdConverter.load subheading',
 `
 Heading 1
 =========
@@ -64,7 +64,7 @@ Paragraph
 )
 
 testLoad(
-'DocumentMarkdownConverter.load link',
+'DocumentMdConverter.load link',
 `
 [link](https://stenci.la/)
 `,
@@ -76,7 +76,7 @@ testLoad(
 )
 
 testLoad(
-'DocumentMarkdownConverter.load figure',
+'DocumentMdConverter.load figure',
 `
 ::: {#fig .fig}
 ::: {.caption}
@@ -102,7 +102,7 @@ Caption
 )
 
 testLoad(
-'DocumentMarkdownConverter.load table',
+'DocumentMdConverter.load table',
 `
 ::: {#table .table-wrap}
 ::: {.caption}

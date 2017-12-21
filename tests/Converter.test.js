@@ -6,59 +6,27 @@ const Converter = require('../src/Converter')
 
 const converter = new Converter()
 
-test('Converter.prepareImport+prepareExport', (assert) => {
-  assert.plan(6)
-
-  converter.prepareImport('some-file-a.txt', 'some-file-b.txt').then((result) => {
-    assert.equal(result.pathFrom, 'some-file-a.txt')
-    assert.equal(result.pathTo, 'some-file-b.txt')
-  })
-
-  converter.prepareImport('some-dir', 'some-other-dir').then((result) => {
-    assert.equal(result.pathFrom, path.join('some-dir', 'external.txt'))
-    assert.equal(result.pathTo, path.join('some-other-dir', 'internal.txt'))
-  })
-
-  converter.prepareExport('some-dir', 'some-other-dir').then((result) => {
-    assert.equal(result.pathFrom, path.join('some-dir', 'internal.txt'))
-    assert.equal(result.pathTo, path.join('some-other-dir', 'external.txt'))
-  })
-})
-
 test('Converter.import', (assert) => {
   const content = 'Some external content'
   const volume = memfs.Volume.fromJSON({
-    '/external.txt': content
+    'pathFrom.txt': content
   })
 
-  assert.plan(5)
-
-  converter.import('/external.txt', '/some-file.txt', volume).then((path) => {
-    assert.equal(path, '/some-file.txt', 'if pathTo is a file name then it gets returned')
-    assert.equal(volume.readFileSync(path, 'utf8'), content, 'no conversion done, content simply copied')
-  })
-
-  converter.import('/external.txt', '/some-folder/some-sub-folder/some-file.txt', volume).then((path) => {
-    assert.ok(volume.statSync(path, 'utf8'), 'necessary pathTo directories are created')
-  })
-
-  converter.import('/', '/', volume).then((pathTo) => {
-    assert.equal(pathTo, path.join('/', 'internal.txt'), 'if pathTo is a folder then returns a default filename')
-    assert.equal(volume.readFileSync(pathTo, 'utf8'), content, 'if pathFrom is a folder then uses a default filename')
+  converter.import('pathFrom.txt', 'pathTo.txt', volume).then((pathTo) => {
+    assert.equal(volume.readFileSync(pathTo, 'utf8'), content, 'default export behaviour is just to copy content')
+    assert.end()
   })
 })
 
 test('Converter.export', (assert) => {
   const content = 'Some internal content'
   const volume = memfs.Volume.fromJSON({
-    '/internal.txt': content
+    'pathFrom.txt': content
   })
 
-  assert.plan(2)
-
-  converter.export('/', '/', volume).then((pathTo) => {
-    assert.equal(pathTo, path.join('/', 'external.txt'), 'if pathTo is a folder then returns a default filename')
-    assert.equal(volume.readFileSync(pathTo, 'utf8'), content, 'if pathFrom is a folder then uses a default filename')
+  converter.export('pathFrom.txt', 'pathTo.txt', volume).then((pathTo) => {
+    assert.equal(volume.readFileSync(pathTo, 'utf8'), content, 'default export behaviour is just to copy content')
+    assert.end()
   })
 })
 
@@ -83,7 +51,7 @@ test('Converter.loadXml', (assert) => {
     assert.equal(dom('foo bar').html(), 'baz')
     assert.equal(dom('foo').find('bar').html(), 'baz')
 
-    // Charachter encoding
+    // Character encoding
     const child = dom('<beep>')
     child.text('& < >')
     dom('foo').append(child)
