@@ -1,5 +1,4 @@
 const test = require('tape')
-const path = require('path')
 const memfs = require('memfs')
 
 const Converter = require('../src/Converter')
