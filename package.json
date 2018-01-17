@@ -23,6 +23,7 @@
     "url": "https://github.com/stencila/convert/issues"
   },
   "dependencies": {
+    "bin-version-check": "^3.0.0",
     "bin-wrapper": "^3.0.2",
     "cheerio": "^1.0.0-rc.2",
     "doctrine": "^2.0.0",
