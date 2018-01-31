@@ -6,11 +6,11 @@ const childProcess = require('child_process')
 
 const pandoc = new BinWrapper()
   // Semver requirement for Pandoc
-  .version('>=2.0.4')
+  .version('>=2.1.1')
   // Sources for downloaded binaries (if necessary)
-  .src('https://github.com/stencila/pandoc/releases/download/jats-8/pandoc-linux.tar.gz', 'linux', 'x64')
-  .src('https://github.com/stencila/pandoc/releases/download/jats-8/pandoc-macOS.zip', 'darwin')
-  .src('https://github.com/stencila/pandoc/releases/download/jats-8/pandoc-windows-i386.zip', 'win32')
+  .src('https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz', 'linux', 'x64')
+  .src('https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-macOS.zip', 'darwin')
+  .src('https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-windows.zip', 'win32')
   .dest((function () {
     // Destination for downloaded binaries (if necessary)
     switch (process.platform) {
@@ -28,13 +28,17 @@ const pandoc = new BinWrapper()
 
 // Check that an acceptable version of Pandoc is available on PATH
 binVersionCheck('pandoc', pandoc.version()).then(() => {
-  // Use global Pandoc - set `pandoc.path()` to 'pandoc'
+  // Use global Pandoc by setting `pandoc.path()` to 'pandoc'
+  // console.info('ℹ Global Pandoc is OK')
   pandoc.dest('')
   pandoc.use('pandoc')
 }).catch(() => {
-  // Global pandoc is not suitable, check for local Pandoc
-  fs.access(pandoc.path(), function (err) {
-    if (err) {
+  // Global pandoc is not available/acceptable, check local Pandoc
+  binVersionCheck(pandoc.path(), pandoc.version()).then(() => {
+    // console.info('ℹ Local Pandoc is OK: ' + pandoc.path())
+  }).catch(() => {
+    console.info('ℹ Local Pandoc needs upgrading: ' + pandoc.path())
+    fs.unlink(pandoc.path(), function () {
       console.log('⧗ Downloading Pandoc (this could take some time).')
       pandoc.run(['--version'], function (err) {
         if (err) {
@@ -43,7 +47,7 @@ binVersionCheck('pandoc', pandoc.version()).then(() => {
           console.log('✓ Download success!')
         }
       })
-    }
+    })
   })
 })
 
