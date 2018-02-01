@@ -16,7 +16,7 @@
 </sec>
 <sec>
   <title>Heading 2</title>
-  <p>Setext-style headers are “underlined” using equal signs (for first-level headers) and dashes (for second-level headers).</p>
+  <p>Setext-style headers can be imported but get exported as Atx-style.DocumentMdConverter</p>
   <sec>
     <title>Heading 2.1</title>
   </sec>
