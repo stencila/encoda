@@ -1,0 +1,23 @@
+<sec>
+  <title>Heading 1</title>
+  <p>Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6</p>
+  <sec>
+    <title>Heading 1.1</title>
+    <sec>
+      <title>Heading 1.1.1</title>
+      <sec>
+        <title>Heading 1.1.1.1</title>
+        <sec>
+          <title>Heading 1.1.1.1.1</title>
+        </sec>
+      </sec>
+    </sec>
+  </sec>
+</sec>
+<sec>
+  <title>Heading 2</title>
+  <p>Setext-style headers are “underlined” using equal signs (for first-level headers) and dashes (for second-level headers).</p>
+  <sec>
+    <title>Heading 2.1</title>
+  </sec>
+</sec>

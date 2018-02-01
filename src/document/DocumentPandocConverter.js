@@ -11,19 +11,27 @@ class DocumentPandocConverter extends DocumentConverter {
     return 'jats'
   }
 
+  pandocImportFormat () {
+    return this.pandocFormat()
+  }
+
   pandocImportArgs (options) {
     return [
-      '--from', this.pandocFormat(),
+      '--from', this.pandocImportFormat(),
       '--to', 'jats',
       // Writer options
       '--wrap', 'none' // Don't wrap text (shouldn't anyway for JATS, but older versions of Pandoc did)
     ]
   }
 
+  pandocExportFormat () {
+    return this.pandocFormat()
+  }
+
   pandocExportArgs (options) {
     return [
       '--from', 'jats',
-      '--to', this.pandocFormat(),
+      '--to', this.pandocExportFormat(),
       // Writer options
       '--eol', options.eol || 'native' // Line endings : --eol=crlf|lf|native
     ]

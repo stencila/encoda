@@ -2,7 +2,7 @@ const DocumentMdConverter = require('../../src/document/DocumentMdConverter')
 const helpers = require('../helpers')
 
 const converter = new DocumentMdConverter()
-const { testLoad, testImport } = helpers(converter, 'document')
+const { testLoad, testImport, testExport } = helpers(converter, 'document')
 
 testLoad(
 'DocumentMdConverter.load paragraphs',
@@ -129,4 +129,8 @@ Caption
 { eol: 'lf' }
 )
 
-testImport('paragraph/md/paragraph.md', 'paragraph/stencila/paragraph.jats.xml')
+testImport('paragraph/md/paragraph-import.md', 'paragraph/stencila/paragraph.jats.xml')
+testExport('paragraph/stencila/paragraph.jats.xml', 'paragraph/md/paragraph-export.md')
+
+testImport('heading/md/heading-import.md', 'heading/stencila/heading.jats.xml')
+testExport('heading/stencila/heading.jats.xml', 'heading/md/heading-export.md')

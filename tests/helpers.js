@@ -4,7 +4,32 @@ const path = require('path')
 const tmp = require('tmp')
 const test = require('tape')
 
+// Test file contents are the same
 function testImportExport (converter, type, name, which, from, expected) {
+  test(name + '.' + which + ' ' + from, (assert) => {
+    const pathFrom = path.join(__dirname, type, 'fixtures', from)
+    fs.accessSync(pathFrom)
+
+    const pathExpected = path.join(__dirname, type, 'fixtures', expected)
+    fs.accessSync(pathExpected)
+
+    const pathTo = path.join(tmp.dirSync().name, path.basename(expected))
+
+    converter[which](pathFrom, pathTo).then((result) => {
+      const expected = fs.readFileSync(pathExpected).toString().trim()
+      const actual = fs.readFileSync(pathTo).toString().trim()
+      if (expected.length < 100) assert.equal(actual, expected)
+      else assert.ok(actual === expected, `${pathTo} == ${pathExpected}`)
+      assert.end()
+    }).catch((error) => {
+      assert.fail(error.message)
+      assert.end()
+    })
+  })
+}
+
+// Test file list and file contents are the same
+function testDirImportExport (converter, type, name, which, from, expected) {
   test(name + '.' + which + ' ' + from, (assert) => {
     const pathFrom = path.join(__dirname, type, 'fixtures', from)
     fs.accessSync(pathFrom)
