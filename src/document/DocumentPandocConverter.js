@@ -14,7 +14,9 @@ class DocumentPandocConverter extends DocumentConverter {
   pandocImportArgs (options) {
     return [
       '--from', this.pandocFormat(),
-      '--to', 'jats'
+      '--to', 'jats',
+      // Writer options
+      '--wrap', 'none' // Don't wrap text (shouldn't anyway for JATS, but older versions of Pandoc did)
     ]
   }
 
@@ -22,8 +24,8 @@ class DocumentPandocConverter extends DocumentConverter {
     return [
       '--from', 'jats',
       '--to', this.pandocFormat(),
-      // Line endings : --eol=crlf|lf|native
-      '--eol', options.eol || 'native'
+      // Writer options
+      '--eol', options.eol || 'native' // Line endings : --eol=crlf|lf|native
     ]
   }
 

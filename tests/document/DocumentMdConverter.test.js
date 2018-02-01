@@ -11,12 +11,8 @@ Paragraph 1
 
 Paragraph 2
 `,
-`<p>
-  Paragraph 1
-</p>
-<p>
-  Paragraph 2
-</p>
+`<p>Paragraph 1</p>
+<p>Paragraph 2</p>
 `,
 { eol: 'lf' }
 )
@@ -31,9 +27,7 @@ Paragraph
 `,
 `<sec>
   <title>Heading</title>
-  <p>
-    Paragraph
-  </p>
+  <p>Paragraph</p>
 </sec>
 `,
 { eol: 'lf' }
@@ -54,9 +48,7 @@ Paragraph
   <title>Heading 1</title>
   <sec>
     <title>Heading 2</title>
-    <p>
-      Paragraph
-    </p>
+    <p>Paragraph</p>
   </sec>
 </sec>
 `,
@@ -68,9 +60,7 @@ testLoad(
 `
 [link](https://stenci.la/)
 `,
-`<p>
-  <ext-link ext-link-type="uri" xlink:href="https://stenci.la/">link</ext-link>
-</p>
+`<p><ext-link ext-link-type="uri" xlink:href="https://stenci.la/">link</ext-link></p>
 `,
 { eol: 'lf' }
 )
@@ -91,9 +81,7 @@ Caption
 `<fig id="fig">
   <caption>
     <title>Title</title>
-    <p>
-      Caption
-    </p>
+    <p>Caption</p>
   </caption>
   <graphic mimetype="image" mime-subtype="jpeg" xlink:href="fig.jpg" />
 </fig>
@@ -118,39 +106,21 @@ Caption
 `<table-wrap id="table">
   <caption>
     <title>Title</title>
-    <p>
-      Caption
-    </p>
+    <p>Caption</p>
   </caption>
   <table>
     <col align="left" />
     <col align="left" />
     <thead>
       <tr>
-        <th>
-          <p>
-            <bold role="strong">Col1</bold>
-          </p>
-        </th>
-        <th>
-          <p>
-            <bold role="strong">Col2</bold>
-          </p>
-        </th>
+        <th><bold role="strong">Col1</bold></th>
+        <th><bold role="strong">Col2</bold></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
-          <p>
-            Val1
-          </p>
-        </td>
-        <td>
-          <p>
-            Val2
-          </p>
-        </td>
+        <td>Val1</td>
+        <td>Val2</td>
       </tr>
     </tbody>
   </table>
