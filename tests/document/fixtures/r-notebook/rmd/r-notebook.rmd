@@ -1,0 +1,11 @@
+A plain RMarkdown cell:
+
+```{r}
+paste("Hello world, this is", R.version.string, "and it's", date(), "!")
+```
+
+Figure captions should be translated to/from the RMarkdown fig.caption option:
+
+```{r fig.width=7,fig.height=6,fig.cap="Figure caption"}
+hist(rnorm(min(1000, 1e5)), breaks=40, col=hsv(0.6, 0.9, 1), xlab="Value", main="")
+```
