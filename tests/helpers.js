@@ -33,7 +33,7 @@ function testImportExport (converter, type, name, which, from, expected, options
 }
 
 // Test file list and file contents are the same
-function testDirImportExport (converter, type, name, which, from, expected, options = {}) {
+function testDirImportExport (converter, type, name, which, from, expected, options = {}) { // eslint-disable-line
   test(name + '.' + which + ' ' + from, (assert) => {
     const pathFrom = path.join(__dirname, type, 'fixtures', from)
     fs.accessSync(pathFrom)

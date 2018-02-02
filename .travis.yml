@@ -2,7 +2,8 @@ language: node_js
 
 os:
   - linux
-  - osx
+  # Temporarily disable OSX builds until newer Pandoc binary available
+  #- osx
 
 node_js:
   - 8
