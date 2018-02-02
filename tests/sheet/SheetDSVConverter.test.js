@@ -9,7 +9,7 @@ testCanImport(
   ['data.foo', 'data.xlsx']
 )
 
-testImport('simple/csv/simple.csv', 'simple/stencila/simple.sheet.xml', { header: false })
-testImport('simple/tsv/simple.tsv', 'simple/stencila/simple.sheet.xml', { header: false })
+testImport('simple/csv/simple.csv', 'simple/dar/simple.sheet.xml', { header: false })
+testImport('simple/tsv/simple.tsv', 'simple/dar/simple.sheet.xml', { header: false })
 
-testExport('simple/stencila/simple.sheet.xml', 'simple/csv/simple.csv')
+testExport('simple/dar/simple.sheet.xml', 'simple/csv/simple.csv')

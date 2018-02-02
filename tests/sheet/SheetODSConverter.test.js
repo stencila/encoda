@@ -9,4 +9,4 @@ testCanImport(
   ['data.foo', 'data.csv']
 )
 
-testImport('simple/ods/simple.ods', 'simple/stencila/simple.sheet.xml')
+testImport('simple/ods/simple.ods', 'simple/dar/simple.sheet.xml')
