@@ -1,0 +1,22 @@
+<table-wrap id="table">
+  <caption>
+    <title>Title</title>
+    <p>Caption</p>
+  </caption>
+  <table>
+    <col align="left" />
+    <col align="left" />
+    <thead>
+      <tr>
+        <th><bold role="strong">Col1</bold></th>
+        <th><bold role="strong">Col2</bold></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Val1</td>
+        <td>Val2</td>
+      </tr>
+    </tbody>
+  </table>
+</table-wrap>

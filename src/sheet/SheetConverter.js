@@ -22,7 +22,7 @@ class SheetConverter extends Converter {
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
-    return Promise.resolve().then((content) => {
+    return Promise.resolve().then(() => {
       // The `xlsx` library seems to work best reading from file (rather than parsing data)
       // so for now only support local files
       if (volumeFrom !== fs) throw new Error('Only able to read from a local file system volume')

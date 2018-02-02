@@ -1,4 +1,4 @@
 coverage
 .nyc_output
 node_modules
-tests/**/*.out
+tests/**/*-out.*

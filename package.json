@@ -11,7 +11,7 @@
     "test-one": "tape",
     "test-diffs": "npm test | tap-difflet",
     "cover": "nyc --reporter=lcov --reporter=text npm test",
-    "clean": "rimraf coverage && rimraf tests/**/*.out"
+    "clean": "rimraf coverage && rimraf tests/**/*-out.*"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",

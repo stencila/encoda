@@ -13,13 +13,17 @@ function testImportExport (converter, type, name, which, from, expected, options
     const pathExpected = path.join(__dirname, type, 'fixtures', expected)
     fs.accessSync(pathExpected)
 
-    const pathTo = path.join(__dirname, type, 'fixtures', expected + '.out')
+    // Insert `-out.` into the output file name to distinguish it while
+    // still maintaining the correct extension
+    let match = path.basename(expected).match(/^([^.]+)\.(.+)$/)
+    const pathTo = path.join(__dirname, type, 'fixtures', path.dirname(expected), `${match[1]}-out.${match[2]}`)
 
     converter[which](pathFrom, pathTo, fs, fs, options).then((result) => {
       const expectedString = fs.readFileSync(pathExpected).toString().trim()
       const actualString = fs.readFileSync(pathTo).toString().trim()
-      if (expected.length < 100) assert.equal(actualString, expectedString)
-      else assert.ok(actualString === expectedString, `${type}/fixtures/${expected}.out == ${type}/fixtures/${expected}`)
+      const message = `${type}/fixtures/${expected}`
+      if (expected.length < 100) assert.equal(actualString, expectedString, message)
+      else assert.ok(actualString === expectedString, message)
       assert.end()
     }).catch((error) => {
       assert.fail(error.message)
