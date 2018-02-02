@@ -5,7 +5,7 @@ const tmp = require('tmp')
 const test = require('tape')
 
 // Test file contents are the same
-function testImportExport (converter, type, name, which, from, expected) {
+function testImportExport (converter, type, name, which, from, expected, options = {}) {
   test(name + '.' + which + ' ' + from, (assert) => {
     const pathFrom = path.join(__dirname, type, 'fixtures', from)
     fs.accessSync(pathFrom)
@@ -13,13 +13,13 @@ function testImportExport (converter, type, name, which, from, expected) {
     const pathExpected = path.join(__dirname, type, 'fixtures', expected)
     fs.accessSync(pathExpected)
 
-    const pathTo = path.join(tmp.dirSync().name, path.basename(expected))
+    const pathTo = path.join(__dirname, type, 'fixtures', expected + '.out')
 
-    converter[which](pathFrom, pathTo).then((result) => {
-      const expected = fs.readFileSync(pathExpected).toString().trim()
-      const actual = fs.readFileSync(pathTo).toString().trim()
-      if (expected.length < 100) assert.equal(actual, expected)
-      else assert.ok(actual === expected, `${pathTo} == ${pathExpected}`)
+    converter[which](pathFrom, pathTo, fs, fs, options).then((result) => {
+      const expectedString = fs.readFileSync(pathExpected).toString().trim()
+      const actualString = fs.readFileSync(pathTo).toString().trim()
+      if (expected.length < 100) assert.equal(actualString, expectedString)
+      else assert.ok(actualString === expectedString, `${type}/fixtures/${expected}.out == ${type}/fixtures/${expected}`)
       assert.end()
     }).catch((error) => {
       assert.fail(error.message)
@@ -29,7 +29,7 @@ function testImportExport (converter, type, name, which, from, expected) {
 }
 
 // Test file list and file contents are the same
-function testDirImportExport (converter, type, name, which, from, expected) {
+function testDirImportExport (converter, type, name, which, from, expected, options = {}) {
   test(name + '.' + which + ' ' + from, (assert) => {
     const pathFrom = path.join(__dirname, type, 'fixtures', from)
     fs.accessSync(pathFrom)
@@ -41,7 +41,7 @@ function testDirImportExport (converter, type, name, which, from, expected) {
     const pathTo = path.join(tmp.dirSync().name, path.basename(expected))
     const dirTo = path.dirname(pathTo)
 
-    converter[which](pathFrom, pathTo).then((result) => {
+    converter[which](pathFrom, pathTo, fs, fs, options).then((result) => {
       glob(dirExpected + '/**/*', (err, filesExpected) => {
         if (err) assert.fail(err.message)
         glob(dirTo + '/**/*', (err, filesActual) => {
@@ -112,12 +112,12 @@ function helpers (converter, type) {
       })
     },
 
-    testImport: function (from, expected) {
-      testImportExport(converter, type, name, 'import', from, expected)
+    testImport: function (from, expected, options = {}) {
+      testImportExport(converter, type, name, 'import', from, expected, options)
     },
 
-    testExport: function (from, expected) {
-      testImportExport(converter, type, name, 'export', from, expected)
+    testExport: function (from, expected, options = {}) {
+      testImportExport(converter, type, name, 'export', from, expected, options)
     },
 
     testLoad: function (name, content, expected, options = {}) {

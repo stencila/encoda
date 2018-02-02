@@ -1,6 +1,6 @@
-const DocumentMdConverter = require('./DocumentMdConverter')
+const DocumentXmdConverter = require('./DocumentXmdConverter')
 
-class DocumentRmdConverter extends DocumentMdConverter {
+class DocumentRmdConverter extends DocumentXmdConverter {
   extensions () {
     return ['rmd']
   }
