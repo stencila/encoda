@@ -13,9 +13,7 @@ $endif$
   <body>
 $body$
   </body>
-  <back>
-$if(back)$
+  <back>$if(back)$
 $back$
-$endif$
-</back>
+$endif$</back>
 </article>

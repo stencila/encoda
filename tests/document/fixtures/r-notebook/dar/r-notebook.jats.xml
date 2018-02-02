@@ -6,12 +6,12 @@
     </article-meta>
   </front>
   <body>
-    <p>A plain RMarkdown cell:</p>
-    <code language="r script">#!
-    paste(&quot;Hello world, this is&quot;, R.version.string, &quot;and it's&quot;, date(), &quot;!&quot;)</code>
-    <p>Figure captions should be translated to/from the RMarkdown fig.caption option:</p>
-    <code language="r script">#! fig.width=7,fig.height=6,fig.cap=&quot;Figure caption&quot;
-    hist(rnorm(min(1000, 1e5)), breaks=40, col=hsv(0.6, 0.9, 1), xlab=&quot;Value&quot;, main=&quot;&quot;)</code>
+<p>A plain RMarkdown cell:</p>
+<code language="r script">#!
+paste(&quot;Hello world, this is&quot;, R.version.string, &quot;and it's&quot;, date(), &quot;!&quot;)</code>
+<p>Figure captions should be translated to/from the RMarkdown fig.caption option:</p>
+<code language="r script">#! fig.width=7,fig.height=6,fig.cap=&quot;Figure caption&quot;
+hist(rnorm(min(1000, 1e5)), breaks=40, col=hsv(0.6, 0.9, 1), xlab=&quot;Value&quot;, main=&quot;&quot;)</code>
   </body>
   <back></back>
 </article>
