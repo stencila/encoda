@@ -1,0 +1,6 @@
+{
+  "version": ">=2.1.1",
+  "linux": "https://github.com/stencila/pandoc/releases/download/2.1.1-stencila1/pandoc-linux.tar.gz",
+  "macos": "https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-macOS.zip",
+  "windows": "https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-windows.zip"
+}

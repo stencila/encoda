@@ -4,13 +4,15 @@ const fs = require('fs')
 const path = require('path')
 const childProcess = require('child_process')
 
+const binary = require('./pandoc.json')
+
 const pandoc = new BinWrapper()
   // Semver requirement for Pandoc
-  .version('>=2.1.1')
+  .version(binary.version)
   // Sources for downloaded binaries (if necessary)
-  .src('https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz', 'linux', 'x64')
-  .src('https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-macOS.zip', 'darwin')
-  .src('https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-windows.zip', 'win32')
+  .src(binary.linux, 'linux', 'x64')
+  .src(binary.macos, 'darwin')
+  .src(binary.windows, 'win32')
   .dest((function () {
     // Destination for downloaded binaries (if necessary)
     switch (process.platform) {

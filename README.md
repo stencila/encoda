@@ -23,8 +23,11 @@ But you can also use this package directly e.g.
 
 ```bash
 npm install stencila-convert -g
-stencila-convert document.md document.jats
+stencila-convert import document.md document.jats.xml
 ```
+
+Many of the `Document` converters rely on a recent version of Pandoc. This package will use an existing installation of Pandoc if it is new enough. If not, it will automatically download the required Pandoc version to the Stencila directory in your home folder. See [`pandoc.json`](src/helpers/pandoc.json) for the necessary Pandoc version and download URLs. At times it may be necessary to use our custom Pandoc build available at https://github.com/stencila/pandoc/releases.
+
 
 ### Status
 
