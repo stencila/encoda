@@ -1,0 +1,5 @@
+Dockerfile
+coverage
+.nyc_output
+node_modules
+tests/**/*-out.*

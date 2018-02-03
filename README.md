@@ -93,3 +93,10 @@ Or, manually test conversion using the bin script:
 ```bash
 ./bin/stencila-convert.js tests/document/fixtures/paragraph/md/paragraph.md temp.pdf
 ```
+
+You can also test using Docker (e.g. so you can test under Linux):
+
+```bash
+docker build --tag stencila/convert .
+docker run stencila/convert
+```
