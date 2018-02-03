@@ -39,7 +39,7 @@ binVersionCheck('pandoc', pandoc.version()).then(() => {
   binVersionCheck(pandoc.path(), pandoc.version()).then(() => {
     // console.info('ℹ Local Pandoc is OK: ' + pandoc.path())
   }).catch(() => {
-    console.info('ℹ Local Pandoc needs upgrading: ' + pandoc.path())
+    console.info('ℹ About to download Pandoc ' + binary.version + ' to: ' + pandoc.path())
     fs.unlink(pandoc.path(), function () {
       console.log('⧗ Downloading Pandoc (this could take some time).')
       pandoc.run(['--version'], function (err) {
