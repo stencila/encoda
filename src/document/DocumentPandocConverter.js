@@ -1,4 +1,6 @@
+const cheerio = require('cheerio')
 const fs = require('fs')
+const memfs = require('memfs')
 const mkdirp = require('mkdirp')
 const path = require('path')
 const tmp = require('tmp')
@@ -67,13 +69,36 @@ class DocumentPandocConverter extends DocumentConverter {
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
-    return this._convert(pathFrom, pathTo, volumeFrom, volumeTo, this.pandocImportArgs(options))
-    // TODO get Pandoc JATS and modify as needed:
-    //  wrap shebanged code cells:
-    //    <code language="r script">#!
-    //  in to:
-    //    <code specific-use="cell"><named-content><alternatives>
-    //      <code specific-use="source" language="r">
+    const volumeTemp = new memfs.Volume()
+    return this._convert(pathFrom, '/temp.jats', volumeFrom, volumeTemp, this.pandocImportArgs(options)).then(() => {
+      return this.readXml('/temp.jats', volumeTemp)
+    }).then((dom) => {
+      // Convert `<code>` elements with `executable="yes"` to cells e.g.
+      //   <code language="python" executable="yes">...</code>
+      // To JATS4M cells
+      //   <code specific-use="cell"><named-content><alternatives>
+      //     <code specific-use="source" language="python" executable="yes">...</code>
+      //     <code specific-use="output" language="json"></code>
+      //   </code>
+      dom('code[language][executable=yes]').each((index, elem) => {
+        let code = cheerio(elem)
+        // Pandoc does some transformation of language codes (e.g. `py` -> `python`, `r` -> `r script`)
+        // So normalise to the codes that Stencila uses
+        let language = code.attr('language')
+        language = {
+          'r script': 'r',
+          'python': 'py'
+        }[language] || language
+        let cell = cheerio(`<code specific-use="cell"><named-content><alternatives>
+          <code specific-use="source" language="${language}" executable="yes">${code.text()}</code>
+          <code specific-use="output" language="json">{}</code>
+        </code>`)
+        code.replaceWith(cell)
+      })
+      return this.writeXml(pathTo, dom, volumeTo, {
+        tagsContentUnformatted: ['preformat', 'code']
+      })
+    })
   }
 
   export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {

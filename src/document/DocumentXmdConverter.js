@@ -33,14 +33,6 @@ Here ``myplot`` is the chunk label and ```fig.width=6, fig.height=7``` are chunk
 A list of chunk options, recognised by the RMarkdown rendering enging, Knitr,
 is available at http://yihui.name/knitr/options/.
 
-For RMarkdown documents, to maintain compatability with Knitr, options are converted to
-Stencila execute directive settings as follows
-
-- eval=FALSE : do FALSE
-- echo=TRUE : show TRUE
-- fig.height=6 : height 6
-- fig.width=7 : width 7
-
 **/
 class DocumentXmdConverter extends DocumentMdConverter {
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
@@ -48,24 +40,27 @@ class DocumentXmdConverter extends DocumentMdConverter {
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
-    // Preprocess XMarkdown to Markdown (with hashbanged code blocks)
+    // Preprocess XMarkdown to Markdown
     return this.readFile(pathFrom, volumeFrom).then((xmd) => {
       let md = ''
       for (let line of xmd.split('\n')) {
         let match = line.match(/^```\s*{([a-z]+)\s*(.*)}/)
         if (match) {
           let language = match[1]
-          md += '```' + language + '\n'
-          md += `${this._comment(language)}!${match[2] ? ' ' + match[2] : ''}\n`
+          // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
+          // to store language and indicate an executable cell
+          md += '``` {.' + language + ' executable="yes"}\n'
+          // Cell options as a comment line
+          if (match[2]) md += `${this._comment(language)}: ${match[2]}\n`
         } else {
           md += line + '\n'
         }
       }
-      const pathTemp = 'temp'
+      console.log(md)
       const volumeTemp = new memfs.Volume()
-      return this.writeFile(pathTemp, md, volumeTemp).then(() => {
+      return this.writeFile('/temp.md', md, volumeTemp).then(() => {
         // Continue with normal Markdown import
-        return super.import(pathTemp, pathTo, volumeTemp, volumeTo, options)
+        return super.import('/temp.md', pathTo, volumeTemp, volumeTo, options)
       })
     })
   }
