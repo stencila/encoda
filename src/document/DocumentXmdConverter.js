@@ -50,7 +50,7 @@ class DocumentXmdConverter extends DocumentMdConverter {
           let language = match[1]
           let options = match[2]
 
-          // If this the chunk has the `fig.cap` option then create a 
+          // If this the chunk has the `fig.cap` option then create a
           // .fig > .caption > .h1 using markdown syntax
           fig = match[2] && match[2].match(/fig\.cap="([^"]*)"/)
           if (fig) {
@@ -80,7 +80,7 @@ class DocumentXmdConverter extends DocumentMdConverter {
           md += line + '\n'
         }
       }
-      
+
       const volumeTemp = new memfs.Volume()
       return this.writeFile('/temp.md', md, volumeTemp).then(() => {
         // Continue with normal Markdown import
