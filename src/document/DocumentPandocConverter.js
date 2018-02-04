@@ -106,6 +106,7 @@ class DocumentPandocConverter extends DocumentConverter {
         code.replaceWith(cell)
       })
       return this.writeXml(pathTo, dom, volumeTo, {
+        tagsUnformatted: ['bold', 'italic', 'ext-link'],
         tagsContentUnformatted: ['preformat', 'code']
       })
     })

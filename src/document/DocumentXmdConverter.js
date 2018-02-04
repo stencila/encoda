@@ -80,7 +80,7 @@ class DocumentXmdConverter extends DocumentMdConverter {
           md += line + '\n'
         }
       }
-      console.log(md)
+      
       const volumeTemp = new memfs.Volume()
       return this.writeFile('/temp.md', md, volumeTemp).then(() => {
         // Continue with normal Markdown import

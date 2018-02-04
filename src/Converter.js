@@ -112,7 +112,7 @@ class Converter {
         content = beautifyHtml(content, {
           indent_size: 2,
           void_elements: [], // No, 'self-closing', void tags for XML
-          unformatted: ['?xml'], // Format all tags
+          unformatted: ['?xml'].concat(options.tagsUnformatted || []),
           content_unformatted: options.tagsContentUnformatted || []
         })
       }
