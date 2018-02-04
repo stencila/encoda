@@ -79,7 +79,7 @@ class DocumentPandocConverter extends DocumentConverter {
       //   <code specific-use="cell"><named-content><alternatives>
       //     <code specific-use="source" language="python" executable="yes">...</code>
       //     <code specific-use="output" language="json"></code>
-      //   </code>
+      //   </alternatives></named-content></code>
       dom('code[language][executable=yes]').each((index, elem) => {
         let code = cheerio(elem)
         // Pandoc does some transformation of language codes (e.g. `py` -> `python`, `r` -> `r script`)
@@ -89,10 +89,20 @@ class DocumentPandocConverter extends DocumentConverter {
           'r script': 'r',
           'python': 'py'
         }[language] || language
-        let cell = cheerio(`<code specific-use="cell"><named-content><alternatives>
+
+        let cell = `<alternatives>
           <code specific-use="source" language="${language}" executable="yes">${code.text()}</code>
           <code specific-use="output" language="json">{}</code>
-        </code>`)
+        </alternatives>`
+        let parent = code.parent()
+        if (parent.is('fig')) {
+          parent.attr('fig-type', 'repro-fig')
+          // Currently, a non empty paragraph is necessary within a figure caption
+          let caption = parent.find('caption')
+          if (!caption.find('p').length) caption.append('<p>_</p>')
+        } else {
+          cell = `<code specific-use="cell"><named-content>${cell}</code>`
+        }
         code.replaceWith(cell)
       })
       return this.writeXml(pathTo, dom, volumeTo, {

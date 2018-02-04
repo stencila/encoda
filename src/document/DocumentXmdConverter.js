@@ -43,15 +43,39 @@ class DocumentXmdConverter extends DocumentMdConverter {
     // Preprocess XMarkdown to Markdown
     return this.readFile(pathFrom, volumeFrom).then((xmd) => {
       let md = ''
+      let fig
       for (let line of xmd.split('\n')) {
-        let match = line.match(/^```\s*{([a-z]+)\s*(.*)}/)
+        let match = line.match(/^```\s*{([a-z]+)\s*([^}]*)}/)
         if (match) {
           let language = match[1]
+          let options = match[2]
+
+          // If this the chunk has the `fig.cap` option then create a 
+          // .fig > .caption > .h1 using markdown syntax
+          fig = match[2] && match[2].match(/fig\.cap="([^"]*)"/)
+          if (fig) {
+            // Create wrapping `div.fig` and `div.caption h1`
+            const title = fig[1]
+            md += `::: {.fig}\n::: {.caption}\n# ${title}\n:::\n`
+            // Remove fig.cap from cell options
+            options = options.replace(fig[0], '')
+            if (options.slice(-1) === ',') options = options.slice(0, -1)
+          }
+
           // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
           // to store language and indicate an executable cell
           md += '``` {.' + language + ' executable="yes"}\n'
-          // Cell options as a comment line
-          if (match[2]) md += `${this._comment(language)}: ${match[2]}\n`
+          if (options) {
+            // Cell options as a comment line
+            md += `${this._comment(language)}: ${options}\n`
+          }
+        } else if (line.match(/^```/)) {
+          md += '```\n'
+          // Terminate the figure if currently in one
+          if (fig) {
+            md += `:::\n`
+            fig = null
+          }
         } else {
           md += line + '\n'
         }
