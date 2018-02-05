@@ -37,9 +37,9 @@ Format          | Import                                                        
 --------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
 **Documents**   |                                                                  |
 Markdown        |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-RMarkdown       |                                                                  |
+RMarkdown       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 Latex           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-JupyterNotebook |                                                                  |
+Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 **Sheets**      |                                                                  |
@@ -49,7 +49,7 @@ Tabular Data Package |                                                          
 Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 **Functions**   |                                                                  |
-JsDoc           | ![alpha](https://img.shields.io/badge/status-alpha-red.svg)      |
+JsDoc           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 
 
 ### Develop
