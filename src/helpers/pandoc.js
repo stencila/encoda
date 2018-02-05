@@ -28,50 +28,68 @@ const pandoc = new BinWrapper()
   }()))
   .use(process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc')
 
-// Check that an acceptable version of Pandoc is available on PATH
-binVersionCheck('pandoc', pandoc.version()).then(() => {
-  // Use global Pandoc by setting `pandoc.path()` to 'pandoc'
-  // console.info('ℹ Global Pandoc is OK')
-  pandoc.dest('')
-  pandoc.use('pandoc')
-}).catch(() => {
-  // Global pandoc is not available/acceptable, check local Pandoc
-  binVersionCheck(pandoc.path(), pandoc.version()).then(() => {
-    // console.info('ℹ Local Pandoc is OK: ' + pandoc.path())
-  }).catch(() => {
-    console.info('ℹ About to download Pandoc ' + binary.version + ' to: ' + pandoc.path())
-    fs.unlink(pandoc.path(), function () {
-      console.log('⧗ Downloading Pandoc (this could take some time).')
-      pandoc.run(['--version'], function (err) {
-        if (err) {
-          console.log('✗ Download fail :(')
-        } else {
-          console.log('✓ Download success!')
-        }
+let ready = false
+
+pandoc.get = function () {
+  return new Promise((resolve, reject) => {
+    if (ready) resolve()
+    else {
+      // Check that an acceptable version of Pandoc is available on PATH
+      binVersionCheck('pandoc', pandoc.version()).then(() => {
+        // Use global Pandoc by setting `pandoc.path()` to 'pandoc'
+        // console.info('ℹ Global Pandoc is OK')
+        pandoc.dest('')
+        pandoc.use('pandoc')
+        ready = true
+        resolve()
+      }).catch(() => {
+        // Global pandoc is not available/acceptable, check local Pandoc
+        binVersionCheck(pandoc.path(), pandoc.version()).then(() => {
+          // console.info('ℹ Local Pandoc is OK: ' + pandoc.path())
+          ready = true
+          resolve()
+        }).catch(() => {
+          console.info('ℹ About to download Pandoc ' + binary.version + ' to: ' + pandoc.path())
+          fs.unlink(pandoc.path(), function () {
+            console.log('⧗ Downloading Pandoc (this could take some time).')
+            pandoc.run(['--version'], function (err) {
+              if (err) {
+                console.log('✗ Download fail :(')
+                reject(new Error())
+              } else {
+                console.log('✓ Download success!')
+                ready = true
+                resolve()
+              }
+            })
+          })
+        })
       })
-    })
+    }
   })
-})
+}
 
 pandoc.spawn = function (input, args) {
-  return new Promise((resolve, reject) => {
-    const child = childProcess.spawn(pandoc.path(), args)
-    let stdout = ''
-    child.stdout.on('data', (data) => {
-      stdout += data
+  return pandoc.get().then(() => {
+    return new Promise((resolve, reject) => {
+      const child = childProcess.spawn(pandoc.path(), args)
+      let stdout = ''
+      child.stdout.on('data', (data) => {
+        stdout += data
+      })
+      child.stdout.on('end', () => {
+        resolve(stdout)
+      })
+      child.stderr.on('data', (data) => {
+        reject(new Error(data))
+      })
+      child.on('error', (err) => {
+        reject(err)
+      })
+      child.stdin.setEncoding('utf-8')
+      child.stdin.write(input)
+      child.stdin.end()
     })
-    child.stdout.on('end', () => {
-      resolve(stdout)
-    })
-    child.stderr.on('data', (data) => {
-      reject(new Error(data))
-    })
-    child.on('error', (err) => {
-      reject(err)
-    })
-    child.stdin.setEncoding('utf-8')
-    child.stdin.write(input)
-    child.stdin.end()
   })
 }
 
