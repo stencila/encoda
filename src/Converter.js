@@ -15,7 +15,7 @@ class Converter {
   }
 
   matchExtensions (pathFrom, extensions) {
-    const ext = path.extname(pathFrom).substring(1)
+    const ext = path.extname(pathFrom).substring(1).toLowerCase()
     return Promise.resolve(
       extensions.indexOf(ext) > -1
     )
