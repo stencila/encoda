@@ -9,40 +9,30 @@ let converters = [].concat(
 )
 
 function import_ (pathFrom, pathTo, volumeFrom, volumeTo) {
-  return new Promise((resolve, reject) => {
+  return Promise.resolve().then(() => {
     function check (index = 0) {
       const Converter = converters[index]
-      if (!Converter) return reject(new Error('No converters can import from ' + pathFrom))
+      if (!Converter) throw new Error('No converters can import from ' + pathFrom)
       let converter = new Converter()
-      converter.canImport(pathFrom, volumeFrom).then((can) => {
-        if (!can) check(index + 1)
-        else {
-          converter.import(pathFrom, pathTo, volumeFrom, volumeTo).then((result) => {
-            resolve(result)
-          })
-        }
+      return converter.canImport(pathFrom, volumeFrom).then((can) => {
+        return can ? converter.import(pathFrom, pathTo, volumeFrom, volumeTo) : check(index + 1)
       })
     }
-    check()
+    return check()
   })
 }
 
 function export_ (pathFrom, pathTo, volumeFrom, volumeTo) {
-  return new Promise((resolve, reject) => {
+  return Promise.resolve().then(() => {
     function check (index = 0) {
       const Converter = converters[index]
-      if (!Converter) return reject(new Error('No converters can export to ' + pathTo))
+      if (!Converter) throw new Error('No converters can export from ' + pathFrom)
       let converter = new Converter()
-      converter.canExport(pathTo, volumeTo).then((can) => {
-        if (!can) check(index + 1)
-        else {
-          converter.export(pathFrom, pathTo, volumeFrom, volumeTo).then((result) => {
-            resolve(result)
-          })
-        }
+      return converter.canexport(pathFrom, volumeFrom).then((can) => {
+        return can ? converter.export(pathFrom, pathTo, volumeFrom, volumeTo) : check(index + 1)
       })
     }
-    check()
+    return check()
   })
 }
 

@@ -17,5 +17,5 @@ if (!pathTo || !pathFrom) {
 convert[operation](pathFrom, pathTo).then(() => {
   console.log(`Success: ${operation} from "${pathFrom}" to "${pathTo}"`)
 }).catch((error) => {
-  console.error(`Error: ${error}`)
+  console.error(error.stack)
 })
