@@ -56,9 +56,21 @@ class SheetConverter extends Converter {
             const ref = xlsx.utils.encode_cell({r: r, c: c})
             const cell = worksheet[ref]
             if (cell) {
-              row.append(
-                dom('<cell>').text(cell.v)
-              )
+              let cellEl = dom('<cell>')
+              if (cell.f) {
+                let formula = cell.f
+                let language = 'mini'
+                let match = cell.f.match(/^(r|py)\b(.*)/)
+                if (match) {
+                  formula = match[2]
+                  language = match[1]
+                }
+                cellEl.attr('language', language)
+                cellEl.text('=' + formula)
+              } else {
+                cellEl.text(cell.v)
+              }
+              row.append(cellEl)
             }
           }
           data.append(row)
