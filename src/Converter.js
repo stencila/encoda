@@ -21,11 +21,11 @@ class Converter {
     )
   }
 
-  canImport (pathFrom) {
+  canImport (pathFrom, volumeFrom) {
     return this.matchExtensions(pathFrom, this.extensions())
   }
 
-  canExport (pathTo) {
+  canExport (pathTo, volumeTo) {
     return this.matchExtensions(pathTo, this.extensions())
   }
 
@@ -98,9 +98,13 @@ class Converter {
   }
 
   loadXml (xml) {
-    return Promise.resolve(
-      cheerio.load(xml, {xmlMode: true})
-    )
+    return Promise.resolve().then(() => {
+      // Remove any XML declaration as it interfers
+      // with indenting (but add it back on dumpXml)
+      let match = xml.match(/<\?xml[^>]+>/)
+      if (match) xml = xml.replace(match[0], '')
+      return cheerio.load(xml, {xmlMode: true})
+    })
   }
 
   dumpXml (dom, options = {}) {
@@ -112,10 +116,11 @@ class Converter {
         content = beautifyHtml(content, {
           indent_size: 2,
           void_elements: [], // No, 'self-closing', void tags for XML
-          unformatted: ['?xml'].concat(options.tagsUnformatted || []),
+          unformatted: [].concat(options.tagsUnformatted || []),
           content_unformatted: options.tagsContentUnformatted || []
         })
       }
+      if (options.declaration) content = '<?xml version="1.0" encoding="UTF-8"?>\n' + content
       return resolve(content)
     })
   }

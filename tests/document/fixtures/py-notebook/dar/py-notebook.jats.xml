@@ -5,29 +5,34 @@
     <article-meta>
     </article-meta>
   </front>
+
   <body>
-<sec>
-  <title>Heading 1</title>
-  <p>A cell:</p>
-  <code specific-use="cell"><named-content><alternatives>
+    <sec>
+      <title>Heading 1</title>
+      <p>A cell:</p>
+      <code specific-use="cell"><named-content><alternatives>
           <code specific-use="source" language="py" executable="yes">greeting = &quot;Hello from Python&quot;
 greeting</code>
-          <code specific-use="output" language="json">{}</code>
-        </alternatives></named-content></code>
-  <p>A paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <sec>
-    <title>Heading 2</title>
-    <p>Another cell, using the variable <monospace>greeting</monospace> set above:</p>
-    <code specific-use="cell"><named-content><alternatives>
+      <code specific-use="output" language="json">{}</code>
+      </alternatives>
+      </named-content>
+      </code>
+      <p>A paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <sec>
+        <title>Heading 2</title>
+        <p>Another cell, using the variable <monospace>greeting</monospace> set above:</p>
+        <code specific-use="cell"><named-content><alternatives>
           <code specific-use="source" language="py" executable="yes">import sys
 greeting + &apos; &apos; + str(sys.version_info[0])</code>
-          <code specific-use="output" language="json">{}</code>
-        </alternatives></named-content></code>
-    <disp-quote>
-      <p>Blockquote. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </disp-quote>
-  </sec>
-</sec>
+        <code specific-use="output" language="json">{}</code>
+        </alternatives>
+        </named-content>
+        </code>
+        <disp-quote>
+          <p>Blockquote. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </disp-quote>
+      </sec>
+    </sec>
   </body>
   <back/>
 </article>

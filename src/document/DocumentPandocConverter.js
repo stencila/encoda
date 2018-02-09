@@ -65,9 +65,10 @@ class DocumentPandocConverter extends DocumentConverter {
   }
 
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
-    pathTo = pathTo || path.join(tmp.dirSync().name, 'document.jats.xml')
+    pathTo = pathTo || (pathFrom + '.jats.xml')
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
+    if (options.complete !== false) options.complete = true
 
     const volumeTemp = new memfs.Volume()
     return this._convert(pathFrom, '/temp.jats', volumeFrom, volumeTemp, this.pandocImportArgs(options)).then(() => {
@@ -106,8 +107,13 @@ class DocumentPandocConverter extends DocumentConverter {
         code.replaceWith(cell)
       })
       return this.writeXml(pathTo, dom, volumeTo, {
+        declaration: options.complete,
         tagsUnformatted: ['bold', 'italic', 'ext-link'],
-        tagsContentUnformatted: ['preformat', 'code']
+        tagsContentUnformatted: ['p', 'preformat', 'code']
+      }).then(() => {
+        return {
+          pathFrom, pathTo, formatTo: 'application/jats4m'
+        }
       })
     })
   }

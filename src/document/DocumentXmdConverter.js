@@ -36,12 +36,8 @@ is available at http://yihui.name/knitr/options/.
 **/
 class DocumentXmdConverter extends DocumentMdConverter {
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
-    pathTo = pathTo || path.join(tmp.dirSync().name, 'document.jats.xml')
-    volumeFrom = volumeFrom || fs
-    volumeTo = volumeTo || volumeFrom
-
     // Preprocess XMarkdown to Markdown
-    return this.readFile(pathFrom, volumeFrom).then((xmd) => {
+    return this.readFile(pathFrom, volumeFrom || fs).then((xmd) => {
       let md = ''
       let fig
       for (let line of xmd.split('\n')) {
@@ -82,9 +78,11 @@ class DocumentXmdConverter extends DocumentMdConverter {
       }
 
       const volumeTemp = new memfs.Volume()
-      return this.writeFile('/temp.md', md, volumeTemp).then(() => {
+      // Use `pathFrom` here instead of some arbitrary filename (which would be possible)
+      // to retain `pathTo` generation behaviour of `super.import`
+      return this.writeFile(pathFrom, md, volumeTemp).then(() => {
         // Continue with normal Markdown import
-        return super.import('/temp.md', pathTo, volumeTemp, volumeTo, options)
+        return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
       })
     })
   }
