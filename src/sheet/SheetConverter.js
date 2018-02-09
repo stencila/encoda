@@ -6,19 +6,22 @@ const Converter = require('../Converter')
 class SheetConverter extends Converter {
   createDom () {
     return this.loadXml(`
-      <sheet>
-        <meta>
-          <name></name>
-          <title></title>
-          <description></description>
-          <columns></columns>
-        </meta>
-        <data></data>
-      </sheet>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sheet PUBLIC "Stencila Sheet 1.0" "http://stenci.la/Sheet-1.0.dtd">
+<sheet>
+  <meta>
+    <name></name>
+    <title></title>
+    <description></description>
+    <columns></columns>
+  </meta>
+  <data></data>
+</sheet>
     `)
   }
 
-  import (pathFrom, pathTo, volumeFrom, volumeTo) {
+  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    pathTo = pathTo || (pathFrom + '.sheet.xml')
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
@@ -29,25 +32,43 @@ class SheetConverter extends Converter {
       if (volumeTo !== fs) throw new Error('Only able to write to a local file system volume')
 
       const workbook = xlsx.readFile(pathFrom)
-      const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+      const worksheet = workbook.Sheets[workbook.SheetNames[0]] // Currently, only importing first sheet
 
       const cellRange = xlsx.utils.decode_range(worksheet['!ref'])
       return this.createDom().then((dom) => {
+        const columns = dom('columns')
         const data = dom('data')
         for (let r = 0; r <= cellRange.e.r; r++) {
+          if (r === 0) {
+            for (let c = 0; c <= cellRange.e.c; c++) {
+              let column = dom('<col>')
+              if (options.header) {
+                const ref = xlsx.utils.encode_cell({r: r, c: c})
+                const header = worksheet[ref]
+                if (header) column.attr('name', header.v)
+              }
+              columns.append(column)
+            }
+            if (options.header) continue
+          }
           const row = dom('<row>')
           for (let c = 0; c <= cellRange.e.c; c++) {
             const ref = xlsx.utils.encode_cell({r: r, c: c})
             const cell = worksheet[ref]
-            row.append(
-              dom('<cell>').text(cell.v)
-            )
+            if (cell) {
+              row.append(
+                dom('<cell>').text(cell.v)
+              )
+            }
           }
           data.append(row)
         }
 
-        return this.writeXml(pathTo, dom, volumeTo).then(() => {
-          return pathTo
+        return this.writeXml(pathTo, dom, volumeTo, {
+          declaration: true,
+          tagsContentUnformatted: ['cell']
+        }).then(() => {
+          return { pathFrom, pathTo, formatTo: 'application/sheetml' }
         })
       })
     })

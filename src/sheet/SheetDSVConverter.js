@@ -14,6 +14,11 @@ class SheetDSVConverter extends SheetConverter {
   canImport (pathFrom) {
     return this.matchExtensions(pathFrom, ['csv', 'tsv'])
   }
+
+  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    if (options.header !== false) options.header = true
+    return super.import(pathFrom, pathTo, volumeFrom, volumeTo, options)
+  }
 }
 
 module.exports = SheetDSVConverter

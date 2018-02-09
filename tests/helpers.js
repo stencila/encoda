@@ -26,7 +26,7 @@ function testImportExport (converter, type, name, which, from, expected, options
       else assert.ok(actualString === expectedString, message)
       assert.end()
     }).catch((error) => {
-      assert.fail(error.message)
+      assert.fail(error.stack)
       assert.end()
     })
   })

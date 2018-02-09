@@ -13,3 +13,5 @@ testImport('simple/csv/simple.csv', 'simple/dar/simple.sheet.xml', { header: fal
 testImport('simple/tsv/simple.tsv', 'simple/dar/simple.sheet.xml', { header: false })
 
 testExport('simple/dar/simple.sheet.xml', 'simple/csv/simple.csv')
+
+testImport('starwars-people/csv/starwars-people.csv', 'starwars-people/dar/starwars-people.sheet.xml')
