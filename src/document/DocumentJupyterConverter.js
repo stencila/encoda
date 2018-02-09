@@ -68,8 +68,8 @@ class DocumentJupyterConverter extends DocumentMdConverter {
       }
 
       const volumeTemp = new memfs.Volume()
-      return this.writeFile('/temp.md', md, volumeTemp).then(() => {
-        return super.import('/temp.md', pathTo, volumeTemp, volumeTo, options)
+      return this.writeFile(pathFrom, md, volumeTemp).then(() => {
+        return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
       })
     })
   }
