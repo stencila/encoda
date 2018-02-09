@@ -3,7 +3,6 @@ const fs = require('fs')
 const memfs = require('memfs')
 const mkdirp = require('mkdirp')
 const path = require('path')
-const tmp = require('tmp')
 
 const DocumentConverter = require('./DocumentConverter')
 const pandoc = require('../helpers/pandoc')

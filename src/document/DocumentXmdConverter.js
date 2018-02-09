@@ -1,7 +1,5 @@
 const fs = require('fs')
 const memfs = require('memfs')
-const path = require('path')
-const tmp = require('tmp')
 
 const DocumentMdConverter = require('./DocumentMdConverter')
 

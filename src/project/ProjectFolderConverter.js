@@ -1,4 +1,3 @@
-const cheerio = require('cheerio')
 const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
@@ -10,7 +9,6 @@ const ProjectConverter = require('./ProjectConverter')
  * Stencila project.
  */
 class ProjectFolderConverter extends ProjectConverter {
-
   canImport (pathFrom, volumeFrom = fs) {
     return new Promise((resolve, reject) => {
       volumeFrom.lstat(pathFrom, (err, stats) => {
@@ -19,8 +17,8 @@ class ProjectFolderConverter extends ProjectConverter {
       })
     })
   }
-  
-  import(pathFrom, pathTo, volumeFrom = fs, volumeTo = null, options = {}) {
+
+  import (pathFrom, pathTo, volumeFrom = fs, volumeTo = null, options = {}) {
     pathTo = pathTo || pathFrom
     volumeTo = volumeTo || volumeFrom
     options.include = options.include || '*'
