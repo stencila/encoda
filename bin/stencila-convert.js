@@ -6,8 +6,9 @@ const operation = process.argv[2]
 const pathFrom = process.argv[3]
 const pathTo = process.argv[4]
 
-if (!pathTo || !pathFrom) {
-  console.error('Usage:\n\n  stencila-convert [import|export|convert] <from> <to>\n\ne.g.\n')
+if (!pathFrom) {
+  console.error('Usage:\n\n  stencila-convert <import|export|convert> <from> [to]\n\ne.g.\n')
+  console.error('  stencila-convert import folder')
   console.error('  stencila-convert import doc.md doc.jats.xml')
   console.error('  stencila-convert export data.sheet.xml data.csv')
   console.error('  stencila-convert convert doc.md doc.pdf')
