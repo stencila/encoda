@@ -97,9 +97,6 @@ class DocumentPandocConverter extends DocumentConverter {
         let parent = code.parent()
         if (parent.is('fig')) {
           parent.attr('fig-type', 'repro-fig')
-          // Currently, a non empty paragraph is necessary within a figure caption
-          let caption = parent.find('caption')
-          if (!caption.find('p').length) caption.append('<p>_</p>')
         } else {
           cell = `<code specific-use="cell"><named-content>${cell}</code>`
         }
