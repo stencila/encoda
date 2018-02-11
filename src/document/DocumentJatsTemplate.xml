@@ -78,9 +78,9 @@ $if(title)$
 </title-group>
 $endif$
 $if(author)$
-<contrib-group>
+<contrib-group content-type="author">
 $for(author)$
-<contrib contrib-type="author">
+<contrib contrib-type="person">
 $if(author.orcid)$
 <contrib-id contrib-id-type="orcid">$author.orcid$</contrib-id>
 $endif$
@@ -89,7 +89,7 @@ $if(author.surname)$
 <surname>$author.surname$</surname>
 <given-names>$author.given-names$</given-names>
 $else$
-<string-name>$author$</string-name>
+<surname>$author$</surname>
 $endif$
 </name>
 $if(author.email)$
