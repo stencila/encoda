@@ -188,6 +188,7 @@ $if(article.funding-statement)$
 <funding-statement>$article.funding-statement$</funding-statement>
 </funding-group>
 $endif$
+$if(abstract)$<abstract>$abstract$</abstract>$endif$
 </article-meta>
 $if(notes)$
 <notes>$notes$</notes>
