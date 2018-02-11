@@ -1,5 +1,6 @@
 const fs = require('fs')
 const memfs = require('memfs')
+const yaml = require('js-yaml')
 
 const DocumentMdConverter = require('./DocumentMdConverter')
 
@@ -31,6 +32,11 @@ class DocumentJupyterConverter extends DocumentMdConverter {
 
       // Get notebook metadata
       let metadata = data.metadata
+
+      // Convert metadata to YAML front matter
+      md += '---\n'
+      md += yaml.dump(metadata)
+      md += '\n---\n'
 
       // Get notebook language
       let language

@@ -1,3 +1,8 @@
+const fs = require('fs')
+const memfs = require('memfs')
+const yaml = require('js-yaml')
+const yamlFront = require('yaml-front-matter')
+
 const DocumentPandocConverter = require('./DocumentPandocConverter')
 
 class DocumentMdConverter extends DocumentPandocConverter {
@@ -30,6 +35,39 @@ class DocumentMdConverter extends DocumentPandocConverter {
       '--columns=100', // Text wrapping width (for discussion on optimum see https://www.viget.com/articles/the-line-length-misconception/)
       '--atx-headers'  // Use ATX (#) headers
     ])
+  }
+
+  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    // Process any YAML front matter by translating any aliases
+    return this.readFile(pathFrom, volumeFrom || fs).then((md) => {
+      let front = yamlFront.loadFront(md)
+
+      let author = front.author || front.authors
+      if (author) {
+        author = author.map(author => {
+          return {
+            'surname': author['surname'],
+            'given-names': author['given-names'],
+            'aff-id': author['aff-id'] || author['affiliation']
+          }
+        })
+        front.author = author
+        if (front.authors) front.authors = undefined
+      }
+
+      let orgs = front.orgs || front.organisations
+      if (orgs) {
+        front.orgs = orgs
+        if (front.organisations) front.organisations = undefined
+      }
+
+      let mdNew = `---\n${yaml.dump(front)}\n---\n\n${front.__content}`
+
+      const volumeTemp = new memfs.Volume()
+      return this.writeFile(pathFrom, mdNew, volumeTemp).then(() => {
+        return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
+      })
+    })
   }
 }
 

@@ -3,6 +3,30 @@
 <article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
   <front>
     <article-meta>
+      <title-group>
+        <article-title>Test Jupyter Notebook</article-title>
+      </title-group>
+      <contrib-group content-type="author">
+        <contrib contrib-type="person">
+          <name>
+            <surname>Simpson</surname>
+            <given-names>Bart</given-names>
+          </name>
+          <xref ref-type="aff" rid="org-1" />
+          <xref ref-type="aff" rid="org-2" />
+        </contrib>
+      </contrib-group>
+      <aff id="org-1">
+        <institution content-type="orgname">Springfield University</institution>
+        <city>Springfield</city>
+        <country>USA</country>
+      </aff>
+      <aff id="org-2">
+        <institution content-type="orgname">Simpson household</institution>
+        <city>Springfield</city>
+        <country/>
+      </aff>
+      <abstract>The abstract for this document.</abstract>
     </article-meta>
   </front>
 

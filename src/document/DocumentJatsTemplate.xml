@@ -96,7 +96,9 @@ $if(author.email)$
 <email>$author.email$</email>
 $endif$
 $if(author.aff-id)$
-<xref ref-type="aff" rid="aff-$contrib.aff-id$"/>
+$for(author.aff-id)$
+<xref ref-type="aff" rid="$author.aff-id$"/>
+$endfor$
 $endif$
 $if(author.cor-id)$
 <xref ref-type="corresp" rid="cor-$author.cor-id$"><sup>*</sup></xref>
@@ -104,6 +106,15 @@ $endif$
 </contrib>
 $endfor$
 </contrib-group>
+$endif$
+$if(orgs)$
+$for(orgs)$
+<aff id="$orgs.id$">
+  <institution content-type="orgname">$orgs.name$</institution>
+  <city>$orgs.city$</city>
+  <country>$orgs.country$</country>
+</aff>
+$endfor$
 $endif$
 $if(article.author-notes)$
 <author-notes>

@@ -6,6 +6,20 @@
       <title-group>
         <article-title>Article title</article-title>
       </title-group>
+      <contrib-group content-type="author">
+        <contrib contrib-type="person">
+          <name>
+            <surname>Simpson</surname>
+            <given-names>Bart</given-names>
+          </name>
+          <xref ref-type="aff" rid="springfield-university" />
+        </contrib>
+      </contrib-group>
+      <aff id="springfield-university">
+        <institution content-type="orgname">Springfield University</institution>
+        <city>Springfield</city>
+        <country>USA</country>
+      </aff>
       <abstract>
         <p>This is pretty, ummm, abstract</p>
       </abstract>

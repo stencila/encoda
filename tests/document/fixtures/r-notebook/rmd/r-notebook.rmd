@@ -1,7 +1,16 @@
 ---
 title: Article title
+authors:
+  - surname: Simpson
+    given-names: Bart
+    affiliation: springfield-university
+organisations:
+  - id: springfield-university
+    name: Springfield University
+    city: Springfield
+    country: USA
 abstract: |
-	This is pretty, ummm, abstract
+  This is pretty, ummm, abstract
 ---
 
 A plain RMarkdown cell:
