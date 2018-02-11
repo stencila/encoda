@@ -105,6 +105,32 @@ class DocumentPandocConverter extends DocumentConverter {
         }
         code.replaceWith(cell)
       })
+
+      // Fix reference list produced by Pandoc citeproc which can contain
+      // text. Eventually it may be better use a custom CSL file.
+      // e.g. https://github.com/jgm/pandoc/blob/cf7d66c097ea8b93b5ece86aaa336994b0b281e9/data/jats.csl
+      dom('ref-list ref').each((index, elem) => {
+        let ref = cheerio(elem)
+
+        // Ignore any text in person-group elements by only
+        // extracting what is needed
+        let personGroup = ref.find('person-group')
+        let personGroupNew = cheerio('<person-group person-group-type="author"/>')
+        let names = personGroup.find('name')
+        names.each((index, elem) => {
+          let name = cheerio(elem)
+          let nameNew = cheerio('<name/>')
+          nameNew.append(name.find('surname'))
+          nameNew.append(name.find('given-names'))
+          personGroupNew.append(nameNew)
+        })
+        personGroup.replaceWith(personGroupNew)
+
+        // Unwrap <year> etc from <date>
+        let date = ref.find('date')
+        date.replaceWith(date.html())
+      })
+
       return this.writeXml(pathTo, dom, volumeTo, {
         declaration: options.complete,
         tagsUnformatted: ['bold', 'italic', 'ext-link'],
@@ -143,6 +169,7 @@ class DocumentPandocConverter extends DocumentConverter {
     } else {
       input = this.readFile(pathFrom, volumeFrom)
     }
+
     // Read, spawn, write...
     return input.then((content) => {
       return pandoc.spawn(content, args)

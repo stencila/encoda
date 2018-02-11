@@ -11,6 +11,8 @@ class DocumentMdConverter extends DocumentPandocConverter {
   }
 
   pandocImportFormat () {
+    return 'markdown'
+    /*
     // Support various extensions when reading
     return [
       'markdown_github',
@@ -23,6 +25,13 @@ class DocumentMdConverter extends DocumentPandocConverter {
       'fenced_divs',
       'multiline_tables'
     ].join('+')
+    */
+  }
+
+  pandocImportArgs (options) {
+    return super.pandocImportArgs(options).concat([
+      '--filter=pandoc-citeproc'
+    ])
   }
 
   pandocExportFormat () {
