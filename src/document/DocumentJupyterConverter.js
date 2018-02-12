@@ -63,7 +63,9 @@ class DocumentJupyterConverter extends DocumentMdConverter {
       for (let cell of cells) {
         let source = cell.source.join('')
         if (cell.cell_type === 'markdown') {
-          md += source + '\n'
+          // Ensure two new lines at end of markdown cell for proper separation
+          // from following cells
+          md += source + '\n\n'
         } else if (cell.cell_type === 'code') {
           // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
           // to store language and indicate an executable cell
