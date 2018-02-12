@@ -14,8 +14,8 @@ cache:
 
 install:
   # Install pandoc-citeproc (delete pandoc because we want to automaticaaly download our version)
-  - curl -sL https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz | tar zx
-  - rm pandoc
+  - curl -sL https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz | tar zx --strip-components=2
+  - rm -rf pandoc
 
 script:
   - npm run lint
