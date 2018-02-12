@@ -5,6 +5,12 @@ os:
   # Temporarily disable OSX builds until newer Pandoc binary available
   #- osx
 
+# Currently pandoc-citeproc is also necessary for Linux
+addons:
+  apt:
+    packages:
+      - pandoc-citeproc
+
 node_js:
   - 8
 
