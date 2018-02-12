@@ -5,18 +5,17 @@ os:
   # Temporarily disable OSX builds until newer Pandoc binary available
   #- osx
 
-# Currently pandoc-citeproc is also necessary for Linux
-addons:
-  apt:
-    packages:
-      - pandoc-citeproc
-
 node_js:
   - 8
 
 cache:
   directories:
     - node_modules
+
+install:
+  # Install pandoc-citeproc (delete pandoc because we want to automaticaaly download our version)
+  - curl -sL https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz | tar zx
+  - rm pandoc
 
 script:
   - npm run lint
