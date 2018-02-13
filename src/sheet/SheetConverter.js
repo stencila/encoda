@@ -58,17 +58,20 @@ class SheetConverter extends Converter {
             if (cell) {
               let cellEl = dom('<cell>')
               if (cell.f) {
-                let formula = cell.f
-                let language = 'mini'
-                let match = cell.f.match(/^(r|py)\b(.*)/)
-                if (match) {
-                  formula = match[2]
-                  language = match[1]
-                }
-                cellEl.attr('language', language)
-                cellEl.text('=' + formula)
+                cellEl.attr('language', 'mini')
+                cellEl.text('=' + cell.f)
               } else {
-                cellEl.text(cell.v)
+                if (typeof cell.v === 'string') {
+                  let match = cell.v.match(/^(r|py|js)=(.*)/)
+                  if (match) {
+                    cellEl.attr('language', match[1])
+                    cellEl.text('=' + match[2])
+                  } else {
+                    cellEl.text(cell.v)
+                  }
+                } else {
+                  cellEl.text(cell.v)
+                }
               }
               row.append(cellEl)
             }
