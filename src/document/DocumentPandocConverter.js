@@ -54,13 +54,26 @@ class DocumentPandocConverter extends DocumentConverter {
     return this.pandocFormat()
   }
 
-  pandocExportArgs (options) {
-    return [
+  pandocExportTemplate () {
+    return ''
+  }
+
+  pandocExportArgs (options = {}) {
+    if (options.complete !== false) options.complete = true
+
+    let args = [
       '--from', 'jats',
       '--to', this.pandocExportFormat(),
       // Writer options (for writing the exported content)
       '--eol', options.eol || 'native' // Line endings : --eol=crlf|lf|native
     ]
+    if (options.complete) {
+      args = args.concat([
+        '--standalone',
+        '--template', this.pandocExportTemplate()
+      ])
+    }
+    return args
   }
 
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
@@ -141,11 +154,29 @@ class DocumentPandocConverter extends DocumentConverter {
   }
 
   export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    pathTo = pathTo || (pathFrom + '.' + this.extensions()[0])
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
-    // TODO
-    return this._convert(pathFrom, pathTo, volumeFrom, volumeTo, this.pandocExportArgs(options))
+    return this.readXml(pathFrom, volumeFrom).then(dom => {
+      // Covert JATS4M code cells e.g.
+      //   <code specific-use="cell"><named-content><alternatives>
+      //     <code specific-use="source" language="python" executable="yes">...</code>
+      //     <code specific-use="output" language="json"></code>
+      //   </alternatives></named-content></code>
+      // to JATS executable code blocks
+      //   <code language="python" executable="yes">...</code>
+      dom('code[specific-use="cell"]').each((index, elem) => {
+        let cell = cheerio(elem)
+        let source = cell.find('code[specific-use="source"]')
+        cell.replaceWith(source)
+      })
+
+      const volumeTemp = new memfs.Volume()
+      return this.writeXml('/temp.jats', dom, volumeTemp, {pretty: false}).then(() => {
+        return this._convert('/temp.jats', pathTo, volumeTemp, volumeTo, this.pandocExportArgs(options))
+      })
+    })
   }
 
   _convert (pathFrom, pathTo, volumeFrom, volumeTo, args) {

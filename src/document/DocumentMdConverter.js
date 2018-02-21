@@ -1,5 +1,6 @@
 const fs = require('fs')
 const memfs = require('memfs')
+const path = require('path')
 const yaml = require('js-yaml')
 const yamlFront = require('yaml-front-matter')
 
@@ -11,32 +12,21 @@ class DocumentMdConverter extends DocumentPandocConverter {
   }
 
   pandocImportFormat () {
-    return 'markdown'
-    /*
-    // Support various extensions when reading
-    return [
-      'markdown_github',
-      'yaml_metadata_block',
-      'implicit_figures',
-      'bracketed_spans',
-      'backtick_code_blocks',
-      'fenced_code_attributes',
-      'definition_lists',
-      'fenced_divs',
-      'multiline_tables'
-    ].join('+')
-    */
+    return 'markdown-auto_identifiers'
   }
 
   pandocImportArgs (options) {
     return super.pandocImportArgs(options).concat([
-      '--filter=pandoc-citeproc'
+      '--filter=pandoc-citeproc' // Use citeproc filter of citaion and reference support
     ])
   }
 
   pandocExportFormat () {
-    // Use the closest thing to a Markdown standard for export
-    return 'commonmark'
+    return 'markdown'
+  }
+
+  pandocExportTemplate () {
+    return path.join(__dirname, 'DocumentMdTemplate.md')
   }
 
   pandocExportArgs (options) {
@@ -47,6 +37,9 @@ class DocumentMdConverter extends DocumentPandocConverter {
   }
 
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    volumeFrom = volumeFrom || fs
+    volumeTo = volumeTo || volumeFrom
+
     // Process any YAML front matter by translating any aliases
     return this.readFile(pathFrom, volumeFrom || fs).then((md) => {
       let front = yamlFront.loadFront(md)
@@ -76,6 +69,29 @@ class DocumentMdConverter extends DocumentPandocConverter {
       return this.writeFile(pathFrom, mdNew, volumeTemp).then(() => {
         return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
       })
+    })
+  }
+
+  export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    const volumeTemp = new memfs.Volume()
+    return super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options).then(() => {
+      return this.readFile('/temp.md', volumeTemp)
+    }).then(md => {
+      let mdNew
+      if (options.complete) {
+        // DocumentMdTemplate.md writes metadata as JSON on the first line
+        // so extract that from the content
+        const lines = md.split('\n')
+        const json = lines[0]
+        const content = lines.slice(1).join('\n')
+
+        let front = JSON.parse(json)
+
+        mdNew = `---\n${yaml.dump(front)}---\n\n${content}`
+      } else {
+        mdNew = md
+      }
+      return this.writeFile(pathTo, mdNew, volumeTo)
     })
   }
 }

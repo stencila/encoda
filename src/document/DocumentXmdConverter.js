@@ -34,6 +34,9 @@ is available at http://yihui.name/knitr/options/.
 **/
 class DocumentXmdConverter extends DocumentMdConverter {
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    volumeFrom = volumeFrom || fs
+    volumeTo = volumeTo || volumeFrom
+
     // Preprocess XMarkdown to Markdown
     return this.readFile(pathFrom, volumeFrom || fs).then((xmd) => {
       let md = ''
@@ -85,41 +88,37 @@ class DocumentXmdConverter extends DocumentMdConverter {
     })
   }
 
-  export (html) {
-    // Covert HTML to Markdown
-    let md = super.exportContent(html)
-    // Convert Markdown to XMarkdown
-    let xmd = ''
-    let lines = md.split('\n')
-    for (let index = 0; index < lines.length; index++) {
-      let line = lines[index]
-      // Stencila Markdown code cells to XMarkdown code chunks
-      let match = line.match(/^```([a-z]+)/)
-      if (match) {
-        let language = match[1]
-        let comment = this._comment(language)
-        let first = lines[index + 1]
-        if (first) {
-          // Check for shebang on first line
-          let shebang = first.match(`^${comment}!\\s*global`)
-          if (shebang) {
-            let spec = '```{' + language
-            index += 1
-            // Check for options on second line
-            let second = lines[index + 1]
-            let options = second.match(`^${comment}:\\s*(.*)`)
+  export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+    const volumeTemp = new memfs.Volume()
+    return super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options).then(() => {
+      return this.readFile('/temp.md', volumeTemp)
+    }).then(md => {
+      let xmd = ''
+      let lines = md.split('\n')
+      for (let index = 0; index < lines.length; index++) {
+        let line = lines[index]
+        // Convert Pandoc Markdown code cells to XMarkdown code chunks
+        let match = line.match(/^```\s*\{\.([a-z]+)\}/)
+        if (match) {
+          let language = match[1]
+          let spec = '``` {' + language
+
+          let first = lines[index + 1]
+          if (first) {
+            let comment = this._comment(language)
+            let options = first.match(`^${comment}:\\s*(.*)`)
             if (options) {
               spec += ' ' + options[1]
               index += 1
             }
-            xmd += spec + '}\n'
           }
+          xmd += spec + '}\n'
+        } else {
+          xmd += line + '\n'
         }
-      } else {
-        xmd += line + '\n'
       }
-    }
-    return xmd
+      return this.writeFile(pathTo, xmd, volumeTo)
+    })
   }
 
   /**
