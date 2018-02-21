@@ -30,7 +30,7 @@ function export_ (pathFrom, pathTo, volumeFrom, volumeTo) {
       const Converter = converters[index]
       if (!Converter) throw new Error('No converters can export from ' + pathFrom)
       let converter = new Converter()
-      return converter.canexport(pathFrom, volumeFrom).then((can) => {
+      return converter.canExport(pathTo, volumeTo).then((can) => {
         return can ? converter.export(pathFrom, pathTo, volumeFrom, volumeTo) : check(index + 1)
       })
     }
