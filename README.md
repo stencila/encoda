@@ -9,8 +9,6 @@
 [![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
 [![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
-Convert Stencila Documents, Sheets and Functions to other formats.
-
 ### Use
 
 This package is integrated into the Stencila command line tool [`stencila/cli`](https://github.com/stencila/cli). That's the most convenient way to use converters e.g.
@@ -79,7 +77,7 @@ Or, run a single test file:
 Run the test suite:
 
 ```bash
-npm run test-one -- tests/function/FunctionJsDocConverter.test.js
+npm run test-one -- tests/document/DocumentJupyterConverter.test.js
 ```
 
 To get coverage statistics:
