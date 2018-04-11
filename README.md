@@ -50,8 +50,6 @@ CSVY            |                                                               
 Tabular Data Package |                                                             |
 Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-**Functions**   |                                                                  |
-JsDoc           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 
 
 ### Develop

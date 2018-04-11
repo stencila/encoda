@@ -1,13 +1,11 @@
 const projectConverters = require('./project')
 const documentConverters = require('./document')
 const sheetConverters = require('./sheet')
-const functionConverters = require('./function')
 
 let converters = [].concat(
   Object.values(projectConverters),
   Object.values(documentConverters),
-  Object.values(sheetConverters),
-  Object.values(functionConverters)
+  Object.values(sheetConverters)
 )
 
 function import_ (pathFrom, pathTo, volumeFrom, volumeTo) {
