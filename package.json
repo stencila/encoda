@@ -11,7 +11,9 @@
     "test-one": "tape",
     "test-diffs": "npm test | tap-difflet",
     "cover": "nyc --reporter=lcov --reporter=text npm test",
-    "clean": "rimraf coverage && rimraf tests/**/*-out.*"
+    "docs": "esdoc",
+    "prepublishOnly": "npm run lint && npm run test && npm run docs",
+    "clean": "rimraf .nyc_output docs && rimraf tests/**/*-out.*"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",
@@ -36,14 +38,28 @@
     "yaml-front-matter": "^3.4.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "nyc": "^11.3.0",
+    "esdoc": "^1.0.4",
+    "esdoc-node": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0",
+    "nyc": "^11.6.0",
     "rimraf": "^2.6.2",
     "standard": "^10.0.3",
     "tap-difflet": "^0.7.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0",
     "tmp": "0.0.33"
+  },
+  "esdoc": {
+    "source": "./src",
+    "destination": "./docs",
+    "plugins": [
+      {
+        "name": "esdoc-standard-plugin"
+      },
+      {
+        "name": "esdoc-node"
+      }
+    ]
   },
   "nyc": {
     "exclude": [

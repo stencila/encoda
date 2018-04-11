@@ -1,4 +1,4 @@
-all: setup cover
+all: setup lint cover docs
 
 setup:
 	npm install
@@ -14,6 +14,10 @@ test-diffs:
 
 cover:
 	npm run cover
+
+docs:
+	npm run docs
+.PHONY: docs
 
 clean:
 	npm run clean
