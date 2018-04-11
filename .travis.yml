@@ -12,7 +12,7 @@ cache:
   directories:
     - node_modules
 
-install:
+before_install:
   # Install pandoc-citeproc (delete pandoc because we want to automaticaaly download our version)
   - curl -sL https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz | tar zx --strip-components=2
   - rm -rf pandoc
@@ -20,6 +20,7 @@ install:
 script:
   - npm run lint
   - npm run cover
+  - npm run docs
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
