@@ -6,10 +6,11 @@ const sheetConverters = require('../sheet')
 class ProjectConverter extends Converter {
   createDom () {
     return this.loadXml(`
-      <archive type="rda">
+      <!DOCTYPE sheet PUBLIC "DarManifest 0.1.0" "http://darformat.org/DarManifest-0.1.0.dtd">
+      <dar>
         <documents></documents>
         <assets></assets>
-      </archive>
+      </dar>
     `)
   }
 

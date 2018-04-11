@@ -56,7 +56,7 @@ class ProjectFolderConverter extends ProjectConverter {
               const type = conversion.formatTo
               const id = filePathFrom
               const name = filePathFrom
-              documents.append(`<document id="${id}" name="${name}" type="${type}" path="${filePathTo}" src="${filePathFrom}" />`)
+              documents.append(`<document id="${id}" name="${name}" type="${type}" path="${filePathTo}"/>`)
             }
             return this.writeXml(path.join(pathTo, 'manifest.xml'), manifest)
           })

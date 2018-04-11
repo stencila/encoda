@@ -147,7 +147,7 @@ class DocumentPandocConverter extends DocumentConverter {
         tagsContentUnformatted: ['p', 'preformat', 'code']
       }).then(() => {
         return {
-          pathFrom, pathTo, formatTo: 'application/jats4m'
+          pathFrom, pathTo, formatTo: 'article'
         }
       })
     })
