@@ -102,6 +102,11 @@ class DocumentPandocConverter extends DocumentConverter {
           'r script': 'r',
           'python': 'py'
         }[language] || language
+        // Check for Jupyter code type
+        let codeType = code.attr('code-type')
+        if (codeType) {
+          if (codeType === 'jupyter') language += 'jp'
+        }
 
         let cell = `<alternatives>
           <code specific-use="source" language="${language}" executable="yes">${code.text()}</code>

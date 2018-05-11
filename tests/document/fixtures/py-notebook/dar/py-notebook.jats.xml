@@ -35,7 +35,7 @@
       <title>Heading 1</title>
       <p>A cell:</p>
       <code specific-use="cell"><named-content><alternatives>
-          <code specific-use="source" language="py" executable="yes">greeting = &quot;Hello from Python&quot;
+          <code specific-use="source" language="pyjp" executable="yes">greeting = &quot;Hello from Python&quot;
 greeting</code>
       <code specific-use="output" language="json">{}</code>
       </alternatives>
@@ -46,7 +46,7 @@ greeting</code>
         <title>Heading 2</title>
         <p>Another cell, using the variable <monospace>greeting</monospace> set above:</p>
         <code specific-use="cell"><named-content><alternatives>
-          <code specific-use="source" language="py" executable="yes">import sys
+          <code specific-use="source" language="pyjp" executable="yes">import sys
 greeting + &apos; &apos; + str(sys.version_info[0])</code>
         <code specific-use="output" language="json">{}</code>
         </alternatives>

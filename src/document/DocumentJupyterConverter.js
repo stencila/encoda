@@ -71,7 +71,8 @@ class DocumentJupyterConverter extends DocumentMdConverter {
           // to store language and indicate an executable cell
           // Remove any trailing newline, otherwise we get an extra line in source
           if (source.slice(-1) === '\n') source = source.slice(0, -1)
-          md += '\n``` {.' + language + ' executable="yes"}\n' + source + '\n```\n'
+          // Use the `code-type` JATS valid attribute to indicate a Jupyter cell
+          md += '\n``` {.' + language + ' code-type="jupyter" executable="yes"}\n' + source + '\n```\n'
         }
       }
 
