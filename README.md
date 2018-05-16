@@ -9,22 +9,27 @@
 [![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
 [![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
-### Use
 
-This package is integrated into the Stencila command line tool [`stencila/cli`](https://github.com/stencila/cli). That's the most convenient way to use converters e.g.
-
-```bash
-stencila convert document.md document.jats
-```
-
-But you can also use this package directly e.g.
+### Install
 
 ```bash
 npm install stencila-convert -g
-stencila-convert import document.md document.jats.xml
 ```
 
 Many of the `Document` converters rely on a recent version of Pandoc. This package will use an existing installation of Pandoc if it is new enough. If not, it will automatically download the required Pandoc version to the Stencila directory in your home folder. See [`pandoc.json`](src/helpers/pandoc.json) for the necessary Pandoc version and download URLs. At times it may be necessary to use our custom Pandoc build available at https://github.com/stencila/pandoc/releases.
+
+
+### Use
+
+```bash
+stencila-convert import document.md document.jats.xml
+```
+
+When these converters are better developed and tested, the plan is to eventually integrate this package into:
+
+- the [Stencila CLI (command line tool)](https://github.com/stencila/cli) as a sub-command e.g. `stencila convert document.md document.jats.xml`
+
+- the [Stencila Desktop](https://github.com/stencila/desktop) as a menu item e.g. `Save as... > Jupyter Notebook`
 
 API documentation is available at https://stencila.github.io/convert.
 
@@ -52,19 +57,13 @@ Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-al
 
 ### Develop
 
-1. Clone the repo
+Clone the and install dev setup:
 
-    ```bash
-    git clone https://github.com/stencila/convert.git
-    ```
-
-2. Install dependencies
-
-    ```bash
-    npm install
-    ```
-
-#### Testing
+```bash
+git clone https://github.com/stencila/convert.git
+cd convert
+npm install
+```
 
 Run the test suite:
 
@@ -92,7 +91,7 @@ Or, manually test conversion using the bin script:
 ./bin/stencila-convert.js tests/document/fixtures/paragraph/md/paragraph.md temp.pdf
 ```
 
-You can also test using Docker (e.g. so you can test under Linux):
+You can also test using the Docker image:
 
 ```bash
 docker build --tag stencila/convert .
