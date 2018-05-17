@@ -6,13 +6,14 @@
   "bin": "./bin/stencila-convert.js",
   "scripts": {
     "postinstall": "node src/helpers",
+    "check": "dependency-check ./package.json && dependency-check ./package.json --unused --no-dev",
     "lint": "standard",
     "test": "tape \"tests/**/*.test.js\" | tap-spec",
     "test-one": "tape",
     "test-diffs": "npm test | tap-difflet",
     "cover": "nyc npm test",
     "docs": "esdoc",
-    "prepublishOnly": "npm run lint && npm run test && npm run docs",
+    "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
     "clean": "rimraf .nyc_output docs && rimraf tests/**/*-out.*"
   },
   "license": "Apache-2.0",
@@ -28,7 +29,6 @@
     "bin-version-check": "^3.0.0",
     "bin-wrapper": "^3.0.2",
     "cheerio": "^1.0.0-rc.2",
-    "doctrine": "^2.0.0",
     "glob": "^7.1.2",
     "js-beautify": "^1.7.4",
     "js-yaml": "^3.10.0",
@@ -38,6 +38,7 @@
     "yaml-front-matter": "^3.4.0"
   },
   "devDependencies": {
+    "dependency-check": "^3.1.0",
     "esdoc": "^1.0.4",
     "esdoc-node": "^1.0.3",
     "esdoc-standard-plugin": "^1.0.0",

@@ -15,6 +15,9 @@ test-diffs:
 cover:
 	npm run cover
 
+check:
+	npm run check
+
 docs:
 	npm run docs
 .PHONY: docs

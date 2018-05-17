@@ -20,6 +20,7 @@ before_install:
 script:
   - npm run lint
   - npm run cover
+  - npm run check
   - npm run docs
 
 after_success:
