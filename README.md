@@ -57,7 +57,7 @@ Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-al
 
 ### Develop
 
-Clone the and install dev setup:
+Clone the repo and install a development environment:
 
 ```bash
 git clone https://github.com/stencila/convert.git
@@ -73,10 +73,8 @@ npm test # or make test
 
 Or, run a single test file:
 
-Run the test suite:
-
 ```bash
-npm run test-one -- tests/document/DocumentJupyterConverter.test.js
+node tests/document/DocumentJupyterConverter.test.js
 ```
 
 To get coverage statistics:
@@ -89,6 +87,12 @@ Or, manually test conversion using the bin script:
 
 ```bash
 ./bin/stencila-convert.js tests/document/fixtures/paragraph/md/paragraph.md temp.pdf
+```
+
+There's also a `Makefile` if you prefer to run tasks that way e.g.
+
+```bash
+make lint cover check
 ```
 
 You can also test using the Docker image:

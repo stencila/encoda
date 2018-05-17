@@ -14,7 +14,7 @@
     "cover": "nyc npm test",
     "docs": "esdoc",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
-    "clean": "rimraf .nyc_output docs && rimraf tests/**/*-out.*"
+    "clean": "rimraf .nyc_output docs tests/**/*-out.*"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",
