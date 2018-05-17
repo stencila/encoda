@@ -10,7 +10,7 @@
     "test": "tape \"tests/**/*.test.js\" | tap-spec",
     "test-one": "tape",
     "test-diffs": "npm test | tap-difflet",
-    "cover": "nyc --reporter=lcov --reporter=text npm test",
+    "cover": "nyc npm test",
     "docs": "esdoc",
     "prepublishOnly": "npm run lint && npm run test && npm run docs",
     "clean": "rimraf .nyc_output docs && rimraf tests/**/*-out.*"
@@ -64,6 +64,10 @@
   "nyc": {
     "exclude": [
       "tests"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
     ]
   }
 }
