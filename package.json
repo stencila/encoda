@@ -34,6 +34,7 @@
     "js-yaml": "^3.10.0",
     "memfs": "^2.5.8",
     "mkdirp": "^0.5.1",
+    "tmp": "0.0.33",
     "xlsx": "^0.11.13",
     "yaml-front-matter": "^3.4.0"
   },
@@ -47,8 +48,7 @@
     "standard": "^10.0.3",
     "tap-difflet": "^0.7.0",
     "tap-spec": "^4.1.1",
-    "tape": "^4.8.0",
-    "tmp": "0.0.33"
+    "tape": "^4.8.0"
   },
   "esdoc": {
     "source": "./src",
