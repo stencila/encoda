@@ -46,13 +46,21 @@ class DocumentMdConverter extends DocumentPandocConverter {
 
       let author = front.author || front.authors
       if (author) {
-        author = author.map(author => {
-          return {
-            'surname': author['surname'],
-            'given-names': author['given-names'],
-            'aff-id': author['aff-id'] || author['affiliation']
-          }
-        })
+        if (Array.isArray(author)) {
+          author = author.map(author => {
+            if (typeof author === 'string') {
+              return {
+                'surname': author
+              }
+            } else {
+              return Object.assign(author, {
+                'surname': author['surname'] || author['name'],
+                'given-names': author['given-names'],
+                'aff-id': author['aff-id'] || author['affiliation']
+              })
+            }
+          })
+        }
         front.author = author
         if (front.authors) front.authors = undefined
       }

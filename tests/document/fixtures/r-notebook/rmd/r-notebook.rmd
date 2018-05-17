@@ -1,9 +1,14 @@
 ---
 title: Article title
 authors:
+  - Homer Simpson
+  - name: Lisa Simpson
+    aff-id: springfield-university
   - surname: Simpson
     given-names: Bart
     affiliation: springfield-university
+    email: bart@simpson.com
+    orcid: bart-0001
 organisations:
   - id: springfield-university
     name: Springfield University

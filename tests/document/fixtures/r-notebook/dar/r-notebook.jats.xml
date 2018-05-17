@@ -9,9 +9,24 @@
       <contrib-group content-type="author">
         <contrib contrib-type="person">
           <name>
+            <surname>Homer Simpson</surname>
+            <given-names/>
+          </name>
+        </contrib>
+        <contrib contrib-type="person">
+          <name>
+            <surname>Lisa Simpson</surname>
+            <given-names/>
+          </name>
+          <xref ref-type="aff" rid="springfield-university" />
+        </contrib>
+        <contrib contrib-type="person">
+          <contrib-id contrib-id-type="orcid">bart-0001</contrib-id>
+          <name>
             <surname>Simpson</surname>
             <given-names>Bart</given-names>
           </name>
+          <email>bart@simpson.com</email>
           <xref ref-type="aff" rid="springfield-university" />
         </contrib>
       </contrib-group>
