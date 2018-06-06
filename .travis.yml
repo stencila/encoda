@@ -2,8 +2,7 @@ language: node_js
 
 os:
   - linux
-  # Temporarily disable OSX builds until newer Pandoc binary available
-  #- osx
+  - osx
 
 node_js:
   - 8
@@ -13,8 +12,9 @@ cache:
     - node_modules
 
 before_install:
-  # Install pandoc-citeproc (delete pandoc because we want to automaticaaly download our version)
-  - curl -sL https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-linux.tar.gz | tar zx --strip-components=2
+  # Install pandoc-citeproc by downloading the pandoc bundle 
+  # (delete pandoc itself because we want to automatically download the version specified by this package)
+  - curl -sL https://github.com/jgm/pandoc/releases/download/2.2.1/pandoc-2.2.1-linux.tar.gz | tar zx --strip-components=2
   - rm -rf pandoc
 
 script:
@@ -24,11 +24,12 @@ script:
   - npm run docs
 
 after_success:
+  # Upload test coverage to codecov.io
   - bash <(curl -s https://codecov.io/bash)
 
-# Deploy documentation to Github Pages
-# See https://docs.travis-ci.com/user/deployment/pages/
 deploy:
+  # Deploy documentation to Github Pages
+  # See https://docs.travis-ci.com/user/deployment/pages/
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
