@@ -15,3 +15,5 @@ testExport('heading/dar/heading.jats.xml', 'heading/md/heading-export.md', {comp
 testImport('figure/md/figure-import.md', 'figure/dar/figure.jats.xml', {complete: false})
 
 testImport('table/md/table-import.md', 'table/dar/table.jats.xml', {complete: false})
+
+testImport('codeblocks/md/codeblocks.md', 'codeblocks/dar/codeblocks.jats.xml', {complete: false})

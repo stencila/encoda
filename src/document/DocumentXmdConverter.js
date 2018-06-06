@@ -61,7 +61,7 @@ class DocumentXmdConverter extends DocumentMdConverter {
 
           // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
           // to store language and indicate an executable cell
-          md += '``` {.' + language + ' executable="yes"}\n'
+          md += '``` {.' + language + '}\n'
           if (options) {
             // Cell options as a comment line
             md += `${this._comment(language)}: ${options}\n`

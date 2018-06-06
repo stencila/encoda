@@ -86,14 +86,14 @@ class DocumentPandocConverter extends DocumentConverter {
     return this._convert(pathFrom, '/temp.jats', volumeFrom, volumeTemp, this.pandocImportArgs(options)).then(() => {
       return this.readXml('/temp.jats', volumeTemp)
     }).then((dom) => {
-      // Convert `<code>` elements with `executable="yes"` to cells e.g.
-      //   <code language="python" executable="yes">...</code>
+      // Convert `<code>` elements to cells e.g.
+      //   <code language="python">...</code>
       // To JATS4M cells
       //   <code specific-use="cell"><named-content><alternatives>
       //     <code specific-use="source" language="python" executable="yes">...</code>
       //     <code specific-use="output" language="json"></code>
       //   </alternatives></named-content></code>
-      dom('code[language][executable=yes]').each((index, elem) => {
+      dom('code[language]').each((index, elem) => {
         let code = cheerio(elem)
         // Pandoc does some transformation of language codes (e.g. `py` -> `python`, `r` -> `r script`)
         // So normalise to the codes that Stencila uses
