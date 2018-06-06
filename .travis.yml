@@ -11,12 +11,6 @@ cache:
   directories:
     - node_modules
 
-before_install:
-  # Install pandoc-citeproc by downloading the pandoc bundle 
-  # (delete pandoc itself because we want to automatically download the version specified by this package)
-  - curl -sL https://github.com/jgm/pandoc/releases/download/2.2.1/pandoc-2.2.1-linux.tar.gz | tar zx --strip-components=2
-  - rm -rf pandoc
-
 script:
   - npm run lint
   - npm run cover
