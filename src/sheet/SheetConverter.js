@@ -83,7 +83,7 @@ class SheetConverter extends Converter {
           declaration: true,
           tagsContentUnformatted: ['cell']
         }).then(() => {
-          return { pathFrom, pathTo, formatTo: 'application/sheetml' }
+          return { pathFrom, pathTo, formatTo: 'sheet' }
         })
       })
     })
