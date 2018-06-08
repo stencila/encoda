@@ -44,7 +44,7 @@
   <body>
     <p>A plain RMarkdown cell:</p>
     <code specific-use="cell"><named-content><alternatives>
-          <code specific-use="source" language="r" executable="yes">paste(&quot;Hello world, this is&quot;, R.version.string, &quot;and it&apos;s&quot;, date(), &quot;!&quot;)</code>
+        <code specific-use="source" language="r" executable="yes">paste(&quot;Hello world, this is&quot;, R.version.string, &quot;and it&apos;s&quot;, date(), &quot;!&quot;)</code>
     <code specific-use="output" language="json">{}</code>
     </alternatives>
     </named-content>

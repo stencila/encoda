@@ -1,17 +1,17 @@
 <code specific-use="cell"><named-content><alternatives>
-          <code specific-use="source" language="r" executable="yes">z = 4</code>
+        <code specific-use="source" language="r" executable="yes">z = 4</code>
 <code specific-use="output" language="json">{}</code>
 </alternatives>
 </named-content>
 </code>
 <code specific-use="cell"><named-content><alternatives>
-          <code specific-use="source" language="sql" executable="yes">SELECT 42 AS x</code>
+        <code specific-use="source" language="sql" executable="yes">SELECT 42 AS x</code>
 <code specific-use="output" language="json">{}</code>
 </alternatives>
 </named-content>
 </code>
 <code specific-use="cell"><named-content><alternatives>
-          <code specific-use="source" language="py" executable="yes">foo</code>
+        <code specific-use="source" language="py" executable="yes">foo</code>
 <code specific-use="output" language="json">{}</code>
 </alternatives>
 </named-content>

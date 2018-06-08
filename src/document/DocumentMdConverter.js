@@ -36,71 +36,67 @@ class DocumentMdConverter extends DocumentPandocConverter {
     ])
   }
 
-  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
     // Process any YAML front matter by translating any aliases
-    return this.readFile(pathFrom, volumeFrom || fs).then((md) => {
-      let front = yamlFront.loadFront(md)
+    const md = await this.readFile(pathFrom, volumeFrom || fs)
+    let front = yamlFront.loadFront(md)
 
-      let author = front.author || front.authors
-      if (author) {
-        if (Array.isArray(author)) {
-          author = author.map(author => {
-            if (typeof author === 'string') {
-              return {
-                'surname': author
-              }
-            } else {
-              return Object.assign(author, {
-                'surname': author['surname'] || author['name'],
-                'given-names': author['given-names'],
-                'aff-id': author['aff-id'] || author['affiliation']
-              })
+    let author = front.author || front.authors
+    if (author) {
+      if (Array.isArray(author)) {
+        author = author.map(author => {
+          if (typeof author === 'string') {
+            return {
+              'surname': author
             }
-          })
-        }
-        front.author = author
-        if (front.authors) front.authors = undefined
+          } else {
+            return Object.assign(author, {
+              'surname': author['surname'] || author['name'],
+              'given-names': author['given-names'],
+              'aff-id': author['aff-id'] || author['affiliation']
+            })
+          }
+        })
       }
+      front.author = author
+      if (front.authors) front.authors = undefined
+    }
 
-      let orgs = front.orgs || front.organisations
-      if (orgs) {
-        front.orgs = orgs
-        if (front.organisations) front.organisations = undefined
-      }
+    let orgs = front.orgs || front.organisations
+    if (orgs) {
+      front.orgs = orgs
+      if (front.organisations) front.organisations = undefined
+    }
 
-      let mdNew = `---\n${yaml.dump(front)}\n---\n\n${front.__content}`
+    let mdNew = `---\n${yaml.dump(front)}\n---\n\n${front.__content}`
 
-      const volumeTemp = new memfs.Volume()
-      return this.writeFile(pathFrom, mdNew, volumeTemp).then(() => {
-        return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
-      })
-    })
+    const volumeTemp = new memfs.Volume()
+    await this.writeFile(pathFrom, mdNew, volumeTemp)
+    return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
   }
 
-  export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     const volumeTemp = new memfs.Volume()
-    return super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options).then(() => {
-      return this.readFile('/temp.md', volumeTemp)
-    }).then(md => {
-      let mdNew
-      if (options.complete) {
-        // DocumentMdTemplate.md writes metadata as JSON on the first line
-        // so extract that from the content
-        const lines = md.split('\n')
-        const json = lines[0]
-        const content = lines.slice(1).join('\n')
+    await super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options)
+    let md = await this.readFile('/temp.md', volumeTemp)
+    let mdNew
+    if (options.complete) {
+      // DocumentMdTemplate.md writes metadata as JSON on the first line
+      // so extract that from the content
+      const lines = md.split('\n')
+      const json = lines[0]
+      const content = lines.slice(1).join('\n')
 
-        let front = JSON.parse(json)
+      let front = JSON.parse(json)
 
-        mdNew = `---\n${yaml.dump(front)}---\n\n${content}`
-      } else {
-        mdNew = md
-      }
-      return this.writeFile(pathTo, mdNew, volumeTo)
-    })
+      mdNew = `---\n${yaml.dump(front)}---\n\n${content}`
+    } else {
+      mdNew = md
+    }
+    return this.writeFile(pathTo, mdNew, volumeTo)
   }
 }
 

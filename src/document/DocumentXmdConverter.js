@@ -33,92 +33,91 @@ is available at http://yihui.name/knitr/options/.
 
 **/
 class DocumentXmdConverter extends DocumentMdConverter {
-  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
     // Preprocess XMarkdown to Markdown
-    return this.readFile(pathFrom, volumeFrom || fs).then((xmd) => {
-      let md = ''
-      let fig
-      for (let line of xmd.split('\n')) {
-        let match = line.match(/^```\s*{([a-z]+)\s*([^}]*)}/)
-        if (match) {
-          let language = match[1]
-          let options = match[2]
+    const xmd = await this.readFile(pathFrom, volumeFrom || fs)
+    let md = ''
+    let fig
+    for (let line of xmd.split('\n')) {
+      let match = line.match(/^```\s*{([a-z]+)\s*([^}]*)}/)
+      if (match) {
+        let language = match[1]
+        let options = match[2]
 
-          // If this the chunk has the `fig.cap` option then create a
-          // .fig > .caption > .h1 using markdown syntax
-          fig = match[2] && match[2].match(/fig\.cap="([^"]*)"/)
-          if (fig) {
-            // Create wrapping `div.fig` and `div.caption h1`
-            const title = fig[1]
-            md += `::: {.fig}\n::: {.caption}\n# ${title}\n:::\n`
-            // Remove fig.cap from cell options
-            options = options.replace(fig[0], '')
-            if (options.slice(-1) === ',') options = options.slice(0, -1)
-          }
-
-          // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
-          // to store language and indicate an executable cell
-          md += '``` {.' + language + '}\n'
-          if (options) {
-            // Cell options as a comment line
-            md += `${this._comment(language)}: ${options}\n`
-          }
-        } else if (line.match(/^```/)) {
-          md += '```\n'
-          // Terminate the figure if currently in one
-          if (fig) {
-            md += `:::\n`
-            fig = null
-          }
-        } else {
-          md += line + '\n'
+        // If this the chunk has the `fig.cap` option then create a
+        // .fig > .caption > .h1 using markdown syntax
+        fig = match[2] && match[2].match(/fig\.cap="([^"]*)"/)
+        if (fig) {
+          // Create wrapping `div.fig` and `div.caption h1`
+          const title = fig[1]
+          md += `::: {.fig}\n::: {.caption}\n# ${title}\n:::\n`
+          // Remove fig.cap from cell options
+          options = options.replace(fig[0], '')
+          if (options.slice(-1) === ',') options = options.slice(0, -1)
         }
-      }
 
-      const volumeTemp = new memfs.Volume()
-      // Use `pathFrom` here instead of some arbitrary filename (which would be possible)
-      // to retain `pathTo` generation behaviour of `super.import`
-      return this.writeFile(pathFrom, md, volumeTemp).then(() => {
-        // Continue with normal Markdown import
-        return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
-      })
-    })
+        // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
+        // to store language and indicate an executable cell
+        md += '``` {.' + language + '}\n'
+        if (options) {
+          // Cell options as a comment line
+          md += `${this._comment(language)}: ${options}\n`
+        }
+      } else if (line.match(/^```/)) {
+        md += '```\n'
+        // Terminate the figure if currently in one
+        if (fig) {
+          md += `:::\n`
+          fig = null
+        }
+      } else {
+        md += line + '\n'
+      }
+    }
+
+    const volumeTemp = new memfs.Volume()
+    // Use `pathFrom` here instead of some arbitrary filename (which would be possible)
+    // to retain `pathTo` generation behaviour of `super.import`
+    await this.writeFile(pathFrom, md, volumeTemp)
+
+    // Continue with normal Markdown import
+    return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
   }
 
-  export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     const volumeTemp = new memfs.Volume()
-    return super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options).then(() => {
-      return this.readFile('/temp.md', volumeTemp)
-    }).then(md => {
-      let xmd = ''
-      let lines = md.split('\n')
-      for (let index = 0; index < lines.length; index++) {
-        let line = lines[index]
-        // Convert Pandoc Markdown code cells to XMarkdown code chunks
-        let match = line.match(/^```\s*\{\.([a-z]+)\}/)
-        if (match) {
-          let language = match[1]
-          let spec = '``` {' + language
+    await super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options)
 
-          let first = lines[index + 1]
-          if (first) {
-            let comment = this._comment(language)
-            let options = first.match(`^${comment}:\\s*(.*)`)
-            if (options) {
-              spec += ' ' + options[1]
-              index += 1
-            }
+    const md = await this.readFile('/temp.md', volumeTemp)
+    let xmd = ''
+    let lines = md.split('\n')
+    for (let index = 0; index < lines.length; index++) {
+      let line = lines[index]
+      // Convert Pandoc Markdown code cells to XMarkdown code chunks
+      let match = line.match(/^```\s*\{\.([a-z]+)\}/)
+      if (match) {
+        let language = match[1]
+        let spec = '``` {' + language
+
+        let first = lines[index + 1]
+        if (first) {
+          let comment = this._comment(language)
+          let options = first.match(`^${comment}:\\s*(.*)`)
+          if (options) {
+            spec += ' ' + options[1]
+            index += 1
           }
-          xmd += spec + '}\n'
-        } else {
-          xmd += line + '\n'
         }
+        xmd += spec + '}\n'
+      } else {
+        xmd += line + '\n'
       }
-      return this.writeFile(pathTo, xmd, volumeTo)
-    })
+    }
+
+    return this.writeFile(pathTo, xmd, volumeTo)
   }
 
   /**
