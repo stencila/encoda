@@ -1,49 +1,28 @@
-const projectConverters = require('./project')
-const documentConverters = require('./document')
-const sheetConverters = require('./sheet')
+const fs = require('fs')
 
-let converters = [].concat(
-  Object.values(projectConverters),
-  Object.values(documentConverters),
-  Object.values(sheetConverters)
-)
+let converters = [
+  require('./JSONConverter')
+]
 
-function import_ (pathFrom, pathTo, volumeFrom, volumeTo) {
-  return Promise.resolve().then(() => {
-    function check (index = 0) {
-      const Converter = converters[index]
-      if (!Converter) throw new Error('No converters can import from ' + pathFrom)
-      let converter = new Converter()
-      return converter.canImport(pathFrom, volumeFrom).then((can) => {
-        return can ? converter.import(pathFrom, pathTo, volumeFrom, volumeTo) : check(index + 1)
-      })
-    }
-    return check()
-  })
+async function match (path, volume, format) {
+  for (let converter of converters) {
+    if (await converter.match(path, volume, format)) return converter
+  }
+  if (format) throw new Error(`No converter for format "${format}"`)
+  else throw new Error(`No converter for path "${path}"`)
 }
 
-function export_ (pathFrom, pathTo, volumeFrom, volumeTo) {
-  return Promise.resolve().then(() => {
-    function check (index = 0) {
-      const Converter = converters[index]
-      if (!Converter) throw new Error('No converters can export from ' + pathFrom)
-      let converter = new Converter()
-      return converter.canExport(pathTo, volumeTo).then((can) => {
-        return can ? converter.export(pathFrom, pathTo, volumeFrom, volumeTo) : check(index + 1)
-      })
-    }
-    return check()
-  })
-}
+async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, formatTo) {
+  if (!volumeFrom) volumeFrom = fs
+  if (!volumeTo) volumeTo = volumeFrom
 
-function convert (pathFrom, pathTo, volumeFrom, volumeTo) {
-  return import_(pathFrom, null, volumeFrom, volumeTo).then((pathImportedTo, volumeImportedTo) => {
-    return export_(pathImportedTo, pathTo, volumeImportedTo, volumeTo)
-  })
+  const importer = await match(pathFrom, volumeFrom, formatFrom)
+  const doc = await importer.import(pathFrom, volumeFrom)
+  const exporter = await match(pathTo, volumeTo, formatTo)
+  await exporter.export(doc, pathTo, volumeTo)
 }
 
 module.exports = {
-  'import': import_,
-  'export': export_,
+  match,
   convert
 }
