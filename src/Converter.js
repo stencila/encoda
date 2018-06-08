@@ -14,64 +14,54 @@ class Converter {
     return []
   }
 
-  matchExtensions (pathFrom, extensions) {
+  async matchExtensions (pathFrom, extensions) {
     const ext = path.extname(pathFrom).substring(1).toLowerCase()
-    return Promise.resolve(
-      extensions.indexOf(ext) > -1
-    )
+    return extensions.indexOf(ext) > -1
   }
 
-  canImport (pathFrom, volumeFrom) {
+  async canImport (pathFrom, volumeFrom) {
     return this.matchExtensions(pathFrom, this.extensions())
   }
 
-  canExport (pathTo, volumeTo) {
+  async canExport (pathTo, volumeTo) {
     return this.matchExtensions(pathTo, this.extensions())
   }
 
-  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     pathTo = pathTo || tmp.tmpNameSync()
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
-    return this.readFile(pathFrom, volumeFrom, options).then((content) => {
-      return this.writeFile(pathTo, content, volumeTo, options).then(() => {
-        return pathTo
-      })
-    })
+    const content = await this.readFile(pathFrom, volumeFrom, options)
+    await this.writeFile(pathTo, content, volumeTo, options)
+    return pathTo
   }
 
-  export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     pathTo = pathTo || tmp.tmpNameSync()
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
 
-    return this.readFile(pathFrom, volumeFrom, options).then((content) => {
-      return this.writeFile(pathTo, content, volumeTo, options).then(() => {
-        return pathTo
-      })
-    })
+    const content = await this.readFile(pathFrom, volumeFrom, options)
+    await this.writeFile(pathTo, content, volumeTo, options)
+    return pathTo
   }
 
-  load (content, options = {}) {
+  async load (content, options = {}) {
     const volume = new memfs.Volume()
-    return this.writeFile('/content.tmp', content, volume, options).then(() => {
-      return this.import('/content.tmp', '/imported.tmp', volume, volume, options).then((path) => {
-        return this.readFile(path, volume)
-      })
-    })
+    await this.writeFile('/content.tmp', content, volume, options)
+    const path = await this.import('/content.tmp', '/imported.tmp', volume, volume, options)
+    return this.readFile(path, volume)
   }
 
-  dump (content, options = {}) {
+  async dump (content, options = {}) {
     const volume = new memfs.Volume()
-    return this.writeFile('/content.tmp', content, volume, options).then(() => {
-      return this.export('/content.tmp', '/exported.tmp', volume, volume, options).then((path) => {
-        return this.readFile(path, volume)
-      })
-    })
+    await this.writeFile('/content.tmp', content, volume, options)
+    const path = await this.export('/content.tmp', '/exported.tmp', volume, volume, options)
+    return this.readFile(path, volume)
   }
 
-  readFile (path, volume = fs, options = {}) {
+  async readFile (path, volume = fs, options = {}) {
     if (!options.encoding) options.encoding = 'utf8'
 
     return new Promise((resolve, reject) => {
@@ -82,7 +72,7 @@ class Converter {
     })
   }
 
-  writeFile (path_, data, volume = fs, options = {}) {
+  async writeFile (path_, data, volume = fs, options = {}) {
     if (!options.encoding) options.encoding = 'utf8'
 
     return new Promise((resolve, reject) => {
@@ -97,44 +87,38 @@ class Converter {
     })
   }
 
-  loadXml (xml) {
-    return Promise.resolve().then(() => {
-      // Remove any XML declaration as it interfers
-      // with indenting (but add it back on dumpXml)
-      let match = xml.match(/<\?xml[^>]+>/)
-      if (match) xml = xml.replace(match[0], '')
-      return cheerio.load(xml, {xmlMode: true})
-    })
+  async loadXml (xml) {
+    // Remove any XML declaration as it interfers
+    // with indenting (but add it back on dumpXml)
+    let match = xml.match(/<\?xml[^>]+>/)
+    if (match) xml = xml.replace(match[0], '')
+    return cheerio.load(xml, {xmlMode: true})
   }
 
-  dumpXml (dom, options = {}) {
-    return new Promise((resolve, reject) => {
-      if (options.pretty !== false) options.pretty = true
+  async dumpXml (dom, options = {}) {
+    if (options.pretty !== false) options.pretty = true
 
-      let content = dom.xml()
-      if (options.pretty) {
-        content = beautifyHtml(content, {
-          indent_size: 2,
-          void_elements: [], // No, 'self-closing', void tags for XML
-          unformatted: [].concat(options.tagsUnformatted || []),
-          content_unformatted: options.tagsContentUnformatted || []
-        })
-      }
-      if (options.declaration) content = '<?xml version="1.0" encoding="UTF-8"?>\n' + content
-      return resolve(content)
-    })
+    let content = dom.xml()
+    if (options.pretty) {
+      content = beautifyHtml(content, {
+        indent_size: 2,
+        void_elements: [], // No, 'self-closing', void tags for XML
+        unformatted: [].concat(options.tagsUnformatted || []),
+        content_unformatted: options.tagsContentUnformatted || []
+      })
+    }
+    if (options.declaration) content = '<?xml version="1.0" encoding="UTF-8"?>\n' + content
+    return content
   }
 
-  readXml (path, volume = fs, options = {}) {
-    return this.readFile(path, volume, options).then((xml) => {
-      return this.loadXml(xml)
-    })
+  async readXml (path, volume = fs, options = {}) {
+    const xml = await this.readFile(path, volume, options)
+    return this.loadXml(xml)
   }
 
-  writeXml (path, dom, volume = fs, options = {}) {
-    return this.dumpXml(dom, options).then((xml) => {
-      return this.writeFile(path, xml, volume, options)
-    })
+  async writeXml (path, dom, volume = fs, options = {}) {
+    const xml = await this.dumpXml(dom, options)
+    return this.writeFile(path, xml, volume, options)
   }
 }
 
