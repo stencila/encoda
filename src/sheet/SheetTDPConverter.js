@@ -29,12 +29,11 @@ class SheetTDPConverter extends SheetDSVConverter {
 
     // Is this a CSV file with a sibling `datapackage.json`?
     if (ext === 'csv') {
-      return storer.readDir(dir).then(files => {
-        for (let file of files) {
-          if (file === 'datapackage.json') return true
-        }
-        return false
-      })
+      const files = storer.readDir(dir)
+      for (let file of files) {
+        if (file === 'datapackage.json') return true
+      }
+      return false
     }
 
     // No match
@@ -44,59 +43,57 @@ class SheetTDPConverter extends SheetDSVConverter {
   /**
    * @override
    */
-  import (path, storer, buffer) {
+  async import (path, storer, buffer) {
     let {dir, file} = this._parsePath(path)
     let {$sheet, $$} = this._importCreateElement()
 
     let datapackageFile = (dir ? (dir + '/') : '') + 'datapackage.json'
-    return storer.readFile(datapackageFile).then(data => {
-      let pkg = JSON.parse(data)
+    const data = storer.readFile(datapackageFile)
+    let pkg = JSON.parse(data)
 
-      // Get the resource for the imported file
-      let resource
-      if (file === 'datapackage.json') {
-        // Currently use the first resource. In the future, the user
-        // may be able to specify this
-        resource = pkg.resources[0]
-      } else {
-        // Search for the imported file among resources
-        for (let candidate of pkg.resources) {
-          if (file === candidate.path) {
-            resource = candidate
-            break
-          }
+    // Get the resource for the imported file
+    let resource
+    if (file === 'datapackage.json') {
+      // Currently use the first resource. In the future, the user
+      // may be able to specify this
+      resource = pkg.resources[0]
+    } else {
+      // Search for the imported file among resources
+      for (let candidate of pkg.resources) {
+        if (file === candidate.path) {
+          resource = candidate
+          break
         }
       }
+    }
 
-      // The <name> element is required
-      $sheet.append($$('name').text(resource.name || resource.path || 'unnamed'))
+    // The <name> element is required
+    $sheet.append($$('name').text(resource.name || resource.path || 'unnamed'))
 
-      // The <fields> element is required
-      let fieldsEl = $$('fields')
-      $sheet.append(fieldsEl)
-      if (resource.schema) {
-        for (let field of resource.schema.fields) {
-          let el = $$('field').attr({
-            name: field.name || '',
-            title: field.title || '',
-            description: field.description || '',
-            type: field.type || '',
-            format: field.format || '',
-            rdfType: field.rdfType || ''
-          })
-          fieldsEl.append(el)
-        }
+    // The <fields> element is required
+    let fieldsEl = $$('fields')
+    $sheet.append(fieldsEl)
+    if (resource.schema) {
+      for (let field of resource.schema.fields) {
+        let el = $$('field').attr({
+          name: field.name || '',
+          title: field.title || '',
+          description: field.description || '',
+          type: field.type || '',
+          format: field.format || '',
+          rdfType: field.rdfType || ''
+        })
+        fieldsEl.append(el)
       }
+    }
 
-      // Read in values
-      let csvFile = (dir ? (dir + '/') : '') + 'data.csv'
-      return this._importReadData(csvFile, storer).then(data => {
-        $sheet.append(
-          this._importValuesFromData(data, $$)
-        )
-        return this._importWriteBuffer($sheet, buffer)
-      })
-    })
+    // Read in values
+    let csvFile = (dir ? (dir + '/') : '') + 'data.csv'
+    const data2 = this._importReadData(csvFile, storer)
+    $sheet.append(
+      this._importValuesFromData(data2, $$)
+    )
+    return this._importWriteBuffer($sheet, buffer)
   }
 
   /**
