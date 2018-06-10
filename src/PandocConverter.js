@@ -67,9 +67,9 @@ class PandocConverter extends Converter {
     // Call Pandoc to convert Pandoc JSON to `options.to` format
     let args = [
       '--from', 'json',
-      '--to', options.to,
-      '--eol', options.eol
+      '--to', options.to
     ]
+    if (options.eol) args = args.concat(['--eol', options.eol])
     if (options.complete) {
       args = args.concat(['--standalone'])
       if (options.template) {
