@@ -28,7 +28,12 @@ testAsync('Fixtures: round trips', async assert => {
       await convert(input, output)
     } catch (error) {
       // Skip test if converter not found
-      assert.skip(error.message)
+      if (error.message.match(/^No converter/)) {
+        assert.skip(error.message)
+      } else {
+        assert.fail(error)
+        console.error(error)
+      }
       continue
     }
 
