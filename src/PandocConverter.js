@@ -33,13 +33,18 @@ class PandocConverter extends Converter {
     const json = await this.readFile(pathTemp, volumeTemp, options)
     const pandoc = JSON.parse(json)
 
-    // Generate a an executable document from the Pandoc document
-    const doc = {
-      type: 'Document',
-      body: []
-    }
-    for (let block of pandoc.blocks) {
-      doc.body.push(this._importNode(block))
+    // Generate an executable document from the Pandoc document
+    let doc
+    if (false) {
+      doc = {
+        type: 'Document',
+        body: []
+      }
+      for (let block of pandoc.blocks) {
+        doc.body.push(this._importNode(block))
+      }
+    } else {
+      doc = pandoc
     }
 
     return doc
@@ -49,13 +54,18 @@ class PandocConverter extends Converter {
     options = Object.assign(this.options(), options)
 
     // Generate a Pandoc document from an executable document
-    const pandoc = {
-      'pandoc-api-version': [ 1, 17, 3 ],
-      meta: {},
-      blocks: []
-    }
-    for (let node of doc.body) {
-      pandoc.blocks.push(this._exportNode(node))
+    let pandoc
+    if (false) {
+      pandoc = {
+        'pandoc-api-version': [ 1, 17, 3 ],
+        meta: {},
+        blocks: []
+      }
+      for (let node of doc.body) {
+        pandoc.blocks.push(this._exportNode(node))
+      }
+    } else {
+      pandoc = doc
     }
 
     // Write to Pandoc document to a temporary file
