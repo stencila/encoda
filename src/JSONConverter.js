@@ -18,4 +18,4 @@ class JSONConverter extends Converter {
   }
 }
 
-module.exports = new JSONConverter()
+module.exports = JSONConverter

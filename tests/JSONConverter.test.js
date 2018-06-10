@@ -1,6 +1,7 @@
 const {testAsync} = require('./helpers')
 
-const converter = require('../src/JSONConverter')
+const JSONConverter = require('../src/JSONConverter')
+const converter = new JSONConverter()
 
 testAsync('JSONConverter.match', async assert => {
   assert.equal(converter.match(null, null, 'json'), true)

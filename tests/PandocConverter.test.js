@@ -1,6 +1,7 @@
 const {testAsync} = require('./helpers')
 
-const converter = require('../src/PandocConverter')
+const PandocConverter = require('../src/PandocConverter')
+const converter = new PandocConverter()
 
 testAsync('PandocConverter.load', async assert => {
   let pandocJson = JSON.stringify(testPandoc)

@@ -1,11 +1,10 @@
 const {testAsync} = require('./helpers')
 
 const {match} = require('../src')
-const jsonConverter = require('../src/JSONConverter')
 
 testAsync('match', async assert => {
-  assert.equal(await match('file.json'), jsonConverter, 'using path')
-  assert.equal(await match('file.foo', null, 'json'), jsonConverter, 'using format')
+  assert.equal((await match('file.json')).constructor.name, 'JSONConverter', 'using path')
+  assert.equal((await match('file.foo', null, 'json')).constructor.name, 'JSONConverter', 'using format')
 
   try {
     await match('file.foo')

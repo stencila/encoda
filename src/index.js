@@ -1,7 +1,11 @@
 const fs = require('fs')
 
+const JSONConverter = require('./JSONConverter')
+const MarkdownConverter = require('./MarkdownConverter')
+
 let converters = [
-  require('./JSONConverter')
+  new JSONConverter(),
+  new MarkdownConverter()
 ]
 
 async function match (path, volume, format) {

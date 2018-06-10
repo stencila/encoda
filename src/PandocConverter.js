@@ -24,6 +24,7 @@ class PandocConverter extends Converter {
       '--from', options.from,
       '--to', 'json'
     ]
+    if (options.importArgs) args = args.concat(options.importArgs)
     const pathTemp = '/temp.json'
     const volumeTemp = new memfs.Volume()
     await this._callPandoc(path, volume, pathTemp, volumeTemp, args)
@@ -75,6 +76,7 @@ class PandocConverter extends Converter {
         args = args.concat(['--template', options.template])
       }
     }
+    if (options.exportArgs) args = args.concat(options.exportArgs)
     await this._callPandoc(pathTemp, volumeTemp, path, volume, args)
   }
 
@@ -165,4 +167,4 @@ class PandocConverter extends Converter {
   }
 }
 
-module.exports = new PandocConverter()
+module.exports = PandocConverter
