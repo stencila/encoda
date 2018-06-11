@@ -21,7 +21,7 @@ class PandocConverter extends Converter {
 
       to: 'json',
       eol: 'native', // Line endings : --eol=crlf|lf|native
-      complete: true
+      standalone: true
     }
   }
 
@@ -74,7 +74,7 @@ class PandocConverter extends Converter {
       '--to', options.to
     ]
     if (options.eol) args = args.concat(['--eol', options.eol])
-    if (options.complete) {
+    if (options.standalone) {
       args = args.concat(['--standalone'])
       if (options.template) {
         args = args.concat(['--template', options.template])

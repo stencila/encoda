@@ -20,7 +20,8 @@ class JATSConverter extends PandocConverter {
       from: 'jats',
 
       to: 'jats',
-      template: path.join(__dirname, 'JATSTemplate.md'),
+      standalone: true,
+      template: path.join(__dirname, 'JATSTemplate.xml'),
       exportArgs: [
         '--wrap', 'none' // Don't wrap text (shouldn't anyway for JATS, but older versions of Pandoc did)
       ]
@@ -129,7 +130,7 @@ class JATSConverter extends PandocConverter {
 
     // Write post-processed JATS
     const jatsNew = xml.dump(dom, {
-      declaration: options.complete,
+      declaration: options.standalone,
       tagsUnformatted: ['bold', 'italic', 'ext-link'],
       tagsContentUnformatted: ['p', 'preformat', 'code']
     })

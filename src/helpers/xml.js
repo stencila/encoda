@@ -3,7 +3,7 @@ const cheerio = require('cheerio')
 
 function load (xml) {
   // Remove any XML declaration as it interfers
-  // with indenting (but add it back on dumpXml)
+  // with indenting
   let match = xml.match(/<\?xml[^>]+>/)
   if (match) xml = xml.replace(match[0], '')
   return cheerio.load(xml, {xmlMode: true})

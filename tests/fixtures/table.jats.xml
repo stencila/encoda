@@ -1,22 +1,34 @@
-<table-wrap id="table">
-  <caption>
-    <title>Title</title>
-    <p>Caption</p>
-  </caption>
-  <table>
-    <col align="left" />
-    <col align="left" />
-    <thead>
-      <tr>
-        <th><bold role="strong">Col1</bold></th>
-        <th><bold role="strong">Col2</bold></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Val1</td>
-        <td>Val2</td>
-      </tr>
-    </tbody>
-  </table>
-</table-wrap>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <article-meta>
+    </article-meta>
+  </front>
+
+  <body>
+    <table-wrap id="table">
+      <caption>
+        <title>Title</title>
+        <p>Caption</p>
+      </caption>
+      <table>
+        <col align="left" />
+        <col align="left" />
+        <thead>
+          <tr>
+            <th><bold role="strong">Col1</bold></th>
+            <th><bold role="strong">Col2</bold></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Val1</td>
+            <td>Val2</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+  </body>
+  <back/>
+</article>
