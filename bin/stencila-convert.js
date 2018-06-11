@@ -1,22 +1,27 @@
 #!/usr/bin/env node
 
-const convert = require('../src')
+// A very simple CLI for running this package.
+// Intended mainly for testing, see https://github.com/stencila/cli
+// for a more fully featured CLI which incorporates this package.
 
-const operation = process.argv[2]
-const pathFrom = process.argv[3]
-const pathTo = process.argv[4]
+const convert = require('../src').convert
+
+const pathFrom = process.argv[2]
+const pathTo = process.argv[3]
 
 if (!pathFrom) {
-  console.error('Usage:\n\n  stencila-convert <import|export|convert> <from> [to]\n\ne.g.\n')
-  console.error('  stencila-convert import folder')
-  console.error('  stencila-convert import doc.md doc.jats.xml')
-  console.error('  stencila-convert export data.sheet.xml data.csv')
-  console.error('  stencila-convert convert doc.md doc.pdf')
+  console.error('Usage:')
+  console.error('  stencila-convert <from> [to]\n')
+  console.error('  from: path to import from')
+  console.error('  to: path to export to\n')
+  console.error('Examples:\n')
+  console.error('  stencila-convert doc.md doc.jats.xml')
+  console.error('  stencila-convert doc.jats.xml doc.md')
   process.exit(1)
 }
 
-convert[operation](pathFrom, pathTo).then(() => {
-  console.log(`Success: ${operation} from "${pathFrom}" to "${pathTo}"`)
+convert(pathFrom, pathTo).then(() => {
+  console.log(`Success: converted from "${pathFrom}" to "${pathTo}"`)
 }).catch((error) => {
   console.error(error.stack)
 })
