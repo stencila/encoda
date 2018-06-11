@@ -15,8 +15,8 @@ const {convert} = require('../src')
 testAsync('Fixtures: round trips', async assert => {
   let inputs = glob.sync(path.join(__dirname, 'fixtures', '*'))
   for (let input of inputs) {
-    // Skip output files
-    if (input.includes('-out.')) continue
+    // Skip output and explicitly skipped files
+    if (input.includes('-out.') || input.includes('-skip.')) continue
 
     // Generate output and expected file names
     let match = path.basename(input).match(/^([^-.]+)(-.+)?\.(.+)$/)
