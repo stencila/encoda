@@ -72,14 +72,16 @@ pandoc.spawn = async function (input, args) {
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(pandoc.path(), args)
     let stdout = ''
+    let stderr = ''
     child.stdout.on('data', (data) => {
       stdout += data
     })
-    child.stdout.on('end', () => {
-      resolve(stdout)
-    })
     child.stderr.on('data', (data) => {
-      reject(new Error(data))
+      stderr += data
+    })
+    child.on('close', () => {
+      if (stderr) reject(new Error(stderr))
+      else resolve(stdout)
     })
     child.on('error', (err) => {
       reject(err)
