@@ -7,5 +7,5 @@ Unordered list
 Ordered list
 
 1.  one
-2.  two
-3.  three
+100.  two
+42.  three
