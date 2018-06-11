@@ -15,8 +15,8 @@ const {convert} = require('../src')
 testAsync('Fixtures: round trips', async assert => {
   let inputs = glob.sync(path.join(__dirname, 'fixtures', '*'))
   for (let input of inputs) {
-    // Skip output and explicitly skipped files
-    if (input.includes('-out.') || input.includes('-skip.')) continue
+    // Skip output files
+    if (input.includes('-out.')) continue
 
     // Generate output and expected file names
     let match = path.basename(input).match(/^([^-.]+)(-.+)?\.(.+)$/)
@@ -24,6 +24,13 @@ testAsync('Fixtures: round trips', async assert => {
     let expected = path.join(__dirname, 'fixtures', `${match[1]}.${match[3]}`)
 
     assert.comment(`Converting ${path.basename(input)} to ${path.basename(output)}`)
+
+    // Skip, skipped files
+    if (input.includes('-skip.')) {
+      assert.skip('Skipping')
+      continue
+    }
+
     try {
       await convert(input, output, fs, fs, null, null, {
         eol: 'lf' // Force 'lf' so that line endings are as expected on Windows
