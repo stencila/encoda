@@ -89,6 +89,12 @@ Or, manually test conversion using the bin script on test cases:
 ./bin/stencila-convert.js tests/fixtures/paragraphs.md temp.pdf
 ```
 
+You can create a new test case for a particular format by converting an existing tests case for another format. For example, to create a nested lists test case for JATS, you could use the existing test case for Markdown:
+
+```bash
+./bin/stencila-convert.js tests/fixtures/list_nested.md tests/fixtures/list_nested.jats.xml
+```
+
 There's also a `Makefile` if you prefer to run tasks that way e.g.
 
 ```bash
