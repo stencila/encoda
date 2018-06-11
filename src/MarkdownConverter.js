@@ -35,9 +35,10 @@ class MarkdownConverter extends PandocConverter {
   async import (path, volume = fs, options = {}) {
     options = Object.assign(this.options(), options)
 
+    const md = await this.readFile(path, volume)
+
     // Pre-process any YAML front matter to translate property aliases
     // into their canonical property names
-    const md = await this.readFile(path, volume || fs)
     let front = yamlFront.loadFront(md)
 
     let author = front.author || front.authors

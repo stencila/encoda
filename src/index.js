@@ -1,13 +1,15 @@
 const fs = require('fs')
 
+const JATSConverter = require('./JATSConverter')
 const JSONConverter = require('./JSONConverter')
-const PandocConverter = require('./PandocConverter')
 const MarkdownConverter = require('./MarkdownConverter')
+const PandocConverter = require('./PandocConverter')
 
 let converters = [
   // Order is important for matching.
   // First matching converter is used
 
+  new JATSConverter(),          // .jats.xml, .jats
   new MarkdownConverter(),      // .md
 
   new PandocConverter(),        // .pandoc.json

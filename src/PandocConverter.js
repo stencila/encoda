@@ -18,6 +18,7 @@ class PandocConverter extends Converter {
   options () {
     return {
       from: 'json',
+
       to: 'json',
       eol: 'native', // Line endings : --eol=crlf|lf|native
       complete: true
