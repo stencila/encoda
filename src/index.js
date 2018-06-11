@@ -22,14 +22,14 @@ async function match (path, volume, format) {
   else throw new Error(`No converter for path "${path}"`)
 }
 
-async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, formatTo) {
+async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, formatTo, options) {
   if (!volumeFrom) volumeFrom = fs
   if (!volumeTo) volumeTo = volumeFrom
 
   const importer = await match(pathFrom, volumeFrom, formatFrom)
-  const doc = await importer.import(pathFrom, volumeFrom)
+  const doc = await importer.import(pathFrom, volumeFrom, options)
   const exporter = await match(pathTo, volumeTo, formatTo)
-  await exporter.export(doc, pathTo, volumeTo)
+  await exporter.export(doc, pathTo, volumeTo, options)
 }
 
 module.exports = {

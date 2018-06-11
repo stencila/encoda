@@ -25,7 +25,9 @@ testAsync('Fixtures: round trips', async assert => {
 
     assert.comment(`Converting ${path.basename(input)} to ${path.basename(output)}`)
     try {
-      await convert(input, output)
+      await convert(input, output, fs, fs, null, null, {
+        eol: 'lf' // Force 'lf' so that line endings are as expected on Windows
+      })
     } catch (error) {
       // Skip test if converter not found
       if (error.message.match(/^No converter/)) {
