@@ -9,11 +9,11 @@ let converters = [
   // Order is important for matching.
   // First matching converter is used
 
-  new JATSConverter(),          // .jats.xml, .jats
-  new MarkdownConverter(),      // .md
+  new JATSConverter(),
+  new MarkdownConverter(),
+  new PandocConverter(),
 
-  new PandocConverter(),        // .pandoc.json
-  new JSONConverter()           // .json
+  new JSONConverter()
 ]
 
 async function match (path, volume, format) {
