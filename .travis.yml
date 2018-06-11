@@ -11,6 +11,10 @@ cache:
   directories:
     - node_modules
 
+before_script:
+  # Get Pandoc and any other requirements
+  - npm run setup
+
 script:
   - npm run lint
   - npm run cover
