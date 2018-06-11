@@ -19,8 +19,12 @@ class Converter {
     if (format) {
       return this.id() === format
     } else {
-      const ext = path.extname(path_).substring(1).toLowerCase()
-      return this.extensions().indexOf(ext) > -1
+      let match = path.basename(path_).match(/^([^.]+)\.(.+)$/)
+      if (match) {
+        let ext = match[2].toLowerCase()
+        return this.extensions().indexOf(ext) > -1
+      }
+      return false
     }
   }
 
