@@ -1,6 +1,7 @@
 ## `stencila/convert` : Stencila converters
 
 ![Experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/convert)
 [![NPM](http://img.shields.io/npm/v/stencila-convert.svg?style=flat)](https://www.npmjs.com/package/stencila-convert)
 [![Build status](https://travis-ci.org/stencila/convert.svg?branch=master)](https://travis-ci.org/stencila/convert)
 [![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni?svg=true)](https://ci.appveyor.com/project/nokome/convert)
@@ -22,10 +23,10 @@ Many of the `Document` converters rely on a recent version of Pandoc. This packa
 ### Use
 
 ```bash
-stencila-convert import document.md document.jats.xml
+stencila-convert document.md document.jats.xml
 ```
 
-When these converters are better developed and tested, the plan is to eventually integrate this package into:
+When these converters are better developed and tested, the plan is to integrate this package into:
 
 - the [Stencila CLI (command line tool)](https://github.com/stencila/cli) as a sub-command e.g. `stencila convert document.md document.jats.xml`
 
@@ -46,8 +47,7 @@ RMarkdown       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)    
 Latex           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-**Sheets**      |                                                                  |
+PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)                                                               |
 CSV             |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 CSVY            |                                                                  |
 Tabular Data Package |                                                             |
@@ -74,7 +74,7 @@ npm test # or make test
 Or, run a single test file:
 
 ```bash
-node tests/document/DocumentJupyterConverter.test.js
+node tests/convert.test.js
 ```
 
 To get coverage statistics:
@@ -83,10 +83,10 @@ To get coverage statistics:
 npm run cover # or make cover
 ```
 
-Or, manually test conversion using the bin script:
+Or, manually test conversion using the bin script on test cases:
 
 ```bash
-./bin/stencila-convert.js tests/document/fixtures/paragraph/md/paragraph.md temp.pdf
+./bin/stencila-convert.js tests/fixtures/paragraphs.md temp.pdf
 ```
 
 There's also a `Makefile` if you prefer to run tasks that way e.g.
@@ -95,7 +95,7 @@ There's also a `Makefile` if you prefer to run tasks that way e.g.
 make lint cover check
 ```
 
-You can also test using the Docker image:
+You can also test using the Docker image for a self-contained, host-independent test environment:
 
 ```bash
 docker build --tag stencila/convert .
