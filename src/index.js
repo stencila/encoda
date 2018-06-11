@@ -1,11 +1,17 @@
 const fs = require('fs')
 
 const JSONConverter = require('./JSONConverter')
+const PandocConverter = require('./PandocConverter')
 const MarkdownConverter = require('./MarkdownConverter')
 
 let converters = [
-  new JSONConverter(),
-  new MarkdownConverter()
+  // Order is important for matching.
+  // First matching converter is used
+
+  new MarkdownConverter(),      // .md
+
+  new PandocConverter(),        // .pandoc.json
+  new JSONConverter()           // .json
 ]
 
 async function match (path, volume, format) {
