@@ -85,20 +85,24 @@ class MarkdownConverter extends PandocConverter {
     let md = await this.readFile('/temp.md', volumeTemp)
 
     // Post-process the Markdown
-    let mdNew
+    let mdNew = md
     if (options.complete) {
       // MarkdownTemplate.md writes metadata as JSON on the first line
-      // so extract that from the content
-      const lines = md.split('\n')
+      // so extract that from the content and write as YAML front matter
+      const lines = mdNew.split('\n')
       const json = lines[0]
       const content = lines.slice(1).join('\n')
-
       let front = JSON.parse(json)
-
       mdNew = `---\n${yaml.dump(front)}---\n\n${content}`
-    } else {
-      mdNew = md
     }
+
+    // Pandoc writes code blocks with a language "class" atribute as
+    //   ``` {.py}
+    // Where there is only a single class, rewrite to shorthand
+    //   ```py
+    mdNew = mdNew.replace(/^``` {\.([\w-]+)}$/mg, (match, group1) => {
+      return '```' + group1
+    })
 
     // Write to final destination
     return this.writeFile(path, mdNew, volume)
