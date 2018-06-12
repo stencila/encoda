@@ -138,9 +138,30 @@ round trip conversion file. For example, `input.md` is compared with `input-out.
  To look up the details of the above conversion steps, see the
  [`PandocConverter.js`](https://github.com/stencila/convert/blob/master/src/PandocConverter.js) file.
 
+ **Test case alternatives**
 
-The above test regime tests primarily pandoc conventions for
-reading from and writing to different formats, (pandoc Reader and Writer options)[https://pandoc.org/MANUAL.html#options]. 
+"Round trip" testing checks allows for testing conversions of alternatives for
+input formats. For example,  Atx-style headers (tagged with `#`) in a Markdown file should be treated the same as Setext-style headers (tagged with `----` under the header text) during conversion. That is,
+
+```
+# Atx- style Header example
+```
+
+is converted into the same output as the one below:
+
+```
+Setext-style Header example
+-------------
+```
+
+To make testing more succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
+`heading-setext-out.md` is compared to `heading.md`.
+(Another way to think about this approach is to treat the conversion as
+  standardising the input formats to pandoc Reader / Writer options.)
+
+
+**Note** The above test regime tests primarily pandoc conventions for
+reading from and writing to different formats, (pandoc Reader and Writer options)[https://pandoc.org/MANUAL.html#options].
 
 
 ####Create new test cases
