@@ -11,7 +11,21 @@
 [![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
 
+Stencila Converters allow you to convert between a range of formats commonly used for among researchers (and not only). Converters support
+lossless conversion of interactive source code sections and (most of the time) formatting. This means that you can seamlessly collaborate with colleagues
+who prefer other than you interfaces, without yourself having to give up your tool of choice.
+
+Stencila Converters are using the awesome power of [pandoc](https://pandoc.org/). In particular, Stencila relies much on pandoc's own JSON format
+(see below for developer's documentation).
+
+
+
 ### Install
+
+Currently you need [Node.js](https://nodejs.org/en/download/) and npm to install Stencila Converters. Once you have it set up on your machine,
+
+* on Mac OS X and Linux, open the terminal,
+* on Windows start the Command Prompt or PowerShell, and type:
 
 ```bash
 npm install stencila-convert -g
@@ -57,13 +71,15 @@ Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-al
 
 ### Develop
 
-Clone the repo and install a development environment:
+Clone the repository and install a development environment (again, you need Node.js to do it):
 
 ```bash
 git clone https://github.com/stencila/convert.git
 cd convert
 npm install
 ```
+
+### Test
 
 Run the test suite:
 
@@ -89,12 +105,6 @@ Or, manually test conversion using the bin script on test cases:
 ./bin/stencila-convert.js tests/fixtures/paragraphs.md temp.pdf
 ```
 
-You can create a new test case for a particular format by converting an existing tests case for another format. For example, to create a nested lists test case for JATS, you could use the existing test case for Markdown:
-
-```bash
-./bin/stencila-convert.js tests/fixtures/list_nested.md tests/fixtures/list_nested.jats.xml
-```
-
 There's also a `Makefile` if you prefer to run tasks that way e.g.
 
 ```bash
@@ -106,4 +116,37 @@ You can also test using the Docker image for a self-contained, host-independent 
 ```bash
 docker build --tag stencila/convert .
 docker run stencila/convert
+```
+
+####Test cases
+
+The tests are currently doing a "round trip" conversion. That is, a test case is:
+
+1. Converted to a temporary file in pandoc JSON format.
+2. The temporary file in pandoc JSON format is converted into
+a [pandoc pandoc’s intermediate representation of the document, AST)[https://pandoc.org/using-the-pandoc-api.html].
+3. The pandoc document is converted into an executable document.
+4. The executable document is converted into a pandoc document in JSON format
+(compare [Stencila API](https://github.com/stencila/specs)).
+5. The pandoc document is converted into a temporary file in pandoc JSON format.
+6. The temporary file in pandoc JSON is converted into a file in the same format
+as the test case (with `-out` added to the original name).
+7. The test case (input file) is then compared with the result of the
+round trip conversion file. For example, `input.md` is compared with `input-out.me`; `input.ipynb` with `input-out.ipynb` and so on.
+
+
+ To look up the details of the above conversion steps, see the
+ [`PandocConverter.js`](https://github.com/stencila/convert/blob/master/src/PandocConverter.js) file.
+
+
+The above test regime tests primarily pandoc conventions for
+reading from and writing to different formats, (pandoc Reader and Writer options)[https://pandoc.org/MANUAL.html#options]. 
+
+
+####Create new test cases
+
+You can create a new test case for a particular format by converting an existing tests case for another format. For example, to create a nested lists test case for JATS, you could use the existing test case for Markdown:
+
+```bash
+./bin/stencila-convert.js tests/fixtures/list_nested.md tests/fixtures/list_nested.jats.xml
 ```
