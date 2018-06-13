@@ -59,20 +59,23 @@ and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
 Format          | Import                                                           | Export
 --------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
-**Documents**   |                                                                  |
-Markdown        |  ✔️  <br/> [#23](https://github.com/stencila/convert/issues/23)      |[x] 
-RMarkdown       | [x]       |
-Latex           | [x]        | [x]
-Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
-HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)                                                               |
-CSV             |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Yaml Front matter for CSV [CSVY](http://csvy.org/)            |    [#25](https://github.com/stencila/convert/issues/25)                                                              | [#26](https://github.com/stencila/convert/issues/26)
+Delimiter Separated Values  | [#30](https://github.com/stencila/convert/issues/30) | [#29](https://github.com/stencila/convert/issues/30)
+HTML            |         |   
+JSON            |  ✔️       | ✔️
+JATS            |          |
+Jupyter Notebook|         |                                                          
+Latex           |          |
+Markdown        |  ✔️  <br/> [#23](https://github.com/stencila/convert/issues/23)   |
+Microsoft Excel `.xlsx`   |        |
+Microsoft Word `.docx`| [#24](https://github.com/stencila/convert/issues/24) | [#24](https://github.com/stencila/convert/issues/24)
+Open Document Spreadsheet `.ods`|   |  
+Open Document Text | |
+PDF             |      |    
+RMarkdown       |  ✔️      |
 Tabular Data Package |                                                             |
-Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Microsoft Word `.docx`|[#24](https://github.com/stencila/convert/issues/24)|[#24](https://github.com/stencila/convert/issues/24)
-
+Sheet Script    |  [#29](https://github.com/stencila/convert/issues/29)  | [#28](https://github.com/stencila/convert/issues/28)
+Yaml Front matter for CSV [CSVY](http://csvy.org/) |  [#25](https://github.com/stencila/convert/issues/25)   |   [#26](https://github.com/stencila/convert/issues/26)
+X Markdown | |
 
 ### Develop
 
