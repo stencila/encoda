@@ -84,13 +84,13 @@ async function copyData () {
   mkdirp.sync(data)
 
   // Copy over any templates
-  const templates = glob.sync('../*Template.*')
+  const templates = glob.sync(path.join(__dirname, '..', '*Template.*'))
   if (templates.length) {
     const templatesDir = path.join(data, 'templates')
     mkdirp.sync(templatesDir)
     for (let template of templates) {
-      let src = path.join(__dirname, '..', template)
-      let dest = path.join(templatesDir, template)
+      let src = template
+      let dest = path.join(templatesDir, path.basename(template))
       // When run as a `pkg` executable, `fs.copyFileSync` gives the
       // error "ENOENT: no such file or directory, copyfile" (despite
       // the file being in the snapshot). So, this deals with that and
