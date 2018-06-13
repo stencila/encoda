@@ -51,7 +51,13 @@ API documentation is available at https://stencila.github.io/convert.
 
 ### Status
 
-The following table lists the status of converters that have been developed, are in development, or are being considered for development. We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, +1 the relevant issue, or create an issue if there isn't one yet. Or, send us a pull request!
+The following table lists the status of converters that have been developed, are in development, or are being considered for development. 
+We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/convert/issues) and comment under the relevant one. If there is no
+issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new). 
+
+You can also provide your feedback on the friendly [Stencila Community Forum](https://community.stenci.la)
+and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
+
 
 Format          | Import                                                           | Export
 --------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
@@ -78,6 +84,8 @@ git clone https://github.com/stencila/convert.git
 cd convert
 npm install
 ```
+
+Check how to contribute back to the project. All PRs are most welcome! Thank you!
 
 ### Test
 
