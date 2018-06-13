@@ -19,7 +19,7 @@ class Converter {
     if (format) {
       return this.id() === format
     } else {
-      let match = path.basename(path_).match(/^([^.]+)\.(.+)$/)
+      let match = path.basename(path_).match(/^([^.]+)?\.(.+)$/)
       if (match) {
         let ext = match[2].toLowerCase()
         return this.extensions().indexOf(ext) > -1
