@@ -60,7 +60,7 @@ and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 Format          | Import                                                           | Export
 --------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
 **Documents**   |                                                                  |
-Markdown        |  [x]  <br/> [#23](https://github.com/stencila/convert/issues/23)      |[x] 
+Markdown        |  ✔️  <br/> [#23](https://github.com/stencila/convert/issues/23)      |[x] 
 RMarkdown       | [x]       |
 Latex           | [x]        | [x]
 Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
