@@ -69,7 +69,7 @@ Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)    
 HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)                                                               |
 CSV             |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-CSVY            |                                                                  |
+Yaml Front matter for CSV [CSVY](http://csvy.org/)            |    [#25]https://github.com/stencila/convert/issues/25                                                              | [#26](https://github.com/stencila/convert/issues/26)
 Tabular Data Package |                                                             |
 Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
