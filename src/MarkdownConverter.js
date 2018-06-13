@@ -24,7 +24,7 @@ class MarkdownConverter extends PandocConverter {
       ],
 
       to: 'markdown',
-      template: path.join(__dirname, 'MarkdownTemplate.md'),
+      template: 'MarkdownTemplate.md',
       exportArgs: [
         '--columns=100', // Text wrapping width (for discussion on optimum see https://www.viget.com/articles/the-line-length-misconception/)
         '--atx-headers' // Use ATX (#) headers
@@ -68,7 +68,11 @@ class MarkdownConverter extends PandocConverter {
       if (front.organisations) front.organisations = undefined
     }
 
-    let mdNew = `---\n${yaml.dump(front)}\n---\n\n${front.__content}`
+    let content = front.__content
+    delete front.__content
+    let mdNew = ''
+    if (Object.keys(front).length) mdNew += `---\n${yaml.dump(front)}\n---\n\n`
+    mdNew += content
 
     // Convert new Markdown
     const pathTemp = '/temp.md'

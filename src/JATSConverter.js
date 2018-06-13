@@ -21,7 +21,7 @@ class JATSConverter extends PandocConverter {
 
       to: 'jats',
       standalone: true,
-      template: path.join(__dirname, 'JATSTemplate.xml'),
+      template: 'JATSTemplate.xml',
       exportArgs: [
         '--wrap', 'none' // Don't wrap text (shouldn't anyway for JATS, but older versions of Pandoc did)
       ]
