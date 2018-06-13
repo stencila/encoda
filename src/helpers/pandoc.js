@@ -33,7 +33,7 @@ function homeDir () {
 }
 
 let available = false
-async function getPandoc () {
+pandoc.get = async function () {
   if (available) return
 
   try {
@@ -75,18 +75,19 @@ async function getPandoc () {
  * Also, this is necessary as a way of bundling and then making our
  * templates available when bundling as a `pkg` executable.
  */
-let dataDir
-async function copyData () {
-  if (dataDir) return dataDir
+let initialised = false
+pandoc.init = async function () {
+  if (initialised) return
 
   // Create a Pandoc data directory
-  const data = path.join(homeDir(), 'data', 'pandoc')
-  mkdirp.sync(data)
+  let dataDir = path.join(homeDir(), 'data', 'pandoc')
+  mkdirp.sync(dataDir)
+  pandoc.dataDir = dataDir
 
   // Copy over any templates
   const templates = glob.sync(path.join(__dirname, '..', '*Template.*'))
   if (templates.length) {
-    const templatesDir = path.join(data, 'templates')
+    const templatesDir = path.join(dataDir, 'templates')
     mkdirp.sync(templatesDir)
     for (let template of templates) {
       let src = template
@@ -103,17 +104,19 @@ async function copyData () {
     }
   }
 
-  dataDir = data
-  return dataDir
+  initialised = true
+}
+
+pandoc.setup = async function () {
+  await pandoc.get()
+  await pandoc.init()
 }
 
 pandoc.spawn = async function (input, args) {
-  // Ensure Pandoc is available and any data copied
-  await getPandoc()
-  await copyData()
+  await pandoc.setup()
 
   // Always use our Pandoc data directory
-  args.push(`--data-dir=${dataDir}`)
+  args.push(`--data-dir=${pandoc.dataDir}`)
 
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(pandoc.path(), args)

@@ -1,5 +1,7 @@
 const fs = require('fs')
 
+const pandoc = require('./helpers/pandoc')
+
 const DarConverter = require('./DarConverter')
 const FolderConverter = require('./FolderConverter')
 const JATSConverter = require('./JATSConverter')
@@ -26,6 +28,10 @@ let converters = [
   new JSONConverter()
 ]
 
+async function setup () {
+  pandoc.setup()
+}
+
 async function match (path, volume, format, direction) {
   let method
   if (direction === 'import') method = 'importable'
@@ -49,6 +55,7 @@ async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, form
 }
 
 module.exports = {
+  setup,
   match,
   convert
 }

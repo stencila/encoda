@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "bin": "./bin/stencila-convert.js",
   "scripts": {
-    "setup": "node -e 'require(\"./src/helpers/pandoc\").get()'",
+    "setup": "node -e 'require(\"./src/\").setup()'",
     "check": "dependency-check ./package.json && dependency-check ./package.json --unused --no-dev",
     "lint": "standard",
     "test": "tape \"tests/**/*.test.js\" | tap-spec",
