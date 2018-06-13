@@ -15,7 +15,7 @@ class Converter {
     return [this.id()]
   }
 
-  match (path_, volume, format) {
+  match (path_, volume = fs, format = null) {
     if (format) {
       return this.id() === format
     } else {
@@ -26,6 +26,14 @@ class Converter {
       }
       return false
     }
+  }
+
+  async importable (path, volume = fs, format = null) {
+    return this.match(path, volume, format)
+  }
+
+  async exportable (path, volume = fs, format = null) {
+    return this.match(path, volume, format)
   }
 
   async load (content, options = {}) {

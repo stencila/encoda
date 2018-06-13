@@ -19,9 +19,9 @@ testAsync('Fixtures: round trips', async assert => {
     if (input.includes('-out.')) continue
 
     // Generate output and expected file names
-    let match = path.basename(input).match(/^([^-.]+)(-.+)?\.(.+)$/)
-    let output = path.join(__dirname, 'fixtures', `${match[1]}${match[2] || ''}-out.${match[3]}`)
-    let expected = path.join(__dirname, 'fixtures', `${match[1]}.${match[3]}`)
+    let match = path.basename(input).match(/^([^-.]+)(-[^.]+)?(\..+)?$/)
+    let output = path.join(__dirname, 'fixtures', `${match[1]}${match[2] || ''}-out${match[3] || ''}`)
+    let expected = path.join(__dirname, 'fixtures', `${match[1]}${match[3] || ''}`)
 
     assert.comment(`Converting ${path.basename(input)} to ${path.basename(output)}`)
 
@@ -46,12 +46,15 @@ testAsync('Fixtures: round trips', async assert => {
       continue
     }
 
-    // Compare expected and actual output
-    const expectedString = fs.readFileSync(expected).toString().trim()
-    const actualString = fs.readFileSync(output).toString().trim()
-    const message = `${path.basename(output)} == ${path.basename(expected)}`
-    if (expected.length < 100) assert.equal(actualString, expectedString, message)
-    else assert.ok(actualString === expectedString, message)
+    let stats = fs.lstatSync(expected)
+    if (stats.isFile()) {
+      // Compare expected and actual output
+      const expectedString = fs.readFileSync(expected).toString().trim()
+      const actualString = fs.readFileSync(output).toString().trim()
+      const message = `${path.basename(output)} == ${path.basename(expected)}`
+      if (expected.length < 100) assert.equal(actualString, expectedString, message)
+      else assert.ok(actualString === expectedString, message)
+    }
   }
 
   assert.end()
