@@ -7,8 +7,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni?svg=true)](https://ci.appveyor.com/project/nokome/convert)
 [![Code coverage](https://codecov.io/gh/stencila/convert/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/convert)
 [![Dependency status](https://david-dm.org/stencila/convert.svg)](https://david-dm.org/stencila/convert)
-[![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
-[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
 
 Stencila Converters allow you to convert between a range of formats commonly used for among researchers (and not only). Converters support
@@ -69,7 +67,7 @@ Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)    
 HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)                                                               |
 CSV             |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Yaml Front matter for CSV [CSVY](http://csvy.org/)            |    [#25]https://github.com/stencila/convert/issues/25                                                              | [#26](https://github.com/stencila/convert/issues/26)
+Yaml Front matter for CSV [CSVY](http://csvy.org/)            |    [#25](https://github.com/stencila/convert/issues/25)                                                              | [#26](https://github.com/stencila/convert/issues/26)
 Tabular Data Package |                                                             |
 Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
@@ -163,7 +161,9 @@ Setext-style Header example
 -------------
 ```
 
-To make testing more succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
+To make testing more[![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
+11
+[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila) succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
 `heading-setext-out.md` is compared to `heading.md`.
 (Another way to think about this approach is to treat the conversion as
   standardising the input formats to pandoc Reader / Writer options.)
