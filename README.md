@@ -128,7 +128,7 @@ docker build --tag stencila/convert .
 docker run stencila/convert
 ```
 
-####Test cases
+#### Test cases
 
 The tests are currently doing a "round trip" conversion. That is, a test case is:
 
@@ -164,9 +164,7 @@ Setext-style Header example
 -------------
 ```
 
-To make testing more[![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
-11
-[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila) succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
+To make testing more succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
 `heading-setext-out.md` is compared to `heading.md`.
 (Another way to think about this approach is to treat the conversion as
   standardising the input formats to pandoc Reader / Writer options.)
@@ -176,10 +174,13 @@ To make testing more[![Community](https://img.shields.io/badge/join-community-gr
 reading from and writing to different formats, (pandoc Reader and Writer options)[https://pandoc.org/MANUAL.html#options].
 
 
-####Create new test cases
+#### Create new test cases
 
 You can create a new test case for a particular format by converting an existing tests case for another format. For example, to create a nested lists test case for JATS, you could use the existing test case for Markdown:
 
 ```bash
 ./bin/stencila-convert.js tests/fixtures/list_nested.md tests/fixtures/list_nested.jats.xml
 ```
+
+## Get in touch!
+If you have any questions or comments, please join our [friendly Gitter chat](https://gitter.im/stencila/stencila)! 
