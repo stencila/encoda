@@ -49,9 +49,9 @@ API documentation is available at https://stencila.github.io/convert.
 
 ### Status
 
-The following table lists the status of converters that have been developed, are in development, or are being considered for development. 
+The following table lists the status of converters that have been developed, are in development, or are being considered for development.
 We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/convert/issues) and comment under the relevant one. If there is no
-issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new). 
+issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new).
 
 You can also provide your feedback on the friendly [Sthttps://github.com/stencila/convert/issues/24encila Community Forum](https://community.stenci.la)
 and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
@@ -60,9 +60,9 @@ and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 Format          | Import                                                           | Export
 --------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
 **Documents**   |                                                                  |
-Markdown        |![alpha](https://img.shields.io/badge/status-alpha-red.svg) <br/> [#23](https://github.com/stencila/convert/issues/23)      |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-RMarkdown       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
-Latex           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
+Markdown        |  [x]  <br/> [#23](https://github.com/stencila/convert/issues/23)      |[x] 
+RMarkdown       | [x]       |
+Latex           | [x]        | [x]
 Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)                                                               |
