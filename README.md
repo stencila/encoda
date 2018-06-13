@@ -55,7 +55,7 @@ The following table lists the status of converters that have been developed, are
 We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/convert/issues) and comment under the relevant one. If there is no
 issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new). 
 
-You can also provide your feedback on the friendly [Stencila Community Forum](https://community.stenci.la)
+You can also provide your feedback on the friendly [Sthttps://github.com/stencila/convert/issues/24encila Community Forum](https://community.stenci.la)
 and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
 
@@ -73,7 +73,7 @@ CSVY            |                                                               
 Tabular Data Package |                                                             |
 Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Microsoft Word `.docx`|#24|#24
+Microsoft Word `.docx`|[#24](https://github.com/stencila/convert/issues/24)|[#24](https://github.com/stencila/convert/issues/24)
 
 
 ### Develop
