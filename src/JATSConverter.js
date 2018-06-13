@@ -1,7 +1,6 @@
 const cheerio = require('cheerio')
 const fs = require('fs')
 const memfs = require('memfs')
-const path = require('path')
 
 const PandocConverter = require('./PandocConverter')
 const xml = require('./helpers/xml')

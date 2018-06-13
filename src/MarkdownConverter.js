@@ -1,6 +1,5 @@
 const fs = require('fs')
 const memfs = require('memfs')
-const path = require('path')
 const yaml = require('js-yaml')
 const yamlFront = require('yaml-front-matter')
 
