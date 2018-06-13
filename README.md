@@ -87,7 +87,7 @@ cd convert
 npm install
 ```
 
-Check how to contribute back to the project. All PRs are most welcome! Thank you!
+Check how to [contribute back to the project](https://github.com/stencila/convert/blob/master/CONTRIBUTING.md). All PRs are most welcome! Thank you!
 
 ### Test
 
@@ -183,4 +183,4 @@ You can create a new test case for a particular format by converting an existing
 ```
 
 ## Get in touch!
-If you have any questions or comments, please join our [friendly Gitter chat](https://gitter.im/stencila/stencila)! 
+If you have any questions or comments, please join our [friendly Gitter chat](https://gitter.im/stencila/stencila)!
