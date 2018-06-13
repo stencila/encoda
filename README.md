@@ -59,6 +59,7 @@ and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
 Format          | Import                                                           | Export
 --------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
+Reproducible Document Archive | ✔️   | ✔️
 Delimiter Separated Values  | [#30](https://github.com/stencila/convert/issues/30) | [#29](https://github.com/stencila/convert/issues/30)
 HTML            |         |   
 JSON            |  ✔️       | ✔️
