@@ -46,6 +46,7 @@ class PandocConverter extends Converter {
     let doc
     doc = {
       type: 'Document',
+      front: this._importMeta(pandoc.meta),
       body: this._importBlocks(pandoc.blocks)
     }
 
@@ -58,8 +59,8 @@ class PandocConverter extends Converter {
     // Generate a Pandoc document from an executable document
     let pandoc = {
       'pandoc-api-version': [ 1, 17, 3 ],
-      meta: {},
-      blocks: this._exportBlocks(doc.body)
+      meta: this._exportMeta(doc.front || {}),
+      blocks: this._exportBlocks(doc.body || [])
     }
 
     // Write to Pandoc document to a temporary file
@@ -113,6 +114,114 @@ class PandocConverter extends Converter {
     if (output) await this.writeFile(pathTo, result, volumeTo)
 
     return pathTo
+  }
+
+  _importMeta (meta) {
+    let obj = {}
+    for (let [name, value] of Object.entries(meta)) {
+      obj[name] = this._importMetaValue(value)
+    }
+    return obj
+  }
+
+  _exportMeta (front) {
+    let meta = {}
+    for (let [name, value] of Object.entries(front)) {
+      meta[name] = this._exportMetaValue(value)
+    }
+    return meta
+  }
+
+  _importMetaValue (value) {
+    switch (value.t) {
+      case 'MetaMap':
+        // MetaMap {String: MetaValue}
+        let map = {}
+        for (let [name, item] of Object.entries(value.c)) {
+          map[name] = this._importMetaValue(item)
+        }
+        return {
+          type: 'Object',
+          data: map
+        }
+      case 'MetaList':
+        // MetaList [MetaValue]
+        let list = []
+        for (let item of value.c) {
+          list.push(this._importMetaValue(item))
+        }
+        return {
+          type: 'Array',
+          data: list
+        }
+      case 'MetaBool':
+        // MetaBool Bool
+        return {
+          type: 'Boolean',
+          data: value.c
+        }
+      case 'MetaString':
+        // MetaString String
+        return this._importStr(value)
+      case 'MetaInlines':
+        // MetaInlines [Inline]
+        return {
+          type: 'Para',
+          nodes: this._importInlines(value.c)
+        }
+      case 'MetaBlocks':
+        // MetaBlocks [Block]
+        return {
+          type: 'Div',
+          nodes: this._importBlocks(value.c)
+        }
+    }
+  }
+
+  _exportMetaValue (value) {
+    switch (value.type) {
+      case 'Object':
+        // MetaMap {String: MetaValue}
+        let map = {}
+        for (let [name, item] of Object.entries(value.data)) {
+          map[name] = this._exportMetaValue(item)
+        }
+        return {
+          t: 'MetaMap',
+          c: map
+        }
+      case 'Array':
+        // MetaList [MetaValue]
+        let list = []
+        for (let item of value.data) {
+          list.push(this._exportMetaValue(item))
+        }
+        return {
+          t: 'MetaList',
+          c: list
+        }
+      case 'Boolean':
+        // MetaBool Bool
+        return {
+          t: 'MetaBool',
+          c: value.data
+        }
+      case 'String':
+        // MetaString String
+        return this._exportStr(value)
+      case 'Para':
+        // MetaInlines [Inline]
+        return {
+          t: 'MetaInlines',
+          c: this._exportInlines(value.nodes)
+        }
+      case 'Div':
+        // MetaBlocks [Block]
+        return {
+          t: 'MetaBlocks',
+          c: this._exportBlocks(value.nodes)
+        }
+    }
   }
 
   // [Block]
@@ -276,7 +385,20 @@ class PandocConverter extends Converter {
   // [Inline]
 
   _importInlines (nodes) {
-    return nodes.map(node => this._importInline(node))
+    let inlines = []
+    let previous
+    let current
+    for (let node of nodes) {
+      current = this._importInline(node)
+      if (previous && previous.type === 'String' && (current.type === 'Space' || current.type === 'String')) {
+        if (current.type === 'Space') previous.data += ' '
+        else if (current.type === 'String') previous.data += current.data
+      } else {
+        inlines.push(current)
+        previous = current
+      }
+    }
+    return inlines
   }
 
   _exportInlines (nodes) {
