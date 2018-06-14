@@ -46,9 +46,10 @@ class PandocConverter extends Converter {
     let doc
     doc = {
       type: 'Document',
-      front: this._importMeta(pandoc.meta),
       body: this._importBlocks(pandoc.blocks)
     }
+    let front = this._importMeta(pandoc.meta)
+    if (Object.keys(front).length) doc.front = front
 
     return doc
   }

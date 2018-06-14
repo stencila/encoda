@@ -6,7 +6,9 @@ const DarConverter = require('./DarConverter')
 const EDFConverter = require('./EDFConverter')
 const FolderConverter = require('./FolderConverter')
 const JATSConverter = require('./JATSConverter')
+const HTMLConverter = require('./HTMLConverter')
 const JSONConverter = require('./JSONConverter')
+const LatexConverter = require('./LatexConverter')
 const MarkdownConverter = require('./MarkdownConverter')
 const PandocConverter = require('./PandocConverter')
 
@@ -16,6 +18,8 @@ let converters = [
 
   // Text document converters
   new JATSConverter(),
+  new HTMLConverter(),
+  new LatexConverter(),
   new MarkdownConverter(),
   new PandocConverter(),
 
