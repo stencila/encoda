@@ -3,6 +3,7 @@ const fs = require('fs')
 const pandoc = require('./helpers/pandoc')
 
 const DarConverter = require('./DarConverter')
+const EDFConverter = require('./EDFConverter')
 const FolderConverter = require('./FolderConverter')
 const JATSConverter = require('./JATSConverter')
 const JSONConverter = require('./JSONConverter')
@@ -22,6 +23,7 @@ let converters = [
 
   // Folder converters
   new DarConverter(),
+  new EDFConverter(),
   new FolderConverter(),
 
   // Base, "no-op" converter (can be useful for debugging; convert to '.json')
@@ -40,17 +42,27 @@ async function match (path, volume, format, direction) {
   for (let converter of converters) {
     if (await converter[method](path, volume, format)) return converter
   }
-  if (format) throw new Error(`No converter for format "${format}"`)
-  else throw new Error(`No converter for path "${path}"`)
+  return null
 }
 
 async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, formatTo, options) {
   if (!volumeFrom) volumeFrom = fs
   if (!volumeTo) volumeTo = volumeFrom
 
-  const importer = await match(pathFrom, volumeFrom, formatFrom, 'import')
+  const importer = await match(pathFrom, volumeFrom, formatFrom, 'import', true)
+  if (!importer) {
+    if (formatFrom) throw new Error(`No converter for format "${formatFrom}"`)
+    else throw new Error(`No converter for path "${pathFrom}"`)
+  }
+
   const doc = await importer.import(pathFrom, volumeFrom, options)
-  const exporter = await match(pathTo, volumeTo, formatTo, 'export')
+
+  const exporter = await match(pathTo, volumeTo, formatTo, 'export', true)
+  if (!exporter) {
+    if (formatTo) throw new Error(`No converter for format "${formatTo}"`)
+    else throw new Error(`No converter for path "${pathTo}"`)
+  }
+
   await exporter.export(doc, pathTo, volumeTo, options)
 }
 

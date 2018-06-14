@@ -1,3 +1,4 @@
+const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
 
@@ -46,7 +47,7 @@ class DarConverter extends FolderConverter {
     let documentsEl = manifest('documents')
     for (let doc of documents) {
       const type = doc.type === 'Sheet' ? 'sheet' : 'article'
-      const id = type
+      const id = type + '-' + crypto.randomBytes(24).toString('hex')
       const name = doc.source || `Untitled ${type}`
 
       const Converter = type === 'article' ? JATSConverter : null

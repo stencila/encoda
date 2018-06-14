@@ -45,23 +45,25 @@ class FolderConverter extends Converter {
    */
   async import (folderPath, volume = fs, options = {}) {
     const {match} = require('./index')
-    const docs = []
-    const files = volume.readdirSync(folderPath)
-    for (let file of files) {
+    const folder = {
+      type: 'Folder',
+      documents: [],
+      files: [],
+      source: folderPath
+    }
+    for (let file of volume.readdirSync(folderPath)) {
       const converter = await match(file, volume, null, 'import')
       if (converter) {
         let doc = await converter.import(
           path.join(folderPath, file),
           volume
         )
-        docs.push(doc)
+        folder.documents.push(doc)
+      } else {
+        folder.files.push(file)
       }
     }
-    return {
-      type: 'Folder',
-      documents: docs,
-      files: []
-    }
+    return folder
   }
 }
 
