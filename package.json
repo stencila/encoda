@@ -1,6 +1,6 @@
 {
   "name": "stencila-convert",
-  "version": "0.29.6",
+  "version": "0.29.7",
   "description": "Converters for Stencila components",
   "main": "src/index.js",
   "bin": "./bin/stencila-convert.js",
@@ -13,7 +13,7 @@
     "test-diffs": "npm test | tap-difflet",
     "cover": "nyc npm test",
     "docs": "esdoc",
-    "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
+    "prepublishOnly": "npm run lint && npm run test && npm run docs",
     "clean": "rimraf .nyc_output docs tests/**/*-out.*"
   },
   "license": "Apache-2.0",
