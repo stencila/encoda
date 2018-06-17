@@ -25,7 +25,6 @@ class MarkdownConverter extends PandocConverter {
       to: 'markdown',
       template: 'MarkdownTemplate.md',
       exportArgs: [
-        '--columns=100', // Text wrapping width (for discussion on optimum see https://www.viget.com/articles/the-line-length-misconception/)
         '--atx-headers' // Use ATX (#) headers
       ]
     }
