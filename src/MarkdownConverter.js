@@ -25,6 +25,7 @@ class MarkdownConverter extends PandocConverter {
       to: 'markdown',
       template: 'MarkdownTemplate.md',
       exportArgs: [
+        '--wrap=none',
         '--atx-headers' // Use ATX (#) headers
       ]
     }
