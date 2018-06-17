@@ -6,6 +6,21 @@ const path = require('path')
 const Converter = require('./Converter')
 const pandoc = require('./helpers/pandoc')
 
+/**
+ * A text document converter based on Pandoc
+ *
+ * This converter is used as a base class for most the the text document converters.
+ * For importing, it calls Pandoc to convert from a given format to Pandoc JSON and then
+ * converts from Pandoc JSON to an in-memory Exedoc. For exporting, it does the reverse,
+ * by conveting an Exedoc to Pandoc JSON and then calling Pandoc to convert Pandoc JSON
+ * to a given format.
+ *
+ * In most cases there is a close correspondence between Pandoc's and Execdoc's
+ * representation of document nodes.
+ *
+ * See the Pandoc [type defintions](https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs)
+ * for specification of Pandoc JSON.
+ */
 class PandocConverter extends Converter {
   id () {
     return 'pandoc'
@@ -59,7 +74,7 @@ class PandocConverter extends Converter {
 
     // Generate a Pandoc document from an executable document
     let pandoc = {
-      'pandoc-api-version': [ 1, 17, 3 ],
+      'pandoc-api-version': [ 1, 17, 5 ],
       meta: this._exportMeta(doc.front || {}),
       blocks: this._exportBlocks(doc.body || [])
     }
@@ -225,50 +240,53 @@ class PandocConverter extends Converter {
     }
   }
 
-  // [Block]
-
-  _importBlocks (nodes) {
-    return nodes.map(node => this._importBlock(node))
+  /**
+   * Import an array of Pandoc `Block`s
+   *
+   * @param  {Array} blocks An array of Pandoc `Block`s
+   * @return {Array}        An array of executable document nodes
+   */
+  _importBlocks (blocks) {
+    return blocks.map(block => this._importBlock(block))
   }
 
+  /**
+   * Export an array of Exedoc nodes as Pandoc `Block`s
+   *
+   * @param  {Array} nodes  An array of Exedoc nodes
+   * @return {Array}        An array of Pandoc `Block`s
+   */
   _exportBlocks (nodes) {
     return nodes.map(node => this._exportBlock(node))
   }
 
   /**
-   * Import a Pandoc document node by converting it
-   * to an executable document node.
+   * Import a Pandoc `Block`.
    *
-   * This method should do the inverse of `_exportBlock`
+   * This method should do the inverse of `_exportBlock`.
    *
-   *   Plain [Inline]
-   *   Para [Inline]
-   *   CodeBlock Attr String
-   *   RawBlock Format String
-   *   BlockQuote [Block]
-   *   OrderedList ListAttributes [[Block]]
-   *   BulletList [[Block]]
-   *   DefinitionList [([Inline], [[Block]])]
-   *   Header Int Attr [Inline]
-   *   HorizontalRule
-   *   Table [Inline] [Alignment] [Double] [TableCell] [[TableCell]]
-   *   Div Attr [Block]
-   *   Null
+   * See https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs#L217
+   * for the defintion of a Pandock `Block`
    *
-   * @param  {Object} node Pandoc document node
-   * @return {Object}      Executable document node
+   * @param  {Object} block Pandoc `Block`
+   * @return {Object}       Exedoc node
    */
   _importBlock (node) {
     switch (node.t) {
-      case 'Plain':
-      case 'Para':
-        return this._importParaEtc(node)
-      case 'CodeBlock':
-        return this._importCodeBlock(node)
-      case 'Div':
-        return this._importDiv(node)
-      case 'Header':
-        return this._importHeader(node)
+      case 'BlockQuote': return this._importBlockQuote(node)
+      case 'BulletList': return this._importBulletList(node)
+      case 'CodeBlock': return this._importCodeBlock(node)
+      // case 'DefinitionList': return this._importDefinitionList(node)
+      case 'Div': return this._importDiv(node)
+      case 'Header': return this._importHeader(node)
+      // case 'HorizontalRule': return this._importHorizontalRule(node)
+      // case 'LineBlock': return this._importLineBlock(node)
+      // case 'Null': return this._importNull(node)
+      case 'OrderedList': return this._importOrderedList(node)
+      case 'Para': return this._importPara(node)
+      case 'Plain': return this._importPlain(node)
+      // case 'RawBlock': return this._importRawBlock(node)
+      // case 'Table': return this._importTable(node)
       default:
         return {
           type: node.t,
@@ -278,25 +296,29 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an executable document node by converting it
-   * to a Pandoc document node.
+   * Export an Exedoc node as a Pandoc `Block`
    *
-   * This method should do the inverse of `_importBlock`
+   * This method should do the inverse of `_importBlock`.
    *
-   * @param  {Object} node Executable document node
-   * @return {Object}      Pandoc document node
+   * @param  {Object} node Exedoc node
+   * @return {Object}      Pandoc `Block`
    */
   _exportBlock (node) {
     switch (node.type) {
-      case 'Plain':
-      case 'Para':
-        return this._exportParaEtc(node)
-      case 'CodeBlock':
-        return this._exportCodeBlock(node)
-      case 'Div':
-        return this._exportDiv(node)
-      case 'Header':
-        return this._exportHeader(node)
+      case 'BlockQuote': return this._exportBlockQuote(node)
+      case 'UnorderedList': return this._exportBulletList(node)
+      case 'CodeBlock': return this._exportCodeBlock(node)
+      // case 'DefinitionList': return this._exportDefinitionList(node)
+      case 'Div': return this._exportDiv(node)
+      case 'Header': return this._exportHeader(node)
+      // case 'HorizontalRule': return this._exportHorizontalRule(node)
+      // case 'LineBlock': return this._exportLineBlock(node)
+      // case 'Null': return this._exportNull(node)
+      case 'OrderedList': return this._exportOrderedList(node)
+      case 'Para': return this._exportPara(node)
+      case 'Plain': return this._exportPlain(node)
+      // case 'RawBlock': return this._exportRawBlock(node)
+      // case 'Table': return this._exportTable(node)
       default:
         return {
           t: node.type,
@@ -305,19 +327,59 @@ class PandocConverter extends Converter {
     }
   }
 
-  // Para.c = Plain.c = [Para, [Inline]]
-
-  _importParaEtc (node) {
+  /**
+   * Import a Pandoc `BlockQuote`
+   *
+   * @param  {Object} node Pandoc `BlockQuote`
+   * @return {Object}      Exedoc `BlockQuote`
+   */
+  _importBlockQuote (node) {
     return {
-      type: node.t,
-      nodes: this._importInlines(node.c)
+      type: 'BlockQuote',
+      nodes: this._importBlocks(node.c)
     }
   }
 
-  _exportParaEtc (node) {
+  /**
+   * Export an Exedoc `BlockQuote` as a Pandoc `BlockQuote`
+   *
+   * @param  {Object} node Exedoc `BlockQuote`
+   * @return {Object}      Pandoc `BlockQuote`
+   */
+  _exportBlockQuote (node) {
     return {
-      t: node.type,
-      c: this._exportInlines(node.nodes)
+      t: 'BlockQuote',
+      c: this._exportBlocks(node.nodes)
+    }
+  }
+
+  /**
+   * Import a Pandoc `BulletList` as an Execdoc `UnorderedList`
+   *
+   * A `BulletList` is constructed as an array of arrays of blocks:
+   *
+   * `BulletList [[Block]]  -- ^ Bullet list (list of items, each a list of blocks)`
+   *
+   * @param  {Object} node Pandoc `BulletList`
+   * @return {Object}      Exedoc `UnorderedList`
+   */
+  _importBulletList (node) {
+    return {
+      type: 'UnorderedList',
+      items: node.c.map(array => this._importBlocks(array))
+    }
+  }
+
+  /**
+   * Export an Exedoc `UnorderedList` as a Pandoc `BulletList`
+   *
+   * @param  {Object} node Exedoc `UnorderedList`
+   * @return {Object}      Pandoc `BulletList`
+   */
+  _exportBulletList (node) {
+    return {
+      t: 'BulletList',
+      c: node.items.map(item => this._exportBlocks(item))
     }
   }
 
@@ -380,6 +442,121 @@ class PandocConverter extends Converter {
         this._exportAttr(node.attrs),
         this._exportInlines(node.nodes)
       ]
+    }
+  }
+
+  /**
+   * Import a Pandoc `OrderedList` as an Execdoc `UnorderedList`
+   *
+   * An `OrderedList` is constructed with a set of list attributes and an [array of arrays of blocks]:
+   *
+   * ```
+   * OrderedList ListAttributes [[Block]] -- ^ Ordered list (attributes and a list of items, each a list of blocks)
+   * ListAttributes = (Int, ListNumberStyle, ListNumberDelim)
+   * ```
+   *
+   * @param  {Object} node Pandoc `OrderedList`
+   * @return {Object}      Exedoc `OrderedList`
+   */
+  _importOrderedList (node) {
+    return {
+      type: 'OrderedList',
+      index: node.c[0][0], // Int
+      style: importStyle(node.c[0][1]), // ListNumberStyle
+      delim: importDelim(node.c[0][2]), // ListNumberDelim
+      items: node.c[1].map(array => this._importBlocks(array)) // [[Block]]
+    }
+
+    function importStyle (style) {
+      switch (style.t) {
+        case 'DefaultStyle': return null
+        case 'Example': return 'example'
+        case 'Decimal': return 'decimal'
+        case 'LowerRoman': return 'lower-roman'
+        case 'UpperRoman': return 'upper-roman'
+        case 'LowerAlpha': return 'lower-alpha'
+        case 'UpperAlpha': return 'upper-alpha'
+      }
+    }
+
+    function importDelim (delim) {
+      switch (delim.t) {
+        case 'DefaultDelim': return null
+        case 'Period': return 'period'
+        case 'OneParen': return 'one-paren'
+        case 'TwoParens': return 'two-parens'
+      }
+    }
+  }
+
+  /**
+   * Export an Exedoc `OrderedList` as a Pandoc `OrderedList`
+   *
+   * @param  {Object} node Exedoc `OrderedList`
+   * @return {Object}      Pandoc `OrderedList`
+   */
+  _exportOrderedList (node) {
+    return {
+      t: 'OrderedList',
+      c: [
+        [
+          node.index,
+          exportStyle(node.style),
+          exportDelim(node.delim)
+        ],
+        node.items.map(item => this._exportBlocks(item))
+      ]
+    }
+
+    function exportStyle (style) {
+      switch (style) {
+        case null: return {t: 'DefaultStyle'}
+        case 'example': return {t: 'Example'}
+        case 'decimal': return {t: 'Decimal'}
+        case 'lower-roman': return {t: 'LowerRoman'}
+        case 'upper-roman': return {t: 'UpperRoman'}
+        case 'lower-alpha': return {t: 'LowerAlpha'}
+        case 'upper-alpha': return {t: 'UpperAlpha'}
+      }
+    }
+
+    function exportDelim (delim) {
+      switch (delim) {
+        case null: return {t: 'DefaultDelim'}
+        case 'period': return {t: 'Period'}
+        case 'one-paren': return {t: 'OneParen'}
+        case 'two-parens': return {t: 'TwoParens'}
+      }
+    }
+  }
+
+  // Para.c = Plain.c = [Para, [Inline]]
+
+  _importPara (node) {
+    return {
+      type: node.t,
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportPara (node) {
+    return {
+      t: node.type,
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  _importPlain (node) {
+    return {
+      type: node.t,
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportPlain (node) {
+    return {
+      t: node.type,
+      c: this._exportInlines(node.nodes)
     }
   }
 
