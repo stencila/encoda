@@ -101,12 +101,12 @@ class MarkdownConverter extends PandocConverter {
       mdNew = `---\n${yaml.dump(front)}---\n\n${content}`
     }
 
-    // Pandoc writes code blocks with a language "class" atribute as
+    // Pandoc writes code blocks with a single "class" attribute (usually a language) as
     //   ``` {.py}
-    // Where there is only a single class, rewrite to shorthand
+    // In these cases, rewrite to shorthand
     //   ```py
-    mdNew = mdNew.replace(/^``` {\.([\w-]+)}$/mg, (match, group1) => {
-      return '```' + group1
+    mdNew = mdNew.replace(/^(\s*)``` {\.([\w-]+)}$/mg, (match, indentation, clas) => {
+      return indentation + '```' + clas
     })
 
     // Write to final destination
