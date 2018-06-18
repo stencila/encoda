@@ -291,7 +291,7 @@ class PandocConverter extends Converter {
       case 'Para': return this._importPara(node)
       case 'Plain': return this._importPlain(node)
       case 'RawBlock': return this._importRawBlock(node)
-      // case 'Table': return this._importTable(node)
+      case 'Table': return this._importTable(node)
       default:
         return {
           type: node.t,
@@ -323,7 +323,7 @@ class PandocConverter extends Converter {
       case 'Para': return this._exportPara(node)
       case 'Plain': return this._exportPlain(node)
       case 'RawBlock': return this._exportRawBlock(node)
-      // case 'Table': return this._exportTable(node)
+      case 'Table': return this._exportTable(node)
       default:
         return {
           t: node.type,
@@ -709,6 +709,83 @@ class PandocConverter extends Converter {
 
     function exportFormat (format) {
       return format
+    }
+  }
+
+  /**
+   * Import a Pandoc `Table` as an Execdoc `Table`
+   *
+   * The Pandoc definition of a `Table` is:
+   *
+   * ```
+   * Table [Inline] [Alignment] [Double] [TableCell] [[TableCell]]  -- ^ Table,
+   *                        -- with caption, column alignments (required),
+   *                        -- relative column widths (0 = default),
+   *                        -- column headers (each a list of blocks), and
+   *                        -- rows (each a list of lists of blocks)
+   * ```
+   *
+   * @param  {Object} node Pandoc `Table`
+   * @return {Object}      Exedoc `Table`
+   */
+  _importTable (node) {
+    return {
+      type: 'Table',
+      // NOTE: Here we set the `caption` of the table, rather than the `title`
+      caption: this._importInlines(node.c[0]),
+      // Put column alignment and widths into style property
+      style: importAlignmentsWidths(node.c[1], node.c[2]),
+      // Pandoc table column headers are lists of table cells. Table cells are lists of blocks.
+      head: node.c[3].map(cell => this._importBlocks(cell)),
+      // Pandoc table rows are lists of table cells. Table cells are lists of blocks.
+      rows: node.c[4].map(row => {
+        return row.map(cell => this._importBlocks(cell))
+      })
+    }
+
+    function importAlignmentsWidths (aligns, widths) {
+      // Create a style object for each column
+      let cols = []
+      for (let index in aligns) {
+        cols.push({
+          align: aligns[index].t.replace('Align', '').toLowerCase(),
+          width: widths[index]
+        })
+      }
+      return { cols }
+    }
+  }
+
+  /**
+   * Export an Exedoc `Table` as a Pandoc `Table`
+   *
+   * @param  {Object} node Exedoc `Table`
+   * @return {Object}      Pandoc `Table`
+   */
+  _exportTable (node) {
+    let {aligns, widths} = exportAlignmentsWidths(node.style)
+    return {
+      t: 'Table',
+      c: [
+        this._exportInlines(node.caption),
+        aligns,
+        widths,
+        node.head.map(cell => this._exportBlocks(cell)),
+        node.rows.map(row => {
+          return row.map(cell => this._exportBlocks(cell))
+        })
+      ]
+    }
+
+    function exportAlignmentsWidths (style) {
+      // Create arrays of Pandoc table `Alignment` and widths
+      let aligns = []
+      let widths = []
+      for (let col of style.cols) {
+        aligns.push({t: 'Align' + col.align[0].toUpperCase() + col.align.slice(1)})
+        widths.push(col.width)
+      }
+      return {aligns, widths}
     }
   }
 
