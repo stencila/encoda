@@ -273,7 +273,7 @@ class PandocConverter extends Converter {
    * See https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs#L217
    * for the defintion of a Pandock `Block`
    *
-   * @param  {Object} block Pandoc `Block`
+   * @param  {Object} node  Pandoc `Block`
    * @return {Object}       Exedoc node
    */
   _importBlock (node) {
@@ -285,12 +285,12 @@ class PandocConverter extends Converter {
       case 'Div': return this._importDiv(node)
       case 'Header': return this._importHeader(node)
       case 'HorizontalRule': return this._importHorizontalRule(node)
-      // case 'LineBlock': return this._importLineBlock(node)
+      case 'LineBlock': return this._importLineBlock(node)
       // case 'Null': return this._importNull(node)
       case 'OrderedList': return this._importOrderedList(node)
       case 'Para': return this._importPara(node)
       case 'Plain': return this._importPlain(node)
-      // case 'RawBlock': return this._importRawBlock(node)
+      case 'RawBlock': return this._importRawBlock(node)
       // case 'Table': return this._importTable(node)
       default:
         return {
@@ -317,12 +317,12 @@ class PandocConverter extends Converter {
       case 'Div': return this._exportDiv(node)
       case 'Header': return this._exportHeader(node)
       case 'ThematicBreak': return this._exportHorizontalRule(node)
-      // case 'LineBlock': return this._exportLineBlock(node)
+      case 'LineBlock': return this._exportLineBlock(node)
       // case 'Null': return this._exportNull(node)
       case 'OrderedList': return this._exportOrderedList(node)
       case 'Para': return this._exportPara(node)
       case 'Plain': return this._exportPlain(node)
-      // case 'RawBlock': return this._exportRawBlock(node)
+      case 'RawBlock': return this._exportRawBlock(node)
       // case 'Table': return this._exportTable(node)
       default:
         return {
@@ -411,7 +411,6 @@ class PandocConverter extends Converter {
   /**
    * Import a Pandoc `DefinitionList` as an Execdoc `DescriptionList`
    *
-   *
    * The Pandoc definition of a `DefinitionList` :) is:
    *
    * ```
@@ -456,30 +455,6 @@ class PandocConverter extends Converter {
     }
   }
 
-  /**
-   * Import a Pandoc `HorizontalRule` as an Execdoc `ThematicBreak`
-   *
-   * @param  {Object} node Pandoc `HorizontalRule`
-   * @return {Object}      Exedoc `ThematicBreak`
-   */
-  _importHorizontalRule (node) {
-    return {
-      type: 'ThematicBreak'
-    }
-  }
-
-  /**
-   * Export an Exedoc `ThematicBreak` as a Pandoc `HorizontalRule`
-   *
-   * @param  {Object} node Exedoc `ThematicBreak`
-   * @return {Object}      Pandoc `HorizontalRule`
-   */
-  _exportHorizontalRule (node) {
-    return {
-      t: 'HorizontalRule'
-    }
-  }
-
   // Div.c = [Attr, [Block]]
 
   _importDiv (node) {
@@ -519,6 +494,62 @@ class PandocConverter extends Converter {
         this._exportAttr(node.attrs),
         this._exportInlines(node.nodes)
       ]
+    }
+  }
+
+  /**
+   * Import a Pandoc `HorizontalRule` as an Execdoc `ThematicBreak`
+   *
+   * @param  {Object} node Pandoc `HorizontalRule`
+   * @return {Object}      Exedoc `ThematicBreak`
+   */
+  _importHorizontalRule (node) {
+    return {
+      type: 'ThematicBreak'
+    }
+  }
+
+  /**
+   * Export an Exedoc `ThematicBreak` as a Pandoc `HorizontalRule`
+   *
+   * @param  {Object} node Exedoc `ThematicBreak`
+   * @return {Object}      Pandoc `HorizontalRule`
+   */
+  _exportHorizontalRule (node) {
+    return {
+      t: 'HorizontalRule'
+    }
+  }
+
+  /**
+   * Import a Pandoc `LineBlock` as an Execdoc `LineBlock`
+   *
+   * The Pandoc definition of a `LineBlock` is:
+   *
+   * ```
+   * LineBlock [[Inline]]  -- ^ Multiple non-breaking lines
+   * ```
+   *
+   * @param  {Object} node Pandoc `LineBlock`
+   * @return {Object}      Exedoc `LineBlock`
+   */
+  _importLineBlock (node) {
+    return {
+      type: 'LineBlock',
+      lines: node.c.map(line => this._importInlines(line))
+    }
+  }
+
+  /**
+   * Export an Exedoc `LineBlock` as a Pandoc `LineBlock`
+   *
+   * @param  {Object} node Exedoc `LineBlock`
+   * @return {Object}      Pandoc `LineBlock`
+   */
+  _exportLineBlock (node) {
+    return {
+      t: 'LineBlock',
+      c: node.lines.map(line => this._exportInlines(line))
     }
   }
 
@@ -634,6 +665,50 @@ class PandocConverter extends Converter {
     return {
       t: node.type,
       c: this._exportInlines(node.nodes)
+    }
+  }
+
+  /**
+   * Import a Pandoc `RawBlock` as an Execdoc `RawBlock`
+   *
+   * The Pandoc definition of a `RawBlock` is:
+   *
+   * ```
+   * RawBlock Format String -- ^ Raw block
+   * ```
+   *
+   * @param  {Object} node Pandoc `RawBlock`
+   * @return {Object}      Exedoc `RawBlock`
+   */
+  _importRawBlock (node) {
+    return {
+      type: 'RawBlock',
+      format: importFormat(node.c[0]),
+      content: node.c[1]
+    }
+
+    function importFormat (format) {
+      return format
+    }
+  }
+
+  /**
+   * Export an Exedoc `RawBlock` as a Pandoc `RawBlock`
+   *
+   * @param  {Object} node Exedoc `RawBlock`
+   * @return {Object}      Pandoc `RawBlock`
+   */
+  _exportRawBlock (node) {
+    return {
+      t: 'RawBlock',
+      c: [
+        exportFormat(node.format),
+        node.content
+      ]
+    }
+
+    function exportFormat (format) {
+      return format
     }
   }
 
