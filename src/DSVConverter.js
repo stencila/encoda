@@ -11,8 +11,12 @@ const SheetConverter = require('./SheetConverter')
  * Converts to/from Stencila's internal XML buffer format for Sheets
  */
 class SheetDSVConverter extends SheetConverter {
-  canImport (pathFrom) {
-    return this.matchExtensions(pathFrom, ['csv', 'tsv'])
+  id () {
+    return 'dsv'
+  }
+
+  extensions () {
+    return ['csv-skip', 'tsv-skip']
   }
 
   import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {

@@ -5,8 +5,8 @@ const SheetConverter = require('./SheetConverter')
  *
  */
 class SheetXLSXConverter extends SheetConverter {
-  canImport (pathFrom) {
-    return this.matchExtensions(pathFrom, ['xlsx'])
+  id () {
+    return 'xlsx-skip'
   }
 }
 

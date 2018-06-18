@@ -2,7 +2,7 @@ const fs = require('fs')
 const memfs = require('memfs')
 const yaml = require('js-yaml')
 
-const DocumentMdConverter = require('./DocumentMdConverter')
+const MarkdownConverter = require('./MarkdownConverter')
 
 /**
  * Jupyter notebook converter for the Stencila Documents
@@ -16,9 +16,9 @@ const DocumentMdConverter = require('./DocumentMdConverter')
  *
  *   e.g. https://github.com/jupyter/nbformat/blob/master/nbformat/v4/nbformat.v4.schema.json
  */
-class DocumentJupyterConverter extends DocumentMdConverter {
-  extensions () {
-    return ['ipynb']
+class IPYNBConverter extends MarkdownConverter {
+  id () {
+    return 'ipynb-skip'
   }
 
   async import (pathFrom, pathTo, volumeFrom, volumeTo, options) {
@@ -82,4 +82,4 @@ class DocumentJupyterConverter extends DocumentMdConverter {
   }
 }
 
-module.exports = DocumentJupyterConverter
+module.exports = IPYNBConverter

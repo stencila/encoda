@@ -4,10 +4,10 @@ const SheetConverter = require('./SheetConverter')
  * Converter to import/export a Sheet from/to an Open Document Spreadsheet (ODS) file
  *
  */
-class SheetODSConverter extends SheetConverter {
-  canImport (pathFrom) {
-    return this.matchExtensions(pathFrom, ['ods'])
+class ODSConverter extends SheetConverter {
+  id () {
+    return 'ods-skip'
   }
 }
 
-module.exports = SheetODSConverter
+module.exports = ODSConverter

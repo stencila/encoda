@@ -4,16 +4,21 @@ const pandoc = require('./helpers/pandoc')
 
 const DarConverter = require('./DarConverter')
 const DOCXConverter = require('./DOCXConverter')
+const DSVConverter = require('./DSVConverter')
 const EDFConverter = require('./EDFConverter')
 const FolderConverter = require('./FolderConverter')
-const JATSConverter = require('./JATSConverter')
 const HTMLConverter = require('./HTMLConverter')
+const JATSConverter = require('./JATSConverter')
 const JSONConverter = require('./JSONConverter')
 const LatexConverter = require('./LatexConverter')
 const MarkdownConverter = require('./MarkdownConverter')
 const ODTConverter = require('./ODTConverter')
+const ODSConverter = require('./ODSConverter')
 const PDFConverter = require('./PDFConverter')
 const PandocConverter = require('./PandocConverter')
+const SheetConverter = require('./SheetConverter')
+const SheetMLConverter = require('./SheetMLConverter')
+const XLSXConverter = require('./XLSXConverter')
 
 let converters = [
   // Order is important for matching.
@@ -30,13 +35,19 @@ let converters = [
   new PandocConverter(),
 
   // Sheet document converters
+  new DSVConverter(),
+  new ODSConverter(),
+  new SheetMLConverter(),
+  new XLSXConverter(),
+  new SheetConverter(),
 
   // Folder converters
   new DarConverter(),
   new EDFConverter(),
   new FolderConverter(),
 
-  // Base, "no-op" converter (can be useful for debugging; convert to '.json')
+  // Base, "no-op" converter
+  // (can be useful for debugging; to use, convert to '.json')
   new JSONConverter()
 ]
 

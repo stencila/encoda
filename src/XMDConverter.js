@@ -1,7 +1,7 @@
 const fs = require('fs')
 const memfs = require('memfs')
 
-const DocumentMdConverter = require('./DocumentMdConverter')
+const MarkdownConverter = require('./MarkdownConverter')
 
 /**
 A Document converter for XMarkdown.
@@ -32,7 +32,7 @@ A list of chunk options, recognised by the RMarkdown rendering enging, Knitr,
 is available at http://yihui.name/knitr/options/.
 
 **/
-class DocumentXmdConverter extends DocumentMdConverter {
+class XMDConverter extends MarkdownConverter {
   async import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
     volumeFrom = volumeFrom || fs
     volumeTo = volumeTo || volumeFrom
@@ -149,4 +149,4 @@ class DocumentXmdConverter extends DocumentMdConverter {
   }
 }
 
-module.exports = DocumentXmdConverter
+module.exports = XMDConverter

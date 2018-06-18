@@ -1,4 +1,4 @@
-const SheetDSVConverter = require('./SheetDSVConverter')
+const DSVConverter = require('./DSVConverter')
 
 /**
  * Converter to import/export a Sheet from/to Tabular Data Package (TDP)
@@ -17,7 +17,7 @@ const SheetDSVConverter = require('./SheetDSVConverter')
  * - inline "JSON tabular data" that is array of data rows where each row is an array or object"
  * - a CSV file
  */
-class SheetTDPConverter extends SheetDSVConverter {
+class TDPConverter extends DSVConverter {
   /**
    * @override
    */
@@ -100,8 +100,8 @@ class SheetTDPConverter extends SheetDSVConverter {
    * @override
    */
   export (path, storer, buffer) { // eslint-disable-line
-    throw new Error('SheetTDPConverter.export() not yet implemented')
+    throw new Error('TDPConverter.export() not yet implemented')
   }
 }
 
-module.exports = SheetTDPConverter
+module.exports = TDPConverter

@@ -1,92 +1,73 @@
 const fs = require('fs')
 const xlsx = require('xlsx')
 
-const Converter = require('../Converter')
+const Converter = require('./Converter')
 
 class SheetConverter extends Converter {
-  createDom () {
-    return this.loadXml(`
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sheet PUBLIC "Stencila Sheet 1.0" "http://stenci.la/Sheet-1.0.dtd">
-<sheet>
-  <meta>
-    <name></name>
-    <title></title>
-    <description></description>
-    <columns></columns>
-  </meta>
-  <data></data>
-</sheet>
-    `)
+  id () {
+    return 'sheet'
   }
 
-  import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
-    pathTo = pathTo || (pathFrom + '.sheet.xml')
-    volumeFrom = volumeFrom || fs
-    volumeTo = volumeTo || volumeFrom
+  async import (path, volume = fs, options = {}) {
+    const exedoc = {
+      type: 'Document',
+      body: []
+    }
 
-    return Promise.resolve().then(() => {
-      // The `xlsx` library seems to work best reading from file (rather than parsing data)
-      // so for now only support local files
-      if (volumeFrom !== fs) throw new Error('Only able to read from a local file system volume')
-      if (volumeTo !== fs) throw new Error('Only able to write to a local file system volume')
+    let workbook
+    if (volume === fs) workbook = xlsx.readFile(path)
+    else {
+      const content = volume.readFileSync(path, 'utf8')
+      console.log(content)
+      workbook = xlsx.read(content, {type: 'string'})
+    }
 
-      const workbook = xlsx.readFile(pathFrom)
-      const worksheet = workbook.Sheets[workbook.SheetNames[0]] // Currently, only importing first sheet
-
-      const cellRange = xlsx.utils.decode_range(worksheet['!ref'])
-      return this.createDom().then((dom) => {
-        const columns = dom('columns')
-        const data = dom('data')
-        for (let r = 0; r <= cellRange.e.r; r++) {
-          if (r === 0) {
-            for (let c = 0; c <= cellRange.e.c; c++) {
-              let column = dom('<col>')
-              if (options.header) {
-                const ref = xlsx.utils.encode_cell({r: r, c: c})
-                const header = worksheet[ref]
-                if (header) column.attr('name', header.v)
-              }
-              columns.append(column)
-            }
-            if (options.header) continue
-          }
-          const row = dom('<row>')
-          for (let c = 0; c <= cellRange.e.c; c++) {
+    const worksheet = workbook.Sheets[workbook.SheetNames[0]] // Currently, only importing first sheet
+    const cellRange = xlsx.utils.decode_range(worksheet['!ref'])
+    const columns = []
+    const data = []
+    for (let r = 0; r <= cellRange.e.r; r++) {
+      if (r === 0) {
+        for (let c = 0; c <= cellRange.e.c; c++) {
+          let column = dom('<col>')
+          if (options.header) {
             const ref = xlsx.utils.encode_cell({r: r, c: c})
-            const cell = worksheet[ref]
-            if (cell) {
-              let cellEl = dom('<cell>')
-              if (cell.f) {
-                cellEl.attr('language', 'mini')
-                cellEl.text('=' + cell.f)
+            const header = worksheet[ref]
+            if (header) column.attr('name', header.v)
+          }
+          columns.push(column)
+        }
+        if (options.header) continue
+      }
+      const row = dom('<row>')
+      for (let c = 0; c <= cellRange.e.c; c++) {
+        const ref = xlsx.utils.encode_cell({r: r, c: c})
+        const cell = worksheet[ref]
+        if (cell) {
+          let cellEl = dom('<cell>')
+          if (cell.f) {
+            cellEl.attr('language', 'mini')
+            cellEl.text('=' + cell.f)
+          } else {
+            if (typeof cell.v === 'string') {
+              let match = cell.v.match(/^(r|py|js)=(.*)/)
+              if (match) {
+                cellEl.attr('language', match[1])
+                cellEl.text('=' + match[2])
               } else {
-                if (typeof cell.v === 'string') {
-                  let match = cell.v.match(/^(r|py|js)=(.*)/)
-                  if (match) {
-                    cellEl.attr('language', match[1])
-                    cellEl.text('=' + match[2])
-                  } else {
-                    cellEl.text(cell.v)
-                  }
-                } else {
-                  cellEl.text(cell.v)
-                }
+                cellEl.text(cell.v)
               }
-              row.append(cellEl)
+            } else {
+              cellEl.text(cell.v)
             }
           }
-          data.append(row)
+          row.push(cellEl)
         }
+      }
+      data.push(row)
+    }
 
-        return this.writeXml(pathTo, dom, volumeTo, {
-          declaration: true,
-          tagsContentUnformatted: ['cell']
-        }).then(() => {
-          return { pathFrom, pathTo, formatTo: 'sheet' }
-        })
-      })
-    })
+    return exedoc
   }
 
   export (pathFrom, pathTo, volumeFrom, volumeTo) {
