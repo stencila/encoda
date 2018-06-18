@@ -16,7 +16,12 @@ const pandoc = require('./helpers/pandoc')
  * to a given format.
  *
  * In most cases there is a close correspondence between Pandoc's and Execdoc's
- * representation of document nodes.
+ * representation of document nodes. Exedoc nodes have different names (closer to HTML5)
+ * in some cases:
+ *
+ * Pandoc BulletList == Exedoc UnorderedList
+ * Pandoc DefinitionList == Exedoc DescriptionList
+ * Pandoc HorizontalRule == Exedoc ThematicBreak
  *
  * See the Pandoc [type defintions](https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs)
  * for specification of Pandoc JSON.
@@ -279,7 +284,7 @@ class PandocConverter extends Converter {
       case 'DefinitionList': return this._importDefinitionList(node)
       case 'Div': return this._importDiv(node)
       case 'Header': return this._importHeader(node)
-      // case 'HorizontalRule': return this._importHorizontalRule(node)
+      case 'HorizontalRule': return this._importHorizontalRule(node)
       // case 'LineBlock': return this._importLineBlock(node)
       // case 'Null': return this._importNull(node)
       case 'OrderedList': return this._importOrderedList(node)
@@ -311,7 +316,7 @@ class PandocConverter extends Converter {
       case 'DescriptionList': return this._exportDefinitionList(node)
       case 'Div': return this._exportDiv(node)
       case 'Header': return this._exportHeader(node)
-      // case 'HorizontalRule': return this._exportHorizontalRule(node)
+      case 'ThematicBreak': return this._exportHorizontalRule(node)
       // case 'LineBlock': return this._exportLineBlock(node)
       // case 'Null': return this._exportNull(node)
       case 'OrderedList': return this._exportOrderedList(node)
@@ -448,6 +453,30 @@ class PandocConverter extends Converter {
           [this._exportBlocks(item.desc)]
         ]
       })
+    }
+  }
+
+  /**
+   * Import a Pandoc `HorizontalRule` as an Execdoc `ThematicBreak`
+   *
+   * @param  {Object} node Pandoc `HorizontalRule`
+   * @return {Object}      Exedoc `ThematicBreak`
+   */
+  _importHorizontalRule (node) {
+    return {
+      type: 'ThematicBreak'
+    }
+  }
+
+  /**
+   * Export an Exedoc `ThematicBreak` as a Pandoc `HorizontalRule`
+   *
+   * @param  {Object} node Exedoc `ThematicBreak`
+   * @return {Object}      Pandoc `HorizontalRule`
+   */
+  _exportHorizontalRule (node) {
+    return {
+      t: 'HorizontalRule'
     }
   }
 
