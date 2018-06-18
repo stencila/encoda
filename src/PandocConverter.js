@@ -32,7 +32,8 @@ class PandocConverter extends Converter {
   }
 
   extensions () {
-    return ['pandoc.json']
+    if (this.constructor === PandocConverter) return ['pandoc.json']
+    else return super.extensions() // Allow derived classes to use default implem
   }
 
   options () {
@@ -92,9 +93,9 @@ class PandocConverter extends Converter {
 
     // Call Pandoc to convert Pandoc JSON to `options.to` format
     let args = [
-      '--from', 'json',
-      '--to', options.to
+      '--from', 'json'
     ]
+    if (options.to) args = args.concat(['--to', options.to])
     if (options.eol) args = args.concat(['--eol', options.eol])
     if (options.standalone) {
       args = args.concat(['--standalone'])

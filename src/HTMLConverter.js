@@ -5,10 +5,6 @@ class HTMLConverter extends PandocConverter {
     return 'html'
   }
 
-  extensions () {
-    return ['html']
-  }
-
   options () {
     return Object.assign(super.options(), {
       from: 'html',

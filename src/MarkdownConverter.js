@@ -10,10 +10,6 @@ class MarkdownConverter extends PandocConverter {
     return 'md'
   }
 
-  extensions () {
-    return ['md']
-  }
-
   options () {
     return {
       from: 'markdown-auto_identifiers',

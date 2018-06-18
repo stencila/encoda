@@ -52,7 +52,7 @@ testAsync('Fixtures: round trips', async assert => {
       const expectedString = fs.readFileSync(expected).toString().trim()
       const actualString = fs.readFileSync(output).toString().trim()
       const message = `${path.basename(output)} == ${path.basename(expected)}`
-      if (expected.length < 100) assert.equal(actualString, expectedString, message)
+      if (expectedString.length < 100 & actualString.length < 100) assert.equal(actualString, expectedString, message)
       else assert.ok(actualString === expectedString, message)
     }
   }

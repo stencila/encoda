@@ -3,6 +3,7 @@ const fs = require('fs')
 const pandoc = require('./helpers/pandoc')
 
 const DarConverter = require('./DarConverter')
+const DOCXConverter = require('./DOCXConverter')
 const EDFConverter = require('./EDFConverter')
 const FolderConverter = require('./FolderConverter')
 const JATSConverter = require('./JATSConverter')
@@ -10,6 +11,8 @@ const HTMLConverter = require('./HTMLConverter')
 const JSONConverter = require('./JSONConverter')
 const LatexConverter = require('./LatexConverter')
 const MarkdownConverter = require('./MarkdownConverter')
+const ODTConverter = require('./ODTConverter')
+const PDFConverter = require('./PDFConverter')
 const PandocConverter = require('./PandocConverter')
 
 let converters = [
@@ -17,10 +20,13 @@ let converters = [
   // First matching converter is used
 
   // Text document converters
+  new DOCXConverter(),
   new JATSConverter(),
   new HTMLConverter(),
   new LatexConverter(),
   new MarkdownConverter(),
+  new ODTConverter(),
+  new PDFConverter(),
   new PandocConverter(),
 
   // Sheet document converters
