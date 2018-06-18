@@ -276,7 +276,7 @@ class PandocConverter extends Converter {
       case 'BlockQuote': return this._importBlockQuote(node)
       case 'BulletList': return this._importBulletList(node)
       case 'CodeBlock': return this._importCodeBlock(node)
-      // case 'DefinitionList': return this._importDefinitionList(node)
+      case 'DefinitionList': return this._importDefinitionList(node)
       case 'Div': return this._importDiv(node)
       case 'Header': return this._importHeader(node)
       // case 'HorizontalRule': return this._importHorizontalRule(node)
@@ -308,7 +308,7 @@ class PandocConverter extends Converter {
       case 'BlockQuote': return this._exportBlockQuote(node)
       case 'UnorderedList': return this._exportBulletList(node)
       case 'CodeBlock': return this._exportCodeBlock(node)
-      // case 'DefinitionList': return this._exportDefinitionList(node)
+      case 'DescriptionList': return this._exportDefinitionList(node)
       case 'Div': return this._exportDiv(node)
       case 'Header': return this._exportHeader(node)
       // case 'HorizontalRule': return this._exportHorizontalRule(node)
@@ -403,6 +403,54 @@ class PandocConverter extends Converter {
     }
   }
 
+  /**
+   * Import a Pandoc `DefinitionList` as an Execdoc `DescriptionList`
+   *
+   *
+   * The Pandoc definition of a `DefinitionList` :) is:
+   *
+   * ```
+   * DefinitionList [([Inline],[[Block]])]  -- ^ Definition list
+   *                          -- Each list item is a pair consisting of a
+   *                          -- term (a list of inlines) and one or more
+   *                          -- definitions (each a list of blocks)
+   * ```
+   *
+   * @param  {Object} node Pandoc `DefinitionList`
+   * @return {Object}      Exedoc `DescriptionList`
+   */
+  _importDefinitionList (node) {
+    return {
+      type: 'DescriptionList',
+      items: node.c.map(item => {
+        return {
+          term: this._importInlines(item[0]),
+          // NOTE: Currently, only importing the first set of blocks. It is not clear if Pandoc
+          // ever supplied for than one set of blocks
+          desc: this._importBlocks(item[1][0])
+        }
+      })
+    }
+  }
+
+  /**
+   * Export an Exedoc `DescriptionList` as a Pandoc `DefinitionList`
+   *
+   * @param  {Object} node Exedoc `DescriptionList`
+   * @return {Object}      Pandoc `DefinitionList`
+   */
+  _exportDefinitionList (node) {
+    return {
+      t: 'DefinitionList',
+      c: node.items.map(item => {
+        return [
+          this._exportInlines(item.term),
+          [this._exportBlocks(item.desc)]
+        ]
+      })
+    }
+  }
+
   // Div.c = [Attr, [Block]]
 
   _importDiv (node) {
@@ -446,7 +494,7 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `OrderedList` as an Execdoc `UnorderedList`
+   * Import a Pandoc `OrderedList` as an Execdoc `OrderedList`
    *
    * An `OrderedList` is constructed with a set of list attributes and an [array of arrays of blocks]:
    *
