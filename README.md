@@ -9,14 +9,7 @@
 [![Dependency status](https://david-dm.org/stencila/convert.svg)](https://david-dm.org/stencila/convert)
 
 
-Stencila Converters allow you to convert between a range of formats commonly used for among researchers (and not only). Converters support
-lossless conversion of interactive source code sections and (most of the time) formatting. This means that you can seamlessly collaborate with colleagues
-who prefer other than you interfaces, without yourself having to give up your tool of choice.
-
-Stencila Converters are using the awesome power of [pandoc](https://pandoc.org/). In particular, Stencila relies much on pandoc's own JSON format
-(see below for developer's documentation).
-
-
+Stencila Converters allow you to convert between a range of formats commonly used for "executable documents" (those containing some type of source code or calculation).
 
 ### Install
 
@@ -29,7 +22,7 @@ Currently you need [Node.js](https://nodejs.org/en/download/) and npm to install
 npm install stencila-convert -g
 ```
 
-Many of the `Document` converters rely on a recent version of Pandoc. This package will use an existing installation of Pandoc if it is new enough. If not, it will automatically download the required Pandoc version to the Stencila directory in your home folder. See [`pandoc.json`](src/helpers/pandoc.json) for the necessary Pandoc version and download URLs. At times it may be necessary to use our custom Pandoc build available at https://github.com/stencila/pandoc/releases.
+Many of the text document converters rely on a recent version of Pandoc. This package will use an existing installation of Pandoc if it is new enough. If not, it will automatically download the required Pandoc version to the Stencila directory in your home folder. See [`pandoc.json`](src/helpers/pandoc.json) for the necessary Pandoc version and download URLs. At times it may be necessary to use our custom Pandoc build available at https://github.com/stencila/pandoc/releases.
 
 
 ### Use
@@ -58,8 +51,7 @@ and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
 
 Format          | Import                                                           | Export
---------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:
-**Documents**   |                                                                  |
+--------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:                                                                 |
 Markdown        |![alpha](https://img.shields.io/badge/status-alpha-red.svg) <br/> [#23](https://github.com/stencila/convert/issues/23)      |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 RMarkdown       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
 Latex           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
@@ -125,7 +117,7 @@ docker build --tag stencila/convert .
 docker run stencila/convert
 ```
 
-####Test cases
+#### Test cases
 
 The tests are currently doing a "round trip" conversion. That is, a test case is:
 
@@ -145,7 +137,7 @@ round trip conversion file. For example, `input.md` is compared with `input-out.
  To look up the details of the above conversion steps, see the
  [`PandocConverter.js`](https://github.com/stencila/convert/blob/master/src/PandocConverter.js) file.
 
- **Test case alternatives**
+##### Test case alternatives
 
 "Round trip" testing checks allows for testing conversions of alternatives for
 input formats. For example,  Atx-style headers (tagged with `#`) in a Markdown file should be treated the same as Setext-style headers (tagged with `----` under the header text) during conversion. That is,
@@ -161,9 +153,7 @@ Setext-style Header example
 -------------
 ```
 
-To make testing more[![Community](https://img.shields.io/badge/join-community-green.svg)](https://community.stenci.la)
-11
-[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila) succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
+To make testing more succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
 `heading-setext-out.md` is compared to `heading.md`.
 (Another way to think about this approach is to treat the conversion as
   standardising the input formats to pandoc Reader / Writer options.)
@@ -173,7 +163,7 @@ To make testing more[![Community](https://img.shields.io/badge/join-community-gr
 reading from and writing to different formats, (pandoc Reader and Writer options)[https://pandoc.org/MANUAL.html#options].
 
 
-####Create new test cases
+##### Create new test cases
 
 You can create a new test case for a particular format by converting an existing tests case for another format. For example, to create a nested lists test case for JATS, you could use the existing test case for Markdown:
 
