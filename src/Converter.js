@@ -28,6 +28,10 @@ class Converter {
     }
   }
 
+  options () {
+    return {}
+  }
+
   async importable (path, volume = fs, format = null) {
     return this.match(path, volume, format)
   }
