@@ -2,9 +2,9 @@ const fs = require('fs')
 
 const pandoc = require('./helpers/pandoc')
 
+const CSVConverter = require('./CSVConverter')
 const DarConverter = require('./DarConverter')
 const DOCXConverter = require('./DOCXConverter')
-const DSVConverter = require('./DSVConverter')
 const EDFConverter = require('./EDFConverter')
 const FolderConverter = require('./FolderConverter')
 const HTMLConverter = require('./HTMLConverter')
@@ -17,6 +17,7 @@ const PDFConverter = require('./PDFConverter')
 const PandocConverter = require('./PandocConverter')
 const SheetConverter = require('./SheetConverter')
 const SheetMLConverter = require('./SheetMLConverter')
+const TSVConverter = require('./TSVConverter')
 const XLSXConverter = require('./XLSXConverter')
 
 let converters = [
@@ -34,9 +35,10 @@ let converters = [
   new PandocConverter(),
 
   // Sheet document converters
-  new DSVConverter(),
+  new CSVConverter(),
   new ODSConverter(),
   new SheetMLConverter(),
+  new TSVConverter(),
   new XLSXConverter(),
   new SheetConverter(),
 

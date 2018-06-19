@@ -155,7 +155,11 @@ class SheetConverter extends Converter {
       Sheets: sheets
     }
 
-    if (volume === fs) {
+    if (options.to === 'tsv') {
+      let sheet = workbook.Sheets[name] // FIXME: Currently only handles first sheet
+      let content = xlsx.utils.sheet_to_csv(sheet, {FS: '\t'})
+      await this.writeFile(path, content, volume)
+    } else if (volume === fs) {
       xlsx.writeFileSync(workbook, path, {
         bookType: options.to
       })
@@ -169,7 +173,7 @@ class SheetConverter extends Converter {
           type: 'string'
         })
       }
-      volume.writeFileSync(path, content)
+      await this.writeFile(path, content, volume)
     }
   }
 }
