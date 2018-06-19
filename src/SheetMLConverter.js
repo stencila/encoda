@@ -98,6 +98,7 @@ class SheetMLConverter extends Converter {
       const rowEl = dom('<row>')
       for (let cell of row) {
         const cellEl = dom('<cell>')
+        cellEl.text(cell[0].data) // FIXME: generate cell text more intelligently
         rowEl.append(cellEl)
       }
       dataEl.append(rowEl)
