@@ -8,6 +8,7 @@ const CSVConverter = require('./CSVConverter')
 const DarConverter = require('./DarConverter')
 const DOCXConverter = require('./DOCXConverter')
 const EDFConverter = require('./EDFConverter')
+const EDFYConverter = require('./EDFYConverter')
 const FolderConverter = require('./FolderConverter')
 const HTMLConverter = require('./HTMLConverter')
 const JATSConverter = require('./JATSConverter')
@@ -50,6 +51,7 @@ let converters = [
   // Base, "no-op" converter
   // (can be useful for debugging; to use, convert to '.edf.json' or '.edf')
   new EDFConverter(),
+  new EDFYConverter(),
 
   // This should be last since it will import/export to any directory
   // regardless of it's extension
