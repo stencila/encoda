@@ -17,5 +17,5 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,genus,spe
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
 "python= import numpy, matplotlib",,,,,,,,,,,,
-"python= data = (A2:M15)",,,,,,,,,,,,
-"python= matplotlib.plotly.hist(data.weight)",,,,,,,,,,,,
+python= data = (A2:M15),,,,,,,,,,,,
+python= matplotlib.plotly.hist(data.weight),,,,,,,,,,,,

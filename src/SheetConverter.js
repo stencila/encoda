@@ -47,31 +47,8 @@ class SheetConverter extends Converter {
         for (let c = 0; c <= cellRange.e.c; c++) {
           const ref = xlsx.utils.encode_cell({r: r, c: c})
           const cell = sheet[ref]
-          let node
-          if (cell.f) {
-            node = {
-              type: 'Cell',
-              code: cell.f
-            }
-          } else if (cell.v) {
-            let type
-            switch (cell.t) {
-              case 'b':
-                type = 'Boolean'
-                break
-              case 'n':
-                type = 'Number'
-                break
-              case 's':
-                type = 'String'
-                break
-            }
-            node = {
-              type,
-              data: cell.v
-            }
-          }
-          row.push([node])
+          const nodes = this._importCell(cell)
+          row.push(nodes)
         }
         rows.push(row)
       }
@@ -110,21 +87,9 @@ class SheetConverter extends Converter {
       c = -1
       for (let nodes of row) {
         c += 1
-
-        // Table cells are an array of nodes, so just
-        // take the first node
-        let node = nodes[0]
-        // If the first node is a block (i.e. it has `nodes` e.g. `Plain`)
-        // then take the first
-        if (node.nodes) {
-          node = node.nodes[0]
-        }
-
-        let ref = xlsx.utils.encode_cell({r: r, c: c})
-        let cell = {
-          t: exportCellType(node.type),
-          v: node.data
-        }
+        const cell = this._exportCell(nodes)
+        if (!cell) continue
+        const ref = xlsx.utils.encode_cell({r: r, c: c})
         sheet[ref] = cell
       }
     }
@@ -132,16 +97,6 @@ class SheetConverter extends Converter {
       s: {r: 0, c: 0},
       e: {r: r, c: c}
     })
-
-    function exportCellType (type) {
-      switch (type) {
-        case 'Boolean': return 'b'
-        case 'Number': return 'n'
-        case 'String': return 's'
-        default:
-          throw new Error(`Unhandled cell type "${type}"`)
-      }
-    }
 
     const sheetNames = []
     const sheets = {}
@@ -174,6 +129,74 @@ class SheetConverter extends Converter {
         })
       }
       await this.writeFile(path, content, volume)
+    }
+  }
+
+  _importCell (cell) {
+    if (!cell) {
+      // Cell is empty
+      return []
+    } else if (cell.f) {
+      return [{
+        type: 'Cell',
+        code: cell.f
+      }]
+    } else if (cell.v) {
+      let type
+      switch (cell.t) {
+        case 'b':
+          type = 'Boolean'
+          break
+        case 'n':
+          type = 'Number'
+          break
+        case 's':
+          type = 'String'
+          break
+        default:
+          throw new Error(`Unhandled cell type: "${cell.t}"`)
+      }
+      return [{
+        type,
+        data: cell.v
+      }]
+    }
+  }
+
+  _exportCell (nodes) {
+    if (nodes.length === 0) return null
+
+    // Table cells are an array of nodes, so just
+    // take the first node
+    let node = nodes[0]
+    // If the first node is a block (i.e. it has `nodes` e.g. `Plain`)
+    // then take the first
+    if (node.nodes) {
+      node = node.nodes[0]
+    }
+
+    switch (node.type) {
+      case 'Cell':
+        return {
+          f: node.code
+        }
+      case 'Boolean':
+        return {
+          t: 'b',
+          v: node.data
+        }
+      case 'Number':
+        return {
+          t: 'n',
+          v: node.data
+        }
+      case 'String':
+        return {
+          t: 's',
+          v: node.data
+        }
+      default:
+        throw new Error(`Unhandled node type: "${node.type}"`)
     }
   }
 }
