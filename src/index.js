@@ -1,4 +1,6 @@
 const fs = require('fs')
+const getStdin = require('get-stdin')
+const memfs = require('memfs')
 
 const pandoc = require('./helpers/pandoc')
 
@@ -50,7 +52,7 @@ let converters = [
   new EDFConverter(),
 
   // This should be last since it will import/export to any directory
-  // regardless of it's exension
+  // regardless of it's extension
   new FolderConverter()
 ]
 
@@ -70,8 +72,22 @@ async function match (path, volume, format, direction) {
 }
 
 async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, formatTo, options) {
-  if (!volumeFrom) volumeFrom = fs
-  if (!volumeTo) volumeTo = volumeFrom
+  if (pathFrom === '-') {
+    pathFrom = '/stdin'
+    volumeFrom = new memfs.Volume()
+    volumeFrom.writeFileSync(pathFrom, await getStdin())
+    if (!formatFrom) formatFrom = 'md'
+  } else if (!volumeFrom) {
+    volumeFrom = fs
+  }
+
+  if (pathTo === '-') {
+    pathTo = '/stdout'
+    volumeTo = new memfs.Volume()
+    if (!formatTo) formatTo = 'edf'
+  } else if (!volumeTo) {
+    volumeTo = volumeFrom
+  }
 
   const importer = await match(pathFrom, volumeFrom, formatFrom, 'import', true)
   if (!importer) {
@@ -88,6 +104,11 @@ async function convert (pathFrom, pathTo, volumeFrom, volumeTo, formatFrom, form
   }
 
   await exporter.export(doc, pathTo, volumeTo, options)
+
+  if (pathTo === '/stdout') {
+    const content = volumeTo.readFileSync(pathTo, 'utf8')
+    console.log(content)
+  }
 }
 
 module.exports = {

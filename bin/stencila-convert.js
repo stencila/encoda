@@ -6,14 +6,14 @@
 
 const convert = require('../src').convert
 
-const pathFrom = process.argv[2]
-const pathTo = process.argv[3]
+const pathFrom = process.argv[2] || '-'
+const pathTo = process.argv[3] || '-'
 
 if (!pathFrom) {
   console.error('Usage:')
-  console.error('  stencila-convert <from> [to]\n')
-  console.error('  from: path to import from')
-  console.error('  to: path to export to\n')
+  console.error('  stencila-convert [from] [to]\n')
+  console.error('  from: path to import from, or "-" for stdin')
+  console.error('  to: path to export to, or "-" for stdout\n')
   console.error('Examples:\n')
   console.error('  stencila-convert doc.md doc.jats.xml')
   console.error('  stencila-convert doc.jats.xml doc.md')
@@ -21,7 +21,8 @@ if (!pathFrom) {
 }
 
 convert(pathFrom, pathTo).then(() => {
-  console.log(`Success: converted from "${pathFrom}" to "${pathTo}"`)
+  console.error(`Success: converted from "${pathFrom}" to "${pathTo}"`)
 }).catch((error) => {
   console.error(error.stack)
+  process.exit(1)
 })
