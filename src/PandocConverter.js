@@ -326,9 +326,11 @@ class PandocConverter extends Converter {
       case 'RawBlock': return this._exportRawBlock(node)
       case 'Table': return this._exportTable(node)
       default:
+        // Unmatched node type e.g. `Number`, so wrap it into
+        // a `Plain` block...
         return {
-          t: node.type,
-          c: node.children
+          t: 'Plain',
+          c: [this._exportDefault(node)]
         }
     }
   }
@@ -768,13 +770,13 @@ class PandocConverter extends Converter {
     return {
       t: 'Table',
       c: [
-        this._exportInlines(node.caption),
+        node.caption ? this._exportInlines(node.caption) : [],
         aligns,
         widths,
-        node.head.map(cell => this._exportBlocks(cell)),
-        node.rows.map(row => {
+        node.head ? node.head.map(cell => this._exportBlocks(cell)) : [],
+        node.rows ? node.rows.map(row => {
           return row.map(cell => this._exportBlocks(cell))
-        })
+        }) : []
       ]
     }
 
@@ -782,9 +784,11 @@ class PandocConverter extends Converter {
       // Create arrays of Pandoc table `Alignment` and widths
       let aligns = []
       let widths = []
-      for (let col of style.cols) {
-        aligns.push({t: 'Align' + col.align[0].toUpperCase() + col.align.slice(1)})
-        widths.push(col.width)
+      if (style && style.cols) {
+        for (let col of style.cols) {
+          aligns.push({t: 'Align' + col.align[0].toUpperCase() + col.align.slice(1)})
+          widths.push(col.width)
+        }
       }
       return {aligns, widths}
     }
@@ -860,10 +864,7 @@ class PandocConverter extends Converter {
       case 'Image':
         return this._exportImage(node)
       default:
-        return {
-          t: node.type,
-          c: node.children
-        }
+        return this._exportDefault(node)
     }
   }
 
@@ -938,6 +939,26 @@ class PandocConverter extends Converter {
 
   _exportTarget (node) {
     return node
+  }
+
+  _exportDefault (node) {
+    switch (node.type) {
+      case 'Number':
+        return {
+          t: 'Str',
+          c: node.data.toString()
+        }
+      case 'String':
+        return {
+          t: 'Str',
+          c: node.data
+        }
+      default:
+        return {
+          t: node.type,
+          c: node.children
+        }
+    }
   }
 }
 
