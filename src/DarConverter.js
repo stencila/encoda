@@ -1,12 +1,14 @@
+const cheerio = require('cheerio')
 const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
+const rimraf = require('rimraf')
 
 const xml = require('./helpers/xml')
-const FolderConverter = require('./FolderConverter')
+const Converter = require('./Converter')
 const JATSConverter = require('./JATSConverter')
 
-class DarConverter extends FolderConverter {
+class DarConverter extends Converter {
   id () {
     return 'dar'
   }
@@ -19,22 +21,39 @@ class DarConverter extends FolderConverter {
     }
   }
 
-  async import (path, volume = fs, options = {}) {
-    // Read manifest.xml
-    // Convert each of the files in the <documents> element
+  async import (darPath, volume = fs, options = {}) {
+    let files = {}
+
+    const manifest = xml.load(await this.readFile(path.join(darPath, 'manifest.xml'), volume))
+    const documents = manifest('documents').find('document').map((index, elem) => {
+      const entry = cheerio(elem)
+      return {
+        name: entry.attr('name'),
+        type: entry.attr('type'),
+        filePath: entry.attr('path')
+      }
+    }).get()
+
+    for (let {type, filePath} of documents) {
+      const Converter = type === 'article' ? JATSConverter : null
+      const converter = new Converter()
+      const exedoc = await converter.import(path.join(darPath, filePath), volume, options)
+
+      files[filePath] = exedoc
+    }
+
     return {
       type: 'Folder',
-      documents: [],
-      files: []
+      files: files
     }
   }
 
-  async export (obj, darPath, volume = fs, options = {}) {
-    let documents
-    if (obj.documents) {
-      documents = obj.documents
+  async export (exedoc, darPath, volume = fs, options = {}) {
+    let files
+    if (exedoc.type === 'Folder') {
+      files = exedoc.files
     } else {
-      documents = [obj]
+      files = {'unnamed': exedoc}
     }
 
     const manifest = xml.load(`
@@ -45,24 +64,20 @@ class DarConverter extends FolderConverter {
       </dar>
     `)
     let documentsEl = manifest('documents')
-    for (let doc of documents) {
-      const type = doc.type === 'Sheet' ? 'sheet' : 'article'
-      const id = type + '-' + crypto.randomBytes(24).toString('hex')
-      const name = doc.source || `Untitled ${type}`
 
+    rimraf.sync(darPath)
+    for (let [file, node] of Object.entries(files)) {
+      const type = node.type === 'Sheet' ? 'sheet' : 'article'
       const Converter = type === 'article' ? JATSConverter : null
       const converter = new Converter()
-      const ext = converter.extensions()[0]
-      const filePath = `${id}.${ext}`
-      await converter.export(doc, path.join(darPath, filePath), volume)
+      await converter.export(node, path.join(darPath, file), volume)
 
-      documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${filePath}"/>`)
+      const id = type + '-' + crypto.randomBytes(24).toString('hex')
+      const name = file
+      documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${file}"/>`)
     }
 
-    await this.writeFile(
-      path.join(darPath, 'manifest.xml'),
-      xml.dump(manifest)
-    )
+    await this.writeFile(path.join(darPath, 'manifest.xml'), xml.dump(manifest), volume)
   }
 }
 

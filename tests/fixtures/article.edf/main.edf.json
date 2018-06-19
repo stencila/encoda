@@ -1,0 +1,25 @@
+{
+  "type": "Document",
+  "body": [
+    {
+      "type": "Header",
+      "level": 1,
+      "attrs": {},
+      "nodes": [
+        {
+          "type": "String",
+          "data": "Main document"
+        }
+      ]
+    },
+    {
+      "type": "Para",
+      "nodes": [
+        {
+          "type": "String",
+          "data": "This is the main document"
+        }
+      ]
+    }
+  ]
+}

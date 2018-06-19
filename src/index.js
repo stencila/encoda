@@ -9,7 +9,6 @@ const EDFConverter = require('./EDFConverter')
 const FolderConverter = require('./FolderConverter')
 const HTMLConverter = require('./HTMLConverter')
 const JATSConverter = require('./JATSConverter')
-const JSONConverter = require('./JSONConverter')
 const LatexConverter = require('./LatexConverter')
 const MarkdownConverter = require('./MarkdownConverter')
 const ODTConverter = require('./ODTConverter')
@@ -43,12 +42,14 @@ let converters = [
 
   // Folder converters
   new DarConverter(),
-  new EDFConverter(),
-  new FolderConverter(),
 
   // Base, "no-op" converter
-  // (can be useful for debugging; to use, convert to '.json')
-  new JSONConverter()
+  // (can be useful for debugging; to use, convert to '.edf.json' or '.edf')
+  new EDFConverter(),
+
+  // This should be last since it will import/export to any directory
+  // regardless of it's exension
+  new FolderConverter()
 ]
 
 async function setup () {

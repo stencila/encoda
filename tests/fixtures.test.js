@@ -54,6 +54,12 @@ testAsync('Fixtures: round trips', async assert => {
       const message = `${path.basename(output)} == ${path.basename(expected)}`
       if (expectedString.length < 100 & actualString.length < 100) assert.equal(actualString, expectedString, message)
       else assert.ok(actualString === expectedString, message)
+    } else if (stats.isDirectory()) {
+      // Compare file list
+      const expectedFiles = fs.readdirSync(expected)
+      const actualFiles = fs.readdirSync(output)
+      const message = `${path.basename(output)} == ${path.basename(expected)}`
+      assert.deepEqual(expectedFiles, actualFiles, message)
     }
   }
 
