@@ -6,7 +6,14 @@ const SheetConverter = require('./SheetConverter')
  */
 class ODSConverter extends SheetConverter {
   id () {
-    return 'ods-skip'
+    return 'ods'
+  }
+
+  options () {
+    return Object.assign(super.options(), {
+      from: 'ods',
+      to: 'ods'
+    })
   }
 }
 

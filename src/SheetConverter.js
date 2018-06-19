@@ -110,7 +110,16 @@ class SheetConverter extends Converter {
       c = -1
       for (let nodes of row) {
         c += 1
+
+        // Table cells are an array of nodes, so just
+        // take the first node
         let node = nodes[0]
+        // If the first node is a block (i.e. it has `nodes` e.g. `Plain`)
+        // then take the first
+        if (node.nodes) {
+          node = node.nodes[0]
+        }
+
         let ref = xlsx.utils.encode_cell({r: r, c: c})
         let cell = {
           t: exportCellType(node.type),
@@ -147,7 +156,9 @@ class SheetConverter extends Converter {
     }
 
     if (volume === fs) {
-      xlsx.writeFileSync(path, workbook)
+      xlsx.writeFileSync(workbook, path, {
+        bookType: options.to
+      })
     } else {
       let content
       if (options.to === 'csf') {
