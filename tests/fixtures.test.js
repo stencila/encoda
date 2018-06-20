@@ -19,9 +19,10 @@ testAsync('Fixtures: round trips', async assert => {
     if (input.includes('-out.')) continue
 
     // Generate output and expected file names
-    let match = path.basename(input).match(/^([^-.]+)(-[^.]+)?(\..+)?$/)
-    let output = path.join(__dirname, 'fixtures', `${match[1]}${match[2] || ''}-out${match[3] || ''}`)
-    let expected = path.join(__dirname, 'fixtures', `${match[1]}${match[3] || ''}`)
+    const match = path.basename(input).match(/^([^-.]+)(-[^.]+)?(\..+)?$/)
+    const ext = match[3] || ''
+    const output = path.join(__dirname, 'fixtures', `${match[1]}${match[2] || ''}-out${ext}`)
+    const expected = path.join(__dirname, 'fixtures', `${match[1]}${ext}`)
 
     assert.comment(`Converting ${path.basename(input)} to ${path.basename(output)}`)
 
@@ -48,10 +49,17 @@ testAsync('Fixtures: round trips', async assert => {
 
     let stats = fs.lstatSync(expected)
     if (stats.isFile()) {
-      // Compare expected and actual output
-      const expectedString = fs.readFileSync(expected).toString().trim()
-      const actualString = fs.readFileSync(output).toString().trim()
       const message = `${path.basename(output)} == ${path.basename(expected)}`
+      let expectedString
+      let actualString
+      if (ext === '.xlsx' || ext === '.ods') {
+        assert.skip(`Can not currently test "${message}"`)
+        continue
+      } else {
+        expectedString = fs.readFileSync(expected).toString().trim()
+        actualString = fs.readFileSync(output).toString().trim()
+      }
+      // Compare expected and actual output
       if (expectedString.length < 100 & actualString.length < 100) assert.equal(actualString, expectedString, message)
       else assert.ok(actualString === expectedString, message)
     } else if (stats.isDirectory()) {
