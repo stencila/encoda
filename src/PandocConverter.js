@@ -230,7 +230,10 @@ class PandocConverter extends Converter {
         }
       case 'String':
         // MetaString String
-        return this._exportStr(value)
+        return {
+          t: 'MetaString',
+          c: value.data
+        }
       case 'Para':
         // MetaInlines [Inline]
         return {
