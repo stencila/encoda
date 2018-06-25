@@ -95,7 +95,9 @@ class XMDConverter extends MarkdownConverter {
       let match = line.match(/^```([a-z]+)|(\s*\{\.([a-z]+)\})/)
       if (match) {
         let language = match[1] || match[3]
-        let spec = '``` {' + language
+        // Note that in RStudio the convention seems to be no space 
+        // between backticks and braces
+        let spec = '```{' + language
 
         let first = lines[index + 1]
         if (first) {

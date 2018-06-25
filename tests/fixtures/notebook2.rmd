@@ -1,21 +1,22 @@
 ---
+abstract: 'This is pretty, ummm, abstract'
+author:
+- surname: Homer Simpson
+- aff-id: 'springfield-university'
+  name: Lisa Simpson
+  surname: Lisa Simpson
+- aff-id: 'springfield-university'
+  affiliation: 'springfield-university'
+  email: 'bart\@simpson.com'
+  given-names: Bart
+  orcid: 'bart-0001'
+  surname: Simpson
+orgs:
+- city: Springfield
+  country: USA
+  id: 'springfield-university'
+  name: Springfield University
 title: Article title
-authors:
-  - Homer Simpson
-  - name: Lisa Simpson
-    aff-id: springfield-university
-  - surname: Simpson
-    given-names: Bart
-    affiliation: springfield-university
-    email: bart@simpson.com
-    orcid: bart-0001
-organisations:
-  - id: springfield-university
-    name: Springfield University
-    city: Springfield
-    country: USA
-abstract: |
-  This is pretty, ummm, abstract
 ---
 
 A plain RMarkdown cell:
@@ -24,8 +25,7 @@ A plain RMarkdown cell:
 paste("Hello world, this is", R.version.string, "and it's", date(), "!")
 ```
 
-Figure captions should be translated to/from the RMarkdown fig.caption option:
-
-```{r fig.width=7,fig.height=6,fig.cap="Figure caption"}
+```{r fig.width=7,fig.height=6}
 hist(rnorm(min(1000, 1e5)), breaks=40, col=hsv(0.6, 0.9, 1), xlab="Value", main="")
 ```
+

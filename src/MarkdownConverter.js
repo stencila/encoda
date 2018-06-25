@@ -11,7 +11,7 @@ class MarkdownConverter extends PandocConverter {
   }
 
   options () {
-    return {
+    return Object.assign(super.options(), {
       from: 'markdown-auto_identifiers',
       importArgs: [
         // TODO: re-enable this
@@ -19,12 +19,11 @@ class MarkdownConverter extends PandocConverter {
       ],
 
       to: 'markdown',
-      template: 'MarkdownTemplate.md',
       exportArgs: [
         '--wrap=none',
         '--atx-headers' // Use ATX (#) headers
       ]
-    }
+    })
   }
 
   async import (path, volume = fs, options = {}) {
@@ -85,28 +84,16 @@ class MarkdownConverter extends PandocConverter {
     await super.export(doc, pathTemp, volumeTemp, options)
     let md = await this.readFile('/temp.md', volumeTemp)
 
-    // Post-process the Markdown
-    let mdNew = md
-    if (options.complete) {
-      // MarkdownTemplate.md writes metadata as JSON on the first line
-      // so extract that from the content and write as YAML front matter
-      const lines = mdNew.split('\n')
-      const json = lines[0]
-      const content = lines.slice(1).join('\n')
-      let front = JSON.parse(json)
-      mdNew = `---\n${yaml.dump(front)}---\n\n${content}`
-    }
-
     // Pandoc writes code blocks with a single "class" attribute (usually a language) as
     //   ``` {.py}
     // In these cases, rewrite to shorthand
     //   ```py
-    mdNew = mdNew.replace(/^(\s*)``` {\.([\w-]+)}$/mg, (match, indentation, clas) => {
+    md = md.replace(/^(\s*)``` {\.([\w-]+)}$/mg, (match, indentation, clas) => {
       return indentation + '```' + clas
     })
 
     // Write to final destination
-    return this.writeFile(path, mdNew, volume)
+    return this.writeFile(path, md, volume)
   }
 }
 
