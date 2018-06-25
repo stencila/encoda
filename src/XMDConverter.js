@@ -33,12 +33,9 @@ is available at http://yihui.name/knitr/options/.
 
 **/
 class XMDConverter extends MarkdownConverter {
-  async import (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
-    volumeFrom = volumeFrom || fs
-    volumeTo = volumeTo || volumeFrom
-
+  async import (path, volume = fs, options = {}) {
     // Preprocess XMarkdown to Markdown
-    const xmd = await this.readFile(pathFrom, volumeFrom || fs)
+    const xmd = await this.readFile(path, volume)
     let md = ''
     let fig
     for (let line of xmd.split('\n')) {
@@ -60,8 +57,10 @@ class XMDConverter extends MarkdownConverter {
         }
 
         // Code cells as Pandoc `backtick_code_blocks` with `fenced_code_attributes`
-        // to store language and indicate an executable cell
-        md += '``` {.' + language + '}\n'
+        // to store language and indicate an executable cell. Note the Pandoc
+        // uses the convention of class="r", not another attribute lang="r",
+        // for specifying language of code cells
+        md += '``` {class="' + language + '"}\n'
         if (options) {
           // Cell options as a comment line
           md += `${this._comment(language)}: ${options}\n`
@@ -79,17 +78,13 @@ class XMDConverter extends MarkdownConverter {
     }
 
     const volumeTemp = new memfs.Volume()
-    // Use `pathFrom` here instead of some arbitrary filename (which would be possible)
-    // to retain `pathTo` generation behaviour of `super.import`
-    await this.writeFile(pathFrom, md, volumeTemp)
-
-    // Continue with normal Markdown import
-    return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
+    await this.writeFile(path, md, volumeTemp)
+    return super.import(path, volumeTemp, options)
   }
 
-  async export (pathFrom, pathTo, volumeFrom, volumeTo, options = {}) {
+  async export (execdoc, path, volume, options = {}) {
     const volumeTemp = new memfs.Volume()
-    await super.export(pathFrom, '/temp.md', volumeFrom, volumeTemp, options)
+    await super.export(execdoc, '/temp.md', volumeTemp, options)
 
     const md = await this.readFile('/temp.md', volumeTemp)
     let xmd = ''
@@ -97,9 +92,9 @@ class XMDConverter extends MarkdownConverter {
     for (let index = 0; index < lines.length; index++) {
       let line = lines[index]
       // Convert Pandoc Markdown code cells to XMarkdown code chunks
-      let match = line.match(/^```\s*\{\.([a-z]+)\}/)
+      let match = line.match(/^```([a-z]+)|(\s*\{\.([a-z]+)\})/)
       if (match) {
-        let language = match[1]
+        let language = match[1] || match[3]
         let spec = '``` {' + language
 
         let first = lines[index + 1]
@@ -117,7 +112,7 @@ class XMDConverter extends MarkdownConverter {
       }
     }
 
-    return this.writeFile(pathTo, xmd, volumeTo)
+    return this.writeFile(path, xmd, volume)
   }
 
   /**

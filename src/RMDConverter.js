@@ -1,9 +1,12 @@
-const DocumentXmdConverter = require('./DocumentXmdConverter')
+const XMDConverter = require('./XMDConverter')
 
-class DocumentRmdConverter extends DocumentXmdConverter {
+class RMDConverter extends XMDConverter {
+  id () {
+    return 'rmd'
+  }
   extensions () {
     return ['rmd']
   }
 }
 
-module.exports = DocumentRmdConverter
+module.exports = RMDConverter

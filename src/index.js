@@ -18,6 +18,7 @@ const ODTConverter = require('./ODTConverter')
 const ODSConverter = require('./ODSConverter')
 const PDFConverter = require('./PDFConverter')
 const PandocConverter = require('./PandocConverter')
+const RMDConverter = require('./RMDConverter')
 const SheetConverter = require('./SheetConverter')
 const SheetMLConverter = require('./SheetMLConverter')
 const TSVConverter = require('./TSVConverter')
@@ -35,6 +36,7 @@ let converters = [
   new MarkdownConverter(),
   new ODTConverter(),
   new PDFConverter(),
+  new RMDConverter(),
   new PandocConverter(),
 
   // Sheet document converters
