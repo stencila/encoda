@@ -4,9 +4,12 @@ const fs = require('fs')
 const path = require('path')
 const rimraf = require('rimraf')
 
+const replaceExt = require('./helpers/replaceExt')
 const xml = require('./helpers/xml')
+
 const Converter = require('./Converter')
 const JATSConverter = require('./JATSConverter')
+const SheetMLConverter = require('./SheetMLConverter')
 
 class DarConverter extends Converter {
   id () {
@@ -66,15 +69,27 @@ class DarConverter extends Converter {
     let documentsEl = manifest('documents')
 
     rimraf.sync(darPath)
-    for (let [file, node] of Object.entries(files)) {
-      const type = node.type === 'Sheet' ? 'sheet' : 'article'
-      const Converter = type === 'article' ? JATSConverter : null
-      const converter = new Converter()
-      await converter.export(node, path.join(darPath, file), volume)
+    for (let [fileName, node] of Object.entries(files)) {
+      let type
+      let ext
+      let converter
+      if (node.type === 'Sheet') {
+        type = 'sheet'
+        ext = '.sheet.xml'
+        converter = new SheetMLConverter()
+      } else {
+        type = 'article'
+        ext = '.jats.xml'
+        converter = new JATSConverter()
+      }
+
+      const fileNameNew = replaceExt(fileName, ext)
+      const pathNew = path.join(darPath, fileNameNew)
+      await converter.export(node, pathNew, volume)
 
       const id = type + '-' + crypto.randomBytes(24).toString('hex')
-      const name = file
-      documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${file}"/>`)
+      const name = fileName
+      documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${fileNameNew}"/>`)
     }
 
     await this.writeFile(path.join(darPath, 'manifest.xml'), xml.dump(manifest), volume)

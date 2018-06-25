@@ -4,6 +4,7 @@ const rimraf = require('rimraf')
 
 const Converter = require('./Converter')
 const FolderConverter = require('./FolderConverter')
+const replaceExt = require('./helpers/replaceExt')
 
 class EDFConverter extends Converter {
   id () {
@@ -31,9 +32,11 @@ class EDFConverter extends Converter {
       await this.writeFile(edfPath, json, volume, options)
     } else if (exedoc.type === 'Folder') {
       rimraf.sync(edfPath)
-      let promises = Object.entries(exedoc.files).map(([file, node]) => {
+      let promises = Object.entries(exedoc.files).map(([fileName, node]) => {
         if (node) {
-          return this.export(node, path.join(edfPath, file), volume, options)
+          const fileNameNew = replaceExt(fileName, '.edf.json')
+          const pathNew = path.join(edfPath, fileNameNew)
+          return this.export(node, pathNew, volume, options)
         } else {
           return true
         }
