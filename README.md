@@ -13,7 +13,9 @@ Stencila Converters allow you to convert between a range of formats commonly use
 
 ### Install
 
-Currently you need [Node.js](https://nodejs.org/en/download/) and npm to install Stencila Converters. Once you have it set up on your machine,
+These converters are available as a sub-command in the [Stencila CLI (command line tool)](https://github.com/stencila/cli) e.g. `stencila convert document.md document.jats.xml`. The Stencila CLI is a standalone binary and is the easiest way to use these converters.
+
+If you want to go ahead and install the converters separately you'll need [Node.js](https://nodejs.org/en/download/) and `npm`. Once you have them set up...
 
 * on Mac OS X and Linux, open the terminal,
 * on Windows start the Command Prompt or PowerShell, and type:
@@ -24,18 +26,11 @@ npm install stencila-convert -g
 
 Many of the text document converters rely on a recent version of Pandoc. This package will use an existing installation of Pandoc if it is new enough. If not, it will automatically download the required Pandoc version to the Stencila directory in your home folder. See [`pandoc.json`](src/helpers/pandoc.json) for the necessary Pandoc version and download URLs. At times it may be necessary to use our custom Pandoc build available at https://github.com/stencila/pandoc/releases.
 
-
 ### Use
 
 ```bash
 stencila-convert document.md document.jats.xml
 ```
-
-When these converters are better developed and tested, the plan is to integrate this package into:
-
-- the [Stencila CLI (command line tool)](https://github.com/stencila/cli) as a sub-command e.g. `stencila convert document.md document.jats.xml`
-
-- the [Stencila Desktop](https://github.com/stencila/desktop) as a menu item e.g. `Save as... > Jupyter Notebook`
 
 API documentation is available at https://stencila.github.io/convert.
 
@@ -46,7 +41,9 @@ The following table lists the status of converters that have been developed, are
 We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/convert/issues) and comment under the relevant one. If there is no
 issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new). 
 
-You can also provide your feedback on the friendly [Sthttps://github.com/stencila/convert/issues/24encila Community Forum](https://community.stenci.la)
+When the converters have been better tested, the plan is to integrate them into [Stencila Desktop](https://github.com/stencila/desktop) as a menu item e.g. `Save as... > Jupyter Notebook`
+
+You can also provide your feedback on the friendly [Stencila Community Forum](https://community.stenci.la)
 and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
 
