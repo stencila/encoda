@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const rimraf = require('rimraf')
 
-const replaceExt = require('./helpers/replaceExt')
+const {replaceExt} = require('./helpers/util')
 const xml = require('./helpers/xml')
 
 const Converter = require('./Converter')
@@ -38,8 +38,12 @@ class DarConverter extends Converter {
     }).get()
 
     for (let {type, filePath} of documents) {
-      const Converter = type === 'article' ? JATSConverter : null
-      const converter = new Converter()
+      let converter
+      if (type === 'sheet') {
+        converter = new SheetMLConverter()
+      } else {
+        converter = new JATSConverter()
+      }
       const exedoc = await converter.import(path.join(darPath, filePath), volume, options)
 
       files[filePath] = exedoc
@@ -73,7 +77,7 @@ class DarConverter extends Converter {
       let type
       let ext
       let converter
-      if (node.type === 'Sheet') {
+      if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
         type = 'sheet'
         ext = '.sheet.xml'
         converter = new SheetMLConverter()

@@ -4,7 +4,7 @@ const rimraf = require('rimraf')
 
 const Converter = require('./Converter')
 const FolderConverter = require('./FolderConverter')
-const replaceExt = require('./helpers/replaceExt')
+const {replaceExt} = require('./helpers/util')
 
 class EDFConverter extends Converter {
   id () {
