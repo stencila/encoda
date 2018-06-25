@@ -9,7 +9,7 @@ class SheetMLConverter extends Converter {
   }
 
   extensions () {
-    return ['sheetml-skip', 'sheet.xml-skip']
+    return ['sheetml', 'sheet.xml']
   }
 
   async import (path, volume = fs, options = {}) {
@@ -94,14 +94,23 @@ class SheetMLConverter extends Converter {
     const dataEl = dom('data')
 
     let table = exedoc.body[0] // FIXME: get first type: 'Table'
+    let cols = 0
     for (let row of table.rows) {
+      cols = Math.max(cols, row.length)
       const rowEl = dom('<row>')
       for (let cell of row) {
+        const {text} = this._exportCell(cell)
         const cellEl = dom('<cell>')
-        cellEl.text(cell[0].data) // FIXME: generate cell text more intelligently
+        if (text) cellEl.text(text)
         rowEl.append(cellEl)
       }
       dataEl.append(rowEl)
+    }
+
+    // Fill in <column> elements
+    const columnsEl = dom('columns')
+    for (let col = 0; col < cols; col++) {
+      columnsEl.append(dom('<col>'))
     }
 
     const content = xml.dump(dom, {
@@ -109,6 +118,15 @@ class SheetMLConverter extends Converter {
       tagsContentUnformatted: ['cell']
     })
     return this.writeFile(path, content, volume, options)
+  }
+
+  _exportCell (cell) {
+    if (cell.length === 0) return {text: null}
+    else {
+      // For now, just take first block
+      const first = cell[0]
+      return {text: first.data}
+    }
   }
 }
 
