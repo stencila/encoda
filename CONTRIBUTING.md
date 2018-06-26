@@ -5,6 +5,12 @@
 [Stencila][stencila-site] is an open-source community-driven project. We encourage
 and welcome contributions from all community members. 
 
+## General contribution guidelines
+
+We prefer the contributions to be made via [GitHub][github]. If you are comfortable with Git and GitHub, 
+you can submit a pull request (PR). In Stencila we follow a commonly used workflow
+for [contributing to open source projects][how-contribute] (see also [GitHub instructions][github-flow]).
+
 ## Licensing and contributor agreement
 
 By contributing,
@@ -12,13 +18,6 @@ you agree that we may redistribute your work under [our license](LICENSE).
 Everyone involved with Stencila
 agrees to abide by our [code of conduct][conduct].
 
-
-## General contribution guidelines
-
-We prefer the contributions to be made via [GitHub][github]. If you are comfortable with Git and GitHub, 
-you can submit a pull request (PR). In Stencila we follow a commonly used workflow
-for [contributing to open source projects][how-contribute] (see also [GitHub instructions][github-flow]).
-    
 
 ## Get in touch!
 
