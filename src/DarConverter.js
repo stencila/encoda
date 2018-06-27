@@ -90,7 +90,7 @@ class DarConverter extends Converter {
         type = 'sheet'
         filePath = replaceExt(fileName, 'sheet.xml')
         converter = new SheetMLConverter()
-      } else {
+      } else if (node.type === 'Document') {
         type = 'article'
         filePath = replaceExt(fileName, 'jats.xml')
         converter = new JATSConverter()
@@ -106,7 +106,10 @@ class DarConverter extends Converter {
       documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${filePath}"/>`)
     }
 
-    await this.writeFile(path.join(darPath, 'manifest.xml'), xml.dump(manifest), volume)
+    const manifestPath = path.join(darPath, 'manifest.xml')
+    if (!volume.existsSync(manifestPath)) {
+      await this.writeFile(manifestPath, xml.dump(manifest), volume)
+    }
   }
 }
 
