@@ -34,7 +34,7 @@ class EDFConverter extends Converter {
       rimraf.sync(edfPath)
       let promises = Object.entries(exedoc.files).map(([fileName, node]) => {
         if (node) {
-          const fileNameNew = replaceExt(fileName, '.edf.json')
+          const fileNameNew = replaceExt(fileName, 'edf.json')
           const pathNew = path.join(edfPath, fileNameNew)
           return this.export(node, pathNew, volume, options)
         } else {
