@@ -2,9 +2,8 @@ const cheerio = require('cheerio')
 const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
-const rimraf = require('rimraf')
 
-const {replaceExt} = require('./helpers/util')
+const {getExt, replaceExt} = require('./helpers/util')
 const xml = require('./helpers/xml')
 
 const Converter = require('./Converter')
@@ -72,28 +71,39 @@ class DarConverter extends Converter {
     `)
     let documentsEl = manifest('documents')
 
-    rimraf.sync(darPath)
     for (let [fileName, node] of Object.entries(files)) {
+      const ext = getExt(fileName)
+
       let type
-      let ext
+      let filePath = fileName
       let converter
-      if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
+
+      // TODO this is a temporary implementation to avoid overwriting files
+      // already 'managed' in the manifest. More consideration needs to
+      // be given to how this is best done (i.e overwriting manifest or 'merging' other files into it;
+      // a general option to turn on/off overwriting of already converted files?)
+      if (ext === 'jats.xml') {
+        type = 'article'
+      } else if (ext === 'sheet.xml') {
         type = 'sheet'
-        ext = '.sheet.xml'
+      } else if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
+        type = 'sheet'
+        filePath = replaceExt(fileName, 'sheet.xml')
         converter = new SheetMLConverter()
       } else {
         type = 'article'
-        ext = '.jats.xml'
+        filePath = replaceExt(fileName, 'jats.xml')
         converter = new JATSConverter()
       }
 
-      const fileNameNew = replaceExt(fileName, ext)
-      const pathNew = path.join(darPath, fileNameNew)
-      await converter.export(node, pathNew, volume)
+      let filePathFull = path.join(darPath, filePath)
+      if (converter && !volume.existsSync(filePathFull)) {
+        await converter.export(node, filePathFull, volume)
+      }
 
       const id = type + '-' + crypto.randomBytes(24).toString('hex')
       const name = fileName
-      documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${fileNameNew}"/>`)
+      documentsEl.append(`<document id="${id}" name="${name}" type="${type}" path="${filePath}"/>`)
     }
 
     await this.writeFile(path.join(darPath, 'manifest.xml'), xml.dump(manifest), volume)
