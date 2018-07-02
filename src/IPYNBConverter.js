@@ -18,14 +18,11 @@ const MarkdownConverter = require('./MarkdownConverter')
  */
 class IPYNBConverter extends MarkdownConverter {
   id () {
-    return 'ipynb-skip'
+    return 'ipynb'
   }
 
-  async import (pathFrom, pathTo, volumeFrom, volumeTo, options) {
-    volumeFrom = volumeFrom || fs
-    volumeTo = volumeTo || volumeFrom
-
-    const json = await this.readFile(pathFrom, volumeFrom)
+  async import (path, volume = fs, options = {}) {
+    const json = await this.readFile(path, volume)
     let md = ''
 
     const data = JSON.parse(json)
@@ -77,8 +74,8 @@ class IPYNBConverter extends MarkdownConverter {
     }
 
     const volumeTemp = new memfs.Volume()
-    await this.writeFile(pathFrom, md, volumeTemp)
-    return super.import(pathFrom, pathTo, volumeTemp, volumeTo, options)
+    await this.writeFile(path, md, volumeTemp)
+    return super.import(path, volumeTemp, options)
   }
 }
 

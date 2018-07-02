@@ -11,6 +11,7 @@ const EDFConverter = require('./EDFConverter')
 const EDFYConverter = require('./EDFYConverter')
 const FolderConverter = require('./FolderConverter')
 const HTMLConverter = require('./HTMLConverter')
+const IPYNBConverter = require('./IPYNBConverter')
 const JATSConverter = require('./JATSConverter')
 const LatexConverter = require('./LatexConverter')
 const MarkdownConverter = require('./MarkdownConverter')
@@ -32,6 +33,7 @@ let converters = [
   new DOCXConverter(),
   new JATSConverter(),
   new HTMLConverter(),
+  new IPYNBConverter(),
   new LatexConverter(),
   new MarkdownConverter(),
   new ODTConverter(),
