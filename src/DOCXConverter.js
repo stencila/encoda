@@ -7,9 +7,9 @@ class DOCXConverter extends PandocConverter {
 
   options () {
     return Object.assign(super.options(), {
-      from: 'odt',
+      from: 'docx',
 
-      to: 'odt',
+      to: 'docx',
       exportArgs: [
         // "Extract images and other media contained in or linked from the source
         // document to the path DIR, creating it if necessary...""
