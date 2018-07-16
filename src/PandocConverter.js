@@ -852,6 +852,8 @@ class PandocConverter extends Converter {
         return this._importStr(node)
       case 'Image':
         return this._importImage(node)
+      case 'Span':
+        return this._importSpan(node)
       default:
         return {
           type: node.t,
@@ -866,6 +868,8 @@ class PandocConverter extends Converter {
         return this._exportStr(node)
       case 'Image':
         return this._exportImage(node)
+      case 'Span':
+        return this._exportSpan(node)
       default:
         return this._exportDefault(node)
     }
@@ -905,6 +909,26 @@ class PandocConverter extends Converter {
         this._exportAttr(node.attrs),
         this._exportInlines(node.nodes),
         node.target
+      ]
+    }
+  }
+
+  // Span Attr [Inline]
+
+  _importSpan (node) {
+    return {
+      type: 'Span',
+      attrs: this._importAttr(node.c[0]),
+      nodes: this._importInlines(node.c[1])
+    }
+  }
+
+  _exportSpan (node) {
+    return {
+      t: 'Span',
+      c: [
+        this._exportAttr(node.attrs),
+        this._exportInlines(node.nodes)
       ]
     }
   }
