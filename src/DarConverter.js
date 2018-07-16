@@ -3,7 +3,7 @@ const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
 
-const {getExt, replaceExt} = require('./helpers/util')
+const {replaceExt} = require('./helpers/util')
 const xml = require('./helpers/xml')
 
 const Converter = require('./Converter')
@@ -40,12 +40,14 @@ class DarConverter extends Converter {
       let converter
       if (type === 'sheet') {
         converter = new SheetMLConverter()
-      } else {
+      } else if (type === 'article') {
         converter = new JATSConverter()
+      } else {
+        throw new Error(`Unhandled document type "${type}" when importing Dar`)
       }
-      const exedoc = await converter.import(path.join(darPath, filePath), volume, options)
+      const doc = await converter.import(path.join(darPath, filePath), volume, options)
 
-      files[filePath] = exedoc
+      files[filePath] = doc
     }
 
     return {
@@ -54,12 +56,12 @@ class DarConverter extends Converter {
     }
   }
 
-  async export (exedoc, darPath, volume = fs, options = {}) {
+  async export (doc, darPath, volume = fs, options = {}) {
     let files
-    if (exedoc.type === 'Folder') {
-      files = exedoc.files
+    if (doc.type === 'Folder') {
+      files = doc.files
     } else {
-      files = {'unnamed': exedoc}
+      files = {'unnamed': doc}
     }
 
     const manifest = xml.load(`
@@ -72,21 +74,10 @@ class DarConverter extends Converter {
     let documentsEl = manifest('documents')
 
     for (let [fileName, node] of Object.entries(files)) {
-      const ext = getExt(fileName)
-
       let type
-      let filePath = fileName
+      let filePath
       let converter
-
-      // TODO this is a temporary implementation to avoid overwriting files
-      // already 'managed' in the manifest. More consideration needs to
-      // be given to how this is best done (i.e overwriting manifest or 'merging' other files into it;
-      // a general option to turn on/off overwriting of already converted files?)
-      if (ext === 'jats.xml') {
-        type = 'article'
-      } else if (ext === 'sheet.xml') {
-        type = 'sheet'
-      } else if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
+      if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
         type = 'sheet'
         filePath = replaceExt(fileName, 'sheet.xml')
         converter = new SheetMLConverter()
@@ -94,10 +85,12 @@ class DarConverter extends Converter {
         type = 'article'
         filePath = replaceExt(fileName, 'jats.xml')
         converter = new JATSConverter()
+      } else {
+        throw new Error(`Unhandled node type "${node.type}" when exporting to Dar`)
       }
 
-      let filePathFull = path.join(darPath, filePath)
-      if (converter && !volume.existsSync(filePathFull)) {
+      if (converter) {
+        let filePathFull = path.join(darPath, filePath)
         await converter.export(node, filePathFull, volume)
       }
 
@@ -107,9 +100,7 @@ class DarConverter extends Converter {
     }
 
     const manifestPath = path.join(darPath, 'manifest.xml')
-    if (!volume.existsSync(manifestPath)) {
-      await this.writeFile(manifestPath, xml.dump(manifest), volume)
-    }
+    await this.writeFile(manifestPath, xml.dump(manifest), volume)
   }
 }
 
