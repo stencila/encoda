@@ -121,7 +121,7 @@ class SheetMLConverter extends Converter {
   }
 
   _exportCell (cell) {
-    if (cell.length === 0) return {text: null}
+    if (!cell || cell.length === 0) return {text: null}
     else {
       // For now, just take first block
       const first = cell[0]
