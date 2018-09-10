@@ -3,7 +3,7 @@ const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
 
-const {getExt, replaceExt} = require('./helpers/util')
+const {replaceExt} = require('./helpers/util')
 const xml = require('./helpers/xml')
 
 const Converter = require('./Converter')
@@ -72,21 +72,11 @@ class DarConverter extends Converter {
     let documentsEl = manifest('documents')
 
     for (let [fileName, node] of Object.entries(files)) {
-      const ext = getExt(fileName)
-
       let type
       let filePath = fileName
       let converter
 
-      // TODO this is a temporary implementation to avoid overwriting files
-      // already 'managed' in the manifest. More consideration needs to
-      // be given to how this is best done (i.e overwriting manifest or 'merging' other files into it;
-      // a general option to turn on/off overwriting of already converted files?)
-      if (ext === 'jats.xml') {
-        type = 'article'
-      } else if (ext === 'sheet.xml') {
-        type = 'sheet'
-      } else if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
+      if (node.body && node.body.length === 1 && node.body[0].type === 'Table') {
         type = 'sheet'
         filePath = replaceExt(fileName, 'sheet.xml')
         converter = new SheetMLConverter()
@@ -96,9 +86,8 @@ class DarConverter extends Converter {
         converter = new JATSConverter()
       }
 
-      let filePathFull = path.join(darPath, filePath)
-      if (converter && !volume.existsSync(filePathFull)) {
-        await converter.export(node, filePathFull, volume)
+      if (converter) {
+        await converter.export(node, path.join(darPath, filePath), volume)
       }
 
       const id = type + '-' + crypto.randomBytes(24).toString('hex')
@@ -107,9 +96,7 @@ class DarConverter extends Converter {
     }
 
     const manifestPath = path.join(darPath, 'manifest.xml')
-    if (!volume.existsSync(manifestPath)) {
-      await this.writeFile(manifestPath, xml.dump(manifest), volume)
-    }
+    await this.writeFile(manifestPath, xml.dump(manifest), volume)
   }
 }
 
