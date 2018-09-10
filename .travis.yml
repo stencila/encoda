@@ -2,7 +2,8 @@ language: node_js
 
 os:
   - linux
-  - osx
+  # Currently, don't run on OSX because using citeproc
+  # - osx
 
 node_js:
   - 8
@@ -10,6 +11,11 @@ node_js:
 cache:
   directories:
     - node_modules
+
+before_install:
+  # Install Pandoc from deb to get pandoc-citeproc as well
+  - wget https://github.com/jgm/pandoc/releases/download/2.2.3.2/pandoc-2.2.3.2-1-amd64.deb
+  - sudo dpkg -i pandoc-2.2.3.2-1-amd64.deb
 
 before_script:
   # Get Pandoc and any other requirements
