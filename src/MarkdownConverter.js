@@ -14,8 +14,7 @@ class MarkdownConverter extends PandocConverter {
     return Object.assign(super.options(), {
       from: 'markdown-auto_identifiers',
       importArgs: [
-        // TODO: re-enable this
-        // '--filter=pandoc-citeproc' // Use citeproc filter of citation and reference support
+        '--filter=pandoc-citeproc' // Use citeproc filter of citation and reference support
       ],
 
       to: 'markdown',
