@@ -163,7 +163,7 @@ class PandocConverter extends Converter {
     return pathTo
   }
 
-  /******************* Meta nodes *******************/
+  /** ***************** Meta nodes *******************/
 
   _importMeta (meta) {
     let obj = {}
@@ -279,7 +279,7 @@ class PandocConverter extends Converter {
     }
   }
 
-  /******************* Block nodes *******************/
+  /** ***************** Block nodes *******************/
 
   /**
    * Import an array of Pandoc `Block`s
@@ -827,7 +827,7 @@ class PandocConverter extends Converter {
     }
   }
 
-  /******************* Inline nodes *******************/
+  /** ***************** Inline nodes *******************/
 
   /**
    * Import an array of Pandoc `Inline` nodes
@@ -1379,7 +1379,7 @@ class PandocConverter extends Converter {
     return node
   }
 
-  /******************* Non-Pandoc nodes *******************/
+  /** ***************** Non-Pandoc nodes *******************/
   // These functions handle nodes that are not part of the
   // Pandoc data model.
 
