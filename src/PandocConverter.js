@@ -9,22 +9,23 @@ const pandoc = require('./helpers/pandoc')
 /**
  * A text document converter based on Pandoc
  *
- * This converter is used as a base class for most the the text document converters.
- * For importing, it calls Pandoc to convert from a given format to Pandoc JSON and then
- * converts from Pandoc JSON to an in-memory Exedoc. For exporting, it does the reverse,
- * by conveting an Exedoc to Pandoc JSON and then calling Pandoc to convert Pandoc JSON
- * to a given format.
+ * This converter is used as a base class for most of the text document converters.
+ * For importing, it uses Pandoc to convert from the input format to Pandoc JSON and then
+ * converts from Pandoc JSON to an in-memory executable document. For exporting, it does the reverse,
+ * by conveting an executable document to Pandoc JSON and then using Pandoc to convert Pandoc JSON
+ * to the output format.
  *
- * In most cases there is a close correspondence between Pandoc's and Execdoc's
- * representation of document nodes. Exedoc nodes have different names (closer to HTML5)
- * in some cases:
+ * In most cases there is a close correspondence between the data model for Pandoc's
+ * document nodes and those used in executable documents.
+ * Executable document nodes have different names (closer to HTML5)
+ * in some cases e.g.
  *
- * Pandoc BulletList == Exedoc UnorderedList
- * Pandoc DefinitionList == Exedoc DescriptionList
- * Pandoc HorizontalRule == Exedoc ThematicBreak
+ * Pandoc BulletList == Executable document UnorderedList
+ * Pandoc DefinitionList == Executable document DescriptionList
+ * Pandoc HorizontalRule == Executable document ThematicBreak
  *
  * See the Pandoc [type defintions](https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs)
- * for specification of Pandoc JSON.
+ * for specification of Pandoc types.
  */
 class PandocConverter extends Converter {
   id () {
@@ -63,6 +64,19 @@ class PandocConverter extends Converter {
     const json = await this.readFile(pathTemp, volumeTemp, options)
     const pandoc = JSON.parse(json)
 
+    // If the Pandoc has `meta.references` or `meta.bibliography` then remove any `div#refs`
+    // (formatted references) that might be automatically added by Pandoc since a structured
+    // reference will be produced from the former.
+    if (pandoc.meta.references || pandoc.meta.bibliography) {
+      let index = 0
+      for (let block of pandoc.blocks) {
+        if (block.t === 'Div' && block.c[0][0] === 'refs') {
+          pandoc.blocks.splice(index, 1)
+        }
+        index += 1
+      }
+    }
+
     // Generate an executable document from the Pandoc document
     let doc
     doc = {
@@ -93,7 +107,8 @@ class PandocConverter extends Converter {
 
     // Call Pandoc to convert Pandoc JSON to `options.to` format
     let args = [
-      '--from', 'json'
+      '--from=json',
+      '--filter=pandoc-citeproc' // Necessary to have output of references
     ]
     if (options.to) args = args.concat(['--to', options.to])
     if (options.eol) args = args.concat(['--eol', options.eol])
@@ -107,6 +122,16 @@ class PandocConverter extends Converter {
     await this._callPandoc(pathTemp, volumeTemp, path, volume, args)
   }
 
+  /**
+   * Call Pandoc binary to do conversion
+   *
+   * @param  {String} pathFrom   The input path
+   * @param  {Object} volumeFrom The input volume (e.g. `fs`)
+   * @param  {String} pathTo     The output path
+   * @param  {Object} volumeTo   The output volume (e.g. `fs`)
+   * @param  {Array}  args       Array of arguments to call Pandoc with
+   * @return {String}            The output path
+   */
   async _callPandoc (pathFrom, volumeFrom, pathTo, volumeTo, args) {
     // If volumeTo is the local filesystem then get pandoc to output
     // to there directly, otherwise write to the (virtual) filesystem
@@ -137,6 +162,8 @@ class PandocConverter extends Converter {
 
     return pathTo
   }
+
+  /******************* Meta nodes *******************/
 
   _importMeta (meta) {
     let obj = {}
@@ -184,7 +211,10 @@ class PandocConverter extends Converter {
         }
       case 'MetaString':
         // MetaString String
-        return this._importStr(value)
+        return {
+          t: 'String',
+          c: value.c
+        }
       case 'MetaInlines':
         // MetaInlines [Inline]
         return {
@@ -249,6 +279,8 @@ class PandocConverter extends Converter {
     }
   }
 
+  /******************* Block nodes *******************/
+
   /**
    * Import an array of Pandoc `Block`s
    *
@@ -260,9 +292,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an array of Exedoc nodes as Pandoc `Block`s
+   * Export an array of executable document nodes as Pandoc `Block`s
    *
-   * @param  {Array} nodes  An array of Exedoc nodes
+   * @param  {Array} nodes  An array of executable document nodes
    * @return {Array}        An array of Pandoc `Block`s
    */
   _exportBlocks (nodes) {
@@ -275,41 +307,41 @@ class PandocConverter extends Converter {
    * This method should do the inverse of `_exportBlock`.
    *
    * See https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs#L217
-   * for the defintion of a Pandock `Block`
+   * for the defintion of a Pandoc `Block`
    *
-   * @param  {Object} node  Pandoc `Block`
-   * @return {Object}       Exedoc node
+   * @param  {Object} block  Pandoc `Block`
+   * @return {Object}        Executable document node
    */
-  _importBlock (node) {
-    switch (node.t) {
-      case 'BlockQuote': return this._importBlockQuote(node)
-      case 'BulletList': return this._importBulletList(node)
-      case 'CodeBlock': return this._importCodeBlock(node)
-      case 'DefinitionList': return this._importDefinitionList(node)
-      case 'Div': return this._importDiv(node)
-      case 'Header': return this._importHeader(node)
-      case 'HorizontalRule': return this._importHorizontalRule(node)
-      case 'LineBlock': return this._importLineBlock(node)
-      // case 'Null': return this._importNull(node)
-      case 'OrderedList': return this._importOrderedList(node)
-      case 'Para': return this._importPara(node)
-      case 'Plain': return this._importPlain(node)
-      case 'RawBlock': return this._importRawBlock(node)
-      case 'Table': return this._importTable(node)
+  _importBlock (block) {
+    switch (block.t) {
+      case 'BlockQuote': return this._importBlockQuote(block)
+      case 'BulletList': return this._importBulletList(block)
+      case 'CodeBlock': return this._importCodeBlock(block)
+      case 'DefinitionList': return this._importDefinitionList(block)
+      case 'Div': return this._importDiv(block)
+      case 'Header': return this._importHeader(block)
+      case 'HorizontalRule': return this._importHorizontalRule(block)
+      case 'LineBlock': return this._importLineBlock(block)
+      // case 'Null': return this._importNull(block)
+      case 'OrderedList': return this._importOrderedList(block)
+      case 'Para': return this._importPara(block)
+      case 'Plain': return this._importPlain(block)
+      case 'RawBlock': return this._importRawBlock(block)
+      case 'Table': return this._importTable(block)
       default:
         return {
-          type: node.t,
-          children: node.c
+          type: block.t,
+          children: block.c
         }
     }
   }
 
   /**
-   * Export an Exedoc node as a Pandoc `Block`
+   * Export to a Pandoc `Block`
    *
    * This method should do the inverse of `_importBlock`.
    *
-   * @param  {Object} node Exedoc node
+   * @param  {Object} node Executable document node
    * @return {Object}      Pandoc `Block`
    */
   _exportBlock (node) {
@@ -329,8 +361,8 @@ class PandocConverter extends Converter {
       case 'RawBlock': return this._exportRawBlock(node)
       case 'Table': return this._exportTable(node)
       default:
-        // Unmatched node type e.g. `Number`, so wrap it into
-        // a `Plain` block...
+        // Node type which does not exist in Pandoc e.g. `Number`
+        // gets wrapped in a `Plain` block...
         return {
           t: 'Plain',
           c: [this._exportDefault(node)]
@@ -342,7 +374,7 @@ class PandocConverter extends Converter {
    * Import a Pandoc `BlockQuote`
    *
    * @param  {Object} node Pandoc `BlockQuote`
-   * @return {Object}      Exedoc `BlockQuote`
+   * @return {Object}      executable document `BlockQuote`
    */
   _importBlockQuote (node) {
     return {
@@ -352,9 +384,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `BlockQuote` as a Pandoc `BlockQuote`
+   * Export an executable document `BlockQuote` as a Pandoc `BlockQuote`
    *
-   * @param  {Object} node Exedoc `BlockQuote`
+   * @param  {Object} node executable document `BlockQuote`
    * @return {Object}      Pandoc `BlockQuote`
    */
   _exportBlockQuote (node) {
@@ -365,14 +397,14 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `BulletList` as an Execdoc `UnorderedList`
+   * Import a Pandoc `BulletList` as an executable document `UnorderedList`
    *
    * A `BulletList` is constructed as an array of arrays of blocks:
    *
    * `BulletList [[Block]]  -- ^ Bullet list (list of items, each a list of blocks)`
    *
    * @param  {Object} node Pandoc `BulletList`
-   * @return {Object}      Exedoc `UnorderedList`
+   * @return {Object}      executable document `UnorderedList`
    */
   _importBulletList (node) {
     return {
@@ -382,9 +414,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `UnorderedList` as a Pandoc `BulletList`
+   * Export an executable document `UnorderedList` as a Pandoc `BulletList`
    *
-   * @param  {Object} node Exedoc `UnorderedList`
+   * @param  {Object} node executable document `UnorderedList`
    * @return {Object}      Pandoc `BulletList`
    */
   _exportBulletList (node) {
@@ -415,7 +447,7 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `DefinitionList` as an Execdoc `DescriptionList`
+   * Import a Pandoc `DefinitionList` as an executable document `DescriptionList`
    *
    * The Pandoc definition of a `DefinitionList` :) is:
    *
@@ -427,7 +459,7 @@ class PandocConverter extends Converter {
    * ```
    *
    * @param  {Object} node Pandoc `DefinitionList`
-   * @return {Object}      Exedoc `DescriptionList`
+   * @return {Object}      executable document `DescriptionList`
    */
   _importDefinitionList (node) {
     return {
@@ -444,9 +476,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `DescriptionList` as a Pandoc `DefinitionList`
+   * Export an executable document `DescriptionList` as a Pandoc `DefinitionList`
    *
-   * @param  {Object} node Exedoc `DescriptionList`
+   * @param  {Object} node executable document `DescriptionList`
    * @return {Object}      Pandoc `DefinitionList`
    */
   _exportDefinitionList (node) {
@@ -504,10 +536,10 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `HorizontalRule` as an Execdoc `ThematicBreak`
+   * Import a Pandoc `HorizontalRule` as an executable document `ThematicBreak`
    *
    * @param  {Object} node Pandoc `HorizontalRule`
-   * @return {Object}      Exedoc `ThematicBreak`
+   * @return {Object}      executable document `ThematicBreak`
    */
   _importHorizontalRule (node) {
     return {
@@ -516,9 +548,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `ThematicBreak` as a Pandoc `HorizontalRule`
+   * Export an executable document `ThematicBreak` as a Pandoc `HorizontalRule`
    *
-   * @param  {Object} node Exedoc `ThematicBreak`
+   * @param  {Object} node executable document `ThematicBreak`
    * @return {Object}      Pandoc `HorizontalRule`
    */
   _exportHorizontalRule (node) {
@@ -528,7 +560,7 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `LineBlock` as an Execdoc `LineBlock`
+   * Import a Pandoc `LineBlock` as an executable document `LineBlock`
    *
    * The Pandoc definition of a `LineBlock` is:
    *
@@ -537,7 +569,7 @@ class PandocConverter extends Converter {
    * ```
    *
    * @param  {Object} node Pandoc `LineBlock`
-   * @return {Object}      Exedoc `LineBlock`
+   * @return {Object}      executable document `LineBlock`
    */
   _importLineBlock (node) {
     return {
@@ -547,9 +579,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `LineBlock` as a Pandoc `LineBlock`
+   * Export an executable document `LineBlock` as a Pandoc `LineBlock`
    *
-   * @param  {Object} node Exedoc `LineBlock`
+   * @param  {Object} node executable document `LineBlock`
    * @return {Object}      Pandoc `LineBlock`
    */
   _exportLineBlock (node) {
@@ -560,7 +592,7 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `OrderedList` as an Execdoc `OrderedList`
+   * Import a Pandoc `OrderedList` as an executable document `OrderedList`
    *
    * An `OrderedList` is constructed with a set of list attributes and an [array of arrays of blocks]:
    *
@@ -570,7 +602,7 @@ class PandocConverter extends Converter {
    * ```
    *
    * @param  {Object} node Pandoc `OrderedList`
-   * @return {Object}      Exedoc `OrderedList`
+   * @return {Object}      executable document `OrderedList`
    */
   _importOrderedList (node) {
     return {
@@ -604,9 +636,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `OrderedList` as a Pandoc `OrderedList`
+   * Export an executable document `OrderedList` as a Pandoc `OrderedList`
    *
-   * @param  {Object} node Exedoc `OrderedList`
+   * @param  {Object} node executable document `OrderedList`
    * @return {Object}      Pandoc `OrderedList`
    */
   _exportOrderedList (node) {
@@ -644,8 +676,6 @@ class PandocConverter extends Converter {
     }
   }
 
-  // Para.c = Plain.c = [Para, [Inline]]
-
   _importPara (node) {
     return {
       type: node.t,
@@ -675,7 +705,7 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `RawBlock` as an Execdoc `RawBlock`
+   * Import a Pandoc `RawBlock` as an executable document `RawBlock`
    *
    * The Pandoc definition of a `RawBlock` is:
    *
@@ -684,7 +714,7 @@ class PandocConverter extends Converter {
    * ```
    *
    * @param  {Object} node Pandoc `RawBlock`
-   * @return {Object}      Exedoc `RawBlock`
+   * @return {Object}      executable document `RawBlock`
    */
   _importRawBlock (node) {
     return {
@@ -699,9 +729,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `RawBlock` as a Pandoc `RawBlock`
+   * Export an executable document `RawBlock` as a Pandoc `RawBlock`
    *
-   * @param  {Object} node Exedoc `RawBlock`
+   * @param  {Object} node executable document `RawBlock`
    * @return {Object}      Pandoc `RawBlock`
    */
   _exportRawBlock (node) {
@@ -719,7 +749,7 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import a Pandoc `Table` as an Execdoc `Table`
+   * Import a Pandoc `Table` as an executable document `Table`
    *
    * The Pandoc definition of a `Table` is:
    *
@@ -732,7 +762,7 @@ class PandocConverter extends Converter {
    * ```
    *
    * @param  {Object} node Pandoc `Table`
-   * @return {Object}      Exedoc `Table`
+   * @return {Object}      executable document `Table`
    */
   _importTable (node) {
     return {
@@ -763,9 +793,9 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Export an Exedoc `Table` as a Pandoc `Table`
+   * Export an executable document `Table` as a Pandoc `Table`
    *
-   * @param  {Object} node Exedoc `Table`
+   * @param  {Object} node executable document `Table`
    * @return {Object}      Pandoc `Table`
    */
   _exportTable (node) {
@@ -797,8 +827,16 @@ class PandocConverter extends Converter {
     }
   }
 
-  // [Inline]
+  /******************* Inline nodes *******************/
 
+  /**
+   * Import an array of Pandoc `Inline` nodes
+   *
+   * This method merges continuous `String` an `Space` nodes
+   *
+   * @param  {Array} nodes  An array on Pandoc `Inline` nodes
+   * @return {Array}        An array of executable document nodes
+   */
   _importInlines (nodes) {
     let inlines = []
     let previous
@@ -821,61 +859,65 @@ class PandocConverter extends Converter {
   }
 
   /**
-   * Import an `Inline`
+   * Import a Pandoc `Inline` node.
    *
-   *   Str String
-   *   Emph [Inline]
-   *   Strong [Inline]
-   *   Strikeout [Inline]
-   *   Superscript [Inline]
-   *   Subscript [Inline]
-   *   SmallCaps [Inline]
-   *   Quoted QuoteType [Inline]
-   *   Cite [Citation] [Inline]
-   *   Code Attr String
-   *   Space
-   *   SoftBreak
-   *   LineBreak
-   *   Math MathType String
-   *   RawInline Format String
-   *   Link Attr [Inline] Target
-   *   Image Attr [Inline] Target
-   *   Note [Block]
-   *   Span Attr [Inline]
+   * This method should do the inverse of `_exportInline`.
    *
-   * @param  {Object} node Pandoc document node
-   * @return {Object}      Executable document node
+   * See https://github.com/jgm/pandoc-types/blob/1.17.5/Text/Pandoc/Definition.hs#L253
+   * for the defintion of a Pandoc `Inline`
+   *
+   * @param  {Object} node   Pandoc `Inline` node
+   * @return {Object}        Executable document node
    */
   _importInline (node) {
     switch (node.t) {
-      case 'Str':
-        return this._importStr(node)
-      case 'Image':
-        return this._importImage(node)
-      case 'Span':
-        return this._importSpan(node)
-      default:
-        return {
-          type: node.t,
-          children: node.c
-        }
+      case 'Str': return this._importStr(node)
+      case 'Emph': return this._importEmph(node)
+      case 'Strong': return this._importStrong(node)
+      case 'Strikeout': return this._importStrikeout(node)
+      case 'Superscript': return this._importSuperscript(node)
+      case 'Subscript': return this._importSubscript(node)
+      case 'SmallCaps': return this._importSmallCaps(node)
+      case 'Quoted': return this._importQuoted(node)
+      case 'Cite': return this._importCite(node)
+      case 'Code': return this._importCode(node)
+      case 'Space': return this._importSpace(node)
+      case 'SoftBreak': return this._importSoftBreak(node)
+      case 'LineBreak': return this._importLineBreak(node)
+      case 'Math': return this._importMath(node)
+      case 'RawInline': return this._importRawInline(node)
+      case 'Link': return this._importLink(node)
+      case 'Image': return this._importImage(node)
+      case 'Note': return this._importNote(node)
+      case 'Span': return this._importSpan(node)
+      default: return this._importDefault(node)
     }
   }
 
   _exportInline (node) {
     switch (node.type) {
-      case 'String':
-        return this._exportStr(node)
-      case 'Image':
-        return this._exportImage(node)
-      case 'Span':
-        return this._exportSpan(node)
-      default:
-        return this._exportDefault(node)
+      case 'Str': return this._exportStr(node)
+      case 'Emph': return this._exportEmph(node)
+      case 'Strong': return this._exportStrong(node)
+      case 'Strikeout': return this._exportStrikeout(node)
+      case 'Superscript': return this._exportSuperscript(node)
+      case 'Subscript': return this._exportSubscript(node)
+      case 'SmallCaps': return this._exportSmallCaps(node)
+      case 'Quoted': return this._exportQuoted(node)
+      case 'Citation': return this._exportCite(node) // Note `Citation`, rather than `Cite`
+      case 'Code': return this._exportCode(node)
+      case 'Space': return this._exportSpace(node)
+      case 'SoftBreak': return this._exportSoftBreak(node)
+      case 'LineBreak': return this._exportLineBreak(node)
+      case 'Math': return this._exportMath(node)
+      case 'RawInline': return this._exportRawInline(node)
+      case 'Link': return this._exportLink(node)
+      case 'Image': return this._exportImage(node)
+      case 'Note': return this._exportNote(node)
+      case 'Span': return this._exportSpan(node)
+      default: return this._exportDefault(node)
     }
   }
-
-  // Str.c = String
 
   _importStr (node) {
     return {
@@ -891,8 +933,369 @@ class PandocConverter extends Converter {
     }
   }
 
-  // Image.c = [Attr, [Inline], Target]
+  _importEmph (node) {
+    return {
+      type: 'Emph',
+      nodes: this._importInlines(node.c)
+    }
+  }
 
+  _exportEmph (node) {
+    return {
+      t: 'Emph',
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  _importStrong (node) {
+    return {
+      type: 'Strong',
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportStrong (node) {
+    return {
+      t: 'Strong',
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  _importStrikeout (node) {
+    return {
+      type: 'Strikeout',
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportStrikeout (node) {
+    return {
+      t: 'Strikeout',
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  _importSuperscript (node) {
+    return {
+      type: 'Superscript',
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportSuperscript (node) {
+    return {
+      t: 'Superscript',
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  _importSubscript (node) {
+    return {
+      type: 'Subscript',
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportSubscript (node) {
+    return {
+      t: 'Subscript',
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  _importSmallCaps (node) {
+    return {
+      type: 'SmallCaps',
+      nodes: this._importInlines(node.c)
+    }
+  }
+
+  _exportSmallCaps (node) {
+    return {
+      t: 'SmallCaps',
+      c: this._exportInlines(node.nodes)
+    }
+  }
+
+  /**
+   * Import a Pandoc `Quoted` node
+   *
+   * A `Quoted` is constructed as:
+   *
+   * ```haskell
+   * Quoted QuoteType [Inline] -- ^ Quoted text (list of inlines)
+   * ```
+   *
+   * where
+   *
+   * ```haskell
+   * -- | Type of quotation marks to use in Quoted inline.
+   * data QuoteType = SingleQuote | DoubleQuote deriving (Show, Eq, Ord, Read, Typeable, Data, Generic)
+   * ```
+   *
+   * @param  {Object} node Pandoc `Quoted` node
+   * @return {Object}      Executable document node
+   */
+  _importQuoted (node) {
+    return {
+      type: 'Quoted',
+      mark: node.c[0].t === 'SingleQuote' ? 'single' : 'double',
+      nodes: this._importInlines(node.c[1])
+    }
+  }
+
+  _exportQuoted (node) {
+    return {
+      t: 'Quoted',
+      c: [
+        {
+          t: node.mark === 'single' ? 'SingleQuote' : 'DoubleQuote'
+        },
+        this._exportInlines(node.nodes)
+      ]
+    }
+  }
+
+  /**
+   * Import a Pandoc `Cite` node
+   *
+   * A `Cite` is constructed as:
+   *
+   * ```haskell
+   * Cite [Citation]  [Inline] -- ^ Citation (list of inlines)
+   * ```
+   *
+   * where
+   *
+   * ```haskell
+   * data Citation = Citation { citationId      :: String
+   *                          , citationPrefix  :: [Inline]
+   *                          , citationSuffix  :: [Inline]
+   *                          , citationMode    :: CitationMode
+   *                          , citationNoteNum :: Int
+   *                          , citationHash    :: Int
+   *                          }
+   *                 deriving (Show, Eq, Read, Typeable, Data, Generic)
+   *
+   * data CitationMode = AuthorInText | SuppressAuthor | NormalCitation
+   *                     deriving (Show, Eq, Ord, Read, Typeable, Data, Generic)
+   * ```
+   *
+   * @param  {Object} node Pandoc `Cite` node
+   * @return {Object}      Executable document node
+   */
+  _importCite (node) {
+    // Convert the Pandoc 'citations' to 'targets'
+    return {
+      type: 'Citation',
+      targets: node.c[0].map(citation => ({
+        id: citation.citationId,
+        mode: importCitationMode(citation.citationMode),
+        prefix: this._importInlines(citation.citationPrefix),
+        suffix: this._importInlines(citation.citationSuffix),
+        note: citation.citationNoteNum,
+        hash: citation.citationHash
+      })),
+      // It is not clear that we need to teain the inlines, since they have been
+      // parsed into tagets (including suffix etc). But for now we keep them.
+      nodes: this._importInlines(node.c[1])
+    }
+
+    function importCitationMode (mode) {
+      // See https://pandoc.org/MANUAL.html#citations for what this alternative
+      // citation modes mean.
+      switch (mode.t) {
+        case 'AuthorInText': return 'author-in-text'
+        case 'SuppressAuthor': return 'suppress-author'
+        case 'NormalCitation': return 'normal'
+      }
+    }
+  }
+
+  _exportCite (node) {
+    return {
+      t: 'Cite',
+      c: [
+        node.targets.map(target => ({
+          citationId: target.id,
+          citationMode: exportCitationMode(target.mode),
+          citationPrefix: this._exportInlines(target.prefix),
+          citationSuffix: this._exportInlines(target.suffix),
+          citationNoteNum: target.note,
+          citationHash: target.hash
+        })),
+        this._exportInlines(node.nodes)
+      ]
+    }
+
+    function exportCitationMode (mode) {
+      // See https://pandoc.org/MANUAL.html#citations for what this alternative
+      // citation modes mean.
+      switch (mode) {
+        case 'author-in-text': return {t: 'AuthorInText'}
+        case 'suppress-author': return {t: 'SuppressAuthor'}
+        case 'normal': return {t: 'NormalCitation'}
+      }
+    }
+  }
+
+  _importCode (node) {
+    return {
+      type: 'Code',
+      attrs: this._importAttr(node.c[0]),
+      string: node.c[1]
+    }
+  }
+
+  _exportCode (node) {
+    return {
+      t: 'Code',
+      c: [
+        this._exportAttr(node.attrs),
+        node.string
+      ]
+    }
+  }
+
+  _importSpace (node) {
+    return {
+      type: 'Space'
+    }
+  }
+
+  _exportSpace (node) {
+    return {
+      t: 'Space'
+    }
+  }
+
+  _importSoftBreak (node) {
+    return {
+      type: 'SoftBreak'
+    }
+  }
+
+  _exportSoftBreak (node) {
+    return {
+      t: 'SoftBreak'
+    }
+  }
+
+  _importLineBreak (node) {
+    return {
+      type: 'LineBreak'
+    }
+  }
+
+  _exportLineBreak (node) {
+    return {
+      t: 'LineBreak'
+    }
+  }
+
+  /**
+   * Import a Pandoc `Math` node
+   *
+   * A Pandoc `Math` node is constructed as:
+   *
+   * ```haskell
+   * Math MathType String  -- ^ TeX math (literal)
+   * ```
+   *
+   * where
+   *
+   * ```haskell
+   * data MathType = DisplayMath | InlineMath deriving (Show, Eq, Ord, Read, Typeable, Data, Generic)
+   * ```
+   *
+   * The internal model for `Math` also allows to alternative langages e.g. AsciiMath
+   *
+   * @param  {Object} node Pandoc `Math` node
+   * @return {Object}      Executable document node
+   */
+  _importMath (node) {
+    return {
+      type: 'Math',
+      mode: node.c[0].t === 'DisplayMath' ? 'display' : 'inline',
+      lang: 'tex',
+      string: node.c[1]
+    }
+  }
+
+  _exportMath (node) {
+    return {
+      t: 'Math',
+      c: [
+        {
+          t: node.mode === 'display' ? 'DisplayMath' : 'InlineMath'
+        },
+        node.string
+      ]
+    }
+  }
+
+  _importRawInline (node) {
+    return {
+      type: 'RawInline',
+      format: node.c[0],
+      string: node.c[1]
+    }
+  }
+
+  _exportRawInline (node) {
+    return {
+      t: 'RawInline',
+      c: [
+        node.format,
+        node.string
+      ]
+    }
+  }
+
+  /**
+   * Import a Pandoc `Link` node
+   *
+   * A `Link` is constructed as:
+   *
+   * ```haskell
+   * Link Attr [Inline] Target  -- ^ Hyperlink: alt text (list of inlines), target
+   * ```
+   *
+   * @param  {Object} node Pandoc `Link` node
+   * @return {Object}      Executable document node
+   */
+  _importLink (node) {
+    return {
+      type: 'Link',
+      attrs: this._importAttr(node.c[0]),
+      nodes: this._importInlines(node.c[1]),
+      target: node.c[2]
+    }
+  }
+
+  _exportLink (node) {
+    return {
+      t: 'Link',
+      c: [
+        this._exportAttr(node.attrs),
+        this._exportInlines(node.nodes),
+        node.target
+      ]
+    }
+  }
+
+  /**
+   * Import a Pandoc `Image` node
+   *
+   * A `Image` is constructed as:
+   *
+   * ```haskell
+   * Image Attr [Inline] Target -- ^ Image:  alt text (list of inlines), target
+   * ```
+   *
+   * @param  {Object} node Pandoc `Image` node
+   * @return {Object}      Executable document node
+   */
   _importImage (node) {
     return {
       type: 'Image',
@@ -913,7 +1316,15 @@ class PandocConverter extends Converter {
     }
   }
 
-  // Span Attr [Inline]
+  _importNote (node) {
+    // TODO
+    return node
+  }
+
+  _exportNote (node) {
+    // TODO
+    return node
+  }
 
   _importSpan (node) {
     return {
@@ -968,9 +1379,22 @@ class PandocConverter extends Converter {
     return node
   }
 
+  /******************* Non-Pandoc nodes *******************/
+  // These functions handle nodes that are not part of the
+  // Pandoc data model.
+
+  _importDefault (node) {
+    return {
+      type: node.t,
+      children: node.c
+    }
+  }
+
   _exportDefault (node) {
     switch (node.type) {
       case 'Number':
+        // TODO: An alternative way of exporting
+        // that retains type
         return {
           t: 'Str',
           c: node.data.toString()
