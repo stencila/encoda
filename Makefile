@@ -1,4 +1,4 @@
-all: setup lint cover docs
+all: setup lint cover check docs
 
 setup:
 	npm install
@@ -8,9 +8,6 @@ lint:
 
 test:
 	npm test
-
-test-diffs:
-	npm run test-diffs
 
 cover:
 	npm run cover

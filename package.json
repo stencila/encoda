@@ -2,19 +2,19 @@
   "name": "stencila-convert",
   "version": "0.30.1",
   "description": "Converters for Stencila components",
-  "main": "src/index.js",
-  "bin": "./bin/stencila-convert.js",
+  "main": "dist/index.js",
   "scripts": {
-    "setup": "node -e 'require(\"./src/\").setup()'",
-    "check": "dependency-check ./package.json && dependency-check ./package.json --unused --no-dev",
-    "lint": "standard",
-    "test": "tape \"tests/**/*.test.js\" | tap-spec",
-    "test-one": "tape",
-    "test-diffs": "npm test | tap-difflet",
-    "cover": "nyc npm test",
-    "docs": "esdoc",
+    "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
+    "test": "jest",
+    "check": "npm run build:dist && npm run check:deps-used && npm run check:deps-unused",
+    "check:deps-used": "dependency-check --missing .",
+    "check:deps-unused": "dependency-check --unused --no-dev .",
+    "build": "npm run build:dist",
+    "build:dist": "tsc",
+    "cover": "jest --collectCoverage",
+    "docs": "typedoc --readme README.md --mode file --out ./docs ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
-    "clean": "rimraf .nyc_output docs tests/**/*-out.*"
+    "clean": "rimraf coverage docs tests/**/*-out.*"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",
@@ -50,38 +50,11 @@
   "devDependencies": {
     "@types/jest": "^24.0.9",
     "dependency-check": "^3.1.0",
-    "esdoc": "^1.1.0",
-    "esdoc-node": "^1.0.3",
-    "esdoc-standard-plugin": "^1.0.0",
     "jest": "^24.1.0",
-    "nyc": "^13.0.0",
-    "standard": "^11.0.1",
-    "tap-difflet": "^0.7.1",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1",
     "ts-jest": "^24.0.0",
+    "tslint": "^5.13.1",
+    "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.14.2",
     "typescript": "^3.3.3333"
-  },
-  "esdoc": {
-    "source": "./src",
-    "destination": "./docs",
-    "plugins": [
-      {
-        "name": "esdoc-standard-plugin"
-      },
-      {
-        "name": "esdoc-node"
-      }
-    ]
-  },
-  "nyc": {
-    "exclude": [
-      "tests"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ]
   }
 }

@@ -1,6 +1,6 @@
-coverage
-docs
-.nyc_output
-node_modules
-tests/**/*-out.*
-.sandbox
+/.sandbox
+/coverage
+/dist
+/docs
+/node_modules
+/tests/**/*-out.*

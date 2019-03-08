@@ -3,6 +3,15 @@ import vfile, { VFile } from 'vfile'
 import toVFile from 'to-vfile'
 
 /**
+ * Create a virtual file
+ * 
+ * @param options to `vfile` see https://github.com/vfile/vfile#vfileoptions
+ */
+export function create (options: any): VFile {
+  return vfile(options)
+}
+
+/**
  * Load a string into a virtual file
  * 
  * @param contents Contents to load

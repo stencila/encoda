@@ -78,7 +78,7 @@ for (let compiler of compilers) {
  * @param file The `VFile` to resolve for
  * @returns The `Compiler` to use
  */
-export function resolve (file: VFile): Compiler {
+export async function resolve (file: VFile): Promise<Compiler> {
   let mediaType = (file as any).mediaType
   
   if (!mediaType && file.extname) {
@@ -91,7 +91,7 @@ export function resolve (file: VFile): Compiler {
   }
 
   for (let compiler of compilers) {
-    if (compiler.sniff && compiler.sniff(file)) {
+    if (compiler.sniff && await compiler.sniff(file)) {
       return compiler
     }
   }
@@ -100,13 +100,13 @@ export function resolve (file: VFile): Compiler {
 }
 
 export async function parse (file: VFile): Promise<Node> {
-  const compiler = resolve(file)
+  const compiler = await resolve(file)
   if (!compiler.parse) throw new Error(`Not able to parse`)
   return await compiler.parse(file)
 }
 
 export async function unparse (node: Node, file: VFile): Promise<VFile> {
-  const compiler = resolve(file)
+  const compiler = await resolve(file)
   if (!compiler.unparse) throw new Error(`Not able to unparse`)
   return await compiler.unparse(node)
 }
