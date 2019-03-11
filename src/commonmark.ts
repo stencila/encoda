@@ -27,10 +27,10 @@ export async function parse (file: VFile): Promise<Node> {
   return from(mdast)
 }
 
-export async function unparse (node: Node): Promise<VFile> {
+export async function unparse (node: Node, file: VFile): Promise<void> {
   const mdast = to(node)
   const md = unified()
     .use(stringifier)
     .stringify(mdast)
-  return vfile(md)
+  file.contents = md
 }
