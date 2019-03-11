@@ -7,6 +7,6 @@ test('resolve', async () => {
       mimeType: 'foo'
     }))
   ).rejects.toThrow(
-    'No compiler could be found for file undefined'
+    'No compiler could be found for file "undefined"'
   )
 })
