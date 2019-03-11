@@ -13,7 +13,7 @@ export function from (mdast: Unist.Node): Sast.Node {
 }
 
 /**
- *  Transfrom a Stencila AST to a Markdown AST
+ *  Transform a Stencila AST to a Markdown AST
  *
  * @param sast The SAST tree to transform
  */
