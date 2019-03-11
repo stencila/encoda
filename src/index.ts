@@ -22,7 +22,7 @@ const compilers: Array<Compiler> = [
   // Binary formats for which sniffing may help resolve media type
   ods,
   xlsx,
-  
+
   // Text formats for which sniffing will not help resolve media type (much)
   commonmark,
   csv
@@ -128,7 +128,7 @@ export async function unparse (node: Node, file: VFile): Promise<void> {
 
 export async function read (path: string): Promise<Node> {
   const file = await vfile.read(path)
-  return await parse(file)
+  return parse(file)
 }
 
 export async function write (node: Node, path: string): Promise<void> {
@@ -138,4 +138,3 @@ export async function write (node: Node, path: string): Promise<void> {
   // if not (i.e. file has `contents`), then write that here.
   if (file.contents) await vfile.write(file)
 }
-
