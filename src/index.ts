@@ -5,9 +5,9 @@ import { VFile } from 'vfile'
 import { Node } from './sast'
 import * as vfile from './vfile'
 
-import * as commonmark from './commonmark'
 import * as csv from './csv'
 import * as html from './html'
+import * as md from './md'
 import * as ods from './ods'
 import * as xlsx from './xlsx'
 
@@ -28,7 +28,7 @@ const compilers: Array<Compiler> = [
   html,
 
   // Text formats for which sniffing will not help resolve media type (much)
-  commonmark,
+  md,
   csv
 ]
 
