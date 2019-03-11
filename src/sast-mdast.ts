@@ -1,4 +1,5 @@
 import * as Unist from 'unist'
+
 import * as Sast from './sast'
 
 /**
@@ -7,7 +8,7 @@ import * as Sast from './sast'
  *
  * @param mdast The MDAST tree to transform
  */
-export function from (mdast: Unist.Node): Sast.Node {
+export function mdast2sast (mdast: Unist.Node): Sast.Node {
   // TODO: transform mdast to sast
   return mdast
 }
@@ -17,7 +18,7 @@ export function from (mdast: Unist.Node): Sast.Node {
  *
  * @param sast The SAST tree to transform
  */
-export function to (sast: Sast.Node): Unist.Node {
+export function sast2mdast (sast: Sast.Node): Unist.Node {
   // TODO: transform sast to mdast
   return sast as Unist.Node
 }

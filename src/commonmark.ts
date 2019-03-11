@@ -5,10 +5,10 @@ import frontmatter from 'remark-frontmatter'
 // @ts-ignore
 import stringifier from 'remark-stringify'
 import unified from 'unified'
-import vfile, { VFile } from 'vfile'
+import { VFile } from 'vfile'
 
 import { Node } from './sast'
-import { from, to } from './sast-mdast'
+import { mdast2sast, sast2mdast } from './sast-mdast'
 
 export const media = [
   'text/markdown',
@@ -24,11 +24,11 @@ export async function parse (file: VFile): Promise<Node> {
       { type: 'yaml', marker: '-', anywhere: true }
     ])
     .parse(file)
-  return from(mdast)
+  return mdast2sast(mdast)
 }
 
 export async function unparse (node: Node, file: VFile): Promise<void> {
-  const mdast = to(node)
+  const mdast = sast2mdast(node)
   const md = unified()
     .use(stringifier)
     .stringify(mdast)

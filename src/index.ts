@@ -7,6 +7,7 @@ import * as vfile from './vfile'
 
 import * as commonmark from './commonmark'
 import * as csv from './csv'
+import * as html from './html'
 import * as ods from './ods'
 import * as xlsx from './xlsx'
 
@@ -22,6 +23,9 @@ const compilers: Array<Compiler> = [
   // Binary formats for which sniffing may help resolve media type
   ods,
   xlsx,
+
+  // Text formats
+  html,
 
   // Text formats for which sniffing will not help resolve media type (much)
   commonmark,
