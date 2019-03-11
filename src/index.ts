@@ -3,8 +3,12 @@ import mime from 'mime-types'
 import { VFile } from 'vfile'
 
 import { Node } from './sast'
+import * as vfile from './vfile'
 
 import * as commonmark from './commonmark'
+import * as csv from './csv'
+import * as ods from './ods'
+import * as xlsx from './xlsx'
 
 /**
  * A list of all compilers.
@@ -15,7 +19,13 @@ import * as commonmark from './commonmark'
  * used to parse it.
  */
 const compilers: Array<Compiler> = [
-  commonmark
+  // Binary formats for which sniffing may help resolve media type
+  ods,
+  xlsx,
+  
+  // Text formats for which sniffing will not help resolve media type (much)
+  commonmark,
+  csv
 ]
 
 /**
@@ -54,9 +64,9 @@ interface Compiler {
    * Unparse a Stencila document node to a `VFile`.
    *
    * @param node The document node to unparse
-   * @returns The `VFile` with generated `contents`
+   * @param file The `VFile` to unparse to
    */
-  unparse?: (node: Node) => Promise<VFile>
+  unparse?: (node: Node, file: VFile) => Promise<void>
 }
 
 /**
@@ -99,7 +109,9 @@ export async function resolve (file: VFile): Promise<Compiler> {
     }
   }
 
-  throw new Error(`No compiler could be found for file ${file.path}`)
+  let message = `No compiler could be found for file "${file.path}"`
+  if (mediaType) message += ` with media type "${mediaType}"`
+  throw new Error(message)
 }
 
 export async function parse (file: VFile): Promise<Node> {
@@ -108,8 +120,22 @@ export async function parse (file: VFile): Promise<Node> {
   return compiler.parse(file)
 }
 
-export async function unparse (node: Node, file: VFile): Promise<VFile> {
+export async function unparse (node: Node, file: VFile): Promise<void> {
   const compiler = await resolve(file)
   if (!compiler.unparse) throw new Error(`Not able to unparse`)
-  return compiler.unparse(node)
+  return compiler.unparse(node, file)
 }
+
+export async function read (path: string): Promise<Node> {
+  const file = await vfile.read(path)
+  return await parse(file)
+}
+
+export async function write (node: Node, path: string): Promise<void> {
+  let file = vfile.create({ path })
+  await unparse(node, file)
+  // Compiler `unparse` function may have already written file/s directly, but
+  // if not (i.e. file has `contents`), then write that here.
+  if (file.contents) await vfile.write(file)
+}
+
