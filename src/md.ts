@@ -3,6 +3,8 @@ import parser from 'remark-parse'
 // @ts-ignore
 import frontmatter from 'remark-frontmatter'
 // @ts-ignore
+import compact from 'mdast-util-compact'
+// @ts-ignore
 import stringifier from 'remark-stringify'
 import unified from 'unified'
 import { VFile } from 'vfile'
@@ -24,6 +26,7 @@ export async function parse (file: VFile): Promise<Node> {
       { type: 'yaml', marker: '-', anywhere: true }
     ])
     .parse(file)
+  compact(mdast, true)
   return mdast2sast(mdast)
 }
 

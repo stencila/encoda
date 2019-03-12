@@ -24,7 +24,7 @@ export function marshall (node: Node): Node {
   // Do not serialise properties starting with `$`
   const clone = cloneDeep(node)
   function walk (node: any) {
-    if (typeof node !== 'object') return
+    if (node === null || typeof node !== 'object') return
     for (let [key, child] of Object.entries(node)) {
       if (key.startsWith('$')) delete node[key]
       walk(child)
