@@ -14,7 +14,7 @@
     "cover": "jest --collectCoverage",
     "docs": "typedoc --readme README.md --mode file --out ./docs ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
-    "clean": "rimraf coverage docs tests/**/*-out.*"
+    "clean": "rimraf coverage docs tests/**/*.to.*"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",
@@ -50,14 +50,18 @@
     "unified": "^7.1.0",
     "vfile": "^4.0.0",
     "xlsx": "^0.14.1",
-    "yaml-front-matter": "^4.0.0"
+    "yaml-front-matter": "^4.0.0",
+    "yargs": "^13.2.2"
   },
   "devDependencies": {
     "@types/jest": "^24.0.9",
     "@types/unist": "^2.0.3",
+    "@types/yargs": "^12.0.9",
     "dependency-check": "^3.1.0",
     "jest": "^24.1.0",
+    "jest-expect-message": "^1.0.2",
     "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
     "tslint": "^5.13.1",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.14.2",

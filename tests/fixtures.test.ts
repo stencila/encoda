@@ -1,0 +1,43 @@
+import fs from 'fs'
+import path from 'path'
+
+import glob from 'glob'
+
+import { convert } from '../src/'
+
+test('fixtures', async() => {
+  // For each node type...
+  for (let typeDir of glob.sync(path.join(__dirname, 'fixtures', '*'))) {
+    // For each test case...
+    for (let caseDir of glob.sync(path.join(typeDir, '*'))) {
+      // Get a list of all files in the dir that were not generated (i.e do not have -to in the name)
+      const filePaths = glob.sync(path.join(caseDir, '*.*'))
+                            .filter(filePath => !(path.basename(filePath).includes('.to') || path.basename(filePath).includes('.skip')))
+      // Get the list of target paths in the dir (i.e do not have -alt in the name)
+      const targetPaths = filePaths
+                            .filter(filePath => !path.basename(filePath).includes('.alt'))
+      // Get a list of unique target extensions
+      const targetExtensions = [...new Set(targetPaths.map(filePath => path.extname(filePath)))]
+      // Convert from each file to each of the target extensions and compare to the target file
+      for (let filePath of filePaths) {
+        for (let extension of targetExtensions) {
+          let source = filePath
+          let dest = filePath + '.to' + extension
+          let expected = filePath.split('.')[0] + extension
+          await convert(source, dest)
+
+          if (['.ods','.xlsx'].includes(extension)) {
+            console.log(`File comparison not supported form binary format ${extension}`)
+            continue
+          }
+
+          let expectedString = fs.readFileSync(expected).toString().trim()
+          let actualString = fs.readFileSync(dest).toString().trim()
+          if (expectedString.length < 100 && actualString.length < 100) expect(actualString).toEqual(expectedString)
+          // @ts-ignore
+          else expect(actualString === expectedString, `${path.basename(dest)} !== ${path.basename(expected)}`).toBeTruthy()
+        }
+      }
+    }
+  }
+})

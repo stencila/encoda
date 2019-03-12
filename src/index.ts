@@ -142,3 +142,8 @@ export async function write (node: Node, path: string): Promise<void> {
   // if not (i.e. file has `contents`), then write that here.
   if (file.contents) await vfile.write(file)
 }
+
+export async function convert (inp: string, out: string): Promise<void> {
+  const node = await read(inp)
+  await write(node, out)
+}
