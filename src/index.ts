@@ -6,9 +6,11 @@ import { Node } from './sast'
 import * as vfile from './vfile'
 
 import * as csv from './csv'
+import * as json from './json'
 import * as html from './html'
 import * as md from './md'
 import * as ods from './ods'
+import * as yaml from './yaml'
 import * as xlsx from './xlsx'
 
 /**
@@ -29,7 +31,9 @@ const compilers: Array<Compiler> = [
 
   // Text formats for which sniffing will not help resolve media type (much)
   md,
-  csv
+  csv,
+  json,
+  yaml
 ]
 
 /**
