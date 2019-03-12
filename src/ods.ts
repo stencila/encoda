@@ -4,7 +4,7 @@
 
 import { VFile } from 'vfile'
 
-import * as spreadsheet from './spreadsheet'
+import * as xlsx from './xlsx'
 import { Node } from './sast'
 
 export const media = [
@@ -12,9 +12,9 @@ export const media = [
 ]
 
 export async function parse (file: VFile): Promise<Node> {
-  return spreadsheet.parse(file)
+  return xlsx.parse(file)
 }
 
 export async function unparse (node: Node, file: VFile): Promise<void> {
-  return spreadsheet.unparse(node, file, 'ods')
+  return xlsx.unparse(node, file, 'ods')
 }
