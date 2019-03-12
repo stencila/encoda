@@ -1,10 +1,10 @@
 /**
  * Compiler for Microsoft Excel.
- * 
+ *
  * Also acts as base implementation for other spreadsheet based formats
  */
 
- import { VFile } from 'vfile'
+import { VFile } from 'vfile'
 import * as xlsx from 'xlsx'
 
 import { Node } from './sast'
