@@ -7,7 +7,7 @@ import toVFile from 'to-vfile'
  *
  * @param options to `vfile` see https://github.com/vfile/vfile#vfileoptions
  */
-export function create (options: any): VFile {
+export function create (options: any = {}): VFile {
   return vfile(options)
 }
 

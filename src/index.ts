@@ -1,5 +1,6 @@
 // @ts-ignore
 import mime from 'mime-types'
+import getStdin from 'get-stdin'
 import { VFile } from 'vfile'
 
 import { Node } from './sast'
@@ -134,20 +135,31 @@ export async function unparse (node: Node, file: VFile): Promise<void> {
   return compiler.unparse(node, file)
 }
 
-export async function read (path: string): Promise<Node> {
-  const file = await vfile.read(path)
+export async function read (path?: string, from?: string): Promise<Node> {
+  let file = path ? await vfile.read(path) : vfile.load(await getStdin())
+  if (from) (file as any).mediaType = from
   return parse(file)
 }
 
-export async function write (node: Node, path: string): Promise<void> {
-  let file = vfile.create({ path })
+export async function write (node: Node, path?: string, to?: string): Promise<void> {
+  let file = vfile.create(path ? { path } : {})
+  if (to) (file as any).mediaType = to
   await unparse(node, file)
   // Compiler `unparse` function may have already written file/s directly, but
   // if not (i.e. file has `contents`), then write that here.
-  if (file.contents) await vfile.write(file)
+  if (!path) console.log(vfile.dump(file))
+  else if (file.contents) await vfile.write(file)
 }
 
-export async function convert (inp: string, out: string): Promise<void> {
-  const node = await read(inp)
-  await write(node, out)
+/**
+ * Convert from one format to another
+ *
+ * @param inp The input path. If missing stdin is used.
+ * @param out The output path. If missing stdout is used.
+ * @param from The format to convert the input from.
+ * @param to The format to convert the output to.
+ */
+export async function convert (inp?: string, out?: string, from?: string, to?: string): Promise<void> {
+  const node = await read(inp, from)
+  await write(node, out, to)
 }
