@@ -14,7 +14,10 @@ import { mdast2sast, sast2mdast } from './sast-mdast'
 
 export const media = [
   'text/markdown',
-  'text/x-markdown'
+  'text/x-markdown',
+
+  'markdown',
+  'md'
 ]
 
 export async function parse (file: VFile): Promise<Node> {

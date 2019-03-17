@@ -9,7 +9,9 @@ import { Node } from './sast'
 import { marshall } from './json'
 
 export const media = [
-  'text/yaml'
+  'text/yaml',
+
+  'yaml'
 ]
 
 export async function parse (file: VFile): Promise<Node> {
