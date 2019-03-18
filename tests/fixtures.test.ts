@@ -33,9 +33,14 @@ test('fixtures', async() => {
 
           let expectedString = fs.readFileSync(expected).toString().trim()
           let actualString = fs.readFileSync(dest).toString().trim()
-          if (expectedString.length < 100 && actualString.length < 100) expect(actualString).toEqual(expectedString)
-          // @ts-ignore
-          else expect(actualString === expectedString, `${path.basename(dest)} !== ${path.basename(expected)}`).toBeTruthy()
+          const message = `${path.basename(dest)} !== ${path.basename(expected)}`
+          if (expectedString.length < 500 && actualString.length < 500) {
+            // @ts-ignore
+            expect(actualString, message).toEqual(expectedString)
+          } else {
+            // @ts-ignore
+            expect(actualString === expectedString, message).toBeTruthy()
+          }
         }
       }
     }
