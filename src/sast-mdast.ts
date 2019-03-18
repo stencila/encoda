@@ -96,7 +96,7 @@ function defaultFrom (mdast: UNIST.Node): Sast.Node {
   for (let [key, child] of Object.entries(mdast)) {
     if (!['type', 'position'].includes(key)) {
       if (Array.isArray(child)) sast[key] = (child as Array<UNIST.Node>).map(mdast2sast)
-      else if (child !== null && typeof child === 'object') sast[key] = mdast2sast(child as UNIST.Node)
+      else if (child !== null && typeof child === 'object' && child.type) sast[key] = mdast2sast(child as UNIST.Node)
       else sast[key] = child
     }
   }
@@ -110,7 +110,7 @@ function defaultTo (sast: Sast.Node): UNIST.Node {
   for (let [key, child] of Object.entries(sast)) {
     if (!['type'].includes(key)) {
       if (Array.isArray(child)) mdast[key] = (child as Array<UNIST.Node>).map(sast2mdast)
-      else if (child !== null && typeof child === 'object') mdast[key] = sast2mdast(child as UNIST.Node)
+      else if (child !== null && typeof child === 'object' && child.type) mdast[key] = sast2mdast(child as UNIST.Node)
       else mdast[key] = child
     }
   }

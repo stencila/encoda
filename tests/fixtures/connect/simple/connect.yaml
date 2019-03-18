@@ -1,0 +1,11 @@
+type: Document
+body:
+  - type: Paragraph
+    children:
+      - type: Text
+        value: 'A paragraph with a connection to '
+      - type: Connect
+        content: another file
+        resource: data.csv
+      - type: Text
+        value: .

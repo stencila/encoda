@@ -8,7 +8,9 @@ import { VFile } from 'vfile'
 import { Node } from './sast'
 
 export const media = [
-  'application/json'
+  'application/json',
+
+  'json'
 ]
 
 export async function parse (file: VFile): Promise<Node> {
