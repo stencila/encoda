@@ -1,0 +1,55 @@
+type: Document
+authors:
+  - type: Person
+    familyNames:
+      - Bentley
+    givenNames:
+      - Nokome
+    affiliation:
+      type: Organization
+      name: Stencila
+environment:
+  type: Environment
+  packages:
+    - type: Package
+      name: r-tidyverse
+      version: 1.2.1
+body:
+  - type: Heading
+    depth: 1
+    children:
+      - type: Text
+        value: Introduction
+  - type: Paragraph
+    children:
+      - type: Text
+        value: This example Markdown document includes meta-data in YAML frontmatter.
+  - type: Heading
+    depth: 1
+    children:
+      - type: Text
+        value: Data
+  - type: Paragraph
+    children:
+      - type: Text
+        value: 'The data used was '
+      - type: Connect
+        content: data.csv
+        resource: data.csv
+      - type: Text
+        value: .
+  - type: Heading
+    depth: 1
+    children:
+      - type: Text
+        value: Methods
+  - type: Paragraph
+    children:
+      - type: Text
+        value: >-
+          Exploratory analysis of the data was performed using the R programming
+          language.
+  - type: Paragraph
+    children:
+      - type: Include
+        resource: methods.Rmd

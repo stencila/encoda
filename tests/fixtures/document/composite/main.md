@@ -19,3 +19,13 @@ environment:
 # Introduction
 
 This example Markdown document includes meta-data in YAML frontmatter.
+
+# Data
+
+The data used was !connect[data.csv](data.csv).
+
+# Methods
+
+Exploratory analysis of the data was performed using the R programming language.
+
+!include(methods.Rmd)
