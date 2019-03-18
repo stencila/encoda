@@ -20,14 +20,21 @@ export const media = [
   'md'
 ]
 
+/**
+ * Options for `remark-frontmatter` parser and stringifier
+ *
+ * @see https://github.com/remarkjs/remark-frontmatter#matter
+ */
+const FRONTMATTER_OPTIONS = [
+  { type: 'yaml', marker: '-' }
+]
+
 export async function parse (file: VFile): Promise<Node> {
   const mdast = unified()
     .use(parser, {
       commonmark: true
     })
-    .use(frontmatter, [
-      { type: 'yaml', marker: '-', anywhere: true }
-    ])
+    .use(frontmatter, FRONTMATTER_OPTIONS)
     .parse(file)
   compact(mdast, true)
   return mdast2sast(mdast)
@@ -37,6 +44,7 @@ export async function unparse (node: Node, file: VFile): Promise<void> {
   const mdast = sast2mdast(node)
   const md = unified()
     .use(stringifier)
+    .use(frontmatter, FRONTMATTER_OPTIONS)
     .stringify(mdast)
   file.contents = md
 }

@@ -9,7 +9,9 @@ import { Node } from './sast'
 import { hast2sast, sast2hast } from './sast-hast'
 
 export const media = [
-  'text/html'
+  'text/html',
+
+  'html'
 ]
 
 export async function parse (file: VFile): Promise<Node> {
