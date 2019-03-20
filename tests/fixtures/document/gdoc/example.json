@@ -1,0 +1,78 @@
+{
+  "type": "Document",
+  "body": [
+    {
+      "type": "Heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "Text",
+          "value": "Heading 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Paragraph 1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Paragraph 2"
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "Text",
+          "value": "Heading 1.1"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Paragraph 3 with some "
+        },
+        {
+          "type": "Emphasis",
+          "children": [
+            {
+              "type": "Text",
+              "value": "emphasis"
+            }
+          ]
+        },
+        {
+          "type": "Text",
+          "value": " and "
+        },
+        {
+          "type": "Strong",
+          "children": [
+            {
+              "type": "Text",
+              "value": "strong"
+            }
+          ]
+        },
+        {
+          "type": "Text",
+          "value": " text."
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,18 @@
-// This is based on Google Docs samples.
+/**
+ * A module for creating authorized interfaces to Google APIs
+ * 
+ * Based on Google's sample code
+ */
 
-const fs = require('fs');
-const readline = require('readline');
-const {google} = require('googleapis');
+const fs = require('fs')
+const readline = require('readline')
+const {google} = require('googleapis')
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/documents'];
+const SCOPES = [
+  'https://www.googleapis.com/auth/drive.file',
+  'https://www.googleapis.com/auth/documents'
+];
 
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
@@ -13,8 +20,8 @@ const SCOPES = ['https://www.googleapis.com/auth/documents'];
 const TOKEN_PATH = 'token.json';
 
 /**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
+ * Create an OAuth2 client with the given credentials
+ * 
  * @param {Object} credentials The authorization client credentials.
  * @param {function} callback The callback to call with the authorized client.
  */
@@ -71,16 +78,15 @@ function getNewToken(oAuth2Client, callback) {
   });
 }
 
-/**
- * Get a Google Doc.
- * 
- * @param documentId Id of the document to get
- */
-async function get (documentId) {
+async function docs (documentId) {
   const auth = await authorize()
-  const gdocs = google.docs({version: 'v1', auth});
-  const response = await gdocs.documents.get({ documentId })
-  return response.data
+  return google.docs({version: 'v1', auth})
 }
 
-module.exports = {get}
+
+async function drive (doc) {
+  const auth = await authorize()
+  return google.drive({version: 'v3', auth})
+}
+
+module.exports = {docs, drive}
