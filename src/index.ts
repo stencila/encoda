@@ -8,6 +8,7 @@ import * as vfile from './vfile'
 
 import * as csv from './csv'
 import * as json from './json'
+import * as gdoc from './gdoc'
 import * as html from './html'
 import * as md from './md'
 import * as ods from './ods'
@@ -33,6 +34,7 @@ const compilers: Array<Compiler> = [
   // Text formats for which sniffing will not help resolve media type (much)
   md,
   csv,
+  gdoc,
   json,
   yaml
 ]
@@ -133,6 +135,21 @@ export async function unparse (node: Node, file: VFile): Promise<void> {
   const compiler = await resolve(file)
   if (!compiler.unparse) throw new Error(`Not able to unparse`)
   return compiler.unparse(node, file)
+}
+
+export async function load (content: string, from: string): Promise<Node> {
+  let file = vfile.load(content)
+  // @ts-ignore
+  file.mediaType = from
+  return parse(file)
+}
+
+export async function dump (node: Node, to: string): Promise<string> {
+  let file = vfile.create()
+  // @ts-ignore
+  file.mediaType = to
+  await unparse(node, file)
+  return file.contents.toString()
 }
 
 export async function read (path?: string, from?: string): Promise<Node> {
