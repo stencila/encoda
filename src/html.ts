@@ -13,8 +13,8 @@ import { hast2sast, sast2hast } from './sast-hast'
 
 let {
   html, head, body,
-  div, p, blockquote, script,
-  span, a, strong, em
+  div, p, blockquote, script, table, tbody, tr, td,
+  span, a, strong, em, img, code
 } = hyperscriptHelpers(h)
 
 export const media = [
@@ -25,7 +25,7 @@ export const media = [
 
 export async function parse (file: VFile): Promise<Node> {
   const hast = unified()
-    .use(parser)
+    .use(parser, {emitParseErrors: true})
     .parse(file)
   return hast2sast(hast)
 }
@@ -62,8 +62,20 @@ const unparsers: {[key: string]: Unparser} = {
   Paragraph: (node: Node) => p(node.children.map(unparse_)),
   Blockquote: (node: Node) => blockquote(node.children.map(unparse_)),
 
+  Table: (node: Node) => table(tbody(node.children.map(unparse_))),
+  TableRow: (node: Node) => tr(node.children.map(unparse_)),
+  TableCell: (node: Node) => td(node.children.map(unparse_)),
+
   Connect: (node: Node) => a('.connect', { href: node.resource }, node.content),
   Include: (node: Node) => div('.include', { href: node.resource }, node.content),
 
-  Text: (node: Node) => node.value
+  Link: (node: Node) => a({href: node.url, title: node.title}, node.children.map(unparse_)),
+  Image: (node: Node) => img({src: node.url, title: node.title, alt: node.alt}),
+  
+  InlineCode: (node: Node) => code(node.value),
+  Emphasis: (node: Node) => em(node.value),
+  Strong: (node: Node) => strong(node.value),
+  Text: (node: Node) => node.value,
+
+  number: (node: any) => span('.number', node.toString())
 }
