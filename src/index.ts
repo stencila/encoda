@@ -12,6 +12,7 @@ import * as gdoc from './gdoc'
 import * as html from './html'
 import * as md from './md'
 import * as ods from './ods'
+import * as rpng from './rpng'
 import * as yaml from './yaml'
 import * as xlsx from './xlsx'
 
@@ -26,6 +27,7 @@ import * as xlsx from './xlsx'
 const compilers: Array<Compiler> = [
   // Binary formats for which sniffing may help resolve media type
   ods,
+  rpng,
   xlsx,
 
   // Text formats
