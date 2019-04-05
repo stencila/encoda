@@ -8,7 +8,7 @@ import { VFile } from 'vfile'
 import * as xlsx from 'xlsx'
 
 import { Node } from './sast'
-import { from, to } from './sast-csf'
+import { csf2sast, sast2csf } from './sast-csf'
 
 export const media = [
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
@@ -23,11 +23,11 @@ export async function parse (file: VFile): Promise<Node> {
       type: 'buffer'
     })
   }
-  return from(workbook)
+  return csf2sast(workbook)
 }
 
 export async function unparse (node: Node, file: VFile, format: string = 'xlsx'): Promise<void> {
-  const workbook = to(node)
+  const workbook = sast2csf(node)
   if (file.path) {
     return new Promise((resolve, reject) => {
       // @ts-ignore
