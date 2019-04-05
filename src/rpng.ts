@@ -1,20 +1,20 @@
 
 /**
  * A compiler for Reproducible PNGs (rPNG) files.
- * 
+ *
  * This compiler parses from, and unparses to, a rPNG which embeds the Stencila node
  * into the `tEXt` chunk of the PNG.
- * 
- * This has been implemented here to make use of the HTML converter to 
+ *
+ * This has been implemented here to make use of the HTML converter to
  * render the results. It currently using Puppetter and so will not work
  * in the browser. In the future we may use `html2canvas` and `canvas2image` to enable
- * rPNGs to be [generated in the browser](https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f). 
+ * rPNGs to be [generated in the browser](https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f).
  */
 
 import puppeteer from 'puppeteer'
-import {VFile} from 'vfile'
+import { VFile } from 'vfile'
 
-import {load, dump} from './index'
+import { load, dump } from './index'
 import * as SAST from './sast'
 
 export const media = [
@@ -23,7 +23,7 @@ export const media = [
 
 /**
  * Parse a rPNG to a Stencila node.
- * 
+ *
  * This is done by extracting the JSON
  * from the `tEXt` chunk and parsing it.
  *
@@ -38,7 +38,7 @@ export async function parse (file: VFile): Promise<SAST.Node> {
 
 /**
  * Unparse a Stencila node to a rPNG.
- * 
+ *
  * This is done by dumping the node to HTML,
  * "screenshotting" the HTML to a PNG and then inserting the
  * node's JSON into the image's `tEXt` chunk.
@@ -57,8 +57,8 @@ export async function unparse (node: SAST.Node, file: VFile): Promise<void> {
   // TODO Develop CSS for tables etc
   const css = '#target {font: sans #777}'
   // TODO This doesn't actually seem to do anything
-  await page.addStyleTag({content: css})
-  await page.setContent(`<div id="target" style="display: inline-block; padding: 0.1rem">${html}</div>`, {waitUntil: 'networkidle0'})
+  await page.addStyleTag({ content: css })
+  await page.setContent(`<div id="target" style="display: inline-block; padding: 0.1rem">${html}</div>`, { waitUntil: 'networkidle0' })
   const elem = await page.$('#target')
   if (!elem) throw new Error('Element not found!')
   const buffer = await elem.screenshot()

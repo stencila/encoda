@@ -25,7 +25,7 @@ export const media = [
 
 export async function parse (file: VFile): Promise<Node> {
   const hast = unified()
-    .use(parser, {emitParseErrors: true})
+    .use(parser, { emitParseErrors: true })
     .parse(file)
   return hast2sast(hast)
 }
@@ -69,9 +69,9 @@ const unparsers: {[key: string]: Unparser} = {
   Connect: (node: Node) => a('.connect', { href: node.resource }, node.content),
   Include: (node: Node) => div('.include', { href: node.resource }, node.content),
 
-  Link: (node: Node) => a({href: node.url, title: node.title}, node.children.map(unparse_)),
-  Image: (node: Node) => img({src: node.url, title: node.title, alt: node.alt}),
-  
+  Link: (node: Node) => a({ href: node.url, title: node.title }, node.children.map(unparse_)),
+  Image: (node: Node) => img({ src: node.url, title: node.title, alt: node.alt }),
+
   InlineCode: (node: Node) => code(node.value),
   Emphasis: (node: Node) => em(node.value),
   Strong: (node: Node) => strong(node.value),

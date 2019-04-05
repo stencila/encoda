@@ -1,4 +1,4 @@
-import {VFile} from './vfile'
+import { VFile } from 'vfile'
 
 export const media = [
   'text/markdown',
