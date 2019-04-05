@@ -37,9 +37,9 @@ API documentation is available at https://stencila.github.io/convert.
 
 ### Status
 
-The following table lists the status of converters that have been developed, are in development, or are being considered for development. 
+The following table lists the status of converters that have been developed, are in development, or are being considered for development.
 We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/convert/issues) and comment under the relevant one. If there is no
-issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new). 
+issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new).
 
 When the converters have been better tested, the plan is to integrate them into [Stencila Desktop](https://github.com/stencila/desktop) as a menu item e.g. `Save as... > Jupyter Notebook`
 
@@ -58,10 +58,9 @@ PDF             |-                                                              
 CSV             |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
 Yaml Front matter for CSV [CSVY](http://csvy.org/)            |    [#25](https://github.com/stencila/convert/issues/25)                                                              | [#26](https://github.com/stencila/convert/issues/26)
 Tabular Data Package |                                                             |
-Excel `.xlsx`   |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Open Document Spreadsheet `.ods`|![alpha](https://img.shields.io/badge/status-alpha-red.svg)|![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Microsoft Word `.docx`|[#24](https://github.com/stencila/convert/issues/24)|[#24](https://github.com/stencila/convert/issues/24)
-
+Sheet Script    |  [#29](https://github.com/stencila/convert/issues/29)  | [#28](https://github.com/stencila/convert/issues/28)
+Yaml Front matter for CSV [CSVY](http://csvy.org/) |  [#25](https://github.com/stencila/convert/issues/25)   |   [#26](https://github.com/stencila/convert/issues/26)
+X Markdown | |
 
 ### Develop
 
@@ -73,7 +72,7 @@ cd convert
 npm install
 ```
 
-Check how to contribute back to the project. All PRs are most welcome! Thank you!
+Check how to [contribute back to the project](https://github.com/stencila/convert/blob/master/CONTRIBUTING.md). All PRs are most welcome! Thank you!
 
 ### Test
 
@@ -167,3 +166,6 @@ You can create a new test case for a particular format by converting an existing
 ```bash
 ./bin/stencila-convert.js tests/fixtures/list_nested.md tests/fixtures/list_nested.jats.xml
 ```
+
+## Get in touch!
+If you have any questions or comments, please join our [friendly Gitter chat](https://gitter.im/stencila/stencila)!
