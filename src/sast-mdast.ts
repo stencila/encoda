@@ -49,7 +49,7 @@ function documentFromRoot(root: MDAST.Root): Sast.Node {
   const body: Array<Sast.Node> = []
   for (let child of root.children) {
     if (child.type === 'yaml') {
-      const frontmatter = yaml.safeLoad((child as MDAST.YAML).value)
+      const frontmatter = yaml.safeLoad(child.value)
       for (let [key, value] of Object.entries(frontmatter)) {
         doc[key] = value
       }
