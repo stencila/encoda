@@ -15,7 +15,6 @@ import * as ods from './ods'
 import * as rpng from './rpng'
 import * as yaml from './yaml'
 import * as xlsx from './xlsx'
-import * as ipynb from './ipynb'
 
 /**
  * A list of all compilers.
@@ -39,8 +38,7 @@ const compilers: Array<Compiler> = [
   csv,
   gdoc,
   json,
-  yaml,
-  ipynb
+  yaml
 ]
 
 /**
