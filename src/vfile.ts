@@ -7,7 +7,7 @@ import toVFile from 'to-vfile'
  *
  * @param options to `vfile` see https://github.com/vfile/vfile#vfileoptions
  */
-export function create (options: any = {}): VFile {
+export function create(options: any = {}): VFile {
   return vfile(options)
 }
 
@@ -16,7 +16,7 @@ export function create (options: any = {}): VFile {
  *
  * @param contents Contents to load
  */
-export function load (contents: string): VFile {
+export function load(contents: string): VFile {
   return vfile({ contents })
 }
 
@@ -25,7 +25,7 @@ export function load (contents: string): VFile {
  *
  * @param file The virtual file to dump
  */
-export function dump (vfile: VFile): string {
+export function dump(vfile: VFile): string {
   return vfile.contents ? vfile.contents.toString() : ''
 }
 
@@ -34,7 +34,7 @@ export function dump (vfile: VFile): string {
  *
  * @param path File system path to read
  */
-export async function read (path: string): Promise<VFile> {
+export async function read(path: string): Promise<VFile> {
   return toVFile.read(path)
 }
 
@@ -43,6 +43,6 @@ export async function read (path: string): Promise<VFile> {
  *
  * @param vfile Virtual file to write
  */
-export async function write (vfile: VFile): Promise<any> {
+export async function write(vfile: VFile): Promise<any> {
   return toVFile.write(vfile)
 }

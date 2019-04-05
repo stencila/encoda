@@ -1,4 +1,3 @@
-
 /**
  * A compiler for Google Documents (GDoc).
  *
@@ -28,11 +27,7 @@ import { VFile } from 'vfile'
 
 import * as SAST from './sast'
 
-export const media = [
-  'application/vnd.google-apps.document',
-
-  'gdoc'
-]
+export const media = ['application/vnd.google-apps.document', 'gdoc']
 
 /**
  * Parse GDoc JSON into a Stencila document node
@@ -40,7 +35,7 @@ export const media = [
  * @param file The `VFile` to parse
  * @returns The root of the document
  */
-export async function parse (file: VFile): Promise<SAST.Node> {
+export async function parse(file: VFile): Promise<SAST.Node> {
   const json = file.contents.toString()
   const gdoc = JSON.parse(json)
   return parseDocument(gdoc)
@@ -52,7 +47,7 @@ export async function parse (file: VFile): Promise<SAST.Node> {
  * @param node The document node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse (node: SAST.Node, file: VFile): Promise<void> {
+export async function unparse(node: SAST.Node, file: VFile): Promise<void> {
   const gdoc = unparseDocument(node)
   const json = JSON.stringify(gdoc, null, '  ')
   file.contents = json
@@ -64,16 +59,18 @@ export async function unparse (node: SAST.Node, file: VFile): Promise<void> {
  * Note that currently `SectionBreak`, `Table` and `TableOfContents`
  * child elements are ignored
  */
-function parseDocument (gdoc: GDoc.Schema$Document): SAST.Node {
+function parseDocument(gdoc: GDoc.Schema$Document): SAST.Node {
   let body: Array<any> = []
   if (gdoc.body && gdoc.body.content) {
-    body = gdoc.body.content.map((elem: GDoc.Schema$StructuralElement) => {
-      if (elem.paragraph) return parseParagraph(elem.paragraph)
-      else if (elem.sectionBreak) return undefined
-      else if (elem.table) return undefined
-      else if (elem.tableOfContents) return undefined
-      else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
-    }).filter(child => child !== undefined)
+    body = gdoc.body.content
+      .map((elem: GDoc.Schema$StructuralElement) => {
+        if (elem.paragraph) return parseParagraph(elem.paragraph)
+        else if (elem.sectionBreak) return undefined
+        else if (elem.table) return undefined
+        else if (elem.tableOfContents) return undefined
+        else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
+      })
+      .filter(child => child !== undefined)
   }
   return {
     type: 'Document',
@@ -84,15 +81,18 @@ function parseDocument (gdoc: GDoc.Schema$Document): SAST.Node {
 /**
  * Unparse a Stencila `Document` to a GDoc `Document`
  */
-function unparseDocument (sDoc: SAST.Node): GDoc.Schema$Document {
+function unparseDocument(sDoc: SAST.Node): GDoc.Schema$Document {
   let content: Array<GDoc.Schema$StructuralElement> = []
   if (sDoc.body) {
     content = sDoc.body.map((node: SAST.Node) => {
       switch (node.type) {
         // These need to be GDoc.Schema$StructuralElement nodes
-        case 'Heading': return { paragraph: unparseHeading(node) }
-        case 'Paragraph': return { paragraph: unparseParagraph(node) }
-        default: throw new Error(`Unhandled node type ${node.type}`)
+        case 'Heading':
+          return { paragraph: unparseHeading(node) }
+        case 'Paragraph':
+          return { paragraph: unparseParagraph(node) }
+        default:
+          throw new Error(`Unhandled node type ${node.type}`)
       }
     })
   }
@@ -106,7 +106,7 @@ function unparseDocument (sDoc: SAST.Node): GDoc.Schema$Document {
 /**
  * Parse a GDoc `Paragraph` to a Stencila `Paragraph` or `Heading` node.
  */
-function parseParagraph (gPara: GDoc.Schema$Paragraph): SAST.Node {
+function parseParagraph(gPara: GDoc.Schema$Paragraph): SAST.Node {
   let children: Array<any> = []
   if (gPara.elements) {
     children = gPara.elements.map((elem: GDoc.Schema$ParagraphElement) => {
@@ -121,7 +121,7 @@ function parseParagraph (gPara: GDoc.Schema$Paragraph): SAST.Node {
       if (match) {
         return {
           type: 'Heading',
-          depth: parseInt(match[1]),
+          depth: parseInt(match[1], 10),
           children
         }
       }
@@ -136,7 +136,7 @@ function parseParagraph (gPara: GDoc.Schema$Paragraph): SAST.Node {
 /**
  * Unparse a Stencila `Heading` to a GDoc `Paragraph` with a `HEADING_` style.
  */
-function unparseHeading (sHeading: SAST.Node): GDoc.Schema$Paragraph {
+function unparseHeading(sHeading: SAST.Node): GDoc.Schema$Paragraph {
   const gPara = unparseParagraph(sHeading)
   gPara.paragraphStyle = { namedStyleType: `HEADING_${sHeading.depth}` }
   return gPara
@@ -145,15 +145,19 @@ function unparseHeading (sHeading: SAST.Node): GDoc.Schema$Paragraph {
 /**
  * Unparse a Stencila `Paragraph` to a GDoc `Paragraph`.
  */
-function unparseParagraph (sPara: SAST.Node): GDoc.Schema$Paragraph {
+function unparseParagraph(sPara: SAST.Node): GDoc.Schema$Paragraph {
   let elements: Array<GDoc.Schema$ParagraphElement> = []
   if (sPara.children) {
     elements = sPara.children.map((node: SAST.Node) => {
       switch (node.type) {
-        case 'Emphasis': return { textRun: unparseEmphasis(node) }
-        case 'Strong': return { textRun: unparseStrong(node) }
-        case 'Text': return { textRun: unparseText(node) }
-        default: throw new Error(`Unhandled node type ${node.type}`)
+        case 'Emphasis':
+          return { textRun: unparseEmphasis(node) }
+        case 'Strong':
+          return { textRun: unparseStrong(node) }
+        case 'Text':
+          return { textRun: unparseText(node) }
+        default:
+          throw new Error(`Unhandled node type ${node.type}`)
       }
     })
   }
@@ -165,7 +169,7 @@ function unparseParagraph (sPara: SAST.Node): GDoc.Schema$Paragraph {
 /**
  * Parse a GDoc `TextRun` to a Stencila `Text` node.
  */
-function parseTextRun (gTextRun: GDoc.Schema$TextRun): SAST.Node {
+function parseTextRun(gTextRun: GDoc.Schema$TextRun): SAST.Node {
   let text = {
     type: 'Text',
     value: ''
@@ -196,7 +200,7 @@ function parseTextRun (gTextRun: GDoc.Schema$TextRun): SAST.Node {
 /**
  * Unparse a Stencila `Emphasis` node to a GDoc `TextRun` node with `textStyle`.
  */
-function unparseEmphasis (sEmphasis: SAST.Node): GDoc.Schema$TextRun {
+function unparseEmphasis(sEmphasis: SAST.Node): GDoc.Schema$TextRun {
   return {
     content: sEmphasis.children.map((child: SAST.Node) => child.value).join(),
     textStyle: {
@@ -208,7 +212,7 @@ function unparseEmphasis (sEmphasis: SAST.Node): GDoc.Schema$TextRun {
 /**
  * Unparse a Stencila `Strong` node to a GDoc `TextRun` node with `textStyle`.
  */
-function unparseStrong (sStrong: SAST.Node): GDoc.Schema$TextRun {
+function unparseStrong(sStrong: SAST.Node): GDoc.Schema$TextRun {
   return {
     content: sStrong.children.map((child: SAST.Node) => child.value).join(),
     textStyle: {
@@ -220,7 +224,7 @@ function unparseStrong (sStrong: SAST.Node): GDoc.Schema$TextRun {
 /**
  * Unparse a Stencila `Text` node to a GDoc `TextRun` node.
  */
-function unparseText (sText: SAST.Node): GDoc.Schema$TextRun {
+function unparseText(sText: SAST.Node): GDoc.Schema$TextRun {
   return {
     content: sText.value
   }

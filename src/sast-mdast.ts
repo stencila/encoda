@@ -10,10 +10,12 @@ import * as Sast from './sast'
  *
  * @param node The MDAST tree to transform
  */
-export function mdast2sast (node: UNIST.Node): Sast.Node {
+export function mdast2sast(node: UNIST.Node): Sast.Node {
   switch (node.type) {
-    case 'root': return documentFromRoot(node as MDAST.Root)
-    default: return defaultFrom(node)
+    case 'root':
+      return documentFromRoot(node as MDAST.Root)
+    default:
+      return defaultFrom(node)
   }
 }
 
@@ -22,10 +24,12 @@ export function mdast2sast (node: UNIST.Node): Sast.Node {
  *
  * @param node The SAST tree to transform
  */
-export function sast2mdast (node: Sast.Node): UNIST.Node {
+export function sast2mdast(node: Sast.Node): UNIST.Node {
   switch (node.type) {
-    case 'Document': return documentToRoot(node)
-    default: return defaultTo(node)
+    case 'Document':
+      return documentToRoot(node)
+    default:
+      return defaultTo(node)
   }
 }
 
@@ -38,7 +42,7 @@ export function sast2mdast (node: Sast.Node): UNIST.Node {
  *
  * @param root The MDAST root to convert
  */
-function documentFromRoot (root: MDAST.Root): Sast.Node {
+function documentFromRoot(root: MDAST.Root): Sast.Node {
   const doc: Sast.Node = {
     type: 'Document'
   }
@@ -66,12 +70,12 @@ function documentFromRoot (root: MDAST.Root): Sast.Node {
  *
  * @param node The SAST document to convert
  */
-function documentToRoot (node: Sast.Node): MDAST.Root {
+function documentToRoot(node: Sast.Node): MDAST.Root {
   const root: MDAST.Root = {
     type: 'root',
     children: []
   }
-  const frontmatter: {[key: string]: any} = {}
+  const frontmatter: { [key: string]: any } = {}
   for (let [key, value] of Object.entries(node)) {
     if (!['type', 'body'].includes(key)) {
       frontmatter[key] = value
@@ -89,28 +93,32 @@ function documentToRoot (node: Sast.Node): MDAST.Root {
   return root
 }
 
-function defaultFrom (mdast: UNIST.Node): Sast.Node {
+function defaultFrom(mdast: UNIST.Node): Sast.Node {
   const sast: Sast.Node = {
     type: mdast.type.charAt(0).toUpperCase() + mdast.type.slice(1)
   }
   for (let [key, child] of Object.entries(mdast)) {
     if (!['type', 'position'].includes(key)) {
-      if (Array.isArray(child)) sast[key] = (child as Array<UNIST.Node>).map(mdast2sast)
-      else if (child !== null && typeof child === 'object' && child.type) sast[key] = mdast2sast(child as UNIST.Node)
+      if (Array.isArray(child))
+        sast[key] = (child as Array<UNIST.Node>).map(mdast2sast)
+      else if (child !== null && typeof child === 'object' && child.type)
+        sast[key] = mdast2sast(child as UNIST.Node)
       else sast[key] = child
     }
   }
   return sast
 }
 
-function defaultTo (sast: Sast.Node): UNIST.Node {
-  const mdast: {[key: string]: any} = {
+function defaultTo(sast: Sast.Node): UNIST.Node {
+  const mdast: { [key: string]: any } = {
     type: sast.type.toLowerCase()
   }
   for (let [key, child] of Object.entries(sast)) {
     if (!['type'].includes(key)) {
-      if (Array.isArray(child)) mdast[key] = (child as Array<UNIST.Node>).map(sast2mdast)
-      else if (child !== null && typeof child === 'object' && child.type) mdast[key] = sast2mdast(child as UNIST.Node)
+      if (Array.isArray(child))
+        mdast[key] = (child as Array<UNIST.Node>).map(sast2mdast)
+      else if (child !== null && typeof child === 'object' && child.type)
+        mdast[key] = sast2mdast(child as UNIST.Node)
       else mdast[key] = child
     }
   }

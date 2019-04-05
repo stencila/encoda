@@ -6,12 +6,12 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
     "test": "jest",
+    "cover": "jest --collectCoverage",
     "check": "npm run build:dist && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist",
     "build:dist": "tsc",
-    "cover": "jest --collectCoverage",
     "docs": "typedoc --readme README.md --mode file --out ./docs ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
     "clean": "rimraf coverage docs tests/**/*.to.*"
@@ -70,13 +70,32 @@
     "@types/yargs": "^12.0.9",
     "dependency-check": "^3.1.0",
     "googleapis": "^38.0.0",
+    "husky": "^1.3.1",
     "jest": "^24.1.0",
     "jest-expect-message": "^1.0.2",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.3",
     "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.14.2",
     "typescript": "^3.3.3333"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

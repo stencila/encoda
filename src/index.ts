@@ -104,7 +104,7 @@ for (let compiler of compilers) {
  * @param file The `VFile` to resolve for
  * @returns The `Compiler` to use
  */
-export async function resolve (file: VFile): Promise<Compiler> {
+export async function resolve(file: VFile): Promise<Compiler> {
   let mediaType = (file as any).mediaType
 
   if (!mediaType && file.extname) {
@@ -122,7 +122,7 @@ export async function resolve (file: VFile): Promise<Compiler> {
   }
 
   for (let compiler of compilers) {
-    if (compiler.sniff && await compiler.sniff(file)) {
+    if (compiler.sniff && (await compiler.sniff(file))) {
       return compiler
     }
   }
@@ -132,26 +132,26 @@ export async function resolve (file: VFile): Promise<Compiler> {
   throw new Error(message)
 }
 
-export async function parse (file: VFile): Promise<Node> {
+export async function parse(file: VFile): Promise<Node> {
   const compiler = await resolve(file)
   if (!compiler.parse) throw new Error(`Not able to parse`)
   return compiler.parse(file)
 }
 
-export async function unparse (node: Node, file: VFile): Promise<void> {
+export async function unparse(node: Node, file: VFile): Promise<void> {
   const compiler = await resolve(file)
   if (!compiler.unparse) throw new Error(`Not able to unparse`)
   return compiler.unparse(node, file)
 }
 
-export async function load (content: string, from: string): Promise<Node> {
+export async function load(content: string, from: string): Promise<Node> {
   let file = vfile.load(content)
   // @ts-ignore
   file.mediaType = from
   return parse(file)
 }
 
-export async function dump (node: Node, to: string): Promise<string> {
+export async function dump(node: Node, to: string): Promise<string> {
   let file = vfile.create()
   // @ts-ignore
   file.mediaType = to
@@ -159,13 +159,17 @@ export async function dump (node: Node, to: string): Promise<string> {
   return file.contents.toString()
 }
 
-export async function read (path?: string, from?: string): Promise<Node> {
+export async function read(path?: string, from?: string): Promise<Node> {
   let file = path ? await vfile.read(path) : vfile.load(await getStdin())
   if (from) (file as any).mediaType = from
   return parse(file)
 }
 
-export async function write (node: Node, path?: string, to?: string): Promise<void> {
+export async function write(
+  node: Node,
+  path?: string,
+  to?: string
+): Promise<void> {
   let file = vfile.create(path ? { path } : {})
   if (to) (file as any).mediaType = to
   await unparse(node, file)
@@ -183,7 +187,12 @@ export async function write (node: Node, path?: string, to?: string): Promise<vo
  * @param from The format to convert the input from.
  * @param to The format to convert the output to.
  */
-export async function convert (inp?: string, out?: string, from?: string, to?: string): Promise<void> {
+export async function convert(
+  inp?: string,
+  out?: string,
+  from?: string,
+  to?: string
+): Promise<void> {
   const node = await read(inp, from)
   await write(node, out, to)
 }

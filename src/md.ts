@@ -18,22 +18,14 @@ import { mdast2sast, sast2mdast } from './sast-mdast'
 import { MDAST } from 'mdast'
 import { UNIST } from 'unist'
 
-export const media = [
-  'text/markdown',
-  'text/x-markdown',
-
-  'markdown',
-  'md'
-]
+export const media = ['text/markdown', 'text/x-markdown', 'markdown', 'md']
 
 /**
  * Options for `remark-frontmatter` parser and stringifier
  *
  * @see https://github.com/remarkjs/remark-frontmatter#matter
  */
-const FRONTMATTER_OPTIONS = [
-  { type: 'yaml', marker: '-' }
-]
+const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
 
 /**
  * Interface for generic extension nodes parsed by `remark-generic-extensions`.
@@ -73,7 +65,7 @@ interface ExtensionElement {
   /**
    * Map of computed properties
    */
-  properties: {[key: string]: string}
+  properties: { [key: string]: string }
 }
 
 /**
@@ -93,7 +85,7 @@ const GENERIC_EXTENSIONS = {
   elements: {
     connect: {
       replace: (type: ExtensionType, element: ExtensionElement) => {
-        const node: {[key: string]: any} = {
+        const node: { [key: string]: any } = {
           type: 'connect',
           content: element.content,
           resource: element.argument
@@ -104,7 +96,7 @@ const GENERIC_EXTENSIONS = {
     },
     include: {
       replace: (type: ExtensionType, element: ExtensionElement) => {
-        const node: {[key: string]: any} = {
+        const node: { [key: string]: any } = {
           type: 'include',
           resource: element.argument
         }
@@ -121,19 +113,27 @@ const GENERIC_EXTENSIONS = {
  *
  * We use `type: html` so no escaping of the value is done while stringifying.
  */
-function transformExtensions (tree: UNIST.Node) {
+function transformExtensions(tree: UNIST.Node) {
   return map(tree, (node: any) => {
     switch (node.type) {
       case 'connect':
-        return { type: 'html', value: `!connect[${node.content}](${node.resource})` }
+        return {
+          type: 'html',
+          value: `!connect[${node.content}](${node.resource})`
+        }
       case 'include':
-        return { type: 'html', value: `!include${node.content ? `[${node.content}]` : ''}(${node.resource})` }
+        return {
+          type: 'html',
+          value: `!include${node.content ? `[${node.content}]` : ''}(${
+            node.resource
+          })`
+        }
     }
     return node
   })
 }
 
-export async function parse (file: VFile): Promise<Node> {
+export async function parse(file: VFile): Promise<Node> {
   const mdast = unified()
     .use(parser, {
       commonmark: true
@@ -145,7 +145,7 @@ export async function parse (file: VFile): Promise<Node> {
   return mdast2sast(mdast)
 }
 
-export async function unparse (node: Node, file: VFile): Promise<void> {
+export async function unparse(node: Node, file: VFile): Promise<void> {
   let mdast = sast2mdast(node)
   mdast = transformExtensions(mdast)
   const md = unified()

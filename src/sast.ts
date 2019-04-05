@@ -7,4 +7,4 @@
 /**
  * A node in an executable document.
  */
-export type Node = {[key: string]: any}
+export type Node = { [key: string]: any }

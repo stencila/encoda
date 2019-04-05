@@ -1,13 +1,19 @@
 {
-    "cSpell.words": [
-        "commonmark",
-        "frontmatter",
-        "gdoc",
-        "mdast",
-        "sast",
-        "stencila",
-        "stringifier",
-        "unparse",
-        "vfile"
-    ]
+  "editor.codeActionsOnSave": {
+    "source.": true,
+    "editor.formatOnSave": true
+  },
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "cSpell.words": [
+    "commonmark",
+    "frontmatter",
+    "gdoc",
+    "mdast",
+    "sast",
+    "stencila",
+    "stringifier",
+    "unparse",
+    "vfile"
+  ]
 }

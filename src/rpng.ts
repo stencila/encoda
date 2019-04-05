@@ -1,4 +1,3 @@
-
 /**
  * A compiler for Reproducible PNGs (rPNG) files.
  *
@@ -17,9 +16,7 @@ import { VFile } from 'vfile'
 import { load, dump } from './index'
 import * as SAST from './sast'
 
-export const media = [
-  'rpng'
-]
+export const media = ['rpng']
 
 /**
  * Parse a rPNG to a Stencila node.
@@ -30,9 +27,10 @@ export const media = [
  * @param file The `VFile` to parse
  * @returns The Stencila node
  */
-export async function parse (file: VFile): Promise<SAST.Node> {
+export async function parse(file: VFile): Promise<SAST.Node> {
   // TODO extract the JSON from the file.contents buffer
-  const json = '{"type": "Text", "value": "The JSON extracted from the rPNG TEXt chunk"}'
+  const json =
+    '{"type": "Text", "value": "The JSON extracted from the rPNG TEXt chunk"}'
   return load(json, 'json')
 }
 
@@ -46,7 +44,7 @@ export async function parse (file: VFile): Promise<SAST.Node> {
  * @param node The Stencila node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse (node: SAST.Node, file: VFile): Promise<void> {
+export async function unparse(node: SAST.Node, file: VFile): Promise<void> {
   // Generate HTML of the `value` of the node
   if (!node.value) throw new Error('Node must have a value')
   let html = await dump(node.value, 'html')
@@ -58,7 +56,10 @@ export async function unparse (node: SAST.Node, file: VFile): Promise<void> {
   const css = '#target {font: sans #777}'
   // TODO This doesn't actually seem to do anything
   await page.addStyleTag({ content: css })
-  await page.setContent(`<div id="target" style="display: inline-block; padding: 0.1rem">${html}</div>`, { waitUntil: 'networkidle0' })
+  await page.setContent(
+    `<div id="target" style="display: inline-block; padding: 0.1rem">${html}</div>`,
+    { waitUntil: 'networkidle0' }
+  )
   const elem = await page.$('#target')
   if (!elem) throw new Error('Element not found!')
   const buffer = await elem.screenshot()

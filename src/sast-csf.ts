@@ -7,7 +7,7 @@ import * as Csf from 'xlsx'
  *
  * @param csf The CSF to transform
  */
-export function csf2sast (csf: Csf.WorkBook): Sast.Node {
+export function csf2sast(csf: Csf.WorkBook): Sast.Node {
   return csf
   // return documentFromWorkbook(csf)
 }
@@ -17,13 +17,12 @@ export function csf2sast (csf: Csf.WorkBook): Sast.Node {
  *
  * @param sast The SAST to transform
  */
-export function sast2csf (sast: Sast.Node): Csf.WorkBook {
+export function sast2csf(sast: Sast.Node): Csf.WorkBook {
   return sast as Csf.WorkBook
   // return documentToWorkbook(sast)
 }
 
-function documentFromWorkbook (csf: Csf.WorkBook): Sast.Node {
-
+function documentFromWorkbook(csf: Csf.WorkBook): Sast.Node {
   const body = []
   for (let name of csf.SheetNames) {
     let sheet = csf.Sheets[name]
@@ -61,7 +60,7 @@ function documentFromWorkbook (csf: Csf.WorkBook): Sast.Node {
   }
 }
 
-function cellFromCellObject (cell: Csf.CellObject) {
+function cellFromCellObject(cell: Csf.CellObject) {
   if (cell.f) {
     return {
       type: 'Expression',
@@ -73,7 +72,7 @@ function cellFromCellObject (cell: Csf.CellObject) {
   }
 }
 
-function documentToWorkbook (sast: Sast.Node): Csf.WorkBook {
+function documentToWorkbook(sast: Sast.Node): Csf.WorkBook {
   // @ts-ignore
   return null as Csf.WorkBook
 }
