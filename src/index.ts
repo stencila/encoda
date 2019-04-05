@@ -15,6 +15,7 @@ import * as ods from './ods'
 import * as rpng from './rpng'
 import * as yaml from './yaml'
 import * as xlsx from './xlsx'
+import * as ipynb from './ipynb'
 
 /**
  * A list of all compilers.
@@ -38,7 +39,8 @@ const compilers: Array<Compiler> = [
   csv,
   gdoc,
   json,
-  yaml
+  yaml,
+  ipynb
 ]
 
 /**
@@ -88,7 +90,7 @@ interface Compiler {
  * Used for first attempt at revolving the compiler
  * to use to parse/unparse from/to a `VFile`.
  */
-const lookup: {[key: string]: Compiler} = {}
+const lookup: { [key: string]: Compiler } = {}
 for (let compiler of compilers) {
   for (let medium of compiler.media) {
     lookup[medium] = compiler
@@ -113,6 +115,11 @@ export async function resolve (file: VFile): Promise<Compiler> {
 
   if (mediaType) {
     let compiler = lookup[mediaType]
+    if (compiler) return compiler
+  }
+
+  if (file.extname) {
+    let compiler = lookup[file.extname.slice(1)]
     if (compiler) return compiler
   }
 
