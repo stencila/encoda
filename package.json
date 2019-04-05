@@ -3,6 +3,7 @@
   "version": "0.30.1",
   "description": "Converters for Stencila components",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
     "test": "jest",
@@ -60,11 +61,11 @@
     "yargs": "^13.2.2"
   },
   "devDependencies": {
-    "@paperist/types-remark": "^0.1.3",
     "@types/get-stdin": "^5.0.1",
     "@types/hyperscript": "0.0.3",
     "@types/jest": "^24.0.9",
     "@types/js-yaml": "^3.12.0",
+    "@types/mdast": "^3.0.2",
     "@types/puppeteer": "^1.12.3",
     "@types/unist": "^2.0.3",
     "@types/yargs": "^12.0.9",

@@ -1,4 +1,4 @@
-import { UNIST } from 'unist'
+import * as UNIST from 'unist'
 // @ts-ignore
 import hast2mdast from 'hast-util-to-mdast'
 // @ts-ignore

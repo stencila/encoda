@@ -15,8 +15,8 @@ import { VFile } from 'vfile'
 
 import { Node } from './sast'
 import { mdast2sast, sast2mdast } from './sast-mdast'
-import { MDAST } from 'mdast'
-import { UNIST } from 'unist'
+import * as MDAST from 'mdast'
+import * as UNIST from 'unist'
 
 export const media = ['text/markdown', 'text/x-markdown', 'markdown', 'md']
 

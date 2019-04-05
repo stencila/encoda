@@ -11,6 +11,7 @@ yargs
   .command(
     '$0 [in] [out]',
     'Convert between file formats',
+    // @ts-ignore
     (yargs: any) => {
       yargs
         .positional('in', {

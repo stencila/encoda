@@ -1,5 +1,5 @@
-import { UNIST } from 'unist'
-import { MDAST } from 'mdast'
+import * as UNIST from 'unist'
+import * as MDAST from 'mdast'
 import * as yaml from 'js-yaml'
 
 import * as Sast from './sast'
@@ -99,11 +99,11 @@ function defaultFrom(mdast: UNIST.Node): Sast.Node {
   }
   for (let [key, child] of Object.entries(mdast)) {
     if (!['type', 'position'].includes(key)) {
-      if (Array.isArray(child))
+      if (Array.isArray(child)) {
         sast[key] = (child as Array<UNIST.Node>).map(mdast2sast)
-      else if (child !== null && typeof child === 'object' && child.type)
+      } else if (child !== null && typeof child === 'object') {
         sast[key] = mdast2sast(child as UNIST.Node)
-      else sast[key] = child
+      } else sast[key] = child
     }
   }
   return sast
@@ -115,11 +115,11 @@ function defaultTo(sast: Sast.Node): UNIST.Node {
   }
   for (let [key, child] of Object.entries(sast)) {
     if (!['type'].includes(key)) {
-      if (Array.isArray(child))
+      if (Array.isArray(child)) {
         mdast[key] = (child as Array<UNIST.Node>).map(sast2mdast)
-      else if (child !== null && typeof child === 'object' && child.type)
+      } else if (child !== null && typeof child === 'object' && child.type) {
         mdast[key] = sast2mdast(child as UNIST.Node)
-      else mdast[key] = child
+      } else mdast[key] = child
     }
   }
   return mdast as UNIST.Node

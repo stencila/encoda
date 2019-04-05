@@ -46,8 +46,9 @@ export async function unparse(node: Node, file: VFile): Promise<void> {
 function unparse_(node: Node) {
   const type = node.type || typeof node
   const unparser = unparsers[type]
-  if (!unparser)
+  if (!unparser) {
     throw new Error(`No HTML unparser defined for node type "${node.type}"`)
+  }
   return unparser(node)
 }
 
