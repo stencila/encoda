@@ -8,15 +8,14 @@ import genericExtensionsParser from 'remark-generic-extensions'
 import compact from 'mdast-util-compact'
 // @ts-ignore
 import stringifier from 'remark-stringify'
-import unified, { VFileCompatible } from 'unified'
+import unified from 'unified'
 // @ts-ignore
 import map from 'unist-util-map'
-import { VFile } from 'vfile'
-
-import { Node } from './sast'
-import { mdast2sast, sast2mdast } from './sast-mdast'
-import * as MDAST from 'mdast'
 import * as UNIST from 'unist'
+
+import { mdast2sast, sast2mdast } from './sast-mdast'
+import { Node } from './sast'
+import { load, VFile } from './vfile'
 
 export const media = ['text/markdown', 'text/x-markdown', 'markdown', 'md']
 
@@ -145,12 +144,12 @@ export async function parse(file: VFile): Promise<Node> {
   return mdast2sast(mdast)
 }
 
-export async function unparse(node: Node, file: VFile): Promise<void> {
+export async function unparse(node: Node): Promise<VFile> {
   let mdast = sast2mdast(node)
   mdast = transformExtensions(mdast)
   const md = unified()
     .use(stringifier)
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .stringify(mdast)
-  file.contents = md
+  return load(md)
 }

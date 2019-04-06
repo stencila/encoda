@@ -5,10 +5,10 @@ import hyperscriptHelpers from 'hyperscript-helpers'
 // @ts-ignore
 import parser from 'rehype-parse'
 import unified from 'unified'
-import { VFile } from 'vfile'
 
 import { Node } from './sast'
 import { hast2sast, sast2hast } from './sast-hast'
+import { load, VFile } from './vfile'
 
 let {
   html,
@@ -39,8 +39,9 @@ export async function parse(file: VFile): Promise<Node> {
   return hast2sast(hast)
 }
 
-export async function unparse(node: Node, file: VFile): Promise<void> {
-  file.contents = beautifyHtml(unparse_(node).outerHTML)
+export async function unparse(node: Node): Promise<VFile> {
+  const html = beautifyHtml(unparse_(node).outerHTML)
+  return load(html)
 }
 
 function unparse_(node: Node) {

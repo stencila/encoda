@@ -1,6 +1,7 @@
+import getStdin from 'get-stdin'
 // @ts-ignore
 import mime from 'mime-types'
-import getStdin from 'get-stdin'
+import path from 'path'
 import { VFile } from 'vfile'
 
 import { Node } from './sast'
@@ -15,6 +16,7 @@ import * as ods from './ods'
 import * as rpng from './rpng'
 import * as yaml from './yaml'
 import * as xlsx from './xlsx'
+import { file } from '@babel/types'
 
 /**
  * A list of all compilers.
@@ -62,16 +64,15 @@ interface Compiler {
    * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
    * of the `VFile` to determine if the compiler is able to parse the content.
    */
-  sniff?: (file: VFile) => Promise<boolean>
+  sniff?: (filePath: string) => Promise<boolean>
 
   /**
    * Parse the content of a `Vfile` into a tree of Stencila
-   * document nodes
+   * document nodes.
    *
    * @param file The `VFile` to parse
-   * @returns The root of the document
    */
-  parse?: (file: VFile) => Promise<Node>
+  parse: (file: VFile) => Promise<Node>
 
   /**
    * Unparse a Stencila document node to a `VFile`.
@@ -79,7 +80,7 @@ interface Compiler {
    * @param node The document node to unparse
    * @param file The `VFile` to unparse to
    */
-  unparse?: (node: Node, file: VFile) => Promise<void>
+  unparse: (node: Node, filePath?: string) => Promise<VFile>
 }
 
 /**
@@ -88,10 +89,10 @@ interface Compiler {
  * Used for first attempt at revolving the compiler
  * to use to parse/unparse from/to a `VFile`.
  */
-const lookup: { [key: string]: Compiler } = {}
+const mediaTypes: { [key: string]: Compiler } = {}
 for (let compiler of compilers) {
   for (let medium of compiler.media) {
-    lookup[medium] = compiler
+    mediaTypes[medium] = compiler
   }
 }
 
@@ -104,79 +105,95 @@ for (let compiler of compilers) {
  * @param file The `VFile` to resolve for
  * @returns The `Compiler` to use
  */
-export async function resolve(file: VFile): Promise<Compiler> {
-  let mediaType = (file as any).mediaType
-
-  if (!mediaType && file.extname) {
-    mediaType = mime.lookup(file.extname)
+export async function resolve(
+  filePath?: string,
+  mediaType?: string
+): Promise<Compiler> {
+  if (!mediaType && filePath) {
+    mediaType = mime.lookup(path)
   }
 
   if (mediaType) {
-    let compiler = lookup[mediaType]
+    let compiler = mediaTypes[mediaType]
     if (compiler) return compiler
   }
 
-  if (file.extname) {
-    let compiler = lookup[file.extname.slice(1)]
+  if (filePath) {
+    let compiler = mediaTypes[path.extname(filePath).slice(1)]
     if (compiler) return compiler
-  }
 
-  for (let compiler of compilers) {
-    if (compiler.sniff && (await compiler.sniff(file))) {
-      return compiler
+    for (let compiler of compilers) {
+      if (compiler.sniff && (await compiler.sniff(filePath))) {
+        return compiler
+      }
     }
   }
 
-  let message = `No compiler could be found for file "${file.path}"`
-  if (mediaType) message += ` with media type "${mediaType}"`
+  let message = 'No compiler could be found'
+  if (filePath) message += ` for file path "${filePath}"`
+  if (mediaType) message += ` for media type "${mediaType}"`
+  message += '.'
   throw new Error(message)
 }
 
-export async function parse(file: VFile): Promise<Node> {
-  const compiler = await resolve(file)
-  if (!compiler.parse) throw new Error(`Not able to parse`)
+export async function handled(
+  filePath?: string,
+  mediaType?: string
+): Promise<boolean> {
+  try {
+    await resolve(filePath, mediaType)
+    return true
+  } catch (error) {
+    return false
+  }
+}
+
+export async function parse(
+  file: VFile,
+  filePath?: string,
+  mediaType?: string
+): Promise<Node> {
+  const compiler = await resolve(filePath, mediaType)
   return compiler.parse(file)
 }
 
-export async function unparse(node: Node, file: VFile): Promise<void> {
-  const compiler = await resolve(file)
-  if (!compiler.unparse) throw new Error(`Not able to unparse`)
-  return compiler.unparse(node, file)
+export async function unparse(
+  node: Node,
+  filePath?: string,
+  mediaType?: string
+): Promise<VFile> {
+  const compiler = await resolve(filePath, mediaType)
+  return compiler.unparse(node, filePath)
 }
 
-export async function load(content: string, from: string): Promise<Node> {
-  let file = vfile.load(content)
-  // @ts-ignore
-  file.mediaType = from
-  return parse(file)
+export async function load(content: string, mediaType: string): Promise<Node> {
+  const file = vfile.load(content)
+  return parse(file, undefined, mediaType)
 }
 
-export async function dump(node: Node, to: string): Promise<string> {
-  let file = vfile.create()
-  // @ts-ignore
-  file.mediaType = to
-  await unparse(node, file)
-  return file.contents.toString()
+export async function dump(node: Node, mediaType: string): Promise<string> {
+  const file = await unparse(node, undefined, mediaType)
+  return vfile.dump(file)
 }
 
-export async function read(path?: string, from?: string): Promise<Node> {
-  let file = path ? await vfile.read(path) : vfile.load(await getStdin())
-  if (from) (file as any).mediaType = from
-  return parse(file)
+export async function read(
+  filePath?: string,
+  mediaType?: string
+): Promise<Node> {
+  let file
+  if (filePath) file = await vfile.read(filePath)
+  else file = vfile.load(await getStdin())
+  return parse(file, filePath, mediaType)
 }
 
 export async function write(
   node: Node,
-  path?: string,
-  to?: string
+  filePath?: string,
+  mediaType?: string
 ): Promise<void> {
-  let file = vfile.create(path ? { path } : {})
-  if (to) (file as any).mediaType = to
-  await unparse(node, file)
-  // Compiler `unparse` function may have already written file/s directly, but
-  // if not (i.e. file has `contents`), then write that here.
-  if (!path) console.log(vfile.dump(file))
-  else if (file.contents) await vfile.write(file)
+  let file = await unparse(node, filePath, mediaType)
+  if (!filePath) console.log(vfile.dump(file))
+  else await vfile.write(file, filePath)
 }
 
 /**

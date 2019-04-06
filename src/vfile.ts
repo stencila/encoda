@@ -1,6 +1,11 @@
-import vfile, { VFile } from 'vfile'
+import vfile from 'vfile'
 // @ts-ignore
 import toVFile from 'to-vfile'
+
+/**
+ * The virtual file type
+ */
+export type VFile = vfile.VFile
 
 /**
  * Create a virtual file
@@ -43,6 +48,7 @@ export async function read(path: string): Promise<VFile> {
  *
  * @param vfile Virtual file to write
  */
-export async function write(vfile: VFile): Promise<any> {
+export async function write(vfile: VFile, path?: string): Promise<any> {
+  if (path) vfile.path = path
   return toVFile.write(vfile)
 }

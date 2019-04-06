@@ -23,9 +23,9 @@
  */
 
 import { docs_v1 as GDoc } from 'googleapis'
-import { VFile } from 'vfile'
 
 import * as SAST from './sast'
+import { dump, load, VFile } from './vfile'
 
 export const media = ['application/vnd.google-apps.document', 'gdoc']
 
@@ -36,7 +36,7 @@ export const media = ['application/vnd.google-apps.document', 'gdoc']
  * @returns The root of the document
  */
 export async function parse(file: VFile): Promise<SAST.Node> {
-  const json = file.contents.toString()
+  const json = dump(file)
   const gdoc = JSON.parse(json)
   return parseDocument(gdoc)
 }
@@ -47,10 +47,10 @@ export async function parse(file: VFile): Promise<SAST.Node> {
  * @param node The document node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse(node: SAST.Node, file: VFile): Promise<void> {
+export async function unparse(node: SAST.Node): Promise<VFile> {
   const gdoc = unparseDocument(node)
   const json = JSON.stringify(gdoc, null, '  ')
-  file.contents = json
+  return load(json)
 }
 
 /**

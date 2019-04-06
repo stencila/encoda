@@ -11,10 +11,10 @@
  */
 
 import puppeteer from 'puppeteer'
-import { VFile } from 'vfile'
 
 import { load, dump } from './index'
 import * as SAST from './sast'
+import { load as loadVFile, VFile } from './vfile'
 
 export const media = ['rpng']
 
@@ -44,7 +44,7 @@ export async function parse(file: VFile): Promise<SAST.Node> {
  * @param node The Stencila node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse(node: SAST.Node, file: VFile): Promise<void> {
+export async function unparse(node: SAST.Node): Promise<VFile> {
   // Generate HTML of the `value` of the node
   if (!node.value) throw new Error('Node must have a value')
   let html = await dump(node.value, 'html')
@@ -70,5 +70,5 @@ export async function unparse(node: SAST.Node, file: VFile): Promise<void> {
   // TODO insert json into tEXt chunk
   const image = buffer
 
-  file.contents = image
+  return loadVFile(image)
 }

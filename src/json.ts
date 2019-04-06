@@ -3,19 +3,18 @@
  */
 
 import cloneDeep from 'lodash/cloneDeep'
-import { VFile } from 'vfile'
 
 import { Node } from './sast'
+import { load, dump, VFile } from './vfile'
 
 export const media = ['application/json', 'json']
 
 export async function parse(file: VFile): Promise<Node> {
-  if (file.contents) return JSON.parse(file.contents.toString())
-  return {}
+  return JSON.parse(dump(file))
 }
 
-export async function unparse(node: Node, file: VFile): Promise<void> {
-  file.contents = JSON.stringify(marshall(node), null, '  ')
+export async function unparse(node: Node): Promise<VFile> {
+  return load(JSON.stringify(node, null, '  '))
 }
 
 export function marshall(node: Node): Node {
