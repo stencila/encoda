@@ -5,10 +5,12 @@ import hyperscriptHelpers from 'hyperscript-helpers'
 // @ts-ignore
 import parser from 'rehype-parse'
 import unified from 'unified'
+// @ts-ignore
+import hast2mdast from 'hast-util-to-mdast'
 
-import { Node } from './sast'
-import { hast2sast, sast2hast } from './sast-hast'
+import { Thing } from '@stencila/schema'
 import { load, VFile } from './vfile'
+import { mdast2sast } from './sast-mdast'
 
 let {
   html,
@@ -30,42 +32,43 @@ let {
   code
 } = hyperscriptHelpers(h)
 
-export const media = ['text/html', 'html']
+export const mediaTypes = ['text/html']
 
-export async function parse(file: VFile): Promise<Node> {
+export async function parse(file: VFile): Promise<Thing> {
   const hast = unified()
     .use(parser, { emitParseErrors: true })
     .parse(file)
-  return hast2sast(hast)
+  const mdast = hast2mdast(hast)
+  return mdast2sast(mdast)
 }
 
-export async function unparse(node: Node): Promise<VFile> {
-  const html = beautifyHtml(unparse_(node).outerHTML)
+export async function unparse(thing: Thing): Promise<VFile> {
+  const html = beautifyHtml(unparse_(thing).outerHTML)
   return load(html)
 }
 
-function unparse_(node: Node) {
-  const type = node.type || typeof node
+function unparse_(thing: Thing) {
+  const type = thing.type || typeof thing
   const unparser = unparsers[type]
   if (!unparser) {
-    throw new Error(`No HTML unparser defined for node type "${node.type}"`)
+    throw new Error(`No HTML unparser defined for thing type "${thing.type}"`)
   }
-  return unparser(node)
+  return unparser(thing)
 }
 
-type Unparser = (node: Node) => Element
+type Unparser = (thing: Thing) => Element
 
 const unparsers: { [key: string]: Unparser } = {
-  Document: (node: Node) => {
+  Document: (thing: Thing) => {
     let jsonld
     if (
-      Object.keys(node).filter(key => !['type', 'body'].includes(key)).length
+      Object.keys(thing).filter(key => !['type', 'body'].includes(key)).length
     ) {
       jsonld = Object.assign(
         {
           '@context': 'http://stencila.github.io/schema/01-draft/context.jsonld'
         },
-        node
+        thing
       )
       jsonld = JSON.stringify(
         jsonld,
@@ -74,31 +77,32 @@ const unparsers: { [key: string]: Unparser } = {
       )
       jsonld = script({ type: 'application/ld+json' }, jsonld)
     }
-    return html(head(jsonld), body(node.body.map(unparse_)))
+    return html(head(jsonld), body(thing.body.map(unparse_)))
   },
 
-  Heading: (node: Node) => h(`h${node.depth}`, node.children.map(unparse_)),
+  Heading: (thing: Thing) => h(`h${thing.depth}`, thing.children.map(unparse_)),
 
-  Paragraph: (node: Node) => p(node.children.map(unparse_)),
-  Blockquote: (node: Node) => blockquote(node.children.map(unparse_)),
+  Paragraph: (thing: Thing) => p(thing.children.map(unparse_)),
+  Blockquote: (thing: Thing) => blockquote(thing.children.map(unparse_)),
 
-  Table: (node: Node) => table(tbody(node.children.map(unparse_))),
-  TableRow: (node: Node) => tr(node.children.map(unparse_)),
-  TableCell: (node: Node) => td(node.children.map(unparse_)),
+  Table: (thing: Thing) => table(tbody(thing.children.map(unparse_))),
+  TableRow: (thing: Thing) => tr(thing.children.map(unparse_)),
+  TableCell: (thing: Thing) => td(thing.children.map(unparse_)),
 
-  Connect: (node: Node) => a('.connect', { href: node.resource }, node.content),
-  Include: (node: Node) =>
-    div('.include', { href: node.resource }, node.content),
+  Connect: (thing: Thing) =>
+    a('.connect', { href: thing.resource }, thing.content),
+  Include: (thing: Thing) =>
+    div('.include', { href: thing.resource }, thing.content),
 
-  Link: (node: Node) =>
-    a({ href: node.url, title: node.title }, node.children.map(unparse_)),
-  Image: (node: Node) =>
-    img({ src: node.url, title: node.title, alt: node.alt }),
+  Link: (thing: Thing) =>
+    a({ href: thing.url, title: thing.title }, thing.children.map(unparse_)),
+  Image: (thing: Thing) =>
+    img({ src: thing.url, title: thing.title, alt: thing.alt }),
 
-  InlineCode: (node: Node) => code(node.value),
-  Emphasis: (node: Node) => em(node.value),
-  Strong: (node: Node) => strong(node.value),
-  Text: (node: Node) => node.value,
+  InlineCode: (thing: Thing) => code(thing.value),
+  Emphasis: (thing: Thing) => em(thing.value),
+  Strong: (thing: Thing) => strong(thing.value),
+  Text: (thing: Thing) => thing.value,
 
-  number: (node: any) => span('.number', node.toString())
+  number: (thing: any) => span('.number', thing.toString())
 }

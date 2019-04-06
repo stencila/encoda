@@ -1,12 +1,13 @@
 {
   "editor.codeActionsOnSave": {
-    "source.": true,
+    "source.organizeImports": true,
     "editor.formatOnSave": true
   },
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "cSpell.words": [
     "commonmark",
+    "datatable",
     "frontmatter",
     "gdoc",
     "mdast",
@@ -14,6 +15,7 @@
     "stencila",
     "stringifier",
     "unparse",
+    "unparses",
     "vfile"
   ]
 }

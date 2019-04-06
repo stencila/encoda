@@ -10,13 +10,17 @@
  * rPNGs to be [generated in the browser](https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f).
  */
 
+import { Thing } from '@stencila/schema'
 import puppeteer from 'puppeteer'
-
-import { load, dump } from './index'
-import * as SAST from './sast'
+import { dump, load } from './index'
 import { load as loadVFile, VFile } from './vfile'
 
-export const media = ['rpng']
+export const mediaTypes = [
+  // spell-checker: disable
+  // Shortcuts
+  'rpng'
+  // spell-checker: enable
+]
 
 /**
  * Parse a rPNG to a Stencila node.
@@ -27,7 +31,7 @@ export const media = ['rpng']
  * @param file The `VFile` to parse
  * @returns The Stencila node
  */
-export async function parse(file: VFile): Promise<SAST.Node> {
+export async function parse(file: VFile): Promise<Thing> {
   // TODO extract the JSON from the file.contents buffer
   const json =
     '{"type": "Text", "value": "The JSON extracted from the rPNG TEXt chunk"}'
@@ -44,10 +48,10 @@ export async function parse(file: VFile): Promise<SAST.Node> {
  * @param node The Stencila node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse(node: SAST.Node): Promise<VFile> {
-  // Generate HTML of the `value` of the node
-  if (!node.value) throw new Error('Node must have a value')
-  let html = await dump(node.value, 'html')
+export async function unparse(thing: Thing): Promise<VFile> {
+  // Generate HTML of the `value` of the thing
+  if (!thing.value) throw new Error('Node must have a value')
+  let html = await dump(thing.value, 'html')
 
   // Generate image of rendered HTML
   const browser = await puppeteer.launch()
@@ -65,8 +69,8 @@ export async function unparse(node: SAST.Node): Promise<VFile> {
   const buffer = await elem.screenshot()
   await browser.close()
 
-  // Insert JSON of the node into the image
-  const json = dump(node, 'json')
+  // Insert JSON of the thing into the image
+  const json = dump(thing, 'json')
   // TODO insert json into tEXt chunk
   const image = buffer
 

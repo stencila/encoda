@@ -1,23 +1,22 @@
+import { Thing } from '@stencila/schema'
 // @ts-ignore
-import parser from 'remark-parse'
+import compact from 'mdast-util-compact'
 // @ts-ignore
 import frontmatter from 'remark-frontmatter'
 // @ts-ignore
 import genericExtensionsParser from 'remark-generic-extensions'
 // @ts-ignore
-import compact from 'mdast-util-compact'
+import parser from 'remark-parse'
 // @ts-ignore
 import stringifier from 'remark-stringify'
 import unified from 'unified'
+import * as UNIST from 'unist'
 // @ts-ignore
 import map from 'unist-util-map'
-import * as UNIST from 'unist'
-
 import { mdast2sast, sast2mdast } from './sast-mdast'
-import { Node } from './sast'
 import { load, VFile } from './vfile'
 
-export const media = ['text/markdown', 'text/x-markdown', 'markdown', 'md']
+export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
 /**
  * Options for `remark-frontmatter` parser and stringifier
@@ -132,7 +131,7 @@ function transformExtensions(tree: UNIST.Node) {
   })
 }
 
-export async function parse(file: VFile): Promise<Node> {
+export async function parse(file: VFile): Promise<Thing> {
   const mdast = unified()
     .use(parser, {
       commonmark: true
@@ -144,8 +143,8 @@ export async function parse(file: VFile): Promise<Node> {
   return mdast2sast(mdast)
 }
 
-export async function unparse(node: Node): Promise<VFile> {
-  let mdast = sast2mdast(node)
+export async function unparse(thing: Thing): Promise<VFile> {
+  let mdast = sast2mdast(thing)
   mdast = transformExtensions(mdast)
   const md = unified()
     .use(stringifier)

@@ -27,6 +27,7 @@
     "url": "https://github.com/stencila/convert/issues"
   },
   "dependencies": {
+    "@stencila/schema": "^0.8.0",
     "bin-version-check": "^4.0.0",
     "bin-wrapper": "^4.1.0",
     "cheerio": "^1.0.0-rc.2",
@@ -41,7 +42,7 @@
     "mdast-util-compact": "^1.0.2",
     "mdast-util-to-hast": "^4.0.0",
     "memfs": "^2.15.2",
-    "mime-types": "^2.1.22",
+    "mime": "^2.4.1",
     "mkdirp": "^0.5.1",
     "puppeteer": "^1.14.0",
     "rehype-parse": "^6.0.0",

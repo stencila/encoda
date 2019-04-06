@@ -1,8 +1,7 @@
-import * as UNIST from 'unist'
-import * as MDAST from 'mdast'
+import { Thing } from '@stencila/schema'
 import * as yaml from 'js-yaml'
-
-import * as Sast from './sast'
+import * as MDAST from 'mdast'
+import * as UNIST from 'unist'
 
 /**
  * Transform a [Markdown Abstract Syntax Tree](https://github.com/syntax-tree/mdast) to
@@ -10,7 +9,7 @@ import * as Sast from './sast'
  *
  * @param node The MDAST tree to transform
  */
-export function mdast2sast(node: UNIST.Node): Sast.Node {
+export function mdast2sast(node: UNIST.Node): Thing {
   switch (node.type) {
     case 'root':
       return documentFromRoot(node as MDAST.Root)
@@ -24,7 +23,7 @@ export function mdast2sast(node: UNIST.Node): Sast.Node {
  *
  * @param node The SAST tree to transform
  */
-export function sast2mdast(node: Sast.Node): UNIST.Node {
+export function sast2mdast(node: Thing): UNIST.Node {
   switch (node.type) {
     case 'Document':
       return documentToRoot(node)
@@ -42,11 +41,11 @@ export function sast2mdast(node: Sast.Node): UNIST.Node {
  *
  * @param root The MDAST root to convert
  */
-function documentFromRoot(root: MDAST.Root): Sast.Node {
-  const doc: Sast.Node = {
+function documentFromRoot(root: MDAST.Root): Thing {
+  const doc: Thing = {
     type: 'Document'
   }
-  const body: Array<Sast.Node> = []
+  const body: Array<Thing> = []
   for (let child of root.children) {
     if (child.type === 'yaml') {
       const frontmatter = yaml.safeLoad(child.value)
@@ -70,7 +69,7 @@ function documentFromRoot(root: MDAST.Root): Sast.Node {
  *
  * @param node The SAST document to convert
  */
-function documentToRoot(node: Sast.Node): MDAST.Root {
+function documentToRoot(node: Thing): MDAST.Root {
   const root: MDAST.Root = {
     type: 'root',
     children: []
@@ -93,8 +92,8 @@ function documentToRoot(node: Sast.Node): MDAST.Root {
   return root
 }
 
-function defaultFrom(mdast: UNIST.Node): Sast.Node {
-  const sast: Sast.Node = {
+function defaultFrom(mdast: UNIST.Node): Thing {
+  const sast: Thing = {
     type: mdast.type.charAt(0).toUpperCase() + mdast.type.slice(1)
   }
   for (let [key, child] of Object.entries(mdast)) {
@@ -109,7 +108,7 @@ function defaultFrom(mdast: UNIST.Node): Sast.Node {
   return sast
 }
 
-function defaultTo(sast: Sast.Node): UNIST.Node {
+function defaultTo(sast: Thing): UNIST.Node {
   const mdast: { [key: string]: any } = {
     type: sast.type.toLowerCase()
   }

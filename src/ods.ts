@@ -2,16 +2,20 @@
  * Compiler for Open Document Spreadsheet (ODS)
  */
 
-import { Node } from './sast'
-import * as xlsx from './xlsx'
+import { Thing } from '@stencila/schema'
 import { VFile } from './vfile'
+import * as xlsx from './xlsx'
 
-export const media = ['application/vnd.oasis.opendocument.spreadsheet', 'ods']
+export const mediaTypes = [
+  // spell-checker: disable
+  'application/vnd.oasis.opendocument.spreadsheet'
+  // spell-checker: enable
+]
 
-export async function parse(file: VFile): Promise<Node> {
+export async function parse(file: VFile): Promise<Thing> {
   return xlsx.parse(file)
 }
 
-export async function unparse(node: Node): Promise<VFile> {
+export async function unparse(node: Thing): Promise<VFile> {
   return xlsx.unparse(node, undefined, 'ods')
 }

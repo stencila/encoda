@@ -2,17 +2,16 @@
  * Compiler for YAML
  */
 
+import { Thing } from '@stencila/schema'
 import yaml from 'js-yaml'
-
 import { dump, load, VFile } from './vfile'
-import { Node } from './sast'
 
-export const media = ['text/yaml', 'yaml']
+export const mediaTypes = ['text/yaml']
 
-export async function parse(file: VFile): Promise<Node> {
+export async function parse(file: VFile): Promise<Thing> {
   return yaml.safeLoad(dump(file))
 }
 
-export async function unparse(node: Node): Promise<VFile> {
-  return load(yaml.safeDump(node))
+export async function unparse(thing: Thing): Promise<VFile> {
+  return load(yaml.safeDump(thing))
 }
