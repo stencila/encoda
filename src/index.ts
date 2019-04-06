@@ -1,6 +1,5 @@
 import { Thing } from '@stencila/schema'
 import getStdin from 'get-stdin'
-// @ts-ignore
 import mime from 'mime'
 import * as csv from './csv'
 import * as gdoc from './gdoc'
@@ -116,7 +115,7 @@ export async function resolve(
     }
   } else if (filePath) {
     // Try to determine the media type from the path
-    mediaType = mime.getType(filePath)
+    mediaType = mime.getType(filePath) || undefined
   }
 
   if (mediaType) {
