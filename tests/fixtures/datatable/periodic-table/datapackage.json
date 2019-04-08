@@ -1,0 +1,77 @@
+{
+  "name": "period-table",
+  "title": "Periodic Table",
+  "profile": "tabular-data-package",
+  "licenses": [
+    {
+      "id": "CC0-1.0",
+      "title": "CC0 1.0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
+  "resources": [
+    {
+      "path": "data.csv",
+      "name": "data",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "UTF-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "atomic number",
+            "type": "integer",
+            "format": "default",
+            "constraints": {
+              "minimum": 1,
+              "maximum": 10
+            }
+          },
+          {
+            "name": "symbol",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "minLength": 1,
+              "maxLength": 2
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "minLength": 1,
+              "maxLength": 50,
+              "pattern": "[A-Z][a-z]+"
+            }
+          },
+          {
+            "name": "atomic mass",
+            "type": "number",
+            "format": "default",
+            "constraints": {
+              "minimum": 1
+            }
+          },
+          {
+            "name": "metal or nonmetal?",
+            "type": "string",
+            "format": "default",
+            "constraints": {
+              "enum": [
+                "nonmetal",
+                "noble gas",
+                "alkali metal",
+                "alkaline earth metal",
+                "metalloid",
+                "halogen"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

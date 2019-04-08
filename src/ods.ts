@@ -2,7 +2,7 @@
  * Compiler for Open Document Spreadsheet (ODS)
  */
 
-import { Thing } from '@stencila/schema'
+import stencila from '@stencila/schema'
 import { VFile } from './vfile'
 import * as xlsx from './xlsx'
 
@@ -12,10 +12,10 @@ export const mediaTypes = [
   // spell-checker: enable
 ]
 
-export async function parse(file: VFile): Promise<Thing> {
+export async function parse(file: VFile): Promise<stencila.Node> {
   return xlsx.parse(file)
 }
 
-export async function unparse(node: Thing): Promise<VFile> {
+export async function unparse(node: stencila.Node): Promise<VFile> {
   return xlsx.unparse(node, undefined, 'ods')
 }
