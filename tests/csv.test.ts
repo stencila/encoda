@@ -2,9 +2,10 @@ import { parse, unparse } from '../src/csv'
 import { dump, load } from '../src/vfile'
 
 const simple = {
-  content: `1,2,3\n2,5,6\n3,8,9`,
+  content: `A,B,C\n1,2,3\n2,5,6\n3,8,9\n`,
   node: {
     type: 'Datatable',
+    name: 'Sheet1',
     columns: [
       {
         type: 'DatatableColumn',
@@ -26,9 +27,10 @@ const simple = {
 }
 
 const named = {
-  content: `code,height,width\na,2,3\nb,5,6\nc,8,9`,
+  content: `code,height,width\na,2,3\nb,5,6\nc,8,9\n`,
   node: {
     type: 'Datatable',
+    name: 'Sheet1',
     columns: [
       {
         type: 'DatatableColumn',
@@ -50,22 +52,42 @@ const named = {
 }
 
 const formulas = {
-  content: `1\t= A1 * 2\n= B1 * 3`,
+  content: `1,=A1*2\n=B1*3,\n`,
   node: {
     type: 'Table',
-    cells: {
-      A1: 1,
-      B1: {
-        type: 'Expression',
-        programmingLanguages: ['excel'],
-        text: 'A1 * 2'
+    name: 'Sheet1',
+    cells: [
+      {
+        type: 'TableCell',
+        name: 'A1',
+        position: [0, 0],
+        content: [1]
       },
-      A2: {
-        type: 'Expression',
-        programmingLanguages: ['excel'],
-        text: 'B1 * 3'
+      {
+        type: 'TableCell',
+        name: 'B1',
+        position: [1, 0],
+        content: [
+          {
+            type: 'Expression',
+            programmingLanguages: ['excel'],
+            text: 'A1*2'
+          }
+        ]
+      },
+      {
+        type: 'TableCell',
+        name: 'A2',
+        position: [0, 1],
+        content: [
+          {
+            type: 'Expression',
+            programmingLanguages: ['excel'],
+            text: 'B1*3'
+          }
+        ]
       }
-    }
+    ]
   }
 }
 
@@ -75,6 +97,8 @@ test('parse', async () => {
   expect(await parse(load(formulas.content))).toEqual(formulas.node)
 })
 
-test.skip('unparse', async () => {
+test('unparse', async () => {
   expect(dump(await unparse(simple.node))).toEqual(simple.content)
+  expect(dump(await unparse(named.node))).toEqual(named.content)
+  expect(dump(await unparse(formulas.node))).toEqual(formulas.content)
 })

@@ -23,6 +23,7 @@ const simple = {
   file: `${__dirname}/fixtures/datatable/simple/simple.xlsx`,
   node: {
     type: 'Datatable',
+    name: 'Sheet1',
     columns: [
       {
         type: 'DatatableColumn',
@@ -45,6 +46,7 @@ const collection = {
     parts: [
       {
         type: 'Datatable',
+        name: 'data',
         columns: [
           {
             type: 'DatatableColumn',
@@ -70,22 +72,47 @@ const collection = {
       },
       {
         type: 'Table',
-        cells: {
-          A1: 'mean height',
-          A2: 'mean weight',
-          B1: {
-            type: 'Expression',
-            programmingLanguages: ['excel'],
-            text: 'AVERAGE(data!B2:B7)',
-            value: 3.5
+        name: 'calcs',
+        cells: [
+          {
+            type: 'TableCell',
+            name: 'A1',
+            position: [0, 0],
+            content: ['mean height']
           },
-          B2: {
-            type: 'Expression',
-            programmingLanguages: ['excel'],
-            text: 'AVERAGE(data!C2:C7)',
-            value: 2.66666666666667
+          {
+            type: 'TableCell',
+            name: 'B1',
+            position: [1, 0],
+            content: [
+              {
+                type: 'Expression',
+                programmingLanguages: ['excel'],
+                text: 'AVERAGE(data!B2:B7)',
+                value: 3.5
+              }
+            ]
+          },
+          {
+            type: 'TableCell',
+            name: 'A2',
+            position: [0, 1],
+            content: ['mean weight']
+          },
+          {
+            type: 'TableCell',
+            name: 'B2',
+            position: [1, 1],
+            content: [
+              {
+                type: 'Expression',
+                programmingLanguages: ['excel'],
+                text: 'AVERAGE(data!C2:C7)',
+                value: 2.66666666666667
+              }
+            ]
           }
-        }
+        ]
       }
     ]
   }
@@ -96,7 +123,9 @@ test('parse', async () => {
   expect(await parse(await read(collection.file))).toEqual(collection.node)
 })
 
-test.skip('unparse', async () => {
-  expect(await unparse(simple.node)).toEqual(await read(simple.file))
-  expect(await unparse(collection.node)).toEqual(await read(collection.file))
+test('unparse', async () => {
+  // Use round trip since meta data in the binary file (e.g. last save time)
+  // makes comparison of those files difficult
+  expect(await parse(await unparse(simple.node))).toEqual(simple.node)
+  expect(await parse(await unparse(collection.node))).toEqual(collection.node)
 })
