@@ -1,9 +1,7 @@
 import fs from 'fs'
-import path from 'path'
-
 import glob from 'glob'
-
-import { handled, convert } from '../src/'
+import path from 'path'
+import { convert, handled } from '../src/'
 
 test('fixtures', async () => {
   // For each node type...
@@ -62,9 +60,9 @@ test('fixtures', async () => {
             .readFileSync(dest)
             .toString()
             .trim()
-          const message = `${path.basename(dest)} !== ${path.basename(
-            expected
-          )}`
+          const message = `${caseDir}: ${path.basename(
+            dest
+          )} !== ${path.basename(expected)}`
           if (expectedString.length < 500 && actualString.length < 500) {
             // @ts-ignore
             expect(actualString, message).toEqual(expectedString)

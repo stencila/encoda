@@ -10,7 +10,6 @@
  * rPNGs to be [generated in the browser](https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f).
  */
 
-import { Thing } from '@stencila/schema'
 import puppeteer from 'puppeteer'
 import { dump, load } from './index'
 import { load as loadVFile, VFile } from './vfile'

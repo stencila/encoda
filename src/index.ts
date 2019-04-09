@@ -1,13 +1,13 @@
-import { Thing } from '@stencila/schema'
+import stencila from '@stencila/schema'
 import getStdin from 'get-stdin'
 import mime from 'mime'
 import * as csv from './csv'
-import * as gdoc from './gdoc'
+// import * as gdoc from './gdoc'
 import * as html from './html'
 import * as json from './json'
 import * as md from './md'
 import * as ods from './ods'
-import * as rpng from './rpng'
+import * as tdp from './tdp'
 import * as vfile from './vfile'
 import * as xlsx from './xlsx'
 import * as yaml from './yaml'
@@ -24,15 +24,16 @@ type VFile = vfile.VFile
 const compilerList: Array<Compiler> = [
   // Binary formats where sniffing may help resolve media type
   ods,
-  rpng,
+  //  rpng,
   xlsx,
 
   // Text formats where sniffing may help resolve media type
   html,
+  tdp,
 
   // Text formats where sniffing will not help resolve media type (much)
   csv,
-  gdoc,
+  //  gdoc,
   json,
   md,
   yaml
@@ -51,6 +52,17 @@ for (let compiler of compilerList) {
   }
 }
 
+// Define media types not in the database so that they
+// can be explicitly referred to using extension name aliases
+for (let compiler of compilerList) {
+  const extensions = compiler.extensions
+  if (extensions) {
+    for (let medium of compiler.mediaTypes) {
+      mime.define({ medium: extensions })
+    }
+  }
+}
+
 /**
  * The interface for a compiler.
  *
@@ -64,9 +76,16 @@ for (let compiler of compilerList) {
 interface Compiler {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
-   * that the compiler can parse/unparse
+   * that the compiler can parse/unparse.
    */
   mediaTypes: Array<string>
+
+  /**
+   * Any array of additional filename extensions to register for the compiler.
+   * This can be useful for specifying conversion to less well known media types or to differentiate between
+   * flavours of formats like JSON e.g. `--from dap` for parsing `datapackage.json`
+   */
+  extensions?: Array<string>
 
   /**
    * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
@@ -75,22 +94,22 @@ interface Compiler {
   sniff?: (filePath: string) => Promise<boolean>
 
   /**
-   * Parse a `Vfile` to a `Thing`.
+   * Parse a `Vfile` to a `stencila.Node`.
    *
    * @param file The `VFile` to parse
-   * @returns A promise that resolves to a `Thing`
+   * @returns A promise that resolves to a `stencila.Node`
    */
-  parse: (file: VFile) => Promise<Thing>
+  parse: (file: VFile) => Promise<stencila.Node>
 
   /**
-   * Unparse a `Thing` to a `VFile`.
+   * Unparse a `stencila.Node` to a `VFile`.
    *
-   * @param thing The `Thing` to unparse
+   * @param thing The `stencila.Node` to unparse
    * @param filePath The file system path to unparse to
    *                 (Can be used by compilers that need to write more than one file when unparsing)
    * @returns A promise that resolves to a `VFile`
    */
-  unparse: (thing: Thing, filePath?: string) => Promise<VFile>
+  unparse: (node: stencila.Node, filePath?: string) => Promise<VFile>
 }
 
 /**
@@ -156,34 +175,40 @@ export async function parse(
   file: VFile,
   filePath?: string,
   mediaType?: string
-): Promise<Thing> {
+): Promise<stencila.Node> {
   const compiler = await resolve(filePath, mediaType)
   return compiler.parse(file)
 }
 
 export async function unparse(
-  thing: Thing,
+  node: stencila.Node,
   filePath?: string,
   mediaType?: string
 ): Promise<VFile> {
   const compiler = await resolve(filePath, mediaType)
-  return compiler.unparse(thing, filePath)
+  return compiler.unparse(node, filePath)
 }
 
-export async function load(content: string, mediaType: string): Promise<Thing> {
+export async function load(
+  content: string,
+  mediaType: string
+): Promise<stencila.Node> {
   const file = vfile.load(content)
   return parse(file, undefined, mediaType)
 }
 
-export async function dump(thing: Thing, mediaType: string): Promise<string> {
-  const file = await unparse(thing, undefined, mediaType)
+export async function dump(
+  node: stencila.Node,
+  mediaType: string
+): Promise<string> {
+  const file = await unparse(node, undefined, mediaType)
   return vfile.dump(file)
 }
 
 export async function read(
   filePath?: string,
   mediaType?: string
-): Promise<Thing> {
+): Promise<stencila.Node> {
   let file
   if (filePath) file = await vfile.read(filePath)
   else file = vfile.load(await getStdin())
@@ -191,11 +216,11 @@ export async function read(
 }
 
 export async function write(
-  thing: Thing,
+  node: stencila.Node,
   filePath?: string,
   mediaType?: string
 ): Promise<void> {
-  let file = await unparse(thing, filePath, mediaType)
+  let file = await unparse(node, filePath, mediaType)
   if (!filePath) console.log(vfile.dump(file))
   else await vfile.write(file, filePath)
 }
@@ -214,6 +239,6 @@ export async function convert(
   from?: string,
   to?: string
 ): Promise<void> {
-  const thing = await read(inp, from)
-  await write(thing, out, to)
+  const node = await read(inp, from)
+  await write(node, out, to)
 }

@@ -1,5 +1,23 @@
 import { read } from '../src/vfile'
-import { parse, unparse } from '../src/xlsx'
+import {
+  columnIndexToName,
+  columnNameToIndex,
+  parse,
+  unparse
+} from '../src/xlsx'
+
+test('columnNameToIndex, columnIndexToName', async () => {
+  expect(columnNameToIndex('A')).toEqual(0)
+  expect(columnIndexToName(0)).toEqual('A')
+
+  expect(columnNameToIndex('Z')).toEqual(25)
+  expect(columnIndexToName(25)).toEqual('Z')
+
+  expect(columnNameToIndex('AA')).toEqual(columnNameToIndex('Z') + 1)
+
+  expect(columnIndexToName(columnNameToIndex('AZ'))).toEqual('AZ')
+  expect(columnIndexToName(columnNameToIndex('ZZ'))).toEqual('ZZ')
+})
 
 const simple = {
   file: `${__dirname}/fixtures/datatable/simple/simple.xlsx`,

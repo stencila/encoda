@@ -1,4 +1,4 @@
-import { Thing } from '@stencila/schema'
+import stencila, { Thing } from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import * as MDAST from 'mdast'
 import * as UNIST from 'unist'
@@ -23,7 +23,11 @@ export function mdast2sast(node: UNIST.Node): Thing {
  *
  * @param node The SAST tree to transform
  */
-export function sast2mdast(node: Thing): UNIST.Node {
+export function sast2mdast(node: stencila.Node): UNIST.Node {
+  if (!node || typeof node !== 'object' || !node.hasOwnProperty('type')) {
+    throw new Error('Unable to unparse node')
+  }
+  node = node as stencila.Thing
   switch (node.type) {
     case 'Document':
       return documentToRoot(node)

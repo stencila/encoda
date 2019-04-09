@@ -69,14 +69,7 @@ function parseWorkbook(
         const match = key.match(/^([A-Z]+)([1-9][0-9]*)$/)
         if (!match) throw new Error(`Unexpected cell key ${key}`)
 
-        const letters = match[1]
-        let column = 0
-        let position = 0
-        for (const letter of letters) {
-          column += position * 26 + (letter.charCodeAt(0) - 65)
-          position += 1
-        }
-
+        const column = columnNameToIndex(match[1])
         const row = parseInt(match[2], 10) - 1
 
         let values = columns[column]
@@ -102,16 +95,7 @@ function parseWorkbook(
           column.shift()
         }
       } else {
-        for (let column = 0; column < columns.length; column++) {
-          let num = column
-          let name = ''
-          while (num >= 0) {
-            let remainder = column % 26
-            name += String.fromCharCode(65 + remainder)
-            num -= remainder
-          }
-          names.push(name)
-        }
+        names = columns.map((column, index) => columnIndexToName(index))
       }
 
       const datatable: stencila.Datatable = {
@@ -165,6 +149,39 @@ function parseCell(cell: xlsx.CellObject) {
   } else {
     return value
   }
+}
+
+/**
+ * Convert a column index (e.g. `27`) into a name (e.g. `AA`)
+ *
+ * Thanks to https://stackoverflow.com/a/182924.
+ *
+ * @param index The column index
+ */
+export function columnIndexToName(index: number) {
+  let name = ''
+  let dividend = index + 1
+  while (dividend > 0) {
+    let modulo = (dividend - 1) % 26
+    name = String.fromCharCode(65 + modulo) + name
+    dividend = Math.floor((dividend - modulo) / 26)
+  }
+  return name
+}
+
+/**
+ * Convert a column name (e.g. `AA`) into letters (e.g. `27`)
+ *
+ * Thanks to https://stackoverflow.com/a/46173864.
+ *
+ * @param index The column index
+ */
+export function columnNameToIndex(letters: string) {
+  let index = 0
+  for (let position = 0; position < letters.length; position++) {
+    index = letters[position].charCodeAt(0) - 64 + index * 26
+  }
+  return index - 1
 }
 
 function unparseNode(node: stencila.Node): xlsx.WorkBook {
