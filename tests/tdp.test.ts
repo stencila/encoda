@@ -10,9 +10,12 @@ const periodic = {
         type: 'DatatableColumn',
         name: 'atomic number',
         schema: {
-          type: 'integer',
-          minimum: 1,
-          maximum: 10
+          type: 'DatatableColumnSchema',
+          items: {
+            type: 'integer',
+            minimum: 1,
+            maximum: 10
+          }
         },
         values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       },
@@ -20,9 +23,13 @@ const periodic = {
         type: 'DatatableColumn',
         name: 'symbol',
         schema: {
-          type: 'string',
-          minLength: 1,
-          maxLength: 2
+          type: 'DatatableColumnSchema',
+          items: {
+            type: 'string',
+            minLength: 1,
+            maxLength: 2
+          },
+          uniqueItems: true
         },
         values: ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne']
       },
@@ -30,10 +37,13 @@ const periodic = {
         type: 'DatatableColumn',
         name: 'name',
         schema: {
-          type: 'string',
-          minLength: 1,
-          maxLength: 50,
-          pattern: '[A-Z][a-z]+'
+          type: 'DatatableColumnSchema',
+          items: {
+            type: 'string',
+            minLength: 1,
+            maxLength: 50,
+            pattern: '[A-Z][a-z]+'
+          }
         },
         values: [
           'Hydrogen',
@@ -52,8 +62,18 @@ const periodic = {
         type: 'DatatableColumn',
         name: 'atomic mass',
         schema: {
-          type: 'number',
-          minimum: 1
+          type: 'DatatableColumnSchema',
+          items: {
+            anyOf: [
+              {
+                type: 'number',
+                minimum: 1
+              },
+              {
+                type: 'null'
+              }
+            ]
+          }
         },
         values: [
           1.00794,
@@ -72,15 +92,18 @@ const periodic = {
         type: 'DatatableColumn',
         name: 'metal or nonmetal?',
         schema: {
-          type: 'string',
-          enum: [
-            'nonmetal',
-            'noble gas',
-            'alkali metal',
-            'alkaline earth metal',
-            'metalloid',
-            'halogen'
-          ]
+          type: 'DatatableColumnSchema',
+          items: {
+            type: 'string',
+            enum: [
+              'nonmetal',
+              'noble gas',
+              'alkali metal',
+              'alkaline earth metal',
+              'metalloid',
+              'halogen'
+            ]
+          }
         },
         values: [
           'nonmetal',

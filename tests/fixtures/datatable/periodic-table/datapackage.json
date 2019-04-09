@@ -1,5 +1,5 @@
 {
-  "name": "period-table",
+  "name": "periodic-table",
   "title": "Periodic Table",
   "profile": "tabular-data-package",
   "licenses": [
@@ -24,6 +24,7 @@
             "type": "integer",
             "format": "default",
             "constraints": {
+              "required": true,
               "minimum": 1,
               "maximum": 10
             }
@@ -33,6 +34,8 @@
             "type": "string",
             "format": "default",
             "constraints": {
+              "required": true,
+              "unique": true,
               "minLength": 1,
               "maxLength": 2
             }
@@ -42,6 +45,7 @@
             "type": "string",
             "format": "default",
             "constraints": {
+              "required": true,
               "minLength": 1,
               "maxLength": 50,
               "pattern": "[A-Z][a-z]+"
@@ -60,6 +64,7 @@
             "type": "string",
             "format": "default",
             "constraints": {
+              "required": true,
               "enum": [
                 "nonmetal",
                 "noble gas",
