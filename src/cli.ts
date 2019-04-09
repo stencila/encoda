@@ -1,5 +1,4 @@
 import yargs from 'yargs'
-
 import { convert } from './index'
 
 const VERSION = require('../package').version
@@ -36,7 +35,9 @@ yargs
       const out = argv.out
       const from = argv.from
       const to = argv.to
-      console.error(`Converting from ${inp} to ${out}`)
+      console.error(
+        `Converting from "${inp ? inp : from}" to "${out ? out : to}"`
+      )
       await convert(inp, out, from, to)
     }
   )

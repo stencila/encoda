@@ -1,4 +1,4 @@
-import { Thing } from '@stencila/schema'
+import stencila from '@stencila/schema'
 // @ts-ignore
 import compact from 'mdast-util-compact'
 // @ts-ignore
@@ -131,7 +131,7 @@ function transformExtensions(tree: UNIST.Node) {
   })
 }
 
-export async function parse(file: VFile): Promise<Thing> {
+export async function parse(file: VFile): Promise<stencila.Node> {
   const mdast = unified()
     .use(parser, {
       commonmark: true
@@ -143,8 +143,8 @@ export async function parse(file: VFile): Promise<Thing> {
   return mdast2sast(mdast)
 }
 
-export async function unparse(thing: Thing): Promise<VFile> {
-  let mdast = sast2mdast(thing)
+export async function unparse(node: stencila.Node): Promise<VFile> {
+  let mdast = sast2mdast(node)
   mdast = transformExtensions(mdast)
   const md = unified()
     .use(stringifier)

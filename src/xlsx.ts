@@ -97,18 +97,18 @@ function parseWorkbook(
           break
         }
       }
-      if (names.length == columns.length) {
+      if (names.length === columns.length) {
         for (const column of columns) {
           column.shift()
         }
       } else {
         for (let column = 0; column < columns.length; column++) {
-          let number = column
+          let num = column
           let name = ''
-          while (number >= 0) {
+          while (num >= 0) {
             let remainder = column % 26
             name += String.fromCharCode(65 + remainder)
-            number -= remainder
+            num -= remainder
           }
           names.push(name)
         }
@@ -135,7 +135,7 @@ function parseWorkbook(
 
     // If this is the only sheet then simply return the
     // part, otherwise add it to the list of parts.
-    if (workbook.SheetNames.length == 1) return part
+    if (workbook.SheetNames.length === 1) return part
     else parts.push(part)
   }
 

@@ -22,7 +22,7 @@
  *    to walk Stencila JSON and build up the GDoc by calling methods such as `Body.appendParagraph` etc.
  */
 
-import { Thing } from '@stencila/schema'
+import stencila from '@stencila/schema'
 import { docs_v1 as GDoc } from 'googleapis'
 import { dump, load, VFile } from './vfile'
 
@@ -34,7 +34,7 @@ export const mediaTypes = ['application/vnd.google-apps.document']
  * @param file The `VFile` to parse
  * @returns The root of the document
  */
-export async function parse(file: VFile): Promise<Thing> {
+export async function parse(file: VFile): Promise<stencila.Node> {
   const json = dump(file)
   const gdoc = JSON.parse(json)
   return parseDocument(gdoc)
@@ -46,7 +46,7 @@ export async function parse(file: VFile): Promise<Thing> {
  * @param node The document node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse(node: Thing): Promise<VFile> {
+export async function unparse(node: stencila.Node): Promise<VFile> {
   const gdoc = unparseDocument(node)
   const json = JSON.stringify(gdoc, null, '  ')
   return load(json)
@@ -58,7 +58,7 @@ export async function unparse(node: Thing): Promise<VFile> {
  * Note that currently `SectionBreak`, `Table` and `TableOfContents`
  * child elements are ignored
  */
-function parseDocument(gdoc: GDoc.Schema$Document): Thing {
+function parseDocument(gdoc: GDoc.Schema$Document): stencila.Node {
   let body: Array<any> = []
   if (gdoc.body && gdoc.body.content) {
     body = gdoc.body.content
@@ -80,10 +80,10 @@ function parseDocument(gdoc: GDoc.Schema$Document): Thing {
 /**
  * Unparse a Stencila `Document` to a GDoc `Document`
  */
-function unparseDocument(sDoc: Thing): GDoc.Schema$Document {
+function unparseDocument(sDoc: stencila.Node): GDoc.Schema$Document {
   let content: Array<GDoc.Schema$StructuralElement> = []
   if (sDoc.body) {
-    content = sDoc.body.map((node: Thing) => {
+    content = sDoc.body.map((node: stencila.Node) => {
       switch (node.type) {
         // These need to be GDoc.Schema$StructuralElement nodes
         case 'Heading':
@@ -105,7 +105,7 @@ function unparseDocument(sDoc: Thing): GDoc.Schema$Document {
 /**
  * Parse a GDoc `Paragraph` to a Stencila `Paragraph` or `Heading` node.
  */
-function parseParagraph(gPara: GDoc.Schema$Paragraph): Thing {
+function parseParagraph(gPara: GDoc.Schema$Paragraph): stencila.Node {
   let children: Array<any> = []
   if (gPara.elements) {
     children = gPara.elements.map((elem: GDoc.Schema$ParagraphElement) => {
@@ -135,7 +135,7 @@ function parseParagraph(gPara: GDoc.Schema$Paragraph): Thing {
 /**
  * Unparse a Stencila `Heading` to a GDoc `Paragraph` with a `HEADING_` style.
  */
-function unparseHeading(sHeading: Thing): GDoc.Schema$Paragraph {
+function unparseHeading(sHeading: stencila.Node): GDoc.Schema$Paragraph {
   const gPara = unparseParagraph(sHeading)
   gPara.paragraphStyle = { namedStyleType: `HEADING_${sHeading.depth}` }
   return gPara
@@ -144,10 +144,10 @@ function unparseHeading(sHeading: Thing): GDoc.Schema$Paragraph {
 /**
  * Unparse a Stencila `Paragraph` to a GDoc `Paragraph`.
  */
-function unparseParagraph(sPara: Thing): GDoc.Schema$Paragraph {
+function unparseParagraph(sPara: stencila.Node): GDoc.Schema$Paragraph {
   let elements: Array<GDoc.Schema$ParagraphElement> = []
   if (sPara.children) {
-    elements = sPara.children.map((node: Thing) => {
+    elements = sPara.children.map((node: stencila.Node) => {
       switch (node.type) {
         case 'Emphasis':
           return { textRun: unparseEmphasis(node) }
@@ -168,7 +168,7 @@ function unparseParagraph(sPara: Thing): GDoc.Schema$Paragraph {
 /**
  * Parse a GDoc `TextRun` to a Stencila `Text` node.
  */
-function parseTextRun(gTextRun: GDoc.Schema$TextRun): Thing {
+function parseTextRun(gTextRun: GDoc.Schema$TextRun): stencila.Node {
   let text = {
     type: 'Text',
     value: ''
@@ -199,9 +199,11 @@ function parseTextRun(gTextRun: GDoc.Schema$TextRun): Thing {
 /**
  * Unparse a Stencila `Emphasis` node to a GDoc `TextRun` node with `textStyle`.
  */
-function unparseEmphasis(sEmphasis: Thing): GDoc.Schema$TextRun {
+function unparseEmphasis(sEmphasis: stencila.Node): GDoc.Schema$TextRun {
   return {
-    content: sEmphasis.children.map((child: Thing) => child.value).join(),
+    content: sEmphasis.children
+      .map((child: stencila.Node) => child.value)
+      .join(),
     textStyle: {
       italic: true
     }
@@ -211,9 +213,9 @@ function unparseEmphasis(sEmphasis: Thing): GDoc.Schema$TextRun {
 /**
  * Unparse a Stencila `Strong` node to a GDoc `TextRun` node with `textStyle`.
  */
-function unparseStrong(sStrong: Thing): GDoc.Schema$TextRun {
+function unparseStrong(sStrong: stencila.Node): GDoc.Schema$TextRun {
   return {
-    content: sStrong.children.map((child: Thing) => child.value).join(),
+    content: sStrong.children.map((child: stencila.Node) => child.value).join(),
     textStyle: {
       bold: true
     }
@@ -223,7 +225,7 @@ function unparseStrong(sStrong: Thing): GDoc.Schema$TextRun {
 /**
  * Unparse a Stencila `Text` node to a GDoc `TextRun` node.
  */
-function unparseText(sText: Thing): GDoc.Schema$TextRun {
+function unparseText(sText: stencila.Node): GDoc.Schema$TextRun {
   return {
     content: sText.value
   }
