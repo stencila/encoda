@@ -1,10 +1,20 @@
-import { parse } from '../src/tdp'
-import { read } from '../src/vfile'
+import { parse, unparse } from '../src/tdp'
+import { dump, read } from '../src/vfile'
 
 const periodic = {
   file: `${__dirname}/fixtures/datatable/periodic-table/datapackage.json`,
   node: {
     type: 'Datatable',
+    name: 'periodic-table',
+    alternateNames: ['Periodic Table'],
+    licenses: [
+      {
+        type: 'CreativeWork',
+        name: 'CC0-1.0',
+        alternateNames: ['CC0 1.0'],
+        url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+      }
+    ],
     columns: [
       {
         type: 'DatatableColumn',
@@ -126,4 +136,12 @@ test('parse', async () => {
   expect(await parse(await read(periodic.file))).toEqual(periodic.node)
 })
 
-test('unparse', async () => {})
+test('unparse', async () => {
+  const actual = JSON.parse(dump(await unparse(periodic.node)))
+  // Pretend that we unparsed to a a filePath i.e. that
+  // the data was written to disk.
+  delete actual.resources[0].data
+  actual.resources[0].path = 'periodic-table.csv'
+  const expected = JSON.parse(dump(await read(periodic.file)))
+  expect(actual).toEqual(expected)
+})

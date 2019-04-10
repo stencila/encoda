@@ -4,20 +4,21 @@
   "profile": "tabular-data-package",
   "licenses": [
     {
-      "id": "CC0-1.0",
+      "name": "CC0-1.0",
       "title": "CC0 1.0",
-      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      "path": "https://creativecommons.org/publicdomain/zero/1.0/"
     }
   ],
   "resources": [
     {
-      "path": "data.csv",
-      "name": "data",
+      "name": "periodic-table",
+      "path": "periodic-table.csv",
       "profile": "tabular-data-resource",
       "format": "csv",
       "mediatype": "text/csv",
-      "encoding": "UTF-8",
+      "encoding": "utf-8",
       "schema": {
+        "missingValues": [""],
         "fields": [
           {
             "name": "atomic number",

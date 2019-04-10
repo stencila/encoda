@@ -112,13 +112,9 @@ function unparseNode(node: stencila.Node): xlsx.WorkBook {
 }
 
 function unparseTableOrDatatable(node: stencila.Table | stencila.Datatable) {
-  if (node.type === 'Table') {
-    return unparseTable(node)
-  } else if (node.type === 'Datatable') {
-    return unparseDatatable(node)
-  } else {
-    throw new Error(`Unhandled node type "${node.type}"`)
-  }
+  if (node.type === 'Table') return unparseTable(node)
+  else if (node.type === 'Datatable') return unparseDatatable(node)
+  else throw new Error(`Unhandled node type "${node.type}"`)
 }
 
 // Worksheet <-> Table
@@ -267,22 +263,20 @@ function unparseCell(node: stencila.Node): xlsx.CellObject | null {
   if (typeof node === 'boolean') return { t: 'b', v: node }
   if (typeof node === 'number') return { t: 'n', v: node }
   if (typeof node === 'string') return { t: 's', v: node }
-  if (typeof node === 'object') {
-    /* tslint:disable-line:strict-type-predicates */
-    if (!Array.isArray(node) && node.type) {
-      switch (node.type) {
-        case 'Expression': {
-          const expr = node as stencila.Expression
-          const cell: xlsx.CellObject = { t: 'b', f: expr.text }
-          if (expr.value) {
-            const value = unparseCell(expr.value)
-            if (value) {
-              cell.t = value.t
-              cell.v = value.v
-            }
+
+  if (!Array.isArray(node) && node.type) {
+    switch (node.type) {
+      case 'Expression': {
+        const expr = node as stencila.Expression
+        const cell: xlsx.CellObject = { t: 'b', f: expr.text }
+        if (expr.value) {
+          const value = unparseCell(expr.value)
+          if (value) {
+            cell.t = value.t
+            cell.v = value.v
           }
-          return cell
         }
+        return cell
       }
     }
   }

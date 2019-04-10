@@ -19,7 +19,7 @@ import stencila from '@stencila/schema'
 import datapackage from 'datapackage'
 import path from 'path'
 import * as csv from './csv'
-import { dump, VFile } from './vfile'
+import { create, dump, load, VFile } from './vfile'
 
 export const mediaTypes = [
   // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
@@ -39,68 +39,206 @@ export async function sniff(filePath: string): Promise<boolean> {
 
 export async function parse(file: VFile): Promise<stencila.Node> {
   let pkg: datapackage.Package
-  if (file.path) {
-    pkg = await datapackage.Package.load(file.path)
-  } else {
-    pkg = await datapackage.Package.load(JSON.parse(dump(file)))
-  }
+  if (file.path) pkg = await datapackage.Package.load(file.path)
+  else pkg = await datapackage.Package.load(JSON.parse(dump(file)))
 
-  const parts: Array<stencila.Datatable> = []
-  for (const resource of pkg.resources) {
-    // Read in the data
-    let data: Array<any>
-    try {
-      data = await resource.read()
-    } catch (error) {
-      if (error.multiple) {
-        for (const err of error.errors) console.log(err)
-      }
-      throw error
-    }
-
-    // Transform row-wise data into column-wise
-    const values: Array<any> = Array(resource.schema.fields.length)
-      .fill(null)
-      .map(item => Array())
-    for (let row of data) {
-      let index = 0
-      for (let value of row) {
-        values[index].push(value)
-        index += 1
-      }
-    }
-
-    // Parse fields
-    const columns = resource.schema.fields.map((field: any, index: number) =>
-      parseField(field, values[index])
+  // Parse resources
+  const parts: Array<stencila.Datatable> = await Promise.all(
+    pkg.resources.map(async (resource: datapackage.Resource) =>
+      parseResource(resource)
     )
+  )
 
-    const datatable: stencila.Datatable = {
-      type: 'Datatable',
-      columns
+  // Collection or Datatable ?
+  let node: stencila.CreativeWork
+  if (parts.length === 1) {
+    node = parts[0]
+  } else {
+    node = {
+      type: 'Collection',
+      parts
+    } as stencila.Collection
+  }
+
+  // Add metadata https://frictionlessdata.io/specs/data-resource/#metadata-properties
+  const desc = pkg.descriptor
+  if (desc.name) node.name = desc.name
+  if (desc.title) node.alternateNames = [desc.title as string]
+  if (desc.description) node.description = desc.description
+  if (desc.licenses) {
+    // Convert a https://frictionlessdata.io/specs/data-package/#licenses
+    // to a https://schema.org/license property
+    node.licenses = desc.licenses.map((object: any) => {
+      const license: stencila.CreativeWork = { type: 'CreativeWork' }
+      if (object.name) license.name = object.name
+      if (object.path) license.url = object.path
+      if (object.title) license.alternateNames = [object.title]
+      return license
+    })
+  }
+
+  return node
+}
+
+export async function unparse(
+  node: stencila.Node,
+  filePath?: string
+): Promise<VFile> {
+  if (
+    !(
+      node &&
+      typeof node === 'object' &&
+      !Array.isArray(node) &&
+      (node.type === 'Datatable' || node.type === 'Collection')
+    )
+  ) {
+    throw new Error(`Unhandled node type: ${node}`)
+  }
+
+  // Create a package descriptor from meta-data
+  const desc: { [key: string]: any } = {
+    profile: 'tabular-data-package',
+    // Name is the only required property
+    name: node.name || 'Unnamed'
+  }
+  const title = node.alternateNames && node.alternateNames[0]
+  if (title) desc.title = title
+  if (node.description) desc.description = node.description
+  if (node.licenses) {
+    desc.licenses = node.licenses.map(
+      (license: string | stencila.CreativeWork) => {
+        if (typeof license === 'string') {
+          // Since name is required...
+          return { name: license }
+        }
+        const object: { [key: string]: any } = {}
+        if (license.name) object.name = license.name
+        if (license.url) object.path = license.url
+        const title = license.alternateNames && license.alternateNames[0]
+        if (title) object.title = title
+        return object
+      }
+    )
+  }
+
+  // Unparse Datatable into resource descriptors
+  const resources: Array<datapackage.Resource> = []
+  if (node.type === 'Collection') {
+    const collection = node as stencila.Collection
+    if (collection.parts) {
+      for (let part of collection.parts) {
+        if (part.type !== 'Datatable') {
+          throw new Error(
+            `Unable to convert collection part of type ${part.type}`
+          )
+        }
+        resources.push(unparseDatatable(part))
+      }
     }
-    if (pkg.resources.length === 1) return datatable
-    else parts.push(datatable)
+  } else {
+    resources.push(unparseDatatable(node))
   }
+  desc.resources = await Promise.all(
+    resources.map(async resource => (await resource).descriptor)
+  )
 
-  const collection: stencila.Collection = {
-    type: 'Collection',
-    parts
+  const pkg = await datapackage.Package.load(desc, undefined, true)
+
+  if (filePath) {
+    // Save the package (datapackage.json and all resource files) and return an empty VFile
+    pkg.save(filePath)
+    return create()
+  } else {
+    // Return a VFile with the JSON of datapackage.json
+    const json = JSON.stringify(pkg.descriptor, null, '  ')
+    return load(json)
   }
-  return collection
 }
 
-export async function unparse(node: stencila.Node): Promise<VFile> {
-  return csv.unparse(node)
-}
-
-// Field <-> DatatableColumn
+/********************************************************************
+ *  datapackage.Resource <-> stencila.Datatable
+ ********************************************************************/
 
 /**
- * Parse a Frictionless Data Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field)
- * into a `stencila.DatatableColumn`.
+ * Parse a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
+ * to a `stencila.Datatable`.
+ *
+ * @param datatable The datatable to unparse
+ * @returns A resource
  */
-function parseField(field: any, values: Array<any>) {
+async function parseResource(
+  resource: datapackage.Resource
+): Promise<stencila.Datatable> {
+  // Read in the data
+  let data: Array<any>
+  try {
+    data = await resource.read()
+  } catch (error) {
+    if (error.multiple) {
+      for (const err of error.errors) console.log(err)
+    }
+    throw error
+  }
+
+  // Transform row-wise data into column-wise
+  const values: Array<any> = Array(resource.schema.fields.length)
+    .fill(null)
+    .map(item => Array())
+  for (let row of data) {
+    let index = 0
+    for (let value of row) {
+      values[index].push(value)
+      index += 1
+    }
+  }
+
+  // Parse fields
+  const columns = resource.schema.fields.map((field: any, index: number) =>
+    parseField(field, values[index])
+  )
+
+  return {
+    type: 'Datatable',
+    columns
+  }
+}
+
+/**
+ * Unparse a `stencila.Datatable` to a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
+ *
+ * The data is inlined as CSV allowing the resource to be saved to file later.
+ *
+ * @param datatable The datatable to unparse
+ * @returns A resource
+ */
+async function unparseDatatable(
+  datatable: stencila.Datatable
+): datapackage.Resource {
+  const schema = {
+    fields: datatable.columns!.map(unparseDatatableColumn)
+  }
+  const desc = {
+    profile: 'tabular-data-resource',
+    name: datatable.name || 'Unnamed',
+
+    data: dump(await csv.unparse(datatable)),
+    format: 'csv',
+    mediatype: 'text/csv',
+    encoding: 'utf-8',
+
+    schema
+  }
+  return datapackage.Resource.load(desc, undefined, true)
+}
+
+/********************************************************************
+ *  Field <-> DatatableColumn
+ ********************************************************************/
+
+/**
+ * Parse a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field) to a `stencila.DatatableColumn`.
+ */
+function parseField(field: datapackage.Field, values: Array<any>) {
   // Parse constraints
   let constraints = field.constraints || {}
   let items = parseFieldConstraints(constraints)
@@ -126,9 +264,7 @@ function parseField(field: any, values: Array<any>) {
     type: 'DatatableColumnSchema',
     items: items
   }
-  if (constraints.unique) {
-    schema.uniqueItems = true
-  }
+  if (constraints.unique) schema.uniqueItems = true
 
   const column: stencila.DatatableColumn = {
     type: 'DatatableColumn',
@@ -138,6 +274,29 @@ function parseField(field: any, values: Array<any>) {
   }
   return column
 }
+
+/**
+ * Unparse a `stencila.DatatableColumn` to a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field)
+ */
+function unparseDatatableColumn(
+  column: stencila.DatatableColumn
+): datapackage.Field {
+  const field = {
+    name: column.name
+  }
+  if (!column.schema) return field
+
+  let { type, format, constraints } = unparseDatatableColumnSchema(
+    column.schema
+  )
+  if (column.schema.uniqueItems) constraints.unique = true
+
+  return { ...field, type, format, constraints }
+}
+
+/********************************************************************
+ *  Field type, etc <-> DatatableColumnSchema
+ ********************************************************************/
 
 /**
  * Parse a Frictionless Data Table Schema [types and formats](https://frictionlessdata.io/specs/table-schema/#types-and-formats)
@@ -209,20 +368,74 @@ export function parseFieldTypeFormat(
  * apply to items should be returned here.
  */
 export function parseFieldConstraints(constraints: { [key: string]: any }) {
-  let schema: { [key: string]: any } = {}
-  if (constraints.minimum) schema.minimum = constraints.minimum
-  if (constraints.maximum) schema.maximum = constraints.maximum
-  if (constraints.minLength) schema.minLength = constraints.minLength
-  if (constraints.maxLength) schema.maxLength = constraints.maxLength
-  if (constraints.pattern) schema.pattern = constraints.pattern
-  if (constraints.enum) schema.enum = constraints.enum
+  let items: { [key: string]: any } = {}
+  if (constraints.minimum) items.minimum = constraints.minimum
+  if (constraints.maximum) items.maximum = constraints.maximum
+  if (constraints.minLength) items.minLength = constraints.minLength
+  if (constraints.maxLength) items.maxLength = constraints.maxLength
+  if (constraints.pattern) items.pattern = constraints.pattern
+  if (constraints.enum) items.enum = constraints.enum
 
   if (constraints.required) {
-    return schema
+    return items
   } else {
     // If not required, then allow for null values
     return {
-      anyOf: [schema, { type: 'null' }]
+      anyOf: [items, { type: 'null' }]
     }
   }
+}
+
+function unparseDatatableColumnSchema(schema: stencila.DatatableColumnSchema) {
+  let items = schema.items && typeof schema.items === 'object' && schema.items
+  if (!items) {
+    throw new Error(
+      'Woooah. None of this defensiveness will be necessary with an improved schema'
+    )
+  }
+
+  const constraints: { [key: string]: any } = {}
+
+  if (items.anyOf) {
+    items = items.anyOf[0] as { [key: string]: any }
+  } else {
+    constraints.required = true
+  }
+
+  let type = items.type
+  let format = items.format
+  switch (type) {
+    case 'boolean':
+    case 'integer':
+    case 'number':
+    case 'object':
+    case 'array':
+      break
+
+    case 'string':
+      switch (format) {
+        case 'date':
+          type = 'date'
+          break
+        case 'time':
+          type = 'time'
+          break
+        case 'date-time':
+          type = 'datetime'
+          break
+      }
+      break
+
+    default:
+      type = 'any'
+  }
+
+  if (items.minimum) constraints.minimum = items.minimum
+  if (items.maximum) constraints.maximum = items.maximum
+  if (items.minLength) constraints.minLength = items.minLength
+  if (items.maxLength) constraints.maxLength = items.maxLength
+  if (items.pattern) constraints.pattern = items.pattern
+  if (items.enum) constraints.enum = items.enum
+
+  return { type, format, constraints }
 }
