@@ -17,7 +17,6 @@
 import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
-import path from 'path'
 import * as csv from './csv'
 import { create, dump, load, VFile } from './vfile'
 
@@ -26,16 +25,13 @@ export const mediaTypes = [
   'application/vnd.datapackage+json'
 ]
 
-export const extensions = [
+export const fileNames = ['datapackage.json']
+
+export const extNames = [
   // To be able to refer to this compiler since the `mime` package
   // does not have registered extension names for the above media type
   'tdp'
 ]
-
-export async function sniff(filePath: string): Promise<boolean> {
-  if (path.basename(filePath) === 'datapackage.json') return true
-  return false
-}
 
 export async function parse(file: VFile): Promise<stencila.Node> {
   let pkg: datapackage.Package

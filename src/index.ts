@@ -1,6 +1,7 @@
 import stencila from '@stencila/schema'
 import getStdin from 'get-stdin'
 import mime from 'mime'
+import path from 'path'
 import * as csv from './csv'
 // import * as gdoc from './gdoc'
 import * as html from './html'
@@ -17,51 +18,23 @@ type VFile = vfile.VFile
 /**
  * A list of all compilers.
  *
- * Note that order is of importance when the media type for a given
- * file path or extension can not be determined, since the first compiler
- * which returns `true` when `sniff`ing the file will be used.
+ * Note that order is of importance for matching. More "generic"
+ * formats should go last. See the `match` function.
  */
 const compilerList: Array<Compiler> = [
-  // Binary formats where sniffing may help resolve media type
-  ods,
+  //  gdoc,
   //  rpng,
+  ods,
+  tdp,
   xlsx,
 
-  // Text formats where sniffing may help resolve media type
-  html,
-  tdp,
-
-  // Text formats where sniffing will not help resolve media type (much)
   csv,
-  //  gdoc,
-  json,
   md,
-  yaml
+
+  yaml,
+  html,
+  json
 ]
-
-/**
- * A map of media types to compiler.
- *
- * Used for revolving the compiler to use for a given
- * a file system path, extension name, or media type.
- */
-const compilerMap: { [key: string]: Compiler } = {}
-for (let compiler of compilerList) {
-  for (let medium of compiler.mediaTypes) {
-    compilerMap[medium] = compiler
-  }
-}
-
-// Define media types not in the database so that they
-// can be explicitly referred to using extension name aliases
-for (let compiler of compilerList) {
-  const extensions = compiler.extensions
-  if (extensions) {
-    for (let medium of compiler.mediaTypes) {
-      mime.define({ medium: extensions })
-    }
-  }
-}
 
 /**
  * The interface for a compiler.
@@ -81,15 +54,22 @@ interface Compiler {
   mediaTypes: Array<string>
 
   /**
-   * Any array of additional filename extensions to register for the compiler.
-   * This can be useful for specifying conversion to less well known media types or to differentiate between
-   * flavours of formats like JSON e.g. `--from dap` for parsing `datapackage.json`
+   * Any array of file names to use to match the compiler.
+   * This can be useful for differentiating between
+   * flavours of formats like JSON e.g. `datapackage.json` versus any old `.json` file.
    */
-  extensions?: Array<string>
+  fileNames?: Array<string>
 
   /**
-   * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
-   * of a file path to determine if the compiler is able to parse the content.
+   * Any array of file name extensions to register for the compiler.
+   * This can be useful for specifying conversion to less well known media types
+   * e.g. `--to tdp` for outputting `datapackage.json` to the console.
+   */
+  extNames?: Array<string>
+
+  /**
+   * A function that does directory or [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
+   * to determine if the compiler is able to parse the content.
    */
   sniff?: (filePath: string) => Promise<boolean>
 
@@ -113,42 +93,55 @@ interface Compiler {
 }
 
 /**
- * Resolve the compiler to use to parse/unparse from/to a file path or media type.
+ * Match the compiler based on file name, extension name, media/type or by content sniffing.
  *
- * Resolution is attempted on the basis of media type first and then, if that
- * fails, using the `sniff()` function.
+ * Iterates through the compilers and returns that matches any of the criteria.
  *
  * @param filePath The file path
- * @param mediaType The media type
+ * @param mediaType The media type (e.g. `text/plain`) or the corresponding extension (e.g. `txt`)
  * @returns A promise that resolves to the `Compiler` to use
  */
-export async function resolve(
+export async function match(
   filePath?: string,
   mediaType?: string
 ): Promise<Compiler> {
+  let fileName = filePath ? path.basename(filePath) : undefined
+  let extName = filePath ? path.extname(filePath) : undefined
+
   if (mediaType) {
     // For convenience, media type may be supplied as an extension name e.g. `md`.
-    // So if the supplied value isn't a valid media type, look it up
+    // So if the supplied value isn't a valid media type, look it up and if found then
+    // use that, otherwise use the supplied value as an extension name.
     if (mime.getExtension(mediaType) === null) {
-      mediaType = mime.getType(mediaType) || mediaType
+      let inferredMediaType = mime.getType(mediaType)
+      if (!inferredMediaType) extName = mediaType
+      else mediaType = inferredMediaType
     }
   } else if (filePath) {
     // Try to determine the media type from the path
     mediaType = mime.getType(filePath) || undefined
   }
 
-  if (mediaType) {
-    // Get the compiler for the media type
-    let compiler = compilerMap[mediaType]
-    if (compiler) return compiler
-  }
-
-  if (filePath) {
-    // No compiler found yet, so resort to sniffing the file path
-    for (let compiler of compilerList) {
-      if (compiler.sniff && (await compiler.sniff(filePath))) {
-        return compiler
-      }
+  for (let compiler of compilerList) {
+    if (
+      fileName &&
+      compiler.fileNames &&
+      compiler.fileNames.includes(fileName)
+    ) {
+      return compiler
+    }
+    if (extName && compiler.extNames && compiler.extNames.includes(extName)) {
+      return compiler
+    }
+    if (
+      mediaType &&
+      compiler.mediaTypes &&
+      compiler.mediaTypes.includes(mediaType)
+    ) {
+      return compiler
+    }
+    if (filePath && compiler.sniff && (await compiler.sniff(filePath))) {
+      return compiler
     }
   }
 
@@ -164,7 +157,7 @@ export async function handled(
   mediaType?: string
 ): Promise<boolean> {
   try {
-    await resolve(filePath, mediaType)
+    await match(filePath, mediaType)
     return true
   } catch (error) {
     return false
@@ -176,7 +169,7 @@ export async function parse(
   filePath?: string,
   mediaType?: string
 ): Promise<stencila.Node> {
-  const compiler = await resolve(filePath, mediaType)
+  const compiler = await match(filePath, mediaType)
   return compiler.parse(file)
 }
 
@@ -185,7 +178,7 @@ export async function unparse(
   filePath?: string,
   mediaType?: string
 ): Promise<VFile> {
-  const compiler = await resolve(filePath, mediaType)
+  const compiler = await match(filePath, mediaType)
   return compiler.unparse(node, filePath)
 }
 
