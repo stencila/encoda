@@ -2,7 +2,7 @@ import { parse, unparse } from '../src/tdp'
 import { dump, read } from '../src/vfile'
 
 const periodic = {
-  file: `${__dirname}/fixtures/datatable/periodic-table/datapackage.json`,
+  file: `${__dirname}/fixtures/datatable/periodic-table-skip/datapackage.json`,
   node: {
     type: 'Datatable',
     name: 'periodic-table',

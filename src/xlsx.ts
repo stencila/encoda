@@ -259,11 +259,11 @@ function parseCell(cell: xlsx.CellObject): stencila.Node {
 }
 
 function unparseCell(node: stencila.Node): xlsx.CellObject | null {
+  if (node === undefined) return null
   if (node === null) return null
   if (typeof node === 'boolean') return { t: 'b', v: node }
   if (typeof node === 'number') return { t: 'n', v: node }
   if (typeof node === 'string') return { t: 's', v: node }
-
   if (!Array.isArray(node) && node.type) {
     switch (node.type) {
       case 'Expression': {

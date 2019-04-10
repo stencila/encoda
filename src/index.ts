@@ -3,8 +3,7 @@ import getStdin from 'get-stdin'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
-// import * as gdoc from './gdoc'
-import * as html from './html'
+//import * as html from './html';
 import * as json from './json'
 import * as md from './md'
 import * as ods from './ods'
@@ -32,7 +31,7 @@ const compilerList: Array<Compiler> = [
   md,
 
   yaml,
-  html,
+  //html,
   json
 ]
 
