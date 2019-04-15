@@ -8,7 +8,7 @@
 [![Code coverage](https://codecov.io/gh/stencila/convert/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/convert)
 [![Dependency status](https://david-dm.org/stencila/convert.svg)](https://david-dm.org/stencila/convert)
 
-> _Warning_ This repo is undergoing refactoring. As some of this read me is out of date.
+> _Warning_ This repo is undergoing refactoring. Some of this README is out of date.
 
 Stencila Converters allow you to convert between a range of formats commonly used for "executable documents" (those containing some type of source code or calculation).
 
