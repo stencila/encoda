@@ -13,7 +13,7 @@
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist",
     "build:dist": "tsc",
-    "docs": "typedoc --readme README.md --mode file --out ./docs ./src",
+    "docs": "typedoc --options typedoc.js ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
     "clean": "rimraf coverage docs tests/**/*.to.*"
   },
