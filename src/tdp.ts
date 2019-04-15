@@ -46,7 +46,7 @@ export async function parse(file: VFile): Promise<stencila.Node> {
   )
 
   // Collection or Datatable ?
-  let node: stencila.CreativeWork
+  let node: stencila.Datatable | stencila.Collection
   if (parts.length === 1) {
     node = parts[0]
   } else {
@@ -80,28 +80,19 @@ export async function unparse(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
-  if (
-    !(
-      node &&
-      typeof node === 'object' &&
-      !Array.isArray(node) &&
-      (node.type === 'Datatable' || node.type === 'Collection')
-    )
-  ) {
-    throw new Error(`Unhandled node type: ${node}`)
-  }
+  let cw = node as stencila.CreativeWork
 
   // Create a package descriptor from meta-data
   const desc: { [key: string]: any } = {
     profile: 'tabular-data-package',
     // Name is the only required property
-    name: node.name || 'Unnamed'
+    name: cw.name || 'Unnamed'
   }
-  const title = node.alternateNames && node.alternateNames[0]
+  const title = cw.alternateNames && cw.alternateNames[0]
   if (title) desc.title = title
-  if (node.description) desc.description = node.description
-  if (node.licenses) {
-    desc.licenses = node.licenses.map(
+  if (cw.description) desc.description = cw.description
+  if (cw.licenses) {
+    desc.licenses = cw.licenses.map(
       (license: string | stencila.CreativeWork) => {
         if (typeof license === 'string') {
           // Since name is required...
@@ -119,8 +110,8 @@ export async function unparse(
 
   // Unparse Datatable into resource descriptors
   const resources: Array<datapackage.Resource> = []
-  if (node.type === 'Collection') {
-    const collection = node as stencila.Collection
+  if (cw.type === 'Collection') {
+    const collection = cw as stencila.Collection
     if (collection.parts) {
       for (let part of collection.parts) {
         if (part.type !== 'Datatable') {
@@ -128,11 +119,11 @@ export async function unparse(
             `Unable to convert collection part of type ${part.type}`
           )
         }
-        resources.push(unparseDatatable(part))
+        resources.push(unparseCreativeWork(part))
       }
     }
   } else {
-    resources.push(unparseDatatable(node))
+    resources.push(unparseCreativeWork(cw))
   }
   desc.resources = await Promise.all(
     resources.map(async resource => (await resource).descriptor)
@@ -200,18 +191,20 @@ async function parseResource(
 }
 
 /**
- * Unparse a `stencila.Datatable` to a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
+ * Unparse a `stencila.CreativeWork` to a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
  *
  * The data is inlined as CSV allowing the resource to be saved to file later.
  *
  * @param datatable The datatable to unparse
  * @returns A resource
  */
-async function unparseDatatable(
-  datatable: stencila.Datatable
+async function unparseCreativeWork(
+  cw: stencila.CreativeWork
 ): datapackage.Resource {
+  const datatable = cw as stencila.Datatable
+
   const schema = {
-    fields: datatable.columns!.map(unparseDatatableColumn)
+    fields: datatable.columns.map(unparseDatatableColumn)
   }
   const desc = {
     profile: 'tabular-data-resource',
@@ -383,15 +376,9 @@ export function parseFieldConstraints(constraints: { [key: string]: any }) {
 }
 
 function unparseDatatableColumnSchema(schema: stencila.DatatableColumnSchema) {
-  let items = schema.items && typeof schema.items === 'object' && schema.items
-  if (!items) {
-    throw new Error(
-      'Woooah. None of this defensiveness will be necessary with an improved schema'
-    )
-  }
+  let items = schema.items
 
   const constraints: { [key: string]: any } = {}
-
   if (items.anyOf) {
     items = items.anyOf[0] as { [key: string]: any }
   } else {

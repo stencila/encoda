@@ -8,7 +8,7 @@
  * and Stencila schema instances.
  */
 
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import * as xlsx from 'xlsx'
 import { load, VFile } from './vfile'
 
@@ -74,34 +74,32 @@ function parseWorkbook(
 }
 
 function unparseNode(node: stencila.Node): xlsx.WorkBook {
-  if (!node || typeof node !== 'object' || !node.hasOwnProperty('type')) {
-    throw new Error('Unable to unparse node')
-  }
-  node = node as stencila.Thing
+  stencila.assert(node, ['Collection', 'Datatable', 'Table'])
+  const type = stencila.type(node)
 
-  let sheetNames: Array<string> = []
-  let sheets: { [key: string]: xlsx.WorkSheet } = {}
-  if (node.type === 'Collection') {
-    const collection = node as stencila.Collection
+  const sheetNames: Array<string> = []
+  const sheets: { [key: string]: xlsx.WorkSheet } = {}
+  if (type === 'Collection') {
+    const collection = stencila.cast(node, 'Collection')
     if (collection.parts && collection.parts.length > 0) {
-      sheets = {}
       let index = 1
-      for (let part of collection.parts) {
-        let name = part.name || `Sheet${index}`
+      for (const part of collection.parts) {
+        const name = part.name || `Sheet${index}`
         sheetNames.push(name)
-        sheets[name] = unparseTableOrDatatable(part)
+        sheets[name] = unparseCreativeWork(part)
         index += 1
       }
     } else {
       // xlsx.Workbooks must have at least one sheet
-      let name = node.name || 'Empty'
+      const name = collection.name || 'Empty'
       sheetNames.push(name)
       sheets[name] = {}
     }
   } else {
-    let name = node.name || 'Sheet1'
+    const cw = node as stencila.CreativeWork
+    const name = cw.name || 'Sheet1'
     sheetNames.push(name)
-    sheets[name] = unparseTableOrDatatable(node)
+    sheets[name] = unparseCreativeWork(cw)
   }
 
   const workbook: xlsx.WorkBook = {
@@ -111,10 +109,11 @@ function unparseNode(node: stencila.Node): xlsx.WorkBook {
   return workbook
 }
 
-function unparseTableOrDatatable(node: stencila.Table | stencila.Datatable) {
-  if (node.type === 'Table') return unparseTable(node)
-  else if (node.type === 'Datatable') return unparseDatatable(node)
-  else throw new Error(`Unhandled node type "${node.type}"`)
+function unparseCreativeWork(node: stencila.CreativeWork) {
+  if (node.type === 'Table') return unparseTable(node as stencila.Table)
+  else if (node.type === 'Datatable') {
+    return unparseDatatable(node as stencila.Datatable)
+  } else throw new Error(`Unhandled node type "${node.type}"`)
 }
 
 // Worksheet <-> Table
@@ -127,11 +126,12 @@ function parseTable(
     type: 'Table',
     name,
     cells: Object.entries(cells).map(function([key, cell]): stencila.TableCell {
+      let value = parseCell(cell)
       return {
         type: 'TableCell',
         name: key,
         position: cellNameToPosition(key),
-        content: [parseCell(cell)]
+        content: [value]
       }
     })
   }
@@ -178,7 +178,7 @@ function parseDatatable(
   // If the first value in each column is a string then
   // treat them as names (and thus remove them from) the
   // values. Otherwise, use automatic, alphabetic names.
-  let names: Array<string | undefined> = []
+  let names: Array<string> = []
   for (const column of columns) {
     if (typeof column[0] === 'string') {
       names.push(column[0])
@@ -237,7 +237,7 @@ function unparseDatatable(datatable: stencila.Datatable) {
 
 // CellObject <-> Node
 
-function parseCell(cell: xlsx.CellObject): stencila.Node {
+function parseCell(cell: xlsx.CellObject) {
   let value = cell.v
   if (value) {
     if (value instanceof Date) {
@@ -259,6 +259,7 @@ function parseCell(cell: xlsx.CellObject): stencila.Node {
 }
 
 function unparseCell(node: stencila.Node): xlsx.CellObject | null {
+  // tslint:disable-next-line
   if (node === undefined) return null
   if (node === null) return null
   if (typeof node === 'boolean') return { t: 'b', v: node }

@@ -3,9 +3,9 @@ import getStdin from 'get-stdin'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
-//import * as html from './html';
+// import * as html from './html';
 import * as json from './json'
-import * as md from './md'
+// import * as md from './md';
 import * as ods from './ods'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
@@ -28,10 +28,10 @@ const compilerList: Array<Compiler> = [
   xlsx,
 
   csv,
-  md,
+  // md,
 
   yaml,
-  //html,
+  // html,
   json
 ]
 
