@@ -1,0 +1,10 @@
+type: Document
+body:
+  - type: Paragraph
+    children:
+      - type: Text
+        value: The following line includes some content from another file.
+  - type: Paragraph
+    children:
+      - type: Include
+        resource: other.md

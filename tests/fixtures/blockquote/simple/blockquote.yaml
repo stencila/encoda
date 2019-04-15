@@ -1,0 +1,8 @@
+type: Document
+body:
+  - type: Blockquote
+    children:
+      - type: Paragraph
+        children:
+          - type: Text
+            value: This is a simple blockquote example. With just one line.

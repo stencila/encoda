@@ -23,7 +23,4 @@ RUN useradd --create-home --home-dir /home/guest guest
 RUN chown -R guest /opt/stecila-convert
 USER guest
 
-# Get Pandoc as the guest user so it's in correct homedir
-RUN npm run setup
-
-CMD npm run test
+CMD npm test

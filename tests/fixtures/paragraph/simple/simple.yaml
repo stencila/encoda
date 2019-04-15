@@ -1,0 +1,14 @@
+type: Document
+body:
+  - type: Paragraph
+    children:
+      - type: Text
+        value: The first paragraph.
+  - type: Paragraph
+    children:
+      - type: Text
+        value: >-
+          The second paragraph which is longer. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
