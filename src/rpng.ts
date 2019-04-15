@@ -10,16 +10,31 @@
  * rPNGs to be [generated in the browser](https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f).
  */
 
+import * as stencila from '@stencila/schema'
 import puppeteer from 'puppeteer'
 import { dump, load } from './index'
 import { load as loadVFile, VFile } from './vfile'
 
 export const mediaTypes = [
-  // spell-checker: disable
-  // Shortcuts
-  'rpng'
-  // spell-checker: enable
+  // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
+  'vnd.stencila.rpng'
 ]
+
+export const extNames = [
+  // To be able to refer to this compiler since the `mime` package
+  // does not have registered extension names for the above media type
+  'rpng'
+]
+
+/**
+ * Sniff a PNG file's contents to see if it is an rPNG
+ *
+ * @param filePath The file path to sniff
+ */
+export async function sniff(filePath: string): Promise<boolean> {
+  // TODO if the extname is .png then sniff it's contents
+  return false
+}
 
 /**
  * Parse a rPNG to a Stencila node.
@@ -30,7 +45,7 @@ export const mediaTypes = [
  * @param file The `VFile` to parse
  * @returns The Stencila node
  */
-export async function parse(file: VFile): Promise<Thing> {
+export async function parse(file: VFile): Promise<stencila.Node> {
   // TODO extract the JSON from the file.contents buffer
   const json =
     '{"type": "Text", "value": "The JSON extracted from the rPNG TEXt chunk"}'
@@ -41,16 +56,25 @@ export async function parse(file: VFile): Promise<Thing> {
  * Unparse a Stencila node to a rPNG.
  *
  * This is done by dumping the node to HTML,
- * "screenshotting" the HTML to a PNG and then inserting the
+ * "screen-shotting" the HTML to a PNG and then inserting the
  * node's JSON into the image's `tEXt` chunk.
  *
  * @param node The Stencila node to unparse
  * @param file The `VFile` to unparse to
  */
-export async function unparse(thing: Thing): Promise<VFile> {
-  // Generate HTML of the `value` of the thing
-  if (!thing.value) throw new Error('Node must have a value')
-  let html = await dump(thing.value, 'html')
+export async function unparse(node: stencila.Node): Promise<VFile> {
+  // Generate HTML of the 'value' of the node, which depends on the
+  // node type. In the future, we may make this part of the schema definitions
+  // and have a `stencila.value()` function to retrieve the value for the node
+  // But currently just using this...
+  let value: any
+  if (node && typeof node === 'object' && node.hasOwnProperty('value')) {
+    value = (node as any).value
+  } else {
+    value = (node as any).toString()
+  }
+  if (!value) throw new Error('Node must have a value')
+  let html = await dump(value, 'html')
 
   // Generate image of rendered HTML
   const browser = await puppeteer.launch()
@@ -69,7 +93,7 @@ export async function unparse(thing: Thing): Promise<VFile> {
   await browser.close()
 
   // Insert JSON of the thing into the image
-  const json = dump(thing, 'json')
+  const json = dump(node, 'json')
   // TODO insert json into tEXt chunk
   const image = buffer
 
