@@ -11,7 +11,15 @@
  */
 
 import * as stencila from '@stencila/schema'
+import path from 'path'
+// @ts-ignore
+import { default as pngText } from 'png-chunk-text'
+// @ts-ignore
+import { default as pngEncode } from 'png-chunks-encode'
+// @ts-ignore
+import { default as pngExtract } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
+import { isBuffer } from 'util'
 import { dump, load } from './index'
 import { load as loadVFile, VFile } from './vfile'
 
@@ -26,14 +34,67 @@ export const extNames = [
   'rpng'
 ]
 
+type Dict = { [key: string]: unknown }
+
+/**
+ * The keyword to use for the PNG chunk containing the JSON
+ */
+const KEYWORD = 'JSON'
+
+/**
+ * Find the embedded JSON within image chunks
+ *
+ * @param chunks The image chunks to search through
+ */
+export function find(chunks: Array<Dict>): [number, string | undefined] {
+  let index = 0
+  for (let chunk of chunks) {
+    if (chunk.name === 'tEXt') {
+      const entry = pngText.decode(chunk.data)
+      if (entry.keyword === KEYWORD) {
+        return [index, entry.text]
+      }
+    }
+    index += 1
+  }
+  return [-1, undefined]
+}
+
+/**
+ * Extract an embedded node from within an image
+ *
+ * @param image The image `Buffer`
+ */
+export function extract(image: Buffer): Dict {
+  const chunks: Array<Dict> = pngExtract(image)
+  const [index, json] = find(chunks)
+  if (!json) throw Error('No chunk found')
+  return JSON.parse(json)
+}
+
+/**
+ * Insert a node into an image
+ *
+ * @param node The Javascript object to insert
+ * @param image The image to insert into
+ */
+export function insert(node: Dict, image: Buffer): Buffer {
+  const json = JSON.stringify(node)
+  const chunks: Array<Dict> = pngExtract(image)
+  const [index, current] = find(chunks)
+  if (current) chunks.splice(index, 1)
+  const chunk = pngText.encode(KEYWORD, json)
+  chunks.splice(-1, 0, chunk)
+  return Buffer.from(pngEncode(chunks))
+}
+
 /**
  * Sniff a PNG file's contents to see if it is an rPNG
  *
  * @param filePath The file path to sniff
  */
-export async function sniff(filePath: string): Promise<boolean> {
-  // TODO if the extname is .png then sniff it's contents
-  return false
+export function sniff(filePath: string): boolean {
+  return path.parse(filePath).ext.includes('png')
 }
 
 /**
@@ -46,10 +107,12 @@ export async function sniff(filePath: string): Promise<boolean> {
  * @returns The Stencila node
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  // TODO extract the JSON from the file.contents buffer
-  const json =
-    '{"type": "Text", "value": "The JSON extracted from the rPNG TEXt chunk"}'
-  return load(json, 'json')
+  if (isBuffer(file.contents)) {
+    const json = extract(file.contents)
+    return load(JSON.stringify(json), 'json')
+  }
+
+  return load('{}', 'json')
 }
 
 /**
@@ -93,9 +156,8 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   await browser.close()
 
   // Insert JSON of the thing into the image
-  const json = dump(node, 'json')
-  // TODO insert json into tEXt chunk
-  const image = buffer
+  const json = await dump(node, 'json')
+  const image = (JSON.parse(json), buffer)
 
   return loadVFile(image)
 }
