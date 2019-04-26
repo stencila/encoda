@@ -12,12 +12,9 @@
 
 import * as stencila from '@stencila/schema'
 import path from 'path'
-// @ts-ignore
-import { default as pngText } from 'png-chunk-text'
-// @ts-ignore
-import { default as pngEncode } from 'png-chunks-encode'
-// @ts-ignore
-import { default as pngExtract } from 'png-chunks-extract'
+import pngText from 'png-chunk-text'
+import pngEncode from 'png-chunks-encode'
+import pngExtract, { Chunk } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
 import { isBuffer } from 'util'
 import { dump, load } from './index'
@@ -34,8 +31,6 @@ export const extNames = [
   'rpng'
 ]
 
-type Dict = { [key: string]: unknown }
-
 /**
  * The keyword to use for the PNG chunk containing the JSON
  */
@@ -46,7 +41,7 @@ const KEYWORD = 'JSON'
  *
  * @param chunks The image chunks to search through
  */
-export function find(chunks: Array<Dict>): [number, string | undefined] {
+export function find(chunks: Array<Chunk>): [number, string | undefined] {
   let index = 0
   for (let chunk of chunks) {
     if (chunk.name === 'tEXt') {
@@ -65,8 +60,8 @@ export function find(chunks: Array<Dict>): [number, string | undefined] {
  *
  * @param image The image `Buffer`
  */
-export function extract(image: Buffer): Dict {
-  const chunks: Array<Dict> = pngExtract(image)
+export function extract(image: Buffer): Chunk {
+  const chunks: Array<Chunk> = pngExtract(image)
   const [index, json] = find(chunks)
   if (!json) throw Error('No chunk found')
   return JSON.parse(json)
@@ -78,9 +73,9 @@ export function extract(image: Buffer): Dict {
  * @param node The Javascript object to insert
  * @param image The image to insert into
  */
-export function insert(node: Dict, image: Buffer): Buffer {
+export function insert(node: Chunk, image: Buffer): Buffer {
   const json = JSON.stringify(node)
-  const chunks: Array<Dict> = pngExtract(image)
+  const chunks: Array<Chunk> = pngExtract(image)
   const [index, current] = find(chunks)
   if (current) chunks.splice(index, 1)
   const chunk = pngText.encode(KEYWORD, json)
