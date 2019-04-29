@@ -1,27 +1,41 @@
 import { parse, unparse } from '../src/bib'
-import { dump, load } from '../src/vfile'
+import { load } from '../src/vfile'
 
 const article = {
-  content: `@article{article1,
-    author = {First Author and Second S. Author},
-    title = {The title of the article},
-    journal = {The Journal Title},
-    volume = {2},
-    number = {3},
-    year = {2019},
-    pages = {101-191},
-    keywords = {first; second; third}
-  }`,
-  node: {
+  content: `@article{id,
+  author = {First Author and Second S. Author}
+}`,
+  /*
+  title = {The title of the article},
+  journal = {The Journal Title},
+  volume = {2},
+  number = {3},
+  year = {2019},
+  pages = {101-191},
+  keywords = {first; second; third}
+*/ node: {
     type: 'Article',
-    id: 'article1'
+    authors: [
+      {
+        type: 'Person',
+        givenNames: ['First'],
+        familyNames: ['Author']
+      },
+      {
+        type: 'Person',
+        givenNames: ['Second', 'S.'],
+        familyNames: ['Author']
+      }
+    ]
   }
 }
 
-test.skip('parse', async () => {
+test('parse', async () => {
   expect(await parse(load(article.content))).toEqual(article.node)
 })
 
-test.skip('unparse', async () => {
-  expect(dump(await unparse(article.node))).toEqual(article.content)
+test('unparse', async () => {
+  await expect(unparse(article.node)).rejects.toThrow(
+    /Unparsing to bibtex is not yet implemented/
+  )
 })

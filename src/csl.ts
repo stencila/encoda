@@ -5,7 +5,7 @@
  * e.g. BibTeX. Based on https://citation.js.org/
  */
 
-import stencila, { create, mutate, validate } from '@stencila/schema'
+import stencila, { create, mutate } from '@stencila/schema'
 // @ts-ignore
 import Cite from 'citation-js'
 import { parse as parsePerson } from './person'
@@ -95,15 +95,15 @@ export async function unparse(
   format: string = 'data',
   options: { [key: string]: string } = {}
 ): Promise<VFile> {
-  // TODO handle more types e.g. Book
-  const article = validate(node, 'Article')
+  throw new Error(`Unparsing to ${format} is not yet implemented`)
 
-  const cite = {
+  // The following snippet provides a skeleton of
+  // how this function could be implemented when it is prioritized
+  const csl = {
+    id: 'id',
     type: 'article-journal'
   }
-  // TODO so much more!
-
-  const cites = new Cite([cite])
-  const content = cites.format(format, options)
+  const cite = new Cite([csl])
+  const content = cite.format(format, options)
   return load(content)
 }
