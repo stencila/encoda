@@ -4,20 +4,25 @@
 
 import stencila from '@stencila/schema'
 import * as csl from './csl'
-import { VFile } from './vfile'
+import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['text/x-doi']
-
 export const extNames = ['doi']
 
+// See https://www.crossref.org/blog/dois-and-matching-regular-expressions/
+// for notes on DOI matching
+const regex = /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i
+
 export async function sniff(content: string): Promise<boolean> {
-  // See https://www.crossref.org/blog/dois-and-matching-regular-expressions/
-  // for notes on DOI matching
-  return /^\s*(DOI)?\s*:?\s*(10.\d{4,9}\/[^\s]+)\s*$/i.test(content)
+  return regex.test(content)
 }
 
 export async function parse(file: VFile): Promise<stencila.Node> {
-  return csl.parse(file, '@doi/id')
+  const content = dump(file)
+  const match = content.match(regex)
+  if (!match) throw new Error('Unable to parse content')
+  const doi = load(match[4])
+  return csl.parse(doi, '@doi/id')
 }
 
 export async function unparse(node: stencila.Node): Promise<VFile> {

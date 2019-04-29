@@ -7,11 +7,14 @@ test('sniff', async () => {
   expect(await sniff('DOI 10.1001/ok')).toBe(true)
   expect(await sniff('DOI: 10.1001/ok')).toBe(true)
   expect(await sniff('  DOI :  10.1001/ok   ')).toBe(true)
+  expect(await sniff('http://doi.org/10.5334/jors.182')).toBe(true)
+  expect(await sniff('  https://doi.org/10.5334/jors.182  ')).toBe(true)
 
   // The `foo` in these example makes them not DOIs
   expect(await sniff('foo')).toBe(false)
   expect(await sniff('doi: foo')).toBe(false)
   expect(await sniff('doi: 10.1001/this/is/a/doi foo')).toBe(false)
+  expect(await sniff('http://foo.org/10.5334/jors.182')).toBe(false)
 })
 
 const article = {
