@@ -1,12 +1,12 @@
-type: Document
-body:
+type: Article
+content:
   - type: Paragraph
-    children:
-      - type: Text
+    content:
+      - type: '#text'
         value: The first paragraph.
   - type: Paragraph
-    children:
-      - type: Text
+    content:
+      - type: '#text'
         value: >-
           The second paragraph which is longer. Lorem ipsum dolor sit amet,
           consectetur adipisicing elit, sed do eiusmod tempor incididunt ut

@@ -18,16 +18,22 @@ function stencilaType(node: stencila.Node): string {
 
 export const mediaTypes = ['text/html']
 
+const cleanHtml = (html: string) =>
+  beautifyHtml(html, {
+    preserve_newlines: false
+  })
+
 export async function parse(file: VFile): Promise<stencila.Node> {
   const html = dump(file)
-  const dom = parse5.parse(html) as parse5.DefaultTreeNode
+  const beautifulHtml = cleanHtml(html)
+  const dom = parse5.parse(beautifulHtml) as parse5.DefaultTreeNode
   return parseNode(dom)
 }
 
 export async function unparse(thing: stencila.Node): Promise<VFile> {
   const dom = unparseNode((thing as unknown) as stencila.Node) as HTMLElement
   const html = dom.outerHTML
-  const beautifulHtml = beautifyHtml(html)
+  const beautifulHtml = cleanHtml(html)
   return load(beautifulHtml)
 }
 
@@ -36,7 +42,9 @@ function parseNode(node: parse5.DefaultTreeNode): stencila.Node {
   const parser = parsers[nodeName] || parsers['default']
   return parser(node)
 }
+
 type Parser = (node: parse5.DefaultTreeNode) => stencila.Node
+// TODO: Tighten up type definition for parsers object
 const parsers: { [key: string]: Parser } = {}
 
 function parseNodes(
@@ -50,9 +58,13 @@ function parseNodes(
 
 function unparseNode(node: stencila.Node): string | HTMLElement {
   const type = stencilaType(node)
+
   switch (type) {
     case 'string':
       return node as string
+    case '#text':
+      // @ts-ignore
+      return node.value
   }
   const unparser = unparsers[type] || unparsers['default']
   return unparser(node)
@@ -144,7 +156,10 @@ unparsers['Paragraph'] = node => {
 
 parsers['#text'] = node => {
   const text = node as parse5.DefaultTreeTextNode
-  return text.value
+  return {
+    type: '#text',
+    value: text.value
+  }
 }
 
 // Default parser and unparser
