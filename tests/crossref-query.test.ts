@@ -1,6 +1,8 @@
 import { parse, unparse } from '../src/crossref-query'
 import { load } from '../src/vfile'
 
+jest.setTimeout(30 * 1000)
+
 const article = {
   content: `Carlsson and Ekre, Tensor Computations in Julia`,
   node: {
