@@ -101,20 +101,24 @@ interface Compiler {
  * string of raw content (e.g. `This is some Markdown`) or as a file system
  * path. This function, assesses whether a file is a file system path or not.
  *
- * If the string starts with `/`, `./` or `../` then it is assumed to be a path
- * but the presence of the path is not checked. For all other strings, this function
- * returns true if the file exists.
+ * If the string starts with `/`, `./`, `../` (or Windows compatible backslash
+ * equivalents as well as drive letter prefixed strings e.g. `C:\`)
+ * then it is assumed to be a path but the presence of the path is not checked.
+ * The reason for not checking presence
+ * here is because "if the content looks like a path then the user probably meant
+ * it to be a path". That is, if a user tries to convert the string "./file.md" then,
+ * if that file doesn't exist, she probably wants the Markdown converter to give me an error
+ * message. She probably doesn't want the `match` function to try and find some other converter
+ * that acts on a plain strings.
+ *
+ * For all other strings, this function does check for presence, returning `true`
+ * if the file exists.
  *
  * @param content The string to assess.
  */
 export function isPath(content: string): boolean {
-  if (
-    content.startsWith('/') ||
-    content.startsWith('./') ||
-    content.startsWith('../')
-  ) {
+  if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content))
     return true
-  }
   if (fs.existsSync(content)) return true
   return false
 }
