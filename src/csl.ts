@@ -23,31 +23,42 @@ export const extNames = ['csl']
  */
 export async function parse(
   file: VFile,
-  format: string = 'object/csl'
+  format: string = '@csl/object'
 ): Promise<stencila.Node> {
   // Many of the TODOs below are awaiting updates to the CreativeWork, Article, etc schemas
+
   const content = dump(file)
-  let cites
+  let csls
   try {
-    cites = await Cite.inputAsync(content, { forceType: format })
+    csls = await Cite.inputAsync(content, { forceType: format })
   } catch (error) {
     throw new Error(
       `Error when parsing content of format ${format}: ${error.message}`
     )
   }
-
   // TODO: work out what to return when more than one work e.g. a bibtex file
-  const cite = cites[0]
+  const csl = csls[0]
 
+  return parseCsl(csl)
+}
+
+/**
+ * Parse CSL object to a `stencila.Node`
+ *
+ * @param csl The CSL object to parse.
+ */
+export async function parseCsl(csl: {
+  [key: string]: any
+}): Promise<stencila.CreativeWork | stencila.Article> {
   const cw = create('CreativeWork')
 
   // TODO
   // if (cite.id) cw.id = cite.id
 
-  if (cite.author) {
+  if (csl.author) {
     cw.authors = await Promise.all(
-      cite.author.map(async (author: any) => {
-        return await parsePerson(load(`${author.given} ${author.family}`))
+      csl.author.map(async (author: any) => {
+        return parsePerson(load(`${author.given} ${author.family}`))
       })
     )
   } else {
@@ -55,29 +66,29 @@ export async function parse(
   }
 
   // TODO
-  // if (cite.title) cw.headline = cite.title
+  // if (csl.title) cw.headline = csl.title
 
   let within
-  if (cite['container-title']) {
+  if (csl['container-title']) {
     within = create('CreativeWork', {
       // TODO
-      // headline: cite['container-title']
+      // headline: csl['container-title']
     })
   }
 
   // TODO
   // if (within) cw.isPartOf = within
 
-  switch (cite.type) {
+  switch (csl.type) {
     case 'article-journal':
       const article = mutate(cw, 'Article')
-      if (cite.page) {
+      if (csl.page) {
         // TODO
-        // article.pageStart = cite.page
+        // article.pageStart = csl.page
       }
       return article
     default:
-      throw new Error(`Unhandled citation type "${cite.type}"`)
+      throw new Error(`Unhandled citation type "${csl.type}"`)
   }
 }
 
