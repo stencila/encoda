@@ -56,11 +56,9 @@ export async function parseCsl(csl: {
   // if (cite.id) cw.id = cite.id
 
   if (csl.author) {
-    cw.authors = await Promise.all(
-      csl.author.map(async (author: any) => {
-        return parsePerson(load(`${author.given} ${author.family}`))
-      })
-    )
+    cw.authors = await Promise.all(csl.author.map(async (author: any) => {
+      return parsePerson(load(`${author.given} ${author.family}`))
+    }) as Array<Promise<stencila.Person>>)
   } else {
     cw.authors = []
   }
