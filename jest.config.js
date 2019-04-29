@@ -3,5 +3,5 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/tests/**/*.test.ts'],
   setupFilesAfterEnv: ['jest-expect-message'],
-  coveragePathIgnorePatterns: []
+  coveragePathIgnorePatterns: ['tests/helpers.ts']
 }

@@ -1,4 +1,5 @@
 import stencila from '@stencila/schema'
+import fs from 'fs-extra'
 import getStdin from 'get-stdin'
 import mime from 'mime'
 import path from 'path'
@@ -20,7 +21,7 @@ type VFile = vfile.VFile
  * Note that order is of importance for matching. More "generic"
  * formats should go last. See the `match` function.
  */
-const compilerList: Array<Compiler> = [
+export const compilerList: Array<Compiler> = [
   //  gdoc,
   //  rpng,
   ods,
@@ -55,7 +56,7 @@ interface Compiler {
   /**
    * Any array of file names to use to match the compiler.
    * This can be useful for differentiating between
-   * flavours of formats like JSON e.g. `datapackage.json` versus any old `.json` file.
+   * "flavors" of formats e.g. `datapackage.json` versus any old `.json` file.
    */
   fileNames?: Array<string>
 
@@ -67,10 +68,12 @@ interface Compiler {
   extNames?: Array<string>
 
   /**
-   * A function that does directory or [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
-   * to determine if the compiler is able to parse the content.
+   * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
+   * to determine if the compiler is able to parse the content. As well as raw content, the content
+   * string could be a file system path and the compiler could do "sniffing" of the file system
+   * (e.g. testing if certain files are present in a directory).
    */
-  sniff?: (filePath: string) => Promise<boolean>
+  sniff?: (content: string) => Promise<boolean>
 
   /**
    * Parse a `Vfile` to a `stencila.Node`.
@@ -92,33 +95,70 @@ interface Compiler {
 }
 
 /**
- * Match the compiler based on file name, extension name, media/type or by content sniffing.
+ * Is a string a file system path?
  *
- * Iterates through the compilers and returns that matches any of the criteria.
+ * Several functions in this module allow for content to be passed as a
+ * string of raw content (e.g. `This is some Markdown`) or as a file system
+ * path. This function, assesses whether a file is a file system path or not.
  *
- * @param filePath The file path
- * @param mediaType The media type (e.g. `text/plain`) or the corresponding extension (e.g. `txt`)
+ * If the string starts with `/`, `./`, `../` (or Windows compatible backslash
+ * equivalents as well as drive letter prefixed strings e.g. `C:\`)
+ * then it is assumed to be a path but the presence of the path is not checked.
+ * The reason for not checking presence
+ * here is because "if the content looks like a path then the user probably meant
+ * it to be a path". That is, if a user tries to convert the string "./file.md" then,
+ * if that file doesn't exist, she probably wants the Markdown converter to give me an error
+ * message. She probably doesn't want the `match` function to try and find some other converter
+ * that acts on a plain strings.
+ *
+ * For all other strings, this function does check for presence, returning `true`
+ * if the file exists.
+ *
+ * @param content The string to assess.
+ */
+export function isPath(content: string): boolean {
+  if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content))
+    return true
+  if (fs.existsSync(content)) return true
+  return false
+}
+
+/**
+ * Match the compiler based on file name, extension name, media type or by content sniffing.
+ *
+ * Iterates through the list of compilers and returns the first that matches based on any
+ * of the above criteria.
+ *
+ * If the supplied format contains a forward slash then it is assumed to be a media type,
+ * otherwise an extension name.
+ *
+ * @param content The content as a file path (e.g. `../folder/file.txt`) or raw content
+ * @param format The format as a media type (e.g. `text/plain`) or extension name (e.g. `txt`)
  * @returns A promise that resolves to the `Compiler` to use
  */
 export async function match(
-  filePath?: string,
-  mediaType?: string
+  content?: string,
+  format?: string
 ): Promise<Compiler> {
-  let fileName = filePath ? path.basename(filePath) : undefined
-  let extName = filePath ? path.extname(filePath) : undefined
-
-  if (mediaType) {
-    // For convenience, media type may be supplied as an extension name e.g. `md`.
-    // So if the supplied value isn't a valid media type, look it up and if found then
-    // use that, otherwise use the supplied value as an extension name.
-    if (mime.getExtension(mediaType) === null) {
-      let inferredMediaType = mime.getType(mediaType)
-      if (!inferredMediaType) extName = mediaType
-      else mediaType = inferredMediaType
+  // Resolve variables used to match a compiler...
+  let fileName
+  let extName
+  let mediaType
+  // If the content is a path then begin with derived values
+  if (content && isPath(content)) {
+    fileName = path.basename(content)
+    extName = path.extname(content).slice(1)
+    mediaType = mime.getType(content) || undefined
+  }
+  // But override with supplied format (if any) assuming that
+  // media types always have a forward slash and extension names
+  // never do.
+  if (format) {
+    if (format.includes('/')) mediaType = format
+    else {
+      extName = format
+      mediaType = mime.getType(extName) || undefined
     }
-  } else if (filePath) {
-    // Try to determine the media type from the path
-    mediaType = mime.getType(filePath) || undefined
   }
 
   for (let compiler of compilerList) {
@@ -129,9 +169,11 @@ export async function match(
     ) {
       return compiler
     }
+
     if (extName && compiler.extNames && compiler.extNames.includes(extName)) {
       return compiler
     }
+
     if (
       mediaType &&
       compiler.mediaTypes &&
@@ -139,89 +181,144 @@ export async function match(
     ) {
       return compiler
     }
-    if (filePath && compiler.sniff && (await compiler.sniff(filePath))) {
+
+    if (content && compiler.sniff && (await compiler.sniff(content))) {
       return compiler
     }
   }
 
   let message = 'No compiler could be found'
-  if (filePath) message += ` for file path "${filePath}"`
-  if (mediaType) message += ` for media type "${mediaType}"`
+  if (content) message += ` for content "${content}"`
+  if (format) message += ` for format "${format}"`
   message += '.'
   throw new Error(message)
 }
 
+/**
+ * Is the file path, or media type handled? (i.e. is there a compiler for it?)
+ *
+ * @param content The file path
+ * @param format The media type
+ */
 export async function handled(
-  filePath?: string,
-  mediaType?: string
+  content?: string,
+  format?: string
 ): Promise<boolean> {
   try {
-    await match(filePath, mediaType)
+    await match(content, format)
     return true
   } catch (error) {
     return false
   }
 }
 
+/**
+ * Parse a virtual file to a `stencila.Node`
+ *
+ * @param file The `VFile` to parse
+ * @param content The file path
+ * @param format The media type
+ */
 export async function parse(
   file: VFile,
-  filePath?: string,
-  mediaType?: string
+  content?: string,
+  format?: string
 ): Promise<stencila.Node> {
-  const compiler = await match(filePath, mediaType)
+  const compiler = await match(content, format)
   return compiler.parse(file)
 }
 
+/**
+ * Unparse (i.e. serialize) a `stencila.Node` to a virtual file.
+ *
+ * @param node The node to unparse
+ * @param filePath The file path to unparse the node to.
+ *                 Only required for some compilers e.g. those unparsing to more than one file.
+ * @param format The format to unparse the node as.
+ *               If undefined then determined from filePath or file path.
+ */
 export async function unparse(
   node: stencila.Node,
   filePath?: string,
-  mediaType?: string
+  format?: string
 ): Promise<VFile> {
-  const compiler = await match(filePath, mediaType)
+  const compiler = await match(filePath, format)
   return compiler.unparse(node, filePath)
 }
 
+/**
+ * Load a `stencila.Node` from a string of content.
+ *
+ * @param content The content to load.
+ * @param format The format to load the content as.
+ */
 export async function load(
   content: string,
-  mediaType: string
+  format: string
 ): Promise<stencila.Node> {
   const file = vfile.load(content)
-  return parse(file, undefined, mediaType)
+  return parse(file, undefined, format)
 }
 
+/**
+ * Dump a `stencila.Node` to a string of content.
+ *
+ * @param node The node to dump.
+ * @param format The format to dump the node as.
+ */
 export async function dump(
   node: stencila.Node,
-  mediaType: string
+  format: string
 ): Promise<string> {
-  const file = await unparse(node, undefined, mediaType)
+  const file = await unparse(node, undefined, format)
   return vfile.dump(file)
 }
 
+/**
+ * Read a file to a `stencila.Node`.
+ *
+ * @param content The raw content or file path to read.
+ *                If undefined then read from standard input.
+ * @param format The format to read the file as.
+ *               If undefined then determined from content or file path.
+ */
 export async function read(
-  filePath?: string,
-  mediaType?: string
+  content?: string,
+  format?: string
 ): Promise<stencila.Node> {
   let file
-  if (filePath) file = await vfile.read(filePath)
-  else file = vfile.load(await getStdin())
-  return parse(file, filePath, mediaType)
+  if (content && isPath(content)) {
+    file = await vfile.read(content)
+  } else {
+    if (!content) content = await getStdin()
+    file = vfile.load(content)
+  }
+  return parse(file, content, format)
 }
 
+/**
+ * Write a `stencila.Node` to a file.
+ *
+ * @param node The node to write.
+ * @param filePath The file system path to write to.
+ *                 If undefined then write to standard output.
+ * @param format The format to write the node as.
+ */
 export async function write(
   node: stencila.Node,
   filePath?: string,
-  mediaType?: string
+  format?: string
 ): Promise<void> {
-  let file = await unparse(node, filePath, mediaType)
+  let file = await unparse(node, filePath, format)
   if (!filePath) console.log(vfile.dump(file))
   else await vfile.write(file, filePath)
 }
 
 /**
- * Convert from one format to another
+ * Convert content from one format to another.
  *
- * @param inp The input path. If missing stdin is used.
- * @param out The output path. If missing stdout is used.
+ * @param inp The input content (raw or file path). If undefined, standard input is used.
+ * @param out The output file path. If missing standard output is used.
  * @param from The format to convert the input from.
  * @param to The format to convert the output to.
  */
