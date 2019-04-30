@@ -7,6 +7,7 @@ import * as html from './html'
 import * as json from './json'
 // import * as md from './md';
 import * as ods from './ods'
+import * as rpng from './rpng'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
 import * as xlsx from './xlsx'
@@ -22,7 +23,7 @@ type VFile = vfile.VFile
  */
 const compilerList: Array<Compiler> = [
   //  gdoc,
-  //  rpng,
+  rpng,
   ods,
   tdp,
   xlsx,
