@@ -118,8 +118,9 @@ interface Compiler {
  * @param content The string to assess.
  */
 export function isPath(content: string): boolean {
-  if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content))
+  if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content)) {
     return true
+  }
   if (fs.existsSync(content)) return true
   return false
 }
