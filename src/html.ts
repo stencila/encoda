@@ -89,13 +89,13 @@ parsers['#document'] = node => {
 
   return {
     type: 'Article',
-    content: parseNodes(body.childNodes, true)
+    articleBody: parseNodes(body.childNodes, true)
   }
 }
 
 unparsers['Article'] = node => {
   const article = node as stencila.Article
-  return h('html', h('head'), h('body', unparseNodes(article.content)))
+  return h('html', h('head'), h('body', unparseNodes(article.articleBody)))
 }
 
 // Heading

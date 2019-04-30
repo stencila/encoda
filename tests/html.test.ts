@@ -14,7 +14,7 @@ const eg1 = {
 
   node: {
     type: 'Article',
-    content: [
+    articleBody: [
       {
         type: 'Paragraph',
         content: [
