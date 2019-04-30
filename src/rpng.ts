@@ -13,6 +13,7 @@
  */
 
 import * as stencila from '@stencila/schema'
+import fs from 'fs-extra'
 import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
@@ -102,11 +103,12 @@ export function insert(keyword: string, text: string, image: Buffer): Buffer {
  * @param content The file path to sniff
  */
 export async function sniff(content: string): Promise<boolean> {
-  // TODO Use the new `isPath` function, now in master, here
-  if (/*isPath(content) && */ path.parse(content).ext.includes('png')) {
-    const file = await readVFile(content)
-    if (isBuffer(file.contents)) {
-      return has(KEYWORD, file.contents)
+  if (path.parse(content).ext.includes('png')) {
+    if (fs.existsSync(content)) {
+      const file = await readVFile(content)
+      if (isBuffer(file.contents)) {
+        return has(KEYWORD, file.contents)
+      }
     }
   }
   return false
