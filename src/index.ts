@@ -4,10 +4,11 @@ import getStdin from 'get-stdin'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
-// import * as html from './html';
+import * as html from './html'
 import * as json from './json'
 // import * as md from './md';
 import * as ods from './ods'
+import * as rpng from './rpng'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
 import * as xlsx from './xlsx'
@@ -23,7 +24,7 @@ type VFile = vfile.VFile
  */
 export const compilerList: Array<Compiler> = [
   //  gdoc,
-  //  rpng,
+  rpng,
   ods,
   tdp,
   xlsx,
@@ -32,7 +33,7 @@ export const compilerList: Array<Compiler> = [
   // md,
 
   yaml,
-  // html,
+  html,
   json
 ]
 

@@ -8,31 +8,107 @@
  * render the results. It currently using Puppetter and so will not work
  * in the browser. In the future we may use `html2canvas` and `canvas2image` to enable
  * rPNGs to be [generated in the browser](https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f).
+ *
+ * @see http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html#C.Anc-text
  */
 
 import * as stencila from '@stencila/schema'
+import path from 'path'
+import pngText from 'png-chunk-text'
+import pngEncode from 'png-chunks-encode'
+import pngExtract, { Chunk } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
+import { isBuffer } from 'util'
 import { dump, load } from './index'
-import { load as loadVFile, VFile } from './vfile'
+import { load as loadVFile, read as readVFile, VFile } from './vfile'
 
-export const mediaTypes = [
-  // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
-  'vnd.stencila.rpng'
-]
+// A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
+// an custom extension to be able to refere to this format more easily.
+export const mediaTypes = ['vnd.stencila.rpng']
+export const extNames = ['rpng']
 
-export const extNames = [
-  // To be able to refer to this compiler since the `mime` package
-  // does not have registered extension names for the above media type
-  'rpng'
-]
+/**
+ * The keyword to use for the PNG chunk containing the JSON
+ */
+const KEYWORD = 'JSON'
+
+/**
+ * Find a text chunk in an image
+ *
+ * @param keyword The keyword for the text chunk
+ * @param chunks The image chunks to search through
+ */
+export function find(
+  keyword: string,
+  chunks: Array<Chunk>
+): [number, string | undefined] {
+  let index = 0
+  for (let chunk of chunks) {
+    if (chunk.name === 'tEXt') {
+      const entry = pngText.decode(chunk.data)
+      if (entry.keyword === keyword) {
+        return [index, entry.text]
+      }
+    }
+    index += 1
+  }
+  return [-1, undefined]
+}
+
+/**
+ * Does an image have a text chunk with the given keyword?
+ *
+ * @param keyword The keyword for the text chunk
+ * @param image The image `Buffer`
+ */
+export function has(keyword: string, image: Buffer): boolean {
+  const chunks: Array<Chunk> = pngExtract(image)
+  const [index, text] = find(keyword, chunks)
+  return text ? true : false
+}
+
+/**
+ * Extract a text chunk from an image
+ *
+ * @param keyword The keyword for the text chunk
+ * @param image The image `Buffer`
+ */
+export function extract(keyword: string, image: Buffer): string {
+  const chunks: Array<Chunk> = pngExtract(image)
+  const [index, text] = find(keyword, chunks)
+  if (!text) throw Error('No chunk found')
+  return text
+}
+
+/**
+ * Insert a text chunk into an image
+ *
+ * @param keyword The keyword for the text chunk
+ * @param text The text to insert
+ * @param image The image to insert into
+ */
+export function insert(keyword: string, text: string, image: Buffer): Buffer {
+  const chunks: Array<Chunk> = pngExtract(image)
+  const [index, current] = find(keyword, chunks)
+  if (current) chunks.splice(index, 1)
+  const chunk = pngText.encode(keyword, text)
+  chunks.splice(-1, 0, chunk)
+  return Buffer.from(pngEncode(chunks))
+}
 
 /**
  * Sniff a PNG file's contents to see if it is an rPNG
  *
- * @param filePath The file path to sniff
+ * @param content The file path to sniff
  */
-export async function sniff(filePath: string): Promise<boolean> {
-  // TODO if the extname is .png then sniff it's contents
+export async function sniff(content: string): Promise<boolean> {
+  // TODO Use the new `isPath` function, now in master, here
+  if (/*isPath(content) && */ path.parse(content).ext.includes('png')) {
+    const file = await readVFile(content)
+    if (isBuffer(file.contents)) {
+      return has(KEYWORD, file.contents)
+    }
+  }
   return false
 }
 
@@ -46,10 +122,11 @@ export async function sniff(filePath: string): Promise<boolean> {
  * @returns The Stencila node
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  // TODO extract the JSON from the file.contents buffer
-  const json =
-    '{"type": "Text", "value": "The JSON extracted from the rPNG TEXt chunk"}'
-  return load(json, 'json')
+  if (isBuffer(file.contents)) {
+    const json = extract(KEYWORD, file.contents)
+    return load(json, 'json')
+  }
+  return load('{}', 'json')
 }
 
 /**
@@ -71,7 +148,7 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   if (node && typeof node === 'object' && node.hasOwnProperty('value')) {
     value = (node as any).value
   } else {
-    value = (node as any).toString()
+    value = node
   }
   if (!value) throw new Error('Node must have a value')
   let html = await dump(value, 'html')
@@ -89,13 +166,14 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   )
   const elem = await page.$('#target')
   if (!elem) throw new Error('Element not found!')
-  const buffer = await elem.screenshot()
+  const buffer = await elem.screenshot({
+    encoding: 'binary'
+  })
   await browser.close()
 
   // Insert JSON of the thing into the image
-  const json = dump(node, 'json')
-  // TODO insert json into tEXt chunk
-  const image = buffer
+  const json = await dump(node, 'json')
+  const image = insert(KEYWORD, json, buffer)
 
   return loadVFile(image)
 }

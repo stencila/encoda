@@ -1,6 +1,6 @@
-import vfile from 'vfile'
 // @ts-ignore
 import toVFile from 'to-vfile'
+import vfile, { VFileContents } from 'vfile'
 
 /**
  * The virtual file type
@@ -21,7 +21,7 @@ export function create(options: any = {}): VFile {
  *
  * @param contents Contents to load
  */
-export function load(contents: string): VFile {
+export function load(contents: VFileContents): VFile {
   return vfile({ contents })
 }
 

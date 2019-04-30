@@ -1,14 +1,14 @@
 {
-  "type": "Document",
-  "body": [
+  "type": "Article",
+  "content": [
     {
       "type": "Blockquote",
-      "children": [
+      "content": [
         {
           "type": "Paragraph",
-          "children": [
+          "content": [
             {
-              "type": "Text",
+              "type": "#text",
               "value": "This is a simple blockquote example. With just one line."
             }
           ]

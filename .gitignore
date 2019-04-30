@@ -1,6 +1,8 @@
+.DS_Store
 /.sandbox
 /coverage
 /dist
 /docs
 /node_modules
 /tests/**/*.to.*
+/tests/fixtures/rpng/*out.png

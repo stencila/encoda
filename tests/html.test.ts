@@ -17,7 +17,12 @@ const eg1 = {
     content: [
       {
         type: 'Paragraph',
-        content: ['Paragraph one.']
+        content: [
+          {
+            type: '#text',
+            value: 'Paragraph one.'
+          }
+        ]
       }
     ]
   }
