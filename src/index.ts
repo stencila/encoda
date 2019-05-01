@@ -6,7 +6,7 @@ import path from 'path'
 import * as csv from './csv'
 import * as html from './html'
 import * as json from './json'
-// import * as md from './md';
+import * as md from './md'
 import * as ods from './ods'
 import * as rpng from './rpng'
 import * as tdp from './tdp'
@@ -30,7 +30,7 @@ export const compilerList: Array<Compiler> = [
   xlsx,
 
   csv,
-  // md,
+  md,
 
   yaml,
   html,
@@ -77,7 +77,7 @@ interface Compiler {
   sniff?: (content: string) => Promise<boolean>
 
   /**
-   * Parse a `Vfile` to a `stencila.Node`.
+   * Parse a `VFile` to a `stencila.Node`.
    *
    * @param file The `VFile` to parse
    * @returns A promise that resolves to a `stencila.Node`
