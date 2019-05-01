@@ -56,6 +56,8 @@ A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
 > A block quote
 
 * * *
+
+A paragraph with a !null, a !false, a !number(42.2), an !array[1,2], and an !object{a="1" b="t w o"}
 `,
   node: {
     type: 'Article',
@@ -132,6 +134,21 @@ A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
       },
       {
         type: 'ThematicBreak'
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with a ',
+          null,
+          ', a ',
+          false,
+          ', a ',
+          42.2,
+          ', an ',
+          [1, 2],
+          ', and an ',
+          { a: '1', b: 't w o' }
+        ]
       }
     ]
   }

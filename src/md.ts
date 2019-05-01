@@ -20,6 +20,13 @@ import { load, VFile } from './vfile'
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
 /**
+ * Options for `remark-frontmatter` parser and stringifier
+ *
+ * @see https://github.com/remarkjs/remark-frontmatter#matter
+ */
+const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
+
+/**
  * Parse a `VFile` with Markdown contents to a `stencila.Node`.
  *
  * @param file The `VFile` to parse
@@ -45,131 +52,12 @@ export async function parse(file: VFile): Promise<stencila.Node> {
  */
 export async function unparse(node: stencila.Node): Promise<VFile> {
   let mdast = unparseNode(node)
-  mdast = transformExtensions(mdast)
+  mdast = stringifyExtensions(mdast)
   const md = unified()
     .use(stringifier)
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .stringify(mdast)
   return load(md)
-}
-
-/**
- * Options for `remark-frontmatter` parser and stringifier
- *
- * @see https://github.com/remarkjs/remark-frontmatter#matter
- */
-const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
-
-/******************************************************************************
- * Custom Markdown extensions
- *
- * See https://github.com/medfreeman/remark-generic-extensions
- *****************************************************************************/
-
-/**
- * Interface for generic extension nodes parsed by `remark-generic-extensions`.
- *
- * Inline extensions have the syntax:
- *
- * ```markdown
- * !Extension[Content](Argument){Properties}
- * ```
- *
- * Block extensions have the syntax:
- *
- * ```markdown
- * Extension: Argument
- * :::
- * [Content]
- * :::
- * {Properties}
- * ```
- */
-interface ExtensionElement {
-  /**
-   * Name of the extension
-   */
-  extensionName: string
-
-  /**
-   * Content string
-   */
-  content: string
-
-  /**
-   * Argument string
-   */
-  argument: string
-
-  /**
-   * Map of computed properties
-   */
-  properties: { [key: string]: string }
-}
-
-/**
- * Enum for generic extension types
- */
-enum ExtensionType {
-  Inline = 'inline-extension',
-  Block = 'block-extension'
-}
-
-/**
- * Generic extensions definitions.
- *
- * @see https://github.com/medfreeman/remark-generic-extensions#elements-object
- */
-const GENERIC_EXTENSIONS = {
-  elements: {
-    connect: {
-      replace: (type: ExtensionType, element: ExtensionElement) => {
-        const node: { [key: string]: any } = {
-          type: 'connect',
-          content: element.content,
-          resource: element.argument
-        }
-        if (element.properties.length) node.options = element.properties
-        return node
-      }
-    },
-    include: {
-      replace: (type: ExtensionType, element: ExtensionElement) => {
-        const node: { [key: string]: any } = {
-          type: 'include',
-          resource: element.argument
-        }
-        if (element.content) node.content = element.content
-        if (element.properties.length) node.options = element.properties
-        return node
-      }
-    }
-  }
-}
-
-/**
- * Transform generic extensions back to MDAST
- *
- * We use `type: html` so no escaping of the value is done while stringifying.
- */
-function transformExtensions(tree: UNIST.Node) {
-  return map(tree, (node: any) => {
-    switch (node.type) {
-      case 'connect':
-        return {
-          type: 'html',
-          value: `!connect[${node.content}](${node.resource})`
-        }
-      case 'include':
-        return {
-          type: 'html',
-          value: `!include${node.content ? `[${node.content}]` : ''}(${
-            node.resource
-          })`
-        }
-    }
-    return node
-  })
 }
 
 /******************************************************************************
@@ -209,6 +97,9 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseInlineCode(node as MDAST.InlineCode)
     case 'text':
       return parseText(node as MDAST.Text)
+    case 'inline-extension':
+    case 'block-extension':
+      return parseGenericExtension(node)
     default:
       throw new Error(`No Markdown parser for MDAST node type "${type}"`)
   }
@@ -235,8 +126,16 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseDelete(node as stencila.Delete)
     case 'Verbatim':
       return unparseVerbatim(node as stencila.Verbatim)
+
     case 'string':
       return unparseString(node as string)
+    case 'null':
+    case 'boolean':
+    case 'number':
+    case 'array':
+    case 'object':
+      return unparseDefault(node, 'inline')
+
     default:
       throw new Error(`No Markdown unparser for Stencila node type "${type}"`)
   }
@@ -536,4 +435,176 @@ function parseText(text: MDAST.Text): string {
  */
 function unparseString(value: string): MDAST.Text {
   return { type: 'text', value }
+}
+
+/******************************************************************************
+ * Custom Markdown extensions
+ *
+ * See https://github.com/medfreeman/remark-generic-extensions
+ *
+ *
+ * Inline extensions have the syntax:
+ *
+ * ```markdown
+ * !Extension[Content](Argument){Properties}
+ * ```
+ *
+ * Block extensions have the syntax:
+ *
+ * ```markdown
+ * Extension: Argument
+ * :::
+ * [Content]
+ * :::
+ * {Properties}
+ * ```
+ *****************************************************************************/
+
+/**
+ * Interface for generic extension nodes parsed by `remark-generic-extensions`.
+ */
+interface ExtensionElement {
+  /**
+   * Name of the extension
+   */
+  name: string
+
+  /**
+   * Content string
+   */
+  content: string
+
+  /**
+   * Argument string
+   */
+  argument: string
+
+  /**
+   * Map of computed properties
+   */
+  properties: { [key: string]: string }
+}
+
+/**
+ * Generic extensions definitions.
+ *
+ * @see https://github.com/medfreeman/remark-generic-extensions#elements-object
+ */
+const GENERIC_EXTENSIONS = {
+  elements: {
+    null: { replace: parseExtensions },
+    boolean: { replace: parseExtensions },
+    true: { replace: parseExtensions },
+    false: { replace: parseExtensions },
+    number: { replace: parseExtensions },
+    array: { replace: parseExtensions },
+    object: { replace: parseExtensions }
+  }
+}
+
+/**
+ * Parse a generic extension into an MDAST node.
+ */
+function parseExtensions(
+  type: 'inline-extension' | 'block-extension',
+  element: ExtensionElement
+) {
+  return { type, ...element }
+}
+
+/**
+ * Unparse a generic extension node into a `MDAST.HTML` node.
+ *
+ * The `remark-generic-extensions` does not do this stringifying for us.
+ * We transform each to a `MDAST.HTML` node so that no escaping of the value is done
+ * while stringifying.
+ */
+function stringifyExtensions(tree: UNIST.Node) {
+  return map(tree, (node: any) => {
+    if (node.type === 'inline-extension' || node.type === 'block-extension') {
+      const props = Object.entries(node.properties || {})
+        .map(([key, value]) => `${key}=${JSON.stringify(value)}`)
+        .join(' ')
+      let value
+      if (node.type === 'inline-extension') {
+        value = `!${node.name}`
+        if (node.content) value += `[${node.content}]`
+        if (node.argument) value += `(${node.argument})`
+        if (node.properties) value += `{${props}}`
+      } else {
+        value = `${node.name}:`
+        if (node.argument) value += `${node.argument}`
+        value += `\n:::\n[${node.content || ''}]\n:::\n`
+        if (node.properties) value += `{${props}}`
+      }
+      return { type: 'html', value }
+    }
+    return node
+  })
+}
+
+/**
+ * Parse a `MDAST` generic extension node to a `stencila.Node`
+ */
+function parseGenericExtension(node: UNIST.Node): stencila.Node {
+  const ext = (node as unknown) as ExtensionElement
+  switch (ext.name) {
+    case 'null':
+      return null
+    case 'boolean':
+      return ext.content === 'true'
+    case 'true':
+      return true
+    case 'false':
+      return false
+    case 'number':
+      return parseFloat(ext.argument || ext.content || '0')
+    case 'array':
+      return JSON.parse(`[${ext.content}]`)
+    case 'object':
+      return ext.properties ? ext.properties : JSON.parse(ext.content || '{}')
+    default:
+      if (ext.name) throw new Error(`Unhandled generic extension "${ext.name}"`)
+      else
+        throw new Error(
+          `Unregistered generic extension "${node.data && node.data.hName}"`
+        )
+  }
+}
+
+/**
+ * Unparse a `stencila.Node` to a `MDAST` generic extension node
+ */
+function unparseDefault(
+  node: stencila.Node,
+  extType: 'inline' | 'block'
+): UNIST.Node {
+  const type = stencila.type(node)
+  let name = type
+  let content
+  let argument
+  let properties
+  switch (type) {
+    case 'null':
+      break
+    case 'boolean':
+      name = JSON.stringify(node)
+      break
+    case 'number':
+      argument = (node as number).toString()
+      break
+    case 'array':
+      content = JSON.stringify(node).slice(1, -1)
+      break
+    case 'object':
+      properties = node
+      break
+    default:
+      content = JSON.stringify(node)
+  }
+  const ext: UNIST.Node = { type: extType + '-extension', name }
+  if (content) ext.content = content
+  if (argument) ext.argument = argument
+  if (properties) ext.properties = properties
+  return ext
 }
