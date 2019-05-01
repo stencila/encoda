@@ -50,6 +50,8 @@ authors:
 ### Heading three
 
 First paragraph.
+
+A paragraph with _emphasis_.
 `,
   node: {
     type: 'Article',
@@ -88,6 +90,17 @@ First paragraph.
       {
         type: 'Paragraph',
         content: ['First paragraph.']
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with ',
+          {
+            type: 'Emphasis',
+            content: ['emphasis']
+          },
+          '.'
+        ]
       }
     ]
   }

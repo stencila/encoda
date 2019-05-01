@@ -180,37 +180,50 @@ function transformExtensions(tree: UNIST.Node) {
  *
  * Functions are in pairs:
  *
- *   - `parser(MDAST.X): stencila.Y`: for parsing the MDAST node type `X`
+ *   - `parseX(MDAST.X): stencila.Y`: for parsing the MDAST node type `X`
  *                                    to Stencila node type `Y`
- *   - `unparser(stencila.Y): MDAST.X`: for unparsing Stencila node type `Y`
+ *   - `unparseY(stencila.Y): MDAST.X`: for unparsing Stencila node type `Y`
  *                                      to Stencila node type `X`
- *
- * There is no default parser or default unparser to force us to explicitly
- * write functions for each pair of node types
  *****************************************************************************/
-
-type Parser = (node: UNIST.Node) => stencila.Node
-type Unparser = (node: stencila.Node) => MDAST.Content
-
-const parsers: { [key: string]: Parser } = {}
-const unparsers: { [key: string]: Unparser } = {}
 
 function parseNode(node: UNIST.Node): stencila.Node {
   const type = node.type
-  const parser = parsers[type]
-  if (!parser) {
-    throw new Error(`No Markdown parser for MDAST node type "${type}"`)
+  switch (type) {
+    case 'root':
+      return parseRoot(node as MDAST.Root)
+    case 'heading':
+      return parseHeading(node as MDAST.Heading)
+    case 'paragraph':
+      return parseParagraph(node as MDAST.Paragraph)
+    case 'emphasis':
+      return parseEmphasis(node as MDAST.Emphasis)
+    case 'text':
+      return parseText(node as MDAST.Text)
+    default:
+      throw new Error(`No Markdown parser for MDAST node type "${type}"`)
   }
-  return parser(node)
 }
 
-function unparseNode(node: stencila.Node): MDAST.Content {
+function unparseNode(node: stencila.Node): UNIST.Node {
   const type = stencila.type(node)
-  const unparser = unparsers[type]
-  if (!unparser) {
-    throw new Error(`No Markdown unparser for Stencila node type "${type}"`)
+  switch (type) {
+    case 'Article':
+      return unparseArticle(node as stencila.Article)
+    case 'Heading':
+      return unparseHeading(node as stencila.Heading)
+    case 'Paragraph':
+      return unparseParagraph(node as stencila.Paragraph)
+    case 'Emphasis':
+      return unparseEmphasis(node as stencila.Emphasis)
+    case 'string':
+      return unparseString(node as string)
+    default:
+      throw new Error(`No Markdown unparser for Stencila node type "${type}"`)
   }
-  return unparser(node)
+}
+
+function unparseContent(node: stencila.Node): MDAST.Content {
+  return unparseNode(node) as MDAST.Content
 }
 
 // TODO: stencila.InlineContent should be exported?
@@ -246,8 +259,7 @@ function unparseInlineContent(
  *
  * @param root The MDAST root to parse
  */
-// @ts-ignore
-parsers['root'] = function(root: MDAST.Root): stencila.Article {
+function parseRoot(root: MDAST.Root): stencila.Article {
   const article = stencila.create(
     'Article',
     {
@@ -283,7 +295,7 @@ parsers['root'] = function(root: MDAST.Root): stencila.Article {
 }
 
 /**
- * Unparse a `stencila.Article` to a `MDAST.root`
+ * Unparse a `stencila.Article` to a `MDAST.Root`
  *
  * The article's `articleBody` property becomes the root's `children`
  * and any other properties are serialized as YAML
@@ -291,8 +303,7 @@ parsers['root'] = function(root: MDAST.Root): stencila.Article {
  *
  * @param node The Stencila article to unparse
  */
-// @ts-ignore
-unparsers['Article'] = function(article: stencila.Article): MDAST.Root {
+function unparseArticle(article: stencila.Article): MDAST.Root {
   const root: MDAST.Root = {
     type: 'root',
     children: []
@@ -300,7 +311,7 @@ unparsers['Article'] = function(article: stencila.Article): MDAST.Root {
 
   // Unparse the article body
   if (article.articleBody) {
-    root.children = article.articleBody.map(unparseNode)
+    root.children = article.articleBody.map(unparseContent)
   }
 
   // Add other properties as frontmatter
@@ -324,19 +335,18 @@ unparsers['Article'] = function(article: stencila.Article): MDAST.Root {
 /**
  * Parse a `MDAST.Heading` to a `stencila.Heading`
  */
-// @ts-ignore
-parsers['heading'] = function(heading: MDAST.Heading): stencila.Heading {
-  return stencila.create('Heading', {
+function parseHeading(heading: MDAST.Heading): stencila.Heading {
+  return {
+    type: 'Heading',
     depth: heading.depth,
-    content: heading.children.map(parseNode)
-  })
+    content: heading.children.map(parsePhrasingContent)
+  }
 }
 
 /**
  * Unparse a `stencila.Heading` to a `MDAST.Heading`
  */
-// @ts-ignore
-unparsers['Heading'] = function(heading: stencila.Heading): MDAST.Heading {
+function unparseHeading(heading: stencila.Heading): MDAST.Heading {
   return {
     type: 'heading',
     depth: heading.depth as (1 | 2 | 3 | 4 | 5 | 6),
@@ -347,10 +357,7 @@ unparsers['Heading'] = function(heading: stencila.Heading): MDAST.Heading {
 /**
  * Parse a `MDAST.Paragraph` to a `stencila.Paragraph`
  */
-// @ts-ignore
-parsers['paragraph'] = function(
-  paragraph: MDAST.Paragraph
-): stencila.Paragraph {
+function parseParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
   return {
     type: 'Paragraph',
     content: paragraph.children.map(parsePhrasingContent)
@@ -360,10 +367,7 @@ parsers['paragraph'] = function(
 /**
  * Unparse a `stencila.Paragraph` to a `MDAST.Paragraph`
  */
-// @ts-ignore
-unparsers['Paragraph'] = function(
-  paragraph: stencila.Paragraph
-): MDAST.Paragraph {
+function unparseParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph {
   return {
     type: 'paragraph',
     children: paragraph.content.map(unparseInlineContent)
@@ -371,17 +375,35 @@ unparsers['Paragraph'] = function(
 }
 
 /**
+ * Parse a `MDAST.Emphasis` to a `stencila.Emphasis`
+ */
+function parseEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
+  return {
+    type: 'Emphasis',
+    content: emphasis.children.map(parsePhrasingContent)
+  }
+}
+
+/**
+ * Unparse a `stencila.Emphasis` to a `MDAST.Emphasis`
+ */
+function unparseEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
+  return {
+    type: 'emphasis',
+    children: emphasis.content.map(unparseInlineContent)
+  }
+}
+
+/**
  * Parse a `MDAST.Text` to a `string`
  */
-// @ts-ignore
-parsers['text'] = function(text: MDAST.Text): string {
+function parseText(text: MDAST.Text): string {
   return text.value
 }
 
 /**
  * Unparse a `string` to a `MDAST.Text`
  */
-// @ts-ignore
-unparsers['string'] = function(value: string): MDAST.Text {
+function unparseString(value: string): MDAST.Text {
   return { type: 'text', value }
 }
