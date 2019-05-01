@@ -48,6 +48,8 @@ authors:
 ## Heading two
 
 ### Heading three
+
+First paragraph.
 `,
   node: {
     type: 'Article',
@@ -82,6 +84,10 @@ authors:
         type: 'Heading',
         depth: 3,
         content: ['Heading three']
+      },
+      {
+        type: 'Paragraph',
+        content: ['First paragraph.']
       }
     ]
   }

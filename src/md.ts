@@ -213,8 +213,27 @@ function unparseNode(node: stencila.Node): MDAST.Content {
   return unparser(node)
 }
 
-// TODO: stencila.InlineContent should be exported for use here?
-function unparseInlineContent(node: stencila.Node) {
+// TODO: stencila.InlineContent should be exported?
+type stencilaInlineContent =
+  | null
+  | boolean
+  | number
+  | string
+  | stencila.Emphasis
+  | stencila.Strong
+  | stencila.Delete
+  | stencila.Verbatim
+  | stencila.Expression
+
+function parsePhrasingContent(
+  node: MDAST.PhrasingContent
+): stencilaInlineContent {
+  return parseNode(node) as stencilaInlineContent
+}
+
+function unparseInlineContent(
+  node: stencilaInlineContent
+): MDAST.PhrasingContent {
   return unparseNode(node) as MDAST.PhrasingContent
 }
 
@@ -318,9 +337,37 @@ parsers['heading'] = function(heading: MDAST.Heading): stencila.Heading {
  */
 // @ts-ignore
 unparsers['Heading'] = function(heading: stencila.Heading): MDAST.Heading {
-  const depth = heading.depth as (1 | 2 | 3 | 4 | 5 | 6)
-  const children = heading.content.map(unparseInlineContent)
-  return { type: 'heading', depth, children }
+  return {
+    type: 'heading',
+    depth: heading.depth as (1 | 2 | 3 | 4 | 5 | 6),
+    children: heading.content.map(unparseInlineContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.Paragraph` to a `stencila.Paragraph`
+ */
+// @ts-ignore
+parsers['paragraph'] = function(
+  paragraph: MDAST.Paragraph
+): stencila.Paragraph {
+  return {
+    type: 'Paragraph',
+    content: paragraph.children.map(parsePhrasingContent)
+  }
+}
+
+/**
+ * Unparse a `stencila.Paragraph` to a `MDAST.Paragraph`
+ */
+// @ts-ignore
+unparsers['Paragraph'] = function(
+  paragraph: stencila.Paragraph
+): MDAST.Paragraph {
+  return {
+    type: 'paragraph',
+    children: paragraph.content.map(unparseInlineContent)
+  }
 }
 
 /**
