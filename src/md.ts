@@ -560,15 +560,16 @@ function parseGenericExtension(node: UNIST.Node): stencila.Node {
     case 'number':
       return parseFloat(ext.argument || ext.content || '0')
     case 'array':
-      return JSON.parse(`[${ext.content}]`)
+      return JSON.parse(`[${ext.content || ext.argument || ''}]`)
     case 'object':
       return ext.properties ? ext.properties : JSON.parse(ext.content || '{}')
     default:
       if (ext.name) throw new Error(`Unhandled generic extension "${ext.name}"`)
-      else
+      else {
         throw new Error(
           `Unregistered generic extension "${node.data && node.data.hName}"`
         )
+      }
   }
 }
 
