@@ -195,6 +195,10 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseHeading(node as MDAST.Heading)
     case 'paragraph':
       return parseParagraph(node as MDAST.Paragraph)
+    case 'blockquote':
+      return parseBlockquote(node as MDAST.Blockquote)
+    case 'thematicBreak':
+      return parseThematicBreak(node as MDAST.ThematicBreak)
     case 'emphasis':
       return parseEmphasis(node as MDAST.Emphasis)
     case 'strong':
@@ -219,6 +223,10 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseHeading(node as stencila.Heading)
     case 'Paragraph':
       return unparseParagraph(node as stencila.Paragraph)
+    case 'Blockquote':
+      return unparseBlockquote(node as stencila.Blockquote)
+    case 'ThematicBreak':
+      return unparseThematicBreak(node as stencila.ThematicBreak)
     case 'Emphasis':
       return unparseEmphasis(node as stencila.Emphasis)
     case 'Strong':
@@ -260,6 +268,14 @@ function unparseInlineContent(
   node: stencilaInlineContent
 ): MDAST.PhrasingContent {
   return unparseNode(node) as MDAST.PhrasingContent
+}
+
+function parseBlockContent(node: MDAST.BlockContent): stencila.BlockContent {
+  return parseNode(node) as stencila.BlockContent
+}
+
+function unparseBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
+  return unparseNode(node) as MDAST.BlockContent
 }
 
 /**
@@ -383,6 +399,48 @@ function unparseParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph {
   return {
     type: 'paragraph',
     children: paragraph.content.map(unparseInlineContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.Blockquote` to a `stencila.Blockquote`
+ */
+function parseBlockquote(paragraph: MDAST.Blockquote): stencila.Blockquote {
+  return {
+    type: 'Blockquote',
+    content: paragraph.children.map(parseBlockContent)
+  }
+}
+
+/**
+ * Unparse a `stencila.Blockquote` to a `MDAST.Blockquote`
+ */
+function unparseBlockquote(paragraph: stencila.Blockquote): MDAST.Blockquote {
+  return {
+    type: 'blockquote',
+    children: paragraph.content.map(unparseBlockContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.ThematicBreak` to a `stencila.ThematicBreak`
+ */
+function parseThematicBreak(
+  tbreak: MDAST.ThematicBreak
+): stencila.ThematicBreak {
+  return {
+    type: 'ThematicBreak'
+  }
+}
+
+/**
+ * Unparse a `stencila.ThematicBreak` to a `MDAST.ThematicBreak`
+ */
+function unparseThematicBreak(
+  tbreak: stencila.ThematicBreak
+): MDAST.ThematicBreak {
+  return {
+    type: 'thematicBreak'
   }
 }
 

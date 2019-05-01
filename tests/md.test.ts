@@ -52,6 +52,10 @@ authors:
 First paragraph.
 
 A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
+
+> A block quote
+
+* * *
 `,
   node: {
     type: 'Article',
@@ -116,6 +120,18 @@ A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
           },
           ' text.'
         ]
+      },
+      {
+        type: 'Blockquote',
+        content: [
+          {
+            type: 'Paragraph',
+            content: ['A block quote']
+          }
+        ]
+      },
+      {
+        type: 'ThematicBreak'
       }
     ]
   }
