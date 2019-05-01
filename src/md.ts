@@ -79,6 +79,7 @@ function parseNode(node: UNIST.Node): stencila.Node {
   switch (type) {
     case 'root':
       return parseRoot(node as MDAST.Root)
+    // Block content
     case 'heading':
       return parseHeading(node as MDAST.Heading)
     case 'paragraph':
@@ -87,6 +88,7 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseBlockquote(node as MDAST.Blockquote)
     case 'thematicBreak':
       return parseThematicBreak(node as MDAST.ThematicBreak)
+    // Inline content
     case 'emphasis':
       return parseEmphasis(node as MDAST.Emphasis)
     case 'strong':
@@ -98,8 +100,30 @@ function parseNode(node: UNIST.Node): stencila.Node {
     case 'text':
       return parseText(node as MDAST.Text)
     case 'inline-extension':
-    case 'block-extension':
-      return parseGenericExtension(node)
+      const ext = (node as unknown) as Extension
+      switch (ext.name) {
+        case 'null':
+          return parseNull(ext)
+        case 'boolean':
+        case 'true':
+        case 'false':
+          return parseBoolean(ext)
+        case 'number':
+          return parseNumber(ext)
+        case 'array':
+          return parseArray(ext)
+        case 'object':
+          return parseObject(ext)
+        default:
+          if (ext.name) {
+            throw new Error(`Unhandled generic extension "${ext.name}"`)
+          } else {
+            throw new Error(
+              `Unregistered generic extension "${node.data && node.data.hName}"`
+            )
+          }
+      }
+
     default:
       throw new Error(`No Markdown parser for MDAST node type "${type}"`)
   }
@@ -110,6 +134,7 @@ function unparseNode(node: stencila.Node): UNIST.Node {
   switch (type) {
     case 'Article':
       return unparseArticle(node as stencila.Article)
+    // Block content
     case 'Heading':
       return unparseHeading(node as stencila.Heading)
     case 'Paragraph':
@@ -118,6 +143,7 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseBlockquote(node as stencila.Blockquote)
     case 'ThematicBreak':
       return unparseThematicBreak(node as stencila.ThematicBreak)
+    // Inline content
     case 'Emphasis':
       return unparseEmphasis(node as stencila.Emphasis)
     case 'Strong':
@@ -126,15 +152,18 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseDelete(node as stencila.Delete)
     case 'Verbatim':
       return unparseVerbatim(node as stencila.Verbatim)
-
     case 'string':
       return unparseString(node as string)
     case 'null':
+      return unparseNull(node as null)
     case 'boolean':
+      return unparseBoolean(node as boolean)
     case 'number':
+      return unparseNumber(node as number)
     case 'array':
+      return unparseArray(node as Array<any>)
     case 'object':
-      return unparseDefault(node, 'inline')
+      return unparseObject(node as object)
 
     default:
       throw new Error(`No Markdown unparser for Stencila node type "${type}"`)
@@ -437,8 +466,135 @@ function unparseString(value: string): MDAST.Text {
   return { type: 'text', value }
 }
 
+/**
+ * Parse a `!null` inline extension to `null`
+ */
+function parseNull(ext: Extension): null {
+  return null
+}
+
+/**
+ * Unparse `null` to a `!null` inline extension
+ */
+function unparseNull(value: null): Extension {
+  return { type: 'inline-extension', name: 'null' }
+}
+
+/**
+ * Parse a `!true`, `!false`, `!boolean` inline extension to a `boolean`
+ *
+ * Valid booleans include (the first two are the preferred and the default,
+ * the last should be avoided):
+ *
+ *   - `!true` or `!false`
+ *   - `!boolean(true)` and `!boolean(1)`
+ *   - `!boolean(false)` and `!boolean(0)`
+ *   - `!boolean` (parsed to `true`)
+ *   - `!boolean[true]` and `!boolean[1]` etc
+ */
+function parseBoolean(ext: Extension): boolean {
+  switch (ext.name) {
+    case 'true':
+      return true
+    case 'false':
+      return false
+    default:
+      const value = ext.argument || ext.content || 'true'
+      return value === 'true' || value === '1' ? true : false
+  }
+}
+
+/**
+ * Unparse a `boolean` to a `!boolean` inline extension
+ */
+function unparseBoolean(value: boolean): Extension {
+  return { type: 'inline-extension', name: value ? 'true' : 'false' }
+}
+
+/**
+ * Parse a `!number` inline extension to a `number`.
+ *
+ * Valid numbers include (the first is the preferred and the default,
+ * the last should be avoided):
+ *
+ *   - `!number(3.14)`
+ *   - `!number` (parsed to `0`)
+ *   - `!number[3.14]`
+ */
+function parseNumber(ext: Extension): number {
+  return parseFloat(ext.argument || ext.content || '0')
+}
+
+/**
+ * Unparse a `number` to a `!number` inline extension
+ */
+function unparseNumber(value: number): Extension {
+  return {
+    type: 'inline-extension',
+    name: 'number',
+    argument: value.toString()
+  }
+}
+
+/**
+ * Parse an `!array` inline extension to an `Array`.
+ *
+ * Valid arrays include (the first is the preferred and the default,
+ * the last should be avoided):
+ *
+ *   - `!array(1, 2)`
+ *   - `!array` (parsed to `[]`)
+ *   - `!array[1, 2]`
+ */
+function parseArray(ext: Extension): Array<any> {
+  const items = ext.argument || ext.content || ''
+  const array = JSON.parse(`[${items}]`)
+  return array
+}
+
+/**
+ * Unparse an `array` to a `!array` inline extension
+ */
+function unparseArray(value: Array<any>): Extension {
+  const argument = JSON.stringify(value).slice(1, -1)
+  return { type: 'inline-extension', name: 'array', argument }
+}
+
+/**
+ * Parse an `!object` inline extension to an `Object`.
+ *
+ * Valid objects include (the first is the preferred and the default,
+ * the last should be avoided):
+ *
+ *   - `!object("key":value, ...)` (comma separated pairs, values can be any JSON primitives)
+ *   - `!object{key=string ...}` (space separated pairs; values can only be strings)
+ *   - `!object` (parsed to `{}`)
+ *   - `!object["key":"value", ...]`
+ */
+function parseObject(ext: Extension): object {
+  if (ext.properties) {
+    // Extension properties always contain `className` and `id`, which may
+    // be undefined, so drop them.
+    const props: { [key: string]: any } = {}
+    for (let [key, value] of Object.entries(ext.properties)) {
+      // tslint:disable-next-line
+      if (typeof value !== 'undefined') props[key] = value
+    }
+    if (Object.keys(props).length > 0) return props
+  }
+  return JSON.parse(`{${ext.argument || ext.content}}`)
+}
+
+/**
+ * Unparse an `object` to a `!object` inline extension
+ */
+function unparseObject(value: object): Extension {
+  const argument = JSON.stringify(value).slice(1, -1)
+  return { type: 'inline-extension', name: 'object', argument }
+}
+
 /******************************************************************************
- * Custom Markdown extensions
+ * Handling of custom Markdown extensions
  *
  * See https://github.com/medfreeman/remark-generic-extensions
  *
@@ -463,7 +619,12 @@ function unparseString(value: string): MDAST.Text {
 /**
  * Interface for generic extension nodes parsed by `remark-generic-extensions`.
  */
-interface ExtensionElement {
+interface Extension extends UNIST.Node {
+  /**
+   * Type of extension
+   */
+  type: 'inline-extension' | 'block-extension'
+
   /**
    * Name of the extension
    */
@@ -472,17 +633,17 @@ interface ExtensionElement {
   /**
    * Content string
    */
-  content: string
+  content?: string
 
   /**
    * Argument string
    */
-  argument: string
+  argument?: string
 
   /**
    * Map of computed properties
    */
-  properties: { [key: string]: string }
+  properties?: { [key: string]: string }
 }
 
 /**
@@ -492,22 +653,22 @@ interface ExtensionElement {
  */
 const GENERIC_EXTENSIONS = {
   elements: {
-    null: { replace: parseExtensions },
-    boolean: { replace: parseExtensions },
-    true: { replace: parseExtensions },
-    false: { replace: parseExtensions },
-    number: { replace: parseExtensions },
-    array: { replace: parseExtensions },
-    object: { replace: parseExtensions }
+    null: { replace: parseExtension },
+    boolean: { replace: parseExtension },
+    true: { replace: parseExtension },
+    false: { replace: parseExtension },
+    number: { replace: parseExtension },
+    array: { replace: parseExtension },
+    object: { replace: parseExtension }
   }
 }
 
 /**
  * Parse a generic extension into an MDAST node.
  */
-function parseExtensions(
+function parseExtension(
   type: 'inline-extension' | 'block-extension',
-  element: ExtensionElement
+  element: Extension
 ) {
   return { type, ...element }
 }
@@ -541,71 +702,4 @@ function stringifyExtensions(tree: UNIST.Node) {
     }
     return node
   })
-}
-
-/**
- * Parse a `MDAST` generic extension node to a `stencila.Node`
- */
-function parseGenericExtension(node: UNIST.Node): stencila.Node {
-  const ext = (node as unknown) as ExtensionElement
-  switch (ext.name) {
-    case 'null':
-      return null
-    case 'boolean':
-      return ext.content === 'true'
-    case 'true':
-      return true
-    case 'false':
-      return false
-    case 'number':
-      return parseFloat(ext.argument || ext.content || '0')
-    case 'array':
-      return JSON.parse(`[${ext.content || ext.argument || ''}]`)
-    case 'object':
-      return ext.properties ? ext.properties : JSON.parse(ext.content || '{}')
-    default:
-      if (ext.name) throw new Error(`Unhandled generic extension "${ext.name}"`)
-      else {
-        throw new Error(
-          `Unregistered generic extension "${node.data && node.data.hName}"`
-        )
-      }
-  }
-}
-
-/**
- * Unparse a `stencila.Node` to a `MDAST` generic extension node
- */
-function unparseDefault(
-  node: stencila.Node,
-  extType: 'inline' | 'block'
-): UNIST.Node {
-  const type = stencila.type(node)
-  let name = type
-  let content
-  let argument
-  let properties
-  switch (type) {
-    case 'null':
-      break
-    case 'boolean':
-      name = JSON.stringify(node)
-      break
-    case 'number':
-      argument = (node as number).toString()
-      break
-    case 'array':
-      content = JSON.stringify(node).slice(1, -1)
-      break
-    case 'object':
-      properties = node
-      break
-    default:
-      content = JSON.stringify(node)
-  }
-  const ext: UNIST.Node = { type: extType + '-extension', name }
-  if (content) ext.content = content
-  if (argument) ext.argument = argument
-  if (properties) ext.properties = properties
-  return ext
 }

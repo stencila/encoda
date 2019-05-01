@@ -57,7 +57,7 @@ A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
 
 * * *
 
-A paragraph with a !null, a !false, a !number(42.2), an !array[1,2], and an !object{a="1" b="t w o"}
+A paragraph with a !null, a !false, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
 `,
   node: {
     type: 'Article',
@@ -147,7 +147,8 @@ A paragraph with a !null, a !false, a !number(42.2), an !array[1,2], and an !obj
           ', an ',
           [1, 2],
           ', and an ',
-          { a: '1', b: 't w o' }
+          { a: '1', b: 'two' },
+          '.'
         ]
       }
     ]
