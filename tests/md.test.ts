@@ -51,7 +51,7 @@ authors:
 
 First paragraph.
 
-A paragraph with _emphasis_.
+A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
 `,
   node: {
     type: 'Article',
@@ -99,7 +99,22 @@ A paragraph with _emphasis_.
             type: 'Emphasis',
             content: ['emphasis']
           },
-          '.'
+          ', ',
+          {
+            type: 'Strong',
+            content: ['strong']
+          },
+          ', ',
+          {
+            type: 'Delete',
+            content: ['delete']
+          },
+          ' and ',
+          {
+            type: 'Verbatim',
+            value: 'verbatim'
+          },
+          ' text.'
         ]
       }
     ]

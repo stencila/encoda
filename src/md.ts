@@ -197,6 +197,12 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseParagraph(node as MDAST.Paragraph)
     case 'emphasis':
       return parseEmphasis(node as MDAST.Emphasis)
+    case 'strong':
+      return parseStrong(node as MDAST.Strong)
+    case 'delete':
+      return parseDelete(node as MDAST.Delete)
+    case 'inlineCode':
+      return parseInlineCode(node as MDAST.InlineCode)
     case 'text':
       return parseText(node as MDAST.Text)
     default:
@@ -215,6 +221,12 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseParagraph(node as stencila.Paragraph)
     case 'Emphasis':
       return unparseEmphasis(node as stencila.Emphasis)
+    case 'Strong':
+      return unparseStrong(node as stencila.Strong)
+    case 'Delete':
+      return unparseDelete(node as stencila.Delete)
+    case 'Verbatim':
+      return unparseVerbatim(node as stencila.Verbatim)
     case 'string':
       return unparseString(node as string)
     default:
@@ -391,6 +403,66 @@ function unparseEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
   return {
     type: 'emphasis',
     children: emphasis.content.map(unparseInlineContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.Strong` to a `stencila.Strong`
+ */
+function parseStrong(strong: MDAST.Strong): stencila.Strong {
+  return {
+    type: 'Strong',
+    content: strong.children.map(parsePhrasingContent)
+  }
+}
+
+/**
+ * Unparse a `stencila.Strong` to a `MDAST.Strong`
+ */
+function unparseStrong(strong: stencila.Strong): MDAST.Strong {
+  return {
+    type: 'strong',
+    children: strong.content.map(unparseInlineContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.Delete` to a `stencila.Delete`
+ */
+function parseDelete(delet: MDAST.Delete): stencila.Delete {
+  return {
+    type: 'Delete',
+    content: delet.children.map(parsePhrasingContent)
+  }
+}
+
+/**
+ * Unparse a `stencila.Delete` to a `MDAST.Delete`
+ */
+function unparseDelete(delet: stencila.Delete): MDAST.Delete {
+  return {
+    type: 'delete',
+    children: delet.content.map(unparseInlineContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.InlineCode` to a `stencila.Verbatim`
+ */
+function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Verbatim {
+  return {
+    type: 'Verbatim',
+    value: inlineCode.value
+  }
+}
+
+/**
+ * Unparse a `stencila.Verbatim` to a `MDAST.InlineCode`
+ */
+function unparseVerbatim(verbatim: stencila.Verbatim): MDAST.InlineCode {
+  return {
+    type: 'inlineCode',
+    value: verbatim.value
   }
 }
 
