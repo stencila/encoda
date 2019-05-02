@@ -86,6 +86,8 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseParagraph(node as MDAST.Paragraph)
     case 'blockquote':
       return parseBlockquote(node as MDAST.Blockquote)
+    case 'list':
+      return parseList(node as MDAST.List)
     case 'thematicBreak':
       return parseThematicBreak(node as MDAST.ThematicBreak)
     // Inline content
@@ -97,6 +99,8 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseDelete(node as MDAST.Delete)
     case 'inlineCode':
       return parseInlineCode(node as MDAST.InlineCode)
+    case 'linkReference':
+      return parseLinkReference(node as MDAST.LinkReference)
     case 'text':
       return parseText(node as MDAST.Text)
     case 'inline-extension':
@@ -123,7 +127,6 @@ function parseNode(node: UNIST.Node): stencila.Node {
             )
           }
       }
-
     default:
       throw new Error(`No Markdown parser for MDAST node type "${type}"`)
   }
@@ -141,6 +144,8 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseParagraph(node as stencila.Paragraph)
     case 'Blockquote':
       return unparseBlockquote(node as stencila.Blockquote)
+    case 'List':
+      return unparseList(node as stencila.List)
     case 'ThematicBreak':
       return unparseThematicBreak(node as stencila.ThematicBreak)
     // Inline content
@@ -333,20 +338,81 @@ function unparseParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph {
 /**
  * Parse a `MDAST.Blockquote` to a `stencila.Blockquote`
  */
-function parseBlockquote(paragraph: MDAST.Blockquote): stencila.Blockquote {
+function parseBlockquote(blockquote: MDAST.Blockquote): stencila.Blockquote {
   return {
     type: 'Blockquote',
-    content: paragraph.children.map(parseBlockContent)
+    content: blockquote.children.map(parseBlockContent)
   }
 }
 
 /**
  * Unparse a `stencila.Blockquote` to a `MDAST.Blockquote`
  */
-function unparseBlockquote(paragraph: stencila.Blockquote): MDAST.Blockquote {
+function unparseBlockquote(blockquote: stencila.Blockquote): MDAST.Blockquote {
   return {
     type: 'blockquote',
-    children: paragraph.content.map(unparseBlockContent)
+    children: blockquote.content.map(unparseBlockContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.List` to a `stencila.List`
+ */
+function parseList(list: MDAST.List): stencila.List {
+  const items = []
+  for (let item of list.children) {
+    // TODO: when there are more than one child then create a stencila.Block
+    let node = parseNode(item.children[0])
+
+    // If the item has a check box then insert that as a boolean as the first
+    // child of the first child
+    if (item.checked === true || item.checked === false) {
+      //@ts-ignore
+      if (node.content) node.content = [item.checked, ...node.content]
+    }
+
+    items.push(node)
+  }
+  return {
+    type: 'List',
+    order: list.ordered ? 'ascending' : 'unordered',
+    items
+  }
+}
+
+/**
+ * Unparse a `stencila.List` to a `MDAST.List`
+ */
+function unparseList(list: stencila.List): MDAST.List {
+  return {
+    type: 'list',
+    ordered: list.order === 'ascending',
+    children: list.items.map(
+      (item: stencila.Node): MDAST.ListItem => {
+        // TODO: wrap anything that is not inline content into a block e.g. para
+        const first = unparseNode(item) as MDAST.BlockContent
+        const children = [first]
+
+        // Is this a checked item (ie. a paragraph starting with a boolean)?
+        let checked: boolean | undefined = undefined
+        if (first.type === 'paragraph') {
+          if (first.children[0].type === 'html') {
+            if (['[x]', '[ ]'].includes(first.children[0].value as string)) {
+              // Apply the boolean value to this list item
+              checked = first.children[0].value === '[x]'
+              // Remove the boolean checkbox from the paragraph (since remark stringify does that)
+              first.children = first.children.slice(1)
+            }
+          }
+        }
+
+        return {
+          type: 'listItem',
+          checked,
+          children
+        }
+      }
+    )
   }
 }
 
@@ -453,6 +519,22 @@ function unparseVerbatim(verbatim: stencila.Verbatim): MDAST.InlineCode {
 }
 
 /**
+ * Parse a `MDAST.LinkReference` to a `boolean` or `Reference`
+ *
+ * A Markdown "checkbox" (ie `[x]` or `[ ]`) is parsed as a `MDAST.LinkReference`,
+ * so this function will return a `boolean` in those cases, and  `Reference` in others.
+ */
+function parseLinkReference(link: MDAST.LinkReference): boolean {
+  const firstChild = link.children[0]
+  if (firstChild && firstChild.type === 'text') {
+    const text = (firstChild as MDAST.Text).value
+    if (text === 'x') return true
+    if (text === ' ') return false
+  }
+  throw new Error('TODO: implement handling of actual link references')
+}
+
+/**
  * Parse a `MDAST.Text` to a `string`
  */
 function parseText(text: MDAST.Text): string {
@@ -486,6 +568,7 @@ function unparseNull(value: null): Extension {
  * Valid booleans include (the first two are the preferred and the default,
  * the last should be avoided):
  *
+ *   - `[x]` or `[ ]` (handled in `linkReferenceParse`)
  *   - `!true` or `!false`
  *   - `!boolean(true)` and `!boolean(1)`
  *   - `!boolean(false)` and `!boolean(0)`
@@ -505,10 +588,10 @@ function parseBoolean(ext: Extension): boolean {
 }
 
 /**
- * Unparse a `boolean` to a `!boolean` inline extension
+ * Unparse a `boolean` to a `[x]` or `[ ]`.
  */
-function unparseBoolean(value: boolean): Extension {
-  return { type: 'inline-extension', name: value ? 'true' : 'false' }
+function unparseBoolean(value: boolean): MDAST.HTML {
+  return { type: 'html', value: value ? '[x]' : '[ ]' }
 }
 
 /**

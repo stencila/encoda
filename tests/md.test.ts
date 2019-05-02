@@ -49,15 +49,23 @@ authors:
 
 ### Heading three
 
-First paragraph.
-
 A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
+
+A paragraph with [x] and [ ] boolean values.
+
+A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
 
 > A block quote
 
-* * *
+-   First item
+-   [x] Done
+-   [ ] Not done
 
-A paragraph with a !null, a !false, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
+1.  One
+2.  [x] Two
+3.  [ ] Three
+
+* * *
 `,
   node: {
     type: 'Article',
@@ -95,10 +103,6 @@ A paragraph with a !null, a !false, a !number(42.2), an !array(1,2), and an !obj
       },
       {
         type: 'Paragraph',
-        content: ['First paragraph.']
-      },
-      {
-        type: 'Paragraph',
         content: [
           'A paragraph with ',
           {
@@ -124,6 +128,24 @@ A paragraph with a !null, a !false, a !number(42.2), an !array(1,2), and an !obj
         ]
       },
       {
+        type: 'Paragraph',
+        content: ['A paragraph with ', true, ' and ', false, ' boolean values.']
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with a ',
+          null,
+          ', a ',
+          42.2,
+          ', an ',
+          [1, 2],
+          ', and an ',
+          { a: '1', b: 'two' },
+          '.'
+        ]
+      },
+      {
         type: 'Blockquote',
         content: [
           {
@@ -133,23 +155,43 @@ A paragraph with a !null, a !false, a !number(42.2), an !array(1,2), and an !obj
         ]
       },
       {
-        type: 'ThematicBreak'
+        type: 'List',
+        order: 'unordered',
+        items: [
+          {
+            type: 'Paragraph',
+            content: ['First item']
+          },
+          {
+            type: 'Paragraph',
+            content: [true, 'Done']
+          },
+          {
+            type: 'Paragraph',
+            content: [false, 'Not done']
+          }
+        ]
       },
       {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with a ',
-          null,
-          ', a ',
-          false,
-          ', a ',
-          42.2,
-          ', an ',
-          [1, 2],
-          ', and an ',
-          { a: '1', b: 'two' },
-          '.'
+        type: 'List',
+        order: 'ascending',
+        items: [
+          {
+            type: 'Paragraph',
+            content: ['One']
+          },
+          {
+            type: 'Paragraph',
+            content: [true, 'Two']
+          },
+          {
+            type: 'Paragraph',
+            content: [false, 'Three']
+          }
         ]
+      },
+      {
+        type: 'ThematicBreak'
       }
     ]
   }
