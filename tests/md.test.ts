@@ -51,7 +51,7 @@ authors:
 
 A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
 
-A paragraph with [x] and [ ] boolean values.
+A paragraph with !true and !false boolean values.
 
 A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
 
@@ -90,7 +90,7 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
         honorificSuffix: 'PhD'
       }
     ],
-    articleBody: [
+    content: [
       {
         type: 'Heading',
         depth: 1,
@@ -301,6 +301,6 @@ authors:
         honorificSuffix: 'PhD'
       }
     ],
-    articleBody: []
+    content: []
   }
 }

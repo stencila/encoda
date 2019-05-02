@@ -101,8 +101,6 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseDelete(node as MDAST.Delete)
     case 'inlineCode':
       return parseInlineCode(node as MDAST.InlineCode)
-    case 'linkReference':
-      return parseLinkReference(node as MDAST.LinkReference)
     case 'text':
       return parseText(node as MDAST.Text)
     case 'inline-extension':
@@ -184,26 +182,14 @@ function unparseContent(node: stencila.Node): MDAST.Content {
   return unparseNode(node) as MDAST.Content
 }
 
-// TODO: stencila.InlineContent should be exported?
-type stencilaInlineContent =
-  | null
-  | boolean
-  | number
-  | string
-  | stencila.Emphasis
-  | stencila.Strong
-  | stencila.Delete
-  | stencila.Verbatim
-  | stencila.Expression
-
 function parsePhrasingContent(
   node: MDAST.PhrasingContent
-): stencilaInlineContent {
-  return parseNode(node) as stencilaInlineContent
+): stencila.InlineContent {
+  return parseNode(node) as stencila.InlineContent
 }
 
 function unparseInlineContent(
-  node: stencilaInlineContent
+  node: stencila.InlineContent
 ): MDAST.PhrasingContent {
   return unparseNode(node) as MDAST.PhrasingContent
 }
@@ -221,7 +207,7 @@ function unparseBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
  *
  * If the root has a front matter node (defined using YAML), that
  * meta data is added to the top level of the document. Other
- * child nodes are added to the article's `articleBody` property.
+ * child nodes are added to the article's `content` property.
  *
  * @param root The MDAST root to parse
  */
@@ -253,7 +239,7 @@ function parseRoot(root: MDAST.Root): stencila.Article {
       body.push(parseNode(child))
     }
   }
-  article.articleBody = body
+  article.content = body
 
   // TODO: remove the following which mutates any YAML
   // meta data to conform to the schema when above TODO is added
@@ -263,7 +249,7 @@ function parseRoot(root: MDAST.Root): stencila.Article {
 /**
  * Unparse a `stencila.Article` to a `MDAST.Root`
  *
- * The article's `articleBody` property becomes the root's `children`
+ * The article's `content` property becomes the root's `children`
  * and any other properties are serialized as YAML
  * front matter and prepended to the children.
  *
@@ -276,14 +262,14 @@ function unparseArticle(article: stencila.Article): MDAST.Root {
   }
 
   // Unparse the article body
-  if (article.articleBody) {
-    root.children = article.articleBody.map(unparseContent)
+  if (article.content) {
+    root.children = article.content.map(unparseContent)
   }
 
   // Add other properties as frontmatter
   const frontmatter: { [key: string]: any } = {}
   for (let [key, value] of Object.entries(article)) {
-    if (!['type', 'articleBody'].includes(key)) {
+    if (!['type', 'content'].includes(key)) {
       frontmatter[key] = value
     }
   }
@@ -401,10 +387,11 @@ function unparseList(list: stencila.List): MDAST.List {
         // Is this a checked item (ie. a paragraph starting with a boolean)?
         let checked: boolean | undefined = undefined
         if (first.type === 'paragraph') {
-          if (first.children[0].type === 'html') {
-            if (['[x]', '[ ]'].includes(first.children[0].value as string)) {
-              // Apply the boolean value to this list item
-              checked = first.children[0].value === '[x]'
+          // @ts-ignore
+          if (first.children[0].type === 'inline-extension') {
+            if (['true', 'false'].includes(first.children[0].name as string)) {
+              // Apply the boolean name to this list item
+              checked = first.children[0].name === 'true'
               // Remove the boolean checkbox from the paragraph (since remark stringify does that)
               first.children = first.children.slice(1)
             }
@@ -572,22 +559,6 @@ function unparseVerbatim(verbatim: stencila.Verbatim): MDAST.InlineCode {
 }
 
 /**
- * Parse a `MDAST.LinkReference` to a `boolean` or `Reference`
- *
- * A Markdown "checkbox" (ie `[x]` or `[ ]`) is parsed as a `MDAST.LinkReference`,
- * so this function will return a `boolean` in those cases, and  `Reference` in others.
- */
-function parseLinkReference(link: MDAST.LinkReference): boolean {
-  const firstChild = link.children[0]
-  if (firstChild && firstChild.type === 'text') {
-    const text = firstChild.value
-    if (text === 'x') return true
-    if (text === ' ') return false
-  }
-  throw new Error('TODO: implement handling of actual link references')
-}
-
-/**
  * Parse a `MDAST.Text` to a `string`
  */
 function parseText(text: MDAST.Text): string {
@@ -621,7 +592,6 @@ function unparseNull(value: null): Extension {
  * Valid booleans include (the first two are the preferred and the default,
  * the last should be avoided):
  *
- *   - `[x]` or `[ ]` (handled in `linkReferenceParse`)
  *   - `!true` or `!false`
  *   - `!boolean(true)` and `!boolean(1)`
  *   - `!boolean(false)` and `!boolean(0)`
@@ -641,10 +611,10 @@ function parseBoolean(ext: Extension): boolean {
 }
 
 /**
- * Unparse a `boolean` to a `[x]` or `[ ]`.
+ * Unparse a `boolean` to a `!true` or `!false`.
  */
-function unparseBoolean(value: boolean): MDAST.HTML {
-  return { type: 'html', value: value ? '[x]' : '[ ]' }
+function unparseBoolean(value: boolean): Extension {
+  return { type: 'inline-extension', name: value ? 'true' : 'false' }
 }
 
 /**
