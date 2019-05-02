@@ -125,6 +125,7 @@ function parseTable(
   return {
     type: 'Table',
     name,
+    rows: [],
     cells: Object.entries(cells).map(function([key, cell]): stencila.TableCell {
       let value = parseCell(cell)
       return {
@@ -144,6 +145,7 @@ function unparseTable(table: stencila.Table) {
     let maxCol = 0
     let maxRow = 0
     for (let cell of cells) {
+      if (!cell.position) continue
       let [col, row] = cell.position
       if (col > maxCol) maxCol = col
       if (row > maxRow) maxRow = row

@@ -65,6 +65,11 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
 2.  [x] Two
 3.  [ ] Three
 
+| A   | B   | C   |
+| --- | --- | --- |
+| 1   | 2   | 3   |
+| 4   | 5   | 6   |
+
 * * *
 `,
   node: {
@@ -187,6 +192,62 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
           {
             type: 'Paragraph',
             content: [false, 'Three']
+          }
+        ]
+      },
+      {
+        type: 'Table',
+        rows: [
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['A'],
+                type: 'TableCell'
+              },
+              {
+                content: ['B'],
+                type: 'TableCell'
+              },
+              {
+                content: ['C'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['1'],
+                type: 'TableCell'
+              },
+              {
+                content: ['2'],
+                type: 'TableCell'
+              },
+              {
+                content: ['3'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['4'],
+                type: 'TableCell'
+              },
+              {
+                content: ['5'],
+                type: 'TableCell'
+              },
+              {
+                content: ['6'],
+                type: 'TableCell'
+              }
+            ]
           }
         ]
       },

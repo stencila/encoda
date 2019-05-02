@@ -88,6 +88,8 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseBlockquote(node as MDAST.Blockquote)
     case 'list':
       return parseList(node as MDAST.List)
+    case 'table':
+      return parseTable(node as MDAST.Table)
     case 'thematicBreak':
       return parseThematicBreak(node as MDAST.ThematicBreak)
     // Inline content
@@ -127,6 +129,7 @@ function parseNode(node: UNIST.Node): stencila.Node {
             )
           }
       }
+
     default:
       throw new Error(`No Markdown parser for MDAST node type "${type}"`)
   }
@@ -146,6 +149,8 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseBlockquote(node as stencila.Blockquote)
     case 'List':
       return unparseList(node as stencila.List)
+    case 'Table':
+      return unparseTable(node as stencila.Table)
     case 'ThematicBreak':
       return unparseThematicBreak(node as stencila.ThematicBreak)
     // Inline content
@@ -367,7 +372,7 @@ function parseList(list: MDAST.List): stencila.List {
     // If the item has a check box then insert that as a boolean as the first
     // child of the first child
     if (item.checked === true || item.checked === false) {
-      //@ts-ignore
+      // @ts-ignore
       if (node.content) node.content = [item.checked, ...node.content]
     }
 
@@ -410,6 +415,54 @@ function unparseList(list: stencila.List): MDAST.List {
           type: 'listItem',
           checked,
           children
+        }
+      }
+    )
+  }
+}
+
+/**
+ * Parse a `MDAST.Table` to a `stencila.Table`
+ */
+function parseTable(table: MDAST.Table): stencila.Table {
+  return {
+    type: 'Table',
+    rows: table.children.map(
+      (row: MDAST.TableRow): stencila.TableRow => {
+        return {
+          type: 'TableRow',
+          cells: row.children.map(
+            (cell: MDAST.TableCell): stencila.TableCell => {
+              return {
+                type: 'TableCell',
+                content: cell.children.map(parsePhrasingContent)
+              }
+            }
+          )
+        }
+      }
+    )
+  }
+}
+
+/**
+ * Unparse a `stencila.Table` to a `MDAST.Table`
+ */
+function unparseTable(table: stencila.Table): MDAST.Table {
+  return {
+    type: 'table',
+    children: table.rows.map(
+      (row: stencila.TableRow): MDAST.TableRow => {
+        return {
+          type: 'tableRow',
+          children: row.cells.map(
+            (cell: stencila.TableCell): MDAST.TableCell => {
+              return {
+                type: 'tableCell',
+                children: cell.content.map(unparseInlineContent)
+              }
+            }
+          )
         }
       }
     )
@@ -527,7 +580,7 @@ function unparseVerbatim(verbatim: stencila.Verbatim): MDAST.InlineCode {
 function parseLinkReference(link: MDAST.LinkReference): boolean {
   const firstChild = link.children[0]
   if (firstChild && firstChild.type === 'text') {
-    const text = (firstChild as MDAST.Text).value
+    const text = firstChild.value
     if (text === 'x') return true
     if (text === ' ') return false
   }
