@@ -49,7 +49,7 @@ authors:
 
 ### Heading three
 
-A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
+A paragraph with _emphasis_, **strong**, ~~delete~~ and \`code\`.
 
 A paragraph with !quote[quote](https://example.org).
 
@@ -58,6 +58,11 @@ A paragraph with !true and !false boolean values.
 A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
 
 > A block quote
+
+\`\`\`python
+# A code block
+x = {}
+\`\`\`
 
 -   First item
 -   [x] Done
@@ -128,10 +133,10 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
           },
           ' and ',
           {
-            type: 'Verbatim',
-            value: 'verbatim'
+            type: 'Code',
+            value: 'code'
           },
-          ' text.'
+          '.'
         ]
       },
       {
@@ -172,6 +177,11 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
             content: ['A block quote']
           }
         ]
+      },
+      {
+        type: 'CodeBlock',
+        language: 'python',
+        value: '# A code block\nx = {}'
       },
       {
         type: 'List',

@@ -31,10 +31,13 @@ const kitchenSink = {
     <h3>Heading three</h3>
     <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
     <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
+    <p>A paragraph with <code class="language-python"># code</code>.</p>
     <p>Paragraph with a <s-boolean>true</s-boolean> and a <s-boolean>false</s-boolean>.</p>
     <p>A paragraph with other data: a <s-null>null</s-null>, a <s-number>3.14</s-number>, an
       <s-array>[1,2]</s-array>, and an <s-object>{"a":1,"b":"two"}</s-object>.</p>
     <blockquote cite="https://example.org">A blockquote</blockquote>
+    <pre><code class="language-r"># Some code
+x = c(1,2)</code></pre>
     <ul>
       <li>One</li>
       <li>Two</li>
@@ -98,7 +101,19 @@ const kitchenSink = {
           {
             type: 'Quote',
             citation: 'https://example.org',
-            text: 'quote'
+            content: ['quote']
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with ',
+          {
+            type: 'Code',
+            language: 'python',
+            value: '# code'
           },
           '.'
         ]
@@ -125,6 +140,11 @@ const kitchenSink = {
         type: 'QuoteBlock',
         citation: 'https://example.org',
         content: ['A blockquote']
+      },
+      {
+        type: 'CodeBlock',
+        language: 'r',
+        value: '# Some code\nx = c(1,2)'
       },
       {
         type: 'List',

@@ -98,6 +98,11 @@ function parseNode(node: Node): stencila.Node {
       return parseParagraph(node as HTMLParagraphElement)
     case 'blockquote':
       return parseBlockquote(node as HTMLQuoteElement)
+    case 'pre':
+      if (node.firstChild && node.firstChild.nodeName === 'CODE') {
+        return parseCodeBlock(node as HTMLPreElement)
+      }
+      break
     case 'ul':
       return parseList(node as HTMLUListElement)
     case 'ol':
@@ -155,6 +160,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseParagraph(node as stencila.Paragraph)
     case 'QuoteBlock':
       return unparseQuoteBlock(node as stencila.QuoteBlock)
+    case 'CodeBlock':
+      return unparseCodeBlock(node as stencila.CodeBlock)
     case 'List':
       return unparseList(node as stencila.List)
     /*
@@ -172,8 +179,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseInlineThing<'Delete'>(node, 'del')
     case 'Quote':
       return unparseQuote(node as stencila.Quote)
-    case 'Verbatim':
-      return unparseVerbatim(node as stencila.Verbatim)
+    case 'Code':
+      return unparseCode(node as stencila.Code)
 
     case 'null':
       return unparseNull(node as null)
@@ -316,6 +323,28 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
 }
 
 /**
+ * Parse a `<pre><code class="language-xxx">` element to a `stencila.CodeBlock`.
+ */
+function parseCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
+  const code = elem.querySelector('code')
+  if (!code) throw new Error('Woaah, this should never happen!')
+  const { language, value } = parseCode(code)
+  return {
+    type: 'CodeBlock',
+    language,
+    value
+  }
+}
+
+/**
+ * Unparse a `stencila.CodeBlock` to a `<pre><code class="language-xxx">` element.
+ */
+function unparseCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
+  const code = unparseCode(block)
+  return h('pre', code)
+}
+
+/**
  * Parse a `<ul>` or `<ol>` element to a `stencila.List`.
  */
 function parseList(list: HTMLUListElement | HTMLOListElement): stencila.List {
@@ -383,7 +412,7 @@ function unparseInlineThing<Type extends keyof stencila.Types>(
  * Parse a `<q>` element to a `stencila.Quote`.
  */
 function parseQuote(elem: HTMLQuoteElement): stencila.Quote {
-  const quote: stencila.Quote = { type: 'Quote', text: elem.innerHTML }
+  const quote: stencila.Quote = { type: 'Quote', content: [elem.innerHTML] }
   const cite = elem.getAttribute('cite')
   if (cite) quote.citation = cite
   return quote
@@ -393,21 +422,30 @@ function parseQuote(elem: HTMLQuoteElement): stencila.Quote {
  * Unparse a `stencila.Quote` to a `<q>` element.
  */
 function unparseQuote(quote: stencila.Quote): HTMLQuoteElement {
-  return h('q', { cite: quote.citation }, quote.text)
+  return h('q', { cite: quote.citation }, quote.content)
 }
 
 /**
- * Parse a `<code>` element to a `stencila.Verbatim`.
+ * Parse a `<code>` element to a `stencila.Code`.
  */
-function parseCode(code: HTMLElement): stencila.Verbatim {
-  return { type: 'Verbatim', value: code.innerHTML }
+function parseCode(elem: HTMLElement): stencila.Code {
+  const code: stencila.Code = { type: 'Code', value: elem.innerHTML }
+  const clas = elem.getAttribute('class')
+  if (clas) {
+    const match = clas.match(/^language-(\w+)$/)
+    if (match) {
+      code.language = match[1]
+    }
+  }
+  return code
 }
 
 /**
- * Unparse a `stencila.Verbatim` to a `<code>` element.
+ * Unparse a `stencila.Code` to a `<code>` element.
  */
-function unparseVerbatim(verbatim: stencila.Verbatim): HTMLElement {
-  return h('code', verbatim.value)
+function unparseCode(code: stencila.Code): HTMLElement {
+  const clas = code.language ? `language-${code.language}` : undefined
+  return h('code', { class: clas }, code.value)
 }
 
 /**

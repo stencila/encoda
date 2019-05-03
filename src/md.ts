@@ -99,20 +99,22 @@ function parseNode(node: UNIST.Node): stencila.Node {
   switch (type) {
     case 'root':
       return parseRoot(node as MDAST.Root)
-    // Block content
+
     case 'heading':
       return parseHeading(node as MDAST.Heading)
     case 'paragraph':
       return parseParagraph(node as MDAST.Paragraph)
     case 'blockquote':
-      return parseQuoteBlock(node as MDAST.Blockquote)
+      return parseBlockquote(node as MDAST.Blockquote)
+    case 'code':
+      return parseCodeblock(node as MDAST.Code)
     case 'list':
       return parseList(node as MDAST.List)
     case 'table':
       return parseTable(node as MDAST.Table)
     case 'thematicBreak':
       return parseThematicBreak(node as MDAST.ThematicBreak)
-    // Inline content
+
     case 'emphasis':
       return parseEmphasis(node as MDAST.Emphasis)
     case 'strong':
@@ -169,6 +171,8 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseParagraph(node as stencila.Paragraph)
     case 'QuoteBlock':
       return unparseQuoteBlock(node as stencila.QuoteBlock)
+    case 'CodeBlock':
+      return unparseCodeBlock(node as stencila.CodeBlock)
     case 'List':
       return unparseList(node as stencila.List)
     case 'Table':
@@ -184,8 +188,8 @@ function unparseNode(node: stencila.Node): UNIST.Node {
       return unparseDelete(node as stencila.Delete)
     case 'Quote':
       return unparseQuote(node as stencila.Quote)
-    case 'Verbatim':
-      return unparseVerbatim(node as stencila.Verbatim)
+    case 'Code':
+      return unparseCode(node as stencila.Code)
 
     case 'string':
       return unparseString(node as string)
@@ -356,7 +360,7 @@ function unparseParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph {
 /**
  * Parse a `MDAST.Blockquote` to a `stencila.QuoteBlock`
  */
-function parseQuoteBlock(block: MDAST.Blockquote): stencila.QuoteBlock {
+function parseBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
   return {
     type: 'QuoteBlock',
     content: block.children.map(parseBlockContent)
@@ -370,6 +374,28 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
   return {
     type: 'blockquote',
     children: block.content.map(unparseBlockContent)
+  }
+}
+
+/**
+ * Parse a `MDAST.Code` to a `stencila.QuoteBlock`
+ */
+function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
+  return {
+    type: 'CodeBlock',
+    language: block.lang,
+    value: block.value
+  }
+}
+
+/**
+ * Unparse a `stencila.CodeBlock` to a `MDAST.Code`
+ */
+function unparseCodeBlock(block: stencila.CodeBlock): MDAST.Code {
+  return {
+    type: 'code',
+    lang: block.language,
+    value: block.value
   }
 }
 
@@ -598,22 +624,22 @@ function unparseQuote(quote: stencila.Quote): Extension {
 }
 
 /**
- * Parse a `MDAST.InlineCode` to a `stencila.Verbatim`
+ * Parse a `MDAST.InlineCode` to a `stencila.Code`
  */
-function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Verbatim {
+function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
   return {
-    type: 'Verbatim',
+    type: 'Code',
     value: inlineCode.value
   }
 }
 
 /**
- * Unparse a `stencila.Verbatim` to a `MDAST.InlineCode`
+ * Unparse a `stencila.Code` to a `MDAST.InlineCode`
  */
-function unparseVerbatim(verbatim: stencila.Verbatim): MDAST.InlineCode {
+function unparseCode(code: stencila.Code): MDAST.InlineCode {
   return {
     type: 'inlineCode',
-    value: verbatim.value
+    value: code.value
   }
 }
 
