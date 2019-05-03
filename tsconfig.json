@@ -58,5 +58,5 @@
   },
   "include": ["src/**/*.ts"],
   // Temporarily exclude files in development
-  "exclude": ["src/gdoc.ts", "src/md.ts", "src/sast-mdast.ts"]
+  "exclude": ["src/gdoc.ts"]
 }

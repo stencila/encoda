@@ -1,3 +1,15 @@
+/**
+ * # Markdown compiler
+ *
+ * These functions transform nodes from a [Markdown Abstract Syntax Tree](https://github.com/syntax-tree/mdast) to
+ * nodes in a [Stencila Document Tree](https://github.com/stencila/schema).
+ *
+ * @module md
+ */
+
+/** A comment required for above to be included in docs.
+ * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300  */
+
 import * as stencila from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import * as MDAST from 'mdast'
@@ -27,18 +39,37 @@ export const mediaTypes = ['text/markdown', 'text/x-markdown']
 const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
 
 /**
+ * Registered generic extensions.
+ *
+ * @see Extension
+ */
+const GENERIC_EXTENSIONS = [
+  'null',
+  'true',
+  'false',
+  'boolean',
+  'number',
+  'array',
+  'object'
+]
+
+/**
  * Parse a `VFile` with Markdown contents to a `stencila.Node`.
  *
  * @param file The `VFile` to parse
  * @returns A promise that resolves to a `stencila.Node`
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
+  const extensionHandlers: { [key: string]: any } = {}
+  for (let ext of GENERIC_EXTENSIONS) {
+    extensionHandlers[ext] = { replace: parseExtension }
+  }
   const mdast = unified()
     .use(parser, {
       commonmark: true
     })
     .use(frontmatter, FRONTMATTER_OPTIONS)
-    .use(genericExtensionsParser, GENERIC_EXTENSIONS)
+    .use(genericExtensionsParser, { elements: extensionHandlers })
     .parse(file)
   compact(mdast, true)
   return parseNode(mdast)
@@ -59,20 +90,6 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
     .stringify(mdast)
   return load(md)
 }
-
-/******************************************************************************
- * Transformation functions
- *
- * These functions transform nodes from a [Markdown Abstract Syntax Tree](https://github.com/syntax-tree/mdast) to
- * nodes in a [Stencila Document Tree](https://github.com/stencila/schema).
- *
- * Functions are in pairs:
- *
- *   - `parseX(MDAST.X): stencila.Y`: for parsing the MDAST node type `X`
- *                                    to Stencila node type `Y`
- *   - `unparseY(stencila.Y): MDAST.X`: for unparsing Stencila node type `Y`
- *                                      to Stencila node type `X`
- *****************************************************************************/
 
 function parseNode(node: UNIST.Node): stencila.Node {
   const type = node.type
@@ -699,11 +716,9 @@ function unparseObject(value: object): Extension {
   return { type: 'inline-extension', name: 'object', argument }
 }
 
-/******************************************************************************
- * Handling of custom Markdown extensions
- *
- * See https://github.com/medfreeman/remark-generic-extensions
- *
+/**
+ * Interface for generic extension nodes parsed by
+ * [`remark-generic-extensions`](https://github.com/medfreeman/remark-generic-extensions)
  *
  * Inline extensions have the syntax:
  *
@@ -720,10 +735,6 @@ function unparseObject(value: object): Extension {
  * :::
  * {Properties}
  * ```
- *****************************************************************************/
-
-/**
- * Interface for generic extension nodes parsed by `remark-generic-extensions`.
  */
 interface Extension extends UNIST.Node {
   /**
@@ -750,23 +761,6 @@ interface Extension extends UNIST.Node {
    * Map of computed properties
    */
   properties?: { [key: string]: string }
-}
-
-/**
- * Generic extensions definitions.
- *
- * @see https://github.com/medfreeman/remark-generic-extensions#elements-object
- */
-const GENERIC_EXTENSIONS = {
-  elements: {
-    null: { replace: parseExtension },
-    boolean: { replace: parseExtension },
-    true: { replace: parseExtension },
-    false: { replace: parseExtension },
-    number: { replace: parseExtension },
-    array: { replace: parseExtension },
-    object: { replace: parseExtension }
-  }
 }
 
 /**

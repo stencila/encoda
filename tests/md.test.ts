@@ -2,21 +2,21 @@ import { parse, unparse } from '../src/md'
 import { dump, load } from '../src/vfile'
 
 test('parse', async () => {
-  expect(await parse(await load(kitchshink.md))).toEqual(kitchshink.node)
+  expect(await parse(await load(kitchenSink.md))).toEqual(kitchenSink.node)
   expect(await parse(await load(shorthandYaml.from))).toEqual(
     shorthandYaml.node
   )
 })
 
 test('unparse', async () => {
-  expect(await dump(await unparse(kitchshink.node))).toEqual(kitchshink.md)
+  expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.md)
   expect(await dump(await unparse(shorthandYaml.node))).toEqual(
     shorthandYaml.to
   )
 })
 
 // An example intended for testing progressively added parser/unparser pairs
-const kitchshink = {
+const kitchenSink = {
   // Note: for bidi conversion, we're using expanded YAML frontmatter,
   // but most authors are likely to prefer using shorter variants e.g.
   //   - Joe James <joe@example.com>
