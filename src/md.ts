@@ -8,7 +8,8 @@
  */
 
 /** A comment required for above to be included in docs.
- * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300  */
+ * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
+ */
 
 import * as stencila from '@stencila/schema'
 import * as yaml from 'js-yaml'
