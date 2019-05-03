@@ -51,6 +51,8 @@ authors:
 
 A paragraph with _emphasis_, **strong**, ~~delete~~ and \`verbatim\` text.
 
+A paragraph with !quote[quote](https://example.org).
+
 A paragraph with !true and !false boolean values.
 
 A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
@@ -134,6 +136,18 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
       },
       {
         type: 'Paragraph',
+        content: [
+          'A paragraph with ',
+          {
+            type: 'Quote',
+            citation: 'https://example.org',
+            content: ['quote']
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
         content: ['A paragraph with ', true, ' and ', false, ' boolean values.']
       },
       {
@@ -151,7 +165,7 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1
         ]
       },
       {
-        type: 'Blockquote',
+        type: 'QuoteBlock',
         content: [
           {
             type: 'Paragraph',

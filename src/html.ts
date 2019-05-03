@@ -115,6 +115,8 @@ function parseNode(node: Node): stencila.Node {
       return parseInlineElement(node as HTMLElement, 'Strong')
     case 'del':
       return parseInlineElement(node as HTMLElement, 'Delete')
+    case 'q':
+      return parseQuote(node as HTMLQuoteElement)
     case 'code':
       return parseCode(node as HTMLElement)
 
@@ -151,8 +153,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseHeading(node as stencila.Heading)
     case 'Paragraph':
       return unparseParagraph(node as stencila.Paragraph)
-    case 'Blockquote':
-      return unparseBlockquote(node as stencila.Blockquote)
+    case 'QuoteBlock':
+      return unparseQuoteBlock(node as stencila.QuoteBlock)
     case 'List':
       return unparseList(node as stencila.List)
     /*
@@ -168,6 +170,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseInlineThing<'Strong'>(node, 'strong')
     case 'Delete':
       return unparseInlineThing<'Delete'>(node, 'del')
+    case 'Quote':
+      return unparseQuote(node as stencila.Quote)
     case 'Verbatim':
       return unparseVerbatim(node as stencila.Verbatim)
 
@@ -288,17 +292,27 @@ function unparseParagraph(para: stencila.Paragraph): HTMLParagraphElement {
 }
 
 /**
- * Parse a `<blockquote>` element to a `stencila.Blockquote`.
+ * Parse a `<blockquote>` element to a `stencila.QuoteBlock`.
  */
-function parseBlockquote(bq: HTMLQuoteElement): stencila.Blockquote {
-  return { type: 'Blockquote', content: parseBlockChildNodes(bq) }
+function parseBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
+  const quoteBlock: stencila.QuoteBlock = {
+    type: 'QuoteBlock',
+    content: parseBlockChildNodes(elem)
+  }
+  const cite = elem.getAttribute('cite')
+  if (cite) quoteBlock.citation = cite
+  return quoteBlock
 }
 
 /**
- * Unparse a `stencila.Blockquote` to a `<blockquote>` element.
+ * Unparse a `stencila.QuoteBlock` to a `<blockquote>` element.
  */
-function unparseBlockquote(bq: stencila.Blockquote): HTMLQuoteElement {
-  return h('blockquote', bq.content.map(unparseNode))
+function unparseQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
+  return h(
+    'blockquote',
+    { cite: block.citation },
+    block.content.map(unparseNode)
+  )
 }
 
 /**
@@ -363,6 +377,23 @@ function unparseInlineThing<Type extends keyof stencila.Types>(
   node = node as stencila.Types[Type]
   // @ts-ignore
   return h(tag, node.content.map(unparseNode))
+}
+
+/**
+ * Parse a `<q>` element to a `stencila.Quote`.
+ */
+function parseQuote(elem: HTMLQuoteElement): stencila.Quote {
+  const quote: stencila.Quote = { type: 'Quote', text: elem.innerHTML }
+  const cite = elem.getAttribute('cite')
+  if (cite) quote.citation = cite
+  return quote
+}
+
+/**
+ * Unparse a `stencila.Quote` to a `<q>` element.
+ */
+function unparseQuote(quote: stencila.Quote): HTMLQuoteElement {
+  return h('q', { cite: quote.citation }, quote.text)
 }
 
 /**

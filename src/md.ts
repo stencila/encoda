@@ -45,6 +45,8 @@ const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
  * @see Extension
  */
 const GENERIC_EXTENSIONS = [
+  'quote',
+
   'null',
   'true',
   'false',
@@ -103,7 +105,7 @@ function parseNode(node: UNIST.Node): stencila.Node {
     case 'paragraph':
       return parseParagraph(node as MDAST.Paragraph)
     case 'blockquote':
-      return parseBlockquote(node as MDAST.Blockquote)
+      return parseQuoteBlock(node as MDAST.Blockquote)
     case 'list':
       return parseList(node as MDAST.List)
     case 'table':
@@ -124,6 +126,9 @@ function parseNode(node: UNIST.Node): stencila.Node {
     case 'inline-extension':
       const ext = (node as unknown) as Extension
       switch (ext.name) {
+        case 'quote':
+          return parseQuote(ext)
+
         case 'null':
           return parseNull(ext)
         case 'boolean':
@@ -136,6 +141,7 @@ function parseNode(node: UNIST.Node): stencila.Node {
           return parseArray(ext)
         case 'object':
           return parseObject(ext)
+
         default:
           if (ext.name) {
             throw new Error(`Unhandled generic extension "${ext.name}"`)
@@ -156,28 +162,31 @@ function unparseNode(node: stencila.Node): UNIST.Node {
   switch (type) {
     case 'Article':
       return unparseArticle(node as stencila.Article)
-    // Block content
+
     case 'Heading':
       return unparseHeading(node as stencila.Heading)
     case 'Paragraph':
       return unparseParagraph(node as stencila.Paragraph)
-    case 'Blockquote':
-      return unparseBlockquote(node as stencila.Blockquote)
+    case 'QuoteBlock':
+      return unparseQuoteBlock(node as stencila.QuoteBlock)
     case 'List':
       return unparseList(node as stencila.List)
     case 'Table':
       return unparseTable(node as stencila.Table)
     case 'ThematicBreak':
       return unparseThematicBreak(node as stencila.ThematicBreak)
-    // Inline content
+
     case 'Emphasis':
       return unparseEmphasis(node as stencila.Emphasis)
     case 'Strong':
       return unparseStrong(node as stencila.Strong)
     case 'Delete':
       return unparseDelete(node as stencila.Delete)
+    case 'Quote':
+      return unparseQuote(node as stencila.Quote)
     case 'Verbatim':
       return unparseVerbatim(node as stencila.Verbatim)
+
     case 'string':
       return unparseString(node as string)
     case 'null':
@@ -345,22 +354,22 @@ function unparseParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph {
 }
 
 /**
- * Parse a `MDAST.Blockquote` to a `stencila.Blockquote`
+ * Parse a `MDAST.Blockquote` to a `stencila.QuoteBlock`
  */
-function parseBlockquote(blockquote: MDAST.Blockquote): stencila.Blockquote {
+function parseQuoteBlock(block: MDAST.Blockquote): stencila.QuoteBlock {
   return {
-    type: 'Blockquote',
-    content: blockquote.children.map(parseBlockContent)
+    type: 'QuoteBlock',
+    content: block.children.map(parseBlockContent)
   }
 }
 
 /**
- * Unparse a `stencila.Blockquote` to a `MDAST.Blockquote`
+ * Unparse a `stencila.QuoteBlock` to a `MDAST.Blockquote`
  */
-function unparseBlockquote(blockquote: stencila.Blockquote): MDAST.Blockquote {
+function unparseQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
   return {
     type: 'blockquote',
-    children: blockquote.content.map(unparseBlockContent)
+    children: block.content.map(unparseBlockContent)
   }
 }
 
@@ -557,6 +566,38 @@ function unparseDelete(delet: stencila.Delete): MDAST.Delete {
 }
 
 /**
+ * Parse a `!quote` inline extension to a `Quote`.
+ *
+ * Valid quotes include:
+ *
+ *   - `!quote[Quoted content]`
+ *   - `!quote[Quoted content with _emphasis_](https://example.org)`
+ */
+function parseQuote(ext: Extension): stencila.Quote {
+  const quote: stencila.Quote = {
+    type: 'Quote',
+    // TODO: possibly parse the ext.content as Markdown?
+    content: ext.content ? [ext.content] : []
+  }
+  const cite = ext.argument
+  if (cite) quote.citation = cite
+  return quote
+}
+
+/**
+ * Unparse a `stencila.Quote` to a `!quote` inline extension
+ */
+function unparseQuote(quote: stencila.Quote): Extension {
+  return {
+    type: 'inline-extension',
+    name: 'quote',
+    // TODO: Handle cases where content is more than one string
+    content: quote.content[0] as string,
+    argument: quote.citation
+  }
+}
+
+/**
  * Parse a `MDAST.InlineCode` to a `stencila.Verbatim`
  */
 function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Verbatim {
@@ -749,7 +790,7 @@ interface Extension extends UNIST.Node {
   name: string
 
   /**
-   * Content string
+   * Content (for inline extensions this is always text [but could be parsed as Markdown])
    */
   content?: string
 

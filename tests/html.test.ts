@@ -29,12 +29,12 @@ const kitchenSink = {
     <h1>Heading one</h1>
     <h2>Heading two</h2>
     <h3>Heading three</h3>
-    <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del> and
-      <code>verbatim</code> text.</p>
+    <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
+    <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
     <p>Paragraph with a <s-boolean>true</s-boolean> and a <s-boolean>false</s-boolean>.</p>
     <p>A paragraph with other data: a <s-null>null</s-null>, a <s-number>3.14</s-number>, an
       <s-array>[1,2]</s-array>, and an <s-object>{"a":1,"b":"two"}</s-object>.</p>
-    <blockquote>A blockquote</blockquote>
+    <blockquote cite="https://example.org">A blockquote</blockquote>
     <ul>
       <li>One</li>
       <li>Two</li>
@@ -88,12 +88,19 @@ const kitchenSink = {
             type: 'Delete',
             content: ['delete']
           },
-          ' and ',
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with ',
           {
-            type: 'Verbatim',
-            value: 'verbatim'
+            type: 'Quote',
+            citation: 'https://example.org',
+            text: 'quote'
           },
-          ' text.'
+          '.'
         ]
       },
       {
@@ -115,7 +122,8 @@ const kitchenSink = {
         ]
       },
       {
-        type: 'Blockquote',
+        type: 'QuoteBlock',
+        citation: 'https://example.org',
         content: ['A blockquote']
       },
       {
