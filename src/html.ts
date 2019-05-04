@@ -120,6 +120,8 @@ function parseNode(node: Node): stencila.Node {
       return parseInlineElement(node as HTMLElement, 'Strong')
     case 'del':
       return parseInlineElement(node as HTMLElement, 'Delete')
+    case 'a':
+      return parseLink(node as HTMLAnchorElement)
     case 'q':
       return parseQuote(node as HTMLQuoteElement)
     case 'code':
@@ -177,6 +179,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseInlineThing<'Strong'>(node, 'strong')
     case 'Delete':
       return unparseInlineThing<'Delete'>(node, 'del')
+    case 'Link':
+      return unparseLink(node as stencila.Link)
     case 'Quote':
       return unparseQuote(node as stencila.Quote)
     case 'Code':
@@ -406,6 +410,21 @@ function unparseInlineThing<Type extends keyof stencila.Types>(
   node = node as stencila.Types[Type]
   // @ts-ignore
   return h(tag, node.content.map(unparseNode))
+}
+
+/**
+ * Parse a `<a>` element to a `stencila.Link`.
+ */
+function parseLink(elem: HTMLAnchorElement): stencila.Link {
+  const href = elem.getAttribute('href') || '#'
+  return { type: 'Link', target: href, content: parseInlineChildNodes(elem) }
+}
+
+/**
+ * Unparse a `stencila.Link` to a `<a>` element.
+ */
+function unparseLink(link: stencila.Link): HTMLAnchorElement {
+  return h('a', { href: link.target }, link.content.map(unparseNode))
 }
 
 /**

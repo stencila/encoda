@@ -30,6 +30,7 @@ const kitchenSink = {
     <h2>Heading two</h2>
     <h3>Heading three</h3>
     <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
+    <p>A paragraph with <a href="https://example.org">a <em>rich</em> link</a>.</p>
     <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
     <p>A paragraph with <code class="language-python"># code</code>.</p>
     <p>Paragraph with a <s-boolean>true</s-boolean> and a <s-boolean>false</s-boolean>.</p>
@@ -90,6 +91,25 @@ x = c(1,2)</code></pre>
           {
             type: 'Delete',
             content: ['delete']
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with ',
+          {
+            type: 'Link',
+            target: 'https://example.org',
+            content: [
+              'a ',
+              {
+                type: 'Emphasis',
+                content: ['rich']
+              },
+              ' link'
+            ]
           },
           '.'
         ]

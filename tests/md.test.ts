@@ -51,6 +51,8 @@ authors:
 
 A paragraph with _emphasis_, **strong**, ~~delete~~ and \`code\`.
 
+A paragraph with [a _rich_ link](https://example.org).
+
 A paragraph with !quote[quote](https://example.org).
 
 A paragraph with !true and !false boolean values.
@@ -135,6 +137,25 @@ x = {}
           {
             type: 'Code',
             value: 'code'
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with ',
+          {
+            type: 'Link',
+            target: 'https://example.org',
+            content: [
+              'a ',
+              {
+                type: 'Emphasis',
+                content: ['rich']
+              },
+              ' link'
+            ]
           },
           '.'
         ]

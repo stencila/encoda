@@ -115,6 +115,8 @@ function parseNode(node: UNIST.Node): stencila.Node {
     case 'thematicBreak':
       return parseThematicBreak(node as MDAST.ThematicBreak)
 
+    case 'link':
+      return parseLink(node as MDAST.Link)
     case 'emphasis':
       return parseEmphasis(node as MDAST.Emphasis)
     case 'strong':
@@ -180,6 +182,8 @@ function unparseNode(node: stencila.Node): UNIST.Node {
     case 'ThematicBreak':
       return unparseThematicBreak(node as stencila.ThematicBreak)
 
+    case 'Link':
+      return unparseLink(node as stencila.Link)
     case 'Emphasis':
       return unparseEmphasis(node as stencila.Emphasis)
     case 'Strong':
@@ -528,6 +532,30 @@ function unparseThematicBreak(
 ): MDAST.ThematicBreak {
   return {
     type: 'thematicBreak'
+  }
+}
+
+/**
+ * Parse a `MDAST.Link` to a `stencila.Link`
+ */
+function parseLink(link: MDAST.Link): stencila.Link {
+  return {
+    type: 'Link',
+    target: link.url,
+    content: link.children.map(parsePhrasingContent)
+  }
+}
+
+/**
+ * Unparse a `stencila.Link` to a `MDAST.Link`
+ */
+function unparseLink(link: stencila.Link): MDAST.Link {
+  return {
+    type: 'link',
+    url: link.target,
+    children: link.content.map(
+      node => unparseInlineContent(node) as MDAST.StaticPhrasingContent
+    )
   }
 }
 
