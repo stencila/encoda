@@ -12,6 +12,11 @@ The data were obtained from the _weecology_ [Portal Github repository](https://g
 
 > At this site, 24 experimental plots were established and divided among controls and experimental manipulations. Experimental manipulations over the years include removal of all or some rodent species, all or some ants, seed additions, and various alterations of the annual plant community. This dataset includes data previously available through an older data publication and adds 11 years of data. It also includes additional ant and weather data not previously available. These data have been used in a variety of publications documenting the effects of the experimental manipulations as well as the response of populations and communities to long-term changes in climate and habitat. Sampling is ongoing and additional data will be published in the future.
 
+| A   | B   | C   |
+| --- | --- | --- |
+| 1   | 2   | 3   |
+| 4   | 5   | 6   |
+
 ```r
 library(dplyr)
 library(reshape2)

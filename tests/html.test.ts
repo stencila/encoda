@@ -49,6 +49,25 @@ x = c(1,2)</code></pre>
       <li>Second</li>
       <li>Third</li>
     </ol>
+    <table>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+    </table>
     <hr>
   </body>
 
@@ -175,6 +194,62 @@ x = c(1,2)</code></pre>
         type: 'List',
         order: 'ascending',
         items: ['First', 'Second', 'Third']
+      },
+      {
+        type: 'Table',
+        rows: [
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['A'],
+                type: 'TableCell'
+              },
+              {
+                content: ['B'],
+                type: 'TableCell'
+              },
+              {
+                content: ['C'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['1'],
+                type: 'TableCell'
+              },
+              {
+                content: ['2'],
+                type: 'TableCell'
+              },
+              {
+                content: ['3'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['4'],
+                type: 'TableCell'
+              },
+              {
+                content: ['5'],
+                type: 'TableCell'
+              },
+              {
+                content: ['6'],
+                type: 'TableCell'
+              }
+            ]
+          }
+        ]
       },
       {
         type: 'ThematicBreak'

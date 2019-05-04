@@ -107,10 +107,8 @@ function parseNode(node: Node): stencila.Node {
       return parseList(node as HTMLUListElement)
     case 'ol':
       return parseList(node as HTMLOListElement)
-    /*
     case 'table':
       return parseTable(node as HTMLTableElement)
-    */
     case 'hr':
       return parseHR(node as HTMLHRElement)
 
@@ -166,10 +164,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseCodeBlock(node as stencila.CodeBlock)
     case 'List':
       return unparseList(node as stencila.List)
-    /*
     case 'Table':
       return unparseTable(node as stencila.Table)
-    */
     case 'ThematicBreak':
       return unparseThematicBreak(node as stencila.ThematicBreak)
 
@@ -374,6 +370,47 @@ function unparseList(list: stencila.List): HTMLUListElement {
       (item: stencila.Node): HTMLLIElement => h('li', unparseNode(item))
     )
   )
+}
+
+/**
+ * Parse a `<table>` element to a `stencila.Table`.
+ */
+function parseTable(table: HTMLTableElement): stencila.Table {
+  return {
+    type: 'Table',
+    rows: Array.from(table.querySelectorAll('tr')).map(
+      (row: HTMLTableRowElement): stencila.TableRow => {
+        return {
+          type: 'TableRow',
+          cells: Array.from(row.querySelectorAll('td')).map(
+            (cell: HTMLTableDataCellElement): stencila.TableCell => {
+              return {
+                type: 'TableCell',
+                content: parseInlineChildNodes(cell)
+              }
+            }
+          )
+        }
+      }
+    )
+  }
+}
+
+/**
+ * Unparse a `stencila.Table` to a `<table>` element.
+ */
+function unparseTable(table: stencila.Table): HTMLTableElement {
+  // prettier-ignore
+  return h('table', h('tbody', table.rows.map(
+      (row: stencila.TableRow): HTMLTableRowElement => {
+        return h('tr', row.cells.map(
+          (cell: stencila.TableCell): HTMLTableDataCellElement => {
+            return h('td', cell.content.map(unparseNode))
+          }
+        ))
+      }
+    )
+  ))
 }
 
 /**
