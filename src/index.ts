@@ -4,6 +4,7 @@ import getStdin from 'get-stdin'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
+import * as gdoc from './gdoc'
 import * as html from './html'
 import * as json from './json'
 import * as md from './md'
@@ -23,17 +24,22 @@ type VFile = vfile.VFile
  * formats should go last. See the `match` function.
  */
 export const compilerList: Array<Compiler> = [
-  //  gdoc,
-  rpng,
+  // Tabular data, spreadsheets etc
+  csv,
   ods,
   tdp,
   xlsx,
 
-  csv,
+  // Articles, textual documents etc
+  gdoc,
   md,
 
-  yaml,
+  // Images
+  rpng,
+
+  // "Generic" formats
   html,
+  yaml,
   json
 ]
 

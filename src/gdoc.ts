@@ -22,17 +22,17 @@
  *    to walk Stencila JSON and build up the GDoc by calling methods such as `Body.appendParagraph` etc.
  */
 
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import { docs_v1 as GDoc } from 'googleapis'
 import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['application/vnd.google-apps.document']
 
 /**
- * Parse GDoc JSON into a Stencila document node
+ * Parse a `VFile` with `gdoc` contents to a `stencila.Node`.
  *
  * @param file The `VFile` to parse
- * @returns The root of the document
+ * @returns A promise that resolves to a `stencila.Node`
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
   const json = dump(file)
@@ -41,162 +41,246 @@ export async function parse(file: VFile): Promise<stencila.Node> {
 }
 
 /**
- * Unparse a Stencila document node to GDoc JSON.
+ * Unparse a `stencila.Node` to a `VFile` with Markdown contents.
  *
- * @param node The document node to unparse
- * @param file The `VFile` to unparse to
+ * @param node The `stencila.Node` to unparse
+ * @returns A promise that resolves to a `VFile`
  */
 export async function unparse(node: stencila.Node): Promise<VFile> {
-  const gdoc = unparseDocument(node)
+  const gdoc = unparseArticle(node as stencila.Article)
   const json = JSON.stringify(gdoc, null, '  ')
   return load(json)
 }
 
 /**
- * Parse a GDoc `Document` to a Stencila `Document`
+ * Parse a GDoc `Document` to a Stencila `Article`
  *
  * Note that currently `SectionBreak`, `Table` and `TableOfContents`
- * child elements are ignored
+ * child elements are ignored.
  */
-function parseDocument(gdoc: GDoc.Schema$Document): stencila.Node {
-  let body: Array<any> = []
-  if (gdoc.body && gdoc.body.content) {
-    body = gdoc.body.content
+function parseDocument(doc: GDoc.Schema$Document): stencila.Node {
+  let content: Array<stencila.Node> = []
+  let lists: { [key: string]: stencila.List } = {}
+  if (doc.body && doc.body.content) {
+    content = doc.body.content
       .map((elem: GDoc.Schema$StructuralElement) => {
-        if (elem.paragraph) return parseParagraph(elem.paragraph)
-        else if (elem.sectionBreak) return undefined
-        else if (elem.table) return undefined
-        else if (elem.tableOfContents) return undefined
-        else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
+        if (elem.paragraph) return parseParagraph(elem.paragraph, doc, lists)
+        // else if (elem.sectionBreak) return undefined
+        // else if (elem.table) return undefined
+        // else if (elem.tableOfContents) return undefined
+        else
+          throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
       })
-      .filter(child => child !== undefined)
+      .filter(node => typeof node !== 'undefined') as Array<stencila.Node>
   }
-  return {
-    type: 'Document',
-    body: body
-  }
+  return stencila.validate(
+    {
+      type: 'Article',
+      title: doc.title,
+      authors: [],
+      content
+    },
+    'Article'
+  )
 }
 
 /**
- * Unparse a Stencila `Document` to a GDoc `Document`
+ * Unparse a Stencila `Article` to a GDoc `Document`
  */
-function unparseDocument(node: stencila.Node): GDoc.Schema$Document {
-  node = stencila.assert(node, 'Document')
-
+function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
   let content: Array<GDoc.Schema$StructuralElement> = []
-  if (node.body) {
-    content = node.body.map((node: stencila.Node) => {
-      switch (node.type) {
-        // These need to be GDoc.Schema$StructuralElement nodes
+  let lists: { [key: string]: GDoc.Schema$List } = {}
+  if (article.content) {
+    for (let node of article.content) {
+      const type = stencila.type(node)
+      switch (type) {
         case 'Heading':
-          return { paragraph: unparseHeading(node) }
+          content.push(unparseHeading(node as stencila.Heading))
+          break
         case 'Paragraph':
-          return { paragraph: unparseParagraph(node) }
+          content.push(unparseParagraph(node as stencila.Paragraph))
+          break
+        case 'List':
+          content.push(...unparseList(node as stencila.List, lists))
+          break
         default:
-          throw new Error(`Unhandled node type ${node.type}`)
+          throw new Error(`Unhandled Stencila node type ${type}`)
       }
-    })
-  }
-  return {
-    body: {
-      content
     }
   }
+  return {
+    title: article.title || 'Untitled',
+    body: {
+      content
+    },
+    lists
+  }
 }
 
 /**
- * Parse a GDoc `Paragraph` to a Stencila `Paragraph` or `Heading` node.
+ * Parse a GDoc `Paragraph` to a Stencila `Paragraph`, `Heading` or `List` node.
  */
-function parseParagraph(gPara: GDoc.Schema$Paragraph): stencila.Node {
-  let children: Array<any> = []
-  if (gPara.elements) {
-    children = gPara.elements.map((elem: GDoc.Schema$ParagraphElement) => {
+function parseParagraph(
+  para: GDoc.Schema$Paragraph,
+  gdoc: GDoc.Schema$Document,
+  lists: { [key: string]: stencila.List }
+): stencila.Paragraph | stencila.Heading | stencila.List | undefined {
+  let content: any[] = []
+  if (para.elements) {
+    content = para.elements.map((elem: GDoc.Schema$ParagraphElement) => {
       if (elem.textRun) return parseTextRun(elem.textRun)
       else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
     })
   }
-  if (gPara.paragraphStyle) {
-    let styleType = gPara.paragraphStyle.namedStyleType
+
+  if (para.paragraphStyle) {
+    let styleType = para.paragraphStyle.namedStyleType
     if (styleType) {
       let match = styleType.match(/^HEADING_(\d)$/)
       if (match) {
         return {
           type: 'Heading',
           depth: parseInt(match[1], 10),
-          children
+          content
         }
       }
     }
   }
+
+  if (para.bullet) return parseList(para, content, gdoc, lists)
+
   return {
     type: 'Paragraph',
-    children
+    content
   }
 }
 
 /**
  * Unparse a Stencila `Heading` to a GDoc `Paragraph` with a `HEADING_` style.
  */
-function unparseHeading(node: stencila.Node): GDoc.Schema$Paragraph {
-  const heading = stencila.cast(node, 'Heading')
-
-  const gPara = unparseParagraph(node)
-  gPara.paragraphStyle = { namedStyleType: `HEADING_${heading.depth}` }
-  return gPara
+function unparseHeading(
+  heading: stencila.Heading
+): GDoc.Schema$StructuralElement {
+  const elem = unparseParagraph({
+    type: 'Paragraph',
+    content: heading.content
+  })
+  elem.paragraph!.paragraphStyle = {
+    namedStyleType: `HEADING_${heading.depth}`
+  }
+  return elem
 }
 
 /**
  * Unparse a Stencila `Paragraph` to a GDoc `Paragraph`.
  */
-function unparseParagraph(node: stencila.Node): GDoc.Schema$Paragraph {
-  const para = stencila.cast(node, 'Paragraph')
-
-  let elements: Array<GDoc.Schema$ParagraphElement> = []
-  if (para.content) {
-    elements = para.content.map((child: stencila.Node) => {
-      const type = stencila.type(node)
-      switch (type) {
-        case 'Emphasis':
-          return { textRun: unparseEmphasis(node) }
-        case 'Strong':
-          return { textRun: unparseStrong(node) }
-        case 'Text':
-          return { textRun: unparseText(node) }
-        default:
-          throw new Error(`Unhandled node type ${type}`)
-      }
-    })
-  }
+function unparseParagraph(
+  para: stencila.Paragraph
+): GDoc.Schema$StructuralElement {
   return {
-    elements
+    paragraph: {
+      elements: para.content.map(unparseInlineContent)
+    }
   }
 }
 
 /**
- * Parse a GDoc `TextRun` to a `string` node.
+ * Parse a GDoc list item paragraph (one with a `bullet`) to
+ * a Stencila `List`.
+ *
+ * @returns A new `List` or undefined if the paragraph was
+ *        added to an existing list.
  */
-function parseTextRun(gTextRun: GDoc.Schema$TextRun): stencila.Node {
-  let text = {
-    type: 'Text',
-    value: ''
+function parseList(
+  para: GDoc.Schema$Paragraph,
+  content: stencila.InlineContent[],
+  gdoc: GDoc.Schema$Document,
+  lists: { [key: string]: stencila.List }
+): stencila.List | undefined {
+  const bullet = para.bullet!
+  const listId = bullet.listId
+  if (!listId) throw new Error('Woaah, the bullet has no list id!')
+  // If there is already a list with this id then add this paragraph to it
+  const existingList = lists[listId]
+  if (existingList) {
+    existingList.items.push({ type: 'Paragraph', content })
+    return undefined
   }
-  if (gTextRun.content) {
-    let value = gTextRun.content
+  // Create a new list with this paragraph as it's first item
+  if (!gdoc.lists) throw new Error('WTF, the GDoc has no lists!')
+  const list = gdoc.lists[listId].listProperties
+  if (!(list && list.nestingLevels))
+    throw new Error('OMG! That list id can`t be found')
+  const level = list.nestingLevels[bullet.nestingLevel || 0]
+  const order = level.glyphType ? 'ascending' : 'unordered'
+  const newList: stencila.List = {
+    type: 'List',
+    order,
+    items: [{ type: 'Paragraph', content }]
+  }
+  // Register the new list so other items can be added.
+  lists[listId] = newList
+  return newList
+}
+
+/**
+ * Unparse a Stencila `List` to GDoc `Paragraph` elements with a `bullet`.
+ */
+function unparseList(
+  list: stencila.List,
+  lists: { [key: string]: GDoc.Schema$List }
+): GDoc.Schema$StructuralElement[] {
+  // Generate a unique list id based on the index of the new list
+  // Ids are always prefixed with `kix.` (an old code name for GDocs)
+  // followed by a unique string. We use the index here for reversability.
+  const listId = 'kix.' + Object.keys(lists).length
+  // Create a new list with this id
+  lists[listId] = {
+    listProperties: {
+      nestingLevels: [
+        {
+          glyphType: list.order === 'ascending' ? '%0' : undefined
+        }
+      ]
+    }
+  }
+  // Create the GDoc paragraphs with a bullet with the id
+  const paras: GDoc.Schema$StructuralElement[] = list.items.map(item => {
+    let para
+    const type = stencila.type(item)
+    if (type === 'Paragraph') {
+      para = unparseParagraph(item as stencila.Paragraph)
+    } else {
+      throw new Error(`List item is unhandled Stencila node type "${type}"`)
+    }
+    para.paragraph!.bullet = { listId }
+    return para
+  })
+  return paras
+}
+
+/**
+ * Parse a GDoc `TextRun` to a `string`, `Strong` or `Emphasis` node.
+ */
+function parseTextRun(textRun: GDoc.Schema$TextRun): stencila.Node {
+  let text = ''
+  if (textRun.content) {
+    let value = textRun.content
     if (value.endsWith('\n')) value = value.slice(0, -1)
-    text.value = value
+    text = value
   }
-  const textStyle = gTextRun.textStyle
+  const textStyle = textRun.textStyle
   if (textStyle) {
     if (textStyle.bold) {
       return {
         type: 'Strong',
-        children: [text]
+        content: [text]
       }
     }
     if (textStyle.italic) {
       return {
         type: 'Emphasis',
-        children: [text]
+        content: [text]
       }
     }
   }
@@ -204,14 +288,57 @@ function parseTextRun(gTextRun: GDoc.Schema$TextRun): stencila.Node {
 }
 
 /**
+ * Unparse a Stencila inline content node to a GDoc `ParagraphElement`
+ */
+function unparseInlineContent(
+  node: stencila.InlineContent
+): GDoc.Schema$ParagraphElement {
+  const type = stencila.type(node)
+  switch (type) {
+    case 'Emphasis':
+      return unparseEmphasis(node as stencila.Emphasis)
+    case 'Strong':
+      return unparseStrong(node as stencila.Strong)
+    case 'string':
+      return unparseString(node as string)
+    default:
+      throw new Error(`Unhandled node type ${type}`)
+  }
+}
+
+/**
+ * Stringify inline content nodes.
+ *
+ * This is necessary for elements like `TextRun` where the content must be
+ * a simple string.
+ */
+function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
+  return nodes
+    .map(node => {
+      const type = stencila.type(node)
+      switch (type) {
+        case 'Emphasis':
+        case 'Strong':
+          // @ts-ignore
+          return node.content
+        default:
+          // @ts-ignore
+          return node.toString()
+      }
+    })
+    .join()
+}
+
+/**
  * Unparse a `stencila.Emphasis` node to a GDoc `TextRun` node with `textStyle.italic`.
  */
-function unparseEmphasis(node: stencila.Node): GDoc.Schema$TextRun {
-  const emphasis = stencila.cast(node, 'Emphasis')
+function unparseEmphasis(em: stencila.Emphasis): GDoc.Schema$ParagraphElement {
   return {
-    content: emphasis.content.map((node: stencila.Node) => node.value).join(),
-    textStyle: {
-      italic: true
+    textRun: {
+      content: stringifyInlineContentNodes(em.content),
+      textStyle: {
+        italic: true
+      }
     }
   }
 }
@@ -219,12 +346,24 @@ function unparseEmphasis(node: stencila.Node): GDoc.Schema$TextRun {
 /**
  * Unparse a `stencila.Strong` node to a GDoc `TextRun` node with `textStyle.bold`.
  */
-function unparseStrong(node: stencila.Node): GDoc.Schema$TextRun {
-  const strong = stencila.cast(node, 'Emphasis')
+function unparseStrong(strong: stencila.Strong): GDoc.Schema$ParagraphElement {
   return {
-    content: strong.content.map((child: stencila.Node) => child.value).join(),
-    textStyle: {
-      bold: true
+    textRun: {
+      content: stringifyInlineContentNodes(strong.content),
+      textStyle: {
+        bold: true
+      }
+    }
+  }
+}
+
+/**
+ * Unparse a `string` to a GDoc `TextRun`.
+ */
+function unparseString(value: string): GDoc.Schema$ParagraphElement {
+  return {
+    textRun: {
+      content: value
     }
   }
 }
