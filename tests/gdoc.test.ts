@@ -13,6 +13,11 @@ test('unparse', async () => {
 
 // An example intended for testing progressively added parser/unparser pairs
 const kitchenSink = {
+  // Note that this object is missing many styling related properties that
+  // are normally in a GDoc. To keep it a managable size, throughout the
+  // object tree, we've only included the properties that the compiler uses.
+  // A good way to generate content nodes is to author in GDocs and then
+  // fetch using the `gapis.js` script (see there for more details).
   gdoc: {
     title: 'Title',
     body: {
@@ -31,7 +36,7 @@ const kitchenSink = {
             paragraphStyle: { namedStyleType: 'HEADING_2' }
           }
         },
-        // Styled paragraph
+        // Paragraph
         {
           paragraph: {
             elements: [
@@ -47,6 +52,13 @@ const kitchenSink = {
                 textRun: {
                   content: 'strong',
                   textStyle: { bold: true }
+                }
+              },
+              { textRun: { content: ' and ' } },
+              {
+                textRun: {
+                  content: 'a link',
+                  textStyle: { link: { url: 'http://example.com' } }
                 }
               },
               { textRun: { content: '.' } }
@@ -89,6 +101,106 @@ const kitchenSink = {
           paragraph: {
             elements: [{ textRun: { content: 'Third' } }],
             bullet: { listId: 'kix.1' }
+          }
+        },
+        // Table
+        {
+          table: {
+            tableRows: [
+              {
+                tableCells: [
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: 'A' } }]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: 'B' } }]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: 'C' } }]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                tableCells: [
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: '1' } }]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: '2' } }]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: '3' } }]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                tableCells: [
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: '4' } }]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: '5' } }]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    content: [
+                      {
+                        paragraph: {
+                          elements: [{ textRun: { content: '6' } }]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         }
       ]
@@ -140,6 +252,12 @@ const kitchenSink = {
             type: 'Strong',
             content: ['strong']
           },
+          ' and ',
+          {
+            type: 'Link',
+            content: ['a link'],
+            target: 'http://example.com'
+          },
           '.'
         ]
       },
@@ -176,6 +294,62 @@ const kitchenSink = {
           {
             content: ['Third'],
             type: 'Paragraph'
+          }
+        ]
+      },
+      {
+        type: 'Table',
+        rows: [
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['A'],
+                type: 'TableCell'
+              },
+              {
+                content: ['B'],
+                type: 'TableCell'
+              },
+              {
+                content: ['C'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['1'],
+                type: 'TableCell'
+              },
+              {
+                content: ['2'],
+                type: 'TableCell'
+              },
+              {
+                content: ['3'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['4'],
+                type: 'TableCell'
+              },
+              {
+                content: ['5'],
+                type: 'TableCell'
+              },
+              {
+                content: ['6'],
+                type: 'TableCell'
+              }
+            ]
           }
         ]
       }

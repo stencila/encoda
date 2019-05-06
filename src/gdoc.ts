@@ -65,9 +65,7 @@ function parseDocument(doc: GDoc.Schema$Document): stencila.Node {
     content = doc.body.content
       .map((elem: GDoc.Schema$StructuralElement) => {
         if (elem.paragraph) return parseParagraph(elem.paragraph, doc, lists)
-        // else if (elem.sectionBreak) return undefined
-        // else if (elem.table) return undefined
-        // else if (elem.tableOfContents) return undefined
+        else if (elem.table) return parseTable(elem.table)
         else
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
       })
@@ -103,8 +101,11 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
         case 'List':
           content.push(...unparseList(node as stencila.List, lists))
           break
+        case 'Table':
+          content.push(unparseTable(node as stencila.Table))
+          break
         default:
-          throw new Error(`Unhandled Stencila node type ${type}`)
+          throw new Error(`Unhandled Stencila node type "${type}"`)
       }
     }
   }
@@ -127,10 +128,7 @@ function parseParagraph(
 ): stencila.Paragraph | stencila.Heading | stencila.List | undefined {
   let content: any[] = []
   if (para.elements) {
-    content = para.elements.map((elem: GDoc.Schema$ParagraphElement) => {
-      if (elem.textRun) return parseTextRun(elem.textRun)
-      else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
-    })
+    content = para.elements.map(parseParagraphElement)
   }
 
   if (para.paragraphStyle) {
@@ -209,8 +207,9 @@ function parseList(
   // Create a new list with this paragraph as it's first item
   if (!gdoc.lists) throw new Error('WTF, the GDoc has no lists!')
   const list = gdoc.lists[listId].listProperties
-  if (!(list && list.nestingLevels))
+  if (!(list && list.nestingLevels)) {
     throw new Error('OMG! That list id can`t be found')
+  }
   const level = list.nestingLevels[bullet.nestingLevel || 0]
   const order = level.glyphType ? 'ascending' : 'unordered'
   const newList: stencila.List = {
@@ -260,31 +259,82 @@ function unparseList(
 }
 
 /**
- * Parse a GDoc `TextRun` to a `string`, `Strong` or `Emphasis` node.
+ * Parse a GDoc `Table` element to a Stencila `Table`.
  */
-function parseTextRun(textRun: GDoc.Schema$TextRun): stencila.Node {
-  let text = ''
-  if (textRun.content) {
-    let value = textRun.content
-    if (value.endsWith('\n')) value = value.slice(0, -1)
-    text = value
-  }
-  const textStyle = textRun.textStyle
-  if (textStyle) {
-    if (textStyle.bold) {
-      return {
-        type: 'Strong',
-        content: [text]
+function parseTable(table: GDoc.Schema$Table): stencila.Table {
+  return {
+    type: 'Table',
+    rows: (table.tableRows || []).map(
+      (row: GDoc.Schema$TableRow): stencila.TableRow => {
+        return {
+          type: 'TableRow',
+          cells: (row.tableCells || []).map(
+            (cell: GDoc.Schema$TableCell): stencila.TableCell => {
+              return {
+                type: 'TableCell',
+                content: (cell.content || []).map(
+                  (
+                    elem: GDoc.Schema$StructuralElement
+                  ): stencila.InlineContent => {
+                    if (elem.paragraph) {
+                      if (elem.paragraph.elements)
+                        return parseParagraphElement(elem.paragraph.elements[0])
+                    }
+                    throw new Error(
+                      'Sorry, currently can only handle paragraphs here'
+                    )
+                  }
+                )
+              }
+            }
+          )
+        }
       }
-    }
-    if (textStyle.italic) {
-      return {
-        type: 'Emphasis',
-        content: [text]
-      }
+    )
+  }
+}
+
+/**
+ * Unparse a Stencila `Table` to GDoc `Table` element.
+ */
+function unparseTable(table: stencila.Table): GDoc.Schema$StructuralElement {
+  return {
+    table: {
+      tableRows: table.rows.map(
+        (row: stencila.TableRow): GDoc.Schema$TableRow => {
+          return {
+            tableCells: row.cells.map(
+              (cell: stencila.TableCell): GDoc.Schema$TableCell => {
+                return {
+                  content: cell.content.map(
+                    (
+                      node: stencila.InlineContent
+                    ): GDoc.Schema$StructuralElement => {
+                      return {
+                        paragraph: {
+                          elements: [unparseInlineContent(node)]
+                        }
+                      }
+                    }
+                  )
+                }
+              }
+            )
+          }
+        }
+      )
     }
   }
-  return text
+}
+
+/**
+ * Parse a GDo `PararaphElement` (something withing a paragraph :)
+ */
+function parseParagraphElement(
+  elem: GDoc.Schema$ParagraphElement
+): stencila.InlineContent {
+  if (elem.textRun) return parseTextRun(elem.textRun)
+  else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
 }
 
 /**
@@ -299,11 +349,50 @@ function unparseInlineContent(
       return unparseEmphasis(node as stencila.Emphasis)
     case 'Strong':
       return unparseStrong(node as stencila.Strong)
+    case 'Link':
+      return unparseLink(node as stencila.Link)
     case 'string':
       return unparseString(node as string)
     default:
       throw new Error(`Unhandled node type ${type}`)
   }
+}
+
+/**
+ * Parse a GDoc `TextRun` to a `string`, `Emphasis`, `Strong` or `Link` node.
+ */
+function parseTextRun(
+  textRun: GDoc.Schema$TextRun
+): string | stencila.Emphasis | stencila.Strong | stencila.Link {
+  let text = ''
+  if (textRun.content) {
+    let value = textRun.content
+    if (value.endsWith('\n')) value = value.slice(0, -1)
+    text = value
+  }
+  const textStyle = textRun.textStyle
+  if (textStyle) {
+    if (textStyle.italic) {
+      return {
+        type: 'Emphasis',
+        content: [text]
+      }
+    }
+    if (textStyle.bold) {
+      return {
+        type: 'Strong',
+        content: [text]
+      }
+    }
+    if (textStyle.link) {
+      return {
+        type: 'Link',
+        content: [text],
+        target: textStyle.link.url || ''
+      }
+    }
+  }
+  return text
 }
 
 /**
@@ -352,6 +441,22 @@ function unparseStrong(strong: stencila.Strong): GDoc.Schema$ParagraphElement {
       content: stringifyInlineContentNodes(strong.content),
       textStyle: {
         bold: true
+      }
+    }
+  }
+}
+
+/**
+ * Unparse a `stencila.Link` node to a GDoc `TextRun` node with `textStyle.link`.
+ */
+function unparseLink(link: stencila.Link): GDoc.Schema$ParagraphElement {
+  return {
+    textRun: {
+      content: stringifyInlineContentNodes(link.content),
+      textStyle: {
+        link: {
+          url: link.target
+        }
       }
     }
   }
