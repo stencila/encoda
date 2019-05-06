@@ -22,6 +22,10 @@ const kitchenSink = {
     title: 'Title',
     body: {
       content: [
+        // The first element is always a section break
+        {
+          sectionBreak: {}
+        },
         // Heading 1
         {
           paragraph: {
@@ -65,42 +69,56 @@ const kitchenSink = {
             ]
           }
         },
+        // Code block (encoded as an rPNG)
+        /*
+        {
+          paragraph: {
+            elements: [
+              {
+                inlineObjectElement: {
+                  inlineObjectId: 'kix.inlineobj0'
+                }
+              }
+            ]
+          }
+        },
+        */
         // Unordered list
         {
           paragraph: {
             elements: [{ textRun: { content: 'One' } }],
-            bullet: { listId: 'kix.0' }
+            bullet: { listId: 'kix.list0' }
           }
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Two' } }],
-            bullet: { listId: 'kix.0' }
+            bullet: { listId: 'kix.list0' }
           }
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Three' } }],
-            bullet: { listId: 'kix.0' }
+            bullet: { listId: 'kix.list0' }
           }
         },
         // Ordered list
         {
           paragraph: {
             elements: [{ textRun: { content: 'First' } }],
-            bullet: { listId: 'kix.1' }
+            bullet: { listId: 'kix.list1' }
           }
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Second' } }],
-            bullet: { listId: 'kix.1' }
+            bullet: { listId: 'kix.list1' }
           }
         },
         {
           paragraph: {
             elements: [{ textRun: { content: 'Third' } }],
-            bullet: { listId: 'kix.1' }
+            bullet: { listId: 'kix.list1' }
           }
         },
         // Table
@@ -202,11 +220,15 @@ const kitchenSink = {
               }
             ]
           }
+        },
+        // ThematicBreak
+        {
+          sectionBreak: {}
         }
       ]
     },
     lists: {
-      'kix.0': {
+      'kix.list0': {
         listProperties: {
           nestingLevels: [
             {
@@ -216,11 +238,26 @@ const kitchenSink = {
           ]
         }
       },
-      'kix.1': {
+      'kix.list1': {
         listProperties: {
           nestingLevels: [{ glyphType: '%0' }]
         }
       }
+    },
+    inlineObjects: {
+      /*
+      'kix.inlineobj0': {
+        inlineObjectProperties: {
+          embeddedObject: {
+            imageProperties: {
+              sourceUri: 'the image uri'
+            },
+            title: 'CodeBlock',
+            description: '# A code block\nx = {}\ny = 23'
+          }
+        }
+      }
+      */
     }
   },
 
@@ -261,6 +298,13 @@ const kitchenSink = {
           '.'
         ]
       },
+      /*
+      {
+        type: 'CodeBlock',
+        language: 'python',
+        value: '# A code block\nx = {}\ny = 23'
+      },
+      */
       {
         type: 'List',
         order: 'unordered',
@@ -352,6 +396,9 @@ const kitchenSink = {
             ]
           }
         ]
+      },
+      {
+        type: 'ThematicBreak'
       }
     ]
   }

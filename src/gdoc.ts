@@ -63,9 +63,12 @@ function parseDocument(doc: GDoc.Schema$Document): stencila.Node {
   let lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
-      .map((elem: GDoc.Schema$StructuralElement) => {
+      .map((elem: GDoc.Schema$StructuralElement, index: number) => {
         if (elem.paragraph) return parseParagraph(elem.paragraph, doc, lists)
-        else if (elem.table) return parseTable(elem.table)
+        else if (elem.sectionBreak) {
+          // The first element in the content is always a sectionBreak, so ignore it
+          return index === 0 ? undefined : parseSectionBreak(elem.sectionBreak)
+        } else if (elem.table) return parseTable(elem.table)
         else
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
       })
@@ -86,8 +89,9 @@ function parseDocument(doc: GDoc.Schema$Document): stencila.Node {
  * Unparse a Stencila `Article` to a GDoc `Document`
  */
 function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
-  let content: Array<GDoc.Schema$StructuralElement> = []
+  let content: Array<GDoc.Schema$StructuralElement> = [{ sectionBreak: {} }]
   let lists: { [key: string]: GDoc.Schema$List } = {}
+  let inlineObjects: { [key: string]: GDoc.Schema$InlineObject } = {}
   if (article.content) {
     for (let node of article.content) {
       const type = stencila.type(node)
@@ -98,11 +102,19 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
         case 'Paragraph':
           content.push(unparseParagraph(node as stencila.Paragraph))
           break
+        case 'CodeBlock':
+          content.push(
+            unparseCodeBlock(node as stencila.CodeBlock, inlineObjects)
+          )
+          break
         case 'List':
           content.push(...unparseList(node as stencila.List, lists))
           break
         case 'Table':
           content.push(unparseTable(node as stencila.Table))
+          break
+        case 'ThematicBreak':
+          content.push(unparseThematicBreak(node as stencila.ThematicBreak))
           break
         default:
           throw new Error(`Unhandled Stencila node type "${type}"`)
@@ -111,10 +123,9 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
   }
   return {
     title: article.title || 'Untitled',
-    body: {
-      content
-    },
-    lists
+    body: { content },
+    lists,
+    inlineObjects
   }
 }
 
@@ -183,6 +194,39 @@ function unparseParagraph(
 }
 
 /**
+ * Unparse a Stencila `CodeBlock` to a rPNG in a paragraph.
+ */
+function unparseCodeBlock(
+  block: stencila.CodeBlock,
+  inlineObjects: { [key: string]: GDoc.Schema$InlineObject }
+): GDoc.Schema$StructuralElement {
+  const inlineObjectId = `kix.inlineobj${Object.keys(inlineObjects).length}`
+  inlineObjects[inlineObjectId] = {
+    inlineObjectProperties: {
+      embeddedObject: {
+        imageProperties: {
+          // TODO: the URI for the rPNG
+          sourceUri: 'the image uri'
+        },
+        title: 'CodeBlock',
+        description: block.value
+      }
+    }
+  }
+  return {
+    paragraph: {
+      elements: [
+        {
+          inlineObjectElement: {
+            inlineObjectId
+          }
+        }
+      ]
+    }
+  }
+}
+
+/**
  * Parse a GDoc list item paragraph (one with a `bullet`) to
  * a Stencila `List`.
  *
@@ -232,7 +276,7 @@ function unparseList(
   // Generate a unique list id based on the index of the new list
   // Ids are always prefixed with `kix.` (an old code name for GDocs)
   // followed by a unique string. We use the index here for reversability.
-  const listId = 'kix.' + Object.keys(lists).length
+  const listId = `kix.list${Object.keys(lists).length}`
   // Create a new list with this id
   lists[listId] = {
     listProperties: {
@@ -328,12 +372,34 @@ function unparseTable(table: stencila.Table): GDoc.Schema$StructuralElement {
 }
 
 /**
- * Parse a GDo `PararaphElement` (something withing a paragraph :)
+ * Parse a GDoc `SectionBreak` element to a Stencila `ThematicBreak`.
+ */
+function parseSectionBreak(
+  table: GDoc.Schema$SectionBreak
+): stencila.ThematicBreak {
+  return { type: 'ThematicBreak' }
+}
+
+/**
+ * Unparse a Stencila `ThematicBreak` to GDoc `SectionBreak` element.
+ */
+function unparseThematicBreak(
+  table: stencila.ThematicBreak
+): GDoc.Schema$StructuralElement {
+  return {
+    sectionBreak: {}
+  }
+}
+
+/**
+ * Parse a GDoc `ParagraphElement` (something withing a paragraph :)
  */
 function parseParagraphElement(
   elem: GDoc.Schema$ParagraphElement
 ): stencila.InlineContent {
   if (elem.textRun) return parseTextRun(elem.textRun)
+  if (elem.inlineObjectElement)
+    return 'TODO: parseInlineObjectElement(elem.inlineObjectElement)'
   else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
 }
 
