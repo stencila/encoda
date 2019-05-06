@@ -3,12 +3,17 @@
  *
  * Usage examples:
  *
- *  node test/gapis.js docs get 1gmzJsAMijXCwZRUchOBsrQ-_6AAPfRaI3rdfwryXxLA
+ * node test/gapis.js docs create mydoc.md
+ * node test/gapis.js docs get 1gmzJsAMijXCwZRUchOBsrQ-_6AAPfRaI3rdfwryXxLA mydoc.md
+ *
+ * Because this uses functions in dist/index.js ensure you run `make build` afer any changes.
  */
 
 const fs = require('fs-extra')
 const readline = require('readline')
 const { google } = require('googleapis')
+const { Readable } = require('stream')
+const { load, dump, read, write } = require('..')
 
 // If modifying these scopes, delete .gapi-token.json.
 const SCOPES = [
@@ -91,55 +96,57 @@ async function drive() {
 }
 
 /**
- * Use the Google Drive API to create a new document
- * by importing a file.
+ * Create a new GDoc from a local file
  *
- * @param {string} filePath Path of the file to upload
- * @param {string} mimeType MIME type for the file content
- * @param {string} name Name fot the new file
+ * @param {string} filePath Path of the file to create the doc from
  */
-async function driveImportDoc(
-  filePath,
-  mimeType = 'text/html',
-  name = 'Unnamed'
-) {
-  return drive().files.create({
+async function docsCreate(filePath) {
+  const node = await read(filePath)
+  const html = await dump(node, 'html')
+  const stream = new Readable()
+  stream.push(html)
+  stream.push(null)
+  const result = await (await drive()).files.create({
     resource: {
-      name,
+      name: node.title || 'Untitled',
       mimeType: 'application/vnd.google-apps.document'
     },
     media: {
-      mimeType,
-      body: fs.createReadStream(filePath)
+      mimeType: 'text/html',
+      body: stream
     }
   })
+  const gdoc = result.data
+  return `GDoc created from ${filePath} at https://docs.google.com/document/d/${
+    gdoc.id
+  }`
 }
 
 /**
- * Use the Google Docs API to get the JSON for a document
+ * Get a GDoc and save it to file
  *
  * @param {string} documentId The document to get
- * @param {string} filePath The file path to write the JSON
+ * @param {string} filePath The file path to write the document
+ * @param {boolean} raw Just write the raw GDoc JSON?
  */
-async function docsDocGet(documentId, filePath) {
+async function docsGet(documentId, filePath, raw) {
   const result = await (await docs()).documents.get({ documentId })
   const gdoc = result.data
-  if (filePath) {
+  if (raw) {
     fs.writeJSONSync(filePath, gdoc, { spaces: 2 })
-    return filePath
   } else {
-    return gdoc
+    const node = await load(JSON.stringify(gdoc), 'gdoc')
+    await write(node, filePath)
   }
+  return `GDoc saved from https://docs.google.com/document/d/${documentId} to ${filePath}`
 }
 
 const commands = {
-  drive: {
-    'import-doc': driveImportDoc
-  },
   docs: {
-    get: docsDocGet
+    create: docsCreate,
+    get: docsGet
   }
 }
 
 const argv = process.argv.slice(2)
-commands[argv[0]][argv[1]](...argv.slice(2))
+commands[argv[0]][argv[1]](...argv.slice(2)).then(console.log)
