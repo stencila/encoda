@@ -23,6 +23,9 @@
  */
 
 import * as stencila from '@stencila/schema'
+import axios from 'axios'
+import crypto from 'crypto'
+import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
 import { dump, load, VFile } from './vfile'
 
@@ -34,10 +37,13 @@ export const mediaTypes = ['application/vnd.google-apps.document']
  * @param file The `VFile` to parse
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
+export async function parse(
+  file: VFile,
+  fetch: boolean = true
+): Promise<stencila.Node> {
   const json = dump(file)
   const gdoc = JSON.parse(json)
-  return parseDocument(gdoc)
+  return parseDocument(gdoc, fetch)
 }
 
 /**
@@ -53,27 +59,107 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
 }
 
 /**
+ * The GDoc currently being parsed from
+ *
+ * This is necessary as a context when parsing for retrieving properties
+ * of list and images. We use a global object rather than having to pass
+ * the reference to the document through all the function calls.
+ */
+let parsingGDoc: GDoc.Schema$Document
+
+/**
+ * The GDoc currently being unparsed to
+ *
+ * @see parsingGDoc
+ */
+let unparsingGDoc: GDoc.Schema$Document
+
+/**
+ * The function to use to fetch remote resources
+ * during parsing. This allows us (a) to keep most of the parsing functions
+ * synchronous and (b) turn off fetching during tests.
+ */
+let parsingFetcher: (url: string) => string
+
+/**
+ * Fetches a remote file to a local file
+ */
+class FetchToFile {
+  requests: Promise<void>[] = []
+
+  get(url: string, ext: string = ''): string {
+    const filePath =
+      crypto
+        .createHash('md5')
+        .update(url)
+        .digest('hex') + ext
+    const request = axios({
+      url: url,
+      responseType: 'stream'
+    })
+      .then(response => {
+        response.data.pipe(fs.createWriteStream(filePath))
+      })
+      .catch(error => {
+        console.error(`Error when fetching ${url}: ${error.message}`)
+      })
+    this.requests.push(request)
+    return filePath
+  }
+
+  async resolve(): Promise<void[]> {
+    return Promise.all(this.requests)
+  }
+}
+
+/**
+ * A dummy fetcher, used in testing.
+ */
+class FetchToSame {
+  get(url: string): string {
+    return url
+  }
+  async resolve(): Promise<void> {
+    return
+  }
+}
+
+/**
  * Parse a GDoc `Document` to a Stencila `Article`
  *
  * Note that currently `SectionBreak`, `Table` and `TableOfContents`
  * child elements are ignored.
  */
-function parseDocument(doc: GDoc.Schema$Document): stencila.Node {
+async function parseDocument(
+  doc: GDoc.Schema$Document,
+  fetch: boolean
+): Promise<stencila.Node> {
+  parsingGDoc = doc
+
+  // Create a fetcher for remove resources
+  const fetcher = new (fetch ? FetchToFile : FetchToSame)()
+  parsingFetcher = fetcher.get.bind(fetcher)
+
   let content: Array<stencila.Node> = []
   let lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
       .map((elem: GDoc.Schema$StructuralElement, index: number) => {
-        if (elem.paragraph) return parseParagraph(elem.paragraph, doc, lists)
+        if (elem.paragraph) return parseParagraph(elem.paragraph, lists)
         else if (elem.sectionBreak) {
           // The first element in the content is always a sectionBreak, so ignore it
           return index === 0 ? undefined : parseSectionBreak(elem.sectionBreak)
         } else if (elem.table) return parseTable(elem.table)
-        else
+        else {
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
+        }
       })
       .filter(node => typeof node !== 'undefined') as Array<stencila.Node>
   }
+
+  // Resolve the fetched resources
+  await fetcher.resolve()
+
   return stencila.validate(
     {
       type: 'Article',
@@ -89,9 +175,17 @@ function parseDocument(doc: GDoc.Schema$Document): stencila.Node {
  * Unparse a Stencila `Article` to a GDoc `Document`
  */
 function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
-  let content: Array<GDoc.Schema$StructuralElement> = [{ sectionBreak: {} }]
-  let lists: { [key: string]: GDoc.Schema$List } = {}
-  let inlineObjects: { [key: string]: GDoc.Schema$InlineObject } = {}
+  const gdoc: GDoc.Schema$Document = {
+    title: article.title || 'Untitled',
+    body: {
+      content: [{ sectionBreak: {} }]
+    },
+    lists: {},
+    inlineObjects: {}
+  }
+  unparsingGDoc = gdoc
+  const content = gdoc.body!.content!
+
   if (article.content) {
     for (let node of article.content) {
       const type = stencila.type(node)
@@ -103,12 +197,10 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
           content.push(unparseParagraph(node as stencila.Paragraph))
           break
         case 'CodeBlock':
-          content.push(
-            unparseCodeBlock(node as stencila.CodeBlock, inlineObjects)
-          )
+          content.push(unparseCodeBlock(node as stencila.CodeBlock))
           break
         case 'List':
-          content.push(...unparseList(node as stencila.List, lists))
+          content.push(...unparseList(node as stencila.List))
           break
         case 'Table':
           content.push(unparseTable(node as stencila.Table))
@@ -121,12 +213,7 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
       }
     }
   }
-  return {
-    title: article.title || 'Untitled',
-    body: { content },
-    lists,
-    inlineObjects
-  }
+  return gdoc
 }
 
 /**
@@ -134,12 +221,11 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
  */
 function parseParagraph(
   para: GDoc.Schema$Paragraph,
-  gdoc: GDoc.Schema$Document,
   lists: { [key: string]: stencila.List }
 ): stencila.Paragraph | stencila.Heading | stencila.List | undefined {
   let content: any[] = []
   if (para.elements) {
-    content = para.elements.map(parseParagraphElement)
+    content = para.elements.map(node => parseParagraphElement(node))
   }
 
   if (para.paragraphStyle) {
@@ -156,7 +242,7 @@ function parseParagraph(
     }
   }
 
-  if (para.bullet) return parseList(para, content, gdoc, lists)
+  if (para.bullet) return parseList(para, content, lists)
 
   return {
     type: 'Paragraph',
@@ -194,31 +280,17 @@ function unparseParagraph(
 }
 
 /**
- * Unparse a Stencila `CodeBlock` to a rPNG in a paragraph.
+ * Unparse a Stencila `CodeBlock` to a GDOC `Paragraph`.
  */
 function unparseCodeBlock(
-  block: stencila.CodeBlock,
-  inlineObjects: { [key: string]: GDoc.Schema$InlineObject }
+  block: stencila.CodeBlock
 ): GDoc.Schema$StructuralElement {
-  const inlineObjectId = `kix.inlineobj${Object.keys(inlineObjects).length}`
-  inlineObjects[inlineObjectId] = {
-    inlineObjectProperties: {
-      embeddedObject: {
-        imageProperties: {
-          // TODO: the URI for the rPNG
-          sourceUri: 'the image uri'
-        },
-        title: 'CodeBlock',
-        description: block.value
-      }
-    }
-  }
   return {
     paragraph: {
       elements: [
         {
-          inlineObjectElement: {
-            inlineObjectId
+          textRun: {
+            content: block.value
           }
         }
       ]
@@ -236,7 +308,6 @@ function unparseCodeBlock(
 function parseList(
   para: GDoc.Schema$Paragraph,
   content: stencila.InlineContent[],
-  gdoc: GDoc.Schema$Document,
   lists: { [key: string]: stencila.List }
 ): stencila.List | undefined {
   const bullet = para.bullet!
@@ -249,8 +320,8 @@ function parseList(
     return undefined
   }
   // Create a new list with this paragraph as it's first item
-  if (!gdoc.lists) throw new Error('WTF, the GDoc has no lists!')
-  const list = gdoc.lists[listId].listProperties
+  if (!parsingGDoc.lists) throw new Error('WTF, the GDoc has no lists!')
+  const list = parsingGDoc.lists[listId].listProperties
   if (!(list && list.nestingLevels)) {
     throw new Error('OMG! That list id can`t be found')
   }
@@ -269,10 +340,8 @@ function parseList(
 /**
  * Unparse a Stencila `List` to GDoc `Paragraph` elements with a `bullet`.
  */
-function unparseList(
-  list: stencila.List,
-  lists: { [key: string]: GDoc.Schema$List }
-): GDoc.Schema$StructuralElement[] {
+function unparseList(list: stencila.List): GDoc.Schema$StructuralElement[] {
+  const lists = unparsingGDoc.lists!
   // Generate a unique list id based on the index of the new list
   // Ids are always prefixed with `kix.` (an old code name for GDocs)
   // followed by a unique string. We use the index here for reversability.
@@ -321,8 +390,9 @@ function parseTable(table: GDoc.Schema$Table): stencila.Table {
                     elem: GDoc.Schema$StructuralElement
                   ): stencila.InlineContent => {
                     if (elem.paragraph) {
-                      if (elem.paragraph.elements)
+                      if (elem.paragraph.elements) {
                         return parseParagraphElement(elem.paragraph.elements[0])
+                      }
                     }
                     throw new Error(
                       'Sorry, currently can only handle paragraphs here'
@@ -398,9 +468,36 @@ function parseParagraphElement(
   elem: GDoc.Schema$ParagraphElement
 ): stencila.InlineContent {
   if (elem.textRun) return parseTextRun(elem.textRun)
-  if (elem.inlineObjectElement)
-    return 'TODO: parseInlineObjectElement(elem.inlineObjectElement)'
-  else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
+  if (elem.inlineObjectElement) {
+    return parseInlineObjectElement(elem.inlineObjectElement)
+  } else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
+}
+
+function parseInlineObjectElement(
+  elem: GDoc.Schema$InlineObjectElement
+): stencila.ImageObject {
+  const inlineObjectId = elem.inlineObjectId
+  if (!inlineObjectId) throw new Error('Malformed GDoc data')
+  if (!parsingGDoc.inlineObjects) throw new Error('Malformed GDoc data')
+  const inlineObjectProperties =
+    parsingGDoc.inlineObjects[inlineObjectId].inlineObjectProperties
+  if (!inlineObjectProperties) throw new Error('Malformed GDoc data')
+  const embeddedObject = inlineObjectProperties.embeddedObject
+  if (!embeddedObject) throw new Error('Malformed GDoc data')
+
+  if (embeddedObject.imageProperties) {
+    const { title, description } = embeddedObject
+    const { contentUri } = embeddedObject.imageProperties
+    return {
+      type: 'ImageObject',
+      // The `contentUri` is emphemeral so fetch it before it disappears ~30mins
+      contentUrl: parsingFetcher(contentUri || ''),
+      caption: title,
+      description: description
+    }
+  } else {
+    throw new Error(`Unhandled embedded object type ${embeddedObject}`)
+  }
 }
 
 /**
@@ -417,6 +514,8 @@ function unparseInlineContent(
       return unparseStrong(node as stencila.Strong)
     case 'Link':
       return unparseLink(node as stencila.Link)
+    case 'ImageObject':
+      return unparseImageObject(node as stencila.ImageObject)
     case 'string':
       return unparseString(node as string)
     default:
@@ -524,6 +623,31 @@ function unparseLink(link: stencila.Link): GDoc.Schema$ParagraphElement {
           url: link.target
         }
       }
+    }
+  }
+}
+
+/**
+ * Unparse a `stencila.ImageObject` node to a GDoc `TextRun` node with `textStyle.link`.
+ */
+function unparseImageObject(
+  image: stencila.ImageObject
+): GDoc.Schema$ParagraphElement {
+  const inlineObjects = unparsingGDoc.inlineObjects!
+  const inlineObjectId = `kix.inlineobj${Object.keys(inlineObjects).length}`
+  inlineObjects[inlineObjectId] = {
+    inlineObjectProperties: {
+      embeddedObject: {
+        imageProperties: {
+          contentUri: image.contentUrl
+        },
+        description: image.caption
+      }
+    }
+  }
+  return {
+    inlineObjectElement: {
+      inlineObjectId
     }
   }
 }

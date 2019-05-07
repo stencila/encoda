@@ -2,7 +2,7 @@ import { parse, unparse } from '../src/gdoc'
 import { dump, load } from '../src/vfile'
 
 test('parse', async () => {
-  const p = async (gdoc: any) => await parse(load(JSON.stringify(gdoc)))
+  const p = async (gdoc: any) => await parse(load(JSON.stringify(gdoc)), false)
   expect(await p(kitchenSink.gdoc)).toEqual(kitchenSink.node)
 })
 
@@ -69,8 +69,7 @@ const kitchenSink = {
             ]
           }
         },
-        // Code block (encoded as an rPNG)
-        /*
+        // Image
         {
           paragraph: {
             elements: [
@@ -82,7 +81,6 @@ const kitchenSink = {
             ]
           }
         },
-        */
         // Unordered list
         {
           paragraph: {
@@ -245,19 +243,17 @@ const kitchenSink = {
       }
     },
     inlineObjects: {
-      /*
       'kix.inlineobj0': {
         inlineObjectProperties: {
           embeddedObject: {
+            title: 'The title',
+            description: 'The description',
             imageProperties: {
-              sourceUri: 'the image uri'
-            },
-            title: 'CodeBlock',
-            description: '# A code block\nx = {}\ny = 23'
+              contentUri: 'https://lh3.googleusercontent.com/just-an-example'
+            }
           }
         }
       }
-      */
     }
   },
 
@@ -298,13 +294,17 @@ const kitchenSink = {
           '.'
         ]
       },
-      /*
       {
-        type: 'CodeBlock',
-        language: 'python',
-        value: '# A code block\nx = {}\ny = 23'
+        type: 'Paragraph',
+        content: [
+          {
+            type: 'ImageObject',
+            contentUrl: 'https://lh3.googleusercontent.com/just-an-example',
+            caption: 'The title',
+            description: 'The description'
+          }
+        ]
       },
-      */
       {
         type: 'List',
         order: 'unordered',

@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@stencila/schema": "github:stencila/schema#stabilize-text",
+    "axios": "^0.18.0",
     "bin-version-check": "^4.0.0",
     "bin-wrapper": "^4.1.0",
     "collapse-whitespace": "^1.1.7",
