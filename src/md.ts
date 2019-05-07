@@ -27,6 +27,8 @@ import stringifier from 'remark-stringify'
 import unified from 'unified'
 import * as UNIST from 'unist'
 // @ts-ignore
+import filter from 'unist-util-filter'
+// @ts-ignore
 import map from 'unist-util-map'
 import { load, VFile } from './vfile'
 
@@ -85,7 +87,10 @@ export async function parse(file: VFile): Promise<stencila.Node> {
  * @returns A promise that resolves to a `VFile`
  */
 export async function unparse(node: stencila.Node): Promise<VFile> {
-  let mdast = unparseNode(node)
+  let mdast = filter(
+    unparseNode(node),
+    (node: UNIST.Node | undefined) => typeof node !== 'undefined'
+  ) as UNIST.Node
   mdast = stringifyExtensions(mdast)
   const md = unified()
     .use(stringifier)
@@ -161,7 +166,7 @@ function parseNode(node: UNIST.Node): stencila.Node {
   }
 }
 
-function unparseNode(node: stencila.Node): UNIST.Node {
+function unparseNode(node: stencila.Node): UNIST.Node | undefined {
   const type = stencila.type(node)
   switch (type) {
     case 'Article':
@@ -353,11 +358,26 @@ function parseParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
 
 /**
  * Unparse a `stencila.Paragraph` to a `MDAST.Paragraph`
+ *
+ * Returns `undefined` (i.e skip this node) if the paragraph
+ * is empty (not content, or only whitespace)
  */
-function unparseParagraph(paragraph: stencila.Paragraph): MDAST.Paragraph {
-  return {
-    type: 'paragraph',
-    children: paragraph.content.map(unparseInlineContent)
+function unparseParagraph(
+  paragraph: stencila.Paragraph
+): MDAST.Paragraph | undefined {
+  const content = paragraph.content
+  if (
+    content.length == 0 ||
+    (content.length == 1 &&
+      stencila.type(content[0]) === 'string' &&
+      (content[0] as string).trim().length === 0)
+  ) {
+    return undefined
+  } else {
+    return {
+      type: 'paragraph',
+      children: content.map(unparseInlineContent)
+    }
   }
 }
 

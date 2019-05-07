@@ -3,16 +3,13 @@ import { dump, load } from '../src/vfile'
 
 test('parse', async () => {
   expect(await parse(await load(kitchenSink.md))).toEqual(kitchenSink.node)
-  expect(await parse(await load(shorthandYaml.from))).toEqual(
-    shorthandYaml.node
-  )
+  expect(await parse(await load(shortYaml.from))).toEqual(shortYaml.node)
 })
 
 test('unparse', async () => {
   expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.md)
-  expect(await dump(await unparse(shorthandYaml.node))).toEqual(
-    shorthandYaml.to
-  )
+  expect(await dump(await unparse(shortYaml.node))).toEqual(shortYaml.to)
+  expect(await dump(await unparse(emptyParas.node))).toEqual(emptyParas.to)
 })
 
 // An example intended for testing progressively added parser/unparser pairs
@@ -304,7 +301,7 @@ x = {}
 }
 
 // Example for testing shorthand YAML
-const shorthandYaml = {
+const shortYaml = {
   from: `---
 authors:
   - Joe James <joe@example.com>
@@ -347,5 +344,45 @@ authors:
       }
     ],
     content: []
+  }
+}
+
+// Example for testing that empty paragraphs
+// are not represented in Markdown
+const emptyParas = {
+  to: `Paragraph one.
+
+Paragraph three.
+
+Paragraph five.
+`,
+  node: {
+    type: 'Article',
+    content: [
+      {
+        type: 'Paragraph',
+        content: ['Paragraph one.']
+      },
+      {
+        type: 'Paragraph',
+        content: []
+      },
+      {
+        type: 'Paragraph',
+        content: ['Paragraph three.']
+      },
+      {
+        type: 'Paragraph',
+        content: ['']
+      },
+      {
+        type: 'Paragraph',
+        content: ['Paragraph five.']
+      },
+      {
+        type: 'Paragraph',
+        content: ['\n']
+      }
+    ]
   }
 }
