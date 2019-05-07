@@ -1,5 +1,4 @@
 module.exports = {
   out: './docs',
-  readme: 'README.md',
-  exclude: ['src/gdoc.ts']
+  readme: 'README.md'
 }

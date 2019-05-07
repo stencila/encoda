@@ -641,7 +641,8 @@ function unparseImageObject(
         imageProperties: {
           contentUri: image.contentUrl
         },
-        description: image.caption
+        title: image.caption,
+        description: image.description
       }
     }
   }
