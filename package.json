@@ -4,6 +4,9 @@
   "description": "Converters for Stencila components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "convert": "./dist/cli.js"
+  },
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
     "test": "jest",
@@ -11,11 +14,20 @@
     "check": "npm run build:dist && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev .",
-    "build": "npm run build:dist",
+    "build": "npm run build:dist && npm run build:bins",
     "build:dist": "tsc",
+    "build:bins": "pkg --out-path=build . && npm run postpkg",
+    "postpkg": "mkdir -p ./build/node_modules/puppeteer && cp -a ./node_modules/puppeteer/.local-chromium ./build/node_modules/puppeteer",
     "docs": "typedoc --options typedoc.js ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
     "clean": "rimraf coverage docs tests/**/*.to.*"
+  },
+  "pkg": {
+    "scripts": "./dist/**/*.js",
+    "assets": [
+      "./dist/**/*.json",
+      "./node_modules/@stencila/schema/dist/**/*.json"
+    ]
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/convert#readme",
@@ -83,6 +95,7 @@
     "jest": "^24.7.1",
     "jest-expect-message": "^1.0.2",
     "lint-staged": "^8.1.5",
+    "pkg": "^4.3.8",
     "prettier": "^1.16.4",
     "ts-jest": "^24.0.1",
     "ts-node": "^8.0.3",
