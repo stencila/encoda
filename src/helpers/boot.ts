@@ -55,7 +55,9 @@ export const chromiumPath = packaged
         pathRegex,
         path.join(
           path.dirname(process.execPath),
-          path.join('node_modules', 'puppeteer', '.local-chromium')
+          'node_modules',
+          'puppeteer',
+          '.local-chromium'
         )
       )
   : puppeteer.executablePath()
