@@ -16,8 +16,8 @@
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist && npm run build:bins",
     "build:dist": "tsc",
-    "build:bins": "pkg --out-path=build . && npm run postpkg",
-    "postpkg": "mkdir -p ./build/node_modules/puppeteer && cp -a ./node_modules/puppeteer/.local-chromium ./build/node_modules/puppeteer",
+    "build:tgz": "tar czf convert-deps.tgz node_modules/puppeteer/.local-chromium",
+    "build:bins": "npm run build:tgz && pkg --out-path=build .",
     "docs": "typedoc --options typedoc.js ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
     "clean": "rimraf coverage docs tests/**/*.to.*"
@@ -25,6 +25,7 @@
   "pkg": {
     "scripts": "./dist/**/*.js",
     "assets": [
+      "./convert-deps.tgz",
       "./dist/**/*.json",
       "./node_modules/@stencila/schema/dist/**/*.json"
     ]
@@ -87,6 +88,7 @@
     "@types/mime": "^2.0.1",
     "@types/parse5": "^5.0.0",
     "@types/puppeteer": "^1.12.3",
+    "@types/tar": "^4.0.0",
     "@types/unist": "^2.0.3",
     "@types/yargs": "^12.0.11",
     "dependency-check": "^3.3.0",
@@ -97,6 +99,7 @@
     "lint-staged": "^8.1.5",
     "pkg": "^4.3.8",
     "prettier": "^1.16.4",
+    "tar": "^4.4.8",
     "ts-jest": "^24.0.1",
     "ts-node": "^8.0.3",
     "tslint": "^5.15.0",

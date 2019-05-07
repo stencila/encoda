@@ -20,6 +20,7 @@ import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
 import { isBuffer } from 'util'
+import { chromiumPath } from './helpers/boot'
 import { dump, load } from './index'
 import { load as loadVFile, read as readVFile, VFile } from './vfile'
 
@@ -156,7 +157,9 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   let html = await dump(value, 'html')
 
   // Generate image of rendered HTML
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    executablePath: chromiumPath
+  })
   const page = await browser.newPage()
   // TODO Develop CSS for tables etc
   const css = '#target {font: sans #777}'
