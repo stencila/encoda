@@ -371,8 +371,8 @@ function unparseParagraph(
 ): MDAST.Paragraph | undefined {
   const content = paragraph.content
   if (
-    content.length == 0 ||
-    (content.length == 1 &&
+    content.length === 0 ||
+    (content.length === 1 &&
       stencila.type(content[0]) === 'string' &&
       (content[0] as string).trim().length === 0)
   ) {
