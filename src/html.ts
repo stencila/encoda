@@ -124,6 +124,8 @@ function parseNode(node: Node): stencila.Node {
       return parseQuote(node as HTMLQuoteElement)
     case 'code':
       return parseCode(node as HTMLElement)
+    case 'img':
+      return parseImage(node as HTMLImageElement)
 
     case 's-null':
       return parseNull(node as HTMLElement)
@@ -181,6 +183,8 @@ function unparseNode(node: stencila.Node): Node {
       return unparseQuote(node as stencila.Quote)
     case 'Code':
       return unparseCode(node as stencila.Code)
+    case 'ImageObject':
+      return unparseImageObject(node as stencila.ImageObject)
 
     case 'null':
       return unparseNull(node as null)
@@ -502,6 +506,28 @@ function parseCode(elem: HTMLElement): stencila.Code {
 function unparseCode(code: stencila.Code): HTMLElement {
   const clas = code.language ? `language-${code.language}` : undefined
   return h('code', { class: clas }, code.value)
+}
+
+/**
+ * Parse a `<img>` element to a `stencila.ImageObject`.
+ */
+function parseImage(elem: HTMLImageElement): stencila.ImageObject {
+  const image: stencila.ImageObject = {
+    type: 'ImageObject',
+    contentUrl: elem.src
+  }
+  if (elem.alt) image.caption = elem.alt
+  return image
+}
+
+/**
+ * Unparse a `stencila.ImageObject` to a `<img>` element.
+ */
+function unparseImageObject(image: stencila.ImageObject): HTMLImageElement {
+  return h('img', {
+    alt: image.caption,
+    src: image.contentUrl
+  })
 }
 
 /**

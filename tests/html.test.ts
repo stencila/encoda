@@ -33,6 +33,7 @@ const kitchenSink = {
     <p>A paragraph with <a href="https://example.org">a <em>rich</em> link</a>.</p>
     <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
     <p>A paragraph with <code class="language-python"># code</code>.</p>
+    <p>A paragraph with an image <img alt="caption" src="https://example.org/image.png">.</p>
     <p>Paragraph with a <s-boolean>true</s-boolean> and a <s-boolean>false</s-boolean>.</p>
     <p>A paragraph with other data: a <s-null>null</s-null>, a <s-number>3.14</s-number>, an
       <s-array>[1,2]</s-array>, and an <s-object>{"a":1,"b":"two"}</s-object>.</p>
@@ -153,6 +154,18 @@ x = c(1,2)</code></pre>
             type: 'Code',
             language: 'python',
             value: '# code'
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with an image ',
+          {
+            type: 'ImageObject',
+            contentUrl: 'https://example.org/image.png',
+            caption: 'caption'
           },
           '.'
         ]

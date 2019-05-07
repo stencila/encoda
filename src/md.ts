@@ -130,6 +130,8 @@ function parseNode(node: UNIST.Node): stencila.Node {
       return parseDelete(node as MDAST.Delete)
     case 'inlineCode':
       return parseInlineCode(node as MDAST.InlineCode)
+    case 'image':
+      return parseImage(node as MDAST.Image)
     case 'text':
       return parseText(node as MDAST.Text)
     case 'inline-extension':
@@ -199,6 +201,8 @@ function unparseNode(node: stencila.Node): UNIST.Node | undefined {
       return unparseQuote(node as stencila.Quote)
     case 'Code':
       return unparseCode(node as stencila.Code)
+    case 'ImageObject':
+      return unparseImageObject(node as stencila.ImageObject)
 
     case 'string':
       return unparseString(node as string)
@@ -688,6 +692,28 @@ function unparseCode(code: stencila.Code): MDAST.InlineCode {
   return {
     type: 'inlineCode',
     value: code.value
+  }
+}
+
+/**
+ * Parse a `MDAST.Image` to a `stencila.ImageObject`
+ */
+function parseImage(image: MDAST.Image): stencila.ImageObject {
+  return {
+    type: 'ImageObject',
+    contentUrl: image.url,
+    caption: image.alt
+  }
+}
+
+/**
+ * Unparse a `stencila.ImageObject` to a `MDAST.Image`
+ */
+function unparseImageObject(image: stencila.ImageObject): MDAST.Image {
+  return {
+    type: 'image',
+    url: image.contentUrl || '',
+    alt: image.caption || ''
   }
 }
 

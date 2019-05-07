@@ -52,6 +52,8 @@ A paragraph with [a _rich_ link](https://example.org).
 
 A paragraph with !quote[quote](https://example.org).
 
+A paragraph with an image ![caption](https://example.org/image.png).
+
 A paragraph with !true and !false boolean values.
 
 A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
@@ -165,6 +167,18 @@ x = {}
             type: 'Quote',
             citation: 'https://example.org',
             content: ['quote']
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with an image ',
+          {
+            type: 'ImageObject',
+            contentUrl: 'https://example.org/image.png',
+            caption: 'caption'
           },
           '.'
         ]
