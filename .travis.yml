@@ -10,16 +10,23 @@ os:
 cache:
   directories:
     - node_modules
+    - '$HOME/.npm'
 
 before_install:
   # Install Pandoc from deb to get pandoc-citeproc as well
   - wget https://github.com/jgm/pandoc/releases/download/2.2.3.2/pandoc-2.2.3.2-1-amd64.deb
   - sudo dpkg -i pandoc-2.2.3.2-1-amd64.deb
 
+# Install node_modules
+install:
+  - npm install
+
 script:
   - npm run lint
   - npm run cover
   - npm run docs
+  - npm run build
+  - npm run bundle
 
 after_success:
   # Upload test coverage to codecov.io
