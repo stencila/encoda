@@ -56,6 +56,7 @@ const formulas = {
   node: {
     type: 'Table',
     name: 'Sheet1',
+    rows: [],
     cells: [
       {
         type: 'TableCell',

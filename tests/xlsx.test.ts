@@ -73,6 +73,7 @@ const collection = {
       {
         type: 'Table',
         name: 'calcs',
+        rows: [],
         cells: [
           {
             type: 'TableCell',

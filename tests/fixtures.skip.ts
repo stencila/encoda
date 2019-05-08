@@ -1,7 +1,7 @@
 import fs from 'fs'
 import glob from 'glob'
 import path from 'path'
-import { convert, handled } from '../src/'
+import { convert, handled } from '../src'
 
 const SKIP_COMPARE_EXTNAMES = ['.ods', '.xlsx']
 
