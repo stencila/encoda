@@ -14,4 +14,4 @@ osslsigncode sign \
   -in "bin/stencila-convert-win.exe" \
   -out "bin/stencila-convert.exe"
 
-zip -j bin/convert-win-x64.zip build/stencila-convert.exe
+zip -j bin/convert-win-x64.zip bin/stencila-convert.exe
