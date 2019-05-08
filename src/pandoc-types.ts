@@ -8,11 +8,15 @@
  * Most of the comment strings are copy-pasted directly from there.
  */
 
-interface Document {
+type VersionNumber = [number, number, number, number]
+
+export const Version: VersionNumber = [1, 17, 5, 4]
+
+export interface Document {
   /**
    * The Pandoc types API version
    */
-  'pandoc-api-version': [1, 17, 5, 4]
+  'pandoc-api-version': VersionNumber
 
   /**
    * Metadata for the document e.g from Markdown YAML header
@@ -40,7 +44,7 @@ interface Document {
  * it is necessary to defined a new `interface` instead of a type alias.
  * See below and [this answer](https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540)
  */
-interface Element<Type, Args = null> {
+interface Element<Type, Args = undefined> {
   t: Type
   c: Args
 }
@@ -48,7 +52,7 @@ interface Element<Type, Args = null> {
 /**
  * List of metadata element type names
  */
-type Meta = { [key: string]: MetaValue }
+export type Meta = { [key: string]: MetaValue }
 
 /**
  * Union type of metadata element types
@@ -76,7 +80,7 @@ export type MetaBlocks = Element<'MetaBlocks', Block[]>
 /**
  * Union type of metadata element types
  */
-type Block =
+export type Block =
   | Plain
   | Para
   | LineBlock
@@ -222,7 +226,7 @@ export enum Alignment {
 /**
  * Table cells (list of blocks)
  */
-type TableCell = [Block]
+export type TableCell = [Block]
 
 /**
  * Generic block container with attributes
@@ -240,7 +244,7 @@ export type Null = Element<'Null'>
 /**
  * Union type of inline elements
  */
-type Inline =
+export type Inline =
   | Str
   | Emph
   | Strong
@@ -325,8 +329,8 @@ export interface Quoted {
  * Type of quotation marks to use in Quoted inline.
  */
 export enum QuoteType {
-  'SingleQuote',
-  'DoubleQuote'
+  SingleQuote = 'SingleQuote',
+  DoubleQuote = 'DoubleQuote'
 }
 
 /**
