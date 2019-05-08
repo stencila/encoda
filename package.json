@@ -27,7 +27,7 @@
     "url": "https://github.com/stencila/convert/issues"
   },
   "dependencies": {
-    "@stencila/schema": "github:stencila/schema#stabilize-text",
+    "@stencila/schema": "^0.12.0",
     "axios": "^0.18.0",
     "bin-version-check": "^4.0.0",
     "bin-wrapper": "^4.1.0",
