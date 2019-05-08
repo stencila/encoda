@@ -18,7 +18,7 @@
     "build:dist": "tsc",
     "build:tgz": "tar czf convert-deps.tgz node_modules/puppeteer/.local-chromium",
     "build:bins": "npm run build:tgz && pkg --out-path=bin .",
-    "bundle": "npm run bundle:linux && npm run bundle:macos && npm run bundle:macos && npm run bundle:win",
+    "bundle": "npm run bundle:linux && npm run bundle:macos && npm run bundle:win",
     "bundle:linux": "tar --transform 's|bin/stencila-convert-linux|stencila-convert|' -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert-linux",
     "bundle:macos": "tar --transform 's|bin/stencila-convert-macos|stencila-convert|' -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert-macos",
     "bundle:win": "./bundle-win.sh",
