@@ -2,7 +2,9 @@
  * Typescript definitions for Pandoc.
  *
  * These type definitions are based on the definitions in
- * [`pandoc-types v1.19`](https://github.com/jgm/pandoc-types/blob/1.19/Text/Pandoc/Definition.hs).
+ * [`pandoc-types v1.17.5.4`](https://github.com/jgm/pandoc-types/blob/1.17.5.4/Text/Pandoc/Definition.hs).
+ * That is the version used in Pandoc v2.7.2.
+ *
  * Most of the comment strings are copy-pasted directly from there.
  */
 
@@ -10,7 +12,7 @@ interface Document {
   /**
    * The Pandoc types API version
    */
-  'pandoc-api-version': 1.19
+  'pandoc-api-version': [1, 17, 5, 4]
 
   /**
    * Metadata for the document e.g from Markdown YAML header
@@ -38,7 +40,7 @@ interface Document {
  * it is necessary to defined a new `interface` instead of a type alias.
  * See below and [this answer](https://github.com/Microsoft/TypeScript/issues/3496#issuecomment-128553540)
  */
-interface Element<Type, Args = undefined> {
+interface Element<Type, Args = null> {
   t: Type
   c: Args
 }
@@ -62,11 +64,9 @@ export type MetaValue =
 interface DictMetaValue {
   [key: string]: MetaValue
 }
-interface ArrayMetaValue {
-  [key: number]: MetaValue
-}
+interface ArrayMetaValue extends Array<MetaValue> {}
 
-export type MetaMap = Element<'MetaMap', ArrayMetaValue>
+export type MetaMap = Element<'MetaMap', DictMetaValue>
 export type MetaList = Element<'MetaList', ArrayMetaValue>
 export type MetaBool = Element<'MetaBool', boolean>
 export type MetaString = Element<'MetaString', string>
