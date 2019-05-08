@@ -28,9 +28,13 @@ after_success:
 deploy:
   # Deploy documentation to Github Pages
   # See https://docs.travis-ci.com/user/deployment/pages/
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local-dir: docs
-  on:
-    branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    local-dir: docs
+    on:
+      branch: master
+
+  - provider: script
+    skip_cleanup: true
+    script: npx semantic-release
