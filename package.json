@@ -1,7 +1,7 @@
 {
   "name": "stencila-convert",
   "version": "0.32.0",
-  "description": "Converters for Stencila components",
+  "description": "Convert between Stencila document trees and other formats",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
