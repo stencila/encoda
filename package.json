@@ -17,9 +17,13 @@
     "build": "npm run build:dist && npm run build:bins",
     "build:dist": "tsc",
     "build:tgz": "tar czf convert-deps.tgz node_modules/puppeteer/.local-chromium",
-    "build:bins": "npm run build:tgz && pkg --out-path=build .",
+    "build:bins": "npm run build:tgz && pkg --out-path=bin .",
+    "bundle": "npm run bundle:linux && npm run bundle:macos && npm run bundle:win",
+    "bundle:linux": "tar --transform 's|bin/stencila-convert-linux|stencila-convert|' -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert-linux",
+    "bundle:macos": "tar --transform 's|bin/stencila-convert-macos|stencila-convert|' -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert-macos",
+    "bundle:win": "./bundle-win.sh",
     "docs": "typedoc --options typedoc.js ./src",
-    "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs",
+    "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs && npm run build && npm run bundle",
     "clean": "rimraf coverage docs tests/**/*.to.*"
   },
   "pkg": {
@@ -80,6 +84,10 @@
     "yargs": "^13.2.2"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "@types/get-stdin": "^5.0.1",
     "@types/hyperscript": "0.0.3",
     "@types/jest": "^24.0.11",
@@ -99,6 +107,7 @@
     "lint-staged": "^8.1.5",
     "pkg": "^4.3.8",
     "prettier": "^1.16.4",
+    "semantic-release": "^15.13.3",
     "tar": "^4.4.8",
     "ts-jest": "^24.0.1",
     "ts-node": "^8.0.3",
@@ -121,6 +130,33 @@
     "*.{ts,tsx,js,jsx,json,css,md}": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "bin/convert-linux-x64.tar.gz",
+              "label": "convert-linux-x64.tar.gz"
+            },
+            {
+              "path": "bin/convert-macos-x64.tar.gz",
+              "label": "convert-macos-x64.tar.gz"
+            },
+            {
+              "path": "bin/convert-win-x64.zip",
+              "label": "convert-win-x64.zip"
+            }
+          ]
+        }
+      ]
     ]
   }
 }
