@@ -4,9 +4,9 @@ import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import { create, dump, load, VFile } from './vfile'
 
-export const mediaTypes = ['text/markdown']
-
 export { InputFormat, OutputFormat } from './pandoc-types'
+
+export const mediaTypes = ['text/markdown']
 
 /**
  * Parse a `VFile` to a `stencila.Node`.
@@ -76,8 +76,9 @@ function run(input: string, args: string[]): Promise<string> {
     })
     child.on('close', () => {
       if (stderr) {
-        // TODO: add arguments to the error for better diagnosis.
-        stderr = 'Pandoc error: ' + stderr
+        stderr = `Pandoc error\n  message: ${stderr}  args:\n    ${args.join(
+          '\n    '
+        )}\n`
         reject(new Error(stderr))
       } else resolve(stdout)
     })
