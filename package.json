@@ -16,7 +16,7 @@
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist && npm run build:bins",
-    "build:dist": "tsc",
+    "build:dist": "tsc && cp src/*.js dist",
     "build:tgz": "tar czf convert-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
     "build:bins": "npm run build:tgz && pkg --out-path=bin .",
     "bundle": "npm run bundle:linux && npm run bundle:macos && npm run bundle:win",
@@ -25,7 +25,7 @@
     "bundle:win": "./bundle-win.sh",
     "docs": "typedoc --options typedoc.js ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs && npm run build && npm run bundle",
-    "clean": "rimraf coverage docs tests/**/*.to.*"
+    "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
   "pandoc": {
     "version": "2.7.2"
