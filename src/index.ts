@@ -4,11 +4,13 @@ import getStdin from 'get-stdin'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
+import * as docx from './docx'
 import * as gdoc from './gdoc'
 import * as html from './html'
 import * as json from './json'
 import * as md from './md'
 import * as ods from './ods'
+import * as odt from './odt'
 import * as rpng from './rpng'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
@@ -31,7 +33,9 @@ export const compilerList: Array<Compiler> = [
   xlsx,
 
   // Articles, textual documents etc
+  docx,
   gdoc,
+  odt,
   md,
 
   // Images
@@ -336,6 +340,13 @@ export async function convert(
   from?: string,
   to?: string
 ): Promise<void> {
-  const node = await read(inp, from)
-  await write(node, out, to)
+  // const node = await read(inp, from)
+  // await write(node, out, to)
+  const inpFile = vfile.create({ path: inp })
+  const inpCompiler = await match(inp, from)
+  const node = await inpCompiler.parse(inpFile)
+
+  const outCompiler = await match(out, to)
+  const outFile = await outCompiler.unparse(node, out)
+  if (outFile.contents) await vfile.write(outFile, out)
 }

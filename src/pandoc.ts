@@ -3,9 +3,11 @@ import { InlineContent } from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
-import { dump, load, VFile } from './vfile'
+import { create, dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['text/markdown']
+
+export { InputFormat, OutputFormat } from './pandoc-types'
 
 /**
  * Parse a `VFile` to a `stencila.Node`.
@@ -15,10 +17,15 @@ export const mediaTypes = ['text/markdown']
  */
 export async function parse(
   file: VFile,
-  from: Pandoc.InputFormat = Pandoc.InputFormat.json
+  from: Pandoc.InputFormat = Pandoc.InputFormat.json,
+  options: string[] = []
 ): Promise<stencila.Node> {
-  const content = dump(file)
-  const json = await run(content, [`--from=${from}`, `--to=json`])
+  const args = [`--from=${from}`, `--to=json`].concat(options)
+  let content = dump(file)
+  if (!content) {
+    args.push(`${file.path}`)
+  }
+  const json = await run(content, args)
   const pdoc = JSON.parse(json)
   return parseDocument(pdoc)
 }
@@ -31,15 +38,22 @@ export async function parse(
  */
 export async function unparse(
   node: stencila.Node,
-  to: Pandoc.OutputFormat = Pandoc.OutputFormat.json
+  filePath?: string,
+  to: Pandoc.OutputFormat = Pandoc.OutputFormat.json,
+  options: string[] = []
 ): Promise<VFile> {
   const type = stencila.type(node)
   if (type !== 'Article')
     throw new Error(`Unable to unparse Stencila type ${type}`)
   const pdoc = unparseArticle(node as stencila.Article)
   const json = JSON.stringify(pdoc)
-  const content = await run(json, [`--from=json`, `--to=${to}`])
-  return load(content)
+  const args = [`--from=json`, `--to=${to}`].concat(options)
+  if (filePath) {
+    args.push(`--output=${filePath}`)
+  }
+  const content = await run(json, args)
+  if (filePath) return create({ path: filePath })
+  else return load(content)
 }
 
 /**
@@ -47,6 +61,9 @@ export async function unparse(
  */
 function run(input: string, args: string[]): Promise<string> {
   args.push(`--data-dir=${pandocDataDir}`)
+  if (process.env.DEBUG) {
+    console.log(`Running ${pandocPath} with args:\n  ${args.join('\n  ')}`)
+  }
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(pandocPath, args)
     let stdout = ''
@@ -59,6 +76,7 @@ function run(input: string, args: string[]): Promise<string> {
     })
     child.on('close', () => {
       if (stderr) {
+        // TODO: add arguments to the error for better diagnosis.
         stderr = 'Pandoc error: ' + stderr
         reject(new Error(stderr))
       } else resolve(stdout)
