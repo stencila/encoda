@@ -7,7 +7,7 @@ os:
   # Currently, don't run on OSX because using citeproc
   # - osx
 
-# Install code signing tool 
+# Install code signing tool
 addons:
   apt:
     sources:
@@ -35,8 +35,9 @@ script:
   - npm run lint
   - npm run cover
   - npm run docs
-  - npm run build
-  - npm run bundle
+  - npm run build:dist
+  - npm run build:$TRAVIS_OS_NAME
+  - npm run bundle:$TRAVIS_OS_NAME
 
 after_success:
   # Upload test coverage to codecov.io
