@@ -18,6 +18,8 @@ import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
 import tar from 'tar'
+// @ts-ignore
+import pandoc from './pandoc-binary'
 
 /**
  * Is this process being run as a `pkg` packaged binary?
@@ -73,11 +75,7 @@ export const chromiumPath = packaged
 /**
  * The path to the Pandoc binary executable
  */
-export const pandocPath = path.join(
-  home,
-  'vendor',
-  process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc'
-)
+export const pandocPath = path.join(home, pandoc.path())
 
 /**
  * The path the the Pandoc `--data-dir` where it gets templates etc from

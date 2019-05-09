@@ -1,5 +1,5 @@
 import yargs from 'yargs'
-import './helpers/boot'
+import './boot'
 import { convert } from './index'
 
 const VERSION = require('../package').version

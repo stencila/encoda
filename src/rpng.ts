@@ -20,7 +20,7 @@ import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
 import { isBuffer } from 'util'
-import { chromiumPath } from './helpers/boot'
+import { chromiumPath } from './boot'
 import { dump, load } from './index'
 import { load as loadVFile, read as readVFile, VFile } from './vfile'
 
