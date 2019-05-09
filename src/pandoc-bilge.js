@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 /**
  * This is a temporary file for storing `parse*`, and `unparse*` functions that
  * are currently not being used (but that were developed in a previous iteration
