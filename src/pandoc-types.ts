@@ -6,6 +6,31 @@
  * That is the version used in Pandoc v2.7.2.
  *
  * Most of the comment strings are copy-pasted directly from there.
+ *
+ * To check these type definitions are correct with respect to what Pandoc actually
+ * consumes and produces it can be useful to test Markdown or HTML snippets at the console like
+ * this (`jq` used for ease of viewing output):
+ *
+ * ```bash
+ * echo 'A "quote"' | ./vendor/bin/pandoc --from markdown --to json | jq .blocks
+ * ```
+ * ```json
+ * [
+ *   {
+ *     "t": "Para",
+ *     "c": [
+ *       {
+ *         "t": "Str",
+ *         "c": "A"
+ *       },
+ *       {
+ *         "t": "Space"
+ *       },
+ *       {
+ *         "t": "Quoted",
+ *         "c": [
+ * ...
+ * ```
  */
 
 type VersionNumber = [number, number, number, number]
@@ -148,29 +173,33 @@ export interface OrderedList {
 /**
  * List attributes.
  */
-export type ListAttributes = [number, ListNumberStyle, ListNumberDelim]
+export type ListAttributes = [
+  number,
+  { t: ListNumberStyle },
+  { t: ListNumberDelim }
+]
 
 /**
  * Style of list numbers.
  */
 export enum ListNumberStyle {
-  'DefaultStyle',
-  'Example',
-  'Decimal',
-  'LowerRoman',
-  'UpperRoman',
-  'LowerAlpha',
-  'UpperAlpha'
+  DefaultStyle = 'DefaultStyle',
+  Example = 'Example',
+  Decimal = 'Decimal',
+  LowerRoman = 'LowerRoman',
+  UpperRoman = 'UpperRoman',
+  LowerAlpha = 'LowerAlpha',
+  UpperAlpha = 'UpperAlpha'
 }
 
 /**
  * Delimiter of list numbers.
  */
 export enum ListNumberDelim {
-  'DefaultDelim',
-  'Period',
-  'OneParen',
-  'TwoParen'
+  DefaultDelim = 'DefaultDelim',
+  Period = 'Period',
+  OneParen = 'OneParen',
+  TwoParen = 'TwoParen'
 }
 
 /**
@@ -322,7 +351,7 @@ export interface SmallCaps extends InlineList {
  */
 export interface Quoted {
   t: 'Quoted'
-  c: [QuoteType, Inline[]]
+  c: [{ t: QuoteType }, Inline[]]
 }
 
 /**
@@ -431,4 +460,102 @@ export interface Note {
 export interface Span {
   t: 'Span'
   c: [Attr, Inline[]]
+}
+
+/**
+ * List of valid input formats. Generated using:
+ *     ./vendor/bin/pandoc --list-input-formats
+ */
+export enum InputFormat {
+  commonmark = 'commonmark',
+  creole = 'creole',
+  docbook = 'docbook',
+  docx = 'docx',
+  dokuwiki = 'dokuwiki',
+  epub = 'epub',
+  fb2 = 'fb2',
+  gfm = 'gfm',
+  haddock = 'haddock',
+  html = 'html',
+  ipynb = 'ipynb',
+  jats = 'jats',
+  json = 'json',
+  latex = 'latex',
+  man = 'man',
+  markdown = 'markdown',
+  markdown_github = 'markdown_github',
+  markdown_mmd = 'markdown_mmd',
+  markdown_phpextra = 'markdown_phpextra',
+  markdown_strict = 'markdown_strict',
+  mediawiki = 'mediawiki',
+  muse = 'muse',
+  native = 'native',
+  odt = 'odt',
+  opml = 'opml',
+  org = 'org',
+  rst = 'rst',
+  t2t = 't2t',
+  textile = 'textile',
+  tikiwiki = 'tikiwiki',
+  twiki = 'twiki',
+  vimwiki = 'vimwiki'
+}
+
+/**
+ * List of valid output formats. Generated using:
+ *     ./vendor/bin/pandoc --list-output-formats
+ */
+export enum OutputFormat {
+  asciidoc = 'asciidoc',
+  asciidoctor = 'asciidoctor',
+  beamer = 'beamer',
+  commonmark = 'commonmark',
+  context = 'context',
+  docbook = 'docbook',
+  docbook4 = 'docbook4',
+  docbook5 = 'docbook5',
+  docx = 'docx',
+  dokuwiki = 'dokuwiki',
+  dzslides = 'dzslides',
+  epub = 'epub',
+  epub2 = 'epub2',
+  epub3 = 'epub3',
+  fb2 = 'fb2',
+  gfm = 'gfm',
+  haddock = 'haddock',
+  html = 'html',
+  html4 = 'html4',
+  html5 = 'html5',
+  icml = 'icml',
+  ipynb = 'ipynb',
+  jats = 'jats',
+  json = 'json',
+  latex = 'latex',
+  man = 'man',
+  markdown = 'markdown',
+  markdown_github = 'markdown_github',
+  markdown_mmd = 'markdown_mmd',
+  markdown_phpextra = 'markdown_phpextra',
+  markdown_strict = 'markdown_strict',
+  mediawiki = 'mediawiki',
+  ms = 'ms',
+  muse = 'muse',
+  native = 'native',
+  odt = 'odt',
+  opendocument = 'opendocument',
+  opml = 'opml',
+  org = 'org',
+  plain = 'plain',
+  pptx = 'pptx',
+  revealjs = 'revealjs',
+  rst = 'rst',
+  rtf = 'rtf',
+  s5 = 's5',
+  slideous = 'slideous',
+  slidy = 'slidy',
+  tei = 'tei',
+  texinfo = 'texinfo',
+  textile = 'textile',
+  xwiki = 'xwiki',
+  zimwiki = 'zimwiki'
 }

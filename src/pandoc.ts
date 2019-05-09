@@ -1,5 +1,7 @@
 import * as stencila from '@stencila/schema'
 import { InlineContent } from '@stencila/schema'
+import childProcess from 'child_process'
+import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import { dump, load, VFile } from './vfile'
 
@@ -11,8 +13,12 @@ export const mediaTypes = ['text/markdown']
  * @param file The `VFile` to parse
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
-  const json = dump(file)
+export async function parse(
+  file: VFile,
+  from: Pandoc.InputFormat = Pandoc.InputFormat.json
+): Promise<stencila.Node> {
+  const content = dump(file)
+  const json = await run(content, [`--from=${from}`, `--to=json`])
   const pdoc = JSON.parse(json)
   return parseDocument(pdoc)
 }
@@ -23,13 +29,46 @@ export async function parse(file: VFile): Promise<stencila.Node> {
  * @param thing The `stencila.Node` to unparse
  * @returns A promise that resolves to a `VFile`
  */
-export async function unparse(node: stencila.Node): Promise<VFile> {
+export async function unparse(
+  node: stencila.Node,
+  to: Pandoc.OutputFormat = Pandoc.OutputFormat.json
+): Promise<VFile> {
   const type = stencila.type(node)
   if (type !== 'Article')
     throw new Error(`Unable to unparse Stencila type ${type}`)
   const pdoc = unparseArticle(node as stencila.Article)
-  const json = JSON.stringify(pdoc, null, '  ')
-  return load(json)
+  const json = JSON.stringify(pdoc)
+  const content = await run(json, [`--from=json`, `--to=${to}`])
+  return load(content)
+}
+
+/**
+ * Run the Pandoc binary
+ */
+function run(input: string, args: string[]): Promise<string> {
+  args.push(`--data-dir=${pandocDataDir}`)
+  return new Promise((resolve, reject) => {
+    const child = childProcess.spawn(pandocPath, args)
+    let stdout = ''
+    let stderr = ''
+    child.stdout.on('data', data => {
+      stdout += data
+    })
+    child.stderr.on('data', data => {
+      stderr += data
+    })
+    child.on('close', () => {
+      if (stderr) {
+        stderr = 'Pandoc error: ' + stderr
+        reject(new Error(stderr))
+      } else resolve(stdout)
+    })
+    child.on('error', err => {
+      reject(err)
+    })
+    child.stdin.write(input)
+    child.stdin.end()
+  })
 }
 
 /**
@@ -312,8 +351,8 @@ function unparseList(
 ): Pandoc.BulletList | Pandoc.OrderedList {
   const listAttrs: Pandoc.ListAttributes = [
     1,
-    Pandoc.ListNumberStyle.DefaultStyle,
-    Pandoc.ListNumberDelim.DefaultDelim
+    { t: Pandoc.ListNumberStyle.DefaultStyle },
+    { t: Pandoc.ListNumberDelim.DefaultDelim }
   ]
   const blocks: Pandoc.Block[][] = node.items.map(node => {
     // TODO: need to wrap inline elements if necessary
@@ -558,7 +597,7 @@ function parseQuoted(node: Pandoc.Quoted): stencila.Quote {
 function unparseQuote(node: stencila.Quote): Pandoc.Quoted {
   return {
     t: 'Quoted',
-    c: [Pandoc.QuoteType.SingleQuote, unparseInlines(node.content)]
+    c: [{ t: Pandoc.QuoteType.SingleQuote }, unparseInlines(node.content)]
   }
 }
 

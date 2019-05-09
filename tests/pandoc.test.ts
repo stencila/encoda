@@ -76,7 +76,10 @@ const kitchenSink: testCase = {
           str(' and '),
           { t: 'Strikeout', c: [str('delete')] },
           str(' and '),
-          { t: 'Quoted', c: [Pandoc.QuoteType.SingleQuote, [str('quote')]] },
+          {
+            t: 'Quoted',
+            c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quote')]]
+          },
           str(' and '),
           { t: 'Code', c: [['', ['r'], []], 'code'] },
           str(' and '),
@@ -104,7 +107,11 @@ const kitchenSink: testCase = {
       {
         t: 'OrderedList',
         c: [
-          [1, 0, 0],
+          [
+            1,
+            { t: Pandoc.ListNumberStyle.DefaultStyle },
+            { t: Pandoc.ListNumberDelim.DefaultDelim }
+          ],
           [
             [{ t: 'Para', c: [str('First item')] }],
             [{ t: 'Para', c: [str('Second item')] }]
