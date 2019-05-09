@@ -1,5 +1,4 @@
 import * as stencila from '@stencila/schema'
-import { InlineContent } from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
@@ -43,8 +42,9 @@ export async function unparse(
   options: string[] = []
 ): Promise<VFile> {
   const type = stencila.type(node)
-  if (type !== 'Article')
+  if (type !== 'Article') {
     throw new Error(`Unable to unparse Stencila type ${type}`)
+  }
   const pdoc = unparseArticle(node as stencila.Article)
   const json = JSON.stringify(pdoc)
   const args = [`--from=json`, `--to=${to}`].concat(options)
@@ -225,20 +225,20 @@ function unparseBlocks(nodes: stencila.BlockContent[]): Pandoc.Block[] {
 function parseBlock(block: Pandoc.Block): stencila.BlockContent {
   switch (block.t) {
     case 'Header':
-      return parseHeader(block as Pandoc.Header)
+      return parseHeader(block)
     case 'Para':
-      return parsePara(block as Pandoc.Para)
+      return parsePara(block)
     case 'BlockQuote':
-      return parseBlockQuote(block as Pandoc.BlockQuote)
+      return parseBlockQuote(block)
     case 'CodeBlock':
-      return parseCodeBlock(block as Pandoc.CodeBlock)
+      return parseCodeBlock(block)
     case 'BulletList':
     case 'OrderedList':
       return parseList(block as Pandoc.OrderedList)
     case 'Table':
-      return parseTable(block as Pandoc.Table)
+      return parseTable(block)
     case 'HorizontalRule':
-      return parseHorizontalRule(block as Pandoc.HorizontalRule)
+      return parseHorizontalRule(block)
   }
   throw new Error(`Unhandled Pandoc node type "${block.t}"`)
 }
@@ -328,7 +328,7 @@ function parseCodeBlock(node: Pandoc.CodeBlock): stencila.CodeBlock {
   return {
     type: 'CodeBlock',
     // TODO: get the language from the attrs
-    //attrs: parseAttr(node.c[0]),
+    // attrs: parseAttr(node.c[0]),
     value: node.c[1]
   }
 }
@@ -401,11 +401,11 @@ function parseTable(node: Pandoc.Table): stencila.Table {
  */
 function unparseTable(node: stencila.Table): Pandoc.Table {
   // TODO: reimplement these as needed
-  const caption: Pandoc.Inline[] = [] //node.caption ? unparseInlines(node.caption) : [],
+  const caption: Pandoc.Inline[] = [] // node.caption ? unparseInlines(node.caption) : [],
   const aligns: Pandoc.Alignment[] = []
   const widths: number[] = []
-  const head: Pandoc.TableCell[] = [] //node.head ? node.head.map(cell => unparseBlocks(cell)) : [],
-  const rows: Pandoc.TableCell[][] = [] //node.rows ? node.rows.map(row => row.map(unparseBlocks)): []
+  const head: Pandoc.TableCell[] = [] // node.head ? node.head.map(cell => unparseBlocks(cell)) : [],
+  const rows: Pandoc.TableCell[][] = [] // node.rows ? node.rows.map(row => row.map(unparseBlocks)): []
   return {
     t: 'Table',
     c: [caption, aligns, widths, head, rows]
@@ -696,7 +696,7 @@ function unparseImageObject(node: stencila.ImageObject): Pandoc.Image {
     t: 'Image',
     c: [
       emptyAttrs,
-      unparseInlines(node.content as InlineContent[]),
+      unparseInlines(node.content as stencila.InlineContent[]),
       [url, title]
     ]
   }

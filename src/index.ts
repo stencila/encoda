@@ -340,8 +340,12 @@ export async function convert(
   from?: string,
   to?: string
 ): Promise<void> {
-  // const node = await read(inp, from)
-  // await write(node, out, to)
+  const node = await read(inp, from)
+  await write(node, out, to)
+
+  // TODO: implement something like this to avoid
+  // loading files uncessarily
+  /*
   const inpFile = vfile.create({ path: inp })
   const inpCompiler = await match(inp, from)
   const node = await inpCompiler.parse(inpFile)
@@ -349,4 +353,5 @@ export async function convert(
   const outCompiler = await match(out, to)
   const outFile = await outCompiler.unparse(node, out)
   if (outFile.contents) await vfile.write(outFile, out)
+  */
 }

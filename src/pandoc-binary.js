@@ -7,9 +7,9 @@
  */
 
 const BinWrapper = require('bin-wrapper')
-const package = require('../package.json')
+const packge = require('../package.json')
 
-const version = package.pandoc.version
+const version = packge.pandoc.version
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`
 
 const binary = new BinWrapper()

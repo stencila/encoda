@@ -19,7 +19,6 @@ import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
-import { isBuffer } from 'util'
 import { chromiumPath } from './boot'
 import { dump, load } from './index'
 import { load as loadVFile, read as readVFile, VFile } from './vfile'
@@ -107,7 +106,7 @@ export async function sniff(content: string): Promise<boolean> {
   if (path.parse(content).ext.includes('png')) {
     if (fs.existsSync(content)) {
       const file = await readVFile(content)
-      if (isBuffer(file.contents)) {
+      if (Buffer.isBuffer(file.contents)) {
         return has(KEYWORD, file.contents)
       }
     }
@@ -125,7 +124,7 @@ export async function sniff(content: string): Promise<boolean> {
  * @returns The Stencila node
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  if (isBuffer(file.contents)) {
+  if (Buffer.isBuffer(file.contents)) {
     const json = extract(KEYWORD, file.contents)
     return load(json, 'json')
   }
