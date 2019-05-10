@@ -15,14 +15,13 @@
     "check": "npm run build:dist && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev .",
-    "build": "npm run build:dist && npm run build:bins",
-    "build:dist": "tsc && cp src/*.js dist",
+    "build": "npm run build:dist && npm run build:tgz && npm run build:bin",
+    "build:dist": "tsc",
     "build:tgz": "tar czf convert-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
-    "build:bins": "npm run build:tgz && pkg --out-path=bin .",
-    "bundle": "npm run bundle:linux && npm run bundle:macos && npm run bundle:win",
-    "bundle:linux": "tar --transform 's|bin/stencila-convert-linux|stencila-convert|' -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert-linux",
-    "bundle:macos": "tar --transform 's|bin/stencila-convert-macos|stencila-convert|' -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert-macos",
-    "bundle:win": "./bundle-win.sh",
+    "build:bin": "pkg --target=host -o=bin/stencila-convert .",
+    "bundle:linux": "tar -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert",
+    "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert",
+    "bundle:windows": "./bundle-win.sh",
     "docs": "typedoc --options typedoc.js ./src",
     "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs && npm run build && npm run bundle",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
@@ -134,26 +133,13 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
-      "@semantic-release/git",
       [
-        "@semantic-release/github",
+        "@semantic-release/git",
         {
-          "assets": [
-            {
-              "path": "bin/convert-linux-x64.tar.gz",
-              "label": "convert-linux-x64.tar.gz"
-            },
-            {
-              "path": "bin/convert-macos-x64.tar.gz",
-              "label": "convert-macos-x64.tar.gz"
-            },
-            {
-              "path": "bin/convert-win-x64.zip",
-              "label": "convert-win-x64.zip"
-            }
-          ]
+          "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
         }
-      ]
+      ],
+      "@semantic-release/github"
     ]
   }
 }

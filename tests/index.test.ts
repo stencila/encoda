@@ -1,5 +1,6 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
+import path from 'path'
 import {
   compilerList,
   convert,
@@ -15,6 +16,8 @@ import * as json from '../src/json'
 import { create, VFile } from '../src/vfile'
 import * as yaml from '../src/yaml'
 import { fixture } from './helpers'
+
+fs.ensureDirSync(path.join(__dirname, 'output'))
 
 test('isPath', () => {
   expect(isPath('/')).toBe(true)
@@ -143,7 +146,7 @@ describe('read', () => {
 
 describe('write', () => {
   it('works with files', async () => {
-    const temp = '/tmp/simple-thing.json'
+    const temp = path.join(__dirname, 'output', 'simple-thing.json')
     await write(simpleThing, temp)
     expect(fs.readJsonSync(temp)).toEqual(simpleThing)
   })
@@ -158,7 +161,7 @@ describe('write', () => {
 // TODO: re-enable after finishing refactoring of convert
 test.skip('convert', async () => {
   const inp = fixture('thing/simple/simple-thing.json')
-  const out = '/tmp/simple-thing.json'
+  const out = path.join(__dirname, 'output', 'simple-thing.json')
   await convert(inp, out)
   expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
 })

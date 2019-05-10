@@ -11,7 +11,7 @@ osslsigncode sign \
   -n "Convert" \
   -i "https://stenci.la" \
   -t "http://timestamp.comodoca.com/authenticode" \
-  -in "bin/stencila-convert-win.exe" \
+  -in "bin/stencila-convert.exe" \
   -out "bin/stencila-convert.exe"
 
 zip -j bin/convert-win-x64.zip bin/stencila-convert.exe
