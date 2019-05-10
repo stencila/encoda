@@ -36,16 +36,18 @@ expect.extend({
         message: () => {
           let extra
           if (file.path)
-            extra = `\n\nthe generated file was\n  ${path.relative(
+            extra = `\n\nthe generated file was: ${path.relative(
               path.dirname(__dirname),
               file.path
             )}`
-          else extra = `\n\ the generated content was\ ${file.contents}`
+          else extra = `\n\nthe generated content was: ${file.contents}`
           return error.message + extra
         },
         pass: false
       }
     }
+    // Clean up
+    await fs.remove(outPath)
     return {
       message: () => 'ok!',
       pass: true
