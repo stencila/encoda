@@ -17,6 +17,8 @@ import { create, VFile } from '../src/vfile'
 import * as yaml from '../src/yaml'
 import { fixture } from './helpers'
 
+fs.ensureDirSync(path.join(__dirname, 'output'))
+
 test('isPath', () => {
   expect(isPath('/')).toBe(true)
   expect(isPath('C:\\')).toBe(true)
