@@ -1,5 +1,6 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
+import path from 'path'
 import {
   compilerList,
   convert,
@@ -143,7 +144,7 @@ describe('read', () => {
 
 describe('write', () => {
   it('works with files', async () => {
-    const temp = '/tmp/simple-thing.json'
+    const temp = path.join(__dirname, 'output', 'simple-thing.json')
     await write(simpleThing, temp)
     expect(fs.readJsonSync(temp)).toEqual(simpleThing)
   })
@@ -157,7 +158,7 @@ describe('write', () => {
 
 test('convert', async () => {
   const inp = fixture('thing/simple/simple-thing.json')
-  const out = '/tmp/simple-thing.json'
+  const out = path.join(__dirname, 'output', 'simple-thing.json')
   await convert(inp, out)
   expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
 })
