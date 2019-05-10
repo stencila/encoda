@@ -59,7 +59,7 @@ export const compilerList: Array<Compiler> = [
  * as something that creates or modifies executable document, and
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcompiler).
  */
-interface Compiler {
+export interface Compiler {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
    * that the compiler can parse/unparse.
@@ -342,16 +342,12 @@ export async function convert(
   from?: string,
   to?: string
 ): Promise<void> {
-  // const node = await read(inp, from)
-  // await write(node, out, to)
-
-  // TODO: implement something like this to avoid
-  // loading files uncessarily
+  // TODO: finish refactoring this so that it handles missing
+  // inp and out args (i.e. reading from stdin, writing to stdout)
 
   const inpFile = vfile.create({ path: inp })
   const inpCompiler = await match(inp, from)
   const node = await inpCompiler.parse(inpFile)
-
   const outCompiler = await match(out, to)
   const outFile = await outCompiler.unparse(node, out)
   if (outFile.contents) await vfile.write(outFile, out)
