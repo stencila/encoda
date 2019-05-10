@@ -128,26 +128,13 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
-      "@semantic-release/git",
       [
-        "@semantic-release/github",
+        "@semantic-release/git",
         {
-          "assets": [
-            {
-              "path": "bin/convert-linux-x64.tar.gz",
-              "label": "convert-linux-x64.tar.gz"
-            },
-            {
-              "path": "bin/convert-macos-x64.tar.gz",
-              "label": "convert-macos-x64.tar.gz"
-            },
-            {
-              "path": "bin/convert-win-x64.zip",
-              "label": "convert-win-x64.zip"
-            }
-          ]
+          "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
         }
-      ]
+      ],
+      "@semantic-release/github"
     ]
   }
 }

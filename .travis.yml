@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - '10'
 
+# Run on Linux and MacOS
 os:
   - linux
   - osx
@@ -34,3 +35,13 @@ deploy:
     on:
       branch: master
       condition: "$TRAVIS_OS_NAME==linux"
+
+  # Deploy build artifacts to Github release
+  # page on *any* tag (including those generated for a semantic release)
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: bin/*
+    skip_cleanup: true
+    on:
+      tags: true
