@@ -2,41 +2,17 @@ language: node_js
 node_js:
   - '10'
 
+# Run on Linux and MacOS
 os:
   - linux
-  # Currently, don't run on OSX because using citeproc
-  # - osx
-
-# Install code signing tool 
-addons:
-  apt:
-    sources:
-      - sourceline: ppa:likemartinma/osslsigncode
-    packages:
-      - osslsigncode
-
-cache:
-  directories:
-    - node_modules
-    - '$HOME/.npm'
-
-before_install:
-  # Install Pandoc from deb to get pandoc-citeproc as well
-  - wget https://github.com/jgm/pandoc/releases/download/2.2.3.2/pandoc-2.2.3.2-1-amd64.deb
-  - sudo dpkg -i pandoc-2.2.3.2-1-amd64.deb
-  # Decrypt code signing certificates (see https://docs.travis-ci.com/user/encrypting-files/)
-  - openssl aes-256-cbc -K $encrypted_7e2bde0bdb09_key -iv $encrypted_7e2bde0bdb09_iv -in win-cert.p12.enc -out win-cert.p12 -d
-
-# Install node_modules
-install:
-  - npm install
+  - osx
 
 script:
   - npm run lint
   - npm run cover
   - npm run docs
   - npm run build
-  - npm run bundle
+  - npm run bundle:$TRAVIS_OS_NAME
 
 after_success:
   # Upload test coverage to codecov.io
@@ -51,7 +27,21 @@ deploy:
     local-dir: docs
     on:
       branch: master
-
+  
+  # Do a semantic release but only on linux
   - provider: script
     skip_cleanup: true
     script: npx semantic-release
+    on:
+      branch: master
+      condition: "$TRAVIS_OS_NAME==linux"
+
+  # Deploy build artifacts to Github release
+  # page on *any* tag (including those generated for a semantic release)
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: bin/*
+    skip_cleanup: true
+    on:
+      tags: true
