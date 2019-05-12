@@ -9,6 +9,7 @@ os:
 
 script:
   - npm run lint
+  - npm run check
   - npm run cover
   - npm run docs
   - npm run build
@@ -34,7 +35,7 @@ deploy:
     script: npx semantic-release
     on:
       branch: master
-      condition: "$TRAVIS_OS_NAME==linux"
+      condition: $TRAVIS_OS_NAME = linux
 
   # Deploy build artifacts to Github release
   # page on *any* tag (including those generated for a semantic release)

@@ -22,7 +22,6 @@
     "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert",
     "bundle:windows": "./bundle-win.sh",
     "docs": "typedoc --options typedoc.js ./src",
-    "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs && npm run build && npm run bundle",
     "clean": "rimraf coverage docs tests/**/*.to.*"
   },
   "pkg": {
