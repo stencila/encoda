@@ -30,8 +30,7 @@ yargs
         })
         .option('to', {
           describe: 'The format to convert the output to.',
-          type: 'string',
-          default: 'json'
+          type: 'string'
         })
     },
     async (argv: any) => {
