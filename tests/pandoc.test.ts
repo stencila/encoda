@@ -1,5 +1,11 @@
 import * as stencila from '@stencila/schema'
-import { emptyAttrs, parse, unparse } from '../src/pandoc'
+import {
+  emptyAttrs,
+  parse,
+  parseMeta,
+  unparse,
+  unparseMeta
+} from '../src/pandoc'
 import * as Pandoc from '../src/pandoc-types'
 import { dump, load } from '../src/vfile'
 
@@ -12,6 +18,78 @@ test('parse', async () => {
 test('unparse', async () => {
   const u = async (node: any) => JSON.parse(dump(await unparse(node)))
   expect(await u(kitchenSink.node)).toEqual(kitchenSink.pdoc)
+})
+
+test('metadata', async () => {
+  const meta = {
+    null: null,
+    boolean: false,
+    number: 3.14,
+    array: [1, 2, 3],
+    object: { a: true, b: 'two' },
+    inlines: {
+      type: 'Paragraph',
+      content: ['Hello']
+    },
+    blocks: {
+      type: 'QuoteBlock',
+      content: [
+        {
+          type: 'Paragraph',
+          content: ['World']
+        }
+      ]
+    }
+  }
+  const pmeta: Pandoc.Meta = {
+    null: { t: 'MetaString', c: '!!null' },
+    boolean: { t: 'MetaBool', c: false },
+    number: { t: 'MetaString', c: '!!number 3.14' },
+    array: {
+      t: 'MetaList',
+      c: [
+        {
+          c: '!!number 1',
+          t: 'MetaString'
+        },
+        {
+          c: '!!number 2',
+          t: 'MetaString'
+        },
+        {
+          c: '!!number 3',
+          t: 'MetaString'
+        }
+      ]
+    },
+    object: {
+      t: 'MetaMap',
+      c: {
+        a: {
+          c: true,
+          t: 'MetaBool'
+        },
+        b: {
+          c: 'two',
+          t: 'MetaString'
+        }
+      }
+    },
+    inlines: {
+      t: 'MetaInlines',
+      c: [{ t: 'Str', c: 'Hello' }]
+    },
+    blocks: {
+      t: 'MetaBlocks',
+      c: [{ t: 'Para', c: [{ t: 'Str', c: 'World' }] }]
+    }
+  }
+
+  const unparsed = await unparseMeta(meta)
+  const parsed = await parseMeta(pmeta)
+
+  expect(unparsed).toEqual(pmeta)
+  expect(parsed).toEqual(meta)
 })
 
 interface testCase {

@@ -142,14 +142,14 @@ function unparseArticle(article: stencila.Article): Pandoc.Document {
 /**
  * Parse a Pandoc `Meta` node to an `object`
  */
-function parseMeta(meta: Pandoc.Meta): { [key: string]: stencila.Node } {
+export function parseMeta(meta: Pandoc.Meta): { [key: string]: stencila.Node } {
   return objectMap(meta, (key, value) => parseMetaValue(value))
 }
 
 /**
  * Unparse an `object` of metadata into a Pandoc `Meta` node
  */
-function unparseMeta(obj: { [key: string]: any }): Pandoc.Meta {
+export function unparseMeta(obj: { [key: string]: any }): Pandoc.Meta {
   return objectMap(obj, (key, value) => unparseMetaValue(value))
 }
 
@@ -159,7 +159,11 @@ function unparseMeta(obj: { [key: string]: any }): Pandoc.Meta {
 function parseMetaValue(value: Pandoc.MetaValue): stencila.Node {
   switch (value.t) {
     case 'MetaBool':
+      return value.c
     case 'MetaString':
+      if (value.c === '!!null') return null
+      if (value.c.slice(0, 9) === '!!number ')
+        return parseFloat(value.c.slice(9))
       return value.c
     case 'MetaList':
       return value.c.map(parseMetaValue)
@@ -168,7 +172,7 @@ function parseMetaValue(value: Pandoc.MetaValue): stencila.Node {
     case 'MetaInlines':
       return {
         type: 'Paragraph',
-        nodes: parseInlines(value.c)
+        content: parseInlines(value.c)
       }
     case 'MetaBlocks':
       return {
@@ -182,19 +186,28 @@ function parseMetaValue(value: Pandoc.MetaValue): stencila.Node {
 
 /**
  * Unparse a Stencila `Node` to a Pandoc `MetaValue`
+ *
+ * For `null` and `number`, use a YAML "tags" syntax e.g. `!!null`
+ * encoded into a Pandoc `MetaString`.
  */
 function unparseMetaValue(node: stencila.Node): Pandoc.MetaValue {
   const type = stencila.type(node)
   switch (type) {
     case 'null':
-      throw new Error(`TODO: encode to a MetaMap`)
+      return {
+        t: 'MetaString',
+        c: '!!null'
+      }
     case 'boolean':
       return {
         t: 'MetaBool',
         c: node as boolean
       }
     case 'number':
-      throw new Error(`TODO: encode to a MetaMap`)
+      return {
+        t: 'MetaString',
+        c: `!!number ${node}`
+      }
     case 'string':
       return {
         t: 'MetaString',
