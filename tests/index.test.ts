@@ -3,6 +3,7 @@ import stencila from '@stencila/schema'
 import delay from 'delay'
 import fs from 'fs-extra'
 import path from 'path'
+import tempy from 'tempy'
 import {
   compilerList,
   convert,
@@ -136,7 +137,7 @@ describe('read', () => {
 
 describe('write', () => {
   it('works with files', async () => {
-    const out = path.join(__dirname, 'output', 'simple-thing.json')
+    const out = tempy.file({ extension: 'json' })
     await write(simpleThing, out)
     expect(fs.readJsonSync(out)).toEqual(simpleThing)
   })
@@ -151,7 +152,7 @@ describe('write', () => {
 describe('convert', () => {
   it('works with file paths', async () => {
     const inp = simpleThingPath
-    const out = path.join(__dirname, 'output', 'simple-thing.json')
+    const out = tempy.file({ extension: 'json' })
     const result = await convert(inp, out)
 
     expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
@@ -179,7 +180,7 @@ describe('convert', () => {
 
   it('returns a file path for "content-less" vfiles', async () => {
     const inp = `A paragraph\n`
-    const out = path.join(__dirname, 'output', 'paragraph.docx')
+    const out = tempy.file()
     const result = (await convert(inp, out, {
       from: 'md',
       to: 'docx'
