@@ -16,11 +16,13 @@ yargs
       yargs
         .positional('in', {
           describe: 'The input file path. Defaults to standard input.',
-          type: 'string'
+          type: 'string',
+          default: '--'
         })
         .positional('out', {
           describe: 'The output file path. Defaults to standard output.',
-          type: 'string'
+          type: 'string',
+          default: '--'
         })
         .option('from', {
           describe: 'The format to convert the input from.',
@@ -28,7 +30,8 @@ yargs
         })
         .option('to', {
           describe: 'The format to convert the output to.',
-          type: 'string'
+          type: 'string',
+          default: 'json'
         })
     },
     async (argv: any) => {
@@ -36,10 +39,7 @@ yargs
       const out = argv.out
       const from = argv.from
       const to = argv.to
-      console.error(
-        `Converting from "${inp ? inp : from}" to "${out ? out : to}"`
-      )
-      await convert(inp, out, from, to)
+      await convert(inp, out, { from, to })
     }
   )
 

@@ -32,14 +32,17 @@ export async function parse(
 /**
  * Unparse a `stencila.Node` to a `VFile`.
  *
- * @param thing The `stencila.Node` to unparse
+ * @param node The `stencila.Node` to unparse
+ * @param options Additional arguments to pass to Pandoc
+ * @param ensureFile Ensure that the output is a real file (ie. not stdout?)
  * @returns A promise that resolves to a `VFile`
  */
 export async function unparse(
   node: stencila.Node,
   filePath?: string,
   to: Pandoc.OutputFormat = Pandoc.OutputFormat.json,
-  options: string[] = []
+  options: string[] = [],
+  ensureFile: boolean = false
 ): Promise<VFile> {
   const type = stencila.type(node)
   if (type !== 'Article') {
@@ -47,13 +50,24 @@ export async function unparse(
   }
   const pdoc = unparseArticle(node as stencila.Article)
   const json = JSON.stringify(pdoc)
+
   const args = [`--from=json`, `--to=${to}`].concat(options)
-  if (filePath) {
-    args.push(`--output=${filePath}`)
+  if ((filePath && filePath !== '--') || ensureFile) {
+    let output
+    if (!filePath || filePath === '--') {
+      // Create a new file path, which is returned as `vfile.path`
+      output = stencila.type(node).toLowerCase() + '.' + to
+      filePath = output
+    } else output = filePath
+    args.push(`--output=${output}`)
   }
+
   const content = await run(json, args)
-  if (filePath) return create({ path: filePath })
-  else return load(content)
+
+  // If content was output, then load that into a vfile,
+  // otherwise the vfile, simply has path to the file created
+  if (content) return load(content)
+  else return create({ path: filePath })
 }
 
 /**

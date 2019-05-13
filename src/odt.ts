@@ -18,5 +18,5 @@ export async function unparse(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
-  return pandoc.unparse(node, filePath, pandoc.OutputFormat.odt)
+  return pandoc.unparse(node, filePath, pandoc.OutputFormat.odt, [], true)
 }
