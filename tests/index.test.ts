@@ -124,15 +124,16 @@ describe('read', () => {
     expect(await read(simpleThingJson, 'json')).toEqual(simpleThing)
   })
 
-  it('works with stdin', async () => {
-    const promise = read('--', 'json')
+  if (!process.env.TRAVIS)
+    it('works with stdin', async () => {
+      const promise = read('--', 'json')
 
-    process.stdin.push(simpleThingJson)
-    await delay(10)
-    process.stdin.emit('end')
+      process.stdin.push(simpleThingJson)
+      await delay(10)
+      process.stdin.emit('end')
 
-    expect(await promise).toEqual(simpleThing)
-  })
+      expect(await promise).toEqual(simpleThing)
+    })
 })
 
 describe('write', () => {
@@ -150,14 +151,15 @@ describe('write', () => {
 })
 
 describe('convert', () => {
-  it('works with file paths', async () => {
-    const inp = simpleThingPath
-    const out = tempy.file({ extension: 'json' })
-    const result = await convert(inp, out)
+  if (!process.env.TRAVIS)
+    it('works with file paths', async () => {
+      const inp = simpleThingPath
+      const out = tempy.file({ extension: 'json' })
+      const result = await convert(inp, out)
 
-    expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
-    expect(result).toEqual(simpleThingJson)
-  })
+      expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
+      expect(result).toEqual(simpleThingJson)
+    })
 
   it('works with content as an argument and return', async () => {
     const inp = simpleThingJson
