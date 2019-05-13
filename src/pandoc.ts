@@ -6,7 +6,11 @@ import { create, dump, load, VFile } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
 
-export const mediaTypes = ['text/markdown']
+// Although this compiler is usually used as a base for others (e.g `docx`),
+// the following definitions allow Pandoc JSON to be parsed or unparsed
+// directly
+export const mediaTypes = ['application/pandoc+json']
+export const extNames = ['pandoc']
 
 /**
  * Parse a `VFile` to a `stencila.Node`.

@@ -10,6 +10,7 @@ import * as json from './json'
 import * as md from './md'
 import * as ods from './ods'
 import * as odt from './odt'
+import * as pandoc from './pandoc'
 import * as rpng from './rpng'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
@@ -44,6 +45,7 @@ export const compilerList: Array<Compiler> = [
   // "Generic" formats
   html,
   yaml,
+  pandoc,
   json
 ]
 
