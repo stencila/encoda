@@ -7,6 +7,7 @@ import * as gdoc from './gdoc'
 import * as html from './html'
 import * as jats from './jats'
 import * as json from './json'
+import * as latex from './latex'
 import * as md from './md'
 import * as ods from './ods'
 import * as odt from './odt'
@@ -36,6 +37,7 @@ export const compilerList: Array<Compiler> = [
   docx,
   jats,
   gdoc,
+  latex,
   odt,
   md,
 
