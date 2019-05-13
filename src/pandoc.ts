@@ -1,5 +1,4 @@
 import * as stencila from '@stencila/schema'
-import { TableRow } from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
@@ -162,8 +161,9 @@ function parseMetaValue(value: Pandoc.MetaValue): stencila.Node {
       return value.c
     case 'MetaString':
       if (value.c === '!!null') return null
-      if (value.c.slice(0, 9) === '!!number ')
+      if (value.c.slice(0, 9) === '!!number ') {
         return parseFloat(value.c.slice(9))
+      }
       return value.c
     case 'MetaList':
       return value.c.map(parseMetaValue)
@@ -429,7 +429,7 @@ function parseTable(node: Pandoc.Table): stencila.Table {
   const head = node.c[3].map(parseBlocks)
   const data = node.c[4].map(row => row.map(parseBlocks))
   const rows = [head, ...data].map(
-    (row: stencila.BlockContent[][]): TableRow => {
+    (row: stencila.BlockContent[][]): stencila.TableRow => {
       return {
         type: 'TableRow',
         cells: row.map(
@@ -459,7 +459,7 @@ function unparseTable(node: stencila.Table): Pandoc.Table {
   const aligns: Pandoc.Alignment[] = []
   const widths: number[] = []
   let head: Pandoc.TableCell[] = []
-  if (node.rows.length > 0)
+  if (node.rows.length > 0) {
     head = node.rows[0].cells.map(cell => {
       // TODO: currently need to wrap stencila.InlineContent[] to pandoc.Block[][]; this will change
       return [
@@ -469,8 +469,9 @@ function unparseTable(node: stencila.Table): Pandoc.Table {
         })
       ]
     })
+  }
   let rows: Pandoc.TableCell[][] = []
-  if (node.rows.length > 1)
+  if (node.rows.length > 1) {
     rows = node.rows.slice(1).map((row: stencila.TableRow) => {
       return row.cells.map((cell: stencila.TableCell) => {
         // TODO: ditto todo item above
@@ -482,6 +483,7 @@ function unparseTable(node: stencila.Table): Pandoc.Table {
         ]
       })
     })
+  }
   return {
     t: 'Table',
     c: [caption, aligns, widths, head, rows]
