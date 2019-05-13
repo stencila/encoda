@@ -173,7 +173,7 @@ const kitchenSink: testCase = {
       },
       {
         t: 'CodeBlock',
-        c: [emptyAttrs, '# A code block']
+        c: [['', ['python'], []], '# A code block']
       },
       {
         t: 'BulletList',
@@ -290,6 +290,7 @@ const kitchenSink: testCase = {
       },
       {
         type: 'CodeBlock',
+        language: 'python',
         value: '# A code block'
       },
       {

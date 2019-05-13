@@ -358,22 +358,24 @@ function unparseQuoteBlock(node: stencila.QuoteBlock): Pandoc.BlockQuote {
  * Parse a Pandoc `CodeBlock` to a Stencila `CodeBlock`.
  */
 function parseCodeBlock(node: Pandoc.CodeBlock): stencila.CodeBlock {
-  return {
+  const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    // TODO: get the language from the attrs
-    // attrs: parseAttr(node.c[0]),
     value: node.c[1]
   }
+  const attrs = parseAttrs(node.c[0])
+  const language = attrs.classes ? attrs.classes.split(' ')[0] : null
+  if (language) codeblock.language = language
+  return codeblock
 }
 
 /**
  * Unparse a Stencila `CodeBlock` to a Pandoc `CodeBlock`.
  */
 function unparseCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
-  // TODO: pass on language
+  const attrs = unparseAttrs({ classes: node.language || '' })
   return {
     t: 'CodeBlock',
-    c: [['', [], []], node.value]
+    c: [attrs, node.value]
   }
 }
 
@@ -701,24 +703,24 @@ function unparseQuote(node: stencila.Quote): Pandoc.Quoted {
  * Parse a Pandoc `Code` to a Stencila `Code`.
  */
 function parseCode(node: Pandoc.Code): stencila.Code {
-  // TODO: check how pandoc treats language classes `language-xxx`?
-  // TODO: currently taking first class
-  const language = node.c[0][1][0] ? node.c[0][1][0] : ''
-  return {
+  const code: stencila.Code = {
     type: 'Code',
-    language,
     value: node.c[1]
   }
+  const attrs = parseAttrs(node.c[0])
+  const language = attrs.classes ? attrs.classes.split(' ')[0] : null
+  if (language) code.language = language
+  return code
 }
 
 /**
  * Unparse a Stencila `Code` to a Pandoc `Code`.
  */
 function unparseCode(node: stencila.Code): Pandoc.Code {
-  const clas = `${node.language}`
+  const attrs = unparseAttrs({ classes: node.language || '' })
   return {
     t: 'Code',
-    c: [['', [clas], []], node.value]
+    c: [attrs, node.value]
   }
 }
 
@@ -784,6 +786,21 @@ function unparseImageObject(node: stencila.ImageObject): Pandoc.Image {
  * Empty Pandoc element attributes
  */
 export const emptyAttrs: Pandoc.Attr = ['', [], []]
+
+export function parseAttrs(node: Pandoc.Attr): { [key: string]: string } {
+  const attrs: { [key: string]: string } = {}
+  if (node[0]) attrs.id = node[0]
+  if (node[1]) attrs.classes = node[1].join(' ')
+  for (const attr of node[2]) attrs[attr[0]] = attr[1]
+  return attrs
+}
+
+export function unparseAttrs(
+  attrs: { [key: string]: string } = {}
+): Pandoc.Attr {
+  const { id, classes, ...rest } = attrs
+  return [id || '', classes ? classes.split(' ') : [], Object.entries(rest)]
+}
 
 /**
  * `Array.map` but for `objects`.

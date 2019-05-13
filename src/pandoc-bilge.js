@@ -308,28 +308,3 @@ function unparseSpan(node) {
     c: [unparseAttr(node.attrs), unparseInlines(node.nodes)]
   }
 }
-
-// Attr = [String, [String], [[String, String]]]
-// 0 = id
-// 1 = classes
-// 2 = name,value pairs of other attributes
-//
-// note spelling Attr (without 's') to maintain consistency with Pandoc type definition
-
-function parseAttr(node) {
-  let attrs = {}
-  if (node[0]) attrs.id = node[0]
-  if (node[1].length) attrs.class = node[1].join(' ')
-  for (let attr of node[2]) attrs[attr[0]] = attr[1]
-  return attrs
-}
-
-function unparseAttr(attrs) {
-  let node = ['', [], []]
-  if (attrs.id) node[0] = attrs.id
-  if (attrs.class) node[1] = attrs.class.split(' ')
-  for (let [name, value] of Object.entries(attrs)) {
-    if (name !== 'id' && name !== 'class') node[2].push([name, value])
-  }
-  return node
-}
