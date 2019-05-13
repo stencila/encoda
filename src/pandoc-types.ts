@@ -255,7 +255,7 @@ export enum Alignment {
 /**
  * Table cells (list of blocks)
  */
-export type TableCell = [Block]
+export type TableCell = Block[]
 
 /**
  * Generic block container with attributes

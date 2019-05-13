@@ -119,6 +119,31 @@ const kitchenSink: testCase = {
         ]
       },
       {
+        t: 'Table',
+        c: [
+          [],
+          [],
+          [],
+          [
+            [{ t: 'Para', c: [{ t: 'Str', c: 'A' }] }],
+            [{ t: 'Para', c: [{ t: 'Str', c: 'B' }] }],
+            [{ t: 'Para', c: [{ t: 'Str', c: 'C' }] }]
+          ],
+          [
+            [
+              [{ t: 'Para', c: [{ t: 'Str', c: '1' }] }],
+              [{ t: 'Para', c: [{ t: 'Str', c: '2' }] }],
+              [{ t: 'Para', c: [{ t: 'Str', c: '3' }] }]
+            ],
+            [
+              [{ t: 'Para', c: [{ t: 'Str', c: '4' }] }],
+              [{ t: 'Para', c: [{ t: 'Str', c: '5' }] }],
+              [{ t: 'Para', c: [{ t: 'Str', c: '6' }] }]
+            ]
+          ]
+        ]
+      },
+      {
         t: 'HorizontalRule',
         c: undefined
       }
@@ -203,6 +228,62 @@ const kitchenSink: testCase = {
         items: [
           { type: 'Paragraph', content: ['First item'] },
           { type: 'Paragraph', content: ['Second item'] }
+        ]
+      },
+      {
+        type: 'Table',
+        rows: [
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['A'],
+                type: 'TableCell'
+              },
+              {
+                content: ['B'],
+                type: 'TableCell'
+              },
+              {
+                content: ['C'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['1'],
+                type: 'TableCell'
+              },
+              {
+                content: ['2'],
+                type: 'TableCell'
+              },
+              {
+                content: ['3'],
+                type: 'TableCell'
+              }
+            ]
+          },
+          {
+            type: 'TableRow',
+            cells: [
+              {
+                content: ['4'],
+                type: 'TableCell'
+              },
+              {
+                content: ['5'],
+                type: 'TableCell'
+              },
+              {
+                content: ['6'],
+                type: 'TableCell'
+              }
+            ]
+          }
         ]
       },
       {

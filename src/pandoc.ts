@@ -1,4 +1,5 @@
 import * as stencila from '@stencila/schema'
+import { TableRow } from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
@@ -404,14 +405,36 @@ function unparseList(
 
 /**
  * Parse a Pandoc `Table` to a Stencila `Table`
+ *
+ * Note: table caption and column widths and alignments
+ * are currently ignored.
  */
 function parseTable(node: Pandoc.Table): stencila.Table {
   const caption = parseInlines(node.c[0])
+  const aligns = node.c[1]
+  const widths = node.c[2]
   const head = node.c[3].map(parseBlocks)
-  const rows = [] // TODO: node.c[4].map(row => row.map(parseBlocks))
+  const data = node.c[4].map(row => row.map(parseBlocks))
+  const rows = [head, ...data].map(
+    (row: stencila.BlockContent[][]): TableRow => {
+      return {
+        type: 'TableRow',
+        cells: row.map(
+          (cell: stencila.BlockContent[]): stencila.TableCell => {
+            return {
+              type: 'TableCell',
+              // TODO: currently assuming that only one block in each table cell
+              // with `content` property
+              content: (cell[0] as stencila.Paragraph).content
+            }
+          }
+        )
+      }
+    }
+  )
   return {
     type: 'Table',
-    rows: []
+    rows
   }
 }
 
@@ -419,12 +442,33 @@ function parseTable(node: Pandoc.Table): stencila.Table {
  * Unparse Stencila `Table` to a Pandoc `Table`.
  */
 function unparseTable(node: stencila.Table): Pandoc.Table {
-  // TODO: reimplement these as needed
-  const caption: Pandoc.Inline[] = [] // node.caption ? unparseInlines(node.caption) : [],
+  const caption: Pandoc.Inline[] = []
   const aligns: Pandoc.Alignment[] = []
   const widths: number[] = []
-  const head: Pandoc.TableCell[] = [] // node.head ? node.head.map(cell => unparseBlocks(cell)) : [],
-  const rows: Pandoc.TableCell[][] = [] // node.rows ? node.rows.map(row => row.map(unparseBlocks)): []
+  let head: Pandoc.TableCell[] = []
+  if (node.rows.length > 0)
+    head = node.rows[0].cells.map(cell => {
+      // TODO: currently need to wrap stencila.InlineContent[] to pandoc.Block[][]; this will change
+      return [
+        unparseParagraph({
+          type: 'Paragraph',
+          content: cell.content
+        })
+      ]
+    })
+  let rows: Pandoc.TableCell[][] = []
+  if (node.rows.length > 1)
+    rows = node.rows.slice(1).map((row: stencila.TableRow) => {
+      return row.cells.map((cell: stencila.TableCell) => {
+        // TODO: ditto todo item above
+        return [
+          unparseParagraph({
+            type: 'Paragraph',
+            content: cell.content
+          })
+        ]
+      })
+    })
   return {
     t: 'Table',
     c: [caption, aligns, widths, head, rows]
