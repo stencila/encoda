@@ -1,11 +1,11 @@
 import yargs from 'yargs'
-import './helpers/boot'
+import './boot'
 import { convert } from './index'
 
 const VERSION = require('../package').version
 
 yargs
-  .scriptName('converter')
+  .scriptName('stencila-convert')
 
   // @ts-ignore
   .command(
@@ -16,11 +16,13 @@ yargs
       yargs
         .positional('in', {
           describe: 'The input file path. Defaults to standard input.',
-          type: 'string'
+          type: 'string',
+          default: '--'
         })
         .positional('out', {
           describe: 'The output file path. Defaults to standard output.',
-          type: 'string'
+          type: 'string',
+          default: '--'
         })
         .option('from', {
           describe: 'The format to convert the input from.',
@@ -36,10 +38,7 @@ yargs
       const out = argv.out
       const from = argv.from
       const to = argv.to
-      console.error(
-        `Converting from "${inp ? inp : from}" to "${out ? out : to}"`
-      )
-      await convert(inp, out, from, to)
+      await convert(inp, out, { from, to })
     }
   )
 

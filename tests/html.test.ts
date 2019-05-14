@@ -34,9 +34,12 @@ const kitchenSink = {
     <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
     <p>A paragraph with <code class="language-python"># code</code>.</p>
     <p>A paragraph with an image <img alt="caption" src="https://example.org/image.png">.</p>
-    <p>Paragraph with a <s-boolean>true</s-boolean> and a <s-boolean>false</s-boolean>.</p>
-    <p>A paragraph with other data: a <s-null>null</s-null>, a <s-number>3.14</s-number>, an
-      <s-array>[1,2]</s-array>, and an <s-object>{"a":1,"b":"two"}</s-object>.</p>
+    <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
+      </stencila-boolean>.</p>
+    <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
+      </stencila-number>, and a <stencila-array>[1,2]</stencila-array>.</p>
+    <p>A paragraph with an <stencila-object>{a:1,b:'two'}</stencila-object> and a <stencila-thing>
+        {type:'Person'}</stencila-thing>.</p>
     <blockquote cite="https://example.org">A blockquote</blockquote>
     <pre><code class="language-r"># Some code
 x = c(1,2)</code></pre>
@@ -181,10 +184,18 @@ x = c(1,2)</code></pre>
           null,
           ', a ',
           3.14,
-          ', an ',
+          ', and a ',
           [1, 2],
-          ', and an ',
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with an ',
           { a: 1, b: 'two' },
+          ' and a ',
+          { type: 'Person' },
           '.'
         ]
       },

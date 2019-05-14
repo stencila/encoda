@@ -1,12 +1,14 @@
 import stencila from '@stencila/schema'
+// @ts-ignore
+import delay from 'delay'
 import fs from 'fs-extra'
 import path from 'path'
+import tempy from 'tempy'
 import {
   compilerList,
   convert,
   dump,
   handled,
-  isPath,
   load,
   match,
   read,
@@ -18,27 +20,6 @@ import * as yaml from '../src/yaml'
 import { fixture } from './helpers'
 
 fs.ensureDirSync(path.join(__dirname, 'output'))
-
-test('isPath', () => {
-  expect(isPath('/')).toBe(true)
-  expect(isPath('C:\\')).toBe(true)
-  expect(isPath('/foo/bar.txt')).toBe(true)
-  expect(isPath('C:\\foo\\bar.txt')).toBe(true)
-  expect(isPath('./')).toBe(true)
-  expect(isPath('.\\')).toBe(true)
-  expect(isPath('./foo.txt')).toBe(true)
-  expect(isPath('../../')).toBe(true)
-  expect(isPath('..\\..\\')).toBe(true)
-  expect(isPath('../../foo.txt')).toBe(true)
-
-  // A file local to where tests are executed that does exist
-  expect(isPath('package.json')).toBe(true)
-
-  expect(isPath('foo.txt')).toBe(false)
-  expect(isPath('a: foo')).toBe(false)
-  expect(isPath('foo/bar.txt')).toBe(false)
-  expect(isPath('Foo bar baz')).toBe(false)
-})
 
 describe('match', () => {
   // A dummy compiler for testing matching
@@ -124,6 +105,8 @@ const simpleThing = {
 
 const simpleThingJson = JSON.stringify(simpleThing, null, '  ')
 
+const simpleThingPath = fixture('thing/simple/simple-thing.json')
+
 test('load', async () => {
   expect(await load(simpleThingJson, 'json')).toEqual(simpleThing)
 })
@@ -133,34 +116,81 @@ test('dump', async () => {
 })
 
 describe('read', () => {
-  it('works with files', async () => {
-    expect(await read(fixture('thing/simple/simple-thing.json'))).toEqual(
-      simpleThing
-    )
+  it('works with file paths', async () => {
+    expect(await read(simpleThingPath)).toEqual(simpleThing)
   })
 
   it('works with content', async () => {
     expect(await read(simpleThingJson, 'json')).toEqual(simpleThing)
   })
+
+  if (!process.env.CI)
+    it('works with stdin', async () => {
+      const promise = read('--', 'json')
+
+      process.stdin.push(simpleThingJson)
+      await delay(10)
+      process.stdin.emit('end')
+
+      expect(await promise).toEqual(simpleThing)
+    })
 })
 
 describe('write', () => {
   it('works with files', async () => {
-    const temp = path.join(__dirname, 'output', 'simple-thing.json')
-    await write(simpleThing, temp)
-    expect(fs.readJsonSync(temp)).toEqual(simpleThing)
+    const out = tempy.file({ extension: 'json' })
+    await write(simpleThing, out)
+    expect(fs.readJsonSync(out)).toEqual(simpleThing)
   })
 
   it('works with stdout', async () => {
     const consoleLog = jest.spyOn(console, 'log')
-    await write(simpleThing, undefined, 'json')
+    await write(simpleThing, '--', 'json')
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
   })
 })
 
-test('convert', async () => {
-  const inp = fixture('thing/simple/simple-thing.json')
-  const out = path.join(__dirname, 'output', 'simple-thing.json')
-  await convert(inp, out)
-  expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
+describe('convert', () => {
+  if (!process.env.CI)
+    it('works with file paths', async () => {
+      const inp = simpleThingPath
+      const out = tempy.file({ extension: 'json' })
+      const result = await convert(inp, out)
+
+      expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
+      expect(result).toEqual(simpleThingJson)
+    })
+
+  it('works with content as an argument and return', async () => {
+    const inp = simpleThingJson
+    const out = undefined
+    const result = await convert(inp, out, { from: 'json', to: 'json' })
+
+    expect(result).toEqual(inp)
+  })
+
+  it('works with stdout', async () => {
+    // Don't seem to be able to test reading from stdin in same
+    // file as above test for read() from stdin. So just testing stdout.
+    const inp = simpleThingJson
+    const consoleLog = jest.spyOn(console, 'log')
+    const result = await convert(inp, '--', { from: 'json', to: 'json' })
+
+    expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
+    expect(result).toEqual(simpleThingJson)
+  })
+
+  if (!process.env.APPVEYOR)
+    it('returns a file path for "content-less" vfiles', async () => {
+      const inp = `A paragraph\n`
+      const out = tempy.file()
+      const result = (await convert(inp, out, {
+        from: 'md',
+        to: 'docx'
+      })) as string
+
+      expect(result).toEqual(out)
+      expect(fs.existsSync(result)).toBeTruthy()
+      expect(fs.lstatSync(result).size).toBeGreaterThan(0)
+    })
 })

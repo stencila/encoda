@@ -19,10 +19,9 @@ import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import puppeteer from 'puppeteer'
-import { isBuffer } from 'util'
-import { chromiumPath } from './helpers/boot'
-import { dump, load } from './index'
-import { load as loadVFile, read as readVFile, VFile } from './vfile'
+import { chromiumPath } from './boot'
+import { dump } from './index'
+import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
 // an custom extension to be able to refere to this format more easily.
@@ -99,17 +98,32 @@ export function insert(keyword: string, text: string, image: Buffer): Buffer {
 }
 
 /**
- * Sniff a PNG file's contents to see if it is an rPNG
+ * Sniff a PNG file to see if it is an rPNG
  *
- * @param content The file path to sniff
+ * @param content The content to sniff (a file path)
  */
 export async function sniff(content: string): Promise<boolean> {
-  if (path.parse(content).ext.includes('png')) {
+  if (path.extname(content) === '.png') {
+    if (await fs.pathExists(content)) {
+      const contents = await fs.readFile(content)
+      return has(KEYWORD, contents)
+    }
+  }
+  return false
+}
+
+/**
+ * Synchronous version of `sniff()`.
+ *
+ * @see sniff
+ *
+ * @param content The content to sniff (a file path)
+ */
+export function sniffSync(content: string): boolean {
+  if (path.extname(content) === '.png') {
     if (fs.existsSync(content)) {
-      const file = await readVFile(content)
-      if (isBuffer(file.contents)) {
-        return has(KEYWORD, file.contents)
-      }
+      const contents = fs.readFileSync(content)
+      return has(KEYWORD, contents)
     }
   }
   return false
@@ -125,11 +139,41 @@ export async function sniff(content: string): Promise<boolean> {
  * @returns The Stencila node
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  if (isBuffer(file.contents)) {
+  return parseSync(file)
+}
+
+/**
+ * Synchronous version of `parse()`.
+ *
+ * @see parse
+ *
+ * @param content The content to sniff (a file path).
+ */
+export function parseSync(file: VFile): stencila.Node {
+  if (Buffer.isBuffer(file.contents)) {
     const json = extract(KEYWORD, file.contents)
-    return load(json, 'json')
+    return JSON.parse(json)
   }
-  return load('{}', 'json')
+  return {}
+}
+
+/**
+ * Sniff and parse a file if it is a rPNG.
+ *
+ * This function is like combining `sniffSync()` and `parseSync()`
+ * but is faster because it only reads the file contents once.
+ *
+ * @param filePath The file path to sniff.
+ */
+export function sniffParseSync(filePath: string): stencila.Node | undefined {
+  if (path.extname(filePath) === '.png') {
+    if (fs.existsSync(filePath)) {
+      const image = fs.readFileSync(filePath)
+      const chunks: Array<Chunk> = pngExtract(image)
+      const [index, json] = find(KEYWORD, chunks)
+      if (json) return JSON.parse(json)
+    }
+  }
 }
 
 /**
@@ -140,9 +184,12 @@ export async function parse(file: VFile): Promise<stencila.Node> {
  * node's JSON into the image's `tEXt` chunk.
  *
  * @param node The Stencila node to unparse
- * @param file The `VFile` to unparse to
+ * @param filePath The file system path to write to
  */
-export async function unparse(node: stencila.Node): Promise<VFile> {
+export async function unparse(
+  node: stencila.Node,
+  filePath?: string
+): Promise<VFile> {
   // Generate HTML of the 'value' of the node, which depends on the
   // node type. In the future, we may make this part of the schema definitions
   // and have a `stencila.value()` function to retrieve the value for the node
@@ -153,7 +200,6 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   } else {
     value = node
   }
-  if (!value) throw new Error('Node must have a value')
   let html = await dump(value, 'html')
 
   // Generate image of rendered HTML
@@ -177,8 +223,14 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   await browser.close()
 
   // Insert JSON of the thing into the image
-  const json = await dump(node, 'json')
+  const json = JSON.stringify(node)
   const image = insert(KEYWORD, json, buffer)
 
-  return loadVFile(image)
+  const file = loadVFile(image)
+  if (filePath) {
+    file.path = filePath
+    await writeVFile(file, filePath)
+  }
+
+  return file
 }

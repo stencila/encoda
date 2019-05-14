@@ -1,5 +1,5 @@
 /**
- * Module for installing Convert native modules
+ * Module for installing Convert native modules and executables
  *
  * The [`pkg`](https://github.com/zeit/pkg) Node.js packager does not
  * package native modules.  i.e `*.node` files. There are various ways to handle this but
@@ -18,16 +18,26 @@ import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
 import tar from 'tar'
+// @ts-ignore
+import pandoc from './pandoc-binary'
 
+/**
+ * Is this process being run as a `pkg` packaged binary?
+ */
 export const packaged =
   ((process.mainModule && process.mainModule.id.endsWith('.exe')) ||
     process.hasOwnProperty('pkg')) &&
   fs.existsSync(path.join('/', 'snapshot'))
 
+/**
+ * The home directory for this modules or process where
+ * native modules and executables are placed.
+ */
 export const home = packaged
   ? path.dirname(process.execPath)
   : path.dirname(__dirname)
 
+// Unzip the native dependencies to home
 if (packaged && !fs.existsSync(path.join(home, 'node_modules'))) {
   tar.x({
     sync: true,
@@ -61,3 +71,14 @@ export const chromiumPath = packaged
         )
       )
   : puppeteer.executablePath()
+
+/**
+ * The path to the Pandoc binary executable
+ */
+export const pandocPath = path.join(home, pandoc.path())
+
+/**
+ * Equivalent to the Pandoc `--data-dir` flag.
+ * Instructs Pandoc where to templates and other assets.
+ */
+export const pandocDataDir = path.join(home, 'src')
