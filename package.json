@@ -16,7 +16,7 @@
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist && npm run build:tgz && npm run build:bin",
-    "build:dist": "tsc",
+    "build:dist": "tsc && cp src/*.js dist/",
     "build:tgz": "tar czf convert-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
     "build:bin": "pkg --target=host -o=bin/stencila-convert .",
     "bundle:linux": "tar -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert",
