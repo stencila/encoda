@@ -50,6 +50,7 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
+  jest.setTimeout(30 * 1000) // Extending timeout due to failing test on AppVeyor
   const file = await unparse(node)
   expect(file).toBeInstanceOf(vfile)
   expect(await parse(file)).toEqual(node)
