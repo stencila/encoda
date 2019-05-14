@@ -1,6 +1,6 @@
 # Convert: a format converter for reproducible documents
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contribute)
 [![Build status](https://travis-ci.org/stencila/convert.svg?branch=master)](https://travis-ci.org/stencila/convert)
 [![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni?svg=true)](https://ci.appveyor.com/project/nokome/convert)
 [![Code coverage](https://codecov.io/gh/stencila/convert/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/convert)
@@ -30,7 +30,7 @@ Stencila Converters allow you to convert between a range of formats commonly use
   - [Help](#help)
 - [Develop](#develop)
 - [Roadmap](#roadmap)
-- [Contributors](#contributors)
+- [Contribute](#contribute)
 - [See also](#see-also)
 - [FAQ](#faq)
 - [Acknowledgments](#acknowledgments)
@@ -228,12 +228,15 @@ docker run stencila/convert
 
 We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬. See [CONTRIBUTING.md](CONTRIBUTING.md) for more on where to start.
 
-<!-- TODO:update contributor list for converter -->
+We recognize [all contributors](https://allcontributors.org/) - including those that don't push code! ✨
+
+<p align="center">
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 <table><tr><td align="center"><a href="http://stenci.la"><img src="https://avatars2.githubusercontent.com/u/2358535?v=4" width="50px;" alt="Aleksandra Pawlik"/><br /><sub><b>Aleksandra Pawlik</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=apawlik" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=apawlik" title="Documentation">📖</a> <a href="https://github.com/stencila/convert/issues?q=author%3Aapawlik" title="Bug reports">🐛</a></td><td align="center"><a href="https://github.com/nokome"><img src="https://avatars0.githubusercontent.com/u/1152336?v=4" width="50px;" alt="Nokome Bentley"/><br /><sub><b>Nokome Bentley</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=nokome" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=nokome" title="Documentation">📖</a> <a href="https://github.com/stencila/convert/issues?q=author%3Anokome" title="Bug reports">🐛</a></td><td align="center"><a href="http://toki.io"><img src="https://avatars1.githubusercontent.com/u/10161095?v=4" width="50px;" alt="Jacqueline"/><br /><sub><b>Jacqueline</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=jwijay" title="Documentation">📖</a> <a href="#design-jwijay" title="Design">🎨</a></td><td align="center"><a href="https://github.com/hamishmack"><img src="https://avatars2.githubusercontent.com/u/620450?v=4" width="50px;" alt="Hamish Mackenzie"/><br /><sub><b>Hamish Mackenzie</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=hamishmack" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=hamishmack" title="Documentation">📖</a></td><td align="center"><a href="http://ketch.me"><img src="https://avatars2.githubusercontent.com/u/1646307?v=4" width="50px;" alt="Alex Ketch"/><br /><sub><b>Alex Ketch</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=alex-ketch" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=alex-ketch" title="Documentation">📖</a> <a href="#design-alex-ketch" title="Design">🎨</a></td><td align="center"><a href="https://github.com/beneboy"><img src="https://avatars1.githubusercontent.com/u/292725?v=4" width="50px;" alt="Ben Shaw"/><br /><sub><b>Ben Shaw</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=beneboy" title="Code">💻</a> <a href="https://github.com/stencila/convert/issues?q=author%3Abeneboy" title="Bug reports">🐛</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+</p>
 
 ## See also
 
@@ -245,7 +248,7 @@ We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports
 
 ## Acknowledgments
 
-Many thanks :heart: to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLife](https://elifesciences.org) for funding development of this tool.
+Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLife](https://elifesciences.org) for funding development of this tool.
 
 <p align="center">
   <img width="250" src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png">
