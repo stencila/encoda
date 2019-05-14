@@ -1,5 +1,6 @@
 import { parse, unparse } from '../src/html'
 import { dump, load } from '../src/vfile'
+import { stencilaCSS } from '../src/templates/stencila-css-template'
 
 test('parse', async () => {
   expect(await parse(load(kitchenSink.html))).toEqual(kitchenSink.node)
@@ -23,6 +24,9 @@ const kitchenSink = {
         "authors": []
       }
     </script>
+    <style>
+      ${stencilaCSS}
+    </style>
   </head>
 
   <body>

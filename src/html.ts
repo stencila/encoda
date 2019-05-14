@@ -54,6 +54,7 @@ import h from 'hyperscript'
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
+import { stencilaCSS } from './templates/stencila-css-template'
 import { dump, load, VFile } from './vfile'
 
 const document = new jsdom.JSDOM().window.document
@@ -244,12 +245,14 @@ function parseDocument(doc: HTMLDocument): stencila.CreativeWork {
 }
 
 /**
- * Generate a `<html>` element with supplied title, metadata and body content.
+ * Generate a `<html>` element with supplied title, metadata, body content, and
+ * optionally custom CSS to style the document with.
  */
 function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
-  body: Array<Node> = []
+  body: Array<Node> = [],
+  style: string = stencilaCSS
 ): HTMLHtmlElement {
   // prettier-ignore
   return h('html',
@@ -261,7 +264,8 @@ function generateHtmlElement(
           '@context': 'http://stencila.github.io/schema/stencila.jsonld',
           ...metadata
         })
-      )
+      ),
+      h('style', {innerHTML: style})
     ),
     h('body', body)
   )
