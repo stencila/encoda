@@ -5,7 +5,7 @@ import { convert } from './index'
 const VERSION = require('../package').version
 
 yargs
-  .scriptName('converter')
+  .scriptName('stencila-convert')
 
   // @ts-ignore
   .command(
