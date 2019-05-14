@@ -53,7 +53,9 @@ export async function unparse(
 ): Promise<VFile> {
   const type = stencila.type(node)
   if (type !== 'Article') {
-    throw new Error(`Unable to unparse Stencila type ${type}`)
+    throw new Error(
+      `Unable to unparse top level Stencila node of type:\n "${type}"\n Expected node of type "Article".`
+    )
   }
 
   unparsePromises = []
