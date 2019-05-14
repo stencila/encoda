@@ -2,7 +2,8 @@ import * as stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
-import { create, dump, load, VFile } from './vfile'
+import * as rpng from './rpng'
+import { create, dump, load, VFile, write } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
 
@@ -21,11 +22,13 @@ export const extNames = ['pandoc']
 export async function parse(
   file: VFile,
   from: Pandoc.InputFormat = Pandoc.InputFormat.json,
-  options: string[] = []
+  options: string[] = [],
+  ensureFile: boolean = false
 ): Promise<stencila.Node> {
   const args = [`--from=${from}`, `--to=json`].concat(options)
   let content = dump(file)
-  if (!content) {
+  if (!content || ensureFile) {
+    if (ensureFile && !file.path) throw new Error('Must supply a file')
     args.push(`${file.path}`)
   }
   const json = await run(content, args)
@@ -52,9 +55,12 @@ export async function unparse(
   if (type !== 'Article') {
     throw new Error(`Unable to unparse Stencila type ${type}`)
   }
-  const pdoc = unparseArticle(node as stencila.Article)
-  const json = JSON.stringify(pdoc)
 
+  unparsePromises = []
+  const pdoc = unparseArticle(node as stencila.Article)
+  await Promise.all(unparsePromises)
+
+  const json = JSON.stringify(pdoc)
   const args = [`--from=json`, `--to=${to}`].concat(options)
   if ((filePath && filePath !== '--') || ensureFile) {
     let output
@@ -73,6 +79,16 @@ export async function unparse(
   if (content) return load(content)
   else return create({ path: filePath })
 }
+
+/**
+ * Promises for resources (usually rPNGs) to
+ * be generated during unparsing.
+ *
+ * This approach of having a global set of promises
+ * is a bit hacky but allows us to keep the nested chain
+ * of unparsing functions synchronous.
+ */
+let unparsePromises: Promise<any>[] = []
 
 /**
  * Run the Pandoc binary
@@ -565,7 +581,17 @@ function parseInline(node: Pandoc.Inline): stencila.InlineContent {
     case 'Link':
       return parseLink(node)
     case 'Image':
-      return parseImage(node)
+      const image = parseImage(node)
+      // If the image is an rPNG then decode it and return
+      // the embedded node
+      const url = image.contentUrl
+      if (url) {
+        // TODO: currently assume url is local file, should we fetch remotes?
+        const node = rpng.sniffParseSync(url)
+        // TODO: avoid `as`
+        if (typeof node !== 'undefined') return node as stencila.InlineContent
+      }
+      return image
   }
   throw new Error(`Unhandled Pandoc element type "${node.t}"`)
 }
@@ -590,7 +616,7 @@ function unparseInline(node: stencila.Node): Pandoc.Inline {
     case 'ImageObject':
       return unparseImageObject(node as stencila.ImageObject)
   }
-  throw new Error(`Unhandled Stencila node type "${type}"`)
+  return unparseDefault(node)
 }
 
 /**
@@ -772,13 +798,31 @@ function parseImage(node: Pandoc.Image): stencila.ImageObject {
  */
 function unparseImageObject(node: stencila.ImageObject): Pandoc.Image {
   const [url, title] = [node.contentUrl || '', node.caption || '']
+  const alt = node.content
+    ? unparseInlines(node.content as stencila.InlineContent[])
+    : []
   return {
     t: 'Image',
-    c: [
-      emptyAttrs,
-      unparseInlines(node.content as stencila.InlineContent[]),
-      [url, title]
-    ]
+    c: [emptyAttrs, alt, [url, title]]
+  }
+}
+
+function unparseDefault(node: stencila.Node): Pandoc.Image {
+  const type = stencila.type(node)
+
+  const index = 1
+  const imagePath = `${type.toLowerCase()}-${index}.png`
+  const promise = (async () => {
+    const file = await rpng.unparse(node)
+    await write(file, imagePath)
+  })()
+  unparsePromises.push(promise)
+
+  const url = imagePath
+  const title = type
+  return {
+    t: 'Image',
+    c: [emptyAttrs, [], [url, title]]
   }
 }
 
@@ -787,7 +831,10 @@ function unparseImageObject(node: stencila.ImageObject): Pandoc.Image {
  */
 export const emptyAttrs: Pandoc.Attr = ['', [], []]
 
-export function parseAttrs(node: Pandoc.Attr): { [key: string]: string } {
+/**
+ * Parse Pandoc `Attr` attributes to an object
+ */
+function parseAttrs(node: Pandoc.Attr): { [key: string]: string } {
   const attrs: { [key: string]: string } = {}
   if (node[0]) attrs.id = node[0]
   if (node[1]) attrs.classes = node[1].join(' ')
@@ -795,9 +842,10 @@ export function parseAttrs(node: Pandoc.Attr): { [key: string]: string } {
   return attrs
 }
 
-export function unparseAttrs(
-  attrs: { [key: string]: string } = {}
-): Pandoc.Attr {
+/**
+ * Unparse an object of attributes to a Pandoc `Attr`.
+ */
+function unparseAttrs(attrs: { [key: string]: string } = {}): Pandoc.Attr {
   const { id, classes, ...rest } = attrs
   return [id || '', classes ? classes.split(' ') : [], Object.entries(rest)]
 }

@@ -1,4 +1,6 @@
 import * as stencila from '@stencila/schema'
+import fs from 'fs-extra'
+import path from 'path'
 import {
   emptyAttrs,
   parse,
@@ -7,7 +9,10 @@ import {
   unparseMeta
 } from '../src/pandoc'
 import * as Pandoc from '../src/pandoc-types'
+import * as rpng from '../src/rpng'
 import { dump, load } from '../src/vfile'
+
+jest.setTimeout(30 * 1000)
 
 test('parse', async () => {
   const p = async (pdoc: any) => await parse(load(JSON.stringify(pdoc)))
@@ -412,6 +417,88 @@ const collapseSpaces: testCase = {
     ]
   }
 }
+
+// Test that "special" nodes, encoded as rPNGs, can be parsed/unparsed
+test('rpngs', async () => {
+  const boolean = false
+  const number = 3.14
+  const array = [1, 2, 3]
+  const object = { a: 1, b: 'two' }
+  const thing = { type: 'Thing', name: 'thing' }
+  const person = { type: 'Person', givenNames: ['John'] }
+
+  // Generate the rPNGs
+  const output = path.join(__dirname, 'output', 'pandoc-rpngs')
+  fs.ensureDirSync(output)
+  const nullPng = await rpng.unparse(null, path.join(output, 'null.png'))
+  const booleanPng = await rpng.unparse(
+    boolean,
+    path.join(output, 'boolean.png')
+  )
+  const numberPng = await rpng.unparse(number, path.join(output, 'number.png'))
+  const arrayPng = await rpng.unparse(array, path.join(output, 'array.png'))
+  const objectPng = await rpng.unparse(object, path.join(output, 'object.png'))
+  const thingPng = await rpng.unparse(thing, path.join(output, 'thing.png'))
+  const personPng = await rpng.unparse(person, path.join(output, 'person.png'))
+
+  const pdoc: Pandoc.Document = {
+    'pandoc-api-version': Pandoc.Version,
+    meta: {},
+    blocks: [
+      {
+        t: 'Para',
+        c: [
+          str('A paragraph with primitives: a null '),
+          { t: 'Image', c: [emptyAttrs, [], [nullPng.path!, 'null']] },
+          str(', a boolean '),
+          { t: 'Image', c: [emptyAttrs, [], [booleanPng.path!, 'boolean']] },
+          str(', a number '),
+          { t: 'Image', c: [emptyAttrs, [], [numberPng.path!, 'number']] },
+          str(', an array '),
+          { t: 'Image', c: [emptyAttrs, [], [arrayPng.path!, 'array']] },
+          str(', and an object '),
+          { t: 'Image', c: [emptyAttrs, [], [objectPng.path!, 'object']] },
+          str(', and a thing '),
+          { t: 'Image', c: [emptyAttrs, [], [thingPng.path!, 'Thing']] },
+          str(', and a person '),
+          { t: 'Image', c: [emptyAttrs, [], [personPng.path!, 'Person']] },
+          str('.')
+        ]
+      }
+    ]
+  }
+
+  const node: stencila.Node = {
+    type: 'Article',
+    authors: [],
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          'A paragraph with primitives: a null ',
+          null,
+          ', a boolean ',
+          boolean,
+          ', a number ',
+          number,
+          ', an array ',
+          array,
+          ', and an object ',
+          object,
+          ', and a thing ',
+          thing,
+          ', and a person ',
+          person,
+          '.'
+        ]
+      }
+    ]
+  }
+
+  expect(await parse(load(JSON.stringify(pdoc)))).toEqual(node)
+  // Skipping this until resolve how to deal with output RPNG paths
+  //expect(JSON.parse(dump(await unparse(node)))).toEqual(pdoc)
+})
 
 // A very simple test of the approach to typing Pandoc nodes
 test('types', () => {

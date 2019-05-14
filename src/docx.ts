@@ -11,9 +11,12 @@ export const mediaTypes = [
 ]
 
 export async function parse(file: VFile): Promise<stencila.Node> {
-  return pandoc.parse(file, pandoc.InputFormat.docx, [
-    `--extract-media=${file.path}.media`
-  ])
+  return pandoc.parse(
+    file,
+    pandoc.InputFormat.docx,
+    [`--extract-media=${file.path}.media`],
+    true
+  )
 }
 
 export async function unparse(

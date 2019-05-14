@@ -1,6 +1,15 @@
 import fs from 'fs'
 import path from 'path'
-import { extract, has, insert, parse, sniff, unparse } from '../src/rpng'
+import {
+  extract,
+  has,
+  insert,
+  parse,
+  parseSync,
+  sniff,
+  sniffSync,
+  unparse
+} from '../src/rpng'
 import { read } from '../src/vfile'
 import vfile = require('vfile')
 
@@ -29,11 +38,15 @@ const node = {
 test('sniff', async () => {
   expect(await sniff(rpngPath)).toBe(true)
   expect(await sniff('/some/file.zip')).toBe(false)
+
+  expect(sniffSync(rpngPath)).toBe(true)
+  expect(sniffSync('/some/file.zip')).toBe(false)
 })
 
 test('parse', async () => {
   const file = await read(rpngPath)
   expect(await parse(file)).toEqual(node)
+  expect(parseSync(file)).toEqual(node)
 })
 
 test('unparse', async () => {
