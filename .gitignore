@@ -3,10 +3,12 @@
 *token.json
 /.sandbox
 /bin
+/convert-deps.tgz
 /coverage
 /dist
 /docs
 /node_modules
 /tests/**/*.to.*
 /tests/fixtures/rpng/*out.png
-/convert-deps.tgz
+/tests/output
+/vendor
