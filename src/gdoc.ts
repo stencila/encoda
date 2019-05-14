@@ -326,7 +326,14 @@ function parseList(
     throw new Error('OMG! That list id can`t be found')
   }
   const level = list.nestingLevels[bullet.nestingLevel || 0]
-  const order = level.glyphType ? 'ascending' : 'unordered'
+  // It seems that the only way to tell if a list is ordered on unordered is to look at
+  // the glyphType.
+  // See https://developers.google.com/docs/api/reference/rest/v1/ListProperties#NestingLevel
+  const order =
+    typeof level.glyphType === 'undefined' ||
+    level.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
+      ? 'unordered'
+      : 'ascending'
   const newList: stencila.List = {
     type: 'List',
     order,

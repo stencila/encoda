@@ -1,6 +1,6 @@
 {
   "name": "stencila-convert",
-  "version": "0.32.1",
+  "version": "0.32.2",
   "description": "Convert between Stencila document trees and other formats",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,6 @@
     "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert",
     "bundle:windows": "./bundle-win.sh",
     "docs": "typedoc --options typedoc.js ./src",
-    "prepublishOnly": "npm run lint && npm run test && npm run check && npm run docs && npm run build && npm run bundle",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
   "pandoc": {
