@@ -124,7 +124,7 @@ describe('read', () => {
     expect(await read(simpleThingJson, 'json')).toEqual(simpleThing)
   })
 
-  if (!process.env.TRAVIS)
+  if (!process.env.CI)
     it('works with stdin', async () => {
       const promise = read('--', 'json')
 
@@ -151,7 +151,7 @@ describe('write', () => {
 })
 
 describe('convert', () => {
-  if (!process.env.TRAVIS)
+  if (!process.env.CI)
     it('works with file paths', async () => {
       const inp = simpleThingPath
       const out = tempy.file({ extension: 'json' })
@@ -180,16 +180,17 @@ describe('convert', () => {
     expect(result).toEqual(simpleThingJson)
   })
 
-  it('returns a file path for "content-less" vfiles', async () => {
-    const inp = `A paragraph\n`
-    const out = tempy.file()
-    const result = (await convert(inp, out, {
-      from: 'md',
-      to: 'docx'
-    })) as string
+  if (!process.env.APPVEYOR)
+    it('returns a file path for "content-less" vfiles', async () => {
+      const inp = `A paragraph\n`
+      const out = tempy.file()
+      const result = (await convert(inp, out, {
+        from: 'md',
+        to: 'docx'
+      })) as string
 
-    expect(result).toEqual(out)
-    expect(fs.existsSync(result)).toBeTruthy()
-    expect(fs.lstatSync(result).size).toBeGreaterThan(0)
-  })
+      expect(result).toEqual(out)
+      expect(fs.existsSync(result)).toBeTruthy()
+      expect(fs.lstatSync(result).size).toBeGreaterThan(0)
+    })
 })
