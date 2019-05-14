@@ -1,43 +1,45 @@
-## Stencila Converter
+# Convert: a format converter for reproducible documents
 
-![Experimental](https://img.shields.io/badge/status-experimental-orange.svg)
-[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/convert)
-[![NPM](http://img.shields.io/npm/v/stencila-convert.svg?style=flat)](https://www.npmjs.com/package/stencila-convert)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contribute)
 [![Build status](https://travis-ci.org/stencila/convert.svg?branch=master)](https://travis-ci.org/stencila/convert)
 [![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni?svg=true)](https://ci.appveyor.com/project/nokome/convert)
 [![Code coverage](https://codecov.io/gh/stencila/convert/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/convert)
-[![Dependency status](https://david-dm.org/stencila/convert.svg)](https://david-dm.org/stencila/convert)
-
-> _Warning_ This repo is undergoing refactoring. Some of this README is out of date.
+[![NPM](http://img.shields.io/npm/v/@stencila/dockter.svg?style=flat)](https://www.npmjs.com/package/stencila-convert)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/convert/)
+[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
 Stencila Converters allow you to convert between a range of formats commonly used for "executable documents" (those containing some type of source code or calculation).
 
-### Install
+<!-- Automatically generated TOC. Don't edit, `make docs` instead>
 
-These converters are available as a sub-command in the [Stencila CLI (command line tool)](https://github.com/stencila/cli) e.g. `stencila convert document.md document.jats.xml`. The Stencila CLI is a standalone binary and is the easiest way to use these converters.
+<!-- toc -->
 
-If you want to go ahead and install the converters separately you'll need [Node.js](https://nodejs.org/en/download/) and `npm`. Once you have them set up...
+- [Status](#status)
+  - [Documents, markup, and notebook formats](#documents-markup-and-notebook-formats)
+  - [Tabular data and spreadsheet formats](#tabular-data-and-spreadsheet-formats)
+  - [Other formats](#other-formats)
+- [Demo](#demo)
+- [Install](#install)
+  - [CLI](#cli)
+    - [Windows](#windows)
+    - [MacOS](#macos)
+    - [Linux](#linux)
+  - [Package](#package)
+- [Use](#use)
+  - [Example](#example)
+  - [Help](#help)
+- [Develop](#develop)
+- [Roadmap](#roadmap)
+- [Contribute](#contribute)
+- [See also](#see-also)
+- [FAQ](#faq)
+- [Acknowledgments](#acknowledgments)
 
-- on Mac OS X and Linux, open the terminal,
-- on Windows start the Command Prompt or PowerShell, and type:
+<!-- tocstop -->
 
-```bash
-npm install stencila-convert -g
-```
+## Status
 
-Some of the text document converters rely on a recent version of Pandoc. This package will use an existing installation of Pandoc if it is new enough. If not, it will automatically download the required Pandoc version to the Stencila directory in your home folder. See [`pandoc.json`](src/helpers/pandoc.json) for the necessary Pandoc version and download URLs. At times it may be necessary to use our custom Pandoc build available at https://github.com/stencila/pandoc/releases.
-
-### Use
-
-```bash
-stencila-convert document.md document.jats.xml
-```
-
-API documentation is available at https://stencila.github.io/convert.
-
-### Status
-
-The following table lists the status of converters that have been developed, are in development, or are being considered for development.
+The following tables list the status of converters that have been developed, are in development, or are being considered for development.
 We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/convert/issues) and comment under the relevant one. If there is no
 issue regarding the converter you need, [create one](https://github.com/stencila/convert/issues/new).
 
@@ -46,34 +48,133 @@ When the converters have been better tested, the plan is to integrate them into 
 You can also provide your feedback on the friendly [Stencila Community Forum](https://community.stenci.la)
 and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
-| Format                                             |                                                         Import                                                         |                           Export                            |
-| -------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
-| Markdown                                           | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) <br/> [#23](https://github.com/stencila/convert/issues/23) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| RMarkdown                                          |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               |                                                             |
-| Latex                                              |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| Jupyter Notebook                                   |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               |                                                             |
-| HTML                                               |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| PDF                                                |                                                           -                                                            | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| CSV                                                |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| Yaml Front matter for CSV [CSVY](http://csvy.org/) |                                  [#25](https://github.com/stencila/convert/issues/25)                                  |    [#26](https://github.com/stencila/convert/issues/26)     |
-| Tabular Data Package                               |                                                                                                                        |                                                             |
-| Sheet Script                                       |                                  [#29](https://github.com/stencila/convert/issues/29)                                  |    [#28](https://github.com/stencila/convert/issues/28)     |
-| Yaml Front matter for CSV [CSVY](http://csvy.org/) |                                  [#25](https://github.com/stencila/convert/issues/25)                                  |    [#26](https://github.com/stencila/convert/issues/26)     |
-| X Markdown                                         |                                                                                                                        |                                                             |
+#### Documents, markup, and notebook formats
 
-### Develop
+| Format     |                           Status                            |
+| ---------- | :---------------------------------------------------------: |
+| Markdown   | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| RMarkdown  | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| Latex      | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| HTML       | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| PDF        |                              -                              |
+| Google Doc | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
 
-Clone the repository and install a development environment (again, you need Node.js to do it):
+#### Tabular data and spreadsheet formats
+
+| Format                                                                          |                           Status                            |
+| ------------------------------------------------------------------------------- | :---------------------------------------------------------: |
+| CSV                                                                             | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| Yaml front matter for CSV [CSVY](http://csvy.org/)                              |    [#25](https://github.com/stencila/convert/issues/25)     |
+| Excel (.xlsx)                                                                   | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| OpenDocument Spreadsheet                                                        | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| [Tabular Data Package](https://frictionlessdata.io/specs/tabular-data-package/) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+
+#### Other formats
+
+| Format                                                                                 |                           Status                            |
+| -------------------------------------------------------------------------------------- | :---------------------------------------------------------: |
+| Reproducible PNG ([rPNG](https://github.com/stencila/convert/blob/master/src/rpng.ts)) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+
+## Demo
+
+> :sparkles: Coming soon!
+
+## Install
+
+Convert is available as a pre-compiled, standalone command line tool ([CLI](#cli)), or as a Node.js [package](#package).
+
+### CLI
+
+#### Windows
+
+To install the latest release of the `convert` command line tool, download `convert-win-x64.zip` for the [latest release](https://github.com/stencila/convert/releases/) and place it somewhere on your `PATH`.
+
+#### MacOS
+
+To install the latest release of the `convert` command line tool to `/usr/local/bin` just use,
+
+```bash
+curl -L https://raw.githubusercontent.com/stencila/convert/master/install.sh | bash
+```
+
+To install a specific version, append `-s vX.X.X` e.g.
+
+```bash
+curl -L https://raw.githubusercontent.com/stencila/convert/master/install.sh | bash -s v0.33.0
+```
+
+Or, if you'd prefer to do things manually, download `convert-macos-x64.tar.gz` for the [latest release](https://github.com/stencila/convert/releases/) and then,
+
+```bash
+tar xvf convert-macos-x64.tar.gz
+sudo mv -f convert /usr/local/bin # or wherever you like
+```
+
+#### Linux
+
+To install the latest release of the `convert` command line tool to `~/.local/bin/` just use,
+
+```bash
+curl -L https://raw.githubusercontent.com/stencila/convert/master/install.sh | bash
+```
+
+To install a specific version, append `-s vX.X.X` e.g.
+
+```bash
+curl -L https://raw.githubusercontent.com/stencila/convert/master/install.sh | bash -s v0.33.0
+```
+
+Or, if you'd prefer to do things manually, or place Dockter elewhere, download `convert-linux-x64.tar.gz` for the [latest release](https://github.com/stencila/convert/releases/) and then,
+
+```bash
+tar xvf convert-linux-x64.tar.gz
+mv -f convert ~/.local/bin/ # or wherever you like
+```
+
+### Package
+
+If you want to integrate Convert into another application or package, it is also available as a Node.js package :
+
+```bash
+npm install stencila-convert
+```
+
+## Use
+
+### Example
+
+```bash
+stencila-convert document.md document.jats.xml
+```
+
+You can use the `--from` and `--to` flag options to explicitly specify formats. For example,
+
+| Option      | Description                                                                                        |
+| ----------- | -------------------------------------------------------------------------------------------------- |
+| `--to yaml` | Convert into YAML format of [Stencila Schema](https://github.com/stencila/schema) JSON.            |
+| `--to tdp`  | Convert into [Tabular Data Package](https://frictionlessdata.io/specs/tabular-data-package/) JSON. |
+
+### Help
+
+To get an overview of the commands available use the `--help` option i.e.
+
+```bash
+stencila-convert --help
+```
+
+API documentation is available at https://stencila.github.io/convert.
+
+## Develop
+
+Check how to [contribute back to the project](https://github.com/stencila/convert/blob/master/CONTRIBUTING.md). All PRs are most welcome! Thank you!
+
+Clone the repository and install a development environment:
 
 ```bash
 git clone https://github.com/stencila/convert.git
 cd convert
 npm install
 ```
-
-Check how to [contribute back to the project](https://github.com/stencila/convert/blob/master/CONTRIBUTING.md). All PRs are most welcome! Thank you!
-
-### Test
 
 Run the test suite:
 
@@ -93,10 +194,17 @@ To get coverage statistics:
 npm run cover
 ```
 
-Or, manually test conversion using the bin script on test cases:
+Or, manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
-npx ts-node src/cli.ts tests/fixtures/datatable/simple/simple.csv --to yaml
+npx ts-node --files src/cli tests/fixtures/datatable/simple/simple.csv --to yaml
+```
+
+If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:
+
+```bash
+npm run build:ts
+node dist/cli tests/fixtures/datatable/simple/simple.csv --to yaml
 ```
 
 There's also a `Makefile` if you prefer to run tasks that way e.g.
@@ -112,57 +220,37 @@ docker build --tag stencila/convert .
 docker run stencila/convert
 ```
 
-#### Test cases
+## Roadmap
 
-The tests are currently doing a "round trip" conversion. That is, a test case is:
+> :sparkles: Coming soon!
 
-1. Converted to a temporary file in pandoc JSON format.
-2. The temporary file in pandoc JSON format is converted into
-   a [pandoc pandoc’s intermediate representation of the document, AST](https://pandoc.org/using-the-pandoc-api.html).
-3. The pandoc document is converted into an executable document.
-4. The executable document is converted into a pandoc document in JSON format
-   (compare [Stencila API](https://github.com/stencila/specs)).
-5. The pandoc document is converted into a temporary file in pandoc JSON format.
-6. The temporary file in pandoc JSON is converted into a file in the same format
-   as the test case (with `-out` added to the original name).
-7. The test case (input file) is then compared with the result of the
-   round trip conversion file. For example, `input.md` is compared with `input-out.me`; `input.ipynb` with `input-out.ipynb` and so on.
+## Contribute
 
-To look up the details of the above conversion steps, see the
-[`PandocConverter.js`](https://github.com/stencila/convert/blob/master/src/PandocConverter.js) file.
+We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬. See [CONTRIBUTING.md](CONTRIBUTING.md) for more on where to start.
 
-##### Test case alternatives
+We recognize [all contributors](https://allcontributors.org/) - including those that don't push code! ✨
 
-"Round trip" testing checks allows for testing conversions of alternatives for
-input formats. For example, Atx-style headers (tagged with `#`) in a Markdown file should be treated the same as Setext-style headers (tagged with `----` under the header text) during conversion. That is,
+<p align="center">
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="http://stenci.la"><img src="https://avatars2.githubusercontent.com/u/2358535?v=4" width="50px;" alt="Aleksandra Pawlik"/><br /><sub><b>Aleksandra Pawlik</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=apawlik" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=apawlik" title="Documentation">📖</a> <a href="https://github.com/stencila/convert/issues?q=author%3Aapawlik" title="Bug reports">🐛</a></td><td align="center"><a href="https://github.com/nokome"><img src="https://avatars0.githubusercontent.com/u/1152336?v=4" width="50px;" alt="Nokome Bentley"/><br /><sub><b>Nokome Bentley</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=nokome" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=nokome" title="Documentation">📖</a> <a href="https://github.com/stencila/convert/issues?q=author%3Anokome" title="Bug reports">🐛</a></td><td align="center"><a href="http://toki.io"><img src="https://avatars1.githubusercontent.com/u/10161095?v=4" width="50px;" alt="Jacqueline"/><br /><sub><b>Jacqueline</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=jwijay" title="Documentation">📖</a> <a href="#design-jwijay" title="Design">🎨</a></td><td align="center"><a href="https://github.com/hamishmack"><img src="https://avatars2.githubusercontent.com/u/620450?v=4" width="50px;" alt="Hamish Mackenzie"/><br /><sub><b>Hamish Mackenzie</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=hamishmack" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=hamishmack" title="Documentation">📖</a></td><td align="center"><a href="http://ketch.me"><img src="https://avatars2.githubusercontent.com/u/1646307?v=4" width="50px;" alt="Alex Ketch"/><br /><sub><b>Alex Ketch</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=alex-ketch" title="Code">💻</a> <a href="https://github.com/stencila/convert/commits?author=alex-ketch" title="Documentation">📖</a> <a href="#design-alex-ketch" title="Design">🎨</a></td><td align="center"><a href="https://github.com/beneboy"><img src="https://avatars1.githubusercontent.com/u/292725?v=4" width="50px;" alt="Ben Shaw"/><br /><sub><b>Ben Shaw</b></sub></a><br /><a href="https://github.com/stencila/convert/commits?author=beneboy" title="Code">💻</a> <a href="https://github.com/stencila/convert/issues?q=author%3Abeneboy" title="Bug reports">🐛</a></td></tr></table>
 
-```
-# Atx- style Header example
-```
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+</p>
 
-is converted into the same output as the one below:
+## See also
 
-```
-Setext-style Header example
--------------
-```
+> :sparkles: Coming soon!
 
-To make testing more succinct we have a convention of extending test case file names with "-alternative" (dash alternative), for example, `heading.md` and `heading-setext.md`. Since the headings should be converted the same way,
-`heading-setext-out.md` is compared to `heading.md`.
-(Another way to think about this approach is to treat the conversion as
-standardising the input formats to pandoc Reader / Writer options.)
+## FAQ
 
-**Note** The above test regime tests primarily pandoc conventions for
-reading from and writing to different formats, [pandoc Reader and Writer options](https://pandoc.org/MANUAL.html#options).
+> :sparkles: Coming soon!
 
-##### Create new test cases
+## Acknowledgments
 
-You can create a new test case for a particular format by converting an existing tests case for another format. For example, to create a nested lists test case for JATS, you could use the existing test case for Markdown:
+Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLife](https://elifesciences.org) for funding development of this tool.
 
-```bash
-./bin/stencila-convert.js tests/fixtures/list_nested.md tests/fixtures/list_nested.jats.xml
-```
-
-## Get in touch!
-
-If you have any questions or comments, please join our [friendly Gitter chat](https://gitter.im/stencila/stencila)!
+<p align="center">
+  <img width="250" src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png">
+  <img width="250" src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png">
+</p>

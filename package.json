@@ -22,7 +22,7 @@
     "bundle:linux": "tar -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert",
     "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert",
     "bundle:windows": "./bundle-win.sh",
-    "docs": "typedoc --options typedoc.js ./src",
+    "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
   "pandoc": {
@@ -94,6 +94,7 @@
     "@types/tar": "^4.0.0",
     "@types/unist": "^2.0.3",
     "@types/yargs": "^12.0.11",
+    "all-contributors-cli": "^6.4.0",
     "bin-wrapper": "^4.1.0",
     "delay": "^4.2.0",
     "dependency-check": "^3.3.0",
@@ -102,6 +103,7 @@
     "jest": "^24.7.1",
     "jest-expect-message": "^1.0.2",
     "lint-staged": "^8.1.5",
+    "markdown-toc": "^1.2.0",
     "pkg": "^4.3.8",
     "prettier": "^1.16.4",
     "semantic-release": "^15.13.12",

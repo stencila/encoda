@@ -1,13 +1,13 @@
 # Contributing to Stencila
 
-*The contribution guidelines are based on the guidelines provided by [Software and Data Carpentry](http://carpentries.org).*
+_The contribution guidelines are based on the guidelines provided by [Software and Data Carpentry](http://carpentries.org)._
 
 [Stencila][stencila-site] is an open-source community-driven project. We encourage
-and welcome contributions from all community members. 
+and welcome contributions from all community members.
 
 ## General contribution guidelines
 
-We prefer the contributions to be made via [GitHub][github]. If you are comfortable with Git and GitHub, 
+We prefer the contributions to be made via [GitHub][github]. If you are comfortable with Git and GitHub,
 you can submit a pull request (PR). In Stencila we follow a commonly used workflow
 for [contributing to open source projects][how-contribute] (see also [GitHub instructions][github-flow]).
 
@@ -18,6 +18,22 @@ you agree that we may redistribute your work under [our license](LICENSE).
 Everyone involved with Stencila
 agrees to abide by our [code of conduct][conduct].
 
+### Contributors list
+
+This project follows the [all-contributors](https://allcontributors.org) specification. Please add contribuors, including yourself, using,
+
+```bash
+# Check for missing contributors
+npx all-contributors check
+# Add new contributor <username>, who made a contribution of type <contribution>
+npx all-contributors add <username> <contribution>
+# Example:
+npx all-contributors add octocat code,doc
+# Regenerate the readme table
+npx all-contributors generate
+```
+
+See the list of contribution codes [here](https://allcontributors.org/docs/en/emoji-key).
 
 ## Get in touch!
 

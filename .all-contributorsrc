@@ -1,0 +1,78 @@
+{
+  "projectName": "convert",
+  "projectOwner": "stencila",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 50,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "apawlik",
+      "name": "Aleksandra Pawlik",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2358535?v=4",
+      "profile": "http://stenci.la",
+      "contributions": [
+        "code",
+        "doc",
+        "bug"
+      ]
+    },
+    {
+      "login": "nokome",
+      "name": "Nokome Bentley",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1152336?v=4",
+      "profile": "https://github.com/nokome",
+      "contributions": [
+        "code",
+        "doc",
+        "bug"
+      ]
+    },
+    {
+      "login": "jwijay",
+      "name": "Jacqueline",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10161095?v=4",
+      "profile": "http://toki.io",
+      "contributions": [
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "hamishmack",
+      "name": "Hamish Mackenzie",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/620450?v=4",
+      "profile": "https://github.com/hamishmack",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "alex-ketch",
+      "name": "Alex Ketch",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1646307?v=4",
+      "profile": "http://ketch.me",
+      "contributions": [
+        "code",
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "beneboy",
+      "name": "Ben Shaw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/292725?v=4",
+      "profile": "https://github.com/beneboy",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
