@@ -46,21 +46,20 @@ When the converters have been better tested, the plan is to integrate them into 
 You can also provide your feedback on the friendly [Stencila Community Forum](https://community.stenci.la)
 and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 
-
-Format          | Import                                                           | Export
---------------- | :--------------------------------------------------------------: | :--------------------------------------------------------------:                                                                 |
-Markdown        |![alpha](https://img.shields.io/badge/status-alpha-red.svg) <br/> [#23](https://github.com/stencila/convert/issues/23)      |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-RMarkdown       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
-Latex           |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Jupyter Notebook|![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |
-HTML            |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-PDF             |-                                                                 |![alpha](https://img.shields.io/badge/status-alpha-red.svg)                                                               |
-CSV             |![alpha](https://img.shields.io/badge/status-alpha-red.svg)       |![alpha](https://img.shields.io/badge/status-alpha-red.svg)
-Yaml Front matter for CSV [CSVY](http://csvy.org/)            |    [#25](https://github.com/stencila/convert/issues/25)                                                              | [#26](https://github.com/stencila/convert/issues/26)
-Tabular Data Package |                                                             |
-Sheet Script    |  [#29](https://github.com/stencila/convert/issues/29)  | [#28](https://github.com/stencila/convert/issues/28)
-Yaml Front matter for CSV [CSVY](http://csvy.org/) |  [#25](https://github.com/stencila/convert/issues/25)   |   [#26](https://github.com/stencila/convert/issues/26)
-X Markdown | |
+| Format                                             |                                                         Import                                                         |                           Export                            |
+| -------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
+| Markdown                                           | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) <br/> [#23](https://github.com/stencila/convert/issues/23) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| RMarkdown                                          |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               |                                                             |
+| Latex                                              |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| Jupyter Notebook                                   |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               |                                                             |
+| HTML                                               |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| PDF                                                |                                                           -                                                            | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| CSV                                                |                              ![alpha](https://img.shields.io/badge/status-alpha-red.svg)                               | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+| Yaml Front matter for CSV [CSVY](http://csvy.org/) |                                  [#25](https://github.com/stencila/convert/issues/25)                                  |    [#26](https://github.com/stencila/convert/issues/26)     |
+| Tabular Data Package                               |                                                                                                                        |                                                             |
+| Sheet Script                                       |                                  [#29](https://github.com/stencila/convert/issues/29)                                  |    [#28](https://github.com/stencila/convert/issues/28)     |
+| Yaml Front matter for CSV [CSVY](http://csvy.org/) |                                  [#25](https://github.com/stencila/convert/issues/25)                                  |    [#26](https://github.com/stencila/convert/issues/26)     |
+| X Markdown                                         |                                                                                                                        |                                                             |
 
 ### Develop
 
@@ -119,7 +118,7 @@ The tests are currently doing a "round trip" conversion. That is, a test case is
 
 1. Converted to a temporary file in pandoc JSON format.
 2. The temporary file in pandoc JSON format is converted into
-   a [pandoc pandoc’s intermediate representation of the document, AST)[https://pandoc.org/using-the-pandoc-api.html].
+   a [pandoc pandoc’s intermediate representation of the document, AST](https://pandoc.org/using-the-pandoc-api.html).
 3. The pandoc document is converted into an executable document.
 4. The executable document is converted into a pandoc document in JSON format
    (compare [Stencila API](https://github.com/stencila/specs)).
@@ -154,7 +153,7 @@ To make testing more succinct we have a convention of extending test case file n
 standardising the input formats to pandoc Reader / Writer options.)
 
 **Note** The above test regime tests primarily pandoc conventions for
-reading from and writing to different formats, (pandoc Reader and Writer options)[https://pandoc.org/MANUAL.html#options].
+reading from and writing to different formats, [pandoc Reader and Writer options](https://pandoc.org/MANUAL.html#options).
 
 ##### Create new test cases
 
