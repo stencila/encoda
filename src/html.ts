@@ -38,6 +38,8 @@
  *
  * - `js-beautify` for pretty generated HTML.
  *
+ * - `json5` for more human readable representation of arbitrary values.
+ *
  * @module html
  */
 
@@ -51,6 +53,7 @@ import h from 'hyperscript'
 // @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
+import JSON5 from 'json5'
 import { dump, load, VFile } from './vfile'
 
 const document = new jsdom.JSDOM().window.document
@@ -127,16 +130,18 @@ function parseNode(node: Node): stencila.Node {
     case 'img':
       return parseImage(node as HTMLImageElement)
 
-    case 's-null':
+    case 'stencila-null':
       return parseNull(node as HTMLElement)
-    case 's-boolean':
+    case 'stencila-boolean':
       return parseBoolean(node as HTMLElement)
-    case 's-number':
+    case 'stencila-number':
       return parseNumber(node as HTMLElement)
-    case 's-array':
+    case 'stencila-array':
       return parseArray(node as HTMLElement)
-    case 's-object':
+    case 'stencila-object':
       return parseObject(node as HTMLElement)
+    case 'stencila-thing':
+      return parseThing(node as HTMLElement)
 
     case '#text':
       return parseText(node as Text)
@@ -198,8 +203,9 @@ function unparseNode(node: stencila.Node): Node {
       return unparseArray(node as Array<any>)
     case 'object':
       return unparseObject(node as object)
+    default:
+      return unparseThing(node as stencila.Thing)
   }
-  throw new Error(`No HTML unparser for Stencila node type "${type}"`)
 }
 
 function parseBlockChildNodes(node: Node): stencila.BlockContent[] {
@@ -531,73 +537,87 @@ function unparseImageObject(image: stencila.ImageObject): HTMLImageElement {
 }
 
 /**
- * Parse a `<s-null>` element to a `null`.
+ * Parse a `<stencila-null>` element to a `null`.
  */
 function parseNull(elem: HTMLElement): null {
   return null
 }
 
 /**
- * Unparse a `null` to a `<s-null>` element.
+ * Unparse a `null` to a `<stencila-null>` element.
  */
 function unparseNull(value: null): HTMLElement {
-  return h('s-null', 'null')
+  return h('stencila-null', 'null')
 }
 
 /**
- * Parse a `<s-boolean>` element to a `boolean`.
+ * Parse a `<stencila-boolean>` element to a `boolean`.
  */
 function parseBoolean(elem: HTMLElement): boolean {
   return elem.innerHTML === 'true' ? true : false
 }
 
 /**
- * Unparse a `boolean` to a `<s-boolean>` element.
+ * Unparse a `boolean` to a `<stencila-boolean>` element.
  */
 function unparseBoolean(value: boolean): HTMLElement {
-  return h('s-boolean', value === true ? 'true' : 'false')
+  return h('stencila-boolean', value === true ? 'true' : 'false')
 }
 
 /**
- * Parse a `<s-number>` element to a `number`.
+ * Parse a `<stencila-number>` element to a `number`.
  */
 function parseNumber(elem: HTMLElement): number {
   return parseFloat(elem.innerHTML || '0')
 }
 
 /**
- * Unparse a `number` to a `<s-number>` element.
+ * Unparse a `number` to a `<stencila-number>` element.
  */
 function unparseNumber(value: number): HTMLElement {
-  return h('s-number', value.toString())
+  return h('stencila-number', value.toString())
 }
 
 /**
- * Parse a `<s-array>` element to a `array`.
+ * Parse a `<stencila-array>` element to a `array`.
  */
 function parseArray(elem: HTMLElement): Array<any> {
   return JSON.parse(elem.innerHTML || '[]')
 }
 
 /**
- * Unparse a `array` to a `<s-array>` element.
+ * Unparse a `array` to a `<stencila-array>` element.
  */
 function unparseArray(value: Array<any>): HTMLElement {
-  return h('s-array', JSON.stringify(value))
+  return h('stencila-array', JSON.stringify(value))
 }
 
 /**
- * Parse a `<s-object>` element to a `object`.
+ * Parse a `<stencila-object>` element to a `object`.
  */
 function parseObject(elem: HTMLElement): object {
-  return JSON.parse(elem.innerHTML || '{}')
+  return JSON5.parse(elem.innerHTML || '{}')
 }
 
 /**
- * Unparse a `object` to a `<s-object>` element.
+ * Unparse a `object` to a `<stencila-object>` element.
  */
 function unparseObject(value: object): HTMLElement {
-  return h('s-object', JSON.stringify(value))
+  return h('stencila-object', JSON5.stringify(value))
+}
+
+/**
+ * Parse a `<stencila-thing>` element to a `Thing`.
+ */
+function parseThing(elem: HTMLElement): stencila.Thing {
+  return JSON5.parse(elem.innerHTML || '{}')
+}
+
+/**
+ * Unparse a `Thing` to a `<stencila-thing>` element.
+ */
+function unparseThing(thing: stencila.Thing): HTMLElement {
+  return h('stencila-thing', JSON5.stringify(thing))
 }
 
 /**
