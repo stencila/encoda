@@ -1,6 +1,6 @@
 /**
  * These styles are primarily based on the output generated from
- * https://github.com/stencila/style This stringified stglesheet is inlined
+ * https://github.com/stencila/style This stringified stylesheet is inlined
  * into files being converted to HTML for better transportability and offline viewing
  * support.
  */
