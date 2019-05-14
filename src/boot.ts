@@ -78,6 +78,7 @@ export const chromiumPath = packaged
 export const pandocPath = path.join(home, pandoc.path())
 
 /**
- * The path the the Pandoc `--data-dir` where it gets templates etc from
+ * Equivalent to the Pandoc `--data-dir` flag.
+ * Instructs Pandoc where to templates and other assets.
  */
 export const pandocDataDir = path.join(home, 'src')

@@ -86,8 +86,8 @@ export async function write(vfile: VFile, path: string): Promise<void> {
  * The reason for not checking presence
  * here is because "if the content looks like a path then the user probably meant
  * it to be a path". That is, if a user tries to convert the string "./file.md" then,
- * if that file doesn't exist, she probably wants the Markdown converter to give me an error
- * message. She probably doesn't want the `match` function to try and find some other converter
+ * if that file doesn't exist, they probably want the Markdown converter to give me an error
+ * message. They probably don't want the `match` function to try and find some other converter
  * that acts on a plain strings.
  *
  * For all other strings, this function does check for presence, returning `true`
