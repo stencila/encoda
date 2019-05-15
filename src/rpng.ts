@@ -22,6 +22,7 @@ import punycode from 'punycode'
 import puppeteer from 'puppeteer'
 import { chromiumPath } from './boot'
 import { dump } from './index'
+import { stencilaCSS } from './templates/stencila-css-template'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
@@ -208,16 +209,23 @@ export async function unparse(
     executablePath: chromiumPath
   })
   const page = await browser.newPage()
-  // TODO Develop CSS for tables etc
-  const css = '#target {font: sans #777}'
-  // TODO This doesn't actually seem to do anything
-  await page.addStyleTag({ content: css })
+  await page.addStyleTag({ content: stencilaCSS })
+  await page.addScriptTag({
+    url:
+      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js'
+  })
   await page.setContent(
     `<div id="target" style="display: inline-block; padding: 0.1rem">${html}</div>`,
     { waitUntil: 'networkidle0' }
   )
   const elem = await page.$('#target')
   if (!elem) throw new Error('Element not found!')
+
+  // Run Highlight.js on any found code blocks
+  await page.evaluate(
+    'document.querySelectorAll("pre code").forEach(block => hljs.highlightBlock(block))'
+  )
+
   const buffer = await elem.screenshot({
     encoding: 'binary'
   })

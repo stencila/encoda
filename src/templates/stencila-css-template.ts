@@ -5,6 +5,7 @@
  * support.
  */
 export const stencilaCSS = `@import url("https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i,800,800i");
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atelier-heath-light.min.css");
 
       button,
       input,
@@ -225,7 +226,7 @@ export const stencilaCSS = `@import url("https://fonts.googleapis.com/css?family
         background-color: whitesmoke;
         color: #ff3860;
         font-size: 0.875em;
-        font-weight: normal;
+        font-weight: bold;
         padding: 0.25em 0.5em 0.25em;
       }
 
@@ -436,21 +437,6 @@ export const stencilaCSS = `@import url("https://fonts.googleapis.com/css?family
         font-size: 1.25rem;
         margin-bottom: .5em;
         border-bottom: 1px solid #b5b5b5;
-      }
-
-      h1+h2 {
-        margin-top: -1.25rem;
-      }
-
-      h1+h2 {
-        color: #4a4a4a;
-        font-size: 1.25rem;
-        font-weight: 400;
-        line-height: 1.25;
-      }
-
-      h2+h1 {
-        margin-top: -1.25rem;
       }
 
       blockquote {
