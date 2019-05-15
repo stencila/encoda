@@ -1,4 +1,5 @@
 import { parse, unparse } from '../src/html'
+import { stencilaCSS } from '../src/templates/stencila-css-template'
 import { dump, load } from '../src/vfile'
 
 test('parse', async () => {
@@ -15,6 +16,7 @@ const kitchenSink = {
 
   <head>
     <title>Our article</title>
+    <meta charset="utf-8">
     <script type="application/ld+json">
       {
         "@context": "http://stencila.github.io/schema/stencila.jsonld",
@@ -23,6 +25,9 @@ const kitchenSink = {
         "authors": []
       }
     </script>
+    <style>
+      ${stencilaCSS}
+    </style>
   </head>
 
   <body>
@@ -43,6 +48,8 @@ const kitchenSink = {
     <blockquote cite="https://example.org">A blockquote</blockquote>
     <pre><code class="language-r"># Some code
 x = c(1,2)</code></pre>
+    <pre><code class="language-js">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+const inc = (n) => n + 1</code></pre>
     <ul>
       <li>One</li>
       <li>Two</li>
@@ -82,6 +89,7 @@ x = c(1,2)</code></pre>
     title: 'Our article',
     authors: [],
     content: [
+      '',
       {
         type: 'Heading',
         depth: 1,
@@ -208,6 +216,12 @@ x = c(1,2)</code></pre>
         type: 'CodeBlock',
         language: 'r',
         value: '# Some code\nx = c(1,2)'
+      },
+      {
+        type: 'CodeBlock',
+        language: 'js',
+        value:
+          '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\nconst inc = (n) => n + 1'
       },
       {
         type: 'List',

@@ -3,8 +3,9 @@
 [![Build status](https://travis-ci.org/stencila/convert.svg?branch=master)](https://travis-ci.org/stencila/convert)
 [![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni?svg=true)](https://ci.appveyor.com/project/nokome/convert)
 [![Code coverage](https://codecov.io/gh/stencila/convert/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/convert)
-[![NPM](http://img.shields.io/npm/v/@stencila/dockter.svg?style=flat)](https://www.npmjs.com/package/stencila-convert)
-[![Contributors](https://img.shields.io/badge/contributors-6-orange.svg)](#contribute)[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/convert/)
+[![NPM](https://img.shields.io/npm/v/stencila-convert.svg?style=flat)](https://www.npmjs.com/package/stencila-convert)
+[![Contributors](https://img.shields.io/badge/contributors-6-orange.svg)](#contribute)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/convert/)
 [![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
 Stencila Converters allow you to convert between a range of formats commonly used for "executable documents" (those containing some type of source code or calculation).
@@ -123,7 +124,7 @@ To install a specific version, append `-s vX.X.X` e.g.
 curl -L https://raw.githubusercontent.com/stencila/convert/master/install.sh | bash -s v0.33.0
 ```
 
-Or, if you'd prefer to do things manually, or place Dockter elewhere, download `convert-linux-x64.tar.gz` for the [latest release](https://github.com/stencila/convert/releases/) and then,
+Or, if you'd prefer to do things manually, or place Convert elsewhere, download `convert-linux-x64.tar.gz` for the [latest release](https://github.com/stencila/convert/releases/) and then,
 
 ```bash
 tar xvf convert-linux-x64.tar.gz

@@ -54,6 +54,7 @@ import h from 'hyperscript'
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
+import { stencilaCSS } from './templates/stencila-css-template'
 import { dump, load, VFile } from './vfile'
 
 const document = new jsdom.JSDOM().window.document
@@ -244,24 +245,28 @@ function parseDocument(doc: HTMLDocument): stencila.CreativeWork {
 }
 
 /**
- * Generate a `<html>` element with supplied title, metadata and body content.
+ * Generate a `<html>` element with supplied title, metadata, body content, and
+ * optionally custom CSS to style the document with.
  */
 function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
-  body: Array<Node> = []
+  body: Array<Node> = [],
+  style: string = stencilaCSS
 ): HTMLHtmlElement {
   // prettier-ignore
   return h('html',
     h('head',
       h('title', title),
+      h('meta', {charset: 'utf-8'}),
       h('script',
         { type: 'application/ld+json' },
         JSON.stringify({
           '@context': 'http://stencila.github.io/schema/stencila.jsonld',
           ...metadata
         })
-      )
+      ),
+      h('style', {innerHTML: style})
     ),
     h('body', body)
   )
@@ -495,7 +500,7 @@ function unparseQuote(quote: stencila.Quote): HTMLQuoteElement {
  * Parse a `<code>` element to a `stencila.Code`.
  */
 function parseCode(elem: HTMLElement): stencila.Code {
-  const code: stencila.Code = { type: 'Code', value: elem.innerHTML }
+  const code: stencila.Code = { type: 'Code', value: elem.textContent || '' }
   const clas = elem.getAttribute('class')
   if (clas) {
     const match = clas.match(/^language-(\w+)$/)
@@ -511,7 +516,7 @@ function parseCode(elem: HTMLElement): stencila.Code {
  */
 function unparseCode(code: stencila.Code): HTMLElement {
   const clas = code.language ? `language-${code.language}` : undefined
-  return h('code', { class: clas }, code.value)
+  return h('code', { class: clas, innerHTML: code.value })
 }
 
 /**

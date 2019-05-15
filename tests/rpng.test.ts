@@ -50,17 +50,26 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
+  jest.setTimeout(30 * 1000) // Extending timeout due to failing test on AppVeyor
   const file = await unparse(node)
   expect(file).toBeInstanceOf(vfile)
   expect(await parse(file)).toEqual(node)
 })
 
 test('insert, has, extract', () => {
-  let image = fs.readFileSync(
-    path.join(__dirname, 'fixtures', 'rpng', 'rpng.png')
-  )
+  let image = fs.readFileSync(rpngPath)
   const keyword = 'MyTextChunkKeyword'
   const content = 'Some content'
+
+  image = insert(keyword, content, image)
+  expect(has(keyword, image)).toBe(true)
+  expect(extract(keyword, image)).toEqual(content)
+})
+
+test('encoding of extended character sets', () => {
+  let image = fs.readFileSync(rpngPath)
+  const keyword = 'MyExtendedCharChunkKeyword'
+  const content = 'An emoji: 🎉'
 
   image = insert(keyword, content, image)
   expect(has(keyword, image)).toBe(true)

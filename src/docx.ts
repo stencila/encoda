@@ -3,6 +3,8 @@
  */
 
 import stencila from '@stencila/schema'
+import path from 'path'
+import { home } from './boot'
 import * as pandoc from './pandoc'
 import { VFile } from './vfile'
 
@@ -19,9 +21,24 @@ export async function parse(file: VFile): Promise<stencila.Node> {
   )
 }
 
+/** Used to style conversion outputs targeting Microsoft Word */
+const defaultDocxTemplatePath = path.join(
+  home,
+  'src',
+  'templates',
+  'stencila-template.docx'
+)
+
 export async function unparse(
   node: stencila.Node,
-  filePath?: string
+  filePath?: string,
+  templatePath: string = defaultDocxTemplatePath
 ): Promise<VFile> {
-  return pandoc.unparse(node, filePath, pandoc.OutputFormat.docx, [], true)
+  return pandoc.unparse(
+    node,
+    filePath,
+    pandoc.OutputFormat.docx,
+    [`--reference-doc=${templatePath}`],
+    true
+  )
 }
