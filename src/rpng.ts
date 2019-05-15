@@ -18,6 +18,7 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
+import punycode from 'punycode'
 import puppeteer from 'puppeteer'
 import { chromiumPath } from './boot'
 import { dump } from './index'
@@ -48,7 +49,7 @@ export function find(
     if (chunk.name === 'tEXt') {
       const entry = pngText.decode(chunk.data)
       if (entry.keyword === keyword) {
-        return [index, entry.text]
+        return [index, punycode.decode(entry.text)]
       }
     }
     index += 1
@@ -92,7 +93,7 @@ export function insert(keyword: string, text: string, image: Buffer): Buffer {
   const chunks: Array<Chunk> = pngExtract(image)
   const [index, current] = find(keyword, chunks)
   if (current) chunks.splice(index, 1)
-  const chunk = pngText.encode(keyword, text)
+  const chunk = pngText.encode(keyword, punycode.encode(text))
   chunks.splice(-1, 0, chunk)
   return Buffer.from(pngEncode(chunks))
 }
