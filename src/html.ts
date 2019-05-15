@@ -258,6 +258,7 @@ function generateHtmlElement(
   return h('html',
     h('head',
       h('title', title),
+      h('meta', {charset: 'utf-8'}),
       h('script',
         { type: 'application/ld+json' },
         JSON.stringify({

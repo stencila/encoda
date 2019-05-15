@@ -1,6 +1,6 @@
 import { parse, unparse } from '../src/html'
-import { dump, load } from '../src/vfile'
 import { stencilaCSS } from '../src/templates/stencila-css-template'
+import { dump, load } from '../src/vfile'
 
 test('parse', async () => {
   expect(await parse(load(kitchenSink.html))).toEqual(kitchenSink.node)
@@ -16,6 +16,7 @@ const kitchenSink = {
 
   <head>
     <title>Our article</title>
+    <meta charset="utf-8">
     <script type="application/ld+json">
       {
         "@context": "http://stencila.github.io/schema/stencila.jsonld",
@@ -86,6 +87,7 @@ x = c(1,2)</code></pre>
     title: 'Our article',
     authors: [],
     content: [
+      '',
       {
         type: 'Heading',
         depth: 1,
