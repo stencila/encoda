@@ -500,7 +500,7 @@ function unparseQuote(quote: stencila.Quote): HTMLQuoteElement {
  * Parse a `<code>` element to a `stencila.Code`.
  */
 function parseCode(elem: HTMLElement): stencila.Code {
-  const code: stencila.Code = { type: 'Code', value: elem.innerHTML }
+  const code: stencila.Code = { type: 'Code', value: elem.textContent || '' }
   const clas = elem.getAttribute('class')
   if (clas) {
     const match = clas.match(/^language-(\w+)$/)
@@ -516,7 +516,7 @@ function parseCode(elem: HTMLElement): stencila.Code {
  */
 function unparseCode(code: stencila.Code): HTMLElement {
   const clas = code.language ? `language-${code.language}` : undefined
-  return h('code', { class: clas }, code.value)
+  return h('code', { class: clas, innerHTML: code.value })
 }
 
 /**

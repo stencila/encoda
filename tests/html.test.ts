@@ -48,6 +48,8 @@ const kitchenSink = {
     <blockquote cite="https://example.org">A blockquote</blockquote>
     <pre><code class="language-r"># Some code
 x = c(1,2)</code></pre>
+    <pre><code class="language-js">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+const inc = (n) => n + 1</code></pre>
     <ul>
       <li>One</li>
       <li>Two</li>
@@ -214,6 +216,12 @@ x = c(1,2)</code></pre>
         type: 'CodeBlock',
         language: 'r',
         value: '# Some code\nx = c(1,2)'
+      },
+      {
+        type: 'CodeBlock',
+        language: 'js',
+        value:
+          '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\nconst inc = (n) => n + 1'
       },
       {
         type: 'List',
