@@ -17,6 +17,8 @@ import * as MDAST from 'mdast'
 // @ts-ignore
 import compact from 'mdast-util-compact'
 // @ts-ignore
+import attrs from 'remark-attr'
+// @ts-ignore
 import frontmatter from 'remark-frontmatter'
 // @ts-ignore
 import genericExtensionsParser from 'remark-generic-extensions'
@@ -48,6 +50,8 @@ const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
  */
 const GENERIC_EXTENSIONS = [
   'quote',
+  'expr',
+  'chunk',
 
   'null',
   'true',
@@ -73,6 +77,7 @@ export async function parse(file: VFile): Promise<stencila.Node> {
     .use(parser, {
       commonmark: true
     })
+    .use(attrs, { scope: 'permissive' })
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(genericExtensionsParser, { elements: extensionHandlers })
     .parse(file)
@@ -135,10 +140,15 @@ function parseNode(node: UNIST.Node): stencila.Node {
     case 'text':
       return parseText(node as MDAST.Text)
     case 'inline-extension':
+    case 'block-extension':
       const ext = (node as unknown) as Extension
       switch (ext.name) {
         case 'quote':
           return parseQuote(ext)
+        case 'expr':
+          return parseCodeExpr(ext)
+        case 'chunk':
+          return parseCodeChunk(ext)
 
         case 'null':
           return parseNull(ext)
@@ -182,6 +192,8 @@ function unparseNode(node: stencila.Node): UNIST.Node | undefined {
       return unparseQuoteBlock(node as stencila.QuoteBlock)
     case 'CodeBlock':
       return unparseCodeBlock(node as stencila.CodeBlock)
+    case 'CodeChunk':
+      return unparseCodeChunk(node as stencila.CodeChunk)
     case 'List':
       return unparseList(node as stencila.List)
     case 'Table':
@@ -201,6 +213,8 @@ function unparseNode(node: stencila.Node): UNIST.Node | undefined {
       return unparseQuote(node as stencila.Quote)
     case 'Code':
       return unparseCode(node as stencila.Code)
+    case 'CodeExpr':
+      return unparseCodeExpr(node as stencila.CodeExpr)
     case 'ImageObject':
       return unparseImageObject(node as stencila.ImageObject)
 
@@ -406,13 +420,24 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
 }
 
 /**
- * Parse a `MDAST.Code` to a `stencila.QuoteBlock`
+ * Parse a `MDAST.Code` to a  Stencila `CodeBlock` or `CodeChunk`
  */
-function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
+function parseCodeblock(
+  code: MDAST.Code
+): stencila.CodeBlock | stencila.CodeChunk {
+  const attrs = (code.data && code.data.hProperties) as any
+  const exec = attrs && attrs.class && attrs.class.includes('exec')
+  if (exec) {
+    return {
+      type: 'CodeChunk',
+      languages: [code.lang || ''],
+      text: code.value
+    }
+  }
   return {
     type: 'CodeBlock',
-    language: block.lang,
-    value: block.value
+    language: code.lang,
+    value: code.value
   }
 }
 
@@ -676,11 +701,89 @@ function unparseQuote(quote: stencila.Quote): Extension {
 }
 
 /**
+ * Parse a `!expr` inline extension to a `CodeExpr`.
+ *
+ * Valid expressions include:
+ *
+ *   - `!expr(x * y[5])`
+ *   - `!expr(x){.r}`
+ *   - `!expr(x){lang=r}`
+ *
+ * Unfortunately `remark-generic-extensions` does not balance the parentheses
+ * so currently you need to use `\u0029` to represent them. That's why
+ * back ticks are better for code.
+ */
+function parseCodeExpr(ext: Extension): stencila.CodeExpr {
+  const expr: stencila.CodeExpr = {
+    type: 'CodeExpr',
+    text: (ext.argument || '').replace('\\u0029', ')')
+  }
+  if (ext.properties && (ext.properties.lang || ext.properties.class)) {
+    expr.languages = [ext.properties.lang || ext.properties.class]
+  }
+  return expr
+}
+
+/**
+ * Unparse a `stencila.CodeExpr` to a `!expr` inline extension
+ */
+function unparseCodeExpr(expr: stencila.CodeExpr): Extension {
+  const ext: Extension = {
+    type: 'inline-extension',
+    name: 'expr',
+    argument: expr.text
+  }
+  if (expr.languages && expr.languages[0])
+    ext.properties = { lang: expr.languages[0] }
+  return ext
+}
+
+/**
+ * Parse a `chunk` block extension to a `CodeChunk`.
+ */
+function parseCodeChunk(ext: Extension): stencila.CodeChunk {
+  const chunk: stencila.CodeChunk = {
+    type: 'CodeChunk',
+    text: (ext.content || '').replace('\\u0029', ')')
+  }
+  if (ext.argument) {
+    chunk.languages = [ext.argument]
+  }
+  return chunk
+}
+
+/**
+ * Unparse a `stencila.CodeChunk` to a `chunk` block extension
+ */
+function unparseCodeChunk(chunk: stencila.CodeChunk): Extension {
+  const ext: Extension = {
+    type: 'block-extension',
+    name: 'chunk',
+    content: chunk.text
+  }
+  if (chunk.languages && chunk.languages[0]) ext.argument = chunk.languages[0]
+  return ext
+}
+
+/**
  * Parse a `MDAST.InlineCode` to a `stencila.Code`
  */
-function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
+function parseInlineCode(
+  inlineCode: MDAST.InlineCode
+): stencila.Code | stencila.CodeExpr {
+  const attrs = (inlineCode.data && inlineCode.data.hProperties) as any
+  const lang = attrs && attrs.lang
+  const exec = attrs && attrs.class && attrs.class.includes('exec')
+  if (exec) {
+    return {
+      type: 'CodeExpr',
+      languages: [lang],
+      text: inlineCode.value
+    }
+  }
   return {
     type: 'Code',
+    language: lang,
     value: inlineCode.value
   }
 }
