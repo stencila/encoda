@@ -17,7 +17,7 @@ const schemas = globby
   .sync(path.join(built, '*.schema.json'))
   .map(file => fs.readJSONSync(file))
 
-// Read in aliases for use in mutate function
+// Read in aliases for use in coerce function
 const aliases = fs.readJSONSync(path.join(built, 'aliases.json'))
 
 /**
@@ -29,11 +29,11 @@ const aliases = fs.readJSONSync(path.join(built, 'aliases.json'))
 export function create<Key extends keyof stencila.Types>(
   type: Key,
   initial: { [key: string]: any } = {},
-  validation: 'none' | 'validate' | 'mutate' = 'validate'
+  validation: 'none' | 'validate' | 'coerce' = 'validate'
 ): stencila.Types[Key] {
   let node = { type, ...initial }
   if (validation === 'validate') return validate(node, type)
-  else if (validation === 'mutate') return mutate(node, type)
+  else if (validation === 'coerce') return coerce(node, type)
   else return node
 }
 
@@ -83,7 +83,7 @@ export function assert(node: any, types: string | string[]): boolean {
  *     that are required by the schema of the new type
  *   - down-casting the node has properties that
  *     are additional to those in the schema of the new type
- * Use `mutate` if you want to ignore such errors
+ * Use `coerce` if you want to ignore such errors
  * and force mutating the node to the type.
  *
  * @param node The node to cast
@@ -145,7 +145,7 @@ export function valid<Key extends keyof stencila.Types>(
 }
 
 // Cached JSON Schema validation/mutation functions
-// These use Ajv options that mutate nodes so we
+// These use Ajv options that coerce nodes so we
 // keep them separate from pure non-mutating validators.
 const mutators = new Ajv({
   schemas,
@@ -234,11 +234,12 @@ mutators.addKeyword('parser', {
 })
 
 /**
- * Mutate a node so it conforms to a type's schema
- * @param node The node to mutate
+ * Coerce a node so it conforms to a type's schema
+ *
+ * @param node The node to coerce
  * @param type The type to conform to
  */
-export function mutate<Key extends keyof stencila.Types>(
+export function coerce<Key extends keyof stencila.Types>(
   node: any,
   type: Key
 ): stencila.Types[Key] {
@@ -247,12 +248,12 @@ export function mutate<Key extends keyof stencila.Types>(
   )
   if (!mutator) throw new Error(`No schema for type "${type}".`)
 
-  return produce(node, (mutated: any) => {
-    if (typeof mutated === 'object') mutated.type = type
+  return produce(node, (coerced: any) => {
+    if (typeof coerced === 'object') coerced.type = type
     // Rename property aliases
-    rename(mutated)
-    // Mutate and validate
-    if (!mutator(mutated)) {
+    rename(coerced)
+    // coerce and validate
+    if (!mutator(coerced)) {
       const errors = (betterAjvErrors(mutator.schema, node, mutator.errors, {
         format: 'js'
       }) as unknown) as betterAjvErrors.IOutputError[]

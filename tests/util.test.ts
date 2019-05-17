@@ -1,9 +1,9 @@
 import {
   assert,
   cast,
+  coerce,
   create,
   is,
-  mutate,
   type,
   valid,
   validate
@@ -54,8 +54,8 @@ describe('create', () => {
     })
   })
 
-  it('will mutate initial value to conform to schema', () => {
-    expect(create('Thing', { name: 42, foo: 'invalid' }, 'mutate')).toEqual({
+  it('will coerce initial value to conform to schema', () => {
+    expect(create('Thing', { name: 42, foo: 'invalid' }, 'coerce')).toEqual({
       type: 'Thing',
       name: '42'
     })
@@ -187,13 +187,13 @@ describe('valid', () => {
   })
 })
 
-describe('mutate', () => {
+describe('coerce', () => {
   it('will add type property', () => {
-    expect(mutate({}, 'Person')).toEqual({
+    expect(coerce({}, 'Person')).toEqual({
       type: 'Person'
     })
     expect(
-      mutate(
+      coerce(
         {
           type: 'Foo',
           name: 'John'
@@ -208,7 +208,7 @@ describe('mutate', () => {
 
   it('will coerce types', () => {
     expect(
-      mutate(
+      coerce(
         {
           name: 42
         },
@@ -219,7 +219,7 @@ describe('mutate', () => {
       name: '42'
     })
     expect(
-      mutate(
+      coerce(
         {
           name: null
         },
@@ -233,7 +233,7 @@ describe('mutate', () => {
 
   it('will coerce arrays to scalars', () => {
     expect(
-      mutate(
+      coerce(
         {
           type: 'Person',
           name: [42]
@@ -248,7 +248,7 @@ describe('mutate', () => {
 
   it('will coerce scalars to arrays', () => {
     expect(
-      mutate(
+      coerce(
         {
           type: 'Person',
           givenNames: 'Jane'
@@ -262,14 +262,14 @@ describe('mutate', () => {
   })
 
   it('will add default values for missing properties', () => {
-    expect(mutate({}, 'Thing')).toEqual({
+    expect(coerce({}, 'Thing')).toEqual({
       type: 'Thing'
     })
   })
 
   it('will remove additional properties', () => {
     expect(
-      mutate(
+      coerce(
         {
           favoriteColor: 'red'
         },
@@ -281,7 +281,7 @@ describe('mutate', () => {
   })
 
   it('will correct nested nodes including adding type', () => {
-    const article = mutate(
+    const article = coerce(
       {
         authors: [
           {
@@ -303,7 +303,7 @@ describe('mutate', () => {
   })
 
   it('currently has a bug with arrays using anyOf', () => {
-    const article = mutate(
+    const article = coerce(
       {
         authors: [
           {
@@ -334,7 +334,7 @@ describe('mutate', () => {
 
   it('throws an error if unable to coerce data, or data is otherwise invalid', () => {
     expect(() =>
-      mutate(
+      coerce(
         {
           name: {}
         },
@@ -343,7 +343,7 @@ describe('mutate', () => {
     ).toThrow('name: type should be string')
 
     expect(() =>
-      mutate(
+      coerce(
         {
           url: 'foo'
         },
@@ -354,7 +354,7 @@ describe('mutate', () => {
 
   it('throws an error if invalid type', () => {
     // @ts-ignore
-    expect(() => mutate({}, 'Foo')).toThrow(/^No schema for type "Foo".$/)
+    expect(() => coerce({}, 'Foo')).toThrow(/^No schema for type "Foo".$/)
   })
 
   it('has no side effects', () => {
@@ -362,7 +362,7 @@ describe('mutate', () => {
       name: 42,
       authors: [{ type: 'Person', givenNames: 'Jane' }]
     }
-    const out = mutate(inp, 'Article')
+    const out = coerce(inp, 'Article')
 
     // The original object should be unchanged
     expect(inp.type).toBeUndefined()

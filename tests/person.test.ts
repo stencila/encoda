@@ -1,5 +1,5 @@
 import { parse } from '../src/person'
-import { create, mutate, validate } from '../src/util'
+import { coerce, create, validate } from '../src/util'
 
 describe('validate', () => {
   it('throws for invalid emails', () => {
@@ -50,10 +50,10 @@ describe('parse', () => {
   })
 })
 
-describe('mutate', () => {
+describe('coerce', () => {
   it('coerces properties', () => {
     expect(
-      mutate(
+      coerce(
         {
           givenNames: 'John Tom',
           familyNames: 'Smith',
@@ -83,7 +83,7 @@ describe('mutate', () => {
 
   it('renames and coerces property aliases', () => {
     expect(
-      mutate(
+      coerce(
         {
           firstNames: 'John Tom',
           lastName: 'Smith'
@@ -97,7 +97,7 @@ describe('mutate', () => {
     })
 
     expect(
-      mutate(
+      coerce(
         {
           givenName: 'Jane',
           surnames: 'Doe Smith'
@@ -113,7 +113,7 @@ describe('mutate', () => {
 
   it('parses strings into people', () => {
     expect(
-      mutate(
+      coerce(
         {
           authors: [
             'John Smith',
@@ -151,7 +151,7 @@ describe('mutate', () => {
 
   it('throws if string can not be parsed', () => {
     expect(() =>
-      mutate({ authors: ['John Smith', '#@&%', 'Jones, Jane'] }, 'CreativeWork')
+      coerce({ authors: ['John Smith', '#@&%', 'Jones, Jane'] }, 'CreativeWork')
     ).toThrow(
       '/authors/1: parser error when parsing using "person": Unable to parse string "#@&%" as a person'
     )
