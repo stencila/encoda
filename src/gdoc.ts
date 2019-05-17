@@ -27,6 +27,7 @@ import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
+import { validate } from './util'
 import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['application/vnd.google-apps.document']
@@ -160,7 +161,7 @@ async function parseDocument(
   // Resolve the fetched resources
   await fetcher.resolve()
 
-  return stencila.validate(
+  return validate(
     {
       type: 'Article',
       title: doc.title,
