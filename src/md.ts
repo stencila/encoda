@@ -30,6 +30,7 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
+import { coerce } from './util'
 import { load, VFile } from './vfile'
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
@@ -287,7 +288,7 @@ function parseRoot(root: MDAST.Root): stencila.Article {
 
   // TODO: remove the following which mutates any YAML
   // meta data to conform to the schema when above TODO is added
-  return stencila.mutate(article, 'Article')
+  return coerce(article, 'Article')
 }
 
 /**
