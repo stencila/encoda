@@ -58,6 +58,8 @@ const ATTR_OPTIONS = { scope: 'permissive' }
  */
 const GENERIC_EXTENSIONS = [
   'quote',
+  'expr',
+  'chunk',
 
   'null',
   'true',
@@ -84,6 +86,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
     .use(parser, {
       commonmark: true
     })
+    .use(attrs, { scope: 'permissive' })
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(attrs, ATTR_OPTIONS)
     .use(genericExtensions, { elements: extensionHandlers })
@@ -150,6 +153,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
     case 'text':
       return decodeText(node as MDAST.Text)
     case 'inline-extension':
+    case 'block-extension':
       const ext = (node as unknown) as Extension
       switch (ext.name) {
         case 'quote':
@@ -723,6 +727,7 @@ function encodeQuote(quote: stencila.Quote): Extension {
 function decodeInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
   const code: stencila.Code = {
     type: 'Code',
+    language: lang,
     value: inlineCode.value
   }
   const attrs =

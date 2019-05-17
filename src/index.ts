@@ -1,4 +1,4 @@
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
@@ -19,6 +19,7 @@ import * as rpng from './rpng'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
 import * as xlsx from './xlsx'
+import * as rmd from './xmd'
 import * as yaml from './yaml'
 
 export { default as process } from './process'
@@ -45,6 +46,7 @@ export const codecList: Array<Codec> = [
   jats,
   latex,
   md,
+  rmd,
   odt,
   pdf,
 
@@ -154,7 +156,10 @@ export async function match(content?: string, format?: string): Promise<Codec> {
   // If the content is a path then begin with derived values
   if (content && vfile.isPath(content)) {
     fileName = path.basename(content)
-    extName = path.extname(content).slice(1)
+    extName = path
+      .extname(content)
+      .slice(1)
+      .toLowerCase()
     mediaType = mime.getType(content) || undefined
   }
   // But override with supplied format (if any) assuming that
