@@ -126,7 +126,7 @@ describe('read', () => {
 
   if (!process.env.CI)
     it('works with stdin', async () => {
-      const promise = read('--', 'json')
+      const promise = read('-', 'json')
 
       process.stdin.push(simpleThingJson)
       await delay(10)
@@ -145,7 +145,7 @@ describe('write', () => {
 
   it('works with stdout', async () => {
     const consoleLog = jest.spyOn(console, 'log')
-    await write(simpleThing, '--', 'json')
+    await write(simpleThing, '-', 'json')
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
   })
 })
@@ -174,7 +174,7 @@ describe('convert', () => {
     // file as above test for read() from stdin. So just testing stdout.
     const inp = simpleThingJson
     const consoleLog = jest.spyOn(console, 'log')
-    const result = await convert(inp, '--', { from: 'json', to: 'json' })
+    const result = await convert(inp, '-', { from: 'json', to: 'json' })
 
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
     expect(result).toEqual(simpleThingJson)

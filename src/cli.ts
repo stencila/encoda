@@ -17,12 +17,12 @@ yargs
         .positional('in', {
           describe: 'The input file path. Defaults to standard input.',
           type: 'string',
-          default: '--'
+          default: '-'
         })
         .positional('out', {
           describe: 'The output file path. Defaults to standard output.',
           type: 'string',
-          default: '--'
+          default: '-'
         })
         .option('from', {
           describe: 'The format to convert the input from.',

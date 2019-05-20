@@ -264,7 +264,7 @@ export async function dump(
  * Read a file to a `stencila.Node`.
  *
  * @param content The raw content or file path to read.
- *                Use `--` to read from standard input.
+ *                Use `-` to read from standard input.
  * @param format The format to read the file as.
  *               If undefined then determined from content or file path.
  */
@@ -281,7 +281,7 @@ export async function read(
  *
  * @param node The node to write.
  * @param filePath The file system path to write to.
- *                 Use `--` write to standard output.
+ *                 Use `-` write to standard output.
  * @param format The format to write the node as.
  */
 export async function write(

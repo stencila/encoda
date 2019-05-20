@@ -64,9 +64,9 @@ export async function unparse(
 
   const json = JSON.stringify(pdoc)
   const args = [`--from=json`, `--to=${to}`].concat(options)
-  if ((filePath && filePath !== '--') || ensureFile) {
+  if ((filePath && filePath !== '-') || ensureFile) {
     let output
-    if (!filePath || filePath === '--') {
+    if (!filePath || filePath === '-') {
       // Create a new file path, which is returned as `vfile.path`
       output = stencila.type(node).toLowerCase() + '.' + to
       filePath = output

@@ -39,12 +39,12 @@ export function dump(vfile: VFile): string {
 /**
  * Read a file path into a virtual file
  *
- * @param path The content, or file system path to read from. If `--`, read from stdin.
+ * @param path The content, or file system path to read from. If `-`, read from stdin.
  */
 export async function read(content: string): Promise<VFile> {
   if (!content) throw new Error('Argument `path` is required')
 
-  if (content === '--') {
+  if (content === '-') {
     return load(await getStdin())
   } else if (isPath(content)) {
     return toVFile.read(content)
@@ -60,12 +60,12 @@ export async function read(content: string): Promise<VFile> {
  * `vfile` has `contents`.
  *
  * @param vfile Virtual file to write
- * @param path The file system path to write to, or `--` to write to stdout.
+ * @param path The file system path to write to, or `-` to write to stdout.
  */
 export async function write(vfile: VFile, path: string): Promise<void> {
   if (!path) throw new Error('Argument `path` is required')
 
-  if (path === '--') {
+  if (path === '-') {
     console.log(dump(vfile))
   } else if (path && vfile.contents) {
     vfile.path = path
