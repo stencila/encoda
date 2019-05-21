@@ -19,8 +19,8 @@
     "build:dist": "tsc && cp src/*.js dist/",
     "build:tgz": "tar czf convert-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
     "build:bin": "pkg --target=host -o=bin/stencila-convert .",
-    "bundle:linux": "tar -czvf bin/convert-linux-x64.tar.gz bin/stencila-convert",
-    "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz bin/stencila-convert",
+    "bundle:linux": "tar -czvf bin/convert-linux-x64.tar.gz -C bin stencila-convert",
+    "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz -C bin stencila-convert",
     "bundle:windows": "./bundle-win.sh",
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"

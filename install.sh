@@ -12,7 +12,7 @@ if [[ "$OS" == "Linux" || "$OS" == "Darwin" ]]; then
             else
                 VERSION=$1
             fi
-            INSTALL_PATH="$HOME/.local/bin/"
+            INSTALL_PATH="$HOME/.local/bin"
             ;;
         'Darwin')
             PLATFORM="macos-x64"
@@ -21,14 +21,23 @@ if [[ "$OS" == "Linux" || "$OS" == "Darwin" ]]; then
             else
                 VERSION=$1
             fi
-            INSTALL_PATH="/usr/local/bin/"
+            INSTALL_PATH="/usr/local/bin"
             ;;
     esac
+    
+    echo "Downloading stencila-convert $VERSION"
     curl -Lo /tmp/convert.tar.gz https://github.com/stencila/convert/releases/download/$VERSION/convert-$PLATFORM.tar.gz
     tar xvf /tmp/convert.tar.gz
-    mkdir -p $INSTALL_PATH
-    mv -f stencila-convert $INSTALL_PATH
     rm -f /tmp/convert.tar.gz
+    
+    echo "Installing stencila-convert to $INSTALL_PATH/stencila-convert-$VERSION"
+    mkdir -p $INSTALL_PATH/stencila-convert-$VERSION
+    mv -f stencila-convert $INSTALL_PATH/stencila-convert-$VERSION
+    # Unpack `node_modules` etc into the $INSTALL_PATH/convert-$VERSION
+    $INSTALL_PATH/stencila-convert-$VERSION/stencila-convert --version
+    
+    echo "Pointing stencila-convert to $INSTALL_PATH/convert-$VERSION/convert"
+    ln -sf stencila-convert-$VERSION/stencila-convert $INSTALL_PATH/stencila-convert
 else
     echo "Sorry, I don't know how to install on this OS, please see https://github.com/stencila/convert#install"
 fi

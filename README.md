@@ -107,7 +107,7 @@ Or, if you'd prefer to do things manually, download `convert-macos-x64.tar.gz` f
 
 ```bash
 tar xvf convert-macos-x64.tar.gz
-sudo mv -f convert /usr/local/bin # or wherever you like
+sudo mv -f stencila-convert /usr/local/bin # or wherever you like
 ```
 
 #### Linux
@@ -128,7 +128,7 @@ Or, if you'd prefer to do things manually, or place Convert elsewhere, download 
 
 ```bash
 tar xvf convert-linux-x64.tar.gz
-mv -f convert ~/.local/bin/ # or wherever you like
+mv -f stencila-convert ~/.local/bin/ # or wherever you like
 ```
 
 ### Package
