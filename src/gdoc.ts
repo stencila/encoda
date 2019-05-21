@@ -494,15 +494,7 @@ function parseInlineObjectElement(
   if (!embeddedObject) throw new Error('Malformed GDoc data')
 
   if (embeddedObject.imageProperties) {
-    const { title, description } = embeddedObject
-    const { contentUri } = embeddedObject.imageProperties
-    return {
-      type: 'ImageObject',
-      // The `contentUri` is emphemeral so fetch it before it disappears ~30mins
-      contentUrl: parsingFetcher(contentUri || ''),
-      caption: title,
-      description: description
-    }
+    return parseImage(embeddedObject, embeddedObject.imageProperties)
   } else {
     throw new Error(`Unhandled embedded object type ${embeddedObject}`)
   }
@@ -636,10 +628,31 @@ function unparseLink(link: stencila.Link): GDoc.Schema$ParagraphElement {
 }
 
 /**
- * Unparse a `stencila.ImageObject` node to a GDoc `TextRun` node with `textStyle.link`.
+ * Parse a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `ImageObject`.
+ *
+ * Because the `imageProperties.contentUri` is ephemeral (lasts about ~30mins) this
+ * function fetches the URL before it disappears.
+ */
+function parseImage(
+  embeddedObject: GDoc.Schema$EmbeddedObject,
+  imageProperties: GDoc.Schema$ImageProperties
+): stencila.ImageObject {
+  const { title, description } = embeddedObject
+  const contentUrl = parsingFetcher(imageProperties.contentUri || '')
+  return {
+    type: 'ImageObject',
+    contentUrl,
+    title,
+    text: description
+  }
+}
+
+/**
+ * Unparse a Stencila `ImageObject` node to a GDoc `ParagraphElement` linked to
+ * an image item in `inlineObjects`.
  */
 function unparseImageObject(
-  image: stencila.ImageObject
+  imageObject: stencila.ImageObject
 ): GDoc.Schema$ParagraphElement {
   const inlineObjects = unparsingGDoc.inlineObjects!
   const inlineObjectId = `kix.inlineobj${Object.keys(inlineObjects).length}`
@@ -647,10 +660,10 @@ function unparseImageObject(
     inlineObjectProperties: {
       embeddedObject: {
         imageProperties: {
-          contentUri: image.contentUrl
+          contentUri: imageObject.contentUrl
         },
-        title: image.caption,
-        description: image.description
+        title: imageObject.title,
+        description: imageObject.text
       }
     }
   }

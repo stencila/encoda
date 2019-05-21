@@ -557,6 +557,9 @@ function parseInlines(nodes: Pandoc.Inline[]): stencila.InlineContent[] {
   return inlines.map(parseInline)
 }
 
+/**
+ * Unparse an array of Stencila `InlineContent` nodes to Pandoc `Inline` nodes.
+ */
 function unparseInlines(nodes: stencila.InlineContent[]): Pandoc.Inline[] {
   return nodes.map(unparseInline)
 }
@@ -602,7 +605,7 @@ function unparseInline(node: stencila.Node): Pandoc.Inline {
   const type = stencila.type(node)
   switch (type) {
     case 'string':
-      return unparseStr(node as string)
+      return unparseString(node as string)
     case 'Emphasis':
       return unparseEmph(node as stencila.Emphasis)
     case 'Strong':
@@ -622,6 +625,57 @@ function unparseInline(node: stencila.Node): Pandoc.Inline {
 }
 
 /**
+ * Parse a Pandoc `Inline` node to a `string`.
+ *
+ * For some nodes the Stencila schema requires a `string` whereas
+ * the Pandoc AST provides us with an array of inline nodes. An
+ * example is the `alt` text for an image. This function is thus
+ * intentionally lossy because it will ignore the fact that the
+ * text is, for example, emphasized and just return it's string content.
+ *
+ * For a Pandoc `Note` (e.g. a footnote), the content of the note
+ * is ignored. Pandoc `SoftBreak` and `LineBreak` nodes are also
+ * parsed to an empty string. For all other nodes, the string
+ * content of the node should be returned.
+ */
+function parseInlineToString(node: Pandoc.Inline): string {
+  switch (node.t) {
+    case 'SoftBreak':
+    case 'LineBreak':
+    case 'Note':
+      return ''
+    case 'Space':
+      return ' '
+    case 'Str':
+      return node.c
+    case 'Code':
+    case 'Math':
+    case 'RawInline':
+      return node.c[1]
+    case 'Emph':
+    case 'Strong':
+    case 'Strikeout':
+    case 'Superscript':
+    case 'Subscript':
+    case 'SmallCaps':
+      return parseInlinesToString(node.c)
+    case 'Quoted':
+    case 'Cite':
+    case 'Link':
+    case 'Image':
+    case 'Span':
+      return parseInlinesToString(node.c[1])
+  }
+}
+
+/**
+ * Parse an array of Pandoc `Inline` nodes to a `string`.
+ */
+function parseInlinesToString(nodes: Pandoc.Inline[]): string {
+  return nodes.map(parseInlineToString).join('')
+}
+
+/**
  * Parse a Pandoc `Space` to a `string`.
  */
 function parseSpace(node: Pandoc.Space): string {
@@ -638,7 +692,7 @@ function parseStr(node: Pandoc.Str): string {
 /**
  * Unparse a `string` to a Pandoc `Str`.
  */
-function unparseStr(node: string): Pandoc.Str {
+function unparseString(node: string): Pandoc.Str {
   return {
     t: 'Str',
     c: node
@@ -779,30 +833,29 @@ function unparseLink(node: stencila.Link): Pandoc.Link {
 }
 
 /**
- * Parse a Pandoc `Emph` to a Stencila `Emphasis`.
+ * Parse a Pandoc `Image` to a Stencila `ImageObject`.
  *
  * Note: attributes are ignored.
  */
-function parseImage(node: Pandoc.Image): stencila.ImageObject {
-  const alt = parseInlines(node.c[1])
-  const [url, title] = node.c[2]
+function parseImage(image: Pandoc.Image): stencila.ImageObject {
+  const alt = parseInlinesToString(image.c[1])
+  const [url, title] = image.c[2]
   return {
     type: 'ImageObject',
-    // TODO: do we need a specific alt text property in stencila.ImageObject?
-    content: alt,
     contentUrl: url,
-    caption: title
+    title: title,
+    text: alt
   }
 }
 
 /**
- * Unparse a Stencila `Emphasis` to a Pandoc `Emph`.
+ * Unparse a Stencila `ImageObject` to a Pandoc `Image`.
  */
-function unparseImageObject(node: stencila.ImageObject): Pandoc.Image {
-  const [url, title] = [node.contentUrl || '', node.caption || '']
-  const alt = node.content
-    ? unparseInlines(node.content as stencila.InlineContent[])
-    : []
+function unparseImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
+  const url = imageObject.contentUrl || ''
+  const title = imageObject.title || ''
+  const alt: Pandoc.Inline[] = []
+  if (imageObject.text) alt.push(unparseString(imageObject.text))
   return {
     t: 'Image',
     c: [emptyAttrs, alt, [url, title]]

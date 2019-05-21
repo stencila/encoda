@@ -38,7 +38,8 @@ const kitchenSink = {
     <p>A paragraph with <a href="https://example.org">a <em>rich</em> link</a>.</p>
     <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
     <p>A paragraph with <code class="language-python"># code</code>.</p>
-    <p>A paragraph with an image <img alt="caption" src="https://example.org/image.png">.</p>
+    <p>A paragraph with an image <img src="https://example.org/image.png" title="title"
+        alt="alt text">.</p>
     <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
       </stencila-boolean>.</p>
     <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
@@ -176,7 +177,8 @@ const inc = (n) => n + 1</code></pre>
           {
             type: 'ImageObject',
             contentUrl: 'https://example.org/image.png',
-            caption: 'caption'
+            title: 'title',
+            text: 'alt text'
           },
           '.'
         ]

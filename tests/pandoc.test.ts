@@ -18,6 +18,7 @@ test('parse', async () => {
   const p = async (pdoc: any) => await parse(load(JSON.stringify(pdoc)))
   expect(await p(kitchenSink.pdoc)).toEqual(kitchenSink.node)
   expect(await p(collapseSpaces.pdoc)).toEqual(collapseSpaces.node)
+  expect(await p(imageInlinesToString.pdoc)).toEqual(imageInlinesToString.node)
 })
 
 test('unparse', async () => {
@@ -168,7 +169,14 @@ const kitchenSink: testCase = {
           str(' and '),
           { t: 'Link', c: [emptyAttrs, [], ['url', 'title']] },
           str(' and '),
-          { t: 'Image', c: [emptyAttrs, [], ['url', 'title']] },
+          {
+            t: 'Image',
+            c: [
+              emptyAttrs,
+              [str('alt text')],
+              ['http://example.org/image.png', 'title']
+            ]
+          },
           str('.')
         ]
       },
@@ -277,9 +285,9 @@ const kitchenSink: testCase = {
           ' and ',
           {
             type: 'ImageObject',
-            caption: 'title',
-            content: [],
-            contentUrl: 'url'
+            contentUrl: 'http://example.org/image.png',
+            title: 'title',
+            text: 'alt text'
           },
           '.'
         ]
@@ -412,6 +420,67 @@ const collapseSpaces: testCase = {
           { type: 'Strong', content: ['Strong then space'] },
           ' ',
           '.'
+        ]
+      }
+    ]
+  }
+}
+
+// Test that where necessary Pandoc inline nodes are parsed to strings
+const imageInlinesToString: testCase = {
+  pdoc: {
+    'pandoc-api-version': Pandoc.Version,
+    meta: {},
+    blocks: [
+      {
+        t: 'Para',
+        c: [
+          {
+            t: 'Image',
+            c: [
+              emptyAttrs,
+              [
+                {
+                  t: 'Emph',
+                  c: [str('emphasis')]
+                },
+                {
+                  t: 'Space',
+                  c: undefined
+                },
+                {
+                  t: 'Strong',
+                  c: [str('strong')]
+                },
+                {
+                  t: 'Space',
+                  c: undefined
+                },
+                {
+                  t: 'Quoted',
+                  c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quoted')]]
+                }
+              ],
+              ['http://example.org/image.png', 'title']
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  node: {
+    type: 'Article',
+    authors: [],
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          {
+            type: 'ImageObject',
+            contentUrl: 'http://example.org/image.png',
+            title: 'title',
+            text: 'emphasis strong quoted'
+          }
         ]
       }
     ]
