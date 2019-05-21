@@ -520,24 +520,26 @@ function unparseCode(code: stencila.Code): HTMLElement {
 }
 
 /**
- * Parse a `<img>` element to a `stencila.ImageObject`.
+ * Parse a HTML `<img>` element to a Stencila `ImageObject`.
  */
 function parseImage(elem: HTMLImageElement): stencila.ImageObject {
   const image: stencila.ImageObject = {
     type: 'ImageObject',
     contentUrl: elem.src
   }
-  if (elem.alt) image.caption = elem.alt
+  if (elem.title) image.title = elem.title
+  if (elem.alt) image.text = elem.alt
   return image
 }
 
 /**
- * Unparse a `stencila.ImageObject` to a `<img>` element.
+ * Unparse a Stencila `ImageObject` to a HTML `<img>` element.
  */
 function unparseImageObject(image: stencila.ImageObject): HTMLImageElement {
   return h('img', {
-    alt: image.caption,
-    src: image.contentUrl
+    src: image.contentUrl,
+    title: image.title,
+    alt: image.text
   })
 }
 

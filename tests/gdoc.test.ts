@@ -300,8 +300,8 @@ const kitchenSink = {
           {
             type: 'ImageObject',
             contentUrl: 'https://lh3.googleusercontent.com/just-an-example',
-            caption: 'The title',
-            description: 'The description'
+            title: 'The title',
+            text: 'The description'
           }
         ]
       },

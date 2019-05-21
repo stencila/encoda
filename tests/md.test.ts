@@ -52,7 +52,7 @@ A paragraph with [a _rich_ link](https://example.org).
 
 A paragraph with !quote[quote](https://example.org).
 
-A paragraph with an image ![caption](https://example.org/image.png).
+A paragraph with an image ![alt text](https://example.org/image.png "title").
 
 A paragraph with !true and !false boolean values.
 
@@ -178,7 +178,8 @@ x = {}
           {
             type: 'ImageObject',
             contentUrl: 'https://example.org/image.png',
-            caption: 'caption'
+            title: 'title',
+            text: 'alt text'
           },
           '.'
         ]

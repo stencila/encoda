@@ -700,22 +700,26 @@ function unparseCode(code: stencila.Code): MDAST.InlineCode {
  * Parse a `MDAST.Image` to a `stencila.ImageObject`
  */
 function parseImage(image: MDAST.Image): stencila.ImageObject {
-  return {
+  const imageObject: stencila.ImageObject = {
     type: 'ImageObject',
-    contentUrl: image.url,
-    caption: image.alt
+    contentUrl: image.url
   }
+  if (image.title) imageObject.title = image.title
+  if (image.alt) imageObject.text = image.alt
+  return imageObject
 }
 
 /**
  * Unparse a `stencila.ImageObject` to a `MDAST.Image`
  */
-function unparseImageObject(image: stencila.ImageObject): MDAST.Image {
-  return {
+function unparseImageObject(imageObject: stencila.ImageObject): MDAST.Image {
+  const image: MDAST.Image = {
     type: 'image',
-    url: image.contentUrl || '',
-    alt: image.caption || ''
+    url: imageObject.contentUrl || ''
   }
+  if (imageObject.title) image.title = imageObject.title
+  if (imageObject.text) image.alt = imageObject.text
+  return image
 }
 
 /**
