@@ -13,6 +13,7 @@
 
 import * as stencila from '@stencila/schema'
 import * as yaml from 'js-yaml'
+import JSON5 from 'json5'
 import * as MDAST from 'mdast'
 // @ts-ignore
 import compact from 'mdast-util-compact'
@@ -818,7 +819,7 @@ function unparseNumber(value: number): Extension {
  */
 function parseArray(ext: Extension): Array<any> {
   const items = ext.argument || ext.content || ''
-  const array = JSON.parse(`[${items}]`)
+  const array = JSON5.parse(`[${items}]`)
   return array
 }
 
@@ -826,7 +827,7 @@ function parseArray(ext: Extension): Array<any> {
  * Unparse an `array` to a `!array` inline extension
  */
 function unparseArray(value: Array<any>): Extension {
-  const argument = JSON.stringify(value).slice(1, -1)
+  const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'array', argument }
 }
 
@@ -852,14 +853,14 @@ function parseObject(ext: Extension): object {
     }
     if (Object.keys(props).length > 0) return props
   }
-  return JSON.parse(`{${ext.argument || ext.content}}`)
+  return JSON5.parse(`{${ext.argument || ext.content}}`)
 }
 
 /**
  * Unparse an `object` to a `!object` inline extension
  */
 function unparseObject(value: object): Extension {
-  const argument = JSON.stringify(value).slice(1, -1)
+  const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'object', argument }
 }
 

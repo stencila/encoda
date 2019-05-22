@@ -56,7 +56,7 @@ A paragraph with an image ![alt text](https://example.org/image.png "title").
 
 A paragraph with !true and !false boolean values.
 
-A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object("a":"1","b":"two").
+A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object(a:'1',b:'two').
 
 > A block quote
 
