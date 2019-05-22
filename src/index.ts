@@ -7,6 +7,7 @@ import * as gdoc from './gdoc'
 import * as html from './html'
 import * as jats from './jats'
 import * as json from './json'
+import * as json5 from './json5'
 import * as latex from './latex'
 import * as md from './md'
 import * as ods from './ods'
@@ -48,6 +49,7 @@ export const compilerList: Array<Compiler> = [
   html,
   yaml,
   pandoc,
+  json5,
   json
 ]
 

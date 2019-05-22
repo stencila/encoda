@@ -589,14 +589,14 @@ function unparseNumber(value: number): HTMLElement {
  * Parse a `<stencila-array>` element to a `array`.
  */
 function parseArray(elem: HTMLElement): Array<any> {
-  return JSON.parse(elem.innerHTML || '[]')
+  return JSON5.parse(elem.innerHTML || '[]')
 }
 
 /**
  * Unparse a `array` to a `<stencila-array>` element.
  */
 function unparseArray(value: Array<any>): HTMLElement {
-  return h('stencila-array', JSON.stringify(value))
+  return h('stencila-array', JSON5.stringify(value))
 }
 
 /**
