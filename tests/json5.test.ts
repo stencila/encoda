@@ -1,6 +1,6 @@
-import * as yaml from '../src/yaml'
+import * as json5 from '../src/json5'
 import articleSimple from './fixtures/article-simple'
 
 test('invertible', async () => {
-  await expect(yaml).toInvert(articleSimple)
+  await expect(json5).toInvert(articleSimple)
 })
