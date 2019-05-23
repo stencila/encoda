@@ -237,19 +237,21 @@ mutators.addKeyword('parser', {
  * Coerce a node so it conforms to a type's schema
  *
  * @param node The node to coerce
- * @param type The type to conform to
+ * @param typeName The type to coerce it to
  */
 export function coerce<Key extends keyof stencila.Types>(
   node: any,
-  type: Key
+  typeName?: Key
 ): stencila.Types[Key] {
+  if (!typeName) typeName = type(node) as Key
+
   const mutator = mutators.getSchema(
-    `https://stencila.github.com/schema/${type}.schema.json`
+    `https://stencila.github.com/schema/${typeName}.schema.json`
   )
-  if (!mutator) throw new Error(`No schema for type "${type}".`)
+  if (!mutator) throw new Error(`No schema for type "${typeName}".`)
 
   return produce(node, (coerced: any) => {
-    if (typeof coerced === 'object') coerced.type = type
+    if (typeof coerced === 'object') coerced.type = typeName
     // Rename property aliases
     rename(coerced)
     // coerce and validate
