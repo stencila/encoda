@@ -49,6 +49,7 @@
 
 import * as stencila from '@stencila/schema'
 import collapse from 'collapse-whitespace'
+import escape from 'escape-html'
 import h from 'hyperscript'
 // @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
@@ -72,7 +73,9 @@ export async function parse(file: VFile): Promise<stencila.Node> {
   const dom = new jsdom.JSDOM(html)
   const document = dom.window.document
   collapse(document)
-  return parseNode(document)
+  const node = parseNode(document)
+  if (!node) throw new Error(`Unable to parse HTML`)
+  return node
 }
 
 /**
@@ -92,7 +95,7 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   return load(beautifulHtml)
 }
 
-function parseNode(node: Node): stencila.Node {
+function parseNode(node: Node): stencila.Node | undefined {
   const name = node.nodeName.toLowerCase()
   switch (name) {
     case '#document':
@@ -143,6 +146,9 @@ function parseNode(node: Node): stencila.Node {
       return parseObject(node as HTMLElement)
     case 'stencila-thing':
       return parseThing(node as HTMLElement)
+
+    case 'script':
+      return undefined
 
     case '#text':
       return parseText(node as Text)
@@ -210,15 +216,15 @@ function unparseNode(node: stencila.Node): Node {
 }
 
 function parseBlockChildNodes(node: Node): stencila.BlockContent[] {
-  return Array.from(node.childNodes).map(
-    child => parseNode(child) as stencila.BlockContent
-  )
+  return Array.from(node.childNodes)
+    .map(child => parseNode(child) as stencila.BlockContent)
+    .filter(node => typeof node !== 'undefined')
 }
 
 function parseInlineChildNodes(node: Node): stencila.InlineContent[] {
-  return Array.from(node.childNodes).map(
-    child => parseNode(child) as stencila.InlineContent
-  )
+  return Array.from(node.childNodes)
+    .map(child => parseNode(child) as stencila.InlineContent)
+    .filter(node => typeof node !== 'undefined')
 }
 
 /**
@@ -254,6 +260,7 @@ function generateHtmlElement(
   body: Array<Node> = [],
   style: string = stencilaCSS
 ): HTMLHtmlElement {
+  const PRISM_BASE = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/'
   // prettier-ignore
   return h('html',
     h('head',
@@ -266,9 +273,33 @@ function generateHtmlElement(
           ...metadata
         })
       ),
+      // Style elements for Prism CSS
+      [
+        'themes/prism-okaidia.min.css',
+        'plugins/line-highlight/prism-line-highlight.min.css'
+      ].map(
+        file => h('link', { rel: 'stylesheet', href: `${PRISM_BASE}${file}`})
+      ),
       h('style', {innerHTML: style})
     ),
-    h('body', body)
+    h('body', body),
+
+    // Script elements for Prism code highlighting, language support and plugins
+    // The following list has been created on an as needed bases
+    // TODO: Add languages dynamically based on the what is required by code in the document
+    [
+      'prism.min.js',
+      'plugins/line-highlight/prism-line-highlight.min.js',
+      'components/prism-json.min.js',
+      'components/prism-json5.min.js',
+      'components/prism-latex.min.js',
+      'components/prism-markdown.min.js',
+      'components/prism-python.min.js',
+      'components/prism-r.min.js',
+      'components/prism-yaml.min.js',
+    ].map(
+      file => h('script', { src: `${PRISM_BASE}${file}` })
+    )
   )
 }
 
@@ -343,6 +374,7 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
 function parseCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
+  // TODO: handle `data-` attributes and put them into `meta`
   const { language, value } = parseCode(code)
   return {
     type: 'CodeBlock',
@@ -353,10 +385,20 @@ function parseCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
 
 /**
  * Unparse a `stencila.CodeBlock` to a `<pre><code class="language-xxx">` element.
+ *
+ * If the `CodeBlock` has a `meta` property, any keys are added as attributes to
+ * the `<pre>` element with a `data-` prefix.
  */
 function unparseCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
+  const attrs: { [key: string]: string } = {}
+  if (block.meta) {
+    const meta = block.meta as { [key: string]: string }
+    for (const [key, value] of Object.entries(meta)) {
+      attrs['data-' + key] = value
+    }
+  }
   const code = unparseCode(block)
-  return h('pre', code)
+  return h('pre', attrs, code)
 }
 
 /**
@@ -370,7 +412,7 @@ function parseList(list: HTMLUListElement | HTMLOListElement): stencila.List {
     items: Array.from(list.childNodes).map(
       // TODO: Currently assumes only one element per <li>
       (li: Node): stencila.Node =>
-        li.firstChild ? parseNode(li.firstChild) : null
+        li.firstChild ? parseNode(li.firstChild) || null : null
     )
   }
 }
@@ -516,7 +558,7 @@ function parseCode(elem: HTMLElement): stencila.Code {
  */
 function unparseCode(code: stencila.Code): HTMLElement {
   const clas = code.language ? `language-${code.language}` : undefined
-  return h('code', { class: clas, innerHTML: code.value })
+  return h('code', { class: clas, innerHTML: escape(code.value) })
 }
 
 /**
