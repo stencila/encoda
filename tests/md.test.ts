@@ -60,7 +60,7 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object(a:'1',
 
 > A block quote
 
-\`\`\`python
+\`\`\`python meta1 meta2=foo meta3="bar baz" meta4=qux
 # A code block
 x = {}
 \`\`\`
@@ -214,6 +214,12 @@ x = {}
       {
         type: 'CodeBlock',
         language: 'python',
+        meta: {
+          meta1: '',
+          meta2: 'foo',
+          meta3: 'bar baz',
+          meta4: 'qux'
+        },
         value: '# A code block\nx = {}'
       },
       {

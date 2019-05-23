@@ -18,6 +18,8 @@ import * as MDAST from 'mdast'
 // @ts-ignore
 import compact from 'mdast-util-compact'
 // @ts-ignore
+import attrs from 'remark-attr'
+// @ts-ignore
 import frontmatter from 'remark-frontmatter'
 // @ts-ignore
 import genericExtensionsParser from 'remark-generic-extensions'
@@ -37,11 +39,16 @@ import { load, VFile } from './vfile'
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
 /**
- * Options for `remark-frontmatter` parser and stringifier
+ * Options for `remark-frontmatter` plugin
  *
  * @see https://github.com/remarkjs/remark-frontmatter#matter
  */
 const FRONTMATTER_OPTIONS = [{ type: 'yaml', marker: '-' }]
+
+/**
+ * Options for `remark-attr` plugin
+ */
+const ATTR_OPTIONS = { scope: 'permissive' }
 
 /**
  * Registered generic extensions.
@@ -76,6 +83,7 @@ export async function parse(file: VFile): Promise<stencila.Node> {
       commonmark: true
     })
     .use(frontmatter, FRONTMATTER_OPTIONS)
+    .use(attrs, ATTR_OPTIONS)
     .use(genericExtensionsParser, { elements: extensionHandlers })
     .parse(file)
   compact(mdast, true)
@@ -408,13 +416,29 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
 }
 
 /**
- * Parse a `MDAST.Code` to a `stencila.QuoteBlock`
+ * Parse a `MDAST.Code` to a `stencila.CodeBlock`
+ *
+ * The ["info string"](https://spec.commonmark.org/0.29/#info-string)
+ * is parsed to the `meta` dictionary on the `CodeBlock`. For example,
+ * the code block starting with,
+ *
+ * ~~~markdown
+ * ```python python meta1 meta2=foo meta3="bar baz"
+ * ~~~
+ *
+ * is parsed to a `CodeBlock` with `language` `"python"` and `meta`
+ * `{meta1:"", meta2:"foo", meta3:"bar baz" }`
  */
 function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
+  // The `remark-attrs` plugin parses the "infoString" to `data.hProperties`
+  const meta = (block.data && block.data.hProperties) as {
+    [key: string]: string
+  }
   return {
     type: 'CodeBlock',
     language: block.lang,
-    value: block.value
+    value: block.value,
+    meta
   }
 }
 
@@ -422,9 +446,24 @@ function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
  * Unparse a `stencila.CodeBlock` to a `MDAST.Code`
  */
 function unparseCodeBlock(block: stencila.CodeBlock): MDAST.Code {
+  let meta = ''
+  if (block.meta) {
+    meta = Object.entries(block.meta as { [key: string]: string })
+      .map(([key, value]) => {
+        let repr = key
+        if (value) {
+          repr += '='
+          if (/\s/.test(value)) repr += '"' + value + '"'
+          else repr += value
+        }
+        return repr
+      })
+      .join(' ')
+  }
   return {
     type: 'code',
     lang: block.language,
+    meta,
     value: block.value
   }
 }
