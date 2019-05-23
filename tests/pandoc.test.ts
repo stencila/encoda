@@ -16,14 +16,19 @@ jest.setTimeout(30 * 1000)
 
 test('parse', async () => {
   const p = async (pdoc: any) => await parse(load(JSON.stringify(pdoc)))
-  expect(await p(kitchenSink.pdoc)).toEqual(kitchenSink.node)
+
+  let got = await p(kitchenSink.pdoc)
+  expect(got).toEqual(kitchenSink.node)
+
   expect(await p(collapseSpaces.pdoc)).toEqual(collapseSpaces.node)
   expect(await p(imageInlinesToString.pdoc)).toEqual(imageInlinesToString.node)
 })
 
 test('unparse', async () => {
   const u = async (node: any) => JSON.parse(dump(await unparse(node)))
-  expect(await u(kitchenSink.node)).toEqual(kitchenSink.pdoc)
+
+  let got = await u(kitchenSink.node)
+  expect(got).toEqual(kitchenSink.pdoc)
 })
 
 test('metadata', async () => {
