@@ -31,6 +31,7 @@
 
 import stencila from '@stencila/schema'
 import json5 from 'json5'
+import { coerce } from './util'
 import { dump, load, VFile } from './vfile'
 
 /**
@@ -48,7 +49,7 @@ export const mediaTypes = ['application/json5']
  * @returns A promise that resolves to a Stencila `Node`
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  return json5.parse(dump(file))
+  return coerce(json5.parse(dump(file)))
 }
 
 /**
