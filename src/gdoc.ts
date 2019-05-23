@@ -23,6 +23,7 @@
  */
 
 import * as stencila from '@stencila/schema'
+import { InlineContent } from '@stencila/schema'
 import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
@@ -54,7 +55,7 @@ export async function parse(
  * @returns A promise that resolves to a `VFile`
  */
 export async function unparse(node: stencila.Node): Promise<VFile> {
-  const gdoc = unparseArticle(node as stencila.Article)
+  const gdoc = unparseNode(node)
   const json = JSON.stringify(gdoc, null, '  ')
   return load(json)
 }
@@ -173,11 +174,11 @@ async function parseDocument(
 }
 
 /**
- * Unparse a Stencila `Article` to a GDoc `Document`
+ * Unparse a Stencila `Node` to a GDoc `Document`
  */
-function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
+function unparseNode(node: stencila.Node): GDoc.Schema$Document {
   const gdoc: GDoc.Schema$Document = {
-    title: article.title || 'Untitled',
+    title: 'Untitled',
     body: {
       content: [{ sectionBreak: {} }]
     },
@@ -185,29 +186,59 @@ function unparseArticle(article: stencila.Article): GDoc.Schema$Document {
     inlineObjects: {}
   }
   unparsingGDoc = gdoc
-  const content = gdoc.body!.content!
+  const gdocContent = gdoc.body!.content!
 
-  if (article.content) {
-    for (let node of article.content) {
+  // Wrap the node as needed to ensure an array
+  // of block element at the top level
+  const type = stencila.type(node)
+  let content: stencila.Node[] = []
+  switch (type) {
+    // `CreativeWork` types (have `content`)
+    case 'Article':
+      const article = node as stencila.Article
+      gdoc.title = article.title || ''
+      content = article.content || []
+      break
+    // `BlockContent` types
+    case 'Heading':
+    case 'Paragraph':
+    case 'CodeBlock':
+    case 'List':
+    case 'Table':
+    case 'ThematicBreak':
+      content = [node]
+      break
+    // Everything else is wrapped into a `Paragraph`
+    default:
+      const para: stencila.Paragraph = {
+        type: 'Paragraph',
+        // TODO: avoid this use of `as`
+        content: [node as InlineContent]
+      }
+      content = [para]
+  }
+
+  if (content) {
+    for (let node of content) {
       const type = stencila.type(node)
       switch (type) {
         case 'Heading':
-          content.push(unparseHeading(node as stencila.Heading))
+          gdocContent.push(unparseHeading(node as stencila.Heading))
           break
         case 'Paragraph':
-          content.push(unparseParagraph(node as stencila.Paragraph))
+          gdocContent.push(unparseParagraph(node as stencila.Paragraph))
           break
         case 'CodeBlock':
-          content.push(unparseCodeBlock(node as stencila.CodeBlock))
+          gdocContent.push(unparseCodeBlock(node as stencila.CodeBlock))
           break
         case 'List':
-          content.push(...unparseList(node as stencila.List))
+          gdocContent.push(...unparseList(node as stencila.List))
           break
         case 'Table':
-          content.push(unparseTable(node as stencila.Table))
+          gdocContent.push(unparseTable(node as stencila.Table))
           break
         case 'ThematicBreak':
-          content.push(unparseThematicBreak(node as stencila.ThematicBreak))
+          gdocContent.push(unparseThematicBreak(node as stencila.ThematicBreak))
           break
         default:
           throw new Error(`Unhandled Stencila node type "${type}"`)

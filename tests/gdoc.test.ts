@@ -14,7 +14,7 @@ test('unparse', async () => {
 // An example intended for testing progressively added parser/unparser pairs
 const kitchenSink = {
   // Note that this object is missing many styling related properties that
-  // are normally in a GDoc. To keep it a managable size, throughout the
+  // are normally in a GDoc. To keep it a manageable size, throughout the
   // object tree, we've only included the properties that the compiler uses.
   // A good way to generate content nodes is to author in GDocs and then
   // fetch using the `gapis.js` script (see there for more details).
