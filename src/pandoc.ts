@@ -1,11 +1,11 @@
-import * as stencila from '@stencila/schema'
-import childProcess from 'child_process'
-import { pandocDataDir, pandocPath } from './boot'
-import * as Pandoc from './pandoc-types'
-import * as rpng from './rpng'
-import { create, load, VFile, write } from './vfile'
+import * as stencila from '@stencila/schema';
+import childProcess from 'child_process';
+import { pandocDataDir, pandocPath } from './boot';
+import * as Pandoc from './pandoc-types';
+import * as rpng from './rpng';
+import { create, load, VFile, write } from './vfile';
 
-export { InputFormat, OutputFormat } from './pandoc-types'
+export { InputFormat, OutputFormat } from './pandoc-types';
 
 // Although this compiler is usually used as a base for others (e.g `docx`),
 // the following definitions allow Pandoc JSON to be parsed or unparsed
@@ -53,18 +53,16 @@ export async function unparse(
   options: string[] = [],
   ensureFile: boolean = false
 ): Promise<VFile> {
-  const type = stencila.type(node)
-  if (type !== 'Article') {
-    throw new Error(
-      `Unable to unparse top level Stencila node of type:\n "${type}"\n Expected node of type "Article".`
-    )
-  }
-
   unparsePromises = []
-  const pdoc = unparseArticle(node as stencila.Article)
+  const { standalone, pdoc } = unparseNode(node)
   await Promise.all(unparsePromises)
 
-  const args = [`--from=json`, `--to=${to}`].concat(options)
+  const args = [`--from=json`, `--to=${to}`]
+  if (standalone) args.push('--standalone')
+  for (const option of options) {
+    if (!(!standalone && option.startsWith('--template'))) args.push(option)
+  }
+
   if ((filePath && filePath !== '-') || ensureFile) {
     let output
     if (!filePath || filePath === '-') {
@@ -150,18 +148,52 @@ function parseDocument(pdoc: Pandoc.Document): stencila.Article {
 }
 
 /**
- * Parse a Stencila `Article` to a Pandoc `Document`.
+ * Unparse a Stencila `Node` node to a Pandoc `Document`.
+ *
+ * This function is intended to be the inverse of `parseDocument`
+ * (although it is not yet).
  */
-function unparseArticle(article: stencila.Article): Pandoc.Document {
-  const { type, content, ...rest } = article
-  const meta = unparseMeta(rest)
-  // TODO: wrap nodes as necessary and avoid use of `as`
-  const blocks = unparseBlocks(content as stencila.BlockContent[])
-  return {
+function unparseNode(
+  node: stencila.Node
+): { standalone: boolean; pdoc: Pandoc.Document } {
+  let standalone = false
+  let meta: Pandoc.Meta = {}
+  let blocks: Pandoc.Block[] = []
+
+  const type = stencila.type(node)
+  if (type === 'Article') {
+    const { type, content, ...rest } = node as stencila.Article
+    standalone = true
+    meta = unparseMeta(rest)
+    // TODO: wrap nodes as necessary and avoid use of `as`
+    blocks = unparseBlocks(content as stencila.BlockContent[])
+  } else {
+    // TODO: see `gdoc` for a better way to do this.
+    try {
+      blocks = [unparseBlock(node as stencila.BlockContent)]
+    } catch {
+      // Do nothing because we'll try inlines next...
+    }
+
+    try {
+      blocks = [
+        {
+          t: 'Para',
+          c: [unparseInline(node as stencila.InlineContent)]
+        }
+      ]
+    } catch {
+      throw new Error(`Unhandled Stencila node type "${type}"`)
+    }
+  }
+
+  const pdoc: Pandoc.Document = {
     'pandoc-api-version': Pandoc.Version,
     meta,
     blocks
   }
+
+  return { standalone, pdoc }
 }
 
 /**

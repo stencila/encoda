@@ -38,7 +38,6 @@ export async function unparse(
   filePath?: string
 ): Promise<VFile> {
   return pandoc.unparse(node, filePath, pandoc.OutputFormat.jats, [
-    `--standalone`,
     `--template=jats-template.xml`
   ])
 }
