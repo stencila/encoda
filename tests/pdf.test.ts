@@ -1,6 +1,13 @@
 import path from 'path'
 import * as pdf from '../src/pdf'
+import { create } from '../src/vfile'
 import articleSimple from './fixtures/article-simple'
+
+test('parse', async () => {
+  await expect(pdf.parse(create())).rejects.toThrow(
+    /Parsing of PDF files is not supported/
+  )
+})
 
 test('unparse', async () => {
   const output = path.join(__dirname, 'output', 'pdf-unparse.pdf')
