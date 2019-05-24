@@ -9,13 +9,15 @@ import path from 'path'
 import { dump, load, read, write } from './src'
 import { type, validate } from './src/util'
 
-renderAll()
+const glob = process.argv[2] || 'docs/*.md'
+renderAll(glob)
 
 /**
  * Render all Markdown files in `docs`.
  */
-async function renderAll() {
-  const filePaths = await globby('docs/*.md')
+async function renderAll(glob: string) {
+  console.error(`Rendering glob: "${glob}"`)
+  const filePaths = await globby(glob)
   Promise.all(filePaths.map(render))
 }
 
@@ -24,13 +26,14 @@ async function renderAll() {
  * original format (usually `.md`) and `.html`.
  */
 async function render(filePath: string): Promise<void> {
-  console.error(`Rendering ${filePath}`)
+  console.error(`Rendering file: "${filePath}"`)
   const doc = await read(filePath)
 
   // Walk the tree and process `CodeBlock` nodes
   const nodes: { [key: string]: stencila.Node } = {}
   async function convert(node: any): Promise<stencila.Node> {
     if (node === null || typeof node !== 'object') return node
+
     if (node.type === 'CodeBlock') {
       const code = node as stencila.CodeBlock
       if (code.meta) {
@@ -69,9 +72,37 @@ async function render(filePath: string): Promise<void> {
         }
       }
     }
+
+    if (node.type === 'Link') {
+      const link = node as stencila.Link
+      // @ts-ignore
+      const meta = link.meta
+      if (meta) {
+        if (meta.read) {
+          let value
+          try {
+            value = await read(link.target)
+            validate(value, type(value))
+          } catch (error) {
+            throw Error(`Error in "${filePath}": in "${meta.read}": ${error} `)
+          }
+          nodes[meta.read] = value
+        } else if (meta.write) {
+          const other = nodes[meta.write]
+          if (typeof other === 'undefined') {
+            throw Error(
+              `Error in "${filePath}": could not find "${meta.write}"`
+            )
+          }
+          await write(other, link.target)
+        }
+      }
+    }
+
     for (const [key, child] of Object.entries(node)) {
       node[key] = await convert(child)
     }
+
     return node
   }
   await convert(doc)
