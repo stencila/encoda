@@ -22,7 +22,7 @@ import attrs from 'remark-attr'
 // @ts-ignore
 import frontmatter from 'remark-frontmatter'
 // @ts-ignore
-import genericExtensionsParser from 'remark-generic-extensions'
+import genericExtensions from 'remark-generic-extensions'
 // @ts-ignore
 import parser from 'remark-parse'
 // @ts-ignore
@@ -84,7 +84,7 @@ export async function parse(file: VFile): Promise<stencila.Node> {
     })
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(attrs, ATTR_OPTIONS)
-    .use(genericExtensionsParser, { elements: extensionHandlers })
+    .use(genericExtensions, { elements: extensionHandlers })
     .parse(file)
   compact(mdast, true)
   return parseNode(mdast)
@@ -101,7 +101,10 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
     unparseNode(node),
     (node: UNIST.Node | undefined) => typeof node !== 'undefined'
   ) as UNIST.Node
+
   mdast = stringifyExtensions(mdast)
+  mdast = stringifyAttrs(mdast)
+
   const md = unified()
     .use(stringifier)
     .use(frontmatter, FRONTMATTER_OPTIONS)
@@ -446,20 +449,7 @@ function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
  * Unparse a `stencila.CodeBlock` to a `MDAST.Code`
  */
 function unparseCodeBlock(block: stencila.CodeBlock): MDAST.Code {
-  let meta = ''
-  if (block.meta) {
-    meta = Object.entries(block.meta as { [key: string]: string })
-      .map(([key, value]) => {
-        let repr = key
-        if (value) {
-          repr += '='
-          if (/\s/.test(value)) repr += '"' + value + '"'
-          else repr += value
-        }
-        return repr
-      })
-      .join(' ')
-  }
+  const meta = block.meta ? stringifyMeta(block.meta) : ''
   return {
     type: 'code',
     lang: block.language,
@@ -604,10 +594,17 @@ function unparseThematicBreak(
  * Parse a `MDAST.Link` to a `stencila.Link`
  */
 function parseLink(link: MDAST.Link): stencila.Link {
+  // The `remark-attrs` plugin parses curly brace attributes to `data.hProperties`
+  const meta = (link.data && link.data.hProperties) as {
+    [key: string]: string
+  }
   return {
     type: 'Link',
     target: link.url,
-    content: link.children.map(parsePhrasingContent)
+    content: link.children.map(parsePhrasingContent),
+    // TODO: remove ts-ignore, when add meta as property to link
+    // @ts-ignore
+    meta
   }
 }
 
@@ -615,12 +612,16 @@ function parseLink(link: MDAST.Link): stencila.Link {
  * Unparse a `stencila.Link` to a `MDAST.Link`
  */
 function unparseLink(link: stencila.Link): MDAST.Link {
+  // TODO: remove ts-ignore, when add meta as property to link
+  // @ts-ignore
+  const data = { hProperties: link.meta }
   return {
     type: 'link',
     url: link.target,
     children: link.content.map(
       node => unparseInlineContent(node) as MDAST.StaticPhrasingContent
-    )
+    ),
+    data
   }
 }
 
@@ -960,12 +961,14 @@ function parseExtension(
   return { type, ...element }
 }
 
+// These `stringify*` functions
+// They transform nodes to a `MDAST.HTML` node
+// so that no escaping of the value is done
+
 /**
  * Unparse a generic extension node into a `MDAST.HTML` node.
  *
- * The `remark-generic-extensions` does not do this stringifying for us.
- * We transform each to a `MDAST.HTML` node so that no escaping of the value is done
- * while stringifying.
+ * The `remark-generic-extensions` plugin does not do this stringifying for us.
  */
 function stringifyExtensions(tree: UNIST.Node) {
   return map(tree, (node: any) => {
@@ -989,4 +992,44 @@ function stringifyExtensions(tree: UNIST.Node) {
     }
     return node
   })
+}
+
+/**
+ * Unparse a node with `data.hProperties` into a `MDAST.HTML` node
+ * with attributes in curly braces `{}`.
+ *
+ * The `remark-attr` plugin does not do this stringifying for us
+ * (it only works with `rehype`).
+ */
+function stringifyAttrs(tree: UNIST.Node) {
+  const compiler = unified().use(stringifier)
+  const md = (node: UNIST.Node) => compiler.stringify(node)
+  return map(tree, (node: UNIST.Node) => {
+    if (node.type === 'link' && node.data && node.data.hProperties) {
+      const meta = stringifyMeta(node.data.hProperties as {
+        [key: string]: string
+      })
+      const value = `${md(node)}{${meta}}`
+      return { type: 'html', value }
+    }
+    return node
+  })
+}
+
+/**
+ * Stringify a dictionary of meta data to be used as a code
+ * block "infoString" or in bracketed attributes.
+ */
+function stringifyMeta(meta: { [key: string]: string }) {
+  return Object.entries(meta)
+    .map(([key, value]) => {
+      let repr = key
+      if (value) {
+        repr += '='
+        if (/\s/.test(value)) repr += '"' + value + '"'
+        else repr += value
+      }
+      return repr
+    })
+    .join(' ')
 }
