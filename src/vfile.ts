@@ -12,9 +12,17 @@ export type VFile = vfile.VFile
 /**
  * Create a virtual file
  *
- * @param options to `vfile` see https://github.com/vfile/vfile#vfileoptions
+ * @param contents Raw string contents of `VFile`, or file path
+ * @param options Options to `vfile` see https://github.com/vfile/vfile#vfileoptions
  */
-export function create(options: any = {}): VFile {
+export function create(
+  contents?: string,
+  options: { [key: string]: any } = {}
+): VFile {
+  if (contents) {
+    if (isPath(contents)) options = { ...options, path: contents }
+    else options = { ...options, contents }
+  }
   return vfile(options)
 }
 
@@ -30,10 +38,18 @@ export function load(contents: VFileContents): VFile {
 /**
  * Dump a string from the contents of a virtual files
  *
+ * If the file has no `contents` but does have a file
+ * `path`, then `read` the virtual file.
+ *
  * @param file The virtual file to dump
  */
-export function dump(vfile: VFile): string {
-  return vfile.contents ? vfile.contents.toString() : ''
+export async function dump(vfile: VFile): Promise<string> {
+  if (vfile.contents) return vfile.toString()
+  if (vfile.path) {
+    const readFile = await toVFile.read(vfile.path)
+    return readFile.toString()
+  }
+  return ''
 }
 
 /**
@@ -66,7 +82,7 @@ export async function write(vfile: VFile, path: string): Promise<void> {
   if (!path) throw new Error('Argument `path` is required')
 
   if (path === '-') {
-    console.log(dump(vfile))
+    console.log(await dump(vfile))
   } else if (path && vfile.contents) {
     vfile.path = path
     await toVFile.write(vfile)

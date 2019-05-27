@@ -8,7 +8,7 @@ import { dump, load, VFile } from './vfile'
 export const mediaTypes = ['application/json']
 
 export async function parse(file: VFile): Promise<stencila.Node> {
-  return JSON.parse(dump(file))
+  return JSON.parse(await dump(file))
 }
 
 export async function unparse(node: stencila.Node): Promise<VFile> {

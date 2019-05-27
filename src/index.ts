@@ -299,18 +299,19 @@ export async function write(
 /**
  * Convert content from one format to another.
  *
- * @param inp The input content (raw or file path).
- * @param out The output file path.
+ * @param input The input content (raw or file path).
+ * @param outputPath The output file path.
  * @param options Conversion options e.g `from` and `to`: to specify the formats to convert from/to
  * @returns The converted content, or file path (for converters that only write to files).
  */
 export async function convert(
-  inp: string,
-  out?: string,
+  input: string,
+  outputPath?: string,
   options: { [key: string]: any } = {}
 ): Promise<string | undefined> {
-  const node = await read(inp, options.from)
-  let file = await unparse(node, out, options.to)
-  if (out) await vfile.write(file, out)
-  return file.contents ? vfile.dump(file) : file.path
+  const inputFile = vfile.create(input)
+  const node = await parse(inputFile, input, options.from)
+  const outputFile = await unparse(node, outputPath, options.to)
+  if (outputPath) await vfile.write(outputFile, outputPath)
+  return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
 }

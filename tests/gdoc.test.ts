@@ -7,7 +7,7 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
-  const u = async (node: any) => JSON.parse(dump(await unparse(node)))
+  const u = async (node: any) => JSON.parse(await dump(await unparse(node)))
   expect(await u(kitchenSink.node)).toEqual(kitchenSink.gdoc)
 })
 

@@ -36,7 +36,7 @@ export const extNames = [
 export async function parse(file: VFile): Promise<stencila.Node> {
   let pkg: datapackage.Package
   if (file.path) pkg = await datapackage.Package.load(file.path)
-  else pkg = await datapackage.Package.load(JSON.parse(dump(file)))
+  else pkg = await datapackage.Package.load(JSON.parse(await dump(file)))
 
   // Parse resources
   const parts = await Promise.all(pkg.resources.map(
@@ -199,7 +199,7 @@ async function unparseCreativeWork(
     profile: 'tabular-data-resource',
     name: datatable.name || 'Unnamed',
 
-    data: dump(await csv.unparse(datatable)),
+    data: await dump(await csv.unparse(datatable)),
     format: 'csv',
     mediatype: 'text/csv',
     encoding: 'utf-8',

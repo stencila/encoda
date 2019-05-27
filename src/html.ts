@@ -68,7 +68,7 @@ export const mediaTypes = ['text/html']
  * @returns A promise that resolves to a `stencila.Node`
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  const html = dump(file)
+  const html = await dump(file)
   const dom = new jsdom.JSDOM(html)
   const document = dom.window.document
   collapse(document)

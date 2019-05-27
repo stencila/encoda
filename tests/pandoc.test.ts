@@ -22,7 +22,7 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
-  const u = async (node: any) => JSON.parse(dump(await unparse(node)))
+  const u = async (node: any) => JSON.parse(await dump(await unparse(node)))
   expect(await u(kitchenSink.node)).toEqual(kitchenSink.pdoc)
 })
 
@@ -566,7 +566,7 @@ test('rpngs', async () => {
 
   expect(await parse(load(JSON.stringify(pdoc)))).toEqual(node)
   // Skipping this until resolve how to deal with output RPNG paths
-  //expect(JSON.parse(dump(await unparse(node)))).toEqual(pdoc)
+  //expect(JSON.parse(await dump(await unparse(node)))).toEqual(pdoc)
 })
 
 // A very simple test of the approach to typing Pandoc nodes

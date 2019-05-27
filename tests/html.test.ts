@@ -7,7 +7,7 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
-  expect(dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.html)
+  expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.html)
 })
 
 // An example intended for testing progressively added parser/unparser pairs

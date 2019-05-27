@@ -26,11 +26,13 @@ export async function parse(
   ensureFile: boolean = false
 ): Promise<stencila.Node> {
   const args = [`--from=${from}`, `--to=json`].concat(options)
+
   let content = file.contents
   if (!content || ensureFile) {
     if (ensureFile && !file.path) throw new Error('Must supply a file')
     args.push(`${file.path}`)
   }
+
   const json = await run(content, args)
   const pdoc = JSON.parse(json)
   return parseDocument(pdoc)
@@ -62,7 +64,6 @@ export async function unparse(
   const pdoc = unparseArticle(node as stencila.Article)
   await Promise.all(unparsePromises)
 
-  const json = JSON.stringify(pdoc)
   const args = [`--from=json`, `--to=${to}`].concat(options)
   if ((filePath && filePath !== '-') || ensureFile) {
     let output
@@ -74,12 +75,13 @@ export async function unparse(
     args.push(`--output=${output}`)
   }
 
+  const json = JSON.stringify(pdoc)
   const content = await run(json, args)
 
-  // If content was output, then load that into a vfile,
-  // otherwise the vfile, simply has path to the file created
+  // If content was outputted, then load that into a vfile,
+  // otherwise the vfile simply has path to the file created
   if (content) return load(content)
-  else return create({ path: filePath })
+  else return create(undefined, { path: filePath })
 }
 
 /**
