@@ -123,7 +123,7 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
       reject(err)
     })
 
-    if (input.length) {
+    if (input && input.length) {
       child.stdin.write(input, err => {
         if (err) return reject(err)
         child.stdin.end()
