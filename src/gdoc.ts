@@ -42,7 +42,7 @@ export async function parse(
   file: VFile,
   fetch: boolean = true
 ): Promise<stencila.Node> {
-  const json = dump(file)
+  const json = await dump(file)
   const gdoc = JSON.parse(json)
   return parseDocument(gdoc, fetch)
 }

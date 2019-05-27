@@ -3,7 +3,7 @@ import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import * as rpng from './rpng'
-import { create, dump, load, VFile, write } from './vfile'
+import { create, load, VFile, write } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
 
@@ -26,11 +26,13 @@ export async function parse(
   ensureFile: boolean = false
 ): Promise<stencila.Node> {
   const args = [`--from=${from}`, `--to=json`].concat(options)
-  let content = dump(file)
+
+  let content = file.contents
   if (!content || ensureFile) {
     if (ensureFile && !file.path) throw new Error('Must supply a file')
     args.push(`${file.path}`)
   }
+
   const json = await run(content, args)
   const pdoc = JSON.parse(json)
   return parseDocument(pdoc)
@@ -62,7 +64,6 @@ export async function unparse(
   const pdoc = unparseArticle(node as stencila.Article)
   await Promise.all(unparsePromises)
 
-  const json = JSON.stringify(pdoc)
   const args = [`--from=json`, `--to=${to}`].concat(options)
   if ((filePath && filePath !== '-') || ensureFile) {
     let output
@@ -74,12 +75,13 @@ export async function unparse(
     args.push(`--output=${output}`)
   }
 
+  const json = JSON.stringify(pdoc)
   const content = await run(json, args)
 
-  // If content was output, then load that into a vfile,
-  // otherwise the vfile, simply has path to the file created
+  // If content was outputted, then load that into a vfile,
+  // otherwise the vfile simply has path to the file created
   if (content) return load(content)
-  else return create({ path: filePath })
+  else return create(undefined, { path: filePath })
 }
 
 /**
@@ -95,13 +97,14 @@ let unparsePromises: Promise<any>[] = []
 /**
  * Run the Pandoc binary
  */
-function run(input: string, args: string[]): Promise<string> {
+function run(input: string | Buffer, args: string[]): Promise<string> {
   args.push(`--data-dir=${pandocDataDir}`)
   if (process.env.DEBUG) {
     console.log(`Running ${pandocPath} with args:\n  ${args.join('\n  ')}`)
   }
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(pandocPath, args)
+
     let stdout = ''
     let stderr = ''
     child.stdout.on('data', data => {
@@ -121,8 +124,13 @@ function run(input: string, args: string[]): Promise<string> {
     child.on('error', err => {
       reject(err)
     })
-    child.stdin.write(input)
-    child.stdin.end()
+
+    if (input && input.length) {
+      child.stdin.write(input, err => {
+        if (err) return reject(err)
+        child.stdin.end()
+      })
+    }
   })
 }
 

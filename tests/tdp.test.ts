@@ -137,11 +137,11 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
-  const actual = JSON.parse(dump(await unparse(periodic.node)))
+  const actual = JSON.parse(await dump(await unparse(periodic.node)))
   // Pretend that we unparsed to a a filePath i.e. that
   // the data was written to disk.
   delete actual.resources[0].data
   actual.resources[0].path = 'periodic-table.csv'
-  const expected = JSON.parse(dump(await read(periodic.file)))
+  const expected = JSON.parse(await dump(await read(periodic.file)))
   expect(actual).toEqual(expected)
 })

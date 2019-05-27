@@ -99,7 +99,7 @@ test('parse', async () => {
 })
 
 test('unparse', async () => {
-  expect(dump(await unparse(simple.node))).toEqual(simple.content)
-  expect(dump(await unparse(named.node))).toEqual(named.content)
-  expect(dump(await unparse(formulas.node))).toEqual(formulas.content)
+  expect(await dump(await unparse(simple.node))).toEqual(simple.content)
+  expect(await dump(await unparse(named.node))).toEqual(named.content)
+  expect(await dump(await unparse(formulas.node))).toEqual(formulas.content)
 })

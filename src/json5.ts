@@ -48,7 +48,7 @@ export const mediaTypes = ['application/json5']
  * @returns A promise that resolves to a Stencila `Node`
  */
 export async function parse(file: VFile): Promise<stencila.Node> {
-  return json5.parse(dump(file))
+  return json5.parse(await dump(file))
 }
 
 /**
