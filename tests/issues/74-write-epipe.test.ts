@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { read, write } from '../../src'
+import { convert } from '../../src'
 
 test('issue 74', async () => {
   /**
@@ -25,13 +25,7 @@ test('issue 74', async () => {
   // Before fix, this fails with `Error: write EPIPE`
   //    https://travis-ci.org/stencila/convert/jobs/537572367#L172
   //    https://ci.appveyor.com/project/nokome/convert/builds/24825307#L66
-  const node = await read(docx)
-  expect(node).toBeTruthy()
-
-  // The bug wasn't related to generating HTML, but just
-  // to cover everything in the issue...
-  await write(node, html)
-  expect(await fs.pathExists(html)).toBeTruthy()
+  convert(docx, html)
 
   // Cleanup
   await fs.remove(html)
