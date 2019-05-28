@@ -12,7 +12,7 @@ The following examples, based on Marie Curie, illustrate alternative formats for
 
 Dr Curie could be represented in canonical Stencila JSON like this:
 
-```json load=marie
+```json import=marie
 {
   "type": "Person",
   "honorificPrefix": "Dr",
@@ -95,3 +95,15 @@ suffix: PhD
 > it when the `person` codec is enabled at the top level.
 
     Dr Marie Skłodowska Curie PhD
+
+## HTML
+
+```html export=marie equals=marie
+
+```
+
+## rPNG
+
+A with most other types when a `Person` is encoded as a [rPNG](/formats/rPNG) they are represented as a [JSON5](/formats/JSON5).
+
+![](marie.png){export=marie to=rpng equals=marie}
