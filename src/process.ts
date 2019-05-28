@@ -44,6 +44,9 @@ export default async function process(
             await _load(code.value, meta.from || meta.to || code.language)
           )
         }
+        if ('include' in meta) {
+          return await _load(code.value, meta.from || code.language)
+        }
       }
     }
 
@@ -63,6 +66,9 @@ export default async function process(
         }
         if (meta.equals) {
           _equals(meta.equals, await _read(link.target, meta.from || meta.to))
+        }
+        if ('include' in meta) {
+          return await _read(link.target, meta.from)
         }
       }
     }
