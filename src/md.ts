@@ -433,15 +433,13 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
  * `{meta1:"", meta2:"foo", meta3:"bar baz" }`
  */
 function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
-  // The `remark-attrs` plugin parses the "infoString" to `data.hProperties`
-  const meta = (block.data && block.data.hProperties) as {
-    [key: string]: string
-  }
+  // The `remark-attrs` plugin parses the "info string" to `data.hProperties`
+  const meta = block.data && block.data.hProperties
   return {
     type: 'CodeBlock',
     language: block.lang,
-    value: block.value,
-    meta
+    meta,
+    value: block.value
   }
 }
 
@@ -721,18 +719,35 @@ function unparseQuote(quote: stencila.Quote): Extension {
  * Parse a `MDAST.InlineCode` to a `stencila.Code`
  */
 function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
-  return {
+  const code: stencila.Code = {
     type: 'Code',
     value: inlineCode.value
   }
+  const attrs =
+    inlineCode.data &&
+    (inlineCode.data.hProperties as { [key: string]: string })
+  if (attrs) {
+    const { language, ...rest } = attrs
+    if (language) code.language = language
+    // TODO: remove ts-ignore
+    // @ts-ignore
+    if (Object.keys(rest).length) code.meta = rest
+  }
+  return code
 }
 
 /**
  * Unparse a `stencila.Code` to a `MDAST.InlineCode`
  */
 function unparseCode(code: stencila.Code): MDAST.InlineCode {
+  let attrs
+  if (code.language) attrs = { language: code.language }
+  // TODO: remove ts-ignore
+  // @ts-ignore
+  if (code.meta) attrs = { ...attrs, ...code.meta }
   return {
     type: 'inlineCode',
+    data: { hProperties: attrs },
     value: code.value
   }
 }
@@ -747,6 +762,11 @@ function parseImage(image: MDAST.Image): stencila.ImageObject {
   }
   if (image.title) imageObject.title = image.title
   if (image.alt) imageObject.text = image.alt
+  // The `remark-attrs` plugin parses curly brace attributes to `data.hProperties`
+  const meta = image.data && image.data.hProperties
+  // TODO: remove ts-ignore
+  // @ts-ignore
+  if (meta) imageObject.meta = meta
   return imageObject
 }
 
@@ -760,6 +780,9 @@ function unparseImageObject(imageObject: stencila.ImageObject): MDAST.Image {
   }
   if (imageObject.title) image.title = imageObject.title
   if (imageObject.text) image.alt = imageObject.text
+  // TODO: remove ts-ignore
+  // @ts-ignore
+  if (imageObject.meta) image.data = { hProperties: imageObject.meta }
   return image
 }
 
@@ -961,9 +984,14 @@ function parseExtension(
   return { type, ...element }
 }
 
-// These `stringify*` functions
+// These `stringify*` functions are for MDAST nodes that do not
+// have a stringfier (often remark plugins only support transformation
+// to HAST i.e. HTML and not serialization back to Markdown).
 // They transform nodes to a `MDAST.HTML` node
-// so that no escaping of the value is done
+// so that no escaping of the value is done.
+// There is a more 'official' way to do this using a `unified.Compiler`
+// but the docs for that are not as good as for `Parser` and after
+// several attempts, this seemed like a more expedient, short term approach.
 
 /**
  * Unparse a generic extension node into a `MDAST.HTML` node.
@@ -995,7 +1023,7 @@ function stringifyExtensions(tree: UNIST.Node) {
 }
 
 /**
- * Unparse a node with `data.hProperties` into a `MDAST.HTML` node
+ * Unparse a `link` node with `data.hProperties` into a `MDAST.HTML` node
  * with attributes in curly braces `{}`.
  *
  * The `remark-attr` plugin does not do this stringifying for us
@@ -1005,7 +1033,11 @@ function stringifyAttrs(tree: UNIST.Node) {
   const compiler = unified().use(stringifier)
   const md = (node: UNIST.Node) => compiler.stringify(node)
   return map(tree, (node: UNIST.Node) => {
-    if (node.type === 'link' && node.data && node.data.hProperties) {
+    if (
+      ['link', 'inlineCode'].includes(node.type) &&
+      node.data &&
+      node.data.hProperties
+    ) {
       const meta = stringifyMeta(node.data.hProperties as {
         [key: string]: string
       })
