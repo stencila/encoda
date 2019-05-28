@@ -6,8 +6,7 @@
 /convert-deps.tgz
 /coverage
 /dist
-/docs/**/*
-!/docs/**/*.md
+/docs/api
 /node_modules
 /tests/**/*.to.*
 /tests/fixtures/rpng/*out.png
