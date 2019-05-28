@@ -13,7 +13,7 @@ authors:
 
 ### JSON
 
-```json load=image
+```json import=image
 {
   "type": "ImageObject",
   "contentUrl": "https://example.org/image.png",
@@ -24,7 +24,7 @@ authors:
 
 ### JSON5
 
-```json5 dump=image
+```json5 export=image
 {
   type: 'ImageObject',
   contentUrl: 'https://example.org/image.png',
@@ -35,7 +35,7 @@ authors:
 
 ### YAML
 
-```yaml dump=image
+```yaml export=image
 type: ImageObject
 contentUrl: 'https://example.org/image.png'
 title: The image's title
@@ -46,7 +46,7 @@ text: The alternative text for the image
 
 ### Markdown
 
-```md dump=image
+```md export=image
 ![The alternative text for the image](https://example.org/image.png "The image's title")
 ```
 
@@ -54,7 +54,7 @@ text: The alternative text for the image
 
 The encoding to LaTeX is lossy because `text` and `title` properties are not encoded:
 
-```latex dump=image
+```latex export=image
 \includegraphics{https://example.org/image.png}
 
 ```
@@ -63,7 +63,7 @@ The encoding to LaTeX is lossy because `text` and `title` properties are not enc
 
 When encoding an `ImageObject` within a Google Doc it represented as an inline object.
 
-```json dump=image to=gdoc
+```json export=image to=gdoc
 {
   "title": "Untitled",
   "body": {
@@ -105,7 +105,7 @@ When encoding an `ImageObject` within a Google Doc it represented as an inline o
 
 ### HTML
 
-```html dump=image
+```html export=image
 <img
   src="https://example.org/image.png"
   title="The image's title"
@@ -115,7 +115,7 @@ When encoding an `ImageObject` within a Google Doc it represented as an inline o
 
 ### JATS
 
-```xml dump=image to=jats
+```xml export=image to=jats
 <graphic mimetype="image" mime-subtype="png" xlink:href="https://example.org/image.png" xlink:title="The image's title" />
 
 ```

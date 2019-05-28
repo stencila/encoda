@@ -7,6 +7,7 @@
 /coverage
 /dist
 /docs/api
+/docs/**/*.html
 /node_modules
 /tests/**/*.to.*
 /tests/fixtures/rpng/*out.png
