@@ -1,13 +1,15 @@
-import { parse, unparse } from '../src/html'
-import { stencilaCSS } from '../src/templates/stencila-css-template'
-import { dump, load } from '../src/vfile'
+import { parse, unparse } from '../src/html';
+import { stencilaCSS } from '../src/templates/stencila-css-template';
+import { dump, load } from '../src/vfile';
 
 test('parse', async () => {
   expect(await parse(load(kitchenSink.html))).toEqual(kitchenSink.node)
+  expect(await parse(await load(attrs.html))).toEqual(attrs.node)
 })
 
 test('unparse', async () => {
   expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.html)
+  expect(await dump(await unparse(attrs.node))).toEqual(attrs.html)
 })
 
 // An example intended for testing progressively added parser/unparser pairs
@@ -39,7 +41,7 @@ const kitchenSink = {
     <h2>Heading two</h2>
     <h3>Heading three</h3>
     <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
-    <p>A paragraph with <a href="https://example.org">a <em>rich</em> link</a>.</p>
+    <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
     <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
     <p>A paragraph with <code class="language-python"># code</code>.</p>
     <p>A paragraph with an image <img src="https://example.org/image.png" title="title"
@@ -157,6 +159,9 @@ const inc = (n) =&gt; n + 1</code></pre>
           {
             type: 'Link',
             target: 'https://example.org',
+            meta: {
+              attr: 'foo'
+            },
             content: [
               'a ',
               {
@@ -317,6 +322,40 @@ const inc = (n) =&gt; n + 1</code></pre>
       {
         type: 'ThematicBreak'
       }
+    ]
+  }
+}
+
+/**
+ * Example for testing attributes on
+ * `Link`, `Code` and `CodeBlock` nodes.
+ */
+const attrs = {
+  html: `<p>A <a href=\"url\" data-attr1=\"foo\" data-attr2=\"bar baz\" data-attr3=\"\">link</a> and <code
+    data-attr1="foo">da code</code>.</p>`,
+  node: {
+    type: 'Paragraph',
+    content: [
+      'A ',
+      {
+        type: 'Link',
+        target: 'url',
+        meta: {
+          attr1: 'foo',
+          attr2: 'bar baz',
+          attr3: ''
+        },
+        content: ['link']
+      },
+      ' and ',
+      {
+        type: 'Code',
+        meta: {
+          attr1: 'foo'
+        },
+        value: 'da code'
+      },
+      '.'
     ]
   }
 }

@@ -421,8 +421,10 @@ function parseCodeBlock(node: Pandoc.CodeBlock): stencila.CodeBlock {
     value: node.c[1]
   }
   const attrs = parseAttrs(node.c[0])
-  const language = attrs.classes ? attrs.classes.split(' ')[0] : null
-  if (language) codeblock.language = language
+  if (attrs) {
+    const language = attrs.classes ? attrs.classes.split(' ')[0] : null
+    if (language) codeblock.language = language
+  }
   return codeblock
 }
 
@@ -830,8 +832,10 @@ function parseCode(node: Pandoc.Code): stencila.Code {
     value: node.c[1]
   }
   const attrs = parseAttrs(node.c[0])
-  const language = attrs.classes ? attrs.classes.split(' ')[0] : null
-  if (language) code.language = language
+  if (attrs) {
+    const language = attrs.classes ? attrs.classes.split(' ')[0] : null
+    if (language) code.language = language
+  }
   return code
 }
 
@@ -848,17 +852,20 @@ function unparseCode(node: stencila.Code): Pandoc.Code {
 
 /**
  * Parse a Pandoc `Link` to a Stencila `Link`.
- *
- * Note: attributes are ignored
  */
 function parseLink(node: Pandoc.Link): stencila.Link {
-  const [url, title] = node.c[2]
-  return {
+  const [target, title] = node.c[2]
+  const link: stencila.Link = {
     type: 'Link',
+    target,
     content: parseInlines(node.c[1]),
-    target: url,
     description: title
   }
+  const meta = parseAttrs(node.c[0])
+  // TODO: remove ts-ignore
+  // @ts-ignore
+  if (meta) link.meta = meta
+  return link
 }
 
 /**
@@ -929,12 +936,12 @@ export const emptyAttrs: Pandoc.Attr = ['', [], []]
 /**
  * Parse Pandoc `Attr` attributes to an object
  */
-function parseAttrs(node: Pandoc.Attr): { [key: string]: string } {
+function parseAttrs(node: Pandoc.Attr): { [key: string]: string } | undefined {
   const attrs: { [key: string]: string } = {}
   if (node[0]) attrs.id = node[0]
-  if (node[1]) attrs.classes = node[1].join(' ')
+  if (node[1] && node[1].length) attrs.classes = node[1].join(' ')
   for (const attr of node[2]) attrs[attr[0]] = attr[1]
-  return attrs
+  return Object.keys(attrs).length ? attrs : undefined
 }
 
 /**

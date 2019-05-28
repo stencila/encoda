@@ -3,12 +3,17 @@ import { dump, load } from '../src/vfile'
 
 test('parse', async () => {
   expect(await parse(await load(kitchenSink.md))).toEqual(kitchenSink.node)
+  expect(await parse(await load(attrs.md))).toEqual(attrs.node)
+
   expect(await parse(await load(shortYaml.from))).toEqual(shortYaml.node)
 })
 
 test('unparse', async () => {
   expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.md)
+  expect(await dump(await unparse(attrs.node))).toEqual(attrs.md)
+
   expect(await dump(await unparse(shortYaml.node))).toEqual(shortYaml.to)
+
   expect(await dump(await unparse(emptyParas.node))).toEqual(emptyParas.to)
 })
 
@@ -316,6 +321,72 @@ x = {}
       },
       {
         type: 'ThematicBreak'
+      }
+    ]
+  }
+}
+
+/**
+ * Example for testing attributes on
+ * `Link`, `Code` and `CodeBlock` nodes.
+ */
+const attrs = {
+  md: `---
+authors: []
+---
+
+A [link](url){attr1=foo attr2="bar baz" attr3}.
+
+A \`code\`{lang=r}.
+
+\`\`\`r attr1=foo attr2="bar baz" attr3
+# A code block
+\`\`\`
+`,
+  node: {
+    type: 'Article',
+    authors: [],
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          'A ',
+          {
+            type: 'Link',
+            target: 'url',
+            meta: {
+              attr1: 'foo',
+              attr2: 'bar baz',
+              attr3: ''
+            },
+            content: ['link']
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'A ',
+          {
+            type: 'Code',
+            meta: {
+              lang: 'r'
+            },
+            value: 'code'
+          },
+          '.'
+        ]
+      },
+      {
+        type: 'CodeBlock',
+        language: 'r',
+        meta: {
+          attr1: 'foo',
+          attr2: 'bar baz',
+          attr3: ''
+        },
+        value: '# A code block'
       }
     ]
   }

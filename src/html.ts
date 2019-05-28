@@ -228,9 +228,9 @@ function parseInlineChildNodes(node: Node): stencila.InlineContent[] {
 }
 
 /**
- * Parse a `#document` node to a `stencila.CreativeWork`.
+ * Parse a `#document` node to a `stencila.Node`.
  */
-function parseDocument(doc: HTMLDocument): stencila.CreativeWork {
+function parseDocument(doc: HTMLDocument): stencila.Node {
   const head = doc.querySelector('head')
   if (!head) throw new Error('Document does not have a <head>!')
 
@@ -240,6 +240,12 @@ function parseDocument(doc: HTMLDocument): stencila.CreativeWork {
   const jsonld = head.querySelector('script[type="application/ld+json"]')
   const metadata = jsonld ? JSON.parse(jsonld.innerHTML || '{}') : {}
   delete metadata['@context']
+
+  if (!jsonld && body.childElementCount === 1) {
+    const node = parseNode(body.children[0])
+    if (!node) throw new Error(`Top level node is not defined`)
+    return node
+  }
 
   // TODO: Allow for the different types of creative work based on type in
   // the jsonld
@@ -374,13 +380,15 @@ function unparseQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
 function parseCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
-  // TODO: handle `data-` attributes and put them into `meta`
   const { language, value } = parseCode(code)
-  return {
+  const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
     language,
     value
   }
+  const meta = parseDataAttrs(elem)
+  if (meta) codeblock.meta = meta
+  return codeblock
 }
 
 /**
@@ -390,14 +398,8 @@ function parseCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
  * the `<pre>` element with a `data-` prefix.
  */
 function unparseCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
-  const attrs: { [key: string]: string } = {}
-  if (block.meta) {
-    const meta = block.meta as { [key: string]: string }
-    for (const [key, value] of Object.entries(meta)) {
-      attrs['data-' + key] = value
-    }
-  }
-  const code = unparseCode(block)
+  const attrs = unparseDataAttrs(block.meta || {})
+  const code = unparseCode(block, false)
   return h('pre', attrs, code)
 }
 
@@ -510,15 +512,29 @@ function unparseInlineThing<Type extends keyof stencila.Types>(
  * Parse a `<a>` element to a `stencila.Link`.
  */
 function parseLink(elem: HTMLAnchorElement): stencila.Link {
-  const href = elem.getAttribute('href') || '#'
-  return { type: 'Link', target: href, content: parseInlineChildNodes(elem) }
+  const link: stencila.Link = {
+    type: 'Link',
+    target: elem.getAttribute('href') || '#',
+    content: parseInlineChildNodes(elem)
+  }
+  const meta = parseDataAttrs(elem)
+  // TODO: remove ts-ignore
+  // @ts-ignore
+  if (meta) link.meta = meta
+  return link
 }
 
 /**
  * Unparse a `stencila.Link` to a `<a>` element.
  */
 function unparseLink(link: stencila.Link): HTMLAnchorElement {
-  return h('a', { href: link.target }, link.content.map(unparseNode))
+  let attrs = {
+    href: link.target,
+    // TODO: remove ts-ignores
+    // @ts-ignore
+    ...unparseDataAttrs(link.meta || {})
+  }
+  return h('a', attrs, link.content.map(unparseNode))
 }
 
 /**
@@ -550,15 +566,27 @@ function parseCode(elem: HTMLElement): stencila.Code {
       code.language = match[1]
     }
   }
+  const meta = parseDataAttrs(elem)
+  // TODO: remove ts-ignore
+  // @ts-ignore
+  if (meta) code.meta = meta
   return code
 }
 
 /**
  * Unparse a `stencila.Code` to a `<code>` element.
  */
-function unparseCode(code: stencila.Code): HTMLElement {
-  const clas = code.language ? `language-${code.language}` : undefined
-  return h('code', { class: clas, innerHTML: escape(code.value) })
+function unparseCode(
+  code: stencila.Code,
+  dataAttrs: boolean = true
+): HTMLElement {
+  return h('code', {
+    class: code.language ? `language-${code.language}` : undefined,
+    innerHTML: escape(code.value),
+    // TODO: remove ts-ignore
+    // @ts-ignore
+    ...(dataAttrs ? unparseDataAttrs(code.meta || {}) : {})
+  })
 }
 
 /**
@@ -681,4 +709,30 @@ function parseText(text: Text): string {
  */
 function unparseString(value: string): Text {
   return document.createTextNode(value)
+}
+
+/**
+ * Parse the `data-` attributes of an element into a dictionary
+ * of strings.
+ */
+function parseDataAttrs(
+  elem: HTMLElement
+): { [key: string]: string } | undefined {
+  const dict: { [key: string]: string } = {}
+  Array.from(elem.attributes)
+    .filter(attr => attr.name.startsWith('data-'))
+    .forEach(attr => (dict[attr.name.slice(5)] = attr.value))
+  return Object.keys(dict).length ? dict : undefined
+}
+
+/**
+ * Unparse a dictionary of strings to `data-` attributes to add to
+ * an element (the inverse of `parseDataAttrs`).
+ */
+function unparseDataAttrs(meta: { [key: string]: string }) {
+  const attrs: { [key: string]: string } = {}
+  for (const [key, value] of Object.entries(meta)) {
+    attrs['data-' + key] = value
+  }
+  return attrs
 }
