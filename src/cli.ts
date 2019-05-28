@@ -1,5 +1,6 @@
 import yargs from 'yargs'
 import './boot'
+import { devserve } from './devserve'
 import { convert } from './index'
 
 const VERSION = require('../package').version
@@ -39,6 +40,21 @@ yargs
       const from = argv.from
       const to = argv.to
       await convert(inp, out, { from, to })
+    }
+  )
+
+  .command(
+    'devserve [dir]',
+    'Serve a directory in development mode (watches for changes in files and automatically syncs the browser)',
+    (yargs: any) => {
+      yargs.positional('dir', {
+        describe: 'The directory to serve. Defaults to current.',
+        type: 'string',
+        default: '.'
+      })
+    },
+    async (argv: any) => {
+      devserve(argv.dir)
     }
   )
 
