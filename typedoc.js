@@ -1,4 +1,4 @@
 module.exports = {
-  out: './docs',
+  out: './docs/api',
   readme: 'README.md'
 }
