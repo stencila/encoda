@@ -23,6 +23,7 @@
     "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz -C bin stencila-convert",
     "bundle:windows": "./bundle-win.sh",
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
+    "docs:dev": "ts-node --files src/cli devserve docs",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
   "pandoc": {
