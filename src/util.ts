@@ -5,7 +5,7 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import produce from 'immer'
 import path from 'path'
-import { parse as parsePerson } from './person'
+import { decode as decodePerson } from './person'
 
 const built = path.join(
   path.dirname(require.resolve('@stencila/schema')),
@@ -160,34 +160,34 @@ const mutators = new Ajv({
 })
 
 /**
- * A list of parsers that can be applied using the `parser` keyword
+ * A list of decoders that can be applied using the `decoder` keyword
  */
-const parsers: { [key: string]: (data: string) => any } = {
+const decoders: { [key: string]: (data: string) => any } = {
   csv,
   ssv,
-  person: parsePerson
+  person: decodePerson
 }
 
 /**
- * Parse comma separated string data into an array of strings
+ * Decode comma separated string data into an array of strings
  */
 function csv(data: string): Array<string> {
   return data.split(',')
 }
 
 /**
- * Parse space separated string data into an array of strings
+ * Decode space separated string data into an array of strings
  */
 function ssv(data: string): Array<string> {
   return data.split(/ +/)
 }
 
 /**
- * Custom validation function that handles the `parser`
+ * Custom validation function that handles the `decoder`
  * keyword.
  */
-const parserValidate: Ajv.SchemaValidateFunction = (
-  parser: string,
+const decoderValidate: Ajv.SchemaValidateFunction = (
+  decoder: string,
   data: string,
   parentSchema?: object,
   dataPath?: string,
@@ -196,7 +196,7 @@ const parserValidate: Ajv.SchemaValidateFunction = (
   rootData?: object | Array<any>
 ): boolean => {
   function raise(msg: string) {
-    parserValidate.errors = [
+    decoderValidate.errors = [
       {
         keyword: 'parser',
         dataPath: '' + dataPath,
@@ -210,19 +210,19 @@ const parserValidate: Ajv.SchemaValidateFunction = (
     ]
     return false
   }
-  const parse = parsers[parser]
-  if (!parse) return raise(`no such parser: "${parser}"`)
+  const decode = decoders[decoder]
+  if (!decode) return raise(`no such decoder: "${decoder}"`)
 
-  let parsed: any
+  let decoded: any
   try {
-    parsed = parse(data)
+    decoded = decode(data)
   } catch (error) {
-    const parseError = error.message.split('\n')[0]
-    return raise(`error when parsing using "${parser}": ${parseError}`)
+    const decodeError = error.message.split('\n')[0]
+    return raise(`error when decoding using "${decoder}": ${decodeError}`)
   }
 
   if (parentData !== undefined && parentDataProperty !== undefined) {
-    ;(parentData as any)[parentDataProperty] = parsed
+    ;(parentData as any)[parentDataProperty] = decoded
   }
   return true
 }
@@ -230,7 +230,7 @@ const parserValidate: Ajv.SchemaValidateFunction = (
 mutators.addKeyword('parser', {
   type: 'string',
   modifying: true,
-  validate: parserValidate
+  validate: decoderValidate
 })
 
 /**

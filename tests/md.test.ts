@@ -1,23 +1,23 @@
-import { parse, unparse } from '../src/md'
+import { decode, encode } from '../src/md'
 import { dump, load } from '../src/vfile'
 
-test('parse', async () => {
-  expect(await parse(await load(kitchenSink.md))).toEqual(kitchenSink.node)
-  expect(await parse(await load(attrs.md))).toEqual(attrs.node)
+test('decode', async () => {
+  expect(await decode(await load(kitchenSink.md))).toEqual(kitchenSink.node)
+  expect(await decode(await load(attrs.md))).toEqual(attrs.node)
 
-  expect(await parse(await load(shortYaml.from))).toEqual(shortYaml.node)
+  expect(await decode(await load(shortYaml.from))).toEqual(shortYaml.node)
 })
 
-test('unparse', async () => {
-  expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.md)
-  expect(await dump(await unparse(attrs.node))).toEqual(attrs.md)
+test('encode', async () => {
+  expect(await dump(await encode(kitchenSink.node))).toEqual(kitchenSink.md)
+  expect(await dump(await encode(attrs.node))).toEqual(attrs.md)
 
-  expect(await dump(await unparse(shortYaml.node))).toEqual(shortYaml.to)
+  expect(await dump(await encode(shortYaml.node))).toEqual(shortYaml.to)
 
-  expect(await dump(await unparse(emptyParas.node))).toEqual(emptyParas.to)
+  expect(await dump(await encode(emptyParas.node))).toEqual(emptyParas.to)
 })
 
-// An example intended for testing progressively added parser/unparser pairs
+// An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
   // Note: for bidi conversion, we're using expanded YAML frontmatter,
   // but most authors are likely to prefer using shorter variants e.g.

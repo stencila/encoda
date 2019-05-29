@@ -1,15 +1,21 @@
-import * as stencila from '@stencila/schema';
-import fs from 'fs-extra';
-import path from 'path';
-import { emptyAttrs, parse, parseMeta, unparse, unparseMeta } from '../src/pandoc';
-import * as Pandoc from '../src/pandoc-types';
-import * as rpng from '../src/rpng';
-import { dump, load } from '../src/vfile';
+import * as stencila from '@stencila/schema'
+import fs from 'fs-extra'
+import path from 'path'
+import {
+  decode,
+  decodeMeta,
+  emptyAttrs,
+  encode,
+  encodeMeta
+} from '../src/pandoc'
+import * as Pandoc from '../src/pandoc-types'
+import * as rpng from '../src/rpng'
+import { dump, load } from '../src/vfile'
 
 jest.setTimeout(30 * 1000)
 
-test('parse', async () => {
-  const p = async (pdoc: any) => await parse(load(JSON.stringify(pdoc)))
+test('decode', async () => {
+  const p = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
 
   let got = await p(kitchenSink.pdoc)
   expect(got).toEqual(kitchenSink.node)
@@ -18,8 +24,8 @@ test('parse', async () => {
   expect(await p(imageInlinesToString.pdoc)).toEqual(imageInlinesToString.node)
 })
 
-test('unparse', async () => {
-  const u = async (node: any) => JSON.parse(await dump(await unparse(node)))
+test('encode', async () => {
+  const u = async (node: any) => JSON.parse(await dump(await encode(node)))
 
   let got = await u(kitchenSink.node)
   expect(got).toEqual(kitchenSink.pdoc)
@@ -90,11 +96,11 @@ test('metadata', async () => {
     }
   }
 
-  const unparsed = await unparseMeta(meta)
-  const parsed = await parseMeta(pmeta)
+  const encoded = await encodeMeta(meta)
+  const decoded = await decodeMeta(pmeta)
 
-  expect(unparsed).toEqual(pmeta)
-  expect(parsed).toEqual(meta)
+  expect(encoded).toEqual(pmeta)
+  expect(decoded).toEqual(meta)
 })
 
 interface testCase {
@@ -425,7 +431,7 @@ const collapseSpaces: testCase = {
   }
 }
 
-// Test that where necessary Pandoc inline nodes are parsed to strings
+// Test that where necessary Pandoc inline nodes are decoded to strings
 const imageInlinesToString: testCase = {
   pdoc: {
     'pandoc-api-version': Pandoc.Version,
@@ -486,7 +492,7 @@ const imageInlinesToString: testCase = {
   }
 }
 
-// Test that "special" nodes, encoded as rPNGs, can be parsed/unparsed
+// Test that "special" nodes, encoded as rPNGs, can be decoded/encoded
 test('rpngs', async () => {
   const boolean = false
   const number = 3.14
@@ -498,16 +504,16 @@ test('rpngs', async () => {
   // Generate the rPNGs
   const output = path.join(__dirname, 'output', 'pandoc-rpngs')
   fs.ensureDirSync(output)
-  const nullPng = await rpng.unparse(null, path.join(output, 'null.png'))
-  const booleanPng = await rpng.unparse(
+  const nullPng = await rpng.encode(null, path.join(output, 'null.png'))
+  const booleanPng = await rpng.encode(
     boolean,
     path.join(output, 'boolean.png')
   )
-  const numberPng = await rpng.unparse(number, path.join(output, 'number.png'))
-  const arrayPng = await rpng.unparse(array, path.join(output, 'array.png'))
-  const objectPng = await rpng.unparse(object, path.join(output, 'object.png'))
-  const thingPng = await rpng.unparse(thing, path.join(output, 'thing.png'))
-  const personPng = await rpng.unparse(person, path.join(output, 'person.png'))
+  const numberPng = await rpng.encode(number, path.join(output, 'number.png'))
+  const arrayPng = await rpng.encode(array, path.join(output, 'array.png'))
+  const objectPng = await rpng.encode(object, path.join(output, 'object.png'))
+  const thingPng = await rpng.encode(thing, path.join(output, 'thing.png'))
+  const personPng = await rpng.encode(person, path.join(output, 'person.png'))
 
   const pdoc: Pandoc.Document = {
     'pandoc-api-version': Pandoc.Version,
@@ -563,9 +569,9 @@ test('rpngs', async () => {
     ]
   }
 
-  expect(await parse(load(JSON.stringify(pdoc)))).toEqual(node)
+  expect(await decode(load(JSON.stringify(pdoc)))).toEqual(node)
   // Skipping this until resolve how to deal with output RPNG paths
-  //expect(JSON.parse(await dump(await unparse(node)))).toEqual(pdoc)
+  //expect(JSON.parse(await dump(await encode(node)))).toEqual(pdoc)
 })
 
 // A very simple test of the approach to typing Pandoc nodes

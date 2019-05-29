@@ -1,5 +1,5 @@
 /**
- * Compiler for Tabular Data Package (TDP)
+ * Codec for Tabular Data Package (TDP)
  *
  * The [TDP specification](https://specs.frictionlessdata.io/tabular-data-package/)
  * is a [Data Package](https://specs.frictionlessdata.io/data-package/) (represented by a
@@ -28,19 +28,19 @@ export const mediaTypes = [
 export const fileNames = ['datapackage.json']
 
 export const extNames = [
-  // To be able to refer to this compiler since the `mime` package
+  // To be able to refer to this codec since the `mime` package
   // does not have registered extension names for the above media type
   'tdp'
 ]
 
-export async function parse(file: VFile): Promise<stencila.Node> {
+export async function decode(file: VFile): Promise<stencila.Node> {
   let pkg: datapackage.Package
   if (file.path) pkg = await datapackage.Package.load(file.path)
   else pkg = await datapackage.Package.load(JSON.parse(await dump(file)))
 
-  // Parse resources
+  // Decode resources
   const parts = await Promise.all(pkg.resources.map(
-    async (resource: datapackage.Resource) => parseResource(resource)
+    async (resource: datapackage.Resource) => decodeResource(resource)
   ) as Array<Promise<stencila.Datatable>>)
 
   // Collection or Datatable ?
@@ -68,7 +68,7 @@ export async function parse(file: VFile): Promise<stencila.Node> {
   return node
 }
 
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
@@ -100,7 +100,7 @@ export async function unparse(
     )
   }
 
-  // Unparse Datatable into resource descriptors
+  // Encode Datatable into resource descriptors
   const resources: Array<datapackage.Resource> = []
   if (cw.type === 'Collection') {
     const collection = cw as stencila.Collection
@@ -111,11 +111,11 @@ export async function unparse(
             `Unable to convert collection part of type ${part.type}`
           )
         }
-        resources.push(unparseCreativeWork(part))
+        resources.push(encodeCreativeWork(part))
       }
     }
   } else {
-    resources.push(unparseCreativeWork(cw))
+    resources.push(encodeCreativeWork(cw))
   }
   desc.resources = await Promise.all(
     resources.map(async resource => (await resource).descriptor)
@@ -139,13 +139,13 @@ export async function unparse(
  ********************************************************************/
 
 /**
- * Parse a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
+ * Decode a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
  * to a `stencila.Datatable`.
  *
- * @param datatable The datatable to unparse
+ * @param datatable The datatable to encode
  * @returns A resource
  */
-async function parseResource(
+async function decodeResource(
   resource: datapackage.Resource
 ): Promise<stencila.Datatable> {
   // Read in the data
@@ -171,35 +171,35 @@ async function parseResource(
     }
   }
 
-  // Parse fields
+  // Decode fields
   const columns = resource.schema.fields.map((field: any, index: number) =>
-    parseField(field, values[index])
+    decodeField(field, values[index])
   )
 
   return stencila.create('Datatable', { columns })
 }
 
 /**
- * Unparse a `stencila.CreativeWork` to a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
+ * Encode a `stencila.CreativeWork` to a [`datapackage.Resource`](https://frictionlessdata.io/specs/data-resource/)
  *
  * The data is inlined as CSV allowing the resource to be saved to file later.
  *
- * @param datatable The datatable to unparse
+ * @param datatable The datatable to encode
  * @returns A resource
  */
-async function unparseCreativeWork(
+async function encodeCreativeWork(
   cw: stencila.CreativeWork
 ): datapackage.Resource {
   const datatable = cw as stencila.Datatable
 
   const schema = {
-    fields: datatable.columns.map(unparseDatatableColumn)
+    fields: datatable.columns.map(encodeDatatableColumn)
   }
   const desc = {
     profile: 'tabular-data-resource',
     name: datatable.name || 'Unnamed',
 
-    data: await dump(await csv.unparse(datatable)),
+    data: await dump(await csv.encode(datatable)),
     format: 'csv',
     mediatype: 'text/csv',
     encoding: 'utf-8',
@@ -214,21 +214,21 @@ async function unparseCreativeWork(
  ********************************************************************/
 
 /**
- * Parse a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field) to a `stencila.DatatableColumn`.
+ * Decode a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field) to a `stencila.DatatableColumn`.
  */
-function parseField(
+function decodeField(
   field: datapackage.Field,
   values: Array<any>
 ): stencila.DatatableColumn {
-  // Parse constraints
+  // Decode constraints
   let constraints = field.constraints || {}
-  let items = parseFieldConstraints(constraints)
+  let items = decodeFieldConstraints(constraints)
 
-  // Parse `type` and `format`. From the Table Schema docs:
+  // Decode `type` and `format`. From the Table Schema docs:
   //   Both type and format are optional: in a field descriptor, the absence of a type
   //   property indicates that the field is of the type "string", and the absence of a
   //   format property indicates that the field's type format is "default".
-  let { type, format } = parseFieldTypeFormat(
+  let { type, format } = decodeFieldTypeFormat(
     field.type || 'string',
     field.format || 'default'
   )
@@ -252,9 +252,9 @@ function parseField(
 }
 
 /**
- * Unparse a `stencila.DatatableColumn` to a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field)
+ * Encode a `stencila.DatatableColumn` to a Table Schema [`Field`](https://github.com/frictionlessdata/tableschema-js#field)
  */
-function unparseDatatableColumn(
+function encodeDatatableColumn(
   column: stencila.DatatableColumn
 ): datapackage.Field {
   const field = {
@@ -262,9 +262,7 @@ function unparseDatatableColumn(
   }
   if (!column.schema) return field
 
-  let { type, format, constraints } = unparseDatatableColumnSchema(
-    column.schema
-  )
+  let { type, format, constraints } = encodeDatatableColumnSchema(column.schema)
   if (column.schema.uniqueItems) constraints.unique = true
 
   return { ...field, type, format, constraints }
@@ -275,11 +273,11 @@ function unparseDatatableColumn(
  ********************************************************************/
 
 /**
- * Parse a Frictionless Data Table Schema [types and formats](https://frictionlessdata.io/specs/table-schema/#types-and-formats)
+ * Decode a Frictionless Data Table Schema [types and formats](https://frictionlessdata.io/specs/table-schema/#types-and-formats)
  * to JSON Schema [`type`](https://json-schema.org/understanding-json-schema/reference/type.html)
  * and [`format`](https://json-schema.org/understanding-json-schema/reference/string.html#format).
  */
-export function parseFieldTypeFormat(
+export function decodeFieldTypeFormat(
   type: null | string,
   format: null | string
 ) {
@@ -337,13 +335,13 @@ export function parseFieldTypeFormat(
 }
 
 /**
- * Parse a Frictionless Data Table Schema [constraints](https://frictionlessdata.io/specs/table-schema/#constraints) to
+ * Decode a Frictionless Data Table Schema [constraints](https://frictionlessdata.io/specs/table-schema/#constraints) to
  * JSON Schema keywords such as `minimum`.
  *
  * Note that the the `unique` constraints are handled elsewhere. Only constraints that
  * apply to items should be returned here.
  */
-export function parseFieldConstraints(constraints: { [key: string]: any }) {
+export function decodeFieldConstraints(constraints: { [key: string]: any }) {
   let items: { [key: string]: any } = {}
   if (constraints.minimum) items.minimum = constraints.minimum
   if (constraints.maximum) items.maximum = constraints.maximum
@@ -362,7 +360,7 @@ export function parseFieldConstraints(constraints: { [key: string]: any }) {
   }
 }
 
-function unparseDatatableColumnSchema(schema: stencila.DatatableColumnSchema) {
+function encodeDatatableColumnSchema(schema: stencila.DatatableColumnSchema) {
   let items = schema.items
 
   const constraints: { [key: string]: any } = {}

@@ -1,14 +1,14 @@
 import fs from 'fs'
 import path from 'path'
 import {
+  decode,
+  decodeSync,
+  encode,
   extract,
   has,
   insert,
-  parse,
-  parseSync,
   sniff,
-  sniffSync,
-  unparse
+  sniffSync
 } from '../src/rpng'
 import { read } from '../src/vfile'
 import vfile = require('vfile')
@@ -43,17 +43,17 @@ test('sniff', async () => {
   expect(sniffSync('/some/file.zip')).toBe(false)
 })
 
-test('parse', async () => {
+test('decode', async () => {
   const file = await read(rpngPath)
-  expect(await parse(file)).toEqual(node)
-  expect(parseSync(file)).toEqual(node)
+  expect(await decode(file)).toEqual(node)
+  expect(decodeSync(file)).toEqual(node)
 })
 
-test('unparse', async () => {
+test('encode', async () => {
   jest.setTimeout(30 * 1000) // Extending timeout due to failing test on AppVeyor
-  const file = await unparse(node)
+  const file = await encode(node)
   expect(file).toBeInstanceOf(vfile)
-  expect(await parse(file)).toEqual(node)
+  expect(await decode(file)).toEqual(node)
 })
 
 test('insert, has, extract', () => {

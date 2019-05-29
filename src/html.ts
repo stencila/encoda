@@ -1,18 +1,18 @@
 /**
- * # HTML compiler
+ * # HTML codec
  *
- * This is a compiler for HyperText Markup Language (HTML).
- * It parses/unparses Stencila Document Tree (SDT) nodes from/to HTML.
+ * This is a codec for HyperText Markup Language (HTML).
+ * It decodes/encodes Stencila Document Tree (SDT) nodes from/to HTML.
  *
  * ## Philosophy
  *
- * ### Don't worry about lossy parsing from HTML
+ * ### Don't worry about lossy decoding from HTML
  *
- * The aim of this compiler is not to parse any old HTML file from off the interwebs.
+ * The aim of this codec is not to decode any old HTML file from off the interwebs.
  *
- * ### Aim for lossless unparsing to HTML
+ * ### Aim for lossless encoding to HTML
  *
- * The aim of this compiler is to be able to publish Stencila documents as
+ * The aim of this codec is to be able to publish Stencila documents as
  * completely as possible. One way we achieve through JSON-LD metadata.
  *
  * ### Use custom elements where necessary
@@ -34,7 +34,7 @@
  * - `hyperscript` for it's beautifully minimal API with built in typing support.
  *   e.g. `h('p')` returns a `HTMLParagraphElement`
  *
- * - `collapse-whitespace` to avoid extraneous string elements in parsed content.
+ * - `collapse-whitespace` to avoid extraneous string elements in decoded content.
  *
  * - `js-beautify` for pretty generated HTML.
  *
@@ -63,29 +63,29 @@ const document = new jsdom.JSDOM().window.document
 export const mediaTypes = ['text/html']
 
 /**
- * Parse a `VFile` with HTML contents to a `stencila.Node`.
+ * Decode a `VFile` with HTML contents to a `stencila.Node`.
  *
- * @param file The `VFile` to parse
+ * @param file The `VFile` to decode
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
+export async function decode(file: VFile): Promise<stencila.Node> {
   const html = await dump(file)
   const dom = new jsdom.JSDOM(html)
   const document = dom.window.document
   collapse(document)
-  const node = parseNode(document)
-  if (!node) throw new Error(`Unable to parse HTML`)
+  const node = decodeNode(document)
+  if (!node) throw new Error(`Unable to decode HTML`)
   return node
 }
 
 /**
- * Unparse a `stencila.Node` to a `VFile` with HTML contents.
+ * Encode a `stencila.Node` to a `VFile` with HTML contents.
  *
- * @param node The `stencila.Node` to unparse. Will be mutated to an `Node`.
+ * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
  * @returns A promise that resolves to a `VFile`
  */
-export async function unparse(node: stencila.Node): Promise<VFile> {
-  const dom = unparseNode(node) as HTMLHtmlElement
+export async function encode(node: stencila.Node): Promise<VFile> {
+  const dom = encodeNode(node) as HTMLHtmlElement
   const beautifulHtml = beautifyHtml(dom.outerHTML, {
     indent_size: 2,
     indent_inner_html: true, // Indent <head> and <body> sections
@@ -95,142 +95,142 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   return load(beautifulHtml)
 }
 
-function parseNode(node: Node): stencila.Node | undefined {
+function decodeNode(node: Node): stencila.Node | undefined {
   const name = node.nodeName.toLowerCase()
   switch (name) {
     case '#document':
-      return parseDocument(node as HTMLDocument)
+      return decodeDocument(node as HTMLDocument)
 
     case 'p':
-      return parseParagraph(node as HTMLParagraphElement)
+      return decodeParagraph(node as HTMLParagraphElement)
     case 'blockquote':
-      return parseBlockquote(node as HTMLQuoteElement)
+      return decodeBlockquote(node as HTMLQuoteElement)
     case 'pre':
       if (node.firstChild && node.firstChild.nodeName === 'CODE') {
-        return parseCodeBlock(node as HTMLPreElement)
+        return decodeCodeBlock(node as HTMLPreElement)
       }
       break
     case 'ul':
-      return parseList(node as HTMLUListElement)
+      return decodeList(node as HTMLUListElement)
     case 'ol':
-      return parseList(node as HTMLOListElement)
+      return decodeList(node as HTMLOListElement)
     case 'table':
-      return parseTable(node as HTMLTableElement)
+      return decodeTable(node as HTMLTableElement)
     case 'hr':
-      return parseHR(node as HTMLHRElement)
+      return decodeHR(node as HTMLHRElement)
 
     case 'em':
-      return parseInlineElement(node as HTMLElement, 'Emphasis')
+      return decodeInlineElement(node as HTMLElement, 'Emphasis')
     case 'strong':
-      return parseInlineElement(node as HTMLElement, 'Strong')
+      return decodeInlineElement(node as HTMLElement, 'Strong')
     case 'del':
-      return parseInlineElement(node as HTMLElement, 'Delete')
+      return decodeInlineElement(node as HTMLElement, 'Delete')
     case 'a':
-      return parseLink(node as HTMLAnchorElement)
+      return decodeLink(node as HTMLAnchorElement)
     case 'q':
-      return parseQuote(node as HTMLQuoteElement)
+      return decodeQuote(node as HTMLQuoteElement)
     case 'code':
-      return parseCode(node as HTMLElement)
+      return decodeCode(node as HTMLElement)
     case 'img':
-      return parseImage(node as HTMLImageElement)
+      return decodeImage(node as HTMLImageElement)
 
     case 'stencila-null':
-      return parseNull(node as HTMLElement)
+      return decodeNull(node as HTMLElement)
     case 'stencila-boolean':
-      return parseBoolean(node as HTMLElement)
+      return decodeBoolean(node as HTMLElement)
     case 'stencila-number':
-      return parseNumber(node as HTMLElement)
+      return decodeNumber(node as HTMLElement)
     case 'stencila-array':
-      return parseArray(node as HTMLElement)
+      return decodeArray(node as HTMLElement)
     case 'stencila-object':
-      return parseObject(node as HTMLElement)
+      return decodeObject(node as HTMLElement)
     case 'stencila-thing':
-      return parseThing(node as HTMLElement)
+      return decodeThing(node as HTMLElement)
 
     case 'script':
       return undefined
 
     case '#text':
-      return parseText(node as Text)
+      return decodeText(node as Text)
   }
 
   const match = name.match(/^h(\d)$/)
   if (match) {
-    return parseHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
+    return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
 
-  throw new Error(`No HTML parser for HTML element <${name}>`)
+  throw new Error(`No HTML decoder for HTML element <${name}>`)
 }
 
-function unparseNode(node: stencila.Node): Node {
+function encodeNode(node: stencila.Node): Node {
   const type = stencila.type(node)
   switch (type) {
     case 'Article':
-      return unparseArticle(node as stencila.Article)
+      return encodeArticle(node as stencila.Article)
 
     case 'Heading':
-      return unparseHeading(node as stencila.Heading)
+      return encodeHeading(node as stencila.Heading)
     case 'Paragraph':
-      return unparseParagraph(node as stencila.Paragraph)
+      return encodeParagraph(node as stencila.Paragraph)
     case 'QuoteBlock':
-      return unparseQuoteBlock(node as stencila.QuoteBlock)
+      return encodeQuoteBlock(node as stencila.QuoteBlock)
     case 'CodeBlock':
-      return unparseCodeBlock(node as stencila.CodeBlock)
+      return encodeCodeBlock(node as stencila.CodeBlock)
     case 'List':
-      return unparseList(node as stencila.List)
+      return encodeList(node as stencila.List)
     case 'Table':
-      return unparseTable(node as stencila.Table)
+      return encodeTable(node as stencila.Table)
     case 'ThematicBreak':
-      return unparseThematicBreak(node as stencila.ThematicBreak)
+      return encodeThematicBreak(node as stencila.ThematicBreak)
 
     case 'Emphasis':
-      return unparseInlineThing<'Emphasis'>(node, 'em')
+      return encodeInlineThing<'Emphasis'>(node, 'em')
     case 'Strong':
-      return unparseInlineThing<'Strong'>(node, 'strong')
+      return encodeInlineThing<'Strong'>(node, 'strong')
     case 'Delete':
-      return unparseInlineThing<'Delete'>(node, 'del')
+      return encodeInlineThing<'Delete'>(node, 'del')
     case 'Link':
-      return unparseLink(node as stencila.Link)
+      return encodeLink(node as stencila.Link)
     case 'Quote':
-      return unparseQuote(node as stencila.Quote)
+      return encodeQuote(node as stencila.Quote)
     case 'Code':
-      return unparseCode(node as stencila.Code)
+      return encodeCode(node as stencila.Code)
     case 'ImageObject':
-      return unparseImageObject(node as stencila.ImageObject)
+      return encodeImageObject(node as stencila.ImageObject)
 
     case 'null':
-      return unparseNull(node as null)
+      return encodeNull(node as null)
     case 'boolean':
-      return unparseBoolean(node as boolean)
+      return encodeBoolean(node as boolean)
     case 'number':
-      return unparseNumber(node as number)
+      return encodeNumber(node as number)
     case 'string':
-      return unparseString(node as string)
+      return encodeString(node as string)
     case 'array':
-      return unparseArray(node as Array<any>)
+      return encodeArray(node as Array<any>)
     case 'object':
-      return unparseObject(node as object)
+      return encodeObject(node as object)
     default:
-      return unparseThing(node as stencila.Thing)
+      return encodeThing(node as stencila.Thing)
   }
 }
 
-function parseBlockChildNodes(node: Node): stencila.BlockContent[] {
+function decodeBlockChildNodes(node: Node): stencila.BlockContent[] {
   return Array.from(node.childNodes)
-    .map(child => parseNode(child) as stencila.BlockContent)
+    .map(child => decodeNode(child) as stencila.BlockContent)
     .filter(node => typeof node !== 'undefined')
 }
 
-function parseInlineChildNodes(node: Node): stencila.InlineContent[] {
+function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
   return Array.from(node.childNodes)
-    .map(child => parseNode(child) as stencila.InlineContent)
+    .map(child => decodeNode(child) as stencila.InlineContent)
     .filter(node => typeof node !== 'undefined')
 }
 
 /**
- * Parse a `#document` node to a `stencila.Node`.
+ * Decode a `#document` node to a `stencila.Node`.
  */
-function parseDocument(doc: HTMLDocument): stencila.Node {
+function decodeDocument(doc: HTMLDocument): stencila.Node {
   const head = doc.querySelector('head')
   if (!head) throw new Error('Document does not have a <head>!')
 
@@ -242,7 +242,7 @@ function parseDocument(doc: HTMLDocument): stencila.Node {
   delete metadata['@context']
 
   if (!jsonld && body.childElementCount === 1) {
-    const node = parseNode(body.children[0])
+    const node = decodeNode(body.children[0])
     if (!node) throw new Error(`Top level node is not defined`)
     return node
   }
@@ -252,7 +252,7 @@ function parseDocument(doc: HTMLDocument): stencila.Node {
   return {
     type: 'Article',
     ...metadata,
-    content: parseBlockChildNodes(body)
+    content: decodeBlockChildNodes(body)
   }
 }
 
@@ -310,53 +310,53 @@ function generateHtmlElement(
 }
 
 /**
- * Unparse a `stencila.Article` to a `#document` node.
+ * Encode a `stencila.Article` to a `#document` node.
  */
-function unparseArticle(article: stencila.Article): HTMLHtmlElement {
+function encodeArticle(article: stencila.Article): HTMLHtmlElement {
   const { type, title, content, ...rest } = article
   const metadata = { type, title, ...rest }
-  const body = content ? content.map(unparseNode) : []
+  const body = content ? content.map(encodeNode) : []
   return generateHtmlElement(title, metadata, body)
 }
 
 /**
- * Parse a `<h1>` etc element to a `stencila.Heading`.
+ * Decode a `<h1>` etc element to a `stencila.Heading`.
  */
-function parseHeading(
+function decodeHeading(
   heading: HTMLHeadingElement,
   depth: number
 ): stencila.Heading {
-  return { type: 'Heading', depth, content: parseInlineChildNodes(heading) }
+  return { type: 'Heading', depth, content: decodeInlineChildNodes(heading) }
 }
 
 /**
- * Unparse a `stencila.Heading` to a `<h1>` etc element.
+ * Encode a `stencila.Heading` to a `<h1>` etc element.
  */
-function unparseHeading(heading: stencila.Heading): HTMLHeadingElement {
-  return h(`h${heading.depth}`, heading.content.map(unparseNode))
+function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
+  return h(`h${heading.depth}`, heading.content.map(encodeNode))
 }
 
 /**
- * Parse a `<p>` element to a `stencila.Paragraph`.
+ * Decode a `<p>` element to a `stencila.Paragraph`.
  */
-function parseParagraph(para: HTMLParagraphElement): stencila.Paragraph {
-  return { type: 'Paragraph', content: parseInlineChildNodes(para) }
+function decodeParagraph(para: HTMLParagraphElement): stencila.Paragraph {
+  return { type: 'Paragraph', content: decodeInlineChildNodes(para) }
 }
 
 /**
- * Unparse a `stencila.Paragraph` to a `<p>` element.
+ * Encode a `stencila.Paragraph` to a `<p>` element.
  */
-function unparseParagraph(para: stencila.Paragraph): HTMLParagraphElement {
-  return h('p', para.content.map(unparseNode))
+function encodeParagraph(para: stencila.Paragraph): HTMLParagraphElement {
+  return h('p', para.content.map(encodeNode))
 }
 
 /**
- * Parse a `<blockquote>` element to a `stencila.QuoteBlock`.
+ * Decode a `<blockquote>` element to a `stencila.QuoteBlock`.
  */
-function parseBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
+function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
   const quoteBlock: stencila.QuoteBlock = {
     type: 'QuoteBlock',
-    content: parseBlockChildNodes(elem)
+    content: decodeBlockChildNodes(elem)
   }
   const cite = elem.getAttribute('cite')
   if (cite) quoteBlock.citation = cite
@@ -364,49 +364,49 @@ function parseBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
 }
 
 /**
- * Unparse a `stencila.QuoteBlock` to a `<blockquote>` element.
+ * Encode a `stencila.QuoteBlock` to a `<blockquote>` element.
  */
-function unparseQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
+function encodeQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
   return h(
     'blockquote',
     { cite: block.citation },
-    block.content.map(unparseNode)
+    block.content.map(encodeNode)
   )
 }
 
 /**
- * Parse a `<pre><code class="language-xxx">` element to a `stencila.CodeBlock`.
+ * Decode a `<pre><code class="language-xxx">` element to a `stencila.CodeBlock`.
  */
-function parseCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
+function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
-  const { language, value } = parseCode(code)
+  const { language, value } = decodeCode(code)
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
     language,
     value
   }
-  const meta = parseDataAttrs(elem)
+  const meta = decodeDataAttrs(elem)
   if (meta) codeblock.meta = meta
   return codeblock
 }
 
 /**
- * Unparse a `stencila.CodeBlock` to a `<pre><code class="language-xxx">` element.
+ * Encode a `stencila.CodeBlock` to a `<pre><code class="language-xxx">` element.
  *
  * If the `CodeBlock` has a `meta` property, any keys are added as attributes to
  * the `<pre>` element with a `data-` prefix.
  */
-function unparseCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
-  const attrs = unparseDataAttrs(block.meta || {})
-  const code = unparseCode(block, false)
+function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
+  const attrs = encodeDataAttrs(block.meta || {})
+  const code = encodeCode(block, false)
   return h('pre', attrs, code)
 }
 
 /**
- * Parse a `<ul>` or `<ol>` element to a `stencila.List`.
+ * Decode a `<ul>` or `<ol>` element to a `stencila.List`.
  */
-function parseList(list: HTMLUListElement | HTMLOListElement): stencila.List {
+function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
   const order = list.tagName === 'UL' ? 'unordered' : 'ascending'
   return {
     type: 'List',
@@ -414,27 +414,27 @@ function parseList(list: HTMLUListElement | HTMLOListElement): stencila.List {
     items: Array.from(list.childNodes).map(
       // TODO: Currently assumes only one element per <li>
       (li: Node): stencila.Node =>
-        li.firstChild ? parseNode(li.firstChild) || null : null
+        li.firstChild ? decodeNode(li.firstChild) || null : null
     )
   }
 }
 
 /**
- * Unparse a `stencila.List` to a `<ul>` or `<ol>` element.
+ * Encode a `stencila.List` to a `<ul>` or `<ol>` element.
  */
-function unparseList(list: stencila.List): HTMLUListElement {
+function encodeList(list: stencila.List): HTMLUListElement {
   return h(
     list.order === 'unordered' ? 'ul' : 'ol',
     list.items.map(
-      (item: stencila.Node): HTMLLIElement => h('li', unparseNode(item))
+      (item: stencila.Node): HTMLLIElement => h('li', encodeNode(item))
     )
   )
 }
 
 /**
- * Parse a `<table>` element to a `stencila.Table`.
+ * Decode a `<table>` element to a `stencila.Table`.
  */
-function parseTable(table: HTMLTableElement): stencila.Table {
+function decodeTable(table: HTMLTableElement): stencila.Table {
   return {
     type: 'Table',
     rows: Array.from(table.querySelectorAll('tr')).map(
@@ -445,7 +445,7 @@ function parseTable(table: HTMLTableElement): stencila.Table {
             (cell: HTMLTableDataCellElement): stencila.TableCell => {
               return {
                 type: 'TableCell',
-                content: parseInlineChildNodes(cell)
+                content: decodeInlineChildNodes(cell)
               }
             }
           )
@@ -456,15 +456,15 @@ function parseTable(table: HTMLTableElement): stencila.Table {
 }
 
 /**
- * Unparse a `stencila.Table` to a `<table>` element.
+ * Encode a `stencila.Table` to a `<table>` element.
  */
-function unparseTable(table: stencila.Table): HTMLTableElement {
+function encodeTable(table: stencila.Table): HTMLTableElement {
   // prettier-ignore
   return h('table', h('tbody', table.rows.map(
       (row: stencila.TableRow): HTMLTableRowElement => {
         return h('tr', row.cells.map(
           (cell: stencila.TableCell): HTMLTableDataCellElement => {
-            return h('td', cell.content.map(unparseNode))
+            return h('td', cell.content.map(encodeNode))
           }
         ))
       }
@@ -473,51 +473,51 @@ function unparseTable(table: stencila.Table): HTMLTableElement {
 }
 
 /**
- * Parse a `<hr>` element to a `stencila.ThematicBreak`.
+ * Decode a `<hr>` element to a `stencila.ThematicBreak`.
  */
-function parseHR(hr: HTMLHRElement): stencila.ThematicBreak {
+function decodeHR(hr: HTMLHRElement): stencila.ThematicBreak {
   return { type: 'ThematicBreak' }
 }
 
 /**
- * Unparse a `stencila.ThematicBreak` to a `<hr>` element.
+ * Encode a `stencila.ThematicBreak` to a `<hr>` element.
  */
-function unparseThematicBreak(tb: stencila.ThematicBreak): HTMLHRElement {
+function encodeThematicBreak(tb: stencila.ThematicBreak): HTMLHRElement {
   return h('hr')
 }
 
 /**
- * Parse an inline element e.g `<em>` to a inline `Thing` e.g. `Emphasis`.
+ * Decode an inline element e.g `<em>` to a inline `Thing` e.g. `Emphasis`.
  */
-function parseInlineElement<Type extends keyof stencila.Types>(
+function decodeInlineElement<Type extends keyof stencila.Types>(
   elem: HTMLElement,
   type: Type
 ): stencila.Types[Type] {
-  return { type, content: parseInlineChildNodes(elem) }
+  return { type, content: decodeInlineChildNodes(elem) }
 }
 
 /**
- * Unparse an inline `Thing` to an inline element e.g. `<em>`.
+ * Encode an inline `Thing` to an inline element e.g. `<em>`.
  */
-function unparseInlineThing<Type extends keyof stencila.Types>(
+function encodeInlineThing<Type extends keyof stencila.Types>(
   node: stencila.Node,
   tag: string
 ): HTMLElement {
   node = node as stencila.Types[Type]
   // @ts-ignore
-  return h(tag, node.content.map(unparseNode))
+  return h(tag, node.content.map(encodeNode))
 }
 
 /**
- * Parse a `<a>` element to a `stencila.Link`.
+ * Decode a `<a>` element to a `stencila.Link`.
  */
-function parseLink(elem: HTMLAnchorElement): stencila.Link {
+function decodeLink(elem: HTMLAnchorElement): stencila.Link {
   const link: stencila.Link = {
     type: 'Link',
     target: elem.getAttribute('href') || '#',
-    content: parseInlineChildNodes(elem)
+    content: decodeInlineChildNodes(elem)
   }
-  const meta = parseDataAttrs(elem)
+  const meta = decodeDataAttrs(elem)
   // TODO: remove ts-ignore
   // @ts-ignore
   if (meta) link.meta = meta
@@ -525,22 +525,22 @@ function parseLink(elem: HTMLAnchorElement): stencila.Link {
 }
 
 /**
- * Unparse a `stencila.Link` to a `<a>` element.
+ * Encode a `stencila.Link` to a `<a>` element.
  */
-function unparseLink(link: stencila.Link): HTMLAnchorElement {
+function encodeLink(link: stencila.Link): HTMLAnchorElement {
   let attrs = {
     href: link.target,
     // TODO: remove ts-ignores
     // @ts-ignore
-    ...unparseDataAttrs(link.meta || {})
+    ...encodeDataAttrs(link.meta || {})
   }
-  return h('a', attrs, link.content.map(unparseNode))
+  return h('a', attrs, link.content.map(encodeNode))
 }
 
 /**
- * Parse a `<q>` element to a `stencila.Quote`.
+ * Decode a `<q>` element to a `stencila.Quote`.
  */
-function parseQuote(elem: HTMLQuoteElement): stencila.Quote {
+function decodeQuote(elem: HTMLQuoteElement): stencila.Quote {
   const quote: stencila.Quote = { type: 'Quote', content: [elem.innerHTML] }
   const cite = elem.getAttribute('cite')
   if (cite) quote.citation = cite
@@ -548,16 +548,16 @@ function parseQuote(elem: HTMLQuoteElement): stencila.Quote {
 }
 
 /**
- * Unparse a `stencila.Quote` to a `<q>` element.
+ * Encode a `stencila.Quote` to a `<q>` element.
  */
-function unparseQuote(quote: stencila.Quote): HTMLQuoteElement {
+function encodeQuote(quote: stencila.Quote): HTMLQuoteElement {
   return h('q', { cite: quote.citation }, quote.content)
 }
 
 /**
- * Parse a `<code>` element to a `stencila.Code`.
+ * Decode a `<code>` element to a `stencila.Code`.
  */
-function parseCode(elem: HTMLElement): stencila.Code {
+function decodeCode(elem: HTMLElement): stencila.Code {
   const code: stencila.Code = { type: 'Code', value: elem.textContent || '' }
   const clas = elem.getAttribute('class')
   if (clas) {
@@ -566,7 +566,7 @@ function parseCode(elem: HTMLElement): stencila.Code {
       code.language = match[1]
     }
   }
-  const meta = parseDataAttrs(elem)
+  const meta = decodeDataAttrs(elem)
   // TODO: remove ts-ignore
   // @ts-ignore
   if (meta) code.meta = meta
@@ -574,9 +574,9 @@ function parseCode(elem: HTMLElement): stencila.Code {
 }
 
 /**
- * Unparse a `stencila.Code` to a `<code>` element.
+ * Encode a `stencila.Code` to a `<code>` element.
  */
-function unparseCode(
+function encodeCode(
   code: stencila.Code,
   dataAttrs: boolean = true
 ): HTMLElement {
@@ -585,14 +585,14 @@ function unparseCode(
     innerHTML: escape(code.value),
     // TODO: remove ts-ignore
     // @ts-ignore
-    ...(dataAttrs ? unparseDataAttrs(code.meta || {}) : {})
+    ...(dataAttrs ? encodeDataAttrs(code.meta || {}) : {})
   })
 }
 
 /**
- * Parse a HTML `<img>` element to a Stencila `ImageObject`.
+ * Decode a HTML `<img>` element to a Stencila `ImageObject`.
  */
-function parseImage(elem: HTMLImageElement): stencila.ImageObject {
+function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
   const image: stencila.ImageObject = {
     type: 'ImageObject',
     contentUrl: elem.src
@@ -603,9 +603,9 @@ function parseImage(elem: HTMLImageElement): stencila.ImageObject {
 }
 
 /**
- * Unparse a Stencila `ImageObject` to a HTML `<img>` element.
+ * Encode a Stencila `ImageObject` to a HTML `<img>` element.
  */
-function unparseImageObject(image: stencila.ImageObject): HTMLImageElement {
+function encodeImageObject(image: stencila.ImageObject): HTMLImageElement {
   return h('img', {
     src: image.contentUrl,
     title: image.title,
@@ -614,108 +614,108 @@ function unparseImageObject(image: stencila.ImageObject): HTMLImageElement {
 }
 
 /**
- * Parse a `<stencila-null>` element to a `null`.
+ * Decode a `<stencila-null>` element to a `null`.
  */
-function parseNull(elem: HTMLElement): null {
+function decodeNull(elem: HTMLElement): null {
   return null
 }
 
 /**
- * Unparse a `null` to a `<stencila-null>` element.
+ * Encode a `null` to a `<stencila-null>` element.
  */
-function unparseNull(value: null): HTMLElement {
+function encodeNull(value: null): HTMLElement {
   return h('stencila-null', 'null')
 }
 
 /**
- * Parse a `<stencila-boolean>` element to a `boolean`.
+ * Decode a `<stencila-boolean>` element to a `boolean`.
  */
-function parseBoolean(elem: HTMLElement): boolean {
+function decodeBoolean(elem: HTMLElement): boolean {
   return elem.innerHTML === 'true' ? true : false
 }
 
 /**
- * Unparse a `boolean` to a `<stencila-boolean>` element.
+ * Encode a `boolean` to a `<stencila-boolean>` element.
  */
-function unparseBoolean(value: boolean): HTMLElement {
+function encodeBoolean(value: boolean): HTMLElement {
   return h('stencila-boolean', value === true ? 'true' : 'false')
 }
 
 /**
- * Parse a `<stencila-number>` element to a `number`.
+ * Decode a `<stencila-number>` element to a `number`.
  */
-function parseNumber(elem: HTMLElement): number {
+function decodeNumber(elem: HTMLElement): number {
   return parseFloat(elem.innerHTML || '0')
 }
 
 /**
- * Unparse a `number` to a `<stencila-number>` element.
+ * Encode a `number` to a `<stencila-number>` element.
  */
-function unparseNumber(value: number): HTMLElement {
+function encodeNumber(value: number): HTMLElement {
   return h('stencila-number', value.toString())
 }
 
 /**
- * Parse a `<stencila-array>` element to a `array`.
+ * Decode a `<stencila-array>` element to a `array`.
  */
-function parseArray(elem: HTMLElement): Array<any> {
+function decodeArray(elem: HTMLElement): Array<any> {
   return JSON5.parse(elem.innerHTML || '[]')
 }
 
 /**
- * Unparse a `array` to a `<stencila-array>` element.
+ * Encode a `array` to a `<stencila-array>` element.
  */
-function unparseArray(value: Array<any>): HTMLElement {
+function encodeArray(value: Array<any>): HTMLElement {
   return h('stencila-array', JSON5.stringify(value))
 }
 
 /**
- * Parse a `<stencila-object>` element to a `object`.
+ * Decode a `<stencila-object>` element to a `object`.
  */
-function parseObject(elem: HTMLElement): object {
+function decodeObject(elem: HTMLElement): object {
   return JSON5.parse(elem.innerHTML || '{}')
 }
 
 /**
- * Unparse a `object` to a `<stencila-object>` element.
+ * Encode a `object` to a `<stencila-object>` element.
  */
-function unparseObject(value: object): HTMLElement {
+function encodeObject(value: object): HTMLElement {
   return h('stencila-object', JSON5.stringify(value))
 }
 
 /**
- * Parse a `<stencila-thing>` element to a `Thing`.
+ * Decode a `<stencila-thing>` element to a `Thing`.
  */
-function parseThing(elem: HTMLElement): stencila.Thing {
+function decodeThing(elem: HTMLElement): stencila.Thing {
   return JSON5.parse(elem.innerHTML || '{}')
 }
 
 /**
- * Unparse a `Thing` to a `<stencila-thing>` element.
+ * Encode a `Thing` to a `<stencila-thing>` element.
  */
-function unparseThing(thing: stencila.Thing): HTMLElement {
+function encodeThing(thing: stencila.Thing): HTMLElement {
   return h('stencila-thing', JSON5.stringify(thing))
 }
 
 /**
- * Parse a `#text` node to a `string`.
+ * Decode a `#text` node to a `string`.
  */
-function parseText(text: Text): string {
+function decodeText(text: Text): string {
   return text.data
 }
 
 /**
- * Unparse a `string` to a `#text` node.
+ * Encode a `string` to a `#text` node.
  */
-function unparseString(value: string): Text {
+function encodeString(value: string): Text {
   return document.createTextNode(value)
 }
 
 /**
- * Parse the `data-` attributes of an element into a dictionary
+ * Decode the `data-` attributes of an element into a dictionary
  * of strings.
  */
-function parseDataAttrs(
+function decodeDataAttrs(
   elem: HTMLElement
 ): { [key: string]: string } | undefined {
   const dict: { [key: string]: string } = {}
@@ -726,10 +726,10 @@ function parseDataAttrs(
 }
 
 /**
- * Unparse a dictionary of strings to `data-` attributes to add to
- * an element (the inverse of `parseDataAttrs`).
+ * Encode a dictionary of strings to `data-` attributes to add to
+ * an element (the inverse of `decodeDataAttrs`).
  */
-function unparseDataAttrs(meta: { [key: string]: string }) {
+function encodeDataAttrs(meta: { [key: string]: string }) {
   const attrs: { [key: string]: string } = {}
   for (const [key, value] of Object.entries(meta)) {
     attrs['data-' + key] = value

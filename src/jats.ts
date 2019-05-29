@@ -1,7 +1,7 @@
 /**
- * JATS compiler
+ * JATS codec
  *
- * Compiler for [Journal Article Tag Suite (JATS)](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite).
+ * Codec for [Journal Article Tag Suite (JATS)](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite).
  */
 
 import stencila from '@stencila/schema'
@@ -29,15 +29,15 @@ export const extNames = ['jats']
 // TODO: add a `sniff` function that check is a XML files
 // and uses regex (for speed) for look for  JATs declaration
 
-export async function parse(file: VFile): Promise<stencila.Node> {
-  return pandoc.parse(file, pandoc.InputFormat.jats)
+export async function decode(file: VFile): Promise<stencila.Node> {
+  return pandoc.decode(file, pandoc.InputFormat.jats)
 }
 
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
-  return pandoc.unparse(node, filePath, pandoc.OutputFormat.jats, [
+  return pandoc.encode(node, filePath, pandoc.OutputFormat.jats, [
     `--template=jats-template.xml`
   ])
 }

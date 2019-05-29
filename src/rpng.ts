@@ -1,7 +1,7 @@
 /**
- * A compiler for Reproducible PNGs (rPNG) files.
+ * A codec for Reproducible PNGs (rPNG) files.
  *
- * This compiler parses from, and unparses to, a rPNG which embeds the Stencila node
+ * This codec decodes from, and encodes to, a rPNG which embeds the Stencila node
  * into the `tEXt` chunk of the PNG.
  *
  * This has been implemented here to make use of the HTML converter to
@@ -132,26 +132,26 @@ export function sniffSync(content: string): boolean {
 }
 
 /**
- * Parse a rPNG to a Stencila node.
+ * Decode a rPNG to a Stencila node.
  *
  * This is done by extracting the JSON
  * from the `tEXt` chunk and parsing it.
  *
- * @param file The `VFile` to parse
+ * @param file The `VFile` to decode
  * @returns The Stencila node
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
-  return parseSync(file)
+export async function decode(file: VFile): Promise<stencila.Node> {
+  return decodeSync(file)
 }
 
 /**
- * Synchronous version of `parse()`.
+ * Synchronous version of `decode()`.
  *
- * @see parse
+ * @see decode
  *
  * @param content The content to sniff (a file path).
  */
-export function parseSync(file: VFile): stencila.Node {
+export function decodeSync(file: VFile): stencila.Node {
   if (Buffer.isBuffer(file.contents)) {
     const json = extract(KEYWORD, file.contents)
     return JSON.parse(json)
@@ -160,14 +160,14 @@ export function parseSync(file: VFile): stencila.Node {
 }
 
 /**
- * Sniff and parse a file if it is a rPNG.
+ * Sniff and decode a file if it is a rPNG.
  *
- * This function is like combining `sniffSync()` and `parseSync()`
+ * This function is like combining `sniffSync()` and `decodeSync()`
  * but is faster because it only reads the file contents once.
  *
  * @param filePath The file path to sniff.
  */
-export function sniffParseSync(filePath: string): stencila.Node | undefined {
+export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
   if (path.extname(filePath) === '.png') {
     if (fs.existsSync(filePath)) {
       const image = fs.readFileSync(filePath)
@@ -179,16 +179,16 @@ export function sniffParseSync(filePath: string): stencila.Node | undefined {
 }
 
 /**
- * Unparse a Stencila node to a rPNG.
+ * Encode a Stencila node to a rPNG.
  *
  * This is done by dumping the node to HTML,
  * "screen-shotting" the HTML to a PNG and then inserting the
  * node's JSON into the image's `tEXt` chunk.
  *
- * @param node The Stencila node to unparse
+ * @param node The Stencila node to encode
  * @param filePath The file system path to write to
  */
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {

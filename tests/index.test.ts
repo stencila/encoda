@@ -5,7 +5,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import tempy from 'tempy'
 import {
-  compilerList,
+  codecList,
   convert,
   dump,
   handled,
@@ -22,7 +22,7 @@ import { fixture } from './helpers'
 fs.ensureDirSync(path.join(__dirname, 'output'))
 
 describe('match', () => {
-  // A dummy compiler for testing matching
+  // A dummy codec for testing matching
   const ssf = {
     fileNames: ['super-special-file'],
     extNames: ['ssf'],
@@ -30,10 +30,10 @@ describe('match', () => {
     sniff: async (content: string) => /^SSF:/.test(content),
 
     // Required, but don't do anything
-    parse: async (file: VFile) => null,
-    unparse: async (node: stencila.Node, filePath?: string) => create()
+    decode: async (file: VFile) => null,
+    encode: async (node: stencila.Node, filePath?: string) => create()
   }
-  compilerList.push(ssf)
+  codecList.push(ssf)
 
   it('works with file paths', async () => {
     expect(await match('./file.json')).toEqual(json)
@@ -70,15 +70,15 @@ describe('match', () => {
     expect(await match('SSF: woot!')).toEqual(ssf)
   })
 
-  it('throws when unable to find a matching compiler', async () => {
+  it('throws when unable to find a matching codec', async () => {
     await expect(match('./foo.bar')).rejects.toThrow(
-      'No compiler could be found for content "./foo.bar".'
+      'No codec could be found for content "./foo.bar".'
     )
     await expect(match('foo')).rejects.toThrow(
-      'No compiler could be found for content "foo".'
+      'No codec could be found for content "foo".'
     )
     await expect(match(undefined, 'foo')).rejects.toThrow(
-      'No compiler could be found for format "foo".'
+      'No codec could be found for format "foo".'
     )
   })
 })

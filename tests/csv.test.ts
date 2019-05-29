@@ -1,4 +1,4 @@
-import { parse, unparse } from '../src/csv'
+import { decode, encode } from '../src/csv'
 import { dump, load } from '../src/vfile'
 
 const simple = {
@@ -92,14 +92,14 @@ const formulas = {
   }
 }
 
-test('parse', async () => {
-  expect(await parse(load(simple.content))).toEqual(simple.node)
-  expect(await parse(load(named.content))).toEqual(named.node)
-  expect(await parse(load(formulas.content))).toEqual(formulas.node)
+test('decode', async () => {
+  expect(await decode(load(simple.content))).toEqual(simple.node)
+  expect(await decode(load(named.content))).toEqual(named.node)
+  expect(await decode(load(formulas.content))).toEqual(formulas.node)
 })
 
-test('unparse', async () => {
-  expect(await dump(await unparse(simple.node))).toEqual(simple.content)
-  expect(await dump(await unparse(named.node))).toEqual(named.content)
-  expect(await dump(await unparse(formulas.node))).toEqual(formulas.content)
+test('encode', async () => {
+  expect(await dump(await encode(simple.node))).toEqual(simple.content)
+  expect(await dump(await encode(named.node))).toEqual(named.content)
+  expect(await dump(await encode(formulas.node))).toEqual(formulas.content)
 })

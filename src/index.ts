@@ -23,12 +23,12 @@ import * as yaml from './yaml'
 type VFile = vfile.VFile
 
 /**
- * A list of all compilers.
+ * A list of all codecs.
  *
  * Note that order is of importance for matching. More "generic"
  * formats should go last. See the `match` function.
  */
-export const compilerList: Array<Compiler> = [
+export const codecList: Array<Codec> = [
   // Tabular data, spreadsheets etc
   csv,
   ods,
@@ -56,31 +56,31 @@ export const compilerList: Array<Compiler> = [
 ]
 
 /**
- * The interface for a compiler.
+ * The interface for a codec.
  *
- * A compiler is simply a module with these constants
+ * A codec is simply a module with these constants
  * and functions (some of which are optional).
  *
- * Note that our use of the term "compiler", is consistent with our usage elsewhere in Stencila
+ * Note that our use of the term "codec", is consistent with our usage elsewhere in Stencila
  * as something that creates or modifies executable document, and
- * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcompiler).
+ * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
  */
-export interface Compiler {
+export interface Codec {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
-   * that the compiler can parse/unparse.
+   * that the codec can decode/encode.
    */
   mediaTypes: Array<string>
 
   /**
-   * Any array of file names to use to match the compiler.
+   * Any array of file names to use to match the codec.
    * This can be useful for differentiating between
    * "flavors" of formats e.g. `datapackage.json` versus any old `.json` file.
    */
   fileNames?: Array<string>
 
   /**
-   * Any array of file name extensions to register for the compiler.
+   * Any array of file name extensions to register for the codec.
    * This can be useful for specifying conversion to less well known media types
    * e.g. `--to tdp` for outputting `datapackage.json` to the console.
    */
@@ -88,35 +88,35 @@ export interface Compiler {
 
   /**
    * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
-   * to determine if the compiler is able to parse the content. As well as raw content, the content
-   * string could be a file system path and the compiler could do "sniffing" of the file system
+   * to determine if the codec is able to decode the content. As well as raw content, the content
+   * string could be a file system path and the codec could do "sniffing" of the file system
    * (e.g. testing if certain files are present in a directory).
    */
   sniff?: (content: string) => Promise<boolean>
 
   /**
-   * Parse a `VFile` to a `stencila.Node`.
+   * Decode a `VFile` to a `stencila.Node`.
    *
-   * @param file The `VFile` to parse
+   * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  parse: (file: VFile) => Promise<stencila.Node>
+  decode: (file: VFile) => Promise<stencila.Node>
 
   /**
-   * Unparse a `stencila.Node` to a `VFile`.
+   * Encode a `stencila.Node` to a `VFile`.
    *
-   * @param thing The `stencila.Node` to unparse
-   * @param filePath The file system path to unparse to
-   *                 (Can be used by compilers that need to write more than one file when unparsing)
+   * @param thing The `stencila.Node` to encode
+   * @param filePath The file system path to encode to
+   *                 (Can be used by codecs that need to write more than one file when encoding)
    * @returns A promise that resolves to a `VFile`
    */
-  unparse: (node: stencila.Node, filePath?: string) => Promise<VFile>
+  encode: (node: stencila.Node, filePath?: string) => Promise<VFile>
 }
 
 /**
- * Match the compiler based on file name, extension name, media type or by content sniffing.
+ * Match the codec based on file name, extension name, media type or by content sniffing.
  *
- * Iterates through the list of compilers and returns the first that matches based on any
+ * Iterates through the list of codecs and returns the first that matches based on any
  * of the above criteria.
  *
  * If the supplied format contains a forward slash then it is assumed to be a media type,
@@ -124,13 +124,10 @@ export interface Compiler {
  *
  * @param content The content as a file path (e.g. `../folder/file.txt`) or raw content
  * @param format The format as a media type (e.g. `text/plain`) or extension name (e.g. `txt`)
- * @returns A promise that resolves to the `Compiler` to use
+ * @returns A promise that resolves to the `Codec` to use
  */
-export async function match(
-  content?: string,
-  format?: string
-): Promise<Compiler> {
-  // Resolve variables used to match a compiler...
+export async function match(content?: string, format?: string): Promise<Codec> {
+  // Resolve variables used to match a codec...
   let fileName
   let extName
   let mediaType
@@ -151,33 +148,25 @@ export async function match(
     }
   }
 
-  for (let compiler of compilerList) {
-    if (
-      fileName &&
-      compiler.fileNames &&
-      compiler.fileNames.includes(fileName)
-    ) {
-      return compiler
+  for (let codec of codecList) {
+    if (fileName && codec.fileNames && codec.fileNames.includes(fileName)) {
+      return codec
     }
 
-    if (extName && compiler.extNames && compiler.extNames.includes(extName)) {
-      return compiler
+    if (extName && codec.extNames && codec.extNames.includes(extName)) {
+      return codec
     }
 
-    if (
-      mediaType &&
-      compiler.mediaTypes &&
-      compiler.mediaTypes.includes(mediaType)
-    ) {
-      return compiler
+    if (mediaType && codec.mediaTypes && codec.mediaTypes.includes(mediaType)) {
+      return codec
     }
 
-    if (content && compiler.sniff && (await compiler.sniff(content))) {
-      return compiler
+    if (content && codec.sniff && (await codec.sniff(content))) {
+      return codec
     }
   }
 
-  let message = 'No compiler could be found'
+  let message = 'No codec could be found'
   if (content) message += ` for content "${content}"`
   if (format) message += ` for format "${format}"`
   message += '.'
@@ -185,7 +174,7 @@ export async function match(
 }
 
 /**
- * Is the file path, or media type handled? (i.e. is there a compiler for it?)
+ * Is the file path, or media type handled? (i.e. is there a codec for it?)
  *
  * @param content The file path
  * @param format The media type
@@ -203,37 +192,37 @@ export async function handled(
 }
 
 /**
- * Parse a virtual file to a `stencila.Node`
+ * Decode a virtual file to a `stencila.Node`
  *
- * @param file The `VFile` to parse
+ * @param file The `VFile` to decode
  * @param content The file path
  * @param format The media type
  */
-export async function parse(
+export async function decode(
   file: VFile,
   content?: string,
   format?: string
 ): Promise<stencila.Node> {
-  const compiler = await match(content, format)
-  return compiler.parse(file)
+  const codec = await match(content, format)
+  return codec.decode(file)
 }
 
 /**
- * Unparse (i.e. serialize) a `stencila.Node` to a virtual file.
+ * Encode (i.e. serialize) a `stencila.Node` to a virtual file.
  *
- * @param node The node to unparse
- * @param filePath The file path to unparse the node to.
- *                 Only required for some compilers e.g. those unparsing to more than one file.
- * @param format The format to unparse the node as.
+ * @param node The node to encode
+ * @param filePath The file path to encode the node to.
+ *                 Only required for some codecs e.g. those encoding to more than one file.
+ * @param format The format to encode the node as.
  *               If undefined then determined from filePath or file path.
  */
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string,
   format?: string
 ): Promise<VFile> {
-  const compiler = await match(filePath, format)
-  return compiler.unparse(node, filePath)
+  const codec = await match(filePath, format)
+  return codec.encode(node, filePath)
 }
 
 /**
@@ -247,7 +236,7 @@ export async function load(
   format: string
 ): Promise<stencila.Node> {
   const file = vfile.load(content)
-  return parse(file, undefined, format)
+  return decode(file, undefined, format)
 }
 
 /**
@@ -260,7 +249,7 @@ export async function dump(
   node: stencila.Node,
   format: string
 ): Promise<string> {
-  const file = await unparse(node, undefined, format)
+  const file = await encode(node, undefined, format)
   return vfile.dump(file)
 }
 
@@ -277,7 +266,7 @@ export async function read(
   format?: string
 ): Promise<stencila.Node> {
   let file = await vfile.read(content)
-  return parse(file, content, format)
+  return decode(file, content, format)
 }
 
 /**
@@ -293,7 +282,7 @@ export async function write(
   filePath: string,
   format?: string
 ): Promise<VFile> {
-  let file = await unparse(node, filePath, format)
+  let file = await encode(node, filePath, format)
   await vfile.write(file, filePath)
   return file
 }
@@ -312,8 +301,8 @@ export async function convert(
   options: { [key: string]: any } = {}
 ): Promise<string | undefined> {
   const inputFile = vfile.create(input)
-  const node = await parse(inputFile, input, options.from)
-  const outputFile = await unparse(node, outputPath, options.to)
+  const node = await decode(inputFile, input, options.from)
+  const outputFile = await encode(node, outputPath, options.to)
   if (outputPath) await vfile.write(outputFile, outputPath)
   return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
 }

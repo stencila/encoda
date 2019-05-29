@@ -2,8 +2,8 @@ import { read } from '../src/vfile'
 import {
   columnIndexToName,
   columnNameToIndex,
-  parse,
-  unparse
+  decode,
+  encode
 } from '../src/xlsx'
 
 test('columnNameToIndex, columnIndexToName', async () => {
@@ -119,14 +119,14 @@ const collection = {
   }
 }
 
-test('parse', async () => {
-  expect(await parse(await read(simple.file))).toEqual(simple.node)
-  expect(await parse(await read(collection.file))).toEqual(collection.node)
+test('decode', async () => {
+  expect(await decode(await read(simple.file))).toEqual(simple.node)
+  expect(await decode(await read(collection.file))).toEqual(collection.node)
 })
 
-test('unparse', async () => {
+test('encode', async () => {
   // Use round trip since meta data in the binary file (e.g. last save time)
   // makes comparison of those files difficult
-  expect(await parse(await unparse(simple.node))).toEqual(simple.node)
-  expect(await parse(await unparse(collection.node))).toEqual(collection.node)
+  expect(await decode(await encode(simple.node))).toEqual(simple.node)
+  expect(await decode(await encode(collection.node))).toEqual(collection.node)
 })

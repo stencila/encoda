@@ -1,21 +1,21 @@
-import { parse, unparse } from '../src/gdoc'
+import { decode, encode } from '../src/gdoc'
 import { dump, load } from '../src/vfile'
 
-test('parse', async () => {
-  const p = async (gdoc: any) => await parse(load(JSON.stringify(gdoc)), false)
+test('decode', async () => {
+  const p = async (gdoc: any) => await decode(load(JSON.stringify(gdoc)), false)
   expect(await p(kitchenSink.gdoc)).toEqual(kitchenSink.node)
 })
 
-test('unparse', async () => {
-  const u = async (node: any) => JSON.parse(await dump(await unparse(node)))
+test('encode', async () => {
+  const u = async (node: any) => JSON.parse(await dump(await encode(node)))
   expect(await u(kitchenSink.node)).toEqual(kitchenSink.gdoc)
 })
 
-// An example intended for testing progressively added parser/unparser pairs
+// An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
   // Note that this object is missing many styling related properties that
   // are normally in a GDoc. To keep it a manageable size, throughout the
-  // object tree, we've only included the properties that the compiler uses.
+  // object tree, we've only included the properties that the codec uses.
   // A good way to generate content nodes is to author in GDocs and then
   // fetch using the `gapis.js` script (see there for more details).
   gdoc: {
