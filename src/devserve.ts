@@ -34,7 +34,7 @@ export function devserve(
 
   const glob = path.join(dir, include)
   chokidar.watch(glob, { ignored: ignore }).on('change', async filePath => {
-    const { dir, name, ext } = path.decode(filePath)
+    const { dir, name, ext } = path.parse(filePath)
     if (ext !== '.html') {
       // TODO: prettier logging of file being processed
       console.error(filePath)

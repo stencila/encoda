@@ -1,15 +1,15 @@
 /**
- * Module for installing Convert native modules and executables
+ * Module for installing Encoda native modules and executables
  *
  * The [`pkg`](https://github.com/zeit/pkg) Node.js packager does not
  * package native modules.  i.e `*.node` files. There are various ways to handle this but
  * we found the easiest/safest was to simply copy the directories for the
  * packages with native modules, from the host system, into directory where the
- * binary is installed. This script does that via `convert-deps.tar.gz` which is
+ * binary is installed. This script does that via `encoda-deps.tar.gz` which is
  * packaged in the binary snapshot as an `asset`.
  *
  * See:
- *   - https://github.com/stencila/convert/pull/47#issuecomment-489912132
+ *   - https://github.com/stencila/encoda/pull/47#issuecomment-489912132
  *   - https://github.com/zeit/pkg/issues/329
  *   - https://github.com/JoshuaWise/better-sqlite3/issues/173
  *   - `package.json`
@@ -41,7 +41,7 @@ export const home = packaged
 if (packaged && !fs.existsSync(path.join(home, 'node_modules'))) {
   tar.x({
     sync: true,
-    file: path.join('/', 'snapshot', 'convert', 'convert-deps.tgz'),
+    file: path.join('/', 'snapshot', 'encoda', 'encoda-deps.tgz'),
     C: home
   })
 }
