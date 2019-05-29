@@ -39,6 +39,12 @@ yargs
       const from = argv.from
       const to = argv.to
       await convert(inp, out, { from, to })
+
+      // Trigger a clean up
+      //   "The 'beforeExit' event is not emitted for conditions causing
+      //   explicit termination, such as calling process.exit() or uncaught
+      //   exceptions."
+      process.emit('beforeExit', 0)
     }
   )
 

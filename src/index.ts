@@ -13,6 +13,7 @@ import * as md from './md'
 import * as ods from './ods'
 import * as odt from './odt'
 import * as pandoc from './pandoc'
+import * as pdf from './pdf'
 import * as rpng from './rpng'
 import * as tdp from './tdp'
 import * as vfile from './vfile'
@@ -36,17 +37,18 @@ export const compilerList: Array<Compiler> = [
 
   // Articles, textual documents etc
   docx,
-  jats,
   gdoc,
+  html,
+  jats,
   latex,
-  odt,
   md,
+  odt,
+  pdf,
 
   // Images
   rpng,
 
-  // "Generic" formats
-  html,
+  // Data interchange formats
   yaml,
   pandoc,
   json5,
