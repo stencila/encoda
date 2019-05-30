@@ -8,10 +8,10 @@
 osslsigncode sign \
   -pkcs12 "win-cert.p12" \
   -pass "$WIN_CERT_PASSWORD" \
-  -n "Convert" \
+  -n "Encoda" \
   -i "https://stenci.la" \
   -t "http://timestamp.comodoca.com/authenticode" \
-  -in "bin/stencila-convert.exe" \
-  -out "bin/stencila-convert.exe"
+  -in "bin/encoda.exe" \
+  -out "bin/encoda.exe"
 
-zip -j bin/convert-win-x64.zip bin/stencila-convert.exe
+zip -j bin/encoda-win-x64.zip bin/encoda.exe
