@@ -80,4 +80,4 @@ yargs
   .alias('version', 'v')
   .describe('version', 'Show version')
 
-  .decode()
+  .parse()

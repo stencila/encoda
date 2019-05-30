@@ -1,8 +1,8 @@
 import * as stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
-import { dump, load, read, write } from '../src'
-import { type, validate } from '../src/util'
+import { dump, load, read, write } from '.'
+import { type, validate } from './util'
 
 /**
  * Process a document
