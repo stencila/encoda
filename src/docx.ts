@@ -1,5 +1,5 @@
 /**
- * Compiler for Microsoft Word
+ * Codec for Microsoft Word
  */
 
 import stencila from '@stencila/schema'
@@ -12,8 +12,8 @@ export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 ]
 
-export async function parse(file: VFile): Promise<stencila.Node> {
-  return pandoc.parse(
+export async function decode(file: VFile): Promise<stencila.Node> {
+  return pandoc.decode(
     file,
     pandoc.InputFormat.docx,
     [`--extract-media=${file.path}.media`],
@@ -29,12 +29,12 @@ const defaultDocxTemplatePath = path.join(
   'stencila-template.docx'
 )
 
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string,
   templatePath: string = defaultDocxTemplatePath
 ): Promise<VFile> {
-  return pandoc.unparse(
+  return pandoc.encode(
     node,
     filePath,
     pandoc.OutputFormat.docx,

@@ -1,11 +1,11 @@
 {
-  "name": "stencila-convert",
+  "name": "@stencila/encoda",
   "version": "0.37.0",
-  "description": "Convert between Stencila document trees and other formats",
+  "description": "Codecs for executable document formats",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "convert": "./dist/cli.js"
+    "encoda": "./dist/cli.js"
   },
   "scripts": {
     "install": "node install.js",
@@ -17,10 +17,10 @@
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist && npm run build:tgz && npm run build:bin",
     "build:dist": "tsc && cp src/*.js dist/",
-    "build:tgz": "tar czf convert-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
-    "build:bin": "pkg --target=host -o=bin/stencila-convert .",
-    "bundle:linux": "tar -czvf bin/convert-linux-x64.tar.gz -C bin stencila-convert",
-    "bundle:osx": "tar -czvf bin/convert-macos-x64.tar.gz -C bin stencila-convert",
+    "build:tgz": "tar czf encoda-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
+    "build:bin": "pkg --target=node10 -o=bin/encoda .",
+    "bundle:linux": "tar -czvf bin/encoda-linux-x64.tar.gz -C bin encoda",
+    "bundle:osx": "tar -czvf bin/encoda-macos-x64.tar.gz -C bin encoda",
     "bundle:windows": "./bundle-win.sh",
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
     "docs:dev": "ts-node --files src/cli devserve docs",
@@ -32,19 +32,19 @@
   "pkg": {
     "scripts": "./dist/**/*.js",
     "assets": [
-      "./convert-deps.tgz",
+      "./encoda-deps.tgz",
       "./dist/**/*.json",
       "./node_modules/@stencila/schema/dist/**/*.json"
     ]
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/stencila/convert#readme",
+  "homepage": "https://github.com/stencila/encoda#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stencila/convert.git"
+    "url": "git+https://github.com/stencila/encoda.git"
   },
   "bugs": {
-    "url": "https://github.com/stencila/convert/issues"
+    "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
     "@stencila/schema": "^0.12.0",

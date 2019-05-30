@@ -6,7 +6,7 @@ import { dump, read } from '../../src'
 describe('issue 58', () => {
   const file = path.join(__dirname, '58-list-unordered.gdoc')
 
-  test('goc unordered list is parsed correctly', async () => {
+  test('goc unordered list is decoded correctly', async () => {
     const gdoc = fs.readJSONSync(file)
     expect(
       gdoc.lists['kix.list.1'].listProperties.nestingLevels[0].glyphType

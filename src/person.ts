@@ -5,11 +5,11 @@ import parseAuthor from 'parse-author'
 import { parseFullName } from 'parse-full-name'
 
 /**
- * Parse string data into a `Person`.
+ * Decode string data into a `Person`.
  *
- * @param data Data to parse
+ * @param data Data to decode
  */
-export function parse(data: string): Person {
+export function decode(data: string): Person {
   const { name, email, url } = parseAuthor(data)
   const { title, first, middle, last, suffix } = parseFullName(name)
   const person: Person = { type: 'Person' }
@@ -19,7 +19,7 @@ export function parse(data: string): Person {
     if (middle) person.givenNames.push(middle)
   }
   if (last) person.familyNames = [last]
-  else throw new Error(`Unable to parse string "${data}" as a person`)
+  else throw new Error(`Unable to decode string "${data}" as a person`)
   if (suffix) person.honorificSuffix = suffix
   if (email) person.emails = [email]
   if (url) person.url = url

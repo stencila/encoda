@@ -8,7 +8,7 @@ if [[ "$OS" == "Linux" || "$OS" == "Darwin" ]]; then
         'Linux')
             PLATFORM="linux-x64"
             if [ -z "$1" ]; then
-                VERSION=$(curl --silent "https://api.github.com/repos/stencila/convert/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+                VERSION=$(curl --silent "https://api.github.com/repos/stencila/encoda/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
             else
                 VERSION=$1
             fi
@@ -17,7 +17,7 @@ if [[ "$OS" == "Linux" || "$OS" == "Darwin" ]]; then
         'Darwin')
             PLATFORM="macos-x64"
             if [ -z "$1" ]; then
-                VERSION=$(curl --silent "https://api.github.com/repos/stencila/convert/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+                VERSION=$(curl --silent "https://api.github.com/repos/stencila/encoda/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
             else
                 VERSION=$1
             fi
@@ -25,19 +25,19 @@ if [[ "$OS" == "Linux" || "$OS" == "Darwin" ]]; then
             ;;
     esac
     
-    echo "Downloading stencila-convert $VERSION"
-    curl -Lo /tmp/convert.tar.gz https://github.com/stencila/convert/releases/download/$VERSION/convert-$PLATFORM.tar.gz
-    tar xvf /tmp/convert.tar.gz
-    rm -f /tmp/convert.tar.gz
+    echo "Downloading encoda $VERSION"
+    curl -Lo /tmp/encoda.tar.gz https://github.com/stencila/encoda/releases/download/$VERSION/encoda-$PLATFORM.tar.gz
+    tar xvf /tmp/encoda.tar.gz
+    rm -f /tmp/encoda.tar.gz
     
-    echo "Installing stencila-convert to $INSTALL_PATH/stencila-convert-$VERSION"
-    mkdir -p $INSTALL_PATH/stencila-convert-$VERSION
-    mv -f stencila-convert $INSTALL_PATH/stencila-convert-$VERSION
-    # Unpack `node_modules` etc into the $INSTALL_PATH/convert-$VERSION
-    $INSTALL_PATH/stencila-convert-$VERSION/stencila-convert --version
+    echo "Installing encoda to $INSTALL_PATH/encoda-$VERSION"
+    mkdir -p $INSTALL_PATH/encoda-$VERSION
+    mv -f encoda $INSTALL_PATH/encoda-$VERSION
+    # Unpack `node_modules` etc into the $INSTALL_PATH/encoda-$VERSION
+    $INSTALL_PATH/encoda-$VERSION/encoda --version
     
-    echo "Pointing stencila-convert to $INSTALL_PATH/stencila-convert-$VERSION/stencila-convert"
-    ln -sf stencila-convert-$VERSION/stencila-convert $INSTALL_PATH/stencila-convert
+    echo "Pointing encoda to $INSTALL_PATH/encoda-$VERSION/encoda"
+    ln -sf encoda-$VERSION/encoda $INSTALL_PATH/encoda
 else
-    echo "Sorry, I don't know how to install on this OS, please see https://github.com/stencila/convert#install"
+    echo "Sorry, I don't know how to install on this OS, please see https://github.com/stencila/encoda#install"
 fi

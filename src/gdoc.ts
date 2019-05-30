@@ -1,7 +1,7 @@
 /**
- * A compiler for Google Documents (GDoc).
+ * A codec for Google Documents (GDoc).
  *
- * This compiler parses from, and unparses to, the GDoc JSON ('application/vnd.google-apps.document')
+ * This codec decodes from, and encodes to, the GDoc JSON ('application/vnd.google-apps.document')
  * as defined as [JSON Schemas here](https://docs.googleapis.com/$discovery/rest?version=v1) and in
  * [Typescript here](https://github.com/googleapis/google-api-nodejs-client/blob/master/src/apis/docs/v1.ts)
  *
@@ -34,54 +34,54 @@ import { dump, load, VFile } from './vfile'
 export const mediaTypes = ['application/vnd.google-apps.document']
 
 /**
- * Parse a `VFile` with `gdoc` contents to a `stencila.Node`.
+ * Decode a `VFile` with `gdoc` contents to a `stencila.Node`.
  *
- * @param file The `VFile` to parse
+ * @param file The `VFile` to decode
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function parse(
+export async function decode(
   file: VFile,
   fetch: boolean = true
 ): Promise<stencila.Node> {
   const json = await dump(file)
   const gdoc = JSON.parse(json)
-  return parseDocument(gdoc, fetch)
+  return decodeDocument(gdoc, fetch)
 }
 
 /**
- * Unparse a `stencila.Node` to a `VFile` with Markdown contents.
+ * Encode a `stencila.Node` to a `VFile` with Markdown contents.
  *
- * @param node The `stencila.Node` to unparse
+ * @param node The `stencila.Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export async function unparse(node: stencila.Node): Promise<VFile> {
-  const gdoc = unparseNode(node)
+export async function encode(node: stencila.Node): Promise<VFile> {
+  const gdoc = encodeNode(node)
   const json = JSON.stringify(gdoc, null, '  ')
   return load(json)
 }
 
 /**
- * The GDoc currently being parsed from
+ * The GDoc currently being decoded from
  *
- * This is necessary as a context when parsing for retrieving properties
+ * This is necessary as a context when decoding for retrieving properties
  * of list and images. We use a global object rather than having to pass
  * the reference to the document through all the function calls.
  */
-let parsingGDoc: GDoc.Schema$Document
+let decodingGDoc: GDoc.Schema$Document
 
 /**
- * The GDoc currently being unparsed to
+ * The GDoc currently being encoded to
  *
- * @see parsingGDoc
+ * @see decodingGDoc
  */
-let unparsingGDoc: GDoc.Schema$Document
+let encodingGDoc: GDoc.Schema$Document
 
 /**
  * The function to use to fetch remote resources
- * during parsing. This allows us (a) to keep most of the parsing functions
+ * during decoding. This allows us (a) to keep most of the decoding functions
  * synchronous and (b) turn off fetching during tests.
  */
-let parsingFetcher: (url: string) => string
+let decodingFetcher: (url: string) => string
 
 /**
  * Fetches a remote file to a local file
@@ -127,31 +127,31 @@ class FetchToSame {
 }
 
 /**
- * Parse a GDoc `Document` to a Stencila `Article`
+ * Decode a GDoc `Document` to a Stencila `Article`
  *
  * Note that currently `SectionBreak`, `Table` and `TableOfContents`
  * child elements are ignored.
  */
-async function parseDocument(
+async function decodeDocument(
   doc: GDoc.Schema$Document,
   fetch: boolean
 ): Promise<stencila.Node> {
-  parsingGDoc = doc
+  decodingGDoc = doc
 
   // Create a fetcher for remove resources
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
-  parsingFetcher = fetcher.get.bind(fetcher)
+  decodingFetcher = fetcher.get.bind(fetcher)
 
   let content: Array<stencila.Node> = []
   let lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
       .map((elem: GDoc.Schema$StructuralElement, index: number) => {
-        if (elem.paragraph) return parseParagraph(elem.paragraph, lists)
+        if (elem.paragraph) return decodeParagraph(elem.paragraph, lists)
         else if (elem.sectionBreak) {
           // The first element in the content is always a sectionBreak, so ignore it
-          return index === 0 ? undefined : parseSectionBreak(elem.sectionBreak)
-        } else if (elem.table) return parseTable(elem.table)
+          return index === 0 ? undefined : decodeSectionBreak(elem.sectionBreak)
+        } else if (elem.table) return decodeTable(elem.table)
         else {
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
         }
@@ -174,9 +174,9 @@ async function parseDocument(
 }
 
 /**
- * Unparse a Stencila `Node` to a GDoc `Document`
+ * Encode a Stencila `Node` to a GDoc `Document`
  */
-function unparseNode(node: stencila.Node): GDoc.Schema$Document {
+function encodeNode(node: stencila.Node): GDoc.Schema$Document {
   const gdoc: GDoc.Schema$Document = {
     title: 'Untitled',
     body: {
@@ -185,7 +185,7 @@ function unparseNode(node: stencila.Node): GDoc.Schema$Document {
     lists: {},
     inlineObjects: {}
   }
-  unparsingGDoc = gdoc
+  encodingGDoc = gdoc
   const gdocContent = gdoc.body!.content!
 
   // Wrap the node as needed to ensure an array
@@ -223,22 +223,22 @@ function unparseNode(node: stencila.Node): GDoc.Schema$Document {
       const type = stencila.type(node)
       switch (type) {
         case 'Heading':
-          gdocContent.push(unparseHeading(node as stencila.Heading))
+          gdocContent.push(encodeHeading(node as stencila.Heading))
           break
         case 'Paragraph':
-          gdocContent.push(unparseParagraph(node as stencila.Paragraph))
+          gdocContent.push(encodeParagraph(node as stencila.Paragraph))
           break
         case 'CodeBlock':
-          gdocContent.push(unparseCodeBlock(node as stencila.CodeBlock))
+          gdocContent.push(encodeCodeBlock(node as stencila.CodeBlock))
           break
         case 'List':
-          gdocContent.push(...unparseList(node as stencila.List))
+          gdocContent.push(...encodeList(node as stencila.List))
           break
         case 'Table':
-          gdocContent.push(unparseTable(node as stencila.Table))
+          gdocContent.push(encodeTable(node as stencila.Table))
           break
         case 'ThematicBreak':
-          gdocContent.push(unparseThematicBreak(node as stencila.ThematicBreak))
+          gdocContent.push(encodeThematicBreak(node as stencila.ThematicBreak))
           break
         default:
           throw new Error(`Unhandled Stencila node type "${type}"`)
@@ -249,15 +249,15 @@ function unparseNode(node: stencila.Node): GDoc.Schema$Document {
 }
 
 /**
- * Parse a GDoc `Paragraph` to a Stencila `Paragraph`, `Heading` or `List` node.
+ * Decode a GDoc `Paragraph` to a Stencila `Paragraph`, `Heading` or `List` node.
  */
-function parseParagraph(
+function decodeParagraph(
   para: GDoc.Schema$Paragraph,
   lists: { [key: string]: stencila.List }
 ): stencila.Paragraph | stencila.Heading | stencila.List | undefined {
   let content: any[] = []
   if (para.elements) {
-    content = para.elements.map(node => parseParagraphElement(node))
+    content = para.elements.map(node => decodeParagraphElement(node))
   }
 
   if (para.paragraphStyle) {
@@ -274,7 +274,7 @@ function parseParagraph(
     }
   }
 
-  if (para.bullet) return parseList(para, content, lists)
+  if (para.bullet) return decodeList(para, content, lists)
 
   return {
     type: 'Paragraph',
@@ -283,12 +283,12 @@ function parseParagraph(
 }
 
 /**
- * Unparse a Stencila `Heading` to a GDoc `Paragraph` with a `HEADING_` style.
+ * Encode a Stencila `Heading` to a GDoc `Paragraph` with a `HEADING_` style.
  */
-function unparseHeading(
+function encodeHeading(
   heading: stencila.Heading
 ): GDoc.Schema$StructuralElement {
-  const elem = unparseParagraph({
+  const elem = encodeParagraph({
     type: 'Paragraph',
     content: heading.content
   })
@@ -299,22 +299,22 @@ function unparseHeading(
 }
 
 /**
- * Unparse a Stencila `Paragraph` to a GDoc `Paragraph`.
+ * Encode a Stencila `Paragraph` to a GDoc `Paragraph`.
  */
-function unparseParagraph(
+function encodeParagraph(
   para: stencila.Paragraph
 ): GDoc.Schema$StructuralElement {
   return {
     paragraph: {
-      elements: para.content.map(unparseInlineContent)
+      elements: para.content.map(encodeInlineContent)
     }
   }
 }
 
 /**
- * Unparse a Stencila `CodeBlock` to a GDOC `Paragraph`.
+ * Encode a Stencila `CodeBlock` to a GDOC `Paragraph`.
  */
-function unparseCodeBlock(
+function encodeCodeBlock(
   block: stencila.CodeBlock
 ): GDoc.Schema$StructuralElement {
   return {
@@ -331,13 +331,13 @@ function unparseCodeBlock(
 }
 
 /**
- * Parse a GDoc list item paragraph (one with a `bullet`) to
+ * Decode a GDoc list item paragraph (one with a `bullet`) to
  * a Stencila `List`.
  *
  * @returns A new `List` or undefined if the paragraph was
  *        added to an existing list.
  */
-function parseList(
+function decodeList(
   para: GDoc.Schema$Paragraph,
   content: stencila.InlineContent[],
   lists: { [key: string]: stencila.List }
@@ -352,8 +352,8 @@ function parseList(
     return undefined
   }
   // Create a new list with this paragraph as it's first item
-  if (!parsingGDoc.lists) throw new Error('WTF, the GDoc has no lists!')
-  const list = parsingGDoc.lists[listId].listProperties
+  if (!decodingGDoc.lists) throw new Error('WTF, the GDoc has no lists!')
+  const list = decodingGDoc.lists[listId].listProperties
   if (!(list && list.nestingLevels)) {
     throw new Error('OMG! That list id can`t be found')
   }
@@ -377,10 +377,10 @@ function parseList(
 }
 
 /**
- * Unparse a Stencila `List` to GDoc `Paragraph` elements with a `bullet`.
+ * Encode a Stencila `List` to GDoc `Paragraph` elements with a `bullet`.
  */
-function unparseList(list: stencila.List): GDoc.Schema$StructuralElement[] {
-  const lists = unparsingGDoc.lists!
+function encodeList(list: stencila.List): GDoc.Schema$StructuralElement[] {
+  const lists = encodingGDoc.lists!
   // Generate a unique list id based on the index of the new list
   // Ids are always prefixed with `kix.` (an old code name for GDocs)
   // followed by a unique string. We use the index here for reversability.
@@ -400,7 +400,7 @@ function unparseList(list: stencila.List): GDoc.Schema$StructuralElement[] {
     let para
     const type = stencila.type(item)
     if (type === 'Paragraph') {
-      para = unparseParagraph(item as stencila.Paragraph)
+      para = encodeParagraph(item as stencila.Paragraph)
     } else {
       throw new Error(`List item is unhandled Stencila node type "${type}"`)
     }
@@ -411,9 +411,9 @@ function unparseList(list: stencila.List): GDoc.Schema$StructuralElement[] {
 }
 
 /**
- * Parse a GDoc `Table` element to a Stencila `Table`.
+ * Decode a GDoc `Table` element to a Stencila `Table`.
  */
-function parseTable(table: GDoc.Schema$Table): stencila.Table {
+function decodeTable(table: GDoc.Schema$Table): stencila.Table {
   return {
     type: 'Table',
     rows: (table.tableRows || []).map(
@@ -430,7 +430,9 @@ function parseTable(table: GDoc.Schema$Table): stencila.Table {
                   ): stencila.InlineContent => {
                     if (elem.paragraph) {
                       if (elem.paragraph.elements) {
-                        return parseParagraphElement(elem.paragraph.elements[0])
+                        return decodeParagraphElement(
+                          elem.paragraph.elements[0]
+                        )
                       }
                     }
                     throw new Error(
@@ -448,9 +450,9 @@ function parseTable(table: GDoc.Schema$Table): stencila.Table {
 }
 
 /**
- * Unparse a Stencila `Table` to GDoc `Table` element.
+ * Encode a Stencila `Table` to GDoc `Table` element.
  */
-function unparseTable(table: stencila.Table): GDoc.Schema$StructuralElement {
+function encodeTable(table: stencila.Table): GDoc.Schema$StructuralElement {
   return {
     table: {
       tableRows: table.rows.map(
@@ -465,7 +467,7 @@ function unparseTable(table: stencila.Table): GDoc.Schema$StructuralElement {
                     ): GDoc.Schema$StructuralElement => {
                       return {
                         paragraph: {
-                          elements: [unparseInlineContent(node)]
+                          elements: [encodeInlineContent(node)]
                         }
                       }
                     }
@@ -481,18 +483,18 @@ function unparseTable(table: stencila.Table): GDoc.Schema$StructuralElement {
 }
 
 /**
- * Parse a GDoc `SectionBreak` element to a Stencila `ThematicBreak`.
+ * Decode a GDoc `SectionBreak` element to a Stencila `ThematicBreak`.
  */
-function parseSectionBreak(
+function decodeSectionBreak(
   table: GDoc.Schema$SectionBreak
 ): stencila.ThematicBreak {
   return { type: 'ThematicBreak' }
 }
 
 /**
- * Unparse a Stencila `ThematicBreak` to GDoc `SectionBreak` element.
+ * Encode a Stencila `ThematicBreak` to GDoc `SectionBreak` element.
  */
-function unparseThematicBreak(
+function encodeThematicBreak(
   table: stencila.ThematicBreak
 ): GDoc.Schema$StructuralElement {
   return {
@@ -501,63 +503,63 @@ function unparseThematicBreak(
 }
 
 /**
- * Parse a GDoc `ParagraphElement` (something withing a paragraph :)
+ * Decode a GDoc `ParagraphElement` (something withing a paragraph :)
  */
-function parseParagraphElement(
+function decodeParagraphElement(
   elem: GDoc.Schema$ParagraphElement
 ): stencila.InlineContent {
-  if (elem.textRun) return parseTextRun(elem.textRun)
+  if (elem.textRun) return decodeTextRun(elem.textRun)
   if (elem.inlineObjectElement) {
-    return parseInlineObjectElement(elem.inlineObjectElement)
+    return decodeInlineObjectElement(elem.inlineObjectElement)
   } else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
 }
 
-function parseInlineObjectElement(
+function decodeInlineObjectElement(
   elem: GDoc.Schema$InlineObjectElement
 ): stencila.ImageObject {
   const inlineObjectId = elem.inlineObjectId
   if (!inlineObjectId) throw new Error('Malformed GDoc data')
-  if (!parsingGDoc.inlineObjects) throw new Error('Malformed GDoc data')
+  if (!decodingGDoc.inlineObjects) throw new Error('Malformed GDoc data')
   const inlineObjectProperties =
-    parsingGDoc.inlineObjects[inlineObjectId].inlineObjectProperties
+    decodingGDoc.inlineObjects[inlineObjectId].inlineObjectProperties
   if (!inlineObjectProperties) throw new Error('Malformed GDoc data')
   const embeddedObject = inlineObjectProperties.embeddedObject
   if (!embeddedObject) throw new Error('Malformed GDoc data')
 
   if (embeddedObject.imageProperties) {
-    return parseImage(embeddedObject, embeddedObject.imageProperties)
+    return decodeImage(embeddedObject, embeddedObject.imageProperties)
   } else {
     throw new Error(`Unhandled embedded object type ${embeddedObject}`)
   }
 }
 
 /**
- * Unparse a Stencila inline content node to a GDoc `ParagraphElement`
+ * Encode a Stencila inline content node to a GDoc `ParagraphElement`
  */
-function unparseInlineContent(
+function encodeInlineContent(
   node: stencila.InlineContent
 ): GDoc.Schema$ParagraphElement {
   const type = stencila.type(node)
   switch (type) {
     case 'Emphasis':
-      return unparseEmphasis(node as stencila.Emphasis)
+      return encodeEmphasis(node as stencila.Emphasis)
     case 'Strong':
-      return unparseStrong(node as stencila.Strong)
+      return encodeStrong(node as stencila.Strong)
     case 'Link':
-      return unparseLink(node as stencila.Link)
+      return encodeLink(node as stencila.Link)
     case 'ImageObject':
-      return unparseImageObject(node as stencila.ImageObject)
+      return encodeImageObject(node as stencila.ImageObject)
     case 'string':
-      return unparseString(node as string)
+      return encodeString(node as string)
     default:
       throw new Error(`Unhandled node type ${type}`)
   }
 }
 
 /**
- * Parse a GDoc `TextRun` to a `string`, `Emphasis`, `Strong` or `Link` node.
+ * Decode a GDoc `TextRun` to a `string`, `Emphasis`, `Strong` or `Link` node.
  */
-function parseTextRun(
+function decodeTextRun(
   textRun: GDoc.Schema$TextRun
 ): string | stencila.Emphasis | stencila.Strong | stencila.Link {
   let text = ''
@@ -615,9 +617,9 @@ function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
 }
 
 /**
- * Unparse a `stencila.Emphasis` node to a GDoc `TextRun` node with `textStyle.italic`.
+ * Encode a `stencila.Emphasis` node to a GDoc `TextRun` node with `textStyle.italic`.
  */
-function unparseEmphasis(em: stencila.Emphasis): GDoc.Schema$ParagraphElement {
+function encodeEmphasis(em: stencila.Emphasis): GDoc.Schema$ParagraphElement {
   return {
     textRun: {
       content: stringifyInlineContentNodes(em.content),
@@ -629,9 +631,9 @@ function unparseEmphasis(em: stencila.Emphasis): GDoc.Schema$ParagraphElement {
 }
 
 /**
- * Unparse a `stencila.Strong` node to a GDoc `TextRun` node with `textStyle.bold`.
+ * Encode a `stencila.Strong` node to a GDoc `TextRun` node with `textStyle.bold`.
  */
-function unparseStrong(strong: stencila.Strong): GDoc.Schema$ParagraphElement {
+function encodeStrong(strong: stencila.Strong): GDoc.Schema$ParagraphElement {
   return {
     textRun: {
       content: stringifyInlineContentNodes(strong.content),
@@ -643,9 +645,9 @@ function unparseStrong(strong: stencila.Strong): GDoc.Schema$ParagraphElement {
 }
 
 /**
- * Unparse a `stencila.Link` node to a GDoc `TextRun` node with `textStyle.link`.
+ * Encode a `stencila.Link` node to a GDoc `TextRun` node with `textStyle.link`.
  */
-function unparseLink(link: stencila.Link): GDoc.Schema$ParagraphElement {
+function encodeLink(link: stencila.Link): GDoc.Schema$ParagraphElement {
   return {
     textRun: {
       content: stringifyInlineContentNodes(link.content),
@@ -659,17 +661,17 @@ function unparseLink(link: stencila.Link): GDoc.Schema$ParagraphElement {
 }
 
 /**
- * Parse a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `ImageObject`.
+ * Decode a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `ImageObject`.
  *
  * Because the `imageProperties.contentUri` is ephemeral (lasts about ~30mins) this
  * function fetches the URL before it disappears.
  */
-function parseImage(
+function decodeImage(
   embeddedObject: GDoc.Schema$EmbeddedObject,
   imageProperties: GDoc.Schema$ImageProperties
 ): stencila.ImageObject {
   const { title, description } = embeddedObject
-  const contentUrl = parsingFetcher(imageProperties.contentUri || '')
+  const contentUrl = decodingFetcher(imageProperties.contentUri || '')
   return {
     type: 'ImageObject',
     contentUrl,
@@ -679,13 +681,13 @@ function parseImage(
 }
 
 /**
- * Unparse a Stencila `ImageObject` node to a GDoc `ParagraphElement` linked to
+ * Encode a Stencila `ImageObject` node to a GDoc `ParagraphElement` linked to
  * an image item in `inlineObjects`.
  */
-function unparseImageObject(
+function encodeImageObject(
   imageObject: stencila.ImageObject
 ): GDoc.Schema$ParagraphElement {
-  const inlineObjects = unparsingGDoc.inlineObjects!
+  const inlineObjects = encodingGDoc.inlineObjects!
   const inlineObjectId = `kix.inlineobj${Object.keys(inlineObjects).length}`
   inlineObjects[inlineObjectId] = {
     inlineObjectProperties: {
@@ -706,9 +708,9 @@ function unparseImageObject(
 }
 
 /**
- * Unparse a `string` to a GDoc `TextRun`.
+ * Encode a `string` to a GDoc `TextRun`.
  */
-function unparseString(value: string): GDoc.Schema$ParagraphElement {
+function encodeString(value: string): GDoc.Schema$ParagraphElement {
   return {
     textRun: {
       content: value

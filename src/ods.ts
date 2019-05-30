@@ -1,5 +1,5 @@
 /**
- * Compiler for Open Document Spreadsheet (ODS)
+ * Codec for Open Document Spreadsheet (ODS)
  */
 
 import stencila from '@stencila/schema'
@@ -12,10 +12,10 @@ export const mediaTypes = [
   // spell-checker: enable
 ]
 
-export async function parse(file: VFile): Promise<stencila.Node> {
-  return xlsx.parse(file)
+export async function decode(file: VFile): Promise<stencila.Node> {
+  return xlsx.decode(file)
 }
 
-export async function unparse(node: stencila.Node): Promise<VFile> {
-  return xlsx.unparse(node, undefined, 'ods')
+export async function encode(node: stencila.Node): Promise<VFile> {
+  return xlsx.encode(node, undefined, 'ods')
 }

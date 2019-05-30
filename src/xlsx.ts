@@ -1,9 +1,9 @@
 /**
- * Compiler for Microsoft Excel.
+ * Codec for Microsoft Excel.
  *
  * Also acts as base implementation for other spreadsheet-like formats
  * including `ods` and `csv`. Uses [`js-xlsx`]()`https://github.com/SheetJS/js-xlsx) to
- * parse and dump spreadsheets and transforms to/from the it's
+ * decode and dump spreadsheets and transforms to/from the it's
  * (Common Spreadsheet Format)[https://github.com/SheetJS/js-xlsx#common-spreadsheet-format]
  * and Stencila schema instances.
  */
@@ -18,19 +18,19 @@ export const mediaTypes = [
   // spell-checker: enable
 ]
 
-export async function parse(file: VFile): Promise<stencila.Node> {
+export async function decode(file: VFile): Promise<stencila.Node> {
   let workbook = xlsx.read(file.contents, {
     type: 'buffer'
   })
-  return parseWorkbook(workbook)
+  return decodeWorkbook(workbook)
 }
 
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string,
   format: string = 'xlsx'
 ): Promise<VFile> {
-  const workbook = unparseNode(node)
+  const workbook = encodeNode(node)
   const buffer = xlsx.write(workbook, {
     type: format === 'csv' ? 'string' : 'buffer',
     bookType: format as xlsx.BookType
@@ -40,14 +40,14 @@ export async function unparse(
 
 // WorkBook <-> Node
 
-function parseWorkbook(
+function decodeWorkbook(
   workbook: xlsx.WorkBook
 ): stencila.Table | stencila.Datatable | stencila.Collection {
   const parts: Array<stencila.Table | stencila.Datatable> = []
   for (let name of workbook.SheetNames) {
     let sheet = workbook.Sheets[name]
 
-    // Parse all cells and if any have a formula, comments etc, then
+    // Decode all cells and if any have a formula, comments etc, then
     // treat this sheet as a Table
     let dataOnly = true
     let cells: any = {}
@@ -58,7 +58,7 @@ function parseWorkbook(
     }
 
     // Create a part for this sheet
-    let part = (dataOnly ? parseDatatable : parseTable)(name, cells)
+    let part = (dataOnly ? decodeDatatable : decodeTable)(name, cells)
 
     // If this is the only sheet then simply return the
     // part, otherwise add it to the list of parts.
@@ -73,7 +73,7 @@ function parseWorkbook(
   return collection
 }
 
-function unparseNode(node: stencila.Node): xlsx.WorkBook {
+function encodeNode(node: stencila.Node): xlsx.WorkBook {
   stencila.assert(node, ['Collection', 'Datatable', 'Table'])
   const type = stencila.type(node)
 
@@ -86,7 +86,7 @@ function unparseNode(node: stencila.Node): xlsx.WorkBook {
       for (const part of collection.parts) {
         const name = part.name || `Sheet${index}`
         sheetNames.push(name)
-        sheets[name] = unparseCreativeWork(part)
+        sheets[name] = encodeCreativeWork(part)
         index += 1
       }
     } else {
@@ -99,7 +99,7 @@ function unparseNode(node: stencila.Node): xlsx.WorkBook {
     const cw = node as stencila.CreativeWork
     const name = cw.name || 'Sheet1'
     sheetNames.push(name)
-    sheets[name] = unparseCreativeWork(cw)
+    sheets[name] = encodeCreativeWork(cw)
   }
 
   const workbook: xlsx.WorkBook = {
@@ -109,16 +109,16 @@ function unparseNode(node: stencila.Node): xlsx.WorkBook {
   return workbook
 }
 
-function unparseCreativeWork(node: stencila.CreativeWork) {
-  if (node.type === 'Table') return unparseTable(node as stencila.Table)
+function encodeCreativeWork(node: stencila.CreativeWork) {
+  if (node.type === 'Table') return encodeTable(node as stencila.Table)
   else if (node.type === 'Datatable') {
-    return unparseDatatable(node as stencila.Datatable)
+    return encodeDatatable(node as stencila.Datatable)
   } else throw new Error(`Unhandled node type "${node.type}"`)
 }
 
 // Worksheet <-> Table
 
-function parseTable(
+function decodeTable(
   name: string,
   cells: { [key: string]: xlsx.CellObject }
 ): stencila.Table {
@@ -127,7 +127,7 @@ function parseTable(
     name,
     rows: [],
     cells: Object.entries(cells).map(function([key, cell]): stencila.TableCell {
-      let value = parseCell(cell)
+      let value = decodeCell(cell)
       return {
         type: 'TableCell',
         name: key,
@@ -138,7 +138,7 @@ function parseTable(
   }
 }
 
-function unparseTable(table: stencila.Table) {
+function encodeTable(table: stencila.Table) {
   const sheet: xlsx.WorkSheet = {}
   let cells = table.cells
   if (cells) {
@@ -150,7 +150,7 @@ function unparseTable(table: stencila.Table) {
       if (col > maxCol) maxCol = col
       if (row > maxRow) maxRow = row
       let name = cellPositionToName(cell.position)
-      let cellObject = unparseCell(cell.content[0] || null)
+      let cellObject = encodeCell(cell.content[0] || null)
       sheet[name] = cellObject
     }
     sheet['!ref'] = `A1:${cellPositionToName([maxCol, maxRow])}`
@@ -162,7 +162,7 @@ function unparseTable(table: stencila.Table) {
 
 // Worksheet <-> Datatable
 
-function parseDatatable(
+function decodeDatatable(
   name: string,
   cells: { [key: string]: xlsx.CellObject }
 ): stencila.Datatable {
@@ -175,7 +175,7 @@ function parseDatatable(
       values = []
       columns[column] = values
     }
-    values[row] = parseCell(cell)
+    values[row] = decodeCell(cell)
   }
   // If the first value in each column is a string then
   // treat them as names (and thus remove them from) the
@@ -210,7 +210,7 @@ function parseDatatable(
   return datatable
 }
 
-function unparseDatatable(datatable: stencila.Datatable) {
+function encodeDatatable(datatable: stencila.Datatable) {
   const sheet: xlsx.WorkSheet = {}
   let columns = datatable.columns
   if (columns) {
@@ -225,7 +225,7 @@ function unparseDatatable(datatable: stencila.Datatable) {
       if (values) {
         rowIndex = 0
         for (let value of values) {
-          const cellObject = unparseCell(value)
+          const cellObject = encodeCell(value)
           if (cellObject) sheet[`${columnName}${rowIndex + 2}`] = cellObject
           rowIndex += 1
         }
@@ -239,7 +239,7 @@ function unparseDatatable(datatable: stencila.Datatable) {
 
 // CellObject <-> Node
 
-function parseCell(cell: xlsx.CellObject) {
+function decodeCell(cell: xlsx.CellObject) {
   let value = cell.v
   if (value) {
     if (value instanceof Date) {
@@ -260,7 +260,7 @@ function parseCell(cell: xlsx.CellObject) {
   }
 }
 
-function unparseCell(node: stencila.Node): xlsx.CellObject | null {
+function encodeCell(node: stencila.Node): xlsx.CellObject | null {
   // tslint:disable-next-line
   if (node === undefined) return null
   if (node === null) return null
@@ -273,7 +273,7 @@ function unparseCell(node: stencila.Node): xlsx.CellObject | null {
         const expr = node as stencila.Expression
         const cell: xlsx.CellObject = { t: 'b', f: expr.text }
         if (expr.value) {
-          const value = unparseCell(expr.value)
+          const value = encodeCell(expr.value)
           if (value) {
             cell.t = value.t
             cell.v = value.v

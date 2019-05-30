@@ -1,5 +1,5 @@
 /**
- * # Markdown compiler
+ * # Markdown codec
  *
  * These functions transform nodes from a [Markdown Abstract Syntax Tree](https://github.com/syntax-tree/mdast) to
  * nodes in a [Stencila Document Tree](https://github.com/stencila/schema).
@@ -68,15 +68,15 @@ const GENERIC_EXTENSIONS = [
 ]
 
 /**
- * Parse a `VFile` with Markdown contents to a `stencila.Node`.
+ * Decode a `VFile` with Markdown contents to a `stencila.Node`.
  *
- * @param file The `VFile` to parse
+ * @param file The `VFile` to decode
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
+export async function decode(file: VFile): Promise<stencila.Node> {
   const extensionHandlers: { [key: string]: any } = {}
   for (let ext of GENERIC_EXTENSIONS) {
-    extensionHandlers[ext] = { replace: parseExtension }
+    extensionHandlers[ext] = { replace: decodeExtension }
   }
   const mdast = unified()
     .use(parser, {
@@ -87,18 +87,18 @@ export async function parse(file: VFile): Promise<stencila.Node> {
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(file)
   compact(mdast, true)
-  return parseNode(mdast)
+  return decodeNode(mdast)
 }
 
 /**
- * Unparse a `stencila.Node` to a `VFile` with Markdown contents.
+ * Encode a `stencila.Node` to a `VFile` with Markdown contents.
  *
- * @param thing The `stencila.Node` to unparse
+ * @param thing The `stencila.Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export async function unparse(node: stencila.Node): Promise<VFile> {
+export async function encode(node: stencila.Node): Promise<VFile> {
   let mdast = filter(
-    unparseNode(node),
+    encodeNode(node),
     (node: UNIST.Node | undefined) => typeof node !== 'undefined'
   ) as UNIST.Node
 
@@ -112,59 +112,59 @@ export async function unparse(node: stencila.Node): Promise<VFile> {
   return load(md)
 }
 
-function parseNode(node: UNIST.Node): stencila.Node {
+function decodeNode(node: UNIST.Node): stencila.Node {
   const type = node.type
   switch (type) {
     case 'root':
-      return parseRoot(node as MDAST.Root)
+      return decodeRoot(node as MDAST.Root)
 
     case 'heading':
-      return parseHeading(node as MDAST.Heading)
+      return decodeHeading(node as MDAST.Heading)
     case 'paragraph':
-      return parseParagraph(node as MDAST.Paragraph)
+      return decodeParagraph(node as MDAST.Paragraph)
     case 'blockquote':
-      return parseBlockquote(node as MDAST.Blockquote)
+      return decodeBlockquote(node as MDAST.Blockquote)
     case 'code':
-      return parseCodeblock(node as MDAST.Code)
+      return decodeCodeblock(node as MDAST.Code)
     case 'list':
-      return parseList(node as MDAST.List)
+      return decodeList(node as MDAST.List)
     case 'table':
-      return parseTable(node as MDAST.Table)
+      return decodeTable(node as MDAST.Table)
     case 'thematicBreak':
-      return parseThematicBreak(node as MDAST.ThematicBreak)
+      return decodeThematicBreak(node as MDAST.ThematicBreak)
 
     case 'link':
-      return parseLink(node as MDAST.Link)
+      return decodeLink(node as MDAST.Link)
     case 'emphasis':
-      return parseEmphasis(node as MDAST.Emphasis)
+      return decodeEmphasis(node as MDAST.Emphasis)
     case 'strong':
-      return parseStrong(node as MDAST.Strong)
+      return decodeStrong(node as MDAST.Strong)
     case 'delete':
-      return parseDelete(node as MDAST.Delete)
+      return decodeDelete(node as MDAST.Delete)
     case 'inlineCode':
-      return parseInlineCode(node as MDAST.InlineCode)
+      return decodeInlineCode(node as MDAST.InlineCode)
     case 'image':
-      return parseImage(node as MDAST.Image)
+      return decodeImage(node as MDAST.Image)
     case 'text':
-      return parseText(node as MDAST.Text)
+      return decodeText(node as MDAST.Text)
     case 'inline-extension':
       const ext = (node as unknown) as Extension
       switch (ext.name) {
         case 'quote':
-          return parseQuote(ext)
+          return decodeQuote(ext)
 
         case 'null':
-          return parseNull(ext)
+          return decodeNull(ext)
         case 'boolean':
         case 'true':
         case 'false':
-          return parseBoolean(ext)
+          return decodeBoolean(ext)
         case 'number':
-          return parseNumber(ext)
+          return decodeNumber(ext)
         case 'array':
-          return parseArray(ext)
+          return decodeArray(ext)
         case 'object':
-          return parseObject(ext)
+          return decodeObject(ext)
 
         default:
           if (ext.name) {
@@ -177,98 +177,98 @@ function parseNode(node: UNIST.Node): stencila.Node {
       }
 
     default:
-      throw new Error(`No Markdown parser for MDAST node type "${type}"`)
+      throw new Error(`No Markdown decoder for MDAST node type "${type}"`)
   }
 }
 
-function unparseNode(node: stencila.Node): UNIST.Node | undefined {
+function encodeNode(node: stencila.Node): UNIST.Node | undefined {
   const type = stencila.type(node)
   switch (type) {
     case 'Article':
-      return unparseArticle(node as stencila.Article)
+      return encodeArticle(node as stencila.Article)
 
     case 'Heading':
-      return unparseHeading(node as stencila.Heading)
+      return encodeHeading(node as stencila.Heading)
     case 'Paragraph':
-      return unparseParagraph(node as stencila.Paragraph)
+      return encodeParagraph(node as stencila.Paragraph)
     case 'QuoteBlock':
-      return unparseQuoteBlock(node as stencila.QuoteBlock)
+      return encodeQuoteBlock(node as stencila.QuoteBlock)
     case 'CodeBlock':
-      return unparseCodeBlock(node as stencila.CodeBlock)
+      return encodeCodeBlock(node as stencila.CodeBlock)
     case 'List':
-      return unparseList(node as stencila.List)
+      return encodeList(node as stencila.List)
     case 'Table':
-      return unparseTable(node as stencila.Table)
+      return encodeTable(node as stencila.Table)
     case 'ThematicBreak':
-      return unparseThematicBreak(node as stencila.ThematicBreak)
+      return encodeThematicBreak(node as stencila.ThematicBreak)
 
     case 'Link':
-      return unparseLink(node as stencila.Link)
+      return encodeLink(node as stencila.Link)
     case 'Emphasis':
-      return unparseEmphasis(node as stencila.Emphasis)
+      return encodeEmphasis(node as stencila.Emphasis)
     case 'Strong':
-      return unparseStrong(node as stencila.Strong)
+      return encodeStrong(node as stencila.Strong)
     case 'Delete':
-      return unparseDelete(node as stencila.Delete)
+      return encodeDelete(node as stencila.Delete)
     case 'Quote':
-      return unparseQuote(node as stencila.Quote)
+      return encodeQuote(node as stencila.Quote)
     case 'Code':
-      return unparseCode(node as stencila.Code)
+      return encodeCode(node as stencila.Code)
     case 'ImageObject':
-      return unparseImageObject(node as stencila.ImageObject)
+      return encodeImageObject(node as stencila.ImageObject)
 
     case 'string':
-      return unparseString(node as string)
+      return encodeString(node as string)
     case 'null':
-      return unparseNull(node as null)
+      return encodeNull(node as null)
     case 'boolean':
-      return unparseBoolean(node as boolean)
+      return encodeBoolean(node as boolean)
     case 'number':
-      return unparseNumber(node as number)
+      return encodeNumber(node as number)
     case 'array':
-      return unparseArray(node as Array<any>)
+      return encodeArray(node as Array<any>)
     case 'object':
-      return unparseObject(node as object)
+      return encodeObject(node as object)
 
     default:
-      throw new Error(`No Markdown unparser for Stencila node type "${type}"`)
+      throw new Error(`No Markdown encoder for Stencila node type "${type}"`)
   }
 }
 
-function unparseContent(node: stencila.Node): MDAST.Content {
-  return unparseNode(node) as MDAST.Content
+function encodeContent(node: stencila.Node): MDAST.Content {
+  return encodeNode(node) as MDAST.Content
 }
 
-function parsePhrasingContent(
+function decodePhrasingContent(
   node: MDAST.PhrasingContent
 ): stencila.InlineContent {
-  return parseNode(node) as stencila.InlineContent
+  return decodeNode(node) as stencila.InlineContent
 }
 
-function unparseInlineContent(
+function encodeInlineContent(
   node: stencila.InlineContent
 ): MDAST.PhrasingContent {
-  return unparseNode(node) as MDAST.PhrasingContent
+  return encodeNode(node) as MDAST.PhrasingContent
 }
 
-function parseBlockContent(node: MDAST.BlockContent): stencila.BlockContent {
-  return parseNode(node) as stencila.BlockContent
+function decodeBlockContent(node: MDAST.BlockContent): stencila.BlockContent {
+  return decodeNode(node) as stencila.BlockContent
 }
 
-function unparseBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
-  return unparseNode(node) as MDAST.BlockContent
+function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
+  return encodeNode(node) as MDAST.BlockContent
 }
 
 /**
- * Parse a `MDAST.root` node to a `stencila.Article`
+ * Decode a `MDAST.root` node to a `stencila.Article`
  *
  * If the root has a front matter node (defined using YAML), that
  * meta data is added to the top level of the document. Other
  * child nodes are added to the article's `content` property.
  *
- * @param root The MDAST root to parse
+ * @param root The MDAST root to decode
  */
-function parseRoot(root: MDAST.Root): stencila.Article {
+function decodeRoot(root: MDAST.Root): stencila.Article {
   const article = stencila.create(
     'Article',
     {
@@ -293,7 +293,7 @@ function parseRoot(root: MDAST.Root): stencila.Article {
         article[key] = value
       }
     } else {
-      body.push(parseNode(child))
+      body.push(decodeNode(child))
     }
   }
   article.content = body
@@ -304,23 +304,23 @@ function parseRoot(root: MDAST.Root): stencila.Article {
 }
 
 /**
- * Unparse a `stencila.Article` to a `MDAST.Root`
+ * Encode a `stencila.Article` to a `MDAST.Root`
  *
  * The article's `content` property becomes the root's `children`
  * and any other properties are serialized as YAML
  * front matter and prepended to the children.
  *
- * @param node The Stencila article to unparse
+ * @param node The Stencila article to encode
  */
-function unparseArticle(article: stencila.Article): MDAST.Root {
+function encodeArticle(article: stencila.Article): MDAST.Root {
   const root: MDAST.Root = {
     type: 'root',
     children: []
   }
 
-  // Unparse the article body
+  // Encode the article body
   if (article.content) {
-    root.children = article.content.map(unparseContent)
+    root.children = article.content.map(encodeContent)
   }
 
   // Add other properties as frontmatter
@@ -342,44 +342,44 @@ function unparseArticle(article: stencila.Article): MDAST.Root {
 }
 
 /**
- * Parse a `MDAST.Heading` to a `stencila.Heading`
+ * Decode a `MDAST.Heading` to a `stencila.Heading`
  */
-function parseHeading(heading: MDAST.Heading): stencila.Heading {
+function decodeHeading(heading: MDAST.Heading): stencila.Heading {
   return {
     type: 'Heading',
     depth: heading.depth,
-    content: heading.children.map(parsePhrasingContent)
+    content: heading.children.map(decodePhrasingContent)
   }
 }
 
 /**
- * Unparse a `stencila.Heading` to a `MDAST.Heading`
+ * Encode a `stencila.Heading` to a `MDAST.Heading`
  */
-function unparseHeading(heading: stencila.Heading): MDAST.Heading {
+function encodeHeading(heading: stencila.Heading): MDAST.Heading {
   return {
     type: 'heading',
     depth: heading.depth as (1 | 2 | 3 | 4 | 5 | 6),
-    children: heading.content.map(unparseInlineContent)
+    children: heading.content.map(encodeInlineContent)
   }
 }
 
 /**
- * Parse a `MDAST.Paragraph` to a `stencila.Paragraph`
+ * Decode a `MDAST.Paragraph` to a `stencila.Paragraph`
  */
-function parseParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
+function decodeParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
   return {
     type: 'Paragraph',
-    content: paragraph.children.map(parsePhrasingContent)
+    content: paragraph.children.map(decodePhrasingContent)
   }
 }
 
 /**
- * Unparse a `stencila.Paragraph` to a `MDAST.Paragraph`
+ * Encode a `stencila.Paragraph` to a `MDAST.Paragraph`
  *
  * Returns `undefined` (i.e skip this node) if the paragraph
  * is empty (not content, or only whitespace)
  */
-function unparseParagraph(
+function encodeParagraph(
   paragraph: stencila.Paragraph
 ): MDAST.Paragraph | undefined {
   const content = paragraph.content
@@ -393,47 +393,47 @@ function unparseParagraph(
   } else {
     return {
       type: 'paragraph',
-      children: content.map(unparseInlineContent)
+      children: content.map(encodeInlineContent)
     }
   }
 }
 
 /**
- * Parse a `MDAST.Blockquote` to a `stencila.QuoteBlock`
+ * Decode a `MDAST.Blockquote` to a `stencila.QuoteBlock`
  */
-function parseBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
+function decodeBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
   return {
     type: 'QuoteBlock',
-    content: block.children.map(parseBlockContent)
+    content: block.children.map(decodeBlockContent)
   }
 }
 
 /**
- * Unparse a `stencila.QuoteBlock` to a `MDAST.Blockquote`
+ * Encode a `stencila.QuoteBlock` to a `MDAST.Blockquote`
  */
-function unparseQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
+function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
   return {
     type: 'blockquote',
-    children: block.content.map(unparseBlockContent)
+    children: block.content.map(encodeBlockContent)
   }
 }
 
 /**
- * Parse a `MDAST.Code` to a `stencila.CodeBlock`
+ * Decode a `MDAST.Code` to a `stencila.CodeBlock`
  *
  * The ["info string"](https://spec.commonmark.org/0.29/#info-string)
- * is parsed to the `meta` dictionary on the `CodeBlock`. For example,
+ * is decoded to the `meta` dictionary on the `CodeBlock`. For example,
  * the code block starting with,
  *
  * ~~~markdown
  * ```python python meta1 meta2=foo meta3="bar baz"
  * ~~~
  *
- * is parsed to a `CodeBlock` with `language` `"python"` and `meta`
+ * is decoded to a `CodeBlock` with `language` `"python"` and `meta`
  * `{meta1:"", meta2:"foo", meta3:"bar baz" }`
  */
-function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
-  // The `remark-attrs` plugin parses the "info string" to `data.hProperties`
+function decodeCodeblock(block: MDAST.Code): stencila.CodeBlock {
+  // The `remark-attrs` plugin decodes the "info string" to `data.hProperties`
   const meta = block.data && block.data.hProperties
   return {
     type: 'CodeBlock',
@@ -444,9 +444,9 @@ function parseCodeblock(block: MDAST.Code): stencila.CodeBlock {
 }
 
 /**
- * Unparse a `stencila.CodeBlock` to a `MDAST.Code`
+ * Encode a `stencila.CodeBlock` to a `MDAST.Code`
  */
-function unparseCodeBlock(block: stencila.CodeBlock): MDAST.Code {
+function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
   const meta = block.meta ? stringifyMeta(block.meta) : ''
   return {
     type: 'code',
@@ -457,13 +457,13 @@ function unparseCodeBlock(block: stencila.CodeBlock): MDAST.Code {
 }
 
 /**
- * Parse a `MDAST.List` to a `stencila.List`
+ * Decode a `MDAST.List` to a `stencila.List`
  */
-function parseList(list: MDAST.List): stencila.List {
+function decodeList(list: MDAST.List): stencila.List {
   const items = []
   for (let item of list.children) {
     // TODO: when there are more than one child then create a stencila.Block
-    let node = parseNode(item.children[0])
+    let node = decodeNode(item.children[0])
 
     // If the item has a check box then insert that as a boolean as the first
     // child of the first child
@@ -482,16 +482,16 @@ function parseList(list: MDAST.List): stencila.List {
 }
 
 /**
- * Unparse a `stencila.List` to a `MDAST.List`
+ * Encode a `stencila.List` to a `MDAST.List`
  */
-function unparseList(list: stencila.List): MDAST.List {
+function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'ascending',
     children: list.items.map(
       (item: stencila.Node): MDAST.ListItem => {
         // TODO: wrap anything that is not inline content into a block e.g. para
-        const first = unparseNode(item) as MDAST.BlockContent
+        const first = encodeNode(item) as MDAST.BlockContent
         const children = [first]
 
         // Is this a checked item (ie. a paragraph starting with a boolean)?
@@ -519,9 +519,9 @@ function unparseList(list: stencila.List): MDAST.List {
 }
 
 /**
- * Parse a `MDAST.Table` to a `stencila.Table`
+ * Decode a `MDAST.Table` to a `stencila.Table`
  */
-function parseTable(table: MDAST.Table): stencila.Table {
+function decodeTable(table: MDAST.Table): stencila.Table {
   return {
     type: 'Table',
     rows: table.children.map(
@@ -532,7 +532,7 @@ function parseTable(table: MDAST.Table): stencila.Table {
             (cell: MDAST.TableCell): stencila.TableCell => {
               return {
                 type: 'TableCell',
-                content: cell.children.map(parsePhrasingContent)
+                content: cell.children.map(decodePhrasingContent)
               }
             }
           )
@@ -543,9 +543,9 @@ function parseTable(table: MDAST.Table): stencila.Table {
 }
 
 /**
- * Unparse a `stencila.Table` to a `MDAST.Table`
+ * Encode a `stencila.Table` to a `MDAST.Table`
  */
-function unparseTable(table: stencila.Table): MDAST.Table {
+function encodeTable(table: stencila.Table): MDAST.Table {
   return {
     type: 'table',
     children: table.rows.map(
@@ -556,7 +556,7 @@ function unparseTable(table: stencila.Table): MDAST.Table {
             (cell: stencila.TableCell): MDAST.TableCell => {
               return {
                 type: 'tableCell',
-                children: cell.content.map(unparseInlineContent)
+                children: cell.content.map(encodeInlineContent)
               }
             }
           )
@@ -567,9 +567,9 @@ function unparseTable(table: stencila.Table): MDAST.Table {
 }
 
 /**
- * Parse a `MDAST.ThematicBreak` to a `stencila.ThematicBreak`
+ * Decode a `MDAST.ThematicBreak` to a `stencila.ThematicBreak`
  */
-function parseThematicBreak(
+function decodeThematicBreak(
   tbreak: MDAST.ThematicBreak
 ): stencila.ThematicBreak {
   return {
@@ -578,9 +578,9 @@ function parseThematicBreak(
 }
 
 /**
- * Unparse a `stencila.ThematicBreak` to a `MDAST.ThematicBreak`
+ * Encode a `stencila.ThematicBreak` to a `MDAST.ThematicBreak`
  */
-function unparseThematicBreak(
+function encodeThematicBreak(
   tbreak: stencila.ThematicBreak
 ): MDAST.ThematicBreak {
   return {
@@ -589,17 +589,17 @@ function unparseThematicBreak(
 }
 
 /**
- * Parse a `MDAST.Link` to a `stencila.Link`
+ * Decode a `MDAST.Link` to a `stencila.Link`
  */
-function parseLink(link: MDAST.Link): stencila.Link {
-  // The `remark-attrs` plugin parses curly brace attributes to `data.hProperties`
+function decodeLink(link: MDAST.Link): stencila.Link {
+  // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
   const meta = (link.data && link.data.hProperties) as {
     [key: string]: string
   }
   return {
     type: 'Link',
     target: link.url,
-    content: link.children.map(parsePhrasingContent),
+    content: link.children.map(decodePhrasingContent),
     // TODO: remove ts-ignore, when add meta as property to link
     // @ts-ignore
     meta
@@ -607,9 +607,9 @@ function parseLink(link: MDAST.Link): stencila.Link {
 }
 
 /**
- * Unparse a `stencila.Link` to a `MDAST.Link`
+ * Encode a `stencila.Link` to a `MDAST.Link`
  */
-function unparseLink(link: stencila.Link): MDAST.Link {
+function encodeLink(link: stencila.Link): MDAST.Link {
   // TODO: remove ts-ignore, when add meta as property to link
   // @ts-ignore
   const data = { hProperties: link.meta }
@@ -617,84 +617,84 @@ function unparseLink(link: stencila.Link): MDAST.Link {
     type: 'link',
     url: link.target,
     children: link.content.map(
-      node => unparseInlineContent(node) as MDAST.StaticPhrasingContent
+      node => encodeInlineContent(node) as MDAST.StaticPhrasingContent
     ),
     data
   }
 }
 
 /**
- * Parse a `MDAST.Emphasis` to a `stencila.Emphasis`
+ * Decode a `MDAST.Emphasis` to a `stencila.Emphasis`
  */
-function parseEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
+function decodeEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
   return {
     type: 'Emphasis',
-    content: emphasis.children.map(parsePhrasingContent)
+    content: emphasis.children.map(decodePhrasingContent)
   }
 }
 
 /**
- * Unparse a `stencila.Emphasis` to a `MDAST.Emphasis`
+ * Encode a `stencila.Emphasis` to a `MDAST.Emphasis`
  */
-function unparseEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
+function encodeEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
   return {
     type: 'emphasis',
-    children: emphasis.content.map(unparseInlineContent)
+    children: emphasis.content.map(encodeInlineContent)
   }
 }
 
 /**
- * Parse a `MDAST.Strong` to a `stencila.Strong`
+ * Decode a `MDAST.Strong` to a `stencila.Strong`
  */
-function parseStrong(strong: MDAST.Strong): stencila.Strong {
+function decodeStrong(strong: MDAST.Strong): stencila.Strong {
   return {
     type: 'Strong',
-    content: strong.children.map(parsePhrasingContent)
+    content: strong.children.map(decodePhrasingContent)
   }
 }
 
 /**
- * Unparse a `stencila.Strong` to a `MDAST.Strong`
+ * Encode a `stencila.Strong` to a `MDAST.Strong`
  */
-function unparseStrong(strong: stencila.Strong): MDAST.Strong {
+function encodeStrong(strong: stencila.Strong): MDAST.Strong {
   return {
     type: 'strong',
-    children: strong.content.map(unparseInlineContent)
+    children: strong.content.map(encodeInlineContent)
   }
 }
 
 /**
- * Parse a `MDAST.Delete` to a `stencila.Delete`
+ * Decode a `MDAST.Delete` to a `stencila.Delete`
  */
-function parseDelete(delet: MDAST.Delete): stencila.Delete {
+function decodeDelete(delet: MDAST.Delete): stencila.Delete {
   return {
     type: 'Delete',
-    content: delet.children.map(parsePhrasingContent)
+    content: delet.children.map(decodePhrasingContent)
   }
 }
 
 /**
- * Unparse a `stencila.Delete` to a `MDAST.Delete`
+ * Encode a `stencila.Delete` to a `MDAST.Delete`
  */
-function unparseDelete(delet: stencila.Delete): MDAST.Delete {
+function encodeDelete(delet: stencila.Delete): MDAST.Delete {
   return {
     type: 'delete',
-    children: delet.content.map(unparseInlineContent)
+    children: delet.content.map(encodeInlineContent)
   }
 }
 
 /**
- * Parse a `!quote` inline extension to a `Quote`.
+ * Decode a `!quote` inline extension to a `Quote`.
  *
  * Valid quotes include:
  *
  *   - `!quote[Quoted content]`
  *   - `!quote[Quoted content with _emphasis_](https://example.org)`
  */
-function parseQuote(ext: Extension): stencila.Quote {
+function decodeQuote(ext: Extension): stencila.Quote {
   const quote: stencila.Quote = {
     type: 'Quote',
-    // TODO: possibly parse the ext.content as Markdown?
+    // TODO: possibly decode the ext.content as Markdown?
     content: ext.content ? [ext.content] : []
   }
   const cite = ext.argument
@@ -703,9 +703,9 @@ function parseQuote(ext: Extension): stencila.Quote {
 }
 
 /**
- * Unparse a `stencila.Quote` to a `!quote` inline extension
+ * Encode a `stencila.Quote` to a `!quote` inline extension
  */
-function unparseQuote(quote: stencila.Quote): Extension {
+function encodeQuote(quote: stencila.Quote): Extension {
   return {
     type: 'inline-extension',
     name: 'quote',
@@ -716,9 +716,9 @@ function unparseQuote(quote: stencila.Quote): Extension {
 }
 
 /**
- * Parse a `MDAST.InlineCode` to a `stencila.Code`
+ * Decode a `MDAST.InlineCode` to a `stencila.Code`
  */
-function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
+function decodeInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
   const code: stencila.Code = {
     type: 'Code',
     value: inlineCode.value
@@ -737,9 +737,9 @@ function parseInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
 }
 
 /**
- * Unparse a `stencila.Code` to a `MDAST.InlineCode`
+ * Encode a `stencila.Code` to a `MDAST.InlineCode`
  */
-function unparseCode(code: stencila.Code): MDAST.InlineCode {
+function encodeCode(code: stencila.Code): MDAST.InlineCode {
   let attrs
   if (code.language) attrs = { language: code.language }
   // TODO: remove ts-ignore
@@ -753,16 +753,16 @@ function unparseCode(code: stencila.Code): MDAST.InlineCode {
 }
 
 /**
- * Parse a `MDAST.Image` to a `stencila.ImageObject`
+ * Decode a `MDAST.Image` to a `stencila.ImageObject`
  */
-function parseImage(image: MDAST.Image): stencila.ImageObject {
+function decodeImage(image: MDAST.Image): stencila.ImageObject {
   const imageObject: stencila.ImageObject = {
     type: 'ImageObject',
     contentUrl: image.url
   }
   if (image.title) imageObject.title = image.title
   if (image.alt) imageObject.text = image.alt
-  // The `remark-attrs` plugin parses curly brace attributes to `data.hProperties`
+  // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
   const meta = image.data && image.data.hProperties
   // TODO: remove ts-ignore
   // @ts-ignore
@@ -771,9 +771,9 @@ function parseImage(image: MDAST.Image): stencila.ImageObject {
 }
 
 /**
- * Unparse a `stencila.ImageObject` to a `MDAST.Image`
+ * Encode a `stencila.ImageObject` to a `MDAST.Image`
  */
-function unparseImageObject(imageObject: stencila.ImageObject): MDAST.Image {
+function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
   const image: MDAST.Image = {
     type: 'image',
     url: imageObject.contentUrl || ''
@@ -787,35 +787,35 @@ function unparseImageObject(imageObject: stencila.ImageObject): MDAST.Image {
 }
 
 /**
- * Parse a `MDAST.Text` to a `string`
+ * Decode a `MDAST.Text` to a `string`
  */
-function parseText(text: MDAST.Text): string {
+function decodeText(text: MDAST.Text): string {
   return text.value
 }
 
 /**
- * Unparse a `string` to a `MDAST.Text`
+ * Encode a `string` to a `MDAST.Text`
  */
-function unparseString(value: string): MDAST.Text {
+function encodeString(value: string): MDAST.Text {
   return { type: 'text', value }
 }
 
 /**
- * Parse a `!null` inline extension to `null`
+ * Decode a `!null` inline extension to `null`
  */
-function parseNull(ext: Extension): null {
+function decodeNull(ext: Extension): null {
   return null
 }
 
 /**
- * Unparse `null` to a `!null` inline extension
+ * Encode `null` to a `!null` inline extension
  */
-function unparseNull(value: null): Extension {
+function encodeNull(value: null): Extension {
   return { type: 'inline-extension', name: 'null' }
 }
 
 /**
- * Parse a `!true`, `!false`, `!boolean` inline extension to a `boolean`
+ * Decode a `!true`, `!false`, `!boolean` inline extension to a `boolean`
  *
  * Valid booleans include (the first two are the preferred and the default,
  * the last should be avoided):
@@ -823,10 +823,10 @@ function unparseNull(value: null): Extension {
  *   - `!true` or `!false`
  *   - `!boolean(true)` and `!boolean(1)`
  *   - `!boolean(false)` and `!boolean(0)`
- *   - `!boolean` (parsed to `true`)
+ *   - `!boolean` (decoded to `true`)
  *   - `!boolean[true]` and `!boolean[1]` etc
  */
-function parseBoolean(ext: Extension): boolean {
+function decodeBoolean(ext: Extension): boolean {
   switch (ext.name) {
     case 'true':
       return true
@@ -839,30 +839,30 @@ function parseBoolean(ext: Extension): boolean {
 }
 
 /**
- * Unparse a `boolean` to a `!true` or `!false`.
+ * Encode a `boolean` to a `!true` or `!false`.
  */
-function unparseBoolean(value: boolean): Extension {
+function encodeBoolean(value: boolean): Extension {
   return { type: 'inline-extension', name: value ? 'true' : 'false' }
 }
 
 /**
- * Parse a `!number` inline extension to a `number`.
+ * Decode a `!number` inline extension to a `number`.
  *
  * Valid numbers include (the first is the preferred and the default,
  * the last should be avoided):
  *
  *   - `!number(3.14)`
- *   - `!number` (parsed to `0`)
+ *   - `!number` (decoded to `0`)
  *   - `!number[3.14]`
  */
-function parseNumber(ext: Extension): number {
+function decodeNumber(ext: Extension): number {
   return parseFloat(ext.argument || ext.content || '0')
 }
 
 /**
- * Unparse a `number` to a `!number` inline extension
+ * Encode a `number` to a `!number` inline extension
  */
-function unparseNumber(value: number): Extension {
+function encodeNumber(value: number): Extension {
   return {
     type: 'inline-extension',
     name: 'number',
@@ -871,41 +871,41 @@ function unparseNumber(value: number): Extension {
 }
 
 /**
- * Parse an `!array` inline extension to an `Array`.
+ * Decode an `!array` inline extension to an `Array`.
  *
  * Valid arrays include (the first is the preferred and the default,
  * the last should be avoided):
  *
  *   - `!array(1, 2)`
- *   - `!array` (parsed to `[]`)
+ *   - `!array` (decoded to `[]`)
  *   - `!array[1, 2]`
  */
-function parseArray(ext: Extension): Array<any> {
+function decodeArray(ext: Extension): Array<any> {
   const items = ext.argument || ext.content || ''
   const array = JSON5.parse(`[${items}]`)
   return array
 }
 
 /**
- * Unparse an `array` to a `!array` inline extension
+ * Encode an `array` to a `!array` inline extension
  */
-function unparseArray(value: Array<any>): Extension {
+function encodeArray(value: Array<any>): Extension {
   const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'array', argument }
 }
 
 /**
- * Parse an `!object` inline extension to an `Object`.
+ * Decode an `!object` inline extension to an `Object`.
  *
  * Valid objects include (the first is the preferred and the default,
  * the last should be avoided):
  *
  *   - `!object("key":value, ...)` (comma separated pairs, values can be any JSON primitives)
  *   - `!object{key=string ...}` (space separated pairs; values can only be strings)
- *   - `!object` (parsed to `{}`)
+ *   - `!object` (decoded to `{}`)
  *   - `!object["key":"value", ...]`
  */
-function parseObject(ext: Extension): object {
+function decodeObject(ext: Extension): object {
   if (ext.properties) {
     // Extension properties always contain `className` and `id`, which may
     // be undefined, so drop them.
@@ -920,15 +920,15 @@ function parseObject(ext: Extension): object {
 }
 
 /**
- * Unparse an `object` to a `!object` inline extension
+ * Encode an `object` to a `!object` inline extension
  */
-function unparseObject(value: object): Extension {
+function encodeObject(value: object): Extension {
   const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'object', argument }
 }
 
 /**
- * Interface for generic extension nodes parsed by
+ * Interface for generic extension nodes decoded by
  * [`remark-generic-extensions`](https://github.com/medfreeman/remark-generic-extensions)
  *
  * Inline extensions have the syntax:
@@ -959,7 +959,7 @@ interface Extension extends UNIST.Node {
   name: string
 
   /**
-   * Content (for inline extensions this is always text [but could be parsed as Markdown])
+   * Content (for inline extensions this is always text [but could be decoded as Markdown])
    */
   content?: string
 
@@ -975,9 +975,9 @@ interface Extension extends UNIST.Node {
 }
 
 /**
- * Parse a generic extension into an MDAST node.
+ * Decode a generic extension into an MDAST node.
  */
-function parseExtension(
+function decodeExtension(
   type: 'inline-extension' | 'block-extension',
   element: Extension
 ) {
@@ -989,12 +989,12 @@ function parseExtension(
 // to HAST i.e. HTML and not serialization back to Markdown).
 // They transform nodes to a `MDAST.HTML` node
 // so that no escaping of the value is done.
-// There is a more 'official' way to do this using a `unified.Compiler`
-// but the docs for that are not as good as for `Parser` and after
+// There is a more 'official' way to do this using a `unified.Codec`
+// but the docs for that are not as good as for `Decoder` and after
 // several attempts, this seemed like a more expedient, short term approach.
 
 /**
- * Unparse a generic extension node into a `MDAST.HTML` node.
+ * Encode a generic extension node into a `MDAST.HTML` node.
  *
  * The `remark-generic-extensions` plugin does not do this stringifying for us.
  */
@@ -1023,15 +1023,15 @@ function stringifyExtensions(tree: UNIST.Node) {
 }
 
 /**
- * Unparse a `link` node with `data.hProperties` into a `MDAST.HTML` node
+ * Encode a `link` node with `data.hProperties` into a `MDAST.HTML` node
  * with attributes in curly braces `{}`.
  *
  * The `remark-attr` plugin does not do this stringifying for us
  * (it only works with `rehype`).
  */
 function stringifyAttrs(tree: UNIST.Node) {
-  const compiler = unified().use(stringifier)
-  const md = (node: UNIST.Node) => compiler.stringify(node)
+  const codec = unified().use(stringifier)
+  const md = (node: UNIST.Node) => codec.stringify(node)
   return map(tree, (node: UNIST.Node) => {
     if (
       ['link', 'inlineCode'].includes(node.type) &&

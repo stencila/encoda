@@ -6,7 +6,7 @@ import { convert } from './index'
 const VERSION = require('../package').version
 
 yargs
-  .scriptName('stencila-convert')
+  .scriptName('encoda')
 
   // @ts-ignore
   .command(

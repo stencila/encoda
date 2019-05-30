@@ -1,4 +1,4 @@
-import { parse, unparse } from '../src/tdp'
+import { decode, encode } from '../src/tdp'
 import { dump, read } from '../src/vfile'
 
 const periodic = {
@@ -132,13 +132,13 @@ const periodic = {
   }
 }
 
-test('parse', async () => {
-  expect(await parse(await read(periodic.file))).toEqual(periodic.node)
+test('decode', async () => {
+  expect(await decode(await read(periodic.file))).toEqual(periodic.node)
 })
 
-test('unparse', async () => {
-  const actual = JSON.parse(await dump(await unparse(periodic.node)))
-  // Pretend that we unparsed to a a filePath i.e. that
+test('encode', async () => {
+  const actual = JSON.parse(await dump(await encode(periodic.node)))
+  // Pretend that we encoded to a a filePath i.e. that
   // the data was written to disk.
   delete actual.resources[0].data
   actual.resources[0].path = 'periodic-table.csv'

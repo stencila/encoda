@@ -1,5 +1,5 @@
 /**
- * Compiler for LaTeX
+ * Codec for LaTeX
  */
 
 import stencila from '@stencila/schema'
@@ -10,13 +10,13 @@ export const mediaTypes = ['application/x-latex']
 
 export const extNames = ['latex', 'tex']
 
-export async function parse(file: VFile): Promise<stencila.Node> {
-  return pandoc.parse(file, pandoc.InputFormat.latex)
+export async function decode(file: VFile): Promise<stencila.Node> {
+  return pandoc.decode(file, pandoc.InputFormat.latex)
 }
 
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
-  return pandoc.unparse(node, filePath, pandoc.OutputFormat.latex)
+  return pandoc.encode(node, filePath, pandoc.OutputFormat.latex)
 }

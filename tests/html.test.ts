@@ -1,18 +1,18 @@
-import { parse, unparse } from '../src/html';
-import { stencilaCSS } from '../src/templates/stencila-css-template';
-import { dump, load } from '../src/vfile';
+import { decode, encode } from '../src/html'
+import { stencilaCSS } from '../src/templates/stencila-css-template'
+import { dump, load } from '../src/vfile'
 
-test('parse', async () => {
-  expect(await parse(load(kitchenSink.html))).toEqual(kitchenSink.node)
-  expect(await parse(await load(attrs.html))).toEqual(attrs.node)
+test('decode', async () => {
+  expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)
+  expect(await decode(await load(attrs.html))).toEqual(attrs.node)
 })
 
-test('unparse', async () => {
-  expect(await dump(await unparse(kitchenSink.node))).toEqual(kitchenSink.html)
-  expect(await dump(await unparse(attrs.node))).toEqual(attrs.html)
+test('encode', async () => {
+  expect(await dump(await encode(kitchenSink.node))).toEqual(kitchenSink.html)
+  expect(await dump(await encode(attrs.node))).toEqual(attrs.html)
 })
 
-// An example intended for testing progressively added parser/unparser pairs
+// An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
   html: `<html>
 

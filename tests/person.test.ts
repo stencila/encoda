@@ -1,4 +1,4 @@
-import { parse } from '../src/person'
+import { decode } from '../src/person'
 import { coerce, create, validate } from '../src/util'
 
 describe('validate', () => {
@@ -15,37 +15,39 @@ describe('validate', () => {
   })
 })
 
-describe('parse', () => {
+describe('decode', () => {
   it('works', () => {
     let person = create('Person')
 
     person.familyNames = ['Jones']
-    expect(parse('Jones')).toEqual(person)
+    expect(decode('Jones')).toEqual(person)
 
     person.givenNames = ['Jane', 'Jill']
-    expect(parse('Jane Jill Jones')).toEqual(person)
+    expect(decode('Jane Jill Jones')).toEqual(person)
 
     person.honorificPrefix = 'Dr'
-    expect(parse('Dr Jane Jill Jones')).toEqual(person)
+    expect(decode('Dr Jane Jill Jones')).toEqual(person)
 
     person.honorificSuffix = 'PhD'
-    expect(parse('Dr Jane Jill Jones PhD')).toEqual(person)
+    expect(decode('Dr Jane Jill Jones PhD')).toEqual(person)
 
     person.emails = ['jane@example.com']
-    expect(parse('Dr Jane Jill Jones PhD <jane@example.com>')).toEqual(person)
+    expect(decode('Dr Jane Jill Jones PhD <jane@example.com>')).toEqual(person)
 
     person.url = 'http://example.com/jane'
     expect(
-      parse(
+      decode(
         'Dr Jane Jill Jones PhD <jane@example.com> (http://example.com/jane)'
       )
     ).toEqual(person)
   })
 
   it('throws', () => {
-    expect(() => parse('')).toThrow(/^Unable to parse string \"\" as a person$/)
-    expect(() => parse('#@&%')).toThrow(
-      /^Unable to parse string \"#@&%\" as a person$/s
+    expect(() => decode('')).toThrow(
+      /^Unable to decode string \"\" as a person$/
+    )
+    expect(() => decode('#@&%')).toThrow(
+      /^Unable to decode string \"#@&%\" as a person$/s
     )
   })
 })
@@ -153,7 +155,7 @@ describe('coerce', () => {
     expect(() =>
       coerce({ authors: ['John Smith', '#@&%', 'Jones, Jane'] }, 'CreativeWork')
     ).toThrow(
-      '/authors/1: parser error when parsing using "person": Unable to parse string "#@&%" as a person'
+      '/authors/1: parser error when decoding using "person": Unable to decode string "#@&%" as a person'
     )
   })
 })

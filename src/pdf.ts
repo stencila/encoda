@@ -1,5 +1,5 @@
 /**
- * # PDF unparser
+ * # PDF encoder
  *
  * @module pdf
  */
@@ -14,7 +14,7 @@ import * as puppeteer from './puppeteer'
 import { load, VFile } from './vfile'
 
 /**
- * The media types that this compiler can parse/unparse.
+ * The media types that this codec can decode/encode.
  */
 export const mediaTypes = ['application/pdf']
 
@@ -25,7 +25,7 @@ export const mediaTypes = ['application/pdf']
  * This function is required (currently) but is (and probably never will be)
  * implemented.
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
+export async function decode(file: VFile): Promise<stencila.Node> {
   throw new Error(`Parsing of PDF files is not supported.`)
 }
 
@@ -33,13 +33,13 @@ export async function parse(file: VFile): Promise<stencila.Node> {
 export const browser = puppeteer.page()
 
 /**
- * Unparse a Stencila `Node` to a `VFile` with PDF content.
+ * Encode a Stencila `Node` to a `VFile` with PDF content.
  *
- * @param node The Stencila `Node` to unparse
+ * @param node The Stencila `Node` to encode
  * @param filePath The file system path to write the PDF to
  * @returns A promise that resolves to a `VFile`
  */
-export async function unparse(
+export async function encode(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
