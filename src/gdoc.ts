@@ -22,6 +22,7 @@
  *    to walk Stencila JSON and build up the GDoc by calling methods such as `Body.appendParagraph` etc.
  */
 
+import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import { InlineContent } from '@stencila/schema'
 import axios from 'axios'
@@ -30,6 +31,8 @@ import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
 import { validate } from './util'
 import { dump, load, VFile } from './vfile'
+
+const logger = getLogger('encoda')
 
 export const mediaTypes = ['application/vnd.google-apps.document']
 
@@ -103,7 +106,7 @@ class FetchToFile {
         response.data.pipe(fs.createWriteStream(filePath))
       })
       .catch(error => {
-        console.error(`Error when fetching ${url}: ${error.message}`)
+        logger.error(`Error when fetching ${url}: ${error.message}`)
       })
     this.requests.push(request)
     return filePath

@@ -14,11 +14,14 @@
  * - a CSV file
  */
 
+import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
 import * as csv from './csv'
 import { create, dump, load, VFile } from './vfile'
+
+const logger = getLogger('encoda')
 
 export const mediaTypes = [
   // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
@@ -154,7 +157,7 @@ async function decodeResource(
     data = await resource.read()
   } catch (error) {
     if (error.multiple) {
-      for (const err of error.errors) console.log(err)
+      for (const err of error.errors) logger.error(err)
     }
     throw error
   }

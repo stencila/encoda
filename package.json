@@ -34,6 +34,7 @@
     "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
+    "@stencila/logga": "^1.0.0",
     "@stencila/schema": "^0.12.0",
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
