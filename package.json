@@ -4,9 +4,7 @@
   "description": "Codecs for executable document formats",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": {
-    "encoda": "./dist/cli.js"
-  },
+  "bin": "./dist/cli.js",
   "scripts": {
     "install": "node install.js",
     "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
@@ -25,17 +23,6 @@
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
     "docs:dev": "ts-node --files src/cli devserve docs",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
-  },
-  "pandoc": {
-    "version": "2.7.2"
-  },
-  "pkg": {
-    "scripts": "./dist/**/*.js",
-    "assets": [
-      "./encoda-deps.tgz",
-      "./dist/**/*.json",
-      "./node_modules/@stencila/schema/dist/**/*.json"
-    ]
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/stencila/encoda#readme",
@@ -68,6 +55,7 @@
     "json5": "^2.1.0",
     "mdast-util-compact": "^1.0.2",
     "mime": "^2.4.1",
+    "minimist": "^1.2.0",
     "parse-author": "^2.0.0",
     "parse-full-name": "^1.2.3",
     "png-chunk-text": "^1.0.0",
@@ -84,8 +72,7 @@
     "unist-util-filter": "^1.0.0",
     "unist-util-map": "^1.0.4",
     "vfile": "^4.0.0",
-    "xlsx": "^0.14.2",
-    "yargs": "^13.2.2"
+    "xlsx": "^0.14.2"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^6.1.0",
@@ -103,11 +90,11 @@
     "@types/json5": "0.0.30",
     "@types/mdast": "^3.0.2",
     "@types/mime": "^2.0.1",
+    "@types/minimist": "^1.2.0",
     "@types/parse5": "^5.0.0",
     "@types/puppeteer": "^1.12.3",
     "@types/tar": "^4.0.0",
     "@types/unist": "^2.0.3",
-    "@types/yargs": "^12.0.11",
     "all-contributors-cli": "^6.4.0",
     "delay": "^4.2.0",
     "dependency-check": "^3.3.0",
@@ -130,6 +117,17 @@
     "typedoc": "^0.14.2",
     "typedoc-plugin-external-module-name": "^2.0.0",
     "typescript": "^3.4.1"
+  },
+  "pandoc": {
+    "version": "2.7.2"
+  },
+  "pkg": {
+    "scripts": "./dist/**/*.js",
+    "assets": [
+      "./encoda-deps.tgz",
+      "./dist/**/*.json",
+      "./node_modules/@stencila/schema/dist/**/*.json"
+    ]
   },
   "prettier": {
     "singleQuote": true,

@@ -144,7 +144,7 @@ npm install @stencila/encoda
 ### Example
 
 ```bash
-encoda document.md document.jats.xml
+encoda convert document.md document.jats.xml
 ```
 
 You can use the `--from` and `--to` flag options to explicitly specify formats. For example,
@@ -153,14 +153,6 @@ You can use the `--from` and `--to` flag options to explicitly specify formats. 
 | ----------- | -------------------------------------------------------------------------------------------------- |
 | `--to yaml` | Convert into YAML format of [Stencila Schema](https://github.com/stencila/schema) JSON.            |
 | `--to tdp`  | Convert into [Tabular Data Package](https://frictionlessdata.io/specs/tabular-data-package/) JSON. |
-
-### Help
-
-To get an overview of the commands available use the `--help` option i.e.
-
-```bash
-encoda --help
-```
 
 API documentation is available at https://stencila.github.io/encoda.
 
