@@ -1,83 +1,49 @@
-import yargs from 'yargs'
+#!/usr/bin/env node
+
+/**
+ * An intentionally simple command line interface to
+ * Encoda's main functions.
+ *
+ * For a more fully featured and easier to use CLI for Encoda
+ * see the [`stencila` CLI tool](https://github.com/stencila/stencila).
+ *
+ * This CLI is intended for developers and those who don't need
+ * all the additional functionality in `stencila`. It is kept
+ * simple to avoid duplication of CLI code with `stencila` and
+ * to avoid bloat in this repo.
+ *
+ * It it essentially a command line version of a function call. It uses a simple
+ * convention of using the first argument to identify the function,
+ * subsequent arguments as arguments to the function, and options
+ * as an options object to the function.
+ *
+ * For example,
+ *
+ * ```bash
+ * encoda convert ./article.Rmd ./article.xml --to jats
+ * ```
+ *
+ * is equivalent to the Node.js script,
+ *
+ * ```js
+ * require('@stencila/encoda').convert('./article.Rmd', './article.xml', { to: 'jats'})
+ * ```
+ *
+ * Please see the documentation for each function on the arguments required and
+ * options available.
+ */
+import minimist from 'minimist'
+import * as encoda from '.'
 import './boot'
-import { devserve } from './devserve'
-import { convert } from './index'
+// TODO: remove this after it moved to `stencila`
+// Currently retained to avoid error with `npm run check` if it is removed
+import './devserve'
 
-const VERSION = require('../package').version
+const { _, ...options } = minimist(process.argv.slice(2))
+const name = _[0]
+const args = _.slice(1)
 
-yargs
-  .scriptName('encoda')
-
-  // @ts-ignore
-  .command(
-    '$0 [in] [out]',
-    'Convert between file formats',
-    // @ts-ignore
-    (yargs: any) => {
-      yargs
-        .positional('in', {
-          describe: 'The input file path. Defaults to standard input.',
-          type: 'string',
-          default: '-'
-        })
-        .positional('out', {
-          describe: 'The output file path. Defaults to standard output.',
-          type: 'string',
-          default: '-'
-        })
-        .option('from', {
-          describe: 'The format to convert the input from.',
-          type: 'string'
-        })
-        .option('to', {
-          describe: 'The format to convert the output to.',
-          type: 'string'
-        })
-    },
-    async (argv: any) => {
-      const inp = argv.in
-      const out = argv.out
-      const from = argv.from
-      const to = argv.to
-      await convert(inp, out, { from, to })
-
-      // Trigger a clean up
-      //   "The 'beforeExit' event is not emitted for conditions causing
-      //   explicit termination, such as calling process.exit() or uncaught
-      //   exceptions."
-      process.emit('beforeExit', 0)
-    }
-  )
-
-  .command(
-    'devserve [dir]',
-    'Serve a directory in development mode (watches for changes in files and automatically syncs the browser)',
-    (yargs: any) => {
-      yargs.positional('dir', {
-        describe: 'The directory to serve. Defaults to current.',
-        type: 'string',
-        default: '.'
-      })
-    },
-    async (argv: any) => {
-      devserve(argv.dir)
-    }
-  )
-
-  // Any command-line argument given that is not demanded, or does not have a corresponding description, will be reported as an error.
-  // Unrecognized commands will also be reported as errors.
-  .strict()
-
-  // Maximize width of usage instructions
-  .wrap(yargs.terminalWidth())
-
-  // Help global option
-  .usage('$0 <cmd> [args]')
-  .alias('help', 'h')
-
-  // Version global option
-  .version(VERSION)
-  .alias('version', 'v')
-  .describe('version', 'Show version')
-
-  .parse()
+// @ts-ignore
+const func = encoda[name]
+if (!func) throw new Error(`No such function "${name}"`)
+func(...args, options)
