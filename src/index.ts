@@ -2,6 +2,7 @@ import stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
 import * as csv from './csv'
+import * as demoMagic from './demo-magic'
 import * as docx from './docx'
 import * as gdoc from './gdoc'
 import * as html from './html'
@@ -44,6 +45,9 @@ export const codecList: Array<Codec> = [
   md,
   odt,
   pdf,
+
+  // Scripts
+  demoMagic,
 
   // Images
   rpng,
