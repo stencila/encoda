@@ -34,7 +34,7 @@ import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
 import { coerce } from './util'
-import { load, VFile } from './vfile'
+import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
@@ -74,6 +74,7 @@ const GENERIC_EXTENSIONS = [
  * @returns A promise that resolves to a `stencila.Node`
  */
 export async function decode(file: VFile): Promise<stencila.Node> {
+  const md = await dump(file)
   const extensionHandlers: { [key: string]: any } = {}
   for (let ext of GENERIC_EXTENSIONS) {
     extensionHandlers[ext] = { replace: decodeExtension }
@@ -85,7 +86,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(attrs, ATTR_OPTIONS)
     .use(genericExtensions, { elements: extensionHandlers })
-    .parse(file)
+    .parse(md)
   compact(mdast, true)
   return decodeNode(mdast)
 }
@@ -432,15 +433,19 @@ function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
  * is decoded to a `CodeBlock` with `language` `"python"` and `meta`
  * `{meta1:"", meta2:"foo", meta3:"bar baz" }`
  */
-function decodeCodeblock(block: MDAST.Code): stencila.CodeBlock {
-  // The `remark-attrs` plugin decodes the "info string" to `data.hProperties`
-  const meta = block.data && block.data.hProperties
-  return {
+function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
+  const codeBlock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    language: block.lang,
-    meta,
-    value: block.value
+    value: code.value
   }
+  if (code.lang) codeBlock.language = code.lang
+  // The `remark-attrs` plugin parses metadata from the info string
+  // into `data.hProperties` but also (erroneously?) seems to
+  // parse some of the content of the first line of code so
+  // we ensure that `code.meta` (unparsed info string) is present.
+  const meta = code.meta && code.data && code.data.hProperties
+  if (meta) codeBlock.meta = meta
+  return codeBlock
 }
 
 /**
