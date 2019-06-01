@@ -19,6 +19,7 @@ import * as stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
 import * as csv from './csv'
+import * as util from './util'
 import { create, dump, load, VFile } from './vfile'
 
 const logger = getLogger('encoda')
@@ -49,7 +50,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   // Collection or Datatable ?
   let node: stencila.Datatable | stencila.Collection
   if (parts.length === 1) node = parts[0]
-  else node = stencila.create('Collection', { parts })
+  else node = util.create('Collection', { parts })
 
   // Add metadata https://frictionlessdata.io/specs/data-resource/#metadata-properties
   const desc = pkg.descriptor
@@ -60,7 +61,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
     // Convert a https://frictionlessdata.io/specs/data-package/#licenses
     // to a https://schema.org/license property
     node.licenses = desc.licenses.map((object: any) => {
-      const license = stencila.create('CreativeWork')
+      const license = util.create('CreativeWork')
       if (object.name) license.name = object.name
       if (object.path) license.url = object.path
       if (object.title) license.alternateNames = [object.title]
@@ -179,7 +180,7 @@ async function decodeResource(
     decodeField(field, values[index])
   )
 
-  return stencila.create('Datatable', { columns })
+  return util.create('Datatable', { columns })
 }
 
 /**
@@ -244,10 +245,10 @@ function decodeField(
   }
 
   // Build the column schema
-  const schema = stencila.create('DatatableColumnSchema', { items })
+  const schema = util.create('DatatableColumnSchema', { items })
   if (constraints.unique) schema.uniqueItems = true
 
-  return stencila.create('DatatableColumn', {
+  return util.create('DatatableColumn', {
     name: field.name,
     schema,
     values

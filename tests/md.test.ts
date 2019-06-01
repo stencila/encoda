@@ -25,9 +25,8 @@ const kitchenSink = {
   //   - Dr Jill Jones PhD
   // See other examples for this
 
-  // TODO: use `Article.title` when that is supported (instead of `name`)
   md: `---
-name: Our article
+title: Our article
 authors:
   - type: Person
     givenNames:
@@ -87,7 +86,7 @@ x = {}
 `,
   node: {
     type: 'Article',
-    name: 'Our article',
+    title: 'Our article',
     authors: [
       {
         type: 'Person',
@@ -332,6 +331,7 @@ x = {}
  */
 const attrs = {
   md: `---
+title: Our article
 authors: []
 ---
 
@@ -345,6 +345,7 @@ A \`code\`{lang=r}.
 `,
   node: {
     type: 'Article',
+    title: 'Our article',
     authors: [],
     content: [
       {
@@ -395,12 +396,14 @@ A \`code\`{lang=r}.
 // Example for testing shorthand YAML
 const shortYaml = {
   from: `---
+title: A title
 authors:
   - Joe James <joe@example.com>
   - Dr Jill Jones PhD
 ---
 `,
   to: `---
+title: A title
 authors:
   - type: Person
     givenNames:
@@ -420,6 +423,7 @@ authors:
 `,
   node: {
     type: 'Article',
+    title: 'A title',
     authors: [
       {
         type: 'Person',

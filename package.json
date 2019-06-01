@@ -14,7 +14,7 @@
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev .",
     "build": "npm run build:dist && npm run build:tgz && npm run build:bin",
-    "build:dist": "tsc && cp src/*.js dist/",
+    "build:dist": "tsc && cp src/*.js dist/ && cp -r src/templates dist",
     "build:tgz": "tar czf encoda-deps.tgz src vendor node_modules/puppeteer/.local-chromium",
     "build:bin": "pkg --target=node10 -o=bin/encoda .",
     "bundle:linux": "tar -czvf bin/encoda-linux-x64.tar.gz -C bin encoda",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@stencila/logga": "^1.0.0",
-    "@stencila/schema": "^0.12.0",
+    "@stencila/schema": "^0.12.2",
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
     "better-ajv-errors": "^0.6.4",

@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import { decode, encode } from '../src/demo-magic'
 import { create, dump } from '../src/vfile'
 
@@ -17,6 +17,7 @@ test('encode', async () => {
 
 const node: stencila.Article = {
   type: 'Article',
+  title: 'Untitled',
   authors: [],
   content: [
     {

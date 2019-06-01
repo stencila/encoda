@@ -1,4 +1,4 @@
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import {
@@ -416,6 +416,7 @@ const collapseSpaces: testCase = {
   },
   node: {
     type: 'Article',
+    title: 'Untitled',
     authors: [],
     content: [
       {
@@ -475,6 +476,7 @@ const imageInlinesToString: testCase = {
   },
   node: {
     type: 'Article',
+    title: 'Untitled',
     authors: [],
     content: [
       {
@@ -544,6 +546,7 @@ test('rpngs', async () => {
 
   const node: stencila.Node = {
     type: 'Article',
+    title: 'Untitled',
     authors: [],
     content: [
       {

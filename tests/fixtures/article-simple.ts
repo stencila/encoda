@@ -3,6 +3,7 @@ import { Article } from '@stencila/schema'
 // A very simple Article with only headings and paragraphs
 const article: Article = {
   type: 'Article',
+  title: 'The title',
   authors: [],
   content: [
     {

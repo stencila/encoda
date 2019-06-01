@@ -8,8 +8,9 @@
  * and Stencila schema instances.
  */
 
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import * as xlsx from 'xlsx'
+import * as util from './util'
 import { load, VFile } from './vfile'
 
 export const mediaTypes = [
@@ -74,13 +75,12 @@ function decodeWorkbook(
 }
 
 function encodeNode(node: stencila.Node): xlsx.WorkBook {
-  stencila.assert(node, ['Collection', 'Datatable', 'Table'])
-  const type = stencila.type(node)
+  const type = util.type(node)
 
   const sheetNames: Array<string> = []
   const sheets: { [key: string]: xlsx.WorkSheet } = {}
   if (type === 'Collection') {
-    const collection = stencila.cast(node, 'Collection')
+    const collection = util.cast(node, 'Collection')
     if (collection.parts && collection.parts.length > 0) {
       let index = 1
       for (const part of collection.parts) {
@@ -125,7 +125,9 @@ function decodeTable(
   return {
     type: 'Table',
     name,
-    rows: [],
+    rows: []
+    // TODO:
+    /*
     cells: Object.entries(cells).map(function([key, cell]): stencila.TableCell {
       let value = decodeCell(cell)
       return {
@@ -135,11 +137,14 @@ function decodeTable(
         content: [value]
       }
     })
+    */
   }
 }
 
 function encodeTable(table: stencila.Table) {
   const sheet: xlsx.WorkSheet = {}
+  // TODO:
+  // @ts-ignore
   let cells = table.cells
   if (cells) {
     let maxCol = 0

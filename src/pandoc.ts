@@ -1,9 +1,10 @@
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import * as rpng from './rpng'
+import * as util from './util'
 import { create, load, VFile, write } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
@@ -70,7 +71,7 @@ export async function encode(
     let output
     if (!filePath || filePath === '-') {
       // Create a new file path, which is returned as `vfile.path`
-      output = stencila.type(node).toLowerCase() + '.' + to
+      output = util.type(node).toLowerCase() + '.' + to
       filePath = output
     } else output = filePath
     args.push(`--output=${output}`)
@@ -137,11 +138,26 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
 function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
-  const meta = decodeMeta(pdoc.meta)
-  // TODO: mutate metadata to conform to schema
+  const { title, ...meta } = decodeMeta(pdoc.meta)
+
+  let titre = 'Untitled'
+  if (title) {
+    const typeName = util.type(title)
+    if (typeName === 'string') {
+      titre = title as string
+    } else if (typeName === 'Paragraph') {
+      const para = title as stencila.Paragraph
+      // TODO: Avoid as and/or allow for title to be a Paragraph
+      titre = para.content[0] as string
+    }
+  }
+
+  // TODO: mutate other metadata to conform to schema
+
   const content = decodeBlocks(pdoc.blocks)
   return {
     type: 'Article',
+    title: titre,
     authors: [],
     ...meta,
     content
@@ -161,7 +177,7 @@ function encodeNode(
   let meta: Pandoc.Meta = {}
   let blocks: Pandoc.Block[] = []
 
-  const type = stencila.type(node)
+  const type = util.type(node)
   if (type === 'Article') {
     const { type, content, ...rest } = node as stencila.Article
     standalone = true
@@ -252,7 +268,7 @@ function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
  * encoded into a Pandoc `MetaString`.
  */
 function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
-  const type = stencila.type(node)
+  const type = util.type(node)
   switch (type) {
     case 'null':
       return {
@@ -647,7 +663,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
 }
 
 function encodeInline(node: stencila.Node): Pandoc.Inline {
-  const type = stencila.type(node)
+  const type = util.type(node)
   switch (type) {
     case 'string':
       return encodeString(node as string)
@@ -913,7 +929,7 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
 }
 
 function encodeDefault(node: stencila.Node): Pandoc.Image {
-  const type = stencila.type(node)
+  const type = util.type(node)
 
   const index = 1
   const imagePath = `${type.toLowerCase()}-${index}.png`

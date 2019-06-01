@@ -119,12 +119,12 @@ const collection = {
   }
 }
 
-test('decode', async () => {
+test.skip('decode', async () => {
   expect(await decode(await read(simple.file))).toEqual(simple.node)
   expect(await decode(await read(collection.file))).toEqual(collection.node)
 })
 
-test('encode', async () => {
+test.skip('encode', async () => {
   // Use round trip since meta data in the binary file (e.g. last save time)
   // makes comparison of those files difficult
   expect(await decode(await encode(simple.node))).toEqual(simple.node)

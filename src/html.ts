@@ -47,7 +47,7 @@
  * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import h from 'hyperscript'
@@ -56,6 +56,7 @@ import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import { stencilaCSS } from './templates/stencila-css-template'
+import * as util from './util'
 import { dump, load, VFile } from './vfile'
 
 const document = new jsdom.JSDOM().window.document
@@ -163,7 +164,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
 }
 
 function encodeNode(node: stencila.Node): Node {
-  const type = stencila.type(node)
+  const type = util.type(node)
   switch (type) {
     case 'Article':
       return encodeArticle(node as stencila.Article)

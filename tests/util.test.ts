@@ -126,12 +126,14 @@ describe('cast', () => {
       cast(
         {
           type: 'Thing',
+          title: 'Untitled',
           authors: [{ type: 'Person', givenNames: ['Jack'] }]
         },
         'Article'
       )
     ).toEqual({
       type: 'Article',
+      title: 'Untitled',
       authors: [{ type: 'Person', givenNames: ['Jack'] }]
     })
   })
@@ -283,6 +285,7 @@ describe('coerce', () => {
   it('will correct nested nodes including adding type', () => {
     const article = coerce(
       {
+        title: 'Untitled',
         authors: [
           {
             givenNames: 'Joe'
@@ -305,6 +308,7 @@ describe('coerce', () => {
   it('currently has a bug with arrays using anyOf', () => {
     const article = coerce(
       {
+        title: 'Untitled',
         authors: [
           {
             givenNames: ['Joe']
@@ -360,6 +364,7 @@ describe('coerce', () => {
   it('has no side effects', () => {
     const inp: any = {
       name: 42,
+      title: 'Untitled',
       authors: [{ type: 'Person', givenNames: 'Jane' }]
     }
     const out = coerce(inp, 'Article')

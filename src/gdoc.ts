@@ -23,13 +23,12 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
-import { InlineContent } from '@stencila/schema'
+import stencila, { InlineContent } from '@stencila/schema'
 import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
-import { validate } from './util'
+import * as util from './util'
 import { dump, load, VFile } from './vfile'
 
 const logger = getLogger('encoda')
@@ -165,7 +164,7 @@ async function decodeDocument(
   // Resolve the fetched resources
   await fetcher.resolve()
 
-  return validate(
+  return util.validate(
     {
       type: 'Article',
       title: doc.title,
@@ -193,7 +192,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
 
   // Wrap the node as needed to ensure an array
   // of block element at the top level
-  const type = stencila.type(node)
+  const type = util.type(node)
   let content: stencila.Node[] = []
   switch (type) {
     // `CreativeWork` types (have `content`)
@@ -223,7 +222,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
 
   if (content) {
     for (let node of content) {
-      const type = stencila.type(node)
+      const type = util.type(node)
       switch (type) {
         case 'Heading':
           gdocContent.push(encodeHeading(node as stencila.Heading))
@@ -401,7 +400,7 @@ function encodeList(list: stencila.List): GDoc.Schema$StructuralElement[] {
   // Create the GDoc paragraphs with a bullet with the id
   const paras: GDoc.Schema$StructuralElement[] = list.items.map(item => {
     let para
-    const type = stencila.type(item)
+    const type = util.type(item)
     if (type === 'Paragraph') {
       para = encodeParagraph(item as stencila.Paragraph)
     } else {
@@ -542,7 +541,7 @@ function decodeInlineObjectElement(
 function encodeInlineContent(
   node: stencila.InlineContent
 ): GDoc.Schema$ParagraphElement {
-  const type = stencila.type(node)
+  const type = util.type(node)
   switch (type) {
     case 'Emphasis':
       return encodeEmphasis(node as stencila.Emphasis)
@@ -605,7 +604,7 @@ function decodeTextRun(
 function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
   return nodes
     .map(node => {
-      const type = stencila.type(node)
+      const type = util.type(node)
       switch (type) {
         case 'Emphasis':
         case 'Strong':
