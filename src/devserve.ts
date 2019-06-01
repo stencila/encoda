@@ -1,8 +1,11 @@
+import { getLogger } from '@stencila/logga'
 import browserSync from 'browser-sync'
 import chokidar from 'chokidar'
 import path from 'path'
 import { write } from '.'
 import process from './process'
+
+const logger = getLogger('encoda')
 
 /**
  * Serve a directory, watching for file changes,
@@ -37,7 +40,7 @@ export function devserve(
     const { dir, name, ext } = path.parse(filePath)
     if (ext !== '.html') {
       // TODO: prettier logging of file being processed
-      console.error(filePath)
+      logger.error(filePath)
       const htmlPath = path.join(dir, name + '.html')
       try {
         const doc = await process(filePath)
@@ -45,7 +48,7 @@ export function devserve(
         browser.reload(htmlPath)
       } catch (error) {
         // TODO: prettier logging of errors
-        console.error(error)
+        logger.error(error)
         browser.notify(
           `<span style="color: #f83939;">${error.message}</span>`,
           60 * 60 * 1000

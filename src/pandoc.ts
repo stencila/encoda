@@ -1,3 +1,4 @@
+import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
@@ -6,6 +7,8 @@ import * as rpng from './rpng'
 import { create, load, VFile, write } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
+
+const logger = getLogger('encoda')
 
 // Although this codec is usually used as a base for others (e.g `docx`),
 // the following definitions allow Pandoc JSON to be decoded or encoded
@@ -97,9 +100,7 @@ let encodePromises: Promise<any>[] = []
  */
 function run(input: string | Buffer, args: string[]): Promise<string> {
   args.push(`--data-dir=${pandocDataDir}`)
-  if (process.env.DEBUG) {
-    console.log(`Running ${pandocPath} with args:\n  ${args.join('\n  ')}`)
-  }
+  logger.debug(`Running ${pandocPath} with args:\n  ${args.join('\n  ')}`)
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(pandocPath, args)
 
