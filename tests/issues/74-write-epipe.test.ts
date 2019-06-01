@@ -2,6 +2,9 @@ import fs from 'fs-extra'
 import path from 'path'
 import { convert } from '../../src'
 
+const docx = path.join(__dirname, '74-write-epipe.docx')
+const html = path.join(__dirname, '74-write-epipe.html')
+
 test('issue 74', async () => {
   /**
    * The [issue](https://github.com/stencila/convert/issues/74)
@@ -19,15 +22,13 @@ test('issue 74', async () => {
    * within `pandoc.run`.
    */
 
-  const docx = path.join(__dirname, '74-write-epipe.docx')
-  const html = path.join(__dirname, '74-write-epipe.html')
-
   // Before fix, this fails with `Error: write EPIPE`
   //    https://travis-ci.org/stencila/convert/jobs/537572367#L172
   //    https://ci.appveyor.com/project/nokome/convert/builds/24825307#L66
-  convert(docx, html)
+  await convert(docx, html)
+})
 
-  // Cleanup
+afterAll(async () => {
   await fs.remove(html)
   await fs.remove(docx + '.media')
 })
