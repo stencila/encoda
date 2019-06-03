@@ -1,20 +1,19 @@
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
 import { type, validate } from './util'
 
 /**
- * Process a document
+ * Process a node
  *
- * This function walks through a document and updates it according to
+ * This function walks through a node and updates it according to
  * any processing directives on the nodes.
  */
 export default async function process(
-  filePath: string
+  node: stencila.Node,
+  dir: string = ''
 ): Promise<stencila.Node> {
-  const doc = await read(filePath)
-
   // A dictionary of nodes assigned to by `import` and used
   // by other directives
   const nodes: { [key: string]: stencila.Node } = {}
@@ -28,6 +27,9 @@ export default async function process(
       if (meta) {
         if ('validate' in meta) {
           await _load(code.value, meta.from || code.language)
+        }
+        if (meta.id) {
+          _import(meta.id, node)
         }
         if (meta.import) {
           _import(
@@ -103,20 +105,20 @@ export default async function process(
     return node
   }
 
-  return await handle(doc)
+  return await handle(node)
 
-  function _import(name: string, node: stencila.Node) {
-    nodes[name] = node
+  function _import(id: string, node: stencila.Node) {
+    nodes[id] = node
   }
 
-  function _equals(name: string, node: stencila.Node) {
-    assert.deepStrictEqual(node, _get(name))
+  function _equals(id: string, node: stencila.Node) {
+    assert.deepStrictEqual(node, _get(id))
   }
 
-  function _get(name: string) {
-    const node = nodes[name]
+  function _get(id: string) {
+    const node = nodes[id]
     if (typeof node === 'undefined') {
-      throw Error(`Error in "${filePath}": could not find "${name}"`)
+      throw Error(`Error: could not find "${id}"`)
     }
     return node
   }
@@ -127,27 +129,27 @@ export default async function process(
       validate(node, type(node))
       return node
     } catch (error) {
-      throw Error(`Error in "${filePath}": loading "${content}": ${error} `)
+      throw Error(`Error: loading "${content}": ${error} `)
     }
   }
 
   async function _read(target: string, format?: string) {
     try {
-      const targetPath = './' + path.join(path.dirname(filePath), target)
+      const targetPath = './' + path.join(dir, target)
       const node = await read(targetPath, format)
       validate(node, type(node))
       return node
     } catch (error) {
-      throw Error(`Error in "${filePath}": reading "${target}": ${error} `)
+      throw Error(`Error: reading "${target}": ${error} `)
     }
   }
 
   async function _write(node: stencila.Node, target: string, format?: string) {
     try {
-      const targetPath = './' + path.join(path.dirname(filePath), target)
+      const targetPath = './' + path.join(dir, target)
       await write(node, targetPath, format)
     } catch (error) {
-      throw Error(`Error in "${filePath}": writing "${target}": ${error} `)
+      throw Error(`Error: writing "${target}": ${error} `)
     }
   }
 }

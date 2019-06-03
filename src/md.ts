@@ -1036,14 +1036,11 @@ function stringifyExtensions(tree: UNIST.Node) {
  * (it only works with `rehype`).
  */
 function stringifyAttrs(tree: UNIST.Node) {
+  const types = ['heading', 'code', 'link', 'inlineCode', 'image']
   const codec = unified().use(stringifier)
   const md = (node: UNIST.Node) => codec.stringify(node)
   return map(tree, (node: UNIST.Node) => {
-    if (
-      ['link', 'inlineCode'].includes(node.type) &&
-      node.data &&
-      node.data.hProperties
-    ) {
+    if (types.includes(node.type) && node.data && node.data.hProperties) {
       const meta = stringifyMeta(node.data.hProperties as {
         [key: string]: string
       })

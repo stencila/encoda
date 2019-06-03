@@ -21,6 +21,8 @@ import * as vfile from './vfile'
 import * as xlsx from './xlsx'
 import * as yaml from './yaml'
 
+export { default as process } from './process'
+
 type VFile = vfile.VFile
 
 /**
