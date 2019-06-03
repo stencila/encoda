@@ -35,9 +35,6 @@
 import minimist from 'minimist'
 import * as encoda from '.'
 import './boot'
-// TODO: remove this after it moved to `stencila`
-// Currently retained to avoid error with `npm run check` if it is removed
-import './devserve'
 
 const { _, ...options } = minimist(process.argv.slice(2))
 const name = _[0]
