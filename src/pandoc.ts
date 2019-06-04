@@ -742,7 +742,7 @@ function decodeSpace(node: Pandoc.Space): string {
 }
 
 /**
- * Decode a Pandoc pace` to a `string`.
+ * Decode a Pandoc `Str` to a `string`.
  */
 function decodeStr(node: Pandoc.Str): string {
   return node.c

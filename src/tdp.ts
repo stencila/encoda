@@ -302,8 +302,7 @@ export function decodeFieldTypeFormat(
       format = null
       break
 
-    // Types which are represented as represented as
-    // a string with a format
+    // Types which are represented as a string with a format
     case 'date':
       type = 'string'
       format = 'date'

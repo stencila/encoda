@@ -131,8 +131,7 @@ class FetchToSame {
 /**
  * Decode a GDoc `Document` to a Stencila `Article`
  *
- * Note that currently `SectionBreak`, `Table` and `TableOfContents`
- * child elements are ignored.
+ * Note that currently `TableOfContents` child elements are ignored.
  */
 async function decodeDocument(
   doc: GDoc.Schema$Document,
