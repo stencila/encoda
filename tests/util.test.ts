@@ -1,13 +1,6 @@
-import {
-  assert,
-  cast,
-  coerce,
-  create,
-  is,
-  type,
-  valid,
-  validate
-} from '../src/util'
+import { cast, coerce, create, valid, validate } from '../src/util'
+import is from '../src/util/is'
+import type from '../src/util/type'
 
 describe('create', () => {
   it('works with different types', () => {
@@ -84,30 +77,6 @@ test('is', () => {
   expect(is({}, 'object')).toEqual(true)
   expect(is({ type: 'Thing' }, 'Thing')).toEqual(true)
   expect(is({ type: 'Foo' }, 'Thing')).toEqual(false)
-})
-
-describe('assert', () => {
-  it('works', () => {
-    expect(assert(null, 'null')).toEqual(true)
-    expect(assert(42, ['number', 'Thing'])).toEqual(true)
-    expect(assert({ type: 'Thing' }, 'Thing')).toEqual(true)
-    expect(assert({ type: 'Thing' }, ['Thing', 'Foo'])).toEqual(true)
-  })
-
-  it('throws on wrong type', () => {
-    expect(() => assert(null, 'Thing')).toThrow(
-      /type is "null" but expected "Thing"/
-    )
-    expect(() => assert(42, ['Thing', 'CreativeWork'])).toThrow(
-      /type is "number" but expected "Thing\|CreativeWork"/
-    )
-    expect(() => assert({ type: 'Datatable' }, 'Thing')).toThrow(
-      /type is "Datatable" but expected "Thing"/
-    )
-    expect(() => assert({ type: 'Foo' }, ['Thing', 'CreativeWork'])).toThrow(
-      /type is "Foo" but expected "Thing\|CreativeWork"/
-    )
-  })
 })
 
 describe('cast', () => {

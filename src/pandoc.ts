@@ -4,7 +4,7 @@ import childProcess from 'child_process'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import * as rpng from './rpng'
-import * as util from './util'
+import type from './util/type'
 import { create, load, VFile, write } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
@@ -71,7 +71,7 @@ export async function encode(
     let output
     if (!filePath || filePath === '-') {
       // Create a new file path, which is returned as `vfile.path`
-      output = util.type(node).toLowerCase() + '.' + to
+      output = type(node).toLowerCase() + '.' + to
       filePath = output
     } else output = filePath
     args.push(`--output=${output}`)
@@ -142,10 +142,10 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
 
   let titre = 'Untitled'
   if (title) {
-    const typeName = util.type(title)
-    if (typeName === 'string') {
+    const type_ = type(title)
+    if (type_ === 'string') {
       titre = title as string
-    } else if (typeName === 'Paragraph') {
+    } else if (type_ === 'Paragraph') {
       const para = title as stencila.Paragraph
       // TODO: Avoid as and/or allow for title to be a Paragraph
       titre = para.content[0] as string
@@ -177,8 +177,8 @@ function encodeNode(
   let meta: Pandoc.Meta = {}
   let blocks: Pandoc.Block[] = []
 
-  const type = util.type(node)
-  if (type === 'Article') {
+  const type_ = type(node)
+  if (type_ === 'Article') {
     const { type, content, ...rest } = node as stencila.Article
     standalone = true
     meta = encodeMeta(rest)
@@ -200,7 +200,7 @@ function encodeNode(
         }
       ]
     } catch {
-      throw new Error(`Unhandled Stencila node type "${type}"`)
+      throw new Error(`Unhandled Stencila node type "${type_}"`)
     }
   }
 
@@ -268,8 +268,7 @@ function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
  * encoded into a Pandoc `MetaString`.
  */
 function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
-  const type = util.type(node)
-  switch (type) {
+  switch (type(node)) {
     case 'null':
       return {
         t: 'MetaString',
@@ -663,8 +662,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
 }
 
 function encodeInline(node: stencila.Node): Pandoc.Inline {
-  const type = util.type(node)
-  switch (type) {
+  switch (type(node)) {
     case 'string':
       return encodeString(node as string)
     case 'Emphasis':
@@ -929,10 +927,10 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
 }
 
 function encodeDefault(node: stencila.Node): Pandoc.Image {
-  const type = util.type(node)
+  const type_ = type(node)
 
   const index = 1
-  const imagePath = `${type.toLowerCase()}-${index}.png`
+  const imagePath = `${type_.toLowerCase()}-${index}.png`
   const promise = (async () => {
     const file = await rpng.encode(node)
     await write(file, imagePath)
@@ -940,7 +938,7 @@ function encodeDefault(node: stencila.Node): Pandoc.Image {
   encodePromises.push(promise)
 
   const url = imagePath
-  const title = type
+  const title = type_
   return {
     t: 'Image',
     c: [emptyAttrs, [], [url, title]]

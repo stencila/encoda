@@ -33,7 +33,7 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
-import * as util from './util'
+import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
@@ -183,8 +183,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
 }
 
 function encodeNode(node: stencila.Node): UNIST.Node | undefined {
-  const type = util.type(node)
-  switch (type) {
+  const type_ = type(node)
+  switch (type_) {
     case 'Article':
       return encodeArticle(node as stencila.Article)
 
@@ -232,7 +232,7 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeObject(node as object)
 
     default:
-      throw new Error(`No Markdown encoder for Stencila node type "${type}"`)
+      throw new Error(`No Markdown encoder for Stencila node type "${type_}"`)
   }
 }
 
@@ -270,16 +270,13 @@ function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
  * @param root The MDAST root to decode
  */
 function decodeRoot(root: MDAST.Root): stencila.Article {
-  const article = util.create(
-    'Article',
-    {
-      title: 'Untitled',
-      // TODO: the `create function should automatically add empty
-      // array for array properties that are required
-      authors: []
-    },
-    'coerce'
-  )
+  const article: stencila.Article = {
+    type: 'Article',
+    title: 'Untitled',
+    // TODO: the `create function should automatically add empty
+    // array for array properties that are required
+    authors: []
+  }
 
   const body: Array<stencila.Node> = []
   for (let child of root.children) {
@@ -300,9 +297,7 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
   }
   article.content = body
 
-  // TODO: remove the following which mutates any YAML
-  // meta data to conform to the schema when above TODO is added
-  return util.coerce(article, 'Article')
+  return article
 }
 
 /**
@@ -388,7 +383,7 @@ function encodeParagraph(
   if (
     content.length === 0 ||
     (content.length === 1 &&
-      util.type(content[0]) === 'string' &&
+      type(content[0]) === 'string' &&
       (content[0] as string).trim().length === 0)
   ) {
     return undefined
@@ -1036,14 +1031,11 @@ function stringifyExtensions(tree: UNIST.Node) {
  * (it only works with `rehype`).
  */
 function stringifyAttrs(tree: UNIST.Node) {
+  const types = ['heading', 'code', 'link', 'inlineCode', 'image']
   const codec = unified().use(stringifier)
   const md = (node: UNIST.Node) => codec.stringify(node)
   return map(tree, (node: UNIST.Node) => {
-    if (
-      ['link', 'inlineCode'].includes(node.type) &&
-      node.data &&
-      node.data.hProperties
-    ) {
+    if (types.includes(node.type) && node.data && node.data.hProperties) {
       const meta = stringifyMeta(node.data.hProperties as {
         [key: string]: string
       })

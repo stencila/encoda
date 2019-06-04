@@ -56,7 +56,7 @@ import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import { stencilaCSS } from './templates/stencila-css-template'
-import * as util from './util'
+import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 const document = new jsdom.JSDOM().window.document
@@ -164,8 +164,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
 }
 
 function encodeNode(node: stencila.Node): Node {
-  const type = util.type(node)
-  switch (type) {
+  switch (type(node)) {
     case 'Article':
       return encodeArticle(node as stencila.Article)
 

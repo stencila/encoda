@@ -21,7 +21,7 @@ import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import * as md from './md'
-import { type } from './util'
+import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 /**

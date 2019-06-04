@@ -2,7 +2,7 @@ import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
-import { type } from '../src/util'
+import type from '../src/util/type'
 
 // Ensure that the dir for test outputs is present
 fs.ensureDirSync(path.join(__dirname, 'output'))
