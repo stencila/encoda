@@ -505,15 +505,37 @@ function encodeThematicBreak(
 }
 
 /**
- * Decode a GDoc `ParagraphElement` (something withing a paragraph :)
+ * Decode a GDoc `ParagraphElement`.
+ *
+ * See the [docs](https://developers.google.com/docs/api/reference/rest/v1/documents#paragraphelement)
+ * for a list of the possible union field types.
  */
 function decodeParagraphElement(
   elem: GDoc.Schema$ParagraphElement
 ): stencila.InlineContent {
-  if (elem.textRun) return decodeTextRun(elem.textRun)
+  // The paragraph element has one of these union fields
+  if (elem.textRun) {
+    return decodeTextRun(elem.textRun)
+  }
   if (elem.inlineObjectElement) {
     return decodeInlineObjectElement(elem.inlineObjectElement)
-  } else throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
+  }
+  if (elem.pageBreak || elem.horizontalRule) {
+    // We can not decode these to a `ThematicBreak` (because that is not `InlineContent`)
+    // So return them as string of text that resembles a Markdown encoded `ThematicBreak`
+    return '* * *'
+  }
+  if (
+    elem.autoText ||
+    elem.columnBreak ||
+    elem.footnoteReference ||
+    elem.equation
+  ) {
+    // Ignore these fields for now.
+    return ''
+  }
+  // We should never get here, but if we do, throw an error
+  throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
 }
 
 function decodeInlineObjectElement(
