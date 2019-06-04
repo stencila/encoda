@@ -10,7 +10,7 @@
 
 import stencila from '@stencila/schema'
 import * as xlsx from 'xlsx'
-import * as util from './util'
+import type from './util/type'
 import { load, VFile } from './vfile'
 
 export const mediaTypes = [
@@ -75,12 +75,12 @@ function decodeWorkbook(
 }
 
 function encodeNode(node: stencila.Node): xlsx.WorkBook {
-  const type = util.type(node)
+  const type_ = type(node)
 
   const sheetNames: Array<string> = []
   const sheets: { [key: string]: xlsx.WorkSheet } = {}
-  if (type === 'Collection') {
-    const collection = util.cast(node, 'Collection')
+  if (type_ === 'Collection') {
+    const collection = node as stencila.Collection
     if (collection.parts && collection.parts.length > 0) {
       let index = 1
       for (const part of collection.parts) {
