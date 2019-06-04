@@ -6,6 +6,7 @@ import globby from 'globby'
 import produce from 'immer'
 import path from 'path'
 import { decode as decodePerson } from './person'
+import type from './util/type'
 
 const built = path.join(
   path.dirname(require.resolve('@stencila/schema')),
@@ -35,43 +36,6 @@ export function create<Key extends keyof stencila.Types>(
   if (validation === 'validate') return validate(node, type)
   else if (validation === 'coerce') return coerce(node, type)
   else return node
-}
-
-/**
- * Get the type of a node
- * @param node The node to get the type for
- */
-export function type(node: any): string {
-  if (node === null) return 'null'
-  let type = typeof node
-  if (type === 'object') {
-    if (Array.isArray(node)) return 'array'
-    if (node.type) return node.type
-  }
-  return type
-}
-
-/**
- * Is a node of a particular type/s
- * @param node The node to check
- * @param types The type names to check against
- */
-export function is(node: any, types: string | string[]): boolean {
-  if (typeof types === 'string') return type(node) === types
-  else return types.includes(type(node))
-}
-
-/**
- * Assert that a node is of a particular type/s
- * @param node The node to check
- * @param types The type names to check against
- */
-export function assert(node: any, types: string | string[]): boolean {
-  if (is(node, types)) return true
-  else {
-    const list = typeof types === 'string' ? types : types.join('|')
-    throw new Error(`Node type is "${type(node)}" but expected "${list}"`)
-  }
 }
 
 /**

@@ -4,15 +4,11 @@ import { dump, load } from '../src/vfile'
 test('decode', async () => {
   expect(await decode(await load(kitchenSink.md))).toEqual(kitchenSink.node)
   expect(await decode(await load(attrs.md))).toEqual(attrs.node)
-
-  expect(await decode(await load(shortYaml.from))).toEqual(shortYaml.node)
 })
 
 test('encode', async () => {
   expect(await dump(await encode(kitchenSink.node))).toEqual(kitchenSink.md)
   expect(await dump(await encode(attrs.node))).toEqual(attrs.md)
-
-  expect(await dump(await encode(shortYaml.node))).toEqual(shortYaml.to)
 
   expect(await dump(await encode(emptyParas.node))).toEqual(emptyParas.to)
 })
@@ -390,56 +386,6 @@ A \`code\`{lang=r}.
         value: '# A code block'
       }
     ]
-  }
-}
-
-// Example for testing shorthand YAML
-const shortYaml = {
-  from: `---
-title: A title
-authors:
-  - Joe James <joe@example.com>
-  - Dr Jill Jones PhD
----
-`,
-  to: `---
-title: A title
-authors:
-  - type: Person
-    givenNames:
-      - Joe
-    familyNames:
-      - James
-    emails:
-      - joe@example.com
-  - type: Person
-    honorificPrefix: Dr
-    givenNames:
-      - Jill
-    familyNames:
-      - Jones
-    honorificSuffix: PhD
----
-`,
-  node: {
-    type: 'Article',
-    title: 'A title',
-    authors: [
-      {
-        type: 'Person',
-        givenNames: ['Joe'],
-        familyNames: ['James'],
-        emails: ['joe@example.com']
-      },
-      {
-        type: 'Person',
-        honorificPrefix: 'Dr',
-        givenNames: ['Jill'],
-        familyNames: ['Jones'],
-        honorificSuffix: 'PhD'
-      }
-    ],
-    content: []
   }
 }
 

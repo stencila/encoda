@@ -23,12 +23,12 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { InlineContent } from '@stencila/schema'
+import stencila from '@stencila/schema'
 import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
-import * as util from './util'
+import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 const logger = getLogger('encoda')
@@ -164,15 +164,12 @@ async function decodeDocument(
   // Resolve the fetched resources
   await fetcher.resolve()
 
-  return util.validate(
-    {
-      type: 'Article',
-      title: doc.title,
-      authors: [],
-      content
-    },
-    'Article'
-  )
+  return {
+    type: 'Article',
+    title: doc.title,
+    authors: [],
+    content
+  }
 }
 
 /**
@@ -192,9 +189,8 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
 
   // Wrap the node as needed to ensure an array
   // of block element at the top level
-  const type = util.type(node)
   let content: stencila.Node[] = []
-  switch (type) {
+  switch (type(node)) {
     // `CreativeWork` types (have `content`)
     case 'Article':
       const article = node as stencila.Article
@@ -215,15 +211,15 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
       const para: stencila.Paragraph = {
         type: 'Paragraph',
         // TODO: avoid this use of `as`
-        content: [node as InlineContent]
+        content: [node as stencila.InlineContent]
       }
       content = [para]
   }
 
   if (content) {
     for (let node of content) {
-      const type = util.type(node)
-      switch (type) {
+      const type_ = type(node)
+      switch (type_) {
         case 'Heading':
           gdocContent.push(encodeHeading(node as stencila.Heading))
           break
@@ -243,7 +239,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
           gdocContent.push(encodeThematicBreak(node as stencila.ThematicBreak))
           break
         default:
-          throw new Error(`Unhandled Stencila node type "${type}"`)
+          throw new Error(`Unhandled Stencila node type "${type_}"`)
       }
     }
   }
@@ -400,8 +396,8 @@ function encodeList(list: stencila.List): GDoc.Schema$StructuralElement[] {
   // Create the GDoc paragraphs with a bullet with the id
   const paras: GDoc.Schema$StructuralElement[] = list.items.map(item => {
     let para
-    const type = util.type(item)
-    if (type === 'Paragraph') {
+    const type_ = type(item)
+    if (type_ === 'Paragraph') {
       para = encodeParagraph(item as stencila.Paragraph)
     } else {
       throw new Error(`List item is unhandled Stencila node type "${type}"`)
@@ -541,8 +537,8 @@ function decodeInlineObjectElement(
 function encodeInlineContent(
   node: stencila.InlineContent
 ): GDoc.Schema$ParagraphElement {
-  const type = util.type(node)
-  switch (type) {
+  const type_ = type(node)
+  switch (type_) {
     case 'Emphasis':
       return encodeEmphasis(node as stencila.Emphasis)
     case 'Strong':
@@ -604,8 +600,7 @@ function decodeTextRun(
 function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
   return nodes
     .map(node => {
-      const type = util.type(node)
-      switch (type) {
+      switch (type(node)) {
         case 'Emphasis':
         case 'Strong':
           // @ts-ignore
