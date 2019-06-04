@@ -3,6 +3,7 @@ import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
 import { type, validate } from './util'
+import { isPath } from './vfile'
 
 /**
  * Process a node
@@ -71,6 +72,21 @@ export default async function process(
         }
         if ('include' in meta) {
           return await _read(link.target, meta.from)
+        }
+      }
+    }
+
+    if (node.type === 'Paragraph') {
+      const para = node as stencila.Paragraph
+      // Paragraphs that have a string which looks like a file path
+      // are treated as an inclusion. This approximates the transclusion
+      // syntax of iA Writer.
+      if (para.content.length === 1) {
+        if (type(para.content[0]) === 'string') {
+          const path = para.content[0] as string
+          if (isPath(path)) {
+            return await _read(path)
+          }
         }
       }
     }
