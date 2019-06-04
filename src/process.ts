@@ -2,7 +2,8 @@ import stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
-import { type, validate } from './util'
+import { validate } from './util'
+import type from './util/type'
 import { isPath } from './vfile'
 
 /**
