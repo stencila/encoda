@@ -300,9 +300,7 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
   }
   article.content = body
 
-  // TODO: remove the following which mutates any YAML
-  // meta data to conform to the schema when above TODO is added
-  return util.coerce(article, 'Article')
+  return article
 }
 
 /**
