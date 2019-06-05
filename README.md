@@ -20,14 +20,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
   - [Other formats](#other-formats)
 - [Demo](#demo)
 - [Install](#install)
-  - [CLI](#cli)
-    - [Windows](#windows)
-    - [MacOS](#macos)
-    - [Linux](#linux)
-  - [Package](#package)
 - [Use](#use)
   - [Example](#example)
-  - [Help](#help)
 - [Develop](#develop)
 - [Roadmap](#roadmap)
 - [Contribute](#contribute)
@@ -80,60 +74,6 @@ and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
 > :sparkles: Coming soon!
 
 ## Install
-
-Encoda is available as a pre-compiled, standalone command line tool ([CLI](#cli)), or as a Node.js [package](#package).
-
-### CLI
-
-#### Windows
-
-To install the latest release of the `encoda` command line tool, download `encoda-win-x64.zip` for the [latest release](https://github.com/stencila/encoda/releases/) and place it somewhere on your `PATH`.
-
-#### MacOS
-
-To install the latest release of the `encoda` command line tool to `/usr/local/bin` just use,
-
-```bash
-curl -L https://raw.githubusercontent.com/stencila/encoda/master/install.sh | bash
-```
-
-To install a specific version, append `-s vX.X.X` e.g.
-
-```bash
-curl -L https://raw.githubusercontent.com/stencila/encoda/master/install.sh | bash -s v0.33.0
-```
-
-Or, if you'd prefer to do things manually, download `encoda-macos-x64.tar.gz` for the [latest release](https://github.com/stencila/encoda/releases/) and then,
-
-```bash
-tar xvf encoda-macos-x64.tar.gz
-sudo mv -f encoda /usr/local/bin # or wherever you like
-```
-
-#### Linux
-
-To install the latest release of the `encoda` command line tool to `~/.local/bin/` just use,
-
-```bash
-curl -L https://raw.githubusercontent.com/stencila/encoda/master/install.sh | bash
-```
-
-To install a specific version, append `-s vX.X.X` e.g.
-
-```bash
-curl -L https://raw.githubusercontent.com/stencila/encoda/master/install.sh | bash -s v0.33.0
-```
-
-Or, if you'd prefer to do things manually, or place encoda elsewhere, download `encoda-linux-x64.tar.gz` for the [latest release](https://github.com/stencila/encoda/releases/) and then,
-
-```bash
-tar xvf encoda-linux-x64.tar.gz
-mv -f encoda ~/.local/bin/ # or wherever you like
-```
-
-### Package
-
-If you want to integrate Encoda into another application or package, it is also available as a Node.js package :
 
 ```bash
 npm install @stencila/encoda
