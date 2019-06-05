@@ -13,7 +13,6 @@ script:
   - npm run cover
   - npm run docs
   - npm run build
-  - npm run bundle:$TRAVIS_OS_NAME
 
 after_success:
   # Upload test coverage to codecov.io
