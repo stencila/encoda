@@ -20,6 +20,7 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
+import { Encode } from '.'
 import * as md from './md'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
@@ -51,11 +52,11 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param thing The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
   filePath?: string,
   options: any = { embed: true }
-): Promise<VFile> {
+): Promise<VFile> => {
   let bash = await encodeNode(node)
   if (options.embed) {
     if (!demoMagicSh) {
@@ -91,8 +92,9 @@ async function encodeNode(node: stencila.Node): Promise<string> {
       if (
         block.language &&
         !(block.language == 'bash' || block.language == 'sh')
-      )
+      ) {
         return ''
+      }
       let bash = `pe "${block.value}"\n`
       if (block.meta) {
         if (block.meta.pause) bash += `z ${block.meta.pause}\n`

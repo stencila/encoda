@@ -4,6 +4,7 @@
 
 import stencila from '@stencila/schema'
 import path from 'path'
+import { Encode } from '.'
 import { home } from './boot'
 import * as pandoc from './pandoc'
 import { VFile } from './vfile'
@@ -29,11 +30,11 @@ const defaultDocxTemplatePath = path.join(
   'stencila-template.docx'
 )
 
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
   filePath?: string,
   templatePath: string = defaultDocxTemplatePath
-): Promise<VFile> {
+): Promise<VFile> => {
   return pandoc.encode(
     node,
     filePath,

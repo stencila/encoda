@@ -55,6 +55,7 @@ import h from 'hyperscript'
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
+import { Encode } from '.'
 import { stencilaCSS } from './templates/stencila-css-template'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
@@ -85,7 +86,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(node: stencila.Node): Promise<VFile> {
+export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   const dom = encodeNode(node) as HTMLHtmlElement
   const beautifulHtml = beautifyHtml(dom.outerHTML, {
     indent_size: 2,

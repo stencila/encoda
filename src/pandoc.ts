@@ -50,13 +50,14 @@ export async function decode(
  * @param ensureFile Ensure that the output is a real file (ie. not stdout?)
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(
+//  TODO: Update interface to conform to Encode type
+export const encode = async (
   node: stencila.Node,
   filePath?: string,
   to: Pandoc.OutputFormat = Pandoc.OutputFormat.json,
   options: string[] = [],
   ensureFile: boolean = false
-): Promise<VFile> {
+): Promise<VFile> => {
   encodePromises = []
   const { standalone, pdoc } = encodeNode(node)
   await Promise.all(encodePromises)

@@ -28,6 +28,7 @@ import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
+import { Encode } from '.'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
@@ -56,7 +57,7 @@ export async function decode(
  * @param node The `stencila.Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(node: stencila.Node): Promise<VFile> {
+export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   const gdoc = encodeNode(node)
   const json = JSON.stringify(gdoc, null, '  ')
   return load(json)

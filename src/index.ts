@@ -56,6 +56,7 @@ export const codecList: Array<Codec> = [
 
   // Data interchange formats
   yaml,
+  // @ts-ignore
   pandoc,
   json5,
   json
@@ -116,8 +117,14 @@ export interface Codec {
    *                 (Can be used by codecs that need to write more than one file when encoding)
    * @returns A promise that resolves to a `VFile`
    */
-  encode: (node: stencila.Node, filePath?: string) => Promise<VFile>
+  encode: (
+    node: stencila.Node,
+    filePath?: string,
+    format?: string
+  ) => Promise<VFile>
 }
+
+export type Encode = Codec['encode']
 
 /**
  * Match the codec based on file name, extension name, media type or by content sniffing.
@@ -222,11 +229,11 @@ export async function decode(
  * @param format The format to encode the node as.
  *               If undefined then determined from filePath or file path.
  */
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
   filePath?: string,
   format?: string
-): Promise<VFile> {
+): Promise<VFile> => {
   const codec = await match(filePath, format)
   return codec.encode(node, filePath)
 }
