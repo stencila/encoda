@@ -17,14 +17,13 @@
 import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
-import tar from 'tar'
 // @ts-ignore
 import pandoc from './pandoc-binary'
 
 /**
  * Is this process being run as a `pkg` packaged binary?
  */
-export const packaged =
+const packaged =
   ((process.mainModule && process.mainModule.id.endsWith('.exe')) ||
     process.hasOwnProperty('pkg')) &&
   fs.existsSync(path.join('/', 'snapshot'))
@@ -36,15 +35,6 @@ export const packaged =
 export const home = packaged
   ? path.dirname(process.execPath)
   : path.dirname(__dirname)
-
-// Unzip the native dependencies to home
-if (packaged && !fs.existsSync(path.join(home, 'node_modules'))) {
-  tar.x({
-    sync: true,
-    file: path.join('/', 'snapshot', 'encoda', 'encoda-deps.tgz'),
-    C: home
-  })
-}
 
 /**
  * The following code is necessary to ensure the Chromium binary can be correctly

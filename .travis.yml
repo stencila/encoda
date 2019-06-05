@@ -13,7 +13,6 @@ script:
   - npm run cover
   - npm run docs
   - npm run build
-  - npm run bundle:$TRAVIS_OS_NAME
 
 after_success:
   # Upload test coverage to codecov.io
@@ -37,13 +36,3 @@ deploy:
     on:
       branch: master
       condition: $TRAVIS_OS_NAME = linux
-
-  # Deploy build artifacts to Github release
-  # page on *any* tag (including those generated for a semantic release)
-  - provider: releases
-    api_key: $GITHUB_TOKEN
-    file_glob: true
-    file: bin/*.tar.gz
-    skip_cleanup: true
-    on:
-      tags: true
