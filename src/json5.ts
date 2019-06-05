@@ -31,6 +31,7 @@
 
 import stencila from '@stencila/schema'
 import json5 from 'json5'
+import { Encode } from '.'
 import { dump, load, VFile } from './vfile'
 
 /**
@@ -57,6 +58,6 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param thing The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(node: stencila.Node): Promise<VFile> {
+export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   return load(json5.stringify(node, null, '  '))
 }

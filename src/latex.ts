@@ -3,6 +3,7 @@
  */
 
 import stencila from '@stencila/schema'
+import { Encode } from '.'
 import * as pandoc from './pandoc'
 import { VFile } from './vfile'
 
@@ -14,9 +15,12 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   return pandoc.decode(file, pandoc.InputFormat.latex)
 }
 
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
-): Promise<VFile> {
-  return pandoc.encode(node, filePath, pandoc.OutputFormat.latex)
+  options = {}
+): Promise<VFile> => {
+  return pandoc.encode(node, {
+    ...options,
+    format: pandoc.OutputFormat.latex
+  })
 }

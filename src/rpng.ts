@@ -19,7 +19,7 @@ import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
-import { dump } from './index'
+import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
 import { stencilaCSS } from './templates/stencila-css-template'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
@@ -190,10 +190,10 @@ export const browser = puppeteer.page()
  * @param node The Stencila node to encode
  * @param filePath The file system path to write to
  */
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
-): Promise<VFile> {
+  { filePath }: EncodeOptions = {}
+): Promise<VFile> => {
   // Generate HTML of the 'value' of the node, which depends on the
   // node type. In the future, we may make this part of the schema definitions
   // and have a `stencila.value()` function to retrieve the value for the node

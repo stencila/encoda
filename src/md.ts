@@ -33,6 +33,7 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
+import { Encode } from '.'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
@@ -97,7 +98,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param thing The `stencila.Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(node: stencila.Node): Promise<VFile> {
+export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   let mdast = filter(
     encodeNode(node),
     (node: UNIST.Node | undefined) => typeof node !== 'undefined'

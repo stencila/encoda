@@ -4,6 +4,7 @@
 
 import * as stencila from '@stencila/schema'
 import yaml from 'js-yaml'
+import { Encode } from '.'
 import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = ['text/yaml']
@@ -13,7 +14,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   return yaml.safeLoad(yml)
 }
 
-export async function encode(node: stencila.Node): Promise<VFile> {
+export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   const yml = yaml.safeDump(node, {
     // "do not throw on invalid types (like function in the safe schema)
     // and skip pairs and single values with such types."

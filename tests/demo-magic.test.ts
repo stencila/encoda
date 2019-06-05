@@ -9,9 +9,9 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(await dump(await encode(node, undefined, { embed: false }))).toEqual(
-    bash
-  )
+  expect(
+    await dump(await encode(node, { codecOptions: { embed: false } }))
+  ).toEqual(bash)
   expect(await encode(node)).toBeTruthy()
 })
 

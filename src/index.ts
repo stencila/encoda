@@ -61,6 +61,12 @@ export const codecList: Array<Codec> = [
   json
 ]
 
+export interface EncodeOptions<FormatOptions extends object = {}> {
+  format?: string
+  filePath?: string
+  codecOptions?: FormatOptions
+}
+
 /**
  * The interface for a codec.
  *
@@ -71,7 +77,7 @@ export const codecList: Array<Codec> = [
  * as something that creates or modifies executable document, and
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
  */
-export interface Codec {
+export interface Codec<CodecOptions extends object = {}> {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
    * that the codec can decode/encode.
@@ -111,13 +117,21 @@ export interface Codec {
   /**
    * Encode a `stencila.Node` to a `VFile`.
    *
-   * @param thing The `stencila.Node` to encode
-   * @param filePath The file system path to encode to
-   *                 (Can be used by codecs that need to write more than one file when encoding)
+   * @param node The `stencila.Node` to encode
+   * @param options An optional object allowing for passing extra options and parameters to various codecs.
    * @returns A promise that resolves to a `VFile`
    */
-  encode: (node: stencila.Node, filePath?: string) => Promise<VFile>
+  encode: (
+    node: stencila.Node,
+    options?: EncodeOptions<CodecOptions>
+  ) => Promise<VFile>
 }
+
+export type Encode<Options extends object = {}> = Codec<Options>['encode']
+export type CustomCodec<Options extends EncodeOptions = {}> = (
+  node: stencila.Node,
+  options?: Options
+) => Promise<VFile>
 
 /**
  * Match the codec based on file name, extension name, media type or by content sniffing.
@@ -222,13 +236,12 @@ export async function decode(
  * @param format The format to encode the node as.
  *               If undefined then determined from filePath or file path.
  */
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string,
-  format?: string
-): Promise<VFile> {
+  { filePath, format }: EncodeOptions = {}
+): Promise<VFile> => {
   const codec = await match(filePath, format)
-  return codec.encode(node, filePath)
+  return codec.encode(node, { filePath })
 }
 
 /**
@@ -255,7 +268,7 @@ export async function dump(
   node: stencila.Node,
   format: string
 ): Promise<string> {
-  const file = await encode(node, undefined, format)
+  const file = await encode(node, { format })
   return vfile.dump(file)
 }
 
@@ -288,7 +301,7 @@ export async function write(
   filePath: string,
   format?: string
 ): Promise<VFile> {
-  let file = await encode(node, filePath, format)
+  let file = await encode(node, { format, filePath })
   await vfile.write(file, filePath)
   return file
 }
@@ -308,7 +321,10 @@ export async function convert(
 ): Promise<string | undefined> {
   const inputFile = vfile.create(input)
   const node = await decode(inputFile, input, options.from)
-  const outputFile = await encode(node, outputPath, options.to)
+  const outputFile = await encode(node, {
+    format: options.to,
+    filePath: outputPath
+  })
   if (outputPath) await vfile.write(outputFile, outputPath)
   return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
 }

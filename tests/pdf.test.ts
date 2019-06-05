@@ -11,7 +11,7 @@ test('decode', async () => {
 
 test('encode', async () => {
   const output = path.join(__dirname, 'output', 'pdf-encode.pdf')
-  const doc = await pdf.encode(articleSimple, output)
+  const doc = await pdf.encode(articleSimple, { filePath: output })
 
   expect(Buffer.isBuffer(doc.contents)).toBe(true)
   expect(doc.contents.slice(0, 5).toString()).toBe('%PDF-')

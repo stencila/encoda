@@ -9,7 +9,7 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { dump } from './index'
+import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
 import { load, VFile } from './vfile'
 
@@ -39,10 +39,10 @@ export const browser = puppeteer.page()
  * @param filePath The file system path to write the PDF to
  * @returns A promise that resolves to a `VFile`
  */
-export async function encode(
+export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
-): Promise<VFile> {
+  { filePath }: EncodeOptions = {}
+): Promise<VFile> => {
   const html = await dump(node, 'html')
 
   const page = await browser()

@@ -506,16 +506,27 @@ test('rpngs', async () => {
   // Generate the rPNGs
   const output = path.join(__dirname, 'output', 'pandoc-rpngs')
   fs.ensureDirSync(output)
-  const nullPng = await rpng.encode(null, path.join(output, 'null.png'))
-  const booleanPng = await rpng.encode(
-    boolean,
-    path.join(output, 'boolean.png')
-  )
-  const numberPng = await rpng.encode(number, path.join(output, 'number.png'))
-  const arrayPng = await rpng.encode(array, path.join(output, 'array.png'))
-  const objectPng = await rpng.encode(object, path.join(output, 'object.png'))
-  const thingPng = await rpng.encode(thing, path.join(output, 'thing.png'))
-  const personPng = await rpng.encode(person, path.join(output, 'person.png'))
+  const nullPng = await rpng.encode(null, {
+    filePath: path.join(output, 'null.png')
+  })
+  const booleanPng = await rpng.encode(boolean, {
+    filePath: path.join(output, 'boolean.png')
+  })
+  const numberPng = await rpng.encode(number, {
+    filePath: path.join(output, 'number.png')
+  })
+  const arrayPng = await rpng.encode(array, {
+    filePath: path.join(output, 'array.png')
+  })
+  const objectPng = await rpng.encode(object, {
+    filePath: path.join(output, 'object.png')
+  })
+  const thingPng = await rpng.encode(thing, {
+    filePath: path.join(output, 'thing.png')
+  })
+  const personPng = await rpng.encode(person, {
+    filePath: path.join(output, 'person.png')
+  })
 
   const pdoc: Pandoc.Document = {
     'pandoc-api-version': Pandoc.Version,
