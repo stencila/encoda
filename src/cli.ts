@@ -43,4 +43,10 @@ const args = _.slice(1)
 // @ts-ignore
 const func = encoda[name]
 if (!func) throw new Error(`No such function "${name}"`)
-func(...args, options)
+;(async () => {
+  // Call the function (which may, or may not be async) and then
+  await func(...args, options)
+  // Exit the process (necessary in case there are Puppeteer
+  // instances open etc
+  process.exit(0)
+})()

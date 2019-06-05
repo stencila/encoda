@@ -19,9 +19,8 @@ import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
-import puppeteer from 'puppeteer'
-import { chromiumPath } from './boot'
 import { dump } from './index'
+import * as puppeteer from './puppeteer'
 import { stencilaCSS } from './templates/stencila-css-template'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
@@ -178,6 +177,9 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
   }
 }
 
+// The Puppeteer page that will be used to generate PDFs
+export const browser = puppeteer.page()
+
 /**
  * Encode a Stencila node to a rPNG.
  *
@@ -205,10 +207,7 @@ export async function encode(
   let html = await dump(value, 'html')
 
   // Generate image of rendered HTML
-  const browser = await puppeteer.launch({
-    executablePath: chromiumPath
-  })
-  const page = await browser.newPage()
+  const page = await browser()
   await page.addStyleTag({ content: stencilaCSS })
   await page.addScriptTag({
     url:
@@ -229,7 +228,6 @@ export async function encode(
   const buffer = await elem.screenshot({
     encoding: 'binary'
   })
-  await browser.close()
 
   // Insert JSON of the thing into the image
   const json = JSON.stringify(node)
