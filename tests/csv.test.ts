@@ -99,7 +99,7 @@ test.skip('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(await dump(await encode(simple.node))).toEqual(simple.content)
-  expect(await dump(await encode(named.node))).toEqual(named.content)
-  expect(await dump(await encode(formulas.node))).toEqual(formulas.content)
+  expect(await dump(await encode(simple.node, {}))).toEqual(simple.content)
+  expect(await dump(await encode(named.node, {}))).toEqual(named.content)
+  expect(await dump(await encode(formulas.node, {}))).toEqual(formulas.content)
 })

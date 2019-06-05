@@ -10,7 +10,7 @@
 
 import stencila from '@stencila/schema'
 import * as xlsx from 'xlsx'
-import { Encode } from '.'
+import { Encode, EncodeOptions } from '.'
 import type from './util/type'
 import { load, VFile } from './vfile'
 
@@ -29,8 +29,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 
 export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string,
-  format: string = 'xlsx'
+  { format = 'xlsx' }: EncodeOptions = {}
 ): Promise<VFile> => {
   const workbook = encodeNode(node)
   const buffer = xlsx.write(workbook, {

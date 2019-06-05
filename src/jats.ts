@@ -36,9 +36,11 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 
 export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
+  options = {}
 ): Promise<VFile> => {
-  return pandoc.encode(node, filePath, pandoc.OutputFormat.jats, [
-    `--template=jats-template.xml`
-  ])
+  return pandoc.encode(node, {
+    ...options,
+    format: pandoc.OutputFormat.jats,
+    codecOptions: { flags: [`--template=jats-template.xml`] }
+  })
 }

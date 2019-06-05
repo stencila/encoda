@@ -18,5 +18,5 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 }
 
 export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
-  return xlsx.encode(node, undefined, 'ods')
+  return xlsx.encode(node, { format: 'ods' })
 }

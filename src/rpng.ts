@@ -21,7 +21,7 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
 import puppeteer from 'puppeteer'
 import { chromiumPath } from './boot'
-import { dump, Encode } from './index'
+import { dump, Encode, EncodeOptions } from './index'
 import { stencilaCSS } from './templates/stencila-css-template'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
@@ -190,7 +190,7 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
  */
 export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
+  { filePath }: EncodeOptions = {}
 ): Promise<VFile> => {
   // Generate HTML of the 'value' of the node, which depends on the
   // node type. In the future, we may make this part of the schema definitions

@@ -18,7 +18,7 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
-import { Encode } from '.'
+import { Encode, EncodeOptions } from '.'
 import * as csv from './csv'
 import { create, dump, load, VFile } from './vfile'
 
@@ -74,7 +74,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 
 export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
+  { filePath }: EncodeOptions = {}
 ): Promise<VFile> => {
   let cw = node as stencila.CreativeWork
 

@@ -9,7 +9,7 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { dump, Encode } from './index'
+import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
 import { load, VFile } from './vfile'
 
@@ -41,7 +41,7 @@ export const browser = puppeteer.page()
  */
 export const encode: Encode = async (
   node: stencila.Node,
-  filePath?: string
+  { filePath }: EncodeOptions = {}
 ): Promise<VFile> => {
   const html = await dump(node, 'html')
 

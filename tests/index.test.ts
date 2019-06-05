@@ -31,7 +31,7 @@ describe('match', () => {
 
     // Required, but don't do anything
     decode: async (file: VFile) => null,
-    encode: async (node: stencila.Node, filePath?: string) => create()
+    encode: async (node: stencila.Node, options: {} = {}) => create()
   }
   codecList.push(ssf)
 
@@ -184,6 +184,7 @@ describe('convert', () => {
     it('returns a file path for "content-less" vfiles', async () => {
       const inp = `A paragraph\n`
       const out = tempy.file()
+      // tslint:disable-next-line: no-unnecessary-type-assertion
       const result = (await convert(inp, out, {
         from: 'md',
         to: 'docx'

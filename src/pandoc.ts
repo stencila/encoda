@@ -1,6 +1,7 @@
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import childProcess from 'child_process'
+import { Encode, EncodeOptions } from '.'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import * as rpng from './rpng'
@@ -42,6 +43,11 @@ export async function decode(
   return decodeDocument(pdoc)
 }
 
+interface PandocOptions {
+  flags?: string[]
+  ensureFile?: boolean
+}
+
 /**
  * Encode a `stencila.Node` to a `VFile`.
  *
@@ -50,21 +56,23 @@ export async function decode(
  * @param ensureFile Ensure that the output is a real file (ie. not stdout?)
  * @returns A promise that resolves to a `VFile`
  */
-//  TODO: Update interface to conform to Encode type
-export const encode = async (
+export const encode: Encode<PandocOptions> = async (
   node: stencila.Node,
-  filePath?: string,
-  to: Pandoc.OutputFormat = Pandoc.OutputFormat.json,
-  options: string[] = [],
-  ensureFile: boolean = false
+  {
+    filePath,
+    format = Pandoc.OutputFormat.json,
+    codecOptions = { flags: [], ensureFile: false }
+  }: EncodeOptions<PandocOptions> = {}
 ): Promise<VFile> => {
   encodePromises = []
   const { standalone, pdoc } = encodeNode(node)
   await Promise.all(encodePromises)
 
-  const args = [`--from=json`, `--to=${to}`]
+  const { flags = [], ensureFile = false } = codecOptions
+
+  const args = [`--from=json`, `--to=${format}`]
   if (standalone) args.push('--standalone')
-  for (const option of options) {
+  for (const option of flags) {
     if (!(!standalone && option.startsWith('--template'))) args.push(option)
   }
 
@@ -72,7 +80,7 @@ export const encode = async (
     let output
     if (!filePath || filePath === '-') {
       // Create a new file path, which is returned as `vfile.path`
-      output = type(node).toLowerCase() + '.' + to
+      output = type(node).toLowerCase() + '.' + format
       filePath = output
     } else output = filePath
     args.push(`--output=${output}`)
