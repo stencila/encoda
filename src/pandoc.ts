@@ -657,6 +657,8 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
         if (typeof node !== 'undefined') return node as stencila.InlineContent
       }
       return image
+    case 'SoftBreak':
+      return decodeInlineToString(node)
   }
   throw new Error(`Unhandled Pandoc element type "${node.t}"`)
 }
