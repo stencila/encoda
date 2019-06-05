@@ -4,7 +4,7 @@
   "description": "Codecs for executable document formats",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "bin": "./dist/cli.js",
+  "bin": "dist/cli.js",
   "scripts": {
     "install": "node install.js",
     "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
@@ -15,7 +15,6 @@
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema .",
     "build": "tsc && cp src/*.js dist/ && cp -r src/templates dist",
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
-    "docs:dev": "ts-node --files src/cli devserve docs",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
   "license": "Apache-2.0",
@@ -132,12 +131,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
-      [
-        "@semantic-release/git",
-        {
-          "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
-        }
-      ],
+      "@semantic-release/git",
       "@semantic-release/github"
     ]
   }
