@@ -819,7 +819,7 @@ function encodeNull(value: null): Extension {
 /**
  * Decode a `!true`, `!false`, `!boolean` inline extension to a `boolean`
  *
- * Valid booleans include (the first two are the preferred and the default,
+ * Valid booleans include (the first three are the preferred and the default,
  * the last should be avoided):
  *
  *   - `!true` or `!false`
@@ -987,7 +987,7 @@ function decodeExtension(
 }
 
 // These `stringify*` functions are for MDAST nodes that do not
-// have a stringfier (often remark plugins only support transformation
+// have a stringifier (often remark plugins only support transformation
 // to HAST i.e. HTML and not serialization back to Markdown).
 // They transform nodes to a `MDAST.HTML` node
 // so that no escaping of the value is done.

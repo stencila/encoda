@@ -666,8 +666,9 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
         if (typeof node !== 'undefined') return node as stencila.InlineContent
       }
       return image
+    default:
+      return decodeInlineToString(node)
   }
-  throw new Error(`Unhandled Pandoc element type "${node.t}"`)
 }
 
 function encodeInline(node: stencila.Node): Pandoc.Inline {
@@ -751,7 +752,7 @@ function decodeSpace(node: Pandoc.Space): string {
 }
 
 /**
- * Decode a Pandoc pace` to a `string`.
+ * Decode a Pandoc `Str` to a `string`.
  */
 function decodeStr(node: Pandoc.Str): string {
   return node.c
