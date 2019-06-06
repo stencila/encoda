@@ -22,6 +22,7 @@ import punycode from 'punycode'
 import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
 import { stencilaCSS } from './templates/stencila-css-template'
+import type from './util/type'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
@@ -194,17 +195,8 @@ export const encode: Encode = async (
   node: stencila.Node,
   { filePath }: EncodeOptions = {}
 ): Promise<VFile> => {
-  // Generate HTML of the 'value' of the node, which depends on the
-  // node type. In the future, we may make this part of the schema definitions
-  // and have a `stencila.value()` function to retrieve the value for the node
-  // But currently just using this...
-  let value: any
-  if (node && typeof node === 'object' && node.hasOwnProperty('value')) {
-    value = (node as any).value
-  } else {
-    value = node
-  }
-  let html = await dump(value, 'html')
+  // Generate display HTML
+  const html = await displayNode(node)
 
   // Generate image of rendered HTML
   const page = await browser()
@@ -240,4 +232,24 @@ export const encode: Encode = async (
   }
 
   return file
+}
+
+/**
+ *
+ */
+async function displayNode(node: stencila.Node): Promise<string> {
+  switch (type(node)) {
+    case 'string':
+      return `<pre>${node as string}</pre>`
+    case 'CodeChunk':
+      return displayCodeChunk(node as stencila.CodeChunk)
+    default:
+      return dump(node, 'html')
+  }
+}
+
+async function displayCodeChunk(chunk: stencila.CodeChunk): Promise<string> {
+  const outputs = chunk.outputs || []
+  const bits = await Promise.all(outputs.map(displayNode))
+  return bits.join('')
 }

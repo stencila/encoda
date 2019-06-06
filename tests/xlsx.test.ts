@@ -87,8 +87,8 @@ const collection = {
             position: [1, 0],
             content: [
               {
-                type: 'Expression',
-                programmingLanguages: ['excel'],
+                type: 'CodeExpr',
+                programmingLanguage: 'excel',
                 text: 'AVERAGE(data!B2:B7)',
                 value: 3.5
               }
@@ -106,8 +106,8 @@ const collection = {
             position: [1, 1],
             content: [
               {
-                type: 'Expression',
-                programmingLanguages: ['excel'],
+                type: 'CodeExpr',
+                programmingLanguage: 'excel',
                 text: 'AVERAGE(data!C2:C7)',
                 value: 2.66666666666667
               }

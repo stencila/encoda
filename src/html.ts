@@ -519,8 +519,6 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
     content: decodeInlineChildNodes(elem)
   }
   const meta = decodeDataAttrs(elem)
-  // TODO: remove ts-ignore
-  // @ts-ignore
   if (meta) link.meta = meta
   return link
 }
@@ -531,8 +529,6 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
 function encodeLink(link: stencila.Link): HTMLAnchorElement {
   let attrs = {
     href: link.target,
-    // TODO: remove ts-ignores
-    // @ts-ignore
     ...encodeDataAttrs(link.meta || {})
   }
   return h('a', attrs, link.content.map(encodeNode))
@@ -568,8 +564,6 @@ function decodeCode(elem: HTMLElement): stencila.Code {
     }
   }
   const meta = decodeDataAttrs(elem)
-  // TODO: remove ts-ignore
-  // @ts-ignore
   if (meta) code.meta = meta
   return code
 }
@@ -584,8 +578,6 @@ function encodeCode(
   return h('code', {
     class: code.language ? `language-${code.language}` : undefined,
     innerHTML: escape(code.value),
-    // TODO: remove ts-ignore
-    // @ts-ignore
     ...(dataAttrs ? encodeDataAttrs(code.meta || {}) : {})
   })
 }

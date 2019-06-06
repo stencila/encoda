@@ -58,6 +58,8 @@ const ATTR_OPTIONS = { scope: 'permissive' }
  */
 const GENERIC_EXTENSIONS = [
   'quote',
+  'expr',
+  'chunk',
 
   'null',
   'true',
@@ -84,6 +86,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
     .use(parser, {
       commonmark: true
     })
+    .use(attrs, { scope: 'permissive' })
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(attrs, ATTR_OPTIONS)
     .use(genericExtensions, { elements: extensionHandlers })
@@ -150,6 +153,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
     case 'text':
       return decodeText(node as MDAST.Text)
     case 'inline-extension':
+    case 'block-extension':
       const ext = (node as unknown) as Extension
       switch (ext.name) {
         case 'quote':
@@ -177,6 +181,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
             )
           }
       }
+    case 'html':
+      return decodeHTML(node as MDAST.HTML)
 
     default:
       throw new Error(`No Markdown decoder for MDAST node type "${type}"`)
@@ -440,7 +446,10 @@ function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
   // into `data.hProperties` but also (erroneously?) seems to
   // parse some of the content of the first line of code so
   // we ensure that `code.meta` (unparsed info string) is present.
-  const meta = code.meta && code.data && code.data.hProperties
+  const meta =
+    code.meta &&
+    code.data &&
+    (code.data.hProperties as { [key: string]: string })
   if (meta) codeBlock.meta = meta
   return codeBlock
 }
@@ -1022,6 +1031,17 @@ function stringifyExtensions(tree: UNIST.Node) {
     }
     return node
   })
+}
+
+/**
+ * Decode a `MDAST.HTML` to a stencila `Node`
+ *
+ * At present this just returns the raw HTML.
+ */
+function decodeHTML(html: MDAST.HTML): string {
+  // TODO: Make this function async and and return
+  // the decoded HTML i.e. `return load(html.value, 'html')`
+  return html.value
 }
 
 /**
