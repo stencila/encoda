@@ -70,8 +70,8 @@ const formulas = {
         position: [1, 0],
         content: [
           {
-            type: 'Expression',
-            programmingLanguages: ['excel'],
+            type: 'CodeExpr',
+            programmingLanguage: 'excel',
             text: 'A1*2'
           }
         ]
@@ -82,8 +82,8 @@ const formulas = {
         position: [0, 1],
         content: [
           {
-            type: 'Expression',
-            programmingLanguages: ['excel'],
+            type: 'CodeExpr',
+            programmingLanguage: 'excel',
             text: 'B1*3'
           }
         ]

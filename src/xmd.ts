@@ -5,8 +5,6 @@
  * X, where X includes Python, Javascript, etc. See https://bookdown.org/yihui/rmarkdown/language-engines.html
  *
  * In RMarkdown, R code is embedded in "code chunks". There are two types of code chunks: inline and block.
- * In XMarkdown, we allow both inline and block chunks to be defined in various languages using
- * the usual language labels e.g. ``r``, ``py``, ``js``.
  *
  * ## Inline code chunks
  *
@@ -17,12 +15,13 @@
  * The answer is `r x * y`
  * ```
  *
- * Inline code chunks are decoded to a `CodeExpr` with `language` and `text` properties set e.g.
+ * Inline code chunks are parsed to a `CodeExpr` with `programmingLanguage` and `text`
+ * properties set e.g.
  *
  * ```json
  * {
  *   "type": "CodeExpr",
- *   "language": "r",
+ *   "programmingLanguage": "r",
  *   "text": "x * y"
  * }
  * ```
@@ -43,14 +42,14 @@
  * A list of chunk options, recognized by the RMarkdown rendering engine, Knitr,
  * is available at http://yihui.name/knitr/options/.
  *
- * Block code chunks are decoded to a `CodeChunk` with `language` and `text` properties
+ * Block code chunks are decoded to a `CodeChunk` with `programmingLanguage` and `text` properties
  * set. The chunk label, if defined is used for the `name` property and other
  * options go into the `meta` property e.g.
  *
  * ```json
  * {
  *   "type": "CodeChunk",
- *   "language": "r",
+ *   "programmingLanguage": "r",
  *   "name": "myplot",
  *   "meta": {
  *      "fig.width": "6",
@@ -59,12 +58,6 @@
  *   "text": "plot(x,y)"
  * }
  * ```
- *
- * ## Implementation
- *
- * This compiler works by transforming XMarkdown to Commonmark with `!expr` and `!chunk`
- * extensions. The `parse` function does the transformation using regexes prior to passing
- * the transformed XMarkdown to the `md` compiler.
  *
  * @module xmd
  */
@@ -76,8 +69,16 @@ import { dump, load, VFile } from './vfile'
 export const mediaTypes = []
 export const extNames = ['xmd', 'rmd']
 
-export async function parse(file: VFile): Promise<stencila.Node> {
-  const xmd = dump(file)
+/**
+ * Decode XMarkdown to a Stencila node.
+ *
+ * This function uses regexes to transform XMarkdown to Commonmark
+ * which is then passed onto the `md.decode` function.
+ *
+ * @param file The `VFile` to decode
+ */
+export async function decode(file: VFile): Promise<stencila.Node> {
+  const xmd = await dump(file)
   // Inline code chunks...
   let cmd = xmd.replace(/`([a-z]+)\s+([^`]*)`/g, (match, lang, text) => {
     // ...are replaced with inline code with `lang` attr
@@ -94,16 +95,26 @@ export async function parse(file: VFile): Promise<stencila.Node> {
       return md + '\n' + text + '\n```\n'
     }
   )
-  return md.parse(load(cmd))
+  return md.decode(load(cmd))
 }
 
-export async function unparse(
+/**
+ * Encode a Stencila node to XMarkdown.
+ *
+ * This function first transforms the node by converting
+ * `CodeExpr` node to `Code` nodes and `CodeChunk` nodes
+ * to `CodeBlock` nodes.
+ *
+ * @param node The Stencila node to encode
+ * @param filePath The file system path to write to
+ */
+export async function encode(
   node: stencila.Node,
   filePath?: string
 ): Promise<VFile> {
   const transformed = transform(node)
-  const mdFile = await md.unparse(transformed)
-  const cmd = dump(mdFile)
+  const mdFile = await md.encode(transformed)
+  const cmd = await dump(mdFile)
   const xmd = cmd.replace(
     /^\`\`\`([^\s]+)/gm,
     (match, lang) => `\`\`\` {${lang}}`
@@ -115,14 +126,14 @@ export async function unparse(
     if (node.type === 'CodeExpr') {
       const code: stencila.Code = {
         type: 'Code',
-        value: `${node.languages[0]} ${node.text}`
+        value: `${node.programmingLanguage} ${node.text}`
       }
       return code
     }
     if (node.type === 'CodeChunk') {
       const codeBlock: stencila.CodeBlock = {
         type: 'CodeBlock',
-        language: node.languages[0],
+        language: node.programmingLanguage,
         value: node.text
       }
       return codeBlock

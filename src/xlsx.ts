@@ -253,9 +253,9 @@ function decodeCell(cell: xlsx.CellObject) {
   }
 
   if (cell.f) {
-    const expression: stencila.Expression = {
-      type: 'Expression',
-      programmingLanguages: ['excel'],
+    const expression: stencila.CodeExpr = {
+      type: 'CodeExpr',
+      programmingLanguage: 'excel',
       text: cell.f.trim()
     }
     if (value) expression.value = value
@@ -274,8 +274,8 @@ function encodeCell(node: stencila.Node): xlsx.CellObject | null {
   if (typeof node === 'string') return { t: 's', v: node }
   if (!Array.isArray(node) && node.type) {
     switch (node.type) {
-      case 'Expression': {
-        const expr = node as stencila.Expression
+      case 'CodeExpr': {
+        const expr = node as stencila.CodeExpr
         const cell: xlsx.CellObject = { t: 'b', f: expr.text }
         if (expr.value) {
           const value = encodeCell(expr.value)

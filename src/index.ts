@@ -6,6 +6,7 @@ import * as demoMagic from './demo-magic'
 import * as docx from './docx'
 import * as gdoc from './gdoc'
 import * as html from './html'
+import * as ipynb from './ipynb'
 import * as jats from './jats'
 import * as json from './json'
 import * as json5 from './json5'
@@ -17,9 +18,9 @@ import * as pandoc from './pandoc'
 import * as pdf from './pdf'
 import * as rpng from './rpng'
 import * as tdp from './tdp'
+import * as txt from './txt'
 import * as vfile from './vfile'
 import * as xlsx from './xlsx'
-import * as rmd from './xmd'
 import * as yaml from './yaml'
 
 export { default as process } from './process'
@@ -43,12 +44,13 @@ export const codecList: Array<Codec> = [
   docx,
   gdoc,
   html,
+  ipynb,
   jats,
   latex,
   md,
-  rmd,
   odt,
   pdf,
+  txt,
 
   // Scripts
   demoMagic,

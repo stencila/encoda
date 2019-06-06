@@ -1,6 +1,7 @@
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import childProcess from 'child_process'
+import tempy from 'tempy'
 import { Encode, EncodeOptions } from '.'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
@@ -365,8 +366,7 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
  * Encode a Stencila `BlockContent` node to a Pandoc `Block` element.
  */
 function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
-  const type = block.type
-  switch (type) {
+  switch (block.type) {
     case 'Heading':
       return encodeHeading(block as stencila.Heading)
     case 'Paragraph':
@@ -382,7 +382,7 @@ function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
     case 'ThematicBreak':
       return encodeThematicBreak(block as stencila.ThematicBreak)
   }
-  throw new Error(`Unhandled Stencila node type "${block.type}"`)
+  return encodeFallbackBlock(block)
 }
 
 /**
@@ -690,7 +690,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
-  return encodeDefault(node)
+  return encodeFallbackInline(node)
 }
 
 /**
@@ -936,11 +936,25 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
   }
 }
 
-function encodeDefault(node: stencila.Node): Pandoc.Image {
-  const type_ = type(node)
+/**
+ * Encode a Stencila `BlockContent` node as a Pandoc `Para` with
+ * an rPNG. This is a fallback encoding for block nodes
+ * not handled elsewhere.
+ */
+function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
+  return {
+    t: 'Para',
+    c: [encodeFallbackInline(node)]
+  }
+}
 
-  const index = 1
-  const imagePath = `${type_.toLowerCase()}-${index}.png`
+/**
+ * Encode a Stencila `InlineContent` node as a Pandoc `Image`
+ * pointing to a rPNG. This is a fallback encoding for inline nodes
+ * not handled elsewhere.
+ */
+function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
+  const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
     const file = await rpng.encode(node)
     await write(file, imagePath)
@@ -948,7 +962,7 @@ function encodeDefault(node: stencila.Node): Pandoc.Image {
   encodePromises.push(promise)
 
   const url = imagePath
-  const title = type_
+  const title = type(node)
   return {
     t: 'Image',
     c: [emptyAttrs, [], [url, title]]

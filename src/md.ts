@@ -181,6 +181,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
             )
           }
       }
+    case 'html':
+      return decodeHTML(node as MDAST.HTML)
 
     default:
       throw new Error(`No Markdown decoder for MDAST node type "${type}"`)
@@ -444,7 +446,10 @@ function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
   // into `data.hProperties` but also (erroneously?) seems to
   // parse some of the content of the first line of code so
   // we ensure that `code.meta` (unparsed info string) is present.
-  const meta = code.meta && code.data && code.data.hProperties
+  const meta =
+    code.meta &&
+    code.data &&
+    (code.data.hProperties as { [key: string]: string })
   if (meta) codeBlock.meta = meta
   return codeBlock
 }
@@ -727,7 +732,6 @@ function encodeQuote(quote: stencila.Quote): Extension {
 function decodeInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
   const code: stencila.Code = {
     type: 'Code',
-    language: lang,
     value: inlineCode.value
   }
   const attrs =
@@ -1027,6 +1031,17 @@ function stringifyExtensions(tree: UNIST.Node) {
     }
     return node
   })
+}
+
+/**
+ * Decode a `MDAST.HTML` to a stencila `Node`
+ *
+ * At present this just returns the raw HTML.
+ */
+function decodeHTML(html: MDAST.HTML): string {
+  // TODO: Make this function async and and return
+  // the decoded HTML i.e. `return load(html.value, 'html')`
+  return html.value
 }
 
 /**
