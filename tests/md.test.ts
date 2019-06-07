@@ -65,6 +65,14 @@ A paragraph with a !null, a !number(42.2), an !array(1,2), and an !object(a:'1',
 x = {}
 \`\`\`
 
+chunk:
+:::
+\`\`\`r
+# A code chunk
+ans = 42
+\`\`\`
+:::
+
 -   First item
 -   [x] Done
 -   [ ] Not done
@@ -221,6 +229,11 @@ x = {}
           meta4: 'qux'
         },
         value: '# A code block\nx = {}'
+      },
+      {
+        type: 'CodeChunk',
+        programmingLanguage: 'r',
+        text: '# A code chunk\nans = 42'
       },
       {
         type: 'List',
