@@ -112,7 +112,7 @@ test('load', async () => {
 })
 
 test('dump', async () => {
-  expect(await dump(simpleThing, 'json')).toEqual(simpleThingJson)
+  expect(await dump(simpleThing, { format: 'json' })).toEqual(simpleThingJson)
 })
 
 describe('read', () => {

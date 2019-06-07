@@ -41,14 +41,14 @@ export const browser = puppeteer.page()
  */
 export const encode: Encode = async (
   node: stencila.Node,
-  { filePath }: EncodeOptions = {}
+  options: EncodeOptions = {}
 ): Promise<VFile> => {
-  const html = await dump(node, 'html')
+  const html = await dump(node, { ...options, format: 'html' })
 
   const page = await browser()
   await page.setContent(html, { waitUntil: 'networkidle0' })
   const buffer = await page.pdf({
-    path: filePath,
+    path: options.filePath,
     format: 'A4',
     printBackground: true,
     margin: {

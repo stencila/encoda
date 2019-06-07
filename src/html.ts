@@ -50,13 +50,14 @@
 import stencila from '@stencila/schema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
+import fs from 'fs'
 import h from 'hyperscript'
 // @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
-import { Encode } from '.'
-import { stencilaCSS } from './templates/stencila-css-template'
+import path from 'path'
+import { Encode, EncodeOptions } from '.'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
@@ -80,14 +81,23 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   return node
 }
 
+interface EncodeHTMLOptions {
+  theme?: 'eLife' | 'stencila'
+}
+
 /**
  * Encode a `stencila.Node` to a `VFile` with HTML contents.
  *
  * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
-  const dom = encodeNode(node) as HTMLHtmlElement
+export const encode: Encode<EncodeHTMLOptions> = async (
+  node: stencila.Node,
+  options: EncodeOptions<EncodeHTMLOptions> = {
+    codecOptions: { theme: 'stencila' }
+  }
+): Promise<VFile> => {
+  const dom: HTMLHtmlElement = encodeNode(node, options) as HTMLHtmlElement
   const beautifulHtml = beautifyHtml(dom.outerHTML, {
     indent_size: 2,
     indent_inner_html: true, // Indent <head> and <body> sections
@@ -164,10 +174,10 @@ function decodeNode(node: Node): stencila.Node | undefined {
   throw new Error(`No HTML decoder for HTML element <${name}>`)
 }
 
-function encodeNode(node: stencila.Node): Node {
+const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
   switch (type(node)) {
     case 'Article':
-      return encodeArticle(node as stencila.Article)
+      return encodeArticle(node as stencila.Article, options)
 
     case 'Heading':
       return encodeHeading(node as stencila.Heading)
@@ -265,9 +275,19 @@ function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Array<Node> = [],
-  style: string = stencilaCSS
+  {
+    codecOptions = { theme: 'stencila' }
+  }: EncodeOptions<EncodeHTMLOptions> = {}
 ): HTMLHtmlElement {
-  const PRISM_BASE = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/'
+  const { theme = 'stencila' } = codecOptions
+  const themePath = path.resolve(
+    require.resolve('@stencila/thema'),
+    '..',
+    '..',
+    'dist',
+    'themes',
+    theme
+  )
   // prettier-ignore
   return h('html',
     h('head',
@@ -280,44 +300,34 @@ function generateHtmlElement(
           ...metadata
         })
       ),
-      // Style elements for Prism CSS
-      [
-        'themes/prism-okaidia.min.css',
-        'plugins/line-highlight/prism-line-highlight.min.css'
-      ].map(
-        file => h('link', { rel: 'stylesheet', href: `${PRISM_BASE}${file}`})
-      ),
-      h('style', {innerHTML: style})
-    ),
-    h('body', body),
+      h(
+        'script',
+        {innerHTML: fs.readFileSync(
+          path.join(themePath, 'index.js')
+          ).toString()}
+          ),
+          h('style', {
+            innerHTML: fs.readFileSync(
+              path.join(themePath, 'styles.css')
+        ).toString()
+      })
 
-    // Script elements for Prism code highlighting, language support and plugins
-    // The following list has been created on an as needed bases
-    // TODO: Add languages dynamically based on the what is required by code in the document
-    [
-      'prism.min.js',
-      'plugins/line-highlight/prism-line-highlight.min.js',
-      'components/prism-json.min.js',
-      'components/prism-json5.min.js',
-      'components/prism-latex.min.js',
-      'components/prism-markdown.min.js',
-      'components/prism-python.min.js',
-      'components/prism-r.min.js',
-      'components/prism-yaml.min.js',
-    ].map(
-      file => h('script', { src: `${PRISM_BASE}${file}` })
-    )
+    ),
+    h('body', body)
   )
 }
 
 /**
  * Encode a `stencila.Article` to a `#document` node.
  */
-function encodeArticle(article: stencila.Article): HTMLHtmlElement {
+function encodeArticle(
+  article: stencila.Article,
+  options: {} = {}
+): HTMLHtmlElement {
   const { type, title, content, ...rest } = article
   const metadata = { type, title, ...rest }
-  const body = content ? content.map(encodeNode) : []
-  return generateHtmlElement(title, metadata, body)
+  const body = content ? content.map(encodeNode, options) : []
+  return generateHtmlElement(title, metadata, body, options)
 }
 
 /**

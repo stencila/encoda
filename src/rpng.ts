@@ -21,7 +21,6 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
 import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
-import { stencilaCSS } from './templates/stencila-css-template'
 import type from './util/type'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
@@ -181,6 +180,10 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
 // The Puppeteer page that will be used to generate PDFs
 export const browser = puppeteer.page()
 
+interface EncodeRPNGOptions {
+  fullPage?: boolean
+}
+
 /**
  * Encode a Stencila node to a rPNG.
  *
@@ -189,37 +192,53 @@ export const browser = puppeteer.page()
  * node's JSON into the image's `tEXt` chunk.
  *
  * @param node The Stencila node to encode
- * @param filePath The file system path to write to
+ * @param options Object containing settings for the encoder. See type
+ * definition for Encode<EncodeRPNGOptions>
  */
-export const encode: Encode = async (
+export const encode: Encode<EncodeRPNGOptions> = async (
   node: stencila.Node,
-  { filePath }: EncodeOptions = {}
+  {
+    filePath,
+    codecOptions = {},
+    ...options
+  }: EncodeOptions<EncodeRPNGOptions> = {}
 ): Promise<VFile> => {
+  const { fullPage = true } = codecOptions
+
   // Generate display HTML
-  const html = await displayNode(node)
+  const html = await displayNode(node, {
+    ...options,
+    codecOptions,
+    filePath,
+    format: 'html'
+  })
 
   // Generate image of rendered HTML
   const page = await browser()
-  await page.addStyleTag({ content: stencilaCSS })
-  await page.addScriptTag({
-    url:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js'
-  })
+  // const browser = await puppeteer.launch({
+  //   executablePath: chromiumPath
+  // })
+
   await page.setContent(
-    `<div id="target" style="display: inline-block; padding: 0.1rem">${html}</div>`,
-    { waitUntil: 'networkidle0' }
+    `<div id="target" style="${
+      fullPage ? '' : 'display: inline-block; padding: 0.1rem'
+    }">${html}</div>`,
+    {
+      waitUntil: 'networkidle0'
+    }
   )
+
   const elem = await page.$('#target')
   if (!elem) throw new Error('Element not found!')
 
-  // Run Highlight.js on any found code blocks
-  await page.evaluate(
-    'document.querySelectorAll("pre code").forEach(block => hljs.highlightBlock(block))'
-  )
-
-  const buffer = await elem.screenshot({
-    encoding: 'binary'
-  })
+  const buffer = fullPage
+    ? await page.screenshot({
+        encoding: 'binary',
+        fullPage: true
+      })
+    : await elem.screenshot({
+        encoding: 'binary'
+      })
 
   // Insert JSON of the thing into the image
   const json = JSON.stringify(node)
@@ -237,19 +256,25 @@ export const encode: Encode = async (
 /**
  *
  */
-async function displayNode(node: stencila.Node): Promise<string> {
+async function displayNode(
+  node: stencila.Node,
+  options?: EncodeOptions
+): Promise<string> {
   switch (type(node)) {
     case 'string':
       return `<pre>${node as string}</pre>`
     case 'CodeChunk':
-      return displayCodeChunk(node as stencila.CodeChunk)
+      return displayCodeChunk(node as stencila.CodeChunk, options)
     default:
-      return dump(node, 'html')
+      return dump(node, { ...options, format: 'html' })
   }
 }
 
-async function displayCodeChunk(chunk: stencila.CodeChunk): Promise<string> {
+async function displayCodeChunk(
+  chunk: stencila.CodeChunk,
+  options?: EncodeOptions
+): Promise<string> {
   const outputs = chunk.outputs || []
-  const bits = await Promise.all(outputs.map(displayNode))
+  const bits = await Promise.all(outputs.map(o => displayNode(o, options)))
   return bits.join('')
 }
