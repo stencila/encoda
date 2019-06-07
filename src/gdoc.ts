@@ -400,7 +400,7 @@ function encodeList(list: stencila.List): GDoc.Schema$StructuralElement[] {
     if (type_ === 'Paragraph') {
       para = encodeParagraph(item as stencila.Paragraph)
     } else {
-      throw new Error(`List item is unhandled Stencila node type "${type}"`)
+      throw new Error(`List item is unhandled Stencila node type "${type_}"`)
     }
     para.paragraph!.bullet = { listId }
     return para
@@ -572,7 +572,7 @@ function encodeInlineContent(
     case 'string':
       return encodeString(node as string)
     default:
-      throw new Error(`Unhandled node type ${type}`)
+      throw new Error(`Unhandled node type ${type_}`)
   }
 }
 
