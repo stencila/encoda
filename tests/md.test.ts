@@ -4,6 +4,8 @@ import { dump, load } from '../src/vfile'
 test('decode', async () => {
   expect(await decode(await load(kitchenSink.md))).toEqual(kitchenSink.node)
   expect(await decode(await load(attrs.md))).toEqual(attrs.node)
+
+  expect(await decode(await load(splitParas.from))).toEqual(splitParas.node)
 })
 
 test('encode', async () => {
@@ -11,6 +13,7 @@ test('encode', async () => {
   expect(await dump(await encode(attrs.node))).toEqual(attrs.md)
 
   expect(await dump(await encode(emptyParas.node))).toEqual(emptyParas.to)
+  expect(await dump(await encode(splitParas.node))).toEqual(splitParas.to)
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
@@ -437,6 +440,24 @@ Paragraph five.
       {
         type: 'Paragraph',
         content: ['\n']
+      }
+    ]
+  }
+}
+
+// Example for testing that paragraphs that are split
+// across lines are decoded into a single line.
+const splitParas = {
+  from: `Line1\nline2\nline3\n`,
+  to: `---\nauthors: []\ntitle: Untitled\n---\n\nLine1 line2 line3\n`,
+  node: {
+    type: 'Article',
+    authors: [],
+    title: 'Untitled',
+    content: [
+      {
+        type: 'Paragraph',
+        content: ['Line1 line2 line3']
       }
     ]
   }

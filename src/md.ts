@@ -835,10 +835,14 @@ function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
 }
 
 /**
- * Decode a `MDAST.Text` to a `string`
+ * Decode a `MDAST.Text` to a `string`.
+ *
+ * Replaces newline and carriage returns with a space.
+ * This is done to ensure that paragraphs that are written
+ * across multiple lines do not have newlines in them.
  */
 function decodeText(text: MDAST.Text): string {
-  return text.value
+  return text.value.replace(/[\r\n]+/g, ' ')
 }
 
 /**
