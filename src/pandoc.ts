@@ -889,8 +889,6 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
     description: title
   }
   const meta = decodeAttrs(node.c[0])
-  // TODO: remove ts-ignore
-  // @ts-ignore
   if (meta) link.meta = meta
   return link
 }
