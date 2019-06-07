@@ -283,8 +283,6 @@ function generateHtmlElement(
   const themePath = path.resolve(
     require.resolve('@stencila/thema'),
     '..',
-    '..',
-    'dist',
     'themes',
     theme
   )
