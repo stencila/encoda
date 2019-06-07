@@ -109,12 +109,22 @@ export async function write(vfile: VFile, path: string): Promise<void> {
  * For all other strings, this function does check for presence, returning `true`
  * if the file exists.
  *
+ * If we know this to be an output path (`isOutput` is true) then the path does
+ * not need to exist. If `content` looks like a path or file name (has a 1-5
+ * character extension) then assume it is a path.
+ *
  * @param content The string to assess.
+ * @param isOutput `true` if this is to be an output path.
  */
-export function isPath(content: string): boolean {
+export function isPath(content: string, isOutput: boolean = false): boolean {
   if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content)) {
     return true
   }
   if (fs.existsSync(content)) return true
+
+  if (isOutput) {
+    return /.+\.\w{1,5}$/.test(content)
+  }
+
   return false
 }
