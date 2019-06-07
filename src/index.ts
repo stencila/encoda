@@ -316,7 +316,7 @@ export async function write(
 interface ConvertOptions {
   to?: string
   from?: string
-  options: EncodeOptions
+  options?: EncodeOptions
 }
 
 /**

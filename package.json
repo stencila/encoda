@@ -68,6 +68,7 @@
     "xlsx": "^0.14.2"
   },
   "devDependencies": {
+    "@jupyterlab/coreutils": "^2.2.1",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/npm": "^5.1.7",

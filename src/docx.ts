@@ -36,16 +36,15 @@ interface DocXOptions {
 
 export const encode: Encode<DocXOptions> = async (
   node: stencila.Node,
-  { filePath, codecOptions }: EncodeOptions<DocXOptions> = {}
+  { filePath, codecOptions = {} }: EncodeOptions<DocXOptions> = {}
 ): Promise<VFile> =>
   pandoc.encode(node, {
     filePath,
     format: pandoc.OutputFormat.docx,
     codecOptions: {
       flags: [
-        `--reference-doc=${
-          codecOptions ? codecOptions.templatePath : defaultDocxTemplatePath
-        }`
+        `--reference-doc=${codecOptions.templatePath ||
+          defaultDocxTemplatePath}`
       ],
       ensureFile: true
     }

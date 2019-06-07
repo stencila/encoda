@@ -81,6 +81,14 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   return node
 }
 
+export const beautify = (html: string): string =>
+  beautifyHtml(html, {
+    indent_size: 2,
+    indent_inner_html: true, // Indent <head> and <body> sections
+    wrap_line_length: 100,
+    preserve_newlines: false // Preserve existing line-breaks
+  })
+
 interface EncodeHTMLOptions {
   theme?: 'eLife' | 'stencila'
 }
@@ -98,12 +106,7 @@ export const encode: Encode<EncodeHTMLOptions> = async (
   }
 ): Promise<VFile> => {
   const dom: HTMLHtmlElement = encodeNode(node, options) as HTMLHtmlElement
-  const beautifulHtml = beautifyHtml(dom.outerHTML, {
-    indent_size: 2,
-    indent_inner_html: true, // Indent <head> and <body> sections
-    wrap_line_length: 100,
-    preserve_newlines: false // Preserve existing line-breaks
-  })
+  const beautifulHtml = beautify(dom.outerHTML)
   return load(beautifulHtml)
 }
 
@@ -287,29 +290,28 @@ function generateHtmlElement(
     theme
   )
   // prettier-ignore
-  return h('html',
-    h('head',
+  return h(
+    'html',
+    h(
+      'head',
       h('title', title),
-      h('meta', {charset: 'utf-8'}),
-      h('script',
+      h('meta', { charset: 'utf-8' }),
+      h(
+        'script',
         { type: 'application/ld+json' },
         JSON.stringify({
           '@context': 'http://stencila.github.io/schema/stencila.jsonld',
           ...metadata
         })
       ),
-      h(
-        'script',
-        {innerHTML: fs.readFileSync(
-          path.join(themePath, 'index.js')
-          ).toString()}
-          ),
-          h('style', {
-            innerHTML: fs.readFileSync(
-              path.join(themePath, 'styles.css')
-        ).toString()
+      h('style', {
+        innerHTML: fs
+          .readFileSync(path.join(themePath, 'styles.css'))
+          .toString()
+      }),
+      h('script', {
+        innerHTML: fs.readFileSync(path.join(themePath, 'index.js')).toString()
       })
-
     ),
     h('body', body)
   )
