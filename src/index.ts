@@ -164,7 +164,7 @@ export async function match(
   let extName
   let mediaType
   // If the content is a path then begin with derived values
-  if (content && vfile.isPath(content, isOutput)) {
+  if (content && (vfile.isPath(content) || isOutput)) {
     fileName = path.basename(content)
     extName = path
       .extname(content)
