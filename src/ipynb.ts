@@ -144,7 +144,9 @@ async function decodeMarkdownCell(
 async function decodeCodeCell(
   cell: nbformat.ICodeCell
 ): Promise<stencila.CodeChunk> {
-  const { metadata, source, outputs, execution_count } = cell
+  const { metadata, outputs, execution_count } = cell
+  // nbformat 4 has `source`, 3 has `input`
+  const source = cell.source ? cell.source : cell.input
   const code = decodeMultilineString(source)
   const codeChunk: stencila.CodeChunk = {
     type: 'CodeChunk',

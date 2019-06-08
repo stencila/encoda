@@ -69,6 +69,10 @@ const GENERIC_EXTENSIONS = [
   'array',
   'object'
 ]
+const extensionHandlers: { [key: string]: any } = {}
+for (let ext of GENERIC_EXTENSIONS) {
+  extensionHandlers[ext] = { replace: decodeExtension }
+}
 
 /**
  * Decode a `VFile` with Markdown contents to a `stencila.Node`.
@@ -78,21 +82,7 @@ const GENERIC_EXTENSIONS = [
  */
 export async function decode(file: VFile): Promise<stencila.Node> {
   const md = await dump(file)
-  const extensionHandlers: { [key: string]: any } = {}
-  for (let ext of GENERIC_EXTENSIONS) {
-    extensionHandlers[ext] = { replace: decodeExtension }
-  }
-  const mdast = unified()
-    .use(parser, {
-      commonmark: true
-    })
-    .use(attrs, { scope: 'permissive' })
-    .use(frontmatter, FRONTMATTER_OPTIONS)
-    .use(attrs, ATTR_OPTIONS)
-    .use(genericExtensions, { elements: extensionHandlers })
-    .parse(md)
-  compact(mdast, true)
-  return decodeNode(mdast)
+  return decodeMarkdown(md)
 }
 
 /**
@@ -115,6 +105,23 @@ export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .stringify(mdast)
   return load(md)
+}
+
+/**
+ * Decode a string of Markdown content
+ */
+export function decodeMarkdown(md: string): stencila.Node {
+  const mdast = unified()
+    .use(parser, {
+      commonmark: true
+    })
+    .use(attrs, { scope: 'permissive' })
+    .use(frontmatter, FRONTMATTER_OPTIONS)
+    .use(attrs, ATTR_OPTIONS)
+    .use(genericExtensions, { elements: extensionHandlers })
+    .parse(md)
+  compact(mdast, true)
+  return decodeNode(mdast)
 }
 
 function decodeNode(node: UNIST.Node): stencila.Node {
@@ -156,6 +163,9 @@ function decodeNode(node: UNIST.Node): stencila.Node {
     case 'block-extension':
       const ext = (node as unknown) as Extension
       switch (ext.name) {
+        case 'chunk':
+          return decodeCodeChunk(ext)
+
         case 'quote':
           return decodeQuote(ext)
 
@@ -203,6 +213,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeQuoteBlock(node as stencila.QuoteBlock)
     case 'CodeBlock':
       return encodeCodeBlock(node as stencila.CodeBlock)
+    case 'CodeChunk':
+      return encodeCodeChunk(node as stencila.CodeChunk)
     case 'List':
       return encodeList(node as stencila.List)
     case 'Table':
@@ -468,6 +480,41 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
 }
 
 /**
+ * Decode a `chunk:` block extension to a `stencila.CodeChunk`
+ */
+function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
+  const codeChunk: stencila.CodeChunk = {
+    type: 'CodeChunk'
+  }
+  if (ext.content) {
+    const article = decodeMarkdown(ext.content) as stencila.Article
+    const first = article.content && article.content[0]
+    if (type(first) === 'CodeBlock') {
+      const codeBlock = first as stencila.CodeBlock
+      if (codeBlock.language) codeChunk.programmingLanguage = codeBlock.language
+      if (codeBlock.value) codeChunk.text = codeBlock.value
+    }
+  }
+  return codeChunk
+}
+
+/**
+ * Encode a `stencila.CodeChunk` to a `chunk:` block extension
+ */
+function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
+  let content = '```'
+  if (chunk.programmingLanguage) content += chunk.programmingLanguage
+  if (chunk.text) content += '\n' + chunk.text
+  content += '\n```'
+
+  return {
+    type: 'block-extension',
+    name: 'chunk',
+    content
+  }
+}
+
+/**
  * Decode a `MDAST.List` to a `stencila.List`
  */
 function decodeList(list: MDAST.List): stencila.List {
@@ -603,26 +650,23 @@ function encodeThematicBreak(
  * Decode a `MDAST.Link` to a `stencila.Link`
  */
 function decodeLink(link: MDAST.Link): stencila.Link {
+  const link_: stencila.Link = {
+    type: 'Link',
+    target: link.url,
+    content: link.children.map(decodePhrasingContent)
+  }
   // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
   const meta = (link.data && link.data.hProperties) as {
     [key: string]: string
   }
-  return {
-    type: 'Link',
-    target: link.url,
-    content: link.children.map(decodePhrasingContent),
-    // TODO: remove ts-ignore, when add meta as property to link
-    // @ts-ignore
-    meta
-  }
+  if (meta) link_.meta = meta
+  return link_
 }
 
 /**
  * Encode a `stencila.Link` to a `MDAST.Link`
  */
 function encodeLink(link: stencila.Link): MDAST.Link {
-  // TODO: remove ts-ignore, when add meta as property to link
-  // @ts-ignore
   const data = { hProperties: link.meta }
   return {
     type: 'link',
@@ -740,8 +784,6 @@ function decodeInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
   if (attrs) {
     const { language, ...rest } = attrs
     if (language) code.language = language
-    // TODO: remove ts-ignore
-    // @ts-ignore
     if (Object.keys(rest).length) code.meta = rest
   }
   return code
@@ -753,8 +795,6 @@ function decodeInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
 function encodeCode(code: stencila.Code): MDAST.InlineCode {
   let attrs
   if (code.language) attrs = { language: code.language }
-  // TODO: remove ts-ignore
-  // @ts-ignore
   if (code.meta) attrs = { ...attrs, ...code.meta }
   return {
     type: 'inlineCode',
@@ -774,9 +814,8 @@ function decodeImage(image: MDAST.Image): stencila.ImageObject {
   if (image.title) imageObject.title = image.title
   if (image.alt) imageObject.text = image.alt
   // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
-  const meta = image.data && image.data.hProperties
-  // TODO: remove ts-ignore
-  // @ts-ignore
+  const meta =
+    image.data && (image.data.hProperties as { [key: string]: string })
   if (meta) imageObject.meta = meta
   return imageObject
 }
@@ -791,17 +830,19 @@ function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
   }
   if (imageObject.title) image.title = imageObject.title
   if (imageObject.text) image.alt = imageObject.text
-  // TODO: remove ts-ignore
-  // @ts-ignore
   if (imageObject.meta) image.data = { hProperties: imageObject.meta }
   return image
 }
 
 /**
- * Decode a `MDAST.Text` to a `string`
+ * Decode a `MDAST.Text` to a `string`.
+ *
+ * Replaces newline and carriage returns with a space.
+ * This is done to ensure that paragraphs that are written
+ * across multiple lines do not have newlines in them.
  */
 function decodeText(text: MDAST.Text): string {
-  return text.value
+  return text.value.replace(/[\r\n]+/g, ' ')
 }
 
 /**
@@ -1024,7 +1065,7 @@ function stringifyExtensions(tree: UNIST.Node) {
       } else {
         value = `${node.name}:`
         if (node.argument) value += `${node.argument}`
-        value += `\n:::\n[${node.content || ''}]\n:::\n`
+        value += `\n:::\n${node.content || ''}\n:::`
         if (node.properties) value += `{${props}}`
       }
       return { type: 'html', value }
