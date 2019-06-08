@@ -36,7 +36,12 @@ import minimist from 'minimist'
 import * as encoda from '.'
 import './boot'
 
-const { _, ...options } = minimist(process.argv.slice(2))
+const { _, ...options } = minimist(process.argv.slice(2), {
+  boolean: ['fullPage'],
+  default: {
+    fullPage: true
+  }
+})
 const name = _[0]
 const args = _.slice(1)
 

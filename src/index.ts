@@ -253,10 +253,10 @@ export async function decode(
  */
 export const encode: Encode = async (
   node: stencila.Node,
-  { filePath, format }: EncodeOptions = {}
+  { filePath, format, ...options }: EncodeOptions = {}
 ): Promise<VFile> => {
   const codec = await match(filePath, format, true)
-  return codec.encode(node, { filePath })
+  return codec.encode(node, { ...options, format, filePath })
 }
 
 /**
@@ -281,9 +281,9 @@ export async function load(
  */
 export async function dump(
   node: stencila.Node,
-  format: string
+  options: EncodeOptions
 ): Promise<string> {
-  const file = await encode(node, { format })
+  const file = await encode(node, { format: options.format, ...options })
   return vfile.dump(file)
 }
 
@@ -321,6 +321,12 @@ export async function write(
   return file
 }
 
+interface ConvertOptions {
+  to?: string
+  from?: string
+  options?: EncodeOptions
+}
+
 /**
  * Convert content from one format to another.
  *
@@ -332,14 +338,16 @@ export async function write(
 export async function convert(
   input: string,
   outputPath?: string,
-  options: { [key: string]: any } = {}
+  { to, from, ...options }: ConvertOptions = { options: {} }
 ): Promise<string | undefined> {
   const inputFile = vfile.create(input)
-  const node = await decode(inputFile, input, options.from)
-  const outputFile = await encode(node, {
-    format: options.to,
-    filePath: outputPath
-  })
+  const node = await decode(inputFile, input, from)
+  const convertOpts = {
+    format: to,
+    filePath: outputPath,
+    codecOptions: options
+  }
+  const outputFile = await encode(node, convertOpts)
   if (outputPath) await vfile.write(outputFile, outputPath)
   return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
 }
