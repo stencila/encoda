@@ -97,7 +97,8 @@ export async function write(vfile: VFile, path: string): Promise<void> {
  * path. This function, assesses whether a file is a file system path or not.
  *
  * If the string starts with `/`, `./`, `../` (or Windows compatible backslash
- * equivalents as well as drive letter prefixed strings e.g. `C:\`)
+ * equivalents as well as drive letter prefixed strings e.g. `C:\`),
+ * or has a 1-5 character extension,
  * then it is assumed to be a path but the presence of the path is not checked.
  * The reason for not checking presence
  * here is because "if the content looks like a path then the user probably meant
@@ -111,10 +112,11 @@ export async function write(vfile: VFile, path: string): Promise<void> {
  *
  * @param content The string to assess.
  */
-export function isPath(content: string): boolean {
+export function isPath(content: string, isOutput: boolean = false): boolean {
   if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content)) {
     return true
   }
+  if (/.+\.\w{1,5}$/.test(content)) return true
   if (fs.existsSync(content)) return true
   return false
 }

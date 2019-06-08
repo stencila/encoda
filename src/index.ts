@@ -146,17 +146,25 @@ export type CustomCodec<Options extends EncodeOptions = {}> = (
  * If the supplied format contains a forward slash then it is assumed to be a media type,
  * otherwise an extension name.
  *
+ * If trying to find a codec for an output, then `content` is more likely to be a path than
+ * actual content. This is passed through to `vfile.isPath` for detection.
+ *
  * @param content The content as a file path (e.g. `../folder/file.txt`) or raw content
  * @param format The format as a media type (e.g. `text/plain`) or extension name (e.g. `txt`)
+ * @param isOutput `true` if attempting to find a match for an output file
  * @returns A promise that resolves to the `Codec` to use
  */
-export async function match(content?: string, format?: string): Promise<Codec> {
+export async function match(
+  content?: string,
+  format?: string,
+  isOutput: boolean = false
+): Promise<Codec> {
   // Resolve variables used to match a codec...
   let fileName
   let extName
   let mediaType
   // If the content is a path then begin with derived values
-  if (content && vfile.isPath(content)) {
+  if (content && (vfile.isPath(content) || isOutput)) {
     fileName = path.basename(content)
     extName = path
       .extname(content)
@@ -247,7 +255,7 @@ export const encode: Encode = async (
   node: stencila.Node,
   { filePath, format }: EncodeOptions = {}
 ): Promise<VFile> => {
-  const codec = await match(filePath, format)
+  const codec = await match(filePath, format, true)
   return codec.encode(node, { filePath })
 }
 
