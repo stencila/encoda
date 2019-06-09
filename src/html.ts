@@ -190,6 +190,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeQuoteBlock(node as stencila.QuoteBlock)
     case 'CodeBlock':
       return encodeCodeBlock(node as stencila.CodeBlock)
+    case 'CodeChunk':
+      return encodeCodeChunk(node as stencila.CodeChunk)
     case 'List':
       return encodeList(node as stencila.List)
     case 'Table':
@@ -412,6 +414,40 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
   const attrs = encodeDataAttrs(block.meta || {})
   const code = encodeCode(block, false)
   return h('pre', attrs, code)
+}
+
+/**
+ * Encode a `stencila.CodeChunk` to a `<stencila-codechunk>` element.
+ */
+function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
+  const attrs = encodeDataAttrs(chunk.meta || {})
+
+  const codeBlock = encodeCodeBlock({
+    type: 'CodeBlock',
+    value: chunk.text || ''
+  })
+  // TODO: Until our themes can handle interactive
+  codeBlock.setAttribute('style', 'display:none')
+
+  const outputs = h(
+    'div',
+    { 'data-outputs': true },
+    (chunk.outputs || []).map(node => {
+      const content = (() => {
+        switch (type(node)) {
+          case 'string':
+            return h('pre', node as string)
+          case 'ImageObject':
+            return encodeImageObject(node as stencila.ImageObject)
+          default:
+            return encodeNode(node)
+        }
+      })()
+      return h('figure', content)
+    })
+  )
+
+  return h('stencila-codechunk', attrs, codeBlock, outputs)
 }
 
 /**
