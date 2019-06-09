@@ -408,10 +408,26 @@ function encodeHeading(node: stencila.Heading): Pandoc.Header {
   }
 }
 
-function decodePara(node: Pandoc.Para): stencila.Paragraph {
+/**
+ * Decode a Pandoc `Para` to a Stencila `Paragraph` or
+ * other `BlockContent` node.
+ *
+ * Because a paragraph is used to wrap rPNGs (to ensure a block element
+ * at where required) this function checks for `CodeChunk`s and other
+ * such encoded elements in a paragraph and returns them if they are the
+ * only child node.
+ */
+function decodePara(node: Pandoc.Para): stencila.BlockContent {
+  const content = decodeInlines(node.c)
+  if (content.length == 1) {
+    const node = content[0]
+    // TODO: fix this dangerous type casting
+    if (type(node) === 'CodeChunk')
+      return (node as unknown) as stencila.CodeChunk
+  }
   return {
     type: 'Paragraph',
-    content: decodeInlines(node.c)
+    content
   }
 }
 
@@ -957,7 +973,7 @@ function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
 function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
-    const file = await rpng.encode(node)
+    const file = await rpng.encode(node, { codecOptions: { fullPage: false } })
     await write(file, imagePath)
   })()
   encodePromises.push(promise)
