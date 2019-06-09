@@ -95,23 +95,12 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @returns A promise that resolves to a `VFile`
  */
 export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
-  let mdast = filter(
-    encodeNode(node),
-    (node: UNIST.Node | undefined) => typeof node !== 'undefined'
-  ) as UNIST.Node
-
-  mdast = stringifyExtensions(mdast)
-  mdast = stringifyAttrs(mdast)
-
-  const md = unified()
-    .use(stringifier)
-    .use(frontmatter, FRONTMATTER_OPTIONS)
-    .stringify(mdast)
+  const md = encodeMarkdown(node)
   return load(md)
 }
 
 /**
- * Decode a string of Markdown content
+ * Decode a string of Markdown content to a Stencila `Node`
  */
 export function decodeMarkdown(md: string): stencila.Node {
   const mdast = unified()
@@ -125,6 +114,25 @@ export function decodeMarkdown(md: string): stencila.Node {
     .parse(md)
   compact(mdast, true)
   return decodeNode(mdast)
+}
+
+/**
+ * Encode a Stencila `Node` to a Markdown `string`.
+ */
+export function encodeMarkdown(node: stencila.Node): string {
+  let mdast = filter(
+    encodeNode(node),
+    (node: UNIST.Node | undefined) => typeof node !== 'undefined'
+  ) as UNIST.Node
+
+  mdast = stringifyExtensions(mdast)
+  mdast = stringifyAttrs(mdast)
+
+  const md = unified()
+    .use(stringifier)
+    .use(frontmatter, FRONTMATTER_OPTIONS)
+    .stringify(mdast)
+  return md
 }
 
 function decodeNode(node: UNIST.Node): stencila.Node {
@@ -492,11 +500,14 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
   }
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article
-    const first = article.content && article.content[0]
+    const nodes = (article.content && article.content) || []
+    const first = nodes[0]
     if (type(first) === 'CodeBlock') {
       const codeBlock = first as stencila.CodeBlock
-      if (codeBlock.language) codeChunk.programmingLanguage = codeBlock.language
-      if (codeBlock.value) codeChunk.text = codeBlock.value
+      const { language, meta, value } = codeBlock
+      if (language) codeChunk.programmingLanguage = language
+      if (meta) codeChunk.meta = meta
+      if (value) codeChunk.text = value
     }
   }
   return codeChunk
@@ -506,15 +517,35 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
  * Encode a `stencila.CodeChunk` to a `chunk:` block extension
  */
 function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
-  let content = '```'
-  if (chunk.programmingLanguage) content += chunk.programmingLanguage
-  if (chunk.text) content += '\n' + chunk.text
-  content += '\n```'
+  const { programmingLanguage, meta, text, outputs } = chunk
+  const nodes: stencila.Node[] = []
+
+  // Encode the code as a `CodeBlock` with `meta`
+  const codeBlock: stencila.CodeBlock = {
+    type: 'CodeBlock',
+    language: programmingLanguage || 'text',
+    meta,
+    value: text || ''
+  }
+  nodes.push(codeBlock)
+
+  // Separate the `output` with a `ThematicBreak`
+  if (outputs && outputs.length) {
+    let index = 0
+    for (const output of outputs) {
+      if (index !== 0) nodes.push({ type: 'ThematicBreak' })
+      nodes.push(output)
+      index += 1
+    }
+  }
+
+  // Encode nodes as Markdown
+  const md = encodeMarkdown({ type: 'Article', content: nodes }).trim()
 
   return {
     type: 'block-extension',
     name: 'chunk',
-    content
+    content: md
   }
 }
 
