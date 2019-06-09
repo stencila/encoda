@@ -215,7 +215,12 @@ async function encodeMarkdownCell(
 async function decodeCodeCell(
   cell: nbformat.ICodeCell
 ): Promise<stencila.CodeChunk> {
-  const { metadata, outputs, execution_count } = cell
+  let { metadata, outputs, execution_count } = cell
+
+  // In nbformat 3, it's `prompt_number` no `execution_count`
+  if (!execution_count && cell.prompt_number) {
+    execution_count = cell.prompt_number
+  }
 
   const meta = { ...metadata, execution_count }
 
