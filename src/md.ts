@@ -11,6 +11,7 @@
  * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
+import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
@@ -36,6 +37,8 @@ import map from 'unist-util-map'
 import { Encode } from '.'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
+
+const logger = getLogger('encoda:md')
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
@@ -195,7 +198,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeHTML(node as MDAST.HTML)
 
     default:
-      throw new Error(`No Markdown decoder for MDAST node type "${type}"`)
+      logger.warning(`No Markdown decoder for MDAST node type "${type}"`)
+      return ''
   }
 }
 
@@ -349,7 +353,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
   if (Object.keys(frontmatter).length) {
     const yamlNode: MDAST.YAML = {
       type: 'yaml',
-      value: yaml.safeDump(frontmatter).trim()
+      value: yaml.safeDump(frontmatter, { skipInvalid: true }).trim()
     }
     root.children.unshift(yamlNode)
   }

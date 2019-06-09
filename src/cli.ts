@@ -32,9 +32,13 @@
  * Please see the documentation for each function on the arguments required and
  * options available.
  */
+import * as logga from '@stencila/logga'
 import minimist from 'minimist'
 import * as encoda from '.'
 import './boot'
+
+// Print log messages to the console.
+logga.addHandler()
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['fullPage'],

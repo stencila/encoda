@@ -47,6 +47,7 @@
  * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
+import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
@@ -62,6 +63,8 @@ import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 const document = new jsdom.JSDOM().window.document
+
+const logger = getLogger('encoda:html')
 
 export const mediaTypes = ['text/html']
 
@@ -115,6 +118,9 @@ function decodeNode(node: Node): stencila.Node | undefined {
   switch (name) {
     case '#document':
       return decodeDocument(node as HTMLDocument)
+
+    case 'div':
+      return decodeDiv(node as HTMLDivElement)
 
     case 'p':
       return decodeParagraph(node as HTMLParagraphElement)
@@ -174,7 +180,8 @@ function decodeNode(node: Node): stencila.Node | undefined {
     return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
 
-  throw new Error(`No HTML decoder for HTML element <${name}>`)
+  logger.warning(`No handler for HTML element <${name}>`)
+  return undefined
 }
 
 const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
@@ -270,6 +277,19 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
     ...metadata,
     content: decodeBlockChildNodes(body)
   }
+}
+
+/**
+ * Decode a `<div>` node to a Stencila `Node`.
+ *
+ * A `<div>` is treated as having no semantic meaning
+ * and so this function decodes it's children.
+ */
+function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
+  // TODO: enable decoding of all children
+  logger.warning('Currently, only first child of <div> is decoded.')
+  const first = div.firstElementChild
+  if (first) return decodeNode(first)
 }
 
 /**
