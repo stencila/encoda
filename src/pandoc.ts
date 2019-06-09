@@ -71,7 +71,10 @@ export const encode: Encode<PandocOptions> = async (
 
   const { flags = [], ensureFile = false } = codecOptions
 
-  const args = [`--from=json`, `--to=${format}`]
+  const args = [
+    `--from=json`,
+    `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`
+  ]
   if (standalone) args.push('--standalone')
   for (const option of flags) {
     if (!(!standalone && option.startsWith('--template'))) args.push(option)
