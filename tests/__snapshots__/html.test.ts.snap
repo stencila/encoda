@@ -622,9 +622,9 @@ exports[`encode 1`] = `
 
       article>pre,
       figure {
-        display: inline-block;
         background-color: #fff;
         width: auto;
+        max-width: max-content;
         margin: 1.25rem auto;
         text-align: center;
         box-shadow: 0 0 8px rgba(0, 0, 0, .16);
@@ -634,9 +634,18 @@ exports[`encode 1`] = `
         border-radius: 4px
       }
 
+      figure img,
+      figure pre {
+        padding: 1rem
+      }
+
       figure img {
         display: block;
-        padding: 1rem
+        margin: 0 auto
+      }
+
+      figure pre {
+        text-align: left
       }
 
       figcaption {

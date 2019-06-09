@@ -64,15 +64,16 @@ const kitchenSink: TestCase = {
         metadata: {},
         outputs: [
           {
-            data: {
-              'text/plain': ["'Hello from Python 3'"]
-            },
-            execution_count: 6,
+            text: 'Hello from Python 3',
             metadata: {},
-            output_type: 'execute_result'
+            output_type: 'stream',
+            name: 'stdout'
           }
         ],
-        source: ['import sys\n', "greeting + ' ' + str(sys.version_info[0])"]
+        source: [
+          'import sys\n',
+          "print(greeting + ' ' + str(sys.version_info[0]))"
+        ]
       }
     ],
     metadata: {
@@ -151,8 +152,8 @@ const kitchenSink: TestCase = {
       {
         type: 'CodeChunk',
         meta: { execution_count: 6 },
-        text: "import sys\ngreeting + ' ' + str(sys.version_info[0])",
-        outputs: ["'Hello from Python 3'"]
+        text: "import sys\nprint(greeting + ' ' + str(sys.version_info[0]))",
+        outputs: ['Hello from Python 3']
       }
     ]
   }
