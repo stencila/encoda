@@ -14,6 +14,7 @@
 
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
+import produce from 'immer'
 import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
@@ -21,7 +22,7 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
 import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
-import type from './util/type'
+import * as dataUri from './util/dataUri'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
@@ -205,8 +206,11 @@ export const encode: Encode<EncodeRPNGOptions> = async (
 ): Promise<VFile> => {
   const { fullPage = true } = codecOptions
 
-  // Generate display HTML
-  const html = await displayNode(node, {
+  // Load any local resources
+  const loaded = await loadLocalResources(node)
+
+  // Generate HTML
+  const html = await dump(loaded, {
     ...options,
     codecOptions,
     filePath,
@@ -215,9 +219,6 @@ export const encode: Encode<EncodeRPNGOptions> = async (
 
   // Generate image of rendered HTML
   const page = await browser()
-  // const browser = await puppeteer.launch({
-  //   executablePath: chromiumPath
-  // })
 
   await page.setContent(
     `<div id="target" style="${
@@ -254,27 +255,39 @@ export const encode: Encode<EncodeRPNGOptions> = async (
 }
 
 /**
+ * Walk the tree of nodes and replace any links to local resources
+ * with data URIs. This is necessary because Puppeteer does not
+ * load local resources for security reasons.
+ * See https://github.com/GoogleChrome/puppeteer/issues/1643.
  *
+ * Currently only handles `MediaObject` nodes, but could be used for other
+ * node types in the future.
  */
-async function displayNode(
-  node: stencila.Node,
-  options?: EncodeOptions
-): Promise<string> {
-  switch (type(node)) {
-    case 'string':
-      return `<pre>${node as string}</pre>`
-    case 'CodeChunk':
-      return displayCodeChunk(node as stencila.CodeChunk, options)
-    default:
-      return dump(node, { ...options, format: 'html' })
-  }
-}
+async function loadLocalResources(node: stencila.Node): Promise<stencila.Node> {
+  async function walk(node: any) {
+    if (node === null || typeof node !== 'object') return node
 
-async function displayCodeChunk(
-  chunk: stencila.CodeChunk,
-  options?: EncodeOptions
-): Promise<string> {
-  const outputs = chunk.outputs || []
-  const bits = await Promise.all(outputs.map(o => displayNode(o, options)))
-  return bits.join('')
+    switch (node.type) {
+      case 'MediaObject':
+      case 'AudioObject':
+      case 'ImageObject':
+      case 'VideoObject':
+        const mediaObject = node as stencila.MediaObject
+        if (!mediaObject.contentUrl.startsWith('http')) {
+          const { dataUri: contentUrl } = await dataUri.fromFile(
+            mediaObject.contentUrl
+          )
+          return {
+            ...mediaObject,
+            contentUrl
+          }
+        }
+    }
+
+    for (const [key, child] of Object.entries(node)) {
+      node[key] = await walk(child)
+    }
+    return node
+  }
+  return await produce(node, walk)
 }
