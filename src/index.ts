@@ -21,6 +21,7 @@ import * as tdp from './tdp'
 import * as txt from './txt'
 import * as vfile from './vfile'
 import * as xlsx from './xlsx'
+import * as xmd from './xmd'
 import * as yaml from './yaml'
 
 export { default as process } from './process'
@@ -51,6 +52,7 @@ export const codecList: Array<Codec> = [
   odt,
   pdf,
   txt,
+  xmd,
 
   // Scripts
   demoMagic,

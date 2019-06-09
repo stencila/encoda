@@ -63,6 +63,7 @@
  */
 
 import * as stencila from '@stencila/schema'
+import { Encode } from '.'
 import * as md from './md'
 import { dump, load, VFile } from './vfile'
 
@@ -88,11 +89,10 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   cmd = cmd.replace(
     /```\s*{([a-z]+)\s*([^}]*)}\s*\n(.*)\n```\n/gm,
     (match, lang, options, text) => {
-      // Replace with a Commonmark backtick fenced code block with an
-      // "info string" (does not have curly braces)
-      let md = '``` ' + lang + ' .exec'
+      // Replace with a `chunk` block extension
+      let md = 'chunk:\n:::\n``` ' + lang
       if (options) md += ` ${options}`
-      return md + '\n' + text + '\n```\n'
+      return md + '\n' + text + '\n```\n:::\n'
     }
   )
   return md.decode(load(cmd))
@@ -108,10 +108,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param node The Stencila node to encode
  * @param filePath The file system path to write to
  */
-export async function encode(
-  node: stencila.Node,
-  filePath?: string
-): Promise<VFile> {
+export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   const transformed = transform(node)
   const mdFile = await md.encode(transformed)
   const cmd = await dump(mdFile)
