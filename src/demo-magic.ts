@@ -58,10 +58,11 @@ interface DemoMagicOptions {
  */
 export const encode: Encode<DemoMagicOptions> = async (
   node: stencila.Node,
-  { codecOptions = { embed: true } }: EncodeOptions<DemoMagicOptions> = {}
+  { codecOptions = {} }: EncodeOptions<DemoMagicOptions> = {}
 ): Promise<VFile> => {
+  const { embed = true } = codecOptions
   let bash = await encodeNode(node)
-  if (codecOptions.embed) {
+  if (embed) {
     if (!demoMagicSh) {
       demoMagicSh = await fs.readFile(
         path.join(__dirname, 'templates', 'demo-magic.sh'),
