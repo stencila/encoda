@@ -217,7 +217,7 @@ async function decodeCodeCell(
 ): Promise<stencila.CodeChunk> {
   let { metadata, outputs, execution_count } = cell
 
-  // In nbformat 3, it's `prompt_number` no `execution_count`
+  // In nbformat 3, it's `prompt_number` not `execution_count`
   if (!execution_count && cell.prompt_number) {
     execution_count = cell.prompt_number
   }
@@ -304,6 +304,11 @@ async function decodeOutputs(
 
 /**
  * Encode the `outputs` of a Stencila `CodeChunk` to an array of Jupyter `Output`s.
+ *
+ * Note that the Stenila document model does not differentiate among different sources
+ * of outputs e.g. `stdout` from a `print` statement versus a `string` from a `execute_result`.
+ * So, we don't try to revert to the source that may have been in the `ipynb` originally.
+ * Instead, we use the convention of encoding `string`s as `Stream` outputs.
  */
 async function encodeOutputs(
   chunk: stencila.CodeChunk,
@@ -312,26 +317,56 @@ async function encodeOutputs(
   return Promise.all(
     nodes.map(async node => {
       switch (type(node)) {
+        case 'string':
+          return await encodeStream(chunk, node)
         case 'ImageObject':
-          return await encodeOutput('display_data', chunk, node)
+          return await encodeDisplayData(chunk, node)
         default:
-          return await encodeOutput('execute_result', chunk, node)
+          return await encodeExecuteResult(chunk, node)
       }
     })
   )
 }
 
 /**
- * Encode a Stencila `Node` that is a `CodeChunk` `output` as a Jupyter `Output`.
+ * Encode a `string` that is a `CodeChunk` `output` as a Jupyter `Stream`.
  */
-async function encodeOutput(
-  type: string,
+async function encodeStream(
   chunk: stencila.CodeChunk,
   node: stencila.Node
-): Promise<nbformat.IOutput> {
+): Promise<nbformat.IStream> {
+  return {
+    output_type: 'stream',
+    metadata: {},
+    name: 'stdout',
+    text: node as string
+  }
+}
+
+/**
+ * Encode a Stencila `Node` that is a `CodeChunk` `output` as a Jupyter `DisplayData`.
+ */
+async function encodeDisplayData(
+  chunk: stencila.CodeChunk,
+  node: stencila.Node
+): Promise<nbformat.IDisplayData> {
+  return {
+    output_type: 'display_data',
+    metadata: {},
+    data: await encodeMimeBundle(node)
+  }
+}
+
+/**
+ * Encode a Stencila `Node` that is a `CodeChunk` `output` as a Jupyter `ExecuteResult`.
+ */
+async function encodeExecuteResult(
+  chunk: stencila.CodeChunk,
+  node: stencila.Node
+): Promise<nbformat.IExecuteResult> {
   const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
   return {
-    output_type: type,
+    output_type: 'execute_result',
     execution_count,
     metadata: {},
     data: await encodeMimeBundle(node)
