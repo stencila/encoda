@@ -283,6 +283,7 @@ function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
 function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
   switch (type(node)) {
     case 'null':
+    case 'undefined':
       return {
         t: 'MetaString',
         c: '!!null'

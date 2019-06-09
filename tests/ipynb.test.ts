@@ -1,6 +1,11 @@
-import { nbformat } from '@jupyterlab/coreutils'
 import * as stencila from '@stencila/schema'
-import { decode, encode } from '../src/ipynb'
+import {
+  decode,
+  decodeMultilineString,
+  encode,
+  encodeMultilineString,
+  nbformat
+} from '../src/ipynb'
 import { dump, load } from '../src/vfile'
 
 test('decode', async () => {
@@ -14,7 +19,17 @@ test('encode', async () => {
   const encode_ = async (node: stencila.Node) =>
     JSON.parse(await dump(await encode(node)))
 
-  //expect(await encode_(kitchenSink.node)).toEqual(kitchenSink.ipynb)
+  expect(await encode_(kitchenSink.node)).toEqual(kitchenSink.ipynb)
+})
+
+test('encode+decode MultilineString', () => {
+  const mls1 = ['Line1\n', 'Line2']
+  const mls2 = 'Line1\nLine2'
+  const str1 = 'Line1\nLine2'
+
+  expect(decodeMultilineString(mls1)).toEqual(str1)
+  expect(decodeMultilineString(mls2)).toEqual(str1)
+  expect(encodeMultilineString(str1)).toEqual(mls1)
 })
 
 interface TestCase {
@@ -62,6 +77,7 @@ const kitchenSink: TestCase = {
     ],
     metadata: {
       title: 'Jupyter notebook title',
+      authors: [],
       kernelspec: {
         display_name: 'Python 3',
         language: 'python',
@@ -88,6 +104,26 @@ const kitchenSink: TestCase = {
     type: 'Article',
     title: 'Jupyter notebook title',
     authors: [],
+    meta: {
+      kernelspec: {
+        display_name: 'Python 3',
+        language: 'python',
+        name: 'python3'
+      },
+      language_info: {
+        codemirror_mode: {
+          name: 'ipython',
+          version: 3
+        },
+        file_extension: '.py',
+        mimetype: 'text/x-python',
+        name: 'python',
+        nbconvert_exporter: 'python',
+        pygments_lexer: 'ipython3',
+        version: '3.6.4'
+      },
+      orig_nbformat: 1
+    },
     content: [
       {
         type: 'Heading',
@@ -100,6 +136,7 @@ const kitchenSink: TestCase = {
       },
       {
         type: 'CodeChunk',
+        meta: { execution_count: 4 },
         text: "greeting = 'Hello from Python'"
       },
       {
@@ -113,6 +150,7 @@ const kitchenSink: TestCase = {
       },
       {
         type: 'CodeChunk',
+        meta: { execution_count: 6 },
         text: "import sys\ngreeting + ' ' + str(sys.version_info[0])",
         outputs: ["'Hello from Python 3'"]
       }

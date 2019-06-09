@@ -1,6 +1,9 @@
 /**
  * # IPYNB codec
  *
+ * This module is still in development. In particular more work needs to be
+ * done on type safety and better ways to support nbformat versions 3 and 4.
+ *
  * @module ipynb
  */
 
@@ -10,8 +13,10 @@
 
 import stencila from '@stencila/schema'
 import { VFile } from 'vfile'
-import { Encode, load } from '.'
+import { dump, Encode, load } from '.'
 import * as md from './md'
+import * as dataUri from './util/dataUri'
+import type from './util/type'
 import * as vfile from './vfile'
 
 /**
@@ -33,7 +38,7 @@ export const extNames = ['ipynb']
 export async function decode(file: VFile): Promise<stencila.Node> {
   const json = await vfile.dump(file)
   const ipynb: nbformat.INotebookContent = JSON.parse(json)
-  return decodeNotebookContent(ipynb)
+  return decodeNotebook(ipynb)
 }
 
 /**
@@ -48,10 +53,18 @@ export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
   return vfile.load(json)
 }
 
-async function decodeNotebookContent(
+/**
+ * Decode a Jupyter `Notebook` to a Stencila `Article`.
+ */
+async function decodeNotebook(
   notebook: nbformat.INotebookContent
 ): Promise<stencila.Article> {
-  const { title, authors } = decodeMetadata(notebook.metadata)
+  // TODO: Extract other metadata?
+  let { title, authors, orig_nbformat, ...rest } = notebook.metadata
+  if (!title) title = 'Untitled'
+  if (!authors) authors = []
+
+  const meta = { orig_nbformat, ...rest }
 
   let cells = notebook.cells
   if (!cells) {
@@ -63,45 +76,46 @@ async function decodeNotebookContent(
     throw new Error('Unable to get cells. Is this a Jupyter Notebook?')
 
   const content = await decodeCells(cells)
+
   return {
     type: 'Article',
     title,
     authors,
+    meta,
     content
   }
 }
 
+/**
+ * Encode a Stencila `Article` as a Jupyter `Notebook`.
+ */
 async function encodeNode(
   node: stencila.Node
 ): Promise<nbformat.INotebookContent> {
-  const metadata: nbformat.INotebookMetadata = {
-    orig_nbformat: 1
+  // TODO: Wrap non-articles into an Article
+  const article = node as stencila.Article
+  const { title, authors, meta, content } = article
+
+  const metadata = {
+    orig_nbformat: 1, //
+    ...meta,
+    title,
+    authors
   }
-  const cells: nbformat.ICell[] = []
+
+  const cells = await encodeCells(content || [])
+
   return {
-    nbformat: nbformat.MAJOR_VERSION,
-    nbformat_minor: nbformat.MINOR_VERSION,
+    nbformat: 4,
+    nbformat_minor: 4,
     metadata,
     cells
   }
 }
 
 /**
- *
- * https://github.com/jupyter/nbformat/blob/11903688167d21af96c92f7f5bf0634ab51819f1/nbformat/v4/nbformat.v4.schema.json
- *
- * title: string
- * authors: {name: string}[]
- *
- * @param metadata
+ * Decode an array of Jupyter `Cells` to and array of Stencila `BlockContent` nodes.
  */
-function decodeMetadata(metadata: nbformat.INotebookMetadata) {
-  const title: string = metadata.title ? metadata.title.toString() : 'Untitled'
-  // TODO: coerce authors to `Person[]`
-  const authors: stencila.Person[] = []
-  return { title, authors }
-}
-
 async function decodeCells(
   cells: nbformat.ICell[]
 ): Promise<stencila.BlockContent[]> {
@@ -117,6 +131,7 @@ async function decodeCells(
         blocks.push(await decodeCodeCell(cell as nbformat.ICodeCell))
         break
       case 'raw':
+        // TODO: handle `raw` cells
         break
       default:
         // The above should handle all cell types but in case of an invalid
@@ -131,37 +146,123 @@ async function decodeCells(
   return blocks
 }
 
+/**
+ * Encode an array of Stencila `Node`s as an array of Jupyter `Cells`.
+ */
+async function encodeCells(nodes: stencila.Node[]): Promise<nbformat.ICell[]> {
+  let content: stencila.Node[] = []
+  const cells: nbformat.ICell[] = []
+  for (const node of nodes) {
+    switch (type(node)) {
+      case 'CodeChunk':
+        if (content.length) {
+          cells.push(await encodeMarkdownCell(content))
+          content = []
+        }
+        cells.push(await encodeCodeChunk(node as stencila.CodeChunk))
+        break
+      default:
+        content.push(node)
+    }
+  }
+  if (content.length) cells.push(await encodeMarkdownCell(content))
+  return cells
+}
+
+/**
+ * Decode a Jupyter `MarkdownCell` as an array of Stencila `BlockContent` nodes.
+ */
 async function decodeMarkdownCell(
   cell: nbformat.IMarkdownCell
 ): Promise<stencila.BlockContent[]> {
+  // TODO: handle metadata
   const { metadata, source } = cell
   const markdown = decodeMultilineString(source)
   const node = await md.decode(vfile.load(markdown))
+  // TODO: avoid this type casting
   const article = node as stencila.Article
   return article.content as stencila.BlockContent[]
 }
 
+/**
+ * Encode an array of Stencila `Node`s as a Jupyter `MarkdownCell`
+ */
+async function encodeMarkdownCell(
+  nodes: stencila.Node[]
+): Promise<nbformat.IMarkdownCell> {
+  // TODO: consider a md function that will return
+  // a fragment, not a whole article
+  const article = {
+    type: 'Article',
+    content: nodes
+  }
+
+  const metadata = {}
+
+  const markdown = await vfile.dump(await md.encode(article))
+  const source = encodeMultilineString(markdown.trim())
+
+  return {
+    cell_type: 'markdown',
+    metadata,
+    source
+  }
+}
+
+/**
+ * Decode a Jupyter `CodeCell` to a Stencila `CodeChunk`.
+ */
 async function decodeCodeCell(
   cell: nbformat.ICodeCell
 ): Promise<stencila.CodeChunk> {
   const { metadata, outputs, execution_count } = cell
+
+  const meta = { ...metadata, execution_count }
+
   // nbformat 4 has `source`, 3 has `input`
   const source = cell.source ? cell.source : cell.input
   const code = decodeMultilineString(source)
+
   const codeChunk: stencila.CodeChunk = {
     type: 'CodeChunk',
+    meta,
     text: code
   }
+
   if (outputs && outputs.length)
     codeChunk.outputs = await decodeOutputs(outputs)
+
   return codeChunk
 }
 
-function decodeMultilineString(source: nbformat.MultilineString): string {
-  return Array.isArray(source) ? source.join('') : source
+/**
+ * Encode a Stencila `CodeChunk` as a Jupyter `CodeCell`.
+ */
+async function encodeCodeChunk(
+  chunk: stencila.CodeChunk
+): Promise<nbformat.ICodeCell> {
+  const metadata = {}
+  const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
+  const source = encodeMultilineString(chunk.text || '')
+  const outputs: nbformat.IOutput[] = await encodeOutputs(
+    chunk,
+    chunk.outputs || []
+  )
+  return {
+    cell_type: 'code',
+    metadata,
+    execution_count,
+    source,
+    outputs
+  }
 }
 
-function decodeOutputs(outputs: nbformat.IOutput[]): Promise<stencila.Node[]> {
+/**
+ * Decode the `outputs` of a Jupyter `CodeCell` to an array of Stencila `Node`s.
+ */
+async function decodeOutputs(
+  outputs: nbformat.IOutput[]
+): Promise<stencila.Node[]> {
   return Promise.all(
     outputs.map(async output => {
       switch (output.output_type) {
@@ -197,30 +298,129 @@ function decodeOutputs(outputs: nbformat.IOutput[]): Promise<stencila.Node[]> {
 }
 
 /**
+ * Encode the `outputs` of a Stencila `CodeChunk` to an array of Jupyter `Output`s.
+ */
+async function encodeOutputs(
+  chunk: stencila.CodeChunk,
+  nodes: stencila.Node[]
+): Promise<nbformat.IOutput[]> {
+  return Promise.all(
+    nodes.map(async node => {
+      switch (type(node)) {
+        case 'ImageObject':
+          return await encodeOutput('display_data', chunk, node)
+        default:
+          return await encodeOutput('execute_result', chunk, node)
+      }
+    })
+  )
+}
+
+/**
+ * Encode a Stencila `Node` that is a `CodeChunk` `output` as a Jupyter `Output`.
+ */
+async function encodeOutput(
+  type: string,
+  chunk: stencila.CodeChunk,
+  node: stencila.Node
+): Promise<nbformat.IOutput> {
+  const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
+  return {
+    output_type: type,
+    execution_count,
+    metadata: {},
+    data: await encodeMimeBundle(node)
+  }
+}
+
+/**
  * Decode a Jupyter `MimeBundle` to a Stencila `Node`.
  *
  * The bundle is a dictionary of {mediaType : content}. We iterate over
  * the dictionary until we find the first media type that can be decoded.
  */
 async function decodeMimeBundle(
-  data: nbformat.IMimeBundle
+  bundle: nbformat.IMimeBundle
 ): Promise<stencila.Node> {
-  for (const [mediaType, content] of Object.entries(data)) {
-    const contentString =
-      typeof content === 'string'
-        ? content
-        : Array.isArray(content)
-        ? content.join('')
-        : content.toString()
-    if (mediaType === 'png') {
-      const image: stencila.ImageObject = {
+  for (const [mimetype, data] of Object.entries(bundle)) {
+    const content =
+      typeof data === 'string'
+        ? data
+        : Array.isArray(data)
+        ? data.join('')
+        : data.toString()
+
+    if (['image/png', 'png', 'image/jpeg', 'jpeg'].includes(mimetype)) {
+      const mediaType = mimetype.startsWith('image/')
+        ? mimetype
+        : 'image/' + mimetype
+      const dataUrl = `data:${mediaType};base64,${content}`
+      const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
+        dataUrl
+      )
+      return {
         type: 'ImageObject',
-        contentUrl: `data:image/png;base64,${content}`
+        format,
+        contentUrl
       }
-      return image
-    } else return await load(contentString, mediaType)
+    } else {
+      // TODO: handle other mime types e.g. application/x+json
+      return await load(content, mimetype)
+    }
   }
+  // TODO: handling of fallback
   return ''
+}
+
+/**
+ * Encode a Stencila `Node` as a Jupyter `MimeBundle`.
+ *
+ * The MIME type (aka media type) of the bundle is determined
+ * by the type of `Node`.
+ */
+async function encodeMimeBundle(
+  node: stencila.Node
+): Promise<nbformat.IMimeBundle> {
+  let [mediaType, data] = await (async (): Promise<[string, string]> => {
+    switch (type(node)) {
+      case 'string':
+        return ['text/plain', await dump(node, { format: 'text' })]
+      case 'ImageObject':
+        const image = node as stencila.ImageObject
+        const { mediaType, dataUri: dataUrl } = await dataUri.fromFile(
+          image.contentUrl
+        )
+        const data = dataUrl.split('base64,').pop() || ''
+        return [mediaType, data]
+    }
+    return ['text/html', await dump(node, { format: 'html' })]
+  })()
+
+  const bundle: nbformat.IMimeBundle = {}
+  bundle[mediaType] = encodeMultilineString(data)
+  return bundle
+}
+
+/**
+ * Decode a Jupyter `MultilineString` to a `string`.
+ */
+export function decodeMultilineString(
+  source: nbformat.MultilineString
+): string {
+  return Array.isArray(source) ? source.join('') : source
+}
+
+/**
+ * Encode a `string` as a Jupyter `MultilineString`.
+ */
+export function encodeMultilineString(
+  source: string
+): nbformat.MultilineString {
+  const lines = source.split('\n')
+  return lines
+    .slice(0, -1)
+    .map(line => line + '\n')
+    .concat(lines.slice(-1))
 }
 
 /**
