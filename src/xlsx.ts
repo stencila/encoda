@@ -230,29 +230,20 @@ const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
   )
 })
 
-function encodeTable(table: stencila.Table) {
-  const sheet: xlsx.WorkSheet = {}
-  // TODO:
-  // @ts-ignore
-  let cells = table.cells
-  if (cells) {
-    let maxCol = 0
-    let maxRow = 0
-    for (let cell of cells) {
-      if (!cell.position) continue
-      let [col, row] = cell.position
-      if (col > maxCol) maxCol = col
-      if (row > maxRow) maxRow = row
-      let name = cellPositionToName(cell.position)
-      let cellObject = encodeCell(cell.content[0] || null)
-      sheet[name] = cellObject
-    }
-    sheet['!ref'] = `A1:${cellPositionToName([maxCol, maxRow])}`
-  } else {
-    throw new Error(`TODO: handle tables with rows instead of cells`)
-  }
-  return sheet
-}
+const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
+  table.rows.reduce(
+    (sheet: xlsx.WorkSheet, row) => {
+      row.cells.map((cell: stencila.TableCell) => {
+        if (cell.name) {
+          sheet[cell.name] = cell.content.map(encodeCell)[0]
+        }
+      })
+
+      const keys = Object.keys(sheet)
+      return { ...sheet, '!ref': `${keys[1]}:${keys[keys.length - 1]}` }
+    },
+    { '!ref': 'A1:A1' }
+  )
 
 // Worksheet <-> Datatable
 
@@ -377,7 +368,8 @@ function encodeCell(node: stencila.Node): xlsx.CellObject | null {
       }
     }
   }
-  throw new Error(`Unhandled node type`)
+
+  throw new TypeError(`Unhandled node type ${typeof node}`)
 }
 
 /**
