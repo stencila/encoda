@@ -229,6 +229,9 @@ describe('encode', () => {
     expect(await decode(await encode(simple.node))).toEqual(simple.node)
   })
 
+  test('simple table', async () => {
+    expect(await decode(await encode(table.node))).toEqual(table.node)
+  })
   test('collection node', async () => {
     expect(await decode(await encode(collection.node))).toEqual(collection.node)
   })
