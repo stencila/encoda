@@ -9,6 +9,7 @@
  */
 
 import stencila from '@stencila/schema'
+import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '.'
 import type from './util/type'
@@ -118,28 +119,116 @@ function encodeCreativeWork(node: stencila.CreativeWork) {
 
 // Worksheet <-> Table
 
-function decodeTable(
-  name: string,
-  cells: { [key: string]: xlsx.CellObject }
-): stencila.Table {
-  return {
-    type: 'Table',
-    name,
-    rows: []
-    // TODO:
-    /*
-    cells: Object.entries(cells).map(function([key, cell]): stencila.TableCell {
-      let value = decodeCell(cell)
-      return {
-        type: 'TableCell',
-        name: key,
-        position: cellNameToPosition(key),
-        content: [value]
-      }
-    })
-    */
+/**
+ * Convert a spreadsheet native cell value into a Stencila Inline Content which
+ * can then be further transformed or rendered to an output
+ *
+ * @param {xlsx.CellObject} cell
+ * @returns {stencila.InlineContent}
+ */
+const showXlsxCell = (cell: xlsx.CellObject): stencila.InlineContent => {
+  if (cell.f) return xlsxCellToCodeExpr(cell)
+  if (cell.v instanceof Date) return cell.v.toLocaleTimeString()
+  if (!cell.v) return null
+  return cell.v.toString()
+}
+
+/**
+ * @see showXlsxCell
+ */
+const xlsxCellToCodeExpr = (cell: xlsx.CellObject): stencila.CodeExpr => ({
+  programmingLanguage: 'excel',
+  text: cell.f,
+  type: 'CodeExpr',
+  value: cell.v
+})
+
+/**
+ * Parses a cell coordinate name such as `B47` into it's alpha and numeric parts.
+ * This is used to convert a column-indexed table data into a row-indexed table
+ * (such as the one found in HTML `table` markup).
+ *
+ * @param {string} name
+ * @returns {[string, number]}
+ */
+const parseRowAndColumn = (name: string): [string, number] | void => {
+  const _alpha = name.match(/[a-z|A-Z]+/)
+  const _num = name.match(/\d+/)
+
+  if (_alpha && _num) {
+    return [_alpha[0], parseInt(_num[0], 10)]
   }
 }
+
+/**
+ * Convert spreadsheet formatted cell to a Stencila Table Cell
+ *
+ * @param {xlsx.CellObject} cell
+ * @returns {stencila.TableCell}
+ */
+const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
+  type: 'TableCell',
+  content: [showXlsxCell(cell)]
+})
+
+interface Worksheet {
+  [cell: string]: xlsx.CellObject
+}
+
+interface RowMap {
+  [row: string]: {
+    [column: string]: stencila.TableCell
+  }
+}
+
+/**
+ * Convert spreadsheet worksheet, a column-indexed table data format, to a RowMap,
+ * a row-indexed data representation.
+ *
+ * @param {xlsx.CellObject} cell
+ * @returns {stencila.TableCell}
+ */
+const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
+  Object.entries(worksheet).reduce((map: RowMap, [name, cell]) => {
+    const coords = parseRowAndColumn(name)
+    if (coords) {
+      const [alpha, num] = coords
+      return {
+        ...map,
+        [num]: {
+          ...(map[num] || {}),
+          [alpha]: {
+            name: alpha + num,
+            ...xlsxCelltoStencilaCell(cell)
+          }
+        }
+      }
+    } else {
+      return map
+    }
+  }, {})
+
+/**
+ * Convert data structured as a RowMap to Stencila TableRow for further processing or rendering.
+ *
+ * @param {xlsx.CellObject} cell
+ * @returns {stencila.TableCell}
+ */
+const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] =>
+  Object.values(rowMap).map(row => ({
+    type: 'TableRow',
+    cells: Object.values(row)
+  }))
+
+const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
+  type: 'Table',
+  name,
+  rows: pipe(
+    worksheet,
+    worksheetToRowMap,
+    rowMapToTableRows
+  )
+})
 
 function encodeTable(table: stencila.Table) {
   const sheet: xlsx.WorkSheet = {}
