@@ -180,7 +180,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
     return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
 
-  logger.warning(`No handler for HTML element <${name}>`)
+  logger.warn(`No handler for HTML element <${name}>`)
   return undefined
 }
 
@@ -287,7 +287,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
  */
 function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
   // TODO: enable decoding of all children
-  logger.warning('Currently, only first child of <div> is decoded.')
+  logger.warn('Currently, only first child of <div> is decoded.')
   const first = div.firstElementChild
   if (first) return decodeNode(first)
 }

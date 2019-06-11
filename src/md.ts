@@ -206,7 +206,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeHTML(node as MDAST.HTML)
 
     default:
-      logger.warning(`No Markdown decoder for MDAST node type "${type}"`)
+      logger.warn(`No Markdown decoder for MDAST node type "${type}"`)
       return ''
   }
 }
