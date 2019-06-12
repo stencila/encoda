@@ -136,8 +136,8 @@ interface RowMap {
  * Convert spreadsheet worksheet, a column-indexed table data format, to a RowMap,
  * a row-indexed data representation.
  *
- * @param {xlsx.CellObject} cell
- * @returns {stencila.TableCell}
+ * @param {Worksheet} worksheet
+ * @returns {RowMap}
  */
 const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
   Object.entries(worksheet).reduce((rowMap: RowMap, [name, cell]) => {
