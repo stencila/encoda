@@ -9,6 +9,8 @@
  */
 
 import stencila from '@stencila/schema'
+import { array, option, ord } from 'fp-ts'
+import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '.'
 import type from './util/type'
@@ -19,6 +21,8 @@ export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
   // spell-checker: enable
 ]
+
+const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
 export async function decode(file: VFile): Promise<stencila.Node> {
   let workbook = xlsx.read(file.contents, {
@@ -118,52 +122,85 @@ function encodeCreativeWork(node: stencila.CreativeWork) {
 
 // Worksheet <-> Table
 
-function decodeTable(
-  name: string,
-  cells: { [key: string]: xlsx.CellObject }
-): stencila.Table {
-  return {
-    type: 'Table',
-    name,
-    rows: []
-    // TODO:
-    /*
-    cells: Object.entries(cells).map(function([key, cell]): stencila.TableCell {
-      let value = decodeCell(cell)
-      return {
-        type: 'TableCell',
-        name: key,
-        position: cellNameToPosition(key),
-        content: [value]
-      }
-    })
-    */
+interface Worksheet {
+  [cell: string]: xlsx.CellObject
+}
+
+interface RowMap {
+  [row: string]: {
+    [column: string]: stencila.TableCell
   }
 }
 
-function encodeTable(table: stencila.Table) {
-  const sheet: xlsx.WorkSheet = {}
-  // TODO:
-  // @ts-ignore
-  let cells = table.cells
-  if (cells) {
-    let maxCol = 0
-    let maxRow = 0
-    for (let cell of cells) {
-      if (!cell.position) continue
-      let [col, row] = cell.position
-      if (col > maxCol) maxCol = col
-      if (row > maxRow) maxRow = row
-      let name = cellPositionToName(cell.position)
-      let cellObject = encodeCell(cell.content[0] || null)
-      sheet[name] = cellObject
+/**
+ * Convert spreadsheet worksheet, a column-indexed table data format, to a RowMap,
+ * a row-indexed data representation.
+ *
+ * @param {Worksheet} worksheet
+ * @returns {RowMap}
+ */
+const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
+  Object.entries(worksheet).reduce((rowMap: RowMap, [name, cell]) => {
+    const coords = parseRowAndColumn(name)
+    if (coords) {
+      const [alpha, num] = coords
+      return {
+        ...rowMap,
+        [num]: {
+          ...(rowMap[num] || {}),
+          [alpha]: {
+            name: alpha + num,
+            ...xlsxCelltoStencilaCell(cell)
+          }
+        }
+      }
+    } else {
+      return rowMap
     }
-    sheet['!ref'] = `A1:${cellPositionToName([maxCol, maxRow])}`
-  } else {
-    throw new Error(`TODO: handle tables with rows instead of cells`)
+  }, {})
+
+/**
+ * Convert data structured as a RowMap to Stencila TableRow for further
+ * processing or rendering.
+ * @param {RowMap} rowMap
+ * @returns {stencila.TableRow[]}
+ */
+const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] => {
+  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
+  // It should be removed once TypeDoc is updated
+  const enum types {
+    TABLE_ROW = 'TableRow'
   }
-  return sheet
+
+  return Object.values(rowMap).map(row => ({
+    type: types.TABLE_ROW,
+    cells: Object.values(row)
+  }))
 }
+
+const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
+  type: 'Table',
+  name,
+  rows: pipe(
+    worksheet,
+    worksheetToRowMap,
+    rowMapToTableRows
+  )
+})
+
+const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
+  table.rows.reduce(
+    (sheet: xlsx.WorkSheet, row) => {
+      row.cells.map((cell: stencila.TableCell) => {
+        if (cell.name) {
+          sheet[cell.name] = encodeCell(cell.content[0])
+        }
+      })
+
+      return { ...sheet, '!ref': calcSheetRange(Object.keys(sheet)) }
+    },
+    { '!ref': 'A1:A1' }
+  )
 
 // Worksheet <-> Datatable
 
@@ -288,8 +325,20 @@ function encodeCell(node: stencila.Node): xlsx.CellObject | null {
       }
     }
   }
-  throw new Error(`Unhandled node type`)
+
+  throw new TypeError(`Unhandled node type ${typeof node}`)
 }
+
+/**
+ * Convert spreadsheet formatted cell to a Stencila Table Cell
+ *
+ * @param {xlsx.CellObject} cell
+ * @returns {stencila.TableCell}
+ */
+const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
+  type: 'TableCell',
+  content: [decodeCell(cell)]
+})
 
 /**
  * Convert a column index (e.g. `27`) into a name (e.g. `AA`)
@@ -330,7 +379,7 @@ export function columnNameToIndex(name: string) {
  * @param name The name of the cell
  */
 export function cellNameToPosition(name: string): [number, number] {
-  const match = name.match(/^([A-Z]+)([1-9][0-9]*)$/)
+  const match = name.match(cellNameRegEx)
   if (!match) throw new Error(`Unexpected cell name "${name}".`)
   const column = columnNameToIndex(match[1])
   const row = parseInt(match[2], 10) - 1
@@ -345,3 +394,61 @@ export function cellNameToPosition(name: string): [number, number] {
 export function cellPositionToName(position: [number, number]): string {
   return `${columnIndexToName(position[0])}${position[1] + 1}`
 }
+
+/**
+ * Parses a cell coordinate name such as `B47` into it's alpha and numeric parts.
+ * This is used to convert a column-indexed table data into a row-indexed table
+ * (such as the one found in HTML `table` markup).
+ *
+ * @param {string} name
+ * @returns {[string, number]}
+ */
+const parseRowAndColumn = (name: string): [string, number] => {
+  const match = name.match(cellNameRegEx)
+  return match ? [match[1], parseInt(match[2], 10)] : ['A', 1]
+}
+
+/**
+ * Calculates the dimensions of the sheet so that all necessary cells are processed
+ *
+ * @param {string[]} coords
+ * @returns string
+ * @example ['A1', 'A2', 'B220', 'AH17'] => 'A1:AH220'
+ */
+const calcSheetRange = (coords: string[]): string => {
+  const coordMap = coords.reduce(
+    (cellMap, coord) => {
+      const [col, row] = parseRowAndColumn(coord)
+
+      return {
+        cols: cellMap.cols.add(col),
+        rows: cellMap.rows.add(row.toString())
+      }
+    },
+    { cols: new Set('A'), rows: new Set('1') }
+  )
+
+  const maxCol = maxCell(coordMap.cols, () => 'A')
+  const maxRow = maxCell(coordMap.rows, () => '1')
+
+  return `A1:${maxCol}${maxRow}`
+}
+
+// A function defining how to order strings based on their character length
+const ordLength: ord.Ord<string> = ord.contramap(ord.ordNumber, s => s.length)
+
+/**
+ * Given a list/Set of strings, determines the maximum value. First by string
+ * length, then by alphabetical/numerical order.
+ *
+ * @param {(Set<string> | string[])} cells ['A1', 'A2', 'B1', 'B2', ...]
+ * @param {() => string} defaultValue A function returning a constant value to
+ * be returned in case of failure such as an empty list given as input
+ */
+const maxCell = (cells: Set<string> | string[], defaultValue: () => string) =>
+  pipe(
+    [...cells],
+    array.sortBy([ordLength, ord.ordString]),
+    array.last,
+    option.getOrElse(defaultValue)
+  )

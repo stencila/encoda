@@ -1,3 +1,4 @@
+import { Datatable, Table } from '@stencila/schema'
 import { read } from '../src/vfile'
 import {
   columnIndexToName,
@@ -39,7 +40,90 @@ const simple = {
   }
 }
 
-const collection = {
+const table = {
+  file: `${__dirname}/fixtures/table/simple/simple.xlsx`,
+  node: {
+    type: 'Table',
+    name: 'Sheet1',
+    rows: [
+      {
+        type: 'TableRow',
+        cells: [
+          {
+            type: 'TableCell',
+            name: 'A1',
+            content: ['A']
+          },
+          {
+            type: 'TableCell',
+            name: 'B1',
+            content: ['B']
+          }
+        ]
+      },
+      {
+        type: 'TableRow',
+        cells: [
+          {
+            type: 'TableCell',
+            name: 'A2',
+            content: ['a']
+          },
+          {
+            type: 'TableCell',
+            name: 'B2',
+            content: [1]
+          }
+        ]
+      },
+      {
+        type: 'TableRow',
+        cells: [
+          {
+            type: 'TableCell',
+            name: 'A3',
+            content: ['b']
+          },
+          {
+            type: 'TableCell',
+            name: 'B3',
+            content: [2]
+          }
+        ]
+      },
+      {
+        type: 'TableRow',
+        cells: [
+          {
+            type: 'TableCell',
+            name: 'A4',
+            content: ['c']
+          },
+          {
+            type: 'TableCell',
+            name: 'B4',
+            content: [
+              {
+                type: 'CodeExpr',
+                programmingLanguage: 'excel',
+                text: 'SUM(B2:B3)^3',
+                value: 27
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+const collection: {
+  file: string
+  node: {
+    type: 'Collection'
+    parts: [Datatable, Table]
+  }
+} = {
   file: `${__dirname}/fixtures/collection/datatable+table/collection.xlsx`,
   node: {
     type: 'Collection',
@@ -73,43 +157,48 @@ const collection = {
       {
         type: 'Table',
         name: 'calcs',
-        rows: [],
-        cells: [
+        rows: [
           {
-            type: 'TableCell',
-            name: 'A1',
-            position: [0, 0],
-            content: ['mean height']
-          },
-          {
-            type: 'TableCell',
-            name: 'B1',
-            position: [1, 0],
-            content: [
+            type: 'TableRow',
+            cells: [
               {
-                type: 'CodeExpr',
-                programmingLanguage: 'excel',
-                text: 'AVERAGE(data!B2:B7)',
-                value: 3.5
+                type: 'TableCell',
+                name: 'A1',
+                content: ['mean height']
+              },
+              {
+                type: 'TableCell',
+                name: 'B1',
+                content: [
+                  {
+                    type: 'CodeExpr',
+                    programmingLanguage: 'excel',
+                    text: 'AVERAGE(data!B2:B7)',
+                    value: 3.5
+                  }
+                ]
               }
             ]
           },
           {
-            type: 'TableCell',
-            name: 'A2',
-            position: [0, 1],
-            content: ['mean weight']
-          },
-          {
-            type: 'TableCell',
-            name: 'B2',
-            position: [1, 1],
-            content: [
+            type: 'TableRow',
+            cells: [
               {
-                type: 'CodeExpr',
-                programmingLanguage: 'excel',
-                text: 'AVERAGE(data!C2:C7)',
-                value: 2.66666666666667
+                type: 'TableCell',
+                name: 'A2',
+                content: ['mean weight']
+              },
+              {
+                type: 'TableCell',
+                name: 'B2',
+                content: [
+                  {
+                    type: 'CodeExpr',
+                    programmingLanguage: 'excel',
+                    text: 'AVERAGE(data!C2:C7)',
+                    value: 2.66666666666667
+                  }
+                ]
               }
             ]
           }
@@ -119,14 +208,32 @@ const collection = {
   }
 }
 
-test.skip('decode', async () => {
-  expect(await decode(await read(simple.file))).toEqual(simple.node)
-  expect(await decode(await read(collection.file))).toEqual(collection.node)
+describe('decode', () => {
+  test('simple node', async () => {
+    expect(await decode(await read(simple.file))).toEqual(simple.node)
+  })
+
+  test('simple table', async () => {
+    expect(await decode(await read(table.file))).toEqual(table.node)
+  })
+
+  test('collection node', async () => {
+    expect(await decode(await read(collection.file))).toEqual(collection.node)
+  })
 })
 
-test.skip('encode', async () => {
+describe('encode', () => {
   // Use round trip since meta data in the binary file (e.g. last save time)
   // makes comparison of those files difficult
-  expect(await decode(await encode(simple.node))).toEqual(simple.node)
-  expect(await decode(await encode(collection.node))).toEqual(collection.node)
+  test('simple node', async () => {
+    expect(await decode(await encode(simple.node))).toEqual(simple.node)
+  })
+
+  test('simple table', async () => {
+    expect(await decode(await encode(table.node))).toEqual(table.node)
+  })
+
+  test('collection node', async () => {
+    expect(await decode(await encode(collection.node))).toEqual(collection.node)
+  })
 })
