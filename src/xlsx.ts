@@ -9,6 +9,7 @@
  */
 
 import stencila from '@stencila/schema'
+import { array, option, ord } from 'fp-ts'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '.'
@@ -230,17 +231,49 @@ const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
   )
 })
 
+const ordLength: ord.Ord<string> = ord.contramap(ord.ordNumber, s => s.length)
+
+const maxCell = (cells: Set<string>, defaultValue: () => string) =>
+  pipe(
+    [...cells],
+    array.sortBy([ordLength, ord.ordString]),
+    array.last,
+    option.getOrElse(defaultValue)
+  )
+
+/**
+ * Calculates the dimensions of the sheet so that all necessary cells are processed
+ *
+ * @param {string[]} coords e.g. ['A1', 'A2', 'B220', 'AH17'] => 'A1:AH220'
+ * @returns string
+ */
+const calcSheetRange = (coords: string[]): string => {
+  const coordMap = coords.reduce(
+    (cellMap, coord) => {
+      return {
+        cols: cellMap.cols.add((coord.match(/[a-z|A-Z]*/) || ['A'])[0]),
+        rows: cellMap.rows.add((coord.match(/\d+/) || ['1'])[0])
+      }
+    },
+    { cols: new Set('A'), rows: new Set('1') }
+  )
+
+  const maxCol = maxCell(coordMap.cols, () => 'A')
+  const maxRow = maxCell(coordMap.rows, () => '1')
+
+  return `A1:${maxCol}${maxRow}`
+}
+
 const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
   table.rows.reduce(
     (sheet: xlsx.WorkSheet, row) => {
       row.cells.map((cell: stencila.TableCell) => {
         if (cell.name) {
-          sheet[cell.name] = cell.content.map(encodeCell)[0]
+          sheet[cell.name] = encodeCell(cell.content[0])
         }
       })
 
-      const keys = Object.keys(sheet)
-      return { ...sheet, '!ref': `${keys[1]}:${keys[keys.length - 1]}` }
+      return { ...sheet, '!ref': calcSheetRange(Object.keys(sheet)) }
     },
     { '!ref': 'A1:A1' }
   )
