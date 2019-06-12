@@ -3,53 +3,58 @@ import path from 'path'
 import { read } from '../../src'
 
 test('issue 103: loss of nested lists', async () => {
-  const article = [
-    {
-      type: 'List',
-      order: 'ascending',
-      items: [
-        {
-          type: 'ListItem',
-          content: [
-            { type: 'Paragraph', content: ['Fruit'] },
-            {
-              type: 'List',
-              order: 'ascending',
-              items: [
-                {
-                  type: 'ListItem',
-                  content: [
-                    { type: 'Paragraph', content: ['Apple'] },
-                    { type: 'Paragraph', content: ['Orange'] },
-                    { type: 'Paragraph', content: ['Banana'] }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          type: 'ListItem',
-          content: [
-            { type: 'Paragraph', content: ['Dairy'] },
-            {
-              type: 'List',
-              order: 'ascending',
-              items: [
-                {
-                  type: 'ListItem',
-                  content: [
-                    { type: 'Paragraph', content: ['Milk'] },
-                    { type: 'Paragraph', content: ['Cheese'] }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  const article: stencila.Article = {
+    type: 'Article',
+    title: '',
+    authors: [],
+    content: [
+      {
+        type: 'List',
+        order: 'ascending',
+        items: [
+          {
+            type: 'ListItem',
+            content: [
+              { type: 'Paragraph', content: ['Fruit'] },
+              {
+                type: 'List',
+                order: 'ascending',
+                items: [
+                  {
+                    type: 'ListItem',
+                    content: [
+                      { type: 'Paragraph', content: ['Apple'] },
+                      { type: 'Paragraph', content: ['Orange'] },
+                      { type: 'Paragraph', content: ['Banana'] }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'ListItem',
+            content: [
+              { type: 'Paragraph', content: ['Dairy'] },
+              {
+                type: 'List',
+                order: 'ascending',
+                items: [
+                  {
+                    type: 'ListItem',
+                    content: [
+                      { type: 'Paragraph', content: ['Milk'] },
+                      { type: 'Paragraph', content: ['Cheese'] }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 
   const md = (await read(
     path.join(__dirname, '103-nested-lists.md')
