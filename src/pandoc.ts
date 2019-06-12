@@ -388,19 +388,19 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
 function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
   switch (block.type) {
     case 'Heading':
-      return encodeHeading(block as stencila.Heading)
+      return encodeHeading(block)
     case 'Paragraph':
-      return encodeParagraph(block as stencila.Paragraph)
+      return encodeParagraph(block)
     case 'QuoteBlock':
-      return encodeQuoteBlock(block as stencila.QuoteBlock)
+      return encodeQuoteBlock(block)
     case 'CodeBlock':
-      return encodeCodeBlock(block as stencila.CodeBlock)
+      return encodeCodeBlock(block)
     case 'List':
-      return encodeList(block as stencila.List)
+      return encodeList(block)
     case 'Table':
-      return encodeTable(block as stencila.Table)
+      return encodeTable(block)
     case 'ThematicBreak':
-      return encodeThematicBreak(block as stencila.ThematicBreak)
+      return encodeThematicBreak(block)
   }
   return encodeFallbackBlock(block)
 }
@@ -439,8 +439,9 @@ function decodePara(node: Pandoc.Para): stencila.BlockContent {
   if (content.length == 1) {
     const node = content[0]
     // TODO: fix this dangerous type casting
-    if (type(node) === 'CodeChunk')
+    if (type(node) === 'CodeChunk') {
       return (node as unknown) as stencila.CodeChunk
+    }
   }
   return {
     type: 'Paragraph',
@@ -510,12 +511,14 @@ function decodeList(
 ): stencila.List {
   const order = node.t === 'BulletList' ? 'unordered' : 'ascending'
   const blocks: Pandoc.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
-  // TODO: better handling of unwrapping
-  const items = blocks.map(blocks => decodeBlocks(blocks)[0])
+
   return {
     type: 'List',
     order,
-    items
+    items: blocks.map(block => ({
+      type: 'ListItem',
+      content: decodeBlocks(block)
+    }))
   }
 }
 

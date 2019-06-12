@@ -151,6 +151,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeCodeblock(node as MDAST.Code)
     case 'list':
       return decodeList(node as MDAST.List)
+    case 'listItem':
+      return decodeListItem(node as MDAST.ListItem)
     case 'table':
       return decodeTable(node as MDAST.Table)
     case 'thematicBreak':
@@ -555,24 +557,10 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
  * Decode a `MDAST.List` to a `stencila.List`
  */
 function decodeList(list: MDAST.List): stencila.List {
-  const items = []
-  for (let item of list.children) {
-    // TODO: when there are more than one child then create a stencila.Block
-    let node = decodeNode(item.children[0])
-
-    // If the item has a check box then insert that as a boolean as the first
-    // child of the first child
-    if (item.checked === true || item.checked === false) {
-      // @ts-ignore
-      if (node.content) node.content = [item.checked, ...node.content]
-    }
-
-    items.push(node)
-  }
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items
+    items: list.children.map(decodeNode)
   }
 }
 
@@ -610,6 +598,33 @@ function encodeList(list: stencila.List): MDAST.List {
         }
       }
     )
+  }
+}
+
+/**
+ * Encode a `MDAST.ListItem` to a `stencila.ListItem`
+ */
+function encodeListItem(list: stencila.ListItem): MDAST.ListItem {
+  return {
+    type: 'listItem',
+    // TODO: Fix type signatures
+    // @ts-ignore
+    children: list.content.reduce((children, child) => {
+      const encodedNode = encodeNode(child)
+      return encodedNode ? [...children, encodedNode] : children
+    }, [])
+    // type: 'ListItem',
+    // content: list.children.map(decodeNode) as stencila.InlineContent[]
+  }
+}
+
+/**
+ * Decode a `MDAST.List` to a `stencila.List`
+ */
+function decodeListItem(list: MDAST.ListItem): stencila.ListItem {
+  return {
+    type: 'ListItem',
+    content: list.children.map(decodeNode) as stencila.InlineContent[]
   }
 }
 
