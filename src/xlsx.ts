@@ -210,16 +210,23 @@ const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
   }, {})
 
 /**
- * Convert data structured as a RowMap to Stencila TableRow for further processing or rendering.
- *
- * @param {xlsx.CellObject} cell
- * @returns {stencila.TableCell}
+ * Convert data structured as a RowMap to Stencila TableRow for further
+ * processing or rendering.
+ * @param {RowMap} rowMap
+ * @returns {stencila.TableRow[]}
  */
-const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] =>
-  Object.values(rowMap).map(row => ({
-    type: 'TableRow',
+const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] => {
+  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
+  // It should be removed once TypeDoc is updated
+  const enum types {
+    TABLE_ROW = 'TableRow'
+  }
+
+  return Object.values(rowMap).map(row => ({
+    type: types.TABLE_ROW,
     cells: Object.values(row)
   }))
+}
 
 const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
   type: 'Table',
@@ -244,8 +251,9 @@ const maxCell = (cells: Set<string>, defaultValue: () => string) =>
 /**
  * Calculates the dimensions of the sheet so that all necessary cells are processed
  *
- * @param {string[]} coords e.g. ['A1', 'A2', 'B220', 'AH17'] => 'A1:AH220'
+ * @param {string[]} coords
  * @returns string
+ * @example ['A1', 'A2', 'B220', 'AH17'] => 'A1:AH220'
  */
 const calcSheetRange = (coords: string[]): string => {
   const coordMap = coords.reduce(
