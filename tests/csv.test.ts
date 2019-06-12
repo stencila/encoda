@@ -1,3 +1,4 @@
+import { Table } from '@stencila/schema'
 import { decode, encode } from '../src/csv'
 import { dump, load } from '../src/vfile'
 
@@ -51,40 +52,46 @@ const named = {
   }
 }
 
-const formulas = {
+const formulas: { content: string; node: Table } = {
   content: `1,=A1*2\n=B1*3,\n`,
   node: {
     type: 'Table',
     name: 'Sheet1',
-    rows: [],
-    cells: [
+    rows: [
       {
-        type: 'TableCell',
-        name: 'A1',
-        position: [0, 0],
-        content: [1]
-      },
-      {
-        type: 'TableCell',
-        name: 'B1',
-        position: [1, 0],
-        content: [
+        type: 'TableRow',
+        cells: [
           {
-            type: 'CodeExpr',
-            programmingLanguage: 'excel',
-            text: 'A1*2'
+            type: 'TableCell',
+            name: 'A1',
+            content: [1]
+          },
+          {
+            type: 'TableCell',
+            name: 'B1',
+            content: [
+              {
+                type: 'CodeExpr',
+                programmingLanguage: 'excel',
+                text: 'A1*2'
+              }
+            ]
           }
         ]
       },
       {
-        type: 'TableCell',
-        name: 'A2',
-        position: [0, 1],
-        content: [
+        type: 'TableRow',
+        cells: [
           {
-            type: 'CodeExpr',
-            programmingLanguage: 'excel',
-            text: 'B1*3'
+            type: 'TableCell',
+            name: 'A2',
+            content: [
+              {
+                type: 'CodeExpr',
+                programmingLanguage: 'excel',
+                text: 'B1*3'
+              }
+            ]
           }
         ]
       }
@@ -98,8 +105,18 @@ test.skip('decode', async () => {
   expect(await decode(load(formulas.content))).toEqual(formulas.node)
 })
 
-test('encode', async () => {
-  expect(await dump(await encode(simple.node, {}))).toEqual(simple.content)
-  expect(await dump(await encode(named.node, {}))).toEqual(named.content)
-  expect(await dump(await encode(formulas.node, {}))).toEqual(formulas.content)
+describe('encode', () => {
+  test('simple', async () => {
+    expect(await dump(await encode(simple.node, {}))).toEqual(simple.content)
+  })
+
+  test('named', async () => {
+    expect(await dump(await encode(named.node, {}))).toEqual(named.content)
+  })
+
+  test('formulas', async () => {
+    expect(await dump(await encode(formulas.node, {}))).toEqual(
+      formulas.content
+    )
+  })
 })
