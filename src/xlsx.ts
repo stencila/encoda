@@ -22,6 +22,8 @@ export const mediaTypes = [
   // spell-checker: enable
 ]
 
+const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
+
 export async function decode(file: VFile): Promise<stencila.Node> {
   let workbook = xlsx.read(file.contents, {
     type: 'buffer'
@@ -121,30 +123,6 @@ function encodeCreativeWork(node: stencila.CreativeWork) {
 // Worksheet <-> Table
 
 /**
- * Convert a spreadsheet native cell value into a Stencila Inline Content which
- * can then be further transformed or rendered to an output
- *
- * @param {xlsx.CellObject} cell
- * @returns {stencila.InlineContent}
- */
-const showXlsxCell = (cell: xlsx.CellObject): stencila.InlineContent => {
-  if (cell.f) return xlsxCellToCodeExpr(cell)
-  if (cell.v instanceof Date) return cell.v.toLocaleTimeString()
-  if (!cell.v) return null
-  return cell.v.toString()
-}
-
-/**
- * @see showXlsxCell
- */
-const xlsxCellToCodeExpr = (cell: xlsx.CellObject): stencila.CodeExpr => ({
-  programmingLanguage: 'excel',
-  text: cell.f,
-  type: 'CodeExpr',
-  value: cell.v
-})
-
-/**
  * Parses a cell coordinate name such as `B47` into it's alpha and numeric parts.
  * This is used to convert a column-indexed table data into a row-indexed table
  * (such as the one found in HTML `table` markup).
@@ -152,13 +130,9 @@ const xlsxCellToCodeExpr = (cell: xlsx.CellObject): stencila.CodeExpr => ({
  * @param {string} name
  * @returns {[string, number]}
  */
-const parseRowAndColumn = (name: string): [string, number] | void => {
-  const _alpha = name.match(/[a-z|A-Z]+/)
-  const _num = name.match(/\d+/)
-
-  if (_alpha && _num) {
-    return [_alpha[0], parseInt(_num[0], 10)]
-  }
+const parseRowAndColumn = (name: string): [string, number] => {
+  const match = name.match(cellNameRegEx)
+  return match ? [match[1], parseInt(match[2], 10)] : ['A', 1]
 }
 
 /**
@@ -169,7 +143,7 @@ const parseRowAndColumn = (name: string): [string, number] | void => {
  */
 const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
   type: 'TableCell',
-  content: [showXlsxCell(cell)]
+  content: [decodeCell(cell)]
 })
 
 interface Worksheet {
@@ -190,14 +164,14 @@ interface RowMap {
  * @returns {stencila.TableCell}
  */
 const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
-  Object.entries(worksheet).reduce((map: RowMap, [name, cell]) => {
+  Object.entries(worksheet).reduce((rowMap: RowMap, [name, cell]) => {
     const coords = parseRowAndColumn(name)
     if (coords) {
       const [alpha, num] = coords
       return {
-        ...map,
+        ...rowMap,
         [num]: {
-          ...(map[num] || {}),
+          ...(rowMap[num] || {}),
           [alpha]: {
             name: alpha + num,
             ...xlsxCelltoStencilaCell(cell)
@@ -205,7 +179,7 @@ const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
         }
       }
     } else {
-      return map
+      return rowMap
     }
   }, {})
 
@@ -237,40 +211,6 @@ const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
     rowMapToTableRows
   )
 })
-
-const ordLength: ord.Ord<string> = ord.contramap(ord.ordNumber, s => s.length)
-
-const maxCell = (cells: Set<string>, defaultValue: () => string) =>
-  pipe(
-    [...cells],
-    array.sortBy([ordLength, ord.ordString]),
-    array.last,
-    option.getOrElse(defaultValue)
-  )
-
-/**
- * Calculates the dimensions of the sheet so that all necessary cells are processed
- *
- * @param {string[]} coords
- * @returns string
- * @example ['A1', 'A2', 'B220', 'AH17'] => 'A1:AH220'
- */
-const calcSheetRange = (coords: string[]): string => {
-  const coordMap = coords.reduce(
-    (cellMap, coord) => {
-      return {
-        cols: cellMap.cols.add((coord.match(/[a-z|A-Z]*/) || ['A'])[0]),
-        rows: cellMap.rows.add((coord.match(/\d+/) || ['1'])[0])
-      }
-    },
-    { cols: new Set('A'), rows: new Set('1') }
-  )
-
-  const maxCol = maxCell(coordMap.cols, () => 'A')
-  const maxRow = maxCell(coordMap.rows, () => '1')
-
-  return `A1:${maxCol}${maxRow}`
-}
 
 const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
   table.rows.reduce(
@@ -452,7 +392,7 @@ export function columnNameToIndex(name: string) {
  * @param name The name of the cell
  */
 export function cellNameToPosition(name: string): [number, number] {
-  const match = name.match(/^([A-Z]+)([1-9][0-9]*)$/)
+  const match = name.match(cellNameRegEx)
   if (!match) throw new Error(`Unexpected cell name "${name}".`)
   const column = columnNameToIndex(match[1])
   const row = parseInt(match[2], 10) - 1
@@ -467,3 +407,48 @@ export function cellNameToPosition(name: string): [number, number] {
 export function cellPositionToName(position: [number, number]): string {
   return `${columnIndexToName(position[0])}${position[1] + 1}`
 }
+
+/**
+ * Calculates the dimensions of the sheet so that all necessary cells are processed
+ *
+ * @param {string[]} coords
+ * @returns string
+ * @example ['A1', 'A2', 'B220', 'AH17'] => 'A1:AH220'
+ */
+const calcSheetRange = (coords: string[]): string => {
+  const coordMap = coords.reduce(
+    (cellMap, coord) => {
+      const [col, row] = parseRowAndColumn(coord)
+
+      return {
+        cols: cellMap.cols.add(col),
+        rows: cellMap.rows.add(row.toString())
+      }
+    },
+    { cols: new Set('A'), rows: new Set('1') }
+  )
+
+  const maxCol = maxCell(coordMap.cols, () => 'A')
+  const maxRow = maxCell(coordMap.rows, () => '1')
+
+  return `A1:${maxCol}${maxRow}`
+}
+
+// A function defining how to order strings based on their character length
+const ordLength: ord.Ord<string> = ord.contramap(ord.ordNumber, s => s.length)
+
+/**
+ * Given a list/Set of strings, determines the maximum value. First by string
+ * length, then by alphabetical/numerical order.
+ *
+ * @param {(Set<string> | string[])} cells ['A1', 'A2', 'B1', 'B2', ...]
+ * @param {() => string} defaultValue A function returning a constant value to
+ * be returned in case of failure such as an empty list given as input
+ */
+const maxCell = (cells: Set<string> | string[], defaultValue: () => string) =>
+  pipe(
+    [...cells],
+    array.sortBy([ordLength, ord.ordString]),
+    array.last,
+    option.getOrElse(defaultValue)
+  )

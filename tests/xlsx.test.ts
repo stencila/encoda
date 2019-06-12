@@ -72,7 +72,7 @@ const table = {
           {
             type: 'TableCell',
             name: 'B2',
-            content: ['1']
+            content: [1]
           }
         ]
       },
@@ -87,7 +87,7 @@ const table = {
           {
             type: 'TableCell',
             name: 'B3',
-            content: ['2']
+            content: [2]
           }
         ]
       },
