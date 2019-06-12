@@ -122,30 +122,6 @@ function encodeCreativeWork(node: stencila.CreativeWork) {
 
 // Worksheet <-> Table
 
-/**
- * Parses a cell coordinate name such as `B47` into it's alpha and numeric parts.
- * This is used to convert a column-indexed table data into a row-indexed table
- * (such as the one found in HTML `table` markup).
- *
- * @param {string} name
- * @returns {[string, number]}
- */
-const parseRowAndColumn = (name: string): [string, number] => {
-  const match = name.match(cellNameRegEx)
-  return match ? [match[1], parseInt(match[2], 10)] : ['A', 1]
-}
-
-/**
- * Convert spreadsheet formatted cell to a Stencila Table Cell
- *
- * @param {xlsx.CellObject} cell
- * @returns {stencila.TableCell}
- */
-const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
-  type: 'TableCell',
-  content: [decodeCell(cell)]
-})
-
 interface Worksheet {
   [cell: string]: xlsx.CellObject
 }
@@ -354,6 +330,17 @@ function encodeCell(node: stencila.Node): xlsx.CellObject | null {
 }
 
 /**
+ * Convert spreadsheet formatted cell to a Stencila Table Cell
+ *
+ * @param {xlsx.CellObject} cell
+ * @returns {stencila.TableCell}
+ */
+const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
+  type: 'TableCell',
+  content: [decodeCell(cell)]
+})
+
+/**
  * Convert a column index (e.g. `27`) into a name (e.g. `AA`)
  *
  * Thanks to https://stackoverflow.com/a/182924.
@@ -406,6 +393,19 @@ export function cellNameToPosition(name: string): [number, number] {
  */
 export function cellPositionToName(position: [number, number]): string {
   return `${columnIndexToName(position[0])}${position[1] + 1}`
+}
+
+/**
+ * Parses a cell coordinate name such as `B47` into it's alpha and numeric parts.
+ * This is used to convert a column-indexed table data into a row-indexed table
+ * (such as the one found in HTML `table` markup).
+ *
+ * @param {string} name
+ * @returns {[string, number]}
+ */
+const parseRowAndColumn = (name: string): [string, number] => {
+  const match = name.match(cellNameRegEx)
+  return match ? [match[1], parseInt(match[2], 10)] : ['A', 1]
 }
 
 /**
