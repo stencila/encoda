@@ -6,7 +6,7 @@
 [![NPM](https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat)](https://www.npmjs.com/package/@stencila/encoda)
 [![Contributors](https://img.shields.io/badge/contributors-6-orange.svg)](#contribute)
 [![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/encoda/)
-[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
+[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila) [![Greenkeeper badge](https://badges.greenkeeper.io/stencila/encoda.svg)](https://greenkeeper.io/)
 
 Encoda allows you to convert between a range of formats commonly used for "executable documents" (those containing some type of source code or calculation).
 
