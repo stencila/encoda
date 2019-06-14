@@ -1,19 +1,34 @@
 import { decode, encode } from '../src/md'
 import { dump, load } from '../src/vfile'
 
-test('decode', async () => {
-  expect(await decode(await load(kitchenSink.md))).toEqual(kitchenSink.node)
-  expect(await decode(await load(attrs.md))).toEqual(attrs.node)
+describe('encode', () => {
+  test('Kitchen Sink', async () => {
+    expect(await decode(await load(kitchenSink.md))).toEqual(kitchenSink.node)
+  })
 
-  expect(await decode(await load(splitParas.from))).toEqual(splitParas.node)
+  test('Attributes', async () => {
+    expect(await decode(await load(attrs.md))).toEqual(attrs.node)
+  })
+
+  test('Split Paragraphs', async () => {
+    expect(await decode(await load(splitParas.from))).toEqual(splitParas.node)
+  })
 })
 
-test('encode', async () => {
-  expect(await dump(await encode(kitchenSink.node))).toEqual(kitchenSink.md)
-  expect(await dump(await encode(attrs.node))).toEqual(attrs.md)
+describe('encode', () => {
+  test('', async () => {
+    expect(await dump(await encode(kitchenSink.node))).toEqual(kitchenSink.md)
+  })
+  test('', async () => {
+    expect(await dump(await encode(attrs.node))).toEqual(attrs.md)
+  })
 
-  expect(await dump(await encode(emptyParas.node))).toEqual(emptyParas.to)
-  expect(await dump(await encode(splitParas.node))).toEqual(splitParas.to)
+  test('', async () => {
+    expect(await dump(await encode(emptyParas.node))).toEqual(emptyParas.to)
+  })
+  test('', async () => {
+    expect(await dump(await encode(splitParas.node))).toEqual(splitParas.to)
+  })
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
@@ -76,11 +91,19 @@ ans = 42
 \`\`\`
 :::
 
--   First item
+-   Unordered list item one
+-   Unordered list item two
+-   Unordered list item three
+
+1.  Ordered list item one
+2.  Ordered list item two
+3.  Ordered list item three
+
+-   [ ] First item
 -   [x] Done
 -   [ ] Not done
 
-1.  One
+1.  [ ] One
 2.  [x] Two
 3.  [ ] Three
 
@@ -243,16 +266,31 @@ ans = 42
         order: 'unordered',
         items: [
           {
-            type: 'Paragraph',
-            content: ['First item']
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Unordered list item one']
+              }
+            ]
           },
           {
-            type: 'Paragraph',
-            content: [true, 'Done']
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Unordered list item two']
+              }
+            ]
           },
           {
-            type: 'Paragraph',
-            content: [false, 'Not done']
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Unordered list item three']
+              }
+            ]
           }
         ]
       },
@@ -261,16 +299,103 @@ ans = 42
         order: 'ascending',
         items: [
           {
-            type: 'Paragraph',
-            content: ['One']
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Ordered list item one']
+              }
+            ]
           },
           {
-            type: 'Paragraph',
-            content: [true, 'Two']
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Ordered list item two']
+              }
+            ]
           },
           {
-            type: 'Paragraph',
-            content: [false, 'Three']
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Ordered list item three']
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'List',
+        order: 'unordered',
+        items: [
+          {
+            type: 'ListItem',
+            checked: false,
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['First item']
+              }
+            ]
+          },
+          {
+            type: 'ListItem',
+            checked: true,
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Done']
+              }
+            ]
+          },
+          {
+            type: 'ListItem',
+            checked: false,
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Not done']
+              }
+            ]
+          }
+        ]
+      },
+      {
+        type: 'List',
+        order: 'ascending',
+        items: [
+          {
+            type: 'ListItem',
+            checked: false,
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['One']
+              }
+            ]
+          },
+          {
+            type: 'ListItem',
+            checked: true,
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Two']
+              }
+            ]
+          },
+          {
+            type: 'ListItem',
+            checked: false,
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Three']
+              }
+            ]
           }
         ]
       },

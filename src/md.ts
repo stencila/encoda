@@ -35,12 +35,28 @@ import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
 import { Encode } from '.'
+import { isBlockContent, isNode } from './util'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 const logger = getLogger('encoda:md')
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
+
+export const mdastBlockContentTypes: {
+  [key in MDAST.BlockContent['type']]: key
+} = {
+  blockquote: 'blockquote',
+  code: 'code',
+  heading: 'heading',
+  html: 'html',
+  list: 'list',
+  paragraph: 'paragraph',
+  table: 'table',
+  thematicBreak: 'thematicBreak'
+}
+
+const isMdastBlockContent = isNode<MDAST.BlockContent>(mdastBlockContentTypes)
 
 /**
  * Options for `remark-frontmatter` plugin
@@ -231,6 +247,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeCodeChunk(node as stencila.CodeChunk)
     case 'List':
       return encodeList(node as stencila.List)
+    case 'ListItem':
+      return encodeListItem(node as stencila.ListItem)
     case 'Table':
       return encodeTable(node as stencila.Table)
     case 'ThematicBreak':
@@ -571,61 +589,38 @@ function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'ascending',
-    children: list.items.map(
-      (item: stencila.Node): MDAST.ListItem => {
-        // TODO: wrap anything that is not inline content into a block e.g. para
-        const first = encodeNode(item) as MDAST.BlockContent
-        const children = [first]
-
-        // Is this a checked item (ie. a paragraph starting with a boolean)?
-        let checked: boolean | undefined = undefined
-        if (first.type === 'paragraph') {
-          // @ts-ignore
-          if (first.children[0].type === 'inline-extension') {
-            if (['true', 'false'].includes(first.children[0].name as string)) {
-              // Apply the boolean name to this list item
-              checked = first.children[0].name === 'true'
-              // Remove the boolean checkbox from the paragraph (since remark stringify does that)
-              first.children = first.children.slice(1)
-            }
-          }
-        }
-
-        return {
-          type: 'listItem',
-          checked,
-          children
-        }
-      }
-    )
+    children: list.items
+      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
+      .map(encodeListItem)
   }
 }
 
 /**
  * Encode a `MDAST.ListItem` to a `stencila.ListItem`
  */
-function encodeListItem(list: stencila.ListItem): MDAST.ListItem {
-  return {
-    type: 'listItem',
-    // TODO: Fix type signatures
-    // @ts-ignore
-    children: list.content.reduce((children, child) => {
-      const encodedNode = encodeNode(child)
-      return encodedNode ? [...children, encodedNode] : children
-    }, [])
-    // type: 'ListItem',
-    // content: list.children.map(decodeNode) as stencila.InlineContent[]
+function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
+  const encoded = {
+    type: 'listItem' as const,
+    children: listItem.content.map(encodeNode).filter(isMdastBlockContent)
   }
+
+  return listItem.checked === true || listItem.checked === false
+    ? { ...encoded, checked: listItem.checked }
+    : encoded
 }
 
 /**
  * Decode a `MDAST.List` to a `stencila.List`
  */
-function decodeListItem(list: MDAST.ListItem): stencila.ListItem {
-  return {
-    type: 'ListItem',
-    content: list.children.map(decodeNode) as stencila.InlineContent[]
+function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
+  const _listItem = {
+    type: 'ListItem' as const,
+    content: listItem.children.map(decodeNode).filter(isBlockContent)
   }
+
+  return listItem.checked === true || listItem.checked === false
+    ? { ..._listItem, checked: listItem.checked || false }
+    : _listItem
 }
 
 /**

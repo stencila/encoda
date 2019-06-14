@@ -1,6 +1,9 @@
 import * as stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
+import { record } from 'fp-ts'
+import { eqString } from 'fp-ts/lib/Eq'
+import { pipe } from 'fp-ts/lib/pipeable'
 import fs from 'fs-extra'
 import globby from 'globby'
 import produce from 'immer'
@@ -244,3 +247,49 @@ export function coerce<Key extends keyof stencila.Types>(
     }
   }
 }
+
+export const isStencilaNode = (
+  node?: stencila.Node
+): node is stencila.Thing => {
+  if (!node) return false
+  if (Array.isArray(node)) return false
+  if (typeof node !== 'object') return false
+  if (!node.type) return false
+  return true
+}
+
+export const isNodeType = <Ts extends { type: string }>(
+  typeMap: { [key in Ts['type']]: key }
+) => (nodeType: string): boolean => {
+  return pipe(record.elem(eqString)(nodeType, typeMap))
+}
+
+type NodeType = { type: string } & { [key: string]: unknown }
+
+const hasTypeProp = (o: { type?: string }): o is NodeType =>
+  o.type ? true : false
+
+export const isNode = <T extends object, Ts extends NodeType = NodeType>(
+  typeMap: { [key in Ts['type']]: key }
+) => (n: unknown): n is T => {
+  if (!n) return false
+  if (Array.isArray(n)) return false
+  if (typeof n !== 'object') return false
+  if (n === null) return false
+  return !hasTypeProp(n) ? false : isNodeType<Ts>(typeMap)(n.type)
+}
+
+export const blockContentTypes: {
+  [key in stencila.BlockContent['type']]: key
+} = {
+  CodeBlock: 'CodeBlock',
+  CodeChunk: 'CodeChunk',
+  Heading: 'Heading',
+  List: 'List',
+  Paragraph: 'Paragraph',
+  QuoteBlock: 'QuoteBlock',
+  Table: 'Table',
+  ThematicBreak: 'ThematicBreak'
+}
+
+export const isBlockContent = isNode<stencila.BlockContent>(blockContentTypes)
