@@ -639,8 +639,12 @@ function decodeInlines(nodes: Pandoc.Inline[]): stencila.InlineContent[] {
       if (node.t === 'Space') previous.c += ' '
       else if (node.t === 'Str') previous.c += node.c
     } else {
-      inlines.push(node)
-      previous = node
+      let current = node
+      if (node.t === 'Space') {
+        current = { t: 'Str', c: ' ' }
+      }
+      inlines.push(current)
+      previous = current
     }
   }
   return inlines.map(decodeInline)
@@ -905,9 +909,9 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
   const link: stencila.Link = {
     type: 'Link',
     target,
-    content: decodeInlines(node.c[1]),
-    description: title
+    content: decodeInlines(node.c[1])
   }
+  if (title) link.description = title
   const meta = decodeAttrs(node.c[0])
   if (meta) link.meta = meta
   return link
