@@ -220,27 +220,32 @@ export const encode: Encode<EncodeRPNGOptions> = async (
   // Generate image of rendered HTML
   const page = await browser()
 
-  await page.setContent(
-    `<div id="target" style="${
-      fullPage ? '' : 'display: inline-block; padding: 0.1rem'
-    }">${html}</div>`,
-    {
-      waitUntil: 'networkidle0'
-    }
-  )
+  let buffer
 
-  const elem = await page.$('#target')
-  if (!elem) throw new Error('Element not found!')
+  try {
+    await page.setContent(
+      `<div id="target" style="${
+        fullPage ? '' : 'display: inline-block; padding: 0.1rem'
+      }">${html}</div>`,
+      {
+        waitUntil: 'networkidle0'
+      }
+    )
 
-  const buffer = fullPage
-    ? await page.screenshot({
-        encoding: 'binary',
-        fullPage: true
-      })
-    : await elem.screenshot({
-        encoding: 'binary'
-      })
+    const elem = await page.$('#target')
+    if (!elem) throw new Error('Element not found!')
 
+    buffer = fullPage
+      ? await page.screenshot({
+          encoding: 'binary',
+          fullPage: true
+        })
+      : await elem.screenshot({
+          encoding: 'binary'
+        })
+  } finally {
+    await browser('close')
+  }
   // Insert JSON of the thing into the image
   const json = JSON.stringify(node)
   const image = insert(KEYWORD, json, buffer)

@@ -39,12 +39,6 @@ export function page() {
     page = undefined
   }
 
-  // Always shutdown before exiting the Node process
-  // We use `beforeExit` because async operations are not supported
-  // by `exit`.
-  // See https://nodejs.org/api/process.html#process_event_beforeexit
-  process.on('beforeExit', shutdown)
-
   function thunk(): Promise<puppeteer.Page>
   function thunk(close: 'close'): Promise<void>
   function thunk(close?: 'close') {

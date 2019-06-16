@@ -46,18 +46,22 @@ export const encode: Encode = async (
   const html = await dump(node, { ...options, format: 'html' })
 
   const page = await browser()
-  await page.setContent(html, { waitUntil: 'networkidle0' })
-  const buffer = await page.pdf({
-    path: options.filePath,
-    format: 'A4',
-    printBackground: true,
-    margin: {
-      top: '2.54cm',
-      bottom: '2.54cm',
-      left: '2.54cm',
-      right: '2.54cm'
-    }
-  })
+  try {
+    await page.setContent(html, { waitUntil: 'networkidle0' })
+    const buffer = await page.pdf({
+      path: options.filePath,
+      format: 'A4',
+      printBackground: true,
+      margin: {
+        top: '2.54cm',
+        bottom: '2.54cm',
+        left: '2.54cm',
+        right: '2.54cm'
+      }
+    })
 
-  return load(buffer)
+    return load(buffer)
+  } finally {
+    await browser('close')
+  }
 }
