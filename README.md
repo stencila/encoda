@@ -15,13 +15,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 <!-- toc -->
 
 - [Status](#status)
-  - [Documents, markup, and notebook formats](#documents-markup-and-notebook-formats)
-  - [Tabular data and spreadsheet formats](#tabular-data-and-spreadsheet-formats)
-  - [Other formats](#other-formats)
-- [Demo](#demo)
 - [Install](#install)
 - [Use](#use)
-  - [Example](#example)
 - [Develop](#develop)
 - [Roadmap](#roadmap)
 - [Contribute](#contribute)
@@ -33,55 +28,61 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 ## Status
 
-The following tables list the status of converters that have been developed, are in development, or are being considered for development.
-We'll be developing converters based on demand from users. So if you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no
-issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
+| Format | Name | Approach | Status |
+| ------ | ---- | -------- | ------ |
 
-When the converters have been better tested, the plan is to integrate them into [Stencila Desktop](https://github.com/stencila/desktop) as a menu item e.g. `Save as... > Jupyter Notebook`
 
-You can also provide your feedback on the friendly [Stencila Community Forum](https://community.stenci.la)
-and [Stencila Gitter channel](https://gitter.im/stencila/stencila).
+| **Text**
+| Markdown | `md` | Extens | &alpha; |
+| Latex | `tex` | | &alpha; |
+| Microsoft Word | `docx` | rPNG | &alpha; |
+| Google Docs | `gdoc` | rPNG | &alpha; |
+| Open Document Text | `odt` | rPNG | &alpha; |
+| HTML | `html` | Extens | &alpha; |
+| JATS | `jats` | Extens | &alpha; |
+| Document Archive (DAR) | `dar` | Extens | 0 |
+| Portable Document Format | `pdf` | rPNG | &alpha; |
+| **Notebooks**
+| Jupyter | `ipynb` | Native | &alpha; |
+| R Markdown | `rmd` | Native | 0 |
+| **Presentations**
+| Microsoft Powerpoint | `pptx` | rPNG | 0 |
+| Demo Magic | `dmagic` | Native | &beta; |
+| **Spreadsheets**
+| Microsoft Excel | `xlsx` | Formula | &alpha; |
+| Google Sheets | `gsheet` | Formula | 0 |
+| Open Document Spreadsheet | `ods` | Formula | &alpha; |
+| **Tabular data**
+| CSV | `csv` | NA | &beta; |
+| [CSVY] | `csvy` | NA | 0 |
+| [Tabular Data Package] | `tdp` | NA | &beta; |
+| **Data interchange**
+| JSON | `json` | Native | 1 |
+| JSON5 | `json5` | Native | 1 |
+| YAML | `yaml` | Native | 1 |
 
-#### Documents, markup, and notebook formats
+- **Approach**: how executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented in the document
 
-| Format     |                           Status                            |
-| ---------- | :---------------------------------------------------------: |
-| Markdown   | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| RMarkdown  | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| Latex      | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| HTML       | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| PDF        |                              -                              |
-| Google Doc | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
+  - Native: the format natively supports executable nodes
+  - Extens.: executable nodes are supported via extensions to the format e.g. in HTML and DAR, a `CodeChunk` is represented using a `<stencila-chunk>` element
+  - rPNG: executable nodes are supported via reproducible PNG images inserted into the document
+  - Formula: executable `CodeExpr` nodes are represented using formulae
 
-#### Tabular data and spreadsheet formats
+- **Status**:
+  - 0: Not yet implemented
+  - &alpha;: Alpha, initial implementation
+  - &beta;: Beta, ready for user testing
+  - 1: Ready for production use
 
-| Format                                                                          |                           Status                            |
-| ------------------------------------------------------------------------------- | :---------------------------------------------------------: |
-| CSV                                                                             | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| Yaml front matter for CSV [CSVY](http://csvy.org/)                              |     [#25](https://github.com/stencila/encoda/issues/25)     |
-| Excel (.xlsx)                                                                   | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| OpenDocument Spreadsheet                                                        | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-| [Tabular Data Package](https://frictionlessdata.io/specs/tabular-data-package/) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-
-#### Other formats
-
-| Format                                                                                |                           Status                            |
-| ------------------------------------------------------------------------------------- | :---------------------------------------------------------: |
-| Reproducible PNG ([rPNG](https://github.com/stencila/encoda/blob/master/src/rpng.ts)) | ![alpha](https://img.shields.io/badge/status-alpha-red.svg) |
-
-## Demo
-
-> :sparkles: Coming soon!
+If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
 ## Install
 
 ```bash
-npm install @stencila/encoda
+npm install @stencila/encoda --global
 ```
 
 ## Use
-
-### Example
 
 ```bash
 encoda convert document.md document.jats.xml
@@ -89,10 +90,10 @@ encoda convert document.md document.jats.xml
 
 You can use the `--from` and `--to` flag options to explicitly specify formats. For example,
 
-| Option      | Description                                                                                        |
-| ----------- | -------------------------------------------------------------------------------------------------- |
-| `--to yaml` | Convert into YAML format of [Stencila Schema](https://github.com/stencila/schema) JSON.            |
-| `--to tdp`  | Convert into [Tabular Data Package](https://frictionlessdata.io/specs/tabular-data-package/) JSON. |
+| Option      | Description                                                                             |
+| ----------- | --------------------------------------------------------------------------------------- |
+| `--to yaml` | Convert into YAML format of [Stencila Schema](https://github.com/stencila/schema) JSON. |
+| `--to tdp`  | Convert into [Tabular Data Package] JSON.                                               |
 
 API documentation is available at https://stencila.github.io/encoda.
 
@@ -158,7 +159,8 @@ docker run stencila/encoda
 
 ## Contribute
 
-We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬. See [CONTRIBUTING.md](CONTRIBUTING.md) for more on where to start.
+We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬. See [CONTRIBUTING.md](CONTRIBUTING.md) for more on where to start. You can also provide your feedback on the [Community Forum](https://community.stenci.la)
+and [Gitter channel](https://gitter.im/stencila/stencila).
 
 We recognize [all contributors](https://allcontributors.org/) - including those that don't push code! ✨
 
@@ -195,3 +197,6 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
   <img width="250" src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png">
   <img width="250" src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png">
 </p>
+
+[csvy]: http://csvy.org/
+[tabular data package]: https://frictionlessdata.io/specs/tabular-data-package/
