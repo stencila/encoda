@@ -424,8 +424,7 @@ const collapseSpaces: testCase = {
         content: [
           'One two three  four. ',
           { type: 'Strong', content: ['Strong then space'] },
-          ' ',
-          '.'
+          ' .'
         ]
       }
     ]
