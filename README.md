@@ -28,38 +28,36 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 ## Status
 
-| Format | Name | Approach | Status |
-| ------ | ---- | -------- | ------ |
-
-
-| **Text**
-| Markdown | `md` | Extens | &alpha; |
-| Latex | `tex` | | &alpha; |
-| Microsoft Word | `docx` | rPNG | &alpha; |
-| Google Docs | `gdoc` | rPNG | &alpha; |
-| Open Document Text | `odt` | rPNG | &alpha; |
-| HTML | `html` | Extens | &alpha; |
-| JATS | `jats` | Extens | &alpha; |
-| Document Archive (DAR) | `dar` | Extens | 0 |
-| Portable Document Format | `pdf` | rPNG | &alpha; |
-| **Notebooks**
-| Jupyter | `ipynb` | Native | &alpha; |
-| R Markdown | `rmd` | Native | 0 |
-| **Presentations**
-| Microsoft Powerpoint | `pptx` | rPNG | 0 |
-| Demo Magic | `dmagic` | Native | &beta; |
-| **Spreadsheets**
-| Microsoft Excel | `xlsx` | Formula | &alpha; |
-| Google Sheets | `gsheet` | Formula | 0 |
-| Open Document Spreadsheet | `ods` | Formula | &alpha; |
-| **Tabular data**
-| CSV | `csv` | NA | &beta; |
-| [CSVY] | `csvy` | NA | 0 |
-| [Tabular Data Package] | `tdp` | NA | &beta; |
-| **Data interchange**
-| JSON | `json` | Native | 1 |
-| JSON5 | `json5` | Native | 1 |
-| YAML | `yaml` | Native | 1 |
+| Format                    | Name     | Approach | Status  |
+| ------------------------- | -------- | -------- | ------- |
+| **Text**                  |
+| Markdown                  | `md`     | Extens   | &alpha; |
+| Latex                     | `tex`    |          | &alpha; |
+| Microsoft Word            | `docx`   | rPNG     | &alpha; |
+| Google Docs               | `gdoc`   | rPNG     | &alpha; |
+| Open Document Text        | `odt`    | rPNG     | &alpha; |
+| HTML                      | `html`   | Extens   | &alpha; |
+| JATS                      | `jats`   | Extens   | &alpha; |
+| Document Archive (DAR)    | `dar`    | Extens   | 0       |
+| Portable Document Format  | `pdf`    | rPNG     | &alpha; |
+| **Notebooks**             |
+| Jupyter                   | `ipynb`  | Native   | &alpha; |
+| R Markdown                | `rmd`    | Native   | 0       |
+| **Presentations**         |
+| Microsoft Powerpoint      | `pptx`   | rPNG     | 0       |
+| Demo Magic                | `dmagic` | Native   | &beta;  |
+| **Spreadsheets**          |
+| Microsoft Excel           | `xlsx`   | Formula  | &alpha; |
+| Google Sheets             | `gsheet` | Formula  | 0       |
+| Open Document Spreadsheet | `ods`    | Formula  | &alpha; |
+| **Tabular data**          |
+| CSV                       | `csv`    | NA       | &beta;  |
+| [CSVY]                    | `csvy`   | NA       | 0       |
+| [Tabular Data Package]    | `tdp`    | NA       | &beta;  |
+| **Data interchange**      |
+| JSON                      | `json`   | Native   | 1       |
+| JSON5                     | `json5`  | Native   | 1       |
+| YAML                      | `yaml`   | Native   | 1       |
 
 - **Approach**: how executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented in the document
 
