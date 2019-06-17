@@ -61,6 +61,7 @@ import path from 'path'
 import { Encode, EncodeOptions } from '.'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
+import { columnIndexToName } from './xlsx'
 
 const document = new jsdom.JSDOM().window.document
 
@@ -137,6 +138,8 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeList(node as HTMLOListElement)
     case 'table':
       return decodeTable(node as HTMLTableElement)
+    case 'stencila-datatable':
+      return decodeDatatable(node as HTMLDivElement)
     case 'hr':
       return decodeHR(node as HTMLHRElement)
 
@@ -203,6 +206,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeList(node as stencila.List)
     case 'Table':
       return encodeTable(node as stencila.Table)
+    case 'Datatable':
+      return encodeDatatable(node as stencila.Datatable)
     case 'ThematicBreak':
       return encodeThematicBreak(node as stencila.ThematicBreak)
 
@@ -537,6 +542,78 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
       }
     )
   ))
+}
+
+/**
+ * Decode a HTML `<stencila-datatable>` element to a Stencila `Datatable` node.
+ */
+function decodeDatatable(elem: HTMLElement): stencila.Datatable {
+  let columns: stencila.DatatableColumn[] = []
+  const table = elem.querySelector('table')
+  if (table) {
+    const thead = table.querySelector('thead')
+    if (thead) {
+      columns = Array.from(thead.querySelectorAll('tr th')).map(
+        (row, index): stencila.DatatableColumn => {
+          const th = row.querySelector('th')
+          const name = (th && th.innerText) || columnIndexToName(index)
+          return {
+            type: 'DatatableColumn',
+            name,
+            values: []
+          }
+        }
+      )
+    }
+
+    const tbody = table.querySelector('tbody')
+    if (tbody) {
+      let rowi = 0
+      for (const row of tbody.querySelectorAll('tr')) {
+        let coli = 0
+        for (const col of row.querySelectorAll('td')) {
+          // TODO: Is further parsing e.g. to a number
+          // required here?
+          columns[coli].values[rowi] = col.innerHTML
+          coli += 1
+        }
+        rowi += 1
+      }
+    }
+  }
+
+  return {
+    type: 'Datatable',
+    columns
+  }
+}
+
+/**
+ * Encode a Stencila `Datatable` node to a HTML `<stencila-datatable>` element.
+ *
+ * Note: currently this function is lossy for `DatatableColumn` properties
+ * other than `name` and `value` (e.g. `schema`). These could be encoded into
+ * the `<thead>`.
+ */
+function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
+  const cols = datatable.columns
+  const rows = (cols[0] && cols[0].values.map((_, row) => row)) || []
+
+  // prettier-ignore
+  return h('stencila-datatable', 
+    h('table',
+      h('thead',
+        h('tr', cols.map(col => (
+          h('th', col.name)
+        )))
+      ),
+      h('tbody', rows.map((_, row) => (
+        h('tr', cols.map(col => (
+          h('td', col.values[row])
+        )))
+      )))
+    )
+  )
 }
 
 /**

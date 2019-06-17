@@ -1,3 +1,4 @@
+import stencila from '@stencila/schema'
 import fs from 'fs'
 import { beautify, decode, encode } from '../src/html'
 import { dump, load } from '../src/vfile'
@@ -12,11 +13,13 @@ const stylesheet = fs.readFileSync(
 test('decode', async () => {
   expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)
   expect(await decode(load(attrs.html))).toEqual(attrs.node)
+  expect(await decode(load(dt.html))).toEqual(dt.node)
 })
 
 test('encode', async () => {
   expect(await dump(await encode(kitchenSink.node))).toMatchSnapshot()
   expect(await dump(await encode(attrs.node))).toMatchSnapshot()
+  expect(await dump(await encode(dt.node))).toEqual(dt.html)
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
@@ -344,4 +347,50 @@ const attrs = {
       '.'
     ]
   }
+}
+
+/**
+ * Example for testing encoding/decoding of `Datatable` nodes
+ */
+const dtNode: stencila.Datatable = {
+  type: 'Datatable',
+  columns: [
+    {
+      type: 'DatatableColumn',
+      name: 'A',
+      values: ['1', '2', '3']
+    },
+    {
+      type: 'DatatableColumn',
+      name: 'B',
+      values: ['4', '5', '6']
+    }
+  ]
+}
+const dt = {
+  html: `<stencila-datatable>
+  <table>
+    <thead>
+      <tr>
+        <th>A</th>
+        <th>B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>6</td>
+      </tr>
+    </tbody>
+  </table>
+</stencila-datatable>`,
+  node: dtNode
 }

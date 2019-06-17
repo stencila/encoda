@@ -14,7 +14,7 @@ import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '.'
 import type from './util/type'
-import { load, VFile } from './vfile'
+import { dump, load, VFile } from './vfile'
 
 export const mediaTypes = [
   // spell-checker: disable
@@ -25,9 +25,8 @@ export const mediaTypes = [
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
 export async function decode(file: VFile): Promise<stencila.Node> {
-  let workbook = xlsx.read(file.contents, {
-    type: 'buffer'
-  })
+  const buffer = await dump(file, 'buffer')
+  let workbook = xlsx.read(buffer, { type: 'buffer' })
   return decodeWorkbook(workbook)
 }
 

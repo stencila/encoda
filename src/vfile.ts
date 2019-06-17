@@ -43,13 +43,25 @@ export function load(contents: VFileContents): VFile {
  *
  * @param file The virtual file to dump
  */
-export async function dump(vfile: VFile): Promise<string> {
-  if (vfile.contents) return vfile.toString()
+export async function dump(vfile: VFile, mode?: 'string'): Promise<string>
+export async function dump(vfile: VFile, mode?: 'buffer'): Promise<Buffer>
+export async function dump(
+  vfile: VFile,
+  mode?: 'string' | 'buffer'
+): Promise<string | Buffer> {
+  mode = mode || 'string'
+  if (vfile.contents) {
+    if (mode === 'string') return vfile.toString()
+    else
+      return Buffer.isBuffer(vfile.contents)
+        ? vfile.contents
+        : Buffer.from(vfile.contents)
+  }
   if (vfile.path) {
     const readFile = await toVFile.read(vfile.path)
-    return readFile.toString()
+    return mode === 'string' ? readFile.toString() : readFile.contents
   }
-  return ''
+  return mode === 'string' ? '' : new Buffer(0)
 }
 
 /**
