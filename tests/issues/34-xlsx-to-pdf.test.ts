@@ -3,7 +3,7 @@ import path from 'path'
 import { read, write } from '../../src'
 
 const xlsx = path.join(__dirname, '34-xlsx-to-pdf.xlsx')
-const pdf = path.join(__dirname, '34-xlsx-to-pdf.pdf')
+const pdf = path.join(__dirname, '34-xlsx-to-pdf.out.pdf')
 
 /**
  * This issue was reported by a user attempting to convert directly
