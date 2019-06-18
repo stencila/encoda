@@ -8,9 +8,8 @@ os:
   - osx
 
 script:
-  - npm run lint
   - npm run check
-  - npm run cover
+  - npm run test:cover
   - npm run docs
   - npm run build
 
@@ -28,7 +27,7 @@ deploy:
     on:
       branch: master
       condition: $TRAVIS_OS_NAME = linux
-  
+
   # Do a semantic release (only on Linux)
   - provider: script
     skip_cleanup: true

@@ -7,9 +7,9 @@
   "bin": "dist/cli.js",
   "scripts": {
     "install": "node install.js",
-    "lint": "tslint --project tsconfig.json --fix --format stylish ./src/**/*.ts",
     "test": "jest",
-    "cover": "jest --collectCoverage",
+    "test:cover": "jest --collectCoverage",
+    "test:watch": "jest --watch",
     "check": "npm run build && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema --ignore-module @stencila/thema .",
@@ -72,6 +72,7 @@
   "devDependencies": {
     "@jupyterlab/coreutils": "^2.2.1",
     "@stencila/dev-config": "^1.0.5",
+    "@stencila/typescript-boilerplate": "^1.1.1",
     "@types/escape-html": "0.0.20",
     "@types/fs-extra": "^7.0.0",
     "@types/get-stdin": "^7.0.0",
@@ -90,19 +91,9 @@
     "delay": "^4.2.0",
     "dependency-check": "^3.3.0",
     "googleapis": "^40.0.0",
-    "jest": "^24.7.1",
-    "jest-expect-message": "^1.0.2",
     "markdown-toc": "^1.2.0",
-    "semantic-release": "^15.13.12",
     "tar": "^4.4.9",
-    "ts-jest": "^24.0.1",
-    "ts-node": "^8.2.0",
-    "tslint": "^5.17.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "typedoc": "^0.14.2",
-    "typedoc-plugin-external-module-name": "^2.0.0",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.2"
   },
   "pandoc": {
     "version": "2.7.2"
@@ -126,6 +117,24 @@
   },
   "eslintConfig": {
     "extends": "@stencila/eslint-config"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/matchers.ts"
+    ],
+    "globalTeardown": "<rootDir>/tests/teardown.ts",
+    "coveragePathIgnorePatterns": [
+      "tests/helpers.ts",
+      "tests/fixtures/*"
+    ],
+    "watchPathIgnorePatterns": [
+      "tests/output"
+    ]
   },
   "husky": {
     "hooks": {
