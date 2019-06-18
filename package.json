@@ -71,10 +71,7 @@
   },
   "devDependencies": {
     "@jupyterlab/coreutils": "^2.2.1",
-    "@semantic-release/commit-analyzer": "^6.1.0",
-    "@semantic-release/git": "^7.0.8",
-    "@semantic-release/npm": "^5.1.7",
-    "@semantic-release/release-notes-generator": "^7.1.4",
+    "@stencila/dev-config": "^1.0.5",
     "@types/escape-html": "0.0.20",
     "@types/fs-extra": "^7.0.0",
     "@types/get-stdin": "^7.0.0",
@@ -90,16 +87,12 @@
     "@types/puppeteer": "^1.12.3",
     "@types/tar": "^4.0.0",
     "@types/unist": "^2.0.3",
-    "all-contributors-cli": "^6.6.1",
     "delay": "^4.2.0",
     "dependency-check": "^3.3.0",
     "googleapis": "^40.0.0",
-    "husky": "^2.3.0",
     "jest": "^24.7.1",
     "jest-expect-message": "^1.0.2",
-    "lint-staged": "^8.1.7",
     "markdown-toc": "^1.2.0",
-    "prettier": "^1.17.1",
     "semantic-release": "^15.13.12",
     "tar": "^4.4.9",
     "ts-jest": "^24.0.1",
@@ -114,28 +107,34 @@
   "pandoc": {
     "version": "2.7.2"
   },
-  "prettier": {
-    "singleQuote": true,
-    "semi": false
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "scope-case": [
+        2,
+        "always",
+        "sentence-case"
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": "@stencila/eslint-config"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+  "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ]
+    "extends": "@stencila/semantic-release-config"
   }
 }
