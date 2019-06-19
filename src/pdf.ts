@@ -29,9 +29,6 @@ export async function decode(file: VFile): Promise<stencila.Node> {
   throw new Error(`Parsing of PDF files is not supported.`)
 }
 
-// The Puppeteer page that will be used to generate PDFs
-export const browser = puppeteer.page()
-
 /**
  * Encode a Stencila `Node` to a `VFile` with PDF content.
  *
@@ -45,7 +42,7 @@ export const encode: Encode = async (
 ): Promise<VFile> => {
   const html = await dump(node, { ...options, format: 'html' })
 
-  const page = await browser()
+  const page = await puppeteer.page()
   await page.setContent(html, { waitUntil: 'networkidle0' })
   const buffer = await page.pdf({
     path: options.filePath,
@@ -58,6 +55,7 @@ export const encode: Encode = async (
       right: '2.54cm'
     }
   })
+  await page.close()
 
   return load(buffer)
 }

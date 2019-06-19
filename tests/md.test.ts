@@ -383,9 +383,7 @@ A \`code\`{lang=r}.
           'A ',
           {
             type: 'Code',
-            meta: {
-              lang: 'r'
-            },
+            language: 'r',
             value: 'code'
           },
           '.'

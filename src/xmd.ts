@@ -63,6 +63,7 @@
  */
 
 import * as stencila from '@stencila/schema'
+import produce from 'immer'
 import { Encode } from '.'
 import * as md from './md'
 import { dump, load, VFile } from './vfile'
@@ -80,16 +81,15 @@ export const extNames = ['xmd', 'rmd']
  */
 export async function decode(file: VFile): Promise<stencila.Node> {
   const xmd = await dump(file)
-  // Inline code chunks...
-  let cmd = xmd.replace(/`([a-z]+)\s+([^`]*)`/g, (match, lang, text) => {
-    // ...are replaced with inline code with `lang` attr
-    return `\`${text}\`{.exec lang=${lang}}`
-  })
-  // Block code chunks...
+  // Inline code chunks are replaced with special inline nodes
+  let cmd = xmd.replace(
+    /`([a-z]+)\s+([^`]*)`/g,
+    (match, lang, text) => `\`${text}\`{type=expr lang=${lang}}`
+  )
+  // Block code chunks are replaced with a `chunk` block extension
   cmd = cmd.replace(
     /```\s*{([a-z]+)\s*([^}]*)}\s*\n(.*)\n```\n/gm,
     (match, lang, options, text) => {
-      // Replace with a `chunk` block extension
       let md = 'chunk:\n:::\n``` ' + lang
       if (options) md += ` ${options}`
       return md + '\n' + text + '\n```\n:::\n'
@@ -102,19 +102,22 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * Encode a Stencila node to XMarkdown.
  *
  * This function first transforms the node by converting
- * `CodeExpr` node to `Code` nodes and `CodeChunk` nodes
- * to `CodeBlock` nodes.
+ * any `CodeExpr` nodes to `Code` nodes and `CodeChunk` nodes
+ * to `CodeBlock` nodes. This is intentionally lossy since any results of
+ * execution (e.g. error or outputs) are not stored in RMarkdown.
  *
  * @param node The Stencila node to encode
- * @param filePath The file system path to write to
  */
 export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
-  const transformed = transform(node)
-  const mdFile = await md.encode(transformed)
-  const cmd = await dump(mdFile)
+  const transformed = produce(node, transform)
+  const file = await md.encode(transformed)
+  const cmd = await dump(file)
+  // Replace Commonmark "infor string" with R Markdown curly brace
+  // enclosed options
+  // TODO: Check parsing of options. Comma separated?
   const xmd = cmd.replace(
-    /^\`\`\`([^\s]+)/gm,
-    (match, lang) => `\`\`\` {${lang}}`
+    /```\s*(\w+[^\n]*)/g,
+    (match, options) => `\`\`\` {${options}}`
   )
   return load(xmd)
 
@@ -133,6 +136,7 @@ export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
         language: node.programmingLanguage,
         value: node.text
       }
+      if (node.meta) codeBlock.meta = node.meta
       return codeBlock
     }
     for (const [key, child] of Object.entries(node)) {

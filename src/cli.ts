@@ -36,9 +36,7 @@ import * as logga from '@stencila/logga'
 import minimist from 'minimist'
 import * as encoda from '.'
 import './boot'
-
-// Print log messages to the console.
-logga.addHandler()
+import * as puppeteer from './puppeteer'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['fullPage'],
@@ -49,13 +47,22 @@ const { _, ...options } = minimist(process.argv.slice(2), {
 const name = _[0]
 const args = _.slice(1)
 
+// Print log messages to the console.
+logga.addHandler((data: logga.LogData) => {
+  const level = options.debug ? 4 : 3
+  if (data.level < level) {
+    console.error(
+      `${data.tag} ${logga.LogLevel[data.level].toUpperCase()} ${data.message}`
+    )
+  }
+})
+
 // @ts-ignore
 const func = encoda[name]
 if (!func) throw new Error(`No such function "${name}"`)
 ;(async () => {
-  // Call the function (which may, or may not be async) and then
+  // Call the function (which may, or may not be async)
   await func(...args, options)
-  // Exit the process (necessary in case there are Puppeteer
-  // instances open etc
-  process.exit(0)
+  // Clean up
+  await puppeteer.shutdown()
 })()

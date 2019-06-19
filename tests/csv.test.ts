@@ -99,7 +99,7 @@ const formulas: { content: string; node: Table } = {
   }
 }
 
-test.skip('decode', async () => {
+test('decode', async () => {
   expect(await decode(load(simple.content))).toEqual(simple.node)
   expect(await decode(load(named.content))).toEqual(named.node)
   expect(await decode(load(formulas.content))).toEqual(formulas.node)

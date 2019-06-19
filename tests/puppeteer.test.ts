@@ -1,14 +1,15 @@
-import { page } from '../src/puppeteer'
+import { page, shutdown } from '../src/puppeteer'
 
 test('page', async () => {
-  const p = page()
+  const first = await page()
+  expect(first).toBeTruthy()
 
-  const q = await p()
-  expect(q).toBeTruthy()
-  // Get the same page the second time
-  expect(await p()).toBe(q)
+  // Get a different the second time
+  const second = await page()
+  expect(second).toBeTruthy()
+  expect(second).not.toBe(first)
 
-  expect(await p('close')).toBeUndefined()
+  expect(await shutdown()).toBeUndefined()
   // Can call a second time without blowing up
-  expect(await p('close')).toBeUndefined()
+  expect(await shutdown()).toBeUndefined()
 })
