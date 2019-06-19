@@ -6,6 +6,7 @@ import * as puppeteer from '../src/puppeteer'
  *
  * See https://jestjs.io/docs/en/configuration#globalteardown-string
  */
-export default function teardown() {
-  puppeteer.shutdown()
+export default async function teardown() {
+  console.log('Running global teardown')
+  await puppeteer.shutdown()
 }

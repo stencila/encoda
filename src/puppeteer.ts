@@ -41,12 +41,14 @@ export async function page(): Promise<puppeteer.Page> {
  * Close the browser.
  */
 export async function shutdown(): Promise<void> {
-  if (browser) {
-    logger.debug(`Closing browser. pid: ${browser.process().pid}`)
-    await browser.close()
-    logger.debug('Browser closed')
-    browser = undefined
-  }
+  await lock.acquire('browser', async () => {
+    if (browser) {
+      logger.debug(`Closing browser. pid: ${browser.process().pid}`)
+      await browser.close()
+      logger.debug('Browser closed')
+      browser = undefined
+    }
+  })
 }
 
 // Always shutdown before exiting the Node process
