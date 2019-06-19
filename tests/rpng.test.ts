@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import {
-  browser,
   decode,
   decodeSync,
   encode,
@@ -75,8 +74,4 @@ test('encoding of extended character sets', () => {
   image = insert(keyword, content, image)
   expect(has(keyword, image)).toBe(true)
   expect(extract(keyword, image)).toEqual(content)
-})
-
-afterAll(async () => {
-  await browser('close')
 })

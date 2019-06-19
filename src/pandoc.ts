@@ -11,7 +11,7 @@ import { create, load, VFile, write } from './vfile'
 
 export { InputFormat, OutputFormat } from './pandoc-types'
 
-const logger = getLogger('encoda')
+const logger = getLogger('encoda:pandoc')
 
 // Although this codec is usually used as a base for others (e.g `docx`),
 // the following definitions allow Pandoc JSON to be decoded or encoded
@@ -114,7 +114,9 @@ let encodePromises: Promise<any>[] = []
  */
 function run(input: string | Buffer, args: string[]): Promise<string> {
   args.push(`--data-dir=${pandocDataDir}`)
-  logger.debug(`Running ${pandocPath} with args:\n  ${args.join('\n  ')}`)
+  logger.debug(
+    `Pandoc spawn\n  path: ${pandocPath}\n  args:\n    ${args.join('\n    ')}`
+  )
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(pandocPath, args)
 
@@ -128,11 +130,16 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
     })
     child.on('close', () => {
       if (stderr) {
-        stderr = `Pandoc error\n  message: ${stderr}  args:\n    ${args.join(
-          '\n    '
-        )}\n`
-        reject(new Error(stderr))
-      } else resolve(stdout)
+        logger.error(
+          `Pandoc error!\n  message: ${stderr}  args:\n    ${args.join(
+            '\n    '
+          )}\n`
+        )
+        reject()
+      } else {
+        logger.debug(`Pandoc success.`)
+        resolve(stdout)
+      }
     })
     child.on('error', err => {
       reject(err)

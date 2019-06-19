@@ -16,7 +16,3 @@ test('encode', async () => {
   expect(Buffer.isBuffer(doc.contents)).toBe(true)
   expect(doc.contents.slice(0, 5).toString()).toBe('%PDF-')
 })
-
-afterAll(async () => {
-  await pdf.browser('close')
-})

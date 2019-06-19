@@ -178,9 +178,6 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
   }
 }
 
-// The Puppeteer page that will be used to generate PDFs
-export const browser = puppeteer.page()
-
 interface EncodeRPNGOptions {
   fullPage?: boolean
 }
@@ -217,8 +214,7 @@ export const encode: Encode<EncodeRPNGOptions> = async (
     format: 'html'
   })
 
-  // Generate image of rendered HTML
-  const page = await browser()
+  const page = await puppeteer.page()
 
   await page.setContent(
     `<div id="target" style="${
@@ -240,6 +236,8 @@ export const encode: Encode<EncodeRPNGOptions> = async (
     : await elem.screenshot({
         encoding: 'binary'
       })
+
+  await page.close()
 
   // Insert JSON of the thing into the image
   const json = JSON.stringify(node)
