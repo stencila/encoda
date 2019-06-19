@@ -246,6 +246,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeQuote(node as stencila.Quote)
     case 'Code':
       return encodeCode(node as stencila.Code)
+    case 'CodeExpr':
+      return encodeCodeExpr(node as stencila.CodeExpr)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
 
@@ -806,35 +808,67 @@ function encodeQuote(quote: stencila.Quote): Extension {
 }
 
 /**
- * Decode a `MDAST.InlineCode` to a `stencila.Code`
+ * Decode a `MDAST.InlineCode` to either a static `stencila.Code`
+ * or an executable `stencila.CodeExpr`.
  */
-function decodeInlineCode(inlineCode: MDAST.InlineCode): stencila.Code {
-  const code: stencila.Code = {
-    type: 'Code',
-    value: inlineCode.value
-  }
+function decodeInlineCode(
+  inlineCode: MDAST.InlineCode
+): stencila.Code | stencila.CodeExpr {
   const attrs =
     inlineCode.data &&
     (inlineCode.data.hProperties as { [key: string]: string })
-  if (attrs) {
-    const { language, ...rest } = attrs
-    if (language) code.language = language
-    if (Object.keys(rest).length) code.meta = rest
+
+  if (attrs && attrs.type === 'expr') {
+    const codeExpr: stencila.CodeExpr = {
+      type: 'CodeExpr',
+      text: inlineCode.value
+    }
+    const { type, lang, ...rest } = attrs
+    if (lang) codeExpr.programmingLanguage = lang
+    if (Object.keys(rest).length) codeExpr.meta = rest
+    return codeExpr
+  } else {
+    const code: stencila.Code = {
+      type: 'Code',
+      value: inlineCode.value
+    }
+    if (attrs) {
+      const { lang, ...rest } = attrs
+      if (lang) code.language = lang
+      if (Object.keys(rest).length) code.meta = rest
+    }
+    return code
   }
-  return code
 }
 
 /**
- * Encode a `stencila.Code` to a `MDAST.InlineCode`
+ * Encode a `stencila.Code` node to a `MDAST.InlineCode`
  */
 function encodeCode(code: stencila.Code): MDAST.InlineCode {
   let attrs
-  if (code.language) attrs = { language: code.language }
+  if (code.language) attrs = { lang: code.language }
   if (code.meta) attrs = { ...attrs, ...code.meta }
   return {
     type: 'inlineCode',
     data: { hProperties: attrs },
     value: code.value
+  }
+}
+
+/**
+ * Encode a `stencila.CodeExpr` to a `MDAST.InlineCode` with
+ * `{type=expr}`
+ */
+function encodeCodeExpr(codeExpr: stencila.CodeExpr): MDAST.InlineCode {
+  let attrs = {
+    type: 'expr',
+    lang: codeExpr.programmingLanguage,
+    ...codeExpr.meta
+  }
+  return {
+    type: 'inlineCode',
+    data: { hProperties: attrs },
+    value: codeExpr.text || ''
   }
 }
 
