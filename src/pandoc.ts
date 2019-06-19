@@ -146,19 +146,19 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
     })
 
     if (input && input.length) {
-      child.stdin.write(input, err => {
-        if (err) {
-          // Ignore errors where Pandoc closes stdin
-          // before we finish writing to it.
-          // @ts-ignore
-          if (err.code === 'EPIPE') {
-            logger.debug('Pandoc EPIPE error')
-            return
-          }
-          return reject(err)
+      child.stdin.on('error', err => {
+        // Ignore errors where Pandoc closes stdin
+        // before we finish writing to it.
+        // @ts-ignore
+        if (err.code === 'EPIPE') {
+          logger.debug('Pandoc EPIPE error')
+        } else {
+          reject(err)
         }
-        child.stdin.end()
       })
+
+      child.stdin.write(input)
+      child.stdin.end()
     }
   })
 }
