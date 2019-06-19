@@ -9,7 +9,8 @@ os:
 
 script:
   - npm run check
-  - npm run test:cover
+  # Force exit to prevent the hanging on Travis
+  - npm run test:cover -- --forceExit
   - npm run docs
   - npm run build
 
