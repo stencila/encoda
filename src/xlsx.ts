@@ -10,6 +10,7 @@
 
 import stencila from '@stencila/schema'
 import { array, option, ord } from 'fp-ts'
+import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '.'
@@ -49,7 +50,7 @@ function decodeWorkbook(
 ): stencila.Table | stencila.Datatable | stencila.Collection {
   const parts: Array<stencila.Table | stencila.Datatable> = []
   for (let name of workbook.SheetNames) {
-    let sheet = workbook.Sheets[name]
+    const sheet = workbook.Sheets[name]
 
     // Decode all cells and if any have a formula, comments etc, then
     // treat this sheet as a Table
@@ -62,7 +63,7 @@ function decodeWorkbook(
     }
 
     // Create a part for this sheet
-    let part = (dataOnly ? decodeDatatable : decodeTable)(name, cells)
+    let part = (dataOnly ? decodeDatatable : decodeTable)(name, sheet, cells)
 
     // If this is the only sheet then simply return the
     // part, otherwise add it to the list of parts.
@@ -121,7 +122,7 @@ function encodeCreativeWork(node: stencila.CreativeWork) {
 
 // Worksheet <-> Table
 
-interface Worksheet {
+interface CellMap {
   [cell: string]: xlsx.CellObject
 }
 
@@ -135,11 +136,11 @@ interface RowMap {
  * Convert spreadsheet worksheet, a column-indexed table data format, to a RowMap,
  * a row-indexed data representation.
  *
- * @param {Worksheet} worksheet
+ * @param {CellMap} Map
  * @returns {RowMap}
  */
-const worksheetToRowMap = (worksheet: Worksheet): RowMap =>
-  Object.entries(worksheet).reduce((rowMap: RowMap, [name, cell]) => {
+const cellMapToRowMap = (cells: CellMap): RowMap =>
+  Object.entries(cells).reduce((rowMap: RowMap, [name, cell]) => {
     const coords = parseRowAndColumn(name)
     if (coords) {
       const [alpha, num] = coords
@@ -177,12 +178,16 @@ const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] => {
   }))
 }
 
-const decodeTable = (name: string, worksheet: Worksheet): stencila.Table => ({
+const decodeTable = (
+  name: string,
+  sheet: xlsx.WorkSheet,
+  cells: CellMap
+): stencila.Table => ({
   type: 'Table',
   name,
   rows: pipe(
-    worksheet,
-    worksheetToRowMap,
+    cells,
+    cellMapToRowMap,
     rowMapToTableRows
   )
 })
@@ -205,19 +210,24 @@ const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>
 
 function decodeDatatable(
   name: string,
-  cells: { [key: string]: xlsx.CellObject }
+  sheet: xlsx.WorkSheet,
+  cells: CellMap
 ): stencila.Datatable {
+  // Empty values need to be replaced with `null`
+  // so determine extent of the cells
+  const rang = xlsx.utils.decode_range(sheet['!ref'] || 'A1')
+  const cols = rang.e.c
+  const rows = rang.e.r
+
   // Convert the list of cells to a list of columns with values
-  const columns: Array<any> = []
-  for (let [key, cell] of Object.entries(cells)) {
-    let [column, row] = cellNameToPosition(key)
-    let values = columns[column]
-    if (!values) {
-      values = []
-      columns[column] = values
-    }
-    values[row] = decodeCell(cell)
-  }
+  const columns: Array<any> = range(0, cols).map(col =>
+    range(0, rows).map(row => {
+      const name = cellPositionToName([col, row])
+      const cell = cells[name]
+      return cell === undefined ? null : decodeCell(cell)
+    })
+  )
+
   // If the first value in each column is a string then
   // treat them as names (and thus remove them from) the
   // values. Otherwise, use automatic, alphabetic names.
