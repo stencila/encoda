@@ -115,8 +115,8 @@ export const encode: Encode<EncodeHTMLOptions> = async (
 ): Promise<VFile> => {
   const { isStandalone = false, isBundle = false, theme = 'stencila' } = options
 
-  const nodetoEncode = isBundle ? await bundle(node) : node
-  const dom: HTMLHtmlElement = encodeNode(nodetoEncode, {
+  const nodeToEncode = isBundle ? await bundle(node) : node
+  const dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
     isStandalone,
     theme
   }) as HTMLHtmlElement
