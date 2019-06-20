@@ -38,7 +38,7 @@ import * as encoda from '.'
 import './boot'
 import * as puppeteer from './puppeteer'
 
-let { _, ...options } = minimist(process.argv.slice(2), {
+const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle'],
   default: {
     standalone: true,
