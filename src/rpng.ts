@@ -14,7 +14,6 @@
 
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
-import produce from 'immer'
 import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
@@ -22,7 +21,7 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
 import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
-import * as dataUri from './util/dataUri'
+import bundle from './util/bundle'
 import { load as loadVFile, VFile, write as writeVFile } from './vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
@@ -178,10 +177,6 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
   }
 }
 
-interface EncodeRPNGOptions {
-  fullPage?: boolean
-}
-
 /**
  * Encode a Stencila node to a rPNG.
  *
@@ -193,32 +188,19 @@ interface EncodeRPNGOptions {
  * @param options Object containing settings for the encoder. See type
  * definition for Encode<EncodeRPNGOptions>
  */
-export const encode: Encode<EncodeRPNGOptions> = async (
+export const encode: Encode = async (
   node: stencila.Node,
-  {
-    filePath,
-    codecOptions = {},
-    ...options
-  }: EncodeOptions<EncodeRPNGOptions> = {}
+  options: EncodeOptions = {}
 ): Promise<VFile> => {
-  const { fullPage = true } = codecOptions
+  const { filePath, isStandalone = false } = options
 
-  // Load any local resources
-  const loaded = await loadLocalResources(node)
-
-  // Generate HTML
-  const html = await dump(loaded, {
-    ...options,
-    codecOptions,
-    filePath,
-    format: 'html'
-  })
+  const bundled = await bundle(node)
+  const html = await dump(bundled, { ...options, format: 'html' })
 
   const page = await puppeteer.page()
-
   await page.setContent(
     `<div id="target" style="${
-      fullPage ? '' : 'display: inline-block; padding: 0.1rem'
+      isStandalone ? '' : 'display: inline-block; padding: 0.1rem'
     }">${html}</div>`,
     {
       waitUntil: 'networkidle0'
@@ -228,7 +210,7 @@ export const encode: Encode<EncodeRPNGOptions> = async (
   const elem = await page.$('#target')
   if (!elem) throw new Error('Element not found!')
 
-  const buffer = fullPage
+  const buffer = isStandalone
     ? await page.screenshot({
         encoding: 'binary',
         fullPage: true
@@ -250,42 +232,4 @@ export const encode: Encode<EncodeRPNGOptions> = async (
   }
 
   return file
-}
-
-/**
- * Walk the tree of nodes and replace any links to local resources
- * with data URIs. This is necessary because Puppeteer does not
- * load local resources for security reasons.
- * See https://github.com/GoogleChrome/puppeteer/issues/1643.
- *
- * Currently only handles `MediaObject` nodes, but could be used for other
- * node types in the future.
- */
-async function loadLocalResources(node: stencila.Node): Promise<stencila.Node> {
-  async function walk(node: any) {
-    if (node === null || typeof node !== 'object') return node
-
-    switch (node.type) {
-      case 'MediaObject':
-      case 'AudioObject':
-      case 'ImageObject':
-      case 'VideoObject':
-        const mediaObject = node as stencila.MediaObject
-        if (!mediaObject.contentUrl.startsWith('http')) {
-          const { dataUri: contentUrl } = await dataUri.fromFile(
-            mediaObject.contentUrl
-          )
-          return {
-            ...mediaObject,
-            contentUrl
-          }
-        }
-    }
-
-    for (const [key, child] of Object.entries(node)) {
-      node[key] = await walk(child)
-    }
-    return node
-  }
-  return await produce(node, walk)
 }

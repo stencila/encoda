@@ -59,6 +59,7 @@ import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
 import { Encode, EncodeOptions } from '.'
+import bundle from './util/bundle'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 import { columnIndexToName } from './xlsx'
@@ -106,10 +107,19 @@ interface EncodeHTMLOptions {
 export const encode: Encode<EncodeHTMLOptions> = async (
   node: stencila.Node,
   options: EncodeOptions<EncodeHTMLOptions> = {
-    codecOptions: { theme: 'stencila' }
+    isStandalone: false,
+    isBundle: false,
+    theme: 'stencila',
+    codecOptions: {}
   }
 ): Promise<VFile> => {
-  const dom: HTMLHtmlElement = encodeNode(node, options) as HTMLHtmlElement
+  const { isStandalone = false, isBundle = false, theme = 'stencila' } = options
+
+  const nodetoEncode = isBundle ? await bundle(node) : node
+  const dom: HTMLHtmlElement = encodeNode(nodetoEncode, {
+    isStandalone,
+    theme
+  }) as HTMLHtmlElement
   const beautifulHtml = beautify(dom.outerHTML)
   return load(beautifulHtml)
 }
@@ -305,11 +315,9 @@ function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Array<Node> = [],
-  {
-    codecOptions = { theme: 'stencila' }
-  }: EncodeOptions<EncodeHTMLOptions> = {}
+  options: EncodeOptions<EncodeHTMLOptions> = {}
 ): HTMLHtmlElement {
-  const { theme = 'stencila' } = codecOptions
+  const { theme = 'stencila' } = options
   const themePath = path.resolve(
     require.resolve('@stencila/thema'),
     '..',

@@ -38,10 +38,12 @@ import * as encoda from '.'
 import './boot'
 import * as puppeteer from './puppeteer'
 
-const { _, ...options } = minimist(process.argv.slice(2), {
-  boolean: ['fullPage'],
+let { _, ...options } = minimist(process.argv.slice(2), {
+  boolean: ['standalone', 'bundle'],
   default: {
-    fullPage: true
+    standalone: true,
+    bundle: false,
+    theme: 'stencila'
   }
 })
 const name = _[0]
@@ -60,6 +62,26 @@ logga.addHandler((data: logga.LogData) => {
 // @ts-ignore
 const func = encoda[name]
 if (!func) throw new Error(`No such function "${name}"`)
+
+if (name === 'convert') {
+  const {
+    to,
+    from,
+    standalone: isStandalone,
+    bundle: isBundle,
+    theme
+  } = options
+  options = {
+    to,
+    from,
+    encodeOptions: {
+      isStandalone,
+      isBundle,
+      theme
+    }
+  }
+}
+
 ;(async () => {
   // Call the function (which may, or may not be async)
   await func(...args, options)
