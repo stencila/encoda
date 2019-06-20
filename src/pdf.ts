@@ -11,6 +11,7 @@
 import * as stencila from '@stencila/schema'
 import { dump, Encode, EncodeOptions } from './index'
 import * as puppeteer from './puppeteer'
+import bundle from './util/bundle'
 import { load, VFile } from './vfile'
 
 /**
@@ -40,7 +41,8 @@ export const encode: Encode = async (
   node: stencila.Node,
   options: EncodeOptions = {}
 ): Promise<VFile> => {
-  const html = await dump(node, { ...options, format: 'html' })
+  const bundled = await bundle(node)
+  const html = await dump(bundled, { ...options, format: 'html' })
 
   const page = await puppeteer.page()
   await page.setContent(html, { waitUntil: 'networkidle0' })

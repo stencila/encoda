@@ -70,6 +70,9 @@ export const codecList: Array<Codec> = [
 export interface EncodeOptions<FormatOptions extends object = {}> {
   format?: string
   filePath?: string
+  isStandalone?: boolean
+  isBundle?: boolean
+  theme?: string
   codecOptions?: FormatOptions
 }
 
@@ -326,7 +329,7 @@ export async function write(
 interface ConvertOptions {
   to?: string
   from?: string
-  options?: EncodeOptions
+  encodeOptions?: EncodeOptions
 }
 
 /**
@@ -340,16 +343,16 @@ interface ConvertOptions {
 export async function convert(
   input: string,
   outputPath?: string,
-  { to, from, ...options }: ConvertOptions = { options: {} }
+  { to, from, encodeOptions }: ConvertOptions = {}
 ): Promise<string | undefined> {
   const inputFile = vfile.create(input)
   const node = await decode(inputFile, input, from)
-  const convertOpts = {
+
+  const outputFile = await encode(node, {
     format: to,
     filePath: outputPath,
-    codecOptions: options
-  }
-  const outputFile = await encode(node, convertOpts)
+    ...encodeOptions
+  })
   if (outputPath) await vfile.write(outputFile, outputPath)
   return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
 }
