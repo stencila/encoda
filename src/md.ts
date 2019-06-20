@@ -578,7 +578,9 @@ function decodeList(list: MDAST.List): stencila.List {
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items: list.children.map(decodeNode)
+    items: list.children
+      .map(decodeNode)
+      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
   }
 }
 

@@ -6,6 +6,7 @@ import { Encode, EncodeOptions } from '.'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import * as rpng from './rpng'
+import { wrapInBlockNode } from './util'
 import type from './util/type'
 import { create, load, VFile, write } from './vfile'
 
@@ -533,9 +534,8 @@ function encodeList(
     { t: Pandoc.ListNumberStyle.DefaultStyle },
     { t: Pandoc.ListNumberDelim.DefaultDelim }
   ]
-  const blocks: Pandoc.Block[][] = node.items.map(node => {
-    // TODO: need to wrap inline elements if necessary
-    return [encodeBlock(node as stencila.BlockContent)]
+  const blocks: Pandoc.Block[][] = node.items.map(listItem => {
+    return listItem.content.map(wrapInBlockNode).map(encodeBlock)
   })
   if (node.order === 'ascending') {
     return { t: 'OrderedList', c: [listAttrs, blocks] }

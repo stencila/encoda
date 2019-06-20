@@ -496,18 +496,14 @@ function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
   return {
     type: 'List',
     order,
-    items: Array.from(list.childNodes).map(
-      // TODO: Currently assumes only one element per <li>
-      (li: Node): stencila.Node =>
-        li.firstChild ? decodeNode(li.firstChild) || null : null
-    )
+    items: [...list.querySelectorAll('li')].map(decodeListItem)
   }
 }
 
 /**
  * Encode a `stencila.List` to a `<ul>` or `<ol>` element.
  */
-function encodeList(list: stencila.List): HTMLUListElement {
+function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
   return h(list.order === 'unordered' ? 'ul' : 'ol', list.items.map(encodeNode))
 }
 
@@ -517,7 +513,11 @@ function encodeList(list: stencila.List): HTMLUListElement {
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
   return {
     type: 'ListItem',
-    content: [...li.childNodes].map(decodeNode).filter(isBlockContent)
+    // TODO: Extract the callback
+    content: [...li.childNodes].reduce((nodes: stencila.Node[], node) => {
+      const decodedNode = decodeNode(node)
+      return decodedNode !== undefined ? [...nodes, decodedNode] : nodes
+    }, [])
   }
 }
 

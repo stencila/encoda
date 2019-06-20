@@ -245,12 +245,20 @@ const inc = (n) =&gt; n + 1</code></pre>
       {
         type: 'List',
         order: 'unordered',
-        items: ['One', 'Two', 'Three']
+        items: [
+          { type: 'ListItem', content: ['One'] },
+          { type: 'ListItem', content: ['Two'] },
+          { type: 'ListItem', content: ['Three'] }
+        ]
       },
       {
         type: 'List',
         order: 'ascending',
-        items: ['First', 'Second', 'Third']
+        items: [
+          { type: 'ListItem', content: ['First'] },
+          { type: 'ListItem', content: ['Second'] },
+          { type: 'ListItem', content: ['Third'] }
+        ]
       },
       {
         type: 'Table',

@@ -248,9 +248,14 @@ export function coerce<Key extends keyof stencila.Types>(
   }
 }
 
-export const isStencilaNode = (
-  node?: stencila.Node
-): node is stencila.Thing => {
+/* Wrap non-`BlockContent` nodes in `Paragraph` nodes to conform to schema */
+export const wrapInBlockNode = (node: stencila.Node): stencila.BlockContent => {
+  return isBlockContent(node)
+    ? node
+    : { type: 'Paragraph', content: [node].filter(isInlineContent) }
+}
+
+export const hasType = (node?: stencila.Node): node is stencila.Thing => {
   if (!node) return false
   if (Array.isArray(node)) return false
   if (typeof node !== 'object') return false
@@ -286,6 +291,7 @@ export const blockContentTypes: {
   CodeChunk: 'CodeChunk',
   Heading: 'Heading',
   List: 'List',
+  ListItem: 'ListItem',
   Paragraph: 'Paragraph',
   QuoteBlock: 'QuoteBlock',
   Table: 'Table',
@@ -293,3 +299,48 @@ export const blockContentTypes: {
 }
 
 export const isBlockContent = isNode<stencila.BlockContent>(blockContentTypes)
+
+type InlineNodesWithType = Exclude<
+  stencila.InlineContent,
+  string | null | boolean | number
+>['type']
+
+export const inlineContentTypes: { [key in InlineNodesWithType]: key } = {
+  Code: 'Code',
+  CodeBlock: 'CodeBlock',
+  CodeExpr: 'CodeExpr',
+  Delete: 'Delete',
+  Emphasis: 'Emphasis',
+  ImageObject: 'ImageObject',
+  Link: 'Link',
+  Quote: 'Quote',
+  Strong: 'Strong'
+}
+
+// null | boolean | string | number
+export const isInlinePrimitive = (
+  node: stencila.Node
+): node is null | boolean | number | string => {
+  if (node === undefined) return false
+  if (node === null) return true
+  if (typeof node === 'boolean') return true
+  if (typeof node === 'number') return true
+  if (typeof node === 'string') return true
+  return false
+}
+
+export const isInlineNonPrimitive = (
+  node: stencila.Node
+): node is InlineNodesWithType => {
+  if (isInlinePrimitive(node)) return false
+  if (Array.isArray(node)) return false
+  if (typeof node === 'object' && hasTypeProp(node))
+    return isNodeType(inlineContentTypes)(node.type)
+  return false
+}
+
+export const isInlineContent = (
+  node: stencila.Node
+): node is stencila.InlineContent => {
+  return isInlinePrimitive(node) || isInlineNonPrimitive(node)
+}

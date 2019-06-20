@@ -315,16 +315,28 @@ const kitchenSink: testCase = {
         type: 'List',
         order: 'unordered',
         items: [
-          { type: 'Paragraph', content: ['Item one'] },
-          { type: 'Paragraph', content: ['Item two'] }
+          {
+            type: 'ListItem',
+            content: [{ type: 'Paragraph', content: ['Item one'] }]
+          },
+          {
+            type: 'ListItem',
+            content: [{ type: 'Paragraph', content: ['Item two'] }]
+          }
         ]
       },
       {
         type: 'List',
         order: 'ascending',
         items: [
-          { type: 'Paragraph', content: ['First item'] },
-          { type: 'Paragraph', content: ['Second item'] }
+          {
+            type: 'ListItem',
+            content: [{ type: 'Paragraph', content: ['First item'] }]
+          },
+          {
+            type: 'ListItem',
+            content: [{ type: 'Paragraph', content: ['Second item'] }]
+          }
         ]
       },
       {
