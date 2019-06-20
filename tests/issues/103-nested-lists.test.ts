@@ -1,6 +1,9 @@
 import stencila from '@stencila/schema'
 import path from 'path'
 import { read } from '../../src'
+import * as docxCodec from '../../src/docx'
+import * as gdocCodec from '../../src/gdoc'
+import * as mdCodec from '../../src/xmd'
 
 declare global {
   namespace jest {
@@ -81,7 +84,7 @@ describe('Mardown', () => {
     const md = (await read(
       path.join(__dirname, '103-nested-lists.md')
     )) as stencila.Article
-    expect(md).toInvert(article)
+    expect(mdCodec).toInvert(md)
   })
 })
 
@@ -98,11 +101,11 @@ describe('Docx', () => {
     const docx = (await read(
       path.join(__dirname, '103-nested-lists.docx')
     )) as stencila.Article
-    expect(docx).toInvert(article)
+    expect(docxCodec).toInvert(docx)
   })
 })
 
-describe('GDoc', () => {
+describe.skip('GDoc', () => {
   // GDoc publically shared at:
   //   https://docs.google.com/document/d/1SzJJ1SXHH5g1zjv8IUc3r67vUl8pFSvuU1fAAl3DyZo/edit?usp=sharing
   // and fetch locally
@@ -115,9 +118,9 @@ describe('GDoc', () => {
   })
 
   test('Stencila Node to Gdoc', async () => {
-    const gdoc = (await read(
+    const gdocArticle = (await read(
       path.join(__dirname, '103-nested-lists.gdoc')
     )) as stencila.Article
-    expect(gdoc).toInvert(article)
+    expect(gdocCodec).toInvert(gdocArticle)
   })
 })
