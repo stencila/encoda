@@ -7,9 +7,9 @@ import {
   emptyAttrs,
   encode,
   encodeMeta
-} from '../src/pandoc'
-import * as Pandoc from '../src/pandoc-types'
-import * as rpng from '../src/rpng'
+} from '../src/codecs/pandoc'
+import * as Pandoc from '../src/codecs/pandoc/types'
+import * as rpng from '../src/codecs/rpng'
 import { dump, load } from '../src/vfile'
 
 jest.setTimeout(30 * 1000)

@@ -28,10 +28,10 @@ import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
-import { Encode } from '.'
-import { isInlineContent, isNode } from './util'
-import type from './util/type'
-import { dump, load, VFile } from './vfile'
+import { Encode } from '../..'
+import { isInlineContent, isNode } from '../../util'
+import type from '../../util/type'
+import { dump, load, VFile } from '../../vfile'
 
 const logger = getLogger('encoda')
 

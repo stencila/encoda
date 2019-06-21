@@ -13,9 +13,9 @@ import { array, option, ord } from 'fp-ts'
 import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
-import { Encode, EncodeOptions } from '.'
-import type from './util/type'
-import { dump, load, VFile } from './vfile'
+import { Encode, EncodeOptions } from '../..'
+import type from '../../util/type'
+import { dump, load, VFile } from '../../vfile'
 
 export const mediaTypes = [
   // spell-checker: disable

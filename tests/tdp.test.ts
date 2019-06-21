@@ -1,4 +1,4 @@
-import { decode, encode } from '../src/tdp'
+import { decode, encode } from '../src/codecs/tdp'
 import { dump, read } from '../src/vfile'
 
 const periodic = {

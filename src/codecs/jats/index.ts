@@ -5,9 +5,9 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '.'
-import * as pandoc from './pandoc'
-import { VFile } from './vfile'
+import { Encode } from '../..'
+import * as pandoc from '../pandoc'
+import { VFile } from '../../vfile'
 
 /**
  * Media types for this codec.

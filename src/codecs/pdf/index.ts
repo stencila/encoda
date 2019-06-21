@@ -9,10 +9,10 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { dump, Encode, EncodeOptions } from './index'
-import * as puppeteer from './puppeteer'
-import bundle from './util/bundle'
-import { load, VFile } from './vfile'
+import { dump, Encode, EncodeOptions } from '../..'
+import * as puppeteer from '../../puppeteer'
+import bundle from '../../util/bundle'
+import { load, VFile } from '../../vfile'
 
 /**
  * The media types that this codec can decode/encode.

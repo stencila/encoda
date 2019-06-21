@@ -34,10 +34,10 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
-import { Encode } from '.'
-import { isBlockContent, isNode } from './util'
-import type from './util/type'
-import { dump, load, VFile } from './vfile'
+import { Encode } from '../..'
+import { isBlockContent, isNode } from '../../util'
+import type from '../../util/type'
+import { dump, load, VFile } from '../../vfile'
 
 const logger = getLogger('encoda:md')
 

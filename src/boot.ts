@@ -18,7 +18,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
 // @ts-ignore
-import pandoc from './pandoc-binary'
+import pandoc from './codecs/pandoc/binary'
 
 /**
  * Is this process being run as a `pkg` packaged binary?

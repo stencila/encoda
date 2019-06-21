@@ -19,10 +19,10 @@ import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import punycode from 'punycode'
-import { dump, Encode, EncodeOptions } from './index'
-import * as puppeteer from './puppeteer'
-import bundle from './util/bundle'
-import { load as loadVFile, VFile, write as writeVFile } from './vfile'
+import { dump, Encode, EncodeOptions } from '../../index'
+import * as puppeteer from '../../puppeteer'
+import bundle from '../../util/bundle'
+import { load as loadVFile, VFile, write as writeVFile } from '../../vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
 // an custom extension to be able to refere to this format more easily.

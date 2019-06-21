@@ -1,4 +1,4 @@
-import * as odt from '../src/odt'
+import * as odt from '../src/codecs/odt'
 import articleSimple from './fixtures/article-simple'
 
 test.skip('invertible', async () => {

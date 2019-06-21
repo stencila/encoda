@@ -8,7 +8,7 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import produce from 'immer'
 import path from 'path'
-import { decode as decodePerson } from './person'
+import { decode as decodePerson } from './codecs/person'
 import type from './util/type'
 
 const built = path.join(

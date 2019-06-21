@@ -11,9 +11,9 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '.'
-import type from './util/type'
-import { dump, load, VFile } from './vfile'
+import { Encode } from '../..'
+import type from '../../util/type'
+import { dump, load, VFile } from '../../vfile'
 
 /**
  * The media types that this codec can decode/encode.

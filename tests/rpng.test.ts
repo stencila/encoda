@@ -9,7 +9,7 @@ import {
   insert,
   sniff,
   sniffSync
-} from '../src/rpng'
+} from '../src/codecs/rpng'
 import { read } from '../src/vfile'
 import vfile = require('vfile')
 

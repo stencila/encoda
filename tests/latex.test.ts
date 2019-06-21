@@ -1,4 +1,4 @@
-import * as latex from '../src/latex'
+import * as latex from '../src/codecs/latex'
 import articleSimple from './fixtures/article-simple'
 
 test.skip('invertible', async () => {

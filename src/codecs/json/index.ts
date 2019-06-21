@@ -3,8 +3,8 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { Encode } from '.'
-import { dump, load, VFile } from './vfile'
+import { Encode } from '../..'
+import { dump, load, VFile } from '../../vfile'
 
 export const mediaTypes = ['application/json']
 

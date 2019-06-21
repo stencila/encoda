@@ -2,15 +2,15 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import tempy from 'tempy'
-import { Encode, EncodeOptions } from '.'
-import { pandocDataDir, pandocPath } from './boot'
-import * as Pandoc from './pandoc-types'
-import * as rpng from './rpng'
-import { wrapInBlockNode } from './util'
-import type from './util/type'
-import { create, load, VFile, write } from './vfile'
+import { Encode, EncodeOptions } from '../..'
+import { pandocDataDir, pandocPath } from '../../boot'
+import { wrapInBlockNode } from '../../util'
+import type from '../../util/type'
+import { create, load, VFile, write } from '../../vfile'
+import * as rpng from '../rpng'
+import * as Pandoc from './types'
 
-export { InputFormat, OutputFormat } from './pandoc-types'
+export { InputFormat, OutputFormat } from './types'
 
 const logger = getLogger('encoda:pandoc')
 

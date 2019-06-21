@@ -1,4 +1,4 @@
-import { decode, encode } from '../src/md'
+import { decode, encode } from '../src/codecs/md'
 import { dump, load } from '../src/vfile'
 
 describe('encode', () => {

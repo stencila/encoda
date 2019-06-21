@@ -1,5 +1,5 @@
 import path from 'path'
-import * as pdf from '../src/pdf'
+import * as pdf from '../src/codecs/pdf'
 import { create } from '../src/vfile'
 import articleSimple from './fixtures/article-simple'
 

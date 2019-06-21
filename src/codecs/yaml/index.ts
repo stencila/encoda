@@ -4,8 +4,8 @@
 
 import * as stencila from '@stencila/schema'
 import yaml from 'js-yaml'
-import { Encode } from '.'
-import { dump, load, VFile } from './vfile'
+import { Encode } from '../..'
+import { dump, load, VFile } from '../../vfile'
 
 export const mediaTypes = ['text/yaml']
 

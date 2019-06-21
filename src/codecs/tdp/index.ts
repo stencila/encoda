@@ -18,9 +18,9 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
-import { Encode, EncodeOptions } from '.'
-import * as csv from './csv'
-import { create, dump, load, VFile } from './vfile'
+import { Encode, EncodeOptions } from '../..'
+import { create, dump, load, VFile } from '../../vfile'
+import * as csv from '../csv'
 
 const logger = getLogger('encoda')
 

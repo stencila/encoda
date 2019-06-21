@@ -1,5 +1,5 @@
 import stencila from '@stencila/schema'
-import { decode, encode } from '../src/demo-magic'
+import { decode, encode } from '../src/codecs/dmagic'
 import { create, dump } from '../src/vfile'
 
 test('decode', async () => {

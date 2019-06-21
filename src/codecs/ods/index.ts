@@ -3,9 +3,9 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '.'
-import { VFile } from './vfile'
-import * as xlsx from './xlsx'
+import { Encode } from '../..'
+import { VFile } from '../../vfile'
+import * as xlsx from '../xlsx'
 
 export const mediaTypes = [
   // spell-checker: disable

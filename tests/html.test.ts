@@ -1,6 +1,6 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
-import { beautify, decode, encode } from '../src/html'
+import { beautify, decode, encode } from '../src/codecs/html'
 import { dump, load } from '../src/vfile'
 
 const js = fs.readFileSync(

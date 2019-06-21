@@ -58,12 +58,11 @@ import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
-import { Encode, EncodeOptions } from '.'
-import { isBlockContent } from './util'
-import bundle from './util/bundle'
-import type from './util/type'
-import { dump, load, VFile } from './vfile'
-import { columnIndexToName } from './xlsx'
+import { Encode, EncodeOptions } from '../..'
+import { columnIndexToName } from '../../codecs/xlsx'
+import bundle from '../../util/bundle'
+import type from '../../util/type'
+import { dump, load, VFile } from '../../vfile'
 
 const document = new jsdom.JSDOM().window.document
 

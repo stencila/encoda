@@ -5,7 +5,7 @@ import {
   encode,
   encodeMultilineString,
   nbformat
-} from '../src/ipynb'
+} from '../src/codecs/ipynb'
 import { dump, load } from '../src/vfile'
 
 test('decode', async () => {

@@ -1,4 +1,4 @@
-import * as yaml from '../src/yaml'
+import * as yaml from '../src/codecs/yaml'
 import articleSimple from './fixtures/article-simple'
 
 test('invertible', async () => {

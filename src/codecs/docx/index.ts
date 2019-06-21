@@ -4,10 +4,10 @@
 
 import stencila from '@stencila/schema'
 import path from 'path'
-import { Encode, EncodeOptions } from '.'
-import { home } from './boot'
-import * as pandoc from './pandoc'
-import { VFile } from './vfile'
+import { Encode, EncodeOptions } from '../..'
+import { home } from '../../boot'
+import * as pandoc from '../pandoc'
+import { VFile } from '../../vfile'
 
 export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'

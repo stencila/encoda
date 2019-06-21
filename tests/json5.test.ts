@@ -1,4 +1,4 @@
-import * as json5 from '../src/json5'
+import * as json5 from '../src/codecs/json5'
 import articleSimple from './fixtures/article-simple'
 
 test('invertible', async () => {

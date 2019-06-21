@@ -7,7 +7,7 @@
  */
 
 const BinWrapper = require('bin-wrapper')
-const packge = require('../package.json')
+const packge = require('../../../package.json')
 
 const version = packge.pandoc.version
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`

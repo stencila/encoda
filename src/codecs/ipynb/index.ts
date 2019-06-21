@@ -13,11 +13,11 @@
 
 import stencila from '@stencila/schema'
 import { VFile } from 'vfile'
-import { dump, Encode, load } from '.'
-import * as md from './md'
-import * as dataUri from './util/dataUri'
-import type from './util/type'
-import * as vfile from './vfile'
+import { dump, Encode, load } from '../..'
+import * as dataUri from '../../util/dataUri'
+import type from '../../util/type'
+import * as vfile from '../../vfile'
+import * as md from '../md'
 
 /**
  * The media types that this codec can decode/encode.

@@ -1,4 +1,4 @@
-import { decode, encode } from '../src/gdoc'
+import { decode, encode } from '../src/codecs/gdoc'
 import { dump, load } from '../src/vfile'
 
 test('decode', async () => {

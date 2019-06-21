@@ -1,4 +1,4 @@
-import { decode } from '../src/person'
+import { decode } from '../src/codecs/person'
 import { coerce, create, validate } from '../src/util'
 
 describe('validate', () => {

@@ -1,5 +1,5 @@
 import { Table } from '@stencila/schema'
-import { decode, encode } from '../src/csv'
+import { decode, encode } from '../src/codecs/csv'
 import { dump, load } from '../src/vfile'
 
 const simple = {

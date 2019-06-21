@@ -20,10 +20,10 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
-import { Encode, EncodeOptions } from '.'
-import * as md from './md'
-import type from './util/type'
-import { dump, load, VFile } from './vfile'
+import { Encode, EncodeOptions } from '../..'
+import * as md from '../md'
+import type from '../../util/type'
+import { dump, load, VFile } from '../../vfile'
 
 /**
  * The media types that this codec can decode/encode.
@@ -65,7 +65,7 @@ export const encode: Encode<DemoMagicOptions> = async (
   if (embed) {
     if (!demoMagicSh) {
       demoMagicSh = await fs.readFile(
-        path.join(__dirname, 'templates', 'demo-magic.sh'),
+        path.join(__dirname, '..', '..', 'templates', 'demo-magic.sh'),
         'utf8'
       )
     }

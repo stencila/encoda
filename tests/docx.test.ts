@@ -1,4 +1,4 @@
-import * as docx from '../src/docx'
+import * as docx from '../src/codecs/docx'
 import articleSimple from './fixtures/article-simple'
 
 test('invertible', async () => {

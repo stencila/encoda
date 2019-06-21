@@ -5,7 +5,7 @@ import {
   columnNameToIndex,
   decode,
   encode
-} from '../src/xlsx'
+} from '../src/codecs/xlsx'
 
 test('columnNameToIndex, columnIndexToName', async () => {
   expect(columnNameToIndex('A')).toEqual(0)

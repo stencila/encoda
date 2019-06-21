@@ -31,8 +31,8 @@
 
 import stencila from '@stencila/schema'
 import json5 from 'json5'
-import { Encode } from '.'
-import { dump, load, VFile } from './vfile'
+import { Encode } from '../..'
+import { dump, load, VFile } from '../../vfile'
 
 /**
  * The media types that this codec can decode/encode.

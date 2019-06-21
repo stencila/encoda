@@ -14,9 +14,9 @@ import {
   read,
   write
 } from '../src'
-import * as json from '../src/json'
+import * as json from '../src/codecs/json'
 import { create, VFile } from '../src/vfile'
-import * as yaml from '../src/yaml'
+import * as yaml from '../src/codecs/yaml'
 import { fixture } from './helpers'
 
 fs.ensureDirSync(path.join(__dirname, 'output'))
