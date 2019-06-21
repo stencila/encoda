@@ -1,4 +1,5 @@
 module.exports = {
-  out: './docs/api',
+  exclude: ['**/__tests__/**/*', '**/__fixtures__/**/*', '**/**/*.test.ts'],
+  out: './docs',
   readme: 'README.md'
 }
