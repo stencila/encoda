@@ -1,5 +1,5 @@
 import { decode, encode } from './'
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 
 test('decode', async () => {
   const p = async (gdoc: any) => await decode(load(JSON.stringify(gdoc)), false)

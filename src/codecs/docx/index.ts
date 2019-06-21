@@ -7,7 +7,7 @@ import path from 'path'
 import { Encode, EncodeOptions } from '../..'
 import { home } from '../../boot'
 import * as pandoc from '../pandoc'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'

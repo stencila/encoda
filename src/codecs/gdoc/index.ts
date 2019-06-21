@@ -29,9 +29,9 @@ import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '../..'
-import { isInlineContent, isNode } from '../../util'
+import { isInlineContent, isNode } from '../../util/index'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda')
 

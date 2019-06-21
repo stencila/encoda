@@ -4,7 +4,7 @@
 
 import stencila from '@stencila/schema'
 import { Encode } from '../..'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 import * as xlsx from '../xlsx'
 
 export const mediaTypes = [

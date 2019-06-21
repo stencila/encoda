@@ -1,6 +1,6 @@
 import { Table } from '@stencila/schema'
 import { decode, encode } from './'
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 
 const simple = {
   content: `A,B,C\n1,2,3\n2,5,6\n3,8,9\n`,

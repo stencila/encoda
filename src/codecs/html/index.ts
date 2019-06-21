@@ -62,7 +62,7 @@ import { Encode, EncodeOptions } from '../..'
 import { columnIndexToName } from '../../codecs/xlsx'
 import bundle from '../../util/bundle'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 const document = new jsdom.JSDOM().window.document
 

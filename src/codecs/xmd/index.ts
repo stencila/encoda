@@ -66,7 +66,7 @@ import * as stencila from '@stencila/schema'
 import produce from 'immer'
 import { Encode } from '../..'
 import * as md from '../md'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 export const mediaTypes = []
 export const extNames = ['xmd', 'rmd']

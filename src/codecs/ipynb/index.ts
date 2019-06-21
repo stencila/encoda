@@ -15,7 +15,7 @@ import stencila from '@stencila/schema'
 import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 import * as md from '../md'
 
 /**

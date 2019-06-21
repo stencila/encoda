@@ -1,7 +1,7 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 import * as rpng from '../rpng'
 import { decode, decodeMeta, emptyAttrs, encode, encodeMeta } from './'
 import * as Pandoc from './types'

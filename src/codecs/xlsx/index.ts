@@ -15,7 +15,7 @@ import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '../..'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 export const mediaTypes = [
   // spell-checker: disable

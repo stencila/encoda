@@ -1,7 +1,7 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
 import { beautify, decode, encode } from './'
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 
 const js = fs.readFileSync(
   require.resolve('@stencila/thema/dist/themes/stencila')

@@ -1,5 +1,5 @@
 import { decode } from './'
-import { coerce, create, validate } from '../../util'
+import { coerce, create, validate } from '../../util/index'
 
 describe('validate', () => {
   it('throws for invalid emails', () => {

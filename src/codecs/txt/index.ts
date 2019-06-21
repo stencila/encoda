@@ -13,7 +13,7 @@
 import stencila from '@stencila/schema'
 import { Encode } from '../..'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 /**
  * The media types that this codec can decode/encode.

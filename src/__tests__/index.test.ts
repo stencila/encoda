@@ -6,7 +6,7 @@ import path from 'path'
 import tempy from 'tempy'
 import { codecList, convert, dump, handled, load, match, read, write } from '..'
 import * as json from '../codecs/json'
-import { create, VFile } from '../vfile'
+import { create, VFile } from '../util/vfile'
 import * as yaml from '../codecs/yaml'
 import { fixture } from './helpers'
 

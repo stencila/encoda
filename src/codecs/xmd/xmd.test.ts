@@ -1,4 +1,4 @@
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 import { decode, encode } from './'
 
 test('decode', async () => {

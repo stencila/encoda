@@ -1,5 +1,5 @@
 import { decode, encode } from './'
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 
 describe('encode', () => {
   test('Kitchen Sink', async () => {

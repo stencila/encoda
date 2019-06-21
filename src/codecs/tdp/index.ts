@@ -19,7 +19,7 @@ import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
 import { Encode, EncodeOptions } from '../..'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 import * as csv from '../csv'
 
 const logger = getLogger('encoda')

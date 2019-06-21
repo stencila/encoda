@@ -35,9 +35,9 @@ import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
 import { Encode } from '../..'
-import { isBlockContent, isNode } from '../../util'
+import { isBlockContent, isNode } from '../../util/index'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda:md')
 

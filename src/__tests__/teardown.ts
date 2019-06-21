@@ -1,4 +1,4 @@
-import * as puppeteer from '../puppeteer'
+import * as puppeteer from '../util/puppeteer'
 
 /**
  * Global teardown function that is triggered

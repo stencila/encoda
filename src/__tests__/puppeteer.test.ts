@@ -1,4 +1,4 @@
-import { page, shutdown } from '../puppeteer'
+import { page, shutdown } from '../util/puppeteer'
 
 test('page', async () => {
   const first = await page()

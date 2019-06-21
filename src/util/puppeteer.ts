@@ -1,7 +1,7 @@
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
 import puppeteer from 'puppeteer'
-import { chromiumPath } from './boot'
+import { chromiumPath } from '../boot'
 
 const logger = getLogger('encoda:puppeteer')
 

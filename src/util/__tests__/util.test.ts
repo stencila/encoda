@@ -13,7 +13,7 @@ import {
   valid,
   validate,
   wrapInBlockNode
-} from '..'
+} from '../index'
 import is from '../is'
 import type from '../type'
 

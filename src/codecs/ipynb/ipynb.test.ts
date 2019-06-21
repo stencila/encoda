@@ -6,7 +6,7 @@ import {
   encodeMultilineString,
   nbformat
 } from './'
-import { dump, load } from '../../vfile'
+import { dump, load } from '../../util/vfile'
 
 test('decode', async () => {
   const decode_ = async (ipynb: nbformat.INotebookContent) =>

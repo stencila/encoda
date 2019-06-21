@@ -1,6 +1,6 @@
 import stencila from '@stencila/schema'
 import { decode, encode } from './'
-import { create, dump } from '../../vfile'
+import { create, dump } from '../../util/vfile'
 
 test('decode', async () => {
   await expect(decode(create())).rejects.toThrow(

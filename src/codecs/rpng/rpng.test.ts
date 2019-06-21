@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { read } from '../../vfile'
+import { read } from '../../util/vfile'
 import {
   decode,
   decodeSync,

@@ -23,7 +23,7 @@ import path from 'path'
 import { Encode, EncodeOptions } from '../..'
 import * as md from '../md'
 import type from '../../util/type'
-import * as vfile from '../../vfile'
+import * as vfile from '../../util/vfile'
 
 /**
  * The media types that this codec can decode/encode.

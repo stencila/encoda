@@ -8,8 +8,8 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import produce from 'immer'
 import path from 'path'
-import { decode as decodePerson } from './codecs/person'
-import type from './util/type'
+import { decode as decodePerson } from '../codecs/person'
+import type from './type'
 
 const built = path.join(
   path.dirname(require.resolve('@stencila/schema')),

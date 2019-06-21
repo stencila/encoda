@@ -36,7 +36,7 @@ import * as logga from '@stencila/logga'
 import minimist from 'minimist'
 import * as encoda from '.'
 import './boot'
-import * as puppeteer from './puppeteer'
+import * as puppeteer from './util/puppeteer'
 
 let { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle'],

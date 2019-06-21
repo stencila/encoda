@@ -1,5 +1,5 @@
 import { Datatable, Table } from '@stencila/schema'
-import { read } from '../../vfile'
+import { read } from '../../util/vfile'
 import { columnIndexToName, columnNameToIndex, decode, encode } from './'
 
 test('columnNameToIndex, columnIndexToName', async () => {

@@ -22,7 +22,7 @@ import * as txt from './codecs/txt'
 import * as xlsx from './codecs/xlsx'
 import * as xmd from './codecs/xmd'
 import * as yaml from './codecs/yaml'
-import * as vfile from './vfile'
+import * as vfile from './util/vfile'
 
 export { default as process } from './process'
 

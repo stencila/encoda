@@ -1,4 +1,4 @@
-import { dump, read } from '../../vfile'
+import { dump, read } from '../../util/vfile'
 import { decode, encode } from './'
 
 const periodic = {

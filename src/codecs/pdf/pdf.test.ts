@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { create } from '../../vfile'
+import { create } from '../../util/vfile'
 import articleSimple from '../../__fixtures__/article-simple'
 import * as pdf from './'
 
