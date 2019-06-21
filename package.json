@@ -126,8 +126,13 @@
     "setupFilesAfterEnv": [
       "<rootDir>/src/__tests__/matchers.ts"
     ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.[jt]s?(x)",
+      "<rootDir>/src/**/?(*.)+test.[jt]s?(x)"
+    ],
     "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
     "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
       "__tests__/matchers.ts",
       "__tests__/teardown.ts",
       "__tests__/helpers.ts"
