@@ -172,7 +172,7 @@ describe('convert', () => {
   })
 
   if (!process.env.APPVEYOR)
-    it('returns a file path for "content-less" vfiles', async () => {
+    it.skip('returns a file path for "content-less" vfiles', async () => {
       const inp = `A paragraph\n`
       const out = tempy.file()
       // tslint:disable-next-line: no-unnecessary-type-assertion

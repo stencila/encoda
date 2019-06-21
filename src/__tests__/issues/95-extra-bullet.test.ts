@@ -2,7 +2,7 @@ import stencila from '@stencila/schema'
 import path from 'path'
 import { read, write } from '../..'
 
-test('issue 95: extra bullet in blockquote', async () => {
+test.skip('issue 95: extra bullet in blockquote', async () => {
   const md = path.join(__dirname, '95-extra-bullet.md')
   const docx = path.join(__dirname, '95-extra-bullet.out.docx')
 
