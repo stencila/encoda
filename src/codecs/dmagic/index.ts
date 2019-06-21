@@ -34,7 +34,7 @@ export const mediaTypes = ['application/x-demo-magic']
  * The file name extensions to register for the codec.
  * Used to be able to explicitly refer to this codec.
  */
-export const extNames = ['demo-magic']
+export const extNames = ['dmagic', 'demo-magic']
 
 /**
  * Decode a `VFile` with `demo-magic.sh` content to a Stencila `Node`.
