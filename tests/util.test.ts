@@ -454,8 +454,8 @@ describe('isInlinePrimitive', () => {
 })
 
 describe('isInlineNonPrimitive', () => {
-  test('returns true for primitive values', () => {
-    primitives.map(node => expect(isInlineNonPrimitive(node)).toBe(true))
+  test('returns false for primitive values', () => {
+    primitives.map(node => expect(isInlineNonPrimitive(node)).toBe(false))
     expect.assertions(primitives.length)
   })
 
