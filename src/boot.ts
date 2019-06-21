@@ -71,4 +71,4 @@ export const pandocPath = path.join(home, pandoc.path())
  * Equivalent to the Pandoc `--data-dir` flag.
  * Instructs Pandoc where to templates and other assets.
  */
-export const pandocDataDir = path.join(home, 'src')
+export const pandocDataDir = path.join(home, 'src', 'pandoc')

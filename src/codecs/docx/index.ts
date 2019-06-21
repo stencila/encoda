@@ -6,8 +6,8 @@ import stencila from '@stencila/schema'
 import path from 'path'
 import { Encode, EncodeOptions } from '../..'
 import { home } from '../../boot'
-import * as pandoc from '../pandoc'
 import * as vfile from '../../util/vfile'
+import * as pandoc from '../pandoc'
 
 export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
@@ -26,6 +26,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
 const defaultDocxTemplatePath = path.join(
   home,
   'src',
+  'pandoc',
   'templates',
   'stencila-template.docx'
 )
