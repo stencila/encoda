@@ -4,7 +4,7 @@
  * that are required to the `vendor` folder.
  */
 
-const pandoc = require('./src/pandoc-binary')
+const pandoc = require('./src/codecs/pandoc/binary')
 
 ;(async () => {
   console.log(
