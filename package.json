@@ -123,19 +123,23 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testMatch": [
-      "**/tests/**/*.test.ts"
-    ],
     "setupFilesAfterEnv": [
-      "<rootDir>/tests/matchers.ts"
+      "<rootDir>/src/__tests__/matchers.ts"
     ],
-    "globalTeardown": "<rootDir>/tests/teardown.ts",
+    "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
+    "testPathIgnorePatterns": [
+      "__tests__/matchers.ts",
+      "__tests__/teardown.ts",
+      "__tests__/helpers.ts"
+    ],
     "coveragePathIgnorePatterns": [
-      "tests/helpers.ts",
-      "tests/fixtures/*"
+      "__tests__/helpers.ts",
+      "__fixtures__/*",
+      "__output__/*"
     ],
     "watchPathIgnorePatterns": [
-      "tests/output"
+      "__output__",
+      "*.out.*"
     ]
   },
   "husky": {
