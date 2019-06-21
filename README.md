@@ -26,38 +26,9 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 <!-- tocstop -->
 
-## Status
+## Codecs
 
-| Format                    | Name     | Approach | Status  |
-| ------------------------- | -------- | -------- | ------- |
-| **Text**                  |
-| Markdown                  | `md`     | Extens   | &alpha; |
-| Latex                     | `tex`    |          | &alpha; |
-| Microsoft Word            | `docx`   | rPNG     | &alpha; |
-| Google Docs               | `gdoc`   | rPNG     | &alpha; |
-| Open Document Text        | `odt`    | rPNG     | &alpha; |
-| HTML                      | `html`   | Extens   | &alpha; |
-| JATS                      | `jats`   | Extens   | &alpha; |
-| Document Archive (DAR)    | `dar`    | Extens   | 0       |
-| Portable Document Format  | `pdf`    | rPNG     | &alpha; |
-| **Notebooks**             |
-| Jupyter                   | `ipynb`  | Native   | &alpha; |
-| R Markdown                | `rmd`    | Native   | 0       |
-| **Presentations**         |
-| Microsoft Powerpoint      | `pptx`   | rPNG     | 0       |
-| Demo Magic                | `dmagic` | Native   | &beta;  |
-| **Spreadsheets**          |
-| Microsoft Excel           | `xlsx`   | Formula  | &alpha; |
-| Google Sheets             | `gsheet` | Formula  | 0       |
-| Open Document Spreadsheet | `ods`    | Formula  | &alpha; |
-| **Tabular data**          |
-| CSV                       | `csv`    | NA       | &beta;  |
-| [CSVY]                    | `csvy`   | NA       | 0       |
-| [Tabular Data Package]    | `tdp`    | NA       | &beta;  |
-| **Data interchange**      |
-| JSON                      | `json`   | Native   | 1       |
-| JSON5                     | `json5`  | Native   | 1       |
-| YAML                      | `yaml`   | Native   | 1       |
+### Key
 
 - **Approach**: how executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented in the document
 
@@ -71,6 +42,37 @@ Encoda allows you to convert between a range of formats commonly used for "execu
   - &alpha;: Alpha, initial implementation
   - &beta;: Beta, ready for user testing
   - 1: Ready for production use
+
+| Format                    | Name         | Approach | Status  |
+| ------------------------- | ------------ | -------- | ------- |
+| **Text**                  |
+| Markdown                  | `md`         | Extens   | &alpha; |
+| Latex                     | `tex`        |          | &alpha; |
+| Microsoft Word            | `docx`       | rPNG     | &alpha; |
+| Google Docs               | `gdoc`       | rPNG     | &alpha; |
+| Open Document Text        | `odt`        | rPNG     | &alpha; |
+| HTML                      | `html`       | Extens   | &alpha; |
+| JATS                      | `jats`       | Extens   | &alpha; |
+| Document Archive (DAR)    | `dar`        | Extens   | 0       |
+| Portable Document Format  | `pdf`        | rPNG     | &alpha; |
+| **Notebooks**             |
+| Jupyter                   | `ipynb`      | Native   | &alpha; |
+| RMarkdown (XMarkdown)     | `rmd`, `xmd` | Native   | &alpha; |
+| **Presentations**         |
+| Microsoft Powerpoint      | `pptx`       | rPNG     | 0       |
+| Demo Magic                | `dmagic`     | Native   | &beta;  |
+| **Spreadsheets**          |
+| Microsoft Excel           | `xlsx`       | Formula  | &alpha; |
+| Google Sheets             | `gsheet`     | Formula  | 0       |
+| Open Document Spreadsheet | `ods`        | Formula  | &alpha; |
+| **Tabular data**          |
+| CSV                       | `csv`        | NA       | &beta;  |
+| [CSVY]                    | `csvy`       | NA       | 0       |
+| [Tabular Data Package]    | `tdp`        | NA       | &beta;  |
+| **Data interchange**      |
+| JSON                      | `json`       | Native   | 1       |
+| JSON5                     | `json5`      | Native   | 1       |
+| YAML                      | `yaml`       | Native   | 1       |
 
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
@@ -151,10 +153,6 @@ docker build --tag stencila/encoda .
 docker run stencila/encoda
 ```
 
-## Roadmap
-
-> :sparkles: Coming soon!
-
 ## Contribute
 
 We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬. See [CONTRIBUTING.md](CONTRIBUTING.md) for more on where to start. You can also provide your feedback on the [Community Forum](https://community.stenci.la)
@@ -167,14 +165,6 @@ We recognize [all contributors](https://allcontributors.org/) - including those 
 <table><tr><td align="center"><a href="http://stenci.la"><img src="https://avatars2.githubusercontent.com/u/2358535?v=4" width="50px;" alt="Aleksandra Pawlik"/><br /><sub><b>Aleksandra Pawlik</b></sub></a><br /><a href="https://github.com/stencila/encoda/commits?author=apawlik" title="Code">💻</a> <a href="https://github.com/stencila/encoda/commits?author=apawlik" title="Documentation">📖</a> <a href="https://github.com/stencila/encoda/issues?q=author%3Aapawlik" title="Bug reports">🐛</a></td><td align="center"><a href="https://github.com/nokome"><img src="https://avatars0.githubusercontent.com/u/1152336?v=4" width="50px;" alt="Nokome Bentley"/><br /><sub><b>Nokome Bentley</b></sub></a><br /><a href="https://github.com/stencila/encoda/commits?author=nokome" title="Code">💻</a> <a href="https://github.com/stencila/encoda/commits?author=nokome" title="Documentation">📖</a> <a href="https://github.com/stencila/encoda/issues?q=author%3Anokome" title="Bug reports">🐛</a></td><td align="center"><a href="http://toki.io"><img src="https://avatars1.githubusercontent.com/u/10161095?v=4" width="50px;" alt="Jacqueline"/><br /><sub><b>Jacqueline</b></sub></a><br /><a href="https://github.com/stencila/encoda/commits?author=jwijay" title="Documentation">📖</a> <a href="#design-jwijay" title="Design">🎨</a></td><td align="center"><a href="https://github.com/hamishmack"><img src="https://avatars2.githubusercontent.com/u/620450?v=4" width="50px;" alt="Hamish Mackenzie"/><br /><sub><b>Hamish Mackenzie</b></sub></a><br /><a href="https://github.com/stencila/encoda/commits?author=hamishmack" title="Code">💻</a> <a href="https://github.com/stencila/encoda/commits?author=hamishmack" title="Documentation">📖</a></td><td align="center"><a href="http://ketch.me"><img src="https://avatars2.githubusercontent.com/u/1646307?v=4" width="50px;" alt="Alex Ketch"/><br /><sub><b>Alex Ketch</b></sub></a><br /><a href="https://github.com/stencila/encoda/commits?author=alex-ketch" title="Code">💻</a> <a href="https://github.com/stencila/encoda/commits?author=alex-ketch" title="Documentation">📖</a> <a href="#design-alex-ketch" title="Design">🎨</a></td><td align="center"><a href="https://github.com/beneboy"><img src="https://avatars1.githubusercontent.com/u/292725?v=4" width="50px;" alt="Ben Shaw"/><br /><sub><b>Ben Shaw</b></sub></a><br /><a href="https://github.com/stencila/encoda/commits?author=beneboy" title="Code">💻</a> <a href="https://github.com/stencila/encoda/issues?q=author%3Abeneboy" title="Bug reports">🐛</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-## See also
-
-> :sparkles: Coming soon!
-
-## FAQ
-
-> :sparkles: Coming soon!
 
 ## Acknowledgments
 
