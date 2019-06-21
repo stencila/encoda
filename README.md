@@ -38,7 +38,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
   - Formula: executable `CodeExpr` nodes are represented using formulae
 
 - **Status**:
-  - ❌: Not yet implemented
+  - ✗: Not yet implemented
   - ω: Work in progress
   - α: Alpha, initial implementation
   - β: Beta, ready for user testing
@@ -60,15 +60,15 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | Jupyter                   | `ipynb`      | Native   | α                |
 | RMarkdown (XMarkdown)     | `rmd`, `xmd` | Native   | α                |
 | **Presentations**         |
-| Microsoft Powerpoint      | `pptx`       | rPNG     | ❌               |
+| Microsoft Powerpoint      | `pptx`       | rPNG     | ✗               |
 | Demo Magic                | `dmagic`     | Native   | β                |
 | **Spreadsheets**          |
 | Microsoft Excel           | `xlsx`       | Formula  | α                |
-| Google Sheets             | `gsheet`     | Formula  | ❌               |
+| Google Sheets             | `gsheet`     | Formula  | ✗               |
 | Open Document Spreadsheet | `ods`        | Formula  | α                |
 | **Tabular data**          |
 | CSV                       | `csv`        | NA       | β                |
-| [CSVY]                    | `csvy`       | NA       | [❌][csvy-issue] |
+| [CSVY]                    | `csvy`       | NA       | [✗][csvy-issue] |
 | [Tabular Data Package]    | `tdp`        | NA       | β                |
 | **Data interchange**      |
 | JSON                      | `json`       | Native   | ✔                |
