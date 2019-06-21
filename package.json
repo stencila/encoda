@@ -138,8 +138,8 @@
       "__output__/*"
     ],
     "watchPathIgnorePatterns": [
-      "__output__",
-      "*.out.*"
+      "__output__/*",
+      ".out.*"
     ]
   },
   "husky": {
