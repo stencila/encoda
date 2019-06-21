@@ -38,41 +38,42 @@ Encoda allows you to convert between a range of formats commonly used for "execu
   - Formula: executable `CodeExpr` nodes are represented using formulae
 
 - **Status**:
-  - 0: Not yet implemented
-  - &alpha;: Alpha, initial implementation
-  - &beta;: Beta, ready for user testing
-  - 1: Ready for production use
+  - ❌: Not yet implemented
+  - ω: Work in progress
+  - α: Alpha, initial implementation
+  - β: Beta, ready for user testing
+  - ✔: Ready for production use
 
-| Format                    | Name         | Approach | Status  |
-| ------------------------- | ------------ | -------- | ------- |
+| Format                    | Name         | Approach | Status           |
+| ------------------------- | ------------ | -------- | ---------------- |
 | **Text**                  |
-| Markdown                  | `md`         | Extens   | &alpha; |
-| Latex                     | `tex`        |          | &alpha; |
-| Microsoft Word            | `docx`       | rPNG     | &alpha; |
-| Google Docs               | `gdoc`       | rPNG     | &alpha; |
-| Open Document Text        | `odt`        | rPNG     | &alpha; |
-| HTML                      | `html`       | Extens   | &alpha; |
-| JATS                      | `jats`       | Extens   | &alpha; |
-| Document Archive (DAR)    | `dar`        | Extens   | 0       |
-| Portable Document Format  | `pdf`        | rPNG     | &alpha; |
+| Markdown                  | `md`         | Extens   | α                |
+| Latex                     | `tex`        |          | α                |
+| Microsoft Word            | `docx`       | rPNG     | α                |
+| Google Docs               | `gdoc`       | rPNG     | α                |
+| Open Document Text        | `odt`        | rPNG     | α                |
+| HTML                      | `html`       | Extens   | α                |
+| JATS                      | `jats`       | Extens   | α                |
+| DAR                       | `dar`        | Extens   | [ω][dar-pr]      |
+| PDF                       | `pdf`        | rPNG     | α                |
 | **Notebooks**             |
-| Jupyter                   | `ipynb`      | Native   | &alpha; |
-| RMarkdown (XMarkdown)     | `rmd`, `xmd` | Native   | &alpha; |
+| Jupyter                   | `ipynb`      | Native   | α                |
+| RMarkdown (XMarkdown)     | `rmd`, `xmd` | Native   | α                |
 | **Presentations**         |
-| Microsoft Powerpoint      | `pptx`       | rPNG     | 0       |
-| Demo Magic                | `dmagic`     | Native   | &beta;  |
+| Microsoft Powerpoint      | `pptx`       | rPNG     | ❌               |
+| Demo Magic                | `dmagic`     | Native   | β                |
 | **Spreadsheets**          |
-| Microsoft Excel           | `xlsx`       | Formula  | &alpha; |
-| Google Sheets             | `gsheet`     | Formula  | 0       |
-| Open Document Spreadsheet | `ods`        | Formula  | &alpha; |
+| Microsoft Excel           | `xlsx`       | Formula  | α                |
+| Google Sheets             | `gsheet`     | Formula  | ❌               |
+| Open Document Spreadsheet | `ods`        | Formula  | α                |
 | **Tabular data**          |
-| CSV                       | `csv`        | NA       | &beta;  |
-| [CSVY]                    | `csvy`       | NA       | 0       |
-| [Tabular Data Package]    | `tdp`        | NA       | &beta;  |
+| CSV                       | `csv`        | NA       | β                |
+| [CSVY]                    | `csvy`       | NA       | [❌][csvy-issue] |
+| [Tabular Data Package]    | `tdp`        | NA       | β                |
 | **Data interchange**      |
-| JSON                      | `json`       | Native   | 1       |
-| JSON5                     | `json5`      | Native   | 1       |
-| YAML                      | `yaml`       | Native   | 1       |
+| JSON                      | `json`       | Native   | ✔                |
+| JSON5                     | `json5`      | Native   | ✔                |
+| YAML                      | `yaml`       | Native   | ✔                |
 
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
@@ -187,4 +188,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 </p>
 
 [csvy]: http://csvy.org/
+[csvy-issue]: https://github.com/stencila/encoda/issues/26
+[dar]: https://github.com/substance/dar
+[dar-pr]: https://github.com/stencila/encoda/pull/124
 [tabular data package]: https://frictionlessdata.io/specs/tabular-data-package/
