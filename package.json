@@ -13,7 +13,7 @@
     "check": "npm run build && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema --ignore-module @stencila/thema .",
-    "build": "tsc && cp src/*.js dist/ && cp -r src/templates dist",
+    "build": "tsc && cp src/**/**/*.js dist/ && cp -r src/templates dist",
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
