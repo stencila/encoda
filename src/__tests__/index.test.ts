@@ -136,7 +136,7 @@ describe('write', () => {
 
   it('works with stdout', async () => {
     const consoleLog = jest.spyOn(console, 'log')
-    await write(simpleThing, '-', 'json')
+    await write(simpleThing, '-', { format: 'json' })
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
   })
 })

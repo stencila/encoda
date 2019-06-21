@@ -20,10 +20,9 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
-import { Encode, EncodeOptions } from '../..'
+import { Encode, EncodeOptions, dump } from '../..'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
-import * as md from '../md'
 
 /**
  * The media types that this codec can decode/encode.
@@ -118,6 +117,6 @@ async function encodeNode(node: stencila.Node): Promise<string> {
  * Generate escaped Markdown suitable for inserting into Bash
  */
 async function escapedMd(node: stencila.Node): Promise<string> {
-  const markdown = await vfile.dump(await md.encode(node, {}))
+  const markdown = await dump(node, { format: 'md' })
   return markdown.replace(/`/g, '\\`')
 }

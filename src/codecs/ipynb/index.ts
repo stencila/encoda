@@ -16,7 +16,6 @@ import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
-import * as md from '../md'
 
 /**
  * The media types that this codec can decode/encode.
@@ -179,7 +178,7 @@ async function decodeMarkdownCell(
   // TODO: handle metadata
   const { metadata, source } = cell
   const markdown = decodeMultilineString(source)
-  const node = await md.decode(vfile.load(markdown))
+  const node = await load(markdown, 'md')
   // TODO: avoid this type casting
   const article = node as stencila.Article
   return article.content as stencila.BlockContent[]
@@ -200,7 +199,7 @@ async function encodeMarkdownCell(
 
   const metadata = {}
 
-  const markdown = await vfile.dump(await md.encode(article))
+  const markdown = await dump(article, { format: 'md' })
   const source = encodeMultilineString(markdown.trim())
 
   return {

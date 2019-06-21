@@ -18,9 +18,8 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
-import { Encode, EncodeOptions } from '../..'
+import { Encode, EncodeOptions, dump } from '../..'
 import * as vfile from '../../util/vfile'
-import * as csv from '../csv'
 
 const logger = getLogger('encoda')
 
@@ -203,7 +202,7 @@ async function encodeCreativeWork(
     profile: 'tabular-data-resource',
     name: datatable.name || 'Unnamed',
 
-    data: await vfile.dump(await csv.encode(datatable)),
+    data: await dump(datatable, { format: 'csv' }),
     format: 'csv',
     mediatype: 'text/csv',
     encoding: 'utf-8',

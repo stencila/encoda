@@ -64,8 +64,7 @@
 
 import * as stencila from '@stencila/schema'
 import produce from 'immer'
-import { Encode } from '../..'
-import * as md from '../md'
+import { Encode, load, dump } from '../..'
 import * as vfile from '../../util/vfile'
 
 export const mediaTypes = []
@@ -95,7 +94,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
       return md + '\n' + text + '\n```\n:::\n'
     }
   )
-  return md.decode(vfile.load(cmd))
+  return load(cmd, 'md')
 }
 
 /**
@@ -112,8 +111,7 @@ export const encode: Encode = async (
   node: stencila.Node
 ): Promise<vfile.VFile> => {
   const transformed = produce(node, transform)
-  const file = await md.encode(transformed)
-  const cmd = await vfile.dump(file)
+  const cmd = await dump(transformed, { format: 'md' })
   // Replace Commonmark "infor string" with R Markdown curly brace
   // enclosed options
   // TODO: Check parsing of options. Comma separated?

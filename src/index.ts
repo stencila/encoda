@@ -319,9 +319,9 @@ export async function read(
 export async function write(
   node: stencila.Node,
   filePath: string,
-  format?: string
+  encodeOptions: EncodeOptions = {}
 ): Promise<VFile> {
-  let file = await encode(node, { format, filePath })
+  let file = await encode(node, { ...encodeOptions, filePath })
   await vfile.write(file, filePath)
   return file
 }

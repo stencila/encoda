@@ -2,13 +2,13 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import tempy from 'tempy'
-import { Encode, EncodeOptions } from '../..'
+import { Encode, EncodeOptions, write } from '../..'
 import { pandocDataDir, pandocPath } from '../../boot'
 import { wrapInBlockNode } from '../../util/index'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
-import * as rpng from '../rpng'
 import * as Pandoc from './types'
+import * as rpng from '../rpng'
 
 export { InputFormat, OutputFormat } from './types'
 
@@ -1006,8 +1006,7 @@ function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
 function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
-    const file = await rpng.encode(node, { codecOptions: { fullPage: false } })
-    await vfile.write(file, imagePath)
+    await write(node, imagePath, { format: 'rpng', isStandalone: false })
   })()
   encodePromises.push(promise)
 
