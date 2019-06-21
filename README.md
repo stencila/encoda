@@ -14,14 +14,12 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 <!-- toc -->
 
-- [Status](#status)
+- [Formats](#formats)
+  - [Key](#key)
 - [Install](#install)
 - [Use](#use)
 - [Develop](#develop)
-- [Roadmap](#roadmap)
 - [Contribute](#contribute)
-- [See also](#see-also)
-- [FAQ](#faq)
 - [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
