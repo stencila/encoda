@@ -6,6 +6,7 @@ import { Encode, EncodeOptions } from '.'
 import { pandocDataDir, pandocPath } from './boot'
 import * as Pandoc from './pandoc-types'
 import * as rpng from './rpng'
+import { wrapInBlockNode } from './util'
 import type from './util/type'
 import { create, load, VFile, write } from './vfile'
 
@@ -388,19 +389,19 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
 function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
   switch (block.type) {
     case 'Heading':
-      return encodeHeading(block as stencila.Heading)
+      return encodeHeading(block)
     case 'Paragraph':
-      return encodeParagraph(block as stencila.Paragraph)
+      return encodeParagraph(block)
     case 'QuoteBlock':
-      return encodeQuoteBlock(block as stencila.QuoteBlock)
+      return encodeQuoteBlock(block)
     case 'CodeBlock':
-      return encodeCodeBlock(block as stencila.CodeBlock)
+      return encodeCodeBlock(block)
     case 'List':
-      return encodeList(block as stencila.List)
+      return encodeList(block)
     case 'Table':
-      return encodeTable(block as stencila.Table)
+      return encodeTable(block)
     case 'ThematicBreak':
-      return encodeThematicBreak(block as stencila.ThematicBreak)
+      return encodeThematicBreak(block)
   }
   return encodeFallbackBlock(block)
 }
@@ -439,8 +440,9 @@ function decodePara(node: Pandoc.Para): stencila.BlockContent {
   if (content.length == 1) {
     const node = content[0]
     // TODO: fix this dangerous type casting
-    if (type(node) === 'CodeChunk')
+    if (type(node) === 'CodeChunk') {
       return (node as unknown) as stencila.CodeChunk
+    }
   }
   return {
     type: 'Paragraph',
@@ -510,12 +512,23 @@ function decodeList(
 ): stencila.List {
   const order = node.t === 'BulletList' ? 'unordered' : 'ascending'
   const blocks: Pandoc.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
-  // TODO: better handling of unwrapping
-  const items = blocks.map(blocks => decodeBlocks(blocks)[0])
+
+  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
+  // It should be removed once TypeDoc is updated
+  const enum ListType {
+    List = 'List'
+  }
+  const enum ListItemType {
+    ListItem = 'ListItem'
+  }
+
   return {
-    type: 'List',
+    type: ListType.List,
     order,
-    items
+    items: blocks.map(block => ({
+      type: ListItemType.ListItem,
+      content: decodeBlocks(block)
+    }))
   }
 }
 
@@ -530,9 +543,8 @@ function encodeList(
     { t: Pandoc.ListNumberStyle.DefaultStyle },
     { t: Pandoc.ListNumberDelim.DefaultDelim }
   ]
-  const blocks: Pandoc.Block[][] = node.items.map(node => {
-    // TODO: need to wrap inline elements if necessary
-    return [encodeBlock(node as stencila.BlockContent)]
+  const blocks: Pandoc.Block[][] = node.items.map(listItem => {
+    return listItem.content.map(wrapInBlockNode).map(encodeBlock)
   })
   if (node.order === 'ascending') {
     return { t: 'OrderedList', c: [listAttrs, blocks] }

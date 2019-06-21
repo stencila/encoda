@@ -29,6 +29,7 @@ import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '.'
+import { isInlineContent, isNode } from './util'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
@@ -343,12 +344,22 @@ function decodeList(
   const bullet = para.bullet!
   const listId = bullet.listId
   if (!listId) throw new Error('Woaah, the bullet has no list id!')
+
   // If there is already a list with this id then add this paragraph to it
   const existingList = lists[listId]
   if (existingList) {
-    existingList.items.push({ type: 'Paragraph', content })
+    existingList.items.push({
+      type: 'ListItem',
+      content: [{ type: 'Paragraph', content }]
+    })
     return undefined
+  } else {
+    // TODO: Handle nested lists from GDocs
+    logger.warn(
+      '🥞 Due to current limitations any nested lists will be flattened'
+    )
   }
+
   // Create a new list with this paragraph as it's first item
   if (!decodingGDoc.lists) throw new Error('WTF, the GDoc has no lists!')
   const list = decodingGDoc.lists[listId].listProperties
@@ -367,7 +378,7 @@ function decodeList(
   const newList: stencila.List = {
     type: 'List',
     order,
-    items: [{ type: 'Paragraph', content }]
+    items: [{ type: 'ListItem', content: [{ type: 'Paragraph', content }] }]
   }
   // Register the new list so other items can be added.
   lists[listId] = newList
@@ -393,19 +404,33 @@ function encodeList(list: stencila.List): GDoc.Schema$StructuralElement[] {
       ]
     }
   }
+
   // Create the GDoc paragraphs with a bullet with the id
-  const paras: GDoc.Schema$StructuralElement[] = list.items.map(item => {
-    let para
-    const type_ = type(item)
-    if (type_ === 'Paragraph') {
-      para = encodeParagraph(item as stencila.Paragraph)
-    } else {
-      throw new Error(`List item is unhandled Stencila node type "${type_}"`)
+  return list.items.map(listItem => ({
+    paragraph: encodeListItem(listItem, listId)
+  }))
+}
+
+const encodeListItem = (
+  listItem: stencila.ListItem,
+  listId: string
+): GDoc.Schema$Paragraph => {
+  const head = listItem.content[0]
+  if (isNode<stencila.Paragraph>({ Paragraph: 'Paragraph' })(head)) {
+    return {
+      elements: head.content.map(encodeInlineContent),
+      bullet: {
+        listId
+      }
     }
-    para.paragraph!.bullet = { listId }
-    return para
-  })
-  return paras
+  }
+
+  return {
+    elements: listItem.content.filter(isInlineContent).map(encodeInlineContent),
+    bullet: {
+      listId
+    }
+  }
 }
 
 /**

@@ -1,0 +1,120 @@
+{
+  "title": "103-nested-lists.gdoc",
+  "body": {
+    "content": [
+      {
+        "sectionBreak": {}
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Fruit"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Apple"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Orange"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Banana"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Dairy"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Milk"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      },
+      {
+        "paragraph": {
+          "elements": [
+            {
+              "textRun": {
+                "content": "Cheese"
+              }
+            }
+          ],
+          "bullet": {
+            "listId": "kix.list0"
+          }
+        }
+      }
+    ]
+  },
+  "lists": {
+    "kix.list0": {
+      "listProperties": {
+        "nestingLevels": [
+          {
+            "glyphType": "%0"
+          }
+        ]
+      }
+    }
+  },
+  "inlineObjects": {}
+}

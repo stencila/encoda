@@ -1,6 +1,9 @@
 import * as stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
+import { record } from 'fp-ts'
+import { eqString } from 'fp-ts/lib/Eq'
+import { pipe } from 'fp-ts/lib/pipeable'
 import fs from 'fs-extra'
 import globby from 'globby'
 import produce from 'immer'
@@ -243,4 +246,101 @@ export function coerce<Key extends keyof stencila.Types>(
       rename(child)
     }
   }
+}
+
+/* Wrap non-`BlockContent` nodes in `Paragraph` nodes to conform to schema */
+export const wrapInBlockNode = (node: stencila.Node): stencila.BlockContent => {
+  return isBlockContent(node)
+    ? node
+    : { type: 'Paragraph', content: [node].filter(isInlineContent) }
+}
+
+export const hasType = (node?: stencila.Node): node is stencila.Thing => {
+  if (!node) return false
+  if (Array.isArray(node)) return false
+  if (typeof node !== 'object') return false
+  if (!node.type) return false
+  return true
+}
+
+export const isNodeType = <Ts extends { type: string }>(
+  typeMap: { [key in Ts['type']]: key }
+) => (nodeType: string): boolean => {
+  return pipe(record.elem(eqString)(nodeType, typeMap))
+}
+
+type NodeType = { type: string } & { [key: string]: unknown }
+
+const hasTypeProp = (o: { type?: string }): o is NodeType =>
+  o.type ? true : false
+
+export const isNode = <T extends object, Ts extends NodeType = NodeType>(
+  typeMap: { [key in Ts['type']]: key }
+) => (n: unknown): n is T => {
+  if (!n) return false
+  if (Array.isArray(n)) return false
+  if (typeof n !== 'object') return false
+  if (n === null) return false
+  return !hasTypeProp(n) ? false : isNodeType<Ts>(typeMap)(n.type)
+}
+
+export const blockContentTypes: {
+  [key in stencila.BlockContent['type']]: key
+} = {
+  CodeBlock: 'CodeBlock',
+  CodeChunk: 'CodeChunk',
+  Heading: 'Heading',
+  List: 'List',
+  ListItem: 'ListItem',
+  Paragraph: 'Paragraph',
+  QuoteBlock: 'QuoteBlock',
+  Table: 'Table',
+  ThematicBreak: 'ThematicBreak'
+}
+
+export const isBlockContent = isNode<stencila.BlockContent>(blockContentTypes)
+
+type InlineNodesWithType = Exclude<
+  stencila.InlineContent,
+  string | null | boolean | number
+>['type']
+
+export const inlineContentTypes: { [key in InlineNodesWithType]: key } = {
+  Code: 'Code',
+  CodeBlock: 'CodeBlock',
+  CodeExpr: 'CodeExpr',
+  Delete: 'Delete',
+  Emphasis: 'Emphasis',
+  ImageObject: 'ImageObject',
+  Link: 'Link',
+  Quote: 'Quote',
+  Strong: 'Strong'
+}
+
+// null | boolean | string | number
+export const isInlinePrimitive = (
+  node: stencila.Node
+): node is null | boolean | number | string => {
+  if (node === undefined) return false
+  if (node === null) return true
+  if (typeof node === 'boolean') return true
+  if (typeof node === 'number') return true
+  if (typeof node === 'string') return true
+  return false
+}
+
+export const isInlineNonPrimitive = (
+  node: stencila.Node
+): node is InlineNodesWithType => {
+  if (isInlinePrimitive(node)) return false
+  if (Array.isArray(node)) return false
+  if (typeof node === 'object' && hasTypeProp(node))
+    return isNodeType(inlineContentTypes)(node.type)
+  return false
+}
+
+export const isInlineContent = (
+  node: stencila.Node
+): node is stencila.InlineContent => {
+  return isInlinePrimitive(node) || isInlineNonPrimitive(node)
 }

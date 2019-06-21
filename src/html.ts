@@ -59,6 +59,7 @@ import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
 import { Encode, EncodeOptions } from '.'
+import { isBlockContent } from './util'
 import bundle from './util/bundle'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
@@ -146,6 +147,8 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeList(node as HTMLUListElement)
     case 'ol':
       return decodeList(node as HTMLOListElement)
+    case 'li':
+      return decodeListItem(node as HTMLLIElement)
     case 'table':
       return decodeTable(node as HTMLTableElement)
     case 'stencila-datatable':
@@ -214,6 +217,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCodeChunk(node as stencila.CodeChunk)
     case 'List':
       return encodeList(node as stencila.List)
+    case 'ListItem':
+      return encodeListItem(node as stencila.ListItem)
     case 'Table':
       return encodeTable(node as stencila.Table)
     case 'Datatable':
@@ -491,24 +496,36 @@ function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
   return {
     type: 'List',
     order,
-    items: Array.from(list.childNodes).map(
-      // TODO: Currently assumes only one element per <li>
-      (li: Node): stencila.Node =>
-        li.firstChild ? decodeNode(li.firstChild) || null : null
-    )
+    items: [...list.querySelectorAll('li')].map(decodeListItem)
   }
 }
 
 /**
  * Encode a `stencila.List` to a `<ul>` or `<ol>` element.
  */
-function encodeList(list: stencila.List): HTMLUListElement {
-  return h(
-    list.order === 'unordered' ? 'ul' : 'ol',
-    list.items.map(
-      (item: stencila.Node): HTMLLIElement => h('li', encodeNode(item))
-    )
-  )
+function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
+  return h(list.order === 'unordered' ? 'ul' : 'ol', list.items.map(encodeNode))
+}
+
+/**
+ * Decode a `<li>` element to a `stencila.ListItem`.
+ */
+function decodeListItem(li: HTMLLIElement): stencila.ListItem {
+  return {
+    type: 'ListItem',
+    // TODO: Extract the callback
+    content: [...li.childNodes].reduce((nodes: stencila.Node[], node) => {
+      const decodedNode = decodeNode(node)
+      return decodedNode !== undefined ? [...nodes, decodedNode] : nodes
+    }, [])
+  }
+}
+
+/**
+ * Encode a `stencila.ListItem` to a `<li>` element.
+ */
+function encodeListItem(listItem: stencila.ListItem): HTMLLIElement {
+  return h('li', listItem.content.map(encodeNode))
 }
 
 /**

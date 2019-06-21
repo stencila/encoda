@@ -24,16 +24,21 @@ test('issue 95: extra bullet in blockquote', async () => {
             order: 'unordered',
             items: [
               {
-                type: 'Paragraph',
+                type: 'ListItem',
                 content: [
-                  'Having R and RStudio installed (though see the first lesson, ',
                   {
-                    type: 'Link',
-                    content: ['Before we start'],
-                    target:
-                      'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html'
-                  },
-                  ' for installation instructions)'
+                    type: 'Paragraph',
+                    content: [
+                      'Having R and RStudio installed (though see the first lesson, ',
+                      {
+                        type: 'Link',
+                        content: ['Before we start'],
+                        target:
+                          'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html'
+                      },
+                      ' for installation instructions)'
+                    ]
+                  }
                 ]
               }
             ]
@@ -61,19 +66,24 @@ test('issue 95: extra bullet in blockquote', async () => {
         order: 'unordered',
         items: [
           {
-            type: 'QuoteBlock',
+            type: 'ListItem',
             content: [
               {
-                type: 'Paragraph',
+                type: 'QuoteBlock',
                 content: [
-                  'Having R and RStudio installed (though see the first lesson, ',
                   {
-                    type: 'Link',
-                    content: ['Before we start'],
-                    target:
-                      'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html'
-                  },
-                  ' for installation instructions)'
+                    type: 'Paragraph',
+                    content: [
+                      'Having R and RStudio installed (though see the first lesson, ',
+                      {
+                        type: 'Link',
+                        content: ['Before we start'],
+                        target:
+                          'http://datacarpentry.org/R-ecology-lesson/00-before-we-start.html'
+                      },
+                      ' for installation instructions)'
+                    ]
+                  }
                 ]
               }
             ]

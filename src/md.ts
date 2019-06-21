@@ -35,12 +35,28 @@ import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
 import { Encode } from '.'
+import { isBlockContent, isNode } from './util'
 import type from './util/type'
 import { dump, load, VFile } from './vfile'
 
 const logger = getLogger('encoda:md')
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
+
+export const mdastBlockContentTypes: {
+  [key in MDAST.BlockContent['type']]: key
+} = {
+  blockquote: 'blockquote',
+  code: 'code',
+  heading: 'heading',
+  html: 'html',
+  list: 'list',
+  paragraph: 'paragraph',
+  table: 'table',
+  thematicBreak: 'thematicBreak'
+}
+
+const isMdastBlockContent = isNode<MDAST.BlockContent>(mdastBlockContentTypes)
 
 /**
  * Options for `remark-frontmatter` plugin
@@ -151,6 +167,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeCodeblock(node as MDAST.Code)
     case 'list':
       return decodeList(node as MDAST.List)
+    case 'listItem':
+      return decodeListItem(node as MDAST.ListItem)
     case 'table':
       return decodeTable(node as MDAST.Table)
     case 'thematicBreak':
@@ -229,6 +247,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeCodeChunk(node as stencila.CodeChunk)
     case 'List':
       return encodeList(node as stencila.List)
+    case 'ListItem':
+      return encodeListItem(node as stencila.ListItem)
     case 'Table':
       return encodeTable(node as stencila.Table)
     case 'ThematicBreak':
@@ -555,24 +575,12 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
  * Decode a `MDAST.List` to a `stencila.List`
  */
 function decodeList(list: MDAST.List): stencila.List {
-  const items = []
-  for (let item of list.children) {
-    // TODO: when there are more than one child then create a stencila.Block
-    let node = decodeNode(item.children[0])
-
-    // If the item has a check box then insert that as a boolean as the first
-    // child of the first child
-    if (item.checked === true || item.checked === false) {
-      // @ts-ignore
-      if (node.content) node.content = [item.checked, ...node.content]
-    }
-
-    items.push(node)
-  }
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items
+    items: list.children
+      .map(decodeNode)
+      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
   }
 }
 
@@ -583,34 +591,50 @@ function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'ascending',
-    children: list.items.map(
-      (item: stencila.Node): MDAST.ListItem => {
-        // TODO: wrap anything that is not inline content into a block e.g. para
-        const first = encodeNode(item) as MDAST.BlockContent
-        const children = [first]
-
-        // Is this a checked item (ie. a paragraph starting with a boolean)?
-        let checked: boolean | undefined = undefined
-        if (first.type === 'paragraph') {
-          // @ts-ignore
-          if (first.children[0].type === 'inline-extension') {
-            if (['true', 'false'].includes(first.children[0].name as string)) {
-              // Apply the boolean name to this list item
-              checked = first.children[0].name === 'true'
-              // Remove the boolean checkbox from the paragraph (since remark stringify does that)
-              first.children = first.children.slice(1)
-            }
-          }
-        }
-
-        return {
-          type: 'listItem',
-          checked,
-          children
-        }
-      }
-    )
+    children: list.items
+      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
+      .map(encodeListItem)
   }
+}
+
+/**
+ * Encode a `MDAST.ListItem` to a `stencila.ListItem`
+ */
+function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
+  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
+  // It should be removed once TypeDoc is updated
+  const enum type {
+    listItem = 'listItem'
+  }
+
+  const encoded = {
+    type: type.listItem,
+    children: listItem.content.map(encodeNode).filter(isMdastBlockContent)
+  }
+
+  return listItem.checked === true || listItem.checked === false
+    ? { ...encoded, checked: listItem.checked }
+    : encoded
+}
+
+/**
+ * Decode a `MDAST.List` to a `stencila.List`
+ */
+function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
+  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
+  // It should be removed once TypeDoc is updated
+  const enum type {
+    ListItem = 'ListItem'
+  }
+
+  const _listItem = {
+    type: type.ListItem,
+    content: listItem.children.map(decodeNode).filter(isBlockContent)
+  }
+
+  return listItem.checked === true || listItem.checked === false
+    ? { ..._listItem, checked: listItem.checked || false }
+    : _listItem
 }
 
 /**

@@ -310,16 +310,31 @@ const kitchenSink = {
         order: 'unordered',
         items: [
           {
-            content: ['One'],
-            type: 'Paragraph'
+            type: 'ListItem',
+            content: [
+              {
+                content: ['One'],
+                type: 'Paragraph'
+              }
+            ]
           },
           {
-            content: ['Two'],
-            type: 'Paragraph'
+            type: 'ListItem',
+            content: [
+              {
+                content: ['Two'],
+                type: 'Paragraph'
+              }
+            ]
           },
           {
-            content: ['Three'],
-            type: 'Paragraph'
+            type: 'ListItem',
+            content: [
+              {
+                content: ['Three'],
+                type: 'Paragraph'
+              }
+            ]
           }
         ]
       },
@@ -328,16 +343,31 @@ const kitchenSink = {
         order: 'ascending',
         items: [
           {
-            content: ['First'],
-            type: 'Paragraph'
+            type: 'ListItem',
+            content: [
+              {
+                content: ['First'],
+                type: 'Paragraph'
+              }
+            ]
           },
           {
-            content: ['Second'],
-            type: 'Paragraph'
+            type: 'ListItem',
+            content: [
+              {
+                content: ['Second'],
+                type: 'Paragraph'
+              }
+            ]
           },
           {
-            content: ['Third'],
-            type: 'Paragraph'
+            type: 'ListItem',
+            content: [
+              {
+                content: ['Third'],
+                type: 'Paragraph'
+              }
+            ]
           }
         ]
       },
