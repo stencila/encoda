@@ -30,7 +30,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 ### Key
 
-- **Approach**: how executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented in the document
+- **Approach**: how executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
 
   - Native: the format natively supports executable nodes
   - Extens.: executable nodes are supported via extensions to the format e.g. in HTML and DAR, a `CodeChunk` is represented using a `<stencila-chunk>` element
@@ -38,42 +38,45 @@ Encoda allows you to convert between a range of formats commonly used for "execu
   - Formula: executable `CodeExpr` nodes are represented using formulae
 
 - **Status**:
+
   - ✗: Not yet implemented
   - ω: Work in progress
   - α: Alpha, initial implementation
   - β: Beta, ready for user testing
   - ✔: Ready for production use
 
-| Format                    | Name         | Approach | Status           |
-| ------------------------- | ------------ | -------- | ---------------- |
+- **Issues**: link to open issues and PRs for the format (please check there before submitting a new issue 🙏)
+
+| Format                    | Name         | Approach | Status | Issues             |
+| ------------------------- | ------------ | -------- | ------ | ------------------ |
 | **Text**                  |
-| Markdown                  | `md`         | Extens   | α                |
-| Latex                     | `tex`        |          | α                |
-| Microsoft Word            | `docx`       | rPNG     | α                |
-| Google Docs               | `gdoc`       | rPNG     | α                |
-| Open Document Text        | `odt`        | rPNG     | α                |
-| HTML                      | `html`       | Extens   | α                |
-| JATS                      | `jats`       | Extens   | α                |
-| DAR                       | `dar`        | Extens   | [ω][dar-pr]      |
-| PDF                       | `pdf`        | rPNG     | α                |
+| Markdown                  | `md`         | Extens   | α      | [⚠][md-issues]     |
+| Latex                     | `tex`        |          | α      | [⚠][tex-issues]    |
+| Microsoft Word            | `docx`       | rPNG     | α      | [⚠][docx-issues]   |
+| Google Docs               | `gdoc`       | rPNG     | α      | [⚠][gdoc-issues]   |
+| Open Document Text        | `odt`        | rPNG     | α      | [⚠][odt-issues]    |
+| HTML                      | `html`       | Extens   | α      | [⚠][html-issues]   |
+| JATS                      | `jats`       | Extens   | α      | [⚠][jats-issues]   |
+| DAR                       | `dar`        | Extens   | ω      | [⚠][dar-issues]    |
+| PDF                       | `pdf`        | rPNG     | α      | [⚠][pdf-issues]    |
 | **Notebooks**             |
-| Jupyter                   | `ipynb`      | Native   | α                |
-| RMarkdown (XMarkdown)     | `rmd`, `xmd` | Native   | α                |
+| Jupyter                   | `ipynb`      | Native   | α      | [⚠][ipynb-issues]  |
+| RMarkdown                 | `rmd`, `xmd` | Native   | α      | [⚠][rmd-issues]    |
 | **Presentations**         |
-| Microsoft Powerpoint      | `pptx`       | rPNG     | ✗               |
-| Demo Magic                | `dmagic`     | Native   | β                |
+| Microsoft Powerpoint      | `pptx`       | rPNG     | ✗      | [⚠][pptx-issues]   |
+| Demo Magic                | `dmagic`     | Native   | β      | [⚠][dmagic-issues] |
 | **Spreadsheets**          |
-| Microsoft Excel           | `xlsx`       | Formula  | α                |
-| Google Sheets             | `gsheet`     | Formula  | ✗               |
-| Open Document Spreadsheet | `ods`        | Formula  | α                |
+| Microsoft Excel           | `xlsx`       | Formula  | α      | [⚠][xlsx-issues]   |
+| Google Sheets             | `gsheet`     | Formula  | ✗      | [⚠][gsheet-issues] |
+| Open Document Spreadsheet | `ods`        | Formula  | α      | [⚠][ods-issues]    |
 | **Tabular data**          |
-| CSV                       | `csv`        | NA       | β                |
-| [CSVY]                    | `csvy`       | NA       | [✗][csvy-issue] |
-| [Tabular Data Package]    | `tdp`        | NA       | β                |
+| CSV                       | `csv`        | NA       | β      | [⚠][csv-issues]    |
+| [CSVY]                    | `csvy`       | NA       | ✗      | [⚠][csvy-issues]   |
+| [Tabular Data Package]    | `tdp`        | NA       | β      | [⚠][tdp-issues]    |
 | **Data interchange**      |
-| JSON                      | `json`       | Native   | ✔                |
-| JSON5                     | `json5`      | Native   | ✔                |
-| YAML                      | `yaml`       | Native   | ✔                |
+| JSON                      | `json`       | Native   | ✔      | [⚠][json-issues]   |
+| JSON5                     | `json5`      | Native   | ✔      | [⚠][json5-issues]  |
+| YAML                      | `yaml`       | Native   | ✔      | [⚠][yaml-issues]   |
 
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
@@ -192,3 +195,25 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [dar]: https://github.com/substance/dar
 [dar-pr]: https://github.com/stencila/encoda/pull/124
 [tabular data package]: https://frictionlessdata.io/specs/tabular-data-package/
+[md-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown
+[tex-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tex
+[docx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+docx
+[gdoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc
+[odt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+odt
+[html-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+html
+[jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
+[dar-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dar
+[pdf-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf
+[ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
+[rmd-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd
+[pptx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx
+[dmagic-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic
+[xlsx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx
+[gsheet-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet
+[ods-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ods
+[csv-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csv
+[csvy-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy
+[tdp-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp
+[json-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json
+[json5-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json5
+[yaml-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml
