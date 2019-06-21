@@ -26,26 +26,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 <!-- tocstop -->
 
-## Codecs
-
-### Key
-
-- **Approach**: how executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
-
-  - Native: the format natively supports executable nodes
-  - Extens.: executable nodes are supported via extensions to the format e.g. in HTML and DAR, a `CodeChunk` is represented using a `<stencila-chunk>` element
-  - rPNG: executable nodes are supported via reproducible PNG images inserted into the document
-  - Formula: executable `CodeExpr` nodes are represented using formulae
-
-- **Status**:
-
-  - ✗: Not yet implemented
-  - ω: Work in progress
-  - α: Alpha, initial implementation
-  - β: Beta, ready for user testing
-  - ✔: Ready for production use
-
-- **Issues**: link to open issues and PRs for the format (please check there before submitting a new issue 🙏)
+## Formats
 
 | Format                    | Name         | Approach | Status | Issues             |
 | ------------------------- | ------------ | -------- | ------ | ------------------ |
@@ -77,6 +58,33 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | JSON                      | `json`       | Native   | ✔      | [⚠][json-issues]   |
 | JSON5                     | `json5`      | Native   | ✔      | [⚠][json5-issues]  |
 | YAML                      | `yaml`       | Native   | ✔      | [⚠][yaml-issues]   |
+
+### Key
+
+<details>
+<summary><b id="format-approach">Approach</b>...</summary>
+How executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
+
+- Native: the format natively supports executable nodes
+- Extens.: executable nodes are supported via extensions to the format e.g. in HTML and DAR, a `CodeChunk` is represented using a `<stencila-chunk>` element
+- rPNG: executable nodes are supported via reproducible PNG images inserted into the document
+- Formula: executable `CodeExpr` nodes are represented using formulae
+  </details>
+
+<details>
+<summary><b id="format-status">Status</b>...</summary>
+
+- ✗: Not yet implemented
+- ω: Work in progress
+- α: Alpha, initial implementation
+- β: Beta, ready for user testing
+- ✔: Ready for production use
+  </details>
+
+<details>
+<summary><b id="format-issues">Issues</b>...</summary>
+Link to open issues and PRs for the format (please check there before submitting a new issue 🙏)
+</details>
 
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
