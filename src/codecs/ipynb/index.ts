@@ -12,7 +12,6 @@
  */
 
 import stencila from '@stencila/schema'
-import { VFile } from 'vfile'
 import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import type from '../../util/type'
@@ -35,7 +34,7 @@ export const extNames = ['ipynb']
  * @param file The `VFile` to decode
  * @returns A promise that resolves to a Stencila `Node`
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   const json = await vfile.dump(file)
   const ipynb: nbformat.INotebookContent = JSON.parse(json)
   return decodeNotebook(ipynb)
@@ -47,7 +46,9 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param thing The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
+export const encode: Encode = async (
+  node: stencila.Node
+): Promise<vfile.VFile> => {
   const ipynb = await encodeNode(node)
   const json = JSON.stringify(ipynb, null, '  ')
   return vfile.load(json)

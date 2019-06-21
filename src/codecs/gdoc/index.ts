@@ -31,7 +31,7 @@ import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '../..'
 import { isInlineContent, isNode } from '../../util'
 import type from '../../util/type'
-import { dump, load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 const logger = getLogger('encoda')
 
@@ -44,10 +44,10 @@ export const mediaTypes = ['application/vnd.google-apps.document']
  * @returns A promise that resolves to a `stencila.Node`
  */
 export async function decode(
-  file: VFile,
+  file: vfile.VFile,
   fetch: boolean = true
 ): Promise<stencila.Node> {
-  const json = await dump(file)
+  const json = await vfile.dump(file)
   const gdoc = JSON.parse(json)
   return decodeDocument(gdoc, fetch)
 }
@@ -58,10 +58,12 @@ export async function decode(
  * @param node The `stencila.Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
+export const encode: Encode = async (
+  node: stencila.Node
+): Promise<vfile.VFile> => {
   const gdoc = encodeNode(node)
   const json = JSON.stringify(gdoc, null, '  ')
-  return load(json)
+  return vfile.load(json)
 }
 
 /**

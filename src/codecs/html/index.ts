@@ -62,7 +62,7 @@ import { Encode, EncodeOptions } from '../..'
 import { columnIndexToName } from '../../codecs/xlsx'
 import bundle from '../../util/bundle'
 import type from '../../util/type'
-import { dump, load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 const document = new jsdom.JSDOM().window.document
 
@@ -76,8 +76,8 @@ export const mediaTypes = ['text/html']
  * @param file The `VFile` to decode
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
-  const html = await dump(file)
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
+  const html = await vfile.dump(file)
   const dom = new jsdom.JSDOM(html)
   const document = dom.window.document
   collapse(document)
@@ -112,7 +112,7 @@ export const encode: Encode<EncodeHTMLOptions> = async (
     theme: 'stencila',
     codecOptions: {}
   }
-): Promise<VFile> => {
+): Promise<vfile.VFile> => {
   const { isStandalone = false, isBundle = false, theme = 'stencila' } = options
 
   const nodeToEncode = isBundle ? await bundle(node) : node
@@ -121,7 +121,7 @@ export const encode: Encode<EncodeHTMLOptions> = async (
     theme
   }) as HTMLHtmlElement
   const beautifulHtml = beautify(dom.outerHTML)
-  return load(beautifulHtml)
+  return vfile.load(beautifulHtml)
 }
 
 function decodeNode(node: Node): stencila.Node | undefined {

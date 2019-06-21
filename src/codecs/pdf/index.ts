@@ -12,7 +12,7 @@ import * as stencila from '@stencila/schema'
 import { dump, Encode, EncodeOptions } from '../..'
 import * as puppeteer from '../../puppeteer'
 import bundle from '../../util/bundle'
-import { load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 /**
  * The media types that this codec can decode/encode.
@@ -26,7 +26,7 @@ export const mediaTypes = ['application/pdf']
  * This function is required (currently) but is (and probably never will be)
  * implemented.
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error(`Parsing of PDF files is not supported.`)
 }
 
@@ -40,7 +40,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 export const encode: Encode = async (
   node: stencila.Node,
   options: EncodeOptions = {}
-): Promise<VFile> => {
+): Promise<vfile.VFile> => {
   const bundled = await bundle(node)
   const html = await dump(bundled, { ...options, format: 'html' })
 
@@ -59,5 +59,5 @@ export const encode: Encode = async (
   })
   await page.close()
 
-  return load(buffer)
+  return vfile.load(buffer)
 }

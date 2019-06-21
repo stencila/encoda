@@ -6,7 +6,7 @@ import { Encode, EncodeOptions } from '../..'
 import { pandocDataDir, pandocPath } from '../../boot'
 import { wrapInBlockNode } from '../../util'
 import type from '../../util/type'
-import { create, load, VFile, write } from '../../vfile'
+import * as vfile from '../../vfile'
 import * as rpng from '../rpng'
 import * as Pandoc from './types'
 
@@ -27,7 +27,7 @@ export const extNames = ['pandoc']
  * @returns A promise that resolves to a `stencila.Node`
  */
 export async function decode(
-  file: VFile,
+  file: vfile.VFile,
   from: Pandoc.InputFormat = Pandoc.InputFormat.json,
   options: string[] = [],
   ensureFile: boolean = false
@@ -65,7 +65,7 @@ export const encode: Encode<PandocOptions> = async (
     format = Pandoc.OutputFormat.json,
     codecOptions = { flags: [], ensureFile: false }
   }: EncodeOptions<PandocOptions> = {}
-): Promise<VFile> => {
+): Promise<vfile.VFile> => {
   encodePromises = []
   const { standalone, pdoc } = encodeNode(node)
   await Promise.all(encodePromises)
@@ -96,8 +96,8 @@ export const encode: Encode<PandocOptions> = async (
 
   // If content was outputted, then load that into a vfile,
   // otherwise the vfile simply has path to the file created
-  if (content) return load(content)
-  else return create(undefined, { path: filePath })
+  if (content) return vfile.load(content)
+  else return vfile.create(undefined, { path: filePath })
 }
 
 /**
@@ -1007,7 +1007,7 @@ function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
     const file = await rpng.encode(node, { codecOptions: { fullPage: false } })
-    await write(file, imagePath)
+    await vfile.write(file, imagePath)
   })()
   encodePromises.push(promise)
 

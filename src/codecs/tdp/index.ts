@@ -19,7 +19,7 @@ import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
 import { Encode, EncodeOptions } from '../..'
-import { create, dump, load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 import * as csv from '../csv'
 
 const logger = getLogger('encoda')
@@ -37,10 +37,10 @@ export const extNames = [
   'tdp'
 ]
 
-export async function decode(file: VFile): Promise<stencila.Node> {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   let pkg: datapackage.Package
   if (file.path) pkg = await datapackage.Package.load(file.path)
-  else pkg = await datapackage.Package.load(JSON.parse(await dump(file)))
+  else pkg = await datapackage.Package.load(JSON.parse(await vfile.dump(file)))
 
   // Decode resources
   const parts = await Promise.all(pkg.resources.map(
@@ -75,7 +75,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 export const encode: Encode = async (
   node: stencila.Node,
   { filePath }: EncodeOptions = {}
-): Promise<VFile> => {
+): Promise<vfile.VFile> => {
   let cw = node as stencila.CreativeWork
 
   // Create a package descriptor from meta-data
@@ -130,11 +130,11 @@ export const encode: Encode = async (
   if (filePath) {
     // Save the package (datapackage.json and all resource files) and return an empty VFile
     pkg.save(filePath)
-    return create()
+    return vfile.create()
   } else {
     // Return a VFile with the JSON of datapackage.json
     const json = JSON.stringify(pkg.descriptor, null, '  ')
-    return load(json)
+    return vfile.load(json)
   }
 }
 
@@ -203,7 +203,7 @@ async function encodeCreativeWork(
     profile: 'tabular-data-resource',
     name: datatable.name || 'Unnamed',
 
-    data: await dump(await csv.encode(datatable)),
+    data: await vfile.dump(await csv.encode(datatable)),
     format: 'csv',
     mediatype: 'text/csv',
     encoding: 'utf-8',

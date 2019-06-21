@@ -7,13 +7,13 @@ import path from 'path'
 import { Encode, EncodeOptions } from '../..'
 import { home } from '../../boot'
 import * as pandoc from '../pandoc'
-import { VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 ]
 
-export async function decode(file: VFile): Promise<stencila.Node> {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   return pandoc.decode(
     file,
     pandoc.InputFormat.docx,
@@ -37,7 +37,7 @@ interface DocXOptions {
 export const encode: Encode<DocXOptions> = async (
   node: stencila.Node,
   { filePath, codecOptions = {} }: EncodeOptions<DocXOptions> = {}
-): Promise<VFile> =>
+): Promise<vfile.VFile> =>
   pandoc.encode(node, {
     filePath,
     format: pandoc.OutputFormat.docx,

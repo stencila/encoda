@@ -66,7 +66,7 @@ import * as stencila from '@stencila/schema'
 import produce from 'immer'
 import { Encode } from '../..'
 import * as md from '../md'
-import { dump, load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 export const mediaTypes = []
 export const extNames = ['xmd', 'rmd']
@@ -79,8 +79,8 @@ export const extNames = ['xmd', 'rmd']
  *
  * @param file The `VFile` to decode
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
-  const xmd = await dump(file)
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
+  const xmd = await vfile.dump(file)
   // Inline code chunks are replaced with special inline nodes
   let cmd = xmd.replace(
     /`([a-z]+)\s+([^`]*)`/g,
@@ -95,7 +95,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
       return md + '\n' + text + '\n```\n:::\n'
     }
   )
-  return md.decode(load(cmd))
+  return md.decode(vfile.load(cmd))
 }
 
 /**
@@ -108,10 +108,12 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  *
  * @param node The Stencila node to encode
  */
-export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
+export const encode: Encode = async (
+  node: stencila.Node
+): Promise<vfile.VFile> => {
   const transformed = produce(node, transform)
   const file = await md.encode(transformed)
-  const cmd = await dump(file)
+  const cmd = await vfile.dump(file)
   // Replace Commonmark "infor string" with R Markdown curly brace
   // enclosed options
   // TODO: Check parsing of options. Comma separated?
@@ -119,7 +121,7 @@ export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
     /```\s*(\w+[^\n]*)/g,
     (match, options) => `\`\`\` {${options}}`
   )
-  return load(xmd)
+  return vfile.load(xmd)
 
   function transform(node: any): stencila.Node {
     if (node === null || typeof node !== 'object') return node

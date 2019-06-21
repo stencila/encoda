@@ -13,7 +13,7 @@
 import stencila from '@stencila/schema'
 import { Encode } from '../..'
 import type from '../../util/type'
-import { dump, load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 /**
  * The media types that this codec can decode/encode.
@@ -28,8 +28,8 @@ export const extNames = ['txt', 'text']
  * @param file The `VFile` to decode
  * @returns A promise that resolves to a Stencila `Node`
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
-  return await dump(file)
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
+  return await vfile.dump(file)
 }
 
 /**
@@ -38,7 +38,9 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param thing The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
+export const encode: Encode = async (
+  node: stencila.Node
+): Promise<vfile.VFile> => {
   const text = ((): string => {
     if (node === null) return 'null'
     switch (type(node)) {
@@ -48,5 +50,5 @@ export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
         return node.toString()
     }
   })()
-  return load(text)
+  return vfile.load(text)
 }

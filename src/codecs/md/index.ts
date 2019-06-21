@@ -37,7 +37,7 @@ import map from 'unist-util-map'
 import { Encode } from '../..'
 import { isBlockContent, isNode } from '../../util'
 import type from '../../util/type'
-import { dump, load, VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 const logger = getLogger('encoda:md')
 
@@ -99,8 +99,8 @@ for (let ext of GENERIC_EXTENSIONS) {
  * @param file The `VFile` to decode
  * @returns A promise that resolves to a `stencila.Node`
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
-  const md = await dump(file)
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
+  const md = await vfile.dump(file)
   return decodeMarkdown(md)
 }
 
@@ -110,9 +110,11 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  * @param thing The `stencila.Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode = async (node: stencila.Node): Promise<VFile> => {
+export const encode: Encode = async (
+  node: stencila.Node
+): Promise<vfile.VFile> => {
   const md = encodeMarkdown(node)
-  return load(md)
+  return vfile.load(md)
 }
 
 /**

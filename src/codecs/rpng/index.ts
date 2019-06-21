@@ -22,7 +22,7 @@ import punycode from 'punycode'
 import { dump, Encode, EncodeOptions } from '../../index'
 import * as puppeteer from '../../puppeteer'
 import bundle from '../../util/bundle'
-import { load as loadVFile, VFile, write as writeVFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
 // an custom extension to be able to refere to this format more easily.
@@ -139,7 +139,7 @@ export function sniffSync(content: string): boolean {
  * @param file The `VFile` to decode
  * @returns The Stencila node
  */
-export async function decode(file: VFile): Promise<stencila.Node> {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   return decodeSync(file)
 }
 
@@ -150,7 +150,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
  *
  * @param content The content to sniff (a file path).
  */
-export function decodeSync(file: VFile): stencila.Node {
+export function decodeSync(file: vfile.VFile): stencila.Node {
   if (Buffer.isBuffer(file.contents)) {
     const json = extract(KEYWORD, file.contents)
     return JSON.parse(json)
@@ -191,7 +191,7 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
 export const encode: Encode = async (
   node: stencila.Node,
   options: EncodeOptions = {}
-): Promise<VFile> => {
+): Promise<vfile.VFile> => {
   const { filePath, isStandalone = false } = options
 
   const bundled = await bundle(node)
@@ -225,10 +225,10 @@ export const encode: Encode = async (
   const json = JSON.stringify(node)
   const image = insert(KEYWORD, json, buffer)
 
-  const file = loadVFile(image)
+  const file = vfile.load(image)
   if (filePath) {
     file.path = filePath
-    await writeVFile(file, filePath)
+    await vfile.write(file, filePath)
   }
 
   return file

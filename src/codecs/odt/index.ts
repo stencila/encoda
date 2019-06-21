@@ -5,11 +5,11 @@
 import stencila from '@stencila/schema'
 import { Encode } from '../..'
 import * as pandoc from '../pandoc'
-import { VFile } from '../../vfile'
+import * as vfile from '../../vfile'
 
 export const mediaTypes = ['application/vnd.oasis.opendocument.text']
 
-export async function decode(file: VFile): Promise<stencila.Node> {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   return pandoc.decode(file, pandoc.InputFormat.odt, [
     `--extract-media=${file.path}.media`
   ])
@@ -18,7 +18,7 @@ export async function decode(file: VFile): Promise<stencila.Node> {
 export const encode: Encode = async (
   node: stencila.Node,
   options = {}
-): Promise<VFile> => {
+): Promise<vfile.VFile> => {
   return pandoc.encode(node, {
     ...options,
     format: pandoc.OutputFormat.odt,
