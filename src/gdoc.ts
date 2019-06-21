@@ -354,8 +354,9 @@ function decodeList(
     })
     return undefined
   } else {
+    // TODO: Handle nested lists from GDocs
     logger.warn(
-      '🥞 Due to limitations with the Google Docs API v1 any nested lists will be flattened'
+      '🥞 Due to current limitations any nested lists will be flattened'
     )
   }
 
