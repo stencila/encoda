@@ -1,14 +1,5 @@
 /**
- * # IPYNB codec
- *
- * This module is still in development. In particular more work needs to be
- * done on type safety and better ways to support nbformat versions 3 and 4.
- *
  * @module ipynb
- */
-
-/** A comment required for above to be included in docs.
- * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
 import stencila from '@stencila/schema'
