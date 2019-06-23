@@ -11,8 +11,6 @@ import * as vfile from '../../util/vfile'
 import globby from 'globby'
 import { isCreativeWork } from '../../util'
 import { range } from 'fp-ts/lib/Array'
-import { array, option, ord } from 'fp-ts'
-import { pipe } from 'fp-ts/lib/pipeable'
 
 const log = getLogger('encoda:dir')
 
@@ -27,6 +25,13 @@ interface DirDecodeOptions {
    * nested directories)
    */
   patterns?: string[]
+
+  /**
+   * The file base names (i.e. without extension) that should
+   * be considered to be the "main" file in a directory.
+   * Defaults to `['main', 'index', 'README']`
+   */
+  mainNames?: string[]
 }
 
 /**
@@ -38,6 +43,7 @@ export async function decode(
   options: DirDecodeOptions = {}
 ): Promise<stencila.Collection> {
   const patterns = options.patterns || ['**/*']
+  const mainNames = options.mainNames || ['main', 'index', 'README']
 
   const root: stencila.Collection = {
     type: 'Collection',
@@ -74,16 +80,13 @@ export async function decode(
       )
     })
 
-  // Read files in parallel
+  // Read files into nodes in parallel
   const nodes = (await Promise.all(
     routes.map(async route => {
       const node = await read(path.join(dirPath, ...route))
       if (isCreativeWork(node)) {
         const { name } = path.parse(route[route.length - 1])
-        return {
-          route,
-          node: { name, ...node }
-        }
+        return { route, node: { name, ...node } }
       }
     })
   ))
@@ -95,7 +98,7 @@ export async function decode(
       []
     )
 
-  // Organize files into nested collections of CreativeWorks
+  // Organize nodes into nested collections of CreativeWorks
   const collections = new Map<string, stencila.Collection>()
   collections.set('', root)
   for (const { route, node } of nodes) {
@@ -115,6 +118,24 @@ export async function decode(
       parent = collection
     }
     parent.parts.push(node)
+  }
+
+  // For each collection determine the main node, if any
+  mainNames.reverse()
+  for (const collection of collections.values()) {
+    const rankings = collection.parts
+      .map((node, index) => ({
+        which: index,
+        rank: mainNames.indexOf(node.name || '')
+      }))
+      .filter(item => item.rank > -1)
+      .sort((a, b) => b.rank - a.rank)
+    const first = rankings[0]
+    if (first) {
+      collection.parts[first.which].meta = {
+        main: true
+      }
+    }
   }
 
   return root

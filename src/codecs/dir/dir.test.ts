@@ -60,17 +60,27 @@ const shallowNode: stencila.Collection = {
       parts: [
         {
           type: 'Article',
-          name: '1',
+          name: 'index',
           title: 'Untitled',
           authors: [],
-          content: [{ type: 'Paragraph', content: ['A1'] }]
+          content: [{ type: 'Paragraph', content: ['Index'] }]
         },
         {
           type: 'Article',
-          name: '2',
+          name: 'main',
+          meta: {
+            main: true
+          },
           title: 'Untitled',
           authors: [],
-          content: [{ type: 'Paragraph', content: ['A2'] }]
+          content: [{ type: 'Paragraph', content: ['Main'] }]
+        },
+        {
+          type: 'Article',
+          name: 'README',
+          title: 'Untitled',
+          authors: [],
+          content: [{ type: 'Paragraph', content: ['README'] }]
         }
       ]
     },
@@ -80,10 +90,20 @@ const shallowNode: stencila.Collection = {
       parts: [
         {
           type: 'Article',
-          name: '1',
+          name: 'index',
+          meta: {
+            main: true
+          },
           title: 'Untitled',
           authors: [],
-          content: [{ type: 'Paragraph', content: ['B1'] }]
+          content: [{ type: 'Paragraph', content: ['Index'] }]
+        },
+        {
+          type: 'Article',
+          name: 'README',
+          title: 'Untitled',
+          authors: [],
+          content: [{ type: 'Paragraph', content: ['README'] }]
         }
       ]
     },
@@ -93,10 +113,13 @@ const shallowNode: stencila.Collection = {
       parts: [
         {
           type: 'Article',
-          name: '1',
+          name: 'README',
+          meta: {
+            main: true
+          },
           title: 'Untitled',
           authors: [],
-          content: [{ type: 'Paragraph', content: ['C1'] }]
+          content: [{ type: 'Paragraph', content: ['README'] }]
         }
       ]
     }
