@@ -14,6 +14,50 @@ describe('decode', () => {
     expect(collection).toEqual(shallowNode)
   })
 
+  it('has a patterns option', async () => {
+    expect(
+      nodes(
+        await decode(shallow, {
+          patterns: ['**/README.*']
+        })
+      ).sort()
+    ).toEqual(['shallow/a/README', 'shallow/b/README', 'shallow/c/README'])
+
+    expect(
+      nodes(
+        await decode(shallow, {
+          patterns: ['**/a/*']
+        })
+      ).sort()
+    ).toEqual(['shallow/a/README', 'shallow/a/index', 'shallow/a/main'])
+  })
+
+  it('has a mainNames option', async () => {
+    expect(
+      mains(
+        await decode(shallow, {
+          mainNames: []
+        })
+      )
+    ).toEqual([])
+
+    expect(
+      mains(
+        await decode(shallow, {
+          mainNames: ['index']
+        })
+      )
+    ).toEqual(['shallow/a/index', 'shallow/b/index'])
+
+    expect(
+      mains(
+        await decode(shallow, {
+          mainNames: ['README', 'index']
+        })
+      )
+    ).toEqual(['shallow/a/README', 'shallow/b/README', 'shallow/c/README'])
+  })
+
   it('creates a nested collection from a deep dir', async () => {
     const collection = await decode(deep)
     expect(tree(collection)).toEqual(deepTree)
@@ -160,6 +204,43 @@ const deepTree = {
     }
   ]
 }
+
+/**
+ * Get the paths of the files from the tree
+ */
+function nodes(
+  work: stencila.CreativeWork,
+  path: string = '',
+  collect: string[] = []
+): any {
+  if (work.type === 'Collection') {
+    const collection = work as stencila.Collection
+    for (const part of collection.parts)
+      nodes(part, path + work.name + '/', collect)
+  } else {
+    collect.push(path + work.name)
+  }
+  return collect
+}
+
+/**
+ * Get the paths of the "main" files from the tree
+ */
+function mains(
+  work: stencila.CreativeWork,
+  path: string = '',
+  collect: string[] = []
+): any {
+  if (work.type === 'Collection') {
+    const collection = work as stencila.Collection
+    for (const part of collection.parts)
+      mains(part, path + work.name + '/', collect)
+  } else {
+    if (work.meta && work.meta.main) collect.push(path + work.name)
+  }
+  return collect
+}
+
 /**
  * Generate a more dense tree just names on leaf nodes
  * for comparing, actual with expected.
