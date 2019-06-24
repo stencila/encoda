@@ -2,15 +2,16 @@
  * @module dir
  */
 
-import stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
-import path from 'path'
-import fs from 'fs-extra'
-import { Encode, EncodeOptions, read } from '../..'
-import * as vfile from '../../util/vfile'
-import globby from 'globby'
-import { isCreativeWork } from '../../util'
+import stencila from '@stencila/schema'
 import { range } from 'fp-ts/lib/Array'
+import fs from 'fs-extra'
+import globby from 'globby'
+import path from 'path'
+import tempy from 'tempy'
+import { Encode, EncodeOptions, read, write } from '../..'
+import { isCreativeWork } from '../../util'
+import * as vfile from '../../util/vfile'
 
 const log = getLogger('encoda:dir')
 
@@ -142,12 +143,72 @@ export async function decode(
 }
 
 interface DirEncodeOptions {
-  // TODO:
+  /**
+   * The format to decode parts of the `Collection` as.
+   * Defaults to `html`.
+   */
+  format?: string
 }
 
 export const encode: Encode<DirEncodeOptions> = async (
   node: stencila.Node,
   options: EncodeOptions<DirEncodeOptions> = {}
 ): Promise<vfile.VFile> => {
-  throw new Error('TODO: Not implemented')
+  const dirPath = options.filePath || tempy.directory()
+  const format = options.format || 'html'
+
+  // Wrap to a collection as necessary
+  const cw: stencila.CreativeWork = isCreativeWork(node)
+    ? node
+    : { type: 'Article', content: [node] }
+
+  const coll: stencila.Collection =
+    cw.type === 'Collection'
+      ? (node as stencila.Collection)
+      : { type: 'Collection', parts: [cw] }
+
+  // Create a flattened list of nodes and their routes
+  const nodes = walk(coll)
+  function walk(
+    node: stencila.CreativeWork,
+    route: string[] = []
+  ): {
+    route: string[]
+    node: stencila.CreativeWork
+  }[] {
+    if (node.type === 'Collection') {
+      const coll = node as stencila.Collection
+      return coll.parts
+        .map(child => walk(child, [...route, node.name || '']))
+        .reduce((prev, curr) => [...prev, ...curr], [])
+    } else {
+      return [
+        {
+          route: [...route, node.name || 'unnamed'],
+          node
+        }
+      ]
+    }
+  }
+
+  // Ensure all the necessary directories are made
+  // TODO: this could be optimized to avoid lots of ensureDir calls
+  for (const node of nodes) {
+    const routePath = [dirPath, ...node.route.slice(1, -1)].join(path.sep)
+    await fs.ensureDir(routePath)
+  }
+
+  // Generate the output file in 'parallel'
+  await Promise.all(
+    nodes.map(async ({ route, node }) => {
+      const fileName =
+        node.meta && node.meta.main
+          ? 'index.html'
+          : route[route.length - 1] + '.html'
+      const filePath = [dirPath, ...route.slice(1, -1), fileName].join(path.sep)
+      return await write(node, filePath)
+    })
+  )
+
+  return vfile.create(dirPath)
 }

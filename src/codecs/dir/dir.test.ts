@@ -2,6 +2,8 @@ import { decode, encode } from '.'
 import path from 'path'
 import * as vfile from '../../util/vfile'
 import * as stencila from '@stencila/schema'
+import globby from 'globby'
+import fs from 'fs-extra'
 
 describe('decode', () => {
   it('creates a flat collection from a flat dir', async () => {
@@ -61,6 +63,30 @@ describe('decode', () => {
   it('creates a nested collection from a deep dir', async () => {
     const collection = await decode(deep)
     expect(tree(collection)).toEqual(deepTree)
+  })
+})
+
+describe('encode', () => {
+  it('creates a directory', async () => {
+    const dir = path.join(__dirname, '__output__', 'flat')
+    await fs.remove(dir)
+    await encode(flatNode, { filePath: dir })
+    const files = await globby('**/*', { cwd: dir })
+    expect(files.sort()).toEqual(['1.html', '2.html', '3.html'])
+  })
+
+  it('uses index.html for main files', async () => {
+    const dir = path.join(__dirname, '__output__', 'shallow')
+    await fs.remove(dir)
+    await encode(shallowNode, { filePath: dir })
+    const files = await globby('**/*', { cwd: dir })
+    expect(files.sort()).toEqual([
+      'a/README.html',
+      'a/index.html',
+      'b/README.html',
+      'b/index.html',
+      'c/index.html'
+    ])
   })
 })
 
