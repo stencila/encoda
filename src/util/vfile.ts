@@ -1,3 +1,7 @@
+/**
+ * @module util/vfile
+ */
+
 import fs from 'fs-extra'
 import getStdin from 'get-stdin'
 // @ts-ignore

@@ -1,5 +1,5 @@
 /**
- * Codec for JSON
+ * @module json
  */
 
 import * as stencila from '@stencila/schema'

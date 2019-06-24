@@ -1,14 +1,5 @@
 /**
- * # Markdown codec
- *
- * These functions transform nodes from a [Markdown Abstract Syntax Tree](https://github.com/syntax-tree/mdast) to
- * nodes in a [Stencila Document Tree](https://github.com/stencila/schema).
- *
  * @module md
- */
-
-/** A comment required for above to be included in docs.
- * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
 import { getLogger } from '@stencila/logga'

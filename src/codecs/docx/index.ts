@@ -1,5 +1,5 @@
 /**
- * Codec for Microsoft Word
+ * @module docx
  */
 
 import stencila from '@stencila/schema'

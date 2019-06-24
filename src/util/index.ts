@@ -1,3 +1,7 @@
+/**
+ * @module util
+ */
+
 import * as stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'

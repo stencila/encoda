@@ -1,3 +1,7 @@
+/**
+ * @module pandoc
+ */
+
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import childProcess from 'child_process'

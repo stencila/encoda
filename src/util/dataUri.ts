@@ -1,3 +1,7 @@
+/**
+ * @module util
+ */
+
 import fs from 'fs-extra'
 import mime from 'mime'
 import tempy from 'tempy'

@@ -1,5 +1,5 @@
 /**
- * Codec for comma separated values (CSV)
+ * @module csv
  */
 
 import stencila from '@stencila/schema'

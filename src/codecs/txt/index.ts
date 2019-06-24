@@ -1,13 +1,5 @@
 /**
- * # Plain text codec
- *
- * This codec simply returns a string
- *
  * @module txt
- */
-
-/** A comment required for above to be included in docs.
- * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
 import stencila from '@stencila/schema'

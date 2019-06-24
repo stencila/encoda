@@ -1,3 +1,7 @@
+/**
+ * @module util/puppeteer
+ */
+
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
 import puppeteer from 'puppeteer'
