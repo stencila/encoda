@@ -1,30 +1,12 @@
+import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
-import * as csv from './codecs/csv'
-import * as demoMagic from './codecs/dmagic'
-import * as docx from './codecs/docx'
-import * as gdoc from './codecs/gdoc'
-import * as html from './codecs/html'
-import * as ipynb from './codecs/ipynb'
-import * as jats from './codecs/jats'
-import * as json from './codecs/json'
-import * as json5 from './codecs/json5'
-import * as latex from './codecs/latex'
-import * as md from './codecs/md'
-import * as ods from './codecs/ods'
-import * as odt from './codecs/odt'
-import * as pandoc from './codecs/pandoc'
-import * as pdf from './codecs/pdf'
-import * as rpng from './codecs/rpng'
-import * as tdp from './codecs/tdp'
-import * as txt from './codecs/txt'
-import * as xlsx from './codecs/xlsx'
-import * as xmd from './codecs/xmd'
-import * as yaml from './codecs/yaml'
 import * as vfile from './util/vfile'
 
 export { default as process } from './process'
+
+const logger = getLogger('encoda')
 
 type VFile = vfile.VFile
 
@@ -34,37 +16,33 @@ type VFile = vfile.VFile
  * Note that order is of importance for matching. More "generic"
  * formats should go last. See the `match` function.
  */
-export const codecList: Array<Codec> = [
+export const codecList: Array<string> = [
   // Tabular data, spreadsheets etc
-  csv,
-  ods,
-  tdp,
-  xlsx,
-
+  'csv',
+  'ods',
+  'tdp',
+  'xlsx',
   // Articles, textual documents etc
-  docx,
-  gdoc,
-  html,
-  ipynb,
-  jats,
-  latex,
-  md,
-  odt,
-  pdf,
-  txt,
-  xmd,
-
+  'docx',
+  'gdoc',
+  'html',
+  'ipynb',
+  'jats',
+  'latex',
+  'md',
+  'odt',
+  'pdf',
+  'txt',
+  'xmd',
   // Scripts
-  demoMagic,
-
+  'dmagic',
   // Images
-  rpng,
-
+  'rpng',
   // Data interchange formats
-  yaml,
-  pandoc,
-  json5,
-  json
+  'yaml',
+  'pandoc',
+  'json5',
+  'json'
 ]
 
 export interface EncodeOptions<FormatOptions extends object = {}> {
@@ -177,6 +155,7 @@ export async function match(
       .toLowerCase()
     mediaType = mime.getType(content) || undefined
   }
+
   // But override with supplied format (if any) assuming that
   // media types always have a forward slash and extension names
   // never do.
@@ -188,7 +167,21 @@ export async function match(
     }
   }
 
-  for (let codec of codecList) {
+  /**
+   * The following try/catch, as well as the for loop is in place for
+   * performance optimizations and avoiding loading unnecessary modules. If we
+   * find a matching Codec, short-circuit the module loading logic by returning
+   * the dynamically imported Codec
+   */
+  try {
+    return await import(`./codecs/${extName}`)
+  } catch (error) {
+    logger.warn(`No codec was found for ${extName}\n\n${error}`)
+  }
+
+  for (let codecName of codecList) {
+    const codec = await import(`./codecs/${codecName}`)
+
     if (fileName && codec.fileNames && codec.fileNames.includes(fileName)) {
       return codec
     }
@@ -319,9 +312,9 @@ export async function read(
 export async function write(
   node: stencila.Node,
   filePath: string,
-  format?: string
+  encodeOptions: EncodeOptions = {}
 ): Promise<VFile> {
-  let file = await encode(node, { format, filePath })
+  let file = await encode(node, { ...encodeOptions, filePath })
   await vfile.write(file, filePath)
   return file
 }

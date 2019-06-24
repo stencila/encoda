@@ -164,7 +164,7 @@ export default async function process(
   async function _write(node: stencila.Node, target: string, format?: string) {
     try {
       const targetPath = './' + path.join(dir, target)
-      await write(node, targetPath, format)
+      await write(node, targetPath, { format })
     } catch (error) {
       throw Error(`Error: writing "${target}": ${error} `)
     }
