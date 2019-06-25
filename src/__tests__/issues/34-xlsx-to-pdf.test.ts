@@ -17,31 +17,38 @@ const pdf = path.join(__dirname, '34-xlsx-to-pdf.out.pdf')
  * error reported does not occur. Use manual, visual
  * inspection of the PDF to check it looks OK :)
  */
-test('issue 34: XLSX to PDF conversion fails', async () => {
-  const datatable = await read(xlsx)
 
-  const expected = {
-    type: 'Datatable',
-    name: 'Monkeys',
-    columns: [
-      {
-        type: 'DatatableColumn',
-        name: '# Monkeys',
-        values: [10, 30, 28]
-      },
-      {
-        type: 'DatatableColumn',
-        name: 'Tame?',
-        values: ['Partly', 'Completely', 'Utterly intransigent']
-      }
-    ]
-  }
-  expect(datatable).toEqual(expected)
+describe('issue 34: XLSX to PDF conversion fails', () => {
+  test('read', async () => {
+    const datatable = await read(xlsx)
 
-  await write(datatable, pdf)
-  expect(await fs.pathExists(pdf)).toBe(true)
-})
+    const expected = {
+      type: 'Datatable',
+      name: 'Monkeys',
+      columns: [
+        {
+          type: 'DatatableColumn',
+          name: '# Monkeys',
+          values: [10, 30, 28]
+        },
+        {
+          type: 'DatatableColumn',
+          name: 'Tame?',
+          values: ['Partly', 'Completely', 'Utterly intransigent']
+        }
+      ]
+    }
+    expect(datatable).toEqual(expected)
+  })
 
-afterAll(async () => {
-  await fs.remove(pdf)
+  test('write', async () => {
+    const datatable = await read(xlsx)
+
+    await write(datatable, pdf)
+    expect(await fs.pathExists(pdf)).toBe(true)
+  })
+
+  afterAll(async () => {
+    await fs.remove(pdf)
+  })
 })

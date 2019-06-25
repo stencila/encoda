@@ -11,10 +11,15 @@ describe('issue 58', () => {
     expect(
       gdoc.lists['kix.list.1'].listProperties.nestingLevels[0].glyphType
     ).toBe('GLYPH_TYPE_UNSPECIFIED')
+  })
 
+  test('list lengths are correct', async () => {
     const article = (await read(file)) as stencila.Article
     expect(article.content && article.content.length).toBe(5)
+  })
 
+  test('list is unordered', async () => {
+    const article = (await read(file)) as stencila.Article
     // @ts-ignore
     const list = article.content[4] as stencila.List
     expect(list.order).toBe('unordered')
