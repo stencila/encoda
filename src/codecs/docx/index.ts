@@ -26,6 +26,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
 const defaultDocxTemplatePath = path.join(
   home,
   'src',
+  'codecs',
   'pandoc',
   'templates',
   'stencila-template.docx'
