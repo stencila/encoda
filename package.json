@@ -128,7 +128,10 @@
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.[jt]s?(x)",
-      "<rootDir>/src/**/?(*.)+test.[jt]s?(x)"
+      "<rootDir>/src/**/*.test.[jt]s?(x)"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
     ],
     "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
     "testPathIgnorePatterns": [
