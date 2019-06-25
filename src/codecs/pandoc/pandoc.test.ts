@@ -6,7 +6,7 @@ import * as rpng from '../rpng'
 import { decode, decodeMeta, emptyAttrs, encode, encodeMeta } from './'
 import * as Pandoc from './types'
 
-jest.setTimeout(30 * 1000)
+jest.setTimeout(40 * 1000)
 
 test('decode', async () => {
   const p = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
@@ -499,41 +499,21 @@ const imageInlinesToString: testCase = {
   }
 }
 
-// Test that "special" nodes, encoded as rPNGs, can be decoded/encoded
-test('rpngs', async () => {
-  const boolean = false
-  const number = 3.14
-  const array = [1, 2, 3]
-  const object = { a: 1, b: 'two' }
-  const thing = { type: 'Thing', name: 'thing' }
-  const person = { type: 'Person', givenNames: ['John'] }
-
-  // Generate the rPNGs
+describe('rPNG encoding & decoding of "special" node types', () => {
   const output = path.join(__dirname, '__output__', 'pandoc-rpngs')
   fs.ensureDirSync(output)
-  const nullPng = await rpng.encode(null, {
-    filePath: path.join(output, 'null.png')
-  })
-  const booleanPng = await rpng.encode(boolean, {
-    filePath: path.join(output, 'boolean.png')
-  })
-  const numberPng = await rpng.encode(number, {
-    filePath: path.join(output, 'number.png')
-  })
-  const arrayPng = await rpng.encode(array, {
-    filePath: path.join(output, 'array.png')
-  })
-  const objectPng = await rpng.encode(object, {
-    filePath: path.join(output, 'object.png')
-  })
-  const thingPng = await rpng.encode(thing, {
-    filePath: path.join(output, 'thing.png')
-  })
-  const personPng = await rpng.encode(person, {
-    filePath: path.join(output, 'person.png')
-  })
 
-  const pdoc: Pandoc.Document = {
+  const nodeMap = {
+    null: null,
+    boolean: false,
+    number: 3.14,
+    array: [1, 2, 3],
+    object: { a: 1, b: 'two' },
+    Thing: { type: 'Thing', name: 'thing' },
+    Person: { type: 'Person', givenNames: ['John'] }
+  }
+
+  const pdoc = (rPNG: Pandoc.Target): Pandoc.Document => ({
     'pandoc-api-version': Pandoc.Version,
     meta: {},
     blocks: [
@@ -541,56 +521,47 @@ test('rpngs', async () => {
         t: 'Para',
         c: [
           str('A paragraph with primitives: a null '),
-          { t: 'Image', c: [emptyAttrs, [], [nullPng.path!, 'null']] },
-          str(', a boolean '),
-          { t: 'Image', c: [emptyAttrs, [], [booleanPng.path!, 'boolean']] },
-          str(', a number '),
-          { t: 'Image', c: [emptyAttrs, [], [numberPng.path!, 'number']] },
-          str(', an array '),
-          { t: 'Image', c: [emptyAttrs, [], [arrayPng.path!, 'array']] },
-          str(', and an object '),
-          { t: 'Image', c: [emptyAttrs, [], [objectPng.path!, 'object']] },
-          str(', and a thing '),
-          { t: 'Image', c: [emptyAttrs, [], [thingPng.path!, 'Thing']] },
-          str(', and a person '),
-          { t: 'Image', c: [emptyAttrs, [], [personPng.path!, 'Person']] },
+          { t: 'Image', c: [emptyAttrs, [], rPNG] },
           str('.')
         ]
       }
     ]
-  }
+  })
 
-  const node: stencila.Node = {
+  const rPNGNode = (node: stencila.Node): stencila.Node => ({
     type: 'Article',
     title: 'Untitled',
     authors: [],
     content: [
       {
         type: 'Paragraph',
-        content: [
-          'A paragraph with primitives: a null ',
-          null,
-          ', a boolean ',
-          boolean,
-          ', a number ',
-          number,
-          ', an array ',
-          array,
-          ', and an object ',
-          object,
-          ', and a thing ',
-          thing,
-          ', and a person ',
-          person,
-          '.'
-        ]
+        content: ['A paragraph with primitives: a null ', node, '.']
       }
     ]
-  }
+  })
 
-  expect(await decode(load(JSON.stringify(pdoc)))).toEqual(node)
+  test.each<any>(Object.entries(nodeMap))(
+    'decode: %s',
+    async (name: string, value: stencila.Node, done: jest.DoneCallback) => {
+      const rPNG = await rpng.encode(value, {
+        filePath: path.join(output, `${name}.png`)
+      })
+
+      const expected = rPNGNode(value)
+
+      const actual = await decode(
+        load(JSON.stringify(pdoc([rPNG.path!, name])))
+      )
+
+      expect(actual).toEqual(expected)
+      done()
+    }
+  )
+
   // Skipping this until resolve how to deal with output RPNG paths
-  //expect(JSON.parse(await dump(await encode(node)))).toEqual(pdoc)
+  test.skip('decode', () => {
+    // expect(JSON.parse(await dump(await encode(node)))).toEqual(pdoc)
+  })
 })
 
 // A very simple test of the approach to typing Pandoc nodes
