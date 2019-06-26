@@ -4,6 +4,8 @@ import { create } from '../../util/vfile'
 import articleSimple from '../../__fixtures__/article-simple'
 import * as pdf from './'
 
+jest.setTimeout(30 * 1000) // Extending timeout due to long running test
+
 // Ensure that the dir for test outputs is present
 const output = path.join(__dirname, '__output__')
 fs.ensureDirSync(output)
