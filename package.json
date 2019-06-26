@@ -6,14 +6,14 @@
   "types": "dist/index.d.ts",
   "bin": "dist/cli.js",
   "scripts": {
-    "install": "node install.js",
+    "install": "npx ts-node ./install.ts",
     "test": "jest",
     "test:cover": "jest --collectCoverage",
     "test:watch": "jest --watch",
     "check": "npm run build && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema --ignore-module @stencila/thema .",
-    "build": "tsc && cp src/*.js dist/ && cp -r src/templates dist",
+    "build": "tsc && cp -r src/codecs/pandoc/templates dist",
     "docs": "markdown-toc -i --maxdepth=4 README.md && typedoc --options typedoc.js ./src",
     "clean": "rm -rf bins coverage dist docs tests/**/*.to.* vendor"
   },
@@ -88,17 +88,12 @@
     "@types/minimist": "^1.2.0",
     "@types/parse5": "^5.0.0",
     "@types/puppeteer": "^1.12.3",
-    "@types/tar": "^4.0.0",
     "@types/unist": "^2.0.3",
     "delay": "^4.2.0",
     "dependency-check": "^3.3.0",
     "googleapis": "^40.0.0",
     "markdown-toc": "^1.2.0",
-    "tar": "^4.4.9",
     "typescript": "^3.5.2"
-  },
-  "pandoc": {
-    "version": "2.7.2"
   },
   "commitlint": {
     "extends": [
@@ -123,19 +118,31 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "testMatch": [
-      "**/tests/**/*.test.ts"
-    ],
     "setupFilesAfterEnv": [
-      "<rootDir>/tests/matchers.ts"
+      "<rootDir>/src/__tests__/matchers.ts"
     ],
-    "globalTeardown": "<rootDir>/tests/teardown.ts",
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.[jt]s?(x)",
+      "<rootDir>/src/**/*.test.[jt]s?(x)"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
+    ],
+    "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "__tests__/matchers.ts",
+      "__tests__/teardown.ts",
+      "__tests__/helpers.ts"
+    ],
     "coveragePathIgnorePatterns": [
-      "tests/helpers.ts",
-      "tests/fixtures/*"
+      "__tests__/helpers.ts",
+      "__fixtures__/*",
+      "__output__/*"
     ],
     "watchPathIgnorePatterns": [
-      "tests/output"
+      "__output__/*",
+      ".out.*"
     ]
   },
   "husky": {

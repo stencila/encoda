@@ -2,9 +2,9 @@ import stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
-import { validate } from './util'
+import { validate } from './util/index'
 import type from './util/type'
-import { isPath } from './vfile'
+import { isPath } from './util/vfile'
 
 /**
  * Process a node
@@ -164,7 +164,7 @@ export default async function process(
   async function _write(node: stencila.Node, target: string, format?: string) {
     try {
       const targetPath = './' + path.join(dir, target)
-      await write(node, targetPath, format)
+      await write(node, targetPath, { format })
     } catch (error) {
       throw Error(`Error: writing "${target}": ${error} `)
     }

@@ -14,14 +14,11 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 <!-- toc -->
 
-- [Status](#status)
+- [Formats](#formats)
 - [Install](#install)
 - [Use](#use)
 - [Develop](#develop)
-- [Roadmap](#roadmap)
 - [Contribute](#contribute)
-- [See also](#see-also)
-- [FAQ](#faq)
 - [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
@@ -32,7 +29,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | ------------------------- | ------------ | -------- | ------ | ------------------ |
 | **Text**                  |
 | Markdown                  | `md`         | Extens   | α      | [⚠][md-issues]     |
-| Latex                     | `tex`        |          | α      | [⚠][tex-issues]    |
+| Latex                     | `tex`        | None     | α      | [⚠][tex-issues]    |
 | Microsoft Word            | `docx`       | rPNG     | α      | [⚠][docx-issues]   |
 | Google Docs               | `gdoc`       | rPNG     | α      | [⚠][gdoc-issues]   |
 | Open Document Text        | `odt`        | rPNG     | α      | [⚠][odt-issues]    |
@@ -59,7 +56,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | JSON5                     | `json5`      | Native   | ✔      | [⚠][json5-issues]  |
 | YAML                      | `yaml`       | Native   | ✔      | [⚠][yaml-issues]   |
 
-### Key
+**Key**
 
 <details>
 <summary><b id="format-approach">Approach</b>...</summary>
@@ -182,7 +179,7 @@ We recognize [all contributors](https://allcontributors.org/) - including those 
 
 Encoda relies on many awesome opens source tools (see `package.json` for the complete list). We are grateful ❤ to their developers and contributors for all their time and energy. In particular, these tools do a lot of the heavy lifting 💪 under the hood.
 
-|                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Tool                                                                                                               | Use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Ajv](https://ajv.js.org/images/ajv_logo.png)                                                                     | [Ajv](https://ajv.js.org/) is "the fastest JSON Schema validator for Node.js and browser". Ajv is not only fast, it also has an impressive breadth of functionality. We use Ajv for the `validate()` and `coerce()` functions to ensure that ingested data is valid against the Stencila [schema](https://github.com/stencila/schema).                                                                                                                                                                                                                                                                         |
 | ![Frictionless Data](https://avatars0.githubusercontent.com/u/5912125?s=200&v=4)                                   | [`datapackage-js`](https://github.com/frictionlessdata/datapackage-js) from the team at [Frictionless Data](https://frictionlessdata.io/) is a Javascript library for working with [Data Packages](https://frictionlessdata.io/specs/data-package/). It does a lot of the work in converting between Tabular Data Packages and Stencila Datatables.                                                                                                                                                                                                                                                            |

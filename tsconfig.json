@@ -1,7 +1,9 @@
 {
   "extends": "@stencila/typescript-boilerplate",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "dist/",
+    "rootDir": "src/"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.test.ts", "**/__tests__/  ", "**/__fixtures__/", "dist/"]
 }

@@ -4,10 +4,8 @@
 /.sandbox
 /coverage
 /dist
-/docs/api
-/docs/**/*.html
+/docs
 /node_modules
-/tests/**/*.out.*
-/tests/fixtures/rpng/*out.png
-/tests/output
+**/__output__
+**/*.out.*
 /vendor

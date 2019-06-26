@@ -17,8 +17,7 @@
 import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
-// @ts-ignore
-import pandoc from './pandoc-binary'
+import { pandocBinary } from './codecs/pandoc/binary'
 
 /**
  * Is this process being run as a `pkg` packaged binary?
@@ -65,10 +64,10 @@ export const chromiumPath = packaged
 /**
  * The path to the Pandoc binary executable
  */
-export const pandocPath = path.join(home, pandoc.path())
+export const pandocPath = path.join(home, pandocBinary.path())
 
 /**
  * Equivalent to the Pandoc `--data-dir` flag.
  * Instructs Pandoc where to templates and other assets.
  */
-export const pandocDataDir = path.join(home, 'src')
+export const pandocDataDir = path.join(home, 'src', 'codecs', 'pandoc')
