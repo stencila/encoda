@@ -19,6 +19,7 @@ import mime from 'mime'
 import path from 'path'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
+import { RequireSome } from '../../util/type'
 import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda:dar')
@@ -47,6 +48,11 @@ export async function sniff(content: string): Promise<boolean> {
  */
 const MEDIA_TYPES_SYNCED = ['text/csv']
 
+/* DAR codec specific options */
+interface DarOptions {
+  documentId: number
+}
+
 /**
  * Decode a `VFile` pointing to a DAR folder to a Stencila `Node`.
  *
@@ -69,9 +75,9 @@ export async function decode(
  * @param node The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode = async (
+export const encode: Encode<DarOptions> = async (
   node: stencila.Node,
-  options: EncodeOptions = {}
+  options = {}
 ): Promise<vfile.VFile> => {
   let { filePath } = options
 
@@ -81,7 +87,12 @@ export const encode: Encode = async (
   // Generate promises for each document and its assets
   const promises = [node].map(async (node, index) => {
     const { encoded, assets } = await encodeAssets(node, darPath, index)
-    const document = await encodeDocument(encoded, darPath, index)
+    const document = await encodeDocument(encoded, {
+      filePath: darPath,
+      codecOptions: {
+        documentId: index
+      }
+    })
     return { document, assets }
   })
 
@@ -108,20 +119,25 @@ export const encode: Encode = async (
   return vfile.create(filePath)
 }
 
+type EncodeDarOptions = RequireSome<
+  EncodeOptions<DarOptions>,
+  'filePath' | 'codecOptions'
+>
+
 /**
  * Encode a Stencila `Node` as a JATS file and return a `<document>` element
  * to put into the `manifest.xml` file of the DAR.
  */
 async function encodeDocument(
   node: stencila.Node,
-  darPath: string,
-  document: number
+  options: EncodeDarOptions
 ): Promise<Element> {
-  const id = `d${document}`
+  const { filePath, codecOptions, ...rest } = options
+  const id = `d${codecOptions.documentId}`
   const documentFile = `${id}.jats.xml`
-  const documentPath = path.join(darPath, documentFile)
+  const documentPath = path.join(filePath, documentFile)
 
-  await write(node, documentPath, { format: 'jats' })
+  await write(node, documentPath, { format: 'jats', ...rest })
 
   const elem = h('document')
   elem.setAttribute('type', 'article')
