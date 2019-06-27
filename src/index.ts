@@ -23,6 +23,7 @@ export const codecList: Array<string> = [
   'tdp',
   'xlsx',
   // Articles, textual documents etc
+  'dar',
   'docx',
   'gdoc',
   'html',

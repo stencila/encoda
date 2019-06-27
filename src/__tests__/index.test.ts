@@ -12,6 +12,7 @@ import { fixture } from './helpers'
 fs.ensureDirSync(path.join(__dirname, 'output'))
 
 describe('match', () => {
+  jest.setTimeout(30 * 1000) // Extending timeout due to long running tests
   codecList.push('__mocks__/ssf')
 
   it('works with file paths', async () => {

@@ -6,7 +6,7 @@ import * as rpng from '../rpng'
 import { decode, decodeMeta, emptyAttrs, encode, encodeMeta } from './'
 import * as Pandoc from './types'
 
-jest.setTimeout(40 * 1000)
+jest.setTimeout(30 * 1000)
 
 test('decode', async () => {
   const p = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
