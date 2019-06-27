@@ -10,7 +10,6 @@ exports[`encode 1`] = `
       {
         \\"@context\\": \\"http://stencila.github.io/schema/stencila.jsonld\\",
         \\"type\\": \\"Article\\",
-        \\"title\\": \\"Our article\\",
         \\"authors\\": []
       }
     </script>
@@ -1655,56 +1654,59 @@ exports[`encode 1`] = `
   </head>
 
   <body>
-    <h1>Heading one</h1>
-    <h2>Heading two</h2>
-    <h3>Heading three</h3>
-    <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
-    <p>A paragraph with <a href=\\"https://example.org\\" data-attr=\\"foo\\">a <em>rich</em> link</a>.</p>
-    <p>A paragraph with <q cite=\\"https://example.org\\">quote</q>.</p>
-    <p>A paragraph with <code class=\\"language-python\\"># code</code>.</p>
-    <p>A paragraph with an image <img src=\\"https://example.org/image.png\\" title=\\"title\\"
-        alt=\\"alt text\\">.</p>
-    <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
-      </stencila-boolean>.</p>
-    <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
-      </stencila-number>, and a <stencila-array>[1,2]</stencila-array>.</p>
-    <p>A paragraph with an <stencila-object>{a:1,b:'two'}</stencila-object> and a <stencila-thing>
-        {type:'Person'}</stencila-thing>.</p>
-    <blockquote cite=\\"https://example.org\\">A blockquote</blockquote>
-    <pre><code class=\\"language-r\\"># Some code
+    <article>
+      <h1>Heading one</h1>
+      <h2>Heading two</h2>
+      <h3>Heading three</h3>
+      <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
+      <p>A paragraph with <a href=\\"https://example.org\\" data-attr=\\"foo\\">a <em>rich</em> link</a>.
+      </p>
+      <p>A paragraph with <q cite=\\"https://example.org\\">quote</q>.</p>
+      <p>A paragraph with <code class=\\"language-python\\"># code</code>.</p>
+      <p>A paragraph with an image <img src=\\"https://example.org/image.png\\" title=\\"title\\"
+          alt=\\"alt text\\">.</p>
+      <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
+        </stencila-boolean>.</p>
+      <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
+        </stencila-number>, and a <stencila-array>[1,2]</stencila-array>.</p>
+      <p>A paragraph with an <stencila-object>{a:1,b:'two'}</stencila-object> and a <stencila-thing>
+          {type:'Person'}</stencila-thing>.</p>
+      <blockquote cite=\\"https://example.org\\">A blockquote</blockquote>
+      <pre><code class=\\"language-r\\"># Some code
 x = c(1,2)</code></pre>
-    <pre><code class=\\"language-js\\">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+      <pre><code class=\\"language-js\\">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
 const inc = (n) =&gt; n + 1</code></pre>
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ul>
-    <ol>
-      <li>First</li>
-      <li>Second</li>
-      <li>Third</li>
-    </ol>
-    <table>
-      <tbody>
-        <tr>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ol>
+      <table>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+    </article>
   </body>
 
 </html>"

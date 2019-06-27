@@ -60,6 +60,7 @@ import JSON5 from 'json5'
 import path from 'path'
 import { Encode, EncodeOptions } from '../..'
 import { columnIndexToName } from '../../codecs/xlsx'
+import { isNode } from '../../util'
 import bundle from '../../util/bundle'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
@@ -94,6 +95,21 @@ export const beautify = (html: string): string =>
     preserve_newlines: false // Preserve existing line-breaks
   })
 
+const getArticleMetaData = (
+  node: stencila.Node
+): Exclude<stencila.Article, 'content'> => {
+  if (isNode<stencila.Article>({ Article: 'Article' })(node)) {
+    const { content, ...metadata } = node
+    return metadata
+  }
+
+  return {
+    authors: [],
+    title: 'Untitled',
+    type: 'Article'
+  }
+}
+
 interface EncodeHTMLOptions {
   theme?: 'eLife' | 'stencila'
 }
@@ -107,19 +123,25 @@ interface EncodeHTMLOptions {
 export const encode: Encode<EncodeHTMLOptions> = async (
   node: stencila.Node,
   options: EncodeOptions<EncodeHTMLOptions> = {
-    isStandalone: false,
+    isStandalone: true,
     isBundle: false,
     theme: 'stencila',
     codecOptions: {}
   }
 ): Promise<vfile.VFile> => {
-  const { isStandalone = false, isBundle = false, theme = 'stencila' } = options
+  const { isStandalone = true, isBundle = false, theme = 'stencila' } = options
 
   const nodeToEncode = isBundle ? await bundle(node) : node
-  const dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
+  let dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
     isStandalone,
     theme
   }) as HTMLHtmlElement
+
+  if (isStandalone) {
+    const { title, ...metadata } = getArticleMetaData(node)
+    dom = generateHtmlElement(title, metadata, [dom])
+  }
+
   const beautifulHtml = beautify(dom.outerHTML)
   return vfile.load(beautifulHtml)
 }
@@ -129,6 +151,9 @@ function decodeNode(node: Node): stencila.Node | undefined {
   switch (name) {
     case '#document':
       return decodeDocument(node as HTMLDocument)
+
+    case 'article':
+      return decodeArticle(node as HTMLElement)
 
     case 'div':
       return decodeDiv(node as HTMLDivElement)
@@ -202,7 +227,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
 const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
   switch (type(node)) {
     case 'Article':
-      return encodeArticle(node as stencila.Article, options)
+      return encodeArticle(node as stencila.Article)
 
     case 'Heading':
       return encodeHeading(node as stencila.Heading)
@@ -305,10 +330,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
  * and so this function decodes it's children.
  */
 function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
-  // TODO: enable decoding of all children
-  logger.warn('Currently, only first child of <div> is decoded.')
-  const first = div.firstElementChild
-  if (first) return decodeNode(first)
+  return [...div.childNodes].map(decodeNode)
 }
 
 /**
@@ -356,17 +378,26 @@ function generateHtmlElement(
   )
 }
 
+const decodeArticle = (element: HTMLElement): stencila.Article => {
+  const title = element.querySelector('title') || element.querySelector('h1')
+
+  return {
+    type: 'Article',
+    title: title ? title.innerText : 'Untitled',
+    authors: [],
+    content: [...element.childNodes].reduce((nodes: stencila.Node[], node) => {
+      const decodedNode = decodeNode(node)
+      return decodedNode ? [...nodes, decodedNode] : nodes
+    }, [])
+  }
+}
+
 /**
  * Encode a `stencila.Article` to a `#document` node.
  */
-function encodeArticle(
-  article: stencila.Article,
-  options: {} = {}
-): HTMLHtmlElement {
+function encodeArticle(article: stencila.Article): HTMLElement {
   const { type, title, content, ...rest } = article
-  const metadata = { type, title, ...rest }
-  const body = content ? content.map(encodeNode, options) : []
-  return generateHtmlElement(title, metadata, body, options)
+  return h('article', content ? content.map(encodeNode) : [])
 }
 
 /**
