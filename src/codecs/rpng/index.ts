@@ -195,7 +195,11 @@ export const encode: Encode = async (
   const { filePath, isStandalone = false } = options
 
   const bundled = await bundle(node)
-  const html = await dump(bundled, { ...options, format: 'html' })
+  const html = await dump(bundled, {
+    ...options,
+    isStandalone: true,
+    format: 'html'
+  })
 
   const page = await puppeteer.page()
   await page.setContent(

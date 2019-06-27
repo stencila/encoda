@@ -1,7 +1,7 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
-import { beautify, decode, encode } from './'
 import { dump, load } from '../../util/vfile'
+import { beautify, decode, encode } from './'
 
 const js = fs.readFileSync(
   require.resolve('@stencila/thema/dist/themes/stencila')
@@ -18,8 +18,12 @@ test('decode', async () => {
 
 test('encode', async () => {
   expect(await dump(await encode(kitchenSink.node))).toMatchSnapshot()
-  expect(await dump(await encode(attrs.node))).toMatchSnapshot()
-  expect(await dump(await encode(dt.node))).toEqual(dt.html)
+  expect(
+    await dump(await encode(attrs.node, { isStandalone: false }))
+  ).toMatchSnapshot()
+  expect(await dump(await encode(dt.node, { isStandalone: false }))).toEqual(
+    dt.html
+  )
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
