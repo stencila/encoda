@@ -71,7 +71,7 @@
     "xlsx": "^0.14.2"
   },
   "devDependencies": {
-    "@jupyterlab/coreutils": "^2.2.1",
+    "@jupyterlab/coreutils": "^3.0.0",
     "@stencila/dev-config": "^1.0.5",
     "@stencila/typescript-boilerplate": "^1.1.1",
     "@types/async-lock": "^1.1.1",
