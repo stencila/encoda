@@ -268,8 +268,8 @@ function mains(
 }
 
 /**
- * Generate a more dense tree just names on leaf nodes
- * for comparing, actual with expected.
+ * Generate a more dense tree with just names on leaf nodes
+ * for comparing actual vs expected decoded trees.
  */
 function tree(work: stencila.CreativeWork): any {
   if (work.type === 'Collection') {

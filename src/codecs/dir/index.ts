@@ -9,6 +9,8 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import tempy from 'tempy'
+// @ts-ignore
+import unixify from 'unixify'
 import { Encode, EncodeOptions, read, write } from '../..'
 import { isCreativeWork } from '../../util'
 import * as vfile from '../../util/vfile'
@@ -74,12 +76,13 @@ export async function decode(
   // Decompose file paths into parts so that they
   // can be sorted by depth AND name
   const routes = filePaths
-    .map(filePath => filePath.split(path.sep))
+    .map(filePath => unixify(filePath).split('/'))
     .sort((a, b) => {
       return (
         a.length - b.length || a[a.length - 1].localeCompare(b[b.length - 1])
       )
     })
+  console.log(routes)
 
   // Read files into nodes in parallel
   const nodes = (await Promise.all(
@@ -194,7 +197,7 @@ export const encode: Encode<DirEncodeOptions> = async (
   // Ensure all the necessary directories are made
   // TODO: this could be optimized to avoid lots of ensureDir calls
   for (const node of nodes) {
-    const routePath = [dirPath, ...node.route.slice(1, -1)].join(path.sep)
+    const routePath = path.join(dirPath, ...node.route.slice(1, -1))
     await fs.ensureDir(routePath)
   }
 
@@ -205,7 +208,7 @@ export const encode: Encode<DirEncodeOptions> = async (
         node.meta && node.meta.main
           ? 'index.html'
           : route[route.length - 1] + '.html'
-      const filePath = [dirPath, ...route.slice(1, -1), fileName].join(path.sep)
+      const filePath = path.join(dirPath, ...route.slice(1, -1), fileName)
       return await write(node, filePath)
     })
   )
