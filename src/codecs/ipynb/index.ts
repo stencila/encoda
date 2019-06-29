@@ -16,6 +16,68 @@ import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
+import * as nbformat3 from './nbformat-v3'
+import * as nbformat4 from './nbformat-v4'
+
+/**
+ * Additional type definitions not generated from JSON Schemas
+ * or required for decoding based on format version.
+ */
+namespace nbformat {
+  /**
+   * An enum for the version of notebook being processed.
+   * Used for branching logic in decoding functions below.
+   */
+  export enum Version {
+    v3 = 3,
+    v4 = 4
+  }
+
+  export namespace v3 {
+    // Provide missing union type for cell
+    export type Cell =
+      | nbformat3.RawCell
+      | nbformat3.MarkdownCell
+      | nbformat3.HeadingCell
+      | nbformat3.CodeCell
+
+    /**
+     * Types that we need to check for using `isa` typeguard
+     */
+    interface Types {
+      Notebook: nbformat3.Notebook
+      Cell: Cell
+      Pyout: nbformat3.Pyout
+      DisplayData: nbformat3.DisplayData
+    }
+
+    /**
+     * Type guard for letting Typescript know that node is a v3 type
+     */
+    export function isa<Key extends keyof Types>(
+      node: unknown,
+      key: Key,
+      version: Version
+    ): node is Types[Key] {
+      return version === Version.v3
+    }
+  }
+
+  /**
+   * A multiline string.
+   */
+  export type MultilineString = string | string[]
+
+  /**
+   * A mime-type keyed dictionary of data.
+   *
+   * For most MIME types the data is a `MultilineString` but
+   * "Mimetypes with JSON output, can be any type" (source: `nbformat-v4.json.schema`)
+   */
+  export interface MimeBundle {
+    [key: string]: MultilineString | any
+  }
+}
 
 /**
  * The media types that this codec can decode/encode.
@@ -35,8 +97,8 @@ export const extNames = ['ipynb']
  */
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   const json = await vfile.dump(file)
-  const ipynb: nbformat.INotebookContent = JSON.parse(json)
-  return decodeNotebook(ipynb)
+  const ipynb = JSON.parse(json)
+  return decodeNotebook(ipynb, ipynb.nbformat)
 }
 
 /**
@@ -57,7 +119,8 @@ export const encode: Encode = async (
  * Decode a Jupyter `Notebook` to a Stencila `Article`.
  */
 async function decodeNotebook(
-  notebook: nbformat.INotebookContent
+  notebook: nbformat3.Notebook | nbformat4.Notebook,
+  version: nbformat.Version = 4
 ): Promise<stencila.Article> {
   // TODO: Extract other metadata?
   let { title, authors, orig_nbformat, ...rest } = notebook.metadata
@@ -66,16 +129,11 @@ async function decodeNotebook(
 
   const meta = { orig_nbformat, ...rest }
 
-  let cells = notebook.cells
-  if (!cells) {
-    // For `nbformat` <=3 cells were in a worksheet
-    // @ts-ignore
-    cells = notebook.worksheets[0].cells
-  }
-  if (!cells)
-    throw new Error('Unable to get cells. Is this a Jupyter Notebook?')
+  const cells = nbformat.v3.isa(notebook, 'Notebook', version)
+    ? notebook.worksheets[0].cells
+    : notebook.cells
 
-  const content = await decodeCells(cells)
+  const content = await decodeCells(cells, version)
 
   return {
     type: 'Article',
@@ -89,15 +147,12 @@ async function decodeNotebook(
 /**
  * Encode a Stencila `Article` as a Jupyter `Notebook`.
  */
-async function encodeNode(
-  node: stencila.Node
-): Promise<nbformat.INotebookContent> {
+async function encodeNode(node: stencila.Node): Promise<nbformat4.Notebook> {
   // TODO: Wrap non-articles into an Article
   const article = node as stencila.Article
   const { title, authors, meta, content } = article
 
   const metadata = {
-    orig_nbformat: 1, //
     ...meta,
     title,
     authors
@@ -117,18 +172,17 @@ async function encodeNode(
  * Decode an array of Jupyter `Cells` to and array of Stencila `BlockContent` nodes.
  */
 async function decodeCells(
-  cells: nbformat.ICell[]
+  cells: (nbformat.v3.Cell | nbformat4.Cell)[],
+  version: nbformat.Version = 4
 ): Promise<stencila.BlockContent[]> {
   const blocks: stencila.BlockContent[] = []
   for (const cell of cells) {
     switch (cell.cell_type) {
       case 'markdown':
-        blocks.push(
-          ...(await decodeMarkdownCell(cell as nbformat.IMarkdownCell))
-        )
+        blocks.push(...(await decodeMarkdownCell(cell, version)))
         break
       case 'code':
-        blocks.push(await decodeCodeCell(cell as nbformat.ICodeCell))
+        blocks.push(await decodeCodeCell(cell, version))
         break
       case 'raw':
         // TODO: handle `raw` cells
@@ -149,9 +203,9 @@ async function decodeCells(
 /**
  * Encode an array of Stencila `Node`s as an array of Jupyter `Cells`.
  */
-async function encodeCells(nodes: stencila.Node[]): Promise<nbformat.ICell[]> {
+async function encodeCells(nodes: stencila.Node[]): Promise<nbformat4.Cell[]> {
   let content: stencila.Node[] = []
-  const cells: nbformat.ICell[] = []
+  const cells: nbformat4.Cell[] = []
   for (const node of nodes) {
     switch (type(node)) {
       case 'CodeChunk':
@@ -173,7 +227,8 @@ async function encodeCells(nodes: stencila.Node[]): Promise<nbformat.ICell[]> {
  * Decode a Jupyter `MarkdownCell` as an array of Stencila `BlockContent` nodes.
  */
 async function decodeMarkdownCell(
-  cell: nbformat.IMarkdownCell
+  cell: nbformat3.MarkdownCell | nbformat4.MarkdownCell,
+  version: nbformat.Version = 4
 ): Promise<stencila.BlockContent[]> {
   // TODO: handle metadata
   const { metadata, source } = cell
@@ -189,7 +244,7 @@ async function decodeMarkdownCell(
  */
 async function encodeMarkdownCell(
   nodes: stencila.Node[]
-): Promise<nbformat.IMarkdownCell> {
+): Promise<nbformat4.MarkdownCell> {
   // TODO: consider a md function that will return
   // a fragment, not a whole article
   const article = {
@@ -213,29 +268,23 @@ async function encodeMarkdownCell(
  * Decode a Jupyter `CodeCell` to a Stencila `CodeChunk`.
  */
 async function decodeCodeCell(
-  cell: nbformat.ICodeCell
+  cell: nbformat3.CodeCell | nbformat4.CodeCell,
+  version: nbformat.Version = 4
 ): Promise<stencila.CodeChunk> {
-  let { metadata, outputs, execution_count } = cell
+  const { metadata, outputs } = cell
 
-  // In nbformat 3, it's `prompt_number` not `execution_count`
-  if (!execution_count && cell.prompt_number) {
-    execution_count = cell.prompt_number
-  }
-
-  const meta = { ...metadata, execution_count }
-
-  // nbformat 4 has `source`, 3 has `input`
-  const source = cell.source ? cell.source : cell.input
-  const code = decodeMultilineString(source)
+  const [execution_count, source] = nbformat.v3.isa(cell, 'Cell', version)
+    ? [cell.prompt_number, cell.input]
+    : [cell.execution_count, cell.source]
 
   const codeChunk: stencila.CodeChunk = {
     type: 'CodeChunk',
-    meta,
-    text: code
+    meta: { ...metadata, execution_count },
+    text: decodeMultilineString(source)
   }
 
   if (outputs && outputs.length)
-    codeChunk.outputs = await decodeOutputs(outputs)
+    codeChunk.outputs = await decodeOutputs(outputs, version)
 
   return codeChunk
 }
@@ -245,11 +294,11 @@ async function decodeCodeCell(
  */
 async function encodeCodeChunk(
   chunk: stencila.CodeChunk
-): Promise<nbformat.ICodeCell> {
+): Promise<nbformat4.CodeCell> {
   const metadata = {}
   const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
   const source = encodeMultilineString(chunk.text || '')
-  const outputs: nbformat.IOutput[] = await encodeOutputs(
+  const outputs: nbformat4.Output[] = await encodeOutputs(
     chunk,
     chunk.outputs || []
   )
@@ -266,40 +315,43 @@ async function encodeCodeChunk(
  * Decode the `outputs` of a Jupyter `CodeCell` to an array of Stencila `Node`s.
  */
 async function decodeOutputs(
-  outputs: nbformat.IOutput[]
+  outputs: (nbformat3.Output | nbformat4.Output)[],
+  version: nbformat.Version = 4
 ): Promise<stencila.Node[]> {
-  return Promise.all(
-    outputs.map(async output => {
-      switch (output.output_type) {
-        case 'execute_result':
-        case 'display_data':
-        case 'update_display_data':
-        case 'pyout': // nbformat 3
-          let data = output.data
-          // nbformat 3: there is no separate data dictionary and
-          // the output is `IMimeBundle` like (but with format name, not MIME types)
-          if (!data) {
-            const { output_type, prompt_number, ...rest } = output
-            data = rest
-          }
-          return await decodeMimeBundle(data as nbformat.IMimeBundle)
-        case 'stream':
-          return await decodeMultilineString(
-            output.text as nbformat.MultilineString
-          )
-        case 'error':
-          return ''
-        default:
-          // The above should handle all output types but in case of an invalid
-          // type, instead of throwing an error, return a JSON code block of output
-          return {
-            type: 'CodeBlock',
-            language: 'json',
-            value: JSON.stringify(output)
-          }
+  return Promise.all(outputs.map(output => decodeOutput(output, version)))
+}
+
+async function decodeOutput(
+  output: nbformat3.Output | nbformat4.Output,
+  version: nbformat.Version = 4
+): Promise<stencila.Node> {
+  switch (output.output_type) {
+    case 'execute_result':
+    case 'pyout':
+      return await decodeMimeBundle(
+        nbformat.v3.isa(output, 'Pyout', version) ? output : output.data,
+        version
+      )
+    case 'display_data':
+      return await decodeMimeBundle(
+        nbformat.v3.isa(output, 'DisplayData', version) ? output : output.data,
+        version
+      )
+    case 'stream':
+      return await decodeMultilineString(output.text)
+    case 'error':
+    case 'pyerr':
+      // TODO: decode error
+      return ''
+    default:
+      // The above should handle all output types but in case of an invalid
+      // type, instead of throwing an error, return a JSON code block of output
+      return {
+        type: 'CodeBlock',
+        language: 'json',
+        value: JSON.stringify(output)
       }
-    })
-  )
+  }
 }
 
 /**
@@ -313,7 +365,7 @@ async function decodeOutputs(
 async function encodeOutputs(
   chunk: stencila.CodeChunk,
   nodes: stencila.Node[]
-): Promise<nbformat.IOutput[]> {
+): Promise<nbformat4.Output[]> {
   return Promise.all(
     nodes.map(async node => {
       switch (type(node)) {
@@ -334,10 +386,9 @@ async function encodeOutputs(
 async function encodeStream(
   chunk: stencila.CodeChunk,
   node: stencila.Node
-): Promise<nbformat.IStream> {
+): Promise<nbformat4.Stream> {
   return {
     output_type: 'stream',
-    metadata: {},
     name: 'stdout',
     text: node as string
   }
@@ -349,7 +400,7 @@ async function encodeStream(
 async function encodeDisplayData(
   chunk: stencila.CodeChunk,
   node: stencila.Node
-): Promise<nbformat.IDisplayData> {
+): Promise<nbformat4.DisplayData> {
   return {
     output_type: 'display_data',
     metadata: {},
@@ -363,7 +414,7 @@ async function encodeDisplayData(
 async function encodeExecuteResult(
   chunk: stencila.CodeChunk,
   node: stencila.Node
-): Promise<nbformat.IExecuteResult> {
+): Promise<nbformat4.ExecuteResult> {
   const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
   return {
     output_type: 'execute_result',
@@ -380,7 +431,8 @@ async function encodeExecuteResult(
  * the dictionary until we find the first media type that can be decoded.
  */
 async function decodeMimeBundle(
-  bundle: nbformat.IMimeBundle
+  bundle: nbformat.MimeBundle,
+  version: nbformat.Version = 4
 ): Promise<stencila.Node> {
   for (const [mimetype, data] of Object.entries(bundle)) {
     const content =
@@ -420,7 +472,7 @@ async function decodeMimeBundle(
  */
 async function encodeMimeBundle(
   node: stencila.Node
-): Promise<nbformat.IMimeBundle> {
+): Promise<nbformat.MimeBundle> {
   let [mediaType, data] = await (async (): Promise<[string, string]> => {
     switch (type(node)) {
       case 'string':
@@ -436,7 +488,7 @@ async function encodeMimeBundle(
     return ['text/html', await dump(node, { format: 'html' })]
   })()
 
-  const bundle: nbformat.IMimeBundle = {}
+  const bundle: nbformat.MimeBundle = {}
   bundle[mediaType] = encodeMultilineString(data)
   return bundle
 }
@@ -461,414 +513,4 @@ export function encodeMultilineString(
     .slice(0, -1)
     .map(line => line + '\n')
     .concat(lines.slice(-1))
-}
-
-/**
- * The following type definitions have been vendored in from
- * `@jupyterlab/coreutils` because the current version fails to build.
- * Here the `JSONObject` is defined to fix those issues.
- *
- * import { nbformat } from '@jupyterlab/coreutils';
- */
-
-type JSONObject = { [key: string]: any }
-
-/**
- * A namespace for nbformat interfaces.
- */
-export declare namespace nbformat {
-  /**
-   * The major version of the notebook format.
-   */
-  const MAJOR_VERSION: number
-  /**
-   * The minor version of the notebook format.
-   */
-  const MINOR_VERSION: number
-  /**
-   * The kernelspec metadata.
-   */
-  interface IKernelspecMetadata extends JSONObject {
-    name: string
-    display_name: string
-  }
-  /**
-   * The language info metatda
-   */
-  interface ILanguageInfoMetadata extends JSONObject {
-    name: string
-    codemirror_mode?: string | JSONObject
-    file_extension?: string
-    mimetype?: string
-    pygments_lexer?: string
-  }
-  /**
-   * The default metadata for the notebook.
-   */
-  interface INotebookMetadata extends JSONObject {
-    kernelspec?: IKernelspecMetadata
-    language_info?: ILanguageInfoMetadata
-    orig_nbformat: number
-  }
-  /**
-   * The notebook content.
-   */
-  interface INotebookContent extends JSONObject {
-    metadata: INotebookMetadata
-    nbformat_minor: number
-    nbformat: number
-    cells: ICell[]
-  }
-  /**
-   * A multiline string.
-   */
-  type MultilineString = string | string[]
-  /**
-   * A mime-type keyed dictionary of data.
-   */
-  interface IMimeBundle extends JSONObject {
-    [key: string]: MultilineString | JSONObject
-  }
-  /**
-   * Media attachments (e.g. inline images).
-   */
-  interface IAttachments {
-    [key: string]: IMimeBundle
-  }
-  /**
-   * The code cell's prompt number. Will be null if the cell has not been run.
-   */
-  type ExecutionCount = number | null
-  /**
-   * Cell output metadata.
-   */
-  type OutputMetadata = JSONObject
-  /**
-   * Validate a mime type/value pair.
-   *
-   * @param type - The mimetype name.
-   *
-   * @param value - The value associated with the type.
-   *
-   * @returns Whether the type/value pair are valid.
-   */
-  function validateMimeValue(
-    type: string,
-    value: MultilineString | JSONObject
-  ): boolean
-  /**
-   * A type which describes the type of cell.
-   */
-  type CellType = 'code' | 'markdown' | 'raw'
-  /**
-   * The Jupyter metadata namespace.
-   */
-  interface IBaseCellJupyterMetadata extends JSONObject {
-    /**
-     * Whether the source is hidden.
-     */
-    source_hidden: boolean
-  }
-  /**
-   * Cell-level metadata.
-   */
-  interface IBaseCellMetadata extends JSONObject {
-    /**
-     * Whether the cell is trusted.
-     *
-     * #### Notes
-     * This is not strictly part of the nbformat spec, but it is added by
-     * the contents manager.
-     *
-     * See https://jupyter-notebook.readthedocs.io/en/latest/security.html.
-     */
-    trusted: boolean
-    /**
-     * The cell's name. If present, must be a non-empty string.
-     */
-    name: string
-    /**
-     * The Jupyter metadata namespace
-     */
-    jupyter: Partial<IBaseCellJupyterMetadata>
-    /**
-     * The cell's tags. Tags must be unique, and must not contain commas.
-     */
-    tags: string[]
-  }
-  /**
-   * The base cell interface.
-   */
-  interface IBaseCell extends JSONObject {
-    /**
-     * String identifying the type of cell.
-     */
-    cell_type: string
-    /**
-     * Contents of the cell, represented as an array of lines.
-     */
-    source: MultilineString
-    /**
-     * Cell-level metadata.
-     */
-    metadata: Partial<ICellMetadata>
-  }
-  /**
-   * Metadata for the raw cell.
-   */
-  interface IRawCellMetadata extends IBaseCellMetadata {
-    /**
-     * Raw cell metadata format for nbconvert.
-     */
-    format: string
-  }
-  /**
-   * A raw cell.
-   */
-  interface IRawCell extends IBaseCell {
-    /**
-     * String identifying the type of cell.
-     */
-    cell_type: 'raw'
-    /**
-     * Cell-level metadata.
-     */
-    metadata: Partial<IRawCellMetadata>
-    /**
-     * Cell attachments.
-     */
-    attachments?: IAttachments
-  }
-  /**
-   * A markdown cell.
-   */
-  interface IMarkdownCell extends IBaseCell {
-    /**
-     * String identifying the type of cell.
-     */
-    cell_type: 'markdown'
-    /**
-     * Cell attachments.
-     */
-    attachments?: IAttachments
-  }
-  /**
-   * The Jupyter metadata namespace for code cells.
-   */
-  interface ICodeCellJupyterMetadata extends IBaseCellJupyterMetadata {
-    /**
-     * Whether the outputs are hidden. See https://github.com/jupyter/nbformat/issues/137.
-     */
-    outputs_hidden: boolean
-  }
-  /**
-   * Metadata for a code cell.
-   */
-  interface ICodeCellMetadata extends IBaseCellMetadata {
-    /**
-     * Whether the cell is collapsed/expanded.
-     */
-    collapsed: boolean
-    /**
-     * The Jupyter metadata namespace
-     */
-    jupyter: Partial<ICodeCellJupyterMetadata>
-    /**
-     * Whether the cell's output is scrolled, unscrolled, or autoscrolled.
-     */
-    scrolled: boolean | 'auto'
-  }
-  /**
-   * A code cell.
-   */
-  interface ICodeCell extends IBaseCell {
-    /**
-     * String identifying the type of cell.
-     */
-    cell_type: 'code'
-    /**
-     * Cell-level metadata.
-     */
-    metadata: Partial<ICodeCellMetadata>
-    /**
-     * Execution, display, or stream outputs.
-     */
-    outputs: IOutput[]
-    /**
-     * The code cell's prompt number. Will be null if the cell has not been run.
-     */
-    execution_count: ExecutionCount
-  }
-  /**
-   * An unrecognized cell.
-   */
-  interface IUnrecognizedCell extends IBaseCell {}
-  /**
-   * A cell union type.
-   */
-  type ICell = IRawCell | IMarkdownCell | ICodeCell | IUnrecognizedCell
-  /**
-   * Test whether a cell is a raw cell.
-   */
-  function isRaw(cell: ICell): cell is IRawCell
-  /**
-   * Test whether a cell is a markdown cell.
-   */
-  function isMarkdown(cell: ICell): cell is IMarkdownCell
-  /**
-   * Test whether a cell is a code cell.
-   */
-  function isCode(cell: ICell): cell is ICodeCell
-  /**
-   * A union metadata type.
-   */
-  type ICellMetadata = IBaseCellMetadata | IRawCellMetadata | ICodeCellMetadata
-  /**
-   * The valid output types.
-   */
-  type OutputType =
-    | 'execute_result'
-    | 'display_data'
-    | 'stream'
-    | 'error'
-    | 'update_display_data'
-  /**
-   * The base output type.
-   */
-  interface IBaseOutput extends JSONObject {
-    /**
-     * Type of cell output.
-     */
-    output_type: string
-  }
-  /**
-   * Result of executing a code cell.
-   */
-  interface IExecuteResult extends IBaseOutput {
-    /**
-     * Type of cell output.
-     */
-    output_type: 'execute_result'
-    /**
-     * A result's prompt number.
-     */
-    execution_count: ExecutionCount
-    /**
-     * A mime-type keyed dictionary of data.
-     */
-    data: IMimeBundle
-    /**
-     * Cell output metadata.
-     */
-    metadata: OutputMetadata
-  }
-  /**
-   * Data displayed as a result of code cell execution.
-   */
-  interface IDisplayData extends IBaseOutput {
-    /**
-     * Type of cell output.
-     */
-    output_type: 'display_data'
-    /**
-     * A mime-type keyed dictionary of data.
-     */
-    data: IMimeBundle
-    /**
-     * Cell output metadata.
-     */
-    metadata: OutputMetadata
-  }
-  /**
-   * Data displayed as an update to existing display data.
-   */
-  interface IDisplayUpdate extends IBaseOutput {
-    /**
-     * Type of cell output.
-     */
-    output_type: 'update_display_data'
-    /**
-     * A mime-type keyed dictionary of data.
-     */
-    data: IMimeBundle
-    /**
-     * Cell output metadata.
-     */
-    metadata: OutputMetadata
-  }
-  /**
-   * Stream output from a code cell.
-   */
-  interface IStream extends IBaseOutput {
-    /**
-     * Type of cell output.
-     */
-    output_type: 'stream'
-    /**
-     * The name of the stream.
-     */
-    name: StreamType
-    /**
-     * The stream's text output.
-     */
-    text: MultilineString
-  }
-  /**
-   * An alias for a stream type.
-   */
-  type StreamType = 'stdout' | 'stderr'
-  /**
-   * Output of an error that occurred during code cell execution.
-   */
-  interface IError extends IBaseOutput {
-    /**
-     * Type of cell output.
-     */
-    output_type: 'error'
-    /**
-     * The name of the error.
-     */
-    ename: string
-    /**
-     * The value, or message, of the error.
-     */
-    evalue: string
-    /**
-     * The error's traceback.
-     */
-    traceback: string[]
-  }
-  /**
-   * Unrecognized output.
-   */
-  interface IUnrecognizedOutput extends IBaseOutput {}
-  /**
-   * Test whether an output is an execute result.
-   */
-  function isExecuteResult(output: IOutput): output is IExecuteResult
-  /**
-   * Test whether an output is from display data.
-   */
-  function isDisplayData(output: IOutput): output is IDisplayData
-  /**
-   * Test whether an output is from updated display data.
-   */
-  function isDisplayUpdate(output: IOutput): output is IDisplayUpdate
-  /**
-   * Test whether an output is from a stream.
-   */
-  function isStream(output: IOutput): output is IStream
-  /**
-   * Test whether an output is from a stream.
-   */
-  function isError(output: IOutput): output is IError
-  /**
-   * An output union type.
-   */
-  type IOutput =
-    | IUnrecognizedOutput
-    | IExecuteResult
-    | IDisplayData
-    | IStream
-    | IError
 }

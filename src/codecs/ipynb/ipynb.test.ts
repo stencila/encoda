@@ -1,15 +1,15 @@
 import * as stencila from '@stencila/schema'
+import { dump, load } from '../../util/vfile'
 import {
   decode,
   decodeMultilineString,
   encode,
-  encodeMultilineString,
-  nbformat
+  encodeMultilineString
 } from './'
-import { dump, load } from '../../util/vfile'
+import nbformat4 from './nbformat-v4'
 
 test('decode', async () => {
-  const decode_ = async (ipynb: nbformat.INotebookContent) =>
+  const decode_ = async (ipynb: nbformat4.Notebook) =>
     await decode(await load(JSON.stringify(ipynb)))
 
   expect(await decode_(kitchenSink.ipynb)).toEqual(kitchenSink.node)
@@ -33,7 +33,7 @@ test('encode+decode MultilineString', () => {
 })
 
 interface TestCase {
-  ipynb: nbformat.INotebookContent
+  ipynb: nbformat4.Notebook
   node: stencila.Article
 }
 
@@ -65,7 +65,6 @@ const kitchenSink: TestCase = {
         outputs: [
           {
             text: 'Hello from Python 3',
-            metadata: {},
             output_type: 'stream',
             name: 'stdout'
           }
