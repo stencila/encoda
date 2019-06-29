@@ -1,7 +1,5 @@
 /**
- * JATS codec
- *
- * Codec for [Journal Article Tag Suite (JATS)](https://en.wikipedia.org/wiki/Journal_Article_Tag_Suite).
+ * @module jats
  */
 
 import stencila from '@stencila/schema'

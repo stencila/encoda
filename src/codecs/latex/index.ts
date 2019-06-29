@@ -1,5 +1,5 @@
 /**
- * Codec for LaTeX
+ * @module latex
  */
 
 import stencila from '@stencila/schema'

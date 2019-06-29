@@ -1,5 +1,5 @@
-Dockerfile
 coverage
-.nyc_output
+docs
 node_modules
-tests/**/*-out.*
+**/__output__
+**/*.out.*

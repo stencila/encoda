@@ -1,5 +1,5 @@
 /**
- * Codec for YAML
+ * @module yaml
  */
 
 import * as stencila from '@stencila/schema'

@@ -1,5 +1,5 @@
 /**
- * Codec for Open Document Spreadsheet (ODS)
+ * @module ods
  */
 
 import stencila from '@stencila/schema'
@@ -7,11 +7,7 @@ import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
 import * as xlsx from '../xlsx'
 
-export const mediaTypes = [
-  // spell-checker: disable
-  'application/vnd.oasis.opendocument.spreadsheet'
-  // spell-checker: enable
-]
+export const mediaTypes = ['application/vnd.oasis.opendocument.spreadsheet']
 
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   return xlsx.decode(file)

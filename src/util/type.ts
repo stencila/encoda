@@ -1,4 +1,8 @@
 /**
+ * @module util
+ */
+
+/**
  * Get the type of a node
  * @param node The node to get the type for
  */

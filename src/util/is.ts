@@ -1,3 +1,7 @@
+/**
+ * @module util
+ */
+
 import type from './type'
 
 /**

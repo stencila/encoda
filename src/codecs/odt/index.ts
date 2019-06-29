@@ -1,5 +1,5 @@
 /**
- * Codec for Open Document Text (ODT)
+ * @module odt
  */
 
 import stencila from '@stencila/schema'

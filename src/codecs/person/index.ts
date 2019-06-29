@@ -1,3 +1,7 @@
+/**
+ * @module person
+ */
+
 import { Person } from '@stencila/schema'
 //@ts-ignore
 import parseAuthor from 'parse-author'

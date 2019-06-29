@@ -1,3 +1,7 @@
+/**
+ * @module util
+ */
+
 import * as stencila from '@stencila/schema'
 import produce from 'immer'
 import * as dataUri from './dataUri'

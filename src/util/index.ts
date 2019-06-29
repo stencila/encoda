@@ -1,3 +1,7 @@
+/**
+ * @module util
+ */
+
 import * as stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
@@ -344,3 +348,23 @@ export const isInlineContent = (
 ): node is stencila.InlineContent => {
   return isInlinePrimitive(node) || isInlineNonPrimitive(node)
 }
+
+export const creativeWorkTypes: {
+  [key in stencila.CreativeWork['type']]: key
+} = {
+  CreativeWork: 'CreativeWork',
+  Article: 'Article',
+  AudioObject: 'AudioObject',
+  CodeChunk: 'CodeChunk',
+  CodeExpr: 'CodeExpr',
+  Collection: 'Collection',
+  Datatable: 'Datatable',
+  ImageObject: 'ImageObject',
+  MediaObject: 'MediaObject',
+  SoftwareApplication: 'SoftwareApplication',
+  SoftwareSourceCode: 'SoftwareSourceCode',
+  Table: 'Table',
+  VideoObject: 'VideoObject'
+}
+
+export const isCreativeWork = isNode<stencila.CreativeWork>(creativeWorkTypes)
