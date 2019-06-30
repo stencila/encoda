@@ -25,36 +25,36 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 ## Formats
 
-| Format                    | Name         | Approach | Status | Issues             |
-| ------------------------- | ------------ | -------- | ------ | ------------------ |
+| Format                    | Name         | Approach | Status | Issues             | Coverage             |
+| ------------------------- | ------------ | -------- | ------ | ------------------ | -------------------- |
 | **Text**                  |
-| Markdown                  | `md`         | Extens   | α      | [⚠][md-issues]     |
-| Latex                     | `tex`        |          | α      | [⚠][tex-issues]    |
-| Microsoft Word            | `docx`       | rPNG     | α      | [⚠][docx-issues]   |
-| Google Docs               | `gdoc`       | rPNG     | α      | [⚠][gdoc-issues]   |
-| Open Document Text        | `odt`        | rPNG     | α      | [⚠][odt-issues]    |
-| HTML                      | `html`       | Extens   | α      | [⚠][html-issues]   |
-| JATS                      | `jats`       | Extens   | α      | [⚠][jats-issues]   |
-| DAR                       | `dar`        | Extens   | ω      | [⚠][dar-issues]    |
-| PDF                       | `pdf`        | rPNG     | α      | [⚠][pdf-issues]    |
+| Markdown                  | `md`         | Extens   | α      | [⚠][md-issues]     | ![][md-coverage]     |
+| Latex                     | `tex`        |          | α      | [⚠][tex-issues]    | ![][latex-coverage]  |
+| Microsoft Word            | `docx`       | rPNG     | α      | [⚠][docx-issues]   | ![][docx-coverage]   |
+| Google Docs               | `gdoc`       | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-coverage]   |
+| Open Document Text        | `odt`        | rPNG     | α      | [⚠][odt-issues]    | ![][odt-coverage]    |
+| HTML                      | `html`       | Extens   | α      | [⚠][html-issues]   | ![][html-coverage]   |
+| JATS                      | `jats`       | Extens   | α      | [⚠][jats-issues]   | ![][jats-coverage]   |
+| DAR                       | `dar`        | Extens   | ω      | [⚠][dar-issues]    | ![][dar-coverage]    |
+| PDF                       | `pdf`        | rPNG     | α      | [⚠][pdf-issues]    | ![][pdf-coverage]    |
 | **Notebooks**             |
-| Jupyter                   | `ipynb`      | Native   | α      | [⚠][ipynb-issues]  |
-| RMarkdown                 | `rmd`, `xmd` | Native   | α      | [⚠][rmd-issues]    |
+| Jupyter                   | `ipynb`      | Native   | α      | [⚠][ipynb-issues]  | ![][ipynb-coverage]  |
+| RMarkdown                 | `rmd`, `xmd` | Native   | α      | [⚠][rmd-issues]    | ![][xmd-coverage]    |
 | **Presentations**         |
 | Microsoft Powerpoint      | `pptx`       | rPNG     | ✗      | [⚠][pptx-issues]   |
-| Demo Magic                | `dmagic`     | Native   | β      | [⚠][dmagic-issues] |
+| Demo Magic                | `dmagic`     | Native   | β      | [⚠][dmagic-issues] | ![][dmagic-coverage] |
 | **Spreadsheets**          |
-| Microsoft Excel           | `xlsx`       | Formula  | α      | [⚠][xlsx-issues]   |
+| Microsoft Excel           | `xlsx`       | Formula  | α      | [⚠][xlsx-issues]   | ![][xlsx-coverage]   |
 | Google Sheets             | `gsheet`     | Formula  | ✗      | [⚠][gsheet-issues] |
-| Open Document Spreadsheet | `ods`        | Formula  | α      | [⚠][ods-issues]    |
+| Open Document Spreadsheet | `ods`        | Formula  | α      | [⚠][ods-issues]    | ![][ods-coverage]    |
 | **Tabular data**          |
-| CSV                       | `csv`        | NA       | β      | [⚠][csv-issues]    |
+| CSV                       | `csv`        | NA       | β      | [⚠][csv-issues]    | ![][csv-coverage]    |
 | [CSVY]                    | `csvy`       | NA       | ✗      | [⚠][csvy-issues]   |
-| [Tabular Data Package]    | `tdp`        | NA       | β      | [⚠][tdp-issues]    |
+| [Tabular Data Package]    | `tdp`        | NA       | β      | [⚠][tdp-issues]    | ![][tdp-coverage]    |
 | **Data interchange**      |
-| JSON                      | `json`       | Native   | ✔      | [⚠][json-issues]   |
-| JSON5                     | `json5`      | Native   | ✔      | [⚠][json5-issues]  |
-| YAML                      | `yaml`       | Native   | ✔      | [⚠][yaml-issues]   |
+| JSON                      | `json`       | Native   | ✔      | [⚠][json-issues]   | ![][json-coverage]   |
+| JSON5                     | `json5`      | Native   | ✔      | [⚠][json5-issues]  | ![][json5-coverage]  |
+| YAML                      | `yaml`       | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-coverage]   |
 
 **Key**
 
@@ -220,25 +220,47 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [dar]: https://github.com/substance/dar
 [dar-pr]: https://github.com/stencila/encoda/pull/124
 [tabular data package]: https://frictionlessdata.io/specs/tabular-data-package/
-[md-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown
-[tex-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tex
-[docx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+docx
-[gdoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc
-[odt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+odt
-[html-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+html
-[jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
-[dar-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dar
-[pdf-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf
-[ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
-[rmd-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd
-[pptx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx
-[dmagic-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic
-[xlsx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx
-[gsheet-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet
-[ods-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ods
+[csv-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/csv
 [csv-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csv
+[csvy-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/csvy
 [csvy-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy
-[tdp-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp
+[dar-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/dar
+[dar-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dar
+[dmagic-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/dmagic
+[dmagic-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic
+[docx-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/docx
+[docx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+docx
+[gdoc-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/gdoc
+[gdoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc
+[gsheet-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/gsheet
+[gsheet-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet
+[html-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/html
+[html-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+html
+[ipynb-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/ipynb
+[ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
+[jats-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/jats
+[jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
+[json-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/json
 [json-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json
+[json5-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/json5
 [json5-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json5
+[latex-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/latex
+[md-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/md
+[md-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown
+[ods-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/ods
+[ods-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ods
+[odt-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/odt
+[odt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+odt
+[pdf-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/pdf
+[pdf-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf
+[pptx-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/pptx
+[pptx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx
+[xmd-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/xmd
+[rmd-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd
+[tdp-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/tdp
+[tdp-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp
+[tex-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tex
+[xlsx-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/xlsx
+[xlsx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx
+[yaml-coverage]: https://badgen.net/runkit/encoda-coverage-by-codec-wcaxramdlnxd/yaml
 [yaml-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml
