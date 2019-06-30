@@ -7,8 +7,6 @@
     "README.md"
   ],
   "imageSize": 50,
-  "commit": true,
-  "commitConvention": "angular",
   "contributors": [
     {
       "login": "apawlik",
@@ -70,6 +68,15 @@
       "profile": "https://github.com/beneboy",
       "contributions": [
         "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "philneff",
+      "name": "Phil Neff",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16355618?v=4",
+      "profile": "http://humanrights.washington.edu",
+      "contributions": [
         "bug"
       ]
     }
