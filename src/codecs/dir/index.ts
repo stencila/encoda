@@ -82,7 +82,6 @@ export async function decode(
         a.length - b.length || a[a.length - 1].localeCompare(b[b.length - 1])
       )
     })
-  console.log(routes)
 
   // Read files into nodes in parallel
   const nodes = (await Promise.all(
