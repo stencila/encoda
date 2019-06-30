@@ -167,7 +167,7 @@ docker run stencila/encoda
 We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬. See [CONTRIBUTING.md](CONTRIBUTING.md) for more on where to start. You can also provide your feedback on the [Community Forum](https://community.stenci.la)
 and [Gitter channel](https://gitter.im/stencila/stencila).
 
-We recognize [all contributors](https://allcontributors.org/) - including those that don't push code! ✨
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
@@ -175,6 +175,25 @@ We recognize [all contributors](https://allcontributors.org/) - including those 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<details>
+<summary><b id="format-approach">Add a contributor</b>...</summary>
+
+To add youself, or someone else, to the above list, either,
+
+1. Ask the [@all-contributors bot](https://allcontributors.org/docs/en/bot/overview) to do it for you by commenting on an issue or PR like this:
+
+   > @all-contributors please add @octocat for bugs, tests and code
+
+2. Use the [`all-contributors` CLI](https://allcontributors.org/docs/en/cli/overview) to do it yourself:
+
+   ```bash
+   npx all-contributors add octocat bugs, tests, code
+   ```
+
+See the list of [contribution types](https://allcontributors.org/docs/en/emoji-key).
+
+</details>
 
 ## Acknowledgments
 
