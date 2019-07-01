@@ -29,7 +29,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | Format                      | Codec    | Approach | Status | Issues             | Coverage        |
 | --------------------------- | -------- | -------- | ------ | ------------------ | --------------- |
 | **Text**                    |
-| Plain text                  | [txt]    | None     | α      | [⚠][txt-issues]    | ![][txt-cov]    |
+| Plain text                  | [txt]    | None     | β      | [⚠][txt-issues]    | ![][txt-cov]    |
 | Markdown                    | [md]     | Extens   | α      | [⚠][md-issues]     | ![][md-cov]     |
 | Latex                       | [latex]  | -        | α      | [⚠][latex-issues]  | ![][latex-cov]  |
 | Microsoft Word              | [docx]   | rPNG     | α      | [⚠][docx-issues]   | ![][docx-cov]   |
@@ -45,9 +45,9 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | Microsoft Powerpoint        | [pptx]   | rPNG     | ✗      | [⚠][pptx-issues]   |
 | Demo Magic                  | [dmagic] | Native   | β      | [⚠][dmagic-issues] | ![][dmagic-cov] |
 | **Spreadsheets**            |
-| Microsoft Excel             | [xlsx]   | Formula  | α      | [⚠][xlsx-issues]   | ![][xlsx-cov]   |
+| Microsoft Excel             | [xlsx]   | Formula  | β      | [⚠][xlsx-issues]   | ![][xlsx-cov]   |
 | Google Sheets               | [gsheet] | Formula  | ✗      | [⚠][gsheet-issues] |
-| Open Document Spreadsheet   | [ods]    | Formula  | α      | [⚠][ods-issues]    | ![][ods-cov]    |
+| Open Document Spreadsheet   | [ods]    | Formula  | β      | [⚠][ods-issues]    | ![][ods-cov]    |
 | **Tabular data**            |
 | CSV                         | [csv]    | None     | β      | [⚠][csv-issues]    | ![][csv-cov]    |
 | CSVY                        | [csvy]   | None     | ✗      | [⚠][csvy-issues]   |
@@ -59,8 +59,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | JSON                        | [json]   | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
 | JSON5                       | [json5]  | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
 | YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
-| Pandoc                      | [pandoc] | Native   | ✔      | [⚠][pandoc-issues] | ![][pandoc-cov] |
-| Reproducible PNG            | [rpng]   | Native   | ✔      | [⚠][rpng-issues]   | ![][rpng-cov]   |
+| Pandoc                      | [pandoc] | Native   | β      | [⚠][pandoc-issues] | ![][pandoc-cov] |
+| Reproducible PNG            | [rpng]   | Native   | β      | [⚠][rpng-issues]   | ![][rpng-cov]   |
 
 **Key**
 
