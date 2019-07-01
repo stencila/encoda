@@ -26,39 +26,41 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 ## Formats
 
-| Format                    | Codec    | Approach | Status | Issues             | Coverage        |
-| ------------------------- | -------- | -------- | ------ | ------------------ | --------------- |
-| **Text**                  |
-| Plain text                | [txt]    | None     | α      | [⚠][txt-issues]    | ![][txt-cov]    |
-| Markdown                  | [md]     | Extens   | α      | [⚠][md-issues]     | ![][md-cov]     |
-| Latex                     | [latex]  | -        | α      | [⚠][latex-issues]  | ![][latex-cov]  |
-| Microsoft Word            | [docx]   | rPNG     | α      | [⚠][docx-issues]   | ![][docx-cov]   |
-| Google Docs               | [gdoc]   | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-cov]   |
-| Open Document Text        | [odt]    | rPNG     | α      | [⚠][odt-issues]    | ![][odt-cov]    |
-| HTML                      | [html]   | Extens   | α      | [⚠][html-issues]   | ![][html-cov]   |
-| Journal Archiving Tag Set | [jats]   | Extens   | α      | [⚠][jats-issues]   | ![][jats-cov]   |
-| Portable Document Format  | [pdf]    | rPNG     | α      | [⚠][pdf-issues]    | ![][pdf-cov]    |
-| **Notebooks**             |
-| Jupyter                   | [ipynb]  | Native   | α      | [⚠][ipynb-issues]  | ![][ipynb-cov]  |
-| RMarkdown                 | [xmd]    | Native   | α      | [⚠][xmd-issues]    | ![][xmd-cov]    |
-| **Presentations**         |
-| Microsoft Powerpoint      | [pptx]   | rPNG     | ✗      | [⚠][pptx-issues]   |
-| Demo Magic                | [dmagic] | Native   | β      | [⚠][dmagic-issues] | ![][dmagic-cov] |
-| **Spreadsheets**          |
-| Microsoft Excel           | [xlsx]   | Formula  | α      | [⚠][xlsx-issues]   | ![][xlsx-cov]   |
-| Google Sheets             | [gsheet] | Formula  | ✗      | [⚠][gsheet-issues] |
-| Open Document Spreadsheet | [ods]    | Formula  | α      | [⚠][ods-issues]    | ![][ods-cov]    |
-| **Tabular data**          |
-| CSV                       | [csv]    | None     | β      | [⚠][csv-issues]    | ![][csv-cov]    |
-| CSVY                      | [csvy]   | None     | ✗      | [⚠][csvy-issues]   |
-| Tabular Data Package      | [tdp]    | None     | β      | [⚠][tdp-issues]    | ![][tdp-cov]    |
-| **Collections**           |
-| Document Archive          | [dar]    | Extens   | ω      | [⚠][dar-issues]    | ![][dar-cov]    |
-| Filesystem Directory      | [dir]    | Extens   | ω      | [⚠][dir-issues]    | ![][dir-cov]    |
-| **Data interchange**      |
-| JSON                      | [json]   | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
-| JSON5                     | [json5]  | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
-| YAML                      | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
+| Format                      | Codec    | Approach | Status | Issues             | Coverage        |
+| --------------------------- | -------- | -------- | ------ | ------------------ | --------------- |
+| **Text**                    |
+| Plain text                  | [txt]    | None     | α      | [⚠][txt-issues]    | ![][txt-cov]    |
+| Markdown                    | [md]     | Extens   | α      | [⚠][md-issues]     | ![][md-cov]     |
+| Latex                       | [latex]  | -        | α      | [⚠][latex-issues]  | ![][latex-cov]  |
+| Microsoft Word              | [docx]   | rPNG     | α      | [⚠][docx-issues]   | ![][docx-cov]   |
+| Google Docs                 | [gdoc]   | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-cov]   |
+| Open Document Text          | [odt]    | rPNG     | α      | [⚠][odt-issues]    | ![][odt-cov]    |
+| HTML                        | [html]   | Extens   | α      | [⚠][html-issues]   | ![][html-cov]   |
+| Journal Archiving Tag Set   | [jats]   | Extens   | α      | [⚠][jats-issues]   | ![][jats-cov]   |
+| Portable Document Format    | [pdf]    | rPNG     | α      | [⚠][pdf-issues]    | ![][pdf-cov]    |
+| **Notebooks**               |
+| Jupyter                     | [ipynb]  | Native   | α      | [⚠][ipynb-issues]  | ![][ipynb-cov]  |
+| RMarkdown                   | [xmd]    | Native   | α      | [⚠][xmd-issues]    | ![][xmd-cov]    |
+| **Presentations**           |
+| Microsoft Powerpoint        | [pptx]   | rPNG     | ✗      | [⚠][pptx-issues]   |
+| Demo Magic                  | [dmagic] | Native   | β      | [⚠][dmagic-issues] | ![][dmagic-cov] |
+| **Spreadsheets**            |
+| Microsoft Excel             | [xlsx]   | Formula  | α      | [⚠][xlsx-issues]   | ![][xlsx-cov]   |
+| Google Sheets               | [gsheet] | Formula  | ✗      | [⚠][gsheet-issues] |
+| Open Document Spreadsheet   | [ods]    | Formula  | α      | [⚠][ods-issues]    | ![][ods-cov]    |
+| **Tabular data**            |
+| CSV                         | [csv]    | None     | β      | [⚠][csv-issues]    | ![][csv-cov]    |
+| CSVY                        | [csvy]   | None     | ✗      | [⚠][csvy-issues]   |
+| Tabular Data Package        | [tdp]    | None     | β      | [⚠][tdp-issues]    | ![][tdp-cov]    |
+| **Collections**             |
+| Document Archive            | [dar]    | Extens   | ω      | [⚠][dar-issues]    | ![][dar-cov]    |
+| Filesystem Directory        | [dir]    | Extens   | ω      | [⚠][dir-issues]    | ![][dir-cov]    |
+| **Data interchange, other** |
+| JSON                        | [json]   | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
+| JSON5                       | [json5]  | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
+| YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
+| Pandoc                      | [pandoc] | Native   | ✔      | [⚠][pandoc-issues] | ![][pandoc-cov] |
+| Reproducible PNG            | [rpng]   | Native   | ✔      | [⚠][rpng-issues]   | ![][rpng-cov]   |
 
 **Key**
 
@@ -238,8 +240,10 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [md]: src/codecs/md
 [ods]: src/codecs/ods
 [odt]: src/codecs/odt
+[pandoc]: src/codecs/pandoc
 [pdf]: src/codecs/pdf
 [pptx]: src/codecs/pptx
+[rpng]: src/codecs/rpng
 [tdp]: src/codecs/tdp
 [txt]: src/codecs/txt
 [xlsx]: src/codecs/xlsx
@@ -262,8 +266,10 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [md-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown
 [ods-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ods
 [odt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+odt
+[pandoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pandoc
 [pdf-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf
 [pptx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx
+[rpng-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+rpng
 [tdp-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp
 [txt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+txt
 [xlsx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx
@@ -286,8 +292,10 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
 [ods-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods
 [odt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt
+[pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc
 [pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
 [pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
+[rpng-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng
 [tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
 [txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
 [xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
