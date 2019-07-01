@@ -26,65 +26,67 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 
 ## Formats
 
-| Format                    | Name         | Approach | Status | Issues             | Coverage        |
-| ------------------------- | ------------ | -------- | ------ | ------------------ | --------------- |
+| Format                    | Codec    | Approach | Status | Issues             | Coverage        |
+| ------------------------- | -------- | -------- | ------ | ------------------ | --------------- |
 | **Text**                  |
-| Plain text                | `txt`        | None     | α      | [⚠][txt-issues]    | ![][txt-cov]    |
-| Markdown                  | `md`         | Extens   | α      | [⚠][md-issues]     | ![][md-cov]     |
-| Latex                     | `tex`        | -        | α      | [⚠][tex-issues]    | ![][latex-cov]  |
-| Microsoft Word            | `docx`       | rPNG     | α      | [⚠][docx-issues]   | ![][docx-cov]   |
-| Google Docs               | `gdoc`       | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-cov]   |
-| Open Document Text        | `odt`        | rPNG     | α      | [⚠][odt-issues]    | ![][odt-cov]    |
-| HTML                      | `html`       | Extens   | α      | [⚠][html-issues]   | ![][html-cov]   |
-| Journal Archiving Tag Set | `jats`       | Extens   | α      | [⚠][jats-issues]   | ![][jats-cov]   |
-| Portable Document Format  | `pdf`        | rPNG     | α      | [⚠][pdf-issues]    | ![][pdf-cov]    |
+| Plain text                | [txt]    | None     | α      | [⚠][txt-issues]    | ![][txt-cov]    |
+| Markdown                  | [md]     | Extens   | α      | [⚠][md-issues]     | ![][md-cov]     |
+| Latex                     | [latex]  | -        | α      | [⚠][latex-issues]  | ![][latex-cov]  |
+| Microsoft Word            | [docx]   | rPNG     | α      | [⚠][docx-issues]   | ![][docx-cov]   |
+| Google Docs               | [gdoc]   | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-cov]   |
+| Open Document Text        | [odt]    | rPNG     | α      | [⚠][odt-issues]    | ![][odt-cov]    |
+| HTML                      | [html]   | Extens   | α      | [⚠][html-issues]   | ![][html-cov]   |
+| Journal Archiving Tag Set | [jats]   | Extens   | α      | [⚠][jats-issues]   | ![][jats-cov]   |
+| Portable Document Format  | [pdf]    | rPNG     | α      | [⚠][pdf-issues]    | ![][pdf-cov]    |
 | **Notebooks**             |
-| Jupyter                   | `ipynb`      | Native   | α      | [⚠][ipynb-issues]  | ![][ipynb-cov]  |
-| RMarkdown                 | `rmd`, `xmd` | Native   | α      | [⚠][rmd-issues]    | ![][xmd-cov]    |
+| Jupyter                   | [ipynb]  | Native   | α      | [⚠][ipynb-issues]  | ![][ipynb-cov]  |
+| RMarkdown                 | [xmd]    | Native   | α      | [⚠][xmd-issues]    | ![][xmd-cov]    |
 | **Presentations**         |
-| Microsoft Powerpoint      | `pptx`       | rPNG     | ✗      | [⚠][pptx-issues]   |
-| Demo Magic                | `dmagic`     | Native   | β      | [⚠][dmagic-issues] | ![][dmagic-cov] |
+| Microsoft Powerpoint      | [pptx]   | rPNG     | ✗      | [⚠][pptx-issues]   |
+| Demo Magic                | [dmagic] | Native   | β      | [⚠][dmagic-issues] | ![][dmagic-cov] |
 | **Spreadsheets**          |
-| Microsoft Excel           | `xlsx`       | Formula  | α      | [⚠][xlsx-issues]   | ![][xlsx-cov]   |
-| Google Sheets             | `gsheet`     | Formula  | ✗      | [⚠][gsheet-issues] |
-| Open Document Spreadsheet | `ods`        | Formula  | α      | [⚠][ods-issues]    | ![][ods-cov]    |
+| Microsoft Excel           | [xlsx]   | Formula  | α      | [⚠][xlsx-issues]   | ![][xlsx-cov]   |
+| Google Sheets             | [gsheet] | Formula  | ✗      | [⚠][gsheet-issues] |
+| Open Document Spreadsheet | [ods]    | Formula  | α      | [⚠][ods-issues]    | ![][ods-cov]    |
 | **Tabular data**          |
-| CSV                       | `csv`        | None     | β      | [⚠][csv-issues]    | ![][csv-cov]    |
-| [CSVY]                    | `csvy`       | None     | ✗      | [⚠][csvy-issues]   |
-| [Tabular Data Package]    | `tdp`        | None     | β      | [⚠][tdp-issues]    | ![][tdp-cov]    |
+| CSV                       | [csv]    | None     | β      | [⚠][csv-issues]    | ![][csv-cov]    |
+| CSVY                      | [csvy]   | None     | ✗      | [⚠][csvy-issues]   |
+| Tabular Data Package      | [tdp]    | None     | β      | [⚠][tdp-issues]    | ![][tdp-cov]    |
 | **Collections**           |
-| Document Archive          | `dar`        | Extens   | ω      | [⚠][dar-issues]    | ![][dar-cov]    |
-| Filesystem Directory      | `dir`        | Extens   | ω      | [⚠][dir-issues]    | ![][dir-cov]    |
+| Document Archive          | [dar]    | Extens   | ω      | [⚠][dar-issues]    | ![][dar-cov]    |
+| Filesystem Directory      | [dir]    | Extens   | ω      | [⚠][dir-issues]    | ![][dir-cov]    |
 | **Data interchange**      |
-| JSON                      | `json`       | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
-| JSON5                     | `json5`      | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
-| YAML                      | `yaml`       | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
+| JSON                      | [json]   | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
+| JSON5                     | [json5]  | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
+| YAML                      | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
 
 **Key**
 
 <details>
-<summary><b id="format-approach">Approach</b>...</summary>
-How executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
+  <summary><b id="format-approach">Approach</b>...</summary>
+  How executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
 
 - Native: the format natively supports executable nodes
 - Extens.: executable nodes are supported via extensions to the format e.g. in HTML and DAR, a `CodeChunk` is represented using a `<stencila-chunk>` element
 - rPNG: executable nodes are supported via reproducible PNG images inserted into the document
 - Formula: executable `CodeExpr` nodes are represented using formulae
-  </details>
+
+</details>
 
 <details>
-<summary><b id="format-status">Status</b>...</summary>
+  <summary><b id="format-status">Status</b>...</summary>
 
 - ✗: Not yet implemented
 - ω: Work in progress
 - α: Alpha, initial implementation
 - β: Beta, ready for user testing
 - ✔: Ready for production use
-  </details>
+
+</details>
 
 <details>
-<summary><b id="format-issues">Issues</b>...</summary>
-Link to open issues and PRs for the format (please check there before submitting a new issue 🙏)
+  <summary><b id="format-issues">Issues</b>...</summary>
+  Link to open issues and PRs for the format (please check there before submitting a new issue 🙏)
 </details>
 
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
@@ -219,56 +221,75 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
   <img width="250" src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png">
 </p>
 
-[csvy]: http://csvy.org/
-[csvy-issue]: https://github.com/stencila/encoda/issues/26
-[dar]: https://github.com/substance/dar
-[dar-pr]: https://github.com/stencila/encoda/pull/124
-[tabular data package]: https://frictionlessdata.io/specs/tabular-data-package/
-[csv-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv
+[csv]: codecs/csv
+[csvy]: codecs/csvy
+[dar]: codecs/dar
+[dir]: codecs/dir
+[dmagic]: codecs/dmagic
+[docx]: codecs/docx
+[gdoc]: codecs/gdoc
+[gsheet]: codecs/gsheet
+[html]: codecs/html
+[ipynb]: codecs/ipynb
+[jats]: codecs/jats
+[json]: codecs/json
+[json5]: codecs/json5
+[latex]: codecs/latex
+[md]: codecs/md
+[ods]: codecs/ods
+[odt]: codecs/odt
+[pdf]: codecs/pdf
+[pptx]: codecs/pptx
+[tdp]: codecs/tdp
+[txt]: codecs/txt
+[xlsx]: codecs/xlsx
+[xmd]: codecs/xmd
+[yaml]: codecs/yaml
 [csv-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csv
-[csvy-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csvy
 [csvy-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy
-[dar-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar
 [dar-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dar
-[dir-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir
 [dir-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dir
-[dmagic-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic
 [dmagic-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic
-[docx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx
 [docx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+docx
-[gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
 [gdoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc
-[gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
 [gsheet-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet
-[html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
 [html-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+html
-[ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
 [ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
-[jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
 [jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
-[json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
 [json-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json
-[json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
 [json5-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json5
+[latex-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tex
+[md-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown
+[ods-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ods
+[odt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+odt
+[pdf-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf
+[pptx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx
+[tdp-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp
+[txt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+txt
+[xlsx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx
+[xmd-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd
+[yaml-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml
+[csv-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv
+[csvy-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csvy
+[dar-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar
+[dir-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir
+[dmagic-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic
+[docx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx
+[gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
+[gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
+[html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
+[ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
+[jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
+[json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
+[json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
 [latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex
 [md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
-[md-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown
 [ods-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods
-[ods-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ods
 [odt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt
-[odt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+odt
 [pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
-[pdf-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf
 [pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
-[pptx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx
-[xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
-[rmd-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd
 [tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
-[tdp-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp
-[tex-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tex
 [txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
-[txt-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+txt
 [xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
-[xlsx-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx
+[xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
 [yaml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml
-[yaml-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml
