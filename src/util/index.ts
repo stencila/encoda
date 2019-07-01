@@ -67,8 +67,29 @@ export async function cast<Key extends keyof stencila.Types>(
 
 // Cached JSON Schema validation functions
 const validators = new Ajv({
-  jsonPointers: true
+  jsonPointers: true,
+  loadSchema
 })
+
+/**
+ * Load a JSON Schema based on its URI
+ */
+async function loadSchema(uri: string) {
+  const match = uri.match(/([\w]+)\.schema\.json$/)
+  if (match) return readSchema(match[1])
+  throw new Error(`Can not resolve schema "${uri}"`)
+}
+
+/**
+ * Read a JSON Schema file from `@stencila/schema`
+ */
+async function readSchema<Key extends keyof stencila.Types>(type: Key) {
+  try {
+    return await fs.readJSON(path.join(built, `${type}.schema.json`))
+  } catch {
+    throw new Error(`No schema for type "${type}".`)
+  }
+}
 
 /**
  * Validate a node against a type's schema
@@ -83,8 +104,8 @@ export async function validate<Key extends keyof stencila.Types>(
     `https://stencila.github.com/schema/${type}.schema.json`
   )
   if (!validator) {
-    const schema = await fs.readJSON(path.join(built, `${type}.schema.json`))
-    validator = validators.addSchema(schema).compile(schema)
+    const schema = await readSchema(type)
+    validator = await validators.compileAsync(schema)
   }
   if (!validator(node)) {
     const errors = (betterAjvErrors(validator.schema, node, validator.errors, {
@@ -123,7 +144,8 @@ const mutators = new Ajv({
   removeAdditional: true,
   // Coerce type of data to match type keyword and coerce scalar
   // data to an array with one element and vice versa, as needed.
-  coerceTypes: 'array'
+  coerceTypes: 'array',
+  loadSchema
 })
 
 /**
@@ -216,10 +238,8 @@ export async function coerce<Key extends keyof stencila.Types>(
     `https://stencila.github.com/schema/${typeName}.schema.json`
   )
   if (!mutator) {
-    const schema = await fs.readJSON(
-      path.join(built, `${typeName}.schema.json`)
-    )
-    mutator = mutators.addSchema(schema).compile(schema)
+    const schema = await readSchema(typeName)
+    mutator = await mutators.compileAsync(schema)
   }
 
   return produce(node, (coerced: any) => {
