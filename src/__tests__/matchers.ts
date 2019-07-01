@@ -5,7 +5,7 @@ import path from 'path'
 import type from '../util/type'
 
 // Ensure that the dir for test outputs is present
-fs.ensureDirSync(path.join(__dirname, 'output'))
+fs.ensureDirSync(path.join(__dirname, '__outputs__'))
 
 /**
  * Add a Jest matcher for testing that a codec is able
@@ -27,7 +27,7 @@ expect.extend({
         (codec.mediaTypes && mime.getExtension(codec.mediaTypes[0]))
       if (ext) fileName += '.' + ext
     }
-    const outPath = path.join(__dirname, 'output', fileName)
+    const outPath = path.join(__dirname, '__outputs__', fileName)
     const file = await codec.encode(node, outPath)
     const nodeDecoded = await codec.decode(file)
     try {

@@ -500,7 +500,7 @@ const imageInlinesToString: testCase = {
 }
 
 describe('rPNG encoding & decoding of "special" node types', () => {
-  const output = path.join(__dirname, '__output__', 'pandoc-rpngs')
+  const output = path.join(__dirname, '__outputs__', 'pandoc-rpngs')
   fs.ensureDirSync(output)
 
   const nodeMap = {

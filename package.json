@@ -139,10 +139,10 @@
     "coveragePathIgnorePatterns": [
       "__tests__/helpers.ts",
       "__fixtures__/*",
-      "__output__/*"
+      "__outputs__/*"
     ],
     "watchPathIgnorePatterns": [
-      "__output__/*",
+      "__outputs__/*",
       ".out.*"
     ]
   },

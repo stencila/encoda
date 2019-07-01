@@ -1,5 +1,7 @@
 coverage
 docs
 node_modules
-**/__output__
+**/__fixtures__
+**/__outputs__
+**/__tests__
 **/*.out.*

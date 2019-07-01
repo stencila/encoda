@@ -68,7 +68,7 @@ describe('decode', () => {
 
 describe('encode', () => {
   it('creates a directory', async () => {
-    const dir = path.join(__dirname, '__output__', 'flat')
+    const dir = path.join(__dirname, '__outputs__', 'flat')
     await fs.remove(dir)
     await encode(flatNode, { filePath: dir })
     const files = await globby('**/*', { cwd: dir })
@@ -76,7 +76,7 @@ describe('encode', () => {
   })
 
   it('uses index.html for main files', async () => {
-    const dir = path.join(__dirname, '__output__', 'shallow')
+    const dir = path.join(__dirname, '__outputs__', 'shallow')
     await fs.remove(dir)
     await encode(shallowNode, { filePath: dir })
     const files = await globby('**/*', { cwd: dir })
