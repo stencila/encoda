@@ -20,11 +20,6 @@ const built = path.join(
   'built'
 )
 
-// Load all schemas for use in by Ajv validator
-const schemas = globby
-  .sync(path.join(built, '*.schema.json'))
-  .map(file => fs.readJSONSync(file))
-
 // Read in aliases for use in coerce function
 const aliases = fs.readJSONSync(path.join(built, 'aliases.json'))
 
@@ -34,14 +29,14 @@ const aliases = fs.readJSONSync(path.join(built, 'aliases.json'))
  * @param initial Initial values for properties
  * @param validation What validation should done?
  */
-export function create<Key extends keyof stencila.Types>(
+export async function create<Key extends keyof stencila.Types>(
   type: Key,
   initial: { [key: string]: any } = {},
   validation: 'none' | 'validate' | 'coerce' = 'validate'
-): stencila.Types[Key] {
+): Promise<stencila.Types[Key]> {
   let node = { type, ...initial }
-  if (validation === 'validate') return validate(node, type)
-  else if (validation === 'coerce') return coerce(node, type)
+  if (validation === 'validate') return await validate(node, type)
+  else if (validation === 'coerce') return await coerce(node, type)
   else return node
 }
 
@@ -60,19 +55,18 @@ export function create<Key extends keyof stencila.Types>(
  * @param node The node to cast
  * @param type The type to cast to
  */
-export function cast<Key extends keyof stencila.Types>(
+export async function cast<Key extends keyof stencila.Types>(
   node: any,
   type: Key
-): stencila.Types[Key] {
-  return produce(node, (casted: any) => {
+): Promise<stencila.Types[Key]> {
+  return produce(node, async (casted: any) => {
     casted.type = type
-    validate(casted, type)
+    await validate(casted, type)
   })
 }
 
 // Cached JSON Schema validation functions
 const validators = new Ajv({
-  schemas,
   jsonPointers: true
 })
 
@@ -81,14 +75,17 @@ const validators = new Ajv({
  * @param node The node to validate
  * @param type The type to validate against
  */
-export function validate<Key extends keyof stencila.Types>(
+export async function validate<Key extends keyof stencila.Types>(
   node: any,
   type: Key
-): stencila.Types[Key] {
-  const validator = validators.getSchema(
+): Promise<stencila.Types[Key]> {
+  let validator = validators.getSchema(
     `https://stencila.github.com/schema/${type}.schema.json`
   )
-  if (!validator) throw new Error(`No schema for type "${type}".`)
+  if (!validator) {
+    const schema = await fs.readJSON(path.join(built, `${type}.schema.json`))
+    validator = validators.addSchema(schema).compile(schema)
+  }
   if (!validator(node)) {
     const errors = (betterAjvErrors(validator.schema, node, validator.errors, {
       format: 'js'
@@ -103,12 +100,12 @@ export function validate<Key extends keyof stencila.Types>(
  * @param node The node to check
  * @param type The type to check against
  */
-export function valid<Key extends keyof stencila.Types>(
+export async function valid<Key extends keyof stencila.Types>(
   node: any,
   type: Key
-): boolean {
+): Promise<boolean> {
   try {
-    validate(node, type)
+    await validate(node, type)
     return true
   } catch (error) {
     return false
@@ -119,7 +116,6 @@ export function valid<Key extends keyof stencila.Types>(
 // These use Ajv options that coerce nodes so we
 // keep them separate from pure non-mutating validators.
 const mutators = new Ajv({
-  schemas,
   jsonPointers: true,
   // Add values from `default` keyword when property is missing
   useDefaults: true,
@@ -210,16 +206,21 @@ mutators.addKeyword('parser', {
  * @param node The node to coerce
  * @param typeName The type to coerce it to
  */
-export function coerce<Key extends keyof stencila.Types>(
+export async function coerce<Key extends keyof stencila.Types>(
   node: any,
   typeName?: Key
-): stencila.Types[Key] {
+): Promise<stencila.Types[Key]> {
   if (!typeName) typeName = type(node) as Key
 
-  const mutator = mutators.getSchema(
+  let mutator = mutators.getSchema(
     `https://stencila.github.com/schema/${typeName}.schema.json`
   )
-  if (!mutator) throw new Error(`No schema for type "${typeName}".`)
+  if (!mutator) {
+    const schema = await fs.readJSON(
+      path.join(built, `${typeName}.schema.json`)
+    )
+    mutator = mutators.addSchema(schema).compile(schema)
+  }
 
   return produce(node, (coerced: any) => {
     if (typeof coerced === 'object') coerced.type = typeName
