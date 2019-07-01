@@ -90,7 +90,7 @@ export async function decode(
       const node = await read(path.join(dirPath, ...route))
       if (isCreativeWork(node)) {
         const { name } = path.parse(route[route.length - 1])
-        const depth = route.length - 2
+        const depth = route.length - 1
         return {
           route,
           node: {
