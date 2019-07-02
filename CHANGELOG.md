@@ -1,3 +1,11 @@
+## [0.53.4](https://github.com/stencila/encoda/compare/v0.53.3...v0.53.4) (2019-07-02)
+
+
+### Bug Fixes
+
+* **Util:** Make validate etc function async ([89d4485](https://github.com/stencila/encoda/commit/89d4485))
+* **Util:** Use Ajv async schema compilation ([4bad4af](https://github.com/stencila/encoda/commit/4bad4af))
+
 ## [0.53.3](https://github.com/stencila/encoda/compare/v0.53.2...v0.53.3) (2019-07-02)
 
 
