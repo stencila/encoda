@@ -319,15 +319,21 @@ async function decodeOutput(
   switch (output.output_type) {
     case 'execute_result':
     case 'pyout':
-      return await decodeMimeBundle(
-        nbformat.v3.isa(output, 'Pyout', version) ? output : output.data,
-        version
-      )
+      if (nbformat.v3.isa(output, 'Pyout', version)) {
+        // Remove the 'non-data' properties from the `Pyout`
+        let { output_type, prompt_number, metadata, ...data } = output
+        return await decodeMimeBundle(data, version)
+      } else {
+        return await decodeMimeBundle(output.data, version)
+      }
     case 'display_data':
-      return await decodeMimeBundle(
-        nbformat.v3.isa(output, 'DisplayData', version) ? output : output.data,
-        version
-      )
+      if (nbformat.v3.isa(output, 'DisplayData', version)) {
+        // Remove the 'non-data' properties from the `DisplayData`
+        let { output_type, metadata, ...data } = output
+        return await decodeMimeBundle(data, version)
+      } else {
+        return await decodeMimeBundle(output.data, version)
+      }
     case 'stream':
       return await decodeMultilineString(output.text)
     case 'error':
@@ -425,7 +431,22 @@ async function decodeMimeBundle(
   bundle: nbformat.MimeBundle,
   version: nbformat.Version = 4
 ): Promise<stencila.Node> {
-  for (const [mimetype, data] of Object.entries(bundle)) {
+  for (const [key, data] of Object.entries(bundle)) {
+    // For nbformat 3 it is necessary to convert some property
+    // names to mimetypes
+    const map: { [key: string]: string } = {
+      html: 'text/html',
+      javascript: 'application/javascript',
+      jpeg: 'image/jpeg',
+      json: 'application/json',
+      latex: 'application/x-latex',
+      pdf: 'application/pdf',
+      png: 'image/png',
+      svg: 'image/svg+xml',
+      text: 'text/plain'
+    }
+    const mimetype = version === 3 ? map[key] || key : key
+
     const content =
       typeof data === 'string'
         ? data
@@ -433,11 +454,8 @@ async function decodeMimeBundle(
         ? data.join('')
         : data.toString()
 
-    if (['image/png', 'png', 'image/jpeg', 'jpeg'].includes(mimetype)) {
-      const mediaType = mimetype.startsWith('image/')
-        ? mimetype
-        : 'image/' + mimetype
-      const dataUrl = `data:${mediaType};base64,${content}`
+    if (['image/png', 'image/jpeg'].includes(mimetype)) {
+      const dataUrl = `data:${mimetype};base64,${content}`
       const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
         dataUrl
       )
