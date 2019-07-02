@@ -31,7 +31,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | **Text**                  |
 | Plain text                | `txt`        | None     | α      | [⚠][txt-issues]    | ![][txt-cov]    |
 | Markdown                  | `md`         | Extens   | α      | [⚠][md-issues]     | ![][md-cov]     |
-| Latex                     | `tex`        | -        | α      | [⚠][tex-issues]    | ![][latex-cov]  |
+| LaTeX                     | `tex`        | -        | α      | [⚠][tex-issues]    | ![][latex-cov]  |
 | Microsoft Word            | `docx`       | rPNG     | α      | [⚠][docx-issues]   | ![][docx-cov]   |
 | Google Docs               | `gdoc`       | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-cov]   |
 | Open Document Text        | `odt`        | rPNG     | α      | [⚠][odt-issues]    | ![][odt-cov]    |
