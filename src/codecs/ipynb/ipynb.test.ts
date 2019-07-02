@@ -1,25 +1,38 @@
 import * as stencila from '@stencila/schema'
-import { dump, load } from '../../util/vfile'
+import path from 'path'
+import { dump, load, read } from '../../util/vfile'
 import {
   decode,
   decodeMultilineString,
   encode,
   encodeMultilineString
 } from './'
+import nbformat3 from './nbformat-v3'
 import nbformat4 from './nbformat-v4'
 
 test('decode', async () => {
-  const decode_ = async (ipynb: nbformat4.Notebook) =>
+  const d = async (ipynb: nbformat3.Notebook | nbformat4.Notebook) =>
     await decode(await load(JSON.stringify(ipynb)))
 
-  expect(await decode_(kitchenSink.ipynb)).toEqual(kitchenSink.node)
+  expect(await d(kitchenSink.from)).toEqual(kitchenSink.node)
+})
+
+test('decode files', async () => {
+  const d = async (ipynb: string) =>
+    await decode(await read(path.join(__dirname, '__fixtures__', ipynb)))
+
+  // TODO: Add expectations! Currently this just checks that the
+  // fixtures are read without failing.
+  await d('running-code.ipynb')
+  await d('sunspots.ipynb')
+  await d('well-switching.ipynb')
 })
 
 test('encode', async () => {
-  const encode_ = async (node: stencila.Node) =>
+  const e = async (node: stencila.Node) =>
     JSON.parse(await dump(await encode(node)))
 
-  expect(await encode_(kitchenSink.node)).toEqual(kitchenSink.ipynb)
+  expect(await e(kitchenSink.node)).toEqual(kitchenSink.from)
 })
 
 test('encode+decode MultilineString', () => {
@@ -33,13 +46,14 @@ test('encode+decode MultilineString', () => {
 })
 
 interface TestCase {
-  ipynb: nbformat4.Notebook
+  from: nbformat3.Notebook | nbformat4.Notebook
   node: stencila.Article
+  to?: nbformat4.Notebook
 }
 
 // An example intended for testing progressively added decoding/encoding pairs
 const kitchenSink: TestCase = {
-  ipynb: {
+  from: {
     cells: [
       {
         cell_type: 'markdown',

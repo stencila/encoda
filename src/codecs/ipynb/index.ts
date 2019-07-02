@@ -6,6 +6,7 @@ import stencila from '@stencila/schema'
 import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import type from '../../util/type'
+import { hasType } from '../../util'
 import * as vfile from '../../util/vfile'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
@@ -309,7 +310,22 @@ async function decodeOutputs(
   outputs: (nbformat3.Output | nbformat4.Output)[],
   version: nbformat.Version = 4
 ): Promise<stencila.Node[]> {
-  return Promise.all(outputs.map(output => decodeOutput(output, version)))
+  const nodes = await Promise.all(
+    outputs.map(output => decodeOutput(output, version))
+  )
+
+  // Remove any matplotlib plot string representations when there is also
+  // an image output (ie the actual plot). See https://github.com/stencila/encoda/issues/146
+  if (
+    nodes.filter(node => hasType(node) && node.type === 'ImageObject').length >
+    0
+  ) {
+    return nodes.filter(
+      node => !(typeof node === 'string' && /^\[?<matplotlib\./.test(node))
+    )
+  }
+
+  return nodes
 }
 
 async function decodeOutput(
@@ -319,15 +335,21 @@ async function decodeOutput(
   switch (output.output_type) {
     case 'execute_result':
     case 'pyout':
-      return await decodeMimeBundle(
-        nbformat.v3.isa(output, 'Pyout', version) ? output : output.data,
-        version
-      )
+      if (nbformat.v3.isa(output, 'Pyout', version)) {
+        // Remove the 'non-data' properties from the `Pyout`
+        let { output_type, prompt_number, metadata, ...data } = output
+        return await decodeMimeBundle(data, version)
+      } else {
+        return await decodeMimeBundle(output.data, version)
+      }
     case 'display_data':
-      return await decodeMimeBundle(
-        nbformat.v3.isa(output, 'DisplayData', version) ? output : output.data,
-        version
-      )
+      if (nbformat.v3.isa(output, 'DisplayData', version)) {
+        // Remove the 'non-data' properties from the `DisplayData`
+        let { output_type, metadata, ...data } = output
+        return await decodeMimeBundle(data, version)
+      } else {
+        return await decodeMimeBundle(output.data, version)
+      }
     case 'stream':
       return await decodeMultilineString(output.text)
     case 'error':
@@ -425,7 +447,22 @@ async function decodeMimeBundle(
   bundle: nbformat.MimeBundle,
   version: nbformat.Version = 4
 ): Promise<stencila.Node> {
-  for (const [mimetype, data] of Object.entries(bundle)) {
+  for (const [key, data] of Object.entries(bundle)) {
+    // For nbformat 3 it is necessary to convert some property
+    // names to mimetypes
+    const map: { [key: string]: string } = {
+      html: 'text/html',
+      javascript: 'application/javascript',
+      jpeg: 'image/jpeg',
+      json: 'application/json',
+      latex: 'application/x-latex',
+      pdf: 'application/pdf',
+      png: 'image/png',
+      svg: 'image/svg+xml',
+      text: 'text/plain'
+    }
+    const mimetype = version === 3 ? map[key] || key : key
+
     const content =
       typeof data === 'string'
         ? data
@@ -433,11 +470,8 @@ async function decodeMimeBundle(
         ? data.join('')
         : data.toString()
 
-    if (['image/png', 'png', 'image/jpeg', 'jpeg'].includes(mimetype)) {
-      const mediaType = mimetype.startsWith('image/')
-        ? mimetype
-        : 'image/' + mimetype
-      const dataUrl = `data:${mediaType};base64,${content}`
+    if (['image/png', 'image/jpeg'].includes(mimetype)) {
+      const dataUrl = `data:${mimetype};base64,${content}`
       const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
         dataUrl
       )
