@@ -143,14 +143,14 @@ npm run cover
 Or, manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
-npx ts-node --files src/cli convert tests/fixtures/datatable/simple/simple.csv --to yaml
+npx ts-node --files src/cli convert simple.md simple.html
 ```
 
 If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:
 
 ```bash
 npm run build
-node dist/cli convert tests/fixtures/datatable/simple/simple.csv --to yaml
+node dist/cli convert simple.md simple.html
 ```
 
 There's also a `Makefile` if you prefer to run tasks that way e.g.
