@@ -2,8 +2,8 @@ import { decode } from './'
 import { coerce, create, validate } from '../../util/index'
 
 describe('validate', () => {
-  it('throws for invalid emails', () => {
-    expect(() =>
+  it('throws for invalid emails', async () => {
+    await expect(
       validate(
         {
           type: 'Person',
@@ -11,13 +11,13 @@ describe('validate', () => {
         },
         'Person'
       )
-    ).toThrow('/emails/1: format should match format "email"')
+    ).rejects.toThrow('/emails/1: format should match format "email"')
   })
 })
 
 describe('decode', () => {
-  it('works', () => {
-    let person = create('Person')
+  it('works', async () => {
+    let person = await create('Person')
 
     person.familyNames = ['Jones']
     expect(decode('Jones')).toEqual(person)
@@ -53,9 +53,9 @@ describe('decode', () => {
 })
 
 describe('coerce', () => {
-  it('coerces properties', () => {
+  it('coerces properties', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           givenNames: 'John Tom',
           familyNames: 'Smith',
@@ -83,9 +83,9 @@ describe('coerce', () => {
     })
   })
 
-  it('renames and coerces property aliases', () => {
+  it('renames and coerces property aliases', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           firstNames: 'John Tom',
           lastName: 'Smith'
@@ -99,7 +99,7 @@ describe('coerce', () => {
     })
 
     expect(
-      coerce(
+      await coerce(
         {
           givenName: 'Jane',
           surnames: 'Doe Smith'
@@ -113,9 +113,9 @@ describe('coerce', () => {
     })
   })
 
-  it('parses strings into people', () => {
+  it('parses strings into people', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           authors: [
             'John Smith',
@@ -151,10 +151,10 @@ describe('coerce', () => {
     })
   })
 
-  it('throws if string can not be parsed', () => {
-    expect(() =>
+  it('throws if string can not be parsed', async () => {
+    await expect(
       coerce({ authors: ['John Smith', '#@&%', 'Jones, Jane'] }, 'CreativeWork')
-    ).toThrow(
+    ).rejects.toThrow(
       '/authors/1: parser error when decoding using "person": Unable to decode string "#@&%" as a person'
     )
   })

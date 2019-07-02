@@ -16,20 +16,21 @@ import {
 } from '../index'
 import is from '../is'
 import type from '../type'
+import { rejects } from 'assert'
 
 describe('create', () => {
-  it('works with different types', () => {
-    expect(create('Thing')).toEqual({
+  it('works with different types', async () => {
+    expect(await create('Thing')).toEqual({
       type: 'Thing'
     })
-    expect(create('CreativeWork')).toEqual({
+    expect(await create('CreativeWork')).toEqual({
       type: 'CreativeWork'
     })
   })
 
-  it('works with initial values', () => {
+  it('works with initial values', async () => {
     expect(
-      create('Thing', {
+      await create('Thing', {
         name: 'thing1',
         url: 'http://example.com/thing1'
       })
@@ -40,30 +41,32 @@ describe('create', () => {
     })
   })
 
-  it('throws with unknown types', () => {
+  it('throws with unknown types', async () => {
     // In Typescript this error is caught at compile time, so ts-ignore it
     // @ts-ignore
-    expect(() => create('Foo')).toThrow(/^No schema for type "Foo".$/)
+    await expect(create('Foo')).rejects.toThrow(/^No schema for type "Foo".$/)
   })
 
-  it('throws when wrong initial values', () => {
-    expect(() => create('Thing', { foo: 'Foo' })).toThrow(
+  it('throws when wrong initial values', async () => {
+    await expect(create('Thing', { foo: 'Foo' })).rejects.toThrow(
       'Property foo is not expected to be here'
     )
-    expect(() => create('Thing', { type: 'Foo' })).toThrow(
+    await expect(create('Thing', { type: 'Foo' })).rejects.toThrow(
       'type should be equal to one of the allowed values: Thing'
     )
   })
 
-  it('does not throw when wrong initial values and no validation', () => {
-    expect(create('Thing', { foo: 'invalid' }, 'none')).toEqual({
+  it('does not throw when wrong initial values and no validation', async () => {
+    expect(await create('Thing', { foo: 'invalid' }, 'none')).toEqual({
       type: 'Thing',
       foo: 'invalid'
     })
   })
 
-  it('will coerce initial value to conform to schema', () => {
-    expect(create('Thing', { name: 42, foo: 'invalid' }, 'coerce')).toEqual({
+  it('will coerce initial value to conform to schema', async () => {
+    expect(
+      await create('Thing', { name: 42, foo: 'invalid' }, 'coerce')
+    ).toEqual({
       type: 'Thing',
       name: '42'
     })
@@ -95,19 +98,19 @@ test('is', () => {
 })
 
 describe('cast', () => {
-  it('works', () => {
-    expect(cast({}, 'Thing')).toEqual({
+  it('works', async () => {
+    expect(await cast({}, 'Thing')).toEqual({
       type: 'Thing'
     })
-    expect(cast({ type: 'Thing' }, 'Thing')).toEqual({
+    expect(await cast({ type: 'Thing' }, 'Thing')).toEqual({
       type: 'Thing'
     })
-    expect(cast({ type: 'Thing', authors: [] }, 'CreativeWork')).toEqual({
+    expect(await cast({ type: 'Thing', authors: [] }, 'CreativeWork')).toEqual({
       type: 'CreativeWork',
       authors: []
     })
     expect(
-      cast(
+      await cast(
         {
           type: 'Thing',
           title: 'Untitled',
@@ -122,64 +125,70 @@ describe('cast', () => {
     })
   })
 
-  it('throws on wrong property type', () => {
-    expect(() => cast({ name: 42 }, 'Thing')).toThrow(
+  it('throws on wrong property type', async () => {
+    await expect(cast({ name: 42 }, 'Thing')).rejects.toThrow(
       'name: type should be string'
     )
-    expect(() => cast({ url: [] }, 'Thing')).toThrow(
+    await expect(cast({ url: [] }, 'Thing')).rejects.toThrow(
       'url: type should be string'
     )
   })
 
-  it('throws on additional property', () => {
-    expect(() => cast({ foo: 'Bar' }, 'Thing')).toThrow(
+  it('throws on additional property', async () => {
+    await expect(cast({ foo: 'Bar' }, 'Thing')).rejects.toThrow(
       'Property foo is not expected to be here'
     )
   })
 
-  it('throws on missing property', () => {
-    expect(() => cast({ type: 'Thing' }, 'Article')).toThrow(
+  it('throws on missing property', async () => {
+    await expect(cast({ type: 'Thing' }, 'Article')).rejects.toThrow(
       "should have required property 'authors'"
     )
   })
 })
 
 describe('validate', () => {
-  it('throws for non-objects', () => {
-    expect(() => validate(null, 'Thing')).toThrow(/^: type should be object$/)
-    expect(() => validate(42, 'Thing')).toThrow(/^: type should be object$/)
+  it('throws for non-objects', async () => {
+    await expect(validate(null, 'Thing')).rejects.toThrow(
+      /^: type should be object$/
+    )
+    await expect(validate(42, 'Thing')).rejects.toThrow(
+      /^: type should be object$/
+    )
   })
 
-  it('throws for missing properties', () => {
-    expect(() => validate({}, 'Thing')).toThrow(
+  it('throws for missing properties', async () => {
+    await expect(validate({}, 'Thing')).rejects.toThrow(
       /^ should have required property 'type'$/
     )
-    expect(() => validate({ type: 'Article' }, 'Article')).toThrow(
+    await expect(validate({ type: 'Article' }, 'Article')).rejects.toThrow(
       /^ should have required property 'authors'$/
     )
   })
 
-  it('throws on type with no schema', () => {
+  it('throws on type with no schema', async () => {
     // In Typescript this error is caught at compile time, so ts-ignore it
     // @ts-ignore
-    expect(() => cast({}, 'Foo')).toThrow(/^No schema for type "Foo".$/)
+    await expect(validate({}, 'Foo')).rejects.toThrow(
+      /^No schema for type "Foo".$/
+    )
   })
 })
 
 describe('valid', () => {
-  it('works', () => {
-    expect(valid(null, 'Thing')).toBe(false)
-    expect(valid({ type: 'Thing' }, 'Thing')).toBe(true)
+  it('works', async () => {
+    expect(await valid(null, 'Thing')).toBe(false)
+    expect(await valid({ type: 'Thing' }, 'Thing')).toBe(true)
   })
 })
 
 describe('coerce', () => {
-  it('will add type property', () => {
-    expect(coerce({}, 'Person')).toEqual({
+  it('will add type property', async () => {
+    expect(await coerce({}, 'Person')).toEqual({
       type: 'Person'
     })
     expect(
-      coerce(
+      await coerce(
         {
           type: 'Foo',
           name: 'John'
@@ -192,9 +201,9 @@ describe('coerce', () => {
     })
   })
 
-  it('will coerce types', () => {
+  it('will coerce types', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           name: 42
         },
@@ -205,7 +214,7 @@ describe('coerce', () => {
       name: '42'
     })
     expect(
-      coerce(
+      await coerce(
         {
           name: null
         },
@@ -217,9 +226,9 @@ describe('coerce', () => {
     })
   })
 
-  it('will coerce arrays to scalars', () => {
+  it('will coerce arrays to scalars', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           type: 'Person',
           name: [42]
@@ -232,9 +241,9 @@ describe('coerce', () => {
     })
   })
 
-  it('will coerce scalars to arrays', () => {
+  it('will coerce scalars to arrays', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           type: 'Person',
           givenNames: 'Jane'
@@ -247,15 +256,15 @@ describe('coerce', () => {
     })
   })
 
-  it('will add default values for missing properties', () => {
-    expect(coerce({}, 'Thing')).toEqual({
+  it('will add default values for missing properties', async () => {
+    expect(await coerce({}, 'Thing')).toEqual({
       type: 'Thing'
     })
   })
 
-  it('will remove additional properties', () => {
+  it('will remove additional properties', async () => {
     expect(
-      coerce(
+      await coerce(
         {
           favoriteColor: 'red'
         },
@@ -266,8 +275,8 @@ describe('coerce', () => {
     })
   })
 
-  it('will correct nested nodes including adding type', () => {
-    const article = coerce(
+  it('will correct nested nodes including adding type', async () => {
+    const article = await coerce(
       {
         title: 'Untitled',
         authors: [
@@ -284,13 +293,17 @@ describe('coerce', () => {
     )
 
     expect(article.authors[0].type).toEqual('Person')
-    expect(cast(article.authors[0], 'Person').givenNames).toEqual(['Joe'])
+    expect((await cast(article.authors[0], 'Person')).givenNames).toEqual([
+      'Joe'
+    ])
     expect(article.authors[1].type).toEqual('Person')
-    expect(cast(article.authors[1], 'Person').familyNames).toEqual(['Jones'])
+    expect((await cast(article.authors[1], 'Person')).familyNames).toEqual([
+      'Jones'
+    ])
   })
 
-  it('currently has a bug with arrays using anyOf', () => {
-    const article = coerce(
+  it('currently has a bug with arrays using anyOf', async () => {
+    const article = await coerce(
       {
         title: 'Untitled',
         authors: [
@@ -317,41 +330,45 @@ describe('coerce', () => {
     expect(article.authors[1].name).toEqual('Example Uni')
     // @ts-ignore
     expect(article.authors[1].legalName).toBeUndefined()
-    expect(cast(article.authors[1], 'Organization').legalName).toBeUndefined()
+    expect(
+      (await cast(article.authors[1], 'Organization')).legalName
+    ).toBeUndefined()
   })
 
-  it('throws an error if unable to coerce data, or data is otherwise invalid', () => {
-    expect(() =>
+  it('throws an error if unable to coerce data, or data is otherwise invalid', async () => {
+    await expect(
       coerce(
         {
           name: {}
         },
         'Person'
       )
-    ).toThrow('name: type should be string')
+    ).rejects.toThrow('name: type should be string')
 
-    expect(() =>
+    await expect(
       coerce(
         {
           url: 'foo'
         },
         'Person'
       )
-    ).toThrow('url: format should match format "uri"')
+    ).rejects.toThrow('url: format should match format "uri"')
   })
 
-  it('throws an error if invalid type', () => {
+  it('throws an error if invalid type', async () => {
     // @ts-ignore
-    expect(() => coerce({}, 'Foo')).toThrow(/^No schema for type "Foo".$/)
+    await expect(coerce({}, 'Foo')).rejects.toThrow(
+      /^No schema for type "Foo".$/
+    )
   })
 
-  it('has no side effects', () => {
+  it('has no side effects', async () => {
     const inp: any = {
       name: 42,
       title: 'Untitled',
       authors: [{ type: 'Person', givenNames: 'Jane' }]
     }
-    const out = coerce(inp, 'Article')
+    const out = await coerce(inp, 'Article')
 
     // The original object should be unchanged
     expect(inp.type).toBeUndefined()
@@ -362,7 +379,7 @@ describe('coerce', () => {
     // The new object has the changes made
     expect(out.type).toEqual('Article')
     expect(out.name).toEqual('42')
-    const outPerson = cast(out.authors[0], 'Person')
+    const outPerson = await cast(out.authors[0], 'Person')
     expect(outPerson.givenNames).toEqual(['Jane'])
   })
 })
