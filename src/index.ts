@@ -177,7 +177,8 @@ export async function match(
   try {
     return await import(`./codecs/${extName}`)
   } catch (error) {
-    logger.warn(`No codec was found for ${extName}\n\n${error}`)
+    // Do not log any warnings here since not finding a matching module
+    // is normal behavior and doing so causes unnecessary noise and anxiety :)
   }
 
   for (let codecName of codecList) {
