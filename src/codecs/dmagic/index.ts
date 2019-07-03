@@ -30,23 +30,19 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error('Decoding of Demo Magic scripts is not supported.')
 }
 
-interface DemoMagicOptions {
-  embed?: boolean
-}
-
 /**
  * Encode a Stencila `Node` to a `VFile` with `demo-magic.sh` content.
  *
  * @param thing The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode<DemoMagicOptions> = async (
+export const encode: Encode = async (
   node: stencila.Node,
-  { codecOptions = {} }: EncodeOptions<DemoMagicOptions> = {}
+  options: EncodeOptions = {}
 ): Promise<vfile.VFile> => {
-  const { embed = true } = codecOptions
+  const { isBundle = true } = options
   let bash = await encodeNode(node)
-  if (embed) {
+  if (isBundle) {
     if (!demoMagicSh) {
       demoMagicSh = await fs.readFile(
         path.join(__dirname, 'demo-magic-template.sh'),
@@ -102,6 +98,6 @@ async function encodeNode(node: stencila.Node): Promise<string> {
  * Generate escaped Markdown suitable for inserting into Bash
  */
 async function escapedMd(node: stencila.Node): Promise<string> {
-  const markdown = await dump(node, { format: 'md' })
+  const markdown = await dump(node, 'md')
   return markdown.replace(/`/g, '\\`')
 }

@@ -6,7 +6,7 @@ import * as vfile from './util/vfile'
 
 export { default as process } from './process'
 
-const logger = getLogger('encoda')
+const log = getLogger('encoda:index')
 
 type VFile = vfile.VFile
 
@@ -51,7 +51,7 @@ export interface EncodeOptions<FormatOptions extends object = {}> {
   filePath?: string
   isStandalone?: boolean
   isBundle?: boolean
-  theme?: string
+  theme?: 'eLife' | 'stencila'
   codecOptions?: FormatOptions
 }
 
@@ -246,17 +246,24 @@ export async function decode(
  * Encode (i.e. serialize) a `stencila.Node` to a virtual file.
  *
  * @param node The node to encode
- * @param filePath The file path to encode the node to.
- *                 Only required for some codecs e.g. those encoding to more than one file.
- * @param format The format to encode the node as.
- *               If undefined then determined from filePath or file path.
+ * @param options Encoding options. Should include at least one of:
+ *    - filePath The file path to encode the node to.
+ *               Only required for some codecs e.g. those encoding to more than one file.
+ *    - format The format to encode the node as.
+ *             If undefined then determined from filePath or file path.
  */
 export const encode: Encode = async (
   node: stencila.Node,
-  { filePath, format, ...options }: EncodeOptions = {}
+  options: EncodeOptions = {}
 ): Promise<VFile> => {
+  const { filePath, format } = options
+  if (!(filePath || format)) {
+    throw new Error(
+      'At least one of "filePath" or "format" option must be provided'
+    )
+  }
   const codec = await match(filePath, format, true)
-  return codec.encode(node, { ...options, format, filePath })
+  return codec.encode(node, options)
 }
 
 /**
@@ -278,12 +285,14 @@ export async function load(
  *
  * @param node The node to dump.
  * @param format The format to dump the node as.
+ * @param options Encoding options.
  */
 export async function dump(
   node: stencila.Node,
-  options: EncodeOptions
+  format: string,
+  options: EncodeOptions = {}
 ): Promise<string> {
-  const file = await encode(node, { format: options.format, ...options })
+  const file = await encode(node, { ...options, format })
   return vfile.dump(file)
 }
 
@@ -309,14 +318,14 @@ export async function read(
  * @param node The node to write.
  * @param filePath The file system path to write to.
  *                 Use `-` write to standard output.
- * @param format The format to write the node as.
+ * @param options Encoding options.
  */
 export async function write(
   node: stencila.Node,
   filePath: string,
-  encodeOptions: EncodeOptions = {}
+  options: EncodeOptions = {}
 ): Promise<VFile> {
-  let file = await encode(node, { ...encodeOptions, filePath })
+  let file = await encode(node, { ...options, filePath })
   await vfile.write(file, filePath)
   return file
 }

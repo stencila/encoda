@@ -246,7 +246,7 @@ async function encodeMarkdownCell(
 
   const metadata = {}
 
-  const markdown = await dump(article, { format: 'md' })
+  const markdown = await dump(article, 'md')
   const source = encodeMultilineString(markdown.trim())
 
   return {
@@ -501,7 +501,7 @@ async function encodeMimeBundle(
   let [mediaType, data] = await (async (): Promise<[string, string]> => {
     switch (type(node)) {
       case 'string':
-        return ['text/plain', await dump(node, { format: 'text' })]
+        return ['text/plain', await dump(node, 'text')]
       case 'ImageObject':
         const image = node as stencila.ImageObject
         const { mediaType, dataUri: dataUrl } = await dataUri.fromFile(
@@ -510,7 +510,7 @@ async function encodeMimeBundle(
         const data = dataUrl.split('base64,').pop() || ''
         return [mediaType, data]
     }
-    return ['text/html', await dump(node, { format: 'html' })]
+    return ['text/html', await dump(node, 'html')]
   })()
 
   const bundle: nbformat.MimeBundle = {}

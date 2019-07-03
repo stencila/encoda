@@ -190,7 +190,7 @@ async function encodeCreativeWork(
     profile: 'tabular-data-resource',
     name: datatable.name || 'Unnamed',
 
-    data: await dump(datatable, { format: 'csv' }),
+    data: await dump(datatable, 'csv'),
     format: 'csv',
     mediatype: 'text/csv',
     encoding: 'utf-8',

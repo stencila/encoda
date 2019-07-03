@@ -36,7 +36,7 @@ export const encode: Encode = async (
   options: EncodeOptions = {}
 ): Promise<vfile.VFile> => {
   const bundled = await bundle(node)
-  const html = await dump(bundled, { ...options, format: 'html' })
+  const html = await dump(bundled, 'html', options)
 
   const page = await puppeteer.page()
   await page.setContent(html, { waitUntil: 'networkidle0' })
