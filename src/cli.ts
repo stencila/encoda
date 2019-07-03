@@ -50,9 +50,22 @@ const { _, ...options } = minimist(process.argv.slice(2), {
 const command = _[0]
 const args = _.slice(1)
 
+/**
+ * Set up logger so that it:
+ *
+ * - only shows DEBUG entries if --debug=true
+ * - does not show duplicate entries unless --debug=true
+ */
 const log = logga.getLogger('encoda:cli')
+const previousLogData = new Set<string>()
 logga.replaceHandlers((data: logga.LogData) => {
-  if (data.level <= (options.debug ? 3 : 2)) logga.defaultHandler(data)
+  if (data.level <= (options.debug ? 3 : 2)) {
+    const json = JSON.stringify(data)
+    if (options.debug || !previousLogData.has(json)) {
+      logga.defaultHandler(data)
+      previousLogData.add(json)
+    }
+  }
 })
 ;(async () => {
   try {
