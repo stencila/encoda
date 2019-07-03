@@ -213,7 +213,7 @@ export const encode: Encode<DirEncodeOptions> = async (
     await fs.ensureDir(routePath)
   }
 
-  // Generate the output file in 'parallel'
+  // Generate the output files in 'parallel'
   await Promise.all(
     nodes.map(async ({ route, node }) => {
       const fileName =
@@ -221,7 +221,7 @@ export const encode: Encode<DirEncodeOptions> = async (
           ? 'index.html'
           : route[route.length - 1] + '.html'
       const filePath = path.join(dirPath, ...route.slice(1, -1), fileName)
-      return await write(node, filePath)
+      return await write(node, filePath, options)
     })
   )
 
