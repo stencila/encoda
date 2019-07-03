@@ -22,7 +22,7 @@ import * as vfile from '../../util/vfile'
 
 const document = new jsdom.JSDOM().window.document
 
-const logger = getLogger('encoda:html')
+const log = getLogger('encoda:html')
 
 export const mediaTypes = ['text/html']
 
@@ -65,24 +65,15 @@ const getArticleMetaData = (
   }
 }
 
-interface EncodeHTMLOptions {
-  theme?: 'eLife' | 'stencila'
-}
-
 /**
  * Encode a `stencila.Node` to a `VFile` with HTML contents.
  *
  * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode<EncodeHTMLOptions> = async (
+export const encode: Encode = async (
   node: stencila.Node,
-  options: EncodeOptions<EncodeHTMLOptions> = {
-    isStandalone: true,
-    isBundle: false,
-    theme: 'stencila',
-    codecOptions: {}
-  }
+  options: EncodeOptions = {}
 ): Promise<vfile.VFile> => {
   const { isStandalone = true, isBundle = false, theme = 'stencila' } = options
 
@@ -94,7 +85,7 @@ export const encode: Encode<EncodeHTMLOptions> = async (
 
   if (isStandalone) {
     const { title, ...metadata } = getArticleMetaData(node)
-    dom = generateHtmlElement(title, metadata, [dom])
+    dom = generateHtmlElement(title, metadata, [dom], options)
   }
 
   const beautifulHtml = beautify(dom.outerHTML)
@@ -175,7 +166,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
     return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
 
-  logger.warn(`No handler for HTML element <${name}>`)
+  log.warn(`No handler for HTML element <${name}>`)
   return undefined
 }
 
@@ -296,8 +287,10 @@ function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Array<Node> = [],
-  options: EncodeOptions<EncodeHTMLOptions> = {}
+  options: EncodeOptions = {}
 ): HTMLHtmlElement {
+  log.debug(`Generating <html> element with options ${JSON.stringify(options)}`)
+
   const { theme = 'stencila' } = options
   const themePath = path.resolve(
     require.resolve('@stencila/thema'),
