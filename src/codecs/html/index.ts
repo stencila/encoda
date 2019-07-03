@@ -289,49 +289,80 @@ function generateHtmlElement(
   body: Array<Node> = [],
   options: EncodeOptions = {}
 ): HTMLHtmlElement {
-  log.debug(`Generating <html> element with options ${JSON.stringify(options)}`)
+  const { isBundle = false, theme = 'stencila' } = options
 
-  const { theme = 'stencila' } = options
-  const themePath = path.resolve(
-    require.resolve('@stencila/thema'),
-    '..',
-    'themes',
-    theme
+  log.debug(`Generating <html> elem with options ${JSON.stringify(options)}`)
+
+  let themeCss
+  let themeJs
+  if (isBundle) {
+    // Bundle the theme into the document
+    const themePath = path.resolve(
+      require.resolve('@stencila/thema'),
+      '..',
+      'themes',
+      theme
+    )
+    themeCss = h('style', {
+      innerHTML: fs.readFileSync(path.join(themePath, 'styles.css')).toString()
+    })
+    themeJs = h('script', {
+      innerHTML: fs.readFileSync(path.join(themePath, 'index.js')).toString()
+    })
+  } else {
+    // Add links to the theme to the document
+    const themaVersion = require(path.join(
+      require.resolve('@stencila/thema'),
+      '..',
+      '..',
+      'package.json'
+    )).version
+
+    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/dist/themes/${theme}`
+    themeCss = h('link', {
+      href: `${themeBaseUrl}/styles.css`,
+      rel: 'stylesheet'
+    })
+    themeJs = h('script', {
+      src: `${themeBaseUrl}/index.js`,
+      type: 'text/javascript'
+    })
+  }
+
+  const jsonld = h(
+    'script',
+    { type: 'application/ld+json' },
+    JSON.stringify({
+      '@context': 'http://stencila.github.io/schema/stencila.jsonld',
+      ...metadata
+    })
   )
-  // prettier-ignore
+
   return h(
     'html',
     h(
       'head',
       h('title', title),
       h('meta', { charset: 'utf-8' }),
-      h(
-        'script',
-        { type: 'application/ld+json' },
-        JSON.stringify({
-          '@context': 'http://stencila.github.io/schema/stencila.jsonld',
-          ...metadata
-        })
-      ),
-      h('style', {
-        innerHTML: fs
-          .readFileSync(path.join(themePath, 'styles.css'))
-          .toString()
-      }),
-      h('script', {
-        innerHTML: fs.readFileSync(path.join(themePath, 'index.js')).toString()
-      })
+      jsonld,
+      themeCss,
+      themeJs
     ),
     h('body', body)
   )
 }
 
+/**
+ * Decode an `<article>` element to a `Article` node.
+ */
 const decodeArticle = (element: HTMLElement): stencila.Article => {
-  const title = element.querySelector('title') || element.querySelector('h1')
+  const titleEl = element.querySelector('h1[role=title]')
+  const title = titleEl ? titleEl.innerHTML : 'Untitled'
+  if (titleEl) titleEl.remove()
 
   return {
     type: 'Article',
-    title: title ? title.innerText : 'Untitled',
+    title,
     authors: [],
     content: [...element.childNodes].reduce((nodes: stencila.Node[], node) => {
       const decodedNode = decodeNode(node)
@@ -341,11 +372,14 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
 }
 
 /**
- * Encode a `stencila.Article` to a `#document` node.
+ * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
   const { type, title, content, ...rest } = article
-  return h('article', content ? content.map(encodeNode) : [])
+  const titleEl = h('h1', title)
+  titleEl.setAttribute('role', 'title')
+  const elements = content ? content.map(encodeNode) : []
+  return h('article', titleEl, ...elements)
 }
 
 /**

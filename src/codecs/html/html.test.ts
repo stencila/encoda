@@ -1,14 +1,8 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
 import { dump, load } from '../../util/vfile'
-import { beautify, decode, encode } from './'
-
-const js = fs.readFileSync(
-  require.resolve('@stencila/thema/dist/themes/stencila')
-)
-const stylesheet = fs.readFileSync(
-  require.resolve('@stencila/thema/dist/themes/stencila/styles.css')
-)
+import { decode, encode } from './'
+import { EncodeOptions } from '../..'
 
 test('decode', async () => {
   expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)
@@ -17,98 +11,121 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(await dump(await encode(kitchenSink.node))).toMatchSnapshot()
-  expect(
-    await dump(await encode(attrs.node, { isStandalone: false }))
-  ).toMatchSnapshot()
-  expect(await dump(await encode(dt.node, { isStandalone: false }))).toEqual(
-    dt.html
+  const e = async (node: stencila.Node, options: EncodeOptions = {}) =>
+    await dump(await encode(node, options))
+
+  expect(await e(kitchenSink.node, { isStandalone: false })).toEqual(
+    kitchenSink.html
   )
+  expect(await e(attrs.node, { isStandalone: false })).toEqual(attrs.html)
+  expect(await e(dt.node, { isStandalone: false })).toEqual(dt.html)
+})
+
+test('encode with different themes', async () => {
+  const e = async (options: EncodeOptions = {}) =>
+    await dump(await encode(kitchenSink.node, options))
+
+  let html = await e({ theme: 'stencila' })
+  expect(html).toMatch(
+    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/stencila\/index\.js/
+  )
+  expect(html).toMatch(
+    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/stencila\/styles\.css/
+  )
+
+  html = await e({ theme: 'eLife' })
+  expect(html).toMatch(
+    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/eLife\/index\.js/
+  )
+  expect(html).toMatch(
+    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/eLife\/styles\.css/
+  )
+})
+
+test('encode with bundling', async () => {
+  const e = async (options: EncodeOptions = {}) =>
+    await dump(await encode(kitchenSink.node, options))
+
+  const stylesheet = fs.readFileSync(
+    require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),
+    'utf8'
+  )
+
+  const js = fs.readFileSync(
+    require.resolve('@stencila/thema/dist/themes/eLife/index.js'),
+    'utf8'
+  )
+
+  // Match for first line of CSS and Javascript since beautify
+  // affects indentation.
+  // Previously we used a snapshot for this but that is avoided
+  // here since it will fail when Thema is upgraded.
+  let html = await e({ theme: 'eLife', isBundle: true })
+  expect(html).toMatch(stylesheet.trim().split('\n')[1])
+  expect(html).toMatch(js.trim().split('\n')[1])
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
-  html: `<html>
-
-  <head>
-    <title>Our article</title>
-    <meta charset="utf-8">
-    <script type="application/ld+json">
-      {
-        "@context": "http://stencila.github.io/schema/stencila.jsonld",
-        "type": "Article",
-        "title": "Our article",
-        "authors": []
-      }
-    </script>
-    ${beautify(`<style>
-      ${stylesheet}
-    </style>`)}
-    ${beautify(`<script>
-      ${js}
-    </script>`)}
-  </head>
-
-  <body>
-    <h1>Heading one</h1>
-    <h2>Heading two</h2>
-    <h3>Heading three</h3>
-    <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
-    <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
-    <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
-    <p>A paragraph with <code class="language-python"># code</code>.</p>
-    <p>A paragraph with an image <img src="https://example.org/image.png" title="title"
-        alt="alt text">.</p>
-    <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
-      </stencila-boolean>.</p>
-    <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
-      </stencila-number>, and a <stencila-array>[1,2]</stencila-array>.</p>
-    <p>A paragraph with an <stencila-object>{a:1,b:'two'}</stencila-object> and a <stencila-thing>
-        {type:'Person'}</stencila-thing>.</p>
-    <blockquote cite="https://example.org">A blockquote</blockquote>
-    <pre><code class="language-r"># Some code
+  html: `<article>
+  <h1 role="title">Article title</h1>
+  <h1>Heading one</h1>
+  <h2>Heading two</h2>
+  <h3>Heading three</h3>
+  <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
+  <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
+  <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
+  <p>A paragraph with <code class="language-python"># code</code>.</p>
+  <p>A paragraph with an image <img src="https://example.org/image.png" title="title"
+      alt="alt text">.</p>
+  <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
+    </stencila-boolean>.</p>
+  <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
+    </stencila-number>, and a <stencila-array>[1,2]</stencila-array>.</p>
+  <p>A paragraph with an <stencila-object>{a:1,b:'two'}</stencila-object> and a <stencila-thing>
+      {type:'Person'}</stencila-thing>.</p>
+  <blockquote cite="https://example.org">A blockquote</blockquote>
+  <pre><code class="language-r"># Some code
 x = c(1,2)</code></pre>
-    <pre><code class="language-js">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+  <pre><code class="language-js">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
 const inc = (n) =&gt; n + 1</code></pre>
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ul>
-    <ol>
-      <li>First</li>
-      <li>Second</li>
-      <li>Third</li>
-    </ol>
-    <table>
-      <tbody>
-        <tr>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-  </body>
-</html>`,
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+  </ul>
+  <ol>
+    <li>First</li>
+    <li>Second</li>
+    <li>Third</li>
+  </ol>
+  <table>
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+</article>`,
 
   node: {
     type: 'Article',
-    title: 'Our article',
+    title: 'Article title',
     authors: [],
     content: [
-      '',
       {
         type: 'Heading',
         depth: 1,

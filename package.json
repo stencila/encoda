@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@stencila/dev-config": "^1.0.5",
-    "@stencila/typescript-boilerplate": "^1.1.1",
+    "@stencila/typescript-boilerplate": "^1.1.2",
     "@types/async-lock": "^1.1.1",
     "@types/escape-html": "0.0.20",
     "@types/fs-extra": "^7.0.0",
@@ -120,6 +120,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
+      "<rootDir>/src/__tests__/logger.ts",
       "<rootDir>/src/__tests__/matchers.ts"
     ],
     "testMatch": [
