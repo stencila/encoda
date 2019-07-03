@@ -17,13 +17,15 @@ type VFile = vfile.VFile
  * formats should go last. See the `match` function.
  */
 export const codecList: Array<string> = [
+  // Directories
+  'dir',
+  'dar',
   // Tabular data, spreadsheets etc
   'csv',
   'ods',
   'tdp',
   'xlsx',
   // Articles, textual documents etc
-  'dar',
   'docx',
   'gdoc',
   'html',

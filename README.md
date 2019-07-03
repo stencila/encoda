@@ -109,7 +109,13 @@ Encoda will determine the input and output formats based on the file extensions.
 encoda convert notebook.ipynb notebook.xml --to jats
 ```
 
-You can also read input content from the first argument. In that case, you'll need to specifying the `--from` format e.g.
+You can decode an entire directory into a `Collection`. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the `Collection` using the `dir` codec into a tree of HTML files e.g.
+
+```bash
+encoda convert myproject myproject-published --to dir --pattern '**/*.{rmd, csv}'
+```
+
+You can also read content from the first argument. In that case, you'll need to specifying the `--from` format e.g.
 
 ```bash
 encoda convert "{type: 'Paragraph', content: ['Hello world!']}" --from json5 paragraph.md
@@ -168,6 +174,13 @@ Or, manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
 npx ts-node --files src/cli convert simple.md simple.html
+```
+
+You can set up an `alias` to make that a little shorter:
+
+```bash
+alias encoda='npx ts-node --files src/cli'
+encoda convert simple.md simple.html
 ```
 
 If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:

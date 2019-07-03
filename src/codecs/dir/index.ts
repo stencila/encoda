@@ -21,20 +21,32 @@ export const mediaTypes = []
 
 export const extNames = ['dir']
 
+/**
+ * Sniff the path to see if it is a directory
+ */
+export async function sniff(content: string): Promise<boolean> {
+  const dirPath = content
+  if (await fs.pathExists(dirPath)) {
+    const stats = await fs.stat(dirPath)
+    if (stats.isDirectory()) return true
+  }
+  return false
+}
+
 interface DirDecodeOptions {
   /**
    * Minimatch patterns to use to select only some of the included
-   * files. Defaults to `['**/ /*']` (i.e. everything, including in
+   * files. Defaults to '**\/\*' (i.e. everything, including in
    * nested directories)
    */
-  patterns?: string[]
+  patterns?: string | string[]
 
   /**
    * The file base names (i.e. without extension) that should
    * be considered to be the "main" file in a directory.
    * Defaults to `['main', 'index', 'README']`
    */
-  mainNames?: string[]
+  mainNames?: string | string[]
 }
 
 /**
@@ -45,8 +57,9 @@ export async function decode(
   file: vfile.VFile,
   options: DirDecodeOptions = {}
 ): Promise<stencila.Collection> {
-  const patterns = options.patterns || ['**/*']
-  const mainNames = options.mainNames || ['main', 'index', 'README']
+  let { patterns = ['**/*'], mainNames = ['main', 'index', 'README'] } = options
+  if (typeof patterns === 'string') patterns = patterns.split(/\s+/)
+  if (typeof mainNames === 'string') mainNames = mainNames.split(/\s+/)
 
   const root: stencila.Collection = {
     type: 'Collection',

@@ -70,13 +70,15 @@ logga.replaceHandlers((data: logga.LogData) => {
 ;(async () => {
   try {
     if (command === 'convert') {
+      const { to, from, standalone, bundle, theme, ...rest } = options
       await convert(args[0], args[1], {
-        to: options.to,
-        from: options.from,
+        to,
+        from,
         encodeOptions: {
-          isStandalone: options.standalone,
-          isBundle: options.bundle,
-          theme: options.theme
+          isStandalone: standalone,
+          isBundle: bundle,
+          theme,
+          codecOptions: rest
         }
       })
     } else {
