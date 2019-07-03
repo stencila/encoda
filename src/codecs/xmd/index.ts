@@ -21,13 +21,14 @@ export const extNames = ['xmd', 'rmd']
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   const xmd = await vfile.dump(file)
   // Inline code chunks are replaced with special inline nodes
+  // The negative look behind at the start prevents matching block code chunks
   let cmd = xmd.replace(
-    /`([a-z]+)\s+([^`]*)`/g,
+    /(?<!``)`(r|py|python)\s+([^`]*)`/g,
     (match, lang, text) => `\`${text}\`{type=expr lang=${lang}}`
   )
   // Block code chunks are replaced with a `chunk` block extension
   cmd = cmd.replace(
-    /```\s*{([a-z]+)\s*([^}]*)}\s*\n(.*)\n```\n/gm,
+    /```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
     (match, lang, options, text) => {
       let md = 'chunk:\n:::\n``` ' + lang
       if (options) md += ` ${options}`

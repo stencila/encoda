@@ -24,10 +24,14 @@ Simple \`r x * y\`
 
 With parentheses and brackets \`python sum(x*y)[1]\`
 
+Just inline code \`a * 6\`
+
 # Block chunks
 
 \`\`\` {r}
-6 * 7
+file = 'data.csv'
+# a comment
+read.table(file)
 \`\`\`
 
 \`\`\` {r fig.height=7 fig.width=8}
@@ -68,6 +72,16 @@ plot(x,y)
         ]
       },
       {
+        type: 'Paragraph',
+        content: [
+          'Just inline code ',
+          {
+            type: 'Code',
+            value: 'a * 6'
+          }
+        ]
+      },
+      {
         type: 'Heading',
         depth: 1,
         content: ['Block chunks']
@@ -75,7 +89,7 @@ plot(x,y)
       {
         type: 'CodeChunk',
         programmingLanguage: 'r',
-        text: '6 * 7'
+        text: "file = 'data.csv'\n# a comment\nread.table(file)"
       },
       {
         type: 'CodeChunk',
