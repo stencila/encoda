@@ -6,6 +6,17 @@ import fs from 'fs-extra'
 import mime from 'mime'
 import tempy from 'tempy'
 
+const DATA_URI_REGEX = /^data:([\w\/\+]+);(charset=[\w-]+|base64).*,(.*)/
+
+/**
+ * Test that a string is a Data URI
+ *
+ * @param str A string to test
+ */
+export function match(str: string): boolean {
+  return DATA_URI_REGEX.test(str)
+}
+
 /**
  * Write a Data URI to file
  *
@@ -16,9 +27,7 @@ export async function toFile(
   dataUri: string,
   filePath?: string
 ): Promise<{ mediaType: string; filePath: string }> {
-  const match = dataUri.match(
-    /^data:([\w\/\+]+);(charset=[\w-]+|base64).*,(.*)/
-  )
+  const match = dataUri.match(DATA_URI_REGEX)
   if (!match) return { mediaType: '', filePath: '' }
 
   const mediaType = match[1]
