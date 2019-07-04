@@ -102,18 +102,48 @@ npm install @stencila/encoda --global
 
 ## Use
 
+Encoda is intended to be used primarily as a library for other applications. However, it comes with a simple command line script which allows you to use the `convert` function directly e.g.
+
 ```bash
-encoda convert document.md document.jats.xml
+encoda convert notebook.ipynb notebook.docx
 ```
 
-You can use the `--from` and `--to` flag options to explicitly specify formats. For example,
+Encoda will determine the input and output formats based on the file extensions. You can override these using the `--from` and `--to` options. e.g.
 
-| Option      | Description                                                                             |
-| ----------- | --------------------------------------------------------------------------------------- |
-| `--to yaml` | Convert into YAML format of [Stencila Schema](https://github.com/stencila/schema) JSON. |
-| `--to tdp`  | Convert into [Tabular Data Package] JSON.                                               |
+```bash
+encoda convert notebook.ipynb notebook.xml --to jats
+```
 
-API documentation is available at https://stencila.github.io/encoda.
+You can decode an entire directory into a `Collection`. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the `Collection` using the `dir` codec into a tree of HTML files e.g.
+
+```bash
+encoda convert myproject myproject-published --to dir --pattern '**/*.{rmd, csv}'
+```
+
+You can also read content from the first argument. In that case, you'll need to specifying the `--from` format e.g.
+
+```bash
+encoda convert "{type: 'Paragraph', content: ['Hello world!']}" --from json5 paragraph.md
+```
+
+You can send output to the console by using `-` as the second argument and specifying the `--to` format e.g.
+
+```bash
+encoda convert paragraph.md - --to yaml
+```
+
+| Option         | Description                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| `--from`       | The format of the input content e.g. `--from md`                                          |
+| `--to`         | The format for the output content e.g. `--to html`                                        |
+| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife` |
+| `--standalone` | Generate a standalone document, not a fragment (default `true`)                           |
+| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)            |
+| `--debug`      | Print debugging information                                                               |
+
+## Documentation
+
+Self-hoisted (documentation converted from various formats to html) and API documentation (generated from source code) is available at: https://stencila.github.io/encoda.
 
 ## Develop
 
@@ -149,6 +179,13 @@ Or, manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
 npx ts-node --files src/cli convert simple.md simple.html
+```
+
+You can set up an `alias` to make that a little shorter:
+
+```bash
+alias encoda='npx ts-node --files src/cli'
+encoda convert simple.md simple.html
 ```
 
 If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:

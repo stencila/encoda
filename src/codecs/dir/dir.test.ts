@@ -1,9 +1,15 @@
-import { decode, encode } from '.'
+import { decode, encode, sniff } from '.'
 import path from 'path'
 import * as vfile from '../../util/vfile'
 import * as stencila from '@stencila/schema'
 import globby from 'globby'
 import fs from 'fs-extra'
+
+test('sniff', async () => {
+  expect(await sniff(__dirname)).toBe(true)
+  expect(await sniff(__filename)).toBe(false)
+  expect(await sniff('foo bar')).toBe(false)
+})
 
 describe('decode', () => {
   it('creates a flat collection from a flat dir', async () => {

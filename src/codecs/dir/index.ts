@@ -22,20 +22,32 @@ export const mediaTypes = []
 
 export const extNames = ['dir']
 
+/**
+ * Sniff the path to see if it is a directory
+ */
+export async function sniff(content: string): Promise<boolean> {
+  const dirPath = content
+  if (await fs.pathExists(dirPath)) {
+    const stats = await fs.stat(dirPath)
+    if (stats.isDirectory()) return true
+  }
+  return false
+}
+
 interface DirDecodeOptions {
   /**
    * Minimatch patterns to use to select only some of the included
-   * files. Defaults to `['**/ /*']` (i.e. everything, including in
+   * files. Defaults to '**\/\*' (i.e. everything, including in
    * nested directories)
    */
-  patterns?: string[]
+  patterns?: string | string[]
 
   /**
    * The file base names (i.e. without extension) that should
    * be considered to be the "main" file in a directory.
    * Defaults to `['main', 'index', 'README']`
    */
-  mainNames?: string[]
+  mainNames?: string | string[]
 }
 
 /**
@@ -46,8 +58,9 @@ export async function decode(
   file: vfile.VFile,
   options: DirDecodeOptions = {}
 ): Promise<stencila.Collection> {
-  const patterns = options.patterns || ['**/*']
-  const mainNames = options.mainNames || ['main', 'index', 'README']
+  let { patterns = ['**/*'], mainNames = ['main', 'index', 'README'] } = options
+  if (typeof patterns === 'string') patterns = patterns.split(/\s+/)
+  if (typeof mainNames === 'string') mainNames = mainNames.split(/\s+/)
 
   const root: stencila.Collection = {
     type: 'Collection',
@@ -237,7 +250,7 @@ export const encode: Encode<DirEncodeOptions> = async (
   }
   await write(strip(root), path.join(dirPath, 'root.json'))
 
-  // Generate the output files, of desired format, in 'parallel'
+  // Generate the output files, in desired format, in 'parallel'
   await Promise.all(
     parts.map(async ({ route, node }) => {
       const fileName =
@@ -245,7 +258,7 @@ export const encode: Encode<DirEncodeOptions> = async (
         '.' +
         format
       const filePath = path.join(dirPath, ...route.slice(1, -1), fileName)
-      return await write(node, filePath)
+      return await write(node, filePath, options)
     })
   )
 

@@ -34,57 +34,59 @@
  */
 import * as logga from '@stencila/logga'
 import minimist from 'minimist'
-import * as encoda from '.'
+import { convert } from '.'
 import './boot'
 import * as puppeteer from './util/puppeteer'
 
-let { _, ...options } = minimist(process.argv.slice(2), {
-  boolean: ['standalone', 'bundle'],
+const { _, ...options } = minimist(process.argv.slice(2), {
+  boolean: ['standalone', 'bundle', 'debug'],
   default: {
     standalone: true,
     bundle: false,
-    theme: 'stencila'
+    theme: 'stencila',
+    debug: false
   }
 })
-const name = _[0]
+const command = _[0]
 const args = _.slice(1)
 
-// Print log messages to the console.
-logga.addHandler((data: logga.LogData) => {
-  const level = options.debug ? 4 : 3
-  if (data.level < level) {
-    console.error(
-      `${data.tag} ${logga.LogLevel[data.level].toUpperCase()} ${data.message}`
-    )
-  }
-})
-
-// @ts-ignore
-const func = encoda[name]
-if (!func) throw new Error(`No such function "${name}"`)
-
-if (name === 'convert') {
-  const {
-    to,
-    from,
-    standalone: isStandalone,
-    bundle: isBundle,
-    theme
-  } = options
-  options = {
-    to,
-    from,
-    encodeOptions: {
-      isStandalone,
-      isBundle,
-      theme
+/**
+ * Set up logger so that it:
+ *
+ * - only shows DEBUG entries if --debug=true
+ * - does not show duplicate entries unless --debug=true
+ */
+const log = logga.getLogger('encoda:cli')
+const previousLogData = new Set<string>()
+logga.replaceHandlers((data: logga.LogData) => {
+  if (data.level <= (options.debug ? 3 : 2)) {
+    const json = JSON.stringify(data)
+    if (options.debug || !previousLogData.has(json)) {
+      logga.defaultHandler(data)
+      previousLogData.add(json)
     }
   }
-}
-
+})
 ;(async () => {
-  // Call the function (which may, or may not be async)
-  await func(...args, options)
-  // Clean up
-  await puppeteer.shutdown()
+  try {
+    if (command === 'convert') {
+      const { to, from, standalone, bundle, theme, ...rest } = options
+      await convert(args[0], args[1], {
+        to,
+        from,
+        encodeOptions: {
+          isStandalone: standalone,
+          isBundle: bundle,
+          theme,
+          codecOptions: rest
+        }
+      })
+    } else {
+      log.warn(`Ignored unknown command "${command}"`)
+    }
+  } catch (error) {
+    log.error(error)
+  } finally {
+    await puppeteer.shutdown()
+  }
 })()
