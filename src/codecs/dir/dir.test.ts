@@ -78,7 +78,7 @@ describe('encode', () => {
     await fs.remove(dir)
     await encode(flatNode, { filePath: dir })
     const files = await globby('**/*', { cwd: dir })
-    expect(files.sort()).toEqual(['1.html', '2.html', '3.html'])
+    expect(files.sort()).toEqual(['1.html', '2.html', '3.html', 'root.json'])
   })
 
   it('uses index.html for main files', async () => {
@@ -91,7 +91,8 @@ describe('encode', () => {
       'a/index.html',
       'b/README.html',
       'b/index.html',
-      'c/index.html'
+      'c/index.html',
+      'root.json'
     ])
   })
 })
@@ -104,6 +105,7 @@ const flatNode: stencila.Collection = {
     {
       type: 'Article',
       name: '1',
+      meta: { depth: 0 },
       title: 'Untitled',
       authors: [],
       content: [{ type: 'Heading', depth: 1, content: ['One'] }]
@@ -111,6 +113,7 @@ const flatNode: stencila.Collection = {
     {
       type: 'Article',
       name: '2',
+      meta: { depth: 0 },
       title: 'Untitled',
       authors: [],
       content: [{ type: 'Heading', depth: 1, content: ['Two'] }]
@@ -118,6 +121,7 @@ const flatNode: stencila.Collection = {
     {
       type: 'Article',
       name: '3',
+      meta: { depth: 0 },
       title: 'Untitled',
       authors: [],
       content: [{ type: 'Heading', depth: 1, content: ['Three'] }]
@@ -137,6 +141,7 @@ const shallowNode: stencila.Collection = {
         {
           type: 'Article',
           name: 'index',
+          meta: { depth: 1 },
           title: 'Untitled',
           authors: [],
           content: [{ type: 'Paragraph', content: ['Index'] }]
@@ -145,7 +150,8 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'main',
           meta: {
-            main: true
+            main: true,
+            depth: 1
           },
           title: 'Untitled',
           authors: [],
@@ -154,6 +160,7 @@ const shallowNode: stencila.Collection = {
         {
           type: 'Article',
           name: 'README',
+          meta: { depth: 1 },
           title: 'Untitled',
           authors: [],
           content: [{ type: 'Paragraph', content: ['README'] }]
@@ -168,7 +175,8 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'index',
           meta: {
-            main: true
+            main: true,
+            depth: 1
           },
           title: 'Untitled',
           authors: [],
@@ -177,6 +185,7 @@ const shallowNode: stencila.Collection = {
         {
           type: 'Article',
           name: 'README',
+          meta: { depth: 1 },
           title: 'Untitled',
           authors: [],
           content: [{ type: 'Paragraph', content: ['README'] }]
@@ -191,7 +200,8 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'README',
           meta: {
-            main: true
+            main: true,
+            depth: 1
           },
           title: 'Untitled',
           authors: [],
