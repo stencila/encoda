@@ -1,5 +1,5 @@
 {
-  "extends": "@stencila/typescript-boilerplate",
+  "extends": "@stencila/dev-config/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist/",
     "rootDir": "src/"

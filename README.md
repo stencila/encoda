@@ -17,6 +17,7 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 - [Formats](#formats)
 - [Install](#install)
 - [Use](#use)
+- [Documentation](#documentation)
 - [Develop](#develop)
 - [Contribute](#contribute)
 - [Contributors](#contributors)
@@ -61,7 +62,6 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
 | Pandoc                      | [pandoc] | Native   | β      | [⚠][pandoc-issues] | ![][pandoc-cov] |
 | Reproducible PNG            | [rpng]   | Native   | β      | [⚠][rpng-issues]   | ![][rpng-cov]   |
-
 
 **Key**
 

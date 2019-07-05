@@ -438,7 +438,9 @@ const calcSheetRange = (coords: string[]): string => {
 }
 
 // A function defining how to order strings based on their character length
-const ordLength: ord.Ord<string> = ord.contramap(ord.ordNumber, s => s.length)
+const ordLength: ord.Ord<string> = ord.contramap((s: string) => s.length)(
+  ord.ordNumber
+)
 
 /**
  * Given a list/Set of strings, determines the maximum value. First by string
