@@ -7,6 +7,8 @@ import stencila from '@stencila/schema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import fs from 'fs'
+// @ts-ignore
+import GithubSlugger from 'github-slugger'
 import h from 'hyperscript'
 // @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
@@ -23,6 +25,9 @@ import * as vfile from '../../util/vfile'
 const document = new jsdom.JSDOM().window.document
 
 const log = getLogger('encoda:html')
+
+// Ensures unique `id` attributes (e.g. for headings)
+const slugger = new GithubSlugger()
 
 export const mediaTypes = ['text/html']
 
@@ -254,6 +259,10 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
   const metadata = jsonld ? JSON.parse(jsonld.innerHTML || '{}') : {}
   delete metadata['@context']
 
+  // Reset the slugger to avoid unecessarily adding numbers to ids
+  // to make them unique
+  slugger.reset()
+
   if (!jsonld && body.childElementCount === 1) {
     const node = decodeNode(body.children[0])
     if (!node) throw new Error(`Top level node is not defined`)
@@ -396,7 +405,10 @@ function decodeHeading(
  * Encode a `stencila.Heading` to a `<h1>` etc element.
  */
 function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
-  return h(`h${heading.depth}`, heading.content.map(encodeNode))
+  const content = heading.content.map(encodeNode)
+  const text = content.reduce((prev, curr) => prev + curr.textContent, '')
+  const id = slugger.slug(text)
+  return h(`h${heading.depth}`, { id }, content)
 }
 
 /**

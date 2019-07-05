@@ -65,13 +65,57 @@ test('encode with bundling', async () => {
   expect(html).toMatch(js.trim().split('\n')[1])
 })
 
+test('encode add heading ids', async () => {
+  const e = async (node: stencila.Node) =>
+    await dump(await encode(node, { isStandalone: false }))
+
+  expect(
+    await e({
+      type: 'Heading',
+      depth: 1,
+      content: ['One']
+    })
+  ).toBe('<h1 id="one">One</h1>')
+
+  expect(
+    await e({
+      type: 'Heading',
+      depth: 2,
+      content: ['foo 123 $#% 🐶 bar']
+    })
+  ).toEqual('<h2 id="foo-123---bar">foo 123 $#% 🐶 bar</h2>')
+
+  expect(
+    await e({
+      type: 'Article',
+      title: 'Test',
+      content: [
+        {
+          type: 'Heading',
+          depth: 1,
+          content: ['duplicated']
+        },
+        {
+          type: 'Heading',
+          depth: 1,
+          content: ['duplicated']
+        }
+      ]
+    })
+  ).toBe(`<article>
+  <h1 role="title">Test</h1>
+  <h1 id="duplicated">duplicated</h1>
+  <h1 id="duplicated-1">duplicated</h1>
+</article>`)
+})
+
 // An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
   html: `<article>
   <h1 role="title">Article title</h1>
-  <h1>Heading one</h1>
-  <h2>Heading two</h2>
-  <h3>Heading three</h3>
+  <h1 id="heading-one">Heading one</h1>
+  <h2 id="heading-two">Heading two</h2>
+  <h3 id="heading-three">Heading three</h3>
   <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
   <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
   <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
