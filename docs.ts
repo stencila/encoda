@@ -6,6 +6,11 @@
 
 import { decode, encode } from './src/codecs/dir'
 import * as vfile from './src/util/vfile'
+import * as logga from '@stencila/logga'
+
+logga.replaceHandlers((data: logga.LogData) => {
+  if (data.level < 1) logga.defaultHandler(data)
+})
 ;(async () => {
   const docs = await decode(vfile.create('.'), {
     patterns: [
