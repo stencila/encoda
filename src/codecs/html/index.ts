@@ -22,7 +22,7 @@ import * as vfile from '../../util/vfile'
 
 const document = new jsdom.JSDOM().window.document
 
-const logger = getLogger('encoda:html')
+const log = getLogger('encoda:html')
 
 export const mediaTypes = ['text/html']
 
@@ -65,24 +65,15 @@ const getArticleMetaData = (
   }
 }
 
-interface EncodeHTMLOptions {
-  theme?: 'eLife' | 'stencila'
-}
-
 /**
  * Encode a `stencila.Node` to a `VFile` with HTML contents.
  *
  * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode<EncodeHTMLOptions> = async (
+export const encode: Encode = async (
   node: stencila.Node,
-  options: EncodeOptions<EncodeHTMLOptions> = {
-    isStandalone: true,
-    isBundle: false,
-    theme: 'stencila',
-    codecOptions: {}
-  }
+  options: EncodeOptions = {}
 ): Promise<vfile.VFile> => {
   const { isStandalone = true, isBundle = false, theme = 'stencila' } = options
 
@@ -94,7 +85,7 @@ export const encode: Encode<EncodeHTMLOptions> = async (
 
   if (isStandalone) {
     const { title, ...metadata } = getArticleMetaData(node)
-    dom = generateHtmlElement(title, metadata, [dom])
+    dom = generateHtmlElement(title, metadata, [dom], options)
   }
 
   const beautifulHtml = beautify(dom.outerHTML)
@@ -175,7 +166,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
     return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
 
-  logger.warn(`No handler for HTML element <${name}>`)
+  log.warn(`No handler for HTML element <${name}>`)
   return undefined
 }
 
@@ -296,49 +287,82 @@ function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Array<Node> = [],
-  options: EncodeOptions<EncodeHTMLOptions> = {}
+  options: EncodeOptions = {}
 ): HTMLHtmlElement {
-  const { theme = 'stencila' } = options
-  const themePath = path.resolve(
-    require.resolve('@stencila/thema'),
-    '..',
-    'themes',
-    theme
+  const { isBundle = false, theme = 'stencila' } = options
+
+  log.debug(`Generating <html> elem with options ${JSON.stringify(options)}`)
+
+  let themeCss
+  let themeJs
+  if (isBundle) {
+    // Bundle the theme into the document
+    const themePath = path.resolve(
+      require.resolve('@stencila/thema'),
+      '..',
+      'themes',
+      theme
+    )
+    themeCss = h('style', {
+      innerHTML: fs.readFileSync(path.join(themePath, 'styles.css')).toString()
+    })
+    themeJs = h('script', {
+      innerHTML: fs.readFileSync(path.join(themePath, 'index.js')).toString()
+    })
+  } else {
+    // Add links to the theme to the document
+    const themaVersion = require(path.join(
+      require.resolve('@stencila/thema'),
+      '..',
+      '..',
+      'package.json'
+    )).version
+
+    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/dist/themes/${theme}`
+    themeCss = h('link', {
+      href: `${themeBaseUrl}/styles.css`,
+      rel: 'stylesheet'
+    })
+    themeJs = h('script', {
+      src: `${themeBaseUrl}/index.js`,
+      type: 'text/javascript'
+    })
+  }
+
+  const jsonld = h(
+    'script',
+    { type: 'application/ld+json' },
+    JSON.stringify({
+      '@context': 'http://stencila.github.io/schema/stencila.jsonld',
+      ...metadata
+    })
   )
-  // prettier-ignore
+
   return h(
     'html',
     h(
       'head',
       h('title', title),
       h('meta', { charset: 'utf-8' }),
-      h(
-        'script',
-        { type: 'application/ld+json' },
-        JSON.stringify({
-          '@context': 'http://stencila.github.io/schema/stencila.jsonld',
-          ...metadata
-        })
-      ),
-      h('style', {
-        innerHTML: fs
-          .readFileSync(path.join(themePath, 'styles.css'))
-          .toString()
-      }),
-      h('script', {
-        innerHTML: fs.readFileSync(path.join(themePath, 'index.js')).toString()
-      })
+      jsonld,
+      themeCss,
+      themeJs
     ),
     h('body', body)
   )
 }
 
+/**
+ * Decode an `<article>` element to a `Article` node.
+ */
 const decodeArticle = (element: HTMLElement): stencila.Article => {
-  const title = element.querySelector('title') || element.querySelector('h1')
+  const titleEl = element.querySelector('h1[role=title]')
+  const title = titleEl ? titleEl.innerHTML : 'Untitled'
+  if (titleEl) titleEl.remove()
 
   return {
     type: 'Article',
-    title: title ? title.innerText : 'Untitled',
+    title,
     authors: [],
     content: [...element.childNodes].reduce((nodes: stencila.Node[], node) => {
       const decodedNode = decodeNode(node)
@@ -348,11 +372,14 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
 }
 
 /**
- * Encode a `stencila.Article` to a `#document` node.
+ * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
   const { type, title, content, ...rest } = article
-  return h('article', content ? content.map(encodeNode) : [])
+  const titleEl = h('h1', title)
+  titleEl.setAttribute('role', 'title')
+  const elements = content ? content.map(encodeNode) : []
+  return h('article', titleEl, ...elements)
 }
 
 /**

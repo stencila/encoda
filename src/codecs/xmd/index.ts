@@ -52,8 +52,8 @@ export const encode: Encode = async (
   node: stencila.Node
 ): Promise<vfile.VFile> => {
   const transformed = produce(node, transform)
-  const cmd = await dump(transformed, { format: 'md' })
-  // Replace Commonmark "infor string" with R Markdown curly brace
+  const cmd = await dump(transformed, 'md')
+  // Replace Commonmark "info string" with R Markdown curly brace
   // enclosed options
   // TODO: Check parsing of options. Comma separated?
   const xmd = cmd.replace(

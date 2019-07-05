@@ -27,7 +27,7 @@ describe('issue 58', () => {
 
   test('that gdoc converts to the expected md', async () => {
     const article = (await read(file)) as stencila.Article
-    const md = await dump(article, { format: 'md' })
+    const md = await dump(article, 'md')
     expect(md).toBe(`---
 title: real converter test
 authors: []
