@@ -1,33 +1,44 @@
-import { decode, encode } from './'
+import stencila from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
+import { decode, encode } from './'
 
-describe('encode', () => {
+describe('decode', () => {
+  const d = async (md: string) => await decode(await load(md))
+
   test('Kitchen Sink', async () => {
-    expect(await decode(await load(kitchenSink.md))).toEqual(kitchenSink.node)
+    expect(await d(kitchenSink.md)).toEqual(kitchenSink.node)
   })
 
   test('Attributes', async () => {
-    expect(await decode(await load(attrs.md))).toEqual(attrs.node)
+    expect(await d(attrs.md)).toEqual(attrs.node)
   })
 
   test('Split Paragraphs', async () => {
-    expect(await decode(await load(splitParas.from))).toEqual(splitParas.node)
+    expect(await d(splitParas.from)).toEqual(splitParas.node)
+  })
+
+  test('References', async () => {
+    expect(await d(references.from)).toEqual(references.node)
   })
 })
 
 describe('encode', () => {
-  test('', async () => {
-    expect(await dump(await encode(kitchenSink.node))).toEqual(kitchenSink.md)
-  })
-  test('', async () => {
-    expect(await dump(await encode(attrs.node))).toEqual(attrs.md)
+  const e = async (node: stencila.Node) => await dump(await encode(node))
+
+  test('Kitchen Sink', async () => {
+    expect(await e(kitchenSink.node)).toEqual(kitchenSink.md)
   })
 
-  test('', async () => {
-    expect(await dump(await encode(emptyParas.node))).toEqual(emptyParas.to)
+  test('Attributes', async () => {
+    expect(await e(attrs.node)).toEqual(attrs.md)
   })
-  test('', async () => {
-    expect(await dump(await encode(splitParas.node))).toEqual(splitParas.to)
+
+  test('Split Paragraphs', async () => {
+    expect(await e(emptyParas.node)).toEqual(emptyParas.to)
+  })
+
+  test('References', async () => {
+    expect(await e(references.node)).toEqual(references.to)
   })
 })
 
@@ -581,6 +592,67 @@ const splitParas = {
       {
         type: 'Paragraph',
         content: ['Line1 line2 line3']
+      }
+    ]
+  }
+}
+
+// Example for testing that paragraphs that are split
+// across lines are decoded into a single line.
+const references = {
+  from: `
+[al**ph**a][alpha] [Bravo][bravo]
+
+![alpha] ![Bravo][bravo]
+
+[alpha]: http://example.com/alpha
+[bravo]: http://example.com/bravo
+`,
+  to: `---
+authors: []
+title: Untitled
+---
+
+[al**ph**a](http://example.com/alpha) [Bravo](http://example.com/bravo)
+
+![alpha](http://example.com/alpha) ![Bravo](http://example.com/bravo)
+`,
+  node: {
+    type: 'Article',
+    authors: [],
+    title: 'Untitled',
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          {
+            content: ['al', { type: 'Strong', content: ['ph'] }, 'a'],
+            target: 'http://example.com/alpha',
+            type: 'Link'
+          },
+          ' ',
+          {
+            content: ['Bravo'],
+            target: 'http://example.com/bravo',
+            type: 'Link'
+          }
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          {
+            contentUrl: 'http://example.com/alpha',
+            text: 'alpha',
+            type: 'ImageObject'
+          },
+          ' ',
+          {
+            contentUrl: 'http://example.com/bravo',
+            text: 'Bravo',
+            type: 'ImageObject'
+          }
+        ]
       }
     ]
   }

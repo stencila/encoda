@@ -25,6 +25,9 @@ import * as UNIST from 'unist'
 import filter from 'unist-util-filter'
 // @ts-ignore
 import map from 'unist-util-map'
+// @ts-ignore
+import { selectAll } from 'unist-util-select'
+
 import { Encode } from '../..'
 import { isBlockContent, isNode } from '../../util/index'
 import type from '../../util/type'
@@ -122,7 +125,7 @@ export function decodeMarkdown(md: string): stencila.Node {
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
-  return decodeNode(mdast)
+  return decodeNode(resolveReferences(mdast))
 }
 
 /**
@@ -1210,4 +1213,39 @@ function stringifyMeta(meta: { [key: string]: string }) {
       return repr
     })
     .join(' ')
+}
+
+/**
+ * Resolve link and image references by finding the
+ * associated `definition` node, using it's URL
+ * and then removing it from the tree.
+ */
+function resolveReferences(tree: UNIST.Node): UNIST.Node {
+  const definitions = selectAll('definition', tree).reduce(
+    (prev: { [key: string]: string }, node: MDAST.Definition) => {
+      prev[node.identifier] = node.url
+      return prev
+    },
+    {}
+  )
+  return filter(
+    map(tree, (node: UNIST.Node) => {
+      switch (node.type) {
+        case 'linkReference': {
+          const { identifier, children } = node as MDAST.LinkReference
+          const url = definitions[identifier] || ''
+          const link: MDAST.Link = { type: 'link', url, children }
+          return link
+        }
+        case 'imageReference': {
+          const { identifier, alt } = node as MDAST.ImageReference
+          const url = definitions[identifier] || ''
+          const image: MDAST.Image = { type: 'image', url, alt }
+          return image
+        }
+      }
+      return node
+    }),
+    (node: UNIST.Node) => node.type !== 'definition'
+  )
 }
