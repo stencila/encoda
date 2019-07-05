@@ -1,3 +1,11 @@
+## [0.53.7](https://github.com/stencila/encoda/compare/v0.53.6...v0.53.7) (2019-07-05)
+
+
+### Bug Fixes
+
+* **HTML:** Add id attributes to headings when encoding ([f921182](https://github.com/stencila/encoda/commit/f921182))
+* **MD:** Handle link and image references ([ad3cdfe](https://github.com/stencila/encoda/commit/ad3cdfe)), closes [#156](https://github.com/stencila/encoda/issues/156)
+
 ## [0.53.6](https://github.com/stencila/encoda/compare/v0.53.5...v0.53.6) (2019-07-05)
 
 
