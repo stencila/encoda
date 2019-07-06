@@ -96,6 +96,8 @@ If you'd like to see a converter for your favorite format, look at the [listed i
 
 ## Install
 
+The easiest way to use Encoda is to install the [`stencila` command line tool](https://github.com/stencila/stencila). Encoda powers `stencila convert`, and other commands, in that CLI. However, the version of Encoda in `stencila`, can lag behind the version in this repo. So if you want the latest functionality, install Encoda as a Node.js package:
+
 ```bash
 npm install @stencila/encoda --global
 ```
@@ -178,14 +180,13 @@ npm run cover
 Or, manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
-npx ts-node --files src/cli convert simple.md simple.html
+npm run cli -- convert simple.md simple.html
 ```
 
-You can set up an `alias` to make that a little shorter:
+There is a bash script to make that a little shorter and more like real life usage:
 
 ```bash
-alias encoda='npx ts-node --files src/cli'
-encoda convert simple.md simple.html
+./encoda convert simple.md simple.html
 ```
 
 If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:

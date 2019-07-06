@@ -13,6 +13,7 @@
     "check": "npm run build && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema --ignore-module @stencila/thema .",
+    "cli": "npx ts-node --files src/cli",
     "build": "tsc && cp -r src/codecs/pandoc/templates dist",
     "docs": "npm run docs:readme && npm run docs:dogfood && npm run docs:ts",
     "docs:readme": "markdown-toc -i --maxdepth=4 README.md",
