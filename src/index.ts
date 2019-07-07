@@ -1,12 +1,7 @@
-import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
 import * as vfile from './util/vfile'
-
-export { default as process } from './process'
-
-const log = getLogger('encoda:index')
 
 type VFile = vfile.VFile
 
