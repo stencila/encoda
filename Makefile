@@ -10,7 +10,7 @@ test:
 	npm test
 
 cover:
-	npm run cover
+	npm run test:cover
 
 check:
 	npm run check
