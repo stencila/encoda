@@ -15,14 +15,15 @@ import h from 'hyperscript'
 import produce from 'immer'
 // @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
-import mime from 'mime'
 import path from 'path'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import { RequireSome } from '../../util/type'
+import type from '../../util/type'
 import * as vfile from '../../util/vfile'
+import { hasType, isCreativeWork } from '../../util'
+import * as uri from '../../util/uri'
 
-const logger = getLogger('encoda:dar')
+const log = getLogger('encoda:dar')
 
 export const mediaTypes = []
 
@@ -48,11 +49,6 @@ export async function sniff(content: string): Promise<boolean> {
  */
 const MEDIA_TYPES_SYNCED = ['text/csv']
 
-/* DAR codec specific options */
-interface DarOptions {
-  documentId: number
-}
-
 /**
  * Decode a `VFile` pointing to a DAR folder to a Stencila `Node`.
  *
@@ -75,7 +71,7 @@ export async function decode(
  * @param node The Stencila `Node` to encode
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode<DarOptions> = async (
+export const encode: Encode = async (
   node: stencila.Node,
   options = {}
 ): Promise<vfile.VFile> => {
@@ -85,22 +81,39 @@ export const encode: Encode<DarOptions> = async (
   await fs.ensureDir(darPath)
 
   // Generate promises for each document and its assets
-  const promises = [node].map(async (node, index) => {
-    const { encoded, assets } = await encodeAssets(node, darPath, index)
-    const document = await encodeDocument(encoded, {
-      filePath: darPath,
-      codecOptions: {
-        documentId: index
-      }
-    })
-    return { document, assets }
+  const nodes =
+    isCreativeWork(node) && node.type === 'Collection'
+      ? node.parts || []
+      : [node]
+  const promises = nodes.map(async (node, index) => {
+    const fileId =
+      hasType(node) && node.name
+        ? node.name
+        : `${type(node).toLowerCase()}-${index}`
+    if (hasType(node) && node.type === 'Datatable') {
+      const fileName = fileId + '.csv'
+      const filePath = path.join(darPath, fileName)
+      await write(node, filePath)
+      const [_, asset] = await encodeAsset(filePath, fileId, darPath)
+      return { document: null, assets: [await asset] }
+    } else {
+      const { encoded, assets } = await encodeDocumentAssets(
+        node,
+        fileId,
+        darPath
+      )
+      const document = await encodeDocument(encoded, fileId, darPath, options)
+      return { document, assets }
+    }
   })
 
   // Resolve all documents and assets into two lists
   const { documents, assets } = (await Promise.all(promises)).reduce(
     (prev: { documents: Element[]; assets: Element[] }, curr) => {
       return {
-        documents: [...prev.documents, curr.document],
+        documents: curr.document
+          ? [...prev.documents, curr.document]
+          : prev.documents,
         assets: [...prev.assets, ...curr.assets]
       }
     },
@@ -119,29 +132,24 @@ export const encode: Encode<DarOptions> = async (
   return vfile.create(filePath)
 }
 
-type EncodeDarOptions = RequireSome<
-  EncodeOptions<DarOptions>,
-  'filePath' | 'codecOptions'
->
-
 /**
  * Encode a Stencila `Node` as a JATS file and return a `<document>` element
  * to put into the `manifest.xml` file of the DAR.
  */
 async function encodeDocument(
   node: stencila.Node,
-  options: EncodeDarOptions
+  id: string,
+  darPath: string,
+  options: EncodeOptions
 ): Promise<Element> {
-  const { filePath, codecOptions, ...rest } = options
-  const id = `d${codecOptions.documentId}`
   const documentFile = `${id}.jats.xml`
-  const documentPath = path.join(filePath, documentFile)
+  const documentPath = path.join(darPath, documentFile)
 
-  await write(node, documentPath, { format: 'jats', ...rest })
+  await write(node, documentPath, { ...options, format: 'jats' })
 
   const elem = h('document')
-  elem.setAttribute('type', 'article')
   elem.setAttribute('id', id)
+  elem.setAttribute('type', 'article')
   elem.setAttribute('path', documentFile)
   return elem
 }
@@ -152,16 +160,16 @@ async function encodeDocument(
  * Walks to Stencila `Node` and transforms any `MediaObject` nodes so
  * that they point to file assets within the DAR.
  */
-async function encodeAssets(
+async function encodeDocumentAssets(
   node: stencila.Node,
-  darPath: string,
-  document: number
+  docId: string,
+  darPath: string
 ): Promise<{
   encoded: stencila.Node
   assets: Element[]
 }> {
-  const promises: Promise<Element>[] = []
-  function walk(node: any) {
+  const assets: Element[] = []
+  async function walk(node: any) {
     if (node === null) return node
     if (typeof node !== 'object') return node
 
@@ -171,13 +179,13 @@ async function encodeAssets(
       case 'ImageObject':
       case 'VideoObject':
         const mediaObject = node as stencila.MediaObject
-        const [contentUrl, promise] = encodeAsset(
+        const id = `${docId}-${assets.length}`
+        const [contentUrl, asset] = await encodeAsset(
           mediaObject.contentUrl,
-          darPath,
-          document,
-          promises.length
+          id,
+          darPath
         )
-        promises.push(promise)
+        assets.push(asset)
         return {
           ...mediaObject,
           contentUrl
@@ -185,12 +193,11 @@ async function encodeAssets(
     }
 
     for (const [key, child] of Object.entries(node)) {
-      node[key] = walk(child)
+      node[key] = await walk(child)
     }
     return node
   }
   const encoded = produce(node, walk) as stencila.Node
-  const assets = await Promise.all(promises)
   return { encoded, assets }
 }
 
@@ -198,37 +205,26 @@ async function encodeAssets(
  * Encode an asset to DAR.
  *
  * Copies asset into the DAR folder and returns its new
- * file name (within the DAR) to replace the existing `contentUrl`
+ * file name (within the DAR) (e.g. use to replace the existing `contentUrl`)
  * and an `<asset>` element to put into the `manifest.xml` file.
  */
-function encodeAsset(
+async function encodeAsset(
   url: string,
-  darPath: string,
-  document: number,
-  asset: number
-): [string, Promise<Element>] {
-  const id = `d${document}-a${asset}`
-  const { base, ext } = path.parse(url)
-  const assetFile = `${id}-${base}`
+  id: string,
+  darPath: string
+): Promise<[string, Element]> {
+  const { name, ext } = path.parse(url)
+  const assetFile = `${id}${ext}`
   const assetPath = path.join(darPath, assetFile)
 
-  const mediaType = mime.getType(ext) || ''
+  const { mediaType } = await uri.toFile(url, assetPath)
   const sync = MEDIA_TYPES_SYNCED.includes(mediaType)
 
-  let promise = (async () => {
-    if (url.startsWith('http')) {
-      logger.error('TODO: storage of remote resources not implemented')
-    } else {
-      await fs.copyFile(url, assetPath)
-    }
+  const elem = h('asset')
+  elem.setAttribute('id', id)
+  elem.setAttribute('type', mediaType)
+  elem.setAttribute('path', assetFile)
+  elem.setAttribute('sync', sync.toString())
 
-    const elem = h('asset')
-    elem.setAttribute('id', id)
-    elem.setAttribute('type', mediaType)
-    elem.setAttribute('path', assetFile)
-    elem.setAttribute('sync', sync.toString())
-    return elem
-  })()
-
-  return [assetFile, promise]
+  return [assetFile, elem]
 }
