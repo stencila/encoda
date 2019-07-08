@@ -49,7 +49,7 @@ export default async function process(
           )
         }
         if ('include' in meta) {
-          return await _load(code.value, meta.from || code.language)
+          return _load(code.value, meta.from || code.language)
         }
       }
     }
@@ -72,7 +72,7 @@ export default async function process(
           _equals(meta.equals, await _read(link.target, meta.from || meta.to))
         }
         if ('include' in meta) {
-          return await _read(link.target, meta.from)
+          return _read(link.target, meta.from)
         }
       }
     }
@@ -86,7 +86,7 @@ export default async function process(
         if (type(para.content[0]) === 'string') {
           const path = para.content[0] as string
           if (isPath(path)) {
-            return await _read(path)
+            return _read(path)
           }
         }
       }
@@ -122,7 +122,7 @@ export default async function process(
     return node
   }
 
-  return await handle(node)
+  return handle(node)
 
   function _import(id: string, node: stencila.Node) {
     nodes[id] = node

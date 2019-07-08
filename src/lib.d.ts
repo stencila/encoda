@@ -1,15 +1,24 @@
 declare module 'png-chunks-extract' {
-  export type Chunk = { name: string; data: Uint8Array | Buffer }
-  export default function(data: Uint8Array | Buffer): Array<Chunk>
+  export interface Chunk {
+    name: string
+    data: Uint8Array | Buffer
+  }
+  export default function(data: Uint8Array | Buffer): Chunk[]
 }
 
 declare module 'png-chunks-encode' {
-  export type Chunk = { name: string; data: Uint8Array | Buffer }
-  export default function(chunks: Array<Chunk>): Uint8Array
+  export interface Chunk {
+    name: string
+    data: Uint8Array | Buffer
+  }
+  export default function(chunks: Chunk[]): Uint8Array
 }
 
 declare module 'png-chunk-text' {
-  export type Chunk = { name: string; data: Uint8Array | Buffer }
+  export interface Chunk {
+    name: string
+    data: Uint8Array | Buffer
+  }
   type Value = string | object
 
   export function encode(key: string, value: Value): Chunk

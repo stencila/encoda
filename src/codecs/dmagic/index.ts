@@ -30,6 +30,9 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error('Decoding of Demo Magic scripts is not supported.')
 }
 
+// The content of the Bash Script. Lazily loaded.
+let demoMagicSh: string | undefined
+
 /**
  * Encode a Stencila `Node` to a `VFile` with `demo-magic.sh` content.
  *
@@ -54,9 +57,6 @@ export const encode: Encode = async (
   return vfile.load(bash)
 }
 
-// The content of the Bash Script. Lazily loaded.
-let demoMagicSh: string | undefined
-
 /**
  * Encode a Stencila `Node` as a Demo Magic Bash string.
  */
@@ -75,7 +75,7 @@ async function encodeNode(node: stencila.Node): Promise<string> {
       const block = node as stencila.CodeBlock
       if (
         block.language &&
-        !(block.language == 'bash' || block.language == 'sh')
+        !(block.language === 'bash' || block.language === 'sh')
       ) {
         return ''
       }

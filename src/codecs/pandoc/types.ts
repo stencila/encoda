@@ -48,7 +48,9 @@ interface Element<Type, Args = undefined> {
 /**
  * List of metadata element type names
  */
-export type Meta = { [key: string]: MetaValue }
+export interface Meta {
+  [key: string]: MetaValue
+}
 
 /**
  * Union type of metadata element types
@@ -432,6 +434,8 @@ export interface Span {
   t: 'Span'
   c: [Attr, Inline[]]
 }
+
+/* eslint-disable @typescript-eslint/camelcase */
 
 /**
  * List of valid input formats. Generated using:

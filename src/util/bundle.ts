@@ -46,5 +46,5 @@ export default async function bundle(
     }
     return node
   }
-  return await produce(node, walk)
+  return produce(node, walk)
 }

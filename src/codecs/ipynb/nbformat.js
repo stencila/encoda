@@ -23,14 +23,14 @@ const { compile } = require('json-schema-to-typescript')
       bannerComment: `/* Generated from ${source}. Do not edit. See nbformat.js. */\n`,
       style: { semi: false, singleQuote: true }
     })
-    if (version == 'v3') {
+    if (version === 'v3') {
       /**
        * Correct the `patternProperty` type in `Pyout` and `DisplayData` which needs to
        * allow for other properties e.g. `prompt_number`, `text`, `latex` etc
        * properties being optional i.e. `undefined`, or of other types e.g. `number`
        */
       ts = ts.replace(
-        /  \[k: string\]: string \| string\[\]/g,
+        / {2}\[k: string\]: string \| string\[\]/g,
         '  [k: string]: any'
       )
     }

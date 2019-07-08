@@ -32,7 +32,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   // Decode resources
   const parts = await Promise.all(pkg.resources.map(
     async (resource: datapackage.Resource) => decodeResource(resource)
-  ) as Array<Promise<stencila.Datatable>>)
+  ) as Promise<stencila.Datatable>[])
 
   // Collection or Datatable ?
   let node: stencila.Datatable | stencila.Collection
@@ -92,7 +92,7 @@ export const encode: Encode = async (
   }
 
   // Encode Datatable into resource descriptors
-  const resources: Array<datapackage.Resource> = []
+  const resources: datapackage.Resource[] = []
   if (cw.type === 'Collection') {
     const collection = cw as stencila.Collection
     if (collection.parts) {
@@ -140,7 +140,7 @@ async function decodeResource(
   resource: datapackage.Resource
 ): Promise<stencila.Datatable> {
   // Read in the data
-  let data: Array<any>
+  let data: any[]
   try {
     data = await resource.read()
   } catch (error) {
@@ -151,9 +151,9 @@ async function decodeResource(
   }
 
   // Transform row-wise data into column-wise
-  const values: Array<any> = Array(resource.schema.fields.length)
+  const values: any[] = Array(resource.schema.fields.length)
     .fill(null)
-    .map(item => Array())
+    .map(item => [])
   for (let row of data) {
     let index = 0
     for (let value of row) {
@@ -209,7 +209,7 @@ async function encodeCreativeWork(
  */
 function decodeField(
   field: datapackage.Field,
-  values: Array<any>
+  values: any[]
 ): stencila.DatatableColumn {
   // Decode constraints
   let constraints = field.constraints || {}

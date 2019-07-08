@@ -97,9 +97,7 @@ class FetchToSame {
   get(url: string): string {
     return url
   }
-  async resolve(): Promise<void> {
-    return
-  }
+  async resolve(): Promise<void> {}
 }
 
 /**
@@ -117,7 +115,7 @@ async function decodeDocument(
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
   decodingFetcher = fetcher.get.bind(fetcher)
 
-  let content: Array<stencila.Node> = []
+  let content: stencila.Node[] = []
   let lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
@@ -131,7 +129,7 @@ async function decodeDocument(
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
         }
       })
-      .filter(node => typeof node !== 'undefined') as Array<stencila.Node>
+      .filter(node => typeof node !== 'undefined') as stencila.Node[]
   }
 
   // Resolve the fetched resources

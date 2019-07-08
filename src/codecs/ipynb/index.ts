@@ -2,6 +2,8 @@
  * @module ipynb
  */
 
+/* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
+
 import stencila from '@stencila/schema'
 import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'

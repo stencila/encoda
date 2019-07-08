@@ -42,7 +42,7 @@ export const encode: Encode = async (
 function decodeWorkbook(
   workbook: xlsx.WorkBook
 ): stencila.Table | stencila.Datatable | stencila.Collection {
-  const parts: Array<stencila.Table | stencila.Datatable> = []
+  const parts: (stencila.Table | stencila.Datatable)[] = []
   for (let name of workbook.SheetNames) {
     const sheet = workbook.Sheets[name]
 
@@ -75,7 +75,7 @@ function decodeWorkbook(
 function encodeNode(node: stencila.Node): xlsx.WorkBook {
   const type_ = type(node)
 
-  const sheetNames: Array<string> = []
+  const sheetNames: string[] = []
   const sheets: { [key: string]: xlsx.WorkSheet } = {}
   if (type_ === 'Collection') {
     const collection = node as stencila.Collection
@@ -214,7 +214,7 @@ function decodeDatatable(
   const rows = rang.e.r
 
   // Convert the list of cells to a list of columns with values
-  const columns: Array<any> = range(0, cols).map(col =>
+  const columns: any[] = range(0, cols).map(col =>
     range(0, rows).map(row => {
       const name = cellPositionToName([col, row])
       const cell = cells[name]
@@ -225,7 +225,7 @@ function decodeDatatable(
   // If the first value in each column is a string then
   // treat them as names (and thus remove them from) the
   // values. Otherwise, use automatic, alphabetic names.
-  let names: Array<string> = []
+  let names: string[] = []
   for (const column of columns) {
     if (typeof column[0] === 'string') {
       names.push(column[0])

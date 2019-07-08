@@ -48,12 +48,14 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
 }
 
 export const beautify = (html: string): string =>
+  /* eslint-disable @typescript-eslint/camelcase */
   beautifyHtml(html, {
     indent_size: 2,
     indent_inner_html: true, // Indent <head> and <body> sections
     wrap_line_length: 100,
     preserve_newlines: false // Preserve existing line-breaks
   })
+/* eslint-enable @typescript-eslint/camelcase */
 
 const getArticleMetaData = (
   node: stencila.Node
@@ -225,7 +227,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'string':
       return encodeString(node as string)
     case 'array':
-      return encodeArray(node as Array<any>)
+      return encodeArray(node as any[])
     case 'object':
       return encodeObject(node as object)
     default:
@@ -295,7 +297,7 @@ function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
 function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
-  body: Array<Node> = [],
+  body: Node[] = [],
   options: EncodeOptions = {}
 ): HTMLHtmlElement {
   const { isBundle = false, theme = 'stencila' } = options
@@ -821,7 +823,7 @@ function encodeNull(value: null): HTMLElement {
  * Decode a `<stencila-boolean>` element to a `boolean`.
  */
 function decodeBoolean(elem: HTMLElement): boolean {
-  return elem.innerHTML === 'true' ? true : false
+  return elem.innerHTML === 'true'
 }
 
 /**
@@ -848,14 +850,14 @@ function encodeNumber(value: number): HTMLElement {
 /**
  * Decode a `<stencila-array>` element to a `array`.
  */
-function decodeArray(elem: HTMLElement): Array<any> {
+function decodeArray(elem: HTMLElement): any[] {
   return JSON5.parse(elem.innerHTML || '[]')
 }
 
 /**
  * Encode a `array` to a `<stencila-array>` element.
  */
-function encodeArray(value: Array<any>): HTMLElement {
+function encodeArray(value: any[]): HTMLElement {
   return h('stencila-array', JSON5.stringify(value))
 }
 

@@ -18,7 +18,7 @@ export const codecRegexes: [[string, RegExp]] = [['http', /^https?:\/\//]]
  * Note that order is of importance for matching. More "generic"
  * formats should go last. See the `match` function.
  */
-export const codecList: Array<string> = [
+export const codecList: string[] = [
   // Remotes
   'http',
   // Directories
@@ -76,21 +76,21 @@ export interface Codec<CodecOptions extends object = {}> {
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
    * that the codec can decode/encode.
    */
-  mediaTypes: Array<string>
+  mediaTypes: string[]
 
   /**
    * Any array of file names to use to match the codec.
    * This can be useful for differentiating between
    * "flavors" of formats e.g. `datapackage.json` versus any old `.json` file.
    */
-  fileNames?: Array<string>
+  fileNames?: string[]
 
   /**
    * Any array of file name extensions to register for the codec.
    * This can be useful for specifying conversion to less well known media types
    * e.g. `--to tdp` for outputting `datapackage.json` to the console.
    */
-  extNames?: Array<string>
+  extNames?: string[]
 
   /**
    * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)

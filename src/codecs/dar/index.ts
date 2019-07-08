@@ -77,7 +77,7 @@ export const encode: Encode = async (
 ): Promise<vfile.VFile> => {
   let { filePath } = options
 
-  const darPath = filePath ? filePath : path.join(tempy.directory(), '.dar')
+  const darPath = filePath || path.join(tempy.directory(), '.dar')
   await fs.ensureDir(darPath)
 
   // Generate promises for each document and its assets

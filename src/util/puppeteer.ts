@@ -20,7 +20,7 @@ var lock = new AsyncLock()
  * singleton browser instance.
  */
 export async function startup(): Promise<puppeteer.Browser> {
-  return await lock.acquire('browser', async () => {
+  return lock.acquire('browser', async () => {
     if (typeof browser === 'undefined') {
       logger.debug('Launching new browser')
       browser = await puppeteer.launch({
@@ -38,7 +38,7 @@ export async function startup(): Promise<puppeteer.Browser> {
  */
 export async function page(): Promise<puppeteer.Page> {
   const browser = await startup()
-  return await browser.newPage()
+  return browser.newPage()
 }
 
 /**
