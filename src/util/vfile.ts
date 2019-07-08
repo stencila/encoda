@@ -132,7 +132,6 @@ export function isPath(content: string, isOutput: boolean = false): boolean {
   if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content)) {
     return true
   }
-  if (/.+\.\w{1,5}$/.test(content)) return true
   if (fs.existsSync(content)) return true
   return false
 }

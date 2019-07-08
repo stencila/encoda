@@ -4,7 +4,6 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
-import axios from 'axios'
 import crypto from 'crypto'
 import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
@@ -12,6 +11,7 @@ import { Encode } from '../..'
 import { isInlineContent, isNode } from '../../util/index'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
+import * as http from '../../util/http'
 
 const logger = getLogger('encoda')
 
@@ -81,17 +81,7 @@ class FetchToFile {
         .createHash('md5')
         .update(url)
         .digest('hex') + ext
-    const request = axios({
-      url: url,
-      responseType: 'stream'
-    })
-      .then(response => {
-        response.data.pipe(fs.createWriteStream(filePath))
-      })
-      .catch(error => {
-        logger.error(`Error when fetching ${url}: ${error.message}`)
-      })
-    this.requests.push(request)
+    this.requests.push(http.download(url, filePath))
     return filePath
   }
 

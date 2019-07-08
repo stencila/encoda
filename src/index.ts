@@ -1,14 +1,16 @@
-import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
 import * as vfile from './util/vfile'
 
-export { default as process } from './process'
-
-const log = getLogger('encoda:index')
-
 type VFile = vfile.VFile
+
+/**
+ * A list of [codec, regex] tuples that is scanned when
+ * matching content to codec.
+ * Order is of importance since the first matching codec will be used.
+ */
+export const codecRegexes: [[string, RegExp]] = [['http', /^https?:\/\//]]
 
 /**
  * A list of all codecs.
@@ -17,6 +19,8 @@ type VFile = vfile.VFile
  * formats should go last. See the `match` function.
  */
 export const codecList: Array<string> = [
+  // Remotes
+  'http',
   // Directories
   'dir',
   'dar',
@@ -149,6 +153,7 @@ export async function match(
   let fileName
   let extName
   let mediaType
+
   // If the content is a path then begin with derived values
   if (content && (vfile.isPath(content) || isOutput)) {
     fileName = path.basename(content)
@@ -159,14 +164,24 @@ export async function match(
     mediaType = mime.getType(content) || undefined
   }
 
-  // But override with supplied format (if any) assuming that
-  // media types always have a forward slash and extension names
-  // never do.
   if (format) {
+    // Override with supplied format assuming that
+    // media types always have a forward slash and extension names
+    // never do.
     if (format.includes('/')) mediaType = format
     else {
       extName = format
       mediaType = mime.getType(extName) || undefined
+    }
+  } else {
+    // See if content matches one of the registered regexes
+    if (content && /^[a-z]+:\/\//.test(content)) {
+      for (const [codecName, regex] of codecRegexes) {
+        if (regex.test(content)) {
+          extName = codecName
+          break
+        }
+      }
     }
   }
 

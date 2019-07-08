@@ -62,6 +62,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
 | Pandoc                      | [pandoc] | Native   | β      | [⚠][pandoc-issues] | ![][pandoc-cov] |
 | Reproducible PNG            | [rpng]   | Native   | β      | [⚠][rpng-issues]   | ![][rpng-cov]   |
+| **Transport**               |
+| HTTP                        | [http]   |          | ✔      | [⚠][http-issues]   | ![][http-cov]   |
 
 **Key**
 
@@ -95,6 +97,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
 
 ## Install
+
+The easiest way to use Encoda is to install the [`stencila` command line tool](https://github.com/stencila/stencila). Encoda powers `stencila convert`, and other commands, in that CLI. However, the version of Encoda in `stencila`, can lag behind the version in this repo. So if you want the latest functionality, install Encoda as a Node.js package:
 
 ```bash
 npm install @stencila/encoda --global
@@ -178,14 +182,13 @@ npm run cover
 Or, manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
-npx ts-node --files src/cli convert simple.md simple.html
+npm run cli -- convert simple.md simple.html
 ```
 
-You can set up an `alias` to make that a little shorter:
+There is a bash script to make that a little shorter and more like real life usage:
 
 ```bash
-alias encoda='npx ts-node --files src/cli'
-encoda convert simple.md simple.html
+./encoda convert simple.md simple.html
 ```
 
 If that is a bit slow, compile the Typescript to Javascript first and use `node` directly:
@@ -295,6 +298,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [gdoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc
 [gsheet-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet
 [html-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+html
+[http-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+http
 [ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
 [jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
 [json-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json
@@ -321,6 +325,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
 [gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
 [html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
+[http-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http
 [ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
 [jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
 [json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json

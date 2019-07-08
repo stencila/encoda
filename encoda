@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# A little script to make it a litle easier to test the CLI 
+# during development of this repo
+
+npm run cli -- "$@"
