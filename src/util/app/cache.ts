@@ -33,8 +33,8 @@ class Cache implements Keyv.Store<string> {
   }
 
   async set(key: string, value: string): Promise<void> {
-    fs.ensureDir(this.dir)
-    fs.writeFile(this.filename(key), value, 'utf8')
+    await fs.ensureDir(this.dir)
+    await fs.writeFile(this.filename(key), value, 'utf8')
   }
 
   async get(key: string): Promise<string | undefined> {
