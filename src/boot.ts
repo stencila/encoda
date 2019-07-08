@@ -14,26 +14,11 @@
  *   - https://github.com/JoshuaWise/better-sqlite3/issues/173
  *   - `package.json`
  */
-import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
 import { pandocBinary } from './codecs/pandoc/binary'
-
-/**
- * Is this process being run as a `pkg` packaged binary?
- */
-const packaged =
-  ((process.mainModule && process.mainModule.id.endsWith('.exe')) ||
-    process.hasOwnProperty('pkg')) &&
-  fs.existsSync(path.join('/', 'snapshot'))
-
-/**
- * The home directory for this modules or process where
- * native modules and executables are placed.
- */
-export const home = packaged
-  ? path.dirname(process.execPath)
-  : path.dirname(__dirname)
+import isPackaged from './util/app/isPackaged'
+import home from './util/app/home'
 
 /**
  * The following code is necessary to ensure the Chromium binary can be correctly
@@ -47,7 +32,7 @@ const pathRegex =
     ? /^.*?\\node_modules\\puppeteer\\\.local-chromium/
     : /^.*?\/node_modules\/puppeteer\/\.local-chromium/
 
-export const chromiumPath = packaged
+export const chromiumPath = isPackaged
   ? puppeteer
       .executablePath()
       .replace(

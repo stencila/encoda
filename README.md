@@ -62,6 +62,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
 | Pandoc                      | [pandoc] | Native   | β      | [⚠][pandoc-issues] | ![][pandoc-cov] |
 | Reproducible PNG            | [rpng]   | Native   | β      | [⚠][rpng-issues]   | ![][rpng-cov]   |
+| **Transport**               |
+| HTTP                        | [http]   |          | ✔      | [⚠][http-issues]   | ![][http-cov]   |
 
 **Key**
 
@@ -296,6 +298,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [gdoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc
 [gsheet-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet
 [html-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+html
+[http-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+http
 [ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
 [jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
 [json-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json
@@ -322,6 +325,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [gdoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc
 [gsheet-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gsheet
 [html-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html
+[http-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http
 [ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
 [jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
 [json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json

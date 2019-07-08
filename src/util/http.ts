@@ -10,14 +10,17 @@ import fs from 'fs-extra'
 import got from 'got'
 import stream from 'stream'
 import util from 'util'
+import cache from './app/cache'
+import packg from '../../package.json'
 
 const pipeline = util.promisify(stream.pipeline)
 
-// TODO: Enable disk-based caching
-const cache = new Map()
-
 const http = got.extend({
-  cache
+  cache,
+  headers: {
+    'user-agent': `encoda/${packg.version} (https://github.com/stencila/encoda)`,
+    'accept-encoding': 'gzip, deflate'
+  }
 })
 
 /**
@@ -38,4 +41,13 @@ export async function get(url: string, options = {}) {
  */
 export async function download(url: string, filePath: string) {
   return pipeline(http.stream(url), fs.createWriteStream(filePath))
+}
+
+/**
+ * Clear any cached content for a particular URL
+ *
+ * @param url The URL to clear the cache for
+ */
+export async function cacheDelete(url: string) {
+  cache.delete('cacheable-request:GET:' + url)
 }

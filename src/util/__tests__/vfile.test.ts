@@ -14,12 +14,13 @@ test('isPath', () => {
   expect(isPath('../../foo.txt')).toBe(true)
 
   // Current directory
-  expect(isPath('foo.txt')).toBe(true)
-  expect(isPath('foo/bar.txt')).toBe(true)
+  // Files that exist
+  expect(isPath('README.md')).toBe(true)
+  expect(isPath('LICENSE')).toBe(true)
+  // Files that don't
+  expect(isPath('foo.txt')).toBe(false)
+  expect(isPath('foo/bar.txt')).toBe(false)
+
   expect(isPath('a: foo')).toBe(false)
   expect(isPath('Foo bar baz')).toBe(false)
-
-  // A file local to where tests are executed that does exist
-  // but has no extension
-  expect(isPath('LICENSE')).toBe(true)
 })

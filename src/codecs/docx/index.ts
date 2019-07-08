@@ -5,7 +5,7 @@
 import stencila from '@stencila/schema'
 import path from 'path'
 import { Encode, EncodeOptions } from '../..'
-import { home } from '../../boot'
+import home from '../../util/app/home'
 import * as vfile from '../../util/vfile'
 import * as pandoc from '../pandoc'
 
