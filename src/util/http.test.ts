@@ -18,7 +18,7 @@ describe('get', () => {
     expect(response.fromCache).toBe(false)
 
     // Wait a little to allow the cache file to be written
-    await delay(100)
+    await delay(process.env.CI ? 1000 : 100)
 
     response = await get('https://example.org/cached')
     expect(response.fromCache).toBe(true)
