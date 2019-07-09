@@ -6,7 +6,8 @@ import * as rpng from '../rpng'
 import { decode, decodeMeta, emptyAttrs, encode, encodeMeta } from './'
 import * as Pandoc from './types'
 
-jest.setTimeout(30 * 1000)
+// Set a high timeout to avoid occasional failures on CI
+jest.setTimeout(60 * 1000)
 
 test('decode', async () => {
   const p = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
