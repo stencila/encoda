@@ -17,8 +17,8 @@ describe('get', () => {
     let response = await get('https://example.org/cached')
     expect(response.fromCache).toBe(false)
 
-    // Wait 10s to allow the cache file to be written
-    await delay(10)
+    // Wait a little to allow the cache file to be written
+    await delay(100)
 
     response = await get('https://example.org/cached')
     expect(response.fromCache).toBe(true)
