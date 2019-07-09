@@ -353,6 +353,11 @@ function generateHtmlElement(
       'head',
       h('title', title),
       h('meta', { charset: 'utf-8' }),
+      h('meta', {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0'
+      }),
+      h('meta', { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' }),
       jsonld,
       themeCss,
       themeJs
