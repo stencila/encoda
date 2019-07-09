@@ -16,9 +16,7 @@
  */
 import path from 'path'
 import puppeteer from 'puppeteer'
-import { pandocBinary } from './codecs/pandoc/binary'
 import isPackaged from './util/app/isPackaged'
-import home from './util/app/home'
 
 /**
  * The following code is necessary to ensure the Chromium binary can be correctly
@@ -45,14 +43,3 @@ export const chromiumPath = isPackaged
         )
       )
   : puppeteer.executablePath()
-
-/**
- * The path to the Pandoc binary executable
- */
-export const pandocPath = path.join(home, pandocBinary.path())
-
-/**
- * Equivalent to the Pandoc `--data-dir` flag.
- * Instructs Pandoc where to templates and other assets.
- */
-export const pandocDataDir = path.join(home, 'src', 'codecs', 'pandoc')

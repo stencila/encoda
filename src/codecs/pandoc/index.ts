@@ -7,11 +7,11 @@ import stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import { pandocDataDir, pandocPath } from '../../boot'
 import { wrapInBlockNode } from '../../util/index'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 import * as Pandoc from './types'
+import { binary, dataDir } from './binary'
 import * as rpng from '../rpng'
 
 export { InputFormat, OutputFormat } from './types'
@@ -118,12 +118,14 @@ let encodePromises: Promise<any>[] = []
  * Run the Pandoc binary
  */
 function run(input: string | Buffer, args: string[]): Promise<string> {
-  args.push(`--data-dir=${pandocDataDir}`)
+  args.push(`--data-dir=${dataDir}`)
   logger.debug(
-    `Pandoc spawn\n  path: ${pandocPath}\n  args:\n    ${args.join('\n    ')}`
+    `Pandoc spawn\n  path: ${binary.path()}\n  args:\n    ${args.join(
+      '\n    '
+    )}`
   )
   return new Promise((resolve, reject) => {
-    const child = childProcess.spawn(pandocPath, args)
+    const child = childProcess.spawn(binary.path(), args)
 
     let stdout = ''
     let stderr = ''
