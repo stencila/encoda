@@ -3,6 +3,7 @@ import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
 import type from '../util/type'
+import { Codec } from '..'
 
 // Ensure that the dir for test outputs is present
 fs.ensureDirSync(path.join(__dirname, '__outputs__'))
@@ -17,7 +18,7 @@ fs.ensureDirSync(path.join(__dirname, '__outputs__'))
  * @param name: The file name for any output files
  */
 expect.extend({
-  async toInvert(codec, node, fileName?: string) {
+  async toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
     if (!fileName) {
       const typeName = type(node).toLowerCase()
       const num = Math.floor(Math.random() * Math.floor(1000))
@@ -28,7 +29,7 @@ expect.extend({
       if (ext) fileName += '.' + ext
     }
     const outPath = path.join(__dirname, '__outputs__', fileName)
-    const file = await codec.encode(node, outPath)
+    const file = await codec.encode(node, { filePath: outPath })
     const nodeDecoded = await codec.decode(file)
     try {
       expect(nodeDecoded).toEqual(node)
