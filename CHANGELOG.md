@@ -1,3 +1,24 @@
+# [0.54.0](https://github.com/stencila/encoda/compare/v0.53.7...v0.54.0) (2019-07-09)
+
+
+### Bug Fixes
+
+* **Cache:** Await ensure directory ([af99c3a](https://github.com/stencila/encoda/commit/af99c3a))
+* **DAR:** Improve naming of encoded files ([133dcb2](https://github.com/stencila/encoda/commit/133dcb2))
+* **HTML:** Include meta tags to optimize output for mobile and IE ([6277163](https://github.com/stencila/encoda/commit/6277163))
+
+
+### Features
+
+* **HTTP:** Add caching for HTTP requests ([1c9f645](https://github.com/stencila/encoda/commit/1c9f645))
+* **HTTP:** Add http utility module ([06805f2](https://github.com/stencila/encoda/commit/06805f2))
+* **Pandoc:** Upgrade to Pandoc 2.7.3 ([d56a752](https://github.com/stencila/encoda/commit/d56a752))
+
+
+### Performance Improvements
+
+* **CLI:** Remove unecessary imports to improve startup time ([9027c27](https://github.com/stencila/encoda/commit/9027c27))
+
 ## [0.53.7](https://github.com/stencila/encoda/compare/v0.53.6...v0.53.7) (2019-07-05)
 
 
