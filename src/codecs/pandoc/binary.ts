@@ -28,7 +28,7 @@ export const binary = new BinWrapper()
  */
 export const dataDir = path.join(home, 'src', 'codecs', 'pandoc')
 
-export async function install() {
+export async function install(): Promise<void> {
   const log = getLogger('encoda:pandoc')
   log.info(
     `Checking for Pandoc ${binary.version()} and downloading if necessary`

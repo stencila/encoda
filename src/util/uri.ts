@@ -22,7 +22,7 @@ export async function toFile(
   filePath?: string
 ): Promise<{ mediaType: string; filePath: string }> {
   if (dataUri.match(uri)) {
-    return await dataUri.toFile(uri, filePath)
+    return dataUri.toFile(uri, filePath)
   } else if (uri.startsWith('http')) {
     log.error('TODO: storage of remote resources not implemented')
     return { mediaType: '', filePath: '' }

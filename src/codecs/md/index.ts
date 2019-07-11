@@ -168,7 +168,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
     case 'table':
       return decodeTable(node as MDAST.Table)
     case 'thematicBreak':
-      return decodeThematicBreak(node as MDAST.ThematicBreak)
+      return decodeThematicBreak()
 
     case 'link':
       return decodeLink(node as MDAST.Link)
@@ -195,7 +195,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
           return decodeQuote(ext)
 
         case 'null':
-          return decodeNull(ext)
+          return decodeNull()
         case 'boolean':
         case 'true':
         case 'false':
@@ -248,7 +248,7 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
     case 'Table':
       return encodeTable(node as stencila.Table)
     case 'ThematicBreak':
-      return encodeThematicBreak(node as stencila.ThematicBreak)
+      return encodeThematicBreak()
 
     case 'Link':
       return encodeLink(node as stencila.Link)
@@ -270,7 +270,7 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
     case 'string':
       return encodeString(node as string)
     case 'null':
-      return encodeNull(node as null)
+      return encodeNull()
     case 'boolean':
       return encodeBoolean(node as boolean)
     case 'number':
@@ -684,9 +684,7 @@ function encodeTable(table: stencila.Table): MDAST.Table {
 /**
  * Decode a `MDAST.ThematicBreak` to a `stencila.ThematicBreak`
  */
-function decodeThematicBreak(
-  tbreak: MDAST.ThematicBreak
-): stencila.ThematicBreak {
+function decodeThematicBreak(): stencila.ThematicBreak {
   return {
     type: 'ThematicBreak'
   }
@@ -695,9 +693,7 @@ function decodeThematicBreak(
 /**
  * Encode a `stencila.ThematicBreak` to a `MDAST.ThematicBreak`
  */
-function encodeThematicBreak(
-  tbreak: stencila.ThematicBreak
-): MDAST.ThematicBreak {
+function encodeThematicBreak(): MDAST.ThematicBreak {
   return {
     type: 'thematicBreak'
   }
@@ -944,14 +940,14 @@ function encodeString(value: string): MDAST.Text {
 /**
  * Decode a `!null` inline extension to `null`
  */
-function decodeNull(ext: Extension): null {
+function decodeNull(): null {
   return null
 }
 
 /**
  * Encode `null` to a `!null` inline extension
  */
-function encodeNull(value: null): Extension {
+function encodeNull(): Extension {
   return { type: 'inline-extension', name: 'null' }
 }
 

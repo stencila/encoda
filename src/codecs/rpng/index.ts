@@ -55,7 +55,7 @@ export function find(
  */
 export function has(keyword: string, image: Buffer): boolean {
   const chunks: Chunk[] = pngExtract(image)
-  const [index, text] = find(keyword, chunks)
+  const [h, text] = find(keyword, chunks)
   return !!text
 }
 
@@ -67,7 +67,7 @@ export function has(keyword: string, image: Buffer): boolean {
  */
 export function extract(keyword: string, image: Buffer): string {
   const chunks: Chunk[] = pngExtract(image)
-  const [index, text] = find(keyword, chunks)
+  const [h, text] = find(keyword, chunks)
   if (!text) throw Error('No chunk found')
   return text
 }
@@ -161,7 +161,7 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
     if (fs.existsSync(filePath)) {
       const image = fs.readFileSync(filePath)
       const chunks: Chunk[] = pngExtract(image)
-      const [index, json] = find(KEYWORD, chunks)
+      const [h, json] = find(KEYWORD, chunks)
       if (json) return JSON.parse(json)
     }
   }

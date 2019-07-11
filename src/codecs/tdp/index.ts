@@ -24,6 +24,9 @@ export const extNames = [
   'tdp'
 ]
 
+// TODO: Refactor to remove use of any
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   let pkg: datapackage.Package
   if (file.path) pkg = await datapackage.Package.load(file.path)
@@ -153,7 +156,7 @@ async function decodeResource(
   // Transform row-wise data into column-wise
   const values: any[] = Array(resource.schema.fields.length)
     .fill(null)
-    .map(item => [])
+    .map(() => [])
   for (let row of data) {
     let index = 0
     for (let value of row) {
@@ -267,6 +270,12 @@ function encodeDatatableColumn(
  *  Field type, etc <-> DatatableColumnSchema
  ********************************************************************/
 
+interface TypeFormatPattern {
+  type: string | null
+  format: string | null
+  pattern: string | null
+}
+
 /**
  * Decode a Frictionless Data Table Schema [types and formats](https://frictionlessdata.io/specs/table-schema/#types-and-formats)
  * to JSON Schema [`type`](https://json-schema.org/understanding-json-schema/reference/type.html)
@@ -275,7 +284,7 @@ function encodeDatatableColumn(
 export function decodeFieldTypeFormat(
   type: null | string,
   format: null | string
-) {
+): TypeFormatPattern {
   // Translate the type and format to valid JSON Schema type, format and pattern, combinations
   let pattern: null | string = null
   switch (type) {
@@ -335,7 +344,9 @@ export function decodeFieldTypeFormat(
  * Note that the the `unique` constraints are handled elsewhere. Only constraints that
  * apply to items should be returned here.
  */
-export function decodeFieldConstraints(constraints: { [key: string]: any }) {
+export function decodeFieldConstraints(constraints: {
+  [key: string]: any
+}): { [key: string]: any } {
   let items: { [key: string]: any } = {}
   if (constraints.minimum) items.minimum = constraints.minimum
   if (constraints.maximum) items.maximum = constraints.maximum
@@ -354,7 +365,16 @@ export function decodeFieldConstraints(constraints: { [key: string]: any }) {
   }
 }
 
-function encodeDatatableColumnSchema(schema: stencila.DatatableColumnSchema) {
+interface ColumnTypeFormatConstraints {
+  type: any
+  format: any
+  constraints: {
+    [key: string]: any
+  }
+}
+function encodeDatatableColumnSchema(
+  schema: stencila.DatatableColumnSchema
+): ColumnTypeFormatConstraints {
   let items = schema.items
 
   const constraints: { [key: string]: any } = {}

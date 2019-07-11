@@ -26,6 +26,7 @@ export const extNames = ['dmagic', 'demo-magic']
  * @param file The `VFile` to decode
  * @returns A promise that resolves to a Stencila `Node`
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error('Decoding of Demo Magic scripts is not supported.')
 }

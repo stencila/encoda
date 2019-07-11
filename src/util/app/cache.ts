@@ -17,9 +17,9 @@ import data from './data'
  * act as a Keyv storage adapter.
  */
 class Cache implements Keyv.Store<string> {
-  dir: string
+  private dir: string
 
-  constructor(dir: string = path.join(data, 'cache')) {
+  public constructor(dir: string = path.join(data, 'cache')) {
     this.dir = dir
   }
 
@@ -27,17 +27,17 @@ class Cache implements Keyv.Store<string> {
    * Generates a valid file name, within the cache directory,
    * which excludes any characters that are invalid in file system paths.
    */
-  filename(key: string): string {
-    const filename = key.replace(/[<>:"\/\\|?*\x00-\x1F]/g, '!')
+  private filename(key: string): string {
+    const filename = key.replace(/[<>:"/\\|?*]/g, '!')
     return path.join(this.dir, filename)
   }
 
-  async set(key: string, value: string): Promise<void> {
+  public async set(key: string, value: string): Promise<void> {
     await fs.ensureDir(this.dir)
     await fs.writeFile(this.filename(key), value, 'utf8')
   }
 
-  async get(key: string): Promise<string | undefined> {
+  public async get(key: string): Promise<string | undefined> {
     try {
       return await fs.readFile(this.filename(key), 'utf8')
     } catch (error) {
@@ -46,7 +46,7 @@ class Cache implements Keyv.Store<string> {
     }
   }
 
-  async delete(key: string): Promise<boolean> {
+  public async delete(key: string): Promise<boolean> {
     try {
       await fs.unlink(this.filename(key))
     } catch (error) {
@@ -55,7 +55,7 @@ class Cache implements Keyv.Store<string> {
     return true
   }
 
-  async clear(): Promise<void> {
+  public async clear(): Promise<void> {
     await fs.remove(this.dir)
   }
 }

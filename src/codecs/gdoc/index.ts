@@ -8,7 +8,6 @@
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import crypto from 'crypto'
-import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '../..'
 import { isInlineContent, isNode } from '../../util/index'
@@ -126,7 +125,7 @@ async function decodeDocument(
         if (elem.paragraph) return decodeParagraph(elem.paragraph, lists)
         else if (elem.sectionBreak) {
           // The first element in the content is always a sectionBreak, so ignore it
-          return index === 0 ? undefined : decodeSectionBreak(elem.sectionBreak)
+          return index === 0 ? undefined : decodeSectionBreak()
         } else if (elem.table) return decodeTable(elem.table)
         else {
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
@@ -210,7 +209,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
           gdocContent.push(encodeTable(node as stencila.Table))
           break
         case 'ThematicBreak':
-          gdocContent.push(encodeThematicBreak(node as stencila.ThematicBreak))
+          gdocContent.push(encodeThematicBreak())
           break
         default:
           throw new Error(`Unhandled Stencila node type "${type_}"`)
@@ -481,18 +480,14 @@ function encodeTable(table: stencila.Table): GDoc.Schema$StructuralElement {
 /**
  * Decode a GDoc `SectionBreak` element to a Stencila `ThematicBreak`.
  */
-function decodeSectionBreak(
-  table: GDoc.Schema$SectionBreak
-): stencila.ThematicBreak {
+function decodeSectionBreak(): stencila.ThematicBreak {
   return { type: 'ThematicBreak' }
 }
 
 /**
  * Encode a Stencila `ThematicBreak` to GDoc `SectionBreak` element.
  */
-function encodeThematicBreak(
-  table: stencila.ThematicBreak
-): GDoc.Schema$StructuralElement {
+function encodeThematicBreak(): GDoc.Schema$StructuralElement {
   return {
     sectionBreak: {}
   }

@@ -384,7 +384,7 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
     case 'Table':
       return decodeTable(block)
     case 'HorizontalRule':
-      return decodeHorizontalRule(block)
+      return decodeHorizontalRule()
   }
   throw new Error(`Unhandled Pandoc node type "${block.t}"`)
 }
@@ -407,7 +407,7 @@ function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
     case 'Table':
       return encodeTable(block)
     case 'ThematicBreak':
-      return encodeThematicBreak(block)
+      return encodeThematicBreak()
   }
   return encodeFallbackBlock(block)
 }
@@ -566,9 +566,9 @@ function encodeList(
  * are currently ignored.
  */
 function decodeTable(node: Pandoc.Table): stencila.Table {
-  const caption = decodeInlines(node.c[0])
-  const aligns = node.c[1]
-  const widths = node.c[2]
+  // const caption = decodeInlines(node.c[0])
+  // const aligns = node.c[1]
+  // const widths = node.c[2]
   const head = node.c[3].map(decodeBlocks)
   const data = node.c[4].map(row => row.map(decodeBlocks))
   const rows = [head, ...data].map(
@@ -636,9 +636,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
 /**
  * Decode a Pandoc `HorizontalRule` to a Stencila `ThematicBreak`
  */
-function decodeHorizontalRule(
-  node: Pandoc.HorizontalRule
-): stencila.ThematicBreak {
+function decodeHorizontalRule(): stencila.ThematicBreak {
   return {
     type: 'ThematicBreak'
   }
@@ -647,9 +645,7 @@ function decodeHorizontalRule(
 /**
  * Encode a Stencila `ThematicBreak` to a Pandoc `HorizontalRule`
  */
-function encodeThematicBreak(
-  node: stencila.ThematicBreak
-): Pandoc.HorizontalRule {
+function encodeThematicBreak(): Pandoc.HorizontalRule {
   return {
     t: 'HorizontalRule',
     c: undefined
@@ -697,7 +693,7 @@ function encodeInlines(nodes: stencila.InlineContent[]): Pandoc.Inline[] {
 function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
   switch (node.t) {
     case 'Space':
-      return decodeSpace(node)
+      return decodeSpace()
     case 'Str':
       return decodeStr(node)
     case 'Emph':
@@ -805,7 +801,7 @@ function decodeInlinesToString(nodes: Pandoc.Inline[]): string {
 /**
  * Decode a Pandoc `Space` to a `string`.
  */
-function decodeSpace(node: Pandoc.Space): string {
+function decodeSpace(): string {
   return ' '
 }
 

@@ -29,8 +29,11 @@ const http = got.extend({
  * @param url The URL to get
  * @param options Options to pass to `got`
  */
-export async function get(url: string, options = {}) {
-  return await http.get(url, options)
+export async function get(
+  url: string,
+  options = {}
+): Promise<got.Response<string>> {
+  return http.get(url, options)
 }
 
 /**
@@ -39,7 +42,7 @@ export async function get(url: string, options = {}) {
  * @param url The URL to download from
  * @param filePath The file path to download to
  */
-export async function download(url: string, filePath: string) {
+export async function download(url: string, filePath: string): Promise<void> {
   return pipeline(http.stream(url), fs.createWriteStream(filePath))
 }
 
@@ -48,6 +51,6 @@ export async function download(url: string, filePath: string) {
  *
  * @param url The URL to clear the cache for
  */
-export async function cacheDelete(url: string) {
-  cache.delete('cacheable-request:GET:' + url)
+export async function cacheDelete(url: string): Promise<boolean> {
+  return cache.delete('cacheable-request:GET:' + url)
 }

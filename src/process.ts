@@ -20,6 +20,7 @@ export default async function process(
   // by other directives
   const nodes: { [key: string]: stencila.Node } = {}
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handle(node: any): Promise<stencila.Node> {
     if (node === null || typeof node !== 'object') return node
 

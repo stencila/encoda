@@ -37,6 +37,9 @@ export const encode: Encode = async (
   return vfile.load(buffer)
 }
 
+// TODO: Refactor to remove use of any
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // WorkBook <-> Node
 
 function decodeWorkbook(
@@ -107,7 +110,7 @@ function encodeNode(node: stencila.Node): xlsx.WorkBook {
   return workbook
 }
 
-function encodeCreativeWork(node: stencila.CreativeWork) {
+function encodeCreativeWork(node: stencila.CreativeWork): xlsx.WorkSheet {
   if (node.type === 'Table') return encodeTable(node as stencila.Table)
   else if (node.type === 'Datatable') {
     return encodeDatatable(node as stencila.Datatable)
@@ -255,7 +258,7 @@ function decodeDatatable(
   return datatable
 }
 
-function encodeDatatable(datatable: stencila.Datatable) {
+function encodeDatatable(datatable: stencila.Datatable): xlsx.WorkSheet {
   const sheet: xlsx.WorkSheet = {}
   let columns = datatable.columns
   if (columns) {
@@ -284,7 +287,9 @@ function encodeDatatable(datatable: stencila.Datatable) {
 
 // CellObject <-> Node
 
-function decodeCell(cell: xlsx.CellObject) {
+function decodeCell(
+  cell: xlsx.CellObject
+): null | boolean | string | number | stencila.CodeExpr {
   let value = cell.v
   if (value) {
     if (value instanceof Date) {
@@ -350,7 +355,7 @@ const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
  *
  * @param index The column index
  */
-export function columnIndexToName(index: number) {
+export function columnIndexToName(index: number): string {
   let name = ''
   let dividend = index + 1
   while (dividend > 0) {
@@ -368,7 +373,7 @@ export function columnIndexToName(index: number) {
  *
  * @param name The column name
  */
-export function columnNameToIndex(name: string) {
+export function columnNameToIndex(name: string): number {
   let index = 0
   for (let position = 0; position < name.length; position++) {
     index = name[position].charCodeAt(0) - 64 + index * 26
@@ -450,7 +455,10 @@ const ordLength: ord.Ord<string> = ord.contramap((s: string) => s.length)(
  * @param {() => string} defaultValue A function returning a constant value to
  * be returned in case of failure such as an empty list given as input
  */
-const maxCell = (cells: Set<string> | string[], defaultValue: () => string) =>
+const maxCell = (
+  cells: Set<string> | string[],
+  defaultValue: () => string
+): string =>
   pipe(
     [...cells],
     array.sortBy([ordLength, ord.ordString]),
