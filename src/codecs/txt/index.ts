@@ -45,8 +45,8 @@ export const encode: Encode = async (
   const encode = (node: stencila.Node): string => {
     if (node === null) return 'null'
     if (typeof node === 'string') return node
-    if (Array.isArray(node)) return node.map(node => encode(node)).join(' ')
-    if (typeof node == 'object')
+    if (Array.isArray(node)) return node.map(encode).join(' ')
+    if (typeof node === 'object')
       return Object.entries(node)
         .map(([key, value]) => `${key} ${encode(value)}`)
         .join(' ')

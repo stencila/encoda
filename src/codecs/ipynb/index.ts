@@ -2,6 +2,8 @@
  * @module ipynb
  */
 
+/* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
+
 import stencila from '@stencila/schema'
 import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
@@ -36,22 +38,11 @@ namespace nbformat {
     /**
      * Types that we need to check for using `isa` typeguard
      */
-    interface Types {
+    export interface Types {
       Notebook: nbformat3.Notebook
       Cell: Cell
       Pyout: nbformat3.Pyout
       DisplayData: nbformat3.DisplayData
-    }
-
-    /**
-     * Type guard for letting Typescript know that node is a v3 type
-     */
-    export function isa<Key extends keyof Types>(
-      node: unknown,
-      key: Key,
-      version: Version
-    ): node is Types[Key] {
-      return version === Version.v3
     }
   }
 
@@ -69,6 +60,17 @@ namespace nbformat {
   export interface MimeBundle {
     [key: string]: MultilineString | any
   }
+}
+
+/**
+ * Type guard for letting Typescript know that node is a v3 type
+ */
+export function isv3<Key extends keyof nbformat.v3.Types>(
+  node: unknown,
+  key: Key,
+  version: nbformat.Version
+): node is nbformat.v3.Types[Key] {
+  return version === nbformat.Version.v3
 }
 
 /**
@@ -121,7 +123,7 @@ async function decodeNotebook(
 
   const meta = { orig_nbformat, ...rest }
 
-  const cells = nbformat.v3.isa(notebook, 'Notebook', version)
+  const cells = isv3(notebook, 'Notebook', version)
     ? notebook.worksheets[0].cells
     : notebook.cells
 
@@ -265,7 +267,7 @@ async function decodeCodeCell(
 ): Promise<stencila.CodeChunk> {
   const { metadata, outputs } = cell
 
-  const [execution_count, source] = nbformat.v3.isa(cell, 'Cell', version)
+  const [execution_count, source] = isv3(cell, 'Cell', version)
     ? [cell.prompt_number, cell.input]
     : [cell.execution_count, cell.source]
 
@@ -335,23 +337,23 @@ async function decodeOutput(
   switch (output.output_type) {
     case 'execute_result':
     case 'pyout':
-      if (nbformat.v3.isa(output, 'Pyout', version)) {
+      if (isv3(output, 'Pyout', version)) {
         // Remove the 'non-data' properties from the `Pyout`
         let { output_type, prompt_number, metadata, ...data } = output
-        return await decodeMimeBundle(data, version)
+        return decodeMimeBundle(data, version)
       } else {
-        return await decodeMimeBundle(output.data, version)
+        return decodeMimeBundle(output.data, version)
       }
     case 'display_data':
-      if (nbformat.v3.isa(output, 'DisplayData', version)) {
+      if (isv3(output, 'DisplayData', version)) {
         // Remove the 'non-data' properties from the `DisplayData`
         let { output_type, metadata, ...data } = output
-        return await decodeMimeBundle(data, version)
+        return decodeMimeBundle(data, version)
       } else {
-        return await decodeMimeBundle(output.data, version)
+        return decodeMimeBundle(output.data, version)
       }
     case 'stream':
-      return await decodeMultilineString(output.text)
+      return decodeMultilineString(output.text)
     case 'error':
     case 'pyerr':
       // TODO: decode error
@@ -383,11 +385,11 @@ async function encodeOutputs(
     nodes.map(async node => {
       switch (type(node)) {
         case 'string':
-          return await encodeStream(chunk, node)
+          return encodeStream(chunk, node)
         case 'ImageObject':
-          return await encodeDisplayData(chunk, node)
+          return encodeDisplayData(chunk, node)
         default:
-          return await encodeExecuteResult(chunk, node)
+          return encodeExecuteResult(chunk, node)
       }
     })
   )
@@ -482,7 +484,7 @@ async function decodeMimeBundle(
       }
     } else {
       // TODO: handle other mime types e.g. application/x+json
-      return await load(content, mimetype)
+      return load(content, mimetype)
     }
   }
   // TODO: handling of fallback

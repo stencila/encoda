@@ -20,6 +20,7 @@ export default async function process(
   // by other directives
   const nodes: { [key: string]: stencila.Node } = {}
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function handle(node: any): Promise<stencila.Node> {
     if (node === null || typeof node !== 'object') return node
 
@@ -49,7 +50,7 @@ export default async function process(
           )
         }
         if ('include' in meta) {
-          return await _load(code.value, meta.from || code.language)
+          return _load(code.value, meta.from || code.language)
         }
       }
     }
@@ -72,7 +73,7 @@ export default async function process(
           _equals(meta.equals, await _read(link.target, meta.from || meta.to))
         }
         if ('include' in meta) {
-          return await _read(link.target, meta.from)
+          return _read(link.target, meta.from)
         }
       }
     }
@@ -86,7 +87,7 @@ export default async function process(
         if (type(para.content[0]) === 'string') {
           const path = para.content[0] as string
           if (isPath(path)) {
-            return await _read(path)
+            return _read(path)
           }
         }
       }
@@ -122,17 +123,17 @@ export default async function process(
     return node
   }
 
-  return await handle(node)
+  return handle(node)
 
-  function _import(id: string, node: stencila.Node) {
+  function _import(id: string, node: stencila.Node): void {
     nodes[id] = node
   }
 
-  function _equals(id: string, node: stencila.Node) {
+  function _equals(id: string, node: stencila.Node): void {
     assert.deepStrictEqual(node, _get(id))
   }
 
-  function _get(id: string) {
+  function _get(id: string): stencila.Node {
     const node = nodes[id]
     if (typeof node === 'undefined') {
       throw Error(`Error: could not find "${id}"`)
@@ -140,28 +141,38 @@ export default async function process(
     return node
   }
 
-  async function _load(content: string, format: string) {
+  async function _load(
+    content: string,
+    format: string
+  ): Promise<stencila.Node> {
     try {
       const node = await load(content, format)
-      validate(node, type(node))
+      await validate(node, type(node))
       return node
     } catch (error) {
       throw Error(`Error: loading "${content}": ${error} `)
     }
   }
 
-  async function _read(target: string, format?: string) {
+  async function _read(
+    target: string,
+    format?: string
+  ): Promise<stencila.Node> {
     try {
       const targetPath = './' + path.join(dir, target)
       const node = await read(targetPath, format)
-      validate(node, type(node))
+      await validate(node, type(node))
       return node
     } catch (error) {
       throw Error(`Error: reading "${target}": ${error} `)
     }
   }
 
-  async function _write(node: stencila.Node, target: string, format?: string) {
+  async function _write(
+    node: stencila.Node,
+    target: string,
+    format?: string
+  ): Promise<void> {
     try {
       const targetPath = './' + path.join(dir, target)
       await write(node, targetPath, { format })

@@ -2,6 +2,13 @@
  * @module util
  */
 
+// TODO: This file uses any a lot. Needs a refactor and re-enable linting
+/* eslint-disable
+      @typescript-eslint/no-explicit-any,
+      @typescript-eslint/explicit-function-return-type,
+      @typescript-eslint/no-use-before-define
+*/
+
 import * as stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
@@ -9,7 +16,6 @@ import { record } from 'fp-ts'
 import { eqString } from 'fp-ts/lib/Eq'
 import { pipe } from 'fp-ts/lib/pipeable'
 import fs from 'fs-extra'
-import globby from 'globby'
 import produce from 'immer'
 import path from 'path'
 import { decode as decodePerson } from '../codecs/person'
@@ -35,8 +41,8 @@ export async function create<Key extends keyof stencila.Types>(
   validation: 'none' | 'validate' | 'coerce' = 'validate'
 ): Promise<stencila.Types[Key]> {
   let node = { type, ...initial }
-  if (validation === 'validate') return await validate(node, type)
-  else if (validation === 'coerce') return await coerce(node, type)
+  if (validation === 'validate') return validate(node, type)
+  else if (validation === 'coerce') return coerce(node, type)
   else return node
 }
 
@@ -160,14 +166,14 @@ const decoders: { [key: string]: (data: string) => any } = {
 /**
  * Decode comma separated string data into an array of strings
  */
-function csv(data: string): Array<string> {
+function csv(data: string): string[] {
   return data.split(',')
 }
 
 /**
  * Decode space separated string data into an array of strings
  */
-function ssv(data: string): Array<string> {
+function ssv(data: string): string[] {
   return data.split(/ +/)
 }
 
@@ -180,15 +186,15 @@ const decoderValidate: Ajv.SchemaValidateFunction = (
   data: string,
   parentSchema?: object,
   dataPath?: string,
-  parentData?: object | Array<any>,
-  parentDataProperty?: string | number,
-  rootData?: object | Array<any>
+  parentData?: object | any[],
+  parentDataProperty?: string | number
+  // rootData?: object | any[]
 ): boolean => {
   function raise(msg: string) {
     decoderValidate.errors = [
       {
         keyword: 'parser',
-        dataPath: '' + dataPath,
+        dataPath: dataPath || '',
         schemaPath: '',
         params: {
           keyword: 'parser'
@@ -296,8 +302,7 @@ export const isNodeType = <Ts extends { type: string }>(
 
 type NodeType = { type: string } & { [key: string]: unknown }
 
-const hasTypeProp = (o: { type?: string }): o is NodeType =>
-  o.type ? true : false
+const hasTypeProp = (o: { type?: string }): o is NodeType => !!o.type
 
 export const isNode = <T extends object, Ts extends NodeType = NodeType>(
   typeMap: { [key in Ts['type']]: key }

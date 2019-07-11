@@ -20,6 +20,7 @@ export const mediaTypes = ['application/pdf']
  * This function is required (currently) but is (and probably never will be)
  * implemented.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error(`Parsing of PDF files is not supported.`)
 }

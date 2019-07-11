@@ -37,12 +37,15 @@ export const encode: Encode = async (
   return vfile.load(buffer)
 }
 
+// TODO: Refactor to remove use of any
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // WorkBook <-> Node
 
 function decodeWorkbook(
   workbook: xlsx.WorkBook
 ): stencila.Table | stencila.Datatable | stencila.Collection {
-  const parts: Array<stencila.Table | stencila.Datatable> = []
+  const parts: (stencila.Table | stencila.Datatable)[] = []
   for (let name of workbook.SheetNames) {
     const sheet = workbook.Sheets[name]
 
@@ -75,7 +78,7 @@ function decodeWorkbook(
 function encodeNode(node: stencila.Node): xlsx.WorkBook {
   const type_ = type(node)
 
-  const sheetNames: Array<string> = []
+  const sheetNames: string[] = []
   const sheets: { [key: string]: xlsx.WorkSheet } = {}
   if (type_ === 'Collection') {
     const collection = node as stencila.Collection
@@ -107,7 +110,7 @@ function encodeNode(node: stencila.Node): xlsx.WorkBook {
   return workbook
 }
 
-function encodeCreativeWork(node: stencila.CreativeWork) {
+function encodeCreativeWork(node: stencila.CreativeWork): xlsx.WorkSheet {
   if (node.type === 'Table') return encodeTable(node as stencila.Table)
   else if (node.type === 'Datatable') {
     return encodeDatatable(node as stencila.Datatable)
@@ -143,7 +146,7 @@ const cellMapToRowMap = (cells: CellMap): RowMap =>
         [num]: {
           ...(rowMap[num] || {}),
           [alpha]: {
-            name: alpha + num,
+            name: alpha + num.toString(),
             ...xlsxCelltoStencilaCell(cell)
           }
         }
@@ -214,7 +217,7 @@ function decodeDatatable(
   const rows = rang.e.r
 
   // Convert the list of cells to a list of columns with values
-  const columns: Array<any> = range(0, cols).map(col =>
+  const columns: any[] = range(0, cols).map(col =>
     range(0, rows).map(row => {
       const name = cellPositionToName([col, row])
       const cell = cells[name]
@@ -225,7 +228,7 @@ function decodeDatatable(
   // If the first value in each column is a string then
   // treat them as names (and thus remove them from) the
   // values. Otherwise, use automatic, alphabetic names.
-  let names: Array<string> = []
+  let names: string[] = []
   for (const column of columns) {
     if (typeof column[0] === 'string') {
       names.push(column[0])
@@ -255,7 +258,7 @@ function decodeDatatable(
   return datatable
 }
 
-function encodeDatatable(datatable: stencila.Datatable) {
+function encodeDatatable(datatable: stencila.Datatable): xlsx.WorkSheet {
   const sheet: xlsx.WorkSheet = {}
   let columns = datatable.columns
   if (columns) {
@@ -284,7 +287,9 @@ function encodeDatatable(datatable: stencila.Datatable) {
 
 // CellObject <-> Node
 
-function decodeCell(cell: xlsx.CellObject) {
+function decodeCell(
+  cell: xlsx.CellObject
+): null | boolean | string | number | stencila.CodeExpr {
   let value = cell.v
   if (value) {
     if (value instanceof Date) {
@@ -350,7 +355,7 @@ const xlsxCelltoStencilaCell = (cell: xlsx.CellObject): stencila.TableCell => ({
  *
  * @param index The column index
  */
-export function columnIndexToName(index: number) {
+export function columnIndexToName(index: number): string {
   let name = ''
   let dividend = index + 1
   while (dividend > 0) {
@@ -368,7 +373,7 @@ export function columnIndexToName(index: number) {
  *
  * @param name The column name
  */
-export function columnNameToIndex(name: string) {
+export function columnNameToIndex(name: string): number {
   let index = 0
   for (let position = 0; position < name.length; position++) {
     index = name[position].charCodeAt(0) - 64 + index * 26
@@ -450,7 +455,10 @@ const ordLength: ord.Ord<string> = ord.contramap((s: string) => s.length)(
  * @param {() => string} defaultValue A function returning a constant value to
  * be returned in case of failure such as an empty list given as input
  */
-const maxCell = (cells: Set<string> | string[], defaultValue: () => string) =>
+const maxCell = (
+  cells: Set<string> | string[],
+  defaultValue: () => string
+): string =>
   pipe(
     [...cells],
     array.sortBy([ordLength, ord.ordString]),

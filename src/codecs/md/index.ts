@@ -168,7 +168,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
     case 'table':
       return decodeTable(node as MDAST.Table)
     case 'thematicBreak':
-      return decodeThematicBreak(node as MDAST.ThematicBreak)
+      return decodeThematicBreak()
 
     case 'link':
       return decodeLink(node as MDAST.Link)
@@ -195,7 +195,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
           return decodeQuote(ext)
 
         case 'null':
-          return decodeNull(ext)
+          return decodeNull()
         case 'boolean':
         case 'true':
         case 'false':
@@ -248,7 +248,7 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
     case 'Table':
       return encodeTable(node as stencila.Table)
     case 'ThematicBreak':
-      return encodeThematicBreak(node as stencila.ThematicBreak)
+      return encodeThematicBreak()
 
     case 'Link':
       return encodeLink(node as stencila.Link)
@@ -270,13 +270,13 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
     case 'string':
       return encodeString(node as string)
     case 'null':
-      return encodeNull(node as null)
+      return encodeNull()
     case 'boolean':
       return encodeBoolean(node as boolean)
     case 'number':
       return encodeNumber(node as number)
     case 'array':
-      return encodeArray(node as Array<any>)
+      return encodeArray(node as any[])
     case 'object':
       return encodeObject(node as object)
 
@@ -327,7 +327,7 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
     authors: []
   }
 
-  const body: Array<stencila.Node> = []
+  const body: stencila.Node[] = []
   for (let child of root.children) {
     if (child.type === 'yaml') {
       const frontmatter = yaml.safeLoad(child.value)
@@ -684,9 +684,7 @@ function encodeTable(table: stencila.Table): MDAST.Table {
 /**
  * Decode a `MDAST.ThematicBreak` to a `stencila.ThematicBreak`
  */
-function decodeThematicBreak(
-  tbreak: MDAST.ThematicBreak
-): stencila.ThematicBreak {
+function decodeThematicBreak(): stencila.ThematicBreak {
   return {
     type: 'ThematicBreak'
   }
@@ -695,9 +693,7 @@ function decodeThematicBreak(
 /**
  * Encode a `stencila.ThematicBreak` to a `MDAST.ThematicBreak`
  */
-function encodeThematicBreak(
-  tbreak: stencila.ThematicBreak
-): MDAST.ThematicBreak {
+function encodeThematicBreak(): MDAST.ThematicBreak {
   return {
     type: 'thematicBreak'
   }
@@ -944,14 +940,14 @@ function encodeString(value: string): MDAST.Text {
 /**
  * Decode a `!null` inline extension to `null`
  */
-function decodeNull(ext: Extension): null {
+function decodeNull(): null {
   return null
 }
 
 /**
  * Encode `null` to a `!null` inline extension
  */
-function encodeNull(value: null): Extension {
+function encodeNull(): Extension {
   return { type: 'inline-extension', name: 'null' }
 }
 
@@ -975,7 +971,7 @@ function decodeBoolean(ext: Extension): boolean {
       return false
     default:
       const value = ext.argument || ext.content || 'true'
-      return value === 'true' || value === '1' ? true : false
+      return !!(value === 'true' || value === '1')
   }
 }
 
@@ -1021,7 +1017,7 @@ function encodeNumber(value: number): Extension {
  *   - `!array` (decoded to `[]`)
  *   - `!array[1, 2]`
  */
-function decodeArray(ext: Extension): Array<any> {
+function decodeArray(ext: Extension): any[] {
   const items = ext.argument || ext.content || ''
   const array = JSON5.parse(`[${items}]`)
   return array
@@ -1030,7 +1026,7 @@ function decodeArray(ext: Extension): Array<any> {
 /**
  * Encode an `array` to a `!array` inline extension
  */
-function encodeArray(value: Array<any>): Extension {
+function encodeArray(value: any[]): Extension {
   const argument = JSON5.stringify(value).slice(1, -1)
   return { type: 'inline-extension', name: 'array', argument }
 }

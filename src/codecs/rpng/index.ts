@@ -8,7 +8,7 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
-import punycode from 'punycode'
+import punycode from 'punycode/'
 import { dump, Encode, EncodeOptions } from '../../index'
 import * as puppeteer from '../../util/puppeteer'
 import bundle from '../../util/bundle'
@@ -32,7 +32,7 @@ const KEYWORD = 'JSON'
  */
 export function find(
   keyword: string,
-  chunks: Array<Chunk>
+  chunks: Chunk[]
 ): [number, string | undefined] {
   let index = 0
   for (let chunk of chunks) {
@@ -54,9 +54,9 @@ export function find(
  * @param image The image `Buffer`
  */
 export function has(keyword: string, image: Buffer): boolean {
-  const chunks: Array<Chunk> = pngExtract(image)
-  const [index, text] = find(keyword, chunks)
-  return text ? true : false
+  const chunks: Chunk[] = pngExtract(image)
+  const [h, text] = find(keyword, chunks)
+  return !!text
 }
 
 /**
@@ -66,8 +66,8 @@ export function has(keyword: string, image: Buffer): boolean {
  * @param image The image `Buffer`
  */
 export function extract(keyword: string, image: Buffer): string {
-  const chunks: Array<Chunk> = pngExtract(image)
-  const [index, text] = find(keyword, chunks)
+  const chunks: Chunk[] = pngExtract(image)
+  const [h, text] = find(keyword, chunks)
   if (!text) throw Error('No chunk found')
   return text
 }
@@ -80,7 +80,7 @@ export function extract(keyword: string, image: Buffer): string {
  * @param image The image to insert into
  */
 export function insert(keyword: string, text: string, image: Buffer): Buffer {
-  const chunks: Array<Chunk> = pngExtract(image)
+  const chunks: Chunk[] = pngExtract(image)
   const [index, current] = find(keyword, chunks)
   if (current) chunks.splice(index, 1)
   const chunk = pngText.encode(keyword, punycode.encode(text))
@@ -160,8 +160,8 @@ export function sniffDecodeSync(filePath: string): stencila.Node | undefined {
   if (path.extname(filePath) === '.png') {
     if (fs.existsSync(filePath)) {
       const image = fs.readFileSync(filePath)
-      const chunks: Array<Chunk> = pngExtract(image)
-      const [index, json] = find(KEYWORD, chunks)
+      const chunks: Chunk[] = pngExtract(image)
+      const [h, json] = find(KEYWORD, chunks)
       if (json) return JSON.parse(json)
     }
   }

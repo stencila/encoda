@@ -1,4 +1,5 @@
 /* Generated from nbformat-v3.schema.json. Do not edit. See nbformat.js. */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export type Output = Pyout | DisplayData | Stream | Pyerr
 

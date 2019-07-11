@@ -6,7 +6,7 @@ import fs from 'fs-extra'
 import mime from 'mime'
 import tempy from 'tempy'
 
-const DATA_URI_REGEX = /^data:([\w\/\+]+);(charset=[\w-]+|base64).*,(.*)/
+const DATA_URI_REGEX = /^data:([\w/+]+);(charset=[\w-]+|base64).*,(.*)/
 
 /**
  * Test that a string is a Data URI

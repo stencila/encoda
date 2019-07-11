@@ -2,9 +2,10 @@
  * @module util
  */
 
-import * as stencila from '@stencila/schema'
+import stencila from '@stencila/schema'
 import produce from 'immer'
 import * as dataUri from './dataUri'
+import type from './type'
 
 /**
  * Walk a document tree and replace any links to local resources
@@ -21,10 +22,10 @@ import * as dataUri from './dataUri'
 export default async function bundle(
   node: stencila.Node
 ): Promise<stencila.Node> {
-  async function walk(node: any) {
+  async function walk(node: stencila.Node): Promise<stencila.Node> {
     if (node === null || typeof node !== 'object') return node
 
-    switch (node.type) {
+    switch (type(node)) {
       case 'MediaObject':
       case 'AudioObject':
       case 'ImageObject':
@@ -42,9 +43,10 @@ export default async function bundle(
     }
 
     for (const [key, child] of Object.entries(node)) {
+      // @ts-ignore
       node[key] = await walk(child)
     }
     return node
   }
-  return await produce(node, walk)
+  return produce(node, walk)
 }

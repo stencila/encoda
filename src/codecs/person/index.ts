@@ -3,9 +3,9 @@
  */
 
 import { Person } from '@stencila/schema'
-//@ts-ignore
+// @ts-ignore
 import parseAuthor from 'parse-author'
-//@ts-ignore
+// @ts-ignore
 import { parseFullName } from 'parse-full-name'
 
 /**

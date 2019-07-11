@@ -58,7 +58,7 @@ const args = _.slice(1)
  */
 const log = logga.getLogger('encoda:cli')
 const previousLogData = new Set<string>()
-logga.replaceHandlers((data: logga.LogData) => {
+logga.replaceHandlers((data: logga.LogData): void => {
   if (data.level <= (options.debug ? 3 : 2)) {
     const json = JSON.stringify(data)
     if (options.debug || !previousLogData.has(json)) {
@@ -67,6 +67,7 @@ logga.replaceHandlers((data: logga.LogData) => {
     }
   }
 })
+//  eslint-disable-next-line
 ;(async () => {
   try {
     if (command === 'convert') {

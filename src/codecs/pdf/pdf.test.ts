@@ -1,13 +1,13 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { create } from '../../util/vfile'
+import * as vfile from '../../util/vfile'
 import articleSimple from '../../__fixtures__/article-simple'
 import * as pdf from './'
 
 jest.setTimeout(30 * 1000) // Extending timeout due to long running test
 
 test('decode', async () => {
-  await expect(pdf.decode(create())).rejects.toThrow(
+  await expect(pdf.decode(vfile.create())).rejects.toThrow(
     /Parsing of PDF files is not supported/
   )
 })

@@ -2,10 +2,12 @@
  * @module gdoc
  */
 
+// TODO: Remove use of non-null-assertions
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import crypto from 'crypto'
-import fs from 'fs'
 import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '../..'
 import { isInlineContent, isNode } from '../../util/index'
@@ -73,9 +75,9 @@ let decodingFetcher: (url: string) => string
  * Fetches a remote file to a local file
  */
 class FetchToFile {
-  requests: Promise<void>[] = []
+  private requests: Promise<void>[] = []
 
-  get(url: string, ext: string = ''): string {
+  public get(url: string, ext: string = ''): string {
     const filePath =
       crypto
         .createHash('md5')
@@ -85,7 +87,7 @@ class FetchToFile {
     return filePath
   }
 
-  async resolve(): Promise<void[]> {
+  public async resolve(): Promise<void[]> {
     return Promise.all(this.requests)
   }
 }
@@ -94,12 +96,10 @@ class FetchToFile {
  * A dummy fetcher, used in testing.
  */
 class FetchToSame {
-  get(url: string): string {
+  public get(url: string): string {
     return url
   }
-  async resolve(): Promise<void> {
-    return
-  }
+  public async resolve(): Promise<void> {}
 }
 
 /**
@@ -117,7 +117,7 @@ async function decodeDocument(
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
   decodingFetcher = fetcher.get.bind(fetcher)
 
-  let content: Array<stencila.Node> = []
+  let content: stencila.Node[] = []
   let lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
@@ -125,13 +125,13 @@ async function decodeDocument(
         if (elem.paragraph) return decodeParagraph(elem.paragraph, lists)
         else if (elem.sectionBreak) {
           // The first element in the content is always a sectionBreak, so ignore it
-          return index === 0 ? undefined : decodeSectionBreak(elem.sectionBreak)
+          return index === 0 ? undefined : decodeSectionBreak()
         } else if (elem.table) return decodeTable(elem.table)
         else {
           throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
         }
       })
-      .filter(node => typeof node !== 'undefined') as Array<stencila.Node>
+      .filter(node => typeof node !== 'undefined') as stencila.Node[]
   }
 
   // Resolve the fetched resources
@@ -209,7 +209,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
           gdocContent.push(encodeTable(node as stencila.Table))
           break
         case 'ThematicBreak':
-          gdocContent.push(encodeThematicBreak(node as stencila.ThematicBreak))
+          gdocContent.push(encodeThematicBreak())
           break
         default:
           throw new Error(`Unhandled Stencila node type "${type_}"`)
@@ -480,18 +480,14 @@ function encodeTable(table: stencila.Table): GDoc.Schema$StructuralElement {
 /**
  * Decode a GDoc `SectionBreak` element to a Stencila `ThematicBreak`.
  */
-function decodeSectionBreak(
-  table: GDoc.Schema$SectionBreak
-): stencila.ThematicBreak {
+function decodeSectionBreak(): stencila.ThematicBreak {
   return { type: 'ThematicBreak' }
 }
 
 /**
  * Encode a Stencila `ThematicBreak` to GDoc `SectionBreak` element.
  */
-function encodeThematicBreak(
-  table: stencila.ThematicBreak
-): GDoc.Schema$StructuralElement {
+function encodeThematicBreak(): GDoc.Schema$StructuralElement {
   return {
     sectionBreak: {}
   }

@@ -9,6 +9,8 @@
  * Because this uses functions in dist/index.js ensure you run `make build` afer any changes.
  */
 
+/* eslint-disable */
+
 const fs = require('fs-extra')
 const readline = require('readline')
 const { google } = require('googleapis')

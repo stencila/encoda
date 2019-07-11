@@ -10,6 +10,7 @@ os:
 script:
   # Temporarily disable dependency checking
   # - npm run check
+  - npm run lint
   # Force exit to prevent the hanging on Travis
   - npm run test:cover -- --forceExit
   - npm run docs

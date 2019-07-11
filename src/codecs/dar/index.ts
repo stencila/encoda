@@ -8,7 +8,6 @@
  * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
-import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import h from 'hyperscript'
@@ -22,8 +21,6 @@ import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 import { hasType, isCreativeWork } from '../../util'
 import * as uri from '../../util/uri'
-
-const log = getLogger('encoda:dar')
 
 export const mediaTypes = []
 
@@ -77,7 +74,7 @@ export const encode: Encode = async (
 ): Promise<vfile.VFile> => {
   let { filePath } = options
 
-  const darPath = filePath ? filePath : path.join(tempy.directory(), '.dar')
+  const darPath = filePath || path.join(tempy.directory(), '.dar')
   await fs.ensureDir(darPath)
 
   // Generate promises for each document and its assets
@@ -94,8 +91,8 @@ export const encode: Encode = async (
       const fileName = fileId + '.csv'
       const filePath = path.join(darPath, fileName)
       await write(node, filePath)
-      const [_, asset] = await encodeAsset(filePath, fileId, darPath)
-      return { document: null, assets: [await asset] }
+      const [h, asset] = await encodeAsset(filePath, fileId, darPath)
+      return { document: null, assets: [asset] }
     } else {
       const { encoded, assets } = await encodeDocumentAssets(
         node,
@@ -169,7 +166,7 @@ async function encodeDocumentAssets(
   assets: Element[]
 }> {
   const assets: Element[] = []
-  async function walk(node: any) {
+  async function walk(node: any): Promise<any> {
     if (node === null) return node
     if (typeof node !== 'object') return node
 
