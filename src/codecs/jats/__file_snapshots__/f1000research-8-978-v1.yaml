@@ -1,0 +1,1968 @@
+type: Article
+title: Climate change-induced species distribution modeling in hyper-arid ecosystems
+authors:
+  - type: Person
+    givenNames:
+      - Taoufik
+      - Saleh
+    familyNames:
+      - Ksiksi
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Remya
+    familyNames:
+      - K.
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Mohamed
+      - T.
+    familyNames:
+      - Mousa
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Shima
+      - K.
+    familyNames:
+      - Al-Badi
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Salama
+      - K.
+    familyNames:
+      - Al
+      - Kaabi
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Shamsa
+      - M.
+    familyNames:
+      - Alameemi
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Sanad
+      - M.
+    familyNames:
+      - Fereaa
+    affiliations:
+      - type: Organization
+  - type: Person
+    givenNames:
+      - Fatima
+      - E.
+    familyNames:
+      - Hassan
+    affiliations:
+      - type: Organization
+content:
+  - type: Heading
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
+      - >-
+        Climate change has exerted significant biological, spatial and temporal
+        effects on terrestrial habitats
+                        
+      - '1'
+      - |-
+        ,
+                            
+      - '2'
+      - |-
+        . The increasing CO
+                        
+      - '2'
+      - |2-
+         trend during the past decades will continue for several decades, which will likely have major effects on animal and plant species
+                        
+      - '3'
+      - >-
+        . Additionally, the inherent fragility of dry lands made them
+        particularly vulnerable to climate change, even a small change in
+        temperature and rainfall patterns may cause serious threat to their
+        biodiversity
+                        
+      - '4'
+      - |-
+        . IIED
+                        
+      - '5'
+      - |2-
+         suggests that dry-land regions are projected to significant climate changes, but there still exist substantial variability and uncertainty in these estimates based on different scenarios. Many of the important United Arab Emirates (UAE) plant species, for instance, may be facing major challenges for their survival. Many of such native species are becoming restricted in their distributions because of overgrazing and habitat destruction. In addition to the natural prolonged drought, human activities are also threatening many native plants
+                        
+      - '6'
+      - |2-
+         and their conservation
+                        
+      - '7'
+      - |-
+        . The IPCC report
+                        
+      - '8'
+      - |2-
+         also projected that deserts are going to become hotter and drier. Additionally and in relation to the Arab region, climate change-induced desertification has been prolonged, critically affecting the vulnerability of the local population. The projected warming would lead to seasonal changes in precipitation, evapotranspiration and radiation Hulme and Jenkins
+                        
+      - '9'
+      - >-
+        . These changes can largely affect the distribution of species and
+        habitat composition
+                        
+      - '10'
+      - >-
+        . Thus, the implications of climate change for biodiversity have led to
+        the use of bioclimatic models in order to forecast the species range
+        shift under future climate change scenarios Araújo and New
+                        
+      - '11'
+      - .
+  - type: Paragraph
+    content:
+      - >-
+        Both habitat quality and diversity have significant impact on species’
+        distribution and richness within the environment
+                        
+      - '12'
+      - >-
+        . Ecological envelope models or species distribution models (SDMs) have
+        been widely used for projecting the habitat shift and distribution
+        induced by climate change
+                        
+      - '13'
+      - |-
+        . These models are also used to understand biological processes
+                        
+      - '14'
+      - |2-
+         and climate change impacts on biodiversity
+                        
+      - '15'
+      - |-
+        –
+                            
+      - '17'
+      - >-
+        . Understanding the future distribution of climatically suitable habitat
+        allows the conservation planners to assess the vulnerability of species
+        and ecosystem to climate change
+                        
+      - '18'
+      - |-
+        ,
+                            
+      - '19'
+      - >-
+        . The species occurrence records alone may not be sufficient for
+        building robust conservation strategy in light of climate change. While
+        combining occurrence records with an environmental suitability model can
+        be a promising tool for to assess species distribution and the potential
+        impacts of climate change
+                        
+      - '20'
+      - |-
+        ,
+                            
+      - '21'
+      - .
+  - type: Paragraph
+    content:
+      - >-
+        Maximum entropy (MaxEnt) is one of the robust environmental suitability
+        ecological niche/ ecological envelope) models for assessing species
+        habitat suitability changes under the ongoing and future environmental
+        challenges
+                        
+      - '22'
+      - |-
+        –
+                            
+      - '24'
+      - |-
+        . MaxEnt is a species distribution model (SDM)
+                        
+      - '25'
+      - |2-
+         and it is used for the present study. The hypothesis is that shifting, contracting and expanding species habitats are affected by the ongoing climate change. For this, habitat suitability changes of the selected three species (i.e. 
+                        
+      - Calotropis procera
+      - |-
+        , 
+                        
+      - Prosopis cineraria
+      - |2-
+         and 
+                        
+      - Ziziphus spina-christi
+      - ) in the current vs the future climate scenarios was modeled.
+  - type: Heading
+    depth: 1
+    content:
+      - Methods
+  - type: Heading
+    depth: 2
+    content:
+      - Study site
+  - type: Paragraph
+    content:
+      - >-
+        This study was conducted in the UAE. It covers a total land area of
+        approximately 82,925 km
+                            
+      - '2'
+      - >-
+        , which was used as the basis for calculating the species distribution
+        areas. The study area boundaries was converted to shape files and and
+        then used to extract the environmental and climatic variables.
+  - type: Heading
+    depth: 2
+    content:
+      - Species ecological characteristics
+  - type: Paragraph
+    content:
+      - Calotropis procera
+      - >-
+        , belonging to the Asclepiadaceae family, locally known as ash harbor or
+        milkweed. It is a poisonous shrub that can cause harm to humans if its
+        latex touches the skin or eyes. The latex is a milky white substance
+        present within the shrub, and is released if the shrub was cut
+                            
+      - '26'
+      - .
+  - type: Paragraph
+    content:
+      - Prosopis cineraria
+      - |2-
+         is considered the national tree of UAE and belongs to the Fabaceae family. It can withstand a wide range of temperature, heat and drought and also can tolerate saline soil conditions. It commonly exists in India and Pakistan in large numbers. In the UAE it is found on the inland sand plains and low dunes of the Northern Emirates and eastern rim of Abu Dhabi emirate, and appears occasionally in wadi beds of the Hajar mountain range
+                            
+      - '27'
+      - .
+  - type: Paragraph
+    content:
+      - Ziziphus spina-christi
+      - >-
+        , belongs to the Rhamnaceae family, is a species indigenous to the
+        Arabian Peninsula. This species is known for delayed seed germination,
+        which is due to the hard coat of its seeds, therefore lowering its
+        ability to compete with other plants over resources. This tree has
+        different importance to people and animals. The honey produced from its
+        flowers is very valuable and its leaves has various medicinal uses. The
+        leaves also contain various flavonoids, saponin, alkaloids, and
+        allelochemicals.
+  - type: Heading
+    depth: 2
+    content:
+      - Model requirements
+  - type: Paragraph
+    content:
+      - |-
+        We have extracted current and future 19 bioclimatic variables from the 
+                            
+      - WorldClim
+      - |2-
+         website
+                            
+      - '28'
+      - |2-
+         and tested for colinearity using the SDM tool in ArcGis 10.1
+                            
+      - '29'
+      - |2-
+         (an open-source alternative is 
+                            
+      - QGIS
+      - >-
+        ). Additionally, variables included were land use cover and elevation
+        data for the study area. Even though the variables were highly
+        correlating we have selected nine bioclimatic variables and the edaphic
+        variables for the model development. Representative concentration
+        pathway (RCP)4.5 was selected and for 2050s and 2070s, the 
+                            
+      - Community Climate System Model version 4
+      - |2-
+         climate model was used to download the bioclimatic variables. RCP4.5 stabilizes radiative forcing by 2100
+                            
+      - '30'
+      - >-
+        . It includes global emissions of greenhouse gases and
+        land-use-land-cover. A resolution of approximately 1 km
+                            
+      - '2'
+      - ' (30 arc-seconds) was used for this predictive assessment.'
+  - type: Paragraph
+    content:
+      - >-
+        All three species’ presence-only data was used and each species had 100
+        georeferenced location data. For the selected species, the model was
+        trained using current bioclimatic data and projected using future
+        bioclimatic variables. To visualize the bioclimatic suitability range
+        shift in the future projection, this study has used clamping module
+        while running the model. Final outputs of the model predictions were
+        exported to ArcGIS 10.1 for further analysis. The exported model outputs
+        were converted to raster files and then the predicted habitat
+        suitability ranges were reclassified using three pre-defined probability
+        classes: high, medium and low. Other model settings were kept unmodified
+        and the Jackknife method was used to assess the variable contribution to
+        the habitat distribution. Model fit was assessed using the area under
+        the curve (AUC) values.
+  - type: Heading
+    depth: 2
+    content:
+      - Environmental parameters
+  - type: Paragraph
+    content:
+      - >-
+        In addition to land use cover and elevation data, 19 variables were
+        extracted from the WorldClim database
+                            
+      - '31'
+      - >-
+        , which is a set of global climate layers generated through
+        interpolation of climate data from weather stations on a 30 arc-seconds
+        grid (about 1 km
+                            
+      - '2'
+      - ' resolution). The 19 environmental variables are coded as follows:'
+  - type: Paragraph
+    content:
+      - '1. BIO1: Annual Mean Temperature'
+  - type: Paragraph
+    content:
+      - '2. BIO2: Mean Diurnal Range (Mean of monthly (max temp - min temp))'
+  - type: Paragraph
+    content:
+      - '3. BIO3: Isothermality (BIO2/BIO7) (* 100)'
+  - type: Paragraph
+    content:
+      - '4. BIO4: Temperature Seasonality (standard deviation *100)'
+  - type: Paragraph
+    content:
+      - '5. BIO5: Max Temperature of Warmest Month'
+  - type: Paragraph
+    content:
+      - '6. BIO6: Min Temperature of Coldest Month'
+  - type: Paragraph
+    content:
+      - '7. BIO7: Temperature Annual Range (BIO5-BIO6)'
+  - type: Paragraph
+    content:
+      - '8. BIO8: Mean Temperature of Wettest Quarter'
+  - type: Paragraph
+    content:
+      - '9. BIO9: Mean Temperature of Driest Quarter'
+  - type: Paragraph
+    content:
+      - '10. BIO10: Mean Temperature of Warmest Quarter'
+  - type: Paragraph
+    content:
+      - '11. BIO11: Mean Temperature of Coldest Quarter'
+  - type: Paragraph
+    content:
+      - '12. BIO12: Annual Precipitation'
+  - type: Paragraph
+    content:
+      - '13. BIO13: Precipitation of Wettest Month'
+  - type: Paragraph
+    content:
+      - '14. BIO14: Precipitation of Driest Month'
+  - type: Paragraph
+    content:
+      - '15. BIO15: Precipitation Seasonality (Coefficient of Variation)'
+  - type: Paragraph
+    content:
+      - '16. BIO16: Precipitation of Wettest Quarter'
+  - type: Paragraph
+    content:
+      - '17. BIO17: Precipitation of Driest Quarter'
+  - type: Paragraph
+    content:
+      - '18. BIO18: Precipitation of Warmest Quarter'
+  - type: Paragraph
+    content:
+      - '19. BIO19: Precipitation of Coldest Quarter'
+  - type: Heading
+    depth: 2
+    content:
+      - Modeling approach
+  - type: Paragraph
+    content:
+      - |-
+        The 
+                            
+      - MaxEnt model Version 3.4.1
+      - '25'
+      - |2-
+         was used for this assessment of the three different tree/shrub species distribution. MaxEnt has been used to model species niches and distributions through machine-learning techniques referred to as maximum entropy modeling
+                            
+      - '17'
+      - |-
+        ,
+                                
+      - '32'
+      - >-
+        . It is very robust in cases of small sample size of species
+        distribution and locations
+                            
+      - '17'
+      - .
+  - type: Paragraph
+    content:
+      - >-
+        MaxEnt uses a combination of a set of environmental (e.g. climatic)
+        grids and geo-referenced presence points for the species under
+        investigation
+                            
+      - '33'
+      - >-
+        . The model expresses a probability distribution where each grid cell is
+        predictably suitable to the conditions for a species to occur
+                            
+      - '33'
+      - >-
+        . To improve model performance and minimize over-fitting, because of the
+        impact of correlation among explanatory variables, a Pearson’s
+        correlation coefficient test was performed for each pair of quantitative
+        variables
+                            
+      - '34'
+      - |-
+        –
+                                
+      - '36'
+      - |-
+        . MaxEnt
+                            
+      - '25'
+      - |2-
+         is a model for predicting the distribution of species based on environmental parameters and species’ presence data
+                            
+      - '37'
+      - |-
+        . It uses both continuous and categorical data
+                            
+      - '25'
+      - >-
+        . MaxEnt has been reported to be comparable to other highly accurate
+        prediction methods, even when dealing with small sample sizes
+                            
+      - '38'
+      - >-
+        . This model was run for the current and future (2050–2070)
+        distributions. MaxEnt model was evaluated through the use of the area
+        under the curve (AUC)
+                            
+      - '39'
+      - >-
+        . While generating response curves, the MaxEnt model estimates the
+        relative effect of each predictor
+                            
+      - '40'
+      - .
+  - type: Heading
+    depth: 1
+    content:
+      - Results
+  - type: Heading
+    depth: 2
+    content:
+      - Model fit and variable contribution
+  - type: Paragraph
+    content:
+      - >-
+        Models for the three species performed better than the random, with an
+        AUC values 0.97 (
+                            
+      - C. procera
+      - |-
+        ), 0.98 (
+                            
+      - P. cinararia
+      - |-
+        ), and 0.97 (
+                            
+      - Ziziphus spina-christi
+      - |-
+        ). The jackknife test of variable importance for 
+                            
+      - C. procera
+      - |2-
+         concede that out of the 10 selected environmental variables for model execution, precipitation of the coldest quarter (36.3%) temperature annual range (27.2%) and annual precipitation (6.3%) exhibited the highest gain towards the habitat distribution (
+                            
+      - Figure 1a
+      - |-
+        ). Whereas for 
+                            
+      - P. cinararia
+      - |2-
+         precipitation of the coldest quarter followed by temperature seasonality and mean diurnal range were the highly influencing variables for its distribution (
+                            
+      - Figure 1b
+      - |-
+        ). At the same time for 
+                            
+      - Ziziphus spina-christi
+      - |2-
+         precipitation of wettest month (56.1%) influenced the most followed by precipitation of the coldest quarter and annual precipitation (
+                            
+      - Figure 1c
+      - |-
+        ). Locations for each species are available as 
+                            
+      - Underlying data
+      - '41'
+      - .
+  - type: Table
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Variable
+          - type: TableCell
+            content:
+              - Percent contribution
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Calotropis Procera
+          - type: TableCell
+            content:
+              - Prosopis cineraria
+          - type: TableCell
+            content:
+              - Ziziphus spinachristi
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio19
+          - type: TableCell
+            content:
+              - '26.8'
+          - type: TableCell
+            content:
+              - '38.9'
+          - type: TableCell
+            content:
+              - '44.8'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio12
+          - type: TableCell
+            content:
+              - '25.2'
+          - type: TableCell
+            content:
+              - '36.6'
+          - type: TableCell
+            content:
+              - '18.1'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio2
+          - type: TableCell
+            content:
+              - '14.4'
+          - type: TableCell
+            content:
+              - '11.7'
+          - type: TableCell
+            content:
+              - '16.2'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio11
+          - type: TableCell
+            content:
+              - '6.8'
+          - type: TableCell
+            content:
+              - '8.5'
+          - type: TableCell
+            content:
+              - '9'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Elevation
+          - type: TableCell
+            content:
+              - '6.3'
+          - type: TableCell
+            content:
+              - '2.8'
+          - type: TableCell
+            content:
+              - '4.8'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio7
+          - type: TableCell
+            content:
+              - '5.8'
+          - type: TableCell
+            content:
+              - '0.5'
+          - type: TableCell
+            content:
+              - '3.5'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio5
+          - type: TableCell
+            content:
+              - '5.3'
+          - type: TableCell
+            content:
+              - '0.3'
+          - type: TableCell
+            content:
+              - '1.6'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Land cover
+          - type: TableCell
+            content:
+              - '4.8'
+          - type: TableCell
+            content:
+              - '0.3'
+          - type: TableCell
+            content:
+              - '0.9'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio13
+          - type: TableCell
+            content:
+              - '2.1'
+          - type: TableCell
+            content:
+              - '0.2'
+          - type: TableCell
+            content:
+              - '0.8'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio16
+          - type: TableCell
+            content:
+              - '1.3'
+          - type: TableCell
+            content:
+              - '0.1'
+          - type: TableCell
+            content:
+              - '0.3'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio4
+          - type: TableCell
+            content:
+              - '1.2'
+          - type: TableCell
+            content:
+              - '0.1'
+          - type: TableCell
+            content:
+              - '0.1'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - bio14
+          - type: TableCell
+            content:
+              - '0'
+          - type: TableCell
+            content:
+              - '0'
+          - type: TableCell
+            content:
+              - '0'
+    title: |-
+      Variable contributions in percent for 
+                                  Calotropis procera, 
+                                  Prosopis cineraria and 
+                                  Ziziphus spina-christi.
+    content: []
+  - 'Figure 1. '
+  - type: Paragraph
+    content:
+      - |-
+        Jackknife variable contribution test for 
+                                    
+      - Calotropis procera
+      - |2-
+         (
+                                    
+      - a
+      - |-
+        ), 
+                                    
+      - Prosopis cineraria
+      - |2-
+         (
+                                    
+      - b
+      - |-
+        ) and 
+                                    
+      - Ziziphus spina-christi
+      - |2-
+         (
+                                    
+      - c
+      - ).
+  - type: Heading
+    depth: 2
+    content:
+      - Current habitat suitability
+  - type: Paragraph
+    content:
+      - |-
+        Results from the current habitat distribution map (
+                            
+      - Figure 2
+      - >-
+        ) clearly indicate that the environmental conditions in the northern
+        part of the UAE (Ras AlKhaimah, Al-Fujayrah, Sharjah, Ajman, Umm
+        Al-Quwain, Dubai and Al-Ain) act as the most suitable habitat for the
+        selected three species. The predicted habitat suitability was
+        reclassified into three classes and this unfolded that only 1.9% of the
+        country showed high habitat suitability (H) for 
+                            
+      - C. procera
+      - |2-
+         (
+                            
+      - Figure 3
+      - >-
+        ) followed by 9.4% as medium suitability habitat (M). The remaining
+        88.6% of the country has low environmental suitability (L) for this
+        particular species. For 
+                            
+      - P. cinararia
+      - |2-
+         (
+                            
+      - Figure 3
+      - >-
+        ), 1.5% of the total area was predicted as a highly suitable habitat and
+        5.7% as medium suitability. 
+                            
+      - Ziziphus spinachristi
+      - |2-
+         (
+                            
+      - Figure 3
+      - >-
+        ) revealed high and medium suitability habitat of around 5.7% and 11.5%,
+        respectively.
+  - 'Figure 2. '
+  - type: Paragraph
+    content:
+      - |-
+        Current and future habitat distribution (current, 2050s and 2070s) for 
+                                    
+      - Calotropis procera
+      - |2-
+         (
+                                    
+      - a
+      - |-
+        ), 
+                                    
+      - Prosopis cineraria
+      - |2-
+         (
+                                    
+      - b
+      - |-
+        ) and 
+                                    
+      - Ziziphus spina-christi
+      - |2-
+         (
+                                    
+      - c
+      - ).
+  - 'Figure 3. '
+  - type: Heading
+    depth: 2
+    content:
+      - >-
+        Habitat suitability distribution as affected by climate change (current,
+        2050 and 2070) for 
+                                    
+      - Calotropis procera
+      - |-
+        , 
+                                    
+      - Prosopis cineraria
+      - |2-
+         and 
+                                    
+      - Ziziphus spina-christi
+      - .
+  - type: Heading
+    depth: 2
+    content:
+      - Future habitat suitability
+  - type: Paragraph
+    content:
+      - |-
+        The future (2050s) habitat distribution of 
+                            
+      - C. procera
+      - |2-
+         indicated a slight reduction in the high (1.6%) and medium (8.8%) suitability classes. As for 2070s, the model predicted a visible increase in the high suitability class to 7% and medium suitability to 11.9%. The northern part of the country remains the highest environmentally suitable habitat for 
+                            
+      - C. procera
+      - |-
+        . For 
+                            
+      - P. cinararia
+      - |2-
+         it is predicted that by 2050s, high suitability will be 8.5% and medium suitability will be 12.3%. In contrast, and by 2070s the high- and medium-suitability classes will see a reduction to 7% and 10.3% of the total area, respectively. For 
+                            
+      - Ziziphus spina-christi
+      - ' distribution, an increase of its high habitat suitability distribution for both 2050s and 2070s, as climate is expected to change.'
+  - type: Heading
+    depth: 1
+    content:
+      - Discussion
+  - type: Paragraph
+    content:
+      - >-
+        In this study we predicted the suitable habitat for three significant
+        dry land species with the MaxEnt model. Both current and future habitat
+        distribution models of the selected three species were efficiently
+        projected by MaxEnt. Both 
+                        
+      - C. procera
+      - |2-
+         and 
+                        
+      - P. cinararia
+      - |2-
+         had less area in the high habitat suitability for the present scenario. Whereas 
+                        
+      - Ziziphus spina-christi
+      - |2-
+         had comparatively high present suitable habitat in the country. All three species were projected to have an increased level of high habitat suitability in the future. 
+                        
+      - Calotropis procera
+      - |2-
+         can easily adapt with harsh climate conditions especially they rapidly adjust with water availability and loss
+                        
+      - '42'
+      - |-
+        . A study by Frosi 
+                        
+      - et al
+      - |-
+        .
+                        
+      - '43'
+      - |2-
+         suggested that 
+                        
+      - C. procera
+      - |2-
+         has high water use efficiency because of its high photosynthetic rate, despite a reduced stomatal conductance, which acts as its fundamental strategy to survive harsh growth conditions.  
+                        
+      - P. cineraria
+      - |2-
+         is the national tree of UAE and most of the artificial forest and road sides in the country are afforested by this plant. It normally grows on soils ranging from sandy to clay loam Kumawat
+                        
+      - '44'
+      - .
+  - type: Paragraph
+    content:
+      - |-
+        The present study can be useful for selecting species like 
+                        
+      - p. cinararia
+      - |2-
+         for forest and roadside plantation in the future floral conservation programs. Predicted areas for 
+                        
+      - P. cineraria
+      - |2-
+         consist of a large area of artificial forest
+                        
+      - '27'
+      - >-
+        . In UAE, during the past few decades around 300,000 ha has been planted
+        with forests
+                        
+      - '45'
+      - >-
+        . The main purpose of these plantation is to combat desertification by
+        afforestation. These artificial forests utilizes numerous resources with
+        no economic benefit.
+  - type: Paragraph
+    content:
+      - |-
+        Other than 
+                        
+      - P. cineraria
+      - >-
+        , these forests consists of many other native and invasive species
+        including 
+                        
+      - P. juliflora
+      - |-
+        , 
+                        
+      - Salvadora persica
+      - |2-
+         and 
+                        
+      - Ziziphus spina-christi
+      - |-
+        . 
+                        
+      - P. cineraria
+      - |2-
+         can have a positive impact on specie diversity and density
+                        
+      - '27'
+      - |-
+        . 
+                        
+      - Prosopis cineraria
+      - |2-
+         improves organic matter, soil physical conditions and water-holding capacity. Therefore, it outperforms other species in the same area. Soil nutrient content is higher beneath the 
+                        
+      - P. cineraria
+      - |2-
+         trees
+                        
+      - '27'
+      - |-
+        . Growth and floral diversity are better under 
+                        
+      - P. cineraria
+      - |2-
+         than on adjacent areas
+                        
+      - '46'
+      - .
+  - type: Paragraph
+    content:
+      - Ziziphus spina-christi
+      - |2-
+         can resist heat and drought and its deep taproot provide an extraordinary regenerative potentials. This might be the reason for larger area distribution of this species in the UAE. Yet these species’ future habitat suitability areas are important for the country to incorporate in the conservation strategies under climate change. The areas predicted to be suitable can be considered for afforestation programs in the UAE. For all the three species, and with climate change impact, maximum habitat suitability predictions will be in the north-eastern parts of the UAE. It is important to highlight that one of the most vulnerable areas to climate change are dry land ecosystems
+                        
+      - '47'
+      - .
+  - type: Heading
+    depth: 1
+    content:
+      - Conclusion
+  - type: Paragraph
+    content:
+      - >-
+        The MaxEnt model provides useful information about species and their
+        satiable habitats, which can be used as a basis in planning future
+        conservation and afforestation programs. Additionally, the model is also
+        efficient in predicting species distribution under different climate
+        change scenarios. Conservation and afforestation programs considering
+        the species and their suitable habitats, therefore, will not only be
+        easily manageable and sustainable but also economically efficient by
+        using different SDMs. Finer spatial scales of species distribution
+        modeling may be an appropriate next step toward species conservation
+        under the potential changes in climatic conditions.
+  - type: Heading
+    depth: 1
+    content:
+      - Data availability
+  - type: Heading
+    depth: 2
+    content:
+      - Underlying data
+  - type: Paragraph
+    content:
+      - "Figshare:\tSURE2018.zip. \n                    "
+      - 'https://doi.org/10.6084/m9.figshare.8233328.v1'
+      - '41'
+      - '. This project contains a zipped folder made up of the following files:'
+  - type: Paragraph
+    content:
+      - |2-
+         Calotropis procera.csv (location of 
+                                    
+      - Calotropis procera
+      - ' this study).'
+  - type: Paragraph
+    content:
+      - |2-
+         Prosopis cineraria.csv (location of 
+                                    
+      - Prosopis cineraria
+      - ' in this study).'
+  - type: Paragraph
+    content:
+      - |2-
+         Ziziphus  spinachristi.csv  (location  of  
+                                    
+      - Ziziphus spinachristi
+      - ' in this study).'
+  - type: Paragraph
+    content:
+      - |-
+        Data are available under the terms of the 
+                            
+      - Creative Commons Attribution 4.0 International license
+      - ' (CC-BY 4.0).'
+citations:
+  - type: CreativeWork
+    title: Impacts of climate change on the future of biodiversity.
+    datePublished: '2012'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Lett.
+    authors:
+      - type: Person
+        givenNames:
+          - C
+        familyNames:
+          - Bellard
+      - type: Person
+        givenNames:
+          - C
+        familyNames:
+          - Bertelsmeier
+      - type: Person
+        givenNames:
+          - P
+        familyNames:
+          - Leadley
+  - type: CreativeWork
+    title: >-
+      Reframing ecosystem management in the era of climate change: issues and
+      knowledge from forests.
+    datePublished: '2013'
+    isPartOf:
+      type: CreativeWork
+      name: Biol Conserv.
+    authors:
+      - type: Person
+        givenNames:
+          - AS
+        familyNames:
+          - Mori
+      - type: Person
+        givenNames:
+          - TA
+        familyNames:
+          - Spies
+      - type: Person
+        givenNames:
+          - K
+        familyNames:
+          - Sudmeier-Rieux
+  - type: CreativeWork
+    title: >-
+      Prediction of climate warming impacts on plant species could be more
+      complex than expected. evidence from a case study in the himalaya.
+    datePublished: '2014'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Complex.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Ferrarini
+      - type: Person
+        givenNames:
+          - G
+        familyNames:
+          - Rossi
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Mondoni
+  - type: CreativeWork
+    title: >-
+      Mapping of climate change threats and human development impacts in the
+      arab region. undp arab development report–research paper series, undp
+      regiona bureau for the arab states
+    datePublished: '2010'
+    authors:
+      - type: Person
+        givenNames:
+          - BO
+        familyNames:
+          - Elasha
+  - type: CreativeWork
+    title: >-
+      Climate Change and Drylands International Institute for Environmental
+      Development- Commission on Climate Change and Development
+    datePublished: '2008'
+  - type: CreativeWork
+    title: >-
+      Relationships between landforms, soil characteristics and dominant
+      xerophytes in the hyper-arid northern united arab emirates.
+    datePublished: '2015'
+    isPartOf:
+      type: CreativeWork
+      name: J Arid Environ.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - El-Keblawy
+      - type: Person
+        givenNames:
+          - MA
+        familyNames:
+          - Abdelfattah
+      - type: Person
+        givenNames:
+          - AHA
+        familyNames:
+          - Khedr
+  - type: CreativeWork
+    title: >-
+      Early Growth Stages of the Rare Acridocarpus orientalis in the UAE-A First
+      Step towards Conservation.
+    datePublished: '2012'
+    isPartOf:
+      type: CreativeWork
+      name: Nat Resour.
+    authors:
+      - type: Person
+        givenNames:
+          - T
+        familyNames:
+          - Ksiksi
+      - type: Person
+        givenNames:
+          - C
+        familyNames:
+          - Guenaoui
+      - type: Person
+        givenNames:
+          - 'N'
+        familyNames:
+          - Fawzi
+  - type: CreativeWork
+    title: The physical science basis
+    datePublished: '2007'
+  - type: CreativeWork
+    title: Climate change scenarios for the united kingdom scientific report 1998
+    datePublished: '1998'
+    authors:
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Hulme
+      - type: Person
+        givenNames:
+          - G
+        familyNames:
+          - Jenkins
+  - type: CreativeWork
+    title: >-
+      Species: a spatial evaluation of climate impact on the envelope of
+      species.
+    datePublished: '2002'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Model.
+    authors:
+      - type: Person
+        givenNames:
+          - RG
+        familyNames:
+          - Pearson
+      - type: Person
+        givenNames:
+          - TP
+        familyNames:
+          - Dawson
+      - type: Person
+        givenNames:
+          - PM
+        familyNames:
+          - Berry
+  - type: CreativeWork
+    title: Ensemble forecasting of species distributions.
+    datePublished: '2007'
+    isPartOf:
+      type: CreativeWork
+      name: Trends Ecol Evol.
+    authors:
+      - type: Person
+        givenNames:
+          - MB
+        familyNames:
+          - Araújo
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - New
+  - type: CreativeWork
+    title: >-
+      Maxent modeling for predicting the potential distribution of endangered
+      medicinal plant (
+                              h. riparia lour) in yunnan, China.
+    datePublished: '2016'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Eng.
+    authors:
+      - type: Person
+        givenNames:
+          - YJ
+        familyNames:
+          - Yi
+      - type: Person
+        givenNames:
+          - X
+        familyNames:
+          - Cheng
+      - type: Person
+        givenNames:
+          - ZF
+        familyNames:
+          - Yang
+  - type: CreativeWork
+    title: |-
+      Climatic-induced shifts in the distribution of teak (
+                              tectona grandis) in tropical asia: implications for forest management and planning.
+    datePublished: '2017'
+    isPartOf:
+      type: CreativeWork
+      name: Environ Manage.
+    authors:
+      - type: Person
+        givenNames:
+          - JC
+        familyNames:
+          - Deb
+      - type: Person
+        givenNames:
+          - S
+        familyNames:
+          - Phinn
+      - type: Person
+        givenNames:
+          - 'N'
+        familyNames:
+          - Butt
+  - type: CreativeWork
+    title: >-
+      Competitive interactions between tree species in new zealand’s old-growth
+      indigenous forests.
+    datePublished: '2001'
+    isPartOf:
+      type: CreativeWork
+      name: Ecology.
+    authors:
+      - type: Person
+        givenNames:
+          - J
+        familyNames:
+          - Leathwick
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Austin
+  - type: CreativeWork
+    title: >-
+      Avoiding pitfalls of using species distribution models in conservation
+      planning.
+    datePublished: '2003'
+    isPartOf:
+      type: CreativeWork
+      name: Conserv Biol.
+    authors:
+      - type: Person
+        givenNames:
+          - BA
+        familyNames:
+          - Loiselle
+      - type: Person
+        givenNames:
+          - CA
+        familyNames:
+          - Howell
+      - type: Person
+        givenNames:
+          - CH
+        familyNames:
+          - Graham
+  - type: CreativeWork
+    title: Making better biogeographical predictions of species’ distributions.
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: J Appl Ecol.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Guisan
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Lehmann
+      - type: Person
+        givenNames:
+          - S
+        familyNames:
+          - Ferrier
+  - type: CreativeWork
+    title: >-
+      Predicting species distributions from small numbers of occurrence records:
+      a test case using cryptic geckos in madagascar.
+    datePublished: '2007'
+    isPartOf:
+      type: CreativeWork
+      name: J Biogeogr.
+    authors:
+      - type: Person
+        givenNames:
+          - RG
+        familyNames:
+          - Pearson
+      - type: Person
+        givenNames:
+          - CJ
+        familyNames:
+          - Raxworthy
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Nakamura
+  - type: CreativeWork
+    title: >-
+      Climatic niche models and their consensus projections for future climates
+      for four major forest tree species in the Asia–Pacific region.
+    datePublished: '2016'
+    isPartOf:
+      type: CreativeWork
+      name: Forest Ecol Manag.
+    authors:
+      - type: Person
+        givenNames:
+          - T
+        familyNames:
+          - Wang
+      - type: Person
+        givenNames:
+          - G
+        familyNames:
+          - Wang
+      - type: Person
+        givenNames:
+          - J
+        familyNames:
+          - Innes
+  - type: CreativeWork
+    title: |-
+      Predicting the impacts of climate change on the distribution of 
+                              juniperus excelsa m. bieb. in the central and eastern alborz mountains, iran.
+    datePublished: '2018'
+    isPartOf:
+      type: CreativeWork
+      name: IForest.
+    authors:
+      - type: Person
+        givenNames:
+          - SS
+        familyNames:
+          - Fatemi
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Rahimi
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Tarkesh
+  - type: CreativeWork
+    title: >-
+      Tradeoffs of different types of species occurrence data for use in
+      systematic conservation planning.
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Lett.
+    authors:
+      - type: Person
+        givenNames:
+          - C
+        familyNames:
+          - Rondinini
+      - type: Person
+        givenNames:
+          - KA
+        familyNames:
+          - Wilson
+      - type: Person
+        givenNames:
+          - L
+        familyNames:
+          - Boitani
+  - type: CreativeWork
+    title: Predicting species distributions for conservation decisions.
+    datePublished: '2013'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Lett.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Guisan
+      - type: Person
+        givenNames:
+          - R
+        familyNames:
+          - Tingley
+      - type: Person
+        givenNames:
+          - JB
+        familyNames:
+          - Baumgartner
+  - type: CreativeWork
+    title: Maximum entropy modeling of species geographic distributions.
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Model.
+    authors:
+      - type: Person
+        givenNames:
+          - SJ
+        familyNames:
+          - Phillips
+      - type: Person
+        givenNames:
+          - RP
+        familyNames:
+          - Anderson
+      - type: Person
+        givenNames:
+          - RE
+        familyNames:
+          - Schapire
+  - type: CreativeWork
+    title: >-
+      The effect of sample size and species characteristics on performance of
+      different species distribution modeling methods.
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: Ecography.
+    authors:
+      - type: Person
+        givenNames:
+          - PA
+        familyNames:
+          - Hernandez
+      - type: Person
+        givenNames:
+          - CH
+        familyNames:
+          - Graham
+      - type: Person
+        givenNames:
+          - LL
+        familyNames:
+          - Master
+  - type: CreativeWork
+    title: 'Raxworthy cj, nakamura m, townsend peterson a.'
+    datePublished: '2007'
+    isPartOf:
+      type: CreativeWork
+      name: Madagascar J Biogeogr.
+    authors:
+      - type: Person
+        givenNames:
+          - RG
+        familyNames:
+          - Pearson
+  - type: CreativeWork
+    title: Maximum entropy modeling of species geographic distributions.
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Model.
+    authors:
+      - type: Person
+        givenNames:
+          - SJ
+        familyNames:
+          - Phillips
+      - type: Person
+        givenNames:
+          - RP
+        familyNames:
+          - Anderson
+      - type: Person
+        givenNames:
+          - RE
+        familyNames:
+          - Schapire
+  - type: CreativeWork
+    title: Calotropis procera (ushaar) keratitis.
+    datePublished: '2005'
+    isPartOf:
+      type: CreativeWork
+      name: Am J Ophthalmol.
+    authors:
+      - type: Person
+        givenNames:
+          - HS
+        familyNames:
+          - Al-Mezaine
+      - type: Person
+        givenNames:
+          - AA
+        familyNames:
+          - Al-Rajhi
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Al-Assiri
+  - type: CreativeWork
+    title: Artificial forests as conservation sites for the native flora of the uae.
+    datePublished: '2005'
+    isPartOf:
+      type: CreativeWork
+      name: Forest Ecol Manag.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - El-Keblawy
+      - type: Person
+        givenNames:
+          - T
+        familyNames:
+          - Ksiksi
+  - type: CreativeWork
+    title: The worldclim interpolated global terrestrial climate surfaces
+    datePublished: '2004'
+    authors:
+      - type: Person
+        givenNames:
+          - RJ
+        familyNames:
+          - Hijmans
+      - type: Person
+        givenNames:
+          - SE
+        familyNames:
+          - Cameron
+      - type: Person
+        givenNames:
+          - JL
+        familyNames:
+          - Parra
+  - type: CreativeWork
+    title: Arcgis 10.1
+    datePublished: '2012'
+  - type: CreativeWork
+    title: 'Rcp 4.5: a pathway for stabilization of radiative forcing by 2100.'
+    datePublished: '2011'
+    isPartOf:
+      type: CreativeWork
+      name: Clim Change.
+    authors:
+      - type: Person
+        givenNames:
+          - AM
+        familyNames:
+          - Thomson
+      - type: Person
+        givenNames:
+          - KV
+        familyNames:
+          - Calvin
+      - type: Person
+        givenNames:
+          - SJ
+        familyNames:
+          - Smith
+  - type: CreativeWork
+    title: Very high resolution interpolated climate surfaces for global land areas.
+    datePublished: '2005'
+    isPartOf:
+      type: CreativeWork
+      name: Int J Climatol.
+    authors:
+      - type: Person
+        givenNames:
+          - RJ
+        familyNames:
+          - Hijmans
+      - type: Person
+        givenNames:
+          - SE
+        familyNames:
+          - Cameron
+      - type: Person
+        givenNames:
+          - JL
+        familyNames:
+          - Parra
+  - type: CreativeWork
+    title: >-
+      Novel methods improve prediction of species’ distributions from occurrence
+      data.
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: Ecography.
+    authors:
+      - type: Person
+        givenNames:
+          - R
+        familyNames:
+          - Anderson
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Dudík
+      - type: Person
+        givenNames:
+          - S
+        familyNames:
+          - Ferrier
+  - type: CreativeWork
+    title: >-
+      Locating pleistocene refugia: comparing phylogeographic and ecological
+      niche model predictions.
+    datePublished: '2007'
+    isPartOf:
+      type: CreativeWork
+      name: PLoS One.
+    authors:
+      - type: Person
+        givenNames:
+          - E
+        familyNames:
+          - Waltari
+      - type: Person
+        givenNames:
+          - RJ
+        familyNames:
+          - Hijmans
+      - type: Person
+        givenNames:
+          - AT
+        familyNames:
+          - Peterson
+  - type: CreativeWork
+    title: >-
+      Maxent modeling for predicting suitable habitat for threatened and
+      endangered tree 
+                              canacomyrica monticola in new caledonia.
+    datePublished: '2009'
+    isPartOf:
+      type: CreativeWork
+      name: J Ecol Nat Environ.
+    authors:
+      - type: Person
+        givenNames:
+          - S
+        familyNames:
+          - Kumar
+      - type: Person
+        givenNames:
+          - TJ
+        familyNames:
+          - Stohlgren
+  - type: CreativeWork
+    title: >-
+      Botanical richness and endemicity patterns of borneo derived from species
+      distribution models.
+    datePublished: '2009'
+    isPartOf:
+      type: CreativeWork
+      name: Ecography.
+    authors:
+      - type: Person
+        givenNames:
+          - 'N'
+        familyNames:
+          - Raes
+      - type: Person
+        givenNames:
+          - MC
+        familyNames:
+          - Roos
+      - type: Person
+        givenNames:
+          - JW
+        familyNames:
+          - Slik
+  - type: CreativeWork
+    title: >-
+      Ecology driving genetic variation: a comparative phylogeography of jungle
+      cat (
+                              Felis chaus) and leopard cat (
+                              Prionailurus bengalensis) in India.
+    datePublished: '2010'
+    isPartOf:
+      type: CreativeWork
+      name: PLoS One.
+    authors:
+      - type: Person
+        givenNames:
+          - S
+        familyNames:
+          - Mukherjee
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Krishnan
+      - type: Person
+        givenNames:
+          - K
+        familyNames:
+          - Tamma
+  - type: CreativeWork
+    title: A statistical explanation of maxent for ecologists.
+    datePublished: '2011'
+    isPartOf:
+      type: CreativeWork
+      name: Divers Distrib.
+    authors:
+      - type: Person
+        givenNames:
+          - J
+        familyNames:
+          - Elith
+      - type: Person
+        givenNames:
+          - SJ
+        familyNames:
+          - Phillips
+      - type: Person
+        givenNames:
+          - T
+        familyNames:
+          - Hastie
+  - type: CreativeWork
+    title: >-
+      Species-specific tuning increases robustness to sampling bias in models of
+      species distributions: an implementation with maxent.
+    datePublished: '2011'
+    isPartOf:
+      type: CreativeWork
+      name: Ecol Model.
+    authors:
+      - type: Person
+        givenNames:
+          - RP
+        familyNames:
+          - Anderson
+      - type: Person
+        givenNames:
+          - I
+        familyNames:
+          - Gonzalez
+        honorificSuffix: Jr
+  - type: CreativeWork
+    title: >-
+      Assessing the accuracy of species distribution models: prevalence, kappa
+      and the true skill statistic (tss).
+    datePublished: '2006'
+    isPartOf:
+      type: CreativeWork
+      name: J Appl Ecol.
+    authors:
+      - type: Person
+        givenNames:
+          - O
+        familyNames:
+          - Allouche
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Tsoar
+      - type: Person
+        givenNames:
+          - R
+        familyNames:
+          - Kadmon
+  - type: CreativeWork
+    title: >-
+      Predicting impacts of climate change on medicinal asclepiads of pakistan
+      using maxent modeling.
+    datePublished: '2013'
+    isPartOf:
+      type: CreativeWork
+      name: Acta Oecol.
+    authors:
+      - type: Person
+        givenNames:
+          - R
+        familyNames:
+          - Khanum
+      - type: Person
+        givenNames:
+          - AS
+        familyNames:
+          - Mumtaz
+      - type: Person
+        givenNames:
+          - S
+        familyNames:
+          - Kumar
+  - type: CreativeWork
+    title: Sure2018.zip
+    datePublished: '2019'
+    authors:
+      - type: Person
+        givenNames:
+          - T
+        familyNames:
+          - Ksiksi
+  - type: CreativeWork
+    title: >-
+      Metabolomic response of Calotropis procera growing in the desert to
+      changes in water availability.
+    datePublished: '2014'
+    isPartOf:
+      type: CreativeWork
+      name: PLoS One.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - Ramadan
+      - type: Person
+        givenNames:
+          - JS
+        familyNames:
+          - Sabir
+      - type: Person
+        givenNames:
+          - SY
+        familyNames:
+          - Alakilli
+  - type: CreativeWork
+    title: |-
+      Ecophysiological performance of 
+                              calotropis procera: an exotic and evergreen species in caatinga, brazilian semi-arid.
+    datePublished: '2013'
+    isPartOf:
+      type: CreativeWork
+      name: Acta Physiol Plant.
+    authors:
+      - type: Person
+        givenNames:
+          - G
+        familyNames:
+          - Frosi
+      - type: Person
+        givenNames:
+          - M
+        familyNames:
+          - Teixeira
+          - Oliveira
+      - type: Person
+        givenNames:
+          - J
+        familyNames:
+          - Almeida-Cortez
+  - type: CreativeWork
+    title: >-
+      Managing rangelands: promoting sustainable tree species "prosopis
+      cineraria": A wonder tree for agroforestry in arid and semi-arid areas"
+    datePublished: '2016'
+    authors:
+      - type: Person
+        givenNames:
+          - RN
+        familyNames:
+          - Kumawat
+  - type: CreativeWork
+    title: State of Environment Report of the United Arab Emirates 2015
+    datePublished: '2015'
+  - type: CreativeWork
+    title: >-
+      Camel grazing affects species diversity and community structure in the
+      deserts of the UAE.
+    datePublished: '2009'
+    isPartOf:
+      type: CreativeWork
+      name: J Arid Environ.
+    authors:
+      - type: Person
+        givenNames:
+          - A
+        familyNames:
+          - El-Keblawy
+      - type: Person
+        givenNames:
+          - T
+        familyNames:
+          - Ksiksi
+      - type: Person
+        givenNames:
+          - H
+        familyNames:
+          - El
+          - Alqamy
+  - type: CreativeWork
+    title: National Climate Change Plan of the United Arab Emirates 2017-2050
+    datePublished: '2017'

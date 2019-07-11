@@ -7,26 +7,7 @@ import { Encode } from '../..'
 import * as pandoc from '../pandoc'
 import * as vfile from '../../util/vfile'
 
-/**
- * Media types for this codec.
- *
- * There is currently no registered
- * [media type](https://www.iana.org/assignments/media-types/media-types.xhtml)
- * for JATS.
- *
- * This custom type uses the [convention](https://en.wikipedia.org/wiki/XML_and_MIME)
- * of using `application/` and the `+xml` suffix to differentiate this format from other
- * XML-based formats.
- */
-export const mediaTypes = ['application/jats+xml']
-
-/**
- * Extension names for this codec.
- */
-export const extNames = ['jats']
-
-// TODO: add a `sniff` function that check is a XML files
-// and uses regex (for speed) for look for  JATs declaration
+export const mediaTypes = []
 
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   return pandoc.decode(file, pandoc.InputFormat.jats)
