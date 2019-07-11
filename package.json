@@ -83,7 +83,7 @@
     "xlsx": "^0.14.2"
   },
   "devDependencies": {
-    "@stencila/dev-config": "^1.1.1-alpha.5",
+    "@stencila/dev-config": "^1.1.1",
     "@types/async-lock": "^1.1.1",
     "@types/content-type": "^1.1.3",
     "@types/escape-html": "0.0.20",
@@ -135,28 +135,7 @@
     }
   },
   "eslintConfig": {
-    "extends": "@stencila/eslint-config",
-    "rules": {
-      "@typescript-eslint/explicit-function-return-type": [
-        "warn",
-        {
-          "allowExpressions": true
-        }
-      ],
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        {
-          "ignoreRestSiblings": true
-        }
-      ],
-      "@typescript-eslint/no-use-before-define": [
-        "error",
-        {
-          "functions": false,
-          "variables": false
-        }
-      ]
-    }
+    "extends": "@stencila/eslint-config"
   },
   "eslintIgnore": [
     "**/__fixtures__/*",
