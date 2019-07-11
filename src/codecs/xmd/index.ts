@@ -24,12 +24,12 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   // The negative look behind at the start prevents matching block code chunks
   let cmd = xmd.replace(
     /(?<!``)`(r|py|python)\s+([^`]*)`/g,
-    (match, lang, text) => `\`${text}\`{type=expr lang=${lang}}`
+    (match, lang, text): string => `\`${text}\`{type=expr lang=${lang}}`
   )
   // Block code chunks are replaced with a `chunk` block extension
   cmd = cmd.replace(
     /```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
-    (match, lang, options, text) => {
+    (match, lang: string, options: string, text: string): string => {
       let md = 'chunk:\n:::\n``` ' + lang
       if (options) md += ` ${options}`
       return md + '\n' + text + '\n```\n:::\n'
@@ -58,10 +58,14 @@ export const encode: Encode = async (
   // TODO: Check parsing of options. Comma separated?
   const xmd = cmd.replace(
     /```\s*(\w+[^\n]*)/g,
-    (match, options) => `\`\`\` {${options}}`
+    (match, options: string): string => `\`\`\` {${options}}`
   )
   return vfile.load(xmd)
 
+  // TODO: Transforming a node tree by walking it like this is
+  // a commonly used pattern and should be factored out into it\
+  // a separate function with better type handling
+  // eslint-disable-next-line
   function transform(node: any): stencila.Node {
     if (node === null || typeof node !== 'object') return node
     if (node.type === 'CodeExpr') {

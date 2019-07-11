@@ -142,7 +142,7 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
             '\n    '
           )}\n`
         )
-        reject()
+        reject(new Error(stderr))
       } else {
         logger.debug(`Pandoc success.`)
         resolve(stdout)
@@ -443,7 +443,7 @@ function encodeHeading(node: stencila.Heading): Pandoc.Header {
  */
 function decodePara(node: Pandoc.Para): stencila.BlockContent {
   const content = decodeInlines(node.c)
-  if (content.length == 1) {
+  if (content.length === 1) {
     const node = content[0]
     // TODO: fix this dangerous type casting
     if (type(node) === 'CodeChunk') {

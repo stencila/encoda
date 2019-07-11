@@ -143,7 +143,7 @@ const cellMapToRowMap = (cells: CellMap): RowMap =>
         [num]: {
           ...(rowMap[num] || {}),
           [alpha]: {
-            name: alpha + num,
+            name: alpha + num.toString(),
             ...xlsxCelltoStencilaCell(cell)
           }
         }

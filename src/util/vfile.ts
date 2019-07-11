@@ -21,7 +21,7 @@ export type VFile = vfile.VFile
  */
 export function create(
   contents?: string,
-  options: { [key: string]: any } = {}
+  options: vfile.VFileOptions = {}
 ): VFile {
   if (contents) {
     if (isPath(contents)) options = { ...options, path: contents }
@@ -47,13 +47,17 @@ export function load(contents: VFileContents): VFile {
  *
  * @param file The virtual file to dump
  */
-export async function dump(vfile: VFile, mode?: 'string'): Promise<string>
+// Not supported by eslint, worksaround doesn't work
+// See https://github.com/benmosher/eslint-plugin-import/issues/1357
+// eslint-disable-next-line
+export async function dump (vfile: VFile, mode?: 'string'): Promise<string>
+// eslint-disable-next-line
 export async function dump(vfile: VFile, mode?: 'buffer'): Promise<Buffer>
+// eslint-disable-next-line
 export async function dump(
   vfile: VFile,
-  mode?: 'string' | 'buffer'
+  mode: 'string' | 'buffer' = 'string'
 ): Promise<string | Buffer> {
-  mode = mode || 'string'
   if (vfile.contents) {
     if (mode === 'string') return vfile.toString()
     else
@@ -65,7 +69,7 @@ export async function dump(
     const readFile = await toVFile.read(vfile.path)
     return mode === 'string' ? readFile.toString() : readFile.contents
   }
-  return mode === 'string' ? '' : new Buffer(0)
+  return mode === 'string' ? '' : Buffer.alloc(0)
 }
 
 /**
@@ -128,7 +132,7 @@ export async function write(vfile: VFile, path: string): Promise<void> {
  *
  * @param content The string to assess.
  */
-export function isPath(content: string, isOutput: boolean = false): boolean {
+export function isPath(content: string): boolean {
   if (/^(\/)|(\\)|([A-Z]:\\)|(\.(\/|\\))|(\.\.(\/|\\))/.test(content)) {
     return true
   }

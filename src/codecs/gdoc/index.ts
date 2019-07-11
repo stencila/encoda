@@ -2,6 +2,9 @@
  * @module gdoc
  */
 
+// TODO: Remove use of non-null-assertions
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import crypto from 'crypto'
@@ -73,9 +76,9 @@ let decodingFetcher: (url: string) => string
  * Fetches a remote file to a local file
  */
 class FetchToFile {
-  requests: Promise<void>[] = []
+  private requests: Promise<void>[] = []
 
-  get(url: string, ext: string = ''): string {
+  public get(url: string, ext: string = ''): string {
     const filePath =
       crypto
         .createHash('md5')
@@ -85,7 +88,7 @@ class FetchToFile {
     return filePath
   }
 
-  async resolve(): Promise<void[]> {
+  public async resolve(): Promise<void[]> {
     return Promise.all(this.requests)
   }
 }
@@ -94,10 +97,10 @@ class FetchToFile {
  * A dummy fetcher, used in testing.
  */
 class FetchToSame {
-  get(url: string): string {
+  public get(url: string): string {
     return url
   }
-  async resolve(): Promise<void> {}
+  public async resolve(): Promise<void> {}
 }
 
 /**

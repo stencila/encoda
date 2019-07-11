@@ -413,7 +413,7 @@ function decodeHeading(
  */
 function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
   const content = heading.content.map(encodeNode)
-  const text = content.reduce((prev, curr) => prev + curr.textContent, '')
+  const text = content.reduce((prev, curr) => `${prev}${curr.textContent}`, '')
   const id = slugger.slug(text)
   return h(`h${heading.depth}`, { id }, content)
 }

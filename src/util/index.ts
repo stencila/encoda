@@ -2,6 +2,13 @@
  * @module util
  */
 
+// TODO: This file uses any a lot. Needs a refactor and re-enable linting
+/* eslint-disable
+      @typescript-eslint/no-explicit-any,
+      @typescript-eslint/explicit-function-return-type,
+      @typescript-eslint/no-use-before-define
+*/
+
 import * as stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
@@ -180,14 +187,14 @@ const decoderValidate: Ajv.SchemaValidateFunction = (
   parentSchema?: object,
   dataPath?: string,
   parentData?: object | any[],
-  parentDataProperty?: string | number,
-  rootData?: object | any[]
+  parentDataProperty?: string | number
+  // rootData?: object | any[]
 ): boolean => {
   function raise(msg: string) {
     decoderValidate.errors = [
       {
         keyword: 'parser',
-        dataPath: '' + dataPath,
+        dataPath: dataPath || '',
         schemaPath: '',
         params: {
           keyword: 'parser'

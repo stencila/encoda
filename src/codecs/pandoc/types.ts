@@ -66,6 +66,8 @@ export type MetaValue =
 interface DictMetaValue {
   [key: string]: MetaValue
 }
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ArrayMetaValue extends Array<MetaValue> {}
 
 export type MetaMap = Element<'MetaMap', DictMetaValue>

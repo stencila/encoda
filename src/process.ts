@@ -124,15 +124,15 @@ export default async function process(
 
   return handle(node)
 
-  function _import(id: string, node: stencila.Node) {
+  function _import(id: string, node: stencila.Node): void {
     nodes[id] = node
   }
 
-  function _equals(id: string, node: stencila.Node) {
+  function _equals(id: string, node: stencila.Node): void {
     assert.deepStrictEqual(node, _get(id))
   }
 
-  function _get(id: string) {
+  function _get(id: string): stencila.Node {
     const node = nodes[id]
     if (typeof node === 'undefined') {
       throw Error(`Error: could not find "${id}"`)
@@ -140,28 +140,38 @@ export default async function process(
     return node
   }
 
-  async function _load(content: string, format: string) {
+  async function _load(
+    content: string,
+    format: string
+  ): Promise<stencila.Node> {
     try {
       const node = await load(content, format)
-      validate(node, type(node))
+      await validate(node, type(node))
       return node
     } catch (error) {
       throw Error(`Error: loading "${content}": ${error} `)
     }
   }
 
-  async function _read(target: string, format?: string) {
+  async function _read(
+    target: string,
+    format?: string
+  ): Promise<stencila.Node> {
     try {
       const targetPath = './' + path.join(dir, target)
       const node = await read(targetPath, format)
-      validate(node, type(node))
+      await validate(node, type(node))
       return node
     } catch (error) {
       throw Error(`Error: reading "${target}": ${error} `)
     }
   }
 
-  async function _write(node: stencila.Node, target: string, format?: string) {
+  async function _write(
+    node: stencila.Node,
+    target: string,
+    format?: string
+  ): Promise<void> {
     try {
       const targetPath = './' + path.join(dir, target)
       await write(node, targetPath, { format })

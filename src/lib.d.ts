@@ -1,3 +1,5 @@
+/* eslint-disable import/export */
+
 declare module 'png-chunks-extract' {
   export interface Chunk {
     name: string

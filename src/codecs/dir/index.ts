@@ -228,7 +228,7 @@ export const encode: Encode<DirEncodeOptions> = async (
 
   // Ensure all the necessary directories are made
   // TODO: this could be optimized to avoid lots of ensureDir calls
-  for (const { route, node } of parts) {
+  for (const { route } of parts) {
     const partPath = path.join(dirPath, ...route.slice(1, -1))
     await fs.ensureDir(partPath)
   }
@@ -258,7 +258,7 @@ export const encode: Encode<DirEncodeOptions> = async (
         '.' +
         format
       const filePath = path.join(dirPath, ...route.slice(1, -1), fileName)
-      return await write(node, filePath, options)
+      return write(node, filePath, options)
     })
   )
 

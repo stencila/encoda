@@ -74,7 +74,6 @@ describe('create', () => {
 })
 
 test('type', () => {
-  expect(type(undefined)).toBe('undefined')
   expect(type(null)).toBe('null')
   expect(type(true)).toBe('boolean')
   expect(type(0)).toBe('number')
@@ -86,7 +85,6 @@ test('type', () => {
 })
 
 test('is', () => {
-  expect(is(undefined, 'undefined')).toEqual(true)
   expect(is(null, 'null')).toEqual(true)
   expect(is(true, 'boolean')).toEqual(true)
   expect(is(0, 'number')).toEqual(true)

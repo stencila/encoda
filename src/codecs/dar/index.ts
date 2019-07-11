@@ -59,9 +59,10 @@ const MEDIA_TYPES_SYNCED = ['text/csv']
  * @param file The `VFile` to decode
  * @returns A promise that resolves to a Stencila `Node`
  */
-export async function decode(
-  file: vfile.VFile
-): Promise<stencila.Article | stencila.Collection> {
+export async function decode(): Promise<
+  // file: vfile.VFile
+  stencila.Article | stencila.Collection
+> {
   throw new Error('TODO: Not yet implemented')
 }
 

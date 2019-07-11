@@ -20,17 +20,20 @@ var lock = new AsyncLock()
  * singleton browser instance.
  */
 export async function startup(): Promise<puppeteer.Browser> {
-  return lock.acquire('browser', async () => {
-    if (typeof browser === 'undefined') {
-      logger.debug('Launching new browser')
-      browser = await puppeteer.launch({
-        executablePath: chromiumPath,
-        headless: true
-      })
-      logger.debug(`Browser launched. pid: ${browser.process().pid}`)
+  return lock.acquire(
+    'browser',
+    async (): Promise<puppeteer.Browser> => {
+      if (typeof browser === 'undefined') {
+        logger.debug('Launching new browser')
+        browser = await puppeteer.launch({
+          executablePath: chromiumPath,
+          headless: true
+        })
+        logger.debug(`Browser launched. pid: ${browser.process().pid}`)
+      }
+      return browser
     }
-    return browser
-  })
+  )
 }
 
 /**
@@ -45,14 +48,17 @@ export async function page(): Promise<puppeteer.Page> {
  * Close the browser.
  */
 export async function shutdown(): Promise<void> {
-  await lock.acquire('browser', async () => {
-    if (browser) {
-      logger.debug(`Closing browser. pid: ${browser.process().pid}`)
-      await browser.close()
-      logger.debug('Browser closed')
-      browser = undefined
+  await lock.acquire(
+    'browser',
+    async (): Promise<void> => {
+      if (browser) {
+        logger.debug(`Closing browser. pid: ${browser.process().pid}`)
+        await browser.close()
+        logger.debug('Browser closed')
+        browser = undefined
+      }
     }
-  })
+  )
 }
 
 // Always shutdown before exiting the Node process
