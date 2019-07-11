@@ -393,11 +393,63 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
  * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
-  const { type, title, content, ...rest } = article
+  const { type, title, content, citations, ...rest } = article
   const titleEl = h('h1', title)
   titleEl.setAttribute('role', 'title')
   const elements = content ? content.map(encodeNode) : []
-  return h('article', titleEl, ...elements)
+  const references = citations ? encodeCitations(citations) : []
+  return h('article', titleEl, ...elements, references)
+}
+
+function encodeCitations(
+  citations: (string | stencila.CreativeWork)[]
+): HTMLElement {
+  return h('section', h('h1', 'References'), ...citations.map(encodeCitation))
+}
+
+function encodeCitation(citation: string | stencila.CreativeWork): HTMLElement {
+  return typeof citation === 'string'
+    ? h('div', citation)
+    : encodeCreativeWork(citation)
+}
+
+function encodeCreativeWork(work: stencila.CreativeWork): HTMLElement {
+  const elem = h(
+    'div',
+    {
+      itemscope: true,
+      itemtype: 'http://schema.org/CreativeWork',
+      itemprop: 'citation'
+    },
+    ...(work.authors || []).map(author =>
+      author.type === 'Person'
+        ? encodePerson(author)
+        : encodeOrganization(author)
+    ),
+    h('span', { itemprop: 'datePublished' }, work.datePublished),
+    h('span', { itemprop: 'title' }, work.title)
+  )
+  elem.setAttribute('itemtype', 'http://schema.org/CreativeWork')
+  return elem
+}
+
+function encodePerson(person: stencila.Person): HTMLElement {
+  const elem = h(
+    'span',
+    {
+      itemscope: true,
+      itemtype: 'http://schema.org/Person',
+      itemprop: 'author'
+    },
+    h('span', { itemprop: 'familyName' }, person.familyNames),
+    h('span', { itemprop: 'givenName' }, person.givenNames)
+  )
+  elem.setAttribute('itemtype', 'http://schema.org/Person')
+  return elem
+}
+
+function encodeOrganization(org: stencila.Organization): HTMLElement {
+  return h('div', org.name)
 }
 
 /**
