@@ -5,12 +5,14 @@
  *    - https://github.com/jupyter/nbformat/blob/master/nbformat/v3/nbformat.v3.schema.json
  *    - https://github.com/jupyter/nbformat/blob/master/nbformat/v4/nbformat.v4.schema.json
  *
- * To regenerate files:
+ * To regenerate files run the following in this directory:
  *
  * ```bash
  * node nbformat.js
  * ```
  */
+
+/* eslint-disable */
 
 const fs = require('fs-extra')
 const { compile } = require('json-schema-to-typescript')
@@ -20,7 +22,7 @@ const { compile } = require('json-schema-to-typescript')
     const source = `nbformat-${version}.schema.json`
     const schema = await fs.readJSON(source)
     let ts = await compile(schema, 'Notebook', {
-      bannerComment: `/* Generated from ${source}. Do not edit. See nbformat.js. */\n`,
+      bannerComment: `/* Generated from ${source}. Do not edit. See nbformat.js. */\n/* eslint-disable @typescript-eslint/no-explicit-any */\n`,
       style: { semi: false, singleQuote: true }
     })
     if (version === 'v3') {
