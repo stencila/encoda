@@ -27,7 +27,7 @@ export function elem(
       (attrs.type === 'element' || attrs.type === 'text'))
   const attributes = (notAttrs ? {} : attrs) as Attributes
   const elements = [...(attrs && notAttrs ? [attrs] : []), ...children]
-    .map(elem => (typeof elem === 'string' ? { type: 'text', elem } : elem))
+    .map(elem => (typeof elem === 'string' ? { type: 'text', text: elem } : elem))
     .reduce((prev: Element[], curr) => (curr ? [...prev, curr] : prev), [])
   return {
     type: 'element',
