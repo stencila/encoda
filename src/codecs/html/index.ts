@@ -141,7 +141,11 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'strong':
       return decodeMark(node as HTMLElement, 'Strong')
     case 'del':
-      return decodeMark(node as HTMLElement, 'Delete')
+      return decodeInlineElement(node as HTMLElement, 'Delete')
+    case 'sup':
+      return decodeInlineElement(node as HTMLElement, 'Superscript')
+    case 'sub':
+      return decodeInlineElement(node as HTMLElement, 'Subscript')
     case 'a':
       return decodeLink(node as HTMLAnchorElement)
     case 'q':
@@ -214,7 +218,11 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Strong':
       return encodeMark(node as stencila.Strong, 'strong')
     case 'Delete':
-      return encodeMark(node as stencila.Delete, 'del')
+      return encodeInlineThing<'Delete'>(node, 'del')
+    case 'Superscript':
+      return encodeInlineThing<'Superscript'>(node, 'sup')
+    case 'Subscript':
+      return encodeInlineThing<'Subscript'>(node, 'sub')
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Quote':
