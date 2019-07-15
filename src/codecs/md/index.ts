@@ -597,37 +597,23 @@ function encodeList(list: stencila.List): MDAST.List {
  * Encode a `MDAST.ListItem` to a `stencila.ListItem`
  */
 function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
-  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
-  // It should be removed once TypeDoc is updated
-  const enum type {
-    listItem = 'listItem'
-  }
-
-  const encoded = {
-    type: type.listItem,
+  const _listItem: MDAST.ListItem = {
+    type: 'listItem',
     children: listItem.content.map(encodeNode).filter(isMdastBlockContent)
   }
-
   return listItem.checked === true || listItem.checked === false
-    ? { ...encoded, checked: listItem.checked }
-    : encoded
+    ? { ..._listItem, checked: listItem.checked }
+    : _listItem
 }
 
 /**
  * Decode a `MDAST.List` to a `stencila.List`
  */
 function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
-  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
-  // It should be removed once TypeDoc is updated
-  const enum type {
-    ListItem = 'ListItem'
-  }
-
-  const _listItem = {
-    type: type.ListItem,
+  const _listItem: stencila.ListItem = {
+    type: 'ListItem',
     content: listItem.children.map(decodeNode).filter(isBlockContent)
   }
-
   return listItem.checked === true || listItem.checked === false
     ? { ..._listItem, checked: listItem.checked || false }
     : _listItem

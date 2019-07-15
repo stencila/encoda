@@ -220,8 +220,6 @@ export const encode: Encode<DirEncodeOptions> = async (
 
   // Trash directory if it already exists
   if (await fs.pathExists(dirPath)) {
-    // TODO: Required to keep TypeDoc happy. Try to remove when upgraded
-    // @ts-ignore
     await trash(dirPath)
     log.info(`Existing directory "${dirPath}" sent to trash`)
   }

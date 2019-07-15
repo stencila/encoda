@@ -518,21 +518,11 @@ function decodeList(
 ): stencila.List {
   const order = node.t === 'BulletList' ? 'unordered' : 'ascending'
   const blocks: Pandoc.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
-
-  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
-  // It should be removed once TypeDoc is updated
-  const enum ListType {
-    List = 'List'
-  }
-  const enum ListItemType {
-    ListItem = 'ListItem'
-  }
-
   return {
-    type: ListType.List,
+    type: 'List',
     order,
     items: blocks.map(block => ({
-      type: ListItemType.ListItem,
+      type: 'ListItem',
       content: decodeBlocks(block)
     }))
   }

@@ -163,14 +163,8 @@ const cellMapToRowMap = (cells: CellMap): RowMap =>
  * @returns {stencila.TableRow[]}
  */
 const rowMapToTableRows = (rowMap: RowMap): stencila.TableRow[] => {
-  // TODO: This is required to make TypeDoc happy, since it uses an older version of TypeScript.
-  // It should be removed once TypeDoc is updated
-  const enum types {
-    TABLE_ROW = 'TableRow'
-  }
-
   return Object.values(rowMap).map(row => ({
-    type: types.TABLE_ROW,
+    type: 'TableRow',
     cells: Object.values(row)
   }))
 }
