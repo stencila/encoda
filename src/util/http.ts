@@ -11,14 +11,13 @@ import got from 'got'
 import stream from 'stream'
 import util from 'util'
 import cache from './app/cache'
-import packg from '../../package.json'
 
 const pipeline = util.promisify(stream.pipeline)
 
 const http = got.extend({
   cache,
   headers: {
-    'user-agent': `encoda/${packg.version} (https://github.com/stencila/encoda)`,
+    'user-agent': `encoda (https://github.com/stencila/encoda)`,
     'accept-encoding': 'gzip, deflate'
   }
 })
