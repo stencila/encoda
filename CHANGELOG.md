@@ -1,3 +1,10 @@
+## [0.55.1](https://github.com/stencila/encoda/compare/v0.55.0...v0.55.1) (2019-07-17)
+
+
+### Bug Fixes
+
+* **Dependencies:** Move trash to prod dependencies ([90b77c0](https://github.com/stencila/encoda/commit/90b77c0))
+
 # [0.54.0](https://github.com/stencila/encoda/compare/v0.53.7...v0.54.0) (2019-07-09)
 
 
