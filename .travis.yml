@@ -7,6 +7,9 @@ os:
   - linux
   - osx
 
+before_script:
+  - node install
+
 script:
   # Temporarily disable dependency checking
   # - npm run check
