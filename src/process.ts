@@ -2,7 +2,7 @@ import stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
-import { validate } from './util/index'
+import { validate, coerce } from './util/index'
 import type from './util/type'
 import { isPath } from './util/vfile'
 
@@ -29,7 +29,10 @@ export default async function process(
       const meta = code.meta
       if (meta) {
         if ('validate' in meta) {
-          await _load(code.value, meta.from || code.language)
+          await _validate(code.value, meta.from || code.language)
+        }
+        if ('coerce' in meta) {
+          await _coerce(code.value, meta.from || code.language)
         }
         if (meta.id) {
           _import(meta.id, node)
@@ -37,7 +40,7 @@ export default async function process(
         if (meta.import) {
           _import(
             meta.import,
-            await _load(code.value, meta.from || code.language)
+            await _coerce(code.value, meta.from || code.language)
           )
         }
         if (meta.export) {
@@ -46,11 +49,11 @@ export default async function process(
         if (meta.equals) {
           _equals(
             meta.equals,
-            await _load(code.value, meta.from || meta.to || code.language)
+            await _coerce(code.value, meta.from || meta.to || code.language)
           )
         }
         if ('include' in meta) {
-          return _load(code.value, meta.from || code.language)
+          return _coerce(code.value, meta.from || code.language)
         }
       }
     }
@@ -141,7 +144,7 @@ export default async function process(
     return node
   }
 
-  async function _load(
+  async function _validate(
     content: string,
     format: string
   ): Promise<stencila.Node> {
@@ -154,6 +157,18 @@ export default async function process(
     }
   }
 
+  async function _coerce(
+    content: string,
+    format: string
+  ): Promise<stencila.Node> {
+    try {
+      let node = await load(content, format)
+      return await coerce(node)
+    } catch (error) {
+      throw Error(`Error: coercing "${content}": ${error} `)
+    }
+  }
+
   async function _read(
     target: string,
     format?: string
@@ -161,8 +176,7 @@ export default async function process(
     try {
       const targetPath = './' + path.join(dir, target)
       const node = await read(targetPath, format)
-      await validate(node, type(node))
-      return node
+      return await coerce(node)
     } catch (error) {
       throw Error(`Error: reading "${target}": ${error} `)
     }
