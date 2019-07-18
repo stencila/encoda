@@ -1,3 +1,15 @@
+# [0.59.0](https://github.com/stencila/encoda/compare/v0.58.0...v0.59.0) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Package:** Copy Pandoc templates to the correct place. ([a9f133d](https://github.com/stencila/encoda/commit/a9f133d))
+
+
+### Features
+
+* **Dependecies:** Upgrade @stencila/schema ([93e68cc](https://github.com/stencila/encoda/commit/93e68cc))
+
 # [0.58.0](https://github.com/stencila/encoda/compare/v0.57.0...v0.58.0) (2019-07-18)
 
 
