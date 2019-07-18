@@ -73,6 +73,7 @@ const GENERIC_EXTENSIONS = [
   'quote',
   'expr',
   'chunk',
+  'include',
 
   'null',
   'true',
@@ -190,9 +191,10 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       switch (ext.name) {
         case 'chunk':
           return decodeCodeChunk(ext)
-
         case 'quote':
           return decodeQuote(ext)
+        case 'include':
+          return decodeInclude(ext)
 
         case 'null':
           return decodeNull()
@@ -230,6 +232,9 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
   switch (type_) {
     case 'Article':
       return encodeArticle(node as stencila.Article)
+
+    case 'Include':
+      return encodeInclude(node as stencila.Include)
 
     case 'Heading':
       return encodeHeading(node as stencila.Heading)
@@ -385,6 +390,37 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
   }
 
   return root
+}
+
+/**
+ * Decode a `include:` block extension to a `stencila.Include`
+ */
+function decodeInclude(ext: Extension): stencila.Include {
+  const include: stencila.Include = {
+    type: 'Include'
+  }
+  if (ext.argument) {
+    include.source = ext.argument
+  }
+  if (ext.content) {
+    const article = decodeMarkdown(ext.content) as stencila.Article
+    include.content = article.content || []
+  }
+  return include
+}
+
+/**
+ * Encode a `stencila.Include` to a `include:` block extension
+ */
+function encodeInclude(include: stencila.Include): Extension {
+  const { source, content = [] } = include
+  const md = encodeMarkdown({ type: 'Article', content }).trim()
+  return {
+    type: 'block-extension',
+    name: 'include',
+    argument: source,
+    content: md
+  }
 }
 
 /**
@@ -1135,7 +1171,7 @@ function stringifyExtensions(tree: UNIST.Node) {
         if (node.properties) value += `{${props}}`
       } else {
         value = `${node.name}:`
-        if (node.argument) value += `${node.argument}`
+        if (node.argument) value += ` ${node.argument}`
         value += `\n:::\n${node.content || ''}\n:::`
         if (node.properties) value += `{${props}}`
       }

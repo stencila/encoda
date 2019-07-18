@@ -24,6 +24,16 @@ export default async function process(
   async function handle(node: any): Promise<stencila.Node> {
     if (node === null || typeof node !== 'object') return node
 
+    if (node.type === 'Include') {
+      const include = node as stencila.Include
+      if (include.source) {
+        // TODO: This assumes that the returned node is an CreativeWork
+        // Wrap / unwrap to `BlockContent[]` as needed
+        const work = await _read(include.source) as stencila.CreativeWork
+        include.content = work.content || []
+      }
+    }
+
     if (node.type === 'CodeBlock') {
       const code = node as stencila.CodeBlock
       const meta = code.meta
@@ -83,6 +93,7 @@ export default async function process(
       }
     }
 
+    /*
     if (node.type === 'Paragraph') {
       const para = node as stencila.Paragraph
       // Paragraphs that have a string which looks like a file path
@@ -97,6 +108,7 @@ export default async function process(
         }
       }
     }
+    */
 
     if (node.type === 'ImageObject') {
       const img = node as stencila.ImageObject

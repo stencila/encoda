@@ -182,6 +182,9 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Article':
       return encodeArticle(node as stencila.Article)
 
+    case 'Include':
+      return encodeInclude(node as stencila.Include)
+
     case 'Heading':
       return encodeHeading(node as stencila.Heading)
     case 'Paragraph':
@@ -396,6 +399,20 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   titleEl.setAttribute('role', 'title')
   const elements = content ? content.map(encodeNode) : []
   return h('article', titleEl, ...elements)
+}
+
+/**
+ * Encode a Stencila `Include` node to a Microdata `div[itemtype]` element.
+ * 
+ * TODO: This is an initial implementation and it is probably better to generalize
+ * it into a default encoding function to replace `encodeThing`.
+ */
+function encodeInclude(include: stencila.Include): HTMLElement {
+  const content = h('div', include.content.map(encodeNode))
+  content.setAttribute('itemprop', 'content')
+  const elem = h(`div`, content)
+  elem.setAttribute('itemtype', `https://stencila.github.io/schema/${type(include)}`)
+  return elem
 }
 
 /**
