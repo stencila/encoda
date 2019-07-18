@@ -344,7 +344,9 @@ export const inlineContentTypes: { [key in InlineNodesWithType]: key } = {
   ImageObject: 'ImageObject',
   Link: 'Link',
   Quote: 'Quote',
-  Strong: 'Strong'
+  Strong: 'Strong',
+  Subscript: 'Subscript',
+  Superscript: 'Superscript'
 }
 
 // null | boolean | string | number
