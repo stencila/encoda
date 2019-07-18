@@ -49,7 +49,7 @@ export async function decode(
   return decodeDocument(pdoc)
 }
 
-interface PandocOptions {
+interface PandocEncodeOptions {
   flags?: string[]
   ensureFile?: boolean
 }
@@ -62,13 +62,13 @@ interface PandocOptions {
  * @param ensureFile Ensure that the output is a real file (ie. not stdout?)
  * @returns A promise that resolves to a `VFile`
  */
-export const encode: Encode<PandocOptions> = async (
+export const encode: Encode<PandocEncodeOptions> = async (
   node: stencila.Node,
   {
     filePath,
     format = Pandoc.OutputFormat.json,
     codecOptions = { flags: [], ensureFile: false }
-  }: EncodeOptions<PandocOptions> = {}
+  }: EncodeOptions<PandocEncodeOptions> = {}
 ): Promise<vfile.VFile> => {
   encodePromises = []
   const { standalone, pdoc } = encodeNode(node)
@@ -100,7 +100,16 @@ export const encode: Encode<PandocOptions> = async (
 
   // If content was outputted, then load that into a vfile,
   // otherwise the vfile simply has path to the file created
-  if (content) return vfile.load(content)
+  if (content) {
+    if (format === 'pandoc') {
+      // Prettify Pandoc JSON since if that is the desired output format
+      // it is usually for human inspection.
+      const pretty = JSON.stringify(JSON.parse(content), null, 2)
+      return vfile.load(pretty)
+    } else {
+      return vfile.load(content)
+    }
+  }
   else return vfile.create(undefined, { path: filePath })
 }
 
@@ -734,6 +743,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
+  logger.warn(`Falling back to default encoding for inline node type ${type(node)}.`)
   return encodeFallbackInline(node)
 }
 
