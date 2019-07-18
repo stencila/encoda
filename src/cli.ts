@@ -32,13 +32,14 @@
  * Please see the documentation for each function on the arguments required and
  * options available.
  */
-import * as logga from '@stencila/logga'
-import minimist from 'minimist'
-import { convert, read, write } from '.'
-import './boot'
-import * as puppeteer from './util/puppeteer'
+import * as logga from '@stencila/logga';
+import minimist from 'minimist';
+import path from 'path';
+import { convert, read, write } from '.';
+import './boot';
 // eslint-disable-next-line import/no-named-default
-import { default as processNode } from './process'
+import { default as processNode } from './process';
+import * as puppeteer from './util/puppeteer';
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
@@ -89,7 +90,7 @@ logga.replaceHandlers((data: logga.LogData): void => {
       const output = args[1] || input
       const { to, from, standalone, bundle, theme, ...rest } = options
       const node = await read(input, from)
-      const processed = await processNode(node)
+      const processed = await processNode(node, path.dirname(input))
       await write(processed, output, {
         format: to,
         isStandalone: standalone,
