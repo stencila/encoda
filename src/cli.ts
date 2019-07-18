@@ -34,9 +34,10 @@
  */
 import * as logga from '@stencila/logga'
 import minimist from 'minimist'
-import { convert } from '.'
+import { convert, read, write } from '.'
 import './boot'
 import * as puppeteer from './util/puppeteer'
+import { default as processNode} from './process'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
@@ -81,6 +82,19 @@ logga.replaceHandlers((data: logga.LogData): void => {
           theme,
           codecOptions: rest
         }
+      })
+    } else if (command === 'process') {
+      const input = args[0]
+      const output = args[1] || input
+      const { to, from, standalone, bundle, theme, ...rest } = options
+      const node = await read(input, from)
+      const processed = await processNode(node)
+      await write(processed, output, {
+        format: to,
+        isStandalone: standalone,
+        isBundle: bundle,
+        theme,
+        codecOptions: rest
       })
     } else {
       log.warn(`Ignored unknown command "${command}"`)
