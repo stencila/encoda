@@ -1,3 +1,17 @@
+# [0.57.0](https://github.com/stencila/encoda/compare/v0.56.0...v0.57.0) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Pandoc:** Better handling of non-Article nodes at top level ([f9c1b30](https://github.com/stencila/encoda/commit/f9c1b30))
+* **Process:** Always dump to code blocks with isStandalone false ([3fd43a1](https://github.com/stencila/encoda/commit/3fd43a1))
+
+
+### Features
+
+* **CLI:** Add process command to CLI ([17b1438](https://github.com/stencila/encoda/commit/17b1438))
+* **Pandoc:** Prettify Pandoc JSON output ([03eb44b](https://github.com/stencila/encoda/commit/03eb44b))
+
 # [0.56.0](https://github.com/stencila/encoda/compare/v0.55.1...v0.56.0) (2019-07-17)
 
 
