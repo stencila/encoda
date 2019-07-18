@@ -1,3 +1,15 @@
+# [0.58.0](https://github.com/stencila/encoda/compare/v0.57.0...v0.58.0) (2019-07-18)
+
+
+### Bug Fixes
+
+* **CLI:** Pass through directory when encoding ([3a0403a](https://github.com/stencila/encoda/commit/3a0403a))
+
+
+### Features
+
+* **Include:** Add initial version of Include node ([01f32f4](https://github.com/stencila/encoda/commit/01f32f4))
+
 # [0.57.0](https://github.com/stencila/encoda/compare/v0.56.0...v0.57.0) (2019-07-18)
 
 
