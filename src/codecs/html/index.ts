@@ -403,7 +403,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
 
 /**
  * Encode a Stencila `Include` node to a Microdata `div[itemtype]` element.
- * 
+ *
  * TODO: This is an initial implementation and it is probably better to generalize
  * it into a default encoding function to replace `encodeThing`.
  */
@@ -411,7 +411,10 @@ function encodeInclude(include: stencila.Include): HTMLElement {
   const content = h('div', include.content.map(encodeNode))
   content.setAttribute('itemprop', 'content')
   const elem = h(`div`, content)
-  elem.setAttribute('itemtype', `https://stencila.github.io/schema/${type(include)}`)
+  elem.setAttribute(
+    'itemtype',
+    `https://stencila.github.io/schema/${type(include)}`
+  )
   return elem
 }
 

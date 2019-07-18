@@ -32,14 +32,14 @@
  * Please see the documentation for each function on the arguments required and
  * options available.
  */
-import * as logga from '@stencila/logga';
-import minimist from 'minimist';
-import path from 'path';
-import { convert, read, write } from '.';
-import './boot';
+import * as logga from '@stencila/logga'
+import minimist from 'minimist'
+import path from 'path'
+import { convert, read, write } from '.'
+import './boot'
 // eslint-disable-next-line import/no-named-default
-import { default as processNode } from './process';
-import * as puppeteer from './util/puppeteer';
+import { default as processNode } from './process'
+import * as puppeteer from './util/puppeteer'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
