@@ -44,7 +44,7 @@ export default async function process(
           )
         }
         if (meta.export) {
-          code.value = await dump(_get(meta.export), meta.to || code.language)
+          code.value = await dump(_get(meta.export), meta.to || code.language, {isStandalone: false})
         }
         if (meta.equals) {
           _equals(
