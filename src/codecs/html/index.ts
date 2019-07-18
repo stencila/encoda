@@ -84,6 +84,10 @@ export const encode: Encode = async (
 ): Promise<vfile.VFile> => {
   const { isStandalone = true, isBundle = false, theme = 'stencila' } = options
 
+  // Reset the slugger to avoid unnecessarily adding numbers to ids
+  // in order to make them unique
+  slugger.reset()
+
   const nodeToEncode = isBundle ? await bundle(node) : node
   let dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
     isStandalone,
@@ -263,10 +267,6 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
   const jsonld = head.querySelector('script[type="application/ld+json"]')
   const metadata = jsonld ? JSON.parse(jsonld.innerHTML || '{}') : {}
   delete metadata['@context']
-
-  // Reset the slugger to avoid unecessarily adding numbers to ids
-  // to make them unique
-  slugger.reset()
 
   if (!jsonld && body.childElementCount === 1) {
     const node = decodeNode(body.children[0])
