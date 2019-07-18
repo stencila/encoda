@@ -10,15 +10,12 @@ describe('get', () => {
         'cache-control': 'max-age=60'
       })
 
-    // Ensure that there is no cached value from the
-    // previous test
+    // Ensure that there is no cached value from a
+    // previous test run
     await cacheDelete('https://example.org/cached')
 
     let response = await get('https://example.org/cached')
     expect(response.fromCache).toBe(false)
-
-    // Wait a little to allow the cache file to be written
-    await delay(process.env.CI ? 1000 : 100)
 
     response = await get('https://example.org/cached')
     expect(response.fromCache).toBe(true)
@@ -32,6 +29,7 @@ describe('get', () => {
 
     let response = await get('https://example.org/not-cached')
     expect(response.fromCache).toBe(false)
+
     response = await get('https://example.org/not-cached')
     expect(response.fromCache).toBe(false)
   })

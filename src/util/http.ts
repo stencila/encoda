@@ -10,7 +10,7 @@ import fs from 'fs-extra'
 import got from 'got'
 import stream from 'stream'
 import util from 'util'
-import cache from './app/cache'
+import cache from './app/cacheSync'
 
 const pipeline = util.promisify(stream.pipeline)
 
