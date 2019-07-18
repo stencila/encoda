@@ -7,7 +7,11 @@ import stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import { wrapInBlockNode, isBlockContent, isInlineContent } from '../../util/index'
+import {
+  wrapInBlockNode,
+  isBlockContent,
+  isInlineContent
+} from '../../util/index'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 import * as Pandoc from './types'
@@ -109,8 +113,7 @@ export const encode: Encode<PandocEncodeOptions> = async (
     } else {
       return vfile.load(content)
     }
-  }
-  else return vfile.create(undefined, { path: filePath })
+  } else return vfile.create(undefined, { path: filePath })
 }
 
 /**
@@ -235,7 +238,7 @@ function encodeNode(
       blocks = encodeBlocks([node])
     } else if (isInlineContent(node)) {
       // Wrap inline content in a paragraph so it can be encoded
-      blocks = [{t: 'Para', c: encodeInlines([node])}]
+      blocks = [{ t: 'Para', c: encodeInlines([node]) }]
     }
   }
 
@@ -733,7 +736,9 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
-  logger.warn(`Falling back to default encoding for inline node type ${type(node)}.`)
+  logger.warn(
+    `Falling back to default encoding for inline node type ${type(node)}.`
+  )
   return encodeFallbackInline(node)
 }
 

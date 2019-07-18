@@ -37,7 +37,8 @@ import minimist from 'minimist'
 import { convert, read, write } from '.'
 import './boot'
 import * as puppeteer from './util/puppeteer'
-import { default as processNode} from './process'
+// eslint-disable-next-line import/no-named-default
+import { default as processNode } from './process'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
