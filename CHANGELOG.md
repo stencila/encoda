@@ -1,3 +1,10 @@
+# [0.56.0](https://github.com/stencila/encoda/compare/v0.55.1...v0.56.0) (2019-07-17)
+
+
+### Features
+
+* **Processing:** Add coerce keyword and default to it for import etc ([e61756e](https://github.com/stencila/encoda/commit/e61756e))
+
 ## [0.55.1](https://github.com/stencila/encoda/compare/v0.55.0...v0.55.1) (2019-07-17)
 
 
