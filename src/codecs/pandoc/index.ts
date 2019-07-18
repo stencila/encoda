@@ -7,7 +7,7 @@ import stencila from '@stencila/schema'
 import childProcess from 'child_process'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import { wrapInBlockNode } from '../../util/index'
+import { wrapInBlockNode, isBlockContent, isInlineContent } from '../../util/index'
 import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 import * as Pandoc from './types'
@@ -230,22 +230,12 @@ function encodeNode(
     // TODO: wrap nodes as necessary and avoid use of `as`
     blocks = encodeBlocks(content as stencila.BlockContent[])
   } else {
-    // TODO: see `gdoc` for a better way to do this.
-    try {
-      blocks = [encodeBlock(node as stencila.BlockContent)]
-    } catch {
-      // Do nothing because we'll try inlines next...
-    }
-
-    try {
-      blocks = [
-        {
-          t: 'Para',
-          c: [encodeInline(node as stencila.InlineContent)]
-        }
-      ]
-    } catch {
-      throw new Error(`Unhandled Stencila node type "${type_}"`)
+    if (isBlockContent(node)) {
+      // The node is a block, so just encode it
+      blocks = encodeBlocks([node])
+    } else if (isInlineContent(node)) {
+      // Wrap inline content in a paragraph so it can be encoded
+      blocks = [{t: 'Para', c: encodeInlines([node])}]
     }
   }
 
