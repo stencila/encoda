@@ -1,3 +1,11 @@
+## [0.59.1](https://github.com/stencila/encoda/compare/v0.59.0...v0.59.1) (2019-07-19)
+
+
+### Bug Fixes
+
+* **HTML:** Move slugger reset to the right place ([a845948](https://github.com/stencila/encoda/commit/a845948))
+* **HTTP utility:** Use synchronous cache ([bbad587](https://github.com/stencila/encoda/commit/bbad587))
+
 # [0.59.0](https://github.com/stencila/encoda/compare/v0.58.0...v0.59.0) (2019-07-18)
 
 
