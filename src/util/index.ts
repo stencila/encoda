@@ -21,11 +21,6 @@ import path from 'path'
 import { decode as decodePerson } from '../codecs/person'
 import type from './type'
 
-const built = path.join(
-  path.dirname(require.resolve('@stencila/schema')),
-  'built'
-)
-
 /**
  * Create a node of a type
  * @param type The name of the type
@@ -83,14 +78,18 @@ async function loadSchema(uri: string) {
   throw new Error(`Can not resolve schema "${uri}"`)
 }
 
+const schemasPath = path.dirname(require.resolve('@stencila/schema'))
+
 /**
  * Read a JSON Schema file from `@stencila/schema`
  */
 async function readSchema<Key extends keyof stencila.Types>(type: Key) {
   try {
-    return await fs.readJSON(path.join(built, `${type}.schema.json`))
-  } catch {
-    throw new Error(`No schema for type "${type}".`)
+    return await fs.readJSON(path.join(schemasPath, `${type}.schema.json`))
+  } catch (error) {
+    if (error.code === 'ENOENT')
+      throw new Error(`No schema for type "${type}".`)
+    throw error
   }
 }
 
