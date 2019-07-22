@@ -26,9 +26,6 @@ const built = path.join(
   'built'
 )
 
-// Read in aliases for use in coerce function
-const aliases = fs.readJSONSync(path.join(built, 'aliases.json'))
-
 /**
  * Create a node of a type
  * @param type The name of the type
@@ -98,21 +95,47 @@ async function readSchema<Key extends keyof stencila.Types>(type: Key) {
 }
 
 /**
+ * Get the `Ajv` validation function for a type
+ */
+async function getValidator<Key extends keyof stencila.Types>(
+  ajv: Ajv.Ajv,
+  type: Key
+): Promise<Ajv.ValidateFunction> {
+  let validator = ajv.getSchema(
+    `https://stencila.github.com/schema/${type}.schema.json`
+  )
+  if (!validator) {
+    const schema = await readSchema(type)
+    validator = await ajv.compileAsync(schema)
+  }
+  return validator
+}
+
+/**
+ * Get the `Schema` object for a type
+ */
+async function getSchema<Key extends keyof stencila.Types>(
+  ajv: Ajv.Ajv,
+  type: Key
+): Promise<any> {
+  const validator = await getValidator(ajv, type)
+  const schema = validator.schema
+  if (schema === undefined || typeof schema === 'boolean')
+    throw new Error(`Woaah! No schema on validator for type "${type}".`)
+  return schema
+}
+
+/**
  * Validate a node against a type's schema
  * @param node The node to validate
  * @param type The type to validate against
  */
 export async function validate<Key extends keyof stencila.Types>(
   node: any,
-  type: Key
+  typeName?: Key
 ): Promise<stencila.Types[Key]> {
-  let validator = validators.getSchema(
-    `https://stencila.github.com/schema/${type}.schema.json`
-  )
-  if (!validator) {
-    const schema = await readSchema(type)
-    validator = await validators.compileAsync(schema)
-  }
+  if (typeName === undefined) typeName = type(node) as Key
+  const validator = await getValidator(validators, typeName)
   if (!validator(node)) {
     const errors = (betterAjvErrors(validator.schema, node, validator.errors, {
       format: 'js'
@@ -241,20 +264,13 @@ export async function coerce<Key extends keyof stencila.Types>(
   node: any,
   typeName?: Key
 ): Promise<stencila.Types[Key]> {
-  if (!typeName) typeName = type(node) as Key
+  if (typeName === undefined) typeName = type(node) as Key
+  const mutator = await getValidator(mutators, typeName)
 
-  let mutator = mutators.getSchema(
-    `https://stencila.github.com/schema/${typeName}.schema.json`
-  )
-  if (!mutator) {
-    const schema = await readSchema(typeName)
-    mutator = await mutators.compileAsync(schema)
-  }
-
-  return produce(node, (coerced: any) => {
+  return produce(node, async (coerced: any) => {
     if (typeof coerced === 'object') coerced.type = typeName
     // Rename property aliases
-    rename(coerced)
+    await rename(coerced)
     // coerce and validate
     if (!mutator(coerced)) {
       const errors = (betterAjvErrors(mutator.schema, node, mutator.errors, {
@@ -264,20 +280,21 @@ export async function coerce<Key extends keyof stencila.Types>(
     }
   })
   // Replace aliases with canonical names
-  function rename(node: any) {
+  async function rename(node: any) {
     if (!node || typeof node !== 'object') return
-    if (!(node.type && aliases[node.type])) return
+    if (!node.type) return
+    const schema = await getSchema(mutators, node.type as Key)
+    if (!schema.propertyAliases) return
 
-    let propertyAliases = aliases[node.type]
     for (let [key, child] of Object.entries(node)) {
       if (!Array.isArray(node)) {
-        const name = propertyAliases[key]
+        const name = schema.propertyAliases[key]
         if (name) {
           node[name] = child
           delete node[key]
         }
       }
-      rename(child)
+      await rename(child)
     }
   }
 }
