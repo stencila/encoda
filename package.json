@@ -88,7 +88,7 @@
     "xlsx": "^0.14.2"
   },
   "devDependencies": {
-    "@gerrit0/typedoc": "^0.15.3",
+    "@gerrit0/typedoc": "0.15.3",
     "@stencila/dev-config": "1.1.1",
     "@types/async-lock": "1.1.1",
     "@types/content-type": "1.1.3",
