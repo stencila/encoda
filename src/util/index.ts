@@ -155,9 +155,12 @@ const mutators = new Ajv({
 })
 
 /**
- * A list of decoders that can be applied using the `decoder` keyword
+ * A list of codecs that can be applied using the `codec` keyword
+ *
+ * TODO: Make these actual codecs (i.e. conforming to the `Codec`
+ * interface with a `decode` async function)
  */
-const decoders: { [key: string]: (data: string) => any } = {
+const codecs: { [key: string]: (data: string) => any } = {
   csv,
   ssv,
   person: decodePerson
@@ -178,11 +181,11 @@ function ssv(data: string): string[] {
 }
 
 /**
- * Custom validation function that handles the `decoder`
+ * Custom validation function that handles the `codec`
  * keyword.
  */
-const decoderValidate: Ajv.SchemaValidateFunction = (
-  decoder: string,
+const codecValidate: Ajv.SchemaValidateFunction = (
+  codec: string,
   data: string,
   parentSchema?: object,
   dataPath?: string,
@@ -191,13 +194,13 @@ const decoderValidate: Ajv.SchemaValidateFunction = (
   // rootData?: object | any[]
 ): boolean => {
   function raise(msg: string) {
-    decoderValidate.errors = [
+    codecValidate.errors = [
       {
-        keyword: 'parser',
+        keyword: 'decoding',
         dataPath: dataPath || '',
         schemaPath: '',
         params: {
-          keyword: 'parser'
+          keyword: 'codec'
         },
         message: msg,
         data: data
@@ -205,15 +208,15 @@ const decoderValidate: Ajv.SchemaValidateFunction = (
     ]
     return false
   }
-  const decode = decoders[decoder]
-  if (!decode) return raise(`no such decoder: "${decoder}"`)
+  const decode = codecs[codec]
+  if (!decode) return raise(`no such codec: "${codec}"`)
 
   let decoded: any
   try {
     decoded = decode(data)
   } catch (error) {
     const decodeError = error.message.split('\n')[0]
-    return raise(`error when decoding using "${decoder}": ${decodeError}`)
+    return raise(`error using "${codec}" codec: ${decodeError}`)
   }
 
   if (parentData !== undefined && parentDataProperty !== undefined) {
@@ -222,10 +225,10 @@ const decoderValidate: Ajv.SchemaValidateFunction = (
   return true
 }
 
-mutators.addKeyword('parser', {
+mutators.addKeyword('codec', {
   type: 'string',
   modifying: true,
-  validate: decoderValidate
+  validate: codecValidate
 })
 
 /**
