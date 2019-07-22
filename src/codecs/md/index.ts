@@ -397,10 +397,8 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
  */
 function decodeInclude(ext: Extension): stencila.Include {
   const include: stencila.Include = {
-    type: 'Include'
-  }
-  if (ext.argument) {
-    include.source = ext.argument
+    type: 'Include',
+    source: ext.argument || ''
   }
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article

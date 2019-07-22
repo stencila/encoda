@@ -408,9 +408,10 @@ function encodeArticle(article: stencila.Article): HTMLElement {
  * it into a default encoding function to replace `encodeThing`.
  */
 function encodeInclude(include: stencila.Include): HTMLElement {
-  const content = h('div', include.content.map(encodeNode))
-  content.setAttribute('itemprop', 'content')
-  const elem = h(`div`, content)
+  const content = include.content || []
+  const contentDiv = h('div', content.map(encodeNode))
+  contentDiv.setAttribute('itemprop', 'content')
+  const elem = h(`div`, contentDiv)
   elem.setAttribute(
     'itemtype',
     `https://stencila.github.io/schema/${type(include)}`
