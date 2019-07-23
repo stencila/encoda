@@ -3,12 +3,12 @@
  */
 
 import stencila from '@stencila/schema'
+import { nodeType } from '@stencila/schema/dist/util'
 import { array, option, ord } from 'fp-ts'
 import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import { Encode, EncodeOptions } from '../..'
-import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 
 export const mediaTypes = [
@@ -76,7 +76,7 @@ function decodeWorkbook(
 }
 
 function encodeNode(node: stencila.Node): xlsx.WorkBook {
-  const type_ = type(node)
+  const type_ = nodeType(node)
 
   const sheetNames: string[] = []
   const sheets: { [key: string]: xlsx.WorkSheet } = {}

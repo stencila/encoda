@@ -7,13 +7,16 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import {
+  isInlineContent,
+  isParagraph,
+  nodeType
+} from '@stencila/schema/dist/util'
 import crypto from 'crypto'
 import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '../..'
-import { isInlineContent, isNode } from '../../util/index'
-import type from '../../util/type'
-import * as vfile from '../../util/vfile'
 import * as http from '../../util/http'
+import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda')
 
@@ -163,7 +166,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
   // Wrap the node as needed to ensure an array
   // of block element at the top level
   let content: stencila.Node[] = []
-  switch (type(node)) {
+  switch (nodeType(node)) {
     // `CreativeWork` types (have `content`)
     case 'Article':
       const article = node as stencila.Article
@@ -191,7 +194,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
 
   if (content) {
     for (let node of content) {
-      const type_ = type(node)
+      const type_ = nodeType(node)
       switch (type_) {
         case 'Heading':
           gdocContent.push(encodeHeading(node as stencila.Heading))
@@ -388,7 +391,7 @@ const encodeListItem = (
   listId: string
 ): GDoc.Schema$Paragraph => {
   const head = listItem.content[0]
-  if (isNode<stencila.Paragraph>({ Paragraph: 'Paragraph' })(head)) {
+  if (isParagraph(head)) {
     return {
       elements: head.content.map(encodeInlineContent),
       bullet: {
@@ -552,7 +555,7 @@ function decodeInlineObjectElement(
 function encodeInlineContent(
   node: stencila.InlineContent
 ): GDoc.Schema$ParagraphElement {
-  const type_ = type(node)
+  const type_ = nodeType(node)
   switch (type_) {
     case 'Emphasis':
       return encodeEmphasis(node as stencila.Emphasis)
@@ -615,7 +618,7 @@ function decodeTextRun(
 function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
   return nodes
     .map(node => {
-      switch (type(node)) {
+      switch (nodeType(node)) {
         case 'Emphasis':
         case 'Strong':
           // @ts-ignore

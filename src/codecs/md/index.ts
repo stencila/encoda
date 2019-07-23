@@ -4,6 +4,13 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import {
+  isBlockContent,
+  isListItem,
+  nodeIs,
+  nodeType,
+  TypeMapGeneric
+} from '@stencila/schema/dist/util'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
 import * as MDAST from 'mdast'
@@ -27,19 +34,16 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
-
 import { Encode } from '../..'
-import { isBlockContent, isNode } from '../../util/index'
-import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda:md')
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
-export const mdastBlockContentTypes: {
-  [key in MDAST.BlockContent['type']]: key
-} = {
+type MdastBlockContentTypes = TypeMapGeneric<MDAST.BlockContent>
+
+export const mdastBlockContentTypes: MdastBlockContentTypes = {
   blockquote: 'blockquote',
   code: 'code',
   heading: 'heading',
@@ -50,7 +54,7 @@ export const mdastBlockContentTypes: {
   thematicBreak: 'thematicBreak'
 }
 
-const isMdastBlockContent = isNode<MDAST.BlockContent>(mdastBlockContentTypes)
+const isMdastBlockContent = nodeIs(mdastBlockContentTypes)
 
 /**
  * Options for `remark-frontmatter` plugin
@@ -228,7 +232,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
 }
 
 function encodeNode(node: stencila.Node): UNIST.Node | undefined {
-  const type_ = type(node)
+  const type_ = nodeType(node)
   switch (type_) {
     case 'Article':
       return encodeArticle(node as stencila.Article)
@@ -468,7 +472,7 @@ function encodeParagraph(
   if (
     content.length === 0 ||
     (content.length === 1 &&
-      type(content[0]) === 'string' &&
+      nodeType(content[0]) === 'string' &&
       (content[0] as string).trim().length === 0)
   ) {
     return undefined
@@ -556,7 +560,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     const article = decodeMarkdown(ext.content) as stencila.Article
     const nodes = (article.content && article.content) || []
     const first = nodes[0]
-    if (type(first) === 'CodeBlock') {
+    if (nodeType(first) === 'CodeBlock') {
       const codeBlock = first as stencila.CodeBlock
       const { language, meta, value } = codeBlock
       if (language) codeChunk.programmingLanguage = language
@@ -610,9 +614,7 @@ function decodeList(list: MDAST.List): stencila.List {
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items: list.children
-      .map(decodeNode)
-      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
+    items: list.children.map(decodeNode).filter(isListItem)
   }
 }
 
@@ -623,9 +625,7 @@ function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'ascending',
-    children: list.items
-      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
-      .map(encodeListItem)
+    children: list.items.filter(isListItem).map(encodeListItem)
   }
 }
 

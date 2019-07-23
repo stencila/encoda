@@ -5,10 +5,9 @@
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
 
 import stencila from '@stencila/schema'
+import { isEntity, nodeType } from '@stencila/schema/dist/util'
 import { dump, Encode, load } from '../..'
 import * as dataUri from '../../util/dataUri'
-import type from '../../util/type'
-import { hasType } from '../../util'
 import * as vfile from '../../util/vfile'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
@@ -201,7 +200,7 @@ async function encodeCells(nodes: stencila.Node[]): Promise<nbformat4.Cell[]> {
   let content: stencila.Node[] = []
   const cells: nbformat4.Cell[] = []
   for (const node of nodes) {
-    switch (type(node)) {
+    switch (nodeType(node)) {
       case 'CodeChunk':
         if (content.length) {
           cells.push(await encodeMarkdownCell(content))
@@ -319,7 +318,7 @@ async function decodeOutputs(
   // Remove any matplotlib plot string representations when there is also
   // an image output (ie the actual plot). See https://github.com/stencila/encoda/issues/146
   if (
-    nodes.filter(node => hasType(node) && node.type === 'ImageObject').length >
+    nodes.filter(node => isEntity(node) && node.type === 'ImageObject').length >
     0
   ) {
     return nodes.filter(
@@ -383,7 +382,7 @@ async function encodeOutputs(
 ): Promise<nbformat4.Output[]> {
   return Promise.all(
     nodes.map(async node => {
-      switch (type(node)) {
+      switch (nodeType(node)) {
         case 'string':
           return encodeStream(chunk, node)
         case 'ImageObject':
@@ -501,7 +500,7 @@ async function encodeMimeBundle(
   node: stencila.Node
 ): Promise<nbformat.MimeBundle> {
   let [mediaType, data] = await (async (): Promise<[string, string]> => {
-    switch (type(node)) {
+    switch (nodeType(node)) {
       case 'string':
         return ['text/plain', await dump(node, 'text')]
       case 'ImageObject':

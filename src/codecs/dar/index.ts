@@ -9,6 +9,7 @@
  */
 
 import stencila from '@stencila/schema'
+import { isCreativeWork, isEntity, nodeType } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import h from 'hyperscript'
 import produce from 'immer'
@@ -17,10 +18,8 @@ import { html as beautifyHtml } from 'js-beautify'
 import path from 'path'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import type from '../../util/type'
-import * as vfile from '../../util/vfile'
-import { hasType, isCreativeWork } from '../../util'
 import * as uri from '../../util/uri'
+import * as vfile from '../../util/vfile'
 
 export const mediaTypes = []
 
@@ -84,10 +83,10 @@ export const encode: Encode = async (
       : [node]
   const promises = nodes.map(async (node, index) => {
     const fileId =
-      hasType(node) && node.name
+      isEntity(node) && node.name
         ? node.name
-        : `${type(node).toLowerCase()}-${index}`
-    if (hasType(node) && node.type === 'Datatable') {
+        : `${nodeType(node).toLowerCase()}-${index}`
+    if (isEntity(node) && node.type === 'Datatable') {
       const fileName = fileId + '.csv'
       const filePath = path.join(darPath, fileName)
       await write(node, filePath)

@@ -1,10 +1,9 @@
 import stencila from '@stencila/schema'
+import { nodeType } from '@stencila/schema/dist/util'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
-import { validate, coerce } from './util/index'
-import type from './util/type'
-import { isPath } from './util/vfile'
+import { coerce, validate } from './util/index'
 
 /**
  * Process a node
@@ -164,7 +163,7 @@ export default async function process(
   ): Promise<stencila.Node> {
     try {
       const node = await load(content, format)
-      await validate(node, type(node))
+      await validate(node, nodeType(node))
       return node
     } catch (error) {
       throw Error(`Error: loading "${content}": ${error} `)
