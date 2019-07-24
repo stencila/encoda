@@ -35,7 +35,7 @@ export function find(
   chunks: Chunk[]
 ): [number, string | undefined] {
   let index = 0
-  for (let chunk of chunks) {
+  for (const chunk of chunks) {
     if (chunk.name === 'tEXt') {
       const entry = pngText.decode(chunk.data)
       if (entry.keyword === keyword) {

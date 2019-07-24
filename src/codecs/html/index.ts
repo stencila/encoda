@@ -745,7 +745,7 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
  * Encode a `stencila.Link` to a `<a>` element.
  */
 function encodeLink(link: stencila.Link): HTMLAnchorElement {
-  let attrs = {
+  const attrs = {
     href: link.target,
     ...encodeDataAttrs(link.meta || {})
   }

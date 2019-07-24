@@ -102,6 +102,7 @@ class FetchToSame {
   public get(url: string): string {
     return url
   }
+
   public async resolve(): Promise<void> {}
 }
 
@@ -121,7 +122,7 @@ async function decodeDocument(
   decodingFetcher = fetcher.get.bind(fetcher)
 
   let content: stencila.Node[] = []
-  let lists: { [key: string]: stencila.List } = {}
+  const lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
       .map((elem: GDoc.Schema$StructuralElement, index: number) => {
@@ -193,7 +194,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
   }
 
   if (content) {
-    for (let node of content) {
+    for (const node of content) {
       const type_ = nodeType(node)
       switch (type_) {
         case 'Heading':
@@ -235,9 +236,9 @@ function decodeParagraph(
   }
 
   if (para.paragraphStyle) {
-    let styleType = para.paragraphStyle.namedStyleType
+    const styleType = para.paragraphStyle.namedStyleType
     if (styleType) {
-      let match = styleType.match(/^HEADING_(\d)$/)
+      const match = styleType.match(/^HEADING_(\d)$/)
       if (match) {
         return {
           type: 'Heading',

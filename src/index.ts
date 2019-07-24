@@ -198,7 +198,7 @@ export async function match(
     // is normal behavior and doing so causes unnecessary noise and anxiety :)
   }
 
-  for (let codecName of codecList) {
+  for (const codecName of codecList) {
     const codec = await import(`./codecs/${codecName}`)
 
     if (fileName && codec.fileNames && codec.fileNames.includes(fileName)) {
@@ -325,7 +325,7 @@ export async function read(
   content: string,
   format?: string
 ): Promise<stencila.Node> {
-  let file = await vfile.read(content)
+  const file = await vfile.read(content)
   return decode(file, content, format)
 }
 
@@ -342,7 +342,7 @@ export async function write(
   filePath: string,
   options: EncodeOptions = {}
 ): Promise<VFile> {
-  let file = await encode(node, { ...options, filePath })
+  const file = await encode(node, { ...options, filePath })
   await vfile.write(file, filePath)
   return file
 }

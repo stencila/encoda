@@ -21,7 +21,7 @@ const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
 export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   const buffer = await vfile.dump(file, 'buffer')
-  let workbook = xlsx.read(buffer, { type: 'buffer' })
+  const workbook = xlsx.read(buffer, { type: 'buffer' })
   return decodeWorkbook(workbook)
 }
 
@@ -46,21 +46,21 @@ function decodeWorkbook(
   workbook: xlsx.WorkBook
 ): stencila.Table | stencila.Datatable | stencila.Collection {
   const parts: (stencila.Table | stencila.Datatable)[] = []
-  for (let name of workbook.SheetNames) {
+  for (const name of workbook.SheetNames) {
     const sheet = workbook.Sheets[name]
 
     // Decode all cells and if any have a formula, comments etc, then
     // treat this sheet as a Table
     let dataOnly = true
-    let cells: any = {}
-    for (let [key, cell] of Object.entries(sheet)) {
+    const cells: any = {}
+    for (const [key, cell] of Object.entries(sheet)) {
       if (key.startsWith('!')) continue
       if (cell.f) dataOnly = false
       cells[key] = cell
     }
 
     // Create a part for this sheet
-    let part = (dataOnly ? decodeDatatable : decodeTable)(name, sheet, cells)
+    const part = (dataOnly ? decodeDatatable : decodeTable)(name, sheet, cells)
 
     // If this is the only sheet then simply return the
     // part, otherwise add it to the list of parts.
@@ -254,19 +254,19 @@ function decodeDatatable(
 
 function encodeDatatable(datatable: stencila.Datatable): xlsx.WorkSheet {
   const sheet: xlsx.WorkSheet = {}
-  let columns = datatable.columns
+  const columns = datatable.columns
   if (columns) {
     let columnIndex = 0
     let rowIndex = 0
-    for (let column of columns) {
-      let columnName = columnIndexToName(columnIndex)
+    for (const column of columns) {
+      const columnName = columnIndexToName(columnIndex)
       // Name cell
       sheet[`${columnName}1`] = { t: 's', v: column.name }
       // Value cells
-      let values = column.values
+      const values = column.values
       if (values) {
         rowIndex = 0
-        for (let value of values) {
+        for (const value of values) {
           const cellObject = encodeCell(value)
           if (cellObject) sheet[`${columnName}${rowIndex + 2}`] = cellObject
           rowIndex += 1
@@ -353,7 +353,7 @@ export function columnIndexToName(index: number): string {
   let name = ''
   let dividend = index + 1
   while (dividend > 0) {
-    let modulo = (dividend - 1) % 26
+    const modulo = (dividend - 1) % 26
     name = String.fromCharCode(65 + modulo) + name
     dividend = Math.floor((dividend - modulo) / 26)
   }

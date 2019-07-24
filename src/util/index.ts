@@ -38,7 +38,7 @@ export async function create<Key extends keyof stencila.Types>(
   initial: { [key: string]: any } = {},
   validation: 'none' | 'validate' | 'coerce' = 'validate'
 ): Promise<stencila.Types[Key]> {
-  let node = { type, ...initial }
+  const node = { type, ...initial }
   if (validation === 'validate') return validate(node, type)
   else if (validation === 'coerce') return coerce(node, type)
   else return node
@@ -263,8 +263,8 @@ export async function coerce<Key extends keyof stencila.Types>(
     if (!node || typeof node !== 'object') return
     if (!(node.type && aliases[node.type])) return
 
-    let propertyAliases = aliases[node.type]
-    for (let [key, child] of Object.entries(node)) {
+    const propertyAliases = aliases[node.type]
+    for (const [key, child] of Object.entries(node)) {
       if (!Array.isArray(node)) {
         const name = propertyAliases[key]
         if (name) {

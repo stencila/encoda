@@ -175,7 +175,7 @@ export default async function process(
     format: string
   ): Promise<stencila.Node> {
     try {
-      let node = await load(content, format)
+      const node = await load(content, format)
       return await coerce(node)
     } catch (error) {
       throw Error(`Error: coercing "${content}": ${error} `)

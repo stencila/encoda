@@ -71,7 +71,7 @@ export const encode: Encode = async (
   node: stencila.Node,
   options = {}
 ): Promise<vfile.VFile> => {
-  let { filePath } = options
+  const { filePath } = options
 
   const darPath = filePath || path.join(tempy.directory(), '.dar')
   await fs.ensureDir(darPath)

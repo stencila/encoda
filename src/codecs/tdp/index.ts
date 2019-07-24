@@ -66,7 +66,7 @@ export const encode: Encode = async (
   node: stencila.Node,
   { filePath }: EncodeOptions = {}
 ): Promise<vfile.VFile> => {
-  let cw = node as stencila.CreativeWork
+  const cw = node as stencila.CreativeWork
 
   // Create a package descriptor from meta-data
   const desc: { [key: string]: any } = {
@@ -99,7 +99,7 @@ export const encode: Encode = async (
   if (cw.type === 'Collection') {
     const collection = cw as stencila.Collection
     if (collection.parts) {
-      for (let part of collection.parts) {
+      for (const part of collection.parts) {
         if (part.type !== 'Datatable') {
           throw new Error(
             `Unable to convert collection part of type ${part.type}`
@@ -157,9 +157,9 @@ async function decodeResource(
   const values: any[] = Array(resource.schema.fields.length)
     .fill(null)
     .map(() => [])
-  for (let row of data) {
+  for (const row of data) {
     let index = 0
-    for (let value of row) {
+    for (const value of row) {
       values[index].push(value)
       index += 1
     }
@@ -215,14 +215,14 @@ function decodeField(
   values: any[]
 ): stencila.DatatableColumn {
   // Decode constraints
-  let constraints = field.constraints || {}
-  let items = decodeFieldConstraints(constraints)
+  const constraints = field.constraints || {}
+  const items = decodeFieldConstraints(constraints)
 
   // Decode `type` and `format`. From the Table Schema docs:
   //   Both type and format are optional: in a field descriptor, the absence of a type
   //   property indicates that the field is of the type "string", and the absence of a
   //   format property indicates that the field's type format is "default".
-  let { type, format } = decodeFieldTypeFormat(
+  const { type, format } = decodeFieldTypeFormat(
     field.type || 'string',
     field.format || 'default'
   )
@@ -260,7 +260,9 @@ function encodeDatatableColumn(
   }
   if (!column.schema) return field
 
-  let { type, format, constraints } = encodeDatatableColumnSchema(column.schema)
+  const { type, format, constraints } = encodeDatatableColumnSchema(
+    column.schema
+  )
   if (column.schema.uniqueItems) constraints.unique = true
 
   return { ...field, type, format, constraints }
@@ -347,7 +349,7 @@ export function decodeFieldTypeFormat(
 export function decodeFieldConstraints(constraints: {
   [key: string]: any
 }): { [key: string]: any } {
-  let items: { [key: string]: any } = {}
+  const items: { [key: string]: any } = {}
   if (constraints.minimum) items.minimum = constraints.minimum
   if (constraints.maximum) items.maximum = constraints.maximum
   if (constraints.minLength) items.minLength = constraints.minLength
@@ -385,7 +387,7 @@ function encodeDatatableColumnSchema(
   }
 
   let type = items.type
-  let format = items.format
+  const format = items.format
   switch (type) {
     case 'boolean':
     case 'integer':

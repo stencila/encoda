@@ -338,7 +338,7 @@ async function decodeOutput(
     case 'pyout':
       if (isv3(output, 'Pyout', version)) {
         // Remove the 'non-data' properties from the `Pyout`
-        let { output_type, prompt_number, metadata, ...data } = output
+        const { output_type, prompt_number, metadata, ...data } = output
         return decodeMimeBundle(data, version)
       } else {
         return decodeMimeBundle(output.data, version)
@@ -346,7 +346,7 @@ async function decodeOutput(
     case 'display_data':
       if (isv3(output, 'DisplayData', version)) {
         // Remove the 'non-data' properties from the `DisplayData`
-        let { output_type, metadata, ...data } = output
+        const { output_type, metadata, ...data } = output
         return decodeMimeBundle(data, version)
       } else {
         return decodeMimeBundle(output.data, version)
@@ -499,7 +499,7 @@ async function decodeMimeBundle(
 async function encodeMimeBundle(
   node: stencila.Node
 ): Promise<nbformat.MimeBundle> {
-  let [mediaType, data] = await (async (): Promise<[string, string]> => {
+  const [mediaType, data] = await (async (): Promise<[string, string]> => {
     switch (nodeType(node)) {
       case 'string':
         return ['text/plain', await dump(node, 'text')]
