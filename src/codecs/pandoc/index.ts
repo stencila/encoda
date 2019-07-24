@@ -42,7 +42,7 @@ export async function decode(
 ): Promise<stencila.Node> {
   const args = [`--from=${from}`, `--to=json`].concat(options)
 
-  let content = file.contents
+  const content = file.contents
   if (!content || ensureFile) {
     if (ensureFile && !file.path) throw new Error('Must supply a file')
     args.push(`${file.path}`)
@@ -936,7 +936,7 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
     target,
     content: decodeInlines(node.c[1])
   }
-  if (title) link.description = title
+  if (title) link.title = title
   const meta = decodeAttrs(node.c[0])
   if (meta) link.meta = meta
   return link
@@ -946,7 +946,7 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
  * Encode a Stencila `Link` to a Pandoc `Link`.
  */
 function encodeLink(node: stencila.Link): Pandoc.Link {
-  const [url, title] = [node.target, node.description || '']
+  const [url, title] = [node.target, node.title || '']
   return {
     t: 'Link',
     c: [emptyAttrs, encodeInlines(node.content), [url, title]]

@@ -279,7 +279,7 @@ const kitchenSink: testCase = {
           {
             type: 'Link',
             content: [],
-            description: 'title',
+            title: 'title',
             target: 'url'
           },
           ' and ',

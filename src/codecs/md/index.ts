@@ -88,7 +88,7 @@ const GENERIC_EXTENSIONS = [
   'object'
 ]
 const extensionHandlers: { [key: string]: any } = {}
-for (let ext of GENERIC_EXTENSIONS) {
+for (const ext of GENERIC_EXTENSIONS) {
   extensionHandlers[ext] = { replace: decodeExtension }
 }
 
@@ -337,14 +337,14 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
   }
 
   const body: stencila.Node[] = []
-  for (let child of root.children) {
+  for (const child of root.children) {
     if (child.type === 'yaml') {
       const frontmatter = yaml.safeLoad(child.value)
       // TODO: check the key is a valid property of Article
       // and if it it isn't ignore it or throw an error
       // TODO: allow for mutation and aliases, potentially
       // adding a `stencila.set(article, key, value)` function.
-      for (let [key, value] of Object.entries(frontmatter)) {
+      for (const [key, value] of Object.entries(frontmatter)) {
         // TODO: the above should allow removal of the ts-ignore
         // @ts-ignore
         article[key] = value
@@ -380,7 +380,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
 
   // Add other properties as frontmatter
   const frontmatter: { [key: string]: any } = {}
-  for (let [key, value] of Object.entries(article)) {
+  for (const [key, value] of Object.entries(article)) {
     if (!['type', 'content'].includes(key)) {
       frontmatter[key] = value
     }
@@ -735,6 +735,7 @@ function decodeLink(link: MDAST.Link): stencila.Link {
     [key: string]: string
   }
   if (meta) link_.meta = meta
+  if (link.title) link_.title = link.title
   return link_
 }
 
@@ -746,6 +747,7 @@ function encodeLink(link: stencila.Link): MDAST.Link {
   return {
     type: 'link',
     url: link.target,
+    title: link.title,
     children: link.content.map(
       node => encodeInlineContent(node) as MDAST.StaticPhrasingContent
     ),
@@ -898,7 +900,7 @@ function encodeCode(code: stencila.Code): MDAST.InlineCode {
  * `{type=expr}`
  */
 function encodeCodeExpr(codeExpr: stencila.CodeExpr): MDAST.InlineCode {
-  let attrs = {
+  const attrs = {
     type: 'expr',
     lang: codeExpr.programmingLanguage,
     ...codeExpr.meta
@@ -1069,7 +1071,7 @@ function decodeObject(ext: Extension): object {
     // Extension properties always contain `className` and `id`, which may
     // be undefined, so drop them.
     const props: { [key: string]: any } = {}
-    for (let [key, value] of Object.entries(ext.properties)) {
+    for (const [key, value] of Object.entries(ext.properties)) {
       // tslint:disable-next-line
       if (typeof value !== 'undefined') props[key] = value
     }
