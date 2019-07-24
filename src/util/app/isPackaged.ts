@@ -9,7 +9,7 @@ import path from 'path'
 
 const isPackaged =
   ((process.mainModule && process.mainModule.id.endsWith('.exe')) ||
-    process.hasOwnProperty('pkg')) &&
+    Object.prototype.hasOwnProperty.call(process, 'pkg')) &&
   fs.existsSync(path.join('/', 'snapshot'))
 
 export default isPackaged

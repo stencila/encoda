@@ -89,7 +89,7 @@
   },
   "devDependencies": {
     "@gerrit0/typedoc": "0.15.3",
-    "@stencila/dev-config": "1.1.1",
+    "@stencila/dev-config": "1.1.2",
     "@types/async-lock": "1.1.1",
     "@types/content-type": "1.1.3",
     "@types/escape-html": "0.0.20",
@@ -137,9 +137,6 @@
         "sentence-case"
       ]
     }
-  },
-  "eslintConfig": {
-    "extends": "@stencila/eslint-config"
   },
   "eslintIgnore": [
     "**/__fixtures__/*",
