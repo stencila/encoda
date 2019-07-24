@@ -1,0 +1,6 @@
+{
+  "extends": "@stencila/eslint-config",
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": 0
+  }
+}

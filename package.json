@@ -138,9 +138,6 @@
       ]
     }
   },
-  "eslintConfig": {
-    "extends": "@stencila/eslint-config"
-  },
   "eslintIgnore": [
     "**/__fixtures__/*",
     "**/__mocks__/*",
