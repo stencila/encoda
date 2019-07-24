@@ -155,7 +155,7 @@ describe('coerce', () => {
     await expect(
       coerce({ authors: ['John Smith', '#@&%', 'Jones, Jane'] }, 'CreativeWork')
     ).rejects.toThrow(
-      '/authors/1: parser error when decoding using "person": Unable to decode string "#@&%" as a person'
+      '/authors/1: decoding error using "person" codec: Unable to decode string "#@&%" as a person'
     )
   })
 })

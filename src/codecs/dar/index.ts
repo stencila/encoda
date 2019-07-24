@@ -87,7 +87,7 @@ export const encode: Encode = async (
         ? node.name
         : `${nodeType(node).toLowerCase()}-${index}`
     if (isEntity(node) && node.type === 'Datatable') {
-      const fileName = fileId + '.csv'
+      const fileName = `${fileId}.csv`
       const filePath = path.join(darPath, fileName)
       await write(node, filePath)
       const [h, asset] = await encodeAsset(filePath, fileId, darPath)
