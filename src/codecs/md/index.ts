@@ -4,6 +4,13 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import {
+  isBlockContent,
+  isListItem,
+  nodeIs,
+  nodeType,
+  TypeMapGeneric
+} from '@stencila/schema/dist/util'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
 import * as MDAST from 'mdast'
@@ -27,19 +34,16 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
-
 import { Encode } from '../..'
-import { isBlockContent, isNode } from '../../util/index'
-import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda:md')
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
-export const mdastBlockContentTypes: {
-  [key in MDAST.BlockContent['type']]: key
-} = {
+type MdastBlockContentTypes = TypeMapGeneric<MDAST.BlockContent>
+
+export const mdastBlockContentTypes: MdastBlockContentTypes = {
   blockquote: 'blockquote',
   code: 'code',
   heading: 'heading',
@@ -50,7 +54,7 @@ export const mdastBlockContentTypes: {
   thematicBreak: 'thematicBreak'
 }
 
-const isMdastBlockContent = isNode<MDAST.BlockContent>(mdastBlockContentTypes)
+const isMdastBlockContent = nodeIs(mdastBlockContentTypes)
 
 /**
  * Options for `remark-frontmatter` plugin
@@ -84,7 +88,7 @@ const GENERIC_EXTENSIONS = [
   'object'
 ]
 const extensionHandlers: { [key: string]: any } = {}
-for (let ext of GENERIC_EXTENSIONS) {
+for (const ext of GENERIC_EXTENSIONS) {
   extensionHandlers[ext] = { replace: decodeExtension }
 }
 
@@ -228,7 +232,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
 }
 
 function encodeNode(node: stencila.Node): UNIST.Node | undefined {
-  const type_ = type(node)
+  const type_ = nodeType(node)
   switch (type_) {
     case 'Article':
       return encodeArticle(node as stencila.Article)
@@ -333,14 +337,14 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
   }
 
   const body: stencila.Node[] = []
-  for (let child of root.children) {
+  for (const child of root.children) {
     if (child.type === 'yaml') {
       const frontmatter = yaml.safeLoad(child.value)
       // TODO: check the key is a valid property of Article
       // and if it it isn't ignore it or throw an error
       // TODO: allow for mutation and aliases, potentially
       // adding a `stencila.set(article, key, value)` function.
-      for (let [key, value] of Object.entries(frontmatter)) {
+      for (const [key, value] of Object.entries(frontmatter)) {
         // TODO: the above should allow removal of the ts-ignore
         // @ts-ignore
         article[key] = value
@@ -376,7 +380,7 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
 
   // Add other properties as frontmatter
   const frontmatter: { [key: string]: any } = {}
-  for (let [key, value] of Object.entries(article)) {
+  for (const [key, value] of Object.entries(article)) {
     if (!['type', 'content'].includes(key)) {
       frontmatter[key] = value
     }
@@ -468,7 +472,7 @@ function encodeParagraph(
   if (
     content.length === 0 ||
     (content.length === 1 &&
-      type(content[0]) === 'string' &&
+      nodeType(content[0]) === 'string' &&
       (content[0] as string).trim().length === 0)
   ) {
     return undefined
@@ -556,7 +560,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     const article = decodeMarkdown(ext.content) as stencila.Article
     const nodes = (article.content && article.content) || []
     const first = nodes[0]
-    if (type(first) === 'CodeBlock') {
+    if (nodeType(first) === 'CodeBlock') {
       const codeBlock = first as stencila.CodeBlock
       const { language, meta, value } = codeBlock
       if (language) codeChunk.programmingLanguage = language
@@ -610,9 +614,7 @@ function decodeList(list: MDAST.List): stencila.List {
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items: list.children
-      .map(decodeNode)
-      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
+    items: list.children.map(decodeNode).filter(isListItem)
   }
 }
 
@@ -623,9 +625,7 @@ function encodeList(list: stencila.List): MDAST.List {
   return {
     type: 'list',
     ordered: list.order === 'ascending',
-    children: list.items
-      .filter(isNode<stencila.ListItem>({ ListItem: 'ListItem' }))
-      .map(encodeListItem)
+    children: list.items.filter(isListItem).map(encodeListItem)
   }
 }
 
@@ -735,6 +735,7 @@ function decodeLink(link: MDAST.Link): stencila.Link {
     [key: string]: string
   }
   if (meta) link_.meta = meta
+  if (link.title) link_.title = link.title
   return link_
 }
 
@@ -746,6 +747,7 @@ function encodeLink(link: stencila.Link): MDAST.Link {
   return {
     type: 'link',
     url: link.target,
+    title: link.title,
     children: link.content.map(
       node => encodeInlineContent(node) as MDAST.StaticPhrasingContent
     ),
@@ -898,7 +900,7 @@ function encodeCode(code: stencila.Code): MDAST.InlineCode {
  * `{type=expr}`
  */
 function encodeCodeExpr(codeExpr: stencila.CodeExpr): MDAST.InlineCode {
-  let attrs = {
+  const attrs = {
     type: 'expr',
     lang: codeExpr.programmingLanguage,
     ...codeExpr.meta
@@ -1069,7 +1071,7 @@ function decodeObject(ext: Extension): object {
     // Extension properties always contain `className` and `id`, which may
     // be undefined, so drop them.
     const props: { [key: string]: any } = {}
-    for (let [key, value] of Object.entries(ext.properties)) {
+    for (const [key, value] of Object.entries(ext.properties)) {
       // tslint:disable-next-line
       if (typeof value !== 'undefined') props[key] = value
     }

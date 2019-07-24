@@ -4,6 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import { isArticle, nodeType } from '@stencila/schema/dist/util'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import fs from 'fs'
@@ -17,9 +18,7 @@ import JSON5 from 'json5'
 import path from 'path'
 import { Encode, EncodeOptions } from '../..'
 import { columnIndexToName } from '../../codecs/xlsx'
-import { isNode } from '../../util'
 import bundle from '../../util/bundle'
-import type from '../../util/type'
 import * as vfile from '../../util/vfile'
 
 const document = new jsdom.JSDOM().window.document
@@ -60,7 +59,7 @@ export const beautify = (html: string): string =>
 const getArticleMetaData = (
   node: stencila.Node
 ): Exclude<stencila.Article, 'content'> => {
-  if (isNode<stencila.Article>({ Article: 'Article' })(node)) {
+  if (isArticle(node)) {
     const { content, ...metadata } = node
     return metadata
   }
@@ -182,7 +181,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
 }
 
 const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
-  switch (type(node)) {
+  switch (nodeType(node)) {
     case 'Article':
       return encodeArticle(node as stencila.Article)
 
@@ -413,7 +412,7 @@ function encodeInclude(include: stencila.Include): HTMLElement {
   const elem = h(`div`, content)
   elem.setAttribute(
     'itemtype',
-    `https://stencila.github.io/schema/${type(include)}`
+    `https://stencila.github.io/schema/${nodeType(include)}`
   )
   return elem
 }
@@ -523,7 +522,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
     { 'data-outputs': true },
     (chunk.outputs || []).map(node => {
       const content = (() => {
-        switch (type(node)) {
+        switch (nodeType(node)) {
           case 'string':
             return h('pre', node as string)
           case 'ImageObject':
@@ -676,7 +675,7 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
   const rows = (cols[0] && cols[0].values.map((_, row) => row)) || []
 
   // prettier-ignore
-  return h('stencila-datatable', 
+  return h('stencila-datatable',
     h('table',
       h('thead',
         h('tr', cols.map(col => (
@@ -746,7 +745,7 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
  * Encode a `stencila.Link` to a `<a>` element.
  */
 function encodeLink(link: stencila.Link): HTMLAnchorElement {
-  let attrs = {
+  const attrs = {
     href: link.target,
     ...encodeDataAttrs(link.meta || {})
   }

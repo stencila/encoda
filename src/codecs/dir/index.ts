@@ -4,6 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import { isCreativeWork } from '@stencila/schema/dist/util'
 import { range } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
 import globby from 'globby'
@@ -13,7 +14,6 @@ import trash from 'trash'
 // @ts-ignore
 import unixify from 'unixify'
 import { Encode, EncodeOptions, read, write } from '../..'
-import { isCreativeWork } from '../../util'
 import * as vfile from '../../util/vfile'
 
 const log = getLogger('encoda:dir')

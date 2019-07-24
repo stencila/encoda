@@ -3,10 +3,10 @@
  */
 
 import stencila from '@stencila/schema'
+import { nodeType } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import path from 'path'
-import { Encode, EncodeOptions, dump } from '../..'
-import type from '../../util/type'
+import { dump, Encode, EncodeOptions } from '../..'
 import * as vfile from '../../util/vfile'
 
 /**
@@ -64,7 +64,7 @@ export const encode: Encode = async (
 async function encodeNode(node: stencila.Node): Promise<string> {
   if (node === null || typeof node !== 'object') return ''
 
-  switch (type(node)) {
+  switch (nodeType(node)) {
     case 'Heading':
       const heading = node as stencila.Heading
       return `h ${heading.depth} "${await escapedMd(heading)}"\n\n`

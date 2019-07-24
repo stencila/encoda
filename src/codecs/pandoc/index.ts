@@ -4,19 +4,19 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import {
+  isBlockContent,
+  isInlineContent,
+  nodeType
+} from '@stencila/schema/dist/util'
 import childProcess from 'child_process'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import {
-  wrapInBlockNode,
-  isBlockContent,
-  isInlineContent
-} from '../../util/index'
-import type from '../../util/type'
+import { wrapInBlockNode } from '../../util/index'
 import * as vfile from '../../util/vfile'
-import * as Pandoc from './types'
-import { binary, dataDir } from './binary'
 import * as rpng from '../rpng'
+import { binary, dataDir } from './binary'
+import * as Pandoc from './types'
 
 export { InputFormat, OutputFormat } from './types'
 
@@ -42,7 +42,7 @@ export async function decode(
 ): Promise<stencila.Node> {
   const args = [`--from=${from}`, `--to=json`].concat(options)
 
-  let content = file.contents
+  const content = file.contents
   if (!content || ensureFile) {
     if (ensureFile && !file.path) throw new Error('Must supply a file')
     args.push(`${file.path}`)
@@ -93,7 +93,7 @@ export const encode: Encode<PandocEncodeOptions> = async (
     let output
     if (!filePath || filePath === '-') {
       // Create a new file path, which is returned as `vfile.path`
-      output = type(node).toLowerCase() + '.' + format
+      output = nodeType(node).toLowerCase() + '.' + format
       filePath = output
     } else output = filePath
     args.push(`--output=${output}`)
@@ -190,7 +190,7 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
 
   let titre = 'Untitled'
   if (title) {
-    const type_ = type(title)
+    const type_ = nodeType(title)
     if (type_ === 'string') {
       titre = title as string
     } else if (type_ === 'Paragraph') {
@@ -225,7 +225,7 @@ function encodeNode(
   let meta: Pandoc.Meta = {}
   let blocks: Pandoc.Block[] = []
 
-  const type_ = type(node)
+  const type_ = nodeType(node)
   if (type_ === 'Article') {
     const { type, content, ...rest } = node as stencila.Article
     standalone = true
@@ -306,7 +306,7 @@ function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
  * encoded into a Pandoc `MetaString`.
  */
 function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
-  switch (type(node)) {
+  switch (nodeType(node)) {
     case 'null':
     case 'undefined':
       return {
@@ -448,7 +448,7 @@ function decodePara(node: Pandoc.Para): stencila.BlockContent {
   if (content.length === 1) {
     const node = content[0]
     // TODO: fix this dangerous type casting
-    if (type(node) === 'CodeChunk') {
+    if (nodeType(node) === 'CodeChunk') {
       return (node as unknown) as stencila.CodeChunk
     }
   }
@@ -718,7 +718,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
 }
 
 function encodeInline(node: stencila.Node): Pandoc.Inline {
-  switch (type(node)) {
+  switch (nodeType(node)) {
     case 'string':
       return encodeString(node as string)
     case 'Emphasis':
@@ -737,7 +737,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeImageObject(node as stencila.ImageObject)
   }
   logger.warn(
-    `Falling back to default encoding for inline node type ${type(node)}.`
+    `Falling back to default encoding for inline node type ${nodeType(node)}.`
   )
   return encodeFallbackInline(node)
 }
@@ -936,7 +936,7 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
     target,
     content: decodeInlines(node.c[1])
   }
-  if (title) link.description = title
+  if (title) link.title = title
   const meta = decodeAttrs(node.c[0])
   if (meta) link.meta = meta
   return link
@@ -946,7 +946,7 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
  * Encode a Stencila `Link` to a Pandoc `Link`.
  */
 function encodeLink(node: stencila.Link): Pandoc.Link {
-  const [url, title] = [node.target, node.description || '']
+  const [url, title] = [node.target, node.title || '']
   return {
     t: 'Link',
     c: [emptyAttrs, encodeInlines(node.content), [url, title]]
@@ -1008,7 +1008,7 @@ function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
   encodePromises.push(promise)
 
   const url = imagePath
-  const title = type(node)
+  const title = nodeType(node)
   return {
     t: 'Image',
     c: [emptyAttrs, [], [url, title]]

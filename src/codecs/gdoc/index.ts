@@ -7,13 +7,16 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import {
+  isInlineContent,
+  isParagraph,
+  nodeType
+} from '@stencila/schema/dist/util'
 import crypto from 'crypto'
 import { docs_v1 as GDoc } from 'googleapis'
 import { Encode } from '../..'
-import { isInlineContent, isNode } from '../../util/index'
-import type from '../../util/type'
-import * as vfile from '../../util/vfile'
 import * as http from '../../util/http'
+import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda')
 
@@ -99,6 +102,7 @@ class FetchToSame {
   public get(url: string): string {
     return url
   }
+
   public async resolve(): Promise<void> {}
 }
 
@@ -118,7 +122,7 @@ async function decodeDocument(
   decodingFetcher = fetcher.get.bind(fetcher)
 
   let content: stencila.Node[] = []
-  let lists: { [key: string]: stencila.List } = {}
+  const lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
       .map((elem: GDoc.Schema$StructuralElement, index: number) => {
@@ -163,7 +167,7 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
   // Wrap the node as needed to ensure an array
   // of block element at the top level
   let content: stencila.Node[] = []
-  switch (type(node)) {
+  switch (nodeType(node)) {
     // `CreativeWork` types (have `content`)
     case 'Article':
       const article = node as stencila.Article
@@ -190,8 +194,8 @@ function encodeNode(node: stencila.Node): GDoc.Schema$Document {
   }
 
   if (content) {
-    for (let node of content) {
-      const type_ = type(node)
+    for (const node of content) {
+      const type_ = nodeType(node)
       switch (type_) {
         case 'Heading':
           gdocContent.push(encodeHeading(node as stencila.Heading))
@@ -232,9 +236,9 @@ function decodeParagraph(
   }
 
   if (para.paragraphStyle) {
-    let styleType = para.paragraphStyle.namedStyleType
+    const styleType = para.paragraphStyle.namedStyleType
     if (styleType) {
-      let match = styleType.match(/^HEADING_(\d)$/)
+      const match = styleType.match(/^HEADING_(\d)$/)
       if (match) {
         return {
           type: 'Heading',
@@ -388,7 +392,7 @@ const encodeListItem = (
   listId: string
 ): GDoc.Schema$Paragraph => {
   const head = listItem.content[0]
-  if (isNode<stencila.Paragraph>({ Paragraph: 'Paragraph' })(head)) {
+  if (isParagraph(head)) {
     return {
       elements: head.content.map(encodeInlineContent),
       bullet: {
@@ -552,7 +556,7 @@ function decodeInlineObjectElement(
 function encodeInlineContent(
   node: stencila.InlineContent
 ): GDoc.Schema$ParagraphElement {
-  const type_ = type(node)
+  const type_ = nodeType(node)
   switch (type_) {
     case 'Emphasis':
       return encodeEmphasis(node as stencila.Emphasis)
@@ -615,7 +619,7 @@ function decodeTextRun(
 function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
   return nodes
     .map(node => {
-      switch (type(node)) {
+      switch (nodeType(node)) {
         case 'Emphasis':
         case 'Strong':
           // @ts-ignore
