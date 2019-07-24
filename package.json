@@ -185,5 +185,8 @@
   "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
     "extends": "@stencila/semantic-release-config"
+  },
+  "eslintConfig": {
+    "extends": "@stencila/eslint-config"
   }
 }

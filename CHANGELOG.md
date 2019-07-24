@@ -1,3 +1,10 @@
+## [0.59.2](https://github.com/stencila/encoda/compare/v0.59.1...v0.59.2) (2019-07-24)
+
+
+### Bug Fixes
+
+* **CI:** Move ESLint config to own file to fix Travis issues ([05a0c6c](https://github.com/stencila/encoda/commit/05a0c6c))
+
 ## [0.59.1](https://github.com/stencila/encoda/compare/v0.59.0...v0.59.1) (2019-07-19)
 
 
