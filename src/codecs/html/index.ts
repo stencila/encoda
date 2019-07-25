@@ -4,7 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
-import { isArticle, nodeType } from '@stencila/schema/dist/util'
+import { isArticle, nodeType, markTypes } from '@stencila/schema/dist/util'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import fs from 'fs'
@@ -137,11 +137,11 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeHR(node as HTMLHRElement)
 
     case 'em':
-      return decodeInlineElement(node as HTMLElement, 'Emphasis')
+      return decodeMark(node as HTMLElement, 'Emphasis')
     case 'strong':
-      return decodeInlineElement(node as HTMLElement, 'Strong')
+      return decodeMark(node as HTMLElement, 'Strong')
     case 'del':
-      return decodeInlineElement(node as HTMLElement, 'Delete')
+      return decodeMark(node as HTMLElement, 'Delete')
     case 'a':
       return decodeLink(node as HTMLAnchorElement)
     case 'q':
@@ -210,11 +210,11 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeThematicBreak(node as stencila.ThematicBreak)
 
     case 'Emphasis':
-      return encodeInlineThing<'Emphasis'>(node, 'em')
+      return encodeMark(node as stencila.Emphasis, 'em')
     case 'Strong':
-      return encodeInlineThing<'Strong'>(node, 'strong')
+      return encodeMark(node as stencila.Strong, 'strong')
     case 'Delete':
-      return encodeInlineThing<'Delete'>(node, 'del')
+      return encodeMark(node as stencila.Delete, 'del')
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Quote':
@@ -707,24 +707,19 @@ function encodeThematicBreak(tb: stencila.ThematicBreak): HTMLHRElement {
 }
 
 /**
- * Decode an inline element e.g `<em>` to a inline `Thing` e.g. `Emphasis`.
+ * Decode an inline element e.g `<em>` to a `Mark` node e.g. `Emphasis`.
  */
-function decodeInlineElement<Type extends keyof stencila.Types>(
+function decodeMark<Type extends keyof typeof markTypes>(
   elem: HTMLElement,
   type: Type
-): stencila.Types[Type] {
+): stencila.Mark {
   return { type, content: decodeInlineChildNodes(elem) }
 }
 
 /**
- * Encode an inline `Thing` to an inline element e.g. `<em>`.
+ * Encode a `Mark` node to an inline element e.g. `<em>`.
  */
-function encodeInlineThing<Type extends keyof stencila.Types>(
-  node: stencila.Node,
-  tag: string
-): HTMLElement {
-  node = node as stencila.Types[Type]
-  // @ts-ignore
+function encodeMark(node: stencila.Mark, tag: string): HTMLElement {
   return h(tag, node.content.map(encodeNode))
 }
 
