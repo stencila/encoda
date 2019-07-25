@@ -1,3 +1,10 @@
+## [0.60.1](https://github.com/stencila/encoda/compare/v0.60.0...v0.60.1) (2019-07-25)
+
+
+### Bug Fixes
+
+* **Thema:** Update Thema version ([bc99c2a](https://github.com/stencila/encoda/commit/bc99c2a))
+
 # [0.60.0](https://github.com/stencila/encoda/compare/v0.59.2...v0.60.0) (2019-07-25)
 
 
