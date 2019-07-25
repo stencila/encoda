@@ -41,6 +41,17 @@ const logger = getLogger('encoda:md')
 
 export const mediaTypes = ['text/markdown', 'text/x-markdown']
 
+/**
+ * Matches new lines, **the preceding character**, and any following white space
+ * on the next line. This so so that trailing spaces can be collapsed into a space.
+ * To use you need to include the matched group in the replacement value.
+ * @see https://regexr.com/4i45o
+ * @see https://stackoverflow.com/a/18012521
+ * @example myString.replace(whiteSpaceRegEx, '$1 ')
+ */
+
+const whiteSpaceRegEx = new RegExp(/(^|[^\n\s])[\n]+\s*(?![\n])/g)
+
 type MdastBlockContentTypes = TypeMapGeneric<MDAST.BlockContent>
 
 export const mdastBlockContentTypes: MdastBlockContentTypes = {
@@ -949,14 +960,17 @@ function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
  * across multiple lines do not have newlines in them.
  */
 function decodeText(text: MDAST.Text): string {
-  return text.value.replace(/[\r\n]+/g, ' ')
+  return text.value.replace(whiteSpaceRegEx, '$1 ')
 }
 
 /**
  * Encode a `string` to a `MDAST.Text`
  */
 function encodeString(value: string): MDAST.Text {
-  return { type: 'text', value }
+  return {
+    type: 'text',
+    value: value.replace(whiteSpaceRegEx, '$1 ')
+  }
 }
 
 /**

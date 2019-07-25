@@ -40,6 +40,72 @@ describe('encode', () => {
   test('References', async () => {
     expect(await e(references.node)).toEqual(references.to)
   })
+
+  it('Strip newlines from tables', async () => {
+    const table = {
+      type: 'Table',
+      rows: [
+        {
+          type: 'TableRow',
+          cells: [
+            {
+              content: ['A'],
+              type: 'TableCell'
+            },
+            {
+              content: ['B'],
+              type: 'TableCell'
+            },
+            {
+              content: ['C'],
+              type: 'TableCell'
+            }
+          ]
+        },
+        {
+          type: 'TableRow',
+          cells: [
+            {
+              content: ['1'],
+              type: 'TableCell'
+            },
+            {
+              content: ['Some content\n split accross multiple rows'],
+              type: 'TableCell'
+            },
+            {
+              content: ['3'],
+              type: 'TableCell'
+            }
+          ]
+        },
+        {
+          type: 'TableRow',
+          cells: [
+            {
+              content: ['4'],
+              type: 'TableCell'
+            },
+            {
+              type: 'TableCell',
+              content: ['Some content\n split\naccross\nmultiple\nrows']
+            },
+            {
+              content: ['6'],
+              type: 'TableCell'
+            }
+          ]
+        }
+      ]
+    }
+
+    const expected = `| A   | B                                        | C   |
+| --- | ---------------------------------------- | --- |
+| 1   | Some content split accross multiple rows | 3   |
+| 4   | Some content split accross multiple rows | 6   |`
+
+    expect(await e(table)).toEqual(expected)
+  })
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
