@@ -1,3 +1,10 @@
+## [0.60.2](https://github.com/stencila/encoda/compare/v0.60.1...v0.60.2) (2019-07-25)
+
+
+### Bug Fixes
+
+* **Markdown:** Sanitize white spaces in tables close [#179](https://github.com/stencila/encoda/issues/179) ([6f7b140](https://github.com/stencila/encoda/commit/6f7b140))
+
 ## [0.60.1](https://github.com/stencila/encoda/compare/v0.60.0...v0.60.1) (2019-07-25)
 
 
