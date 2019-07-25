@@ -7,8 +7,6 @@ import {
   validate,
   wrapInBlockNode
 } from '../index'
-import is from '../is'
-import type from '../type'
 
 describe('create', () => {
   it('works with different types', async () => {
@@ -48,13 +46,6 @@ describe('create', () => {
     )
   })
 
-  it('does not throw when wrong initial values and no validation', async () => {
-    expect(await create('Thing', { foo: 'invalid' }, 'none')).toEqual({
-      type: 'Thing',
-      foo: 'invalid'
-    })
-  })
-
   it('will coerce initial value to conform to schema', async () => {
     expect(
       await create('Thing', { name: 42, foo: 'invalid' }, 'coerce')
@@ -63,28 +54,6 @@ describe('create', () => {
       name: '42'
     })
   })
-})
-
-test('type', () => {
-  expect(type(null)).toBe('null')
-  expect(type(true)).toBe('boolean')
-  expect(type(0)).toBe('number')
-  expect(type(NaN)).toBe('number')
-  expect(type('0')).toBe('string')
-  expect(type([])).toBe('array')
-  expect(type({})).toBe('object')
-  expect(type({ type: 'Thing' })).toBe('Thing')
-})
-
-test('is', () => {
-  expect(is(null, 'null')).toEqual(true)
-  expect(is(true, 'boolean')).toEqual(true)
-  expect(is(0, 'number')).toEqual(true)
-  expect(is('0', 'string')).toEqual(true)
-  expect(is([], 'array')).toEqual(true)
-  expect(is({}, 'object')).toEqual(true)
-  expect(is({ type: 'Thing' }, 'Thing')).toEqual(true)
-  expect(is({ type: 'Foo' }, 'Thing')).toEqual(false)
 })
 
 describe('cast', () => {

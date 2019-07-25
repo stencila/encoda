@@ -1,9 +1,9 @@
-import stencila from '@stencila/schema'
-import fs from 'fs-extra'
-import mime from 'mime'
-import path from 'path'
-import type from '../util/type'
-import { Codec } from '..'
+import stencila from '@stencila/schema';
+import { nodeType } from '@stencila/schema/dist/util';
+import fs from 'fs-extra';
+import mime from 'mime';
+import path from 'path';
+import { Codec } from '..';
 
 // Ensure that the dir for test outputs is present
 fs.ensureDirSync(path.join(__dirname, '__outputs__'))
@@ -20,7 +20,7 @@ fs.ensureDirSync(path.join(__dirname, '__outputs__'))
 expect.extend({
   async toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
     if (!fileName) {
-      const typeName = type(node).toLowerCase()
+      const typeName = nodeType(node).toLowerCase()
       const num = Math.floor(Math.random() * Math.floor(1000))
       fileName = `${typeName}-${num}`
       const ext =

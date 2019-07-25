@@ -3,9 +3,9 @@
  */
 
 import stencila from '@stencila/schema'
+import { isPrimitive, nodeType } from '@stencila/schema/dist/util'
 import produce from 'immer'
 import * as dataUri from './dataUri'
-import type from './type'
 
 /**
  * Walk a document tree and replace any links to local resources
@@ -23,9 +23,9 @@ export default async function bundle(
   node: stencila.Node
 ): Promise<stencila.Node> {
   async function walk(node: stencila.Node): Promise<stencila.Node> {
-    if (node === null || typeof node !== 'object') return node
+    if (isPrimitive(node)) return node
 
-    switch (type(node)) {
+    switch (nodeType(node)) {
       case 'MediaObject':
       case 'AudioObject':
       case 'ImageObject':
