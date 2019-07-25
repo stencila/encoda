@@ -915,7 +915,7 @@ function decodeText(text: Text): string {
  * Encode a `string` to a `#text` node.
  */
 function encodeString(value: string): Text {
-  return document.createTextNode(value)
+  return document.createTextNode(escape(value))
 }
 
 /**

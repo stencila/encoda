@@ -10,15 +10,33 @@ test('decode', async () => {
   expect(await decode(load(dt.html))).toEqual(dt.node)
 })
 
-test('encode', async () => {
-  const e = async (node: stencila.Node, options: EncodeOptions = {}) =>
-    await dump(await encode(node, options))
+const e = async (node: stencila.Node, options: EncodeOptions = {}) =>
+  await dump(await encode(node, options))
 
+test('encode', async () => {
   expect(await e(kitchenSink.node, { isStandalone: false })).toEqual(
     kitchenSink.html
   )
   expect(await e(attrs.node, { isStandalone: false })).toEqual(attrs.html)
   expect(await e(dt.node, { isStandalone: false })).toEqual(dt.html)
+})
+
+describe('String escaping', () => {
+  test('Escape HTML entities', async () => {
+    expect(
+      await e(
+        { type: 'Paragraph', content: ['<em>', '<strong>'] },
+        { isStandalone: false }
+      )
+    ).toEqual('<p>&lt;em&gt;&lt;strong&gt;</p>')
+  })
+
+  test('Convert HTML entities back', async () => {
+    expect(await decode(load('<p>&lt;em&gt;&lt;strong&gt;</p>'))).toEqual({
+      type: 'Paragraph',
+      content: ['<em><strong>']
+    })
+  })
 })
 
 test('encode with different themes', async () => {
