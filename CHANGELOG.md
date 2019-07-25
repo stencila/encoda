@@ -1,3 +1,22 @@
+# [0.60.0](https://github.com/stencila/encoda/compare/v0.59.2...v0.60.0) (2019-07-25)
+
+
+### Bug Fixes
+
+* **Coerce:** Change to `codec` keyword to match change in Schema ([b496761](https://github.com/stencila/encoda/commit/b496761))
+* **Coerce:** Do not use removed aliases.json ([640e48e](https://github.com/stencila/encoda/commit/640e48e))
+* **Dependency:** Update schema version ([d45c09d](https://github.com/stencila/encoda/commit/d45c09d))
+* **Link:** Use title property for link nodes ([8464915](https://github.com/stencila/encoda/commit/8464915))
+* **Markdown, HTML:** Fix include node handling ([1c147b7](https://github.com/stencila/encoda/commit/1c147b7))
+* **Package:** Fix distribution of Pandoc templates ([945b921](https://github.com/stencila/encoda/commit/945b921))
+* **Util:** Fix validation and coercion for new Types interface ([429870d](https://github.com/stencila/encoda/commit/429870d))
+* **Validation:** New location for JSON Schema files ([1b6cd50](https://github.com/stencila/encoda/commit/1b6cd50))
+
+
+### Features
+
+* **TypeGuards:** Remove type guards, instead import them from Schema ([0259410](https://github.com/stencila/encoda/commit/0259410))
+
 ## [0.59.2](https://github.com/stencila/encoda/compare/v0.59.1...v0.59.2) (2019-07-24)
 
 
