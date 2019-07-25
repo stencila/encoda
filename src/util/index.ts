@@ -10,14 +10,18 @@
 */
 
 import * as stencila from '@stencila/schema'
-import { isBlockContent, isInlineContent } from '@stencila/schema/dist/util'
+import {
+  isEntity,
+  isBlockContent,
+  isInlineContent,
+  nodeType
+} from '@stencila/schema/dist/util'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
 import fs from 'fs-extra'
 import produce from 'immer'
 import path from 'path'
 import { decode as decodePerson } from '../codecs/person'
-import type from './type'
 
 /**
  * Create a node of a type
@@ -28,12 +32,12 @@ import type from './type'
 export async function create<Key extends keyof stencila.Types>(
   type: Key,
   initial: { [key: string]: any } = {},
-  validation: 'none' | 'validate' | 'coerce' = 'validate'
+  validation: 'validate' | 'coerce' = 'validate'
 ): Promise<stencila.Types[Key]> {
   const node = { type, ...initial }
   if (validation === 'validate') return validate(node, type)
   else if (validation === 'coerce') return coerce(node, type)
-  else return node
+  else throw new Error(`Must either validate or coerce the node`)
 }
 
 /**
@@ -55,10 +59,10 @@ export async function cast<Key extends keyof stencila.Types>(
   node: any,
   type: Key
 ): Promise<stencila.Types[Key]> {
-  return produce(node, async (casted: any) => {
+  return (produce(node, async (casted: any) => {
     casted.type = type
     await validate(casted, type)
-  })
+  }) as unknown) as stencila.Types[Key]
 }
 
 // Cached JSON Schema validation functions
@@ -72,7 +76,7 @@ const validators = new Ajv({
  */
 async function loadSchema(uri: string) {
   const match = uri.match(/([\w]+)\.schema\.json$/)
-  if (match) return readSchema(match[1])
+  if (match) return readSchema(match[1] as keyof stencila.Types)
   throw new Error(`Can not resolve schema "${uri}"`)
 }
 
@@ -129,10 +133,10 @@ async function getSchema<Key extends keyof stencila.Types>(
  */
 export async function validate<Key extends keyof stencila.Types>(
   node: any,
-  typeName?: Key
+  type?: Key
 ): Promise<stencila.Types[Key]> {
-  if (typeName === undefined) typeName = type(node) as Key
-  const validator = await getValidator(validators, typeName)
+  if (type === undefined) type = nodeType(node) as Key
+  const validator = await getValidator(validators, type)
   if (!validator(node)) {
     const errors = (betterAjvErrors(validator.schema, node, validator.errors, {
       format: 'js'
@@ -259,13 +263,13 @@ mutators.addKeyword('codec', {
  */
 export async function coerce<Key extends keyof stencila.Types>(
   node: any,
-  typeName?: Key
+  type?: Key
 ): Promise<stencila.Types[Key]> {
-  if (typeName === undefined) typeName = type(node) as Key
-  const mutator = await getValidator(mutators, typeName)
+  if (type === undefined) type = nodeType(node) as Key
+  const mutator = await getValidator(mutators, type)
 
-  return produce(node, async (coerced: any) => {
-    if (typeof coerced === 'object') coerced.type = typeName
+  return (produce(node, async (coerced: any) => {
+    if (typeof coerced === 'object') coerced.type = type
     // Rename property aliases
     await rename(coerced)
     // coerce and validate
@@ -275,24 +279,28 @@ export async function coerce<Key extends keyof stencila.Types>(
       }) as unknown) as betterAjvErrors.IOutputError[]
       throw new Error(errors.map(error => `${error.error}`).join(';'))
     }
-  })
-  // Replace aliases with canonical names
-  async function rename(node: any) {
-    if (!node || typeof node !== 'object') return
-    if (!node.type) return
-    const schema = await getSchema(mutators, node.type as Key)
-    if (!schema.propertyAliases) return
+  }) as unknown) as stencila.Types[Key]
 
-    const propertyAliases = aliases[node.type]
-    for (const [key, child] of Object.entries(node)) {
-      if (!Array.isArray(node)) {
+  // Replace aliases with canonical names
+  async function rename(node: Node) {
+    if (isEntity(node)) {
+      const schema = await getSchema(mutators, node.type as Key)
+      if (!schema.propertyAliases) return
+
+      for (const [key, child] of Object.entries(node)) {
         const name = schema.propertyAliases[key]
         if (name) {
+          // @ts-ignore
           node[name] = child
+          // @ts-ignore
           delete node[key]
         }
+        await rename(child)
       }
-      await rename(child)
+    } else if (Array.isArray(node)) {
+      for (const child of node) {
+        await rename(child)
+      }
     }
   }
 }
