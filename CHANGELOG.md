@@ -1,3 +1,10 @@
+## [0.60.3](https://github.com/stencila/encoda/compare/v0.60.2...v0.60.3) (2019-07-26)
+
+
+### Bug Fixes
+
+* **HTML:** HTML string escaping ([bb83cac](https://github.com/stencila/encoda/commit/bb83cac))
+
 ## [0.60.2](https://github.com/stencila/encoda/compare/v0.60.1...v0.60.2) (2019-07-25)
 
 
