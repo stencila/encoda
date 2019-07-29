@@ -1,3 +1,10 @@
+## [0.60.4](https://github.com/stencila/encoda/compare/v0.60.3...v0.60.4) (2019-07-29)
+
+
+### Bug Fixes
+
+* **DOCX:** Fix path to reference doc ([22649f6](https://github.com/stencila/encoda/commit/22649f6))
+
 ## [0.60.3](https://github.com/stencila/encoda/compare/v0.60.2...v0.60.3) (2019-07-26)
 
 
