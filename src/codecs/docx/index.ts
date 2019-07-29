@@ -5,9 +5,9 @@
 import stencila from '@stencila/schema'
 import path from 'path'
 import { Encode, EncodeOptions } from '../..'
-import home from '../../util/app/home'
 import * as vfile from '../../util/vfile'
 import * as pandoc from '../pandoc'
+import { dataDir } from '../pandoc/binary'
 
 export const mediaTypes = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
@@ -24,10 +24,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
 
 /** Used to style conversion outputs targeting Microsoft Word */
 const defaultDocxTemplatePath = path.join(
-  home,
-  'src',
-  'codecs',
-  'pandoc',
+  dataDir,
   'templates',
   'stencila-template.docx'
 )
