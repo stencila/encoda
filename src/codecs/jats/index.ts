@@ -2,16 +2,15 @@
  * @module jats
  */
 
-import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
-import fs from 'fs-extra'
-import { Encode } from '../..'
-import * as vfile from '../../util/vfile'
+import { getLogger } from '@stencila/logga';
+import stencila from '@stencila/schema';
+import { isInlineContent } from '@stencila/schema/dist/util';
+import fs from 'fs-extra';
+import { Encode } from '../..';
+import * as vfile from '../../util/vfile';
 /* eslint-disable import/no-duplicates */
-import * as xml from '../../util/xml'
-import { elem, attr, child, first, all, text } from '../../util/xml'
-/* eslint-enable import/no-duplicates */
-import { isInlineContent } from '../../util'
+import * as xml from '../../util/xml';
+import { all, attr, child, elem, first, text } from '../../util/xml';
 
 const log = getLogger('encoda:jats')
 
