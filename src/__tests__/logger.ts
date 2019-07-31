@@ -1,9 +1,8 @@
-import { replaceHandlers, defaultHandler } from '@stencila/logga'
+import { configure } from '../log'
 
-/**
- * Show all log entries except for DEBUG level during tests
- */
-replaceHandlers(data => {
-  process.stderr.isTTY = true
-  if (data.level < 3) defaultHandler(data)
-})
+// Force TTY style output for better readability
+process.stderr.isTTY = true
+
+// Allow debug mode in DEBUG env var set e.g.
+//   DEBUG=1 npm test
+configure(process.env.DEBUG !== undefined)
