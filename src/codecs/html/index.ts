@@ -142,6 +142,10 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeMark(node as HTMLElement, 'Strong')
     case 'del':
       return decodeMark(node as HTMLElement, 'Delete')
+    case 'sup':
+      return decodeMark(node as HTMLElement, 'Superscript')
+    case 'sub':
+      return decodeMark(node as HTMLElement, 'Subscript')
     case 'a':
       return decodeLink(node as HTMLAnchorElement)
     case 'q':
@@ -214,7 +218,11 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Strong':
       return encodeMark(node as stencila.Strong, 'strong')
     case 'Delete':
-      return encodeMark(node as stencila.Delete, 'del')
+      return encodeMark(node as stencila.Strong, 'del')
+    case 'Superscript':
+      return encodeMark(node as stencila.Superscript, 'sup')
+    case 'Subscript':
+      return encodeMark(node as stencila.Subscript, 'sub')
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Quote':
@@ -223,6 +231,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCode(node as stencila.Code)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
+    case 'Math':
+      return encodeMath(node as object)
 
     case 'null':
       return encodeNull(node as null)
@@ -393,11 +403,63 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
  * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
-  const { type, title, content, ...rest } = article
+  const { type, title, content, citations, ...rest } = article
   const titleEl = h('h1', title)
   titleEl.setAttribute('role', 'title')
   const elements = content ? content.map(encodeNode) : []
-  return h('article', titleEl, ...elements)
+  const references = citations ? encodeCitations(citations) : []
+  return h('article', titleEl, ...elements, references)
+}
+
+function encodeCitations(
+  citations: (string | stencila.CreativeWork)[]
+): HTMLElement {
+  return h('section', h('h1', 'References'), ...citations.map(encodeCitation))
+}
+
+function encodeCitation(citation: string | stencila.CreativeWork): HTMLElement {
+  return typeof citation === 'string'
+    ? h('div', citation)
+    : encodeCreativeWork(citation)
+}
+
+function encodeCreativeWork(work: stencila.CreativeWork): HTMLElement {
+  const elem = h(
+    'div',
+    {
+      itemscope: true,
+      itemtype: 'http://schema.org/CreativeWork',
+      itemprop: 'citation'
+    },
+    ...(work.authors || []).map(author =>
+      author.type === 'Person'
+        ? encodePerson(author)
+        : encodeOrganization(author)
+    ),
+    h('span', { itemprop: 'datePublished' }, work.datePublished),
+    h('span', { itemprop: 'title' }, work.title)
+  )
+  elem.setAttribute('itemtype', 'http://schema.org/CreativeWork')
+  return elem
+}
+
+function encodePerson(person: stencila.Person): HTMLElement {
+  const elem = h(
+    'span',
+    {
+      itemscope: true,
+      itemtype: 'http://schema.org/Person',
+      itemprop: 'author'
+    },
+    h('span', { itemprop: 'familyName' }, person.familyNames),
+    h('span', { itemprop: 'givenName' }, person.givenNames)
+  )
+  elem.setAttribute('itemtype', 'http://schema.org/Person')
+  return elem
+}
+
+function encodeOrganization(org: stencila.Organization): HTMLElement {
+  return h('div', org.name)
 }
 
 /**
@@ -818,6 +880,13 @@ function encodeImageObject(image: stencila.ImageObject): HTMLImageElement {
     title: image.title,
     alt: image.text
   })
+}
+
+/**
+ * Encode a Stencila `Math` node to a HTML `<math>` element.
+ */
+function encodeMath(math: any): HTMLElement {
+  return h('math', { innerHTML: math.text })
 }
 
 /**

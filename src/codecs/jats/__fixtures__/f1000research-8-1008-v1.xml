@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN" "http://jats.nlm.nih.gov/publishing/1.2/JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="pmc">F1000Research</journal-id>
+            <journal-title-group>
+                <journal-title>F1000Research</journal-title>
+            </journal-title-group>
+            <issn pub-type="epub">2046-1402</issn>
+            <publisher>
+                <publisher-name>F1000 Research Limited</publisher-name>
+                <publisher-loc>London, UK</publisher-loc>
+            </publisher>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="doi">10.12688/f1000research.19327.1</article-id>
+            <article-categories>
+                <subj-group subj-group-type="heading">
+                    <subject>Research Article</subject>
+                </subj-group>
+                <subj-group>
+                    <subject>Articles</subject>
+                </subj-group>
+            </article-categories>
+            <title-group>
+                <article-title>The protective effects of antigen-specific IgY on pyocyanin-treated human lymphoma Raji cells</article-title>
+                <fn-group content-type="pub-status">
+                    <fn>
+                        <p>[version 1; peer review: awaiting peer review]</p>
+                    </fn>
+                </fn-group>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes">
+                    <name>
+                        <surname>Susilowati</surname>
+                        <given-names>Heni</given-names>
+                    </name>
+                    <role content-type="http://credit.casrai.org/">Conceptualization</role>
+                    <role content-type="http://credit.casrai.org/">Data Curation</role>
+                    <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+                    <role content-type="http://credit.casrai.org/">Funding Acquisition</role>
+                    <role content-type="http://credit.casrai.org/">Investigation</role>
+                    <role content-type="http://credit.casrai.org/">Methodology</role>
+                    <role content-type="http://credit.casrai.org/">Project Administration</role>
+                    <role content-type="http://credit.casrai.org/">Resources</role>
+                    <role content-type="http://credit.casrai.org/">Supervision</role>
+                    <role content-type="http://credit.casrai.org/">Validation</role>
+                    <role content-type="http://credit.casrai.org/">Visualization</role>
+                    <role content-type="http://credit.casrai.org/">Writing &#x2013; Original Draft Preparation</role>
+                    <uri content-type="orcid">https://orcid.org/0000-0003-0808-7465</uri>
+                    <xref ref-type="corresp" rid="c1">a</xref>
+                    <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author" corresp="no">
+                    <name>
+                        <surname>Artanto</surname>
+                        <given-names>Sidna</given-names>
+                    </name>
+                    <role content-type="http://credit.casrai.org/">Investigation</role>
+                    <role content-type="http://credit.casrai.org/">Methodology</role>
+                    <role content-type="http://credit.casrai.org/">Resources</role>
+                    <xref ref-type="aff" rid="a2">2</xref>
+                </contrib>
+                <contrib contrib-type="author" corresp="no">
+                    <name>
+                        <surname>Yulianto</surname>
+                        <given-names>Heribertus Dedy Kusuma</given-names>
+                    </name>
+                    <role content-type="http://credit.casrai.org/">Data Curation</role>
+                    <role content-type="http://credit.casrai.org/">Investigation</role>
+                    <role content-type="http://credit.casrai.org/">Software</role>
+                    <role content-type="http://credit.casrai.org/">Writing &#x2013; Original Draft Preparation</role>
+                    <xref ref-type="aff" rid="a3">3</xref>
+                </contrib>
+                <contrib contrib-type="author" corresp="no">
+                    <name>
+                        <surname>Sosroseno</surname>
+                        <given-names>Wihaskoro</given-names>
+                    </name>
+                    <role content-type="http://credit.casrai.org/">Software</role>
+                    <role content-type="http://credit.casrai.org/">Visualization</role>
+                    <role content-type="http://credit.casrai.org/">Writing &#x2013; Review &amp; Editing</role>
+                    <xref ref-type="aff" rid="a4">4</xref>
+                </contrib>
+                <contrib contrib-type="author" corresp="no">
+                    <name>
+                        <surname>Hutomo</surname>
+                        <given-names>Suryani</given-names>
+                    </name>
+                    <role content-type="http://credit.casrai.org/">Investigation</role>
+                    <role content-type="http://credit.casrai.org/">Writing &#x2013; Original Draft Preparation</role>
+                    <uri content-type="orcid">https://orcid.org/0000-0003-4953-8699</uri>
+                    <xref ref-type="aff" rid="a5">5</xref>
+                </contrib>
+                <aff id="a1">
+                    <label>1</label>Department of Oral Biology, Faculty of Dentistry, Universitas Gadjah Mada, Sleman, Yogyakarta, 55281, Indonesia</aff>
+                <aff id="a2">
+                    <label>2</label>Department of Microbiology, Faculty of Veteriner, Universitas Gadjah Mada, Sleman, Yogyakarta, 55281, Indonesia</aff>
+                <aff id="a3">
+                    <label>3</label>Department of Dental Biomedical Science, Faculty of Dentistry, Universitas Gadjah Mada, Sleman, Yogyakarta, 55281, Indonesia</aff>
+                <aff id="a4">
+                    <label>4</label>Faculty of Dentistry, AIMST University, Bedong, Kedah, 08100, Malaysia</aff>
+                <aff id="a5">
+                    <label>5</label>Department of Microbiology, Faculty of Medicine, Dutawacana Christian University, Yogyakarta, 55225, Indonesia</aff>
+            </contrib-group>
+            <author-notes>
+                <corresp id="c1">
+                    <label>a</label>
+                    <email xlink:href="mailto:henisusilowati@ugm.ac.id">henisusilowati@ugm.ac.id</email>
+                </corresp>
+                <fn fn-type="conflict">
+                    <p>No competing interests were disclosed.</p>
+                </fn>
+            </author-notes>
+            <pub-date pub-type="epub">
+                <day>4</day>
+                <month>7</month>
+                <year>2019</year>
+            </pub-date>
+            <pub-date pub-type="collection">
+                <year>2019</year>
+            </pub-date>
+            <volume>8</volume>
+            <elocation-id>1008</elocation-id>
+            <history>
+                <date date-type="accepted">
+                    <day>18</day>
+                    <month>6</month>
+                    <year>2019</year>
+                </date>
+            </history>
+            <permissions>
+                <copyright-statement>Copyright: &#x00a9; 2019 Susilowati H et al.</copyright-statement>
+                <copyright-year>2019</copyright-year>
+                <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+                    <license-p>This is an open access article distributed under the terms of the Creative Commons Attribution Licence, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+                </license>
+            </permissions>
+            <self-uri content-type="pdf" xlink:href="f1000research-8-21186.pdf"/>
+            <abstract>
+                <p>
+                    <bold>Background:</bold> Pyocyanin (PCN), a highly pathogenic pigment produced by 
+                    <italic>Pseudomonas aeruginosa</italic>, induces caspase 3-dependent human B cell (Raji cells) death. The aim of the present study, therefore, was to assess whether antigen-specific IgY antibodies may be protective on PCN-induced Raji cell death.</p>
+                <p> 
+                    <bold>Methods:</bold> Chickens were subcutaneously immunized with Freund's complete adjuvant containing PCN, and then given two boosted immunizations.&#x00a0; Anti-PCN IgY antibodies were purified from egg yolk and detected using an agar gel precipitation test (AGPT) and ELISA. Protective effects of antigen-specific IgY on Raji cells were tested using a cell viability assay.</p>
+                <p> 
+                    <bold>Results:</bold> AGPT results showed the formation of strong immune complex precipitates, whilst ELISA further confirmed the presence of IgY antibodies specific to PCN at significant concentration. Further experiments showed that anti-PCN IgY antibodies significantly increased PCN-treated Raji cell viability in a dose-dependent fashion (p&lt;0.05).</p>
+                <p> 
+                    <bold>Conclusions:</bold> The results of the present study suggest that anti-PCN IgY antibodies may be protective on PCN-induced Raji cell death.</p>
+            </abstract>
+            <kwd-group kwd-group-type="author">
+                <kwd>Pseudomonas aeruginosa</kwd>
+                <kwd>pyocyanin</kwd>
+                <kwd>IgY</kwd>
+                <kwd>protective effect</kwd>
+            </kwd-group>
+            <funding-group>
+                <award-group id="fund-1" xlink:href="http://dx.doi.org/10.13039/501100009509">
+                    <funding-source>Kementerian Riset Teknologi Dan Pendidikan Tinggi Republik Indonesia</funding-source>
+                    <award-id>1048/UN1-P.III/LT/DIT-LIT/2016</award-id>
+                </award-group>
+                <funding-statement>This study was supported by a research grant (no. 1048/UN1-P.III/LT/DIT-LIT/2016) from the Ministry of Research, Technology and Higher Education, the Indonesian Government. </funding-statement>
+            </funding-group>
+        </article-meta>
+    </front>
+    <body>
+        <sec sec-type="intro">
+            <title>Introduction</title>
+            <p>
+                <italic>Pseudomonas aeruginosa,</italic> an opportunistic Gram-negative bacterium, is found in the environment with a broad spectrum of habitats and is responsible for severe nosocomial infections in the urinary tract
+                <sup>
+                    <xref ref-type="bibr" rid="ref-1">1</xref>
+                </sup>, the respiratory tract
+                <sup>
+                    <xref ref-type="bibr" rid="ref-2">2</xref>
+                </sup>, the vascular system
+                <sup>
+                    <xref ref-type="bibr" rid="ref-3">3</xref>
+                </sup> and the central nervous system
+                <sup>
+                    <xref ref-type="bibr" rid="ref-4">4</xref>
+                </sup>. It is known for one of the most common pathogens infecting patients with cystic fibrosis, leading to increase its morbidity and mortality due to the resisting abilities of this pathogen to against antibiotic treatments
+                <sup>
+                    <xref ref-type="bibr" rid="ref-5">5</xref>,
+                    <xref ref-type="bibr" rid="ref-6">6</xref>
+                </sup>. The presence of 
+                <italic>P. aeruginosa</italic> in dental pulp and periapical lesions may cause failure of endodontic treatments
+                <sup>
+                    <xref ref-type="bibr" rid="ref-7">7</xref>,
+                    <xref ref-type="bibr" rid="ref-8">8</xref>
+                </sup>. In the initial stage of infection, 
+                <italic>P. aeruginosa</italic> releases various virulent mediators, such as elastases, proteases, exotoxin A, and pyocyanin (PCN), after which chronic infection and persistent bacterial colonization at the 
+                <italic>P. aeruginosa</italic>-infected sites would be established
+                <sup>
+                    <xref ref-type="bibr" rid="ref-9">9</xref>
+                </sup>. PCN, a blue redox-active secondary metabolite and a member of tricyclic phenazine family, is known to function as a gene controller during the stationary growth phase
+                <sup>
+                    <xref ref-type="bibr" rid="ref-10">10</xref>
+                </sup>, an antibiotic
+                <sup>
+                    <xref ref-type="bibr" rid="ref-11">11</xref>
+                </sup>, an electron transfer facilitator
+                <sup>
+                    <xref ref-type="bibr" rid="ref-12">12</xref>
+                </sup>, and a potent mammary cell-damaging virulence factor
+                <sup>
+                    <xref ref-type="bibr" rid="ref-13">13</xref>
+                </sup>. Reports indicate that PCN inhibits B cell, T cell and macrophage functions
+                <sup>
+                    <xref ref-type="bibr" rid="ref-14">14</xref>,
+                    <xref ref-type="bibr" rid="ref-15">15</xref>
+                </sup> and induces neutrophil apoptosis
+                <sup>
+                    <xref ref-type="bibr" rid="ref-16">16</xref>
+                </sup>, suggesting that PCN suppresses both innate and antigen-specific adaptive immune response.</p>
+            <p>The existence of multidrug-resistant (MDR) 
+                <italic>P. aeruginosa</italic> leads to the development of alternative treatment strategies to eradicate an established chronic 
+                <italic>P. aeruginosa</italic> infection. Of these treatments, both active and passive immunotherapies have been reported. Active immunization with 
+                <italic>P. aeruginosa</italic>-derived flagella in cystic fibrosis patients resulted in increased serum antigen-specific IgG antibodies and reduced number of 
+                <italic>P. aeruginosa</italic> strains, suggesting the reduction of 
+                <italic>P. aeruginosa</italic> infection risk in cystic fibrosis patients by active vaccination
+                <sup>
+                    <xref ref-type="bibr" rid="ref-17">17</xref>
+                </sup>. Passive immunization with egg yolk immunoglobulin (IgY) specific to 
+                <italic>P. aeruginosa</italic> in patients with cystic fibrosis prevented bacterial colonization and infection, perhaps by acting as an opsonin, which in turn enhanced neutrophil phagocytosis to this pathogen
+                <sup>
+                    <xref ref-type="bibr" rid="ref-18">18</xref>&#x2013;
+                    <xref ref-type="bibr" rid="ref-20">20</xref>
+                </sup>. A recent study showed that PCN induces caspase 3-dependent human B cell (Raji Cells) death
+                <sup>
+                    <xref ref-type="bibr" rid="ref-21">21</xref>
+                </sup>. The aim of the present study, therefore, was to determine whether antigen-specific IgY antibodies may prevent PCN-induced Raji cell death.</p>
+        </sec>
+        <sec sec-type="methods">
+            <title>Methods</title>
+            <sec>
+                <title>IgY preparation and purification</title>
+                <p>PCN (Sigma-Aldrich, St. Louis, MO, USA) was dissolved in DMSO at a concentration of 1 mg/ml. Five Leghorn chickens aged 3 months were subcutaneously immunized with 500 &#x03bc;l of Freund's complete adjuvant (Sigma-Aldrich) containing 100 &#x03bc;g of PCN in the back of the neck. Two weeks later, a booster was given by injecting 500 &#x03bc;l incomplete Freund adjuvant containing 40 &#x03bc;g PCN as above and the same immunization regime was repeated two weeks later. Eggs were collected one week after the last immunization and IgY was isolated by using Pierce&#x00ae; Chicken IgY Purification Kit (Thermo Fisher Scientific Pierche Biotechnology, Rockford, USA) according to the manufacturer. The presence of anti-PCN IgY antibodies was detected using the agarose gel precipitation test (AGPT) as previously reported
+                    <sup>
+                        <xref ref-type="bibr" rid="ref-22">22</xref>
+                    </sup> and its concentration was assessed using the Chicken IgY ELISA Kit (Elabscience Biotechnology Co., Ltd, USA). The AGPT test was performed three times, each of 4 isolates from the first and second IgY purification results. The ELISA was then performed on two IgY batches.</p>
+            </sec>
+            <sec>
+                <title>Cell cultures</title>
+                <p>Raji cells, a human B cell line, obtained from central university laboratory LPPT, Universitas Gadjah Mada, Yogyakarta, Indonesia, were cultured in RPMI 1640 medium supplemented with 10% fetal bovine serum, 100 UI/ml of penicillin-streptomycin, and 250 &#x03bc;l/ml of amphotericin B and then incubated in 5% CO
+                    <sub>2</sub> humidity. All materials for culture medium were purchased from Sigma-Aldrich. The cells were cultured in 96-well plates and five replicates were carried out for assays.</p>
+            </sec>
+            <sec>
+                <title>Cell viability</title>
+                <p>PCN (Sigma-Aldrich) was initially dissolved in DMSO (Sigma-Aldrich) at a concentration of 1 mg/ml and then diluted in RPMI to a final concentration of 1 &#x03bc;g/ml, 10 &#x03bc;g/ml, 25 &#x03bc;g/ml, and 50 &#x03bc;g/ml. Raji cells at 2 &#x00d7; 10
+                    <sup>4</sup> cells incubated without the presence of PCN were used as a negative control. After exposure to various concentration of PCN then the cultures were incubated at 37&#x00b0;C for 24 hours. In the next experiments, the cells, at a concentration of 2 &#x00d7; 10
+                    <sup>4</sup> cells/well, were treated with 50 &#x03bc;g/ml PCN with or without the presence of various concentration (6.71 &#x03bc;g/ml, 13.42 &#x03bc;g/ml, 28.19 &#x03bc;g/ml, 55.49 &#x03bc;g/ml, 111.87 &#x03bc;g/ml, and 223.75 &#x03bc;g/ml) of anti-PCN IgY were cultured in 96-well plates and incubated for 16 hours. Cell survivability was assessed by MTT assay as described previously
+                    <sup>
+                        <xref ref-type="bibr" rid="ref-21">21</xref>
+                    </sup>. Experiments were carried out three times with 8 replicates in each group.</p>
+                <p>In order to assess cell viability, 5 &#x00d7; 10
+                    <sup>4</sup> cells/well were cultured on sterile coverslips in 24-well plates for 24 hours and then treated with PCN in the presence or absence of anti-PCN IgY (55.49 &#x00b5;g/ml) for 16 hours. Subsequently, the cells were stained with acrydine orange/ethidium bromide and viewed under Digital Carl Zeiss-Axioscope 40 (Carl Zeiss Vision, Oberkochen, Germany) by which viable and death cells appeared as green and orange/red, respectively.</p>
+            </sec>
+            <sec>
+                <title>Statistical analysis</title>
+                <p>The results of PCN cytotoxicity assay on Raji cells were analyzed by using one way analysis of variance followed by LSD test. Data obtained from the experiments on the effects of anti-PCN IgY on PCN-treated Raji cells was analysed by using one-way ANOVA followed by Tukey&#x2019;s Test. Statistical analysis was calculated by using IBM SPSS Statistics Version 22 (SPSS Inc., IBM Corp., Chicago, IL).</p>
+            </sec>
+        </sec>
+        <sec sec-type="results">
+            <title>Results</title>
+            <p>Following isolation and purification of IgY from the immunized chickens, PCN-IgY complexes were detected by using AGPT. As seen in 
+                <xref ref-type="fig" rid="f1">Figure 1</xref>, clear lines of precipitates from two IgY batches in the agarose matrix indicated the presence of PCN-specific antibodies. A further assessment using ELISA demonstrated that the first batch gives high amount of specific IgY antibodies (8.95 &#x03bc;g/&#x03bc;l) than that one of the second (3.02 &#x00b5;g/&#x00b5;l) which were then used for the rest of experiments.</p>
+            <fig fig-type="figure" id="f1" position="float">
+                <label>Figure 1. </label>
+                <caption>
+                    <title>Agarose gel precipitation test of pyocyanin (PCN)-IgY antibody complex batch I and II.</title>
+                    <p>The presence of PCN-IgY antibody was detected through the presence of precipitates formed on agarose gel.</p>
+                </caption>
+                <graphic xlink:href="f1000research-8-21186-g0000.gif"/>
+            </fig>
+            <p>The results of this study showed that PCN at 1 mg/ml was toxic to the Raji cells. This cytotoxic effect of PCN on the cells was steadily increased in a dose dependent fashion (p&lt;0.05) (
+                <xref ref-type="fig" rid="f2">Figure 2</xref>).</p>
+            <fig fig-type="figure" id="f2" position="float">
+                <label>Figure 2. </label>
+                <caption>
+                    <title>The effects of pyocyanin (PCN) on Raji cell survivability.</title>
+                    <p>After incubation with various concentration of PCN, Raji cell viabilities were assessed by MTT assay. PCN-treated Raji cell survivability was calculated against the control cells. *p&lt;0.05.</p>
+                </caption>
+                <graphic xlink:href="f1000research-8-21186-g0001.gif"/>
+            </fig>
+            <p>Further experimentation demonstrated that anti-PCN IgY at concentrations of 28.19 &#x03bc;g/mL or higher was able to suppress the cytotoxic effect of PCN on Raji cells as compared with the negative control (p&lt;0.05) (
+                <xref ref-type="fig" rid="f3">Figure 3</xref>). No significant differences between the cells treated with PCN and specific anti-PCN IgY antibodies at the concentration above 55 &#x03bc;g/ml were observed, however (p&gt;0.05) (
+                <xref ref-type="fig" rid="f3">Figure 3</xref>). Microscopically, the number of viable cells treated with PCN-IgY complexes was much higher than those treated with PCN only (
+                <xref ref-type="fig" rid="f4">Figure 4</xref>). Raw cell viability counts, along with other raw results and images, are available as 
+                <italic>Underlying data</italic>
+                <sup>
+                    <xref ref-type="bibr" rid="ref-23">23</xref>
+                </sup>.</p>
+            <fig fig-type="figure" id="f3" position="float">
+                <label>Figure 3. </label>
+                <caption>
+                    <title>The effects of IgY specific antibodies on pyocyanin (PCN)-treated Raji cell survivability.</title>
+                    <p>PCN was incubated with various concentration of IgY antibodies. Raji cells were then incubated with the PCN-IgY mixtures. Viable cells were assessed by MTT and their percentage was calculated as in 
+                        <xref ref-type="fig" rid="f2">Figure 2</xref>. *p&lt;0.05.</p>
+                </caption>
+                <graphic xlink:href="f1000research-8-21186-g0002.gif"/>
+            </fig>
+            <fig fig-type="figure" id="f4" position="float">
+                <label>Figure 4. </label>
+                <caption>
+                    <title>Microscopic features of Raji cells treated with pyocyanin (PCN) or PCN-IgY antibody complexes.</title>
+                    <p>Raji cells were incubated without PCN (
+                        <bold>A</bold>) and with PCN (
+                        <bold>B</bold>) or the mixture of PCN-IgY antibodies (
+                        <bold>C</bold>) and then stained with acrydine orange/ethidium bromide. Green or orange fluorescence stained cells are viable and dead cells, respectively.</p>
+                </caption>
+                <graphic xlink:href="f1000research-8-21186-g0003.gif"/>
+            </fig>
+        </sec>
+        <sec sec-type="discussion">
+            <title>Discussion</title>
+            <p>The results of the present study showed that PCN does induce cell death in Raji cells as also seen in our previous report
+                <sup>
+                    <xref ref-type="bibr" rid="ref-21">21</xref>
+                </sup>. Similarly, other also demonstrated that PCN of 
+                <italic>P. aeruginosa</italic> plays an important role in the invasion of host cells by inducing neutrophil cell death
+                <sup>
+                    <xref ref-type="bibr" rid="ref-16">16</xref>
+                </sup>. Therefore, efforts to inhibit excessive host cell damage induced by PCN are imminent.</p>
+            <p>Further results of the present study demonstrated that anti-PCN IgY antibodies specific to PCN significantly reduce the ability of this virulence to induce Raji cell death in a dose-dependent fashion. Whilst no previous studies showing prevention of PCN-induced cell death by antigen-specific IgY have yet been reported to our knowledge, the present results are supported by the fact that antigen-specific IgY antibodies did prevent 
+                <italic>P. aeruginosa</italic> infection in humans by both active and passive immunization
+                <sup>
+                    <xref ref-type="bibr" rid="ref-17">17</xref>&#x2013;
+                    <xref ref-type="bibr" rid="ref-19">19</xref>
+                </sup>, suggesting that 
+                <italic>P. aeruginosa</italic>-specific IgY antibodies may inhibit cellular inflammatory responses induced by this pathogen. Antigen-specific IgY antibodies also stimulated 
+                <italic>P. aeruginosa</italic> aggregation and increased human neutrophil phagocytic activities
+                <sup>
+                    <xref ref-type="bibr" rid="ref-20">20</xref>
+                </sup>. The exact mechanism by which antigen-specific IgY antibodies inhibited PCN-induced Raji cell death seen in the present study remains unclear, however. Our previous study indicated that PCN induced Raji cell death via a caspase 3-activation pathway
+                <sup>
+                    <xref ref-type="bibr" rid="ref-21">21</xref>
+                </sup>. It seems plausible, therefore, that PCN-IgY antibody complexes may fail to activate Raji cell-derived caspase 3 and hence, inhibit cell death. However, more studies are required to delineate this speculation.</p>
+            <p> The extrapolation of the results of the present study in the therapy of 
+                <italic>P. aeruginosa</italic> infection remains to be further investigated. 
+                <italic>P. aeruginosa</italic> with its multiple mechanisms for adaptation and survival is well known as one of the main pathogens that lead to increase nosocomial infections
+                <sup>
+                    <xref ref-type="bibr" rid="ref-1">1</xref>&#x2013;
+                    <xref ref-type="bibr" rid="ref-4">4</xref>
+                </sup> and morbidity and mortality in cystic fibrosis patients
+                <sup>
+                    <xref ref-type="bibr" rid="ref-5">5</xref>
+                </sup>. The difficulty to eradicate 
+                <italic>P. aeruginosa</italic> infection has been even more complicated by the presence of MDR 
+                <italic>P. aeruginosa</italic>, and hence alternative supplemental treatment approaches have been put forward based upon its bacterial virulent factors, such as exotoxin, lipopolysaccharide, and flagellin
+                <sup>
+                    <xref ref-type="bibr" rid="ref-24">24</xref>
+                </sup>. Immunotherapies using IgY specific to 
+                <italic>P. aeruginosa</italic> to delay initial infection and reduce both frequency of infection and development of chronic infection seem to be promising. Both passive and active immunization with antigen-specific IgY antibodies in humans resulted in inhibition of 
+                <italic>P. aeruginosa</italic> infection. For example, oral immunization with specific IgY antibodies in patients with cystic fibrosis led to the inhibition of 
+                <italic>P. aeruginosa</italic> colonization
+                <sup>
+                    <xref ref-type="bibr" rid="ref-18">18</xref>,
+                    <xref ref-type="bibr" rid="ref-19">19</xref>
+                </sup>, suggesting the usefulness of antigen-specific IgY antibodies an immunotherapy to prevent 
+                <italic>P. aeruginosa</italic> infection in patients with cystic fibrosis. Therefore, PCN-specific IgY antibodies used as an immunotherapy alongside with the common antibiotic treatments for 
+                <italic>P. aeruginosa</italic> infection are highly possible.</p>
+            <p> In conclusion, the present study showed that eggs from PCN-immunized chickens contain substantial amount of IgY antibodies that recognize PCN. Furthermore, antigen-specific IgY antibodies were able to inhibit PCN-induced Raji cell death, suggesting that PCN-specific IgY antibodies may be protective against PCN-induced Raji cell death.</p>
+        </sec>
+        <sec>
+            <title>Data availability</title>
+            <p>Figshare: Cytotoxicity of PCN.xlsx. 
+                <ext-link ext-link-type="uri" xlink:href="https://dx.doi.org/10.6084/m9.figshare.8115701.v1">https://doi.org/10.6084/m9.figshare.8115701.v1</ext-link>
+                <sup>
+                    <xref ref-type="bibr" rid="ref-23">23</xref>
+                </sup>.</p>
+            <p>This project contains the following underlying data:</p>
+            <list list-type="bullet">
+                <list-item>
+                    <p>Cytotoxicity of PCN.xlsx (raw cell viability data following treatment with pyocyanin)</p>
+                </list-item>
+                <list-item>
+                    <p>The effect of IgY on cell viability.xlsx (raw cell viability data following treatment with pyocyanin and IgY)</p>
+                </list-item>
+                <list-item>
+                    <p>Fig 4A untreated cells.JPG (raw image used for Figure 4A)</p>
+                </list-item>
+                <list-item>
+                    <p>Fig 4B PCN-treated cells.JPG (raw image used for Figure 4B)</p>
+                </list-item>
+                <list-item>
+                    <p>Fig 4C PCN IgY-treated cells.JPG (raw image used for Figure 4C)</p>
+                </list-item>
+                <list-item>
+                    <p>IMG-AGPT.jpg (raw image of agar gel precipitation test)</p>
+                </list-item>
+                <list-item>
+                    <p>Elisa results Sept 1.xls (raw ELISA data)</p>
+                </list-item>
+            </list>
+            <p>Data are available under the terms of the 
+                <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International license</ext-link> (CC-BY 4.0).</p>
+        </sec>
+    </body>
+    <back>
+        <ack>
+            <title>Acknowledgements</title>
+            <p>We also express our gratitude to Ericko Tedy Hananto, who has helped with full responsibility during antibody preparation.</p>
+        </ack>
+        <ref-list>
+            <ref id="ref-1">
+                <label>1</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Lamas Ferreiro</surname>
+                            <given-names>JL</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>&#x00c1;lvarez Otero</surname>
+                            <given-names>J</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Gonz&#x00e1;lez Gonz&#x00e1;lez</surname>
+                            <given-names>L</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>
+                        <italic>Pseudomonas aeruginosa</italic> urinary tract infections in hospitalized patients: Mortality and prognostic factors.</article-title>
+                    <source>
+				
+                        <italic>PLoS One.</italic>
+			</source>
+                    <year>2017</year>;<volume>12</volume>(<issue>5</issue>):<fpage>e0178178</fpage>.
+                    <pub-id pub-id-type="pmid">28552972</pub-id>
+                    <pub-id pub-id-type="doi">10.1371/journal.pone.0178178</pub-id>
+                    <pub-id pub-id-type="pmcid">5446154</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-2">
+                <label>2</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Tang</surname>
+                            <given-names>X</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Xiao</surname>
+                            <given-names>M</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Zhuo</surname>
+                            <given-names>C</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Multi-level analysis of bacteria isolated from inpatients in respiratory departments in China.</article-title>
+                    <source>
+				
+                        <italic>J Thorac Dis.</italic>
+			</source>
+                    <year>2018</year>;<volume>10</volume>(<issue>5</issue>):<fpage>2666</fpage>&#x2013;<lpage>2675</lpage>.
+                    <pub-id pub-id-type="pmid">29997928</pub-id>
+                    <pub-id pub-id-type="doi">10.21037/jtd.2018.04.46</pub-id>
+                    <pub-id pub-id-type="pmcid">6006077</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-3">
+                <label>3</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Hattemer</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Hauser</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Diaz</surname>
+                            <given-names>M</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Bacterial and clinical characteristics of health care- and community-acquired bloodstream infections due to 
+                        <italic>Pseudomonas aeruginosa</italic>.</article-title>
+                    <source>
+				
+                        <italic>Antimicrob Agents Chemother.</italic>
+			</source>
+                    <year>2013</year>;<volume>57</volume>(<issue>8</issue>):<fpage>3969</fpage>&#x2013;<lpage>3975</lpage>.
+                    <pub-id pub-id-type="pmid">23733476</pub-id>
+                    <pub-id pub-id-type="doi">10.1128/AAC.02467-12</pub-id>
+                    <pub-id pub-id-type="pmcid">3719744</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-4">
+                <label>4</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Caldas</surname>
+                            <given-names>AR</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Brandao</surname>
+                            <given-names>M</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Paula</surname>
+                            <given-names>FS</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Hypertrophic cranial pachymeningitis and skull base osteomyelitis by 
+                        <italic>Pseudomonas aeruginosa</italic>: case report and review of the literature.</article-title>
+                    <source>
+				
+                        <italic>J Clin Med Res.</italic>
+			</source>
+                    <year>2012</year>;<volume>4</volume>(<issue>2</issue>):<fpage>138</fpage>&#x2013;<lpage>144</lpage>.
+                    <pub-id pub-id-type="pmid">22505989</pub-id>
+                    <pub-id pub-id-type="doi">10.4021/jocmr777w</pub-id>
+                    <pub-id pub-id-type="pmcid">3320125</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-5">
+                <label>5</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Gowan</surname>
+                            <given-names>JR</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Deretic</surname>
+                            <given-names>V</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>Microbial pathogenesis in cystic fibrosis: mucoid 
+                        <italic>Pseudomonas aeruginosa</italic> and 
+                        <italic>Burkholderia cepacia</italic>.</article-title>
+                    <source>
+				
+                        <italic>Microbiol Rev.</italic>
+			</source>
+                    <year>1996</year>;<volume>60</volume>(<issue>3</issue>):<fpage>539</fpage>&#x2013;<lpage>574</lpage>.
+                    <pub-id pub-id-type="pmid">8840786</pub-id>
+                    <pub-id pub-id-type="pmcid">239456</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-6">
+                <label>6</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Juan</surname>
+                            <given-names>C</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Pe&#x00f1;a</surname>
+                            <given-names>C</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Oliver</surname>
+                            <given-names>A</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>Host and Pathogen Biomarkers for Severe 
+                        <italic>Pseudomonas aeruginosa</italic> Infections.</article-title>
+                    <source>
+				
+                        <italic>J Infect Dis.</italic>
+			</source>
+                    <year>2017</year>;<volume>215</volume>(<issue>Suppl 1</issue>):<fpage>S44</fpage>&#x2013;<lpage>S51</lpage>.
+                    <pub-id pub-id-type="pmid">28375513</pub-id>
+                    <pub-id pub-id-type="doi">10.1093/infdis/jiw299</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-7">
+                <label>7</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Nord</surname>
+                            <given-names>CE</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Sj&#x00f6;berg</surname>
+                            <given-names>L</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Wadstr&#x00f6;m</surname>
+                            <given-names>T</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>
+                        <italic>Pseudomonas aeruginosa</italic> in oral infections.</article-title>
+                    <source>
+				
+                        <italic>Acta Odontol Scand.</italic>
+			</source>
+                    <year>1972</year>;<volume>30</volume>(<issue>3</issue>):<fpage>371</fpage>&#x2013;<lpage>381</lpage>.
+                    <pub-id pub-id-type="pmid">4631676</pub-id>
+                    <pub-id pub-id-type="doi">10.3109/00016357209004604</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-8">
+                <label>8</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Barnett</surname>
+                            <given-names>F</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Axelrod</surname>
+                            <given-names>P</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Tronstad</surname>
+                            <given-names>L</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Ciprofloxacin treatment of periapical 
+                        <italic>Pseudomonas aeruginosa</italic> infection.</article-title>
+                    <source>
+				
+                        <italic>Endod Dent Traumatol.</italic>
+			</source>
+                    <year>1988</year>;<volume>4</volume>(<issue>3</issue>):<fpage>132</fpage>&#x2013;<lpage>137</lpage>.
+                    <pub-id pub-id-type="pmid">3150353</pub-id>
+                    <pub-id pub-id-type="doi">10.1111/j.1600-9657.1988.tb00311.x</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-9">
+                <label>9</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Moradali</surname>
+                            <given-names>MF</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Ghods</surname>
+                            <given-names>S</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Rehm,</surname>
+                            <given-names>BH</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>
+                        <italic>Pseudomonas aeruginosa</italic> Lifestyle: A Paradigm for Adaptation, Survival, and Persistence.</article-title>
+                    <source>
+				
+                        <italic>Front Cell Infect Microbiol.</italic>
+			</source>
+                    <year>2017</year>;<volume>7</volume>:<fpage>39</fpage>.
+                    <pub-id pub-id-type="pmid">28261568</pub-id>
+                    <pub-id pub-id-type="doi">10.3389/fcimb.2017.00039</pub-id>
+                    <pub-id pub-id-type="pmcid">5310132</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-10">
+                <label>10</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Dietrich</surname>
+                            <given-names>LE</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Price-Whelan</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Petersen</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>The phenazine pyocyanin is a terminal signalling factor in the quorum sensing network of 
+                        <italic>Pseudomonas aeruginosa</italic>.</article-title>
+                    <source>
+				
+                        <italic>Mol Microbiol.</italic>
+			</source>
+                    <year>2006</year>;<volume>61</volume>(<issue>5</issue>):<fpage>1308</fpage>&#x2013;<lpage>1321</lpage>.
+                    <pub-id pub-id-type="pmid">16879411</pub-id>
+                    <pub-id pub-id-type="doi">10.1111/j.1365-2958.2006.05306.x</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-11">
+                <label>11</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Baron</surname>
+                            <given-names>SS</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Rowe</surname>
+                            <given-names>JJ</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>Antibiotic action of pyocyanin.</article-title>
+                    <source>
+				
+                        <italic>Antimicrob Agents Chemother.</italic>
+			</source>
+                    <year>1981</year>;<volume>20</volume>(<issue>6</issue>):<fpage>814</fpage>&#x2013;<lpage>820</lpage>.
+                    <pub-id pub-id-type="pmid">6798928</pub-id>
+                    <pub-id pub-id-type="doi">10.1128/aac.20.6.814</pub-id>
+                    <pub-id pub-id-type="pmcid">181804</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-12">
+                <label>12</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>O&#x2019;Malley</surname>
+                            <given-names>YQ</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Reszka</surname>
+                            <given-names>KJ</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Rasmussen</surname>
+                            <given-names>GT</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>The Pseudomonas secretory product pyocyanin inhibits catalase activity in human lung epithelial cells.</article-title>
+                    <source>
+				
+                        <italic>Am J Physiol Lung Cell Mol Physiol.</italic>
+			</source>
+                    <year>2003</year>;<volume>285</volume>(<issue>5</issue>):<fpage>L1077</fpage>&#x2013;<lpage>1086</lpage>.
+                    <pub-id pub-id-type="pmid">12871859</pub-id>
+                    <pub-id pub-id-type="doi">10.1152/ajplung.00198.2003</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-13">
+                <label>13</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Hall</surname>
+                            <given-names>S</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>McDermott</surname>
+                            <given-names>C</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Anoopkumar-Dukie</surname>
+                            <given-names>S</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Cellular Effects of Pyocyanin, a Secreted Virulence Factor of 
+                        <italic>Pseudomonas aeruginosa</italic>.</article-title>
+                    <source>
+				
+                        <italic>Toxins (Basel).</italic>
+			</source>
+                    <year>2016</year>;<volume>8</volume>(<issue>8</issue>): pii: E236.
+                    <pub-id pub-id-type="pmid">27517959 </pub-id>
+                    <pub-id pub-id-type="doi">10.3390/toxins8080236</pub-id>
+                    <pub-id pub-id-type="pmcid">4999852</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-14">
+                <label>14</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Ulmer</surname>
+                            <given-names>AJ</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Pryjma</surname>
+                            <given-names>J</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Tarnok</surname>
+                            <given-names>Z</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Inhibitory and stimulatory effects of 
+                        <italic>Pseudomonas aeruginosa</italic> pyocyanine on human T and B lymphocytes and human monocytes.</article-title>
+                    <source>
+				
+                        <italic>Infect Immun.</italic>
+			</source>
+                    <year>1990</year>;<volume>58</volume>(<issue>3</issue>):<fpage>808</fpage>&#x2013;<lpage>815</lpage>.
+                    <pub-id pub-id-type="pmid">2106495</pub-id>
+                    <pub-id pub-id-type="pmcid">258537</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-15">
+                <label>15</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Bianchi</surname>
+                            <given-names>SM</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Prince</surname>
+                            <given-names>LR</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>McPhillips</surname>
+                            <given-names>K</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Impairment of apoptotic cell engulfment by pyocyanin, a toxic metabolite of 
+                        <italic>Pseudomonas aeruginosa</italic>.</article-title>
+                    <source>
+				
+                        <italic>Am J Respir Crit Care Med.</italic>
+			</source>
+                    <year>2008</year>;<volume>177</volume>(<issue>1</issue>):<fpage>35</fpage>&#x2013;<lpage>43</lpage>.
+                    <pub-id pub-id-type="pmid">17916805</pub-id>
+                    <pub-id pub-id-type="doi">10.1164/rccm.200612-1804OC</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-16">
+                <label>16</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Manag&#x00f2;</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Becker</surname>
+                            <given-names>KA</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Carpinteiro</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>
+                        <italic>Pseudomonas aeruginosa</italic> pyocyanin induces neutrophil death via mitochondrial reactive oxygen species and mitochondrial acid sphingomyelinase.</article-title>
+                    <source>
+				
+                        <italic>Antioxid Redox Signal.</italic>
+			</source>
+                    <year>2015</year>;<volume>22</volume>(<issue>13</issue>):<fpage>1097</fpage>&#x2013;<lpage>1110</lpage>.
+                    <pub-id pub-id-type="pmid">25686490</pub-id>
+                    <pub-id pub-id-type="doi">10.1089/ars.2014.5979</pub-id>
+                    <pub-id pub-id-type="pmcid">4403017</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-17">
+                <label>17</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>D&#x00f6;ring</surname>
+                            <given-names>G</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Meisner</surname>
+                            <given-names>C</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Stern</surname>
+                            <given-names>M</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>A double-blind randomized placebo-controlled phase III study of a 
+                        <italic>Pseudomonas aeruginosa</italic> flagella vaccine in cystic fibrosis patients.</article-title>
+                    <source>
+				
+                        <italic>Proc Natl Acad Sci U S A.</italic>
+			</source>
+                    <year>2007</year>;<volume>104</volume>(<issue>26</issue>):<fpage>11020</fpage>&#x2013;<lpage>11025</lpage>.
+                    <pub-id pub-id-type="pmid">17585011</pub-id>
+                    <pub-id pub-id-type="doi">10.1073/pnas.0702403104</pub-id>
+                    <pub-id pub-id-type="pmcid">1904125</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-18">
+                <label>18</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Kollberg</surname>
+                            <given-names>H</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Carlander</surname>
+                            <given-names>D</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Olesen</surname>
+                            <given-names>H</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Oral administration of specific yolk antibodies (IgY) may prevent 
+                        <italic>Pseudomonas aeruginosa</italic> infections in patients with cystic fibrosis: a phase I feasibility study.</article-title>
+                    <source>
+				
+                        <italic>Pediatr Pulmonol.</italic>
+			</source>
+                    <year>2003</year>;<volume>35</volume>(<issue>6</issue>):<fpage>433</fpage>&#x2013;<lpage>440</lpage>.
+                    <pub-id pub-id-type="pmid">12746939</pub-id>
+                    <pub-id pub-id-type="doi">10.1002/ppul.10290</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-19">
+                <label>19</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Nilsson</surname>
+                            <given-names>E</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Larsson</surname>
+                            <given-names>A</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Olesen</surname>
+                            <given-names>HV</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Good effect of IgY against 
+                        <italic>Pseudomonas aeruginosa</italic> infections in cystic fibrosis patients.</article-title>
+                    <source>
+				
+                        <italic>Pediatr Pulmonol.</italic>
+			</source>
+                    <year>2008</year>;<volume>43</volume>(<issue>9</issue>):<fpage>892</fpage>&#x2013;<lpage>9</lpage>.
+                    <pub-id pub-id-type="pmid">18680179</pub-id>
+                    <pub-id pub-id-type="doi">10.1002/ppul.20875</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-20">
+                <label>20</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Thomsen</surname>
+                            <given-names>K</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Christophersen</surname>
+                            <given-names>L</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Bjarnsholt</surname>
+                            <given-names>T</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Anti-
+                        <italic>Pseudomonas aeruginosa</italic> IgY Antibodies Induce Specific Bacterial Aggregation and Internalization in Human Polymorphonuclear Neutrophils.</article-title>
+                    <source>
+				
+                        <italic>Infect Immun.</italic>
+			</source>
+                    <year>2015</year>;<volume>83</volume>(<issue>7</issue>):<fpage>2686</fpage>&#x2013;<lpage>2693</lpage>.
+                    <pub-id pub-id-type="pmid">25895968</pub-id>
+                    <pub-id pub-id-type="doi">10.1128/IAI.02970-14</pub-id>
+                    <pub-id pub-id-type="pmcid">4468541</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-21">
+                <label>21</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Susilowati</surname>
+                            <given-names>H</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Hutomo</surname>
+                            <given-names>S</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Siwi</surname>
+                            <given-names>DP</given-names>
+                        </name>
+				
+                        <etal/>
+			</person-group>:
+                    <article-title>Caspase-3-dependent cell death in B lymphocyte caused by 
+                        <italic>Pseudomonas aeruginosa</italic> pyocyanin.</article-title>
+                    <source>
+				
+                        <italic>J Dent Indonesia.</italic>
+			</source>
+                    <year>2015</year>;<volume>22</volume>(<issue>2</issue>):<fpage>51</fpage>&#x2013;<lpage>57</lpage>.
+                    <pub-id pub-id-type="doi">10.14693/jdi.v22i2.403</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-22">
+                <label>22</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>York</surname>
+                            <given-names>JJ</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Fahey</surname>
+                            <given-names>KJ</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>Diagnosis of infectious laryngotracheitis using a monoclonal antibody ELISA.</article-title>
+                    <source>
+				
+                        <italic>Avian Pathol.</italic>
+			</source>
+                    <year>1988</year>;<volume>17</volume>(<issue>1</issue>):<fpage>173</fpage>&#x2013;<lpage>182</lpage>.
+                    <pub-id pub-id-type="pmid">18766675</pub-id>
+                    <pub-id pub-id-type="doi">10.1080/03079458808436436</pub-id>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-23">
+                <label>23</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Susilowati</surname>
+                            <given-names>H</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>Cytotoxicity of PCN.xlsx</article-title>.
+                    <source>
+				
+                        <italic>figshare.</italic>
+			</source>Dataset.<year>2019</year>.
+                    <ext-link ext-link-type="uri" xlink:href="http://www.doi.org/10.6084/m9.figshare.8115701.v1">http://www.doi.org/10.6084/m9.figshare.8115701.v1</ext-link>
+                </mixed-citation>
+            </ref>
+            <ref id="ref-24">
+                <label>24</label>
+                <mixed-citation publication-type="journal">
+                    <person-group person-group-type="author">
+				
+                        <name>
+                            <surname>Hurley</surname>
+                            <given-names>MN</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>C&#x00e1;mara</surname>
+                            <given-names>M</given-names>
+                        </name>
+				
+                        <name>
+                            <surname>Smyth</surname>
+                            <given-names>AR</given-names>
+                        </name>
+			</person-group>:
+                    <article-title>Novel approaches to the treatment of 
+                        <italic>Pseudomonas aeruginosa</italic> infections in cystic fibrosis.</article-title>
+                    <source>
+				
+                        <italic>Eur Respir J.</italic>
+			</source>
+                    <year>2012</year>;<volume>40</volume>(<issue>4</issue>):<fpage>1014</fpage>&#x2013;<lpage>1023</lpage>.
+                    <pub-id pub-id-type="pmid">22743672</pub-id>
+                    <pub-id pub-id-type="doi">10.1183/09031936.00042012</pub-id>
+                    <pub-id pub-id-type="pmcid">3461346</pub-id>
+                </mixed-citation>
+            </ref>
+        </ref-list>
+    </back>
+</article>

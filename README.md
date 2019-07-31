@@ -37,7 +37,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 | Google Docs                 | [gdoc]   | rPNG     | α      | [⚠][gdoc-issues]   | ![][gdoc-cov]   |
 | Open Document Text          | [odt]    | rPNG     | α      | [⚠][odt-issues]    | ![][odt-cov]    |
 | HTML                        | [html]   | Extens   | α      | [⚠][html-issues]   | ![][html-cov]   |
-| Journal Archiving Tag Set   | [jats]   | Extens   | α      | [⚠][jats-issues]   | ![][jats-cov]   |
+| JATS XML                    | [jats]   | Extens   | α      | [⚠][jats-issues]   | ![][jats-cov]   |
+| JATS XML (Pandoc-based)     | [jats-pandoc]   | Extens   | α      | [⚠][jats-pandoc-issues]   | ![][jats-pandoc-cov]   |
 | Portable Document Format    | [pdf]    | rPNG     | α      | [⚠][pdf-issues]    | ![][pdf-cov]    |
 | **Notebooks**               |
 | Jupyter                     | [ipynb]  | Native   | α      | [⚠][ipynb-issues]  | ![][ipynb-cov]  |
@@ -272,8 +273,10 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [gdoc]: src/codecs/gdoc
 [gsheet]: src/codecs/gsheet
 [html]: src/codecs/html
+[http]: src/codecs/http
 [ipynb]: src/codecs/ipynb
 [jats]: src/codecs/jats
+[jats]: src/codecs/jats-pandoc
 [json]: src/codecs/json
 [json5]: src/codecs/json5
 [latex]: src/codecs/latex
@@ -301,6 +304,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [http-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+http
 [ipynb-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb
 [jats-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
+[jats-pandoc-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+jats
 [json-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json
 [json5-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+json5
 [latex-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+tex
@@ -328,6 +332,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [http-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http
 [ipynb-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb
 [jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
+[jats-pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc
 [json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
 [json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
 [latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex

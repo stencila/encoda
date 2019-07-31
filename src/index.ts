@@ -35,6 +35,7 @@ export const codecList: string[] = [
   'html',
   'ipynb',
   'jats',
+  'jats-pandoc',
   'latex',
   'md',
   'odt',

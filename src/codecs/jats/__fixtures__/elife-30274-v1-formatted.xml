@@ -1,0 +1,2698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
+<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.1">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">elife</journal-id>
+      <journal-id journal-id-type="publisher-id">eLife</journal-id>
+      <journal-title-group>
+        <journal-title>eLife</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub" publication-format="electronic">2050-084X</issn>
+      <publisher>
+        <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="publisher-id">30274</article-id>
+      <article-id pub-id-type="doi">10.7554/eLife.30274</article-id>
+      <article-categories>
+        <subj-group subj-group-type="display-channel">
+          <subject>Replication Study</subject>
+        </subj-group>
+        <subj-group subj-group-type="heading">
+          <subject>Cancer Biology</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" id="author-92516">
+          <name>
+            <surname>Lewis</surname>
+            <given-names>L Michelle</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+          <xref ref-type="fn" rid="con1"/>
+          <xref ref-type="fn" rid="conf1"/>
+        </contrib>
+        <contrib contrib-type="author" id="author-92517">
+          <name>
+            <surname>Edwards</surname>
+            <given-names>Meredith C</given-names>
+          </name>
+          <email>medward1@uga.edu</email>
+          <xref ref-type="aff" rid="aff1">1</xref>
+          <xref ref-type="fn" rid="con2"/>
+          <xref ref-type="fn" rid="conf2"/>
+        </contrib>
+        <contrib contrib-type="author" id="author-92518">
+          <name>
+            <surname>Meyers</surname>
+            <given-names>Zachary R</given-names>
+          </name>
+          <email>ZRMeyers@uga.edu</email>
+          <xref ref-type="aff" rid="aff1">1</xref>
+          <xref ref-type="fn" rid="con3"/>
+          <xref ref-type="fn" rid="conf3"/>
+        </contrib>
+        <contrib contrib-type="author" id="author-92519">
+          <name>
+            <surname>Talbot</surname>
+            <given-names>C Conover</given-names>
+            <suffix>Jr</suffix>
+          </name>
+          <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-3758-2425</contrib-id>
+          <xref ref-type="aff" rid="aff2">2</xref>
+          <xref ref-type="fn" rid="con4"/>
+          <xref ref-type="fn" rid="conf4"/>
+        </contrib>
+        <contrib contrib-type="author" id="author-16374">
+          <name>
+            <surname>Hao</surname>
+            <given-names>Haiping</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+          <xref ref-type="fn" rid="con5"/>
+          <xref ref-type="fn" rid="conf5"/>
+        </contrib>
+        <contrib contrib-type="author" id="author-16373">
+          <name>
+            <surname>Blum</surname>
+            <given-names>David</given-names>
+          </name>
+          <email>blum@uga.edu</email>
+          <xref ref-type="aff" rid="aff1">1</xref>
+          <xref ref-type="fn" rid="con6"/>
+          <xref ref-type="fn" rid="conf6"/>
+        </contrib>
+        <contrib contrib-type="author" corresp="yes">
+          <email>tim@cos.io</email>
+          <email>nicole@scienceexchange.com</email>
+          <collab>Reproducibility Project: Cancer Biology<contrib-group><contrib contrib-type="author"><name><surname>Iorns</surname><given-names>Elizabeth</given-names></name><aff><institution>Science Exchange</institution><addr-line><named-content content-type="city">Palo Alto</named-content></addr-line><country>United States</country></aff></contrib><contrib contrib-type="author"><name><surname>Tsui</surname><given-names>Rachel</given-names></name><aff><institution>Science Exchange</institution><addr-line><named-content content-type="city">Palo Alto</named-content></addr-line><country>United States</country></aff></contrib><contrib contrib-type="author"><name><surname>Denis</surname><given-names>Alexandria</given-names></name><contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-1210-2309</contrib-id><aff><institution>Center for Open Science</institution><addr-line><named-content content-type="city">Charlottesville</named-content></addr-line><country>United States</country></aff></contrib><contrib contrib-type="author"><name><surname>Perfito</surname><given-names>Nicole</given-names></name><aff><institution>Science Exchange</institution><addr-line><named-content content-type="city">Palo Alto</named-content></addr-line><country>United States</country></aff></contrib><contrib contrib-type="author" id="author-16276"><name><surname>Errington</surname><given-names>Timothy M</given-names></name><contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0002-4959-5143</contrib-id><aff><institution>Center for Open Science</institution><addr-line><named-content content-type="city">Charlottesville</named-content></addr-line><country>United States</country></aff></contrib></contrib-group></collab>
+          <xref ref-type="other" rid="fund1"/>
+          <xref ref-type="fn" rid="con5"/>
+          <xref ref-type="fn" rid="conf7"/>
+        </contrib>
+        <aff id="aff1">
+          <label>1</label>
+          <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
+          <addr-line>
+            <named-content content-type="city">Georgia</named-content>
+          </addr-line>
+          <country>United States</country>
+        </aff>
+        <aff id="aff2">
+          <label>2</label>
+          <institution>Johns Hopkins University, Deep Sequencing and Microarray Core Facility</institution>
+          <addr-line>
+            <named-content content-type="city">Maryland</named-content>
+          </addr-line>
+          <country>United States</country>
+        </aff>
+      </contrib-group>
+      <contrib-group content-type="section">
+        <contrib contrib-type="editor" id="author-1519">
+          <name>
+            <surname>Green</surname>
+            <given-names>Michael R</given-names>
+          </name>
+          <role>Reviewing Editor</role>
+          <aff>
+            <institution>Howard Hughes Medical Institute, University of Massachusetts Medical School</institution>
+            <country>United States</country>
+          </aff>
+        </contrib>
+      </contrib-group>
+      <pub-date date-type="publication" publication-format="electronic">
+        <day>09</day>
+        <month>01</month>
+        <year>2018</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <year>2018</year>
+      </pub-date>
+      <volume>7</volume>
+      <elocation-id>e30274</elocation-id>
+      <history>
+        <date date-type="received" iso-8601-date="2017-07-10">
+          <day>10</day>
+          <month>07</month>
+          <year>2017</year>
+        </date>
+        <date date-type="accepted" iso-8601-date="2017-11-16">
+          <day>16</day>
+          <month>11</month>
+          <year>2017</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>© 2018, Lewis et al</copyright-statement>
+        <copyright-year>2018</copyright-year>
+        <copyright-holder>Lewis et al</copyright-holder>
+        <ali:free_to_read/>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <ali:license_ref>http://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+          <license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="pdf" xlink:href="elife-30274-v1.pdf"/>
+      <related-article ext-link-type="doi" id="ra1" related-article-type="article-reference" xlink:href="10.7554/eLife.04024"/>
+      <related-article ext-link-type="doi" id="ra2" related-article-type="commentary" xlink:href="10.7554/eLife.32010"/>
+      <abstract>
+        <object-id pub-id-type="doi">10.7554/eLife.30274.001</object-id>
+        <p>As part of the <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link>, we published a Registered Report (Blum et al., 2015), that described how we intended to replicate selected experiments from the paper ‘Transcriptional amplification in tumor cells with elevated c-Myc’ (Lin et al., 2012). Here we report the results. We found overexpression of c-Myc increased total levels of RNA in P493-6 Burkitt’s lymphoma cells; however, while the effect was in the same direction as the original study (Figure 3E; Lin et al., 2012), statistical significance and the size of the effect varied between the original study and the two different lots of serum tested in this replication. Digital gene expression analysis for a set of genes was also performed on P493-6 cells before and after c-Myc overexpression. Transcripts from genes that were active before c-Myc induction increased in expression following c-Myc overexpression, similar to the original study (Figure 3F; Lin et al., 2012). Transcripts from genes that were silent before c-Myc induction also increased in expression following c-Myc overexpression, while the original study concluded elevated c-Myc had no effect on silent genes (Figure 3F; Lin et al., 2012). Treating the data as paired, we found a statistically significant increase in gene expression for both active and silent genes upon c-Myc induction, with the change in gene expression greater for active genes compared to silent genes. Finally, we report meta-analyses for each result.</p>
+      </abstract>
+      <kwd-group kwd-group-type="author-keywords">
+        <kwd>Reproducibility Project: Cancer Biology</kwd>
+        <kwd>replication</kwd>
+        <kwd>metascience</kwd>
+        <kwd>reproducibility</kwd>
+        <kwd>c-Myc</kwd>
+        <kwd>gene expression</kwd>
+      </kwd-group>
+      <kwd-group kwd-group-type="research-organism">
+        <title>Research organism</title>
+        <kwd>Human</kwd>
+      </kwd-group>
+      <funding-group>
+        <award-group id="fund1">
+          <funding-source>
+            <institution-wrap>
+              <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100009827</institution-id>
+              <institution>Laura and John Arnold Foundation</institution>
+            </institution-wrap>
+          </funding-source>
+          <principal-award-recipient>
+            <institution>Reproducibility Project: Cancer Biology</institution>
+          </principal-award-recipient>
+        </award-group>
+        <funding-statement>The funder had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement>
+      </funding-group>
+      <custom-meta-group>
+        <custom-meta specific-use="meta-only">
+          <meta-name>Author impact statement</meta-name>
+          <meta-value>This Replication Study has reproduced important parts of the original paper, but it also contains results that are not consistent with some parts of the original paper.</meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="s1" sec-type="intro">
+      <title>Introduction</title>
+      <p>The <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link> (RP:CB) is a collaboration between the <ext-link ext-link-type="uri" xlink:href="https://centerforopenscience.org/">Center for Open Science</ext-link> and <ext-link ext-link-type="uri" xlink:href="https://www.scienceexchange.com/">Science Exchange</ext-link> that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology (<xref ref-type="bibr" rid="bib6">Errington et al., 2014</xref>). For each of these papers a Registered Report detailing the proposed experimental designs and protocols for the replications was peer reviewed and published prior to data collection. The present paper is a Replication Study that reports the results of the replication experiments detailed in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>) for a 2012 paper by Lin et al., and uses a number of approaches to compare the outcomes of the original experiments and the replications.</p>
+      <p>In 2012, Lin et al. reported results that the c-Myc transcription factor, a potent oncogene that is frequently overexpressed in a large percentage of cancers, globally amplifies the expression of actively transcribed genes, opposed to regulating specific target genes. Using the P493-6 cell line, a model for <italic>MYC</italic> activation in Burkitt’s lymphoma, total levels of RNA per cell were reported to increase when c-Myc was highly expressed compared to conditions where c-Myc expression was low. Additionally, active genes in cells with low c-Myc levels were reported to increase in expression upon c-Myc induction, in contrast to genes that were silent under low c-Myc conditions that did not change.</p>
+      <p>The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated (Figure 1B and 3E–F), and summarized the current evidence for these findings (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). Since that publication there have been additional studies investigating the ability c-Myc to influence the global gene expression output of cells. Similar to Lin et al. other studies have reported c-Myc dependent amplification of cellular RNA (<xref ref-type="bibr" rid="bib9">Hart et al., 20152014</xref>; <xref ref-type="bibr" rid="bib12">Hsu et al., 2015</xref>; <xref ref-type="bibr" rid="bib19">Nie et al., 2012</xref>; <xref ref-type="bibr" rid="bib27">Sabò et al., 2014</xref>), although this observation was not reported in all biological systems (<xref ref-type="bibr" rid="bib7">Fagnocchi et al., 2016</xref>; <xref ref-type="bibr" rid="bib27">Sabò et al., 2014</xref>; <xref ref-type="bibr" rid="bib35">Walz et al., 2014</xref>). It has been suggested c-Myc regulates specific genes that indirectly lead to RNA amplification (<xref ref-type="bibr" rid="bib27">Sabò et al., 2014</xref>; <xref ref-type="bibr" rid="bib26">Sabò and Amati, 2014</xref>; <xref ref-type="bibr" rid="bib35">Walz et al., 2014</xref>). This has also been suggested of MYCN (<xref ref-type="bibr" rid="bib5">Duffy et al., 20142015</xref>). The reported differences could be a result of the intrinsic variation between cell lines in maintaining the transcriptome (<xref ref-type="bibr" rid="bib32">Trakhtenberg et al., 2016</xref>). Indeed, a recent study reported that distinct transcriptional regulation can be accounted for by differences in promoter affinity under different c-Myc expression levels (<xref ref-type="bibr" rid="bib18">Lorenzin et al., 2016</xref>).</p>
+      <p>The outcome measures reported in this Replication Study will be aggregated with those from the other Replication Studies to create a dataset that will be examined to provide evidence about reproducibility of cancer biology research, and to identify factors that influence reproducibility more generally.</p>
+    </sec>
+    <sec id="s2" sec-type="results|discussion">
+      <title>Results and discussion</title>
+      <sec id="s2-1">
+        <title>Conditional expression of c-Myc in the B-cell line P493-6</title>
+        <p>To test the effects of increased levels of c-Myc on gene expression we used the same human P493-6 B cell line of Burkitt’s lymphoma that contains a conditional tetracycline-repressive <italic>MYC</italic> transgene (<xref ref-type="bibr" rid="bib23">Pajic et al., 2000</xref>; <xref ref-type="bibr" rid="bib30">Schuhmacher et al., 1999</xref>) as the original study. We performed Western blot analysis to confirm c-Myc expression could be reduced to very low levels and then reactivated after removal of tetracycline. This is comparable to what was reported in Figure 1B of <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref> and described in Protocol 1 in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). Since proliferation of P493-6 cells depend on c-Myc expression and the presence of serum (<xref ref-type="bibr" rid="bib23">Pajic et al., 2000</xref>; <xref ref-type="bibr" rid="bib30">Schuhmacher et al., 1999</xref>), with serum reported to stimulate a majority of genes independent of c-Myc (<xref ref-type="bibr" rid="bib28">Schlosser et al., 2005</xref>), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels (<xref ref-type="fig" rid="fig1">Figure 1A</xref>). After removal of tetracycline, c-Myc levels increased over time approaching the levels observed in tetracycline-free conditions.</p>
+        <fig id="fig1" position="float">
+          <object-id pub-id-type="doi">10.7554/eLife.30274.002</object-id>
+          <label>Figure 1.</label>
+          <caption>
+            <title>Induction of c-Myc in P493-6 cells and impact on total RNA levels.</title>
+            <p>P493-6 cells were grown in the presence of tetracycline (Tet) for 72 hr and switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. (<bold>A</bold>) Representative Western blot using an anti-c-Myc antibody (top panels) or an anti-ß-Actin antibody (bottom panel). Two exposures of the anti-c-Myc antibody are presented to facilitate detection of c-Myc. (<bold>B</bold>) Quantification of total RNA levels (ng of total RNA per 1,000 cells) for cells at 0, 1, and 24 hr after release from Tet. Means reported and error bars represent s.e.m. from three independent biological repeats. For serum lot one, one-way ANOVA on total RNA levels of all groups; <italic>F</italic>(2, 6)=1.25, <italic>p</italic>=0.353. Planned contrast between 0 hr and 24 hr; <italic>t</italic>(6) = 1.02, <italic>p</italic>=0.347 with <italic>a priori</italic> alpha level = 0.05. For serum lot two, one-way ANOVA on total RNA levels of all groups; <italic>F</italic>(2, 6)=21.87, <italic>p</italic>=0.00176. Planned contrast between 0 hr and 24 hr; <italic>t</italic>(6) = 5.03, <italic>p</italic>=0.0024 with <italic>a priori</italic> alpha level = 0.05. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/tfd57/.">https://osf.io/tfd57/</ext-link>.</p>
+          </caption>
+          <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-30274-fig1-v1"/>
+        </fig>
+      </sec>
+      <sec id="s2-2">
+        <title>Total RNA levels following c-Myc overexpression</title>
+        <p>We sought to independently replicate whether increased levels of c-Myc resulted in increased absolute levels of RNA. This experiment is similar to what was reported in Figure 3E of <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref> and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after tetracycline release and the amount of RNA per 1,000 cells was quantified (<xref ref-type="fig" rid="fig1">Figure 1B</xref>). We found that under conditions where c-Myc expression was low (0 hr), there was a mean of 1.55 ng total RNA per 1,000 cells (ng/1 k cells) [n = 3, <italic>SD</italic> = 0.20], which increased to 1.77 ng/1 k cells [n = 3, <italic>SD</italic> = 0.31] when c-Myc expression was high (24 hr), a 1.14 times increase, for serum lot one, which was not statistically significant (<italic>t</italic>(6) = 1.02, <italic>p</italic>=0.347). Serum lot two changed from a mean of 1.57 ng/1 k cells [n = 3, <italic>SD</italic> = 0.21] at 0 hr to 2.25 ng/1 k cells [n = 3, <italic>SD</italic> = 0.19] at 24 hr, a 1.43 times increase, which was statistically significant (<italic>t</italic>(6 = 5.03, <italic>p</italic>=0.0024). This compares to the original study, which reported a mean of 4.25 ng/1 k cells at 0 hr, which increased to 5.47 ng/1 k cells at 24 hr, a 1.29 times increase in total RNA levels. In both studies there was a minor decrease at 1 hr after tetracycline release when c-Myc levels begin to become detectable. Total RNA per 1,000 cells at 0 hr were much lower in this replication attempt than those reported in the original study, although changes in total RNA levels were in the same direction following c-Myc expression. Similarly, another independent study that measured total RNA from P493-6 cells reported a different level at 0 hr (~3 ng/1 k cells), while also reporting increased levels following c-Myc expression (<xref ref-type="bibr" rid="bib27">Sabò et al., 2014</xref>). There are multiple possible explanations for these differences, such as variation in RNA expression during cell culture passage (<xref ref-type="bibr" rid="bib11">Hiorns et al., 2004</xref>), low yield of the RNA isolation procedure (e.g. incomplete homogenization), or the high variance associated with manual cell counts using a hemacytometer (<xref ref-type="bibr" rid="bib2">Biggs and Macmillan, 1948</xref>; <xref ref-type="bibr" rid="bib20">Nielson et al., 1991</xref>). To summarize, for this experiment we found results that were in the same direction as the original study and not statistically significant for serum lot one, while statistically significant for serum lot two.</p>
+      </sec>
+      <sec id="s2-3">
+        <title>Digital gene expression following c-Myc overexpression</title>
+        <p>To test whether c-Myc expression amplifies the existing gene expression program, digital gene expression analysis using the NanoString nCounter platform was performed on a set of genes from multiple functional categories. This experiment is similar to what was reported in Figure 3F and Table S1 of <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref> and described in Protocols 3–4 in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). We quantified mRNA levels/cell of 1369 genes, of which 1212 were the same genes as the 1338 genes interrogated in the original study. We used the same criteria as the original study to classify a gene as silent (expression was less than 0.5 transcript/cell at time 0 hr) or active (more than one transcript/cell at time 0 hr). In cells with low levels of c-Myc (0 hr) there were 708 active genes with a median expression of 4.70, and 580 silent genes with a median expression of 0.032, for serum lot one. For active genes, 75% of the genes increased from 0 hr to 1 hr, 68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times increase in median expression, respectively (<xref ref-type="fig" rid="fig2">Figure 2</xref>, <xref ref-type="fig" rid="fig2s1">Figure 2—figure supplement 1</xref>). For silent genes, 74% of the genes increased from 0 hr to 1 hr, 66% increased from 0 hr to 24 hr, and 50% increased from 1 hr to 24 hr, corresponding to a 1.19 and 1.13 times increase, and a 0.05 times decrease in median expression, respectively (<xref ref-type="fig" rid="fig2">Figure 2</xref>, <xref ref-type="fig" rid="fig2s1">Figure 2—figure supplement 1</xref>). Serum lot two gave similar results, although there were variations in the number of genes identified as silent or active as well as the degree of increase among the conditions (<xref ref-type="fig" rid="fig2">Figure 2</xref>, <xref ref-type="fig" rid="fig2s1">Figure 2—figure supplement 1</xref>). This compares to the original study that identified 755 active genes with a median expression of 7.06, and 514 silent genes with a median expression of 0.00 (more than half the silent genes did not have a reported expression value). Active genes in the original study, increased 91% from 0 hr to 1 hr, 96% from 0 hr to 24 hr, and 87% from 1 hr to 24 hr upon c-Myc induction, corresponding to a 1.23, 2.45, and 1.99 times increase in median expression, respectively. Silent genes in the original study, increased 23% from 0 hr to 1 hr, 29% from 0 hr to 24 hr, and 30% from 1 hr to 24 hr, with the median expression unchanged among conditions. In addition, we further examined the extent of overlap of active and silent genes between the original study and this replication attempt. Of the 1212 genes that were interrogated in both studies, 88.8% (603/679) of the active genes we identified in serum lot one were also active in the original study (90.1% (612/679) for serum lot two). For silent genes, 96.4% (456/473) of the genes we identified as silent in serum lot one were common with the silent genes identified in the original study (95.8% (453/473) for serum lot two).</p>
+        <fig-group>
+          <fig id="fig2" position="float">
+            <object-id pub-id-type="doi">10.7554/eLife.30274.003</object-id>
+            <label>Figure 2.</label>
+            <caption>
+              <title>Digital gene expression analysis.</title>
+              <p>P493-6 cells grown in the presence of tetracycline (Tet) for 72 hr for repression of the conditional p<italic>myc</italic>-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes = 708, silent genes = 580. Cells grown in serum lot two: active genes = 719, silent genes = 573. Confirmatory analysis is reported in <xref ref-type="table" rid="table1">Table 1</xref> and exploratory statistical analysis is reported in <xref ref-type="table" rid="table2">Table 2</xref> and <xref ref-type="table" rid="table3">Table 3</xref>. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.</p>
+              <p>
+                <supplementary-material id="fig2sdata1">
+                  <object-id pub-id-type="doi">10.7554/eLife.30274.006</object-id>
+                  <label>Figure 2—source data 1.</label>
+                  <caption>
+                    <title>List of Reporter CodeSets and gene expression values.</title>
+                  </caption>
+                  <media mime-subtype="octet-stream" mimetype="application" xlink:href="elife-30274-fig2-data1-v1.csv"/>
+                </supplementary-material>
+              </p>
+            </caption>
+            <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-30274-fig2-v1"/>
+          </fig>
+          <fig id="fig2s1" position="float" specific-use="child-fig">
+            <object-id pub-id-type="doi">10.7554/eLife.30274.004</object-id>
+            <label>Figure 2—figure supplement 1.</label>
+            <caption>
+              <title>Logarithmic expression of genes.</title>
+              <p>This is the same experiment as in <xref ref-type="fig" rid="fig2">Figure 2</xref>. (<bold>A–B, E–F</bold>) Gene expression data plotted on a log<sub>2</sub> transformed scale for active (<bold>A, E</bold>) and silent (<bold>B, F</bold>) genes at 0, 1, and 24 hr after release from Tet for both lots of serum. (<bold>C–D, G–H</bold>) Box and whisker plots showing gene expression changes (log<sub>2</sub> ratio) between the indicated times for active (<bold>C, G</bold>) and silent (<bold>D, H</bold>) genes. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.</p>
+            </caption>
+            <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-30274-fig2-figsupp1-v1"/>
+          </fig>
+          <fig id="fig2s2" position="float" specific-use="child-fig">
+            <object-id pub-id-type="doi">10.7554/eLife.30274.005</object-id>
+            <label>Figure 2—figure supplement 2.</label>
+            <caption>
+              <title>Comparison of gene expression data as continuous.</title>
+              <p>This is the same experiment as in <xref ref-type="fig" rid="fig2">Figure 2</xref>. (<bold>A–C, E–G</bold>) Scatter plots of log<sub>2</sub> transformed gene expression data for all genes analyzed at the indicated times on the y and x axes for both lots of serum. Active genes are blue, silent genes are red, and genes that are neither active or silent (expression was more than 0.5 transcript/cell and less than one transcript/cell at time 0 hr) are white. (<bold>D, H</bold>) Box and whisker plots showing gene expression changes (log<sub>2</sub> ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.</p>
+            </caption>
+            <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-30274-fig2-figsupp2-v1"/>
+          </fig>
+        </fig-group>
+        <p>To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). This analysis differed from what was reported in the original study by analyzing the data as paired instead of unpaired. As suggested during peer review of the Registered Report, this is because expression of the same gene, analyzed across different conditions, is not independent (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). We performed a Wilcoxon signed-rank test on active genes comparing expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were statistically significant for cells grown in both lots of serum (<xref ref-type="table" rid="table1">Table 1</xref>). The same comparisons were performed on silent genes, which were also statistically significant, with the exception of the silent gene comparison of 1 hr to 24 hr for serum lot one. Considering this was not the test reported in the original study, we conducted these paired analyses on the original data to provide a direct comparison. For both active and silent genes c-Myc induction resulted in statistically significant increases in expression, with the exception of the silent gene comparison from 0 hr to 1 hr (<xref ref-type="table" rid="table1">Table 1</xref>). This is in contrast to the results of the unpaired tests that were reported in the original study where active genes were reported to have a statistically significant increase in expression and silent genes were reported as not statistically significant for all comparisons. We conducted an exploratory unpaired analysis on the replication data for comparison, which resulted in statistically significant differences among the active gene comparisons as well as half of the silent gene comparisons (<xref ref-type="table" rid="table2">Table 2</xref>).</p>
+        <table-wrap id="table1" position="float">
+          <object-id pub-id-type="doi">10.7554/eLife.30274.007</object-id>
+          <label>Table 1.</label>
+          <caption>
+            <title>Confirmatory statistical tests.</title>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th valign="bottom">Genes</th>
+                <th valign="bottom">Comparison</th>
+                <th valign="bottom">Study</th>
+                <th valign="bottom">Z value</th>
+                <th valign="bottom">P value</th>
+                <th valign="bottom">Sample size (n)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td valign="top">Active</td>
+                <td valign="top">0 hr vs 1 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">14.86</td>
+                <td valign="top">1.36e-55</td>
+                <td valign="top">708</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">11.83</td>
+                <td valign="top">2.83e-34</td>
+                <td valign="top">719</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">21.17</td>
+                <td valign="top">1.05e-130</td>
+                <td valign="top">755</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">0 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">9.922</td>
+                <td valign="top">3.67e-24</td>
+                <td valign="top">708</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">12.77</td>
+                <td valign="top">3.77e-40</td>
+                <td valign="top">719</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">23.26</td>
+                <td valign="top">3.33e-184</td>
+                <td valign="top">755</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">1 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">4.742</td>
+                <td valign="top">1.92e-06</td>
+                <td valign="top">708</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">10.04</td>
+                <td valign="top">9.91e-25</td>
+                <td valign="top">719</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">23.26</td>
+                <td valign="top">3.33e-184</td>
+                <td valign="top">755</td>
+              </tr>
+              <tr>
+                <td valign="top">Silent</td>
+                <td valign="top">0 hr vs 1 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">12.61</td>
+                <td valign="top">7.11e-40</td>
+                <td valign="top">580</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">7.05</td>
+                <td valign="top">9.29e-13</td>
+                <td valign="top">572</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">−1.998</td>
+                <td valign="top">0.0457</td>
+                <td valign="top">274</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">0 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">8.328</td>
+                <td valign="top">2.22e-17</td>
+                <td valign="top">579</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">8.156</td>
+                <td valign="top">1.03e-16</td>
+                <td valign="top">572</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">3.179</td>
+                <td valign="top">0.00144</td>
+                <td valign="top">276</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">1 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">0.6853</td>
+                <td valign="top">0.493</td>
+                <td valign="top">580</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">4.436</td>
+                <td valign="top">8.35e-06</td>
+                <td valign="top">573</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">5.806</td>
+                <td valign="top">4.11e-09</td>
+                <td valign="top">236</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p>These confirmatory statistical tests relate to the data presented in <xref ref-type="fig" rid="fig2">Figure 2</xref>. Wilcoxon signed-rank test, which treat the data as paired, were conducted for the original study (<xref ref-type="bibr" rid="bib17">Lin et al., 2012</xref>) and this replication attempt (RP:CB). Uncorrected <italic>p</italic> values are reported with an <italic>a priori</italic> significance threshold of. 0167. Sample sizes reported are based on the sample size used in the tests. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/.</ext-link></p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <table-wrap id="table2" position="float">
+          <object-id pub-id-type="doi">10.7554/eLife.30274.008</object-id>
+          <label>Table 2.</label>
+          <caption>
+            <title>Exploratory statistical tests.</title>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th valign="bottom">Genes</th>
+                <th valign="bottom">Comparison</th>
+                <th valign="bottom">Study</th>
+                <th valign="bottom">W value</th>
+                <th valign="bottom">P value</th>
+                <th valign="bottom">Sample size (n)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td valign="top">Active</td>
+                <td valign="top">0 hr vs 1 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">270378</td>
+                <td valign="top">0.0103</td>
+                <td valign="top">1416</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">274696</td>
+                <td valign="top">0.0395</td>
+                <td valign="top">1438</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">318799</td>
+                <td valign="top">6.67e-05</td>
+                <td valign="top">1510</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">0 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">300774</td>
+                <td valign="top">7.16e-11</td>
+                <td valign="top">1416</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">324564</td>
+                <td valign="top">4.74e-17</td>
+                <td valign="top">1438</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">400999</td>
+                <td valign="top">1.16e-42</td>
+                <td valign="top">1510</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">1 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">281679</td>
+                <td valign="top">5.45e-05</td>
+                <td valign="top">1416</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">308954</td>
+                <td valign="top">1.45e-10</td>
+                <td valign="top">1438</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">372714</td>
+                <td valign="top">4.11e-25</td>
+                <td valign="top">1510</td>
+              </tr>
+              <tr>
+                <td valign="top">Silent</td>
+                <td valign="top">0 hr vs 1 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">187682</td>
+                <td valign="top">0.000638</td>
+                <td valign="top">1160</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">174695</td>
+                <td valign="top">0.0602</td>
+                <td valign="top">1146</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">127104</td>
+                <td valign="top">0.236</td>
+                <td valign="top">1028</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">0 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">185804</td>
+                <td valign="top">0.00203</td>
+                <td valign="top">1160</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">184470</td>
+                <td valign="top">0.000289</td>
+                <td valign="top">1146</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">132082</td>
+                <td valign="top">0.997</td>
+                <td valign="top">1028</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">1 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">166122</td>
+                <td valign="top">0.716</td>
+                <td valign="top">1160</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">173608</td>
+                <td valign="top">0.0918</td>
+                <td valign="top">1146</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">136443</td>
+                <td valign="top">0.295</td>
+                <td valign="top">1028</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p>These exploratory statistical tests relate to the data presented in <xref ref-type="fig" rid="fig2">Figure 2</xref>. Wilcoxon rank sum tests, which treat the data as unpaired, were conducted for the original study (<xref ref-type="bibr" rid="bib17">Lin et al., 2012</xref>) and this replication attempt (RP:CB). Uncorrected <italic>p</italic> values are reported. Sample sizes reported are based on treating genes as unpaired between conditions. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/.</ext-link></p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>Importantly, though, the question of whether the change in expression among active genes is different than silent genes has not been tested. This would require a separate test on their difference (<xref ref-type="bibr" rid="bib8">Gelman and Stern, 2006</xref>; <xref ref-type="bibr" rid="bib21">Nieuwenhuis et al., 2011</xref>). To test whether active genes increased in expression during c-Myc induction more than silent genes, we performed an exploratory analysis on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). For both the original and replication data, there was a statistically significant increase in expression of active genes compared to silent genes (<xref ref-type="table" rid="table3">Table 3</xref>). This suggests that active genes and silent genes do not have similar rates of expression upon c-Myc induction. To summarize, for this experiment we found results that were in the same direction as the original study and suggest that while both active and silent genes increased in expression upon c-Myc induction, the rate of increase was different.</p>
+        <table-wrap id="table3" position="float">
+          <object-id pub-id-type="doi">10.7554/eLife.30274.009</object-id>
+          <label>Table 3.</label>
+          <caption>
+            <title>Exploratory statistical tests.</title>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th valign="bottom">Comparison</th>
+                <th valign="bottom">Study</th>
+                <th valign="bottom">W value</th>
+                <th valign="bottom">P value</th>
+                <th valign="bottom">Sample size (n)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td valign="top">0 hr vs 1 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">303897</td>
+                <td valign="top">7.78e-50</td>
+                <td valign="top">1288</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">278646</td>
+                <td valign="top">1.1e-27</td>
+                <td valign="top">1292</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">349351</td>
+                <td valign="top">1.27e-130</td>
+                <td valign="top">1269</td>
+              </tr>
+              <tr>
+                <td valign="top">0 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">272441</td>
+                <td valign="top">5.18e-24</td>
+                <td valign="top">1288</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">292865</td>
+                <td valign="top">7.4e-39</td>
+                <td valign="top">1292</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">368182</td>
+                <td valign="top">1.14e-163</td>
+                <td valign="top">1269</td>
+              </tr>
+              <tr>
+                <td valign="top">1 hr vs 24 hr</td>
+                <td valign="top">RP:CB Lot 1</td>
+                <td valign="top">235077</td>
+                <td valign="top">7.45e-06</td>
+                <td valign="top">1288</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">RP:CB Lot 2</td>
+                <td valign="top">272028</td>
+                <td valign="top">3.73e-23</td>
+                <td valign="top">1292</td>
+              </tr>
+              <tr>
+                <td valign="top"/>
+                <td valign="top">
+                  <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>
+                </td>
+                <td valign="top">332069</td>
+                <td valign="top">5.72e-104</td>
+                <td valign="top">1269</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p>These exploratory statistical tests relate to the data presented in <xref ref-type="fig" rid="fig2">Figure 2</xref>. Wilcoxon rank sum tests were conducted for the original study (<xref ref-type="bibr" rid="bib17">Lin et al., 2012</xref>) and this replication attempt (RP:CB) on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Uncorrected <italic>p</italic> values are reported. Sample sizes reported are based on number of active and silent genes used in the tests. Additional details for this experiment can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/.</ext-link></p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>The original study and this replication attempt used the same criteria to characterize a gene as silent or active, but there are many negative consequences of dichotomizing continuous variables, such as information loss, especially with a small gene set (<xref ref-type="bibr" rid="bib1">Altman and Royston, 2006</xref>; <xref ref-type="bibr" rid="bib4">Cohen, 1983</xref>). Papers published after the original study took an unbiased view by collecting comprehensive RNA-sequencing data to assess if the transcriptional effects of c-Myc were direct or indirect, concluding c-Myc activates and represses transcription of discrete gene sets, which in turn leads to induced RNA amplification (<xref ref-type="bibr" rid="bib27">Sabò et al., 2014</xref>; <xref ref-type="bibr" rid="bib35">Walz et al., 2014</xref>). Furthermore, Sabò and colleagues also used NanoString technology to quantify a subset of the differentially expressed genes identified by RNA-seq and observed similar results that revealed upward shifts in gene expression upon c-Myc induction (<xref ref-type="bibr" rid="bib27">Sabò et al., 2014</xref>). However, instead of dichotomizing genes as active or silent, gene expression data was presented as continuous. Similarly, we presented the digital gene expression data generated during this replication attempt as continuous, which illustrates a general pattern of overall increased gene expression following c-Myc induction (<xref ref-type="fig" rid="fig2s2">Figure 2—figure supplement 2</xref>). Importantly, though, these results are limited to the 1369 genes interrogated in this study and may or may not reflect how the entire transcriptome of P493-6 cells respond to c-Myc induction.</p>
+      </sec>
+      <sec id="s2-4">
+        <title>Meta-analyses of original and replicated effects</title>
+        <p>We performed a meta-analysis using a random-effects model to combine each of the effects described above as pre-specified in the confirmatory analysis plan (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). To provide a standardized measure of the effect, a common effect size was calculated for each effect from the original and replication studies. Cohen’s <italic>d</italic> is the standardized difference between two means using the pooled sample standard deviation. The effect size <italic>r</italic> is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results (<xref ref-type="bibr" rid="bib6">Errington et al., 2014</xref>; <xref ref-type="bibr" rid="bib33">Valentine et al., 2011</xref>). Importantly, the width of the confidence interval for each study is a reflection of not only the confidence level (e.g. 95%), but also variability of the sample (e.g. <italic>SD</italic>) and sample size.</p>
+        <p>The comparison of total RNA levels at low levels of c-Myc (0 hr) compared to high levels of c-Myc (24 hr) resulted in <italic>d</italic> = 4.19, 95% CI [0.94, 7.37] for the data reported in Figure 3E of the original study (<xref ref-type="bibr" rid="bib17">Lin et al., 2012</xref>). This compares to <italic>d</italic> = 0.83, 95% CI [−0.91, 2.48] for serum lot one and <italic>d</italic> = 4.11, 95% CI [0.90, 7.23] for serum lot two reported in this study. A meta-analysis (<xref ref-type="fig" rid="fig3">Figure 3A</xref>) of these effects resulted in <italic>d</italic> = 2.52, 95% CI [0.01, 5.03], which was statistically significant (<italic>p</italic>=0.0488). The original and replication results are consistent when considering the direction of the effect, which suggests c-Myc induction increases total RNA levels in P493-6 Burkitt’s lymphoma cells. Noticeably, there was substantial within-study variation observed in this replication attempt, due the different serum lots tested. The point estimate of serum lot one was not within the confidence intervals of the original study and serum lot two, and vice versa; however the point estimate of the original study and serum lot two were within the confidence intervals of each other.</p>
+        <fig id="fig3" position="float">
+          <object-id pub-id-type="doi">10.7554/eLife.30274.010</object-id>
+          <label>Figure 3.</label>
+          <caption>
+            <title>Meta-analyses of each effect.</title>
+            <p>Effect size and 95% confidence interval are presented for <xref ref-type="bibr" rid="bib17">Lin et al., 2012</xref>, this replication study (RP:CB), and a random effects meta-analysis of those two effects. Cohen’s <italic>d</italic> is the standardized difference between the two measurements, with a larger positive value indicating total RNA levels are increased at 24 hr compared to 0 hr. The effect size <italic>r</italic> is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in <xref ref-type="bibr" rid="bib17">Lin et al., 2012</xref> and this replication attempt are reported under the study name. (<bold>A</bold>) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after release from tetracycline (meta-analysis <italic>p</italic> = 0.0488). (<bold>B</bold>) Gene expression of active or silent genes are shown for all comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis <italic>p</italic> = 1.12x10<sup>-7</sup>), 0 hr compared to 24 hr (meta-analysis <italic>p</italic> = 7.01x10<sup>-4</sup>), 1 hr compared to 24 hr (meta-analysis <italic>p</italic> = 0.0129). Silent genes: 0 hr compared to 1 hr (meta-analysis <italic>p</italic> = 0.203), 0 hr compared to 24 hr (meta-analysis <italic>p</italic> = 7.10x10<sup>-17</sup>), 1 hr compared to 24 hr (meta-analysis <italic>p</italic> = 0.0571). Additional details for these meta-analyses can be found at <ext-link ext-link-type="uri" xlink:href="https://osf.io/5yscz/">https://osf.io/5yscz/</ext-link>.</p>
+          </caption>
+          <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-30274-fig3-v1"/>
+        </fig>
+        <p>There were six comparisons of the gene expression data, three for active genes and three for silent genes (<xref ref-type="fig" rid="fig3">Figure 3B</xref>). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr the meta-analyses were statistically significant (<italic>p</italic>=1.12×10<sup>−7</sup>, <italic>p</italic>=7.01×10<sup>−4</sup>, <italic>p</italic>=0.0129, respectively). In all comparisons the results were consistent when considering the direction of the effect; however the effect size point estimate of each study (original, replication serum lot one, replication serum lot two) was not within the confidence interval of the other studies. Further, the large confidence intervals of the meta-analysis along with statistically significant Cochran’s <italic>Q</italic> tests suggest heterogeneity between the original and replication studies. For silent genes, the meta-analysis was not statistically significant for gene expression at 0 hr to 1 hr and 1 hr to 24 hr (<italic>p</italic>=0.203, <italic>p</italic>=0.0571, respectively) and the effect size point estimate of each study was not within the confidence interval of the other studies. Similar to the active gene comparisons, the large confidence intervals of the meta-analysis along with statistically significant Cochran’s <italic>Q</italic> tests suggest heterogeneity between the studies. Furthermore, for the 0 hr to 1 hr comparison the original study and replication studies were in opposite directions, while the 1 hr to 24 hr comparison was consistent. Finally, the comparison between 0 hr and 24 hr for silent genes was consistent when considering direction of the effect with a statistically significant meta-analysis (<italic>p</italic>=7.10×10<sup>−17</sup>). The point estimate of the original study was not within the confidence intervals of the replication studies; however both replication studies with different serum lots were within the confidence intervals of the original study and each other. Overall, the gene expression analysis indicates that the effect sizes observed from the two serum lots tested in this replication attempt, although not identical, were more similar to each other than to the original study.</p>
+        <p>This direct replication provides an opportunity to understand the present evidence of these effects. Any known differences, including reagents and protocol differences, were identified prior to conducting the experimental work and described in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). However, this is limited to what was obtainable from the original paper and through communication with the original authors, which means there might be particular features of the original experimental protocol that could be critical, but unidentified. So while some aspects, such as the cell line, induction time course, and the method used to measure gene expression were maintained, others were changed at the time of study design (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>) that could affect results, such as the analytical approach (<xref ref-type="bibr" rid="bib31">Silberzahn et al., 2017</xref>) and serum lot (<xref ref-type="bibr" rid="bib15">Leek et al., 2010</xref>). Furthermore, other aspects were unknown or not easily controlled for. These include variables such as cell line genetic drift (<xref ref-type="bibr" rid="bib13">Hughes et al., 2007</xref>; <xref ref-type="bibr" rid="bib14">Kleensang et al., 2016</xref>) or changes in cellular volume that can impact overall transcript abundance (<xref ref-type="bibr" rid="bib22">Padovan-Merhar et al., 2015</xref>). Whether these or other factors influence the outcomes of this study is open to hypothesizing and further investigation, which is facilitated by direct replications and transparent reporting.</p>
+      </sec>
+    </sec>
+    <sec id="s3" sec-type="materials|methods">
+      <title>Materials and methods</title>
+      <p>As described in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>), we attempted a replication of the experiments reported in Figures 1B and 3E-F of <xref ref-type="bibr" rid="bib17">Lin et al. (2012)</xref>. A detailed description of all protocols can be found in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). Additional detailed experimental notes, data, and analysis are available on the Open Science Framework (OSF) (RRID:<ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_003238">SCR_003238</ext-link>) (<ext-link ext-link-type="uri" xlink:href="https://osf.io/mokeb/">https://osf.io/mokeb/</ext-link>; <xref ref-type="bibr" rid="bib16">Lewis et al., 2017</xref>). This includes the R Markdown file (<ext-link ext-link-type="uri" xlink:href="https://osf.io/vdrsh/">https://osf.io/vdrsh/</ext-link>) that was used to compose this manuscript, which is a reproducible document linking the results in the article directly to the data and code that produced them (<xref ref-type="bibr" rid="bib10">Hartgerink, 2017</xref>).</p>
+      <sec id="s3-1">
+        <title>Cell culture</title>
+        <p>P493-6 cells (shared by Young lab, Whitehead Institute for Biomedical Research, RRID: <ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/CVCL_6783">CVCL_6783</ext-link>) were maintained in RPMI-1640 supplemented with 1% Ala-Gln and 10% tetracycline-free FBS (Clontech, Mountain View, CA, cat# 631105, lot# 1: A15003, lot# 2: A15032). Cells were grown at 37°C in a humidified atmosphere at 5% CO<sub>2</sub>. Quality control data for the cell line are available at <ext-link ext-link-type="uri" xlink:href="https://osf.io/e6ftz/.">https://osf.io/e6ftz/.</ext-link> This includes results confirming the cell line was free of mycoplasma contamination (DDC Medical, Fairfield, Ohio). Additionally, STR DNA profiling of the cell line was performed (DDC Medical, Fairfield, Ohio).</p>
+        <p>For repression of the conditional p<italic>myc</italic>-tet construct in P493-6 cells, 0.1 µg/ml tetracycline (Sigma-Aldrich, St. Louis, MO, cat# T7660) was added to the culture medium and cells were incubated for 72 hr. Under these conditions, P493-6 cells did not proliferate due to a dependency on the expression of <italic>MYC</italic> (<xref ref-type="bibr" rid="bib30">Schuhmacher et al., 1999</xref>). For <italic>MYC</italic> re-induction, cells were washed three times with growth medium and grown in tetracycline-free culture conditions.</p>
+      </sec>
+      <sec id="s3-2">
+        <title>Western blot</title>
+        <p>P493-6 cells were harvested at the indicated times and total cell lysates were prepared by pelleting ~1×10<sup>7</sup> cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury, NY, model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics, Burlingame, CA, cat# 1472–1; RRID:<ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_731658">AB_731658</ext-link>); 1:5000 dilution in 5% w/v nonfat dry milk/TBST and mouse anti-ß-actin [clone AC-15] (Sigma-Aldrich, cat# A5441; RRID:<ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/AB_476744">AB_476744</ext-link>); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST. Each incubation was followed by washes with TBST and the appropriate secondary antibody: HRP-conjugated donkey anti-rabbit (Sigma-Aldrich, cat# GERPN2124); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST or HRP-conjugated sheep anti-mouse (Sigma-Aldrich, cat# GERPN2124); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST. Membranes were washed with TBST and incubated with ECL Prime Chemiluminescent reagent (Sigma-Aldrich, cat# GERPN2232) according to the manufacturer’s instructions. Western blot images were acquired with G:BOX iChem XT and GeneSnap software (RRID:<ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_014249">SCR_014249</ext-link>), version 7.12.02 (Syngene, Frederick, Maryland) and quantified using ImageJ software (RRID:<ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_003070">SCR_003070</ext-link>), version 1.50i (<xref ref-type="bibr" rid="bib29">Schneider et al., 2012</xref>). All images taken are available at <ext-link ext-link-type="uri" xlink:href="https://osf.io/ujg7t/.">https://osf.io/ujg7t/.</ext-link></p>
+      </sec>
+      <sec id="s3-3">
+        <title>RNA quantification</title>
+        <p>P493-6 cells were harvested at the indicated times and total RNA extraction was performed by pelleting ~1×10<sup>7</sup> cells (exact number determined with a C-chip disposable hemocytometer) and homogenizing the sample in 1 ml Tri Reagent (Sigma-Aldrich, cat# T9424) according to the manufacturer’s instructions. For each sample 10% v/v miRNA Homogenate Additive was added, vortexed, and incubated on ice for 10 min. For each 1 ml of Tri Reagent, 100 µl of bromochloropropane was added, vortexed for 15–30 s, incubated for 5 min at RT, then centrifuged at 12,000x<italic>g</italic> for 10 min at 4°C. The aqueous phase was recovered and total RNA isolation was performed using the miRVana miRNA extraction kit (Ambion, Waltham, MA, cat# AM1561) according to the manufacturer’s instructions. Recovered RNA was eluated in 100 µl nuclease-free water. Total RNA concentrations and purity (data available at <ext-link ext-link-type="uri" xlink:href="https://osf.io/jh5r4/">https://osf.io/jh5r4/</ext-link>) were measured using a NanoDrop ND-1000 (Thermo Fisher Scientific, Waltham, Massachusetts) with the NanoDrop Operating Software, version 3.3, and converted to ng per 1,000 cells.</p>
+      </sec>
+      <sec id="s3-4">
+        <title>RNA extraction and NanoString nCounter digital gene expression assay</title>
+        <p>P493-6 cells were harvested at the indicated times and 1 × 10<sup>6</sup> cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden, Germany, cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit, nCounter GX Human Kinase Kit, nCounter Custom CodeSet) encompassing 1369 genes across multiple functional categories were used. Following hybridization, samples were immediately processed with the nCounter Analysis System (NanoString Technologies, NCT-PREP-120). The count data was collected using the nCounter RCC Collector Worksheet (NanoString Technologies), version 1.6.0 and then positive-, negative-, and housekeeping gene-normalized per nCounter guidelines. Expression for each gene was averaged across the four independent replicate samples. Additionally, for genes that appeared on multiple CodeSets, expression values were averaged together to generate a single value for each gene. A gene was defined as transcriptionally active if its average expression was above one transcript/cell at 0 hr and transcriptionally silent if below 0.5 transcript/cell. A list of all Reporter CodeSets and their expression values (transcripts/cell) are available at <xref ref-type="supplementary-material" rid="fig2sdata1">Figure 2—source data 1</xref>. Additional files and analysis scripts are available at <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/.</ext-link></p>
+      </sec>
+      <sec id="s3-5">
+        <title>Statistical analysis</title>
+        <p>Statistical analysis was performed with R software (RRID:<ext-link ext-link-type="uri" xlink:href="https://scicrunch.org/resolver/SCR_001905">SCR_001905</ext-link>), version 3.3.2 (<xref ref-type="bibr" rid="bib25">R Core Team, 2017</xref>). All data, csv files, and analysis scripts are available on the OSF (<ext-link ext-link-type="uri" xlink:href="https://osf.io/mokeb/">https://osf.io/mokeb/</ext-link>). Confirmatory statistical analysis was pre-registered (<ext-link ext-link-type="uri" xlink:href="https://osf.io/nj8wb/">https://osf.io/nj8wb/</ext-link>) before the experimental work began as outlined in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>). Proposed analysis of gene expression data was conducted by the Wilcoxon signed-rank test using the method proposed by Pratt to handle zero differences (<xref ref-type="bibr" rid="bib24">Pratt, 1959</xref>), with additional exploratory analysis performed using the Wilcoxon rank sum test as reported in the original study and a Wilcoxon rank sum test on the difference in expression of active genes during c-Myc induction (e.g. from 0 hr to 24 hr) compared to the difference in expression of silent genes over that same period (e.g. from 0 hr to 24 hr). Data were checked to ensure assumptions of statistical tests were met. When described in the results, the Bonferroni correction, to account for multiple testings, was applied to the alpha error by dividing the uncorrected value (.05) by the number of tests performed. Although the Bonferroni method is conservative, it was accounted for in the power calculations to ensure sample size was sufficient. In cases where the number of groups were three and the sample sizes were evenly distributed among the groups, Fisher's LSD test was performed resulting in an <italic>a priori</italic> significance threshold of. 05. A meta-analysis of a common original and replication effect size was performed with a random effects model and the <italic>metafor</italic> package (<xref ref-type="bibr" rid="bib34">Viechtbauer, 2010</xref>) (available at: <ext-link ext-link-type="uri" xlink:href="https://osf.io/5yscz/">https://osf.io/5yscz/</ext-link>). The sample sizes reported in <xref ref-type="table" rid="table1">Table 1</xref> and <xref ref-type="fig" rid="fig3">Figure 3</xref> for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking (<xref ref-type="bibr" rid="bib24">Pratt, 1959</xref>). The raw original study data were shared by the original authors with the summary data published in the Registered Report (<xref ref-type="bibr" rid="bib3">Blum et al., 2015</xref>) and was used in the power calculations to determine the sample size for this study.</p>
+      </sec>
+      <sec id="s3-6">
+        <title>Deviations from registered report</title>
+        <p>The number of flasks, and thus cells, was increased when tetracycline was added to P493-6 cells to account for the cells not proliferating during this period (i.e. there were two Flask B’s as described in the Registered Report, which were pooled prior to seeding). The proposed statistical analysis for the western blot analysis (Protocol 1) described in the Registered Report was not performed since the levels of normalized c-Myc at time 0 hr was at the limit of detection. The number of genes analyzed in the original study, and thus listed in the Registered Report, was reported incorrectly as 1388 instead of 1338 (data shared by original authors). NanoString analysis was conducted using the nCounter RCC Collector Worksheet instead of nSolver Analysis software. Additionally, the statistical tests reported in Figure 3F of the original study incorrectly described the comparisons as between 0 hr and 1 hr instead of between 0 hr and 24 hr (scripts shared by original authors). The corrected values are described above for comparisons and used in the meta-analysis. Additional materials and instrumentation not listed in the Registered Report, but needed during experimentation are also listed.</p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ack id="ack">
+      <title>Acknowledgements</title>
+      <p>The Reproducibility Project: Cancer Biology would like to thank the original authors, particular Charles Lin (Baylor College of Medicine) for sharing critical reagents and data, specifically the P493-6 cells. We would also like to thank Courtney Soderberg at the Center for Open Science for assistance with statistical analyses and the following companies for generously donating reagents to the Reproducibility Project: Cancer Biology; American Type and Tissue Collection (ATCC), Applied Biological Materials, BioLegend, Charles River Laboratories, Corning Incorporated, DDC Medical, EMD Millipore, Harlan Laboratories, LI-COR Biosciences, Mirus Bio, Novus Biologicals, Sigma-Aldrich, and System Biosciences (SBI).</p>
+    </ack>
+    <sec id="s4" sec-type="additional-information">
+      <title>Additional information</title>
+      <fn-group content-type="competing-interest">
+        <title>Competing interests</title>
+        <fn fn-type="COI-statement" id="conf1">
+          <p>Bioexpression and Fermentation Facility, University of Georgia is a Science Exchange associated lab.</p>
+        </fn>
+        <fn fn-type="COI-statement" id="conf2">
+          <p>Meredith C Edwards: Bioexpression and Fermentation Facility, University of Georgia is a Science Exchange associated lab.</p>
+        </fn>
+        <fn fn-type="COI-statement" id="conf3">
+          <p>Zachary R Meyers: Bioexpression and Fermentation Facility, University of Georgia is a Science Exchange associated lab.</p>
+        </fn>
+        <fn fn-type="COI-statement" id="conf4">
+          <p>Deep Sequencing and Microarray Core Facility, Johns Hopkins University is a Science Exchange associated lab.</p>
+        </fn>
+        <fn fn-type="COI-statement" id="conf5">
+          <p>No competing interests declared</p>
+        </fn>
+        <fn fn-type="COI-statement" id="conf6">
+          <p>David Blum: Bioexpression and Fermentation Facility, University of Georgia is a Science Exchange associated lab.</p>
+        </fn>
+        <fn fn-type="COI-statement" id="conf7">
+          <p>EI, RT, NP: Employed by and hold shares in Science Exchange Inc.</p>
+        </fn>
+      </fn-group>
+      <fn-group content-type="author-contribution">
+        <title>Author contributions</title>
+        <fn fn-type="con" id="con1">
+          <p>Acquisition of data, Drafting or revising the article</p>
+        </fn>
+        <fn fn-type="con" id="con2">
+          <p>Acquisition of data, Drafting or revising the article</p>
+        </fn>
+        <fn fn-type="con" id="con3">
+          <p>Acquisition of data, Drafting or revising the article</p>
+        </fn>
+        <fn fn-type="con" id="con4">
+          <p>Analysis, Acquisition of data, Drafting or revising the article</p>
+        </fn>
+        <fn fn-type="con" id="con5">
+          <p>Analysis, Drafting or revising the article</p>
+        </fn>
+        <fn fn-type="con" id="con6">
+          <p>Acquisition of data, Drafting or revising the article</p>
+        </fn>
+      </fn-group>
+    </sec>
+    <sec id="s5" sec-type="supplementary-material">
+      <title>Additional files</title>
+      <supplementary-material id="scode1">
+        <object-id pub-id-type="doi">10.7554/eLife.30274.011</object-id>
+        <label>Source code 1.</label>
+        <caption/>
+        <media mime-subtype="octet-stream" mimetype="application" xlink:href="elife-30274-code1-v1.rmd"/>
+      </supplementary-material>
+      <supplementary-material id="transrepform">
+        <object-id pub-id-type="doi">10.7554/eLife.30274.012</object-id>
+        <label>Transparent reporting form</label>
+        <media mime-subtype="docx" mimetype="application" xlink:href="elife-30274-transrepform-v1.docx"/>
+      </supplementary-material>
+    </sec>
+    <ref-list>
+      <title>References</title>
+      <ref id="bib1">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Altman</surname>
+              <given-names>DG</given-names>
+            </name>
+            <name>
+              <surname>Royston</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2006">2006</year>
+          <article-title>The cost of dichotomising continuous variables</article-title>
+          <source>BMJ</source>
+          <volume>332</volume>
+          <elocation-id>1080</elocation-id>
+          <pub-id pub-id-type="doi">10.1136/bmj.332.7549.1080</pub-id>
+          <pub-id pub-id-type="pmid">16675816</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib2">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Biggs</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Macmillan</surname>
+              <given-names>RL</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="1948">1948</year>
+          <article-title>The error of the red cell count</article-title>
+          <source>Journal of Clinical Pathology</source>
+          <volume>1</volume>
+          <fpage>288</fpage>
+          <lpage>291</lpage>
+          <pub-id pub-id-type="doi">10.1136/jcp.1.5.288</pub-id>
+          <pub-id pub-id-type="pmid">16810816</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib3">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Blum</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Hao</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>McCarthy</surname>
+              <given-names>M</given-names>
+            </name>
+            <collab>Reproducibility Project: Cancer Biology</collab>
+          </person-group>
+          <year iso-8601-date="2015">2015</year>
+          <article-title>Registered report: Transcriptional amplification in tumor cells with elevated c-Myc</article-title>
+          <source>eLife</source>
+          <volume>4</volume>
+          <elocation-id>e04024</elocation-id>
+          <pub-id pub-id-type="doi">10.7554/eLife.04024</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib4">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cohen</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="1983">1983</year>
+          <article-title>The cost of dichotomization</article-title>
+          <source>Applied Psychological Measurement</source>
+          <volume>7</volume>
+          <fpage>249</fpage>
+          <lpage>253</lpage>
+          <pub-id pub-id-type="doi">10.1177/014662168300700301</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib5">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Duffy</surname>
+              <given-names>DJ</given-names>
+            </name>
+            <name>
+              <surname>Krstic</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Halasz</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Schwarzl</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Fey</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Iljin</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Mehta</surname>
+              <given-names>JP</given-names>
+            </name>
+            <name>
+              <surname>Killick</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Whilde</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Turriziani</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Haapa-Paananen</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Fey</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Fischer</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Westermann</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Henrich</surname>
+              <given-names>K-O</given-names>
+            </name>
+            <name>
+              <surname>Bannert</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Higgins</surname>
+              <given-names>DG</given-names>
+            </name>
+            <name>
+              <surname>Kolch</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2015">2015</year>
+          <article-title>Integrative omics reveals MYCN as a global suppressor of cellular signalling and enables network-based therapeutic target discovery in neuroblastoma</article-title>
+          <source>Oncotarget</source>
+          <volume>6</volume>
+          <fpage>43182</fpage>
+          <lpage>43201</lpage>
+          <pub-id pub-id-type="doi">10.18632/oncotarget.6568</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib6">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Errington</surname>
+              <given-names>TM</given-names>
+            </name>
+            <name>
+              <surname>Iorns</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Gunn</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Tan</surname>
+              <given-names>FE</given-names>
+            </name>
+            <name>
+              <surname>Lomax</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Nosek</surname>
+              <given-names>BA</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2014">2014</year>
+          <article-title>An open investigation of the reproducibility of cancer biology research</article-title>
+          <source>eLife</source>
+          <volume>3</volume>
+          <elocation-id>e04333</elocation-id>
+          <pub-id pub-id-type="doi">10.7554/eLife.04333</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib7">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fagnocchi</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Cherubini</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Hatsuda</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Fasciani</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Mazzoleni</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Poli</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Berno</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Rossi</surname>
+              <given-names>RL</given-names>
+            </name>
+            <name>
+              <surname>Reinbold</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Endele</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Schroeder</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Rocchigiani</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Szkarłat</surname>
+              <given-names>Ż</given-names>
+            </name>
+            <name>
+              <surname>Oliviero</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Dalton</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Zippo</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2016">2016</year>
+          <article-title>A Myc-driven self-reinforcing regulatory network maintains mouse embryonic stem cell identity</article-title>
+          <source>Nature Communications</source>
+          <volume>7</volume>
+          <elocation-id>11903</elocation-id>
+          <pub-id pub-id-type="doi">10.1038/ncomms11903</pub-id>
+          <pub-id pub-id-type="pmid">27301576</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib8">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gelman</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Stern</surname>
+              <given-names>H</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2006">2006</year>
+          <article-title>The difference between “significant” and “not significant” is not itself statistically significant</article-title>
+          <source>The American Statistician</source>
+          <volume>60</volume>
+          <fpage>328</fpage>
+          <lpage>331</lpage>
+          <pub-id pub-id-type="doi">10.1198/000313006X152649</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib9">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hart</surname>
+              <given-names>JR</given-names>
+            </name>
+            <name>
+              <surname>Roberts</surname>
+              <given-names>TC</given-names>
+            </name>
+            <name>
+              <surname>Weinberg</surname>
+              <given-names>MS</given-names>
+            </name>
+            <name>
+              <surname>Morris</surname>
+              <given-names>KV</given-names>
+            </name>
+            <name>
+              <surname>Vogt</surname>
+              <given-names>PK</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2014">2014</year>
+          <article-title>MYC regulates the non-coding transcriptome</article-title>
+          <source>Oncotarget</source>
+          <volume>5</volume>
+          <fpage>12543</fpage>
+          <lpage>12554</lpage>
+          <pub-id pub-id-type="doi">10.18632/oncotarget.3033</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib10">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hartgerink</surname>
+              <given-names>CHJ</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2017">2017</year>
+          <article-title>Composing reproducible manuscripts using R Markdown</article-title>
+          <source>eLife</source>
+          <ext-link ext-link-type="uri" xlink:href="https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown">https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown</ext-link>
+        </element-citation>
+      </ref>
+      <ref id="bib11">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hiorns</surname>
+              <given-names>LR</given-names>
+            </name>
+            <name>
+              <surname>Bradshaw</surname>
+              <given-names>TD</given-names>
+            </name>
+            <name>
+              <surname>Skelton</surname>
+              <given-names>LA</given-names>
+            </name>
+            <name>
+              <surname>Yu</surname>
+              <given-names>Q</given-names>
+            </name>
+            <name>
+              <surname>Kelland</surname>
+              <given-names>LR</given-names>
+            </name>
+            <name>
+              <surname>Leyland-Jones</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2004">2004</year>
+          <article-title>Variation in RNA expression and genomic DNA content acquired during cell culture</article-title>
+          <source>British Journal of Cancer</source>
+          <volume>90</volume>
+          <fpage>476</fpage>
+          <lpage>482</lpage>
+          <pub-id pub-id-type="doi">10.1038/sj.bjc.6601405</pub-id>
+          <pub-id pub-id-type="pmid">14735196</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib12">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hsu</surname>
+              <given-names>TY</given-names>
+            </name>
+            <name>
+              <surname>Simon</surname>
+              <given-names>LM</given-names>
+            </name>
+            <name>
+              <surname>Neill</surname>
+              <given-names>NJ</given-names>
+            </name>
+            <name>
+              <surname>Marcotte</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Sayad</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Bland</surname>
+              <given-names>CS</given-names>
+            </name>
+            <name>
+              <surname>Echeverria</surname>
+              <given-names>GV</given-names>
+            </name>
+            <name>
+              <surname>Sun</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Kurley</surname>
+              <given-names>SJ</given-names>
+            </name>
+            <name>
+              <surname>Tyagi</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Karlin</surname>
+              <given-names>KL</given-names>
+            </name>
+            <name>
+              <surname>Dominguez-Vidaña</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Hartman</surname>
+              <given-names>JD</given-names>
+            </name>
+            <name>
+              <surname>Renwick</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Scorsone</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Bernardi</surname>
+              <given-names>RJ</given-names>
+            </name>
+            <name>
+              <surname>Skinner</surname>
+              <given-names>SO</given-names>
+            </name>
+            <name>
+              <surname>Jain</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Orellana</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Lagisetti</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Golding</surname>
+              <given-names>I</given-names>
+            </name>
+            <name>
+              <surname>Jung</surname>
+              <given-names>SY</given-names>
+            </name>
+            <name>
+              <surname>Neilson</surname>
+              <given-names>JR</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>XH</given-names>
+            </name>
+            <name>
+              <surname>Cooper</surname>
+              <given-names>TA</given-names>
+            </name>
+            <name>
+              <surname>Webb</surname>
+              <given-names>TR</given-names>
+            </name>
+            <name>
+              <surname>Neel</surname>
+              <given-names>BG</given-names>
+            </name>
+            <name>
+              <surname>Shaw</surname>
+              <given-names>CA</given-names>
+            </name>
+            <name>
+              <surname>Westbrook</surname>
+              <given-names>TF</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2015">2015</year>
+          <article-title>The spliceosome is a therapeutic vulnerability in MYC-driven cancer</article-title>
+          <source>Nature</source>
+          <volume>525</volume>
+          <fpage>384</fpage>
+          <lpage>388</lpage>
+          <pub-id pub-id-type="doi">10.1038/nature14985</pub-id>
+          <pub-id pub-id-type="pmid">26331541</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib13">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hughes</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Marshall</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Reid</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Parkes</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Gelber</surname>
+              <given-names>C</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2007">2007</year>
+          <article-title>The costs of using unauthenticated</article-title>
+          <source>over-passaged cell lines: how much more data do we need? BioTechniques</source>
+          <volume>43</volume>
+          <fpage>575</fpage>
+          <lpage>586</lpage>
+          <pub-id pub-id-type="doi">10.2144/000112598</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib14">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kleensang</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Vantangoli</surname>
+              <given-names>MM</given-names>
+            </name>
+            <name>
+              <surname>Odwin-DaCosta</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Andersen</surname>
+              <given-names>ME</given-names>
+            </name>
+            <name>
+              <surname>Boekelheide</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Bouhifd</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Fornace</surname>
+              <given-names>AJ</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>HH</given-names>
+            </name>
+            <name>
+              <surname>Livi</surname>
+              <given-names>CB</given-names>
+            </name>
+            <name>
+              <surname>Madnick</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Maertens</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Rosenberg</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Yager</surname>
+              <given-names>JD</given-names>
+            </name>
+            <name>
+              <surname>Zhaog</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Hartung</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2016">2016</year>
+          <article-title>Genetic variability in a frozen batch of MCF-7 cells invisible in routine authentication affecting cell function</article-title>
+          <source>Scientific Reports</source>
+          <volume>6</volume>
+          <elocation-id>28994</elocation-id>
+          <pub-id pub-id-type="doi">10.1038/srep28994</pub-id>
+          <pub-id pub-id-type="pmid">27456714</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib15">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Leek</surname>
+              <given-names>JT</given-names>
+            </name>
+            <name>
+              <surname>Scharpf</surname>
+              <given-names>RB</given-names>
+            </name>
+            <name>
+              <surname>Bravo</surname>
+              <given-names>HC</given-names>
+            </name>
+            <name>
+              <surname>Simcha</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Langmead</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Johnson</surname>
+              <given-names>WE</given-names>
+            </name>
+            <name>
+              <surname>Geman</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Baggerly</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Irizarry</surname>
+              <given-names>RA</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2010">2010</year>
+          <article-title>Tackling the widespread and critical impact of batch effects in high-throughput data</article-title>
+          <source>Nature Reviews Genetics</source>
+          <volume>11</volume>
+          <fpage>733</fpage>
+          <lpage>739</lpage>
+          <pub-id pub-id-type="doi">10.1038/nrg2825</pub-id>
+          <pub-id pub-id-type="pmid">20838408</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib16">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lewis</surname>
+              <given-names>LM</given-names>
+            </name>
+            <name>
+              <surname>Edwards</surname>
+              <given-names>MC</given-names>
+            </name>
+            <name>
+              <surname>Meyers</surname>
+              <given-names>ZR</given-names>
+            </name>
+            <name>
+              <surname>Talbot</surname>
+              <given-names>CC</given-names>
+            </name>
+            <name>
+              <surname>Hao</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Blum</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Iorns</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Tsui</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Denis</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Perfito</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Errington</surname>
+              <given-names>TM</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2017">2017</year>
+          <article-title>Study 48: Replication of Lin et al., 2012 (Cell)</article-title>
+          <source>Open Science Framework</source>
+          <pub-id pub-id-type="doi">10.17605/OSF.IO/MOKEB</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib17">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lin</surname>
+              <given-names>CY</given-names>
+            </name>
+            <name>
+              <surname>Lovén</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Rahl</surname>
+              <given-names>PB</given-names>
+            </name>
+            <name>
+              <surname>Paranal</surname>
+              <given-names>RM</given-names>
+            </name>
+            <name>
+              <surname>Burge</surname>
+              <given-names>CB</given-names>
+            </name>
+            <name>
+              <surname>Bradner</surname>
+              <given-names>JE</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>TI</given-names>
+            </name>
+            <name>
+              <surname>Young</surname>
+              <given-names>RA</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2012">2012</year>
+          <article-title>Transcriptional amplification in tumor cells with elevated c-Myc</article-title>
+          <source>Cell</source>
+          <volume>151</volume>
+          <fpage>56</fpage>
+          <lpage>67</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2012.08.026</pub-id>
+          <pub-id pub-id-type="pmid">23021215</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib18">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lorenzin</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Benary</surname>
+              <given-names>U</given-names>
+            </name>
+            <name>
+              <surname>Baluapuri</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Walz</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Jung</surname>
+              <given-names>LA</given-names>
+            </name>
+            <name>
+              <surname>von Eyss</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Kisker</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Wolf</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Eilers</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Wolf</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2016">2016</year>
+          <article-title>Different promoter affinities account for specificity in MYC-dependent gene regulation</article-title>
+          <source>eLife</source>
+          <volume>5</volume>
+          <elocation-id>e15161</elocation-id>
+          <pub-id pub-id-type="doi">10.7554/eLife.15161</pub-id>
+          <pub-id pub-id-type="pmid">27460974</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib19">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nie</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Hu</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Wei</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Cui</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Yamane</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Resch</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Green</surname>
+              <given-names>DR</given-names>
+            </name>
+            <name>
+              <surname>Tessarollo</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Casellas</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Zhao</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Levens</surname>
+              <given-names>D</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2012">2012</year>
+          <article-title>c-Myc is a universal amplifier of expressed genes in lymphocytes and embryonic stem cells</article-title>
+          <source>Cell</source>
+          <volume>151</volume>
+          <fpage>68</fpage>
+          <lpage>79</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2012.08.033</pub-id>
+          <pub-id pub-id-type="pmid">23021216</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib20">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nielson</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Smyth</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Greenfield</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="1991">1991</year>
+          <article-title>Hemacytometer Cell Count Distributions: Implications of Non-Poisson Behavior</article-title>
+          <source>Biotechnology Progress</source>
+          <volume>7</volume>
+          <fpage>560</fpage>
+          <lpage>563</lpage>
+          <pub-id pub-id-type="doi">10.1021/bp00012a600</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib21">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nieuwenhuis</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Forstmann</surname>
+              <given-names>BU</given-names>
+            </name>
+            <name>
+              <surname>Wagenmakers</surname>
+              <given-names>EJ</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2011">2011</year>
+          <article-title>Erroneous analyses of interactions in neuroscience: a problem of significance</article-title>
+          <source>Nature Neuroscience</source>
+          <volume>14</volume>
+          <fpage>1105</fpage>
+          <lpage>1107</lpage>
+          <pub-id pub-id-type="doi">10.1038/nn.2886</pub-id>
+          <pub-id pub-id-type="pmid">21878926</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib22">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Padovan-Merhar</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Nair</surname>
+              <given-names>GP</given-names>
+            </name>
+            <name>
+              <surname>Biaesch</surname>
+              <given-names>AG</given-names>
+            </name>
+            <name>
+              <surname>Mayer</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Scarfone</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Foley</surname>
+              <given-names>SW</given-names>
+            </name>
+            <name>
+              <surname>Wu</surname>
+              <given-names>AR</given-names>
+            </name>
+            <name>
+              <surname>Churchman</surname>
+              <given-names>LS</given-names>
+            </name>
+            <name>
+              <surname>Singh</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Raj</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2015">2015</year>
+          <article-title>Single mammalian cells compensate for differences in cellular volume and DNA copy number through independent global transcriptional mechanisms</article-title>
+          <source>Molecular Cell</source>
+          <volume>58</volume>
+          <fpage>339</fpage>
+          <lpage>352</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.molcel.2015.03.005</pub-id>
+          <pub-id pub-id-type="pmid">25866248</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib23">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pajic</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Spitkovsky</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Christoph</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Kempkes</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Schuhmacher</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Staege</surname>
+              <given-names>MS</given-names>
+            </name>
+            <name>
+              <surname>Brielmeier</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Ellwart</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Kohlhuber</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Bornkamm</surname>
+              <given-names>GW</given-names>
+            </name>
+            <name>
+              <surname>Polack</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Eick</surname>
+              <given-names>D</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2000">2000</year>
+          <article-title>Cell cycle activation by c-myc in a burkitt lymphoma model cell line</article-title>
+          <source>International Journal of Cancer</source>
+          <volume>87</volume>
+          <fpage>787</fpage>
+          <lpage>793</lpage>
+          <pub-id pub-id-type="doi">10.1002/1097-0215(20000915)87:6&lt;787::AID-IJC4&gt;3.0.CO;2-6</pub-id>
+          <pub-id pub-id-type="pmid">10956386</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib24">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pratt</surname>
+              <given-names>JW</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="1959">1959</year>
+          <article-title>Remarks on zeros and ties in the wilcoxon signed rank procedures</article-title>
+          <source>Journal of the American Statistical Association</source>
+          <volume>54</volume>
+          <fpage>655</fpage>
+          <lpage>667</lpage>
+          <pub-id pub-id-type="doi">10.1080/01621459.1959.10501526</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib25">
+        <element-citation publication-type="software">
+          <person-group person-group-type="author">
+            <collab>R Core Team</collab>
+          </person-group>
+          <year iso-8601-date="2017">2017</year>
+          <data-title>R: A language and environment for statistical computing</data-title>
+          <source>R Foundation for Statistical Computing</source>
+          <publisher-loc>Vienna, Austria</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="bib26">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sabò</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Amati</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2014">2014</year>
+          <article-title>Genome recognition by MYC</article-title>
+          <source>Cold Spring Harbor Perspectives in Medicine</source>
+          <volume>4</volume>
+          <elocation-id>a014191</elocation-id>
+          <pub-id pub-id-type="doi">10.1101/cshperspect.a014191</pub-id>
+          <pub-id pub-id-type="pmid">24492846</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib27">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sabò</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Kress</surname>
+              <given-names>TR</given-names>
+            </name>
+            <name>
+              <surname>Pelizzola</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>de Pretis</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Gorski</surname>
+              <given-names>MM</given-names>
+            </name>
+            <name>
+              <surname>Tesi</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Morelli</surname>
+              <given-names>MJ</given-names>
+            </name>
+            <name>
+              <surname>Bora</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Doni</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Verrecchia</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Tonelli</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Fagà</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Bianchi</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Ronchi</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Low</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Müller</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Guccione</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Campaner</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Amati</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2014">2014</year>
+          <article-title>Selective transcriptional regulation by Myc in cellular growth control and lymphomagenesis</article-title>
+          <source>Nature</source>
+          <volume>511</volume>
+          <fpage>488</fpage>
+          <lpage>492</lpage>
+          <pub-id pub-id-type="doi">10.1038/nature13537</pub-id>
+          <pub-id pub-id-type="pmid">25043028</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib28">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schlosser</surname>
+              <given-names>I</given-names>
+            </name>
+            <name>
+              <surname>Hölzel</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Hoffmann</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Burtscher</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Kohlhuber</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Schuhmacher</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Chapman</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Weidle</surname>
+              <given-names>UH</given-names>
+            </name>
+            <name>
+              <surname>Eick</surname>
+              <given-names>D</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2005">2005</year>
+          <article-title>Dissection of transcriptional programmes in response to serum and c-Myc in a human B-cell line</article-title>
+          <source>Oncogene</source>
+          <volume>24</volume>
+          <fpage>520</fpage>
+          <lpage>524</lpage>
+          <pub-id pub-id-type="doi">10.1038/sj.onc.1208198</pub-id>
+          <pub-id pub-id-type="pmid">15516975</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib29">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schneider</surname>
+              <given-names>CA</given-names>
+            </name>
+            <name>
+              <surname>Rasband</surname>
+              <given-names>WS</given-names>
+            </name>
+            <name>
+              <surname>Eliceiri</surname>
+              <given-names>KW</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2012">2012</year>
+          <article-title>NIH Image to ImageJ: 25 years of image analysis</article-title>
+          <source>Nature Methods</source>
+          <volume>9</volume>
+          <fpage>671</fpage>
+          <lpage>675</lpage>
+          <pub-id pub-id-type="doi">10.1038/nmeth.2089</pub-id>
+          <pub-id pub-id-type="pmid">22930834</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib30">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schuhmacher</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Staege</surname>
+              <given-names>MS</given-names>
+            </name>
+            <name>
+              <surname>Pajic</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Polack</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Weidle</surname>
+              <given-names>UH</given-names>
+            </name>
+            <name>
+              <surname>Bornkamm</surname>
+              <given-names>GW</given-names>
+            </name>
+            <name>
+              <surname>Eick</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Kohlhuber</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="1999">1999</year>
+          <article-title>Control of cell growth by c-Myc in the absence of cell division</article-title>
+          <source>Current Biology</source>
+          <volume>9</volume>
+          <fpage>1255</fpage>
+          <lpage>1258</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0960-9822(99)80507-7</pub-id>
+          <pub-id pub-id-type="pmid">10556095</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib31">
+        <element-citation publication-type="preprint">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Silberzahn</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Uhlmann</surname>
+              <given-names>EL</given-names>
+            </name>
+            <name>
+              <surname>Martin</surname>
+              <given-names>DP</given-names>
+            </name>
+            <name>
+              <surname>Anselmi</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Aust</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Awtrey</surname>
+              <given-names>EC</given-names>
+            </name>
+            <name>
+              <surname>Bahník</surname>
+              <given-names>Š</given-names>
+            </name>
+            <name>
+              <surname>Bai</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Bannard</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Bonnier</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Carlsson</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Cheung</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Christensen</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Clay</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Craig</surname>
+              <given-names>MA</given-names>
+            </name>
+            <name>
+              <surname>Dalla Rosa</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Dam</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Evans</surname>
+              <given-names>MH</given-names>
+            </name>
+            <name>
+              <surname>Cervantes</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Fong</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Gamez-Djokic</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Glenz</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Gordon-McKeon</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Heaton</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Eriksson</surname>
+              <given-names>KH</given-names>
+            </name>
+            <name>
+              <surname>Heene</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Hofelich Mohr</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Högden</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Hui</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Johannesson</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Kalodimos</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Kaszubowski</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Kennedy</surname>
+              <given-names>DM</given-names>
+            </name>
+            <name>
+              <surname>Lei</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Lindsay</surname>
+              <given-names>TA</given-names>
+            </name>
+            <name>
+              <surname>Liverani</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Madan</surname>
+              <given-names>CR</given-names>
+            </name>
+            <name>
+              <surname>Molden</surname>
+              <given-names>DC</given-names>
+            </name>
+            <name>
+              <surname>Molleman</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Morey</surname>
+              <given-names>RD</given-names>
+            </name>
+            <name>
+              <surname>Mulder</surname>
+              <given-names>LB</given-names>
+            </name>
+            <name>
+              <surname>Nijstad</surname>
+              <given-names>BA</given-names>
+            </name>
+            <name>
+              <surname>Pope</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Pope</surname>
+              <given-names>NG</given-names>
+            </name>
+            <name>
+              <surname>Prenoveau</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Rink</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Robusto</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Roderique</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Sandberg</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Schlueter</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Schönbrodt</surname>
+              <given-names>FD</given-names>
+            </name>
+            <name>
+              <surname>Sherman</surname>
+              <given-names>MF</given-names>
+            </name>
+            <name>
+              <surname>Sommer</surname>
+              <given-names>SA</given-names>
+            </name>
+            <name>
+              <surname>Sotak</surname>
+              <given-names>KL</given-names>
+            </name>
+            <name>
+              <surname>Spain</surname>
+              <given-names>SM</given-names>
+            </name>
+            <name>
+              <surname>Spörlein</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Stafford</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Stefanutti</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Täuber</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Ullrich</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Vianello</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Wagenmakers</surname>
+              <given-names>E-J</given-names>
+            </name>
+            <name>
+              <surname>Witkowiak</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Yoon</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Nosek</surname>
+              <given-names>BA</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2017">2017</year>
+          <article-title>Many analysts, one dataset: Making transparent how variations in analytical choices affect results</article-title>
+          <source>PsyArXiv</source>
+          <ext-link ext-link-type="uri" xlink:href="https://psyarxiv.com/qkwst/">https://psyarxiv.com/qkwst/</ext-link>
+        </element-citation>
+      </ref>
+      <ref id="bib32">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Trakhtenberg</surname>
+              <given-names>EF</given-names>
+            </name>
+            <name>
+              <surname>Pho</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Holton</surname>
+              <given-names>KM</given-names>
+            </name>
+            <name>
+              <surname>Chittenden</surname>
+              <given-names>TW</given-names>
+            </name>
+            <name>
+              <surname>Goldberg</surname>
+              <given-names>JL</given-names>
+            </name>
+            <name>
+              <surname>Dong</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2016">2016</year>
+          <article-title>Cell types differ in global coordination of splicing and proportion of highly expressed genes</article-title>
+          <source>Scientific Reports</source>
+          <volume>6</volume>
+          <fpage>32249</fpage>
+          <pub-id pub-id-type="doi">10.1038/srep32249</pub-id>
+          <pub-id pub-id-type="pmid">27577089</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib33">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Valentine</surname>
+              <given-names>JC</given-names>
+            </name>
+            <name>
+              <surname>Biglan</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Boruch</surname>
+              <given-names>RF</given-names>
+            </name>
+            <name>
+              <surname>Castro</surname>
+              <given-names>FG</given-names>
+            </name>
+            <name>
+              <surname>Collins</surname>
+              <given-names>LM</given-names>
+            </name>
+            <name>
+              <surname>Flay</surname>
+              <given-names>BR</given-names>
+            </name>
+            <name>
+              <surname>Kellam</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Mościcki</surname>
+              <given-names>EK</given-names>
+            </name>
+            <name>
+              <surname>Schinke</surname>
+              <given-names>SP</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2011">2011</year>
+          <article-title>Replication in prevention science</article-title>
+          <source>Prevention Science</source>
+          <volume>12</volume>
+          <fpage>103</fpage>
+          <lpage>117</lpage>
+          <pub-id pub-id-type="doi">10.1007/s11121-011-0217-6</pub-id>
+          <pub-id pub-id-type="pmid">21541692</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib34">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Viechtbauer</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2010">2010</year>
+          <article-title>Conducting Meta-Analyses in R with the metafor Package</article-title>
+          <source>Journal of Statistical Software</source>
+          <volume>36</volume>
+          <fpage>1</fpage>
+          <lpage>48</lpage>
+          <pub-id pub-id-type="doi">10.18637/jss.v036.i03</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib35">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Walz</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Lorenzin</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Morton</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Wiese</surname>
+              <given-names>KE</given-names>
+            </name>
+            <name>
+              <surname>von Eyss</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Herold</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Rycak</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Dumay-Odelot</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Karim</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Bartkuhn</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Roels</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Wüstefeld</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Fischer</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Teichmann</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Zender</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Wei</surname>
+              <given-names>CL</given-names>
+            </name>
+            <name>
+              <surname>Sansom</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Wolf</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Eilers</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <year iso-8601-date="2014">2014</year>
+          <article-title>Activation and repression by oncogenic MYC shape tumour-specific gene expression profiles</article-title>
+          <source>Nature</source>
+          <volume>511</volume>
+          <fpage>483</fpage>
+          <lpage>487</lpage>
+          <pub-id pub-id-type="doi">10.1038/nature13473</pub-id>
+          <pub-id pub-id-type="pmid">25043018</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+  <sub-article article-type="decision-letter" id="SA1">
+    <front-stub>
+      <article-id pub-id-type="doi">10.7554/eLife.30274.015</article-id>
+      <title-group>
+        <article-title>Decision letter</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Green</surname>
+            <given-names>Michael R</given-names>
+          </name>
+          <role>Reviewing Editor</role>
+          <aff>
+            <institution>Howard Hughes Medical Institute, University of Massachusetts Medical School</institution>
+            <country>United States</country>
+          </aff>
+        </contrib>
+      </contrib-group>
+    </front-stub>
+    <body>
+      <boxed-text>
+        <p>In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included.</p>
+      </boxed-text>
+      <p>Thank you for submitting your article "Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc" for consideration by <italic>eLife</italic>. Your article has been reviewed by two peer reviewers, and the evaluation has been overseen by Michael Green as the Reviewing Editor and Sean Morrison as the Senior Editor. The two reviewers have opted to remain anonymous.</p>
+      <p>The reviewers have discussed the reviews with one another and the Reviewing Editor has drafted this decision to help you prepare a revised submission.</p>
+      <p>Summary:</p>
+      <p>Lewis et al. performed reproducibility experiments for key data of the paper published by Lin et al. 2012 in Cell. In particular, the experiment described in Figure 1B and its bioinformatic analysis in Figure 3E, F were investigated for reproducibility. Lin et al. studied the change of mRNA levels in response to up-regulated levels of c-Myc in the human B cell line P493-6, which carries a conditional tetracycline-regulated c-Myc gene (Tet-off system). Lin et al. reported that the increase of c-Myc levels in P493-6 cells (after removal of tetracyline) was not sufficient to induce expression of silent genes. In contrast, mRNA levels of those genes, which were expressed already before c-Myc induction, were further elevated. However, the data of Lin et al. (Figure 3F) already showed that this general statement is not valid for all silent genes. Several silent genes (per definition less the 0.5 transcripts/cell) showed elevated mRNA levels (up to 20 transcripts/cell) 24h after c-Myc induction. Importantly, the group of silent genes analyzed in the study of Lin et al. was relatively small (only 514 genes) and randomly selected. If all silent genes in P493-6 cells were analyzed in this study (probably many thousands), the group of silent genes with up-regulated mRNA levels would probably be much larger (hundreds of genes). Thus, the analysis of the data in Figure 3F suffers from the definition of gene sets. The statement of the paper that silent genes are not inducible by c-Myc comes mainly from the fact that the set of analyzed silent genes is very small.</p>
+      <p>The replication work of Lewis et al. largely confirms the results of Lin et al. (Figure 1B, Figure 3E,F) and shows that elevation of c-Myc levels also elevates the mRNA levels of the same set of genes (potential c-Myc target genes). However, the study of Lewis et al. shows in addition that a larger number of silent genes is inducible by c-Myc and that the rate of induction of c-Myc target genes is generally influenced by the applied serum batch/lot.</p>
+      <p>Both studies, Lin et al. and Lewis et al., did not address or discuss the question to which extent the increase in mRNA levels is caused by post-transcriptional mechanisms.</p>
+      <p>For the scientific community two questions are of general (high) interest: How does the entire transcriptome of P493-6 cells respond to increased c-Myc levels and how do all the silent genes respond, neither of which were analyzed in this study?</p>
+      <p>Essential revisions:</p>
+      <p>1) The paper of Lin et al. led to a great controversy in the c-Myc field, including the labs of Martin Eilers and Bruno Amati, because it ignored that c-Myc also activates inactive genes and represses active genes. Both labs published 2014 two papers back to back in Nature correcting this biased view of the Lin paper. The biased view of the Lin paper is the result of the definition of small genes sets for the analysis and this issue needs to be explicitly discussed in the reproducibility study.</p>
+      <p>2) Expression levels of c-Myc are much lower than those of the original study, although the changes of c-Myc expression are in the same direction as the original study (subsection “Total RNA levels following c-Myc overexpression”). Can the authors please discuss this issue?</p>
+      <p>3) In this study, 580 silent genes were identified with expression level less than 0.5 transcript/cell with a median expression of 0.032. In the original study, 514 genes were identified as silent genes with a median expression of 0.00. If I understand correctly, the current study uses different criteria for a gene to be classified as silent gene. I am curious whether there is a rationale for using 0.5 transcript/cell as the cutoff. In addition, it would be interesting to know how many silent genes are common between the two studies, and how many active genes are common between the two studies (subsection “Digital gene expression following c-Myc overexpression”, first paragraph). The extent of overlap of genes might play a role on some of the inconsistent results between two studies, as mentioned in the meta analysis section (subsection “Meta-analyses of original and replicated effects”, last two paragraphs).</p>
+      <p>4) The authors should make a R package with a R markdown file and all the associated data.</p>
+    </body>
+  </sub-article>
+  <sub-article article-type="reply" id="SA2">
+    <front-stub>
+      <article-id pub-id-type="doi">10.7554/eLife.30274.016</article-id>
+      <title-group>
+        <article-title>Author response</article-title>
+      </title-group>
+    </front-stub>
+    <body>
+      <disp-quote content-type="editor-comment">
+        <p>Essential revisions:</p>
+        <p>1) The paper of Lin et al. led to a great controversy in the c-Myc field, including the labs of Martin Eilers and Bruno Amati, because it ignored that c-Myc also activates inactive genes and represses active genes. Both labs published 2014 two papers back to back in Nature correcting this biased view of the Lin paper. The biased view of the Lin paper is the result of the definition of small genes sets for the analysis and this issue needs to be explicitly discussed in the reproducibility study.</p>
+      </disp-quote>
+      <p>We agree that the small gene set analyzed in the original study and this replication attempt is more biased than a comprehensive analysis of all genes. We also agree that dichotomizing gene expression (which is a continuous variable) into active and silent genes has additional negative consequences. We have expanded the manuscript to discuss these issues and are including additional supplemental figures that present the gene expression results on a continuous scale, instead of only segmented into silent and active genes. Thus, while this replication study is prone to the small gene set, due to replicating the design of the original study, the additional figures provide additional means to assess the impact c-Myc induction has on gene expression.</p>
+      <disp-quote content-type="editor-comment">
+        <p>2) Expression levels of c-Myc are much lower than those of the original study, although the changes of c-Myc expression are in the same direction as the original study (subsection “Total RNA levels following c-Myc overexpression”). Can the authors please discuss this issue?</p>
+      </disp-quote>
+      <p>Thank you for raising this question. We have expanded the section highlighted to discuss some potential factors that might account for this difference.</p>
+      <disp-quote content-type="editor-comment">
+        <p>3) In this study, 580 silent genes were identified with expression level less than 0.5 transcript/cell with a median expression of 0.032. In the original study, 514 genes were identified as silent genes with a median expression of 0.00. If I understand correctly, the current study uses different criteria for a gene to be classified as silent gene. I am curious whether there is a rationale for using 0.5 transcript/cell as the cutoff. In addition, it would be interesting to know how many silent genes are common between the two studies, and how many active genes are common between the two studies (subsection “Digital gene expression following c-Myc overexpression”, first paragraph). The extent of overlap of genes might play a role on some of the inconsistent results between two studies, as mentioned in the meta analysis section (subsection “Meta-analyses of original and replicated effects”, last two paragraphs).</p>
+      </disp-quote>
+      <p>Both studies used the same criteria to classify a gene as silent (less than 0.5 transcript/cell) and active (greater than 1 transcript/cell) at time 0 hr. The reason for the different number of genes, as well as the median expression at time 0 hr, is because the original study reported a majority of the silent genes as having an expression of 0.00 transcript/cell. We have revised the text to clearly state that the same criteria were used. We are not aware of what the rationale is for using these cutoffs, as it was not included in the original study. As stated above in response to comment 1, there are also negative consequences of dichotomizing continuous variables. To provide another means of displaying the data, we included additional supplement figures to illustrate the distribution of gene expression of all genes analyzed at the different times (<xref ref-type="fig" rid="fig2s2">Figure 2—figure supplement 2</xref>).</p>
+      <p>We agree that the extent of overlap of genes between the two studies (and the two lots tested in this replication attempt) are of interest. We analyzed what percent of genes were common between the different studies for active and silent genes and have included this in the revised manuscript. There was 88.8% commonality for active genes between serum lot one in this replication attempt and the original study (90.1% for serum lot two) with 96.4% commonality for silent genes between serum lot one in this replication attempt and the original study (95.7% for serum lot two).</p>
+      <disp-quote content-type="editor-comment">
+        <p>4) The authors should make a R package with a R markdown file and all the associated data.</p>
+      </disp-quote>
+      <p>We agree that sharing the Rmd file and associated scripts and data are important. We used the OSF to create a project that stores all files/scripts/methods associated with this study and have a function so the associated data and scripts are downloaded when knitting the Rmd file. This will work now while the project is private as well as when the project, with all the associated files, is made public. The location of the Rmd file is also included in the Materials and methods section of the manuscript (<ext-link ext-link-type="uri" xlink:href="https://osf.io/vdrsh/">https://osf.io/vdrsh/</ext-link>) and we’ve included it as a ‘Source code file’ during resubmission.</p>
+    </body>
+  </sub-article>
+</article>

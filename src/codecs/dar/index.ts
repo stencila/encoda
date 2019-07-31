@@ -141,7 +141,7 @@ async function encodeDocument(
   const documentFile = `${id}.jats.xml`
   const documentPath = path.join(darPath, documentFile)
 
-  await write(node, documentPath, { ...options, format: 'jats' })
+  await write(node, documentPath, { ...options, format: 'jats-pandoc' })
 
   const elem = h('document')
   elem.setAttribute('id', id)

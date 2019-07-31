@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+    <front>
+        <title-group>
+            <article-title>Gene essentiality, conservation index and co-evolution of genes in cyanobacteria</article-title>
+        </title-group>
+        <contrib-group>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Tiruveedula</surname>
+                    <given-names>Gopi Siva Sai</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Wangikar</surname>
+                    <given-names>Pramod P.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+                <xref ref-type="aff" rid="unique"/>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+        </contrib-group>
+    </front>
+    <body>
+        <sec>
+            <title>Introduction</title>
+            <p>Cyanobacteria, a group of prokaryotes, are well known for their ability to carry out oxygenic photosynthesis. They survive in different niche environmental conditions ranging from seawater to deserts and greatly contribute to the global primary production [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref001">1</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref002">2</ext-link>]. This ability to sequester atmospheric carbon dioxide and photosynthetically convert it to biomass makes cyanobacteria leading candidates in biofuel research. The nitrogen fixing variety of some cyanobacteria contribute significantly to the nitrogen cycle [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref003">3</ext-link>] and are attracting attention as biofertilizers and for nitrogenase-dependent hydrogen production [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref004">4</ext-link>]. Thus, the cyanobacterial phylum shows significant diversity both in terms of their metabolic capability and habitats [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref005">5</ext-link>–
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>]. Despite this diversity, the phylum has retained a significant core genome [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref008">8</ext-link>].
+            </p>
+            <p>Unlike the eukaryotic algae, cyanobacteria do not produce storage compounds that are commercially attractive. Therefore, there is significant interest in metabolic engineering of cyanobacteria to produce useful products such as ethanol, butanol, butanediol, etc [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref009">9</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref010">10</ext-link>]. Classical metabolic engineering involves knocking out or downregulating pathways that drain the carbon away from the product of interest [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref011">11</ext-link>]. Knowledge of essential genes allows mapping of critical points in metabolic networks and design of mutants with minimal wasteful experimental screening [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref012">12</ext-link>]. Essential genes also play a role in drug designing [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref013">13</ext-link>], in identifying potential targets for antibiotics in pathogenic microorganism [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref014">14</ext-link>] and in minimal genome construction [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref015">15</ext-link>]. Experimental as well as computational methods have been reported for identification of essential genes. Conventional experimental methods involve gene knockouts [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref016">16</ext-link>] and RNA interference [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref017">17</ext-link>] where viability of the organism is checked by deleting or silencing the gene. A recently developed method, random bar code transposon-site sequencing (RB-TnSeq), parallelizes this process dramatically thereby permitting genome-wide gene essentiality testing [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. In parallel, a number of computational methods have been proposed in the past decade or so that may be time efficient. These are based on network topology [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref019">19</ext-link>], gene expression data [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref020">20</ext-link>], metabolic modelling [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref021">21</ext-link>], flux balance analysis (FBA) [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref022">22</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref023">23</ext-link>] and 
+                <sup>13</sup>C metabolic flux analysis (
+                <sup>13</sup>C-MFA) [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref024">24</ext-link>]. FBA based methods systematically assesses the growth rate of all single gene deletion mutants. A gene is termed essential if it’s deletion adversely affects the growth rate. Likewise, synthetic lethal genes can be identified by testing viability of two or more knockouts at a time [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref022">22</ext-link>].
+            </p>
+            <p>A number of studies have analyzed the core genome of photosynthetic prokaryotes. In an early study, Raymond et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref025">25</ext-link>] performed comparative genomic analysis on different groups of photosynthetic prokaryotes for common gene orthologs to propose photosynthetic evolution. Subsequently, Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] enumerated 682 core genes based on conservation in 13 cyanobacterial genomes. Larsson et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref026">26</ext-link>] predicted gene orthologs with a larger genome dataset of 58 cyanobacterial genomes and identified 404 such orthologs. Beck et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref008">8</ext-link>] categorized the clusters of likely ortholog genes (CLOGs) identified from 16 cyanobacterial strains into core, shared and unique clusters. Besides these computational studies across the cyanobacterial phylum, Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] experimentally identified a total of 718 essential genes in 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942.
+            </p>
+            <p>Current methods of prediction of gene essentiality have certain limitations. For example, the metabolic modelling based methods are applicable only for the metabolic genes. The computational approaches used for predicting gene essentiality based on orthologs do not include all the cyanobacterial genera. In experimental methods, the experimental techniques become arduous, especially while considering multiple growth conditions. Further, it is difficult to simulate all experimental conditions that cyanobacteria may encounter in nature during evolution. This is true especially for real life stress conditions and selection pressures which decide gene essentiality. In this study, we present gene conservation index as a quick method to assess gene essentiality. Our dataset comprises of phylogenetic profiles for 23,643 non-redundant genes from cyanobacterial species of diverse genera. Apart from insights on gene essentiality, the data provides useful clues on co-evolution of genes that may be helpful in gene annotation.</p>
+        </sec>
+        <sec>
+            <title>Materials and methods</title>
+        </sec>
+        <sec>
+            <title>Phylogenetic profile construction</title>
+            <p>Phylogenetic profiles were constructed as described by Pellegrini et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref027">27</ext-link>], with minor modifications. Briefly, a total of 120 completely sequenced cyanobacterial genomes were used to create a local database (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s002">S1 Table</ext-link>). Of these, non-redundant protein sequences from 20 genetically diverse cyanobacterial genomes were used as query sequences (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>). Protein sequences from each organism were subjected to CD-HIT program to remove redundancy at 90% identity level [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref028">28</ext-link>]. A given query protein sequence was searched against each of the 120 cyanobacterial genomes using NCBI local BLASTP. A hit was accepted if all three of the following conditions were satisfied: (i) BLAST E-value of &lt; 10
+                <sup>−5</sup>, (ii) query coverage of &gt; 60% and (iii) score density of &gt; 0.6 over the aligned region (Memon et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref029">29</ext-link>]). These conditions were imposed to minimize spurious hits that result from partial domain matches. All proteins that satisfy these criteria are listed as hits and omitted from being considered as query sequences subsequently. A “1” in the profile indicates the presence of at least one hit in the genome while a “0” indicates the absence.
+            </p>
+        </sec>
+        <sec>
+            <title>Clustering of genes and organisms</title>
+            <p>Genes were clustered via hierarchical clustering of their profiles with Hamming distance as the metric, a cut-off of 0.15 and average linkage. Likewise, cyanobacteria were clustered by using their profiles and a similar clustering strategy and cut-off. The merged profiles are then represented as consensus of the members of the cluster. The detailed method is depicted in 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g001">Fig 1</ext-link> which is used to obtain a reduced genome database.
+            </p>10.1371/journal.pone.0178565.g001Fig 1
+        </sec>
+        <sec>
+            <title>Data reduction and construction of Clusters of Co-evolving Genes (CCG).</title>
+            <p>Diagrammatic representation for clustering of organisms and proteins. The method is used to reduce the genome dataset and to cluster proteins of the semi-conserved category to obtain CCG.</p>
+        </sec>
+        <sec>
+            <title>Modified Hamming distance</title>
+            <p>To test if any of the profile pairs are mutually exclusive, we modified the conventional Hamming distance by ignoring the elements of profiles where both the proteins are absent. The modified formula of Hamming distance is:
+
+where,
+</p>
+            <list list-type="bullet">
+                <list-item>
+                    <p>d = modified hamming distance,</p>
+                </list-item>
+                <list-item>
+                    <p>P
+                        <sub>1</sub> = Profile of gene 1, and
+                    </p>
+                </list-item>
+                <list-item>
+                    <p>P
+                        <sub>2</sub> = Profile of gene 2.
+                    </p>
+                </list-item>
+            </list>
+        </sec>
+        <sec>
+            <title>Results and discussion</title>
+        </sec>
+        <sec>
+            <title>Phylogenetic profile construction</title>
+            <p>Over twenty-three thousand phylogenetic profiles were constructed by using non-redundant protein coding genes from cyanobacteria as query. The protein sequences were searched against 120 cyanobacterial genomes of diverse genera using BLASTP. The database of phylogenetic profiles created not only contains the query IDs but also the hit IDs and therefore can be searched by UniProt IDs / PATRIC IDs of proteins in any of the 120 microorganisms (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s004">S3 Table</ext-link>). While creating the profiles, query cyanobacteria were added sequentially with the result that only a small fraction of proteins result in profiles for organisms added in later stages (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>). Since only 20 cyanobacteria species were used for profile creation, some of the protein coding genes from the other cyanobacteria may not be found in our database but that number is expected to be small. Also, the genes missing in our profiles are expected to be unique genes present only in a limited number of cyanobacteria.
+            </p>
+        </sec>
+        <sec>
+            <title>Data reduction</title>
+            <p>String length (number of genomes in the dataset) of the phylogenetic profiles was 120 based on the number of genomes used. However, some of the genera such as 
+                <italic>Prochlorococcus</italic> are overrepresented in the database. This may bias some of the data analysis and in turn the conclusions. Therefore, to remove redundancy, we clustered the cyanobacterial strains by using profiles of genes that are conserved in ≥ 10% but &lt; 95% of the cyanobacterial genomes resulting in 73 clusters (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g001">Fig 1</ext-link> and see 
+                <ext-link ext-link-type="uri" xlink:href="#sec002">methods</ext-link> for details). This was done to avoid the influence of either unique genes or highly conserved genes on the clustering process. Indeed, the 31 strains of 
+                <italic>Prochlorococcus</italic> and 
+                <italic>Synechococcus</italic> form a single cluster (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s005">S4 Table</ext-link>). Additionally, smaller clusters of 2–4 strains are formed. Further, the tree of organisms based on phylogenetic profiles agrees well with that based on alignment of concatenated protein sequences [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref005">5</ext-link>]. The tree can be broken down into 4 clades (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g002">Fig 2</ext-link>) for further clade-wise analysis as discussed in subsequent sections. Abridged profiles were then created that have string length of 73, corresponding to the 73 organism clusters, compared to the original string length of 120 (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s006">S5 Table</ext-link>). Conservation indices for the protein profiles were computed based on the abridged strings.
+            </p>10.1371/journal.pone.0178565.g002Fig 2
+        </sec>
+        <sec>
+            <title>Phylogenetic tree of the 73 cyanobacterial genome groups based on clustering of their phylogenetic profiles.</title>
+            <p>Profiles of 8280 semi-conserved genes were used while clustering the organisms. List of the cyanobacterial strains are given in 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>. * represents the organism cluster 12, whose constituents are given in 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>.
+            </p>
+        </sec>
+        <sec>
+            <title>Redundancy of profiles</title>
+            <p>It was of interest to check for potential redundancy in the query protein sequences used in construction of profiles. To that end, we performed an all-against-all BLASTP search of the query sequences used in profiles formation and find that 1904 of the ~ 10
+                <sup>5</sup> pairs show E-value of ≤ 10
+                <sup>−10</sup>. This accounts for ~ 8% redundancy in our profiles. These potentially redundant sequence pairs formed separate profiles in our dataset as they did not satisfy the criteria of query coverage and score density. BLASTP hits may also result from partial domain matches that cannot be considered as a hit. Another potential reason for this to happen is that such protein pairs may actually be evolutionarily related with common function but may have undergone substantial evolutionary divergence. To test this hypothesis, we checked if (i) the profiles are mutually exclusive with high Hamming distance and (ii) the divergence of the two proteins correlates with the evolution of the organisms. To test mutual exclusivity, we computed modified Hamming distance of such pairs of profiles by ignoring the genomes where both genes are absent. This analysis shows that indeed a large fraction of the potentially redundant pairs are mutually exclusive. This can be visualized on the principle component analysis (PCA) plot (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g003">Fig 3A</ext-link>) where the pairs in question lie on opposite sides of the plot (Details regarding the proteins used in the PCA plot and heatmap are given in 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s007">S6 Table</ext-link>). Further, a heatmap of the profiles shows that divergence of the two functionally similar proteins largely correlates with the evolution of the organisms (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g003">Fig 3B</ext-link>). To exemplify, profiles with query UniProt Ids B1XMD2 and B7K1R1 are mutually exclusive. Both the proteins are involved in the catalysis of the second and third steps (cysteine ligation, (EC:6.3.2.5), and decarboxylation, (EC:4.1.1.36)) in the biosynthesis of coenzyme A (CoA) from pantothenate [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref030">30</ext-link>] (Strauss et al, 2001). Each query protein is present in evolutionarily related subset of organisms suggesting that the divergence of the protein sequences correlates with the evolution of the organism. Likewise profiles with query UniProt IDs B5VZS0 and Q3M4X1 both represent the 
+                <italic>phzF</italic> (phenazine biosynthesis) family, which is part of the seven-gene operon, responsible for the synthesis of phenazine-1-carboxylic acid [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref031">31</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref032">32</ext-link>]. This suggests that the potentially redundant profiles represent genes that have diverged significantly in the subsets of organisms and are not merely paralogs.
+            </p>10.1371/journal.pone.0178565.g003Fig 3
+        </sec>
+        <sec>
+            <title>Potential redundancy in the phylogenetic profiles.</title>
+            <p>Ten representative pairs of redundant profiles that show BLASTP evalue ≤ 10
+                <sup>−10</sup> but fail to meet the criteria of score density and query coverage. The redundant gene pairs are color-coded and assigned symbols in the two plots. (A) A PCA plot that shows the 10 pairs on the first two principal components and (B) Heatmap showing mutually exclusive nature of profile pairs. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively.
+            </p>
+        </sec>
+        <sec>
+            <title>Conservation categories</title>
+            <p>We estimated the gene conservation index (GCI) for each of the phylogenetic profiles as the percentage of organism clusters in which the query gene is present in the reduced dataset (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g004">Fig 4</ext-link>). We broadly categorize all proteins of cyanobacteria as:
+            </p>
+            <list list-type="order">
+                <list-item>
+                    <p>Conserved; with a GCI score of ≥ 95%,</p>
+                </list-item>
+                <list-item>
+                    <p>Semi-conserved; with a GCI score of ≥ 10% but &lt; 95% and</p>
+                </list-item>
+                <list-item>
+                    <p>Unique; with a GCI score of &lt; 10%.</p>
+                </list-item>
+            </list>10.1371/journal.pone.0178565.g004Fig 4
+        </sec>
+        <sec>
+            <title>Histogram of gene conservation index (GCI) for the 23,633 phylogenetic profiles.</title>
+            <p>The GCI was calculated based on presence and absence of the query gene in the 73 organism clusters of cyanobacteria.</p>
+            <p>About 4% of all query genes (993 profiles) are conserved across the cyanobacterial phylum (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t001">Table 1</ext-link> and 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s008">S7 Table</ext-link>). This is apart from the rRNA and tRNA genes which are also conserved but not considered here as our dataset contains only protein coding genes. In this set, around 35% of the genes are metabolic genes. The set comprises of upto 50% of the total proteins in smaller genomes such as those of 
+                <italic>Prochlorococcus</italic> sp. A large fraction of proteins in this category are annotated. These proteins participate in key cellular functions such as carbohydrate metabolism, energy metabolism, lipid metabolism, nucleotide metabolism, amino acid metabolism, glycan biosynthesis, metabolism of cofactors and vitamins and genetic information processing like transcription, translation and replication. Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] have called this set the stable core.
+            </p>
+            <table-wrap id="pone.0178565.t001">
+                <label>Table 1.</label>
+                <caption>
+                    <title>List of representatives of the conserved genes in our analysis.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr>UniProt IDs of Query Proteins</tr>
+                            <tr>Protein Name</tr>
+                            <tr>Gene Name</tr>
+                            <tr>GO (Biological Process)</tr>
+                            <tr>Pathway</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XP79</tr>
+                            <tr>Aconitate hydratase B</tr>
+                            <tr>acnB  SYNPCC7002_A1683</tr>
+                            <tr>tricarboxylic acid cycle [GO:0006099]</tr>
+                            <tr>Carbohydrate metabolism; tricarboxylic acid cycle.</tr>
+                        </tr>
+                        <tr>
+                            <tr>D7DZP2</tr>
+                            <tr>Cytochrome c oxidase, subunit I</tr>
+                            <tr>Aazo_2640</tr>
+                            <tr>aerobic respiration [GO:0009060]; electron transport chain [GO:0022900]; oxidative phosphorylation [GO:0006119]</tr>
+                            <tr>Energy metabolism; oxidative phosphorylation.</tr>
+                        </tr>
+                        <tr>
+                            <tr>Q93UM1</tr>
+                            <tr>Enoyl-[acyl-carrier-protein] reductase [NADH]</tr>
+                            <tr>envM  SYNPCC7002_A1676</tr>
+                            <tr>fatty acid biosynthetic process [GO:0006633]</tr>
+                            <tr>Lipid metabolism; fatty acid biosynthesis.</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XN91</tr>
+                            <tr>GDP-L-fucose synthase</tr>
+                            <tr>fcl  SYNPCC7002_A2832</tr>
+                            <tr>'de novo' GDP-L-fucose biosynthetic process [GO:0042351]</tr>
+                            <tr>Nucleotide-sugar biosynthesis; GDP-L-fucose biosynthesis via de novo pathway.</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XLQ9</tr>
+                            <tr>2-isopropylmalate synthase</tr>
+                            <tr>leuA  SYNPCC7002_A1356</tr>
+                            <tr>leucine biosynthetic process [GO:0009098]</tr>
+                            <tr>Amino-acid biosynthesis; L-leucine biosynthesis.</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XQ71</tr>
+                            <tr>1,4-alpha-glucan branching enzyme</tr>
+                            <tr>glgB  SYNPCC7002_A1865</tr>
+                            <tr>glycogen biosynthetic process [GO:0005978]</tr>
+                            <tr>Glycan biosynthesis; glycogen biosynthesis.</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XNE1</tr>
+                            <tr>Biotin synthase</tr>
+                            <tr>bioB  SYNPCC7002_A0309</tr>
+                            <tr>biotin biosynthetic process [GO:0009102]</tr>
+                            <tr>Cofactor biosynthesis; biotin biosynthesis.</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XJ16</tr>
+                            <tr>30S ribosomal protein S1</tr>
+                            <tr>rpsA  SYNPCC7002_A0955</tr>
+                            <tr>translation [GO:0006412]</tr>
+                            <tr>-</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XPW9</tr>
+                            <tr>Arsenical resistance operon repressor, ArsR family</tr>
+                            <tr>SYNPCC7002_A0590</tr>
+                            <tr>transcription, DNA-templated [GO:0006351]</tr>
+                            <tr>-</tr>
+                        </tr>
+                        <tr>
+                            <tr>B1XNN3</tr>
+                            <tr>DNA polymerase III, delta subunit</tr>
+                            <tr>holA SYNPCC7002_A1567</tr>
+                            <tr>DNA replication [GO:0006260]</tr>
+                            <tr>-</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+            <p>About 35% of all the query genes (8,280 profiles) are semi-conserved. These include genes involved in niche functions such as nitrogen fixation, defense response to viruses, response to stress conditions, etc. Although only semi-conserved at the level of cyanobacterial phylum, some of these genes are conserved in their respective clades and this needs to be examined further.</p>
+            <p>About 61% of the query genes (14,370 profiles) are unique and present only in &lt; 10% of the organism clusters. A large fraction of these proteins are not annotated. It is likely that these proteins are conserved only at species level performing a highly niche function.</p>
+            <p>We have specifically analyzed for the circadian clock genes which are involved in the regulation of global gene expression patterns, interactions with the genes of key metabolic pathways, the timing of cell division and in chromosome compaction [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref033">33</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref034">34</ext-link>]. We checked for the conservation index of these genes and we find that the oscillator genes 
+                <italic>kaiB</italic> and 
+                <italic>kaiC</italic> fall under the conserved category while 
+                <italic>kaiA</italic> belongs to the semi-conserved category. Among the genes that provide inputs to the circadian clock, the gene 
+                <italic>cikA</italic> is semi-conserved while the gene 
+                <italic>ldpA</italic> is conserved. Among the genes that transmit output of the clock to downstream genes, the gene 
+                <italic>sasA</italic> is conserved.
+            </p>
+            <p>Initially Martin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] reported such a set in cyanobacteria which they called structural genes. Later Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] reported such a gene set in cyanobacteria which they called the stable core. Only few cyanobacterial genomes were available at that time. Our analysis benefits by the availability of a much larger number of genomes. We further improve upon the results by clustering of the organisms which removes the bias introduced by the overrepresentation of genomes from certain genera. Further, the 95% cut-off used by us helps remove errors introduced due to incomplete genome sequencing. A large number of conserved genes are common between our analysis and that presented by Martin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] and Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g005">Fig 5A</ext-link>). However, there is some disagreement between the data sets. For example, genes 
+                <italic>psbJ</italic> and 
+                <italic>psbL</italic> (with UniProt IDs Q8RSW0 and Q8RSW1) are involved in assembly of oxygen evolving complex and unidirectional flow of electrons [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref036">36</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref037">37</ext-link>] are semi-conserved in our dataset but conserved in the dataset of Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>]. Gene 
+                <italic>psbF</italic> (with UniProt ID Q8RSW2) is involved in the assembly of photosystem II and secondary electron transport mechanism [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref038">38</ext-link>] is semi-conserved in our dataset is one of the structural gene of Martin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. These discrepancies may be due to differences in the genome datasets used in the three studies. Our analysis includes symbiotic strains which may lack some of the core metabolic genes.
+            </p>10.1371/journal.pone.0178565.g005Fig 5
+        </sec>
+        <sec>
+            <title>Overlap of conserved genes (this work) with core set proteins of Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>], structural genes of Martin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] and essential genes of Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] shown for 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942 for which experimental data is available.
+            </title>
+            <p>(A) Overlap of conserved genes (this work), core set proteins [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] and structural genes [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. (B) Conserved genes (this work) and essential genes [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. (C) Conserved genes without clustering of microorganisms and removing the microorganism redundancy and the overlap with essential genes [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+            </p>
+        </sec>
+        <sec>
+            <title>Relationship between conservation level and annotation</title>
+            <p>We found that around 89% of the conserved genes are functionally annotated (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t002">Table 2</ext-link>). We hypothesize that conserved genes code for core functions and may be essential. This may have attracted the attention of the scientific community toward these genes. On the other extreme, only 24% of the unique genes are functionally annotated. These proteins are typically unique to specific genera which may not have been well studied. At the intermediate level, around 47% of the semi-conserved genes are functionally annotated.
+            </p>
+            <table-wrap id="pone.0178565.t002">
+                <label>Table 2.</label>
+                <caption>
+                    <title>The number of annotated and unannotated genes in the three conservation categories.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr/>
+                            <tr>Conservation Categories</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>Conserved (≥ 95%)</tr>
+                            <tr>Semi-conserved (10–94%)</tr>
+                            <tr>Unique (less than 10%)</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>Annotated</tr>
+                            <tr>Unannotated</tr>
+                            <tr>Annotated</tr>
+                            <tr>Unannotated</tr>
+                            <tr>Annotated</tr>
+                            <tr>Unannotated</tr>
+                        </tr>
+                        <tr>
+                            <tr>Number of genes</tr>
+                            <tr>891</tr>
+                            <tr>102</tr>
+                            <tr>4,413</tr>
+                            <tr>3,867</tr>
+                            <tr>3,505</tr>
+                            <tr>10,865</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+        </sec>
+        <sec>
+            <title>Gene essentiality and conservation index</title>
+            <p>We wanted to test if the gene conservation index is indicative of gene essentiality. We find that there is a significant overlap between the sets of conserved genes (this work) and essential genes as determined experimentally in 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942 by Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s009">S8 Table</ext-link> and 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g005">Fig 5B</ext-link>). Majority of the essential genes belong to the conserved set of genes while majority of the non-essential genes belong to the semi-conserved or unique category (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t003">Table 3</ext-link> and 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s001">S1 Fig</ext-link>). The average GCI values of the essential and non-essential genes are 88% and 68% respectively. The minor discrepancy between the conservation category and essentiality may result from (i) clade specific conserved genes that may not be detected as phylum-wide conserved genes and (ii) the choice of experimental conditions may not cover the types of evolutionary pressures that organisms experience in nature. The genes 
+                <italic>psbF</italic> and 
+                <italic>menF</italic> are examples of the first case. The gene 
+                <italic>psbF</italic> (cytochrome b559 subunit beta) with UniProt ID Q8RSW2 is involved in the assembly of photosystem II and secondary electron transport mechanism [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref038">38</ext-link>]. The gene is semi-conserved in the entire phylum but is conserved in clade C. The gene 
+                <italic>menF</italic> (isochorismate synthase) with UniProt ID B1XJE2 is involved in the conversion of chorismate to isochorismate [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref039">39</ext-link>]. The gene is conserved in clades A and D but semi-conserved in the entire phylum. The genes 
+                <italic>fbp</italic> and 
+                <italic>gnd</italic> are examples of the latter category. The gene 
+                <italic>fbp</italic> (fructose-1,6-bisphosphatase class 1) with UniProt ID B1XNG1 is involved in reductive phase of Pentose Phosphate Pathway (PPP), and catalyses the removal of a phosphate group from fructose 1,6- bisphosphate to form fructose-6-phosphate [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref040">40</ext-link>]. The gene 
+                <italic>gnd</italic> (6-phosphogluconate dehydrogenase, decarboxylating) with UniProt ID B1XM87 is a key enzyme in PPP involved in the conversion of 6-phospho-D-gluconolactone to D-ribulose 5-phosphate [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref041">41</ext-link>]. The genes are conserved in our data but are non-essential in 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942 [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. This may be due to the fact that the PPP pathway may be used under certain stress conditions that are not accounted for in the experimental studies on gene essentiality.
+            </p>
+            <table-wrap id="pone.0178565.t003">
+                <label>Table 3.</label>
+                <caption>
+                    <title>Essentiality of genes in each conservation category.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr/>
+                            <tr>Conserved</tr>
+                            <tr>Semi-Conserved</tr>
+                            <tr>Unique</tr>
+                        </tr>
+                        <tr>
+                            <tr>Essential</tr>
+                            <tr>494</tr>
+                            <tr>242</tr>
+                            <tr>14</tr>
+                        </tr>
+                        <tr>
+                            <tr>Non-Essential</tr>
+                            <tr>374</tr>
+                            <tr>1089</tr>
+                            <tr>88</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+            <p>In order to validate the reduction of the genome dataset, we compared the gene essentiality of non-reduced genome dataset (consisting of 120 genomes) with that of the reduced dataset (consisting of 73 genomes) (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g005">Fig 5C</ext-link>). We find that a total of 720 genes were under conserved category among which 436 genes were essential in the non-reduced genome. This number is smaller compared to the number of conserved genes (993) and essential genes (494) in the reduced dataset.
+            </p>
+        </sec>
+        <sec>
+            <title>Genes of central metabolic pathways</title>
+            <p>We analyzed the gene conservation indices and experimentally determined essentiality [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] for enzymes of select central carbon pathways (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t004">Table 4</ext-link> and 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s010">S9 Table</ext-link>). We find agreement between the two datasets. For example, on analysis of ten enzymes of the glycolytic pathway, we find that seven were conserved, six of which are essential in 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942 [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. Similarly, for Calvin cycle, we find that eight of the ten conserved enzymes are essential. However, we observe a disagreement with the data of Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] in the cases of gene 
+                <italic>fbp</italic> (fructose-1,6-bisphosphatase class 1) and 
+                <italic>gap</italic> (glyceraldehyde-3-phosphate dehydrogenase). The disagreement between GCI and essentiality for certain enzymes may be due to the conditions opted for carrying out the experiments for essentiality in 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942 by Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+            </p>
+            <table-wrap id="pone.0178565.t004">
+                <label>Table 4.</label>
+                <caption>
+                    <title>Comparison of enzymes in central metabolic pathways with the essential and conserved genes of other datasets.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr>Pathway</tr>
+                            <tr>Gene Name</tr>
+                            <tr>Protein Name</tr>
+                            <tr>GCI
+                                <ext-link ext-link-type="uri" xlink:href="#t004fn001">
+                                    <sup>a</sup>
+                                </ext-link>
+                            </tr>
+                            <tr>Essentiality
+                                <ext-link ext-link-type="uri" xlink:href="#t004fn002">
+                                    <sup>b</sup>
+                                </ext-link>
+                            </tr>
+                            <tr>Core Set
+                                <ext-link ext-link-type="uri" xlink:href="#t004fn003">
+                                    <sup>c</sup>
+                                </ext-link>
+                            </tr>
+                            <tr>Structural Gene
+                                <ext-link ext-link-type="uri" xlink:href="#t004fn004">
+                                    <sup>d</sup>
+                                </ext-link>
+                            </tr>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <bold>Glycolysis</bold>
+                            </tr>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>glk</italic>
+                            </tr>
+                            <tr>Glucokinase</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>pgi</italic>
+                            </tr>
+                            <tr>Glucose-6-phosphate isomerase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>pfkA</italic>
+                            </tr>
+                            <tr>6-phosphofructokinase</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>fbaB</italic>
+                            </tr>
+                            <tr>fructose-bisphosphate aldolase class I</tr>
+                            <tr>II</tr>
+                            <tr>-</tr>
+                            <tr>-</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>tpiA</italic>
+                            </tr>
+                            <tr>triosephosphate isomerase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>gap</italic>
+                            </tr>
+                            <tr>glyceraldehyde-3-phosphate dehydrogenase</tr>
+                            <tr>I</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>pgk</italic>
+                            </tr>
+                            <tr>phosphoglycerate kinase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>gpm</italic>
+                            </tr>
+                            <tr>phosphoglycerate mutase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>eno</italic>
+                            </tr>
+                            <tr>enolase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>pyk</italic>
+                            </tr>
+                            <tr>pyruvate kinase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <bold>TCA Cycle</bold>
+                            </tr>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>Cs</italic>
+                            </tr>
+                            <tr>Citrate synthase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>acnB</italic>
+                            </tr>
+                            <tr>aconitate hydratase</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>icd</italic>
+                            </tr>
+                            <tr>isocitrate dehydrogenase</tr>
+                            <tr>II</tr>
+                            <tr>E</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>sucD</italic>
+                            </tr>
+                            <tr>succinyl-CoA synthetase, alpha chain</tr>
+                            <tr>II</tr>
+                            <tr>-</tr>
+                            <tr>-</tr>
+                            <tr>-</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>hdrB</italic>
+                            </tr>
+                            <tr>Heterodisulfide reductase, subunit B</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>frdA</italic>
+                            </tr>
+                            <tr>Succinate dehydrogenase flavoprotein subunit</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>sdhB</italic>
+                            </tr>
+                            <tr>Succinate dehydrogenase iron-sulfur protein subunit</tr>
+                            <tr>II</tr>
+                            <tr>-</tr>
+                            <tr>-</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>mdh</italic>
+                            </tr>
+                            <tr>malate dehydrogenase</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <bold>PS I</bold>
+                            </tr>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                            <tr/>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaB</italic>
+                            </tr>
+                            <tr>photosystem I P700 chlorophyll a apoprotein A2</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaC</italic>
+                            </tr>
+                            <tr>Photosystem I iron-sulfur center</tr>
+                            <tr>II</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>Y</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaD</italic>
+                            </tr>
+                            <tr>Photosystem I subunit II</tr>
+                            <tr>I</tr>
+                            <tr>E</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaE</italic>
+                            </tr>
+                            <tr>Photosystem I reaction center subunit IV</tr>
+                            <tr>I</tr>
+                            <tr>NE</tr>
+                            <tr>Y</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaF</italic>
+                            </tr>
+                            <tr>Photosystem I reaction center subunit III</tr>
+                            <tr>I</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaI</italic>
+                            </tr>
+                            <tr>photosystem I subunit VIII</tr>
+                            <tr>II</tr>
+                            <tr>Ambiguous</tr>
+                            <tr>N</tr>
+                            <tr>-</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaJ</italic>
+                            </tr>
+                            <tr>Photosystem I reaction center subunit IX</tr>
+                            <tr>II</tr>
+                            <tr>E</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaK</italic>
+                            </tr>
+                            <tr>photosystem I reaction center subunit X</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaL</italic>
+                            </tr>
+                            <tr>Photosystem I reaction center subunit XI</tr>
+                            <tr>I</tr>
+                            <tr>Beneficial</tr>
+                            <tr>N</tr>
+                            <tr>Y</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaM</italic>
+                            </tr>
+                            <tr>Photosystem I reaction center subunit XII</tr>
+                            <tr>II</tr>
+                            <tr>NE</tr>
+                            <tr>N</tr>
+                            <tr>N</tr>
+                        </tr>
+                        <tr>
+                            <tr/>
+                            <tr>
+                                <italic>psaX</italic>
+                            </tr>
+                            <tr>photosystem I 4.8kDa protein</tr>
+                            <tr>II</tr>
+                            <tr>-</tr>
+                            <tr>-</tr>
+                            <tr>-</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+        </sec>
+        <sec>
+            <title>Clusters of Co-evolving Genes (CCG)</title>
+            <p>It has been well established that genes of related function experience common evolutionary pressure and hence tend to co-evolve [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref027">27</ext-link>]. To that end, we clustered the semi-conserved genes using Hamming distance as metric and a cutoff of 0.15. A few selected clusters (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t005">Table 5</ext-link> and 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s011">S10 Table</ext-link>) are shown in 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g006">Fig 6B</ext-link> in the form of heatmap and all the clusters are reported in the 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s012">S11 Table</ext-link>. The extent of co-evolution can also be visualized in the form of a principal component analysis (PCA) plot (
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g006">Fig 6A</ext-link>). To exemplify, cluster 11 has 11 proteins, of which eight are gas vesicle proteins, two are uncharacterized (with UniProt IDs D4TEP3 and Q3MH39) and one is 
+                <italic>ArsA</italic> (arsenite-activated ATPase with UniProt ID B5W7R2). The gas vesicle proteins are small, hollow, gas filled protein structures found in several cyanobacteria which allow their positioning at favorable depth for growth [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref042">42</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref043">43</ext-link>]. The gene 
+                <italic>ArsA</italic> is involved in active extrusion of heavy metals and is associated with gas vesicle biogenesis proteins [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref044">44</ext-link>–
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref046">46</ext-link>]. Cluster 9 has 4 proteins, of which three are Clustered Regularly Interspaced Short Palindromic Repeats associated (CRISPR) proteins, and one is uncharacterized (with UniProt ID D8FUL0). CRISPR associated proteins provide acquired resistance against mobile genetic elements (virus, transposable elements and conjugative plasmids) [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref047">47</ext-link>, 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref048">48</ext-link>]. The uncharacterized proteins present in the above clusters may have similar functions related to the proteins present in the respective clusters and further analysis on these proteins will give additional information about their functions.
+            </p>10.1371/journal.pone.0178565.g006Fig 6
+        </sec>
+        <sec>
+            <title>Clusters of Co-evolving Genes (CCG).</title>
+            <p>Twelve representative CCGs are shown in (A) PCA plot where principle component analysis (PCA) of all the semi-conserved profiles (genes) was performed to plot only the representative genes and (B) Heatmap. Genes of a cluster are color-coded in the two plots. Phylogenetic profiles of genes are clustered using hierarchical clustering with Hamming distance as the metric, average linkage and a cutoff of 0.15. The representative phylogenetic profiles (genes) are then clustered again to depict their relatedness. Organism clusters in the heatmap are based on their genome profiles depicting their evolutionary relationships. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively. Details of the clusters are as follows: Cluster 1: transposase enzymes, Cluster 2: acetamidase/formamidase enzymes, Cluster 3: nitrogen fixation genes, Cluster 4: SH3 domain protein, Cluster 5: sodium symporter proteins, Cluster 6: phosphate ABC transporter proteins, Cluster 7: ATP synthase subunit enzymes, Cluster 8: hydrogenase enzymes, Cluster 9: CRISPR associated proteins, Cluster 10: TPR repeat-containing proteins, Cluster 11: gas vesicle proteins, Cluster 12: ABC transporter proteins.</p>
+            <table-wrap id="pone.0178565.t005">
+                <label>Table 5.</label>
+                <caption>
+                    <title>Genes in the cluster one of CCG.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr>UniProt IDs</tr>
+                            <tr>Protein Name</tr>
+                            <tr>Gene Name</tr>
+                            <tr>GCI</tr>
+                        </tr>
+                        <tr>
+                            <tr>D8FUL0</tr>
+                            <tr>Putative uncharacterized protein</tr>
+                            <tr>OSCI_520004</tr>
+                            <tr>17.8</tr>
+                        </tr>
+                        <tr>
+                            <tr>K9PKC1</tr>
+                            <tr>CRISPR-associated helicase, Cas3 family</tr>
+                            <tr>Cal7507_2972</tr>
+                            <tr>15.1</tr>
+                        </tr>
+                        <tr>
+                            <tr>K9PKV0</tr>
+                            <tr>CRISPR-associated protein Csc3</tr>
+                            <tr>Cal7507_2975</tr>
+                            <tr>15.1</tr>
+                        </tr>
+                        <tr>
+                            <tr>K9PLJ5</tr>
+                            <tr>CRISPR-associated protein Csc1</tr>
+                            <tr>Cal7507_2973</tr>
+                            <tr>15.1</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+        </sec>
+        <sec>
+            <title>Conclusion</title>
+            <p>We present systematic analysis of phylogenetic profiles of cyanobacterial genes. Clustering of the organisms helps prepare a reduced dataset of genomes, which is an important step in the entire analysis. Further, we propose gene conservation index (GCI) as a ready measure to predict gene essentiality in the cyanobacterial phylum. A large majority of the conserved genes (this study) have been found to be essential (Rubin et al, 2015). The CCG, obtained upon clustering of the semi-conserved genes, provide useful clues on the function of unannotated genes. We also present useful ways of visualization of the data in the form of heatmap and principal component analysis (PCA). We believe that the data presented here would serve as a useful resource to the scientific community.</p>
+        </sec>
+        <sec>
+            <title>Supporting information</title>S1 Fig
+        </sec>
+        <sec>
+            <title>Histogram of gene conservation index (GCI) for the essential and non-essential genes of 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942.
+            </title>
+            <p>Essentiality is obtained from the experimental studies of Rubin et al, 2015 [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+            </p>
+            <p>(TIF)</p>S1 Table
+        </sec>
+        <sec>
+            <title>List of the 120 cyanobacterial genomes used in the analysis.</title>
+            <p>(XLSX)</p>S2 Table
+        </sec>
+        <sec>
+            <title>List of query organisms used while constructing the profiles.</title>
+            <p>Columns C and D describe the number of proteins used to construct the profiles and number of proteins present in the genome, respectively. The organisms are listed in sequential order in which they were used to form the profiles.</p>
+            <p>(XLSX)</p>S3 Table
+        </sec>
+        <sec>
+            <title>Phylogenetic profiles of 23,643 query proteins drawn from twenty genetically diverse cyanobacterial genomes.</title>
+            <p>Columns A-D describe the various identifiers and attributes of the query proteins. Column E depicts the presence or absence of the query protein in the genome of while column F provides the best hit. Likewise, presence of the query proteins in 120 cyanobacterial genomes and the respective best hits are presented in columns G to IJ.</p>
+            <p>(XLSX)</p>S4 Table
+        </sec>
+        <sec>
+            <title>Clusters of 120 cyanobacterial strains.</title>
+            <p>Column A denotes the name of the cyanobacteria and the thick borders represents a cluster. Column B describe the cluster number. The cyanobacterial strains are arranged in the order shown in 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g002">Fig 2</ext-link> from top to bottom.
+            </p>
+            <p>(XLSX)</p>S5 Table
+        </sec>
+        <sec>
+            <title>Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse cyanobacterial genomes across 73 clusters of cyanobacteria.</title>
+            <p>Columns A-D describe the various identifiers and attributes of the query proteins. Columns E to BY depicts the presence or absence of the query protein in the respective cluster of organisms. Column BZ denotes the gene conservation index (GCI) for the profile. Columns CA to CD depict if the gene is conserved in clades A to D.</p>
+            <p>(XLSX)</p>S6 Table
+        </sec>
+        <sec>
+            <title>List of genes used for PCA plot and heatmap generation to check for mutually exclusive and diverse genes.</title>
+            <p>Column A to C describes about various identifiers and attributes of the genes used. Column D describes the Gene Conservation Index (GCI). All the genes are color coded according to the 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g003">Fig 3</ext-link>. 
+            </p>
+            <p>(XLSX)</p>S7 Table
+        </sec>
+        <sec>
+            <title>List of conserved genes in our analysis and their gene ontology classification.</title>
+            <p>(XLSX)</p>S8 Table
+        </sec>
+        <sec>
+            <title>Conservation level of the genes from 
+                <italic>Synechococcus elongatus</italic> PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] and database of core proteins by Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>].
+            </title>
+            <p>Column A describe the Protein UniProt IDs of query genes used in the study, Column B to D describe the genes of 
+                <italic>S</italic>. 
+                <italic>elongatus</italic> PCC 7942.
+            </p>
+            <p>(XLSX)</p>S9 Table
+        </sec>
+        <sec>
+            <title>Conservation level of enzymes in key metabolic pathways based on reduced dataset and compared with experimental results on gene essentiality by Rubin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>], database of core proteins by Shi and Falkowski [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] and structural genes by Martin et al. [
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>].
+            </title>
+            <p>(XLSX)</p>S10 Table
+        </sec>
+        <sec>
+            <title>List of genes used for PCA plot and heatmap generation to check the group of co-evolving genes.</title>
+            <p>Column A to C describes various identifiers and attributes of the genes used. Column D describes the Gene Conservation Index (GCI). All the genes are color coded according to the 
+                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g006">Fig 6</ext-link>.
+            </p>
+            <p>(XLSX)</p>S11 Table
+        </sec>
+        <sec>
+            <title>List of co-evolving genes.</title>
+            <p>Column A describes the cluster number. Column B to D describes various identifiers and attributes of the genes used. Column E denotes the GCI.</p>
+            <p>(XLSX)</p>
+        </sec>
+    </body>
+    <back>
+        <ref-list>
+            <title>References</title>
+            <ref>
+                <element-citation>
+                    <article-title>Estimates of global cyanobacterial biomass and its distribution</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation/>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Unicellular cyanobacteria fix N2 in the subtropical North Pacific Ocean</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Rhythm of carbon and nitrogen fixation in unicellular cyanobacteria under turbulent and highly aerobic conditions</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Improving the coverage of the cyanobacterial phylum using diversity-driven genome sequencing</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Generic assignments, strain histories and properties of pure cultures of cyanobacteria</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Genome evolution in cyanobacteria: the stable core and the variable shell</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The diversity of cyanobacterial metabolism: genome analysis of multiple phototrophic microorganisms</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Cyanobacteria as a platform for biofuel production</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Metabolic fluxes and metabolic engineering</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Experimental and computational assessment of conditionally essential genes in Escherichia coli</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>A postgenomic method for predicting essential genes at subsaturation levels of mutagenesis: application to Mycobacterium tuberculosis</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Genome-scale reconstruction of the metabolic network in Staphylococcus aureus N315: an initial draft to the two-dimensional annotation</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The minimal cell genome:" on being the right size"</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Functional profiling of the Saccharomyces cerevisiae genome</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Genome-wide screening for gene function using RNAi in mammalian cells</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The essential gene set of a photosynthetic organism</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Lethality and centrality in protein networks</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Gene co-expression network topology provides a framework for molecular characterization of cellular state</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Computational prediction of essential metabolic genes using constraint-based approaches</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Genome‐scale gene/reaction essentiality and synthetic lethality analysis</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Metabolic model of Synechococcus sp. PCC 7002: Prediction of flux distribution and network modification for enhanced biofuel production</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Metabolic flux analysis of Cyanothece sp. ATCC 51142 under mixotrophic conditions</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Whole-genome analysis of photosynthetic prokaryotes</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Genome fluctuations in cyanobacteria reflect evolutionary, developmental and adaptive traits</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Assigning protein functions by comparative genome analysis: protein phylogenetic profiles</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>CD-HIT: accelerated for clustering the next-generation sequencing data</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>A global analysis of adaptive evolution of operons in cyanobacteria</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Phosphopantothenoylcysteine synthetase from Escherichia coli Identification and characterization of the last unidentified coenzyme A biosynthetic enzyme in bacteria</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Structure and function of the phenazine biosynthesis protein PhzF from Pseudomonas fluorescens 2–79</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Structure and function of the phenazine biosynthetic protein PhzF from Pseudomonas fluorescens</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Circadian rhythms in cyanobacteria</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Rhythmic and sustained oscillations in metabolism and gene expression of Cyanothece sp. ATCC 51142 under constant light</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Cyanobacterial signature genes</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Photosystem II proteins PsbL and PsbJ regulate electron flow to the plastoquinone pool</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Protein assembly of photosystem II and accumulation of subcomplexes in the absence of low molecular mass subunits PsbL and PsbJ</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Mössbauer studies of the non‐heme iron and cytochrome b 559 in a Chlamydomonas reinhardtii PSI− mutant and their interactions with α‐tocopherol quinone</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Overexpression, purification and characterization of isochorismate synthase (EntC), the first enzyme involved in the biosynthesis of enterobactin from chorismate</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Amino acid sequence homology among fructose-1, 6-bisphosphatases</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Genetic tagging, cloning, and DNA sequence of the Synechococcus sp. strain PCC 7942 gene (gnd) encoding 6-phosphogluconate dehydrogenase</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Gas vesicle proteins</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Structure and organization of the gas vesicle gene cluster on the Halobacterium halobium plasmid pNRC100</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The plasmid-encoded arsenical resistance pump: an anion-translocating ATPase</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Structure of the ArsA ATPase: the catalytic subunit of a heavy metal resistance pump</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Functional promiscuity of homologues of the bacterial ArsA ATPases</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>A putative RNA-interference-based immune system in prokaryotes: computational analysis of the predicted enzymatic machinery, functional analogies with eukaryotic RNAi, and hypothetical mechanisms of action</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Helicase dissociation and annealing of RNA-DNA hybrids by Escherichia coli Cas3 protein</article-title>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
+</article>

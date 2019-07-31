@@ -9,7 +9,7 @@ import BinWrapper from 'bin-wrapper'
 import fs from 'fs-extra'
 import path from 'path'
 import home from '../../util/app/home'
-import isPackaged from '../../util/app/isPackaged';
+import isPackaged from '../../util/app/isPackaged'
 
 const version = '2.7.3'
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`
@@ -27,7 +27,9 @@ export const binary = new BinWrapper()
  * Equivalent to the Pandoc `--data-dir` flag.
  * Instructs Pandoc where to find templates and other assets.
  */
-export const dataDir = isPackaged ? path.join(home, 'codecs', 'pandoc') : __dirname
+export const dataDir = isPackaged
+  ? path.join(home, 'codecs', 'pandoc')
+  : __dirname
 
 export async function install(): Promise<void> {
   const log = getLogger('encoda:pandoc')
