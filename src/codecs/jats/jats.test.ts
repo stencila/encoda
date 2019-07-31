@@ -66,6 +66,16 @@ test('decode', async () => {
   expect(await yaml('f1000research-8-1008-v1.xml')).toMatchFile(
     snapshot('f1000research-8-1008-v1.yaml')
   )
+
+  expect(await yaml('plos-one-0091296.xml')).toMatchFile(
+    snapshot('plos-one-0091296.yaml')
+  )
+  expect(await yaml('plos-one-0093988.xml')).toMatchFile(
+    snapshot('plos-one-0093988.yaml')
+  )
+  expect(await yaml('plos-one-0178565.xml')).toMatchFile(
+    snapshot('plos-one-0178565.yaml')
+  )
 })
 
 test('decode+encode', async () => {
@@ -93,5 +103,15 @@ test('decode+encode', async () => {
   )
   expect(await jats('f1000research-8-1008-v1.xml')).toMatchFile(
     snapshot('f1000research-8-1008-v1.jats.xml')
+  )
+
+  expect(await jats('plos-one-0091296.xml')).toMatchFile(
+    snapshot('plos-one-0091296.jats.xml')
+  )
+  expect(await jats('plos-one-0093988.xml')).toMatchFile(
+    snapshot('plos-one-0093988.jats.xml')
+  )
+  expect(await jats('plos-one-0178565.xml')).toMatchFile(
+    snapshot('plos-one-0178565.jats.xml')
   )
 })
