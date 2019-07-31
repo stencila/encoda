@@ -13,7 +13,7 @@ const previousLogData = new Set<string>()
  *
  * @param debug In debug mode?
  */
-export const configure = (debug:boolean = false): void => {
+export const configure = (debug: boolean = false): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
     if (data.level <= (debug ? 3 : 2)) {
       const json = JSON.stringify(data)
