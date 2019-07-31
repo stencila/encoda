@@ -1,203 +1,514 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
 <article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
-  <front>
-    <title-group>
-      <article-title>undefined</article-title>
-    </title-group>
-    <contrib-group>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-    </contrib-group>
-  </front>
-  <body/>
-  <back/>
+    <front>
+        <title-group>
+            <article-title>Publishing peer review materials</article-title>
+        </title-group>
+        <contrib-group>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Beck</surname>
+                    <given-names>Jeffrey</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Funk</surname>
+                    <given-names>Kathryn</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Harrison</surname>
+                    <given-names>Melissa</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>McEntyre</surname>
+                    <given-names>Jo</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Breen</surname>
+                    <given-names>Josie</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Collings</surname>
+                    <given-names>Andy</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Donohoe</surname>
+                    <given-names>Paul</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Evans</surname>
+                    <given-names>Michael</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Flintoft</surname>
+                    <given-names>Louisa</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Hamelers</surname>
+                    <given-names>Audrey</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Hurst</surname>
+                    <given-names>Phil</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Lemberger</surname>
+                    <given-names>Thomas</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Lin</surname>
+                    <given-names>Jennifer</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>O'Connor</surname>
+                    <given-names>Niamh</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Parkin</surname>
+                    <given-names>Michael</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Parker</surname>
+                    <given-names>Sam</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Rodgers</surname>
+                    <given-names>Peter</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Skipper</surname>
+                    <given-names>Magdalena</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Stoner</surname>
+                    <given-names>Michael</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+        </contrib-group>
+    </front>
+    <body>
+        <sec>
+            <title>Introduction</title>
+            <p>Peer review is the practice of subjecting a scholarly article, such as a research paper submitted to a journal, to scrutiny or review by others ('peers') who are experts in the same field. Generally, if the author of the article addresses the concerns raised during peer review to the satisfaction of an editor, the article is accepted for publication. The peer review process produces a trail of documents, which can include: different versions of the article; the reviewer reports (with or without the name of the reviewer); responses by the author to the reports; and various letters (including cover letters from the author and decision letters from the editor). It is also possible for an article to go through two or more rounds of peer review, which increases the number of documents generated.</p>
+            <p>Traditionally the documents generated during the peer review process were only ever seen by the author, the editor and the reviewers, but a small number of publishers now publish some peer review materials alongside articles. Moreover, support for this practice has been slowly gaining momentum, driven by a wish to increase transparency and provide credit for peer reviewers (
+                
+                <ext-link ext-link-type="uri" xlink:href="#ref-2">Polka 
+                    
+                    <italic>et al</italic>., 2018
+                </ext-link>). There were 10 journals identified in the PMC corpus that archive some peer review materials. These journals take a variety of different approaches, which results in differing levels of discoverability for these materials. Additionally, some journals were identified as publishing peer review materials but not consistently archiving them in a repository.
+            </p>
+            <p>Here we report the findings of a workshop, held at the BMA in London, UK on July 6, 2018, at which representatives from publishers, PubMed Central (PMC)/Europe PMC, and Crossref discussed the practical challenges involved in publishing peer review materials. We focus on what has to happen after a publisher decides to start publishing peer review materials, and discuss how to do this in a way that is sustainable, improves discoverability, and supports machine readability and archiving. We do not discuss the relative merits of the different approaches to peer review that have emerged over the past decade, notably the many different flavours of 'open peer review' (
+                
+                <ext-link ext-link-type="uri" xlink:href="#ref-3">Ross-Hellauer, 2017</ext-link>), but we feel that many of our suggestions and recommendations are relevant to most if not all of these approaches.
+            </p>
+        </sec>
+        <sec>
+            <title>What are peer review materials?</title>
+            <p>As mentioned above, peer review materials can include: the reviewer reports (with or without the reviewer name); responses by the author to the reports; and various letters (including cover letters from the author and decision letters from the editor). Some articles go through two or more rounds of peer review, which increases the number of documents generated. While each document is usually accompanied by a date, other metadata concerning the correspondence can be highly variable. For example, peer review reports and editors decision letters may or may not include names of reviewers or editors, or their ORCID IDs; the individual materials may or may not have DOIs. In subscription journals it is also possible for peer review materials to appear in front of or behind the paywall.</p>
+            <p>Publishers are approaching the publication of peer review materials in a number of ways. The aims of this group were not to prescribe what should be done from an editorial point of view, but to enable what is published to be found by readers and machines alike. Prior to the workshop, data were collected from each publisher attending and we found the following materials are published:</p>
+            <list list-type="bullet">
+                <list-item>○ 
+                    <p>Peer review reports, anonymized or with report author names</p>
+                </list-item>
+                <list-item>○ 
+                    <p>Author responses/Rebuttals</p>
+                </list-item>
+                <list-item>○ 
+                    <p>Editor decision letters</p>
+                </list-item>
+            </list>
+            <p>Some journals also provide appeal and resubmission information (including previous versions of the article, dates, and actors involved).</p>
+            <p>In some cases publishers make peer review materials available as a single PDF with versioned reports linked to specific revisions of the article. Other publishers create separate artifacts, each with unique DOIs, and still others edit and amalgamate various reports into one narrative. The variety can be found in the meeting notes and a table filled out before the meeting (See 
+                
+                <ext-link ext-link-type="uri" xlink:href="#SF1">Supplementary File 1</ext-link> and 
+                
+                <ext-link ext-link-type="uri" xlink:href="#SF2">Supplementary File 2</ext-link>).
+            </p>
+            <p>After collecting these data, representatives from each of the identified publishers were contacted to attend a workshop in London on July 6, 2018; all but one publisher was able to attend. Further publisher representatives were invited following communication with ASAPbio – these publishers are embarking on this practice. Crossref, Europe PMC and PMC were also represented at this meeting, as downstream recipients of this content or the metadata related to it. Journal representatives expanded on the data previously collected and shared details on how they collect and publish peer review materials, how these artifacts are represented in the ANSI/NISO Z39.96-2015 Journal Article Tag Suite (JATS) document standard (these principles can be applicable to other DTDs), and whether they send relevant metadata to Crossref. Crossref shared details of their schema extension to represent this form of content (
+                
+                <ext-link ext-link-type="uri" xlink:href="https://www.crossref.org/services/content-registration/peer-reviews/">https://www.crossref.org/services/content-registration/peer-reviews/</ext-link>). As downstream recipients of peer review materials, PMC and Europe PMC presented the perspective of archives that collaborate with journals to ensure that content is being captured in a sustainable and consistent format that fosters long-term preservation and access to the scholarly record.  Understanding the goals of, workflows, and limitations on each stakeholder allowed the group to refine the scope of the discussion and its outcomes.
+            </p>
+        </sec>
+        <sec>
+            <title>Peer review materials need to “stand alone”</title>
+            <p>In order to advance the transparency and recognition of peer review materials, we agreed these peer review materials need to stand alone from the main article for the purposes of, for example, credit and citation. Ideally, each content item should have its own DOI (as per the recently enhanced Crossref schema). We identified three levels of achieving this, with level 1 being the basic and least preferred option, but probably currently the most achievable and pragmatic:</p>
+            <list list-type="bullet">
+                <list-item>1. 
+                    <p>Peer review materials are attached to the article as a single or numerous PDFs. Whether these materials are pulled together into one document or attached as separate documents, there should be some defined mechanism in the JATS XML tagging that would support the capture of any available metadata and identify these files in a machine-readable and interoperable way for publishers to tag this content appropriately.</p>
+                </list-item>
+                <list-item>2. 
+                    <p>Peer review materials are appended to the article within the full text (so all is machine readable) as a sub-article component of the XML.</p>
+                </list-item>
+                <list-item>3. 
+                    <p>Peer review materials are full-text XML “articles” or “commentaries” in their own right that link bidirectionally to the main article.</p>
+                </list-item>
+            </list>
+        </sec>
+        <sec>
+            <title>Required metadata versus rich metadata</title>
+            <p>Whether the material is provided as a PDF(s) attachment to the main article, or as a full-text XML sub-article or separate article, important metadata can be attached to the item in a machine-readable way, and DOIs can be applied. What types of peer review information are available is dependent on the publisher’s peer review policy, for instance whether reviewers and editors are named, whether the peer review material carries the same license as the main article or takes another form, and what items constitute the peer review materials. Additional metadata fields, such as dates of review and date of review publication and the inclusion of ORCID IDs for reviewers and editors will also be subject to publisher policies and workflows. However, all of this material can be added to the item in a machine-readable way. Even if the actual content is not published in full-text XML format, the metadata can (and should) be.</p>
+            <p>The topic of licensing of the peer review materials was briefly discussed at the workshop but ultimately left out of the remit of this group because the JATS tagging schema would allow for different licensing information to be added for these items or to retain that of the main article, as a publisher chooses.</p>
+        </sec>
+        <sec>
+            <title>Challenges in the process</title>
+            <p>While a few of the publishers had processes in place to prepare the peer review content automatically or within a few minutes, others spend 20–40 minutes per article. In such cases, the tasks that are attributed to this time include the following:</p>
+            <list list-type="bullet">
+                <list-item>
+                    <p>Removing boilerplate text from review reports</p>
+                </list-item>
+                <list-item>
+                    <p>“Stitching together” the material from disparate locations in the submission system</p>
+                </list-item>
+                <list-item>
+                    <p>Editorial checks:</p>
+                    <list list-type="bullet">
+                        <list-item>
+                            <p>Reviewing the content for sensitive information, e.g., unpublished data additions and confidentiality leaks, as well ensuring the tone of the report is appropriate</p>
+                        </list-item>
+                        <list-item>
+                            <p>Removing author responses that contain data the author wants to publish in a subsequent paper</p>
+                        </list-item>
+                        <list-item>
+                            <p>Arbitration processes for conflicting reviews</p>
+                        </list-item>
+                    </list>
+                </list-item>
+                <list-item>
+                    <p>Reviewing the content for sensitive information, e.g., unpublished data additions and confidentiality leaks, as well ensuring the tone of the report is appropriate</p>
+                </list-item>
+                <list-item>
+                    <p>Removing author responses that contain data the author wants to publish in a subsequent paper</p>
+                </list-item>
+                <list-item>
+                    <p>Arbitration processes for conflicting reviews</p>
+                </list-item>
+            </list>
+            <p>Where time is spent—whether in the editorial or production process—depends on the publisher workflow. Regardless of workflow, the overlap in tasks identified provides evidence of the potential value of updating the infrastructure of submission systems to account for and streamline these efforts. Coordination between publishers and submission systems could minimize the time spent “stitching together” peer review materials into a publishable format.</p>
+            <p>In addition to time and workflow hurdles, another major challenge noted by those publishers without their own hosting platforms, was the actual publication process and online hosting of peer review materials. Many publishers identified that some online hosts were not able to manage this new content type. As a result, peer review materials are being captured in supplementary material sections because alternative options are not available. In such cases, it becomes more difficult to capture any relevant associated metadata in a meaningful way for the peer review materials or to make this valuable content easily discoverable.</p>
+            <p>These challenges are common for publishers in that most of the established submission systems and hosting platforms were designed and built many years ago and may be slow to accommodate new requirements. Coordinated communication with these platforms regarding the workflows around publishing peer review materials may result in more satisfactory and generic approaches to accommodating publication of peer review materials.</p>
+            <p>There are internal challenges of cost control issues that also need to be accounted for, and the publication of a single PDF is often more achievable financially based on current systems than producing full-text XML. However, the attachment of machine-readable metadata to that PDF should be within reach, especially if the submission systems and hosting platforms can build these requirements into their products.</p>
+        </sec>
+        <sec>
+            <title>Importance of version management</title>
+            <p>An additional challenge may be introduced in managing peer review materials in cases where such materials are collected for more than one published version of a paper. The 
+                
+                <ext-link ext-link-type="uri" xlink:href="http://www.niso.org/publications/rp/RP-8-2008.pdf">Recommendations of the NISO/ALPSP Journal Article Versions (JAV) Technical Working Group</ext-link> (
+                
+                <ext-link ext-link-type="uri" xlink:href="#ref-1">2008</ext-link> April), included the following types of article instances:
+            </p>
+            <list list-type="bullet">
+                <list-item>
+                    <p>authors-original</p>
+                </list-item>
+                <list-item>
+                    <p>submitted-manuscript-under-review</p>
+                </list-item>
+                <list-item>
+                    <p>accepted-manuscript</p>
+                </list-item>
+                <list-item>
+                    <p>proof</p>
+                </list-item>
+                <list-item>
+                    <p>version-of-record</p>
+                </list-item>
+                <list-item>
+                    <p>corrected-version-of-record</p>
+                </list-item>
+                <list-item>
+                    <p>enhanced-version-of-record</p>
+                </list-item>
+            </list>
+            <p>To this list, the JATS4R working group on “Article publication and history dates” added pre-print. The JATS4R draft recommendation advises that if the publisher publishes a revision of any of these stages, the subsequent revisions should be labelled with suffixes, as follows: “-r1”, “-r2”, etc. (
+                
+                <ext-link ext-link-type="uri" xlink:href="https://jats4r.org/article-publication-and-history-dates">https://jats4r.org/article-publication-and-history-dates</ext-link>).
+            </p>
+            <p>If the peer review materials reference content in a specific version of an article, that link between peer review materials and correct version should be captured in the metadata for clarity. Managing the associations between peer review materials and article version is essential for journals that make multiple versions of a paper publicly available, to ensure the archival record is accurate and that the process transparent. For example, if a journal publishes three versions of an article, any related peer review materials should be associated with the appropriate version. It should not be left to a reader to determine if a peer review report or decision letter relates to the first version, the second version, or the third version.</p>
+        </sec>
+        <sec>
+            <title>JATS XML proposal (designed to aid depositing to Crossref)</title>
+            <p>Irrespective of the editorial and publisher decisions regarding workflow, we propose the following options regarding JATS XML tagging, designed to also aid metadata registration with Crossref (note we are using the same terms as Crossref where controlled vocabulary is required).</p>
+        </sec>
+        <sec>
+            <title>Overarching document type</title>
+            <p>Review documents may be supplied as:</p>
+            <list list-type="bullet">
+                <list-item>1. 
+                    <p>sub-articles &lt;sub-article&gt; to the article being reviewed (sub-articles may be full-text XML or XML metadata plus a link to the PDF)</p>
+                </list-item>
+                <list-item>2. 
+                    <p>independent articles &lt;article&gt; (with the appropriate &lt;related-article&gt; links – Peer Reviews MUST link to the version of the article they are reviewing and Author Replies; Decision Letters MUST link to the version of the article they are passing judgment on; and Author Replies MUST link to each Review/Decision Letter it is addressing)</p>
+                </list-item>
+            </list>
+        </sec>
+        <sec>
+            <title>Identifying the type of content</title>
+            <p>&lt;sub-article&gt; or &lt;article&gt; MUST have an article-type attribute with one of the values listed in 
+                    
+                <ext-link ext-link-type="uri" xlink:href="#T1">Table 1</ext-link>.
+            </p>
+            <table-wrap id="T1">
+                <label>Table 1.</label>
+                <caption>
+                    <title>Article-type attributes.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr>Attribute (as per Crossref schema)</tr>
+                            <tr>Corresponding term in this document</tr>
+                        </tr>
+                        <tr>
+                            <tr>referee-report</tr>
+                            <tr>Peer review</tr>
+                        </tr>
+                        <tr>
+                            <tr>editor-report</tr>
+                            <tr>Decision Letter</tr>
+                        </tr>
+                        <tr>
+                            <tr>author-comment</tr>
+                            <tr>Author Response/Rebuttal</tr>
+                        </tr>
+                        <tr>
+                            <tr>aggregated-review-documents</tr>
+                            <tr>Collected Review Documents</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+            <p>The term manuscript does not map to anything we’ve discussed.</p>
+        </sec>
+        <sec>
+            <title>Identifying the recommendation</title>
+            <p>This is an optional item. Currently there is no corresponding tag in JATS and so would require a request to the JATS Standing Committee.</p>
+            <p>There would be a fixed value list, mapped to the Crossref schema:</p>
+            <p>major-revision</p>
+            <p>minor-revision</p>
+            <p>reject</p>
+            <p>reject-with-resubmit</p>
+            <p>accept</p>
+            <p>accept-with-reservation</p>
+            <p>NOTE: There should be no “recommendation” for author-comment type content.</p>
+        </sec>
+        <sec>
+            <title>Identifying the authors (including ORCIDs)</title>
+            <p>It is an optional element and should be contained within &lt;contrib&gt;, which should contain a &lt;name&gt; or &lt;anonymous/&gt;.</p>
+            <p>If &lt;contrib&gt; is used, it MUST contain @contrib-type that maps to following controlled vocabulary:</p>
+            <list list-type="bullet">
+                <list-item>○ 
+                    <p>For Peer Reviews, use @contrib-type=“reviewer”</p>
+                </list-item>
+                <list-item>○ 
+                    <p>For Decision Letters, use @contrib-type=“editor”</p>
+                </list-item>
+                <list-item>○ 
+                    <p>For Author Reply, use @contrib-type=“author”</p>
+                </list-item>
+            </list>
+            <p>We intend that the @contrib-type attribute value reflects the contributor’s relationship to the peer review process and not the relationship with the document.</p>
+            <p>The &lt;role&gt; tag is optional and can be used for display terms of what publishers may use for their journal (for example variations on the term editor could be Academic Editor, Reviewing Editor, Senior Editor, E-i-C etc.).</p>
+            <p>Names, affiliations and contributor IDs (such as ORCID), where provided, follow standard JATS tagging (see JATS4R recommendation: 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://jats4r.org/authors-and-affiliations">https://jats4r.org/authors-and-affiliations</ext-link>).
+            </p>
+        </sec>
+        <sec>
+            <title>Identifying any competing interests</title>
+            <p>Follow tagging recommended by JATS4R: 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://jats4r.org/conflict-of-interest-statements">https://jats4r.org/conflict-of-interest-statements</ext-link>.
+            </p>
+        </sec>
+        <sec>
+            <title>Identifying DOIs</title>
+            <p>DOIs for peer review materials are optional but strongly encouraged. Use &lt;article-id pub-id-type=“doi”&gt;</p>
+        </sec>
+        <sec>
+            <title>Licensing and copyright</title>
+            <p>Each review document (standalone article or sub-article) SHOULD have license information with a machine-readable license. Review documents supplied as &lt;sub-article&gt; may have their own &lt;license&gt; element or inherit their license information from the parent document as described in the JATS4R Permissions Recommendations (
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://jats4r.org/permissions">https://jats4r.org/permissions</ext-link>).
+            </p>
+        </sec>
+        <sec>
+            <title>Date</title>
+            <p>Each review document (standalone article or sub-article) MUST have a pub-date and may have other publication information captured as &lt;event&gt;. Review documents supplied as &lt;sub-article&gt; may have their own &lt;pub-date&gt; element or inherit their &lt;pub-date&gt; from the parent document.</p>
+        </sec>
+        <sec>
+            <title>Not allowed</title>
+            <p>There are some elements that MUST NOT appear in review documents:</p>
+            <list list-type="bullet">
+                <list-item>a. 
+                    <p>&lt;funding-group&gt;</p>
+                </list-item>
+                <list-item>b. 
+                    <p>&lt;app&gt;, &lt;app-group&gt;, &lt;ack&gt;, &lt;glossary&gt;, &lt;back&gt;/&lt;sec&gt;</p>
+                </list-item>
+                <list-item>c. 
+                    <p>&lt;supplementary-material&gt;, &lt;inline-supplementary-material&gt;</p>
+                </list-item>
+                <list-item>d. 
+                    <p>&lt;bio&gt;</p>
+                </list-item>
+                <list-item>e. 
+                    <p>&lt;article-version&gt; Once published, review documents will not be “versioned”. If the reviewer(s) write a review on an updated version of the manuscript, the peer review is a new published object.</p>
+                </list-item>
+            </list>
+        </sec>
+        <sec>
+            <title>Crossref metadata</title>
+            <p>As of November 2017, Crossref supports the scholarly discussions entailed in the publication process as well as those after publication (e.g. “post-publication reviews”). In the same fashion as all content registered with Crossref, peer review metadata is available via the open Crossref APIs and Crossref Metadata Search. For full details and example deposit XML, see the Crossref peer review deposit guide: 
+                
+                <ext-link ext-link-type="uri" xlink:href="https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews">https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews</ext-link>.
+            </p>
+        </sec>
+        <sec>
+            <title>Display of peer review materials</title>
+            <p>We also propose that publisher web platforms and archives display peer review materials (or links to peer review materials) in a clearly labeled peer review section. This practice will help ensure that not only are the journal processes transparent but that the content itself is easy to find and navigate to, regardless of how a journal chooses to make them available.</p>
+        </sec>
+        <sec>
+            <title>Future/next steps</title>
+            <p>This proposal is intended to lay the groundwork for the publication and archiving of peer review materials across publishers and publication models, providing flexible options to meet different journal needs and workflows. Moving forward, there is a need for continued collaboration and discussion as peer review models and workflows evolve. As the goals of these peer review efforts are more clearly defined across the publishing and academic communities, certain models may lend themselves more readily to supporting those desired outcomes. Continued efforts to identify the most critical needs of each user group should be explored through ongoing efforts such as ASAPbio and FORCE11. In turn, these needs can inform the technical solutions and recommendations going forward.</p>
+            <p>Further technical discussions should not be placed on hold in the interim, though. As publishing peer review materials practices grow, there is a pressing need for industry-wide solutions now. We would like to see the XML recommendations from this group be converted to a JATS4R recommendation on the publishing of peer review materials. Similarly, it would be of value to the community for Crossref and JATS to coordinate efforts and ensure some level of metadata alignment for peer review materials that would reduce costs to publishers and minimize barriers to implementation.</p>
+            <p>This type of coordination between publishers, archives, and other organizations that support the scholarly communication enterprise is critical to ensuring that the needs of the whole community are being met. Past experience has taught us that making content available is just the first step toward increasing transparency. Doing so in a flexible, consistent, and meaningful way is imperative in making certain that the available material is also discoverable and that long-term preservation of the content can be supported. Implementing the next steps through community-driven recommendations in a sustainable way will be important in increasing transparency and rigor of the scientific record.</p>
+            <p>If you are publishing peer review materials, or are not yet and are considering doing so, please comment.</p>
+        </sec>
+        <sec>
+            <title>Data availability</title>
+            <p>No data are associated with this article.</p>
+        </sec>
+    </body>
+    <back>
+        <ref-list>
+            <title>References</title>
+            <ref>
+                <element-citation>
+                    <article-title>Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group (NISO-RP-8-2008)</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Publish peer reviews.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>What is open peer review? A systematic review [version 2; referees: 4 approved].</article-title>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
 </article>

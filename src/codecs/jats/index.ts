@@ -2,15 +2,19 @@
  * @module jats
  */
 
-import { getLogger } from '@stencila/logga';
-import stencila from '@stencila/schema';
-import { isInlineContent } from '@stencila/schema/dist/util';
-import fs from 'fs-extra';
-import { Encode } from '../..';
-import * as vfile from '../../util/vfile';
+import { getLogger } from '@stencila/logga'
+import stencila from '@stencila/schema'
+import {
+  isInlineContent,
+  nodeType,
+  markTypes
+} from '@stencila/schema/dist/util'
+import fs from 'fs-extra'
+import { Encode } from '../..'
+import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
-import * as xml from '../../util/xml';
-import { all, attr, child, elem, first, text } from '../../util/xml';
+import * as xml from '../../util/xml'
+import { elem, attr, child, first, all, text } from '../../util/xml'
 
 const log = getLogger('encoda:jats')
 
@@ -80,15 +84,21 @@ export const encode: Encode = async (
   node: stencila.Node
 ): Promise<vfile.VFile> => {
   const doc = encodeDocument(node)
-  const jats = xml.dump(doc, { spaces: 2 })
+  const jats = xml.dump(doc, { spaces: 4 })
   return vfile.load(jats)
 }
 
+/**
+ * Decode a JATS XML document to a Stencila `Node`.
+ */
 function decodeDocument(doc: xml.Element): stencila.Node {
   const article = first(doc, 'article')
   return article ? decodeArticle(article) : null
 }
 
+/**
+ * Encode a Stencila Node to a JATS XML document.
+ */
 function encodeDocument(node: stencila.Node): xml.Element {
   // TODO: construct article from fragment if necessary
   const article = node as stencila.Article
@@ -136,8 +146,9 @@ function encodeArticle(article: stencila.Article): xml.Element {
     encodeTitle(article.title || ''),
     encodeAuthors(article.authors || [])
   )
-  const body = elem('body')
-  const back = elem('back')
+  const body = encodeBody(article.content || [])
+  const back = elem('back', encodeCitations(article.citations || []))
+
   return elem(
     'article',
     {
@@ -182,6 +193,9 @@ function encodeAuthors(
   return elem('contrib-group', ...auths, ...affs)
 }
 
+/**
+ * Decode an author element to a `Person` node
+ */
 function decodeAuthor(
   author: xml.Element,
   article: xml.Element
@@ -270,7 +284,7 @@ function encodeName(person: stencila.Person): xml.Element {
         ? elem('given-names', person.givenNames.join(' '))
         : null,
       person.honorificPrefix ? elem('prefix', person.honorificPrefix) : null,
-      person.honorificSuffix ? elem('suffic', person.honorificSuffix) : null
+      person.honorificSuffix ? elem('suffix', person.honorificSuffix) : null
     )
   } else {
     return elem('string-name', person.name || '')
@@ -302,6 +316,16 @@ function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
     )
 }
 
+function encodeCitations(
+  citations: (stencila.CreativeWork | string)[]
+): xml.Element {
+  return elem(
+    'ref-list',
+    elem('title', 'References'),
+    ...citations.map(encodeCitation)
+  )
+}
+
 function decodeCitation(elem: xml.Element): stencila.CreativeWork {
   const work: stencila.CreativeWork = { type: 'CreativeWork' }
 
@@ -330,17 +354,76 @@ function decodeCitation(elem: xml.Element): stencila.CreativeWork {
   return work
 }
 
+function encodeCitation(work: stencila.CreativeWork | string): xml.Element {
+  let citation
+  if (typeof work === 'string') {
+  } else {
+    citation = elem(
+      'element-citation',
+      work.title ? elem('article-title', work.title) : null
+    )
+  }
+  return elem('ref', citation)
+}
+
 interface DecodeState {
-  depth: number
+  /**
+   * The id of the current section. Used for setting the
+   * id of headings.
+   */
+  sectionId: string
+
+  /**
+   * The depth of the current section. Used for setting the depth
+   * of headings.
+   */
+  sectionDepth: number
 }
 
+interface EncodeState {
+  /**
+   * The current number of tables in the article.
+   * Used for labelling tables.
+   */
+  tables: number
+}
+
+/**
+ * Decode the JATS `<body>` element to an array of Stencila `Node`s
+ */
 function decodeBody(elem: xml.Element): stencila.Node[] {
-  return decodeElement(elem, { depth: 0 })
+  return decodeDefault(elem, { sectionId: '', sectionDepth: 0 })
 }
 
-function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
-  if (elem.type === 'text') return [elem.text || '']
+/**
+ * Encode an array of Stencila `Node`s to a JATS `<body>` element
+ */
+function encodeBody(nodes: stencila.Node[]): xml.Element {
+  const state = {
+    tables: 0
+  }
+  const sections: xml.Element[] = []
+  const depth = 0
+  let section: xml.Element | undefined
+  for (const node of nodes) {
+    if (nodeType(node) === 'Heading') {
+      section = elem('sec')
+      sections.push(section)
+    }
+    const el = encodeNode(node, state)
+    if (!section) {
+      section = elem('sec')
+      sections.push(section)
+    }
+    if (section.elements) section.elements.push(...el)
+  }
+  return elem('body', ...sections)
+}
 
+/**
+ * Decode a JATS element to an array of Stencila `Node`s
+ */
+function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
   switch (elem.name) {
     case 'sec':
       return decodeSection(elem, state)
@@ -348,40 +431,268 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeHeading(elem, state)
     case 'p':
       return decodeParagraph(elem, state)
+    case 'list':
+      return decodeList(elem, state)
     case 'table-wrap':
       return decodeTableWrap(elem, state)
+    case 'ext-link':
+      return decodeExtLink(elem, state)
+    case 'inline-graphic':
+      return decodeInlineGraphic(elem)
+    case 'xref':
+      return decodeXRef(elem, state)
+    case 'italic':
+      return decodeMark(elem, state, 'Emphasis')
+    case 'bold':
+      return decodeMark(elem, state, 'Strong')
+    case 'sup':
+      return decodeMark(elem, state, 'Superscript')
+    case 'sub':
+      return decodeMark(elem, state, 'Subscript')
+    case 'mml:math':
+      return decodeMath(elem)
+    case 'break':
+      return decodeBreak()
     default:
-      return decodeChildren(elem, state)
+      if (elem.type === 'text') return [elem.text || '']
+      else {
+        log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
+        return decodeDefault(elem, state)
+      }
   }
 }
 
+function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
+  switch (nodeType(node)) {
+    case 'Heading':
+      return encodeHeading(node as stencila.Heading, state)
+    case 'Paragraph':
+      return encodeParagraph(node as stencila.Paragraph, state)
+    case 'List':
+      return encodeList(node as stencila.List, state)
+    case 'Table':
+      return encodeTable(node as stencila.Table, state)
+    case 'Link':
+      return encodeLink(node as stencila.Link, state)
+    case 'Emphasis':
+      return encodeMark(node as stencila.Emphasis, state, 'italic')
+    case 'Strong':
+      return encodeMark(node as stencila.Strong, state, 'bold')
+    case 'Superscript':
+      return encodeMark(node as stencila.Superscript, state, 'sup')
+    case 'Subscript':
+      return encodeMark(node as stencila.Subscript, state, 'sub')
+    case 'string':
+      return [{ type: 'text', text: node as string }]
+    default:
+      log.warn(`Unhandled node type when encoding to JATS: "${nodeType(node)}"`)
+      return []
+  }
+}
+
+/**
+ * Decode the child elements of a JATS element to an array of Stencila `Node`s
+ */
+function decodeDefault(elem: xml.Element, state: DecodeState): stencila.Node[] {
+  return elem.elements
+    ? elem.elements
+        .map(child => decodeElement(child, state))
+        .reduce((prev, curr) => [...prev, ...curr], [])
+    : []
+}
+
+function decodeElements(
+  elems: xml.Element[],
+  state: DecodeState
+): stencila.Node[] {
+  return elems
+    .map(child => decodeElement(child, state))
+    .reduce((prev, curr) => [...prev, ...curr], [])
+}
+
+function decodeInlineContent(
+  elems: xml.Element[],
+  state: DecodeState
+): stencila.InlineContent[] {
+  return decodeElements(elems, state).filter(isInlineContent)
+}
+
+/**
+ * Encode a Stencila `Node`s as a JATS elements
+ */
+function encodeDefault(
+  name: string,
+  nodes: stencila.Node[],
+  state: EncodeState
+): xml.Element {
+  const elems = nodes
+    .map(node => encodeNode(node, state))
+    .reduce((prev, curr) => [...prev, ...curr], [])
+  return elem(name, ...elems)
+}
+
+function encodeNodes(
+  nodes: stencila.Node[],
+  state: EncodeState
+): xml.Element[] {
+  return nodes
+    .map(node => encodeNode(node, state))
+    .reduce((prev, curr) => [...prev, ...curr], [])
+}
+
+/**
+ * Decode a JATS `<section>` element.
+ *
+ * This increments the `sectionId` and `sectionDepth` state variables
+ * so that they can be applied to heading nodes (decoded from `<title>` elements).
+ * It is necessary to retain `id` attributes so that any internal links are maintained.
+ */
 function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
-  return decodeChildren(elem, { depth: state.depth + 1 })
+  const sectionId = attr(elem, 'id') || ''
+  const sectionDepth = state.sectionDepth + 1
+  return decodeDefault(elem, { sectionId, sectionDepth })
 }
 
 function decodeHeading(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Heading] {
-  return [
-    {
-      type: 'Heading',
-      depth: state.depth,
-      content: decodeChildren(elem, state).filter(isInlineContent)
-    }
-  ]
+  const heading: stencila.Heading = {
+    type: 'Heading',
+    id: state.sectionId,
+    depth: state.sectionDepth,
+    content: decodeInlineContent(elem.elements || [], state)
+  }
+  return [heading]
+}
+
+function encodeHeading(
+  node: stencila.Heading,
+  state: EncodeState
+): [xml.Element] {
+  return [encodeDefault('title', node.content, state)]
 }
 
 function decodeParagraph(
   elem: xml.Element,
   state: DecodeState
-): [stencila.Paragraph] {
+): stencila.Node[] {
+  const nodes = decodeElements(elem.elements || [], state)
+  const para: stencila.Paragraph = {
+    type: 'Paragraph',
+    content: []
+  }
+  const blocks: stencila.Node[] = [para]
+  for (const node of nodes) {
+    if (isInlineContent(node)) para.content.push(node)
+    else blocks.push(node)
+  }
+  return blocks
+}
+
+function encodeParagraph(
+  node: stencila.Paragraph,
+  state: EncodeState
+): [xml.Element] {
+  return [encodeDefault('p', node.content, state)]
+}
+
+function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     {
-      type: 'Paragraph',
-      content: decodeChildren(elem, state).filter(isInlineContent)
+      type: 'Link',
+      target: attr(elem, 'xlink:href') || '',
+      content: decodeInlineContent(elem.elements || [], state)
     }
   ]
+}
+
+/**
+ * Decode a JATS `<xref>` element to a Stencila `Link` node.
+ *
+ * The `rid` attribute is decoded to a local link.
+ * The `ref-type` attribute is preserved in the link's `relation` property.
+ * See https://jats.nlm.nih.gov/archiving/tag-library/1.1/element/xref.html
+ */
+function decodeXRef(elem: xml.Element, state: DecodeState): [stencila.Link] {
+  const link: stencila.Link = {
+    type: 'Link',
+    target: `#${attr(elem, 'rid') || ''}`,
+    content: decodeDefault(elem, state).filter(isInlineContent)
+  }
+
+  const refType = attr(elem, 'ref-type')
+  if (refType) link.relation = refType
+
+  return [link]
+}
+
+function encodeLink(node: stencila.Link, state: EncodeState): [xml.Element] {
+  return [
+    elem(
+      'ext-link',
+      {
+        'ext-link-type': 'uri',
+        'xlink:href': node.target
+      },
+      ...encodeNodes(node.content, state)
+    )
+  ]
+}
+
+function decodeMark<Type extends keyof typeof markTypes>(
+  elem: xml.Element,
+  state: DecodeState,
+  type: Type
+): stencila.Mark[] {
+  return [
+    {
+      type: type,
+      content: decodeInlineContent(elem.elements || [], state)
+    }
+  ]
+}
+
+/**
+ * Encode a Stencila `Mark` node to a JATS element.
+ */
+function encodeMark(
+  node: stencila.Mark,
+  state: EncodeState,
+  name: string
+): [xml.Element] {
+  return [elem(name, ...encodeNodes(node.content, state))]
+}
+
+function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
+  const type = attr(elem, 'list-type')
+  const order =
+    type === 'bullet' || type === 'simple' ? 'unordered' : 'ascending'
+  const items = all(elem, 'list-item').map(
+    (item): stencila.ListItem => {
+      return {
+        type: 'ListItem',
+        content: decodeElements(item.elements || [], state)
+      }
+    }
+  )
+  return [
+    {
+      type: 'List',
+      order,
+      items
+    }
+  ]
+}
+
+function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
+  const attrs = {
+    'list-type': node.order === 'unordered' ? 'bullet' : 'order'
+  }
+  const items = node.items.map(item => {
+    return elem('list-item', ...encodeNodes(item.content, state))
+  })
+  return [elem('list', attrs, ...items)]
 }
 
 function decodeTableWrap(
@@ -389,6 +700,9 @@ function decodeTableWrap(
   state: DecodeState
 ): [stencila.Table] {
   const table: stencila.Table = { type: 'Table', rows: [] }
+
+  const id = attr(elem, 'id')
+  if (id) table.id = id
 
   const caption = child(elem, 'caption')
   if (caption) {
@@ -409,7 +723,7 @@ function decodeTableWrap(
         cells: all(row, ['td', 'th']).map(cell => {
           return {
             type: 'TableCell',
-            content: decodeElement(cell, state).filter(isInlineContent)
+            content: decodeInlineContent(cell.elements || [], state)
           }
         })
       }
@@ -419,13 +733,55 @@ function decodeTableWrap(
   return [table]
 }
 
-function decodeChildren(
-  elem: xml.Element,
-  state: DecodeState
-): stencila.Node[] {
-  return elem.elements
-    ? elem.elements
-        .map(child => decodeElement(child, state))
-        .reduce((prev, curr) => [...prev, ...curr])
-    : []
+function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
+  state.tables += 1
+
+  const attrs = node.id ? { id: node.id } : {}
+
+  const label = elem('label', `Table ${state.tables}.`)
+
+  const caption = elem('caption', node.title ? elem('title', node.title) : null)
+
+  const rows = node.rows.map(row => {
+    return elem(
+      'tr',
+      ...row.cells.map(cell => {
+        return encodeDefault('tr', cell.content, state)
+      })
+    )
+  })
+
+  const table = elem('table', elem('tbody', ...rows))
+
+  return [elem('table-wrap', attrs, label, caption, table)]
+}
+
+function decodeMath(elem: xml.Element): [object] {
+  return [
+    {
+      type: 'Math',
+      language: 'MathML',
+      text: xml.dump(elem)
+    }
+  ]
+}
+
+/**
+ * Decode a JATS `<break>` element into a space.
+ *
+ * The `break` element is "An explicit line break in the text."
+ * At present, this is assumed not to imply any semantic meaning
+ * as is decoded to a space.
+ */
+function decodeBreak(): [string] {
+  return [' ']
+}
+
+function decodeInlineGraphic(elem: xml.Element): [stencila.ImageObject] {
+  return [
+    {
+      type: 'ImageObject',
+      contentUrl: attr(elem, 'xlink:href') || ''
+    }
+  ]
 }

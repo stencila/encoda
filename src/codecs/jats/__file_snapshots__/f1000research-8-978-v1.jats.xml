@@ -1,93 +1,909 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
 <article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
-  <front>
-    <title-group>
-      <article-title>undefined</article-title>
-    </title-group>
-    <contrib-group>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-    </contrib-group>
-  </front>
-  <body/>
-  <back/>
+    <front>
+        <title-group>
+            <article-title>Climate change-induced species distribution modeling in hyper-arid ecosystems</article-title>
+        </title-group>
+        <contrib-group>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Ksiksi</surname>
+                    <given-names>Taoufik Saleh</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>K.</surname>
+                    <given-names>Remya</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Mousa</surname>
+                    <given-names>Mohamed T.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Al-Badi</surname>
+                    <given-names>Shima K.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Al Kaabi</surname>
+                    <given-names>Salama K.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Alameemi</surname>
+                    <given-names>Shamsa M.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Fereaa</surname>
+                    <given-names>Sanad M.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Hassan</surname>
+                    <given-names>Fatima E.</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+        </contrib-group>
+    </front>
+    <body>
+        <sec>
+            <title>Introduction</title>
+            <p>Climate change has exerted significant biological, spatial and temporal effects on terrestrial habitats
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-1">1</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-2">2</ext-link>
+                </sup>. The increasing CO
+                
+                <sub>2</sub> trend during the past decades will continue for several decades, which will likely have major effects on animal and plant species
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-3">3</ext-link>
+                </sup>. Additionally, the inherent fragility of dry lands made them particularly vulnerable to climate change, even a small change in temperature and rainfall patterns may cause serious threat to their biodiversity
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-4">4</ext-link>
+                </sup>. IIED
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-5">5</ext-link>
+                </sup> suggests that dry-land regions are projected to significant climate changes, but there still exist substantial variability and uncertainty in these estimates based on different scenarios. Many of the important United Arab Emirates (UAE) plant species, for instance, may be facing major challenges for their survival. Many of such native species are becoming restricted in their distributions because of overgrazing and habitat destruction. In addition to the natural prolonged drought, human activities are also threatening many native plants
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-6">6</ext-link>
+                </sup> and their conservation
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-7">7</ext-link>
+                </sup>. The IPCC report
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-8">8</ext-link>
+                </sup> also projected that deserts are going to become hotter and drier. Additionally and in relation to the Arab region, climate change-induced desertification has been prolonged, critically affecting the vulnerability of the local population. The projected warming would lead to seasonal changes in precipitation, evapotranspiration and radiation Hulme and Jenkins
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-9">9</ext-link>
+                </sup>. These changes can largely affect the distribution of species and habitat composition
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-10">10</ext-link>
+                </sup>. Thus, the implications of climate change for biodiversity have led to the use of bioclimatic models in order to forecast the species range shift under future climate change scenarios Araújo and New
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-11">11</ext-link>
+                </sup>.
+            </p>
+            <p>Both habitat quality and diversity have significant impact on species’ distribution and richness within the environment
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-12">12</ext-link>
+                </sup>. Ecological envelope models or species distribution models (SDMs) have been widely used for projecting the habitat shift and distribution induced by climate change
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-13">13</ext-link>
+                </sup>. These models are also used to understand biological processes
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-14">14</ext-link>
+                </sup> and climate change impacts on biodiversity
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-15">15</ext-link>–
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-17">17</ext-link>
+                </sup>. Understanding the future distribution of climatically suitable habitat allows the conservation planners to assess the vulnerability of species and ecosystem to climate change
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-18">18</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-19">19</ext-link>
+                </sup>. The species occurrence records alone may not be sufficient for building robust conservation strategy in light of climate change. While combining occurrence records with an environmental suitability model can be a promising tool for to assess species distribution and the potential impacts of climate change
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-20">20</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-21">21</ext-link>
+                </sup>.
+            </p>
+            <p>Maximum entropy (MaxEnt) is one of the robust environmental suitability ecological niche/ ecological envelope) models for assessing species habitat suitability changes under the ongoing and future environmental challenges
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-22">22</ext-link>–
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-24">24</ext-link>
+                </sup>. MaxEnt is a species distribution model (SDM)
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-25">25</ext-link>
+                </sup> and it is used for the present study. The hypothesis is that shifting, contracting and expanding species habitats are affected by the ongoing climate change. For this, habitat suitability changes of the selected three species (i.e. 
+                
+                <italic>Calotropis procera</italic>, 
+                
+                <italic>Prosopis cineraria</italic> and 
+                
+                <italic>Ziziphus spina-christi</italic>) in the current vs the future climate scenarios was modeled.
+            </p>
+        </sec>
+        <sec>
+            <title>Methods</title>
+        </sec>
+        <sec>
+            <title>Study site</title>
+            <p>This study was conducted in the UAE. It covers a total land area of approximately 82,925 km
+                    
+                <sup>2</sup>, which was used as the basis for calculating the species distribution areas. The study area boundaries was converted to shape files and and then used to extract the environmental and climatic variables.
+            </p>
+        </sec>
+        <sec>
+            <title>Species ecological characteristics</title>
+            <p>
+                <italic>Calotropis procera</italic>, belonging to the Asclepiadaceae family, locally known as ash harbor or milkweed. It is a poisonous shrub that can cause harm to humans if its latex touches the skin or eyes. The latex is a milky white substance present within the shrub, and is released if the shrub was cut
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-26">26</ext-link>
+                </sup>.
+            </p>
+            <p>
+                <italic>Prosopis cineraria</italic> is considered the national tree of UAE and belongs to the Fabaceae family. It can withstand a wide range of temperature, heat and drought and also can tolerate saline soil conditions. It commonly exists in India and Pakistan in large numbers. In the UAE it is found on the inland sand plains and low dunes of the Northern Emirates and eastern rim of Abu Dhabi emirate, and appears occasionally in wadi beds of the Hajar mountain range
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-27">27</ext-link>
+                </sup>.
+            </p>
+            <p>
+                <italic>Ziziphus spina-christi</italic>, belongs to the Rhamnaceae family, is a species indigenous to the Arabian Peninsula. This species is known for delayed seed germination, which is due to the hard coat of its seeds, therefore lowering its ability to compete with other plants over resources. This tree has different importance to people and animals. The honey produced from its flowers is very valuable and its leaves has various medicinal uses. The leaves also contain various flavonoids, saponin, alkaloids, and allelochemicals.
+            </p>
+        </sec>
+        <sec>
+            <title>Model requirements</title>
+            <p>We have extracted current and future 19 bioclimatic variables from the 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://www.worldclim.org">WorldClim</ext-link> website
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-28">28</ext-link>
+                </sup> and tested for colinearity using the SDM tool in ArcGis 10.1
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-29">29</ext-link>
+                </sup> (an open-source alternative is 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://www.qgis.org/en/site/">QGIS</ext-link>). Additionally, variables included were land use cover and elevation data for the study area. Even though the variables were highly correlating we have selected nine bioclimatic variables and the edaphic variables for the model development. Representative concentration pathway (RCP)4.5 was selected and for 2050s and 2070s, the 
+                    
+                <ext-link ext-link-type="uri" xlink:href="http://www.cesm.ucar.edu/models/ccsm4.0/">Community Climate System Model version 4</ext-link> climate model was used to download the bioclimatic variables. RCP4.5 stabilizes radiative forcing by 2100
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-30">30</ext-link>
+                </sup>. It includes global emissions of greenhouse gases and land-use-land-cover. A resolution of approximately 1 km
+                    
+                <sup>2</sup> (30 arc-seconds) was used for this predictive assessment.
+            </p>
+            <p>All three species’ presence-only data was used and each species had 100 georeferenced location data. For the selected species, the model was trained using current bioclimatic data and projected using future bioclimatic variables. To visualize the bioclimatic suitability range shift in the future projection, this study has used clamping module while running the model. Final outputs of the model predictions were exported to ArcGIS 10.1 for further analysis. The exported model outputs were converted to raster files and then the predicted habitat suitability ranges were reclassified using three pre-defined probability classes: high, medium and low. Other model settings were kept unmodified and the Jackknife method was used to assess the variable contribution to the habitat distribution. Model fit was assessed using the area under the curve (AUC) values.</p>
+        </sec>
+        <sec>
+            <title>Environmental parameters</title>
+            <p>In addition to land use cover and elevation data, 19 variables were extracted from the WorldClim database
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-31">31</ext-link>
+                </sup>, which is a set of global climate layers generated through interpolation of climate data from weather stations on a 30 arc-seconds grid (about 1 km
+                    
+                <sup>2</sup> resolution). The 19 environmental variables are coded as follows:
+            </p>
+            <p>1. BIO1: Annual Mean Temperature</p>
+            <p>2. BIO2: Mean Diurnal Range (Mean of monthly (max temp - min temp))</p>
+            <p>3. BIO3: Isothermality (BIO2/BIO7) (* 100)</p>
+            <p>4. BIO4: Temperature Seasonality (standard deviation *100)</p>
+            <p>5. BIO5: Max Temperature of Warmest Month</p>
+            <p>6. BIO6: Min Temperature of Coldest Month</p>
+            <p>7. BIO7: Temperature Annual Range (BIO5-BIO6)</p>
+            <p>8. BIO8: Mean Temperature of Wettest Quarter</p>
+            <p>9. BIO9: Mean Temperature of Driest Quarter</p>
+            <p>10. BIO10: Mean Temperature of Warmest Quarter</p>
+            <p>11. BIO11: Mean Temperature of Coldest Quarter</p>
+            <p>12. BIO12: Annual Precipitation</p>
+            <p>13. BIO13: Precipitation of Wettest Month</p>
+            <p>14. BIO14: Precipitation of Driest Month</p>
+            <p>15. BIO15: Precipitation Seasonality (Coefficient of Variation)</p>
+            <p>16. BIO16: Precipitation of Wettest Quarter</p>
+            <p>17. BIO17: Precipitation of Driest Quarter</p>
+            <p>18. BIO18: Precipitation of Warmest Quarter</p>
+            <p>19. BIO19: Precipitation of Coldest Quarter</p>
+        </sec>
+        <sec>
+            <title>Modeling approach</title>
+            <p>The 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://www.gbif.org/en/tool/81279/maxent">MaxEnt model Version 3.4.1</ext-link>
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-25">25</ext-link>
+                </sup> was used for this assessment of the three different tree/shrub species distribution. MaxEnt has been used to model species niches and distributions through machine-learning techniques referred to as maximum entropy modeling
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-17">17</ext-link>,
+                        
+                    <ext-link ext-link-type="uri" xlink:href="#ref-32">32</ext-link>
+                </sup>. It is very robust in cases of small sample size of species distribution and locations
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-17">17</ext-link>
+                </sup>.
+            </p>
+            <p>MaxEnt uses a combination of a set of environmental (e.g. climatic) grids and geo-referenced presence points for the species under investigation
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-33">33</ext-link>
+                </sup>. The model expresses a probability distribution where each grid cell is predictably suitable to the conditions for a species to occur
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-33">33</ext-link>
+                </sup>. To improve model performance and minimize over-fitting, because of the impact of correlation among explanatory variables, a Pearson’s correlation coefficient test was performed for each pair of quantitative variables
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-34">34</ext-link>–
+                        
+                    <ext-link ext-link-type="uri" xlink:href="#ref-36">36</ext-link>
+                </sup>. MaxEnt
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-25">25</ext-link>
+                </sup> is a model for predicting the distribution of species based on environmental parameters and species’ presence data
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-37">37</ext-link>
+                </sup>. It uses both continuous and categorical data
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-25">25</ext-link>
+                </sup>. MaxEnt has been reported to be comparable to other highly accurate prediction methods, even when dealing with small sample sizes
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-38">38</ext-link>
+                </sup>. This model was run for the current and future (2050–2070) distributions. MaxEnt model was evaluated through the use of the area under the curve (AUC)
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-39">39</ext-link>
+                </sup>. While generating response curves, the MaxEnt model estimates the relative effect of each predictor
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-40">40</ext-link>
+                </sup>.
+            </p>
+        </sec>
+        <sec>
+            <title>Results</title>
+        </sec>
+        <sec>
+            <title>Model fit and variable contribution</title>
+            <p>Models for the three species performed better than the random, with an AUC values 0.97 (
+                    
+                <italic>C. procera</italic>), 0.98 (
+                    
+                <italic>P. cinararia</italic>), and 0.97 (
+                    
+                <italic>Ziziphus spina-christi</italic>). The jackknife test of variable importance for 
+                    
+                <italic>C. procera</italic> concede that out of the 10 selected environmental variables for model execution, precipitation of the coldest quarter (36.3%) temperature annual range (27.2%) and annual precipitation (6.3%) exhibited the highest gain towards the habitat distribution (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f1">Figure 1a</ext-link>). Whereas for 
+                    
+                <italic>P. cinararia</italic> precipitation of the coldest quarter followed by temperature seasonality and mean diurnal range were the highly influencing variables for its distribution (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f1">Figure 1b</ext-link>). At the same time for 
+                    
+                <italic>Ziziphus spina-christi</italic> precipitation of wettest month (56.1%) influenced the most followed by precipitation of the coldest quarter and annual precipitation (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f1">Figure 1c</ext-link>). Locations for each species are available as 
+                    
+                <italic>Underlying data</italic>
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-41">41</ext-link>
+                </sup>.
+            </p>
+            <table-wrap id="T1">
+                <label>Table 1.</label>
+                <caption>
+                    <title>Variable contributions in percent for 
+                            Calotropis procera, 
+                            Prosopis cineraria and 
+                            Ziziphus spina-christi.</title>
+                </caption>
+                <table>
+                    <tbody>
+                        <tr>
+                            <tr>Variable</tr>
+                            <tr>Percent contribution</tr>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <italic>Calotropis Procera</italic>
+                            </tr>
+                            <tr>
+                                <italic>Prosopis cineraria</italic>
+                            </tr>
+                            <tr>
+                                <italic>Ziziphus spinachristi</italic>
+                            </tr>
+                        </tr>
+                        <tr>
+                            <tr>bio19</tr>
+                            <tr>26.8</tr>
+                            <tr>38.9</tr>
+                            <tr>44.8</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio12</tr>
+                            <tr>25.2</tr>
+                            <tr>36.6</tr>
+                            <tr>18.1</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio2</tr>
+                            <tr>14.4</tr>
+                            <tr>11.7</tr>
+                            <tr>16.2</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio11</tr>
+                            <tr>6.8</tr>
+                            <tr>8.5</tr>
+                            <tr>9</tr>
+                        </tr>
+                        <tr>
+                            <tr>Elevation</tr>
+                            <tr>6.3</tr>
+                            <tr>2.8</tr>
+                            <tr>4.8</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio7</tr>
+                            <tr>5.8</tr>
+                            <tr>0.5</tr>
+                            <tr>3.5</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio5</tr>
+                            <tr>5.3</tr>
+                            <tr>0.3</tr>
+                            <tr>1.6</tr>
+                        </tr>
+                        <tr>
+                            <tr>Land cover</tr>
+                            <tr>4.8</tr>
+                            <tr>0.3</tr>
+                            <tr>0.9</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio13</tr>
+                            <tr>2.1</tr>
+                            <tr>0.2</tr>
+                            <tr>0.8</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio16</tr>
+                            <tr>1.3</tr>
+                            <tr>0.1</tr>
+                            <tr>0.3</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio4</tr>
+                            <tr>1.2</tr>
+                            <tr>0.1</tr>
+                            <tr>0.1</tr>
+                        </tr>
+                        <tr>
+                            <tr>bio14</tr>
+                            <tr>0</tr>
+                            <tr>0</tr>
+                            <tr>0</tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>Figure 1. 
+            <p>Jackknife variable contribution test for 
+                            
+                <italic>Calotropis procera</italic> (
+                            
+                <bold>a</bold>), 
+                            
+                <italic>Prosopis cineraria</italic> (
+                            
+                <bold>b</bold>) and 
+                            
+                <italic>Ziziphus spina-christi</italic> (
+                            
+                <bold>c</bold>).
+            </p>
+        </sec>
+        <sec>
+            <title>Current habitat suitability</title>
+            <p>Results from the current habitat distribution map (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f2">Figure 2</ext-link>) clearly indicate that the environmental conditions in the northern part of the UAE (Ras AlKhaimah, Al-Fujayrah, Sharjah, Ajman, Umm Al-Quwain, Dubai and Al-Ain) act as the most suitable habitat for the selected three species. The predicted habitat suitability was reclassified into three classes and this unfolded that only 1.9% of the country showed high habitat suitability (H) for 
+                    
+                <italic>C. procera</italic> (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f3">Figure 3</ext-link>) followed by 9.4% as medium suitability habitat (M). The remaining 88.6% of the country has low environmental suitability (L) for this particular species. For 
+                    
+                <italic>P. cinararia</italic> (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f3">Figure 3</ext-link>), 1.5% of the total area was predicted as a highly suitable habitat and 5.7% as medium suitability. 
+                    
+                <italic>Ziziphus spinachristi</italic> (
+                    
+                <ext-link ext-link-type="uri" xlink:href="#f3">Figure 3</ext-link>) revealed high and medium suitability habitat of around 5.7% and 11.5%, respectively.
+            </p>Figure 2. 
+            <p>Current and future habitat distribution (current, 2050s and 2070s) for 
+                            
+                <italic>Calotropis procera</italic> (
+                            
+                <bold>a</bold>), 
+                            
+                <italic>Prosopis cineraria</italic> (
+                            
+                <bold>b</bold>) and 
+                            
+                <italic>Ziziphus spina-christi</italic> (
+                            
+                <bold>c</bold>).
+            </p>Figure 3. 
+        </sec>
+        <sec>
+            <title>Habitat suitability distribution as affected by climate change (current, 2050 and 2070) for 
+                            
+                <italic>Calotropis procera</italic>, 
+                            
+                <italic>Prosopis cineraria</italic> and 
+                            
+                <italic>Ziziphus spina-christi</italic>.
+            </title>
+        </sec>
+        <sec>
+            <title>Future habitat suitability</title>
+            <p>The future (2050s) habitat distribution of 
+                    
+                <italic>C. procera</italic> indicated a slight reduction in the high (1.6%) and medium (8.8%) suitability classes. As for 2070s, the model predicted a visible increase in the high suitability class to 7% and medium suitability to 11.9%. The northern part of the country remains the highest environmentally suitable habitat for 
+                    
+                <italic>C. procera</italic>. For 
+                    
+                <italic>P. cinararia</italic> it is predicted that by 2050s, high suitability will be 8.5% and medium suitability will be 12.3%. In contrast, and by 2070s the high- and medium-suitability classes will see a reduction to 7% and 10.3% of the total area, respectively. For 
+                    
+                <italic>Ziziphus spina-christi</italic> distribution, an increase of its high habitat suitability distribution for both 2050s and 2070s, as climate is expected to change.
+            </p>
+        </sec>
+        <sec>
+            <title>Discussion</title>
+            <p>In this study we predicted the suitable habitat for three significant dry land species with the MaxEnt model. Both current and future habitat distribution models of the selected three species were efficiently projected by MaxEnt. Both 
+                
+                <italic>C. procera</italic> and 
+                
+                <italic>P. cinararia</italic> had less area in the high habitat suitability for the present scenario. Whereas 
+                
+                <italic>Ziziphus spina-christi</italic> had comparatively high present suitable habitat in the country. All three species were projected to have an increased level of high habitat suitability in the future. 
+                
+                <italic>Calotropis procera</italic> can easily adapt with harsh climate conditions especially they rapidly adjust with water availability and loss
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-42">42</ext-link>
+                </sup>. A study by Frosi 
+                
+                <italic>et al</italic>.
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-43">43</ext-link>
+                </sup> suggested that 
+                
+                <italic>C. procera</italic> has high water use efficiency because of its high photosynthetic rate, despite a reduced stomatal conductance, which acts as its fundamental strategy to survive harsh growth conditions.  
+                
+                <italic>P. cineraria</italic> is the national tree of UAE and most of the artificial forest and road sides in the country are afforested by this plant. It normally grows on soils ranging from sandy to clay loam Kumawat
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-44">44</ext-link>
+                </sup>.
+            </p>
+            <p>The present study can be useful for selecting species like 
+                
+                <italic>p. cinararia</italic> for forest and roadside plantation in the future floral conservation programs. Predicted areas for 
+                
+                <italic>P. cineraria</italic> consist of a large area of artificial forest
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-27">27</ext-link>
+                </sup>. In UAE, during the past few decades around 300,000 ha has been planted with forests
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-45">45</ext-link>
+                </sup>. The main purpose of these plantation is to combat desertification by afforestation. These artificial forests utilizes numerous resources with no economic benefit.
+            </p>
+            <p>Other than 
+                
+                <italic>P. cineraria</italic>, these forests consists of many other native and invasive species including 
+                
+                <italic>P. juliflora</italic>, 
+                
+                <italic>Salvadora persica</italic> and 
+                
+                <italic>Ziziphus spina-christi</italic>. 
+                
+                <italic>P. cineraria</italic> can have a positive impact on specie diversity and density
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-27">27</ext-link>
+                </sup>. 
+                
+                <italic>Prosopis cineraria</italic> improves organic matter, soil physical conditions and water-holding capacity. Therefore, it outperforms other species in the same area. Soil nutrient content is higher beneath the 
+                
+                <italic>P. cineraria</italic> trees
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-27">27</ext-link>
+                </sup>. Growth and floral diversity are better under 
+                
+                <italic>P. cineraria</italic> than on adjacent areas
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-46">46</ext-link>
+                </sup>.
+            </p>
+            <p>
+                <italic>Ziziphus spina-christi</italic> can resist heat and drought and its deep taproot provide an extraordinary regenerative potentials. This might be the reason for larger area distribution of this species in the UAE. Yet these species’ future habitat suitability areas are important for the country to incorporate in the conservation strategies under climate change. The areas predicted to be suitable can be considered for afforestation programs in the UAE. For all the three species, and with climate change impact, maximum habitat suitability predictions will be in the north-eastern parts of the UAE. It is important to highlight that one of the most vulnerable areas to climate change are dry land ecosystems
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-47">47</ext-link>
+                </sup>.
+            </p>
+        </sec>
+        <sec>
+            <title>Conclusion</title>
+            <p>The MaxEnt model provides useful information about species and their satiable habitats, which can be used as a basis in planning future conservation and afforestation programs. Additionally, the model is also efficient in predicting species distribution under different climate change scenarios. Conservation and afforestation programs considering the species and their suitable habitats, therefore, will not only be easily manageable and sustainable but also economically efficient by using different SDMs. Finer spatial scales of species distribution modeling may be an appropriate next step toward species conservation under the potential changes in climatic conditions.</p>
+        </sec>
+        <sec>
+            <title>Data availability</title>
+        </sec>
+        <sec>
+            <title>Underlying data</title>
+            <p>Figshare:	SURE2018.zip. 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.6084/m9.figshare.8233328.v1">https://doi.org/10.6084/m9.figshare.8233328.v1</ext-link>
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-41">41</ext-link>
+                </sup>. This project contains a zipped folder made up of the following files:
+            </p>
+            <list list-type="bullet">
+                <list-item>
+                    <p> Calotropis procera.csv (location of 
+                            
+                        <italic>Calotropis procera</italic> this study).
+                    </p>
+                </list-item>
+                <list-item>
+                    <p> Prosopis cineraria.csv (location of 
+                            
+                        <italic>Prosopis cineraria</italic> in this study).
+                    </p>
+                </list-item>
+                <list-item>
+                    <p> Ziziphus  spinachristi.csv  (location  of  
+                            
+                        <italic>Ziziphus spinachristi</italic> in this study).
+                    </p>
+                </list-item>
+            </list>
+            <p>Data are available under the terms of the 
+                    
+                <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International license</ext-link> (CC-BY 4.0).
+            </p>
+        </sec>
+    </body>
+    <back>
+        <ref-list>
+            <title>References</title>
+            <ref>
+                <element-citation>
+                    <article-title>Impacts of climate change on the future of biodiversity.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Reframing ecosystem management in the era of climate change: issues and knowledge from forests.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Prediction of climate warming impacts on plant species could be more complex than expected. evidence from a case study in the himalaya.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Mapping of climate change threats and human development impacts in the arab region. undp arab development report–research paper series, undp regiona bureau for the arab states</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Climate Change and Drylands International Institute for Environmental Development- Commission on Climate Change and Development</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Relationships between landforms, soil characteristics and dominant xerophytes in the hyper-arid northern united arab emirates.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Early Growth Stages of the Rare Acridocarpus orientalis in the UAE-A First Step towards Conservation.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The physical science basis</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Climate change scenarios for the united kingdom scientific report 1998</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Species: a spatial evaluation of climate impact on the envelope of species.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Ensemble forecasting of species distributions.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Maxent modeling for predicting the potential distribution of endangered medicinal plant (
+                        h. riparia lour) in yunnan, China.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Climatic-induced shifts in the distribution of teak (
+                        tectona grandis) in tropical asia: implications for forest management and planning.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Competitive interactions between tree species in new zealand’s old-growth indigenous forests.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Avoiding pitfalls of using species distribution models in conservation planning.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Making better biogeographical predictions of species’ distributions.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Predicting species distributions from small numbers of occurrence records: a test case using cryptic geckos in madagascar.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Climatic niche models and their consensus projections for future climates for four major forest tree species in the Asia–Pacific region.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Predicting the impacts of climate change on the distribution of 
+                        juniperus excelsa m. bieb. in the central and eastern alborz mountains, iran.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Tradeoffs of different types of species occurrence data for use in systematic conservation planning.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Predicting species distributions for conservation decisions.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Maximum entropy modeling of species geographic distributions.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The effect of sample size and species characteristics on performance of different species distribution modeling methods.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Raxworthy cj, nakamura m, townsend peterson a.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Maximum entropy modeling of species geographic distributions.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Calotropis procera (ushaar) keratitis.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Artificial forests as conservation sites for the native flora of the uae.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The worldclim interpolated global terrestrial climate surfaces</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Arcgis 10.1</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Rcp 4.5: a pathway for stabilization of radiative forcing by 2100.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Very high resolution interpolated climate surfaces for global land areas.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Novel methods improve prediction of species’ distributions from occurrence data.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Locating pleistocene refugia: comparing phylogeographic and ecological niche model predictions.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Maxent modeling for predicting suitable habitat for threatened and endangered tree 
+                        canacomyrica monticola in new caledonia.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Botanical richness and endemicity patterns of borneo derived from species distribution models.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Ecology driving genetic variation: a comparative phylogeography of jungle cat (
+                        Felis chaus) and leopard cat (
+                        Prionailurus bengalensis) in India.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>A statistical explanation of maxent for ecologists.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Species-specific tuning increases robustness to sampling bias in models of species distributions: an implementation with maxent.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Assessing the accuracy of species distribution models: prevalence, kappa and the true skill statistic (tss).</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Predicting impacts of climate change on medicinal asclepiads of pakistan using maxent modeling.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Sure2018.zip</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Metabolomic response of Calotropis procera growing in the desert to changes in water availability.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Ecophysiological performance of 
+                        calotropis procera: an exotic and evergreen species in caatinga, brazilian semi-arid.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Managing rangelands: promoting sustainable tree species "prosopis cineraria": A wonder tree for agroforestry in arid and semi-arid areas"</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>State of Environment Report of the United Arab Emirates 2015</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Camel grazing affects species diversity and community structure in the deserts of the UAE.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>National Climate Change Plan of the United Arab Emirates 2017-2050</article-title>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
 </article>

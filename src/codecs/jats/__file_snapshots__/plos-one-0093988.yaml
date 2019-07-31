@@ -203,29 +203,55 @@ content:
         lost by the airline. The officer in the claims department puts them in
         separate rooms, hands each of them a claims form, and tells them that
         they can claim any integer amount between 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e001'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e002'
       - ' ('
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e003'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e004'
       - ' are assumed to be positive integers with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e005'
       - >-
         ). He also informs them that if they both ask for the same amount, they
         will be paid that amount, and if they ask for different amounts, each
         will be reimbursed at the lower value, but with a penalty 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e006'
       - ' deducted from the higher claimant (who is assumed to have lied) and given to the lower claimant (as a reward for being honest). Thus, the TD game is a 2-person game with the discrete strategy set '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e007'
       - ', and payoff to an '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e008'
       - '-claimant against a '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e009'
       - '-claimant is defined by '
       - (1)
       - >-
         In this context a Nash equilibrium is a pair of claims, such that, if
         each claim is known to the other traveler then neither has reason to
         revise their claim. For 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e011'
       - >-
         , there is an incentive for each traveler to undercut any common claim.
         Using backward induction, it is not hard to see that the travelers
         should each claim the amount 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e012'
       - ', i.e., '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e013'
       - ' is a unique Nash equilibrium for the TD game. Thus, the unique Nash equilibrium of the TD game is the paradoxical outcome in which both travelers claim the lowest possible amount. We note, in particular, that the Nash equilibrium is independent of the reward/punishment parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e014'
       - >-
         . However, as intuition would suggest, this is not how individuals
         actually play this game 
@@ -253,7 +279,11 @@ content:
           - '[22]'
         relation: bibr
       - ' found the following results when they played the game with 50 subjects (25 pairs). The subjects could make claims between 180 and 300, in two treatments, one with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e015'
       - ' and another with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e016'
       - '. The results are shown in '
       - type: Link
         target: '#pone-0093988-g001'
@@ -261,12 +291,20 @@ content:
           - Figure 1(a)
         relation: fig
       - . In the high-
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e017'
       - ' treatment, close to 80 percent of all the subjects chose the Nash equilibrium strategy, with an average claim of 201. However, in the low-'
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e018'
       - ' treatment, roughly the same fraction chose the highest possible claim, with an average value of 280. Since the unique Nash equilibrium prediction is independent of the parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e019'
       - >-
         , classical game theory is unable to explain the most salient feature of
         these experimental results, namely, the effect of the reward/punishment
         parameter 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e020'
       - ' on average claim levels.'
   - 10.1371/journal.pone.0093988.g001
   - Figure 1
@@ -288,9 +326,17 @@ content:
       - >-
         (a) TD game: individuals make higher claims when the reward/punishment
         parameter 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e021'
       - ' is low, and make lower claims when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e022'
       - ' is high. (b) MEC game: individuals expend more effort when the effort cost '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e023'
       - ' is low, and less effort when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e024'
       - ' is high.'
   - type: Paragraph
     content:
@@ -315,18 +361,34 @@ content:
           - '[20]'
         relation: bibr
       - '. In this game the players choose integer effort levels between '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e025'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e026'
       - ' (where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e027'
       - ' is assumed to be an integer greater than '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e028'
       - >-
         ), and a player's payoff is given by the minimum of the two effort
         levels minus the cost of the player's own effort. Therefore, the MEC
         game is a 2-person game with the discrete strategy set 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e029'
       - ', and payoff to an '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e030'
       - '-strategist against a '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e031'
       - '-strategist defined by '
       - (2)
       - 'where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e033'
       - ' is a cost parameter. The MEC game suffers from the opposite problem to that of the TD game. Instead of exhibiting a single, deficient, Nash equilibrium, the MEC game exhibits multiple Nash equilibria; it is easy to see that any common effort level is a Nash equilibrium. Moreover, standard refinements of the Nash equilibrium concept do not select a subset of the equilibria. For instance, the Nash equilibria are strict, and thus trembling hand-perfect. Hence, classical game theory provides no obvious criterion to choose among them.'
   - type: Paragraph
     content:
@@ -352,7 +414,11 @@ content:
           - '[17]'
         relation: bibr
       - ' found the following results in their experiment. The subjects could chose integer effort levels from 110 to 170, in one of two treatments, a low effort cost treatment of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e034'
       - ' and a high effort cost treatment of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e035'
       - '. The results are shown in '
       - type: Link
         target: '#pone-0093988-g001'
@@ -373,6 +439,8 @@ content:
         classical game theory are not resolved by instead using standard
         deterministic evolutionary game theory. Since the unique Nash
         equilibrium 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e036'
       - ' in the TD game is strict it is a globally stable equilibrium point for the replicator dynamics '
       - type: Link
         target: '#pone.0093988-Hofbauer1'
@@ -382,6 +450,8 @@ content:
       - >-
         . Hence, the replicator dynamics of the TD game will always converge to
         the minimum claim level 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e037'
       - >-
         . Similarly, in the MEC game every common effort level is a strict Nash
         equilibrium and hence a stable equilibrium point for the replicator
@@ -569,31 +639,71 @@ content:
         payoff function given by 
       - (3)
       - 'where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e039'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e040'
       - ' are affine functions, and the strategies '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e041'
       - >-
         . This class of games includes the continuous-strategy variants of both
         the TD and MEC games. Errors in the observation of an opponents strategy
         or in the implementation of ones own strategy will result in the
         expected payoff to an 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e042'
       - '-strategist against a '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e043'
       - '-strategist in such a game being given by a function of the form '
       - (4)
       - 'where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e045'
       - ' defines the probability that in an interaction between an '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e046'
       - '-strategist and a '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e047'
       - '-strategist errors lead to the '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e048'
       - '-strategist receiving the payoff '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e049'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e050'
       - ' defines the probability that in such an interaction errors result in the '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e051'
       - '-strategist receiving the payoff '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e052'
       - '. We observe that the probability functions '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e053'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e054'
       - ' are necessarily complementary in the sense that '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e055'
       - ', from which it follows that '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e056'
       - '. The probability functions '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e057'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e058'
       - ' are determined by the statistical distribution of errors in the game. Here, for simplicity, we shall assume that the function '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e059'
       - ' is '
       - type: Emphasis
         content:
@@ -603,6 +713,8 @@ content:
         content:
           - smoothing
       - ' of the original discontinuous payoff function (3). We shall often refer to the function '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e060'
       - ' as the smoothing function. In the limit in which the smoothing function tends to the Heaviside step function the expected payoff (4) approaches the payoff (3).'
   - type: Paragraph
     content:
@@ -625,6 +737,8 @@ content:
           - '[41]'
         relation: bibr
       - ' of the smoothed payoff function. In our approach the effects of errors in the game is encoded in the smoothing function '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e061'
       - >-
         . Here we study the evolutionary dynamics of the smoothed versions of
         the TD and MEC game, for an arbitrary smoothing function, and show that
@@ -796,10 +910,20 @@ content:
         games with payoff functions given by 
       - (5)
       - 'for affine functions '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e063'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e064'
       - ', and strategies '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e065'
       - '. We may write '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e066'
       - ' more succinctly with the aid of the Heaviside step function '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e067'
       - (6)
       - 'as '
       - (7)
@@ -812,29 +936,57 @@ content:
         representing the expected payoff. We now define such a variant of the
         game in which the discontinuity in the payoff function is removed by a
         smoothing procedure. To accomplish this we introduce a 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e070'
       - '-parameter family of smoothing functions '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e071'
       - '. The functions '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e072'
       - ' are assumed to be smooth, non-decreasing functions of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e073'
       - ', with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e074'
       - ', '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e075'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e076'
       - '. Furthermore, we assume that '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e077'
       - ' as '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e078'
       - '. We will refer to the parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e079'
       - ' as the smoothing parameter.'
   - type: Paragraph
     content:
       - >-
         To obtain the smoothed version of the game defined by (7) we simply
         replace 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e080'
       - ' in the payoff function with its smooth approximation '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e081'
       - '. Thus, the payoff function of the smoothed game is given by '
       - (8)
       - 'We note that for sufficiently large values of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e083'
       - ' the smoothed game approximates the original game arbitrarily well.'
   - type: Paragraph
     content:
       - 'A convenient '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e084'
       - '-parameter family of smoothing functions is given by '
       - (9)
       - >-
@@ -850,10 +1002,20 @@ content:
       - >-
         The claims made by individuals in the TD game represent their
         strategies. If 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e086'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e087'
       - ' denote the strategies used by two individuals playing the continuous version of the game, and if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e088'
       - ' denotes the reward/punishment parameter (where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e089'
       - '), then the payoff to the '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e090'
       - '-strategist is given by '
       - (10)
       - >-
@@ -861,7 +1023,11 @@ content:
         discontinuity in the payoff function is removed by the smoothing
         procedure described above. To obtain the smoothed TD game we simply
         replace 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e092'
       - ' in the payoff function with its smooth approximation '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e093'
       - >-
         . We therefore have that the payoff function for the smoothed TD game is
         given by 
@@ -869,7 +1035,11 @@ content:
       - >-
         We shall assume, without loss of generality, that the strategy space in
         the smoothed TD game is the interval 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e095'
       - ', and also that the reward/punishment parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e096'
       - >-
         . With the payoff function defined by (11), the smoothed TD game
         represents a natural variant of the original TD game.
@@ -884,11 +1054,23 @@ content:
         In the MEC game, the effort levels of the individuals represent their
         strategies. In the continuous version of the MEC game, if the strategies
         of two individuals playing the game are 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e097'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e098'
       - ' (where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e099'
       - ') and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e100'
       - ' is the effort cost, then the payoff '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e101'
       - ' to the '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e102'
       - '-strategist is given by '
       - (12)
       - 'Using (12) allows us to write the payoff function for the MEC game as '
@@ -896,14 +1078,26 @@ content:
       - >-
         Without loss of generality we can take the strategy space to be the unit
         interval (i.e. 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e105'
       - '). Every strategy pair '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e106'
       - ' is a Nash equilibrium in this game. The social dilemma embodied in this continuous-strategy game is clearly the same as for the original discrete MEC game: at any equilibrium both players obtain a payoff of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e107'
       - ', thus all equilibria with the sole exception of the strategy pair '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e108'
       - ' are Hicks inefficient.'
   - type: Paragraph
     content:
       - 'To obtain the smoothed MEC game we again replace '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e109'
       - ' in the payoff function (13) with its smooth approximation '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e110'
       - '. The payoff function of the smoothed MEC game is therefore given by '
       - (14)
       - >-
@@ -940,45 +1134,101 @@ content:
       - >-
         . Consider a monomorphic population in which every individual adopts the
         same strategy, 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e112'
       - >-
         . It follows from replicator dynamics that the growth rate of a rare
         mutant strategy, 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e113'
       - ', in the resident '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e114'
       - ' population is '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e115'
       - ', where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e116'
       - ' is the payoff to an '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e117'
       - '-strategist interacting with a '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e118'
       - '-strategist. The quantity '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e119'
       - ' is referred to as the invasion fitness. The evolution of the strategy '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e120'
       - ' is then governed by the selection gradient '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e121'
       - ', and the adaptive dynamics of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e122'
       - ' is determined by the differential equation '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e123'
       - .
   - type: Paragraph
     content:
       - >-
         Equilibrium points of the adaptive dynamics are called singular
         strategies and are solutions of 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e124'
       - '. If no such solutions exist, then the strategy '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e125'
       - ' monotonically increases or decreases under evolution, depending on the sign of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e126'
       - '. If '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e127'
       - ' exists, it is convergent stable and, hence an attractor for the adaptive dynamics, if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e128'
       - '. If this equality is reversed, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e129'
       - ' is a repeller.'
   - type: Paragraph
     content:
       - >-
         Initially, the population will converge to a convergent stable singular
         point 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e130'
       - ', but its subsequent evolutionary fate depends on whether '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e131'
       - ' is a maximum or minimum of the invasion fitness '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e132'
       - '. If '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e133'
       - ' is a maximum, i.e., if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e134'
       - ', then '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e135'
       - ' is an evolutionarily stable strategy (ESS), representing an evolutionary end state in which all individuals adopt strategy '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e136'
       - '. If, however, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e137'
       - ', then a population of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e138'
       - '-strategists can be invaded by mutant strategies on either side of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e139'
       - >-
         . In this case the population undergoes evolutionary branching and
         splits into two distinct and diverging clusters of strategies.
@@ -989,6 +1239,8 @@ content:
         (8) may be analyzed as follows. The invasion fitness is given by 
       - (15)
       - 'Thus, the selection gradient '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e141'
       - ' is given by '
       - (16)
       - >-
@@ -996,11 +1248,23 @@ content:
         differential equation 
       - (17)
       - 'The existence of singular strategies '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e144'
       - ' in games of this form, and the particular characteristics of any such '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e145'
       - ', depend on '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e146'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e147'
       - ', and thus ultimately on the specific functions '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e148'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e149'
       - . We shall now apply these results to the TD and MEC games.
   - type: Heading
     id: s2d
@@ -1012,39 +1276,85 @@ content:
       - >-
         Let us first analyze the TD game with the payoff function given by (11).
         Consider a monomorphic population of 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e150'
       - ' strategists, i.e., a population in which every individual claims amount '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e151'
       - '. It follows from (2) and (11) that for the TD game '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e152'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e153'
       - '. Thus, the selection gradient '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e154'
       - ' is given by '
       - (18)
       - 'and the adaptive dynamics of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e156'
       - ' is consequently determined by '
       - (19)
       - 'Since '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e158'
       - ' does not depend on '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e159'
       - >-
         , there are no singular strategies, and thus there is no possibility of
         exotic evolutionary outcomes, such as evolutionary branching. The
         evolutionary dynamics of an initial strategy 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e160'
       - ' is determined by the sign of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e161'
       - '. If '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e162'
       - ' (i.e., if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e163'
       - '), then '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e164'
       - ' will evolve to '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e165'
       - '. If on the other hand, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e166'
       - ' (i.e., '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e167'
       - ') then '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e168'
       - ' will evolve to '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e169'
       - >-
         . Thus, this adaptive dynamics analysis implies that the players of the
         smoothed TD game will evolve to make low claims if 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e170'
       - ', and, conversely, evolve to make high claims if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e171'
       - '. We note that for the '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e172'
       - >-
         -parameter family of smoothing functions defined by (9), this criterion
         takes the following form: claims will evolve to low levels if 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e173'
       - ', and evolve to high levels if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e174'
       - .
   - type: Heading
     id: s2e
@@ -1056,37 +1366,83 @@ content:
       - >-
         We next turn to the MEC game where the payoff function is given by (14).
         Consider a monomorphic population of 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e175'
       - ' strategists, i.e., a population in which every individual puts in '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e176'
       - ' amount of effort. It follows from (2) and (13) that for the MEC game '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e177'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e178'
       - '. Thus, the selection gradient '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e179'
       - ' is given by '
       - (20)
       - 'and the adaptive dynamics of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e181'
       - ' is therefore determined by '
       - (21)
       - 'Again, since '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e183'
       - ' does not depend on '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e184'
       - >-
         , there are no singular strategies. Also, rather remarkably, the
         adaptive dynamics of 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e185'
       - ' is independent of the smoothing function '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e186'
       - '. The evolution of an initial strategy '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e187'
       - ' is once again determined by the sign of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e188'
       - '. If '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e189'
       - ' (i.e., if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e190'
       - ') then '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e191'
       - ' will evolve to '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e192'
       - ', and if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e193'
       - ' (i.e., if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e194'
       - ') then '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e195'
       - ' will evolve to '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e196'
       - >-
         . Therefore, this adaptive dynamics analysis implies that the players'
         strategies in the smoothed MEC game will evolve to low efforts if the
         effort cost 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e197'
       - ' is greater than '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e198'
       - ', and to high efforts if '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e199'
       - >-
         . Since the adaptive dynamics of the smoothed MEC game is independent of
         the smoothing function, these results hold for any smoothing of the
@@ -1127,38 +1483,70 @@ content:
   - type: Paragraph
     content:
       - 'Consider a population consisting of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e200'
       - ' individuals, labeled '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e201'
       - >-
         . Since we wish to allow the possibility of complex population
         structures, we identify the population with the set of vertices in a
         graph 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e202'
       - '. The structure of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e203'
       - ' determines which individuals in the population can interact. Strictly speaking, two graphs are required to specify the evolutionary dynamics: an interaction graph, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e204'
       - >-
         , specifies that two individuals in the population can interact by
         playing the game only if they are adjacent in 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e205'
       - ', and an updating graph, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e206'
       - >-
         , specifies that an individual in the population can update its strategy
         by comparing its state to the states only of those individuals adjacent
         to it in 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e207'
       - >-
         . Here, for simplicity, we shall assume that the interaction and
         updating graphs are the same i.e., 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e208'
       - '. Given an individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e209'
       - ', the set of neighbors of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e210'
       - ' (i.e., the set of individuals adjacent to '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e211'
       - ' in '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e212'
       - ') will be denoted by '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e213'
       - .
   - type: Paragraph
     content:
       - 'The agent-based model is defined as a stochastic process on '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e214'
       - >-
         . Let us fix either the TD or the MEC game as the game under
         consideration. We begin with a monomorphic population, i.e., each
         individual in the population starts out with the same initial strategy
         randomly picked from a uniform distribution. At each time step 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e215'
       - >-
         , we carry out a round of asynchronous interactions followed by a round
         of asynchronous updates. Each of these rounds involves sampling the
@@ -1166,13 +1554,29 @@ content:
   - type: Paragraph
     content:
       - 'During an interaction step, we randomly pick an individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e216'
       - ' and an individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e217'
       - ', and let the two individuals play the game against each other. If '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e218'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e219'
       - ' denote the strategies of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e220'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e221'
       - ', respectively, then the payoff '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e222'
       - ' received by the focal individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e223'
       - ' is given by either '
       - type: Link
         target: '#pone.0093988.e094'
@@ -1182,39 +1586,79 @@ content:
       - >-
         ) or (14), depending on the game under consideration. This procedure is
         repeated 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e224'
       - ' times.'
   - type: Paragraph
     content:
       - 'During an update step, we randomly pick an individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e225'
       - ' and an individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e226'
       - '. If '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e227'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e228'
       - ' denote the payoffs of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e229'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e230'
       - ', respectively, then with probability '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e231'
       - ' given by '
       - (22)
       - 'the focal individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e233'
       - ' will inherit '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e234'
       - >-
         's strategy. This update rule is often referred to as the Fermi rule.
         The parameter 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e235'
       - ' is the “selection strength'''' of the update rule. The update procedure is repeated '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e236'
       - ' times.'
   - type: Paragraph
     content:
       - >-
         Mutations are incorporated in the update procedure in the following way:
         when according to the update rule (22) 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e237'
       - '''s strategy would be replaced by '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e238'
       - '''s, then with probability '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e239'
       - ', '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e240'
       - >-
         's strategy is instead replaced by a strategy picked randomly from a
         normal distribution with mean equal to 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e241'
       - '''s strategy and standard deviation '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e242'
       - '. Carrying out '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e243'
       - ' interaction steps followed by '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e244'
       - ' update steps constitutes a single generation of the evolutionary dynamics.'
   - type: Paragraph
     content:
@@ -1227,13 +1671,25 @@ content:
         content:
           - replicator
       - ' update rule, in which the probability '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e245'
       - ' that the focal individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e246'
       - ' inherits individual '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e247'
       - '''s strategy (with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e248'
       - ') is given by '
       - (23)
       - 'where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e250'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e251'
       - >-
         . We find that the evolutionary dynamics of the smoothed TD and MEC
         games is the same irrespective of which of these update rules we employ.
@@ -1271,12 +1727,26 @@ content:
         respectively, and periodic boundary conditions. The games were simulated
         for 20000 generations. The parameter values used for the simulations
         were: population size, 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e252'
       - ' for the lattice graphs and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e253'
       - ' for the other graphs; mutation rate, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e254'
       - '; standard deviation for mutations, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e255'
       - '; smoothing parameter, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e256'
       - ' for the TD game and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e257'
       - ' for the MEC game; and selection strength, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e258'
       - .
   - type: Heading
     id: s3a
@@ -1291,19 +1761,41 @@ content:
           - Figure 2
         relation: fig
       - ' shows the variation of the average claims '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e259'
       - ' made by individuals over the last '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e260'
       - ' of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e261'
       - ' generations with the reward/punishment parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e262'
       - ', for different values of the smoothing parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e263'
       - >-
         , on the following graphs: (a) a complete graph, (c) a random regular
         graph, (d) a scale-free graph, (e) a 2D lattice graph with 4 neighbors,
         and (f) a 2D lattice graph with 8 neighbors. The 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e264'
       - ' value was varied from 0 to 1 in steps of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e265'
       - ', and each data point was obtained from an average of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e266'
       - ' runs of the model. It is apparent from these results that, for each value of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e267'
       - ', the claims are high when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e268'
       - ' and low when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e269'
       - >-
         , exactly as predicted by the adaptive dynamics analysis. This behavior
         is in good qualitative agreement with the results obtained for the TD
@@ -1320,23 +1812,51 @@ content:
   - type: Paragraph
     content:
       - '(a)(c)(d)(e)(f) Average claims '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e270'
       - ' in the smoothed TD game over the last '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e271'
       - ' of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e272'
       - ' generations versus the reward/punishment parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e273'
       - ' for different values of the smoothing parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e274'
       - >-
         , on a complete graph (a), a random regular graph with degree 10 (c), a
         scale-free graph with mean degree 10 (d), 2D lattice graph with 4
         neighbors (e), and 2D lattice graph with 8 neighbors (f). Parameter
         values: 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e275'
       - ' for lattice networks and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e276'
       - ' for other networks, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e277'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e278'
       - '. (b) Number of individuals versus their claims '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e279'
       - ', when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e280'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e281'
       - ', on a complete graph with parameter values: '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e282'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e283'
       - .
   - type: Paragraph
     content:
@@ -1346,11 +1866,23 @@ content:
           - Figure 2(b)
         relation: fig
       - ' shows the variation in the number of individuals with the claims '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e284'
       - ' they make, when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e285'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e286'
       - ', on a complete graph, with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e287'
       - '. Individuals make higher claims when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e288'
       - ', as indicated by the blue bars, and make lower claims when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e289'
       - >-
         , as indicated by the green bars. This result is in good agreement with
         the empirical results shown in 
@@ -1365,6 +1897,8 @@ content:
       - >-
         We have also simulated the game using the discontinuous form of the
         payoff function (10), and the results are shown in blue (labeled 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e290'
       - ') in panels (a), (c), (d), (e), and (f) of '
       - type: Link
         target: '#pone-0093988-g002'
@@ -1372,9 +1906,13 @@ content:
           - Figure 2
         relation: fig
       - '. In this case, the claims are consistently low for all values of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e291'
       - >-
         . This result, which is consistent with the prediction of the adaptive
         dynamics analysis of the smoothed TD game in the limit 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e292'
       - >-
         , is in agreement with the prediction of classical game theory for the
         original TD game. Thus, for the TD game studied here, the smoothing of
@@ -1393,25 +1931,49 @@ content:
           - Figure 3
         relation: fig
       - ' shows the variation of the average effort levels '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e293'
       - ' of the individuals over the last '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e294'
       - ' of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e295'
       - ' generations with the effort cost parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e296'
       - ', for various values of the smoothing parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e297'
       - >-
         , on the following graphs: (a) a complete graph, (c) a random regular
         graph, (d) a scale-free graph, (e) a 2D lattice graph with 4 neighbors,
         and (f) a 2D lattice graph with 8 neighbors. The 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e298'
       - ' value was varied from 0 to 1 in steps of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e299'
       - ', and each data point was obtained from an average over '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e300'
       - ' runs of the model. It is clear from these results that, for each value of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e301'
       - ', the effort levels are high when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e302'
       - ' and low when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e303'
       - >-
         , exactly as suggested by the adaptive dynamics analysis. These results
         are in good qualitative agreement with the empirically observed behavior
         in experiments. The results of these agent-based simulations clearly
         show the independence of the evolutionary dynamics of the smoothed MEC
         game on the smoothing function (i.e., the independence on 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e304'
       - >-
         ), which is predicted by the adaptive dynamics analysis. These results
         also suggest that the effect of network structure on the dynamics of the
@@ -1426,23 +1988,51 @@ content:
   - type: Paragraph
     content:
       - '(a)(c)(d)(e)(f) Average effort levels '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e305'
       - ' in the smoothed MEC game over the last '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e306'
       - ' of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e307'
       - ' generations versus the effort cost parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e308'
       - ' for different values of the smoothing parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e309'
       - >-
         , on a complete graph (a), a random regular graph with degree 10 (c), a
         scale-free graph with mean degree 10 (d), 2D lattice graph with 4
         neighbors (e), and 2D lattice graph with 8 neighbors (f). Parameter
         values: 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e310'
       - ' for lattice graphs and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e311'
       - ' for other graphs, '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e312'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e313'
       - '. (b) Number of individuals versus their effort levels '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e314'
       - ', when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e315'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e316'
       - ', on a complete graph with parameter values: '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e317'
       - ', and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e318'
       - .
   - type: Paragraph
     content:
@@ -1452,11 +2042,23 @@ content:
           - Figure 3(b)
         relation: fig
       - ' shows the variation in the number of individuals with their effort levels '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e319'
       - ', when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e320'
       - ' and '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e321'
       - ', on a complete network, with '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e322'
       - '. Individuals expend more effort when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e323'
       - ', as indicated by the blue bars, and expend lower effort when '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e324'
       - >-
         , as indicated by the green bars. This result is in good agreement with
         the empirical results shown in 
@@ -1471,6 +2073,8 @@ content:
       - >-
         We also simulated the model using the discontinuous form of the payoff
         function (13), and the result is shown in blue (
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e325'
       - ') in plots (a), (c), (d), (e), and (f) of '
       - type: Link
         target: '#pone-0093988-g003'
@@ -1481,6 +2085,8 @@ content:
         . In this case, there is still a transition from high to low effort
         levels as the effort cost increases, however, it is typically not as
         sharp as for the smoothed game (with any value of 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e326'
       - >-
         ). An intriguing exception to this pattern is found in the case of
         two-dimensional lattice graphs, for which the evolutionary dynamics of
@@ -1534,10 +2140,20 @@ content:
         For the smoothed TD game, we find both from the adaptive dynamics
         analysis and from the agent-based simulations, that claims vary with the
         reward/punishment parameter 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e327'
       - ' in a fashion that is in excellent agreement with the empirically observed behavior: low values of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e328'
       - ' result in high claims and high values of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e329'
       - ' result in low claims. We recover the classical game theory result that claims in the TD game with discontinuous payoff remain low for all values of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e330'
       - ' by considering the limit in which the smoothing parameter '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e331'
       - >-
         . Different interaction patterns among the individuals playing the
         smoothed TD game, as represented by studying the game on graphs of
@@ -1550,6 +2166,8 @@ content:
         analysis, both analytical and through simulations, again yields results
         in good agreement with experiment: high effort levels are found for low
         effort cost 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e332'
       - ' and low effort levels occur for high effort cost. We again find that when the smoothed MEC game is formulated on graphs of differing topology the topological type has no significant effect on the evolutionary dynamics of the game.'
   - type: Paragraph
     content:
@@ -1582,13 +2200,21 @@ content:
           - '[38]'
         relation: bibr
       - ' one considers the interactions between two firms that produce a homogeneous product. The strategy of each firm is the unit price that they set for their product. It is assumed that customers will buy a quantity '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e333'
       - ' (where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e334'
       - ' is the demand function) from the firm with the lower price '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e335'
       - >-
         , and will buy nothing from the firm with the higher price. If both
         firms set the same price then it is assumed that demand is split equally
         between them. It is also assumed that both firms have the same marginal
         cost 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e336'
       - >-
         . Thus, the payoff obtained by one firm in its interaction with the
         other is a discontinuous function of the difference between the prices
@@ -1604,13 +2230,25 @@ content:
         The smoothed BD model can be analyzed using adaptive dynamics just as we
         have done here for the TD and MEC games. It may be shown for an
         arbitrary smoothing, that given a linear demand function 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e337'
       - ' there exists a unique singular strategy '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e338'
       - ' (in the domain of interest), that is strictly greater than the marginal cost '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e339'
       - '. Furthermore, it may also be shown that the singular strategy '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e340'
       - ' is always both convergent stable and an ESS. Thus, the evolutionary dynamics of the smoothed BD game results in the prices set by both firms converging to the level '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e341'
       - >-
         , which is strictly greater than the marginal cost. At the evolutionary
         equilibrium 
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e342'
       - ' both firms obtain a positive payoff. Thus, the introduction of the smoothed BD model effectively resolves the Bertrand Paradox that occurs in the classical model. Moreover, our method extends to the case of an arbitrary number of firms and sheds light on the results obtained in '
       - type: Link
         target: '#pone.0093988-Dufwenberg1'

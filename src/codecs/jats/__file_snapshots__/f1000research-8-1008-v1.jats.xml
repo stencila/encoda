@@ -1,63 +1,508 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
 <article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
-  <front>
-    <title-group>
-      <article-title>undefined</article-title>
-    </title-group>
-    <contrib-group>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <contrib contrib-type="author">
-        <name>
-          <surname>undefined</surname>
-          <given-names>undefined</given-names>
-        </name>
-        <xref ref-type="aff" rid="unique"/>
-      </contrib>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-      <aff id="unique">
-        <institution/>
-      </aff>
-    </contrib-group>
-  </front>
-  <body/>
-  <back/>
+    <front>
+        <title-group>
+            <article-title>The protective effects of antigen-specific IgY on pyocyanin-treated human lymphoma Raji cells</article-title>
+        </title-group>
+        <contrib-group>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Susilowati</surname>
+                    <given-names>Heni</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Artanto</surname>
+                    <given-names>Sidna</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Yulianto</surname>
+                    <given-names>Heribertus Dedy Kusuma</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Sosroseno</surname>
+                    <given-names>Wihaskoro</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <contrib contrib-type="author">
+                <name>
+                    <surname>Hutomo</surname>
+                    <given-names>Suryani</given-names>
+                </name>
+                <xref ref-type="aff" rid="unique"/>
+            </contrib>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+            <aff id="unique">
+                <institution/>
+            </aff>
+        </contrib-group>
+    </front>
+    <body>
+        <sec>
+            <title>Introduction</title>
+            <p>
+                <italic>Pseudomonas aeruginosa,</italic> an opportunistic Gram-negative bacterium, is found in the environment with a broad spectrum of habitats and is responsible for severe nosocomial infections in the urinary tract
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-1">1</ext-link>
+                </sup>, the respiratory tract
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-2">2</ext-link>
+                </sup>, the vascular system
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-3">3</ext-link>
+                </sup> and the central nervous system
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-4">4</ext-link>
+                </sup>. It is known for one of the most common pathogens infecting patients with cystic fibrosis, leading to increase its morbidity and mortality due to the resisting abilities of this pathogen to against antibiotic treatments
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-5">5</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-6">6</ext-link>
+                </sup>. The presence of 
+                
+                <italic>P. aeruginosa</italic> in dental pulp and periapical lesions may cause failure of endodontic treatments
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-7">7</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-8">8</ext-link>
+                </sup>. In the initial stage of infection, 
+                
+                <italic>P. aeruginosa</italic> releases various virulent mediators, such as elastases, proteases, exotoxin A, and pyocyanin (PCN), after which chronic infection and persistent bacterial colonization at the 
+                
+                <italic>P. aeruginosa</italic>-infected sites would be established
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-9">9</ext-link>
+                </sup>. PCN, a blue redox-active secondary metabolite and a member of tricyclic phenazine family, is known to function as a gene controller during the stationary growth phase
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-10">10</ext-link>
+                </sup>, an antibiotic
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-11">11</ext-link>
+                </sup>, an electron transfer facilitator
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-12">12</ext-link>
+                </sup>, and a potent mammary cell-damaging virulence factor
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-13">13</ext-link>
+                </sup>. Reports indicate that PCN inhibits B cell, T cell and macrophage functions
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-14">14</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-15">15</ext-link>
+                </sup> and induces neutrophil apoptosis
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-16">16</ext-link>
+                </sup>, suggesting that PCN suppresses both innate and antigen-specific adaptive immune response.
+            </p>
+            <p>The existence of multidrug-resistant (MDR) 
+                
+                <italic>P. aeruginosa</italic> leads to the development of alternative treatment strategies to eradicate an established chronic 
+                
+                <italic>P. aeruginosa</italic> infection. Of these treatments, both active and passive immunotherapies have been reported. Active immunization with 
+                
+                <italic>P. aeruginosa</italic>-derived flagella in cystic fibrosis patients resulted in increased serum antigen-specific IgG antibodies and reduced number of 
+                
+                <italic>P. aeruginosa</italic> strains, suggesting the reduction of 
+                
+                <italic>P. aeruginosa</italic> infection risk in cystic fibrosis patients by active vaccination
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-17">17</ext-link>
+                </sup>. Passive immunization with egg yolk immunoglobulin (IgY) specific to 
+                
+                <italic>P. aeruginosa</italic> in patients with cystic fibrosis prevented bacterial colonization and infection, perhaps by acting as an opsonin, which in turn enhanced neutrophil phagocytosis to this pathogen
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-18">18</ext-link>–
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-20">20</ext-link>
+                </sup>. A recent study showed that PCN induces caspase 3-dependent human B cell (Raji Cells) death
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-21">21</ext-link>
+                </sup>. The aim of the present study, therefore, was to determine whether antigen-specific IgY antibodies may prevent PCN-induced Raji cell death.
+            </p>
+        </sec>
+        <sec>
+            <title>Methods</title>
+        </sec>
+        <sec>
+            <title>IgY preparation and purification</title>
+            <p>PCN (Sigma-Aldrich, St. Louis, MO, USA) was dissolved in DMSO at a concentration of 1 mg/ml. Five Leghorn chickens aged 3 months were subcutaneously immunized with 500 μl of Freund's complete adjuvant (Sigma-Aldrich) containing 100 μg of PCN in the back of the neck. Two weeks later, a booster was given by injecting 500 μl incomplete Freund adjuvant containing 40 μg PCN as above and the same immunization regime was repeated two weeks later. Eggs were collected one week after the last immunization and IgY was isolated by using Pierce® Chicken IgY Purification Kit (Thermo Fisher Scientific Pierche Biotechnology, Rockford, USA) according to the manufacturer. The presence of anti-PCN IgY antibodies was detected using the agarose gel precipitation test (AGPT) as previously reported
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-22">22</ext-link>
+                </sup> and its concentration was assessed using the Chicken IgY ELISA Kit (Elabscience Biotechnology Co., Ltd, USA). The AGPT test was performed three times, each of 4 isolates from the first and second IgY purification results. The ELISA was then performed on two IgY batches.
+            </p>
+        </sec>
+        <sec>
+            <title>Cell cultures</title>
+            <p>Raji cells, a human B cell line, obtained from central university laboratory LPPT, Universitas Gadjah Mada, Yogyakarta, Indonesia, were cultured in RPMI 1640 medium supplemented with 10% fetal bovine serum, 100 UI/ml of penicillin-streptomycin, and 250 μl/ml of amphotericin B and then incubated in 5% CO
+                    
+                <sub>2</sub> humidity. All materials for culture medium were purchased from Sigma-Aldrich. The cells were cultured in 96-well plates and five replicates were carried out for assays.
+            </p>
+        </sec>
+        <sec>
+            <title>Cell viability</title>
+            <p>PCN (Sigma-Aldrich) was initially dissolved in DMSO (Sigma-Aldrich) at a concentration of 1 mg/ml and then diluted in RPMI to a final concentration of 1 μg/ml, 10 μg/ml, 25 μg/ml, and 50 μg/ml. Raji cells at 2 × 10
+                    
+                <sup>4</sup> cells incubated without the presence of PCN were used as a negative control. After exposure to various concentration of PCN then the cultures were incubated at 37°C for 24 hours. In the next experiments, the cells, at a concentration of 2 × 10
+                    
+                <sup>4</sup> cells/well, were treated with 50 μg/ml PCN with or without the presence of various concentration (6.71 μg/ml, 13.42 μg/ml, 28.19 μg/ml, 55.49 μg/ml, 111.87 μg/ml, and 223.75 μg/ml) of anti-PCN IgY were cultured in 96-well plates and incubated for 16 hours. Cell survivability was assessed by MTT assay as described previously
+                    
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-21">21</ext-link>
+                </sup>. Experiments were carried out three times with 8 replicates in each group.
+            </p>
+            <p>In order to assess cell viability, 5 × 10
+                    
+                <sup>4</sup> cells/well were cultured on sterile coverslips in 24-well plates for 24 hours and then treated with PCN in the presence or absence of anti-PCN IgY (55.49 µg/ml) for 16 hours. Subsequently, the cells were stained with acrydine orange/ethidium bromide and viewed under Digital Carl Zeiss-Axioscope 40 (Carl Zeiss Vision, Oberkochen, Germany) by which viable and death cells appeared as green and orange/red, respectively.
+            </p>
+        </sec>
+        <sec>
+            <title>Statistical analysis</title>
+            <p>The results of PCN cytotoxicity assay on Raji cells were analyzed by using one way analysis of variance followed by LSD test. Data obtained from the experiments on the effects of anti-PCN IgY on PCN-treated Raji cells was analysed by using one-way ANOVA followed by Tukey’s Test. Statistical analysis was calculated by using IBM SPSS Statistics Version 22 (SPSS Inc., IBM Corp., Chicago, IL).</p>
+        </sec>
+        <sec>
+            <title>Results</title>
+            <p>Following isolation and purification of IgY from the immunized chickens, PCN-IgY complexes were detected by using AGPT. As seen in 
+                
+                <ext-link ext-link-type="uri" xlink:href="#f1">Figure 1</ext-link>, clear lines of precipitates from two IgY batches in the agarose matrix indicated the presence of PCN-specific antibodies. A further assessment using ELISA demonstrated that the first batch gives high amount of specific IgY antibodies (8.95 μg/μl) than that one of the second (3.02 µg/µl) which were then used for the rest of experiments.
+            </p>Figure 1. 
+        </sec>
+        <sec>
+            <title>Agarose gel precipitation test of pyocyanin (PCN)-IgY antibody complex batch I and II.</title>
+            <p>The presence of PCN-IgY antibody was detected through the presence of precipitates formed on agarose gel.</p>
+            <p>The results of this study showed that PCN at 1 mg/ml was toxic to the Raji cells. This cytotoxic effect of PCN on the cells was steadily increased in a dose dependent fashion (p&lt;0.05) (
+                
+                <ext-link ext-link-type="uri" xlink:href="#f2">Figure 2</ext-link>).
+            </p>Figure 2. 
+        </sec>
+        <sec>
+            <title>The effects of pyocyanin (PCN) on Raji cell survivability.</title>
+            <p>After incubation with various concentration of PCN, Raji cell viabilities were assessed by MTT assay. PCN-treated Raji cell survivability was calculated against the control cells. *p&lt;0.05.</p>
+            <p>Further experimentation demonstrated that anti-PCN IgY at concentrations of 28.19 μg/mL or higher was able to suppress the cytotoxic effect of PCN on Raji cells as compared with the negative control (p&lt;0.05) (
+                
+                <ext-link ext-link-type="uri" xlink:href="#f3">Figure 3</ext-link>). No significant differences between the cells treated with PCN and specific anti-PCN IgY antibodies at the concentration above 55 μg/ml were observed, however (p&gt;0.05) (
+                
+                <ext-link ext-link-type="uri" xlink:href="#f3">Figure 3</ext-link>). Microscopically, the number of viable cells treated with PCN-IgY complexes was much higher than those treated with PCN only (
+                
+                <ext-link ext-link-type="uri" xlink:href="#f4">Figure 4</ext-link>). Raw cell viability counts, along with other raw results and images, are available as 
+                
+                <italic>Underlying data</italic>
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-23">23</ext-link>
+                </sup>.
+            </p>Figure 3. 
+        </sec>
+        <sec>
+            <title>The effects of IgY specific antibodies on pyocyanin (PCN)-treated Raji cell survivability.</title>
+            <p>PCN was incubated with various concentration of IgY antibodies. Raji cells were then incubated with the PCN-IgY mixtures. Viable cells were assessed by MTT and their percentage was calculated as in 
+                        
+                <ext-link ext-link-type="uri" xlink:href="#f2">Figure 2</ext-link>. *p&lt;0.05.
+            </p>Figure 4. 
+        </sec>
+        <sec>
+            <title>Microscopic features of Raji cells treated with pyocyanin (PCN) or PCN-IgY antibody complexes.</title>
+            <p>Raji cells were incubated without PCN (
+                        
+                <bold>A</bold>) and with PCN (
+                        
+                <bold>B</bold>) or the mixture of PCN-IgY antibodies (
+                        
+                <bold>C</bold>) and then stained with acrydine orange/ethidium bromide. Green or orange fluorescence stained cells are viable and dead cells, respectively.
+            </p>
+        </sec>
+        <sec>
+            <title>Discussion</title>
+            <p>The results of the present study showed that PCN does induce cell death in Raji cells as also seen in our previous report
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-21">21</ext-link>
+                </sup>. Similarly, other also demonstrated that PCN of 
+                
+                <italic>P. aeruginosa</italic> plays an important role in the invasion of host cells by inducing neutrophil cell death
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-16">16</ext-link>
+                </sup>. Therefore, efforts to inhibit excessive host cell damage induced by PCN are imminent.
+            </p>
+            <p>Further results of the present study demonstrated that anti-PCN IgY antibodies specific to PCN significantly reduce the ability of this virulence to induce Raji cell death in a dose-dependent fashion. Whilst no previous studies showing prevention of PCN-induced cell death by antigen-specific IgY have yet been reported to our knowledge, the present results are supported by the fact that antigen-specific IgY antibodies did prevent 
+                
+                <italic>P. aeruginosa</italic> infection in humans by both active and passive immunization
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-17">17</ext-link>–
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-19">19</ext-link>
+                </sup>, suggesting that 
+                
+                <italic>P. aeruginosa</italic>-specific IgY antibodies may inhibit cellular inflammatory responses induced by this pathogen. Antigen-specific IgY antibodies also stimulated 
+                
+                <italic>P. aeruginosa</italic> aggregation and increased human neutrophil phagocytic activities
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-20">20</ext-link>
+                </sup>. The exact mechanism by which antigen-specific IgY antibodies inhibited PCN-induced Raji cell death seen in the present study remains unclear, however. Our previous study indicated that PCN induced Raji cell death via a caspase 3-activation pathway
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-21">21</ext-link>
+                </sup>. It seems plausible, therefore, that PCN-IgY antibody complexes may fail to activate Raji cell-derived caspase 3 and hence, inhibit cell death. However, more studies are required to delineate this speculation.
+            </p>
+            <p> The extrapolation of the results of the present study in the therapy of 
+                
+                <italic>P. aeruginosa</italic> infection remains to be further investigated. 
+                
+                <italic>P. aeruginosa</italic> with its multiple mechanisms for adaptation and survival is well known as one of the main pathogens that lead to increase nosocomial infections
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-1">1</ext-link>–
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-4">4</ext-link>
+                </sup> and morbidity and mortality in cystic fibrosis patients
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-5">5</ext-link>
+                </sup>. The difficulty to eradicate 
+                
+                <italic>P. aeruginosa</italic> infection has been even more complicated by the presence of MDR 
+                
+                <italic>P. aeruginosa</italic>, and hence alternative supplemental treatment approaches have been put forward based upon its bacterial virulent factors, such as exotoxin, lipopolysaccharide, and flagellin
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-24">24</ext-link>
+                </sup>. Immunotherapies using IgY specific to 
+                
+                <italic>P. aeruginosa</italic> to delay initial infection and reduce both frequency of infection and development of chronic infection seem to be promising. Both passive and active immunization with antigen-specific IgY antibodies in humans resulted in inhibition of 
+                
+                <italic>P. aeruginosa</italic> infection. For example, oral immunization with specific IgY antibodies in patients with cystic fibrosis led to the inhibition of 
+                
+                <italic>P. aeruginosa</italic> colonization
+                
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-18">18</ext-link>,
+                    
+                    <ext-link ext-link-type="uri" xlink:href="#ref-19">19</ext-link>
+                </sup>, suggesting the usefulness of antigen-specific IgY antibodies an immunotherapy to prevent 
+                
+                <italic>P. aeruginosa</italic> infection in patients with cystic fibrosis. Therefore, PCN-specific IgY antibodies used as an immunotherapy alongside with the common antibiotic treatments for 
+                
+                <italic>P. aeruginosa</italic> infection are highly possible.
+            </p>
+            <p> In conclusion, the present study showed that eggs from PCN-immunized chickens contain substantial amount of IgY antibodies that recognize PCN. Furthermore, antigen-specific IgY antibodies were able to inhibit PCN-induced Raji cell death, suggesting that PCN-specific IgY antibodies may be protective against PCN-induced Raji cell death.</p>
+        </sec>
+        <sec>
+            <title>Data availability</title>
+            <p>Figshare: Cytotoxicity of PCN.xlsx. 
+                
+                <ext-link ext-link-type="uri" xlink:href="https://dx.doi.org/10.6084/m9.figshare.8115701.v1">https://doi.org/10.6084/m9.figshare.8115701.v1</ext-link>
+                <sup>
+                    <ext-link ext-link-type="uri" xlink:href="#ref-23">23</ext-link>
+                </sup>.
+            </p>
+            <p>This project contains the following underlying data:</p>
+            <list list-type="bullet">
+                <list-item>
+                    <p>Cytotoxicity of PCN.xlsx (raw cell viability data following treatment with pyocyanin)</p>
+                </list-item>
+                <list-item>
+                    <p>The effect of IgY on cell viability.xlsx (raw cell viability data following treatment with pyocyanin and IgY)</p>
+                </list-item>
+                <list-item>
+                    <p>Fig 4A untreated cells.JPG (raw image used for Figure 4A)</p>
+                </list-item>
+                <list-item>
+                    <p>Fig 4B PCN-treated cells.JPG (raw image used for Figure 4B)</p>
+                </list-item>
+                <list-item>
+                    <p>Fig 4C PCN IgY-treated cells.JPG (raw image used for Figure 4C)</p>
+                </list-item>
+                <list-item>
+                    <p>IMG-AGPT.jpg (raw image of agar gel precipitation test)</p>
+                </list-item>
+                <list-item>
+                    <p>Elisa results Sept 1.xls (raw ELISA data)</p>
+                </list-item>
+            </list>
+            <p>Data are available under the terms of the 
+                
+                <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International license</ext-link> (CC-BY 4.0).
+            </p>
+        </sec>
+    </body>
+    <back>
+        <ref-list>
+            <title>References</title>
+            <ref>
+                <element-citation>
+                    <article-title>Pseudomonas aeruginosa urinary tract infections in hospitalized patients: Mortality and prognostic factors.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Multi-level analysis of bacteria isolated from inpatients in respiratory departments in China.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Bacterial and clinical characteristics of health care- and community-acquired bloodstream infections due to 
+                        Pseudomonas aeruginosa.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Hypertrophic cranial pachymeningitis and skull base osteomyelitis by 
+                        Pseudomonas aeruginosa: case report and review of the literature.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Microbial pathogenesis in cystic fibrosis: mucoid 
+                        Pseudomonas aeruginosa and 
+                        Burkholderia cepacia.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Host and Pathogen Biomarkers for Severe 
+                        Pseudomonas aeruginosa Infections.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Pseudomonas aeruginosa in oral infections.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Ciprofloxacin treatment of periapical 
+                        Pseudomonas aeruginosa infection.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Pseudomonas aeruginosa Lifestyle: A Paradigm for Adaptation, Survival, and Persistence.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The phenazine pyocyanin is a terminal signalling factor in the quorum sensing network of 
+                        Pseudomonas aeruginosa.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Antibiotic action of pyocyanin.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>The Pseudomonas secretory product pyocyanin inhibits catalase activity in human lung epithelial cells.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Cellular Effects of Pyocyanin, a Secreted Virulence Factor of 
+                        Pseudomonas aeruginosa.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Inhibitory and stimulatory effects of 
+                        Pseudomonas aeruginosa pyocyanine on human T and B lymphocytes and human monocytes.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Impairment of apoptotic cell engulfment by pyocyanin, a toxic metabolite of 
+                        Pseudomonas aeruginosa.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Pseudomonas aeruginosa pyocyanin induces neutrophil death via mitochondrial reactive oxygen species and mitochondrial acid sphingomyelinase.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>A double-blind randomized placebo-controlled phase III study of a 
+                        Pseudomonas aeruginosa flagella vaccine in cystic fibrosis patients.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Oral administration of specific yolk antibodies (IgY) may prevent 
+                        Pseudomonas aeruginosa infections in patients with cystic fibrosis: a phase I feasibility study.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Good effect of IgY against 
+                        Pseudomonas aeruginosa infections in cystic fibrosis patients.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Anti-
+                        Pseudomonas aeruginosa IgY Antibodies Induce Specific Bacterial Aggregation and Internalization in Human Polymorphonuclear Neutrophils.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Caspase-3-dependent cell death in B lymphocyte caused by 
+                        Pseudomonas aeruginosa pyocyanin.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Diagnosis of infectious laryngotracheitis using a monoclonal antibody ELISA.</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Cytotoxicity of PCN.xlsx</article-title>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation>
+                    <article-title>Novel approaches to the treatment of 
+                        Pseudomonas aeruginosa infections in cystic fibrosis.</article-title>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
 </article>

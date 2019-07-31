@@ -439,7 +439,7 @@ content:
       mathvariant="normal">P</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi
       mathvariant="normal">P</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mfrac>
   - type: List
-    order: ascending
+    order: unordered
     items:
       - type: ListItem
         content:
@@ -818,6 +818,7 @@ content:
           - type: TableCell
             content:
               - 'acnB '
+              - ' '
               - SYNPCC7002_A1683
           - type: TableCell
             content:
@@ -855,6 +856,7 @@ content:
           - type: TableCell
             content:
               - 'envM '
+              - ' '
               - SYNPCC7002_A1676
           - type: TableCell
             content:
@@ -873,6 +875,7 @@ content:
           - type: TableCell
             content:
               - 'fcl '
+              - ' '
               - SYNPCC7002_A2832
           - type: TableCell
             content:
@@ -893,6 +896,7 @@ content:
           - type: TableCell
             content:
               - 'leuA '
+              - ' '
               - SYNPCC7002_A1356
           - type: TableCell
             content:
@@ -911,6 +915,7 @@ content:
           - type: TableCell
             content:
               - 'glgB '
+              - ' '
               - SYNPCC7002_A1865
           - type: TableCell
             content:
@@ -929,6 +934,7 @@ content:
           - type: TableCell
             content:
               - 'bioB '
+              - ' '
               - SYNPCC7002_A0309
           - type: TableCell
             content:
@@ -947,6 +953,7 @@ content:
           - type: TableCell
             content:
               - 'rpsA '
+              - ' '
               - SYNPCC7002_A0955
           - type: TableCell
             content:
