@@ -1,3 +1,20 @@
+# [0.61.0](https://github.com/stencila/encoda/compare/v0.60.4...v0.61.0) (2019-07-31)
+
+
+### Bug Fixes
+
+* **DAR:** Use jats-pandoc codec for DAR ([a31a6ec](https://github.com/stencila/encoda/commit/a31a6ec))
+* **HTML:** Add handling of sup/sub-scripts ([3239475](https://github.com/stencila/encoda/commit/3239475))
+* **JATS:** Add encoding for more node types ([6966088](https://github.com/stencila/encoda/commit/6966088))
+* **JATS:** Use utility functions from schema ([f0e5fe0](https://github.com/stencila/encoda/commit/f0e5fe0))
+* **XML:** Fix encoding of text nodes ([de05f7c](https://github.com/stencila/encoda/commit/de05f7c))
+
+
+### Features
+
+* **HTML:** Use Microdata to semantically encode article citations. ([a19fd84](https://github.com/stencila/encoda/commit/a19fd84))
+* **JATS:** Add new Typescript-based JATS codec ([256eaf5](https://github.com/stencila/encoda/commit/256eaf5))
+
 ## [0.60.4](https://github.com/stencila/encoda/compare/v0.60.3...v0.60.4) (2019-07-29)
 
 
