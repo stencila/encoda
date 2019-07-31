@@ -141,11 +141,11 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'strong':
       return decodeMark(node as HTMLElement, 'Strong')
     case 'del':
-      return decodeInlineElement(node as HTMLElement, 'Delete')
+      return decodeMark(node as HTMLElement, 'Delete')
     case 'sup':
-      return decodeInlineElement(node as HTMLElement, 'Superscript')
+      return decodeMark(node as HTMLElement, 'Superscript')
     case 'sub':
-      return decodeInlineElement(node as HTMLElement, 'Subscript')
+      return decodeMark(node as HTMLElement, 'Subscript')
     case 'a':
       return decodeLink(node as HTMLAnchorElement)
     case 'q':
@@ -218,11 +218,11 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Strong':
       return encodeMark(node as stencila.Strong, 'strong')
     case 'Delete':
-      return encodeInlineThing<'Delete'>(node, 'del')
+      return encodeMark(node as stencila.Strong, 'del')
     case 'Superscript':
-      return encodeInlineThing<'Superscript'>(node, 'sup')
+      return encodeMark(node as stencila.Superscript, 'sup')
     case 'Subscript':
-      return encodeInlineThing<'Subscript'>(node, 'sub')
+      return encodeMark(node as stencila.Subscript, 'sub')
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Quote':
@@ -231,6 +231,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCode(node as stencila.Code)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
+    case 'Math':
+      return encodeMath(node as object)
 
     case 'null':
       return encodeNull(node as null)
@@ -878,6 +880,13 @@ function encodeImageObject(image: stencila.ImageObject): HTMLImageElement {
     title: image.title,
     alt: image.text
   })
+}
+
+/**
+ * Encode a Stencila `Math` node to a HTML `<math>` element.
+ */
+function encodeMath(math: any): HTMLElement {
+  return h('math', { innerHTML: math.text })
 }
 
 /**
