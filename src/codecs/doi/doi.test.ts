@@ -1,5 +1,5 @@
-import { parse, sniff, unparse } from '../src/doi'
-import { load } from '../src/vfile'
+import { decode, sniff, encode } from '.'
+import * as vfile from '../../util/vfile'
 
 test('sniff', async () => {
   expect(await sniff('10.1001/this/is/a/doi')).toBe(true)
@@ -20,7 +20,7 @@ test('sniff', async () => {
 const article = {
   content: `10.5334/jors.182`,
   node: {
-    type: 'Article',
+    type: 'CreativeWork',
     authors: [
       {
         type: 'Person',
@@ -37,11 +37,11 @@ const article = {
 }
 
 test('parse', async () => {
-  expect(await parse(load(article.content))).toEqual(article.node)
+  expect(await decode(await vfile.load(article.content))).toEqual(article.node)
 })
 
 test('unparse', async () => {
-  await expect(unparse(article.node)).rejects.toThrow(
+  await expect(encode(article.node)).rejects.toThrow(
     /Unparsing to DOI is not yet implemented/
   )
 })

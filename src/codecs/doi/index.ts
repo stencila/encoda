@@ -1,10 +1,10 @@
 /**
- * Compiler for a Digital Object Identifier (DOI)
+ * Codec for Digital Object Identifiers (DOI)
  */
 
 import stencila from '@stencila/schema'
-import * as csl from './csl'
-import { dump, load, VFile } from './vfile'
+import * as csl from '../csl'
+import * as vfile from '../../util/vfile'
 
 export const mediaTypes = ['text/x-doi']
 export const extNames = ['doi']
@@ -17,14 +17,14 @@ export async function sniff(content: string): Promise<boolean> {
   return regex.test(content)
 }
 
-export async function parse(file: VFile): Promise<stencila.Node> {
-  const content = dump(file)
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
+  const content = await vfile.dump(file)
   const match = content.match(regex)
   if (!match) throw new Error('Unable to parse content')
-  const doi = load(match[4])
-  return csl.parse(doi, '@doi/id')
+  const doi = vfile.load(match[4])
+  return csl.decode(doi, '@doi/id')
 }
 
-export async function unparse(node: stencila.Node): Promise<VFile> {
+export async function encode(node: stencila.Node): Promise<vfile.VFile> {
   throw new Error(`Unparsing to DOI is not yet implemented`)
 }

@@ -20,6 +20,7 @@ export const codecRegexes: [[string, RegExp]] = [['http', /^https?:\/\//]]
  */
 export const codecList: string[] = [
   // Remotes
+  'doi',
   'http',
   // Directories
   'dir',

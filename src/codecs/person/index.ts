@@ -8,8 +8,8 @@ import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'
 import * as vfile from '../../util/vfile'
-import { Encode } from '../..';
-import { is, nodeType } from '@stencila/schema/dist/util';
+import { Encode } from '../..'
+import { is, nodeType } from '@stencila/schema/dist/util'
 import log from '../../log'
 
 export const mediaTypes = ['text/x-person']
@@ -72,7 +72,9 @@ export const encode: Encode = async (
     if (node.url) content += ` (${node.url})`
     content = content.trim()
   } else {
-    log.warn(`Expected a node of type "Person", got a node of type "${nodeType(node)}"`)
+    log.warn(
+      `Expected a node of type "Person", got a node of type "${nodeType(node)}"`
+    )
   }
 
   return vfile.load(content)
