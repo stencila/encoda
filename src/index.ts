@@ -50,7 +50,9 @@ export const codecList: string[] = [
   'yaml',
   'pandoc',
   'json5',
-  'json'
+  'json',
+  // Plain text formats, that may be fallen back to
+  'person'
 ]
 
 export interface EncodeOptions<FormatOptions extends object = {}> {
