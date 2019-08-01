@@ -1,5 +1,14 @@
-import { decode, sniff, encode } from '.'
+import { setupRecorder } from 'nock-record'
+import { toMatchFile } from 'jest-file-snapshot';
+import path from 'path'
+import { sniff, encode } from '.'
 import * as vfile from '../../util/vfile'
+import { convert } from '../..';
+
+const snapshot = (name: string) =>
+  path.join(__dirname, '__file_snapshots__', name)
+
+const record = setupRecorder({ mode: 'record' })
 
 test('sniff', async () => {
   expect(await sniff('10.1001/this/is/a/doi')).toBe(true)
@@ -17,31 +26,19 @@ test('sniff', async () => {
   expect(await sniff('http://foo.org/10.5334/jors.182')).toBe(false)
 })
 
-const article = {
-  content: `10.5334/jors.182`,
-  node: {
-    type: 'CreativeWork',
-    authors: [
-      {
-        type: 'Person',
-        givenNames: ['Kristoffer'],
-        familyNames: ['Carlsson']
-      },
-      {
-        type: 'Person',
-        givenNames: ['Fredrik'],
-        familyNames: ['Ekre']
-      }
-    ]
-  }
-}
+test('decode', async () => {
+  const { completeRecording } = await record('doi-decode')
 
-test('parse', async () => {
-  expect(await decode(await vfile.load(article.content))).toEqual(article.node)
+  const doi2yaml = async (doi: string) =>
+    convert(doi, undefined, { from: 'doi', to: 'yaml' })
+
+  expect(await doi2yaml('10.5334/jors.182')).toMatchFile(snapshot('10.5334-jors.182.yaml'))
+
+  completeRecording()
 })
 
-test('unparse', async () => {
-  await expect(encode(article.node)).rejects.toThrow(
+test('encode', async () => {
+  await expect(encode({type: 'Article'})).rejects.toThrow(
     /Unparsing to DOI is not yet implemented/
   )
 })
