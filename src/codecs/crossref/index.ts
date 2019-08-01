@@ -3,9 +3,9 @@
  */
 
 import stencila from '@stencila/schema'
-import axios from 'axios'
-import { parseCsl } from './csl'
-import { dump, VFile } from './vfile'
+import { decodeCsl } from '../csl'
+import * as http from '../../util/http'
+import * as vfile from '../../util/vfile'
 
 export const mediaTypes = ['text/x-crossref-query']
 export const extNames = ['crossref-query']
@@ -15,24 +15,16 @@ export const extNames = ['crossref-query']
  *
  * See https://www.crossref.org/labs/resolving-citations-we-dont-need-no-stinkin-parser/
  */
-export async function parse(file: VFile): Promise<stencila.Node> {
-  const content = dump(file)
-  const response = await axios.get('https://api.crossref.org/works', {
-    params: {
+export async function decode(file: vfile.VFile): Promise<stencila.Node> {
+  const content = await vfile.dump(file)
+  const response = await http.get('https://api.crossref.org/works', {
+    query: {
       'query.bibliographic': content
-    },
-    headers: {
-      // It is necessary to set the user agent to not be `axios`
-      // May be related to https://github.com/tryandbry/SmartDocsNLP/issues/1
-      'user-agent': 'stencila/convert'
     }
   })
-  if (
-    response.status === 200 &&
-    response.data &&
-    response.data.status === 'ok'
-  ) {
-    const csl = response.data.message.items[0]
+  if (response.statusCode === 200 && response.body) {
+    const data = JSON.parse(response.body)
+    const csl = data.message.items[0]
     // The output from api.crossref.org is not strictly CSL-JSON
     // See  https://github.com/CrossRef/rest-api-doc/issues/222 for more
     //
@@ -49,11 +41,11 @@ export async function parse(file: VFile): Promise<stencila.Node> {
     }
     csl.type = replacers[csl.type] || csl.type
 
-    return parseCsl(csl)
+    return decodeCsl(csl)
   }
   throw new Error(`Request failed`)
 }
 
-export async function unparse(node: stencila.Node): Promise<VFile> {
-  throw new Error(`Unparsing to a Crossref query is not supported`)
+export async function encode(node: stencila.Node): Promise<vfile.VFile> {
+  throw new Error(`Encoding to a Crossref query is not supported`)
 }
