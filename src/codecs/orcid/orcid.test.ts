@@ -1,7 +1,9 @@
-import { parse, sniff, unparse } from '../src/orcid'
-import { load } from '../src/vfile'
+import { setupRecorder } from 'nock-record'
+import { decode, sniff, encode } from '.'
+import * as vfile from '../../util/vfile'
+import nock = require('nock');
 
-jest.setTimeout(30 * 1000)
+const record = setupRecorder({ mode: 'record' })
 
 test('sniff', async () => {
   expect(await sniff('0000-0002-1825-0097')).toBe(true)
@@ -69,13 +71,17 @@ const stephen = {
   }
 }
 
-test('parse', async () => {
-  expect(await parse(load(josiah.content))).toEqual(josiah.node)
-  expect(await parse(load(stephen.content))).toEqual(stephen.node)
+test.skip('decode', async () => {
+  const { completeRecording } = await record('orcid-decode')
+
+  expect(await decode(vfile.load(josiah.content))).toEqual(josiah.node)
+  expect(await decode(vfile.load(stephen.content))).toEqual(stephen.node)
+
+  completeRecording()
 })
 
-test('unparse', async () => {
-  await expect(unparse(josiah.node)).rejects.toThrow(
-    /Unparsing to an ORCID is not yet implemented/
+test('encode', async () => {
+  await expect(encode(josiah.node)).rejects.toThrow(
+    /Encoding to an ORCID is not yet implemented/
   )
 })
