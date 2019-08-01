@@ -11,15 +11,15 @@ const snapshot = (name: string) =>
   path.join(__dirname, '__file_snapshots__', name)
 
 test('decode', async () => {
-  const csl2yaml = async (name: string) =>
+  const bib2yaml = async (name: string) =>
     vfile.dump(await yaml.encode(await decode(await vfile.read(fixture(name)))))
 
-  expect(await csl2yaml('10.5334-jors-182.csl.json')).toMatchFile(snapshot('10.5334-jors-182.yaml'))
+  expect(await bib2yaml('small.bib')).toMatchFile(snapshot('small.yaml'))
 })
 
 test('encode', async () => {
-  const yaml2csl = async (name: string) =>
+  const yaml2bib = async (name: string) =>
     vfile.dump(await encode(await yaml.decode(await vfile.read(fixture(name)))))
 
-  expect(await yaml2csl('article.yaml')).toMatchFile(snapshot('article.csl.json'))
+  expect(await yaml2bib('article.yaml')).toMatchFile(snapshot('article.bib'))
 })

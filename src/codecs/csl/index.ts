@@ -58,11 +58,11 @@ export const encode: Encode = async (
   if (isCreativeWork(node)) {
     const csl = encodeCsl(node)
     const cite = new Cite([csl])
-    if (format == 'json') {
+    if (format === 'json') {
       const {_graph, ...rest} = cite.data[0]
       content = JSON.stringify(rest, null, 2)
     } else {
-      content = cite.format(format, options)
+      content = cite.format(format)
     }
   } else {
     errorNodeType('csl', 'encode', 'CreativeWork', node)
@@ -78,18 +78,56 @@ async function decodeCsl(csl: Csl.Data): Promise<stencila.CreativeWork | stencil
   const {
     type,
     id,
+
     author = [],
     title = '',
+
+    issued,
+
+    "container-title": containerTitle,
+    volume,
+    issue,
+    page,
+
+    // @ts-ignore // Citation.js uses this hidden property
+    _graph,
+
     ...lost
   } = csl
 
   if (type === 'article-journal') {
     warnLossIfAny('csl', 'decode', csl, lost)
+
+    const authors = await Promise.all(author.map(decodeAuthor))
+
+    const datePublished = issued !== undefined ? decodeDate(issued) : undefined
+
+    let isPartOf
+    if (containerTitle !== undefined) {
+      isPartOf = stencila.periodical({
+        title: containerTitle
+      })
+      if (volume !== undefined) {
+        isPartOf = stencila.publicationVolume({
+          volumeNumber: volume,
+          isPartOf
+        })
+      }
+      if (issue !== undefined) {
+        isPartOf = stencila.publicationIssue({
+          issueNumber: issue,
+          isPartOf
+        })
+      }
+    }
+
     return stencila.article(
-      await Promise.all(author.map(decodeAuthor)),
+      authors,
       title,
       {
-        id
+        id,
+        datePublished,
+        isPartOf
       }
     )
   } else {
@@ -188,4 +226,23 @@ const encodeOrganization = (org: stencila.Organization): Csl.Person => {
   return {
     literal: name
   }
+}
+
+/**
+ * Decode a `Csl.Date` as an ISO date `string`
+ */
+const decodeDate = (date: Csl.Date): string => {
+  const {
+    "date-parts": dateParts,
+    raw,
+    literal,
+    ...lost
+  } = date
+
+  warnLossIfAny('csl', 'decode', date, lost)
+  if (dateParts !== undefined) return dateParts.join('-')
+  if (raw !== undefined) return new Date(raw).toISOString()
+  if (literal !== undefined) return literal
+
+  return ''
 }
