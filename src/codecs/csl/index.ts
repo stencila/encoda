@@ -6,29 +6,27 @@
  */
 
 import * as stencila from '@stencila/schema'
+import { isA, isCreativeWork } from '@stencila/schema/dist/util';
 // @ts-ignore
-import Cite from 'citation-js'
-import { Encode, load, EncodeOptions } from '../..'
-import * as vfile from '../../util/vfile'
+import Cite from 'citation-js';
+import Csl from 'csl-json';
+import { Encode, EncodeOptions, load } from '../..';
+import * as vfile from '../../util/vfile';
+import { errorNodeType, warnLossIfAny, warnLoss } from '../../log';
 
 export const mediaTypes = ['application/vnd.citationstyles.csl+json']
 
 export const extNames = ['csl']
 
 /**
- * Parse CSL JSON or other bibliographic format to a `Node`
- *
- * @param file The `VFile` to parse.
- * @param format The format to parse as.
+ * Parse CSL-JSON or other bibliographic format to a `Node`
  */
 export async function decode(
   file: vfile.VFile,
   format: string = '@csl/object'
 ): Promise<stencila.Node> {
-  // Many of the TODOs below are awaiting updates to the CreativeWork,
-  // Article, etc schemas
-
   const content: string = await vfile.dump(file)
+
   let csls
   try {
     csls = await Cite.inputAsync(content, { forceType: format })
@@ -37,6 +35,7 @@ export async function decode(
       `Error when parsing content of format ${format}: ${error.message}`
     )
   }
+
   // TODO: work out what to return when more than one work e.g. a bibtex file
   const csl = csls[0]
 
@@ -44,74 +43,149 @@ export async function decode(
 }
 
 /**
- * Parse CSL object to a `CreativeWork` or derived type.
+ * Encode a `Node` to CSL-JSON or other bibliographic format
  *
- * @param csl The CSL object to parse.
+ * See https://citation.js.org/api/tutorial-output_options.html
+ * for formats and other options which could be used.
  */
-export async function decodeCsl(csl: {
-  [key: string]: any
-}): Promise<stencila.CreativeWork | stencila.Article> {
-  const cw = stencila.creativeWork()
+export const encode: Encode = async (
+  node: stencila.Node,
+  options: EncodeOptions = {}
+): Promise<vfile.VFile> => {
+  const { format = 'json' } = options
 
-  // TODO
-  // if (cite.id) cw.id = cite.id
+  let content = ''
+  if (isCreativeWork(node)) {
+    const csl = encodeCsl(node)
+    const cite = new Cite([csl])
+    if (format == 'json') {
+      const {_graph, ...rest} = cite.data[0]
+      content = JSON.stringify(rest, null, 2)
+    } else {
+      content = cite.format(format, options)
+    }
+  } else {
+    errorNodeType('csl', 'encode', 'CreativeWork', node)
+  }
 
-  if (csl.author) {
-    cw.authors = await Promise.all(
-      csl.author.map(async (author: any) => {
-        const person = await load(`${author.given} ${author.family}`, 'person')
-        return person as stencila.Person
-      })
+  return vfile.load(content)
+}
+
+/**
+ * Decode `Csl.Data` to a `CreativeWork` or derived type.
+ */
+async function decodeCsl(csl: Csl.Data): Promise<stencila.CreativeWork | stencila.Article> {
+  const {
+    type,
+    id,
+    author = [],
+    title = '',
+    ...lost
+  } = csl
+
+  if (type === 'article-journal') {
+    warnLossIfAny('csl', 'decode', csl, lost)
+    return stencila.article(
+      await Promise.all(author.map(decodeAuthor)),
+      title,
+      {
+        id
+      }
     )
   } else {
-    cw.authors = []
-  }
-
-  if (csl.title) cw.title = csl.title
-
-  if (csl['container-title']) {
-    cw.isPartOf = stencila.creativeWork({
-      title: csl['container-title']
-    })
-  }
-
-  switch (csl.type) {
-    case 'article-journal':
-      // TODO: Change to an `Article`?
-      if (csl.page) {
-        // TODO
-        // article.pageStart = csl.page
-      }
-      return cw
-    default:
-      throw new Error(`Unhandled citation type "${csl.type}"`)
+    warnLoss('csl', 'decode', `Unhandled citation type ${csl.type}`)
+    return stencila.creativeWork()
   }
 }
 
 /**
- * Encode a `Node` to CSL JSON or other bibliographic format
- *
- * @param node The node to unparse.
- * @param format The format to unparse to.
- *               See https://citation.js.org/api/tutorial-output_formats.html.
- * @param options The formatting options.
- *                See https://citation.js.org/api/tutorial-output_options.html
+ * Encode a `CreativeWork` as `Csl.Data`
  */
-export const encode: Encode = (
-  node: stencila.Node,
-  options: EncodeOptions = {}
-): Promise<vfile.VFile> => {
-  throw new Error(`Encoding to CSL is not yet implemented`)
+const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
+  const {
+    title = 'Untitled',
+    authors = [],
+    ...lost
+  } = cw
 
-  // The following snippet provides a skeleton of
-  // how this function could be implemented when it is prioritized
-  /*
-  const csl = {
-    id: 'id',
-    type: 'article-journal'
+  warnLossIfAny('csl', 'encode', cw, lost)
+  return {
+    type: 'article-journal',
+    id: 'id',// TODO id is required
+    title: title,
+    author: authors.map(encodeAuthor)
   }
-  const cite = new Cite([csl])
-  const content = cite.format(format, options)
-  return vfile.load(content)
-  */
+}
+
+/**
+ * Decode a `Csl.Person` as a `Person`
+ *
+ * If `family` is not defined but `literal` is then the
+ * `person` codec is used to decode the literal string.
+ *
+ * CSL-JSON's `non-dropping-particle` and `dropping-particle`
+ * are not currently supported in `Person`.
+ */
+const decodeAuthor = async (author: Csl.Person): Promise<stencila.Person> => {
+  let {
+    family,
+    given,
+    suffix,
+    literal,
+    ...lost
+  } = author
+
+  if (family === undefined && literal !== undefined) {
+    return load(literal, 'person') as Promise<stencila.Person>
+  }
+
+  warnLossIfAny('csl', 'decode', author, lost)
+  return stencila.person({
+    familyNames: family !== undefined ? [family] : undefined,
+    givenNames: given !== undefined ? [given] : undefined,
+    honorificSuffix: suffix
+  })
+}
+
+/**
+ * Encode an author as a `Csl.Person`
+ */
+const encodeAuthor = (author: stencila.Person | stencila.Organization): Csl.Person => {
+  return isA('Person', author) ? encodePerson(author) : encodeOrganization(author)
+}
+
+/**
+ * Encode a `Person` as a `Csl.Person`
+ */
+const encodePerson = (person: stencila.Person): Csl.Person => {
+  const {
+    givenNames = [],
+    familyNames = [],
+    honorificSuffix,
+    ...rest
+  } = person
+
+  warnLossIfAny('csl', 'encode', person, rest)
+  return {
+    given: givenNames.join(' '),
+    family: familyNames.join(' '),
+    suffix: honorificSuffix
+  }
+}
+
+/**
+ * Encode an `Organization` as a `Csl.Person`
+ *
+ * CSL-JSON does not allow for an org author so we use the `literal` property
+ * to encode the org name.
+ */
+const encodeOrganization = (org: stencila.Organization): Csl.Person => {
+  const {
+    name = 'Anonymous'
+  } = org
+
+  warnLoss('csl', 'encode', 'Does not support organizations as authors')
+  return {
+    literal: name
+  }
 }

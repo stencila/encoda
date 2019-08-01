@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@stencila/logga": "^1.2.1",
-    "@stencila/schema": "^0.17.0",
+    "@stencila/schema": "^0.21.0",
     "@stencila/thema": "^1.2.0",
     "ajv": "^6.10.0",
     "appdata-path": "^1.0.0",
@@ -112,6 +112,7 @@
     "@types/punycode": "2.1.0",
     "@types/puppeteer": "1.19.0",
     "@types/unist": "2.0.3",
+    "csl-json": "^0.1.0",
     "delay": "4.3.0",
     "dependency-check": "4.0.1",
     "googleapis": "41.0.1",
