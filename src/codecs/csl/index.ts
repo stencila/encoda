@@ -6,13 +6,13 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { isA, isCreativeWork } from '@stencila/schema/dist/util';
+import { isA, isCreativeWork } from '@stencila/schema/dist/util'
 // @ts-ignore
-import Cite from 'citation-js';
-import Csl from 'csl-json';
-import { Encode, EncodeOptions, load } from '../..';
-import * as vfile from '../../util/vfile';
-import { errorNodeType, warnLossIfAny, warnLoss } from '../../log';
+import Cite from 'citation-js'
+import Csl from 'csl-json'
+import { Encode, EncodeOptions, load } from '../..'
+import * as vfile from '../../util/vfile'
+import { errorNodeType, warnLossIfAny, warnLoss } from '../../log'
 
 export const mediaTypes = ['application/vnd.citationstyles.csl+json']
 
@@ -59,7 +59,7 @@ export const encode: Encode = async (
     const csl = encodeCsl(node)
     const cite = new Cite([csl])
     if (format === 'json') {
-      const {_graph, ...rest} = cite.data[0]
+      const { _graph, ...rest } = cite.data[0]
       content = JSON.stringify(rest, null, 2)
     } else {
       content = cite.format(format)
@@ -74,7 +74,9 @@ export const encode: Encode = async (
 /**
  * Decode `Csl.Data` to a `CreativeWork` or derived type.
  */
-async function decodeCsl(csl: Csl.Data): Promise<stencila.CreativeWork | stencila.Article> {
+export async function decodeCsl(
+  csl: Csl.Data
+): Promise<stencila.CreativeWork | stencila.Article> {
   const {
     type,
     id,
@@ -84,7 +86,7 @@ async function decodeCsl(csl: Csl.Data): Promise<stencila.CreativeWork | stencil
 
     issued,
 
-    "container-title": containerTitle,
+    'container-title': containerTitle,
     volume,
     issue,
     page,
@@ -121,15 +123,11 @@ async function decodeCsl(csl: Csl.Data): Promise<stencila.CreativeWork | stencil
       }
     }
 
-    return stencila.article(
-      authors,
-      title,
-      {
-        id,
-        datePublished,
-        isPartOf
-      }
-    )
+    return stencila.article(authors, title, {
+      id,
+      datePublished,
+      isPartOf
+    })
   } else {
     warnLoss('csl', 'decode', `Unhandled citation type ${csl.type}`)
     return stencila.creativeWork()
@@ -140,16 +138,12 @@ async function decodeCsl(csl: Csl.Data): Promise<stencila.CreativeWork | stencil
  * Encode a `CreativeWork` as `Csl.Data`
  */
 const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
-  const {
-    title = 'Untitled',
-    authors = [],
-    ...lost
-  } = cw
+  const { title = 'Untitled', authors = [], ...lost } = cw
 
   warnLossIfAny('csl', 'encode', cw, lost)
   return {
     type: 'article-journal',
-    id: 'id',// TODO id is required
+    id: 'id', // TODO id is required
     title: title,
     author: authors.map(encodeAuthor)
   }
@@ -165,13 +159,7 @@ const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
  * are not currently supported in `Person`.
  */
 const decodeAuthor = async (author: Csl.Person): Promise<stencila.Person> => {
-  let {
-    family,
-    given,
-    suffix,
-    literal,
-    ...lost
-  } = author
+  const { family, given, suffix, literal, ...lost } = author
 
   if (family === undefined && literal !== undefined) {
     return load(literal, 'person') as Promise<stencila.Person>
@@ -188,20 +176,19 @@ const decodeAuthor = async (author: Csl.Person): Promise<stencila.Person> => {
 /**
  * Encode an author as a `Csl.Person`
  */
-const encodeAuthor = (author: stencila.Person | stencila.Organization): Csl.Person => {
-  return isA('Person', author) ? encodePerson(author) : encodeOrganization(author)
+const encodeAuthor = (
+  author: stencila.Person | stencila.Organization
+): Csl.Person => {
+  return isA('Person', author)
+    ? encodePerson(author)
+    : encodeOrganization(author)
 }
 
 /**
  * Encode a `Person` as a `Csl.Person`
  */
 const encodePerson = (person: stencila.Person): Csl.Person => {
-  const {
-    givenNames = [],
-    familyNames = [],
-    honorificSuffix,
-    ...rest
-  } = person
+  const { givenNames = [], familyNames = [], honorificSuffix, ...rest } = person
 
   warnLossIfAny('csl', 'encode', person, rest)
   return {
@@ -218,9 +205,7 @@ const encodePerson = (person: stencila.Person): Csl.Person => {
  * to encode the org name.
  */
 const encodeOrganization = (org: stencila.Organization): Csl.Person => {
-  const {
-    name = 'Anonymous'
-  } = org
+  const { name = 'Anonymous' } = org
 
   warnLoss('csl', 'encode', 'Does not support organizations as authors')
   return {
@@ -232,12 +217,7 @@ const encodeOrganization = (org: stencila.Organization): Csl.Person => {
  * Decode a `Csl.Date` as an ISO date `string`
  */
 const decodeDate = (date: Csl.Date): string => {
-  const {
-    "date-parts": dateParts,
-    raw,
-    literal,
-    ...lost
-  } = date
+  const { 'date-parts': dateParts, raw, literal, ...lost } = date
 
   warnLossIfAny('csl', 'decode', date, lost)
   if (dateParts !== undefined) return dateParts.join('-')

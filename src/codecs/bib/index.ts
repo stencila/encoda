@@ -2,10 +2,10 @@
  * Codec for BibTeX
  */
 
-import stencila from '@stencila/schema';
-import { Encode, EncodeOptions } from '../..';
-import * as vfile from '../../util/vfile';
-import * as csl from '../csl';
+import stencila from '@stencila/schema'
+import { Encode, EncodeOptions } from '../..'
+import * as vfile from '../../util/vfile'
+import * as csl from '../csl'
 
 export const mediaTypes = ['application/x-bibtex']
 
@@ -18,5 +18,5 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
 export const encode: Encode = async (
   node: stencila.Node
 ): Promise<vfile.VFile> => {
-  return csl.encode(node, {format: 'bibtex'})
+  return csl.encode(node, { format: 'bibtex' })
 }

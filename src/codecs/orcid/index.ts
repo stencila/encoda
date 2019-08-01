@@ -5,7 +5,7 @@
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as http from '../../util/http'
-import { coerce } from '../../util';
+import { coerce } from '../../util'
 
 export const mediaTypes = ['text/x-orcid']
 
@@ -13,7 +13,7 @@ export const extNames = ['orcid']
 
 const regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
 
-export async function sniff(content: string) {
+export async function sniff(content: string): Promise<boolean> {
   return regex.test(content)
 }
 
@@ -36,6 +36,6 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error(`Request failed`)
 }
 
-export async function encode(node: stencila.Node): Promise<vfile.VFile> {
+export async function encode(): Promise<vfile.VFile> {
   throw new Error(`Encoding to an ORCID is not yet implemented`)
 }
