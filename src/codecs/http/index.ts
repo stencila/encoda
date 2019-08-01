@@ -57,6 +57,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
  * function simply throws an error
  */
 export const encode: Encode = async (
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   node: stencila.Node
 ): Promise<vfile.VFile> => {
   throw new Error(`Unable to encode to HTTP`)

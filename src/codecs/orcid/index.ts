@@ -36,6 +36,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error(`Request failed`)
 }
 
-export async function encode(): Promise<vfile.VFile> {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function encode(node: stencila.Node): Promise<vfile.VFile> {
   throw new Error(`Encoding to an ORCID is not yet implemented`)
 }

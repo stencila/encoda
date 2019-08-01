@@ -16,7 +16,7 @@ export const mediaTypes = ['text/x-person']
 
 export const extNames = ['person']
 
-export async function sniff(content: string) {
+export async function sniff(content: string): Promise<boolean> {
   return /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/.test(content)
 }
 

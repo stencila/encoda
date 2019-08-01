@@ -81,7 +81,7 @@ test.skip('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode(josiah.node)).rejects.toThrow(
+  await expect(encode(null)).rejects.toThrow(
     /Encoding to an ORCID is not yet implemented/
   )
 })

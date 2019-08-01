@@ -25,6 +25,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   return csl.decode(doi, '@doi/id')
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function encode(node: stencila.Node): Promise<vfile.VFile> {
   throw new Error(`Unparsing to DOI is not yet implemented`)
 }

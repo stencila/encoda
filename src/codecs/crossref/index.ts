@@ -46,6 +46,7 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   throw new Error(`Request failed`)
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function encode(node: stencila.Node): Promise<vfile.VFile> {
   throw new Error(`Encoding to a Crossref query is not supported`)
 }
