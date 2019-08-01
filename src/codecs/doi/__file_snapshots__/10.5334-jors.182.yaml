@@ -1,16 +1,20 @@
-type: CreativeWork
 authors:
-  - type: Person
+  - familyNames:
+      - Carlsson
     givenNames:
       - Kristoffer
-    familyNames:
-      - Carlsson
-  - type: Person
+    type: Person
+  - familyNames:
+      - Ekre
     givenNames:
       - Fredrik
-    familyNames:
-      - Ekre
+    type: Person
 title: Tensors.jl — Tensor Computations in Julia
+datePublished: '2019'
 isPartOf:
-  title: Journal of Open Research Software
-  type: CreativeWork
+  volumeNumber: '7'
+  isPartOf:
+    title: Journal of Open Research Software
+    type: Periodical
+  type: PublicationVolume
+type: Article
