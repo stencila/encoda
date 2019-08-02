@@ -1,9 +1,9 @@
-//import { setupRecorder } from 'nock-record'
+import { setupRecorder } from 'nock-record'
 import { decode, sniff, encode } from '.'
 import * as vfile from '../../util/vfile'
+import nock = require('nock');
 
-//const record = setupRecorder({ mode: 'record' })
-jest.setTimeout(30 * 1000)
+const record = setupRecorder({ mode: 'record' })
 
 test('sniff', async () => {
   expect(await sniff('0000-0002-1825-0097')).toBe(true)
@@ -72,12 +72,12 @@ const stephen = {
 }
 
 test.skip('decode', async () => {
-  //const { completeRecording } = await record('orcid-decode')
+  const { completeRecording } = await record('orcid-decode')
 
   expect(await decode(vfile.load(josiah.content))).toEqual(josiah.node)
   expect(await decode(vfile.load(stephen.content))).toEqual(stephen.node)
 
-  //completeRecording()
+  completeRecording()
 })
 
 test('encode', async () => {
