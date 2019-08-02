@@ -71,7 +71,7 @@ const stephen = {
   }
 }
 
-test.skip('decode', async () => {
+test('decode', async () => {
   //const { completeRecording } = await record('orcid-decode')
 
   expect(await decode(vfile.load(josiah.content))).toEqual(josiah.node)
