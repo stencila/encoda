@@ -29,20 +29,18 @@ export const configure = (debug: boolean = false): void => {
 
 type CodecOperation = 'decode' | 'encode'
 
-export const errorNodeType = (
-  codec: string,
-  op: CodecOperation,
-  types: string,
-  node: stencila.Node
-): void => {
-  log.error(
-    `${codec}:${op} Expecting node of type ${types} but node of type ${nodeType(
-      node
-    )}`
-  )
-}
-
-export const warnLoss = (
+/**
+ * Log a warning about the loss of data
+ *
+ * ```ts
+ * logWarn('html', 'decode', `Unhandled element type ${elem.name}`)
+ * ```
+ *
+ * @param codec The codec emitting the warning
+ * @param op The operation emitting the warning
+ * @param message The message to emit
+ */
+export const logWarnLoss = (
   codec: string,
   op: CodecOperation,
   message: string
@@ -50,11 +48,27 @@ export const warnLoss = (
   log.warn(`${codec}:${op} ${message}`)
 }
 
-export const warnLossIfAny = (
+/**
+ * Log a warning if there is any loss of data
+ *
+ * Use this function to warn the user of any loss of
+ * data during encoding or decoding e.g.
+ *
+ * ```ts
+ * const {used, ...lost} = node
+ * logWarnLossIfAny('html', 'encode', node, lost)
+ * ```
+ *
+ * @param codec The codec emitting the warning
+ * @param op The operation emitting the warning
+ * @param node The node from which data may be lost
+ * @param lost An object with data that will be lost (is any)
+ */
+export const logWarnLossIfAny = (
   codec: string,
   op: CodecOperation,
   node: stencila.Node,
-  lost: { [key: string]: any }
+  lost: { [key: string]: unknown }
 ): void => {
   const { type, ...rest } = lost
   const properties = Object.keys(rest)
@@ -65,4 +79,25 @@ export const warnLossIfAny = (
       )}\` not supported: ${properties.map(prop => `\`${prop}\``).join(', ')}`
     )
   }
+}
+
+/**
+ * Log an error regarding unhandled / unexpected node type
+ *
+ * @param codec The codec emitting the warning
+ * @param op The operation emitting the warning
+ * @param types The type/s expected
+ * @param node The node from which data may be lost
+ */
+export const logErrorNodeType = (
+  codec: string,
+  op: CodecOperation,
+  types: string,
+  node: stencila.Node
+): void => {
+  log.error(
+    `${codec}:${op} Expecting node of type ${types} but got node of type ${nodeType(
+      node
+    )}`
+  )
 }
