@@ -1,8 +1,9 @@
-//import { setupRecorder } from 'nock-record'
+import { toMatchFile } from 'jest-file-snapshot';
 import { decode, sniff, encode } from '.'
 import * as vfile from '../../util/vfile'
+import * as yaml from '../yaml'
+import { nockRecord, snapshot } from '../../__tests__/helpers';
 
-//const record = setupRecorder({ mode: 'record' })
 jest.setTimeout(30 * 1000)
 
 test('sniff', async () => {
@@ -18,56 +19,16 @@ test('sniff', async () => {
   expect(await sniff('https://example.org/0000-0002-1825-0097')).toBe(false)
 })
 
-const josiah = {
-  content: `0000-0002-1825-0097`,
-  node: {
-    type: 'Person',
-    givenNames: ['Josiah'],
-    familyNames: ['Carberry'],
-    affiliations: [
-      {
-        type: 'Organization',
-        name: 'Wesleyan University'
-      },
-      {
-        type: 'Organization',
-        name: 'Brown University'
-      }
-    ],
-    url: 'http://library.brown.edu/about/hay/carberry.php'
-  }
-}
-
-const stephen = {
-  content: `https://orcid.org/0000-0002-9079-593X`,
-  node: {
-    type: 'Person',
-    givenNames: ['Stephen'],
-    familyNames: ['Hawking'],
-    affiliations: [
-      {
-        type: 'Organization',
-        name: 'University of Cambridge'
-      },
-      {
-        type: 'Organization',
-        name: 'University of Cambridge'
-      },
-      {
-        type: 'Organization',
-        name: 'California Institute of Technology'
-      }
-    ]
-  }
-}
+const orcid2yaml = async (ocid: string) =>
+  vfile.dump(await yaml.encode(await decode(await vfile.load(ocid))))
 
 test('decode', async () => {
-  //const { completeRecording } = await record('orcid-decode')
+  const done = await nockRecord('decode.json')
 
-  expect(await decode(vfile.load(josiah.content))).toEqual(josiah.node)
-  expect(await decode(vfile.load(stephen.content))).toEqual(stephen.node)
+  expect(await orcid2yaml('0000-0002-1825-0097')).toMatchFile(snapshot('josiah.yaml'))
+  expect(await orcid2yaml('https://orcid.org/0000-0002-9079-593X')).toMatchFile(snapshot('stephen.yaml'))
 
-  //completeRecording()
+  done()
 })
 
 test('encode', async () => {

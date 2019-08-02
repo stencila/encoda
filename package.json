@@ -112,6 +112,7 @@
     "@types/punycode": "2.1.0",
     "@types/puppeteer": "1.19.0",
     "@types/unist": "2.0.3",
+    "callsites": "^3.1.0",
     "csl-json": "^0.1.0",
     "delay": "4.3.0",
     "dependency-check": "4.0.1",
@@ -152,7 +153,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "<rootDir>/src/__tests__/logger.ts",
+      "<rootDir>/src/__tests__/setup.ts",
       "<rootDir>/src/__tests__/matchers.ts"
     ],
     "testMatch": [
@@ -165,7 +166,7 @@
     "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
     "testPathIgnorePatterns": [
       "<rootDir>/dist/",
-      "__tests__/logger.ts",
+      "__tests__/setup.ts",
       "__tests__/matchers.ts",
       "__tests__/teardown.ts",
       "__tests__/helpers.ts"

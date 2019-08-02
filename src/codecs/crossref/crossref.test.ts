@@ -1,26 +1,19 @@
-//import { setupRecorder } from 'nock-record'
 import { toMatchFile } from 'jest-file-snapshot';
-import path from 'path'
 import { decode, encode } from '.'
+import {snapshot, nockRecord} from '../../__tests__/helpers'
 import * as vfile from '../../util/vfile'
 import * as yaml from '../yaml'
 
-const snapshot = (name: string) =>
-  path.join(__dirname, '__file_snapshots__', name)
+const query2yaml = async (query: string) =>
+  vfile.dump(await yaml.encode(await decode(await vfile.load(query))))
 
-//const record = setupRecorder({ mode: 'record' })
 jest.setTimeout(30 * 1000)
 
 test('decode', async () => {
-  //const { completeRecording } = await record('crossref-decode')
-
-  const query2yaml = async (query: string) =>
-    vfile.dump(await yaml.encode(await decode(await vfile.load(query))))
-
+  const done = await nockRecord('carlsson-and-ekre-2019.json')
   expect(await query2yaml('Carlsson and Ekre, Tensor Computations in Julia'))
-    .toMatchFile(snapshot('carlsson-and-ekre-2019.yaml'))
-
-  //completeRecording()
+      .toMatchFile(snapshot('carlsson-and-ekre-2019.yaml'))
+  done()
 })
 
 test('encode', async () => {

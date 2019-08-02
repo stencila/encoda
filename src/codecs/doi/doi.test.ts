@@ -1,13 +1,8 @@
-//import { setupRecorder } from 'nock-record'
 import { toMatchFile } from 'jest-file-snapshot';
-import path from 'path'
 import { sniff, encode } from '.'
 import { convert } from '../..';
+import {snapshot, nockRecord} from '../../__tests__/helpers'
 
-const snapshot = (name: string) =>
-  path.join(__dirname, '__file_snapshots__', name)
-
-//const record = setupRecorder({ mode: 'record' })
 jest.setTimeout(30 * 1000)
 
 test('sniff', async () => {
@@ -26,15 +21,13 @@ test('sniff', async () => {
   expect(await sniff('http://foo.org/10.5334/jors.182')).toBe(false)
 })
 
+const doi2yaml = async (doi: string) =>
+  convert(doi, undefined, { from: 'doi', to: 'yaml' })
+
 test('decode', async () => {
-  //const { completeRecording } = await record('doi-decode')
-
-  const doi2yaml = async (doi: string) =>
-    convert(doi, undefined, { from: 'doi', to: 'yaml' })
-
-  expect(await doi2yaml('10.5334/jors.182')).toMatchFile(snapshot('10.5334-jors.182.yaml'))
-
-  //completeRecording()
+  const done = await nockRecord('10.5334-jors-182.json')
+  expect(await doi2yaml('10.5334/jors.182')).toMatchFile(snapshot('10.5334-jors-182.yaml'))
+  done()
 })
 
 test('encode', async () => {
