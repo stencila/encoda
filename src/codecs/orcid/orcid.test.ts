@@ -27,19 +27,12 @@ const josiah = {
     affiliations: [
       {
         type: 'Organization',
-        alternateNames: ['Psychoceramics'],
         name: 'Wesleyan University'
       },
       {
         type: 'Organization',
-        alternateNames: ['Psychoceramics'],
         name: 'Brown University'
       }
-    ],
-    alternateNames: [
-      'Josiah Stinkney Carberry',
-      'J. Carberry',
-      'J. S. Carberry'
     ],
     url: 'http://library.brown.edu/about/hay/carberry.php'
   }
@@ -54,17 +47,14 @@ const stephen = {
     affiliations: [
       {
         type: 'Organization',
-        alternateNames: ['Applied Mathematics and Theoretical Physics'],
         name: 'University of Cambridge'
       },
       {
         type: 'Organization',
-        alternateNames: ['Mathematics'],
         name: 'University of Cambridge'
       },
       {
         type: 'Organization',
-        alternateNames: ['Physics, Mathematics and Astronomy'],
         name: 'California Institute of Technology'
       }
     ]
