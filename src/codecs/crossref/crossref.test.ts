@@ -11,7 +11,7 @@ const snapshot = (name: string) =>
 //const record = setupRecorder({ mode: 'record' })
 jest.setTimeout(30 * 1000)
 
-test.skip('decode', async () => {
+test('decode', async () => {
   //const { completeRecording } = await record('crossref-decode')
 
   const query2yaml = async (query: string) =>
@@ -23,7 +23,7 @@ test.skip('decode', async () => {
   //completeRecording()
 })
 
-test.skip('encode', async () => {
+test('encode', async () => {
   await expect(encode(null)).rejects.toThrow(
     /Encoding to a Crossref query is not supported/
   )

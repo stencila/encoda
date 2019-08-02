@@ -10,14 +10,14 @@ const fixture = (name: string) =>
 const snapshot = (name: string) =>
   path.join(__dirname, '__file_snapshots__', name)
 
-test.skip('decode', async () => {
+test('decode', async () => {
   const bib2yaml = async (name: string) =>
     vfile.dump(await yaml.encode(await decode(await vfile.read(fixture(name)))))
 
   expect(await bib2yaml('small.bib')).toMatchFile(snapshot('small.yaml'))
 })
 
-test.skip('encode', async () => {
+test('encode', async () => {
   const yaml2bib = async (name: string) =>
     vfile.dump(await encode(await yaml.decode(await vfile.read(fixture(name)))))
 

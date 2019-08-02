@@ -8,7 +8,7 @@
 import * as stencila from '@stencila/schema'
 import { isA, isCreativeWork } from '@stencila/schema/dist/util'
 // @ts-ignore
-// import Cite from 'citation-js'
+import Cite from 'citation-js'
 import Csl from 'csl-json'
 import { Encode, EncodeOptions, load } from '../..'
 import * as vfile from '../../util/vfile'
@@ -27,7 +27,6 @@ export async function decode(
 ): Promise<stencila.Node> {
   const content: string = await vfile.dump(file)
 
-  /*
   let csls
   try {
     csls = await Cite.inputAsync(content, { forceType: format })
@@ -39,8 +38,6 @@ export async function decode(
 
   // TODO: work out what to return when more than one work e.g. a bibtex file
   const csl = csls[0]
-  */
-  const csl = { type: 'article' as Csl.ItemType, id: 'bar' }
 
   return decodeCsl(csl)
 }
@@ -57,10 +54,9 @@ export const encode: Encode = async (
 ): Promise<vfile.VFile> => {
   const { format = 'json' } = options
 
-  const content = ''
+  let content = ''
   if (isCreativeWork(node)) {
     const csl = encodeCsl(node)
-    /*
     const cite = new Cite([csl])
     if (format === 'json') {
       const { _graph, ...rest } = cite.data[0]
@@ -68,7 +64,6 @@ export const encode: Encode = async (
     } else {
       content = cite.format(format)
     }
-    */
   } else {
     logErrorNodeType('csl', 'encode', 'CreativeWork', node)
   }
