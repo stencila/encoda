@@ -10,14 +10,14 @@ const fixture = (name: string) =>
 const snapshot = (name: string) =>
   path.join(__dirname, '__file_snapshots__', name)
 
-test('decode', async () => {
+test.skip('decode', async () => {
   const csl2yaml = async (name: string) =>
     vfile.dump(await yaml.encode(await decode(await vfile.read(fixture(name)))))
 
   expect(await csl2yaml('10.5334-jors-182.csl.json')).toMatchFile(snapshot('10.5334-jors-182.yaml'))
 })
 
-test('encode', async () => {
+test.skip('encode', async () => {
   const yaml2csl = async (name: string) =>
     vfile.dump(await encode(await yaml.decode(await vfile.read(fixture(name)))))
 

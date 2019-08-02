@@ -27,7 +27,7 @@ test('sniff', async () => {
   expect(await sniff('http://foo.org/10.5334/jors.182')).toBe(false)
 })
 
-test('decode', async () => {
+test.skip('decode', async () => {
   //const { completeRecording } = await record('doi-decode')
 
   const doi2yaml = async (doi: string) =>
@@ -38,7 +38,7 @@ test('decode', async () => {
   //completeRecording()
 })
 
-test('encode', async () => {
+test.skip('encode', async () => {
   await expect(encode({type: 'Article'})).rejects.toThrow(
     /Unparsing to DOI is not yet implemented/
   )
