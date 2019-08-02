@@ -29,8 +29,8 @@ export const snapshot = (filename: string): string =>
  * Record a nock request / response as a file fixture
  *
  * Attempt to use other solutions for this e.g. `nock-record`
- * and `jest-nock-back` failed because they did not turn off
- * nock interception using `nock.back.setMode('wild')`.
+ * and `jest-nock-back` failed because they interfered
+ * with other tests.
  *
  * @param filename The filename of the records HTTP request / response
  */
@@ -38,10 +38,7 @@ export const nockRecord = async (filename: string) => {
   nock.back.setMode('record')
   nock.back.fixtures = path.join(callDir(), '__fixtures__')
   const result = await nock.back(filename)
-  return () => {
-    nock.back.setMode('wild')
-    result.nockDone()
-  }
+  return result.nockDone
 }
 
 /**
