@@ -1,0 +1,19 @@
+authors:
+  - familyNames:
+      - Einstein
+    givenNames:
+      - Albert
+    type: Person
+title: A small paper
+id: articleid
+datePublished: '1924'
+isPartOf:
+  issueNumber: '9'
+  isPartOf:
+    volumeNumber: '10'
+    isPartOf:
+      title: The journal of small papers
+      type: Periodical
+    type: PublicationVolume
+  type: PublicationIssue
+type: Article

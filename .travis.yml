@@ -14,8 +14,11 @@ script:
   # Temporarily disable dependency checking
   # - npm run check
   - npm run lint
-  # Force exit to prevent the hanging on Travis
-  - npm run test:cover -- --forceExit
+  # Run tests with
+  #   - `nock.back` 'wild' mode to do real HTTP requests so we
+  #     know if there is an API change we need to address
+  #   - Force exit to prevent hanging
+  - npm run test:wild -- --coverage --forceExit
   - npm run docs
   - npm run build
 

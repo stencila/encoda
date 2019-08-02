@@ -21,7 +21,7 @@ import betterAjvErrors from 'better-ajv-errors'
 import fs from 'fs-extra'
 import produce from 'immer'
 import path from 'path'
-import { decode as decodePerson } from '../codecs/person'
+import { decodeSync as decodePerson } from '../codecs/person'
 
 /**
  * Create a node of a type

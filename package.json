@@ -13,7 +13,8 @@
     "install": "node install.js",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "test": "jest",
-    "test:cover": "jest --collectCoverage",
+    "test:wild": "NOCK_MODE=wild jest",
+    "test:cover": "jest --coverage",
     "test:watch": "jest --watchAll",
     "check": "npm run build && npm run check:deps-used && npm run check:deps-unused",
     "check:deps-used": "dependency-check --missing .",
@@ -44,6 +45,7 @@
     "async-lock": "^1.2.0",
     "better-ajv-errors": "^0.6.4",
     "bin-wrapper": "^4.1.0",
+    "citation-js": "^0.4.8",
     "collapse-whitespace": "^1.1.7",
     "content-type": "^1.0.4",
     "datapackage": "^1.1.1",
@@ -111,6 +113,8 @@
     "@types/punycode": "2.1.0",
     "@types/puppeteer": "1.19.0",
     "@types/unist": "2.0.3",
+    "callsites": "^3.1.0",
+    "csl-json": "^0.1.0",
     "delay": "4.3.0",
     "dependency-check": "4.0.1",
     "googleapis": "41.0.1",
@@ -150,7 +154,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "<rootDir>/src/__tests__/logger.ts",
+      "<rootDir>/src/__tests__/setup.ts",
       "<rootDir>/src/__tests__/matchers.ts"
     ],
     "testMatch": [
@@ -163,7 +167,7 @@
     "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
     "testPathIgnorePatterns": [
       "<rootDir>/dist/",
-      "__tests__/logger.ts",
+      "__tests__/setup.ts",
       "__tests__/matchers.ts",
       "__tests__/teardown.ts",
       "__tests__/helpers.ts"
