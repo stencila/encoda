@@ -45,16 +45,11 @@ Some of the main external dependencies:
 
 ### Schema nodes to add microdata to
 * Article
-    * `div` `itemtype='schema:Article'`
+    * `article` `itemtype='schema:Article'`
     * itemprops:
         * authors* (author?): `ol`
         * title*: `h1`? (+ `title`)
         * environment: `data`?
-* Audio
-    * `audio`
-    * itemprops:
-        * caption*: `figcaption`
-        * transcript
 * Brand
     * `picture`/`img` `itemtype='schema:Brand'`
     * itemprops:
@@ -62,22 +57,23 @@ Some of the main external dependencies:
         * logo*: `source`/`image`
         * reviews
 * Code
-    * `div` `itemtype='stencila:Code'`
+    * `code` `itemtype='stencila:Code'`
     * itemprops:
         * language* (maybe important for setting syntax highlighting): `data`
-        * value*: `code`
+        * value*: set as `code` textContent
 * CodeChunk
-    * `div` `itemtype='stencila:CodeChunk'`
+    * `<pre><code>...</code></pre>` `itemtype='stencila:CodeChunk'`
     * itemprops:
-        * outputs: `ol` of `samp`/`output` (possibly include `figure`/`table`)
+        * outputs: `pre` containing `samp`/`output` (see https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element)
+            * In future, consider including `figure`/`table`
 * CodeExpression
-    * `div` `itemtype='stencila:CodeExpr'`
+    * `code` `itemtype='stencila:CodeExpr'`
     * itemprops:
-        * value:`code` (syntax highlighting from Code node's language prop)
+        * value: set as `code` textContent (syntax highlighting from SoftwareSourceCode node's programmingLanguage prop)
 * Collection
-    * `nav` `itemtype='schema:Collection'`
+    * `ol` `itemtype='schema:Collection'`
     * itemprops:
-        * parts: `ol` of CreativeWorks/Articles (just title, author, and URIs/relative links?)
+        * parts: `li > a href` CreativeWorks/Articles (just title, author, and URIs/relative links?)
 * ContactPoint
     * `address` `itemtype='schema:contactPoint'`
     * itemprops:
@@ -118,6 +114,9 @@ Some of the main external dependencies:
     * targetProducts: `ol` of `span` SoftwareApplication
 
 ### Schema nodes with direct mapping to semantic tags
+* AudioObject: `audio`
+    * name: `figcaption`, or `p`
+    * caption, transcript => `track` (if `video`), or `data`. [Consider using `video` instead of `audio` to enable captions](https://www.iandevlin.com/blog/2015/12/html5/webvtt-and-audio/), or display separately as `div`.
 * Delete: `del`
 * Emphasis: `em`
 * Heading: 
@@ -145,7 +144,7 @@ Some of the main external dependencies:
 * VideoObject: `video`
     * caption => `track`
     * thumbnail => poster (attribute)
-    * transcript => `track`? (not sure if different from caption)
+    * transcript => `track`?
 
 ### Schema nodes we won't be adding microdata to
 * BlockContent
