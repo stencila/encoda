@@ -68,7 +68,7 @@ export const logWarnLossIfAny = (
   codec: string,
   op: CodecOperation,
   node: stencila.Node,
-  lost: { [key: string]: unknown }
+  lost: { [key: string]: any }
 ): void => {
   const { type, ...rest } = lost
   const properties = Object.keys(rest)
