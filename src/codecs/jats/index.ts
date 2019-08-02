@@ -135,7 +135,7 @@ function decodeArticle(elem: xml.Element): stencila.Article {
 
   const back = child(elem, 'back')
   const refList = first(back, 'ref-list')
-  if (refList) article.citations = decodeRefList(refList)
+  if (refList) article.references = decodeRefList(refList)
 
   return article
 }
@@ -147,7 +147,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
     encodeAuthors(article.authors || [])
   )
   const body = encodeBody(article.content || [])
-  const back = elem('back', encodeCitations(article.citations || []))
+  const back = elem('back', encodeReferences(article.references || []))
 
   return elem(
     'article',
@@ -308,7 +308,7 @@ function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
   return refs
     .map(ref => {
       const citation = child(ref, ['element-citation', 'mixed-citation'])
-      return citation ? decodeCitation(citation) : null
+      return citation ? decodeReference(citation) : null
     })
     .reduce(
       (prev: stencila.CreativeWork[], curr) => (curr ? [...prev, curr] : prev),
@@ -316,17 +316,17 @@ function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
     )
 }
 
-function encodeCitations(
-  citations: (stencila.CreativeWork | string)[]
+function encodeReferences(
+  references: (stencila.CreativeWork | string)[]
 ): xml.Element {
   return elem(
     'ref-list',
     elem('title', 'References'),
-    ...citations.map(encodeCitation)
+    ...references.map(encodeReference)
   )
 }
 
-function decodeCitation(elem: xml.Element): stencila.CreativeWork {
+function decodeReference(elem: xml.Element): stencila.CreativeWork {
   const work: stencila.CreativeWork = { type: 'CreativeWork' }
 
   const title = child(elem, 'article-title')
@@ -354,7 +354,7 @@ function decodeCitation(elem: xml.Element): stencila.CreativeWork {
   return work
 }
 
-function encodeCitation(work: stencila.CreativeWork | string): xml.Element {
+function encodeReference(work: stencila.CreativeWork | string): xml.Element {
   let citation
   if (typeof work === 'string') {
   } else {

@@ -9,7 +9,7 @@
  */
 
 import stencila from '@stencila/schema'
-import { isCreativeWork, isEntity, nodeType } from '@stencila/schema/dist/util'
+import { isCreativeWork, isEntity, nodeType, isA } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import h from 'hyperscript'
 import produce from 'immer'
@@ -83,10 +83,10 @@ export const encode: Encode = async (
       : [node]
   const promises = nodes.map(async (node, index) => {
     const fileId =
-      isEntity(node) && node.name
+      isCreativeWork(node) && node.name
         ? node.name
         : `${nodeType(node).toLowerCase()}-${index}`
-    if (isEntity(node) && node.type === 'Datatable') {
+    if (isA('Datatable', node)) {
       const fileName = `${fileId}.csv`
       const filePath = path.join(darPath, fileName)
       await write(node, filePath)
