@@ -108,8 +108,16 @@ Some of the main external dependencies:
         * values: `td`
         * schema (items, uniqueItems): `data`? (maybe unnecessary for styling)
         * name: `th`?
+* SoftwareSourceCode:
+    * codeRepository: `a href`
+    * codeSampleType: `data`?
+    * maintainers: `ol` of `span` Person/Organization itemtypes
+    * programmingLanguage: `data` or `span` (maybe unnecessary for styling)
+    * runtimePlatform: `ol` of `data` or `span`
+    * softwareRequirements: `ol` of `span` SoftwareSourceCode/SoftwareApplication
+    * targetProducts: `ol` of `span` SoftwareApplication
 
-### Schema nodes we won't be adding microdata to
+### Schema nodes with direct mapping to semantic tags
 * Delete: `del`
 * Emphasis: `em`
 * Heading: 
@@ -119,8 +127,37 @@ Some of the main external dependencies:
 * Link: `a`
     * content
     * target => href
-* List: `ol`, `ul` (with `input type="checkbox"` option)
+* List: `ol`, `ul` 
+  * ListItem => `li` (with `li` > `input type="checkbox"` option)
 * Quote
-* Strong
-* Subscript
-* Superscript
+* Strong => `strong`
+* Subscript => `sub`
+* Superscript => `sup`
+* Table => `table`. `table` > `tr`, or `table` > `thead`/`tfoot` > `tr`
+    * TableRow => `tr`.
+        * `kind`: header => `thead` > `tr`
+        * `kind`: footer => `tfoot` > `tr`
+    * TableCell => `th`, `td`
+        * `colspan`, `rowspan`
+        * `kind`: header => `th`
+        * `kind`: data => `td`
+* ThematicBreak: `hr`? (not sure if we should consider other options, such as splitting nodes by ThematicBreaks and grouping them into `section` tags instead)
+* VideoObject: `video`
+    * caption => `track`
+    * thumbnail => poster (attribute)
+    * transcript => `track`? (not sure if different from caption)
+
+### Schema nodes we won't be adding microdata to
+* BlockContent
+* CodeBlock?
+* CreativeWorkTypes
+* Entity
+* Environment?
+* Include?
+    * source
+    * mediaType
+    * hash
+    * content
+* InlineContent
+* Mark
+* Thing
