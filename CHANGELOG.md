@@ -1,3 +1,10 @@
+## [0.61.1](https://github.com/stencila/encoda/compare/v0.61.0...v0.61.1) (2019-08-02)
+
+
+### Bug Fixes
+
+* **Package:** Fix Pandoc DOCX template path ([e552476](https://github.com/stencila/encoda/commit/e552476))
+
 # [0.61.0](https://github.com/stencila/encoda/compare/v0.60.4...v0.61.0) (2019-07-31)
 
 
