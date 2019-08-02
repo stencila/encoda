@@ -136,7 +136,7 @@ const kitchenSink: testCase = {
           }
         ]
       },
-      citations: {
+      references: {
         t: 'MetaList',
         c: []
       }
@@ -250,7 +250,7 @@ const kitchenSink: testCase = {
         familyNames: ['Jones']
       }
     ],
-    citations: [],
+    references: [],
     content: [
       {
         type: 'Heading',
