@@ -1,3 +1,12 @@
+## [0.61.2](https://github.com/stencila/encoda/compare/v0.61.1...v0.61.2) (2019-08-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stencila/schema to ^0.23.0 ([d8ac21a](https://github.com/stencila/encoda/commit/d8ac21a))
+* **Deps:** Upgrade to schema@0.23.0 ([c8b81da](https://github.com/stencila/encoda/commit/c8b81da))
+* **Package:** Use full file name ([de80d1e](https://github.com/stencila/encoda/commit/de80d1e)), closes [/ci.appveyor.com/project/nokome/convert/builds/26418504#L34](https://github.com//ci.appveyor.com/project/nokome/convert/builds/26418504/issues/L34)
+
 ## [0.61.1](https://github.com/stencila/encoda/compare/v0.61.0...v0.61.1) (2019-08-02)
 
 
