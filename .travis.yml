@@ -14,8 +14,9 @@ script:
   # Temporarily disable dependency checking
   # - npm run check
   - npm run lint
-  # Force exit to prevent the hanging on Travis
-  - npm run test:cover -- --forceExit
+  # Run tests serially to prevent intererence from `nock.back`
+  # Force exit to prevent hanging
+  - npm run test:cover -- --runInBand --forceExit
   - npm run docs
   - npm run build
 
