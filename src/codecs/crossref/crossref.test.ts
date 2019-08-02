@@ -9,6 +9,7 @@ const snapshot = (name: string) =>
   path.join(__dirname, '__file_snapshots__', name)
 
 //const record = setupRecorder({ mode: 'record' })
+jest.setTimeout(30 * 1000)
 
 test('decode', async () => {
   //const { completeRecording } = await record('crossref-decode')
