@@ -403,21 +403,23 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
  * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
-  const { type, title, content, citations, ...rest } = article
+  const { type, title, content, references, ...rest } = article
   const titleEl = h('h1', title)
   titleEl.setAttribute('role', 'title')
   const elements = content ? content.map(encodeNode) : []
-  const references = citations ? encodeCitations(citations) : []
-  return h('article', titleEl, ...elements, references)
+  const refs = references ? encodeReferences(references) : []
+  return h('article', titleEl, ...elements, refs)
 }
 
-function encodeCitations(
-  citations: (string | stencila.CreativeWork)[]
+function encodeReferences(
+  references: (string | stencila.CreativeWork)[]
 ): HTMLElement {
-  return h('section', h('h1', 'References'), ...citations.map(encodeCitation))
+  return h('section', h('h1', 'References'), ...references.map(encodeReference))
 }
 
-function encodeCitation(citation: string | stencila.CreativeWork): HTMLElement {
+function encodeReference(
+  citation: string | stencila.CreativeWork
+): HTMLElement {
   return typeof citation === 'string'
     ? h('div', citation)
     : encodeCreativeWork(citation)
