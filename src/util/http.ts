@@ -30,7 +30,7 @@ const http = got.extend({
  */
 export async function get(
   url: string,
-  options = {}
+  options: got.GotOptions<string> = {}
 ): Promise<got.Response<string>> {
   return http.get(url, options)
 }

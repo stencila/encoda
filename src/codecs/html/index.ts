@@ -417,7 +417,9 @@ function encodeReferences(
   return h('section', h('h1', 'References'), ...references.map(encodeReference))
 }
 
-function encodeReference(reference: string | stencila.CreativeWork): HTMLElement {
+function encodeReference(
+  reference: string | stencila.CreativeWork
+): HTMLElement {
   return typeof reference === 'string'
     ? h('div', reference)
     : encodeCreativeWork(reference)

@@ -9,7 +9,12 @@
  */
 
 import stencila from '@stencila/schema'
-import { isCreativeWork, isEntity, nodeType, isA } from '@stencila/schema/dist/util'
+import {
+  isCreativeWork,
+  isEntity,
+  nodeType,
+  isA
+} from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import h from 'hyperscript'
 import produce from 'immer'
