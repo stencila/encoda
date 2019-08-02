@@ -35,7 +35,8 @@ export const snapshot = (filename: string): string =>
  * @param filename The filename of the records HTTP request / response
  */
 export const nockRecord = async (filename: string) => {
-  nock.back.setMode('record')
+  const mode = (process.env.NOCK_MODE || 'record') as nock.NockBackMode
+  nock.back.setMode(mode)
   nock.back.fixtures = path.join(callDir(), '__fixtures__')
   const result = await nock.back(filename)
   return result.nockDone
