@@ -56,11 +56,27 @@ Some of the main external dependencies:
         * name: maybe unnecessary, just use in alt tag?
         * logo*: `source`/`image`
         * reviews
+* Cite
+    * `ul` `itemtype='stencila:Cite'`
+    * itemprops:
+        * citationMode: `data`? (maybe unnecessary for styling)
+        * pageStart: `span`
+        * pageEnd: `span`
+        * pagination: `span`
+        * prefix: `span`
+        * suffix: `span`
+        * target: `a href`
+        * authors: (not listed in schema, but seems necessary) `ol`
+        * title: (not listed in schema, but seems necessary) `span`
+* CiteGroup
+    * `ol` `itemtype='stencila:CiteGroup'`
+    * itemprops:
+        * items: `li ul` for each Cite (see above)
 * Code
     * `code` `itemtype='stencila:Code'`
+        * value*: set as `code` textContent
     * itemprops:
         * language* (maybe important for setting syntax highlighting): `data`
-        * value*: set as `code` textContent
 * CodeChunk
     * `<pre><code>...</code></pre>` `itemtype='stencila:CodeChunk'`
     * itemprops:
@@ -68,7 +84,6 @@ Some of the main external dependencies:
             * In future, consider including `figure`/`table`
 * CodeExpression
     * `code` `itemtype='stencila:CodeExpr'`
-    * itemprops:
         * value: set as `code` textContent (syntax highlighting from SoftwareSourceCode node's programmingLanguage prop)
 * Collection
     * `ol` `itemtype='schema:Collection'`
@@ -83,18 +98,18 @@ Some of the main external dependencies:
 * CreativeWork:
     * `div` `itemtype='schema:CreativeWork'`
     * itemprops:
-        * authors: `ol` of `span` Person/Organization itemtypes.
-        * citations: `ol` of title/authors/`a href`
+        * authors: `ol` of `span` Person `name` (or combined `givenNames`+`familyNames`)/Organization `legalName`.
+        * references: `ol itemprop='stencila:CiteGroup'` of `li ul` Cite itemtypes (see above) with `ol` authors, `a href` target, `span` title
         * content: `article`/`div` with `sections`
         * dateCreated: `span time`
         * dateModified: `span time`
         * datePublished/date: `span time`
-        * editors: `ol` of `span` Person itemtypes
-        * funders: `ol` of `span` Person/Organization itemtypes
+        * editors: `ol` of `span` Person `name` (or combined `givenNames`+`familyNames`)
+        * funders: `ol` of `span` Person `name` (or combined `givenNames`+`familyNames`)/Organization `legalName`.
         * isPartOf: `data`?
         * licenses: `ol` of `a href`
         * parts/hasPart: `ol` of figure/table/object/URI (maybe unnecessary for styling)
-        * publisher: `span` Person/Organization itemtype
+        * publisher: `span` Person `name` (or combined `givenNames`+`familyNames`)/Organization `legalName`.
         * text: `data`? (maybe unnecessary for styling)
         * title/headline: `h1`
         * version: `span`
@@ -104,10 +119,57 @@ Some of the main external dependencies:
         * values: `td`
         * schema (items, uniqueItems): `data`? (maybe unnecessary for styling)
         * name: `th`?
+* Organization:
+    * `div` `itemtype='schema:Organization'`
+    * legalName: set as `div` textContent
+    * Need to determine which itemprops are important to show. Maybe just `address`, `brand`, `departments`, and `legalName`.
+    * itemprops:
+        * address: `address` `itemprop='schema:address'`
+        * brands: `ul` of `picture`/`img` (see `Brand` above)
+        * contactPoints: `ul` of `li address` (see `ContactPoint` above)
+        * departments: `ul` of `span` Organization `legalName`
+        * funders: `data`? (maybe unnecessary for styling, since `funders` included seperately in CreativeWork)
+        * parentOrganization: `data`? (maybe unnecessary for styling)
+* Periodical:
+    * dateStart, dateEnd: `data`? (maybe unnecessary for styling)
+    * issn: `p`
+* Person:
+    * `div` `itemtype='schema:Person'`
+    * Need to determine which itemprops are important to show. Maybe just `affiliations`, `familyNames`, `givenNames`, `name`, `honorificPrefix`, `honorificSuffix`, and `jobTitle`.
+    * itemprops:
+        * address: `address` `itemprop='schema:address'` or `data`? (maybe unnecessary for styling)
+        * affiliations: `ul` of `span` Organization `legalName` + `departments`
+        * emails: `data`? (maybe unnecessary for styling)
+        * familyNames: `ul` of `span`
+        * funders: `data`? (maybe unnecessary for styling)
+        * givenNames: `ul` of `span`
+        * honorificPrefix: `span`
+        * honorificSuffix: `span`
+        * jobTitle: `span`
+        * memberOf: `ul` of `span` Organization `legalName` + `departments`, or `data`? (maybe unnecessary for styling)
+        * telephoneNumbers: `data`? (maybe unnecessary for styling)
+* PublicationIssue:
+    * `ul` `itemtype='stencila:PublicationIssue'`
+    * itemprops:
+        * issueNumber: `span`
+        * pageStart: `span`
+        * pageEnd: `span`
+        * pagination: `span`
+        * authors: `ol` of `span` Person `name` (or combined `givenNames`+`familyNames`)/Organization `legalName`.
+        * title/headline: `span`
+* PublicationVolume:
+    * `ul` `itemtype='stencila:PublicationVolume'`
+    * itemprops:
+        * pageStart: `span`
+        * pageEnd: `span`
+        * pagination: `span`
+        * volumeNumber: `span`
+        * authors: `ol` of `span` Person `name` (or combined `givenNames`+`familyNames`)/Organization `legalName`.
+        * title/headline: `span`
 * SoftwareSourceCode:
     * codeRepository: `a href`
     * codeSampleType: `data`?
-    * maintainers: `ol` of `span` Person/Organization itemtypes
+    * maintainers: `ol` of `span` Person `name` (or combined `givenNames`+`familyNames`)/Organization `legalName`.
     * programmingLanguage: `data` or `span` (maybe unnecessary for styling)
     * runtimePlatform: `ol` of `data` or `span`
     * softwareRequirements: `ol` of `span` SoftwareSourceCode/SoftwareApplication
@@ -115,20 +177,27 @@ Some of the main external dependencies:
 
 ### Schema nodes with direct mapping to semantic tags
 * AudioObject: `audio`
-    * name: `figcaption`, or `p`
+    * name => `figcaption`, or `p`
     * caption, transcript => `track` (if `video`), or `data`. [Consider using `video` instead of `audio` to enable captions](https://www.iandevlin.com/blog/2015/12/html5/webvtt-and-audio/), or display separately as `div`.
+    * contentUrl => `audio src`
 * Delete: `del`
 * Emphasis: `em`
-* Heading: 
+* Heading: `h1` ... `h6`
 * ImageObject: `figure`
     * thumbnail => `img`
     * caption => `figcaption`
+    * contentUrl => `img src`
 * Link: `a`
     * content
     * target => href
-* List: `ol`, `ul` 
-  * ListItem => `li` (with `li` > `input type="checkbox"` option)
-* Quote
+* List: `ol`, `ul`
+    * ListItem => `li` (with `li` > `input type="checkbox"` option)
+* Paragraph => `p`
+* Quote => `q`
+    * citation => `q cite`
+* QuoteBlock => `blockquote`
+    * citation => `blockquote cite`
+    * content => `p` for each array item
 * Strong => `strong`
 * Subscript => `sub`
 * Superscript => `sup`
@@ -145,6 +214,7 @@ Some of the main external dependencies:
     * caption => `track`
     * thumbnail => poster (attribute)
     * transcript => `track`?
+    * contentUrl => `source src`
 
 ### Schema nodes we won't be adding microdata to
 * BlockContent
@@ -159,4 +229,27 @@ Some of the main external dependencies:
     * content
 * InlineContent
 * Mark
+* MediaObject?
+    * bitrate
+    * contentSize
+    * contentUrl (necessary for `audio`, `img`, `video`)
+    * embedUrl
+    * format
+* Mount?
+* Node
+* Product?
+  * brand
+  * logo
+  * productID
+* ResourceParameters?
+    * resourceLimit
+    * resourceRequested
+* SoftwareApplication?
+    * softwareRequirements
+    * softwareVersion
+* SoftwareSession?
+    * volumeMounts
+    * cpuResource
+    * memoryResource
+    * environment
 * Thing
