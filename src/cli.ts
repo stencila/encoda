@@ -42,6 +42,7 @@ import './boot'
 // eslint-disable-next-line import/no-named-default
 import { default as processNode } from './process'
 import * as puppeteer from './util/puppeteer'
+import { coerce, validate } from './util';
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
@@ -73,12 +74,16 @@ configure(options.debug)
           codecOptions: rest
         }
       })
-    } else if (command === 'process') {
+    } else if (['process', 'coerce', 'validate'].includes(command)) {
       const input = args[0]
       const output = args[1] || input
-      const { to, from, standalone, bundle, theme, ...rest } = options
+      const { to = 'json', from, standalone, bundle, theme, ...rest } = options
       const node = await read(input, from)
-      const processed = await processNode(node, path.dirname(input))
+      let processed
+      if (command === 'process') processed = await processNode(node, path.dirname(input))
+      else if (command === 'coerce') processed = await coerce(node)
+      else if (command === 'validate') processed = await validate(node)
+      else processed = node
       await write(processed, output, {
         format: to,
         isStandalone: standalone,
