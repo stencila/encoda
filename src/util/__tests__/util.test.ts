@@ -48,7 +48,7 @@ describe('create', () => {
 
   it('will coerce initial value to conform to schema', async () => {
     expect(
-      await create('Thing', { name: 42, foo: 'invalid' }, 'coerce')
+      await create('Thing', { name: 42 }, 'coerce')
     ).toEqual({
       type: 'Thing',
       name: '42'
@@ -221,17 +221,15 @@ describe('coerce', () => {
     })
   })
 
-  it('will remove additional properties', async () => {
-    expect(
-      await coerce(
+  it('will not remove additional properties', async () => {
+    await expect(
+      coerce(
         {
           favoriteColor: 'red'
         },
         'Person'
       )
-    ).toEqual({
-      type: 'Person'
-    })
+    ).rejects.toThrow(/Property favoriteColor is not expected to be here/)
   })
 
   it('will correct nested nodes including adding type', async () => {
@@ -259,39 +257,6 @@ describe('coerce', () => {
     expect((await cast(article.authors[1], 'Person')).familyNames).toEqual([
       'Jones'
     ])
-  })
-
-  it('currently has a bug with arrays using anyOf', async () => {
-    const article = await coerce(
-      {
-        title: 'Untitled',
-        authors: [
-          {
-            givenNames: ['Joe']
-          },
-          {
-            // Even though we explicitly state that this is an
-            // `Organization`, `legalName` gets dropped because
-            // Ajv sees it as an additional property for `Person`
-            // This is a bug in Ajv.
-            type: 'Organization',
-            name: 'Example Uni',
-            legalName: 'Example University Inc.'
-          }
-        ]
-      },
-      'Article'
-    )
-
-    expect(article.authors[0].type).toEqual('Person')
-
-    expect(article.authors[1].type).toEqual('Organization')
-    expect(article.authors[1].name).toEqual('Example Uni')
-    // @ts-ignore
-    expect(article.authors[1].legalName).toBeUndefined()
-    expect(
-      (await cast(article.authors[1], 'Organization')).legalName
-    ).toBeUndefined()
   })
 
   it('throws an error if unable to coerce data, or data is otherwise invalid', async () => {

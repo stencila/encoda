@@ -170,8 +170,6 @@ const mutators = new Ajv({
   jsonPointers: true,
   // Add values from `default` keyword when property is missing
   useDefaults: true,
-  // Remove any additional properties
-  removeAdditional: true,
   // Coerce type of data to match type keyword and coerce scalar
   // data to an array with one element and vice versa, as needed.
   coerceTypes: 'array',
@@ -269,12 +267,13 @@ export async function coerce<Key extends keyof stencila.Types>(
   const mutator = await getValidator(mutators, type)
 
   return (produce(node, async (coerced: any) => {
+    // Change the type, since this is coercion to the specified type
     if (typeof coerced === 'object') coerced.type = type
     // Rename property aliases
     await rename(coerced)
-    // coerce and validate
+    // Coerce and validate
     if (!mutator(coerced)) {
-      const errors = (betterAjvErrors(mutator.schema, node, mutator.errors, {
+      const errors = (betterAjvErrors(mutator.schema, coerced, mutator.errors, {
         format: 'js'
       }) as unknown) as betterAjvErrors.IOutputError[]
       throw new Error(errors.map(error => `${error.error}`).join(';'))
