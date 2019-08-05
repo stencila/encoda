@@ -5,7 +5,7 @@
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as http from '../../util/http'
-import { coerce } from '../../util'
+import { coerce } from '../../util/coerce'
 
 export const mediaTypes = ['text/x-orcid']
 
