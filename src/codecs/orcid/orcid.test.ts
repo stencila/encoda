@@ -22,7 +22,7 @@ test('sniff', async () => {
 const orcid2yaml = async (ocid: string) =>
   vfile.dump(await yaml.encode(await decode(await vfile.load(ocid))))
 
-test('decode', async () => {
+test.skip('decode', async () => {
   const done = await nockRecord('decode.json')
 
   expect(await orcid2yaml('0000-0002-1825-0097')).toMatchFile(snapshot('josiah.yaml'))

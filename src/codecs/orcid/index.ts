@@ -31,6 +31,9 @@ export async function decode(file: vfile.VFile): Promise<stencila.Node> {
   if (response.statusCode === 200 && response.body) {
     const data = JSON.parse(response.body)
     if (Array.isArray(data.url) && data.url.length > 0) data.url = data.url[0]
+    // TODO: Currently broken due to changes in coerce. Should
+    // be using a JSON-LD coerce function instead.
+    // https://github.com/stencila/encoda/issues/207
     return coerce(data, 'Person')
   }
   throw new Error(`Request failed`)
