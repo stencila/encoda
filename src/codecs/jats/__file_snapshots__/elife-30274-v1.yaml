@@ -104,28 +104,27 @@ content:
     depth: 1
     id: s1
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - 'The '
-      - type: Link
-        target: 'https://osf.io/e81xl/wiki/home/'
-        content:
+      - content:
           - 'Reproducibility Project: Cancer Biology'
+        target: 'https://osf.io/e81xl/wiki/home/'
+        type: Link
       - ' (RP:CB) is a collaboration between the '
-      - type: Link
-        target: 'https://centerforopenscience.org/'
-        content:
+      - content:
           - Center for Open Science
+        target: 'https://centerforopenscience.org/'
+        type: Link
       - ' and '
-      - type: Link
-        target: 'https://www.scienceexchange.com/'
-        content:
+      - content:
           - Science Exchange
+        target: 'https://www.scienceexchange.com/'
+        type: Link
       - ' that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology ('
-      - type: Link
-        target: '#bib6'
-        content:
+      - content:
           - 'Errington et al., 2014'
+        target: '#bib6'
+        type: Link
         relation: bibr
       - >-
         ). For each of these papers a Registered Report detailing the proposed
@@ -133,16 +132,16 @@ content:
         reviewed and published prior to data collection. The present paper is a
         Replication Study that reports the results of the replication
         experiments detailed in the Registered Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ) for a 2012 paper by Lin et al., and uses a number of approaches to
         compare the outcomes of the original experiments and the replications.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         In 2012, Lin et al. reported results that the c-Myc transcription
         factor, a potent oncogene that is frequently overexpressed in a large
@@ -153,114 +152,115 @@ content:
         content:
           - MYC
       - ' activation in Burkitt’s lymphoma, total levels of RNA per cell were reported to increase when c-Myc was highly expressed compared to conditions where c-Myc expression was low. Additionally, active genes in cells with low c-Myc levels were reported to increase in expression upon c-Myc induction, in contrast to genes that were silent under low c-Myc conditions that did not change.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - "The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated\_(Figure\_1B and 3E–F), and summarized the current evidence for these findings ("
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). Since that publication there have been additional studies
         investigating the ability c-Myc to influence the global gene expression
         output of cells. Similar to Lin et al. other studies have reported c-Myc
         dependent amplification of cellular RNA (
-      - type: Link
-        target: '#bib9'
-        content:
+      - content:
           - 'Hart et al., 20152014'
+        target: '#bib9'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib12'
-        content:
+      - content:
           - 'Hsu et al., 2015'
+        target: '#bib12'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib19'
-        content:
+      - content:
           - 'Nie et al., 2012'
+        target: '#bib19'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib27'
-        content:
+      - content:
           - 'Sabò et al., 2014'
+        target: '#bib27'
+        type: Link
         relation: bibr
       - >-
         ), although this observation was not reported in all biological systems
         (
-      - type: Link
-        target: '#bib7'
-        content:
+      - content:
           - 'Fagnocchi et al., 2016'
+        target: '#bib7'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib27'
-        content:
+      - content:
           - 'Sabò et al., 2014'
+        target: '#bib27'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib35'
-        content:
+      - content:
           - 'Walz et al., 2014'
+        target: '#bib35'
+        type: Link
         relation: bibr
       - >-
         ). It has been suggested c-Myc regulates specific genes that indirectly
         lead to RNA amplification (
-      - type: Link
-        target: '#bib27'
-        content:
+      - content:
           - 'Sabò et al., 2014'
+        target: '#bib27'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib26'
-        content:
+      - content:
           - 'Sabò and Amati, 2014'
+        target: '#bib26'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib35'
-        content:
+      - content:
           - 'Walz et al., 2014'
+        target: '#bib35'
+        type: Link
         relation: bibr
       - ). This has also been suggested of MYCN (
-      - type: Link
-        target: '#bib5'
-        content:
+      - content:
           - 'Duffy et al., 20142015'
+        target: '#bib5'
+        type: Link
         relation: bibr
       - >-
         ). The reported differences could be a result of the intrinsic variation
         between cell lines in maintaining the transcriptome (
-      - type: Link
-        target: '#bib32'
-        content:
+      - content:
           - 'Trakhtenberg et al., 2016'
+        target: '#bib32'
+        type: Link
         relation: bibr
       - >-
         ). Indeed, a recent study reported that distinct transcriptional
         regulation can be accounted for by differences in promoter affinity
         under different c-Myc expression levels (
-      - type: Link
-        target: '#bib18'
-        content:
+      - content:
           - 'Lorenzin et al., 2016'
+        target: '#bib18'
+        type: Link
         relation: bibr
       - ).
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         The outcome measures reported in this Replication Study will be
         aggregated with those from the other Replication Studies to create a
         dataset that will be examined to provide evidence about reproducibility
         of cancer biology research, and to identify factors that influence
         reproducibility more generally.
+    type: Paragraph
   - content:
       - Results and discussion
     depth: 1
@@ -271,8 +271,7 @@ content:
     depth: 2
     id: s2-1
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         To test the effects of increased levels of c-Myc on gene expression we
         used the same human P493-6 B cell line of Burkitt’s lymphoma that
@@ -281,64 +280,65 @@ content:
         content:
           - MYC
       - ' transgene ('
-      - type: Link
-        target: '#bib23'
-        content:
+      - content:
           - 'Pajic et al., 2000'
+        target: '#bib23'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib30'
-        content:
+      - content:
           - 'Schuhmacher et al., 1999'
+        target: '#bib30'
+        type: Link
         relation: bibr
       - >-
         ) as the original study. We performed Western blot analysis to confirm
         c-Myc expression could be reduced to very low levels and then
         reactivated after removal of tetracycline. This is comparable to what
         was reported in Figure 1B of
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - Lin et al. (2012)
+        target: '#bib17'
+        type: Link
         relation: bibr
       - ' and described in Protocol 1 in the Registered Report ('
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). Since proliferation of P493-6 cells depend on c-Myc expression and
         the presence of serum (
-      - type: Link
-        target: '#bib23'
-        content:
+      - content:
           - 'Pajic et al., 2000'
+        target: '#bib23'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib30'
-        content:
+      - content:
           - 'Schuhmacher et al., 1999'
+        target: '#bib30'
+        type: Link
         relation: bibr
       - >-
         ), with serum reported to stimulate a majority of genes independent of
         c-Myc (
-      - type: Link
-        target: '#bib28'
-        content:
+      - content:
           - 'Schlosser et al., 2005'
+        target: '#bib28'
+        type: Link
         relation: bibr
       - "), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels\_("
-      - type: Link
-        target: '#fig1'
-        content:
+      - content:
           - Figure 1A
+        target: '#fig1'
+        type: Link
         relation: fig
       - >-
         ). After removal of tetracycline, c-Myc levels increased over time
         approaching the levels observed in tetracycline-free conditions.
+    type: Paragraph
   - 10.7554/eLife.30274.002
   - Figure 1.
   - content:
@@ -346,8 +346,7 @@ content:
     depth: 2
     id: s2-1
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         P493-6 cells were grown in the presence of tetracycline (Tet) for 72 hr
         and switched into Tet-free growth medium to induce c-Myc expression.
@@ -407,41 +406,41 @@ content:
         content:
           - a priori
       - " alpha level\_=\_0.05. Additional details for this experiment can be found at "
-      - type: Link
-        target: 'https://osf.io/tfd57/.'
-        content:
+      - content:
           - 'https://osf.io/tfd57/'
+        target: 'https://osf.io/tfd57/.'
+        type: Link
       - .
+    type: Paragraph
   - content:
       - Total RNA levels following c-Myc overexpression
     depth: 2
     id: s2-2
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We sought to independently replicate whether increased levels of c-Myc
         resulted in increased absolute levels of RNA. This experiment is similar
         to what was reported in Figure 3E of
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - Lin et al. (2012)
+        target: '#bib17'
+        type: Link
         relation: bibr
       - ' and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report ('
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after
         tetracycline release and the amount of RNA per 1,000 cells was
         quantified (
-      - type: Link
-        target: '#fig1'
-        content:
+      - content:
           - Figure 1B
+        target: '#fig1'
+        type: Link
         relation: fig
       - "). We found that under conditions where c-Myc expression was low (0 hr), there was a mean of 1.55 ng total RNA per 1,000 cells (ng/1 k cells) [n\_=\_3, "
       - type: Emphasis
@@ -487,56 +486,56 @@ content:
         measured total RNA from P493-6 cells reported a different level at 0 hr
         (~3 ng/1 k cells), while also reporting increased levels following c-Myc
         expression (
-      - type: Link
-        target: '#bib27'
-        content:
+      - content:
           - 'Sabò et al., 2014'
+        target: '#bib27'
+        type: Link
         relation: bibr
       - >-
         ). There are multiple possible explanations for these differences, such
         as variation in RNA expression during cell culture passage (
-      - type: Link
-        target: '#bib11'
-        content:
+      - content:
           - 'Hiorns et al., 2004'
+        target: '#bib11'
+        type: Link
         relation: bibr
       - >-
         ), low yield of the RNA isolation procedure (e.g. incomplete
         homogenization), or the high variance associated with manual cell counts
         using a hemacytometer (
-      - type: Link
-        target: '#bib2'
-        content:
+      - content:
           - 'Biggs and Macmillan, 1948'
+        target: '#bib2'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib20'
-        content:
+      - content:
           - 'Nielson et al., 1991'
+        target: '#bib20'
+        type: Link
         relation: bibr
       - >-
         ). To summarize, for this experiment we found results that were in the
         same direction as the original study and not statistically significant
         for serum lot one, while statistically significant for serum lot two.
+    type: Paragraph
   - content:
       - Digital gene expression following c-Myc overexpression
     depth: 2
     id: s2-3
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - "To test whether c-Myc expression amplifies the existing gene expression program, digital gene expression analysis using the NanoString nCounter platform was performed on a set of genes from multiple functional categories. This experiment is similar to what was reported in Figure 3F and Table S1\_of "
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - Lin et al. (2012)
+        target: '#bib17'
+        type: Link
         relation: bibr
       - ' and described in Protocols 3–4 in the Registered Report ('
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). We quantified mRNA levels/cell of 1369 genes, of which 1212 were the
@@ -550,47 +549,47 @@ content:
         68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr
         upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times
         increase in median expression, respectively (
-      - type: Link
-        target: '#fig2'
-        content:
+      - content:
           - Figure 2
+        target: '#fig2'
+        type: Link
         relation: fig
       - ', '
-      - type: Link
-        target: '#fig2s1'
-        content:
+      - content:
           - Figure 2—figure supplement 1
+        target: '#fig2s1'
+        type: Link
         relation: fig
       - >-
         ). For silent genes, 74% of the genes increased from 0 hr to 1 hr, 66%
         increased from 0 hr to 24 hr, and 50% increased from 1 hr to 24 hr,
         corresponding to a 1.19 and 1.13 times increase, and a 0.05 times
         decrease in median expression, respectively (
-      - type: Link
-        target: '#fig2'
-        content:
+      - content:
           - Figure 2
+        target: '#fig2'
+        type: Link
         relation: fig
       - ', '
-      - type: Link
-        target: '#fig2s1'
-        content:
+      - content:
           - Figure 2—figure supplement 1
+        target: '#fig2s1'
+        type: Link
         relation: fig
       - >-
         ). Serum lot two gave similar results, although there were variations in
         the number of genes identified as silent or active as well as the degree
         of increase among the conditions (
-      - type: Link
-        target: '#fig2'
-        content:
+      - content:
           - Figure 2
+        target: '#fig2'
+        type: Link
         relation: fig
       - ', '
-      - type: Link
-        target: '#fig2s1'
-        content:
+      - content:
           - Figure 2—figure supplement 1
+        target: '#fig2s1'
+        type: Link
         relation: fig
       - >-
         ). This compares to the original study that identified 755 active genes
@@ -610,6 +609,7 @@ content:
         lot two). For silent genes, 96.4% (456/473) of the genes we identified
         as silent in serum lot one were common with the silent genes identified
         in the original study (95.8% (453/473) for serum lot two).
+    type: Paragraph
   - 10.7554/eLife.30274.003
   - Figure 2.
   - content:
@@ -617,8 +617,7 @@ content:
     depth: 2
     id: s2-3
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         P493-6 cells grown in the presence of tetracycline (Tet) for 72 hr for
         repression of the conditional p
@@ -626,33 +625,34 @@ content:
         content:
           - myc
       - "-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes\_=\_708, silent genes\_=\_580. Cells grown in serum lot two: active genes\_=\_719, silent genes\_=\_573. Confirmatory analysis is reported in "
-      - type: Link
-        target: '#table1'
-        content:
+      - content:
           - Table 1
+        target: '#table1'
+        type: Link
         relation: table
       - ' and exploratory statistical analysis is reported in '
-      - type: Link
-        target: '#table2'
-        content:
+      - content:
           - Table 2
+        target: '#table2'
+        type: Link
         relation: table
       - "\_and "
-      - type: Link
-        target: '#table3'
-        content:
+      - content:
           - Table 3
+        target: '#table3'
+        type: Link
         relation: table
       - '. Additional details for this experiment can be found at '
-      - type: Link
-        target: 'https://osf.io/fn2y4/.'
-        content:
+      - content:
           - 'https://osf.io/fn2y4/'
+        target: 'https://osf.io/fn2y4/.'
+        type: Link
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - 10.7554/eLife.30274.006
       - Figure 2—source data 1.
+    type: Paragraph
   - content:
       - List of Reporter CodeSets and gene expression values.
     depth: 2
@@ -665,13 +665,12 @@ content:
     depth: 2
     id: s2-3
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - 'This is the same experiment as in '
-      - type: Link
-        target: '#fig2'
-        content:
+      - content:
           - Figure 2
+        target: '#fig2'
+        type: Link
         relation: fig
       - . (
       - type: Strong
@@ -711,11 +710,12 @@ content:
         ) genes. Median represented as the line through the box and whiskers
         representing values within 1.5 IQR of the first and third quartile.
         Additional details for this experiment can be found at
-      - type: Link
-        target: 'https://osf.io/fn2y4/.'
-        content:
+      - content:
           - 'https://osf.io/fn2y4/'
+        target: 'https://osf.io/fn2y4/.'
+        type: Link
       - .
+    type: Paragraph
   - 10.7554/eLife.30274.005
   - Figure 2—figure supplement 2.
   - content:
@@ -723,13 +723,12 @@ content:
     depth: 2
     id: s2-3
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - 'This is the same experiment as in '
-      - type: Link
-        target: '#fig2'
-        content:
+      - content:
           - Figure 2
+        target: '#fig2'
+        type: Link
         relation: fig
       - . (
       - type: Strong
@@ -748,40 +747,40 @@ content:
         content:
           - '2'
       - ' ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at '
-      - type: Link
-        target: 'https://osf.io/fn2y4/.'
-        content:
+      - content:
           - 'https://osf.io/fn2y4/'
+        target: 'https://osf.io/fn2y4/.'
+        type: Link
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         To test whether active genes, as well as silent genes, increased
         expression during c-Myc induction we performed the confirmatory analysis
         as outlined in the Registered Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). This analysis differed from what was reported in the original study
         by analyzing the data as paired instead of unpaired. As suggested during
         peer review of the Registered Report, this is because expression of the
         same gene, analyzed across different conditions, is not independent (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). We performed a Wilcoxon signed-rank test on active genes comparing
         expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were
         statistically significant for cells grown in both lots of serum (
-      - type: Link
-        target: '#table1'
-        content:
+      - content:
           - Table 1
+        target: '#table1'
+        type: Link
         relation: table
       - >-
         ). The same comparisons were performed on silent genes, which were also
@@ -792,10 +791,10 @@ content:
         active and silent genes c-Myc induction resulted in statistically
         significant increases in expression, with the exception of the silent
         gene comparison from 0 hr to 1 hr (
-      - type: Link
-        target: '#table1'
-        content:
+      - content:
           - Table 1
+        target: '#table1'
+        type: Link
         relation: table
       - >-
         ). This is in contrast to the results of the unpaired tests that were
@@ -806,790 +805,790 @@ content:
         comparison, which resulted in statistically significant differences
         among the active gene comparisons as well as half of the silent gene
         comparisons (
-      - type: Link
-        target: '#table2'
-        content:
+      - content:
           - Table 2
+        target: '#table2'
+        type: Link
         relation: table
       - ).
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - Genes
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Comparison
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Study
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Z value
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - P value
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Sample size (n)
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Active
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 0 hr vs 1 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '14.86'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.36e-55'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '708'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '11.83'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '2.83e-34'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '719'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '21.17'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.05e-130'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '755'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 0 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '9.922'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.67e-24'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '708'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '12.77'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.77e-40'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '719'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '23.26'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.33e-184'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '755'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 1 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.742'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.92e-06'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '708'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '10.04'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '9.91e-25'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '719'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '23.26'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.33e-184'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '755'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Silent
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 0 hr vs 1 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '12.61'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '7.11e-40'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '580'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '7.05'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '9.29e-13'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '572'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - −1.998
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.0457'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '274'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 0 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '8.328'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '2.22e-17'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '579'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '8.156'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.03e-16'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '572'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.179'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.00144'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '276'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 1 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.6853'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.493'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '580'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.436'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '8.35e-06'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '573'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '5.806'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.11e-09'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '236'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: table1
     title: Confirmatory statistical tests.
     content: []
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+  - rows:
+      - cells:
+          - content:
               - Genes
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Comparison
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Study
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - W value
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - P value
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Sample size (n)
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Active
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 0 hr vs 1 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '270378'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.0103'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1416'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '274696'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.0395'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1438'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '318799'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '6.67e-05'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1510'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 0 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '300774'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '7.16e-11'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1416'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '324564'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.74e-17'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1438'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '400999'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.16e-42'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1510'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 1 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '281679'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '5.45e-05'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1416'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '308954'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.45e-10'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1438'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '372714'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.11e-25'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1510'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Silent
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 0 hr vs 1 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '187682'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.000638'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1160'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '174695'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.0602'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1146'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '127104'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.236'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1028'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 0 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '185804'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.00203'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1160'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '184470'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.000289'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1146'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '132082'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.997'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1028'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 1 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '166122'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.716'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1160'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '173608'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.0918'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1146'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '136443'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.295'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1028'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: table2
     title: Exploratory statistical tests.
     content: []
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Importantly, though, the question of whether the change in expression
         among active genes is different than silent genes has not been tested.
         This would require a separate test on their difference (
-      - type: Link
-        target: '#bib8'
-        content:
+      - content:
           - 'Gelman and Stern, 2006'
+        target: '#bib8'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib21'
-        content:
+      - content:
           - 'Nieuwenhuis et al., 2011'
+        target: '#bib21'
+        type: Link
         relation: bibr
       - >-
         ). To test whether active genes increased in expression during c-Myc
@@ -1599,10 +1598,10 @@ content:
         silent genes over that same period (e.g. from 0 hr to 24 hr). For both
         the original and replication data, there was a statistically significant
         increase in expression of active genes compared to silent genes (
-      - type: Link
-        target: '#table3'
-        content:
+      - content:
           - Table 3
+        target: '#table3'
+        type: Link
         relation: table
       - >-
         ). This suggests that active genes and silent genes do not have similar
@@ -1611,204 +1610,204 @@ content:
         original study and suggest that while both active and silent genes
         increased in expression upon c-Myc induction, the rate of increase was
         different.
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - Comparison
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Study
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - W value
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - P value
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Sample size (n)
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - 0 hr vs 1 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '303897'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '7.78e-50'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1288'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '278646'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.1e-27'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1292'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '349351'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.27e-130'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1269'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - 0 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '272441'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '5.18e-24'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1288'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '292865'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '7.4e-39'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1292'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '368182'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.14e-163'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1269'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - 1 hr vs 24 hr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'RP:CB Lot 1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '235077'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '7.45e-06'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1288'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - 'RP:CB Lot 2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '272028'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.73e-23'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1292'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
-              - type: Link
-                target: '#bib17'
-                content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
+              - content:
                   - Lin et al. (2012)
+                target: '#bib17'
+                type: Link
                 relation: bibr
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '332069'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '5.72e-104'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1269'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: table3
     title: Exploratory statistical tests.
     content: []
-  - type: Paragraph
-    content:
+  - content:
       - >-
         The original study and this replication attempt used the same criteria
         to characterize a gene as silent or active, but there are many negative
         consequences of dichotomizing continuous variables, such as information
         loss, especially with a small gene set (
-      - type: Link
-        target: '#bib1'
-        content:
+      - content:
           - 'Altman and Royston, 2006'
+        target: '#bib1'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib4'
-        content:
+      - content:
           - 'Cohen, 1983'
+        target: '#bib4'
+        type: Link
         relation: bibr
       - >-
         ). Papers published after the original study took an unbiased view by
@@ -1816,26 +1815,26 @@ content:
         transcriptional effects of c-Myc were direct or indirect, concluding
         c-Myc activates and represses transcription of discrete gene sets, which
         in turn leads to induced RNA amplification (
-      - type: Link
-        target: '#bib27'
-        content:
+      - content:
           - 'Sabò et al., 2014'
+        target: '#bib27'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib35'
-        content:
+      - content:
           - 'Walz et al., 2014'
+        target: '#bib35'
+        type: Link
         relation: bibr
       - >-
         ). Furthermore, Sabò and colleagues also used NanoString technology to
         quantify a subset of the differentially expressed genes identified by
         RNA-seq and observed similar results that revealed upward shifts in gene
         expression upon c-Myc induction (
-      - type: Link
-        target: '#bib27'
-        content:
+      - content:
           - 'Sabò et al., 2014'
+        target: '#bib27'
+        type: Link
         relation: bibr
       - >-
         ). However, instead of dichotomizing genes as active or silent, gene
@@ -1843,30 +1842,30 @@ content:
         digital gene expression data generated during this replication attempt
         as continuous, which illustrates a general pattern of overall increased
         gene expression following c-Myc induction (
-      - type: Link
-        target: '#fig2s2'
-        content:
+      - content:
           - Figure 2—figure supplement 2
+        target: '#fig2s2'
+        type: Link
         relation: fig
       - >-
         ). Importantly, though, these results are limited to the 1369 genes
         interrogated in this study and may or may not reflect how the entire
         transcriptome of P493-6 cells respond to c-Myc induction.
+    type: Paragraph
   - content:
       - Meta-analyses of original and replicated effects
     depth: 2
     id: s2-4
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We performed a meta-analysis using a random-effects model to combine
         each of the effects described above as pre-specified in the confirmatory
         analysis plan (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). To provide a standardized measure of the effect, a common effect size
@@ -1880,16 +1879,16 @@ content:
         content:
           - r
       - ' is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results ('
-      - type: Link
-        target: '#bib6'
-        content:
+      - content:
           - 'Errington et al., 2014'
+        target: '#bib6'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib33'
-        content:
+      - content:
           - 'Valentine et al., 2011'
+        target: '#bib33'
+        type: Link
         relation: bibr
       - >-
         ). Importantly, the width of the confidence interval for each study is a
@@ -1899,8 +1898,8 @@ content:
         content:
           - SD
       - ) and sample size.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         The comparison of total RNA levels at low levels of c-Myc (0 hr)
         compared to high levels of c-Myc (24 hr) resulted in
@@ -1908,10 +1907,10 @@ content:
         content:
           - d
       - "\_=\_4.19, 95% CI [0.94, 7.37] for the data reported in Figure\_3E of the original study ("
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - 'Lin et al., 2012'
+        target: '#bib17'
+        type: Link
         relation: bibr
       - '). This compares to '
       - type: Emphasis
@@ -1922,10 +1921,10 @@ content:
         content:
           - d
       - "\_=\_4.11, 95% CI [0.90, 7.23] for serum lot two reported in this study. A meta-analysis ("
-      - type: Link
-        target: '#fig3'
-        content:
+      - content:
           - Figure 3A
+        target: '#fig3'
+        type: Link
         relation: fig
       - ') of these effects resulted in '
       - type: Emphasis
@@ -1945,6 +1944,7 @@ content:
         original study and serum lot two, and vice versa; however the point
         estimate of the original study and serum lot two were within the
         confidence intervals of each other.
+    type: Paragraph
   - 10.7554/eLife.30274.010
   - Figure 3.
   - content:
@@ -1952,13 +1952,12 @@ content:
     depth: 2
     id: s2-4
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - "Effect size and 95% confidence interval are presented for\_"
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - 'Lin et al., 2012'
+        target: '#bib17'
+        type: Link
         relation: bibr
       - >-
         , this replication study (RP:CB), and a random effects meta-analysis of
@@ -1971,10 +1970,10 @@ content:
         content:
           - r
       - " is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in\_"
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - 'Lin et al., 2012'
+        target: '#bib17'
+        type: Link
         relation: bibr
       - ' and this replication attempt are reported under the study name. ('
       - type: Strong
@@ -2029,28 +2028,28 @@ content:
         content:
           - p
       - ' = 0.0571). Additional details for these meta-analyses can be found at '
-      - type: Link
-        target: 'https://osf.io/5yscz/'
-        content:
+      - content:
           - 'https://osf.io/5yscz/'
+        target: 'https://osf.io/5yscz/'
+        type: Link
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         There were six comparisons of the gene expression data, three for active
         genes and three for silent genes (
-      - type: Link
-        target: '#fig3'
-        content:
+      - content:
           - Figure 3B
+        target: '#fig3'
+        type: Link
         relation: fig
       - >-
         ). These calculations were performed analyzing the data as paired, for
         reasons discussed above and as prespecified in the Registered Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr
@@ -2116,17 +2115,17 @@ content:
         expression analysis indicates that the effect sizes observed from the
         two serum lots tested in this replication attempt, although not
         identical, were more similar to each other than to the original study.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         This direct replication provides an opportunity to understand the
         present evidence of these effects. Any known differences, including
         reagents and protocol differences, were identified prior to conducting
         the experimental work and described in the Registered Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). However, this is limited to what was obtainable from the original
@@ -2136,123 +2135,123 @@ content:
         the cell line, induction time course, and the method used to measure
         gene expression were maintained, others were changed at the time of
         study design (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - ') that could affect results, such as the analytical approach ('
-      - type: Link
-        target: '#bib31'
-        content:
+      - content:
           - 'Silberzahn et al., 2017'
+        target: '#bib31'
+        type: Link
         relation: bibr
       - ) and serum lot (
-      - type: Link
-        target: '#bib15'
-        content:
+      - content:
           - 'Leek et al., 2010'
+        target: '#bib15'
+        type: Link
         relation: bibr
       - >-
         ). Furthermore, other aspects were unknown or not easily controlled for.
         These include variables such as cell line genetic drift (
-      - type: Link
-        target: '#bib13'
-        content:
+      - content:
           - 'Hughes et al., 2007'
+        target: '#bib13'
+        type: Link
         relation: bibr
       - '; '
-      - type: Link
-        target: '#bib14'
-        content:
+      - content:
           - 'Kleensang et al., 2016'
+        target: '#bib14'
+        type: Link
         relation: bibr
       - ")\_or changes in cellular volume that can impact overall transcript abundance ("
-      - type: Link
-        target: '#bib22'
-        content:
+      - content:
           - 'Padovan-Merhar et al., 2015'
+        target: '#bib22'
+        type: Link
         relation: bibr
       - >-
         ). Whether these or other factors influence the outcomes of this study
         is open to hypothesizing and further investigation, which is facilitated
         by direct replications and transparent reporting.
+    type: Paragraph
   - content:
       - Materials and methods
     depth: 1
     id: s3
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - As described in the Registered Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ), we attempted a replication of the experiments reported in Figures 1B
         and 3E-F of
-      - type: Link
-        target: '#bib17'
-        content:
+      - content:
           - Lin et al. (2012)
+        target: '#bib17'
+        type: Link
         relation: bibr
       - >-
         . A detailed description of all protocols can be found in the Registered
         Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). Additional detailed experimental notes, data, and analysis are
         available on the Open Science Framework (OSF) (RRID:
-      - type: Link
-        target: 'https://scicrunch.org/resolver/SCR_003238'
-        content:
+      - content:
           - SCR_003238
+        target: 'https://scicrunch.org/resolver/SCR_003238'
+        type: Link
       - ) (
-      - type: Link
-        target: 'https://osf.io/mokeb/'
-        content:
+      - content:
           - 'https://osf.io/mokeb/'
+        target: 'https://osf.io/mokeb/'
+        type: Link
       - '; '
-      - type: Link
-        target: '#bib16'
-        content:
+      - content:
           - 'Lewis et al., 2017'
+        target: '#bib16'
+        type: Link
         relation: bibr
       - ). This includes the R Markdown file (
-      - type: Link
-        target: 'https://osf.io/vdrsh/'
-        content:
+      - content:
           - 'https://osf.io/vdrsh/'
+        target: 'https://osf.io/vdrsh/'
+        type: Link
       - >-
         ) that was used to compose this manuscript, which is a reproducible
         document linking the results in the article directly to the data and
         code that produced them (
-      - type: Link
-        target: '#bib10'
-        content:
+      - content:
           - 'Hartgerink, 2017'
+        target: '#bib10'
+        type: Link
         relation: bibr
       - ).
+    type: Paragraph
   - content:
       - Cell culture
     depth: 2
     id: s3-1
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         P493-6 cells (shared by Young lab, Whitehead Institute for Biomedical
         Research, RRID:
-      - type: Link
-        target: 'https://scicrunch.org/resolver/CVCL_6783'
-        content:
+      - content:
           - CVCL_6783
+        target: 'https://scicrunch.org/resolver/CVCL_6783'
+        type: Link
       - >-
         ) were maintained in RPMI-1640 supplemented with 1% Ala-Gln and 10%
         tetracycline-free FBS (Clontech, Mountain View, CA, cat# 631105, lot# 1:
@@ -2262,13 +2261,13 @@ content:
         content:
           - '2'
       - '. Quality control data for the cell line are available at '
-      - type: Link
-        target: 'https://osf.io/e6ftz/.'
-        content:
+      - content:
           - 'https://osf.io/e6ftz/.'
+        target: 'https://osf.io/e6ftz/.'
+        type: Link
       - ' This includes results confirming the cell line was free of mycoplasma contamination (DDC Medical, Fairfield, Ohio). Additionally, STR DNA profiling of the cell line was performed (DDC Medical, Fairfield, Ohio).'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - For repression of the conditional p
       - type: Emphasis
         content:
@@ -2278,45 +2277,45 @@ content:
         content:
           - MYC
       - ' ('
-      - type: Link
-        target: '#bib30'
-        content:
+      - content:
           - 'Schuhmacher et al., 1999'
+        target: '#bib30'
+        type: Link
         relation: bibr
       - '). For '
       - type: Emphasis
         content:
           - MYC
       - ' re-induction, cells were washed three times with growth medium and grown in tetracycline-free culture conditions.'
+    type: Paragraph
   - content:
       - Western blot
     depth: 2
     id: s3-2
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - "P493-6 cells were harvested at the indicated times and total cell lysates were prepared by pelleting\_~1×10"
       - type: Superscript
         content:
           - '7'
       - " cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury,\_NY,\_model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report ("
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - "). The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics,\_Burlingame,\_CA, cat# 1472–1; RRID:"
-      - type: Link
-        target: 'https://scicrunch.org/resolver/AB_731658'
-        content:
+      - content:
           - AB_731658
+        target: 'https://scicrunch.org/resolver/AB_731658'
+        type: Link
       - >-
         ); 1:5000 dilution in 5% w/v nonfat dry milk/TBST and mouse anti-ß-actin
         [clone AC-15] (Sigma-Aldrich, cat# A5441; RRID:
-      - type: Link
-        target: 'https://scicrunch.org/resolver/AB_476744'
-        content:
+      - content:
           - AB_476744
+        target: 'https://scicrunch.org/resolver/AB_476744'
+        type: Link
       - >-
         ); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST. Each incubation was
         followed by washes with TBST and the appropriate secondary antibody:
@@ -2327,35 +2326,35 @@ content:
         ECL Prime Chemiluminescent reagent (Sigma-Aldrich, cat# GERPN2232)
         according to the manufacturer’s instructions. Western blot images were
         acquired with G:BOX iChem XT and GeneSnap software (RRID:
-      - type: Link
-        target: 'https://scicrunch.org/resolver/SCR_014249'
-        content:
+      - content:
           - SCR_014249
+        target: 'https://scicrunch.org/resolver/SCR_014249'
+        type: Link
       - >-
         ), version 7.12.02 (Syngene, Frederick, Maryland) and quantified using
         ImageJ software (RRID:
-      - type: Link
-        target: 'https://scicrunch.org/resolver/SCR_003070'
-        content:
+      - content:
           - SCR_003070
+        target: 'https://scicrunch.org/resolver/SCR_003070'
+        type: Link
       - '), version 1.50i ('
-      - type: Link
-        target: '#bib29'
-        content:
+      - content:
           - 'Schneider et al., 2012'
+        target: '#bib29'
+        type: Link
         relation: bibr
       - '). All images taken are available at '
-      - type: Link
-        target: 'https://osf.io/ujg7t/.'
-        content:
+      - content:
           - 'https://osf.io/ujg7t/.'
+        target: 'https://osf.io/ujg7t/.'
+        type: Link
+    type: Paragraph
   - content:
       - RNA quantification
     depth: 2
     id: s3-3
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - "P493-6 cells were harvested at the indicated times and total RNA extraction was performed by pelleting\_~1×10"
       - type: Superscript
         content:
@@ -2365,30 +2364,30 @@ content:
         content:
           - g
       - " for 10 min at 4°C. The aqueous phase was recovered and total RNA isolation was performed using the miRVana miRNA extraction kit (Ambion, Waltham,\_MA,\_cat# AM1561) according to the manufacturer’s instructions. Recovered RNA was eluated in 100 µl nuclease-free water. Total RNA concentrations and purity (data available at "
-      - type: Link
-        target: 'https://osf.io/jh5r4/'
-        content:
+      - content:
           - 'https://osf.io/jh5r4/'
+        target: 'https://osf.io/jh5r4/'
+        type: Link
       - >-
         ) were measured using a NanoDrop ND-1000 (Thermo Fisher Scientific,
         Waltham, Massachusetts) with the NanoDrop Operating Software, version
         3.3, and converted to ng per 1,000 cells.
+    type: Paragraph
   - content:
       - RNA extraction and NanoString nCounter digital gene expression assay
     depth: 2
     id: s3-4
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - P493-6 cells were harvested at the indicated times and 1 × 10
       - type: Superscript
         content:
           - '6'
       - " cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden,\_Germany,\_cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report ("
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit,
@@ -2406,60 +2405,60 @@ content:
         was above one transcript/cell at 0 hr and transcriptionally silent if
         below 0.5 transcript/cell. A list of all Reporter CodeSets and their
         expression values (transcripts/cell) are available at
-      - type: Link
-        target: '#fig2sdata1'
-        content:
+      - content:
           - Figure 2—source data 1
+        target: '#fig2sdata1'
+        type: Link
         relation: supplementary-material
       - '. Additional files and analysis scripts are available at '
-      - type: Link
-        target: 'https://osf.io/fn2y4/.'
-        content:
+      - content:
           - 'https://osf.io/fn2y4/.'
+        target: 'https://osf.io/fn2y4/.'
+        type: Link
+    type: Paragraph
   - content:
       - Statistical analysis
     depth: 2
     id: s3-5
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - 'Statistical analysis was performed with R software (RRID:'
-      - type: Link
-        target: 'https://scicrunch.org/resolver/SCR_001905'
-        content:
+      - content:
           - SCR_001905
+        target: 'https://scicrunch.org/resolver/SCR_001905'
+        type: Link
       - '), version 3.3.2 ('
-      - type: Link
-        target: '#bib25'
-        content:
+      - content:
           - 'R Core Team, 2017'
+        target: '#bib25'
+        type: Link
         relation: bibr
       - '). All data, csv files, and analysis scripts are available on the OSF ('
-      - type: Link
-        target: 'https://osf.io/mokeb/'
-        content:
+      - content:
           - 'https://osf.io/mokeb/'
+        target: 'https://osf.io/mokeb/'
+        type: Link
       - ). Confirmatory statistical analysis was pre-registered (
-      - type: Link
-        target: 'https://osf.io/nj8wb/'
-        content:
+      - content:
           - 'https://osf.io/nj8wb/'
+        target: 'https://osf.io/nj8wb/'
+        type: Link
       - >-
         ) before the experimental work began as outlined in the Registered
         Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ). Proposed analysis of gene expression data was conducted by the
         Wilcoxon signed-rank test using the method proposed by Pratt to handle
         zero differences (
-      - type: Link
-        target: '#bib24'
-        content:
+      - content:
           - 'Pratt, 1959'
+        target: '#bib24'
+        type: Link
         relation: bibr
       - >-
         ), with additional exploratory analysis performed using the Wilcoxon
@@ -2484,53 +2483,54 @@ content:
         content:
           - metafor
       - ' package ('
-      - type: Link
-        target: '#bib34'
-        content:
+      - content:
           - 'Viechtbauer, 2010'
+        target: '#bib34'
+        type: Link
         relation: bibr
       - ') (available at: '
-      - type: Link
-        target: 'https://osf.io/5yscz/'
-        content:
+      - content:
           - 'https://osf.io/5yscz/'
+        target: 'https://osf.io/5yscz/'
+        type: Link
       - '). The sample sizes reported in '
-      - type: Link
-        target: '#table1'
-        content:
+      - content:
           - Table 1
+        target: '#table1'
+        type: Link
         relation: table
       - ' and '
-      - type: Link
-        target: '#fig3'
-        content:
+      - content:
           - Figure 3
+        target: '#fig3'
+        type: Link
         relation: fig
       - ' for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking ('
-      - type: Link
-        target: '#bib24'
-        content:
+      - content:
           - 'Pratt, 1959'
+        target: '#bib24'
+        type: Link
         relation: bibr
       - >-
         ). The raw original study data were shared by the original authors with
         the summary data published in the Registered Report (
-      - type: Link
-        target: '#bib3'
-        content:
+      - content:
           - 'Blum et al., 2015'
+        target: '#bib3'
+        type: Link
         relation: bibr
       - >-
         ) and was used in the power calculations to determine the sample size
         for this study.
+    type: Paragraph
   - content:
       - Deviations from registered report
     depth: 2
     id: s3-6
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - "The number of flasks, and thus cells, was increased when tetracycline was added to P493-6 cells to account for the cells not proliferating during this period (i.e. there were two Flask B’s as described in the Registered Report, which were pooled prior to seeding). The proposed statistical analysis for the western blot analysis (Protocol 1) described in the Registered Report was not performed since the levels of normalized c-Myc at time 0 hr was at the limit of detection. The number of genes analyzed in the original study, and thus listed in the Registered Report, was reported incorrectly as 1388 instead of 1338 (data shared by original authors). NanoString analysis was conducted using the nCounter RCC Collector Worksheet instead of nSolver Analysis software. Additionally, the statistical tests reported in\_Figure\_3F of the original study incorrectly described the comparisons as between 0 hr and 1 hr instead of between 0 hr and 24 hr (scripts shared by original authors). The corrected values are described above for comparisons and used in the meta-analysis. Additional materials and instrumentation not listed in the Registered Report, but needed during experimentation are also listed."
+    type: Paragraph
 references:
   - authors:
       - givenNames:

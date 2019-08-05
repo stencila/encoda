@@ -140,8 +140,7 @@ content:
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Peer review is the practice of subjecting a scholarly article, such as a
         research paper submitted to a journal, to scrutiny or review by others
@@ -155,8 +154,8 @@ content:
         letters from the editor). It is also possible for an article to go
         through two or more rounds of peer review, which increases the number of
         documents generated.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Traditionally the documents generated during the peer review process
         were only ever seen by the author, the editor and the reviewers, but a
@@ -165,9 +164,7 @@ content:
         gaining momentum, driven by a wish to increase transparency and provide
         credit for peer reviewers (
 
-      - type: Link
-        target: '#ref-2'
-        content:
+      - content:
           - |-
             Polka 
 
@@ -175,6 +172,8 @@ content:
             content:
               - et al
           - '., 2018'
+        target: '#ref-2'
+        type: Link
         relation: bibr
       - >-
         ). There were 10 journals identified in the PMC corpus that archive some
@@ -183,8 +182,8 @@ content:
         these materials. Additionally, some journals were identified as
         publishing peer review materials but not consistently archiving them in
         a repository.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Here we report the findings of a workshop, held at the BMA in London, UK
         on July 6, 2018, at which representatives from publishers, PubMed
@@ -197,21 +196,21 @@ content:
         approaches to peer review that have emerged over the past decade,
         notably the many different flavours of 'open peer review' (
 
-      - type: Link
-        target: '#ref-3'
-        content:
+      - content:
           - 'Ross-Hellauer, 2017'
+        target: '#ref-3'
+        type: Link
         relation: bibr
       - >-
         ), but we feel that many of our suggestions and recommendations are
         relevant to most if not all of these approaches.
+    type: Paragraph
   - content:
       - What are peer review materials?
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         As mentioned above, peer review materials can include: the reviewer
         reports (with or without the reviewer name); responses by the author to
@@ -225,8 +224,8 @@ content:
         IDs; the individual materials may or may not have DOIs. In subscription
         journals it is also possible for peer review materials to appear in
         front of or behind the paywall.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Publishers are approaching the publication of peer review materials in a
         number of ways. The aims of this group were not to prescribe what should
@@ -234,35 +233,35 @@ content:
         to be found by readers and machines alike. Prior to the workshop, data
         were collected from each publisher attending and we found the following
         materials are published:
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
+    type: Paragraph
+  - items:
+      - content:
           - '○ '
-          - type: Paragraph
-            content:
+          - content:
               - 'Peer review reports, anonymized or with report author names'
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '○ '
-          - type: Paragraph
-            content:
+          - content:
               - Author responses/Rebuttals
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '○ '
-          - type: Paragraph
-            content:
+          - content:
               - Editor decision letters
-  - type: Paragraph
-    content:
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
       - >-
         Some journals also provide appeal and resubmission information
         (including previous versions of the article, dates, and actors
         involved).
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         In some cases publishers make peer review materials available as a
         single PDF with versioned reports linked to specific revisions of the
@@ -271,22 +270,22 @@ content:
         narrative. The variety can be found in the meeting notes and a table
         filled out before the meeting (See 
 
-      - type: Link
-        target: '#SF1'
-        content:
+      - content:
           - Supplementary File 1
+        target: '#SF1'
+        type: Link
         relation: other
       - |2-
          and 
 
-      - type: Link
-        target: '#SF2'
-        content:
+      - content:
           - Supplementary File 2
+        target: '#SF2'
+        type: Link
         relation: other
       - ).
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         After collecting these data, representatives from each of the identified
         publishers were contacted to attend a workshop in London on July 6,
@@ -303,10 +302,10 @@ content:
         shared details of their schema extension to represent this form of
         content (
 
-      - type: Link
-        target: 'https://www.crossref.org/services/content-registration/peer-reviews/'
-        content:
+      - content:
           - 'https://www.crossref.org/services/content-registration/peer-reviews/'
+        target: 'https://www.crossref.org/services/content-registration/peer-reviews/'
+        type: Link
       - >-
         ). As downstream recipients of peer review materials, PMC and Europe PMC
         presented the perspective of archives that collaborate with journals to
@@ -315,13 +314,13 @@ content:
         record.  Understanding the goals of, workflows, and limitations on each
         stakeholder allowed the group to refine the scope of the discussion and
         its outcomes.
+    type: Paragraph
   - content:
       - Peer review materials need to “stand alone”
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         In order to advance the transparency and recognition of peer review
         materials, we agreed these peer review materials need to stand alone
@@ -330,14 +329,11 @@ content:
         recently enhanced Crossref schema). We identified three levels of
         achieving this, with level 1 being the basic and least preferred option,
         but probably currently the most achievable and pragmatic:
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
+    type: Paragraph
+  - items:
+      - content:
           - '1. '
-          - type: Paragraph
-            content:
+          - content:
               - >-
                 Peer review materials are attached to the article as a single or
                 numerous PDFs. Whether these materials are pulled together into
@@ -346,31 +342,34 @@ content:
                 support the capture of any available metadata and identify these
                 files in a machine-readable and interoperable way for publishers
                 to tag this content appropriately.
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '2. '
-          - type: Paragraph
-            content:
+          - content:
               - >-
                 Peer review materials are appended to the article within the
                 full text (so all is machine readable) as a sub-article
                 component of the XML.
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '3. '
-          - type: Paragraph
-            content:
+          - content:
               - >-
                 Peer review materials are full-text XML “articles” or
                 “commentaries” in their own right that link bidirectionally to
                 the main article.
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
   - content:
       - Required metadata versus rich metadata
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Whether the material is provided as a PDF(s) attachment to the main
         article, or as a full-text XML sub-article or separate article,
@@ -386,91 +385,91 @@ content:
         of this material can be added to the item in a machine-readable way.
         Even if the actual content is not published in full-text XML format, the
         metadata can (and should) be.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         The topic of licensing of the peer review materials was briefly
         discussed at the workshop but ultimately left out of the remit of this
         group because the JATS tagging schema would allow for different
         licensing information to be added for these items or to retain that of
         the main article, as a publisher chooses.
+    type: Paragraph
   - content:
       - Challenges in the process
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         While a few of the publishers had processes in place to prepare the peer
         review content automatically or within a few minutes, others spend 20–40
         minutes per article. In such cases, the tasks that are attributed to
         this time include the following:
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+    type: Paragraph
+  - items:
+      - content:
+          - content:
               - Removing boilerplate text from review reports
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - >-
                 “Stitching together” the material from disparate locations in
                 the submission system
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - 'Editorial checks:'
-          - type: List
-            order: unordered
-            items:
-              - type: ListItem
-                content:
-                  - type: Paragraph
-                    content:
+            type: Paragraph
+          - items:
+              - content:
+                  - content:
                       - >-
                         Reviewing the content for sensitive information, e.g.,
                         unpublished data additions and confidentiality leaks, as
                         well ensuring the tone of the report is appropriate
-              - type: ListItem
-                content:
-                  - type: Paragraph
-                    content:
+                    type: Paragraph
+                type: ListItem
+              - content:
+                  - content:
                       - >-
                         Removing author responses that contain data the author
                         wants to publish in a subsequent paper
-              - type: ListItem
-                content:
-                  - type: Paragraph
-                    content:
+                    type: Paragraph
+                type: ListItem
+              - content:
+                  - content:
                       - Arbitration processes for conflicting reviews
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+                    type: Paragraph
+                type: ListItem
+            order: unordered
+            type: List
+        type: ListItem
+      - content:
+          - content:
               - >-
                 Reviewing the content for sensitive information, e.g.,
                 unpublished data additions and confidentiality leaks, as well
                 ensuring the tone of the report is appropriate
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - >-
                 Removing author responses that contain data the author wants to
                 publish in a subsequent paper
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Arbitration processes for conflicting reviews
-  - type: Paragraph
-    content:
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
       - >-
         Where time is spent—whether in the editorial or production
         process—depends on the publisher workflow. Regardless of workflow, the
@@ -479,8 +478,8 @@ content:
         streamline these efforts. Coordination between publishers and submission
         systems could minimize the time spent “stitching together” peer review
         materials into a publishable format.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         In addition to time and workflow hurdles, another major challenge noted
         by those publishers without their own hosting platforms, was the actual
@@ -491,8 +490,8 @@ content:
         are not available. In such cases, it becomes more difficult to capture
         any relevant associated metadata in a meaningful way for the peer review
         materials or to make this valuable content easily discoverable.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         These challenges are common for publishers in that most of the
         established submission systems and hosting platforms were designed and
@@ -501,8 +500,8 @@ content:
         around publishing peer review materials may result in more satisfactory
         and generic approaches to accommodating publication of peer review
         materials.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         There are internal challenges of cost control issues that also need to
         be accounted for, and the publication of a single PDF is often more
@@ -510,73 +509,73 @@ content:
         XML. However, the attachment of machine-readable metadata to that PDF
         should be within reach, especially if the submission systems and hosting
         platforms can build these requirements into their products.
+    type: Paragraph
   - content:
       - Importance of version management
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         An additional challenge may be introduced in managing peer review
         materials in cases where such materials are collected for more than one
         published version of a paper. The 
 
-      - type: Link
-        target: 'http://www.niso.org/publications/rp/RP-8-2008.pdf'
-        content:
+      - content:
           - >-
             Recommendations of the NISO/ALPSP Journal Article Versions (JAV)
             Technical Working Group
+        target: 'http://www.niso.org/publications/rp/RP-8-2008.pdf'
+        type: Link
       - |2-
          (
 
-      - type: Link
-        target: '#ref-1'
-        content:
+      - content:
           - '2008'
+        target: '#ref-1'
+        type: Link
         relation: bibr
       - ' April), included the following types of article instances:'
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+    type: Paragraph
+  - items:
+      - content:
+          - content:
               - authors-original
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - submitted-manuscript-under-review
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - accepted-manuscript
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - proof
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - version-of-record
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - corrected-version-of-record
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - enhanced-version-of-record
-  - type: Paragraph
-    content:
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
       - >-
         To this list, the JATS4R working group on “Article publication and
         history dates” added pre-print. The JATS4R draft recommendation advises
@@ -584,13 +583,13 @@ content:
         subsequent revisions should be labelled with suffixes, as follows:
         “-r1”, “-r2”, etc. (
 
-      - type: Link
-        target: 'https://jats4r.org/article-publication-and-history-dates'
-        content:
+      - content:
           - 'https://jats4r.org/article-publication-and-history-dates'
+        target: 'https://jats4r.org/article-publication-and-history-dates'
+        type: Link
       - ).
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         If the peer review materials reference content in a specific version of
         an article, that link between peer review materials and correct version
@@ -603,44 +602,41 @@ content:
         with the appropriate version. It should not be left to a reader to
         determine if a peer review report or decision letter relates to the
         first version, the second version, or the third version.
+    type: Paragraph
   - content:
       - JATS XML proposal (designed to aid depositing to Crossref)
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Irrespective of the editorial and publisher decisions regarding
         workflow, we propose the following options regarding JATS XML tagging,
         designed to also aid metadata registration with Crossref (note we are
         using the same terms as Crossref where controlled vocabulary is
         required).
+    type: Paragraph
   - content:
       - Overarching document type
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - 'Review documents may be supplied as:'
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
+    type: Paragraph
+  - items:
+      - content:
           - '1. '
-          - type: Paragraph
-            content:
+          - content:
               - >-
                 sub-articles <sub-article> to the article being reviewed
                 (sub-articles may be full-text XML or XML metadata plus a link
                 to the PDF)
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '2. '
-          - type: Paragraph
-            content:
+          - content:
               - >-
                 independent articles <article> (with the appropriate
                 <related-article> links – Peer Reviews MUST link to the version
@@ -648,199 +644,202 @@ content:
                 Letters MUST link to the version of the article they are passing
                 judgment on; and Author Replies MUST link to each
                 Review/Decision Letter it is addressing)
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
   - content:
       - Identifying the type of content
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         <sub-article> or <article> MUST have an article-type attribute with one
         of the values listed in 
 
-      - type: Link
-        target: '#T1'
-        content:
+      - content:
           - Table 1
+        target: '#T1'
+        type: Link
         relation: table
       - .
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - Attribute (as per Crossref schema)
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Corresponding term in this document
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - referee-report
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Peer review
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - editor-report
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Decision Letter
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - author-comment
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Author Response/Rebuttal
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - aggregated-review-documents
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Collected Review Documents
+            type: TableCell
+        type: TableRow
+    type: Table
     id: T1
     title: Article-type attributes.
     content: []
-  - type: Paragraph
-    content:
+  - content:
       - The term manuscript does not map to anything we’ve discussed.
+    type: Paragraph
   - content:
       - Identifying the recommendation
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         This is an optional item. Currently there is no corresponding tag in
         JATS and so would require a request to the JATS Standing Committee.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - 'There would be a fixed value list, mapped to the Crossref schema:'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - major-revision
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - minor-revision
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - reject
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - reject-with-resubmit
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - accept
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - accept-with-reservation
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         NOTE: There should be no “recommendation” for author-comment type
         content.
+    type: Paragraph
   - content:
       - Identifying the authors (including ORCIDs)
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         It is an optional element and should be contained within <contrib>,
         which should contain a <name> or <anonymous/>.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         If <contrib> is used, it MUST contain @contrib-type that maps to
         following controlled vocabulary:
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
+    type: Paragraph
+  - items:
+      - content:
           - '○ '
-          - type: Paragraph
-            content:
+          - content:
               - 'For Peer Reviews, use @contrib-type=“reviewer”'
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '○ '
-          - type: Paragraph
-            content:
+          - content:
               - 'For Decision Letters, use @contrib-type=“editor”'
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - '○ '
-          - type: Paragraph
-            content:
+          - content:
               - 'For Author Reply, use @contrib-type=“author”'
-  - type: Paragraph
-    content:
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
       - >-
         We intend that the @contrib-type attribute value reflects the
         contributor’s relationship to the peer review process and not the
         relationship with the document.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         The <role> tag is optional and can be used for display terms of what
         publishers may use for their journal (for example variations on the term
         editor could be Academic Editor, Reviewing Editor, Senior Editor, E-i-C
         etc.).
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Names, affiliations and contributor IDs (such as ORCID), where provided,
         follow standard JATS tagging (see JATS4R recommendation: 
 
-      - type: Link
-        target: 'https://jats4r.org/authors-and-affiliations'
-        content:
+      - content:
           - 'https://jats4r.org/authors-and-affiliations'
+        target: 'https://jats4r.org/authors-and-affiliations'
+        type: Link
       - ).
+    type: Paragraph
   - content:
       - Identifying any competing interests
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         Follow tagging recommended by JATS4R: 
 
-      - type: Link
-        target: 'https://jats4r.org/conflict-of-interest-statements'
-        content:
+      - content:
           - 'https://jats4r.org/conflict-of-interest-statements'
+        target: 'https://jats4r.org/conflict-of-interest-statements'
+        type: Link
       - .
+    type: Paragraph
   - content:
       - Identifying DOIs
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         DOIs for peer review materials are optional but strongly encouraged. Use
         <article-id pub-id-type=“doi”>
+    type: Paragraph
   - content:
       - Licensing and copyright
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Each review document (standalone article or sub-article) SHOULD have
         license information with a machine-readable license. Review documents
@@ -848,75 +847,75 @@ content:
         inherit their license information from the parent document as described
         in the JATS4R Permissions Recommendations (
 
-      - type: Link
-        target: 'https://jats4r.org/permissions'
-        content:
+      - content:
           - 'https://jats4r.org/permissions'
+        target: 'https://jats4r.org/permissions'
+        type: Link
       - ).
+    type: Paragraph
   - content:
       - Date
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Each review document (standalone article or sub-article) MUST have a
         pub-date and may have other publication information captured as <event>.
         Review documents supplied as <sub-article> may have their own <pub-date>
         element or inherit their <pub-date> from the parent document.
+    type: Paragraph
   - content:
       - Not allowed
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - 'There are some elements that MUST NOT appear in review documents:'
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
+    type: Paragraph
+  - items:
+      - content:
           - 'a. '
-          - type: Paragraph
-            content:
+          - content:
               - <funding-group>
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - 'b. '
-          - type: Paragraph
-            content:
+          - content:
               - '<app>, <app-group>, <ack>, <glossary>, <back>/<sec>'
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - 'c. '
-          - type: Paragraph
-            content:
+          - content:
               - '<supplementary-material>, <inline-supplementary-material>'
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - 'd. '
-          - type: Paragraph
-            content:
+          - content:
               - <bio>
-      - type: ListItem
-        content:
+            type: Paragraph
+        type: ListItem
+      - content:
           - 'e. '
-          - type: Paragraph
-            content:
+          - content:
               - >-
                 <article-version> Once published, review documents will not be
                 “versioned”. If the reviewer(s) write a review on an updated
                 version of the manuscript, the peer review is a new published
                 object.
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
   - content:
       - Crossref metadata
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         As of November 2017, Crossref supports the scholarly discussions
         entailed in the publication process as well as those after publication
@@ -925,20 +924,20 @@ content:
         Crossref APIs and Crossref Metadata Search. For full details and example
         deposit XML, see the Crossref peer review deposit guide: 
 
-      - type: Link
-        target: >-
-          https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews
-        content:
+      - content:
           - >-
             https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews
+        target: >-
+          https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews
+        type: Link
       - .
+    type: Paragraph
   - content:
       - Display of peer review materials
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We also propose that publisher web platforms and archives display peer
         review materials (or links to peer review materials) in a clearly
@@ -946,13 +945,13 @@ content:
         only are the journal processes transparent but that the content itself
         is easy to find and navigate to, regardless of how a journal chooses to
         make them available.
+    type: Paragraph
   - content:
       - Future/next steps
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         This proposal is intended to lay the groundwork for the publication and
         archiving of peer review materials across publishers and publication
@@ -966,8 +965,8 @@ content:
         through ongoing efforts such as ASAPbio and FORCE11. In turn, these
         needs can inform the technical solutions and recommendations going
         forward.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Further technical discussions should not be placed on hold in the
         interim, though. As publishing peer review materials practices grow,
@@ -978,8 +977,8 @@ content:
         efforts and ensure some level of metadata alignment for peer review
         materials that would reduce costs to publishers and minimize barriers to
         implementation.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         This type of coordination between publishers, archives, and other
         organizations that support the scholarly communication enterprise is
@@ -991,19 +990,20 @@ content:
         of the content can be supported. Implementing the next steps through
         community-driven recommendations in a sustainable way will be important
         in increasing transparency and rigor of the scientific record.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         If you are publishing peer review materials, or are not yet and are
         considering doing so, please comment.
+    type: Paragraph
   - content:
       - Data availability
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - No data are associated with this article.
+    type: Paragraph
 references:
   - authors: []
     title: >-

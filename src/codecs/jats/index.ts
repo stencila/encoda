@@ -209,7 +209,7 @@ function decodeAuthor(
   article: xml.Element
 ): stencila.Person {
   const name = child(author, ['name', 'string-name'])
-  const person: stencila.Person = name ? decodeName(name) : { type: 'Person' }
+  const person = name ? decodeName(name) : stencila.person()
 
   const emails = all(author, 'email')
   if (emails.length) person.emails = emails.map(text)
@@ -737,19 +737,10 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
     type === 'bullet' || type === 'simple' ? 'unordered' : 'ascending'
   const items = all(elem, 'list-item').map(
     (item): stencila.ListItem => {
-      return {
-        type: 'ListItem',
-        content: decodeElements(item.elements || [], state)
-      }
+      return stencila.listItem(decodeElements(item.elements || [], state))
     }
   )
-  return [
-    {
-      type: 'List',
-      order,
-      items
-    }
-  ]
+  return [stencila.list(items, { order })]
 }
 
 function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
@@ -766,7 +757,7 @@ function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Table] {
-  const table: stencila.Table = { type: 'Table', rows: [] }
+  const table = stencila.table([])
 
   const id = attr(elem, 'id')
   if (id) table.id = id
@@ -785,15 +776,13 @@ function decodeTableWrap(
   const rows = all(elem, 'tr')
   if (rows.length) {
     table.rows = rows.map(row => {
-      return {
-        type: 'TableRow',
-        cells: all(row, ['td', 'th']).map(cell => {
-          return {
-            type: 'TableCell',
-            content: decodeInlineContent(cell.elements || [], state)
-          }
+      return stencila.tableRow(
+        all(row, ['td', 'th']).map(cell => {
+          return stencila.tableCell(
+            decodeInlineContent(cell.elements || [], state)
+          )
         })
-      }
+      )
     })
   }
 
@@ -845,10 +834,5 @@ function decodeBreak(): [string] {
 }
 
 function decodeInlineGraphic(elem: xml.Element): [stencila.ImageObject] {
-  return [
-    {
-      type: 'ImageObject',
-      contentUrl: attr(elem, 'xlink:href') || ''
-    }
-  ]
+  return [stencila.imageObject(attr(elem, 'xlink:href') || '')]
 }

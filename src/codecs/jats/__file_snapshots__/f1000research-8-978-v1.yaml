@@ -71,26 +71,25 @@ content:
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Climate change has exerted significant biological, spatial and temporal
         effects on terrestrial habitats
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-1'
-            content:
+          - content:
               - '1'
+            target: '#ref-1'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-2'
-            content:
+          - content:
               - '2'
+            target: '#ref-2'
+            type: Link
             relation: bibr
       - |-
         . The increasing CO
@@ -103,10 +102,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-3'
-            content:
+          - content:
               - '3'
+            target: '#ref-3'
+            type: Link
             relation: bibr
       - >-
         . Additionally, the inherent fragility of dry lands made them
@@ -116,60 +115,60 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-4'
-            content:
+          - content:
               - '4'
+            target: '#ref-4'
+            type: Link
             relation: bibr
       - |-
         . IIED
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-5'
-            content:
+          - content:
               - '5'
+            target: '#ref-5'
+            type: Link
             relation: bibr
       - |2-
          suggests that dry-land regions are projected to significant climate changes, but there still exist substantial variability and uncertainty in these estimates based on different scenarios. Many of the important United Arab Emirates (UAE) plant species, for instance, may be facing major challenges for their survival. Many of such native species are becoming restricted in their distributions because of overgrazing and habitat destruction. In addition to the natural prolonged drought, human activities are also threatening many native plants
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-6'
-            content:
+          - content:
               - '6'
+            target: '#ref-6'
+            type: Link
             relation: bibr
       - |2-
          and their conservation
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-7'
-            content:
+          - content:
               - '7'
+            target: '#ref-7'
+            type: Link
             relation: bibr
       - |-
         . The IPCC report
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-8'
-            content:
+          - content:
               - '8'
+            target: '#ref-8'
+            type: Link
             relation: bibr
       - |2-
          also projected that deserts are going to become hotter and drier. Additionally and in relation to the Arab region, climate change-induced desertification has been prolonged, critically affecting the vulnerability of the local population. The projected warming would lead to seasonal changes in precipitation, evapotranspiration and radiation Hulme and Jenkins
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-9'
-            content:
+          - content:
               - '9'
+            target: '#ref-9'
+            type: Link
             relation: bibr
       - >-
         . These changes can largely affect the distribution of species and
@@ -177,10 +176,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-10'
-            content:
+          - content:
               - '10'
+            target: '#ref-10'
+            type: Link
             relation: bibr
       - >-
         . Thus, the implications of climate change for biodiversity have led to
@@ -189,24 +188,24 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-11'
-            content:
+          - content:
               - '11'
+            target: '#ref-11'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Both habitat quality and diversity have significant impact on species’
         distribution and richness within the environment
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-12'
-            content:
+          - content:
               - '12'
+            target: '#ref-12'
+            type: Link
             relation: bibr
       - >-
         . Ecological envelope models or species distribution models (SDMs) have
@@ -215,38 +214,38 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-13'
-            content:
+          - content:
               - '13'
+            target: '#ref-13'
+            type: Link
             relation: bibr
       - |-
         . These models are also used to understand biological processes
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-14'
-            content:
+          - content:
               - '14'
+            target: '#ref-14'
+            type: Link
             relation: bibr
       - |2-
          and climate change impacts on biodiversity
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-15'
-            content:
+          - content:
               - '15'
+            target: '#ref-15'
+            type: Link
             relation: bibr
           - |-
             –
 
-          - type: Link
-            target: '#ref-17'
-            content:
+          - content:
               - '17'
+            target: '#ref-17'
+            type: Link
             relation: bibr
       - >-
         . Understanding the future distribution of climatically suitable habitat
@@ -255,18 +254,18 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-18'
-            content:
+          - content:
               - '18'
+            target: '#ref-18'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-19'
-            content:
+          - content:
               - '19'
+            target: '#ref-19'
+            type: Link
             relation: bibr
       - >-
         . The species occurrence records alone may not be sufficient for
@@ -277,22 +276,22 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-20'
-            content:
+          - content:
               - '20'
+            target: '#ref-20'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-21'
-            content:
+          - content:
               - '21'
+            target: '#ref-21'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Maximum entropy (MaxEnt) is one of the robust environmental suitability
         ecological niche/ ecological envelope) models for assessing species
@@ -301,28 +300,28 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-22'
-            content:
+          - content:
               - '22'
+            target: '#ref-22'
+            type: Link
             relation: bibr
           - |-
             –
 
-          - type: Link
-            target: '#ref-24'
-            content:
+          - content:
               - '24'
+            target: '#ref-24'
+            type: Link
             relation: bibr
       - |-
         . MaxEnt is a species distribution model (SDM)
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-25'
-            content:
+          - content:
               - '25'
+            target: '#ref-25'
+            type: Link
             relation: bibr
       - |2-
          and it is used for the present study. The hypothesis is that shifting, contracting and expanding species habitats are affected by the ongoing climate change. For this, habitat suitability changes of the selected three species (i.e. 
@@ -343,6 +342,7 @@ content:
         content:
           - Ziziphus spina-christi
       - ) in the current vs the future climate scenarios was modeled.
+    type: Paragraph
   - content:
       - Methods
     depth: 1
@@ -353,8 +353,7 @@ content:
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         This study was conducted in the UAE. It covers a total land area of
         approximately 82,925 km
@@ -366,13 +365,13 @@ content:
         , which was used as the basis for calculating the species distribution
         areas. The study area boundaries was converted to shape files and and
         then used to extract the environmental and climatic variables.
+    type: Paragraph
   - content:
       - Species ecological characteristics
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - type: Emphasis
         content:
           - Calotropis procera
@@ -384,14 +383,14 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-26'
-            content:
+          - content:
               - '26'
+            target: '#ref-26'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - type: Emphasis
         content:
           - Prosopis cineraria
@@ -400,14 +399,14 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-27'
-            content:
+          - content:
               - '27'
+            target: '#ref-27'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - type: Emphasis
         content:
           - Ziziphus spina-christi
@@ -420,47 +419,47 @@ content:
         flowers is very valuable and its leaves has various medicinal uses. The
         leaves also contain various flavonoids, saponin, alkaloids, and
         allelochemicals.
+    type: Paragraph
   - content:
       - Model requirements
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         We have extracted current and future 19 bioclimatic variables from the 
 
-      - type: Link
-        target: 'https://www.worldclim.org'
-        content:
+      - content:
           - WorldClim
+        target: 'https://www.worldclim.org'
+        type: Link
       - |2-
          website
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-28'
-            content:
+          - content:
               - '28'
+            target: '#ref-28'
+            type: Link
             relation: bibr
       - |2-
          and tested for colinearity using the SDM tool in ArcGis 10.1
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-29'
-            content:
+          - content:
               - '29'
+            target: '#ref-29'
+            type: Link
             relation: bibr
       - |2-
          (an open-source alternative is 
 
-      - type: Link
-        target: 'https://www.qgis.org/en/site/'
-        content:
+      - content:
           - QGIS
+        target: 'https://www.qgis.org/en/site/'
+        type: Link
       - >-
         ). Additionally, variables included were land use cover and elevation
         data for the study area. Even though the variables were highly
@@ -468,19 +467,19 @@ content:
         variables for the model development. Representative concentration
         pathway (RCP)4.5 was selected and for 2050s and 2070s, the 
 
-      - type: Link
-        target: 'http://www.cesm.ucar.edu/models/ccsm4.0/'
-        content:
+      - content:
           - Community Climate System Model version 4
+        target: 'http://www.cesm.ucar.edu/models/ccsm4.0/'
+        type: Link
       - |2-
          climate model was used to download the bioclimatic variables. RCP4.5 stabilizes radiative forcing by 2100
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-30'
-            content:
+          - content:
               - '30'
+            target: '#ref-30'
+            type: Link
             relation: bibr
       - >-
         . It includes global emissions of greenhouse gases and
@@ -490,8 +489,8 @@ content:
         content:
           - '2'
       - ' (30 arc-seconds) was used for this predictive assessment.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         All three species’ presence-only data was used and each species had 100
         georeferenced location data. For the selected species, the model was
@@ -506,23 +505,23 @@ content:
         and the Jackknife method was used to assess the variable contribution to
         the habitat distribution. Model fit was assessed using the area under
         the curve (AUC) values.
+    type: Paragraph
   - content:
       - Environmental parameters
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         In addition to land use cover and elevation data, 19 variables were
         extracted from the WorldClim database
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-31'
-            content:
+          - content:
               - '31'
+            target: '#ref-31'
+            type: Link
             relation: bibr
       - >-
         , which is a set of global climate layers generated through
@@ -533,101 +532,101 @@ content:
         content:
           - '2'
       - ' resolution). The 19 environmental variables are coded as follows:'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '1. BIO1: Annual Mean Temperature'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '2. BIO2: Mean Diurnal Range (Mean of monthly (max temp - min temp))'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '3. BIO3: Isothermality (BIO2/BIO7) (* 100)'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '4. BIO4: Temperature Seasonality (standard deviation *100)'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '5. BIO5: Max Temperature of Warmest Month'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '6. BIO6: Min Temperature of Coldest Month'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '7. BIO7: Temperature Annual Range (BIO5-BIO6)'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '8. BIO8: Mean Temperature of Wettest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '9. BIO9: Mean Temperature of Driest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '10. BIO10: Mean Temperature of Warmest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '11. BIO11: Mean Temperature of Coldest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '12. BIO12: Annual Precipitation'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '13. BIO13: Precipitation of Wettest Month'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '14. BIO14: Precipitation of Driest Month'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '15. BIO15: Precipitation Seasonality (Coefficient of Variation)'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '16. BIO16: Precipitation of Wettest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '17. BIO17: Precipitation of Driest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '18. BIO18: Precipitation of Warmest Quarter'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - '19. BIO19: Precipitation of Coldest Quarter'
+    type: Paragraph
   - content:
       - Modeling approach
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         The 
 
-      - type: Link
-        target: 'https://www.gbif.org/en/tool/81279/maxent'
-        content:
+      - content:
           - MaxEnt model Version 3.4.1
+        target: 'https://www.gbif.org/en/tool/81279/maxent'
+        type: Link
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-25'
-            content:
+          - content:
               - '25'
+            target: '#ref-25'
+            type: Link
             relation: bibr
       - |2-
          was used for this assessment of the three different tree/shrub species distribution. MaxEnt has been used to model species niches and distributions through machine-learning techniques referred to as maximum entropy modeling
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-17'
-            content:
+          - content:
               - '17'
+            target: '#ref-17'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-32'
-            content:
+          - content:
               - '32'
+            target: '#ref-32'
+            type: Link
             relation: bibr
       - >-
         . It is very robust in cases of small sample size of species
@@ -635,14 +634,14 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-17'
-            content:
+          - content:
               - '17'
+            target: '#ref-17'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         MaxEnt uses a combination of a set of environmental (e.g. climatic)
         grids and geo-referenced presence points for the species under
@@ -650,10 +649,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-33'
-            content:
+          - content:
               - '33'
+            target: '#ref-33'
+            type: Link
             relation: bibr
       - >-
         . The model expresses a probability distribution where each grid cell is
@@ -661,10 +660,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-33'
-            content:
+          - content:
               - '33'
+            target: '#ref-33'
+            type: Link
             relation: bibr
       - >-
         . To improve model performance and minimize over-fitting, because of the
@@ -674,48 +673,48 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-34'
-            content:
+          - content:
               - '34'
+            target: '#ref-34'
+            type: Link
             relation: bibr
           - |-
             –
 
-          - type: Link
-            target: '#ref-36'
-            content:
+          - content:
               - '36'
+            target: '#ref-36'
+            type: Link
             relation: bibr
       - |-
         . MaxEnt
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-25'
-            content:
+          - content:
               - '25'
+            target: '#ref-25'
+            type: Link
             relation: bibr
       - |2-
          is a model for predicting the distribution of species based on environmental parameters and species’ presence data
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-37'
-            content:
+          - content:
               - '37'
+            target: '#ref-37'
+            type: Link
             relation: bibr
       - |-
         . It uses both continuous and categorical data
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-25'
-            content:
+          - content:
               - '25'
+            target: '#ref-25'
+            type: Link
             relation: bibr
       - >-
         . MaxEnt has been reported to be comparable to other highly accurate
@@ -723,10 +722,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-38'
-            content:
+          - content:
               - '38'
+            target: '#ref-38'
+            type: Link
             relation: bibr
       - >-
         . This model was run for the current and future (2050–2070)
@@ -735,10 +734,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-39'
-            content:
+          - content:
               - '39'
+            target: '#ref-39'
+            type: Link
             relation: bibr
       - >-
         . While generating response curves, the MaxEnt model estimates the
@@ -746,12 +745,13 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-40'
-            content:
+          - content:
               - '40'
+            target: '#ref-40'
+            type: Link
             relation: bibr
       - .
+    type: Paragraph
   - content:
       - Results
     depth: 1
@@ -762,8 +762,7 @@ content:
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Models for the three species performed better than the random, with an
         AUC values 0.97 (
@@ -792,10 +791,10 @@ content:
       - |2-
          concede that out of the 10 selected environmental variables for model execution, precipitation of the coldest quarter (36.3%) temperature annual range (27.2%) and annual precipitation (6.3%) exhibited the highest gain towards the habitat distribution (
 
-      - type: Link
-        target: '#f1'
-        content:
+      - content:
           - Figure 1a
+        target: '#f1'
+        type: Link
         relation: fig
       - |-
         ). Whereas for 
@@ -806,10 +805,10 @@ content:
       - |2-
          precipitation of the coldest quarter followed by temperature seasonality and mean diurnal range were the highly influencing variables for its distribution (
 
-      - type: Link
-        target: '#f1'
-        content:
+      - content:
           - Figure 1b
+        target: '#f1'
+        type: Link
         relation: fig
       - |-
         ). At the same time for 
@@ -820,10 +819,10 @@ content:
       - |2-
          precipitation of wettest month (56.1%) influenced the most followed by precipitation of the coldest quarter and annual precipitation (
 
-      - type: Link
-        target: '#f1'
-        content:
+      - content:
           - Figure 1c
+        target: '#f1'
+        type: Link
         relation: fig
       - |-
         ). Locations for each species are available as 
@@ -833,207 +832,208 @@ content:
           - Underlying data
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-41'
-            content:
+          - content:
               - '41'
+            target: '#ref-41'
+            type: Link
             relation: bibr
       - .
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - Variable
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Percent contribution
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - type: Emphasis
                 content:
                   - Calotropis Procera
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - Prosopis cineraria
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - Ziziphus spinachristi
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio19
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '26.8'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '38.9'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '44.8'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio12
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '25.2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '36.6'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '18.1'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio2
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '14.4'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '11.7'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '16.2'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio11
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '6.8'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '8.5'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '9'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Elevation
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '6.3'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '2.8'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.8'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio7
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '5.8'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.5'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3.5'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio5
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '5.3'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.3'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.6'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Land cover
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4.8'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.3'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.9'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio13
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '2.1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.8'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio16
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.3'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.3'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio4
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1.2'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.1'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0.1'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - bio14
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '0'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: T1
     title: |-
       Variable contributions in percent for 
@@ -1042,8 +1042,7 @@ content:
                                   Ziziphus spina-christi.
     content: []
   - 'Figure 1. '
-  - type: Paragraph
-    content:
+  - content:
       - |-
         Jackknife variable contribution test for 
 
@@ -1081,20 +1080,20 @@ content:
         content:
           - c
       - ).
+    type: Paragraph
   - content:
       - Current habitat suitability
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         Results from the current habitat distribution map (
 
-      - type: Link
-        target: '#f2'
-        content:
+      - content:
           - Figure 2
+        target: '#f2'
+        type: Link
         relation: fig
       - >-
         ) clearly indicate that the environmental conditions in the northern
@@ -1110,10 +1109,10 @@ content:
       - |2-
          (
 
-      - type: Link
-        target: '#f3'
-        content:
+      - content:
           - Figure 3
+        target: '#f3'
+        type: Link
         relation: fig
       - >-
         ) followed by 9.4% as medium suitability habitat (M). The remaining
@@ -1126,10 +1125,10 @@ content:
       - |2-
          (
 
-      - type: Link
-        target: '#f3'
-        content:
+      - content:
           - Figure 3
+        target: '#f3'
+        type: Link
         relation: fig
       - >-
         ), 1.5% of the total area was predicted as a highly suitable habitat and
@@ -1141,17 +1140,17 @@ content:
       - |2-
          (
 
-      - type: Link
-        target: '#f3'
-        content:
+      - content:
           - Figure 3
+        target: '#f3'
+        type: Link
         relation: fig
       - >-
         ) revealed high and medium suitability habitat of around 5.7% and 11.5%,
         respectively.
+    type: Paragraph
   - 'Figure 2. '
-  - type: Paragraph
-    content:
+  - content:
       - |-
         Current and future habitat distribution (current, 2050s and 2070s) for 
 
@@ -1189,6 +1188,7 @@ content:
         content:
           - c
       - ).
+    type: Paragraph
   - 'Figure 3. '
   - content:
       - >-
@@ -1219,8 +1219,7 @@ content:
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         The future (2050s) habitat distribution of 
 
@@ -1246,13 +1245,13 @@ content:
         content:
           - Ziziphus spina-christi
       - ' distribution, an increase of its high habitat suitability distribution for both 2050s and 2070s, as climate is expected to change.'
+    type: Paragraph
   - content:
       - Discussion
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         In this study we predicted the suitable habitat for three significant
         dry land species with the MaxEnt model. Both current and future habitat
@@ -1285,10 +1284,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-42'
-            content:
+          - content:
               - '42'
+            target: '#ref-42'
+            type: Link
             relation: bibr
       - |-
         . A study by Frosi 
@@ -1301,10 +1300,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-43'
-            content:
+          - content:
               - '43'
+            target: '#ref-43'
+            type: Link
             relation: bibr
       - |2-
          suggested that 
@@ -1323,14 +1322,14 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-44'
-            content:
+          - content:
               - '44'
+            target: '#ref-44'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - |-
         The present study can be useful for selecting species like 
 
@@ -1348,10 +1347,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-27'
-            content:
+          - content:
               - '27'
+            target: '#ref-27'
+            type: Link
             relation: bibr
       - >-
         . In UAE, during the past few decades around 300,000 ha has been planted
@@ -1359,17 +1358,17 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-45'
-            content:
+          - content:
               - '45'
+            target: '#ref-45'
+            type: Link
             relation: bibr
       - >-
         . The main purpose of these plantation is to combat desertification by
         afforestation. These artificial forests utilizes numerous resources with
         no economic benefit.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - |-
         Other than 
 
@@ -1406,10 +1405,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-27'
-            content:
+          - content:
               - '27'
+            target: '#ref-27'
+            type: Link
             relation: bibr
       - |-
         . 
@@ -1428,10 +1427,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-27'
-            content:
+          - content:
               - '27'
+            target: '#ref-27'
+            type: Link
             relation: bibr
       - |-
         . Growth and floral diversity are better under 
@@ -1444,14 +1443,14 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-46'
-            content:
+          - content:
               - '46'
+            target: '#ref-46'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - type: Emphasis
         content:
           - Ziziphus spina-christi
@@ -1460,19 +1459,19 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-47'
-            content:
+          - content:
               - '47'
+            target: '#ref-47'
+            type: Link
             relation: bibr
       - .
+    type: Paragraph
   - content:
       - Conclusion
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         The MaxEnt model provides useful information about species and their
         satiable habitats, which can be used as a basis in planning future
@@ -1484,6 +1483,7 @@ content:
         using different SDMs. Finer spatial scales of species distribution
         modeling may be an appropriate next step toward species conservation
         under the potential changes in climatic conditions.
+    type: Paragraph
   - content:
       - Data availability
     depth: 1
@@ -1494,28 +1494,24 @@ content:
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - "Figshare:\tSURE2018.zip. \n                    "
-      - type: Link
-        target: 'https://doi.org/10.6084/m9.figshare.8233328.v1'
-        content:
+      - content:
           - 'https://doi.org/10.6084/m9.figshare.8233328.v1'
+        target: 'https://doi.org/10.6084/m9.figshare.8233328.v1'
+        type: Link
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-41'
-            content:
+          - content:
               - '41'
+            target: '#ref-41'
+            type: Link
             relation: bibr
       - '. This project contains a zipped folder made up of the following files:'
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+    type: Paragraph
+  - items:
+      - content:
+          - content:
               - |2-
                  Calotropis procera.csv (location of 
 
@@ -1523,10 +1519,10 @@ content:
                 content:
                   - Calotropis procera
               - ' this study).'
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - |2-
                  Prosopis cineraria.csv (location of 
 
@@ -1534,10 +1530,10 @@ content:
                 content:
                   - Prosopis cineraria
               - ' in this study).'
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - |2-
                  Ziziphus  spinachristi.csv  (location  of  
 
@@ -1545,16 +1541,20 @@ content:
                 content:
                   - Ziziphus spinachristi
               - ' in this study).'
-  - type: Paragraph
-    content:
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
       - |-
         Data are available under the terms of the 
 
-      - type: Link
-        target: 'https://creativecommons.org/licenses/by/4.0/legalcode'
-        content:
+      - content:
           - Creative Commons Attribution 4.0 International license
+        target: 'https://creativecommons.org/licenses/by/4.0/legalcode'
+        type: Link
       - ' (CC-BY 4.0).'
+    type: Paragraph
 references:
   - authors:
       - givenNames:

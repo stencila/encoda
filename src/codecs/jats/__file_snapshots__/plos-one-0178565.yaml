@@ -29,184 +29,183 @@ content:
     depth: 1
     id: sec001
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Cyanobacteria, a group of prokaryotes, are well known for their ability
         to carry out oxygenic photosynthesis. They survive in different niche
         environmental conditions ranging from seawater to deserts and greatly
         contribute to the global primary production [
-      - type: Link
-        target: '#pone.0178565.ref001'
-        content:
+      - content:
           - '1'
+        target: '#pone.0178565.ref001'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref002'
-        content:
+      - content:
           - '2'
+        target: '#pone.0178565.ref002'
+        type: Link
         relation: bibr
       - >-
         ]. This ability to sequester atmospheric carbon dioxide and
         photosynthetically convert it to biomass makes cyanobacteria leading
         candidates in biofuel research. The nitrogen fixing variety of some
         cyanobacteria contribute significantly to the nitrogen cycle [
-      - type: Link
-        target: '#pone.0178565.ref003'
-        content:
+      - content:
           - '3'
+        target: '#pone.0178565.ref003'
+        type: Link
         relation: bibr
       - >-
         ] and are attracting attention as biofertilizers and for
         nitrogenase-dependent hydrogen production [
-      - type: Link
-        target: '#pone.0178565.ref004'
-        content:
+      - content:
           - '4'
+        target: '#pone.0178565.ref004'
+        type: Link
         relation: bibr
       - >-
         ]. Thus, the cyanobacterial phylum shows significant diversity both in
         terms of their metabolic capability and habitats [
-      - type: Link
-        target: '#pone.0178565.ref005'
-        content:
+      - content:
           - '5'
+        target: '#pone.0178565.ref005'
+        type: Link
         relation: bibr
       - –
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - >-
         ]. Despite this diversity, the phylum has retained a significant core
         genome [
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref008'
-        content:
+      - content:
           - '8'
+        target: '#pone.0178565.ref008'
+        type: Link
         relation: bibr
       - '].'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Unlike the eukaryotic algae, cyanobacteria do not produce storage
         compounds that are commercially attractive. Therefore, there is
         significant interest in metabolic engineering of cyanobacteria to
         produce useful products such as ethanol, butanol, butanediol, etc [
-      - type: Link
-        target: '#pone.0178565.ref009'
-        content:
+      - content:
           - '9'
+        target: '#pone.0178565.ref009'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref010'
-        content:
+      - content:
           - '10'
+        target: '#pone.0178565.ref010'
+        type: Link
         relation: bibr
       - >-
         ]. Classical metabolic engineering involves knocking out or
         downregulating pathways that drain the carbon away from the product of
         interest [
-      - type: Link
-        target: '#pone.0178565.ref011'
-        content:
+      - content:
           - '11'
+        target: '#pone.0178565.ref011'
+        type: Link
         relation: bibr
       - >-
         ]. Knowledge of essential genes allows mapping of critical points in
         metabolic networks and design of mutants with minimal wasteful
         experimental screening [
-      - type: Link
-        target: '#pone.0178565.ref012'
-        content:
+      - content:
           - '12'
+        target: '#pone.0178565.ref012'
+        type: Link
         relation: bibr
       - ']. Essential genes also play a role in drug designing ['
-      - type: Link
-        target: '#pone.0178565.ref013'
-        content:
+      - content:
           - '13'
+        target: '#pone.0178565.ref013'
+        type: Link
         relation: bibr
       - >-
         ], in identifying potential targets for antibiotics in pathogenic
         microorganism [
-      - type: Link
-        target: '#pone.0178565.ref014'
-        content:
+      - content:
           - '14'
+        target: '#pone.0178565.ref014'
+        type: Link
         relation: bibr
       - '] and in minimal genome construction ['
-      - type: Link
-        target: '#pone.0178565.ref015'
-        content:
+      - content:
           - '15'
+        target: '#pone.0178565.ref015'
+        type: Link
         relation: bibr
       - >-
         ]. Experimental as well as computational methods have been reported for
         identification of essential genes. Conventional experimental methods
         involve gene knockouts [
-      - type: Link
-        target: '#pone.0178565.ref016'
-        content:
+      - content:
           - '16'
+        target: '#pone.0178565.ref016'
+        type: Link
         relation: bibr
       - '] and RNA interference ['
-      - type: Link
-        target: '#pone.0178565.ref017'
-        content:
+      - content:
           - '17'
+        target: '#pone.0178565.ref017'
+        type: Link
         relation: bibr
       - >-
         ] where viability of the organism is checked by deleting or silencing
         the gene. A recently developed method, random bar code transposon-site
         sequencing (RB-TnSeq), parallelizes this process dramatically thereby
         permitting genome-wide gene essentiality testing [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - >-
         ]. In parallel, a number of computational methods have been proposed in
         the past decade or so that may be time efficient. These are based on
         network topology [
-      - type: Link
-        target: '#pone.0178565.ref019'
-        content:
+      - content:
           - '19'
+        target: '#pone.0178565.ref019'
+        type: Link
         relation: bibr
       - '], gene expression data ['
-      - type: Link
-        target: '#pone.0178565.ref020'
-        content:
+      - content:
           - '20'
+        target: '#pone.0178565.ref020'
+        type: Link
         relation: bibr
       - '], metabolic modelling ['
-      - type: Link
-        target: '#pone.0178565.ref021'
-        content:
+      - content:
           - '21'
+        target: '#pone.0178565.ref021'
+        type: Link
         relation: bibr
       - '], flux balance analysis (FBA) ['
-      - type: Link
-        target: '#pone.0178565.ref022'
-        content:
+      - content:
           - '22'
+        target: '#pone.0178565.ref022'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref023'
-        content:
+      - content:
           - '23'
+        target: '#pone.0178565.ref023'
+        type: Link
         relation: bibr
       - '] and '
       - type: Superscript
@@ -217,10 +216,10 @@ content:
         content:
           - '13'
       - 'C-MFA) ['
-      - type: Link
-        target: '#pone.0178565.ref024'
-        content:
+      - content:
           - '24'
+        target: '#pone.0178565.ref024'
+        type: Link
         relation: bibr
       - >-
         ]. FBA based methods systematically assesses the growth rate of all
@@ -228,56 +227,56 @@ content:
         deletion adversely affects the growth rate. Likewise, synthetic lethal
         genes can be identified by testing viability of two or more knockouts at
         a time [
-      - type: Link
-        target: '#pone.0178565.ref022'
-        content:
+      - content:
           - '22'
+        target: '#pone.0178565.ref022'
+        type: Link
         relation: bibr
       - '].'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         A number of studies have analyzed the core genome of photosynthetic
         prokaryotes. In an early study, Raymond et al. [
-      - type: Link
-        target: '#pone.0178565.ref025'
-        content:
+      - content:
           - '25'
+        target: '#pone.0178565.ref025'
+        type: Link
         relation: bibr
       - >-
         ] performed comparative genomic analysis on different groups of
         photosynthetic prokaryotes for common gene orthologs to propose
         photosynthetic evolution. Subsequently, Shi and Falkowski [
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - >-
         ] enumerated 682 core genes based on conservation in 13 cyanobacterial
         genomes. Larsson et al. [
-      - type: Link
-        target: '#pone.0178565.ref026'
-        content:
+      - content:
           - '26'
+        target: '#pone.0178565.ref026'
+        type: Link
         relation: bibr
       - >-
         ] predicted gene orthologs with a larger genome dataset of 58
         cyanobacterial genomes and identified 404 such orthologs. Beck et al. [
-      - type: Link
-        target: '#pone.0178565.ref008'
-        content:
+      - content:
           - '8'
+        target: '#pone.0178565.ref008'
+        type: Link
         relation: bibr
       - >-
         ] categorized the clusters of likely ortholog genes (CLOGs) identified
         from 16 cyanobacterial strains into core, shared and unique clusters.
         Besides these computational studies across the cyanobacterial phylum,
         Rubin et al. [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '] experimentally identified a total of 718 essential genes in '
       - type: Emphasis
@@ -288,8 +287,8 @@ content:
         content:
           - elongatus
       - ' PCC 7942.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Current methods of prediction of gene essentiality have certain
         limitations. For example, the metabolic modelling based methods are
@@ -306,6 +305,7 @@ content:
         genes from cyanobacterial species of diverse genera. Apart from insights
         on gene essentiality, the data provides useful clues on co-evolution of
         genes that may be helpful in gene annotation.
+    type: Paragraph
   - content:
       - Materials and methods
     depth: 1
@@ -316,39 +316,38 @@ content:
     depth: 2
     id: sec003
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Phylogenetic profiles were constructed as described by Pellegrini et al.
         [
-      - type: Link
-        target: '#pone.0178565.ref027'
-        content:
+      - content:
           - '27'
+        target: '#pone.0178565.ref027'
+        type: Link
         relation: bibr
       - >-
         ], with minor modifications. Briefly, a total of 120 completely
         sequenced cyanobacterial genomes were used to create a local database (
-      - type: Link
-        target: '#pone.0178565.s002'
-        content:
+      - content:
           - S1 Table
+        target: '#pone.0178565.s002'
+        type: Link
         relation: supplementary-material
       - >-
         ). Of these, non-redundant protein sequences from 20 genetically diverse
         cyanobacterial genomes were used as query sequences (
-      - type: Link
-        target: '#pone.0178565.s003'
-        content:
+      - content:
           - S2 Table
+        target: '#pone.0178565.s003'
+        type: Link
         relation: supplementary-material
       - >-
         ). Protein sequences from each organism were subjected to CD-HIT program
         to remove redundancy at 90% identity level [
-      - type: Link
-        target: '#pone.0178565.ref028'
-        content:
+      - content:
           - '28'
+        target: '#pone.0178565.ref028'
+        type: Link
         relation: bibr
       - >-
         ]. A given query protein sequence was searched against each of the 120
@@ -361,10 +360,10 @@ content:
       - >-
         , (ii) query coverage of > 60% and (iii) score density of > 0.6 over the
         aligned region (Memon et al. [
-      - type: Link
-        target: '#pone.0178565.ref029'
-        content:
+      - content:
           - '29'
+        target: '#pone.0178565.ref029'
+        type: Link
         relation: bibr
       - >-
         ]). These conditions were imposed to minimize spurious hits that result
@@ -372,13 +371,13 @@ content:
         are listed as hits and omitted from being considered as query sequences
         subsequently. A “1” in the profile indicates the presence of at least
         one hit in the genome while a “0” indicates the absence.
+    type: Paragraph
   - content:
       - Clustering of genes and organisms
     depth: 2
     id: sec004
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Genes were clustered via hierarchical clustering of their profiles with
         Hamming distance as the metric, a cut-off of 0.15 and average linkage.
@@ -386,12 +385,13 @@ content:
         similar clustering strategy and cut-off. The merged profiles are then
         represented as consensus of the members of the cluster. The detailed
         method is depicted in
-      - type: Link
-        target: '#pone.0178565.g001'
-        content:
+      - content:
           - Fig 1
+        target: '#pone.0178565.g001'
+        type: Link
         relation: fig
       - ' which is used to obtain a reduced genome database.'
+    type: Paragraph
   - 10.1371/journal.pone.0178565.g001
   - Fig 1
   - content:
@@ -399,19 +399,18 @@ content:
     depth: 2
     id: sec004
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Diagrammatic representation for clustering of organisms and proteins.
         The method is used to reduce the genome dataset and to cluster proteins
         of the semi-conserved category to obtain CCG.
+    type: Paragraph
   - content:
       - Modified Hamming distance
     depth: 2
     id: sec005
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >
         To test if any of the profile pairs are mutually exclusive, we modified
         the conventional Hamming distance by ignoring the elements of profiles
@@ -420,6 +419,7 @@ content:
       - |
 
         where,
+    type: Paragraph
   - type: Math
     language: MathML
     text: >-
@@ -438,32 +438,32 @@ content:
       displaystyle="false"><mml:mo>∑</mml:mo></mml:mstyle><mml:mrow><mml:msub><mml:mrow><mml:mi
       mathvariant="normal">P</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi
       mathvariant="normal">P</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mfrac>
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+  - items:
+      - content:
+          - content:
               - 'd = modified hamming distance,'
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - P
               - type: Subscript
                 content:
                   - '1'
               - ' = Profile of gene 1, and'
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - P
               - type: Subscript
                 content:
                   - '2'
               - ' = Profile of gene 2.'
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
   - content:
       - Results and discussion
     depth: 1
@@ -474,8 +474,7 @@ content:
     depth: 2
     id: sec007
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Over twenty-three thousand phylogenetic profiles were constructed by
         using non-redundant protein coding genes from cyanobacteria as query.
@@ -484,19 +483,19 @@ content:
         created not only contains the query IDs but also the hit IDs and
         therefore can be searched by UniProt IDs / PATRIC IDs of proteins in any
         of the 120 microorganisms (
-      - type: Link
-        target: '#pone.0178565.s004'
-        content:
+      - content:
           - S3 Table
+        target: '#pone.0178565.s004'
+        type: Link
         relation: supplementary-material
       - >-
         ). While creating the profiles, query cyanobacteria were added
         sequentially with the result that only a small fraction of proteins
         result in profiles for organisms added in later stages (
-      - type: Link
-        target: '#pone.0178565.s003'
-        content:
+      - content:
           - S2 Table
+        target: '#pone.0178565.s003'
+        type: Link
         relation: supplementary-material
       - >-
         ). Since only 20 cyanobacteria species were used for profile creation,
@@ -504,13 +503,13 @@ content:
         found in our database but that number is expected to be small. Also, the
         genes missing in our profiles are expected to be unique genes present
         only in a limited number of cyanobacteria.
+    type: Paragraph
   - content:
       - Data reduction
     depth: 2
     id: sec008
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         String length (number of genomes in the dataset) of the phylogenetic
         profiles was 120 based on the number of genomes used. However, some of
@@ -519,16 +518,16 @@ content:
         content:
           - Prochlorococcus
       - ' are overrepresented in the database. This may bias some of the data analysis and in turn the conclusions. Therefore, to remove redundancy, we clustered the cyanobacterial strains by using profiles of genes that are conserved in ≥ 10% but < 95% of the cyanobacterial genomes resulting in 73 clusters ('
-      - type: Link
-        target: '#pone.0178565.g001'
-        content:
+      - content:
           - Fig 1
+        target: '#pone.0178565.g001'
+        type: Link
         relation: fig
       - ' and see '
-      - type: Link
-        target: '#sec002'
-        content:
+      - content:
           - methods
+        target: '#sec002'
+        type: Link
         relation: sec
       - ' for details). This was done to avoid the influence of either unique genes or highly conserved genes on the clustering process. Indeed, the 31 strains of '
       - type: Emphasis
@@ -539,39 +538,40 @@ content:
         content:
           - Synechococcus
       - ' form a single cluster ('
-      - type: Link
-        target: '#pone.0178565.s005'
-        content:
+      - content:
           - S4 Table
+        target: '#pone.0178565.s005'
+        type: Link
         relation: supplementary-material
       - >-
         ). Additionally, smaller clusters of 2–4 strains are formed. Further,
         the tree of organisms based on phylogenetic profiles agrees well with
         that based on alignment of concatenated protein sequences [
-      - type: Link
-        target: '#pone.0178565.ref005'
-        content:
+      - content:
           - '5'
+        target: '#pone.0178565.ref005'
+        type: Link
         relation: bibr
       - ']. The tree can be broken down into 4 clades ('
-      - type: Link
-        target: '#pone.0178565.g002'
-        content:
+      - content:
           - Fig 2
+        target: '#pone.0178565.g002'
+        type: Link
         relation: fig
       - >-
         ) for further clade-wise analysis as discussed in subsequent sections.
         Abridged profiles were then created that have string length of 73,
         corresponding to the 73 organism clusters, compared to the original
         string length of 120 (
-      - type: Link
-        target: '#pone.0178565.s006'
-        content:
+      - content:
           - S5 Table
+        target: '#pone.0178565.s006'
+        type: Link
         relation: supplementary-material
       - >-
         ). Conservation indices for the protein profiles were computed based on
         the abridged strings.
+    type: Paragraph
   - 10.1371/journal.pone.0178565.g002
   - Fig 2
   - content:
@@ -581,30 +581,29 @@ content:
     depth: 2
     id: sec008
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Profiles of 8280 semi-conserved genes were used while clustering the
         organisms. List of the cyanobacterial strains are given in
-      - type: Link
-        target: '#pone.0178565.s003'
-        content:
+      - content:
           - S2 Table
+        target: '#pone.0178565.s003'
+        type: Link
         relation: supplementary-material
       - '. * represents the organism cluster 12, whose constituents are given in '
-      - type: Link
-        target: '#pone.0178565.s003'
-        content:
+      - content:
           - S2 Table
+        target: '#pone.0178565.s003'
+        type: Link
         relation: supplementary-material
       - .
+    type: Paragraph
   - content:
       - Redundancy of profiles
     depth: 2
     id: sec009
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         It was of interest to check for potential redundancy in the query
         protein sequences used in construction of profiles. To that end, we
@@ -633,27 +632,27 @@ content:
         analysis shows that indeed a large fraction of the potentially redundant
         pairs are mutually exclusive. This can be visualized on the principle
         component analysis (PCA) plot (
-      - type: Link
-        target: '#pone.0178565.g003'
-        content:
+      - content:
           - Fig 3A
+        target: '#pone.0178565.g003'
+        type: Link
         relation: fig
       - >-
         ) where the pairs in question lie on opposite sides of the plot (Details
         regarding the proteins used in the PCA plot and heatmap are given in
-      - type: Link
-        target: '#pone.0178565.s007'
-        content:
+      - content:
           - S6 Table
+        target: '#pone.0178565.s007'
+        type: Link
         relation: supplementary-material
       - >-
         ). Further, a heatmap of the profiles shows that divergence of the two
         functionally similar proteins largely correlates with the evolution of
         the organisms (
-      - type: Link
-        target: '#pone.0178565.g003'
-        content:
+      - content:
           - Fig 3B
+        target: '#pone.0178565.g003'
+        type: Link
         relation: fig
       - >-
         ). To exemplify, profiles with query UniProt Ids B1XMD2 and B7K1R1 are
@@ -661,10 +660,10 @@ content:
         the second and third steps (cysteine ligation, (EC:6.3.2.5), and
         decarboxylation, (EC:4.1.1.36)) in the biosynthesis of coenzyme A (CoA)
         from pantothenate [
-      - type: Link
-        target: '#pone.0178565.ref030'
-        content:
+      - content:
           - '30'
+        target: '#pone.0178565.ref030'
+        type: Link
         relation: bibr
       - >-
         ] (Strauss et al, 2001). Each query protein is present in evolutionarily
@@ -676,21 +675,22 @@ content:
         content:
           - phzF
       - ' (phenazine biosynthesis) family, which is part of the seven-gene operon, responsible for the synthesis of phenazine-1-carboxylic acid ['
-      - type: Link
-        target: '#pone.0178565.ref031'
-        content:
+      - content:
           - '31'
+        target: '#pone.0178565.ref031'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref032'
-        content:
+      - content:
           - '32'
+        target: '#pone.0178565.ref032'
+        type: Link
         relation: bibr
       - >-
         ]. This suggests that the potentially redundant profiles represent genes
         that have diverged significantly in the subsets of organisms and are not
         merely paralogs.
+    type: Paragraph
   - 10.1371/journal.pone.0178565.g003
   - Fig 3
   - content:
@@ -698,8 +698,7 @@ content:
     depth: 2
     id: sec009
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Ten representative pairs of redundant profiles that show BLASTP evalue ≤
         10
@@ -707,41 +706,42 @@ content:
         content:
           - −10
       - ' but fail to meet the criteria of score density and query coverage. The redundant gene pairs are color-coded and assigned symbols in the two plots. (A) A PCA plot that shows the 10 pairs on the first two principal components and (B) Heatmap showing mutually exclusive nature of profile pairs. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively.'
+    type: Paragraph
   - content:
       - Conservation categories
     depth: 2
     id: sec010
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We estimated the gene conservation index (GCI) for each of the
         phylogenetic profiles as the percentage of organism clusters in which
         the query gene is present in the reduced dataset (
-      - type: Link
-        target: '#pone.0178565.g004'
-        content:
+      - content:
           - Fig 4
+        target: '#pone.0178565.g004'
+        type: Link
         relation: fig
       - '). We broadly categorize all proteins of cyanobacteria as:'
-  - type: List
-    order: ascending
-    items:
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+    type: Paragraph
+  - items:
+      - content:
+          - content:
               - 'Conserved; with a GCI score of ≥ 95%,'
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Semi-conserved; with a GCI score of ≥ 10% but < 95% and
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Unique; with a GCI score of < 10%.
+            type: Paragraph
+        type: ListItem
+    order: ascending
+    type: List
   - 10.1371/journal.pone.0178565.g004
   - Fig 4
   - content:
@@ -751,26 +751,25 @@ content:
     depth: 2
     id: sec010
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         The GCI was calculated based on presence and absence of the query gene
         in the 73 organism clusters of cyanobacteria.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         About 4% of all query genes (993 profiles) are conserved across the
         cyanobacterial phylum (
-      - type: Link
-        target: '#pone.0178565.t001'
-        content:
+      - content:
           - Table 1
+        target: '#pone.0178565.t001'
+        type: Link
         relation: table
       - ' and '
-      - type: Link
-        target: '#pone.0178565.s008'
-        content:
+      - content:
           - S7 Table
+        target: '#pone.0178565.s008'
+        type: Link
         relation: supplementary-material
       - >-
         ). This is apart from the rRNA and tRNA genes which are also conserved
@@ -782,224 +781,224 @@ content:
         content:
           - Prochlorococcus
       - ' sp. A large fraction of proteins in this category are annotated. These proteins participate in key cellular functions such as carbohydrate metabolism, energy metabolism, lipid metabolism, nucleotide metabolism, amino acid metabolism, glycan biosynthesis, metabolism of cofactors and vitamins and genetic information processing like transcription, translation and replication. Shi and Falkowski ['
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - '] have called this set the stable core.'
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - UniProt IDs of Query Proteins
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Protein Name
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Gene Name
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - GO (Biological Process)
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Pathway
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XP79
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Aconitate hydratase B
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'acnB '
               - ' '
               - SYNPCC7002_A1683
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'tricarboxylic acid cycle [GO:0006099]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Carbohydrate metabolism; tricarboxylic acid cycle.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - D7DZP2
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Cytochrome c oxidase, subunit I'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Aazo_2640
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - >-
                 aerobic respiration [GO:0009060]; electron transport chain
                 [GO:0022900]; oxidative phosphorylation [GO:0006119]
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Energy metabolism; oxidative phosphorylation.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Q93UM1
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Enoyl-[acyl-carrier-protein] reductase [NADH]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'envM '
               - ' '
               - SYNPCC7002_A1676
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'fatty acid biosynthetic process [GO:0006633]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Lipid metabolism; fatty acid biosynthesis.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XN91
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - GDP-L-fucose synthase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'fcl '
               - ' '
               - SYNPCC7002_A2832
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - "'de novo' GDP-L-fucose biosynthetic process [GO:0042351]"
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - >-
                 Nucleotide-sugar biosynthesis; GDP-L-fucose biosynthesis via de
                 novo pathway.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XLQ9
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 2-isopropylmalate synthase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'leuA '
               - ' '
               - SYNPCC7002_A1356
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'leucine biosynthetic process [GO:0009098]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Amino-acid biosynthesis; L-leucine biosynthesis.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XQ71
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1,4-alpha-glucan branching enzyme'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'glgB '
               - ' '
               - SYNPCC7002_A1865
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'glycogen biosynthetic process [GO:0005978]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Glycan biosynthesis; glycogen biosynthesis.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XNE1
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Biotin synthase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'bioB '
               - ' '
               - SYNPCC7002_A0309
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'biotin biosynthetic process [GO:0009102]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Cofactor biosynthesis; biotin biosynthesis.
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XJ16
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 30S ribosomal protein S1
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'rpsA '
               - ' '
               - SYNPCC7002_A0955
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'translation [GO:0006412]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XPW9
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Arsenical resistance operon repressor, ArsR family'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - SYNPCC7002_A0590
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'transcription, DNA-templated [GO:0006351]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - B1XNN3
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'DNA polymerase III, delta subunit'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - holA SYNPCC7002_A1567
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'DNA replication [GO:0006260]'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: pone.0178565.t001
     title: List of representatives of the conserved genes in our analysis.
     content: []
-  - type: Paragraph
-    content:
+  - content:
       - >-
         About 35% of all the query genes (8,280 profiles) are semi-conserved.
         These include genes involved in niche functions such as nitrogen
@@ -1007,30 +1006,30 @@ content:
         etc. Although only semi-conserved at the level of cyanobacterial phylum,
         some of these genes are conserved in their respective clades and this
         needs to be examined further.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         About 61% of the query genes (14,370 profiles) are unique and present
         only in < 10% of the organism clusters. A large fraction of these
         proteins are not annotated. It is likely that these proteins are
         conserved only at species level performing a highly niche function.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         We have specifically analyzed for the circadian clock genes which are
         involved in the regulation of global gene expression patterns,
         interactions with the genes of key metabolic pathways, the timing of
         cell division and in chromosome compaction [
-      - type: Link
-        target: '#pone.0178565.ref033'
-        content:
+      - content:
           - '33'
+        target: '#pone.0178565.ref033'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref034'
-        content:
+      - content:
           - '34'
+        target: '#pone.0178565.ref034'
+        type: Link
         relation: bibr
       - >-
         ]. We checked for the conservation index of these genes and we find that
@@ -1059,21 +1058,21 @@ content:
         content:
           - sasA
       - ' is conserved.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - 'Initially Martin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref035'
-        content:
+      - content:
           - '35'
+        target: '#pone.0178565.ref035'
+        type: Link
         relation: bibr
       - >-
         ] reported such a set in cyanobacteria which they called structural
         genes. Later Shi and Falkowski [
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - >-
         ] reported such a gene set in cyanobacteria which they called the stable
@@ -1085,22 +1084,22 @@ content:
         remove errors introduced due to incomplete genome sequencing. A large
         number of conserved genes are common between our analysis and that
         presented by Martin et al. [
-      - type: Link
-        target: '#pone.0178565.ref035'
-        content:
+      - content:
           - '35'
+        target: '#pone.0178565.ref035'
+        type: Link
         relation: bibr
       - '] and Shi and Falkowski ['
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - '] ('
-      - type: Link
-        target: '#pone.0178565.g005'
-        content:
+      - content:
           - Fig 5A
+        target: '#pone.0178565.g005'
+        type: Link
         relation: fig
       - >-
         ). However, there is some disagreement between the data sets. For
@@ -1113,69 +1112,70 @@ content:
         content:
           - psbL
       - ' (with UniProt IDs Q8RSW0 and Q8RSW1) are involved in assembly of oxygen evolving complex and unidirectional flow of electrons ['
-      - type: Link
-        target: '#pone.0178565.ref036'
-        content:
+      - content:
           - '36'
+        target: '#pone.0178565.ref036'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref037'
-        content:
+      - content:
           - '37'
+        target: '#pone.0178565.ref037'
+        type: Link
         relation: bibr
       - >-
         ] are semi-conserved in our dataset but conserved in the dataset of Shi
         and Falkowski [
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - ']. Gene '
       - type: Emphasis
         content:
           - psbF
       - ' (with UniProt ID Q8RSW2) is involved in the assembly of photosystem II and secondary electron transport mechanism ['
-      - type: Link
-        target: '#pone.0178565.ref038'
-        content:
+      - content:
           - '38'
+        target: '#pone.0178565.ref038'
+        type: Link
         relation: bibr
       - >-
         ] is semi-conserved in our dataset is one of the structural gene of
         Martin et al. [
-      - type: Link
-        target: '#pone.0178565.ref035'
-        content:
+      - content:
           - '35'
+        target: '#pone.0178565.ref035'
+        type: Link
         relation: bibr
       - >-
         ]. These discrepancies may be due to differences in the genome datasets
         used in the three studies. Our analysis includes symbiotic strains which
         may lack some of the core metabolic genes.
+    type: Paragraph
   - 10.1371/journal.pone.0178565.g005
   - Fig 5
   - content:
       - >-
         Overlap of conserved genes (this work) with core set proteins of Shi and
         Falkowski [
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - '], structural genes of Martin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref035'
-        content:
+      - content:
           - '35'
+        target: '#pone.0178565.ref035'
+        type: Link
         relation: bibr
       - '] and essential genes of Rubin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '] shown for '
       - type: Emphasis
@@ -1189,49 +1189,48 @@ content:
     depth: 2
     id: sec010
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - '(A) Overlap of conserved genes (this work), core set proteins ['
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - '] and structural genes ['
-      - type: Link
-        target: '#pone.0178565.ref035'
-        content:
+      - content:
           - '35'
+        target: '#pone.0178565.ref035'
+        type: Link
         relation: bibr
       - ']. (B) Conserved genes (this work) and essential genes ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - >-
         ]. (C) Conserved genes without clustering of microorganisms and removing
         the microorganism redundancy and the overlap with essential genes [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '].'
+    type: Paragraph
   - content:
       - Relationship between conservation level and annotation
     depth: 2
     id: sec011
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We found that around 89% of the conserved genes are functionally
         annotated (
-      - type: Link
-        target: '#pone.0178565.t002'
-        content:
+      - content:
           - Table 2
+        target: '#pone.0178565.t002'
+        type: Link
         relation: table
       - >-
         ). We hypothesize that conserved genes code for core functions and may
@@ -1241,73 +1240,74 @@ content:
         unique to specific genera which may not have been well studied. At the
         intermediate level, around 47% of the semi-conserved genes are
         functionally annotated.
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - Conservation Categories
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - Conserved (≥ 95%)
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Semi-conserved (10–94%)
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Unique (less than 10%)
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - Annotated
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Unannotated
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Annotated
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Unannotated
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Annotated
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Unannotated
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Number of genes
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '891'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '102'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '4,413'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3,867'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '3,505'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '10,865'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: pone.0178565.t002
     title: >-
       The number of annotated and unannotated genes in the three conservation
@@ -1318,8 +1318,7 @@ content:
     depth: 2
     id: sec012
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We wanted to test if the gene conservation index is indicative of gene
         essentiality. We find that there is a significant overlap between the
@@ -1333,37 +1332,37 @@ content:
         content:
           - elongatus
       - ' PCC 7942 by Rubin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '] ('
-      - type: Link
-        target: '#pone.0178565.s009'
-        content:
+      - content:
           - S8 Table
+        target: '#pone.0178565.s009'
+        type: Link
         relation: supplementary-material
       - ' and '
-      - type: Link
-        target: '#pone.0178565.g005'
-        content:
+      - content:
           - Fig 5B
+        target: '#pone.0178565.g005'
+        type: Link
         relation: fig
       - >-
         ). Majority of the essential genes belong to the conserved set of genes
         while majority of the non-essential genes belong to the semi-conserved
         or unique category (
-      - type: Link
-        target: '#pone.0178565.t003'
-        content:
+      - content:
           - Table 3
+        target: '#pone.0178565.t003'
+        type: Link
         relation: table
       - ' and '
-      - type: Link
-        target: '#pone.0178565.s001'
-        content:
+      - content:
           - S1 Fig
+        target: '#pone.0178565.s001'
+        type: Link
         relation: supplementary-material
       - >-
         ). The average GCI values of the essential and non-essential genes are
@@ -1384,10 +1383,10 @@ content:
         content:
           - psbF
       - ' (cytochrome b559 subunit beta) with UniProt ID Q8RSW2 is involved in the assembly of photosystem II and secondary electron transport mechanism ['
-      - type: Link
-        target: '#pone.0178565.ref038'
-        content:
+      - content:
           - '38'
+        target: '#pone.0178565.ref038'
+        type: Link
         relation: bibr
       - >-
         ]. The gene is semi-conserved in the entire phylum but is conserved in
@@ -1396,10 +1395,10 @@ content:
         content:
           - menF
       - ' (isochorismate synthase) with UniProt ID B1XJE2 is involved in the conversion of chorismate to isochorismate ['
-      - type: Link
-        target: '#pone.0178565.ref039'
-        content:
+      - content:
           - '39'
+        target: '#pone.0178565.ref039'
+        type: Link
         relation: bibr
       - >-
         ]. The gene is conserved in clades A and D but semi-conserved in the
@@ -1416,20 +1415,20 @@ content:
         content:
           - fbp
       - ' (fructose-1,6-bisphosphatase class 1) with UniProt ID B1XNG1 is involved in reductive phase of Pentose Phosphate Pathway (PPP), and catalyses the removal of a phosphate group from fructose 1,6- bisphosphate to form fructose-6-phosphate ['
-      - type: Link
-        target: '#pone.0178565.ref040'
-        content:
+      - content:
           - '40'
+        target: '#pone.0178565.ref040'
+        type: Link
         relation: bibr
       - ']. The gene '
       - type: Emphasis
         content:
           - gnd
       - ' (6-phosphogluconate dehydrogenase, decarboxylating) with UniProt ID B1XM87 is a key enzyme in PPP involved in the conversion of 6-phospho-D-gluconolactone to D-ribulose 5-phosphate ['
-      - type: Link
-        target: '#pone.0178565.ref041'
-        content:
+      - content:
           - '41'
+        target: '#pone.0178565.ref041'
+        type: Link
         relation: bibr
       - ']. The genes are conserved in our data but are non-essential in '
       - type: Emphasis
@@ -1440,103 +1439,103 @@ content:
         content:
           - elongatus
       - ' PCC 7942 ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - >-
         ]. This may be due to the fact that the PPP pathway may be used under
         certain stress conditions that are not accounted for in the experimental
         studies on gene essentiality.
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - Conserved
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Semi-Conserved
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Unique
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Essential
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '494'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '242'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '14'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - Non-Essential
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '374'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '1089'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '88'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: pone.0178565.t003
     title: Essentiality of genes in each conservation category.
     content: []
-  - type: Paragraph
-    content:
+  - content:
       - >-
         In order to validate the reduction of the genome dataset, we compared
         the gene essentiality of non-reduced genome dataset (consisting of 120
         genomes) with that of the reduced dataset (consisting of 73 genomes) (
-      - type: Link
-        target: '#pone.0178565.g005'
-        content:
+      - content:
           - Fig 5C
+        target: '#pone.0178565.g005'
+        type: Link
         relation: fig
       - >-
         ). We find that a total of 720 genes were under conserved category among
         which 436 genes were essential in the non-reduced genome. This number is
         smaller compared to the number of conserved genes (993) and essential
         genes (494) in the reduced dataset.
+    type: Paragraph
   - content:
       - Genes of central metabolic pathways
     depth: 1
     id: sec013
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We analyzed the gene conservation indices and experimentally determined
         essentiality [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '] for enzymes of select central carbon pathways ('
-      - type: Link
-        target: '#pone.0178565.t004'
-        content:
+      - content:
           - Table 4
+        target: '#pone.0178565.t004'
+        type: Link
         relation: table
       - ' and '
-      - type: Link
-        target: '#pone.0178565.s010'
-        content:
+      - content:
           - S9 Table
+        target: '#pone.0178565.s010'
+        type: Link
         relation: supplementary-material
       - >-
         ). We find agreement between the two datasets. For example, on analysis
@@ -1550,19 +1549,19 @@ content:
         content:
           - elongatus
       - ' PCC 7942 ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - >-
         ]. Similarly, for Calvin cycle, we find that eight of the ten conserved
         enzymes are essential. However, we observe a disagreement with the data
         of Rubin et al. [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '] in the cases of gene '
       - type: Emphasis
@@ -1581,818 +1580,819 @@ content:
         content:
           - elongatus
       - ' PCC 7942 by Rubin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '].'
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - Pathway
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Gene Name
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Protein Name
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - GCI
-              - type: Link
-                target: '#t004fn001'
-                content:
+              - content:
                   - type: Superscript
                     content:
                       - a
+                target: '#t004fn001'
+                type: Link
                 relation: table-fn
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Essentiality
-              - type: Link
-                target: '#t004fn002'
-                content:
+              - content:
                   - type: Superscript
                     content:
                       - b
+                target: '#t004fn002'
+                type: Link
                 relation: table-fn
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Core Set
-              - type: Link
-                target: '#t004fn003'
-                content:
+              - content:
                   - type: Superscript
                     content:
                       - c
+                target: '#t004fn003'
+                type: Link
                 relation: table-fn
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Structural Gene
-              - type: Link
-                target: '#t004fn004'
-                content:
+              - content:
                   - type: Superscript
                     content:
                       - d
+                target: '#t004fn004'
+                type: Link
                 relation: table-fn
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - type: Strong
                 content:
                   - Glycolysis
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - glk
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Glucokinase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - pgi
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Glucose-6-phosphate isomerase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - pfkA
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 6-phosphofructokinase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - fbaB
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - fructose-bisphosphate aldolase class I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - tpiA
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - triosephosphate isomerase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - gap
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - glyceraldehyde-3-phosphate dehydrogenase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - pgk
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - phosphoglycerate kinase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - gpm
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - phosphoglycerate mutase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - eno
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - enolase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - pyk
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - pyruvate kinase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - type: Strong
                 content:
                   - TCA Cycle
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - Cs
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Citrate synthase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - acnB
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - aconitate hydratase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - icd
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - isocitrate dehydrogenase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - sucD
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'succinyl-CoA synthetase, alpha chain'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - hdrB
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Heterodisulfide reductase, subunit B'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - frdA
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Succinate dehydrogenase flavoprotein subunit
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - sdhB
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Succinate dehydrogenase iron-sulfur protein subunit
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - mdh
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - malate dehydrogenase
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - type: Strong
                 content:
                   - PS I
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content: []
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+          - content: []
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaB
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - photosystem I P700 chlorophyll a apoprotein A2
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaC
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I iron-sulfur center
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaD
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I subunit II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I reaction center subunit IV
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaF
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I reaction center subunit III
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaI
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - photosystem I subunit VIII
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Ambiguous
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaJ
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I reaction center subunit IX
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - E
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaK
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - photosystem I reaction center subunit X
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaL
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I reaction center subunit XI
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - I
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Beneficial
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'Y'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaM
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Photosystem I reaction center subunit XII
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - NE
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'N'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content: []
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content: []
+            type: TableCell
+          - content:
               - type: Emphasis
                 content:
                   - psaX
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - photosystem I 4.8kDa protein
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - II
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '-'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: pone.0178565.t004
     title: >-
       Comparison of enzymes in central metabolic pathways with the essential and
@@ -2403,49 +2403,48 @@ content:
     depth: 2
     id: sec014
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         It has been well established that genes of related function experience
         common evolutionary pressure and hence tend to co-evolve [
-      - type: Link
-        target: '#pone.0178565.ref027'
-        content:
+      - content:
           - '27'
+        target: '#pone.0178565.ref027'
+        type: Link
         relation: bibr
       - >-
         ]. To that end, we clustered the semi-conserved genes using Hamming
         distance as metric and a cutoff of 0.15. A few selected clusters (
-      - type: Link
-        target: '#pone.0178565.t005'
-        content:
+      - content:
           - Table 5
+        target: '#pone.0178565.t005'
+        type: Link
         relation: table
       - ' and '
-      - type: Link
-        target: '#pone.0178565.s011'
-        content:
+      - content:
           - S10 Table
+        target: '#pone.0178565.s011'
+        type: Link
         relation: supplementary-material
       - ') are shown in '
-      - type: Link
-        target: '#pone.0178565.g006'
-        content:
+      - content:
           - Fig 6B
+        target: '#pone.0178565.g006'
+        type: Link
         relation: fig
       - ' in the form of heatmap and all the clusters are reported in the '
-      - type: Link
-        target: '#pone.0178565.s012'
-        content:
+      - content:
           - S11 Table
+        target: '#pone.0178565.s012'
+        type: Link
         relation: supplementary-material
       - >-
         . The extent of co-evolution can also be visualized in the form of a
         principal component analysis (PCA) plot (
-      - type: Link
-        target: '#pone.0178565.g006'
-        content:
+      - content:
           - Fig 6A
+        target: '#pone.0178565.g006'
+        type: Link
         relation: fig
       - >-
         ). To exemplify, cluster 11 has 11 proteins, of which eight are gas
@@ -2455,32 +2454,32 @@ content:
         content:
           - ArsA
       - ' (arsenite-activated ATPase with UniProt ID B5W7R2). The gas vesicle proteins are small, hollow, gas filled protein structures found in several cyanobacteria which allow their positioning at favorable depth for growth ['
-      - type: Link
-        target: '#pone.0178565.ref042'
-        content:
+      - content:
           - '42'
+        target: '#pone.0178565.ref042'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref043'
-        content:
+      - content:
           - '43'
+        target: '#pone.0178565.ref043'
+        type: Link
         relation: bibr
       - ']. The gene '
       - type: Emphasis
         content:
           - ArsA
       - ' is involved in active extrusion of heavy metals and is associated with gas vesicle biogenesis proteins ['
-      - type: Link
-        target: '#pone.0178565.ref044'
-        content:
+      - content:
           - '44'
+        target: '#pone.0178565.ref044'
+        type: Link
         relation: bibr
       - –
-      - type: Link
-        target: '#pone.0178565.ref046'
-        content:
+      - content:
           - '46'
+        target: '#pone.0178565.ref046'
+        type: Link
         relation: bibr
       - >-
         ]. Cluster 9 has 4 proteins, of which three are Clustered Regularly
@@ -2488,22 +2487,23 @@ content:
         one is uncharacterized (with UniProt ID D8FUL0). CRISPR associated
         proteins provide acquired resistance against mobile genetic elements
         (virus, transposable elements and conjugative plasmids) [
-      - type: Link
-        target: '#pone.0178565.ref047'
-        content:
+      - content:
           - '47'
+        target: '#pone.0178565.ref047'
+        type: Link
         relation: bibr
       - ', '
-      - type: Link
-        target: '#pone.0178565.ref048'
-        content:
+      - content:
           - '48'
+        target: '#pone.0178565.ref048'
+        type: Link
         relation: bibr
       - >-
         ]. The uncharacterized proteins present in the above clusters may have
         similar functions related to the proteins present in the respective
         clusters and further analysis on these proteins will give additional
         information about their functions.
+    type: Paragraph
   - 10.1371/journal.pone.0178565.g006
   - Fig 6
   - content:
@@ -2511,8 +2511,7 @@ content:
     depth: 2
     id: sec014
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Twelve representative CCGs are shown in (A) PCA plot where principle
         component analysis (PCA) of all the semi-conserved profiles (genes) was
@@ -2532,78 +2531,79 @@ content:
         hydrogenase enzymes, Cluster 9: CRISPR associated proteins, Cluster 10:
         TPR repeat-containing proteins, Cluster 11: gas vesicle proteins,
         Cluster 12: ABC transporter proteins.
-  - type: Table
-    rows:
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+    type: Paragraph
+  - rows:
+      - cells:
+          - content:
               - UniProt IDs
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Protein Name
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Gene Name
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - GCI
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - D8FUL0
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Putative uncharacterized protein
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - OSCI_520004
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '17.8'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - K9PKC1
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - 'CRISPR-associated helicase, Cas3 family'
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Cal7507_2972
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '15.1'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - K9PKV0
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - CRISPR-associated protein Csc3
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Cal7507_2975
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '15.1'
-      - type: TableRow
-        cells:
-          - type: TableCell
-            content:
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
               - K9PLJ5
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - CRISPR-associated protein Csc1
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - Cal7507_2973
-          - type: TableCell
-            content:
+            type: TableCell
+          - content:
               - '15.1'
+            type: TableCell
+        type: TableRow
+    type: Table
     id: pone.0178565.t005
     title: Genes in the cluster one of CCG.
     content:
@@ -2619,8 +2619,7 @@ content:
     depth: 1
     id: sec015
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         We present systematic analysis of phylogenetic profiles of
         cyanobacterial genes. Clustering of the organisms helps prepare a
@@ -2634,6 +2633,7 @@ content:
         data in the form of heatmap and principal component analysis (PCA). We
         believe that the data presented here would serve as a useful resource to
         the scientific community.
+    type: Paragraph
   - content:
       - Supporting information
     depth: 1
@@ -2655,45 +2655,45 @@ content:
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Essentiality is obtained from the experimental studies of Rubin et al,
         2015 [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '].'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (TIF)
+    type: Paragraph
   - S1 Table
   - content:
       - List of the 120 cyanobacterial genomes used in the analysis.
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - (XLSX)
+    type: Paragraph
   - S2 Table
   - content:
       - List of query organisms used while constructing the profiles.
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Columns C and D describe the number of proteins used to construct the
         profiles and number of proteins present in the genome, respectively. The
         organisms are listed in sequential order in which they were used to form
         the profiles.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S3 Table
   - content:
       - >-
@@ -2702,38 +2702,38 @@ content:
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Columns A-D describe the various identifiers and attributes of the query
         proteins. Column E depicts the presence or absence of the query protein
         in the genome of while column F provides the best hit. Likewise,
         presence of the query proteins in 120 cyanobacterial genomes and the
         respective best hits are presented in columns G to IJ.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S4 Table
   - content:
       - Clusters of 120 cyanobacterial strains.
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Column A denotes the name of the cyanobacteria and the thick borders
         represents a cluster. Column B describe the cluster number. The
         cyanobacterial strains are arranged in the order shown in
-      - type: Link
-        target: '#pone.0178565.g002'
-        content:
+      - content:
           - Fig 2
+        target: '#pone.0178565.g002'
+        type: Link
         relation: fig
       - ' from top to bottom.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S5 Table
   - content:
       - >-
@@ -2742,17 +2742,17 @@ content:
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Columns A-D describe the various identifiers and attributes of the query
         proteins. Columns E to BY depicts the presence or absence of the query
         protein in the respective cluster of organisms. Column BZ denotes the
         gene conservation index (GCI) for the profile. Columns CA to CD depict
         if the gene is conserved in clades A to D.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S6 Table
   - content:
       - >-
@@ -2761,21 +2761,21 @@ content:
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Column A to C describes about various identifiers and attributes of the
         genes used. Column D describes the Gene Conservation Index (GCI). All
         the genes are color coded according to the
-      - type: Link
-        target: '#pone.0178565.g003'
-        content:
+      - content:
           - Fig 3
+        target: '#pone.0178565.g003'
+        type: Link
         relation: fig
       - '. '
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S7 Table
   - content:
       - >-
@@ -2784,9 +2784,9 @@ content:
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - (XLSX)
+    type: Paragraph
   - S8 Table
   - content:
       - 'Conservation level of the genes from '
@@ -2794,23 +2794,22 @@ content:
         content:
           - Synechococcus elongatus
       - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '] and database of core proteins by Shi and Falkowski ['
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - '].'
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Column A describe the Protein UniProt IDs of query genes used in the
         study, Column B to D describe the genes of
@@ -2822,39 +2821,40 @@ content:
         content:
           - elongatus
       - ' PCC 7942.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S9 Table
   - content:
       - >-
         Conservation level of enzymes in key metabolic pathways based on reduced
         dataset and compared with experimental results on gene essentiality by
         Rubin et al. [
-      - type: Link
-        target: '#pone.0178565.ref018'
-        content:
+      - content:
           - '18'
+        target: '#pone.0178565.ref018'
+        type: Link
         relation: bibr
       - '], database of core proteins by Shi and Falkowski ['
-      - type: Link
-        target: '#pone.0178565.ref007'
-        content:
+      - content:
           - '7'
+        target: '#pone.0178565.ref007'
+        type: Link
         relation: bibr
       - '] and structural genes by Martin et al. ['
-      - type: Link
-        target: '#pone.0178565.ref035'
-        content:
+      - content:
           - '35'
+        target: '#pone.0178565.ref035'
+        type: Link
         relation: bibr
       - '].'
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - (XLSX)
+    type: Paragraph
   - S10 Table
   - content:
       - >-
@@ -2863,35 +2863,35 @@ content:
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Column A to C describes various identifiers and attributes of the genes
         used. Column D describes the Gene Conservation Index (GCI). All the
         genes are color coded according to the
-      - type: Link
-        target: '#pone.0178565.g006'
-        content:
+      - content:
           - Fig 6
+        target: '#pone.0178565.g006'
+        type: Link
         relation: fig
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
   - S11 Table
   - content:
       - List of co-evolving genes.
     depth: 1
     id: sec016
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Column A describes the cluster number. Column B to D describes various
         identifiers and attributes of the genes used. Column E denotes the GCI.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - (XLSX)
+    type: Paragraph
 references:
   - authors:
       - givenNames:

@@ -46,8 +46,7 @@ content:
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - type: Emphasis
         content:
           - 'Pseudomonas aeruginosa,'
@@ -56,40 +55,40 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-1'
-            content:
+          - content:
               - '1'
+            target: '#ref-1'
+            type: Link
             relation: bibr
       - |-
         , the respiratory tract
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-2'
-            content:
+          - content:
               - '2'
+            target: '#ref-2'
+            type: Link
             relation: bibr
       - |-
         , the vascular system
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-3'
-            content:
+          - content:
               - '3'
+            target: '#ref-3'
+            type: Link
             relation: bibr
       - |2-
          and the central nervous system
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-4'
-            content:
+          - content:
               - '4'
+            target: '#ref-4'
+            type: Link
             relation: bibr
       - >-
         . It is known for one of the most common pathogens infecting patients
@@ -99,18 +98,18 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-5'
-            content:
+          - content:
               - '5'
+            target: '#ref-5'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-6'
-            content:
+          - content:
               - '6'
+            target: '#ref-6'
+            type: Link
             relation: bibr
       - |-
         . The presence of 
@@ -123,18 +122,18 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-7'
-            content:
+          - content:
               - '7'
+            target: '#ref-7'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-8'
-            content:
+          - content:
               - '8'
+            target: '#ref-8'
+            type: Link
             relation: bibr
       - |-
         . In the initial stage of infection, 
@@ -153,10 +152,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-9'
-            content:
+          - content:
               - '9'
+            target: '#ref-9'
+            type: Link
             relation: bibr
       - >-
         . PCN, a blue redox-active secondary metabolite and a member of
@@ -165,40 +164,40 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-10'
-            content:
+          - content:
               - '10'
+            target: '#ref-10'
+            type: Link
             relation: bibr
       - |-
         , an antibiotic
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-11'
-            content:
+          - content:
               - '11'
+            target: '#ref-11'
+            type: Link
             relation: bibr
       - |-
         , an electron transfer facilitator
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-12'
-            content:
+          - content:
               - '12'
+            target: '#ref-12'
+            type: Link
             relation: bibr
       - |-
         , and a potent mammary cell-damaging virulence factor
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-13'
-            content:
+          - content:
               - '13'
+            target: '#ref-13'
+            type: Link
             relation: bibr
       - >-
         . Reports indicate that PCN inhibits B cell, T cell and macrophage
@@ -206,34 +205,34 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-14'
-            content:
+          - content:
               - '14'
+            target: '#ref-14'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-15'
-            content:
+          - content:
               - '15'
+            target: '#ref-15'
+            type: Link
             relation: bibr
       - |2-
          and induces neutrophil apoptosis
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-16'
-            content:
+          - content:
               - '16'
+            target: '#ref-16'
+            type: Link
             relation: bibr
       - >-
         , suggesting that PCN suppresses both innate and antigen-specific
         adaptive immune response.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - |-
         The existence of multidrug-resistant (MDR) 
 
@@ -270,10 +269,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-17'
-            content:
+          - content:
               - '17'
+            target: '#ref-17'
+            type: Link
             relation: bibr
       - |-
         . Passive immunization with egg yolk immunoglobulin (IgY) specific to 
@@ -286,18 +285,18 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-18'
-            content:
+          - content:
               - '18'
+            target: '#ref-18'
+            type: Link
             relation: bibr
           - |-
             –
 
-          - type: Link
-            target: '#ref-20'
-            content:
+          - content:
               - '20'
+            target: '#ref-20'
+            type: Link
             relation: bibr
       - >-
         . A recent study showed that PCN induces caspase 3-dependent human B
@@ -305,14 +304,15 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-21'
-            content:
+          - content:
               - '21'
+            target: '#ref-21'
+            type: Link
             relation: bibr
       - >-
         . The aim of the present study, therefore, was to determine whether
         antigen-specific IgY antibodies may prevent PCN-induced Raji cell death.
+    type: Paragraph
   - content:
       - Methods
     depth: 1
@@ -323,8 +323,7 @@ content:
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         PCN (Sigma-Aldrich, St. Louis, MO, USA) was dissolved in DMSO at a
         concentration of 1 mg/ml. Five Leghorn chickens aged 3 months were
@@ -341,19 +340,19 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-22'
-            content:
+          - content:
               - '22'
+            target: '#ref-22'
+            type: Link
             relation: bibr
       - ' and its concentration was assessed using the Chicken IgY ELISA Kit (Elabscience Biotechnology Co., Ltd, USA). The AGPT test was performed three times, each of 4 isolates from the first and second IgY purification results. The ELISA was then performed on two IgY batches.'
+    type: Paragraph
   - content:
       - Cell cultures
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Raji cells, a human B cell line, obtained from central university
         laboratory LPPT, Universitas Gadjah Mada, Yogyakarta, Indonesia, were
@@ -365,13 +364,13 @@ content:
         content:
           - '2'
       - ' humidity. All materials for culture medium were purchased from Sigma-Aldrich. The cells were cultured in 96-well plates and five replicates were carried out for assays.'
+    type: Paragraph
   - content:
       - Cell viability
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         PCN (Sigma-Aldrich) was initially dissolved in DMSO (Sigma-Aldrich) at a
         concentration of 1 mg/ml and then diluted in RPMI to a final
@@ -392,16 +391,16 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-21'
-            content:
+          - content:
               - '21'
+            target: '#ref-21'
+            type: Link
             relation: bibr
       - >-
         . Experiments were carried out three times with 8 replicates in each
         group.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - |-
         In order to assess cell viability, 5 × 10
 
@@ -409,13 +408,13 @@ content:
         content:
           - '4'
       - ' cells/well were cultured on sterile coverslips in 24-well plates for 24 hours and then treated with PCN in the presence or absence of anti-PCN IgY (55.49 µg/ml) for 16 hours. Subsequently, the cells were stained with acrydine orange/ethidium bromide and viewed under Digital Carl Zeiss-Axioscope 40 (Carl Zeiss Vision, Oberkochen, Germany) by which viable and death cells appeared as green and orange/red, respectively.'
+    type: Paragraph
   - content:
       - Statistical analysis
     depth: 2
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         The results of PCN cytotoxicity assay on Raji cells were analyzed by
         using one way analysis of variance followed by LSD test. Data obtained
@@ -423,21 +422,21 @@ content:
         cells was analysed by using one-way ANOVA followed by Tukey’s Test.
         Statistical analysis was calculated by using IBM SPSS Statistics Version
         22 (SPSS Inc., IBM Corp., Chicago, IL).
+    type: Paragraph
   - content:
       - Results
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         Following isolation and purification of IgY from the immunized chickens,
         PCN-IgY complexes were detected by using AGPT. As seen in 
 
-      - type: Link
-        target: '#f1'
-        content:
+      - content:
           - Figure 1
+        target: '#f1'
+        type: Link
         relation: fig
       - >-
         , clear lines of precipitates from two IgY batches in the agarose matrix
@@ -445,6 +444,7 @@ content:
         using ELISA demonstrated that the first batch gives high amount of
         specific IgY antibodies (8.95 μg/μl) than that one of the second (3.02
         µg/µl) which were then used for the rest of experiments.
+    type: Paragraph
   - 'Figure 1. '
   - content:
       - >-
@@ -453,66 +453,65 @@ content:
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         The presence of PCN-IgY antibody was detected through the presence of
         precipitates formed on agarose gel.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         The results of this study showed that PCN at 1 mg/ml was toxic to the
         Raji cells. This cytotoxic effect of PCN on the cells was steadily
         increased in a dose dependent fashion (p<0.05) (
 
-      - type: Link
-        target: '#f2'
-        content:
+      - content:
           - Figure 2
+        target: '#f2'
+        type: Link
         relation: fig
       - ).
+    type: Paragraph
   - 'Figure 2. '
   - content:
       - The effects of pyocyanin (PCN) on Raji cell survivability.
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         After incubation with various concentration of PCN, Raji cell
         viabilities were assessed by MTT assay. PCN-treated Raji cell
         survivability was calculated against the control cells. *p<0.05.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Further experimentation demonstrated that anti-PCN IgY at concentrations
         of 28.19 μg/mL or higher was able to suppress the cytotoxic effect of
         PCN on Raji cells as compared with the negative control (p<0.05) (
 
-      - type: Link
-        target: '#f3'
-        content:
+      - content:
           - Figure 3
+        target: '#f3'
+        type: Link
         relation: fig
       - >-
         ). No significant differences between the cells treated with PCN and
         specific anti-PCN IgY antibodies at the concentration above 55 μg/ml
         were observed, however (p>0.05) (
 
-      - type: Link
-        target: '#f3'
-        content:
+      - content:
           - Figure 3
+        target: '#f3'
+        type: Link
         relation: fig
       - >-
         ). Microscopically, the number of viable cells treated with PCN-IgY
         complexes was much higher than those treated with PCN only (
 
-      - type: Link
-        target: '#f4'
-        content:
+      - content:
           - Figure 4
+        target: '#f4'
+        type: Link
         relation: fig
       - >-
         ). Raw cell viability counts, along with other raw results and images,
@@ -523,12 +522,13 @@ content:
           - Underlying data
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-23'
-            content:
+          - content:
               - '23'
+            target: '#ref-23'
+            type: Link
             relation: bibr
       - .
+    type: Paragraph
   - 'Figure 3. '
   - content:
       - >-
@@ -537,19 +537,19 @@ content:
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         PCN was incubated with various concentration of IgY antibodies. Raji
         cells were then incubated with the PCN-IgY mixtures. Viable cells were
         assessed by MTT and their percentage was calculated as in 
 
-      - type: Link
-        target: '#f2'
-        content:
+      - content:
           - Figure 2
+        target: '#f2'
+        type: Link
         relation: fig
       - . *p<0.05.
+    type: Paragraph
   - 'Figure 4. '
   - content:
       - >-
@@ -558,8 +558,7 @@ content:
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         Raji cells were incubated without PCN (
 
@@ -582,23 +581,23 @@ content:
         ) and then stained with acrydine orange/ethidium bromide. Green or
         orange fluorescence stained cells are viable and dead cells,
         respectively.
+    type: Paragraph
   - content:
       - Discussion
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - >-
         The results of the present study showed that PCN does induce cell death
         in Raji cells as also seen in our previous report
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-21'
-            content:
+          - content:
               - '21'
+            target: '#ref-21'
+            type: Link
             relation: bibr
       - |-
         . Similarly, other also demonstrated that PCN of 
@@ -611,16 +610,16 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-16'
-            content:
+          - content:
               - '16'
+            target: '#ref-16'
+            type: Link
             relation: bibr
       - >-
         . Therefore, efforts to inhibit excessive host cell damage induced by
         PCN are imminent.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - >-
         Further results of the present study demonstrated that anti-PCN IgY
         antibodies specific to PCN significantly reduce the ability of this
@@ -638,18 +637,18 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-17'
-            content:
+          - content:
               - '17'
+            target: '#ref-17'
+            type: Link
             relation: bibr
           - |-
             –
 
-          - type: Link
-            target: '#ref-19'
-            content:
+          - content:
               - '19'
+            target: '#ref-19'
+            type: Link
             relation: bibr
       - |-
         , suggesting that 
@@ -670,10 +669,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-20'
-            content:
+          - content:
               - '20'
+            target: '#ref-20'
+            type: Link
             relation: bibr
       - >-
         . The exact mechanism by which antigen-specific IgY antibodies inhibited
@@ -683,17 +682,17 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-21'
-            content:
+          - content:
               - '21'
+            target: '#ref-21'
+            type: Link
             relation: bibr
       - >-
         . It seems plausible, therefore, that PCN-IgY antibody complexes may
         fail to activate Raji cell-derived caspase 3 and hence, inhibit cell
         death. However, more studies are required to delineate this speculation.
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - |2-
          The extrapolation of the results of the present study in the therapy of 
 
@@ -711,28 +710,28 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-1'
-            content:
+          - content:
               - '1'
+            target: '#ref-1'
+            type: Link
             relation: bibr
           - |-
             –
 
-          - type: Link
-            target: '#ref-4'
-            content:
+          - content:
               - '4'
+            target: '#ref-4'
+            type: Link
             relation: bibr
       - |2-
          and morbidity and mortality in cystic fibrosis patients
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-5'
-            content:
+          - content:
               - '5'
+            target: '#ref-5'
+            type: Link
             relation: bibr
       - |-
         . The difficulty to eradicate 
@@ -753,10 +752,10 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-24'
-            content:
+          - content:
               - '24'
+            target: '#ref-24'
+            type: Link
             relation: bibr
       - |-
         . Immunotherapies using IgY specific to 
@@ -781,18 +780,18 @@ content:
 
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-18'
-            content:
+          - content:
               - '18'
+            target: '#ref-18'
+            type: Link
             relation: bibr
           - |-
             ,
 
-          - type: Link
-            target: '#ref-19'
-            content:
+          - content:
               - '19'
+            target: '#ref-19'
+            type: Link
             relation: bibr
       - >-
         , suggesting the usefulness of antigen-specific IgY antibodies an
@@ -808,86 +807,87 @@ content:
         content:
           - P. aeruginosa
       - ' infection are highly possible.'
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - ' In conclusion, the present study showed that eggs from PCN-immunized chickens contain substantial amount of IgY antibodies that recognize PCN. Furthermore, antigen-specific IgY antibodies were able to inhibit PCN-induced Raji cell death, suggesting that PCN-specific IgY antibodies may be protective against PCN-induced Raji cell death.'
+    type: Paragraph
   - content:
       - Data availability
     depth: 1
     id: ''
     type: Heading
-  - type: Paragraph
-    content:
+  - content:
       - |-
         Figshare: Cytotoxicity of PCN.xlsx. 
 
-      - type: Link
-        target: 'https://dx.doi.org/10.6084/m9.figshare.8115701.v1'
-        content:
+      - content:
           - 'https://doi.org/10.6084/m9.figshare.8115701.v1'
+        target: 'https://dx.doi.org/10.6084/m9.figshare.8115701.v1'
+        type: Link
       - type: Superscript
         content:
-          - type: Link
-            target: '#ref-23'
-            content:
+          - content:
               - '23'
+            target: '#ref-23'
+            type: Link
             relation: bibr
       - .
-  - type: Paragraph
-    content:
+    type: Paragraph
+  - content:
       - 'This project contains the following underlying data:'
-  - type: List
-    order: unordered
-    items:
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+    type: Paragraph
+  - items:
+      - content:
+          - content:
               - >-
                 Cytotoxicity of PCN.xlsx (raw cell viability data following
                 treatment with pyocyanin)
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - >-
                 The effect of IgY on cell viability.xlsx (raw cell viability
                 data following treatment with pyocyanin and IgY)
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Fig 4A untreated cells.JPG (raw image used for Figure 4A)
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Fig 4B PCN-treated cells.JPG (raw image used for Figure 4B)
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Fig 4C PCN IgY-treated cells.JPG (raw image used for Figure 4C)
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - IMG-AGPT.jpg (raw image of agar gel precipitation test)
-      - type: ListItem
-        content:
-          - type: Paragraph
-            content:
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
               - Elisa results Sept 1.xls (raw ELISA data)
-  - type: Paragraph
-    content:
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
       - |-
         Data are available under the terms of the 
 
-      - type: Link
-        target: 'https://creativecommons.org/licenses/by/4.0/legalcode'
-        content:
+      - content:
           - Creative Commons Attribution 4.0 International license
+        target: 'https://creativecommons.org/licenses/by/4.0/legalcode'
+        type: Link
       - ' (CC-BY 4.0).'
+    type: Paragraph
 references:
   - authors:
       - givenNames:
