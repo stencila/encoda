@@ -1,145 +1,145 @@
-type: Article
-title: Publishing peer review materials
 authors:
-  - type: Person
-    givenNames:
+  - givenNames:
       - Jeffrey
     familyNames:
       - Beck
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Kathryn
     familyNames:
       - Funk
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Melissa
     familyNames:
       - Harrison
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Jo
     familyNames:
       - McEntyre
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Josie
     familyNames:
       - Breen
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Andy
     familyNames:
       - Collings
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Paul
     familyNames:
       - Donohoe
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Michael
     familyNames:
       - Evans
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Louisa
     familyNames:
       - Flintoft
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Audrey
     familyNames:
       - Hamelers
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Phil
     familyNames:
       - Hurst
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Thomas
     familyNames:
       - Lemberger
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Jennifer
     familyNames:
       - Lin
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Niamh
     familyNames:
       - O'Connor
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Michael
     familyNames:
       - Parkin
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Sam
     familyNames:
       - Parker
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Peter
     familyNames:
       - Rodgers
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Magdalena
     familyNames:
       - Skipper
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Michael
     familyNames:
       - Stoner
+    type: Person
     affiliations:
       - type: Organization
+title: Publishing peer review materials
+type: Article
 content:
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Introduction
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -164,13 +164,13 @@ content:
         alongside articles. Moreover, support for this practice has been slowly
         gaining momentum, driven by a wish to increase transparency and provide
         credit for peer reviewers (
-                        
+
       - type: Link
         target: '#ref-2'
         content:
           - |-
             Polka 
-                                
+
           - type: Emphasis
             content:
               - et al
@@ -196,7 +196,7 @@ content:
         and archiving. We do not discuss the relative merits of the different
         approaches to peer review that have emerged over the past decade,
         notably the many different flavours of 'open peer review' (
-                        
+
       - type: Link
         target: '#ref-3'
         content:
@@ -205,11 +205,11 @@ content:
       - >-
         ), but we feel that many of our suggestions and recommendations are
         relevant to most if not all of these approaches.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - What are peer review materials?
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -270,7 +270,7 @@ content:
         DOIs, and still others edit and amalgamate various reports into one
         narrative. The variety can be found in the meeting notes and a table
         filled out before the meeting (See 
-                        
+
       - type: Link
         target: '#SF1'
         content:
@@ -278,7 +278,7 @@ content:
         relation: other
       - |2-
          and 
-                        
+
       - type: Link
         target: '#SF2'
         content:
@@ -302,7 +302,7 @@ content:
         DTDs), and whether they send relevant metadata to Crossref. Crossref
         shared details of their schema extension to represent this form of
         content (
-                        
+
       - type: Link
         target: 'https://www.crossref.org/services/content-registration/peer-reviews/'
         content:
@@ -315,11 +315,11 @@ content:
         record.  Understanding the goals of, workflows, and limitations on each
         stakeholder allowed the group to refine the scope of the discussion and
         its outcomes.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Peer review materials need to “stand alone”
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -364,11 +364,11 @@ content:
                 Peer review materials are full-text XML “articles” or
                 “commentaries” in their own right that link bidirectionally to
                 the main article.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Required metadata versus rich metadata
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -394,11 +394,11 @@ content:
         group because the JATS tagging schema would allow for different
         licensing information to be added for these items or to retain that of
         the main article, as a publisher chooses.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Challenges in the process
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -510,18 +510,18 @@ content:
         XML. However, the attachment of machine-readable metadata to that PDF
         should be within reach, especially if the submission systems and hosting
         platforms can build these requirements into their products.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Importance of version management
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
         An additional challenge may be introduced in managing peer review
         materials in cases where such materials are collected for more than one
         published version of a paper. The 
-                        
+
       - type: Link
         target: 'http://www.niso.org/publications/rp/RP-8-2008.pdf'
         content:
@@ -530,7 +530,7 @@ content:
             Technical Working Group
       - |2-
          (
-                        
+
       - type: Link
         target: '#ref-1'
         content:
@@ -583,7 +583,7 @@ content:
         that if the publisher publishes a revision of any of these stages, the
         subsequent revisions should be labelled with suffixes, as follows:
         “-r1”, “-r2”, etc. (
-                        
+
       - type: Link
         target: 'https://jats4r.org/article-publication-and-history-dates'
         content:
@@ -603,11 +603,11 @@ content:
         with the appropriate version. It should not be left to a reader to
         determine if a peer review report or decision letter relates to the
         first version, the second version, or the third version.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - JATS XML proposal (designed to aid depositing to Crossref)
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -616,11 +616,11 @@ content:
         designed to also aid metadata registration with Crossref (note we are
         using the same terms as Crossref where controlled vocabulary is
         required).
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Overarching document type
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - 'Review documents may be supplied as:'
@@ -648,17 +648,17 @@ content:
                 Letters MUST link to the version of the article they are passing
                 judgment on; and Author Replies MUST link to each
                 Review/Decision Letter it is addressing)
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Identifying the type of content
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
         <sub-article> or <article> MUST have an article-type attribute with one
         of the values listed in 
-                            
+
       - type: Link
         target: '#T1'
         content:
@@ -713,11 +713,11 @@ content:
   - type: Paragraph
     content:
       - The term manuscript does not map to anything we’ve discussed.
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Identifying the recommendation
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -749,11 +749,11 @@ content:
       - >-
         NOTE: There should be no “recommendation” for author-comment type
         content.
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Identifying the authors (including ORCIDs)
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -803,42 +803,42 @@ content:
       - >-
         Names, affiliations and contributor IDs (such as ORCID), where provided,
         follow standard JATS tagging (see JATS4R recommendation: 
-                            
+
       - type: Link
         target: 'https://jats4r.org/authors-and-affiliations'
         content:
           - 'https://jats4r.org/authors-and-affiliations'
       - ).
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Identifying any competing interests
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - |-
         Follow tagging recommended by JATS4R: 
-                            
+
       - type: Link
         target: 'https://jats4r.org/conflict-of-interest-statements'
         content:
           - 'https://jats4r.org/conflict-of-interest-statements'
       - .
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Identifying DOIs
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
         DOIs for peer review materials are optional but strongly encouraged. Use
         <article-id pub-id-type=“doi”>
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Licensing and copyright
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -847,17 +847,17 @@ content:
         supplied as <sub-article> may have their own <license> element or
         inherit their license information from the parent document as described
         in the JATS4R Permissions Recommendations (
-                            
+
       - type: Link
         target: 'https://jats4r.org/permissions'
         content:
           - 'https://jats4r.org/permissions'
       - ).
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Date
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -865,11 +865,11 @@ content:
         pub-date and may have other publication information captured as <event>.
         Review documents supplied as <sub-article> may have their own <pub-date>
         element or inherit their <pub-date> from the parent document.
-  - type: Heading
-    id: ''
-    depth: 2
-    content:
+  - content:
       - Not allowed
+    depth: 2
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - 'There are some elements that MUST NOT appear in review documents:'
@@ -910,11 +910,11 @@ content:
                 “versioned”. If the reviewer(s) write a review on an updated
                 version of the manuscript, the peer review is a new published
                 object.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Crossref metadata
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -924,7 +924,7 @@ content:
         registered with Crossref, peer review metadata is available via the open
         Crossref APIs and Crossref Metadata Search. For full details and example
         deposit XML, see the Crossref peer review deposit guide: 
-                        
+
       - type: Link
         target: >-
           https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews
@@ -932,11 +932,11 @@ content:
           - >-
             https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews
       - .
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Display of peer review materials
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -946,11 +946,11 @@ content:
         only are the journal processes transparent but that the content itself
         is easy to find and navigate to, regardless of how a journal chooses to
         make them available.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Future/next steps
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -996,53 +996,62 @@ content:
       - >-
         If you are publishing peer review materials, or are not yet and are
         considering doing so, please comment.
-  - type: Heading
-    id: ''
-    depth: 1
-    content:
+  - content:
       - Data availability
+    depth: 1
+    id: ''
+    type: Heading
   - type: Paragraph
     content:
       - No data are associated with this article.
 references:
-  - type: CreativeWork
+  - authors: []
     title: >-
       Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV
       Technical Working Group (NISO-RP-8-2008)
+    type: Article
     datePublished: '2008'
-  - type: CreativeWork
-    title: Publish peer reviews.
-    datePublished: '2018'
-    isPartOf:
-      type: CreativeWork
-      name: Nature.
-    authors:
-      - type: Person
-        givenNames:
+  - authors:
+      - givenNames:
           - JK
         familyNames:
           - Polka
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Kiley
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Konforti
-  - type: CreativeWork
-    title: >-
-      What is open peer review? A systematic review [version 2; referees: 4
-      approved].
-    datePublished: '2017'
+        type: Person
+    title: Publish peer reviews.
+    type: Article
+    datePublished: '2018'
     isPartOf:
-      type: CreativeWork
-      name: F1000Res.
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 7720
+      pageStart: 545
+      pageEnd: 547
+      isPartOf:
+        title: Nature.
+        volumeNumber: 560
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - T
         familyNames:
           - Ross-Hellauer
+        type: Person
+    title: >-
+      What is open peer review? A systematic review [version 2; referees: 4
+      approved].
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 588
+      title: F1000Res.
+      volumeNumber: 6
+      type: PublicationVolume

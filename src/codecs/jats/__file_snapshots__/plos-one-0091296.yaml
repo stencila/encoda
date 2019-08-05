@@ -1,44 +1,44 @@
-type: Article
-title: >-
-  The Influence of Fisher Knowledge on the Susceptibility of Reef Fish
-  Aggregations to Fishing
 authors:
-  - type: Person
-    givenNames:
+  - givenNames:
       - Jan
     familyNames:
       - Robinson
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Joshua
       - E.
     familyNames:
       - Cinner
+    type: Person
     affiliations:
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Nicholas
       - A.
       - J.
     familyNames:
       - Graham
+    type: Person
     affiliations:
       - type: Organization
+title: >-
+  The Influence of Fisher Knowledge on the Susceptibility of Reef Fish
+  Aggregations to Fishing
+type: Article
 content:
-  - type: Heading
-    id: s1
-    depth: 1
-    content:
+  - content:
       - Introduction
+    depth: 1
+    id: s1
+    type: Heading
   - type: Paragraph
     content:
       - >-
         The depletion of reef fish biomass is often attributed to overfishing
         driven by socioeconomic drivers such as local human population density
-        and distance from reefs to markets 
+        and distance from reefs to markets
       - type: Link
         target: '#pone.0091296-Mora1'
         content:
@@ -53,7 +53,7 @@ content:
       - >-
         . As changes to these key socioeconomic drivers increase demand for
         resources, reef fishes with slow life histories, such as groupers
-        (Serranidae), are typically the first to be depleted 
+        (Serranidae), are typically the first to be depleted
       - type: Link
         target: '#pone.0091296-SadovydeMitcheson1'
         content:
@@ -64,7 +64,7 @@ content:
         of fishers to locate and exploit fish populations when they are most
         vulnerable to fishing. Vulnerability to fishing increases when fish
         aggregate or school and the history of fishing is marked by developments
-        based on exploiting this aspect of fish behaviour 
+        based on exploiting this aspect of fish behaviour
       - type: Link
         target: '#pone.0091296-Parrish1'
         content:
@@ -79,7 +79,7 @@ content:
       - >-
         . In the context of coral reefs, the development of aggregation-based
         fisheries depends on many factors including local knowledge relating to
-        fish behaviour 
+        fish behaviour
       - type: Link
         target: '#pone.0091296-Hamilton1'
         content:
@@ -126,7 +126,7 @@ content:
         example of fishers utilising knowledge on fish behaviour to target
         populations when their density has increased. A large number of
         important food fishes on coral reefs aggregate periodically at high
-        density to spawn 
+        density to spawn
       - type: Link
         target: '#pone.0091296-Domeier1'
         content:
@@ -141,7 +141,7 @@ content:
       - >-
         . Spawning aggregations represent attractive fishing opportunities since
         increases in density typically lead to greater catch-per-unit-effort
-        (CPUE) 
+        (CPUE)
       - type: Link
         target: '#pone.0091296-Wilberg1'
         content:
@@ -162,7 +162,7 @@ content:
       - >-
         . Predictable aggregating behaviour is not, however, confined to
         reproduction since reef fishes also aggregate at specific times and
-        locations for other functions, such as foraging, resting and shelter 
+        locations for other functions, such as foraging, resting and shelter
       - type: Link
         target: '#pone.0091296-Meyer1'
         content:
@@ -196,7 +196,7 @@ content:
         aggregations is heterogeneous and will influence the extent to which
         aggregations are perceived as predictable and exploited by fishers.
         Fisher knowledge maybe stratified by factors such as gender, age,
-        location and cultural background 
+        location and cultural background
       - type: Link
         target: '#pone.0091296-Hamilton1'
         content:
@@ -241,7 +241,7 @@ content:
       - >-
         . Gender preferences and customary marine tenure that specifies
         ownership rights among kinship groups may also influence fisher access
-        to fish resources 
+        to fish resources
       - type: Link
         target: '#pone.0091296-Aswani1'
         content:
@@ -255,7 +255,7 @@ content:
         relation: bibr
       - >-
         . Furthermore, fishing effort on aggregations may be constrained by
-        limited market access or fish preservation capacity 
+        limited market access or fish preservation capacity
       - type: Link
         target: '#pone.0091296-MatosCaraballo1'
         content:
@@ -270,7 +270,7 @@ content:
       - >-
         Fisher knowledge of fish aggregating behaviour will be influenced by
         cognitive processes (such as recall) and the formation of heuristic
-        models 
+        models
       - type: Link
         target: '#pone.0091296-Daw1'
         content:
@@ -283,7 +283,7 @@ content:
         behaviour can be categorised by their temporal, spatial and physical
         manifestations. Firstly, aggregation formation aligning with diurnal,
         lunar and seasonal periods is likely to promote recall since coral reef
-        fishers often allocate effort according to such schedules 
+        fishers often allocate effort according to such schedules
       - type: Link
         target: '#pone.0091296-Aswani2'
         content:
@@ -291,7 +291,7 @@ content:
         relation: bibr
       - >-
         . Secondly, reef fishers often have detailed knowledge on the
-        broad-scale (i.e. seascape) distribution of resources 
+        broad-scale (i.e. seascape) distribution of resources
       - type: Link
         target: '#pone.0091296-Aswani1'
         content:
@@ -299,7 +299,7 @@ content:
         relation: bibr
       - >-
         , which coincides with the fact that aggregations often form at
-        prominent reef features 
+        prominent reef features
       - type: Link
         target: '#pone.0091296-Connell1'
         content:
@@ -313,7 +313,7 @@ content:
         relation: bibr
       - >-
         . However, some species are more mobile and therefore less predictable
-        in space than others when aggregated for spawning (e.g. Carangidae) 
+        in space than others when aggregated for spawning (e.g. Carangidae)
       - type: Link
         target: '#pone.0091296-Heyman1'
         content:
@@ -322,7 +322,7 @@ content:
       - >-
         . Lastly, the size of aggregations formed is expected to influence
         recall since memory varies according to how pleasurable, unusual or
-        emotive an experience is 
+        emotive an experience is
       - type: Link
         target: '#pone.0091296-Matlin1'
         content:
@@ -338,7 +338,7 @@ content:
     content:
       - >-
         Assessing the status of aggregating reef fish populations is problematic
-        due to the data-poor context of their fisheries 
+        due to the data-poor context of their fisheries
       - type: Link
         target: '#pone.0091296-Sadovy1'
         content:
@@ -347,7 +347,7 @@ content:
       - >-
         . Vulnerability assessment frameworks developed for data-poor contexts,
         which combine measures of a species productivity and susceptibility to a
-        fishery, (e.g. 
+        fishery, (e.g.
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -363,7 +363,7 @@ content:
         ), are therefore worth examining for such species. Productivity defines
         the capacity of a stock to recover rapidly following depletion, while
         susceptibility is the potential for the stock to be impacted by the
-        fishery 
+        fishery
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -371,7 +371,7 @@ content:
         relation: bibr
       - >-
         . Measures of productivity are generally available for reef fishes
-        through empirical tools based on life history invariants 
+        through empirical tools based on life history invariants
       - type: Link
         target: '#pone.0091296-Froese1'
         content:
@@ -380,7 +380,7 @@ content:
       - >-
         , whereas indicators of susceptibility can be tailored to the specific
         fisheries being assessed in terms of patterns in catchability and
-        socioeconomic drivers 
+        socioeconomic drivers
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -390,7 +390,7 @@ content:
         . Thus, a population's susceptibility to aggregation fishing will be
         governed by catchability that, among other factors, relates to the
         accessibility of the aggregation site and the selectivity or efficiency
-        of gears used at the site 
+        of gears used at the site
       - type: Link
         target: '#pone.0091296-ArregunSnchez1'
         content:
@@ -399,7 +399,7 @@ content:
       - >-
         . Catchability will in turn be driven by socioeconomic drivers, such as
         market access and dependency on fishing, that influence technological
-        development and fishing effort 
+        development and fishing effort
       - type: Link
         target: '#pone.0091296-Cinner1'
         content:
@@ -413,7 +413,7 @@ content:
         relation: bibr
       - >-
         . However, aggregations are often transient phenomena, particularly in
-        the case of spawning aggregations 
+        the case of spawning aggregations
       - type: Link
         target: '#pone.0091296-Domeier1'
         content:
@@ -430,7 +430,7 @@ content:
       - >-
         Studies documenting fisher knowledge of reef fish aggregations have
         primarily gathered information in order to identify research,
-        conservation and management priorities 
+        conservation and management priorities
       - type: Link
         target: '#pone.0091296-Samoilys1'
         content:
@@ -449,16 +449,16 @@ content:
         local socioeconomic indicators?, and (3), what is the influence of
         fisher knowledge in conferring susceptibility to fishing relative to
         catchability and socioeconomic drivers of fishing pressure.
-  - type: Heading
-    id: s2
-    depth: 1
-    content:
+  - content:
       - Materials and Methods
-  - type: Heading
-    id: s2a
-    depth: 2
-    content:
+    depth: 1
+    id: s2
+    type: Heading
+  - content:
       - Ethics statement
+    depth: 2
+    id: s2a
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -477,17 +477,17 @@ content:
         the unprocessed data at James Cook University. For follow-on contact
         with the lead author, copies of the information sheet were left with
         clan leaders at each location.
-  - type: Heading
-    id: s2b
-    depth: 2
-    content:
+  - content:
       - Study locations and communities
+    depth: 2
+    id: s2b
+    type: Heading
   - type: Paragraph
     content:
       - >-
         We studied reef fisheries at two locations in Papua New Guinea,
         representing two extremes of fishing pressure and comprising gear and
-        fishing practices common to the region 
+        fishing practices common to the region
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -505,7 +505,7 @@ content:
         ). Karkar is a large, elevated (1,839 m) volcanic island and fishing is
         a secondary occupation to agriculture. By contrast, fishing is the
         primary occupation for the community on the small (28 ha), low-lying
-        Ahus Island where terrestrial resources are limited 
+        Ahus Island where terrestrial resources are limited
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -514,7 +514,7 @@ content:
       - >-
         . The two locations also differ in coastal geomorphology and habitats.
         Fishers from Karkar have access to a narrow (<1 km) fringing reef system
-        of less than 150 ha with a narrow lagoon 
+        of less than 150 ha with a narrow lagoon
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -528,7 +528,7 @@ content:
         relation: bibr
       - >-
         , whereas fishers at Ahus Island are surrounded by a wide (>4 km in the
-        west), extensive lagoon system of approximately 550 ha 
+        west), extensive lagoon system of approximately 550 ha
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -537,11 +537,11 @@ content:
       - .
   - 10.1371/journal.pone.0091296.g001
   - Figure 1
-  - type: Heading
-    id: s2b
-    depth: 2
-    content:
+  - content:
       - Study locations.
+    depth: 2
+    id: s2b
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -555,7 +555,7 @@ content:
         lines and spearguns (97%, of total fishing effort), whereas effort at
         Karkar comprises both of these gears (72%) in combination with hand
         spearing (24%). By comparison, a small proportion (<4%) of fishing
-        effort at both study sites involves use of nets 
+        effort at both study sites involves use of nets
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -567,7 +567,7 @@ content:
         Karkar is a relatively centralised approach where governance is
         controlled by a council of chiefs. There is relatively high mobility,
         with fishers having the ability to switch between gears and fishing
-        grounds 
+        grounds
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -584,7 +584,7 @@ content:
       - >-
         ) to restrict fishing in certain areas in an effort to influence
         catchability (i.e. make fish less wary of spear fishers) or rebuild
-        biomass for feasts 
+        biomass for feasts
       - type: Link
         target: '#pone.0091296-Feary1'
         content:
@@ -597,11 +597,11 @@ content:
           - '[37]'
         relation: bibr
       - .
-  - type: Heading
-    id: s2c
-    depth: 2
-    content:
+  - content:
       - Quantifying fisher knowledge of aggregating behaviour and predictability
+    depth: 2
+    id: s2c
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -892,7 +892,7 @@ content:
         behaviour, initially focusing on whether they observe a species to
         display solitary, shoaling (groups of three or more fish displaying
         unsynchronised swimming) and schooling (groups of three or more fish
-        displaying synchronised swimming) behaviour 
+        displaying synchronised swimming) behaviour
       - type: Link
         target: '#pone.0091296-Pitcher1'
         content:
@@ -925,7 +925,7 @@ content:
       - >-
         ), an index of fisher knowledge of aggregating behaviour was calculated
         for each fisher and species by summing the scores for the seven
-        aggregation attributes (maximum score = 17; 
+        aggregation attributes (maximum score = 17;
       - type: Link
         target: '#pone-0091296-t002'
         content:
@@ -951,7 +951,7 @@ content:
         constantly shoaling or schooling, questions on periodicities of
         aggregation formation were obviously irrelevant. Therefore, fishers were
         asked as to whether aggregation size in frequently shoaling or schooling
-        species (e.g. 
+        species (e.g.
       - type: Emphasis
         content:
           - L. gibbus
@@ -1108,13 +1108,13 @@ content:
       Scoring of aggregation attributes based on fisher knowledge of aggregating
       behaviour.
     content: []
-  - type: Heading
-    id: s2d
-    depth: 2
-    content:
+  - content:
       - >-
         Socioeconomic indicators related to heterogeneity in fisher knowledge
         within study locations
+    depth: 2
+    id: s2d
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -1131,7 +1131,7 @@ content:
         relation: table
       - >-
         ). Gender and the main reef habitats for which fishers hold access
-        rights often structure fisher knowledge of fish behaviour 
+        rights often structure fisher knowledge of fish behaviour
       - type: Link
         target: '#pone.0091296-Hamilton1'
         content:
@@ -1152,7 +1152,7 @@ content:
       - >-
         . Fishing gears vary in species selectivity and the habitats where they
         can be deployed, influencing the potential for fishers to capture and
-        develop knowledge of species behaviour 
+        develop knowledge of species behaviour
       - type: Link
         target: '#pone.0091296-Crona1'
         content:
@@ -1339,16 +1339,16 @@ content:
       Socioeconomic indicators used in redundancy analysis (RDA) to identify
       sources of variation in fisher knowledge of aggregating behaviour.
     content: []
-  - type: Heading
-    id: s2e
-    depth: 2
-    content:
+  - content:
       - Fisher knowledge and the susceptibility of aggregations to fishing
+    depth: 2
+    id: s2e
+    type: Heading
   - type: Paragraph
     content:
       - >-
         A productivity-susceptibility analysis (PSA) using the bivariate
-        framework of Hobday et al. (2011) 
+        framework of Hobday et al. (2011)
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -1369,7 +1369,7 @@ content:
       - >-
         ) for the six species, where productivity score categories are:
         1 = high, 2 = moderate and 3 = low productivity. Parameter estimates for
-        each species were derived using the life-history tool of Fishbase.org 
+        each species were derived using the life-history tool of Fishbase.org
       - type: Link
         target: '#pone.0091296-Froese1'
         content:
@@ -1379,7 +1379,7 @@ content:
         . Cut-off points dictating membership of each productivity category were
         adopted from those used for fisheries of the United States, which
         include fisheries for reef fishes analogous to those of Papua New
-        Guinea 
+        Guinea
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -1621,7 +1621,7 @@ content:
       - >-
         ). The mean ‘good’ catch rate across fisher responses was taken on each
         gear used for a species, from which gear selectivity was ranked by order
-        of catch rate. Fourthly, we replaced post-capture mortality 
+        of catch rate. Fourthly, we replaced post-capture mortality
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -1629,7 +1629,7 @@ content:
         relation: bibr
       - >-
         , which is less relevant to small-scale reef fisheries where discards
-        are minimal 
+        are minimal
       - type: Link
         target: '#pone.0091296-Jacquet1'
         content:
@@ -1698,7 +1698,7 @@ content:
         relation: table
       - >-
         ). A ranking of habitat impacts associated with gears used by fishers in
-        our study was developed from Mangi and Roberts (2006) 
+        our study was developed from Mangi and Roberts (2006)
       - type: Link
         target: '#pone.0091296-Mangi1'
         content:
@@ -1716,7 +1716,7 @@ content:
         to hours fished per month. Ranges associated with low, medium and high
         susceptibility was estimated by cluster analysis of individual effort
         reported by fishers. Preference, a location-level attribute used as a
-        proxy for desirability or value of the species 
+        proxy for desirability or value of the species
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -1725,7 +1725,7 @@ content:
       - >-
         , was derived for our six study species from a focus group held in each
         community. Dependency on fishing and access to markets are significant
-        drivers of fishing pressure in many reef fisheries 
+        drivers of fishing pressure in many reef fisheries
       - type: Link
         target: '#pone.0091296-Cinner1'
         content:
@@ -1743,7 +1743,7 @@ content:
           - as detailed above
       - >-
         ) and markets that they access, respectively. Management strategy was a
-        location-level attribute adopted from Patrick et al. (2010) 
+        location-level attribute adopted from Patrick et al. (2010)
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -1762,16 +1762,16 @@ content:
           - '[22]'
         relation: bibr
       - .
-  - type: Heading
-    id: s2f
-    depth: 2
-    content:
+  - content:
       - Data analysis
+    depth: 2
+    id: s2f
+    type: Heading
   - type: Paragraph
     content:
       - >-
         The mean ‘normal’ catch rate estimated by fishers for each species was
-        compared between locations using a 
+        compared between locations using a
       - type: Emphasis
         content:
           - t
@@ -1781,7 +1781,7 @@ content:
         analysed by constructing contingency tables of the frequency of
         observation for each of the eight categories (solitary, shoaling,
         schooling, combinations of the three forms, and the ‘don't know’
-        response). Cramér's 
+        response). Cramér's
       - type: Emphasis
         content:
           - V
@@ -1801,20 +1801,20 @@ content:
         each location and the difference between the averages (Ahus minus
         Karkar) plotted. Secondly, Mann-Whitney U tests were used to compare
         fisher responses in each location, again for each species and attribute,
-        with exact significance (2-sided) 
+        with exact significance (2-sided)
       - type: Emphasis
         content:
           - p
       - >-
         -values reported rather than asymptotic values due to small sample sizes
         (n≤17). Owing to the risk of type 1 errors arising from multiple
-        comparisons, 
+        comparisons,
       - type: Emphasis
         content:
           - p
       - >-
         -values were adjusted with a false discovery rate (FDR) correction for
-        multiple testing using the Benjamini-Hochberg method 
+        multiple testing using the Benjamini-Hochberg method
       - type: Link
         target: '#pone.0091296-Benjamini1'
         content:
@@ -1832,7 +1832,7 @@ content:
     content:
       - >-
         Redundancy analysis (RDA), which combines concepts of ordination and
-        regression 
+        regression
       - type: Link
         target: '#pone.0091296-Legendre1'
         content:
@@ -1882,7 +1882,7 @@ content:
         plot for the full set of susceptibility attributes). From both of these
         PSA plots, overall vulnerability (or risk) was derived for each
         population at Ahus and Karkar by taking the Euclidean distance between
-        the origin and population location in the bivariate space 
+        the origin and population location in the bivariate space
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -1893,16 +1893,16 @@ content:
         vulnerability (with species as paired samples and location as
         treatments) differed between Ahus and Karkar for the full susceptibility
         attribute set and for the catchability attributes. Exact significance
-        (2-sided) 
+        (2-sided)
       - type: Emphasis
         content:
           - p
       - '-values are reported due to the small number of paired-samples (n = 6).'
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - Results
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -1928,7 +1928,7 @@ content:
         ). Based on the median response among fishers, groupers were encountered
         infrequently in the catches at both study locations. The four species of
         snapper and emperor were encountered frequently in the catches of Karkar
-        fishers, while at Ahus 
+        fishers, while at Ahus
       - type: Emphasis
         content:
           - L. gibbus
@@ -1952,7 +1952,7 @@ content:
         relation: fig
       - >-
         ). Comparing between locations, the mean reported catch rates did not
-        differ for most species. However, the mean catch rate for 
+        differ for most species. However, the mean catch rate for
       - type: Emphasis
         content:
           - E. fuscoguttatus
@@ -1963,11 +1963,11 @@ content:
       - .
   - 10.1371/journal.pone.0091296.g002
   - Figure 2
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - Catch rates reported by fishers for the six study species.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2006,7 +2006,7 @@ content:
       - ': '
       - type: Emphasis
         content:
-          - V = 
+          - V =
       - '0.393, '
       - type: Emphasis
         content:
@@ -2051,7 +2051,7 @@ content:
       - ': '
       - type: Emphasis
         content:
-          - V = 
+          - V =
       - '0.674, '
       - type: Emphasis
         content:
@@ -2067,7 +2067,7 @@ content:
         relation: fig
       - >-
         ). Aggregation formation was considered a much more common behaviour by
-        fishers on Ahus, especially for 
+        fishers on Ahus, especially for
       - type: Emphasis
         content:
           - L. harak
@@ -2101,11 +2101,11 @@ content:
       -  = 1.0).
   - 10.1371/journal.pone.0091296.g003
   - Figure 3
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - Fisher knowledge of the aggregating behaviour of study species.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2118,7 +2118,7 @@ content:
     content:
       - >-
         Ahus fishers were generally more knowledgeable on the seasonal, lunar
-        and diel periodicity of aggregations for 
+        and diel periodicity of aggregations for
       - type: Emphasis
         content:
           - L. lentjan
@@ -2138,7 +2138,7 @@ content:
         relation: fig
       - >-
         ). By contrast, Ahus and Karkar fishers did not differ statistically in
-        their knowledge of aggregation attributes for 
+        their knowledge of aggregation attributes for
       - type: Emphasis
         content:
           - L. gibbus
@@ -2167,7 +2167,7 @@ content:
         as more predictable by Ahus fishers. There were no differences between
         Ahus and Karkar in the perceived home range sizes of the six species and
         the only species for which perceptions of aggregation size differed
-        significantly was 
+        significantly was
       - type: Emphasis
         content:
           - L. harak
@@ -2180,13 +2180,13 @@ content:
       - ).
   - 10.1371/journal.pone.0091296.g004
   - Figure 4
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - >-
         Differences in fisher knowledge of aggregation attributes between study
         locations.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2198,7 +2198,7 @@ content:
     content:
       - >-
         For Ahus, ordination of species by fisher knowledge of their aggregating
-        behaviour loosely clustered 
+        behaviour loosely clustered
       - type: Emphasis
         content:
           - L. lentjan
@@ -2221,7 +2221,7 @@ content:
       - >-
         ). Knowledge of the aggregating behaviour of these three species was
         primarily held by male fishers, whereas female and net fishers who fish
-        in the lagoon were more knowledgeable of 
+        in the lagoon were more knowledgeable of
       - type: Emphasis
         content:
           - L. harak
@@ -2254,13 +2254,13 @@ content:
       - ).
   - 10.1371/journal.pone.0091296.g005
   - Figure 5
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - >-
         Socioeconomic indicators associated with variation in fisher knowledge
         at Ahus Island.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2552,13 +2552,13 @@ content:
       - ).
   - 10.1371/journal.pone.0091296.g006
   - Figure 6
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - >-
         Socioeconomic indicators associated with variation in fisher knowledge
         at Karkar Island.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2590,24 +2590,24 @@ content:
         relation: fig
       - >-
         ). All four grouper populations were in the medium risk category, while
-        most of the other populations were low risk. However, 
+        most of the other populations were low risk. However,
       - type: Emphasis
         content:
           - L. gibbus
       - ' aggregations at Ahus were assessed to be medium risk due to a high susceptibility score.'
   - 10.1371/journal.pone.0091296.g007
   - Figure 7
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - Productivity-susceptibility analysis (PSA) plot.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
         The susceptibility axis in this plot combines all ten attributes
         associated with catchability and socioeconomic drivers of fishing
-        pressure (see 
+        pressure (see
       - type: Link
         target: '#pone-0091296-t004'
         content:
@@ -2690,13 +2690,13 @@ content:
         aggregations to fishing at Ahus compared to Karkar.
   - 10.1371/journal.pone.0091296.g008
   - Figure 8
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - >-
         Influence of catchability and socioeconomic susceptibility attributes on
         the vulnerability of populations to aggregation fishing.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2709,11 +2709,11 @@ content:
         given in the panel titles.
   - 10.1371/journal.pone.0091296.g009
   - Figure 9
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - Case study location scores for the ten susceptibility attributes.
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2723,11 +2723,11 @@ content:
         susceptibility) for each fisher respondent or, in the case of preference
         and management strategy, at the level of location. For attributes scored
         at the respondent level, the mean score (N = 16) is given.
-  - type: Heading
-    id: s4
-    depth: 1
-    content:
+  - content:
       - Discussion
+    depth: 1
+    id: s4
+    type: Heading
   - type: Paragraph
     content:
       - 'Supportive of previous research findings in Papua New Guinea '
@@ -2749,7 +2749,7 @@ content:
         aggregation location and timing are prerequisites for exploitation,
         factors that drive fishing effort will ultimately determine their
         susceptibility to fishing since knowledge, by itself, does not ensure
-        that fishers will seek to maximize their extraction from the fishery 
+        that fishers will seek to maximize their extraction from the fishery
       - type: Link
         target: '#pone.0091296-Johannes2'
         content:
@@ -2770,7 +2770,7 @@ content:
       - >-
         , while the overexploitation of spawning aggregations has been
         attributed to the emergence of commercial markets for aggregating
-        species 
+        species
       - type: Link
         target: '#pone.0091296-Sadovy1'
         content:
@@ -2778,7 +2778,7 @@ content:
         relation: bibr
       - >-
         . Social norms operating outside customary tenure may also constrain
-        fishing pressure 
+        fishing pressure
       - type: Link
         target: '#pone.0091296-Colding1'
         content:
@@ -2797,18 +2797,18 @@ content:
         for statistical inference of the factors relating to knowledge.
         Additional research exploring how knowledge is structured within
         communities will be important for assessing the role of social norms or
-        customary management practices, such as 
+        customary management practices, such as
       - type: Emphasis
         content:
           - tambu
       - ' areas, in regulating fishing effort.'
-  - type: Heading
-    id: s4a
-    depth: 2
-    content:
+  - content:
       - >-
         Factors associated with heterogeneity in fisher knowledge of aggregating
         behaviour
+    depth: 2
+    id: s4a
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2816,7 +2816,7 @@ content:
         at Ahus. Since variation at Ahus related to gender and access to reef
         habitats, it appears to stem from the decentralised tenure system that
         specifies ownership rights to space, species, gear and the techniques
-        for using gears among kinship groups 
+        for using gears among kinship groups
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -2838,7 +2838,7 @@ content:
         . An understanding of how knowledge is structured and maintained among
         kinship groups is important since the breakdown of customs and the
         spread of knowledge can lead to increased fishing pressure on
-        aggregations 
+        aggregations
       - type: Link
         target: '#pone.0091296-Hamilton1'
         content:
@@ -2846,7 +2846,7 @@ content:
         relation: bibr
       - >-
         . By contrast, marine tenure arrangements at Karkar allow for relatively
-        higher mobility of fishers between gears and fishing grounds 
+        higher mobility of fishers between gears and fishing grounds
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -2871,7 +2871,7 @@ content:
         knowledge of aggregations of the two snappers was greater and relatively
         homogenous. Snapper aggregation locations were perceived by fishers as
         spatially predictable and were associated with particular features of
-        the reef, corresponding with empirical evidence for these species 
+        the reef, corresponding with empirical evidence for these species
       - type: Link
         target: '#pone.0091296-Connell1'
         content:
@@ -2887,7 +2887,7 @@ content:
         . Of our six study species, snappers generally had the highest reported
         catch rates, presumably since they are schooling species and are
         relatively abundant, often forming an important component of reef
-        fisheries catch in many parts of Papua New Guinea and other regions 
+        fisheries catch in many parts of Papua New Guinea and other regions
       - type: Link
         target: '#pone.0091296-McClanahan1'
         content:
@@ -2906,7 +2906,7 @@ content:
         Heterogeneity in fisher knowledge relating to grouper spawning
         aggregations was structured by access rights or gear type, depending on
         location. Grouper spawning aggregations mainly form on outer reef slopes
-        and channels 
+        and channels
       - type: Link
         target: '#pone.0091296-Hamilton2'
         content:
@@ -2929,7 +2929,7 @@ content:
         females and some male fishers, were limited to using nets or fishing in
         the large lagoon, they are therefore unlikely to have developed
         knowledge of this behaviour. Gear use also plays a role in knowledge
-        acquisition 
+        acquisition
       - type: Link
         target: '#pone.0091296-Crona1'
         content:
@@ -2950,7 +2950,7 @@ content:
       - >-
         ) that these species are known to undertake in attending spawning
         aggregations are larger than the linear extent (<5 km) of the reef
-        fished 
+        fished
       - type: Link
         target: '#pone.0091296-Feary1'
         content:
@@ -2962,7 +2962,7 @@ content:
       - >-
         As with groupers, heterogeneity in fisher knowledge of emperor behaviour
         also stemmed from variable rights of access among fishers. Thus, lagoon
-        fishers at Ahus developed specialist knowledge of the behaviour of 
+        fishers at Ahus developed specialist knowledge of the behaviour of
       - type: Emphasis
         content:
           - L. harak
@@ -2980,7 +2980,7 @@ content:
         relation: bibr
       - >-
         , which forms spawning aggregations and small groups for
-        non-reproductive functions 
+        non-reproductive functions
       - type: Link
         target: '#pone.0091296-Ebisawa1'
         content:
@@ -3035,7 +3035,7 @@ content:
         for both grouper species) among Muluk fishers than neighbouring fishers
         from Wadau. Since fishers exhibit similar dependency on fishing, this
         finding may reflect the differing historical context of two communities,
-        which may have settled on the coast at different times 
+        which may have settled on the coast at different times
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -3068,7 +3068,7 @@ content:
         kinship groups that can access those resources. While it would have been
         informative to stratify sampling of respondents by clans or kinship
         groups, this poses difficulties owing to the often complex relationships
-        in communities such as Ahus 
+        in communities such as Ahus
       - type: Link
         target: '#pone.0091296-Cinner2'
         content:
@@ -3083,11 +3083,11 @@ content:
         exceeded the recommended number based on sample size, unconstrained
         analyses (i.e. principal components analysis) yielded similar
         relationships between fisher knowledge and socioeconomic indicators.
-  - type: Heading
-    id: s4b
-    depth: 2
-    content:
+  - content:
       - Susceptibility of reef fish populations to aggregation fishing
+    depth: 2
+    id: s4b
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -3095,7 +3095,7 @@ content:
         relating to catchability and socioeconomic drivers of fishing effort
         influence the susceptibility of reef fish populations to aggregation
         fishing. Given that experts with access to scientific information have
-        scored susceptibility indictors in previous applications of PSA 
+        scored susceptibility indictors in previous applications of PSA
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -3116,7 +3116,7 @@ content:
     content:
       - >-
         Knowledge of fish aggregating behaviour is commonly utilized by fishers
-        to improve catchability and returns from a fishery 
+        to improve catchability and returns from a fishery
       - type: Link
         target: '#pone.0091296-Parrish1'
         content:
@@ -3125,7 +3125,7 @@ content:
       - >-
         . It is therefore appropriate to incorporate fisher knowledge as an
         indicator of susceptibility to fishing in risk analyses involving
-        aggregating species, especially as it varies among communities 
+        aggregating species, especially as it varies among communities
       - type: Link
         target: '#pone.0091296-Hamilton1'
         content:
@@ -3158,7 +3158,7 @@ content:
         Ahus, particularly in their use of a form of muro-ami to target
         snappers, whereby scare lines and nets are used to corral fish into an
         enclosed space where they are taken by speargun. This fishing technique
-        is highly efficient for shoaling and schooling fish such as 
+        is highly efficient for shoaling and schooling fish such as
       - type: Emphasis
         content:
           - L. gibbus
@@ -3172,7 +3172,7 @@ content:
         fisher knowledge with availability, encounterability and selectivity,
         study populations were assessed as equally susceptible to aggregation
         fishing at Ahus and Karkar using the catchability approach of Hobday et
-        al. (2011) 
+        al. (2011)
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -3184,7 +3184,7 @@ content:
       - >-
         An advantage of PSA is that the susceptibility attributes included can
         be adapted to local contexts or issues of importance. For example,
-        Patrick et al. (2010) 
+        Patrick et al. (2010)
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -3220,7 +3220,7 @@ content:
     content:
       - >-
         PSA and other semi-quantitative approaches are, however, sensitive to
-        the assumptions made in developing indicators 
+        the assumptions made in developing indicators
       - type: Link
         target: '#pone.0091296-Hobday1'
         content:
@@ -3240,7 +3240,7 @@ content:
         on the spatial distribution of fishing effort. The use of CPUE to
         estimate selectivity was also subject to uncertainty, given the numerous
         factors that affect this parameter, and essentially constituted a
-        measure of gear efficiency for a species rather than selectivity 
+        measure of gear efficiency for a species rather than selectivity
       - type: Link
         target: '#pone.0091296-ArregunSnchez1'
         content:
@@ -3266,7 +3266,7 @@ content:
         a participatory application of PSA in the two communities may have
         yielded different results. For example, resource users could develop
         their own indicators or choose to weight indicators according to their
-        own priorities 
+        own priorities
       - type: Link
         target: '#pone.0091296-Patrick1'
         content:
@@ -3294,7 +3294,7 @@ content:
         . We were unable to validate our application of this tool since biomass
         estimates for the study populations are absent. However, multispecies
         reef fish biomass was lower at Ahus than Karkar, both at the time of the
-        interviews (D. Feary, pers. comm.) and in 2002 
+        interviews (D. Feary, pers. comm.) and in 2002
       - type: Link
         target: '#pone.0091296-Cinner4'
         content:
@@ -3320,7 +3320,7 @@ content:
         aggregating behaviour will be influenced by social, economic and
         cultural factors that are specific to the local context. Understanding
         how knowledge is structured within a community will be important if
-        customary practices for conservation, such as 
+        customary practices for conservation, such as
       - type: Emphasis
         content:
           - tambu
@@ -3333,7 +3333,7 @@ content:
       - >-
         . At Ahus, the relatively high susceptibility of aggregations to
         fishing, caused by a combination of high dependency on fishing, access
-        to larger markets and loss of the 
+        to larger markets and loss of the
       - type: Emphasis
         content:
           - tambu
@@ -3347,7 +3347,7 @@ content:
         . The findings of this study therefore call for a holistic approach to
         assessing the risks posed by fishing on reef fish aggregations, one that
         is grounded in the principals of fisheries science and emerging
-        social-ecological thinking 
+        social-ecological thinking
       - type: Link
         target: '#pone.0091296-Cinner3'
         content:
@@ -3355,1182 +3355,1355 @@ content:
         relation: bibr
       - .
 references:
-  - type: CreativeWork
-    title: >-
-      Global human footprints on the linkage between biodiversity and ecosystem
-      functioning in reef fishes
-    datePublished: '2011'
-    isPartOf:
-      type: CreativeWork
-      name: PLoS Biol
-    authors:
-      - type: Person
-        givenNames:
+  - authors:
+      - givenNames:
           - C
         familyNames:
           - Mora
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - O
         familyNames:
           - Aburto-Oropeza
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Ayala
           - Bocos
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PM
         familyNames:
           - Ayotte
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Banks
-  - type: CreativeWork
+        type: Person
     title: >-
-      Global effects of local human population density and distance to markets
-      on the condition of coral reef fisheries
-    datePublished: '2013'
+      Global human footprints on the linkage between biodiversity and ecosystem
+      functioning in reef fishes
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Conserv Biol
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 4
+      isPartOf:
+        title: PLoS Biol
+        volumeNumber: 9
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - JE
         familyNames:
           - Cinner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NAJ
         familyNames:
           - Graham
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Huchery
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MA
         familyNames:
           - MacNeil
-  - type: CreativeWork
+        type: Person
     title: >-
-      Fishing groupers towards extinction: a global assessment of threats and
-      extinction risks in a billion dollar fishery
+      Global effects of local human population density and distance to markets
+      on the condition of coral reef fisheries
+    type: Article
     datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Fish Fish
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 453
+      pageEnd: 458
+      title: Conserv Biol
+      volumeNumber: 27
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - 'Y'
         familyNames:
           - Sadovy
           - de
           - Mitcheson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MT
         familyNames:
           - Craig
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AA
         familyNames:
           - Bertoncini
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KE
         familyNames:
           - Carpenter
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - WWL
         familyNames:
           - Cheung
-  - type: CreativeWork
-    title: Using behaviour and ecology to exploit schooling fishes
-    datePublished: '1999'
+        type: Person
+    title: >-
+      Fishing groupers towards extinction: a global assessment of threats and
+      extinction risks in a billion dollar fishery
+    type: Article
+    datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Environ Biol Fishes
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 119
+      pageEnd: 136
+      title: Fish Fish
+      volumeNumber: 14
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JK
         familyNames:
           - Parrish
-  - type: CreativeWork
-  - type: CreativeWork
-  - type: CreativeWork
-    title: 'Lagoon ecology and social strategies: habitat diversity and ethnobiology'
-    datePublished: '2008'
+        type: Person
+    title: Using behaviour and ecology to exploit schooling fishes
+    type: Article
+    datePublished: '1999'
     isPartOf:
-      type: CreativeWork
-      name: Hum Ecol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 157
+      pageEnd: 181
+      title: Environ Biol Fishes
+      volumeNumber: 55
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Aswani
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - I
         familyNames:
           - Vaccaro
-  - type: CreativeWork
-    title: >-
-      Historical analysis of Cuban commercial fishing effort and the effects on
-      management interventions on important reef fishes from 1960–2005
-    datePublished: '2009'
+        type: Person
+    title: 'Lagoon ecology and social strategies: habitat diversity and ethnobiology'
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Fish Res
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 325
+      pageEnd: 341
+      title: Hum Ecol
+      volumeNumber: 36
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - R
         familyNames:
           - Claro
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'Y'
         familyNames:
           - Sadovy
           - de
           - Mitcheson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KC
         familyNames:
           - Lindeman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AR
         familyNames:
           - García-Cagide
-  - type: CreativeWork
+        type: Person
     title: >-
-      Community-based conservation results in the recovery of reef fish spawning
-      aggregations in the Coral Triangle
-    datePublished: '2011'
+      Historical analysis of Cuban commercial fishing effort and the effects on
+      management interventions on important reef fishes from 1960–2005
+    type: Article
+    datePublished: '2009'
     isPartOf:
-      type: CreativeWork
-      name: Biol Conserv
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 7
+      pageEnd: 16
+      title: Fish Res
+      volumeNumber: 99
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - RJ
         familyNames:
           - Hamilton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Potuku
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JR
         familyNames:
           - Montambault
-  - type: CreativeWork
+        type: Person
     title: >-
-      Fishery-dependent evaluation of a spawning aggregation of tiger grouper
-      (Mycteroperca tigris) at Vieques Island, Puerto Rico
-    datePublished: '2006'
+      Community-based conservation results in the recovery of reef fish spawning
+      aggregations in the Coral Triangle
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Bull Mar Sci
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1850
+      pageEnd: 1858
+      title: Biol Conserv
+      volumeNumber: 144
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - D
         familyNames:
           - Matos-Caraballo
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JM
         familyNames:
           - Posada
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BE
         familyNames:
           - Luckhurst
-  - type: CreativeWork
+        type: Person
+    title: >-
+      Fishery-dependent evaluation of a spawning aggregation of tiger grouper
+      (Mycteroperca tigris) at Vieques Island, Puerto Rico
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 16
+      title: Bull Mar Sci
+      volumeNumber: 79
+      type: PublicationVolume
+  - authors:
+      - givenNames:
+          - J
+        familyNames:
+          - Robinson
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Aumeeruddy
+        type: Person
+      - givenNames:
+          - TL
+        familyNames:
+          - Jörgensen
+        type: Person
+      - givenNames:
+          - MC
+        familyNames:
+          - Öhman
+        type: Person
     title: >-
       Dynamics of camouflage (Epinephelus polyphekadion) and brown marbled
       grouper (E. fuscoguttatus) spawning aggregations at a remote atoll,
       Seychelles
+    type: Article
     datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Bull Mar Sci
-    authors:
-      - type: Person
-        givenNames:
-          - J
-        familyNames:
-          - Robinson
-      - type: Person
-        givenNames:
-          - R
-        familyNames:
-          - Aumeeruddy
-      - type: Person
-        givenNames:
-          - TL
-        familyNames:
-          - Jörgensen
-      - type: Person
-        givenNames:
-          - MC
-        familyNames:
-          - Öhman
-  - type: CreativeWork
-    title: 'Tropical reef fish spawning aggregations: defined and reviewed'
-    datePublished: '1997'
-    isPartOf:
-      type: CreativeWork
-      name: Bull Mar Sci
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 415
+      pageEnd: 431
+      title: Bull Mar Sci
+      volumeNumber: 83
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - ML
         familyNames:
           - Domeier
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PL
         familyNames:
           - Colin
-  - type: CreativeWork
-    title: A global baseline for spawning aggregations of reef fishes
-    datePublished: '2008'
+        type: Person
+    title: 'Tropical reef fish spawning aggregations: defined and reviewed'
+    type: Article
+    datePublished: '1997'
     isPartOf:
-      type: CreativeWork
-      name: Conserv Biol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 698
+      pageEnd: 726
+      title: Bull Mar Sci
+      volumeNumber: 60
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - 'Y'
         familyNames:
           - Sadovy
           - de
           - Mitcheson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Cornish
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Domeier
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PL
         familyNames:
           - Colin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Russell
-  - type: CreativeWork
-    title: >-
-      Incorporating time-varying catchability into population dynamic stock
-      assessment models
-    datePublished: '2010'
+        type: Person
+    title: A global baseline for spawning aggregations of reef fishes
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Rev Fish Sci
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1233
+      pageEnd: 1244
+      title: Conserv Biol
+      volumeNumber: 22
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - MJ
         familyNames:
           - Wilberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JT
         familyNames:
           - Thorson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BC
         familyNames:
           - Linton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Berkson
-  - type: CreativeWork
+        type: Person
     title: >-
-      Reproductive movement, residency and fisheries vulnerability of
-      brown-marbled grouper, Epinephelus fuscoguttatus (Forsskål, 1775)
-    datePublished: '2012'
+      Incorporating time-varying catchability into population dynamic stock
+      assessment models
+    type: Article
+    datePublished: '2010'
     isPartOf:
-      type: CreativeWork
-      name: Coral Reefs
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 7
+      pageEnd: 24
+      title: Rev Fish Sci
+      volumeNumber: 18
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - KL
         familyNames:
           - Rhodes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - McIlwain
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Joseph
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RS
         familyNames:
           - Nemeth
-  - type: CreativeWork
+        type: Person
     title: >-
-      Temporal dynamics, residency and site fidelity of spawning aggregations of
-      a herbivorous tropical reef fish, Siganus sutor
-    datePublished: '2013'
+      Reproductive movement, residency and fisheries vulnerability of
+      brown-marbled grouper, Epinephelus fuscoguttatus (Forsskål, 1775)
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: Mar Ecol Prog Ser
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 443
+      pageEnd: 453
+      title: Coral Reefs
+      volumeNumber: 31
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JP
         familyNames:
           - Bijoux
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Dagorn
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - G
         familyNames:
           - Berke
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PD
         familyNames:
           - Cowley
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Soria
-  - type: CreativeWork
+        type: Person
+    title: >-
+      Temporal dynamics, residency and site fidelity of spawning aggregations of
+      a herbivorous tropical reef fish, Siganus sutor
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 233
+      pageEnd: 247
+      title: Mar Ecol Prog Ser
+      volumeNumber: 475
+      type: PublicationVolume
+  - authors:
+      - givenNames:
+          - CG
+        familyNames:
+          - Meyer
+        type: Person
+      - givenNames:
+          - KM
+        familyNames:
+          - Holland
+        type: Person
     title: >-
       Movement patterns, home range size and habitat utilization of the
       bluespine unicornfish, Naso unicornis (Acanthuridae) in a Hawaiian marine
       reserve
+    type: Article
     datePublished: '2005'
     isPartOf:
-      type: CreativeWork
-      name: Environ Biol Fishes
-    authors:
-      - type: Person
-        givenNames:
-          - CG
+      pageStart: 201
+      pageEnd: 210
+      title: Environ Biol Fishes
+      volumeNumber: 73
+      type: PublicationVolume
+  - authors:
+      - givenNames:
+          - S
         familyNames:
-          - Meyer
-      - type: Person
-        givenNames:
-          - KM
+          - Hitt
+        type: Person
+      - givenNames:
+          - SJ
         familyNames:
-          - Holland
-  - type: CreativeWork
+          - Pittman
+        type: Person
+      - givenNames:
+          - KA
+        familyNames:
+          - Brown
+        type: Person
     title: >-
       Tracking and mapping sun-synchronous migrations and diel space use
       patterns of Haemulon sciurus and Lutjanus apodus in the U.S. Virgin
       Islands
+    type: Article
     datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Environ Biol Fishes
-    authors:
-      - type: Person
-        givenNames:
-          - S
-        familyNames:
-          - Hitt
-      - type: Person
-        givenNames:
-          - SJ
-        familyNames:
-          - Pittman
-      - type: Person
-        givenNames:
-          - KA
-        familyNames:
-          - Brown
-  - type: CreativeWork
-    title: >-
-      Traditional knowledge possessed by the fishers of Marovo Lagoon, Solomon
-      Islands, concerning fish aggregating behaviour
-    datePublished: '2000'
-    isPartOf:
-      type: CreativeWork
-      name: >-
-        SPC Traditional Marine Resource and Management and Knowledge Information
-        Bulletin
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 525
+      pageEnd: 538
+      title: Environ Biol Fishes
+      volumeNumber: 92
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - RE
         familyNames:
           - Johannes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Hviding
-  - type: CreativeWork
+        type: Person
     title: >-
-      Trends in development in coastal area management in tropical countries:
-      from central to community orientation
-    datePublished: '1997'
+      Traditional knowledge possessed by the fishers of Marovo Lagoon, Solomon
+      Islands, concerning fish aggregating behaviour
+    type: Article
+    datePublished: '2000'
     isPartOf:
-      type: CreativeWork
-      name: Coast Manage
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 22
+      pageEnd: 29
+      title: >-
+        SPC Traditional Marine Resource and Management and Knowledge Information
+        Bulletin
+      volumeNumber: 12
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - P
         familyNames:
           - Christie
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AT
         familyNames:
           - White
-  - type: CreativeWork
+        type: Person
     title: >-
-      Disappearance of a Nassau grouper spawning aggregation off the southern
-      Mexican Caribbean Coast
-    datePublished: '2006'
+      Trends in development in coastal area management in tropical countries:
+      from central to community orientation
+    type: Article
+    datePublished: '1997'
     isPartOf:
-      type: CreativeWork
-      name: Mar Ecol Prog Ser
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 155
+      pageEnd: 181
+      title: Coast Manage
+      volumeNumber: 25
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Aguilar-Perera
-  - type: CreativeWork
+        type: Person
+    title: >-
+      Disappearance of a Nassau grouper spawning aggregation off the southern
+      Mexican Caribbean Coast
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 289
+      pageEnd: 296
+      title: Mar Ecol Prog Ser
+      volumeNumber: 327
+      type: PublicationVolume
+  - authors:
+      - givenNames:
+          - JE
+        familyNames:
+          - Cinner
+        type: Person
     title: >-
       Designing marine reserves to reflect local socioeconomic conditions:
       lessons from long-enduring customary management systems
+    type: Article
     datePublished: '2007'
     isPartOf:
-      type: CreativeWork
-      name: Coral Reefs
-    authors:
-      - type: Person
-        givenNames:
-          - JE
-        familyNames:
-          - Cinner
-  - type: CreativeWork
-    title: >-
-      Perceptions of trends in Seychelles artisanal trap fisheries: comparing
-      catch monitoring, underwater visual census and fishers' knowledge
-    datePublished: '2011'
-    isPartOf:
-      type: CreativeWork
-      name: Environ Conserv
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1035
+      pageEnd: 1045
+      title: Coral Reefs
+      volumeNumber: 26
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - TM
         familyNames:
           - Daw
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Robinson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NAJ
         familyNames:
           - Graham
-  - type: CreativeWork
+        type: Person
     title: >-
-      Patterns of marine harvest effort in south western New Georgia, Solomon
-      Islands: resource management or optimal foraging
-    datePublished: '1998'
+      Perceptions of trends in Seychelles artisanal trap fisheries: comparing
+      catch monitoring, underwater visual census and fishers' knowledge
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Ocean Coast Manage
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 75
+      pageEnd: 88
+      title: Environ Conserv
+      volumeNumber: 38
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Aswani
-  - type: CreativeWork
+        type: Person
     title: >-
-      Spatial, temporal and habitat-related variation in the abundance of large
-      predatory fish at One Tree Reef, Australia
+      Patterns of marine harvest effort in south western New Georgia, Solomon
+      Islands: resource management or optimal foraging
+    type: Article
     datePublished: '1998'
     isPartOf:
-      type: CreativeWork
-      name: Coral Reefs
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 207
+      pageEnd: 235
+      title: Ocean Coast Manage
+      volumeNumber: 40
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - SD
         familyNames:
           - Connell
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MJ
         familyNames:
           - Kingsford
-  - type: CreativeWork
-  - type: CreativeWork
+        type: Person
     title: >-
-      Characterization of transient multi-species reef fish spawning
-      aggregations at Gladden Spit, Belize
-    datePublished: '2008'
+      Spatial, temporal and habitat-related variation in the abundance of large
+      predatory fish at One Tree Reef, Australia
+    type: Article
+    datePublished: '1998'
     isPartOf:
-      type: CreativeWork
-      name: Bull Mar Sci
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 49
+      pageEnd: 57
+      title: Coral Reefs
+      volumeNumber: 17
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
           - WD
         familyNames:
           - Heyman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Kjerfve
-  - type: CreativeWork
-  - type: CreativeWork
-    title: Are aggregation-fisheries sustainable? Reef fish fisheries as a case study
-    datePublished: '2005'
+        type: Person
+    title: >-
+      Characterization of transient multi-species reef fish spawning
+      aggregations at Gladden Spit, Belize
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Coral Reefs
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 531
+      pageEnd: 551
+      title: Bull Mar Sci
+      volumeNumber: 83
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
           - 'Y'
         familyNames:
           - Sadovy
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Domeier
-  - type: CreativeWork
-    title: Ecological risk assessment for the effects of fishing
-    datePublished: '2011'
+        type: Person
+    title: Are aggregation-fisheries sustainable? Reef fish fisheries as a case study
+    type: Article
+    datePublished: '2005'
     isPartOf:
-      type: CreativeWork
-      name: Fish Res
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 254
+      pageEnd: 262
+      title: Coral Reefs
+      volumeNumber: 24
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - AJ
         familyNames:
           - Hobday
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - ADM
         familyNames:
           - Smith
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - IC
         familyNames:
           - Stobutzki
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Bulman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Daley
-  - type: CreativeWork
-    title: >-
-      Using productivity and susceptibility indices to assess the vulnerability
-      of United States fish stocks to overfishing
-    datePublished: '2010'
+        type: Person
+    title: Ecological risk assessment for the effects of fishing
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Fish Bull
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 372
+      pageEnd: 384
+      title: Fish Res
+      volumeNumber: 108
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - WS
         familyNames:
           - Patrick
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Spencer
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Link
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Cope
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Fields
-  - type: CreativeWork
-  - type: CreativeWork
-    title: 'Catchability: a key parameter for fish stock assessment'
-    datePublished: '1996'
+        type: Person
+    title: >-
+      Using productivity and susceptibility indices to assess the vulnerability
+      of United States fish stocks to overfishing
+    type: Article
+    datePublished: '2010'
     isPartOf:
-      type: CreativeWork
-      name: Rev Fish Biol Fish
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 305
+      pageEnd: 322
+      title: Fish Bull
+      volumeNumber: 108
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
           - F
         familyNames:
           - Arreguín-Sánchez
-  - type: CreativeWork
-    title: Linking social and ecological systems to sustain coral reef fisheries
-    datePublished: '2009'
+        type: Person
+    title: 'Catchability: a key parameter for fish stock assessment'
+    type: Article
+    datePublished: '1996'
     isPartOf:
-      type: CreativeWork
-      name: Curr Biol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 221
+      pageEnd: 242
+      title: Rev Fish Biol Fish
+      volumeNumber: 6
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JE
         familyNames:
           - Cinner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TR
         familyNames:
           - McClanahan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TM
         familyNames:
           - Daw
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NAJ
         familyNames:
           - Graham
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Maina
-  - type: CreativeWork
-    title: >-
-      Preliminary findings on spawning aggregations of reef fishes in East
-      Africa
-    datePublished: '2006'
+        type: Person
+    title: Linking social and ecological systems to sustain coral reef fisheries
+    type: Article
+    datePublished: '2009'
     isPartOf:
-      type: CreativeWork
-      name: 'Proc 10th Int Coral Reef Symp, Okinawa'
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 206
+      pageEnd: 212
+      title: Curr Biol
+      volumeNumber: 19
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - MA
         familyNames:
           - Samoilys
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Church
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Kaunda-Arara
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Kamukuru
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'N'
         familyNames:
           - Jiddawi
-  - type: CreativeWork
+        type: Person
     title: >-
-      Effects of customary marine closures on fish behaviour, spear-fishing
-      success, and underwater visual surveys
-    datePublished: '2010'
+      Preliminary findings on spawning aggregations of reef fishes in East
+      Africa
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Conserv Biol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1335
+      pageEnd: 1346
+      title: 'Proc 10th Int Coral Reef Symp, Okinawa'
+      volumeNumber: 1
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - DA
         familyNames:
           - Feary
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JE
         familyNames:
           - Cinner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NAJ
         familyNames:
           - Graham
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - FA
         familyNames:
           - Januchowski-Hartley
-  - type: CreativeWork
+        type: Person
     title: >-
-      Conservation and community benefits from traditional coral reef management
-      at Ahus Island, Papua New Guinea
-    datePublished: '2005'
+      Effects of customary marine closures on fish behaviour, spear-fishing
+      success, and underwater visual surveys
+    type: Article
+    datePublished: '2010'
     isPartOf:
-      type: CreativeWork
-      name: Conserv Biol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 341
+      pageEnd: 349
+      title: Conserv Biol
+      volumeNumber: 25
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JE
         familyNames:
           - Cinner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MJ
         familyNames:
           - Marnane
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TR
         familyNames:
           - McClanahan
-  - type: CreativeWork
+        type: Person
     title: >-
-      Supporting and enhancing development of heterogeneous ecological knowledge
-      among resource users in a Kenyan seascape
-    datePublished: '2006'
+      Conservation and community benefits from traditional coral reef management
+      at Ahus Island, Papua New Guinea
+    type: Article
+    datePublished: '2005'
     isPartOf:
-      type: CreativeWork
-      name: Ecol Soc
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1714
+      pageEnd: 1723
+      title: Conserv Biol
+      volumeNumber: 19
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - BI
         familyNames:
           - Crona
-  - type: CreativeWork
+        type: Person
     title: >-
-      Who knows? On the importance of identifying ‘experts’ when researching
-      local ecological knowledge
-    datePublished: '2003'
+      Supporting and enhancing development of heterogeneous ecological knowledge
+      among resource users in a Kenyan seascape
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Hum Ecol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 32
+      title: Ecol Soc
+      volumeNumber: 11
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Davis
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JR
         familyNames:
           - Wagner
-  - type: CreativeWork
-    title: 'Funding priorities: big barriers to small-scale fisheries'
-    datePublished: '2008'
+        type: Person
+    title: >-
+      Who knows? On the importance of identifying ‘experts’ when researching
+      local ecological knowledge
+    type: Article
+    datePublished: '2003'
     isPartOf:
-      type: CreativeWork
-      name: Conserv Biol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 463
+      pageEnd: 489
+      title: Hum Ecol
+      volumeNumber: 31
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Jacquet
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Pauly
-  - type: CreativeWork
-    title: Current and future sustainability of island coral reef fisheries
-    datePublished: '2007'
+        type: Person
+    title: 'Funding priorities: big barriers to small-scale fisheries'
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Curr Biol
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 832
+      pageEnd: 835
+      title: Conserv Biol
+      volumeNumber: 22
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - K
         familyNames:
           - Newton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - IM
         familyNames:
           - Cote
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GM
         familyNames:
           - Pilling
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Jennings
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NK
         familyNames:
           - Dulvy
-  - type: CreativeWork
-    title: >-
-      Quantifying the environmental impacts of artisanal fishing gear on Kenya's
-      coral reef ecosystems
-    datePublished: '2006'
+        type: Person
+    title: Current and future sustainability of island coral reef fisheries
+    type: Article
+    datePublished: '2007'
     isPartOf:
-      type: CreativeWork
-      name: Mar Pollut Bull
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 655
+      pageEnd: 658
+      title: Curr Biol
+      volumeNumber: 17
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - SC
         familyNames:
           - Mangi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CM
         familyNames:
           - Roberts
-  - type: CreativeWork
+        type: Person
     title: >-
-      Traditional muro-ami, an effective but resource destructive coral reef
-      fishing gear
-    datePublished: '1985'
+      Quantifying the environmental impacts of artisanal fishing gear on Kenya's
+      coral reef ecosystems
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: 1CLARM Quart
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1646
+      pageEnd: 1660
+      title: Mar Pollut Bull
+      volumeNumber: 52
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - VT
         familyNames:
           - Corpuz
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Castaneda
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JC
         familyNames:
           - Sy
-  - type: CreativeWork
+        type: Person
     title: >-
-      Controlling the false discovery rate: a practical and powerful approach to
-      multiple testing
-    datePublished: '1995'
+      Traditional muro-ami, an effective but resource destructive coral reef
+      fishing gear
+    type: Article
+    datePublished: '1985'
     isPartOf:
-      type: CreativeWork
-      name: J R Stat Soc Ser B
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 12
+      pageEnd: 13
+      title: 1CLARM Quart
+      volumeNumber: 8
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - 'Y'
         familyNames:
           - Benjamini
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'Y'
         familyNames:
           - Hochberg
-  - type: CreativeWork
-  - type: CreativeWork
-    title: Traditional marine conservation methods in Oceania and their demise
-    datePublished: '1978'
+        type: Person
+    title: >-
+      Controlling the false discovery rate: a practical and powerful approach to
+      multiple testing
+    type: Article
+    datePublished: '1995'
     isPartOf:
-      type: CreativeWork
-      name: Annu Rev Ecol Syst
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 289
+      pageEnd: 300
+      title: J R Stat Soc Ser B
+      volumeNumber: 57
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
           - RE
         familyNames:
           - Johannes
-  - type: CreativeWork
-    title: >-
-      Social taboos: “Invisible” systems of local resource management and
-      biological conservation
-    datePublished: '2001'
+        type: Person
+    title: Traditional marine conservation methods in Oceania and their demise
+    type: Article
+    datePublished: '1978'
     isPartOf:
-      type: CreativeWork
-      name: Ecol Appl
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 349
+      pageEnd: 364
+      title: Annu Rev Ecol Syst
+      volumeNumber: 9
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Colding
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Folke
-  - type: CreativeWork
-    title: 'Fishing practices on Ponam Island (Manus Province, Papua New Guinea)'
-    datePublished: '1982'
+        type: Person
+    title: >-
+      Social taboos: “Invisible” systems of local resource management and
+      biological conservation
+    type: Article
+    datePublished: '2001'
     isPartOf:
-      type: CreativeWork
-      name: Anthropos
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 584
+      pageEnd: 600
+      title: Ecol Appl
+      volumeNumber: 11
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JG
         familyNames:
           - Carrier
-  - type: CreativeWork
-  - type: CreativeWork
+        type: Person
+    title: 'Fishing practices on Ponam Island (Manus Province, Papua New Guinea)'
+    type: Article
+    datePublished: '1982'
+    isPartOf:
+      pageStart: 904
+      pageEnd: 915
+      title: Anthropos
+      volumeNumber: 77
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
+          - SJ
+        familyNames:
+          - Newman
+        type: Person
+      - givenNames:
+          - DMcB
+        familyNames:
+          - Williams
+        type: Person
     title: >-
       Spatial and temporal variation in assemblages of Lutjanidae, Lethrinidae
       and associated fish species among mid-continental shelf reefs in the
       central Great Barrier Reef
+    type: Article
     datePublished: '2001'
     isPartOf:
-      type: CreativeWork
-      name: Mar Freshw Res
-    authors:
-      - type: Person
-        givenNames:
-          - SJ
-        familyNames:
-          - Newman
-      - type: Person
-        givenNames:
-          - DMcB
-        familyNames:
-          - Williams
-  - type: CreativeWork
-    title: >-
-      A framework for adaptive gear and ecosystem-based management in the
-      artisanal coral reef fishery of Papua New Guinea
-    datePublished: '2008'
-    isPartOf:
-      type: CreativeWork
-      name: 'Aquatic Conservation: Mar Freshw Ecosyst'
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 843
+      pageEnd: 851
+      title: Mar Freshw Res
+      volumeNumber: 52
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - TR
         familyNames:
           - McClanahan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JE
         familyNames:
           - Cinner
-  - type: CreativeWork
+        type: Person
     title: >-
-      Age, growth and reproduction of the blackspot snapper, Lutjanus
-      fulviflamma (Forsskål, 1775), in the southern Arabian Gulf
-    datePublished: '2006'
+      A framework for adaptive gear and ecosystem-based management in the
+      artisanal coral reef fishery of Papua New Guinea
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Fish Res
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 493
+      pageEnd: 507
+      title: 'Aquatic Conservation: Mar Freshw Ecosyst'
+      volumeNumber: 18
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - EM
         familyNames:
           - Grandcourt
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TZ
         familyNames:
           - Zahran
           - Al
           - Abdessalaam
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Francis
-  - type: CreativeWork
+        type: Person
     title: >-
-      Spawning aggregations of coral reef fishes: characteristics, hypotheses,
-      threats and management
-    datePublished: '2004'
+      Age, growth and reproduction of the blackspot snapper, Lutjanus
+      fulviflamma (Forsskål, 1775), in the southern Arabian Gulf
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Oceanogr Mar Biol Ann Rev
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 203
+      pageEnd: 210
+      title: Fish Res
+      volumeNumber: 78
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Claydon
-  - type: CreativeWork
+        type: Person
     title: >-
-      The vulnerability of reproductively active squaretail coralgrouper
-      (Plectropomus areolatus) to fishing
-    datePublished: '2008'
+      Spawning aggregations of coral reef fishes: characteristics, hypotheses,
+      threats and management
+    type: Article
+    datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: Fish Bull
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 265
+      pageEnd: 302
+      title: Oceanogr Mar Biol Ann Rev
+      volumeNumber: 42
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - KL
         familyNames:
           - Rhodes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MH
         familyNames:
           - Tupper
-  - type: CreativeWork
+        type: Person
     title: >-
-      Reproductive and sexual characteristics in five Lethrinus species in
-      waters off the Ryukyu Islands
-    datePublished: '2006'
+      The vulnerability of reproductively active squaretail coralgrouper
+      (Plectropomus areolatus) to fishing
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: Ichthyol Res
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 194
+      pageEnd: 203
+      title: Fish Bull
+      volumeNumber: 106
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Ebisawa
-  - type: CreativeWork
+        type: Person
     title: >-
-      Site fidelity, size, and spatial arrangement of daytime home range of
-      thumbprint emperor Lethrinus harak (Lethrinidae)
-    datePublished: '2009'
+      Reproductive and sexual characteristics in five Lethrinus species in
+      waters off the Ryukyu Islands
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Fish Sci
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 269
+      pageEnd: 280
+      title: Ichthyol Res
+      volumeNumber: 53
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Nanami
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Yamada
-  - type: CreativeWork
-  - type: CreativeWork
-  - type: CreativeWork
+        type: Person
     title: >-
-      Out-migration of tagged fishes from marine reef national parks to
-      fisheries in coastal Kenya
-    datePublished: '2004'
+      Site fidelity, size, and spatial arrangement of daytime home range of
+      thumbprint emperor Lethrinus harak (Lethrinidae)
+    type: Article
+    datePublished: '2009'
     isPartOf:
-      type: CreativeWork
-      name: Environ Biol Fishes
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1109
+      pageEnd: 1116
+      title: Fish Sci
+      volumeNumber: 75
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
+  - authors: []
+    title: ''
+    type: Article
+  - authors:
+      - givenNames:
           - B
         familyNames:
           - Kaunda-Arara
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GA
         familyNames:
           - Rose
-  - type: CreativeWork
-    title: Life history correlates of responses to fisheries exploitation
-    datePublished: '1998'
+        type: Person
+    title: >-
+      Out-migration of tagged fishes from marine reef national parks to
+      fisheries in coastal Kenya
+    type: Article
+    datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: Proc R Soc B
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 363
+      pageEnd: 372
+      title: Environ Biol Fishes
+      volumeNumber: 70
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Jennings
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JD
         familyNames:
           - Reynolds
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SC
         familyNames:
           - Mills
-  - type: CreativeWork
-    title: Periodic closures as adaptive coral reef management in the Indo-Pacific
-    datePublished: '2006'
+        type: Person
+    title: Life history correlates of responses to fisheries exploitation
+    type: Article
+    datePublished: '1998'
     isPartOf:
-      type: CreativeWork
-      name: Ecol Soc
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 333
+      pageEnd: 339
+      title: Proc R Soc B
+      volumeNumber: 265
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Cinner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MJ
         familyNames:
           - Marnane
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TR
         familyNames:
           - McClanahan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GR
         familyNames:
           - Almany
+        type: Person
+    title: Periodic closures as adaptive coral reef management in the Indo-Pacific
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 31
+      title: Ecol Soc
+      volumeNumber: 11
+      type: PublicationVolume

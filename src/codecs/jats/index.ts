@@ -3,18 +3,29 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import {
   isInlineContent,
   nodeType,
-  markTypes
+  markTypes,
+  isType
 } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
 import * as xml from '../../util/xml'
-import { elem, attr, child, first, all, text } from '../../util/xml'
+import {
+  elem,
+  attr,
+  child,
+  first,
+  all,
+  text,
+  textOrUndefined,
+  splitTextOrUndefined,
+  intOrUndefined
+} from '../../util/xml'
 
 const log = getLogger('encoda:jats')
 
@@ -121,14 +132,11 @@ function encodeDocument(node: stencila.Node): xml.Element {
 
 function decodeArticle(elem: xml.Element): stencila.Article {
   const front = child(elem, 'front')
-  const title = first(front, 'article-title')
-  const authors = all(front, 'contrib', { 'contrib-type': 'author' })
 
-  const article: stencila.Article = {
-    type: 'Article',
-    title: title ? decodeTitle(title) : '',
-    authors: authors.length ? decodeAuthors(authors, elem) : []
-  }
+  const article = stencila.article(
+    decodeAuthors(all(front, 'contrib', { 'contrib-type': 'author' }), elem),
+    decodeTitle(first(front, 'article-title'))
+  )
 
   const body = child(elem, 'body')
   if (body) article.content = decodeBody(body)
@@ -161,7 +169,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
   )
 }
 
-function decodeTitle(title: xml.Element): string {
+function decodeTitle(title: xml.Element | null): string {
   return text(title)
 }
 
@@ -263,16 +271,12 @@ function encodeAuthor(
 }
 
 function decodeName(name: xml.Element): stencila.Person {
-  const person: stencila.Person = { type: 'Person' }
-  const givenNames = child(name, 'given-names')
-  if (givenNames) person.givenNames = text(givenNames).split(/\s+/)
-  const surname = child(name, 'surname')
-  if (surname) person.familyNames = text(surname).split(/\s+/)
-  const prefix = child(name, 'prefix')
-  if (prefix) person.honorificPrefix = text(prefix)
-  const suffix = child(name, 'suffix')
-  if (suffix) person.honorificSuffix = text(suffix)
-  return person
+  return stencila.person({
+    givenNames: splitTextOrUndefined(child(name, 'given-names'), /\s+/),
+    familyNames: splitTextOrUndefined(child(name, 'surname'), /\s+/),
+    honorificPrefix: textOrUndefined(child(name, 'prefix')),
+    honorificSuffix: textOrUndefined(child(name, 'suffix'))
+  })
 }
 
 function encodeName(person: stencila.Person): xml.Element {
@@ -292,15 +296,18 @@ function encodeName(person: stencila.Person): xml.Element {
 }
 
 function decodeAff(aff: xml.Element): stencila.Organization {
-  const org: stencila.Organization = { type: 'Organization' }
-
-  const institution = child(aff, 'institution')
-  if (institution) org.name = text(institution)
-
-  const address = all(aff, ['city', 'state', 'country', 'postal-code'])
-  if (address.length) org.address = address.map(text).join(', ')
-
-  return org
+  const addressComponents = all(aff, [
+    'city',
+    'state',
+    'country',
+    'postal-code'
+  ])
+  return stencila.organization({
+    name: textOrUndefined(child(aff, 'institution')),
+    address: addressComponents.length
+      ? addressComponents.map(text).join(', ')
+      : undefined
+  })
 }
 
 function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
@@ -327,30 +334,42 @@ function encodeReferences(
 }
 
 function decodeReference(elem: xml.Element): stencila.CreativeWork {
-  const work: stencila.CreativeWork = { type: 'CreativeWork' }
+  const rawAuthors = all(elem, 'name')
+  const authors = rawAuthors.length ? rawAuthors.map(decodeName) : []
 
-  const title = child(elem, 'article-title')
-  if (title) work.title = text(title)
+  const work = stencila.article(authors, text(child(elem, 'article-title')))
 
   const year = child(elem, 'year')
   if (year) {
     const iso = attr(year, 'iso-8601-date')
     work.datePublished = iso || text(year)
+    // TODO: warn that the date components apart from year are lost?
+    // Or also parse month and day
   }
 
-  // TODO: Decode to nested `isPartOf` e.g. https://gist.github.com/hubgit/005ce6b78e4700374bc8#file-scholarly-article-json-L9
-  // Requires types that we currently don't have including PublicationIssue and PublicationVolume
   const source = child(elem, 'source')
   if (source) {
-    work.isPartOf = {
-      type: 'CreativeWork',
-      name: text(source)
+    const issueEl = child(elem, 'issue')
+
+    if (issueEl) {
+      work.isPartOf = stencila.publicationIssue({
+        issueNumber: intOrUndefined(child(elem, 'issue')),
+        pageStart: intOrUndefined(child(elem, 'fpage')),
+        pageEnd: intOrUndefined(child(elem, 'lpage')),
+        isPartOf: stencila.publicationVolume({
+          title: text(source),
+          volumeNumber: intOrUndefined(child(elem, 'volume'))
+        })
+      })
+    } else {
+      work.isPartOf = stencila.publicationVolume({
+        pageStart: intOrUndefined(child(elem, 'fpage')),
+        pageEnd: intOrUndefined(child(elem, 'lpage')),
+        title: text(source),
+        volumeNumber: intOrUndefined(child(elem, 'volume'))
+      })
     }
   }
-
-  const authors = all(elem, 'name')
-  if (authors.length) work.authors = authors.map(decodeName)
-
   return work
 }
 
@@ -358,10 +377,56 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
   let citation
   if (typeof work === 'string') {
   } else {
-    citation = elem(
-      'element-citation',
-      work.title ? elem('article-title', work.title) : null
-    )
+    const subElements = []
+
+    if (work.title) subElements.push(elem('article-title', work.title))
+
+    // TODO: split date into components according to what data is set and apply to appropriate elements
+    if (work.datePublished)
+      subElements.push(
+        elem(
+          'year',
+          { 'iso-8601-date': work.datePublished },
+          work.datePublished
+        )
+      )
+
+    if (isType('PublicationIssue')(work.isPartOf)) {
+      let pi = work.isPartOf as stencila.PublicationIssue
+
+      if (pi.pageStart !== undefined)
+        subElements.push(elem('fpage', `${pi.pageStart}`))
+
+      if (pi.pageEnd !== undefined)
+        subElements.push(elem('lpage', `${pi.pageEnd}`))
+
+      if (pi.issueNumber !== undefined)
+        subElements.push(elem('issue', `${pi.issueNumber}`))
+
+      if (isType('PublicationVolume')(pi.isPartOf)) {
+        let pv = pi.isPartOf
+
+        if (pv.title !== undefined) subElements.push(elem('source', pv.title))
+
+        if (pv.volumeNumber !== undefined)
+          subElements.push(elem('volume', `${pv.volumeNumber}`))
+      }
+    } else if (isType('PublicationVolume')(work.isPartOf)) {
+      let pv = work.isPartOf as stencila.PublicationVolume
+
+      if (pv.title !== undefined) subElements.push(elem('source', pv.title))
+
+      if (pv.pageStart !== undefined)
+        subElements.push(elem('fpage', `${pv.pageStart}`))
+
+      if (pv.pageEnd !== undefined)
+        subElements.push(elem('lpage', `${pv.pageEnd}`))
+
+      if (pv.volumeNumber !== undefined)
+        subElements.push(elem('volume', `${pv.volumeNumber}`))
+    }
+
+    citation = elem('element-citation', null, ...subElements)
   }
   return elem('ref', citation)
 }
@@ -403,7 +468,6 @@ function encodeBody(nodes: stencila.Node[]): xml.Element {
     tables: 0
   }
   const sections: xml.Element[] = []
-  const depth = 0
   let section: xml.Element | undefined
   for (const node of nodes) {
     if (nodeType(node) === 'Heading') {
@@ -454,8 +518,9 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
     case 'break':
       return decodeBreak()
     default:
-      if (elem.type === 'text') return [elem.text || '']
-      else {
+      if (elem.type === 'text') {
+        return [elem.text || '']
+      } else {
         log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
         return decodeDefault(elem, state)
       }
@@ -557,13 +622,15 @@ function decodeHeading(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Heading] {
-  const heading: stencila.Heading = {
-    type: 'Heading',
-    id: state.sectionId,
-    depth: state.sectionDepth,
-    content: decodeInlineContent(elem.elements || [], state)
-  }
-  return [heading]
+  return [
+    stencila.heading(
+      decodeInlineContent(elem.elements || [], state),
+      state.sectionDepth,
+      {
+        id: state.sectionId
+      }
+    )
+  ]
 }
 
 function encodeHeading(
@@ -578,14 +645,16 @@ function decodeParagraph(
   state: DecodeState
 ): stencila.Node[] {
   const nodes = decodeElements(elem.elements || [], state)
-  const para: stencila.Paragraph = {
-    type: 'Paragraph',
-    content: []
-  }
+
+  const para = stencila.paragraph([])
+
   const blocks: stencila.Node[] = [para]
   for (const node of nodes) {
-    if (isInlineContent(node)) para.content.push(node)
-    else blocks.push(node)
+    if (isInlineContent(node)) {
+      para.content.push(node)
+    } else {
+      blocks.push(node)
+    }
   }
   return blocks
 }
@@ -599,11 +668,10 @@ function encodeParagraph(
 
 function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
-    {
-      type: 'Link',
-      target: attr(elem, 'xlink:href') || '',
-      content: decodeInlineContent(elem.elements || [], state)
-    }
+    stencila.link(
+      decodeInlineContent(elem.elements || [], state),
+      attr(elem, 'xlink:href') || ''
+    )
   ]
 }
 
@@ -615,11 +683,10 @@ function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
  * See https://jats.nlm.nih.gov/archiving/tag-library/1.1/element/xref.html
  */
 function decodeXRef(elem: xml.Element, state: DecodeState): [stencila.Link] {
-  const link: stencila.Link = {
-    type: 'Link',
-    target: `#${attr(elem, 'rid') || ''}`,
-    content: decodeDefault(elem, state).filter(isInlineContent)
-  }
+  const link = stencila.link(
+    decodeDefault(elem, state).filter(isInlineContent),
+    `#${attr(elem, 'rid') || ''}`
+  )
 
   const refType = attr(elem, 'ref-type')
   if (refType) link.relation = refType

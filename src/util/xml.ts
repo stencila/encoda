@@ -40,12 +40,44 @@ export function elem(
 }
 
 /**
- * Get an element's text content
+ * Get an element's text content. Will always coerce the result to a string, so
+ * null elements or those of the wrong type will return ''
  */
 export function text(elem: Element | null): string {
-  if (elem === null) return ''
-  if (elem.type === 'text') return elem.text ? elem.text.toString() : ''
-  else return elem.elements ? elem.elements.map(text).join('') : ''
+  return textOrUndefined(elem) || ''
+}
+
+/**
+ * Get an element's text content if possible, if the element is null, has the
+ * wrong type or is not text, return undefined
+ */
+export function textOrUndefined(elem: Element | null): string | undefined {
+  if (elem === null) return undefined
+  if (elem.type === 'text') return elem.text ? elem.text.toString() : undefined
+  else return elem.elements ? elem.elements.map(text).join('') : undefined
+}
+
+/**
+ * Split the text of `elem` on `separator`. If `elem` is null or text can't be
+ * extracted from it, return undefined
+ */
+export function splitTextOrUndefined(
+  elem: Element | null,
+  separator: string | RegExp
+): string[] | undefined {
+  const t = textOrUndefined(elem)
+  if (t === undefined) return t
+  return t.split(separator)
+}
+
+/**
+ * Get an elements text content and convert it to an integer. If the element
+ * content is undefined/empty/null/invalid or not a number, then return
+ * undefined
+ */
+export function intOrUndefined(elem: Element | null) {
+  const i = parseInt(text(elem))
+  return isNaN(i) ? undefined : i
 }
 
 /**

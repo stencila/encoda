@@ -1,109 +1,109 @@
-type: Article
-title: >-
-  Replication Study: Transcriptional amplification in tumor cells with elevated
-  c-Myc
 authors:
-  - type: Person
-    givenNames:
+  - givenNames:
       - L
       - Michelle
     familyNames:
       - Lewis
+    type: Person
     affiliations:
-      - type: Organization
-        name: 'University of Georgia, Bioexpression and Fermentation Facility'
+      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
         address: United States
-  - type: Person
-    givenNames:
+        type: Organization
+  - givenNames:
       - Meredith
       - C
     familyNames:
       - Edwards
+    type: Person
     emails:
       - medward1@uga.edu
     affiliations:
-      - type: Organization
-        name: 'University of Georgia, Bioexpression and Fermentation Facility'
+      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
         address: United States
-  - type: Person
-    givenNames:
+        type: Organization
+  - givenNames:
       - Zachary
       - R
     familyNames:
       - Meyers
+    type: Person
     emails:
       - ZRMeyers@uga.edu
     affiliations:
-      - type: Organization
-        name: 'University of Georgia, Bioexpression and Fermentation Facility'
+      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
         address: United States
-  - type: Person
-    givenNames:
+        type: Organization
+  - givenNames:
       - C
       - Conover
     familyNames:
       - Talbot
     honorificSuffix: Jr
+    type: Person
     affiliations:
-      - type: Organization
-        name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
+      - name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
         address: United States
-  - type: Person
-    givenNames:
+        type: Organization
+  - givenNames:
       - Haiping
     familyNames:
       - Hao
+    type: Person
     affiliations:
-      - type: Organization
-        name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
+      - name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
         address: United States
-  - type: Person
-    givenNames:
+        type: Organization
+  - givenNames:
       - David
     familyNames:
       - Blum
+    type: Person
     emails:
       - blum@uga.edu
     affiliations:
-      - type: Organization
-        name: 'University of Georgia, Bioexpression and Fermentation Facility'
+      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
         address: United States
+        type: Organization
   - type: Person
     emails:
       - tim@cos.io
       - nicole@scienceexchange.com
-  - type: Person
-    givenNames:
+  - givenNames:
       - Elizabeth
     familyNames:
       - Iorns
-  - type: Person
-    givenNames:
+    type: Person
+  - givenNames:
       - Rachel
     familyNames:
       - Tsui
-  - type: Person
-    givenNames:
+    type: Person
+  - givenNames:
       - Alexandria
     familyNames:
       - Denis
-  - type: Person
-    givenNames:
+    type: Person
+  - givenNames:
       - Nicole
     familyNames:
       - Perfito
-  - type: Person
-    givenNames:
+    type: Person
+  - givenNames:
       - Timothy
       - M
     familyNames:
       - Errington
+    type: Person
+title: >-
+  Replication Study: Transcriptional amplification in tumor cells with elevated
+  c-Myc
+type: Article
 content:
-  - type: Heading
-    id: s1
-    depth: 1
-    content:
+  - content:
       - Introduction
+    depth: 1
+    id: s1
+    type: Heading
   - type: Paragraph
     content:
       - 'The '
@@ -148,7 +148,7 @@ content:
         factor, a potent oncogene that is frequently overexpressed in a large
         percentage of cancers, globally amplifies the expression of actively
         transcribed genes, opposed to regulating specific target genes. Using
-        the P493-6 cell line, a model for 
+        the P493-6 cell line, a model for
       - type: Emphasis
         content:
           - MYC
@@ -261,22 +261,22 @@ content:
         dataset that will be examined to provide evidence about reproducibility
         of cancer biology research, and to identify factors that influence
         reproducibility more generally.
-  - type: Heading
-    id: s2
-    depth: 1
-    content:
+  - content:
       - Results and discussion
-  - type: Heading
-    id: s2-1
-    depth: 2
-    content:
+    depth: 1
+    id: s2
+    type: Heading
+  - content:
       - Conditional expression of c-Myc in the B-cell line P493-6
+    depth: 2
+    id: s2-1
+    type: Heading
   - type: Paragraph
     content:
       - >-
         To test the effects of increased levels of c-Myc on gene expression we
         used the same human P493-6 B cell line of Burkitt’s lymphoma that
-        contains a conditional tetracycline-repressive 
+        contains a conditional tetracycline-repressive
       - type: Emphasis
         content:
           - MYC
@@ -296,7 +296,7 @@ content:
         ) as the original study. We performed Western blot analysis to confirm
         c-Myc expression could be reduced to very low levels and then
         reactivated after removal of tetracycline. This is comparable to what
-        was reported in Figure 1B of 
+        was reported in Figure 1B of
       - type: Link
         target: '#bib17'
         content:
@@ -341,11 +341,11 @@ content:
         approaching the levels observed in tetracycline-free conditions.
   - 10.7554/eLife.30274.002
   - Figure 1.
-  - type: Heading
-    id: s2-1
-    depth: 2
-    content:
+  - content:
       - Induction of c-Myc in P493-6 cells and impact on total RNA levels.
+    depth: 2
+    id: s2-1
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -366,7 +366,7 @@ content:
         ) Quantification of total RNA levels (ng of total RNA per 1,000 cells)
         for cells at 0, 1, and 24 hr after release from Tet. Means reported and
         error bars represent s.e.m. from three independent biological repeats.
-        For serum lot one, one-way ANOVA on total RNA levels of all groups; 
+        For serum lot one, one-way ANOVA on total RNA levels of all groups;
       - type: Emphasis
         content:
           - F
@@ -412,17 +412,17 @@ content:
         content:
           - 'https://osf.io/tfd57/'
       - .
-  - type: Heading
-    id: s2-2
-    depth: 2
-    content:
+  - content:
       - Total RNA levels following c-Myc overexpression
+    depth: 2
+    id: s2-2
+    type: Heading
   - type: Paragraph
     content:
       - >-
         We sought to independently replicate whether increased levels of c-Myc
         resulted in increased absolute levels of RNA. This experiment is similar
-        to what was reported in Figure 3E of 
+        to what was reported in Figure 3E of
       - type: Link
         target: '#bib17'
         content:
@@ -519,11 +519,11 @@ content:
         ). To summarize, for this experiment we found results that were in the
         same direction as the original study and not statistically significant
         for serum lot one, while statistically significant for serum lot two.
-  - type: Heading
-    id: s2-3
-    depth: 2
-    content:
+  - content:
       - Digital gene expression following c-Myc overexpression
+    depth: 2
+    id: s2-3
+    type: Heading
   - type: Paragraph
     content:
       - "To test whether c-Myc expression amplifies the existing gene expression program, digital gene expression analysis using the NanoString nCounter platform was performed on a set of genes from multiple functional categories. This experiment is similar to what was reported in Figure 3F and Table S1\_of "
@@ -612,11 +612,11 @@ content:
         in the original study (95.8% (453/473) for serum lot two).
   - 10.7554/eLife.30274.003
   - Figure 2.
-  - type: Heading
-    id: s2-3
-    depth: 2
-    content:
+  - content:
       - Digital gene expression analysis.
+    depth: 2
+    id: s2-3
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -653,18 +653,18 @@ content:
     content:
       - 10.7554/eLife.30274.006
       - Figure 2—source data 1.
-  - type: Heading
-    id: s2-3
-    depth: 2
-    content:
+  - content:
       - List of Reporter CodeSets and gene expression values.
+    depth: 2
+    id: s2-3
+    type: Heading
   - 10.7554/eLife.30274.004
   - Figure 2—figure supplement 1.
-  - type: Heading
-    id: s2-3
-    depth: 2
-    content:
+  - content:
       - Logarithmic expression of genes.
+    depth: 2
+    id: s2-3
+    type: Heading
   - type: Paragraph
     content:
       - 'This is the same experiment as in '
@@ -710,7 +710,7 @@ content:
       - >-
         ) genes. Median represented as the line through the box and whiskers
         representing values within 1.5 IQR of the first and third quartile.
-        Additional details for this experiment can be found at 
+        Additional details for this experiment can be found at
       - type: Link
         target: 'https://osf.io/fn2y4/.'
         content:
@@ -718,11 +718,11 @@ content:
       - .
   - 10.7554/eLife.30274.005
   - Figure 2—figure supplement 2.
-  - type: Heading
-    id: s2-3
-    depth: 2
-    content:
+  - content:
       - Comparison of gene expression data as continuous.
+    depth: 2
+    id: s2-3
+    type: Heading
   - type: Paragraph
     content:
       - 'This is the same experiment as in '
@@ -1852,11 +1852,11 @@ content:
         ). Importantly, though, these results are limited to the 1369 genes
         interrogated in this study and may or may not reflect how the entire
         transcriptome of P493-6 cells respond to c-Myc induction.
-  - type: Heading
-    id: s2-4
-    depth: 2
-    content:
+  - content:
       - Meta-analyses of original and replicated effects
+    depth: 2
+    id: s2-4
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -1871,7 +1871,7 @@ content:
       - >-
         ). To provide a standardized measure of the effect, a common effect size
         was calculated for each effect from the original and replication
-        studies. Cohen’s 
+        studies. Cohen’s
       - type: Emphasis
         content:
           - d
@@ -1894,7 +1894,7 @@ content:
       - >-
         ). Importantly, the width of the confidence interval for each study is a
         reflection of not only the confidence level (e.g. 95%), but also
-        variability of the sample (e.g. 
+        variability of the sample (e.g.
       - type: Emphasis
         content:
           - SD
@@ -1903,7 +1903,7 @@ content:
     content:
       - >-
         The comparison of total RNA levels at low levels of c-Myc (0 hr)
-        compared to high levels of c-Myc (24 hr) resulted in 
+        compared to high levels of c-Myc (24 hr) resulted in
       - type: Emphasis
         content:
           - d
@@ -1947,11 +1947,11 @@ content:
         confidence intervals of each other.
   - 10.7554/eLife.30274.010
   - Figure 3.
-  - type: Heading
-    id: s2-4
-    depth: 2
-    content:
+  - content:
       - Meta-analyses of each effect.
+    depth: 2
+    id: s2-4
+    type: Heading
   - type: Paragraph
     content:
       - "Effect size and 95% confidence interval are presented for\_"
@@ -1962,7 +1962,7 @@ content:
         relation: bibr
       - >-
         , this replication study (RP:CB), and a random effects meta-analysis of
-        those two effects. Cohen’s 
+        those two effects. Cohen’s
       - type: Emphasis
         content:
           - d
@@ -1982,7 +1982,7 @@ content:
           - A
       - >-
         ) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after release
-        from tetracycline (meta-analysis 
+        from tetracycline (meta-analysis
       - type: Emphasis
         content:
           - p
@@ -1992,7 +1992,7 @@ content:
           - B
       - >-
         ) Gene expression of active or silent genes are shown for all
-        comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis 
+        comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis
       - type: Emphasis
         content:
           - p
@@ -2080,7 +2080,7 @@ content:
         point estimate of each study (original, replication serum lot one,
         replication serum lot two) was not within the confidence interval of the
         other studies. Further, the large confidence intervals of the
-        meta-analysis along with statistically significant Cochran’s 
+        meta-analysis along with statistically significant Cochran’s
       - type: Emphasis
         content:
           - Q
@@ -2096,7 +2096,7 @@ content:
         =0.0571, respectively) and the effect size point estimate of each study
         was not within the confidence interval of the other studies. Similar to
         the active gene comparisons, the large confidence intervals of the
-        meta-analysis along with statistically significant Cochran’s 
+        meta-analysis along with statistically significant Cochran’s
       - type: Emphasis
         content:
           - Q
@@ -2177,11 +2177,11 @@ content:
         ). Whether these or other factors influence the outcomes of this study
         is open to hypothesizing and further investigation, which is facilitated
         by direct replications and transparent reporting.
-  - type: Heading
-    id: s3
-    depth: 1
-    content:
+  - content:
       - Materials and methods
+    depth: 1
+    id: s3
+    type: Heading
   - type: Paragraph
     content:
       - As described in the Registered Report (
@@ -2192,7 +2192,7 @@ content:
         relation: bibr
       - >-
         ), we attempted a replication of the experiments reported in Figures 1B
-        and 3E-F of 
+        and 3E-F of
       - type: Link
         target: '#bib17'
         content:
@@ -2239,16 +2239,16 @@ content:
           - 'Hartgerink, 2017'
         relation: bibr
       - ).
-  - type: Heading
-    id: s3-1
-    depth: 2
-    content:
+  - content:
       - Cell culture
+    depth: 2
+    id: s3-1
+    type: Heading
   - type: Paragraph
     content:
       - >-
         P493-6 cells (shared by Young lab, Whitehead Institute for Biomedical
-        Research, RRID: 
+        Research, RRID:
       - type: Link
         target: 'https://scicrunch.org/resolver/CVCL_6783'
         content:
@@ -2288,11 +2288,11 @@ content:
         content:
           - MYC
       - ' re-induction, cells were washed three times with growth medium and grown in tetracycline-free culture conditions.'
-  - type: Heading
-    id: s3-2
-    depth: 2
-    content:
+  - content:
       - Western blot
+    depth: 2
+    id: s3-2
+    type: Heading
   - type: Paragraph
     content:
       - "P493-6 cells were harvested at the indicated times and total cell lysates were prepared by pelleting\_~1×10"
@@ -2349,11 +2349,11 @@ content:
         target: 'https://osf.io/ujg7t/.'
         content:
           - 'https://osf.io/ujg7t/.'
-  - type: Heading
-    id: s3-3
-    depth: 2
-    content:
+  - content:
       - RNA quantification
+    depth: 2
+    id: s3-3
+    type: Heading
   - type: Paragraph
     content:
       - "P493-6 cells were harvested at the indicated times and total RNA extraction was performed by pelleting\_~1×10"
@@ -2373,11 +2373,11 @@ content:
         ) were measured using a NanoDrop ND-1000 (Thermo Fisher Scientific,
         Waltham, Massachusetts) with the NanoDrop Operating Software, version
         3.3, and converted to ng per 1,000 cells.
-  - type: Heading
-    id: s3-4
-    depth: 2
-    content:
+  - content:
       - RNA extraction and NanoString nCounter digital gene expression assay
+    depth: 2
+    id: s3-4
+    type: Heading
   - type: Paragraph
     content:
       - P493-6 cells were harvested at the indicated times and 1 × 10
@@ -2405,7 +2405,7 @@ content:
         A gene was defined as transcriptionally active if its average expression
         was above one transcript/cell at 0 hr and transcriptionally silent if
         below 0.5 transcript/cell. A list of all Reporter CodeSets and their
-        expression values (transcripts/cell) are available at 
+        expression values (transcripts/cell) are available at
       - type: Link
         target: '#fig2sdata1'
         content:
@@ -2416,11 +2416,11 @@ content:
         target: 'https://osf.io/fn2y4/.'
         content:
           - 'https://osf.io/fn2y4/.'
-  - type: Heading
-    id: s3-5
-    depth: 2
-    content:
+  - content:
       - Statistical analysis
+    depth: 2
+    id: s3-5
+    type: Heading
   - type: Paragraph
     content:
       - 'Statistical analysis was performed with R software (RRID:'
@@ -2475,7 +2475,7 @@ content:
         the power calculations to ensure sample size was sufficient. In cases
         where the number of groups were three and the sample sizes were evenly
         distributed among the groups, Fisher's LSD test was performed resulting
-        in an 
+        in an
       - type: Emphasis
         content:
           - a priori
@@ -2523,1950 +2523,2033 @@ content:
       - >-
         ) and was used in the power calculations to determine the sample size
         for this study.
-  - type: Heading
-    id: s3-6
-    depth: 2
-    content:
+  - content:
       - Deviations from registered report
+    depth: 2
+    id: s3-6
+    type: Heading
   - type: Paragraph
     content:
       - "The number of flasks, and thus cells, was increased when tetracycline was added to P493-6 cells to account for the cells not proliferating during this period (i.e. there were two Flask B’s as described in the Registered Report, which were pooled prior to seeding). The proposed statistical analysis for the western blot analysis (Protocol 1) described in the Registered Report was not performed since the levels of normalized c-Myc at time 0 hr was at the limit of detection. The number of genes analyzed in the original study, and thus listed in the Registered Report, was reported incorrectly as 1388 instead of 1338 (data shared by original authors). NanoString analysis was conducted using the nCounter RCC Collector Worksheet instead of nSolver Analysis software. Additionally, the statistical tests reported in\_Figure\_3F of the original study incorrectly described the comparisons as between 0 hr and 1 hr instead of between 0 hr and 24 hr (scripts shared by original authors). The corrected values are described above for comparisons and used in the meta-analysis. Additional materials and instrumentation not listed in the Registered Report, but needed during experimentation are also listed."
 references:
-  - type: CreativeWork
-    title: The cost of dichotomising continuous variables
-    datePublished: '2006'
-    isPartOf:
-      type: CreativeWork
-      name: BMJ
-    authors:
-      - type: Person
-        givenNames:
+  - authors:
+      - givenNames:
           - DG
         familyNames:
           - Altman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Royston
-  - type: CreativeWork
-    title: The error of the red cell count
-    datePublished: '1948'
+        type: Person
+    title: The cost of dichotomising continuous variables
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Journal of Clinical Pathology
-    authors:
-      - type: Person
-        givenNames:
+      title: BMJ
+      volumeNumber: 332
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - R
         familyNames:
           - Biggs
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RL
         familyNames:
           - Macmillan
-  - type: CreativeWork
-    title: >-
-      Registered report: Transcriptional amplification in tumor cells with
-      elevated c-Myc
-    datePublished: '2015'
+        type: Person
+    title: The error of the red cell count
+    type: Article
+    datePublished: '1948'
     isPartOf:
-      type: CreativeWork
-      name: eLife
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 288
+      pageEnd: 291
+      title: Journal of Clinical Pathology
+      volumeNumber: 1
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - D
         familyNames:
           - Blum
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Hao
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - McCarthy
-  - type: CreativeWork
-    title: The cost of dichotomization
-    datePublished: '1983'
+        type: Person
+    title: >-
+      Registered report: Transcriptional amplification in tumor cells with
+      elevated c-Myc
+    type: Article
+    datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: Applied Psychological Measurement
-    authors:
-      - type: Person
-        givenNames:
+      title: eLife
+      volumeNumber: 4
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Cohen
-  - type: CreativeWork
+        type: Person
+    title: The cost of dichotomization
+    type: Article
+    datePublished: '1983'
+    isPartOf:
+      pageStart: 249
+      pageEnd: 253
+      title: Applied Psychological Measurement
+      volumeNumber: 7
+      type: PublicationVolume
+  - authors:
+      - givenNames:
+          - DJ
+        familyNames:
+          - Duffy
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Krstic
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Halasz
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Schwarzl
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Fey
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Iljin
+        type: Person
+      - givenNames:
+          - JP
+        familyNames:
+          - Mehta
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Killick
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Whilde
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Turriziani
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Haapa-Paananen
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Fey
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Fischer
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Westermann
+        type: Person
+      - givenNames:
+          - K-O
+        familyNames:
+          - Henrich
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Bannert
+        type: Person
+      - givenNames:
+          - DG
+        familyNames:
+          - Higgins
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Kolch
+        type: Person
     title: >-
       Integrative omics reveals MYCN as a global suppressor of cellular
       signalling and enables network-based therapeutic target discovery in
       neuroblastoma
+    type: Article
     datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: Oncotarget
-    authors:
-      - type: Person
-        givenNames:
-          - DJ
-        familyNames:
-          - Duffy
-      - type: Person
-        givenNames:
-          - A
-        familyNames:
-          - Krstic
-      - type: Person
-        givenNames:
-          - M
-        familyNames:
-          - Halasz
-      - type: Person
-        givenNames:
-          - T
-        familyNames:
-          - Schwarzl
-      - type: Person
-        givenNames:
-          - D
-        familyNames:
-          - Fey
-      - type: Person
-        givenNames:
-          - K
-        familyNames:
-          - Iljin
-      - type: Person
-        givenNames:
-          - JP
-        familyNames:
-          - Mehta
-      - type: Person
-        givenNames:
-          - K
-        familyNames:
-          - Killick
-      - type: Person
-        givenNames:
-          - J
-        familyNames:
-          - Whilde
-      - type: Person
-        givenNames:
-          - B
-        familyNames:
-          - Turriziani
-      - type: Person
-        givenNames:
-          - S
-        familyNames:
-          - Haapa-Paananen
-      - type: Person
-        givenNames:
-          - V
-        familyNames:
-          - Fey
-      - type: Person
-        givenNames:
-          - M
-        familyNames:
-          - Fischer
-      - type: Person
-        givenNames:
-          - F
-        familyNames:
-          - Westermann
-      - type: Person
-        givenNames:
-          - K-O
-        familyNames:
-          - Henrich
-      - type: Person
-        givenNames:
-          - S
-        familyNames:
-          - Bannert
-      - type: Person
-        givenNames:
-          - DG
-        familyNames:
-          - Higgins
-      - type: Person
-        givenNames:
-          - W
-        familyNames:
-          - Kolch
-  - type: CreativeWork
-    title: An open investigation of the reproducibility of cancer biology research
-    datePublished: '2014'
-    isPartOf:
-      type: CreativeWork
-      name: eLife
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 43182
+      pageEnd: 43201
+      title: Oncotarget
+      volumeNumber: 6
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - TM
         familyNames:
           - Errington
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Iorns
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - W
         familyNames:
           - Gunn
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - FE
         familyNames:
           - Tan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Lomax
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BA
         familyNames:
           - Nosek
-  - type: CreativeWork
-    title: >-
-      A Myc-driven self-reinforcing regulatory network maintains mouse embryonic
-      stem cell identity
-    datePublished: '2016'
+        type: Person
+    title: An open investigation of the reproducibility of cancer biology research
+    type: Article
+    datePublished: '2014'
     isPartOf:
-      type: CreativeWork
-      name: Nature Communications
-    authors:
-      - type: Person
-        givenNames:
+      title: eLife
+      volumeNumber: 3
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - L
         familyNames:
           - Fagnocchi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Cherubini
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Hatsuda
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Fasciani
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Mazzoleni
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - V
         familyNames:
           - Poli
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - V
         familyNames:
           - Berno
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RL
         familyNames:
           - Rossi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Reinbold
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Endele
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Schroeder
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Rocchigiani
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - Ż
         familyNames:
           - Szkarłat
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Oliviero
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Dalton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Zippo
-  - type: CreativeWork
+        type: Person
     title: >-
-      The difference between “significant” and “not significant” is not itself
-      statistically significant
-    datePublished: '2006'
+      A Myc-driven self-reinforcing regulatory network maintains mouse embryonic
+      stem cell identity
+    type: Article
+    datePublished: '2016'
     isPartOf:
-      type: CreativeWork
-      name: The American Statistician
-    authors:
-      - type: Person
-        givenNames:
+      title: Nature Communications
+      volumeNumber: 7
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Gelman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Stern
-  - type: CreativeWork
-    title: MYC regulates the non-coding transcriptome
-    datePublished: '2014'
+        type: Person
+    title: >-
+      The difference between “significant” and “not significant” is not itself
+      statistically significant
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Oncotarget
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 328
+      pageEnd: 331
+      title: The American Statistician
+      volumeNumber: 60
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JR
         familyNames:
           - Hart
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TC
         familyNames:
           - Roberts
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MS
         familyNames:
           - Weinberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KV
         familyNames:
           - Morris
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PK
         familyNames:
           - Vogt
-  - type: CreativeWork
-    title: Composing reproducible manuscripts using R Markdown
-    datePublished: '2017'
+        type: Person
+    title: MYC regulates the non-coding transcriptome
+    type: Article
+    datePublished: '2014'
     isPartOf:
-      type: CreativeWork
-      name: eLife
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 12543
+      pageEnd: 12554
+      title: Oncotarget
+      volumeNumber: 5
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - CHJ
         familyNames:
           - Hartgerink
-  - type: CreativeWork
-    title: >-
-      Variation in RNA expression and genomic DNA content acquired during cell
-      culture
-    datePublished: '2004'
+        type: Person
+    title: Composing reproducible manuscripts using R Markdown
+    type: Article
+    datePublished: '2017'
     isPartOf:
-      type: CreativeWork
-      name: British Journal of Cancer
-    authors:
-      - type: Person
-        givenNames:
+      title: eLife
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - LR
         familyNames:
           - Hiorns
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TD
         familyNames:
           - Bradshaw
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LA
         familyNames:
           - Skelton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - Q
         familyNames:
           - Yu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LR
         familyNames:
           - Kelland
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Leyland-Jones
-  - type: CreativeWork
-    title: The spliceosome is a therapeutic vulnerability in MYC-driven cancer
-    datePublished: '2015'
+        type: Person
+    title: >-
+      Variation in RNA expression and genomic DNA content acquired during cell
+      culture
+    type: Article
+    datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: Nature
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 476
+      pageEnd: 482
+      title: British Journal of Cancer
+      volumeNumber: 90
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - TY
         familyNames:
           - Hsu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LM
         familyNames:
           - Simon
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NJ
         familyNames:
           - Neill
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Marcotte
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Sayad
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CS
         familyNames:
           - Bland
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GV
         familyNames:
           - Echeverria
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Sun
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SJ
         familyNames:
           - Kurley
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Tyagi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KL
         familyNames:
           - Karlin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Dominguez-Vidaña
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JD
         familyNames:
           - Hartman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Renwick
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Scorsone
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RJ
         familyNames:
           - Bernardi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SO
         familyNames:
           - Skinner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Jain
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Orellana
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Lagisetti
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - I
         familyNames:
           - Golding
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SY
         familyNames:
           - Jung
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JR
         familyNames:
           - Neilson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - XH
         familyNames:
           - Zhang
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TA
         familyNames:
           - Cooper
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TR
         familyNames:
           - Webb
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BG
         familyNames:
           - Neel
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CA
         familyNames:
           - Shaw
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TF
         familyNames:
           - Westbrook
-  - type: CreativeWork
-    title: The costs of using unauthenticated
-    datePublished: '2007'
+        type: Person
+    title: The spliceosome is a therapeutic vulnerability in MYC-driven cancer
+    type: Article
+    datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: 'over-passaged cell lines: how much more data do we need? BioTechniques'
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 19
+      pageStart: 384
+      pageEnd: 388
+      isPartOf:
+        title: Nature
+        volumeNumber: 525
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - P
         familyNames:
           - Hughes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Marshall
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'Y'
         familyNames:
           - Reid
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Parkes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Gelber
-  - type: CreativeWork
-    title: >-
-      Genetic variability in a frozen batch of MCF-7 cells invisible in routine
-      authentication affecting cell function
-    datePublished: '2016'
+        type: Person
+    title: The costs of using unauthenticated
+    type: Article
+    datePublished: '2007'
     isPartOf:
-      type: CreativeWork
-      name: Scientific Reports
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 575
+      pageEnd: 586
+      title: 'over-passaged cell lines: how much more data do we need? BioTechniques'
+      volumeNumber: 43
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Kleensang
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MM
         familyNames:
           - Vantangoli
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Odwin-DaCosta
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - ME
         familyNames:
           - Andersen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Boekelheide
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Bouhifd
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AJ
         familyNames:
           - Fornace
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - HH
         familyNames:
           - Li
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CB
         familyNames:
           - Livi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Madnick
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Maertens
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Rosenberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JD
         familyNames:
           - Yager
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Zhaog
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Hartung
-  - type: CreativeWork
+        type: Person
     title: >-
-      Tackling the widespread and critical impact of batch effects in
-      high-throughput data
-    datePublished: '2010'
+      Genetic variability in a frozen batch of MCF-7 cells invisible in routine
+      authentication affecting cell function
+    type: Article
+    datePublished: '2016'
     isPartOf:
-      type: CreativeWork
-      name: Nature Reviews Genetics
-    authors:
-      - type: Person
-        givenNames:
+      title: Scientific Reports
+      volumeNumber: 6
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JT
         familyNames:
           - Leek
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RB
         familyNames:
           - Scharpf
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - HC
         familyNames:
           - Bravo
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Simcha
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Langmead
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - WE
         familyNames:
           - Johnson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Geman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Baggerly
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RA
         familyNames:
           - Irizarry
-  - type: CreativeWork
-    title: 'Study 48: Replication of Lin et al., 2012 (Cell)'
-    datePublished: '2017'
+        type: Person
+    title: >-
+      Tackling the widespread and critical impact of batch effects in
+      high-throughput data
+    type: Article
+    datePublished: '2010'
     isPartOf:
-      type: CreativeWork
-      name: Open Science Framework
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 733
+      pageEnd: 739
+      title: Nature Reviews Genetics
+      volumeNumber: 11
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - LM
         familyNames:
           - Lewis
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MC
         familyNames:
           - Edwards
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - ZR
         familyNames:
           - Meyers
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CC
         familyNames:
           - Talbot
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Hao
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Blum
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Iorns
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Tsui
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Denis
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'N'
         familyNames:
           - Perfito
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TM
         familyNames:
           - Errington
-  - type: CreativeWork
-    title: Transcriptional amplification in tumor cells with elevated c-Myc
-    datePublished: '2012'
+        type: Person
+    title: 'Study 48: Replication of Lin et al., 2012 (Cell)'
+    type: Article
+    datePublished: '2017'
     isPartOf:
-      type: CreativeWork
-      name: Cell
-    authors:
-      - type: Person
-        givenNames:
+      title: Open Science Framework
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - CY
         familyNames:
           - Lin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Lovén
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PB
         familyNames:
           - Rahl
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RM
         familyNames:
           - Paranal
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CB
         familyNames:
           - Burge
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JE
         familyNames:
           - Bradner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TI
         familyNames:
           - Lee
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RA
         familyNames:
           - Young
-  - type: CreativeWork
-    title: >-
-      Different promoter affinities account for specificity in MYC-dependent
-      gene regulation
-    datePublished: '2016'
+        type: Person
+    title: Transcriptional amplification in tumor cells with elevated c-Myc
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: eLife
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 56
+      pageEnd: 67
+      title: Cell
+      volumeNumber: 151
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - F
         familyNames:
           - Lorenzin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - U
         familyNames:
           - Benary
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Baluapuri
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Walz
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LA
         familyNames:
           - Jung
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - von
           - Eyss
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Kisker
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Wolf
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Eilers
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Wolf
-  - type: CreativeWork
+        type: Person
     title: >-
-      c-Myc is a universal amplifier of expressed genes in lymphocytes and
-      embryonic stem cells
-    datePublished: '2012'
+      Different promoter affinities account for specificity in MYC-dependent
+      gene regulation
+    type: Article
+    datePublished: '2016'
     isPartOf:
-      type: CreativeWork
-      name: Cell
-    authors:
-      - type: Person
-        givenNames:
+      title: eLife
+      volumeNumber: 5
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - Z
         familyNames:
           - Nie
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - G
         familyNames:
           - Hu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - G
         familyNames:
           - Wei
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Cui
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Yamane
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - W
         familyNames:
           - Resch
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Wang
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DR
         familyNames:
           - Green
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Tessarollo
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Casellas
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Zhao
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Levens
-  - type: CreativeWork
+        type: Person
     title: >-
-      Hemacytometer Cell Count Distributions: Implications of Non-Poisson
-      Behavior
-    datePublished: '1991'
+      c-Myc is a universal amplifier of expressed genes in lymphocytes and
+      embryonic stem cells
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: Biotechnology Progress
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 68
+      pageEnd: 79
+      title: Cell
+      volumeNumber: 151
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - L
         familyNames:
           - Nielson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - G
         familyNames:
           - Smyth
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Greenfield
-  - type: CreativeWork
+        type: Person
     title: >-
-      Erroneous analyses of interactions in neuroscience: a problem of
-      significance
-    datePublished: '2011'
+      Hemacytometer Cell Count Distributions: Implications of Non-Poisson
+      Behavior
+    type: Article
+    datePublished: '1991'
     isPartOf:
-      type: CreativeWork
-      name: Nature Neuroscience
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 560
+      pageEnd: 563
+      title: Biotechnology Progress
+      volumeNumber: 7
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Nieuwenhuis
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BU
         familyNames:
           - Forstmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EJ
         familyNames:
           - Wagenmakers
-  - type: CreativeWork
+        type: Person
     title: >-
-      Single mammalian cells compensate for differences in cellular volume and
-      DNA copy number through independent global transcriptional mechanisms
-    datePublished: '2015'
+      Erroneous analyses of interactions in neuroscience: a problem of
+      significance
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Molecular Cell
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1105
+      pageEnd: 1107
+      title: Nature Neuroscience
+      volumeNumber: 14
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - O
         familyNames:
           - Padovan-Merhar
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GP
         familyNames:
           - Nair
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AG
         familyNames:
           - Biaesch
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Mayer
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Scarfone
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SW
         familyNames:
           - Foley
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AR
         familyNames:
           - Wu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LS
         familyNames:
           - Churchman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Singh
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Raj
-  - type: CreativeWork
-    title: Cell cycle activation by c-myc in a burkitt lymphoma model cell line
-    datePublished: '2000'
+        type: Person
+    title: >-
+      Single mammalian cells compensate for differences in cellular volume and
+      DNA copy number through independent global transcriptional mechanisms
+    type: Article
+    datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: International Journal of Cancer
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 339
+      pageEnd: 352
+      title: Molecular Cell
+      volumeNumber: 58
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Pajic
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Spitkovsky
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Christoph
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Kempkes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Schuhmacher
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MS
         familyNames:
           - Staege
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Brielmeier
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Ellwart
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Kohlhuber
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GW
         familyNames:
           - Bornkamm
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Polack
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Eick
-  - type: CreativeWork
-    title: Remarks on zeros and ties in the wilcoxon signed rank procedures
-    datePublished: '1959'
+        type: Person
+    title: Cell cycle activation by c-myc in a burkitt lymphoma model cell line
+    type: Article
+    datePublished: '2000'
     isPartOf:
-      type: CreativeWork
-      name: Journal of the American Statistical Association
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 787
+      pageEnd: 793
+      title: International Journal of Cancer
+      volumeNumber: 87
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JW
         familyNames:
           - Pratt
-  - type: CreativeWork
+        type: Person
+    title: Remarks on zeros and ties in the wilcoxon signed rank procedures
+    type: Article
+    datePublished: '1959'
+    isPartOf:
+      pageStart: 655
+      pageEnd: 667
+      title: Journal of the American Statistical Association
+      volumeNumber: 54
+      type: PublicationVolume
+  - authors: []
+    title: ''
+    type: Article
     datePublished: '2017'
     isPartOf:
-      type: CreativeWork
-      name: R Foundation for Statistical Computing
-  - type: CreativeWork
-    title: Genome recognition by MYC
-    datePublished: '2014'
-    isPartOf:
-      type: CreativeWork
-      name: Cold Spring Harbor Perspectives in Medicine
-    authors:
-      - type: Person
-        givenNames:
+      title: R Foundation for Statistical Computing
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Sabò
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Amati
-  - type: CreativeWork
-    title: >-
-      Selective transcriptional regulation by Myc in cellular growth control and
-      lymphomagenesis
+        type: Person
+    title: Genome recognition by MYC
+    type: Article
     datePublished: '2014'
     isPartOf:
-      type: CreativeWork
-      name: Nature
-    authors:
-      - type: Person
-        givenNames:
+      title: Cold Spring Harbor Perspectives in Medicine
+      volumeNumber: 4
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - A
         familyNames:
           - Sabò
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TR
         familyNames:
           - Kress
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Pelizzola
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - de
           - Pretis
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MM
         familyNames:
           - Gorski
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Tesi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MJ
         familyNames:
           - Morelli
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Bora
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Doni
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Verrecchia
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Tonelli
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - G
         familyNames:
           - Fagà
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - V
         familyNames:
           - Bianchi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Ronchi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Low
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Müller
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Guccione
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Campaner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Amati
-  - type: CreativeWork
+        type: Person
     title: >-
-      Dissection of transcriptional programmes in response to serum and c-Myc in
-      a human B-cell line
-    datePublished: '2005'
+      Selective transcriptional regulation by Myc in cellular growth control and
+      lymphomagenesis
+    type: Article
+    datePublished: '2014'
     isPartOf:
-      type: CreativeWork
-      name: Oncogene
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 488
+      pageEnd: 492
+      title: Nature
+      volumeNumber: 511
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - I
         familyNames:
           - Schlosser
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Hölzel
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Hoffmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Burtscher
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Kohlhuber
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Schuhmacher
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Chapman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - UH
         familyNames:
           - Weidle
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Eick
-  - type: CreativeWork
-    title: 'NIH Image to ImageJ: 25 years of image analysis'
-    datePublished: '2012'
+        type: Person
+    title: >-
+      Dissection of transcriptional programmes in response to serum and c-Myc in
+      a human B-cell line
+    type: Article
+    datePublished: '2005'
     isPartOf:
-      type: CreativeWork
-      name: Nature Methods
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 520
+      pageEnd: 524
+      title: Oncogene
+      volumeNumber: 24
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - CA
         familyNames:
           - Schneider
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - WS
         familyNames:
           - Rasband
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KW
         familyNames:
           - Eliceiri
-  - type: CreativeWork
-    title: Control of cell growth by c-Myc in the absence of cell division
-    datePublished: '1999'
+        type: Person
+    title: 'NIH Image to ImageJ: 25 years of image analysis'
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: Current Biology
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 671
+      pageEnd: 675
+      title: Nature Methods
+      volumeNumber: 9
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - M
         familyNames:
           - Schuhmacher
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MS
         familyNames:
           - Staege
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Pajic
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Polack
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - UH
         familyNames:
           - Weidle
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GW
         familyNames:
           - Bornkamm
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Eick
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Kohlhuber
-  - type: CreativeWork
-    title: >-
-      Many analysts, one dataset: Making transparent how variations in
-      analytical choices affect results
-    datePublished: '2017'
+        type: Person
+    title: Control of cell growth by c-Myc in the absence of cell division
+    type: Article
+    datePublished: '1999'
     isPartOf:
-      type: CreativeWork
-      name: PsyArXiv
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1255
+      pageEnd: 1258
+      title: Current Biology
+      volumeNumber: 9
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - R
         familyNames:
           - Silberzahn
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EL
         familyNames:
           - Uhlmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DP
         familyNames:
           - Martin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Anselmi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Aust
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EC
         familyNames:
           - Awtrey
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - Š
         familyNames:
           - Bahník
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Bai
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Bannard
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Bonnier
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Carlsson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Cheung
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - G
         familyNames:
           - Christensen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Clay
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MA
         familyNames:
           - Craig
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Dalla
           - Rosa
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Dam
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MH
         familyNames:
           - Evans
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Cervantes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'N'
         familyNames:
           - Fong
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Gamez-Djokic
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Glenz
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Gordon-McKeon
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Heaton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KH
         familyNames:
           - Eriksson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Heene
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Hofelich
           - Mohr
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Högden
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Hui
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Johannesson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Kalodimos
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Kaszubowski
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DM
         familyNames:
           - Kennedy
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Lei
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TA
         familyNames:
           - Lindsay
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Liverani
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CR
         familyNames:
           - Madan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DC
         familyNames:
           - Molden
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Molleman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RD
         familyNames:
           - Morey
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LB
         familyNames:
           - Mulder
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BA
         familyNames:
           - Nijstad
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Pope
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NG
         familyNames:
           - Pope
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JM
         familyNames:
           - Prenoveau
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Rink
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Robusto
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Roderique
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Sandberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Schlueter
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - FD
         familyNames:
           - Schönbrodt
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MF
         familyNames:
           - Sherman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SA
         familyNames:
           - Sommer
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KL
         familyNames:
           - Sotak
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SM
         familyNames:
           - Spain
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Spörlein
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Stafford
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Stefanutti
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Täuber
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Ullrich
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Vianello
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E-J
         familyNames:
           - Wagenmakers
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Witkowiak
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Yoon
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BA
         familyNames:
           - Nosek
-  - type: CreativeWork
+        type: Person
     title: >-
-      Cell types differ in global coordination of splicing and proportion of
-      highly expressed genes
-    datePublished: '2016'
+      Many analysts, one dataset: Making transparent how variations in
+      analytical choices affect results
+    type: Article
+    datePublished: '2017'
     isPartOf:
-      type: CreativeWork
-      name: Scientific Reports
-    authors:
-      - type: Person
-        givenNames:
+      title: PsyArXiv
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - EF
         familyNames:
           - Trakhtenberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'N'
         familyNames:
           - Pho
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KM
         familyNames:
           - Holton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TW
         familyNames:
           - Chittenden
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JL
         familyNames:
           - Goldberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Dong
-  - type: CreativeWork
-    title: Replication in prevention science
-    datePublished: '2011'
+        type: Person
+    title: >-
+      Cell types differ in global coordination of splicing and proportion of
+      highly expressed genes
+    type: Article
+    datePublished: '2016'
     isPartOf:
-      type: CreativeWork
-      name: Prevention Science
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 32249
+      title: Scientific Reports
+      volumeNumber: 6
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JC
         familyNames:
           - Valentine
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Biglan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RF
         familyNames:
           - Boruch
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - FG
         familyNames:
           - Castro
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LM
         familyNames:
           - Collins
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BR
         familyNames:
           - Flay
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Kellam
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EK
         familyNames:
           - Mościcki
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SP
         familyNames:
           - Schinke
-  - type: CreativeWork
-    title: Conducting Meta-Analyses in R with the metafor Package
-    datePublished: '2010'
+        type: Person
+    title: Replication in prevention science
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Journal of Statistical Software
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 103
+      pageEnd: 117
+      title: Prevention Science
+      volumeNumber: 12
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - W
         familyNames:
           - Viechtbauer
-  - type: CreativeWork
-    title: >-
-      Activation and repression by oncogenic MYC shape tumour-specific gene
-      expression profiles
-    datePublished: '2014'
+        type: Person
+    title: Conducting Meta-Analyses in R with the metafor Package
+    type: Article
+    datePublished: '2010'
     isPartOf:
-      type: CreativeWork
-      name: Nature
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 1
+      pageEnd: 48
+      title: Journal of Statistical Software
+      volumeNumber: 36
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Walz
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Lorenzin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Morton
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KE
         familyNames:
           - Wiese
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - von
           - Eyss
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Herold
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Rycak
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Dumay-Odelot
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Karim
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Bartkuhn
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Roels
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Wüstefeld
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Fischer
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Teichmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Zender
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CL
         familyNames:
           - Wei
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - O
         familyNames:
           - Sansom
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Wolf
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Eilers
+        type: Person
+    title: >-
+      Activation and repression by oncogenic MYC shape tumour-specific gene
+      expression profiles
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 483
+      pageEnd: 487
+      title: Nature
+      volumeNumber: 511
+      type: PublicationVolume

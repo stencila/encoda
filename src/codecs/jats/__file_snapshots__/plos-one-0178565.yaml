@@ -1,34 +1,34 @@
-type: Article
-title: >-
-  Gene essentiality, conservation index and co-evolution of genes in
-  cyanobacteria
 authors:
-  - type: Person
-    givenNames:
+  - givenNames:
       - Gopi
       - Siva
       - Sai
     familyNames:
       - Tiruveedula
+    type: Person
     affiliations:
       - type: Organization
       - type: Organization
-  - type: Person
-    givenNames:
+  - givenNames:
       - Pramod
       - P.
     familyNames:
       - Wangikar
+    type: Person
     affiliations:
       - type: Organization
       - type: Organization
       - type: Organization
+title: >-
+  Gene essentiality, conservation index and co-evolution of genes in
+  cyanobacteria
+type: Article
 content:
-  - type: Heading
-    id: sec001
-    depth: 1
-    content:
+  - content:
       - Introduction
+    depth: 1
+    id: sec001
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -306,16 +306,16 @@ content:
         genes from cyanobacterial species of diverse genera. Apart from insights
         on gene essentiality, the data provides useful clues on co-evolution of
         genes that may be helpful in gene annotation.
-  - type: Heading
-    id: sec002
-    depth: 1
-    content:
+  - content:
       - Materials and methods
-  - type: Heading
-    id: sec003
-    depth: 2
-    content:
+    depth: 1
+    id: sec002
+    type: Heading
+  - content:
       - Phylogenetic profile construction
+    depth: 2
+    id: sec003
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -372,11 +372,11 @@ content:
         are listed as hits and omitted from being considered as query sequences
         subsequently. A “1” in the profile indicates the presence of at least
         one hit in the genome while a “0” indicates the absence.
-  - type: Heading
-    id: sec004
-    depth: 2
-    content:
+  - content:
       - Clustering of genes and organisms
+    depth: 2
+    id: sec004
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -385,7 +385,7 @@ content:
         Likewise, cyanobacteria were clustered by using their profiles and a
         similar clustering strategy and cut-off. The merged profiles are then
         represented as consensus of the members of the cluster. The detailed
-        method is depicted in 
+        method is depicted in
       - type: Link
         target: '#pone.0178565.g001'
         content:
@@ -394,22 +394,22 @@ content:
       - ' which is used to obtain a reduced genome database.'
   - 10.1371/journal.pone.0178565.g001
   - Fig 1
-  - type: Heading
-    id: sec004
-    depth: 2
-    content:
+  - content:
       - Data reduction and construction of Clusters of Co-evolving Genes (CCG).
+    depth: 2
+    id: sec004
+    type: Heading
   - type: Paragraph
     content:
       - >-
         Diagrammatic representation for clustering of organisms and proteins.
         The method is used to reduce the genome dataset and to cluster proteins
         of the semi-conserved category to obtain CCG.
-  - type: Heading
-    id: sec005
-    depth: 2
-    content:
+  - content:
       - Modified Hamming distance
+    depth: 2
+    id: sec005
+    type: Heading
   - type: Paragraph
     content:
       - >
@@ -464,16 +464,16 @@ content:
                 content:
                   - '2'
               - ' = Profile of gene 2.'
-  - type: Heading
-    id: sec006
-    depth: 1
-    content:
+  - content:
       - Results and discussion
-  - type: Heading
-    id: sec007
-    depth: 2
-    content:
+    depth: 1
+    id: sec006
+    type: Heading
+  - content:
       - Phylogenetic profile construction
+    depth: 2
+    id: sec007
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -504,17 +504,17 @@ content:
         found in our database but that number is expected to be small. Also, the
         genes missing in our profiles are expected to be unique genes present
         only in a limited number of cyanobacteria.
-  - type: Heading
-    id: sec008
-    depth: 2
-    content:
+  - content:
       - Data reduction
+    depth: 2
+    id: sec008
+    type: Heading
   - type: Paragraph
     content:
       - >-
         String length (number of genomes in the dataset) of the phylogenetic
         profiles was 120 based on the number of genomes used. However, some of
-        the genera such as 
+        the genera such as
       - type: Emphasis
         content:
           - Prochlorococcus
@@ -574,18 +574,18 @@ content:
         the abridged strings.
   - 10.1371/journal.pone.0178565.g002
   - Fig 2
-  - type: Heading
-    id: sec008
-    depth: 2
-    content:
+  - content:
       - >-
         Phylogenetic tree of the 73 cyanobacterial genome groups based on
         clustering of their phylogenetic profiles.
+    depth: 2
+    id: sec008
+    type: Heading
   - type: Paragraph
     content:
       - >-
         Profiles of 8280 semi-conserved genes were used while clustering the
-        organisms. List of the cyanobacterial strains are given in 
+        organisms. List of the cyanobacterial strains are given in
       - type: Link
         target: '#pone.0178565.s003'
         content:
@@ -598,11 +598,11 @@ content:
           - S2 Table
         relation: supplementary-material
       - .
-  - type: Heading
-    id: sec009
-    depth: 2
-    content:
+  - content:
       - Redundancy of profiles
+    depth: 2
+    id: sec009
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -640,7 +640,7 @@ content:
         relation: fig
       - >-
         ) where the pairs in question lie on opposite sides of the plot (Details
-        regarding the proteins used in the PCA plot and heatmap are given in 
+        regarding the proteins used in the PCA plot and heatmap are given in
       - type: Link
         target: '#pone.0178565.s007'
         content:
@@ -671,7 +671,7 @@ content:
         related subset of organisms suggesting that the divergence of the
         protein sequences correlates with the evolution of the organism.
         Likewise profiles with query UniProt IDs B5VZS0 and Q3M4X1 both
-        represent the 
+        represent the
       - type: Emphasis
         content:
           - phzF
@@ -693,11 +693,11 @@ content:
         merely paralogs.
   - 10.1371/journal.pone.0178565.g003
   - Fig 3
-  - type: Heading
-    id: sec009
-    depth: 2
-    content:
+  - content:
       - Potential redundancy in the phylogenetic profiles.
+    depth: 2
+    id: sec009
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -707,11 +707,11 @@ content:
         content:
           - −10
       - ' but fail to meet the criteria of score density and query coverage. The redundant gene pairs are color-coded and assigned symbols in the two plots. (A) A PCA plot that shows the 10 pairs on the first two principal components and (B) Heatmap showing mutually exclusive nature of profile pairs. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively.'
-  - type: Heading
-    id: sec010
-    depth: 2
-    content:
+  - content:
       - Conservation categories
+    depth: 2
+    id: sec010
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -744,13 +744,13 @@ content:
               - Unique; with a GCI score of < 10%.
   - 10.1371/journal.pone.0178565.g004
   - Fig 4
-  - type: Heading
-    id: sec010
-    depth: 2
-    content:
+  - content:
       - >-
         Histogram of gene conservation index (GCI) for the 23,633 phylogenetic
         profiles.
+    depth: 2
+    id: sec010
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -777,7 +777,7 @@ content:
         but not considered here as our dataset contains only protein coding
         genes. In this set, around 35% of the genes are metabolic genes. The set
         comprises of upto 50% of the total proteins in smaller genomes such as
-        those of 
+        those of
       - type: Emphasis
         content:
           - Prochlorococcus
@@ -879,7 +879,7 @@ content:
               - SYNPCC7002_A2832
           - type: TableCell
             content:
-              - '''de novo'' GDP-L-fucose biosynthetic process [GO:0042351]'
+              - "'de novo' GDP-L-fucose biosynthetic process [GO:0042351]"
           - type: TableCell
             content:
               - >-
@@ -1034,7 +1034,7 @@ content:
         relation: bibr
       - >-
         ]. We checked for the conservation index of these genes and we find that
-        the oscillator genes 
+        the oscillator genes
       - type: Emphasis
         content:
           - kaiB
@@ -1104,7 +1104,7 @@ content:
         relation: fig
       - >-
         ). However, there is some disagreement between the data sets. For
-        example, genes 
+        example, genes
       - type: Emphasis
         content:
           - psbJ
@@ -1156,10 +1156,7 @@ content:
         may lack some of the core metabolic genes.
   - 10.1371/journal.pone.0178565.g005
   - Fig 5
-  - type: Heading
-    id: sec010
-    depth: 2
-    content:
+  - content:
       - >-
         Overlap of conserved genes (this work) with core set proteins of Shi and
         Falkowski [
@@ -1189,6 +1186,9 @@ content:
         content:
           - elongatus
       - ' PCC 7942 for which experimental data is available.'
+    depth: 2
+    id: sec010
+    type: Heading
   - type: Paragraph
     content:
       - '(A) Overlap of conserved genes (this work), core set proteins ['
@@ -1218,11 +1218,11 @@ content:
           - '18'
         relation: bibr
       - '].'
-  - type: Heading
-    id: sec011
-    depth: 2
-    content:
+  - content:
       - Relationship between conservation level and annotation
+    depth: 2
+    id: sec011
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -1313,18 +1313,18 @@ content:
       The number of annotated and unannotated genes in the three conservation
       categories.
     content: []
-  - type: Heading
-    id: sec012
-    depth: 2
-    content:
+  - content:
       - Gene essentiality and conservation index
+    depth: 2
+    id: sec012
+    type: Heading
   - type: Paragraph
     content:
       - >-
         We wanted to test if the gene conservation index is indicative of gene
         essentiality. We find that there is a significant overlap between the
         sets of conserved genes (this work) and essential genes as determined
-        experimentally in 
+        experimentally in
       - type: Emphasis
         content:
           - S
@@ -1371,7 +1371,7 @@ content:
         category and essentiality may result from (i) clade specific conserved
         genes that may not be detected as phylum-wide conserved genes and (ii)
         the choice of experimental conditions may not cover the types of
-        evolutionary pressures that organisms experience in nature. The genes 
+        evolutionary pressures that organisms experience in nature. The genes
       - type: Emphasis
         content:
           - psbF
@@ -1391,7 +1391,7 @@ content:
         relation: bibr
       - >-
         ]. The gene is semi-conserved in the entire phylum but is conserved in
-        clade C. The gene 
+        clade C. The gene
       - type: Emphasis
         content:
           - menF
@@ -1403,7 +1403,7 @@ content:
         relation: bibr
       - >-
         ]. The gene is conserved in clades A and D but semi-conserved in the
-        entire phylum. The genes 
+        entire phylum. The genes
       - type: Emphasis
         content:
           - fbp
@@ -1511,11 +1511,11 @@ content:
         which 436 genes were essential in the non-reduced genome. This number is
         smaller compared to the number of conserved genes (993) and essential
         genes (494) in the reduced dataset.
-  - type: Heading
-    id: sec013
-    depth: 1
-    content:
+  - content:
       - Genes of central metabolic pathways
+    depth: 1
+    id: sec013
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -1541,7 +1541,7 @@ content:
       - >-
         ). We find agreement between the two datasets. For example, on analysis
         of ten enzymes of the glycolytic pathway, we find that seven were
-        conserved, six of which are essential in 
+        conserved, six of which are essential in
       - type: Emphasis
         content:
           - S
@@ -2398,11 +2398,11 @@ content:
       Comparison of enzymes in central metabolic pathways with the essential and
       conserved genes of other datasets.
     content: []
-  - type: Heading
-    id: sec014
-    depth: 2
-    content:
+  - content:
       - Clusters of Co-evolving Genes (CCG)
+    depth: 2
+    id: sec014
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2450,7 +2450,7 @@ content:
       - >-
         ). To exemplify, cluster 11 has 11 proteins, of which eight are gas
         vesicle proteins, two are uncharacterized (with UniProt IDs D4TEP3 and
-        Q3MH39) and one is 
+        Q3MH39) and one is
       - type: Emphasis
         content:
           - ArsA
@@ -2506,11 +2506,11 @@ content:
         information about their functions.
   - 10.1371/journal.pone.0178565.g006
   - Fig 6
-  - type: Heading
-    id: sec014
-    depth: 2
-    content:
+  - content:
       - Clusters of Co-evolving Genes (CCG).
+    depth: 2
+    id: sec014
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2614,11 +2614,11 @@ content:
             text: >-
               Column A to C describes various identifiers and attributes of the
               genes used. Column D describes the gene conservation index.
-  - type: Heading
-    id: sec015
-    depth: 1
-    content:
+  - content:
       - Conclusion
+    depth: 1
+    id: sec015
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2634,19 +2634,16 @@ content:
         data in the form of heatmap and principal component analysis (PCA). We
         believe that the data presented here would serve as a useful resource to
         the scientific community.
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - Supporting information
-  - S1 Fig
-  - type: Heading
-    id: sec016
     depth: 1
-    content:
+    id: sec016
+    type: Heading
+  - S1 Fig
+  - content:
       - >-
         Histogram of gene conservation index (GCI) for the essential and
-        non-essential genes of 
+        non-essential genes of
       - type: Emphasis
         content:
           - S
@@ -2655,6 +2652,9 @@ content:
         content:
           - elongatus
       - ' PCC 7942.'
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2670,20 +2670,20 @@ content:
     content:
       - (TIF)
   - S1 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - List of the 120 cyanobacterial genomes used in the analysis.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - (XLSX)
   - S2 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - List of query organisms used while constructing the profiles.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2695,13 +2695,13 @@ content:
     content:
       - (XLSX)
   - S3 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - >-
         Phylogenetic profiles of 23,643 query proteins drawn from twenty
         genetically diverse cyanobacterial genomes.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2714,17 +2714,17 @@ content:
     content:
       - (XLSX)
   - S4 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - Clusters of 120 cyanobacterial strains.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
         Column A denotes the name of the cyanobacteria and the thick borders
         represents a cluster. Column B describe the cluster number. The
-        cyanobacterial strains are arranged in the order shown in 
+        cyanobacterial strains are arranged in the order shown in
       - type: Link
         target: '#pone.0178565.g002'
         content:
@@ -2735,13 +2735,13 @@ content:
     content:
       - (XLSX)
   - S5 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - >-
         Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse
         cyanobacterial genomes across 73 clusters of cyanobacteria.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2754,19 +2754,19 @@ content:
     content:
       - (XLSX)
   - S6 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - >-
         List of genes used for PCA plot and heatmap generation to check for
         mutually exclusive and diverse genes.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
         Column A to C describes about various identifiers and attributes of the
         genes used. Column D describes the Gene Conservation Index (GCI). All
-        the genes are color coded according to the 
+        the genes are color coded according to the
       - type: Link
         target: '#pone.0178565.g003'
         content:
@@ -2777,21 +2777,18 @@ content:
     content:
       - (XLSX)
   - S7 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - >-
         List of conserved genes in our analysis and their gene ontology
         classification.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - (XLSX)
   - S8 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - 'Conservation level of the genes from '
       - type: Emphasis
         content:
@@ -2809,11 +2806,14 @@ content:
           - '7'
         relation: bibr
       - '].'
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
         Column A describe the Protein UniProt IDs of query genes used in the
-        study, Column B to D describe the genes of 
+        study, Column B to D describe the genes of
       - type: Emphasis
         content:
           - S
@@ -2826,10 +2826,7 @@ content:
     content:
       - (XLSX)
   - S9 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - >-
         Conservation level of enzymes in key metabolic pathways based on reduced
         dataset and compared with experimental results on gene essentiality by
@@ -2852,23 +2849,26 @@ content:
           - '35'
         relation: bibr
       - '].'
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - (XLSX)
   - S10 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - >-
         List of genes used for PCA plot and heatmap generation to check the
         group of co-evolving genes.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
         Column A to C describes various identifiers and attributes of the genes
         used. Column D describes the Gene Conservation Index (GCI). All the
-        genes are color coded according to the 
+        genes are color coded according to the
       - type: Link
         target: '#pone.0178565.g006'
         content:
@@ -2879,11 +2879,11 @@ content:
     content:
       - (XLSX)
   - S11 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
+  - content:
       - List of co-evolving genes.
+    depth: 1
+    id: sec016
+    type: Heading
   - type: Paragraph
     content:
       - >-
@@ -2893,1354 +2893,1606 @@ content:
     content:
       - (XLSX)
 references:
-  - type: CreativeWork
-    title: Estimates of global cyanobacterial biomass and its distribution
-    datePublished: '2003'
-    isPartOf:
-      type: CreativeWork
-      name: Algological Studies
-    authors:
-      - type: Person
-        givenNames:
+  - authors:
+      - givenNames:
           - F
         familyNames:
           - Garcia-Pichel
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Belnap
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Neuer
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Schanz
-  - type: CreativeWork
-    datePublished: '2012'
+        type: Person
+    title: Estimates of global cyanobacterial biomass and its distribution
+    type: Article
+    datePublished: '2003'
     isPartOf:
-      type: CreativeWork
-      name: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 213
+      pageEnd: 27
+      isPartOf:
+        title: Algological Studies
+        volumeNumber: 109
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - BA
         familyNames:
           - Whitton
-  - type: CreativeWork
-    title: Unicellular cyanobacteria fix N2 in the subtropical North Pacific Ocean
-    datePublished: '2001'
+        type: Person
+    title: ''
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: Nature
-    authors:
-      - type: Person
-        givenNames:
+      title: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - JP
         familyNames:
           - Zehr
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JB
         familyNames:
           - Waterbury
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PJ
         familyNames:
           - Turner
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JP
         familyNames:
           - Montoya
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Omoregie
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GF
         familyNames:
           - Steward
-  - type: CreativeWork
-    title: >-
-      Rhythm of carbon and nitrogen fixation in unicellular cyanobacteria under
-      turbulent and highly aerobic conditions
-    datePublished: '2013'
+        type: Person
+    title: Unicellular cyanobacteria fix N2 in the subtropical North Pacific Ocean
+    type: Article
+    datePublished: '2001'
     isPartOf:
-      type: CreativeWork
-      name: Biotechnology and bioengineering
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 6847
+      pageStart: 635
+      pageEnd: 8
+      isPartOf:
+        title: Nature
+        volumeNumber: 412
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Krishnakumar
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SB
         familyNames:
           - Gaudana
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GA
         familyNames:
           - Viswanathan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - HB
         familyNames:
           - Pakrasi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PP
         familyNames:
           - Wangikar
-  - type: CreativeWork
+        type: Person
     title: >-
-      Improving the coverage of the cyanobacterial phylum using diversity-driven
-      genome sequencing
+      Rhythm of carbon and nitrogen fixation in unicellular cyanobacteria under
+      turbulent and highly aerobic conditions
+    type: Article
     datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 9
+      pageStart: 2371
+      pageEnd: 9
+      isPartOf:
+        title: Biotechnology and bioengineering
+        volumeNumber: 110
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - PM
         familyNames:
           - Shih
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Wu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Latifi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SD
         familyNames:
           - Axen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DP
         familyNames:
           - Fewer
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Talla
-  - type: CreativeWork
+        type: Person
     title: >-
-      Generic assignments, strain histories and properties of pure cultures of
-      cyanobacteria
-    datePublished: '1979'
+      Improving the coverage of the cyanobacterial phylum using diversity-driven
+      genome sequencing
+    type: Article
+    datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Microbiology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 3
+      pageStart: 1053
+      pageEnd: 8
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 110
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - R
         familyNames:
           - Rippka
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Deruelles
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JB
         familyNames:
           - Waterbury
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Herdman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RY
         familyNames:
           - Stanier
-  - type: CreativeWork
-    title: 'Genome evolution in cyanobacteria: the stable core and the variable shell'
-    datePublished: '2008'
+        type: Person
+    title: >-
+      Generic assignments, strain histories and properties of pure cultures of
+      cyanobacteria
+    type: Article
+    datePublished: '1979'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 1
+      pageEnd: 61
+      isPartOf:
+        title: Microbiology
+        volumeNumber: 111
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - T
         familyNames:
           - Shi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PG
         familyNames:
           - Falkowski
-  - type: CreativeWork
-    title: >-
-      The diversity of cyanobacterial metabolism: genome analysis of multiple
-      phototrophic microorganisms
-    datePublished: '2012'
+        type: Person
+    title: 'Genome evolution in cyanobacteria: the stable core and the variable shell'
+    type: Article
+    datePublished: '2008'
     isPartOf:
-      type: CreativeWork
-      name: BMC genomics
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 7
+      pageStart: 2510
+      pageEnd: 5
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 105
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - C
         familyNames:
           - Beck
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Knoop
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - IM
         familyNames:
           - Axmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Steuer
-  - type: CreativeWork
-    title: 'Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol'
-    datePublished: '2013'
+        type: Person
+    title: >-
+      The diversity of cyanobacterial metabolism: genome analysis of multiple
+      phototrophic microorganisms
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 1
+      isPartOf:
+        title: BMC genomics
+        volumeNumber: 13
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - JW
         familyNames:
           - Oliver
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - IM
         familyNames:
           - Machado
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - H
         familyNames:
           - Yoneda
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Atsumi
-  - type: CreativeWork
-    title: Cyanobacteria as a platform for biofuel production
+        type: Person
+    title: 'Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol'
+    type: Article
     datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Frontiers in bioengineering and biotechnology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 4
+      pageStart: 1249
+      pageEnd: 54
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 110
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - NE
         familyNames:
           - Nozzi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JW
         familyNames:
           - Oliver
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Atsumi
-  - type: CreativeWork
-    title: Metabolic fluxes and metabolic engineering
-    datePublished: '1999'
+        type: Person
+    title: Cyanobacteria as a platform for biofuel production
+    type: Article
+    datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Metabolic engineering
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 7
+      title: Frontiers in bioengineering and biotechnology
+      volumeNumber: 1
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - G
         familyNames:
           - Stephanopoulos
-  - type: CreativeWork
-    title: >-
-      Experimental and computational assessment of conditionally essential genes
-      in Escherichia coli
-    datePublished: '2006'
+        type: Person
+    title: Metabolic fluxes and metabolic engineering
+    type: Article
+    datePublished: '1999'
     isPartOf:
-      type: CreativeWork
-      name: Journal of bacteriology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 1
+      pageEnd: 11
+      isPartOf:
+        title: Metabolic engineering
+        volumeNumber: 1
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - AR
         familyNames:
           - Joyce
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JL
         familyNames:
           - Reed
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - White
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Edwards
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Osterman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Baba
-  - type: CreativeWork
+        type: Person
     title: >-
-      A postgenomic method for predicting essential genes at subsaturation
-      levels of mutagenesis: application to Mycobacterium tuberculosis
-    datePublished: '2003'
+      Experimental and computational assessment of conditionally essential genes
+      in Escherichia coli
+    type: Article
+    datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 23
+      pageStart: 8259
+      pageEnd: 71
+      isPartOf:
+        title: Journal of bacteriology
+        volumeNumber: 188
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - G
         familyNames:
           - Lamichhane
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Zignol
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - NJ
         familyNames:
           - Blades
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DE
         familyNames:
           - Geiman
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Dougherty
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Grosset
-  - type: CreativeWork
+        type: Person
     title: >-
-      Genome-scale reconstruction of the metabolic network in Staphylococcus
-      aureus N315: an initial draft to the two-dimensional annotation
-    datePublished: '2005'
+      A postgenomic method for predicting essential genes at subsaturation
+      levels of mutagenesis: application to Mycobacterium tuberculosis
+    type: Article
+    datePublished: '2003'
     isPartOf:
-      type: CreativeWork
-      name: BMC microbiology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 12
+      pageStart: 7213
+      pageEnd: 8
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 100
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - SA
         familyNames:
           - Becker
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BØ
         familyNames:
           - Palsson
-  - type: CreativeWork
-    title: 'The minimal cell genome:" on being the right size"'
-    datePublished: '1996'
+        type: Person
+    title: >-
+      Genome-scale reconstruction of the metabolic network in Staphylococcus
+      aureus N315: an initial draft to the two-dimensional annotation
+    type: Article
+    datePublished: '2005'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 1
+      isPartOf:
+        title: BMC microbiology
+        volumeNumber: 5
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Maniloff
-  - type: CreativeWork
-    title: Functional profiling of the Saccharomyces cerevisiae genome
-    datePublished: '2002'
+        type: Person
+    title: 'The minimal cell genome:" on being the right size"'
+    type: Article
+    datePublished: '1996'
     isPartOf:
-      type: CreativeWork
-      name: nature
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 19
+      pageStart: 10004
+      pageEnd: 6
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 93
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - G
         familyNames:
           - Giaever
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AM
         familyNames:
           - Chu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Ni
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Connelly
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Riles
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Veronneau
-  - type: CreativeWork
-    title: Genome-wide screening for gene function using RNAi in mammalian cells
-    datePublished: '2005'
+        type: Person
+    title: Functional profiling of the Saccharomyces cerevisiae genome
+    type: Article
+    datePublished: '2002'
     isPartOf:
-      type: CreativeWork
-      name: Immunology and cell biology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 6896
+      pageStart: 387
+      pageEnd: 91
+      isPartOf:
+        title: nature
+        volumeNumber: 418
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - LM
         familyNames:
           - Cullen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GM
         familyNames:
           - Arndt
-  - type: CreativeWork
-    title: The essential gene set of a photosynthetic organism
-    datePublished: '2015'
+        type: Person
+    title: Genome-wide screening for gene function using RNAi in mammalian cells
+    type: Article
+    datePublished: '2005'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 3
+      pageStart: 217
+      pageEnd: 23
+      isPartOf:
+        title: Immunology and cell biology
+        volumeNumber: 83
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - BE
         familyNames:
           - Rubin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - KM
         familyNames:
           - Wetmore
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MN
         familyNames:
           - Price
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Diamond
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RK
         familyNames:
           - Shultzaberger
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - LC
         familyNames:
           - Lowe
-  - type: CreativeWork
-    title: Lethality and centrality in protein networks
-    datePublished: '2001'
+        type: Person
+    title: The essential gene set of a photosynthetic organism
+    type: Article
+    datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: Nature
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 48
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 112
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - H
         familyNames:
           - Jeong
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SP
         familyNames:
           - Mason
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A-L
         familyNames:
           - Barabási
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - ZN
         familyNames:
           - Oltvai
-  - type: CreativeWork
-    title: >-
-      Gene co-expression network topology provides a framework for molecular
-      characterization of cellular state
-    datePublished: '2004'
+        type: Person
+    title: Lethality and centrality in protein networks
+    type: Article
+    datePublished: '2001'
     isPartOf:
-      type: CreativeWork
-      name: Bioinformatics
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 6833
+      pageStart: 41
+      pageEnd: 2
+      isPartOf:
+        title: Nature
+        volumeNumber: 411
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - SL
         familyNames:
           - Carter
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CM
         familyNames:
           - Brechbühler
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Griffin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AT
         familyNames:
           - Bond
-  - type: CreativeWork
+        type: Person
     title: >-
-      Computational prediction of essential metabolic genes using
-      constraint-based approaches
-    datePublished: '2015'
+      Gene co-expression network topology provides a framework for molecular
+      characterization of cellular state
+    type: Article
+    datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: 'Gene Essentiality: Methods and Protocols'
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 14
+      pageStart: 2242
+      pageEnd: 50
+      isPartOf:
+        title: Bioinformatics
+        volumeNumber: 20
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - G
         familyNames:
           - Basler
-  - type: CreativeWork
-    title: Genome‐scale gene/reaction essentiality and synthetic lethality analysis
-    datePublished: '2009'
+        type: Person
+    title: >-
+      Computational prediction of essential metabolic genes using
+      constraint-based approaches
+    type: Article
+    datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: Molecular systems biology
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 183
+      pageEnd: 204
+      title: 'Gene Essentiality: Methods and Protocols'
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - PF
         familyNames:
           - Suthers
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Zomorrodi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CD
         familyNames:
           - Maranas
-  - type: CreativeWork
-    title: >-
-      Metabolic model of Synechococcus sp. PCC 7002: Prediction of flux
-      distribution and network modification for enhanced biofuel production
-    datePublished: '2016'
+        type: Person
+    title: Genome‐scale gene/reaction essentiality and synthetic lethality analysis
+    type: Article
+    datePublished: '2009'
     isPartOf:
-      type: CreativeWork
-      name: Bioresource technology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 301
+      isPartOf:
+        title: Molecular systems biology
+        volumeNumber: 5
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - JI
         familyNames:
           - Hendry
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - CB
         familyNames:
           - Prasannan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Joshi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Dasgupta
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PP
         familyNames:
           - Wangikar
-  - type: CreativeWork
+        type: Person
     title: >-
-      Metabolic flux analysis of Cyanothece sp. ATCC 51142 under mixotrophic
-      conditions
-    datePublished: '2013'
+      Metabolic model of Synechococcus sp. PCC 7002: Prediction of flux
+      distribution and network modification for enhanced biofuel production
+    type: Article
+    datePublished: '2016'
     isPartOf:
-      type: CreativeWork
-      name: Photosynthesis research
-    authors:
-      - type: Person
-        givenNames:
+      title: Bioresource technology
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Alagesan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SB
         familyNames:
           - Gaudana
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - A
         familyNames:
           - Sinha
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PP
         familyNames:
           - Wangikar
-  - type: CreativeWork
-    title: Whole-genome analysis of photosynthetic prokaryotes
-    datePublished: '2002'
+        type: Person
+    title: >-
+      Metabolic flux analysis of Cyanothece sp. ATCC 51142 under mixotrophic
+      conditions
+    type: Article
+    datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Science
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 191
+      pageEnd: 8
+      isPartOf:
+        title: Photosynthesis research
+        volumeNumber: 118
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Raymond
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - O
         familyNames:
           - Zhaxybayeva
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JP
         familyNames:
           - Gogarten
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SY
         familyNames:
           - Gerdes
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RE
         familyNames:
           - Blankenship
-  - type: CreativeWork
-    title: >-
-      Genome fluctuations in cyanobacteria reflect evolutionary, developmental
-      and adaptive traits
-    datePublished: '2011'
+        type: Person
+    title: Whole-genome analysis of photosynthetic prokaryotes
+    type: Article
+    datePublished: '2002'
     isPartOf:
-      type: CreativeWork
-      name: BMC evolutionary biology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 5598
+      pageStart: 1616
+      pageEnd: 20
+      isPartOf:
+        title: Science
+        volumeNumber: 298
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - J
         familyNames:
           - Larsson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JA
         familyNames:
           - Nylander
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Bergman
-  - type: CreativeWork
+        type: Person
     title: >-
-      Assigning protein functions by comparative genome analysis: protein
-      phylogenetic profiles
-    datePublished: '1999'
+      Genome fluctuations in cyanobacteria reflect evolutionary, developmental
+      and adaptive traits
+    type: Article
+    datePublished: '2011'
     isPartOf:
-      type: CreativeWork
-      name: Proceedings of the National Academy of Sciences
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 1
+      isPartOf:
+        title: BMC evolutionary biology
+        volumeNumber: 11
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - M
         familyNames:
           - Pellegrini
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EM
         familyNames:
           - Marcotte
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MJ
         familyNames:
           - Thompson
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - D
         familyNames:
           - Eisenberg
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TO
         familyNames:
           - Yeates
-  - type: CreativeWork
-    title: 'CD-HIT: accelerated for clustering the next-generation sequencing data'
-    datePublished: '2012'
+        type: Person
+    title: >-
+      Assigning protein functions by comparative genome analysis: protein
+      phylogenetic profiles
+    type: Article
+    datePublished: '1999'
     isPartOf:
-      type: CreativeWork
-      name: Bioinformatics
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 8
+      pageStart: 4285
+      pageEnd: 8
+      isPartOf:
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 96
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - L
         familyNames:
           - Fu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Niu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - Z
         familyNames:
           - Zhu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Wu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - W
         familyNames:
           - Li
-  - type: CreativeWork
-    title: A global analysis of adaptive evolution of operons in cyanobacteria
-    datePublished: '2013'
+        type: Person
+    title: 'CD-HIT: accelerated for clustering the next-generation sequencing data'
+    type: Article
+    datePublished: '2012'
     isPartOf:
-      type: CreativeWork
-      name: Antonie Van Leeuwenhoek
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 23
+      pageStart: 3150
+      pageEnd: 2
+      isPartOf:
+        title: Bioinformatics
+        volumeNumber: 28
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - D
         familyNames:
           - Memon
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AK
         familyNames:
           - Singh
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - HB
         familyNames:
           - Pakrasi
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PP
         familyNames:
           - Wangikar
-  - type: CreativeWork
+        type: Person
+    title: A global analysis of adaptive evolution of operons in cyanobacteria
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      issueNumber: 2
+      pageStart: 331
+      pageEnd: 46
+      isPartOf:
+        title: Antonie Van Leeuwenhoek
+        volumeNumber: 103
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Strauss
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Kinsland
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Ge
+        type: Person
+      - givenNames:
+          - FW
+        familyNames:
+          - McLafferty
+        type: Person
+      - givenNames:
+          - TP
+        familyNames:
+          - Begley
+        type: Person
     title: >-
       Phosphopantothenoylcysteine synthetase from Escherichia coli
       Identification and characterization of the last unidentified coenzyme A
       biosynthetic enzyme in bacteria
+    type: Article
     datePublished: '2001'
     isPartOf:
-      type: CreativeWork
-      name: Journal of Biological Chemistry
-    authors:
-      - type: Person
-        givenNames:
-          - E
-        familyNames:
-          - Strauss
-      - type: Person
-        givenNames:
-          - C
-        familyNames:
-          - Kinsland
-      - type: Person
-        givenNames:
-          - 'Y'
-        familyNames:
-          - Ge
-      - type: Person
-        givenNames:
-          - FW
-        familyNames:
-          - McLafferty
-      - type: Person
-        givenNames:
-          - TP
-        familyNames:
-          - Begley
-  - type: CreativeWork
-    title: >-
-      Structure and function of the phenazine biosynthesis protein PhzF from
-      Pseudomonas fluorescens 2–79
-    datePublished: '2004'
-    isPartOf:
-      type: CreativeWork
-      name: Biochemistry
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 17
+      pageStart: 13513
+      pageEnd: 6
+      isPartOf:
+        title: Journal of Biological Chemistry
+        volumeNumber: 276
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - JF
         familyNames:
           - Parsons
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - F
         familyNames:
           - Song
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Parsons
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - K
         familyNames:
           - Calabrese
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - E
         familyNames:
           - Eisenstein
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JE
         familyNames:
           - Ladner
-  - type: CreativeWork
+        type: Person
     title: >-
-      Structure and function of the phenazine biosynthetic protein PhzF from
-      Pseudomonas fluorescens
+      Structure and function of the phenazine biosynthesis protein PhzF from
+      Pseudomonas fluorescens 2–79
+    type: Article
     datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: >-
-        Proceedings of the National Academy of Sciences of the United States of
-        America
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 39
+      pageStart: 12427
+      pageEnd: 35
+      isPartOf:
+        title: Biochemistry
+        volumeNumber: 43
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - W
         familyNames:
           - Blankenfeldt
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - AP
         familyNames:
           - Kuzin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - T
         familyNames:
           - Skarina
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'Y'
         familyNames:
           - Korniyenko
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - L
         familyNames:
           - Tong
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - P
         familyNames:
           - Bayer
-  - type: CreativeWork
-    title: Circadian rhythms in cyanobacteria
-    datePublished: '2015'
+        type: Person
+    title: >-
+      Structure and function of the phenazine biosynthetic protein PhzF from
+      Pseudomonas fluorescens
+    type: Article
+    datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: Microbiology and Molecular Biology Reviews
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 47
+      pageStart: 16431
+      pageEnd: 6
+      isPartOf:
+        title: >-
+          Proceedings of the National Academy of Sciences of the United States
+          of America
+        volumeNumber: 101
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - SE
         familyNames:
           - Cohen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - SS
         familyNames:
           - Golden
-  - type: CreativeWork
-    title: >-
-      Rhythmic and sustained oscillations in metabolism and gene expression of
-      Cyanothece sp. ATCC 51142 under constant light
-    datePublished: '2013'
+        type: Person
+    title: Circadian rhythms in cyanobacteria
+    type: Article
+    datePublished: '2015'
     isPartOf:
-      type: CreativeWork
-      name: Frontiers in microbiology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 4
+      pageStart: 373
+      pageEnd: 85
+      isPartOf:
+        title: Microbiology and Molecular Biology Reviews
+        volumeNumber: 79
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - SB
         familyNames:
           - Gaudana
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Krishnakumar
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Alagesan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MG
         familyNames:
           - Digmurti
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - GA
         familyNames:
           - Viswanathan
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - M
         familyNames:
           - Chetty
-  - type: CreativeWork
-    title: Cyanobacterial signature genes
-    datePublished: '2003'
+        type: Person
+    title: >-
+      Rhythmic and sustained oscillations in metabolism and gene expression of
+      Cyanothece sp. ATCC 51142 under constant light
+    type: Article
+    datePublished: '2013'
     isPartOf:
-      type: CreativeWork
-      name: Photosynthesis research
-    authors:
-      - type: Person
-        givenNames:
+      pageStart: 374
+      title: Frontiers in microbiology
+      volumeNumber: 4
+      type: PublicationVolume
+  - authors:
+      - givenNames:
           - KA
         familyNames:
           - Martin
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - JL
         familyNames:
           - Siefert
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Yerrapragada
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'Y'
         familyNames:
           - Lu
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - TZ
         familyNames:
           - McNeill
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PA
         familyNames:
           - Moreno
-  - type: CreativeWork
-    title: >-
-      Photosystem II proteins PsbL and PsbJ regulate electron flow to the
-      plastoquinone pool
-    datePublished: '2004'
+        type: Person
+    title: Cyanobacterial signature genes
+    type: Article
+    datePublished: '2003'
     isPartOf:
-      type: CreativeWork
-      name: Biochemistry
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 3
+      pageStart: 211
+      pageEnd: 21
+      isPartOf:
+        title: Photosynthesis research
+        volumeNumber: 75
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - I
         familyNames:
           - Ohad
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - C
         familyNames:
           - Dal
           - Bosco
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RG
         familyNames:
           - Herrmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Meurer
-  - type: CreativeWork
+        type: Person
     title: >-
-      Protein assembly of photosystem II and accumulation of subcomplexes in the
-      absence of low molecular mass subunits PsbL and PsbJ
+      Photosystem II proteins PsbL and PsbJ regulate electron flow to the
+      plastoquinone pool
+    type: Article
     datePublished: '2004'
     isPartOf:
-      type: CreativeWork
-      name: European Journal of Biochemistry
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 8
+      pageStart: 2297
+      pageEnd: 308
+      isPartOf:
+        title: Biochemistry
+        volumeNumber: 43
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - M
         familyNames:
           - Suorsa
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RE
         familyNames:
           - Regel
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - V
         familyNames:
           - Paakkarinen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - 'N'
         familyNames:
           - Battchikova
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - RG
         familyNames:
           - Herrmann
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EM
         familyNames:
           - Aro
-  - type: CreativeWork
+        type: Person
+    title: >-
+      Protein assembly of photosystem II and accumulation of subcomplexes in the
+      absence of low molecular mass subunits PsbL and PsbJ
+    type: Article
+    datePublished: '2004'
+    isPartOf:
+      issueNumber: 1
+      pageStart: 96
+      pageEnd: 107
+      isPartOf:
+        title: European Journal of Biochemistry
+        volumeNumber: 271
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Burda
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Kruk
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Borgstädt
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Stanek
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Strzaka
+        type: Person
+      - givenNames:
+          - GH
+        familyNames:
+          - Schmid
+        type: Person
     title: >-
       Mössbauer studies of the non‐heme iron and cytochrome b 559 in a
       Chlamydomonas reinhardtii PSI− mutant and their interactions with
       α‐tocopherol quinone
+    type: Article
     datePublished: '2003'
     isPartOf:
-      type: CreativeWork
-      name: FEBS letters
-    authors:
-      - type: Person
-        givenNames:
-          - K
-        familyNames:
-          - Burda
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 159
+      pageEnd: 65
+      isPartOf:
+        title: FEBS letters
+        volumeNumber: 535
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - J
         familyNames:
-          - Kruk
-      - type: Person
-        givenNames:
-          - R
+          - Liu
+        type: Person
+      - givenNames:
+          - 'N'
         familyNames:
-          - Borgstädt
-      - type: Person
-        givenNames:
-          - J
+          - Quinn
+        type: Person
+      - givenNames:
+          - GA
         familyNames:
-          - Stanek
-      - type: Person
-        givenNames:
-          - K
+          - Berchtold
+        type: Person
+      - givenNames:
+          - CT
         familyNames:
-          - Strzaka
-      - type: Person
-        givenNames:
-          - GH
-        familyNames:
-          - Schmid
-  - type: CreativeWork
+          - Walsh
+        type: Person
     title: >-
       Overexpression, purification and characterization of isochorismate
       synthase (EntC), the first enzyme involved in the biosynthesis of
       enterobactin from chorismate
+    type: Article
     datePublished: '1990'
     isPartOf:
-      type: CreativeWork
-      name: Biochemistry
-    authors:
-      - type: Person
-        givenNames:
-          - J
-        familyNames:
-          - Liu
-      - type: Person
-        givenNames:
-          - 'N'
-        familyNames:
-          - Quinn
-      - type: Person
-        givenNames:
-          - GA
-        familyNames:
-          - Berchtold
-      - type: Person
-        givenNames:
-          - CT
-        familyNames:
-          - Walsh
-  - type: CreativeWork
-    title: 'Amino acid sequence homology among fructose-1, 6-bisphosphatases'
-    datePublished: '1986'
-    isPartOf:
-      type: CreativeWork
-      name: Biochemical and biophysical research communications
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 6
+      pageStart: 1417
+      pageEnd: 25
+      isPartOf:
+        title: Biochemistry
+        volumeNumber: 29
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - F
         familyNames:
           - Marcus
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - B
         familyNames:
           - Gontero
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PB
         familyNames:
           - Harrsch
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - J
         familyNames:
           - Rittenhouse
-  - type: CreativeWork
-    title: >-
-      Genetic tagging, cloning, and DNA sequence of the Synechococcus sp. strain
-      PCC 7942 gene (gnd) encoding 6-phosphogluconate dehydrogenase
-    datePublished: '1990'
+        type: Person
+    title: 'Amino acid sequence homology among fructose-1, 6-bisphosphatases'
+    type: Article
+    datePublished: '1986'
     isPartOf:
-      type: CreativeWork
-      name: Journal of bacteriology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 2
+      pageStart: 374
+      pageEnd: 81
+      isPartOf:
+        title: Biochemical and biophysical research communications
+        volumeNumber: 135
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - S
         familyNames:
           - Broedel
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - R
         familyNames:
           - Wolf
-  - type: CreativeWork
-    title: Gas vesicle proteins
-    datePublished: '1989'
+        type: Person
+    title: >-
+      Genetic tagging, cloning, and DNA sequence of the Synechococcus sp. strain
+      PCC 7942 gene (gnd) encoding 6-phosphogluconate dehydrogenase
+    type: Article
+    datePublished: '1990'
     isPartOf:
-      type: CreativeWork
-      name: Biochemical Journal
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 7
+      pageStart: 4023
+      pageEnd: 31
+      isPartOf:
+        title: Journal of bacteriology
+        volumeNumber: 172
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - AE
         familyNames:
           - Walsby
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - PK
         familyNames:
           - Hayes
-  - type: CreativeWork
-    title: >-
-      Structure and organization of the gas vesicle gene cluster on the
-      Halobacterium halobium plasmid pNRC100
-    datePublished: '1991'
+        type: Person
+    title: Gas vesicle proteins
+    type: Article
+    datePublished: '1989'
     isPartOf:
-      type: CreativeWork
-      name: Gene
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 2
+      pageStart: 313
+      isPartOf:
+        title: Biochemical Journal
+        volumeNumber: 264
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - JG
         familyNames:
           - Jones
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DC
         familyNames:
           - Young
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - DasSarma
-  - type: CreativeWork
+        type: Person
     title: >-
-      The plasmid-encoded arsenical resistance pump: an anion-translocating
-      ATPase
-    datePublished: '1990'
+      Structure and organization of the gas vesicle gene cluster on the
+      Halobacterium halobium plasmid pNRC100
+    type: Article
+    datePublished: '1991'
     isPartOf:
-      type: CreativeWork
-      name: Research in microbiology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 117
+      pageEnd: 22
+      isPartOf:
+        title: Gene
+        volumeNumber: 102
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - B
         familyNames:
           - Rosen
-  - type: CreativeWork
+        type: Person
     title: >-
-      Structure of the ArsA ATPase: the catalytic subunit of a heavy metal
-      resistance pump
-    datePublished: '2000'
+      The plasmid-encoded arsenical resistance pump: an anion-translocating
+      ATPase
+    type: Article
+    datePublished: '1990'
     isPartOf:
-      type: CreativeWork
-      name: The EMBO journal
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 3
+      pageStart: 336
+      pageEnd: 41
+      isPartOf:
+        title: Research in microbiology
+        volumeNumber: 141
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - T
         familyNames:
           - Zhou
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Radaev
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - BP
         familyNames:
           - Rosen
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - DL
         familyNames:
           - Gatti
-  - type: CreativeWork
-    title: Functional promiscuity of homologues of the bacterial ArsA ATPases
-    datePublished: '2010'
+        type: Person
+    title: >-
+      Structure of the ArsA ATPase: the catalytic subunit of a heavy metal
+      resistance pump
+    type: Article
+    datePublished: '2000'
     isPartOf:
-      type: CreativeWork
-      name: International journal of microbiology
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 17
+      pageStart: 4838
+      pageEnd: 45
+      isPartOf:
+        title: The EMBO journal
+        volumeNumber: 19
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - R
         familyNames:
           - Castillo
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - MH
         familyNames:
           - Saier
-  - type: CreativeWork
+        type: Person
+    title: Functional promiscuity of homologues of the bacterial ArsA ATPases
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 2010
+      title: International journal of microbiology
+      type: PublicationVolume
+  - authors:
+      - givenNames:
+          - KS
+        familyNames:
+          - Makarova
+        type: Person
+      - givenNames:
+          - NV
+        familyNames:
+          - Grishin
+        type: Person
+      - givenNames:
+          - SA
+        familyNames:
+          - Shabalina
+        type: Person
+      - givenNames:
+          - YI
+        familyNames:
+          - Wolf
+        type: Person
+      - givenNames:
+          - EV
+        familyNames:
+          - Koonin
+        type: Person
     title: >-
       A putative RNA-interference-based immune system in prokaryotes:
       computational analysis of the predicted enzymatic machinery, functional
       analogies with eukaryotic RNAi, and hypothetical mechanisms of action
+    type: Article
     datePublished: '2006'
     isPartOf:
-      type: CreativeWork
-      name: Biology direct
-    authors:
-      - type: Person
-        givenNames:
-          - KS
-        familyNames:
-          - Makarova
-      - type: Person
-        givenNames:
-          - NV
-        familyNames:
-          - Grishin
-      - type: Person
-        givenNames:
-          - SA
-        familyNames:
-          - Shabalina
-      - type: Person
-        givenNames:
-          - YI
-        familyNames:
-          - Wolf
-      - type: Person
-        givenNames:
-          - EV
-        familyNames:
-          - Koonin
-  - type: CreativeWork
-    title: >-
-      Helicase dissociation and annealing of RNA-DNA hybrids by Escherichia coli
-      Cas3 protein
-    datePublished: '2011'
-    isPartOf:
-      type: CreativeWork
-      name: Biochemical Journal
-    authors:
-      - type: Person
-        givenNames:
+      issueNumber: 1
+      pageStart: 1
+      isPartOf:
+        title: Biology direct
+        volumeNumber: 1
+        type: PublicationVolume
+      type: PublicationIssue
+  - authors:
+      - givenNames:
           - JA
         familyNames:
           - Howard
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - S
         familyNames:
           - Delmas
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - I
         familyNames:
           - Ivančić-Baće
-      - type: Person
-        givenNames:
+        type: Person
+      - givenNames:
           - EL
         familyNames:
           - Bolt
+        type: Person
+    title: >-
+      Helicase dissociation and annealing of RNA-DNA hybrids by Escherichia coli
+      Cas3 protein
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      issueNumber: 1
+      pageStart: 85
+      pageEnd: 95
+      isPartOf:
+        title: Biochemical Journal
+        volumeNumber: 439
+        type: PublicationVolume
+      type: PublicationIssue
