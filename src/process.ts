@@ -2,7 +2,8 @@ import stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
-import { coerce, validate } from './util/index'
+import { coerce } from './util/coerce'
+import { validate } from './util/validate'
 
 /**
  * Process a node

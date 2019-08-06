@@ -12,7 +12,7 @@ import {
 import childProcess from 'child_process'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
-import { wrapInBlockNode } from '../../util/index'
+import { ensureBlockContent } from '../../util/ensureBlockContent'
 import * as vfile from '../../util/vfile'
 import * as rpng from '../rpng'
 import { binary, dataDir } from './binary'
@@ -542,7 +542,7 @@ function encodeList(
     { t: Pandoc.ListNumberDelim.DefaultDelim }
   ]
   const blocks: Pandoc.Block[][] = node.items.map(listItem => {
-    return listItem.content.map(wrapInBlockNode).map(encodeBlock)
+    return listItem.content.map(ensureBlockContent).map(encodeBlock)
   })
   if (node.order === 'ascending') {
     return { t: 'OrderedList', c: [listAttrs, blocks] }
