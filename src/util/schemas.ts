@@ -14,7 +14,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import { match } from '..'
 import * as vfile from './vfile'
-import {getLogger} from '@stencila/logga'
+import { getLogger } from '@stencila/logga'
 
 const log = getLogger('encoda:coerce')
 
@@ -81,7 +81,8 @@ export async function readSchema<Key extends keyof stencila.Types>(
 export async function getSchema<Key extends keyof stencila.Types>(
   type: Key
 ): Promise<stencila.Schema> {
-  return schemas.has(type) ? schemas.get(type) : readSchema(type)
+  const schema = schemas.get(type)
+  return schema !== undefined ? schema : readSchema(type)
 }
 
 /**
@@ -157,8 +158,7 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
     if (/^No codec could be found/.test(error.message)) {
       log.warn(error.message)
       return true
-    }
-    else throw error
+    } else throw error
   }
 
   let decoded: stencila.Node
