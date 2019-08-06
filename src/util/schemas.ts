@@ -2,8 +2,8 @@
  * @module schemas
  *
  * Several other modules use the JSON Schemas from `@stencila/schema`.
- * This module provides a single place for lazily, and asynchronously
- * loading the schemas, to avoid each of those other modules duplicating
+ * This module provides a single place for lazily, and asynchronously,
+ * loading the schemas to avoid each of those other modules duplicating
  * that effort.
  */
 
@@ -14,6 +14,9 @@ import fs from 'fs-extra'
 import path from 'path'
 import { match } from '..'
 import * as vfile from './vfile'
+import {getLogger} from '@stencila/logga'
+
+const log = getLogger('encoda:coerce')
 
 /**
  * Cache of `Schema` objects
@@ -119,9 +122,12 @@ export async function getCoecer<Key extends keyof stencila.Types>(
 /**
  * Custom validation function that handles the `codec`
  * keyword for coercing functions.
+ *
+ * If the codec is not found a warning is emitted but
+ * it is not an error.
  */
-const codecValidate: Ajv.SchemaValidateFunction = async (
-  codeName: string,
+const codecCoerce: Ajv.SchemaValidateFunction = async (
+  codecName: string,
   data: string,
   parentSchema?: object,
   dataPath?: string,
@@ -144,15 +150,23 @@ const codecValidate: Ajv.SchemaValidateFunction = async (
     ])
   }
 
-  const codec = await match(undefined, codeName)
-  if (!codec) raise(`no such codec: "${codeName}"`)
+  let codec
+  try {
+    codec = await match(undefined, codecName)
+  } catch (error) {
+    if (/^No codec could be found/.test(error.message)) {
+      log.warn(error.message)
+      return true
+    }
+    else throw error
+  }
 
   let decoded: stencila.Node
   try {
     decoded = codec.decode(vfile.load(data))
   } catch (error) {
     const decodeError = error.message.split('\n')[0]
-    raise(`error using "${codeName}" codec: ${decodeError}`)
+    raise(`error using "${codecName}" codec: ${decodeError}`)
   }
 
   if (parentData !== undefined && parentDataProperty !== undefined) {
@@ -166,7 +180,7 @@ coercers.addKeyword('codec', {
   type: 'string',
   modifying: true,
   async: true,
-  validate: codecValidate
+  validate: codecCoerce
 })
 
 /**
