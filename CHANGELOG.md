@@ -1,3 +1,17 @@
+# [0.62.0](https://github.com/stencila/encoda/compare/v0.61.2...v0.62.0) (2019-08-06)
+
+
+### Bug Fixes
+
+* **Coerce:** Do not remove additional properties ([12adaf6](https://github.com/stencila/encoda/commit/12adaf6))
+* **Coerce:** Log a warning if the codec is not found ([d523f42](https://github.com/stencila/encoda/commit/d523f42))
+* **Deps:** Update @stencila/schema to 0.24.0 ([fd2e9ad](https://github.com/stencila/encoda/commit/fd2e9ad))
+
+
+### Features
+
+* **CLI:** Add coerce and validate functions to CLI ([fb62478](https://github.com/stencila/encoda/commit/fb62478))
+
 ## [0.61.2](https://github.com/stencila/encoda/compare/v0.61.1...v0.61.2) (2019-08-02)
 
 
