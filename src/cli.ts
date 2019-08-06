@@ -42,7 +42,8 @@ import './boot'
 // eslint-disable-next-line import/no-named-default
 import { default as processNode } from './process'
 import * as puppeteer from './util/puppeteer'
-import { coerce, validate } from './util'
+import { coerce } from './util/coerce'
+import { validate } from './util/validate'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
