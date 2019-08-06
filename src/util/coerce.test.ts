@@ -32,6 +32,7 @@ describe('coerce', () => {
       type: 'Person',
       name: '42'
     })
+
     expect(
       await coerce(
         {
@@ -42,6 +43,22 @@ describe('coerce', () => {
     ).toEqual({
       type: 'Person',
       name: ''
+    })
+  })
+
+  it('will rename properties using aliases', async () => {
+    expect(
+      await coerce(
+        {
+          type: 'Person',
+          givenName: 'John', // An alias defined on Person
+          alternateName: 'Jono' // An alias inherited from Thing
+        }
+      )
+    ).toEqual({
+      type: 'Person',
+      givenNames: ['John'],
+      alternateNames: ['Jono']
     })
   })
 
