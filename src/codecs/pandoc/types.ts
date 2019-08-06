@@ -214,17 +214,17 @@ export type HorizontalRule = Element<'HorizontalRule'>
  */
 export interface Table {
   t: 'Table'
-  c: [Inline[], Alignment[], number[], TableCell[], TableCell[][]]
+  c: [Inline[], { t: Alignment }[], number[], TableCell[], TableCell[][]]
 }
 
 /**
  * Alignment of a table column.
  */
-export enum Alignment {
-  'AlignLeft',
-  'AlignRight',
-  'AlignCenter',
-  'AlignDefault'
+export const enum Alignment {
+  AlignLeft = 'AlignLeft',
+  AlignRight = 'AlignRight',
+  AlignCenter = 'AlignCenter',
+  AlignDefault = 'AlignDefault'
 }
 
 /**

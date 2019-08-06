@@ -10,6 +10,7 @@ import {
   nodeType
 } from '@stencila/schema/dist/util'
 import childProcess from 'child_process'
+import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
 import { Encode, EncodeOptions, write } from '../..'
 import { wrapInBlockNode } from '../../util/index'
@@ -590,10 +591,17 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
  * Encode Stencila `Table` to a Pandoc `Table`.
  */
 function encodeTable(node: stencila.Table): Pandoc.Table {
+  const columnCount = node.rows[0].cells.length
+
   const caption: Pandoc.Inline[] = []
-  const aligns: Pandoc.Alignment[] = []
-  const widths: number[] = []
+  const aligns: { t: Pandoc.Alignment }[] = makeBy(columnCount, () => ({
+    t: Pandoc.Alignment.AlignDefault
+  }))
+
+  const widths: number[] = makeBy(columnCount, () => 0)
+
   let head: Pandoc.TableCell[] = []
+
   if (node.rows.length > 0) {
     head = node.rows[0].cells.map(cell => {
       // TODO: currently need to wrap stencila.InlineContent[] to pandoc.Block[][]; this will change
