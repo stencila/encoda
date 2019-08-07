@@ -1,3 +1,10 @@
+## [0.62.1](https://github.com/stencila/encoda/compare/v0.62.0...v0.62.1) (2019-08-07)
+
+
+### Bug Fixes
+
+* **Pandoc:** Fix encoding of Table nodes ([e7f882b](https://github.com/stencila/encoda/commit/e7f882b))
+
 # [0.62.0](https://github.com/stencila/encoda/compare/v0.61.2...v0.62.0) (2019-08-06)
 
 
