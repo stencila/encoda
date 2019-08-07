@@ -213,8 +213,18 @@ const kitchenSink: testCase = {
         t: 'Table',
         c: [
           [],
-          [],
-          [],
+          [
+            {
+              t: Pandoc.Alignment.AlignDefault
+            },
+            {
+              t: Pandoc.Alignment.AlignDefault
+            },
+            {
+              t: Pandoc.Alignment.AlignDefault
+            }
+          ],
+          [0, 0, 0],
           [
             [{ t: 'Para', c: [{ t: 'Str', c: 'A' }] }],
             [{ t: 'Para', c: [{ t: 'Str', c: 'B' }] }],
