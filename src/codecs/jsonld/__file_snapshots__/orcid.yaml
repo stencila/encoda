@@ -1,0 +1,79 @@
+'@context': 'http://schema.org'
+id: 'http://orcid.org/0000-0002-1825-0097'
+'@reverse':
+  creator:
+    - id: 'https://doi.org/10.5555/12345680'
+      type: CreativeWork
+      identifier:
+        type: PropertyValue
+        propertyID: doi
+        value: 10.5555/12345680
+      name: A Methodology for the Emulation of Architecture
+    - id: 'https://doi.org/10.5555/666655554444'
+      type: CreativeWork
+      identifier:
+        type: PropertyValue
+        propertyID: doi
+        value: 10.5555/666655554444
+      name: The Memory Bus Considered Harmful
+    - id: 'https://doi.org/10.5555/987654321'
+      type: CreativeWork
+      identifier:
+        type: PropertyValue
+        propertyID: doi
+        value: 10.5555/987654321
+      name: The Impact of Interactive Epistemologies on Cryptography
+    - id: 'https://doi.org/10.5555/12345679'
+      type: CreativeWork
+      identifier:
+        type: PropertyValue
+        propertyID: doi
+        value: 10.5555/12345679
+      name: Developing Thin Clients Using Amphibious Epistemologies
+    - id: 'https://doi.org/10.5555/12345678'
+      type: CreativeWork
+      identifier:
+        type: PropertyValue
+        propertyID: doi
+        value: 10.5555/12345678
+      name: 'Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory'
+    - id: 'https://doi.org/10.1109/tps.1987.4316723'
+      type: CreativeWork
+      identifier:
+        - type: PropertyValue
+          propertyID: doi
+          value: 10.1109/tps.1987.4316723
+        - type: PropertyValue
+          propertyID: eid
+          value: 2-s2.0-0023398608
+      name: Bulk and surface plasmons in artificially structured materials
+type: Person
+affiliation:
+  - type: Organization
+    alternateName: Psychoceramics
+    identifier:
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '5468'
+    name: Wesleyan University
+  - type: Organization
+    alternateName: Psychoceramics
+    identifier:
+      type: PropertyValue
+      propertyID: RINGGOLD
+      value: '6752'
+    name: Brown University
+alternateName:
+  - Josiah Stinkney Carberry
+  - J. Carberry
+  - J. S. Carberry
+familyName: Carberry
+givenName: Josiah
+identifier:
+  type: PropertyValue
+  propertyID: Scopus Author ID
+  value: '7007156898'
+mainEntityOfPage: 'http://orcid.org/0000-0002-1825-0097'
+url:
+  - 'http://library.brown.edu/about/hay/carberry.php'
+  - 'http://en.wikipedia.org/wiki/Josiah_Carberry'

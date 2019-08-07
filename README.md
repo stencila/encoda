@@ -67,11 +67,12 @@ Encoda provides a collection of codecs for converting between, and composing tog
 | Document Archive            | [dar]         | Extens   | ω      | [⚠][dar-issues]         | ![][dar-cov]         |
 | Filesystem Directory        | [dir]         | Extens   | ω      | [⚠][dir-issues]         | ![][dir-cov]         |
 | **Data interchange, other** |
-| JSON                        | [json]        | Native   | ✔      | [⚠][json-issues]        | ![][json-cov]        |
-| JSON5                       | [json5]       | Native   | ✔      | [⚠][json5-issues]       | ![][json5-cov]       |
-| YAML                        | [yaml]        | Native   | ✔      | [⚠][yaml-issues]        | ![][yaml-cov]        |
-| Pandoc                      | [pandoc]      | Native   | β      | [⚠][pandoc-issues]      | ![][pandoc-cov]      |
-| Reproducible PNG            | [rpng]        | Native   | β      | [⚠][rpng-issues]        | ![][rpng-cov]        |
+| JSON                        | [json]   | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
+| JSON-LD                     | [json-ld]| Native   | ✔      | [⚠][jsonld-issues] | ![][jsonld-cov] |
+| JSON5                       | [json5]  | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
+| YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
+| Pandoc                      | [pandoc] | Native   | β      | [⚠][pandoc-issues] | ![][pandoc-cov] |
+| Reproducible PNG            | [rpng]   | Native   | β      | [⚠][rpng-issues]   | ![][rpng-cov]   |
 | **Transport**               |
 | HTTP                        | [http]        |          | ✔      | [⚠][http-issues]        | ![][http-cov]        |
 
@@ -286,8 +287,9 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [http]: src/codecs/http
 [ipynb]: src/codecs/ipynb
 [jats]: src/codecs/jats
-[jats]: src/codecs/jats-pandoc
+[jats-pandoc]: src/codecs/jats-pandoc
 [json]: src/codecs/json
+[jsonld]: src/codecs/jsonld
 [json5]: src/codecs/json5
 [latex]: src/codecs/latex
 [md]: src/codecs/md
@@ -344,6 +346,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [jats-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats
 [jats-pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc
 [json-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json
+[jsonld-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld
 [json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
 [latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex
 [md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
