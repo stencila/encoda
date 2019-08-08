@@ -3,7 +3,8 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { dump, Encode, EncodeOptions } from '../..'
+import { dump, EncodeOptions } from '../..'
+import { Encode } from '../types'
 import * as puppeteer from '../../util/puppeteer'
 import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'

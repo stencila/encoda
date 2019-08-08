@@ -34,7 +34,7 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda:md')

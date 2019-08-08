@@ -1,8 +1,8 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
+import { EncodeOptions } from '../..'
 import { dump, load } from '../../util/vfile'
 import { decode, encode } from './'
-import { EncodeOptions } from '../..'
 
 test('decode', async () => {
   expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)

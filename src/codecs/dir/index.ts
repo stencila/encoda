@@ -13,7 +13,8 @@ import tempy from 'tempy'
 import trash from 'trash'
 // @ts-ignore
 import unixify from 'unixify'
-import { Encode, EncodeOptions, read, write } from '../..'
+import { EncodeOptions, read, write } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 const log = getLogger('encoda:dir')

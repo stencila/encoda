@@ -8,7 +8,7 @@ import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'
 import * as vfile from '../../util/vfile'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import { is, nodeType } from '@stencila/schema/dist/util'
 import log from '../../log'
 

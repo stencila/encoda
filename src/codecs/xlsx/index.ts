@@ -8,7 +8,8 @@ import { array, option, ord } from 'fp-ts'
 import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
-import { Encode, EncodeOptions } from '../..'
+import { EncodeOptions } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 export const mediaTypes = [

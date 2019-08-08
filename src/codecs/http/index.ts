@@ -4,7 +4,8 @@
 
 import stencila from '@stencila/schema'
 import contentType from 'content-type'
-import { load, Encode } from '../..'
+import { load } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 import * as http from '../../util/http'
 import { getLogger } from '@stencila/logga'

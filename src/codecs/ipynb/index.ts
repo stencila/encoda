@@ -6,7 +6,8 @@
 
 import stencila from '@stencila/schema'
 import { isEntity, nodeType } from '@stencila/schema/dist/util'
-import { dump, Encode, load } from '../..'
+import { dump, load } from '../..'
+import { Encode } from '../types'
 import * as dataUri from '../../util/dataUri'
 import * as vfile from '../../util/vfile'
 import * as nbformat3 from './nbformat-v3'

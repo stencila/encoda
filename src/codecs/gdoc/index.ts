@@ -14,7 +14,7 @@ import {
 } from '@stencila/schema/dist/util'
 import crypto from 'crypto'
 import { docs_v1 as GDoc } from 'googleapis'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 

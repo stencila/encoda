@@ -6,7 +6,8 @@ import stencila from '@stencila/schema'
 import { nodeType } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import path from 'path'
-import { dump, Encode, EncodeOptions } from '../..'
+import { dump, EncodeOptions } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 /**

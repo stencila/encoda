@@ -12,10 +12,11 @@ import {
 import childProcess from 'child_process'
 import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
-import { Encode, EncodeOptions, write } from '../..'
+import { EncodeOptions, write } from '../..'
 import { ensureBlockContent } from '../../util/ensureBlockContent'
 import * as vfile from '../../util/vfile'
 import * as rpng from '../rpng'
+import { Encode } from '../types'
 import { binary, dataDir } from './binary'
 import * as Pandoc from './types'
 

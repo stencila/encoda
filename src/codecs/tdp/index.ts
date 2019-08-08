@@ -6,7 +6,8 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
-import { Encode, EncodeOptions, dump } from '../..'
+import { EncodeOptions, dump } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 const logger = getLogger('encoda')

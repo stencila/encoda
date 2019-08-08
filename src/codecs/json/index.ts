@@ -3,7 +3,7 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 export const mediaTypes = ['application/json']

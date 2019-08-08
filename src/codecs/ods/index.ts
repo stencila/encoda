@@ -3,7 +3,7 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 import * as xlsx from '../xlsx'
 

@@ -5,7 +5,7 @@
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
 import * as xml from '../../util/xml'

@@ -4,7 +4,7 @@
 
 import stencila from '@stencila/schema'
 import json5 from 'json5'
-import { Encode } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 /**

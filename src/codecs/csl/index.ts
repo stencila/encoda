@@ -10,7 +10,8 @@ import { isA, isCreativeWork } from '@stencila/schema/dist/util'
 // @ts-ignore
 import Cite from 'citation-js'
 import Csl from 'csl-json'
-import { Encode, EncodeOptions, load } from '../..'
+import { EncodeOptions, load } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 import { logErrorNodeType, logWarnLossIfAny, logWarnLoss } from '../../log'
 

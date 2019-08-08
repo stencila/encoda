@@ -4,7 +4,8 @@
 
 import * as stencila from '@stencila/schema'
 import produce from 'immer'
-import { Encode, load, dump } from '../..'
+import { load, dump } from '../..'
+import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 
 export const mediaTypes = []
