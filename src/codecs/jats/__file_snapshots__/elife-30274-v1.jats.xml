@@ -148,25 +148,29 @@
                 <ext-link ext-link-type="uri" xlink:href="#bib30">Schuhmacher et al., 1999</ext-link>), with serum reported to stimulate a majority of genes independent of c-Myc (
                 <ext-link ext-link-type="uri" xlink:href="#bib28">Schlosser et al., 2005</ext-link>), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels (
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1A</ext-link>). After removal of tetracycline, c-Myc levels increased over time approaching the levels observed in tetracycline-free conditions.
-            </p>10.7554/eLife.30274.002Figure 1.
-        </sec>
-        <sec>
-            <title>Induction of c-Myc in P493-6 cells and impact on total RNA levels.</title>
-            <p>P493-6 cells were grown in the presence of tetracycline (Tet) for 72 hr and switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. (
-                <bold>A</bold>) Representative Western blot using an anti-c-Myc antibody (top panels) or an anti-ß-Actin antibody (bottom panel). Two exposures of the anti-c-Myc antibody are presented to facilitate detection of c-Myc. (
-                <bold>B</bold>) Quantification of total RNA levels (ng of total RNA per 1,000 cells) for cells at 0, 1, and 24 hr after release from Tet. Means reported and error bars represent s.e.m. from three independent biological repeats. For serum lot one, one-way ANOVA on total RNA levels of all groups; 
-                <italic>F</italic>(2, 6)=1.25, 
-                <italic>p</italic>=0.353. Planned contrast between 0 hr and 24 hr; 
-                <italic>t</italic>(6) = 1.02, 
-                <italic>p</italic>=0.347 with 
-                <italic>a priori</italic> alpha level = 0.05. For serum lot two, one-way ANOVA on total RNA levels of all groups; 
-                <italic>F</italic>(2, 6)=21.87, 
-                <italic>p</italic>=0.00176. Planned contrast between 0 hr and 24 hr; 
-                <italic>t</italic>(6) = 5.03, 
-                <italic>p</italic>=0.0024 with 
-                <italic>a priori</italic> alpha level = 0.05. Additional details for this experiment can be found at 
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/tfd57/.">https://osf.io/tfd57/</ext-link>.
             </p>
+            <fig>
+                <caption>
+                    <title>Induction of c-Myc in P493-6 cells and impact on total RNA levels.</title>
+                    <p>P493-6 cells were grown in the presence of tetracycline (Tet) for 72 hr and switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. (
+                        <bold>A</bold>) Representative Western blot using an anti-c-Myc antibody (top panels) or an anti-ß-Actin antibody (bottom panel). Two exposures of the anti-c-Myc antibody are presented to facilitate detection of c-Myc. (
+                        <bold>B</bold>) Quantification of total RNA levels (ng of total RNA per 1,000 cells) for cells at 0, 1, and 24 hr after release from Tet. Means reported and error bars represent s.e.m. from three independent biological repeats. For serum lot one, one-way ANOVA on total RNA levels of all groups; 
+                        <italic>F</italic>(2, 6)=1.25, 
+                        <italic>p</italic>=0.353. Planned contrast between 0 hr and 24 hr; 
+                        <italic>t</italic>(6) = 1.02, 
+                        <italic>p</italic>=0.347 with 
+                        <italic>a priori</italic> alpha level = 0.05. For serum lot two, one-way ANOVA on total RNA levels of all groups; 
+                        <italic>F</italic>(2, 6)=21.87, 
+                        <italic>p</italic>=0.00176. Planned contrast between 0 hr and 24 hr; 
+                        <italic>t</italic>(6) = 5.03, 
+                        <italic>p</italic>=0.0024 with 
+                        <italic>a priori</italic> alpha level = 0.05. Additional details for this experiment can be found at 
+                        <ext-link ext-link-type="uri" xlink:href="https://osf.io/tfd57/.">https://osf.io/tfd57/</ext-link>.
+                    </p>
+                </caption>
+                <label>Figure 1.</label>
+                <graphic xlink:href="elife-30274-fig1-v1" mimetype="application" mime-subtype="postscript"/>
+            </fig>
         </sec>
         <sec>
             <title>Total RNA levels following c-Myc overexpression</title>
@@ -199,47 +203,63 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig2s1">Figure 2—figure supplement 1</ext-link>). Serum lot two gave similar results, although there were variations in the number of genes identified as silent or active as well as the degree of increase among the conditions (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#fig2s1">Figure 2—figure supplement 1</ext-link>). This compares to the original study that identified 755 active genes with a median expression of 7.06, and 514 silent genes with a median expression of 0.00 (more than half the silent genes did not have a reported expression value). Active genes in the original study, increased 91% from 0 hr to 1 hr, 96% from 0 hr to 24 hr, and 87% from 1 hr to 24 hr upon c-Myc induction, corresponding to a 1.23, 2.45, and 1.99 times increase in median expression, respectively. Silent genes in the original study, increased 23% from 0 hr to 1 hr, 29% from 0 hr to 24 hr, and 30% from 1 hr to 24 hr, with the median expression unchanged among conditions. In addition, we further examined the extent of overlap of active and silent genes between the original study and this replication attempt. Of the 1212 genes that were interrogated in both studies, 88.8% (603/679) of the active genes we identified in serum lot one were also active in the original study (90.1% (612/679) for serum lot two). For silent genes, 96.4% (456/473) of the genes we identified as silent in serum lot one were common with the silent genes identified in the original study (95.8% (453/473) for serum lot two).
-            </p>10.7554/eLife.30274.003Figure 2.
-        </sec>
-        <sec>
-            <title>Digital gene expression analysis.</title>
-            <p>P493-6 cells grown in the presence of tetracycline (Tet) for 72 hr for repression of the conditional p
-                <italic>myc</italic>-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes = 708, silent genes = 580. Cells grown in serum lot two: active genes = 719, silent genes = 573. Confirmatory analysis is reported in 
-                <ext-link ext-link-type="uri" xlink:href="#table1">Table 1</ext-link> and exploratory statistical analysis is reported in 
-                <ext-link ext-link-type="uri" xlink:href="#table2">Table 2</ext-link> and 
-                <ext-link ext-link-type="uri" xlink:href="#table3">Table 3</ext-link>. Additional details for this experiment can be found at 
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
             </p>
-            <p>10.7554/eLife.30274.006Figure 2—source data 1.</p>
-        </sec>
-        <sec>
-            <title>List of Reporter CodeSets and gene expression values.</title>10.7554/eLife.30274.004Figure 2—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Logarithmic expression of genes.</title>
-            <p>This is the same experiment as in 
-                <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>. (
-                <bold>A–B, E–F</bold>) Gene expression data plotted on a log
-                <sub>2</sub> transformed scale for active (
-                <bold>A, E</bold>) and silent (
-                <bold>B, F</bold>) genes at 0, 1, and 24 hr after release from Tet for both lots of serum. (
-                <bold>C–D, G–H</bold>) Box and whisker plots showing gene expression changes (log
-                <sub>2</sub> ratio) between the indicated times for active (
-                <bold>C, G</bold>) and silent (
-                <bold>D, H</bold>) genes. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at 
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
-            </p>10.7554/eLife.30274.005Figure 2—figure supplement 2.
-        </sec>
-        <sec>
-            <title>Comparison of gene expression data as continuous.</title>
-            <p>This is the same experiment as in 
-                <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>. (
-                <bold>A–C, E–G</bold>) Scatter plots of log
-                <sub>2</sub> transformed gene expression data for all genes analyzed at the indicated times on the y and x axes for both lots of serum. Active genes are blue, silent genes are red, and genes that are neither active or silent (expression was more than 0.5 transcript/cell and less than one transcript/cell at time 0 hr) are white. (
-                <bold>D, H</bold>) Box and whisker plots showing gene expression changes (log
-                <sub>2</sub> ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at 
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
-            </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>Digital gene expression analysis.</title>
+                        <p>P493-6 cells grown in the presence of tetracycline (Tet) for 72 hr for repression of the conditional p
+                            <italic>myc</italic>-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes = 708, silent genes = 580. Cells grown in serum lot two: active genes = 719, silent genes = 573. Confirmatory analysis is reported in 
+                            <ext-link ext-link-type="uri" xlink:href="#table1">Table 1</ext-link> and exploratory statistical analysis is reported in 
+                            <ext-link ext-link-type="uri" xlink:href="#table2">Table 2</ext-link> and 
+                            <ext-link ext-link-type="uri" xlink:href="#table3">Table 3</ext-link>. Additional details for this experiment can be found at 
+                            <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
+                        </p>
+                        <p>10.7554/eLife.30274.006Figure 2—source data 1.</p>
+                        <title>List of Reporter CodeSets and gene expression values.</title>
+                        <media xlink:href="elife-30274-fig2-data1-v1.csv" mimetype="application" mime-subtype="octet-stream"/>
+                    </caption>
+                    <label>Figure 2.</label>
+                    <alternatives>
+                        <graphic xlink:href="elife-30274-fig2-v1" mimetype="application" mime-subtype="postscript"/>
+                        <media xlink:href="elife-30274-fig2-data1-v1.csv" mimetype="application" mime-subtype="octet-stream"/>
+                    </alternatives>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Logarithmic expression of genes.</title>
+                        <p>This is the same experiment as in 
+                            <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>. (
+                            <bold>A–B, E–F</bold>) Gene expression data plotted on a log
+                            <sub>2</sub> transformed scale for active (
+                            <bold>A, E</bold>) and silent (
+                            <bold>B, F</bold>) genes at 0, 1, and 24 hr after release from Tet for both lots of serum. (
+                            <bold>C–D, G–H</bold>) Box and whisker plots showing gene expression changes (log
+                            <sub>2</sub> ratio) between the indicated times for active (
+                            <bold>C, G</bold>) and silent (
+                            <bold>D, H</bold>) genes. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at 
+                            <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
+                        </p>
+                    </caption>
+                    <label>Figure 2—figure supplement 1.</label>
+                    <graphic xlink:href="elife-30274-fig2-figsupp1-v1" mimetype="application" mime-subtype="postscript"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Comparison of gene expression data as continuous.</title>
+                        <p>This is the same experiment as in 
+                            <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2</ext-link>. (
+                            <bold>A–C, E–G</bold>) Scatter plots of log
+                            <sub>2</sub> transformed gene expression data for all genes analyzed at the indicated times on the y and x axes for both lots of serum. Active genes are blue, silent genes are red, and genes that are neither active or silent (expression was more than 0.5 transcript/cell and less than one transcript/cell at time 0 hr) are white. (
+                            <bold>D, H</bold>) Box and whisker plots showing gene expression changes (log
+                            <sub>2</sub> ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at 
+                            <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
+                        </p>
+                    </caption>
+                    <label>Figure 2—figure supplement 2.</label>
+                    <graphic xlink:href="elife-30274-fig2-figsupp2-v1" mimetype="application" mime-subtype="postscript"/>
+                </fig>
+            </fig-group>
             <p>To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report (
                 <ext-link ext-link-type="uri" xlink:href="#bib3">Blum et al., 2015</ext-link>). This analysis differed from what was reported in the original study by analyzing the data as paired instead of unpaired. As suggested during peer review of the Registered Report, this is because expression of the same gene, analyzed across different conditions, is not independent (
                 <ext-link ext-link-type="uri" xlink:href="#bib3">Blum et al., 2015</ext-link>). We performed a Wilcoxon signed-rank test on active genes comparing expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were statistically significant for cells grown in both lots of serum (
@@ -713,29 +733,33 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3A</ext-link>) of these effects resulted in 
                 <italic>d</italic> = 2.52, 95% CI [0.01, 5.03], which was statistically significant (
                 <italic>p</italic>=0.0488). The original and replication results are consistent when considering the direction of the effect, which suggests c-Myc induction increases total RNA levels in P493-6 Burkitt’s lymphoma cells. Noticeably, there was substantial within-study variation observed in this replication attempt, due the different serum lots tested. The point estimate of serum lot one was not within the confidence intervals of the original study and serum lot two, and vice versa; however the point estimate of the original study and serum lot two were within the confidence intervals of each other.
-            </p>10.7554/eLife.30274.010Figure 3.
-        </sec>
-        <sec>
-            <title>Meta-analyses of each effect.</title>
-            <p>Effect size and 95% confidence interval are presented for 
-                <ext-link ext-link-type="uri" xlink:href="#bib17">Lin et al., 2012</ext-link>, this replication study (RP:CB), and a random effects meta-analysis of those two effects. Cohen’s 
-                <italic>d</italic> is the standardized difference between the two measurements, with a larger positive value indicating total RNA levels are increased at 24 hr compared to 0 hr. The effect size 
-                <italic>r</italic> is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in 
-                <ext-link ext-link-type="uri" xlink:href="#bib17">Lin et al., 2012</ext-link> and this replication attempt are reported under the study name. (
-                <bold>A</bold>) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after release from tetracycline (meta-analysis 
-                <italic>p</italic> = 0.0488). (
-                <bold>B</bold>) Gene expression of active or silent genes are shown for all comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis 
-                <italic>p</italic> = 1.12x10
-                <sup>-7</sup>), 0 hr compared to 24 hr (meta-analysis 
-                <italic>p</italic> = 7.01x10
-                <sup>-4</sup>), 1 hr compared to 24 hr (meta-analysis 
-                <italic>p</italic> = 0.0129). Silent genes: 0 hr compared to 1 hr (meta-analysis 
-                <italic>p</italic> = 0.203), 0 hr compared to 24 hr (meta-analysis 
-                <italic>p</italic> = 7.10x10
-                <sup>-17</sup>), 1 hr compared to 24 hr (meta-analysis 
-                <italic>p</italic> = 0.0571). Additional details for these meta-analyses can be found at 
-                <ext-link ext-link-type="uri" xlink:href="https://osf.io/5yscz/">https://osf.io/5yscz/</ext-link>.
             </p>
+            <fig>
+                <caption>
+                    <title>Meta-analyses of each effect.</title>
+                    <p>Effect size and 95% confidence interval are presented for 
+                        <ext-link ext-link-type="uri" xlink:href="#bib17">Lin et al., 2012</ext-link>, this replication study (RP:CB), and a random effects meta-analysis of those two effects. Cohen’s 
+                        <italic>d</italic> is the standardized difference between the two measurements, with a larger positive value indicating total RNA levels are increased at 24 hr compared to 0 hr. The effect size 
+                        <italic>r</italic> is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in 
+                        <ext-link ext-link-type="uri" xlink:href="#bib17">Lin et al., 2012</ext-link> and this replication attempt are reported under the study name. (
+                        <bold>A</bold>) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after release from tetracycline (meta-analysis 
+                        <italic>p</italic> = 0.0488). (
+                        <bold>B</bold>) Gene expression of active or silent genes are shown for all comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis 
+                        <italic>p</italic> = 1.12x10
+                        <sup>-7</sup>), 0 hr compared to 24 hr (meta-analysis 
+                        <italic>p</italic> = 7.01x10
+                        <sup>-4</sup>), 1 hr compared to 24 hr (meta-analysis 
+                        <italic>p</italic> = 0.0129). Silent genes: 0 hr compared to 1 hr (meta-analysis 
+                        <italic>p</italic> = 0.203), 0 hr compared to 24 hr (meta-analysis 
+                        <italic>p</italic> = 7.10x10
+                        <sup>-17</sup>), 1 hr compared to 24 hr (meta-analysis 
+                        <italic>p</italic> = 0.0571). Additional details for these meta-analyses can be found at 
+                        <ext-link ext-link-type="uri" xlink:href="https://osf.io/5yscz/">https://osf.io/5yscz/</ext-link>.
+                    </p>
+                </caption>
+                <label>Figure 3.</label>
+                <graphic xlink:href="elife-30274-fig3-v1" mimetype="application" mime-subtype="postscript"/>
+            </fig>
             <p>There were six comparisons of the gene expression data, three for active genes and three for silent genes (
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3B</ext-link>). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report (
                 <ext-link ext-link-type="uri" xlink:href="#bib3">Blum et al., 2015</ext-link>). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr the meta-analyses were statistically significant (

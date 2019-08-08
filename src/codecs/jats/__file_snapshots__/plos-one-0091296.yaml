@@ -535,18 +535,26 @@ content:
         relation: bibr
       - .
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g001
-  - Figure 1
   - content:
-      - Study locations.
-    depth: 2
-    id: s2b
-    type: Heading
-  - content:
-      - >-
-        Papua New Guinea with details (insets) of Ahus Island, Manus Province,
-        and Karkar Island, Madang Province.
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g001'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 1
+    caption:
+      - content:
+          - Study locations.
+        depth: 2
+        id: s2b
+        type: Heading
+      - content:
+          - >-
+            Papua New Guinea with details (insets) of Ahus Island, Manus
+            Province, and Karkar Island, Madang Province.
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         Fishers at the study sites use a combination of gear types including
@@ -1961,28 +1969,36 @@ content:
           - L. gibbus
       - .
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g002
-  - Figure 2
   - content:
-      - Catch rates reported by fishers for the six study species.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        Data are the ‘normal’ catch rates fishers expect to obtain on a fishing
-        trip, given as mean no. fish/trip
-      - type: Superscript
-        content:
-          - −1
-      - ' with standard error bars. For each species, results of '
-      - type: Emphasis
-        content:
-          - t
-      - >-
-        -tests comparing mean catch rates between locations are shown, with
-        significant differences indicated by bold font.
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g002'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 2
+    caption:
+      - content:
+          - Catch rates reported by fishers for the six study species.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            Data are the ‘normal’ catch rates fishers expect to obtain on a
+            fishing trip, given as mean no. fish/trip
+          - type: Superscript
+            content:
+              - −1
+          - ' with standard error bars. For each species, results of '
+          - type: Emphasis
+            content:
+              - t
+          - >-
+            -tests comparing mean catch rates between locations are shown, with
+            significant differences indicated by bold font.
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         Fishers from Ahus and Karkar had different perceptions on the forms of
@@ -2099,21 +2115,29 @@ content:
           - p
       -  = 1.0).
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g003
-  - Figure 3
   - content:
-      - Fisher knowledge of the aggregating behaviour of study species.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        Stacked bars represent the proportion of fishers in Ahus and Karkar
-        identifying the six study species as exhibiting solitary (SOL), shoaling
-        (SHO) and schooling (SCH) behaviour, or any combinations thereof
-        (SOL-SHO, SOL-SCH, SHO-SCH). DK denotes the proportion of fishers who
-        didn't know the aggregating behaviour of the species.
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g003'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 3
+    caption:
+      - content:
+          - Fisher knowledge of the aggregating behaviour of study species.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            Stacked bars represent the proportion of fishers in Ahus and Karkar
+            identifying the six study species as exhibiting solitary (SOL),
+            shoaling (SHO) and schooling (SCH) behaviour, or any combinations
+            thereof (SOL-SHO, SOL-SCH, SHO-SCH). DK denotes the proportion of
+            fishers who didn't know the aggregating behaviour of the species.
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         Ahus fishers were generally more knowledgeable on the seasonal, lunar
@@ -2178,22 +2202,30 @@ content:
         relation: fig
       - ).
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g004
-  - Figure 4
   - content:
-      - >-
-        Differences in fisher knowledge of aggregation attributes between study
-        locations.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        For each species and location, attribute scores were averaged among
-        fishers. Average The results of statistical tests (Wilcoxon Signed Rank
-        tests) comparing the vulnerability of populations (species pooled) at
-        Ahus and Karkar are given in the panel titles.
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g004'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 4
+    caption:
+      - content:
+          - >-
+            Differences in fisher knowledge of aggregation attributes between
+            study locations.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            For each species and location, attribute scores were averaged among
+            fishers. Average The results of statistical tests (Wilcoxon Signed
+            Rank tests) comparing the vulnerability of populations (species
+            pooled) at Ahus and Karkar are given in the panel titles.
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         For Ahus, ordination of species by fisher knowledge of their aggregating
@@ -2252,23 +2284,32 @@ content:
         relation: table
       - ).
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g005
-  - Figure 5
   - content:
-      - >-
-        Socioeconomic indicators associated with variation in fisher knowledge
-        at Ahus Island.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        A redundancy analysis plot of fisher knowledge relating to aggregating
-        behaviour of six study species. Indicators are fisher gender (black
-        circles), fisher access to lagoon, outer reef or all habitats (white
-        triangles), primary gear type (grey squares) and primary, secondary or
-        tertiary dependency on fishing (inverted grey triangles).
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g005'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 5
+    caption:
+      - content:
+          - >-
+            Socioeconomic indicators associated with variation in fisher
+            knowledge at Ahus Island.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            A redundancy analysis plot of fisher knowledge relating to
+            aggregating behaviour of six study species. Indicators are fisher
+            gender (black circles), fisher access to lagoon, outer reef or all
+            habitats (white triangles), primary gear type (grey squares) and
+            primary, secondary or tertiary dependency on fishing (inverted grey
+            triangles).
+        type: Paragraph
+    type: Figure
   - rows:
       - cells:
           - content: []
@@ -2550,22 +2591,31 @@ content:
         relation: table
       - ).
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g006
-  - Figure 6
   - content:
-      - >-
-        Socioeconomic indicators associated with variation in fisher knowledge
-        at Karkar Island.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        A redundancy analysis plot of fisher knowledge relating to aggregating
-        behaviour of six study species. Indicators are fisher gender (black
-        circles), primary gear type (grey squares) and primary, secondary or
-        tertiary dependency on fishing (inverted grey triangles).
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g006'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 6
+    caption:
+      - content:
+          - >-
+            Socioeconomic indicators associated with variation in fisher
+            knowledge at Karkar Island.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            A redundancy analysis plot of fisher knowledge relating to
+            aggregating behaviour of six study species. Indicators are fisher
+            gender (black circles), primary gear type (grey squares) and
+            primary, secondary or tertiary dependency on fishing (inverted grey
+            triangles).
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         Productivity of the six species varied from less productive groupers to
@@ -2595,28 +2645,36 @@ content:
           - L. gibbus
       - ' aggregations at Ahus were assessed to be medium risk due to a high susceptibility score.'
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g007
-  - Figure 7
   - content:
-      - Productivity-susceptibility analysis (PSA) plot.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        The susceptibility axis in this plot combines all ten attributes
-        associated with catchability and socioeconomic drivers of fishing
-        pressure (see
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g007'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 7
+    caption:
       - content:
-          - Table 4
-        target: '#pone-0091296-t004'
-        type: Link
-        relation: table
-      - >-
-        ). The contour lines divide regions of equal vulnerability to fishing,
-        and group species of similar risk levels: i.e. low, medium and high risk
-        (after Hobday et al. 2011).
-    type: Paragraph
+          - Productivity-susceptibility analysis (PSA) plot.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            The susceptibility axis in this plot combines all ten attributes
+            associated with catchability and socioeconomic drivers of fishing
+            pressure (see
+          - content:
+              - Table 4
+            target: '#pone-0091296-t004'
+            type: Link
+            relation: table
+          - >-
+            ). The contour lines divide regions of equal vulnerability to
+            fishing, and group species of similar risk levels: i.e. low, medium
+            and high risk (after Hobday et al. 2011).
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         When all attributes were included in the measure of susceptibility,
@@ -2688,41 +2746,59 @@ content:
         to socioeconomic drivers resulted in a greater susceptibility of
         aggregations to fishing at Ahus compared to Karkar.
     type: Paragraph
-  - 10.1371/journal.pone.0091296.g008
-  - Figure 8
   - content:
-      - >-
-        Influence of catchability and socioeconomic susceptibility attributes on
-        the vulnerability of populations to aggregation fishing.
-    depth: 1
-    id: s3
-    type: Heading
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g008'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 8
+    caption:
+      - content:
+          - >-
+            Influence of catchability and socioeconomic susceptibility
+            attributes on the vulnerability of populations to aggregation
+            fishing.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            Vulnerability, measured as the Euclidean distance of populations to
+            the origin in the corresponding PSA plots, is compared for all
+            susceptibility attributes (catchability and socioeconomic drivers;
+            left panel) and catchability (right panel) attributes only. The
+            results of statistical tests (Wilcoxon Signed Rank tests) comparing
+            the vulnerability of populations (species pooled) at Ahus and Karkar
+            are given in the panel titles.
+        type: Paragraph
+    type: Figure
   - content:
-      - >-
-        Vulnerability, measured as the Euclidean distance of populations to the
-        origin in the corresponding PSA plots, is compared for all
-        susceptibility attributes (catchability and socioeconomic drivers; left
-        panel) and catchability (right panel) attributes only. The results of
-        statistical tests (Wilcoxon Signed Rank tests) comparing the
-        vulnerability of populations (species pooled) at Ahus and Karkar are
-        given in the panel titles.
-    type: Paragraph
-  - 10.1371/journal.pone.0091296.g009
-  - Figure 9
-  - content:
-      - Case study location scores for the ten susceptibility attributes.
-    depth: 1
-    id: s3
-    type: Heading
-  - content:
-      - >-
-        Clockwise from top, the first four attributes relate to catchability,
-        while the remaining six are indicators of socioeconomic drivers.
-        Attributes were scored from 1 (low susceptibility) to 3 (high
-        susceptibility) for each fisher respondent or, in the case of preference
-        and management strategy, at the level of location. For attributes scored
-        at the respondent level, the mean score (N = 16) is given.
-    type: Paragraph
+      - contentUrl: 'info:doi/10.1371/journal.pone.0091296.g009'
+        format: image
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+    label: Figure 9
+    caption:
+      - content:
+          - Case study location scores for the ten susceptibility attributes.
+        depth: 1
+        id: s3
+        type: Heading
+      - content:
+          - >-
+            Clockwise from top, the first four attributes relate to
+            catchability, while the remaining six are indicators of
+            socioeconomic drivers. Attributes were scored from 1 (low
+            susceptibility) to 3 (high susceptibility) for each fisher
+            respondent or, in the case of preference and management strategy, at
+            the level of location. For attributes scored at the respondent
+            level, the mean score (N = 16) is given.
+        type: Paragraph
+    type: Figure
   - content:
       - Discussion
     depth: 1

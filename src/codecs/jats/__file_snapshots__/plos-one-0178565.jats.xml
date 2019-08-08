@@ -103,18 +103,24 @@
             <title>Clustering of genes and organisms</title>
             <p>Genes were clustered via hierarchical clustering of their profiles with Hamming distance as the metric, a cut-off of 0.15 and average linkage. Likewise, cyanobacteria were clustered by using their profiles and a similar clustering strategy and cut-off. The merged profiles are then represented as consensus of the members of the cluster. The detailed method is depicted in 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g001">Fig 1</ext-link> which is used to obtain a reduced genome database.
-            </p>10.1371/journal.pone.0178565.g001Fig 1
-        </sec>
-        <sec>
-            <title>Data reduction and construction of Clusters of Co-evolving Genes (CCG).</title>
-            <p>Diagrammatic representation for clustering of organisms and proteins. The method is used to reduce the genome dataset and to cluster proteins of the semi-conserved category to obtain CCG.</p>
+            </p>
+            <fig>
+                <caption>
+                    <title>Data reduction and construction of Clusters of Co-evolving Genes (CCG).</title>
+                    <p>Diagrammatic representation for clustering of organisms and proteins. The method is used to reduce the genome dataset and to cluster proteins of the semi-conserved category to obtain CCG.</p>
+                </caption>
+                <label>Fig 1</label>
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.g001" xlink:type="simple" mimetype="image"/>
+            </fig>
         </sec>
         <sec>
             <title>Modified Hamming distance</title>
             <p>To test if any of the profile pairs are mutually exclusive, we modified the conventional Hamming distance by ignoring the elements of profiles where both the proteins are absent. The modified formula of Hamming distance is:
 
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.e001" xlink:type="simple" mimetype="image"/>
 where,
-</p>
+
+            </p>
             <list list-type="bullet">
                 <list-item>
                     <p>d = modified hamming distance,</p>
@@ -153,14 +159,18 @@ where,
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref005">5</ext-link>]. The tree can be broken down into 4 clades (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g002">Fig 2</ext-link>) for further clade-wise analysis as discussed in subsequent sections. Abridged profiles were then created that have string length of 73, corresponding to the 73 organism clusters, compared to the original string length of 120 (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s006">S5 Table</ext-link>). Conservation indices for the protein profiles were computed based on the abridged strings.
-            </p>10.1371/journal.pone.0178565.g002Fig 2
-        </sec>
-        <sec>
-            <title>Phylogenetic tree of the 73 cyanobacterial genome groups based on clustering of their phylogenetic profiles.</title>
-            <p>Profiles of 8280 semi-conserved genes were used while clustering the organisms. List of the cyanobacterial strains are given in 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>. * represents the organism cluster 12, whose constituents are given in 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>.
             </p>
+            <fig>
+                <caption>
+                    <title>Phylogenetic tree of the 73 cyanobacterial genome groups based on clustering of their phylogenetic profiles.</title>
+                    <p>Profiles of 8280 semi-conserved genes were used while clustering the organisms. List of the cyanobacterial strains are given in 
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>. * represents the organism cluster 12, whose constituents are given in 
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>.
+                    </p>
+                </caption>
+                <label>Fig 2</label>
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.g002" xlink:type="simple" mimetype="image"/>
+            </fig>
         </sec>
         <sec>
             <title>Redundancy of profiles</title>
@@ -174,13 +184,17 @@ where,
                 <italic>phzF</italic> (phenazine biosynthesis) family, which is part of the seven-gene operon, responsible for the synthesis of phenazine-1-carboxylic acid [
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref031">31</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref032">32</ext-link>]. This suggests that the potentially redundant profiles represent genes that have diverged significantly in the subsets of organisms and are not merely paralogs.
-            </p>10.1371/journal.pone.0178565.g003Fig 3
-        </sec>
-        <sec>
-            <title>Potential redundancy in the phylogenetic profiles.</title>
-            <p>Ten representative pairs of redundant profiles that show BLASTP evalue ≤ 10
-                <sup>−10</sup> but fail to meet the criteria of score density and query coverage. The redundant gene pairs are color-coded and assigned symbols in the two plots. (A) A PCA plot that shows the 10 pairs on the first two principal components and (B) Heatmap showing mutually exclusive nature of profile pairs. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively.
             </p>
+            <fig>
+                <caption>
+                    <title>Potential redundancy in the phylogenetic profiles.</title>
+                    <p>Ten representative pairs of redundant profiles that show BLASTP evalue ≤ 10
+                        <sup>−10</sup> but fail to meet the criteria of score density and query coverage. The redundant gene pairs are color-coded and assigned symbols in the two plots. (A) A PCA plot that shows the 10 pairs on the first two principal components and (B) Heatmap showing mutually exclusive nature of profile pairs. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively.
+                    </p>
+                </caption>
+                <label>Fig 3</label>
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.g003" xlink:type="simple" mimetype="image"/>
+            </fig>
         </sec>
         <sec>
             <title>Conservation categories</title>
@@ -197,11 +211,15 @@ where,
                 <list-item>
                     <p>Unique; with a GCI score of &lt; 10%.</p>
                 </list-item>
-            </list>10.1371/journal.pone.0178565.g004Fig 4
-        </sec>
-        <sec>
-            <title>Histogram of gene conservation index (GCI) for the 23,633 phylogenetic profiles.</title>
-            <p>The GCI was calculated based on presence and absence of the query gene in the 73 organism clusters of cyanobacteria.</p>
+            </list>
+            <fig>
+                <caption>
+                    <title>Histogram of gene conservation index (GCI) for the 23,633 phylogenetic profiles.</title>
+                    <p>The GCI was calculated based on presence and absence of the query gene in the 73 organism clusters of cyanobacteria.</p>
+                </caption>
+                <label>Fig 4</label>
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.g004" xlink:type="simple" mimetype="image"/>
+            </fig>
             <p>About 4% of all query genes (993 profiles) are conserved across the cyanobacterial phylum (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t001">Table 1</ext-link> and 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s008">S7 Table</ext-link>). This is apart from the rRNA and tRNA genes which are also conserved but not considered here as our dataset contains only protein coding genes. In this set, around 35% of the genes are metabolic genes. The set comprises of upto 50% of the total proteins in smaller genomes such as those of 
@@ -321,22 +339,26 @@ where,
                 <italic>psbF</italic> (with UniProt ID Q8RSW2) is involved in the assembly of photosystem II and secondary electron transport mechanism [
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref038">38</ext-link>] is semi-conserved in our dataset is one of the structural gene of Martin et al. [
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. These discrepancies may be due to differences in the genome datasets used in the three studies. Our analysis includes symbiotic strains which may lack some of the core metabolic genes.
-            </p>10.1371/journal.pone.0178565.g005Fig 5
-        </sec>
-        <sec>
-            <title>Overlap of conserved genes (this work) with core set proteins of Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>], structural genes of Martin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] and essential genes of Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] shown for 
-                <italic>S</italic>. 
-                <italic>elongatus</italic> PCC 7942 for which experimental data is available.
-            </title>
-            <p>(A) Overlap of conserved genes (this work), core set proteins [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] and structural genes [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. (B) Conserved genes (this work) and essential genes [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. (C) Conserved genes without clustering of microorganisms and removing the microorganism redundancy and the overlap with essential genes [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
             </p>
+            <fig>
+                <caption>
+                    <title>Overlap of conserved genes (this work) with core set proteins of Shi and Falkowski [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>], structural genes of Martin et al. [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] and essential genes of Rubin et al. [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] shown for 
+                        <italic>S</italic>. 
+                        <italic>elongatus</italic> PCC 7942 for which experimental data is available.
+                    </title>
+                    <p>(A) Overlap of conserved genes (this work), core set proteins [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] and structural genes [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. (B) Conserved genes (this work) and essential genes [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. (C) Conserved genes without clustering of microorganisms and removing the microorganism redundancy and the overlap with essential genes [
+                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+                    </p>
+                </caption>
+                <label>Fig 5</label>
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.g005" xlink:type="simple" mimetype="image"/>
+            </fig>
         </sec>
         <sec>
             <title>Relationship between conservation level and annotation</title>
@@ -861,11 +883,15 @@ where,
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref046">46</ext-link>]. Cluster 9 has 4 proteins, of which three are Clustered Regularly Interspaced Short Palindromic Repeats associated (CRISPR) proteins, and one is uncharacterized (with UniProt ID D8FUL0). CRISPR associated proteins provide acquired resistance against mobile genetic elements (virus, transposable elements and conjugative plasmids) [
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref047">47</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref048">48</ext-link>]. The uncharacterized proteins present in the above clusters may have similar functions related to the proteins present in the respective clusters and further analysis on these proteins will give additional information about their functions.
-            </p>10.1371/journal.pone.0178565.g006Fig 6
-        </sec>
-        <sec>
-            <title>Clusters of Co-evolving Genes (CCG).</title>
-            <p>Twelve representative CCGs are shown in (A) PCA plot where principle component analysis (PCA) of all the semi-conserved profiles (genes) was performed to plot only the representative genes and (B) Heatmap. Genes of a cluster are color-coded in the two plots. Phylogenetic profiles of genes are clustered using hierarchical clustering with Hamming distance as the metric, average linkage and a cutoff of 0.15. The representative phylogenetic profiles (genes) are then clustered again to depict their relatedness. Organism clusters in the heatmap are based on their genome profiles depicting their evolutionary relationships. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively. Details of the clusters are as follows: Cluster 1: transposase enzymes, Cluster 2: acetamidase/formamidase enzymes, Cluster 3: nitrogen fixation genes, Cluster 4: SH3 domain protein, Cluster 5: sodium symporter proteins, Cluster 6: phosphate ABC transporter proteins, Cluster 7: ATP synthase subunit enzymes, Cluster 8: hydrogenase enzymes, Cluster 9: CRISPR associated proteins, Cluster 10: TPR repeat-containing proteins, Cluster 11: gas vesicle proteins, Cluster 12: ABC transporter proteins.</p>
+            </p>
+            <fig>
+                <caption>
+                    <title>Clusters of Co-evolving Genes (CCG).</title>
+                    <p>Twelve representative CCGs are shown in (A) PCA plot where principle component analysis (PCA) of all the semi-conserved profiles (genes) was performed to plot only the representative genes and (B) Heatmap. Genes of a cluster are color-coded in the two plots. Phylogenetic profiles of genes are clustered using hierarchical clustering with Hamming distance as the metric, average linkage and a cutoff of 0.15. The representative phylogenetic profiles (genes) are then clustered again to depict their relatedness. Organism clusters in the heatmap are based on their genome profiles depicting their evolutionary relationships. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively. Details of the clusters are as follows: Cluster 1: transposase enzymes, Cluster 2: acetamidase/formamidase enzymes, Cluster 3: nitrogen fixation genes, Cluster 4: SH3 domain protein, Cluster 5: sodium symporter proteins, Cluster 6: phosphate ABC transporter proteins, Cluster 7: ATP synthase subunit enzymes, Cluster 8: hydrogenase enzymes, Cluster 9: CRISPR associated proteins, Cluster 10: TPR repeat-containing proteins, Cluster 11: gas vesicle proteins, Cluster 12: ABC transporter proteins.</p>
+                </caption>
+                <label>Fig 6</label>
+                <graphic xlink:href="info:doi/10.1371/journal.pone.0178565.g006" xlink:type="simple" mimetype="image"/>
+            </fig>
             <table-wrap id="pone.0178565.t005">
                 <label>Table 5.</label>
                 <caption>

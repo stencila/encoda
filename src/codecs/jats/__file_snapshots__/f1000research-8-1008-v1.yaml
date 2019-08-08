@@ -445,19 +445,27 @@ content:
         specific IgY antibodies (8.95 μg/μl) than that one of the second (3.02
         µg/µl) which were then used for the rest of experiments.
     type: Paragraph
-  - 'Figure 1. '
   - content:
-      - >-
-        Agarose gel precipitation test of pyocyanin (PCN)-IgY antibody complex
-        batch I and II.
-    depth: 1
-    id: ''
-    type: Heading
-  - content:
-      - >-
-        The presence of PCN-IgY antibody was detected through the presence of
-        precipitates formed on agarose gel.
-    type: Paragraph
+      - contentUrl: f1000research-8-21186-g0000.gif
+        format: ''
+        meta:
+          inline: false
+        type: ImageObject
+    label: 'Figure 1. '
+    caption:
+      - content:
+          - >-
+            Agarose gel precipitation test of pyocyanin (PCN)-IgY antibody
+            complex batch I and II.
+        depth: 1
+        id: ''
+        type: Heading
+      - content:
+          - >-
+            The presence of PCN-IgY antibody was detected through the presence
+            of precipitates formed on agarose gel.
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         The results of this study showed that PCN at 1 mg/ml was toxic to the
@@ -471,18 +479,26 @@ content:
         relation: fig
       - ).
     type: Paragraph
-  - 'Figure 2. '
   - content:
-      - The effects of pyocyanin (PCN) on Raji cell survivability.
-    depth: 1
-    id: ''
-    type: Heading
-  - content:
-      - >-
-        After incubation with various concentration of PCN, Raji cell
-        viabilities were assessed by MTT assay. PCN-treated Raji cell
-        survivability was calculated against the control cells. *p<0.05.
-    type: Paragraph
+      - contentUrl: f1000research-8-21186-g0001.gif
+        format: ''
+        meta:
+          inline: false
+        type: ImageObject
+    label: 'Figure 2. '
+    caption:
+      - content:
+          - The effects of pyocyanin (PCN) on Raji cell survivability.
+        depth: 1
+        id: ''
+        type: Heading
+      - content:
+          - >-
+            After incubation with various concentration of PCN, Raji cell
+            viabilities were assessed by MTT assay. PCN-treated Raji cell
+            survivability was calculated against the control cells. *p<0.05.
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         Further experimentation demonstrated that anti-PCN IgY at concentrations
@@ -529,59 +545,75 @@ content:
             relation: bibr
       - .
     type: Paragraph
-  - 'Figure 3. '
   - content:
-      - >-
-        The effects of IgY specific antibodies on pyocyanin (PCN)-treated Raji
-        cell survivability.
-    depth: 1
-    id: ''
-    type: Heading
-  - content:
-      - >-
-        PCN was incubated with various concentration of IgY antibodies. Raji
-        cells were then incubated with the PCN-IgY mixtures. Viable cells were
-        assessed by MTT and their percentage was calculated as in 
-
+      - contentUrl: f1000research-8-21186-g0002.gif
+        format: ''
+        meta:
+          inline: false
+        type: ImageObject
+    label: 'Figure 3. '
+    caption:
       - content:
-          - Figure 2
-        target: '#f2'
-        type: Link
-        relation: fig
-      - . *p<0.05.
-    type: Paragraph
-  - 'Figure 4. '
+          - >-
+            The effects of IgY specific antibodies on pyocyanin (PCN)-treated
+            Raji cell survivability.
+        depth: 1
+        id: ''
+        type: Heading
+      - content:
+          - >-
+            PCN was incubated with various concentration of IgY antibodies. Raji
+            cells were then incubated with the PCN-IgY mixtures. Viable cells
+            were assessed by MTT and their percentage was calculated as in 
+
+          - content:
+              - Figure 2
+            target: '#f2'
+            type: Link
+            relation: fig
+          - . *p<0.05.
+        type: Paragraph
+    type: Figure
   - content:
-      - >-
-        Microscopic features of Raji cells treated with pyocyanin (PCN) or
-        PCN-IgY antibody complexes.
-    depth: 1
-    id: ''
-    type: Heading
-  - content:
-      - |-
-        Raji cells were incubated without PCN (
+      - contentUrl: f1000research-8-21186-g0003.gif
+        format: ''
+        meta:
+          inline: false
+        type: ImageObject
+    label: 'Figure 4. '
+    caption:
+      - content:
+          - >-
+            Microscopic features of Raji cells treated with pyocyanin (PCN) or
+            PCN-IgY antibody complexes.
+        depth: 1
+        id: ''
+        type: Heading
+      - content:
+          - |-
+            Raji cells were incubated without PCN (
 
-      - type: Strong
-        content:
-          - A
-      - |-
-        ) and with PCN (
+          - type: Strong
+            content:
+              - A
+          - |-
+            ) and with PCN (
 
-      - type: Strong
-        content:
-          - B
-      - |-
-        ) or the mixture of PCN-IgY antibodies (
+          - type: Strong
+            content:
+              - B
+          - |-
+            ) or the mixture of PCN-IgY antibodies (
 
-      - type: Strong
-        content:
-          - C
-      - >-
-        ) and then stained with acrydine orange/ethidium bromide. Green or
-        orange fluorescence stained cells are viable and dead cells,
-        respectively.
-    type: Paragraph
+          - type: Strong
+            content:
+              - C
+          - >-
+            ) and then stained with acrydine orange/ethidium bromide. Green or
+            orange fluorescence stained cells are viable and dead cells,
+            respectively.
+        type: Paragraph
+    type: Figure
   - content:
       - Discussion
     depth: 1

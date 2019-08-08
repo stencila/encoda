@@ -163,11 +163,15 @@
                 <ext-link ext-link-type="uri" xlink:href="#bib34">De Cian et al., 2007a</ext-link>; 
                 <ext-link ext-link-type="uri" xlink:href="#bib53">Halder et al., 2012</ext-link>; 
                 <ext-link ext-link-type="uri" xlink:href="#bib84">Mendoza et al., 2016</ext-link>).
-            </p>10.7554/eLife.46793.002Figure 1.
-        </sec>
-        <sec>
-            <title>Strategy identifying genetic vulnerabilities involved with G4 biology.</title>
-            <p>Genome-wide shRNA silencing combined with G4 structure stabilisation by small molecules identifies genes that when depleted compromise cell viability. Cells are infected with a genome-wide pool of shRNA lentiviruses targeting the protein coding genome followed by G4 ligand treatment to stabilise genomic and/or RNA G4 structures. Two general outcomes are possible: a gene is not required in a G4-dependent process so there is no effect on cell viability (left); or gene silencing results in cell death either due to loss of a direct G4 interaction (e.g. binding/unwinding) or indirectly through gene loss in a G4-dependent pathway (right). In absence of ligand, cells are viable in presence of the shRNA. Dotted boxes highlight genotypes of disease significance for possible G4-based therapies (blue) and genes and biological pathways that involve and/or interact with G4 structures (orange).</p>
+            </p>
+            <fig>
+                <caption>
+                    <title>Strategy identifying genetic vulnerabilities involved with G4 biology.</title>
+                    <p>Genome-wide shRNA silencing combined with G4 structure stabilisation by small molecules identifies genes that when depleted compromise cell viability. Cells are infected with a genome-wide pool of shRNA lentiviruses targeting the protein coding genome followed by G4 ligand treatment to stabilise genomic and/or RNA G4 structures. Two general outcomes are possible: a gene is not required in a G4-dependent process so there is no effect on cell viability (left); or gene silencing results in cell death either due to loss of a direct G4 interaction (e.g. binding/unwinding) or indirectly through gene loss in a G4-dependent pathway (right). In absence of ligand, cells are viable in presence of the shRNA. Dotted boxes highlight genotypes of disease significance for possible G4-based therapies (blue) and genes and biological pathways that involve and/or interact with G4 structures (orange).</p>
+                </caption>
+                <label>Figure 1.</label>
+                <graphic xlink:href="elife-46793-fig1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+            </fig>
         </sec>
         <sec>
             <title>Results</title>
@@ -189,26 +193,36 @@
                 <sub>2</sub> fold change (FC, tF/t0) is negative. A pilot using one shRNA pool established that a tF of 15 population doublings can be used to reveal significant G4-ligand-mediated changes [false discovery rate (FDR) ≤ 0.05] in shRNA levels using a ligand concentration resulting in 20% cell death (GI
                 <sub>20</sub>, see Materials and methods and 
                 <ext-link ext-link-type="uri" xlink:href="#fig2s1">Figure 2—figure supplement 1</ext-link> for details).
-            </p>10.7554/eLife.46793.003Figure 2.
-        </sec>
-        <sec>
-            <title>shRNA screening pipeline to uncover genetic vulnerabilities to G4 stabilisation.</title>
-            <p>(
-                <bold>A</bold>) A G-tetrad with four interacting guanines (left), which stack to form G4 structures (right). (
-                <bold>B</bold>) Structures of the G4-stabilising small molecule ligands PDS and PhenDC3. (
-                <bold>C</bold>) Distribution of the numbers of shRNAs targeting each gene, with the average indicated by a red dotted line. (
-                <bold>D</bold>) Overall screening approach illustrated for one library pool. Plasmids are retrovirally packaged and A375 cells are infected at multiplicity of infection (MOI) of 0.3 (30%). Following antibiotic selection, an initial time point (t0) is harvested and then cells are cultured for ‘n’ population doublings in DMSO, PDS or PhenDC3 before the final time point was harvested (tF).
-            </p>10.7554/eLife.46793.004Figure 2—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Genome-wide shRNA screen parameter optimisation.</title>
-            <p>(
-                <bold>A</bold>) Representative growth curves from shRNA pool eight showing cumulative population doublings for DMSO, PhenDC3 and PDS (mean and standard deviation from three cell counts per condition). (
-                <bold>B</bold>) Comparison of significant hairpin hits (colours indicate significance at FDR ≤ 0.05) for two end points: population doubling 7 (left) and 15 (right) for PDS (top) and PhenDC3 (bottom). (
-                <bold>C</bold>) Comparison of FDR and log
-                <sub>2</sub>FC values for a hairpin targeting 
-                <italic>XRN1</italic> following DMSO, PDS or PhenDC3 treatment after 7 and 15 population doublings.
             </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>shRNA screening pipeline to uncover genetic vulnerabilities to G4 stabilisation.</title>
+                        <p>(
+                            <bold>A</bold>) A G-tetrad with four interacting guanines (left), which stack to form G4 structures (right). (
+                            <bold>B</bold>) Structures of the G4-stabilising small molecule ligands PDS and PhenDC3. (
+                            <bold>C</bold>) Distribution of the numbers of shRNAs targeting each gene, with the average indicated by a red dotted line. (
+                            <bold>D</bold>) Overall screening approach illustrated for one library pool. Plasmids are retrovirally packaged and A375 cells are infected at multiplicity of infection (MOI) of 0.3 (30%). Following antibiotic selection, an initial time point (t0) is harvested and then cells are cultured for ‘n’ population doublings in DMSO, PDS or PhenDC3 before the final time point was harvested (tF).
+                        </p>
+                    </caption>
+                    <label>Figure 2.</label>
+                    <graphic xlink:href="elife-46793-fig2-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Genome-wide shRNA screen parameter optimisation.</title>
+                        <p>(
+                            <bold>A</bold>) Representative growth curves from shRNA pool eight showing cumulative population doublings for DMSO, PhenDC3 and PDS (mean and standard deviation from three cell counts per condition). (
+                            <bold>B</bold>) Comparison of significant hairpin hits (colours indicate significance at FDR ≤ 0.05) for two end points: population doubling 7 (left) and 15 (right) for PDS (top) and PhenDC3 (bottom). (
+                            <bold>C</bold>) Comparison of FDR and log
+                            <sub>2</sub>FC values for a hairpin targeting 
+                            <italic>XRN1</italic> following DMSO, PDS or PhenDC3 treatment after 7 and 15 population doublings.
+                        </p>
+                    </caption>
+                    <label>Figure 2—figure supplement 1.</label>
+                    <graphic xlink:href="elife-46793-fig2-figsupp1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+            </fig-group>
             <p>To understand the complete spectrum of G4 vulnerabilities, we first considered the combined set of sensitivities to PDS and PhenDC3 together. For the whole library, when individual shRNAs are considered 9509 (~7%) G4-ligand-specific hairpins (i.e. those not in DMSO) were found to be depleted (FDR ≤ 0.05; log
                 <sub>2</sub> FC &lt;0, 
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3A</ext-link>, 
@@ -225,28 +239,32 @@
                 <ext-link ext-link-type="uri" xlink:href="#bib130">Xu et al., 2017</ext-link>; 
                 <ext-link ext-link-type="uri" xlink:href="#bib137">Zimmer et al., 2016</ext-link>; 
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3D</ext-link>).
-            </p>10.7554/eLife.46793.005Figure 3.
-        </sec>
-        <sec>
-            <title>Genome-wide screening in A375 cells reveals deficiencies in known G4-associated genes as sensitive to G4-stabilising small molecules.</title>
-            <p>(
-                <bold>A–C</bold>) Venn diagrams for: (
-                <bold>A</bold>) significantly differentially expressed individual shRNAs (FDR ≤ 0.05); (
-                <bold>B</bold>) significantly depleted genes (50% or three hairpins, FDR ≤ 0.05, median log
-                <sub>2</sub>FC &lt; 0) following DMSO, PDS and PhenDC3 treatment and (
-                <bold>C</bold>) Significant PDS and PhenDC3 sensitiser genes not in DMSO and after applying a median log
-                <sub>2</sub>FC ≤ −1 cut off. (
-                <bold>D–F</bold>) Tables showing the number of depleted hairpins and median log
-                <sub>2</sub>FC values for: (
-                <bold>D</bold>) known G4 ligand sensitisers, 
-                <italic>ATRX, HERC2</italic>, 
-                <italic>BRCA1</italic> and 
-                <italic>BRCA2,</italic> that are independently validated in our screen; (
-                <bold>E</bold>) sensitisers annotated with a G4-associated term in GO, UniprotKB or G4IPBD databases and (
-                <bold>F</bold>) sensitisers identified as G4-related by text-mining showing the associated PolySearch2 algorithm score and summary of the G4 association. Sensitisers are defined as a gene where 50% or three hairpins were significantly differentially expressed (FDR ≤ 0.05) with median log
-                <sub>2</sub>FC ≤ −1. See also 
-                <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
             </p>
+            <fig>
+                <caption>
+                    <title>Genome-wide screening in A375 cells reveals deficiencies in known G4-associated genes as sensitive to G4-stabilising small molecules.</title>
+                    <p>(
+                        <bold>A–C</bold>) Venn diagrams for: (
+                        <bold>A</bold>) significantly differentially expressed individual shRNAs (FDR ≤ 0.05); (
+                        <bold>B</bold>) significantly depleted genes (50% or three hairpins, FDR ≤ 0.05, median log
+                        <sub>2</sub>FC &lt; 0) following DMSO, PDS and PhenDC3 treatment and (
+                        <bold>C</bold>) Significant PDS and PhenDC3 sensitiser genes not in DMSO and after applying a median log
+                        <sub>2</sub>FC ≤ −1 cut off. (
+                        <bold>D–F</bold>) Tables showing the number of depleted hairpins and median log
+                        <sub>2</sub>FC values for: (
+                        <bold>D</bold>) known G4 ligand sensitisers, 
+                        <italic>ATRX, HERC2</italic>, 
+                        <italic>BRCA1</italic> and 
+                        <italic>BRCA2,</italic> that are independently validated in our screen; (
+                        <bold>E</bold>) sensitisers annotated with a G4-associated term in GO, UniprotKB or G4IPBD databases and (
+                        <bold>F</bold>) sensitisers identified as G4-related by text-mining showing the associated PolySearch2 algorithm score and summary of the G4 association. Sensitisers are defined as a gene where 50% or three hairpins were significantly differentially expressed (FDR ≤ 0.05) with median log
+                        <sub>2</sub>FC ≤ −1. See also 
+                        <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
+                    </p>
+                </caption>
+                <label>Figure 3.</label>
+                <graphic xlink:href="elife-46793-fig3-v1.tif" mimetype="image" mime-subtype="tiff"/>
+            </fig>
             <p>We next explored further genes already implicated in G4 biology, but whose deficiency has not yet been linked with any enhanced sensitivity to G4 ligands. For genes annotated with G4-related terms in the UniprotKB, Gene Ontology (GO) and G4IPDB databases (
                 <ext-link ext-link-type="uri" xlink:href="#bib85">Mishra et al., 2016</ext-link>), an additional eight sensitisers (
                 <italic>ADAR, DHX36, DNA2, FUS, MCRS1, RECQL4, SF3B3 and XRN1</italic>) were uncovered (
@@ -264,16 +282,20 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig4">Figure 4B</ext-link>; 
                 <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>) which showed 20 out of 45 of the former and all the latter terms into DNA or RNA classifications, consistent with PDS/PhenDC3 directly binding nucleic acid G4 targets. Furthermore, when protein domains were considered using GENE3D and PFAM databases (
                 <ext-link ext-link-type="uri" xlink:href="#fig4">Figure 4C</ext-link>), we discovered enrichments in helicase C-terminal domains, RNA recognition motifs including RRM, RBD and RNP domains, and DNA-binding domains including zinc fingers, bZIP motifs and HMG boxes. Consistent with the ubiquitin-mediated proteolysis KEGG cluster, enrichments in multifunctional ATPase domains and in ubiquitin hydrolase domains, were also found. These latter findings suggest important areas of biology not previously known to be affected by G4 intervention in mammalian cells.
-            </p>10.7554/eLife.46793.006Figure 4.
-        </sec>
-        <sec>
-            <title>Pathways and processes showing sensitivity to G4-stabilising ligands.</title>
-            <p>(
-                <bold>A</bold>) Enriched KEGG pathways and (
-                <bold>B</bold>) Gene Ontology terms, GO Biological Processes (BP) and Molecular Functions (MF), for the 758 genome-wide G4-sensitiser genes. Blue- genes common to both ligands; black- genes unique to either PDS or PhenDC3. A right-sided enrichment test with Bonferroni correction used (see Materials and methods). (
-                <bold>C</bold>) Enriched protein domains (p≤0.05) within GENE3D (black) and PFAM databases (grey) ordered by -Log10 (EASE p-value). See also 
-                <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
             </p>
+            <fig>
+                <caption>
+                    <title>Pathways and processes showing sensitivity to G4-stabilising ligands.</title>
+                    <p>(
+                        <bold>A</bold>) Enriched KEGG pathways and (
+                        <bold>B</bold>) Gene Ontology terms, GO Biological Processes (BP) and Molecular Functions (MF), for the 758 genome-wide G4-sensitiser genes. Blue- genes common to both ligands; black- genes unique to either PDS or PhenDC3. A right-sided enrichment test with Bonferroni correction used (see Materials and methods). (
+                        <bold>C</bold>) Enriched protein domains (p≤0.05) within GENE3D (black) and PFAM databases (grey) ordered by -Log10 (EASE p-value). See also 
+                        <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
+                    </p>
+                </caption>
+                <label>Figure 4.</label>
+                <graphic xlink:href="elife-46793-fig4-v1.tif" mimetype="image" mime-subtype="tiff"/>
+            </fig>
         </sec>
         <sec>
             <title>Cancer-associated gene depletion enhances sensitivity to G4-ligands</title>
@@ -292,18 +314,22 @@
                 <italic>SMARCA4</italic>, 
                 <italic>SMARCB1</italic> and 
                 <italic>SMARCE1</italic>.
-            </p>10.7554/eLife.46793.007Figure 5.
-        </sec>
-        <sec>
-            <title>Identification of cancer-associated genes whose loss promotes sensitivity to G4 ligands.</title>
-            <p>(
-                <bold>A, B</bold>) Median log
-                <sub>2</sub>FC and number of significantly depleted hairpins for G4 sensitisers overlapping the COSMIC database for PDS (
-                <bold>A</bold>) and PhenDC3 (
-                <bold>B</bold>). Genes common to both are indicated in blue. See also 
-                <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>. (
-                <bold>C</bold>) Functional interaction network analysis using STRING for the 50 COSMIC proteins indicated in A and B. Clusters are shown using confidence interactions &gt; 0.4 from co-expression and experimental data. Box indicates the DDR cluster.
             </p>
+            <fig>
+                <caption>
+                    <title>Identification of cancer-associated genes whose loss promotes sensitivity to G4 ligands.</title>
+                    <p>(
+                        <bold>A, B</bold>) Median log
+                        <sub>2</sub>FC and number of significantly depleted hairpins for G4 sensitisers overlapping the COSMIC database for PDS (
+                        <bold>A</bold>) and PhenDC3 (
+                        <bold>B</bold>). Genes common to both are indicated in blue. See also 
+                        <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>. (
+                        <bold>C</bold>) Functional interaction network analysis using STRING for the 50 COSMIC proteins indicated in A and B. Clusters are shown using confidence interactions &gt; 0.4 from co-expression and experimental data. Box indicates the DDR cluster.
+                    </p>
+                </caption>
+                <label>Figure 5.</label>
+                <graphic xlink:href="elife-46793-fig5-v1.tif" mimetype="image" mime-subtype="tiff"/>
+            </fig>
         </sec>
         <sec>
             <title>Focused G4-sensitiser shRNA screening reveals robust G4-ligand genetic vulnerabilities and potential therapeutic targets</title>
@@ -316,41 +342,51 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig6s1">Figure 6—figure supplement 1F &amp; G</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>). We next considered that the 40 sensitiser genes common between PDS and PhenDC3 reflected the most robust sensitisers for G4 ligands in general and it is notable that 27 out of 40 associated with DNA or RNA binding processes, such as chromatin modification, replication transcription, and translation (
                 <ext-link ext-link-type="uri" xlink:href="#fig6">Figure 6F</ext-link>). Again, the ubiquitin processes, which previously were not linked with G4 biology, were also uncovered as a significant sensitiser pathway. Overall, these results clearly show the spectrum of biological vulnerabilities that underpin the observed enhanced sensitivities for each G4-targeting ligand.
-            </p>10.7554/eLife.46793.008Figure 6.
-        </sec>
-        <sec>
-            <title>A custom G4 sensitiser shRNA panel reveals unique and common G4 ligand sensitivities.</title>
-            <p>(
-                <bold>A</bold>) A shRNAs custom retroviral pool (~8000 hairpins) was used to infect A375 cells. Following antibiotic selection, the reference time point (t0) was taken and then cells were cultured for 15 population doublings in DMSO, PDS or PhenDC3 before (tF). Three biological replicates were performed. (
-                <bold>B</bold>) Significant sensitiser genes for the A375 focused screen (50% or three significantly depleted with median log
-                <sub>2</sub> FC≤ −1). (
-                <bold>C</bold>) Overlap of the genome-wide (GW) with A375 focused screen for PDS and PhenDC3 G4-sensitisers combined (see also 
-                <ext-link ext-link-type="uri" xlink:href="#fig6s1">Figure 6—figure supplement 1</ext-link>). (
-                <bold>D–E</bold>) Enriched KEGG pathways for (
-                <bold>D</bold>) PhenDC3 and (
-                <bold>E</bold>) PDS sensitiser genes common to the genome-wide and A375 focused screens. A right-sided enrichment test with Bonferroni correction used (see Materials and methods). (
-                <bold>F</bold>) DAVID, STRING (experimental data, co-expression, medium confidence ≥0.4) interaction and UniprotKB data were used to categorise biochemical roles for the 40 high-confidence G4 sensitisers common to both ligands. Genes in red indicate those found in the (DGIdb 2.0). *=genes in multiple categories. (
-                <bold>G, H</bold>) Overlap of the all 290 robust G4 sensitisers (
-                <bold>G</bold>) and the 40 G4 sensitisers common to both ligands (
-                <bold>H</bold>) with the Drug Genome Interaction database. The druggable genome denotes genes with known or predicted drug interactions. Clinically actionable denotes genes used in targeted cancer clinical sequencing panels. See also 
-                <ext-link ext-link-type="uri" xlink:href="#fig6s1">Figure 6—figure supplement 1</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
-            </p>10.7554/eLife.46793.009Figure 6—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Focused A375 cell screening parallels findings from the genome-wide screen and highlights differences in individual G4 ligand sensitivities.</title>
-            <p>(
-                <bold>A</bold>) Cumulative population doublings for A375 cells for DMSO, PDS and PhenDC3 (mean and standard deviation from three cell counts per condition). (
-                <bold>B</bold>) Number of shRNAs targeting each gene, with the maximum capped at seven per gene (
-                <bold>C–E</bold>) Venn diagrams showing (
-                <bold>C</bold>) significantly depleted shRNAs at t15 v t0 (FDR ≤ 0.05) for DMSO, PDS and PhenDC3 treatment, (
-                <bold>D</bold>) significantly depleted genes (minimum 50% or three significant shRNAs) and (
-                <bold>E</bold>) overlap of focused and genome-wide screens. For PDS and PhenDC3, there are 89 and 201 unique genes, respectively, that overlap between the two screens and 40 genes shared for PDS and PhenDC3. (
-                <bold>F–G</bold>) Enriched Gene Ontology terms (GO Biological Processes and Molecular Functions) as determined by Bonferroni multiple hypothesis correction (p≤0.05) for (
-                <bold>E</bold>) all 201 PhenDC3 and (
-                <bold>F</bold>) all 129 PDS G4-hits validated by the A375 focused screen. Black bars reflect terms enriched in both PDS and PhenDC3. See also 
-                <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
             </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>A custom G4 sensitiser shRNA panel reveals unique and common G4 ligand sensitivities.</title>
+                        <p>(
+                            <bold>A</bold>) A shRNAs custom retroviral pool (~8000 hairpins) was used to infect A375 cells. Following antibiotic selection, the reference time point (t0) was taken and then cells were cultured for 15 population doublings in DMSO, PDS or PhenDC3 before (tF). Three biological replicates were performed. (
+                            <bold>B</bold>) Significant sensitiser genes for the A375 focused screen (50% or three significantly depleted with median log
+                            <sub>2</sub> FC≤ −1). (
+                            <bold>C</bold>) Overlap of the genome-wide (GW) with A375 focused screen for PDS and PhenDC3 G4-sensitisers combined (see also 
+                            <ext-link ext-link-type="uri" xlink:href="#fig6s1">Figure 6—figure supplement 1</ext-link>). (
+                            <bold>D–E</bold>) Enriched KEGG pathways for (
+                            <bold>D</bold>) PhenDC3 and (
+                            <bold>E</bold>) PDS sensitiser genes common to the genome-wide and A375 focused screens. A right-sided enrichment test with Bonferroni correction used (see Materials and methods). (
+                            <bold>F</bold>) DAVID, STRING (experimental data, co-expression, medium confidence ≥0.4) interaction and UniprotKB data were used to categorise biochemical roles for the 40 high-confidence G4 sensitisers common to both ligands. Genes in red indicate those found in the (DGIdb 2.0). *=genes in multiple categories. (
+                            <bold>G, H</bold>) Overlap of the all 290 robust G4 sensitisers (
+                            <bold>G</bold>) and the 40 G4 sensitisers common to both ligands (
+                            <bold>H</bold>) with the Drug Genome Interaction database. The druggable genome denotes genes with known or predicted drug interactions. Clinically actionable denotes genes used in targeted cancer clinical sequencing panels. See also 
+                            <ext-link ext-link-type="uri" xlink:href="#fig6s1">Figure 6—figure supplement 1</ext-link>, 
+                            <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
+                        </p>
+                    </caption>
+                    <label>Figure 6.</label>
+                    <graphic xlink:href="elife-46793-fig6-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Focused A375 cell screening parallels findings from the genome-wide screen and highlights differences in individual G4 ligand sensitivities.</title>
+                        <p>(
+                            <bold>A</bold>) Cumulative population doublings for A375 cells for DMSO, PDS and PhenDC3 (mean and standard deviation from three cell counts per condition). (
+                            <bold>B</bold>) Number of shRNAs targeting each gene, with the maximum capped at seven per gene (
+                            <bold>C–E</bold>) Venn diagrams showing (
+                            <bold>C</bold>) significantly depleted shRNAs at t15 v t0 (FDR ≤ 0.05) for DMSO, PDS and PhenDC3 treatment, (
+                            <bold>D</bold>) significantly depleted genes (minimum 50% or three significant shRNAs) and (
+                            <bold>E</bold>) overlap of focused and genome-wide screens. For PDS and PhenDC3, there are 89 and 201 unique genes, respectively, that overlap between the two screens and 40 genes shared for PDS and PhenDC3. (
+                            <bold>F–G</bold>) Enriched Gene Ontology terms (GO Biological Processes and Molecular Functions) as determined by Bonferroni multiple hypothesis correction (p≤0.05) for (
+                            <bold>E</bold>) all 201 PhenDC3 and (
+                            <bold>F</bold>) all 129 PDS G4-hits validated by the A375 focused screen. Black bars reflect terms enriched in both PDS and PhenDC3. See also 
+                            <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
+                        </p>
+                    </caption>
+                    <label>Figure 6—figure supplement 1.</label>
+                    <graphic xlink:href="elife-46793-fig6-figsupp1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+            </fig-group>
             <p>We next reasoned that the robust set of 290 G4 ligand sensitiser genes above provides a suitable test bed for exploring the arising therapeutic potential for combinatorial pharmacological inhibition and G4-ligands. We therefore looked for the presence of these sensitisers genes within the druggable genome interaction database (DGIdb) (
                 <ext-link ext-link-type="uri" xlink:href="#bib50">Griffith et al., 2013</ext-link>). A total of 74 G4-sensitisers were found in the classifications ‘Druggable Genome’ (genes with known or predicted drug interactions) and ‘Clinically Actionable’ (genes used in targeted clinical cancer sequencing for precision medicine) with 13 being common to both classifications (
                 <ext-link ext-link-type="uri" xlink:href="#fig6">Figure 6G</ext-link>, 
@@ -372,40 +408,50 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig7">Figure 7A</ext-link>) revealed a core set of G4-associated genes/pathways for these genes in spliceosome, HR and ubiquitin-mediated proteolysis processes (p&lt;0.0005). Overall, 29 PDS and 22 PhenDC3 gene sensitivities were found to be shared across all three screens (
                 <ext-link ext-link-type="uri" xlink:href="#fig7">Figure 7B,C</ext-link>), and it is noteworthy that both G4 ligands targeted similar processes including transcription, splicing and ubiquitin-mediated proteolysis (
                 <ext-link ext-link-type="uri" xlink:href="#fig7">Figure 7D,E</ext-link>).
-            </p>10.7554/eLife.46793.010Figure 7.
-        </sec>
-        <sec>
-            <title>G4 sensitivities in two different cell lines.</title>
-            <p>(
-                <bold>A</bold>) Enriched KEGG and GO pathways for all G4 ligand-specific sensitisers (73 genes) shared between the genome-wide A375 and HT1080 screens. A right-sided enrichment test with Bonferroni correction used (see Materials and methods). (
-                <bold>B–C</bold>) Comparison of G4 sensitisers across A375 focused, A375 genome-wide and HT1080 focused screens for (
-                <bold>B</bold>) PhenDC3 and (
-                <bold>C</bold>) PDS. (
-                <bold>D–E</bold>) DAVID, STRING (experimental data, co-expression, medium confidence (≥0.4) interaction) and UniProtKB data analysis showing biochemical functions for common PhenDC3 (
-                <bold>D</bold>) and PDS (
-                <bold>E</bold>) sensitisers across all three screens. *=genes in multiple categories. Blue, four sensitisers common to both ligands. (
-                <bold>F</bold>) Left, common sensitiser genes across all three screens. Right, number of depleted hairpins and median log
-                <sub>2</sub>FC values for four key genes found as both PDS and PhenDC3 sensitisers across all the three screens. See also 
-                <ext-link ext-link-type="uri" xlink:href="#fig7s1">Figure 7—figure supplement 1</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
-            </p>10.7554/eLife.46793.011Figure 7—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Focused HT1080 and A375 cell screening reveals shared PDS and PhenDC3 sensitivities.</title>
-            <p>(
-                <bold>A</bold>) Cumulative population doublings for HT1080 cells for DMSO, PDS and PhenDC3 (mean and standard deviation from three cell counts per condition). (
-                <bold>B</bold>) Comparison between the numbers of shRNAs targeting each gene, with the maximum capped at seven per gene. (
-                <bold>C–E</bold>) Venn diagrams from the HT1080 focused screen showing (
-                <bold>C</bold>) significantly depleted shRNAs at t15 v t0 (FDR ≤ 0.05) for DMSO, PDS and PhenDC3 treatment, (
-                <bold>D</bold>) significantly depleted genes (minimum 50% or three significant shRNAs; FDR ≤ 0.05) and (
-                <bold>E</bold>) sensitiser genes (significantly depleted in PDS or PhenDC3 but not DMSO and median log
-                <sub>2</sub>FC ≤ −1). (
-                <bold>F–G</bold>) Venn diagrams showing G4-ligand-specific sensitisers overlapping between (
-                <bold>F</bold>) the genome-wide (GW) A375 and HT1080 focused screens and (
-                <bold>G</bold>) the HT1080 and A375 focused screens (50% or three significantly depleted with a median log
-                <sub>2</sub>FC ≤ −1). See also 
-                <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
             </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>G4 sensitivities in two different cell lines.</title>
+                        <p>(
+                            <bold>A</bold>) Enriched KEGG and GO pathways for all G4 ligand-specific sensitisers (73 genes) shared between the genome-wide A375 and HT1080 screens. A right-sided enrichment test with Bonferroni correction used (see Materials and methods). (
+                            <bold>B–C</bold>) Comparison of G4 sensitisers across A375 focused, A375 genome-wide and HT1080 focused screens for (
+                            <bold>B</bold>) PhenDC3 and (
+                            <bold>C</bold>) PDS. (
+                            <bold>D–E</bold>) DAVID, STRING (experimental data, co-expression, medium confidence (≥0.4) interaction) and UniProtKB data analysis showing biochemical functions for common PhenDC3 (
+                            <bold>D</bold>) and PDS (
+                            <bold>E</bold>) sensitisers across all three screens. *=genes in multiple categories. Blue, four sensitisers common to both ligands. (
+                            <bold>F</bold>) Left, common sensitiser genes across all three screens. Right, number of depleted hairpins and median log
+                            <sub>2</sub>FC values for four key genes found as both PDS and PhenDC3 sensitisers across all the three screens. See also 
+                            <ext-link ext-link-type="uri" xlink:href="#fig7s1">Figure 7—figure supplement 1</ext-link>, 
+                            <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
+                        </p>
+                    </caption>
+                    <label>Figure 7.</label>
+                    <graphic xlink:href="elife-46793-fig7-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Focused HT1080 and A375 cell screening reveals shared PDS and PhenDC3 sensitivities.</title>
+                        <p>(
+                            <bold>A</bold>) Cumulative population doublings for HT1080 cells for DMSO, PDS and PhenDC3 (mean and standard deviation from three cell counts per condition). (
+                            <bold>B</bold>) Comparison between the numbers of shRNAs targeting each gene, with the maximum capped at seven per gene. (
+                            <bold>C–E</bold>) Venn diagrams from the HT1080 focused screen showing (
+                            <bold>C</bold>) significantly depleted shRNAs at t15 v t0 (FDR ≤ 0.05) for DMSO, PDS and PhenDC3 treatment, (
+                            <bold>D</bold>) significantly depleted genes (minimum 50% or three significant shRNAs; FDR ≤ 0.05) and (
+                            <bold>E</bold>) sensitiser genes (significantly depleted in PDS or PhenDC3 but not DMSO and median log
+                            <sub>2</sub>FC ≤ −1). (
+                            <bold>F–G</bold>) Venn diagrams showing G4-ligand-specific sensitisers overlapping between (
+                            <bold>F</bold>) the genome-wide (GW) A375 and HT1080 focused screens and (
+                            <bold>G</bold>) the HT1080 and A375 focused screens (50% or three significantly depleted with a median log
+                            <sub>2</sub>FC ≤ −1). See also 
+                            <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
+                        </p>
+                    </caption>
+                    <label>Figure 7—figure supplement 1.</label>
+                    <graphic xlink:href="elife-46793-fig7-figsupp1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+            </fig-group>
         </sec>
         <sec>
             <title>
@@ -428,91 +474,113 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig8s3">Figure 8—figure supplement 3C–F</ext-link>) and compared to DMSO treatment at 72, 96 and 120 hr (
                 <ext-link ext-link-type="uri" xlink:href="#fig8">Figure 8C–F</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#fig8s3">Figure 8—figure supplement 3G–J</ext-link>).
-            </p>10.7554/eLife.46793.012Figure 8.
-        </sec>
-        <sec>
-            <title>siRNA knockdowns validate 
-                <italic>BRCA1</italic>, 
-                <italic>TOP1</italic>, 
-                <italic>DDX42</italic> and 
-                <italic>GAR1 as</italic> key G4 ligand sensitiser genes.
-            </title>
-            <p>(
-                <bold>A</bold>) HT1080 cells were treated with non-targeting (NT) or targeting (T) siRNAs for 
-                <italic>BRCA1</italic>, 
-                <italic>TOP1, DDX42</italic> and 
-                <italic>GAR1</italic>. 48 hr and 144 hr after transfection, cell lysates and a non-transfected cell lysate (U) were probed with appropriate antibodies and actin control by western blotting. (
-                <bold>B</bold>) Protein levels for targeting (T) and non-targeting (NT) 48 hr lysates were normalised to the internal actin control and then normalised to NT levels for three biological replicates (mean ± standard deviation). (
-                <bold>C–F</bold>) HT1080 cells were transfected with targeting siRNAs for 24 hr before PDS, PhenDC3 or DMSO treatment. Comparative box plots of confluency differences and significance (unpaired parametric t-test) at selected timepoints for ﻿(
-                <bold>C</bold>) 
-                <italic>BRCA1</italic>, (
-                <bold>D</bold>) 
-                <italic>TOP1</italic>, (
-                <bold>E</bold>) 
-                <italic>DDX42</italic>, (
-                <bold>F</bold>) 
-                <italic>GAR</italic> (ns = not significant) for three separate siRNA transfections. See also 
-                <ext-link ext-link-type="uri" xlink:href="#fig8s1">Figure 8—figure supplements 1</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#fig8s2">2</ext-link> and 
-                <ext-link ext-link-type="uri" xlink:href="#fig8s3">3</ext-link>.
             </p>
-            <p>10.7554/eLife.46793.017Figure 8—source data 1.</p>
-        </sec>
-        <sec>
-            <title>Source files for western blots.</title>
-            <p>(
-                <bold>A</bold>) Full length western blots and (
-                <bold>B</bold>) capillary traces obtained from Compass Software (Simple Western) for results shown in 
-                <ext-link ext-link-type="uri" xlink:href="#fig8">Figure 8A</ext-link>.
-            </p>10.7554/eLife.46793.013Figure 8—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Short-term siRNA knockdowns of four key sensitisers in HT1080 cells show dose-dependent growth inhibition with G4-ligands.</title>
-            <p>(
-                <bold>A</bold>) HT1080 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (0.25 μM and 0.5 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean ± standard deviation). (
-                <bold>B–D</bold>) Confluency differences (mean ± standard deviation) compared to NT siRNA were plotted across three replicates for (
-                <bold>B</bold>) 
-                <italic>BRCA1</italic>, (
-                <bold>C</bold>) 
-                <italic>TOP1</italic>, (
-                <bold>D</bold>) 
-                <italic>DDX42</italic>, (
-                <bold>E</bold>) 
-                <italic>GAR1</italic>.
-            </p>10.7554/eLife.46793.014Figure 8—figure supplement 2.
-        </sec>
-        <sec>
-            <title>Short-term siRNA knockdowns of four key G4-sensitisers in A375 cells show dose-dependent growth inhibition with G4-ligands.</title>
-            <p>A375 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (5 μM and 10 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean ± standard deviation).</p>10.7554/eLife.46793.015Figure 8—figure supplement 3.
-        </sec>
-        <sec>
-            <title>Short-term siRNA knockdowns validate four key sensitivities from the shRNA screening in A375 cells.</title>
-            <p>(
-                <bold>A</bold>) For 
-                <italic>BRCA1</italic>, 
-                <italic>TOP1</italic>, 
-                <italic>DDX42</italic> and 
-                <italic>GAR1</italic>, A375 cells were transfected with non-targeting (NT) or targeting (T) siRNAs. 48 hr and 144 hr after transfection, lysates were probed appropriate antibodies alongside a non-transfected lysate (U). (
-                <bold>B</bold>) BRCA1, TOP1, DDX42 and GAR1 protein levels for targeting (T) and non-targeting (NT) lysates were normalised to the internal actin control and then normalised to NT levels for three independent blots 48 hr (top) and two independent blots 144 hr (bottom) after transfection (mean ± standard deviation). (
-                <bold>C–F</bold>) A375 cells were transfected with the targeting siRNAs for 24 hr before PDS, PhenDC3 or DMSO treatment. Average confluency difference (mean ± standard deviation) compared to NT siRNA plotted across three replicates for (
-                <bold>C</bold>) BRCA1, (
-                <bold>D</bold>) TOP1, (
-                <bold>E</bold>) DDX42, (
-                <bold>F</bold>) GAR1. Confluency differences at 72, 96 and 120 hr plotted for comparison for (
-                <bold>G</bold>) BRCA1, (
-                <bold>H</bold>) TOP1, (
-                <bold>I</bold>) DDX42, (
-                <bold>J</bold>) GAR1.
-            </p>
-            <p>10.7554/eLife.46793.016Figure 8—figure supplement 3—source data 1.</p>
-        </sec>
-        <sec>
-            <title>Source files for western blots.</title>
-            <p>(
-                <bold>A</bold>) Full length western blots and (
-                <bold>B</bold>) capillary traces obtained from Compass Software (Simple Western) for results shown in 
-                <ext-link ext-link-type="uri" xlink:href="#fig8s3">Figure 8—figure supplement 3A</ext-link>.
-            </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>siRNA knockdowns validate 
+                            <italic>BRCA1</italic>, 
+                            <italic>TOP1</italic>, 
+                            <italic>DDX42</italic> and 
+                            <italic>GAR1 as</italic> key G4 ligand sensitiser genes.
+                        </title>
+                        <p>(
+                            <bold>A</bold>) HT1080 cells were treated with non-targeting (NT) or targeting (T) siRNAs for 
+                            <italic>BRCA1</italic>, 
+                            <italic>TOP1, DDX42</italic> and 
+                            <italic>GAR1</italic>. 48 hr and 144 hr after transfection, cell lysates and a non-transfected cell lysate (U) were probed with appropriate antibodies and actin control by western blotting. (
+                            <bold>B</bold>) Protein levels for targeting (T) and non-targeting (NT) 48 hr lysates were normalised to the internal actin control and then normalised to NT levels for three biological replicates (mean ± standard deviation). (
+                            <bold>C–F</bold>) HT1080 cells were transfected with targeting siRNAs for 24 hr before PDS, PhenDC3 or DMSO treatment. Comparative box plots of confluency differences and significance (unpaired parametric t-test) at selected timepoints for ﻿(
+                            <bold>C</bold>) 
+                            <italic>BRCA1</italic>, (
+                            <bold>D</bold>) 
+                            <italic>TOP1</italic>, (
+                            <bold>E</bold>) 
+                            <italic>DDX42</italic>, (
+                            <bold>F</bold>) 
+                            <italic>GAR</italic> (ns = not significant) for three separate siRNA transfections. See also 
+                            <ext-link ext-link-type="uri" xlink:href="#fig8s1">Figure 8—figure supplements 1</ext-link>, 
+                            <ext-link ext-link-type="uri" xlink:href="#fig8s2">2</ext-link> and 
+                            <ext-link ext-link-type="uri" xlink:href="#fig8s3">3</ext-link>.
+                        </p>
+                        <p>10.7554/eLife.46793.017Figure 8—source data 1.</p>
+                        <title>Source files for western blots.</title>
+                        <p>(
+                            <bold>A</bold>) Full length western blots and (
+                            <bold>B</bold>) capillary traces obtained from Compass Software (Simple Western) for results shown in 
+                            <ext-link ext-link-type="uri" xlink:href="#fig8">Figure 8A</ext-link>.
+                        </p>
+                        <media xlink:href="elife-46793-fig8-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
+                    </caption>
+                    <label>Figure 8.</label>
+                    <alternatives>
+                        <graphic xlink:href="elife-46793-fig8-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                        <media xlink:href="elife-46793-fig8-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
+                    </alternatives>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Short-term siRNA knockdowns of four key sensitisers in HT1080 cells show dose-dependent growth inhibition with G4-ligands.</title>
+                        <p>(
+                            <bold>A</bold>) HT1080 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (0.25 μM and 0.5 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean ± standard deviation). (
+                            <bold>B–D</bold>) Confluency differences (mean ± standard deviation) compared to NT siRNA were plotted across three replicates for (
+                            <bold>B</bold>) 
+                            <italic>BRCA1</italic>, (
+                            <bold>C</bold>) 
+                            <italic>TOP1</italic>, (
+                            <bold>D</bold>) 
+                            <italic>DDX42</italic>, (
+                            <bold>E</bold>) 
+                            <italic>GAR1</italic>.
+                        </p>
+                    </caption>
+                    <label>Figure 8—figure supplement 1.</label>
+                    <graphic xlink:href="elife-46793-fig8-figsupp1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Short-term siRNA knockdowns of four key G4-sensitisers in A375 cells show dose-dependent growth inhibition with G4-ligands.</title>
+                        <p>A375 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (5 μM and 10 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean ± standard deviation).</p>
+                    </caption>
+                    <label>Figure 8—figure supplement 2.</label>
+                    <graphic xlink:href="elife-46793-fig8-figsupp2-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Short-term siRNA knockdowns validate four key sensitivities from the shRNA screening in A375 cells.</title>
+                        <p>(
+                            <bold>A</bold>) For 
+                            <italic>BRCA1</italic>, 
+                            <italic>TOP1</italic>, 
+                            <italic>DDX42</italic> and 
+                            <italic>GAR1</italic>, A375 cells were transfected with non-targeting (NT) or targeting (T) siRNAs. 48 hr and 144 hr after transfection, lysates were probed appropriate antibodies alongside a non-transfected lysate (U). (
+                            <bold>B</bold>) BRCA1, TOP1, DDX42 and GAR1 protein levels for targeting (T) and non-targeting (NT) lysates were normalised to the internal actin control and then normalised to NT levels for three independent blots 48 hr (top) and two independent blots 144 hr (bottom) after transfection (mean ± standard deviation). (
+                            <bold>C–F</bold>) A375 cells were transfected with the targeting siRNAs for 24 hr before PDS, PhenDC3 or DMSO treatment. Average confluency difference (mean ± standard deviation) compared to NT siRNA plotted across three replicates for (
+                            <bold>C</bold>) BRCA1, (
+                            <bold>D</bold>) TOP1, (
+                            <bold>E</bold>) DDX42, (
+                            <bold>F</bold>) GAR1. Confluency differences at 72, 96 and 120 hr plotted for comparison for (
+                            <bold>G</bold>) BRCA1, (
+                            <bold>H</bold>) TOP1, (
+                            <bold>I</bold>) DDX42, (
+                            <bold>J</bold>) GAR1.
+                        </p>
+                        <p>10.7554/eLife.46793.016Figure 8—figure supplement 3—source data 1.</p>
+                        <title>Source files for western blots.</title>
+                        <p>(
+                            <bold>A</bold>) Full length western blots and (
+                            <bold>B</bold>) capillary traces obtained from Compass Software (Simple Western) for results shown in 
+                            <ext-link ext-link-type="uri" xlink:href="#fig8s3">Figure 8—figure supplement 3A</ext-link>.
+                        </p>
+                        <media xlink:href="elife-46793-fig8-figsupp3-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
+                    </caption>
+                    <label>Figure 8—figure supplement 3.</label>
+                    <alternatives>
+                        <graphic xlink:href="elife-46793-fig8-figsupp3-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                        <media xlink:href="elife-46793-fig8-figsupp3-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
+                    </alternatives>
+                </fig>
+            </fig-group>
             <p>Mirroring the shRNA screen findings, siRNA knockdown of all four genes in HT1080 cells imparted significant increases in sensitivity with PDS or PhenDC3 compared to DMSO. Some differences between the ligands and individual gene knockdowns were noted. For 
                 <italic>BRCA1</italic> and 
                 <italic>TOP1</italic> the lowest concentration of PDS resulted in the most sensitisation and this was evident early at 72 hr, whereas both PhenDC3 concentrations resulted in similar growth inhibition and was apparent later (
@@ -551,41 +619,55 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig9">Figure 9F</ext-link>, 
                 <ext-link ext-link-type="uri" xlink:href="#fig9s1">Figure 9—figure supplement 1</ext-link>) with a peak synergy of 61% at 5.33 μM PDS, 6.25 μM pimozide. Furthermore, long-term clonogenic survival assays revealed a similar potentiation of growth inhibition, albeit at lower compound concentrations, for PDS/MK1775 and PDS/pimozide drug combinations for both cell lines tested (
                 <ext-link ext-link-type="uri" xlink:href="#fig9s2">Figure 9—figure supplement 2</ext-link>). Altogether, these results validate that appropriate drug combinations can synergistical act as a surrogate for gene deficiencies in the presence of G4 ligands and thus complements the findings uncovered by our genetic screening approach.
-            </p>10.7554/eLife.46793.018Figure 9.
-        </sec>
-        <sec>
-            <title>Cell death potentiation mediated by pharmacological inhibition of WEE1 or USP1 with the G4-stabilising ligand PDS.</title>
-            <p>(
-                <bold>A</bold>) Cell death potentiation with G4-stabilising ligands in combination with either gene deficiencies, such as shRNA-mediated knockdown (top), or pharmacological inhibition of a protein (bottom). (
-                <bold>B</bold>) Numbers of depleted shRNA hairpins and median log
-                <sub>2</sub>FC values for WEE1 and USP1 in the genome-wide and focused screens. (
-                <bold>C–F</bold>) Synergy plots for HT1080 (
-                <bold>C, D</bold>) and A375 (
-                <bold>E, F</bold>) cells treated with PDS in combination with MK1775 (
-                <bold>C, E</bold>) or pimozide (
-                <bold>D, F</bold>). To determine any synergy in cell killing, 3D response surface plots were calculated using Combenefit software with the BLISS model for an average of three biological replicas. Heat bar- blue shading indicates synergy combinations, red indicates antagonism (see also 
-                <ext-link ext-link-type="uri" xlink:href="#fig9s1">Figure 9—figure supplements 1</ext-link> and 
-                <ext-link ext-link-type="uri" xlink:href="#fig9s2">2</ext-link>).
-            </p>10.7554/eLife.46793.019Figure 9—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Synergy calculations for PDS with MK1775 and pimozide.</title>
-            <p>(
-                <bold>A–D</bold>) Cell viability Cell-Titer Glo 96 hr luminescent values for HT1080 and A375 treated with PDS and MK1775 or PDS and pimozide, were normalised to the untreated controls (denoted 100% viability) and the viability of each condition expressed as a percentage of the untreated cells. These input values are then analysed using the BLISS model within the Combenefit software package to create a matrix of how the treatment ‘controls’ cell viability. Brown denotes high control, thus low viability. (
-                <bold>E–H</bold>) 2D BLISS synergy matrix derived from ‘control’ input. Each dose combination is given a synergy score. Blue and a high percentage indicates synergy.
-            </p>10.7554/eLife.46793.020Figure 9—figure supplement 2.
-        </sec>
-        <sec>
-            <title>Clonogenic cell survival assay demonstrates enhanced cell death upon treatment with PDS in combination MK1775 or pimozide.</title>
-            <p>Clonogenic survival of HT1080 and A375 cells after 8-day exposure to the indicated drug combinations. (
-                <bold>A–D</bold>) Colony intensity values, determined by ColonyArea Image J plugin, were expressed as a percentage of untreated (DMSO only) controls. (
-                <bold>E–H</bold>) BLISS synergy matrix derived using Combenefit software package from normalised colony intensity values. Mean ± standard deviation shown (
-                <bold>I–L</bold>) Representative SRB-stained colonies for A375 (
-                <bold>K</bold> and 
-                <bold>L</bold>) and HT1080 (
-                <bold>I</bold> and 
-                <bold>J</bold>) cells. Three biological replicates were performed.
             </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>Cell death potentiation mediated by pharmacological inhibition of WEE1 or USP1 with the G4-stabilising ligand PDS.</title>
+                        <p>(
+                            <bold>A</bold>) Cell death potentiation with G4-stabilising ligands in combination with either gene deficiencies, such as shRNA-mediated knockdown (top), or pharmacological inhibition of a protein (bottom). (
+                            <bold>B</bold>) Numbers of depleted shRNA hairpins and median log
+                            <sub>2</sub>FC values for WEE1 and USP1 in the genome-wide and focused screens. (
+                            <bold>C–F</bold>) Synergy plots for HT1080 (
+                            <bold>C, D</bold>) and A375 (
+                            <bold>E, F</bold>) cells treated with PDS in combination with MK1775 (
+                            <bold>C, E</bold>) or pimozide (
+                            <bold>D, F</bold>). To determine any synergy in cell killing, 3D response surface plots were calculated using Combenefit software with the BLISS model for an average of three biological replicas. Heat bar- blue shading indicates synergy combinations, red indicates antagonism (see also 
+                            <ext-link ext-link-type="uri" xlink:href="#fig9s1">Figure 9—figure supplements 1</ext-link> and 
+                            <ext-link ext-link-type="uri" xlink:href="#fig9s2">2</ext-link>).
+                        </p>
+                    </caption>
+                    <label>Figure 9.</label>
+                    <graphic xlink:href="elife-46793-fig9-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Synergy calculations for PDS with MK1775 and pimozide.</title>
+                        <p>(
+                            <bold>A–D</bold>) Cell viability Cell-Titer Glo 96 hr luminescent values for HT1080 and A375 treated with PDS and MK1775 or PDS and pimozide, were normalised to the untreated controls (denoted 100% viability) and the viability of each condition expressed as a percentage of the untreated cells. These input values are then analysed using the BLISS model within the Combenefit software package to create a matrix of how the treatment ‘controls’ cell viability. Brown denotes high control, thus low viability. (
+                            <bold>E–H</bold>) 2D BLISS synergy matrix derived from ‘control’ input. Each dose combination is given a synergy score. Blue and a high percentage indicates synergy.
+                        </p>
+                    </caption>
+                    <label>Figure 9—figure supplement 1.</label>
+                    <graphic xlink:href="elife-46793-fig9-figsupp1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Clonogenic cell survival assay demonstrates enhanced cell death upon treatment with PDS in combination MK1775 or pimozide.</title>
+                        <p>Clonogenic survival of HT1080 and A375 cells after 8-day exposure to the indicated drug combinations. (
+                            <bold>A–D</bold>) Colony intensity values, determined by ColonyArea Image J plugin, were expressed as a percentage of untreated (DMSO only) controls. (
+                            <bold>E–H</bold>) BLISS synergy matrix derived using Combenefit software package from normalised colony intensity values. Mean ± standard deviation shown (
+                            <bold>I–L</bold>) Representative SRB-stained colonies for A375 (
+                            <bold>K</bold> and 
+                            <bold>L</bold>) and HT1080 (
+                            <bold>I</bold> and 
+                            <bold>J</bold>) cells. Three biological replicates were performed.
+                        </p>
+                    </caption>
+                    <label>Figure 9—figure supplement 2.</label>
+                    <graphic xlink:href="elife-46793-fig9-figsupp2-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+            </fig-group>
         </sec>
         <sec>
             <title>Identification of DDX42 as a new G4-binding protein</title>
@@ -601,40 +683,52 @@
                 <ext-link ext-link-type="uri" xlink:href="#bib126">Will et al., 2002</ext-link>); however, this protein remains largely uncharacterised. By immunoblotting of nuclear and cytoplasmic sub-cellular fractions (
                 <ext-link ext-link-type="uri" xlink:href="#fig10">Figure 10B–E</ext-link>), we first established that DDX42 predominantly localises to the nucleus (~4 to 9-fold greater than cytoplasmic levels) in three independent cell lines, (HT1080, HEK293 and HeLa). As controls for fractionation, LaminB1 and GAPDH were found to partition as expected into nuclear and cytoplasmic fractions, respectively (
                 <ext-link ext-link-type="uri" xlink:href="#fig10">Figure 10C,D</ext-link>).
-            </p>10.7554/eLife.46793.021Figure 10.
-        </sec>
-        <sec>
-            <title>DDX42 is a predominantly nuclear G4-binding protein.</title>
-            <p>(
-                <bold>A</bold>) Number of depleted hairpins and median log
-                <sub>2</sub>FC values for DEAH/DEAD-box helicase genes within the 758 genes identified in the genome-wide screen. Those highlighted in blue caused sensitivity to both PDS and PhenDC3. (
-                <bold>B</bold>) Representative immunoblots showing cytoplasmic (C) and nuclear (
-                <bold>N</bold>) lysates for HT1080, human embryonic kidney (HEK) and HeLa cells probed for DDX42, laminB1 and GAPDH2. (
-                <bold>C, D</bold>) GAPDH and laminB1 protein levels for (
-                <bold>C</bold>) cytoplasmic and (
-                <bold>D</bold>) nuclear lysates (mean for two biological replicates ± standard deviation). (
-                <bold>E</bold>) DDX42 nuclear protein levels (normalised to cytoplasmic levels, mean for two biological replicates ± standard deviation). (
-                <bold>F, G</bold>) DDX42 binding curves G4s by ELISA. (
-                <bold>F</bold>) NRAS 5’ UTR RNA G4 (rG4), mutated G4 sequence (rG4 mut) and RNA hairpin. (
-                <bold>G</bold>) MYC DNA G4 (dG4) and mutated control (dG4 mut). Apparent K
-                <sub>d</sub> is calculated from five replicates (values are indicative as the model assumes saturation kinetics).
             </p>
-            <p>10.7554/eLife.46793.023Figure 10—source data 1.</p>
-        </sec>
-        <sec>
-            <title>Source files for western blots.</title>
-            <p>(
-                <bold>A</bold>) Full-length western blots and (
-                <bold>B</bold>) capillary traces obtained from Compass Software (Simple Western) for results shown in 
-                <ext-link ext-link-type="uri" xlink:href="#fig10">Figure 10A</ext-link>.
-            </p>10.7554/eLife.46793.022Figure 10—figure supplement 1.
-        </sec>
-        <sec>
-            <title>Circular dichroism spectroscopy for G4 oligonucleotides.</title>
-            <p>Circular dichroism spectra for G4-forming oligonucleotides (red) and mutated controls (blue) annealed in 100 mM KCl. G4 structures show a characteristic signature with a positive peak at 264 nm and negative peak at 241 nm. (
-                <bold>A</bold>) NRAS 5’UTR RNA G4 and (
-                <bold>B</bold>) MYC promoter DNA G4.
-            </p>
+            <fig-group>
+                <fig>
+                    <caption>
+                        <title>DDX42 is a predominantly nuclear G4-binding protein.</title>
+                        <p>(
+                            <bold>A</bold>) Number of depleted hairpins and median log
+                            <sub>2</sub>FC values for DEAH/DEAD-box helicase genes within the 758 genes identified in the genome-wide screen. Those highlighted in blue caused sensitivity to both PDS and PhenDC3. (
+                            <bold>B</bold>) Representative immunoblots showing cytoplasmic (C) and nuclear (
+                            <bold>N</bold>) lysates for HT1080, human embryonic kidney (HEK) and HeLa cells probed for DDX42, laminB1 and GAPDH2. (
+                            <bold>C, D</bold>) GAPDH and laminB1 protein levels for (
+                            <bold>C</bold>) cytoplasmic and (
+                            <bold>D</bold>) nuclear lysates (mean for two biological replicates ± standard deviation). (
+                            <bold>E</bold>) DDX42 nuclear protein levels (normalised to cytoplasmic levels, mean for two biological replicates ± standard deviation). (
+                            <bold>F, G</bold>) DDX42 binding curves G4s by ELISA. (
+                            <bold>F</bold>) NRAS 5’ UTR RNA G4 (rG4), mutated G4 sequence (rG4 mut) and RNA hairpin. (
+                            <bold>G</bold>) MYC DNA G4 (dG4) and mutated control (dG4 mut). Apparent K
+                            <sub>d</sub> is calculated from five replicates (values are indicative as the model assumes saturation kinetics).
+                        </p>
+                        <p>10.7554/eLife.46793.023Figure 10—source data 1.</p>
+                        <title>Source files for western blots.</title>
+                        <p>(
+                            <bold>A</bold>) Full-length western blots and (
+                            <bold>B</bold>) capillary traces obtained from Compass Software (Simple Western) for results shown in 
+                            <ext-link ext-link-type="uri" xlink:href="#fig10">Figure 10A</ext-link>.
+                        </p>
+                        <media xlink:href="elife-46793-fig10-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
+                    </caption>
+                    <label>Figure 10.</label>
+                    <alternatives>
+                        <graphic xlink:href="elife-46793-fig10-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                        <media xlink:href="elife-46793-fig10-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
+                    </alternatives>
+                </fig>
+                <fig>
+                    <caption>
+                        <title>Circular dichroism spectroscopy for G4 oligonucleotides.</title>
+                        <p>Circular dichroism spectra for G4-forming oligonucleotides (red) and mutated controls (blue) annealed in 100 mM KCl. G4 structures show a characteristic signature with a positive peak at 264 nm and negative peak at 241 nm. (
+                            <bold>A</bold>) NRAS 5’UTR RNA G4 and (
+                            <bold>B</bold>) MYC promoter DNA G4.
+                        </p>
+                    </caption>
+                    <label>Figure 10—figure supplement 1.</label>
+                    <graphic xlink:href="elife-46793-fig10-figsupp1-v1.tif" mimetype="image" mime-subtype="tiff"/>
+                </fig>
+            </fig-group>
             <p>As DDX42 is known to bind RNA, we next set out to demonstrate DDX42 affinity for a RNA-G4 structure as this has not previously been documented. For this, a G4 RNA oligonucleotide from the NRAS 5’UTR sequence, which forms a stable parallel G4 (
                 <ext-link ext-link-type="uri" xlink:href="#bib68">Kumari et al., 2007</ext-link>), was used together with a mutated oligonucleotide unable to form a G4 structure and also a RNA hairpin as negative controls (
                 <ext-link ext-link-type="uri" xlink:href="#bib57">Herdy et al., 2018</ext-link>). Oligonucleotides were folded in 100 mM KCl to promote G4 structure formation and the resultant structures confirmed by circular dichroism (CD) spectroscopy (

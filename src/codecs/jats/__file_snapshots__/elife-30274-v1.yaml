@@ -339,79 +339,88 @@ content:
         ). After removal of tetracycline, c-Myc levels increased over time
         approaching the levels observed in tetracycline-free conditions.
     type: Paragraph
-  - 10.7554/eLife.30274.002
-  - Figure 1.
   - content:
-      - Induction of c-Myc in P493-6 cells and impact on total RNA levels.
-    depth: 2
-    id: s2-1
-    type: Heading
-  - content:
-      - >-
-        P493-6 cells were grown in the presence of tetracycline (Tet) for 72 hr
-        and switched into Tet-free growth medium to induce c-Myc expression.
-        Cells were cultured in two separate lots of serum. (
-      - type: Strong
-        content:
-          - A
-      - >-
-        ) Representative Western blot using an anti-c-Myc antibody (top panels)
-        or an anti-ß-Actin antibody (bottom panel). Two exposures of the
-        anti-c-Myc antibody are presented to facilitate detection of c-Myc. (
-      - type: Strong
-        content:
-          - B
-      - >-
-        ) Quantification of total RNA levels (ng of total RNA per 1,000 cells)
-        for cells at 0, 1, and 24 hr after release from Tet. Means reported and
-        error bars represent s.e.m. from three independent biological repeats.
-        For serum lot one, one-way ANOVA on total RNA levels of all groups;
-      - type: Emphasis
-        content:
-          - F
-      - '(2, 6)=1.25, '
-      - type: Emphasis
-        content:
-          - p
-      - '=0.353. Planned contrast between 0 hr and 24 hr; '
-      - type: Emphasis
-        content:
-          - t
-      - '(6) = 1.02, '
-      - type: Emphasis
-        content:
-          - p
-      - '=0.347 with '
-      - type: Emphasis
-        content:
-          - a priori
-      - " alpha level\_=\_0.05. For serum lot two, one-way ANOVA on total RNA levels of all groups; "
-      - type: Emphasis
-        content:
-          - F
-      - '(2, 6)=21.87, '
-      - type: Emphasis
-        content:
-          - p
-      - '=0.00176. Planned contrast between 0 hr and 24 hr; '
-      - type: Emphasis
-        content:
-          - t
-      - '(6) = 5.03, '
-      - type: Emphasis
-        content:
-          - p
-      - '=0.0024 with '
-      - type: Emphasis
-        content:
-          - a priori
-      - " alpha level\_=\_0.05. Additional details for this experiment can be found at "
+      - contentUrl: elife-30274-fig1-v1
+        format: application/postscript
+        meta:
+          inline: false
+        type: ImageObject
+    label: Figure 1.
+    caption:
       - content:
-          - 'https://osf.io/tfd57/'
-        target: 'https://osf.io/tfd57/.'
-        type: Link
-      - .
-    type: Paragraph
+          - Induction of c-Myc in P493-6 cells and impact on total RNA levels.
+        depth: 2
+        id: s2-1
+        type: Heading
+      - content:
+          - >-
+            P493-6 cells were grown in the presence of tetracycline (Tet) for 72
+            hr and switched into Tet-free growth medium to induce c-Myc
+            expression. Cells were cultured in two separate lots of serum. (
+          - type: Strong
+            content:
+              - A
+          - >-
+            ) Representative Western blot using an anti-c-Myc antibody (top
+            panels) or an anti-ß-Actin antibody (bottom panel). Two exposures of
+            the anti-c-Myc antibody are presented to facilitate detection of
+            c-Myc. (
+          - type: Strong
+            content:
+              - B
+          - >-
+            ) Quantification of total RNA levels (ng of total RNA per 1,000
+            cells) for cells at 0, 1, and 24 hr after release from Tet. Means
+            reported and error bars represent s.e.m. from three independent
+            biological repeats. For serum lot one, one-way ANOVA on total RNA
+            levels of all groups;
+          - type: Emphasis
+            content:
+              - F
+          - '(2, 6)=1.25, '
+          - type: Emphasis
+            content:
+              - p
+          - '=0.353. Planned contrast between 0 hr and 24 hr; '
+          - type: Emphasis
+            content:
+              - t
+          - '(6) = 1.02, '
+          - type: Emphasis
+            content:
+              - p
+          - '=0.347 with '
+          - type: Emphasis
+            content:
+              - a priori
+          - " alpha level\_=\_0.05. For serum lot two, one-way ANOVA on total RNA levels of all groups; "
+          - type: Emphasis
+            content:
+              - F
+          - '(2, 6)=21.87, '
+          - type: Emphasis
+            content:
+              - p
+          - '=0.00176. Planned contrast between 0 hr and 24 hr; '
+          - type: Emphasis
+            content:
+              - t
+          - '(6) = 5.03, '
+          - type: Emphasis
+            content:
+              - p
+          - '=0.0024 with '
+          - type: Emphasis
+            content:
+              - a priori
+          - " alpha level\_=\_0.05. Additional details for this experiment can be found at "
+          - content:
+              - 'https://osf.io/tfd57/'
+            target: 'https://osf.io/tfd57/.'
+            type: Link
+          - .
+        type: Paragraph
+    type: Figure
   - content:
       - Total RNA levels following c-Myc overexpression
     depth: 2
@@ -610,149 +619,181 @@ content:
         as silent in serum lot one were common with the silent genes identified
         in the original study (95.8% (453/473) for serum lot two).
     type: Paragraph
-  - 10.7554/eLife.30274.003
-  - Figure 2.
-  - content:
-      - Digital gene expression analysis.
-    depth: 2
-    id: s2-3
-    type: Heading
-  - content:
-      - >-
-        P493-6 cells grown in the presence of tetracycline (Tet) for 72 hr for
-        repression of the conditional p
-      - type: Emphasis
-        content:
-          - myc
-      - "-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes\_=\_708, silent genes\_=\_580. Cells grown in serum lot two: active genes\_=\_719, silent genes\_=\_573. Confirmatory analysis is reported in "
+  - parts:
       - content:
-          - Table 1
-        target: '#table1'
-        type: Link
-        relation: table
-      - ' and exploratory statistical analysis is reported in '
+          - contentUrl: elife-30274-fig2-v1
+            format: application/postscript
+            meta:
+              inline: false
+            type: ImageObject
+          - contentUrl: elife-30274-fig2-data1-v1.csv
+            format: application/octet-stream
+            type: MediaObject
+        label: Figure 2.
+        caption:
+          - content:
+              - Digital gene expression analysis.
+            depth: 2
+            id: s2-3
+            type: Heading
+          - content:
+              - >-
+                P493-6 cells grown in the presence of tetracycline (Tet) for 72
+                hr for repression of the conditional p
+              - type: Emphasis
+                content:
+                  - myc
+              - "-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes\_=\_708, silent genes\_=\_580. Cells grown in serum lot two: active genes\_=\_719, silent genes\_=\_573. Confirmatory analysis is reported in "
+              - content:
+                  - Table 1
+                target: '#table1'
+                type: Link
+                relation: table
+              - ' and exploratory statistical analysis is reported in '
+              - content:
+                  - Table 2
+                target: '#table2'
+                type: Link
+                relation: table
+              - "\_and "
+              - content:
+                  - Table 3
+                target: '#table3'
+                type: Link
+                relation: table
+              - '. Additional details for this experiment can be found at '
+              - content:
+                  - 'https://osf.io/fn2y4/'
+                target: 'https://osf.io/fn2y4/.'
+                type: Link
+              - .
+            type: Paragraph
+          - content:
+              - 10.7554/eLife.30274.006
+              - Figure 2—source data 1.
+            type: Paragraph
+          - content:
+              - List of Reporter CodeSets and gene expression values.
+            depth: 2
+            id: s2-3
+            type: Heading
+          - contentUrl: elife-30274-fig2-data1-v1.csv
+            format: application/octet-stream
+            type: MediaObject
+        type: Figure
       - content:
-          - Table 2
-        target: '#table2'
-        type: Link
-        relation: table
-      - "\_and "
+          - contentUrl: elife-30274-fig2-figsupp1-v1
+            format: application/postscript
+            meta:
+              inline: false
+            type: ImageObject
+        label: Figure 2—figure supplement 1.
+        caption:
+          - content:
+              - Logarithmic expression of genes.
+            depth: 2
+            id: s2-3
+            type: Heading
+          - content:
+              - 'This is the same experiment as in '
+              - content:
+                  - Figure 2
+                target: '#fig2'
+                type: Link
+                relation: fig
+              - . (
+              - type: Strong
+                content:
+                  - 'A–B, E–F'
+              - ) Gene expression data plotted on a log
+              - type: Subscript
+                content:
+                  - '2'
+              - ' transformed scale for active ('
+              - type: Strong
+                content:
+                  - 'A, E'
+              - ) and silent (
+              - type: Strong
+                content:
+                  - 'B, F'
+              - >-
+                ) genes at 0, 1, and 24 hr after release from Tet for both lots
+                of serum. (
+              - type: Strong
+                content:
+                  - 'C–D, G–H'
+              - ) Box and whisker plots showing gene expression changes (log
+              - type: Subscript
+                content:
+                  - '2'
+              - ' ratio) between the indicated times for active ('
+              - type: Strong
+                content:
+                  - 'C, G'
+              - ) and silent (
+              - type: Strong
+                content:
+                  - 'D, H'
+              - >-
+                ) genes. Median represented as the line through the box and
+                whiskers representing values within 1.5 IQR of the first and
+                third quartile. Additional details for this experiment can be
+                found at
+              - content:
+                  - 'https://osf.io/fn2y4/'
+                target: 'https://osf.io/fn2y4/.'
+                type: Link
+              - .
+            type: Paragraph
+        type: Figure
       - content:
-          - Table 3
-        target: '#table3'
-        type: Link
-        relation: table
-      - '. Additional details for this experiment can be found at '
-      - content:
-          - 'https://osf.io/fn2y4/'
-        target: 'https://osf.io/fn2y4/.'
-        type: Link
-      - .
-    type: Paragraph
-  - content:
-      - 10.7554/eLife.30274.006
-      - Figure 2—source data 1.
-    type: Paragraph
-  - content:
-      - List of Reporter CodeSets and gene expression values.
-    depth: 2
-    id: s2-3
-    type: Heading
-  - 10.7554/eLife.30274.004
-  - Figure 2—figure supplement 1.
-  - content:
-      - Logarithmic expression of genes.
-    depth: 2
-    id: s2-3
-    type: Heading
-  - content:
-      - 'This is the same experiment as in '
-      - content:
-          - Figure 2
-        target: '#fig2'
-        type: Link
-        relation: fig
-      - . (
-      - type: Strong
-        content:
-          - 'A–B, E–F'
-      - ) Gene expression data plotted on a log
-      - type: Subscript
-        content:
-          - '2'
-      - ' transformed scale for active ('
-      - type: Strong
-        content:
-          - 'A, E'
-      - ) and silent (
-      - type: Strong
-        content:
-          - 'B, F'
-      - >-
-        ) genes at 0, 1, and 24 hr after release from Tet for both lots of
-        serum. (
-      - type: Strong
-        content:
-          - 'C–D, G–H'
-      - ) Box and whisker plots showing gene expression changes (log
-      - type: Subscript
-        content:
-          - '2'
-      - ' ratio) between the indicated times for active ('
-      - type: Strong
-        content:
-          - 'C, G'
-      - ) and silent (
-      - type: Strong
-        content:
-          - 'D, H'
-      - >-
-        ) genes. Median represented as the line through the box and whiskers
-        representing values within 1.5 IQR of the first and third quartile.
-        Additional details for this experiment can be found at
-      - content:
-          - 'https://osf.io/fn2y4/'
-        target: 'https://osf.io/fn2y4/.'
-        type: Link
-      - .
-    type: Paragraph
-  - 10.7554/eLife.30274.005
-  - Figure 2—figure supplement 2.
-  - content:
-      - Comparison of gene expression data as continuous.
-    depth: 2
-    id: s2-3
-    type: Heading
-  - content:
-      - 'This is the same experiment as in '
-      - content:
-          - Figure 2
-        target: '#fig2'
-        type: Link
-        relation: fig
-      - . (
-      - type: Strong
-        content:
-          - 'A–C, E–G'
-      - ) Scatter plots of log
-      - type: Subscript
-        content:
-          - '2'
-      - ' transformed gene expression data for all genes analyzed at the indicated times on the y and x axes for both lots of serum. Active genes are blue, silent genes are red, and genes that are neither active or silent (expression was more than 0.5 transcript/cell and less than one transcript/cell at time 0 hr) are white. ('
-      - type: Strong
-        content:
-          - 'D, H'
-      - ) Box and whisker plots showing gene expression changes (log
-      - type: Subscript
-        content:
-          - '2'
-      - ' ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at '
-      - content:
-          - 'https://osf.io/fn2y4/'
-        target: 'https://osf.io/fn2y4/.'
-        type: Link
-      - .
-    type: Paragraph
+          - contentUrl: elife-30274-fig2-figsupp2-v1
+            format: application/postscript
+            meta:
+              inline: false
+            type: ImageObject
+        label: Figure 2—figure supplement 2.
+        caption:
+          - content:
+              - Comparison of gene expression data as continuous.
+            depth: 2
+            id: s2-3
+            type: Heading
+          - content:
+              - 'This is the same experiment as in '
+              - content:
+                  - Figure 2
+                target: '#fig2'
+                type: Link
+                relation: fig
+              - . (
+              - type: Strong
+                content:
+                  - 'A–C, E–G'
+              - ) Scatter plots of log
+              - type: Subscript
+                content:
+                  - '2'
+              - ' transformed gene expression data for all genes analyzed at the indicated times on the y and x axes for both lots of serum. Active genes are blue, silent genes are red, and genes that are neither active or silent (expression was more than 0.5 transcript/cell and less than one transcript/cell at time 0 hr) are white. ('
+              - type: Strong
+                content:
+                  - 'D, H'
+              - ) Box and whisker plots showing gene expression changes (log
+              - type: Subscript
+                content:
+                  - '2'
+              - ' ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at '
+              - content:
+                  - 'https://osf.io/fn2y4/'
+                target: 'https://osf.io/fn2y4/.'
+                type: Link
+              - .
+            type: Paragraph
+        type: Figure
+    meta:
+      usage: figGroup
+    type: Collection
   - content:
       - >-
         To test whether active genes, as well as silent genes, increased
@@ -1945,95 +1986,102 @@ content:
         estimate of the original study and serum lot two were within the
         confidence intervals of each other.
     type: Paragraph
-  - 10.7554/eLife.30274.010
-  - Figure 3.
   - content:
-      - Meta-analyses of each effect.
-    depth: 2
-    id: s2-4
-    type: Heading
-  - content:
-      - "Effect size and 95% confidence interval are presented for\_"
+      - contentUrl: elife-30274-fig3-v1
+        format: application/postscript
+        meta:
+          inline: false
+        type: ImageObject
+    label: Figure 3.
+    caption:
       - content:
-          - 'Lin et al., 2012'
-        target: '#bib17'
-        type: Link
-        relation: bibr
-      - >-
-        , this replication study (RP:CB), and a random effects meta-analysis of
-        those two effects. Cohen’s
-      - type: Emphasis
-        content:
-          - d
-      - ' is the standardized difference between the two measurements, with a larger positive value indicating total RNA levels are increased at 24 hr compared to 0 hr. The effect size '
-      - type: Emphasis
-        content:
-          - r
-      - " is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in\_"
+          - Meta-analyses of each effect.
+        depth: 2
+        id: s2-4
+        type: Heading
       - content:
-          - 'Lin et al., 2012'
-        target: '#bib17'
-        type: Link
-        relation: bibr
-      - ' and this replication attempt are reported under the study name. ('
-      - type: Strong
-        content:
-          - A
-      - >-
-        ) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after release
-        from tetracycline (meta-analysis
-      - type: Emphasis
-        content:
-          - p
-      - ' = 0.0488). ('
-      - type: Strong
-        content:
-          - B
-      - >-
-        ) Gene expression of active or silent genes are shown for all
-        comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis
-      - type: Emphasis
-        content:
-          - p
-      - ' = 1.12x10'
-      - type: Superscript
-        content:
-          - '-7'
-      - '), 0 hr compared to 24 hr (meta-analysis '
-      - type: Emphasis
-        content:
-          - p
-      - ' = 7.01x10'
-      - type: Superscript
-        content:
-          - '-4'
-      - '), 1 hr compared to 24 hr (meta-analysis '
-      - type: Emphasis
-        content:
-          - p
-      - ' = 0.0129). Silent genes: 0 hr compared to 1 hr (meta-analysis '
-      - type: Emphasis
-        content:
-          - p
-      - ' = 0.203), 0 hr compared to 24 hr (meta-analysis '
-      - type: Emphasis
-        content:
-          - p
-      - ' = 7.10x10'
-      - type: Superscript
-        content:
-          - '-17'
-      - '), 1 hr compared to 24 hr (meta-analysis '
-      - type: Emphasis
-        content:
-          - p
-      - ' = 0.0571). Additional details for these meta-analyses can be found at '
-      - content:
-          - 'https://osf.io/5yscz/'
-        target: 'https://osf.io/5yscz/'
-        type: Link
-      - .
-    type: Paragraph
+          - "Effect size and 95% confidence interval are presented for\_"
+          - content:
+              - 'Lin et al., 2012'
+            target: '#bib17'
+            type: Link
+            relation: bibr
+          - >-
+            , this replication study (RP:CB), and a random effects meta-analysis
+            of those two effects. Cohen’s
+          - type: Emphasis
+            content:
+              - d
+          - ' is the standardized difference between the two measurements, with a larger positive value indicating total RNA levels are increased at 24 hr compared to 0 hr. The effect size '
+          - type: Emphasis
+            content:
+              - r
+          - " is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in\_"
+          - content:
+              - 'Lin et al., 2012'
+            target: '#bib17'
+            type: Link
+            relation: bibr
+          - ' and this replication attempt are reported under the study name. ('
+          - type: Strong
+            content:
+              - A
+          - >-
+            ) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after
+            release from tetracycline (meta-analysis
+          - type: Emphasis
+            content:
+              - p
+          - ' = 0.0488). ('
+          - type: Strong
+            content:
+              - B
+          - >-
+            ) Gene expression of active or silent genes are shown for all
+            comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis
+          - type: Emphasis
+            content:
+              - p
+          - ' = 1.12x10'
+          - type: Superscript
+            content:
+              - '-7'
+          - '), 0 hr compared to 24 hr (meta-analysis '
+          - type: Emphasis
+            content:
+              - p
+          - ' = 7.01x10'
+          - type: Superscript
+            content:
+              - '-4'
+          - '), 1 hr compared to 24 hr (meta-analysis '
+          - type: Emphasis
+            content:
+              - p
+          - ' = 0.0129). Silent genes: 0 hr compared to 1 hr (meta-analysis '
+          - type: Emphasis
+            content:
+              - p
+          - ' = 0.203), 0 hr compared to 24 hr (meta-analysis '
+          - type: Emphasis
+            content:
+              - p
+          - ' = 7.10x10'
+          - type: Superscript
+            content:
+              - '-17'
+          - '), 1 hr compared to 24 hr (meta-analysis '
+          - type: Emphasis
+            content:
+              - p
+          - ' = 0.0571). Additional details for these meta-analyses can be found at '
+          - content:
+              - 'https://osf.io/5yscz/'
+            target: 'https://osf.io/5yscz/'
+            type: Link
+          - .
+        type: Paragraph
+    type: Figure
   - content:
       - >-
         There were six comparisons of the gene expression data, three for active

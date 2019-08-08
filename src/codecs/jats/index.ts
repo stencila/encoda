@@ -4,12 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
-import {
-  isInlineContent,
-  nodeType,
-  markTypes,
-  isType
-} from '@stencila/schema/dist/util'
+import { isInlineContent, nodeType, markTypes, isType } from '@stencila/schema'
 import fs from 'fs-extra'
 import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
@@ -24,7 +19,8 @@ import {
   text,
   textOrUndefined,
   splitTextOrUndefined,
-  intOrUndefined
+  intOrUndefined,
+  Attributes
 } from '../../util/xml'
 
 const log = getLogger('encoda:jats')
@@ -382,7 +378,7 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
     if (work.title) subElements.push(elem('article-title', work.title))
 
     // TODO: split date into components according to what data is set and apply to appropriate elements
-    if (work.datePublished)
+    if (work.datePublished) {
       subElements.push(
         elem(
           'year',
@@ -390,40 +386,48 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
           work.datePublished
         )
       )
+    }
 
     if (isType('PublicationIssue')(work.isPartOf)) {
       let pi = work.isPartOf as stencila.PublicationIssue
 
-      if (pi.pageStart !== undefined)
+      if (pi.pageStart !== undefined) {
         subElements.push(elem('fpage', `${pi.pageStart}`))
+      }
 
-      if (pi.pageEnd !== undefined)
+      if (pi.pageEnd !== undefined) {
         subElements.push(elem('lpage', `${pi.pageEnd}`))
+      }
 
-      if (pi.issueNumber !== undefined)
+      if (pi.issueNumber !== undefined) {
         subElements.push(elem('issue', `${pi.issueNumber}`))
+      }
 
       if (isType('PublicationVolume')(pi.isPartOf)) {
         let pv = pi.isPartOf
 
         if (pv.title !== undefined) subElements.push(elem('source', pv.title))
 
-        if (pv.volumeNumber !== undefined)
+        if (pv.volumeNumber !== undefined) {
           subElements.push(elem('volume', `${pv.volumeNumber}`))
+        }
       }
     } else if (isType('PublicationVolume')(work.isPartOf)) {
       let pv = work.isPartOf as stencila.PublicationVolume
 
       if (pv.title !== undefined) subElements.push(elem('source', pv.title))
 
-      if (pv.pageStart !== undefined)
+      if (pv.pageStart !== undefined) {
         subElements.push(elem('fpage', `${pv.pageStart}`))
+      }
 
-      if (pv.pageEnd !== undefined)
+      if (pv.pageEnd !== undefined) {
         subElements.push(elem('lpage', `${pv.pageEnd}`))
+      }
 
-      if (pv.volumeNumber !== undefined)
+      if (pv.volumeNumber !== undefined) {
         subElements.push(elem('volume', `${pv.volumeNumber}`))
+      }
     }
 
     citation = elem('element-citation', null, ...subElements)
@@ -451,6 +455,15 @@ interface EncodeState {
    * Used for labelling tables.
    */
   tables: number
+}
+
+interface JatsContentType {
+  /**
+   * JATS splits the media type into two sections
+   */
+
+  mimetype?: string
+  mimeSubtype?: string
 }
 
 /**
@@ -502,7 +515,11 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
     case 'ext-link':
       return decodeExtLink(elem, state)
     case 'inline-graphic':
-      return decodeInlineGraphic(elem)
+      return [decodeGraphic(elem, true)]
+    case 'graphic':
+      return [decodeGraphic(elem, false)]
+    case 'media':
+      return [decodeMedia(elem)]
     case 'xref':
       return decodeXRef(elem, state)
     case 'italic':
@@ -517,6 +534,10 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeMath(elem)
     case 'break':
       return decodeBreak()
+    case 'fig':
+      return decodeFigure(elem, state)
+    case 'fig-group':
+      return decodeFigGroup(elem, state)
     default:
       if (elem.type === 'text') {
         return [elem.text || '']
@@ -547,8 +568,26 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMark(node as stencila.Superscript, state, 'sup')
     case 'Subscript':
       return encodeMark(node as stencila.Subscript, state, 'sub')
+    case 'Figure':
+      return encodeFigure(node as stencila.Figure, state)
+    case 'ImageObject':
+      const im = node as stencila.ImageObject
+      return [
+        encodeMedia(
+          im,
+          im.meta && im.meta.inline ? 'inline-graphic' : 'graphic'
+        )
+      ]
+    case 'MediaObject':
+      return [encodeMedia(node as stencila.ImageObject, 'media')]
     case 'string':
       return [{ type: 'text', text: node as string }]
+    case 'Collection':
+      const collection = node as stencila.Collection
+      if (collection.meta && collection.meta.usage === 'figGroup') {
+        return encodeFigGroup(collection, state)
+      }
+    // fallthrough expected if not a figGroup
     default:
       log.warn(`Unhandled node type when encoding to JATS: "${nodeType(node)}"`)
       return []
@@ -812,6 +851,129 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
   return [elem('table-wrap', attrs, label, caption, table)]
 }
 
+function encodeFigureMedia(media: stencila.Node): xml.Element | undefined {
+  const t = nodeType(media)
+  switch (t) {
+    case 'ImageObject':
+      return encodeMedia(media as stencila.ImageObject, 'graphic')
+    case 'MediaObject':
+      return encodeMedia(media as stencila.MediaObject, 'media')
+  }
+
+  log.warn(`Unhandled node type when encoding figure content: "${t}"`)
+}
+
+function decodeFigureMedia(
+  container: xml.Element,
+  state: DecodeState
+): stencila.Node[] {
+  const figureMediaElements = [
+    'disp-formula',
+    'disp-formula-group',
+    'chem-struct-wrap',
+    'disp-quote',
+    'speech',
+    'statement',
+    'verse-group',
+    'table-wrap',
+    'p',
+    'def-list',
+    'list',
+    'array',
+    'code',
+    'graphic',
+    'media',
+    'preformat'
+  ]
+
+  let nodes: stencila.Node[] = []
+
+  figureMediaElements.map(elementName => {
+    all(container, elementName).map(mediaEl => {
+      switch (elementName) {
+        case 'graphic':
+          nodes.push(decodeGraphic(mediaEl, false))
+          break
+        case 'code':
+          nodes.push(decodeCodeBlock(mediaEl))
+          break
+        case 'p':
+          nodes = nodes.concat(decodeInlineContent([mediaEl], state))
+          break
+        case 'media':
+          nodes.push(decodeMedia(mediaEl))
+          break
+        default:
+          log.warn(
+            `Unhandled element type when decoding figure content: "${elementName}"`
+          )
+      }
+    })
+  })
+
+  return nodes
+}
+
+function decodeFigure(
+  elem: xml.Element,
+  state: DecodeState
+): [stencila.Figure] {
+  const caption = child(elem, 'caption')
+
+  let content: stencila.Node[] = decodeFigureMedia(elem, state)
+
+  const alternatives = child(elem, 'alternatives')
+
+  if (alternatives) {
+    content = content.concat(decodeFigureMedia(alternatives, state))
+  }
+
+  const fig = stencila.figure({
+    content,
+    label: textOrUndefined(child(elem, 'label')),
+    caption:
+      caption && caption.elements && caption.elements.length
+        ? decodeElements(caption.elements, state)
+        : undefined
+  })
+
+  return [fig]
+}
+
+function encodeFigure(
+  figure: stencila.Figure,
+  state: EncodeState
+): [xml.Element] {
+  const figureChildren: xml.Element[] = []
+
+  if (figure.caption && figure.caption.length) {
+    figureChildren.push(
+      elem('caption', null, ...encodeNodes(figure.caption, state))
+    )
+  }
+
+  if (figure.label) {
+    figureChildren.push(elem('label', figure.label))
+  }
+
+  if (figure.content && figure.content.length) {
+    const alternatives: xml.Element[] = []
+
+    figure.content.map(media => {
+      let encodedMedia = encodeFigureMedia(media)
+      if (encodedMedia) alternatives.push(encodedMedia)
+    })
+
+    if (alternatives.length == 1) {
+      figureChildren.push(alternatives[0])
+    } else {
+      figureChildren.push(elem('alternatives', null, ...alternatives))
+    }
+  }
+
+  return [elem('fig', null, ...figureChildren)]
+}
+
 function decodeMath(elem: xml.Element): [object] {
   return [
     {
@@ -833,6 +995,136 @@ function decodeBreak(): [string] {
   return [' ']
 }
 
-function decodeInlineGraphic(elem: xml.Element): [stencila.ImageObject] {
-  return [stencila.imageObject(attr(elem, 'xlink:href') || '')]
+/**
+ * Get the `mimetype` and `mime-subtype` from an element and return it in a
+ * traditional `type/subtype` string.
+ */
+function extractMimetype(elem: xml.Element): string {
+  const mimetype = attr(elem, 'mimetype') || ''
+
+  const mimeSubtype = attr(elem, 'mime-subtype') || ''
+
+  const joiner = mimetype.length && mimeSubtype.length ? '/' : ''
+
+  return mimetype + joiner + mimeSubtype
+}
+
+/**
+ * Extract the `format` string from `media`, split it into the attributes that
+ * JATS requires, then set them on `attrs`
+ */
+function applyMimetype(media: stencila.MediaObject, attrs: Attributes) {
+  if (media.format === undefined || media.format.length == 0) {
+    return
+  }
+
+  const jatsType = splitMimetype(media.format)
+  if (jatsType.mimetype) {
+    attrs['mimetype'] = jatsType.mimetype
+  }
+  if (jatsType.mimeSubtype) {
+    attrs['mime-subtype'] = jatsType.mimeSubtype
+  }
+}
+
+/**
+ * Split a traditional `type/subtype` mime string into a `JatsContentType`.
+ */
+function splitMimetype(mimetype: string): JatsContentType {
+  const splitType = mimetype.split('/')
+
+  return {
+    mimetype: splitType[0].length ? splitType[0] : undefined,
+    mimeSubtype: splitType.length > 1 ? splitType[1] : undefined
+  }
+}
+
+/**
+ * Decode a `<graphic>` element to an ImageObject. There is no corresponding
+ * `encodeGraphic` function, use `encodeMedia` with `'graphic'` argument.
+ */
+function decodeGraphic(
+  elem: xml.Element,
+  inline: boolean
+): stencila.ImageObject {
+  const meta: { [key: string]: any } = { inline }
+
+  const linkType = attr(elem, 'xlink:type')
+  if (linkType) meta['linkType'] = linkType
+
+  const usage = attr(elem, 'specific-use')
+  if (usage) meta['usage'] = usage
+
+  return stencila.imageObject(attr(elem, 'xlink:href') || '', {
+    format: extractMimetype(elem),
+    meta: meta
+  })
+}
+
+function encodeMedia(
+  media: stencila.MediaObject,
+  elementName: string
+): xml.Element {
+  const attrs: Attributes = {
+    'xlink:href': media.contentUrl
+  }
+
+  if (media.meta && media.meta.usage) {
+    attrs['specific-use'] = media.meta.usage
+  }
+
+  if (media.meta && media.meta.linkType) {
+    attrs['xlink:type'] = media.meta.linkType
+  }
+
+  applyMimetype(media, attrs)
+
+  return elem(elementName, attrs)
+}
+
+function decodeMedia(elem: xml.Element): stencila.MediaObject {
+  return stencila.mediaObject(attr(elem, 'xlink:href') || '', {
+    format: extractMimetype(elem)
+  })
+}
+
+function decodeCodeBlock(elem: xml.Element): stencila.CodeBlock {
+  return stencila.codeBlock(text(elem), {
+    language: attr(elem, 'language') || undefined
+  })
+}
+
+function encodeFigGroup(
+  figGroup: stencila.Collection,
+  state: EncodeState
+): [xml.Element] {
+  return [
+    elem(
+      'fig-group',
+      null,
+      ...figGroup.parts.map(figure => {
+        if (!isType('Figure')(figure)) {
+          return null
+        }
+
+        return encodeFigure(figure, state)[0]
+      })
+    )
+  ]
+}
+
+function decodeFigGroup(
+  elem: xml.Element,
+  state: DecodeState
+): [stencila.Collection] {
+  return [
+    stencila.collection(
+      all(elem, 'fig').map(figEl => {
+        return decodeFigure(figEl, state)[0]
+      }),
+      {
+        meta: { usage: 'figGroup' }
+      }
+    )
+  ]
 }
