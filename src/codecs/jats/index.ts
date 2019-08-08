@@ -4,7 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
-import { isInlineContent, nodeType, markTypes, isType } from '@stencila/schema'
+import { isInlineContent, nodeType, markTypes } from '@stencila/schema'
 import fs from 'fs-extra'
 import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
@@ -388,7 +388,7 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
       )
     }
 
-    if (isType('PublicationIssue')(work.isPartOf)) {
+    if (stencila.isA('PublicationIssue', work.isPartOf)) {
       let pi = work.isPartOf as stencila.PublicationIssue
 
       if (pi.pageStart !== undefined) {
@@ -403,7 +403,7 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
         subElements.push(elem('issue', `${pi.issueNumber}`))
       }
 
-      if (isType('PublicationVolume')(pi.isPartOf)) {
+      if (stencila.isA('PublicationVolume', pi.isPartOf)) {
         let pv = pi.isPartOf
 
         if (pv.title !== undefined) subElements.push(elem('source', pv.title))
@@ -412,7 +412,7 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
           subElements.push(elem('volume', `${pv.volumeNumber}`))
         }
       }
-    } else if (isType('PublicationVolume')(work.isPartOf)) {
+    } else if (stencila.isA('PublicationVolume', work.isPartOf)) {
       let pv = work.isPartOf as stencila.PublicationVolume
 
       if (pv.title !== undefined) subElements.push(elem('source', pv.title))
@@ -515,11 +515,11 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
     case 'ext-link':
       return decodeExtLink(elem, state)
     case 'inline-graphic':
-      return [decodeGraphic(elem, true)]
+      return decodeGraphic(elem, true)
     case 'graphic':
-      return [decodeGraphic(elem, false)]
+      return decodeGraphic(elem, false)
     case 'media':
-      return [decodeMedia(elem)]
+      return decodeMedia(elem)
     case 'xref':
       return decodeXRef(elem, state)
     case 'italic':
@@ -572,14 +572,12 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeFigure(node as stencila.Figure, state)
     case 'ImageObject':
       const im = node as stencila.ImageObject
-      return [
-        encodeMedia(
-          im,
-          im.meta && im.meta.inline ? 'inline-graphic' : 'graphic'
-        )
-      ]
+      return encodeMedia(
+        im,
+        im.meta && im.meta.inline ? 'inline-graphic' : 'graphic'
+      )
     case 'MediaObject':
-      return [encodeMedia(node as stencila.ImageObject, 'media')]
+      return encodeMedia(node as stencila.ImageObject, 'media')
     case 'string':
       return [{ type: 'text', text: node as string }]
     case 'Collection':
@@ -851,7 +849,7 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
   return [elem('table-wrap', attrs, label, caption, table)]
 }
 
-function encodeFigureMedia(media: stencila.Node): xml.Element | undefined {
+function encodeFigureMedia(media: stencila.Node): xml.Element[] {
   const t = nodeType(media)
   switch (t) {
     case 'ImageObject':
@@ -861,6 +859,7 @@ function encodeFigureMedia(media: stencila.Node): xml.Element | undefined {
   }
 
   log.warn(`Unhandled node type when encoding figure content: "${t}"`)
+  return []
 }
 
 function decodeFigureMedia(
@@ -892,16 +891,16 @@ function decodeFigureMedia(
     all(container, elementName).map(mediaEl => {
       switch (elementName) {
         case 'graphic':
-          nodes.push(decodeGraphic(mediaEl, false))
+          nodes = nodes.concat(decodeGraphic(mediaEl, false))
           break
         case 'code':
-          nodes.push(decodeCodeBlock(mediaEl))
+          nodes = nodes.concat(decodeCodeBlock(mediaEl))
           break
         case 'p':
           nodes = nodes.concat(decodeInlineContent([mediaEl], state))
           break
         case 'media':
-          nodes.push(decodeMedia(mediaEl))
+          nodes = nodes.concat(decodeMedia(mediaEl))
           break
         default:
           log.warn(
@@ -928,16 +927,16 @@ function decodeFigure(
     content = content.concat(decodeFigureMedia(alternatives, state))
   }
 
-  const fig = stencila.figure({
-    content,
-    label: textOrUndefined(child(elem, 'label')),
-    caption:
-      caption && caption.elements && caption.elements.length
-        ? decodeElements(caption.elements, state)
-        : undefined
-  })
-
-  return [fig]
+  return [
+    stencila.figure({
+      content,
+      label: textOrUndefined(child(elem, 'label')),
+      caption:
+        caption && caption.elements && caption.elements.length
+          ? decodeElements(caption.elements, state)
+          : undefined
+    })
+  ]
 }
 
 function encodeFigure(
@@ -957,11 +956,11 @@ function encodeFigure(
   }
 
   if (figure.content && figure.content.length) {
-    const alternatives: xml.Element[] = []
+    let alternatives: xml.Element[] = []
 
     figure.content.map(media => {
       let encodedMedia = encodeFigureMedia(media)
-      if (encodedMedia) alternatives.push(encodedMedia)
+      if (encodedMedia) alternatives = alternatives.concat(encodedMedia)
     })
 
     if (alternatives.length == 1) {
@@ -1046,7 +1045,7 @@ function splitMimetype(mimetype: string): JatsContentType {
 function decodeGraphic(
   elem: xml.Element,
   inline: boolean
-): stencila.ImageObject {
+): [stencila.ImageObject] {
   const meta: { [key: string]: any } = { inline }
 
   const linkType = attr(elem, 'xlink:type')
@@ -1055,16 +1054,18 @@ function decodeGraphic(
   const usage = attr(elem, 'specific-use')
   if (usage) meta['usage'] = usage
 
-  return stencila.imageObject(attr(elem, 'xlink:href') || '', {
-    format: extractMimetype(elem),
-    meta: meta
-  })
+  return [
+    stencila.imageObject(attr(elem, 'xlink:href') || '', {
+      format: extractMimetype(elem),
+      meta: meta
+    })
+  ]
 }
 
 function encodeMedia(
   media: stencila.MediaObject,
   elementName: string
-): xml.Element {
+): [xml.Element] {
   const attrs: Attributes = {
     'xlink:href': media.contentUrl
   }
@@ -1079,19 +1080,23 @@ function encodeMedia(
 
   applyMimetype(media, attrs)
 
-  return elem(elementName, attrs)
+  return [elem(elementName, attrs)]
 }
 
-function decodeMedia(elem: xml.Element): stencila.MediaObject {
-  return stencila.mediaObject(attr(elem, 'xlink:href') || '', {
-    format: extractMimetype(elem)
-  })
+function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
+  return [
+    stencila.mediaObject(attr(elem, 'xlink:href') || '', {
+      format: extractMimetype(elem)
+    })
+  ]
 }
 
-function decodeCodeBlock(elem: xml.Element): stencila.CodeBlock {
-  return stencila.codeBlock(text(elem), {
-    language: attr(elem, 'language') || undefined
-  })
+function decodeCodeBlock(elem: xml.Element): [stencila.CodeBlock] {
+  return [
+    stencila.codeBlock(text(elem), {
+      language: attr(elem, 'language') || undefined
+    })
+  ]
 }
 
 function encodeFigGroup(
@@ -1103,7 +1108,7 @@ function encodeFigGroup(
       'fig-group',
       null,
       ...figGroup.parts.map(figure => {
-        if (!isType('Figure')(figure)) {
+        if (!stencila.isA('Figure', figure)) {
           return null
         }
 
