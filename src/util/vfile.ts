@@ -50,7 +50,7 @@ export function load(contents: VFileContents): VFile {
 // Not supported by eslint, worksaround doesn't work
 // See https://github.com/benmosher/eslint-plugin-import/issues/1357
 // eslint-disable-next-line
-export async function dump (vfile: VFile, mode?: 'string'): Promise<string>
+export async function dump(vfile: VFile, mode?: 'string'): Promise<string>
 // eslint-disable-next-line
 export async function dump(vfile: VFile, mode?: 'buffer'): Promise<Buffer>
 // eslint-disable-next-line

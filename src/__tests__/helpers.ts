@@ -1,7 +1,7 @@
-import callsites from 'callsites';
-import fs from 'fs-extra';
-import nock from 'nock';
-import path from 'path';
+import callsites from 'callsites'
+import fs from 'fs-extra'
+import nock from 'nock'
+import path from 'path'
 
 /**
  * Get the full path to a file in the closest `__fixtures__` directory

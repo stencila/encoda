@@ -1,10 +1,10 @@
-import stencila from '@stencila/schema';
-import { nodeType } from '@stencila/schema/dist/util';
-import fs from 'fs-extra';
-import { toMatchFile } from 'jest-file-snapshot';
-import mime from 'mime';
-import path from 'path';
-import { Codec } from '..';
+import stencila from '@stencila/schema'
+import { nodeType } from '@stencila/schema/dist/util'
+import fs from 'fs-extra'
+import { toMatchFile } from 'jest-file-snapshot'
+import mime from 'mime'
+import path from 'path'
+import { Codec } from '..'
 
 /**
  * Add https://github.com/satya164/jest-file-snapshot

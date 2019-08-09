@@ -1,7 +1,5 @@
 import { BlockContent, InlineContent, Paragraph } from '@stencila/schema'
-import {
-  ensureBlockContent
-} from './ensureBlockContent'
+import { ensureBlockContent } from './ensureBlockContent'
 
 const primitives = [null, true, false, NaN, 2, 'string']
 

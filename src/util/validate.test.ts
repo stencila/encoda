@@ -1,4 +1,4 @@
-import {validate, isValid} from './validate'
+import { validate, isValid } from './validate'
 
 describe('validate', () => {
   it('throws for non-objects', async () => {

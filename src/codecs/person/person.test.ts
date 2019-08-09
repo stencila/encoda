@@ -34,7 +34,9 @@ describe('decodeSync', () => {
     expect(decodeSync('Dr Jane Jill Jones PhD')).toEqual(person)
 
     person.emails = ['jane@example.com']
-    expect(decodeSync('Dr Jane Jill Jones PhD <jane@example.com>')).toEqual(person)
+    expect(decodeSync('Dr Jane Jill Jones PhD <jane@example.com>')).toEqual(
+      person
+    )
 
     person.url = 'http://example.com/jane'
     expect(

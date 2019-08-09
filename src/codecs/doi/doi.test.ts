@@ -1,7 +1,7 @@
-import { toMatchFile } from 'jest-file-snapshot';
+import { toMatchFile } from 'jest-file-snapshot'
 import { sniff, encode } from '.'
-import { convert } from '../..';
-import {snapshot, nockRecord} from '../../__tests__/helpers'
+import { convert } from '../..'
+import { snapshot, nockRecord } from '../../__tests__/helpers'
 
 jest.setTimeout(30 * 1000)
 
@@ -26,12 +26,14 @@ const doi2yaml = async (doi: string) =>
 
 test('decode', async () => {
   const done = await nockRecord('10.5334-jors-182.json')
-  expect(await doi2yaml('10.5334/jors.182')).toMatchFile(snapshot('10.5334-jors-182.yaml'))
+  expect(await doi2yaml('10.5334/jors.182')).toMatchFile(
+    snapshot('10.5334-jors-182.yaml')
+  )
   done()
 })
 
 test('encode', async () => {
-  await expect(encode({type: 'Article'})).rejects.toThrow(
+  await expect(encode({ type: 'Article' })).rejects.toThrow(
     /Unparsing to DOI is not yet implemented/
   )
 })

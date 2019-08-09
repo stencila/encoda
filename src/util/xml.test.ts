@@ -1,4 +1,4 @@
-import {elem, dump, Element} from './xml'
+import { elem, dump, Element } from './xml'
 
 test('elem', () => {
   expect(elem('tag')).toEqual({
@@ -8,10 +8,10 @@ test('elem', () => {
     elements: []
   })
 
-  expect(elem('tag', {foo: 'bar'})).toEqual({
+  expect(elem('tag', { foo: 'bar' })).toEqual({
     type: 'element',
     name: 'tag',
-    attributes: {foo: 'bar'},
+    attributes: { foo: 'bar' },
     elements: []
   })
 
@@ -19,36 +19,39 @@ test('elem', () => {
     type: 'element',
     name: 'parent',
     attributes: {},
-    elements: [{
-      type: 'element',
-      name: 'child',
-      attributes: {},
-      elements: []
-    }]
+    elements: [
+      {
+        type: 'element',
+        name: 'child',
+        attributes: {},
+        elements: []
+      }
+    ]
   })
 
   expect(elem('parent', 'foo')).toEqual({
     type: 'element',
     name: 'parent',
     attributes: {},
-    elements: [{
-      type: 'text',
-      text: 'foo'
-    }]
+    elements: [
+      {
+        type: 'text',
+        text: 'foo'
+      }
+    ]
   })
 })
 
 test('dump', () => {
   const frag = (el: Element) => {
-    return dump({elements: [el]})
+    return dump({ elements: [el] })
   }
 
-  expect(frag(elem('tag')))
-    .toEqual(`<tag/>`)
+  expect(frag(elem('tag'))).toEqual(`<tag/>`)
 
-  expect(frag(elem('tag', {foo: 'bar'})))
-    .toEqual(`<tag foo="bar"/>`)
+  expect(frag(elem('tag', { foo: 'bar' }))).toEqual(`<tag foo="bar"/>`)
 
-  expect(frag(elem('parent', {foo: 'bar'}, elem('child'))))
-    .toEqual(`<parent foo="bar"><child/></parent>`)
+  expect(frag(elem('parent', { foo: 'bar' }, elem('child')))).toEqual(
+    `<parent foo="bar"><child/></parent>`
+  )
 })

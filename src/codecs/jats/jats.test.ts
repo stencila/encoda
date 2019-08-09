@@ -1,8 +1,8 @@
-import { toMatchFile } from 'jest-file-snapshot';
+import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
 import { sniff } from '.'
 import { convert } from '../..'
-import { snapshot } from '../../__tests__/helpers';
+import { snapshot } from '../../__tests__/helpers'
 
 /**
  * This test suite uses fixtures and file snapshots. During development
