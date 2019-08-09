@@ -18,12 +18,15 @@ export async function coerce<Key extends keyof stencila.Types>(
 
   return (produce(node, async (coerced: stencila.Node) => {
     if (coerced === null) return node
+
     // Change the type, since this is coercion to the specified type
     // @ts-ignore
-    if (isEntity(coerced)) coerced.type = type
-    // Rename property aliases
-    await rename(coerced)
-    // Coerce and validate
+    if (typeof coerced === 'object') coerced.type = type
+
+    // Deep "reshape" node
+    await reshape(coerced)
+
+    // Coerce and validate using Ajv
     try {
       return await coecer(coerced)
     } catch (error) {
@@ -33,25 +36,55 @@ export async function coerce<Key extends keyof stencila.Types>(
     }
   }) as unknown) as stencila.Types[Key]
 
-  // Replace aliases with canonical names
-  async function rename(node: stencila.Node): Promise<void> {
+  /**
+   * Recursively walk through the node reshaping it
+   * This function does several things that Ajv will not
+   * do for us:
+   *   - rename aliases to canonical property names
+   *   - remove additional properties (not in schema);
+   *     Ajv does this but with limitations when `anyOf` or `allOf`
+   *     https://github.com/epoberezkin/ajv/blob/master/FAQ.md#additional-properties-inside-compound-keywords-anyof-oneof-etc
+   *   - coerce an object to an `array` of objects and vice verse;
+   *     Ajv does not do that https://github.com/epoberezkin/ajv/issues/992
+   */
+  async function reshape(node: stencila.Node): Promise<void> {
     if (isEntity(node)) {
       const schema = await getSchema(node.type as Key)
-      if (!schema.propertyAliases) return
+      const { properties = {}, propertyAliases = {} } = schema
 
       for (const [key, child] of Object.entries(node)) {
-        const name = schema.propertyAliases[key]
-        if (name) {
+        let name = propertyAliases[key]
+        if (name !== undefined) {
+          // Aliased property
           // @ts-ignore
           node[name] = child
           // @ts-ignore
           delete node[key]
+        } else if (properties[key] === undefined) {
+          // Additional property, just delete, no need to reshape child
+          // @ts-ignore
+          delete node[key]
+          continue
+        } else {
+          name = key
         }
-        await rename(child)
+
+        // Object to array of object
+        const propertySchema = properties[name]
+        if (
+          propertySchema.type === 'array' &&
+          typeof child === 'object' &&
+          !Array.isArray(child)
+        ) {
+          // @ts-ignore
+          node[name] = [child]
+        }
+
+        await reshape(child)
       }
     } else if (Array.isArray(node)) {
       for (const child of node) {
-        await rename(child)
+        await reshape(child)
       }
     }
   }

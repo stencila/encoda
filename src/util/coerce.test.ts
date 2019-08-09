@@ -1,5 +1,5 @@
 import stencila from '@stencila/schema'
-import {coerce} from './coerce'
+import { coerce } from './coerce'
 
 describe('coerce', () => {
   it('will add type property', async () => {
@@ -48,13 +48,11 @@ describe('coerce', () => {
 
   it('will rename properties using aliases', async () => {
     expect(
-      await coerce(
-        {
-          type: 'Person',
-          givenName: 'John', // An alias defined on Person
-          alternateName: 'Jono' // An alias inherited from Thing
-        }
-      )
+      await coerce({
+        type: 'Person',
+        givenName: 'John', // An alias defined on Person
+        alternateName: 'Jono' // An alias inherited from Thing
+      })
     ).toEqual({
       type: 'Person',
       givenNames: ['John'],
@@ -62,14 +60,49 @@ describe('coerce', () => {
     })
   })
 
-  it('will coerce arrays to scalars', async () => {
+  it('will remove additional properties', async () => {
+    expect(
+      await coerce({
+        type: 'Person',
+        name: 'John',
+        foo: 'bar',
+        affiliations: [
+          {
+            type: 'Organization',
+            name: 'Acme PLC',
+            beep: 'boop'
+          }
+        ]
+      })
+    ).toEqual({
+      type: 'Person',
+      name: 'John',
+      affiliations: [
+        {
+          type: 'Organization',
+          name: 'Acme PLC'
+        }
+      ]
+    })
+
     expect(
       await coerce(
         {
-          type: 'Person',
-          name: [42]
-        }
+          favoriteColour: 'pink'
+        },
+        'Person'
       )
+    ).toEqual({
+      type: 'Person'
+    })
+  })
+
+  it('will coerce arrays of primitives to scalars', async () => {
+    expect(
+      await coerce({
+        type: 'Person',
+        name: [42]
+      })
     ).toEqual({
       type: 'Person',
       name: '42'
@@ -78,15 +111,57 @@ describe('coerce', () => {
 
   it('will coerce scalars to arrays', async () => {
     expect(
-      await coerce(
-        {
-          type: 'Person',
-          givenNames: 'Jane'
-        }
-      )
+      await coerce({
+        type: 'Person',
+        givenNames: 'Jane'
+      })
     ).toEqual({
       type: 'Person',
       givenNames: ['Jane']
+    })
+
+    // e.g. person only affiliated with one organisation
+    expect(
+      await coerce({
+        type: 'Person',
+        affiliation: {
+          type: 'Organization'
+        }
+      })
+    ).toEqual({
+      type: 'Person',
+      affiliations: [
+        {
+          type: 'Organization'
+        }
+      ]
+    })
+
+    // e.g. article only has one author, with one affiliation
+    expect(
+      await coerce({
+        type: 'Article',
+        title: 'An article',
+        author: {
+          type: 'Person',
+          affiliation: {
+            type: 'Organization'
+          }
+        }
+      })
+    ).toEqual({
+      type: 'Article',
+      title: 'An article',
+      authors: [
+        {
+          type: 'Person',
+          affiliations: [
+            {
+              type: 'Organization'
+            }
+          ]
+        }
+      ]
     })
   })
 
@@ -94,17 +169,6 @@ describe('coerce', () => {
     expect(await coerce({}, 'Thing')).toEqual({
       type: 'Thing'
     })
-  })
-
-  it('will not remove additional properties', async () => {
-    await expect(
-      coerce(
-        {
-          favoriteColor: 'red'
-        },
-        'Person'
-      )
-    ).rejects.toThrow(/Property favoriteColor is not expected to be here/)
   })
 
   it('will correct nested nodes including adding type', async () => {
@@ -125,9 +189,7 @@ describe('coerce', () => {
     )
 
     expect(article.authors[0].type).toEqual('Person')
-    expect((article.authors[0] as stencila.Person).givenNames).toEqual([
-      'Joe'
-    ])
+    expect((article.authors[0] as stencila.Person).givenNames).toEqual(['Joe'])
     expect(article.authors[1].type).toEqual('Person')
     expect((article.authors[1] as stencila.Person).familyNames).toEqual([
       'Jones'
