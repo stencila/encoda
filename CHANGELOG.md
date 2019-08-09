@@ -1,3 +1,10 @@
+## [0.62.2](https://github.com/stencila/encoda/compare/v0.62.1...v0.62.2) (2019-08-09)
+
+
+### Bug Fixes
+
+* Fix JATS linting and tests ([1b68639](https://github.com/stencila/encoda/commit/1b68639))
+
 ## [0.62.1](https://github.com/stencila/encoda/compare/v0.62.0...v0.62.1) (2019-08-07)
 
 
