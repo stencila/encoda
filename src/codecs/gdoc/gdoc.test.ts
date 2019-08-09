@@ -1,8 +1,11 @@
-import { decode, encode } from './'
+import { GDoc } from '.'
 import { dump, load } from '../../util/vfile'
 
+const { decode, encode } = new GDoc()
+
 test('decode', async () => {
-  const p = async (gdoc: any) => await decode(load(JSON.stringify(gdoc)), false)
+  const p = async (gdoc: any) =>
+    await decode(load(JSON.stringify(gdoc)), { fetch: false })
   expect(await p(kitchenSink.gdoc)).toEqual(kitchenSink.node)
 })
 

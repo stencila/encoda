@@ -1,6 +1,8 @@
 import stencila from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
-import { decode, encode } from './'
+import { Md } from './'
+
+const { decode, encode } = new Md()
 
 describe('decode', () => {
   const d = async (md: string) => await decode(await load(md))

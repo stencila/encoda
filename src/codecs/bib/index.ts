@@ -3,20 +3,22 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
-import * as csl from '../csl'
+import { CSL } from '../csl'
+import { Codec } from '../types'
 
-export const mediaTypes = ['application/x-bibtex']
+const csl = new CSL()
 
-export const extNames = ['bib', 'bibtex']
+export class Bib extends Codec implements Codec {
+  public mediaTypes = ['application/x-bibtex']
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return csl.decode(file, '@bibtex/text')
-}
+  public extNames = ['bib', 'bibtex']
 
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  return csl.encode(node, { format: 'bibtex' })
+  public decode = (file: vfile.VFile): Promise<stencila.Node> => {
+    return csl.decode(file, { format: '@bibtex/text' })
+  }
+
+  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+    return csl.encode(node, { format: 'bibtex' })
+  }
 }

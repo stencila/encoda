@@ -1,6 +1,6 @@
 import articleSimple from '../../__fixtures__/article-simple'
-import * as docx from './'
+import { Docx } from './'
 
 test('invertible', async () => {
-  await expect(docx).toInvert(articleSimple)
+  await expect(new Docx()).toInvert(articleSimple)
 })

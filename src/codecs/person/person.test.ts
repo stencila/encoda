@@ -1,8 +1,10 @@
 import * as stencila from '@stencila/schema'
-import { sniff, decodeSync, decode, encode } from './'
 import { coerce } from '../../util/coerce'
 import { validate } from '../../util/validate'
 import { dump, load } from '../../util/vfile'
+import { Person } from './'
+
+const { sniff, decodeSync, decode, encode } = new Person()
 
 test('sniff', async () => {
   expect(await sniff('Joe Jones')).toBe(true)

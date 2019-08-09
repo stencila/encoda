@@ -3,27 +3,32 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '../types'
-import * as pandoc from '../pandoc'
 import * as vfile from '../../util/vfile'
+import * as P from '../pandoc'
+import { Codec } from '../types'
 
-export const mediaTypes = ['application/vnd.oasis.opendocument.text']
+const pandoc = new P.Pandoc()
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return pandoc.decode(file, pandoc.InputFormat.odt, [
-    `--extract-media=${file.path}.media`
-  ])
-}
+export class ODT extends Codec implements Codec {
+  public mediaTypes = ['application/vnd.oasis.opendocument.text']
 
-export const encode: Encode = async (
-  node: stencila.Node,
-  options = {}
-): Promise<vfile.VFile> => {
-  return pandoc.encode(node, {
-    ...options,
-    format: pandoc.OutputFormat.odt,
-    codecOptions: {
-      ensureFile: true
-    }
-  })
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    return pandoc.decode(file, {
+      from: P.InputFormat.odt,
+      flags: [`--extract-media=${file.path}.media`]
+    })
+  }
+
+  public encode = async (
+    node: stencila.Node,
+    options = {}
+  ): Promise<vfile.VFile> => {
+    return pandoc.encode(node, {
+      ...options,
+      format: P.OutputFormat.odt,
+      codecOptions: {
+        ensureFile: true
+      }
+    })
+  }
 }

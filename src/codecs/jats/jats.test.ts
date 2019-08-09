@@ -1,8 +1,10 @@
 import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
-import { sniff } from '.'
+import { Jats } from '.'
 import { convert } from '../..'
 import { snapshot } from '../../__tests__/helpers'
+
+const { sniff } = new Jats()
 
 /**
  * This test suite uses fixtures and file snapshots. During development

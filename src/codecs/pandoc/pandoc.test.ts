@@ -2,9 +2,12 @@ import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import { dump, load } from '../../util/vfile'
-import * as rpng from '../rpng'
-import { decode, decodeMeta, emptyAttrs, encode, encodeMeta } from './'
-import * as Pandoc from './types'
+import { RPNG } from '../rpng'
+import { decodeMeta, emptyAttrs, encodeMeta, Pandoc } from './'
+import * as P from './types'
+
+const { decode, encode } = new Pandoc()
+const rpng = new RPNG()
 
 // Set a high timeout to avoid occasional failures on CI
 jest.setTimeout(60 * 1000)
@@ -47,7 +50,7 @@ test('metadata', async () => {
       ]
     }
   }
-  const pmeta: Pandoc.Meta = {
+  const pmeta: P.Meta = {
     null: { t: 'MetaString', c: '!!null' },
     boolean: { t: 'MetaBool', c: false },
     number: { t: 'MetaString', c: '!!number 3.14' },
@@ -99,13 +102,13 @@ test('metadata', async () => {
 })
 
 interface testCase {
-  pdoc: Pandoc.Document
+  pdoc: P.Document
   node: stencila.Article
 }
 
 // Shorthands for creating Pandoc elements
-const str = (str: string): Pandoc.Str => ({ t: 'Str', c: str })
-const space = (): Pandoc.Space => ({ t: 'Space', c: undefined })
+const str = (str: string): P.Str => ({ t: 'Str', c: str })
+const space = (): P.Space => ({ t: 'Space', c: undefined })
 
 // A test intended to have with at least one example of each
 // Pandoc element type (we'll add them over time :)
@@ -162,7 +165,7 @@ const kitchenSink: testCase = {
           str(' and '),
           {
             t: 'Quoted',
-            c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quote')]]
+            c: [{ t: P.QuoteType.SingleQuote }, [str('quote')]]
           },
           str(' and '),
           { t: 'Code', c: [['', ['r'], []], 'code'] },
@@ -200,8 +203,8 @@ const kitchenSink: testCase = {
         c: [
           [
             1,
-            { t: Pandoc.ListNumberStyle.DefaultStyle },
-            { t: Pandoc.ListNumberDelim.DefaultDelim }
+            { t: P.ListNumberStyle.DefaultStyle },
+            { t: P.ListNumberDelim.DefaultDelim }
           ],
           [
             [{ t: 'Para', c: [str('First item')] }],
@@ -215,13 +218,13 @@ const kitchenSink: testCase = {
           [],
           [
             {
-              t: Pandoc.Alignment.AlignDefault
+              t: P.Alignment.AlignDefault
             },
             {
-              t: Pandoc.Alignment.AlignDefault
+              t: P.Alignment.AlignDefault
             },
             {
-              t: Pandoc.Alignment.AlignDefault
+              t: P.Alignment.AlignDefault
             }
           ],
           [0, 0, 0],
@@ -410,7 +413,7 @@ const kitchenSink: testCase = {
 // Check that adjacent `Str` and `Space` elements are collapsed
 const collapseSpaces: testCase = {
   pdoc: {
-    'pandoc-api-version': Pandoc.Version,
+    'pandoc-api-version': P.Version,
     meta: {},
     blocks: [
       {
@@ -451,7 +454,7 @@ const collapseSpaces: testCase = {
 // Test that where necessary Pandoc inline nodes are decoded to strings
 const imageInlinesToString: testCase = {
   pdoc: {
-    'pandoc-api-version': Pandoc.Version,
+    'pandoc-api-version': P.Version,
     meta: {},
     blocks: [
       {
@@ -480,7 +483,7 @@ const imageInlinesToString: testCase = {
                 },
                 {
                   t: 'Quoted',
-                  c: [{ t: Pandoc.QuoteType.SingleQuote }, [str('quoted')]]
+                  c: [{ t: P.QuoteType.SingleQuote }, [str('quoted')]]
                 }
               ],
               ['http://example.org/image.png', 'title']
@@ -524,8 +527,8 @@ describe('rPNG encoding & decoding of "special" node types', () => {
     Person: { type: 'Person', givenNames: ['John'] }
   }
 
-  const pdoc = (rPNG: Pandoc.Target): Pandoc.Document => ({
-    'pandoc-api-version': Pandoc.Version,
+  const pdoc = (rPNG: P.Target): P.Document => ({
+    'pandoc-api-version': P.Version,
     meta: {},
     blocks: [
       {
@@ -577,12 +580,12 @@ describe('rPNG encoding & decoding of "special" node types', () => {
 
 // A very simple test of the approach to typing Pandoc nodes
 test('types', () => {
-  const str: Pandoc.Str = {
+  const str: P.Str = {
     t: 'Str',
     c: 'A string'
   }
 
-  let para: Pandoc.Para = {
+  let para: P.Para = {
     t: 'Para',
     c: [
       str,
@@ -596,7 +599,7 @@ test('types', () => {
   // Should create error: Property 'c' is missing in type '{ t: "Para"; }' but required in type....
   // para = {t: 'Para'}
 
-  const meta: Pandoc.Meta = {
+  const meta: P.Meta = {
     key: {
       t: 'MetaList',
       c: [
@@ -608,7 +611,7 @@ test('types', () => {
     }
   }
 
-  const blocks: Pandoc.Block[] = [
+  const blocks: P.Block[] = [
     para,
     {
       t: 'BlockQuote',
@@ -618,8 +621,8 @@ test('types', () => {
     // {t: 'Str'}
   ]
 
-  const doc: Pandoc.Document = {
-    'pandoc-api-version': Pandoc.Version,
+  const doc: P.Document = {
+    'pandoc-api-version': P.Version,
     meta,
     blocks
   }

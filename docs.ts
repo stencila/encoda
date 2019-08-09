@@ -4,9 +4,11 @@
  * to a tree of HTML in `docs`.
  */
 
-import { decode, encode } from './src/codecs/dir'
+import { Dir } from './src/codecs/dir'
 import * as vfile from './src/util/vfile'
 import * as logga from '@stencila/logga'
+
+const { decode, encode } = new Dir()
 
 logga.replaceHandlers((data: logga.LogData) => {
   if (data.level < 1) logga.defaultHandler(data)

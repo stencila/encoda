@@ -1,5 +1,7 @@
 import { dump, read } from '../../util/vfile'
-import { decode, encode } from './'
+import { TDP } from './'
+
+const { decode, encode } = new TDP()
 
 const periodic = {
   file: `${__dirname}/__fixtures__/datapackage.json`,

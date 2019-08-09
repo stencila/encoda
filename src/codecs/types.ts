@@ -1,6 +1,14 @@
 import * as stencila from '@stencila/schema'
-import { EncodeOptions } from '..'
 import { VFile } from '../util/vfile'
+
+export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
+  format?: string
+  filePath?: string
+  isStandalone?: boolean
+  isBundle?: boolean
+  theme?: 'eLife' | 'stencila'
+  codecOptions?: CodecOptions
+}
 
 /**
  * The interface for a codec.
@@ -12,26 +20,29 @@ import { VFile } from '../util/vfile'
  * as something that creates or modifies executable document, and
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
  */
-export interface Codec<CodecOptions extends object = {}> {
+export abstract class Codec<
+  EncodeOptions extends object = {},
+  DecodeOptions extends object = {}
+> {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
    * that the codec can decode/encode.
    */
-  mediaTypes: string[]
+  public abstract mediaTypes: string[]
 
   /**
    * Any array of file names to use to match the codec.
    * This can be useful for differentiating between
    * "flavors" of formats e.g. `datapackage.json` versus any old `.json` file.
    */
-  fileNames?: string[]
+  public fileNames?: string[]
 
   /**
    * Any array of file name extensions to register for the codec.
    * This can be useful for specifying conversion to less well known media types
    * e.g. `--to tdp` for outputting `datapackage.json` to the console.
    */
-  extNames?: string[]
+  public extNames?: string[]
 
   /**
    * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
@@ -39,7 +50,7 @@ export interface Codec<CodecOptions extends object = {}> {
    * string could be a file system path and the codec could do "sniffing" of the file system
    * (e.g. testing if certain files are present in a directory).
    */
-  sniff?: (content: string) => Promise<boolean>
+  public sniff?: (content: string) => Promise<boolean>
 
   /**
    * Decode a `VFile` to a `stencila.Node`.
@@ -47,7 +58,10 @@ export interface Codec<CodecOptions extends object = {}> {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  decode: (file: VFile) => Promise<stencila.Node>
+  public abstract decode: (
+    file: VFile,
+    options?: DecodeOptions
+  ) => Promise<stencila.Node>
 
   /**
    * Encode a `stencila.Node` to a `VFile`.
@@ -56,14 +70,8 @@ export interface Codec<CodecOptions extends object = {}> {
    * @param options An optional object allowing for passing extra options and parameters to various codecs.
    * @returns A promise that resolves to a `VFile`
    */
-  encode: (
+  public abstract encode: (
     node: stencila.Node,
-    options?: EncodeOptions<CodecOptions>
+    options?: EncodeOptions & GlobalEncodeOptions
   ) => Promise<VFile>
 }
-
-export type Encode<Options extends object = {}> = Codec<Options>['encode']
-export type CustomCodec<Options extends EncodeOptions = {}> = (
-  node: stencila.Node,
-  options?: Options
-) => Promise<VFile>

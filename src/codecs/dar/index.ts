@@ -9,12 +9,7 @@
  */
 
 import stencila from '@stencila/schema'
-import {
-  isCreativeWork,
-  isEntity,
-  nodeType,
-  isA
-} from '@stencila/schema/dist/util'
+import { isA, isCreativeWork, nodeType } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import h from 'hyperscript'
 import produce from 'immer'
@@ -22,117 +17,119 @@ import produce from 'immer'
 import { html as beautifyHtml } from 'js-beautify'
 import path from 'path'
 import tempy from 'tempy'
-import { EncodeOptions, write } from '../..'
-import { Encode } from '../types'
+import { write } from '../..'
 import * as uri from '../../util/uri'
 import * as vfile from '../../util/vfile'
+import { Codec, GlobalEncodeOptions } from '../types'
 
-export const mediaTypes = []
+export class Dar extends Codec implements Codec {
+  public mediaTypes = []
 
-export const extNames = ['dar']
+  public extNames = ['dar']
 
-/**
- * A regex to test that a `manifest.xml` file
- * is a DAR manifest file.
- */
-const MANIFEST_REGEX = /<dar>/
+  /**
+   * A regex to test that a `manifest.xml` file
+   * is a DAR manifest file.
+   */
+  private MANIFEST_REGEX = /<dar>/
 
-export async function sniff(content: string): Promise<boolean> {
-  const manifestPath = path.join(content, 'manifest.xml')
-  if (await fs.pathExists(manifestPath)) {
-    const contents = await fs.readFile(manifestPath, 'utf8')
-    return MANIFEST_REGEX.test(contents)
+  public sniff = async (content: string): Promise<boolean> => {
+    const manifestPath = path.join(content, 'manifest.xml')
+    if (await fs.pathExists(manifestPath)) {
+      const contents = await fs.readFile(manifestPath, 'utf8')
+      return this.MANIFEST_REGEX.test(contents)
+    }
+    return false
   }
-  return false
+
+  /**
+   * Decode a `VFile` pointing to a DAR folder to a Stencila `Node`.
+   *
+   * If there is only one document in the DAR, then this function
+   * will return an `Article`, otherwise it will return a `Collection`
+   * with `parts`.
+   *
+   * @param file The `VFile` to decode
+   * @returns A promise that resolves to a Stencila `Node`
+   */
+  public decode: Codec['decode'] = async (
+    file: vfile.VFile
+  ): Promise<stencila.Article | stencila.Collection> => {
+    throw new Error('TODO: Not yet implemented')
+  }
+
+  /**
+   * Encode a Stencila `Node` to a `VFile` pointing to a DAR folder.
+   *
+   * @param node The Stencila `Node` to encode
+   * @returns A promise that resolves to a `VFile`
+   */
+  public encode: Codec['encode'] = async (
+    node,
+    options = {}
+  ): Promise<vfile.VFile> => {
+    const { filePath } = options
+
+    const darPath = filePath || path.join(tempy.directory(), '.dar')
+    await fs.ensureDir(darPath)
+
+    // Generate promises for each document and its assets
+    const nodes =
+      isCreativeWork(node) && node.type === 'Collection'
+        ? node.parts || []
+        : [node]
+    const promises = nodes.map(async (node, index) => {
+      const fileId =
+        isCreativeWork(node) && node.name
+          ? node.name
+          : `${nodeType(node).toLowerCase()}-${index}`
+      if (isA('Datatable', node)) {
+        const fileName = `${fileId}.csv`
+        const filePath = path.join(darPath, fileName)
+        await write(node, filePath)
+        const [h, asset] = await encodeAsset(filePath, fileId, darPath)
+        return { document: null, assets: [asset] }
+      } else {
+        const { encoded, assets } = await encodeDocumentAssets(
+          node,
+          fileId,
+          darPath
+        )
+        const document = await encodeDocument(encoded, fileId, darPath, options)
+        return { document, assets }
+      }
+    })
+
+    // Resolve all documents and assets into two lists
+    const { documents, assets } = (await Promise.all(promises)).reduce(
+      (prev: { documents: Element[]; assets: Element[] }, curr) => {
+        return {
+          documents: curr.document
+            ? [...prev.documents, curr.document]
+            : prev.documents,
+          assets: [...prev.assets, ...curr.assets]
+        }
+      },
+      {
+        documents: [],
+        assets: []
+      }
+    )
+
+    // Generate manifest file
+    const manifestPath = path.join(darPath, 'manifest.xml')
+    const manifest = h('dar', h('documents', documents), h('assets', assets))
+    const manifestXml = beautifyHtml(manifest.outerHTML)
+    await fs.writeFile(manifestPath, manifestXml, 'utf8')
+
+    return vfile.create(filePath)
+  }
 }
 
 /**
  * The media types to synced from the DAR to the execution context
  */
 const MEDIA_TYPES_SYNCED = ['text/csv']
-
-/**
- * Decode a `VFile` pointing to a DAR folder to a Stencila `Node`.
- *
- * If there is only one document in the DAR, then this function
- * will return an `Article`, otherwise it will return a `Collection`
- * with `parts`.
- *
- * @param file The `VFile` to decode
- * @returns A promise that resolves to a Stencila `Node`
- */
-export async function decode(
-  file: vfile.VFile
-): Promise<stencila.Article | stencila.Collection> {
-  throw new Error('TODO: Not yet implemented')
-}
-
-/**
- * Encode a Stencila `Node` to a `VFile` pointing to a DAR folder.
- *
- * @param node The Stencila `Node` to encode
- * @returns A promise that resolves to a `VFile`
- */
-export const encode: Encode = async (
-  node: stencila.Node,
-  options = {}
-): Promise<vfile.VFile> => {
-  const { filePath } = options
-
-  const darPath = filePath || path.join(tempy.directory(), '.dar')
-  await fs.ensureDir(darPath)
-
-  // Generate promises for each document and its assets
-  const nodes =
-    isCreativeWork(node) && node.type === 'Collection'
-      ? node.parts || []
-      : [node]
-  const promises = nodes.map(async (node, index) => {
-    const fileId =
-      isCreativeWork(node) && node.name
-        ? node.name
-        : `${nodeType(node).toLowerCase()}-${index}`
-    if (isA('Datatable', node)) {
-      const fileName = `${fileId}.csv`
-      const filePath = path.join(darPath, fileName)
-      await write(node, filePath)
-      const [h, asset] = await encodeAsset(filePath, fileId, darPath)
-      return { document: null, assets: [asset] }
-    } else {
-      const { encoded, assets } = await encodeDocumentAssets(
-        node,
-        fileId,
-        darPath
-      )
-      const document = await encodeDocument(encoded, fileId, darPath, options)
-      return { document, assets }
-    }
-  })
-
-  // Resolve all documents and assets into two lists
-  const { documents, assets } = (await Promise.all(promises)).reduce(
-    (prev: { documents: Element[]; assets: Element[] }, curr) => {
-      return {
-        documents: curr.document
-          ? [...prev.documents, curr.document]
-          : prev.documents,
-        assets: [...prev.assets, ...curr.assets]
-      }
-    },
-    {
-      documents: [],
-      assets: []
-    }
-  )
-
-  // Generate manifest file
-  const manifestPath = path.join(darPath, 'manifest.xml')
-  const manifest = h('dar', h('documents', documents), h('assets', assets))
-  const manifestXml = beautifyHtml(manifest.outerHTML)
-  await fs.writeFile(manifestPath, manifestXml, 'utf8')
-
-  return vfile.create(filePath)
-}
 
 /**
  * Encode a Stencila `Node` as a JATS file and return a `<document>` element
@@ -142,7 +139,7 @@ async function encodeDocument(
   node: stencila.Node,
   id: string,
   darPath: string,
-  options: EncodeOptions
+  options: GlobalEncodeOptions
 ): Promise<Element> {
   const documentFile = `${id}.jats.xml`
   const documentPath = path.join(darPath, documentFile)

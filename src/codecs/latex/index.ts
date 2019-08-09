@@ -3,24 +3,28 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '../types'
-import * as pandoc from '../pandoc'
 import * as vfile from '../../util/vfile'
+import * as P from '../pandoc'
+import { Codec } from '../types'
 
-export const mediaTypes = ['application/x-latex']
+const pandoc = new P.Pandoc()
 
-export const extNames = ['latex', 'tex']
+export class Latex extends Codec implements Codec {
+  public mediaTypes = ['application/x-latex']
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return pandoc.decode(file, pandoc.InputFormat.latex)
-}
+  public extNames = ['latex', 'tex']
 
-export const encode: Encode = async (
-  node: stencila.Node,
-  options = {}
-): Promise<vfile.VFile> => {
-  return pandoc.encode(node, {
-    ...options,
-    format: pandoc.OutputFormat.latex
-  })
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    return pandoc.decode(file, { from: P.InputFormat.latex })
+  }
+
+  public encode = async (
+    node: stencila.Node,
+    options = {}
+  ): Promise<vfile.VFile> => {
+    return pandoc.encode(node, {
+      ...options,
+      format: P.OutputFormat.latex
+    })
+  }
 }

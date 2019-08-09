@@ -1,7 +1,9 @@
-import { sniff, decode, encode } from '.'
-import { load } from '../../util/vfile'
 import { Datatable, Person } from '@stencila/schema'
 import nock from 'nock'
+import { HTTP } from '.'
+import { load } from '../../util/vfile'
+
+const { sniff, decode, encode } = new HTTP()
 
 test('sniff', async () => {
   expect(await sniff('http://example.com')).toBe(true)
@@ -36,5 +38,6 @@ describe('decode', () => {
 })
 
 test('encode', async () => {
+  // @ts-ignore
   await expect(encode(null)).rejects.toThrow(/^Unable/)
 })

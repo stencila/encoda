@@ -1,14 +1,11 @@
 import * as stencila from '@stencila/schema'
 import path from 'path'
 import { dump, load, read } from '../../util/vfile'
-import {
-  decode,
-  decodeMultilineString,
-  encode,
-  encodeMultilineString
-} from './'
+import { decodeMultilineString, encodeMultilineString, IPyNb } from './'
 import nbformat3 from './nbformat-v3'
 import nbformat4 from './nbformat-v4'
+
+const { decode, encode } = new IPyNb()
 
 test('decode', async () => {
   const d = async (ipynb: nbformat3.Notebook | nbformat4.Notebook) =>

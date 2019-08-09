@@ -4,7 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
-import { isArticle, nodeType, markTypes } from '@stencila/schema/dist/util'
+import { isArticle, markTypes, nodeType } from '@stencila/schema/dist/util'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import fs from 'fs'
@@ -16,11 +16,10 @@ import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
-import { EncodeOptions } from '../..'
-import { Encode } from '../types'
 import { columnIndexToName } from '../../codecs/xlsx'
 import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 const document = new jsdom.JSDOM().window.document
 
@@ -29,22 +28,59 @@ const log = getLogger('encoda:html')
 // Ensures unique `id` attributes (e.g. for headings)
 const slugger = new GithubSlugger()
 
-export const mediaTypes = ['text/html']
+export class HTML extends Codec implements Codec {
+  public mediaTypes = ['text/html']
 
-/**
- * Decode a `VFile` with HTML contents to a `stencila.Node`.
- *
- * @param file The `VFile` to decode
- * @returns A promise that resolves to a `stencila.Node`
- */
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  const html = await vfile.dump(file)
-  const dom = new jsdom.JSDOM(html)
-  const document = dom.window.document
-  collapse(document)
-  const node = decodeNode(document)
-  if (!node) throw new Error(`Unable to decode HTML`)
-  return node
+  /**
+   * Decode a `VFile` with HTML contents to a `stencila.Node`.
+   *
+   * @param file The `VFile` to decode
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    const html = await vfile.dump(file)
+    const dom = new jsdom.JSDOM(html)
+    const document = dom.window.document
+    collapse(document)
+    const node = decodeNode(document)
+    if (!node) throw new Error(`Unable to decode HTML`)
+    return node
+  }
+
+  /**
+   * Encode a `stencila.Node` to a `VFile` with HTML contents.
+   *
+   * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
+   * @returns A promise that resolves to a `VFile`
+   */
+  public encode = async (
+    node: stencila.Node,
+    options: GlobalEncodeOptions = {}
+  ): Promise<vfile.VFile> => {
+    const {
+      isStandalone = true,
+      isBundle = false,
+      theme = 'stencila'
+    } = options
+
+    // Reset the slugger to avoid unnecessarily adding numbers to ids
+    // in order to make them unique
+    slugger.reset()
+
+    const nodeToEncode = isBundle ? await bundle(node) : node
+    let dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
+      isStandalone,
+      theme
+    }) as HTMLHtmlElement
+
+    if (isStandalone) {
+      const { title, ...metadata } = getArticleMetaData(node)
+      dom = generateHtmlElement(title, metadata, [dom], options)
+    }
+
+    const beautifulHtml = beautify(dom.outerHTML)
+    return vfile.load(beautifulHtml)
+  }
 }
 
 export const beautify = (html: string): string =>
@@ -70,37 +106,6 @@ const getArticleMetaData = (
     title: 'Untitled',
     type: 'Article'
   }
-}
-
-/**
- * Encode a `stencila.Node` to a `VFile` with HTML contents.
- *
- * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
- * @returns A promise that resolves to a `VFile`
- */
-export const encode: Encode = async (
-  node: stencila.Node,
-  options: EncodeOptions = {}
-): Promise<vfile.VFile> => {
-  const { isStandalone = true, isBundle = false, theme = 'stencila' } = options
-
-  // Reset the slugger to avoid unnecessarily adding numbers to ids
-  // in order to make them unique
-  slugger.reset()
-
-  const nodeToEncode = isBundle ? await bundle(node) : node
-  let dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
-    isStandalone,
-    theme
-  }) as HTMLHtmlElement
-
-  if (isStandalone) {
-    const { title, ...metadata } = getArticleMetaData(node)
-    dom = generateHtmlElement(title, metadata, [dom], options)
-  }
-
-  const beautifulHtml = beautify(dom.outerHTML)
-  return vfile.load(beautifulHtml)
 }
 
 function decodeNode(node: Node): stencila.Node | undefined {
@@ -311,7 +316,7 @@ function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Node[] = [],
-  options: EncodeOptions = {}
+  options: GlobalEncodeOptions = {}
 ): HTMLHtmlElement {
   const { isBundle = false, theme = 'stencila' } = options
 

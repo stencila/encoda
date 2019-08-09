@@ -1,8 +1,10 @@
-import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
-import { decode, encode } from '.'
-import * as yaml from '../yaml'
+import { Bib } from '.'
 import * as vfile from '../../util/vfile'
+import { Yaml } from '../yaml'
+
+const { encode, decode } = new Bib()
+const yaml = new Yaml()
 
 const fixture = (name: string) => path.join(__dirname, '__fixtures__', name)
 

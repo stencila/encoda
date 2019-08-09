@@ -1,7 +1,8 @@
-import { toMatchFile } from 'jest-file-snapshot'
-import { sniff, encode } from '.'
+import { Doi } from '.'
 import { convert } from '../..'
-import { snapshot, nockRecord } from '../../__tests__/helpers'
+import { nockRecord, snapshot } from '../../__tests__/helpers'
+
+const { sniff, encode } = new Doi()
 
 jest.setTimeout(30 * 1000)
 
@@ -33,7 +34,7 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode({ type: 'Article' })).rejects.toThrow(
+  await expect(encode()).rejects.toThrow(
     /Unparsing to DOI is not yet implemented/
   )
 })

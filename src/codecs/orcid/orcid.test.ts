@@ -1,8 +1,10 @@
-import { toMatchFile } from 'jest-file-snapshot'
-import { decode, sniff, encode } from '.'
+import { Orcid } from '.'
 import * as vfile from '../../util/vfile'
-import * as yaml from '../yaml'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
+import { Yaml } from '../yaml'
+
+const { decode, sniff, encode } = new Orcid()
+const yaml = new Yaml()
 
 jest.setTimeout(30 * 1000)
 

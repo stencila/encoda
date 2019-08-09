@@ -3,18 +3,20 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
-import * as xlsx from '../xlsx'
+import { Codec } from '../types'
+import { Xlsx } from '../xlsx'
 
-export const mediaTypes = ['text/csv']
+const xlsx = new Xlsx()
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return xlsx.decode(file)
-}
+export class CSV extends Codec implements Codec {
+  public mediaTypes = ['text/csv']
 
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  return xlsx.encode(node, { format: 'csv' })
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    return xlsx.decode(file)
+  }
+
+  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+    return xlsx.encode(node, { format: 'csv' })
+  }
 }

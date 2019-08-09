@@ -5,7 +5,6 @@
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
-import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
 import * as xml from '../../util/xml'
@@ -21,26 +20,9 @@ import {
   intOrUndefined,
   Attributes
 } from '../../util/xml'
+import { Codec } from '../types'
 
 const log = getLogger('encoda:jats')
-
-/**
- * Media types that this codec will match.
- *
- * There is currently no registered
- * [media type](https://www.iana.org/assignments/media-types/media-types.xhtml)
- * for JATS.
- *
- * This custom type uses the [convention](https://en.wikipedia.org/wiki/XML_and_MIME)
- * of using `application/` and the `+xml` suffix to differentiate this format from other
- * XML-based formats.
- */
-export const mediaTypes = ['application/jats+xml']
-
-/**
- * File name extensions that this codec will match.
- */
-export const extNames = ['jats']
 
 /**
  * The DOCTYPE to use when encoding to JATS
@@ -48,52 +30,69 @@ export const extNames = ['jats']
 const DOCTYPE =
   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd"'
 
-/**
- * Sniff content to see if it is JATS XML.
- *
- * For speed, rather than parsing the entire content as XML, this
- * function just uses a regex to checks if the content contains a
- * JATS DOCTYPE declaration.
- * Obviously, it's possible that a file in some other format (e.g. Markdown)
- * could contain this string.
- *
- * @param content The content to be sniffed
- */
-export async function sniff(content: string): Promise<boolean> {
-  if (await fs.pathExists(content)) {
-    const stat = await fs.stat(content)
-    if (stat.isFile()) content = await fs.readFile(content, 'utf8')
+export class Jats extends Codec implements Codec {
+  /**
+   * Media types that this codec will match.
+   *
+   * There is currently no registered
+   * [media type](https://www.iana.org/assignments/media-types/media-types.xhtml)
+   * for JATS.
+   *
+   * This custom type uses the [convention](https://en.wikipedia.org/wiki/XML_and_MIME)
+   * of using `application/` and the `+xml` suffix to differentiate this format from other
+   * XML-based formats.
+   */
+  public mediaTypes = ['application/jats+xml']
+
+  /**
+   * File name extensions that this codec will match.
+   */
+  public extNames = ['jats']
+
+  /**
+   * Sniff content to see if it is JATS XML.
+   *
+   * For speed, rather than parsing the entire content as XML, this
+   * function just uses a regex to checks if the content contains a
+   * JATS DOCTYPE declaration.
+   * Obviously, it's possible that a file in some other format (e.g. Markdown)
+   * could contain this string.
+   *
+   * @param content The content to be sniffed
+   */
+  public sniff = async (content: string): Promise<boolean> => {
+    if (await fs.pathExists(content)) {
+      const stat = await fs.stat(content)
+      if (stat.isFile()) content = await fs.readFile(content, 'utf8')
+    }
+    const regex = /<!DOCTYPE\s+article\s+PUBLIC\s+"|'-\/\/NLM\/\/DTD JATS \(Z39\.96\)/
+    return regex.test(content)
   }
-  const regex = /<!DOCTYPE\s+article\s+PUBLIC\s+"|'-\/\/NLM\/\/DTD JATS \(Z39\.96\)/
-  return regex.test(content)
-}
 
-/**
- * Decode a `VFile` with JATS content to a Stencila `Node`.
- *
- * @param file The `VFile` to decode
- * @returns A promise that resolves to a Stencila `Node`
- */
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  const jats = await vfile.dump(file)
-  const doc = xml.load(jats, { compact: false }) as xml.Element
-  return decodeDocument(doc)
-}
+  /**
+   * Decode a `VFile` with JATS content to a Stencila `Node`.
+   *
+   * @param file The `VFile` to decode
+   * @returns A promise that resolves to a Stencila `Node`
+   */
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    const jats = await vfile.dump(file)
+    const doc = xml.load(jats, { compact: false }) as xml.Element
+    return decodeDocument(doc)
+  }
 
-/**
- * Encode a Stencila `Node` to a `VFile` with JATS content.
- *
- * @param thing The Stencila `Node` to encode
- * @returns A promise that resolves to a `VFile`
- */
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  const doc = encodeDocument(node)
-  const jats = xml.dump(doc, { spaces: 4 })
-  return vfile.load(jats)
+  /**
+   * Encode a Stencila `Node` to a `VFile` with JATS content.
+   *
+   * @param thing The Stencila `Node` to encode
+   * @returns A promise that resolves to a `VFile`
+   */
+  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+    const doc = encodeDocument(node)
+    const jats = xml.dump(doc, { spaces: 4 })
+    return vfile.load(jats)
+  }
 }
-
 /**
  * Decode a JATS XML document to a Stencila `Node`.
  */

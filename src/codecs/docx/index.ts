@@ -4,48 +4,50 @@
 
 import stencila from '@stencila/schema'
 import path from 'path'
-import { EncodeOptions } from '../..'
 import * as vfile from '../../util/vfile'
-import * as pandoc from '../pandoc'
+import * as P from '../pandoc'
 import { dataDir } from '../pandoc/binary'
-import { Encode } from '../types'
+import { Codec, GlobalEncodeOptions } from '../types'
 
-export const mediaTypes = [
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-]
+const pandoc = new P.Pandoc()
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return pandoc.decode(
-    file,
-    pandoc.InputFormat.docx,
-    [`--extract-media=${file.path}.media`],
-    true
-  )
-}
-
-/** Used to style conversion outputs targeting Microsoft Word */
-const defaultDocxTemplatePath = path.join(
-  dataDir,
-  'templates',
-  'stencila-template.docx'
-)
-
-interface DocXOptions {
+interface EncodeOptions {
   templatePath?: string
 }
 
-export const encode: Encode<DocXOptions> = async (
-  node: stencila.Node,
-  { filePath, codecOptions = {} }: EncodeOptions<DocXOptions> = {}
-): Promise<vfile.VFile> =>
-  pandoc.encode(node, {
-    filePath,
-    format: pandoc.OutputFormat.docx,
-    codecOptions: {
-      flags: [
-        `--reference-doc=${codecOptions.templatePath ||
-          defaultDocxTemplatePath}`
-      ],
-      ensureFile: true
-    }
-  })
+export class Docx extends Codec<EncodeOptions> implements Codec<EncodeOptions> {
+  public mediaTypes = [
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+  ]
+
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    return pandoc.decode(file, {
+      ensureFile: true,
+      flags: [`--extract-media=${file.path}.media`],
+      from: P.InputFormat.docx
+    })
+  }
+
+  /** Used to style conversion outputs targeting Microsoft Word */
+  private static defaultTemplatePath = path.join(
+    dataDir,
+    'templates',
+    'stencila-template.docx'
+  )
+
+  public encode = async (
+    node: stencila.Node,
+    { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = {}
+  ): Promise<vfile.VFile> =>
+    pandoc.encode(node, {
+      filePath,
+      format: P.OutputFormat.docx,
+      codecOptions: {
+        flags: [
+          `--reference-doc=${codecOptions.templatePath ||
+            Docx.defaultTemplatePath}`
+        ],
+        ensureFile: true
+      }
+    })
+}

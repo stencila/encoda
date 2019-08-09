@@ -3,17 +3,17 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { Encode } from '../types'
 import * as vfile from '../../util/vfile'
+import { Codec } from '../types'
 
-export const mediaTypes = ['application/json']
+export class Json extends Codec implements Codec {
+  public mediaTypes = ['application/json']
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return JSON.parse(await vfile.dump(file))
-}
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    return JSON.parse(await vfile.dump(file))
+  }
 
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  return vfile.load(JSON.stringify(node, null, '  '))
+  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+    return vfile.load(JSON.stringify(node, null, '  '))
+  }
 }

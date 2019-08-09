@@ -3,29 +3,34 @@
  */
 
 import stencila from '@stencila/schema'
-import * as csl from '../csl'
 import * as vfile from '../../util/vfile'
+import { CSL } from '../csl'
+import { Codec } from '../types'
 
-export const mediaTypes = ['text/x-doi']
-export const extNames = ['doi']
+export class Doi extends Codec implements Codec {
+  public mediaTypes = ['text/x-doi']
 
-// See https://www.crossref.org/blog/dois-and-matching-regular-expressions/
-// for notes on DOI matching
-const regex = /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i
+  public extNames = ['doi']
 
-export async function sniff(content: string): Promise<boolean> {
-  return regex.test(content)
-}
+  private static csl = new CSL()
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  const content = await vfile.dump(file)
-  const match = content.match(regex)
-  if (!match) throw new Error('Unable to parse content')
-  const doi = vfile.load(match[4])
-  return csl.decode(doi, '@doi/id')
-}
+  // See https://www.crossref.org/blog/dois-and-matching-regular-expressions/
+  // for notes on DOI matching
+  private static regex = /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function encode(node: stencila.Node): Promise<vfile.VFile> {
-  throw new Error(`Unparsing to DOI is not yet implemented`)
+  public sniff = async (content: string): Promise<boolean> => {
+    return Doi.regex.test(content)
+  }
+
+  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+    const content = await vfile.dump(file)
+    const match = content.match(Doi.regex)
+    if (!match) throw new Error('Unable to parse content')
+    const doi = vfile.load(match[4])
+    return Doi.csl.decode(doi, { format: '@doi/id' })
+  }
+
+  public encode = async (): Promise<vfile.VFile> => {
+    throw new Error(`Unparsing to DOI is not yet implemented`)
+  }
 }

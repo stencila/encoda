@@ -64,8 +64,34 @@ describe('coerce', () => {
     expect(
       await coerce({
         type: 'Person',
-        name: [42]
+        name: 'John',
+        foo: 'bar',
+        affiliations: [
+          {
+            type: 'Organization',
+            name: 'Acme PLC',
+            beep: 'boop'
+          }
+        ]
       })
+    ).toEqual({
+      type: 'Person',
+      name: 'John',
+      affiliations: [
+        {
+          type: 'Organization',
+          name: 'Acme PLC'
+        }
+      ]
+    })
+
+    expect(
+      await coerce(
+        {
+          favoriteColour: 'pink'
+        },
+        'Person'
+      )
     ).toEqual({
       type: 'Person'
     })
@@ -88,6 +114,40 @@ describe('coerce', () => {
       await coerce({
         type: 'Person',
         givenNames: 'Jane'
+      })
+    ).toEqual({
+      type: 'Person',
+      givenNames: ['Jane']
+    })
+
+    // e.g. person only affiliated with one organisation
+    expect(
+      await coerce({
+        type: 'Person',
+        affiliation: {
+          type: 'Organization'
+        }
+      })
+    ).toEqual({
+      type: 'Person',
+      affiliations: [
+        {
+          type: 'Organization'
+        }
+      ]
+    })
+
+    // e.g. article only has one author, with one affiliation
+    expect(
+      await coerce({
+        type: 'Article',
+        title: 'An article',
+        author: {
+          type: 'Person',
+          affiliation: {
+            type: 'Organization'
+          }
+        }
       })
     ).toEqual({
       type: 'Article',

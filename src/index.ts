@@ -1,7 +1,7 @@
 import * as stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
-import { Codec, Encode } from './codecs/types'
+import { Codec, GlobalEncodeOptions } from './codecs/types'
 import * as vfile from './util/vfile'
 
 type VFile = vfile.VFile
@@ -53,15 +53,6 @@ export const codecList: string[] = [
   'json5',
   'json'
 ]
-
-export interface EncodeOptions<FormatOptions extends object = {}> {
-  format?: string
-  filePath?: string
-  isStandalone?: boolean
-  isBundle?: boolean
-  theme?: 'eLife' | 'stencila'
-  codecOptions?: FormatOptions
-}
 
 /**
  * Match the codec based on file name, extension name, media type or by content sniffing.
@@ -121,6 +112,18 @@ export async function match(
     }
   }
 
+  const getCodec = (exports: { [key: string]: unknown }): Codec | undefined => {
+    for (const C in exports) {
+      // @ts-ignore
+      if (exports[C].prototype instanceof Codec) {
+        // @ts-ignore
+        return new exports[C]()
+      }
+    }
+  }
+
+  let codec: Codec | undefined
+
   /**
    * The following try/catch, as well as the for loop is in place for
    * performance optimizations and avoiding loading unnecessary modules. If we
@@ -128,14 +131,25 @@ export async function match(
    * the dynamically imported Codec
    */
   try {
-    return await import(`./codecs/${extName}`)
+    const c = await import(`./codecs/${extName}`)
+    codec = getCodec(c)
   } catch (error) {
     // Do not log any warnings here since not finding a matching module
     // is normal behavior and doing so causes unnecessary noise and anxiety :)
   }
 
+  if (codec) return codec
+
   for (const codecName of codecList) {
-    const codec = await import(`./codecs/${codecName}`)
+    try {
+      const c = await import(`./codecs/${codecName}`)
+      codec = getCodec(c)
+    } catch (error) {
+      // Do not log any warnings here since not finding a matching module
+      // is normal behavior and doing so causes unnecessary noise and anxiety :)
+    }
+
+    if (!codec) break
 
     if (fileName && codec.fileNames && codec.fileNames.includes(fileName)) {
       return codec
@@ -205,9 +219,9 @@ export async function decode(
  *    - format The format to encode the node as.
  *             If undefined then determined from filePath or file path.
  */
-export const encode: Encode = async (
+export const encode = async (
   node: stencila.Node,
-  options: EncodeOptions = {}
+  options: GlobalEncodeOptions = {}
 ): Promise<VFile> => {
   const { filePath, format } = options
   if (!(filePath || format)) {
@@ -243,7 +257,7 @@ export async function load(
 export async function dump(
   node: stencila.Node,
   format: string,
-  options: EncodeOptions = {}
+  options: GlobalEncodeOptions = {}
 ): Promise<string> {
   const file = await encode(node, { ...options, format })
   return vfile.dump(file)
@@ -276,7 +290,7 @@ export async function read(
 export async function write(
   node: stencila.Node,
   filePath: string,
-  options: EncodeOptions = {}
+  options: GlobalEncodeOptions = {}
 ): Promise<VFile> {
   const file = await encode(node, { ...options, filePath })
   await vfile.write(file, filePath)
@@ -286,7 +300,7 @@ export async function write(
 interface ConvertOptions {
   to?: string
   from?: string
-  encodeOptions?: EncodeOptions
+  encodeOptions?: GlobalEncodeOptions
 }
 
 /**
