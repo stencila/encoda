@@ -1,7 +1,8 @@
-// @ts-ignore
+import { toMatchFile } from 'jest-file-snapshot';
 import path from 'path'
 import { sniff } from '.'
 import { convert } from '../..'
+import { snapshot } from '../../__tests__/helpers';
 
 /**
  * This test suite uses fixtures and file snapshots. During development
@@ -12,9 +13,8 @@ import { convert } from '../..'
  * ```
  */
 
-const fixture = (name: string) => path.join(__dirname, '__fixtures__', name)
-const snapshot = (name: string) =>
-  path.join(__dirname, '__file_snapshots__', name)
+const fixture = (name: string) =>
+  path.join(__dirname, '__fixtures__', name, 'main.jats.xml')
 
 test('sniff', async () => {
   expect(
@@ -32,49 +32,51 @@ test('sniff', async () => {
       '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE article\n\tPUBLIC\n  "-//NLM//DTD JATS (Z39.96) Blah blah'
     )
   ).toBe(true)
-  expect(await sniff(fixture('elife-46793-v1.xml'))).toBe(true)
-  expect(await sniff(fixture('f1000research-7-1655-v1.xml'))).toBe(true)
+
+  expect(await sniff(fixture('elife-46793-v1'))).toBe(true)
+  expect(await sniff(fixture('f1000-7-1655-v1'))).toBe(true)
+  expect(await sniff(fixture('plosone-0091296'))).toBe(true)
 
   expect(await sniff('foo bar')).toBe(false)
   expect(await sniff(__dirname)).toBe(false)
-  expect(await sniff(fixture('README.md'))).toBe(false)
+  expect(await sniff(path.join(__dirname, 'README.md'))).toBe(false)
 })
 
 test('decode', async () => {
   /**
    * Decode fixtures to YAML snapshot files (for readability)
    */
-  const yaml = async (name: string) =>
+  const jats2yaml = async (name: string) =>
     convert(fixture(name), undefined, { from: 'jats', to: 'yaml' })
 
-  expect(await yaml('elife-30274-v1.xml')).toMatchFile(
+  expect(await jats2yaml('elife-30274-v1')).toMatchFile(
     snapshot('elife-30274-v1.yaml')
   )
-  expect(await yaml('elife-46472-v1.xml')).toMatchFile(
-    snapshot('elife-46472-v1.yaml')
+  expect(await jats2yaml('elife-46472-v3')).toMatchFile(
+    snapshot('elife-46472-v3.yaml')
   )
-  expect(await yaml('elife-46793-v1.xml')).toMatchFile(
+  expect(await jats2yaml('elife-46793-v1')).toMatchFile(
     snapshot('elife-46793-v1.yaml')
   )
 
-  expect(await yaml('f1000research-7-1655-v1.xml')).toMatchFile(
-    snapshot('f1000research-7-1655-v1.yaml')
+  expect(await jats2yaml('f1000-7-1655-v1')).toMatchFile(
+    snapshot('f1000-7-1655-v1.yaml')
   )
-  expect(await yaml('f1000research-8-978-v1.xml')).toMatchFile(
-    snapshot('f1000research-8-978-v1.yaml')
+  expect(await jats2yaml('f1000-8-978-v1')).toMatchFile(
+    snapshot('f1000-8-978-v1.yaml')
   )
-  expect(await yaml('f1000research-8-1008-v1.xml')).toMatchFile(
-    snapshot('f1000research-8-1008-v1.yaml')
+  expect(await jats2yaml('f1000-8-1394-v1')).toMatchFile(
+    snapshot('f1000-8-1394-v1.yaml')
   )
 
-  expect(await yaml('plos-one-0091296.xml')).toMatchFile(
-    snapshot('plos-one-0091296.yaml')
+  expect(await jats2yaml('plosone-0091296')).toMatchFile(
+    snapshot('plosone-0091296.yaml')
   )
-  expect(await yaml('plos-one-0093988.xml')).toMatchFile(
-    snapshot('plos-one-0093988.yaml')
+  expect(await jats2yaml('plosone-0093988')).toMatchFile(
+    snapshot('plosone-0093988.yaml')
   )
-  expect(await yaml('plos-one-0178565.xml')).toMatchFile(
-    snapshot('plos-one-0178565.yaml')
+  expect(await jats2yaml('plosone-0178565')).toMatchFile(
+    snapshot('plosone-0178565.yaml')
   )
 })
 
@@ -82,36 +84,36 @@ test('decode+encode', async () => {
   /**
    * Round trip conversion from JATS to JATS
    */
-  const jats = async (name: string) =>
+  const jats2jats = async (name: string) =>
     convert(fixture(name), undefined, { from: 'jats', to: 'jats' })
 
-  expect(await jats('elife-30274-v1.xml')).toMatchFile(
+  expect(await jats2jats('elife-30274-v1')).toMatchFile(
     snapshot('elife-30274-v1.jats.xml')
   )
-  expect(await jats('elife-46472-v1.xml')).toMatchFile(
-    snapshot('elife-46472-v1.jats.xml')
+  expect(await jats2jats('elife-46472-v3')).toMatchFile(
+    snapshot('elife-46472-v3.jats.xml')
   )
-  expect(await jats('elife-46793-v1.xml')).toMatchFile(
+  expect(await jats2jats('elife-46793-v1')).toMatchFile(
     snapshot('elife-46793-v1.jats.xml')
   )
 
-  expect(await jats('f1000research-7-1655-v1.xml')).toMatchFile(
-    snapshot('f1000research-7-1655-v1.jats.xml')
+  expect(await jats2jats('f1000-7-1655-v1')).toMatchFile(
+    snapshot('f1000-7-1655-v1.jats.xml')
   )
-  expect(await jats('f1000research-8-978-v1.xml')).toMatchFile(
-    snapshot('f1000research-8-978-v1.jats.xml')
+  expect(await jats2jats('f1000-8-978-v1')).toMatchFile(
+    snapshot('f1000-8-978-v1.jats.xml')
   )
-  expect(await jats('f1000research-8-1008-v1.xml')).toMatchFile(
-    snapshot('f1000research-8-1008-v1.jats.xml')
+  expect(await jats2jats('f1000-8-1394-v1')).toMatchFile(
+    snapshot('f1000-8-1394-v1.jats.xml')
   )
 
-  expect(await jats('plos-one-0091296.xml')).toMatchFile(
-    snapshot('plos-one-0091296.jats.xml')
+  expect(await jats2jats('plosone-0091296')).toMatchFile(
+    snapshot('plosone-0091296.jats.xml')
   )
-  expect(await jats('plos-one-0093988.xml')).toMatchFile(
-    snapshot('plos-one-0093988.jats.xml')
+  expect(await jats2jats('plosone-0093988')).toMatchFile(
+    snapshot('plosone-0093988.jats.xml')
   )
-  expect(await jats('plos-one-0178565.xml')).toMatchFile(
-    snapshot('plos-one-0178565.jats.xml')
+  expect(await jats2jats('plosone-0178565')).toMatchFile(
+    snapshot('plosone-0178565.jats.xml')
   )
 })

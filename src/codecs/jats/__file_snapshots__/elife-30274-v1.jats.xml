@@ -169,7 +169,7 @@
                     </p>
                 </caption>
                 <label>Figure 1.</label>
-                <graphic xlink:href="elife-30274-fig1-v1" mimetype="application" mime-subtype="postscript"/>
+                <graphic xlink:href="fig1.jpg" mimetype="application" mime-subtype="postscript"/>
             </fig>
         </sec>
         <sec>
@@ -221,7 +221,7 @@
                     </caption>
                     <label>Figure 2.</label>
                     <alternatives>
-                        <graphic xlink:href="elife-30274-fig2-v1" mimetype="application" mime-subtype="postscript"/>
+                        <graphic xlink:href="fig2.jpg" mimetype="application" mime-subtype="postscript"/>
                         <media xlink:href="elife-30274-fig2-data1-v1.csv" mimetype="application" mime-subtype="octet-stream"/>
                     </alternatives>
                 </fig>
@@ -242,7 +242,7 @@
                         </p>
                     </caption>
                     <label>Figure 2—figure supplement 1.</label>
-                    <graphic xlink:href="elife-30274-fig2-figsupp1-v1" mimetype="application" mime-subtype="postscript"/>
+                    <graphic xlink:href="fig2-figsupp1.jpg" mimetype="application" mime-subtype="postscript"/>
                 </fig>
                 <fig>
                     <caption>
@@ -257,7 +257,7 @@
                         </p>
                     </caption>
                     <label>Figure 2—figure supplement 2.</label>
-                    <graphic xlink:href="elife-30274-fig2-figsupp2-v1" mimetype="application" mime-subtype="postscript"/>
+                    <graphic xlink:href="fig2-figsupp2.jpg" mimetype="application" mime-subtype="postscript"/>
                 </fig>
             </fig-group>
             <p>To test whether active genes, as well as silent genes, increased expression during c-Myc induction we performed the confirmatory analysis as outlined in the Registered Report (
@@ -758,7 +758,7 @@
                     </p>
                 </caption>
                 <label>Figure 3.</label>
-                <graphic xlink:href="elife-30274-fig3-v1" mimetype="application" mime-subtype="postscript"/>
+                <graphic xlink:href="fig3.jpg" mimetype="application" mime-subtype="postscript"/>
             </fig>
             <p>There were six comparisons of the gene expression data, three for active genes and three for silent genes (
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3B</ext-link>). These calculations were performed analyzing the data as paired, for reasons discussed above and as prespecified in the Registered Report (
@@ -1360,10 +1360,9 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
+                    <source>Nature</source>
                     <fpage>384</fpage>
                     <lpage>388</lpage>
-                    <issue>19</issue>
-                    <source>Nature</source>
                     <volume>525</volume>
                 </element-citation>
             </ref>

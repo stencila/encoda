@@ -294,7 +294,7 @@ content:
       - ' which is used to obtain a reduced genome database.'
     type: Paragraph
   - content:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.g001'
+      - contentUrl: g001.png
         format: image
         meta:
           inline: false
@@ -327,7 +327,7 @@ content:
         the conventional Hamming distance by ignoring the elements of profiles
         where both the proteins are absent. The modified formula of Hamming
         distance is:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.e001'
+      - contentUrl: e001.png
         format: image
         meta:
           inline: false
@@ -487,7 +487,7 @@ content:
         the abridged strings.
     type: Paragraph
   - content:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.g002'
+      - contentUrl: g002.png
         format: image
         meta:
           inline: false
@@ -607,7 +607,7 @@ content:
         merely paralogs.
     type: Paragraph
   - content:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.g003'
+      - contentUrl: g003.png
         format: image
         meta:
           inline: false
@@ -666,7 +666,7 @@ content:
     order: ascending
     type: List
   - content:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.g004'
+      - contentUrl: g004.png
         format: image
         meta:
           inline: false
@@ -1050,7 +1050,7 @@ content:
         may lack some of the core metabolic genes.
     type: Paragraph
   - content:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.g005'
+      - contentUrl: g005.png
         format: image
         meta:
           inline: false
@@ -2337,7 +2337,7 @@ content:
         information about their functions.
     type: Paragraph
   - content:
-      - contentUrl: 'info:doi/10.1371/journal.pone.0178565.g006'
+      - contentUrl: g006.png
         format: image
         meta:
           inline: false

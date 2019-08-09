@@ -23,7 +23,12 @@ const create = async (id: string, version: number = 1) => {
 
   await fs.writeFile(
     path.join(dir, `main.jats.xml`),
-    xml.dump(doc, { spaces: 4 }),
+    xml.dump(doc),
+    'utf8'
+  )
+  await fs.writeFile(
+    path.join(dir, `main.pretty.xml`),
+    xml.dump(doc, {spaces: 2}),
     'utf8'
   )
 }

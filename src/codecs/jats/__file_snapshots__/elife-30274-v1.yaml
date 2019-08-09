@@ -271,7 +271,7 @@ content:
         approaching the levels observed in tetracycline-free conditions.
     type: Paragraph
   - content:
-      - contentUrl: elife-30274-fig1-v1
+      - contentUrl: fig1.jpg
         format: application/postscript
         meta:
           inline: false
@@ -528,7 +528,7 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: elife-30274-fig2-v1
+          - contentUrl: fig2.jpg
             format: application/postscript
             meta:
               inline: false
@@ -589,7 +589,7 @@ content:
             type: MediaObject
         type: Figure
       - content:
-          - contentUrl: elife-30274-fig2-figsupp1-v1
+          - contentUrl: fig2-figsupp1.jpg
             format: application/postscript
             meta:
               inline: false
@@ -655,7 +655,7 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: elife-30274-fig2-figsupp2-v1
+          - contentUrl: fig2-figsupp2.jpg
             format: application/postscript
             meta:
               inline: false
@@ -1810,7 +1810,7 @@ content:
         confidence intervals of each other.
     type: Paragraph
   - content:
-      - contentUrl: elife-30274-fig3-v1
+      - contentUrl: fig3.jpg
         format: application/postscript
         meta:
           inline: false
@@ -2909,14 +2909,11 @@ references:
     type: Article
     datePublished: '2015'
     isPartOf:
-      issueNumber: 19
       pageStart: 384
       pageEnd: 388
-      isPartOf:
-        title: Nature
-        volumeNumber: 525
-        type: PublicationVolume
-      type: PublicationIssue
+      title: Nature
+      volumeNumber: 525
+      type: PublicationVolume
     id: bib12
   - authors:
       - givenNames:
