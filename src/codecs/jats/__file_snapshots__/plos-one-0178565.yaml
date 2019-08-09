@@ -285,7 +285,7 @@ content:
         Likewise, cyanobacteria were clustered by using their profiles and a
         similar clustering strategy and cut-off. The merged profiles are then
         represented as consensus of the members of the cluster. The detailed
-        method is depicted in
+        method is depicted in 
       - content:
           - Fig 1
         target: '#pone.0178565.g001'
@@ -430,7 +430,7 @@ content:
       - >-
         String length (number of genomes in the dataset) of the phylogenetic
         profiles was 120 based on the number of genomes used. However, some of
-        the genera such as
+        the genera such as 
       - type: Emphasis
         content:
           - Prochlorococcus
@@ -505,7 +505,7 @@ content:
       - content:
           - >-
             Profiles of 8280 semi-conserved genes were used while clustering the
-            organisms. List of the cyanobacterial strains are given in
+            organisms. List of the cyanobacterial strains are given in 
           - content:
               - S2 Table
             target: '#pone.0178565.s003'
@@ -513,7 +513,7 @@ content:
             type: Link
           - >-
             . * represents the organism cluster 12, whose constituents are given
-            in
+            in 
           - content:
               - S2 Table
             target: '#pone.0178565.s003'
@@ -563,7 +563,7 @@ content:
         type: Link
       - >-
         ) where the pairs in question lie on opposite sides of the plot (Details
-        regarding the proteins used in the PCA plot and heatmap are given in
+        regarding the proteins used in the PCA plot and heatmap are given in 
       - content:
           - S6 Table
         target: '#pone.0178565.s007'
@@ -591,7 +591,7 @@ content:
         related subset of organisms suggesting that the divergence of the
         protein sequences correlates with the evolution of the organism.
         Likewise profiles with query UniProt IDs B5VZS0 and Q3M4X1 both
-        represent the
+        represent the 
       - type: Emphasis
         content:
           - phzF
@@ -707,7 +707,7 @@ content:
         but not considered here as our dataset contains only protein coding
         genes. In this set, around 35% of the genes are metabolic genes. The set
         comprises of upto 50% of the total proteins in smaller genomes such as
-        those of
+        those of 
       - type: Emphasis
         content:
           - Prochlorococcus
@@ -804,7 +804,7 @@ content:
               - SYNPCC7002_A2832
             type: TableCell
           - content:
-              - "'de novo' GDP-L-fucose biosynthetic process [GO:0042351]"
+              - '''de novo'' GDP-L-fucose biosynthetic process [GO:0042351]'
             type: TableCell
           - content:
               - >-
@@ -955,7 +955,7 @@ content:
         type: Cite
       - >-
         ]. We checked for the conservation index of these genes and we find that
-        the oscillator genes
+        the oscillator genes 
       - type: Emphasis
         content:
           - kaiB
@@ -1013,7 +1013,7 @@ content:
         type: Link
       - >-
         ). However, there is some disagreement between the data sets. For
-        example, genes
+        example, genes 
       - type: Emphasis
         content:
           - psbJ
@@ -1206,7 +1206,7 @@ content:
         We wanted to test if the gene conservation index is indicative of gene
         essentiality. We find that there is a significant overlap between the
         sets of conserved genes (this work) and essential genes as determined
-        experimentally in
+        experimentally in 
       - type: Emphasis
         content:
           - S
@@ -1250,7 +1250,7 @@ content:
         category and essentiality may result from (i) clade specific conserved
         genes that may not be detected as phylum-wide conserved genes and (ii)
         the choice of experimental conditions may not cover the types of
-        evolutionary pressures that organisms experience in nature. The genes
+        evolutionary pressures that organisms experience in nature. The genes 
       - type: Emphasis
         content:
           - psbF
@@ -1267,7 +1267,7 @@ content:
         type: Cite
       - >-
         ]. The gene is semi-conserved in the entire phylum but is conserved in
-        clade C. The gene
+        clade C. The gene 
       - type: Emphasis
         content:
           - menF
@@ -1276,7 +1276,7 @@ content:
         type: Cite
       - >-
         ]. The gene is conserved in clades A and D but semi-conserved in the
-        entire phylum. The genes
+        entire phylum. The genes 
       - type: Emphasis
         content:
           - fbp
@@ -1402,7 +1402,7 @@ content:
       - >-
         ). We find agreement between the two datasets. For example, on analysis
         of ten enzymes of the glycolytic pathway, we find that seven were
-        conserved, six of which are essential in
+        conserved, six of which are essential in 
       - type: Emphasis
         content:
           - S
@@ -2299,7 +2299,7 @@ content:
       - >-
         ). To exemplify, cluster 11 has 11 proteins, of which eight are gas
         vesicle proteins, two are uncharacterized (with UniProt IDs D4TEP3 and
-        Q3MH39) and one is
+        Q3MH39) and one is 
       - type: Emphasis
         content:
           - ArsA
@@ -2484,7 +2484,7 @@ content:
   - content:
       - >-
         Histogram of gene conservation index (GCI) for the essential and
-        non-essential genes of
+        non-essential genes of 
       - type: Emphasis
         content:
           - S
@@ -2561,7 +2561,7 @@ content:
       - >-
         Column A denotes the name of the cyanobacteria and the thick borders
         represents a cluster. Column B describe the cluster number. The
-        cyanobacterial strains are arranged in the order shown in
+        cyanobacterial strains are arranged in the order shown in 
       - content:
           - Fig 2
         target: '#pone.0178565.g002'
@@ -2603,7 +2603,7 @@ content:
       - >-
         Column A to C describes about various identifiers and attributes of the
         genes used. Column D describes the Gene Conservation Index (GCI). All
-        the genes are color coded according to the
+        the genes are color coded according to the 
       - content:
           - Fig 3
         target: '#pone.0178565.g003'
@@ -2644,7 +2644,7 @@ content:
   - content:
       - >-
         Column A describe the Protein UniProt IDs of query genes used in the
-        study, Column B to D describe the genes of
+        study, Column B to D describe the genes of 
       - type: Emphasis
         content:
           - S
@@ -2690,7 +2690,7 @@ content:
       - >-
         Column A to C describes various identifiers and attributes of the genes
         used. Column D describes the Gene Conservation Index (GCI). All the
-        genes are color coded according to the
+        genes are color coded according to the 
       - content:
           - Fig 6
         target: '#pone.0178565.g006'

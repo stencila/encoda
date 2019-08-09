@@ -141,7 +141,7 @@ content:
         factor, a potent oncogene that is frequently overexpressed in a large
         percentage of cancers, globally amplifies the expression of actively
         transcribed genes, opposed to regulating specific target genes. Using
-        the P493-6 cell line, a model for
+        the P493-6 cell line, a model for 
       - type: Emphasis
         content:
           - MYC
@@ -227,7 +227,7 @@ content:
       - >-
         To test the effects of increased levels of c-Myc on gene expression we
         used the same human P493-6 B cell line of Burkitt’s lymphoma that
-        contains a conditional tetracycline-repressive
+        contains a conditional tetracycline-repressive 
       - type: Emphasis
         content:
           - MYC
@@ -241,7 +241,7 @@ content:
         ) as the original study. We performed Western blot analysis to confirm
         c-Myc expression could be reduced to very low levels and then
         reactivated after removal of tetracycline. This is comparable to what
-        was reported in Figure 1B of
+        was reported in Figure 1B of 
       - target: '#bib17'
         type: Cite
       - ' and described in Protocol 1 in the Registered Report ('
@@ -304,7 +304,7 @@ content:
             cells) for cells at 0, 1, and 24 hr after release from Tet. Means
             reported and error bars represent s.e.m. from three independent
             biological repeats. For serum lot one, one-way ANOVA on total RNA
-            levels of all groups;
+            levels of all groups; 
           - type: Emphasis
             content:
               - F
@@ -361,7 +361,7 @@ content:
       - >-
         We sought to independently replicate whether increased levels of c-Myc
         resulted in increased absolute levels of RNA. This experiment is similar
-        to what was reported in Figure 3E of
+        to what was reported in Figure 3E of 
       - target: '#bib17'
         type: Cite
       - ' and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report ('
@@ -646,7 +646,7 @@ content:
                 ) genes. Median represented as the line through the box and
                 whiskers representing values within 1.5 IQR of the first and
                 third quartile. Additional details for this experiment can be
-                found at
+                found at 
               - content:
                   - 'https://osf.io/fn2y4/'
                 target: 'https://osf.io/fn2y4/.'
@@ -1743,7 +1743,7 @@ content:
       - >-
         ). To provide a standardized measure of the effect, a common effect size
         was calculated for each effect from the original and replication
-        studies. Cohen’s
+        studies. Cohen’s 
       - type: Emphasis
         content:
           - d
@@ -1760,7 +1760,7 @@ content:
       - >-
         ). Importantly, the width of the confidence interval for each study is a
         reflection of not only the confidence level (e.g. 95%), but also
-        variability of the sample (e.g.
+        variability of the sample (e.g. 
       - type: Emphasis
         content:
           - SD
@@ -1769,7 +1769,7 @@ content:
   - content:
       - >-
         The comparison of total RNA levels at low levels of c-Myc (0 hr)
-        compared to high levels of c-Myc (24 hr) resulted in
+        compared to high levels of c-Myc (24 hr) resulted in 
       - type: Emphasis
         content:
           - d
@@ -1828,7 +1828,7 @@ content:
             type: Cite
           - >-
             , this replication study (RP:CB), and a random effects meta-analysis
-            of those two effects. Cohen’s
+            of those two effects. Cohen’s 
           - type: Emphasis
             content:
               - d
@@ -1845,7 +1845,7 @@ content:
               - A
           - >-
             ) Total RNA levels in P493-6 cells 0 hr compared to 24 hr after
-            release from tetracycline (meta-analysis
+            release from tetracycline (meta-analysis 
           - type: Emphasis
             content:
               - p
@@ -1855,7 +1855,7 @@ content:
               - B
           - >-
             ) Gene expression of active or silent genes are shown for all
-            comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis
+            comparisons. Active genes: 0 hr compared to 1 hr (meta-analysis 
           - type: Emphasis
             content:
               - p
@@ -1941,7 +1941,7 @@ content:
         point estimate of each study (original, replication serum lot one,
         replication serum lot two) was not within the confidence interval of the
         other studies. Further, the large confidence intervals of the
-        meta-analysis along with statistically significant Cochran’s
+        meta-analysis along with statistically significant Cochran’s 
       - type: Emphasis
         content:
           - Q
@@ -1957,7 +1957,7 @@ content:
         =0.0571, respectively) and the effect size point estimate of each study
         was not within the confidence interval of the other studies. Similar to
         the active gene comparisons, the large confidence intervals of the
-        meta-analysis along with statistically significant Cochran’s
+        meta-analysis along with statistically significant Cochran’s 
       - type: Emphasis
         content:
           - Q
@@ -2029,7 +2029,7 @@ content:
         type: Cite
       - >-
         ), we attempted a replication of the experiments reported in Figures 1B
-        and 3E-F of
+        and 3E-F of 
       - target: '#bib17'
         type: Cite
       - >-
@@ -2073,7 +2073,7 @@ content:
   - content:
       - >-
         P493-6 cells (shared by Young lab, Whitehead Institute for Biomedical
-        Research, RRID:
+        Research, RRID: 
       - content:
           - CVCL_6783
         target: 'https://scicrunch.org/resolver/CVCL_6783'
@@ -2218,7 +2218,7 @@ content:
         A gene was defined as transcriptionally active if its average expression
         was above one transcript/cell at 0 hr and transcriptionally silent if
         below 0.5 transcript/cell. A list of all Reporter CodeSets and their
-        expression values (transcripts/cell) are available at
+        expression values (transcripts/cell) are available at 
       - content:
           - Figure 2—source data 1
         target: '#fig2sdata1'
@@ -2279,7 +2279,7 @@ content:
         the power calculations to ensure sample size was sufficient. In cases
         where the number of groups were three and the sample sizes were evenly
         distributed among the groups, Fisher's LSD test was performed resulting
-        in an
+        in an 
       - type: Emphasis
         content:
           - a priori

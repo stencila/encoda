@@ -105,7 +105,7 @@ content:
       - >-
         G-quadruplex secondary structures (G4s) form in nucleic acids through
         the self-association of guanines (G) in G-rich sequences to form stacked
-        tetrad structures (reviewed in
+        tetrad structures (reviewed in 
       - target: '#bib15'
         type: Cite
       - '; '
@@ -187,7 +187,7 @@ content:
         may therefore be part of a regulatory mechanism to switch between
         different transcriptional states. At telomeres, tandem G4-repeat
         structures also may help protect chromosome ends by providing binding
-        sites for shelterin complex components (reviewed in
+        sites for shelterin complex components (reviewed in 
       - target: '#bib16'
         type: Cite
       - >-
@@ -213,7 +213,7 @@ content:
         Small molecules that selectively bind and stabilise G4 formation in
         vitro have been used to probe G4 biological function. G4 ligands, such
         as pyridostatin (PDS), PhenDC3 and TMPyP4, can reduce transcription of
-        many genes harbouring a promoter G4, including oncogenes such as
+        many genes harbouring a promoter G4, including oncogenes such as 
       - type: Emphasis
         content:
           - 'MYC,'
@@ -230,7 +230,7 @@ content:
         ). G4-stabilising ligands also interfere with telomere homeostasis by
         inducing telomere uncapping/DNA damage through the inhibition of
         telomere extension by telomerase leading to senescence or apoptosis
-        (reviewed in
+        (reviewed in 
       - target: '#bib88'
         type: Cite
       - >-
@@ -258,7 +258,7 @@ content:
       - >-
         Some G4-stabilising ligands cause a DNA damage-response (DDR); for
         example, DNA damage sites induced by PDS in human lung fibroblasts
-        mapped to genomic regions at G4s within several oncogenes including
+        mapped to genomic regions at G4s within several oncogenes including 
       - type: Emphasis
         content:
           - SRC
@@ -563,7 +563,7 @@ content:
         type: Link
       - >-
         ). It is reassuring that in this list we independently validated the
-        known G4 sensitisers
+        known G4 sensitisers 
       - type: Emphasis
         content:
           - 'BRCA1/2, ATRX and HERC2'
@@ -811,7 +811,7 @@ content:
               - C
           - >-
             ) Enriched protein domains (p≤0.05) within GENE3D (black) and PFAM
-            databases (grey) ordered by -Log10 (EASE p-value). See also
+            databases (grey) ordered by -Log10 (EASE p-value). See also 
           - content:
               - Supplementary file 1
             target: '#supp1'
@@ -861,7 +861,7 @@ content:
         type: Cite
       - >-
         ) was used to investigate functional interactions, this revealed a DDR
-        cluster that included
+        cluster that included 
       - type: Emphasis
         content:
           - BRCA1
@@ -887,7 +887,7 @@ content:
         type: Link
       - >-
         ). This analysis also identified as sensitisers a cluster consisting of
-        several chromatin modifiers including
+        several chromatin modifiers including 
       - type: Emphasis
         content:
           - SMARCA4
@@ -1064,7 +1064,7 @@ content:
                   - C
               - >-
                 ) Overlap of the genome-wide (GW) with A375 focused screen for
-                PDS and PhenDC3 G4-sensitisers combined (see also
+                PDS and PhenDC3 G4-sensitisers combined (see also 
               - content:
                   - Figure 6—figure supplement 1
                 target: '#fig6s1'
@@ -1102,7 +1102,7 @@ content:
                 ) with the Drug Genome Interaction database. The druggable
                 genome denotes genes with known or predicted drug interactions.
                 Clinically actionable denotes genes used in targeted cancer
-                clinical sequencing panels. See also
+                clinical sequencing panels. See also 
               - content:
                   - Figure 6—figure supplement 1
                 target: '#fig6s1'
@@ -1187,7 +1187,7 @@ content:
               - >-
                 ) all 129 PDS G4-hits validated by the A375 focused screen.
                 Black bars reflect terms enriched in both PDS and PhenDC3. See
-                also
+                also 
               - content:
                   - Supplementary file 2
                 target: '#supp2'
@@ -1261,7 +1261,7 @@ content:
         to gain initial insights into possible commonalities and differences in
         the response to G4 ligands in cells from different lineages. We
         therefore applied the custom library to mesenchymal-derived HT1080
-        fibrosarcoma cells (wild-type
+        fibrosarcoma cells (wild-type 
       - type: Emphasis
         content:
           - TP53
@@ -1383,7 +1383,7 @@ content:
                   - '2'
               - >-
                 FC values for four key genes found as both PDS and PhenDC3
-                sensitisers across all the three screens. See also
+                sensitisers across all the three screens. See also 
               - content:
                   - Figure 7—figure supplement 1
                 target: '#fig7s1'
@@ -1497,7 +1497,7 @@ content:
       - >-
         When we evaluated the data collectively from all screens, it was
         apparent that four genes were repeatedly found as G4 ligand
-        sensitisers-
+        sensitisers- 
       - type: Emphasis
         content:
           - 'BRCA1, TOP1, DDX42'
@@ -1629,7 +1629,7 @@ content:
                   - A
               - >-
                 ) HT1080 cells were treated with non-targeting (NT) or targeting
-                (T) siRNAs for
+                (T) siRNAs for 
               - type: Emphasis
                 content:
                   - BRCA1
@@ -1724,7 +1724,7 @@ content:
                   - B
               - >-
                 ) capillary traces obtained from Compass Software (Simple
-                Western) for results shown in
+                Western) for results shown in 
               - content:
                   - Figure 8A
                 target: '#fig8'
@@ -1921,7 +1921,7 @@ content:
                   - B
               - >-
                 ) capillary traces obtained from Compass Software (Simple
-                Western) for results shown in
+                Western) for results shown in 
               - content:
                   - Figure 8—figure supplement 3A
                 target: '#fig8s3'
@@ -1941,7 +1941,7 @@ content:
         Mirroring the shRNA screen findings, siRNA knockdown of all four genes
         in HT1080 cells imparted significant increases in sensitivity with PDS
         or PhenDC3 compared to DMSO. Some differences between the ligands and
-        individual gene knockdowns were noted. For
+        individual gene knockdowns were noted. For 
       - type: Emphasis
         content:
           - BRCA1
@@ -2038,7 +2038,7 @@ content:
         type: Cite
       - >-
         ), and USP1 is involved in DDR regulation and is overexpressed in
-        non-small cell lung and other cancers (reviewed in
+        non-small cell lung and other cancers (reviewed in 
       - target: '#bib46'
         type: Cite
       - >-
@@ -2193,7 +2193,7 @@ content:
                 plots were calculated using Combenefit software with the BLISS
                 model for an average of three biological replicas. Heat bar-
                 blue shading indicates synergy combinations, red indicates
-                antagonism (see also
+                antagonism (see also 
               - content:
                   - Figure 9—figure supplements 1
                 target: '#fig9s1'
@@ -2464,7 +2464,7 @@ content:
                   - B
               - >-
                 ) capillary traces obtained from Compass Software (Simple
-                Western) for results shown in
+                Western) for results shown in 
               - content:
                   - Figure 10A
                 target: '#fig10'
@@ -2532,7 +2532,7 @@ content:
         type: Link
       - >-
         ). The affinity of recombinant DDX42 was then investigated by Enzyme
-        Linked Immunosorbent Assay (ELISA,
+        Linked Immunosorbent Assay (ELISA, 
       - content:
           - Figure 10F
         target: '#fig10'
@@ -2556,7 +2556,7 @@ content:
       - >-
         ), the DDX42 affinity for a DNA G4 structure was investigated. For this,
         an oligonucleotide corresponding to the stable parallel G4 structure in
-        the promoter of
+        the promoter of 
       - type: Emphasis
         content:
           - MYC
@@ -2605,7 +2605,7 @@ content:
         favour discovery of gene losses that are the most sensitive in imparting
         selective cell killing. Validating the success of our approach, we
         independently identified G4-associated protein coding genes known to be
-        genetic vulnerabilities to G4 ligands including
+        genetic vulnerabilities to G4 ligands including 
       - type: Emphasis
         content:
           - 'BRCA1/2, HERC2'
@@ -2671,7 +2671,7 @@ content:
         phenocopy the genetic sensitivities described here and be used in
         combinatorial treatments with G4-stabilising drugs. This may be
         attractive as cells are less likely to simultaneously develop resistance
-        against two drugs (reviewed in
+        against two drugs (reviewed in 
       - target: '#bib24'
         type: Cite
       - >-
@@ -2683,7 +2683,7 @@ content:
         potentiation of cell death in conjunction with the G4 ligand PDS. For
         example, 5.3 μM PDS or 6.25 μM pimozide alone impart little growth
         inhibition (14% and 6% respectively), but together they lead to strong
-        growth inhibition (79%).
+        growth inhibition (79%). 
       - content:
           - Table 1
         target: '#table1'
@@ -3124,7 +3124,7 @@ content:
               - >-
                 Fanconi anaemia and translesion synthesis DDR; deubiquitinase
                 required for FANCD2, FANCI and PCNA localisation to sites of
-                DNA
+                DNA 
               - ' '
               - damage
             type: TableCell
@@ -3384,7 +3384,7 @@ content:
       - >-
         ). Higher doses may mask these effects, by targeting more G4s that are
         not dependent on the particular gene lost and/or be due to other
-        off-target effects. This is also supported by the experiments in
+        off-target effects. This is also supported by the experiments in 
       - content:
           - Figure 9
         target: '#fig9'
@@ -3398,7 +3398,7 @@ content:
         the identified G4 sensitisers and indicates roles in DNA damage response
         (DDR), transcription/chromatin remodelling, nucleic acid unwinding,
         splicing and ubiquitin-mediated proteolysis. Our findings substantially
-        advance our knowledge of G4 interactions with DDR beyond
+        advance our knowledge of G4 interactions with DDR beyond 
       - type: Emphasis
         content:
           - BRCA1/2
@@ -3419,7 +3419,7 @@ content:
         integral and important cellular response in preventing cell death
         induced through the increased persistence of G4s. Persistent G4
         structures are also inhibitory to DNA replication/cell cycle progression
-        (reviewed in
+        (reviewed in 
       - target: '#bib119'
         type: Cite
       - ' ), and it is of note that we also uncovered many cell cycle/DNA replication sensitivities such as '
@@ -3437,7 +3437,7 @@ content:
         Deficits in G4-unwinding helicases are predicted to increase the
         persistence of G4 structures resulting in heightened sensitivity to G4
         ligands. Several known G4-associated helicase deficiencies were
-        recovered, including
+        recovered, including 
       - type: Emphasis
         content:
           - RECQL4
@@ -3461,7 +3461,7 @@ content:
         G4-binding protein. On a wider level, this acts as proof-of-principle
         that other specific G4 interacting proteins exist within the sensitiser
         list of over 700 proteins. Other known G4-helicases such as BLM, WRN,
-        PIF1 and FANCJ (reviewed in
+        PIF1 and FANCJ (reviewed in 
       - target: '#bib129'
         type: Cite
       - >-
@@ -4742,7 +4742,7 @@ content:
         type: Link
       - >-
         ) were obtained from the American Type Culture Collection repository
-        (ATCC) (LGC Standards, United Kingdom) and Plat-A (RRID:
+        (ATCC) (LGC Standards, United Kingdom) and Plat-A (RRID: 
       - content:
           - RV-102
         target: 'https://scicrunch.org/resolver/RV-102'
@@ -5751,7 +5751,7 @@ content:
         quartz cuvette. CD measurements were performed at 298 K over a range of
         200–320 nm using a response time of 0.5 s, 1 nm pitch and 0.5 nm
         bandwidth. The recorded spectra represent a smoothed average of three
-        scans, zero-corrected at 320 nm (Molar ellipticity
+        scans, zero-corrected at 320 nm (Molar ellipticity 
       - type: Emphasis
         content:
           - θ
@@ -6676,7 +6676,7 @@ references:
         familyNames:
           - Balasubramanian
         type: Person
-    title: "5'-UTR RNA G-quadruplexes: translation regulation and targeting"
+    title: '5''-UTR RNA G-quadruplexes: translation regulation and targeting'
     type: Article
     datePublished: '2012'
     isPartOf:

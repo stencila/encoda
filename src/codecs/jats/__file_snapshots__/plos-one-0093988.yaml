@@ -36,13 +36,13 @@ content:
         the common good that is inherent in many important situations in the
         real world. In a social dilemma, individually reasonable behavior
         results in a situation in which all individuals are less well off than
-        they could otherwise have been
+        they could otherwise have been 
       - target: '#pone.0093988-Kollock1'
         type: Cite
       - >-
         . Social dilemmas underlie many of the most fundamental and intractable
         problems in the biological and social sciences, such as the evolution of
-        cooperation
+        cooperation 
       - target: '#pone.0093988-Axelrod1'
         type: Cite
       - ' and the efficient use of limited shared resources '
@@ -54,12 +54,12 @@ content:
         equilibrium. It is Hicks inefficient (i.e. socially inefficient) in that
         there is at least one other outcome in which all individuals would be
         better off, and since it is a Nash equilibrium there is no incentive for
-        any individual to change their behavior
+        any individual to change their behavior 
       - target: '#pone.0093988-Kollock1'
         type: Cite
       - >-
         . Examples of 2-person games that are social dilemmas include: The
-        Prisoner's Dilemma
+        Prisoner's Dilemma 
       - target: '#pone.0093988-Axelrod1'
         type: Cite
       - ', '
@@ -86,7 +86,7 @@ content:
       - >-
         . While the original game theory formalizations of these social dilemmas
         typically involved discrete-strategy games, more recently
-        continuous-strategy versions of the Prisoner's Dilemma game
+        continuous-strategy versions of the Prisoner's Dilemma game 
       - target: '#pone.0093988-Killingback1'
         type: Cite
       - ', the Snowdrift game '
@@ -104,10 +104,10 @@ content:
       - >-
         One particularly fascinating class of social dilemmas are those for
         which the predictions of game theory appear to be inconsistent with the
-        behavior observed when the games are played experimentally
+        behavior observed when the games are played experimentally 
       - target: '#pone.0093988-Holt1'
         type: Cite
-      - ". The Traveler's Dilemma (TD) game "
+      - '. The Traveler''s Dilemma (TD) game '
       - target: '#pone.0093988-Basu1'
         type: Cite
       - –
@@ -138,7 +138,7 @@ content:
         country, find that their luggage containing identical souvenirs has been
         lost by the airline. The officer in the claims department puts them in
         separate rooms, hands each of them a claims form, and tells them that
-        they can claim any integer amount between
+        they can claim any integer amount between 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e001'
         format: ''
         meta:
@@ -176,7 +176,7 @@ content:
       - >-
         ). He also informs them that if they both ask for the same amount, they
         will be paid that amount, and if they ask for different amounts, each
-        will be reimbursed at the lower value, but with a penalty
+        will be reimbursed at the lower value, but with a penalty 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e006'
         format: ''
         meta:
@@ -215,7 +215,7 @@ content:
       - >-
         In this context a Nash equilibrium is a pair of claims, such that, if
         each claim is known to the other traveler then neither has reason to
-        revise their claim. For
+        revise their claim. For 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e011'
         format: ''
         meta:
@@ -225,7 +225,7 @@ content:
       - >-
         , there is an incentive for each traveler to undercut any common claim.
         Using backward induction, it is not hard to see that the travelers
-        should each claim the amount
+        should each claim the amount 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e012'
         format: ''
         meta:
@@ -248,7 +248,7 @@ content:
         type: ImageObject
       - >-
         . However, as intuition would suggest, this is not how individuals
-        actually play this game
+        actually play this game 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -304,7 +304,7 @@ content:
       - >-
         , classical game theory is unable to explain the most salient feature of
         these experimental results, namely, the effect of the reward/punishment
-        parameter
+        parameter 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e020'
         format: ''
         meta:
@@ -325,7 +325,7 @@ content:
       - content:
           - >-
             Results from playing the TD and MEC games with human subjects,
-            adapted from
+            adapted from 
           - target: '#pone.0093988-Goeree1'
             type: Cite
           - .
@@ -335,7 +335,7 @@ content:
       - content:
           - >-
             (a) TD game: individuals make higher claims when the
-            reward/punishment parameter
+            reward/punishment parameter 
           - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e021'
             format: ''
             meta:
@@ -369,7 +369,7 @@ content:
   - content:
       - >-
         The MEC game has a somewhat similar flavor to the TD game, in that the
-        payoffs are again determined by the minimum of two actions
+        payoffs are again determined by the minimum of two actions 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -409,7 +409,7 @@ content:
       - >-
         ), and a player's payoff is given by the minimum of the two effort
         levels minus the cost of the player's own effort. Therefore, the MEC
-        game is a 2-person game with the discrete strategy set
+        game is a 2-person game with the discrete strategy set 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e029'
         format: ''
         meta:
@@ -451,7 +451,7 @@ content:
       - >-
         As with the TD game, when the MEC game is actually played with human
         subjects the observed behavior is inconsistent with the results
-        predicted by game theory
+        predicted by game theory 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -493,7 +493,7 @@ content:
         The paradoxical results obtained for the TD and MEC games using
         classical game theory are not resolved by instead using standard
         deterministic evolutionary game theory. Since the unique Nash
-        equilibrium
+        equilibrium 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e036'
         format: ''
         meta:
@@ -505,7 +505,7 @@ content:
         type: Cite
       - >-
         . Hence, the replicator dynamics of the TD game will always converge to
-        the minimum claim level
+        the minimum claim level 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e037'
         format: ''
         meta:
@@ -527,7 +527,7 @@ content:
         because it exposes so clearly an apparently paradoxical aspect of game
         theory: namely the inability of the Nash equilibrium concept to predict
         the actual behavior of individuals interacting in this type of game.
-        Moreover, it has been observed in
+        Moreover, it has been observed in 
       - target: '#pone.0093988-Manapat1'
         type: Cite
       - ' that the TD models competitive egg ejection in a species of communally nesting birds, the Greater Ani '
@@ -543,7 +543,7 @@ content:
         both obtain a large payoff since they can both successfully lay many
         eggs. If, however, one chooses to wait, then she can eject the other
         birds already-laid eggs and obtain an even greater payoff, while at the
-        same time inflicting a loss on the other bird
+        same time inflicting a loss on the other bird 
       - target: '#pone.0093988-Manapat1'
         type: Cite
       - '. Thus, this situation has the structure of the TD game.'
@@ -555,7 +555,7 @@ content:
         prescriptive or predictive power inherent in the notion of Nash
         equilibrium. In addition, it has considerable practical import since
         many interesting and important real-world situations can be modeled by
-        MEC games
+        MEC games 
       - target: '#pone.0093988-Bryant1'
         type: Cite
       - .
@@ -591,7 +591,7 @@ content:
       - >-
         A number of different theoretical approaches have been investigated as
         possible explanations of the behavior found empirically in the TD and
-        MEC games. In one approach, stochastic learning models
+        MEC games. In one approach, stochastic learning models 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -606,7 +606,7 @@ content:
       - >-
         , has also been investigated as a means of resolving the paradoxical
         features of the TD game. Other theoretical approaches to explaining the
-        behavior of the TD game have been studied in
+        behavior of the TD game have been studied in 
       - target: '#pone.0093988-Halpern1'
         type: Cite
       - –
@@ -614,7 +614,7 @@ content:
         type: Cite
       - >-
         . Other approaches which explore how errors in a game may lead to
-        deviations from Nash equilibrium play include
+        deviations from Nash equilibrium play include 
       - target: '#pone.0093988-Camerer1'
         type: Cite
       - –
@@ -642,7 +642,7 @@ content:
         The continuous-strategy forms of the TD and MEC games are two examples
         of a large class of continuous-strategy games which have a discontinuous
         payoff function — other important examples of games from this class
-        include the Bertrand Duopoly game
+        include the Bertrand Duopoly game 
       - target: '#pone.0093988-Tirole1'
         type: Cite
       - ' and the War of Attrition game '
@@ -651,7 +651,7 @@ content:
       - >-
         . For such games the role played by errors is potentially important. To
         be precise, let us consider the class of continuous-strategy games with
-        payoff function given by
+        payoff function given by 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e038'
         format: ''
         meta:
@@ -684,7 +684,7 @@ content:
         . This class of games includes the continuous-strategy variants of both
         the TD and MEC games. Errors in the observation of an opponents strategy
         or in the implementation of ones own strategy will result in the
-        expected payoff to an
+        expected payoff to an 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e042'
         format: ''
         meta:
@@ -835,7 +835,7 @@ content:
         dynamics for the class of games that we are considering. Since the
         effect of errors in the game is to give an expected payoff which is a
         smooth function, the simplest choice of dynamics is the standard
-        deterministic adaptive dynamics
+        deterministic adaptive dynamics 
       - target: '#pone.0093988-Metz1'
         type: Cite
       - –
@@ -857,7 +857,7 @@ content:
       - >-
         The approach to studying the evolutionary dynamics of the TD and MEC
         games that we follow in this paper has some advantages compared to
-        stochastic learning models
+        stochastic learning models 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -872,7 +872,7 @@ content:
       - >-
         . In the case of stochastic learning models, the evolutionary dynamics
         is governed by the Fokker-Planck equation, which is a nonlinear partial
-        differential equation that cannot be solved analytically
+        differential equation that cannot be solved analytically 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -886,7 +886,7 @@ content:
         the solutions to a suitable differential equation. However, it is
         difficult to determine analytically whether or not the equilibrium
         solutions are stable. In fact, the equilibrium solutions to the
-        stochastic learning models
+        stochastic learning models 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -907,7 +907,7 @@ content:
       - >-
         A key advantage of the method that we propose here is that the
         evolutionary dynamics is much easier to study than for either stochastic
-        learning models
+        learning models 
       - target: '#pone.0093988-Goeree1'
         type: Cite
       - ', '
@@ -924,7 +924,7 @@ content:
         evolutionary attractors for both the TD and MEC games. A second
         advantage of our method is that it applies directly to a wide variety of
         continuous-strategy games with discontinuous payoff functions, including
-        the Bertrand Duopoly model
+        the Bertrand Duopoly model 
       - target: '#pone.0093988-Tirole1'
         type: Cite
       - ' and the War of Attrition game '
@@ -965,7 +965,7 @@ content:
         continuously variable, and thus to consider variants of these games
         defined for continuous strategies. The continuous forms of the TD and
         MEC games are examples of a broad class of continuous-strategy 2-person
-        games with payoff functions given by
+        games with payoff functions given by 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e062'
         format: ''
         meta:
@@ -1031,7 +1031,7 @@ content:
         the discontinuous payoff function with a smoothed approximation,
         representing the expected payoff. We now define such a variant of the
         game in which the discontinuity in the payoff function is removed by a
-        smoothing procedure. To accomplish this we introduce a
+        smoothing procedure. To accomplish this we introduce a 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e070'
         format: ''
         meta:
@@ -1106,7 +1106,7 @@ content:
   - content:
       - >-
         To obtain the smoothed version of the game defined by (7) we simply
-        replace
+        replace 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e080'
         format: ''
         meta:
@@ -1165,7 +1165,7 @@ content:
   - content:
       - >-
         The claims made by individuals in the TD game represent their
-        strategies. If
+        strategies. If 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e086'
         format: ''
         meta:
@@ -1212,7 +1212,7 @@ content:
         We now define a variant of the TD game defined by (10), in which the
         discontinuity in the payoff function is removed by the smoothing
         procedure described above. To obtain the smoothed TD game we simply
-        replace
+        replace 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e092'
         format: ''
         meta:
@@ -1228,7 +1228,7 @@ content:
         type: ImageObject
       - >-
         . We therefore have that the payoff function for the smoothed TD game is
-        given by
+        given by 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e094'
         format: ''
         meta:
@@ -1238,7 +1238,7 @@ content:
       - (11)
       - >-
         We shall assume, without loss of generality, that the strategy space in
-        the smoothed TD game is the interval
+        the smoothed TD game is the interval 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e095'
         format: ''
         meta:
@@ -1265,7 +1265,7 @@ content:
       - >-
         In the MEC game, the effort levels of the individuals represent their
         strategies. In the continuous version of the MEC game, if the strategies
-        of two individuals playing the game are
+        of two individuals playing the game are 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e097'
         format: ''
         meta:
@@ -1325,7 +1325,7 @@ content:
       - (13)
       - >-
         Without loss of generality we can take the strategy space to be the unit
-        interval (i.e.
+        interval (i.e. 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e105'
         format: ''
         meta:
@@ -1391,7 +1391,7 @@ content:
       - >-
         The dynamics of the smoothed TD and MEC games as formulated in the
         previous section can be analyzed in a well-mixed population using the
-        deterministic framework of adaptive dynamics
+        deterministic framework of adaptive dynamics 
       - target: '#pone.0093988-Doebeli1'
         type: Cite
       - ', '
@@ -1402,7 +1402,7 @@ content:
         type: Cite
       - >-
         . Consider a monomorphic population in which every individual adopts the
-        same strategy,
+        same strategy, 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e112'
         format: ''
         meta:
@@ -1411,7 +1411,7 @@ content:
         type: ImageObject
       - >-
         . It follows from replicator dynamics that the growth rate of a rare
-        mutant strategy,
+        mutant strategy, 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e113'
         format: ''
         meta:
@@ -1493,7 +1493,7 @@ content:
   - content:
       - >-
         Equilibrium points of the adaptive dynamics are called singular
-        strategies and are solutions of
+        strategies and are solutions of 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e124'
         format: ''
         meta:
@@ -1540,7 +1540,7 @@ content:
   - content:
       - >-
         Initially, the population will converge to a convergent stable singular
-        point
+        point 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e130'
         format: ''
         meta:
@@ -1617,7 +1617,7 @@ content:
   - content:
       - >-
         The adaptive dynamics of smoothed games with payoff function defined by
-        (8) may be analyzed as follows. The invasion fitness is given by
+        (8) may be analyzed as follows. The invasion fitness is given by 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e140'
         format: ''
         meta:
@@ -1642,7 +1642,7 @@ content:
       - (16)
       - >-
         The adaptive dynamics of such a game is therefore determined by the
-        differential equation
+        differential equation 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e143'
         format: ''
         meta:
@@ -1702,7 +1702,7 @@ content:
   - content:
       - >-
         Let us first analyze the TD game with the payoff function given by (11).
-        Consider a monomorphic population of
+        Consider a monomorphic population of 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e150'
         format: ''
         meta:
@@ -1777,7 +1777,7 @@ content:
       - >-
         , there are no singular strategies, and thus there is no possibility of
         exotic evolutionary outcomes, such as evolutionary branching. The
-        evolutionary dynamics of an initial strategy
+        evolutionary dynamics of an initial strategy 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e160'
         format: ''
         meta:
@@ -1849,7 +1849,7 @@ content:
         type: ImageObject
       - >-
         . Thus, this adaptive dynamics analysis implies that the players of the
-        smoothed TD game will evolve to make low claims if
+        smoothed TD game will evolve to make low claims if 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e170'
         format: ''
         meta:
@@ -1872,7 +1872,7 @@ content:
         type: ImageObject
       - >-
         -parameter family of smoothing functions defined by (9), this criterion
-        takes the following form: claims will evolve to low levels if
+        takes the following form: claims will evolve to low levels if 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e173'
         format: ''
         meta:
@@ -1896,7 +1896,7 @@ content:
   - content:
       - >-
         We next turn to the MEC game where the payoff function is given by (14).
-        Consider a monomorphic population of
+        Consider a monomorphic population of 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e175'
         format: ''
         meta:
@@ -1970,7 +1970,7 @@ content:
         type: ImageObject
       - >-
         , there are no singular strategies. Also, rather remarkably, the
-        adaptive dynamics of
+        adaptive dynamics of 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e185'
         format: ''
         meta:
@@ -2057,7 +2057,7 @@ content:
       - >-
         . Therefore, this adaptive dynamics analysis implies that the players'
         strategies in the smoothed MEC game will evolve to low efforts if the
-        effort cost
+        effort cost 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e197'
         format: ''
         meta:
@@ -2102,7 +2102,7 @@ content:
         complex interaction patterns in the population. The evolutionary
         dynamics of simple social dilemmas, such as the Prisoner's Dilemma and
         the Snowdrift game, have been well-studied for populations with a
-        variety of complex interaction patterns
+        variety of complex interaction patterns 
       - target: '#pone.0093988-Nowak1'
         type: Cite
       - –
@@ -2128,7 +2128,7 @@ content:
       - >-
         . Since we wish to allow the possibility of complex population
         structures, we identify the population with the set of vertices in a
-        graph
+        graph 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e202'
         format: ''
         meta:
@@ -2151,7 +2151,7 @@ content:
         type: ImageObject
       - >-
         , specifies that two individuals in the population can interact by
-        playing the game only if they are adjacent in
+        playing the game only if they are adjacent in 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e205'
         format: ''
         meta:
@@ -2168,7 +2168,7 @@ content:
       - >-
         , specifies that an individual in the population can update its strategy
         by comparing its state to the states only of those individuals adjacent
-        to it in
+        to it in 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e207'
         format: ''
         meta:
@@ -2177,7 +2177,7 @@ content:
         type: ImageObject
       - >-
         . Here, for simplicity, we shall assume that the interaction and
-        updating graphs are the same i.e.,
+        updating graphs are the same i.e., 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e208'
         format: ''
         meta:
@@ -2233,7 +2233,7 @@ content:
         . Let us fix either the TD or the MEC game as the game under
         consideration. We begin with a monomorphic population, i.e., each
         individual in the population starts out with the same initial strategy
-        randomly picked from a uniform distribution. At each time step
+        randomly picked from a uniform distribution. At each time step 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e215'
         format: ''
         meta:
@@ -2310,7 +2310,7 @@ content:
         type: Link
       - >-
         ) or (14), depending on the game under consideration. This procedure is
-        repeated
+        repeated 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e224'
         format: ''
         meta:
@@ -2393,14 +2393,14 @@ content:
         type: ImageObject
       - >-
         's strategy. This update rule is often referred to as the Fermi rule.
-        The parameter
+        The parameter 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e235'
         format: ''
         meta:
           inline: true
           linkType: simple
         type: ImageObject
-      - " is the “selection strength'' of the update rule. The update procedure is repeated "
+      - ' is the “selection strength'''' of the update rule. The update procedure is repeated '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e236'
         format: ''
         meta:
@@ -2412,21 +2412,21 @@ content:
   - content:
       - >-
         Mutations are incorporated in the update procedure in the following way:
-        when according to the update rule (22)
+        when according to the update rule (22) 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e237'
         format: ''
         meta:
           inline: true
           linkType: simple
         type: ImageObject
-      - "'s strategy would be replaced by "
+      - '''s strategy would be replaced by '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e238'
         format: ''
         meta:
           inline: true
           linkType: simple
         type: ImageObject
-      - "'s, then with probability "
+      - '''s, then with probability '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e239'
         format: ''
         meta:
@@ -2442,14 +2442,14 @@ content:
         type: ImageObject
       - >-
         's strategy is instead replaced by a strategy picked randomly from a
-        normal distribution with mean equal to
+        normal distribution with mean equal to 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e241'
         format: ''
         meta:
           inline: true
           linkType: simple
         type: ImageObject
-      - "'s strategy and standard deviation "
+      - '''s strategy and standard deviation '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e242'
         format: ''
         meta:
@@ -2477,7 +2477,7 @@ content:
         We note here that the results of our agent-based simulations (described
         in detail in the next section) are robust to variations in the update
         rule. For example, in addition to employing the Fermi update rule (22),
-        we have also simulated the agent-based model using the
+        we have also simulated the agent-based model using the 
       - type: Emphasis
         content:
           - replicator
@@ -2502,7 +2502,7 @@ content:
           inline: true
           linkType: simple
         type: ImageObject
-      - "'s strategy (with "
+      - '''s strategy (with '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e248'
         format: ''
         meta:
@@ -2549,7 +2549,7 @@ content:
         the TD and MEC games. For both the smoothed TD and MEC games the
         agent-based model described in the previous section was simulated (using
         the Fermi update rule (22) and the smoothing function (9)) on the
-        following graphs (see, for example,
+        following graphs (see, for example, 
       - target: '#pone.0093988-Watts1'
         type: Cite
       - –
@@ -2561,7 +2561,7 @@ content:
         10; and two-dimensional lattice graphs with 4 and 8 neighbors,
         respectively, and periodic boundary conditions. The games were simulated
         for 20000 generations. The parameter values used for the simulations
-        were: population size,
+        were: population size, 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e252'
         format: ''
         meta:
@@ -2661,7 +2661,7 @@ content:
       - >-
         , on the following graphs: (a) a complete graph, (c) a random regular
         graph, (d) a scale-free graph, (e) a 2D lattice graph with 4 neighbors,
-        and (f) a 2D lattice graph with 8 neighbors. The
+        and (f) a 2D lattice graph with 8 neighbors. The 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e264'
         format: ''
         meta:
@@ -2764,7 +2764,7 @@ content:
             , on a complete graph (a), a random regular graph with degree 10
             (c), a scale-free graph with mean degree 10 (d), 2D lattice graph
             with 4 neighbors (e), and 2D lattice graph with 8 neighbors (f).
-            Parameter values:
+            Parameter values: 
           - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e275'
             format: ''
             meta:
@@ -2880,7 +2880,7 @@ content:
         type: ImageObject
       - >-
         , as indicated by the green bars. This result is in good agreement with
-        the empirical results shown in
+        the empirical results shown in 
       - content:
           - Figure 1(a)
         target: '#pone-0093988-g001'
@@ -2891,7 +2891,7 @@ content:
   - content:
       - >-
         We have also simulated the game using the discontinuous form of the
-        payoff function (10), and the results are shown in blue (labeled
+        payoff function (10), and the results are shown in blue (labeled 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e290'
         format: ''
         meta:
@@ -2913,7 +2913,7 @@ content:
         type: ImageObject
       - >-
         . This result, which is consistent with the prediction of the adaptive
-        dynamics analysis of the smoothed TD game in the limit
+        dynamics analysis of the smoothed TD game in the limit 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e292'
         format: ''
         meta:
@@ -2975,7 +2975,7 @@ content:
       - >-
         , on the following graphs: (a) a complete graph, (c) a random regular
         graph, (d) a scale-free graph, (e) a 2D lattice graph with 4 neighbors,
-        and (f) a 2D lattice graph with 8 neighbors. The
+        and (f) a 2D lattice graph with 8 neighbors. The 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e298'
         format: ''
         meta:
@@ -3022,7 +3022,7 @@ content:
         are in good qualitative agreement with the empirically observed behavior
         in experiments. The results of these agent-based simulations clearly
         show the independence of the evolutionary dynamics of the smoothed MEC
-        game on the smoothing function (i.e., the independence on
+        game on the smoothing function (i.e., the independence on 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e304'
         format: ''
         meta:
@@ -3088,7 +3088,7 @@ content:
             , on a complete graph (a), a random regular graph with degree 10
             (c), a scale-free graph with mean degree 10 (d), 2D lattice graph
             with 4 neighbors (e), and 2D lattice graph with 8 neighbors (f).
-            Parameter values:
+            Parameter values: 
           - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e310'
             format: ''
             meta:
@@ -3204,7 +3204,7 @@ content:
         type: ImageObject
       - >-
         , as indicated by the green bars. This result is in good agreement with
-        the empirical results shown in
+        the empirical results shown in 
       - content:
           - Figure 1(b)
         target: '#pone-0093988-g001'
@@ -3231,7 +3231,7 @@ content:
       - >-
         . In this case, there is still a transition from high to low effort
         levels as the effort cost increases, however, it is typically not as
-        sharp as for the smoothed game (with any value of
+        sharp as for the smoothed game (with any value of 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e326'
         format: ''
         meta:
@@ -3284,7 +3284,7 @@ content:
       - >-
         For the smoothed TD game, we find both from the adaptive dynamics
         analysis and from the agent-based simulations, that claims vary with the
-        reward/punishment parameter
+        reward/punishment parameter 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e327'
         format: ''
         meta:
@@ -3330,7 +3330,7 @@ content:
         We find similarly satisfactory results for the smoothed MEC game. The
         analysis, both analytical and through simulations, again yields results
         in good agreement with experiment: high effort levels are found for low
-        effort cost
+        effort cost 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e332'
         format: ''
         meta:
@@ -3345,7 +3345,7 @@ content:
         applied to a wide variety of continuous-strategy games with
         discontinuous payoff functions. Important examples of other games that
         can be fruitfully studied using these methods include the Bertrand
-        Duopoly model
+        Duopoly model 
       - target: '#pone.0093988-Tirole1'
         type: Cite
       - ' and the War of Attrition game '
@@ -3384,7 +3384,7 @@ content:
         , and will buy nothing from the firm with the higher price. If both
         firms set the same price then it is assumed that demand is split equally
         between them. It is also assumed that both firms have the same marginal
-        cost
+        cost 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e336'
         format: ''
         meta:
@@ -3405,7 +3405,7 @@ content:
       - >-
         The smoothed BD model can be analyzed using adaptive dynamics just as we
         have done here for the TD and MEC games. It may be shown for an
-        arbitrary smoothing, that given a linear demand function
+        arbitrary smoothing, that given a linear demand function 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e337'
         format: ''
         meta:
@@ -3442,7 +3442,7 @@ content:
         type: ImageObject
       - >-
         , which is strictly greater than the marginal cost. At the evolutionary
-        equilibrium
+        equilibrium 
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e342'
         format: ''
         meta:
@@ -3457,7 +3457,7 @@ content:
   - content:
       - >-
         The second example that will be mentioned here is the War of Attrition
-        (WoA) game
+        (WoA) game 
       - target: '#pone.0093988-MaynardSmith1'
         type: Cite
       - >-
@@ -3751,7 +3751,7 @@ references:
         familyNames:
           - Basu
         type: Person
-    title: "The traveler's dilemma: Paradoxes of rationality in game theory"
+    title: 'The traveler''s dilemma: Paradoxes of rationality in game theory'
     type: Article
     datePublished: '1994'
     isPartOf:

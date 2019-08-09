@@ -4,7 +4,6 @@
 
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
-import { isInlineContent, nodeType, markTypes } from '@stencila/schema'
 import fs from 'fs-extra'
 import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
@@ -395,7 +394,7 @@ function encodeCitationText(work: stencila.CreativeWork): string {
       if (firstPerson.familyNames) {
         citeText += firstPerson.familyNames.join(' ')
 
-        if (people.length == 2) {
+        if (people.length === 2) {
           secondPerson = people[1] as stencila.Person
           if (secondPerson.familyNames)
             citeText += 'and ' + secondPerson.familyNames.join(' ')
@@ -441,7 +440,7 @@ function encodeReference(
         ...authors
       )
 
-      if (rid && state.references[rid] == undefined) {
+      if (rid && state.references[rid] === undefined) {
         state.references[rid] = encodeCitationText(work)
         populateBibrContent(rid, state)
       }
@@ -461,7 +460,7 @@ function encodeReference(
     }
 
     if (stencila.isA('PublicationIssue', work.isPartOf)) {
-      let pi = work.isPartOf as stencila.PublicationIssue
+      const pi = work.isPartOf as stencila.PublicationIssue
 
       if (pi.pageStart !== undefined) {
         subElements.push(elem('fpage', `${pi.pageStart}`))
@@ -476,7 +475,7 @@ function encodeReference(
       }
 
       if (stencila.isA('PublicationVolume', pi.isPartOf)) {
-        let pv = pi.isPartOf
+        const pv = pi.isPartOf
 
         if (pv.title !== undefined) subElements.push(elem('source', pv.title))
 
@@ -485,7 +484,7 @@ function encodeReference(
         }
       }
     } else if (stencila.isA('PublicationVolume', work.isPartOf)) {
-      let pv = work.isPartOf as stencila.PublicationVolume
+      const pv = work.isPartOf as stencila.PublicationVolume
 
       if (pv.title !== undefined) subElements.push(elem('source', pv.title))
 
@@ -570,7 +569,7 @@ function encodeBody(nodes: stencila.Node[], state: EncodeState): xml.Element {
   const sections: xml.Element[] = []
   let section: xml.Element | undefined
   for (const node of nodes) {
-    if (nodeType(node) === 'Heading') {
+    if (stencila.nodeType(node) === 'Heading') {
       section = elem('sec')
       sections.push(section)
     }
@@ -636,7 +635,7 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
 }
 
 function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
-  switch (nodeType(node)) {
+  switch (stencila.nodeType(node)) {
     case 'Heading':
       return encodeHeading(node as stencila.Heading, state)
     case 'Paragraph':
@@ -676,7 +675,11 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       }
     // fallthrough expected if not a figGroup
     default:
-      log.warn(`Unhandled node type when encoding to JATS: "${nodeType(node)}"`)
+      log.warn(
+        `Unhandled node type when encoding to JATS: "${stencila.nodeType(
+          node
+        )}"`
+      )
       return []
   }
 }
@@ -705,7 +708,7 @@ function decodeInlineContent(
   elems: xml.Element[],
   state: DecodeState
 ): stencila.InlineContent[] {
-  return decodeElements(elems, state).filter(isInlineContent)
+  return decodeElements(elems, state).filter(stencila.isInlineContent)
 }
 
 /**
@@ -776,7 +779,7 @@ function decodeParagraph(
 
   const blocks: stencila.Node[] = [para]
   for (const node of nodes) {
-    if (isInlineContent(node)) {
+    if (stencila.isInlineContent(node)) {
       para.content.push(node)
     } else {
       blocks.push(node)
@@ -822,7 +825,7 @@ function decodeXRef(
 function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link(
-      decodeDefault(elem, state).filter(isInlineContent),
+      decodeDefault(elem, state).filter(stencila.isInlineContent),
       `#${attr(elem, 'rid') || ''}`,
       {
         relation: attr(elem, 'ref-type') || undefined
@@ -839,11 +842,13 @@ function decodeBibr(elem: xml.Element): [stencila.Cite] {
 }
 
 function encodeCite(cite: stencila.Cite, state: EncodeState): [xml.Element] {
-  let rid = cite.target.startsWith('#') ? cite.target.substring(1) : cite.target
+  const rid = cite.target.startsWith('#')
+    ? cite.target.substring(1)
+    : cite.target
 
-  let xref = elem('xref', { rid, 'ref-type': 'bibr' })
+  const xref = elem('xref', { rid, 'ref-type': 'bibr' })
 
-  if (state.citations[rid] == undefined) {
+  if (state.citations[rid] === undefined) {
     state.citations[rid] = []
   }
 
@@ -858,17 +863,17 @@ function encodeCite(cite: stencila.Cite, state: EncodeState): [xml.Element] {
  * Check if we have both a reference and its citation, if so, apply the
  * reference content to the citation node
  */
-function populateBibrContent(rid: string, state: EncodeState) {
-  if (state.citations[rid] == undefined) return // no elements to populate
+function populateBibrContent(rid: string, state: EncodeState): void {
+  if (state.citations[rid] === undefined) return // no elements to populate
 
-  if (state.references[rid] == undefined) return // no refs to use to populate
+  if (state.references[rid] === undefined) return // no refs to use to populate
 
   state.citations[rid].forEach((xref: xml.Element) => {
-    if (xref.elements == undefined) {
+    if (xref.elements === undefined) {
       xref.elements = []
     }
 
-    if (xref.elements.length == 0) {
+    if (xref.elements.length === 0) {
       xref.elements.push({ type: 'text', text: state.references[rid] })
     }
   })
@@ -887,7 +892,7 @@ function encodeLink(node: stencila.Link, state: EncodeState): [xml.Element] {
   ]
 }
 
-function decodeMark<Type extends keyof typeof markTypes>(
+function decodeMark<Type extends keyof typeof stencila.markTypes>(
   elem: xml.Element,
   state: DecodeState,
   type: Type
@@ -993,7 +998,7 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
 }
 
 function encodeFigureMedia(media: stencila.Node): xml.Element[] {
-  const t = nodeType(media)
+  const t = stencila.nodeType(media)
   switch (t) {
     case 'ImageObject':
       return encodeMedia(media as stencila.ImageObject, 'graphic')
@@ -1102,11 +1107,11 @@ function encodeFigure(
     let alternatives: xml.Element[] = []
 
     figure.content.map(media => {
-      let encodedMedia = encodeFigureMedia(media)
+      const encodedMedia = encodeFigureMedia(media)
       if (encodedMedia) alternatives = alternatives.concat(encodedMedia)
     })
 
-    if (alternatives.length == 1) {
+    if (alternatives.length === 1) {
       figureChildren.push(alternatives[0])
     } else {
       figureChildren.push(elem('alternatives', null, ...alternatives))
@@ -1155,8 +1160,8 @@ function extractMimetype(elem: xml.Element): string {
  * Extract the `format` string from `media`, split it into the attributes that
  * JATS requires, then set them on `attrs`
  */
-function applyMimetype(media: stencila.MediaObject, attrs: Attributes) {
-  if (media.format === undefined || media.format.length == 0) {
+function applyMimetype(media: stencila.MediaObject, attrs: Attributes): void {
+  if (media.format === undefined || media.format.length === 0) {
     return
   }
 

@@ -163,7 +163,7 @@ content:
         alongside articles. Moreover, support for this practice has been slowly
         gaining momentum, driven by a wish to increase transparency and provide
         credit for peer reviewers (
-
+                        
       - target: '#ref-2'
         type: Cite
       - >-
@@ -186,7 +186,7 @@ content:
         and archiving. We do not discuss the relative merits of the different
         approaches to peer review that have emerged over the past decade,
         notably the many different flavours of 'open peer review' (
-
+                        
       - target: '#ref-3'
         type: Cite
       - >-
@@ -257,7 +257,7 @@ content:
         DOIs, and still others edit and amalgamate various reports into one
         narrative. The variety can be found in the meeting notes and a table
         filled out before the meeting (See 
-
+                        
       - content:
           - Supplementary File 1
         target: '#SF1'
@@ -265,7 +265,7 @@ content:
         type: Link
       - |2-
          and 
-
+                        
       - content:
           - Supplementary File 2
         target: '#SF2'
@@ -289,7 +289,7 @@ content:
         DTDs), and whether they send relevant metadata to Crossref. Crossref
         shared details of their schema extension to represent this form of
         content (
-
+                        
       - content:
           - 'https://www.crossref.org/services/content-registration/peer-reviews/'
         target: 'https://www.crossref.org/services/content-registration/peer-reviews/'
@@ -508,7 +508,7 @@ content:
         An additional challenge may be introduced in managing peer review
         materials in cases where such materials are collected for more than one
         published version of a paper. The 
-
+                        
       - content:
           - >-
             Recommendations of the NISO/ALPSP Journal Article Versions (JAV)
@@ -517,7 +517,7 @@ content:
         type: Link
       - |2-
          (
-
+                        
       - target: '#ref-1'
         type: Cite
       - ' April), included the following types of article instances:'
@@ -567,7 +567,7 @@ content:
         that if the publisher publishes a revision of any of these stages, the
         subsequent revisions should be labelled with suffixes, as follows:
         “-r1”, “-r2”, etc. (
-
+                        
       - content:
           - 'https://jats4r.org/article-publication-and-history-dates'
         target: 'https://jats4r.org/article-publication-and-history-dates'
@@ -642,7 +642,7 @@ content:
       - >-
         <sub-article> or <article> MUST have an article-type attribute with one
         of the values listed in 
-
+                            
       - content:
           - Table 1
         target: '#T1'
@@ -787,7 +787,7 @@ content:
       - >-
         Names, affiliations and contributor IDs (such as ORCID), where provided,
         follow standard JATS tagging (see JATS4R recommendation: 
-
+                            
       - content:
           - 'https://jats4r.org/authors-and-affiliations'
         target: 'https://jats4r.org/authors-and-affiliations'
@@ -802,7 +802,7 @@ content:
   - content:
       - |-
         Follow tagging recommended by JATS4R: 
-
+                            
       - content:
           - 'https://jats4r.org/conflict-of-interest-statements'
         target: 'https://jats4r.org/conflict-of-interest-statements'
@@ -831,7 +831,7 @@ content:
         supplied as <sub-article> may have their own <license> element or
         inherit their license information from the parent document as described
         in the JATS4R Permissions Recommendations (
-
+                            
       - content:
           - 'https://jats4r.org/permissions'
         target: 'https://jats4r.org/permissions'
@@ -908,7 +908,7 @@ content:
         registered with Crossref, peer review metadata is available via the open
         Crossref APIs and Crossref Metadata Search. For full details and example
         deposit XML, see the Crossref peer review deposit guide: 
-
+                        
       - content:
           - >-
             https://support.crossref.org/hc/en-us/articles/115005255706-Peer-Reviews

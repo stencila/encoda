@@ -75,7 +75,7 @@ export function splitTextOrUndefined(
  * content is undefined/empty/null/invalid or not a number, then return
  * undefined
  */
-export function intOrUndefined(elem: Element | null) {
+export function intOrUndefined(elem: Element | null): number | undefined {
   const i = parseInt(text(elem))
   return isNaN(i) ? undefined : i
 }
