@@ -1,3 +1,10 @@
+## [0.62.3](https://github.com/stencila/encoda/compare/v0.62.2...v0.62.3) (2019-08-09)
+
+
+### Bug Fixes
+
+* **Coerce:** Remove additional properties, coerce object to array ([6d5e0ef](https://github.com/stencila/encoda/commit/6d5e0ef))
+
 ## [0.62.2](https://github.com/stencila/encoda/compare/v0.62.1...v0.62.2) (2019-08-09)
 
 
