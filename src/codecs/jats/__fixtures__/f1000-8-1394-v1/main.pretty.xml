@@ -1,0 +1,2011 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN" "http://jats.nlm.nih.gov/publishing/1.2/JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-note">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="pmc">F1000Research</journal-id>
+      <journal-title-group>
+        <journal-title>F1000Research</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">2046-1402</issn>
+      <publisher>
+        <publisher-name>F1000 Research Limited</publisher-name>
+        <publisher-loc>London, UK</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.12688/f1000research.19931.1</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Note</subject>
+        </subj-group>
+        <subj-group>
+          <subject>Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Are side effects of cannabidiol (CBD) products caused by tetrahydrocannabinol (THC) contamination?</article-title>
+        <fn-group content-type="pub-status">
+          <fn>
+            <p>[version 1; peer review: awaiting peer review]</p>
+          </fn>
+        </fn-group>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Lachenmeier</surname>
+            <given-names>Dirk W.</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Conceptualization</role>
+          <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+          <role content-type="http://credit.casrai.org/">Project Administration</role>
+          <role content-type="http://credit.casrai.org/">Supervision</role>
+          <role content-type="http://credit.casrai.org/">Writing – Original Draft Preparation</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <uri content-type="orcid">https://orcid.org/0000-0002-3115-864X</uri>
+          <xref ref-type="corresp" rid="c1">a</xref>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Habel</surname>
+            <given-names>Stephanie</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Data Curation</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Fischer</surname>
+            <given-names>Berit</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Investigation</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Herbi</surname>
+            <given-names>Frauke</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Investigation</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Zerbe</surname>
+            <given-names>Yvonne</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Investigation</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Bock</surname>
+            <given-names>Verena</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Rajcic de Rezende</surname>
+            <given-names>Tabata</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Walch</surname>
+            <given-names>Stephan G.</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Resources</role>
+          <role content-type="http://credit.casrai.org/">Supervision</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="no">
+          <name>
+            <surname>Sproll</surname>
+            <given-names>Constanze</given-names>
+          </name>
+          <role content-type="http://credit.casrai.org/">Conceptualization</role>
+          <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+          <role content-type="http://credit.casrai.org/">Investigation</role>
+          <role content-type="http://credit.casrai.org/">Methodology</role>
+          <role content-type="http://credit.casrai.org/">Supervision</role>
+          <role content-type="http://credit.casrai.org/">Validation</role>
+          <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+          <xref ref-type="aff" rid="a1">1</xref>
+        </contrib>
+        <aff id="a1">
+          <label>1</label>Chemisches und Veterinäruntersuchungsamt (CVUA) Karlsruhe, Karlsruhe, 76189, Germany
+        </aff>
+      </contrib-group>
+      <author-notes>
+        <corresp id="c1">
+          <label>a</label>
+          <email xlink:href="mailto:lachenmeier@web.de">lachenmeier@web.de</email>
+        </corresp>
+        <fn fn-type="conflict">
+          <p>No competing interests were disclosed.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>8</day>
+        <month>8</month>
+        <year>2019</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <year>2019</year>
+      </pub-date>
+      <volume>8</volume>
+      <elocation-id>1394</elocation-id>
+      <history>
+        <date date-type="accepted">
+          <day>1</day>
+          <month>8</month>
+          <year>2019</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright: © 2019 Lachenmeier DW et al.</copyright-statement>
+        <copyright-year>2019</copyright-year>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open access article distributed under the terms of the Creative Commons Attribution Licence, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="pdf" xlink:href="f1000research-8-21875.pdf"/>
+      <abstract>
+        <p>Cannabidiol (CBD)-containing products are widely marketed as over the counter products, mostly as food supplements, to avoid the strict rules of medicinal products. Side-effects reported in anecdotal consumer reports or during clinical studies were first assumed to be due to hydrolytic conversion of CBD to psychoactive Δ
+                    
+          <sup>9</sup>-tetrahydrocannainol (THC). However, research of pure CBD solutions stored in simulated gastric juice or subjected to various storage conditions such as heat and light with specific liquid chromatographic/tandem mass spectrometric (LC/MS/MS) and ultra-high pressure liquid chromatographic/quadrupole time-of-flight mass spectrometric (UPLC-QTOF) analyses was unable to confirm THC formation. Another hypothesis for the side-effects of CBD products may be residual THC concentrations in the products as contamination, because most of them are based on crude hemp extracts containing the full spectrum of cannabinoids besides CBD. Analyses of 28 food products of the German market containing hemp extract as an ingredient (mostly CBD oils) confirmed this hypothesis: 10 products (36%) contained THC above the lowest observed adverse effects level (2.5 mg/day). Inversely, CBD was present in the products below the no observed adverse effect level. Hence, it may be assumed that the adverse effects of some commercial CBD products are based on a low-dose effect of THC and not due to effects of CBD itself. The safety, efficacy and purity of commercial CBD products is highly questionable, and all of the products in our sample collection showed various non-conformities to European food law such as unsafe THC levels, full-spectrum hemp extracts as non-approved novel food ingredients, non-approved health claims, and deficits in mandatory food labelling requirements. In view of the growing market for such lifestyle products, the effectiveness of the instrument of food business operators' own responsibility for product safety must obviously be challenged.
+        </p>
+      </abstract>
+      <kwd-group kwd-group-type="author">
+        <kwd>Tetrahydrocannabinol</kwd>
+        <kwd>cannabidiol</kwd>
+        <kwd>Cannabis sativa</kwd>
+        <kwd>hemp</kwd>
+        <kwd>food supplements</kwd>
+        <kwd>risk assessment</kwd>
+        <kwd>drug effects</kwd>
+      </kwd-group>
+      <funding-group>
+        <funding-statement>The author(s) declared that no grants were involved in supporting this work.</funding-statement>
+      </funding-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec sec-type="intro">
+      <title>Introduction</title>
+      <p>Since hemp has again been approved for cultivation as an industrial crop in the form of low Δ
+                
+        <sup>9</sup>-tetrahydrocannabinol (THC) hemp varieties, components of the hemp plant are increasingly used for the production of foods and other consumer products such as liquids for electronic cigarettes
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-1">1</xref>
+        </sup>. Some product groups (e.g., cosmetics, veterinary supplements, waxes or room fragrances) may be produced with intended off-label use, such as human consumption, in mind and therefore deliberately avoiding the strict safety requirements for medicinal or food products.
+      </p>
+      <p>From all hemp constituents, cannabidiol (CBD) is currently the compound with highest interest. In contrast to THC, the major drug-constituent of hemp, CBD is a non-psychoactive cannabinoid. It is currently being tested for its possible antispasmodic, anti-inflammatory, anxiolytic and antiemetic effects as a drug, e.g. for the treatment of epilepsy
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-2">2</xref>,
+                    
+          <xref ref-type="bibr" rid="ref-3">3</xref>
+        </sup>. However, CBD products of all kinds can now also be purchased in organic shops, drug stores, supermarkets and via the Internet, mostly by advertising dubious “cure-all” properties including anti-carcinogenic effects or various unspecific health advantages. The marketing of CBD products is based on the current “hype” around medicinal hemp products, whereby the CBD products are offered as a supposedly safe alternative, promised as being free of psychoactive components or their side-effects
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-4">4</xref>
+        </sup>. With the exception of the treatment of Dravet’s syndrome, there is little clinical data on the efficacy and safety of CBD, particularly in the treatment of cancer
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-5">5</xref>,
+                    
+          <xref ref-type="bibr" rid="ref-6">6</xref>
+        </sup>.
+      </p>
+      <p>Commercial CBD products are usually crude extracts from whole hemp plants (i.e., including flowers and stems). In other ways (e.g., in extracting the food-approved plant parts such as seeds), contents in the range of 1–10% CBD, which are typically advertised, cannot be achieved. Also, the limited available literature and manufacturer data confirm that CBD products are usually extracted by supercritical CO
+                
+        <sub>2</sub> or with solvents such as ethanol or isopropanol from the entire hemp plant
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-6">6</xref>,
+                    
+          <xref ref-type="bibr" rid="ref-7">7</xref>
+        </sup>. Probably due to cost reasons, no further specific enrichment or cleanup of CBD is conducted, so that the commercial extracts are a cannabinoid mixture rather than pure CBD. These extracts are then mixed into ordinary edible oils such as sunflower oil, olive oil or hemp seed oil to obtain the so-called CBD oil
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-6">6</xref>
+        </sup>.
+      </p>
+      <p>The strategy to market CBD oil products as food supplements within the framework of food regulations seems to be the most common approach of food operators. Some other products, derived from hemp extracts, are CBD chewing gum, “CBD flowers” (plant material sold as tea), and cannabis resin, wax or pollen products.</p>
+      <p>However, no significant food consumption of full-spectrum hemp extracts or hemp flowers containing CBD has been documented before 15 May 1997. These products are therefore classified as “novel” in the Novel Food catalogue of the European Commission under the entry “cannabinoids” and therefore require approval according to the Novel Food Regulation. Up to date (as of July 2019), no approved application is recorded. Basically, all available CBD products based on hemp extract marketed as food or food supplement within the EU are therefore illegally sold, but still widely available in all trade channels (retail, wholesale and e-commerce) due to an apparent lack of enforcement
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-2">2</xref>
+        </sup>.
+      </p>
+      <p>Anecdotal cases ranging from malaise to THC-like effects have become known to the food control authorities in consumer complaint cases regarding CBD products. Additionally, some pediatric studies in epilepsy patients with orally administered CBD also reported adverse effects such as drowsiness and fatigue that could be explained by pharmacological properties of THC rather than of CBD
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-8">8</xref>–
+                    
+          <xref ref-type="bibr" rid="ref-10">10</xref>
+        </sup>. Currently there are three hypotheses for the cause of the side effects: (i) a direct pharmacological effect of CBD, (ii) the degradation of CBD to THC due to acidic hydrolysis in the stomach following oral consumption, and (iii) THC directly contained in the products as by-product due to co-extraction and enrichment or contamination. In this article, the hypotheses are investigated including new evidence from original data.
+      </p>
+    </sec>
+    <sec sec-type="methods">
+      <title>Methods</title>
+      <sec>
+        <title>CBD degradation</title>
+        <p>To investigate CBD degradation, differently concentrated CBD in methanolic solutions was used in a range corresponding to typical amounts consumed with supplements based on commercial CBD (Supelco Cerilliant #C-045, 1.0 mg/mL in methanol) supplied by Merck (Darmstadt, Germany). These solutions were exposed to an artificial gastric juice as well as different incubation times and stress factors such as storage under light and heat (see 
+                    
+          <xref ref-type="table" rid="T1">Table 1</xref> for full experimental design). The solutions were stored either in standard freezer (-18°C) or refrigerator (8°C) or at room temperature (20°C). Increased temperatures were achieved using a thermostatically controlled laboratory drying oven type “UT6120” (Heraeus, Langenselbold, Germany) set to either 37°C or 60°C. The daylight condition was achieved by storage at a window (south side). For ultraviolet light exposure, six 25 W ultraviolet (UV) fluorescent tubes type “excellent E” (99.1% UVA) built into a facial tanner type “NT 446 U” (Dr. Kern GmbH, Mademühlen, Germany) were placed 15 cm from the surface of the solutions. In deviation of an experimental protocol of Merrick 
+                    
+          <italic>et al</italic>.
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-11">11</xref>
+          </sup>, a gastric juice without addition of surfactants was used, which was strictly produced according to the European pharmacopoeia
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-12">12</xref>
+          </sup> (0.020 g NaCl + 0.032 g pepsin + 0.8 mL HCl (1 mol/L), filled up to 10 mL with water). As pure CBD was available only in methanolic solution, the final experimental setups contained 0.08 mol/L HCl and 1% methanol due to dilution.
+        </p>
+        <table-wrap id="T1" position="anchor">
+          <label>Table 1. </label>
+          <caption>
+            <title>Cannabidiol (CBD) stability experiments under various storage conditions.</title>
+          </caption>
+          <table content-type="article-table" frame="hsides">
+            <thead>
+              <tr>
+                <th align="center" valign="middle">Experiment</th>
+                <th align="center" valign="middle">Temperature (°C)</th>
+                <th align="center" valign="middle">Light
+                                    
+                  <break/>exposure
+                </th>
+                <th align="center" valign="middle">Storage
+                                    
+                  <break/>time
+                </th>
+                <th align="center" valign="middle">Storage medium</th>
+                <th align="center" valign="middle">CDB concentration in medium
+                                    
+                  <break/>(µg/L)
+                </th>
+                <th align="center" valign="middle">Δ
+                                    
+                  <sup>9</sup>-THC
+                                    
+                  <break/>formation
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN1">1</xref>
+                  </sup>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">Negative control</td>
+                <td align="center" valign="middle">-18</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">14 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="6" valign="top">Light</td>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">3 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">14 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">Daylight</td>
+                <td align="center" valign="middle">3 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">Daylight</td>
+                <td align="center" valign="middle">14 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">UVA</td>
+                <td align="center" valign="middle">1 h</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">UVA</td>
+                <td align="center" valign="middle">3 h</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="6" valign="top">Temperature</td>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">5 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">14 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">8</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">5 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">8</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">14 days</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">3 h</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">60</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">1 h</td>
+                <td align="center" valign="middle">Methanol</td>
+                <td align="center" valign="middle">1000</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="6" valign="top">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">1 h</td>
+                <td align="center" valign="middle">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">200</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">2 h</td>
+                <td align="center" valign="middle">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">200</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">3 h</td>
+                <td align="center" valign="middle">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">200</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">1 h</td>
+                <td align="center" valign="middle">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">400</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">2 h</td>
+                <td align="center" valign="middle">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">400</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">37</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">3 h</td>
+                <td align="center" valign="middle">Simulated gastric
+                                    
+                  <break/>juice
+                </td>
+                <td align="center" valign="middle">400</td>
+                <td align="center" valign="middle">0%</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">Positive control</td>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">None</td>
+                <td align="center" valign="middle">14 days</td>
+                <td align="center" valign="middle">Methanol / 1 mol/L
+                                    
+                  <break/>HCl (50:50)
+                </td>
+                <td align="center" valign="middle">500</td>
+                <td align="center" valign="middle">27%</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p id="FN1">
+                <sup>1</sup> Average of LC-MS/MS and UPLC-QTOF measurements (n=2) (for raw results see dataset
+                                
+                <sup>
+                  <xref ref-type="bibr" rid="ref-13">13</xref>
+                </sup>, table sheet 1). THC formation calculated as % in relation to original CBD content.
+              </p>
+            </fn>
+            <fn>
+              <p>Abbreviations: CBD: cannabidiol; THC: Δ
+                                
+                <sup>9</sup>-tetrahydrocannabinol; UVA: ultraviolet A; LC-MS/MS: liquid chromatography/tandem mass spectrometry; UPLC-QTOF: ultra-high pressure liquid chromatography/quadrupole time-of-flight mass spectrometry
+              </p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>The samples were measured using a triple quadrupole mass spectrometer (TSQ Vantage, Thermo Fisher Scientific, San Jose, CA, USA) coupled with an LC system (1100 series, Agilent, Waldbronn, Germany) and also using a quadrupole time-of-flight (QTOF) mass spectrometer (X500, Sciex, Darmstadt, Germany) coupled with an UPLC system (1290 series, Agilent, Waldbronn, Germany). Both systems used the same separation column (Luna Omega Polar C18, 150 × 2.1 mm, 1.6 µm, 100 Å, Phenomenex, Aschaffenburg, Germany). The separation was isocratic with 25 % formic acid (0.1 %) and 75 % formic acid (0.1 % in acetonitrile) and a flow of 0.3 mL/min. In case of QTOF with 35 % formic acid (0.1 %) and 65 % formic acid (0.1 % in acetonitrile) and a flow of 0.45 mL/min. The evaluation took place after fragmentation of the mother ion into three mass traces for each compound. As quantifier for ∆
+                    
+          <sup>9</sup>-THC, ∆
+                    
+          <sup>8</sup>-THC and CBD, the mass transition m/z 315 to 193 was used, for cannabinol (CBN) m/z 311 to 223, and for tetrahydrocannabinolic acid (THCA) m/z 359 to 341. For ∆
+                    
+          <sup>9</sup>-THC and ∆
+                    
+          <sup>8</sup>-THC, baseline separation was achieved. In case of QTOF, quantification was conducted over accurate mass and control of fragmentation pattern. CBD eluted as one of the first cannabinoids, a few minutes before ∆
+                    
+          <sup>9</sup>-THC and ∆
+                    
+          <sup>8</sup>-THC. As internal standards ∆
+                    
+          <sup>9</sup>-THC-D
+                    
+          <sub>3</sub> (Supelco Cerilliant #T-011, 1.0 mg/mL in methanol) was used for the quantification of ∆
+                    
+          <sup>9</sup>-THC (Supelco Cerilliant #T-005, 1.0 mg/mL in methanol), THCA (Supelco Cerilliant #T-093, 1.0 mg/mL in acetonitrile) and CBN (Supelco Cerilliant #C-046, 1.0 mg/mL in methanol), and cannabidiol-D
+                    
+          <sub>3</sub> (Supelco Cerilliant #C-084, 100 µg/mL in methanol)  for quantification of CBD (Supelco Cerilliant #C-045, 1.0 mg/mL in methanol). The certified reference materials were obtained as solutions in ampoules of 1 mL, all supplied by Merck (Darmstadt, Germany). A limit of detection (LOD) of 5 ng/mL was determined. For both procedures, relative standard deviations better than 5% were achieved.
+        </p>
+      </sec>
+      <sec>
+        <title>THC contamination of commercial products</title>
+        <p>To study the possible influence of natively contained THC in hemp products as a cause for side effects, a sampling of all available CBD products registered as food supplement in the German State Baden-Württemberg, other available hemp extract products in retail, as well as all products available at the warehouse of a large internet retailer were sampled between December 2018 and July 2019. A total of 28 samples (see 
+                    
+          <xref ref-type="table" rid="T2">Table 2</xref> for product designations) were analyzed using the above described liquid chromatographic method with tandem mass spectrometry (LC-MS/MS) for THC content. For toxicological evaluation of the results, the lowest observed adverse effect level (LOAEL) of 2.5 mg THC per day published by the European food safety authority (EFSA) based on human data (central nervous system effects and pulse increase) was used
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-15">15</xref>
+          </sup>. Taking safety factors (factor 3 for extrapolation from LOAEL to no observed adverse effect level (NOAEL) and factor 10 for interindividual differences, total factor 30) into account, an acute reference dose (ARfD) of 1 μg THC per kg body weight was derived
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-15">15</xref>
+          </sup>.
+        </p>
+        <table-wrap id="T2" position="anchor">
+          <label>Table 2. </label>
+          <caption>
+            <title>Results of THC analysis in commercial products based on hemp extracts from the German market (2018–2019).</title>
+          </caption>
+          <table content-type="article-table" frame="hsides">
+            <thead>
+              <tr>
+                <th align="center" valign="middle">Sample ID</th>
+                <th align="center" valign="middle">Product</th>
+                <th align="center" valign="middle">CBD [mg/day]
+                                    
+                  <break/>(labelling)
+                </th>
+                <th align="center" valign="middle">CBD [mg/day]
+                                    
+                  <break/>(analysis)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN2">1</xref>
+                  </sup>
+                </th>
+                <th align="center" valign="middle">THC [mg/day]
+                                    
+                  <break/>(analysis)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN2">1</xref>
+                  </sup>
+                </th>
+                <th align="center" valign="middle">Toxicity assessment
+                                    
+                  <break/>according to Ref. 
+                                    
+                  <xref ref-type="bibr" rid="ref-2">2</xref>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center" valign="middle">180630663</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">200</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">9</td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180776480</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">74</td>
+                <td align="center" valign="middle">51</td>
+                <td align="center" valign="middle">4</td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190203194</td>
+                <td align="center" valign="middle">CBD pollen</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">2.6</td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190267605</td>
+                <td align="center" valign="middle">CBD oil</td>
+                <td align="center" valign="middle">2000</td>
+                <td align="center" valign="middle">3140</td>
+                <td align="center" valign="middle">30</td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180198245</td>
+                <td align="center" valign="middle">CBD buds (hemp flowers &amp;
+                                    
+                  <break/>leaves)
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">(1.3)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN5">4</xref>
+                  </sup>
+                </td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180198246</td>
+                <td align="center" valign="middle">CBD buds (hemp flowers &amp;
+                                    
+                  <break/>leaves)
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">(1.3)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN5">4</xref>
+                  </sup>
+                </td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180598182</td>
+                <td align="center" valign="middle">CBD hemp flower supplement</td>
+                <td align="center" valign="middle">500</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">(2.3)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN5">4</xref>
+                  </sup>
+                </td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180598187</td>
+                <td align="center" valign="middle">CBD hemp flower supplement</td>
+                <td align="center" valign="middle">250</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">(1.3)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN5">4</xref>
+                  </sup>
+                </td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180781746</td>
+                <td align="center" valign="middle">CBD chewing gum</td>
+                <td align="center" valign="middle">15</td>
+                <td align="center" valign="middle">30</td>
+                <td align="center" valign="middle">(1.5)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN5">4</xref>
+                  </sup>
+                </td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190203193</td>
+                <td align="center" valign="middle">CBD wax</td>
+                <td align="center" valign="middle">660</td>
+                <td align="center" valign="middle">860</td>
+                <td align="center" valign="middle">(1.7)
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN5">4</xref>
+                  </sup>
+                </td>
+                <td align="center" style="background-color:#FF0000">THC &gt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180565755</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">24</td>
+                <td align="center" valign="middle">18</td>
+                <td align="center" valign="middle">0.2</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">180565756</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">12</td>
+                <td align="center" valign="middle">9</td>
+                <td align="center" valign="middle">0.2</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190080916</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.1</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190080917</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">4</td>
+                <td align="center" valign="middle">0.1</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190141197</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">22.32</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">1.6</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190199739</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">34</td>
+                <td align="center" valign="middle">0.5</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190203189</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.2</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190203191</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.7</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190207787</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">67.5</td>
+                <td align="center" valign="middle">95</td>
+                <td align="center" valign="middle">0.4</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190332551</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">42</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.3</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190332552</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">84</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.3</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190332553</td>
+                <td align="center" valign="middle">CBD oil supplement</td>
+                <td align="center" valign="middle">166</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.3</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190303096</td>
+                <td align="center" valign="middle">CBD chewing gum</td>
+                <td align="center" valign="middle">5</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.1</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190304229</td>
+                <td align="center" valign="middle">CBD chewing gum</td>
+                <td align="center" valign="middle">5</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.1</td>
+                <td align="center" style="background-color:#FFC000">ARfD &lt; THC &lt; LOAEL</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190304228</td>
+                <td align="center" valign="middle">CBD supplement</td>
+                <td align="center" valign="middle">20</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.05</td>
+                <td align="center" style="background-color:#FABF8F">THC &gt; German guideline
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN6">5</xref>
+                  </sup>
+                  <break/>THC &lt; ARfD
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190203192</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN4">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">0.07</td>
+                <td align="center" style="background-color:#FABF8F">THC &gt; German guideline
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN6">5</xref>
+                  </sup>
+                  <break/>THC &lt; ARfD
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190272024</td>
+                <td align="center" valign="middle">CBD oil</td>
+                <td align="center" valign="middle">27</td>
+                <td align="center" valign="middle">38</td>
+                <td align="center" valign="middle">0.01</td>
+                <td align="center" style="background-color:#FABF8F">THC &gt; German guideline
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN6">5</xref>
+                  </sup>
+                  <break/>THC &lt; ARfD
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">190203186</td>
+                <td align="center" valign="middle">Supplement with hemp extract</td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">3</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">-
+                                    
+                  <sup>
+                    <xref ref-type="other" rid="FN3">2</xref>
+                  </sup>
+                </td>
+                <td align="center" valign="middle">Not detectable</td>
+                <td align="center" style="background-color:#FDE9D9">-</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p id="FN2">
+                <sup>1</sup> Average of 1–6 replicates measured with LC-MS/MS reported (for raw results see dataset
+                                
+                <sup>
+                  <xref ref-type="bibr" rid="ref-13">13</xref>
+                </sup>, table sheet 2).
+              </p>
+            </fn>
+            <fn>
+              <p id="FN3">
+                <sup>2</sup> Not analyzed or outside calibration.
+              </p>
+            </fn>
+            <fn>
+              <p id="FN4">
+                <sup>3</sup> No labelling provided by manufacturer.
+              </p>
+            </fn>
+            <fn>
+              <p id="FN5">
+                <sup>4</sup> THC (mg/day) calculated on the basis of 1 portion according to the manufacturer’s labelling. The LOAEL may be exceeded with a probable intake of 2 portions/day.
+              </p>
+            </fn>
+            <fn>
+              <p id="FN6">
+                <sup>5</sup> The German guideline value for THC content in food products is 150 µg/kg
+                                
+                <sup>
+                  <xref ref-type="bibr" rid="ref-14">14</xref>
+                </sup>.
+              </p>
+            </fn>
+            <fn>
+              <p>Abbreviations: CBD: cannabidiol; THC: Δ
+                                
+                <sup>9</sup>-tetrahydrocannabinol; ARfD: acute reference dose (ARfD) of 1 μg THC per kg body weight
+                                
+                <sup>
+                  <xref ref-type="bibr" rid="ref-15">15</xref>
+                </sup>; LOAEL: lowest observed adverse effect level of 2.5 mg THC per day
+                                
+                <sup>
+                  <xref ref-type="bibr" rid="ref-15">15</xref>
+                </sup>; LC-MS/MS: liquid chromatographic/tandem mass spectrometric
+              </p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+      </sec>
+    </sec>
+    <sec sec-type="results | discussion">
+      <title>Results and discussion</title>
+      <sec>
+        <title>Direct pharmacological effect of CBD as explanation of side effects</title>
+        <p>There is not much evidence to assume that chemically pure CBD may exhibit THC-like side-effects. The World Health Organization (WHO) judged the compound as being well tolerated with a good safety profile
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-3">3</xref>
+          </sup> and the CBD doses in the food supplements on the market are typically much lower than the ones tested in clinical studies. Additionally, there is a 90-day experiment in rats with a hemp extract (consisting of 26% cannabinoids, 96% CBD and &lt;1% THC) from which a NOAEL of 100 mg/kg bw/day could be derived
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-16">16</xref>
+          </sup>. For CBD this would be about 25 mg/kg bw/day (or 1750 mg/day for a person with a body weight of 70 kg). This NOAEL would not be reached by the CBD dosages in food supplements.
+        </p>
+      </sec>
+      <sec>
+        <title>CBD conversion into THC as explanation of side effects</title>
+        <p>Some, partly older, 
+                    
+          <italic>in vitro</italic> studies put up hypotheses about the conversion of CBD to THC under acidic conditions such as in artificial gastric juice
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-11">11</xref>,
+                        
+            <xref ref-type="bibr" rid="ref-17">17</xref>–
+                        
+            <xref ref-type="bibr" rid="ref-19">19</xref>
+          </sup>. If these proposals could be confirmed with 
+                    
+          <italic>in vivo</italic> data, consumers taking CBD orally could be exposed to such high THC levels that the threshold for pharmacological action could be exceeded
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-20">20</xref>
+          </sup>. However, taking a closer look at these 
+                    
+          <italic>in vitro</italic> studies raises some doubts. If CBD was to be converted to THC in the stomach, typical THC metabolites should be detectable in blood and urine, but this has not been observed in oral CBD studies
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-21">21</xref>,
+                        
+            <xref ref-type="bibr" rid="ref-22">22</xref>
+          </sup>. Due to the contradicting results, a replication of the 
+                    
+          <italic>in vitro</italic> study of Merrick 
+                    
+          <italic>et al</italic>.
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-11">11</xref>
+          </sup> was conducted using an extended experimental design. A more selective LC-MS/MS method and also an ultra-high pressure liquid chromatographic method with quadrupole time-of-flight mass spectrometry (UPLC-QTOF) were used to investigate the CBD degradation.
+        </p>
+        <p>Under these conditions in contrast to Merrick 
+                    
+          <italic>et al</italic>.
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-11">11</xref>
+          </sup>, no conversion of CBD to THC was observed in any of the samples. Only in case of the positive control (2 week storage in 0.5 mol/L HCl and 50% methanol), a complete degradation of CBD into 27% THC and other not identified products (with fragments similar to the ones found in CBN and THC fragmentations but with other retention times) was observed (
+                    
+          <xref ref-type="table" rid="T1">Table 1</xref>, underlying data
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-13">13</xref>
+          </sup>). From an analytical viewpoint, the use of less selective and specific analytical methods, especially from the point of chromatographic separation, could result in a situation in which certain CBD degradation products might easily be confused with THC due to structural similarities. Thus, similar fragmentation patterns and potentially overlapping peaks under certain chromatographic conditions might have led to false positive results in the previous studies. In conclusion of our degradation experiments, we agree with more recent literature
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-23">23</xref>,
+                        
+            <xref ref-type="bibr" rid="ref-24">24</xref>
+          </sup> that CBD would not likely react to THC under 
+                    
+          <italic>in vivo</italic> conditions. The only detectable influence leading to degradation is strong acidity, which should be avoided in CBD formulations to ensure stability of products.
+        </p>
+      </sec>
+      <sec>
+        <title>THC contamination as cause of side effects</title>
+        <p>Out of 28 samples, 10 samples (36% of the collective) were exceeding the THC LOAEL and were assessed as harmful to health. 14 samples (50% of the collective) were classified as unsuitable for human consumption due to exceeding the ARfD (see 
+                    
+          <xref ref-type="table" rid="T2">Table 2</xref>, underlying data
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-13">13</xref>
+          </sup>). Furthermore, all samples (100%) have been classified as non-compliant to Regulation (EU) 2015/2283 of the European Parliament and of the Council of 25 November 2015 on novel foods
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-25">25</xref>
+          </sup> and therefore being unauthorized novel foods. The labelling of 28 samples (100%) was also non-compliant to Regulation (EU) No 1169/2011 of the European Parliament and of the Council of 25 October 2011 on the provision of food information to consumers
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-26">26</xref>
+          </sup>, e.g. due to lack of mandatory food information such as ingredients list or use of unapproved health claims in accordance to Regulation (EC) No 1924/2006 of the European Parliament and of the Council of 20 December 2006 on nutrition and health claims made on foods
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-27">27</xref>
+          </sup>. In summary, none of the products in our survey was found as being fully compliant with European food regulations.
+        </p>
+        <p>The THC dose leading to intoxication is considered to be 10 to 20 mg (very high dose up to 60 mg) for inhalatory intake
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-28">28</xref>
+          </sup>. The resorption of orally ingested THC varies greatly interindividually with respect to both total amount and resorption rate
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-29">29</xref>
+          </sup>. This might be one of the reasons for the individually very different psychotropic effects. A single oral dose of 20 mg THC resulted in symptoms such as tachycardia, conjunctival irritation, “high sensation” or dysphoria in adults within one to four hours. In one in five adults, a single dose of 5 mg already showed corresponding symptoms
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-30">30</xref>
+          </sup>.
+        </p>
+        <p>Some of the CBD oil supplements contained THC in doses up to 30 mg, which can easily explain the adverse effects observed by some consumers. Most of the CBD oils with dosage of around 1 mg offer the possibility to achieve intoxicating dosages of THC if the products are used off-label (i.e. increase of the labelled maximal dosage by factors of 3–5, which is probably not an unlikely scenario). Generally, in the current purity, the CBD products achieve an insufficient margin of safety, especially in light of the German guidance value for THC in food products
+                    
+          <sup>
+            <xref ref-type="bibr" rid="ref-14">14</xref>,
+                        
+            <xref ref-type="bibr" rid="ref-31">31</xref>
+          </sup>, which is 150 µg/kg, a magnitude below the actual contents in the products.
+        </p>
+        <p>Hence our results provide compelling evidence that THC natively contained in CBD products by contamination may be a direct cause for side effects of these products. Obviously, there is an involuntary or deliberate lack of quality control of CBD products. Claims of “THC-free”, used by most manufacturers, even of the highly contaminated products, have to be treated as fraudulent or deceptive food information.</p>
+      </sec>
+    </sec>
+    <sec sec-type="conclusions">
+      <title>Conclusions</title>
+      <p>In light of the discussion about the three potential causative factors for side effects of CBD products, the described effects can be explained most probably by the presence of native THC as contaminant in the products rather than by direct action of CBD or its chemical transformation or metabolization. The conclusions and findings of this study are further supported by the findings of Hazekamp
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-6">6</xref>
+        </sup> reporting data from the Netherlands on cannabis oils according to which the labelling information for CBD and THC was often different from the actual contents. In 26 out of 46 products the THC content was &gt;1%. Further corresponding results were reported in a study from the USA, in which the CBD content was correctly declared for only 26 of 84 CBD products and 18 of the products had THC contents
+                
+        <sup>
+          <xref ref-type="bibr" rid="ref-32">32</xref>
+        </sup>.
+      </p>
+      <p>CBD degradation products are currently unknown and need to be characterized and toxicologically assessed, e.g. within the context of the novel food registration process. Until then, the safety of the products remains questionable. Furthermore, standardization and purification of the extracts need to be improved and stability of commercial products during shelf life should be checked (e.g. to prevent CBD degradation by avoiding acidity in ingredients etc.). Finally, the production hygiene also needs to be improved to minimize contamination. According to own observations some CBD oils are manufactured in back offices not suitable for food production.</p>
+      <p>In our opinion the high THC content of CBD products is almost a “small scandal” on the food market. Obviously, the manufacturers have - deliberately or in complete ignorance of the legal situation - placed unsafe and unapproved products on the market and thus exposed the consumer to an actually avoidable risk. In view of the growing market for such lifestyle food supplements, the effectiveness of the instrument of food business operators’ own responsibility for food safety must obviously be challenged.</p>
+    </sec>
+    <sec>
+      <title>Data availability</title>
+      <sec>
+        <title>Underlying data</title>
+        <p>Open Science Framework: Dataset for “Are side effects of cannabidiol (CBD) products caused by delta9-tetrahydrocannabinol (THC) contamination?” 
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://dx.doi.org/10.17605/OSF.IO/F7ZXY">https://doi.org/10.17605/OSF.IO/F7ZXY</ext-link>
+          <sup>
+            <xref ref-type="bibr" rid="ref-13">13</xref>
+          </sup>
+        </p>
+        <p>This project contains the following underlying data:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Dataset for “Are side effects of cannabidiol (CBD) products caused by delta9-tetrahydrocannabinol (THC) contamination” F1000 Research.xlsx (Excel spreadsheet with data underlying 
+                            
+              <xref ref-type="table" rid="T1">Table 1</xref> and 
+                            
+              <xref ref-type="table" rid="T2">Table 2</xref>, missing data/empty cells correspond to values outside calibration (CBD) or not measured)
+            </p>
+          </list-item>
+        </list>
+        <p>Data are available under the terms of the 
+                    
+          <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero “No rights reserved” data waiver</ext-link> (CC0 1.0 Public domain dedication).
+        </p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>Acknowledgements</title>
+      <p>The authors would like to thank Sylvia Ullrich, Jutta Neumeister and Ingrid Kübel for their excellent technical support, sample preparation and measurements using LC-MS.</p>
+    </ack>
+    <ref-list>
+      <ref id="ref-1">
+        <label>1</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lachenmeier</surname>
+              <given-names>DW</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Hemp food products - A problem?</article-title>
+          <source>
+            <italic>Deut Lebensm Rundsch.</italic>
+          </source>
+          <year>2004</year>;
+          <volume>100</volume>:
+          <fpage>481</fpage>–
+          <lpage>490</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.5281/zenodo.3266096</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-2">
+        <label>2</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lachenmeier</surname>
+              <given-names>DW</given-names>
+            </name>
+            <name>
+              <surname>Bock</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Deych</surname>
+              <given-names>A</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Hemp food products - an update.</article-title>
+          <source>
+            <italic>Deut Lebensm Rundsch.</italic>
+          </source>
+          <year>2019</year>;
+          <volume>115</volume>:
+          <fpage>351</fpage>–
+          <lpage>372</lpage>.
+        </mixed-citation>
+      </ref>
+      <ref id="ref-3">
+        <label>3</label>
+        <mixed-citation publication-type="journal">
+          <collab>Expert Committee on Drug Dependence</collab>:
+                    
+          <article-title>Cannabidiol (CBD) - Critical review report</article-title>. World Health Organization: Genf, Schweiz,
+          <year>2018</year>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://www.who.int/medicines/access/controlled-substances/CannabidiolCriticalReview.pdf">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-4">
+        <label>4</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sarill</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Researching safety and efficacy of CBD, hemp extracts</article-title>. accessed on 2019-03-29,
+          <year>2018</year>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://www.naturalproductsinsider.com/ingredients/researching-safety-and-efficacy-cbd-hemp-extracts">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-5">
+        <label>5</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Büechi</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Wirksamkeit von Cannabidiol: Klinische Studien mit Cannabidiol und Cannabidiol-haltigen Extrakten.</article-title>
+          <source>
+            <italic>Schweiz Z Ganzheitsmed.</italic>
+          </source>
+          <year>2017</year>;
+          <volume>29</volume>:
+          <fpage>367</fpage>–
+          <lpage>371</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.1159/000484886</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-6">
+        <label>6</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hazekamp</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>The trouble with CBD oil.</article-title>
+          <source>
+            <italic>Med Cannabis Cannabinoids.</italic>
+          </source>
+          <year>2018</year>;
+          <volume>1</volume>:
+          <fpage>65</fpage>–
+          <lpage>72</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.1159/000489287</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-7">
+        <label>7</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wilkinson</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Cannabis, hemp and CBDs.</article-title>
+          <source>
+            <italic>Soft Drinks Int.</italic>
+          </source>
+          <year>2015</year>; (
+          <issue>Nov/Dec</issue>):
+          <fpage>42</fpage>–
+          <lpage>44</lpage>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://drjohnwilkinson.co.uk/wp-content/uploads/SDI_DrJohn-cannabis-Dec-Drinks-2015-1.pdf">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-8">
+        <label>8</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Press</surname>
+              <given-names>CA</given-names>
+            </name>
+            <name>
+              <surname>Knupp</surname>
+              <given-names>KG</given-names>
+            </name>
+            <name>
+              <surname>Chapman</surname>
+              <given-names>KE</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Parental reporting of response to oral cannabis extracts for treatment of refractory epilepsy.</article-title>
+          <source>
+            <italic>Epilepsy Behav.</italic>
+          </source>
+          <year>2015</year>;
+          <volume>45</volume>:
+          <fpage>49</fpage>–
+          <lpage>52</lpage>.
+                    
+          <pub-id pub-id-type="pmid">25845492</pub-id>
+          <pub-id pub-id-type="doi">10.1016/j.yebeh.2015.02.043</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-9">
+        <label>9</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Szaflarski</surname>
+              <given-names>JP</given-names>
+            </name>
+            <name>
+              <surname>Bebin</surname>
+              <given-names>EM</given-names>
+            </name>
+            <name>
+              <surname>Comi</surname>
+              <given-names>AM</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Long-term safety and treatment effects of cannabidiol in children and adults with treatment-resistant epilepsies: Expanded access program results.</article-title>
+          <source>
+            <italic>Epilepsia.</italic>
+          </source>
+          <year>2018</year>;
+          <volume>59</volume>(
+          <issue>8</issue>):
+          <fpage>1540</fpage>–
+          <lpage>1548</lpage>.
+                    
+          <pub-id pub-id-type="pmid">29998598</pub-id>
+          <pub-id pub-id-type="doi">10.1111/epi.14477</pub-id>
+          <pub-id pub-id-type="pmcid">6175436</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-10">
+        <label>10</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Devinsky</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Marsh</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Friedman</surname>
+              <given-names>D</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Cannabidiol in patients with treatment-resistant epilepsy: an open-label interventional trial.</article-title>
+          <source>
+            <italic>Lancet Neurol.</italic>
+          </source>
+          <year>2016</year>;
+          <volume>15</volume>(
+          <issue>3</issue>):
+          <fpage>270</fpage>–
+          <lpage>278</lpage>.
+                    
+          <pub-id pub-id-type="pmid">26724101</pub-id>
+          <pub-id pub-id-type="doi">10.1016/S1474-4422(15)00379-8</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-11">
+        <label>11</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Merrick</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Lane</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Sebree</surname>
+              <given-names>T</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Identification of Psychoactive Degradants of Cannabidiol in Simulated Gastric and Physiological Fluid.</article-title>
+          <source>
+            <italic>Cannabis Cannabinoid Res.</italic>
+          </source>
+          <year>2016</year>;
+          <volume>1</volume>(
+          <issue>1</issue>):
+          <fpage>102</fpage>–
+          <lpage>112</lpage>.
+                    
+          <pub-id pub-id-type="pmid">28861485</pub-id>
+          <pub-id pub-id-type="doi">10.1089/can.2015.0004</pub-id>
+          <pub-id pub-id-type="pmcid">5576596</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-12">
+        <label>12</label>
+        <mixed-citation publication-type="journal">
+          <collab>PhEur Gastric juice, artificial (1039900)</collab>:
+                    
+          <article-title>European Pharmacopoeia</article-title>. 9th edition: The European Directorate for the Quality of Medicines &amp; HealthCare: Strassbourg, France,
+          <year>2019</year>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-9th-edition">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-13">
+        <label>13</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lachenmeier</surname>
+              <given-names>DW</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Dataset for “Are side effects of cannabidiol (CBD) products caused by delta9-tetrahydrocannabinol (THC) contamination</article-title>?”
+          <year>2019</year>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="http://www.doi.org/10.17605/OSF.IO/F7ZXY">http://www.doi.org/10.17605/OSF.IO/F7ZXY</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-14">
+        <label>14</label>
+        <mixed-citation publication-type="journal">
+          <collab>BgVV</collab>:
+                    
+          <article-title>BgVV empfiehlt Richtwerte für THC (Tetrahydrocannabinol) in hanfhaltigen Lebensmitteln</article-title>. BgVV Pressedienst: Berlin,
+          <year>2000</year>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://www.bfr.bund.de/de/presseinformation/2000/07/bgvv_empfiehlt_richtwerte_fuer_thc__tetrahydrocannabinol__in_hanfhaltigen_lebensmitteln-884.html">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-15">
+        <label>15</label>
+        <mixed-citation publication-type="journal">
+          <collab>EFSA Panel on Contaminants in the Food Chain (CONTAM)</collab>:
+                    
+          <article-title>Scientific Opinion on the risks for human health related to the presence of tetrahydrocannabinol (THC) in milk and other food of animal origin.</article-title>
+          <source>
+            <italic>EFSA J.</italic>
+          </source>
+          <year>2015</year>;
+          <volume>13</volume>(
+          <issue>6</issue>):
+          <fpage>4141</fpage>.
+                    
+          <pub-id pub-id-type="doi">10.2903/j.efsa.2015.4141</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-16">
+        <label>16</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Marx</surname>
+              <given-names>TK</given-names>
+            </name>
+            <name>
+              <surname>Reddeman</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Clewell</surname>
+              <given-names>AE</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>An Assessment of the Genotoxicity and Subchronic Toxicity of a Supercritical Fluid Extract of the Aerial Parts of Hemp.</article-title>
+          <source>
+            <italic>J Toxicol.</italic>
+          </source>
+          <year>2018</year>;
+          <volume>2018</volume>:
+          <fpage>8143582</fpage>.
+                    
+          <pub-id pub-id-type="pmid">29977291</pub-id>
+          <pub-id pub-id-type="doi">10.1155/2018/8143582</pub-id>
+          <pub-id pub-id-type="pmcid">6011091</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-17">
+        <label>17</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Adams</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Pease</surname>
+              <given-names>DC</given-names>
+            </name>
+            <name>
+              <surname>Cain</surname>
+              <given-names>CK</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Structure of cannabidiol. VI. Isomerization of cannabidiol to tetrahydrocannabinol, a physiologically active product. Conversion of cannabidiol to cannabinol.</article-title>
+          <source>
+            <italic>J Am Chem Soc.</italic>
+          </source>
+          <year>1940</year>;
+          <volume>62</volume>(
+          <issue>9</issue>):
+          <fpage>2402</fpage>–
+          <lpage>2405</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.1021/ja01866a040</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-18">
+        <label>18</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Adams</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Cain</surname>
+              <given-names>CK</given-names>
+            </name>
+            <name>
+              <surname>McPhee</surname>
+              <given-names>WD</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Structure of cannabidiol. XII. Isomerization to tetrahydrocannabinols.</article-title>
+          <source>
+            <italic>J Am Chem Soc.</italic>
+          </source>
+          <year>1941</year>;
+          <volume>63</volume>(
+          <issue>8</issue>):
+          <fpage>2209</fpage>–
+          <lpage>2213</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.1021/ja01853a052</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-19">
+        <label>19</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Watanabe</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Itokawa</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Yamaori</surname>
+              <given-names>S</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Conversion of cannabidiol to Δ
+                        
+            <sup>9</sup>-tetrahydrocannabinol and related cannabinoids in artificial gastric juice, and their pharmacological effects in mice.
+          </article-title>
+          <source>
+            <italic>Forensic Toxicol.</italic>
+          </source>
+          <year>2007</year>;
+          <volume>25</volume>(
+          <issue>1</issue>):
+          <fpage>16</fpage>–
+          <lpage>21</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.1007/s11419-007-0021-y</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-20">
+        <label>20</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lachenmeier</surname>
+              <given-names>DW</given-names>
+            </name>
+            <name>
+              <surname>Walch</surname>
+              <given-names>SG</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Current status of THC in German hemp food products.</article-title>
+          <source>
+            <italic>J Ind Hemp.</italic>
+          </source>
+          <year>2006</year>;
+          <volume>10</volume>(
+          <issue>2</issue>):
+          <fpage>5</fpage>–
+          <lpage>17</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.1300/J237v10n02_02</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-21">
+        <label>21</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lachenmeier</surname>
+              <given-names>DW</given-names>
+            </name>
+            <name>
+              <surname>Walch</surname>
+              <given-names>SG</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Analysis and toxicological evaluation of cannabinoids in hemp food products - a review.</article-title>
+          <source>
+            <italic>Electron J Environ Agric Food Chem.</italic>
+          </source>
+          <year>2005</year>;
+          <volume>4</volume>:
+          <fpage>812</fpage>–
+          <lpage>826</lpage>.
+                    
+          <pub-id pub-id-type="doi">10.5281/zenodo.438133</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-22">
+        <label>22</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Manthey</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Cannabis use in Europe: Current trends and public health concerns.</article-title>
+          <source>
+            <italic>Int J Drug Policy.</italic>
+          </source>
+          <year>2019</year>;
+          <volume>68</volume>:
+          <fpage>93</fpage>–
+          <lpage>96</lpage>.
+                    
+          <pub-id pub-id-type="pmid">31030057</pub-id>
+          <pub-id pub-id-type="doi">10.1016/j.drugpo.2019.03.006</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-23">
+        <label>23</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nahler</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Grotenhermen</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Zuardi</surname>
+              <given-names>AW</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>A Conversion of Oral Cannabidiol to Delta9-Tetrahydrocannabinol Seems Not to Occur in Humans.</article-title>
+          <source>
+            <italic>Cannabis Cannabinoid Res.</italic>
+          </source>
+          <year>2017</year>;
+          <volume>2</volume>(
+          <issue>1</issue>):
+          <fpage>81</fpage>–
+          <lpage>86</lpage>.
+                    
+          <pub-id pub-id-type="pmid">28861507</pub-id>
+          <pub-id pub-id-type="doi">10.1089/can.2017.0009</pub-id>
+          <pub-id pub-id-type="pmcid">5510776</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-24">
+        <label>24</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Grotenhermen</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Russo</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Zuardi</surname>
+              <given-names>AW</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Even High Doses of Oral Cannabidol Do Not Cause THC-Like Effects in Humans: Comment on Merrick 
+                        
+            <italic>et al.</italic>
+            <italic>Cannabis and Cannabinoid Research</italic> 2016;1(1):102-112; DOI: 10.1089/can.2015.0004.
+          </article-title>
+          <source>
+            <italic>Cannabis Cannabinoid Res.</italic>
+          </source>
+          <year>2017</year>;
+          <volume>2</volume>(
+          <issue>1</issue>):
+          <fpage>1</fpage>–
+          <lpage>4</lpage>.
+                    
+          <pub-id pub-id-type="pmid">28861499</pub-id>
+          <pub-id pub-id-type="doi">10.1089/can.2016.0036</pub-id>
+          <pub-id pub-id-type="pmcid">5531368</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-25">
+        <label>25</label>
+        <mixed-citation publication-type="journal">
+          <collab>European Parliament and the Council of the European Union</collab>:
+                    
+          <article-title>Regulation (EU) 2015/2283 of the European Parliament and of the Council of 25 November 2015 on novel foods, amending Regulation (EU) No 1169/2011 of the European Parliament and of the Council and repealing Regulation (EC) No 258/97 of the European Parliament and of the Council and Commission Regulation (EC) No 1852/2001.</article-title>
+          <source>
+            <italic>Off J Europ Union.</italic>
+          </source>
+          <year>2015</year>;
+          <volume>L327</volume>:
+          <fpage>1</fpage>–
+          <lpage>22</lpage>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://publications.europa.eu/en/publication-detail/-/publication/d2e5f917-9fd7-11e5-8781-01aa75ed71a1/language-en">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-26">
+        <label>26</label>
+        <mixed-citation publication-type="journal">
+          <collab>European Parliament and the Council of the European Union</collab>:
+                    
+          <article-title>Regulation (EU) No 1169/2011 of the European Parliament and of the Council of 25 October 2011 on the provision of food information to consumers, amending Regulations (EC) No 1924/2006 and (EC) No 1925/2006 of the European Parliament and of the Council, and repealing Commission Directive 87/250/EEC, Council Directive 90/496/EEC, Commission Directive 1999/10/EC, Directive 2000/13/EC of the European Parliament and of the Council, Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation (EC) No 608/2004.</article-title>
+          <source>
+            <italic>Off J Europ Union.</italic>
+          </source>
+          <year>2011</year>;
+          <volume>L304</volume>:
+          <fpage>63</fpage>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://eur-lex.europa.eu/eli/reg/2011/1169/oj">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-27">
+        <label>27</label>
+        <mixed-citation publication-type="journal">
+          <collab>European Parliament and the Council of the European Union</collab>:
+                    
+          <article-title>Regulation (EC) No 1924/2006 of the European Parliament and of the Council of 20 December 2006 on nutrition and health claims made on foods.</article-title>
+          <source>
+            <italic>Off J Europ Union.</italic>
+          </source>
+          <year>2006</year>;
+          <volume>L404</volume>:
+          <fpage>9</fpage>–
+          <lpage>25</lpage>.
+                    
+          <ext-link ext-link-type="uri" xlink:href="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2006:404:0009:0025:EN:PDF">Reference Source</ext-link>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-28">
+        <label>28</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lachenmeier</surname>
+              <given-names>DW</given-names>
+            </name>
+            <name>
+              <surname>Rehm</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Comparative risk assessment of alcohol, tobacco, cannabis and other illicit drugs using the margin of exposure approach.</article-title>
+          <source>
+            <italic>Sci Rep.</italic>
+          </source>
+          <year>2015</year>;
+          <volume>5</volume>:
+          <fpage>8126</fpage>.
+                    
+          <pub-id pub-id-type="pmid">25634572</pub-id>
+          <pub-id pub-id-type="doi">10.1038/srep08126</pub-id>
+          <pub-id pub-id-type="pmcid">4311234</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-29">
+        <label>29</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Grotenhermen</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>Pharmacokinetics and pharmacodynamics of cannabinoids.</article-title>
+          <source>
+            <italic>Clin Pharmacokinet.</italic>
+          </source>
+          <year>2003</year>;
+          <volume>42</volume>(
+          <issue>4</issue>):
+          <fpage>327</fpage>–
+          <lpage>360</lpage>.
+                    
+          <pub-id pub-id-type="pmid">12648025</pub-id>
+          <pub-id pub-id-type="doi">10.2165/00003088-200342040-00003</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-30">
+        <label>30</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Meier</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Vonesch</surname>
+              <given-names>HJ</given-names>
+            </name>
+          </person-group>:
+                    
+          <article-title>[Cannabis poisoning after eating salad].</article-title>
+          <source>
+            <italic>Schweiz Med Wochenschr.</italic>
+          </source>
+          <year>1997</year>;
+          <volume>127</volume>(
+          <issue>6</issue>):
+          <fpage>214</fpage>–
+          <lpage>218</lpage>.
+                    
+          <pub-id pub-id-type="pmid">9157527</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-31">
+        <label>31</label>
+        <mixed-citation publication-type="journal">
+          <collab>BfR</collab>:
+                    
+          <article-title>Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu hoch – gesundheitliche Beeinträchtigungen sind möglich. Stellungnahme Nr. 034/2018 des BfR vom 8. November 2018.</article-title>Bundesinstitut für Risikobewertung: Berlin,
+          <year>2018</year>.
+                    
+          <pub-id pub-id-type="doi">10.17590/20181108-075209-0</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="ref-32">
+        <label>32</label>
+        <mixed-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bonn-Miller</surname>
+              <given-names>MO</given-names>
+            </name>
+            <name>
+              <surname>Loflin</surname>
+              <given-names>MJE</given-names>
+            </name>
+            <name>
+              <surname>Thomas</surname>
+              <given-names>BF</given-names>
+            </name>
+            <etal/>
+          </person-group>:
+                    
+          <article-title>Labeling Accuracy of Cannabidiol Extracts Sold Online.</article-title>
+          <source>
+            <italic>JAMA.</italic>
+          </source>
+          <year>2017</year>;
+          <volume>318</volume>(
+          <issue>17</issue>):
+          <fpage>1708</fpage>–
+          <lpage>1709</lpage>.
+                    
+          <pub-id pub-id-type="pmid">29114823</pub-id>
+          <pub-id pub-id-type="doi">10.1001/jama.2017.11909</pub-id>
+          <pub-id pub-id-type="pmcid">5818782</pub-id>
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
