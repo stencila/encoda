@@ -6,8 +6,8 @@ Articles downloaded from https://github.com/elifesciences/elife-article-xml usin
 
 ## F1000 articles
 
-Articles downloaded from https://f1000research.com manually using the "Get XML" button. Already indented.
+Articles downloaded from https://f1000research.com using `f1000.ts`.
 
 ## PLoS articles
 
-Articles from PLoS downloaded from https://journals.plos.org/ using the "Download XML" button. e.g. https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0091296&type=manuscript
+Articles from PLoS downloaded from https://journals.plos.org/ using `plos.ts`.
