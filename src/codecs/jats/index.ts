@@ -145,13 +145,19 @@ function decodeArticle(elem: xml.Element): stencila.Article {
 }
 
 function encodeArticle(article: stencila.Article): xml.Element {
+  const state: EncodeState = {
+    tables: 0,
+    citations: {},
+    references: {}
+  }
+
   const front = elem(
     'front',
     encodeTitle(article.title || ''),
     encodeAuthors(article.authors || [])
   )
-  const body = encodeBody(article.content || [])
-  const back = elem('back', encodeReferences(article.references || []))
+  const body = encodeBody(article.content || [], state)
+  const back = elem('back', encodeReferences(article.references || [], state))
 
   return elem(
     'article',
@@ -311,7 +317,7 @@ function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
   return refs
     .map(ref => {
       const citation = child(ref, ['element-citation', 'mixed-citation'])
-      return citation ? decodeReference(citation) : null
+      return citation ? decodeReference(citation, attr(ref, 'id')) : null
     })
     .reduce(
       (prev: stencila.CreativeWork[], curr) => (curr ? [...prev, curr] : prev),
@@ -320,16 +326,20 @@ function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
 }
 
 function encodeReferences(
-  references: (stencila.CreativeWork | string)[]
+  references: (stencila.CreativeWork | string)[],
+  state: EncodeState
 ): xml.Element {
   return elem(
     'ref-list',
     elem('title', 'References'),
-    ...references.map(encodeReference)
+    ...references.map(ref => encodeReference(ref, state))
   )
 }
 
-function decodeReference(elem: xml.Element): stencila.CreativeWork {
+function decodeReference(
+  elem: xml.Element,
+  refId?: string | null
+): stencila.CreativeWork {
   const rawAuthors = all(elem, 'name')
   const authors = rawAuthors.length ? rawAuthors.map(decodeName) : []
 
@@ -366,16 +376,78 @@ function decodeReference(elem: xml.Element): stencila.CreativeWork {
       })
     }
   }
+
+  if (refId) work.id = refId
+
   return work
 }
 
-function encodeReference(work: stencila.CreativeWork | string): xml.Element {
-  let citation
+function encodeCitationText(work: stencila.CreativeWork): string {
+  let citeText = ''
+
+  if (work.authors && work.authors.length) {
+    const people = work.authors.filter(p => stencila.isA('Person', p))
+
+    if (people.length) {
+      const firstPerson = people[0] as stencila.Person
+      let secondPerson
+
+      if (firstPerson.familyNames) {
+        citeText += firstPerson.familyNames.join(' ')
+
+        if (people.length == 2) {
+          secondPerson = people[1] as stencila.Person
+          if (secondPerson.familyNames)
+            citeText += 'and ' + secondPerson.familyNames.join(' ')
+        } else if (people.length > 2) {
+          citeText += ' et al.'
+        }
+      }
+    }
+  }
+
+  if (work.datePublished && work.datePublished.length) {
+    const publishedYear = work.datePublished.split('-')[0]
+
+    citeText += `, ${publishedYear}`
+  }
+
+  return citeText
+}
+
+function encodeReference(
+  work: stencila.CreativeWork | string,
+  state: EncodeState
+): xml.Element {
+  let citation, rid
   if (typeof work === 'string') {
+    return elem('ref')
   } else {
+    rid = work.id
     const subElements = []
 
     if (work.title) subElements.push(elem('article-title', work.title))
+
+    if (work.authors && work.authors.length) {
+      const authors = work.authors
+        .filter(p => stencila.isA('Person', p))
+        .map(p => {
+          return encodeName(p as stencila.Person)
+        })
+
+      const personGroup = elem(
+        'person-group',
+        { 'person-group-type': 'author' },
+        ...authors
+      )
+
+      if (rid && state.references[rid] == undefined) {
+        state.references[rid] = encodeCitationText(work)
+        populateBibrContent(rid, state)
+      }
+
+      subElements.push(personGroup)
+    }
 
     // TODO: split date into components according to what data is set and apply to appropriate elements
     if (work.datePublished) {
@@ -431,8 +503,9 @@ function encodeReference(work: stencila.CreativeWork | string): xml.Element {
     }
 
     citation = elem('element-citation', null, ...subElements)
+
+    return elem('ref', { id: rid }, citation)
   }
-  return elem('ref', citation)
 }
 
 interface DecodeState {
@@ -455,6 +528,23 @@ interface EncodeState {
    * Used for labelling tables.
    */
   tables: number
+
+  /**
+   * Citation elements that we have generated that need some content added to
+   * them for rendering, as we can encounter citations before references.
+   *
+   * {bib1: elem('xref', ...)}
+   */
+  citations: { [rid: string]: xml.Element[] }
+
+  /**
+   * A lookup of reference ID to how they are rendered inside a citation, e.g:
+   * {bib1: "Author [et al] (Year)"}
+   *
+   * These might be encountered before a citation that uses them, so both are
+   * stored
+   */
+  references: { [rid: string]: string }
 }
 
 interface JatsContentType {
@@ -476,10 +566,7 @@ function decodeBody(elem: xml.Element): stencila.Node[] {
 /**
  * Encode an array of Stencila `Node`s to a JATS `<body>` element
  */
-function encodeBody(nodes: stencila.Node[]): xml.Element {
-  const state = {
-    tables: 0
-  }
+function encodeBody(nodes: stencila.Node[], state: EncodeState): xml.Element {
   const sections: xml.Element[] = []
   let section: xml.Element | undefined
   for (const node of nodes) {
@@ -578,6 +665,8 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       )
     case 'MediaObject':
       return encodeMedia(node as stencila.ImageObject, 'media')
+    case 'Cite':
+      return encodeCite(node as stencila.Cite, state)
     case 'string':
       return [{ type: 'text', text: node as string }]
     case 'Collection':
@@ -713,22 +802,76 @@ function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
 }
 
 /**
- * Decode a JATS `<xref>` element to a Stencila `Link` node.
+ * Decode a JATS `<xref>` element to a Stencila `Link`, or `Cite` node
+ * (depending on its use).
  *
  * The `rid` attribute is decoded to a local link.
- * The `ref-type` attribute is preserved in the link's `relation` property.
+ * The `ref-type` attribute is preserved in the link's `relation` property, or
+ * discarded if decoding to a `Cite` (in the case of "bibr").
  * See https://jats.nlm.nih.gov/archiving/tag-library/1.1/element/xref.html
  */
-function decodeXRef(elem: xml.Element, state: DecodeState): [stencila.Link] {
-  const link = stencila.link(
-    decodeDefault(elem, state).filter(isInlineContent),
-    `#${attr(elem, 'rid') || ''}`
-  )
-
+function decodeXRef(
+  elem: xml.Element,
+  state: DecodeState
+): [stencila.Link | stencila.Cite] {
   const refType = attr(elem, 'ref-type')
-  if (refType) link.relation = refType
 
-  return [link]
+  return refType === 'bibr' ? decodeBibr(elem) : decodeLink(elem, state)
+}
+
+function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
+  return [
+    stencila.link(
+      decodeDefault(elem, state).filter(isInlineContent),
+      `#${attr(elem, 'rid') || ''}`,
+      {
+        relation: attr(elem, 'ref-type') || undefined
+      }
+    )
+  ]
+}
+
+/**
+ * Reciprocal function of this is encodeCite
+ */
+function decodeBibr(elem: xml.Element): [stencila.Cite] {
+  return [stencila.cite(`#${attr(elem, 'rid') || ''}`)]
+}
+
+function encodeCite(cite: stencila.Cite, state: EncodeState): [xml.Element] {
+  let rid = cite.target.startsWith('#') ? cite.target.substring(1) : cite.target
+
+  let xref = elem('xref', { rid, 'ref-type': 'bibr' })
+
+  if (state.citations[rid] == undefined) {
+    state.citations[rid] = []
+  }
+
+  state.citations[rid].push(xref)
+
+  populateBibrContent(rid, state)
+
+  return [xref]
+}
+
+/**
+ * Check if we have both a reference and its citation, if so, apply the
+ * reference content to the citation node
+ */
+function populateBibrContent(rid: string, state: EncodeState) {
+  if (state.citations[rid] == undefined) return // no elements to populate
+
+  if (state.references[rid] == undefined) return // no refs to use to populate
+
+  state.citations[rid].forEach((xref: xml.Element) => {
+    if (xref.elements == undefined) {
+      xref.elements = []
+    }
+
+    if (xref.elements.length == 0) {
+      xref.elements.push({ type: 'text', text: state.references[rid] })
+    }
+  })
 }
 
 function encodeLink(node: stencila.Link, state: EncodeState): [xml.Element] {

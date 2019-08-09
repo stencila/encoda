@@ -164,17 +164,8 @@ content:
         gaining momentum, driven by a wish to increase transparency and provide
         credit for peer reviewers (
 
-      - content:
-          - |-
-            Polka 
-
-          - type: Emphasis
-            content:
-              - et al
-          - '., 2018'
-        target: '#ref-2'
-        type: Link
-        relation: bibr
+      - target: '#ref-2'
+        type: Cite
       - >-
         ). There were 10 journals identified in the PMC corpus that archive some
         peer review materials. These journals take a variety of different
@@ -196,11 +187,8 @@ content:
         approaches to peer review that have emerged over the past decade,
         notably the many different flavours of 'open peer review' (
 
-      - content:
-          - 'Ross-Hellauer, 2017'
-        target: '#ref-3'
-        type: Link
-        relation: bibr
+      - target: '#ref-3'
+        type: Cite
       - >-
         ), but we feel that many of our suggestions and recommendations are
         relevant to most if not all of these approaches.
@@ -273,16 +261,16 @@ content:
       - content:
           - Supplementary File 1
         target: '#SF1'
-        type: Link
         relation: other
+        type: Link
       - |2-
          and 
 
       - content:
           - Supplementary File 2
         target: '#SF2'
-        type: Link
         relation: other
+        type: Link
       - ).
     type: Paragraph
   - content:
@@ -530,11 +518,8 @@ content:
       - |2-
          (
 
-      - content:
-          - '2008'
-        target: '#ref-1'
-        type: Link
-        relation: bibr
+      - target: '#ref-1'
+        type: Cite
       - ' April), included the following types of article instances:'
     type: Paragraph
   - items:
@@ -661,8 +646,8 @@ content:
       - content:
           - Table 1
         target: '#T1'
-        type: Link
         relation: table
+        type: Link
       - .
     type: Paragraph
   - rows:
@@ -1011,6 +996,7 @@ references:
       Technical Working Group (NISO-RP-8-2008)
     type: Article
     datePublished: '2008'
+    id: ref-1
   - authors:
       - givenNames:
           - JK
@@ -1039,6 +1025,7 @@ references:
         volumeNumber: 560
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-2
   - authors:
       - givenNames:
           - T
@@ -1055,3 +1042,4 @@ references:
       title: F1000Res.
       volumeNumber: 6
       type: PublicationVolume
+    id: ref-3

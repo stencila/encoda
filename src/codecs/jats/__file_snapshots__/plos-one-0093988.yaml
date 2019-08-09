@@ -37,26 +37,17 @@ content:
         real world. In a social dilemma, individually reasonable behavior
         results in a situation in which all individuals are less well off than
         they could otherwise have been
-      - content:
-          - '[1]'
-        target: '#pone.0093988-Kollock1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Kollock1'
+        type: Cite
       - >-
         . Social dilemmas underlie many of the most fundamental and intractable
         problems in the biological and social sciences, such as the evolution of
         cooperation
-      - content:
-          - '[2]'
-        target: '#pone.0093988-Axelrod1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Axelrod1'
+        type: Cite
       - ' and the efficient use of limited shared resources '
-      - content:
-          - '[3]'
-        target: '#pone.0093988-Hardin1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Hardin1'
+        type: Cite
       - >-
         . From a more formal point of view, a social dilemma can be modeled as a
         game in which there exists at least one Hicks inefficient Nash
@@ -64,88 +55,49 @@ content:
         there is at least one other outcome in which all individuals would be
         better off, and since it is a Nash equilibrium there is no incentive for
         any individual to change their behavior
-      - content:
-          - '[1]'
-        target: '#pone.0093988-Kollock1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Kollock1'
+        type: Cite
       - >-
         . Examples of 2-person games that are social dilemmas include: The
         Prisoner's Dilemma
-      - content:
-          - '[2]'
-        target: '#pone.0093988-Axelrod1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Axelrod1'
+        type: Cite
       - ', '
-      - content:
-          - '[4]'
-        target: '#pone.0093988-Flood1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Flood1'
+        type: Cite
       - ', '
-      - content:
-          - '[5]'
-        target: '#pone.0093988-Hamilton1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Hamilton1'
+        type: Cite
       - ', the Snowdrift game (also known as the Chicken or Hawk-Dove game) '
-      - content:
-          - '[6]'
-        target: '#pone.0093988-MaynardSmith1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-MaynardSmith1'
+        type: Cite
       - ', and the Stag-Hunt game (also known as the Assurance game) '
-      - content:
-          - '[7]'
-        target: '#pone.0093988-Skyrms1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Skyrms1'
+        type: Cite
       - '. Multi-person social dilemmas include, the Public Goods game '
-      - content:
-          - '[8]'
-        target: '#pone.0093988-Isaac1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Isaac1'
+        type: Cite
       - ', '
-      - content:
-          - '[9]'
-        target: '#pone.0093988-Fehr1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Fehr1'
+        type: Cite
       - ' and the Tragedy of the Commons '
-      - content:
-          - '[3]'
-        target: '#pone.0093988-Hardin1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Hardin1'
+        type: Cite
       - >-
         . While the original game theory formalizations of these social dilemmas
         typically involved discrete-strategy games, more recently
         continuous-strategy versions of the Prisoner's Dilemma game
-      - content:
-          - '[10]'
-        target: '#pone.0093988-Killingback1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Killingback1'
+        type: Cite
       - ', the Snowdrift game '
-      - content:
-          - '[11]'
-        target: '#pone.0093988-Doebeli1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Doebeli1'
+        type: Cite
       - ', the Tragedy of the Commons '
-      - content:
-          - '[12]'
-        target: '#pone.0093988-Killingback2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Killingback2'
+        type: Cite
       - ' game, and the Public Goods game '
-      - content:
-          - '[13]'
-        target: '#pone.0093988-Killingback3'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Killingback3'
+        type: Cite
       - ' have been formulated and studied.'
     type: Paragraph
   - content:
@@ -153,35 +105,20 @@ content:
         One particularly fascinating class of social dilemmas are those for
         which the predictions of game theory appear to be inconsistent with the
         behavior observed when the games are played experimentally
-      - content:
-          - '[14]'
-        target: '#pone.0093988-Holt1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Holt1'
+        type: Cite
       - ". The Traveler's Dilemma (TD) game "
-      - content:
-          - '[15]'
-        target: '#pone.0093988-Basu1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Basu1'
+        type: Cite
       - –
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ' and the Minimum Effort Coordination (MEC) game '
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[18]'
-        target: '#pone.0093988-VanHuyck1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-VanHuyck1'
+        type: Cite
       - ' are two celebrated examples of such games.'
     type: Paragraph
   - content:
@@ -312,29 +249,17 @@ content:
       - >-
         . However, as intuition would suggest, this is not how individuals
         actually play this game
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[19]'
-        target: '#pone.0093988-Capra1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Capra1'
+        type: Cite
       - –
-      - content:
-          - '[22]'
-        target: '#pone.0093988-Basu3'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Basu3'
+        type: Cite
       - '. For instance, '
-      - content:
-          - '[22]'
-        target: '#pone.0093988-Basu3'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Basu3'
+        type: Cite
       - ' found the following results when they played the game with 50 subjects (25 pairs). The subjects could make claims between 180 and 300, in two treatments, one with '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e015'
         format: ''
@@ -353,8 +278,8 @@ content:
       - content:
           - Figure 1(a)
         target: '#pone-0093988-g001'
-        type: Link
         relation: fig
+        type: Link
       - . In the high-
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e017'
         format: ''
@@ -401,11 +326,8 @@ content:
           - >-
             Results from playing the TD and MEC games with human subjects,
             adapted from
-          - content:
-              - '[17]'
-            target: '#pone.0093988-Goeree1'
-            type: Link
-            relation: bibr
+          - target: '#pone.0093988-Goeree1'
+            type: Cite
           - .
         depth: 1
         id: s1
@@ -448,23 +370,14 @@ content:
       - >-
         The MEC game has a somewhat similar flavor to the TD game, in that the
         payoffs are again determined by the minimum of two actions
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[18]'
-        target: '#pone.0093988-VanHuyck1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-VanHuyck1'
+        type: Cite
       - ', '
-      - content:
-          - '[20]'
-        target: '#pone.0093988-Goeree2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree2'
+        type: Cite
       - '. In this game the players choose integer effort levels between '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e025'
         format: ''
@@ -539,23 +452,14 @@ content:
         As with the TD game, when the MEC game is actually played with human
         subjects the observed behavior is inconsistent with the results
         predicted by game theory
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[18]'
-        target: '#pone.0093988-VanHuyck1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-VanHuyck1'
+        type: Cite
       - '. For example, '
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ' found the following results in their experiment. The subjects could chose integer effort levels from 110 to 170, in one of two treatments, a low effort cost treatment of '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e034'
         format: ''
@@ -574,8 +478,8 @@ content:
       - content:
           - Figure 1(b)
         target: '#pone-0093988-g001'
-        type: Link
         relation: fig
+        type: Link
       - >-
         . In the low effort cost treatment the behavior is concentrated close to
         the highest effort level of 170, while in the high effort cost treatment
@@ -597,11 +501,8 @@ content:
           linkType: simple
         type: ImageObject
       - ' in the TD game is strict it is a globally stable equilibrium point for the replicator dynamics '
-      - content:
-          - '[23]'
-        target: '#pone.0093988-Hofbauer1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Hofbauer1'
+        type: Cite
       - >-
         . Hence, the replicator dynamics of the TD game will always converge to
         the minimum claim level
@@ -627,23 +528,14 @@ content:
         theory: namely the inability of the Nash equilibrium concept to predict
         the actual behavior of individuals interacting in this type of game.
         Moreover, it has been observed in
-      - content:
-          - '[24]'
-        target: '#pone.0093988-Manapat1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Manapat1'
+        type: Cite
       - ' that the TD models competitive egg ejection in a species of communally nesting birds, the Greater Ani '
-      - content:
-          - '[25]'
-        target: '#pone.0093988-Riehl1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Riehl1'
+        type: Cite
       - ', '
-      - content:
-          - '[26]'
-        target: '#pone.0093988-Riehl2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Riehl2'
+        type: Cite
       - >-
         . In this species, if two females share a nest then each female chooses
         a time to change from ejecting eggs from the nest to laying eggs. If
@@ -652,11 +544,8 @@ content:
         eggs. If, however, one chooses to wait, then she can eject the other
         birds already-laid eggs and obtain an even greater payoff, while at the
         same time inflicting a loss on the other bird
-      - content:
-          - '[24]'
-        target: '#pone.0093988-Manapat1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Manapat1'
+        type: Cite
       - '. Thus, this situation has the structure of the TD game.'
     type: Paragraph
   - content:
@@ -667,11 +556,8 @@ content:
         equilibrium. In addition, it has considerable practical import since
         many interesting and important real-world situations can be modeled by
         MEC games
-      - content:
-          - '[27]'
-        target: '#pone.0093988-Bryant1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Bryant1'
+        type: Cite
       - .
     type: Paragraph
   - content:
@@ -706,58 +592,34 @@ content:
         A number of different theoretical approaches have been investigated as
         possible explanations of the behavior found empirically in the TD and
         MEC games. In one approach, stochastic learning models
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[20]'
-        target: '#pone.0093988-Goeree2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree2'
+        type: Cite
       - ', '
-      - content:
-          - '[28]'
-        target: '#pone.0093988-Anderson1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Anderson1'
+        type: Cite
       - ' have been proposed to explain the anomalous behavior observed in the TD and MEC games. A quite different approach, using stochastic evolutionary dynamics in finite populations '
-      - content:
-          - '[24]'
-        target: '#pone.0093988-Manapat1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Manapat1'
+        type: Cite
       - >-
         , has also been investigated as a means of resolving the paradoxical
         features of the TD game. Other theoretical approaches to explaining the
         behavior of the TD game have been studied in
-      - content:
-          - '[29]'
-        target: '#pone.0093988-Halpern1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Halpern1'
+        type: Cite
       - –
-      - content:
-          - '[32]'
-        target: '#pone.0093988-Li1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Li1'
+        type: Cite
       - >-
         . Other approaches which explore how errors in a game may lead to
         deviations from Nash equilibrium play include
-      - content:
-          - '[33]'
-        target: '#pone.0093988-Camerer1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Camerer1'
+        type: Cite
       - –
-      - content:
-          - '[37]'
-        target: '#pone.0093988-Wright1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Wright1'
+        type: Cite
       - .
     type: Paragraph
   - content:
@@ -781,17 +643,11 @@ content:
         of a large class of continuous-strategy games which have a discontinuous
         payoff function — other important examples of games from this class
         include the Bertrand Duopoly game
-      - content:
-          - '[38]'
-        target: '#pone.0093988-Tirole1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Tirole1'
+        type: Cite
       - ' and the War of Attrition game '
-      - content:
-          - '[6]'
-        target: '#pone.0093988-MaynardSmith1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-MaynardSmith1'
+        type: Cite
       - >-
         . For such games the role played by errors is potentially important. To
         be precise, let us consider the class of continuous-strategy games with
@@ -980,17 +836,11 @@ content:
         effect of errors in the game is to give an expected payoff which is a
         smooth function, the simplest choice of dynamics is the standard
         deterministic adaptive dynamics
-      - content:
-          - '[39]'
-        target: '#pone.0093988-Metz1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Metz1'
+        type: Cite
       - –
-      - content:
-          - '[41]'
-        target: '#pone.0093988-Geritz2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Geritz2'
+        type: Cite
       - ' of the smoothed payoff function. In our approach the effects of errors in the game is encoded in the smoothing function '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e061'
         format: ''
@@ -1008,82 +858,49 @@ content:
         The approach to studying the evolutionary dynamics of the TD and MEC
         games that we follow in this paper has some advantages compared to
         stochastic learning models
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[20]'
-        target: '#pone.0093988-Goeree2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree2'
+        type: Cite
       - ', '
-      - content:
-          - '[28]'
-        target: '#pone.0093988-Anderson1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Anderson1'
+        type: Cite
       - ' or stochastic evolutionary dynamics '
-      - content:
-          - '[24]'
-        target: '#pone.0093988-Manapat1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Manapat1'
+        type: Cite
       - >-
         . In the case of stochastic learning models, the evolutionary dynamics
         is governed by the Fokker-Planck equation, which is a nonlinear partial
         differential equation that cannot be solved analytically
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[20]'
-        target: '#pone.0093988-Goeree2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree2'
+        type: Cite
       - ', '
-      - content:
-          - '[28]'
-        target: '#pone.0093988-Anderson1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Anderson1'
+        type: Cite
       - >-
         . The equilibrium solutions of the evolutionary dynamics are given by
         the solutions to a suitable differential equation. However, it is
         difficult to determine analytically whether or not the equilibrium
         solutions are stable. In fact, the equilibrium solutions to the
         stochastic learning models
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[20]'
-        target: '#pone.0093988-Goeree2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree2'
+        type: Cite
       - ', '
-      - content:
-          - '[28]'
-        target: '#pone.0093988-Anderson1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Anderson1'
+        type: Cite
       - ' for both the TD and MEC games have not been shown to be stable, and thus, it is unclear whether or not they are attractors of the evolutionary dynamics.'
     type: Paragraph
   - content:
       - 'Stochastic evolutionary dynamics '
-      - content:
-          - '[24]'
-        target: '#pone.0093988-Manapat1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Manapat1'
+        type: Cite
       - ' represents an interesting alternative approach to understanding the dynamics of many evolutionary processes. In this case, the evolutionary dynamics is governed by a stochastic process, and the theory is mathematically well-developed. However, there are certain restrictions that apply to the theory. Perhaps the most important is that analytic results can only be obtained in the limit that the selection strength tends to zero. This limit corresponds to the assumption that the contribution to the total payoff that comes from the game interactions is very small. It is not clear that this assumption is realistic when it comes to understanding the behavior of the TD and MEC games. If the assumption of weak selection is not made then it is impossible to obtain analytic results, although numerical simulations can yield results for stronger selection strengths. It is also worth noting that while the stochastic process underlying stochastic evolutionary dynamics is mathematically well-developed, it is rather subtle, and this can present a challenge when applying the method to new problems. In fact, stochastic evolutionary dynamics has not yet been applied to study the MEC game, although we conjecture that such an application will yield results consistent with the behavior observed in the game.'
     type: Paragraph
   - content:
@@ -1091,46 +908,28 @@ content:
         A key advantage of the method that we propose here is that the
         evolutionary dynamics is much easier to study than for either stochastic
         learning models
-      - content:
-          - '[17]'
-        target: '#pone.0093988-Goeree1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree1'
+        type: Cite
       - ', '
-      - content:
-          - '[20]'
-        target: '#pone.0093988-Goeree2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Goeree2'
+        type: Cite
       - ', '
-      - content:
-          - '[28]'
-        target: '#pone.0093988-Anderson1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Anderson1'
+        type: Cite
       - ' or stochastic evolutionary dynamics '
-      - content:
-          - '[24]'
-        target: '#pone.0093988-Manapat1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Manapat1'
+        type: Cite
       - >-
         . In particular, it is straightforward to completely determine the
         evolutionary attractors for both the TD and MEC games. A second
         advantage of our method is that it applies directly to a wide variety of
         continuous-strategy games with discontinuous payoff functions, including
         the Bertrand Duopoly model
-      - content:
-          - '[38]'
-        target: '#pone.0093988-Tirole1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Tirole1'
+        type: Cite
       - ' and the War of Attrition game '
-      - content:
-          - '[6]'
-        target: '#pone.0093988-MaynardSmith1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-MaynardSmith1'
+        type: Cite
       - >-
         . In certain cases, which are considered at greater length in the
         Discussion, it can be shown using our methods that complex evolutionary
@@ -1593,23 +1392,14 @@ content:
         The dynamics of the smoothed TD and MEC games as formulated in the
         previous section can be analyzed in a well-mixed population using the
         deterministic framework of adaptive dynamics
-      - content:
-          - '[11]'
-        target: '#pone.0093988-Doebeli1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Doebeli1'
+        type: Cite
       - ', '
-      - content:
-          - '[39]'
-        target: '#pone.0093988-Metz1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Metz1'
+        type: Cite
       - –
-      - content:
-          - '[41]'
-        target: '#pone.0093988-Geritz2'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Geritz2'
+        type: Cite
       - >-
         . Consider a monomorphic population in which every individual adopts the
         same strategy,
@@ -2313,17 +2103,11 @@ content:
         dynamics of simple social dilemmas, such as the Prisoner's Dilemma and
         the Snowdrift game, have been well-studied for populations with a
         variety of complex interaction patterns
-      - content:
-          - '[42]'
-        target: '#pone.0093988-Nowak1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Nowak1'
+        type: Cite
       - –
-      - content:
-          - '[50]'
-        target: '#pone.0093988-Szabo1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Szabo1'
+        type: Cite
       - .
     type: Paragraph
   - content:
@@ -2522,8 +2306,8 @@ content:
       - content:
           - equation (11
         target: '#pone.0093988.e094'
-        type: Link
         relation: disp-formula
+        type: Link
       - >-
         ) or (14), depending on the game under consideration. This procedure is
         repeated
@@ -2766,17 +2550,11 @@ content:
         agent-based model described in the previous section was simulated (using
         the Fermi update rule (22) and the smoothing function (9)) on the
         following graphs (see, for example,
-      - content:
-          - '[51]'
-        target: '#pone.0093988-Watts1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Watts1'
+        type: Cite
       - –
-      - content:
-          - '[54]'
-        target: '#pone.0093988-Newman1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Newman1'
+        type: Cite
       - >-
         .): a complete graph (which models a randomly-interacting population); a
         random regular graph of degree 10; a scale-free graph with mean degree
@@ -2843,8 +2621,8 @@ content:
       - content:
           - Figure 2
         target: '#pone-0093988-g002'
-        type: Link
         relation: fig
+        type: Link
       - ' shows the variation of the average claims '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e259'
         format: ''
@@ -3056,8 +2834,8 @@ content:
       - content:
           - Figure 2(b)
         target: '#pone-0093988-g002'
-        type: Link
         relation: fig
+        type: Link
       - ' shows the variation in the number of individuals with the claims '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e284'
         format: ''
@@ -3106,8 +2884,8 @@ content:
       - content:
           - Figure 1(a)
         target: '#pone-0093988-g001'
-        type: Link
         relation: fig
+        type: Link
       - .
     type: Paragraph
   - content:
@@ -3124,8 +2902,8 @@ content:
       - content:
           - Figure 2
         target: '#pone-0093988-g002'
-        type: Link
         relation: fig
+        type: Link
       - '. In this case, the claims are consistently low for all values of '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e291'
         format: ''
@@ -3157,8 +2935,8 @@ content:
       - content:
           - Figure 3
         target: '#pone-0093988-g003'
-        type: Link
         relation: fig
+        type: Link
       - ' shows the variation of the average effort levels '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e293'
         format: ''
@@ -3380,8 +3158,8 @@ content:
       - content:
           - Figure 3(b)
         target: '#pone-0093988-g003'
-        type: Link
         relation: fig
+        type: Link
       - ' shows the variation in the number of individuals with their effort levels '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e319'
         format: ''
@@ -3430,8 +3208,8 @@ content:
       - content:
           - Figure 1(b)
         target: '#pone-0093988-g001'
-        type: Link
         relation: fig
+        type: Link
       - .
     type: Paragraph
   - content:
@@ -3448,8 +3226,8 @@ content:
       - content:
           - Figure 3
         target: '#pone-0093988-g003'
-        type: Link
         relation: fig
+        type: Link
       - >-
         . In this case, there is still a transition from high to low effort
         levels as the effort cost increases, however, it is typically not as
@@ -3468,17 +3246,11 @@ content:
         tentatively conjecture that the feature of lattice graphs which is
         responsible for this effect is that they possess non-trivial clustering
         coefficients (
-      - content:
-          - '[51]'
-        target: '#pone.0093988-Watts1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Watts1'
+        type: Cite
       - –
-      - content:
-          - '[54]'
-        target: '#pone.0093988-Newman1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Newman1'
+        type: Cite
       - >-
         ) — in contrast to the other graphs we have considered, which have zero
         clustering. The potential effect of the clustering coefficient on the
@@ -3574,28 +3346,19 @@ content:
         discontinuous payoff functions. Important examples of other games that
         can be fruitfully studied using these methods include the Bertrand
         Duopoly model
-      - content:
-          - '[38]'
-        target: '#pone.0093988-Tirole1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Tirole1'
+        type: Cite
       - ' and the War of Attrition game '
-      - content:
-          - '[6]'
-        target: '#pone.0093988-MaynardSmith1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-MaynardSmith1'
+        type: Cite
       - >-
         . Here we will only briefly discuss the application of our methods to
         these two games — detailed accounts will be given elsewhere.
     type: Paragraph
   - content:
       - 'In the classical Bertrand Duopoly (BD) model '
-      - content:
-          - '[38]'
-        target: '#pone.0093988-Tirole1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Tirole1'
+        type: Cite
       - ' one considers the interactions between two firms that produce a homogeneous product. The strategy of each firm is the unit price that they set for their product. It is assumed that customers will buy a quantity '
       - contentUrl: 'info:doi/10.1371/journal.pone.0093988.e333'
         format: ''
@@ -3687,22 +3450,16 @@ content:
           linkType: simple
         type: ImageObject
       - ' both firms obtain a positive payoff. Thus, the introduction of the smoothed BD model effectively resolves the Bertrand Paradox that occurs in the classical model. Moreover, our method extends to the case of an arbitrary number of firms and sheds light on the results obtained in '
-      - content:
-          - '[55]'
-        target: '#pone.0093988-Dufwenberg1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-Dufwenberg1'
+        type: Cite
       - .
     type: Paragraph
   - content:
       - >-
         The second example that will be mentioned here is the War of Attrition
         (WoA) game
-      - content:
-          - '[6]'
-        target: '#pone.0093988-MaynardSmith1'
-        type: Link
-        relation: bibr
+      - target: '#pone.0093988-MaynardSmith1'
+        type: Cite
       - >-
         . The classical WoA game is concerned with two individuals who are
         contesting a resource. In this game each individual chooses a ''display
@@ -3749,9 +3506,11 @@ references:
       title: Annual Review of Sociology
       volumeNumber: 24
       type: PublicationVolume
+    id: pone.0093988-Kollock1
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Axelrod1
   - authors:
       - givenNames:
           - G
@@ -3767,6 +3526,7 @@ references:
       title: Science
       volumeNumber: 162
       type: PublicationVolume
+    id: pone.0093988-Hardin1
   - authors:
       - givenNames:
           - MM
@@ -3782,6 +3542,7 @@ references:
       title: Management Science
       volumeNumber: 5
       type: PublicationVolume
+    id: pone.0093988-Flood1
   - authors:
       - givenNames:
           - W
@@ -3802,12 +3563,15 @@ references:
       title: Science
       volumeNumber: 211
       type: PublicationVolume
+    id: pone.0093988-Hamilton1
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-MaynardSmith1
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Skyrms1
   - authors:
       - givenNames:
           - R
@@ -3830,6 +3594,7 @@ references:
       title: The Quarterly Journal of Economics
       volumeNumber: 103
       type: PublicationVolume
+    id: pone.0093988-Isaac1
   - authors:
       - givenNames:
           - E
@@ -3850,6 +3615,7 @@ references:
       title: Nature
       volumeNumber: 415
       type: PublicationVolume
+    id: pone.0093988-Fehr1
   - authors:
       - givenNames:
           - T
@@ -3877,6 +3643,7 @@ references:
       title: 'Proceedings of the Royal Society of London Series B: Biological Sciences'
       volumeNumber: 266
       type: PublicationVolume
+    id: pone.0093988-Killingback1
   - authors:
       - givenNames:
           - M
@@ -3902,6 +3669,7 @@ references:
       title: Science
       volumeNumber: 306
       type: PublicationVolume
+    id: pone.0093988-Doebeli1
   - authors:
       - givenNames:
           - T
@@ -3927,6 +3695,7 @@ references:
       title: Biological Theory
       volumeNumber: 5
       type: PublicationVolume
+    id: pone.0093988-Killingback2
   - authors:
       - givenNames:
           - T
@@ -3954,6 +3723,7 @@ references:
       title: 'Proceedings of the Royal Society of London Series B: Biological Sciences'
       volumeNumber: 273
       type: PublicationVolume
+    id: pone.0093988-Killingback3
   - authors:
       - givenNames:
           - C
@@ -3974,6 +3744,7 @@ references:
       title: Proceedings of the National Academy of Sciences
       volumeNumber: 101
       type: PublicationVolume
+    id: pone.0093988-Holt1
   - authors:
       - givenNames:
           - K
@@ -3989,6 +3760,7 @@ references:
       title: The American Economic Review
       volumeNumber: 84
       type: PublicationVolume
+    id: pone.0093988-Basu1
   - authors:
       - givenNames:
           - K
@@ -4004,6 +3776,7 @@ references:
       title: Scientific American Magazine
       volumeNumber: 296
       type: PublicationVolume
+    id: pone.0093988-Basu2
   - authors:
       - givenNames:
           - J
@@ -4024,6 +3797,7 @@ references:
       title: The American Economic Review
       volumeNumber: 91
       type: PublicationVolume
+    id: pone.0093988-Goeree1
   - authors:
       - givenNames:
           - J
@@ -4050,6 +3824,7 @@ references:
       title: The American Economic Review
       volumeNumber: 80
       type: PublicationVolume
+    id: pone.0093988-VanHuyck1
   - authors:
       - givenNames:
           - C
@@ -4080,6 +3855,7 @@ references:
       title: The American Economic Review
       volumeNumber: 89
       type: PublicationVolume
+    id: pone.0093988-Capra1
   - authors:
       - givenNames:
           - J
@@ -4100,9 +3876,11 @@ references:
       title: Proceedings of the National Academy of Sciences
       volumeNumber: 96
       type: PublicationVolume
+    id: pone.0093988-Goeree2
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Becker1
   - authors:
       - givenNames:
           - K
@@ -4130,9 +3908,11 @@ references:
       title: Social Choice and Welfare
       volumeNumber: 37
       type: PublicationVolume
+    id: pone.0093988-Basu3
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Hofbauer1
   - authors:
       - givenNames:
           - M
@@ -4163,6 +3943,7 @@ references:
       title: Journal of Theoretical Biology
       volumeNumber: 303
       type: PublicationVolume
+    id: pone.0093988-Manapat1
   - authors:
       - givenNames:
           - C
@@ -4180,6 +3961,7 @@ references:
       title: 'Proceedings of the Royal Society B: Biological Sciences'
       volumeNumber: 278
       type: PublicationVolume
+    id: pone.0093988-Riehl1
   - authors:
       - givenNames:
           - C
@@ -4202,6 +3984,7 @@ references:
       title: The Wilson Journal of Ornithology
       volumeNumber: 121
       type: PublicationVolume
+    id: pone.0093988-Riehl2
   - authors:
       - givenNames:
           - J
@@ -4217,6 +4000,7 @@ references:
       title: The Quarterly Journal of Economics
       volumeNumber: 98
       type: PublicationVolume
+    id: pone.0093988-Bryant1
   - authors:
       - givenNames:
           - S
@@ -4244,6 +4028,7 @@ references:
       title: Games and Economic Behavior
       volumeNumber: 34
       type: PublicationVolume
+    id: pone.0093988-Anderson1
   - authors:
       - givenNames:
           - J
@@ -4264,6 +4049,7 @@ references:
       title: Games and Economic Behavior
       volumeNumber: 74
       type: PublicationVolume
+    id: pone.0093988-Halpern1
   - authors:
       - givenNames:
           - V
@@ -4278,6 +4064,7 @@ references:
       title: PLoS ONE
       volumeNumber: 8
       type: PublicationVolume
+    id: pone.0093988-Capraro1
   - authors:
       - givenNames:
           - V
@@ -4310,6 +4097,7 @@ references:
         Theory
       volumeNumber: 8146
       type: PublicationVolume
+    id: pone.0093988-Capraro2
   - authors:
       - givenNames:
           - R
@@ -4334,6 +4122,7 @@ references:
       title: PLoS ONE
       volumeNumber: 8
       type: PublicationVolume
+    id: pone.0093988-Li1
   - authors:
       - givenNames:
           - C
@@ -4359,6 +4148,7 @@ references:
       title: The Quarterly Journal of Economics
       volumeNumber: 119
       type: PublicationVolume
+    id: pone.0093988-Camerer1
   - authors:
       - givenNames:
           - M
@@ -4384,6 +4174,7 @@ references:
       title: Econometrica
       volumeNumber: 69
       type: PublicationVolume
+    id: pone.0093988-CostaGomes1
   - authors:
       - givenNames:
           - R
@@ -4404,6 +4195,7 @@ references:
       title: Games and Economic Behavior
       volumeNumber: 10
       type: PublicationVolume
+    id: pone.0093988-McKelvey1
   - authors:
       - givenNames:
           - D
@@ -4424,12 +4216,15 @@ references:
       title: Journal of Economic Behavior and Organization
       volumeNumber: 25
       type: PublicationVolume
+    id: pone.0093988-Stahl1
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Wright1
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Tirole1
   - authors:
       - givenNames:
           - J
@@ -4468,6 +4263,7 @@ references:
       title: Stochastic and Spatial Structures of Dynamical Systems
       volumeNumber: 45
       type: PublicationVolume
+    id: pone.0093988-Metz1
   - authors:
       - givenNames:
           - S
@@ -4498,6 +4294,7 @@ references:
       title: Physical Review Letters
       volumeNumber: 78
       type: PublicationVolume
+    id: pone.0093988-Geritz1
   - authors:
       - givenNames:
           - S
@@ -4525,6 +4322,7 @@ references:
       title: Evolutionary Ecology
       volumeNumber: 12
       type: PublicationVolume
+    id: pone.0093988-Geritz2
   - authors:
       - givenNames:
           - M
@@ -4545,6 +4343,7 @@ references:
       title: Nature
       volumeNumber: 359
       type: PublicationVolume
+    id: pone.0093988-Nowak1
   - authors:
       - givenNames:
           - T
@@ -4565,6 +4364,7 @@ references:
       title: 'Proceedings of the Royal Society of London Series B: Biological Sciences'
       volumeNumber: 263
       type: PublicationVolume
+    id: pone.0093988-Killingback4
   - authors:
       - givenNames:
           - M
@@ -4590,6 +4390,7 @@ references:
       title: Journal of Theoretical Biology
       volumeNumber: 184
       type: PublicationVolume
+    id: pone.0093988-Nakamaru1
   - authors:
       - givenNames:
           - M
@@ -4611,6 +4412,7 @@ references:
       title: Journal of Theoretical Biology
       volumeNumber: 193
       type: PublicationVolume
+    id: pone.0093988-VanBaalen1
   - authors:
       - givenNames:
           - M
@@ -4638,6 +4440,7 @@ references:
       title: Journal of Theoretical Biology
       volumeNumber: 231
       type: PublicationVolume
+    id: pone.0093988-Ifti1
   - authors:
       - givenNames:
           - C
@@ -4660,6 +4463,7 @@ references:
       title: Nature
       volumeNumber: 428
       type: PublicationVolume
+    id: pone.0093988-Hauert1
   - authors:
       - givenNames:
           - F
@@ -4682,6 +4486,7 @@ references:
       title: Physical Review Letters
       volumeNumber: 95
       type: PublicationVolume
+    id: pone.0093988-Santos1
   - authors:
       - givenNames:
           - H
@@ -4714,6 +4519,7 @@ references:
       title: Nature
       volumeNumber: 441
       type: PublicationVolume
+    id: pone.0093988-Ohtsuki1
   - authors:
       - givenNames:
           - G
@@ -4734,6 +4540,7 @@ references:
       title: Physics Reports
       volumeNumber: 446
       type: PublicationVolume
+    id: pone.0093988-Szabo1
   - authors:
       - givenNames:
           - D
@@ -4754,6 +4561,7 @@ references:
       title: Nature
       volumeNumber: 393
       type: PublicationVolume
+    id: pone.0093988-Watts1
   - authors:
       - givenNames:
           - A
@@ -4774,6 +4582,7 @@ references:
       title: Science
       volumeNumber: 286
       type: PublicationVolume
+    id: pone.0093988-Barabsi1
   - authors:
       - givenNames:
           - R
@@ -4794,9 +4603,11 @@ references:
       title: Reviews of Modern Physics
       volumeNumber: 74
       type: PublicationVolume
+    id: pone.0093988-Albert1
   - authors: []
     title: ''
     type: Article
+    id: pone.0093988-Newman1
   - authors:
       - givenNames:
           - M
@@ -4817,3 +4628,4 @@ references:
       title: International Journal of Industrial Organization
       volumeNumber: 18
       type: PublicationVolume
+    id: pone.0093988-Dufwenberg1

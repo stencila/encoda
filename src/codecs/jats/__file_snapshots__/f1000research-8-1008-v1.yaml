@@ -55,41 +55,29 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '1'
-            target: '#ref-1'
-            type: Link
-            relation: bibr
+          - target: '#ref-1'
+            type: Cite
       - |-
         , the respiratory tract
 
       - type: Superscript
         content:
-          - content:
-              - '2'
-            target: '#ref-2'
-            type: Link
-            relation: bibr
+          - target: '#ref-2'
+            type: Cite
       - |-
         , the vascular system
 
       - type: Superscript
         content:
-          - content:
-              - '3'
-            target: '#ref-3'
-            type: Link
-            relation: bibr
+          - target: '#ref-3'
+            type: Cite
       - |2-
          and the central nervous system
 
       - type: Superscript
         content:
-          - content:
-              - '4'
-            target: '#ref-4'
-            type: Link
-            relation: bibr
+          - target: '#ref-4'
+            type: Cite
       - >-
         . It is known for one of the most common pathogens infecting patients
         with cystic fibrosis, leading to increase its morbidity and mortality
@@ -98,19 +86,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '5'
-            target: '#ref-5'
-            type: Link
-            relation: bibr
+          - target: '#ref-5'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '6'
-            target: '#ref-6'
-            type: Link
-            relation: bibr
+          - target: '#ref-6'
+            type: Cite
       - |-
         . The presence of 
 
@@ -122,19 +104,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '7'
-            target: '#ref-7'
-            type: Link
-            relation: bibr
+          - target: '#ref-7'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '8'
-            target: '#ref-8'
-            type: Link
-            relation: bibr
+          - target: '#ref-8'
+            type: Cite
       - |-
         . In the initial stage of infection, 
 
@@ -152,11 +128,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '9'
-            target: '#ref-9'
-            type: Link
-            relation: bibr
+          - target: '#ref-9'
+            type: Cite
       - >-
         . PCN, a blue redox-active secondary metabolite and a member of
         tricyclic phenazine family, is known to function as a gene controller
@@ -164,70 +137,49 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '10'
-            target: '#ref-10'
-            type: Link
-            relation: bibr
+          - target: '#ref-10'
+            type: Cite
       - |-
         , an antibiotic
 
       - type: Superscript
         content:
-          - content:
-              - '11'
-            target: '#ref-11'
-            type: Link
-            relation: bibr
+          - target: '#ref-11'
+            type: Cite
       - |-
         , an electron transfer facilitator
 
       - type: Superscript
         content:
-          - content:
-              - '12'
-            target: '#ref-12'
-            type: Link
-            relation: bibr
+          - target: '#ref-12'
+            type: Cite
       - |-
         , and a potent mammary cell-damaging virulence factor
 
       - type: Superscript
         content:
-          - content:
-              - '13'
-            target: '#ref-13'
-            type: Link
-            relation: bibr
+          - target: '#ref-13'
+            type: Cite
       - >-
         . Reports indicate that PCN inhibits B cell, T cell and macrophage
         functions
 
       - type: Superscript
         content:
-          - content:
-              - '14'
-            target: '#ref-14'
-            type: Link
-            relation: bibr
+          - target: '#ref-14'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '15'
-            target: '#ref-15'
-            type: Link
-            relation: bibr
+          - target: '#ref-15'
+            type: Cite
       - |2-
          and induces neutrophil apoptosis
 
       - type: Superscript
         content:
-          - content:
-              - '16'
-            target: '#ref-16'
-            type: Link
-            relation: bibr
+          - target: '#ref-16'
+            type: Cite
       - >-
         , suggesting that PCN suppresses both innate and antigen-specific
         adaptive immune response.
@@ -269,11 +221,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '17'
-            target: '#ref-17'
-            type: Link
-            relation: bibr
+          - target: '#ref-17'
+            type: Cite
       - |-
         . Passive immunization with egg yolk immunoglobulin (IgY) specific to 
 
@@ -285,30 +234,21 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '18'
-            target: '#ref-18'
-            type: Link
-            relation: bibr
+          - target: '#ref-18'
+            type: Cite
           - |-
             –
 
-          - content:
-              - '20'
-            target: '#ref-20'
-            type: Link
-            relation: bibr
+          - target: '#ref-20'
+            type: Cite
       - >-
         . A recent study showed that PCN induces caspase 3-dependent human B
         cell (Raji Cells) death
 
       - type: Superscript
         content:
-          - content:
-              - '21'
-            target: '#ref-21'
-            type: Link
-            relation: bibr
+          - target: '#ref-21'
+            type: Cite
       - >-
         . The aim of the present study, therefore, was to determine whether
         antigen-specific IgY antibodies may prevent PCN-induced Raji cell death.
@@ -340,11 +280,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '22'
-            target: '#ref-22'
-            type: Link
-            relation: bibr
+          - target: '#ref-22'
+            type: Cite
       - ' and its concentration was assessed using the Chicken IgY ELISA Kit (Elabscience Biotechnology Co., Ltd, USA). The AGPT test was performed three times, each of 4 isolates from the first and second IgY purification results. The ELISA was then performed on two IgY batches.'
     type: Paragraph
   - content:
@@ -391,11 +328,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '21'
-            target: '#ref-21'
-            type: Link
-            relation: bibr
+          - target: '#ref-21'
+            type: Cite
       - >-
         . Experiments were carried out three times with 8 replicates in each
         group.
@@ -436,8 +370,8 @@ content:
       - content:
           - Figure 1
         target: '#f1'
-        type: Link
         relation: fig
+        type: Link
       - >-
         , clear lines of precipitates from two IgY batches in the agarose matrix
         indicated the presence of PCN-specific antibodies. A further assessment
@@ -475,8 +409,8 @@ content:
       - content:
           - Figure 2
         target: '#f2'
-        type: Link
         relation: fig
+        type: Link
       - ).
     type: Paragraph
   - content:
@@ -508,8 +442,8 @@ content:
       - content:
           - Figure 3
         target: '#f3'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ). No significant differences between the cells treated with PCN and
         specific anti-PCN IgY antibodies at the concentration above 55 μg/ml
@@ -518,8 +452,8 @@ content:
       - content:
           - Figure 3
         target: '#f3'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ). Microscopically, the number of viable cells treated with PCN-IgY
         complexes was much higher than those treated with PCN only (
@@ -527,8 +461,8 @@ content:
       - content:
           - Figure 4
         target: '#f4'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ). Raw cell viability counts, along with other raw results and images,
         are available as 
@@ -538,11 +472,8 @@ content:
           - Underlying data
       - type: Superscript
         content:
-          - content:
-              - '23'
-            target: '#ref-23'
-            type: Link
-            relation: bibr
+          - target: '#ref-23'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -569,8 +500,8 @@ content:
           - content:
               - Figure 2
             target: '#f2'
-            type: Link
             relation: fig
+            type: Link
           - . *p<0.05.
         type: Paragraph
     type: Figure
@@ -626,11 +557,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '21'
-            target: '#ref-21'
-            type: Link
-            relation: bibr
+          - target: '#ref-21'
+            type: Cite
       - |-
         . Similarly, other also demonstrated that PCN of 
 
@@ -642,11 +570,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '16'
-            target: '#ref-16'
-            type: Link
-            relation: bibr
+          - target: '#ref-16'
+            type: Cite
       - >-
         . Therefore, efforts to inhibit excessive host cell damage induced by
         PCN are imminent.
@@ -669,19 +594,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '17'
-            target: '#ref-17'
-            type: Link
-            relation: bibr
+          - target: '#ref-17'
+            type: Cite
           - |-
             –
 
-          - content:
-              - '19'
-            target: '#ref-19'
-            type: Link
-            relation: bibr
+          - target: '#ref-19'
+            type: Cite
       - |-
         , suggesting that 
 
@@ -701,11 +620,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '20'
-            target: '#ref-20'
-            type: Link
-            relation: bibr
+          - target: '#ref-20'
+            type: Cite
       - >-
         . The exact mechanism by which antigen-specific IgY antibodies inhibited
         PCN-induced Raji cell death seen in the present study remains unclear,
@@ -714,11 +630,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '21'
-            target: '#ref-21'
-            type: Link
-            relation: bibr
+          - target: '#ref-21'
+            type: Cite
       - >-
         . It seems plausible, therefore, that PCN-IgY antibody complexes may
         fail to activate Raji cell-derived caspase 3 and hence, inhibit cell
@@ -742,29 +655,20 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '1'
-            target: '#ref-1'
-            type: Link
-            relation: bibr
+          - target: '#ref-1'
+            type: Cite
           - |-
             –
 
-          - content:
-              - '4'
-            target: '#ref-4'
-            type: Link
-            relation: bibr
+          - target: '#ref-4'
+            type: Cite
       - |2-
          and morbidity and mortality in cystic fibrosis patients
 
       - type: Superscript
         content:
-          - content:
-              - '5'
-            target: '#ref-5'
-            type: Link
-            relation: bibr
+          - target: '#ref-5'
+            type: Cite
       - |-
         . The difficulty to eradicate 
 
@@ -784,11 +688,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '24'
-            target: '#ref-24'
-            type: Link
-            relation: bibr
+          - target: '#ref-24'
+            type: Cite
       - |-
         . Immunotherapies using IgY specific to 
 
@@ -812,19 +713,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '18'
-            target: '#ref-18'
-            type: Link
-            relation: bibr
+          - target: '#ref-18'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '19'
-            target: '#ref-19'
-            type: Link
-            relation: bibr
+          - target: '#ref-19'
+            type: Cite
       - >-
         , suggesting the usefulness of antigen-specific IgY antibodies an
         immunotherapy to prevent 
@@ -858,11 +753,8 @@ content:
         type: Link
       - type: Superscript
         content:
-          - content:
-              - '23'
-            target: '#ref-23'
-            type: Link
-            relation: bibr
+          - target: '#ref-23'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -952,6 +844,7 @@ references:
         volumeNumber: 12
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-1
   - authors:
       - givenNames:
           - X
@@ -982,6 +875,7 @@ references:
         volumeNumber: 10
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-2
   - authors:
       - givenNames:
           - A
@@ -1013,6 +907,7 @@ references:
         volumeNumber: 57
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-3
   - authors:
       - givenNames:
           - AR
@@ -1043,6 +938,7 @@ references:
         volumeNumber: 4
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-4
   - authors:
       - givenNames:
           - JR
@@ -1069,6 +965,7 @@ references:
         volumeNumber: 60
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-5
   - authors:
       - givenNames:
           - C
@@ -1096,6 +993,7 @@ references:
         volumeNumber: 215
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-6
   - authors:
       - givenNames:
           - CE
@@ -1124,6 +1022,7 @@ references:
         volumeNumber: 30
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-7
   - authors:
       - givenNames:
           - F
@@ -1154,6 +1053,7 @@ references:
         volumeNumber: 4
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-8
   - authors:
       - givenNames:
           - MF
@@ -1180,6 +1080,7 @@ references:
       title: Front Cell Infect Microbiol.
       volumeNumber: 7
       type: PublicationVolume
+    id: ref-9
   - authors:
       - givenNames:
           - LE
@@ -1211,6 +1112,7 @@ references:
         volumeNumber: 61
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-10
   - authors:
       - givenNames:
           - SS
@@ -1234,6 +1136,7 @@ references:
         volumeNumber: 20
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-11
   - authors:
       - givenNames:
           - YQ
@@ -1263,6 +1166,7 @@ references:
         volumeNumber: 285
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-12
   - authors:
       - givenNames:
           - S
@@ -1291,6 +1195,7 @@ references:
         volumeNumber: 8
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-13
   - authors:
       - givenNames:
           - AJ
@@ -1321,6 +1226,7 @@ references:
         volumeNumber: 58
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-14
   - authors:
       - givenNames:
           - SM
@@ -1352,6 +1258,7 @@ references:
         volumeNumber: 177
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-15
   - authors:
       - givenNames:
           - A
@@ -1383,6 +1290,7 @@ references:
         volumeNumber: 22
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-16
   - authors:
       - givenNames:
           - G
@@ -1413,6 +1321,7 @@ references:
         volumeNumber: 104
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-17
   - authors:
       - givenNames:
           - H
@@ -1443,6 +1352,7 @@ references:
         volumeNumber: 35
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-18
   - authors:
       - givenNames:
           - E
@@ -1473,6 +1383,7 @@ references:
         volumeNumber: 43
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-19
   - authors:
       - givenNames:
           - K
@@ -1503,6 +1414,7 @@ references:
         volumeNumber: 83
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-20
   - authors:
       - givenNames:
           - H
@@ -1533,6 +1445,7 @@ references:
         volumeNumber: 22
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-21
   - authors:
       - givenNames:
           - JJ
@@ -1558,6 +1471,7 @@ references:
         volumeNumber: 17
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-22
   - authors:
       - givenNames:
           - H
@@ -1570,6 +1484,7 @@ references:
     isPartOf:
       title: figshare.
       type: PublicationVolume
+    id: ref-23
   - authors:
       - givenNames:
           - MN
@@ -1600,3 +1515,4 @@ references:
         volumeNumber: 40
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-24

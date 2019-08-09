@@ -44,42 +44,42 @@
         <sec>
             <title>Introduction</title>
             <p>Cyanobacteria, a group of prokaryotes, are well known for their ability to carry out oxygenic photosynthesis. They survive in different niche environmental conditions ranging from seawater to deserts and greatly contribute to the global primary production [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref001">1</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref002">2</ext-link>]. This ability to sequester atmospheric carbon dioxide and photosynthetically convert it to biomass makes cyanobacteria leading candidates in biofuel research. The nitrogen fixing variety of some cyanobacteria contribute significantly to the nitrogen cycle [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref003">3</ext-link>] and are attracting attention as biofertilizers and for nitrogenase-dependent hydrogen production [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref004">4</ext-link>]. Thus, the cyanobacterial phylum shows significant diversity both in terms of their metabolic capability and habitats [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref005">5</ext-link>–
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>]. Despite this diversity, the phylum has retained a significant core genome [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref008">8</ext-link>].
+                <xref rid="pone.0178565.ref001" ref-type="bibr">Garcia-Pichel et al., 2003</xref>, 
+                <xref rid="pone.0178565.ref002" ref-type="bibr">Whitton, 2012</xref>]. This ability to sequester atmospheric carbon dioxide and photosynthetically convert it to biomass makes cyanobacteria leading candidates in biofuel research. The nitrogen fixing variety of some cyanobacteria contribute significantly to the nitrogen cycle [
+                <xref rid="pone.0178565.ref003" ref-type="bibr">Zehr et al., 2001</xref>] and are attracting attention as biofertilizers and for nitrogenase-dependent hydrogen production [
+                <xref rid="pone.0178565.ref004" ref-type="bibr">Krishnakumar et al., 2013</xref>]. Thus, the cyanobacterial phylum shows significant diversity both in terms of their metabolic capability and habitats [
+                <xref rid="pone.0178565.ref005" ref-type="bibr">Shih et al., 2013</xref>–
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>]. Despite this diversity, the phylum has retained a significant core genome [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>, 
+                <xref rid="pone.0178565.ref008" ref-type="bibr">Beck et al., 2012</xref>].
             </p>
             <p>Unlike the eukaryotic algae, cyanobacteria do not produce storage compounds that are commercially attractive. Therefore, there is significant interest in metabolic engineering of cyanobacteria to produce useful products such as ethanol, butanol, butanediol, etc [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref009">9</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref010">10</ext-link>]. Classical metabolic engineering involves knocking out or downregulating pathways that drain the carbon away from the product of interest [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref011">11</ext-link>]. Knowledge of essential genes allows mapping of critical points in metabolic networks and design of mutants with minimal wasteful experimental screening [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref012">12</ext-link>]. Essential genes also play a role in drug designing [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref013">13</ext-link>], in identifying potential targets for antibiotics in pathogenic microorganism [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref014">14</ext-link>] and in minimal genome construction [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref015">15</ext-link>]. Experimental as well as computational methods have been reported for identification of essential genes. Conventional experimental methods involve gene knockouts [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref016">16</ext-link>] and RNA interference [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref017">17</ext-link>] where viability of the organism is checked by deleting or silencing the gene. A recently developed method, random bar code transposon-site sequencing (RB-TnSeq), parallelizes this process dramatically thereby permitting genome-wide gene essentiality testing [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. In parallel, a number of computational methods have been proposed in the past decade or so that may be time efficient. These are based on network topology [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref019">19</ext-link>], gene expression data [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref020">20</ext-link>], metabolic modelling [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref021">21</ext-link>], flux balance analysis (FBA) [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref022">22</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref023">23</ext-link>] and 
+                <xref rid="pone.0178565.ref009" ref-type="bibr">Oliver et al., 2013</xref>, 
+                <xref rid="pone.0178565.ref010" ref-type="bibr">Nozzi et al., 2013</xref>]. Classical metabolic engineering involves knocking out or downregulating pathways that drain the carbon away from the product of interest [
+                <xref rid="pone.0178565.ref011" ref-type="bibr">Stephanopoulos, 1999</xref>]. Knowledge of essential genes allows mapping of critical points in metabolic networks and design of mutants with minimal wasteful experimental screening [
+                <xref rid="pone.0178565.ref012" ref-type="bibr">Joyce et al., 2006</xref>]. Essential genes also play a role in drug designing [
+                <xref rid="pone.0178565.ref013" ref-type="bibr">Lamichhane et al., 2003</xref>], in identifying potential targets for antibiotics in pathogenic microorganism [
+                <xref rid="pone.0178565.ref014" ref-type="bibr">Beckerand Palsson, 2005</xref>] and in minimal genome construction [
+                <xref rid="pone.0178565.ref015" ref-type="bibr">Maniloff, 1996</xref>]. Experimental as well as computational methods have been reported for identification of essential genes. Conventional experimental methods involve gene knockouts [
+                <xref rid="pone.0178565.ref016" ref-type="bibr">Giaever et al., 2002</xref>] and RNA interference [
+                <xref rid="pone.0178565.ref017" ref-type="bibr">Cullenand Arndt, 2005</xref>] where viability of the organism is checked by deleting or silencing the gene. A recently developed method, random bar code transposon-site sequencing (RB-TnSeq), parallelizes this process dramatically thereby permitting genome-wide gene essentiality testing [
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>]. In parallel, a number of computational methods have been proposed in the past decade or so that may be time efficient. These are based on network topology [
+                <xref rid="pone.0178565.ref019" ref-type="bibr">Jeong et al., 2001</xref>], gene expression data [
+                <xref rid="pone.0178565.ref020" ref-type="bibr">Carter et al., 2004</xref>], metabolic modelling [
+                <xref rid="pone.0178565.ref021" ref-type="bibr">Basler, 2015</xref>], flux balance analysis (FBA) [
+                <xref rid="pone.0178565.ref022" ref-type="bibr">Suthers et al., 2009</xref>, 
+                <xref rid="pone.0178565.ref023" ref-type="bibr">Hendry et al., 2016</xref>] and 
                 <sup>13</sup>C metabolic flux analysis (
                 <sup>13</sup>C-MFA) [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref024">24</ext-link>]. FBA based methods systematically assesses the growth rate of all single gene deletion mutants. A gene is termed essential if it’s deletion adversely affects the growth rate. Likewise, synthetic lethal genes can be identified by testing viability of two or more knockouts at a time [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref022">22</ext-link>].
+                <xref rid="pone.0178565.ref024" ref-type="bibr">Alagesan et al., 2013</xref>]. FBA based methods systematically assesses the growth rate of all single gene deletion mutants. A gene is termed essential if it’s deletion adversely affects the growth rate. Likewise, synthetic lethal genes can be identified by testing viability of two or more knockouts at a time [
+                <xref rid="pone.0178565.ref022" ref-type="bibr">Suthers et al., 2009</xref>].
             </p>
             <p>A number of studies have analyzed the core genome of photosynthetic prokaryotes. In an early study, Raymond et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref025">25</ext-link>] performed comparative genomic analysis on different groups of photosynthetic prokaryotes for common gene orthologs to propose photosynthetic evolution. Subsequently, Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] enumerated 682 core genes based on conservation in 13 cyanobacterial genomes. Larsson et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref026">26</ext-link>] predicted gene orthologs with a larger genome dataset of 58 cyanobacterial genomes and identified 404 such orthologs. Beck et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref008">8</ext-link>] categorized the clusters of likely ortholog genes (CLOGs) identified from 16 cyanobacterial strains into core, shared and unique clusters. Besides these computational studies across the cyanobacterial phylum, Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] experimentally identified a total of 718 essential genes in 
+                <xref rid="pone.0178565.ref025" ref-type="bibr">Raymond et al., 2002</xref>] performed comparative genomic analysis on different groups of photosynthetic prokaryotes for common gene orthologs to propose photosynthetic evolution. Subsequently, Shi and Falkowski [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] enumerated 682 core genes based on conservation in 13 cyanobacterial genomes. Larsson et al. [
+                <xref rid="pone.0178565.ref026" ref-type="bibr">Larsson et al., 2011</xref>] predicted gene orthologs with a larger genome dataset of 58 cyanobacterial genomes and identified 404 such orthologs. Beck et al. [
+                <xref rid="pone.0178565.ref008" ref-type="bibr">Beck et al., 2012</xref>] categorized the clusters of likely ortholog genes (CLOGs) identified from 16 cyanobacterial strains into core, shared and unique clusters. Besides these computational studies across the cyanobacterial phylum, Rubin et al. [
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>] experimentally identified a total of 718 essential genes in 
                 <italic>S</italic>. 
                 <italic>elongatus</italic> PCC 7942.
             </p>
@@ -91,12 +91,12 @@
         <sec>
             <title>Phylogenetic profile construction</title>
             <p>Phylogenetic profiles were constructed as described by Pellegrini et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref027">27</ext-link>], with minor modifications. Briefly, a total of 120 completely sequenced cyanobacterial genomes were used to create a local database (
+                <xref rid="pone.0178565.ref027" ref-type="bibr">Pellegrini et al., 1999</xref>], with minor modifications. Briefly, a total of 120 completely sequenced cyanobacterial genomes were used to create a local database (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s002">S1 Table</ext-link>). Of these, non-redundant protein sequences from 20 genetically diverse cyanobacterial genomes were used as query sequences (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>). Protein sequences from each organism were subjected to CD-HIT program to remove redundancy at 90% identity level [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref028">28</ext-link>]. A given query protein sequence was searched against each of the 120 cyanobacterial genomes using NCBI local BLASTP. A hit was accepted if all three of the following conditions were satisfied: (i) BLAST E-value of &lt; 10
+                <xref rid="pone.0178565.ref028" ref-type="bibr">Fu et al., 2012</xref>]. A given query protein sequence was searched against each of the 120 cyanobacterial genomes using NCBI local BLASTP. A hit was accepted if all three of the following conditions were satisfied: (i) BLAST E-value of &lt; 10
                 <sup>−5</sup>, (ii) query coverage of &gt; 60% and (iii) score density of &gt; 0.6 over the aligned region (Memon et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref029">29</ext-link>]). These conditions were imposed to minimize spurious hits that result from partial domain matches. All proteins that satisfy these criteria are listed as hits and omitted from being considered as query sequences subsequently. A “1” in the profile indicates the presence of at least one hit in the genome while a “0” indicates the absence.
+                <xref rid="pone.0178565.ref029" ref-type="bibr">Memon et al., 2013</xref>]). These conditions were imposed to minimize spurious hits that result from partial domain matches. All proteins that satisfy these criteria are listed as hits and omitted from being considered as query sequences subsequently. A “1” in the profile indicates the presence of at least one hit in the genome while a “0” indicates the absence.
             </p>
         </sec>
         <sec>
@@ -156,7 +156,7 @@ where,
                 <italic>Prochlorococcus</italic> and 
                 <italic>Synechococcus</italic> form a single cluster (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s005">S4 Table</ext-link>). Additionally, smaller clusters of 2–4 strains are formed. Further, the tree of organisms based on phylogenetic profiles agrees well with that based on alignment of concatenated protein sequences [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref005">5</ext-link>]. The tree can be broken down into 4 clades (
+                <xref rid="pone.0178565.ref005" ref-type="bibr">Shih et al., 2013</xref>]. The tree can be broken down into 4 clades (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g002">Fig 2</ext-link>) for further clade-wise analysis as discussed in subsequent sections. Abridged profiles were then created that have string length of 73, corresponding to the 73 organism clusters, compared to the original string length of 120 (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s006">S5 Table</ext-link>). Conservation indices for the protein profiles were computed based on the abridged strings.
             </p>
@@ -180,10 +180,10 @@ where,
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g003">Fig 3A</ext-link>) where the pairs in question lie on opposite sides of the plot (Details regarding the proteins used in the PCA plot and heatmap are given in 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s007">S6 Table</ext-link>). Further, a heatmap of the profiles shows that divergence of the two functionally similar proteins largely correlates with the evolution of the organisms (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g003">Fig 3B</ext-link>). To exemplify, profiles with query UniProt Ids B1XMD2 and B7K1R1 are mutually exclusive. Both the proteins are involved in the catalysis of the second and third steps (cysteine ligation, (EC:6.3.2.5), and decarboxylation, (EC:4.1.1.36)) in the biosynthesis of coenzyme A (CoA) from pantothenate [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref030">30</ext-link>] (Strauss et al, 2001). Each query protein is present in evolutionarily related subset of organisms suggesting that the divergence of the protein sequences correlates with the evolution of the organism. Likewise profiles with query UniProt IDs B5VZS0 and Q3M4X1 both represent the 
+                <xref rid="pone.0178565.ref030" ref-type="bibr">Strauss et al., 2001</xref>] (Strauss et al, 2001). Each query protein is present in evolutionarily related subset of organisms suggesting that the divergence of the protein sequences correlates with the evolution of the organism. Likewise profiles with query UniProt IDs B5VZS0 and Q3M4X1 both represent the 
                 <italic>phzF</italic> (phenazine biosynthesis) family, which is part of the seven-gene operon, responsible for the synthesis of phenazine-1-carboxylic acid [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref031">31</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref032">32</ext-link>]. This suggests that the potentially redundant profiles represent genes that have diverged significantly in the subsets of organisms and are not merely paralogs.
+                <xref rid="pone.0178565.ref031" ref-type="bibr">Parsons et al., 2004</xref>, 
+                <xref rid="pone.0178565.ref032" ref-type="bibr">Blankenfeldt et al., 2004</xref>]. This suggests that the potentially redundant profiles represent genes that have diverged significantly in the subsets of organisms and are not merely paralogs.
             </p>
             <fig>
                 <caption>
@@ -224,7 +224,7 @@ where,
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t001">Table 1</ext-link> and 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s008">S7 Table</ext-link>). This is apart from the rRNA and tRNA genes which are also conserved but not considered here as our dataset contains only protein coding genes. In this set, around 35% of the genes are metabolic genes. The set comprises of upto 50% of the total proteins in smaller genomes such as those of 
                 <italic>Prochlorococcus</italic> sp. A large fraction of proteins in this category are annotated. These proteins participate in key cellular functions such as carbohydrate metabolism, energy metabolism, lipid metabolism, nucleotide metabolism, amino acid metabolism, glycan biosynthesis, metabolism of cofactors and vitamins and genetic information processing like transcription, translation and replication. Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] have called this set the stable core.
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] have called this set the stable core.
             </p>
             <table-wrap id="pone.0178565.t001">
                 <label>Table 1.</label>
@@ -316,8 +316,8 @@ where,
             <p>About 35% of all the query genes (8,280 profiles) are semi-conserved. These include genes involved in niche functions such as nitrogen fixation, defense response to viruses, response to stress conditions, etc. Although only semi-conserved at the level of cyanobacterial phylum, some of these genes are conserved in their respective clades and this needs to be examined further.</p>
             <p>About 61% of the query genes (14,370 profiles) are unique and present only in &lt; 10% of the organism clusters. A large fraction of these proteins are not annotated. It is likely that these proteins are conserved only at species level performing a highly niche function.</p>
             <p>We have specifically analyzed for the circadian clock genes which are involved in the regulation of global gene expression patterns, interactions with the genes of key metabolic pathways, the timing of cell division and in chromosome compaction [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref033">33</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref034">34</ext-link>]. We checked for the conservation index of these genes and we find that the oscillator genes 
+                <xref rid="pone.0178565.ref033" ref-type="bibr">Cohenand Golden, 2015</xref>, 
+                <xref rid="pone.0178565.ref034" ref-type="bibr">Gaudana et al., 2013</xref>]. We checked for the conservation index of these genes and we find that the oscillator genes 
                 <italic>kaiB</italic> and 
                 <italic>kaiC</italic> fall under the conserved category while 
                 <italic>kaiA</italic> belongs to the semi-conserved category. Among the genes that provide inputs to the circadian clock, the gene 
@@ -326,34 +326,34 @@ where,
                 <italic>sasA</italic> is conserved.
             </p>
             <p>Initially Martin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] reported such a set in cyanobacteria which they called structural genes. Later Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] reported such a gene set in cyanobacteria which they called the stable core. Only few cyanobacterial genomes were available at that time. Our analysis benefits by the availability of a much larger number of genomes. We further improve upon the results by clustering of the organisms which removes the bias introduced by the overrepresentation of genomes from certain genera. Further, the 95% cut-off used by us helps remove errors introduced due to incomplete genome sequencing. A large number of conserved genes are common between our analysis and that presented by Martin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] and Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] (
+                <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>] reported such a set in cyanobacteria which they called structural genes. Later Shi and Falkowski [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] reported such a gene set in cyanobacteria which they called the stable core. Only few cyanobacterial genomes were available at that time. Our analysis benefits by the availability of a much larger number of genomes. We further improve upon the results by clustering of the organisms which removes the bias introduced by the overrepresentation of genomes from certain genera. Further, the 95% cut-off used by us helps remove errors introduced due to incomplete genome sequencing. A large number of conserved genes are common between our analysis and that presented by Martin et al. [
+                <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>] and Shi and Falkowski [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g005">Fig 5A</ext-link>). However, there is some disagreement between the data sets. For example, genes 
                 <italic>psbJ</italic> and 
                 <italic>psbL</italic> (with UniProt IDs Q8RSW0 and Q8RSW1) are involved in assembly of oxygen evolving complex and unidirectional flow of electrons [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref036">36</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref037">37</ext-link>] are semi-conserved in our dataset but conserved in the dataset of Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>]. Gene 
+                <xref rid="pone.0178565.ref036" ref-type="bibr">Ohad et al., 2004</xref>, 
+                <xref rid="pone.0178565.ref037" ref-type="bibr">Suorsa et al., 2004</xref>] are semi-conserved in our dataset but conserved in the dataset of Shi and Falkowski [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>]. Gene 
                 <italic>psbF</italic> (with UniProt ID Q8RSW2) is involved in the assembly of photosystem II and secondary electron transport mechanism [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref038">38</ext-link>] is semi-conserved in our dataset is one of the structural gene of Martin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. These discrepancies may be due to differences in the genome datasets used in the three studies. Our analysis includes symbiotic strains which may lack some of the core metabolic genes.
+                <xref rid="pone.0178565.ref038" ref-type="bibr">Burda et al., 2003</xref>] is semi-conserved in our dataset is one of the structural gene of Martin et al. [
+                <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>]. These discrepancies may be due to differences in the genome datasets used in the three studies. Our analysis includes symbiotic strains which may lack some of the core metabolic genes.
             </p>
             <fig>
                 <caption>
                     <title>Overlap of conserved genes (this work) with core set proteins of Shi and Falkowski [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>], structural genes of Martin et al. [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>] and essential genes of Rubin et al. [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] shown for 
+                        <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>], structural genes of Martin et al. [
+                        <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>] and essential genes of Rubin et al. [
+                        <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>] shown for 
                         <italic>S</italic>. 
                         <italic>elongatus</italic> PCC 7942 for which experimental data is available.
                     </title>
                     <p>(A) Overlap of conserved genes (this work), core set proteins [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] and structural genes [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>]. (B) Conserved genes (this work) and essential genes [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. (C) Conserved genes without clustering of microorganisms and removing the microorganism redundancy and the overlap with essential genes [
-                        <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+                        <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] and structural genes [
+                        <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>]. (B) Conserved genes (this work) and essential genes [
+                        <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>]. (C) Conserved genes without clustering of microorganisms and removing the microorganism redundancy and the overlap with essential genes [
+                        <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>].
                     </p>
                 </caption>
                 <label>Fig 5</label>
@@ -409,7 +409,7 @@ where,
             <p>We wanted to test if the gene conservation index is indicative of gene essentiality. We find that there is a significant overlap between the sets of conserved genes (this work) and essential genes as determined experimentally in 
                 <italic>S</italic>. 
                 <italic>elongatus</italic> PCC 7942 by Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] (
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>] (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s009">S8 Table</ext-link> and 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g005">Fig 5B</ext-link>). Majority of the essential genes belong to the conserved set of genes while majority of the non-essential genes belong to the semi-conserved or unique category (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t003">Table 3</ext-link> and 
@@ -417,18 +417,18 @@ where,
                 <italic>psbF</italic> and 
                 <italic>menF</italic> are examples of the first case. The gene 
                 <italic>psbF</italic> (cytochrome b559 subunit beta) with UniProt ID Q8RSW2 is involved in the assembly of photosystem II and secondary electron transport mechanism [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref038">38</ext-link>]. The gene is semi-conserved in the entire phylum but is conserved in clade C. The gene 
+                <xref rid="pone.0178565.ref038" ref-type="bibr">Burda et al., 2003</xref>]. The gene is semi-conserved in the entire phylum but is conserved in clade C. The gene 
                 <italic>menF</italic> (isochorismate synthase) with UniProt ID B1XJE2 is involved in the conversion of chorismate to isochorismate [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref039">39</ext-link>]. The gene is conserved in clades A and D but semi-conserved in the entire phylum. The genes 
+                <xref rid="pone.0178565.ref039" ref-type="bibr">Liu et al., 1990</xref>]. The gene is conserved in clades A and D but semi-conserved in the entire phylum. The genes 
                 <italic>fbp</italic> and 
                 <italic>gnd</italic> are examples of the latter category. The gene 
                 <italic>fbp</italic> (fructose-1,6-bisphosphatase class 1) with UniProt ID B1XNG1 is involved in reductive phase of Pentose Phosphate Pathway (PPP), and catalyses the removal of a phosphate group from fructose 1,6- bisphosphate to form fructose-6-phosphate [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref040">40</ext-link>]. The gene 
+                <xref rid="pone.0178565.ref040" ref-type="bibr">Marcus et al., 1986</xref>]. The gene 
                 <italic>gnd</italic> (6-phosphogluconate dehydrogenase, decarboxylating) with UniProt ID B1XM87 is a key enzyme in PPP involved in the conversion of 6-phospho-D-gluconolactone to D-ribulose 5-phosphate [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref041">41</ext-link>]. The genes are conserved in our data but are non-essential in 
+                <xref rid="pone.0178565.ref041" ref-type="bibr">Broedeland Wolf, 1990</xref>]. The genes are conserved in our data but are non-essential in 
                 <italic>S</italic>. 
                 <italic>elongatus</italic> PCC 7942 [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. This may be due to the fact that the PPP pathway may be used under certain stress conditions that are not accounted for in the experimental studies on gene essentiality.
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>]. This may be due to the fact that the PPP pathway may be used under certain stress conditions that are not accounted for in the experimental studies on gene essentiality.
             </p>
             <table-wrap id="pone.0178565.t003">
                 <label>Table 3.</label>
@@ -465,18 +465,18 @@ where,
         <sec>
             <title>Genes of central metabolic pathways</title>
             <p>We analyzed the gene conservation indices and experimentally determined essentiality [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] for enzymes of select central carbon pathways (
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>] for enzymes of select central carbon pathways (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t004">Table 4</ext-link> and 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s010">S9 Table</ext-link>). We find agreement between the two datasets. For example, on analysis of ten enzymes of the glycolytic pathway, we find that seven were conserved, six of which are essential in 
                 <italic>S</italic>. 
                 <italic>elongatus</italic> PCC 7942 [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>]. Similarly, for Calvin cycle, we find that eight of the ten conserved enzymes are essential. However, we observe a disagreement with the data of Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] in the cases of gene 
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>]. Similarly, for Calvin cycle, we find that eight of the ten conserved enzymes are essential. However, we observe a disagreement with the data of Rubin et al. [
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>] in the cases of gene 
                 <italic>fbp</italic> (fructose-1,6-bisphosphatase class 1) and 
                 <italic>gap</italic> (glyceraldehyde-3-phosphate dehydrogenase). The disagreement between GCI and essentiality for certain enzymes may be due to the conditions opted for carrying out the experiments for essentiality in 
                 <italic>S</italic>. 
                 <italic>elongatus</italic> PCC 7942 by Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>].
             </p>
             <table-wrap id="pone.0178565.t004">
                 <label>Table 4.</label>
@@ -869,20 +869,20 @@ where,
         <sec>
             <title>Clusters of Co-evolving Genes (CCG)</title>
             <p>It has been well established that genes of related function experience common evolutionary pressure and hence tend to co-evolve [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref027">27</ext-link>]. To that end, we clustered the semi-conserved genes using Hamming distance as metric and a cutoff of 0.15. A few selected clusters (
+                <xref rid="pone.0178565.ref027" ref-type="bibr">Pellegrini et al., 1999</xref>]. To that end, we clustered the semi-conserved genes using Hamming distance as metric and a cutoff of 0.15. A few selected clusters (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.t005">Table 5</ext-link> and 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s011">S10 Table</ext-link>) are shown in 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g006">Fig 6B</ext-link> in the form of heatmap and all the clusters are reported in the 
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s012">S11 Table</ext-link>. The extent of co-evolution can also be visualized in the form of a principal component analysis (PCA) plot (
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g006">Fig 6A</ext-link>). To exemplify, cluster 11 has 11 proteins, of which eight are gas vesicle proteins, two are uncharacterized (with UniProt IDs D4TEP3 and Q3MH39) and one is 
                 <italic>ArsA</italic> (arsenite-activated ATPase with UniProt ID B5W7R2). The gas vesicle proteins are small, hollow, gas filled protein structures found in several cyanobacteria which allow their positioning at favorable depth for growth [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref042">42</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref043">43</ext-link>]. The gene 
+                <xref rid="pone.0178565.ref042" ref-type="bibr">Walsbyand Hayes, 1989</xref>, 
+                <xref rid="pone.0178565.ref043" ref-type="bibr">Jones et al., 1991</xref>]. The gene 
                 <italic>ArsA</italic> is involved in active extrusion of heavy metals and is associated with gas vesicle biogenesis proteins [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref044">44</ext-link>–
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref046">46</ext-link>]. Cluster 9 has 4 proteins, of which three are Clustered Regularly Interspaced Short Palindromic Repeats associated (CRISPR) proteins, and one is uncharacterized (with UniProt ID D8FUL0). CRISPR associated proteins provide acquired resistance against mobile genetic elements (virus, transposable elements and conjugative plasmids) [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref047">47</ext-link>, 
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref048">48</ext-link>]. The uncharacterized proteins present in the above clusters may have similar functions related to the proteins present in the respective clusters and further analysis on these proteins will give additional information about their functions.
+                <xref rid="pone.0178565.ref044" ref-type="bibr">Rosen, 1990</xref>–
+                <xref rid="pone.0178565.ref046" ref-type="bibr">Castilloand Saier, 2010</xref>]. Cluster 9 has 4 proteins, of which three are Clustered Regularly Interspaced Short Palindromic Repeats associated (CRISPR) proteins, and one is uncharacterized (with UniProt ID D8FUL0). CRISPR associated proteins provide acquired resistance against mobile genetic elements (virus, transposable elements and conjugative plasmids) [
+                <xref rid="pone.0178565.ref047" ref-type="bibr">Makarova et al., 2006</xref>, 
+                <xref rid="pone.0178565.ref048" ref-type="bibr">Howard et al., 2011</xref>]. The uncharacterized proteins present in the above clusters may have similar functions related to the proteins present in the respective clusters and further analysis on these proteins will give additional information about their functions.
             </p>
             <fig>
                 <caption>
@@ -946,7 +946,7 @@ where,
                 <italic>elongatus</italic> PCC 7942.
             </title>
             <p>Essentiality is obtained from the experimental studies of Rubin et al, 2015 [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>].
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>].
             </p>
             <p>(TIF)</p>S1 Table
         </sec>
@@ -990,8 +990,8 @@ where,
         <sec>
             <title>Conservation level of the genes from 
                 <italic>Synechococcus elongatus</italic> PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>] and database of core proteins by Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>].
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>] and database of core proteins by Shi and Falkowski [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>].
             </title>
             <p>Column A describe the Protein UniProt IDs of query genes used in the study, Column B to D describe the genes of 
                 <italic>S</italic>. 
@@ -1001,9 +1001,9 @@ where,
         </sec>
         <sec>
             <title>Conservation level of enzymes in key metabolic pathways based on reduced dataset and compared with experimental results on gene essentiality by Rubin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref018">18</ext-link>], database of core proteins by Shi and Falkowski [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref007">7</ext-link>] and structural genes by Martin et al. [
-                <ext-link ext-link-type="uri" xlink:href="#pone.0178565.ref035">35</ext-link>].
+                <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>], database of core proteins by Shi and Falkowski [
+                <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>] and structural genes by Martin et al. [
+                <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>].
             </title>
             <p>(XLSX)</p>S10 Table
         </sec>
@@ -1023,9 +1023,27 @@ where,
     <back>
         <ref-list>
             <title>References</title>
-            <ref>
+            <ref id="pone.0178565.ref001">
                 <element-citation>
                     <article-title>Estimates of global cyanobacterial biomass and its distribution</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Garcia-Pichel</surname>
+                            <given-names>F</given-names>
+                        </name>
+                        <name>
+                            <surname>Belnap</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Neuer</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Schanz</surname>
+                            <given-names>F</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2003">2003</year>
                     <fpage>213</fpage>
                     <lpage>27</lpage>
@@ -1034,15 +1052,47 @@ where,
                     <volume>109</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref002">
                 <element-citation>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Whitton</surname>
+                            <given-names>BA</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2012">2012</year>
                     <source>Ecology of Cyanobacteria II: Their Diversity in Space and Time</source>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref003">
                 <element-citation>
                     <article-title>Unicellular cyanobacteria fix N2 in the subtropical North Pacific Ocean</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Zehr</surname>
+                            <given-names>JP</given-names>
+                        </name>
+                        <name>
+                            <surname>Waterbury</surname>
+                            <given-names>JB</given-names>
+                        </name>
+                        <name>
+                            <surname>Turner</surname>
+                            <given-names>PJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Montoya</surname>
+                            <given-names>JP</given-names>
+                        </name>
+                        <name>
+                            <surname>Omoregie</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Steward</surname>
+                            <given-names>GF</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2001">2001</year>
                     <fpage>635</fpage>
                     <lpage>8</lpage>
@@ -1051,9 +1101,31 @@ where,
                     <volume>412</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref004">
                 <element-citation>
                     <article-title>Rhythm of carbon and nitrogen fixation in unicellular cyanobacteria under turbulent and highly aerobic conditions</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Krishnakumar</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Gaudana</surname>
+                            <given-names>SB</given-names>
+                        </name>
+                        <name>
+                            <surname>Viswanathan</surname>
+                            <given-names>GA</given-names>
+                        </name>
+                        <name>
+                            <surname>Pakrasi</surname>
+                            <given-names>HB</given-names>
+                        </name>
+                        <name>
+                            <surname>Wangikar</surname>
+                            <given-names>PP</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <fpage>2371</fpage>
                     <lpage>9</lpage>
@@ -1062,9 +1134,35 @@ where,
                     <volume>110</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref005">
                 <element-citation>
                     <article-title>Improving the coverage of the cyanobacterial phylum using diversity-driven genome sequencing</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Shih</surname>
+                            <given-names>PM</given-names>
+                        </name>
+                        <name>
+                            <surname>Wu</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Latifi</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Axen</surname>
+                            <given-names>SD</given-names>
+                        </name>
+                        <name>
+                            <surname>Fewer</surname>
+                            <given-names>DP</given-names>
+                        </name>
+                        <name>
+                            <surname>Talla</surname>
+                            <given-names>E</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <fpage>1053</fpage>
                     <lpage>8</lpage>
@@ -1073,9 +1171,31 @@ where,
                     <volume>110</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref006">
                 <element-citation>
                     <article-title>Generic assignments, strain histories and properties of pure cultures of cyanobacteria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Rippka</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Deruelles</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Waterbury</surname>
+                            <given-names>JB</given-names>
+                        </name>
+                        <name>
+                            <surname>Herdman</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Stanier</surname>
+                            <given-names>RY</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1979">1979</year>
                     <fpage>1</fpage>
                     <lpage>61</lpage>
@@ -1084,9 +1204,19 @@ where,
                     <volume>111</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref007">
                 <element-citation>
                     <article-title>Genome evolution in cyanobacteria: the stable core and the variable shell</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Shi</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Falkowski</surname>
+                            <given-names>PG</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2008">2008</year>
                     <fpage>2510</fpage>
                     <lpage>5</lpage>
@@ -1095,9 +1225,27 @@ where,
                     <volume>105</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref008">
                 <element-citation>
                     <article-title>The diversity of cyanobacterial metabolism: genome analysis of multiple phototrophic microorganisms</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Beck</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Knoop</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Axmann</surname>
+                            <given-names>IM</given-names>
+                        </name>
+                        <name>
+                            <surname>Steuer</surname>
+                            <given-names>R</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2012">2012</year>
                     <fpage>1</fpage>
                     <issue>1</issue>
@@ -1105,9 +1253,27 @@ where,
                     <volume>13</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref009">
                 <element-citation>
                     <article-title>Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Oliver</surname>
+                            <given-names>JW</given-names>
+                        </name>
+                        <name>
+                            <surname>Machado</surname>
+                            <given-names>IM</given-names>
+                        </name>
+                        <name>
+                            <surname>Yoneda</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Atsumi</surname>
+                            <given-names>S</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <fpage>1249</fpage>
                     <lpage>54</lpage>
@@ -1116,18 +1282,38 @@ where,
                     <volume>110</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref010">
                 <element-citation>
                     <article-title>Cyanobacteria as a platform for biofuel production</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Nozzi</surname>
+                            <given-names>NE</given-names>
+                        </name>
+                        <name>
+                            <surname>Oliver</surname>
+                            <given-names>JW</given-names>
+                        </name>
+                        <name>
+                            <surname>Atsumi</surname>
+                            <given-names>S</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <source>Frontiers in bioengineering and biotechnology</source>
                     <fpage>7</fpage>
                     <volume>1</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref011">
                 <element-citation>
                     <article-title>Metabolic fluxes and metabolic engineering</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Stephanopoulos</surname>
+                            <given-names>G</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1999">1999</year>
                     <fpage>1</fpage>
                     <lpage>11</lpage>
@@ -1136,9 +1322,35 @@ where,
                     <volume>1</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref012">
                 <element-citation>
                     <article-title>Experimental and computational assessment of conditionally essential genes in Escherichia coli</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Joyce</surname>
+                            <given-names>AR</given-names>
+                        </name>
+                        <name>
+                            <surname>Reed</surname>
+                            <given-names>JL</given-names>
+                        </name>
+                        <name>
+                            <surname>White</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Edwards</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Osterman</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Baba</surname>
+                            <given-names>T</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2006">2006</year>
                     <fpage>8259</fpage>
                     <lpage>71</lpage>
@@ -1147,9 +1359,35 @@ where,
                     <volume>188</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref013">
                 <element-citation>
                     <article-title>A postgenomic method for predicting essential genes at subsaturation levels of mutagenesis: application to Mycobacterium tuberculosis</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Lamichhane</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Zignol</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Blades</surname>
+                            <given-names>NJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Geiman</surname>
+                            <given-names>DE</given-names>
+                        </name>
+                        <name>
+                            <surname>Dougherty</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Grosset</surname>
+                            <given-names>J</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2003">2003</year>
                     <fpage>7213</fpage>
                     <lpage>8</lpage>
@@ -1158,9 +1396,19 @@ where,
                     <volume>100</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref014">
                 <element-citation>
                     <article-title>Genome-scale reconstruction of the metabolic network in Staphylococcus aureus N315: an initial draft to the two-dimensional annotation</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Becker</surname>
+                            <given-names>SA</given-names>
+                        </name>
+                        <name>
+                            <surname>Palsson</surname>
+                            <given-names>BØ</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2005">2005</year>
                     <fpage>1</fpage>
                     <issue>1</issue>
@@ -1168,9 +1416,15 @@ where,
                     <volume>5</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref015">
                 <element-citation>
                     <article-title>The minimal cell genome:" on being the right size"</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Maniloff</surname>
+                            <given-names>J</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1996">1996</year>
                     <fpage>10004</fpage>
                     <lpage>6</lpage>
@@ -1179,9 +1433,35 @@ where,
                     <volume>93</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref016">
                 <element-citation>
                     <article-title>Functional profiling of the Saccharomyces cerevisiae genome</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Giaever</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Chu</surname>
+                            <given-names>AM</given-names>
+                        </name>
+                        <name>
+                            <surname>Ni</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Connelly</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Riles</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Veronneau</surname>
+                            <given-names>S</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2002">2002</year>
                     <fpage>387</fpage>
                     <lpage>91</lpage>
@@ -1190,9 +1470,19 @@ where,
                     <volume>418</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref017">
                 <element-citation>
                     <article-title>Genome-wide screening for gene function using RNAi in mammalian cells</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Cullen</surname>
+                            <given-names>LM</given-names>
+                        </name>
+                        <name>
+                            <surname>Arndt</surname>
+                            <given-names>GM</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2005">2005</year>
                     <fpage>217</fpage>
                     <lpage>23</lpage>
@@ -1201,18 +1491,62 @@ where,
                     <volume>83</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref018">
                 <element-citation>
                     <article-title>The essential gene set of a photosynthetic organism</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Rubin</surname>
+                            <given-names>BE</given-names>
+                        </name>
+                        <name>
+                            <surname>Wetmore</surname>
+                            <given-names>KM</given-names>
+                        </name>
+                        <name>
+                            <surname>Price</surname>
+                            <given-names>MN</given-names>
+                        </name>
+                        <name>
+                            <surname>Diamond</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Shultzaberger</surname>
+                            <given-names>RK</given-names>
+                        </name>
+                        <name>
+                            <surname>Lowe</surname>
+                            <given-names>LC</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2015">2015</year>
                     <issue>48</issue>
                     <source>Proceedings of the National Academy of Sciences</source>
                     <volume>112</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref019">
                 <element-citation>
                     <article-title>Lethality and centrality in protein networks</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Jeong</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Mason</surname>
+                            <given-names>SP</given-names>
+                        </name>
+                        <name>
+                            <surname>Barabási</surname>
+                            <given-names>A-L</given-names>
+                        </name>
+                        <name>
+                            <surname>Oltvai</surname>
+                            <given-names>ZN</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2001">2001</year>
                     <fpage>41</fpage>
                     <lpage>2</lpage>
@@ -1221,9 +1555,27 @@ where,
                     <volume>411</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref020">
                 <element-citation>
                     <article-title>Gene co-expression network topology provides a framework for molecular characterization of cellular state</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Carter</surname>
+                            <given-names>SL</given-names>
+                        </name>
+                        <name>
+                            <surname>Brechbühler</surname>
+                            <given-names>CM</given-names>
+                        </name>
+                        <name>
+                            <surname>Griffin</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Bond</surname>
+                            <given-names>AT</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2004">2004</year>
                     <fpage>2242</fpage>
                     <lpage>50</lpage>
@@ -1232,18 +1584,38 @@ where,
                     <volume>20</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref021">
                 <element-citation>
                     <article-title>Computational prediction of essential metabolic genes using constraint-based approaches</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Basler</surname>
+                            <given-names>G</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2015">2015</year>
                     <source>Gene Essentiality: Methods and Protocols</source>
                     <fpage>183</fpage>
                     <lpage>204</lpage>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref022">
                 <element-citation>
                     <article-title>Genome‐scale gene/reaction essentiality and synthetic lethality analysis</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Suthers</surname>
+                            <given-names>PF</given-names>
+                        </name>
+                        <name>
+                            <surname>Zomorrodi</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Maranas</surname>
+                            <given-names>CD</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2009">2009</year>
                     <fpage>301</fpage>
                     <issue>1</issue>
@@ -1251,16 +1623,56 @@ where,
                     <volume>5</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref023">
                 <element-citation>
                     <article-title>Metabolic model of Synechococcus sp. PCC 7002: Prediction of flux distribution and network modification for enhanced biofuel production</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Hendry</surname>
+                            <given-names>JI</given-names>
+                        </name>
+                        <name>
+                            <surname>Prasannan</surname>
+                            <given-names>CB</given-names>
+                        </name>
+                        <name>
+                            <surname>Joshi</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Dasgupta</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Wangikar</surname>
+                            <given-names>PP</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2016">2016</year>
                     <source>Bioresource technology</source>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref024">
                 <element-citation>
                     <article-title>Metabolic flux analysis of Cyanothece sp. ATCC 51142 under mixotrophic conditions</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Alagesan</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Gaudana</surname>
+                            <given-names>SB</given-names>
+                        </name>
+                        <name>
+                            <surname>Sinha</surname>
+                            <given-names>A</given-names>
+                        </name>
+                        <name>
+                            <surname>Wangikar</surname>
+                            <given-names>PP</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <fpage>191</fpage>
                     <lpage>8</lpage>
@@ -1269,9 +1681,31 @@ where,
                     <volume>118</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref025">
                 <element-citation>
                     <article-title>Whole-genome analysis of photosynthetic prokaryotes</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Raymond</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Zhaxybayeva</surname>
+                            <given-names>O</given-names>
+                        </name>
+                        <name>
+                            <surname>Gogarten</surname>
+                            <given-names>JP</given-names>
+                        </name>
+                        <name>
+                            <surname>Gerdes</surname>
+                            <given-names>SY</given-names>
+                        </name>
+                        <name>
+                            <surname>Blankenship</surname>
+                            <given-names>RE</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2002">2002</year>
                     <fpage>1616</fpage>
                     <lpage>20</lpage>
@@ -1280,9 +1714,23 @@ where,
                     <volume>298</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref026">
                 <element-citation>
                     <article-title>Genome fluctuations in cyanobacteria reflect evolutionary, developmental and adaptive traits</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Larsson</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Nylander</surname>
+                            <given-names>JA</given-names>
+                        </name>
+                        <name>
+                            <surname>Bergman</surname>
+                            <given-names>B</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2011">2011</year>
                     <fpage>1</fpage>
                     <issue>1</issue>
@@ -1290,9 +1738,31 @@ where,
                     <volume>11</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref027">
                 <element-citation>
                     <article-title>Assigning protein functions by comparative genome analysis: protein phylogenetic profiles</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Pellegrini</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Marcotte</surname>
+                            <given-names>EM</given-names>
+                        </name>
+                        <name>
+                            <surname>Thompson</surname>
+                            <given-names>MJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Eisenberg</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Yeates</surname>
+                            <given-names>TO</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1999">1999</year>
                     <fpage>4285</fpage>
                     <lpage>8</lpage>
@@ -1301,9 +1771,31 @@ where,
                     <volume>96</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref028">
                 <element-citation>
                     <article-title>CD-HIT: accelerated for clustering the next-generation sequencing data</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Fu</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Niu</surname>
+                            <given-names>B</given-names>
+                        </name>
+                        <name>
+                            <surname>Zhu</surname>
+                            <given-names>Z</given-names>
+                        </name>
+                        <name>
+                            <surname>Wu</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Li</surname>
+                            <given-names>W</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2012">2012</year>
                     <fpage>3150</fpage>
                     <lpage>2</lpage>
@@ -1312,9 +1804,27 @@ where,
                     <volume>28</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref029">
                 <element-citation>
                     <article-title>A global analysis of adaptive evolution of operons in cyanobacteria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Memon</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Singh</surname>
+                            <given-names>AK</given-names>
+                        </name>
+                        <name>
+                            <surname>Pakrasi</surname>
+                            <given-names>HB</given-names>
+                        </name>
+                        <name>
+                            <surname>Wangikar</surname>
+                            <given-names>PP</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <fpage>331</fpage>
                     <lpage>46</lpage>
@@ -1323,9 +1833,31 @@ where,
                     <volume>103</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref030">
                 <element-citation>
                     <article-title>Phosphopantothenoylcysteine synthetase from Escherichia coli Identification and characterization of the last unidentified coenzyme A biosynthetic enzyme in bacteria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Strauss</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Kinsland</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Ge</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>McLafferty</surname>
+                            <given-names>FW</given-names>
+                        </name>
+                        <name>
+                            <surname>Begley</surname>
+                            <given-names>TP</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2001">2001</year>
                     <fpage>13513</fpage>
                     <lpage>6</lpage>
@@ -1334,9 +1866,35 @@ where,
                     <volume>276</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref031">
                 <element-citation>
                     <article-title>Structure and function of the phenazine biosynthesis protein PhzF from Pseudomonas fluorescens 2–79</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Parsons</surname>
+                            <given-names>JF</given-names>
+                        </name>
+                        <name>
+                            <surname>Song</surname>
+                            <given-names>F</given-names>
+                        </name>
+                        <name>
+                            <surname>Parsons</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Calabrese</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Eisenstein</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Ladner</surname>
+                            <given-names>JE</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2004">2004</year>
                     <fpage>12427</fpage>
                     <lpage>35</lpage>
@@ -1345,9 +1903,35 @@ where,
                     <volume>43</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref032">
                 <element-citation>
                     <article-title>Structure and function of the phenazine biosynthetic protein PhzF from Pseudomonas fluorescens</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Blankenfeldt</surname>
+                            <given-names>W</given-names>
+                        </name>
+                        <name>
+                            <surname>Kuzin</surname>
+                            <given-names>AP</given-names>
+                        </name>
+                        <name>
+                            <surname>Skarina</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Korniyenko</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>Tong</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Bayer</surname>
+                            <given-names>P</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2004">2004</year>
                     <fpage>16431</fpage>
                     <lpage>6</lpage>
@@ -1356,9 +1940,19 @@ where,
                     <volume>101</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref033">
                 <element-citation>
                     <article-title>Circadian rhythms in cyanobacteria</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Cohen</surname>
+                            <given-names>SE</given-names>
+                        </name>
+                        <name>
+                            <surname>Golden</surname>
+                            <given-names>SS</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2015">2015</year>
                     <fpage>373</fpage>
                     <lpage>85</lpage>
@@ -1367,18 +1961,70 @@ where,
                     <volume>79</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref034">
                 <element-citation>
                     <article-title>Rhythmic and sustained oscillations in metabolism and gene expression of Cyanothece sp. ATCC 51142 under constant light</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Gaudana</surname>
+                            <given-names>SB</given-names>
+                        </name>
+                        <name>
+                            <surname>Krishnakumar</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Alagesan</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Digmurti</surname>
+                            <given-names>MG</given-names>
+                        </name>
+                        <name>
+                            <surname>Viswanathan</surname>
+                            <given-names>GA</given-names>
+                        </name>
+                        <name>
+                            <surname>Chetty</surname>
+                            <given-names>M</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2013">2013</year>
                     <source>Frontiers in microbiology</source>
                     <fpage>374</fpage>
                     <volume>4</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref035">
                 <element-citation>
                     <article-title>Cyanobacterial signature genes</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Martin</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Siefert</surname>
+                            <given-names>JL</given-names>
+                        </name>
+                        <name>
+                            <surname>Yerrapragada</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Lu</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>McNeill</surname>
+                            <given-names>TZ</given-names>
+                        </name>
+                        <name>
+                            <surname>Moreno</surname>
+                            <given-names>PA</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2003">2003</year>
                     <fpage>211</fpage>
                     <lpage>21</lpage>
@@ -1387,9 +2033,27 @@ where,
                     <volume>75</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref036">
                 <element-citation>
                     <article-title>Photosystem II proteins PsbL and PsbJ regulate electron flow to the plastoquinone pool</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Ohad</surname>
+                            <given-names>I</given-names>
+                        </name>
+                        <name>
+                            <surname>Dal Bosco</surname>
+                            <given-names>C</given-names>
+                        </name>
+                        <name>
+                            <surname>Herrmann</surname>
+                            <given-names>RG</given-names>
+                        </name>
+                        <name>
+                            <surname>Meurer</surname>
+                            <given-names>J</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2004">2004</year>
                     <fpage>2297</fpage>
                     <lpage>308</lpage>
@@ -1398,9 +2062,35 @@ where,
                     <volume>43</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref037">
                 <element-citation>
                     <article-title>Protein assembly of photosystem II and accumulation of subcomplexes in the absence of low molecular mass subunits PsbL and PsbJ</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Suorsa</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Regel</surname>
+                            <given-names>RE</given-names>
+                        </name>
+                        <name>
+                            <surname>Paakkarinen</surname>
+                            <given-names>V</given-names>
+                        </name>
+                        <name>
+                            <surname>Battchikova</surname>
+                            <given-names>N</given-names>
+                        </name>
+                        <name>
+                            <surname>Herrmann</surname>
+                            <given-names>RG</given-names>
+                        </name>
+                        <name>
+                            <surname>Aro</surname>
+                            <given-names>EM</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2004">2004</year>
                     <fpage>96</fpage>
                     <lpage>107</lpage>
@@ -1409,9 +2099,35 @@ where,
                     <volume>271</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref038">
                 <element-citation>
                     <article-title>Mössbauer studies of the non‐heme iron and cytochrome b 559 in a Chlamydomonas reinhardtii PSI− mutant and their interactions with α‐tocopherol quinone</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Burda</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Kruk</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Borgstädt</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Stanek</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Strzaka</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Schmid</surname>
+                            <given-names>GH</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2003">2003</year>
                     <fpage>159</fpage>
                     <lpage>65</lpage>
@@ -1420,9 +2136,27 @@ where,
                     <volume>535</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref039">
                 <element-citation>
                     <article-title>Overexpression, purification and characterization of isochorismate synthase (EntC), the first enzyme involved in the biosynthesis of enterobactin from chorismate</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Liu</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Quinn</surname>
+                            <given-names>N</given-names>
+                        </name>
+                        <name>
+                            <surname>Berchtold</surname>
+                            <given-names>GA</given-names>
+                        </name>
+                        <name>
+                            <surname>Walsh</surname>
+                            <given-names>CT</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1990">1990</year>
                     <fpage>1417</fpage>
                     <lpage>25</lpage>
@@ -1431,9 +2165,27 @@ where,
                     <volume>29</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref040">
                 <element-citation>
                     <article-title>Amino acid sequence homology among fructose-1, 6-bisphosphatases</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Marcus</surname>
+                            <given-names>F</given-names>
+                        </name>
+                        <name>
+                            <surname>Gontero</surname>
+                            <given-names>B</given-names>
+                        </name>
+                        <name>
+                            <surname>Harrsch</surname>
+                            <given-names>PB</given-names>
+                        </name>
+                        <name>
+                            <surname>Rittenhouse</surname>
+                            <given-names>J</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1986">1986</year>
                     <fpage>374</fpage>
                     <lpage>81</lpage>
@@ -1442,9 +2194,19 @@ where,
                     <volume>135</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref041">
                 <element-citation>
                     <article-title>Genetic tagging, cloning, and DNA sequence of the Synechococcus sp. strain PCC 7942 gene (gnd) encoding 6-phosphogluconate dehydrogenase</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Broedel</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Wolf</surname>
+                            <given-names>R</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1990">1990</year>
                     <fpage>4023</fpage>
                     <lpage>31</lpage>
@@ -1453,9 +2215,19 @@ where,
                     <volume>172</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref042">
                 <element-citation>
                     <article-title>Gas vesicle proteins</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Walsby</surname>
+                            <given-names>AE</given-names>
+                        </name>
+                        <name>
+                            <surname>Hayes</surname>
+                            <given-names>PK</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1989">1989</year>
                     <fpage>313</fpage>
                     <issue>2</issue>
@@ -1463,9 +2235,23 @@ where,
                     <volume>264</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref043">
                 <element-citation>
                     <article-title>Structure and organization of the gas vesicle gene cluster on the Halobacterium halobium plasmid pNRC100</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Jones</surname>
+                            <given-names>JG</given-names>
+                        </name>
+                        <name>
+                            <surname>Young</surname>
+                            <given-names>DC</given-names>
+                        </name>
+                        <name>
+                            <surname>DasSarma</surname>
+                            <given-names>S</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1991">1991</year>
                     <fpage>117</fpage>
                     <lpage>22</lpage>
@@ -1474,9 +2260,15 @@ where,
                     <volume>102</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref044">
                 <element-citation>
                     <article-title>The plasmid-encoded arsenical resistance pump: an anion-translocating ATPase</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Rosen</surname>
+                            <given-names>B</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="1990">1990</year>
                     <fpage>336</fpage>
                     <lpage>41</lpage>
@@ -1485,9 +2277,27 @@ where,
                     <volume>141</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref045">
                 <element-citation>
                     <article-title>Structure of the ArsA ATPase: the catalytic subunit of a heavy metal resistance pump</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Zhou</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Radaev</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Rosen</surname>
+                            <given-names>BP</given-names>
+                        </name>
+                        <name>
+                            <surname>Gatti</surname>
+                            <given-names>DL</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2000">2000</year>
                     <fpage>4838</fpage>
                     <lpage>45</lpage>
@@ -1496,17 +2306,49 @@ where,
                     <volume>19</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref046">
                 <element-citation>
                     <article-title>Functional promiscuity of homologues of the bacterial ArsA ATPases</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Castillo</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Saier</surname>
+                            <given-names>MH</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2010">2010</year>
                     <source>International journal of microbiology</source>
                     <fpage>2010</fpage>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref047">
                 <element-citation>
                     <article-title>A putative RNA-interference-based immune system in prokaryotes: computational analysis of the predicted enzymatic machinery, functional analogies with eukaryotic RNAi, and hypothetical mechanisms of action</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Makarova</surname>
+                            <given-names>KS</given-names>
+                        </name>
+                        <name>
+                            <surname>Grishin</surname>
+                            <given-names>NV</given-names>
+                        </name>
+                        <name>
+                            <surname>Shabalina</surname>
+                            <given-names>SA</given-names>
+                        </name>
+                        <name>
+                            <surname>Wolf</surname>
+                            <given-names>YI</given-names>
+                        </name>
+                        <name>
+                            <surname>Koonin</surname>
+                            <given-names>EV</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2006">2006</year>
                     <fpage>1</fpage>
                     <issue>1</issue>
@@ -1514,9 +2356,27 @@ where,
                     <volume>1</volume>
                 </element-citation>
             </ref>
-            <ref>
+            <ref id="pone.0178565.ref048">
                 <element-citation>
                     <article-title>Helicase dissociation and annealing of RNA-DNA hybrids by Escherichia coli Cas3 protein</article-title>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Howard</surname>
+                            <given-names>JA</given-names>
+                        </name>
+                        <name>
+                            <surname>Delmas</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Ivančić-Baće</surname>
+                            <given-names>I</given-names>
+                        </name>
+                        <name>
+                            <surname>Bolt</surname>
+                            <given-names>EL</given-names>
+                        </name>
+                    </person-group>
                     <year iso-8601-date="2011">2011</year>
                     <fpage>85</fpage>
                     <lpage>95</lpage>

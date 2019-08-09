@@ -78,19 +78,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '1'
-            target: '#ref-1'
-            type: Link
-            relation: bibr
+          - target: '#ref-1'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '2'
-            target: '#ref-2'
-            type: Link
-            relation: bibr
+          - target: '#ref-2'
+            type: Cite
       - |-
         . The increasing CO
 
@@ -102,11 +96,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '3'
-            target: '#ref-3'
-            type: Link
-            relation: bibr
+          - target: '#ref-3'
+            type: Cite
       - >-
         . Additionally, the inherent fragility of dry lands made them
         particularly vulnerable to climate change, even a small change in
@@ -115,72 +106,51 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '4'
-            target: '#ref-4'
-            type: Link
-            relation: bibr
+          - target: '#ref-4'
+            type: Cite
       - |-
         . IIED
 
       - type: Superscript
         content:
-          - content:
-              - '5'
-            target: '#ref-5'
-            type: Link
-            relation: bibr
+          - target: '#ref-5'
+            type: Cite
       - |2-
          suggests that dry-land regions are projected to significant climate changes, but there still exist substantial variability and uncertainty in these estimates based on different scenarios. Many of the important United Arab Emirates (UAE) plant species, for instance, may be facing major challenges for their survival. Many of such native species are becoming restricted in their distributions because of overgrazing and habitat destruction. In addition to the natural prolonged drought, human activities are also threatening many native plants
 
       - type: Superscript
         content:
-          - content:
-              - '6'
-            target: '#ref-6'
-            type: Link
-            relation: bibr
+          - target: '#ref-6'
+            type: Cite
       - |2-
          and their conservation
 
       - type: Superscript
         content:
-          - content:
-              - '7'
-            target: '#ref-7'
-            type: Link
-            relation: bibr
+          - target: '#ref-7'
+            type: Cite
       - |-
         . The IPCC report
 
       - type: Superscript
         content:
-          - content:
-              - '8'
-            target: '#ref-8'
-            type: Link
-            relation: bibr
+          - target: '#ref-8'
+            type: Cite
       - |2-
          also projected that deserts are going to become hotter and drier. Additionally and in relation to the Arab region, climate change-induced desertification has been prolonged, critically affecting the vulnerability of the local population. The projected warming would lead to seasonal changes in precipitation, evapotranspiration and radiation Hulme and Jenkins
 
       - type: Superscript
         content:
-          - content:
-              - '9'
-            target: '#ref-9'
-            type: Link
-            relation: bibr
+          - target: '#ref-9'
+            type: Cite
       - >-
         . These changes can largely affect the distribution of species and
         habitat composition
 
       - type: Superscript
         content:
-          - content:
-              - '10'
-            target: '#ref-10'
-            type: Link
-            relation: bibr
+          - target: '#ref-10'
+            type: Cite
       - >-
         . Thus, the implications of climate change for biodiversity have led to
         the use of bioclimatic models in order to forecast the species range
@@ -188,11 +158,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '11'
-            target: '#ref-11'
-            type: Link
-            relation: bibr
+          - target: '#ref-11'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -202,11 +169,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '12'
-            target: '#ref-12'
-            type: Link
-            relation: bibr
+          - target: '#ref-12'
+            type: Cite
       - >-
         . Ecological envelope models or species distribution models (SDMs) have
         been widely used for projecting the habitat shift and distribution
@@ -214,39 +178,27 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '13'
-            target: '#ref-13'
-            type: Link
-            relation: bibr
+          - target: '#ref-13'
+            type: Cite
       - |-
         . These models are also used to understand biological processes
 
       - type: Superscript
         content:
-          - content:
-              - '14'
-            target: '#ref-14'
-            type: Link
-            relation: bibr
+          - target: '#ref-14'
+            type: Cite
       - |2-
          and climate change impacts on biodiversity
 
       - type: Superscript
         content:
-          - content:
-              - '15'
-            target: '#ref-15'
-            type: Link
-            relation: bibr
+          - target: '#ref-15'
+            type: Cite
           - |-
             –
 
-          - content:
-              - '17'
-            target: '#ref-17'
-            type: Link
-            relation: bibr
+          - target: '#ref-17'
+            type: Cite
       - >-
         . Understanding the future distribution of climatically suitable habitat
         allows the conservation planners to assess the vulnerability of species
@@ -254,19 +206,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '18'
-            target: '#ref-18'
-            type: Link
-            relation: bibr
+          - target: '#ref-18'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '19'
-            target: '#ref-19'
-            type: Link
-            relation: bibr
+          - target: '#ref-19'
+            type: Cite
       - >-
         . The species occurrence records alone may not be sufficient for
         building robust conservation strategy in light of climate change. While
@@ -276,19 +222,13 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '20'
-            target: '#ref-20'
-            type: Link
-            relation: bibr
+          - target: '#ref-20'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '21'
-            target: '#ref-21'
-            type: Link
-            relation: bibr
+          - target: '#ref-21'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -300,29 +240,20 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '22'
-            target: '#ref-22'
-            type: Link
-            relation: bibr
+          - target: '#ref-22'
+            type: Cite
           - |-
             –
 
-          - content:
-              - '24'
-            target: '#ref-24'
-            type: Link
-            relation: bibr
+          - target: '#ref-24'
+            type: Cite
       - |-
         . MaxEnt is a species distribution model (SDM)
 
       - type: Superscript
         content:
-          - content:
-              - '25'
-            target: '#ref-25'
-            type: Link
-            relation: bibr
+          - target: '#ref-25'
+            type: Cite
       - |2-
          and it is used for the present study. The hypothesis is that shifting, contracting and expanding species habitats are affected by the ongoing climate change. For this, habitat suitability changes of the selected three species (i.e. 
 
@@ -383,11 +314,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '26'
-            target: '#ref-26'
-            type: Link
-            relation: bibr
+          - target: '#ref-26'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -399,11 +327,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '27'
-            target: '#ref-27'
-            type: Link
-            relation: bibr
+          - target: '#ref-27'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -438,21 +363,15 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '28'
-            target: '#ref-28'
-            type: Link
-            relation: bibr
+          - target: '#ref-28'
+            type: Cite
       - |2-
          and tested for colinearity using the SDM tool in ArcGis 10.1
 
       - type: Superscript
         content:
-          - content:
-              - '29'
-            target: '#ref-29'
-            type: Link
-            relation: bibr
+          - target: '#ref-29'
+            type: Cite
       - |2-
          (an open-source alternative is 
 
@@ -476,11 +395,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '30'
-            target: '#ref-30'
-            type: Link
-            relation: bibr
+          - target: '#ref-30'
+            type: Cite
       - >-
         . It includes global emissions of greenhouse gases and
         land-use-land-cover. A resolution of approximately 1 km
@@ -518,11 +434,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '31'
-            target: '#ref-31'
-            type: Link
-            relation: bibr
+          - target: '#ref-31'
+            type: Cite
       - >-
         , which is a set of global climate layers generated through
         interpolation of climate data from weather stations on a 30 arc-seconds
@@ -605,40 +518,28 @@ content:
         type: Link
       - type: Superscript
         content:
-          - content:
-              - '25'
-            target: '#ref-25'
-            type: Link
-            relation: bibr
+          - target: '#ref-25'
+            type: Cite
       - |2-
          was used for this assessment of the three different tree/shrub species distribution. MaxEnt has been used to model species niches and distributions through machine-learning techniques referred to as maximum entropy modeling
 
       - type: Superscript
         content:
-          - content:
-              - '17'
-            target: '#ref-17'
-            type: Link
-            relation: bibr
+          - target: '#ref-17'
+            type: Cite
           - |-
             ,
 
-          - content:
-              - '32'
-            target: '#ref-32'
-            type: Link
-            relation: bibr
+          - target: '#ref-32'
+            type: Cite
       - >-
         . It is very robust in cases of small sample size of species
         distribution and locations
 
       - type: Superscript
         content:
-          - content:
-              - '17'
-            target: '#ref-17'
-            type: Link
-            relation: bibr
+          - target: '#ref-17'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -649,22 +550,16 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '33'
-            target: '#ref-33'
-            type: Link
-            relation: bibr
+          - target: '#ref-33'
+            type: Cite
       - >-
         . The model expresses a probability distribution where each grid cell is
         predictably suitable to the conditions for a species to occur
 
       - type: Superscript
         content:
-          - content:
-              - '33'
-            target: '#ref-33'
-            type: Link
-            relation: bibr
+          - target: '#ref-33'
+            type: Cite
       - >-
         . To improve model performance and minimize over-fitting, because of the
         impact of correlation among explanatory variables, a Pearson’s
@@ -673,60 +568,42 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '34'
-            target: '#ref-34'
-            type: Link
-            relation: bibr
+          - target: '#ref-34'
+            type: Cite
           - |-
             –
 
-          - content:
-              - '36'
-            target: '#ref-36'
-            type: Link
-            relation: bibr
+          - target: '#ref-36'
+            type: Cite
       - |-
         . MaxEnt
 
       - type: Superscript
         content:
-          - content:
-              - '25'
-            target: '#ref-25'
-            type: Link
-            relation: bibr
+          - target: '#ref-25'
+            type: Cite
       - |2-
          is a model for predicting the distribution of species based on environmental parameters and species’ presence data
 
       - type: Superscript
         content:
-          - content:
-              - '37'
-            target: '#ref-37'
-            type: Link
-            relation: bibr
+          - target: '#ref-37'
+            type: Cite
       - |-
         . It uses both continuous and categorical data
 
       - type: Superscript
         content:
-          - content:
-              - '25'
-            target: '#ref-25'
-            type: Link
-            relation: bibr
+          - target: '#ref-25'
+            type: Cite
       - >-
         . MaxEnt has been reported to be comparable to other highly accurate
         prediction methods, even when dealing with small sample sizes
 
       - type: Superscript
         content:
-          - content:
-              - '38'
-            target: '#ref-38'
-            type: Link
-            relation: bibr
+          - target: '#ref-38'
+            type: Cite
       - >-
         . This model was run for the current and future (2050–2070)
         distributions. MaxEnt model was evaluated through the use of the area
@@ -734,22 +611,16 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '39'
-            target: '#ref-39'
-            type: Link
-            relation: bibr
+          - target: '#ref-39'
+            type: Cite
       - >-
         . While generating response curves, the MaxEnt model estimates the
         relative effect of each predictor
 
       - type: Superscript
         content:
-          - content:
-              - '40'
-            target: '#ref-40'
-            type: Link
-            relation: bibr
+          - target: '#ref-40'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -794,8 +665,8 @@ content:
       - content:
           - Figure 1a
         target: '#f1'
-        type: Link
         relation: fig
+        type: Link
       - |-
         ). Whereas for 
 
@@ -808,8 +679,8 @@ content:
       - content:
           - Figure 1b
         target: '#f1'
-        type: Link
         relation: fig
+        type: Link
       - |-
         ). At the same time for 
 
@@ -822,8 +693,8 @@ content:
       - content:
           - Figure 1c
         target: '#f1'
-        type: Link
         relation: fig
+        type: Link
       - |-
         ). Locations for each species are available as 
 
@@ -832,11 +703,8 @@ content:
           - Underlying data
       - type: Superscript
         content:
-          - content:
-              - '41'
-            target: '#ref-41'
-            type: Link
-            relation: bibr
+          - target: '#ref-41'
+            type: Cite
       - .
     type: Paragraph
   - rows:
@@ -1101,8 +969,8 @@ content:
       - content:
           - Figure 2
         target: '#f2'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ) clearly indicate that the environmental conditions in the northern
         part of the UAE (Ras AlKhaimah, Al-Fujayrah, Sharjah, Ajman, Umm
@@ -1120,8 +988,8 @@ content:
       - content:
           - Figure 3
         target: '#f3'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ) followed by 9.4% as medium suitability habitat (M). The remaining
         88.6% of the country has low environmental suitability (L) for this
@@ -1136,8 +1004,8 @@ content:
       - content:
           - Figure 3
         target: '#f3'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ), 1.5% of the total area was predicted as a highly suitable habitat and
         5.7% as medium suitability. 
@@ -1151,8 +1019,8 @@ content:
       - content:
           - Figure 3
         target: '#f3'
-        type: Link
         relation: fig
+        type: Link
       - >-
         ) revealed high and medium suitability habitat of around 5.7% and 11.5%,
         respectively.
@@ -1309,11 +1177,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '42'
-            target: '#ref-42'
-            type: Link
-            relation: bibr
+          - target: '#ref-42'
+            type: Cite
       - |-
         . A study by Frosi 
 
@@ -1325,11 +1190,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '43'
-            target: '#ref-43'
-            type: Link
-            relation: bibr
+          - target: '#ref-43'
+            type: Cite
       - |2-
          suggested that 
 
@@ -1347,11 +1209,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '44'
-            target: '#ref-44'
-            type: Link
-            relation: bibr
+          - target: '#ref-44'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -1372,22 +1231,16 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '27'
-            target: '#ref-27'
-            type: Link
-            relation: bibr
+          - target: '#ref-27'
+            type: Cite
       - >-
         . In UAE, during the past few decades around 300,000 ha has been planted
         with forests
 
       - type: Superscript
         content:
-          - content:
-              - '45'
-            target: '#ref-45'
-            type: Link
-            relation: bibr
+          - target: '#ref-45'
+            type: Cite
       - >-
         . The main purpose of these plantation is to combat desertification by
         afforestation. These artificial forests utilizes numerous resources with
@@ -1430,11 +1283,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '27'
-            target: '#ref-27'
-            type: Link
-            relation: bibr
+          - target: '#ref-27'
+            type: Cite
       - |-
         . 
 
@@ -1452,11 +1302,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '27'
-            target: '#ref-27'
-            type: Link
-            relation: bibr
+          - target: '#ref-27'
+            type: Cite
       - |-
         . Growth and floral diversity are better under 
 
@@ -1468,11 +1315,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '46'
-            target: '#ref-46'
-            type: Link
-            relation: bibr
+          - target: '#ref-46'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -1484,11 +1328,8 @@ content:
 
       - type: Superscript
         content:
-          - content:
-              - '47'
-            target: '#ref-47'
-            type: Link
-            relation: bibr
+          - target: '#ref-47'
+            type: Cite
       - .
     type: Paragraph
   - content:
@@ -1527,11 +1368,8 @@ content:
         type: Link
       - type: Superscript
         content:
-          - content:
-              - '41'
-            target: '#ref-41'
-            type: Link
-            relation: bibr
+          - target: '#ref-41'
+            type: Cite
       - '. This project contains a zipped folder made up of the following files:'
     type: Paragraph
   - items:
@@ -1609,6 +1447,7 @@ references:
         volumeNumber: 15
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-1
   - authors:
       - givenNames:
           - AS
@@ -1636,6 +1475,7 @@ references:
       title: Biol Conserv.
       volumeNumber: 165
       type: PublicationVolume
+    id: ref-2
   - authors:
       - givenNames:
           - A
@@ -1663,6 +1503,7 @@ references:
       title: Ecol Complex.
       volumeNumber: 20
       type: PublicationVolume
+    id: ref-3
   - authors:
       - givenNames:
           - BO
@@ -1675,12 +1516,14 @@ references:
       regiona bureau for the arab states
     type: Article
     datePublished: '2010'
+    id: ref-4
   - authors: []
     title: >-
       Climate Change and Drylands International Institute for Environmental
       Development- Commission on Climate Change and Development
     type: Article
     datePublished: '2008'
+    id: ref-5
   - authors:
       - givenNames:
           - A
@@ -1708,6 +1551,7 @@ references:
       title: J Arid Environ.
       volumeNumber: 117
       type: PublicationVolume
+    id: ref-6
   - authors:
       - givenNames:
           - T
@@ -1738,10 +1582,12 @@ references:
         volumeNumber: 3
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-7
   - authors: []
     title: The physical science basis
     type: Article
     datePublished: '2007'
+    id: ref-8
   - authors:
       - givenNames:
           - M
@@ -1756,6 +1602,7 @@ references:
     title: Climate change scenarios for the united kingdom scientific report 1998
     type: Article
     datePublished: '1998'
+    id: ref-9
   - authors:
       - givenNames:
           - RG
@@ -1786,6 +1633,7 @@ references:
         volumeNumber: 154
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-10
   - authors:
       - givenNames:
           - MB
@@ -1809,6 +1657,7 @@ references:
         volumeNumber: 22
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-11
   - authors:
       - givenNames:
           - YJ
@@ -1837,6 +1686,7 @@ references:
       title: Ecol Eng.
       volumeNumber: 92
       type: PublicationVolume
+    id: ref-12
   - authors:
       - givenNames:
           - JC
@@ -1867,6 +1717,7 @@ references:
         volumeNumber: 60
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-13
   - authors:
       - givenNames:
           - J
@@ -1892,6 +1743,7 @@ references:
         volumeNumber: 82
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-14
   - authors:
       - givenNames:
           - BA
@@ -1922,6 +1774,7 @@ references:
         volumeNumber: 17
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-15
   - authors:
       - givenNames:
           - A
@@ -1950,6 +1803,7 @@ references:
         volumeNumber: 43
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-16
   - authors:
       - givenNames:
           - RG
@@ -1980,6 +1834,7 @@ references:
         volumeNumber: 34
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-17
   - authors:
       - givenNames:
           - T
@@ -2007,6 +1862,7 @@ references:
       title: Forest Ecol Manag.
       volumeNumber: 360
       type: PublicationVolume
+    id: ref-18
   - authors:
       - givenNames:
           - SS
@@ -2037,6 +1893,7 @@ references:
         volumeNumber: 11
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-19
   - authors:
       - givenNames:
           - C
@@ -2067,6 +1924,7 @@ references:
         volumeNumber: 9
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-20
   - authors:
       - givenNames:
           - A
@@ -2095,6 +1953,7 @@ references:
         volumeNumber: 16
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-21
   - authors:
       - givenNames:
           - SJ
@@ -2123,6 +1982,7 @@ references:
         volumeNumber: 190
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-22
   - authors:
       - givenNames:
           - PA
@@ -2153,6 +2013,7 @@ references:
         volumeNumber: 29
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-23
   - authors:
       - givenNames:
           - RG
@@ -2168,6 +2029,7 @@ references:
       title: Madagascar J Biogeogr.
       volumeNumber: 1
       type: PublicationVolume
+    id: ref-24
   - authors:
       - givenNames:
           - SJ
@@ -2196,6 +2058,7 @@ references:
         volumeNumber: 190
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-25
   - authors:
       - givenNames:
           - HS
@@ -2224,6 +2087,7 @@ references:
         volumeNumber: 139
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-26
   - authors:
       - givenNames:
           - A
@@ -2247,6 +2111,7 @@ references:
         volumeNumber: 213
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-27
   - authors:
       - givenNames:
           - RJ
@@ -2266,10 +2131,12 @@ references:
     title: The worldclim interpolated global terrestrial climate surfaces
     type: Article
     datePublished: '2004'
+    id: ref-28
   - authors: []
     title: Arcgis 10.1
     type: Article
     datePublished: '2012'
+    id: ref-29
   - authors:
       - givenNames:
           - AM
@@ -2297,6 +2164,7 @@ references:
         volumeNumber: 109
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-30
   - authors:
       - givenNames:
           - RJ
@@ -2325,6 +2193,7 @@ references:
         volumeNumber: 25
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-31
   - authors:
       - givenNames:
           - R
@@ -2355,6 +2224,7 @@ references:
         volumeNumber: 29
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-32
   - authors:
       - givenNames:
           - E
@@ -2383,6 +2253,7 @@ references:
         volumeNumber: 2
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-33
   - authors:
       - givenNames:
           - S
@@ -2409,6 +2280,7 @@ references:
         volumeNumber: 1
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-34
   - authors:
       - givenNames:
           - 'N'
@@ -2439,6 +2311,7 @@ references:
         volumeNumber: 32
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-35
   - authors:
       - givenNames:
           - S
@@ -2469,6 +2342,7 @@ references:
         volumeNumber: 5
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-36
   - authors:
       - givenNames:
           - J
@@ -2497,6 +2371,7 @@ references:
         volumeNumber: 17
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-37
   - authors:
       - givenNames:
           - RP
@@ -2523,6 +2398,7 @@ references:
         volumeNumber: 222
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-38
   - authors:
       - givenNames:
           - O
@@ -2553,6 +2429,7 @@ references:
         volumeNumber: 43
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-39
   - authors:
       - givenNames:
           - R
@@ -2580,6 +2457,7 @@ references:
       title: Acta Oecol.
       volumeNumber: 49
       type: PublicationVolume
+    id: ref-40
   - authors:
       - givenNames:
           - T
@@ -2589,6 +2467,7 @@ references:
     title: Sure2018.zip
     type: Article
     datePublished: '2019'
+    id: ref-41
   - authors:
       - givenNames:
           - A
@@ -2617,6 +2496,7 @@ references:
         volumeNumber: 9
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-42
   - authors:
       - givenNames:
           - G
@@ -2648,6 +2528,7 @@ references:
         volumeNumber: 35
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-43
   - authors:
       - givenNames:
           - RN
@@ -2659,10 +2540,12 @@ references:
       cineraria": A wonder tree for agroforestry in arid and semi-arid areas"
     type: Article
     datePublished: '2016'
+    id: ref-44
   - authors: []
     title: State of Environment Report of the United Arab Emirates 2015
     type: Article
     datePublished: '2015'
+    id: ref-45
   - authors:
       - givenNames:
           - A
@@ -2694,7 +2577,9 @@ references:
         volumeNumber: 73
         type: PublicationVolume
       type: PublicationIssue
+    id: ref-46
   - authors: []
     title: National Climate Change Plan of the United Arab Emirates 2017-2050
     type: Article
     datePublished: '2017'
+    id: ref-47
