@@ -31,6 +31,6 @@ export class DoiCodec extends Codec implements Codec {
   }
 
   public encode = async (): Promise<vfile.VFile> => {
-    throw new Error(`Unparsing to DOI is not yet implemented`)
+    throw new Error(`Encoding to DOI is not yet implemented`)
   }
 }

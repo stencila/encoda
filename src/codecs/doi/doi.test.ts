@@ -35,6 +35,6 @@ test('decode', async () => {
 
 test('encode', async () => {
   await expect(encode()).rejects.toThrow(
-    /Unparsing to DOI is not yet implemented/
+    /Encoding to DOI is not yet implemented/
   )
 })
