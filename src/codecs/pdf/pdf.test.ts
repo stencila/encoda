@@ -2,9 +2,9 @@ import fs from 'fs-extra'
 import path from 'path'
 import * as vfile from '../../util/vfile'
 import articleSimple from '../../__fixtures__/article-simple'
-import { PDF } from './'
+import { PDFCodec } from './'
 
-const { encode, decode } = new PDF()
+const { encode, decode } = new PDFCodec()
 
 jest.setTimeout(30 * 1000) // Extending timeout due to long running test
 

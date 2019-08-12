@@ -8,7 +8,7 @@ import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Orcid extends Codec implements Codec {
+export class OrcidCodec extends Codec implements Codec {
   public mediaTypes = ['text/x-orcid']
 
   public extNames = ['orcid']
@@ -16,12 +16,12 @@ export class Orcid extends Codec implements Codec {
   private static regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
 
   public sniff = async (content: string): Promise<boolean> => {
-    return Orcid.regex.test(content)
+    return OrcidCodec.regex.test(content)
   }
 
   public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
-    const match = content.match(Orcid.regex)
+    const match = content.match(OrcidCodec.regex)
     if (!match) throw new Error('Unable to parse content')
 
     const orcid = match[4]

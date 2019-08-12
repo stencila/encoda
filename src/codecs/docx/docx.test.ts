@@ -1,6 +1,6 @@
 import articleSimple from '../../__fixtures__/article-simple'
-import { Docx } from './'
+import { DocxCodec } from './'
 
 test('invertible', async () => {
-  await expect(new Docx()).toInvert(articleSimple)
+  await expect(new DocxCodec()).toInvert(articleSimple)
 })

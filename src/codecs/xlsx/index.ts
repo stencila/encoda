@@ -13,7 +13,7 @@ import { Codec, GlobalEncodeOptions } from '../types'
 
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
-export class Xlsx extends Codec implements Codec {
+export class XlsxCodec extends Codec implements Codec {
   public mediaTypes = [
     // spell-checker: disable
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'

@@ -9,13 +9,14 @@ import * as P from '../pandoc'
 import { dataDir } from '../pandoc/binary'
 import { Codec, GlobalEncodeOptions } from '../types'
 
-const pandoc = new P.Pandoc()
+const pandoc = new P.PandocCodec()
 
 interface EncodeOptions {
   templatePath?: string
 }
 
-export class Docx extends Codec<EncodeOptions> implements Codec<EncodeOptions> {
+export class DocxCodec extends Codec<EncodeOptions>
+  implements Codec<EncodeOptions> {
   public mediaTypes = [
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   ]
@@ -45,7 +46,7 @@ export class Docx extends Codec<EncodeOptions> implements Codec<EncodeOptions> {
       codecOptions: {
         flags: [
           `--reference-doc=${codecOptions.templatePath ||
-            Docx.defaultTemplatePath}`
+            DocxCodec.defaultTemplatePath}`
         ],
         ensureFile: true
       }

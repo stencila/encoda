@@ -24,7 +24,7 @@ interface DecodeOptions {
   fetch: boolean
 }
 
-export class GDoc extends Codec<{}, DecodeOptions>
+export class GDocCodec extends Codec<{}, DecodeOptions>
   implements Codec<{}, DecodeOptions> {
   public mediaTypes = ['application/vnd.google-apps.document']
 

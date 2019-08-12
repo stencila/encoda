@@ -1,10 +1,10 @@
 import path from 'path'
-import { Bib } from '.'
+import { BibCodec } from '.'
 import * as vfile from '../../util/vfile'
-import { Yaml } from '../yaml'
+import { YamlCodec } from '../yaml'
 
-const { encode, decode } = new Bib()
-const yaml = new Yaml()
+const { encode, decode } = new BibCodec()
+const yaml = new YamlCodec()
 
 const fixture = (name: string) => path.join(__dirname, '__fixtures__', name)
 

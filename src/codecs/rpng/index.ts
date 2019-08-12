@@ -20,7 +20,7 @@ import { Codec, GlobalEncodeOptions } from '../types'
  */
 const KEYWORD = 'JSON'
 
-export class RPNG extends Codec implements Codec {
+export class RPNGCodec extends Codec implements Codec {
   // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
   // an custom extension to be able to refere to this format more easily.
   public mediaTypes = ['vnd.stencila.rpng']

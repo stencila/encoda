@@ -8,8 +8,9 @@ import { dump, load } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Xmd extends Codec implements Codec {
+export class XmdCodec extends Codec implements Codec {
   public mediaTypes = []
+
   public extNames = ['xmd', 'rmd']
 
   /**

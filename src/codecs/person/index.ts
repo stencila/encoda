@@ -12,7 +12,7 @@ import log from '../../log'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Person extends Codec implements Codec {
+export class PersonCodec extends Codec implements Codec {
   public mediaTypes = ['text/x-person']
 
   public extNames = ['person']

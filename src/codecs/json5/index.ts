@@ -7,7 +7,7 @@ import json5 from 'json5'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Json5 extends Codec implements Codec {
+export class Json5Codec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */

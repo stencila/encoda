@@ -28,7 +28,7 @@ const log = getLogger('encoda:html')
 // Ensures unique `id` attributes (e.g. for headings)
 const slugger = new GithubSlugger()
 
-export class HTML extends Codec implements Codec {
+export class HTMLCodec extends Codec implements Codec {
   public mediaTypes = ['text/html']
 
   /**

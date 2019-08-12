@@ -1,11 +1,11 @@
 import path from 'path'
-import { CSL } from '.'
+import { CSLCodec } from '.'
 import * as vfile from '../../util/vfile'
-import { Yaml } from '../yaml'
+import { YamlCodec } from '../yaml'
 
-const yaml = new Yaml()
+const yaml = new YamlCodec()
 
-const { encode, decode } = new CSL()
+const { encode, decode } = new CSLCodec()
 
 const fixture = (name: string) => path.join(__dirname, '__fixtures__', name)
 

@@ -7,7 +7,7 @@ import * as vfile from '../../util/vfile'
 import { decodeCsl } from '../csl'
 import { Codec } from '../types'
 
-export class Crossref extends Codec implements Codec {
+export class CrossrefCodec extends Codec implements Codec {
   public mediaTypes = ['text/x-crossref-query']
 
   public extNames = ['crossref-query']

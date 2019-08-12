@@ -1,10 +1,10 @@
-import { Crossref } from '.'
+import { CrossrefCodec } from '.'
 import * as vfile from '../../util/vfile'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
-import { Yaml } from '../yaml'
+import { YamlCodec } from '../yaml'
 
-const { encode, decode } = new Crossref()
-const yaml = new Yaml()
+const { encode, decode } = new CrossrefCodec()
+const yaml = new YamlCodec()
 
 const query2yaml = async (query: string) =>
   vfile.dump(await yaml.encode(await decode(await vfile.load(query))))

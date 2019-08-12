@@ -1,8 +1,8 @@
 import { Table } from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
-import { CSV } from './'
+import { CSVCodec } from './'
 
-const { decode, encode } = new CSV()
+const { decode, encode } = new CSVCodec()
 
 const simple = {
   content: `A,B,C\n1,2,3\n2,5,6\n3,8,9\n`,

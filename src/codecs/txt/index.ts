@@ -6,7 +6,7 @@ import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Txt extends Codec implements Codec {
+export class TxtCodec extends Codec implements Codec {
   /**
    * Media types that this codec can decode/encode.
    */

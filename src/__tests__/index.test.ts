@@ -1,11 +1,9 @@
-// @ts-ignore
 import delay from 'delay'
 import fs from 'fs-extra'
-import path from 'path'
 import tempy from 'tempy'
 import { codecList, convert, dump, handled, load, match, read, write } from '..'
-import { Json } from '../codecs/json'
-import { Yaml } from '../codecs/yaml'
+import { JsonCodec } from '../codecs/json'
+import { YamlCodec } from '../codecs/yaml'
 import * as ssf from '../codecs/__mocks__/ssf'
 import { fixture } from './helpers'
 
@@ -14,31 +12,31 @@ describe('match', () => {
   codecList.push('__mocks__/ssf')
 
   it('works with file paths', async () => {
-    expect(await match('./file.json')).toBeInstanceOf(Json)
-    expect(await match('./dir/file.json')).toBeInstanceOf(Json)
-    expect(await match('./file.yaml')).toBeInstanceOf(Yaml)
-    expect(await match('./file.yml')).toBeInstanceOf(Yaml)
+    expect(await match('./file.json')).toBeInstanceOf(JsonCodec)
+    expect(await match('./dir/file.json')).toBeInstanceOf(JsonCodec)
+    expect(await match('./file.yaml')).toBeInstanceOf(YamlCodec)
+    expect(await match('./file.yml')).toBeInstanceOf(YamlCodec)
     expect(await match('./file.ssf')).toBeInstanceOf(ssf.Ssf)
     expect(await match('./super-special-file')).toBeInstanceOf(ssf.Ssf)
   })
 
   it('works with format as extension name', async () => {
-    expect(await match(undefined, 'json')).toBeInstanceOf(Json)
-    expect(await match(undefined, 'yaml')).toBeInstanceOf(Yaml)
-    expect(await match(undefined, 'yml')).toBeInstanceOf(Yaml)
+    expect(await match(undefined, 'json')).toBeInstanceOf(JsonCodec)
+    expect(await match(undefined, 'yaml')).toBeInstanceOf(YamlCodec)
+    expect(await match(undefined, 'yml')).toBeInstanceOf(YamlCodec)
     expect(await match(undefined, 'ssf')).toBeInstanceOf(ssf.Ssf)
   })
 
   it('works with format as media type', async () => {
-    expect(await match(undefined, 'application/json')).toBeInstanceOf(Json)
-    expect(await match(undefined, 'text/yaml')).toBeInstanceOf(Yaml)
+    expect(await match(undefined, 'application/json')).toBeInstanceOf(JsonCodec)
+    expect(await match(undefined, 'text/yaml')).toBeInstanceOf(YamlCodec)
     expect(
       await match(undefined, 'application/vnd.super-corp.super-special-file')
     ).toBeInstanceOf(ssf.Ssf)
   })
 
   it('works with file paths with format override', async () => {
-    expect(await match('./file.foo', 'json')).toBeInstanceOf(Json)
+    expect(await match('./file.foo', 'json')).toBeInstanceOf(JsonCodec)
     // expect(await match('./file.yaml', 'application/json')).toBeInstanceOf(json)
     // expect(await match('./file.json', 'text/yaml')).toBeInstanceOf(yaml)
     expect(await match('./file.json', 'ssf')).toBeInstanceOf(ssf.Ssf)

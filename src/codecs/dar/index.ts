@@ -22,7 +22,7 @@ import * as uri from '../../util/uri'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
 
-export class Dar extends Codec implements Codec {
+export class DarCodec extends Codec implements Codec {
   public mediaTypes = []
 
   public extNames = ['dar']

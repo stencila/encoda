@@ -30,7 +30,7 @@ const log = getLogger('encoda:jats')
 const DOCTYPE =
   'article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd"'
 
-export class Jats extends Codec implements Codec {
+export class JatsCodec extends Codec implements Codec {
   /**
    * Media types that this codec will match.
    *

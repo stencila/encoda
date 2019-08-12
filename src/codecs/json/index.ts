@@ -6,7 +6,7 @@ import * as stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Json extends Codec implements Codec {
+export class JsonCodec extends Codec implements Codec {
   public mediaTypes = ['application/json']
 
   public decode = async (file: vfile.VFile): Promise<stencila.Node> => {

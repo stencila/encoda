@@ -1,7 +1,7 @@
 import { dump, load } from '../../util/vfile'
-import { Xmd } from './'
+import { XmdCodec } from './'
 
-const { decode, encode } = new Xmd()
+const { decode, encode } = new XmdCodec()
 
 test('decode', async () => {
   const p = async (xmd: any) => await decode(load(xmd))

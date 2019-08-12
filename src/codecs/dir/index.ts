@@ -43,7 +43,7 @@ interface DecodeOptions {
   mainNames?: string | string[]
 }
 
-export class Dir extends Codec<EncodeOptions, DecodeOptions>
+export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
   implements Codec<EncodeOptions, DecodeOptions> {
   public mediaTypes = []
 

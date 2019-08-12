@@ -1,8 +1,8 @@
 import { Datatable, Table } from '@stencila/schema'
 import { read } from '../../util/vfile'
-import { columnIndexToName, columnNameToIndex, Xlsx } from './'
+import { columnIndexToName, columnNameToIndex, XlsxCodec } from './'
 
-const { decode, encode } = new Xlsx()
+const { decode, encode } = new XlsxCodec()
 
 test('columnNameToIndex, columnIndexToName', async () => {
   expect(columnNameToIndex('A')).toEqual(0)

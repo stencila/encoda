@@ -4,12 +4,12 @@
 
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
-import { CSL } from '../csl'
+import { CSLCodec } from '../csl'
 import { Codec } from '../types'
 
-const csl = new CSL()
+const csl = new CSLCodec()
 
-export class Bib extends Codec implements Codec {
+export class BibCodec extends Codec implements Codec {
   public mediaTypes = ['application/x-bibtex']
 
   public extNames = ['bib', 'bibtex']

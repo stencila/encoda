@@ -5,11 +5,11 @@
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
-import { Xlsx } from '../xlsx'
+import { XlsxCodec } from '../xlsx'
 
-const xlsx = new Xlsx()
+const xlsx = new XlsxCodec()
 
-export class CSV extends Codec implements Codec {
+export class CSVCodec extends Codec implements Codec {
   public mediaTypes = ['text/csv']
 
   public decode = async (file: vfile.VFile): Promise<stencila.Node> => {

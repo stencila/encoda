@@ -15,12 +15,12 @@ import tempy from 'tempy'
 import { write } from '../..'
 import { ensureBlockContent } from '../../util/ensureBlockContent'
 import * as vfile from '../../util/vfile'
-import { RPNG } from '../rpng'
+import { RPNGCodec } from '../rpng'
 import { Codec, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as P from './types'
 
-const rpng = new RPNG()
+const rpng = new RPNGCodec()
 
 export { InputFormat, OutputFormat } from './types'
 
@@ -43,7 +43,7 @@ interface EncodeOptions {
   ensureFile?: boolean
 }
 
-export class Pandoc extends Codec
+export class PandocCodec extends Codec
   implements Codec<EncodeOptions, DecodeOptions> {
   // Although this codec is usually used as a base for others (e.g `docx`),
   // the following definitions allow Pandoc JSON to be decoded or encoded

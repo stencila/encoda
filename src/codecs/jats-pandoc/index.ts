@@ -7,9 +7,9 @@ import * as vfile from '../../util/vfile'
 import * as P from '../pandoc'
 import { Codec } from '../types'
 
-const pandoc = new P.Pandoc()
+const pandoc = new P.PandocCodec()
 
-export class JatsPandoc extends Codec implements Codec {
+export class JatsPandocCodec extends Codec implements Codec {
   public mediaTypes = []
 
   public decode = (file: vfile.VFile): Promise<stencila.Node> => {

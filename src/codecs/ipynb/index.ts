@@ -73,7 +73,7 @@ export function isv3<Key extends keyof nbformat.v3.Types>(
   return version === nbformat.Version.v3
 }
 
-export class IPyNb extends Codec implements Codec {
+export class IPyNbCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */

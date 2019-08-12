@@ -1,9 +1,9 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
 import { dump, load } from '../../util/vfile'
-import { HTML } from './'
+import { HTMLCodec } from './'
 
-const { encode, decode } = new HTML()
+const { encode, decode } = new HTMLCodec()
 
 test('decode', async () => {
   expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)

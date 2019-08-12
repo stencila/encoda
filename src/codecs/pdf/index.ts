@@ -9,7 +9,7 @@ import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
 
-export class PDF extends Codec implements Codec {
+export class PDFCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */

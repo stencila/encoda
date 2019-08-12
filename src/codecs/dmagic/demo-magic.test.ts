@@ -1,8 +1,8 @@
 import stencila from '@stencila/schema'
-import { DMagic } from './'
+import { DMagicCodec } from './'
 import { create, dump } from '../../util/vfile'
 
-const { decode, encode } = new DMagic()
+const { decode, encode } = new DMagicCodec()
 
 test('decode', async () => {
   // @ts-ignore

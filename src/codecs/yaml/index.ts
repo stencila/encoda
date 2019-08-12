@@ -7,7 +7,7 @@ import yaml from 'js-yaml'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-export class Yaml extends Codec implements Codec {
+export class YamlCodec extends Codec implements Codec {
   public mediaTypes = ['text/yaml']
 
   public decode = async (file: vfile.VFile): Promise<stencila.Node> => {

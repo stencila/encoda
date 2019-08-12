@@ -1,6 +1,6 @@
 import articleSimple from '../../__fixtures__/article-simple'
-import { JatsPandoc } from './'
+import { JatsPandocCodec } from './'
 
 test('invertible', async () => {
-  await expect(new JatsPandoc()).toInvert(articleSimple)
+  await expect(new JatsPandocCodec()).toInvert(articleSimple)
 })

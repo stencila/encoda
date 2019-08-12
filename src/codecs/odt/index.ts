@@ -7,9 +7,9 @@ import * as vfile from '../../util/vfile'
 import * as P from '../pandoc'
 import { Codec } from '../types'
 
-const pandoc = new P.Pandoc()
+const pandoc = new P.PandocCodec()
 
-export class ODT extends Codec implements Codec {
+export class ODTCodec extends Codec implements Codec {
   public mediaTypes = ['application/vnd.oasis.opendocument.text']
 
   public decode = async (file: vfile.VFile): Promise<stencila.Node> => {

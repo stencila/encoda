@@ -1,9 +1,9 @@
 import { Datatable, Person } from '@stencila/schema'
 import nock from 'nock'
-import { HTTP } from '.'
+import { HTTPCodec } from '.'
 import { load } from '../../util/vfile'
 
-const { sniff, decode, encode } = new HTTP()
+const { sniff, decode, encode } = new HTTPCodec()
 
 test('sniff', async () => {
   expect(await sniff('http://example.com')).toBe(true)

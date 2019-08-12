@@ -1,7 +1,7 @@
-import { GDoc } from '.'
+import { GDocCodec } from '.'
 import { dump, load } from '../../util/vfile'
 
-const { decode, encode } = new GDoc()
+const { decode, encode } = new GDocCodec()
 
 test('decode', async () => {
   const p = async (gdoc: any) =>

@@ -12,7 +12,7 @@ import { Codec, GlobalEncodeOptions } from '../types'
 
 const logger = getLogger('encoda')
 
-export class TDP extends Codec implements Codec {
+export class TDPCodec extends Codec implements Codec {
   public mediaTypes = [
     // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
     'application/vnd.datapackage+json'

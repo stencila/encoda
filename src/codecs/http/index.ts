@@ -12,7 +12,7 @@ import { Codec } from '../types'
 
 const log = getLogger('encoda:http')
 
-export class HTTP extends Codec implements Codec {
+export class HTTPCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    *

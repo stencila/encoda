@@ -7,9 +7,9 @@ import * as vfile from '../../util/vfile'
 import * as P from '../pandoc'
 import { Codec } from '../types'
 
-const pandoc = new P.Pandoc()
+const pandoc = new P.PandocCodec()
 
-export class Latex extends Codec implements Codec {
+export class LatexCodec extends Codec implements Codec {
   public mediaTypes = ['application/x-latex']
 
   public extNames = ['latex', 'tex']

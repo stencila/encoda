@@ -1,13 +1,13 @@
 import stencila from '@stencila/schema'
 import path from 'path'
 import { read } from '../..'
-import { Docx } from '../../codecs/docx'
-import { GDoc } from '../../codecs/gdoc'
-import { Xmd } from '../../codecs/xmd'
+import { DocxCodec } from '../../codecs/docx'
+import { GDocCodec } from '../../codecs/gdoc'
+import { XmdCodec } from '../../codecs/xmd'
 
-const docxCodec = new Docx()
-const gdocCodec = new GDoc()
-const mdCodec = new Xmd()
+const docxCodec = new DocxCodec()
+const gdocCodec = new GDocCodec()
+const mdCodec = new XmdCodec()
 
 declare global {
   namespace jest {

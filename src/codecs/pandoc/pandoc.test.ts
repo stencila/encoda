@@ -2,12 +2,12 @@ import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import { dump, load } from '../../util/vfile'
-import { RPNG } from '../rpng'
-import { decodeMeta, emptyAttrs, encodeMeta, Pandoc } from './'
+import { RPNGCodec } from '../rpng'
+import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec } from './'
 import * as P from './types'
 
-const { decode, encode } = new Pandoc()
-const rpng = new RPNG()
+const { decode, encode } = new PandocCodec()
+const rpng = new RPNGCodec()
 
 // Set a high timeout to avoid occasional failures on CI
 jest.setTimeout(60 * 1000)

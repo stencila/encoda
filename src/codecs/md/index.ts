@@ -38,7 +38,7 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
 const logger = getLogger('encoda:md')
-export class Md extends Codec implements Codec {
+export class MdCodec extends Codec implements Codec {
   public mediaTypes = ['text/markdown', 'text/x-markdown']
 
   /**

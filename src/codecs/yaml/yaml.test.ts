@@ -1,6 +1,6 @@
 import articleSimple from '../../__fixtures__/article-simple'
-import { Yaml } from './'
+import { YamlCodec } from './'
 
 test('invertible', async () => {
-  await expect(new Yaml()).toInvert(articleSimple)
+  await expect(new YamlCodec()).toInvert(articleSimple)
 })

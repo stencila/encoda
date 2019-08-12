@@ -2,10 +2,10 @@ import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
-import { Dir } from '.'
+import { DirCodec } from '.'
 import * as vfile from '../../util/vfile'
 
-const { decode, encode, sniff } = new Dir()
+const { decode, encode, sniff } = new DirCodec()
 
 test('sniff', async () => {
   expect(await sniff(__dirname)).toBe(true)

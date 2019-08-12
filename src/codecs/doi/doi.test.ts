@@ -1,8 +1,8 @@
-import { Doi } from '.'
+import { DoiCodec } from '.'
 import { convert } from '../..'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
 
-const { sniff, encode } = new Doi()
+const { sniff, encode } = new DoiCodec()
 
 jest.setTimeout(30 * 1000)
 

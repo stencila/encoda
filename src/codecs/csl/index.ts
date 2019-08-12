@@ -19,7 +19,7 @@ interface DecodeOptions {
   format: string
 }
 
-export class CSL extends Codec<{}, DecodeOptions>
+export class CSLCodec extends Codec<{}, DecodeOptions>
   implements Codec<{}, DecodeOptions> {
   public mediaTypes = ['application/vnd.citationstyles.csl+json']
 
