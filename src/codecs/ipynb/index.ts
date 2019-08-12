@@ -77,12 +77,12 @@ export class IPyNbCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */
-  public mediaTypes = ['application/x-ipynb+json']
+  public readonly mediaTypes = ['application/x-ipynb+json']
 
   /**
    * The file extension names associated with this codec.
    */
-  public extNames = ['ipynb']
+  public readonly extNames = ['ipynb']
 
   /**
    * Decode a `VFile` with IPYNB content to a Stencila `Node`.
@@ -90,7 +90,9 @@ export class IPyNbCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const json = await vfile.dump(file)
     const ipynb = JSON.parse(json)
     return decodeNotebook(ipynb, ipynb.nbformat)
@@ -102,7 +104,9 @@ export class IPyNbCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const ipynb = await encodeNode(node)
     const json = JSON.stringify(ipynb, null, '  ')
     return vfile.load(json)

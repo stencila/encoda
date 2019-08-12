@@ -14,10 +14,10 @@ export const decode = async (file: VFile) => null
 export const encode = async (node: Node, options: {} = {}) => create()
 
 export class Ssf extends Codec implements Codec {
-  public fileNames = fileNames
-  public extNames = extNames
-  public mediaTypes = mediaTypes
-  public sniff = sniff
-  public decode = decode
-  public encode = encode
+  public readonly fileNames = fileNames
+  public readonly extNames = extNames
+  public readonly mediaTypes = mediaTypes
+  public readonly sniff = sniff
+  public readonly decode = decode
+  public readonly encode = encode
 }

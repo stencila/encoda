@@ -23,9 +23,9 @@ import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
 
 export class DarCodec extends Codec implements Codec {
-  public mediaTypes = []
+  public readonly mediaTypes = []
 
-  public extNames = ['dar']
+  public readonly extNames = ['dar']
 
   /**
    * A regex to test that a `manifest.xml` file
@@ -33,7 +33,7 @@ export class DarCodec extends Codec implements Codec {
    */
   private MANIFEST_REGEX = /<dar>/
 
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     const manifestPath = path.join(content, 'manifest.xml')
     if (await fs.pathExists(manifestPath)) {
       const contents = await fs.readFile(manifestPath, 'utf8')

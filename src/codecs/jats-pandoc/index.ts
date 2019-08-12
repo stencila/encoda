@@ -10,13 +10,13 @@ import { Codec } from '../types'
 const pandoc = new P.PandocCodec()
 
 export class JatsPandocCodec extends Codec implements Codec {
-  public mediaTypes = []
+  public readonly mediaTypes = []
 
-  public decode = (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = (file: vfile.VFile): Promise<stencila.Node> => {
     return pandoc.decode(file, { from: P.InputFormat.jats })
   }
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options = {}
   ): Promise<vfile.VFile> => {

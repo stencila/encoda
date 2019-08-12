@@ -10,15 +10,17 @@ import { Codec } from '../types'
 const pandoc = new P.PandocCodec()
 
 export class LatexCodec extends Codec implements Codec {
-  public mediaTypes = ['application/x-latex']
+  public readonly mediaTypes = ['application/x-latex']
 
-  public extNames = ['latex', 'tex']
+  public readonly extNames = ['latex', 'tex']
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     return pandoc.decode(file, { from: P.InputFormat.latex })
   }
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options = {}
   ): Promise<vfile.VFile> => {

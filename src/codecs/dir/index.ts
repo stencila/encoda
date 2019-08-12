@@ -45,14 +45,14 @@ interface DecodeOptions {
 
 export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
   implements Codec<EncodeOptions, DecodeOptions> {
-  public mediaTypes = []
+  public readonly mediaTypes = []
 
-  public extNames = ['dir']
+  public readonly extNames = ['dir']
 
   /**
    * Sniff the path to see if it is a directory
    */
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     const dirPath = content
     if (await fs.pathExists(dirPath)) {
       const stats = await fs.stat(dirPath)
@@ -65,7 +65,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
    * Decode a directory into a Stencila `Collection`, that may include
    * other `CreativeWork`s, such as `Article`s or other `Collection`s.
    */
-  public decode = async (
+  public readonly decode = async (
     file: vfile.VFile,
     options: DecodeOptions = {}
   ): Promise<stencila.Collection> => {
@@ -182,7 +182,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     return root
   }
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options: EncodeOptions = {}
   ): Promise<vfile.VFile> => {

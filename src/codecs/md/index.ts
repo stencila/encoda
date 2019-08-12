@@ -39,7 +39,7 @@ import { Codec } from '../types'
 
 const logger = getLogger('encoda:md')
 export class MdCodec extends Codec implements Codec {
-  public mediaTypes = ['text/markdown', 'text/x-markdown']
+  public readonly mediaTypes = ['text/markdown', 'text/x-markdown']
 
   /**
    * Decode a `VFile` with Markdown contents to a `stencila.Node`.
@@ -47,7 +47,9 @@ export class MdCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const md = await vfile.dump(file)
     return decodeMarkdown(md)
   }
@@ -58,7 +60,9 @@ export class MdCodec extends Codec implements Codec {
    * @param thing The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const md = encodeMarkdown(node)
     return vfile.load(md)
   }

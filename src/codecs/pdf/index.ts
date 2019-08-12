@@ -13,7 +13,7 @@ export class PDFCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */
-  public mediaTypes = ['application/pdf']
+  public readonly mediaTypes = ['application/pdf']
 
   // The above media type is registered in the `mime` module
   // so there is no need to specify `extNames`
@@ -23,7 +23,9 @@ export class PDFCodec extends Codec implements Codec {
    * implemented.
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     throw new Error(`Parsing of PDF files is not supported.`)
   }
 
@@ -34,7 +36,7 @@ export class PDFCodec extends Codec implements Codec {
    * @param filePath The file system path to write the PDF to
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

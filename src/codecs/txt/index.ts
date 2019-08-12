@@ -10,12 +10,12 @@ export class TxtCodec extends Codec implements Codec {
   /**
    * Media types that this codec can decode/encode.
    */
-  public mediaTypes = ['text/plain']
+  public readonly mediaTypes = ['text/plain']
 
   /**
    * File extension names that this codec will match.
    */
-  public extNames = ['txt', 'text']
+  public readonly extNames = ['txt', 'text']
 
   /**
    * Decode a `VFile` with text content to a primitive node.
@@ -23,7 +23,7 @@ export class TxtCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode = async (
+  public readonly decode = async (
     file: vfile.VFile
   ): Promise<null | boolean | number | string> => {
     const content = await vfile.dump(file)
@@ -40,7 +40,9 @@ export class TxtCodec extends Codec implements Codec {
    * @param node The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const encode = (node: stencila.Node): string => {
       if (node === null) return 'null'
       if (typeof node === 'string') return node

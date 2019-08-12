@@ -26,7 +26,7 @@ interface DecodeOptions {
 
 export class GDocCodec extends Codec<{}, DecodeOptions>
   implements Codec<{}, DecodeOptions> {
-  public mediaTypes = ['application/vnd.google-apps.document']
+  public readonly mediaTypes = ['application/vnd.google-apps.document']
 
   /**
    * Decode a `VFile` with `gdoc` contents to a `stencila.Node`.
@@ -34,7 +34,7 @@ export class GDocCodec extends Codec<{}, DecodeOptions>
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  public decode = async (
+  public readonly decode = async (
     file: vfile.VFile,
     options: DecodeOptions = { fetch: true }
   ): Promise<stencila.Node> => {
@@ -49,7 +49,9 @@ export class GDocCodec extends Codec<{}, DecodeOptions>
    * @param node The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const gdoc = encodeNode(node)
     const json = JSON.stringify(gdoc, null, '  ')
     return vfile.load(json)

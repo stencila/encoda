@@ -48,9 +48,9 @@ export class PandocCodec extends Codec
   // Although this codec is usually used as a base for others (e.g `docx`),
   // the following definitions allow Pandoc JSON to be decoded or encoded
   // directly
-  public mediaTypes = ['application/pandoc+json']
+  public readonly mediaTypes = ['application/pandoc+json']
 
-  public extNames = ['pandoc']
+  public readonly extNames = ['pandoc']
 
   /**
    * Decode a `VFile` to a `stencila.Node`.
@@ -58,7 +58,7 @@ export class PandocCodec extends Codec
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  public decode = async (
+  public readonly decode = async (
     file: vfile.VFile,
     options: DecodeOptions = {}
   ): Promise<stencila.Node> => {
@@ -88,7 +88,7 @@ export class PandocCodec extends Codec
    * @param ensureFile Ensure that the output is a real file (ie. not stdout?)
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     {
       filePath,

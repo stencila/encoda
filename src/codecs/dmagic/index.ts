@@ -14,13 +14,13 @@ export class DMagicCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */
-  public mediaTypes = ['application/x-demo-magic']
+  public readonly mediaTypes = ['application/x-demo-magic']
 
   /**
    * The file name extensions to register for the codec.
    * Used to be able to explicitly refer to this codec.
    */
-  public extNames = ['dmagic', 'demo-magic']
+  public readonly extNames = ['dmagic', 'demo-magic']
 
   /**
    * Decode a `VFile` with `demo-magic.sh` content to a Stencila `Node`.
@@ -29,7 +29,7 @@ export class DMagicCodec extends Codec implements Codec {
    * @returns A promise that resolves to a Stencila `Node`
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public decode = async (): Promise<stencila.Node> => {
+  public readonly decode = async (): Promise<stencila.Node> => {
     throw new Error('Decoding of Demo Magic scripts is not supported.')
   }
 
@@ -39,7 +39,7 @@ export class DMagicCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

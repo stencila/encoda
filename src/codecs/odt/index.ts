@@ -10,16 +10,18 @@ import { Codec } from '../types'
 const pandoc = new P.PandocCodec()
 
 export class ODTCodec extends Codec implements Codec {
-  public mediaTypes = ['application/vnd.oasis.opendocument.text']
+  public readonly mediaTypes = ['application/vnd.oasis.opendocument.text']
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     return pandoc.decode(file, {
       from: P.InputFormat.odt,
       flags: [`--extract-media=${file.path}.media`]
     })
   }
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options = {}
   ): Promise<vfile.VFile> => {

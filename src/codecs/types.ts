@@ -28,21 +28,21 @@ export abstract class Codec<
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
    * that the codec can decode/encode.
    */
-  public abstract mediaTypes: string[]
+  public abstract readonly mediaTypes: string[]
 
   /**
    * Any array of file names to use to match the codec.
    * This can be useful for differentiating between
    * "flavors" of formats e.g. `datapackage.json` versus any old `.json` file.
    */
-  public fileNames?: string[]
+  public readonly fileNames?: string[]
 
   /**
    * Any array of file name extensions to register for the codec.
    * This can be useful for specifying conversion to less well known media types
    * e.g. `--to tdp` for outputting `datapackage.json` to the console.
    */
-  public extNames?: string[]
+  public readonly extNames?: string[]
 
   /**
    * A function that does [content sniffing](https://en.wikipedia.org/wiki/Content_sniffing)
@@ -50,7 +50,7 @@ export abstract class Codec<
    * string could be a file system path and the codec could do "sniffing" of the file system
    * (e.g. testing if certain files are present in a directory).
    */
-  public sniff?: (content: string) => Promise<boolean>
+  public readonly sniff?: (content: string) => Promise<boolean>
 
   /**
    * Decode a `VFile` to a `stencila.Node`.
@@ -58,7 +58,7 @@ export abstract class Codec<
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  public abstract decode: (
+  public abstract readonly decode: (
     file: VFile,
     options?: DecodeOptions
   ) => Promise<stencila.Node>
@@ -70,7 +70,7 @@ export abstract class Codec<
    * @param options An optional object allowing for passing extra options and parameters to various codecs.
    * @returns A promise that resolves to a `VFile`
    */
-  public abstract encode: (
+  public abstract readonly encode: (
     node: stencila.Node,
     options?: EncodeOptions & GlobalEncodeOptions
   ) => Promise<VFile>

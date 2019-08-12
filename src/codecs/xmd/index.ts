@@ -9,9 +9,9 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
 export class XmdCodec extends Codec implements Codec {
-  public mediaTypes = []
+  public readonly mediaTypes = []
 
-  public extNames = ['xmd', 'rmd']
+  public readonly extNames = ['xmd', 'rmd']
 
   /**
    * Decode XMarkdown to a Stencila node.
@@ -21,7 +21,9 @@ export class XmdCodec extends Codec implements Codec {
    *
    * @param file The `VFile` to decode
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const xmd = await vfile.dump(file)
     // Inline code chunks are replaced with special inline nodes
     // The negative look behind at the start prevents matching block code chunks
@@ -51,7 +53,9 @@ export class XmdCodec extends Codec implements Codec {
    *
    * @param node The Stencila node to encode
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const transformed = produce(node, transform)
     const cmd = await dump(transformed, 'md')
     // Replace Commonmark "info string" with R Markdown curly brace

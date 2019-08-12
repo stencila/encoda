@@ -10,13 +10,17 @@ import { XlsxCodec } from '../xlsx'
 const xlsx = new XlsxCodec()
 
 export class CSVCodec extends Codec implements Codec {
-  public mediaTypes = ['text/csv']
+  public readonly mediaTypes = ['text/csv']
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     return xlsx.decode(file)
   }
 
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     return xlsx.encode(node, { format: 'csv' })
   }
 }

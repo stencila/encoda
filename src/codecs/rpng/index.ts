@@ -23,16 +23,16 @@ const KEYWORD = 'JSON'
 export class RPNGCodec extends Codec implements Codec {
   // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
   // an custom extension to be able to refere to this format more easily.
-  public mediaTypes = ['vnd.stencila.rpng']
+  public readonly mediaTypes = ['vnd.stencila.rpng']
 
-  public extNames = ['rpng']
+  public readonly extNames = ['rpng']
 
   /**
    * Sniff a PNG file to see if it is an rPNG
    *
    * @param content The content to sniff (a file path)
    */
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     if (path.extname(content) === '.png') {
       if (await fs.pathExists(content)) {
         const contents = await fs.readFile(content)
@@ -68,7 +68,9 @@ export class RPNGCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns The Stencila node
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     return this.decodeSync(file)
   }
 
@@ -117,7 +119,7 @@ export class RPNGCodec extends Codec implements Codec {
    * @param options Object containing settings for the encoder. See type
    * definition for Encode<EncodeRPNGOptions>
    */
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

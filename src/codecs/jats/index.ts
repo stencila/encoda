@@ -42,12 +42,12 @@ export class JatsCodec extends Codec implements Codec {
    * of using `application/` and the `+xml` suffix to differentiate this format from other
    * XML-based formats.
    */
-  public mediaTypes = ['application/jats+xml']
+  public readonly mediaTypes = ['application/jats+xml']
 
   /**
    * File name extensions that this codec will match.
    */
-  public extNames = ['jats']
+  public readonly extNames = ['jats']
 
   /**
    * Sniff content to see if it is JATS XML.
@@ -60,7 +60,7 @@ export class JatsCodec extends Codec implements Codec {
    *
    * @param content The content to be sniffed
    */
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     if (await fs.pathExists(content)) {
       const stat = await fs.stat(content)
       if (stat.isFile()) content = await fs.readFile(content, 'utf8')
@@ -75,7 +75,9 @@ export class JatsCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const jats = await vfile.dump(file)
     const doc = xml.load(jats, { compact: false }) as xml.Element
     return decodeDocument(doc)
@@ -87,7 +89,9 @@ export class JatsCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const doc = encodeDocument(node)
     const jats = xml.dump(doc, { spaces: 4 })
     return vfile.load(jats)

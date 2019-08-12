@@ -19,12 +19,12 @@ export class HTTPCodec extends Codec implements Codec {
    * Empty since this codec can only determine the media type
    * from the `Content-Type` header.
    */
-  public mediaTypes = []
+  public readonly mediaTypes = []
 
   /**
    * Sniff content to see if it is a HTTP/S URL
    */
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     return /^https?:\/\//.test(content)
   }
 
@@ -37,7 +37,9 @@ export class HTTPCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const url = await vfile.dump(file)
     log.info(`Fetching "${url}"`)
     const response = await http.get(url)
@@ -58,7 +60,7 @@ export class HTTPCodec extends Codec implements Codec {
    * It is not possible to encode to a HTTP URL so this
    * function simply throws an error
    */
-  public encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Unable to encode to HTTP`)
   }
 }

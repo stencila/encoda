@@ -10,15 +10,17 @@ import { Codec } from '../types'
 const csl = new CSLCodec()
 
 export class BibCodec extends Codec implements Codec {
-  public mediaTypes = ['application/x-bibtex']
+  public readonly mediaTypes = ['application/x-bibtex']
 
-  public extNames = ['bib', 'bibtex']
+  public readonly extNames = ['bib', 'bibtex']
 
-  public decode = (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = (file: vfile.VFile): Promise<stencila.Node> => {
     return csl.decode(file, { format: '@bibtex/text' })
   }
 
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     return csl.encode(node, { format: 'bibtex' })
   }
 }

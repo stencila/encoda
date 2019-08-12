@@ -11,7 +11,7 @@ export class Json5Codec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */
-  public mediaTypes = ['application/json5']
+  public readonly mediaTypes = ['application/json5']
 
   // The above media type is registered in the `mime` module
   // so there is no need to specify `extNames`
@@ -22,7 +22,9 @@ export class Json5Codec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     return json5.parse(await vfile.dump(file))
   }
 
@@ -32,7 +34,9 @@ export class Json5Codec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     return vfile.load(json5.stringify(node, null, '  '))
   }
 }

@@ -9,17 +9,19 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
 export class OrcidCodec extends Codec implements Codec {
-  public mediaTypes = ['text/x-orcid']
+  public readonly mediaTypes = ['text/x-orcid']
 
-  public extNames = ['orcid']
+  public readonly extNames = ['orcid']
 
   private static regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
 
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     return OrcidCodec.regex.test(content)
   }
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const match = content.match(OrcidCodec.regex)
     if (!match) throw new Error('Unable to parse content')
@@ -42,7 +44,9 @@ export class OrcidCodec extends Codec implements Codec {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     throw new Error(`Encoding to an ORCID is not yet implemented`)
   }
 }

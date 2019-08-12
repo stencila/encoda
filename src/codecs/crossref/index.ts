@@ -8,16 +8,16 @@ import { decodeCsl } from '../csl'
 import { Codec } from '../types'
 
 export class CrossrefCodec extends Codec implements Codec {
-  public mediaTypes = ['text/x-crossref-query']
+  public readonly mediaTypes = ['text/x-crossref-query']
 
-  public extNames = ['crossref-query']
+  public readonly extNames = ['crossref-query']
 
   /**
    * Search Crossref for a work whose bibliographic data matches the supplied data.
    *
    * See https://www.crossref.org/labs/resolving-citations-we-dont-need-no-stinkin-parser/
    */
-  public decode = async (file: vfile.VFile) => {
+  public readonly decode = async (file: vfile.VFile) => {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
       query: {
@@ -48,7 +48,7 @@ export class CrossrefCodec extends Codec implements Codec {
     throw new Error(`Request failed`)
   }
 
-  public encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to a Crossref query is not supported`)
   }
 }

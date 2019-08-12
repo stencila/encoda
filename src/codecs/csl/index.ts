@@ -21,14 +21,14 @@ interface DecodeOptions {
 
 export class CSLCodec extends Codec<{}, DecodeOptions>
   implements Codec<{}, DecodeOptions> {
-  public mediaTypes = ['application/vnd.citationstyles.csl+json']
+  public readonly mediaTypes = ['application/vnd.citationstyles.csl+json']
 
-  public extNames = ['csl']
+  public readonly extNames = ['csl']
 
   /**
    * Parse CSL-JSON or other bibliographic format to a `Node`
    */
-  public decode = async (
+  public readonly decode = async (
     file: vfile.VFile,
     options = { format: '@csl/object' }
   ): Promise<stencila.Node> => {
@@ -55,7 +55,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    * See https://citation.js.org/api/tutorial-output_options.html
    * for formats and other options which could be used.
    */
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

@@ -17,11 +17,13 @@ interface EncodeOptions {
 
 export class DocxCodec extends Codec<EncodeOptions>
   implements Codec<EncodeOptions> {
-  public mediaTypes = [
+  public readonly mediaTypes = [
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   ]
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     return pandoc.decode(file, {
       ensureFile: true,
       flags: [`--extract-media=${file.path}.media`],
@@ -36,7 +38,7 @@ export class DocxCodec extends Codec<EncodeOptions>
     'stencila-template.docx'
   )
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = {}
   ): Promise<vfile.VFile> =>

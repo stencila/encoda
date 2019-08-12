@@ -29,7 +29,7 @@ const log = getLogger('encoda:html')
 const slugger = new GithubSlugger()
 
 export class HTMLCodec extends Codec implements Codec {
-  public mediaTypes = ['text/html']
+  public readonly mediaTypes = ['text/html']
 
   /**
    * Decode a `VFile` with HTML contents to a `stencila.Node`.
@@ -37,7 +37,9 @@ export class HTMLCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `stencila.Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const html = await vfile.dump(file)
     const dom = new jsdom.JSDOM(html)
     const document = dom.window.document
@@ -53,7 +55,7 @@ export class HTMLCodec extends Codec implements Codec {
    * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     options: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

@@ -13,11 +13,11 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
 export class PersonCodec extends Codec implements Codec {
-  public mediaTypes = ['text/x-person']
+  public readonly mediaTypes = ['text/x-person']
 
-  public extNames = ['person']
+  public readonly extNames = ['person']
 
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     return /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/.test(
       content
     )
@@ -29,7 +29,9 @@ export class PersonCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a `Node`
    */
-  public decode = async (file: vfile.VFile): Promise<stencila.Person> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Person> => {
     return this.decodeSync(await vfile.dump(file))
   }
 
@@ -61,7 +63,9 @@ export class PersonCodec extends Codec implements Codec {
    * @param node The `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     let content = ''
 
     if (is<stencila.Person>('Person')(node)) {

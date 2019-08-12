@@ -14,19 +14,21 @@ import { Codec, GlobalEncodeOptions } from '../types'
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
 export class XlsxCodec extends Codec implements Codec {
-  public mediaTypes = [
+  public readonly mediaTypes = [
     // spell-checker: disable
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     // spell-checker: enable
   ]
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
     const workbook = xlsx.read(buffer, { type: 'buffer' })
     return decodeWorkbook(workbook)
   }
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     { format = 'xlsx' }: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

@@ -13,14 +13,14 @@ import { Codec, GlobalEncodeOptions } from '../types'
 const logger = getLogger('encoda')
 
 export class TDPCodec extends Codec implements Codec {
-  public mediaTypes = [
+  public readonly mediaTypes = [
     // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
     'application/vnd.datapackage+json'
   ]
 
-  public fileNames = ['datapackage.json']
+  public readonly fileNames = ['datapackage.json']
 
-  public extNames = [
+  public readonly extNames = [
     // To be able to refer to this codec since the `mime` package
     // does not have registered extension names for the above media type
     'tdp'
@@ -29,7 +29,9 @@ export class TDPCodec extends Codec implements Codec {
   // TODO: Refactor to remove use of any
   /* eslint-disable @typescript-eslint/no-explicit-any */
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     let pkg: datapackage.Package
     if (file.path) pkg = await datapackage.Package.load(file.path)
     else
@@ -65,7 +67,7 @@ export class TDPCodec extends Codec implements Codec {
     return node
   }
 
-  public encode = async (
+  public readonly encode = async (
     node: stencila.Node,
     { filePath }: GlobalEncodeOptions = {}
   ): Promise<vfile.VFile> => {

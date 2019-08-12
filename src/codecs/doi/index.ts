@@ -8,9 +8,9 @@ import { CSLCodec } from '../csl'
 import { Codec } from '../types'
 
 export class DoiCodec extends Codec implements Codec {
-  public mediaTypes = ['text/x-doi']
+  public readonly mediaTypes = ['text/x-doi']
 
-  public extNames = ['doi']
+  public readonly extNames = ['doi']
 
   private static csl = new CSLCodec()
 
@@ -18,11 +18,13 @@ export class DoiCodec extends Codec implements Codec {
   // for notes on DOI matching
   private static regex = /^\s*((DOI\s*:?\s*)|(https?:\/\/doi\.org\/))?(10.\d{4,9}\/[^\s]+)\s*$/i
 
-  public sniff = async (content: string): Promise<boolean> => {
+  public readonly sniff = async (content: string): Promise<boolean> => {
     return DoiCodec.regex.test(content)
   }
 
-  public decode = async (file: vfile.VFile): Promise<stencila.Node> => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const match = content.match(DoiCodec.regex)
     if (!match) throw new Error('Unable to parse content')
@@ -30,7 +32,7 @@ export class DoiCodec extends Codec implements Codec {
     return DoiCodec.csl.decode(doi, { format: '@doi/id' })
   }
 
-  public encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to DOI is not yet implemented`)
   }
 }
