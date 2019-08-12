@@ -6,128 +6,133 @@ import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
-import { Encode, EncodeOptions, dump } from '../..'
+import { dump } from '../..'
 import * as vfile from '../../util/vfile'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 const logger = getLogger('encoda')
 
-export const mediaTypes = [
-  // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
-  'application/vnd.datapackage+json'
-]
+export class TDPCodec extends Codec implements Codec {
+  public readonly mediaTypes = [
+    // As registered at https://www.iana.org/assignments/media-types/media-types.xhtml
+    'application/vnd.datapackage+json'
+  ]
 
-export const fileNames = ['datapackage.json']
+  public readonly fileNames = ['datapackage.json']
 
-export const extNames = [
-  // To be able to refer to this codec since the `mime` package
-  // does not have registered extension names for the above media type
-  'tdp'
-]
+  public readonly extNames = [
+    // To be able to refer to this codec since the `mime` package
+    // does not have registered extension names for the above media type
+    'tdp'
+  ]
 
-// TODO: Refactor to remove use of any
-/* eslint-disable @typescript-eslint/no-explicit-any */
+  // TODO: Refactor to remove use of any
+  /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  let pkg: datapackage.Package
-  if (file.path) pkg = await datapackage.Package.load(file.path)
-  else pkg = await datapackage.Package.load(JSON.parse(await vfile.dump(file)))
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
+    let pkg: datapackage.Package
+    if (file.path) pkg = await datapackage.Package.load(file.path)
+    else
+      pkg = await datapackage.Package.load(JSON.parse(await vfile.dump(file)))
 
-  // Decode resources
-  const parts = await Promise.all(pkg.resources.map(
-    async (resource: datapackage.Resource) => decodeResource(resource)
-  ) as Promise<stencila.Datatable>[])
+    // Decode resources
+    const parts = await Promise.all(pkg.resources.map(
+      async (resource: datapackage.Resource) => decodeResource(resource)
+    ) as Promise<stencila.Datatable>[])
 
-  // Collection or Datatable ?
-  let node: stencila.Datatable | stencila.Collection
-  if (parts.length === 1) node = parts[0]
-  else node = { type: 'Collection', parts }
+    // Collection or Datatable ?
+    let node: stencila.Datatable | stencila.Collection
+    if (parts.length === 1) node = parts[0]
+    else node = { type: 'Collection', parts }
 
-  // Add metadata https://frictionlessdata.io/specs/data-resource/#metadata-properties
-  const desc = pkg.descriptor
-  if (desc.name) node.name = desc.name
-  if (desc.title) node.alternateNames = [desc.title as string]
-  if (desc.description) node.description = desc.description
-  if (desc.licenses) {
-    // Convert a https://frictionlessdata.io/specs/data-package/#licenses
-    // to a https://schema.org/license property
-    node.licenses = desc.licenses.map((object: any) => {
-      const license: stencila.CreativeWork = { type: 'CreativeWork' }
-      if (object.name) license.name = object.name
-      if (object.path) license.url = object.path
-      if (object.title) license.alternateNames = [object.title]
-      return license
-    })
-  }
-
-  return node
-}
-
-export const encode: Encode = async (
-  node: stencila.Node,
-  { filePath }: EncodeOptions = {}
-): Promise<vfile.VFile> => {
-  const cw = node as stencila.CreativeWork
-
-  // Create a package descriptor from meta-data
-  const desc: { [key: string]: any } = {
-    profile: 'tabular-data-package',
-    // Name is the only required property
-    name: cw.name || 'Unnamed'
-  }
-  const title = cw.alternateNames && cw.alternateNames[0]
-  if (title) desc.title = title
-  if (cw.description) desc.description = cw.description
-  if (cw.licenses) {
-    desc.licenses = cw.licenses.map(
-      (license: string | stencila.CreativeWork) => {
-        if (typeof license === 'string') {
-          // Since name is required...
-          return { name: license }
-        }
-        const object: { [key: string]: any } = {}
-        if (license.name) object.name = license.name
-        if (license.url) object.path = license.url
-        const title = license.alternateNames && license.alternateNames[0]
-        if (title) object.title = title
-        return object
-      }
-    )
-  }
-
-  // Encode Datatable into resource descriptors
-  const resources: datapackage.Resource[] = []
-  if (cw.type === 'Collection') {
-    const collection = cw as stencila.Collection
-    if (collection.parts) {
-      for (const part of collection.parts) {
-        if (part.type !== 'Datatable') {
-          throw new Error(
-            `Unable to convert collection part of type ${part.type}`
-          )
-        }
-        resources.push(encodeCreativeWork(part))
-      }
+    // Add metadata https://frictionlessdata.io/specs/data-resource/#metadata-properties
+    const desc = pkg.descriptor
+    if (desc.name) node.name = desc.name
+    if (desc.title) node.alternateNames = [desc.title as string]
+    if (desc.description) node.description = desc.description
+    if (desc.licenses) {
+      // Convert a https://frictionlessdata.io/specs/data-package/#licenses
+      // to a https://schema.org/license property
+      node.licenses = desc.licenses.map((object: any) => {
+        const license: stencila.CreativeWork = { type: 'CreativeWork' }
+        if (object.name) license.name = object.name
+        if (object.path) license.url = object.path
+        if (object.title) license.alternateNames = [object.title]
+        return license
+      })
     }
-  } else {
-    resources.push(encodeCreativeWork(cw))
+
+    return node
   }
-  desc.resources = await Promise.all(
-    resources.map(async resource => (await resource).descriptor)
-  )
 
-  const pkg = await datapackage.Package.load(desc, undefined, true)
+  public readonly encode = async (
+    node: stencila.Node,
+    { filePath }: GlobalEncodeOptions = {}
+  ): Promise<vfile.VFile> => {
+    const cw = node as stencila.CreativeWork
 
-  if (filePath) {
-    // Save the package (datapackage.json and all resource files) and return an empty VFile
-    pkg.save(filePath)
-    return vfile.create()
-  } else {
-    // Return a VFile with the JSON of datapackage.json
-    const json = JSON.stringify(pkg.descriptor, null, '  ')
-    return vfile.load(json)
+    // Create a package descriptor from meta-data
+    const desc: { [key: string]: any } = {
+      profile: 'tabular-data-package',
+      // Name is the only required property
+      name: cw.name || 'Unnamed'
+    }
+    const title = cw.alternateNames && cw.alternateNames[0]
+    if (title) desc.title = title
+    if (cw.description) desc.description = cw.description
+    if (cw.licenses) {
+      desc.licenses = cw.licenses.map(
+        (license: string | stencila.CreativeWork) => {
+          if (typeof license === 'string') {
+            // Since name is required...
+            return { name: license }
+          }
+          const object: { [key: string]: any } = {}
+          if (license.name) object.name = license.name
+          if (license.url) object.path = license.url
+          const title = license.alternateNames && license.alternateNames[0]
+          if (title) object.title = title
+          return object
+        }
+      )
+    }
+
+    // Encode Datatable into resource descriptors
+    const resources: datapackage.Resource[] = []
+    if (cw.type === 'Collection') {
+      const collection = cw as stencila.Collection
+      if (collection.parts) {
+        for (const part of collection.parts) {
+          if (part.type !== 'Datatable') {
+            throw new Error(
+              `Unable to convert collection part of type ${part.type}`
+            )
+          }
+          resources.push(encodeCreativeWork(part))
+        }
+      }
+    } else {
+      resources.push(encodeCreativeWork(cw))
+    }
+    desc.resources = await Promise.all(
+      resources.map(async resource => (await resource).descriptor)
+    )
+
+    const pkg = await datapackage.Package.load(desc, undefined, true)
+
+    if (filePath) {
+      // Save the package (datapackage.json and all resource files) and return an empty VFile
+      pkg.save(filePath)
+      return vfile.create()
+    } else {
+      // Return a VFile with the JSON of datapackage.json
+      const json = JSON.stringify(pkg.descriptor, null, '  ')
+      return vfile.load(json)
+    }
   }
 }
-
 /********************************************************************
  *  datapackage.Resource <-> stencila.Datatable
  ********************************************************************/

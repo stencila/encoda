@@ -1,8 +1,10 @@
 import stencila from '@stencila/schema'
 import path from 'path'
-import * as txt from '.'
-import { decode, encode } from '.'
+import { TxtCodec } from '.'
 import { dump, load, read } from '../../util/vfile'
+
+const txt = new TxtCodec()
+const { decode, encode } = new TxtCodec()
 
 describe('decode', () => {
   const d = async (content: string) => await decode(await load(content))

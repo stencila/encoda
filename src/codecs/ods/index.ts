@@ -3,18 +3,26 @@
  */
 
 import stencila from '@stencila/schema'
-import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
-import * as xlsx from '../xlsx'
+import { Codec } from '../types'
+import { XlsxCodec } from '../xlsx'
 
-export const mediaTypes = ['application/vnd.oasis.opendocument.spreadsheet']
+const xlsx = new XlsxCodec()
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  return xlsx.decode(file)
-}
+export class ODSCodec extends Codec implements Codec {
+  public readonly mediaTypes = [
+    'application/vnd.oasis.opendocument.spreadsheet'
+  ]
 
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  return xlsx.encode(node, { format: 'ods' })
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
+    return xlsx.decode(file)
+  }
+
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
+    return xlsx.encode(node, { format: 'ods' })
+  }
 }

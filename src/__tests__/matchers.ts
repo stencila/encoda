@@ -4,7 +4,7 @@ import fs from 'fs-extra'
 import { toMatchFile } from 'jest-file-snapshot'
 import mime from 'mime'
 import path from 'path'
-import { Codec } from '..'
+import { Codec } from '../codecs/types'
 
 /**
  * Add https://github.com/satya164/jest-file-snapshot

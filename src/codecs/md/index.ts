@@ -34,12 +34,39 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
-import { Encode } from '../..'
 import * as vfile from '../../util/vfile'
+import { Codec } from '../types'
 
 const logger = getLogger('encoda:md')
+export class MdCodec extends Codec implements Codec {
+  public readonly mediaTypes = ['text/markdown', 'text/x-markdown']
 
-export const mediaTypes = ['text/markdown', 'text/x-markdown']
+  /**
+   * Decode a `VFile` with Markdown contents to a `stencila.Node`.
+   *
+   * @param file The `VFile` to decode
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
+    const md = await vfile.dump(file)
+    return decodeMarkdown(md)
+  }
+
+  /**
+   * Encode a `stencila.Node` to a `VFile` with Markdown contents.
+   *
+   * @param thing The `stencila.Node` to encode
+   * @returns A promise that resolves to a `VFile`
+   */
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
+    const md = encodeMarkdown(node)
+    return vfile.load(md)
+  }
+}
 
 /**
  * Matches new lines, **the preceding character**, and any following white space
@@ -101,30 +128,6 @@ const GENERIC_EXTENSIONS = [
 const extensionHandlers: { [key: string]: any } = {}
 for (const ext of GENERIC_EXTENSIONS) {
   extensionHandlers[ext] = { replace: decodeExtension }
-}
-
-/**
- * Decode a `VFile` with Markdown contents to a `stencila.Node`.
- *
- * @param file The `VFile` to decode
- * @returns A promise that resolves to a `stencila.Node`
- */
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  const md = await vfile.dump(file)
-  return decodeMarkdown(md)
-}
-
-/**
- * Encode a `stencila.Node` to a `VFile` with Markdown contents.
- *
- * @param thing The `stencila.Node` to encode
- * @returns A promise that resolves to a `VFile`
- */
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  const md = encodeMarkdown(node)
-  return vfile.load(md)
 }
 
 /**

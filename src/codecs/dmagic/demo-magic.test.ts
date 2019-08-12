@@ -1,8 +1,11 @@
 import stencila from '@stencila/schema'
-import { decode, encode } from './'
+import { DMagicCodec } from './'
 import { create, dump } from '../../util/vfile'
 
+const { decode, encode } = new DMagicCodec()
+
 test('decode', async () => {
+  // @ts-ignore
   await expect(decode(create())).rejects.toThrow(
     /Decoding of Demo Magic scripts is not supported/
   )

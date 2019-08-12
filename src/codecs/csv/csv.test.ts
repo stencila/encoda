@@ -1,6 +1,8 @@
 import { Table } from '@stencila/schema'
-import { decode, encode } from './'
 import { dump, load } from '../../util/vfile'
+import { CSVCodec } from './'
+
+const { decode, encode } = new CSVCodec()
 
 const simple = {
   content: `A,B,C\n1,2,3\n2,5,6\n3,8,9\n`,
@@ -107,16 +109,14 @@ test('decode', async () => {
 
 describe('encode', () => {
   test('simple', async () => {
-    expect(await dump(await encode(simple.node, {}))).toEqual(simple.content)
+    expect(await dump(await encode(simple.node))).toEqual(simple.content)
   })
 
   test('named', async () => {
-    expect(await dump(await encode(named.node, {}))).toEqual(named.content)
+    expect(await dump(await encode(named.node))).toEqual(named.content)
   })
 
   test('formulas', async () => {
-    expect(await dump(await encode(formulas.node, {}))).toEqual(
-      formulas.content
-    )
+    expect(await dump(await encode(formulas.node))).toEqual(formulas.content)
   })
 })
