@@ -1,3 +1,10 @@
+## [0.62.5](https://github.com/stencila/encoda/compare/v0.62.4...v0.62.5) (2019-08-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency xlsx to ^0.15.0 ([fa34e2e](https://github.com/stencila/encoda/commit/fa34e2e))
+
 ## [0.62.4](https://github.com/stencila/encoda/compare/v0.62.3...v0.62.4) (2019-08-12)
 
 
