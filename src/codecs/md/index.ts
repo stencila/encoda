@@ -235,6 +235,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
               `Unregistered generic extension "${node.data && node.data.hName}"`
             )
           }
+          return ''
       }
     case 'html':
       return decodeHTML(node as MDAST.HTML)
