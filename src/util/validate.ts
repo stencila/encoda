@@ -12,11 +12,11 @@ import { getErrors, getValidator } from './schemas'
 export async function validate<Key extends keyof stencila.Types>(
   node: stencila.Node,
   type?: Key
-): Promise<stencila.Types[Key]> {
+): Promise<void> {
   if (type === undefined) type = nodeType(node) as Key
   const validator = await getValidator(type)
   try {
-    return await validator(node)
+    await validator(node)
   } catch (error) {
     if (error instanceof Ajv.ValidationError)
       throw getErrors(validator, node, error.errors)
