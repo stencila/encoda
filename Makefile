@@ -3,6 +3,9 @@ all: setup lint cover check docs
 setup:
 	npm install
 
+format:
+	npm run format
+
 lint:
 	npm run lint
 

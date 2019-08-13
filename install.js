@@ -30,7 +30,7 @@ async function load(modulePath) {
     // the module has not yet been compiled to Javascript
     const util = require('util')
     const spawn = util.promisify(require('child_process').spawn)
-    await spawn('npx', ['tsc'], {stdio: 'inherit'})
+    await spawn('npx', ['tsc'], { stdio: 'inherit' })
     return require(modulePath)
   }
 }
