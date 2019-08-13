@@ -34,15 +34,20 @@ const validators = new Ajv({
 })
 
 /**
- * Cache of validation/mutation functions
+ * Cache of coercion / validations functions
  * These use Ajv options that coerce nodes so we
- * keep them separate from pure non-mutating validators.
+ * keep them separate from non-mutating, purely validating,
+ * functions.
+ *
+ * Using either `useDefaults` and `removeAdditional` options
+ * leads to issues with sub-schemas with `anyOf` e.g. `BlockContent`.
+ * See:
+ *   - https://github.com/epoberezkin/ajv/blob/master/FAQ.md#additional-properties-inside-compound-keywords-anyof-oneof-etc
+ *   - https://github.com/epoberezkin/ajv/issues/276
  */
 const coercers = new Ajv({
   // For better error reporting
   jsonPointers: true,
-  // Add values from `default` keyword when property is missing
-  useDefaults: true,
   // Coerce type of data to match type keyword and coerce scalar
   // data to an array with one element and vice versa, as needed.
   coerceTypes: 'array',

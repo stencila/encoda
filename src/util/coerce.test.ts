@@ -171,15 +171,21 @@ describe('coerce', () => {
     })
   })
 
-  it('will correct nested nodes including adding type', async () => {
+  it('will ceorce nested nodes', async () => {
     const article = await coerce(
       {
         title: 'Untitled',
         authors: [
           {
-            givenNames: 'Joe'
+            type: 'Person',
+            givenNames: 'Joe',
+            affiliation: {
+              type: 'Organization',
+              name: ['Acme Ltd']
+            }
           },
           {
+            type: 'Person',
             givenNames: ['Jane', 'Jill'],
             familyNames: 'Jones'
           }
@@ -188,12 +194,14 @@ describe('coerce', () => {
       'Article'
     )
 
-    expect(article.authors[0].type).toEqual('Person')
-    expect((article.authors[0] as stencila.Person).givenNames).toEqual(['Joe'])
-    expect(article.authors[1].type).toEqual('Person')
-    expect((article.authors[1] as stencila.Person).familyNames).toEqual([
-      'Jones'
-    ])
+    const joe = article.authors[0] as stencila.Person
+    expect(joe.givenNames).toEqual(['Joe']) // coerced to an array
+    // @ts-ignore
+    expect(joe.affiliations[0].name).toEqual('Acme Ltd') // coerced to a string
+
+    const jane = article.authors[1] as stencila.Person
+    expect(jane.givenNames).toEqual(['Jane', 'Jill']) // unchanged
+    expect(jane.familyNames).toEqual(['Jones']) // coerced to an array
   })
 
   it('throws an error if unable to coerce data, or data is otherwise invalid', async () => {

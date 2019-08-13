@@ -42,9 +42,9 @@ export async function coerce<Key extends keyof stencila.Types>(
    * do for us:
    *   - rename aliases to canonical property names
    *   - remove additional properties (not in schema);
-   *     Ajv does this but with limitations when `anyOf` or `allOf`
+   *     Ajv does this but with limitations when `anyOf` etc are used
    *     https://github.com/epoberezkin/ajv/blob/master/FAQ.md#additional-properties-inside-compound-keywords-anyof-oneof-etc
-   *   - coerce an object to an `array` of objects and vice verse;
+   *   - coerce an object to an `array` of objects;
    *     Ajv does not do that https://github.com/epoberezkin/ajv/issues/992
    */
   async function reshape(node: stencila.Node): Promise<void> {
