@@ -78,7 +78,7 @@ configure(options.debug)
     } else if (['process', 'coerce', 'validate'].includes(command)) {
       const input = args[0]
       const output = args[1] || input
-      const { to = 'json', from, standalone, bundle, theme, ...rest } = options
+      const { to, from, standalone, bundle, theme, ...rest } = options
       const node = await read(input, from)
       let processed
       if (command === 'process')
