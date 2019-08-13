@@ -10,65 +10,73 @@ import { isA, isCreativeWork } from '@stencila/schema/dist/util'
 // @ts-ignore
 import Cite from 'citation-js'
 import Csl from 'csl-json'
-import { Encode, EncodeOptions, load } from '../..'
+import { load } from '../..'
+import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
 import * as vfile from '../../util/vfile'
-import { logErrorNodeType, logWarnLossIfAny, logWarnLoss } from '../../log'
+import { Codec, GlobalEncodeOptions } from '../types'
 
-export const mediaTypes = ['application/vnd.citationstyles.csl+json']
-
-export const extNames = ['csl']
-
-/**
- * Parse CSL-JSON or other bibliographic format to a `Node`
- */
-export async function decode(
-  file: vfile.VFile,
-  format: string = '@csl/object'
-): Promise<stencila.Node> {
-  const content: string = await vfile.dump(file)
-
-  let csls
-  try {
-    csls = await Cite.inputAsync(content, { forceType: format })
-  } catch (error) {
-    throw new Error(
-      `Error when parsing content of format ${format}: ${error.message}`
-    )
-  }
-
-  // TODO: work out what to return when more than one work e.g. a bibtex file
-  const csl = csls[0]
-
-  return decodeCsl(csl)
+interface DecodeOptions {
+  format: string
 }
 
-/**
- * Encode a `Node` to CSL-JSON or other bibliographic format
- *
- * See https://citation.js.org/api/tutorial-output_options.html
- * for formats and other options which could be used.
- */
-export const encode: Encode = async (
-  node: stencila.Node,
-  options: EncodeOptions = {}
-): Promise<vfile.VFile> => {
-  const { format = 'json' } = options
+export class CSLCodec extends Codec<{}, DecodeOptions>
+  implements Codec<{}, DecodeOptions> {
+  public readonly mediaTypes = ['application/vnd.citationstyles.csl+json']
 
-  let content = ''
-  if (isCreativeWork(node)) {
-    const csl = encodeCsl(node)
-    const cite = new Cite([csl])
-    if (format === 'json') {
-      const { _graph, ...rest } = cite.data[0]
-      content = JSON.stringify(rest, null, 2)
-    } else {
-      content = cite.format(format)
+  public readonly extNames = ['csl']
+
+  /**
+   * Parse CSL-JSON or other bibliographic format to a `Node`
+   */
+  public readonly decode = async (
+    file: vfile.VFile,
+    options = { format: '@csl/object' }
+  ): Promise<stencila.Node> => {
+    const content: string = await vfile.dump(file)
+
+    let csls
+    try {
+      csls = await Cite.inputAsync(content, { forceType: options.format })
+    } catch (error) {
+      throw new Error(
+        `Error when parsing content of format ${options.format}: ${error.message}`
+      )
     }
-  } else {
-    logErrorNodeType('csl', 'encode', 'CreativeWork', node)
+
+    // TODO: work out what to return when more than one work e.g. a bibtex file
+    const csl = csls[0]
+
+    return decodeCsl(csl)
   }
 
-  return vfile.load(content)
+  /**
+   * Encode a `Node` to CSL-JSON or other bibliographic format
+   *
+   * See https://citation.js.org/api/tutorial-output_options.html
+   * for formats and other options which could be used.
+   */
+  public readonly encode = async (
+    node: stencila.Node,
+    options: GlobalEncodeOptions = {}
+  ): Promise<vfile.VFile> => {
+    const { format = 'json' } = options
+
+    let content = ''
+    if (isCreativeWork(node)) {
+      const csl = encodeCsl(node)
+      const cite = new Cite([csl])
+      if (format === 'json') {
+        const { _graph, ...rest } = cite.data[0]
+        content = JSON.stringify(rest, null, 2)
+      } else {
+        content = cite.format(format)
+      }
+    } else {
+      logErrorNodeType('csl', 'encode', 'CreativeWork', node)
+    }
+
+    return vfile.load(content)
+  }
 }
 
 /**

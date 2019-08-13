@@ -37,7 +37,7 @@
 import { default as log, configure } from './log'
 import minimist from 'minimist'
 import path from 'path'
-import { convert, read, write } from '.'
+import { convert, read, write } from './index'
 import './boot'
 // eslint-disable-next-line import/no-named-default
 import { default as processNode } from './process'

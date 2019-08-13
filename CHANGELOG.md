@@ -1,3 +1,10 @@
+## [0.62.4](https://github.com/stencila/encoda/compare/v0.62.3...v0.62.4) (2019-08-12)
+
+
+### Bug Fixes
+
+* **DOI:** Fix encoding failure error message ([7a97230](https://github.com/stencila/encoda/commit/7a97230))
+
 ## [0.62.3](https://github.com/stencila/encoda/compare/v0.62.2...v0.62.3) (2019-08-09)
 
 

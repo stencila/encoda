@@ -1,8 +1,9 @@
 import stencila from '@stencila/schema'
 import fs from 'fs'
 import { dump, load } from '../../util/vfile'
-import { decode, encode } from './'
-import { EncodeOptions } from '../..'
+import { HTMLCodec } from './'
+
+const { encode, decode } = new HTMLCodec()
 
 test('decode', async () => {
   expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)
@@ -10,7 +11,7 @@ test('decode', async () => {
   expect(await decode(load(dt.html))).toEqual(dt.node)
 })
 
-const e = async (node: stencila.Node, options: EncodeOptions = {}) =>
+const e = async (node: stencila.Node, options = {}) =>
   await dump(await encode(node, options))
 
 test('encode', async () => {
@@ -40,7 +41,7 @@ describe('String escaping', () => {
 })
 
 test('encode with different themes', async () => {
-  const e = async (options: EncodeOptions = {}) =>
+  const e = async (options = {}) =>
     await dump(await encode(kitchenSink.node, options))
 
   let html = await e({ theme: 'stencila' })
@@ -61,7 +62,7 @@ test('encode with different themes', async () => {
 })
 
 test('encode with bundling', async () => {
-  const e = async (options: EncodeOptions = {}) =>
+  const e = async (options = {}) =>
     await dump(await encode(kitchenSink.node, options))
 
   const stylesheet = fs.readFileSync(

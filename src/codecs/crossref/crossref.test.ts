@@ -1,8 +1,10 @@
-import { toMatchFile } from 'jest-file-snapshot'
-import { decode, encode } from '.'
-import { snapshot, nockRecord } from '../../__tests__/helpers'
+import { CrossrefCodec } from '.'
 import * as vfile from '../../util/vfile'
-import * as yaml from '../yaml'
+import { nockRecord, snapshot } from '../../__tests__/helpers'
+import { YamlCodec } from '../yaml'
+
+const { encode, decode } = new CrossrefCodec()
+const yaml = new YamlCodec()
 
 const query2yaml = async (query: string) =>
   vfile.dump(await yaml.encode(await decode(await vfile.load(query))))
@@ -18,7 +20,7 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode(null)).rejects.toThrow(
+  await expect(encode()).rejects.toThrow(
     /Encoding to a Crossref query is not supported/
   )
 })

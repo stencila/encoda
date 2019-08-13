@@ -1,15 +1,16 @@
-import { decode, encode, sniff } from '.'
-import path from 'path'
-import * as vfile from '../../util/vfile'
-import * as stencila from '@stencila/schema'
-import globby from 'globby'
 import fs from 'fs-extra'
-
-jest.setTimeout(30 * 1000)
-
+import globby from 'globby'
+import path from 'path'
+import { DarCodec } from '.'
+import * as vfile from '../../util/vfile'
 // Fixtures
 import flat from '../../__fixtures__/collection-flat'
 import mixed from '../../__fixtures__/collection-mixed'
+
+const { decode, encode, sniff } = new DarCodec()
+
+jest.setTimeout(30 * 1000)
+
 const empty = path.join(__dirname, '__fixtures__', 'empty.dar')
 
 // Create an output DAR name and remove it if it already exists

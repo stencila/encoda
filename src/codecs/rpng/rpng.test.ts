@@ -1,17 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import { read } from '../../util/vfile'
-import {
-  decode,
-  decodeSync,
-  encode,
-  extract,
-  has,
-  insert,
-  sniff,
-  sniffSync
-} from './'
+import { extract, has, insert, RPNGCodec } from './'
 import vfile = require('vfile')
+
+const { decode, decodeSync, encode, sniff, sniffSync } = new RPNGCodec()
 
 // TODO add additional test files
 

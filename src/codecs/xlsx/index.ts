@@ -8,33 +8,37 @@ import { array, option, ord } from 'fp-ts'
 import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
-import { Encode, EncodeOptions } from '../..'
 import * as vfile from '../../util/vfile'
-
-export const mediaTypes = [
-  // spell-checker: disable
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-  // spell-checker: enable
-]
+import { Codec, GlobalEncodeOptions } from '../types'
 
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  const buffer = await vfile.dump(file, 'buffer')
-  const workbook = xlsx.read(buffer, { type: 'buffer' })
-  return decodeWorkbook(workbook)
-}
+export class XlsxCodec extends Codec implements Codec {
+  public readonly mediaTypes = [
+    // spell-checker: disable
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    // spell-checker: enable
+  ]
 
-export const encode: Encode = async (
-  node: stencila.Node,
-  { format = 'xlsx' }: EncodeOptions = {}
-): Promise<vfile.VFile> => {
-  const workbook = encodeNode(node)
-  const buffer = xlsx.write(workbook, {
-    type: format === 'csv' ? 'string' : 'buffer',
-    bookType: format as xlsx.BookType
-  })
-  return vfile.load(buffer)
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
+    const buffer = await vfile.dump(file, 'buffer')
+    const workbook = xlsx.read(buffer, { type: 'buffer' })
+    return decodeWorkbook(workbook)
+  }
+
+  public readonly encode = async (
+    node: stencila.Node,
+    { format = 'xlsx' }: GlobalEncodeOptions = {}
+  ): Promise<vfile.VFile> => {
+    const workbook = encodeNode(node)
+    const buffer = xlsx.write(workbook, {
+      type: format === 'csv' ? 'string' : 'buffer',
+      bookType: format as xlsx.BookType
+    })
+    return vfile.load(buffer)
+  }
 }
 
 // TODO: Refactor to remove use of any

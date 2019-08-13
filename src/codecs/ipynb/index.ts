@@ -6,9 +6,10 @@
 
 import stencila from '@stencila/schema'
 import { isEntity, nodeType } from '@stencila/schema/dist/util'
-import { dump, Encode, load } from '../..'
+import { dump, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import * as vfile from '../../util/vfile'
+import { Codec } from '../types'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
 
@@ -72,40 +73,44 @@ export function isv3<Key extends keyof nbformat.v3.Types>(
   return version === nbformat.Version.v3
 }
 
-/**
- * The media types that this codec can decode/encode.
- */
-export const mediaTypes = ['application/x-ipynb+json']
+export class IPyNbCodec extends Codec implements Codec {
+  /**
+   * The media types that this codec can decode/encode.
+   */
+  public readonly mediaTypes = ['application/x-ipynb+json']
 
-/**
- * The file extension names associated with this codec.
- */
-export const extNames = ['ipynb']
+  /**
+   * The file extension names associated with this codec.
+   */
+  public readonly extNames = ['ipynb']
 
-/**
- * Decode a `VFile` with IPYNB content to a Stencila `Node`.
- *
- * @param file The `VFile` to decode
- * @returns A promise that resolves to a Stencila `Node`
- */
-export async function decode(file: vfile.VFile): Promise<stencila.Node> {
-  const json = await vfile.dump(file)
-  const ipynb = JSON.parse(json)
-  return decodeNotebook(ipynb, ipynb.nbformat)
-}
+  /**
+   * Decode a `VFile` with IPYNB content to a Stencila `Node`.
+   *
+   * @param file The `VFile` to decode
+   * @returns A promise that resolves to a Stencila `Node`
+   */
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.Node> => {
+    const json = await vfile.dump(file)
+    const ipynb = JSON.parse(json)
+    return decodeNotebook(ipynb, ipynb.nbformat)
+  }
 
-/**
- * Encode a Stencila `Node` to a `VFile` with IPYNB content.
- *
- * @param thing The Stencila `Node` to encode
- * @returns A promise that resolves to a `VFile`
- */
-export const encode: Encode = async (
-  node: stencila.Node
-): Promise<vfile.VFile> => {
-  const ipynb = await encodeNode(node)
-  const json = JSON.stringify(ipynb, null, '  ')
-  return vfile.load(json)
+  /**
+   * Encode a Stencila `Node` to a `VFile` with IPYNB content.
+   *
+   * @param thing The Stencila `Node` to encode
+   * @returns A promise that resolves to a `VFile`
+   */
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
+    const ipynb = await encodeNode(node)
+    const json = JSON.stringify(ipynb, null, '  ')
+    return vfile.load(json)
+  }
 }
 
 /**
