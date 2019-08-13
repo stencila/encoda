@@ -37,7 +37,7 @@ import { selectAll } from 'unist-util-select'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-const logger = getLogger('encoda:md')
+const log = getLogger('encoda:md')
 export class MdCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/markdown', 'text/x-markdown']
 
@@ -229,9 +229,9 @@ function decodeNode(node: UNIST.Node): stencila.Node {
 
         default:
           if (ext.name) {
-            throw new Error(`Unhandled generic extension "${ext.name}"`)
+            log.warn(`Unhandled generic extension "${ext.name}"`)
           } else {
-            throw new Error(
+            log.warn(
               `Unregistered generic extension "${node.data && node.data.hName}"`
             )
           }
@@ -240,7 +240,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeHTML(node as MDAST.HTML)
 
     default:
-      logger.warn(`No Markdown decoder for MDAST node type "${type}"`)
+      log.warn(`No Markdown decoder for MDAST node type "${type}"`)
       return ''
   }
 }
@@ -304,7 +304,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeObject(node as object)
 
     default:
-      throw new Error(`No Markdown encoder for Stencila node type "${type_}"`)
+      log.warn(`No Markdown encoder for Stencila node type "${type_}"`)
+      return encodeString('')
   }
 }
 
