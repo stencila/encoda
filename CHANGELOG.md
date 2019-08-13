@@ -1,3 +1,12 @@
+## [0.62.6](https://github.com/stencila/encoda/compare/v0.62.5...v0.62.6) (2019-08-13)
+
+
+### Bug Fixes
+
+* **CLI:** Do not have a default for the `to` arg ([3b2f702](https://github.com/stencila/encoda/commit/3b2f702))
+* **Markdown:** Fallback to returning emoty string ([a041606](https://github.com/stencila/encoda/commit/a041606))
+* **Markdown:** Log warnings instead of thowing errors ([a99e7bf](https://github.com/stencila/encoda/commit/a99e7bf))
+
 ## [0.62.5](https://github.com/stencila/encoda/compare/v0.62.4...v0.62.5) (2019-08-13)
 
 
