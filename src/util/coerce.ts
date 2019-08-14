@@ -44,8 +44,10 @@ export async function coerce<Key extends keyof stencila.Types>(
    *   - remove additional properties (not in schema);
    *     Ajv does this but with limitations when `anyOf` etc are used
    *     https://github.com/epoberezkin/ajv/blob/master/FAQ.md#additional-properties-inside-compound-keywords-anyof-oneof-etc
-   *   - coerce an object to an `array` of objects;
+   *   - coerce an object to an array of objects;
    *     Ajv does not do that https://github.com/epoberezkin/ajv/issues/992
+   *   - coerce an array with length > 1 to a scalar;
+   *     Ajv (understandably) only does this if length == 1
    */
   async function reshape(node: stencila.Node): Promise<void> {
     if (isEntity(node)) {
@@ -55,13 +57,13 @@ export async function coerce<Key extends keyof stencila.Types>(
       for (const [key, child] of Object.entries(node)) {
         let name = propertyAliases[key]
         if (name !== undefined) {
-          // Aliased property
+          // Rename aliased property
           // @ts-ignore
           node[name] = child
           // @ts-ignore
           delete node[key]
         } else if (properties[key] === undefined) {
-          // Additional property, just delete, no need to reshape child
+          // Remove additional property (no need to reshape child)
           // @ts-ignore
           delete node[key]
           continue
@@ -69,15 +71,29 @@ export async function coerce<Key extends keyof stencila.Types>(
           name = key
         }
 
-        // Object to array of object
         const propertySchema = properties[name]
+        const isArray = Array.isArray(child)
         if (
           propertySchema.type === 'array' &&
-          typeof child === 'object' &&
-          !Array.isArray(child)
+          !isArray &&
+          typeof child === 'object'
         ) {
+          // Coerce a single object to an array
+          // Do not do this for primitives since Ajv will do that for us
+          // and to keep strings as strings for possible decoding via
+          // the `codec` keyword
           // @ts-ignore
           node[name] = [child]
+        } else if (
+          propertySchema.type !== undefined &&
+          ['string', 'number', 'boolean', 'object', 'integer'].includes(
+            propertySchema.type.toString()
+          ) &&
+          isArray
+        ) {
+          // Coerce an array to a scalar by taking the first element
+          // @ts-ignore
+          node[name] = child[0]
         }
 
         await reshape(child)

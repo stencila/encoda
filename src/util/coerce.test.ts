@@ -107,6 +107,16 @@ describe('coerce', () => {
       type: 'Person',
       name: '42'
     })
+
+    expect(
+      await coerce({
+        type: 'Person',
+        name: ['First', 'Second']
+      })
+    ).toEqual({
+      type: 'Person',
+      name: 'First'
+    })
   })
 
   it('will coerce scalars to arrays', async () => {
@@ -186,8 +196,8 @@ describe('coerce', () => {
           },
           {
             type: 'Person',
-            givenNames: ['Jane', 'Jill'],
-            familyNames: 'Jones'
+            firstNames: ['Jane', 'Jill'],
+            lastNames: 'Jones'
           }
         ]
       },

@@ -12,9 +12,7 @@ test('issue 190: coerce does not throw a validation error with nested content', 
       {
         type: 'Heading',
         depth: '1',
-        content: [
-          'Heading with depth as a string instead of number.'
-        ]
+        content: ['Heading with depth as a string instead of number.']
       },
       {
         type: 'Paragraph',
@@ -38,15 +36,11 @@ test('issue 190: coerce does not throw a validation error with nested content', 
       {
         type: 'Heading',
         depth: 1, // Coerced to integer
-        content: [
-          'Heading with depth as a string instead of number.'
-        ]
+        content: ['Heading with depth as a string instead of number.']
       },
       {
         type: 'Paragraph',
-        content: [
-          'A string which should be coerced to an array.'
-        ]
+        content: ['A string which should be coerced to an array.']
       },
       {
         type: 'Paragraph',
@@ -54,9 +48,7 @@ test('issue 190: coerce does not throw a validation error with nested content', 
           'A paragraph with an Emphasis node that requires content to be coerced',
           {
             type: 'Emphasis',
-            content: [
-              'emphasised'
-            ]
+            content: ['emphasised']
           }
         ]
       }
