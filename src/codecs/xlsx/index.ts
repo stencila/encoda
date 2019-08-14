@@ -287,7 +287,7 @@ function encodeDatatable(datatable: stencila.Datatable): xlsx.WorkSheet {
 
 function decodeCell(
   cell: xlsx.CellObject
-): null | boolean | string | number | stencila.CodeExpr {
+): null | boolean | string | number | stencila.CodeExpression {
   let value = cell.v
   if (value) {
     if (value instanceof Date) {
@@ -296,12 +296,12 @@ function decodeCell(
   }
 
   if (cell.f) {
-    const expression: stencila.CodeExpr = {
-      type: 'CodeExpr',
-      programmingLanguage: 'excel',
+    const expression: stencila.CodeExpression = {
+      type: 'CodeExpression',
+      language: 'excel',
       text: cell.f.trim()
     }
-    if (value) expression.value = value
+    if (value) expression.output = value
     return expression
   } else {
     return value || null
@@ -317,11 +317,11 @@ function encodeCell(node: stencila.Node): xlsx.CellObject | null {
   if (typeof node === 'string') return { t: 's', v: node }
   if (!Array.isArray(node) && node.type) {
     switch (node.type) {
-      case 'CodeExpr': {
-        const expr = node as stencila.CodeExpr
+      case 'CodeExpression': {
+        const expr = node as stencila.CodeExpression
         const cell: xlsx.CellObject = { t: 'b', f: expr.text }
-        if (expr.value) {
-          const value = encodeCell(expr.value)
+        if (expr.output) {
+          const value = encodeCell(expr.output)
           if (value) {
             cell.t = value.t
             cell.v = value.v

@@ -39,10 +39,10 @@ export default async function process(
       const meta = code.meta
       if (meta) {
         if ('validate' in meta) {
-          await _validate(code.value, meta.from || code.programmingLanguage)
+          await _validate(code.text, meta.from || code.programmingLanguage)
         }
         if ('coerce' in meta) {
-          await _coerce(code.value, meta.from || code.programmingLanguage)
+          await _coerce(code.text, meta.from || code.programmingLanguage)
         }
         if (meta.id) {
           _import(meta.id, node)
@@ -50,11 +50,11 @@ export default async function process(
         if (meta.import) {
           _import(
             meta.import,
-            await _coerce(code.value, meta.from || code.programmingLanguage)
+            await _coerce(code.text, meta.from || code.programmingLanguage)
           )
         }
         if (meta.export) {
-          code.value = await dump(
+          code.text = await dump(
             _get(meta.export),
             meta.to || code.programmingLanguage,
             {
@@ -67,13 +67,13 @@ export default async function process(
           _equals(
             meta.equals,
             await _coerce(
-              code.value,
+              code.text,
               meta.from || meta.to || code.programmingLanguage
             )
           )
         }
         if ('include' in meta) {
-          return _coerce(code.value, meta.from || code.programmingLanguage)
+          return _coerce(code.text, meta.from || code.programmingLanguage)
         }
       }
     }

@@ -3,12 +3,13 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 // @ts-ignore
 import datapackage from 'datapackage'
 import { dump } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
+import { nodeType } from '@stencila/schema'
 
 const logger = getLogger('encoda')
 
@@ -33,9 +34,11 @@ export class TDPCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     let pkg: datapackage.Package
-    if (file.path) pkg = await datapackage.Package.load(file.path)
-    else
+    if (file.path) {
+      pkg = await datapackage.Package.load(file.path)
+    } else {
       pkg = await datapackage.Package.load(JSON.parse(await vfile.dump(file)))
+    }
 
     // Decode resources
     const parts = await Promise.all(pkg.resources.map(
@@ -44,8 +47,11 @@ export class TDPCodec extends Codec implements Codec {
 
     // Collection or Datatable ?
     let node: stencila.Datatable | stencila.Collection
-    if (parts.length === 1) node = parts[0]
-    else node = { type: 'Collection', parts }
+    if (parts.length === 1) {
+      node = parts[0]
+    } else {
+      node = { type: 'Collection', parts }
+    }
 
     // Add metadata https://frictionlessdata.io/specs/data-resource/#metadata-properties
     const desc = pkg.descriptor
@@ -133,6 +139,7 @@ export class TDPCodec extends Codec implements Codec {
     }
   }
 }
+
 /********************************************************************
  *  datapackage.Resource <-> stencila.Datatable
  ********************************************************************/
@@ -240,18 +247,10 @@ function decodeField(
   }
 
   // Build the column schema
-  const schema: stencila.DatatableColumnSchema = {
-    type: 'DatatableColumnSchema',
-    items
-  }
+  const schema = stencila.arraySchema(items)
   if (constraints.unique) schema.uniqueItems = true
 
-  return {
-    type: 'DatatableColumn',
-    name: field.name,
-    schema,
-    values
-  }
+  return stencila.datatableColumn(field.name, values, { schema })
 }
 
 /**
@@ -379,29 +378,52 @@ interface ColumnTypeFormatConstraints {
     [key: string]: any
   }
 }
+
 function encodeDatatableColumnSchema(
-  schema: stencila.DatatableColumnSchema
+  schema: stencila.ArraySchema
 ): ColumnTypeFormatConstraints {
+  // TODO: this method needs checking and refactoring since changing to
+  //  ArraySchema
   let items = schema.items
 
+  if (items === undefined)
+    return {
+      type: undefined,
+      format: undefined,
+      constraints: {}
+    }
+
   const constraints: { [key: string]: any } = {}
-  if (items.anyOf) {
-    items = items.anyOf[0] as { [key: string]: any }
-  } else {
-    constraints.required = true
-  }
 
-  let type = items.type
-  const format = items.format
-  switch (type) {
-    case 'boolean':
-    case 'integer':
-    case 'number':
-    case 'object':
-    case 'array':
+  constraints.required = schema.minItems != undefined && schema.minItems > 0
+
+  let type
+  let format
+  switch (nodeType(items)) {
+    case 'ConstantSchema':
+      type = 'object'
       break
+    case 'BooleanSchema':
+      type = 'boolean'
+      break
+    case 'NumberSchema':
+      type = 'number'
+      break
+    case 'IntegerSchema':
+      type = 'integer'
+      break
+    case 'StringSchema':
+      if ((items as stencila.StringSchema).minLength)
+        constraints.minLength = (items as stencila.StringSchema).minLength
+      if ((items as stencila.StringSchema).maxLength)
+        constraints.maxLength = (items as stencila.StringSchema).maxLength
+      if ((items as stencila.StringSchema).pattern)
+        constraints.pattern = (items as stencila.StringSchema).pattern
 
-    case 'string':
+      type = 'string'
+
+      format = (items as stencila.StringSchema).pattern
+
       switch (format) {
         case 'date':
           type = 'date'
@@ -414,17 +436,23 @@ function encodeDatatableColumnSchema(
           break
       }
       break
-
+    case 'EnumSchema':
+      if ((items as stencila.EnumSchema).values)
+        constraints.enum = (items as stencila.EnumSchema).values
+      type = 'string'
+      break
+    case 'ArraySchema':
+      type = 'array'
+      break
+    case 'TupleSchema':
+      type = 'array'
+      break
     default:
       type = 'any'
   }
 
-  if (items.minimum) constraints.minimum = items.minimum
-  if (items.maximum) constraints.maximum = items.maximum
-  if (items.minLength) constraints.minLength = items.minLength
-  if (items.maxLength) constraints.maxLength = items.maxLength
-  if (items.pattern) constraints.pattern = items.pattern
-  if (items.enum) constraints.enum = items.enum
+  if (schema.minItems) constraints.minimum = schema.minItems
+  if (schema.maxItems) constraints.maximum = schema.maxItems
 
   return { type, format, constraints }
 }

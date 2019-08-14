@@ -85,9 +85,9 @@ async function encodeNode(node: stencila.Node): Promise<string> {
         return ''
       }
       if (block.meta && block.meta.hidden === '') {
-        return `${block.value}\n`
+        return `${block.text}\n`
       }
-      let bash = `pe "${block.value}"\n`
+      let bash = `pe "${block.text}"\n`
       if (block.meta) {
         if (block.meta.pause) bash += `z ${block.meta.pause}\n`
       }

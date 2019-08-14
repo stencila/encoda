@@ -313,6 +313,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCodeBlock(node as stencila.CodeBlock)
     case 'CodeChunk':
       return encodeCodeChunk(node as stencila.CodeChunk)
+    case 'CodeExpression':
+      return encodeCodeExpression(node as stencila.CodeExpression)
     case 'Collection':
       return encodeCollection(node as stencila.Collection)
     case 'Figure':
@@ -910,11 +912,11 @@ function encodeCollection(collection: stencila.Collection): HTMLOListElement {
 function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
-  const { programmingLanguage, value } = decodeCode(code)
+  const { programmingLanguage, text } = decodeCode(code)
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
     programmingLanguage,
-    value
+    text
   }
   const meta = decodeDataAttrs(elem)
   if (meta) codeblock.meta = meta
@@ -933,6 +935,20 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
   return h('pre', attrs, code)
 }
 
+function encodeCodeOutput(node: stencila.Node) {
+  const content = (() => {
+    switch (nodeType(node)) {
+      case 'string':
+        return h('pre', node as string)
+      case 'ImageObject':
+        return encodeImageObject(node as stencila.ImageObject)
+      default:
+        return encodeNode(node)
+    }
+  })()
+  return h('figure', content)
+}
+
 /**
  * Encode a `stencila.CodeChunk` to a `<stencila-codechunk>` element.
  */
@@ -941,7 +957,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
 
   const codeBlock = encodeCodeBlock({
     type: 'CodeBlock',
-    value: chunk.text || ''
+    text: chunk.text || ''
   })
   // TODO: Until our themes can handle interactive
   codeBlock.setAttribute('style', 'display:none')
@@ -965,6 +981,20 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   )
 
   return h('stencila-codechunk', attrs, codeBlock, outputs)
+}
+
+/**
+ * Encode a `stencila.CodeExpression to a `<stencila-codeexpression>` element.
+ */
+function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
+  const attrs = encodeDataAttrs(expr.meta || {})
+  attrs['text'] = expr.text
+  if (expr.programmingLanguage) attrs['language'] = expr.programmingLanguage
+  return h(
+    'stencila-codeexpression',
+    attrs,
+    encodeCodeOutput(expr.output || '')
+  )
 }
 
 /**
@@ -1202,7 +1232,7 @@ function encodeQuote(quote: stencila.Quote): HTMLQuoteElement {
  * Decode a `<code>` element to a `stencila.Code`.
  */
 function decodeCode(elem: HTMLElement): stencila.Code {
-  const code: stencila.Code = { type: 'Code', value: elem.textContent || '' }
+  const code: stencila.Code = { type: 'Code', text: elem.textContent || '' }
   const clas = elem.getAttribute('class')
   if (clas) {
     const match = clas.match(/^language-(\w+)$/)
@@ -1226,7 +1256,7 @@ function encodeCode(
     class: code.programmingLanguage
       ? `language-${code.programmingLanguage}`
       : undefined,
-    innerHTML: escape(code.value),
+    innerHTML: escape(code.text),
     ...(dataAttrs ? encodeDataAttrs(code.meta || {}) : {})
   })
 }

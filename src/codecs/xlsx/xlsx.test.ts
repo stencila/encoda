@@ -101,10 +101,10 @@ const table = {
             name: 'B4',
             content: [
               {
-                type: 'CodeExpr',
-                programmingLanguage: 'excel',
+                type: 'CodeExpression',
+                language: 'excel',
                 text: 'SUM(B2:B3)^3',
-                value: 27
+                output: 27
               }
             ]
           }
@@ -168,10 +168,10 @@ const collection: {
                 name: 'B1',
                 content: [
                   {
-                    type: 'CodeExpr',
-                    programmingLanguage: 'excel',
+                    type: 'CodeExpression',
+                    language: 'excel',
                     text: 'AVERAGE(data!B2:B7)',
-                    value: 3.5
+                    output: 3.5
                   }
                 ]
               }
@@ -190,10 +190,10 @@ const collection: {
                 name: 'B2',
                 content: [
                   {
-                    type: 'CodeExpr',
-                    programmingLanguage: 'excel',
+                    type: 'CodeExpression',
+                    language: 'excel',
                     text: 'AVERAGE(data!C2:C7)',
-                    value: 2.66666666666667
+                    output: 2.66666666666667
                   }
                 ]
               }
