@@ -84,7 +84,10 @@ configure(options.debug)
       if (command === 'process')
         processed = await processNode(node, path.dirname(input))
       else if (command === 'coerce') processed = await coerce(node)
-      else if (command === 'validate') processed = await validate(node)
+      else if (command === 'validate') {
+        await validate(node)
+        processed = node
+      }
       else processed = node
       await write(processed, output, {
         format: to,
