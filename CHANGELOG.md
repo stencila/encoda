@@ -1,3 +1,11 @@
+## [0.62.7](https://github.com/stencila/encoda/compare/v0.62.6...v0.62.7) (2019-08-14)
+
+
+### Bug Fixes
+
+* **CLI:** Adapt to change in validate function ([21d2e6b](https://github.com/stencila/encoda/commit/21d2e6b))
+* **Coerce:** Do not use the useDefaults Ajv option ([e2dc38e](https://github.com/stencila/encoda/commit/e2dc38e)), closes [#190](https://github.com/stencila/encoda/issues/190)
+
 ## [0.62.6](https://github.com/stencila/encoda/compare/v0.62.5...v0.62.6) (2019-08-13)
 
 
