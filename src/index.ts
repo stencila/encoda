@@ -7,6 +7,8 @@ import {
   GlobalEncodeOptions
 } from './codecs/types'
 import * as vfile from './util/vfile'
+// eslint-disable-next-line import/no-named-default
+import { default as log } from './log'
 
 type VFile = vfile.VFile
 
@@ -127,6 +129,15 @@ export async function match(
     }
   }
 
+  const handleGetCodecError = (error: any) => {
+    // Do not log MODULE_NOT_FOUND warnings here since not finding a matching module
+    // is normal behavior and doing so causes unnecessary noise and anxiety :)
+
+    if (error.code !== 'MODULE_NOT_FOUND') {
+      log.warn(error)
+    }
+  }
+
   let codec: Codec | undefined
 
   /**
@@ -139,8 +150,7 @@ export async function match(
     const c = await import(`./codecs/${extName}`)
     codec = getCodec(c)
   } catch (error) {
-    // Do not log any warnings here since not finding a matching module
-    // is normal behavior and doing so causes unnecessary noise and anxiety :)
+    handleGetCodecError(error)
   }
 
   if (codec) return codec
@@ -150,8 +160,7 @@ export async function match(
       const c = await import(`./codecs/${codecName}`)
       codec = getCodec(c)
     } catch (error) {
-      // Do not log any warnings here since not finding a matching module
-      // is normal behavior and doing so causes unnecessary noise and anxiety :)
+      handleGetCodecError(error)
     }
 
     if (!codec) break

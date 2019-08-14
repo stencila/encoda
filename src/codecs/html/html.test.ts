@@ -36,6 +36,9 @@ test('decode', async () => {
   expect(await d(dt.html)).toEqual(dt.node)
 })
 
+const e = async (node: stencila.Node, options = {}) =>
+  await dump(await encode(node, options))
+
 test('encode', async () => {
   expect(await e(kitchenSink.node)).toEqual(kitchenSink.html)
   expect(await e(attrs.node)).toEqual(attrs.html)
@@ -576,7 +579,7 @@ const inc = (n) =&gt; n + 1</code></pre>
           {
             type: 'Code',
             programmingLanguage: 'python',
-            value: '# code'
+            text: '# code'
           },
           '.'
         ]
@@ -628,12 +631,12 @@ const inc = (n) =&gt; n + 1</code></pre>
       {
         type: 'CodeBlock',
         programmingLanguage: 'r',
-        value: '# Some code\nx = c(1,2)'
+        text: '# Some code\nx = c(1,2)'
       },
       {
         type: 'CodeBlock',
         programmingLanguage: 'js',
-        value:
+        text:
           '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\nconst inc = (n) => n + 1'
       },
       {
@@ -744,7 +747,7 @@ const attrs = {
         meta: {
           attr1: 'foo'
         },
-        value: 'da code'
+        text: 'da code'
       },
       '.'
     ]

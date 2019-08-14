@@ -73,19 +73,14 @@ export class XmdCodec extends Codec implements Codec {
     // eslint-disable-next-line
     function transform(node: any): stencila.Node {
       if (node === null || typeof node !== 'object') return node
-      if (node.type === 'CodeExpr') {
-        const code: stencila.Code = {
-          type: 'Code',
-          value: `${node.programmingLanguage} ${node.text}`
-        }
-        return code
+      if (node.type === 'CodeExpression') {
+        return stencila.code(`${node.programmingLanguage} ${node.text}`)
       }
       if (node.type === 'CodeChunk') {
-        const codeBlock: stencila.CodeBlock = {
-          type: 'CodeBlock',
-          programmingLanguage: node.programmingLanguage,
-          value: node.text
-        }
+        const codeBlock = stencila.codeBlock(node.text, {
+          programmingLanguage: node.programmingLanguage
+        })
+
         if (node.meta) codeBlock.meta = node.meta
         return codeBlock
       }

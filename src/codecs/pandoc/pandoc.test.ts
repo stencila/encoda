@@ -288,7 +288,7 @@ const kitchenSink: testCase = {
           ' and ',
           { type: 'Quote', content: ['quote'] },
           ' and ',
-          { type: 'Code', programmingLanguage: 'r', value: 'code' },
+          { type: 'CodeExpression', programmingLanguage: 'r', text: 'code' },
           ' and ',
           {
             type: 'Link',
@@ -318,7 +318,7 @@ const kitchenSink: testCase = {
       {
         type: 'CodeBlock',
         programmingLanguage: 'python',
-        value: '# A code block'
+        text: '# A code block'
       },
       {
         type: 'List',

@@ -13,16 +13,16 @@ describe('issue 77', () => {
       content: [
         {
           type: 'CodeBlock',
-          value: 'date'
+          text: 'date'
         },
         {
           type: 'CodeBlock',
-          value: 'date -u'
+          text: 'date -u'
         },
         {
           type: 'CodeBlock',
+          text: 'date --utc'
           programmingLanguage: 'sh',
-          value: 'date --utc'
         },
         {
           type: 'CodeBlock',
@@ -30,7 +30,7 @@ describe('issue 77', () => {
           meta: {
             pause: '2'
           },
-          value: 'date --help'
+          text: 'date --help'
         }
       ]
     })

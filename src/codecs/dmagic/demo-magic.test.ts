@@ -45,19 +45,19 @@ const node: stencila.Article = {
         ' and ',
         {
           type: 'Code',
-          value: 'code'
+          text: 'code'
         }
       ]
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'bash',
-      value: 'date'
+      text: 'date'
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'bash',
-      value: 'date --utc',
+      text: 'date --utc',
       meta: {
         pause: 2
       }
@@ -65,7 +65,7 @@ const node: stencila.Article = {
     {
       type: 'CodeBlock',
       programmingLanguage: 'sh',
-      value: 'date -u'
+      text: 'date -u'
     },
     {
       type: 'CodeBlock',

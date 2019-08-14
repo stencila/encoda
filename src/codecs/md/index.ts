@@ -159,11 +159,10 @@ export function encodeMarkdown(node: stencila.Node): string {
   mdast = stringifyExtensions(mdast)
   mdast = stringifyAttrs(mdast)
 
-  const md = unified()
+  return unified()
     .use(stringifier)
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .stringify(mdast)
-  return md
 }
 
 function decodeNode(node: UNIST.Node): stencila.Node {
@@ -286,8 +285,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeQuote(node as stencila.Quote)
     case 'Code':
       return encodeCode(node as stencila.Code)
-    case 'CodeExpr':
-      return encodeCodeExpr(node as stencila.CodeExpr)
+    case 'CodeExpression':
+      return encodeCodeExpression(node as stencila.CodeExpression)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
 
@@ -535,7 +534,7 @@ function encodeQuoteBlock(block: stencila.QuoteBlock): MDAST.Blockquote {
 function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
   const codeBlock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    value: code.value
+    text: code.value
   }
   if (code.lang) codeBlock.programmingLanguage = code.lang
   // The `remark-attrs` plugin parses metadata from the info string
@@ -559,7 +558,7 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
     type: 'code',
     lang: block.programmingLanguage,
     meta,
-    value: block.value
+    value: block.text
   }
 }
 
@@ -568,7 +567,8 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
  */
 function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
   const codeChunk: stencila.CodeChunk = {
-    type: 'CodeChunk'
+    type: 'CodeChunk',
+    text: ''
   }
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article
@@ -576,11 +576,11 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     const first = nodes[0]
     if (nodeType(first) === 'CodeBlock') {
       const codeBlock = first as stencila.CodeBlock
-      const { programmingLanguage, meta, value } = codeBlock
+      const { programmingLanguage, meta, text } = codeBlock
       if (programmingLanguage)
         codeChunk.programmingLanguage = programmingLanguage
       if (meta) codeChunk.meta = meta
-      if (value) codeChunk.text = value
+      if (text) codeChunk.text = text
     }
   }
   return codeChunk
@@ -598,7 +598,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
     type: 'CodeBlock',
     programmingLanguage: programmingLanguage || 'text',
     meta,
-    value: text || ''
+    text: text || ''
   }
   nodes.push(codeBlock)
 
@@ -864,18 +864,18 @@ function encodeQuote(quote: stencila.Quote): Extension {
 
 /**
  * Decode a `MDAST.InlineCode` to either a static `stencila.Code`
- * or an executable `stencila.CodeExpr`.
+ * or an executable `stencila.CodeExpression`.
  */
 function decodeInlineCode(
   inlineCode: MDAST.InlineCode
-): stencila.Code | stencila.CodeExpr {
+): stencila.Code | stencila.CodeExpression {
   const attrs =
     inlineCode.data &&
     (inlineCode.data.hProperties as { [key: string]: string })
 
   if (attrs && attrs.type === 'expr') {
-    const codeExpr: stencila.CodeExpr = {
-      type: 'CodeExpr',
+    const codeExpr: stencila.CodeExpression = {
+      type: 'CodeExpression',
       text: inlineCode.value
     }
     const { type, lang, ...rest } = attrs
@@ -885,7 +885,7 @@ function decodeInlineCode(
   } else {
     const code: stencila.Code = {
       type: 'Code',
-      value: inlineCode.value
+      text: inlineCode.value
     }
     if (attrs) {
       const { lang, ...rest } = attrs
@@ -906,15 +906,17 @@ function encodeCode(code: stencila.Code): MDAST.InlineCode {
   return {
     type: 'inlineCode',
     data: { hProperties: attrs },
-    value: code.value
+    value: code.text
   }
 }
 
 /**
- * Encode a `stencila.CodeExpr` to a `MDAST.InlineCode` with
+ * Encode a `stencila.CodeExpression` to a `MDAST.InlineCode` with
  * `{type=expr}`
  */
-function encodeCodeExpr(codeExpr: stencila.CodeExpr): MDAST.InlineCode {
+function encodeCodeExpression(
+  codeExpr: stencila.CodeExpression
+): MDAST.InlineCode {
   const attrs = {
     type: 'expr',
     lang: codeExpr.programmingLanguage,

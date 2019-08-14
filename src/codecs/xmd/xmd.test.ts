@@ -56,8 +56,8 @@ plot(x,y)
         content: [
           'Simple ',
           {
-            type: 'CodeExpr',
-            programmingLanguage: 'r',
+            type: 'CodeExpression',
+            language: 'r',
             text: 'x * y'
           }
         ]
@@ -67,8 +67,8 @@ plot(x,y)
         content: [
           'With parentheses and brackets ',
           {
-            type: 'CodeExpr',
-            programmingLanguage: 'python',
+            type: 'CodeExpression',
+            language: 'python',
             text: 'sum(x*y)[1]'
           }
         ]
@@ -79,7 +79,7 @@ plot(x,y)
           'Just inline code ',
           {
             type: 'Code',
-            value: 'a * 6'
+            text: 'a * 6'
           }
         ]
       },
@@ -90,12 +90,12 @@ plot(x,y)
       },
       {
         type: 'CodeChunk',
-        programmingLanguage: 'r',
+        language: 'r',
         text: "file = 'data.csv'\n# a comment\nread.table(file)"
       },
       {
         type: 'CodeChunk',
-        programmingLanguage: 'r',
+        language: 'r',
         meta: {
           'fig.height': '7',
           'fig.width': '8'

@@ -3,7 +3,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import {
   isBlockContent,
   isInlineContent,
@@ -512,7 +512,7 @@ function encodeQuoteBlock(node: stencila.QuoteBlock): P.BlockQuote {
 function decodeCodeBlock(node: P.CodeBlock): stencila.CodeBlock {
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    value: node.c[1]
+    text: node.c[1]
   }
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
@@ -529,7 +529,7 @@ function encodeCodeBlock(node: stencila.CodeBlock): P.CodeBlock {
   const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'CodeBlock',
-    c: [attrs, node.value]
+    c: [attrs, node.text]
   }
 }
 
@@ -753,8 +753,8 @@ function encodeInline(node: stencila.Node): P.Inline {
       return encodeDelete(node as stencila.Delete)
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
-    case 'Code':
-      return encodeCode(node as stencila.Code)
+    case 'CodeExpression':
+      return encodeCode(node as stencila.CodeExpression)
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'ImageObject':
@@ -924,13 +924,11 @@ function encodeQuote(node: stencila.Quote): P.Quoted {
 }
 
 /**
- * Decode a Pandoc `Code` to a Stencila `Code`.
+ * Decode a Pandoc `Code` to a Stencila `CodeExpression`.
  */
-function decodeCode(node: P.Code): stencila.Code {
-  const code: stencila.Code = {
-    type: 'Code',
-    value: node.c[1]
-  }
+function decodeCode(node: P.Code): stencila.CodeExpression {
+  const code = stencila.codeExpression(node.c[1])
+
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
     const language = attrs.classes ? attrs.classes.split(' ')[0] : null
@@ -940,13 +938,13 @@ function decodeCode(node: P.Code): stencila.Code {
 }
 
 /**
- * Encode a Stencila `Code` to a Pandoc `Code`.
+ * Encode a Stencila `CodeExpression` to a Pandoc `Code`.
  */
-function encodeCode(node: stencila.Code): P.Code {
+function encodeCode(node: stencila.CodeExpression): P.Code {
   const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'Code',
-    c: [attrs, node.value]
+    c: [attrs, node.text]
   }
 }
 

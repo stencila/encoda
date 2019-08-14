@@ -248,7 +248,7 @@ ans = 42
           ' and ',
           {
             type: 'Code',
-            value: 'code'
+            text: 'code'
           },
           '.'
         ]
@@ -333,7 +333,7 @@ ans = 42
           meta3: 'bar baz',
           meta4: 'qux'
         },
-        value: '# A code block\nx = {}'
+        text: '# A code block\nx = {}'
       },
       {
         type: 'CodeChunk',
@@ -588,7 +588,7 @@ A \`code\`{lang=r}.
           {
             type: 'Code',
             programmingLanguage: 'r',
-            value: 'code'
+            text: 'code'
           },
           '.'
         ]
@@ -601,7 +601,7 @@ A \`code\`{lang=r}.
           attr2: 'bar baz',
           attr3: ''
         },
-        value: '# A code block'
+        text: '# A code block'
       }
     ]
   }

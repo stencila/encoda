@@ -304,7 +304,7 @@ function encodeCodeBlock(
       elements: [
         {
           textRun: {
-            content: block.value
+            content: block.text
           }
         }
       ]

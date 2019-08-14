@@ -270,7 +270,7 @@ async function decodeCells(
         blocks.push({
           type: 'CodeBlock',
           programmingLanguage: 'json',
-          value: JSON.stringify(cell)
+          text: JSON.stringify(cell)
         })
     }
   }

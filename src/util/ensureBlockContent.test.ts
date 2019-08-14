@@ -10,8 +10,8 @@ describe('Wrap In Block Node', () => {
   }
 
   const inlineNode: InlineContent = {
-    type: 'CodeExpr',
-    content: []
+    type: 'CodeExpression',
+    text: '1+2'
   }
 
   test('it returns a given BlockContent node', () => {
