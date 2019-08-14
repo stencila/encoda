@@ -211,9 +211,9 @@ Some of the main external dependencies:
         * `kind`: data => `td`
 * ThematicBreak: `hr`? (not sure if we should consider other options, such as splitting nodes by ThematicBreaks and grouping them into `section` tags instead)
 * VideoObject: `video`
-    * caption => `track`
+    * caption => `track`. Consider conforming to `uri string` and referencing a `.vtt` file.
     * thumbnail => poster (attribute)
-    * transcript => `track`?
+    * transcript => `track`? Consider making `transcript` a nested `CreativeWork` or `Article`.
     * contentUrl => `source src`
 
 ### Schema nodes we won't be adding microdata to
