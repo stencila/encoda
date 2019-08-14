@@ -73,7 +73,8 @@ export class CsvCodec extends Codec implements Codec {
       const row = data[rowIndex + (headerRow ? 1 : 0)]
       for (let columnIndex = 0; columnIndex < columnNum; columnIndex++) {
         const value = row[columnIndex]
-        columns[columnIndex].values[rowIndex] = value !== undefined ? value : null
+        columns[columnIndex].values[rowIndex] =
+          value !== undefined ? value : null
       }
     }
 
