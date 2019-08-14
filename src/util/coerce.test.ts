@@ -176,8 +176,23 @@ describe('coerce', () => {
   })
 
   it('will add default values for missing properties', async () => {
-    expect(await coerce({}, 'Thing')).toEqual({
-      type: 'Thing'
+    expect(await coerce({
+      type: 'Article',
+      content: [
+        {
+          type: 'Paragraph'
+        }
+      ]
+    })).toEqual({
+      type: 'Article',
+      title: '',
+      authors: [],
+      content: [
+        {
+          type: 'Paragraph',
+          content: []
+        }
+      ]
     })
   })
 

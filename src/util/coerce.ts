@@ -48,12 +48,15 @@ export async function coerce<Key extends keyof stencila.Types>(
    *     Ajv does not do that https://github.com/epoberezkin/ajv/issues/992
    *   - coerce an array with length > 1 to a scalar;
    *     Ajv (understandably) only does this if length == 1
+   *   - for required properties, use default values, or
+   *     "empty" values (e.g. `[]` for arrays, `''` for strings)
    */
   async function reshape(node: stencila.Node): Promise<void> {
     if (isEntity(node)) {
       const schema = await getSchema(node.type as Key)
-      const { properties = {}, propertyAliases = {} } = schema
+      const { properties = {}, propertyAliases = {}, required = [] } = schema
 
+      // Coerce properties...
       for (const [key, child] of Object.entries(node)) {
         let name = propertyAliases[key]
         if (name !== undefined) {
@@ -97,6 +100,45 @@ export async function coerce<Key extends keyof stencila.Types>(
         }
 
         await reshape(child)
+      }
+
+      // Add missing values
+      for (const name of required) {
+        if (!(name in node)) {
+          const propertySchema = properties[name]
+          let value: null | boolean | number | string | [] | {}
+          if (propertySchema.default !== undefined) {
+            value = propertySchema.default
+          } else {
+            switch (propertySchema.type) {
+              case 'null':
+                value = null
+                break
+              case 'boolean':
+                value = false
+                break
+              case 'number':
+              case 'integer':
+                value = 0
+                break
+              case 'string':
+                value = ''
+                break
+              case 'array':
+                value = []
+                break
+              case 'object':
+                value = {}
+                break
+              default:
+                // Default to empty string because most likely to be
+                // able to be coerced elsewhere
+                value = ''
+            }
+          }
+          // @ts-ignore
+          node[name] = value
+        }
       }
     } else if (Array.isArray(node)) {
       for (const child of node) {
