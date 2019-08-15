@@ -1,6 +1,6 @@
 {
   "@context": "http://schema.org",
-  "@type": "ScholarlyArticle",
+  "@type": "Article",
   "@id": "https://doi.org/10.5438/0000-00cc",
   "identifier": {
     "@type": "PropertyValue",
@@ -29,7 +29,7 @@
   "dateModified": "2017-01-09",
   "isPartOf": {
     "@id": "https://doi.org/10.5438/0000-00ss",
-    "@type": "ScholarlyArticle"
+    "@type": "Article"
   },
   "citation": [
     {

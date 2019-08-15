@@ -67,12 +67,12 @@ Encoda provides a collection of codecs for converting between, and composing tog
 | Document Archive            | [dar]         | Extens   | ω      | [⚠][dar-issues]         | ![][dar-cov]         |
 | Filesystem Directory        | [dir]         | Extens   | ω      | [⚠][dir-issues]         | ![][dir-cov]         |
 | **Data interchange, other** |
-| JSON                        | [json]   | Native   | ✔      | [⚠][json-issues]   | ![][json-cov]   |
-| JSON-LD                     | [json-ld]| Native   | ✔      | [⚠][jsonld-issues] | ![][jsonld-cov] |
-| JSON5                       | [json5]  | Native   | ✔      | [⚠][json5-issues]  | ![][json5-cov]  |
-| YAML                        | [yaml]   | Native   | ✔      | [⚠][yaml-issues]   | ![][yaml-cov]   |
-| Pandoc                      | [pandoc] | Native   | β      | [⚠][pandoc-issues] | ![][pandoc-cov] |
-| Reproducible PNG            | [rpng]   | Native   | β      | [⚠][rpng-issues]   | ![][rpng-cov]   |
+| JSON                        | [json]        | Native   | ✔      | [⚠][json-issues]        | ![][json-cov]        |
+| JSON-LD                     | [json-ld]     | Native   | ✔      | [⚠][jsonld-issues]      | ![][jsonld-cov]      |
+| JSON5                       | [json5]       | Native   | ✔      | [⚠][json5-issues]       | ![][json5-cov]       |
+| YAML                        | [yaml]        | Native   | ✔      | [⚠][yaml-issues]        | ![][yaml-cov]        |
+| Pandoc                      | [pandoc]      | Native   | β      | [⚠][pandoc-issues]      | ![][pandoc-cov]      |
+| Reproducible PNG            | [rpng]        | Native   | β      | [⚠][rpng-issues]        | ![][rpng-cov]        |
 | **Transport**               |
 | HTTP                        | [http]        |          | ✔      | [⚠][http-issues]        | ![][http-cov]        |
 
