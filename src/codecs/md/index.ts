@@ -38,6 +38,7 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
 const log = getLogger('encoda:md')
+
 export class MdCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/markdown', 'text/x-markdown']
 
@@ -878,7 +879,8 @@ function decodeInlineCode(
       type: 'CodeExpression',
       text: inlineCode.value
     }
-    const { type, lang, ...rest } = attrs
+    const { type, lang, output, ...rest } = attrs
+    if (output) codeExpr.output = JSON.parse(output.replace(/\"/g, '"'))
     if (lang) codeExpr.programmingLanguage = lang
     if (Object.keys(rest).length) codeExpr.meta = rest
     return codeExpr
@@ -917,11 +919,15 @@ function encodeCode(code: stencila.Code): MDAST.InlineCode {
 function encodeCodeExpression(
   codeExpr: stencila.CodeExpression
 ): MDAST.InlineCode {
-  const attrs = {
+  const attrs: { [key: string]: any } = {
     type: 'expr',
     lang: codeExpr.programmingLanguage,
     ...codeExpr.meta
   }
+
+  if (codeExpr.output)
+    attrs.output = JSON.stringify(codeExpr.output).replace(/"/g, '\\"')
+
   return {
     type: 'inlineCode',
     data: { hProperties: attrs },
@@ -1247,8 +1253,11 @@ function stringifyMeta(meta: { [key: string]: string }) {
       let repr = key
       if (value) {
         repr += '='
-        if (/\s/.test(value)) repr += '"' + value + '"'
-        else repr += value
+        if (/\s/.test(value)) {
+          repr += '"' + value + '"'
+        } else {
+          repr += value
+        }
       }
       return repr
     })

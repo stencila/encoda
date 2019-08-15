@@ -170,6 +170,12 @@ ans = 42
 \`\`\`
 :::
 
+Basic code output \`some_var\`{type=expr lang=python output=43}
+
+Fancy JSON output \`some_object\`{type=expr lang=python output="{\\"type\\":\\"Paragraph\\",\\"content\\":[\\"This was generated from code!\\"]}"}
+
+No output \`a = 1 + 1\`{type=expr lang=python}
+
 -   Unordered list item one
 -   Unordered list item two
 -   Unordered list item three
@@ -339,6 +345,44 @@ ans = 42
         type: 'CodeChunk',
         programmingLanguage: 'r',
         text: '# A code chunk\nans = 42'
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'Basic code output ',
+          {
+            type: 'CodeExpression',
+            language: 'python',
+            text: 'some_var',
+            output: 43
+          }
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'Fancy JSON output ',
+          {
+            type: 'CodeExpression',
+            language: 'python',
+            text: 'some_object',
+            output: {
+              type: 'Paragraph',
+              content: ['This was generated from code!']
+            }
+          }
+        ]
+      },
+      {
+        type: 'Paragraph',
+        content: [
+          'No output ',
+          {
+            type: 'CodeExpression',
+            language: 'python',
+            text: 'a = 1 + 1'
+          }
+        ]
       },
       {
         type: 'List',
