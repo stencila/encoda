@@ -2,13 +2,12 @@
  * @module util
  */
 
-import stencila from '@stencila/schema'
-import { isPrimitive, nodeType } from '@stencila/schema/dist/util'
-import produce from 'immer'
+import * as stencila from '@stencila/schema'
 import * as dataUri from './dataUri'
+import transform from './transform'
 
 /**
- * Walk a document tree and replace any links to local resources
+ * Transform a `Node` by replacing any links to local resources
  * with data URIs.
  *
  * This is used to create standalone HTML pages
@@ -22,31 +21,24 @@ import * as dataUri from './dataUri'
 export default async function bundle(
   node: stencila.Node
 ): Promise<stencila.Node> {
-  async function walk(node: stencila.Node): Promise<stencila.Node> {
-    if (isPrimitive(node)) return node
-
-    switch (nodeType(node)) {
-      case 'MediaObject':
-      case 'AudioObject':
-      case 'ImageObject':
-      case 'VideoObject':
-        const mediaObject = node as stencila.MediaObject
-        if (!mediaObject.contentUrl.startsWith('http')) {
-          const { dataUri: contentUrl } = await dataUri.fromFile(
-            mediaObject.contentUrl
-          )
-          return {
-            ...mediaObject,
-            contentUrl
+  return transform(
+    node,
+    async (node: stencila.Node): Promise<stencila.Node> => {
+      switch (stencila.nodeType(node)) {
+        case 'MediaObject':
+        case 'AudioObject':
+        case 'ImageObject':
+        case 'VideoObject':
+          const { contentUrl, ...rest } = node as stencila.MediaObject
+          if (!contentUrl.startsWith('http')) {
+            const data = await dataUri.fromFile(contentUrl)
+            return {
+              ...rest,
+              contentUrl: data.dataUri
+            }
           }
-        }
+      }
+      return node
     }
-
-    for (const [key, child] of Object.entries(node)) {
-      // @ts-ignore
-      node[key] = await walk(child)
-    }
-    return node
-  }
-  return produce(node, walk)
+  )
 }
