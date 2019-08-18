@@ -4,14 +4,21 @@
 
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
 
+import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
 import { isEntity, nodeType } from '@stencila/schema/dist/util'
+import Ajv from 'ajv'
+import betterAjvErrors from 'better-ajv-errors'
+import fs from 'fs-extra'
+import path from 'path'
 import { dump, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
+
+const log = getLogger('encoda:ipynb')
 
 /**
  * Additional type definitions not generated from JSON Schemas
@@ -73,7 +80,7 @@ export function isv3<Key extends keyof nbformat.v3.Types>(
   return version === nbformat.Version.v3
 }
 
-export class IPyNbCodec extends Codec implements Codec {
+export class IpynbCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
    */
@@ -95,6 +102,7 @@ export class IPyNbCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const json = await vfile.dump(file)
     const ipynb = JSON.parse(json)
+    await validateNotebook(ipynb)
     return decodeNotebook(ipynb, ipynb.nbformat)
   }
 
@@ -108,8 +116,56 @@ export class IPyNbCodec extends Codec implements Codec {
     node: stencila.Node
   ): Promise<vfile.VFile> => {
     const ipynb = await encodeNode(node)
+    await validateNotebook(ipynb)
     const json = JSON.stringify(ipynb, null, '  ')
     return vfile.load(json)
+  }
+}
+
+/**
+ * Validation functions for `nbformat` `v3` and `v4`
+ */
+const validators = new Ajv({
+  // For use with draft-04 schemas
+  schemaId: 'auto',
+  // For better error reporting
+  jsonPointers: true
+})
+validators.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'))
+
+/**
+ * Validate a notebook against a version of `nbformat` JSON Schema
+ *
+ * This function only logs a warning if the notebook does not validate
+ * against the schema. It is intended to provide additional
+ * information for debugging other subsequent errors wth decoding
+ * if a notebook is corrupted.
+ */
+async function validateNotebook(
+  notebook: nbformat3.Notebook | nbformat4.Notebook
+): Promise<void> {
+  const schemaKey = `nbformat-v${notebook.nbformat}.schema.json`
+  let validator = validators.getSchema(schemaKey)
+  if (!validator) {
+    try {
+      const schema = await fs.readJSON(path.join(__dirname, schemaKey))
+      validators.addSchema(schema, schemaKey)
+      validator = validators.getSchema(schemaKey)
+    } catch (error) {
+      log.error(`Error when attempting to add schema: ${error.message}`)
+    }
+  }
+  if (!validator(notebook)) {
+    const message = (betterAjvErrors(
+      validator.schema,
+      notebook,
+      validator.errors,
+      {
+        format: 'cli',
+        indent: 2
+      }
+    ) as unknown) as string
+    log.warn(`Notebook is not valid:\n${message}`)
   }
 }
 
@@ -177,14 +233,16 @@ async function decodeCells(
   for (const cell of cells) {
     switch (cell.cell_type) {
       case 'markdown':
-        blocks.push(...(await decodeMarkdownCell(cell, version)))
+      case 'html':
+        blocks.push(
+          ...(await decodeMarkdownCell(cell, cell.cell_type, version))
+        )
         break
+      // TODO: handle `heading` cells
       case 'code':
         blocks.push(await decodeCodeCell(cell, version))
         break
-      case 'raw':
-        // TODO: handle `raw` cells
-        break
+      // TODO: handle `raw` cells
       default:
         // The above should handle all cell types but in case of an invalid
         // type, instead of throwing an error, return cell as a JSON code block of cell
@@ -226,12 +284,13 @@ async function encodeCells(nodes: stencila.Node[]): Promise<nbformat4.Cell[]> {
  */
 async function decodeMarkdownCell(
   cell: nbformat3.MarkdownCell | nbformat4.MarkdownCell,
+  format: 'markdown' | 'html',
   version: nbformat.Version = 4
 ): Promise<stencila.BlockContent[]> {
   // TODO: handle metadata
   const { metadata, source } = cell
   const markdown = decodeMultilineString(source)
-  const node = await load(markdown, 'md')
+  const node = await load(markdown, format === 'html' ? 'html' : 'md')
   // TODO: avoid this type casting
   const article = node as stencila.Article
   return article.content as stencila.BlockContent[]
