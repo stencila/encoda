@@ -1,3 +1,10 @@
+# [0.63.0](https://github.com/stencila/encoda/compare/v0.62.7...v0.63.0) (2019-08-18)
+
+
+### Features
+
+* **IPYNB:** Validate notebooks before decoding and after encoding ([3d3daa3](https://github.com/stencila/encoda/commit/3d3daa3))
+
 ## [0.62.7](https://github.com/stencila/encoda/compare/v0.62.6...v0.62.7) (2019-08-14)
 
 
