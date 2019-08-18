@@ -1,5 +1,6 @@
 import { toMatchFile } from 'jest-file-snapshot'
 import * as vfile from '../../util/vfile'
+import unlink from '../../util/unlink'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { decodeMultilineString, encodeMultilineString, IpynbCodec } from './'
 import { JsonCodec } from '../json'
@@ -7,10 +8,13 @@ import { JsonCodec } from '../json'
 const ipynb = new IpynbCodec()
 const json = new JsonCodec()
 
-const ipynb2json = async (name: string) =>
-  vfile.dump(
-    await json.encode(await ipynb.decode(await vfile.read(fixture(name))))
-  )
+const ipynb2json = async (name: string) => {
+  const node = await ipynb.decode(await vfile.read(fixture(name)))
+  // Unlink to remove references to temporary files which will change
+  // between test runs
+  const unlinked = await unlink(node)
+  return vfile.dump(await json.encode(unlinked))
+}
 
 const json2ipynb = async (name: string) =>
   vfile.dump(
