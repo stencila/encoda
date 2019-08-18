@@ -25,6 +25,21 @@
       "emails": [
         "jane.carberry@example.org"
       ]
+    },
+    {
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Brown University"
+        }
+      ],
+      "type": "Person",
+      "givenNames": [
+        "Janet"
+      ],
+      "familyNames": [
+        "Carberry"
+      ]
     }
   ],
   "meta": {

@@ -17,6 +17,7 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
+import { coerce } from '../../util/coerce';
 
 const log = getLogger('encoda:ipynb')
 
@@ -232,9 +233,13 @@ async function decodeMetadata(
     ...rest
   } = metadata
 
-  // Decode author strings to `Person` nodes
+  // Decode authors to `Person` nodes
   authors = await Promise.all(
-    authors.map(async (data: string) => load(data, 'person'))
+    authors.map(async (author: any) => {
+      return typeof author === 'string'
+        ? load(author, 'person')
+        : coerce(author, 'Person')
+    })
   )
 
   return {
