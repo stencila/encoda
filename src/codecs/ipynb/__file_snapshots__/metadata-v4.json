@@ -1,0 +1,37 @@
+{
+  "type": "Article",
+  "title": "Article title",
+  "authors": [
+    {
+      "type": "Person",
+      "givenNames": [
+        "Josiah"
+      ],
+      "familyNames": [
+        "Carberry"
+      ],
+      "honorificSuffix": "PhD",
+      "url": "http://library.brown.edu/about/hay/carberry.php"
+    },
+    {
+      "type": "Person",
+      "honorificPrefix": "Dr",
+      "givenNames": [
+        "Jane"
+      ],
+      "familyNames": [
+        "Carberry"
+      ],
+      "emails": [
+        "jane.carberry@example.org"
+      ]
+    }
+  ],
+  "meta": {
+    "arbitrary_metadata": {
+      "provider": "Deep Thought",
+      "answer": 42
+    }
+  },
+  "content": []
+}
