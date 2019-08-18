@@ -64,27 +64,17 @@ is decoded to this `Article` with each author expanded to a `Person` node,
   "authors": [
     {
       "type": "Person",
-      "givenNames": [
-        "Josiah"
-      ],
-      "familyNames": [
-        "Carberry"
-      ],
+      "givenNames": ["Josiah"],
+      "familyNames": ["Carberry"],
       "honorificSuffix": "PhD",
       "url": "http://library.brown.edu/about/hay/carberry.php"
     },
     {
       "type": "Person",
       "honorificPrefix": "Dr",
-      "givenNames": [
-        "Jane"
-      ],
-      "familyNames": [
-        "Carberry"
-      ],
-      "emails": [
-        "jane.carberry@example.org"
-      ]
+      "givenNames": ["Jane"],
+      "familyNames": ["Carberry"],
+      "emails": ["jane.carberry@example.org"]
     },
     {
       "type": "Person",
@@ -94,12 +84,8 @@ is decoded to this `Article` with each author expanded to a `Person` node,
           "name": "Brown University"
         }
       ],
-      "familyNames": [
-        "Carberry"
-      ],
-      "givenNames": [
-        "Janet"
-      ]
+      "familyNames": ["Carberry"],
+      "givenNames": ["Janet"]
     }
   ],
   "meta": {
@@ -235,7 +221,6 @@ The decoding of all other media types is delegated to other codecs by matching a
 For `Stream` outputs, the output `text` is simply decoded to a `string` node.
 
 <!-- TODO: Document error translation -->
-
 
 ## Encoding
 

@@ -18,19 +18,22 @@ import transform from './transform'
 export default async function unlink(
   node: stencila.Node
 ): Promise<stencila.Node> {
-  return transform(node, async (node: stencila.Node): Promise<stencila.Node> => {
-    switch (stencila.nodeType(node)) {
-      case 'MediaObject':
-      case 'AudioObject':
-      case 'ImageObject':
-      case 'VideoObject':
-        const { contentUrl, ...rest } = node as stencila.MediaObject
-        if (!contentUrl.startsWith('http'))
-          return {
-            ...rest,
-            contentUrl: ''
-          }
+  return transform(
+    node,
+    async (node: stencila.Node): Promise<stencila.Node> => {
+      switch (stencila.nodeType(node)) {
+        case 'MediaObject':
+        case 'AudioObject':
+        case 'ImageObject':
+        case 'VideoObject':
+          const { contentUrl, ...rest } = node as stencila.MediaObject
+          if (!contentUrl.startsWith('http'))
+            return {
+              ...rest,
+              contentUrl: ''
+            }
+      }
+      return node
     }
-    return node
-  })
+  )
 }

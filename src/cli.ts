@@ -87,8 +87,7 @@ configure(options.debug)
       else if (command === 'validate') {
         await validate(node)
         processed = node
-      }
-      else processed = node
+      } else processed = node
       await write(processed, output, {
         format: to,
         isStandalone: standalone,

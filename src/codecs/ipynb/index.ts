@@ -17,7 +17,7 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
-import { coerce } from '../../util/coerce';
+import { coerce } from '../../util/coerce'
 
 const log = getLogger('encoda:ipynb')
 
@@ -66,6 +66,7 @@ namespace nbformat {
    * "Mimetypes with JSON output, can be any type" (source: `nbformat-v4.json.schema`)
    */
   export interface MimeBundle {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: MultilineString | any
   }
 }
@@ -219,23 +220,18 @@ async function encodeNode(node: stencila.Node): Promise<nbformat4.Notebook> {
  * Decode a notebook metadata.
  */
 async function decodeMetadata(
-  metadata: nbformat3.Notebook['metadata'] | nbformat4.Notebook['metadata'],
-  version: nbformat.Version = 4
+  metadata: nbformat3.Notebook['metadata'] | nbformat4.Notebook['metadata']
 ): Promise<{
-  title: string,
-  authors: stencila.Person[],
-  meta: {[key: string]: unknown}
+  title: string
+  authors: stencila.Person[]
+  meta: { [key: string]: unknown }
 }> {
   // Extract handled properties
-  let {
-    title = 'Untitled',
-    authors = [],
-    ...rest
-  } = metadata
+  let { title = 'Untitled', authors = [], ...rest } = metadata
 
   // Decode authors to `Person` nodes
   authors = await Promise.all(
-    authors.map(async (author: any) => {
+    authors.map(async (author: string | object) => {
       return typeof author === 'string'
         ? load(author, 'person')
         : coerce(author, 'Person')
@@ -261,9 +257,7 @@ async function decodeCells(
     switch (cell.cell_type) {
       case 'markdown':
       case 'html':
-        blocks.push(
-          ...(await decodeMarkdownCell(cell, cell.cell_type, version))
-        )
+        blocks.push(...(await decodeMarkdownCell(cell, cell.cell_type)))
         break
       // TODO: handle `heading` cells
       case 'code':
@@ -311,11 +305,10 @@ async function encodeCells(nodes: stencila.Node[]): Promise<nbformat4.Cell[]> {
  */
 async function decodeMarkdownCell(
   cell: nbformat3.MarkdownCell | nbformat4.MarkdownCell,
-  format: 'markdown' | 'html',
-  version: nbformat.Version = 4
+  format: 'markdown' | 'html'
 ): Promise<stencila.BlockContent[]> {
   // TODO: handle metadata
-  const { metadata, source } = cell
+  const { source } = cell
   const markdown = decodeMultilineString(source)
   const node = await load(markdown, format === 'html' ? 'html' : 'md')
   // TODO: avoid this type casting

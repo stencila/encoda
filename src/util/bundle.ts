@@ -21,24 +21,24 @@ import transform from './transform'
 export default async function bundle(
   node: stencila.Node
 ): Promise<stencila.Node> {
-  return transform(node, async (node: stencila.Node): Promise<stencila.Node> => {
-    switch (stencila.nodeType(node)) {
-      case 'MediaObject':
-      case 'AudioObject':
-      case 'ImageObject':
-      case 'VideoObject':
-        const mediaObject = node as stencila.MediaObject
-        if (!mediaObject.contentUrl.startsWith('http')) {
-          const { dataUri: contentUrl } = await dataUri.fromFile(
-            mediaObject.contentUrl
-          )
-          return {
-            ...mediaObject,
-            contentUrl
+  return transform(
+    node,
+    async (node: stencila.Node): Promise<stencila.Node> => {
+      switch (stencila.nodeType(node)) {
+        case 'MediaObject':
+        case 'AudioObject':
+        case 'ImageObject':
+        case 'VideoObject':
+          const { contentUrl, ...rest } = node as stencila.MediaObject
+          if (!contentUrl.startsWith('http')) {
+            const data = await dataUri.fromFile(contentUrl)
+            return {
+              ...rest,
+              contentUrl: data.dataUri
+            }
           }
-        }
-      default:
-        return node
+      }
+      return node
     }
-  })
+  )
 }
