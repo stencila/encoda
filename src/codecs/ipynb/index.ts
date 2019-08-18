@@ -176,24 +176,16 @@ async function decodeNotebook(
   notebook: nbformat3.Notebook | nbformat4.Notebook,
   version: nbformat.Version = 4
 ): Promise<stencila.Article> {
-  // TODO: Extract other metadata?
-  let { title, authors, orig_nbformat, ...rest } = notebook.metadata
-  if (!title) title = 'Untitled'
-  if (!authors) authors = []
-
-  const meta = { orig_nbformat, ...rest }
+  const metadata = await decodeMetadata(notebook.metadata)
 
   const cells = isv3(notebook, 'Notebook', version)
     ? notebook.worksheets[0].cells
     : notebook.cells
-
   const content = await decodeCells(cells, version)
 
   return {
     type: 'Article',
-    title,
-    authors,
-    meta,
+    ...metadata,
     content
   }
 }
@@ -219,6 +211,36 @@ async function encodeNode(node: stencila.Node): Promise<nbformat4.Notebook> {
     nbformat_minor: 4,
     metadata,
     cells
+  }
+}
+
+/**
+ * Decode a notebook metadata.
+ */
+async function decodeMetadata(
+  metadata: nbformat3.Notebook['metadata'] | nbformat4.Notebook['metadata'],
+  version: nbformat.Version = 4
+): Promise<{
+  title: string,
+  authors: stencila.Person[],
+  meta: {[key: string]: unknown}
+}> {
+  // Extract handled properties
+  let {
+    title = 'Untitled',
+    authors = [],
+    ...rest
+  } = metadata
+
+  // Decode author strings to `Person` nodes
+  authors = await Promise.all(
+    authors.map(async (data: string) => load(data, 'person'))
+  )
+
+  return {
+    title,
+    authors,
+    meta: { ...rest }
   }
 }
 
