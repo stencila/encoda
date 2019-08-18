@@ -1,3 +1,15 @@
+# [0.64.0](https://github.com/stencila/encoda/compare/v0.63.0...v0.64.0) (2019-08-18)
+
+
+### Bug Fixes
+
+* **IPYNB:** Handle decoding of string and object authors ([73f0dcf](https://github.com/stencila/encoda/commit/73f0dcf))
+
+
+### Features
+
+* **IPYNB:** Add decoding of notebook authors ([8933414](https://github.com/stencila/encoda/commit/8933414))
+
 # [0.63.0](https://github.com/stencila/encoda/compare/v0.62.7...v0.63.0) (2019-08-18)
 
 
