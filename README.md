@@ -1,19 +1,21 @@
 # Encoda
 
+##### Codecs for structured, semantic, composable, and executable documents
+
 [![Build status](https://travis-ci.org/stencila/encoda.svg?branch=master)](https://travis-ci.org/stencila/encoda)
 [![Build status](https://ci.appveyor.com/api/projects/status/f1hx694pxm0fyqni/branch/master?svg=true)](https://ci.appveyor.com/project/nokome/encoda)
 [![Code coverage](https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/encoda)
 [![NPM](https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat)](https://www.npmjs.com/package/@stencila/encoda)
 [![Contributors](https://img.shields.io/badge/contributors-6-orange.svg)](#contribute)
 [![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://stencila.github.io/encoda/)
-[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila) [![Greenkeeper badge](https://badges.greenkeeper.io/stencila/encoda.svg)](https://greenkeeper.io/)
+[![Chat](https://badges.gitter.im/stencila/stencila.svg)](https://gitter.im/stencila/stencila)
 
-Encoda allows you to convert between a range of formats commonly used for "executable documents" (those containing some type of source code or calculation).
 
 <!-- Automatically generated TOC. Don't edit, `make docs` instead>
 
 <!-- toc -->
 
+- [Introduction](#introduction)
 - [Formats](#formats)
 - [Install](#install)
 - [Use](#use)
@@ -24,6 +26,13 @@ Encoda allows you to convert between a range of formats commonly used for "execu
 - [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
+
+## Introduction
+
+> "A codec is a device or computer program for encoding or decoding a digital data stream or signal. Codec is a portmanteau of coder-decoder. - [Wikipedia](https://en.wikipedia.org/wiki/Codec)
+
+Encoda provides a collection of codecs for converting between, and composing together, documents in various formats. The aim is not to achieve perfect lossless conversion between alternative document formats; there are already several tools for that. Instead the focus of Encoda is to use existing tools to encode and compose semantic documents in alternative formats.
+
 
 ## Formats
 
@@ -73,8 +82,8 @@ Encoda allows you to convert between a range of formats commonly used for "execu
   How executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
 
 - Native: the format natively supports executable nodes
-- Extens.: executable nodes are supported via extensions to the format e.g. in HTML and DAR, a `CodeChunk` is represented using a `<stencila-chunk>` element
-- rPNG: executable nodes are supported via reproducible PNG images inserted into the document
+- Extens.: executable nodes are supported via extensions to the format
+- rPNG: executable nodes are supported via reproducible PNG images
 - Formula: executable `CodeExpr` nodes are represented using formulae
 
 </details>
@@ -251,6 +260,7 @@ Encoda relies on many awesome opens source tools (see `package.json` for the com
 | Tool                                                                                                               | Use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Ajv](https://ajv.js.org/images/ajv_logo.png)                                                                     | [Ajv](https://ajv.js.org/) is "the fastest JSON Schema validator for Node.js and browser". Ajv is not only fast, it also has an impressive breadth of functionality. We use Ajv for the `validate()` and `coerce()` functions to ensure that ingested data is valid against the Stencila [schema](https://github.com/stencila/schema).                                                                                                                                                                                                                                                                         |
+| ![Citation.js](https://avatars0.githubusercontent.com/u/41587916?s=200&v=4)                                   | [`Citation.js`](https://citation.js.org/) converts bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it to power the codecs for those formats and APIs.|
 | ![Frictionless Data](https://avatars0.githubusercontent.com/u/5912125?s=200&v=4)                                   | [`datapackage-js`](https://github.com/frictionlessdata/datapackage-js) from the team at [Frictionless Data](https://frictionlessdata.io/) is a Javascript library for working with [Data Packages](https://frictionlessdata.io/specs/data-package/). It does a lot of the work in converting between Tabular Data Packages and Stencila Datatables.                                                                                                                                                                                                                                                            |
 | **Pandoc**                                                                                                         | [Pandoc](https://pandoc.org/) is a "universal document converter". It's able to convert between an impressive number of formats for textual documents. Our [Typescript definitions for Pandoc's AST](https://github.com/stencila/encoda/blob/c400d798e6b54ea9f88972b038489df79e38895b/src/pandoc-types.ts) allow us to leverage this functionality from within Node.js while maintaining type safety. Pandoc powers our converters for Word, JATS and Latex. We have contributed to Pandoc, including developing its [JATS reader](https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/JATS.hs). |
 | ![Puppeteer](https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png) | [Puppeteer](https://pptr.dev/) is a Node library which provides a high-level API to control Chrome. We use it to take screenshots of HTML snippets as part of generating rPNGs and we plan to use it for [generating PDFs](https://github.com/stencila/encoda/issues/53).                                                                                                                                                                                                                                                                                                                                      |
