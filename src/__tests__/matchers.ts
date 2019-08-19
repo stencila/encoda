@@ -5,6 +5,7 @@ import { toMatchFile } from 'jest-file-snapshot'
 import mime from 'mime'
 import path from 'path'
 import { Codec } from '../codecs/types'
+import '@testing-library/jest-dom/extend-expect'
 
 /**
  * Add https://github.com/satya164/jest-file-snapshot

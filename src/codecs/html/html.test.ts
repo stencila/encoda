@@ -1,42 +1,190 @@
-import stencila from '@stencila/schema'
+import stencila, {
+  cite,
+  figure,
+  imageObject,
+  link,
+  collection,
+  citeGroup
+} from '@stencila/schema'
+import { getByText, prettyDOM } from '@testing-library/dom'
+import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
+import { JSDOM } from 'jsdom'
 import { dump, load } from '../../util/vfile'
 import { HTMLCodec } from './'
 
+const doc = (innerHTML: string) =>
+  new JSDOM(innerHTML).window.document.documentElement
+
 const { encode, decode } = new HTMLCodec()
 
-test('decode', async () => {
-  expect(await decode(load(kitchenSink.html))).toEqual(kitchenSink.node)
-  expect(await decode(load(attrs.html))).toEqual(attrs.node)
-  expect(await decode(load(dt.html))).toEqual(dt.node)
-})
-
-const e = async (node: stencila.Node, options = {}) =>
+const e = async (node: stencila.Node, options = { isStandalone: false }) =>
   await dump(await encode(node, options))
 
+const d = async (htmlString: string): Promise<stencila.Node> =>
+  await decode(load(htmlString))
+
+test('decode', async () => {
+  expect(await d(kitchenSink.html)).toEqual(kitchenSink.node)
+  expect(await d(attrs.html)).toEqual(attrs.node)
+  expect(await d(dt.html)).toEqual(dt.node)
+})
+
 test('encode', async () => {
-  expect(await e(kitchenSink.node, { isStandalone: false })).toEqual(
-    kitchenSink.html
-  )
-  expect(await e(attrs.node, { isStandalone: false })).toEqual(attrs.html)
-  expect(await e(dt.node, { isStandalone: false })).toEqual(dt.html)
+  expect(await e(kitchenSink.node)).toEqual(kitchenSink.html)
+  expect(await e(attrs.node)).toEqual(attrs.html)
+  expect(await e(dt.node)).toEqual(dt.html)
 })
 
 describe('String escaping', () => {
   test('Escape HTML entities', async () => {
     expect(
-      await e(
-        { type: 'Paragraph', content: ['<em>', '<strong>'] },
-        { isStandalone: false }
-      )
+      await e({ type: 'Paragraph', content: ['<em>', '<strong>'] })
     ).toEqual('<p>&lt;em&gt;&lt;strong&gt;</p>')
   })
 
   test('Convert HTML entities back', async () => {
-    expect(await decode(load('<p>&lt;em&gt;&lt;strong&gt;</p>'))).toEqual({
+    expect(await d('<p>&lt;em&gt;&lt;strong&gt;</p>')).toEqual({
       type: 'Paragraph',
       content: ['<em><strong>']
     })
+  })
+})
+
+describe('Encode & Decode cite nodes', () => {
+  const schemaNode = cite('myTarget')
+  const htmlNode = `<cite><a href="${schemaNode.target}">${schemaNode.target}</a></cite>`
+
+  test('encode', async () => {
+    expect(await e(schemaNode)).toEqual(htmlNode)
+  })
+
+  test('decode', async () => {
+    expect(await decode(load(htmlNode))).toEqual(schemaNode)
+  })
+
+  test('encode with prefix & suffix', async () => {
+    const actual = doc(await e(cite('myTarget', { prefix: '(', suffix: ')' })))
+    const prefix = getByText(actual, '(')
+    const suffix = getByText(actual, ')')
+
+    expect(actual).toHaveTextContent('(myTarget)')
+    expect(actual).toContainElement(prefix)
+    expect(actual).toContainElement(suffix)
+    expect(prefix).toHaveAttribute('itemprop', 'citePrefix')
+    expect(suffix).toHaveAttribute('itemprop', 'citeSuffix')
+    expect.assertions(5)
+  })
+
+  test('decode with prefix & suffix', async () => {
+    const actual = await d(
+      `<cite><span itemprop="citePrefix">(</span><a href="myTarget">myTarget</a><span itemprop="citeSuffix">)</span></cite>`
+    )
+
+    expect(actual).toHaveProperty('target', 'myTarget')
+    expect(actual).toHaveProperty('prefix', '(')
+    expect(actual).toHaveProperty('suffix', ')')
+  })
+})
+
+describe('Encode & Decode cite group nodes', () => {
+  const cite1 = cite('myFirstTarget')
+  const cite2 = cite('mySecondTarget')
+
+  const schemaNode = citeGroup([cite1, cite2])
+  const htmlNode = `<ol itemtype="schema:CiteGroup">
+    <li>
+      <cite><a href="myFirstTarget">myFirstTarget</a></cite>
+    </li>
+    <li>
+      <cite><a href="mySecondTarget">mySecondTarget</a></cite>
+    </li>
+  </ol>`
+
+  test('encode', async () => {
+    const actual = doc(await e(schemaNode))
+
+    expect(actual.querySelectorAll('cite')).toHaveLength(2)
+    expect(actual.querySelector('ol')).toHaveAttribute(
+      'itemtype',
+      'schema:CiteGroup'
+    )
+  })
+
+  test('decode', async () => {
+    expect(await decode(load(htmlNode))).toEqual(schemaNode)
+  })
+})
+
+describe('Encode & Decode figure nodes', () => {
+  test('encode', async () => {
+    const label = 'Image label'
+    const actual = doc(
+      await e(
+        figure({
+          content: [imageObject('someImage')],
+          label,
+          caption: ['This is a test image. It has a ', link(['link'], '#')]
+        })
+      )
+    )
+
+    const fig = actual.querySelector('figure')
+    const img = actual.querySelector('img')
+    const caption = actual.querySelector('figcaption')
+
+    expect(fig).toHaveAttribute('title', label)
+    expect(fig).toContainElement(img)
+    expect(fig).toContainElement(caption)
+    expect(caption).toHaveTextContent('This is a test image. It has a link')
+  })
+
+  test('decode', async () => {
+    const schemaNode = figure({
+      content: [imageObject('someImage')],
+      caption: ['This is a test image. It has a ', link(['link'], '#')]
+    })
+
+    const htmlNode = `<figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>`
+
+    expect(await d(htmlNode)).toMatchObject(schemaNode)
+  })
+})
+
+describe('Encode & Decode Collections', () => {
+  const schemaNode = collection([
+    figure({
+      content: [imageObject('someImage')],
+      caption: ['This is a test image. It has a ', link(['link'], '#')]
+    }),
+    figure({
+      content: [imageObject('figure2')]
+    })
+  ])
+
+  const htmlNode = `
+    <ol itemtype="schema:Collection">
+      <li>
+        <figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>
+      </li>
+      <li>
+        <figure><img src="figure2" /></figure>
+      </li>
+    </ol>
+  `
+
+  test('encode', async () => {
+    const actual = doc(await e(schemaNode))
+
+    const collectionHTML = actual.querySelector('ol')
+    const fig = actual.querySelectorAll('figure')
+
+    expect(collectionHTML).toHaveAttribute('itemtype', 'schema:Collection')
+    expect(fig).toHaveLength(2)
+  })
+
+  test('decode', async () => {
+    expect(await d(htmlNode)).toMatchObject(schemaNode)
   })
 })
 
@@ -85,9 +233,6 @@ test('encode with bundling', async () => {
 })
 
 test('encode add heading ids', async () => {
-  const e = async (node: stencila.Node) =>
-    await dump(await encode(node, { isStandalone: false }))
-
   expect(
     await e({
       type: 'Heading',
