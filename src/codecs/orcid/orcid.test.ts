@@ -1,10 +1,14 @@
-import { OrcidCodec } from '.'
-import * as vfile from '../../util/vfile'
-import { nockRecord, snapshot } from '../../__tests__/helpers'
-import { YamlCodec } from '../yaml'
+import { toMatchFile } from 'jest-file-snapshot'
+import { OrcidCodec } from '.';
+import * as vfile from '../../util/vfile';
+import { nockRecord, snapshot } from '../../__tests__/helpers';
+import { YamlCodec } from '../yaml';
 
 const { decode, sniff, encode } = new OrcidCodec()
 const yaml = new YamlCodec()
+
+const orcid2yaml = async (orcid: string) =>
+  vfile.dump(await yaml.encode(await decode(await vfile.load(orcid))))
 
 jest.setTimeout(30 * 1000)
 
@@ -21,11 +25,8 @@ test('sniff', async () => {
   expect(await sniff('https://example.org/0000-0002-1825-0097')).toBe(false)
 })
 
-const orcid2yaml = async (ocid: string) =>
-  vfile.dump(await yaml.encode(await decode(await vfile.load(ocid))))
-
-test.skip('decode', async () => {
-  const done = await nockRecord('decode.json')
+test('decode', async () => {
+  const done = await nockRecord('nock-record-decode.json')
 
   expect(await orcid2yaml('0000-0002-1825-0097')).toMatchFile(
     snapshot('josiah.yaml')
