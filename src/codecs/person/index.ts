@@ -11,7 +11,6 @@ import log from '../../log'
 import * as vfile from '../../util/vfile'
 import { OrcidCodec } from '../orcid'
 import { Codec } from '../types'
-import { isA } from '@stencila/schema'
 
 export class PersonCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/x-person']
@@ -45,7 +44,7 @@ export class PersonCodec extends Codec implements Codec {
         const person = await orcid.decode(match[0])
         // ORCID decoding is only deemed successful if returns
         // a person with a least one family name
-        if (isA('Person', person))
+        if (stencila.isA('Person', person))
           if (person.familyNames !== undefined && person.familyNames.length > 0)
             return person
       } catch (error) {

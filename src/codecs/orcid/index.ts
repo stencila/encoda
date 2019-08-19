@@ -45,10 +45,7 @@ export class OrcidCodec extends Codec implements Codec {
     throw new Error(`Request failed`)
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to an ORCID is not yet implemented`)
   }
 }
