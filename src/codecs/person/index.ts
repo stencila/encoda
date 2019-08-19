@@ -3,13 +3,13 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { is, nodeType } from '@stencila/schema/dist/util'
 // @ts-ignore
 import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'
 import log from '../../log'
 import * as vfile from '../../util/vfile'
+import { OrcidCodec } from '../orcid'
 import { Codec } from '../types'
 
 export class PersonCodec extends Codec implements Codec {
@@ -17,10 +17,10 @@ export class PersonCodec extends Codec implements Codec {
 
   public readonly extNames = ['person']
 
+  public static regex = /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/
+
   public readonly sniff = async (content: string): Promise<boolean> => {
-    return /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/.test(
-      content
-    )
+    return PersonCodec.regex.test(content)
   }
 
   /**
@@ -30,31 +30,43 @@ export class PersonCodec extends Codec implements Codec {
    * @returns A promise that resolves to a `Node`
    */
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile | string
   ): Promise<stencila.Person> => {
-    return this.decodeSync(await vfile.dump(file))
-  }
+    const content = typeof file === 'string' ? file : await vfile.dump(file)
 
-  /**
-   * Decode string data into a `Person`.
-   *
-   * @param data Data to decode
-   */
-  public decodeSync = (data: string): stencila.Person => {
-    const { name, email, url } = parseAuthor(data)
-    const { title, first, middle, last, suffix } = parseFullName(name)
-    const person: stencila.Person = { type: 'Person' }
-    if (title) person.honorificPrefix = title
-    if (first) {
-      person.givenNames = [first]
-      if (middle) person.givenNames = [first, middle]
+    // If there appears to be an ORCID, use that.
+    // Use the `OrcidCodec` regex but remove the start and end anchors to match
+    // an ORCID anywhere in the string
+    const match = content.match(OrcidCodec.regex.source.slice(1, -1))
+    if (match) {
+      try {
+        const orcid = new OrcidCodec()
+        const person = await orcid.decode(match[0])
+        // ORCID decoding is only deemed successful if returns
+        // a person with a least one family name
+        if (stencila.isA('Person', person))
+          if (person.familyNames !== undefined && person.familyNames.length > 0)
+            return person
+      } catch (error) {
+        // Log a warning (e.g. due to no network connection) but continue
+        log.warn(`Error attempting to decode ORCID: ${error.message}`)
+      }
     }
-    if (last) person.familyNames = [last]
-    else throw new Error(`Unable to decode string "${data}" as a person`)
-    if (suffix) person.honorificSuffix = suffix
-    if (email) person.emails = [email]
-    if (url) person.url = url
-    return person
+
+    // If not, parse string into parts
+    const { name, email, url } = parseAuthor(content)
+    const { title, first, middle, last, suffix } = parseFullName(name)
+    return stencila.person({
+      givenNames:
+        first.length > 0
+          ? [first, ...(middle.length > 0 ? [middle] : [])]
+          : undefined,
+      familyNames: last.length > 0 ? [last] : undefined,
+      honorificPrefix: title.length > 0 ? title : undefined,
+      honorificSuffix: suffix.length > 0 ? suffix : undefined,
+      emails: email !== undefined ? [email] : undefined,
+      url: url
+    })
   }
 
   /**
@@ -68,7 +80,7 @@ export class PersonCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     let content = ''
 
-    if (is<stencila.Person>('Person')(node)) {
+    if (stencila.isA('Person', node)) {
       if (node.honorificPrefix) content += node.honorificPrefix
       if (node.givenNames) content += ' ' + node.givenNames.join(' ')
       if (node.familyNames) content += ' ' + node.familyNames.join(' ')
@@ -78,7 +90,7 @@ export class PersonCodec extends Codec implements Codec {
       content = content.trim()
     } else {
       log.warn(
-        `Expected a node of type "Person", got a node of type "${nodeType(
+        `Expected a node of type "Person", got a node of type "${stencila.nodeType(
           node
         )}"`
       )

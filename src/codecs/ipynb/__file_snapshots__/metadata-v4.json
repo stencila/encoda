@@ -3,7 +3,6 @@
   "title": "Article title",
   "authors": [
     {
-      "type": "Person",
       "givenNames": [
         "Josiah"
       ],
@@ -11,20 +10,21 @@
         "Carberry"
       ],
       "honorificSuffix": "PhD",
-      "url": "http://library.brown.edu/about/hay/carberry.php"
+      "url": "http://library.brown.edu/about/hay/carberry.php",
+      "type": "Person"
     },
     {
-      "type": "Person",
-      "honorificPrefix": "Dr",
       "givenNames": [
         "Jane"
       ],
       "familyNames": [
         "Carberry"
       ],
+      "honorificPrefix": "Dr",
       "emails": [
         "jane.carberry@example.org"
-      ]
+      ],
+      "type": "Person"
     },
     {
       "affiliations": [

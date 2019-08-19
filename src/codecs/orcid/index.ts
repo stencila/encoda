@@ -2,8 +2,7 @@
  * Codec for an Open Researcher and Contributor ID (ORCID)
  */
 
-import stencila from '@stencila/schema'
-import { coerce } from '../../util/coerce'
+import * as stencila from '@stencila/schema'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
@@ -13,16 +12,16 @@ export class OrcidCodec extends Codec implements Codec {
 
   public readonly extNames = ['orcid']
 
-  private static regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
+  public static regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
 
   public readonly sniff = async (content: string): Promise<boolean> => {
     return OrcidCodec.regex.test(content)
   }
 
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile | string
   ): Promise<stencila.Node> => {
-    const content = await vfile.dump(file)
+    const content = typeof file === 'string' ? file : await vfile.dump(file)
     const match = content.match(OrcidCodec.regex)
     if (!match) throw new Error('Unable to parse content')
 
@@ -35,18 +34,18 @@ export class OrcidCodec extends Codec implements Codec {
     if (response.statusCode === 200 && response.body) {
       const data = JSON.parse(response.body)
       if (Array.isArray(data.url) && data.url.length > 0) data.url = data.url[0]
-      // TODO: Currently broken due to changes in coerce. Should
-      // be using a JSON-LD coerce function instead.
+      // TODO: Should be using a JSON-LD decode function here; following is temporary
       // https://github.com/stencila/encoda/issues/207
-      return coerce(data, 'Person')
+      const { givenName, familyName } = data
+      return stencila.person({
+        givenNames: [givenName],
+        familyNames: [familyName]
+      })
     }
     throw new Error(`Request failed`)
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to an ORCID is not yet implemented`)
   }
 }

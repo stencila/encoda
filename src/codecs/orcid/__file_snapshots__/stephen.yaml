@@ -1,12 +1,5 @@
-type: Person
 givenNames:
   - Stephen
 familyNames:
   - Hawking
-affiliations:
-  - name: University of Cambridge
-    type: Organization
-  - name: University of Cambridge
-    type: Organization
-  - name: California Institute of Technology
-    type: Organization
+type: Person
