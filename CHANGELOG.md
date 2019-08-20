@@ -1,3 +1,15 @@
+# [0.65.0](https://github.com/stencila/encoda/compare/v0.64.0...v0.65.0) (2019-08-20)
+
+
+### Bug Fixes
+
+* **ORCID:** Temporary fix awaiting jsonld codec ([de7164d](https://github.com/stencila/encoda/commit/de7164d))
+
+
+### Features
+
+* **Person:** Detect and use ORCID ([2754e1f](https://github.com/stencila/encoda/commit/2754e1f))
+
 # [0.64.0](https://github.com/stencila/encoda/compare/v0.63.0...v0.64.0) (2019-08-18)
 
 
