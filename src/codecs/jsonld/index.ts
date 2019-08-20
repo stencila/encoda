@@ -2,12 +2,15 @@
  * @module jsonld
  */
 
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
+import fs from 'fs-extra'
 import jsonld from 'jsonld'
+import path from 'path'
 import { Codec } from '../types'
 import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
+import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 
 const log = getLogger('encoda:jsonld')
@@ -61,26 +64,53 @@ export class JsonLdCodec extends Codec implements Codec {
 
   public readonly extNames = ['jsonld']
 
-  // TODO: Use the stencila `@context` from the `stencila/schema` repo
-  // Currently using schema.org
-  private static readonly stencilaContext = 'http://schema.org'
+  private static context: {[key: string]: any} = {}
 
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const data = JSON.parse(content)
+
+    // Load the Stencila JSON-LD context if necessary
+    if (Object.keys(JsonLdCodec.context).length === 0) {
+      const location = path.join(
+        path.dirname(require.resolve('@stencila/schema')),
+        'stencila.jsonld'
+      )
+      JsonLdCodec.context = await fs.readJSON(location)
+    }
+
     // Expand the data (thereby removing it's context) and then compact it
-    // using the Stencila `@context`
+    // using the Stencila `@context` (thereby changing property names
+    // and types to those in the schema).
     const expanded = await jsonld.expand(data, { documentLoader })
     const compacted = await jsonld.compact(
       expanded,
-      JsonLdCodec.stencilaContext,
+      JsonLdCodec.context,
       { documentLoader }
     )
-    // Remove and rename properties and coerce types so that the data
-    // fits the Stencila schema
-    const coerced = await coerce(compacted)
+
+    // `jsonld` expands url string into an object with an id e.g.
+    //
+    //   "url": {
+    //     "id": "http://example.org/"
+    //   }
+    //
+    // so we transform these to strings (including arrays of URLs)
+    // by walking the compacted doc
+    const transformed = await transform(compacted, async (node, path) => {
+      if (!stencila.isPrimitive(node) && stencila.nodeType(node) === 'object') {
+        if (path !== undefined && (path.pop() === 'url' || path.pop() === 'url'))
+          // @ts-ignore
+          if ('id' in node) return node.id
+      }
+      return node
+    })
+
+    // Coerce types so that the data fits the Stencila schema
+    // e.g. singleton vs arrays
+    const coerced = await coerce(transformed)
     return coerced
   }
 

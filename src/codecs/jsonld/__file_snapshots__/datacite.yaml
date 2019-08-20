@@ -1,8 +1,14 @@
 id: 'https://doi.org/10.5438/0000-00cc'
 type: Article
-dateCreated: '2017-01-09'
-dateModified: '2017-01-09'
-datePublished: '2017-01-09'
+dateCreated:
+  type: Date
+  value: '2017-01-09'
+dateModified:
+  type: Date
+  value: '2017-01-09'
+datePublished:
+  type: Date
+  value: '2017-01-09'
 description: >-
   Two weeks ago we started assigning DOIs to every post on this blog (Fenner,
   2016c). The process we implemented uses a new command line utility and
