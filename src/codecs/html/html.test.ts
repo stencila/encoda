@@ -1,17 +1,33 @@
 import stencila, {
+  article,
   cite,
+  citeGroup,
+  collection,
+  creativeWork,
   figure,
   imageObject,
   link,
-  collection,
-  citeGroup
+  person,
+  publicationIssue
 } from '@stencila/schema'
-import { getByText, prettyDOM } from '@testing-library/dom'
+import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import { dump, load } from '../../util/vfile'
 import { HTMLCodec } from './'
+
+declare global {
+  namespace jest {
+    interface Matchers<R> {
+      toInvert(node: stencila.Node, fileName?: string): R
+      /**
+       * Compares text values disregarding whitespace differences (including newlines).
+       */
+      toEqualStringContent(expected: string, printOriginalValues?: boolean): R
+    }
+  }
+}
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -53,7 +69,7 @@ describe('String escaping', () => {
 
 describe('Encode & Decode cite nodes', () => {
   const schemaNode = cite('myTarget')
-  const htmlNode = `<cite><a href="${schemaNode.target}">${schemaNode.target}</a></cite>`
+  const htmlNode = `<cite><a href="#myTarget">myTarget</a></cite>`
 
   test('encode', async () => {
     expect(await e(schemaNode)).toEqual(htmlNode)
@@ -78,7 +94,7 @@ describe('Encode & Decode cite nodes', () => {
 
   test('decode with prefix & suffix', async () => {
     const actual = await d(
-      `<cite><span itemprop="citePrefix">(</span><a href="myTarget">myTarget</a><span itemprop="citeSuffix">)</span></cite>`
+      `<cite><span itemprop="citePrefix">(</span><a href="#myTarget">myTarget</a><span itemprop="citeSuffix">)</span></cite>`
     )
 
     expect(actual).toHaveProperty('target', 'myTarget')
@@ -113,6 +129,164 @@ describe('Encode & Decode cite group nodes', () => {
 
   test('decode', async () => {
     expect(await decode(load(htmlNode))).toEqual(schemaNode)
+  })
+})
+
+describe('Encode & Decode references', () => {
+  const schemaNode = article([], 'Untitled', {
+    references: [
+      creativeWork({
+        title:
+          'Cell flow reorients the axis of planar polarity in the wing epithelium of Drosophila',
+        datePublished: '2010',
+        // issueNumber: 142,
+        // title: 'Cell',
+        // pagination: '773-786',
+        url: 'https://doi.org/10.1016/j.cell.2010.07.042',
+        authors: [
+          person({
+            givenNames: ['B'],
+            familyNames: ['Aigouy'],
+            url: 'https://scholar.google.com/scholar?q=%22author:B+Aigouy%22'
+          }),
+          person({
+            givenNames: ['R'],
+            familyNames: ['Farhadifar'],
+            url:
+              'https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22'
+          })
+        ]
+      })
+    ]
+  })
+
+  const schemaNodeCiteGroups = {
+    type: 'Article',
+    title: 'An example of using the CiteGroup node type',
+    authors: [
+      {
+        type: 'Person',
+        givenNames: ['Joe'],
+        familyNames: ['Bloggs']
+      }
+    ],
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          'Citing two articles ',
+          {
+            type: 'CiteGroup',
+            items: [
+              { type: 'Cite', target: 'some-one-else-1991' },
+              { type: 'Cite', target: 'updated-works-2009' },
+              { type: 'Cite', target: 'http://www.fullUrl.com' }
+            ]
+          },
+          '.'
+        ]
+      }
+    ],
+    references: [
+      {
+        type: 'Article',
+        id: 'some-one-else-1991',
+        title: 'Another article by someone else',
+        authors: [
+          {
+            type: 'Person',
+            givenNames: ['Some', 'One'],
+            familyNames: ['Else']
+          }
+        ],
+        datePublished: '1991'
+      },
+      {
+        type: 'Article',
+        id: 'update-works-2009',
+        title: 'A Better Updated Work',
+        authors: [
+          {
+            type: 'Person',
+            givenNames: ['Some', 'Better'],
+            familyNames: ['Person']
+          }
+        ],
+        datePublished: '2009'
+      }
+    ]
+  }
+
+  const articleRefs = `<article>
+  <h2>
+    References
+  </h2>
+
+  <ol itemprop="references">
+    <li
+      itemscope="true"
+      itemtype="https://schema.org/CreativeWork"
+      itemprop="citation"
+    >
+      <a
+        href="https://doi.org/10.1016/j.cell.2010.07.042"
+        itemprop="title"
+        itemscope="true"
+      >
+        Cell flow reorients the axis of planar polarity in the wing epithelium
+        of Drosophila
+      </a>
+      <ol itemprop="authors" itemscope="true">
+        <li
+          itemscope="true"
+          itemtype="https://schema.org/Person"
+          itemprop="author"
+        >
+          <a href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
+            <span itemprop="familyName">Aigouy</span>
+            <span itemprop="givenName">B</span>
+          </a>
+        </li>
+        <li
+          itemscope="true"
+          itemtype="https://schema.org/Person"
+          itemprop="author"
+        >
+          <a
+            href="https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22"
+          >
+            <span itemprop="familyName">Farhadifar</span>
+            <span itemprop="givenName">R</span>
+          </a>
+        </li>
+      </ol>
+      <time itemprop="datePublished" datetime="2010">2010</time>
+      <a href="https://doi.org/10.1016/j.cell.2010.07.042" itemprop="url">
+        https://doi.org/10.1016/j.cell.2010.07.042
+      </a>
+    </li>
+  </ol>
+</article>
+`
+
+  test('encode', async () => {
+    const actual = doc(await e(schemaNode)).querySelector(
+      '[itemprop="references"]'
+    )
+
+    const expected = doc(articleRefs).querySelector('[itemprop="references"]')
+    expect(actual!.outerHTML).toEqualStringContent(expected!.outerHTML)
+  })
+
+  test('encode - citegroup and references', async () => {
+    const actual = doc(await e(schemaNodeCiteGroups)).querySelector('article')
+    expect(actual!.outerHTML).toMatchSnapshot()
+  })
+
+  test('decode', async () => {
+    const actual = await d(articleRefs)
+
+    expect(actual).toMatchObject(schemaNode)
   })
 })
 
@@ -180,6 +354,11 @@ describe('Encode & Decode Collections', () => {
     const fig = actual.querySelectorAll('figure')
 
     expect(collectionHTML).toHaveAttribute('itemtype', 'schema:Collection')
+    expect(fig[0]).toHaveAttribute(
+      'itemtype',
+      'https://schema.org/CreativeWork'
+    )
+    expect(fig[0]).toHaveAttribute('itemscope', 'true')
     expect(fig).toHaveLength(2)
   })
 
