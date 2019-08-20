@@ -1,5 +1,19 @@
-givenNames:
-  - Stephen
+id: 'http://orcid.org/0000-0002-9079-593X'
+type: Person
+affiliations:
+  - type: Organization
+    name: University of Cambridge
+    alternateNames:
+      - Applied Mathematics and Theoretical Physics
+  - type: Organization
+    name: University of Cambridge
+    alternateNames:
+      - Mathematics
+  - type: Organization
+    name: California Institute of Technology
+    alternateNames:
+      - 'Physics, Mathematics and Astronomy'
 familyNames:
   - Hawking
-type: Person
+givenNames:
+  - Stephen

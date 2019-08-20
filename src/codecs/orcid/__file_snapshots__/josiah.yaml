@@ -1,5 +1,20 @@
-givenNames:
-  - Josiah
+id: 'http://orcid.org/0000-0002-1825-0097'
+type: Person
+url: 'http://library.brown.edu/about/hay/carberry.php'
+affiliations:
+  - type: Organization
+    name: Wesleyan University
+    alternateNames:
+      - Psychoceramics
+  - type: Organization
+    name: Brown University
+    alternateNames:
+      - Psychoceramics
+alternateNames:
+  - Josiah Stinkney Carberry
+  - J. Carberry
+  - J. S. Carberry
 familyNames:
   - Carberry
-type: Person
+givenNames:
+  - Josiah
