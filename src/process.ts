@@ -1,4 +1,4 @@
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
@@ -38,10 +38,10 @@ export default async function process(
       const meta = code.meta
       if (meta) {
         if ('validate' in meta) {
-          await _validate(code.value, meta.from || code.language)
+          await _validate(code.value, meta.from || code.programmingLanguage)
         }
         if ('coerce' in meta) {
-          await _coerce(code.value, meta.from || code.language)
+          await _coerce(code.value, meta.from || code.programmingLanguage)
         }
         if (meta.id) {
           _import(meta.id, node)
@@ -49,22 +49,22 @@ export default async function process(
         if (meta.import) {
           _import(
             meta.import,
-            await _coerce(code.value, meta.from || code.language)
+            await _coerce(code.value, meta.from || code.programmingLanguage)
           )
         }
         if (meta.export) {
-          code.value = await dump(_get(meta.export), meta.to || code.language, {
+          code.value = await dump(_get(meta.export), meta.to || code.programmingLanguage, {
             isStandalone: false
           })
         }
         if (meta.equals) {
           _equals(
             meta.equals,
-            await _coerce(code.value, meta.from || meta.to || code.language)
+            await _coerce(code.value, meta.from || meta.to || code.programmingLanguage)
           )
         }
         if ('include' in meta) {
-          return _coerce(code.value, meta.from || code.language)
+          return _coerce(code.value, meta.from || code.programmingLanguage)
         }
       }
     }
@@ -176,7 +176,8 @@ export default async function process(
   ): Promise<stencila.Node> {
     try {
       const node = await load(content, format)
-      return await coerce(node)
+      if (stencila.isEntity(node)) return await coerce(node)
+      else return node
     } catch (error) {
       throw Error(`Error: coercing "${content}": ${error} `)
     }

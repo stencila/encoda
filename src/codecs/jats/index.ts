@@ -1245,7 +1245,7 @@ function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
 function decodeCodeBlock(elem: xml.Element): [stencila.CodeBlock] {
   return [
     stencila.codeBlock(text(elem), {
-      language: attr(elem, 'language') || undefined
+      programmingLanguage: attr(elem, 'language') || undefined
     })
   ]
 }

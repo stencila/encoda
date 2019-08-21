@@ -537,7 +537,7 @@ function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
     type: 'CodeBlock',
     value: code.value
   }
-  if (code.lang) codeBlock.language = code.lang
+  if (code.lang) codeBlock.programmingLanguage = code.lang
   // The `remark-attrs` plugin parses metadata from the info string
   // into `data.hProperties` but also (erroneously?) seems to
   // parse some of the content of the first line of code so
@@ -557,7 +557,7 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
   const meta = block.meta ? stringifyMeta(block.meta) : ''
   return {
     type: 'code',
-    lang: block.language,
+    lang: block.programmingLanguage,
     meta,
     value: block.value
   }
@@ -576,8 +576,8 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     const first = nodes[0]
     if (nodeType(first) === 'CodeBlock') {
       const codeBlock = first as stencila.CodeBlock
-      const { language, meta, value } = codeBlock
-      if (language) codeChunk.programmingLanguage = language
+      const { programmingLanguage, meta, value } = codeBlock
+      if (programmingLanguage) codeChunk.programmingLanguage = programmingLanguage
       if (meta) codeChunk.meta = meta
       if (value) codeChunk.text = value
     }
@@ -595,7 +595,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   // Encode the code as a `CodeBlock` with `meta`
   const codeBlock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    language: programmingLanguage || 'text',
+    programmingLanguage: programmingLanguage || 'text',
     meta,
     value: text || ''
   }
@@ -844,7 +844,7 @@ function decodeQuote(ext: Extension): stencila.Quote {
     content: ext.content ? [ext.content] : []
   }
   const cite = ext.argument
-  if (cite) quote.citation = cite
+  if (cite) quote.cite = cite
   return quote
 }
 
@@ -857,7 +857,7 @@ function encodeQuote(quote: stencila.Quote): Extension {
     name: 'quote',
     // TODO: Handle cases where content is more than one string
     content: quote.content[0] as string,
-    argument: quote.citation
+    argument: quote.cite as string
   }
 }
 
@@ -888,7 +888,7 @@ function decodeInlineCode(
     }
     if (attrs) {
       const { lang, ...rest } = attrs
-      if (lang) code.language = lang
+      if (lang) code.programmingLanguage = lang
       if (Object.keys(rest).length) code.meta = rest
     }
     return code
@@ -900,7 +900,7 @@ function decodeInlineCode(
  */
 function encodeCode(code: stencila.Code): MDAST.InlineCode {
   let attrs
-  if (code.language) attrs = { lang: code.language }
+  if (code.programmingLanguage) attrs = { lang: code.programmingLanguage }
   if (code.meta) attrs = { ...attrs, ...code.meta }
   return {
     type: 'inlineCode',
