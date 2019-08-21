@@ -12,6 +12,7 @@ import {
 } from '@stencila/schema/dist/util'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
+import { flatten, isNonEmpty } from 'fp-ts/lib/Array'
 import fs from 'fs'
 // @ts-ignore
 import GithubSlugger from 'github-slugger'
@@ -22,10 +23,10 @@ import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
 import { columnIndexToName } from '../../codecs/xlsx'
+import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
-import { flatten } from 'fp-ts/lib/Array'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -35,59 +36,75 @@ const log = getLogger('encoda:html')
 // Ensures unique `id` attributes (e.g. for headings)
 const slugger = new GithubSlugger()
 
-const isDefined = <T>(n: T): n is NonNullable<typeof n> => !(n == null)
-
-const optionalTag = (
+/**
+ * Given a possibly undefined property, will return the HTML provided as the second argument if `prop` is truthy,
+ * otherwise returns undefined.
+ * @param {unknown} prop - Any possibly falsy value, most often an optional Stencila Schema node property
+ * @param {HTMLElement} htmlContent - HTMLElement, usually a direct call to `hyperscript`
+ */
+const optionalHTML = (
   prop: unknown = undefined,
-  tag: HTMLElement
-): HTMLElement | undefined => (prop ? tag : undefined)
+  htmlContent: HTMLElement
+): HTMLElement | undefined => (prop ? htmlContent : undefined)
 
-const itempropsToKeys = (
-  itemprops: string[],
-  el: HTMLElement
-): { [key: string]: unknown } => {
-  return itemprops.reduce((foundProps: { [key: string]: unknown }, prop) => {
-    const propValue = el.querySelector(`[itemprop=${prop}]`)
-    return propValue
-      ? { ...foundProps, [prop]: decodeNode(propValue) }
-      : foundProps
-  }, {})
+/**
+ * Given a string tries to find and return an HTML element with a matching `itemprop` attribute value
+ * @param {HTMLElement} el - HTML element to search within
+ * @param {string} itemprop - Value of the `itemprop` attribute to find
+ */
+const propSelector = (el: HTMLElement) => (
+  itemprop: string
+): HTMLElement | undefined => {
+  const match = el.querySelector<HTMLElement>(`[itemprop=${itemprop}]`)
+  return match || undefined
 }
 
-const itempropToText = (el: HTMLElement) => (
+/**
+ * Given a string tries to find and return all HTML element with a matching `itemprop` attribute valu
+ * @param {HTMLElement} el - HTML element to search within
+ * @param {string} itemprop - Value of the `itemprop` attribute to find
+ */
+const propSelectorAll = (el: HTMLElement) => (
+  itemprop: string
+): HTMLElement[] => {
+  const match = el.querySelectorAll<HTMLElement>(`[itemprop=${itemprop}]`)
+  return [...match] || []
+}
+
+/**
+ * Given a string tries to find and return an HTML element with a matching `itemprop` attribute value.
+ * If a matching element is found, will attempt to return the `textContent`, falling back to `undefined`.
+ * @param {HTMLElement} el - HTML element to search within
+ * @param {string} itemprop - Value of the `itemprop` attribute to find
+ */
+const propValue = (el: HTMLElement) => (
   itemprop: string
 ): string | undefined => {
-  const match = el.querySelector<HTMLElement>(`[itemprop=${itemprop}]`)
+  const match = propSelector(el)(itemprop)
   const value = match ? match.textContent : undefined
   return value || undefined
 }
 
-const itempropsToText = (el: HTMLElement) => (
+/**
+ * Given a list of itemprop values, tries to find and return the matching HTML element's `textContent`.
+ * If the found HTMLElement does not contain `textContent`, then `undefined` will be returned for that element.
+ * @param {HTMLElement} el - HTML element to search within
+ * @param {string} itemprops - Value of the `itemprop` attribute to find
+ */
+const propsToValues = (el: HTMLElement) => (
   itemprops: string[]
 ): { [key: string]: string | number } => {
+  const selector = propSelector(el)
+
   return itemprops.reduce(
     (foundProps: { [key: string]: string | number }, prop) => {
-      const match = el.querySelector(`[itemprop=${prop}]`)
+      const match = selector(prop)
       const value = match && match.textContent
 
       return value ? { ...foundProps, [prop]: value } : foundProps
     },
     {}
   )
-}
-
-const itempropSelect = (el: HTMLElement) => (
-  prop: string
-): HTMLElement | undefined => {
-  const match = el.querySelector<HTMLElement>(`[itemprop=${prop}]`)
-  return match || undefined
-}
-
-const itempropSelectAll = (el: HTMLElement) => (
-  prop: string
-): HTMLElement[] => {
-  const match = el.querySelectorAll<HTMLElement>(`[itemprop=${prop}]`)
-  return [...match] || []
 }
 
 export class HTMLCodec extends Codec implements Codec {
@@ -350,14 +367,14 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
 
 function decodeBlockChildNodes(node: Node): stencila.BlockContent[] {
   return Array.from(node.childNodes)
-    .map(child => decodeNode(child) as stencila.BlockContent)
-    .filter(node => typeof node !== 'undefined')
+    .reduce(reduceNonNullable(decodeNode), [])
+    .map(n => n as stencila.BlockContent)
 }
 
 function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
-  return Array.from(node.childNodes)
-    .map(child => decodeNode(child) as stencila.InlineContent)
-    .filter(node => typeof node !== 'undefined')
+  return Array.from(node.childNodes).map(
+    child => decodeNode(child) as stencila.InlineContent
+  )
 }
 
 /**
@@ -487,20 +504,17 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
     'ol[itemprop="references"] > li'
   )
 
-  const ref = references ? [...references].map(decodeCreativeWork) : []
+  const refItems = references ? [...references].map(decodeCreativeWork) : []
 
   if (titleEl) titleEl.remove()
 
-  return {
+  return compactObj({
     type: 'Article',
     title,
     authors: [],
-    references: ref.length === 0 ? undefined : ref,
-    content: [...element.childNodes].reduce((nodes: stencila.Node[], node) => {
-      const decodedNode = decodeNode(node)
-      return decodedNode ? [...nodes, decodedNode] : nodes
-    }, [])
-  }
+    references: isNonEmpty(refItems) ? refItems : undefined,
+    content: [...element.childNodes].reduce(reduceNonNullable(decodeNode), [])
+  })
 }
 
 /**
@@ -575,20 +589,8 @@ const creativeWorkTagMap: CreativeWOrkTagMap = {
 }
 
 function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
-  const props = [
-    'content',
-    'isPartOf',
-    'licenses',
-    'parts',
-    'publisher',
-    'references',
-    'text',
-    'version'
-  ]
-
-  const workSelectorAll = itempropSelectAll(work)
-  const workSelector = itempropSelect(work)
-
+  const workSelectorAll = propSelectorAll(work)
+  const workSelector = propSelector(work)
   const url = workSelector('url')
 
   return {
@@ -597,13 +599,12 @@ function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
     funders: workSelectorAll('funder').map(decodePerson),
     editors: workSelectorAll('editor').map(decodePerson),
     url: url ? url.getAttribute('href') || undefined : undefined,
-    ...itempropsToText(work)([
+    ...propsToValues(work)([
       'dateCreated',
       'dateModified',
       'datePublished',
       'title'
-    ]),
-    ...itempropsToKeys(props, work)
+    ])
   }
 }
 
@@ -640,7 +641,7 @@ function encodeCreativeWork(
       { itemprop: 'datePublished', datetime: work.datePublished },
       work.datePublished
     ),
-    optionalTag(
+    optionalHTML(
       work.url,
       h('a', { attrs: { itemprop: 'url' }, href: work.url }, work.url)
     ),
@@ -653,7 +654,7 @@ function encodeCreativeWork(
 function decodePerson(person: HTMLElement): stencila.Person {
   const url = person.querySelector('a')
   const href = url && url.getAttribute('href')
-  const personProps = itempropToText(person)
+  const personProps = propValue(person)
 
   return {
     type: 'Person',
@@ -809,12 +810,12 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
  */
 function encodeCite(cite: stencila.Cite): HTMLElement {
   const content = [
-    optionalTag(
+    optionalHTML(
       cite.prefix,
       h('span', { itemprop: 'citePrefix' }, [cite.prefix])
     ),
     h('a', { href: encodeHref(cite.target) }, cite.target),
-    optionalTag(
+    optionalHTML(
       cite.suffix,
       h('span', { itemprop: 'citeSuffix' }, [cite.suffix])
     )
@@ -854,8 +855,7 @@ function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
 function decodeFigure(elem: HTMLElement): stencila.Figure {
   const content = [...elem.childNodes]
     .filter(n => n.nodeName.toLowerCase() !== 'figcaption')
-    .map(decodeNode)
-    .filter(isDefined)
+    .reduce(reduceNonNullable(decodeNode), [])
 
   const caption = elem.querySelector('figcaption')
 
@@ -871,7 +871,7 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
  * Decode a `<figcaption>` element to a list of `stencila.Node`s.
  */
 function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
-  return [...elem.childNodes].map(decodeNode).filter(isDefined)
+  return [...elem.childNodes].reduce(reduceNonNullable(decodeNode), [])
 }
 
 /**
@@ -999,11 +999,7 @@ function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
   return {
     type: 'ListItem',
-    // TODO: Extract the callback
-    content: [...li.childNodes].reduce((nodes: stencila.Node[], node) => {
-      const decodedNode = decodeNode(node)
-      return decodedNode !== undefined ? [...nodes, decodedNode] : nodes
-    }, [])
+    content: [...li.childNodes].reduce(reduceNonNullable(decodeNode), [])
   }
 }
 
@@ -1018,7 +1014,7 @@ function encodeListItem(listItem: stencila.ListItem): HTMLLIElement {
  * Decode a `<table>` element to a `stencila.Table`.
  */
 function decodeTable(table: HTMLTableElement): stencila.Table {
-  return {
+  return compactObj({
     type: 'Table',
     id: table.getAttribute('id') || undefined,
     rows: Array.from(table.querySelectorAll('tr')).map(
@@ -1036,7 +1032,7 @@ function decodeTable(table: HTMLTableElement): stencila.Table {
         }
       }
     )
-  }
+  })
 }
 
 /**
@@ -1387,7 +1383,7 @@ function decodeDataAttrs(
  * Encode a dictionary of strings to `data-` attributes to add to
  * an element (the inverse of `decodeDataAttrs`).
  */
-function encodeDataAttrs(meta: { [key: string]: string }) {
+function encodeDataAttrs(meta: { [key: string]: string }): typeof meta {
   const attrs: { [key: string]: string } = {}
   for (const [key, value] of Object.entries(meta)) {
     attrs['data-' + key] = value
