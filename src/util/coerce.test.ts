@@ -196,7 +196,20 @@ describe('coerce', () => {
     })
   })
 
-  it('will ceorce nested nodes', async () => {
+  it('will apply codecs', async () => {
+    const article = await coerce({
+      author: 'Mr Joe Doe'
+    }, 'Article')
+
+    expect(article.authors[0]).toEqual({
+      type: 'Person',
+      givenNames: ['Joe'],
+      familyNames: ['Doe'],
+      honorificPrefix: 'Mr'
+    })
+  })
+
+  it('will coerce nested nodes', async () => {
     const article = await coerce(
       {
         title: 'Untitled',
@@ -237,7 +250,7 @@ describe('coerce', () => {
         },
         'Person'
       )
-    ).rejects.toThrow('name: type should be string')
+    ).rejects.toThrow(/should be string/)
 
     await expect(
       coerce(
@@ -246,7 +259,7 @@ describe('coerce', () => {
         },
         'Person'
       )
-    ).rejects.toThrow('url: format should match format "uri"')
+    ).rejects.toThrow(/should match format "uri"/)
   })
 
   it('throws an error if invalid type', async () => {

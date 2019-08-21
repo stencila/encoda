@@ -1,7 +1,7 @@
 import stencila, { isEntity, nodeType } from '@stencila/schema'
 import Ajv from 'ajv'
 import produce from 'immer'
-import { getCoecer, getErrors, getSchema } from './schemas'
+import { getCoecer, getErrorMessage, getSchema } from './schemas'
 
 /**
  * Coerce a node so it conforms to a type's schema
@@ -31,7 +31,7 @@ export async function coerce<Key extends keyof stencila.Types>(
       return await coecer(coerced)
     } catch (error) {
       if (error instanceof Ajv.ValidationError)
-        throw getErrors(coecer, node, error.errors)
+        throw new Error(getErrorMessage(coecer, node, error.errors, 'cli'))
       else throw error
     }
   }) as unknown) as stencila.Types[Key]
