@@ -91,19 +91,49 @@ export class JsonLdCodec extends Codec implements Codec {
       { documentLoader }
     )
 
-    // `jsonld` expands url string into an object with an id e.g.
-    //
-    //   "url": {
-    //     "id": "http://example.org/"
-    //   }
-    //
-    // so we transform these to strings (including arrays of URLs)
-    // by walking the compacted doc
-    const transformed = await transform(compacted, async (node, path) => {
-      if (!stencila.isPrimitive(node) && stencila.nodeType(node) === 'object') {
-        if (path !== undefined && (path.pop() === 'url' || path.pop() === 'url'))
+    // Remove `@context` and other JSON-LD keywords
+    // @ts-ignore
+    const { '@context': context, '@reverse': reverse, ...rest } = compacted
+
+    // Transform tree to better match Stencila schema
+    const transformed = await transform(rest, async (node, path) => {
+      if (!stencila.isPrimitive(node)) {
+        const type = stencila.nodeType(node)
+        if (type === 'parray') {
+          // Unwrap an array of `PropertyValue` or `QuantitativeValue` nodes
+          // into a plain object
+          const array = node as any[]
+          const entries = array.map(item => {
+            let {type, name, value, ...rest } = item
+            if (type === 'PropertyValue' || type === 'QuantitativeValue') {
+              if (name !== undefined) {
+                return {
+                  [name]: value !== undefined && Object.keys(rest).length === 0 ? value : {value, ...rest}
+                }
+              }
+            }
+            return {}
+          }).reduce((prev, curr) => ({...prev, curr}))
+          return Object.keys(entries).length === array.length ? entries : node
+        } else if (type === 'PropertyValue' || type === 'QuantitativeValue') {
+          // Unwrap a singleton `StructuredValue` into a primitive node
+          // or a plain object
           // @ts-ignore
-          if ('id' in node) return node.id
+          const {type, value, ...rest} = node
+          if (value !== undefined && Object.keys(rest).length === 0) return value
+          else return {value, ...rest}
+        } else if (type === 'object') {
+          // `jsonld` expands URI strings into an object with an id e.g.
+          //
+          //   "url": {
+          //     "id": "http://example.org/"
+          //   }
+          //
+          // So transform an object with only `id` property (no type even) into a string
+          // @ts-ignore
+          const {id, ...rest} = node
+          if (typeof id === 'string' && Object.keys(rest).length === 0) return id
+        }
       }
       return node
     })
@@ -117,8 +147,19 @@ export class JsonLdCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    // TODO: um, like, everything
-    const jsonld = ''
+    // If necessary, wrap primitive nodes into a https://schema.org/PropertyValue
+    let content = stencila.isEntity(node)
+      ? node
+      : {
+        type: 'PropertyValue',
+        value: node
+      }
+
+    const jsonld = JSON.stringify({
+      '@context': 'http://schema.stenci.la',
+      ...content
+    }, null, '  ')
+
     return vfile.load(jsonld)
   }
 }

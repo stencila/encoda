@@ -35,6 +35,11 @@ const jsonld2yaml = async (name: string) =>
     await yaml.encode(await jsonld.decode(await vfile.read(fixture(name))))
   )
 
+const yaml2jsonld = async (name: string) =>
+  vfile.dump(
+    await jsonld.encode(await yaml.decode(await vfile.read(fixture(name))))
+  )
+
 describe('decode', () => {
   test('orcid', async () => {
     expect(await jsonld2yaml('orcid.jsonld')).toMatchFile(
@@ -45,6 +50,20 @@ describe('decode', () => {
   test('datacite', async () => {
     expect(await jsonld2yaml('datacite.jsonld')).toMatchFile(
       snapshot('datacite.yaml')
+    )
+  })
+
+  test('image', async () => {
+    expect(await jsonld2yaml('image.jsonld')).toMatchFile(
+      snapshot('image.yaml')
+    )
+  })
+})
+
+describe('encode', () => {
+  test('article', async () => {
+    expect(await yaml2jsonld('article.yaml')).toMatchFile(
+      snapshot('article.jsonld')
     )
   })
 })
