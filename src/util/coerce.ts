@@ -2,6 +2,9 @@ import stencila, { isEntity, nodeType } from '@stencila/schema'
 import Ajv from 'ajv'
 import produce from 'immer'
 import { getCoecer, getErrorMessage, getSchema } from './schemas'
+import { getLogger } from '@stencila/logga';
+
+const log = getLogger('encoda:coerce')
 
 /**
  * Coerce a node so it conforms to a type's schema
@@ -53,7 +56,7 @@ export async function coerce<Key extends keyof stencila.Types>(
    */
   async function reshape(node: stencila.Node): Promise<void> {
     if (isEntity(node)) {
-      const schema = await getSchema(node.type as Key)
+      const schema = await getSchema(node.type)
       const { properties = {}, propertyAliases = {}, required = [] } = schema
 
       // Coerce properties...
@@ -67,6 +70,7 @@ export async function coerce<Key extends keyof stencila.Types>(
           delete node[key]
         } else if (properties[key] === undefined) {
           // Remove additional property (no need to reshape child)
+          log.warn(`Ignoring property ${node.type}.${key}`)
           // @ts-ignore
           delete node[key]
           continue
@@ -95,6 +99,8 @@ export async function coerce<Key extends keyof stencila.Types>(
           isArray
         ) {
           // Coerce an array to a scalar by taking the first element
+          if (child.length > 1)
+            log.warn(`Ignoring all but first item in ${node.type}.${key}`)
           // @ts-ignore
           node[name] = child[0]
         }
