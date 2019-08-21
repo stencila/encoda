@@ -1,3 +1,10 @@
+## [0.65.1](https://github.com/stencila/encoda/compare/v0.65.0...v0.65.1) (2019-08-21)
+
+
+### Bug Fixes
+
+* **CSV:** Use papaparse for csv codec ([ae52615](https://github.com/stencila/encoda/commit/ae52615))
+
 # [0.65.0](https://github.com/stencila/encoda/compare/v0.64.0...v0.65.0) (2019-08-20)
 
 
