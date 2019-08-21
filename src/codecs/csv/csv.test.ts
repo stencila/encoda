@@ -1,14 +1,12 @@
-import { Table } from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
-import { CSVCodec } from './'
+import { CsvCodec } from './'
 
-const { decode, encode } = new CSVCodec()
+const { decode, encode } = new CsvCodec()
 
 const simple = {
-  content: `A,B,C\n1,2,3\n2,5,6\n3,8,9\n`,
+  content: `A,B,C\r\n1,2,3\r\n2,5,6\r\n3,8,9`,
   node: {
     type: 'Datatable',
-    name: 'Sheet1',
     columns: [
       {
         type: 'DatatableColumn',
@@ -30,10 +28,9 @@ const simple = {
 }
 
 const named = {
-  content: `code,height,width\na,2,3\nb,5,6\nc,8,9\n`,
+  content: `code,height,width\r\na,2,3\r\nb,5,6\r\nc,8,9`,
   node: {
     type: 'Datatable',
-    name: 'Sheet1',
     columns: [
       {
         type: 'DatatableColumn',
@@ -54,57 +51,9 @@ const named = {
   }
 }
 
-const formulas: { content: string; node: Table } = {
-  content: `1,=A1*2\n=B1*3,\n`,
-  node: {
-    type: 'Table',
-    name: 'Sheet1',
-    rows: [
-      {
-        type: 'TableRow',
-        cells: [
-          {
-            type: 'TableCell',
-            name: 'A1',
-            content: [1]
-          },
-          {
-            type: 'TableCell',
-            name: 'B1',
-            content: [
-              {
-                type: 'CodeExpr',
-                programmingLanguage: 'excel',
-                text: 'A1*2'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        type: 'TableRow',
-        cells: [
-          {
-            type: 'TableCell',
-            name: 'A2',
-            content: [
-              {
-                type: 'CodeExpr',
-                programmingLanguage: 'excel',
-                text: 'B1*3'
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-
 test('decode', async () => {
   expect(await decode(load(simple.content))).toEqual(simple.node)
   expect(await decode(load(named.content))).toEqual(named.node)
-  expect(await decode(load(formulas.content))).toEqual(formulas.node)
 })
 
 describe('encode', () => {
@@ -114,9 +63,5 @@ describe('encode', () => {
 
   test('named', async () => {
     expect(await dump(await encode(named.node))).toEqual(named.content)
-  })
-
-  test('formulas', async () => {
-    expect(await dump(await encode(formulas.node))).toEqual(formulas.content)
   })
 })
