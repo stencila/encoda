@@ -21,7 +21,7 @@
     "check:deps-used": "dependency-check --missing .",
     "check:deps-unused": "dependency-check --unused --no-dev --ignore-module @stencila/schema --ignore-module @stencila/thema .",
     "cli": "npx ts-node --files src/cli",
-    "build": "tsc && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
+    "build": "tsc -p tsconfig.prod.json && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
     "docs": "npm run docs:readme && npm run docs:dogfood && npm run docs:ts",
     "docs:readme": "markdown-toc -i --maxdepth=4 README.md",
     "docs:dogfood": "npx ts-node --files docs.ts",

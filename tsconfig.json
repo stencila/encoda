@@ -21,6 +21,5 @@
     /* Avoid `import * as` syntax */
     "esModuleInterop": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["**/*.test.ts", "**/__tests__", "**/__fixtures__"]
+  "include": ["src/**/*.ts"]
 }

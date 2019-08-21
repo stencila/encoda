@@ -17,18 +17,6 @@ import { JSDOM } from 'jsdom'
 import { dump, load } from '../../util/vfile'
 import { HTMLCodec } from './'
 
-declare global {
-  namespace jest {
-    interface Matchers<R> {
-      toInvert(node: stencila.Node, fileName?: string): R
-      /**
-       * Compares text values disregarding whitespace differences (including newlines).
-       */
-      toEqualStringContent(expected: string, printOriginalValues?: boolean): R
-    }
-  }
-}
-
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
 
