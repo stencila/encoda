@@ -2,10 +2,12 @@ import * as stencila from '@stencila/schema'
 import { coerce } from '../../util/coerce'
 import { validate } from '../../util/validate'
 import { dump } from '../../util/vfile'
-import { nockRecord } from '../../__tests__/helpers'
+import { nockRecord, snapshot } from '../../__tests__/helpers'
 import { PersonCodec } from './'
 
 const { sniff, decode, encode } = new PersonCodec()
+
+jest.setTimeout(30 * 1000)
 
 test('sniff', async () => {
   expect(await sniff('Joe Jones')).toBe(true)
@@ -52,12 +54,6 @@ const jill = {
   }
 }
 
-const josiah = {
-  type: 'Person',
-  givenNames: ['Josiah'],
-  familyNames: ['Carberry']
-}
-
 describe('decode', () => {
   it('handles various name parts', async () => {
     let person = stencila.person()
@@ -96,9 +92,9 @@ describe('decode', () => {
   it('decodes an orcid to a Person', async () => {
     const done = await nockRecord('nock-record-orcid.json')
 
-    expect(await decode('https://orcid.org/0000-0002-1825-0097')).toEqual(
-      josiah
-    )
+    expect(
+      await decode('https://orcid.org/0000-0002-1825-0097')
+    ).toMatchSnapshot()
 
     done()
   })

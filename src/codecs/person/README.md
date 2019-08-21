@@ -23,13 +23,36 @@ is decoded to,
 
 ```json export=josiah
 {
-  "givenNames": [
-    "Josiah"
+  "id": "http://orcid.org/0000-0002-1825-0097",
+  "type": "Person",
+  "url": "http://library.brown.edu/about/hay/carberry.php",
+  "affiliations": [
+    {
+      "type": "Organization",
+      "name": "Wesleyan University",
+      "alternateNames": [
+        "Psychoceramics"
+      ]
+    },
+    {
+      "type": "Organization",
+      "name": "Brown University",
+      "alternateNames": [
+        "Psychoceramics"
+      ]
+    }
+  ],
+  "alternateNames": [
+    "Josiah Stinkney Carberry",
+    "J. Carberry",
+    "J. S. Carberry"
   ],
   "familyNames": [
     "Carberry"
   ],
-  "type": "Person"
+  "givenNames": [
+    "Josiah"
+  ]
 }
 ```
 
@@ -43,17 +66,39 @@ is decoded to
 
 ```json export=stephen
 {
-  "givenNames": [
-    "Stephen"
+  "id": "http://orcid.org/0000-0002-9079-593X",
+  "type": "Person",
+  "affiliations": [
+    {
+      "type": "Organization",
+      "name": "University of Cambridge",
+      "alternateNames": [
+        "Applied Mathematics and Theoretical Physics"
+      ]
+    },
+    {
+      "type": "Organization",
+      "name": "University of Cambridge",
+      "alternateNames": [
+        "Mathematics"
+      ]
+    },
+    {
+      "type": "Organization",
+      "name": "California Institute of Technology",
+      "alternateNames": [
+        "Physics, Mathematics and Astronomy"
+      ]
+    }
   ],
   "familyNames": [
     "Hawking"
   ],
-  "type": "Person"
+  "givenNames": [
+    "Stephen"
+  ]
 }
 ```
-
-> ⚠️ The `orcid` codec is work in progress and when complete willl return more metadata than shown above.
 
 ### Text parsing
 
