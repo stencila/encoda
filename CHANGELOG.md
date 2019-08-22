@@ -1,3 +1,16 @@
+# [0.66.0](https://github.com/stencila/encoda/compare/v0.65.1...v0.66.0) (2019-08-22)
+
+
+### Bug Fixes
+
+* **Tests:** Fix test failures due to false TypeScript errors ([a9fe1f8](https://github.com/stencila/encoda/commit/a9fe1f8))
+
+
+### Features
+
+* **HTML:** Add support for Cite, CiteGroup, Figure, Collection nodes ([e9dd3ed](https://github.com/stencila/encoda/commit/e9dd3ed))
+* **HTML:** Handle more props on Article/Person/Org/Ref/CreativeWork ([32e0d96](https://github.com/stencila/encoda/commit/32e0d96))
+
 ## [0.65.1](https://github.com/stencila/encoda/compare/v0.65.0...v0.65.1) (2019-08-21)
 
 
