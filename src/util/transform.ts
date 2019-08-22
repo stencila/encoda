@@ -18,11 +18,15 @@ export default async function transform(
 ): Promise<stencila.Node> {
   async function walk(node: stencila.Node): Promise<stencila.Node> {
     const transformed = await transformer(node)
-    if (stencila.isPrimitive(transformed)) return transformed
+    if (stencila.isPrimitive(transformed) || transformed === undefined) {
+      return transformed
+    }
+
     for (const [key, child] of Object.entries(transformed)) {
       // @ts-ignore
       transformed[key] = await walk(child)
     }
+
     return transformed
   }
   return produce(node, walk)

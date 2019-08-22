@@ -1,0 +1,5 @@
+{
+  /* See https://www.typescriptlang.org/docs/handbook/compiler-options.html */
+  "extends": "./tsconfig.json",
+  "exclude": ["**/*.test.ts", "**/__tests__", "**/__fixtures__"]
+}

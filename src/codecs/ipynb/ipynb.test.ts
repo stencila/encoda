@@ -21,19 +21,30 @@ const json2ipynb = async (name: string) =>
     await ipynb.encode(await json.decode(await vfile.read(fixture(name))))
   )
 
-test('decode', async () => {
-  expect(await ipynb2json('metadata-v4.ipynb')).toMatchFile(
-    snapshot('metadata-v4.json')
-  )
-  expect(await ipynb2json('running-code.ipynb')).toMatchFile(
-    snapshot('running-code.json')
-  )
-  expect(await ipynb2json('sunspots.ipynb')).toMatchFile(
-    snapshot('sunspots.json')
-  )
-  expect(await ipynb2json('well-switching.ipynb')).toMatchFile(
-    snapshot('well-switching.json')
-  )
+describe('decode', () => {
+  test('metadata-v4', async () => {
+    expect(await ipynb2json('metadata-v4.ipynb')).toMatchFile(
+      snapshot('metadata-v4.json')
+    )
+  })
+
+  test('running-code', async () => {
+    expect(await ipynb2json('running-code.ipynb')).toMatchFile(
+      snapshot('running-code.json')
+    )
+  })
+
+  test('sunspots', async () => {
+    expect(await ipynb2json('sunspots.ipynb')).toMatchFile(
+      snapshot('sunspots.json')
+    )
+  })
+
+  test('well switching', async () => {
+    expect(await ipynb2json('well-switching.ipynb')).toMatchFile(
+      snapshot('well-switching.json')
+    )
+  })
 })
 
 test('encode', async () => {
