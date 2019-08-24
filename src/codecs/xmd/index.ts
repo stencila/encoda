@@ -83,7 +83,7 @@ export class XmdCodec extends Codec implements Codec {
       if (node.type === 'CodeChunk') {
         const codeBlock: stencila.CodeBlock = {
           type: 'CodeBlock',
-          language: node.programmingLanguage,
+          programmingLanguage: node.programmingLanguage,
           value: node.text
         }
         if (node.meta) codeBlock.meta = node.meta
