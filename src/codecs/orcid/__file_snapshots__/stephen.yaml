@@ -2,17 +2,17 @@ id: 'http://orcid.org/0000-0002-9079-593X'
 type: Person
 affiliations:
   - type: Organization
-    name: University of Cambridge
     alternateNames:
       - Applied Mathematics and Theoretical Physics
-  - type: Organization
     name: University of Cambridge
+  - type: Organization
     alternateNames:
       - Mathematics
+    name: University of Cambridge
   - type: Organization
-    name: California Institute of Technology
     alternateNames:
       - 'Physics, Mathematics and Astronomy'
+    name: California Institute of Technology
 familyNames:
   - Hawking
 givenNames:
