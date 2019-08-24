@@ -410,7 +410,8 @@ function encodeCitationText(work: stencila.CreativeWork): string {
   }
 
   if (datePublished !== undefined) {
-    const date = typeof datePublished === 'string' ? datePublished : datePublished.value
+    const date =
+      typeof datePublished === 'string' ? datePublished : datePublished.value
     const publishedYear = date.split('-')[0]
     citeText += `, ${publishedYear}`
   }
@@ -434,9 +435,7 @@ function encodeReference(
     if (title) subElements.push(elem('article-title', title))
 
     if (authors && authors.length) {
-      const people = authors
-        .filter(stencila.isType('Person'))
-        .map(encodeName)
+      const people = authors.filter(stencila.isType('Person')).map(encodeName)
 
       const personGroup = elem(
         'person-group',
@@ -457,7 +456,12 @@ function encodeReference(
       subElements.push(
         elem(
           'year',
-          { 'iso-8601-date': typeof datePublished === 'string' ? datePublished : datePublished.value },
+          {
+            'iso-8601-date':
+              typeof datePublished === 'string'
+                ? datePublished
+                : datePublished.value
+          },
           datePublished
         )
       )

@@ -5,12 +5,11 @@
 import * as stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
-import { getLogger } from '@stencila/logga';
+import { getLogger } from '@stencila/logga'
 
 const log = getLogger('encoda:date')
 
 export class DateCodec extends Codec implements Codec {
-
   public readonly mediaTypes = []
 
   public readonly decode = async (

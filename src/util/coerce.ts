@@ -2,7 +2,7 @@ import stencila, { isEntity, nodeType } from '@stencila/schema'
 import Ajv from 'ajv'
 import produce from 'immer'
 import { getCoecer, getErrorMessage, getSchema } from './schemas'
-import { getLogger } from '@stencila/logga';
+import { getLogger } from '@stencila/logga'
 
 const log = getLogger('encoda:coerce')
 

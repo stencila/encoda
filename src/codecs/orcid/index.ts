@@ -35,7 +35,7 @@ export class OrcidCodec extends Codec implements Codec {
         })
         if (response.statusCode === 200 && response.body)
           return load(response.body, 'jsonld')
-      } catch(error) {
+      } catch (error) {
         log.error(`Error fetching or decoding JSON-LD: ${error.message}`)
       }
     } else {

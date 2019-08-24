@@ -207,10 +207,10 @@ export function getErrorMessage(
     return errors.map(error => `${error.dataPath}: ${error.message}`).join('\n')
   }
   if (format === 'js') {
-    return (details as unknown as betterAjvErrors.IOutputError[])
+    return ((details as unknown) as betterAjvErrors.IOutputError[])
       .map(error => `${error.error}`)
       .join(';')
   } else {
-    return (details as unknown as string)
+    return (details as unknown) as string
   }
 }

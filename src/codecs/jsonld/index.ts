@@ -64,7 +64,7 @@ export class JsonLdCodec extends Codec implements Codec {
 
   public readonly extNames = ['jsonld']
 
-  private static context: {[key: string]: any} = {}
+  private static context: { [key: string]: any } = {}
 
   public readonly decode = async (
     file: vfile.VFile
@@ -85,11 +85,9 @@ export class JsonLdCodec extends Codec implements Codec {
     // using the Stencila `@context` (thereby changing property names
     // and types to those in the schema).
     const expanded = await jsonld.expand(data, { documentLoader })
-    const compacted = await jsonld.compact(
-      expanded,
-      JsonLdCodec.context,
-      { documentLoader }
-    )
+    const compacted = await jsonld.compact(expanded, JsonLdCodec.context, {
+      documentLoader
+    })
 
     // Remove `@context` and other JSON-LD keywords
     // @ts-ignore
@@ -103,25 +101,31 @@ export class JsonLdCodec extends Codec implements Codec {
           // Unwrap an array of `PropertyValue` or `QuantitativeValue` nodes
           // into a plain object
           const array = node as any[]
-          const entries = array.map(item => {
-            let {type, name, value, ...rest } = item
-            if (type === 'PropertyValue' || type === 'QuantitativeValue') {
-              if (name !== undefined) {
-                return {
-                  [name]: value !== undefined && Object.keys(rest).length === 0 ? value : {value, ...rest}
+          const entries = array
+            .map(item => {
+              const { type, name, value, ...rest } = item
+              if (type === 'PropertyValue' || type === 'QuantitativeValue') {
+                if (name !== undefined) {
+                  return {
+                    [name]:
+                      value !== undefined && Object.keys(rest).length === 0
+                        ? value
+                        : { value, ...rest }
+                  }
                 }
               }
-            }
-            return {}
-          }).reduce((prev, curr) => ({...prev, curr}))
+              return {}
+            })
+            .reduce((prev, curr) => ({ ...prev, curr }))
           return Object.keys(entries).length === array.length ? entries : node
         } else if (type === 'PropertyValue' || type === 'QuantitativeValue') {
           // Unwrap a singleton `StructuredValue` into a primitive node
           // or a plain object
           // @ts-ignore
-          const {type, value, ...rest} = node
-          if (value !== undefined && Object.keys(rest).length === 0) return value
-          else return {value, ...rest}
+          const { type, value, ...rest } = node
+          if (value !== undefined && Object.keys(rest).length === 0)
+            return value
+          else return { value, ...rest }
         } else if (type === 'object') {
           // `jsonld` expands URI strings into an object with an id e.g.
           //
@@ -131,8 +135,9 @@ export class JsonLdCodec extends Codec implements Codec {
           //
           // So transform an object with only `id` property (no type even) into a string
           // @ts-ignore
-          const {id, ...rest} = node
-          if (typeof id === 'string' && Object.keys(rest).length === 0) return id
+          const { id, ...rest } = node
+          if (typeof id === 'string' && Object.keys(rest).length === 0)
+            return id
         }
       }
       return node
@@ -148,17 +153,21 @@ export class JsonLdCodec extends Codec implements Codec {
     node: stencila.Node
   ): Promise<vfile.VFile> => {
     // If necessary, wrap primitive nodes into a https://schema.org/PropertyValue
-    let content = stencila.isEntity(node)
+    const content = stencila.isEntity(node)
       ? node
       : {
-        type: 'PropertyValue',
-        value: node
-      }
+          type: 'PropertyValue',
+          value: node
+        }
 
-    const jsonld = JSON.stringify({
-      '@context': 'http://schema.stenci.la',
-      ...content
-    }, null, '  ')
+    const jsonld = JSON.stringify(
+      {
+        '@context': 'http://schema.stenci.la',
+        ...content
+      },
+      null,
+      '  '
+    )
 
     return vfile.load(jsonld)
   }

@@ -53,14 +53,21 @@ export default async function process(
           )
         }
         if (meta.export) {
-          code.value = await dump(_get(meta.export), meta.to || code.programmingLanguage, {
-            isStandalone: false
-          })
+          code.value = await dump(
+            _get(meta.export),
+            meta.to || code.programmingLanguage,
+            {
+              isStandalone: false
+            }
+          )
         }
         if (meta.equals) {
           _equals(
             meta.equals,
-            await _coerce(code.value, meta.from || meta.to || code.programmingLanguage)
+            await _coerce(
+              code.value,
+              meta.from || meta.to || code.programmingLanguage
+            )
           )
         }
         if ('include' in meta) {

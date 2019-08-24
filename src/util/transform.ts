@@ -16,7 +16,10 @@ export default async function transform(
   node: stencila.Node,
   transformer: (node: stencila.Node, path?: string[]) => Promise<stencila.Node>
 ): Promise<stencila.Node> {
-  async function walk(node: stencila.Node, path: string[] = []): Promise<stencila.Node> {
+  async function walk(
+    node: stencila.Node,
+    path: string[] = []
+  ): Promise<stencila.Node> {
     const transformed = await transformer(node, path)
     if (stencila.isPrimitive(transformed) || transformed === undefined) {
       return transformed
