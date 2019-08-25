@@ -1,0 +1,827 @@
+authors:
+  - givenNames:
+      - Anna
+    familyNames:
+      - Lozano-Ureña
+    type: Person
+    affiliations:
+      - name: Department of Cell Biology
+        address: Spain
+        type: Organization
+  - givenNames:
+      - Sacri
+      - R
+    familyNames:
+      - Ferrón
+    type: Person
+    emails:
+      - sacramento.rodriguez@uv.es
+    affiliations:
+      - name: Department of Cell Biology
+        address: Spain
+        type: Organization
+      - name: ERI BiotecMed
+        address: Spain
+        type: Organization
+title: Beyond protein-coding genes
+type: Article
+content:
+  - content:
+      - type: Strong
+        content:
+          - Related research article
+      - ' Ang CE, Ma Q, Wapinski OL, Fan S, Flynn RA, Lee QY, Coe B, Onoguchi M, Olmos VH, Do BT, Dukes-Rimsky L, Xu J, Tanabe K, Wang L, Elling U, Penninger JM, Zhao Y, Qu K, Eichler EE, Srivastava A, Wernig M, Chang HY. 2019. The novel lncRNA '
+      - type: Emphasis
+        content:
+          - lnc-NR2F1
+      - ' is pro-neurogenic and mutated in human neurodevelopmental disorders. '
+      - type: Emphasis
+        content:
+          - eLife
+      - type: Strong
+        content:
+          - '8'
+      - ':e41770 . doi: '
+      - content:
+          - 10.7554/eLife.41770
+        target: 'http://doi.org/10.7554/eLife.41770'
+        type: Link
+    type: Paragraph
+  - content:
+      - >-
+        Most of the mammalian genome does not encode for working proteins.
+        However, much of this non-coding DNA is still transcribed, often to
+        produce RNA products that have a role in development. Some of these
+        molecules are called long non-coding RNAs (lncRNAs) because they contain
+        more than 200 base pairs: these transcripts fine-tune gene expression by
+        interacting with chromatin and the transcription machinery inside cells
+        (
+      - target: '#bib7'
+        type: Cite
+      - ). The brain expresses more lncRNAs than any other part of the body (
+      - target: '#bib5'
+        type: Cite
+      - "), but we know relatively little about the roles these molecules play in this\_organ ("
+      - target: '#bib4'
+        type: Cite
+      - '; '
+      - target: '#bib2'
+        type: Cite
+      - >-
+        ). Learning more about lncRNAs will be essential if we are to understand
+        both the typical and the atypical brain.
+    type: Paragraph
+  - content:
+      - >-
+        In intellectual disabilities or autism spectrum disorders, defects in
+        cognitive abilities, such as social interaction and communication, can
+        appear early in development and persist into adulthood. These
+        neurodevelopmental disorders involve abnormal changes in the way genetic
+        information is expressed (
+      - target: '#bib8'
+        type: Cite
+      - >-
+        ). Several lncRNAs are associated with these conditions, sometimes being
+        transcribed atypically (reviewed in 
+      - target: '#bib9'
+        type: Cite
+      - >-
+        ). For instance, certain lncRNAs are expressed differently in patients
+        on the autism spectrum (
+      - target: '#bib10'
+        type: Cite
+      - ).
+    type: Paragraph
+  - content:
+      - >-
+        Now, in eLife, Anand Srivastava, Marius Wernig, Howard Chang and
+        colleagues – including Cheen Ang, Qing Ma and Orly Wapinski, all from
+        Stanford University, as joint first authors – report that several
+        lncRNAs that are involved in the formation of neurons are mutated or
+        disrupted in children with autism spectrum disorder and intellectual
+        disabilities (
+      - target: '#bib1'
+        type: Cite
+      - ).
+    type: Paragraph
+  - content:
+      - >-
+        Ang et al. started by reprogramming mouse cells called embryonic
+        fibroblasts into neurons; this experiment helped them to identify 35
+        candidate lncRNAs that are both upregulated when neurons form and close
+        to neuronal genes. Amongst those, 28 were present on the same
+        chromosomes in humans and in mice. The group then tried to identify
+        whether these 28 human candidates were mutated in disease by overlapping
+        the lncRNAs sequences onto a map of mutations found in children with
+        neurodevelopmental disorders and congenital defects. This analysis
+        highlighted five lncRNAs that were often mutated in affected
+        individuals, and which happened to also be expressed during human brain
+        development. One of them, called 
+      - type: Emphasis
+        content:
+          - lnc-NR2F1
+      - ', was adjacent to '
+      - type: Emphasis
+        content:
+          - NR2F
+      - >-
+        , a gene which encodes a transcription factor that helps neurons form
+        and wire together (
+      - target: '#bib3'
+        type: Cite
+      - ).
+    type: Paragraph
+  - content:
+      - >-
+        The team, which is based at Stanford, Clemson University, the University
+        of Washington, the Greenwood Genetic Center, and the Austrian Academy of
+        Sciences, found patients with developmental delays who expressed normal
+        levels of the coding 
+      - type: Emphasis
+        content:
+          - NR2F1
+      - ' gene but presented a unique disruption of the '
+      - type: Emphasis
+        content:
+          - lnc-NR2F1
+      - ' gene. Most of the brain lncRNAs are located near genes that code for proteins, and it is believed that both lncRNAs and protein-coding genes are expressed at the same time ('
+      - target: '#bib6'
+        type: Cite
+      - '). However, the work by Ang et al. potentially indicates that '
+      - type: Emphasis
+        content:
+          - lnc-NR2F1
+      - ', rather than '
+      - type: Emphasis
+        content:
+          - NR2F1
+      - >-
+        , might contribute to the clinical symptoms associated with
+        neurodevelopmental disorders. If so, this would strengthen the
+        hypothesis that lncRNAs are independent transcriptional units that
+        activate gene expression in the brain.
+    type: Paragraph
+  - content:
+      - 'Then, Ang et al. discovered that, in mouse cells, '
+      - type: Emphasis
+        content:
+          - lnc-Nr2f1
+      - ' enhanced the transcription of genes that create and guide the structures which allow neurons to connect. Deleting or overexpressing '
+      - type: Emphasis
+        content:
+          - lnc-Nr2f1
+      - ' changed how these genes were expressed, and how the cells looked and worked. In addition, '
+      - type: Emphasis
+        content:
+          - lnc-Nr2f1
+      - " was shown to attach to the genes, suggesting that it binds chromatin to regulate gene expression\_("
+      - content:
+          - Figure 1
+        target: '#fig1'
+        relation: fig
+        type: Link
+      - >-
+        ). While we still do not fully understand the physiological changes that
+        accompany neurodevelopmental disorders, the results by Ang et al.
+        suggest that lncRNAs themselves may contribute to these conditions, or
+        that they drive the expression of disease-associated genes.
+    type: Paragraph
+  - content:
+      - contentUrl: /tmp/18043216e7805ab11576fdf69f976a6a/fig1.jpg
+        format: image/jpeg
+        meta:
+          inline: false
+        type: ImageObject
+    label: Figure 1.
+    caption:
+      - content:
+          - >-
+            Long non-coding RNAs (lncRNAs) and neuronal development in
+            neurodevelopmental disorders.
+        depth: 0
+        id: ''
+        type: Heading
+      - content:
+          - >-
+            Mouse embryonic fibroblasts (orange) were reprogrammed into neurons
+            (top right) using transcription factors called BAM factors. This led
+            to an increase in the expression of neuronal genes (green triangle)
+            and lncRNAs (pink triangle). Of the 287 lncRNAs that were
+            differentially expressed, 35 were close to neuronal genes. One of
+            these, 
+          - type: Emphasis
+            content:
+              - lnc-Nr2f1
+          - ' (red loops), binds to mouse neuronal and axon guidance genes (black boxes) and promotes their transcription (green arrow). The overexpression of '
+          - type: Emphasis
+            content:
+              - lnc-Nr2f1
+          - ' resulted in 311 neuronal genes being upregulated and 32 being repressed. The expression of '
+          - type: Emphasis
+            content:
+              - lnc-NR2F1
+          - ' is altered (red cross) in patients with autism spectrum disorders and intellectual disabilities, and this potentially disrupts the transcription of human neuronal and axon guidance genes (brown boxes; black inhibitory arrow). It is therefore possible that '
+          - type: Emphasis
+            content:
+              - lnc-NR2F1
+          - ' is involved in these conditions.'
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        How mutations in protein-coding genes contribute to disease is widely
+        studied, yet most mutations are found in regions that do not code for
+        proteins. Understanding how lncRNAs regulate genes during brain
+        development provides a way to tie genetic variation with changes in gene
+        expression in neurodevelopmental disorders. Building on the findings by
+        Ang et al., it may be possible to examine how clinical phenotypes,
+        cellular responses and lncRNAs are connected in these conditions,
+        potential unearthing new targets for therapeutic intervention.
+    type: Paragraph
+references:
+  - authors:
+      - givenNames:
+          - CE
+        familyNames:
+          - Ang
+        type: Person
+      - givenNames:
+          - Q
+        familyNames:
+          - Ma
+        type: Person
+      - givenNames:
+          - OL
+        familyNames:
+          - Wapinski
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Fan
+        type: Person
+      - givenNames:
+          - RA
+        familyNames:
+          - Flynn
+        type: Person
+      - givenNames:
+          - QY
+        familyNames:
+          - Lee
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Coe
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Onoguchi
+        type: Person
+      - givenNames:
+          - VH
+        familyNames:
+          - Olmos
+        type: Person
+      - givenNames:
+          - BT
+        familyNames:
+          - Do
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Dukes-Rimsky
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Xu
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Tanabe
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Wang
+        type: Person
+      - givenNames:
+          - U
+        familyNames:
+          - Elling
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Penninger
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Zhao
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Qu
+        type: Person
+      - givenNames:
+          - EE
+        familyNames:
+          - Eichler
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Srivastava
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Wernig
+        type: Person
+      - givenNames:
+          - HY
+        familyNames:
+          - Chang
+        type: Person
+    title: >-
+      The novel lncRNA lnc-NR2F1 is pro-neurogenic and mutated in human
+      neurodevelopmental disorders
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      title: eLife
+      volumeNumber: 8
+      type: PublicationVolume
+    id: bib1
+  - authors:
+      - givenNames:
+          - J
+        familyNames:
+          - Aprea
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Prenninger
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Dori
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Ghosh
+        type: Person
+      - givenNames:
+          - LS
+        familyNames:
+          - Monasor
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Wessendorf
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Zocher
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Massalini
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Alexopoulou
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Lesche
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Dahl
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Groszer
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Hiller
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Calegari
+        type: Person
+    title: "Transcriptome sequencing during mouse brain development identifies long non-coding RNAs functionally involved in neurogenic\_commitment"
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 3145
+      pageEnd: 3160
+      title: The EMBO Journal
+      volumeNumber: 32
+      type: PublicationVolume
+    id: bib2
+  - authors:
+      - givenNames:
+          - U
+        familyNames:
+          - Borello
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Madhavan
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Vilinsky
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Faedo
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Pierani
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Rubenstein
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Campbell
+        type: Person
+    title: "Sp8 and COUP-TF1 reciprocally regulate patterning and Fgf\_signaling in cortical progenitors"
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 1409
+      pageEnd: 1421
+      title: Cerebral Cortex
+      volumeNumber: 24
+      type: PublicationVolume
+    id: bib3
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - D'haene
+        type: Person
+      - givenNames:
+          - EZ
+        familyNames:
+          - Jacobs
+        type: Person
+      - givenNames:
+          - PJ
+        familyNames:
+          - Volders
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - De
+          - Meyer
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Menten
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Vergult
+        type: Person
+    title: >-
+      Identification of long non-coding RNAs involved in neuronal development
+      and intellectual disability
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      title: Scientific Reports
+      volumeNumber: 6
+      type: PublicationVolume
+    id: bib4
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Derrien
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Johnson
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Bussotti
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Tanzer
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Djebali
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Tilgner
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Guernec
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Martin
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Merkel
+        type: Person
+      - givenNames:
+          - DG
+        familyNames:
+          - Knowles
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Lagarde
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Veeravalli
+        type: Person
+      - givenNames:
+          - X
+        familyNames:
+          - Ruan
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Ruan
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Lassmann
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Carninci
+        type: Person
+      - givenNames:
+          - JB
+        familyNames:
+          - Brown
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Lipovich
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Gonzalez
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Thomas
+        type: Person
+      - givenNames:
+          - CA
+        familyNames:
+          - Davis
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Shiekhattar
+        type: Person
+      - givenNames:
+          - TR
+        familyNames:
+          - Gingeras
+        type: Person
+      - givenNames:
+          - TJ
+        familyNames:
+          - Hubbard
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Notredame
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Harrow
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Guigó
+        type: Person
+    title: >-
+      The GENCODE v7 catalog of human long noncoding RNAs: analysis of their
+      gene structure, evolution, and expression
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 1775
+      pageEnd: 1789
+      title: Genome Research
+      volumeNumber: 22
+      type: PublicationVolume
+    id: bib5
+  - authors:
+      - givenNames:
+          - J
+        familyNames:
+          - Ponjavic
+        type: Person
+      - givenNames:
+          - PL
+        familyNames:
+          - Oliver
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Lunter
+        type: Person
+      - givenNames:
+          - CP
+        familyNames:
+          - Ponting
+        type: Person
+    title: >-
+      Genomic and transcriptional co-localization of protein-coding and long
+      non-coding RNA pairs in the developing brain
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      title: PLOS Genetics
+      volumeNumber: 5
+      type: PublicationVolume
+    id: bib6
+  - authors:
+      - givenNames:
+          - CP
+        familyNames:
+          - Ponting
+        type: Person
+      - givenNames:
+          - PL
+        familyNames:
+          - Oliver
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Reik
+        type: Person
+    title: Evolution and functions of long noncoding RNAs
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 629
+      pageEnd: 641
+      title: Cell
+      volumeNumber: 136
+      type: PublicationVolume
+    id: bib7
+  - authors:
+      - givenNames:
+          - OM
+        familyNames:
+          - Rennert
+        type: Person
+      - givenNames:
+          - MN
+        familyNames:
+          - Ziats
+        type: Person
+    title: 'Editorial: Non-coding RNAs in neurodevelopmental disorders'
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      title: Frontiers in Neurology
+      volumeNumber: 8
+      type: PublicationVolume
+    id: bib8
+  - authors:
+      - givenNames:
+          - II
+        familyNames:
+          - van
+          - de
+          - Vondervoort
+        type: Person
+      - givenNames:
+          - PM
+        familyNames:
+          - Gordebeke
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Khoshab
+        type: Person
+      - givenNames:
+          - PH
+        familyNames:
+          - Tiesinga
+        type: Person
+      - givenNames:
+          - JK
+        familyNames:
+          - Buitelaar
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Kozicz
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Aschrafi
+        type: Person
+      - givenNames:
+          - JC
+        familyNames:
+          - Glennon
+        type: Person
+    title: Long non-coding RNAs in neurodevelopmental disorders
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      title: Frontiers in Molecular Neuroscience
+      volumeNumber: 6
+      type: PublicationVolume
+    id: bib9
+  - authors:
+      - givenNames:
+          - MN
+        familyNames:
+          - Ziats
+        type: Person
+      - givenNames:
+          - OM
+        familyNames:
+          - Rennert
+        type: Person
+    title: Aberrant expression of long noncoding RNAs in autistic brain
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 589
+      pageEnd: 593
+      title: Journal of Molecular Neuroscience
+      volumeNumber: 49
+      type: PublicationVolume
+    id: bib10

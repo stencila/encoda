@@ -13,21 +13,16 @@ import { default as log } from './log'
 type VFile = vfile.VFile
 
 /**
- * A list of [codec, regex] tuples that is scanned when
- * matching content to codec.
- * Order is of importance since the first matching codec will be used.
- */
-export const codecRegexes: [[string, RegExp]] = [['http', /^https?:\/\//]]
-
-/**
  * A list of all codecs.
  *
  * Note that order is of importance for matching. More "generic"
  * formats should go last. See the `match` function.
  */
 export const codecList: string[] = [
-  // Remotes
+  // Providers
+  'elife',
   'http',
+
   // Directories
   'dir',
   'dar',
@@ -106,16 +101,6 @@ export async function match(
     else {
       extName = format
       mediaType = mime.getType(extName) || undefined
-    }
-  } else {
-    // See if content matches one of the registered regexes
-    if (content && /^[a-z]+:\/\//.test(content)) {
-      for (const [codecName, regex] of codecRegexes) {
-        if (regex.test(content)) {
-          extName = codecName
-          break
-        }
-      }
     }
   }
 
