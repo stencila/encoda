@@ -278,7 +278,7 @@ ans = 42
           'A paragraph with ',
           {
             type: 'Quote',
-            citation: 'https://example.org',
+            cite: 'https://example.org',
             content: ['quote']
           },
           '.'
@@ -326,7 +326,7 @@ ans = 42
       },
       {
         type: 'CodeBlock',
-        language: 'python',
+        programmingLanguage: 'python',
         meta: {
           meta1: '',
           meta2: 'foo',
@@ -587,7 +587,7 @@ A \`code\`{lang=r}.
           'A ',
           {
             type: 'Code',
-            language: 'r',
+            programmingLanguage: 'r',
             value: 'code'
           },
           '.'
@@ -595,7 +595,7 @@ A \`code\`{lang=r}.
       },
       {
         type: 'CodeBlock',
-        language: 'r',
+        programmingLanguage: 'r',
         meta: {
           attr1: 'foo',
           attr2: 'bar baz',
