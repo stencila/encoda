@@ -7,8 +7,7 @@ import stencila, {
   figure,
   imageObject,
   link,
-  person,
-  publicationIssue
+  person
 } from '@stencila/schema'
 import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
@@ -23,10 +22,10 @@ const doc = (innerHTML: string) =>
 const { encode, decode } = new HTMLCodec()
 
 const e = async (node: stencila.Node, options = { isStandalone: false }) =>
-  await dump(await encode(node, options))
+  dump(await encode(node, options))
 
 const d = async (htmlString: string): Promise<stencila.Node> =>
-  await decode(load(htmlString))
+  decode(load(htmlString))
 
 test('decode', async () => {
   expect(await d(kitchenSink.html)).toEqual(kitchenSink.node)
@@ -96,20 +95,16 @@ describe('Encode & Decode cite group nodes', () => {
   const cite2 = cite('mySecondTarget')
 
   const schemaNode = citeGroup([cite1, cite2])
-  const htmlNode = `<ol itemtype="schema:CiteGroup">
-    <li>
-      <cite><a href="myFirstTarget">myFirstTarget</a></cite>
-    </li>
-    <li>
-      <cite><a href="mySecondTarget">mySecondTarget</a></cite>
-    </li>
+  const htmlNode = `<span itemtype="schema:CiteGroup">
+    <cite><a href="myFirstTarget">myFirstTarget</a></cite>
+    <cite><a href="mySecondTarget">mySecondTarget</a></cite>
   </ol>`
 
   test('encode', async () => {
     const actual = doc(await e(schemaNode))
 
     expect(actual.querySelectorAll('cite')).toHaveLength(2)
-    expect(actual.querySelector('ol')).toHaveAttribute(
+    expect(actual.querySelector('span')).toHaveAttribute(
       'itemtype',
       'schema:CiteGroup'
     )
@@ -357,7 +352,7 @@ describe('Encode & Decode Collections', () => {
 
 test('encode with different themes', async () => {
   const e = async (options = {}) =>
-    await dump(await encode(kitchenSink.node, options))
+    dump(await encode(kitchenSink.node, options))
 
   let html = await e({ theme: 'stencila' })
   expect(html).toMatch(
@@ -378,7 +373,7 @@ test('encode with different themes', async () => {
 
 test('encode with bundling', async () => {
   const e = async (options = {}) =>
-    await dump(await encode(kitchenSink.node, options))
+    dump(await encode(kitchenSink.node, options))
 
   const stylesheet = fs.readFileSync(
     require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),

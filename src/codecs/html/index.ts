@@ -372,7 +372,7 @@ function decodeBlockChildNodes(node: Node): stencila.BlockContent[] {
 }
 
 function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
-  return Array.from(node.childNodes).map(
+  return [...node.childNodes].map(
     child => decodeNode(child) as stencila.InlineContent
   )
 }
@@ -828,13 +828,9 @@ function encodeCite(cite: stencila.Cite): HTMLElement {
  * Decode a `<ol itemtype="schema:CiteGroup">` element to a `stencila.CiteGroup`.
  */
 function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
-  const items = [
-    ...citeGroup.querySelectorAll<HTMLElement>('ol > li > cite')
-  ].map(decodeCite)
-
   return {
     type: 'CiteGroup',
-    items
+    items: [...citeGroup.querySelectorAll<HTMLElement>('cite')].map(decodeCite)
   }
 }
 
@@ -843,9 +839,9 @@ function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
  */
 function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
   return h(
-    'ol',
+    'span',
     { attrs: { itemtype: 'schema:CiteGroup' } },
-    citeGroup.items.map(item => h('li', [encodeCite(item)]))
+    citeGroup.items.map(encodeCite)
   )
 }
 

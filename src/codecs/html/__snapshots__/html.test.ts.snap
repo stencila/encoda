@@ -3,11 +3,7 @@
 exports[`Encode & Decode references encode - citegroup and references 1`] = `
 "<article>
   <h1 role=\\"title\\">An example of using the CiteGroup node type</h1>
-  <p>Citing two articles </p><ol itemtype=\\"schema:CiteGroup\\">
-      <li><cite><a href=\\"#some-one-else-1991\\">some-one-else-1991</a></cite></li>
-      <li><cite><a href=\\"#updated-works-2009\\">updated-works-2009</a></cite></li>
-      <li><cite><a href=\\"http://www.fullUrl.com\\">http://www.fullUrl.com</a></cite></li>
-    </ol>.<p></p>
+  <p>Citing two articles <span itemtype=\\"schema:CiteGroup\\"><cite><a href=\\"#some-one-else-1991\\">some-one-else-1991</a></cite><cite><a href=\\"#updated-works-2009\\">updated-works-2009</a></cite><cite><a href=\\"http://www.fullUrl.com\\">http://www.fullUrl.com</a></cite></span>.</p>
   <section>
     <h2>References</h2>
     <ol itemprop=\\"references\\">
