@@ -15,7 +15,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import { dump, load } from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
-import { HTMLCodec } from './'
+import { HTMLCodec, decodeHref } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -794,3 +794,30 @@ const dt = {
 </stencila-datatable>`,
   node: dtNode
 }
+
+describe('encode/decode href attributes', () => {
+  describe('decode', () => {
+    test('an href pointing to a website returns the full link', () => {
+      const url = 'http://stencil.la'
+      expect(decodeHref(url)).toBe(url)
+    })
+
+    test('an href pointing to a website starting with www returns the full link', () => {
+      const url = 'www.stencil.la'
+      expect(decodeHref(url)).toBe(url)
+    })
+
+    test('an href pointing to a website starting with www returns the full link', () => {
+      const url = 'www.stencil.la'
+      expect(decodeHref(url)).toBe(url)
+    })
+
+    test('an anchor link with a target returns just the target value', () => {
+      expect(decodeHref('#someTarget')).toBe('someTarget')
+    })
+
+    test('an anchor link without a target returns just the id', () => {
+      expect(decodeHref('#')).toBe('')
+    })
+  })
+})

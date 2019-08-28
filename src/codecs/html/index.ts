@@ -3,7 +3,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import stencila, { cite } from '@stencila/schema'
 import {
   isArticle,
   isCreativeWork,
@@ -376,9 +376,9 @@ function decodeBlockChildNodes(node: Node): stencila.BlockContent[] {
 }
 
 function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
-  return [...node.childNodes].map(
-    child => decodeNode(child) as stencila.InlineContent
-  )
+  return [...node.childNodes]
+    .map(child => decodeNode(child) as stencila.InlineContent)
+    .filter(n => n !== '')
 }
 
 /**
@@ -417,7 +417,14 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
  * and so this function decodes it's children.
  */
 function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
-  return [...div.childNodes].map(decodeNode)
+  const children = [...div.childNodes]
+
+  // If the div only contains a single element, return a Node, rathern than a list of Nodes
+  if (children.length === 1) {
+    return decodeNode(children[0])
+  } else {
+    return children.map(decodeNode)
+  }
 }
 
 /**
@@ -762,12 +769,12 @@ var urlRegex = new RegExp(
   /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi
 )
 
-const decodeHref = (href?: string | null): string => {
+export const decodeHref = (href?: string | null): string => {
   if (!isDefined(href)) return '#'
   return href.startsWith('#') ? href.substring(1) : href
 }
 
-const encodeHref = (href?: string | null): string => {
+export const encodeHref = (href?: string | null): string => {
   if (!isDefined(href)) return '#'
   return href.startsWith('#') || urlRegex.test(href) ? href : `#${href}`
 }
@@ -780,12 +787,10 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
   const prefix = elem.querySelector('[itemprop="citePrefix"]')
   const suffix = elem.querySelector('[itemprop="citeSuffix"]')
 
-  return {
-    type: 'Cite',
-    target: decodeHref(target ? target.getAttribute('href') : '#'),
-    prefix: isDefined(prefix) ? prefix.textContent || '' : undefined,
-    suffix: isDefined(suffix) ? suffix.textContent || '' : undefined
-  }
+  return cite(decodeHref(target ? target.getAttribute('href') : '#'), {
+    prefix: isDefined(prefix) ? prefix.textContent || undefined : undefined,
+    suffix: isDefined(suffix) ? suffix.textContent || undefined : undefined
+  })
 }
 
 /**
@@ -1179,6 +1184,7 @@ function decodeLink(elem: HTMLAnchorElement): stencila.Link {
     target: elem.getAttribute('href') || '#',
     content: decodeInlineChildNodes(elem)
   }
+
   const meta = decodeDataAttrs(elem)
   if (meta) link.meta = meta
   return link
@@ -1251,7 +1257,7 @@ function encodeCode(
 function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
   const image: stencila.ImageObject = {
     type: 'ImageObject',
-    contentUrl: elem.src
+    contentUrl: elem.getAttribute('src') || ''
   }
   if (elem.title) image.title = elem.title
   if (elem.alt) image.text = elem.alt

@@ -9,7 +9,9 @@ import {
   isListItem,
   nodeIs,
   nodeType,
-  TypeMapGeneric
+  TypeMapGeneric,
+  isInlineContent,
+  isA
 } from '@stencila/schema/dist/util'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
@@ -38,7 +40,9 @@ import map from 'unist-util-map'
 import { selectAll } from 'unist-util-select'
 import * as vfile from '../../util/vfile'
 import { stringifyContent } from '../../util/content/stringifyContent'
+import { HTMLCodec } from '../html'
 import { Codec } from '../types'
+import { stringifyHTML } from './stringifyHtml'
 
 const log = getLogger('encoda:md')
 
@@ -137,7 +141,7 @@ for (const ext of GENERIC_EXTENSIONS) {
 /**
  * Decode a string of Markdown content to a Stencila `Node`
  */
-export function decodeMarkdown(md: string): stencila.Node {
+export async function decodeMarkdown(md: string): Promise<stencila.Node> {
   const mdast = unified()
     .use(parser, { commonmark: true })
     .use(frontmatter, FRONTMATTER_OPTIONS)
@@ -146,7 +150,10 @@ export function decodeMarkdown(md: string): stencila.Node {
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
-  return decodeNode(resolveReferences(mdast))
+
+  const tree = stringifyHTML(resolveReferences(mdast))
+  const decodedTree = await decodeNode(tree)
+  return decodedTree
 }
 
 /**
@@ -167,7 +174,7 @@ export function encodeMarkdown(node: stencila.Node): string {
     .stringify(mdast)
 }
 
-function decodeNode(node: UNIST.Node): stencila.Node {
+async function decodeNode(node: UNIST.Node): Promise<stencila.Node> {
   const type = node.type
   switch (type) {
     case 'root':
@@ -243,6 +250,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
           return ''
       }
     case 'html':
+      return decodeHTML(node as MDAST.HTML)
+    case 'fullHtml':
       return decodeHTML(node as MDAST.HTML)
 
     default:
@@ -324,10 +333,13 @@ function encodeContent(node: stencila.Node): MDAST.Content {
   return encodeNode(node) as MDAST.Content
 }
 
-function decodePhrasingContent(
+async function decodePhrasingContent(
   node: MDAST.PhrasingContent
-): stencila.InlineContent {
-  return decodeNode(node) as stencila.InlineContent
+): Promise<stencila.InlineContent> {
+  const decodedNode = await decodeNode(node)
+  // return isInlineContent(decodedNode) ? decodedNode : null
+  // @ts-ignore
+  return isInlineContent(decodedNode) ? decodedNode : decodedNode
 }
 
 function encodeInlineContent(
@@ -336,8 +348,12 @@ function encodeInlineContent(
   return encodeNode(node) as MDAST.PhrasingContent
 }
 
-function decodeBlockContent(node: MDAST.BlockContent): stencila.BlockContent {
-  return decodeNode(node) as stencila.BlockContent
+async function decodeBlockContent(
+  node: MDAST.BlockContent
+): Promise<stencila.BlockContent> {
+  const decodedNode = await decodeNode(node)
+  // TODO: Remove the fallback
+  return isBlockContent(decodedNode) ? decodedNode : { type: 'ThematicBreak' }
 }
 
 function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
@@ -353,7 +369,7 @@ function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
  *
  * @param root The MDAST root to decode
  */
-function decodeRoot(root: MDAST.Root): stencila.Article {
+async function decodeRoot(root: MDAST.Root): Promise<stencila.Article> {
   const article: stencila.Article = {
     type: 'Article',
     title: 'Untitled',
@@ -376,7 +392,8 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
         article[key] = value
       }
     } else {
-      body.push(decodeNode(child))
+      const decoded = await decodeNode(child)
+      body.push(decoded)
     }
   }
   article.content = body
@@ -425,14 +442,14 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
 /**
  * Decode a `include:` block extension to a `stencila.Include`
  */
-function decodeInclude(ext: Extension): stencila.Include {
+async function decodeInclude(ext: Extension): Promise<stencila.Include> {
   const include: stencila.Include = {
     type: 'Include',
     source: ext.argument || ''
   }
   if (ext.content) {
-    const article = decodeMarkdown(ext.content) as stencila.Article
-    include.content = article.content || []
+    const article = await decodeMarkdown(ext.content)
+    include.content = isA('Article', article) ? article.content : []
   }
   return include
 }
@@ -454,11 +471,13 @@ function encodeInclude(include: stencila.Include): Extension {
 /**
  * Decode a `MDAST.Heading` to a `stencila.Heading`
  */
-function decodeHeading(heading: MDAST.Heading): stencila.Heading {
+async function decodeHeading(
+  heading: MDAST.Heading
+): Promise<stencila.Heading> {
   return {
     type: 'Heading',
     depth: heading.depth,
-    content: heading.children.map(decodePhrasingContent)
+    content: await Promise.all(heading.children.map(decodePhrasingContent))
   }
 }
 
@@ -476,10 +495,16 @@ function encodeHeading(heading: stencila.Heading): MDAST.Heading {
 /**
  * Decode a `MDAST.Paragraph` to a `stencila.Paragraph`
  */
-function decodeParagraph(paragraph: MDAST.Paragraph): stencila.Paragraph {
+async function decodeParagraph(
+  paragraph: MDAST.Paragraph
+): Promise<stencila.Paragraph> {
+  const content = await Promise.all(
+    paragraph.children.map(decodePhrasingContent)
+  )
+
   return {
     type: 'Paragraph',
-    content: paragraph.children.map(decodePhrasingContent)
+    content
   }
 }
 
@@ -511,10 +536,12 @@ function encodeParagraph(
 /**
  * Decode a `MDAST.Blockquote` to a `stencila.QuoteBlock`
  */
-function decodeBlockquote(block: MDAST.Blockquote): stencila.QuoteBlock {
+async function decodeBlockquote(
+  block: MDAST.Blockquote
+): Promise<stencila.QuoteBlock> {
   return {
     type: 'QuoteBlock',
-    content: block.children.map(decodeBlockContent)
+    content: await Promise.all(block.children.map(decodeBlockContent))
   }
 }
 
@@ -576,13 +603,15 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
 /**
  * Decode a `chunk:` block extension to a `stencila.CodeChunk`
  */
-function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
+async function decodeCodeChunk(ext: Extension): Promise<stencila.CodeChunk> {
   const codeChunk: stencila.CodeChunk = {
     type: 'CodeChunk',
     text: ''
   }
   if (ext.content) {
-    const article = decodeMarkdown(ext.content) as stencila.Article
+    const article = await decodeMarkdown(ext.content)
+    if (!isA('Article', article)) return { type: 'CodeChunk' }
+
     const nodes = (article.content && article.content) || []
     const first = nodes[0]
     if (nodeType(first) === 'CodeBlock') {
@@ -636,11 +665,13 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
 /**
  * Decode a `MDAST.List` to a `stencila.List`
  */
-function decodeList(list: MDAST.List): stencila.List {
+async function decodeList(list: MDAST.List): Promise<stencila.List> {
+  const items = await Promise.all(list.children.map(decodeNode))
+
   return {
     type: 'List',
     order: list.ordered ? 'ascending' : 'unordered',
-    items: list.children.map(decodeNode).filter(isListItem)
+    items: items.filter(isListItem)
   }
 }
 
@@ -671,11 +702,15 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
 /**
  * Decode a `MDAST.List` to a `stencila.List`
  */
-function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
+async function decodeListItem(
+  listItem: MDAST.ListItem
+): Promise<stencila.ListItem> {
+  const content = await Promise.all(listItem.children.map(decodeNode))
   const _listItem: stencila.ListItem = {
     type: 'ListItem',
-    content: listItem.children.map(decodeNode).filter(isBlockContent)
+    content: content.filter(isBlockContent)
   }
+
   return listItem.checked === true || listItem.checked === false
     ? { ..._listItem, checked: listItem.checked || false }
     : _listItem
@@ -684,23 +719,29 @@ function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
 /**
  * Decode a `MDAST.Table` to a `stencila.Table`
  */
-function decodeTable(table: MDAST.Table): stencila.Table {
+async function decodeTable(table: MDAST.Table): Promise<stencila.Table> {
   return {
     type: 'Table',
-    rows: table.children.map(
-      (row: MDAST.TableRow): stencila.TableRow => {
-        return {
-          type: 'TableRow',
-          cells: row.children.map(
-            (cell: MDAST.TableCell): stencila.TableCell => {
-              return {
-                type: 'TableCell',
-                content: cell.children.map(decodePhrasingContent)
-              }
-            }
-          )
+    rows: await Promise.all(
+      table.children.map(
+        async (row: MDAST.TableRow): Promise<stencila.TableRow> => {
+          return {
+            type: 'TableRow',
+            cells: await Promise.all(
+              row.children.map(
+                async (cell: MDAST.TableCell): Promise<stencila.TableCell> => {
+                  return {
+                    type: 'TableCell',
+                    content: await Promise.all(
+                      cell.children.map(decodePhrasingContent)
+                    )
+                  }
+                }
+              )
+            )
+          }
         }
-      }
+      )
     )
   }
 }
@@ -750,11 +791,11 @@ function encodeThematicBreak(): MDAST.ThematicBreak {
 /**
  * Decode a `MDAST.Link` to a `stencila.Link`
  */
-function decodeLink(link: MDAST.Link): stencila.Link {
+async function decodeLink(link: MDAST.Link): Promise<stencila.Link> {
   const link_: stencila.Link = {
     type: 'Link',
     target: link.url,
-    content: link.children.map(decodePhrasingContent)
+    content: await Promise.all(link.children.map(decodePhrasingContent))
   }
   // The `remark-attrs` plugin decodes curly brace attributes to `data.hProperties`
   const meta = (link.data && link.data.hProperties) as {
@@ -784,10 +825,12 @@ function encodeLink(link: stencila.Link): MDAST.Link {
 /**
  * Decode a `MDAST.Emphasis` to a `stencila.Emphasis`
  */
-function decodeEmphasis(emphasis: MDAST.Emphasis): stencila.Emphasis {
+async function decodeEmphasis(
+  emphasis: MDAST.Emphasis
+): Promise<stencila.Emphasis> {
   return {
     type: 'Emphasis',
-    content: emphasis.children.map(decodePhrasingContent)
+    content: await Promise.all(emphasis.children.map(decodePhrasingContent))
   }
 }
 
@@ -804,10 +847,10 @@ function encodeEmphasis(emphasis: stencila.Emphasis): MDAST.Emphasis {
 /**
  * Decode a `MDAST.Strong` to a `stencila.Strong`
  */
-function decodeStrong(strong: MDAST.Strong): stencila.Strong {
+async function decodeStrong(strong: MDAST.Strong): Promise<stencila.Strong> {
   return {
     type: 'Strong',
-    content: strong.children.map(decodePhrasingContent)
+    content: await Promise.all(strong.children.map(decodePhrasingContent))
   }
 }
 
@@ -824,10 +867,10 @@ function encodeStrong(strong: stencila.Strong): MDAST.Strong {
 /**
  * Decode a `MDAST.Delete` to a `stencila.Delete`
  */
-function decodeDelete(delet: MDAST.Delete): stencila.Delete {
+async function decodeDelete(delet: MDAST.Delete): Promise<stencila.Delete> {
   return {
     type: 'Delete',
-    content: delet.children.map(decodePhrasingContent)
+    content: await Promise.all(delet.children.map(decodePhrasingContent))
   }
 }
 
@@ -1270,10 +1313,8 @@ function stringifyExtensions(tree: UNIST.Node) {
  *
  * At present this just returns the raw HTML.
  */
-function decodeHTML(html: MDAST.HTML): string {
-  // TODO: Make this function async and and return
-  // the decoded HTML i.e. `return load(html.value, 'html')`
-  return html.value
+async function decodeHTML(html: MDAST.HTML): Promise<stencila.Node> {
+  return new HTMLCodec().decode(vfile.load(html.value))
 }
 
 /**

@@ -1,4 +1,11 @@
-import stencila from '@stencila/schema'
+import stencila, {
+  article,
+  heading,
+  paragraph,
+  link,
+  imageObject,
+  cite
+} from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
 import { MdCodec } from './'
 
@@ -25,6 +32,103 @@ describe('decode', () => {
 
   test('References', async () => {
     expect(await d(references.from)).toEqual(references.node)
+  })
+
+  test('Nested HTML in MD', async () => {
+    expect(
+      await d(`# Heading 1
+
+some paragraphs
+
+<a href="#">My link</a>
+
+followed by more paragraphs`)
+    ).toEqual(
+      article([], 'Untitled', {
+        content: [
+          heading(['Heading 1'], 1),
+          paragraph(['some paragraphs']),
+          paragraph([link(['My link'], '#')]),
+          paragraph(['followed by more paragraphs'])
+        ]
+      })
+    )
+  })
+
+  test('Nested HTML in MD - 2', async () => {
+    expect(
+      await d(`some paragraphs
+
+An inline element in MD <img src="#" />, like this image
+
+followed by more paragraphs`)
+    ).toEqual(
+      article([], 'Untitled', {
+        content: [
+          paragraph(['some paragraphs']),
+          paragraph([
+            'An inline element in MD ',
+            imageObject('#'),
+            ', like this image'
+          ]),
+          paragraph(['followed by more paragraphs'])
+        ]
+      })
+    )
+  })
+
+  test('Nested HTML in MD - 3', async () => {
+    const actual = await d(`some paragraphs
+
+<div>
+
+<p>
+With some nested HTML, and a <cite><a href="#like-this">like-this</a></cite>
+</p>
+
+</div>
+
+followed by more paragraphs`)
+
+    expect(actual).toEqual(
+      article([], 'Untitled', {
+        content: [
+          paragraph(['some paragraphs']),
+          paragraph(['With some nested HTML, and a ', cite('like-this')]),
+          paragraph(['followed by more paragraphs'])
+        ]
+      })
+    )
+  })
+
+  test('Nested HTML in MD - 4', async () => {
+    const actual = await d(`some paragraphs
+
+<div>
+<div>
+
+<div>
+
+<p>
+With some nested HTML, and a <cite><a href="#like-this">like-this</a></cite></p>
+
+</div>
+
+</div>
+
+</div>
+
+followed by more paragraphs`)
+
+    expect(actual).toEqual(
+      article([], 'Untitled', {
+        content: [
+          paragraph(['some paragraphs']),
+          paragraph(['With some nested HTML, and a ', cite('like-this')]),
+          paragraph(['followed by more paragraphs'])
+        ]
+      })
+    )
   })
 })
 
