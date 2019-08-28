@@ -1,5 +1,5 @@
 ---
-title: Untitled
+title: Date codec
 authors: []
 ---
 
@@ -24,7 +24,7 @@ When encoding to a string, any time component will be preserved by the `date` co
 1840-02-05T12:20:56.000Z
 ```
 
-However, if the time component is `T00:00:00.000Z` i.e. midnight , e.g. midnight 1 January 1990:
+However, if the time component is `T00:00:00.000Z` (i.e. midnight UTC) then it will not be encoded. For example, midnight 1 January 1990:
 
 ```json import=ny1990
 {
@@ -33,7 +33,7 @@ However, if the time component is `T00:00:00.000Z` i.e. midnight , e.g. midnight
 }
 ```
 
-then only the date component will be encoded,
+will be encoded as,
 
 ```date export=ny1990
 1990-01-01
