@@ -1,7 +1,7 @@
 import * as stencila from '@stencila/schema'
 import { nodeType } from '@stencila/schema/dist/util'
 import Ajv from 'ajv'
-import { getErrors, getValidator } from './schemas'
+import { getErrorMessage, getValidator } from './schemas'
 
 /**
  * Validate a node against a type schema
@@ -19,7 +19,7 @@ export async function validate<Key extends keyof stencila.Types>(
     await validator(node)
   } catch (error) {
     if (error instanceof Ajv.ValidationError)
-      throw getErrors(validator, node, error.errors)
+      throw new Error(getErrorMessage(validator, node, error.errors))
     else throw error
   }
 }

@@ -3,9 +3,13 @@
  */
 
 import * as stencila from '@stencila/schema'
+import { getLogger } from '@stencila/logga'
+import { load } from '../..'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
+
+const log = getLogger('encoda:orcid')
 
 export class OrcidCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/x-orcid']
@@ -23,26 +27,21 @@ export class OrcidCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
     const match = content.match(OrcidCodec.regex)
-    if (!match) throw new Error('Unable to parse content')
-
-    const orcid = match[4]
-    const response = await http.get(`https://orcid.org/${orcid}`, {
-      headers: {
-        Accept: 'application/ld+json'
+    if (match) {
+      const orcid = match[4]
+      try {
+        const response = await http.get(`https://orcid.org/${orcid}`, {
+          headers: { Accept: 'application/ld+json' }
+        })
+        if (response.statusCode === 200 && response.body)
+          return load(response.body, 'jsonld')
+      } catch (error) {
+        log.error(`Error fetching or decoding JSON-LD: ${error.message}`)
       }
-    })
-    if (response.statusCode === 200 && response.body) {
-      const data = JSON.parse(response.body)
-      if (Array.isArray(data.url) && data.url.length > 0) data.url = data.url[0]
-      // TODO: Should be using a JSON-LD decode function here; following is temporary
-      // https://github.com/stencila/encoda/issues/207
-      const { givenName, familyName } = data
-      return stencila.person({
-        givenNames: [givenName],
-        familyNames: [familyName]
-      })
+    } else {
+      log.error('Unable to parse content as ORCID')
     }
-    throw new Error(`Request failed`)
+    return stencila.person()
   }
 
   public readonly encode = async (): Promise<vfile.VFile> => {

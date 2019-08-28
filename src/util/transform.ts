@@ -14,17 +14,19 @@ import produce from 'immer'
  */
 export default async function transform(
   node: stencila.Node,
-  transformer: (node: stencila.Node) => Promise<stencila.Node>
+  transformer: (node: stencila.Node, path?: string[]) => Promise<stencila.Node>
 ): Promise<stencila.Node> {
-  async function walk(node: stencila.Node): Promise<stencila.Node> {
-    const transformed = await transformer(node)
+  async function walk(
+    node: stencila.Node,
+    path: string[] = []
+  ): Promise<stencila.Node> {
+    const transformed = await transformer(node, path)
     if (stencila.isPrimitive(transformed) || transformed === undefined) {
       return transformed
     }
-
     for (const [key, child] of Object.entries(transformed)) {
       // @ts-ignore
-      transformed[key] = await walk(child)
+      transformed[key] = await walk(child, [...path, key])
     }
 
     return transformed

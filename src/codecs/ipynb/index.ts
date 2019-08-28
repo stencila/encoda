@@ -269,7 +269,7 @@ async function decodeCells(
         // type, instead of throwing an error, return cell as a JSON code block of cell
         blocks.push({
           type: 'CodeBlock',
-          language: 'json',
+          programmingLanguage: 'json',
           value: JSON.stringify(cell)
         })
     }
@@ -446,7 +446,7 @@ async function decodeOutput(
       // type, instead of throwing an error, return a JSON code block of output
       return {
         type: 'CodeBlock',
-        language: 'json',
+        programmingLanguage: 'json',
         value: JSON.stringify(output)
       }
   }

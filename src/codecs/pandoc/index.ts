@@ -517,7 +517,7 @@ function decodeCodeBlock(node: P.CodeBlock): stencila.CodeBlock {
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
     const language = attrs.classes ? attrs.classes.split(' ')[0] : null
-    if (language) codeblock.language = language
+    if (language) codeblock.programmingLanguage = language
   }
   return codeblock
 }
@@ -526,7 +526,7 @@ function decodeCodeBlock(node: P.CodeBlock): stencila.CodeBlock {
  * Encode a Stencila `CodeBlock` to a Pandoc `CodeBlock`.
  */
 function encodeCodeBlock(node: stencila.CodeBlock): P.CodeBlock {
-  const attrs = encodeAttrs({ classes: node.language || '' })
+  const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'CodeBlock',
     c: [attrs, node.value]
@@ -934,7 +934,7 @@ function decodeCode(node: P.Code): stencila.Code {
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
     const language = attrs.classes ? attrs.classes.split(' ')[0] : null
-    if (language) code.language = language
+    if (language) code.programmingLanguage = language
   }
   return code
 }
@@ -943,7 +943,7 @@ function decodeCode(node: P.Code): stencila.Code {
  * Encode a Stencila `Code` to a Pandoc `Code`.
  */
 function encodeCode(node: stencila.Code): P.Code {
-  const attrs = encodeAttrs({ classes: node.language || '' })
+  const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'Code',
     c: [attrs, node.value]

@@ -78,8 +78,11 @@ async function encodeNode(node: stencila.Node): Promise<string> {
     case 'CodeBlock':
       const block = node as stencila.CodeBlock
       if (
-        block.language &&
-        !(block.language === 'bash' || block.language === 'sh')
+        block.programmingLanguage &&
+        (
+          block.programmingLanguage !== 'bash' &&
+          block.programmingLanguage !== 'sh'
+        )
       ) {
         return ''
       }

@@ -565,7 +565,7 @@ const inc = (n) =&gt; n + 1</code></pre>
           'A paragraph with ',
           {
             type: 'Quote',
-            citation: 'https://example.org',
+            cite: 'https://example.org',
             content: ['quote']
           },
           '.'
@@ -577,7 +577,7 @@ const inc = (n) =&gt; n + 1</code></pre>
           'A paragraph with ',
           {
             type: 'Code',
-            language: 'python',
+            programmingLanguage: 'python',
             value: '# code'
           },
           '.'
@@ -624,17 +624,17 @@ const inc = (n) =&gt; n + 1</code></pre>
       },
       {
         type: 'QuoteBlock',
-        citation: 'https://example.org',
+        cite: 'https://example.org',
         content: ['A blockquote']
       },
       {
         type: 'CodeBlock',
-        language: 'r',
+        programmingLanguage: 'r',
         value: '# Some code\nx = c(1,2)'
       },
       {
         type: 'CodeBlock',
-        language: 'js',
+        programmingLanguage: 'js',
         value:
           '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\nconst inc = (n) => n + 1'
       },

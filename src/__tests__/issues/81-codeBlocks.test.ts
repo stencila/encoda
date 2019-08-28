@@ -21,12 +21,12 @@ describe('issue 77', () => {
         },
         {
           type: 'CodeBlock',
-          language: 'sh',
+          programmingLanguage: 'sh',
           value: 'date --utc'
         },
         {
           type: 'CodeBlock',
-          language: 'bash',
+          programmingLanguage: 'bash',
           meta: {
             pause: '2'
           },

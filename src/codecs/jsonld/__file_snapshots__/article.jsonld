@@ -1,0 +1,29 @@
+{
+  "@context": "http://schema.stenci.la",
+  "type": "Article",
+  "title": "The article title",
+  "authors": [
+    {
+      "type": "Person",
+      "givenNames": [
+        "Sam",
+        "Steven"
+      ],
+      "familyNames": [
+        "Smith"
+      ]
+    }
+  ],
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "In this article there are boolean",
+        true,
+        "and numeric",
+        3.14,
+        "and string nodes like this!"
+      ]
+    }
+  ]
+}

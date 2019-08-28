@@ -385,10 +385,11 @@ function decodeReference(
 }
 
 function encodeCitationText(work: stencila.CreativeWork): string {
+  const { authors, datePublished } = work
   let citeText = ''
 
-  if (work.authors && work.authors.length) {
-    const people = work.authors.filter(p => stencila.isA('Person', p))
+  if (authors !== undefined && authors.length) {
+    const people = authors.filter(p => stencila.isA('Person', p))
 
     if (people.length) {
       const firstPerson = people[0] as stencila.Person
@@ -408,9 +409,10 @@ function encodeCitationText(work: stencila.CreativeWork): string {
     }
   }
 
-  if (work.datePublished && work.datePublished.length) {
-    const publishedYear = work.datePublished.split('-')[0]
-
+  if (datePublished !== undefined) {
+    const date =
+      typeof datePublished === 'string' ? datePublished : datePublished.value
+    const publishedYear = date.split('-')[0]
     citeText += `, ${publishedYear}`
   }
 
@@ -428,19 +430,17 @@ function encodeReference(
     rid = work.id
     const subElements = []
 
-    if (work.title) subElements.push(elem('article-title', work.title))
+    const { title, authors, datePublished } = work
 
-    if (work.authors && work.authors.length) {
-      const authors = work.authors
-        .filter(p => stencila.isA('Person', p))
-        .map(p => {
-          return encodeName(p as stencila.Person)
-        })
+    if (title) subElements.push(elem('article-title', title))
+
+    if (authors && authors.length) {
+      const people = authors.filter(stencila.isType('Person')).map(encodeName)
 
       const personGroup = elem(
         'person-group',
         { 'person-group-type': 'author' },
-        ...authors
+        ...people
       )
 
       if (rid && state.references[rid] === undefined) {
@@ -452,12 +452,17 @@ function encodeReference(
     }
 
     // TODO: split date into components according to what data is set and apply to appropriate elements
-    if (work.datePublished) {
+    if (datePublished) {
       subElements.push(
         elem(
           'year',
-          { 'iso-8601-date': work.datePublished },
-          work.datePublished
+          {
+            'iso-8601-date':
+              typeof datePublished === 'string'
+                ? datePublished
+                : datePublished.value
+          },
+          datePublished
         )
       )
     }
@@ -1245,7 +1250,7 @@ function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
 function decodeCodeBlock(elem: xml.Element): [stencila.CodeBlock] {
   return [
     stencila.codeBlock(text(elem), {
-      language: attr(elem, 'language') || undefined
+      programmingLanguage: attr(elem, 'language') || undefined
     })
   ]
 }

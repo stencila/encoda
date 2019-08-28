@@ -51,6 +51,7 @@ export const codecList: string[] = [
   'yaml',
   'pandoc',
   'json5',
+  'jsonld',
   'json'
 ]
 

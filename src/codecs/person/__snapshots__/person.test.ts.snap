@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`decode decodes an orcid to a Person 1`] = `
+Object {
+  "affiliations": Array [
+    Object {
+      "alternateNames": Array [
+        "Psychoceramics",
+      ],
+      "name": "Wesleyan University",
+      "type": "Organization",
+    },
+    Object {
+      "alternateNames": Array [
+        "Psychoceramics",
+      ],
+      "name": "Brown University",
+      "type": "Organization",
+    },
+  ],
+  "alternateNames": Array [
+    "Josiah Stinkney Carberry",
+    "J. Carberry",
+    "J. S. Carberry",
+  ],
+  "familyNames": Array [
+    "Carberry",
+  ],
+  "givenNames": Array [
+    "Josiah",
+  ],
+  "id": "http://orcid.org/0000-0002-1825-0097",
+  "type": "Person",
+  "url": "http://library.brown.edu/about/hay/carberry.php",
+}
+`;

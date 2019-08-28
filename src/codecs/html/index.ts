@@ -759,7 +759,7 @@ function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
     content: decodeBlockChildNodes(elem)
   }
   const cite = elem.getAttribute('cite')
-  if (cite) quoteBlock.citation = cite
+  if (cite) quoteBlock.cite = cite
   return quoteBlock
 }
 
@@ -769,7 +769,7 @@ function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
 function encodeQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
   return h(
     'blockquote',
-    { cite: block.citation },
+    { cite: block.cite },
     block.content.map(encodeNode)
   )
 }
@@ -917,10 +917,10 @@ function encodeCollection(collection: stencila.Collection): HTMLOListElement {
 function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
-  const { language, value } = decodeCode(code)
+  const { programmingLanguage, value } = decodeCode(code)
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
-    language,
+    programmingLanguage,
     value
   }
   const meta = decodeDataAttrs(elem)
@@ -1194,7 +1194,7 @@ function encodeLink(link: stencila.Link): HTMLAnchorElement {
 function decodeQuote(elem: HTMLQuoteElement): stencila.Quote {
   const quote: stencila.Quote = { type: 'Quote', content: [elem.innerHTML] }
   const cite = elem.getAttribute('cite')
-  if (cite) quote.citation = cite
+  if (cite) quote.cite = cite
   return quote
 }
 
@@ -1202,7 +1202,7 @@ function decodeQuote(elem: HTMLQuoteElement): stencila.Quote {
  * Encode a `stencila.Quote` to a `<q>` element.
  */
 function encodeQuote(quote: stencila.Quote): HTMLQuoteElement {
-  return h('q', { cite: quote.citation }, quote.content)
+  return h('q', { cite: quote.cite }, quote.content)
 }
 
 /**
@@ -1214,7 +1214,7 @@ function decodeCode(elem: HTMLElement): stencila.Code {
   if (clas) {
     const match = clas.match(/^language-(\w+)$/)
     if (match) {
-      code.language = match[1]
+      code.programmingLanguage = match[1]
     }
   }
   const meta = decodeDataAttrs(elem)
@@ -1230,7 +1230,7 @@ function encodeCode(
   dataAttrs: boolean = true
 ): HTMLElement {
   return h('code', {
-    class: code.language ? `language-${code.language}` : undefined,
+    class: code.programmingLanguage ? `language-${code.programmingLanguage}` : undefined,
     innerHTML: escape(code.value),
     ...(dataAttrs ? encodeDataAttrs(code.meta || {}) : {})
   })

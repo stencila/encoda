@@ -168,7 +168,7 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
 
   let decoded: stencila.Node
   try {
-    decoded = codec.decode(vfile.load(data))
+    decoded = await codec.decode(await vfile.load(data))
   } catch (error) {
     const decodeError = error.message.split('\n')[0]
     raise(`error using "${codecName}" codec: ${decodeError}`)
@@ -191,16 +191,26 @@ coercers.addKeyword('codec', {
 /**
  * Get validation errors
  */
-export function getErrors(
+export function getErrorMessage(
   validator: Ajv.ValidateFunction,
   node: stencila.Node,
-  errors: Ajv.ErrorObject[]
-): Error {
-  const details = (betterAjvErrors(validator.schema, node, errors, {
-    format: 'js'
-  }) as unknown) as betterAjvErrors.IOutputError[]
-
-  const message = details.map(error => `${error.error}`).join(';')
-
-  throw new Error(message)
+  errors: Ajv.ErrorObject[],
+  format: 'cli' | 'js' = 'js'
+): string {
+  let details
+  try {
+    details = betterAjvErrors(validator.schema, node, errors, {
+      format,
+      indent: 2
+    })
+  } catch {
+    return errors.map(error => `${error.dataPath}: ${error.message}`).join('\n')
+  }
+  if (format === 'js') {
+    return ((details as unknown) as betterAjvErrors.IOutputError[])
+      .map(error => `${error.error}`)
+      .join(';')
+  } else {
+    return (details as unknown) as string
+  }
 }

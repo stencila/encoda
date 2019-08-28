@@ -48,12 +48,12 @@ const node: stencila.Article = {
     },
     {
       type: 'CodeBlock',
-      language: 'bash',
+      programmingLanguage: 'bash',
       value: 'date'
     },
     {
       type: 'CodeBlock',
-      language: 'bash',
+      programmingLanguage: 'bash',
       value: 'date --utc',
       meta: {
         pause: 2
@@ -61,12 +61,12 @@ const node: stencila.Article = {
     },
     {
       type: 'CodeBlock',
-      language: 'sh',
+      programmingLanguage: 'sh',
       value: 'date -u'
     },
     {
       type: 'CodeBlock',
-      language: 'foo',
+      programmingLanguage: 'foo',
       value: 'ignored'
     }
   ]
