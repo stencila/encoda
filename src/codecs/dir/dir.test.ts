@@ -31,7 +31,11 @@ describe('decode', () => {
           patterns: ['**/README.*']
         })
       ).sort()
-    ).toEqual(['shallow/a/README', 'shallow/b/README', 'shallow/c/README'])
+    ).toMatchObject([
+      'shallow/a/README',
+      'shallow/b/README',
+      'shallow/c/README'
+    ])
 
     expect(
       nodes(
@@ -39,7 +43,7 @@ describe('decode', () => {
           patterns: ['**/a/*']
         })
       ).sort()
-    ).toEqual(['shallow/a/README', 'shallow/a/index', 'shallow/a/main'])
+    ).toMatchObject(['shallow/a/README', 'shallow/a/index', 'shallow/a/main'])
   })
 
   it('has a mainNames option', async () => {
@@ -49,7 +53,7 @@ describe('decode', () => {
           mainNames: []
         })
       )
-    ).toEqual([])
+    ).toMatchObject([])
 
     expect(
       mains(
@@ -57,7 +61,7 @@ describe('decode', () => {
           mainNames: ['index']
         })
       )
-    ).toEqual(['shallow/a/index', 'shallow/b/index'])
+    ).toMatchObject(['shallow/a/index', 'shallow/b/index'])
 
     expect(
       mains(
@@ -65,7 +69,11 @@ describe('decode', () => {
           mainNames: ['README', 'index']
         })
       )
-    ).toEqual(['shallow/a/README', 'shallow/b/README', 'shallow/c/README'])
+    ).toMatchObject([
+      'shallow/a/README',
+      'shallow/b/README',
+      'shallow/c/README'
+    ])
   })
 
   it('creates a nested collection from a deep dir', async () => {
