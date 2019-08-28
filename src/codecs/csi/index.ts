@@ -25,7 +25,7 @@ export class CsiCodec extends Codec implements Codec {
     node: stencila.Node
   ): Promise<vfile.VFile> => {
     const items = Array.isArray(node) ? node : [node]
-    const csi = items.map(item => `${item}`).join(', ')
+    const csi = items.map(item => typeof item === 'object' ? JSON.stringify(item) : `${item}`).join(', ')
     return vfile.load(csi)
   }
 }
