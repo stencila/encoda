@@ -1,3 +1,28 @@
+# [0.67.0](https://github.com/stencila/encoda/compare/v0.66.0...v0.67.0) (2019-08-28)
+
+
+### Bug Fixes
+
+* Use programmingLanguage instead of language ([ddc0c0e](https://github.com/stencila/encoda/commit/ddc0c0e))
+* **Coerce:** Await as needed and better validation messages ([f065e5f](https://github.com/stencila/encoda/commit/f065e5f))
+* **Coerce:** Coerce an array to a scalar if necessary ([d1cf879](https://github.com/stencila/encoda/commit/d1cf879))
+* **CSI:** Use JSON.stringify for encoding of objects ([da437c7](https://github.com/stencila/encoda/commit/da437c7))
+* **JATS:** Fixes for changes in schema ([fca663a](https://github.com/stencila/encoda/commit/fca663a))
+* **JSON-LD:** Add encoding; transform decoded node ([bdd8763](https://github.com/stencila/encoda/commit/bdd8763))
+* **JSON-LD:** Use the Stencila [@context](https://github.com/context) when compacting ([51dbc50](https://github.com/stencila/encoda/commit/51dbc50))
+* **ORCID:** Use JSON-LD codec to decode response ([1a6fe3c](https://github.com/stencila/encoda/commit/1a6fe3c))
+* **Person:** Update to use new `jsonld` codec ([6b8fdcc](https://github.com/stencila/encoda/commit/6b8fdcc))
+
+
+### Features
+
+* **Coerce:** Add defaults for missing properties ([e921f41](https://github.com/stencila/encoda/commit/e921f41))
+* **Coerce:** Log warning about data loss during coercion ([eb8bb6d](https://github.com/stencila/encoda/commit/eb8bb6d))
+* **CSI:** Add `csi` codec for handling keywords etc ([f38e676](https://github.com/stencila/encoda/commit/f38e676))
+* **Date:** Add date codec and upgrade schema version ([3a8d3b7](https://github.com/stencila/encoda/commit/3a8d3b7))
+* **JSON-LD:** Add `jsonld` codec ([efb00bd](https://github.com/stencila/encoda/commit/efb00bd)), closes [#207](https://github.com/stencila/encoda/issues/207)
+* **JSON-LD:** Implement caching document loader ([fbe6156](https://github.com/stencila/encoda/commit/fbe6156))
+
 # [0.66.0](https://github.com/stencila/encoda/compare/v0.65.1...v0.66.0) (2019-08-22)
 
 
