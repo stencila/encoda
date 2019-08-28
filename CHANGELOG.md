@@ -1,3 +1,10 @@
+## [0.67.1](https://github.com/stencila/encoda/compare/v0.67.0...v0.67.1) (2019-08-28)
+
+
+### Bug Fixes
+
+* **HTML:** Change CiteGroup from ol to span, allows nesting in Paragraph ([2a72565](https://github.com/stencila/encoda/commit/2a72565))
+
 # [0.67.0](https://github.com/stencila/encoda/compare/v0.66.0...v0.67.0) (2019-08-28)
 
 
