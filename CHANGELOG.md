@@ -1,3 +1,10 @@
+## [0.67.2](https://github.com/stencila/encoda/compare/v0.67.1...v0.67.2) (2019-08-29)
+
+
+### Bug Fixes
+
+* **deps:** update remark monorepo ([0f0d423](https://github.com/stencila/encoda/commit/0f0d423))
+
 ## [0.67.1](https://github.com/stencila/encoda/compare/v0.67.0...v0.67.1) (2019-08-28)
 
 
