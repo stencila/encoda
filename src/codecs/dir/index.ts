@@ -15,7 +15,7 @@ import trash from 'trash'
 import unixify from 'unixify'
 import { read, write } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 const log = getLogger('encoda:dir')
 
@@ -184,7 +184,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
 
   public readonly encode = async (
     node: stencila.Node,
-    options: EncodeOptions = {}
+    options: EncodeOptions = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const dirPath = options.filePath || tempy.directory()
     const format = options.format || 'html'

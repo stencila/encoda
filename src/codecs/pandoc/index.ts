@@ -16,7 +16,7 @@ import { write } from '../..'
 import { ensureBlockContent } from '../../util/ensureBlockContent'
 import * as vfile from '../../util/vfile'
 import { RPNGCodec } from '../rpng'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as P from './types'
 
@@ -94,7 +94,7 @@ export class PandocCodec extends Codec
       filePath,
       format = P.OutputFormat.json,
       codecOptions = { flags: [], ensureFile: false }
-    }: GlobalEncodeOptions<EncodeOptions> = {}
+    }: GlobalEncodeOptions<EncodeOptions> = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     encodePromises = []
     const { standalone, pdoc } = encodeNode(node)
@@ -1027,7 +1027,11 @@ function encodeFallbackBlock(node: stencila.Node): P.Para {
 function encodeFallbackInline(node: stencila.Node): P.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
-    await write(node, imagePath, { format: 'rpng', isStandalone: false })
+    await write(node, imagePath, {
+      ...defaultEncodeOptions,
+      format: 'rpng',
+      isStandalone: false
+    })
   })()
   encodePromises.push(promise)
 

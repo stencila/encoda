@@ -10,6 +10,7 @@ import {
   markTypes,
   nodeType
 } from '@stencila/schema/dist/util'
+import { themePath, themes } from '@stencila/thema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import { flatten, isNonEmpty } from 'fp-ts/lib/Array'
@@ -26,7 +27,7 @@ import { columnIndexToName } from '../../codecs/xlsx'
 import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -136,12 +137,12 @@ export class HTMLCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const {
       isStandalone = true,
       isBundle = false,
-      theme = 'stencila'
+      theme = themes.stencila
     } = options
 
     // Reset the slugger to avoid unnecessarily adding numbers to ids
@@ -424,9 +425,9 @@ function generateHtmlElement(
   title: string = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Node[] = [],
-  options: GlobalEncodeOptions = {}
+  options: GlobalEncodeOptions = defaultEncodeOptions
 ): HTMLHtmlElement {
-  const { isBundle = false, theme = 'stencila' } = options
+  const { isBundle = false, theme } = options
 
   log.debug(`Generating <html> elem with options ${JSON.stringify(options)}`)
 
@@ -455,7 +456,7 @@ function generateHtmlElement(
       'package.json'
     )).version
 
-    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/dist/themes/${theme}`
+    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/${themePath}}/${theme}`
     themeCss = h('link', {
       href: `${themeBaseUrl}/styles.css`,
       rel: 'stylesheet'
@@ -767,11 +768,7 @@ function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
  * Encode a `stencila.QuoteBlock` to a `<blockquote>` element.
  */
 function encodeQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
-  return h(
-    'blockquote',
-    { cite: block.cite },
-    block.content.map(encodeNode)
-  )
+  return h('blockquote', { cite: block.cite }, block.content.map(encodeNode))
 }
 
 // Regex to test if a string is a URL. Thanks to https://stackoverflow.com/a/3809435
@@ -1226,7 +1223,9 @@ function encodeCode(
   dataAttrs: boolean = true
 ): HTMLElement {
   return h('code', {
-    class: code.programmingLanguage ? `language-${code.programmingLanguage}` : undefined,
+    class: code.programmingLanguage
+      ? `language-${code.programmingLanguage}`
+      : undefined,
     innerHTML: escape(code.value),
     ...(dataAttrs ? encodeDataAttrs(code.meta || {}) : {})
   })

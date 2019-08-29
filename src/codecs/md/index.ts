@@ -577,7 +577,8 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     if (nodeType(first) === 'CodeBlock') {
       const codeBlock = first as stencila.CodeBlock
       const { programmingLanguage, meta, value } = codeBlock
-      if (programmingLanguage) codeChunk.programmingLanguage = programmingLanguage
+      if (programmingLanguage)
+        codeChunk.programmingLanguage = programmingLanguage
       if (meta) codeChunk.meta = meta
       if (value) codeChunk.text = value
     }

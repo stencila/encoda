@@ -1,6 +1,7 @@
 import stencila from '@stencila/schema'
-import { DMagicCodec } from './'
 import { create, dump } from '../../util/vfile'
+import { defaultEncodeOptions } from '../types'
+import { DMagicCodec } from './'
 
 const { decode, encode } = new DMagicCodec()
 
@@ -12,7 +13,9 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(await dump(await encode(node, { isBundle: false }))).toEqual(bash)
+  expect(
+    await dump(await encode(node, { ...defaultEncodeOptions, isBundle: false }))
+  ).toEqual(bash)
   expect(await encode(node)).toBeTruthy()
 })
 

@@ -1,7 +1,11 @@
 import * as stencila from '@stencila/schema'
 import mime from 'mime'
 import path from 'path'
-import { Codec, GlobalEncodeOptions } from './codecs/types'
+import {
+  Codec,
+  defaultEncodeOptions,
+  GlobalEncodeOptions
+} from './codecs/types'
 import * as vfile from './util/vfile'
 
 type VFile = vfile.VFile
@@ -222,7 +226,7 @@ export async function decode(
  */
 export const encode = async (
   node: stencila.Node,
-  options: GlobalEncodeOptions = {}
+  options: GlobalEncodeOptions = defaultEncodeOptions
 ): Promise<VFile> => {
   const { filePath, format } = options
   if (!(filePath || format)) {
@@ -258,7 +262,7 @@ export async function load(
 export async function dump(
   node: stencila.Node,
   format: string,
-  options: GlobalEncodeOptions = {}
+  options: GlobalEncodeOptions = defaultEncodeOptions
 ): Promise<string> {
   const file = await encode(node, { ...options, format })
   return vfile.dump(file)
@@ -291,7 +295,7 @@ export async function read(
 export async function write(
   node: stencila.Node,
   filePath: string,
-  options: GlobalEncodeOptions = {}
+  options: GlobalEncodeOptions = defaultEncodeOptions
 ): Promise<VFile> {
   const file = await encode(node, { ...options, filePath })
   await vfile.write(file, filePath)
@@ -321,6 +325,7 @@ export async function convert(
   const node = await decode(inputFile, input, from)
 
   const outputFile = await encode(node, {
+    ...defaultEncodeOptions,
     format: to,
     filePath: outputPath,
     ...encodeOptions

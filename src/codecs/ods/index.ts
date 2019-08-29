@@ -4,7 +4,7 @@
 
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
-import { Codec } from '../types'
+import { Codec, defaultEncodeOptions } from '../types'
 import { XlsxCodec } from '../xlsx'
 
 const xlsx = new XlsxCodec()
@@ -23,6 +23,6 @@ export class ODSCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    return xlsx.encode(node, { format: 'ods' })
+    return xlsx.encode(node, { ...defaultEncodeOptions, format: 'ods' })
   }
 }

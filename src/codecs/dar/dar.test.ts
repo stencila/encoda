@@ -6,6 +6,7 @@ import * as vfile from '../../util/vfile'
 // Fixtures
 import flat from '../../__fixtures__/collection-flat'
 import mixed from '../../__fixtures__/collection-mixed'
+import { defaultEncodeOptions } from '../types'
 
 const { decode, encode, sniff } = new DarCodec()
 
@@ -49,7 +50,7 @@ describe('encode', () => {
   it('works on flat collection', async () => {
     const dir = await outdir('flat.dar')
 
-    await encode(flat, { filePath: dir })
+    await encode(flat, { ...defaultEncodeOptions, filePath: dir })
 
     expect(await files(dir)).toEqual([
       'manifest.xml',
@@ -63,7 +64,7 @@ describe('encode', () => {
   it('works on mixed collection', async () => {
     const dir = await outdir('mixed.dar')
 
-    await encode(mixed, { filePath: dir })
+    await encode(mixed, { ...defaultEncodeOptions, filePath: dir })
 
     expect(await files(dir)).toEqual([
       'manifest.xml',
@@ -92,7 +93,7 @@ describe('encode', () => {
           }
         ]
       },
-      { filePath: dir }
+      { ...defaultEncodeOptions, filePath: dir }
     )
 
     expect(await manifest(dir)).toMatchSnapshot()

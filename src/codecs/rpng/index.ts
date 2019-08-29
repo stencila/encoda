@@ -13,7 +13,7 @@ import { dump } from '../../index'
 import bundle from '../../util/bundle'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 /**
  * The keyword to use for the PNG chunk containing the JSON
@@ -121,7 +121,7 @@ export class RPNGCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { filePath, isStandalone = false } = options
 

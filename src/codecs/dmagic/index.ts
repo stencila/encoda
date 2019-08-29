@@ -8,7 +8,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import { dump } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 export class DMagicCodec extends Codec implements Codec {
   /**
@@ -41,7 +41,7 @@ export class DMagicCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { isBundle = true } = options
     let bash = await encodeNode(node)
@@ -79,10 +79,8 @@ async function encodeNode(node: stencila.Node): Promise<string> {
       const block = node as stencila.CodeBlock
       if (
         block.programmingLanguage &&
-        (
-          block.programmingLanguage !== 'bash' &&
-          block.programmingLanguage !== 'sh'
-        )
+        (block.programmingLanguage !== 'bash' &&
+          block.programmingLanguage !== 'sh')
       ) {
         return ''
       }

@@ -13,7 +13,7 @@ import Csl from 'csl-json'
 import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 interface DecodeOptions {
   format: string
@@ -57,7 +57,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { format = 'json' } = options
 

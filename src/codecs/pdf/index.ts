@@ -7,7 +7,7 @@ import { dump } from '../..'
 import bundle from '../../util/bundle'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 export class PDFCodec extends Codec implements Codec {
   /**
@@ -38,7 +38,7 @@ export class PDFCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const bundled = await bundle(node)
     const html = await dump(bundled, 'html', options)
