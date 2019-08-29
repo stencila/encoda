@@ -354,10 +354,8 @@ export interface Citation {
   citationHash: number
 }
 
-export enum CitationMode {
-  'AuthorInText',
-  'SuppressAuthor',
-  'NormalCitation'
+export interface CitationMode {
+  t: 'AuthorInText' | 'SuppressAuthor' | 'NormalCitation'
 }
 
 /**

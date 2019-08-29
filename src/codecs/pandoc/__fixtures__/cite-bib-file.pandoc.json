@@ -1,0 +1,81 @@
+{
+  "blocks": [
+    {
+      "t": "Para",
+      "c": [
+        {
+          "t": "Str",
+          "c": "Bibliography"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "in"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "a"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "file"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Cite",
+          "c": [
+            [
+              {
+                "citationSuffix": [],
+                "citationNoteNum": 0,
+                "citationMode": {
+                  "t": "AuthorInText"
+                },
+                "citationPrefix": [],
+                "citationId": "WatsonCrick1953",
+                "citationHash": 0
+              }
+            ],
+            [
+              {
+                "t": "Str",
+                "c": "@WatsonCrick1953"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "Str",
+          "c": "."
+        }
+      ]
+    }
+  ],
+  "pandoc-api-version": [
+    1,
+    17,
+    5,
+    4
+  ],
+  "meta": {
+    "bibliography": {
+      "t": "MetaInlines",
+      "c": [
+        {
+          "t": "Str",
+          "c": "cite-bib-file.bib"
+        }
+      ]
+    }
+  }
+}

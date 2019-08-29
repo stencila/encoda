@@ -1,0 +1,46 @@
+type: Article
+title: Untitled
+authors: []
+bibliography:
+  - author:
+      - family:
+          type: Paragraph
+          content:
+            - Watson
+        given:
+          type: Paragraph
+          content:
+            - J. D.
+      - family:
+          type: Paragraph
+          content:
+            - Crick
+        given:
+          type: Paragraph
+          content:
+            - F. H. C.
+    id:
+      type: Paragraph
+      content:
+        - WatsonCrick1953
+content:
+  - type: Paragraph
+    content:
+      - 'Citations in line '
+      - target: WatsonCrick1953
+        citationMode: normal
+        type: Cite
+        content:
+          - '@WatsonCrick1953'
+      - ' or grouped in brackets '
+      - items:
+          - target: WatsonCrick1953
+            citationMode: normal
+            type: Cite
+            content:
+              - '[@WatsonCrick1953; @WatsonCrick1953]'
+          - target: WatsonCrick1953
+            citationMode: normal
+            type: Cite
+        type: CiteGroup
+      - .
