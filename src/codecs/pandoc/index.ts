@@ -775,6 +775,8 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeLink(node as stencila.Link)
     case 'Cite':
       return encodeCite(node as stencila.Cite)
+    case 'CiteGroup':
+        return encodeCiteGroup(node as stencila.CiteGroup)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
@@ -1034,22 +1036,74 @@ function encodeLink(node: stencila.Link): Pandoc.Link {
 }
 
 /**
- * Decode a Pandoc `Cite` to a Stencila `Cite`.
+ * Decode a Pandoc `Cite` to a Stencila `Cite` or `CiteGroup`.
+ *
+ * A Pandoc `Cite` is a collection of `Citations`. If there
+ * is only one `Citation` then create a Stencila `Cite`,
+ * otherwise, create a `CiteGroup` (with the first `Cite`
+ * having the inline content)
  */
-function decodeCite(cite: Pandoc.Cite): stencila.Cite {
-  // TODO: finish
-  return stencila.cite('foo')
+function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
+  const citations = cite.c[0]
+  const inlines = cite.c[1]
+
+  const cites = citations.map(citation => {
+    return stencila.cite(
+      citation.citationId,
+      {
+        citationMode: citation.citationMode.t === 'SuppressAuthor' ? 'suppressAuthor' : 'normal'
+      }
+    )
+  })
+  if (cites.length > 0) cites[0].content = decodeInlines(inlines)
+  return cites.length === 1 ? cites[0] : stencila.citeGroup(cites)
+}
+
+/**
+ * Encode a Stencila `Cite` to a Pandoc `Citation`.
+ */
+function encodeCitation(cite: stencila.Cite): Pandoc.Citation {
+  const { target = '', citationMode = 'normal' } = cite
+  return {
+    citationId: target,
+    citationPrefix: [],
+    citationSuffix: [],
+    citationMode: {
+      t: citationMode === 'suppressAuthor' ? 'SuppressAuthor' : 'NormalCitation'
+    },
+    citationNoteNum: 0,
+    citationHash: 0
+  }
 }
 
 /**
  * Encode a Stencila `Cite` to a Pandoc `Cite`.
  */
 function encodeCite(cite: stencila.Cite): Pandoc.Cite {
-  // TODO: finish
   const { content = [] } = cite
   return {
     t: 'Cite',
-    c: [[], encodeInlines(content)]
+    c: [[encodeCitation(cite)], encodeInlines(content)]
+  }
+}
+
+/**
+ * Encode a Stencila `CiteGroup` to a Pandoc `Cite`.
+ *
+ * This aggregates all the inlines from each Stencila `Cite` into
+ * the Pandoc `Cite`'s second argument.
+ */
+function encodeCiteGroup(citeGroup: stencila.CiteGroup): Pandoc.Cite {
+  const { items = [] } = citeGroup
+  const citations = items.map(encodeCitation)
+  const inlines = items.map(item => item.content)
+                       .reduce(
+                         (prev: stencila.InlineContent[], curr) => [...prev, ...(curr !== undefined ? curr : [])],
+                         []
+                        )
+  return {
+    t: 'Cite',
+    c: [citations, encodeInlines(inlines)]
   }
 }
 
