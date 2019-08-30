@@ -1,4 +1,5 @@
 import * as stencila from '@stencila/schema'
+import {getLogger} from '@stencila/logga'
 import mime from 'mime'
 import path from 'path'
 import {
@@ -10,6 +11,8 @@ import * as vfile from './util/vfile'
 // eslint-disable-next-line import/no-named-default
 import { default as log } from './log'
 
+const log = getLogger('encoda')
+
 type VFile = vfile.VFile
 
 /**
@@ -19,18 +22,26 @@ type VFile = vfile.VFile
  * formats should go last. See the `match` function.
  */
 export const codecList: string[] = [
-  // Providers
+  // Publishers of content
   'elife',
+  'doi',
+  'orcid',
+  'plos',
+
+  // HTTP. Comes after publishers so that it does not match urls
+  // that are specific to a publisher e.g. https://elifesciences.org
   'http',
 
   // Directories
   'dir',
   'dar',
+
   // Tabular data, spreadsheets etc
   'csv',
   'ods',
   'tdp',
   'xlsx',
+
   // Articles, textual documents etc
   'docx',
   'gdoc',
@@ -44,10 +55,13 @@ export const codecList: string[] = [
   'pdf',
   'txt',
   'xmd',
+
   // Scripts
   'dmagic',
+
   // Images
   'rpng',
+
   // Data interchange formats
   'yaml',
   'pandoc',
@@ -104,7 +118,11 @@ export async function match(
     }
   }
 
-  const getCodec = (exports: { [key: string]: unknown }): Codec | undefined => {
+  /**
+   * Get a `Codec` instance from a codec name
+   */
+  const getCodec = async (name: string): Promise<Codec | undefined> => {
+    const exports: { [key: string]: unknown } = await import(`./codecs/${name}`)
     for (const C in exports) {
       // @ts-ignore
       if (exports[C].prototype instanceof Codec) {
@@ -131,19 +149,19 @@ export async function match(
    * find a matching Codec, short-circuit the module loading logic by returning
    * the dynamically imported Codec
    */
-  try {
-    const c = await import(`./codecs/${extName}`)
-    codec = getCodec(c)
-  } catch (error) {
+  if (extName !== undefined) {
+    try {
+      codec = await getCodec(extName)
+    } catch (error) {
     handleGetCodecError(error)
+    }
   }
 
   if (codec) return codec
 
   for (const codecName of codecList) {
     try {
-      const c = await import(`./codecs/${codecName}`)
-      codec = getCodec(c)
+      codec = await getCodec(codecName)
     } catch (error) {
       handleGetCodecError(error)
     }
@@ -170,8 +188,11 @@ export async function match(
   let message = 'No codec could be found'
   if (content) message += ` for content "${content}"`
   if (format) message += ` for format "${format}"`
-  message += '.'
-  throw new Error(message)
+  message += '. Falling back to plain text codec.'
+  log.warn(message)
+
+  // @ts-ignore
+  return getCodec('txt')
 }
 
 /**
