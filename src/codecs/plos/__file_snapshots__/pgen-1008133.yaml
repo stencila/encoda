@@ -1,0 +1,5880 @@
+authors:
+  - givenNames:
+      - Juan
+      - A.
+    familyNames:
+      - Sanchez
+    type: Person
+    affiliations:
+      - type: Organization
+  - givenNames:
+      - Duarte
+    familyNames:
+      - Mesquita
+    type: Person
+    affiliations:
+      - type: Organization
+  - givenNames:
+      - María
+      - C.
+    familyNames:
+      - Ingaramo
+    type: Person
+    affiliations:
+      - type: Organization
+  - givenNames:
+      - Federico
+    familyNames:
+      - Ariel
+    type: Person
+    affiliations:
+      - type: Organization
+      - type: Organization
+  - givenNames:
+      - Marco
+    familyNames:
+      - Milán
+    type: Person
+    affiliations:
+      - type: Organization
+      - type: Organization
+  - givenNames:
+      - Andrés
+    familyNames:
+      - Dekanty
+    type: Person
+    affiliations:
+      - type: Organization
+      - type: Organization
+title: >-
+  Eiger/TNFα-mediated Dilp8 and ROS production coordinate intra-organ growth in
+  Drosophila
+type: Article
+content:
+  - content:
+      - Introduction
+    depth: 1
+    id: sec001
+    type: Heading
+  - content:
+      - >-
+        Coordinated tissue growth is essential for the generation of
+        functionally integrated organs during animal development, as well as for
+        tissue homeostasis during adult life. Although a broad range of genes
+        and pathways regulating growth has been uncovered, the exact mechanisms
+        by which cells within the same tissue maintain tissue homeostasis by
+        responding to stress in a coordinated manner are less understood.
+    type: Paragraph
+  - content:
+      - >-
+        The p53 tumor suppressor regulates the mammalian cell stress response
+        through direct transcriptional activation of specific target genes
+        involved in cell cycle arrest, DNA repair and apoptosis [
+      - target: '#pgen.1008133.ref001'
+        type: Cite
+      - >-
+        ]. Recently, several non-cell-autonomous functions of p53 have been
+        reported to be relevant in tissue homeostasis, as well as in tumor
+        suppression [
+      - target: '#pgen.1008133.ref002'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref003'
+        type: Cite
+      - >-
+        ]. In this regard, the activation of p53 in stromal fibroblasts promotes
+        an antitumor microenvironment by impairing the survival and spread of
+        adjacent tumor cells [
+      - target: '#pgen.1008133.ref004'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref006'
+        type: Cite
+      - >-
+        ]. Likewise, reconstituted MCF7 tumors containing p53-deficient
+        fibroblasts develop faster and are more aggressive than their
+        counterparts carrying wild-type fibroblasts [
+      - target: '#pgen.1008133.ref007'
+        type: Cite
+      - >-
+        ]. In fact, the modulation of inflammatory cytokine secretion by
+        tumor-mediated activation of p53 has been shown to limit tissue damage [
+      - target: '#pgen.1008133.ref008'
+        type: Cite
+      - '], inhibit adjacent epithelial cell transformation ['
+      - target: '#pgen.1008133.ref004'
+        type: Cite
+      - >-
+        ], and promote macrophage-mediated clearance of tumor and apoptotic
+        cells [
+      - target: '#pgen.1008133.ref009'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref010'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - >-
+        Studies on the role of p53 in the coordination of growth and cell
+        proliferation have benefited from genetically tractable model systems.
+        The single 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' orthologue of mammalian p53 (Dmp53) has been demonstrated to be essential for tissue and metabolic homeostasis ['
+      - target: '#pgen.1008133.ref002'
+        type: Cite
+      - >-
+        ]. In addition to conserved functions that promote apoptosis upon
+        stress, Dmp53 participates in non-cell-autonomous responses, regulating
+        apoptosis-induced proliferation [
+      - target: '#pgen.1008133.ref011'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref013'
+        type: Cite
+      - '], cell competition ['
+      - target: '#pgen.1008133.ref014'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref015'
+        type: Cite
+      - '] and adaptive responses to nutrient stress at the organismal level ['
+      - target: '#pgen.1008133.ref016'
+        type: Cite
+      - ']. Previous studies using the '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' wing as a model system demonstrated that adjacent cell populations within an organ grow in a coordinated manner, buffering local variations in growth rate, thereby maintaining tissue homeostasis and allowing the development of well-proportioned wings ['
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref018'
+        type: Cite
+      - >-
+        ]. Targeted depletion of growth-promoting genes or disruption of the
+        protein biosynthetic machinery in defined regions of the developing wing
+        primordium reduces size of adjacent unperturbed territories [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref019'
+        type: Cite
+      - >-
+        ]. Activation of Dmp53 in the slow-growing cell population is required
+        for proper coordination of intra-organ growth, since depletion of Dmp53
+        uncouples the growth of adjacent cell populations and ultimately gives
+        rise to wings with incorrect proportions [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]. Several molecular mechanisms, involving either a tissue local
+        response [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ] or systemic mechanisms coordinating both intra- and inter-organ growth
+        [
+      - target: '#pgen.1008133.ref019'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref021'
+        type: Cite
+      - '], have been proposed to underlie Dmp53-dependent growth coordination.'
+    type: Paragraph
+  - content:
+      - >-
+        Here we have identified Eiger (Egr), the unique member of TNF
+        superfamily of ligands in 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref023'
+        type: Cite
+      - >-
+        ] as a direct effector of Dmp53 mediating intra-organ growth. We
+        demonstrate that Egr acts through its receptor Grindelwald (Grnd) and
+        Jun N-terminal Kinase (JNK) signaling to reduce the growth and
+        proliferation rates of adjacent cell populations. The inactivation of
+        Egr or JNK signaling in slow-growing cell populations disrupts the
+        coordination of growth among adjacent tissue domains, resulting in
+        unproportioned adult wings. We further demonstrate that the regulation
+        of tissue growth and proliferation rates by Dmp53 can be uncoupled and
+        independently regulated by two distinct mechanisms downstream of Egr-JNK
+        signaling. Whereas dILP8 expression is required to coordinate
+        intra-organ growth and final tissue size, reactive oxygen species (ROS)
+        production downstream of Egr/JNK and as a consequence of apoptosis
+        induction acts in a non-cell-autonomous manner to regulate the
+        proliferation rates of adjacent epithelial cells. Taken together, our
+        results show how local mechanisms along with systemic responses act
+        together to coordinate the growth and proliferation of different parts
+        of an organ.
+    type: Paragraph
+  - content:
+      - Results
+    depth: 1
+    id: sec002
+    type: Heading
+  - content:
+      - Dmp53 target genes are upregulated upon growth stress
+    depth: 2
+    id: sec003
+    type: Heading
+  - content:
+      - 'The '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' wing imaginal disc, a highly proliferative epithelium that grows extensively during larval development, provides an ideal model to study intra-organ growth coordination ['
+      - target: '#pgen.1008133.ref024'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref025'
+        type: Cite
+      - >-
+        ]. We made use of the Gal4/UAS system to drive the expression of a
+        cold-sensitive version of type 2 ribosome-inactivating protein Ricin-A
+        (RA
+      - type: Superscript
+        content:
+          - CS
+      - ) or an RNAi for the growth-promoting transcription factor dMyc (
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - >-
+        ) to specific regions in the wing primordium. We targeted expression of
+        these transgenes to the anterior (A) and posterior (P) compartments of
+        the developing wing discs, as these compartments are cell populations
+        that do not mix and they are easily identified in the adult wing. This
+        experimental setting also allowed us to characterize the impact of
+        transgene expression on the size of the transgene-expressing
+        compartment, as well as on the size of the adjacent compartment. We used
+        the 
+      - type: Emphasis
+        content:
+          - ci-Gal4
+      - ' or '
+      - type: Emphasis
+        content:
+          - dpp-Gal4
+      - ' drivers to express these transgenes in the A compartment and the '
+      - type: Emphasis
+        content:
+          - engrailed-Gal4
+      - ' ('
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - >-
+        ) driver for the same purpose in the P compartment. Consistent with
+        previous reports, targeted expression of RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' to the A or P compartments of the wing disc reduced the size of both transgene-expressing and adjacent wild-type territories ('
+      - content:
+          - Fig 1A–1C
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - '; ['
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]). This non-autonomous decrease in tissue size was also observed when
+        growth was compromised in other regions of the wing by means of a
+        battery of Gal4 drivers, including wing-specific Gal4 drivers [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]. Along with the decrease in tissue size, a non-autonomous reduction in
+        proliferation rates and final cell number was also observed, as
+        determined by measurements of BrdU incorporation (
+      - content:
+          - Fig 1D–1F
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - ) and cell density in adult wings (
+      - content:
+          - Fig 1G and 1H
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - '; ['
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - ']).'
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 1
+    caption:
+      - content:
+          - >-
+            Coordinated intra-organ growth involves the upregulation of Dmp53
+            target genes.
+        depth: 2
+        id: sec003
+        type: Heading
+      - content:
+          - '(A) Representative adult wings from individuals expressing GFP, RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' under the control of '
+          - type: Emphasis
+            content:
+              - ci-Gal4
+          - >-
+            , which drives expression to the anterior compartment of wing
+            imaginal discs (shown in light blue). Numbers indicate total wing
+            area represented as a percentage of GFP-expressing wings. (B-C, G-H)
+            Histograms plotting normalized area (B-C) or cell density values
+            (G-H) of the anterior (A) and posterior (P) compartments of adult
+            wings from individuals expressing RA
+          - type: Superscript
+            content:
+              - CS
+          - ' or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' with the indicated Gal4 drivers. Blue bars indicate the transgene-expressing compartment and grey bars indicate the adjacent wild-type compartment. Expression of RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' significantly reduced the size of both transgene-expressing and non-expressing domains. Horizontal line shows the size or cell density values of the normalized control GFP-expressing wings. ** p<0.01. (D-F) BrdU incorporation assay in larval wing discs from individuals expressing GFP, along with the indicated transgenes under the control of '
+          - type: Emphasis
+            content:
+              - ci-Gal4
+          - ' or '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . (I) Transcriptome analysis of RNA samples obtained from the P
+            compartment (GFP-positive cells) of wing imaginal discs from
+            individuals expressing GFP or GFP plus RA
+          - type: Superscript
+            content:
+              - CS
+          - ' with '
+          - type: Emphasis
+            content:
+              - en
+          - '-'
+          - type: Emphasis
+            content:
+              - Gal4
+          - . 179 genes were differentially expressed between RA
+          - type: Superscript
+            content:
+              - CS
+          - >-
+            -expressing and wild-type cells (-1≥fc≥1; p≥0.05). (J) Gene ontology
+            (GO) analysis showed highly enriched GO terms amongst genes
+            upregulated in RA-expressing wing discs. -Log 10 of p-value are
+            shown. GO-BP, biological processes. GO-MF, molecular function.
+            GO-CC, cellular component.
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        To identify novel molecules and pathways involved in coordinating
+        intra-organ growth, we performed differential gene expression analysis
+        of wing imaginal discs expressing RA
+      - type: Superscript
+        content:
+          - CS
+      - ' ('
+      - type: Emphasis
+        content:
+          - en-Gal4; UAS-RA
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - CS
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-GFP
+      - ) and control wing discs expressing GFP (
+      - type: Emphasis
+        content:
+          - en-Gal4; UAS-GFP
+      - >-
+        ). Transcriptome analysis of RNA samples from P compartment cells
+        (GFP-positive cells) of larvae of the indicated genotypes identified 179
+        differentially expressed genes (
+      - content:
+          - Fig 1I
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S1 Table
+        target: '#pgen.1008133.s007'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). Quantitative real-time RT-PCR (qRT-PCR) measurements, which showed
+        consistent upregulation of several of these genes in cells expressing
+        either RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - >-
+        , strongly suggested that these two perturbations elicit a common
+        cellular response (
+      - content:
+          - S1A Fig
+        target: '#pgen.1008133.s001'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). Gene ontology (GO) analysis comprising the 179 identified genes
+        revealed an enrichment in biological processes associated with cellular
+        responses to DNA damage, oxidation-reduction processes, glutathione
+        metabolism, cytokine signaling and extracellular proteins (
+      - content:
+          - Fig 1J
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - '). In addition, 57 genes previously described as p53 targets ['
+      - target: '#pgen.1008133.ref026'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref027'
+        type: Cite
+      - '] were specifically upregulated upon RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression ('
+      - content:
+          - S1C Fig
+        target: '#pgen.1008133.s001'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). Together, these results validate previous reports and strongly
+        support the notion that Dmp53 participates in the coordination of tissue
+        growth.
+    type: Paragraph
+  - content:
+      - >-
+        Eiger/TNFα is required to coordinate intra-organ growth downstream of
+        Dmp53
+    depth: 2
+    id: sec004
+    type: Heading
+  - content:
+      - 'Next, we looked for upregulated secreted signaling molecules in RA'
+      - type: Superscript
+        content:
+          - CS
+      - >-
+        -expressing cells that could mediate tissue non-autonomous responses. GO
+        analysis identified a group of 19 genes coding for extracellular
+        proteins (
+      - content:
+          - Fig 1J
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - ', '
+      - content:
+          - S2A Fig
+        target: '#pgen.1008133.s002'
+        relation: supplementary-material
+        type: Link
+      - ' and '
+      - content:
+          - S3 Table
+        target: '#pgen.1008133.s009'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). To test whether these molecules and others were actually relevant for
+        intra-organ growth coordination, we performed an 
+      - type: Emphasis
+        content:
+          - in vivo
+      - ' loss-of-function screen using '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' transgenic RNAi lines ('
+      - content:
+          - S2 Table
+        target: '#pgen.1008133.s008'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). Genes encoding for potential secreted factors were specifically
+        silenced in the RA
+      - type: Superscript
+        content:
+          - CS
+      - >-
+        -expressing domain and screened for their capacity to affect the size of
+        the adjacent compartment in adult wings. Notably, expression of an RNAi
+        form of 
+      - type: Emphasis
+        content:
+          - eiger (egr)
+      - ' partially rescued the non-autonomous reduction in tissue size caused by RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression, which resulted in adult wings bearing unproportioned compartments ('
+      - content:
+          - Fig 2A and 2B
+        target: '#pgen.1008133.g002'
+        relation: fig
+        type: Link
+      - >-
+        ). We further confirmed the role of Egr in the non-autonomous regulation
+        of tissue size by using an independent RNAi line (
+      - type: Emphasis
+        content:
+          - UAS-egr
+      - type: Superscript
+        content:
+          - IR
+      - ') ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - '] and '
+      - type: Emphasis
+        content:
+          - egr
+      - ' homozygous mutants ('
+      - content:
+          - Fig 2B
+        target: '#pgen.1008133.g002'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S2B Fig
+        target: '#pgen.1008133.s002'
+        relation: supplementary-material
+        type: Link
+      - '). Of note, the sole expression of '
+      - type: Emphasis
+        content:
+          - egr
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' or '
+      - type: Emphasis
+        content:
+          - Dmp53
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' had no effect on wing size ('
+      - content:
+          - S2D Fig
+        target: '#pgen.1008133.s002'
+        relation: supplementary-material
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 2
+    caption:
+      - content:
+          - A role of Eiger/TNFα in intra-organ growth.
+        depth: 2
+        id: sec004
+        type: Heading
+      - content:
+          - >-
+            (A) Representative adult wings from individuals expressing the
+            indicated transgenes in posterior compartment (blue) under the
+            control of 
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . The expected size of the neighboring domain to give rise to a
+            well-proportioned adult wing is shown. (B) Histogram plotting
+            normalized area of the posterior (P; blue bars) and anterior (A;
+            grey bars) compartments of adult wings from individuals expressing
+            the indicated transgenes with 
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - '. Expression of '
+          - type: Emphasis
+            content:
+              - Dmp53
+          - type: Superscript
+            content:
+              - RNAi
+          - ', '
+          - type: Emphasis
+            content:
+              - eiger
+          - type: Superscript
+            content:
+              - RNAi
+          - ' or '
+          - type: Emphasis
+            content:
+              - eiger
+          - type: Superscript
+            content:
+              - IR
+          - ' reverted the non-autonomous reduction in tissue size caused by RA expression. ** p<0.01. (C-H) Wing discs expressing GFP along with RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' in the posterior compartment by using '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - ' in different genetic backgrounds ('
+          - type: Emphasis
+            content:
+              - wild-type
+          - ' (C,F), co-expressing '
+          - type: Emphasis
+            content:
+              - eiger
+          - type: Superscript
+            content:
+              - RNAi
+          - ' (D,G) or '
+          - type: Emphasis
+            content:
+              - eiger
+          - type: Superscript
+            content:
+              - type: Emphasis
+                content:
+                  - 3/3
+          - ' (E,H)) and labeled to visualize GFP (green), TUNEL (red in C-E; grey in C’-E’) and BrdU incorporation (red in F-H; grey in F’-H’).'
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        Egr participates in apoptosis-induced apoptosis, a process by which
+        dying cells within a specific compartment induce apoptosis in the
+        adjacent ones [
+      - target: '#pgen.1008133.ref028'
+        type: Cite
+      - ']. RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression in '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' wing discs elicited apoptosis in both transgene-expressing and adjacent wild-type territories ('
+      - content:
+          - Fig 2C
+        target: '#pgen.1008133.g002'
+        relation: fig
+        type: Link
+      - '; ['
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref029'
+        type: Cite
+      - >-
+        ]). We then assessed the functional requirement of Egr for apoptosis
+        induction. In this regard, RA
+      - type: Superscript
+        content:
+          - CS
+      - >-
+        -induced apoptosis was strongly suppressed in both wing disc
+        compartments when Egr was depleted (
+      - content:
+          - Fig 2D and 2E
+        target: '#pgen.1008133.g002'
+        relation: fig
+        type: Link
+      - >-
+        ). Apoptosis is not required for wing size reduction, but it plays an
+        essential role in the non-autonomous decrease of proliferation rates [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]. We then studied whether Egr is also responsible for reducing
+        proliferation rates upon RA
+      - type: Superscript
+        content:
+          - CS
+      - ' expression. Interestingly, '
+      - type: Emphasis
+        content:
+          - egr
+      - type: Superscript
+        content:
+          - RNAi
+      - ' expression largely rescued the non-autonomous effects of RA on both BrdU incorporation levels and number of mitotic—PH3-positive—cells ('
+      - content:
+          - Fig 2F and 2G
+        target: '#pgen.1008133.g002'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S2C Fig
+        target: '#pgen.1008133.s002'
+        relation: supplementary-material
+        type: Link
+      - '). Similar results were observed in homozygous '
+      - type: Emphasis
+        content:
+          - egr
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - '3'
+      - ' mutant animals ('
+      - content:
+          - Fig 2H
+        target: '#pgen.1008133.g002'
+        relation: fig
+        type: Link
+      - >-
+        ). Together, these observations support a fundamental role of Egr in
+        regulating the size and cell number of adjacent tissue domains.
+    type: Paragraph
+  - content:
+      - 'Supporting transcriptome data, qRT-PCR assays showed increased '
+      - type: Emphasis
+        content:
+          - egr
+      - ' transcript levels in RA'
+      - type: Superscript
+        content:
+          - CS
+      - '- and '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - '-expressing cells ('
+      - content:
+          - Fig 3D
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S1A Fig
+        target: '#pgen.1008133.s001'
+        relation: supplementary-material
+        type: Link
+      - '). RNA '
+      - type: Emphasis
+        content:
+          - in situ
+      - ' hybridization revealed a strong increase in '
+      - type: Emphasis
+        content:
+          - egr
+      - ' transcript levels in the RA'
+      - type: Superscript
+        content:
+          - CS
+      - '- and '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - '-expressing wing disc territory ('
+      - content:
+          - Fig 3A–3C
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - '). These findings were confirmed using '
+      - type: Emphasis
+        content:
+          - in vivo
+      - ' reporters of both '
+      - type: Emphasis
+        content:
+          - egr
+      - ' transcription ('
+      - type: Emphasis
+        content:
+          - egr
+      - '-lacZ; ['
+      - target: '#pgen.1008133.ref030'
+        type: Cite
+      - ']) and Eiger protein expression and localization (Eiger-GFP; ['
+      - target: '#pgen.1008133.ref030'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref031'
+        type: Cite
+      - ']). '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - '-expression in the A compartment ('
+      - content:
+          - Fig 3E and 3E’
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - '), P compartment ('
+      - content:
+          - S3B Fig
+        target: '#pgen.1008133.s003'
+        relation: supplementary-material
+        type: Link
+      - ) and in clones of cells (
+      - content:
+          - Fig 3F and 3F’
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - ') showed strong activation of '
+      - type: Emphasis
+        content:
+          - egr-
+      - >-
+        lacZ and increased Eiger-GFP levels, thereby indicating that Eiger is
+        specifically and cell-autonomously induced in wing discs upon RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' expression.'
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 3
+    caption:
+      - content:
+          - >-
+            Eiger expression in slow-growing cell populations relies on Dmp53
+            activity.
+        depth: 2
+        id: sec004
+        type: Heading
+      - content:
+          - '(A-C) '
+          - type: Emphasis
+            content:
+              - In situ
+          - ' hybridization to visualize '
+          - type: Emphasis
+            content:
+              - eiger
+          - ' transcript levels in wing discs from individuals expressing GFP (A), RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' (B) or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' (C) under the control of '
+          - type: Emphasis
+            content:
+              - ci-Gal4
+          - '. (D) qRT-PCR showing '
+          - type: Emphasis
+            content:
+              - eiger
+          - ' mRNA levels in wing discs expressing RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - type: Emphasis
+                content:
+                  - RNAi
+          - ' with '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . Results are expressed as fold induction relative to control wing
+            discs. (E-F) Wing discs carrying 
+          - type: Emphasis
+            content:
+              - egr
+          - >-
+            -lacZ transcriptional reporter and stained to visualize GFP (green)
+            and β-gal (red in E-F; grey in E’-F’) protein expression. 
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' is expressed in anterior cells with '
+          - type: Emphasis
+            content:
+              - ci-Gal4
+          - ' (E) or in clones using '
+          - type: Emphasis
+            content:
+              - Actin-Flipout-Gal4
+          - ' (F). Note increased levels of '
+          - type: Emphasis
+            content:
+              - egr
+          - >-
+            -lacZ in dMyc-depleted cells. (G-H) Wing imaginal discs from
+            controls (G) or expressing Dmp53 (H) under the control of 
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - '; '
+          - type: Emphasis
+            content:
+              - tub
+          - '-'
+          - type: Emphasis
+            content:
+              - Gal80
+          - type: Superscript
+            content:
+              - type: Emphasis
+                content:
+                  - ts
+          - ' and stained to visualize '
+          - type: Emphasis
+            content:
+              - egr
+          - '-lacZ (green or grey) and DAPI (blue). (I-J) qRT-PCR showing '
+          - type: Emphasis
+            content:
+              - eiger
+          - ' mRNA levels in wing discs expressing the indicated transgenes under the control of '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - ' (I) or '
+          - type: Emphasis
+            content:
+              - sal
+          - '-'
+          - type: Emphasis
+            content:
+              - Gal4
+          - ;
+          - type: Emphasis
+            content:
+              - tub
+          - '-'
+          - type: Emphasis
+            content:
+              - Gal80
+          - type: Superscript
+            content:
+              - type: Emphasis
+                content:
+                  - ts
+          - ' (J). Results are expressed as fold induction with respect to control wing discs. (K) ChIP assays from larvae expressing Dmp53 ('
+          - type: Emphasis
+            content:
+              - sal-Gal4/+;tub-Gal80
+          - type: Superscript
+            content:
+              - type: Emphasis
+                content:
+                  - ts
+          - type: Emphasis
+            content:
+              - /UAS
+          - .
+          - type: Emphasis
+            content:
+              - Dmp53
+          - >-
+            ) using anti-p53 antibodies or unrelated IgG (control) followed by
+            qPCR for a region overlapping predicted p53-binding elements at 
+          - type: Emphasis
+            content:
+              - eiger
+          - ' and '
+          - type: Emphasis
+            content:
+              - reaper
+          - ' promoters. '
+          - type: Emphasis
+            content:
+              - eiger
+          - ' intronic or 3’UTR regions were used as negative controls. Data (qPCR) are mean ± s.d.'
+        type: Paragraph
+    type: Figure
+  - content:
+      - 'We next addressed whether Dmp53 was responsible for the expression of '
+      - type: Emphasis
+        content:
+          - egr
+      - ' in RA'
+      - type: Superscript
+        content:
+          - CS
+      - >-
+        -expressing wing discs. Expression of a dominant negative version of
+        Dmp53 lacking DNA-binding activity (Dmp53
+      - type: Superscript
+        content:
+          - H159N
+      - ') partially rescued the increase in '
+      - type: Emphasis
+        content:
+          - egr
+      - ' expression levels caused by RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' as well as the induction of known Dmp53 target genes, such as '
+      - type: Emphasis
+        content:
+          - rpr
+      - ', '
+      - type: Emphasis
+        content:
+          - corp
+      - ' and '
+      - type: Emphasis
+        content:
+          - xrp1
+      - ' ('
+      - content:
+          - Fig 3I
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S3C Fig
+        target: '#pgen.1008133.s003'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). We next tested whether Dmp53 overexpression in wing imaginal discs
+        was sufficient to activate 
+      - type: Emphasis
+        content:
+          - egr
+      - ' transcription. To avoid the deleterious effects of chronic expression of Dmp53, we used a temperature-sensitive version of Gal80 (Gal80'
+      - type: Superscript
+        content:
+          - ts
+      - >-
+        ), a suppressor of Gal4 activity. Expression of Dmp53 for 12 h caused a
+        4-fold increase in 
+      - type: Emphasis
+        content:
+          - egr
+      - ' mRNA levels ('
+      - content:
+          - Fig 3J
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - ', with the use of a wing specific Gal4 driver, '
+      - type: Emphasis
+        content:
+          - spalt-PE-Gal4
+      - ') and activated the expression of '
+      - type: Emphasis
+        content:
+          - egr
+      - '-lacZ in wing discs cells ('
+      - content:
+          - Fig 3G–3H’
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - '). Consistent with recent reports showing Dmp53 binding to '
+      - type: Emphasis
+        content:
+          - egr
+      - ' locus ['
+      - target: '#pgen.1008133.ref032'
+        type: Cite
+      - >-
+        ], chromatin immunoprecipitation (ChIP) assays revealed that Dmp53 binds
+        to predicted 
+      - type: Emphasis
+        content:
+          - egr
+      - ' and '
+      - type: Emphasis
+        content:
+          - reaper
+      - ' binding sites with similar efficiency ('
+      - content:
+          - Fig 3K
+        target: '#pgen.1008133.g003'
+        relation: fig
+        type: Link
+      - >-
+        ). All together, these results indicate that Dmp53 induces the
+        expression of 
+      - type: Emphasis
+        content:
+          - egr
+      - ' through a conserved p53 binding site in its promoter region. Whether Egr activation is also under posttranscriptional regulation (e.g. TACE-mediated cleavage and release of Egr to the extracellular milieu) in the growth-depleted territory and whether this regulation is mediated by Dmp53 are two relevant questions that remain to be explored. Similarly, the experimental observation that Dmp53'
+      - type: Superscript
+        content:
+          - H159N
+      - ' expression did not completely reduce RA'
+      - type: Superscript
+        content:
+          - CS
+      - '-induced '
+      - type: Emphasis
+        content:
+          - egr
+      - ' expression points to Dmp53-independent inputs into the regulation of '
+      - type: Emphasis
+        content:
+          - egr
+      - ' expression upon growth depletion.'
+    type: Paragraph
+  - content:
+      - >-
+        Eiger-induced JNK signaling is required for non-cell-autonomous
+        reduction of growth and proliferation rates
+    depth: 2
+    id: sec005
+    type: Heading
+  - content:
+      - >-
+        The JNK cascade is a conserved stress response pathway and an important
+        regulator of tissue growth, proliferation and apoptosis [
+      - target: '#pgen.1008133.ref023'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref033'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref038'
+        type: Cite
+      - ']. Our transcriptome analysis indicated that RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression activates JNK signaling, as we observed the induction of JNK activators such as '
+      - type: Emphasis
+        content:
+          - egr
+      - ', '
+      - type: Emphasis
+        content:
+          - gadd45
+      - ' and '
+      - type: Emphasis
+        content:
+          - traf4
+      - ', and JNK target genes such as the JNK-phosphatase '
+      - type: Emphasis
+        content:
+          - puckered
+      - ' ('
+      - type: Emphasis
+        content:
+          - puc
+      - '), '
+      - type: Emphasis
+        content:
+          - matrix metalloproteinase 1
+      - ' ('
+      - type: Emphasis
+        content:
+          - mmp1
+      - '), '
+      - type: Emphasis
+        content:
+          - insulin-like-peptide 8
+      - ' ('
+      - type: Emphasis
+        content:
+          - dilp8
+      - ') and '
+      - type: Emphasis
+        content:
+          - PDGF- and VEGF-related factor 1
+      - ' ('
+      - type: Emphasis
+        content:
+          - Pvf1
+      - ) (
+      - content:
+          - S1A and S1B
+        target: '#pgen.1008133.s001'
+        relation: supplementary-material
+        type: Link
+      - ' and '
+      - content:
+          - S4A
+        target: '#pgen.1008133.s004'
+        relation: supplementary-material
+        type: Link
+      - ' Figs and '
+      - content:
+          - S3 Table
+        target: '#pgen.1008133.s009'
+        relation: supplementary-material
+        type: Link
+      - '). Consistently, we noted activation of the JNK reporter '
+      - type: Emphasis
+        content:
+          - puc
+      - '-lacZ in wing discs expressing RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' ('
+      - content:
+          - Fig 4A
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - ') and a significant increase in Mmp1 protein levels in those expressing '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' ('
+      - content:
+          - Fig 4B–4D
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - ', see also '
+      - content:
+          - S4B Fig
+        target: '#pgen.1008133.s004'
+        relation: supplementary-material
+        type: Link
+      - '). Mmp1 expression was completely blocked in '
+      - type: Emphasis
+        content:
+          - hep
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - r75
+      - ' heterozygous animals (Hemipterous; JNK kinase homologue in '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ) or upon expression of a dominant negative version of Basket (
+      - type: Emphasis
+        content:
+          - Bsk
+      - type: Superscript
+        content:
+          - DN
+      - '; JNK homologue in '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - '; '
+      - content:
+          - Fig 4F and 4G
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - >-
+        ). To test whether the JNK pathway is activated downstream of Egr in
+        slow-growing tissues, we measured Mmp1 protein levels after depletion of
+        Egr or TNFα receptor homologue Grindelwald (Grnd) [
+      - target: '#pgen.1008133.ref039'
+        type: Cite
+      - ']. Mmp1 ectopic expression caused by '
+      - type: Emphasis
+        content:
+          - dmyc
+      - ' knockdown was entirely reverted by expression of either '
+      - type: Emphasis
+        content:
+          - egr
+      - type: Superscript
+        content:
+          - RNAi
+      - ' or '
+      - type: Emphasis
+        content:
+          - grnd
+      - type: Superscript
+        content:
+          - RNAi
+      - ' ('
+      - content:
+          - Fig 4H and 4I
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - >-
+        ). Collectively, these results indicate that Dmp53 activation in
+        growth-depleted territories activates JNK signaling through Egr.
+        Interestingly, expression of the dominant negative version of Dmp53
+        showed a differential impact on the levels of JNK activity in RA
+      - type: Superscript
+        content:
+          - CS
+      - '- and '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - '-expressing wing discs. While Dmp53 depletion largely reverted RA'
+      - type: Superscript
+        content:
+          - CS
+      - '-induced expression of Mmp1 ('
+      - content:
+          - Fig 4J
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - '), it caused only a partial reduction of Mmp1 levels in '
+      - type: Emphasis
+        content:
+          - dmyc
+      - '-depleted cells ('
+      - content:
+          - Fig 4E
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - '). These results suggest that JNK is induced in '
+      - type: Emphasis
+        content:
+          - dmyc
+      - >-
+        -depleted cells through both Dmp53-dependent and -independent
+        mechanisms.
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 4
+    caption:
+      - content:
+          - A role of JNK signaling in intra-organ growth.
+        depth: 2
+        id: sec005
+        type: Heading
+      - content:
+          - '(A-C) Wing imaginal discs from individuals expressing GFP, RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' and stained to visualize GFP (A-C), '
+          - type: Emphasis
+            content:
+              - puckered
+          - >-
+            -lacZ (A) and Mmp1 (B-C). (D-I) Wing discs labeled to visualize Mmp1
+            protein expression from individuals expressing 
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' alone or in combination with '
+          - type: Emphasis
+            content:
+              - Dmp53
+          - type: Superscript
+            content:
+              - RNAi
+          - ' (E), '
+          - type: Emphasis
+            content:
+              - Bsk
+          - type: Superscript
+            content:
+              - DN
+          - ' (F), '
+          - type: Emphasis
+            content:
+              - hep
+          - type: Superscript
+            content:
+              - type: Emphasis
+                content:
+                  - r75/+
+          - ' (G), '
+          - type: Emphasis
+            content:
+              - egr
+          - type: Superscript
+            content:
+              - RNAi
+          - ' (H) and '
+          - type: Emphasis
+            content:
+              - grnd
+          - type: Superscript
+            content:
+              - RNAi
+          - ' (I). (J) qRT-PCR showing '
+          - type: Emphasis
+            content:
+              - mmp1
+          - ' mRNA levels in wing discs expressing the indicated transgenes under the control of the '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - ' driver. (K) Histogram plotting PH3 positive cells in the anterior (A) compartment of wing imaginal discs from individuals expressing the indicated transgenes under the control of '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . (L) Representative adult wings from individuals expressing the
+            indicated transgenes in posterior compartment (blue) under the
+            control of 
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . The expected size of the neighboring domain to give rise to a
+            well-proportioned adult wing is depicted. (M) Histogram plotting
+            normalized area of the posterior (P; blue bars) and anterior (A;
+            grey bars) compartments of adult wings from individuals expressing
+            RA
+          - type: Superscript
+            content:
+              - CS
+          - ' along with the indicated transgenes with '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - . Blocking JNK pathway by co-expression of Tak
+          - type: Superscript
+            content:
+              - DN
+          - ', Bsk'
+          - type: Superscript
+            content:
+              - DN
+          - ' or Fos'
+          - type: Superscript
+            content:
+              - DN
+          - ' totally reverted the non-autonomous reduction in tissue size caused by RA expression. ** p<0.01. (N-O) Wing imaginal discs from individuals expressing RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' along with the indicated transgenes under the control of '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - ' and stained to visualize TUNEL (N) and BrdU incorporation (O).'
+        type: Paragraph
+    type: Figure
+  - content:
+      - 'The observation that Mmp1 and '
+      - type: Emphasis
+        content:
+          - puckered
+      - ' expression were restricted to transgene-expressing cell populations suggests that Egr/JNK signaling mediates an autonomous apoptotic response. Indeed, depletion of '
+      - type: Emphasis
+        content:
+          - grnd
+      - ' markedly reduced the number of TUNEL-positive cells caused by RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression ('
+      - content:
+          - Fig 4N
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - >-
+        ). In addition to the expected role of JNK in apoptosis, we questioned
+        whether JNK signaling might contribute to the non-autonomous response of
+        the tissue. To this end, we inhibited JNK signaling specifically in the
+        RA
+      - type: Superscript
+        content:
+          - CS
+      - >-
+        -expressing compartment and analyzed proliferation rates in adjacent
+        cell populations. Reduced JNK pathway activation, either by using Tak1
+      - type: Superscript
+        content:
+          - DN
+      - ' expression or '
+      - type: Emphasis
+        content:
+          - hep
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - r75
+      - ' mutants, largely rescued the non-autonomous effects of RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression on BrdU incorporation levels and number of mitotic PH3-positive cells ('
+      - content:
+          - Fig 4K and 4O
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - >-
+        ). We next analyzed the resulting adult wings when activation of the JNK
+        pathway was impaired. Notably, the non-autonomous reduction in tissue
+        size caused by RA expression was completely rescued by the co-expression
+        of Tak1
+      - type: Superscript
+        content:
+          - DN
+      - ' or Bsk'
+      - type: Superscript
+        content:
+          - DN
+      - ' ('
+      - content:
+          - Fig 4L and 4M
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - >-
+        ). Similar results were obtained using a dominant negative form of dFos,
+        a transcription factor acting downstream of JNK signaling (dFos
+      - type: Superscript
+        content:
+          - DN
+      - ', '
+      - content:
+          - Fig 4L and 4M
+        target: '#pgen.1008133.g004'
+        relation: fig
+        type: Link
+      - ). The expression of Tak1
+      - type: Superscript
+        content:
+          - DN
+      - ', Bsk'
+      - type: Superscript
+        content:
+          - DN
+      - ' or '
+      - type: Emphasis
+        content:
+          - grnd
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' in otherwise '
+      - type: Emphasis
+        content:
+          - wild-type
+      - ' wings had no effect on wing size ('
+      - content:
+          - S4C Fig
+        target: '#pgen.1008133.s004'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). Overall, these results indicate that, upon growth depletion, the JNK
+        pathway exerts an essential non-autonomous role in reducing the size of
+        adjacent cell populations.
+    type: Paragraph
+  - content:
+      - >-
+        Dilp8 is required to coordinate intra-organ growth downstream of
+        Eiger/JNK signaling
+    depth: 2
+    id: sec006
+    type: Heading
+  - content:
+      - 'Recently, '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' insulin-like peptide 8 (Dilp8) has been identified as a signaling molecule produced by imaginal discs in response to tissue damage ['
+      - target: '#pgen.1008133.ref040'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref041'
+        type: Cite
+      - >-
+        ]. Dilp8 production by slow-growing or damaged tissues results in
+        activation of neuronal receptor Lgr3, which in turn downregulates the
+        synthesis of Ecdysone, a steroid hormone secreted by the prothoracic
+        gland that, in its active form, stimulates metamorphosis, regulates
+        molting in insects and promotes systemic growth. Consequently, the
+        induction of Dilp8 production by damaged tissues delays metamorphosis
+        and reduces larval and imaginal discs growth [
+      - target: '#pgen.1008133.ref040'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref044'
+        type: Cite
+      - ']. Interestingly, we observed strong upregulation of '
+      - type: Emphasis
+        content:
+          - dilp8
+      - ' transcript levels upon RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' expression under the control of two different Gal4 drivers expressed in the wing ('
+      - type: Emphasis
+        content:
+          - bx-Gal4
+      - ' and '
+      - type: Emphasis
+        content:
+          - rn-Gal4
+      - '; '
+      - content:
+          - Fig 5A and 5B
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - ', see also '
+      - content:
+          - S1A Fig
+        target: '#pgen.1008133.s001'
+        relation: supplementary-material
+        type: Link
+      - ' and '
+      - content:
+          - S1 Table
+        target: '#pgen.1008133.s007'
+        relation: supplementary-material
+        type: Link
+      - '), and induction of the '
+      - type: Emphasis
+        content:
+          - dilp8
+      - type: Superscript
+        content:
+          - MI00727
+      - ' protein trap reporter (hereafter Dilp8-GFP, ['
+      - target: '#pgen.1008133.ref041'
+        type: Cite
+      - >-
+        ]) when the transgene was expressed in the dorsal compartment of the
+        wing with the 
+      - type: Emphasis
+        content:
+          - ap-Gal4
+      - ' driver ('
+      - content:
+          - Fig 5C and 5D
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 5
+    caption:
+      - content:
+          - >-
+            JNK-dependent Dilp8 expression reduces the size of adjacent cell
+            populations.
+        depth: 2
+        id: sec006
+        type: Heading
+      - content:
+          - '(A-B) qRT-PCR showing '
+          - type: Emphasis
+            content:
+              - dilp8
+          - ' transcript levels in wing discs (A) or full larvae (B) expressing the indicated transgenes under the control of '
+          - type: Emphasis
+            content:
+              - bx-
+          - ' or '
+          - type: Emphasis
+            content:
+              - rn
+          - '-'
+          - type: Emphasis
+            content:
+              - Gal4
+          - >-
+            . Results are expressed as fold induction respect to control wing
+            discs. (C-E) Wing discs carrying a Dilp8-GFP protein trap and
+            expressing the indicated transgenes with 
+          - type: Emphasis
+            content:
+              - ap-Gal4
+          - ' (expressed in dorsal compartment) were labeled to visualize GFP (green or grey) and myrTomato (red). (F) Histogram plotting normalized area of the P (blue bars) and A (grey bars) compartments of adult wings from individuals expressing RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' alone or in combination with '
+          - type: Emphasis
+            content:
+              - dilp8
+          - type: Superscript
+            content:
+              - RNAi
+          - ' using '
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . (G) Histogram plotting normalized wing size from individuals
+            expressing RA
+          - type: Superscript
+            content:
+              - CS
+          - ' along with the indicated transgenes with '
+          - type: Emphasis
+            content:
+              - ey-Gal4
+          - ' (drives expression to the eye imaginal disc). Horizontal line shows the size of the normalized control wings ('
+          - type: Emphasis
+            content:
+              - ey-Gal4/UAS-GFP
+          - >-
+            ). (H-L) BrdU incorporation assay in larval wing discs from
+            individuals expressing GFP along with the indicated transgenes under
+            the control of 
+          - type: Emphasis
+            content:
+              - en-Gal4
+          - >-
+            . Note the non-autonomous reduction in BrdU incorporation levels
+            caused by 
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' and RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' expression in Dilp8 knock-down wing discs.'
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        A number of signaling pathways, including JNK and the bZip DNA binding
+        protein Xrp1, have been shown to regulate Dilp8 expression in response
+        to various types of stress [
+      - target: '#pgen.1008133.ref040'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref044'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref046'
+        type: Cite
+      - >-
+        ]. The inhibition of JNK, but not Xrp1, caused a significant reduction
+        in the upregulation of 
+      - type: Emphasis
+        content:
+          - dilp8
+      - ' mRNA levels caused by RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' ('
+      - content:
+          - Fig 5B
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S5A Fig
+        target: '#pgen.1008133.s005'
+        relation: supplementary-material
+        type: Link
+      - '). Consistently, Egr/JNK pathway inhibition suppressed RA'
+      - type: Superscript
+        content:
+          - CS
+      - '-induced Dilp8-GFP expression ('
+      - content:
+          - Fig 5E
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S5D Fig
+        target: '#pgen.1008133.s005'
+        relation: supplementary-material
+        type: Link
+      - ). To examine whether Dilp8 production following RA
+      - type: Superscript
+        content:
+          - CS
+      - ' expression is required to reduce the growth of adjacent cell populations, we co-expressed '
+      - type: Emphasis
+        content:
+          - dilp8
+      - type: Superscript
+        content:
+          - RNAi
+      - ' and RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' in wing discs using '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - ', and analyzed adult wing size. Depletion of '
+      - type: Emphasis
+        content:
+          - dilp8
+      - ' rescued the non-autonomous reduction in tissue size caused by RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression ('
+      - content:
+          - Fig 5F
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - >-
+        ). The fact that Dilp8 production affects Ecdysone synthesis point to a
+        systemic, rather than a local, role of this hormone in promoting growth.
+        Indeed, and indicative of systemic mechanisms involved in coordinating
+        inter-organ growth, RA
+      - type: Superscript
+        content:
+          - CS
+      - ' expression in eye discs ('
+      - type: Emphasis
+        content:
+          - ey
+      - '>RA'
+      - type: Superscript
+        content:
+          - CS
+      - ) showed a non-autonomous reduction of adult wing size (
+      - content:
+          - Fig 5G
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - >-
+        ) and RNAi-mediated inhibition of Grnd or Dilp8 in slow-growing eye
+        discs fully rescued wing size (
+      - content:
+          - Fig 5G
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - >-
+        ). All together, these results indicate that Dilp8 expression downstream
+        of Egr/JNK is required to coordinate organ growth and final tissue size.
+        We next analyzed the contribution of Dilp8 to the non-autonomous
+        reduction of proliferation rates caused by RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - >-
+        . Surprisingly, Dilp8 inhibition did not rescue the non-autonomous
+        reduction in BrdU incorporation levels caused by RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' expression ('
+      - content:
+          - Fig 5H–5L
+        target: '#pgen.1008133.g005'
+        relation: fig
+        type: Link
+      - >-
+        ). However, we noticed that Dilp8 depletion rescued not only the size
+        but also the number of cells in the resulting adult wings (
+      - content:
+          - S5C Fig
+        target: '#pgen.1008133.s005'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). Taken together, these results point to the existence of signaling
+        molecules regulated by the Dmp53/Egr/JNK axis and acting during larval
+        stages to reduce, in a Dilp8-independent and non-cell autonomous manner,
+        proliferation rates. Our results also suggest the presence of
+        alternative mechanisms, most probably acting in subsequent developmental
+        periods, to adjust final cell number to tissue size.
+    type: Paragraph
+  - content:
+      - >-
+        Caspase-dependent ROS production downstream of Egr/JNK signaling reduces
+        proliferation rates non-cell-autonomously
+    depth: 2
+    id: sec007
+    type: Heading
+  - content:
+      - Our GO analysis of RA
+      - type: Superscript
+        content:
+          - CS
+      - >-
+        -expressing wing discs revealed an enrichment in genes involved in cell
+        redox homeostasis, including the expression of several glutathione
+        S-transferases and other detoxifying genes (
+      - content:
+          - Fig 1J
+        target: '#pgen.1008133.g001'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S3 Table
+        target: '#pgen.1008133.s009'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ), thus suggesting changes in the levels of ROS. To monitor ROS
+        production in developing wing primordia, we used the 
+      - type: Emphasis
+        content:
+          - gstD1
+      - '-GFP reporter, which is activated by ROS in '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' tissues ['
+      - target: '#pgen.1008133.ref047'
+        type: Cite
+      - ']. '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression was strongly induced not only in the growth-depleted
+        compartment but also in the neighboring compartment following RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' expression ('
+      - content:
+          - Fig 6A–6B’
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - ' and '
+      - content:
+          - S6A Fig
+        target: '#pgen.1008133.s006'
+        relation: supplementary-material
+        type: Link
+      - '). Whereas '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression was observed mainly at the basal side of the epithelium
+        in the transgene-expressing compartment (
+      - content:
+          - Fig 6B’
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - '), which is consistent with cellular stress and apoptosis induction, '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression in the neighboring territory was found in intact
+        epithelial cells (
+      - content:
+          - Fig 6B
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - '). Importantly, RA'
+      - type: Superscript
+        content:
+          - CS
+      - '-induced '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression was largely rescued by supplementing the medium with
+        antioxidants N-acetylcysteine (NAC), vitamin C and vitamin E (
+      - content:
+          - Fig 6C
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - '), whereas vehicle treatment had no effect on this parameter ('
+      - content:
+          - S6A Fig
+        target: '#pgen.1008133.s006'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ). These observations indicate that ROS produced in the slow-growing
+        cell population spread to the neighboring compartment.
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 6
+    caption:
+      - content:
+          - >-
+            JNK and Caspase-dependent ROS production reduces proliferation rates
+            of adjacent cell populations.
+        depth: 2
+        id: sec007
+        type: Heading
+      - content:
+          - '(A-E) Wing discs carrying the '
+          - type: Emphasis
+            content:
+              - gstD1
+          - '-GFP reporter and expressing the indicated transgenes with '
+          - type: Emphasis
+            content:
+              - ap-Gal4
+          - ' were labeled to visualize GFP (green or grey) and myrTomato (red). RA'
+          - type: Superscript
+            content:
+              - CS
+          - ' expression showed increased levels of '
+          - type: Emphasis
+            content:
+              - gstD1
+          - >-
+            -GFP in both the transgene-expressing and non-expressing domains
+            (B-B’). Antioxidant treatment (C), co-expression of Puckered (puc;
+            D) or p35 (E) fully rescued RA-induced 
+          - type: Emphasis
+            content:
+              - gstD1
+          - >-
+            -GFP levels. ap, apical; bs, basal. (F-H) BrdU and TUNEL assays in
+            larval wing discs from individuals expressing GFP along with RA
+          - type: Superscript
+            content:
+              - CS
+          - ' or '
+          - type: Emphasis
+            content:
+              - dmyc
+          - type: Superscript
+            content:
+              - RNAi
+          - ' under the control of '
+          - type: Emphasis
+            content:
+              - en-
+          - ' or '
+          - type: Emphasis
+            content:
+              - ci-Gal4
+          - ' and cultured in a medium supplemented with antioxidants.'
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        ROS are associated with cellular stress and tissue damage and are
+        important during wound healing and regeneration in many model organisms
+        [
+      - target: '#pgen.1008133.ref048'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref050'
+        type: Cite
+      - ']. During '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' wing regeneration, a burst of ROS generated by dying cells propagates to the nearby surviving tissue, stimulating JNK signaling, which is required for tissue repair ['
+      - target: '#pgen.1008133.ref051'
+        type: Cite
+      - >-
+        ]. We then addressed whether ROS were produced downstream of the
+        apoptotic pathway in slow-growing compartments. To this end, we
+        inhibited apoptosis in RA
+      - type: Superscript
+        content:
+          - CS
+      - '-expressing cells and assessed levels of '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression. Blocking apoptosis by expression of the baculovirus
+        caspase inhibitor p35 largely impaired RA
+      - type: Superscript
+        content:
+          - CS
+      - '-induced '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression in both transgene-expressing and adjacent wild-type
+        territories (
+      - content:
+          - Fig 6E
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - >-
+        ). Consistent with a role of Egr/JNK signaling upstream of the apoptotic
+        pathway, 
+      - type: Emphasis
+        content:
+          - gstD1
+      - '-GFP was not induced upon expression of the JNK phosphatase Puckered ('
+      - content:
+          - Fig 6D
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - >-
+        We have previously shown that activation of the apoptotic pathway in
+        slow-growing domains is required to reduce the proliferation rates of
+        adjacent cell populations [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]. Interestingly, the non-autonomous reduction of BrdU incorporation
+        levels caused by RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' expression was largely rescued by supplementing the medium with antioxidants ('
+      - content:
+          - Fig 6F–6G
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - '). Both '
+      - type: Emphasis
+        content:
+          - gstD1
+      - >-
+        -GFP expression and proliferation rates were similarly rescued by
+        overexpression of the ROS scavengers’ catalase (Cat) and superoxide
+        dismutase 2 (Sod2) (
+      - content:
+          - S6A and S6B Fig
+        target: '#pgen.1008133.s006'
+        relation: supplementary-material
+        type: Link
+      - '). Of note, neither RA'
+      - type: Superscript
+        content:
+          - CS
+      - '-induced apoptosis ('
+      - content:
+          - Fig 6H
+        target: '#pgen.1008133.g006'
+        relation: fig
+        type: Link
+      - ) nor Dilp8-GFP upregulation upon RA
+      - type: Superscript
+        content:
+          - CS
+      - ' expression ('
+      - content:
+          - S5E Fig
+        target: '#pgen.1008133.s005'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ) were significantly reduced following medium antioxidant
+        supplementation. Collectively, these results indicate that ROS
+        production downstream of Egr/JNK and the apoptotic machinery contributes
+        to the non-autonomous reduction in proliferation rates.
+    type: Paragraph
+  - content:
+      - Discussion
+    depth: 1
+    id: sec008
+    type: Heading
+  - content:
+      - >-
+        During animal development, the coordination of intra- and inter-organ
+        growth buffers local growth perturbations and produces individuals with
+        a proper shape and size. Despite the relevance of this process, the
+        molecular mechanisms underlying it are poorly understood. Using the 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' wing as a model system, we previously demonstrated that impairing growth within defined territories along the wing primordium triggers a Dmp53-dependent reduction of growth and proliferation rates in adjacent non-perturbed cell populations, thus contributing to the generation of smaller but well-proportioned adult wings ['
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]. Here we provide evidence that Dmp53 regulates intra-organ growth by
+        inducing the expression of the 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' TNF ligand Eiger ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref023'
+        type: Cite
+      - >-
+        ]. We show that Eiger-dependent activation of the JNK pathway in
+        slow-growing compartments is required to reduce the growth and
+        proliferation of adjacent cell populations in a non-cell-autonomous
+        manner. Furthermore, our findings imply that the non-autonomous
+        regulation of tissue growth and proliferation rates can be uncoupled and
+        that they are independently regulated by two distinct molecular
+        mechanisms downstream of Eiger-JNK signaling (
+      - content:
+          - Fig 7
+        target: '#pgen.1008133.g007'
+        relation: fig
+        type: Link
+      - >-
+        ). On the one hand, Eiger/JNK induces the expression of the relaxin-like
+        Dilp8 protein, which acts systemically to reduce growth in adjacent cell
+        populations without affecting proliferation rates. On the other hand,
+        ROS production downstream of Eiger/JNK acts locally to regulate the
+        proliferation rates of adjacent epithelial cells. In this regard, we
+        show how signals from either neighboring cells or produced at a systemic
+        level play a fundamental role in growth coordination among different
+        parts of an organ (
+      - content:
+          - Fig 7
+        target: '#pgen.1008133.g007'
+        relation: fig
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 7
+    caption:
+      - content:
+          - >-
+            A Dmp53-mediated two-step mechanism regulates growth and
+            proliferation in adjacent populations through the production of
+            systemic and local signals.
+        depth: 1
+        id: sec008
+        type: Heading
+      - content:
+          - >-
+            Targeted expression of RA or depletion of dMyc activates Eiger-JNK
+            signaling downstream of Dmp53. JNK-dependent expression of Dilp8
+            plays a crucial role in systemically coordinating the size of
+            adjacent cell populations. On the other hand, JNK-dependent ROS
+            production acts locally to regulate proliferation rates in adjacent
+            cell populations.
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        The ligands of the TNF family are well conserved throughout evolution,
+        and they act mainly through JNK signaling to regulate growth,
+        proliferation and apoptosis [
+      - target: '#pgen.1008133.ref052'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref053'
+        type: Cite
+      - ']. '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' type II transmembrane protein Eiger belongs to this family and exerts intrinsic tumor suppressor activity in epithelia by eliminating oncogenic cells through local endocytic JNK activation ['
+      - target: '#pgen.1008133.ref054'
+        type: Cite
+      - >-
+        ]. Eiger expression in apoptotic cells activates the JNK pathway in
+        neighboring cells, thus propagating apoptotic JNK signaling along the
+        tissue as part of a process called apoptosis-induced apoptosis [
+      - target: '#pgen.1008133.ref028'
+        type: Cite
+      - >-
+        ]. Moreover, it has been reported that interactions between tumor cells
+        and the tumor microenvironment mediated by Eiger and its receptor Grnd
+        also drive JNK activation, tumor growth, and invasive behavior [
+      - target: '#pgen.1008133.ref054'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref056'
+        type: Cite
+      - >-
+        ]. In this work, we showed that Eiger expression in growth-deficient
+        cell populations is required for both apoptotic and proliferative
+        responses in unperturbed territories. Eiger-dependent JNK activation was
+        restricted to slow-growing domains, and inhibition of Grnd-JNK signaling
+        in the growth-depleted territory was sufficient to restore normal size
+        in adjacent domains. Therefore, although Eiger can act as a soluble
+        ligand and activate JNK signaling in distant cells under certain
+        circumstances, the role of this protein in coordinating intra-organ
+        growth seems to be restricted to the growth-depleted tissue and involves
+        local JNK activation.
+    type: Paragraph
+  - content:
+      - >-
+        As mentioned before, the JNK pathway governs proliferation and apoptosis
+        during regeneration and tumorigenesis in 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' imaginal discs ['
+      - target: '#pgen.1008133.ref033'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref036'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref038'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref057'
+        type: Cite
+      - >-
+        ]. In addition, JNK signaling regulates organ size during development
+        through a non-canonical, Jun/Fos-independent mechanism [
+      - target: '#pgen.1008133.ref037'
+        type: Cite
+      - >-
+        ]. Here we provide evidence that JNK coordinates intra-organ growth in a
+        Fos-dependent manner through a mechanism involving the expression of
+        Dilp8 and generation of ROS, two distinct signaling events that regulate
+        tissue size and cell number. Dilp8, which was recently identified as a
+        signaling molecule produced by damaged imaginal discs, delays
+        metamorphosis and systemically reduces growth [
+      - target: '#pgen.1008133.ref040'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref041'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref044'
+        type: Cite
+      - >-
+        ]. In developing wing discs, we have shown that Dilp8 expression in
+        slow-growing cell populations contributes to a size reduction of
+        adjacent wild-type territories and thus participates in organ proportion
+        maintenance. The production of Dilp8 by stressed or growth-defective
+        tissues activates Lgr3+ neurons in the central brain to regulate the
+        synthesis of molting hormone ecdysone and/or insulin-like peptides,
+        thereby coordinating growth with developmental timing [
+      - target: '#pgen.1008133.ref043'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref055'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref058'
+        type: Cite
+      - >-
+        ]. In addition to the role of ecdysone in the regulation of
+        developmental transitions, moderate ecdysone signaling has been shown to
+        promote the growth of imaginal discs both 
+      - type: Emphasis
+        content:
+          - in vitro
+      - ' and '
+      - type: Emphasis
+        content:
+          - in vivo
+      - ' ['
+      - target: '#pgen.1008133.ref059'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref062'
+        type: Cite
+      - >-
+        ]. Indeed, organ growth coordination in response to localized growth
+        defects is mediated, at least in part, by reduced ecdysone levels [
+      - target: '#pgen.1008133.ref019'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref021'
+        type: Cite
+      - >-
+        ]. Remarkably, the coordination of growth between adjacent wing disc
+        compartments can be disrupted by exogenous feeding with
+        20-hydroxyecdysone (20E) [
+      - target: '#pgen.1008133.ref019'
+        type: Cite
+      - >-
+        ]. Therefore, Eiger/JNK-induced Dilp8 expression in the slow-growing
+        compartment most likely regulates growth in a non-autonomous manner via
+        modulation of ecdysone levels.
+    type: Paragraph
+  - content:
+      - >-
+        A number of independent pathways have been shown to activate Dilp8
+        expression upon several insults, including tissue damage, tissue
+        regeneration, neoplastic growth and impaired ribosomal function [
+      - target: '#pgen.1008133.ref040'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref042'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref044'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref046'
+        type: Cite
+      - >-
+        ]. While activation of the JNK and Hippo signaling pathways contributes
+        to the induction of Dilp8 expression in neoplastic tumors, the JAK/STAT
+        pathway drives the expression of this signaling molecule in regenerating
+        tissues. Targeted depletion of ribosomal proteins in developing wing
+        primordia activates Dilp8 expression through the transcription factor
+        Xrp1, and the Xrp1-Dilp8 axis has been shown to have an impact on the
+        growth rates of adjacent cell populations within the wing disc, as well
+        on the growth rates of other primordia [
+      - target: '#pgen.1008133.ref044'
+        type: Cite
+      - >-
+        ]. Our data provide evidence of an Xrp1-independent and JNK-dependent
+        mechanism by which Dilp8 expression is activated in growth-depleted
+        territories. These results suggest that distinct signaling pathways,
+        along with a combination of transcription factors, differentially
+        regulate Dilp8 expression in function of the nature of the stress and
+        the cellular context.
+    type: Paragraph
+  - content:
+      - >-
+        In addition to their function in driving apoptosis, ROS also act as
+        signaling molecules, influencing numerous cellular responses, including
+        cell proliferation, differentiation and senescence [
+      - target: '#pgen.1008133.ref063'
+        type: Cite
+      - –
+      - target: '#pgen.1008133.ref065'
+        type: Cite
+      - >-
+        ]. Although p53 is an important regulator of intracellular ROS levels in
+        vertebrates, downstream mediators of p53 remain to be elucidated [
+      - target: '#pgen.1008133.ref066'
+        type: Cite
+      - >-
+        ]. Here we have shown that ROS production downstream of JNK and the
+        apoptotic machinery is required to reduce proliferation rates in 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' developing epithelial tissues in a non-cell-autonomous manner. In recent reports, ROS were found to be required for apoptosis-induced proliferation and tissue regeneration of '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' imaginal discs ['
+      - target: '#pgen.1008133.ref051'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref067'
+        type: Cite
+      - >-
+        ]. In the first case, extracellular ROS generated by the NADPH oxidase
+        Duox recruit hemocytes to the dying tissue. Hemocytes release Eiger,
+        which promotes JNK activation in epithelial disc cells, thereby driving
+        compensatory proliferation and hyperplastic tissue growth [
+      - target: '#pgen.1008133.ref067'
+        type: Cite
+      - >-
+        ]. We found no evidence that hemocytes have a potential analogous role
+        in coordinated intra-organ growth. Our results therefore strongly
+        support the notion that ROS-dependent hemocyte recruitment is
+        context-dependent and that it relies on sustained signals produced by
+        dying cells. Following genetic or physical tissue damage, apoptotic
+        cells generate a burst of ROS that propagates to the nearby surviving
+        cells, thereby stimulating JNK signaling, which is required for cell
+        proliferation and tissue repair [
+      - target: '#pgen.1008133.ref051'
+        type: Cite
+      - >-
+        ]. Thus, whereas ROS-stimulated JNK activity promotes cell proliferation
+        in the context of tissue regeneration, JNK-induced ROS reduce
+        proliferation to adjust cell number in a non-cell autonomous manner.
+    type: Paragraph
+  - content:
+      - Materials and methods
+    depth: 1
+    id: sec009
+    type: Heading
+  - content:
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' strains and maintenance'
+    depth: 2
+    id: sec010
+    type: Heading
+  - content:
+      - 'The following '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' stocks were used: '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - bx-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - rn-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - ci-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - sal-PE-Gal4
+      - ' ('
+      - type: Emphasis
+        content:
+          - sal-Gal4
+      - ' in the text), '
+      - type: Emphasis
+        content:
+          - ap-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - dpp-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - actin-FLPout-Gal4
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-RA
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - CS
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-Bsk
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - DN
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-p35
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-Dmp53
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - H159N
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-Dmp53
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-Tak1
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - K46R
+      - ' (Tak'
+      - type: Superscript
+        content:
+          - DN
+      - ' in the text), '
+      - type: Emphasis
+        content:
+          - h
+      - ep
+      - type: Superscript
+        content:
+          - r75
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-Sod2
+      - ', and '
+      - type: Emphasis
+        content:
+          - UAS-Cat
+      - ' from the Bloomington Stock Center (USA); and '
+      - type: Emphasis
+        content:
+          - UAS-eiger
+      - type: Superscript
+        content:
+          - IR
+      - ' ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - '], '
+      - type: Emphasis
+        content:
+          - UAS-eiger
+      - type: Superscript
+        content:
+          - RNAi
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-grnd
+      - type: Superscript
+        content:
+          - RNAi
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ', '
+      - type: Emphasis
+        content:
+          - UAS-Dmp53
+      - type: Superscript
+        content:
+          - RNAi
+      - ', and '
+      - type: Emphasis
+        content:
+          - Eiger-GFP
+      - ' (fTRG library) from the Vienna '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' RNAi Center (VDRC, Austria). The following stocks are described in Flybase: '
+      - type: Emphasis
+        content:
+          - UAS-eiger
+      - type: Superscript
+        content:
+          - IR
+      - ' ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - '], '
+      - type: Emphasis
+        content:
+          - eiger
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - '1'
+      - ' ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - '], '
+      - type: Emphasis
+        content:
+          - eiger
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - '3'
+      - ' ['
+      - target: '#pgen.1008133.ref022'
+        type: Cite
+      - '], '
+      - type: Emphasis
+        content:
+          - eiger
+      - '-lacZ ['
+      - target: '#pgen.1008133.ref030'
+        type: Cite
+      - '], '
+      - type: Emphasis
+        content:
+          - UAS-Fos
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - C-Ala
+      - ' (Fos'
+      - type: Superscript
+        content:
+          - DN
+      - ' in the text ['
+      - target: '#pgen.1008133.ref033'
+        type: Cite
+      - >-
+        ]). RNAi lines for secreted signaling molecules were obtained from VDRC
+        (Supporting Information 
+      - content:
+          - S2 Table
+        target: '#pgen.1008133.s008'
+        relation: supplementary-material
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - 'Flies were reared at 25°C on '
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' standard medium (4% glucose, 40 g/L yeast, 1% agar, 25 g/L wheat flour, 25 g/L cornflour, 4 ml/L propionic acid and 1.1 g/L nipagin).'
+    type: Paragraph
+  - content:
+      - For experiments using the cold-sensitive version of Ricin-A (RA
+      - type: Superscript
+        content:
+          - CS
+      - '), embryos containing the Gal4 driver and the '
+      - type: Emphasis
+        content:
+          - UAS-RA
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - CS
+      - ' transgene were collected over 24 h and maintained at 18°C (restrictive temperature). Early second instar larvae were switched to 29°C (permissive temperature) until late L3 (for wing disc experiments) or until adulthood (for adult wing analysis).'
+    type: Paragraph
+  - content:
+      - >-
+        For experiments using the Gal4/Gal80ts system, embryos were collected
+        over 24 h and maintained at 18°C (restrictive temperature). In order to
+        induce transgene expression, 96-h-old larvae were switched to 29°C
+        (permissive temperature) for 12 h before wing disc dissection.
+    type: Paragraph
+  - content:
+      - Immunostaining
+    depth: 2
+    id: sec011
+    type: Heading
+  - content:
+      - >-
+        Third instar larvae were dissected in cold phosphate-buffered saline
+        (PBS) and fixed in 4% formaldehyde/PBS for 20 min at room temperature.
+        They were then washed and permeabilized in PBT (0.2% Triton X-100 in
+        PBS) for 30 min and blocked in BBT (0.3% BSA, 250 mM NaCl in PBT) for 1
+        h. Samples were incubated overnight at 4°C with primary antibody diluted
+        in BBT, washed three times (15 min each) in BBT and incubated with
+        secondary antibodies and DAPI (1 μg/ml) for 1.5 hour at room
+        temperature. After three washes with PBT (15 min each), wing discs were
+        placed in mounting medium (80% glycerol/PBS containing 0.05%
+        n-Propyl-Gallate). All steps were performed on a rocking platform at the
+        indicated temperature. The following primary antibodies were used: mouse
+        anti-BrdU (G3G4; Developmental Studies Hybridoma Bank (DSHB)); mouse
+        anti-MMP1 (3A6B4, DSHB); mouse anti-p53 (7A4, DSHB); rabbit
+        anti-p-Histone H3 (sc-8656, Santa Cruz); rabbit anti-β-Gal (A11132,
+        Invitrogen); and sheep anti-Digoxigenin-AP (#11093274910, Roche). The
+        following secondary antibodies were used: anti-mouse IgG-Alexa Fluor
+        594; anti-mouse IgG-Alexa Fluor 488; anti-rabbit IgG-Alexa Fluor 594;
+        and anti-rabbit IgG-Alexa Fluor 488 (Jackson InmunoResearch).
+    type: Paragraph
+  - content:
+      - TUNEL and BrdU assays
+    depth: 2
+    id: sec012
+    type: Heading
+  - content:
+      - 'TUNEL was performed as described in ['
+      - target: '#pgen.1008133.ref068'
+        type: Cite
+      - >-
+        ] using the In Situ Cell Death Detection Kit provided by Roche
+        Diagnostics. BrdU incorporation was performed as described in [
+      - target: '#pgen.1008133.ref068'
+        type: Cite
+      - >-
+        ]. Briefly, third-instar larvae were dissected in PBS and incubated with
+        5-bromo-2’-deoxy-uridine (10 μM, Roche) for 45 min. They were then
+        washed, and fixed in 4% formaldehyde. Following incubation with HCl (2N)
+        for 30 min, samples were neutralized with Borax (100 mM) and
+        immunostained as before.
+    type: Paragraph
+  - content:
+      - Antioxidant treatment
+    depth: 2
+    id: sec013
+    type: Heading
+  - content:
+      - >-
+        To chemically prevent ROS production, first-instar larvae were
+        transferred to vials containing standard fly food supplemented with the
+        following anti-oxidant concentrations: vitamin E (20 μg/ml); vitamin C
+        (250 μg/ml); and N-acetylcysteine (NAC; 200 μg/ml). Control larvae were
+        transferred in parallel to vials containing standard food supplemented
+        with vehicle. Fresh anti-oxidant stock solutions (10 mg/ml of NAC,
+        diluted in H2O; 2 mg/ml of vitamin E, diluted in absolute ethanol; 25
+        mg/ml of vitamin E, diluted in H2O) were prepared every week and added
+        to the vials every 48 h.
+    type: Paragraph
+  - content:
+      - Image processing
+    depth: 2
+    id: sec014
+    type: Heading
+  - content:
+      - >-
+        Images were acquired on a Leica SP8 inverted confocal microscope and
+        analyzed and processed using Fiji [
+      - target: '#pgen.1008133.ref069'
+        type: Cite
+      - >-
+        ] and Adobe Photoshop. Wing disc orientation and/or position was
+        adjusted in the field of view for images presented. No relevant
+        information was affected. The original images are available on request.
+    type: Paragraph
+  - content:
+      - RNA in situ hybridization
+    depth: 2
+    id: sec015
+    type: Heading
+  - content:
+      - 'In situ hybridization was performed as described in ['
+      - target: '#pgen.1008133.ref068'
+        type: Cite
+      - ']. Antisense DIG-labeled '
+      - type: Emphasis
+        content:
+          - eiger
+      - ' RNA probe was prepared from XhoI-linearized pBSK-eiger plasmid using T3 RNA polymerase (DIG RNA Labeling Kit, Roche) and detected with the DIG Nucleic Acid Detection Kit (Roche). Wing imaginal discs were mounted in glycerol and imaged with a Nikon E200 bright-field microscope.'
+    type: Paragraph
+  - content:
+      - Quantification of adult wing size and cell number
+    depth: 2
+    id: sec016
+    type: Heading
+  - content:
+      - >-
+        The size of the A and P compartments in adult wings was measured using
+        Fiji. Cell density was measured as the number of hairs (each wing cell
+        differentiates a hair) per defined area, as previously described [
+      - target: '#pgen.1008133.ref017'
+        type: Cite
+      - >-
+        ]. At least 10 wings per genotype were scored. Calculated area and cell
+        density values for the different genotypes were normalized to control
+        GFP-expressing wings. Average values and corresponding standard
+        deviation (SD) were calculated, and a two-tailed unpaired Student’s t
+        test was carried out. Calculations and bar graphs were made using the
+        Graph pad Prism 7 software.
+    type: Paragraph
+  - content:
+      - RNA isolation and quantitative RT-PCR
+    depth: 2
+    id: sec017
+    type: Heading
+  - content:
+      - >-
+        To measure mRNA levels, total RNA was extracted from wing imaginal discs
+        of 30 larvae using TRIZOL RNA Isolation Reagent (Invitrogen). First
+        strand cDNA synthesis was performed using an oligo(dT)18 primer and
+        RevertAid reverse transcriptase (Thermo Scientific) under standard
+        conditions. Quantitative PCR was performed on an aliquot of the cDNA
+        with specific primers (
+      - content:
+          - S4 Table
+        target: '#pgen.1008133.s010'
+        relation: supplementary-material
+        type: Link
+      - >-
+        ) using the StepOnePlus Real-Time PCR System. Expression values were
+        normalized to actin transcript levels. In all cases, three independent
+        samples were collected from each condition and genotype, and duplicate
+        measurements were taken.
+    type: Paragraph
+  - content:
+      - Chromatin immunoprecipitation
+    depth: 2
+    id: sec018
+    type: Heading
+  - content:
+      - 'ChIP assays were performed following the modEncode protocol ['
+      - target: '#pgen.1008133.ref070'
+        type: Cite
+      - >-
+        ]. Fifty L3 larvae were dissected for ChIP assays using anti-p53
+        antibodies (DSHB; 7A4). The primers used to detect immunoprecipitated
+        DNA are listed in 
+      - content:
+          - S4 Table
+        target: '#pgen.1008133.s010'
+        relation: supplementary-material
+        type: Link
+      - .
+    type: Paragraph
+  - content:
+      - Microarray
+    depth: 2
+    id: sec019
+    type: Heading
+  - content:
+      - >-
+        Transcription profiles were obtained at the Functional Genomics Core of
+        IRB Barcelona, as previously described [
+      - target: '#pgen.1008133.ref071'
+        type: Cite
+      - >-
+        ]. Three independent RNA samples were prepared from wing imaginal discs
+        of late L3 larvae expressing GFP or GFP plus RA
+      - type: Superscript
+        content:
+          - CS
+      - ' under the control of '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - >-
+        . After dissection of wing discs in cold PBS, the posterior GFP-positive
+        compartment was separated under a fluorescence stereoscope and used for
+        RNA extraction with Trizol. Library preparation and amplification were
+        performed using Ovation RNA Amp System V" (Nugen;3100-60). Fragmentation
+        and labelling were performed using Encode Biotin Module (Nugen;
+        4200–60). The hybridization mixture was prepared following the
+        Affymetrix protocol. Each sample was hybridized to a GeneChip 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' Genome 2.0 Array (Affymetrix), and then washed and stained in a GeneChip Fluidics Station 450 (Affymetrix). Microarray scanning and CEL fly generation were performed using an Affymetrix GeneChip Scanner GSC3000. To generate log2 expression estimates, overall array intensity was normalized between arrays and the probe intensity of all probes in a probe set was summarized to a single value using gcRMA (gcRMA 2.0.0; Bioconductor package). The transcriptional profile of RA-expressing and non-expressing cells of the posterior compartment was compared, and those genes with fold changes ≥ or ≤ 1 and p value ≤0.05 were considered to be differentially expressed.'
+    type: Paragraph
+  - content:
+      - >-
+        Gene ontology (GO) enrichment analysis of those transcripts that were
+        significantly upregulated or downregulated was performed using DAVID
+        v6.7. Microarray datasets have been deposited in the Gene Expression
+        Omnibus (
+      - content:
+          - 'http://www.ncbi.nlm.nih.gov/geo/'
+        target: 'http://www.ncbi.nlm.nih.gov/geo/'
+        type: Link
+      - ) under accession number GSE125794.
+    type: Paragraph
+  - content:
+      - Supporting information
+    depth: 1
+    id: sec020
+    type: Heading
+  - S1 Fig
+  - content: []
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - >-
+        (A) qRT-PCR showing transcript levels of a selected group of genes in
+        wing discs expressing RA
+      - type: Superscript
+        content:
+          - CS
+      - ' or '
+      - type: Emphasis
+        content:
+          - myc
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' with '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - ' or '
+      - type: Emphasis
+        content:
+          - bx-Gal4
+      - >-
+        . Results are expressed as fold induction relative to control wing
+        discs. (B) Signaling pathways affected in RA expressing wing discs. (C)
+        Venn diagrams showing overlap between differentially expressed genes in
+        RA-expressing cells and previously identified p53 target genes (Akdemir
+        et al., 2007; van Bergeijk et al., 2012).
+    type: Paragraph
+  - content:
+      - (TIF)
+    type: Paragraph
+  - S2 Fig
+  - content: []
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - >-
+        (A) List of genes coding for extracellular proteins that were
+        differentially expressed in RA-expressing cells and corresponding fold
+        change. (B) Histogram plotting normalized area and cell density of the
+        anterior (A) compartment of adult wings from individuals expressing RA
+      - type: Superscript
+        content:
+          - CS
+      - ' with '
+      - type: Emphasis
+        content:
+          - hh
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - ' in '
+      - type: Emphasis
+        content:
+          - eiger
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - 3/3
+      - ' mutants. ** p<0.01. (C) Wing imaginal discs from individuals expressing RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' along with '
+      - type: Emphasis
+        content:
+          - eiger
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' under the control of '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - ' and stained to visualize PH3 levels. (D) Histogram plotting normalized area of the anterior (A, grey bars) and posterior (P, blue bars) compartments of adult wings from individuals expressing the indicated transgenes with '
+      - type: Emphasis
+        content:
+          - en
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - .
+    type: Paragraph
+  - content:
+      - (TIF)
+    type: Paragraph
+  - S3 Fig
+  - content: []
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - '(A) Expression pattern of '
+      - type: Emphasis
+        content:
+          - egr
+      - '-lacZ ['
+      - target: '#pgen.1008133.ref030'
+        type: Cite
+      - '] and Eiger-GFP ['
+      - target: '#pgen.1008133.ref030'
+        type: Cite
+      - ','
+      - target: '#pgen.1008133.ref031'
+        type: Cite
+      - >-
+        ] reporters in the eye and wing imaginal discs of wild-type larvae. (B)
+        Wing discs carrying Eiger-GFP protein trap and stained to visualize GFP
+        (green). 
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - >-
+        -expressing cells displayed increased levels of Eiger-GFP. (C) qRT-PCR
+        plotting 
+      - type: Emphasis
+        content:
+          - rpr
+      - ', '
+      - type: Emphasis
+        content:
+          - corp
+      - ', '
+      - type: Emphasis
+        content:
+          - xrp1
+      - ' and '
+      - type: Emphasis
+        content:
+          - damm
+      - ' mRNA levels in wing discs expressing RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' or RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' plus Dmp53'
+      - type: Superscript
+        content:
+          - H159N
+      - ' with '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - >-
+        . Results are expressed as fold induction respect to control wing discs
+        (en>+).
+    type: Paragraph
+  - content:
+      - (TIF)
+    type: Paragraph
+  - S4 Fig
+  - content: []
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - '(A) qRT-PCR showing '
+      - type: Emphasis
+        content:
+          - mmp1
+      - ' and '
+      - type: Emphasis
+        content:
+          - puc
+      - ' mRNA levels in wing discs expressing the indicated transgenes under the control of '
+      - type: Emphasis
+        content:
+          - en-Gal4
+      - ' relative to control wing discs (en>+). (B) Wing discs labeled to visualize Mmp1 protein expression from individuals expressing '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - RNAi
+      - ' under the control of '
+      - type: Emphasis
+        content:
+          - ap
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - >-
+        . (C-D) Histogram plotting normalized area (C) or density values (D) of
+        the anterior (A, grey bars) and posterior (P, blue bars) compartments of
+        adult wings from individuals expressing the indicated transgenes with 
+      - type: Emphasis
+        content:
+          - en
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - .
+    type: Paragraph
+  - content:
+      - (TIF)
+    type: Paragraph
+  - S5 Fig
+  - content: []
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - '(A-B) qRT-PCR showing '
+      - type: Emphasis
+        content:
+          - dilp8
+      - ' or '
+      - type: Emphasis
+        content:
+          - egr
+      - ' transcript levels in wing discs expressing RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' or RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' plus '
+      - type: Emphasis
+        content:
+          - xrp1
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' with '
+      - type: Emphasis
+        content:
+          - bx-Gal4
+      - >-
+        . Results are expressed as fold induction respect to control wing discs
+        (bx>+). (C) Histogram plotting normalized cell density values of the
+        anterior (A, grey bars) and posterior (P, blue bars) compartments of
+        adult wings from individuals expressing RA
+      - type: Superscript
+        content:
+          - CS
+      - ' and '
+      - type: Emphasis
+        content:
+          - dilp8
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' with '
+      - type: Emphasis
+        content:
+          - en
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - >-
+        . (D) Wing discs carrying Dilp8-GFP and expressing the indicated
+        transgenes with 
+      - type: Emphasis
+        content:
+          - ap-Gal4
+      - ' were labeled to visualize GFP (green or grey) and myrTomato (red). Expression of Bsk'
+      - type: Superscript
+        content:
+          - DN
+      - ' largely blocked upregulation of Dilp8-GFP levels observed in dMyc depleted cells. (E) Wing discs carrying Dilp8-GFP and expressing RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' with '
+      - type: Emphasis
+        content:
+          - ap-Gal4
+      - ' were labeled to visualize GFP (green or grey) and myrTomato (red). Upregulation of Dilp8-GFP levels upon RA'
+      - type: Superscript
+        content:
+          - CS
+      - ' expression was still observed following antioxidant or vehicle treatment.'
+    type: Paragraph
+  - content:
+      - (TIF)
+    type: Paragraph
+  - S6 Fig
+  - content: []
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - '(A) Wing discs carrying the '
+      - type: Emphasis
+        content:
+          - gstD1
+      - '-GFP reporter and expressing the indicated transgenes with '
+      - type: Emphasis
+        content:
+          - ap
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - ' were labeled to visualize GFP (green or grey) and myrTomato (red). (B) BrdU incorporation assay in larval wing discs from individuals expressing GFP along with the indicated transgenes under the control of '
+      - type: Emphasis
+        content:
+          - ci
+      - '-'
+      - type: Emphasis
+        content:
+          - Gal4
+      - '. Anti-dMyc staining (green) showed efficiency of gene depletion upon '
+      - type: Emphasis
+        content:
+          - dmyc
+      - type: Superscript
+        content:
+          - type: Emphasis
+            content:
+              - RNAi
+      - ' expression.'
+    type: Paragraph
+  - content:
+      - (TIF)
+    type: Paragraph
+  - S1 Table
+  - content:
+      - List of genes differentially expressed between RA
+      - type: Superscript
+        content:
+          - CS
+      - '-expressing and wild-type cells.'
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - (PDF)
+    type: Paragraph
+  - S2 Table
+  - content:
+      - >-
+        List of genes encoding for known or predicted secreted molecules and
+        their corresponding transgenic RNAi lines used for the screen.
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - (PDF)
+    type: Paragraph
+  - S3 Table
+  - content:
+      - Signaling pathways affected in RA
+      - type: Superscript
+        content:
+          - CS
+      - '-expressing cells.'
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - (PDF)
+    type: Paragraph
+  - S4 Table
+  - content:
+      - List of primers used in this study.
+    depth: 1
+    id: sec020
+    type: Heading
+  - content:
+      - (PDF)
+    type: Paragraph
+references:
+  - authors:
+      - givenNames:
+          - F
+        familyNames:
+          - Kruiswijk
+        type: Person
+      - givenNames:
+          - CF
+        familyNames:
+          - Labuschagne
+        type: Person
+      - givenNames:
+          - KH
+        familyNames:
+          - Vousden
+        type: Person
+    title: >-
+      P53 in Survival, Death and Metabolic Health: a Lifeguard With a Licence To
+      Kill
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 393
+      pageEnd: 405
+      title: Nat Rev Mol Cell Biol. Nature Publishing Group
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pgen.1008133.ref001
+  - authors:
+      - givenNames:
+          - MC
+        familyNames:
+          - Ingaramo
+        type: Person
+      - givenNames:
+          - JA
+        familyNames:
+          - Sánchez
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Dekanty
+        type: Person
+    title: 'Regulation and function of p53 : a perspective from Drosophila studies'
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      title: Mech Dev. Elsevier
+      volumeNumber: 53
+      type: PublicationVolume
+    id: pgen.1008133.ref002
+  - authors:
+      - givenNames:
+          - ER
+        familyNames:
+          - Kastenhuber
+        type: Person
+      - givenNames:
+          - SW
+        familyNames:
+          - Lowe
+        type: Person
+    title: Putting p53 in Context
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 1062
+      pageEnd: 1078
+      title: Cell. Elsevier Inc.
+      volumeNumber: 170
+      type: PublicationVolume
+    id: pgen.1008133.ref003
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Lujambio
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Akkari
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Simon
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Grace
+        type: Person
+      - givenNames:
+          - DF
+        familyNames:
+          - Tschaharganeh
+        type: Person
+      - givenNames:
+          - JE
+        familyNames:
+          - Bolden
+        type: Person
+    title: Non-cell-autonomous tumor suppression by p53
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 449
+      pageEnd: 60
+      title: Cell. Elsevier Inc.
+      volumeNumber: 153
+      type: PublicationVolume
+    id: pgen.1008133.ref004
+  - authors:
+      - givenNames:
+          - R
+        familyNames:
+          - Hill
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Song
+        type: Person
+      - givenNames:
+          - RD
+        familyNames:
+          - Cardiff
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Van
+          - Dyke
+        type: Person
+    title: >-
+      Selective evolution of stromal mesenchyme with p53 loss in response to
+      epithelial tumorigenesis
+    type: Article
+    datePublished: '2005'
+    isPartOf:
+      pageStart: 1001
+      pageEnd: 11
+      title: Cell
+      volumeNumber: 123
+      type: PublicationVolume
+    id: pgen.1008133.ref005
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Patocs
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Zhang
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Xu
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Weber
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Caldes
+        type: Person
+      - givenNames:
+          - GL
+        familyNames:
+          - Mutter
+        type: Person
+    title: Breast-Cancer Stromal Cells with TP53 Mutations and Nodal Metastases
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      pageStart: 2543
+      pageEnd: 2551
+      title: N Engl J Med
+      volumeNumber: 357
+      type: PublicationVolume
+    id: pgen.1008133.ref006
+  - authors:
+      - givenNames:
+          - H
+        familyNames:
+          - Kiaris
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Chatzistamou
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Trimis
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Frangou-Plemmenou
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Pafiti-Kondi
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Kalofoutis
+        type: Person
+    title: >-
+      Evidence for nonautonomous effect of p53 tumor suppressor in
+      carcinogenesis
+    type: Article
+    datePublished: '2005'
+    isPartOf:
+      pageStart: 1627
+      pageEnd: 30
+      title: Cancer Res
+      volumeNumber: 65
+      type: PublicationVolume
+    id: pgen.1008133.ref007
+  - authors:
+      - givenNames:
+          - V
+        familyNames:
+          - Krizhanovsky
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Yon
+        type: Person
+      - givenNames:
+          - RA
+        familyNames:
+          - Dickins
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Hearn
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Simon
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Miething
+        type: Person
+    title: Senescence of Activated Stellate Cells Limits Liver Fibrosis
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 657
+      pageEnd: 667
+      title: Cell
+      volumeNumber: 134
+      type: PublicationVolume
+    id: pgen.1008133.ref008
+  - authors:
+      - givenNames:
+          - W
+        familyNames:
+          - Xue
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Zender
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Miething
+        type: Person
+      - givenNames:
+          - RA
+        familyNames:
+          - Dickins
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Hernando
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Krizhanovsky
+        type: Person
+    title: >-
+      Senescence and tumour clearance is triggered by p53 restoration in murine
+      liver carcinomas
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      pageStart: 656
+      pageEnd: 60
+      title: Nature
+      volumeNumber: 445
+      type: PublicationVolume
+    id: pgen.1008133.ref009
+  - authors:
+      - givenNames:
+          - KW
+        familyNames:
+          - Yoon
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Byun
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Kwon
+        type: Person
+      - givenNames:
+          - S-Y
+        familyNames:
+          - Hwang
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Chu
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Hiraki
+        type: Person
+    title: >-
+      Control of signaling-mediated clearance of apoptotic cells by the tumor
+      suppressor p53
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 1261669
+      title: Science
+      volumeNumber: 349
+      type: PublicationVolume
+    id: pgen.1008133.ref010
+  - authors:
+      - givenNames:
+          - M-L
+        familyNames:
+          - Dichtel-Danjoy
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Ma
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Dourlen
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Chatelain
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Napoletano
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Robin
+        type: Person
+    title: >-
+      Drosophila p53 isoforms differentially regulate apoptosis and
+      apoptosis-induced proliferation
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 108
+      pageEnd: 16
+      title: Cell Death Differ
+      volumeNumber: 20
+      type: PublicationVolume
+    id: pgen.1008133.ref011
+  - authors:
+      - givenNames:
+          - BS
+        familyNames:
+          - Wells
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Yoshida
+        type: Person
+      - givenNames:
+          - LA
+        familyNames:
+          - Johnston
+        type: Person
+    title: >-
+      Compensatory proliferation in Drosophila imaginal discs requires
+      Dronc-dependent p53 activity
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 1606
+      pageEnd: 15
+      title: Curr Biol
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pgen.1008133.ref012
+  - authors:
+      - givenNames:
+          - BS
+        familyNames:
+          - Wells
+        type: Person
+      - givenNames:
+          - LA
+        familyNames:
+          - Johnston
+        type: Person
+    title: >-
+      Maintenance of imaginal disc plasticity and regenerative potential in
+      Drosophila by p53
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 263
+      pageEnd: 76
+      title: Dev Biol. Elsevier Inc.
+      volumeNumber: 361
+      type: PublicationVolume
+    id: pgen.1008133.ref013
+  - authors:
+      - givenNames:
+          - C
+        familyNames:
+          - De
+          - La
+          - Cova
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Senoo-Matsuda
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Ziosi
+        type: Person
+      - givenNames:
+          - DC
+        familyNames:
+          - Wu
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Bellosta
+        type: Person
+      - givenNames:
+          - CM
+        familyNames:
+          - Quinzii
+        type: Person
+    title: >-
+      Supercompetitor status of drosophila Myc cells requires p53 as a Fitness
+      sensor to reprogram metabolism and promote viability
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 470
+      pageEnd: 483
+      title: Cell Metab. Elsevier Inc.
+      volumeNumber: 19
+      type: PublicationVolume
+    id: pgen.1008133.ref014
+  - authors:
+      - givenNames:
+          - I
+        familyNames:
+          - Kucinski
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Dinan
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Kolahgar
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Piddini
+        type: Person
+    title: >-
+      Chronic activation of JNK JAK/STAT and oxidative stress signalling causes
+      the loser cell status
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 8
+      title: Nat Commun. Springer US
+      type: PublicationVolume
+    id: pgen.1008133.ref015
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Barrio
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Dekanty
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+    title: >-
+      MicroRNA-Mediated Regulation of Dp53 in the Drosophila Fat Body
+      Contributes to Metabolic Adaptation to Nutrient Deprivation
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 528
+      pageEnd: 541
+      title: Cell Rep
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pgen.1008133.ref016
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Mesquita
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Dekanty
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+    title: >-
+      A dp53-dependent mechanism involved in coordinating tissue growth in
+      Drosophila
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      title: PLoS Biol
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pgen.1008133.ref017
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Garcia-Bellido
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Cortes
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milan
+        type: Person
+    title: Cell interactions in the control of size in Drosophila wings
+    type: Article
+    datePublished: '1994'
+    isPartOf:
+      pageStart: 10222
+      pageEnd: 10226
+      title: Proc Natl Acad Sci USA
+      volumeNumber: 91
+      type: PublicationVolume
+    id: pgen.1008133.ref018
+  - authors:
+      - givenNames:
+          - RH
+        familyNames:
+          - Gokhale
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Hayashi
+        type: Person
+      - givenNames:
+          - CD
+        familyNames:
+          - Mirque
+        type: Person
+      - givenNames:
+          - AW
+        familyNames:
+          - Shingleton
+        type: Person
+    title: >-
+      Intra-organ growth coordination in Drosophila is mediated by systemic
+      ecdysone signaling
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 135
+      pageEnd: 145
+      title: Dev Biol
+      volumeNumber: 418
+      type: PublicationVolume
+    id: pgen.1008133.ref019
+  - authors:
+      - givenNames:
+          - JS
+        familyNames:
+          - Jaszczak
+        type: Person
+      - givenNames:
+          - JB
+        familyNames:
+          - Wolpe
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Bhandari
+        type: Person
+      - givenNames:
+          - RG
+        familyNames:
+          - Jaszczak
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Halme
+        type: Person
+    title: >-
+      Growth Coordination During Drosophila melanogaster Imaginal Disc
+      Regeneration Is Mediated by Signaling Through the Relaxin Receptor Lgr3 in
+      the Prothoracic Gland
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 703
+      pageEnd: 709
+      title: Genetics
+      volumeNumber: 204
+      type: PublicationVolume
+    id: pgen.1008133.ref020
+  - authors:
+      - givenNames:
+          - NF
+        familyNames:
+          - Parker
+        type: Person
+      - givenNames:
+          - AW
+        familyNames:
+          - Shingleton
+        type: Person
+    title: >-
+      The coordination of growth among Drosophila organs in response to
+      localized growth-perturbation
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 318
+      pageEnd: 25
+      title: Dev Biol. Elsevier B.V.
+      volumeNumber: 357
+      type: PublicationVolume
+    id: pgen.1008133.ref021
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Igaki
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Kanda
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Yamamoto-Goto
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Kanuka
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Kuranaga
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Aigaki
+        type: Person
+    title: 'Eiger, a TNF superfamily ligand that triggers the Drosophila JNK pathway'
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 3009
+      pageEnd: 18
+      title: EMBO J
+      volumeNumber: 21
+      type: PublicationVolume
+    id: pgen.1008133.ref022
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Moreno
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Yan
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Basler
+        type: Person
+    title: >-
+      Evolution of TNF signaling mechanisms: JNK-dependent apoptosis triggered
+      by Eiger, the Drosophila homolog of the TNF superfamily
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 1263
+      pageEnd: 8
+      title: Curr Biol
+      volumeNumber: 12
+      type: PublicationVolume
+    id: pgen.1008133.ref023
+  - authors:
+      - givenNames:
+          - S
+        familyNames:
+          - Juarez-Carreño
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Morante
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Dominguez
+        type: Person
+    title: >-
+      Systemic signalling and local effectors in developmental stability, body
+      symmetry, and size
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 340
+      pageEnd: 361
+      title: Cell Stress
+      volumeNumber: 2
+      type: PublicationVolume
+    id: pgen.1008133.ref024
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Dekanty
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+    title: The interplay between morphogens and tissue growth
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 1003
+      pageEnd: 10
+      title: EMBO Rep. Nature Publishing Group
+      volumeNumber: 12
+      type: PublicationVolume
+    id: pgen.1008133.ref025
+  - authors:
+      - givenNames:
+          - F
+        familyNames:
+          - Akdemir
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Christich
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Sogame
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Chapo
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Abrams
+        type: Person
+    title: p53 directs focused genomic responses in Drosophila
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      pageStart: 5184
+      pageEnd: 93
+      title: Oncogene
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pgen.1008133.ref026
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - van
+          - Bergeijk
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Heimiller
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Uyetake
+        type: Person
+      - givenNames:
+          - TT
+        familyNames:
+          - Su
+        type: Person
+    title: >-
+      Genome-wide expression analysis identifies a modulator of ionizing
+      radiation-induced p53-independent apoptosis in Drosophila melanogaster
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      issueNumber: 5
+      isPartOf:
+        title: PLoS One
+        volumeNumber: 7
+        type: PublicationVolume
+      type: PublicationIssue
+    id: pgen.1008133.ref027
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Pérez-Garijo
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Fuchs
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Steller
+        type: Person
+    title: >-
+      Apoptotic cells can induce non-autonomous apoptosis through the TNF
+      pathway
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      title: Elife
+      volumeNumber: 2
+      type: PublicationVolume
+    id: pgen.1008133.ref028
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Campuzano
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - García-Bellido
+        type: Person
+    title: Developmental parameters of cell death in the wing disc of Drosophila
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 5691
+      pageEnd: 6
+      title: Proc Natl Acad Sci U S A
+      volumeNumber: 94
+      type: PublicationVolume
+    id: pgen.1008133.ref029
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Muzzopappa
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Murcia
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+    title: Feedback amplification loop drives malignant growth in epithelial tissues
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      title: Proc Natl Acad Sci
+      volumeNumber: 114
+      type: PublicationVolume
+    id: pgen.1008133.ref030
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Sarov
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Barz
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Jambor
+        type: Person
+      - givenNames:
+          - MY
+        familyNames:
+          - Hein
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Schmied
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Suchold
+        type: Person
+    title: >-
+      A genome-wide resource for the analysis of protein localisation in
+      Drosophila
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      title: Elife
+      volumeNumber: 5
+      type: PublicationVolume
+    id: pgen.1008133.ref031
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Kurtz
+        type: Person
+      - givenNames:
+          - AE
+        familyNames:
+          - Jones
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Tiwari
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Link
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Wylie
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Tracy
+        type: Person
+      - givenNames:
+          - DJ
+        familyNames:
+          - Montell
+        type: Person
+    title: Drosophila p53 directs non-apoptotic programs in postmitotic tissue
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      title: Mol Biol Cell
+      type: PublicationVolume
+    id: pgen.1008133.ref032
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Bosch
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Baguñà
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Serras
+        type: Person
+    title: >-
+      Origin and proliferation of blastema cells during regeneration of
+      Drosophila wing imaginal discs
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 1043
+      pageEnd: 50
+      title: Int J Dev Biol
+      volumeNumber: 52
+      type: PublicationVolume
+    id: pgen.1008133.ref033
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Dekanty
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Barrio
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Muzzopappa
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Auer
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+    title: >-
+      Aneuploidy-induced delaminating cells drive tumorigenesis in Drosophila
+      epithelia
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 20549
+      pageEnd: 54
+      title: Proc Natl Acad Sci U S A
+      volumeNumber: 109
+      type: PublicationVolume
+    id: pgen.1008133.ref034
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Igaki
+        type: Person
+      - givenNames:
+          - RA
+        familyNames:
+          - Pagliarini
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Xu
+        type: Person
+    title: >-
+      Loss of cell polarity drives tumor growth and invasion through JNK
+      activation in Drosophila
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 1139
+      pageEnd: 1146
+      title: Curr Biol
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pgen.1008133.ref035
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Uhlirova
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Bohmann
+        type: Person
+    title: >-
+      JNK- and Fos-regulated Mmp1 expression cooperates with Ras to induce
+      invasive tumors in Drosophila
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 5294
+      pageEnd: 304
+      title: EMBO J
+      volumeNumber: 25
+      type: PublicationVolume
+    id: pgen.1008133.ref036
+  - authors:
+      - givenNames:
+          - HR
+        familyNames:
+          - Willsey
+        type: Person
+      - givenNames:
+          - X
+        familyNames:
+          - Zheng
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Pastor-Pareja
+        type: Person
+      - givenNames:
+          - AJ
+        familyNames:
+          - Willsey
+        type: Person
+      - givenNames:
+          - PA
+        familyNames:
+          - Beachy
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Xu
+        type: Person
+    title: Localized JNK signaling regulates organ size during development
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 18
+      title: Elife
+      volumeNumber: 5
+      type: PublicationVolume
+    id: pgen.1008133.ref037
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Cosolo
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Jaiswal
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Csordás
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Grass
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Uhlirova
+        type: Person
+      - givenNames:
+          - A-K
+        familyNames:
+          - Classen
+        type: Person
+    title: >-
+      JNK-dependent cell cycle stalling in G2 promotes survival and
+      senescence-like phenotypes in tissue stress
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 27
+      title: Elife
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pgen.1008133.ref038
+  - authors:
+      - givenNames:
+          - DS
+        familyNames:
+          - Andersen
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Colombani
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Palmerini
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Chakrabandhu
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Boone
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Röthlisberger
+        type: Person
+    title: >-
+      The Drosophila TNF receptor Grindelwald couples loss of cell polarity and
+      neoplastic growth
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 482
+      pageEnd: 486
+      title: Nature
+      volumeNumber: 522
+      type: PublicationVolume
+    id: pgen.1008133.ref039
+  - authors:
+      - givenNames:
+          - J
+        familyNames:
+          - Colombani
+        type: Person
+      - givenNames:
+          - DS
+        familyNames:
+          - Andersen
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Léopold
+        type: Person
+    title: >-
+      Secreted peptide Dilp8 coordinates Drosophila tissue growth with
+      developmental timing
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 582
+      pageEnd: 5
+      title: Science
+      volumeNumber: 336
+      type: PublicationVolume
+    id: pgen.1008133.ref040
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Garelli
+        type: Person
+      - givenNames:
+          - AM
+        familyNames:
+          - Gontijo
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Miguela
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Caparros
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Dominguez
+        type: Person
+    title: >-
+      Imaginal discs secrete insulin-like peptide 8 to mediate plasticity of
+      growth and maturation
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 579
+      pageEnd: 82
+      title: Science
+      volumeNumber: 336
+      type: PublicationVolume
+    id: pgen.1008133.ref041
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Boone
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Colombani
+        type: Person
+      - givenNames:
+          - DS
+        familyNames:
+          - Andersen
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Léopold
+        type: Person
+    title: >-
+      The Hippo signalling pathway coordinates organ growth and limits
+      developmental variability by controlling dilp8 expression
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 13505
+      title: Nat Commun
+      volumeNumber: 7
+      type: PublicationVolume
+    id: pgen.1008133.ref042
+  - authors:
+      - givenNames:
+          - DM
+        familyNames:
+          - Vallejo
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Juarez-Carreño
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Bolivar
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Morante
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Dominguez
+        type: Person
+    title: >-
+      A brain circuit that synchronizes growth and maturation revealed through
+      Dilp8 binding to Lgr3
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      title: Science
+      volumeNumber: 350
+      type: PublicationVolume
+    id: pgen.1008133.ref043
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Boulan
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Andersen
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Colombani
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Boone
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Léopold
+        type: Person
+    title: >-
+      Inter-Organ Growth Coordination Is Mediated by the Xrp1-Dilp8 Axis in
+      Drosophila
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 8
+      title: Dev Cell
+      type: PublicationVolume
+    id: pgen.1008133.ref044
+  - authors:
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Demay
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Perochon
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Szuplewski
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Mignotte
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Gaumer
+        type: Person
+    title: >-
+      The PERK pathway independently triggers apoptosis and a
+      Rac1/Slpr/JNK/Dilp8 signaling favoring tissue homeostasis in a chronic ER
+      stress Drosophila model
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageEnd: 10
+      title: Cell Death Dis. Nature Publishing Group
+      volumeNumber: 5
+      type: PublicationVolume
+    id: pgen.1008133.ref045
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Katsuyama
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Comoglio
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Seimiya
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Cabuy
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Paro
+        type: Person
+    title: >-
+      During Drosophila disc regeneration, JAK/STAT coordinates cell
+      proliferation with Dilp8-mediated developmental delay
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 2327
+      pageEnd: 36
+      title: Proc Natl Acad Sci U S A
+      volumeNumber: 112
+      type: PublicationVolume
+    id: pgen.1008133.ref046
+  - authors:
+      - givenNames:
+          - GP
+        familyNames:
+          - Sykiotis
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Bohmann
+        type: Person
+    title: >-
+      Keap1/Nrf2 signaling regulates oxidative stress tolerance and lifespan in
+      Drosophila
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 76
+      pageEnd: 85
+      title: Dev Cell
+      volumeNumber: 14
+      type: PublicationVolume
+    id: pgen.1008133.ref047
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Schieber
+        type: Person
+      - givenNames:
+          - NS
+        familyNames:
+          - Chandel
+        type: Person
+    title: ROS Function in Redox Signaling and Oxidative Stress
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      title: Curr Biol
+      volumeNumber: 24
+      type: PublicationVolume
+    id: pgen.1008133.ref048
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Niethammer
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Grabher
+        type: Person
+      - givenNames:
+          - AT
+        familyNames:
+          - Look
+        type: Person
+      - givenNames:
+          - TJ
+        familyNames:
+          - Mitchison
+        type: Person
+    title: >-
+      A tissue-scale gradient of hydrogen peroxide mediates rapid wound
+      detection in zebrafish
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 996
+      pageEnd: 9
+      title: Nature
+      volumeNumber: 459
+      type: PublicationVolume
+    id: pgen.1008133.ref049
+  - authors:
+      - givenNames:
+          - C
+        familyNames:
+          - Gauron
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Rampon
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Bouzaffour
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Ipendey
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Teillon
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Volovitch
+        type: Person
+    title: >-
+      Sustained production of ROS triggers compensatory proliferation and is
+      required for regeneration to proceed
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 2084
+      title: Sci Rep
+      volumeNumber: 3
+      type: PublicationVolume
+    id: pgen.1008133.ref050
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Santabárbara-Ruiz
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - López-Santillán
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Martínez-Rodríguez
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Binagui-Casas
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Pérez
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+    title: >-
+      ROS-Induced JNK and p38 Signaling Is Required for Unpaired Cytokine
+      Activation during Drosophila Regeneration
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 26
+      title: PLoS Genet
+      volumeNumber: 11
+      type: PublicationVolume
+    id: pgen.1008133.ref051
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Igaki
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Miura
+        type: Person
+    title: >-
+      The Drosophila TNF ortholog Eiger: emerging physiological roles and
+      evolution of the TNF system
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 267
+      pageEnd: 74
+      title: Semin Immunol. Elsevier Ltd
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pgen.1008133.ref052
+  - authors:
+      - givenNames:
+          - B
+        familyNames:
+          - Stronach
+        type: Person
+    title: 'Dissecting JNK signaling, one KKKinase at a time'
+    type: Article
+    datePublished: '2005'
+    isPartOf:
+      pageStart: 575
+      pageEnd: 584
+      title: Dev Dyn
+      volumeNumber: 232
+      type: PublicationVolume
+    id: pgen.1008133.ref053
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Igaki
+        type: Person
+      - givenNames:
+          - JC
+        familyNames:
+          - Pastor-Pareja
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Aonuma
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Miura
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Xu
+        type: Person
+    title: >-
+      Intrinsic tumor suppression and epithelial maintenance by endocytic
+      activation of Eiger/TNF signaling in Drosophila
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 458
+      pageEnd: 65
+      title: Dev Cell. Elsevier Ltd
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pgen.1008133.ref054
+  - authors:
+      - givenNames:
+          - J
+        familyNames:
+          - Colombani
+        type: Person
+      - givenNames:
+          - DS
+        familyNames:
+          - Andersen
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Boulan
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Boone
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Romero
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Virolle
+        type: Person
+    title: >-
+      Drosophila Lgr3 Couples Organ Growth with Maturation and Ensures
+      Developmental Stability
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 2723
+      pageEnd: 9
+      title: Curr Biol
+      volumeNumber: 25
+      type: PublicationVolume
+    id: pgen.1008133.ref055
+  - authors:
+      - givenNames:
+          - S
+        familyNames:
+          - Ohsawa
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Sugimura
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Takino
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Xu
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Miyawaki
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Igaki
+        type: Person
+    title: >-
+      Elimination of Oncogenic Neighbors by JNK-Mediated Engulfment in
+      Drosophila
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 315
+      pageEnd: 328
+      title: Dev Cell
+      volumeNumber: 20
+      type: PublicationVolume
+    id: pgen.1008133.ref056
+  - authors:
+      - givenNames:
+          - SU
+        familyNames:
+          - Gerlach
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Eichenlaub
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Herranz
+        type: Person
+    title: >-
+      Yorkie and JNK Control Tumorigenesis in Drosophila Cells with Cytokinesis
+      Failure
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 1491
+      pageEnd: 1503
+      title: Cell Rep
+      volumeNumber: 23
+      type: PublicationVolume
+    id: pgen.1008133.ref057
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Garelli
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Heredia
+        type: Person
+      - givenNames:
+          - AP
+        familyNames:
+          - Casimiro
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Macedo
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Nunes
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Garcez
+        type: Person
+    title: >-
+      Dilp8 requires the neuronal relaxin receptor Lgr3 to couple growth to
+      developmental timing
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 8732
+      title: Nat Commun
+      volumeNumber: 6
+      type: PublicationVolume
+    id: pgen.1008133.ref058
+  - authors:
+      - givenNames:
+          - R
+        familyNames:
+          - Delanoue
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Slaidina
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Léopold
+        type: Person
+    title: >-
+      The steroid hormone ecdysone controls systemic growth by repressing dMyc
+      function in Drosophila fat cells
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 1012
+      pageEnd: 21
+      title: Dev Cell
+      volumeNumber: 18
+      type: PublicationVolume
+    id: pgen.1008133.ref059
+  - authors:
+      - givenNames:
+          - JS
+        familyNames:
+          - Jaszczak
+        type: Person
+      - givenNames:
+          - JB
+        familyNames:
+          - Wolpe
+        type: Person
+      - givenNames:
+          - AQ
+        familyNames:
+          - Dao
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Halme
+        type: Person
+    title: >-
+      Nitric oxide synthase regulates growth coordination during Drosophila
+      melanogaster imaginal disc regeneration
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 1219
+      pageEnd: 1228
+      title: Genetics
+      volumeNumber: 200
+      type: PublicationVolume
+    id: pgen.1008133.ref060
+  - authors:
+      - givenNames:
+          - DT
+        familyNames:
+          - Champlin
+        type: Person
+      - givenNames:
+          - JW
+        familyNames:
+          - Truman
+        type: Person
+    title: >-
+      Ecdysteroid control of cell proliferation during optic lobe neurogenesis
+      in the moth Manduca sexta
+    type: Article
+    datePublished: '1998'
+    isPartOf:
+      pageStart: 269
+      pageEnd: 77
+      title: Development
+      volumeNumber: 125
+      type: PublicationVolume
+    id: pgen.1008133.ref061
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Herboso
+        type: Person
+      - givenNames:
+          - MM
+        familyNames:
+          - Oliveira
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Talamillo
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Pérez
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - González
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Martín
+        type: Person
+    title: >-
+      Ecdysone promotes growth of imaginal discs through the regulation of Thor
+      in D
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 12383
+      title: melanogaster. Sci Rep
+      volumeNumber: 5
+      type: PublicationVolume
+    id: pgen.1008133.ref062
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Finkel
+        type: Person
+    title: Signal transduction by reactive oxygen species
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 7
+      pageEnd: 15
+      title: J Cell Biol
+      volumeNumber: 194
+      type: PublicationVolume
+    id: pgen.1008133.ref063
+  - authors:
+      - givenNames:
+          - CL
+        familyNames:
+          - Bigarella
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Liang
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Ghaffari
+        type: Person
+    title: Stem cells and the impact of ROS signaling
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 4206
+      pageEnd: 4218
+      title: Development
+      volumeNumber: 141
+      type: PublicationVolume
+    id: pgen.1008133.ref064
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Owusu-Ansah
+        type: Person
+      - givenNames:
+          - U
+        familyNames:
+          - Banerjee
+        type: Person
+    title: >-
+      Reactive oxygen species prime Drosophila haematopoietic progenitors for
+      differentiation
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 537
+      pageEnd: 41
+      title: Nature. Nature Publishing Group
+      volumeNumber: 461
+      type: PublicationVolume
+    id: pgen.1008133.ref065
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Liu
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Xu
+        type: Person
+    title: 'p53, oxidative stress, and aging'
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 1669
+      pageEnd: 78
+      title: 'Antioxid Redox Signal. Mary Ann Liebert, Inc'
+      volumeNumber: 15
+      type: PublicationVolume
+    id: pgen.1008133.ref066
+  - authors:
+      - givenNames:
+          - CE
+        familyNames:
+          - Fogarty
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Diwanji
+        type: Person
+      - givenNames:
+          - JL
+        familyNames:
+          - Lindblad
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Tare
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Amcheslavsky
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Makhijani
+        type: Person
+    title: >-
+      Extracellular Reactive Oxygen Species Drive Apoptosis-Induced
+      Proliferation via Drosophila Macrophages
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 575
+      pageEnd: 584
+      title: Curr Biol
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pgen.1008133.ref067
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Milán
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Campuzano
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - García-Bellido
+        type: Person
+    title: >-
+      Cell cycling and patterned cell proliferation in the Drosophila wing
+      during metamorphosis
+    type: Article
+    datePublished: '1996'
+    isPartOf:
+      pageStart: 11687
+      pageEnd: 92
+      title: Proc Natl Acad Sci U S A
+      volumeNumber: 93
+      type: PublicationVolume
+    id: pgen.1008133.ref068
+  - authors:
+      - givenNames:
+          - J
+        familyNames:
+          - Schindelin
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Arganda-Carreras
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Frise
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Kaynig
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Longair
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Pietzsch
+        type: Person
+    title: 'Fiji: an open-source platform for biological-image analysis'
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 676
+      pageEnd: 682
+      title: Nat Methods. Nature Publishing Group
+      volumeNumber: 9
+      type: PublicationVolume
+    id: pgen.1008133.ref069
+  - authors:
+      - givenNames:
+          - SG
+        familyNames:
+          - Landt
+        type: Person
+      - givenNames:
+          - GK
+        familyNames:
+          - Marinov
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Kundaje
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Kheradpour
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Pauli
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Batzoglou
+        type: Person
+    title: ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 1813
+      pageEnd: 31
+      title: Genome Res
+      volumeNumber: 22
+      type: PublicationVolume
+    id: pgen.1008133.ref070
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Clemente-Ruiz
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Murillo-Maldonado
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Benhra
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Barrio
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Pérez
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Quiroga
+        type: Person
+    title: >-
+      Gene Dosage Imbalance Contributes to Chromosomal Instability-Induced
+      Tumorigenesis
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 290
+      pageEnd: 302
+      title: Dev Cell
+      volumeNumber: 36
+      type: PublicationVolume
+    id: pgen.1008133.ref071

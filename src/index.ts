@@ -24,9 +24,13 @@ type VFile = vfile.VFile
 export const codecList: string[] = [
   // Publishers of content
   'elife',
+  'plos',
+
+  // Publishers of meta data
+  // DOI comes after publishers so that it does not match DOIs
+  // that are specific to a publisher e.g. 10.1371/journal.pone.0216012
   'doi',
   'orcid',
-  'plos',
 
   // HTTP. Comes after publishers so that it does not match urls
   // that are specific to a publisher e.g. https://elifesciences.org

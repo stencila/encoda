@@ -1,0 +1,7755 @@
+authors:
+  - givenNames:
+      - Zuzana
+    familyNames:
+      - Sekeyová
+    type: Person
+    affiliations:
+      - type: Organization
+  - givenNames:
+      - Monika
+    familyNames:
+      - Danchenko
+    type: Person
+    affiliations:
+      - type: Organization
+  - givenNames:
+      - Peter
+    familyNames:
+      - Filipčík
+    type: Person
+    affiliations:
+      - type: Organization
+  - givenNames:
+      - Pierre
+      - Edouard
+    familyNames:
+      - Fournier
+    type: Person
+    affiliations:
+      - type: Organization
+      - type: Organization
+title: Rickettsial infections of the central nervous system
+type: Article
+content:
+  - content:
+      - Introduction
+    depth: 1
+    id: sec001
+    type: Heading
+  - content:
+      - >-
+        Recent reports have warned about the impact of global warming in
+        facilitating the transmission of certain vector-borne infectious
+        diseases. However, due consideration must be taken of the role played by
+        other variables, such as the increase in international travel,
+        migration, and trade, with the risk of importing parasites and vectors
+        with the goods [
+      - target: '#pntd.0007469.ref001'
+        type: Cite
+      - >-
+        ]. Rickettsioses are common tick-, flea-, or mite-borne bacterial
+        illnesses with a clinical spectrum ranging from a mild febrile illness
+        to potentially life-threatening complications [
+      - target: '#pntd.0007469.ref002'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref003'
+        type: Cite
+      - >-
+        ]. Rickettsial infections can affect many organs, including the central
+        nervous system (CNS) [
+      - target: '#pntd.0007469.ref004'
+        type: Cite
+      - >-
+        ]. The most common neurological manifestations reported in rickettsial
+        infections include meningitis, encephalitis, and acute disseminated
+        encephalomyelitis [
+      - target: '#pntd.0007469.ref005'
+        type: Cite
+      - ']. However, unilateral facial nerve palsy ['
+      - target: '#pntd.0007469.ref006'
+        type: Cite
+      - '], cerebral infarction ['
+      - target: '#pntd.0007469.ref007'
+        type: Cite
+      - '], or visual loss ['
+      - target: '#pntd.0007469.ref008'
+        type: Cite
+      - >-
+        ] have also been diagnosed. Therefore, it is critical to enhance the
+        awareness of physicians worldwide on CNS rickettsial infections (CNS R).
+    type: Paragraph
+  - content:
+      - >-
+        Few studies on the pathogenesis of rickettsiae for the CNS have been
+        conducted. In neurons cultured in vitro, rickettsiae have been
+        demonstrated to cause a profound morphological deterioration and
+        intracellular decrease of ATP [
+      - target: '#pntd.0007469.ref009'
+        type: Cite
+      - >-
+        ]. In addition, it was demonstrated that rickettsiae can persist and
+        reappear after a relatively long time in the CNS in immunocompromised
+        mice, causing a fatal neuroinflammation [
+      - target: '#pntd.0007469.ref010'
+        type: Cite
+      - >-
+        ]. This suggests a potential neuropathic role of rickettsiae. However,
+        data on rickettsial infections in a context of degenerative CNS
+        diseases, which usually result from mixed neuropathologies and present
+        with multiple symptoms, are scarce in the literature, and to date, no
+        association between neurodegenerative diseases and rickettsial
+        infections has been demonstrated.
+    type: Paragraph
+  - content:
+      - >-
+        In this article, we systematically reviewed the literature reporting
+        cases of CNS R to provide scientists and healthcare providers with a
+        summary of the current knowledge on and challenges posed by these
+        diseases. We also included data on 
+      - type: Emphasis
+        content:
+          - Orientia
+      - ', '
+      - type: Emphasis
+        content:
+          - Anaplasma
+      - ', and '
+      - type: Emphasis
+        content:
+          - Ehrlichia
+      - ' species, which are phylogenetically close to '
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' species.'
+    type: Paragraph
+  - content:
+      - Literature search and selection criteria
+    depth: 1
+    id: sec002
+    type: Heading
+  - content:
+      - >-
+        We searched PubMed with the following Medical Subject Heading terms:
+        “rickettsia” (9,504 results); “rickettsia” AND “central nervous system”
+        (169 results); and “rickettsia” AND “central nervous system” AND review
+        (5 results). The search was limited to articles published in English
+        between January 1, 1960, and February 28, 2019. In addition, no online
+        book or book chapter in relation to this subject was identified.
+    type: Paragraph
+  - content:
+      - >-
+        We also searched PubMed with the Medical Subject Heading terms:
+        “orientia” AND “human” (945 results); “ehrlichia” AND “human” (1,421
+        results); “anaplasma” AND “human” (1,385 results); “orientia” AND
+        “human” AND “central nervous system” (26 results); “ehrlichia” AND
+        “human” AND “central nervous system” (10 results); and “anaplasma” AND
+        “human” AND “central nervous system” (3 results).
+    type: Paragraph
+  - content:
+      - Epidemiology of rickettsial diseases
+    depth: 1
+    id: sec003
+    type: Heading
+  - content:
+      - >-
+        Rickettsiae are strictly intracellular bacteria that are vectored by
+        various arthropods. To date, 18 species are recognized human pathogens,
+        12 of which cause CNS R (
+      - content:
+          - Fig 1
+        target: '#pntd.0007469.g001'
+        relation: fig
+        type: Link
+      - '). To these pathogenic '
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' species may be added '
+      - type: Emphasis
+        content:
+          - O
+      - '. '
+      - type: Emphasis
+        content:
+          - tsutsugamushi
+      - ' and '
+      - type: Emphasis
+        content:
+          - O
+      - '. '
+      - type: Emphasis
+        content:
+          - chuto
+      - ' that are phylogenetically closely related and are still often referred to as rickettsiae. Rickettsioses are zoonotic diseases that distributed worldwide ('
+      - content:
+          - Fig 2
+        target: '#pntd.0007469.g002'
+        relation: fig
+        type: Link
+      - ) in foci of endemicity (
+      - content:
+          - Table 1
+        target: '#pntd.0007469.t001'
+        relation: table
+        type: Link
+      - '), with sporadic and often seasonal outbreaks ['
+      - target: '#pntd.0007469.ref011'
+        type: Cite
+      - ']. However, '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - prowazekii
+      - ' has the potential to reemerge as outbreaks in human populations living in close proximity and impoverished conditions ['
+      - target: '#pntd.0007469.ref012'
+        type: Cite
+      - '] ('
+      - content:
+          - Fig 3
+        target: '#pntd.0007469.g003'
+        relation: fig
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 1
+    caption:
+      - content:
+          - 'Phylogenetic tree of '
+          - type: Emphasis
+            content:
+              - Rickettsia
+          - ' species inferred from the comparison of concatenated sequences from the '
+          - type: Emphasis
+            content:
+              - gltA
+          - ' and '
+          - type: Emphasis
+            content:
+              - sca
+          - 4 genes.
+        depth: 1
+        id: sec003
+        type: Heading
+      - content:
+          - type: Emphasis
+            content:
+              - Rickettsia
+          - ' species are distributed into 4 groups: SFG, TRG, TG, and AG. SFG rickettsiae are mostly associated with ticks; TG rickettsiae with human body lice ('
+          - type: Emphasis
+            content:
+              - R
+          - '. '
+          - type: Emphasis
+            content:
+              - prowazekii
+          - ) and rat fleas (
+          - type: Emphasis
+            content:
+              - R
+          - '. '
+          - type: Emphasis
+            content:
+              - typhi
+          - >-
+            ); TRG rickettsiae with ticks, cat fleas, or mites; and AG
+            rickettsiae with ticks. Asterisks mark pathogenic species, and bold
+            letters indicate species causing CNS infections. AG, ancestral
+            group; CNS, central nervous system; SFG, spotted fever group; TG,
+            typhus group; TRG, transitional group.
+        type: Paragraph
+    type: Figure
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 2
+    caption:
+      - content:
+          - 'Developmental cycle and host range of '
+          - type: Emphasis
+            content:
+              - Rickettsia
+          - '-infected ticks.'
+        depth: 1
+        id: sec003
+        type: Heading
+      - content:
+          - >-
+            Ticks are the main vectors and constitute a threat of rickettsial
+            infection regardless of their development stage (larvae, nymphs, or
+            adults). Many factors play a role in the epidemiology of tick-borne
+            rickettsioses, including the prevalence and species diversity of
+            rickettsiae in mammals [
+          - target: '#pntd.0007469.ref149'
+            type: Cite
+          - –
+          - target: '#pntd.0007469.ref153'
+            type: Cite
+          - '] and the dispersion of infected ticks by migratory birds ['
+          - target: '#pntd.0007469.ref154'
+            type: Cite
+          - '].'
+        type: Paragraph
+    type: Figure
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 3
+    caption:
+      - content:
+          - Body lice as the cause of typhus reemergence.
+        depth: 1
+        id: sec003
+        type: Heading
+      - content:
+          - type: Emphasis
+            content:
+              - R
+          - '. '
+          - type: Emphasis
+            content:
+              - prowazekii
+          - ' is classified as a category B bioterrorism agent. It is stable in dried louse feces and can be transmitted through aerosols. Detection of the pathogen in body lice is crucial for monitoring the transmission risk to humans. However, Brill–Zinsser disease, a relapsing form of epidemic typhus that may develop as sporadic cases up to 40 years after the initial acute infection, is unrelated to louse infestation but to stress or a waning immune system that initiates the reactivation of an earlier and latent infection. Patients developing Brill–Zinsser disease may, in turn, be the source of new outbreaks when conditions facilitate louse infestation and transmission ['
+          - target: '#pntd.0007469.ref155'
+            type: Cite
+          - ']. The mechanism of '
+          - type: Emphasis
+            content:
+              - R
+          - '. '
+          - type: Emphasis
+            content:
+              - prowazekii
+          - ' latency has not been established. Brill–Zinsser disease should be considered as a possible diagnosis for acute fever in any patient who has lived in an area where epidemic typhus was endemic ['
+          - target: '#pntd.0007469.ref156'
+            type: Cite
+          - '].'
+        type: Paragraph
+    type: Figure
+  - rows:
+      - cells:
+          - content:
+              - Species (type strain)
+            type: TableCell
+          - content:
+              - Disease
+            type: TableCell
+          - content:
+              - Vector
+            type: TableCell
+          - content:
+              - Distribution
+            type: TableCell
+          - content:
+              - Genome sequence accession number
+              - content:
+                  - '*'
+                target: '#t001fn001'
+                relation: table-fn
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - R
+              - '. '
+              - type: Emphasis
+                content:
+                  - africae
+              - ' (ESF-5)'
+            type: TableCell
+          - content:
+              - ATBF
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Amblyomma
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Rhipicephalus
+              - ' ticks'
+            type: TableCell
+          - content:
+              - 'Sub-Saharan Africa, West Indies'
+            type: TableCell
+          - content:
+              - NC_012633
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - R
+              - '. '
+              - type: Emphasis
+                content:
+                  - akari
+              - ' (Hartford)'
+            type: TableCell
+          - content:
+              - Rickettsialpox
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - L
+              - '. '
+              - type: Emphasis
+                content:
+                  - sanguineus
+              - ' mites'
+            type: TableCell
+          - content:
+              - 'North America, Asia, Europe'
+            type: TableCell
+          - content:
+              - NC_009881
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - R
+              - '. '
+              - type: Emphasis
+                content:
+                  - australis
+              - ' (Cutlack)'
+            type: TableCell
+          - content:
+              - QTT
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Ixodes
+              - ' ticks'
+            type: TableCell
+          - content:
+              - Australia
+            type: TableCell
+          - content:
+              - NC_017058
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - R
+              - '. '
+              - type: Emphasis
+                content:
+                  - conorii
+              - ' (Malish 7)'
+            type: TableCell
+          - content:
+              - MSF
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Rhipicephalus sanguineus
+              - ' ticks'
+            type: TableCell
+          - content:
+              - 'Europe, North Africa, Asia'
+            type: TableCell
+          - content:
+              - NC_003103
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - Rickettsia felis
+              - ' (Marseille-URRWFXCal'
+              - type: Subscript
+                content:
+                  - '2'
+              - )
+            type: TableCell
+          - content:
+              - Flea-borne rickettsiosis
+            type: TableCell
+          - content:
+              - 'Mostly '
+              - type: Emphasis
+                content:
+                  - C
+              - '. '
+              - type: Emphasis
+                content:
+                  - felis
+            type: TableCell
+          - content:
+              - Worldwide
+            type: TableCell
+          - content:
+              - NC_007109.1
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - Rickettsia helvetica
+              - ' (C9P9)'
+            type: TableCell
+          - content:
+              - Unnamed rickettsiosis
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Ixodes
+              - ' sp.'
+            type: TableCell
+          - content:
+              - 'Europe, Asia, North Africa'
+            type: TableCell
+          - content:
+              - NZ_CM001467
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - Rickettsia japonica
+              - ' (YH)'
+            type: TableCell
+          - content:
+              - Japanese/Oriental spotted fever
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Haemaphysalis
+              - ' ticks'
+            type: TableCell
+          - content:
+              - Asia
+            type: TableCell
+          - content:
+              - content:
+                  - NC_016050
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_016050'
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - Rickettsia raoultii
+              - ' (Khabarovsk)'
+            type: TableCell
+          - content:
+              - TIBOLA
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Dermacentor
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Ixodes
+              - ' ticks'
+            type: TableCell
+          - content:
+              - Europe
+            type: TableCell
+          - content:
+              - content:
+                  - NZ_CP010969
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NZ_CP010969'
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - Rickettsia rickettsii
+              - ' (Sheila Smith)'
+            type: TableCell
+          - content:
+              - RMSF
+            type: TableCell
+          - content:
+              - 'Mostly '
+              - type: Emphasis
+                content:
+                  - Dermacentor
+              - ' ticks'
+            type: TableCell
+          - content:
+              - North and Central America
+            type: TableCell
+          - content:
+              - content:
+                  - NC_009882
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_009882'
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - Rickettsia slovaca
+              - ' (13-B)'
+            type: TableCell
+          - content:
+              - TIBOLA
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Dermacentor
+              - ' ticks'
+            type: TableCell
+          - content:
+              - 'Europe, Asia'
+            type: TableCell
+          - content:
+              - content:
+                  - NC_016639
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_016639'
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - R
+              - '. '
+              - type: Emphasis
+                content:
+                  - prowazekii
+              - ' (Madrid E)'
+            type: TableCell
+          - content:
+              - Epidemic typhus
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Pediculus humanus humanus
+              - ' lice'
+            type: TableCell
+          - content:
+              - 'Africa, Russia, South America'
+            type: TableCell
+          - content:
+              - content:
+                  - NC_000963
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_000963'
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - R
+              - '. '
+              - type: Emphasis
+                content:
+                  - typhi
+              - ' (Wilmington)'
+            type: TableCell
+          - content:
+              - Murine/endemic typhus
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - X
+              - '. '
+              - type: Emphasis
+                content:
+                  - cheopis
+              - ' fleas'
+            type: TableCell
+          - content:
+              - Worldwide
+            type: TableCell
+          - content:
+              - content:
+                  - NC_006142
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_006142'
+                type: Link
+            type: TableCell
+        type: TableRow
+      - cells:
+          - content:
+              - type: Emphasis
+                content:
+                  - O
+              - '. '
+              - type: Emphasis
+                content:
+                  - tsutsugamushi
+              - ' (Ikeda)'
+            type: TableCell
+          - content:
+              - Scrub typhus
+            type: TableCell
+          - content:
+              - type: Emphasis
+                content:
+                  - Leptotrombidium
+              - ' mites'
+            type: TableCell
+          - content:
+              - Asia
+            type: TableCell
+          - content:
+              - content:
+                  - NC_010793
+                target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_010793'
+                type: Link
+            type: TableCell
+        type: TableRow
+    type: Table
+    id: pntd.0007469.t001
+    title: >-
+      Geographical distribution and arthropod vectors of Rickettsia and Orientia
+      species causing CNS infections.
+    content: []
+  - content:
+      - Clinical manifestations of rickettsial infections
+    depth: 1
+    id: sec004
+    type: Heading
+  - content:
+      - >-
+        Spotted fever rickettsioses typically present with a triad made of
+        fever, inoculation eschar(s), and generalized cutaneous rash. However,
+        infected patients may develop other clinical pictures, including
+        nonspecific flu-like symptoms, isolated fever, myalgia, cough,
+        generalized lymphadenopathy, abdominal pain, and a variety of
+        neurological symptoms that are described next.
+    type: Paragraph
+  - content:
+      - >-
+        Most commonly, patients recover without sequellae. However, the clinical
+        presentation of rickettsial diseases may vary from mild to very severe,
+        with the case-fatality rate for highly virulent rickettsiae ranging from
+        2% to 30% [
+      - target: '#pntd.0007469.ref013'
+        type: Cite
+      - >-
+        ]. The severity of rickettsial disease has been associated with
+        differences in pathogen virulence and host-related factors (e.g., age,
+        delayed diagnosis, hepatic and renal dysfunction, CNS and lung
+        involvement) [
+      - target: '#pntd.0007469.ref014'
+        type: Cite
+      - >-
+        ]. Regarding species-specific variations in virulence, studies have
+        suggested that these differences may be linked to the degree of genomic
+        degradation. In a comparison of 4 species exhibiting distinct virulence
+        profiles, the most virulent 
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' sp. exhibited the most drastically reduced and degraded genomes compared with closely related species of milder pathogenesis ['
+      - target: '#pntd.0007469.ref015'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Mechanisms of bacterial entry into the CNS
+    depth: 1
+    id: sec005
+    type: Heading
+  - content:
+      - >-
+        The brain–blood barrier (BBB) at the level of brain microvessel
+        endothelium is the major site of blood–CNS exchange. The mechanisms of
+        bacterial entry into the CNS are divided according to whether they break
+        the integrity of BBB cells (which consist of microvascular endothelial
+        cells of the brain, pericytes, and astrocytes) or interact with
+        epithelial cells of the blood–choroid barrier. Mechanisms used by
+        pathogens to enter the CNS are usually classified according to the
+        involved cellular route [
+      - target: '#pntd.0007469.ref016'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref017'
+        type: Cite
+      - >-
+        ]. These cellular entry routes are listed as intercellular or
+        paracellular (passing between cells), transcellular (the intracellular
+        mode), or leukocyte-facilitated in infected phagocytes (which is a
+        “Trojan horse”-like mechanism) [
+      - target: '#pntd.0007469.ref018'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref019'
+        type: Cite
+      - >-
+        ]. Rickettsial neuroinvasion occurs during the systemic phase of the
+        disease and typically follows bacterial dissemination via the
+        bloodstream. As other intracellular microorganisms, rickettsiae might
+        use a transcellular approach, which is supported by the fact that
+        bacterial replication takes place within endothelial cells. Other
+        studies have demonstrated that bacterial pathogens (extra- and
+        intracellular) can reach the BBB and are recognized by
+        antigen-presenting cells through binding to Toll-like receptors (
+      - content:
+          - Fig 4
+        target: '#pntd.0007469.g004'
+        relation: fig
+        type: Link
+      - ).
+    type: Paragraph
+  - content:
+      - format: image/png
+        meta:
+          inline: false
+          linkType: simple
+        type: ImageObject
+        contentUrl: ''
+    label: Fig 4
+    caption:
+      - content:
+          - Mechanisms of bacterial penetration through the blood–brain barrier.
+        depth: 1
+        id: sec005
+        type: Heading
+      - content:
+          - >-
+            (A) Intercellular or paracellular, described in extracellular
+            pathogens. The physical barrier formed by endothelial tight
+            junctions is disturbed by bacterial penetration. (B) Transcellular,
+            passing through cells, e.g., direct invasion of endothelial cells.
+            In this scenario, blood-borne bacteria directly invade CNS
+            endothelial cells. (C) By leukocytes, within infected macrophages,
+            named “Trojan horse” mechanism. Infected leukocytes adhere to
+            endothelial cells, allowing the spread of bacteria or,
+            alternatively, leukocytes can transmigrate and deliver bacteria to
+            the CNS parenchyma. CNS, central nervous system.
+        type: Paragraph
+    type: Figure
+  - content:
+      - >-
+        They induce the activation of nuclear factor-kappa B- or
+        mitogen-activated protein kinase pathways and subsequently up-regulate
+        leukocyte populations and express numerous proteins involved in
+        inflammation and the immune response [
+      - target: '#pntd.0007469.ref016'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref018'
+        type: Cite
+      - >-
+        ]. However, the precise molecular mechanisms of rickettsial entry into
+        the CNS are not yet described.
+    type: Paragraph
+  - content:
+      - Treatment of rickettsioses
+    depth: 1
+    id: sec006
+    type: Heading
+  - content:
+      - >-
+        The most efficient antibiotics to cure rickettsioses are tetracycline
+        derivatives, primarily doxycycline. The daily dose, 200 mg, is usually
+        administered orally and is sufficient to cure rickettsioses. Treatment
+        duration is 7 days or until 2 days after apyrexia is obtained [
+      - target: '#pntd.0007469.ref020'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref021'
+        type: Cite
+      - >-
+        ]. In severe forms, intravenous doxycycline may be used. Alternatively,
+        chloramphenicol and macrolides (azithromycin, clarithromycin, and
+        roxytromycin) can be prescribed for treating rickettsial diseases [
+      - target: '#pntd.0007469.ref022'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref023'
+        type: Cite
+      - >-
+        ]. As a consequence, empirical therapy for CNS infections most often
+        does not include antibiotics active on rickettsiae.
+    type: Paragraph
+  - content:
+      - Neuropathology in the framework of rickettsial diseases
+    depth: 1
+    id: sec007
+    type: Heading
+  - content:
+      - Spotted fever group rickettsiae
+    depth: 2
+    id: sec008
+    type: Heading
+  - content:
+      - >-
+        In spotted fever group (SFG) rickettsioses, encephalitis is
+        underdiagnosed due to underrecognition and low sensitivity of serologies
+        at the time of early symptoms [
+      - target: '#pntd.0007469.ref024'
+        type: Cite
+      - >-
+        ]. Therefore, it is difficult for clinicians to recognize the clinical,
+        biological, and neuroimaging features of this type of encephalitis [
+      - target: '#pntd.0007469.ref025'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Rocky Mountain spotted fever
+    depth: 2
+    id: sec009
+    type: Heading
+  - content:
+      - 'Rocky Mountain spotted fever (RMSF), caused by '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - ', frequently presents with neurological symptoms ['
+      - target: '#pntd.0007469.ref026'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref027'
+        type: Cite
+      - >-
+        ]. The CNS notably appears to be one of the major systems involved
+        during the latest stages of RMSF pathogenesis [
+      - target: '#pntd.0007469.ref028'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - >-
+        The onset of symptoms is usually abrupt, with severe headache, fever,
+        chills, myalgias, arthralgias, and prostration. Neurological symptoms
+        are frequently a prominent feature. Headache, restlessness, insomnia,
+        and back stiffness are common. Delirium or coma alternating with
+        restlessness is present during the peak of fever [
+      - target: '#pntd.0007469.ref026'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref027'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref029'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref031'
+        type: Cite
+      - >-
+        ]. Encephalitis, which may be fatal, is a frequent manifestation in case
+        of delayed diagnosis and treatment [
+      - target: '#pntd.0007469.ref032'
+        type: Cite
+      - >-
+        ]. In addition, several authors have described severe sequelae in
+        patients who survived 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - ' infection, including hemiplegia, deafness, visual disturbance, slurred speech, mental confusion, and cranial neuropathies that may persist for a few weeks following recovery ['
+      - target: '#pntd.0007469.ref033'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref037'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - >-
+        Histological studies have highlighted that the pathologic changes in
+        RMSF are most severe in the skin, but the heart, lungs, and CNS also are
+        involved. The brain is edematous, and minute petechial hemorrhages are
+        present. The characteristic microscopic lesions are small round nodules
+        composed of elongated microglia, lymphocytes, and endothelial cells [
+      - target: '#pntd.0007469.ref029'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref038'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref039'
+        type: Cite
+      - >-
+        ]. These are scattered diffusely through the brain in close relation to
+        small vessels. Vessels in the center of the lesions show severe
+        degeneration. Endothelial cells are swollen, and the lumen may be
+        occluded. Areas of focal necrosis are common as the result of thrombosis
+        of small arteries. Some degree of perivascular infiltration without the
+        presence of nodules may be seen in both the meninges and brain
+        parenchyma [
+      - target: '#pntd.0007469.ref029'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - >-
+        To the best of our knowledge, there is just one report of experimental
+        in vitro rickettsial infection of neuronal cells. Joshi and Kovacs [
+      - target: '#pntd.0007469.ref040'
+        type: Cite
+      - '] demonstrated that neurons are efficiently infected by '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - ' and that the infection causes significant neuronal apoptotic cell death. A double-immunofluorescent staining technique was employed to identify infected neurons, using anti-'
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - ' serum and a neuron-specific (antineuronal '
+      - type: Emphasis
+        content:
+          - β
+      - >-
+        -III isoform of tubulin [anti-TuJ1]) antibody. The extent of apoptotic
+        cell death of immunocytochemically identified neurons was determined by
+        terminal deoxynucleotidyl transferase-mediated digoxigenin-dUTP nick-end
+        labelling (TUNEL) assay. Primary cultures of rat cerebellar granular
+        neurons were infected (approximately 65% of neurons) during a 6-hour
+        exposure to 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - >-
+        , and the infection induced widespread neuronal degeneration. To verify
+        that the observed neuronal degeneration was 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - >-
+        -induced, primary cultures of rat cerebellar granular neuron cultures
+        were exposed to 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - ' in the presence of tetracycline. The authors also included '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - rickettsii
+      - ' infection of endothelial cells as a control for infection and infection-induced apoptotic cell death ['
+      - target: '#pntd.0007469.ref040'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - 'The CNS is also a crucial target in other rickettsial diseases ['
+      - target: '#pntd.0007469.ref041'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref042'
+        type: Cite
+      - >-
+        ]. It has been demonstrated by a specific immunohistochemistry
+        technique, during the development of mouse-model studies, that
+        rickettsiae reach brain tissues when injected intravenously [
+      - target: '#pntd.0007469.ref043'
+        type: Cite
+      - >-
+        ]. Such studies demonstrate that rickettsiae are able to cross the
+        blood–brain barrier to reach brain tissues. The other rickettsial
+        infections that may affect the nervous system exhibit pathological and
+        clinical changes similar to those of RMSF [
+      - target: '#pntd.0007469.ref029'
+        type: Cite
+      - >-
+        ]. In rickettsial meningitis, the cerebrospinal fluid shows pleocytosis
+        with lymphocyte predominance, hypoglycorrhachia, and
+        hyperproteinorrhachia.
+    type: Paragraph
+  - content:
+      - Mediterranean spotted fever
+    depth: 2
+    id: sec010
+    type: Heading
+  - content:
+      - >-
+        Mediterranean spotted fever (MSF), also known as Boutonneuse fever and
+        Marseilles fever, is caused by 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - conorii
+      - >-
+        . Although usually a benign and self-limiting exanthematous febrile
+        illness [
+      - target: '#pntd.0007469.ref044'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref047'
+        type: Cite
+      - '], MSF has a fatality rate of 2% to 7% among hospitalized patients ['
+      - target: '#pntd.0007469.ref048'
+        type: Cite
+      - >-
+        ]. In large MSF case series from France and Spain, patients with severe
+        and fatal forms of the disease developed complications, including acute
+        renal failure, thrombocytopenia, myocarditis, pneumonitis, gastric
+        hemorrhage, shock, and multiple organ failure [
+      - target: '#pntd.0007469.ref044'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref047'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref049'
+        type: Cite
+      - >-
+        ]. Furthermore, a few reports in the literature have described CNS
+        involvement in the course of MSF, presenting as meningitis [
+      - target: '#pntd.0007469.ref050'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref051'
+        type: Cite
+      - '], encephalitis ['
+      - target: '#pntd.0007469.ref045'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref047'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref049'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref050'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref052'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref053'
+        type: Cite
+      - '], meningoencephalitis ['
+      - target: '#pntd.0007469.ref047'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref054'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref056'
+        type: Cite
+      - '], or myelitis ['
+      - target: '#pntd.0007469.ref050'
+        type: Cite
+      - >-
+        ]. Among the patients who survived these severe forms, only 2 did not
+        suffer sequelae. Sequelae were severe, despite an appropriate
+        doxycycline treatment of 200 mg every 12 hours [
+      - target: '#pntd.0007469.ref054'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref057'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Japanese spotted fever
+    depth: 2
+    id: sec011
+    type: Heading
+  - content:
+      - 'Japanese spotted fever (JSF), caused by '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - japonica
+      - ', was first reported in 1984 ['
+      - target: '#pntd.0007469.ref058'
+        type: Cite
+      - >-
+        ]. This rickettsial disease is characterized by high fever, rash, and
+        inoculation eschar at the tick bite site [
+      - target: '#pntd.0007469.ref058'
+        type: Cite
+      - ']. JSF is clinically similar to scrub typhus, caused by '
+      - type: Emphasis
+        content:
+          - O
+      - '. '
+      - type: Emphasis
+        content:
+          - tsutsugamushi
+      - ', but often with a more severe course ['
+      - target: '#pntd.0007469.ref058'
+        type: Cite
+      - >-
+        ]. CNS involvement is rare, but cases complicated by pneumonia or
+        meningoencephalitis have been reported [
+      - target: '#pntd.0007469.ref059'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref061'
+        type: Cite
+      - ']. There have been only 5 JSF reported cases with CNS involvement ['
+      - target: '#pntd.0007469.ref062'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref064'
+        type: Cite
+      - ']. The first fatal case was reported by Kodama and colleagues in 2002 ['
+      - target: '#pntd.0007469.ref065'
+        type: Cite
+      - >-
+        ]. All patients exhibited fever and mental disturbance, including 3
+        patients with nuchal rigidity and 3 patients with seizures. All patients
+        had aseptic meningitis [
+      - target: '#pntd.0007469.ref066'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Tick-borne lymphadenopathy
+    depth: 2
+    id: sec012
+    type: Heading
+  - content:
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - slovaca
+      - ' and '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - raoultii
+      - ' cause a rickettsiosis that has successively been named tick-borne lymphadenopathy (TIBOLA) ['
+      - target: '#pntd.0007469.ref067'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref069'
+        type: Cite
+      - '], '
+      - type: Emphasis
+        content:
+          - Dermacentor
+      - '-borne necrosis erythema and lymphadenopathy (DEBONEL) ['
+      - target: '#pntd.0007469.ref070'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref073'
+        type: Cite
+      - >-
+        ], and then scalp eschar and neck lymphadenopathy after tick bite
+        (SENLAT) [
+      - target: '#pntd.0007469.ref074'
+        type: Cite
+      - ']. The first '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - slovaca
+      - ' isolate was cultivated from a '
+      - type: Emphasis
+        content:
+          - D
+      - '. '
+      - type: Emphasis
+        content:
+          - marginatus
+      - ' tick collected in central Slovakia and was initially considered nonpathogenic ['
+      - target: '#pntd.0007469.ref067'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref075'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref076'
+        type: Cite
+      - ']. However, in 1997, '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - slovaca
+      - ' was identified as the cause of a clinical entity combining scalp eschar and neck lymphadenopathy after a tick bite ['
+      - target: '#pntd.0007469.ref076'
+        type: Cite
+      - >-
+        ]. After MSF, TIBOLA is nowadays the most prevalent tick-borne
+        rickettsiosis in Europe [
+      - target: '#pntd.0007469.ref077'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - >-
+        This syndrome is defined by the association of a tick bite and an
+        inoculation eschar to the scalp, surrounded by a circular erythema, and
+        painful regional lymphadenopathies [
+      - target: '#pntd.0007469.ref078'
+        type: Cite
+      - >-
+        ]. The enlarged lymph nodes are located in the draining region of the
+        tick bite, characteristically in the occipital region and/or behind the
+        sternocleidomastoidal muscle. Although rare, the most frequent general
+        symptoms are fever, nuchal lymphadenopathy, fatigue, dizziness,
+        headache, sweat, myalgia, arthralgia, and loss of appetite [
+      - target: '#pntd.0007469.ref068'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref079'
+        type: Cite
+      - >-
+        ]. Symptoms suggestive of acute encephalitis with febrile relapses and a
+        persistence of neurasthenic disorders have also been reported [
+      - target: '#pntd.0007469.ref068'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref080'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - 'Although '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - slovaca
+      - ' was the first demonstrated agent of TIBOLA ['
+      - target: '#pntd.0007469.ref076'
+        type: Cite
+      - '] and was isolated from a patient ['
+      - target: '#pntd.0007469.ref081'
+        type: Cite
+      - '], other '
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' species were suspected to be involved in the disease in Spanish reports ['
+      - target: '#pntd.0007469.ref071'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref082'
+        type: Cite
+      - ']. In 2008, '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - raoultii
+      - ' DNA was detected in a tick taken from the scalp of a patient with TIBOLA ['
+      - target: '#pntd.0007469.ref083'
+        type: Cite
+      - ']. In 2009, Parola and colleagues reported 6 more cases of '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - raoultii
+      - ' infection ['
+      - target: '#pntd.0007469.ref084'
+        type: Cite
+      - ']. To date, '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - raoultii
+      - ' has been described as causing a milder form of TIBOLA than '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - slovaca
+      - ' ['
+      - target: '#pntd.0007469.ref084'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - African tick bite fever
+    depth: 2
+    id: sec013
+    type: Heading
+  - content:
+      - 'African tick bite fever (ATBF), caused by '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - africae
+      - >-
+        , is the most common rickettsiosis in travelers to sub-Saharan Africa
+        and also the most important rickettsiosis worldwide in terms of numbers
+        of cases per year [
+      - target: '#pntd.0007469.ref085'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref087'
+        type: Cite
+      - >-
+        ]. The disease is most commonly mild and self-limiting without any
+        sequellae. However, in 2006, Jensenius and colleagues reported 6
+        patients with evidence of long-lasting subacute neuropathy following
+        ATBF contracted during a safari to southern Africa [
+      - target: '#pntd.0007469.ref088'
+        type: Cite
+      - >-
+        ]. Of these, 3 developed radiating pain, paresthesia, and/or motor
+        weakness of the extremities; 2 had hemifacial pain and paresthesia; and
+        1 developed unilateral sensorineural hearing loss.
+    type: Paragraph
+  - content:
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - helvetica
+      - ' infection'
+    depth: 2
+    id: sec014
+    type: Heading
+  - content:
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - helvetica
+      - ' was first isolated from '
+      - type: Emphasis
+        content:
+          - Ixodes ricinus
+      - ' ticks in Switzerland in 1979 ['
+      - target: '#pntd.0007469.ref089'
+        type: Cite
+      - >-
+        ], but its description as a distinct species of the SFG was confirmed
+        only in 1993 [
+      - target: '#pntd.0007469.ref090'
+        type: Cite
+      - >-
+        ]. Initially, the organism was considered as nonpathogenic. However,
+        several patients with a mild and self-limiting disease associating
+        fever, headache, and myalgia had serological evidence of 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - helvetica
+      - ' infection ['
+      - target: '#pntd.0007469.ref091'
+        type: Cite
+      - >-
+        ]. Human cases have been reported in several European countries, e.g.,
+        Sweden [
+      - target: '#pntd.0007469.ref092'
+        type: Cite
+      - '] (proven by PCR and DNA sequencing), France ['
+      - target: '#pntd.0007469.ref091'
+        type: Cite
+      - '], Switzerland ['
+      - target: '#pntd.0007469.ref093'
+        type: Cite
+      - '], and Italy ['
+      - target: '#pntd.0007469.ref094'
+        type: Cite
+      - >-
+        ] (proven by serological findings). However, a more severe clinical
+        disease has been reported and may be associated with severe symptoms
+        such as CNS disorders [
+      - target: '#pntd.0007469.ref095'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref096'
+        type: Cite
+      - >-
+        ] (verified by PCR in the cerebrospinal fluid, together with serologic
+        evidence). 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - helvetica
+      - ' was even cultured from a patient with subacute meningitis ['
+      - target: '#pntd.0007469.ref097'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Typhus group rickettsiae
+    depth: 2
+    id: sec015
+    type: Heading
+  - content:
+      - Epidemic typhus
+    depth: 3
+    id: sec016
+    type: Heading
+  - content:
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - prowazekii
+      - >-
+        , the agent of epidemic typhus, causes frequent neurological
+        manifestations. These include an agitated delirium that, when untreated,
+        may progress to death. A severe headache is almost always present.
+        Neurological complications include seizures, confusion, and coma. In
+        severe cases, patients develop meningoencephalitis, with meningism,
+        tinnitus, and hyperacusis, followed by deafness, dysphoria, and
+        agitation. In Brill–Zinsser disease, the recurrent form of epidemic
+        typhus that may occur months to years after the initial infection,
+        symptoms are similar to the primary infection, although generally milder
+        [
+      - target: '#pntd.0007469.ref029'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref098'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Murine typhus
+    depth: 3
+    id: sec017
+    type: Heading
+  - content:
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - typhi
+      - >-
+        , the causal agent of murine or endemic typhus, is transmitted to humans
+        by the rat flea 
+      - type: Emphasis
+        content:
+          - Xenopsylla cheopis
+      - >-
+        . It is most often a mild illness, but severe forms have been reported
+        in refugee camps, and a fatal case in the United Kingdom was infected in
+        Spain [
+      - target: '#pntd.0007469.ref099'
+        type: Cite
+      - >-
+        ]. There is a considerable variability in the frequency of neurological
+        manifestations of murine typhus, ranging from 2% to 20% of cases [
+      - target: '#pntd.0007469.ref100'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref101'
+        type: Cite
+      - >-
+        ]. Headache is common, but meningitis and encephalitis are occasionally
+        reported [
+      - target: '#pntd.0007469.ref102'
+        type: Cite
+      - >-
+        ]. Mental confusion, seizures, stupor, and ataxia may occur infrequently
+        [
+      - target: '#pntd.0007469.ref101'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref103'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref105'
+        type: Cite
+      - >-
+        ]. In some cases, systematic signs and symptoms may be minimal, and
+        neurological manifestations may be the primary clinical manifestations
+        of 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - typhi
+      - ' infection. No neurologic sequellae have been reported in the past ['
+      - target: '#pntd.0007469.ref029'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref042'
+        type: Cite
+      - ']. However, recently, an abducens nerve palsy and meningitis induced by '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - typhi
+      - ' has been described ['
+      - target: '#pntd.0007469.ref106'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Transitional group rickettsiae
+    depth: 2
+    id: sec018
+    type: Heading
+  - content:
+      - Rickettsialpox
+    depth: 3
+    id: sec019
+    type: Heading
+  - content:
+      - 'Rickettsialpox was first described in 1946 in New York City, New York ['
+      - target: '#pntd.0007469.ref107'
+        type: Cite
+      - ']. The etiological agent is '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - akari
+      - ', transmitted by the mite '
+      - type: Emphasis
+        content:
+          - Liponyssoides sanguineus
+      - ' ['
+      - target: '#pntd.0007469.ref108'
+        type: Cite
+      - ']. Rickettsialpox is still occurring in the state of New York ['
+      - target: '#pntd.0007469.ref109'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref110'
+        type: Cite
+      - '], and European cases of '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - akari
+      - ' infection were reported in Ukraine ['
+      - target: '#pntd.0007469.ref111'
+        type: Cite
+      - '], Croatia ['
+      - target: '#pntd.0007469.ref112'
+        type: Cite
+      - '], and Northern Europe ['
+      - target: '#pntd.0007469.ref113'
+        type: Cite
+      - ']. Clinical signs of '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - akari
+      - ' infection develop about 7 to 10 days after an infected bite. At the mite inoculation site, a vesicle appears, which dries up, leaving a scar. High fever (≤39.4 °C) occurs suddenly, along with severe headache and myalgias (especially in the back). A generalized papular rash develops, which can also be vesicular, resembling chickenpox. Other signs of the disease include regional lymphadenopathy, nausea, and neurological symptoms such as meningitis, photophobia, dizziness, eye movement, and neck stiffness. The disease is self-limiting, usually without complications, but myalgias and headache may persist for 2 more weeks after the rash ['
+      - target: '#pntd.0007469.ref114'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Queensland tick typhus
+    depth: 3
+    id: sec020
+    type: Heading
+  - content:
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - australis
+      - >-
+        , the causative agent of Queensland tick typhus (QTT), is transmitted by
+        certain 
+      - type: Emphasis
+        content:
+          - Ixodes
+      - ' spp. ticks, which are predominantly present along the eastern coast of Australia ['
+      - target: '#pntd.0007469.ref115'
+        type: Cite
+      - >-
+        ]. Originally described as a mild, self-limiting illness, recent case
+        reports demonstrated the occurrence of more severe forms with
+        complications. 
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - australis
+      - ' shares many clinical features with rickettsialpox. Acute infections often begin with high-grade fever, headache, myalgias, and a maculopapular rash after a short incubation period averaging 5 days ['
+      - target: '#pntd.0007469.ref116'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref117'
+        type: Cite
+      - >-
+        ]. Infection has the potential to progress to severe sepsis with
+        multiorgan failure, requiring prolonged hospitalization and admission to
+        intensive care [
+      - target: '#pntd.0007469.ref118'
+        type: Cite
+      - ']. Since '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - australis
+      - ' was first isolated in 1946, there has been one reported fatal QTT case ['
+      - target: '#pntd.0007469.ref119'
+        type: Cite
+      - >-
+        ]. Less common manifestations of QTT include splenomegaly, abdominal
+        pain, renal failure, dry cough, and conjunctivitis [
+      - target: '#pntd.0007469.ref120'
+        type: Cite
+      - >-
+        ]. Some reports documented confusion, seizures, and hallucinations as
+        features of the disease [
+      - target: '#pntd.0007469.ref116'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Flea-borne spotted fever
+    depth: 3
+    id: sec021
+    type: Heading
+  - content:
+      - 'Flea-borne spotted fever is caused by '
+      - type: Emphasis
+        content:
+          - R
+      - '. '
+      - type: Emphasis
+        content:
+          - felis
+      - '. It is transmitted to humans by fleas, in particular '
+      - type: Emphasis
+        content:
+          - Ctenocephalides felis
+      - ' fleas. Patients often present with elevated fever, headache, and myalgia. A cutaneous rash is inconstant. Other manifestations may include abdominal pain, nausea, vomiting, cough, eschar, and photophobia. Rare cases of neurological involvement have been reported, notably, hearing loss and subacute meningitis ['
+      - target: '#pntd.0007469.ref121'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref122'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Scrub typhus
+    depth: 2
+    id: sec022
+    type: Heading
+  - content:
+      - 'The genus '
+      - type: Emphasis
+        content:
+          - Orientia
+      - ' contains two known species, '
+      - type: Emphasis
+        content:
+          - O
+      - '. '
+      - type: Emphasis
+        content:
+          - tsutsugamushi
+      - ' and '
+      - type: Emphasis
+        content:
+          - O
+      - '. '
+      - type: Emphasis
+        content:
+          - chuto
+      - ' ['
+      - target: '#pntd.0007469.ref123'
+        type: Cite
+      - >-
+        ], that cause scrub typhus, which is still regarded by some experts as a
+        rickettsiosis, and are closely related to 
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' species ['
+      - target: '#pntd.0007469.ref124'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref125'
+        type: Cite
+      - >-
+        ]. Scrub typhus is a common cause of febrile illness in Asia. Fever and
+        headache are the most common features of scrub typhus [
+      - target: '#pntd.0007469.ref126'
+        type: Cite
+      - >-
+        ]. During World War 2, scrub typhus was a well-recognized cause of
+        lethal meningitis in the Asia–Pacific region. Nowadays, only scarce data
+        exist on the clinical burden of these pathogens in patients with CNS
+        disease, e. g., in Laos and Thailand, where meningitis and
+        meningoencephalitis occur as severe complications [
+      - target: '#pntd.0007469.ref127'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref128'
+        type: Cite
+      - >-
+        ]. Isolated cases of acute encephalitis, abducens nerve palsy, and acute
+        transverse myelitis due to 
+      - type: Emphasis
+        content:
+          - O
+      - '. '
+      - type: Emphasis
+        content:
+          - tsutsugamushi
+      - ' were also recently described ['
+      - target: '#pntd.0007469.ref129'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref130'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Rickettsia-related organisms
+    depth: 2
+    id: sec023
+    type: Heading
+  - content:
+      - 'Even though we have focused our review on members of the genus '
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - >-
+        , we have searched the literature for CNS infection caused by the
+        related organisms 
+      - type: Emphasis
+        content:
+          - Ehrlichia
+      - ' and '
+      - type: Emphasis
+        content:
+          - Anaplasma
+      - ' species.'
+    type: Paragraph
+  - content:
+      - 'Neurological involvement in human monocytic ehrlichiosis, caused by '
+      - type: Emphasis
+        content:
+          - E
+      - '. '
+      - type: Emphasis
+        content:
+          - chaffeensis
+      - ', is not rare ['
+      - target: '#pntd.0007469.ref131'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref139'
+        type: Cite
+      - >-
+        ]. Severe headache and symptoms of meningeal irritation are present in
+        as many as 10% of cases [
+      - target: '#pntd.0007469.ref140'
+        type: Cite
+      - >-
+        ]. Most cases present as aseptic meningitis, but complications such as
+        ataxia, cranial nerve paresis, meningoencephalitis, multiorgan failure,
+        optic neuritis, seizures, and demyelinating polyneuropathy have been
+        reported [
+      - target: '#pntd.0007469.ref137'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref138'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref141'
+        type: Cite
+      - –
+      - target: '#pntd.0007469.ref143'
+        type: Cite
+      - ']. In addition, '
+      - type: Emphasis
+        content:
+          - E
+      - '. '
+      - type: Emphasis
+        content:
+          - canis
+      - ' was detected in a child with aseptic meningitis ['
+      - target: '#pntd.0007469.ref144'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - type: Emphasis
+        content:
+          - A
+      - '. '
+      - type: Emphasis
+        content:
+          - phagocytophilum
+      - ' appears to be a rare agent of CNS infections ['
+      - target: '#pntd.0007469.ref145'
+        type: Cite
+      - >-
+        ], but cases of cerebral infarction or brachial plexopathy associated
+        to 
+      - type: Emphasis
+        content:
+          - A
+      - '. '
+      - type: Emphasis
+        content:
+          - phagocytophilum
+      - ' infection were reported ['
+      - target: '#pntd.0007469.ref146'
+        type: Cite
+      - ','
+      - target: '#pntd.0007469.ref147'
+        type: Cite
+      - ']. In addition, '
+      - type: Emphasis
+        content:
+          - A
+      - '. '
+      - type: Emphasis
+        content:
+          - phagocytophilum
+      - '-infected neutrophils were described to enhance transmigration of '
+      - type: Emphasis
+        content:
+          - Borrelia burgdorferi
+      - ' across the human blood–brain barrier in vitro ['
+      - target: '#pntd.0007469.ref148'
+        type: Cite
+      - '].'
+    type: Paragraph
+  - content:
+      - Conclusion
+    depth: 1
+    id: sec024
+    type: Heading
+  - content:
+      - >-
+        Through a literature review, we identified 13 rickettsioses, including
+        scrub typhus, causing CNS infections ranging from simple headache to
+        lethal meningoencephalitis. In addition, surviving patients may suffer
+        incapacitating sequellae. To date, the precise mechanisms of rickettsial
+        pathogenesis for the CNS are only partially known, but animal models
+        have demonstrated their pro-apototic effect for neurons. However, these
+        bacteria are constantly susceptible to tetracyclines that may
+        efficiently be used to cure patients. The remaining challenge is to
+        integrate rickettsioses more systematically in the differential
+        diagnosis of CNS infections. Without this effort, the diagnosis and
+        treatment may be delayed, increasing the risk of severe forms.
+    type: Paragraph
+  - content:
+      - Top five papers
+    depth: 2
+    id: sec025
+    type: Heading
+  - items:
+      - content:
+          - content:
+              - >-
+                Context: Parola P, Paddock CD, Socolovschi C, Labruna MB,
+                Mediannikov O, Kernif T, Abdad MY, Stenos J, Bitam I, Fournier
+                PE, and Raoult D (2013) Update on tick-borne rickettsioses
+                around the world: a geographic approach. Clin Microbiol Rev, 26,
+                657–702.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Pathogenesis: Joshi SG and Kovacs AD (2007) Rickettsia
+                rickettsii infection causes apoptotic death of cultured
+                cerebellar granule neurons. J Med Microbiol, 56, 138–141.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Epidemiology: Sexton DJ and Kirkland KB (1998). Rickettsial
+                infections and the central nervous system. Clin Infect Dis,26,
+                247–248.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Diseases: Bleck TP (1999) Central nervous system involvement in
+                Rickettsial diseases. Neurol Clin, 17, 801–81.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Diseases: Araki M, Takatsuka K, Kawamura J, and Kanno Y (2002)
+                Japanese spotted fever involving the central nervous system: two
+                case reports and a literature review. J Clin Microbiol, 40,
+                3874–3876.
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+  - content:
+      - Key learning points
+    depth: 2
+    id: sec026
+    type: Heading
+  - items:
+      - content:
+          - content:
+              - >-
+                Rickettsioses are arthropod-transmitted and zoonotic diseases
+                with a worldwide distribution.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Rickettsioses represent a frequent threat for travelers to rural
+                areas but are often misdiagnosed.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Eleven of the currently diagnosed rickettsioses cause CNS
+                infections in humans.
+            type: Paragraph
+        type: ListItem
+      - content:
+          - content:
+              - >-
+                Rickettsial CNS infections range from meningitis to lethal
+                encephalomyelitis.
+            type: Paragraph
+        type: ListItem
+    order: unordered
+    type: List
+references:
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Rossati
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Bargiacchi
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Kroumova
+        type: Person
+      - givenNames:
+          - PL
+        familyNames:
+          - Garavelli
+        type: Person
+    title: Vector transmitted diseases and climate changes in Europe
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 179
+      pageEnd: 92
+      title: Infez Med
+      volumeNumber: 22
+      type: PublicationVolume
+    id: pntd.0007469.ref001
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Parola
+        type: Person
+      - givenNames:
+          - CD
+        familyNames:
+          - Paddock
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Socolovschi
+        type: Person
+      - givenNames:
+          - MB
+        familyNames:
+          - Labruna
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Mediannikov
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Kernif
+        type: Person
+      - givenNames:
+          - MY
+        familyNames:
+          - Abdad
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Stenos
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Bitam
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: 'Update on tick-borne rickettsioses around the world: a geographic approach'
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 657
+      pageEnd: 702
+      title: Clin Microbiol Rev
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pntd.0007469.ref002
+  - authors:
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+      - givenNames:
+          - DB
+        familyNames:
+          - Fishbein
+        type: Person
+    title: Epidemiology of rickettsial diseases
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 237
+      pageEnd: 45
+      title: Eur J Epidemiol
+      volumeNumber: 7
+      type: PublicationVolume
+    id: pntd.0007469.ref003
+  - authors:
+      - givenNames:
+          - SK
+        familyNames:
+          - Sahni
+        type: Person
+      - givenNames:
+          - HP
+        familyNames:
+          - Narra
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Sahni
+        type: Person
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+    title: Recent molecular insights into rickettsial pathogenesis and immunity
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 1265
+      pageEnd: 1288
+      title: Future Microbiol
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pntd.0007469.ref004
+  - authors:
+      - givenNames:
+          - C
+        familyNames:
+          - Eldin
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Parola
+        type: Person
+    title: Rickettsioses as causes of CNS infection in southeast Asia
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      title: Lancet Glob Health
+      volumeNumber: 3
+      type: PublicationVolume
+    id: pntd.0007469.ref005
+  - authors:
+      - givenNames:
+          - SAM
+        familyNames:
+          - Kularatne
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Fernando
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Selvaratnam
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Narampanawa
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Weerakoon
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Wickramasinghe
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Pathirage
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Weerasinghe
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Bandara
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Rajapakse
+        type: Person
+    title: >-
+      Intra-aural tick bite causing unilateral facial nerve palsy in 29 cases
+      over 16 years in Kandy, Sri Lanka: is rickettsial aetiology possible?
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 418
+      title: BMC Infect Dis
+      volumeNumber: 18
+      type: PublicationVolume
+    id: pntd.0007469.ref006
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Boulahri
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Taous
+        type: Person
+      - givenNames:
+          - MA
+        familyNames:
+          - Berri
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Traibi
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Elbenaye
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Rouimi
+        type: Person
+    title: 'Rickettsiosis associated with cerebral infarction: a new case study'
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 80
+      title: Pan Afr Med J
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pntd.0007469.ref007
+  - authors:
+      - givenNames:
+          - R
+        familyNames:
+          - Kahloun
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Gargouri
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Abroug
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Sellami
+        type: Person
+      - givenNames:
+          - YS
+        familyNames:
+          - Ben
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Feki
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Khairallah
+        type: Person
+    title: Visual loss associated with rickettsial disease
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 373
+      pageEnd: 8
+      title: Ocul Immunol Inflamm
+      volumeNumber: 22
+      type: PublicationVolume
+    id: pntd.0007469.ref008
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Bohacsova
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Filipcik
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Opattova
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Valarikova
+        type: Person
+      - givenNames:
+          - DM
+        familyNames:
+          - Quevedo
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Skultety
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Novak
+        type: Person
+      - givenNames:
+          - Z
+        familyNames:
+          - Sekeyova
+        type: Person
+    title: Survival of rat cerebrocortical neurons after rickettsial infection
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 845
+      pageEnd: 9
+      title: Microbes Infect
+      volumeNumber: 17
+      type: PublicationVolume
+    id: pntd.0007469.ref009
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Osterloh
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Papp
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Moderzynski
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Kuehl
+        type: Person
+      - givenNames:
+          - U
+        familyNames:
+          - Richardt
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Fleischer
+        type: Person
+    title: >-
+      Persisting Rickettsia typhi Causes Fatal Central Nervous System
+      Inflammation
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 1615
+      pageEnd: 32
+      title: Infect Immun
+      volumeNumber: 84
+      type: PublicationVolume
+    id: pntd.0007469.ref010
+  - authors:
+      - givenNames:
+          - AF
+        familyNames:
+          - Azad
+        type: Person
+      - givenNames:
+          - CB
+        familyNames:
+          - Beard
+        type: Person
+    title: Rickettsial pathogens and their arthropod vectors
+    type: Article
+    datePublished: '1998'
+    isPartOf:
+      pageStart: 179
+      pageEnd: 86
+      title: Emerg Infect Dis
+      volumeNumber: 4
+      type: PublicationVolume
+    id: pntd.0007469.ref011
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Woodward
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+    title: The history of epidemic typhus
+    type: Article
+    datePublished: '2004'
+    isPartOf:
+      pageStart: 127
+      pageEnd: 40
+      title: Infect Dis Clin North Am
+      volumeNumber: 18
+      type: PublicationVolume
+    id: pntd.0007469.ref012
+  - authors:
+      - givenNames:
+          - AF
+        familyNames:
+          - Azad
+        type: Person
+    title: Pathogenic rickettsiae as bioterrorism agents
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      isPartOf:
+        title: Clin Infect Dis
+        volumeNumber: 45
+        type: PublicationVolume
+      type: PublicationIssue
+    id: pntd.0007469.ref013
+  - authors:
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+      - givenNames:
+          - GA
+        familyNames:
+          - Valbuena
+        type: Person
+      - givenNames:
+          - JP
+        familyNames:
+          - Olano
+        type: Person
+    title: Pathogenic mechanisms of diseases caused by Rickettsia
+    type: Article
+    datePublished: '2003'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 11
+      title: Ann N Y Acad Sci
+      volumeNumber: 990
+      type: PublicationVolume
+    id: pntd.0007469.ref014
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Diop
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+    title: Paradoxical evolution of rickettsial genomes
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      pageStart: 462
+      pageEnd: 9
+      title: Ticks Tick Borne Dis
+      volumeNumber: 10
+      type: PublicationVolume
+    id: pntd.0007469.ref015
+  - authors:
+      - givenNames:
+          - DA
+        familyNames:
+          - Drevets
+        type: Person
+      - givenNames:
+          - PJ
+        familyNames:
+          - Leenen
+        type: Person
+      - givenNames:
+          - RA
+        familyNames:
+          - Greenfield
+        type: Person
+    title: Invasion of the central nervous system by intracellular bacteria
+    type: Article
+    datePublished: '2004'
+    isPartOf:
+      pageStart: 323
+      pageEnd: 47
+      title: Clin Microbiol Rev
+      volumeNumber: 17
+      type: PublicationVolume
+    id: pntd.0007469.ref016
+  - authors:
+      - givenNames:
+          - NJ
+        familyNames:
+          - Abbott
+        type: Person
+      - givenNames:
+          - AA
+        familyNames:
+          - Patabendige
+        type: Person
+      - givenNames:
+          - DE
+        familyNames:
+          - Dolman
+        type: Person
+      - givenNames:
+          - SR
+        familyNames:
+          - Yusof
+        type: Person
+      - givenNames:
+          - DJ
+        familyNames:
+          - Begley
+        type: Person
+    title: Structure and function of the blood-brain barrier
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 13
+      pageEnd: 25
+      title: Neurobiol Dis
+      volumeNumber: 37
+      type: PublicationVolume
+    id: pntd.0007469.ref017
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Barichello
+        type: Person
+      - givenNames:
+          - GD
+        familyNames:
+          - Fagundes
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Generoso
+        type: Person
+      - givenNames:
+          - SG
+        familyNames:
+          - Elias
+        type: Person
+      - givenNames:
+          - LR
+        familyNames:
+          - Simoes
+        type: Person
+      - givenNames:
+          - AL
+        familyNames:
+          - Teixeira
+        type: Person
+    title: Pathophysiology of neonatal acute bacterial meningitis
+    type: Article
+    datePublished: '2013'
+    isPartOf:
+      pageStart: 1781
+      pageEnd: 9
+      title: J Med Microbiol
+      volumeNumber: 62
+      type: PublicationVolume
+    id: pntd.0007469.ref018
+  - authors:
+      - givenNames:
+          - KS
+        familyNames:
+          - Kim
+        type: Person
+    title: Mechanisms of microbial traversal of the blood-brain barrier
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 625
+      pageEnd: 34
+      title: Nat Rev Microbiol
+      volumeNumber: 6
+      type: PublicationVolume
+    id: pntd.0007469.ref019
+  - authors:
+      - givenNames:
+          - JM
+        familyNames:
+          - Rolain
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Maurin
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Vestris
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: In vitro susceptibilities of 27 rickettsiae to 13 antimicrobials
+    type: Article
+    datePublished: '1998'
+    isPartOf:
+      pageStart: 1537
+      pageEnd: 41
+      title: Antimicrob Agents Chemother
+      volumeNumber: 42
+      type: PublicationVolume
+    id: pntd.0007469.ref020
+  - authors:
+      - givenNames:
+          - JM
+        familyNames:
+          - Rolain
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Sthul
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Maurin
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: >-
+      Evaluation of antibiotic susceptibilities of three Rickettsial species
+      including Rickettsia felis by a quantitative PCR DNA assay
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 2747
+      pageEnd: 51
+      title: Antimicrob Agents Chemother
+      volumeNumber: 46
+      type: PublicationVolume
+    id: pntd.0007469.ref021
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Cascio
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Colomba
+        type: Person
+      - givenNames:
+          - RD
+        familyNames:
+          - Di
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Salsa
+        type: Person
+      - givenNames:
+          - ML
+        familyNames:
+          - di
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Titone
+        type: Person
+    title: >-
+      Efficacy and safety of clarithromycin as treatment for Mediterranean
+      spotted fever in children: a randomized controlled trial
+    type: Article
+    datePublished: '2001'
+    isPartOf:
+      pageStart: 409
+      pageEnd: 11
+      title: Clin Infect Dis
+      volumeNumber: 33
+      type: PublicationVolume
+    id: pntd.0007469.ref022
+  - authors:
+      - givenNames:
+          - C
+        familyNames:
+          - Colomba
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Saporito
+        type: Person
+      - givenNames:
+          - VF
+        familyNames:
+          - Polara
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Rubino
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Titone
+        type: Person
+    title: >-
+      Mediterranean spotted fever: clinical and laboratory characteristics of
+      415 Sicilian children
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 60
+      title: BMC Infect Dis
+      volumeNumber: 6
+      type: PublicationVolume
+    id: pntd.0007469.ref023
+  - authors:
+      - givenNames:
+          - MJ
+        familyNames:
+          - Bradshaw
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Venkatesan
+        type: Person
+    title: Emergency Evaluation and Management of Encephalitis and Myelitis in Adults
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      pageStart: 82
+      pageEnd: 101
+      title: Semin Neurol
+      volumeNumber: 39
+      type: PublicationVolume
+    id: pntd.0007469.ref024
+  - authors:
+      - givenNames:
+          - MJ
+        familyNames:
+          - Bradshaw
+        type: Person
+      - givenNames:
+          - KB
+        familyNames:
+          - Lalor
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Vu
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Pruthi
+        type: Person
+      - givenNames:
+          - KC
+        familyNames:
+          - Bloch
+        type: Person
+    title: 'Child Neurology: Rocky Mountain spotted fever encephalitis'
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      title: Neurology
+      volumeNumber: 88
+      type: PublicationVolume
+    id: pntd.0007469.ref025
+  - authors:
+      - givenNames:
+          - LF
+        familyNames:
+          - Horney
+        type: Person
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+    title: >-
+      Meningoencephalitis as a major manifestation of Rocky Mountain spotted
+      fever
+    type: Article
+    datePublished: '1988'
+    isPartOf:
+      pageStart: 915
+      pageEnd: 8
+      title: South Med J
+      volumeNumber: 81
+      type: PublicationVolume
+    id: pntd.0007469.ref026
+  - authors:
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - familyNames:
+          - Mandell
+        type: Person
+      - familyNames:
+          - Douglas
+        type: Person
+      - familyNames:
+          - Benett
+        type: Person
+    title: ''
+    type: Article
+    datePublished: '2000'
+    isPartOf:
+      pageStart: 2035
+      pageEnd: 45
+      title: Principles and practice of infectious diseases
+      volumeNumber: 2
+      type: PublicationVolume
+    id: pntd.0007469.ref027
+  - authors:
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - J
+          - S
+        familyNames:
+          - Dumler
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Marrie
+        type: Person
+      - familyNames:
+          - Braunwald
+        type: Person
+      - familyNames:
+          - Fauci
+        type: Person
+      - familyNames:
+          - Kasper
+        type: Person
+      - familyNames:
+          - Hauser
+        type: Person
+      - familyNames:
+          - Longo
+        type: Person
+      - familyNames:
+          - Jameson
+        type: Person
+    title: ''
+    type: Article
+    datePublished: '2001'
+    isPartOf:
+      pageStart: 1056
+      pageEnd: 73
+      title: Harrison’s Principles of Internal medicine
+      volumeNumber: 1
+      type: PublicationVolume
+    id: pntd.0007469.ref028
+  - authors:
+      - givenNames:
+          - JR
+        familyNames:
+          - Miller
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Jubelt
+        type: Person
+      - familyNames:
+          - Rowland
+        type: Person
+    title: ''
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 125
+      pageEnd: 7
+      title: Merritt’s Textbook of Neurology
+      type: PublicationVolume
+    id: pntd.0007469.ref029
+  - authors:
+      - givenNames:
+          - CG
+        familyNames:
+          - Helmick
+        type: Person
+      - givenNames:
+          - KW
+        familyNames:
+          - Bernard
+        type: Person
+      - givenNames:
+          - LJ
+        familyNames:
+          - D’Angelo
+        type: Person
+    title: >-
+      Rocky Mountain spotted fever: clinical, laboratory, and epidemiological
+      features of 262 cases
+    type: Article
+    datePublished: '1984'
+    isPartOf:
+      pageStart: 480
+      pageEnd: 8
+      title: J Infect Dis
+      volumeNumber: 150
+      type: PublicationVolume
+    id: pntd.0007469.ref030
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Kulkarni
+        type: Person
+    title: Childhood rickettsiosis
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 81
+      pageEnd: 7
+      title: Indian J Pediatr
+      volumeNumber: 78
+      type: PublicationVolume
+    id: pntd.0007469.ref031
+  - authors:
+      - givenNames:
+          - MD
+        familyNames:
+          - Baganz
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Dross
+        type: Person
+      - givenNames:
+          - JA
+        familyNames:
+          - Reinhardt
+        type: Person
+    title: 'Rocky Mountain spotted fever encephalitis: MR findings'
+    type: Article
+    datePublished: '1995'
+    isPartOf:
+      pageStart: 919
+      pageEnd: 22
+      title: AJNR Am J Neuroradiol
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pntd.0007469.ref032
+  - authors:
+      - givenNames:
+          - EW
+        familyNames:
+          - Massey
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Thames
+        type: Person
+      - givenNames:
+          - CE
+        familyNames:
+          - Coffey
+        type: Person
+      - givenNames:
+          - HA
+        familyNames:
+          - Gallis
+        type: Person
+    title: Neurologic complications of Rocky Mountain spotted fever
+    type: Article
+    datePublished: '1985'
+    isPartOf:
+      pageStart: 1288
+      pageEnd: 90
+      title: South Med J
+      volumeNumber: 78
+      type: PublicationVolume
+    id: pntd.0007469.ref033
+  - authors:
+      - givenNames:
+          - HJ
+        familyNames:
+          - Steinfeld
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Silverstein
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Weisburger
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Rattner
+        type: Person
+    title: Deafness associated with Rocky Mountain spotted fever
+    type: Article
+    datePublished: '1988'
+    isPartOf:
+      pageStart: 287
+      pageEnd: 8
+      title: Md Med J
+      volumeNumber: 37
+      type: PublicationVolume
+    id: pntd.0007469.ref034
+  - authors:
+      - givenNames:
+          - JL
+        familyNames:
+          - Kirk
+        type: Person
+      - givenNames:
+          - DP
+        familyNames:
+          - Fine
+        type: Person
+      - givenNames:
+          - DJ
+        familyNames:
+          - Sexton
+        type: Person
+      - givenNames:
+          - HG
+        familyNames:
+          - Muchmore
+        type: Person
+    title: >-
+      Rocky Mountain spotted fever. A clinical review based on 48 confirmed
+      cases, 1943–1986
+    type: Article
+    datePublished: '1990'
+    isPartOf:
+      pageStart: 35
+      pageEnd: 45
+      title: Medicine (Baltimore)
+      volumeNumber: 69
+      type: PublicationVolume
+    id: pntd.0007469.ref035
+  - authors:
+      - givenNames:
+          - LK
+        familyNames:
+          - Archibald
+        type: Person
+      - givenNames:
+          - DJ
+        familyNames:
+          - Sexton
+        type: Person
+    title: Long-term sequelae of Rocky Mountain spotted fever
+    type: Article
+    datePublished: '1995'
+    isPartOf:
+      pageStart: 1122
+      pageEnd: 5
+      title: Clin Infect Dis
+      volumeNumber: 20
+      type: PublicationVolume
+    id: pntd.0007469.ref036
+  - authors:
+      - givenNames:
+          - DJ
+        familyNames:
+          - Sexton
+        type: Person
+      - givenNames:
+          - KB
+        familyNames:
+          - Kirkland
+        type: Person
+    title: Rickettsial infections and the central nervous system
+    type: Article
+    datePublished: '1998'
+    isPartOf:
+      pageStart: 247
+      pageEnd: 8
+      title: Clin Infect Dis
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pntd.0007469.ref037
+  - authors:
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+      - familyNames:
+          - Kissane
+        type: Person
+    title: ''
+    type: Article
+    datePublished: '1990'
+    isPartOf:
+      pageStart: 348
+      pageEnd: 60
+      title: Anderson’s Pathology
+      type: PublicationVolume
+    id: pntd.0007469.ref038
+  - authors:
+      - givenNames:
+          - H
+        familyNames:
+          - Pai
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Sohn
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Seong
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Kee
+        type: Person
+      - givenNames:
+          - WH
+        familyNames:
+          - Chang
+        type: Person
+      - givenNames:
+          - KW
+        familyNames:
+          - Choe
+        type: Person
+    title: Central nervous system involvement in patients with scrub typhus
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 436
+      pageEnd: 40
+      title: Clin Infect Dis
+      volumeNumber: 24
+      type: PublicationVolume
+    id: pntd.0007469.ref039
+  - authors:
+      - givenNames:
+          - SG
+        familyNames:
+          - Joshi
+        type: Person
+      - givenNames:
+          - AD
+        familyNames:
+          - Kovacs
+        type: Person
+    title: >-
+      Rickettsia rickettsii infection causes apoptotic death of cultured
+      cerebellar granule neurons
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      pageStart: 138
+      pageEnd: 41
+      title: J Med Microbiol
+      volumeNumber: 56
+      type: PublicationVolume
+    id: pntd.0007469.ref040
+  - authors:
+      - givenNames:
+          - TP
+        familyNames:
+          - Bleck
+        type: Person
+    title: Central nervous system involvement in Rickettsial diseases
+    type: Article
+    datePublished: '1999'
+    isPartOf:
+      pageStart: 801
+      pageEnd: 12
+      title: Neurol Clin
+      volumeNumber: 17
+      type: PublicationVolume
+    id: pntd.0007469.ref041
+  - authors:
+      - givenNames:
+          - G
+        familyNames:
+          - Cowan
+        type: Person
+    title: 'Rickettsial diseases: the typhus group of fevers—a review'
+    type: Article
+    datePublished: '2000'
+    isPartOf:
+      pageStart: 269
+      pageEnd: 72
+      title: Postgrad Med J
+      volumeNumber: 76
+      type: PublicationVolume
+    id: pntd.0007469.ref042
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Rydkina
+        type: Person
+      - givenNames:
+          - SK
+        familyNames:
+          - Sahni
+        type: Person
+      - givenNames:
+          - LA
+        familyNames:
+          - Santucci
+        type: Person
+      - givenNames:
+          - LC
+        familyNames:
+          - Turpin
+        type: Person
+      - givenNames:
+          - RB
+        familyNames:
+          - Baggs
+        type: Person
+      - givenNames:
+          - DJ
+        familyNames:
+          - Silverman
+        type: Person
+    title: >-
+      Selective modulation of antioxidant enzyme activities in host tissues
+      during Rickettsia conorii infection
+    type: Article
+    datePublished: '2004'
+    isPartOf:
+      pageStart: 293
+      pageEnd: 301
+      title: Microb Pathog
+      volumeNumber: 36
+      type: PublicationVolume
+    id: pntd.0007469.ref043
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - PJ
+        familyNames:
+          - Weiller
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Chagnon
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Chaudet
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Gallais
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Casanova
+        type: Person
+    title: >-
+      Mediterranean spotted fever: clinical, laboratory and epidemiological
+      features of 199 cases
+    type: Article
+    datePublished: '1986'
+    isPartOf:
+      pageStart: 845
+      pageEnd: 50
+      title: Am J Trop Med Hyg
+      volumeNumber: 35
+      type: PublicationVolume
+    id: pntd.0007469.ref044
+  - authors:
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+      - givenNames:
+          - JI
+        familyNames:
+          - Herrero-Herrero
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Ruiz-Beltran
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Bullon-Sopelana
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Ramos-Hidalgo
+        type: Person
+    title: The pathology of fatal Mediterranean spotted fever
+    type: Article
+    datePublished: '1987'
+    isPartOf:
+      pageStart: 669
+      pageEnd: 72
+      title: Am J Clin Pathol
+      volumeNumber: 87
+      type: PublicationVolume
+    id: pntd.0007469.ref045
+  - authors:
+      - givenNames:
+          - CB
+        familyNames:
+          - Font
+        type: Person
+      - givenNames:
+          - AE
+        familyNames:
+          - Espejo
+        type: Person
+      - givenNames:
+          - ET
+        familyNames:
+          - Munoz
+        type: Person
+      - givenNames:
+          - US
+        familyNames:
+          - Uriz
+        type: Person
+      - givenNames:
+          - CF
+        familyNames:
+          - Bella
+        type: Person
+      - givenNames:
+          - PF
+        familyNames:
+          - Segura
+        type: Person
+    title: Mediterranean boutonneuse fever. Study of 246 cases
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 121
+      pageEnd: 5
+      title: Med Clin (Barc)
+      volumeNumber: 96
+      type: PublicationVolume
+    id: pntd.0007469.ref046
+  - authors:
+      - givenNames:
+          - MA
+        familyNames:
+          - Dolado
+        type: Person
+      - givenNames:
+          - SJ
+        familyNames:
+          - Portocarrero
+        type: Person
+      - givenNames:
+          - JR
+        familyNames:
+          - Madridejo
+        type: Person
+      - givenNames:
+          - PJC
+        familyNames:
+          - Navarror
+        type: Person
+      - givenNames:
+          - GD
+        familyNames:
+          - Urra
+        type: Person
+    title: >-
+      Meningoencephalitis due to Rickettsia conorii. Etiopathological, clinical
+      and diagnostic aspects
+    type: Article
+    datePublished: '1994'
+    isPartOf:
+      pageStart: 72
+      pageEnd: 5
+      title: Neurologia
+      volumeNumber: 9
+      type: PublicationVolume
+    id: pntd.0007469.ref047
+  - authors:
+      - givenNames:
+          - V
+        familyNames:
+          - Duque
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Ventura
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Seixas
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Barai
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Mendonca
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Martins
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - da
+          - Cunha
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Melico-Silvestre
+        type: Person
+    title: >-
+      Mediterranean spotted fever and encephalitis: a case report and review of
+      the literature
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 105
+      pageEnd: 8
+      title: J Infect Chemother
+      volumeNumber: 18
+      type: PublicationVolume
+    id: pntd.0007469.ref048
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Amaro
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Bacellar
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Franca
+        type: Person
+    title: >-
+      Report of eight cases of fatal and severe Mediterranean spotted fever in
+      Portugal
+    type: Article
+    datePublished: '2003'
+    isPartOf:
+      pageStart: 331
+      pageEnd: 43
+      title: Ann N Y Acad Sci
+      volumeNumber: 990
+      type: PublicationVolume
+    id: pntd.0007469.ref049
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Ezpeleta
+        type: Person
+      - givenNames:
+          - JL
+        familyNames:
+          - Munoz-Blanco
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Tabernero
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Gimenez-Roldan
+        type: Person
+    title: >-
+      Neurological complications of Mediterranean boutonneuse fever.
+      Presentation of a case of acute encephalomeningomyelitis and review of the
+      literature
+    type: Article
+    datePublished: '1999'
+    isPartOf:
+      pageStart: 38
+      pageEnd: 42
+      title: Neurologia
+      volumeNumber: 14
+      type: PublicationVolume
+    id: pntd.0007469.ref050
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Tzavella
+        type: Person
+      - givenNames:
+          - YS
+        familyNames:
+          - Chatzizisis
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Vakali
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Mandraveli
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Zioutas
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Alexiou-Daniel
+        type: Person
+    title: >-
+      Severe case of Mediterranean spotted fever in Greece with predominantly
+      neurological features
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 341
+      pageEnd: 3
+      title: J Med Microbiol
+      volumeNumber: 55
+      type: PublicationVolume
+    id: pntd.0007469.ref051
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Texier
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Rousselot
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Quillerou
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Aufrant
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Robain
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Foucaud
+        type: Person
+    title: >-
+      Mediterranean boutonneuse fever. Apropos of a fatal case in a newborn
+      infant
+    type: Article
+    datePublished: '1984'
+    isPartOf:
+      pageStart: 51
+      pageEnd: 3
+      title: Arch Fr Pediatr
+      volumeNumber: 41
+      type: PublicationVolume
+    id: pntd.0007469.ref052
+  - authors:
+      - givenNames:
+          - B
+        familyNames:
+          - Benhammou
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Balafrej
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Mikou
+        type: Person
+    title: >-
+      Mediterranean boutonneuse fever disclosed by severe neurological
+      involvement
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 635
+      pageEnd: 6
+      title: Arch Fr Pediatr
+      volumeNumber: 48
+      type: PublicationVolume
+    id: pntd.0007469.ref053
+  - authors:
+      - givenNames:
+          - 'N'
+        familyNames:
+          - De
+          - Klippel
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - De
+          - Keyser
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Merckx
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Ebinger
+        type: Person
+    title: Meningoencephalitis caused by Rickettsia conorii
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 345
+      pageEnd: 7
+      title: Clin Neurol Neurosurg
+      volumeNumber: 93
+      type: PublicationVolume
+    id: pntd.0007469.ref054
+  - authors:
+      - givenNames:
+          - NV
+        familyNames:
+          - Tikare
+        type: Person
+      - givenNames:
+          - PR
+        familyNames:
+          - Shahapur
+        type: Person
+      - givenNames:
+          - LH
+        familyNames:
+          - Bidari
+        type: Person
+      - givenNames:
+          - BG
+        familyNames:
+          - Mantur
+        type: Person
+    title: Rickettsial meningoencephalitis in a child—a case report
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 198
+      pageEnd: 200
+      title: J Trop Pediatr
+      volumeNumber: 56
+      type: PublicationVolume
+    id: pntd.0007469.ref055
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Bougteba
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Basir
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Charradi
+        type: Person
+    title: Meningoencephalitis caused by Rickettsia conorii in a young infant
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 173
+      pageEnd: 6
+      title: Rev Neurol (Paris)
+      volumeNumber: 167
+      type: PublicationVolume
+    id: pntd.0007469.ref056
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Aliaga
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Sanchez-Blazquez
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Rodriguez-Granger
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Sampedro
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Orozco
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Pastor
+        type: Person
+    title: Mediterranean spotted fever with encephalitis
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 521
+      pageEnd: 5
+      title: J Med Microbiol
+      volumeNumber: 58
+      type: PublicationVolume
+    id: pntd.0007469.ref057
+  - authors:
+      - givenNames:
+          - F
+        familyNames:
+          - Mahara
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Koga
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Sawada
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Taniguchi
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Shigemi
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Suto
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Tsuboi
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Ooya
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Koyama
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Uchiyama
+        type: Person
+    title: >-
+      The first report of the rickettsial infections of spotted fever group in
+      Japan: three clinical cases
+    type: Article
+    datePublished: '1985'
+    isPartOf:
+      pageStart: 1165
+      pageEnd: 71
+      title: Kansenshogaku Zasshi
+      volumeNumber: 59
+      type: PublicationVolume
+    id: pntd.0007469.ref058
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Kodama
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Noguchi
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Chikahira
+        type: Person
+    title: Japanese spotted fever complicated by acute respiratory failure
+    type: Article
+    datePublished: '2000'
+    isPartOf:
+      pageStart: 162
+      pageEnd: 5
+      title: Kansenshogaku Zasshi
+      volumeNumber: 74
+      type: PublicationVolume
+    id: pntd.0007469.ref059
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Kodama
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Senba
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Yamauchi
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Chikahira
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Fujita
+        type: Person
+    title: Japanese spotted fever associated with multiorgan failure
+    type: Article
+    datePublished: '2001'
+    isPartOf:
+      pageStart: 247
+      pageEnd: 250
+      title: J Infect Chemother
+      volumeNumber: 7
+      type: PublicationVolume
+    id: pntd.0007469.ref060
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Honda
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Tanioka
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Honda
+        type: Person
+    title: >-
+      Nine cases of Japanese spotted fever, including 3 cases with DIC and MOF
+      treated at ICU
+    type: Article
+    datePublished: '2003'
+    isPartOf:
+      pageStart: 523
+      pageEnd: 6
+      title: Rinsho Hihu
+      volumeNumber: 57
+      type: PublicationVolume
+    id: pntd.0007469.ref061
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Iwamoto
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Nishimura
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Yoshino
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Mihara
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Okabe
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Kameda
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Kubagawa
+        type: Person
+    title: A case of spotted fever with central nervous system involvement
+    type: Article
+    datePublished: '1988'
+    isPartOf:
+      pageStart: 1192
+      pageEnd: 6
+      title: Kansenshogaku Zasshi
+      volumeNumber: 62
+      type: PublicationVolume
+    id: pntd.0007469.ref062
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Kodama
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Senba
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Yamauchi
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Chikahira
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Fujita
+        type: Person
+    title: A patient with Japanese spotted fever complicated by meningoencephalitis
+    type: Article
+    datePublished: '2001'
+    isPartOf:
+      pageStart: 812
+      pageEnd: 4
+      title: Kansenshogaku Zasshi
+      volumeNumber: 75
+      type: PublicationVolume
+    id: pntd.0007469.ref063
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Araki
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Takatsuka
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Kawamura
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Kanno
+        type: Person
+    title: >-
+      Japanese spotted fever involving the central nervous system: two case
+      reports and a literature review
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 3874
+      pageEnd: 6
+      title: J Clin Microbiol
+      volumeNumber: 40
+      type: PublicationVolume
+    id: pntd.0007469.ref064
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Kodama
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Senba
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Yamauchi
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Chikahira
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Katayama
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Furuya
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Fujita
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Yamamoto
+        type: Person
+    title: >-
+      Fulminant Japanese spotted fever definitively diagnosed by the polymerase
+      chain reaction method
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 266
+      pageEnd: 8
+      title: J Infect Chemother
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pntd.0007469.ref065
+  - authors:
+      - givenNames:
+          - R
+        familyNames:
+          - Nakata
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Motomura
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Tokuda
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Nakajima
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Masuda
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Fukuda
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Tsujino
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Yoshimura
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Kawakami
+        type: Person
+    title: >-
+      A case of Japanese spotted fever complicated with central nervous system
+      involvement and multiple organ failure
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 783
+      pageEnd: 6
+      title: Intern Med
+      volumeNumber: 51
+      type: PublicationVolume
+    id: pntd.0007469.ref066
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Lakos
+        type: Person
+    title: Tick-borne lymphadenopathy—a new rickettsial disease?
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 1006
+      title: Lancet
+      volumeNumber: 350
+      type: PublicationVolume
+    id: pntd.0007469.ref067
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Lakos
+        type: Person
+    title: Tick-borne lymphadenopathy (TIBOLA)
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 648
+      pageEnd: 54
+      title: Wien Klin Wochenschr
+      volumeNumber: 114
+      type: PublicationVolume
+    id: pntd.0007469.ref068
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Lakos
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Korosi
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Foldvari
+        type: Person
+    title: >-
+      Contact with horses is a risk factor for tick-borne lymphadenopathy
+      (TIBOLA): a case control study
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 611
+      pageEnd: 7
+      title: Wien Klin Wochenschr
+      volumeNumber: 124
+      type: PublicationVolume
+    id: pntd.0007469.ref069
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Roux
+        type: Person
+    title: Rickettsioses as paradigms of new or emerging infectious diseases
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 694
+      pageEnd: 719
+      title: Clin Microbiol Rev
+      volumeNumber: 10
+      type: PublicationVolume
+    id: pntd.0007469.ref070
+  - authors:
+      - givenNames:
+          - JA
+        familyNames:
+          - Oteo
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Ibarra
+        type: Person
+      - givenNames:
+          - JR
+        familyNames:
+          - Blanco
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Martinez
+          - dA
+        type: Person
+      - givenNames:
+          - FJ
+        familyNames:
+          - Marquez
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Portillo
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Anda
+        type: Person
+    title: >-
+      Dermacentor-borne necrosis erythema and lymphadenopathy: clinical and
+      epidemiological features of a new tick-borne disease
+    type: Article
+    datePublished: '2004'
+    isPartOf:
+      pageStart: 327
+      pageEnd: 31
+      title: Clin Microbiol Infect
+      volumeNumber: 10
+      type: PublicationVolume
+    id: pntd.0007469.ref071
+  - authors:
+      - givenNames:
+          - V
+        familyNames:
+          - Ibarra
+        type: Person
+      - givenNames:
+          - JA
+        familyNames:
+          - Oteo
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Portillo
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Santibanez
+        type: Person
+      - givenNames:
+          - JR
+        familyNames:
+          - Blanco
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Metola
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Eiros
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Perez-Martinez
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Sanz
+        type: Person
+    title: 'Rickettsia slovaca infection: DEBONEL/TIBOLA'
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 206
+      pageEnd: 14
+      title: Ann N Y Acad Sci
+      volumeNumber: 1078
+      type: PublicationVolume
+    id: pntd.0007469.ref072
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Selmi
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Bertolotti
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Tomassone
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Mannelli
+        type: Person
+    title: >-
+      Rickettsia slovaca in Dermacentor marginatus and tick-borne
+      lymphadenopathy, Tuscany, Italy
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 817
+      pageEnd: 20
+      title: Emerg Infect Dis
+      volumeNumber: 14
+      type: PublicationVolume
+    id: pntd.0007469.ref073
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Angelakis
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Pulcini
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Waton
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Imbert
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Socolovschi
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Edouard
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Dellamonica
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: >-
+      Scalp eschar and neck lymphadenopathy caused by Bartonella henselae after
+      Tick Bite
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 549
+      pageEnd: 51
+      title: Clin Infect Dis
+      volumeNumber: 50
+      type: PublicationVolume
+    id: pntd.0007469.ref074
+  - authors:
+      - givenNames:
+          - R
+        familyNames:
+          - Brezina
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Rehacek
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Ac
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Majerska
+        type: Person
+    title: >-
+      Two strains of rickettsiae of Rocky Mountain spotted fever group recovered
+      from Dermacentor marginatus ticks in Czechoslovakia. Results of
+      preliminary serological identification
+    type: Article
+    datePublished: '1969'
+    isPartOf:
+      pageStart: 142
+      pageEnd: 5
+      title: Acta Virol
+      volumeNumber: 13
+      type: PublicationVolume
+    id: pntd.0007469.ref075
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Berbis
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Roux
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Xu
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Maurin
+        type: Person
+    title: A new tick-transmitted disease due to Rickettsia slovaca
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 112
+      pageEnd: 3
+      title: Lancet
+      volumeNumber: 350
+      type: PublicationVolume
+    id: pntd.0007469.ref076
+  - authors:
+      - givenNames:
+          - JA
+        familyNames:
+          - Oteo
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Portillo
+        type: Person
+    title: Tick-borne rickettsioses in Europe
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 271
+      pageEnd: 8
+      title: Ticks Tick Borne Dis
+      volumeNumber: 3
+      type: PublicationVolume
+    id: pntd.0007469.ref077
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Lakos
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Fenollar
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Beytout
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Brouqui
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+    title: >-
+      Spotless rickettsiosis caused by Rickettsia slovaca and associated with
+      Dermacentor ticks
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 1331
+      pageEnd: 6
+      title: Clin Infect Dis
+      volumeNumber: 34
+      type: PublicationVolume
+    id: pntd.0007469.ref078
+  - authors:
+      - givenNames:
+          - S
+        familyNames:
+          - Rieg
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Schmoldt
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Theilacker
+        type: Person
+      - givenNames:
+          - WK
+        familyNames:
+          - de
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Wolfel
+        type: Person
+      - givenNames:
+          - WV
+        familyNames:
+          - Kern
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Dobler
+        type: Person
+    title: Tick-borne lymphadenopathy (TIBOLA) acquired in Southwestern Germany
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 167
+      title: BMC Infect Dis
+      volumeNumber: 11
+      type: PublicationVolume
+    id: pntd.0007469.ref079
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Mittermayer
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Brezina
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Urvolgyi
+        type: Person
+    title: First report of an infection with Rickettsia slovaca
+    type: Article
+    datePublished: '1980'
+    isPartOf:
+      pageStart: 373
+      pageEnd: 6
+      title: Folia Parasitol (Praha)
+      volumeNumber: 27
+      type: PublicationVolume
+    id: pntd.0007469.ref080
+  - authors:
+      - givenNames:
+          - C
+        familyNames:
+          - Cazorla
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Enea
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Lucht
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: 'First isolation of Rickettsia slovaca from a patient, France'
+    type: Article
+    datePublished: '2003'
+    isPartOf:
+      pageStart: 135
+      title: Emerg Infect Dis
+      volumeNumber: 9
+      type: PublicationVolume
+    id: pntd.0007469.ref081
+  - authors:
+      - givenNames:
+          - V
+        familyNames:
+          - Ibarra
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Portillo
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Santibanez
+        type: Person
+      - givenNames:
+          - JR
+        familyNames:
+          - Blanco
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Perez-Martinez
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Marquez
+        type: Person
+      - givenNames:
+          - JA
+        familyNames:
+          - Oteo
+        type: Person
+    title: 'DEBONEL/TIBOLA: is Rickettsia slovaca the only etiological agent?'
+    type: Article
+    datePublished: '2005'
+    isPartOf:
+      pageStart: 346
+      pageEnd: 8
+      title: Ann N Y Acad Sci
+      volumeNumber: 1063
+      type: PublicationVolume
+    id: pntd.0007469.ref082
+  - authors:
+      - givenNames:
+          - O
+        familyNames:
+          - Mediannikov
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Matsumoto
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Samoylenko
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Drancourt
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Roux
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Rydkina
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Davoust
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Tarasevich
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Brouqui
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+    title: >-
+      Rickettsia raoultii sp. nov., a spotted fever group rickettsia associated
+      with Dermacentor ticks in Europe and Russia
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 1635
+      pageEnd: 9
+      title: Int J Syst Evol Microbiol
+      volumeNumber: 58
+      type: PublicationVolume
+    id: pntd.0007469.ref083
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Parola
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Rovery
+        type: Person
+      - givenNames:
+          - JM
+        familyNames:
+          - Rolain
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Brouqui
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Davoust
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: Rickettsia slovaca and R. raoultii in tick-borne Rickettsioses
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 1105
+      pageEnd: 8
+      title: Emerg Infect Dis
+      volumeNumber: 15
+      type: PublicationVolume
+    id: pntd.0007469.ref084
+  - authors:
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Harrison
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Burgmann
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Forstner
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Ramharter
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Szell
+        type: Person
+      - givenNames:
+          - AM
+        familyNames:
+          - Schotta
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Stanek
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Markowicz
+        type: Person
+    title: >-
+      Molecular diagnosis of African tick bite fever using eschar swabs in a
+      traveller returning from Tanzania
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 602
+      pageEnd: 5
+      title: Wien Klin Wochenschr
+      volumeNumber: 128
+      type: PublicationVolume
+    id: pntd.0007469.ref085
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Zammarchi
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Farese
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Trotta
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Amantini
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Bartoloni
+        type: Person
+    title: >-
+      Rickettsia africae infection complicated with painful sacral syndrome in
+      an Italian traveller returning from Zimbabwe
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 194
+      pageEnd: 6
+      title: Int J Infect Dis
+      volumeNumber: 29
+      type: PublicationVolume
+    id: pntd.0007469.ref086
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Fujisawa
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Kadosaka
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Fujita
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Ando
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Takano
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Ogasawara
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Kawabata
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Seishima
+        type: Person
+    title: Rickettsia africae infection in a Japanese traveller with many tick bites
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 443
+      pageEnd: 4
+      title: Acta Derm Venereol
+      volumeNumber: 92
+      type: PublicationVolume
+    id: pntd.0007469.ref087
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Jensenius
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Fladby
+        type: Person
+      - givenNames:
+          - KB
+        familyNames:
+          - Hellum
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Hagen
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Prio
+        type: Person
+      - givenNames:
+          - MS
+        familyNames:
+          - Christiansen
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Vene
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Myrvang
+        type: Person
+    title: Sub-acute neuropathy in patients with African tick bite fever
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 114
+      pageEnd: 8
+      title: Scand J Infect Dis
+      volumeNumber: 38
+      type: PublicationVolume
+    id: pntd.0007469.ref088
+  - authors:
+      - givenNames:
+          - W
+        familyNames:
+          - Burgdorfer
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Aeschlimann
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Peter
+        type: Person
+      - givenNames:
+          - SF
+        familyNames:
+          - Hayes
+        type: Person
+      - givenNames:
+          - RN
+        familyNames:
+          - Philip
+        type: Person
+    title: >-
+      Ixodes ricinus: vector of a hitherto undescribed spotted fever group agent
+      in Switzerland
+    type: Article
+    datePublished: '1979'
+    isPartOf:
+      pageStart: 357
+      pageEnd: 67
+      title: Acta Trop0
+      volumeNumber: 36
+      type: PublicationVolume
+    id: pntd.0007469.ref089
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Beati
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Peter
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Burgdorfer
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Aeschlimann
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: >-
+      Confirmation that Rickettsia helvetica sp. nov. is a distinct species of
+      the spotted fever group of rickettsiae
+    type: Article
+    datePublished: '1993'
+    isPartOf:
+      pageStart: 521
+      pageEnd: 6
+      title: Int J Syst Bacteriol
+      volumeNumber: 43
+      type: PublicationVolume
+    id: pntd.0007469.ref090
+  - authors:
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Grunnenberger
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Jaulhac
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Gastinger
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: 'Evidence of Rickettsia helvetica infection in humans, eastern France'
+    type: Article
+    datePublished: '2000'
+    isPartOf:
+      pageStart: 389
+      pageEnd: 92
+      title: Emerg Infect Dis
+      volumeNumber: 6
+      type: PublicationVolume
+    id: pntd.0007469.ref091
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Nilsson
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Lindquist
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Pahlson
+        type: Person
+    title: >-
+      Association of Rickettsia helvetica with chronic perimyocarditis in sudden
+      cardiac death
+    type: Article
+    datePublished: '1999'
+    isPartOf:
+      pageStart: 1169
+      pageEnd: 73
+      title: Lancet
+      volumeNumber: 354
+      type: PublicationVolume
+    id: pntd.0007469.ref092
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Baumann
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Pusterla
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Peter
+        type: Person
+      - givenNames:
+          - F
+        familyNames:
+          - Grimm
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Schar
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Bossart
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Lutz
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Weber
+        type: Person
+    title: >-
+      Fever after a tick bite: clinical manifestations and diagnosis of acute
+      tick bite-associated infections in northeastern Switzerland
+    type: Article
+    datePublished: '2003'
+    isPartOf:
+      pageStart: 1042
+      pageEnd: 7
+      title: Dtsch Med Wochenschr
+      volumeNumber: 128
+      type: PublicationVolume
+    id: pntd.0007469.ref093
+  - authors:
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Allombert
+        type: Person
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Supputamongkol
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Caruso
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Brouqui
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: >-
+      Aneruptive fever associated with antibodies to Rickettsia helvetica in
+      Europe and Thailand
+    type: Article
+    datePublished: '2004'
+    isPartOf:
+      pageStart: 816
+      pageEnd: 8
+      title: J Clin Microbiol
+      volumeNumber: 42
+      type: PublicationVolume
+    id: pntd.0007469.ref094
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Nilsson
+        type: Person
+    title: >-
+      Septicaemia with Rickettsia helvetica in a patient with acute febrile
+      illness, rash and myasthenia
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 79
+      pageEnd: 82
+      title: J Infect
+      volumeNumber: 58
+      type: PublicationVolume
+    id: pntd.0007469.ref095
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Nilsson
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Wallmenius
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Pahlson
+        type: Person
+    title: >-
+      Coinfection with Rickettsia helvetica and Herpes Simplex Virus 2 in a
+      Young Woman with Meningoencephalitis
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 469194
+      title: Case Rep Infect Dis
+      type: PublicationVolume
+    id: pntd.0007469.ref096
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Nilsson
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Elfving
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Pahlson
+        type: Person
+    title: 'Rickettsia helvetica in patient with meningitis, Sweden, 2006'
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 490
+      pageEnd: 2
+      title: Emerg Infect Dis
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pntd.0007469.ref097
+  - authors:
+      - givenNames:
+          - TJ
+        familyNames:
+          - Marrie
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: Rickettsial infections of the central nervous system
+    type: Article
+    datePublished: '1992'
+    isPartOf:
+      pageStart: 213
+      pageEnd: 24
+      title: Semin Neurol
+      volumeNumber: 12
+      type: PublicationVolume
+    id: pntd.0007469.ref098
+  - authors:
+      - givenNames:
+          - JV
+        familyNames:
+          - Pether
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Jones
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Lloyd
+        type: Person
+      - givenNames:
+          - DA
+        familyNames:
+          - Rutter
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Barry
+        type: Person
+    title: Fatal murine typhus from Spain
+    type: Article
+    datePublished: '1994'
+    isPartOf:
+      pageStart: 897
+      pageEnd: 8
+      title: Lancet
+      volumeNumber: 344
+      type: PublicationVolume
+    id: pntd.0007469.ref099
+  - authors:
+      - givenNames:
+          - A
+          - C
+        familyNames:
+          - Allen
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Saitz
+        type: Person
+    title: >-
+      A comparative study of the pathology of scrub tyohus (Tsutsugamushi
+      disease) and other rickettsial diseases
+    type: Article
+    datePublished: '1945'
+    isPartOf:
+      pageStart: 681
+      title: Am J Pathol
+      volumeNumber: 21
+      type: PublicationVolume
+    id: pntd.0007469.ref100
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Bitsori
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Galanakis
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Gikas
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Scoulica
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Sbyrakis
+        type: Person
+    title: Rickettsia typhi infection in childhood
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 59
+      pageEnd: 61
+      title: Acta Paediatr
+      volumeNumber: 91
+      type: PublicationVolume
+    id: pntd.0007469.ref101
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Silpapojakul
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Ukkachoke
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Krisanapan
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Silpapojakul
+        type: Person
+    title: Rickettsial meningitis and encephalitis
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 1753
+      pageEnd: 7
+      title: Arch Intern Med
+      volumeNumber: 151
+      type: PublicationVolume
+    id: pntd.0007469.ref102
+  - authors:
+      - givenNames:
+          - AL
+        familyNames:
+          - Gelston
+        type: Person
+      - givenNames:
+          - TC
+        familyNames:
+          - Jones
+        type: Person
+    title: 'Typhus fever: report of an epidemic in New York City in 1847'
+    type: Article
+    datePublished: '1977'
+    isPartOf:
+      pageStart: 813
+      pageEnd: 21
+      title: J Infect Dis
+      volumeNumber: 136
+      type: PublicationVolume
+    id: pntd.0007469.ref103
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Galanakis
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Gikas
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Bitsori
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Sbyrakis
+        type: Person
+    title: Rickettsia typhi infection presenting as subacute meningitis
+    type: Article
+    datePublished: '2002'
+    isPartOf:
+      pageStart: 156
+      pageEnd: 7
+      title: J Child Neurol
+      volumeNumber: 17
+      type: PublicationVolume
+    id: pntd.0007469.ref104
+  - authors:
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+      - givenNames:
+          - JP
+        familyNames:
+          - Taylor
+        type: Person
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+    title: >-
+      Clinical and laboratory features of murine typhus in south Texas, 1980
+      through 1987
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 1365
+      pageEnd: 70
+      title: JAMA
+      volumeNumber: 266
+      type: PublicationVolume
+    id: pntd.0007469.ref105
+  - authors:
+      - givenNames:
+          - WL
+        familyNames:
+          - Moy
+        type: Person
+      - givenNames:
+          - ST
+        familyNames:
+          - Ooi
+        type: Person
+    title: Abducens nerve palsy and meningitis by Rickettsia typhi
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 620
+      pageEnd: 4
+      title: Am J Trop Med Hyg
+      volumeNumber: 92
+      type: PublicationVolume
+    id: pntd.0007469.ref106
+  - authors:
+      - givenNames:
+          - RJ
+        familyNames:
+          - Huebner
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Stamps
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Armstrong
+        type: Person
+    title: >-
+      Rickettsialpox; a newly recognized rickettsial disease; isolation of the
+      etiological agent
+    type: Article
+    datePublished: '1946'
+    isPartOf:
+      pageStart: 1605
+      pageEnd: 14
+      title: Public Health Rep
+      volumeNumber: 61
+      type: PublicationVolume
+    id: pntd.0007469.ref107
+  - authors:
+      - givenNames:
+          - P
+        familyNames:
+          - Brouqui
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Parola
+        type: Person
+      - givenNames:
+          - PE
+        familyNames:
+          - Fournier
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: Spotted fever rickettsioses in southern and eastern Europe
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      pageStart: 2
+      pageEnd: 12
+      title: FEMS Immunol Med Microbiol
+      volumeNumber: 49
+      type: PublicationVolume
+    id: pntd.0007469.ref108
+  - authors:
+      - givenNames:
+          - LR
+        familyNames:
+          - Brettman
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Lewin
+        type: Person
+      - givenNames:
+          - RS
+        familyNames:
+          - Holzman
+        type: Person
+      - givenNames:
+          - WD
+        familyNames:
+          - Goldman
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Marr
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Kechijian
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Schinella
+        type: Person
+    title: 'Rickettsialpox: report of an outbreak and a contemporary review'
+    type: Article
+    datePublished: '1981'
+    isPartOf:
+      pageStart: 363
+      pageEnd: 72
+      title: Medicine (Baltimore)
+      volumeNumber: 60
+      type: PublicationVolume
+    id: pntd.0007469.ref109
+  - authors:
+      - givenNames:
+          - EM
+        familyNames:
+          - Kass
+        type: Person
+      - givenNames:
+          - WK
+        familyNames:
+          - Szaniawski
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Levy
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Leach
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Srinivasan
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Rives
+        type: Person
+    title: 'Rickettsialpox in a New York City hospital, 1980 to 1989'
+    type: Article
+    datePublished: '1994'
+    isPartOf:
+      pageStart: 1612
+      pageEnd: 7
+      title: N Engl J Med
+      volumeNumber: 331
+      type: PublicationVolume
+    id: pntd.0007469.ref110
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Eremeeva
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Balayeva
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Ignatovich
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: Genomic study of Rickettsia akari by pulsed-field gel electrophoresis
+    type: Article
+    datePublished: '1995'
+    isPartOf:
+      pageStart: 3022
+      pageEnd: 4
+      title: J Clin Microbiol
+      volumeNumber: 33
+      type: PublicationVolume
+    id: pntd.0007469.ref111
+  - authors:
+      - givenNames:
+          - S
+        familyNames:
+          - Radulovic
+        type: Person
+      - givenNames:
+          - HM
+        familyNames:
+          - Feng
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Morovic
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Djelalija
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Popov
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Crocquet-Valdes
+        type: Person
+      - givenNames:
+          - DH
+        familyNames:
+          - Walker
+        type: Person
+    title: >-
+      Isolation of Rickettsia akari from a patient in a region where
+      Mediterranean spotted fever is endemic
+    type: Article
+    datePublished: '1996'
+    isPartOf:
+      pageStart: 216
+      pageEnd: 20
+      title: Clin Infect Dis
+      volumeNumber: 22
+      type: PublicationVolume
+    id: pntd.0007469.ref112
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Renvoise
+        type: Person
+      - givenNames:
+          - JW
+        familyNames:
+          - van’t
+          - Wout
+        type: Person
+      - givenNames:
+          - JG
+        familyNames:
+          - van
+          - der
+          - Schroeff
+        type: Person
+      - givenNames:
+          - MF
+        familyNames:
+          - Beersma
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: A case of rickettsialpox in Northern Europe
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      title: Int J Infect Dis
+      volumeNumber: 16
+      type: PublicationVolume
+    id: pntd.0007469.ref113
+  - authors:
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Roux
+        type: Person
+    title: Rickettsioses as paradigms of new or emerging infectious diseases
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 694
+      pageEnd: 719
+      title: Clin Microbiol Rev
+      volumeNumber: 10
+      type: PublicationVolume
+    id: pntd.0007469.ref114
+  - authors:
+      - givenNames:
+          - SC
+        familyNames:
+          - Barker
+        type: Person
+      - givenNames:
+          - AR
+        familyNames:
+          - Walker
+        type: Person
+    title: Ticks of Australia. The species that infest domestic animals and humans
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 1
+      pageEnd: 144
+      title: Zootaxa
+      type: PublicationVolume
+    id: pntd.0007469.ref115
+  - authors:
+      - givenNames:
+          - DJ
+        familyNames:
+          - Sexton
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Dwyer
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Kemp
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Graves
+        type: Person
+    title: Spotted fever group rickettsial infections in Australia
+    type: Article
+    datePublished: '1991'
+    isPartOf:
+      pageStart: 876
+      pageEnd: 86
+      title: Rev Infect Dis
+      volumeNumber: 13
+      type: PublicationVolume
+    id: pntd.0007469.ref116
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Stewart
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Armstrong
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Graves
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Hajkowicz
+        type: Person
+    title: >-
+      Rickettsia australis and Queensland Tick Typhus: A Rickettsial Spotted
+      Fever Group Infection in Australia
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 24
+      pageEnd: 9
+      title: Am J Trop Med Hyg
+      volumeNumber: 97
+      type: PublicationVolume
+    id: pntd.0007469.ref117
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Stewart
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Armstrong
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Graves
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Hajkowicz
+        type: Person
+    title: >-
+      Clinical Manifestations and Outcomes of Rickettsia australis Infection: A
+      15-Year Retrospective Study of Hospitalized Patients
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      issueNumber: 2
+      isPartOf:
+        title: Trop Med Infect Dis
+        volumeNumber: 2
+        type: PublicationVolume
+      type: PublicationIssue
+    id: pntd.0007469.ref118
+  - authors:
+      - givenNames:
+          - DJ
+        familyNames:
+          - Sexton
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - King
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Dwyer
+        type: Person
+    title: Fatal Queensland tick typhus
+    type: Article
+    datePublished: '1990'
+    isPartOf:
+      pageStart: 779
+      pageEnd: 780
+      title: J Infect Dis
+      volumeNumber: 162
+      type: PublicationVolume
+    id: pntd.0007469.ref119
+  - authors:
+      - givenNames:
+          - WJ
+        familyNames:
+          - McBride
+        type: Person
+      - givenNames:
+          - JP
+        familyNames:
+          - Hanson
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Miller
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Wenck
+        type: Person
+    title: 'Severe spotted fever group rickettsiosis, Australia'
+    type: Article
+    datePublished: '2007'
+    isPartOf:
+      pageStart: 1742
+      pageEnd: 4
+      title: Emerg Infect Dis
+      volumeNumber: 13
+      type: PublicationVolume
+    id: pntd.0007469.ref120
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Renvoise
+        type: Person
+      - givenNames:
+          - AY
+        familyNames:
+          - Joliot
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: 'Rickettsia felis infection in man, France'
+    type: Article
+    datePublished: '2009'
+    isPartOf:
+      pageStart: 1126
+      pageEnd: 7
+      title: Emerg Infect Dis
+      volumeNumber: 15
+      type: PublicationVolume
+    id: pntd.0007469.ref121
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Lindblom
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Severinson
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Nilsson
+        type: Person
+    title: >-
+      Rickettsia felis infection in Sweden: report of two cases with subacute
+      meningitis and review of the literature
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 906
+      pageEnd: 9
+      title: Scand J Infect Dis
+      volumeNumber: 42
+      type: PublicationVolume
+    id: pntd.0007469.ref122
+  - authors:
+      - givenNames:
+          - L
+        familyNames:
+          - Izzard
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Fuller
+        type: Person
+      - givenNames:
+          - SD
+        familyNames:
+          - Blacksell
+        type: Person
+      - givenNames:
+          - DH
+        familyNames:
+          - Paris
+        type: Person
+      - givenNames:
+          - AL
+        familyNames:
+          - Richards
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Aukkanit
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Nguyen
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Jiang
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Fenwick
+        type: Person
+      - givenNames:
+          - NP
+        familyNames:
+          - Day
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Graves
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Stenos
+        type: Person
+    title: >-
+      Isolation of a novel Orientia species (O. chuto sp. nov.) from a patient
+      infected in Dubai
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 4404
+      pageEnd: 9
+      title: J Clin Microbiol
+      volumeNumber: 48
+      type: PublicationVolume
+    id: pntd.0007469.ref123
+  - authors:
+      - givenNames:
+          - A
+        familyNames:
+          - Tamura
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Ohashi
+        type: Person
+      - givenNames:
+          - H
+        familyNames:
+          - Urakami
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Miyamura
+        type: Person
+    title: >-
+      Classification of Rickettsia tsutsugamushi in a new genus, Orientia gen.
+      nov., as Orientia tsutsugamushi comb. nov
+    type: Article
+    datePublished: '1995'
+    isPartOf:
+      pageStart: 589
+      pageEnd: 91
+      title: Int J Syst Bacteriol
+      volumeNumber: 45
+      type: PublicationVolume
+    id: pntd.0007469.ref124
+  - authors:
+      - givenNames:
+          - T
+        familyNames:
+          - Tshokey
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Stenos
+        type: Person
+      - givenNames:
+          - DN
+        familyNames:
+          - Durrheim
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Eastwood
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Nguyen
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Vincent
+        type: Person
+      - givenNames:
+          - SR
+        familyNames:
+          - Graves
+        type: Person
+    title: Rickettsial Infections and Q Fever Amongst Febrile Patients in Bhutan
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      issueNumber: 1
+      isPartOf:
+        title: Trop Med Infect Dis
+        volumeNumber: 3
+        type: PublicationVolume
+      type: PublicationIssue
+    id: pntd.0007469.ref125
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Jamil
+        type: Person
+      - givenNames:
+          - KG
+        familyNames:
+          - Lyngrah
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Lyngdoh
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Hussain
+        type: Person
+    title: >-
+      Clinical Manifestations and Complications of Scrub Typhus: A Hospital
+      Based Study from North Eastern India
+    type: Article
+    datePublished: '2014'
+    isPartOf:
+      pageStart: 19
+      pageEnd: 23
+      title: J Assoc Physicians India
+      volumeNumber: 62
+      type: PublicationVolume
+    id: pntd.0007469.ref126
+  - authors:
+      - givenNames:
+          - S
+        familyNames:
+          - Dittrich
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Rattanavong
+        type: Person
+      - givenNames:
+          - SJ
+        familyNames:
+          - Lee
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Panyanivong
+        type: Person
+      - givenNames:
+          - SB
+        familyNames:
+          - Craig
+        type: Person
+      - givenNames:
+          - SM
+        familyNames:
+          - Tulsiani
+        type: Person
+      - givenNames:
+          - SD
+        familyNames:
+          - Blacksell
+        type: Person
+      - givenNames:
+          - DA
+        familyNames:
+          - Dance
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Dubot-Peres
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Sengduangphachanh
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Phoumin
+        type: Person
+      - givenNames:
+          - DH
+        familyNames:
+          - Paris
+        type: Person
+      - givenNames:
+          - PN
+        familyNames:
+          - Newton
+        type: Person
+    title: >-
+      Orientia, rickettsia, and leptospira pathogens as causes of CNS infections
+      in Laos: a prospective study
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      title: Lancet Glob Health
+      volumeNumber: 3
+      type: PublicationVolume
+    id: pntd.0007469.ref127
+  - authors:
+      - givenNames:
+          - SJ
+        familyNames:
+          - Olsen
+        type: Person
+      - givenNames:
+          - AP
+        familyNames:
+          - Campbell
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Supawat
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Liamsuwan
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Chotpitayasunondh
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Laptikulthum
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Viriyavejakul
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Tantirittisak
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Tunlayadechanont
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Visudtibhan
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Vasiknanonte
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Janjindamai
+        type: Person
+      - givenNames:
+          - P
+        familyNames:
+          - Boonluksiri
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Rajborirug
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Watanaveeradej
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Khetsuriani
+        type: Person
+      - givenNames:
+          - SF
+        familyNames:
+          - Dowell
+        type: Person
+    title: >-
+      Infectious causes of encephalitis and meningoencephalitis in Thailand,
+      2003–2005
+    type: Article
+    datePublished: '2015'
+    isPartOf:
+      pageStart: 280
+      pageEnd: 9
+      title: Emerg Infect Dis
+      volumeNumber: 21
+      type: PublicationVolume
+    id: pntd.0007469.ref128
+  - authors:
+      - givenNames:
+          - M
+        familyNames:
+          - Mittal
+        type: Person
+      - givenNames:
+          - JWV
+        familyNames:
+          - Thangaraj
+        type: Person
+      - givenNames:
+          - W
+        familyNames:
+          - Rose
+        type: Person
+      - givenNames:
+          - VP
+        familyNames:
+          - Verghese
+        type: Person
+      - givenNames:
+          - CPG
+        familyNames:
+          - Kumar
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Mittal
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Sabarinathan
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Bondre
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Gupta
+        type: Person
+      - givenNames:
+          - MV
+        familyNames:
+          - Murhekar
+        type: Person
+    title: >-
+      Scrub Typhus as a Cause of Acute Encephalitis Syndrome, Gorakhpur, Uttar
+      Pradesh, India
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 1414
+      pageEnd: 6
+      title: Emerg Infect Dis
+      volumeNumber: 23
+      type: PublicationVolume
+    id: pntd.0007469.ref129
+  - authors:
+      - givenNames:
+          - KN
+        familyNames:
+          - Dinesh
+        type: Person
+      - givenNames:
+          - BT
+        familyNames:
+          - Arun
+        type: Person
+      - givenNames:
+          - V
+        familyNames:
+          - Vijayadevagaran
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Ananthakrishnan
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Kittu
+        type: Person
+    title: >-
+      Clinical Profile of Scrub Typhus Meningoencephalitis among South Indian
+      Children
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 472
+      pageEnd: 8
+      title: J Trop Pediatr
+      volumeNumber: 64
+      type: PublicationVolume
+    id: pntd.0007469.ref130
+  - authors:
+      - givenNames:
+          - AC
+        familyNames:
+          - Grant
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Hunter
+        type: Person
+      - givenNames:
+          - WC
+        familyNames:
+          - Partin
+        type: Person
+    title: A case of acute monocytic ehrlichiosis with prominent neurologic signs
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 1619
+      pageEnd: 23
+      title: Neurology
+      volumeNumber: 48
+      type: PublicationVolume
+    id: pntd.0007469.ref131
+  - authors:
+      - givenNames:
+          - DS
+        familyNames:
+          - Berry
+        type: Person
+      - givenNames:
+          - RS
+        familyNames:
+          - Miller
+        type: Person
+      - givenNames:
+          - JA
+        familyNames:
+          - Hooke
+        type: Person
+      - givenNames:
+          - RF
+        familyNames:
+          - Massung
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Bennett
+        type: Person
+      - givenNames:
+          - MG
+        familyNames:
+          - Ottolini
+        type: Person
+    title: Ehrlichial meningitis with cerebrospinal fluid morulae
+    type: Article
+    datePublished: '1999'
+    isPartOf:
+      issueNumber: 6
+      pageStart: 552
+      pageEnd: 5
+      isPartOf:
+        title: Pediatr Infect Dis J
+        volumeNumber: 18
+        type: PublicationVolume
+      type: PublicationIssue
+    id: pntd.0007469.ref132
+  - authors:
+      - givenNames:
+          - YH
+        familyNames:
+          - Lee
+        type: Person
+      - givenNames:
+          - YJ
+        familyNames:
+          - Yun
+        type: Person
+      - givenNames:
+          - SH
+        familyNames:
+          - Jeong
+        type: Person
+    title: Isolated abducens nerve palsy in a patient with scrub typhus
+    type: Article
+    datePublished: '2010'
+    isPartOf:
+      pageStart: 460
+      pageEnd: 1
+      title: J AAPOS
+      volumeNumber: 14
+      type: PublicationVolume
+    id: pntd.0007469.ref133
+  - authors:
+      - givenNames:
+          - JS
+        familyNames:
+          - Yun
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Song
+        type: Person
+      - givenNames:
+          - EJ
+        familyNames:
+          - Choi
+        type: Person
+      - givenNames:
+          - JH
+        familyNames:
+          - Hwang
+        type: Person
+      - givenNames:
+          - CS
+        familyNames:
+          - Lee
+        type: Person
+      - givenNames:
+          - EH
+        familyNames:
+          - Park
+        type: Person
+    title: >-
+      Successfully Managed Acute Transverse Myelitis Related to Scrub Typhus and
+      Serial Image Findings
+    type: Article
+    datePublished: '2017'
+    isPartOf:
+      pageStart: 557
+      pageEnd: 60
+      title: Am J Trop Med Hyg
+      volumeNumber: 96
+      type: PublicationVolume
+    id: pntd.0007469.ref134
+  - authors:
+      - givenNames:
+          - AM
+        familyNames:
+          - Marty
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Imes
+        type: Person
+      - givenNames:
+          - HP
+        familyNames:
+          - Brusman
+        type: Person
+      - givenNames:
+          - LL
+        familyNames:
+          - Smrkovski
+        type: Person
+      - givenNames:
+          - DM
+        familyNames:
+          - Frisman
+        type: Person
+    title: >-
+      Ehrlichiosis mimicking thrombotic thrombocytopenic purpura. Case report
+      and pathological correlation
+    type: Article
+    datePublished: '1995'
+    isPartOf:
+      pageStart: 920
+      pageEnd: 5
+      title: Hum Pathol
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pntd.0007469.ref135
+  - authors:
+      - givenNames:
+          - TR
+        familyNames:
+          - Eng
+        type: Person
+      - givenNames:
+          - JR
+        familyNames:
+          - Harkess
+        type: Person
+      - givenNames:
+          - DB
+        familyNames:
+          - Fishbein
+        type: Person
+      - givenNames:
+          - JE
+        familyNames:
+          - Dawson
+        type: Person
+      - givenNames:
+          - CN
+        familyNames:
+          - Greene
+        type: Person
+      - givenNames:
+          - MA
+        familyNames:
+          - Redus
+        type: Person
+      - givenNames:
+          - FT
+        familyNames:
+          - Satalowich
+        type: Person
+    title: >-
+      Epidemiologic, clinical, and laboratory findings of human ehrlichiosis in
+      the United States, 1988
+    type: Article
+    datePublished: '1990'
+    isPartOf:
+      pageStart: 2251
+      pageEnd: 8
+      title: JAMA
+      volumeNumber: 264
+      type: PublicationVolume
+    id: pntd.0007469.ref136
+  - authors:
+      - givenNames:
+          - JR
+        familyNames:
+          - Harkess
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Stucky
+        type: Person
+      - givenNames:
+          - SA
+        familyNames:
+          - Ewing
+        type: Person
+    title: Neurologic abnormalities in a patient with human ehrlichiosis
+    type: Article
+    datePublished: '1990'
+    isPartOf:
+      pageStart: 1341
+      pageEnd: 3
+      title: South Med J
+      volumeNumber: 83
+      type: PublicationVolume
+    id: pntd.0007469.ref137
+  - authors:
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Ratnasamy
+        type: Person
+      - givenNames:
+          - ED
+        familyNames:
+          - Everett
+        type: Person
+      - givenNames:
+          - WE
+        familyNames:
+          - Roland
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - McDonald
+        type: Person
+      - givenNames:
+          - CW
+        familyNames:
+          - Caldwell
+        type: Person
+    title: Central nervous system manifestations of human ehrlichiosis
+    type: Article
+    datePublished: '1996'
+    isPartOf:
+      pageStart: 314
+      pageEnd: 9
+      title: Clin Infect Dis
+      volumeNumber: 23
+      type: PublicationVolume
+    id: pntd.0007469.ref138
+  - authors:
+      - givenNames:
+          - B
+        familyNames:
+          - Dredla
+        type: Person
+      - givenNames:
+          - WD
+        familyNames:
+          - Freeman
+        type: Person
+    title: >-
+      Ehrlichia Meningitis Mimicking Aneurysmal Subarachnoid Hemorrhage: A Case
+      Study for Medical Decision-Making Heuristics
+    type: Article
+    datePublished: '2016'
+    isPartOf:
+      pageStart: 76
+      pageEnd: 9
+      title: Neurohospitalist
+      volumeNumber: 6
+      type: PublicationVolume
+    id: pntd.0007469.ref139
+  - authors:
+      - givenNames:
+          - LE
+        familyNames:
+          - Davis
+        type: Person
+      - givenNames:
+          - CD
+        familyNames:
+          - Paddock
+        type: Person
+      - givenNames:
+          - JE
+        familyNames:
+          - Childs
+        type: Person
+      - givenNames:
+          - Kennedy
+        familyNames:
+          - Davis
+        type: Person
+    title: ''
+    type: Article
+    datePublished: '2000'
+    isPartOf:
+      pageStart: 499
+      pageEnd: 520
+      title: Infectious diseases of the nervous system
+      type: PublicationVolume
+    id: pntd.0007469.ref140
+  - authors:
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Carter
+        type: Person
+      - givenNames:
+          - NR
+        familyNames:
+          - Miller
+        type: Person
+    title: Fourth nerve palsy caused by Ehrlichia chaffeensis
+    type: Article
+    datePublished: '1997'
+    isPartOf:
+      pageStart: 47
+      pageEnd: 50
+      title: J Neuroophthalmol
+      volumeNumber: 17
+      type: PublicationVolume
+    id: pntd.0007469.ref141
+  - authors:
+      - givenNames:
+          - SL
+        familyNames:
+          - Buzzard
+        type: Person
+      - givenNames:
+          - BD
+        familyNames:
+          - Bissell
+        type: Person
+      - givenNames:
+          - ML
+        familyNames:
+          - Thompson
+          - Bastin
+        type: Person
+    title: >-
+      Ehrlichiosis presenting as severe sepsis and meningoencephalitis in an
+      immunocompetent adult
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      title: JMM Case Rep
+      volumeNumber: 5
+      type: PublicationVolume
+    id: pntd.0007469.ref142
+  - authors:
+      - givenNames:
+          - MS
+        familyNames:
+          - Lee
+        type: Person
+      - givenNames:
+          - TE
+        familyNames:
+          - Goslee
+        type: Person
+      - givenNames:
+          - S
+        familyNames:
+          - Lessell
+        type: Person
+    title: Ehrlichiosis optic neuritis
+    type: Article
+    datePublished: '2003'
+    isPartOf:
+      pageStart: 412
+      pageEnd: 3
+      title: Am J Ophthalmol
+      volumeNumber: 135
+      type: PublicationVolume
+    id: pntd.0007469.ref143
+  - authors:
+      - givenNames:
+          - SE
+        familyNames:
+          - Golden
+        type: Person
+    title: Aseptic meningitis associated with Ehrlichia canis infection
+    type: Article
+    datePublished: '1989'
+    isPartOf:
+      pageStart: 335
+      pageEnd: 7
+      title: Pediatr Infect Dis J
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pntd.0007469.ref144
+  - authors:
+      - givenNames:
+          - JS
+        familyNames:
+          - Bakken
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Krueth
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Wilson-Nordskog
+        type: Person
+      - givenNames:
+          - RL
+        familyNames:
+          - Tilden
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Asanovich
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+    title: Clinical and laboratory characteristics of human granulocytic ehrlichiosis
+    type: Article
+    datePublished: '1996'
+    isPartOf:
+      pageStart: 199
+      pageEnd: 205
+      title: JAMA
+      volumeNumber: 275
+      type: PublicationVolume
+    id: pntd.0007469.ref145
+  - authors:
+      - givenNames:
+          - HW
+        familyNames:
+          - Horowitz
+        type: Person
+      - givenNames:
+          - SJ
+        familyNames:
+          - Marks
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Weintraub
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+    title: Brachial plexopathy associated with human granulocytic ehrlichiosis
+    type: Article
+    datePublished: '1996'
+    isPartOf:
+      pageStart: 1026
+      pageEnd: 9
+      title: Neurology
+      volumeNumber: 46
+      type: PublicationVolume
+    id: pntd.0007469.ref146
+  - authors:
+      - givenNames:
+          - SW
+        familyNames:
+          - Kim
+        type: Person
+      - givenNames:
+          - CM
+        familyNames:
+          - Kim
+        type: Person
+      - givenNames:
+          - DM
+        familyNames:
+          - Kim
+        type: Person
+      - givenNames:
+          - NR
+        familyNames:
+          - Yun
+        type: Person
+    title: 'Manifestation of anaplasmosis as cerebral infarction: a case report'
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 409
+      title: BMC Infect Dis
+      volumeNumber: 18
+      type: PublicationVolume
+    id: pntd.0007469.ref147
+  - authors:
+      - givenNames:
+          - E
+        familyNames:
+          - Nyarko
+        type: Person
+      - givenNames:
+          - DJ
+        familyNames:
+          - Grab
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+    title: >-
+      Anaplasma phagocytophilum-infected neutrophils enhance transmigration of
+      Borrelia burgdorferi across the human blood brain barrier in vitro
+    type: Article
+    datePublished: '2006'
+    isPartOf:
+      pageStart: 601
+      pageEnd: 5
+      title: Int J Parasitol
+      volumeNumber: 36
+      type: PublicationVolume
+    id: pntd.0007469.ref148
+  - authors:
+      - givenNames:
+          - I
+        familyNames:
+          - Heglasova
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Vichova
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Kraljik
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Mosansky
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Miklisova
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Stanko
+        type: Person
+    title: >-
+      Molecular evidence and diversity of the spotted-fever group Rickettsia
+      spp. in small mammals from natural, suburban and urban areas of Eastern
+      Slovakia
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 1400
+      pageEnd: 6
+      title: Ticks Tick Borne
+      type: PublicationVolume
+    id: pntd.0007469.ref149
+  - authors:
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Lieskovska
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Minichova
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Sorf
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Gacikova
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Vrbova
+        type: Person
+      - givenNames:
+          - M
+        familyNames:
+          - Kazimirova
+        type: Person
+      - givenNames:
+          - Z
+        familyNames:
+          - Sekeyova
+        type: Person
+    title: >-
+      Dogs as sentinels for distribution of spotted-fever group rickettsiae in
+      Slovakia
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 64
+      pageEnd: 5
+      title: Travel Med Infect Dis
+      volumeNumber: 26
+      type: PublicationVolume
+    id: pntd.0007469.ref150
+  - authors:
+      - givenNames:
+          - RS
+        familyNames:
+          - Toledo
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Tamekuni
+        type: Person
+      - givenNames:
+          - MF
+        familyNames:
+          - Filho
+        type: Person
+      - givenNames:
+          - VB
+        familyNames:
+          - Haydu
+        type: Person
+      - givenNames:
+          - AR
+        familyNames:
+          - Barbieri
+        type: Person
+      - givenNames:
+          - AC
+        familyNames:
+          - Hiltel
+        type: Person
+      - givenNames:
+          - RC
+        familyNames:
+          - Pacheco
+        type: Person
+      - givenNames:
+          - MB
+        familyNames:
+          - Labruna
+        type: Person
+      - givenNames:
+          - JS
+        familyNames:
+          - Dumler
+        type: Person
+      - givenNames:
+          - O
+        familyNames:
+          - Vidotto
+        type: Person
+    title: >-
+      Infection by spotted fever rickettsiae in people, dogs, horses and ticks
+      in Londrina, Parana State, Brazil
+    type: Article
+    datePublished: '2011'
+    isPartOf:
+      pageStart: 416
+      pageEnd: 23
+      title: Zoonoses Public Health
+      volumeNumber: 58
+      type: PublicationVolume
+    id: pntd.0007469.ref151
+  - authors:
+      - givenNames:
+          - S
+        familyNames:
+          - Hornok
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Sugar
+        type: Person
+      - givenNames:
+          - IG
+        familyNames:
+          - Fernandez
+          - de
+          - Mera
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - de
+          - la
+          - Fuente
+        type: Person
+      - givenNames:
+          - G
+        familyNames:
+          - Horvath
+        type: Person
+      - givenNames:
+          - T
+        familyNames:
+          - Kovacs
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Micsutka
+        type: Person
+      - givenNames:
+          - E
+        familyNames:
+          - Gonczi
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Flaisz
+        type: Person
+      - givenNames:
+          - 'N'
+        familyNames:
+          - Takacs
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Farkas
+        type: Person
+      - givenNames:
+          - ML
+        familyNames:
+          - Meli
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Hofmann-Lehmann
+        type: Person
+    title: >-
+      Tick- and fly-borne bacteria in ungulates: the prevalence of Anaplasma
+      phagocytophilum, haemoplasmas and rickettsiae in water buffalo and deer
+      species in Central Europe, Hungary
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 98
+      title: BMC Vet Res
+      volumeNumber: 14
+      type: PublicationVolume
+    id: pntd.0007469.ref152
+  - authors:
+      - givenNames:
+          - ME
+        familyNames:
+          - Eremeeva
+        type: Person
+      - givenNames:
+          - LM
+        familyNames:
+          - Weiner
+        type: Person
+      - givenNames:
+          - ML
+        familyNames:
+          - Zambrano
+        type: Person
+      - givenNames:
+          - GA
+        familyNames:
+          - Dasch
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Hu
+        type: Person
+      - givenNames:
+          - I
+        familyNames:
+          - Vilcins
+        type: Person
+      - givenNames:
+          - MB
+        familyNames:
+          - Castro
+        type: Person
+      - givenNames:
+          - DL
+        familyNames:
+          - Bonilla
+        type: Person
+      - givenNames:
+          - KA
+        familyNames:
+          - Padgett
+        type: Person
+    title: >-
+      Detection and characterization of a novel spotted fever group Rickettsia
+      genotype in Haemaphysalis leporispalustris from California, USA
+    type: Article
+    datePublished: '2018'
+    isPartOf:
+      pageStart: 814
+      pageEnd: 8
+      title: Ticks Tick Borne Dis
+      volumeNumber: 9
+      type: PublicationVolume
+    id: pntd.0007469.ref153
+  - authors:
+      - givenNames:
+          - K
+        familyNames:
+          - Klitgaard
+        type: Person
+      - givenNames:
+          - J
+        familyNames:
+          - Hojgaard
+        type: Person
+      - givenNames:
+          - A
+        familyNames:
+          - Isbrand
+        type: Person
+      - givenNames:
+          - JJ
+        familyNames:
+          - Madsen
+        type: Person
+      - givenNames:
+          - K
+        familyNames:
+          - Thorup
+        type: Person
+      - givenNames:
+          - R
+        familyNames:
+          - Bodker
+        type: Person
+    title: >-
+      Screening for multiple tick-borne pathogens in Ixodes ricinus ticks from
+      birds in Denmark during spring and autumn migration seasons
+    type: Article
+    datePublished: '2019'
+    isPartOf:
+      pageStart: 546
+      pageEnd: 52
+      title: Ticks Tick Borne Dis
+      volumeNumber: 10
+      type: PublicationVolume
+    id: pntd.0007469.ref154
+  - authors:
+      - givenNames:
+          - 'Y'
+        familyNames:
+          - Bechah
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Capo
+        type: Person
+      - givenNames:
+          - JL
+        familyNames:
+          - Mege
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+    title: Epidemic typhus
+    type: Article
+    datePublished: '2008'
+    isPartOf:
+      pageStart: 417
+      pageEnd: 26
+      title: Lancet Infect Dis
+      volumeNumber: 8
+      type: PublicationVolume
+    id: pntd.0007469.ref155
+  - authors:
+      - givenNames:
+          - JF
+        familyNames:
+          - Faucher
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Socolovschi
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Aubry
+        type: Person
+      - givenNames:
+          - C
+        familyNames:
+          - Chirouze
+        type: Person
+      - givenNames:
+          - L
+        familyNames:
+          - Hustache-Mathieu
+        type: Person
+      - givenNames:
+          - D
+        familyNames:
+          - Raoult
+        type: Person
+      - givenNames:
+          - B
+        familyNames:
+          - Hoen
+        type: Person
+    title: 'Brill-Zinsser disease in Moroccan man, France, 2011'
+    type: Article
+    datePublished: '2012'
+    isPartOf:
+      pageStart: 171
+      pageEnd: 2
+      title: Emerg Infect Dis
+      volumeNumber: 18
+      type: PublicationVolume
+    id: pntd.0007469.ref156
