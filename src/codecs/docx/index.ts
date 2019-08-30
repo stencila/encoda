@@ -3,6 +3,7 @@
  */
 
 import stencila from '@stencila/schema'
+import { getTheme } from '@stencila/thema'
 import path from 'path'
 import * as vfile from '../../util/vfile'
 import * as P from '../pandoc'
@@ -40,11 +41,13 @@ export class DocxCodec extends Codec<EncodeOptions>
 
   public readonly encode = async (
     node: stencila.Node,
-    { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = {}
+    { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = this
+      .defaultEncodeOptions
   ): Promise<vfile.VFile> =>
     pandoc.encode(node, {
       filePath,
       format: P.OutputFormat.docx,
+      theme: getTheme(),
       codecOptions: {
         flags: [
           `--reference-doc=${codecOptions.templatePath ||

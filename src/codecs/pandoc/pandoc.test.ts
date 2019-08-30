@@ -3,6 +3,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import { dump, load } from '../../util/vfile'
 import { RPNGCodec } from '../rpng'
+import { defaultEncodeOptions } from '../types'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec } from './'
 import * as P from './types'
 
@@ -558,6 +559,7 @@ describe('rPNG encoding & decoding of "special" node types', () => {
     'decode: %s',
     async (name: string, value: stencila.Node, done: jest.DoneCallback) => {
       const rPNG = await rpng.encode(value, {
+        ...defaultEncodeOptions,
         filePath: path.join(output, `${name}.png`)
       })
 

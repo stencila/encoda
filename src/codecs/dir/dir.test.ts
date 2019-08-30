@@ -4,6 +4,7 @@ import globby from 'globby'
 import path from 'path'
 import { DirCodec } from '.'
 import * as vfile from '../../util/vfile'
+import { defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 
 const { decode, encode, sniff } = new DirCodec()
 
@@ -83,10 +84,13 @@ describe('decode', () => {
 })
 
 describe('encode', () => {
+  const e = (n: stencila.Node, options: Omit<GlobalEncodeOptions, 'theme'>) =>
+    encode(n, { ...defaultEncodeOptions, ...options })
+
   it('creates a directory', async () => {
     const dir = path.join(__dirname, '__outputs__', 'flat')
     await fs.remove(dir)
-    await encode(flatNode, { filePath: dir })
+    await e(flatNode, { filePath: dir })
     const files = await globby('**/*', { cwd: dir })
     expect(files.sort()).toEqual(['1.html', '2.html', '3.html', 'root.json'])
   })
@@ -94,7 +98,7 @@ describe('encode', () => {
   it('uses index.html for main files', async () => {
     const dir = path.join(__dirname, '__outputs__', 'shallow')
     await fs.remove(dir)
-    await encode(shallowNode, { filePath: dir })
+    await e(shallowNode, { filePath: dir })
     const files = await globby('**/*', { cwd: dir })
     expect(files.sort()).toEqual([
       'a/README.html',

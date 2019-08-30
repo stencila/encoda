@@ -184,7 +184,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
 
   public readonly encode = async (
     node: stencila.Node,
-    options: EncodeOptions = {}
+    options: EncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const dirPath = options.filePath || tempy.directory()
     const format = options.format || 'html'

@@ -69,7 +69,7 @@ export class TDPCodec extends Codec implements Codec {
 
   public readonly encode = async (
     node: stencila.Node,
-    { filePath }: GlobalEncodeOptions = {}
+    { filePath }: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const cw = node as stencila.CreativeWork
 

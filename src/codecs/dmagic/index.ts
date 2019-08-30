@@ -41,7 +41,7 @@ export class DMagicCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { isBundle = true } = options
     let bash = await encodeNode(node)
@@ -79,10 +79,8 @@ async function encodeNode(node: stencila.Node): Promise<string> {
       const block = node as stencila.CodeBlock
       if (
         block.programmingLanguage &&
-        (
-          block.programmingLanguage !== 'bash' &&
-          block.programmingLanguage !== 'sh'
-        )
+        (block.programmingLanguage !== 'bash' &&
+          block.programmingLanguage !== 'sh')
       ) {
         return ''
       }

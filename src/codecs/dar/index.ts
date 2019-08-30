@@ -66,7 +66,7 @@ export class DarCodec extends Codec implements Codec {
    */
   public encode: Codec['encode'] = async (
     node,
-    options = {}
+    options = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { filePath } = options
 

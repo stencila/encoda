@@ -14,6 +14,7 @@ import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import { dump, load } from '../../util/vfile'
+import { defaultEncodeOptions } from '../types'
 import { HTMLCodec } from './'
 
 const doc = (innerHTML: string) =>
@@ -21,8 +22,10 @@ const doc = (innerHTML: string) =>
 
 const { encode, decode } = new HTMLCodec()
 
-const e = async (node: stencila.Node, options = { isStandalone: false }) =>
-  dump(await encode(node, options))
+const e = async (
+  node: stencila.Node,
+  options = { ...defaultEncodeOptions, isStandalone: false }
+) => dump(await encode(node, options))
 
 const d = async (htmlString: string): Promise<stencila.Node> =>
   decode(load(htmlString))
@@ -351,7 +354,7 @@ describe('Encode & Decode Collections', () => {
 })
 
 test('encode with different themes', async () => {
-  const e = async (options = {}) =>
+  const e = async (options = defaultEncodeOptions) =>
     dump(await encode(kitchenSink.node, options))
 
   let html = await e({ theme: 'stencila' })
@@ -372,7 +375,7 @@ test('encode with different themes', async () => {
 })
 
 test('encode with bundling', async () => {
-  const e = async (options = {}) =>
+  const e = async (options = defaultEncodeOptions) =>
     dump(await encode(kitchenSink.node, options))
 
   const stylesheet = fs.readFileSync(

@@ -38,7 +38,7 @@ export class PDFCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const bundled = await bundle(node)
     const html = await dump(bundled, 'html', options)

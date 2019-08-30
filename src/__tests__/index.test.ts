@@ -3,6 +3,7 @@ import fs from 'fs-extra'
 import tempy from 'tempy'
 import { codecList, convert, dump, handled, load, match, read, write } from '..'
 import { JsonCodec } from '../codecs/json'
+import { defaultEncodeOptions } from '../codecs/types'
 import { YamlCodec } from '../codecs/yaml'
 import * as ssf from '../codecs/__mocks__/ssf'
 import { fixture } from './helpers'
@@ -16,15 +17,15 @@ describe('match', () => {
     expect(await match('./dir/file.json')).toBeInstanceOf(JsonCodec)
     expect(await match('./file.yaml')).toBeInstanceOf(YamlCodec)
     expect(await match('./file.yml')).toBeInstanceOf(YamlCodec)
-    expect(await match('./file.ssf')).toBeInstanceOf(ssf.Ssf)
-    expect(await match('./super-special-file')).toBeInstanceOf(ssf.Ssf)
+    expect(await match('./file.ssf')).toBeInstanceOf(ssf.SsfCodec)
+    expect(await match('./super-special-file')).toBeInstanceOf(ssf.SsfCodec)
   })
 
   it('works with format as extension name', async () => {
     expect(await match(undefined, 'json')).toBeInstanceOf(JsonCodec)
     expect(await match(undefined, 'yaml')).toBeInstanceOf(YamlCodec)
     expect(await match(undefined, 'yml')).toBeInstanceOf(YamlCodec)
-    expect(await match(undefined, 'ssf')).toBeInstanceOf(ssf.Ssf)
+    expect(await match(undefined, 'ssf')).toBeInstanceOf(ssf.SsfCodec)
   })
 
   it('works with format as media type', async () => {
@@ -32,18 +33,18 @@ describe('match', () => {
     expect(await match(undefined, 'text/yaml')).toBeInstanceOf(YamlCodec)
     expect(
       await match(undefined, 'application/vnd.super-corp.super-special-file')
-    ).toBeInstanceOf(ssf.Ssf)
+    ).toBeInstanceOf(ssf.SsfCodec)
   })
 
   it('works with file paths with format override', async () => {
     expect(await match('./file.foo', 'json')).toBeInstanceOf(JsonCodec)
     // expect(await match('./file.yaml', 'application/json')).toBeInstanceOf(json)
     // expect(await match('./file.json', 'text/yaml')).toBeInstanceOf(yaml)
-    expect(await match('./file.json', 'ssf')).toBeInstanceOf(ssf.Ssf)
+    expect(await match('./file.json', 'ssf')).toBeInstanceOf(ssf.SsfCodec)
   })
 
   it('works with content sniffing', async () => {
-    expect(await match('SSF: woot!')).toBeInstanceOf(ssf.Ssf)
+    expect(await match('SSF: woot!')).toBeInstanceOf(ssf.SsfCodec)
   })
 
   it('throws when unable to find a matching codec', async () => {
@@ -121,7 +122,7 @@ describe('write', () => {
 
   it('works with stdout', async () => {
     const consoleLog = jest.spyOn(console, 'log')
-    await write(simpleThing, '-', { format: 'json' })
+    await write(simpleThing, '-', { ...defaultEncodeOptions, format: 'json' })
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
   })
 })

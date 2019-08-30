@@ -44,13 +44,14 @@ import { default as processNode } from './process'
 import * as puppeteer from './util/puppeteer'
 import { coerce } from './util/coerce'
 import { validate } from './util/validate'
+import { getTheme, themes } from '@stencila/thema'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
   default: {
     standalone: true,
     bundle: false,
-    theme: 'stencila',
+    theme: themes.stencila,
     debug: false
   }
 })
@@ -64,7 +65,9 @@ configure(options.debug)
 ;(async () => {
   try {
     if (command === 'convert') {
-      const { to, from, standalone, bundle, theme, ...rest } = options
+      const { to, from, standalone, bundle, ...rest } = options
+      const theme = getTheme(options.theme)
+
       await convert(args[0], args[1], {
         to,
         from,

@@ -8,6 +8,7 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils'
 import mime from 'mime'
 import path from 'path'
 import { Codec } from '../codecs/types'
+import { getTheme } from '@stencila/thema'
 
 /**
  * A Jest matcher for testing that a codec is able
@@ -30,7 +31,10 @@ async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
   }
   const outPath = path.join(__dirname, '__outputs__', fileName)
   await fs.ensureDir(path.dirname(outPath))
-  const file = await codec.encode(node, { filePath: outPath })
+  const file = await codec.encode(node, {
+    filePath: outPath,
+    theme: getTheme()
+  })
   const nodeDecoded = await codec.decode(file)
   try {
     expect(nodeDecoded).toEqual(node)

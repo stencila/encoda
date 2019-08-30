@@ -21,6 +21,6 @@ export class BibCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    return csl.encode(node, { format: 'bibtex' })
+    return csl.encode(node, { ...this.defaultEncodeOptions, format: 'bibtex' })
   }
 }

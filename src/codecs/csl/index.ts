@@ -57,7 +57,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = {}
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { format = 'json' } = options
 

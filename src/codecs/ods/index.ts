@@ -23,6 +23,6 @@ export class ODSCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    return xlsx.encode(node, { format: 'ods' })
+    return xlsx.encode(node, { ...this.defaultEncodeOptions, format: 'ods' })
   }
 }

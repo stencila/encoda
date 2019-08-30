@@ -18,7 +18,7 @@ export class JatsPandocCodec extends Codec implements Codec {
 
   public readonly encode = async (
     node: stencila.Node,
-    options = {}
+    options = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     return pandoc.encode(node, {
       ...options,
