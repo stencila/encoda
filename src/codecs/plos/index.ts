@@ -3,8 +3,7 @@ import { JatsCodec } from '../jats'
 import * as xml from '../../util/xml'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
-import { Codec } from '../types';
-import { getLogger } from '@stencila/logga';
+import { Codec } from '../types'
 import fs from 'fs-extra'
 import path from 'path'
 import tempy from 'tempy'
@@ -12,7 +11,6 @@ import tempy from 'tempy'
 const jats = new JatsCodec()
 
 export class PlosCodec extends Codec implements Codec {
-
   private static regex = /^\s*((doi\s*:?\s*)|(https?:\/\/doi.org\/)|(https:\/\/journals\.plos\.org\/([a-z]+)\/article\?id=))?(10\.1371\/journal\.([a-z]+)\.\d+)\s*$/i
 
   public readonly sniff = async (content: string): Promise<boolean> => {
@@ -23,35 +21,45 @@ export class PlosCodec extends Codec implements Codec {
    * Decode a PLoS article identifier (e.g. URL or DOI) to
    * the journal and DOI components.
    */
-  public readonly decodeIdentifier = (identifier: string): {
-    journal: string,
+  public readonly decodeIdentifier = (
+    identifier: string
+  ): {
+    journal: string
     doi: string
   } => {
     const match = identifier.match(PlosCodec.regex)
-    if (!match) throw new Error(`Unable to parse identifier as PLoS DOI: "${identifier}"`)
+    if (!match)
+      throw new Error(`Unable to parse identifier as PLoS DOI: "${identifier}"`)
 
     const doi = match[6]
     const journal = ((code: string) => {
       switch (code) {
-        case 'pbio': return 'plosbiology'
-        case 'pcbi': return 'ploscompbiol'
-        case 'pgen': return 'plosgenetics'
-        case 'pmed': return 'plosmedicine'
-        case 'pntd': return 'plosntds'
-        case 'pone': return 'plosone'
-        case 'ppat': return 'plospathogens'
+        case 'pbio':
+          return 'plosbiology'
+        case 'pcbi':
+          return 'ploscompbiol'
+        case 'pgen':
+          return 'plosgenetics'
+        case 'pmed':
+          return 'plosmedicine'
+        case 'pntd':
+          return 'plosntds'
+        case 'pone':
+          return 'plosone'
+        case 'ppat':
+          return 'plospathogens'
       }
       throw new Error(`Unrecognised PLoS journal: "${code}"`)
     })(match[7])
 
-    return {journal, doi}
+    return { journal, doi }
   }
 
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
-    const {journal, doi} = this.decodeIdentifier(content)
+    const { journal, doi } = this.decodeIdentifier(content)
 
     const url = `http://journals.plos.org/${journal}/article/file?id=${doi}&type=manuscript`
     const response = await http.get(url)
@@ -64,10 +72,10 @@ export class PlosCodec extends Codec implements Codec {
     // Get the figures and rewrite hrefs
     const graphics = xml.all(doc, 'graphic')
     for (const graphic of graphics) {
-      let href = xml.attr(graphic, 'xlink:href')
+      const href = xml.attr(graphic, 'xlink:href')
       if (href !== null && href.startsWith(`info:doi/${doi}`)) {
         const id = href.split('.').pop() || ''
-        let url =
+        const url =
           `https://journals.plos.org/${journal}/article/` +
           (id.startsWith('e')
             ? // Equation
@@ -86,14 +94,10 @@ export class PlosCodec extends Codec implements Codec {
 
     // Dump the new JATS with `xlink:href`s to local images
     const jatsNew = xml.dump(doc)
-
-    return jats.decode(await vfile.load(jatsNew))
+    return jats.decode(vfile.load(jatsNew))
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to a PLoS article is not yet implemented`)
   }
 }

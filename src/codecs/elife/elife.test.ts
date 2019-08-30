@@ -8,7 +8,9 @@ const yaml = new YamlCodec()
 
 const elife2yaml = async (article: string) => {
   const done = await nockRecord(`nock-record-${article}.json`)
-  const result = vfile.dump(await yaml.encode(await decode(await vfile.load(`elife: ${article}`))))
+  const result = vfile.dump(
+    await yaml.encode(await decode(await vfile.load(`elife: ${article}`)))
+  )
   done()
   return result
 }
@@ -31,12 +33,8 @@ test('sniff', async () => {
 })
 
 test('decode', async () => {
-  expect(await elife2yaml('46793')).toMatchFile(
-    snapshot('46793.yaml')
-  )
-  expect(await elife2yaml('45123')).toMatchFile(
-    snapshot('45123.yaml')
-  )
+  expect(await elife2yaml('46793')).toMatchFile(snapshot('46793.yaml'))
+  expect(await elife2yaml('45123')).toMatchFile(snapshot('45123.yaml'))
 })
 
 test('encode', async () => {

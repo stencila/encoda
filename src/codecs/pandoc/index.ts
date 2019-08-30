@@ -277,7 +277,9 @@ function encodeNode(
 /**
  * Decode a Pandoc `Meta` node to an `object`
  */
-export function decodeMeta(meta: Pandoc.Meta): { [key: string]: stencila.Node } {
+export function decodeMeta(
+  meta: Pandoc.Meta
+): { [key: string]: stencila.Node } {
   return objectMap(meta, (key, value) => decodeMetaValue(value))
 }
 
@@ -536,7 +538,9 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
 /**
  * Decode a Pandoc `BulletList` or `OrderedList` to a Stencila `List`.
  */
-function decodeList(node: Pandoc.BulletList | Pandoc.OrderedList): stencila.List {
+function decodeList(
+  node: Pandoc.BulletList | Pandoc.OrderedList
+): stencila.List {
   const order = node.t === 'BulletList' ? 'unordered' : 'ascending'
   const blocks: Pandoc.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
   return {
@@ -552,7 +556,9 @@ function decodeList(node: Pandoc.BulletList | Pandoc.OrderedList): stencila.List
 /**
  * Encode Stencila `List` as a Pandoc `BulletList` or `OrderedList`.
  */
-function encodeList(node: stencila.List): Pandoc.BulletList | Pandoc.OrderedList {
+function encodeList(
+  node: stencila.List
+): Pandoc.BulletList | Pandoc.OrderedList {
   const listAttrs: Pandoc.ListAttributes = [
     1,
     { t: Pandoc.ListNumberStyle.DefaultStyle },
@@ -729,7 +735,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
     case 'Link':
       return decodeLink(node)
     case 'Cite':
-        return decodeCite(node)
+      return decodeCite(node)
     case 'Image':
       const image = decodeImage(node)
       // If the image is an rPNG then decode it and return
@@ -1032,9 +1038,7 @@ function encodeLink(node: stencila.Link): Pandoc.Link {
  */
 function decodeCite(cite: Pandoc.Cite): stencila.Cite {
   // TODO: finish
-  return stencila.cite(
-    'foo'
-  )
+  return stencila.cite('foo')
 }
 
 /**
@@ -1042,7 +1046,7 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite {
  */
 function encodeCite(cite: stencila.Cite): Pandoc.Cite {
   // TODO: finish
-  const { content = []} = cite
+  const { content = [] } = cite
   return {
     t: 'Cite',
     c: [[], encodeInlines(content)]

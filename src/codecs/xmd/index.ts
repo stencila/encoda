@@ -9,7 +9,6 @@ import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
 export class XmdCodec extends Codec implements Codec {
-
   public readonly extNames = ['xmd', 'rmd']
 
   /**
