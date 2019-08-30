@@ -23,7 +23,6 @@ import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
 
 export class DarCodec extends Codec implements Codec {
-
   public readonly extNames = ['dar']
 
   /**

@@ -3,8 +3,8 @@ import { JatsCodec } from '../jats'
 import * as xml from '../../util/xml'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
-import { Codec } from '../types';
-import { getLogger } from '@stencila/logga';
+import { Codec } from '../types'
+import { getLogger } from '@stencila/logga'
 import fs from 'fs-extra'
 import path from 'path'
 import tempy from 'tempy'
@@ -13,7 +13,6 @@ const log = getLogger('encoda:elife')
 const jats = new JatsCodec()
 
 export class ElifeCodec extends Codec implements Codec {
-
   private static regex = /^\s*((elife\s*:?\s*)|(https?:\/\/elifesciences\.org\/articles\/))(\d{5})(v(\d))?\s*$/i
 
   public readonly sniff = async (content: string): Promise<boolean> => {
@@ -38,7 +37,9 @@ export class ElifeCodec extends Codec implements Codec {
 
     // Check that there is a <body> element, some don't have one
     if (xml.all(doc, 'body').length === 0) {
-      log.warn(`Article ${article}v${version} has no body. You may wish to try another version.`)
+      log.warn(
+        `Article ${article}v${version} has no body. You may wish to try another version.`
+      )
     }
 
     const dir = tempy.directory()
@@ -51,7 +52,9 @@ export class ElifeCodec extends Codec implements Codec {
       if (href !== null && href.startsWith('elife')) {
         if (!href.endsWith('.tif')) href += '.tif'
         const url = `https://iiif.elifesciences.org/lax:${article}%2F${href}/full/600,/0/default.jpg`
-        const filename = href.replace(`elife-${article}-`, '').replace(`-v${version}.tif`, '.jpg')
+        const filename = href
+          .replace(`elife-${article}-`, '')
+          .replace(`-v${version}.tif`, '.jpg')
         const filepath = path.join(dir, filename)
         await http.download(url, filepath)
         if (graphic.attributes !== undefined) {
@@ -64,13 +67,10 @@ export class ElifeCodec extends Codec implements Codec {
     // Dump the new JATS with `xlink:href`s to local images
     const jatsNew = xml.dump(doc)
 
-    return jats.decode(await vfile.load(jatsNew))
+    return jats.decode(vfile.load(jatsNew))
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = async (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to an eLife article is not yet implemented`)
   }
 }

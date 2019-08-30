@@ -1,5 +1,5 @@
 import * as stencila from '@stencila/schema'
-import {getLogger} from '@stencila/logga'
+import { getLogger } from '@stencila/logga'
 import mime from 'mime'
 import path from 'path'
 import {

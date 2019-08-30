@@ -45,7 +45,6 @@ interface DecodeOptions {
 
 export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
   implements Codec<EncodeOptions, DecodeOptions> {
-
   public readonly extNames = ['dir']
 
   /**
