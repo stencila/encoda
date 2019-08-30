@@ -321,11 +321,11 @@ content:
       - ).
     type: Paragraph
   - content:
-      - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig1.jpg
-        format: image/jpeg
+      - format: image/jpeg
         meta:
           inline: false
         type: ImageObject
+        contentUrl: ''
     label: Figure 1.
     caption:
       - content:
@@ -429,11 +429,11 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig2.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 2.
         caption:
           - content:
@@ -477,11 +477,11 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig2-figsupp1.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 2—figure supplement 1.
         caption:
           - content:
@@ -594,11 +594,11 @@ content:
       - ).
     type: Paragraph
   - content:
-      - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig3.jpg
-        format: image/jpeg
+      - format: image/jpeg
         meta:
           inline: false
         type: ImageObject
+        contentUrl: ''
     label: Figure 3.
     caption:
       - content:
@@ -782,11 +782,11 @@ content:
         previously known to be affected by G4 intervention in mammalian cells.
     type: Paragraph
   - content:
-      - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig4.jpg
-        format: image/jpeg
+      - format: image/jpeg
         meta:
           inline: false
         type: ImageObject
+        contentUrl: ''
     label: Figure 4.
     caption:
       - content:
@@ -902,11 +902,11 @@ content:
       - .
     type: Paragraph
   - content:
-      - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig5.jpg
-        format: image/jpeg
+      - format: image/jpeg
         meta:
           inline: false
         type: ImageObject
+        contentUrl: ''
     label: Figure 5.
     caption:
       - content:
@@ -1024,11 +1024,11 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig6.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 6.
         caption:
           - content:
@@ -1118,11 +1118,11 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig6-figsupp1.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 6—figure supplement 1.
         caption:
           - content:
@@ -1323,11 +1323,11 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig7.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 7.
         caption:
           - content:
@@ -1399,11 +1399,11 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig7-figsupp1.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 7—figure supplement 1.
         caption:
           - content:
@@ -1591,14 +1591,14 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig8.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
-          - contentUrl: elife-46793-fig8-data1-v1.pdf
-            format: application/pdf
+            contentUrl: ''
+          - format: application/pdf
             type: MediaObject
+            contentUrl: ''
         label: Figure 8.
         caption:
           - content:
@@ -1732,16 +1732,16 @@ content:
                 type: Link
               - .
             type: Paragraph
-          - contentUrl: elife-46793-fig8-data1-v1.pdf
-            format: application/pdf
+          - format: application/pdf
             type: MediaObject
+            contentUrl: ''
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig8-figsupp1.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 8—figure supplement 1.
         caption:
           - content:
@@ -1796,11 +1796,11 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig8-figsupp2.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 8—figure supplement 2.
         caption:
           - content:
@@ -1815,14 +1815,14 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig8-figsupp3.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
-          - contentUrl: elife-46793-fig8-figsupp3-data1-v1.pdf
-            format: application/pdf
+            contentUrl: ''
+          - format: application/pdf
             type: MediaObject
+            contentUrl: ''
         label: Figure 8—figure supplement 3.
         caption:
           - content:
@@ -1929,9 +1929,9 @@ content:
                 type: Link
               - .
             type: Paragraph
-          - contentUrl: elife-46793-fig8-figsupp3-data1-v1.pdf
-            format: application/pdf
+          - format: application/pdf
             type: MediaObject
+            contentUrl: ''
         type: Figure
     meta:
       usage: figGroup
@@ -2135,11 +2135,11 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig9.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 9.
         caption:
           - content:
@@ -2209,11 +2209,11 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig9-figsupp1.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 9—figure supplement 1.
         caption:
           - content:
@@ -2245,11 +2245,11 @@ content:
             type: Paragraph
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig9-figsupp2.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 9—figure supplement 2.
         caption:
           - content:
@@ -2369,14 +2369,14 @@ content:
     type: Paragraph
   - parts:
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig10.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
-          - contentUrl: elife-46793-fig10-data1-v1.pdf
-            format: application/pdf
+            contentUrl: ''
+          - format: application/pdf
             type: MediaObject
+            contentUrl: ''
         label: Figure 10.
         caption:
           - content:
@@ -2472,16 +2472,16 @@ content:
                 type: Link
               - .
             type: Paragraph
-          - contentUrl: elife-46793-fig10-data1-v1.pdf
-            format: application/pdf
+          - format: application/pdf
             type: MediaObject
+            contentUrl: ''
         type: Figure
       - content:
-          - contentUrl: /tmp/cc97af1a8e4eca33b1a003218b5ea624/fig10-figsupp1.jpg
-            format: image/jpeg
+          - format: image/jpeg
             meta:
               inline: false
             type: ImageObject
+            contentUrl: ''
         label: Figure 10—figure supplement 1.
         caption:
           - content:

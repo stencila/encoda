@@ -1,5 +1,6 @@
 import { ElifeCodec } from '.'
 import * as vfile from '../../util/vfile'
+import unlink from '../../util/unlink'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 
@@ -7,13 +8,16 @@ const { decode, sniff, encode } = new ElifeCodec()
 const yaml = new YamlCodec()
 
 const elife2yaml = async (article: string) => {
+  // Fetch, with recording the complete article
   const done = await nockRecord(`nock-record-${article}.json`)
-  const result = vfile.dump(
-    await yaml.encode(await decode(await vfile.load(`elife: ${article}`)))
-  )
+  const node = await decode(await vfile.load(`elife: ${article}`))
   done()
-  return result
+  // Unlink to remove references to local files (which are non-deterministric)
+  const unlinked = await unlink(node)
+  // Convert to YAML
+  return await vfile.dump(await yaml.encode(unlinked))
 }
+
 
 jest.setTimeout(30 * 1000)
 
