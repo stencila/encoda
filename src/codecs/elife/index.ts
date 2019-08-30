@@ -13,7 +13,6 @@ const log = getLogger('encoda:elife')
 const jats = new JatsCodec()
 
 export class ElifeCodec extends Codec implements Codec {
-  public readonly mediaTypes = ['application/jats+xml']
 
   private static regex = /^\s*((elife\s*:?\s*)|(https?:\/\/elifesciences\.org\/articles\/))(\d{5})(v(\d))?\s*$/i
 
