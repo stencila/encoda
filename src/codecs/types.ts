@@ -68,6 +68,8 @@ export abstract class Codec<
     options?: DecodeOptions
   ) => Promise<stencila.Node>
 
+  protected defaultEncodeOptions = defaultEncodeOptions
+
   /**
    * Encode a `stencila.Node` to a `VFile`.
    *

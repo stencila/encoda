@@ -20,7 +20,7 @@ import tempy from 'tempy'
 import { write } from '../..'
 import * as uri from '../../util/uri'
 import * as vfile from '../../util/vfile'
-import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 export class DarCodec extends Codec implements Codec {
   public readonly mediaTypes = []
@@ -66,7 +66,7 @@ export class DarCodec extends Codec implements Codec {
    */
   public encode: Codec['encode'] = async (
     node,
-    options = defaultEncodeOptions
+    options = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { filePath } = options
 

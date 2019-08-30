@@ -8,7 +8,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import { dump } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 export class DMagicCodec extends Codec implements Codec {
   /**
@@ -41,7 +41,7 @@ export class DMagicCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = defaultEncodeOptions
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { isBundle = true } = options
     let bash = await encodeNode(node)

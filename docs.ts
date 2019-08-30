@@ -4,9 +4,10 @@
  * to a tree of HTML in `docs`.
  */
 
+import * as logga from '@stencila/logga'
+import { themes } from '@stencila/thema'
 import { DirCodec } from './src/codecs/dir'
 import * as vfile from './src/util/vfile'
-import * as logga from '@stencila/logga'
 
 const { decode, encode } = new DirCodec()
 
@@ -24,6 +25,7 @@ logga.replaceHandlers((data: logga.LogData) => {
     ]
   })
   await encode(docs, {
-    filePath: 'docs'
+    filePath: 'docs',
+    theme: themes.stencila
   })
 })()

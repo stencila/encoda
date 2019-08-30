@@ -5,7 +5,7 @@
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import { CSLCodec } from '../csl'
-import { Codec, defaultEncodeOptions } from '../types'
+import { Codec } from '../types'
 
 const csl = new CSLCodec()
 
@@ -21,6 +21,6 @@ export class BibCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    return csl.encode(node, { ...defaultEncodeOptions, format: 'bibtex' })
+    return csl.encode(node, { ...this.defaultEncodeOptions, format: 'bibtex' })
   }
 }

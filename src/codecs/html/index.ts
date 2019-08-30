@@ -137,7 +137,7 @@ export class HTMLCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = defaultEncodeOptions
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const {
       isStandalone = true,
@@ -456,7 +456,7 @@ function generateHtmlElement(
       'package.json'
     )).version
 
-    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/${themePath}}/${theme}`
+    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/${themePath}/${theme}`
     themeCss = h('link', {
       href: `${themeBaseUrl}/styles.css`,
       rel: 'stylesheet'

@@ -94,7 +94,7 @@ export class PandocCodec extends Codec
       filePath,
       format = P.OutputFormat.json,
       codecOptions = { flags: [], ensureFile: false }
-    }: GlobalEncodeOptions<EncodeOptions> = defaultEncodeOptions
+    }: GlobalEncodeOptions<EncodeOptions> = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     encodePromises = []
     const { standalone, pdoc } = encodeNode(node)

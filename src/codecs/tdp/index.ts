@@ -8,7 +8,7 @@ import stencila from '@stencila/schema'
 import datapackage from 'datapackage'
 import { dump } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 const logger = getLogger('encoda')
 
@@ -69,7 +69,7 @@ export class TDPCodec extends Codec implements Codec {
 
   public readonly encode = async (
     node: stencila.Node,
-    { filePath }: GlobalEncodeOptions = defaultEncodeOptions
+    { filePath }: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const cw = node as stencila.CreativeWork
 
