@@ -42,11 +42,27 @@ export class HTTPCodec extends Codec implements Codec {
     if (response.fromCache) {
       log.debug(`Fetched from cache "${url}"`)
     }
-    // Format
-    let format = path.extname(url).substring(1).toLowerCase()
-    const { type: mediaType } = contentType.parse(
-      response.headers['content-type'] || ''
-    )
+
+    // Resolve the format of the content
+    let format = 'text/plain'
+    // Check Content-Type header
+    const contentType_ = response.headers['content-type']
+    if (contentType_ !== undefined) {
+      const { type: mediaType } = contentType.parse(contentType_)
+      format = mediaType
+    }
+    // Because `text/plain` can be used as a default, attempt to
+    // override this based on filename extension, e.g. `ipynb`, `Rmd`
+    // Note that if extension does not match any of the codecs then
+    // the `match()` function will defaul to the `plain `txt` codec anyway.
+    if (format === 'text/plain') {
+      const extname = path
+        .extname(url)
+        .substring(1)
+        .toLowerCase()
+      if (extname.length > 1) format = extname
+    }
+
     const content = response.body
     return load(content, format)
   }

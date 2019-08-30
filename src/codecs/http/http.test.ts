@@ -14,7 +14,7 @@ test('sniff', async () => {
 })
 
 describe('decode', () => {
-  it('decodes based on Content-Type', async () => {
+  it('decodes based on Content-Type if that is not text/plain', async () => {
     nock('http://example.org')
       .get('/data.json')
       .reply(200, '{"type": "Person", "name": "Jane"}', {
@@ -35,9 +35,19 @@ describe('decode', () => {
     expect(dt.type).toBe('Datatable')
     expect(dt.columns.length).toBe(3)
   })
+
+  it('decodes based on filename extension if Content-Type is text/plain or missing', async () => {
+    nock('http://example.org')
+      .get('/data.csv')
+      .reply(200, 'A,B,C\n1,2,3\n4,5,6')
+
+    const node = await decode(await load('http://example.org/data.csv'))
+    const dt = node as Datatable
+    expect(dt.type).toBe('Datatable')
+    expect(dt.columns.length).toBe(3)
+  })
 })
 
 test('encode', async () => {
-  // @ts-ignore
-  await expect(encode(null)).rejects.toThrow(/^Unable/)
+  await expect(encode()).rejects.toThrow(/^Unable/)
 })
