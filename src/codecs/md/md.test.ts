@@ -15,6 +15,10 @@ describe('decode', () => {
     expect(await d(attrs.md)).toEqual(attrs.node)
   })
 
+  test('Subscript and superscripts', async () => {
+    expect(await d(subSuper.md)).toEqual(subSuper.node)
+  })
+
   test('Split Paragraphs', async () => {
     expect(await d(splitParas.from)).toEqual(splitParas.node)
   })
@@ -33,6 +37,10 @@ describe('encode', () => {
 
   test('Attributes', async () => {
     expect(await e(attrs.node)).toEqual(attrs.md)
+  })
+
+  test('Subscript and superscripts', async () => {
+    expect(await e(subSuper.node)).toEqual(subSuper.md)
   })
 
   test('Split Paragraphs', async () => {
@@ -650,6 +658,48 @@ A \`code\`{lang=r}.
     ]
   }
 }
+
+/**
+ * Example for testing decoding / encoding of
+ * `Subscript` and `Superscript` nodes.
+ */
+const subSuper = {
+  md: `---
+title: What'sup sub?
+authors: []
+---
+
+A subscript H~2~O. A superscript E = mc^2^.
+`,
+  node: {
+    type: 'Article',
+    title: 'What\'sup sub?',
+    authors: [],
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          'A subscript H',
+          {
+            type: 'Subscript',
+            content: [
+              '2'
+            ]
+          },
+          'O. A superscript E = mc',
+          {
+            type: 'Superscript',
+            content: [
+              '2'
+            ]
+          },
+          '.'
+        ]
+      },
+    ]
+  }
+}
+
 
 // Example for testing that empty paragraphs
 // are not represented in Markdown
