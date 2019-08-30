@@ -1,3 +1,10 @@
+# [0.68.0](https://github.com/stencila/encoda/compare/v0.67.2...v0.68.0) (2019-08-30)
+
+
+### Features
+
+* Remove statically coded Thema theme names close [#245](https://github.com/stencila/encoda/issues/245) ([d71a19c](https://github.com/stencila/encoda/commit/d71a19c))
+
 ## [0.67.2](https://github.com/stencila/encoda/compare/v0.67.1...v0.67.2) (2019-08-29)
 
 
