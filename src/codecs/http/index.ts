@@ -4,6 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila from '@stencila/schema'
+import path from 'path'
 import contentType from 'content-type'
 import { load } from '../..'
 import * as http from '../../util/http'
@@ -13,14 +14,6 @@ import { Codec } from '../types'
 const log = getLogger('encoda:http')
 
 export class HTTPCodec extends Codec implements Codec {
-  /**
-   * The media types that this codec can decode/encode.
-   *
-   * Empty since this codec can only determine the media type
-   * from the `Content-Type` header.
-   */
-  public readonly mediaTypes = []
-
   /**
    * Sniff content to see if it is a HTTP/S URL
    */
@@ -49,11 +42,13 @@ export class HTTPCodec extends Codec implements Codec {
     if (response.fromCache) {
       log.debug(`Fetched from cache "${url}"`)
     }
+    // Format
+    let format = path.extname(url).substring(1).toLowerCase()
     const { type: mediaType } = contentType.parse(
       response.headers['content-type'] || ''
     )
     const content = response.body
-    return load(content, mediaType)
+    return load(content, format)
   }
 
   /**

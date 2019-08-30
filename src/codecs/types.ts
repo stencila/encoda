@@ -18,9 +18,6 @@ export const defaultEncodeOptions: GlobalEncodeOptions = {
 /**
  * The interface for a codec.
  *
- * A codec is simply a module with these constants
- * and functions (some of which are optional).
- *
  * Note that our use of the term "codec", is consistent with our usage elsewhere in Stencila
  * as something that creates or modifies executable document, and
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
@@ -33,7 +30,7 @@ export abstract class Codec<
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
    * that the codec can decode/encode.
    */
-  public abstract readonly mediaTypes: string[]
+  public readonly mediaTypes?: string[]
 
   /**
    * Any array of file names to use to match the codec.
