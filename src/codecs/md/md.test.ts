@@ -673,7 +673,7 @@ A subscript H~2~O. A superscript E = mc^2^.
 `,
   node: {
     type: 'Article',
-    title: 'What\'sup sub?',
+    title: "What'sup sub?",
     authors: [],
     content: [
       {
@@ -682,24 +682,19 @@ A subscript H~2~O. A superscript E = mc^2^.
           'A subscript H',
           {
             type: 'Subscript',
-            content: [
-              '2'
-            ]
+            content: ['2']
           },
           'O. A superscript E = mc',
           {
             type: 'Superscript',
-            content: [
-              '2'
-            ]
+            content: ['2']
           },
           '.'
         ]
-      },
+      }
     ]
   }
 }
-
 
 // Example for testing that empty paragraphs
 // are not represented in Markdown

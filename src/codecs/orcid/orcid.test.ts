@@ -1,8 +1,8 @@
 import { toMatchFile } from 'jest-file-snapshot'
-import { OrcidCodec } from '.';
-import * as vfile from '../../util/vfile';
-import { nockRecord, snapshot } from '../../__tests__/helpers';
-import { YamlCodec } from '../yaml';
+import { OrcidCodec } from '.'
+import * as vfile from '../../util/vfile'
+import { nockRecord, snapshot } from '../../__tests__/helpers'
+import { YamlCodec } from '../yaml'
 
 const { decode, sniff, encode } = new OrcidCodec()
 const yaml = new YamlCodec()

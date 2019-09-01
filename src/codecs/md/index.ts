@@ -845,7 +845,9 @@ function encodeDelete(delet: stencila.Delete): MDAST.Delete {
  */
 const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
   return stencila.subscript(
-    sub.children.map(node => decodePhrasingContent(node as MDAST.PhrasingContent))
+    sub.children.map(node =>
+      decodePhrasingContent(node as MDAST.PhrasingContent)
+    )
   )
 }
 
@@ -857,7 +859,9 @@ const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
 const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `~${sub.content.map(item => item !== null ? item.toString() : '').join()}~`
+    value: `~${sub.content
+      .map(item => (item !== null ? item.toString() : ''))
+      .join()}~`
   }
 }
 
@@ -866,7 +870,9 @@ const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
  */
 const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
   return stencila.superscript(
-    sup.children.map(node => decodePhrasingContent(node as MDAST.PhrasingContent))
+    sup.children.map(node =>
+      decodePhrasingContent(node as MDAST.PhrasingContent)
+    )
   )
 }
 
@@ -878,7 +884,9 @@ const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
 const encodeSuperscript = (sub: stencila.Superscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `^${sub.content.map(item => item !== null ? item.toString() : '').join()}^`
+    value: `^${sub.content
+      .map(item => (item !== null ? item.toString() : ''))
+      .join()}^`
   }
 }
 
