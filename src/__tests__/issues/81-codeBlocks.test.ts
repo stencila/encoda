@@ -21,8 +21,8 @@ describe('issue 77', () => {
         },
         {
           type: 'CodeBlock',
-          text: 'date --utc'
-          programmingLanguage: 'sh',
+          text: 'date --utc',
+          programmingLanguage: 'sh'
         },
         {
           type: 'CodeBlock',

@@ -36,9 +36,6 @@ test('decode', async () => {
   expect(await d(dt.html)).toEqual(dt.node)
 })
 
-const e = async (node: stencila.Node, options = {}) =>
-  await dump(await encode(node, options))
-
 test('encode', async () => {
   expect(await e(kitchenSink.node)).toEqual(kitchenSink.html)
   expect(await e(attrs.node)).toEqual(attrs.html)

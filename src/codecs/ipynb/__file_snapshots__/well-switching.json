@@ -78,7 +78,7 @@
         "For our first pass, we'll just use the distance to the nearest safe well. Since the distance is recorded in meters, and the effect of one meter is likely to be very small, we can get nicer model coefficients if we scale it. Instead of creating a new scaled variable, we'll just do it in the formula description using the ",
         {
           "type": "Code",
-          "value": "I()"
+          "text": "I()"
         },
         " function."
       ]
@@ -99,7 +99,7 @@
         "Let's plot this model. We'll want to jitter the ",
         {
           "type": "Code",
-          "value": "switch"
+          "text": "switch"
         },
         " data, since it's all 0/1 and will over-plot. "
       ]
@@ -255,7 +255,7 @@
         "Again, we don't have to pre-compute an explicit interaction variable. We can just specify an interaction in the formula description using the ",
         {
           "type": "Code",
-          "value": ":"
+          "text": ":"
         },
         " operator."
       ]
@@ -394,7 +394,7 @@
         "The ",
         {
           "type": "Code",
-          "value": "pred_table()"
+          "text": "pred_table()"
         },
         " gives us a confusion matrix for the model. We can use this to compute the error rate of the model."
       ]

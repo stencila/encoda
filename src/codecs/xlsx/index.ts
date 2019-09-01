@@ -2,7 +2,7 @@
  * @module xlsx
  */
 
-import stencila from '@stencila/schema'
+import stencila, { codeExpression } from '@stencila/schema'
 import { nodeType } from '@stencila/schema/dist/util'
 import { array, option, ord } from 'fp-ts'
 import { range } from 'fp-ts/lib/Array'
@@ -10,6 +10,7 @@ import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
+import { expression } from '@babel/template'
 
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
@@ -296,13 +297,10 @@ function decodeCell(
   }
 
   if (cell.f) {
-    const expression: stencila.CodeExpression = {
-      type: 'CodeExpression',
-      language: 'excel',
-      text: cell.f.trim()
-    }
-    if (value) expression.output = value
-    return expression
+    return codeExpression(cell.f.trim(), {
+      programmingLanguage: 'excel',
+      output: value
+    })
   } else {
     return value || null
   }

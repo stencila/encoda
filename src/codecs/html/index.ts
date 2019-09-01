@@ -567,15 +567,13 @@ const defaultCreativeWorkOptions: CreativeWorkOptions = {
   attrs: {}
 }
 
-type CreativeWOrkTagMap = {
+type CreativeWorkTagMap = {
   [key in stencila.CreativeWork['type']]: keyof HTMLElementTagNameMap
 }
 
-const creativeWorkTagMap: CreativeWOrkTagMap = {
+const creativeWorkTagMap: CreativeWorkTagMap = {
   Article: 'article',
   AudioObject: 'audio',
-  CodeChunk: 'pre',
-  CodeExpr: 'pre',
   Collection: 'div',
   CreativeWork: 'div',
   Datatable: 'div',

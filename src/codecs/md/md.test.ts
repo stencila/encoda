@@ -352,7 +352,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           'Basic code output ',
           {
             type: 'CodeExpression',
-            language: 'python',
+            programmingLanguage: 'python',
             text: 'some_var',
             output: 43
           }
@@ -364,7 +364,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           'Fancy JSON output ',
           {
             type: 'CodeExpression',
-            language: 'python',
+            programmingLanguage: 'python',
             text: 'some_object',
             output: {
               type: 'Paragraph',
@@ -379,7 +379,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           'No output ',
           {
             type: 'CodeExpression',
-            language: 'python',
+            programmingLanguage: 'python',
             text: 'a = 1 + 1'
           }
         ]

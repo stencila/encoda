@@ -48,7 +48,7 @@
         "Run a code cell using ",
         {
           "type": "Code",
-          "value": "Shift-Enter"
+          "text": "Shift-Enter"
         },
         " or pressing the ",
         "<button class='btn btn-default btn-xs'>",
@@ -95,7 +95,7 @@
               "content": [
                 {
                   "type": "Code",
-                  "value": "Alt-Enter"
+                  "text": "Alt-Enter"
                 },
                 " runs the current cell and inserts a new one below."
               ]
@@ -110,7 +110,7 @@
               "content": [
                 {
                   "type": "Code",
-                  "value": "Ctrl-Enter"
+                  "text": "Ctrl-Enter"
                 },
                 " run the current cell and enters command mode."
               ]
