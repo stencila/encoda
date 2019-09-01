@@ -1,4 +1,3 @@
-import { toMatchFile } from 'jest-file-snapshot'
 import * as vfile from '../../util/vfile'
 import unlink from '../../util/unlink'
 import { fixture, snapshot } from '../../__tests__/helpers'

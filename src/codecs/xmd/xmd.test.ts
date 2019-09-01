@@ -57,7 +57,7 @@ plot(x,y)
           'Simple ',
           {
             type: 'CodeExpression',
-            language: 'r',
+            programmingLanguage: 'r',
             text: 'x * y'
           }
         ]
@@ -68,7 +68,7 @@ plot(x,y)
           'With parentheses and brackets ',
           {
             type: 'CodeExpression',
-            language: 'python',
+            programmingLanguage: 'python',
             text: 'sum(x*y)[1]'
           }
         ]
@@ -90,12 +90,12 @@ plot(x,y)
       },
       {
         type: 'CodeChunk',
-        language: 'r',
+        programmingLanguage: 'r',
         text: "file = 'data.csv'\n# a comment\nread.table(file)"
       },
       {
         type: 'CodeChunk',
-        language: 'r',
+        programmingLanguage: 'r',
         meta: {
           'fig.height': '7',
           'fig.width': '8'

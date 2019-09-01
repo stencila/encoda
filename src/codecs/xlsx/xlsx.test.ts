@@ -102,7 +102,7 @@ const table = {
             content: [
               {
                 type: 'CodeExpression',
-                language: 'excel',
+                programmingLanguage: 'excel',
                 text: 'SUM(B2:B3)^3',
                 output: 27
               }
@@ -169,7 +169,7 @@ const collection: {
                 content: [
                   {
                     type: 'CodeExpression',
-                    language: 'excel',
+                    programmingLanguage: 'excel',
                     text: 'AVERAGE(data!B2:B7)',
                     output: 3.5
                   }
@@ -191,7 +191,7 @@ const collection: {
                 content: [
                   {
                     type: 'CodeExpression',
-                    language: 'excel',
+                    programmingLanguage: 'excel',
                     text: 'AVERAGE(data!C2:C7)',
                     output: 2.66666666666667
                   }
