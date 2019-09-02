@@ -31,11 +31,16 @@ export const dataDir = isPackaged
   ? path.join(home, 'codecs', 'pandoc')
   : __dirname
 
+/**
+ * Install the Pandoc binary if it is not already
+ * in it's expected location.
+ */
 export async function install(): Promise<void> {
   const log = getLogger('encoda:pandoc')
   log.info(
     `Checking for Pandoc ${binary.version()} and downloading if necessary`
   )
+  await fs.ensureDir(path.dirname(binary.dest()))
   try {
     // Try to run the binary
     await binary.run()
