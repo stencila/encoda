@@ -14,7 +14,7 @@ import {
 } from '@stencila/schema/dist/util'
 import crypto from 'crypto'
 import { docs_v1 as GDocT } from 'googleapis'
-import { stringifyContent} from '../../util/content/stringifyContent'
+import { stringifyContent } from '../../util/content/stringifyContent'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
@@ -595,17 +595,26 @@ function encodeInlineContent(
  */
 function decodeTextRun(
   textRun: GDocT.Schema$TextRun
-): string | stencila.Emphasis | stencila.Strong | stencila.Delete | stencila.Link | stencila.Subscript | stencila.Superscript {
-  const { content, textStyle} = textRun
+):
+  | string
+  | stencila.Emphasis
+  | stencila.Strong
+  | stencila.Delete
+  | stencila.Link
+  | stencila.Subscript
+  | stencila.Superscript {
+  const { content, textStyle } = textRun
 
   if (content === undefined) return ''
 
-  const text = content.endsWith('\n') ? content.slice(0, -1): content
+  const text = content.endsWith('\n') ? content.slice(0, -1) : content
 
   if (textStyle) {
     if (textStyle.link) return stencila.link([text], textStyle.link.url || '')
-    if (textStyle.baselineOffset === 'SUPERSCRIPT') return stencila.superscript([text])
-    if (textStyle.baselineOffset === 'SUBSCRIPT') return stencila.subscript([text])
+    if (textStyle.baselineOffset === 'SUPERSCRIPT')
+      return stencila.superscript([text])
+    if (textStyle.baselineOffset === 'SUBSCRIPT')
+      return stencila.subscript([text])
     if (textStyle.strikethrough) return stencila.del([text])
     if (textStyle.bold) return stencila.strong([text])
     if (textStyle.italic) return stencila.emphasis([text])
@@ -659,7 +668,9 @@ function encodeDelete(node: stencila.Delete): GDocT.Schema$ParagraphElement {
 /**
  * Encode a Stencila `Superscript` node to a GDoc `TextRun` node with `textStyle.baselineOffset === 'SUPERSCRIPT'`.
  */
-function encodeSuperscript(node: stencila.Superscript): GDocT.Schema$ParagraphElement {
+function encodeSuperscript(
+  node: stencila.Superscript
+): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
       content: stringifyContent(node.content),
@@ -673,7 +684,9 @@ function encodeSuperscript(node: stencila.Superscript): GDocT.Schema$ParagraphEl
 /**
  * Encode a Stencila `Suberscript` node to a GDoc `TextRun` node with `textStyle.baselineOffset === 'SUBSCRIPT'`.
  */
-function encodeSubscript(node: stencila.Subscript): GDocT.Schema$ParagraphElement {
+function encodeSubscript(
+  node: stencila.Subscript
+): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
       content: stringifyContent(node.content),
