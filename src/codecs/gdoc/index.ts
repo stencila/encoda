@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import {
   isInlineContent,
   isParagraph,
@@ -14,11 +14,12 @@ import {
 } from '@stencila/schema/dist/util'
 import crypto from 'crypto'
 import { docs_v1 as GDocT } from 'googleapis'
+import { stringifyContent} from '../../util/content/stringifyContent'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-const logger = getLogger('encoda')
+const logger = getLogger('encoda:gdoc')
 
 interface DecodeOptions {
   fetch: boolean
@@ -569,6 +570,12 @@ function encodeInlineContent(
       return encodeEmphasis(node as stencila.Emphasis)
     case 'Strong':
       return encodeStrong(node as stencila.Strong)
+    case 'Delete':
+      return encodeDelete(node as stencila.Delete)
+    case 'Superscript':
+      return encodeSuperscript(node as stencila.Superscript)
+    case 'Subscript':
+      return encodeSubscript(node as stencila.Subscript)
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'ImageObject':
@@ -581,71 +588,39 @@ function encodeInlineContent(
 }
 
 /**
- * Decode a GDoc `TextRun` to a `string`, `Emphasis`, `Strong` or `Link` node.
+ * Decode a GDoc `TextRun` to a `string`, `Emphasis`, `Strong`, `Delete`, `Link`, `Subscript` or `Superscript` node.
+ *
+ * A `TextRun` can have multiple 'marking` e.g. a bold italic link. The decoding function
+ * only decodes to the most "semantically important" e.g a `Link`.
  */
 function decodeTextRun(
   textRun: GDocT.Schema$TextRun
-): string | stencila.Emphasis | stencila.Strong | stencila.Link {
-  let text = ''
-  if (textRun.content) {
-    let value = textRun.content
-    if (value.endsWith('\n')) value = value.slice(0, -1)
-    text = value
-  }
-  const textStyle = textRun.textStyle
+): string | stencila.Emphasis | stencila.Strong | stencila.Delete | stencila.Link | stencila.Subscript | stencila.Superscript {
+  const { content, textStyle} = textRun
+
+  if (content === undefined) return ''
+
+  const text = content.endsWith('\n') ? content.slice(0, -1): content
+
   if (textStyle) {
-    if (textStyle.italic) {
-      return {
-        type: 'Emphasis',
-        content: [text]
-      }
-    }
-    if (textStyle.bold) {
-      return {
-        type: 'Strong',
-        content: [text]
-      }
-    }
-    if (textStyle.link) {
-      return {
-        type: 'Link',
-        content: [text],
-        target: textStyle.link.url || ''
-      }
-    }
+    if (textStyle.link) return stencila.link([text], textStyle.link.url || '')
+    if (textStyle.baselineOffset === 'SUPERSCRIPT') return stencila.superscript([text])
+    if (textStyle.baselineOffset === 'SUBSCRIPT') return stencila.subscript([text])
+    if (textStyle.strikethrough) return stencila.del([text])
+    if (textStyle.bold) return stencila.strong([text])
+    if (textStyle.italic) return stencila.emphasis([text])
   }
+
   return text
 }
 
 /**
- * Stringify inline content nodes.
- *
- * This is necessary for elements like `TextRun` where the content must be
- * a simple string.
- */
-function stringifyInlineContentNodes(nodes: stencila.InlineContent[]): string {
-  return nodes
-    .map(node => {
-      switch (nodeType(node)) {
-        case 'Emphasis':
-        case 'Strong':
-          // @ts-ignore
-          return node.content
-        default:
-          // @ts-ignore
-          return node.toString()
-      }
-    })
-    .join()
-}
-
-/**
- * Encode a `stencila.Emphasis` node to a GDoc `TextRun` node with `textStyle.italic`.
+ * Encode a Stencila `Emphasis` node to a GDoc `TextRun` node with `textStyle.italic`.
  */
 function encodeEmphasis(em: stencila.Emphasis): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyInlineContentNodes(em.content),
+      content: stringifyContent(em.content),
       textStyle: {
         italic: true
       }
@@ -654,12 +629,12 @@ function encodeEmphasis(em: stencila.Emphasis): GDocT.Schema$ParagraphElement {
 }
 
 /**
- * Encode a `stencila.Strong` node to a GDoc `TextRun` node with `textStyle.bold`.
+ * Encode a Stencila `Strong` node to a GDoc `TextRun` node with `textStyle.bold`.
  */
 function encodeStrong(strong: stencila.Strong): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyInlineContentNodes(strong.content),
+      content: stringifyContent(strong.content),
       textStyle: {
         bold: true
       }
@@ -668,12 +643,54 @@ function encodeStrong(strong: stencila.Strong): GDocT.Schema$ParagraphElement {
 }
 
 /**
- * Encode a `stencila.Link` node to a GDoc `TextRun` node with `textStyle.link`.
+ * Encode a Stencila `Delete` node to a GDoc `TextRun` node with `textStyle.strikethrough`.
+ */
+function encodeDelete(node: stencila.Delete): GDocT.Schema$ParagraphElement {
+  return {
+    textRun: {
+      content: stringifyContent(node.content),
+      textStyle: {
+        strikethrough: true
+      }
+    }
+  }
+}
+
+/**
+ * Encode a Stencila `Superscript` node to a GDoc `TextRun` node with `textStyle.baselineOffset === 'SUPERSCRIPT'`.
+ */
+function encodeSuperscript(node: stencila.Superscript): GDocT.Schema$ParagraphElement {
+  return {
+    textRun: {
+      content: stringifyContent(node.content),
+      textStyle: {
+        baselineOffset: 'SUPERSCRIPT'
+      }
+    }
+  }
+}
+
+/**
+ * Encode a Stencila `Suberscript` node to a GDoc `TextRun` node with `textStyle.baselineOffset === 'SUBSCRIPT'`.
+ */
+function encodeSubscript(node: stencila.Subscript): GDocT.Schema$ParagraphElement {
+  return {
+    textRun: {
+      content: stringifyContent(node.content),
+      textStyle: {
+        baselineOffset: 'SUBSCRIPT'
+      }
+    }
+  }
+}
+
+/**
+ * Encode a Stencila `Link` node to a GDoc `TextRun` node with `textStyle.link`.
  */
 function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyInlineContentNodes(link.content),
+      content: stringifyContent(link.content),
       textStyle: {
         link: {
           url: link.target

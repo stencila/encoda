@@ -64,6 +64,27 @@ const kitchenSink = {
               { textRun: { content: ' and ' } },
               {
                 textRun: {
+                  content: 'delete',
+                  textStyle: { strikethrough: true }
+                }
+              },
+              { textRun: { content: ' and ' } },
+              {
+                textRun: {
+                  content: 'superscript',
+                  textStyle: { baselineOffset: 'SUPERSCRIPT' }
+                }
+              },
+              { textRun: { content: ' and ' } },
+              {
+                textRun: {
+                  content: 'subscript',
+                  textStyle: { baselineOffset: 'SUBSCRIPT' }
+                }
+              },
+              { textRun: { content: ' and ' } },
+              {
+                textRun: {
                   content: 'a link',
                   textStyle: { link: { url: 'http://example.com' } }
                 }
@@ -287,6 +308,21 @@ const kitchenSink = {
           {
             type: 'Strong',
             content: ['strong']
+          },
+          ' and ',
+          {
+            type: 'Delete',
+            content: ['delete']
+          },
+          ' and ',
+          {
+            type: 'Superscript',
+            content: ['superscript']
+          },
+          ' and ',
+          {
+            type: 'Subscript',
+            content: ['subscript']
           },
           ' and ',
           {
