@@ -8,8 +8,6 @@ import {
   GlobalEncodeOptions
 } from './codecs/types'
 import * as vfile from './util/vfile'
-// eslint-disable-next-line import/no-named-default
-import { default as log } from './log'
 
 const log = getLogger('encoda')
 
@@ -126,51 +124,34 @@ export async function match(
    * Get a `Codec` instance from a codec name
    */
   const getCodec = async (name: string): Promise<Codec | undefined> => {
-    const exports: { [key: string]: unknown } = await import(`./codecs/${name}`)
-    for (const C in exports) {
-      // @ts-ignore
-      if (exports[C].prototype instanceof Codec) {
+    try {
+      const exports: { [key: string]: unknown } = await import(
+        `./codecs/${name}`
+      )
+      for (const C in exports) {
         // @ts-ignore
-        return new exports[C]()
+        if (exports[C].prototype instanceof Codec) {
+          // @ts-ignore
+          return new exports[C]()
+        }
       }
-    }
-  }
-
-  const handleGetCodecError = (error: any) => {
-    // Do not log MODULE_NOT_FOUND warnings here since not finding a matching module
-    // is normal behavior and doing so causes unnecessary noise and anxiety :)
-
-    if (error.code !== 'MODULE_NOT_FOUND') {
-      log.warn(error)
+    } catch (error) {
+      // Do not log MODULE_NOT_FOUND warnings here since not finding a matching module
+      // is normal behavior and doing so causes unnecessary noise and anxiety :)
+      if (error.code !== 'MODULE_NOT_FOUND') log.warn(error)
     }
   }
 
   let codec: Codec | undefined
 
-  /**
-   * The following try/catch, as well as the for loop is in place for
-   * performance optimizations and avoiding loading unnecessary modules. If we
-   * find a matching Codec, short-circuit the module loading logic by returning
-   * the dynamically imported Codec
-   */
-  if (extName !== undefined) {
-    try {
-      codec = await getCodec(extName)
-    } catch (error) {
-    handleGetCodecError(error)
-    }
-  }
+  // Attempt to match extension name to codec
+  if (extName !== undefined) codec = await getCodec(extName)
+  if (codec !== undefined) return codec
 
-  if (codec) return codec
-
+  // Iterate through codecs searching for a match
   for (const codecName of codecList) {
-    try {
-      codec = await getCodec(codecName)
-    } catch (error) {
-      handleGetCodecError(error)
-    }
-
-    if (!codec) break
+    codec = await getCodec(codecName)
+    if (codec === undefined) continue
 
     if (fileName && codec.fileNames && codec.fileNames.includes(fileName)) {
       return codec
