@@ -168,7 +168,7 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
 
   let decoded: stencila.Node
   try {
-    decoded = await codec.decode(await vfile.load(data))
+    decoded = await codec.decode(vfile.load(data))
   } catch (error) {
     const decodeError = error.message.split('\n')[0]
     raise(`error using "${codecName}" codec: ${decodeError}`)

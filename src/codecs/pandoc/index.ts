@@ -18,7 +18,7 @@ import * as vfile from '../../util/vfile'
 import { RPNGCodec } from '../rpng'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
-import * as P from './types'
+import * as Pandoc from './types'
 
 const rpng = new RPNGCodec()
 
@@ -29,12 +29,12 @@ const logger = getLogger('encoda:pandoc')
 interface DecodeOptions {
   flags?: string[]
   ensureFile?: boolean
-  from?: P.InputFormat
+  from?: Pandoc.InputFormat
 }
 
 const defaultDecodeOptions = {
   ensureFile: false,
-  from: P.InputFormat.json,
+  from: Pandoc.InputFormat.json,
   flags: []
 }
 
@@ -92,7 +92,7 @@ export class PandocCodec extends Codec
     node: stencila.Node,
     {
       filePath,
-      format = P.OutputFormat.json,
+      format = Pandoc.OutputFormat.json,
       codecOptions = { flags: [], ensureFile: false }
     }: GlobalEncodeOptions<EncodeOptions> = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
@@ -104,7 +104,7 @@ export class PandocCodec extends Codec
 
     const args = [
       `--from=json`,
-      `--to=${format === 'pandoc' ? P.OutputFormat.json : format}`
+      `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`
     ]
     if (standalone) args.push('--standalone')
     for (const option of flags) {
@@ -208,7 +208,7 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
 /**
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
-function decodeDocument(pdoc: P.Document): stencila.Article {
+function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
   const { title, ...meta } = decodeMeta(pdoc.meta)
 
   let titre = 'Untitled'
@@ -243,10 +243,10 @@ function decodeDocument(pdoc: P.Document): stencila.Article {
  */
 function encodeNode(
   node: stencila.Node
-): { standalone: boolean; pdoc: P.Document } {
+): { standalone: boolean; pdoc: Pandoc.Document } {
   let standalone = false
-  let meta: P.Meta = {}
-  let blocks: P.Block[] = []
+  let meta: Pandoc.Meta = {}
+  let blocks: Pandoc.Block[] = []
 
   const type_ = nodeType(node)
   if (type_ === 'Article') {
@@ -265,8 +265,8 @@ function encodeNode(
     }
   }
 
-  const pdoc: P.Document = {
-    'pandoc-api-version': P.Version,
+  const pdoc: Pandoc.Document = {
+    'pandoc-api-version': Pandoc.Version,
     meta,
     blocks
   }
@@ -277,21 +277,23 @@ function encodeNode(
 /**
  * Decode a Pandoc `Meta` node to an `object`
  */
-export function decodeMeta(meta: P.Meta): { [key: string]: stencila.Node } {
+export function decodeMeta(
+  meta: Pandoc.Meta
+): { [key: string]: stencila.Node } {
   return objectMap(meta, (key, value) => decodeMetaValue(value))
 }
 
 /**
  * Encode an `object` of metadata into a Pandoc `Meta` node
  */
-export function encodeMeta(obj: { [key: string]: any }): P.Meta {
+export function encodeMeta(obj: { [key: string]: any }): Pandoc.Meta {
   return objectMap(obj, (key, value) => encodeMetaValue(value))
 }
 
 /**
  * Decode a Pandoc `MetaValue` to a Stencila `Node`
  */
-function decodeMetaValue(value: P.MetaValue): stencila.Node {
+function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
   switch (value.t) {
     case 'MetaBool':
       return value.c
@@ -326,7 +328,7 @@ function decodeMetaValue(value: P.MetaValue): stencila.Node {
  * For `null` and `number`, use a YAML "tags" syntax e.g. `!!null`
  * encoded into a Pandoc `MetaString`.
  */
-function encodeMetaValue(node: stencila.Node): P.MetaValue {
+function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
   switch (nodeType(node)) {
     case 'null':
     case 'undefined':
@@ -377,21 +379,21 @@ function encodeMetaValue(node: stencila.Node): P.MetaValue {
 /**
  * Decode an array of Pandoc `Block` elements.
  */
-function decodeBlocks(blocks: P.Block[]): stencila.BlockContent[] {
+function decodeBlocks(blocks: Pandoc.Block[]): stencila.BlockContent[] {
   return blocks.map(block => decodeBlock(block))
 }
 
 /**
  * Encode an array of Stencila `BlockContent` nodes.
  */
-function encodeBlocks(nodes: stencila.BlockContent[]): P.Block[] {
+function encodeBlocks(nodes: stencila.BlockContent[]): Pandoc.Block[] {
   return nodes.map(node => encodeBlock(node))
 }
 
 /**
  * Decode a Pandoc `Block` element to a Stencila `BlockContent` node.
  */
-function decodeBlock(block: P.Block): stencila.BlockContent {
+function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
   switch (block.t) {
     case 'Header':
       return decodeHeader(block)
@@ -403,7 +405,7 @@ function decodeBlock(block: P.Block): stencila.BlockContent {
       return decodeCodeBlock(block)
     case 'BulletList':
     case 'OrderedList':
-      return decodeList(block as P.OrderedList)
+      return decodeList(block as Pandoc.OrderedList)
     case 'Table':
       return decodeTable(block)
     case 'HorizontalRule':
@@ -415,7 +417,7 @@ function decodeBlock(block: P.Block): stencila.BlockContent {
 /**
  * Encode a Stencila `BlockContent` node to a Pandoc `Block` element.
  */
-function encodeBlock(block: stencila.BlockContent): P.Block {
+function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
   switch (block.type) {
     case 'Heading':
       return encodeHeading(block)
@@ -440,7 +442,7 @@ function encodeBlock(block: stencila.BlockContent): P.Block {
  *
  * Note: currently, any header attributes are ignored
  */
-function decodeHeader(node: P.Header): stencila.Heading {
+function decodeHeader(node: Pandoc.Header): stencila.Heading {
   return {
     type: 'Heading',
     depth: node.c[0],
@@ -448,7 +450,7 @@ function decodeHeader(node: P.Header): stencila.Heading {
   }
 }
 
-function encodeHeading(node: stencila.Heading): P.Header {
+function encodeHeading(node: stencila.Heading): Pandoc.Header {
   return {
     t: 'Header',
     c: [node.depth, emptyAttrs, encodeInlines(node.content)]
@@ -464,7 +466,7 @@ function encodeHeading(node: stencila.Heading): P.Header {
  * such encoded elements in a paragraph and returns them if they are the
  * only child node.
  */
-function decodePara(node: P.Para): stencila.BlockContent {
+function decodePara(node: Pandoc.Para): stencila.BlockContent {
   const content = decodeInlines(node.c)
   if (content.length === 1) {
     const node = content[0]
@@ -479,7 +481,7 @@ function decodePara(node: P.Para): stencila.BlockContent {
   }
 }
 
-function encodeParagraph(node: stencila.Paragraph): P.Para {
+function encodeParagraph(node: stencila.Paragraph): Pandoc.Para {
   return {
     t: 'Para',
     c: encodeInlines(node.content)
@@ -489,7 +491,7 @@ function encodeParagraph(node: stencila.Paragraph): P.Para {
 /**
  * Decode a Pandoc `BlockQuote` to a Stencila `QuoteBlock`.
  */
-function decodeBlockQuote(node: P.BlockQuote): stencila.QuoteBlock {
+function decodeBlockQuote(node: Pandoc.BlockQuote): stencila.QuoteBlock {
   return {
     type: 'QuoteBlock',
     content: decodeBlocks(node.c)
@@ -499,7 +501,7 @@ function decodeBlockQuote(node: P.BlockQuote): stencila.QuoteBlock {
 /**
  * Encode a Stencila `QuoteBlock` to a Pandoc `BlockQuote`.
  */
-function encodeQuoteBlock(node: stencila.QuoteBlock): P.BlockQuote {
+function encodeQuoteBlock(node: stencila.QuoteBlock): Pandoc.BlockQuote {
   return {
     t: 'BlockQuote',
     c: encodeBlocks(node.content)
@@ -509,7 +511,7 @@ function encodeQuoteBlock(node: stencila.QuoteBlock): P.BlockQuote {
 /**
  * Decode a Pandoc `CodeBlock` to a Stencila `CodeBlock`.
  */
-function decodeCodeBlock(node: P.CodeBlock): stencila.CodeBlock {
+function decodeCodeBlock(node: Pandoc.CodeBlock): stencila.CodeBlock {
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
     text: node.c[1]
@@ -525,7 +527,7 @@ function decodeCodeBlock(node: P.CodeBlock): stencila.CodeBlock {
 /**
  * Encode a Stencila `CodeBlock` to a Pandoc `CodeBlock`.
  */
-function encodeCodeBlock(node: stencila.CodeBlock): P.CodeBlock {
+function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
   const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'CodeBlock',
@@ -536,9 +538,11 @@ function encodeCodeBlock(node: stencila.CodeBlock): P.CodeBlock {
 /**
  * Decode a Pandoc `BulletList` or `OrderedList` to a Stencila `List`.
  */
-function decodeList(node: P.BulletList | P.OrderedList): stencila.List {
+function decodeList(
+  node: Pandoc.BulletList | Pandoc.OrderedList
+): stencila.List {
   const order = node.t === 'BulletList' ? 'unordered' : 'ascending'
-  const blocks: P.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
+  const blocks: Pandoc.Block[][] = node.t === 'BulletList' ? node.c : node.c[1]
   return {
     type: 'List',
     order,
@@ -552,13 +556,15 @@ function decodeList(node: P.BulletList | P.OrderedList): stencila.List {
 /**
  * Encode Stencila `List` as a Pandoc `BulletList` or `OrderedList`.
  */
-function encodeList(node: stencila.List): P.BulletList | P.OrderedList {
-  const listAttrs: P.ListAttributes = [
+function encodeList(
+  node: stencila.List
+): Pandoc.BulletList | Pandoc.OrderedList {
+  const listAttrs: Pandoc.ListAttributes = [
     1,
-    { t: P.ListNumberStyle.DefaultStyle },
-    { t: P.ListNumberDelim.DefaultDelim }
+    { t: Pandoc.ListNumberStyle.DefaultStyle },
+    { t: Pandoc.ListNumberDelim.DefaultDelim }
   ]
-  const blocks: P.Block[][] = node.items.map(listItem => {
+  const blocks: Pandoc.Block[][] = node.items.map(listItem => {
     return listItem.content.map(ensureBlockContent).map(encodeBlock)
   })
   if (node.order === 'ascending') {
@@ -574,7 +580,7 @@ function encodeList(node: stencila.List): P.BulletList | P.OrderedList {
  * Note: table caption and column widths and alignments
  * are currently ignored.
  */
-function decodeTable(node: P.Table): stencila.Table {
+function decodeTable(node: Pandoc.Table): stencila.Table {
   // const caption = decodeInlines(node.c[0])
   // const aligns = node.c[1]
   // const widths = node.c[2]
@@ -606,17 +612,17 @@ function decodeTable(node: P.Table): stencila.Table {
 /**
  * Encode Stencila `Table` to a Pandoc `Table`.
  */
-function encodeTable(node: stencila.Table): P.Table {
+function encodeTable(node: stencila.Table): Pandoc.Table {
   const columnCount = node.rows[0].cells.length
 
-  const caption: P.Inline[] = []
-  const aligns: { t: P.Alignment }[] = makeBy(columnCount, () => ({
-    t: P.Alignment.AlignDefault
+  const caption: Pandoc.Inline[] = []
+  const aligns: { t: Pandoc.Alignment }[] = makeBy(columnCount, () => ({
+    t: Pandoc.Alignment.AlignDefault
   }))
 
   const widths: number[] = makeBy(columnCount, () => 0)
 
-  let head: P.TableCell[] = []
+  let head: Pandoc.TableCell[] = []
 
   if (node.rows.length > 0) {
     head = node.rows[0].cells.map(cell => {
@@ -629,7 +635,7 @@ function encodeTable(node: stencila.Table): P.Table {
       ]
     })
   }
-  let rows: P.TableCell[][] = []
+  let rows: Pandoc.TableCell[][] = []
   if (node.rows.length > 1) {
     rows = node.rows.slice(1).map((row: stencila.TableRow) => {
       return row.cells.map((cell: stencila.TableCell) => {
@@ -661,7 +667,7 @@ function decodeHorizontalRule(): stencila.ThematicBreak {
 /**
  * Encode a Stencila `ThematicBreak` to a Pandoc `HorizontalRule`
  */
-function encodeThematicBreak(): P.HorizontalRule {
+function encodeThematicBreak(): Pandoc.HorizontalRule {
   return {
     t: 'HorizontalRule',
     c: undefined
@@ -673,9 +679,9 @@ function encodeThematicBreak(): P.HorizontalRule {
  *
  * Merges contiguous `Str` and `Space` elements prior to decoding.
  */
-function decodeInlines(nodes: P.Inline[]): stencila.InlineContent[] {
+function decodeInlines(nodes: Pandoc.Inline[]): stencila.InlineContent[] {
   const inlines = []
-  let previous: P.Inline | undefined
+  let previous: Pandoc.Inline | undefined
   for (const node of nodes) {
     if (
       previous &&
@@ -699,14 +705,14 @@ function decodeInlines(nodes: P.Inline[]): stencila.InlineContent[] {
 /**
  * Encode an array of Stencila `InlineContent` nodes to Pandoc `Inline` nodes.
  */
-function encodeInlines(nodes: stencila.InlineContent[]): P.Inline[] {
+function encodeInlines(nodes: stencila.InlineContent[]): Pandoc.Inline[] {
   return nodes.map(encodeInline)
 }
 
 /**
  * Decode a Pandoc `Inline` node to a Stencila `InlineContent` node
  */
-function decodeInline(node: P.Inline): stencila.InlineContent {
+function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
   switch (node.t) {
     case 'Space':
       return decodeSpace()
@@ -718,12 +724,18 @@ function decodeInline(node: P.Inline): stencila.InlineContent {
       return decodeStrong(node)
     case 'Strikeout':
       return decodeStrikeout(node)
+    case 'Subscript':
+      return decodeSubscript(node)
+    case 'Superscript':
+      return decodeSuperscript(node)
     case 'Quoted':
       return decodeQuoted(node)
     case 'Code':
       return decodeCode(node)
     case 'Link':
       return decodeLink(node)
+    case 'Cite':
+      return decodeCite(node)
     case 'Image':
       const image = decodeImage(node)
       // If the image is an rPNG then decode it and return
@@ -741,7 +753,7 @@ function decodeInline(node: P.Inline): stencila.InlineContent {
   }
 }
 
-function encodeInline(node: stencila.Node): P.Inline {
+function encodeInline(node: stencila.Node): Pandoc.Inline {
   switch (nodeType(node)) {
     case 'string':
       return encodeString(node as string)
@@ -751,12 +763,18 @@ function encodeInline(node: stencila.Node): P.Inline {
       return encodeStrong(node as stencila.Strong)
     case 'Delete':
       return encodeDelete(node as stencila.Delete)
+    case 'Subscript':
+      return encodeSubscript(node as stencila.Subscript)
+    case 'Superscript':
+      return encodeSuperscript(node as stencila.Superscript)
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
     case 'CodeExpression':
       return encodeCode(node as stencila.CodeExpression)
     case 'Link':
       return encodeLink(node as stencila.Link)
+    case 'Cite':
+      return encodeCite(node as stencila.Cite)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
@@ -780,7 +798,7 @@ function encodeInline(node: stencila.Node): P.Inline {
  * decoded to an empty string. For all other nodes, the string
  * content of the node should be returned.
  */
-function decodeInlineToString(node: P.Inline): string {
+function decodeInlineToString(node: Pandoc.Inline): string {
   switch (node.t) {
     case 'SoftBreak':
     case 'LineBreak':
@@ -813,7 +831,7 @@ function decodeInlineToString(node: P.Inline): string {
 /**
  * Decode an array of Pandoc `Inline` nodes to a `string`.
  */
-function decodeInlinesToString(nodes: P.Inline[]): string {
+function decodeInlinesToString(nodes: Pandoc.Inline[]): string {
   return nodes.map(decodeInlineToString).join('')
 }
 
@@ -827,14 +845,14 @@ function decodeSpace(): string {
 /**
  * Decode a Pandoc `Str` to a `string`.
  */
-function decodeStr(node: P.Str): string {
+function decodeStr(node: Pandoc.Str): string {
   return node.c
 }
 
 /**
  * Encode a `string` to a Pandoc `Str`.
  */
-function encodeString(node: string): P.Str {
+function encodeString(node: string): Pandoc.Str {
   return {
     t: 'Str',
     c: node
@@ -844,7 +862,7 @@ function encodeString(node: string): P.Str {
 /**
  * Decode a Pandoc `Emph` to a Stencila `Emphasis`.
  */
-function decodeEmph(node: P.Emph): stencila.Emphasis {
+function decodeEmph(node: Pandoc.Emph): stencila.Emphasis {
   return {
     type: 'Emphasis',
     content: decodeInlines(node.c)
@@ -854,7 +872,7 @@ function decodeEmph(node: P.Emph): stencila.Emphasis {
 /**
  * Encode a Stencila `Emphasis` to a Pandoc `Emph`.
  */
-function encodeEmph(node: stencila.Emphasis): P.Emph {
+function encodeEmph(node: stencila.Emphasis): Pandoc.Emph {
   return {
     t: 'Emph',
     c: encodeInlines(node.content)
@@ -864,7 +882,7 @@ function encodeEmph(node: stencila.Emphasis): P.Emph {
 /**
  * Decode a Pandoc `Strong` to a Stencila `Strong`.
  */
-function decodeStrong(node: P.Strong): stencila.Strong {
+function decodeStrong(node: Pandoc.Strong): stencila.Strong {
   return {
     type: 'Strong',
     content: decodeInlines(node.c)
@@ -874,7 +892,7 @@ function decodeStrong(node: P.Strong): stencila.Strong {
 /**
  * Encode a Stencila `Strong` to a Pandoc `Strong`.
  */
-function encodeStrong(node: stencila.Strong): P.Strong {
+function encodeStrong(node: stencila.Strong): Pandoc.Strong {
   return {
     t: 'Strong',
     c: encodeInlines(node.content)
@@ -884,7 +902,7 @@ function encodeStrong(node: stencila.Strong): P.Strong {
 /**
  * Decode a Pandoc `Strikeout` to a Stencila `Delete`.
  */
-function decodeStrikeout(node: P.Strikeout): stencila.Delete {
+function decodeStrikeout(node: Pandoc.Strikeout): stencila.Delete {
   return {
     type: 'Delete',
     content: decodeInlines(node.c)
@@ -894,9 +912,49 @@ function decodeStrikeout(node: P.Strikeout): stencila.Delete {
 /**
  * Encode a Stencila `Delete` to a Pandoc `Strikeout`.
  */
-function encodeDelete(node: stencila.Delete): P.Strikeout {
+function encodeDelete(node: stencila.Delete): Pandoc.Strikeout {
   return {
     t: 'Strikeout',
+    c: encodeInlines(node.content)
+  }
+}
+
+/**
+ * Decode a Pandoc `Subscript` to a Stencila `Subscript`.
+ */
+function decodeSubscript(node: Pandoc.Subscript): stencila.Subscript {
+  return {
+    type: 'Subscript',
+    content: decodeInlines(node.c)
+  }
+}
+
+/**
+ * Encode a Stencila `Subscript` to a Pandoc `Subscript`.
+ */
+function encodeSubscript(node: stencila.Subscript): Pandoc.Subscript {
+  return {
+    t: 'Subscript',
+    c: encodeInlines(node.content)
+  }
+}
+
+/**
+ * Decode a Pandoc `Superscript` to a Stencila `Superscript`.
+ */
+function decodeSuperscript(node: Pandoc.Superscript): stencila.Superscript {
+  return {
+    type: 'Superscript',
+    content: decodeInlines(node.c)
+  }
+}
+
+/**
+ * Encode a Stencila `Superscript` to a Pandoc `Superscript`.
+ */
+function encodeSuperscript(node: stencila.Superscript): Pandoc.Superscript {
+  return {
+    t: 'Superscript',
     c: encodeInlines(node.content)
   }
 }
@@ -906,7 +964,7 @@ function encodeDelete(node: stencila.Delete): P.Strikeout {
  *
  * Note: the type of quote, single or double, is ignored.
  */
-function decodeQuoted(node: P.Quoted): stencila.Quote {
+function decodeQuoted(node: Pandoc.Quoted): stencila.Quote {
   return {
     type: 'Quote',
     content: decodeInlines(node.c[1])
@@ -916,17 +974,17 @@ function decodeQuoted(node: P.Quoted): stencila.Quote {
 /**
  * Encode a Stencila `Quote` to a Pandoc `Quoted`.
  */
-function encodeQuote(node: stencila.Quote): P.Quoted {
+function encodeQuote(node: stencila.Quote): Pandoc.Quoted {
   return {
     t: 'Quoted',
-    c: [{ t: P.QuoteType.SingleQuote }, encodeInlines(node.content)]
+    c: [{ t: Pandoc.QuoteType.SingleQuote }, encodeInlines(node.content)]
   }
 }
 
 /**
  * Decode a Pandoc `Code` to a Stencila `CodeExpression`.
  */
-function decodeCode(node: P.Code): stencila.CodeExpression {
+function decodeCode(node: Pandoc.Code): stencila.CodeExpression {
   const code = stencila.codeExpression(node.c[1])
 
   const attrs = decodeAttrs(node.c[0])
@@ -940,7 +998,7 @@ function decodeCode(node: P.Code): stencila.CodeExpression {
 /**
  * Encode a Stencila `CodeExpression` to a Pandoc `Code`.
  */
-function encodeCode(node: stencila.CodeExpression): P.Code {
+function encodeCode(node: stencila.CodeExpression): Pandoc.Code {
   const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'Code',
@@ -951,7 +1009,7 @@ function encodeCode(node: stencila.CodeExpression): P.Code {
 /**
  * Decode a Pandoc `Link` to a Stencila `Link`.
  */
-function decodeLink(node: P.Link): stencila.Link {
+function decodeLink(node: Pandoc.Link): stencila.Link {
   const [target, title] = node.c[2]
   const link: stencila.Link = {
     type: 'Link',
@@ -967,7 +1025,7 @@ function decodeLink(node: P.Link): stencila.Link {
 /**
  * Encode a Stencila `Link` to a Pandoc `Link`.
  */
-function encodeLink(node: stencila.Link): P.Link {
+function encodeLink(node: stencila.Link): Pandoc.Link {
   const [url, title] = [node.target, node.title || '']
   return {
     t: 'Link',
@@ -976,11 +1034,31 @@ function encodeLink(node: stencila.Link): P.Link {
 }
 
 /**
+ * Decode a Pandoc `Cite` to a Stencila `Cite`.
+ */
+function decodeCite(cite: Pandoc.Cite): stencila.Cite {
+  // TODO: finish
+  return stencila.cite('foo')
+}
+
+/**
+ * Encode a Stencila `Cite` to a Pandoc `Cite`.
+ */
+function encodeCite(cite: stencila.Cite): Pandoc.Cite {
+  // TODO: finish
+  const { content = [] } = cite
+  return {
+    t: 'Cite',
+    c: [[], encodeInlines(content)]
+  }
+}
+
+/**
  * Decode a Pandoc `Image` to a Stencila `ImageObject`.
  *
  * Note: attributes are ignored.
  */
-function decodeImage(image: P.Image): stencila.ImageObject {
+function decodeImage(image: Pandoc.Image): stencila.ImageObject {
   const alt = decodeInlinesToString(image.c[1])
   const [url, title] = image.c[2]
   return {
@@ -994,10 +1072,10 @@ function decodeImage(image: P.Image): stencila.ImageObject {
 /**
  * Encode a Stencila `ImageObject` to a Pandoc `Image`.
  */
-function encodeImageObject(imageObject: stencila.ImageObject): P.Image {
+function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
   const url = imageObject.contentUrl || ''
   const title = imageObject.title || ''
-  const alt: P.Inline[] = []
+  const alt: Pandoc.Inline[] = []
   if (imageObject.text) alt.push(encodeString(imageObject.text))
   return {
     t: 'Image',
@@ -1010,7 +1088,7 @@ function encodeImageObject(imageObject: stencila.ImageObject): P.Image {
  * an rPNG. This is a fallback encoding for block nodes
  * not handled elsewhere.
  */
-function encodeFallbackBlock(node: stencila.Node): P.Para {
+function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
   return {
     t: 'Para',
     c: [encodeFallbackInline(node)]
@@ -1022,7 +1100,7 @@ function encodeFallbackBlock(node: stencila.Node): P.Para {
  * pointing to a rPNG. This is a fallback encoding for inline nodes
  * not handled elsewhere.
  */
-function encodeFallbackInline(node: stencila.Node): P.Image {
+function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
     await write(node, imagePath, {
@@ -1044,12 +1122,12 @@ function encodeFallbackInline(node: stencila.Node): P.Image {
 /**
  * Empty Pandoc element attributes
  */
-export const emptyAttrs: P.Attr = ['', [], []]
+export const emptyAttrs: Pandoc.Attr = ['', [], []]
 
 /**
  * Decode Pandoc `Attr` attributes to an object
  */
-function decodeAttrs(node: P.Attr): { [key: string]: string } | undefined {
+function decodeAttrs(node: Pandoc.Attr): { [key: string]: string } | undefined {
   const attrs: { [key: string]: string } = {}
   if (node[0]) attrs.id = node[0]
   if (node[1] && node[1].length) attrs.classes = node[1].join(' ')
@@ -1060,7 +1138,7 @@ function decodeAttrs(node: P.Attr): { [key: string]: string } | undefined {
 /**
  * Encode an object of attributes to a Pandoc `Attr`.
  */
-function encodeAttrs(attrs: { [key: string]: string } = {}): P.Attr {
+function encodeAttrs(attrs: { [key: string]: string } = {}): Pandoc.Attr {
   const { id, classes, ...rest } = attrs
   return [id || '', classes ? classes.split(' ') : [], Object.entries(rest)]
 }

@@ -5,6 +5,7 @@ import { codecList, convert, dump, handled, load, match, read, write } from '..'
 import { JsonCodec } from '../codecs/json'
 import { defaultEncodeOptions } from '../codecs/types'
 import { YamlCodec } from '../codecs/yaml'
+import { TxtCodec } from '../codecs/txt'
 import * as ssf from '../codecs/__mocks__/ssf'
 import { fixture } from './helpers'
 
@@ -47,16 +48,10 @@ describe('match', () => {
     expect(await match('SSF: woot!')).toBeInstanceOf(ssf.SsfCodec)
   })
 
-  it('throws when unable to find a matching codec', async () => {
-    await expect(match('./foo.bar')).rejects.toThrow(
-      'No codec could be found for content "./foo.bar".'
-    )
-    await expect(match('foo')).rejects.toThrow(
-      'No codec could be found for content "foo".'
-    )
-    await expect(match(undefined, 'foo')).rejects.toThrow(
-      'No codec could be found for format "foo".'
-    )
+  it('falls back to plain text when unable to find a matching codec', async () => {
+    expect(await match('./foo.bar')).toBeInstanceOf(TxtCodec)
+    expect(await match('foo')).toBeInstanceOf(TxtCodec)
+    expect(await match(undefined, 'foo')).toBeInstanceOf(TxtCodec)
   })
 })
 
@@ -64,10 +59,6 @@ test('handle', async () => {
   expect(await handled('./file.json')).toBeTruthy()
   expect(await handled(undefined, 'json')).toBeTruthy()
   expect(await handled(undefined, 'application/json')).toBeTruthy()
-
-  expect(await handled('./file.foo')).toBeFalsy()
-  expect(await handled(undefined, 'foo')).toBeFalsy()
-  expect(await handled(undefined, 'application/foo')).toBeFalsy()
 })
 
 /**

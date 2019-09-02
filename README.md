@@ -16,6 +16,7 @@
 
 - [Introduction](#introduction)
 - [Formats](#formats)
+- [Publishers](#publishers)
 - [Install](#install)
 - [Use](#use)
 - [Documentation](#documentation)
@@ -104,6 +105,59 @@ Encoda provides a collection of codecs for converting between, and composing tog
 </details>
 
 If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).
+
+## Publishers
+
+Serveral of the codecs in Encoda, deal with fetching content from a particlar publisher. For example, to get an eLife article and read it in Markdown:
+
+```bash
+stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md
+```
+
+Some of these publisher codecs deal with meta data. e.g.
+
+```bash
+stencila convert "Watson and Crick 1953" - --from crossref --to yaml
+```
+
+```yaml
+type: Article
+title: Genetical Implications of the Structure of Deoxyribonucleic Acid
+authors:
+  - familyNames:
+      - WATSON
+    givenNames:
+      - J. D.
+    type: Person
+  - familyNames:
+      - CRICK
+    givenNames:
+      - F. H. C.
+    type: Person
+datePublished: '1953,5'
+isPartOf:
+  issueNumber: '4361'
+  isPartOf:
+    volumeNumber: '171'
+    isPartOf:
+      title: Nature
+      type: Periodical
+    type: PublicationVolume
+  type: PublicationIssue
+```
+
+| Source                 | Codec      | Base codec/s                         | Status | Issues               | Coverage          |
+| ---------------------- | ---------- | ------------------------------------ | ------ | -------------------- | ----------------- |
+| **General**            |
+| HTTP                   | [http]     | Based on `Content-Type` or extension | β      | [⚠][http-issues]     | ![][http-cov]     |
+| **`Person`**           |
+| ORCID                  | [orcid]    | `jsonld`                             | β      | [⚠][orcid-issues]    | ![][orcid-cov]    |
+| **`Article` metadata** |
+| DOI                    | [doi]      | `csl`                                | β      | [⚠][doi-issues]      | ![][doi-cov]      |
+| Crossref               | [crossref] | `jsonld`                             | β      | [⚠][crossref-issues] | ![][crossref-cov] |
+| **`Article` content**  |
+| eLife                  | [elife]    | `jats`                               | β      | [⚠][elife-issues]    | ![][elife-cov]    |
+| PLoS                   | [plos]     | `jats`                               | β      | [⚠][plos-issues]     | ![][plos-cov]     |
 
 ## Install
 

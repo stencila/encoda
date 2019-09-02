@@ -4,16 +4,19 @@
 
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
-import * as P from '../pandoc'
+import * as Pandoc from '../pandoc'
 import { Codec } from '../types'
 
-const pandoc = new P.PandocCodec()
+const pandoc = new Pandoc.PandocCodec()
 
 export class JatsPandocCodec extends Codec implements Codec {
-  public readonly mediaTypes = []
+  /**
+   * See the note in the `JatsCodec` regarding this media type
+   */
+  public readonly mediaTypes = ['application/jats+xml']
 
   public readonly decode = (file: vfile.VFile): Promise<stencila.Node> => {
-    return pandoc.decode(file, { from: P.InputFormat.jats })
+    return pandoc.decode(file, { from: Pandoc.InputFormat.jats })
   }
 
   public readonly encode = async (
@@ -22,7 +25,7 @@ export class JatsPandocCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     return pandoc.encode(node, {
       ...options,
-      format: P.OutputFormat.jats,
+      format: Pandoc.OutputFormat.jats,
       codecOptions: { flags: [`--template=jats-template.xml`] }
     })
   }

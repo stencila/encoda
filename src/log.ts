@@ -63,12 +63,13 @@ export const logWarnLoss = (
  * @param codec The codec emitting the warning
  * @param op The operation emitting the warning
  * @param node The node from which data may be lost
- * @param lost An object with data that will be lost (is any)
+ * @param lost An object with data that will be lost (if any)
  */
 export const logWarnLossIfAny = (
   codec: string,
   op: CodecOperation,
   node: stencila.Node,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   lost: { [key: string]: any }
 ): void => {
   const { type, ...rest } = lost

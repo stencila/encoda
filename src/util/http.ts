@@ -32,7 +32,11 @@ export async function get(
   url: string,
   options: got.GotOptions<string> = {}
 ): Promise<got.Response<string>> {
-  return http.get(url, options)
+  try {
+    return await http.get(url, options)
+  } catch (error) {
+    throw new Error(`Unable to get ${url}: ${error.message}`)
+  }
 }
 
 /**
