@@ -5,5 +5,5 @@ install:
   - npm install
 
 test_script:
-  - npm run test -- --forceExit
+  - npm run test:wild -- --forceExit
   - npm run build
