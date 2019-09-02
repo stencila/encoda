@@ -9,12 +9,12 @@
 
 /* eslint-disable */
 
-const path = require('path')
-
 /**
  * A special `require()` like function that will load a compiled Javascript
  * module if it exists (in production) but fallback to transpiling Typescript
  * (in development).
+ *
+ * @param modulePath The node module path (NOT filesystem path) i.e. forward slash separated string
  */
 async function load(modulePath) {
   try {
@@ -22,7 +22,9 @@ async function load(modulePath) {
     // a distribution of the package where a
     // compiled Javascript file already exists
     return require(modulePath)
-  } catch {
+  } catch (error) {
+    if (error.code !== 'MODULE_NOT_FOUND') throw error
+
     // If we are here, then we are in development, but
     // the module has not yet been compiled to Javascript
     const childProcess = require('child_process')
@@ -35,6 +37,6 @@ async function load(modulePath) {
 
 ;(async () => {
   // Install Pandoc binary
-  const pandoc = await load(path.join('.', 'dist', 'codecs', 'pandoc', 'binary'))
+  const pandoc = await load('./dist/codecs/pandoc/binary')
   await pandoc.install()
 })()
