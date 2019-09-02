@@ -37,6 +37,7 @@ import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
 import * as vfile from '../../util/vfile'
+import { stringifyContent } from '../../util/content/stringifyContent'
 import { Codec } from '../types'
 
 const log = getLogger('encoda:md')
@@ -859,9 +860,7 @@ const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
 const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `~${sub.content
-      .map(item => (item !== null ? item.toString() : ''))
-      .join()}~`
+    value: `~${stringifyContent(sub.content)}~`
   }
 }
 
@@ -881,12 +880,10 @@ const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
  *
  * This assumes that there is only `string`s in the `content` of the subscript.
  */
-const encodeSuperscript = (sub: stencila.Superscript): MDAST.Text => {
+const encodeSuperscript = (sup: stencila.Superscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `^${sub.content
-      .map(item => (item !== null ? item.toString() : ''))
-      .join()}^`
+    value: `^${stringifyContent(sup.content)}^`
   }
 }
 
@@ -1280,7 +1277,7 @@ function decodeHTML(html: MDAST.HTML): string {
 }
 
 /**
- * Encode a `link` node with `data.hProperties` into a `MDAST.HTML` node
+ * Encode a node with `data.hProperties` into a `MDAST.HTML` node
  * with attributes in curly braces `{}`.
  *
  * The `remark-attr` plugin does not do this stringifying for us
