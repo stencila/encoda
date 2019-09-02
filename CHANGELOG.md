@@ -1,3 +1,10 @@
+# [0.69.0](https://github.com/stencila/encoda/compare/v0.68.0...v0.69.0) (2019-09-02)
+
+
+### Features
+
+* Add output of CodeExpressions to MD encoding. Close [#225](https://github.com/stencila/encoda/issues/225) ([ae259af](https://github.com/stencila/encoda/commit/ae259af))
+
 # [0.68.0](https://github.com/stencila/encoda/compare/v0.67.2...v0.68.0) (2019-08-30)
 
 
