@@ -119,6 +119,7 @@ Some of these publisher codecs deal with meta data. e.g.
 ```bash
 stencila convert "Watson and Crick 1953" - --from crossref --to yaml
 ```
+
 ```yaml
 type: Article
 title: Genetical Implications of the Structure of Deoxyribonucleic Acid
@@ -145,18 +146,18 @@ isPartOf:
   type: PublicationIssue
 ```
 
-| Source                 | Codec      | Base codec/s            | Status | Issues               | Coverage          |
-| ---------------------- | ---------- | ----------------------- | ------ | -------------------- | ----------------- |
+| Source                 | Codec      | Base codec/s                         | Status | Issues               | Coverage          |
+| ---------------------- | ---------- | ------------------------------------ | ------ | -------------------- | ----------------- |
 | **General**            |
 | HTTP                   | [http]     | Based on `Content-Type` or extension | β      | [⚠][http-issues]     | ![][http-cov]     |
 | **`Person`**           |
-| ORCID                  | [orcid]    | `jsonld`                | β      | [⚠][orcid-issues]    | ![][orcid-cov]    |
+| ORCID                  | [orcid]    | `jsonld`                             | β      | [⚠][orcid-issues]    | ![][orcid-cov]    |
 | **`Article` metadata** |
-| DOI                    | [doi]      | `csl`                   | β      | [⚠][doi-issues]      | ![][doi-cov]      |
-| Crossref               | [crossref] | `jsonld`                | β      | [⚠][crossref-issues] | ![][crossref-cov] |
+| DOI                    | [doi]      | `csl`                                | β      | [⚠][doi-issues]      | ![][doi-cov]      |
+| Crossref               | [crossref] | `jsonld`                             | β      | [⚠][crossref-issues] | ![][crossref-cov] |
 | **`Article` content**  |
-| eLife                  | [elife]    | `jats`                  | β      | [⚠][elife-issues]    | ![][elife-cov]    |
-| PLoS                   | [plos]     | `jats`                  | β      | [⚠][plos-issues]     | ![][plos-cov]     |
+| eLife                  | [elife]    | `jats`                               | β      | [⚠][elife-issues]    | ![][elife-cov]    |
+| PLoS                   | [plos]     | `jats`                               | β      | [⚠][plos-issues]     | ![][plos-cov]     |
 
 ## Install
 

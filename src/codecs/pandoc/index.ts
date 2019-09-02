@@ -984,7 +984,7 @@ function encodeQuote(node: stencila.Quote): Pandoc.Quoted {
 /**
  * Decode a Pandoc `Code` to a Stencila `CodeExpression`.
  */
-function decodeCode(node: P.Code): stencila.CodeExpression {
+function decodeCode(node: Pandoc.Code): stencila.CodeExpression {
   const code = stencila.codeExpression(node.c[1])
 
   const attrs = decodeAttrs(node.c[0])
@@ -998,7 +998,7 @@ function decodeCode(node: P.Code): stencila.CodeExpression {
 /**
  * Encode a Stencila `CodeExpression` to a Pandoc `Code`.
  */
-function encodeCode(node: stencila.CodeExpression): P.Code {
+function encodeCode(node: stencila.CodeExpression): Pandoc.Code {
   const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'Code',

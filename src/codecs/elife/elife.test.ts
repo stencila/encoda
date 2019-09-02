@@ -18,7 +18,6 @@ const elife2yaml = async (article: string) => {
   return await vfile.dump(await yaml.encode(unlinked))
 }
 
-
 jest.setTimeout(30 * 1000)
 
 test('sniff', async () => {
