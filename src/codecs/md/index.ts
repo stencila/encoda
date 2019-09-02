@@ -880,7 +880,7 @@ function decodeInlineCode(
       text: inlineCode.value
     }
     const { type, lang, output, ...rest } = attrs
-    if (output) codeExpr.output = JSON.parse(output.replace(/\"/g, '"'))
+    if (output) codeExpr.output = JSON.parse(output.replace(/"/g, '"'))
     if (lang) codeExpr.programmingLanguage = lang
     if (Object.keys(rest).length) codeExpr.meta = rest
     return codeExpr

@@ -9,7 +9,6 @@ import datapackage from 'datapackage'
 import { dump } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
-import { nodeType } from '@stencila/schema'
 
 const logger = getLogger('encoda')
 
@@ -384,7 +383,7 @@ function encodeDatatableColumnSchema(
 ): ColumnTypeFormatConstraints {
   // TODO: this method needs checking and refactoring since changing to
   //  ArraySchema
-  let items = schema.items
+  const items = schema.items
 
   if (items === undefined)
     return {
@@ -395,11 +394,11 @@ function encodeDatatableColumnSchema(
 
   const constraints: { [key: string]: any } = {}
 
-  constraints.required = schema.minItems != undefined && schema.minItems > 0
+  constraints.required = schema.minItems !== undefined && schema.minItems > 0
 
   let type
   let format
-  switch (nodeType(items)) {
+  switch (stencila.nodeType(items)) {
     case 'ConstantSchema':
       type = 'object'
       break
