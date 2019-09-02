@@ -18,10 +18,11 @@ const previousLogData = new Set<string>()
 export const configure = (debug: boolean = false): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
     if (data.level <= (debug ? 3 : 2)) {
-      const json = JSON.stringify(data)
-      if (debug || !previousLogData.has(json)) {
+      // Signature for determining if already emitted excludes trace
+      const signature = `${data.tag}${data.level}${data.message}`
+      if (debug || !previousLogData.has(signature)) {
         logga.defaultHandler(data)
-        previousLogData.add(json)
+        previousLogData.add(signature)
       }
     }
   })

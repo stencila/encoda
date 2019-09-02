@@ -176,14 +176,16 @@ describe('coerce', () => {
   })
 
   it('will add default values for missing properties', async () => {
-    expect(await coerce({
-      type: 'Article',
-      content: [
-        {
-          type: 'Paragraph'
-        }
-      ]
-    })).toEqual({
+    expect(
+      await coerce({
+        type: 'Article',
+        content: [
+          {
+            type: 'Paragraph'
+          }
+        ]
+      })
+    ).toEqual({
       type: 'Article',
       title: '',
       authors: [],
@@ -197,9 +199,12 @@ describe('coerce', () => {
   })
 
   it('will apply codecs', async () => {
-    const article = await coerce({
-      author: 'Mr Joe Doe'
-    }, 'Article')
+    const article = await coerce(
+      {
+        author: 'Mr Joe Doe'
+      },
+      'Article'
+    )
 
     expect(article.authors[0]).toEqual({
       type: 'Person',

@@ -3,7 +3,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import {
   isBlockContent,
   isListItem,
@@ -26,6 +26,8 @@ import genericExtensions from 'remark-generic-extensions'
 import parser from 'remark-parse'
 // @ts-ignore
 import stringifier from 'remark-stringify'
+// @ts-ignore
+import subSuper from 'remark-sub-super'
 import unified from 'unified'
 import * as UNIST from 'unist'
 // @ts-ignore
@@ -35,6 +37,7 @@ import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
 import * as vfile from '../../util/vfile'
+import { stringifyContent } from '../../util/content/stringifyContent'
 import { Codec } from '../types'
 
 const log = getLogger('encoda:md')
@@ -136,12 +139,10 @@ for (const ext of GENERIC_EXTENSIONS) {
  */
 export function decodeMarkdown(md: string): stencila.Node {
   const mdast = unified()
-    .use(parser, {
-      commonmark: true
-    })
-    .use(attrs, { scope: 'permissive' })
+    .use(parser, { commonmark: true })
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(attrs, ATTR_OPTIONS)
+    .use(subSuper)
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
@@ -197,6 +198,10 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeStrong(node as MDAST.Strong)
     case 'delete':
       return decodeDelete(node as MDAST.Delete)
+    case 'sub':
+      return decodeSubscript(node as MDAST.Parent)
+    case 'sup':
+      return decodeSuperscript(node as MDAST.Parent)
     case 'inlineCode':
       return decodeInlineCode(node as MDAST.InlineCode)
     case 'image':
@@ -282,6 +287,11 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeStrong(node as stencila.Strong)
     case 'Delete':
       return encodeDelete(node as stencila.Delete)
+    case 'Subscript':
+      return encodeSubscript(node as stencila.Subscript)
+    case 'Superscript':
+      return encodeSuperscript(node as stencila.Superscript)
+
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
     case 'Code':
@@ -832,6 +842,52 @@ function encodeDelete(delet: stencila.Delete): MDAST.Delete {
 }
 
 /**
+ * Decode a MDAST `sub` node to a Stencila `Subscript` node.
+ */
+const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
+  return stencila.subscript(
+    sub.children.map(node =>
+      decodePhrasingContent(node as MDAST.PhrasingContent)
+    )
+  )
+}
+
+/**
+ * Encode a Stencila `Subscript` as a MDAST `text` node with surrounding tildes.
+ *
+ * This assumes that there is only `string`s in the `content` of the subscript.
+ */
+const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
+  return {
+    type: 'text',
+    value: `~${stringifyContent(sub.content)}~`
+  }
+}
+
+/**
+ * Decode a MDAST `sup` node to a Stencila `Superscript` node.
+ */
+const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
+  return stencila.superscript(
+    sup.children.map(node =>
+      decodePhrasingContent(node as MDAST.PhrasingContent)
+    )
+  )
+}
+
+/**
+ * Encode a Stencila `Superscript` as a MDAST `text` node with surrounding carets.
+ *
+ * This assumes that there is only `string`s in the `content` of the subscript.
+ */
+const encodeSuperscript = (sup: stencila.Superscript): MDAST.Text => {
+  return {
+    type: 'text',
+    value: `^${stringifyContent(sup.content)}^`
+  }
+}
+
+/**
  * Decode a `!quote` inline extension to a `Quote`.
  *
  * Valid quotes include:
@@ -1221,7 +1277,7 @@ function decodeHTML(html: MDAST.HTML): string {
 }
 
 /**
- * Encode a `link` node with `data.hProperties` into a `MDAST.HTML` node
+ * Encode a node with `data.hProperties` into a `MDAST.HTML` node
  * with attributes in curly braces `{}`.
  *
  * The `remark-attr` plugin does not do this stringifying for us
