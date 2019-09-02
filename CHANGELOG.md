@@ -1,3 +1,19 @@
+# [0.71.0](https://github.com/stencila/encoda/compare/v0.70.0...v0.71.0) (2019-09-02)
+
+
+### Bug Fixes
+
+* **eLife:** Remove eLife mediaTypes ([3dec3c7](https://github.com/stencila/encoda/commit/3dec3c7))
+* **HTTP:** Resolve format based on header and extension name ([d9d2618](https://github.com/stencila/encoda/commit/d9d2618))
+* **Match:** Fallback to the txt codec to avoid throwing error ([1dc4af8](https://github.com/stencila/encoda/commit/1dc4af8))
+* **Pandoc:** Add handling of Super/Subscript nodes ([ac2874f](https://github.com/stencila/encoda/commit/ac2874f))
+
+
+### Features
+
+* **eLife:** Add `elife` codec ([4414a35](https://github.com/stencila/encoda/commit/4414a35))
+* **PLoS:** Add codec for PLoS (Public Library of Science) articles ([cec91a5](https://github.com/stencila/encoda/commit/cec91a5))
+
 # [0.70.0](https://github.com/stencila/encoda/compare/v0.69.0...v0.70.0) (2019-09-02)
 
 
