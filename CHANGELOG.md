@@ -1,3 +1,16 @@
+# [0.70.0](https://github.com/stencila/encoda/compare/v0.69.0...v0.70.0) (2019-09-02)
+
+
+### Bug Fixes
+
+* **Gdoc:** Add handling on Subscript, Superscript and Delete nodes ([aef0380](https://github.com/stencila/encoda/commit/aef0380))
+* **Log:** Avoid duplicated messages ([e4d38eb](https://github.com/stencila/encoda/commit/e4d38eb))
+
+
+### Features
+
+* **Markdown:** Add handling of Superscript and Subscript nodes ([8b859f5](https://github.com/stencila/encoda/commit/8b859f5))
+
 # [0.69.0](https://github.com/stencila/encoda/compare/v0.68.0...v0.69.0) (2019-09-02)
 
 
