@@ -9,28 +9,34 @@
 
 /* eslint-disable */
 
-;(async () => {
-  const pandoc = await load('./dist/codecs/pandoc/binary')
-  await pandoc.install()
-})()
-
 /**
  * A special `require()` like function that will load a compiled Javascript
  * module if it exists (in production) but fallback to transpiling Typescript
  * (in development).
+ *
+ * @param modulePath The node module path (NOT filesystem path) i.e. forward slash separated string
  */
 async function load(modulePath) {
   try {
     // If this succeeds then we are using
     // a distribution of the package where a
-    // compile Javscript file already exists
+    // compiled Javascript file already exists
     return require(modulePath)
-  } catch {
+  } catch (error) {
+    if (error.code !== 'MODULE_NOT_FOUND') throw error
+
     // If we are here, then we are in development, but
     // the module has not yet been compiled to Javascript
+    const childProcess = require('child_process')
     const util = require('util')
-    const spawn = util.promisify(require('child_process').spawn)
-    await spawn('npx', ['tsc'], { stdio: 'inherit' })
+    const exec = util.promisify(childProcess.exec)
+    await exec('npx tsc')
     return require(modulePath)
   }
 }
+
+;(async () => {
+  // Install Pandoc binary
+  const pandoc = await load('./dist/codecs/pandoc/binary')
+  await pandoc.install()
+})()
