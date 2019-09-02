@@ -1,3 +1,13 @@
+## [0.71.1](https://github.com/stencila/encoda/compare/v0.71.0...v0.71.1) (2019-09-02)
+
+
+### Bug Fixes
+
+* **Install:** Use exec instead of spawn ([da5f4b7](https://github.com/stencila/encoda/commit/da5f4b7))
+* **Install:** Use Node module path string ([34dfa6c](https://github.com/stencila/encoda/commit/34dfa6c))
+* **Install:** Use Windows compatible path ([2450b91](https://github.com/stencila/encoda/commit/2450b91))
+* **Pandoc binary:** Ensure directory exists ([e7ea80d](https://github.com/stencila/encoda/commit/e7ea80d))
+
 # [0.71.0](https://github.com/stencila/encoda/compare/v0.70.0...v0.71.0) (2019-09-02)
 
 
