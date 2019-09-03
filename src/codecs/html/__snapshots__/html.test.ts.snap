@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Encode & Decode references encode - citegroup and references 1`] = `
-"<article>
+"<article itemtype=\\"https://schema.org/Article\\" itemscope=\\"true\\">
   <h1 itemprop=\\"headline\\">An example of using the CiteGroup node type</h1>
   <p>Citing two articles <span itemtype=\\"schema:CiteGroup\\"><cite><a href=\\"#some-one-else-1991\\">some-one-else-1991</a></cite><cite><a href=\\"#updated-works-2009\\">updated-works-2009</a></cite><cite><a href=\\"http://www.fullUrl.com\\">http://www.fullUrl.com</a></cite></span>.</p>
   <section>

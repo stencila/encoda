@@ -429,7 +429,7 @@ test('encode add heading ids', async () => {
         }
       ]
     })
-  ).toBe(`<article>
+  ).toBe(`<article itemtype="https://schema.org/Article" itemscope="true">
   <h1 itemprop="headline">Test</h1>
   <h1 id="duplicated">duplicated</h1>
   <h1 id="duplicated-1">duplicated</h1>
@@ -438,7 +438,7 @@ test('encode add heading ids', async () => {
 
 // An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
-  html: `<article>
+  html: `<article itemtype="https://schema.org/Article" itemscope="true">
   <h1 itemprop="headline">Article title</h1>
   <h1 id="heading-one">Heading one</h1>
   <h2 id="heading-two">Heading two</h2>
