@@ -5,26 +5,24 @@ import { nodeType } from '@stencila/schema/dist/util'
 const log = logga.getLogger('encoda')
 export default log
 
-const previousLogData = new Set<string>()
-
 /**
  * Configure logger so that it:
  *
  * - only shows DEBUG entries if `debug=true`
- * - does not show duplicate entries unless `debug=true`
+ * - does not show the same message twice within 5s
  *
  * @param debug In debug mode?
  */
 export const configure = (debug: boolean = false): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
-    if (data.level <= (debug ? 3 : 2)) {
-      // Signature for determining if already emitted excludes trace
-      const signature = `${data.tag}${data.level}${data.message}`
-      if (debug || !previousLogData.has(signature)) {
-        logga.defaultHandler(data)
-        previousLogData.add(signature)
+    logga.defaultHandler(data, {
+      level: debug ? logga.LogLevel.debug : logga.LogLevel.info,
+      throttle: {
+        // Do not repeat the same message within 5s
+        signature: `${data.tag}${data.level}${data.message}`,
+        duration: 5000
       }
-    }
+    })
   })
 }
 
