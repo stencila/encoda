@@ -769,8 +769,8 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeSuperscript(node as stencila.Superscript)
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
-    case 'CodeExpression':
-      return encodeCode(node as stencila.CodeExpression)
+    case 'CodeFragment':
+      return encodeCodeFragment(node as stencila.CodeFragment)
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Cite':
@@ -982,11 +982,10 @@ function encodeQuote(node: stencila.Quote): Pandoc.Quoted {
 }
 
 /**
- * Decode a Pandoc `Code` to a Stencila `CodeExpression`.
+ * Decode a Pandoc `Code` element to a Stencila `CodeFragment` node.
  */
-function decodeCode(node: Pandoc.Code): stencila.CodeExpression {
-  const code = stencila.codeExpression(node.c[1])
-
+function decodeCode(node: Pandoc.Code): stencila.CodeFragment {
+  const code = stencila.codeFragment(node.c[1])
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
     const language = attrs.classes ? attrs.classes.split(' ')[0] : null
@@ -996,9 +995,10 @@ function decodeCode(node: Pandoc.Code): stencila.CodeExpression {
 }
 
 /**
- * Encode a Stencila `CodeExpression` to a Pandoc `Code`.
+ * Encode a Stencila `CodeFragment` node to a Pandoc `Code` element
+ * with language in the class.
  */
-function encodeCode(node: stencila.CodeExpression): Pandoc.Code {
+function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
   const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
   return {
     t: 'Code',

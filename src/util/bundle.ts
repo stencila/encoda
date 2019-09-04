@@ -5,7 +5,6 @@
 import * as stencila from '@stencila/schema'
 import * as dataUri from './dataUri'
 import transform from './transform'
-
 /**
  * Transform a `Node` by replacing any links to local resources
  * with data URIs.
@@ -30,7 +29,10 @@ export default async function bundle(
         case 'ImageObject':
         case 'VideoObject':
           const { contentUrl, ...rest } = node as stencila.MediaObject
-          if (!contentUrl.startsWith('http')) {
+          if (
+            !contentUrl.startsWith('http') &&
+            !contentUrl.startsWith('data:')
+          ) {
             const data = await dataUri.fromFile(contentUrl)
             return {
               ...rest,

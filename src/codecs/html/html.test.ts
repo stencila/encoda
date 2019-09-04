@@ -119,7 +119,7 @@ describe('Encode & Decode cite group nodes', () => {
 })
 
 describe('Encode & Decode references', () => {
-  const schemaNode = article([], 'Untitled', {
+  const schemaNode = article([], 'Article title', {
     references: [
       creativeWork({
         title:
@@ -204,28 +204,29 @@ describe('Encode & Decode references', () => {
   }
 
   const articleRefs = `<article>
+  <h1 itemprop="headline">Article title</h1>
+
   <h2>
     References
   </h2>
 
-  <ol itemprop="references">
+  <ol class="references">
     <li
-      itemscope="true"
       itemtype="https://schema.org/CreativeWork"
+      itemscope="true"
       itemprop="citation"
     >
       <a
+        itemprop="headline"
         href="https://doi.org/10.1016/j.cell.2010.07.042"
-        itemprop="title"
-        itemscope="true"
       >
         Cell flow reorients the axis of planar polarity in the wing epithelium
         of Drosophila
       </a>
-      <ol itemprop="authors" itemscope="true">
+      <ol class="authors">
         <li
-          itemscope="true"
           itemtype="https://schema.org/Person"
+          itemscope="true"
           itemprop="author"
         >
           <a href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
@@ -234,8 +235,8 @@ describe('Encode & Decode references', () => {
           </a>
         </li>
         <li
-          itemscope="true"
           itemtype="https://schema.org/Person"
+          itemscope="true"
           itemprop="author"
         >
           <a
@@ -247,7 +248,7 @@ describe('Encode & Decode references', () => {
         </li>
       </ol>
       <time itemprop="datePublished" datetime="2010">2010</time>
-      <a href="https://doi.org/10.1016/j.cell.2010.07.042" itemprop="url">
+      <a itemprop="url" href="https://doi.org/10.1016/j.cell.2010.07.042">
         https://doi.org/10.1016/j.cell.2010.07.042
       </a>
     </li>
@@ -256,11 +257,8 @@ describe('Encode & Decode references', () => {
 `
 
   test('encode', async () => {
-    const actual = doc(await e(schemaNode)).querySelector(
-      '[itemprop="references"]'
-    )
-
-    const expected = doc(articleRefs).querySelector('[itemprop="references"]')
+    const actual = doc(await e(schemaNode)).querySelector('.references')
+    const expected = doc(articleRefs).querySelector('.references')
     expect(actual!.outerHTML).toEqualStringContent(expected!.outerHTML)
   })
 
@@ -431,8 +429,8 @@ test('encode add heading ids', async () => {
         }
       ]
     })
-  ).toBe(`<article>
-  <h1 role="title">Test</h1>
+  ).toBe(`<article itemtype="https://schema.org/Article" itemscope="true">
+  <h1 itemprop="headline">Test</h1>
   <h1 id="duplicated">duplicated</h1>
   <h1 id="duplicated-1">duplicated</h1>
 </article>`)
@@ -440,8 +438,8 @@ test('encode add heading ids', async () => {
 
 // An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
-  html: `<article>
-  <h1 role="title">Article title</h1>
+  html: `<article itemtype="https://schema.org/Article" itemscope="true">
+  <h1 itemprop="headline">Article title</h1>
   <h1 id="heading-one">Heading one</h1>
   <h2 id="heading-two">Heading two</h2>
   <h3 id="heading-three">Heading three</h3>

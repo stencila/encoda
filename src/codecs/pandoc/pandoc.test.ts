@@ -288,7 +288,7 @@ const kitchenSink: testCase = {
           ' and ',
           { type: 'Quote', content: ['quote'] },
           ' and ',
-          { type: 'CodeExpression', programmingLanguage: 'r', text: 'code' },
+          { type: 'CodeFragment', programmingLanguage: 'r', text: 'code' },
           ' and ',
           {
             type: 'Link',

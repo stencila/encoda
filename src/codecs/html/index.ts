@@ -28,6 +28,7 @@ import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { logWarnLossIfAny } from '../../log'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -469,15 +470,6 @@ function generateHtmlElement(
     })
   }
 
-  const jsonld = h(
-    'script',
-    { type: 'application/ld+json' },
-    JSON.stringify({
-      '@context': 'https://stencila.github.io/schema/stencila.jsonld',
-      ...metadata
-    })
-  )
-
   return h(
     'html',
     h(
@@ -489,7 +481,6 @@ function generateHtmlElement(
         content: 'width=device-width, initial-scale=1.0'
       }),
       h('meta', { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' }),
-      jsonld,
       themeCss,
       themeJs
     ),
@@ -501,15 +492,20 @@ function generateHtmlElement(
  * Decode an `<article>` element to a `Article` node.
  */
 const decodeArticle = (element: HTMLElement): stencila.Article => {
-  const titleEl = element.querySelector('h1[role=title]')
-  const title = titleEl ? titleEl.innerHTML : 'Untitled'
+  const prop = propSelector(element)
+
+  let title = 'Untitled'
+  const headline = prop('headline')
+  if (headline !== undefined) {
+    title = headline.textContent || 'Untitled'
+    headline.remove()
+  }
+
   const references = element.querySelectorAll<HTMLOListElement>(
-    'ol[itemprop="references"] > li'
+    'ol.references > li'
   )
 
   const refItems = references ? [...references].map(decodeCreativeWork) : []
-
-  if (titleEl) titleEl.remove()
 
   return compactObj({
     type: 'Article',
@@ -524,13 +520,16 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
  * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
-  const { type, title, content, references, ...rest } = article
+  const { type, title, content = [], references = [], ...lost } = article
+  logWarnLossIfAny('html', 'encode', article, lost)
 
-  const titleEl = h('h1', title)
-  titleEl.setAttribute('role', 'title')
-  const elements = content ? content.map(encodeNode) : []
-  const refs = references ? encodeReferences(references) : []
-  return h('article', titleEl, ...elements, refs)
+  return h(
+    'article',
+    { attrs: { itemtype: 'https://schema.org/Article', itemscope: true } },
+    optionalHTML(title, h('h1', { itemprop: 'headline' }, title)),
+    ...content.map(encodeNode),
+    optionalHTML(references.length > 0, encodeReferences(references))
+  )
 }
 
 function encodeReferences(
@@ -539,11 +538,7 @@ function encodeReferences(
   return h(
     'section',
     h('h2', 'References'),
-    h(
-      'ol',
-      { attrs: { itemprop: 'references' } },
-      references.map(encodeReference)
-    )
+    h('ol', { class: 'references' }, references.map(encodeReference))
   )
 }
 
@@ -592,20 +587,17 @@ const creativeWorkTagMap: CreativeWorkTagMap = {
 function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
   const workSelectorAll = propSelectorAll(work)
   const workSelector = propSelector(work)
+  const headline = workSelector('headline')
   const url = workSelector('url')
 
   return {
     type: 'CreativeWork',
+    title: headline && headline.textContent ? headline.textContent : 'Untitled',
     authors: workSelectorAll('author').map(decodePerson),
     funders: workSelectorAll('funder').map(decodePerson),
     editors: workSelectorAll('editor').map(decodePerson),
     url: url ? url.getAttribute('href') || undefined : undefined,
-    ...propsToValues(work)([
-      'dateCreated',
-      'dateModified',
-      'datePublished',
-      'title'
-    ])
+    ...propsToValues(work)(['dateCreated', 'dateModified', 'datePublished'])
   }
 }
 
@@ -613,25 +605,22 @@ function encodeCreativeWork(
   work: stencila.CreativeWork,
   { attrs, as }: CreativeWorkOptions = defaultCreativeWorkOptions
 ): HTMLElement {
+  const { id, title, url, authors = [], datePublished, content = [] } = work
   const elem = h(
     as || creativeWorkTagMap[work.type] || 'div',
     {
       attrs: {
-        itemscope: true,
         itemtype: 'https://schema.org/CreativeWork',
+        itemscope: true,
         ...attrs
       },
-      id: work.id
+      id
     },
-    h(
-      work.url ? 'a' : 'span',
-      { attrs: { itemprop: 'title', itemscope: true }, href: work.url },
-      work.title
-    ),
+    h(url ? 'a' : 'span', { itemprop: 'headline', href: url }, title),
     h(
       'ol',
-      { attrs: { itemprop: 'authors', itemscope: true } },
-      ...(work.authors || []).map(author =>
+      { class: 'authors' },
+      ...authors.map(author =>
         author.type === 'Person'
           ? encodePerson(author, 'li')
           : encodeOrganization(author, 'li')
@@ -639,14 +628,11 @@ function encodeCreativeWork(
     ),
     h(
       'time',
-      { itemprop: 'datePublished', datetime: work.datePublished },
-      work.datePublished
+      { itemprop: 'datePublished', datetime: datePublished },
+      datePublished
     ),
-    optionalHTML(
-      work.url,
-      h('a', { attrs: { itemprop: 'url' }, href: work.url }, work.url)
-    ),
-    (work.content || []).map(encodeNode)
+    optionalHTML(url, h('a', { itemprop: 'url', href: url }, url)),
+    content.map(encodeNode)
   )
 
   return elem
@@ -678,8 +664,8 @@ function encodePerson(
     as || 'span',
     {
       attrs: {
-        itemscope: true,
         itemtype: 'https://schema.org/Person',
+        itemscope: true,
         itemprop: 'author'
       }
     },
