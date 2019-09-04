@@ -138,7 +138,9 @@ export async function match(
     } catch (error) {
       // Do not log MODULE_NOT_FOUND warnings here since not finding a matching module
       // is normal behavior and doing so causes unnecessary noise and anxiety :)
-      if (error.code !== 'MODULE_NOT_FOUND') log.warn(error)
+      // (But do warn if a module other than that looked for was not found!)
+      if (!(error.code === 'MODULE_NOT_FOUND' && error.message.includes(name)))
+        log.warn(error)
     }
   }
 
