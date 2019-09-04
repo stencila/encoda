@@ -10,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli.js",
   "scripts": {
-    "install": "node install.js",
+    "install": "patch-package && node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "test": "jest",
@@ -71,6 +71,7 @@
     "papaparse": "^5.0.2",
     "parse-author": "^2.0.0",
     "parse-full-name": "^1.2.3",
+    "patch-package": "^6.1.2",
     "png-chunk-text": "^1.0.0",
     "png-chunks-encode": "^1.0.0",
     "png-chunks-extract": "^1.0.0",

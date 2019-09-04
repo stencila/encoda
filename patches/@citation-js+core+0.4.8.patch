@@ -1,0 +1,27 @@
+diff --git a/node_modules/@citation-js/core/lib/util/fetchFile.js b/node_modules/@citation-js/core/lib/util/fetchFile.js
+index 626da2b..2ddd141 100644
+--- a/node_modules/@citation-js/core/lib/util/fetchFile.js
++++ b/node_modules/@citation-js/core/lib/util/fetchFile.js
+@@ -8,8 +8,6 @@ exports.fetchFileAsync = fetchFileAsync;
+ exports.setUserAgent = setUserAgent;
+ exports.default = void 0;
+ 
+-var _syncRequest = _interopRequireDefault(require("sync-request"));
+-
+ require("isomorphic-fetch");
+ 
+ var _logger = _interopRequireDefault(require("../logger"));
+@@ -102,12 +100,7 @@ function checkResponse(response, opts) {
+ }
+ 
+ function fetchFile(url, opts) {
+-  const reqOpts = parseOpts(opts);
+-
+-  _logger.default.http('[core]', reqOpts.method, url, reqOpts);
+-
+-  const response = checkResponse((0, _syncRequest.default)(reqOpts.method, url, reqOpts), reqOpts);
+-  return response.body.toString('utf8');
++  throw new Error('Removed to remove dependence on `sync-request`. See https://github.com/stencila/encoda/issues/258')
+ }
+ 
+ function fetchFileAsync(_x, _x2) {
