@@ -29,6 +29,7 @@ import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { logWarnLossIfAny } from '../../log'
+import { VFileContents } from 'vfile'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -112,6 +113,15 @@ const propsToValues = (el: HTMLElement) => (
 export class HTMLCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/html']
 
+  public decodeHtml = (htmlContent: VFileContents): stencila.Node => {
+    const dom = new jsdom.JSDOM(htmlContent)
+    const document = dom.window.document
+    collapse(document)
+    const node = decodeNode(document)
+    if (!node) throw new Error(`Unable to decode HTML`)
+    return node
+  }
+
   /**
    * Decode a `VFile` with HTML contents to a `stencila.Node`.
    *
@@ -122,12 +132,7 @@ export class HTMLCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const html = await vfile.dump(file)
-    const dom = new jsdom.JSDOM(html)
-    const document = dom.window.document
-    collapse(document)
-    const node = decodeNode(document)
-    if (!node) throw new Error(`Unable to decode HTML`)
-    return node
+    return this.decodeHtml(html)
   }
 
   /**
@@ -419,7 +424,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
 function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
   const children = [...div.childNodes]
 
-  // If the div only contains a single element, return a Node, rathern than a list of Nodes
+  // If the div only contains a single element, return a Node, rather than a list of Nodes
   if (children.length === 1) {
     return decodeNode(children[0])
   } else {

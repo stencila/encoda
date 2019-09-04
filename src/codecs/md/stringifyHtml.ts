@@ -56,7 +56,7 @@ const getTags = (html: string): string[] =>
 
 // Helper function for wrapping HTML string content in a custom MDAST style object
 const fullHtmlNode = (value: string): Literal => ({
-  type: 'fullHtml',
+  type: 'html',
   value
 })
 
@@ -65,13 +65,13 @@ const getClosingTagIdx = (tree: Node[]): O.Option<number> => {
   // This is used to avoid prematurely stopping gathering the HTML value, accounting for repeated nesting of the
   // same HTML tags like `<div><div>content</div></div>`
   let stack = 0
-  return A.findIndex((e: Node) => {
-    if (typeof e.value !== 'string') return false
+  return A.findIndex((node: Node) => {
+    if (typeof node.value !== 'string') return false
 
     // Split HTML tags into two lists, one for opening and one for closings tags. We use the difference in their
     // lengths to determine if there are any unclosed HTML tags, and if we should continue consuming the value of
     // the next Node.
-    const groupedTags = A.partition(isOpeningTag)(getTags(e.value))
+    const groupedTags = A.partition(isOpeningTag)(getTags(node.value))
     stack += groupedTags.right.length - groupedTags.left.length
 
     return stack === 0
@@ -92,31 +92,34 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
   // This value allows us to skip over Nodes whose values have been merged into the new `fullHtml` node
   let skipUntil: number | undefined
 
-  const children = tree.children.reduce((innerTree: Node[], n: Node, idx) => {
-    if (skipUntil && idx <= skipUntil) {
-      return innerTree
-    }
+  const children = tree.children.reduce(
+    (innerTree: Node[], node: Node, idx) => {
+      if (skipUntil && idx <= skipUntil) {
+        return innerTree
+      }
 
-    // Recursively call `stringifyHTML` if the Node has children of its own
-    if (n.children) {
-      return [...innerTree, stringifyHTML(n)]
-    }
+      // Recursively call `stringifyHTML` if the Node has children of its own
+      if (node.children) {
+        return [...innerTree, stringifyHTML(node)]
+      }
 
-    if (n.type === 'html' && typeof n.value === 'string') {
-      // Find the node index containing corresponding closing HTML tag.
-      const subsequentNodes = A.dropLeft(idx)(tree.children)
-      const closingTagIdx = getClosingTagIdx(subsequentNodes)
+      if (node.type === 'html' && typeof node.value === 'string') {
+        // Find the node index containing corresponding closing HTML tag.
+        const subsequentNodes = A.dropLeft(idx)(tree.children)
+        const closingTagIdx = getClosingTagIdx(subsequentNodes)
 
-      // If we couldn't find the final closing tag in this Node, don't skip any Nodes
-      skipUntil = O.getOrElse(() => 0)(closingTagIdx) + idx
+        // If we couldn't find the final closing tag in this Node, don't skip any Nodes
+        skipUntil = O.getOrElse(() => 0)(closingTagIdx) + idx
 
-      // Now that we know where in the list of the children the HTML start and end, we can merge their values
-      const subSet = A.takeLeft(skipUntil)(subsequentNodes)
-      return [...innerTree, fullHtmlNode(joinHTML(subSet))]
-    }
+        // Now that we know where in the list of the children the HTML start and end, we can merge their values
+        const subSet = A.takeLeft(skipUntil)(subsequentNodes)
+        return [...innerTree, fullHtmlNode(joinHTML(subSet))]
+      }
 
-    return [...innerTree, n]
-  }, [])
+      return [...innerTree, node]
+    },
+    []
+  )
 
   return { ...tree, children }
 }
