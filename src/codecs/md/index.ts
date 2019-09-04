@@ -44,7 +44,7 @@ import { HTMLCodec } from '../html'
 import { Codec } from '../types'
 import { stringifyHTML } from './stringifyHtml'
 
-const log = getLogger('encoda:md')
+export const log = getLogger('encoda:md')
 
 export class MdCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/markdown', 'text/x-markdown']
@@ -250,7 +250,6 @@ async function decodeNode(node: UNIST.Node): Promise<stencila.Node> {
           return ''
       }
     case 'html':
-      return decodeHTML(node as MDAST.HTML)
     case 'fullHtml':
       return decodeHTML(node as MDAST.HTML)
 

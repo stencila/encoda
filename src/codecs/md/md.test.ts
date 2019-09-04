@@ -55,11 +55,11 @@ followed by more paragraphs`)
     )
   })
 
-  test('Nested HTML in MD - 2', async () => {
+  test('Nested HTML in MD with mixed inline content', async () => {
     expect(
       await d(`some paragraphs
 
-An inline element in MD <img src="#" />, like this image
+An inline element in MD <img src="#" /><img src="#2" />, like this image
 
 followed by more paragraphs`)
     ).toEqual(
@@ -69,6 +69,7 @@ followed by more paragraphs`)
           paragraph([
             'An inline element in MD ',
             imageObject('#'),
+            imageObject('#2'),
             ', like this image'
           ]),
           paragraph(['followed by more paragraphs'])
@@ -77,7 +78,7 @@ followed by more paragraphs`)
     )
   })
 
-  test('Nested HTML in MD - 3', async () => {
+  test('Nested HTML in MD with nested HTML tags', async () => {
     const actual = await d(`some paragraphs
 
 <div>
@@ -101,7 +102,7 @@ followed by more paragraphs`)
     )
   })
 
-  test('Nested HTML in MD - 4', async () => {
+  test('Nested HTML in MD with irregular white space between HTML tags', async () => {
     const actual = await d(`some paragraphs
 
 <div>
@@ -131,7 +132,7 @@ followed by more paragraphs`)
     )
   })
 
-  test('Nested HTML in MD - 5', async () => {
+  test('Nested HTML in MD with more MD between HTML blocks', async () => {
     const actual = await d(`some paragraphs
 
 <div>
@@ -155,10 +156,7 @@ followed by more paragraphs
 And now more HTML, and a <cite><a href="#like-this-two">like-this-two</a></cite>
 </p>
 
-</div>
-
-
-`)
+</div>`)
 
     expect(actual).toEqual(
       article([], 'Untitled', {
@@ -167,6 +165,34 @@ And now more HTML, and a <cite><a href="#like-this-two">like-this-two</a></cite>
           paragraph(['With some nested HTML, and a ', cite('like-this')]),
           paragraph(['followed by more paragraphs']),
           paragraph(['And now more HTML, and a ', cite('like-this-two')])
+        ]
+      })
+    )
+  })
+
+  // We currently do not support handling Markdown within HTML
+  test.skip('Nested HTML in MD with intermixed MD and HTML', async () => {
+    const actual = await d(`some paragraphs
+
+<div>
+
+An inline element in MD <img src="#" />, like this image <img src="#2" />
+
+</div>
+
+followed by more paragraphs`)
+
+    expect(actual).toEqual(
+      article([], 'Untitled', {
+        content: [
+          paragraph(['some paragraphs']),
+          paragraph([
+            'An inline element in MD ',
+            imageObject('#'),
+            ', like this image ',
+            imageObject('#2')
+          ]),
+          paragraph(['followed by more paragraphs'])
         ]
       })
     )
