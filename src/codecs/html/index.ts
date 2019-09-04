@@ -28,7 +28,7 @@ import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
-import { logWarnLossIfAny } from '../../log';
+import { logWarnLossIfAny } from '../../log'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -525,7 +525,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
 
   return h(
     'article',
-    { attrs: { itemtype: 'https://schema.org/Article', itemscope: true }},
+    { attrs: { itemtype: 'https://schema.org/Article', itemscope: true } },
     optionalHTML(title, h('h1', { itemprop: 'headline' }, title)),
     ...content.map(encodeNode),
     optionalHTML(references.length > 0, encodeReferences(references))

@@ -8,7 +8,12 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
-import punycode from 'punycode/'
+// Node.js built-in punycore is deprecated.
+// However, if we add a trailing slash below to import the userland version as suggested at
+// https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md
+// `pkg` has problems resolving the module. So instead we ignore eslint complaint:
+// eslint-disable-next-line node/no-deprecated-api
+import punycode from 'punycode'
 import { dump } from '../../index'
 import bundle from '../../util/bundle'
 import * as puppeteer from '../../util/puppeteer'
