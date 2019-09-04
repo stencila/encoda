@@ -39,8 +39,6 @@ const logger = getLogger('encoda:puppeteer')
 let browser: puppeteer.Browser | undefined
 var lock = new AsyncLock()
 
-console.log(executablePath)
-
 /**
  * Startup the browser if it isn't already.
  *
