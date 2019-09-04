@@ -29,7 +29,10 @@ export default async function bundle(
         case 'ImageObject':
         case 'VideoObject':
           const { contentUrl, ...rest } = node as stencila.MediaObject
-          if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
+          if (
+            !contentUrl.startsWith('http') &&
+            !contentUrl.startsWith('data:')
+          ) {
             const data = await dataUri.fromFile(contentUrl)
             return {
               ...rest,

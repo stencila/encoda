@@ -8,7 +8,7 @@ import { getLogger } from '@stencila/logga'
 import BinWrapper from 'bin-wrapper'
 import fs from 'fs-extra'
 import path from 'path'
-import { default as appHome } from '../../util/app/home'
+import appHome from '../../util/app/home'
 import isPackaged from '../../util/app/isPackaged'
 
 const version = '2.7.3'
