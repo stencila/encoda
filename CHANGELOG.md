@@ -1,3 +1,15 @@
+## [0.71.2](https://github.com/stencila/encoda/compare/v0.71.1...v0.71.2) (2019-09-04)
+
+
+### Bug Fixes
+
+* **Bundle:** D not attampt to bundle media that is already a data URI ([96ce43e](https://github.com/stencila/encoda/commit/96ce43e))
+* **CSL:** Remove dependence on sync-request ([8fb9d5b](https://github.com/stencila/encoda/commit/8fb9d5b)), closes [#258](https://github.com/stencila/encoda/issues/258)
+* **HTML:** Fix Microdata ([718bdff](https://github.com/stencila/encoda/commit/718bdff))
+* **Match:** Warn if another module missing ([415746f](https://github.com/stencila/encoda/commit/415746f))
+* **Pandoc:** Fix handling of CodeFragment ([bde0d3e](https://github.com/stencila/encoda/commit/bde0d3e))
+* **rPNG:** Use builtin punycode ([4bf0db1](https://github.com/stencila/encoda/commit/4bf0db1))
+
 ## [0.71.1](https://github.com/stencila/encoda/compare/v0.71.0...v0.71.1) (2019-09-02)
 
 
