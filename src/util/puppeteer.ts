@@ -4,13 +4,42 @@
 
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
+import path from 'path'
 import puppeteer from 'puppeteer'
-import { chromiumPath } from '../boot'
+import isPackaged from './app/isPackaged'
+
+/**
+ * The following code is necessary to ensure the Chromium binary can be correctly
+ * found when bundled as a binary using [`pkg`](https://github.com/zeit/pkg).
+ * See: [`pkg-puppeteer`](https://github.com/rocklau/pkg-puppeteer)
+ */
+
+// Adapts the regex path to work on both Windows and *Nix platforms
+const pathRegex =
+  process.platform === 'win32'
+    ? /^.*?\\node_modules\\puppeteer\\\.local-chromium/
+    : /^.*?\/node_modules\/puppeteer\/\.local-chromium/
+
+export const executablePath = isPackaged
+  ? puppeteer
+      .executablePath()
+      .replace(
+        pathRegex,
+        path.join(
+          path.dirname(process.execPath),
+          'node_modules',
+          'puppeteer',
+          '.local-chromium'
+        )
+      )
+  : puppeteer.executablePath()
 
 const logger = getLogger('encoda:puppeteer')
 
 let browser: puppeteer.Browser | undefined
 var lock = new AsyncLock()
+
+console.log(executablePath)
 
 /**
  * Startup the browser if it isn't already.
@@ -26,7 +55,7 @@ export async function startup(): Promise<puppeteer.Browser> {
       if (typeof browser === 'undefined') {
         logger.debug('Launching new browser')
         browser = await puppeteer.launch({
-          executablePath: chromiumPath,
+          executablePath,
           headless: true
         })
         logger.debug(`Browser launched. pid: ${browser.process().pid}`)
