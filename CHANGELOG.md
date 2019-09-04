@@ -1,3 +1,10 @@
+## [0.71.3](https://github.com/stencila/encoda/compare/v0.71.2...v0.71.3) (2019-09-04)
+
+
+### Bug Fixes
+
+* **CLI:** Remove import of missing file ([ff1450b](https://github.com/stencila/encoda/commit/ff1450b))
+
 ## [0.71.2](https://github.com/stencila/encoda/compare/v0.71.1...v0.71.2) (2019-09-04)
 
 
