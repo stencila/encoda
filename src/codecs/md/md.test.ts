@@ -1,10 +1,10 @@
 import stencila, {
   article,
+  cite,
   heading,
-  paragraph,
-  link,
   imageObject,
-  cite
+  link,
+  paragraph
 } from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
 import { MdCodec } from './'
@@ -126,6 +126,47 @@ followed by more paragraphs`)
           paragraph(['some paragraphs']),
           paragraph(['With some nested HTML, and a ', cite('like-this')]),
           paragraph(['followed by more paragraphs'])
+        ]
+      })
+    )
+  })
+
+  test('Nested HTML in MD - 5', async () => {
+    const actual = await d(`some paragraphs
+
+<div>
+<div>
+
+<div>
+
+<p>With some nested HTML, and a <cite><a href="#like-this">like-this</a></cite></p>
+
+</div>
+
+</div>
+
+</div>
+
+followed by more paragraphs
+
+<div>
+
+<p>
+And now more HTML, and a <cite><a href="#like-this-two">like-this-two</a></cite>
+</p>
+
+</div>
+
+
+`)
+
+    expect(actual).toEqual(
+      article([], 'Untitled', {
+        content: [
+          paragraph(['some paragraphs']),
+          paragraph(['With some nested HTML, and a ', cite('like-this')]),
+          paragraph(['followed by more paragraphs']),
+          paragraph(['And now more HTML, and a ', cite('like-this-two')])
         ]
       })
     )

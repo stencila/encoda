@@ -5,13 +5,13 @@
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import {
+  isA,
   isBlockContent,
+  isInlineContent,
   isListItem,
   nodeIs,
   nodeType,
-  TypeMapGeneric,
-  isInlineContent,
-  isA
+  TypeMapGeneric
 } from '@stencila/schema/dist/util'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'

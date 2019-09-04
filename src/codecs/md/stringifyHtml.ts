@@ -1,7 +1,7 @@
 import * as A from 'fp-ts/lib/Array'
-import * as O from 'fp-ts/lib/Option'
-import { Node, Parent, Literal } from 'unist'
 import { eqString } from 'fp-ts/lib/Eq'
+import * as O from 'fp-ts/lib/Option'
+import { Literal, Node, Parent } from 'unist'
 
 const selfClosingTags = [
   'area',
@@ -40,6 +40,12 @@ const isOpeningTag = (tag: string): boolean => openingTagRegExp.test(tag.trim())
  */
 const getTags = (html: string): string[] => html.match(htmlTagRegExp) || []
 
+// Helper function for wrapping HTML string content in a custom UNIST style object
+const fullHtmlNode = (value: string): Literal => ({
+  type: 'fullHtml',
+  value
+})
+
 /**
  * stringifyHTML takes a UNIST (Remark) node tree and merges content between `html` node types for further processing by
  * the Encoda HTML codec.
@@ -53,11 +59,6 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
 
   // This value allows us to skip over Nodes whose values have been merged into the new `fullHtml` node
   let skipUntil: number | undefined
-
-  const fullHtmlNode = (value: string): Literal => ({
-    type: 'fullHtml',
-    value
-  })
 
   const children = tree.children.reduce((innerTree: Node[], n: Node, idx) => {
     if (skipUntil && idx <= skipUntil) {
@@ -95,10 +96,10 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
         stack += groupedTags.right.length - groupedTags.left.length
 
         return stack === 0
-      })(tree.children)
+      })(A.dropLeft(idx)(tree.children))
 
       // If we couldn't find the ending closing tag in this Node, don't skip any Nodes
-      skipUntil = O.getOrElse<number>(() => idx)(closingTagIdx)
+      skipUntil = O.getOrElse<number>(() => 0)(closingTagIdx) + idx
 
       // Now that we know where in the list of the children the HTML starts and stops, we can merge their values
       const subSet = tree.children.slice(idx, skipUntil + 1)
