@@ -26,6 +26,7 @@ import path from 'path'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
+import { toFiles } from '../../util/toFiles'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { logWarnLossIfAny } from '../../log'
@@ -162,6 +163,7 @@ export class HTMLCodec extends Codec implements Codec {
     options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const {
+      filePath,
       isStandalone = true,
       isBundle = false,
       theme = themes.stencila
@@ -171,14 +173,21 @@ export class HTMLCodec extends Codec implements Codec {
     // in order to make them unique
     slugger.reset()
 
-    const nodeToEncode = isBundle ? await bundle(node) : node
+    let nodeToEncode
+    if (isBundle) nodeToEncode = await bundle(node)
+    else {
+      const docPath = filePath === undefined ? '.' : filePath
+      const mediaPath = filePath === undefined ? './media' : `${filePath}.media`
+      nodeToEncode = await toFiles(node, docPath, mediaPath, ['data', 'file'])
+    }
     let dom: HTMLHtmlElement = encodeNode(nodeToEncode, {
       isStandalone,
       theme
     }) as HTMLHtmlElement
 
     if (isStandalone) {
-      const { title, ...metadata } = getArticleMetaData(node)
+      const nodeToEncode = isBundle ? await bundle(node) : node
+      const { title, ...metadata } = getArticleMetaData(nodeToEncode)
       dom = generateHtmlElement(title, metadata, [dom], options)
     }
 
