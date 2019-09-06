@@ -1019,7 +1019,7 @@ function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
     type: 'image',
     url: imageObject.contentUrl || ''
   }
-  if (imageObject.title) image.title = imageObject.title
+  if (imageObject.title) image.title = stringifyContent(imageObject.title)
   if (imageObject.text) image.alt = imageObject.text
   if (imageObject.meta) image.data = { hProperties: imageObject.meta }
   return image

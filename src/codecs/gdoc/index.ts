@@ -179,7 +179,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
     // `CreativeWork` types (have `content`)
     case 'Article':
       const article = node as stencila.Article
-      gdoc.title = article.title || ''
+      gdoc.title = stringifyContent(article.title || '')
       content = article.content || []
       break
     // `BlockContent` types
@@ -748,7 +748,7 @@ function encodeImageObject(
         imageProperties: {
           contentUri: imageObject.contentUrl
         },
-        title: imageObject.title,
+        title: stringifyContent(imageObject.title || ''),
         description: imageObject.text
       }
     }

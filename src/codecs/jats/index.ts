@@ -22,7 +22,7 @@ import {
   Attributes
 } from '../../util/xml'
 import { Codec } from '../types'
-import { nodeType } from '@stencila/schema';
+import { nodeType } from '@stencila/schema'
 
 const log = getLogger('encoda:jats')
 
@@ -154,7 +154,7 @@ function decodeArticle(elem: xml.Element): stencila.Article {
 }
 
 function encodeArticle(article: stencila.Article): xml.Element {
-  const {title = '', authors = [], description} = article
+  const { title = '', authors = [], description } = article
 
   const front = elem(
     'front',
@@ -180,28 +180,36 @@ function encodeArticle(article: stencila.Article): xml.Element {
 }
 
 function decodeTitle(elem: xml.Element | null): string | stencila.Node[] {
-  if(elem === null) return 'Untitled'
+  if (elem === null) return 'Untitled'
   const nodes = decodeElement(elem, initialDecodeState())
   if (nodes.length === 1 && typeof nodes[0] == 'string') return nodes[0]
   else return nodes
 }
 
 function encodeTitle(title: string | stencila.Node[]): xml.Element {
-  const articleTitle = typeof title === 'string'
-    ? elem('article-title', title)
-    : elem('article-title', ...encodeNodes(title, initialEncodeState()))
+  const articleTitle =
+    typeof title === 'string'
+      ? elem('article-title', title)
+      : elem('article-title', ...encodeNodes(title, initialEncodeState()))
   return elem('title-group', articleTitle)
 }
 
-function decodeAbstract(elem: xml.Element | null): string | stencila.Node[] | undefined {
-  return elem !== null ? decodeElements(all(elem, 'p'), initialDecodeState()) : undefined
+function decodeAbstract(
+  elem: xml.Element | null
+): string | stencila.Node[] | undefined {
+  return elem !== null
+    ? decodeElements(all(elem, 'p'), initialDecodeState())
+    : undefined
 }
 
-function encodeAbstract(description?: string | stencila.Node[]): xml.Element | null {
+function encodeAbstract(
+  description?: string | stencila.Node[]
+): xml.Element | null {
   if (description == undefined) return null
-  const paras = typeof description === 'string'
-    ? elem('p', description)
-    : elem('p', ...encodeNodes(description, initialEncodeState()))
+  const paras =
+    typeof description === 'string'
+      ? elem('p', description)
+      : elem('p', ...encodeNodes(description, initialEncodeState()))
   return elem('abstract', paras)
 }
 
@@ -509,7 +517,8 @@ function encodeReference(
       if (stencila.isA('PublicationVolume', pi.isPartOf)) {
         const pv = pi.isPartOf
 
-        if (pv.title !== undefined) subElements.push(elem('source', ...encodeNodes(pv.title)))
+        if (pv.title !== undefined)
+          subElements.push(elem('source', ...encodeNodes(pv.title)))
 
         if (pv.volumeNumber !== undefined) {
           subElements.push(elem('volume', `${pv.volumeNumber}`))
@@ -518,7 +527,8 @@ function encodeReference(
     } else if (stencila.isA('PublicationVolume', work.isPartOf)) {
       const pv = work.isPartOf as stencila.PublicationVolume
 
-      if (pv.title !== undefined) subElements.push(elem('source', ...encodeNodes(pv.title)))
+      if (pv.title !== undefined)
+        subElements.push(elem('source', ...encodeNodes(pv.title)))
 
       if (pv.pageStart !== undefined) {
         subElements.push(elem('fpage', `${pv.pageStart}`))
@@ -775,7 +785,10 @@ function encodeNodes(
   if (!Array.isArray(nodes)) nodes = [nodes]
   return nodes
     .map((node: stencila.Node) => encodeNode(node, state))
-    .reduce((prev: xml.Element[], curr: xml.Element[]) => [...prev, ...curr], [])
+    .reduce(
+      (prev: xml.Element[], curr: xml.Element[]) => [...prev, ...curr],
+      []
+    )
 }
 
 /**
@@ -1025,7 +1038,10 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
 
   const label = elem('label', `Table ${state.tables}.`)
 
-  const caption = elem('caption', node.title ? elem('title', ...encodeNodes(node.title)) : null)
+  const caption = elem(
+    'caption',
+    node.title ? elem('title', ...encodeNodes(node.title)) : null
+  )
 
   const rows = node.rows.map(row => {
     return elem(
