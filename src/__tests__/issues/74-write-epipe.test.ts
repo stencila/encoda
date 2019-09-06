@@ -30,5 +30,6 @@ test('issue 74', async () => {
 
 afterAll(async () => {
   await fs.remove(html)
+  await fs.remove(html + '.media')
   await fs.remove(docx + '.media')
 })
