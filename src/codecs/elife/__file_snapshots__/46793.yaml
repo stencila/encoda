@@ -320,7 +320,8 @@ content:
         type: Cite
       - ).
     type: Paragraph
-  - content:
+  - id: fig1
+    content:
       - format: image/jpeg
         meta:
           inline: false
@@ -428,7 +429,8 @@ content:
       - ' for details).'
     type: Paragraph
   - parts:
-      - content:
+      - id: fig2
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -476,7 +478,8 @@ content:
                 (tF).
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig2s1
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -593,7 +596,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: fig3
+    content:
       - format: image/jpeg
         meta:
           inline: false
@@ -781,7 +785,8 @@ content:
         also found. These latter findings suggest important areas of biology not
         previously known to be affected by G4 intervention in mammalian cells.
     type: Paragraph
-  - content:
+  - id: fig4
+    content:
       - format: image/jpeg
         meta:
           inline: false
@@ -901,7 +906,8 @@ content:
           - SMARCE1
       - .
     type: Paragraph
-  - content:
+  - id: fig5
+    content:
       - format: image/jpeg
         meta:
           inline: false
@@ -1023,7 +1029,8 @@ content:
         each G4-targeting ligand.
     type: Paragraph
   - parts:
-      - content:
+      - id: fig6
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1117,7 +1124,8 @@ content:
               - .
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig6s1
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1322,7 +1330,8 @@ content:
       - ).
     type: Paragraph
   - parts:
-      - content:
+      - id: fig7
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1398,7 +1407,8 @@ content:
               - .
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig7s1
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1590,7 +1600,8 @@ content:
       - ).
     type: Paragraph
   - parts:
-      - content:
+      - id: fig8
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1736,7 +1747,8 @@ content:
             type: MediaObject
             contentUrl: ''
         type: Figure
-      - content:
+      - id: fig8s1
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1795,7 +1807,8 @@ content:
               - .
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig8s2
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -1814,7 +1827,8 @@ content:
               - "A375 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (5 μM and 10 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean\_±\_standard deviation)."
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig8s3
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -2134,7 +2148,8 @@ content:
         our genetic screening approach.
     type: Paragraph
   - parts:
-      - content:
+      - id: fig9
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -2208,7 +2223,8 @@ content:
               - ).
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig9s1
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -2244,7 +2260,8 @@ content:
                 percentage indicates synergy.
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig9s2
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -2368,7 +2385,8 @@ content:
       - ).
     type: Paragraph
   - parts:
-      - content:
+      - id: fig10
+        content:
           - format: image/jpeg
             meta:
               inline: false
@@ -2476,7 +2494,8 @@ content:
             type: MediaObject
             contentUrl: ''
         type: Figure
-      - content:
+      - id: fig10s1
+        content:
           - format: image/jpeg
             meta:
               inline: false

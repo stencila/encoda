@@ -11,6 +11,7 @@ import * as xml from '../../util/xml'
 import {
   elem,
   attr,
+  attrOrUndefined,
   child,
   first,
   all,
@@ -1085,6 +1086,7 @@ function decodeFigure(
 
   return [
     stencila.figure({
+      id: attrOrUndefined(elem, 'id'),
       content,
       label: textOrUndefined(child(elem, 'label')),
       caption:

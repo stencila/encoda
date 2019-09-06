@@ -479,7 +479,8 @@ content:
         [1,36]=21.4, p<0.0001). Total volume consumed was greater when mice were
         offered 40 mg/l MA, compared to 20 mg/l MA.
     type: Paragraph
-  - content:
+  - id: fig1
+    content:
       - contentUrl: fig1.jpg
         format: image/tiff
         meta:
@@ -703,7 +704,8 @@ content:
         significantly higher in knock-in than control mice at baseline, by about
         0.6°C, but significantly lower by about 1.2°C, at T30.
     type: Paragraph
-  - content:
+  - id: fig2
+    content:
       - contentUrl: fig2.jpg
         format: image/tiff
         meta:
@@ -886,7 +888,8 @@ content:
         type: Link
       - "), but the strain distribution pattern for total volume did not correspond with the distributions for MA intake at either MA concentration. Total volume consumed was significantly less when water and 20 mg/l MA were available, compared to when water and 40 mg/l MA were available (mean\_±\_SEM\_=\_5.3±0.1 and 5.7\_±\_0.1 for 20 and 40 mg/l, respectively)."
     type: Paragraph
-  - content:
+  - id: fig3
+    content:
       - contentUrl: fig3.jpg
         format: image/tiff
         meta:
@@ -1214,7 +1217,8 @@ content:
               - +/+
       - ' mice.'
     type: Paragraph
-  - content:
+  - id: fig4
+    content:
       - contentUrl: fig4.jpg
         format: image/tiff
         meta:
@@ -1735,7 +1739,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: fig5
+    content:
       - contentUrl: fig5.jpg
         format: image/tiff
         meta:
@@ -2088,7 +2093,8 @@ content:
               - m1J/m1J
       - ' mice were resistant to the hypothermic effects of MA, exhibiting increases in body temperature at all post-MA treatment time points, compared to T0.'
     type: Paragraph
-  - content:
+  - id: fig6
+    content:
       - contentUrl: fig6.jpg
         format: image/tiff
         meta:
@@ -2310,7 +2316,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: fig7
+    content:
       - contentUrl: fig7.jpg
         format: image/tiff
         meta:
@@ -4167,7 +4174,8 @@ content:
       - tgagaactgttgagcgctgttggtatZZt.
       - ' The ossDNA was designed without a silent mutation and to be asymmetric to provide increased efficiency of the gRNA. Cas9 mRNA (catalog number L-7606) was purchased from TriLink (San Diego, CA, USA).'
     type: Paragraph
-  - content:
+  - id: fig8
+    content:
       - contentUrl: fig8.jpg
         format: image/tiff
         meta:

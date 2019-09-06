@@ -293,7 +293,8 @@ content:
         type: Link
       - ' which is used to obtain a reduced genome database.'
     type: Paragraph
-  - content:
+  - id: pone.0178565.g001
+    content:
       - contentUrl: g001.png
         format: image
         meta:
@@ -486,7 +487,8 @@ content:
         ). Conservation indices for the protein profiles were computed based on
         the abridged strings.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g002
+    content:
       - contentUrl: g002.png
         format: image
         meta:
@@ -606,7 +608,8 @@ content:
         that have diverged significantly in the subsets of organisms and are not
         merely paralogs.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g003
+    content:
       - contentUrl: g003.png
         format: image
         meta:
@@ -665,7 +668,8 @@ content:
         type: ListItem
     order: ascending
     type: List
-  - content:
+  - id: pone.0178565.g004
+    content:
       - contentUrl: g004.png
         format: image
         meta:
@@ -1049,7 +1053,8 @@ content:
         used in the three studies. Our analysis includes symbiotic strains which
         may lack some of the core metabolic genes.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g005
+    content:
       - contentUrl: g005.png
         format: image
         meta:
@@ -2336,7 +2341,8 @@ content:
         clusters and further analysis on these proteins will give additional
         information about their functions.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g006
+    content:
       - contentUrl: g006.png
         format: image
         meta:

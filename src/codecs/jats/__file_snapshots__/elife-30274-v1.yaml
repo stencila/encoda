@@ -270,7 +270,8 @@ content:
         ). After removal of tetracycline, c-Myc levels increased over time
         approaching the levels observed in tetracycline-free conditions.
     type: Paragraph
-  - content:
+  - id: fig1
+    content:
       - contentUrl: fig1.jpg
         format: application/postscript
         meta:
@@ -527,7 +528,8 @@ content:
         in the original study (95.8% (453/473) for serum lot two).
     type: Paragraph
   - parts:
-      - content:
+      - id: fig2
+        content:
           - contentUrl: fig2.jpg
             format: application/postscript
             meta:
@@ -588,7 +590,8 @@ content:
             format: application/octet-stream
             type: MediaObject
         type: Figure
-      - content:
+      - id: fig2s1
+        content:
           - contentUrl: fig2-figsupp1.jpg
             format: application/postscript
             meta:
@@ -654,7 +657,8 @@ content:
               - .
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig2s2
+        content:
           - contentUrl: fig2-figsupp2.jpg
             format: application/postscript
             meta:
@@ -1809,7 +1813,8 @@ content:
         estimate of the original study and serum lot two were within the
         confidence intervals of each other.
     type: Paragraph
-  - content:
+  - id: fig3
+    content:
       - contentUrl: fig3.jpg
         format: application/postscript
         meta:

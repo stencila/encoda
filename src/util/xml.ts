@@ -89,6 +89,17 @@ export function attr(elem: Element | null, name: string): string | null {
 }
 
 /**
+ * Get an element attribute or `undefined` if it does not exist
+ */
+export function attrOrUndefined(
+  elem: Element | null,
+  name: string
+): string | undefined {
+  const value = attr(elem, name)
+  return value === null ? undefined : value
+}
+
+/**
  * Does an element match name/s and attributes
  */
 export function matches(

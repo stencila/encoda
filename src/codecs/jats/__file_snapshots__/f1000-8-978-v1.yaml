@@ -909,7 +909,8 @@ content:
                                   Prosopis cineraria and 
                                   Ziziphus spina-christi.
     content: []
-  - content:
+  - id: f1
+    content:
       - contentUrl: f1000research-8-21421-g0000.gif
         format: ''
         meta:
@@ -1025,7 +1026,8 @@ content:
         ) revealed high and medium suitability habitat of around 5.7% and 11.5%,
         respectively.
     type: Paragraph
-  - content:
+  - id: f2
+    content:
       - contentUrl: f1000research-8-21421-g0001.gif
         format: ''
         meta:
@@ -1074,7 +1076,8 @@ content:
           - ).
         type: Paragraph
     type: Figure
-  - content:
+  - id: f3
+    content:
       - contentUrl: f1000research-8-21421-g0002.gif
         format: ''
         meta:

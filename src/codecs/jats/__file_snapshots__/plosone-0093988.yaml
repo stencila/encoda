@@ -313,7 +313,8 @@ content:
         type: ImageObject
       - ' on average claim levels.'
     type: Paragraph
-  - content:
+  - id: pone-0093988-g001
+    content:
       - contentUrl: g001.png
         format: image
         meta:
@@ -2710,7 +2711,8 @@ content:
         network structure has very little effect on the evolutionary dynamics of
         the game.
     type: Paragraph
-  - content:
+  - id: pone-0093988-g002
+    content:
       - contentUrl: g002.png
         format: image
         meta:
@@ -3034,7 +3036,8 @@ content:
         also suggest that the effect of network structure on the dynamics of the
         smoothed MEC game is negligible.
     type: Paragraph
-  - content:
+  - id: pone-0093988-g003
+    content:
       - contentUrl: g003.png
         format: image
         meta:

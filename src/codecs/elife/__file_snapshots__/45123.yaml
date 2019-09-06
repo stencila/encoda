@@ -186,7 +186,8 @@ content:
         suggest that lncRNAs themselves may contribute to these conditions, or
         that they drive the expression of disease-associated genes.
     type: Paragraph
-  - content:
+  - id: fig1
+    content:
       - format: image/jpeg
         meta:
           inline: false

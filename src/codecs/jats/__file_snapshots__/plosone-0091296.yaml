@@ -376,7 +376,8 @@ content:
         type: Cite
       - .
     type: Paragraph
-  - content:
+  - id: pone-0091296-g001
+    content:
       - contentUrl: g001.png
         format: image
         meta:
@@ -1714,7 +1715,8 @@ content:
           - L. gibbus
       - .
     type: Paragraph
-  - content:
+  - id: pone-0091296-g002
+    content:
       - contentUrl: g002.png
         format: image
         meta:
@@ -1860,7 +1862,8 @@ content:
           - p
       -  = 1.0).
     type: Paragraph
-  - content:
+  - id: pone-0091296-g003
+    content:
       - contentUrl: g003.png
         format: image
         meta:
@@ -1947,7 +1950,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pone-0091296-g004
+    content:
       - contentUrl: g004.png
         format: image
         meta:
@@ -2029,7 +2033,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pone-0091296-g005
+    content:
       - contentUrl: g005.png
         format: image
         meta:
@@ -2336,7 +2341,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pone-0091296-g006
+    content:
       - contentUrl: g006.png
         format: image
         meta:
@@ -2390,7 +2396,8 @@ content:
           - L. gibbus
       - ' aggregations at Ahus were assessed to be medium risk due to a high susceptibility score.'
     type: Paragraph
-  - content:
+  - id: pone-0091296-g007
+    content:
       - contentUrl: g007.png
         format: image
         meta:
@@ -2491,7 +2498,8 @@ content:
         to socioeconomic drivers resulted in a greater susceptibility of
         aggregations to fishing at Ahus compared to Karkar.
     type: Paragraph
-  - content:
+  - id: pone-0091296-g008
+    content:
       - contentUrl: g008.png
         format: image
         meta:
@@ -2519,7 +2527,8 @@ content:
             are given in the panel titles.
         type: Paragraph
     type: Figure
-  - content:
+  - id: pone-0091296-g009
+    content:
       - contentUrl: g009.png
         format: image
         meta:
