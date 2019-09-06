@@ -134,7 +134,10 @@ function decodeArticle(elem: xml.Element): stencila.Article {
 
   const article = stencila.article(
     decodeAuthors(all(front, 'contrib', { 'contrib-type': 'author' }), elem),
-    decodeTitle(first(front, 'article-title'))
+    decodeTitle(first(front, 'article-title')),
+    {
+      description: decodeAbstract(first(front, 'abstract'))
+    }
   )
 
   const body = child(elem, 'body')
@@ -154,10 +157,13 @@ function encodeArticle(article: stencila.Article): xml.Element {
     references: {}
   }
 
+  const {title = '', authors = [], description} = article
+
   const front = elem(
     'front',
-    encodeTitle(article.title || ''),
-    encodeAuthors(article.authors || [])
+    encodeTitle(title),
+    encodeAuthors(authors),
+    encodeAbstract(description)
   )
   const body = encodeBody(article.content || [], state)
   const back = elem('back', encodeReferences(article.references || [], state))
@@ -313,6 +319,14 @@ function decodeAff(aff: xml.Element): stencila.Organization {
       ? addressComponents.map(text).join(', ')
       : undefined
   })
+}
+
+function decodeAbstract(elem: xml.Element | null): string | undefined {
+  return elem !== null ? all(elem, 'p').map(text).join(' ') : undefined
+}
+
+function encodeAbstract(abstract?: string): xml.Element | null {
+  return abstract !== undefined ? elem('abstract', elem('p', abstract)) : null
 }
 
 function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
