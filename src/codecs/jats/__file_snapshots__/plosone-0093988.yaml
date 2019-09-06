@@ -23,20 +23,24 @@ authors:
 title: >-
   An Application of Evolutionary Game Theory to Social Dilemmas: The Traveler's
   Dilemma and the Minimum Effort Coordination Game
-description: >-
-  The Traveler's Dilemma game and the Minimum Effort Coordination game are two
-  social dilemmas that have attracted considerable attention due to the fact
-  that the predictions of classical game theory are at odds with the results
-  found when the games are studied experimentally. Moreover, a direct
-  application of deterministic evolutionary game theory, as embodied in the
-  replicator dynamics, to these games does not explain the observed behavior. In
-  this work, we formulate natural variants of these two games as smoothed
-  continuous-strategy games. We study the evolutionary dynamics of these
-  continuous-strategy games, both analytically and through agent-based
-  simulations, and show that the behavior predicted theoretically is in accord
-  with that observed experimentally. Thus, these variants of the Traveler's
-  Dilemma and the Minimum Effort Coordination games provide a simple resolution
-  of the paradoxical behavior associated with the original games.
+description:
+  - content:
+      - >-
+        The Traveler's Dilemma game and the Minimum Effort Coordination game are
+        two social dilemmas that have attracted considerable attention due to
+        the fact that the predictions of classical game theory are at odds with
+        the results found when the games are studied experimentally. Moreover, a
+        direct application of deterministic evolutionary game theory, as
+        embodied in the replicator dynamics, to these games does not explain the
+        observed behavior. In this work, we formulate natural variants of these
+        two games as smoothed continuous-strategy games. We study the
+        evolutionary dynamics of these continuous-strategy games, both
+        analytically and through agent-based simulations, and show that the
+        behavior predicted theoretically is in accord with that observed
+        experimentally. Thus, these variants of the Traveler's Dilemma and the
+        Minimum Effort Coordination games provide a simple resolution of the
+        paradoxical behavior associated with the original games.
+    type: Paragraph
 type: Article
 content:
   - content:

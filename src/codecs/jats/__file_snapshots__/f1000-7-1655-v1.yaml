@@ -133,22 +133,26 @@ authors:
     affiliations:
       - type: Organization
 title: Publishing peer review materials
-description: >-
-  Publishing peer review materials alongside research articles promises to make
-  the peer review process more transparent as well as making it easier to
-  recognise these contributions and give credit to peer reviewers.
-  Traditionally, the peer review reports, editors letters and author responses
-  are only shared between the small number of people in those roles prior to
-  publication, but there is a growing interest in making some or all of these
-  materials available. A small number of journals have been publishing peer
-  review materials for some time, others have begun this practice more recently,
-  and significantly more are now considering how they might begin. This article
-  outlines the outcomes from a recent workshop among journals with experience in
-  publishing peer review materials, in which the specific operation of these
-  workflows, and the challenges, were discussed. Here, we provide a draft as to
-  how to represent these materials in the JATS and Crossref data models to
-  facilitate the coordination and discoverability of peer review materials, and
-  seek feedback on these initial recommendations.
+description:
+  - content:
+      - >-
+        Publishing peer review materials alongside research articles promises to
+        make the peer review process more transparent as well as making it
+        easier to recognise these contributions and give credit to peer
+        reviewers. Traditionally, the peer review reports, editors letters and
+        author responses are only shared between the small number of people in
+        those roles prior to publication, but there is a growing interest in
+        making some or all of these materials available. A small number of
+        journals have been publishing peer review materials for some time,
+        others have begun this practice more recently, and significantly more
+        are now considering how they might begin. This article outlines the
+        outcomes from a recent workshop among journals with experience in
+        publishing peer review materials, in which the specific operation of
+        these workflows, and the challenges, were discussed. Here, we provide a
+        draft as to how to represent these materials in the JATS and Crossref
+        data models to facilitate the coordination and discoverability of peer
+        review materials, and seek feedback on these initial recommendations.
+    type: Paragraph
 type: Article
 content:
   - content:

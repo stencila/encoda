@@ -22,6 +22,7 @@ import {
   Attributes
 } from '../../util/xml'
 import { Codec } from '../types'
+import { nodeType } from '@stencila/schema';
 
 const log = getLogger('encoda:jats')
 
@@ -140,8 +141,10 @@ function decodeArticle(elem: xml.Element): stencila.Article {
     }
   )
 
+  const state: DecodeState = initialDecodeState()
+
   const body = child(elem, 'body')
-  if (body) article.content = decodeBody(body)
+  if (body) article.content = decodeBody(body, state)
 
   const back = child(elem, 'back')
   const refList = first(back, 'ref-list')
@@ -151,12 +154,6 @@ function decodeArticle(elem: xml.Element): stencila.Article {
 }
 
 function encodeArticle(article: stencila.Article): xml.Element {
-  const state: EncodeState = {
-    tables: 0,
-    citations: {},
-    references: {}
-  }
-
   const {title = '', authors = [], description} = article
 
   const front = elem(
@@ -165,6 +162,8 @@ function encodeArticle(article: stencila.Article): xml.Element {
     encodeAuthors(authors),
     encodeAbstract(description)
   )
+
+  const state: EncodeState = initialEncodeState()
   const body = encodeBody(article.content || [], state)
   const back = elem('back', encodeReferences(article.references || [], state))
 
@@ -180,12 +179,30 @@ function encodeArticle(article: stencila.Article): xml.Element {
   )
 }
 
-function decodeTitle(title: xml.Element | null): string {
-  return text(title)
+function decodeTitle(elem: xml.Element | null): string | stencila.Node[] {
+  if(elem === null) return 'Untitled'
+  const nodes = decodeElement(elem, initialDecodeState())
+  if (nodes.length === 1 && typeof nodes[0] == 'string') return nodes[0]
+  else return nodes
 }
 
-function encodeTitle(title: string): xml.Element {
-  return elem('title-group', elem('article-title', title))
+function encodeTitle(title: string | stencila.Node[]): xml.Element {
+  const articleTitle = typeof title === 'string'
+    ? elem('article-title', title)
+    : elem('article-title', ...encodeNodes(title, initialEncodeState()))
+  return elem('title-group', articleTitle)
+}
+
+function decodeAbstract(elem: xml.Element | null): string | stencila.Node[] | undefined {
+  return elem !== null ? decodeElements(all(elem, 'p'), initialDecodeState()) : undefined
+}
+
+function encodeAbstract(description?: string | stencila.Node[]): xml.Element | null {
+  if (description == undefined) return null
+  const paras = typeof description === 'string'
+    ? elem('p', description)
+    : elem('p', ...encodeNodes(description, initialEncodeState()))
+  return elem('abstract', paras)
 }
 
 function decodeAuthors(
@@ -321,14 +338,6 @@ function decodeAff(aff: xml.Element): stencila.Organization {
   })
 }
 
-function decodeAbstract(elem: xml.Element | null): string | undefined {
-  return elem !== null ? all(elem, 'p').map(text).join(' ') : undefined
-}
-
-function encodeAbstract(abstract?: string): xml.Element | null {
-  return abstract !== undefined ? elem('abstract', elem('p', abstract)) : null
-}
-
 function decodeRefList(elem: xml.Element): stencila.CreativeWork[] {
   const refs = all(elem, 'ref')
   return refs
@@ -447,7 +456,7 @@ function encodeReference(
 
     const { title, authors, datePublished } = work
 
-    if (title) subElements.push(elem('article-title', title))
+    if (title) subElements.push(elem('article-title', ...encodeNodes(title)))
 
     if (authors && authors.length) {
       const people = authors.filter(stencila.isType('Person')).map(encodeName)
@@ -500,7 +509,7 @@ function encodeReference(
       if (stencila.isA('PublicationVolume', pi.isPartOf)) {
         const pv = pi.isPartOf
 
-        if (pv.title !== undefined) subElements.push(elem('source', pv.title))
+        if (pv.title !== undefined) subElements.push(elem('source', ...encodeNodes(pv.title)))
 
         if (pv.volumeNumber !== undefined) {
           subElements.push(elem('volume', `${pv.volumeNumber}`))
@@ -509,7 +518,7 @@ function encodeReference(
     } else if (stencila.isA('PublicationVolume', work.isPartOf)) {
       const pv = work.isPartOf as stencila.PublicationVolume
 
-      if (pv.title !== undefined) subElements.push(elem('source', pv.title))
+      if (pv.title !== undefined) subElements.push(elem('source', ...encodeNodes(pv.title)))
 
       if (pv.pageStart !== undefined) {
         subElements.push(elem('fpage', `${pv.pageStart}`))
@@ -544,6 +553,11 @@ interface DecodeState {
   sectionDepth: number
 }
 
+const initialDecodeState = () => ({
+  sectionId: '',
+  sectionDepth: 0
+})
+
 interface EncodeState {
   /**
    * The current number of tables in the article.
@@ -569,6 +583,12 @@ interface EncodeState {
   references: { [rid: string]: string }
 }
 
+const initialEncodeState = () => ({
+  tables: 0,
+  citations: {},
+  references: {}
+})
+
 interface JatsContentType {
   /**
    * JATS splits the media type into two sections
@@ -581,8 +601,8 @@ interface JatsContentType {
 /**
  * Decode the JATS `<body>` element to an array of Stencila `Node`s
  */
-function decodeBody(elem: xml.Element): stencila.Node[] {
-  return decodeDefault(elem, { sectionId: '', sectionDepth: 0 })
+function decodeBody(elem: xml.Element, state: DecodeState): stencila.Node[] {
+  return decodeDefault(elem, state)
 }
 
 /**
@@ -749,12 +769,13 @@ function encodeDefault(
 }
 
 function encodeNodes(
-  nodes: stencila.Node[],
-  state: EncodeState
+  nodes: stencila.Node | stencila.Node[],
+  state: EncodeState = initialEncodeState()
 ): xml.Element[] {
+  if (!Array.isArray(nodes)) nodes = [nodes]
   return nodes
-    .map(node => encodeNode(node, state))
-    .reduce((prev, curr) => [...prev, ...curr], [])
+    .map((node: stencila.Node) => encodeNode(node, state))
+    .reduce((prev: xml.Element[], curr: xml.Element[]) => [...prev, ...curr], [])
 }
 
 /**
@@ -1004,7 +1025,7 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
 
   const label = elem('label', `Table ${state.tables}.`)
 
-  const caption = elem('caption', node.title ? elem('title', node.title) : null)
+  const caption = elem('caption', node.title ? elem('title', ...encodeNodes(node.title)) : null)
 
   const rows = node.rows.map(row => {
     return elem(
