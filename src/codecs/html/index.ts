@@ -4,6 +4,7 @@
 
 import { getLogger } from '@stencila/logga'
 import stencila, { cite } from '@stencila/schema'
+import stencila, { Entity } from '@stencila/schema'
 import {
   isArticle,
   isCreativeWork,
@@ -31,6 +32,7 @@ import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { logWarnLossIfAny } from '../../log'
 import { VFileContents } from 'vfile'
+import { stringifyContent } from '../../util/content/stringifyContent'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -188,7 +190,12 @@ export class HTMLCodec extends Codec implements Codec {
     if (isStandalone) {
       const nodeToEncode = isBundle ? await bundle(node) : node
       const { title, ...metadata } = getArticleMetaData(nodeToEncode)
-      dom = generateHtmlElement(title, metadata, [dom], options)
+      dom = generateHtmlElement(
+        stringifyContent(title),
+        metadata,
+        [dom],
+        options
+      )
     }
 
     const beautifulHtml = beautify(dom.outerHTML)
@@ -221,20 +228,28 @@ const getArticleMetaData = (
   }
 }
 
+const decodeNodes = (nodes: Node[]): (stencila.Node | undefined)[] =>
+  nodes.map(decodeNode)
+
+const encodeNodes = (nodes: stencila.Node[]): Node[] => nodes.map(encodeNode)
+
 function decodeNode(node: Node): stencila.Node | undefined {
   const type =
-    node instanceof window.HTMLElement
-      ? node.getAttribute('itemtype')
-      : undefined
+    node instanceof window.HTMLElement ? node.getAttribute('itemtype') : null
 
   const name =
-    type && type.includes('schema:') ? type : node.nodeName.toLowerCase()
+    type !== null
+      ? type
+          .replace(/^https?:\/\/schema\.org\//, 'schema:')
+          .replace(/^https?:\/\/schema\.stenci\.la\//, 'stencila:')
+      : node.nodeName.toLowerCase()
 
   switch (name) {
     case '#document':
       return decodeDocument(node as HTMLDocument)
 
     case 'article':
+    case 'schema:Article':
       return decodeArticle(node as HTMLElement)
 
     case 'div':
@@ -261,10 +276,10 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeListItem(node as HTMLLIElement)
     case 'table':
       return decodeTable(node as HTMLTableElement)
-    case 'stencila-datatable':
+    case 'stencila:Datatable':
       return decodeDatatable(node as HTMLDivElement)
     case 'hr':
-      return decodeHR(node as HTMLHRElement)
+      return decodeHR()
 
     case 'em':
       return decodeMark(node as HTMLElement, 'Emphasis')
@@ -282,7 +297,7 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeQuote(node as HTMLQuoteElement)
     case 'cite':
       return decodeCite(node as HTMLElement)
-    case 'schema:CiteGroup':
+    case 'stencila:CiteGroup':
       return decodeCiteGroup(node as HTMLOListElement)
     case 'code':
       return decodeCode(node as HTMLElement)
@@ -293,18 +308,16 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'figcaption':
       return decodeFigCaption(node as HTMLElement)
 
-    case 'stencila-null':
-      return decodeNull(node as HTMLElement)
-    case 'stencila-boolean':
+    case 'stencila:Null':
+      return decodeNull()
+    case 'schema:Boolean':
       return decodeBoolean(node as HTMLElement)
-    case 'stencila-number':
+    case 'schema:Number':
       return decodeNumber(node as HTMLElement)
-    case 'stencila-array':
+    case 'stencila:Array':
       return decodeArray(node as HTMLElement)
-    case 'stencila-object':
+    case 'stencila:Object':
       return decodeObject(node as HTMLElement)
-    case 'stencila-thing':
-      return decodeThing(node as HTMLElement)
 
     case 'script':
       return undefined
@@ -317,6 +330,8 @@ function decodeNode(node: Node): stencila.Node | undefined {
   if (match) {
     return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
+
+  if (type !== null) return decodeEntity(node as HTMLElement)
 
   log.warn(`No handler for HTML element <${name}>`)
   return undefined
@@ -359,7 +374,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Datatable':
       return encodeDatatable(node as stencila.Datatable)
     case 'ThematicBreak':
-      return encodeThematicBreak(node as stencila.ThematicBreak)
+      return encodeThematicBreak()
 
     case 'Emphasis':
       return encodeMark(node as stencila.Emphasis, 'em')
@@ -383,7 +398,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeMath(node as object)
 
     case 'null':
-      return encodeNull(node as null)
+      return encodeNull()
     case 'boolean':
       return encodeBoolean(node as boolean)
     case 'number':
@@ -395,7 +410,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'object':
       return encodeObject(node as object)
     default:
-      return encodeThing(node as stencila.Thing)
+      return encodeEntity(node as Entity)
   }
 }
 
@@ -555,16 +570,47 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
  * Encode an `Article` node to a `<article>` element.
  */
 function encodeArticle(article: stencila.Article): HTMLElement {
-  const { type, title, content = [], references = [], ...lost } = article
+  const {
+    type,
+    title,
+    description,
+    content = [],
+    references = [],
+    ...lost
+  } = article
   logWarnLossIfAny('html', 'encode', article, lost)
 
   return h(
     'article',
     { attrs: { itemtype: 'https://schema.org/Article', itemscope: true } },
-    optionalHTML(title, h('h1', { itemprop: 'headline' }, title)),
-    ...content.map(encodeNode),
+    optionalHTML(title, encodeTitle(title)),
+    ...encodeDescription(description),
+    ...encodeNodes(content),
     optionalHTML(references.length > 0, encodeReferences(references))
   )
+}
+
+function encodeTitle(title: string | stencila.Node[]): HTMLElement {
+  return h(
+    'h1',
+    { itemprop: 'headline' },
+    encodeNodes(typeof title === 'string' ? [title] : title)
+  )
+}
+
+function encodeDescription(desc?: string | stencila.Node[]): HTMLElement[] {
+  if (desc === undefined) return []
+  return [
+    h(
+      'section',
+      h('h2', 'Abstract'),
+      h(
+        'p',
+        { itemprop: 'description' },
+        encodeNodes(typeof desc === 'string' ? [desc] : desc)
+      )
+    )
+  ]
 }
 
 function encodeReferences(
@@ -731,10 +777,7 @@ function encodeInclude(include: stencila.Include): HTMLElement {
   const contentDiv = h('div', content.map(encodeNode))
   contentDiv.setAttribute('itemprop', 'content')
   const elem = h(`div`, contentDiv)
-  elem.setAttribute(
-    'itemtype',
-    `https://stencila.github.io/schema/${nodeType(include)}`
-  )
+  elem.setAttribute('itemtype', `https://schema.stenci.la/${nodeType(include)}`)
   return elem
 }
 
@@ -841,7 +884,7 @@ function encodeCite(cite: stencila.Cite): HTMLElement {
 }
 
 /**
- * Decode a `<ol itemtype="schema:CiteGroup">` element to a `stencila.CiteGroup`.
+ * Decode a `<ol itemtype="https://schema.stenci.la/CiteGroup">` element to a `stencila.CiteGroup`.
  */
 function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
   return {
@@ -851,12 +894,12 @@ function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
 }
 
 /**
- * Encode a `stencila.CiteGroup` element to a `<ol itemtype="schema:CiteGroup">`.
+ * Encode a `stencila.CiteGroup` element to a `<ol itemtype="https://schema.stenci.la/CiteGroup">`.
  */
 function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: 'schema:CiteGroup' } },
+    { attrs: { itemtype: 'https://schema.stenci.la/CiteGroup' } },
     citeGroup.items.map(encodeCite)
   )
 }
@@ -890,14 +933,17 @@ function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
  * Encode a `stencila.Figure` element to a `<figure>`.
  */
 function encodeFigure(figure: stencila.Figure): HTMLElement {
-  return h('figure', { id: figure.id, title: figure.label }, [
-    encodeCreativeWork(figure),
-    figure.caption ? h('figcaption', figure.caption.map(encodeNode)) : undefined
+  const { id, label, caption = [], content = [] } = figure
+  return h('figure', { id, title: label }, [
+    ...encodeNodes(content),
+    // TODO: determine best placement of figure label
+    // optionalHTML(label, h('label', label)),
+    optionalHTML(caption.length, h('figcaption', caption.map(encodeNode)))
   ])
 }
 
 /**
- * Decode a `<ol itemtype="schema:Collection">` element to a `stencila.Collection`.
+ * Decode a `<ol itemtype="https://schema.org/Collection">` element to a `stencila.Collection`.
  */
 function decodeCollection(collection: HTMLOListElement): stencila.Collection {
   const parts = flatten(
@@ -913,13 +959,13 @@ function decodeCollection(collection: HTMLOListElement): stencila.Collection {
 }
 
 /**
- * Encode a `<ol itemtype="schema:Collection">` element to a `stencila.Collection`.
+ * Encode a `stencila.Collection` node to a `<ol itemtype="https://schema.org/Collection">` element.
  */
 function encodeCollection(collection: stencila.Collection): HTMLOListElement {
   return h(
     'ol',
-    { attrs: { itemtype: 'schema:Collection' } },
-    collection.parts.map(entry => h('li', encodeCreativeWork(entry)))
+    { attrs: { itemtype: 'https://schema.org/Collection' } },
+    collection.parts.map(entry => h('li', encodeNode(entry)))
   )
 }
 
@@ -1101,7 +1147,7 @@ function encodeTable(table: stencila.Table): HTMLTableElement {
 }
 
 /**
- * Decode a HTML `<stencila-datatable>` element to a Stencila `Datatable` node.
+ * Decode a `<div itemtype="https://schema.stenci.la/Datatable">` element to a Stencila `Datatable` node.
  */
 function decodeDatatable(elem: HTMLElement): stencila.Datatable {
   let columns: stencila.DatatableColumn[] = []
@@ -1145,7 +1191,7 @@ function decodeDatatable(elem: HTMLElement): stencila.Datatable {
 }
 
 /**
- * Encode a Stencila `Datatable` node to a HTML `<stencila-datatable>` element.
+ * Encode a Stencila `Datatable` node to a `<div itemtype="https://schema.stenci.la/Datatable">` element.
  *
  * Note: currently this function is lossy for `DatatableColumn` properties
  * other than `name` and `value` (e.g. `schema`). These could be encoded into
@@ -1156,7 +1202,8 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
   const rows = (cols[0] && cols[0].values.map((_, row) => row)) || []
 
   // prettier-ignore
-  return h('stencila-datatable',
+  return h('div',
+    { attrs: {itemtype: 'https://schema.stenci.la/Datatable'}},
     h('table',
       h('thead',
         h('tr', cols.map(col => (
@@ -1175,14 +1222,14 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
 /**
  * Decode a `<hr>` element to a `stencila.ThematicBreak`.
  */
-function decodeHR(hr: HTMLHRElement): stencila.ThematicBreak {
+function decodeHR(): stencila.ThematicBreak {
   return { type: 'ThematicBreak' }
 }
 
 /**
  * Encode a `stencila.ThematicBreak` to a `<hr>` element.
  */
-function encodeThematicBreak(tb: stencila.ThematicBreak): HTMLHRElement {
+function encodeThematicBreak(): HTMLHRElement {
   return h('hr')
 }
 
@@ -1311,87 +1358,124 @@ function encodeMath(math: any): HTMLElement {
 }
 
 /**
- * Decode a `<stencila-null>` element to a `null`.
+ * Decode a `<span itemtype="https://schema.stenci.la/Null>` element to a `null`.
  */
-function decodeNull(elem: HTMLElement): null {
+function decodeNull(): null {
   return null
 }
 
 /**
- * Encode a `null` to a `<stencila-null>` element.
+ * Encode a `null` to a `<span itemtype="https://schema.stenci.la/Null>` element.
  */
-function encodeNull(value: null): HTMLElement {
-  return h('stencila-null', 'null')
+function encodeNull(): HTMLElement {
+  return h(
+    'span',
+    { attrs: { itemtype: 'https://schema.stenci.la/Null' } },
+    'null'
+  )
 }
 
 /**
- * Decode a `<stencila-boolean>` element to a `boolean`.
+ * Decode a `<span itemtype="https://schema.org/Boolean>` element to a `boolean`.
  */
 function decodeBoolean(elem: HTMLElement): boolean {
   return elem.innerHTML === 'true'
 }
 
 /**
- * Encode a `boolean` to a `<stencila-boolean>` element.
+ * Encode a `boolean` to a `<span itemtype="https://schema.org/Boolean>` element.
  */
 function encodeBoolean(value: boolean): HTMLElement {
-  return h('stencila-boolean', value === true ? 'true' : 'false')
+  return h(
+    'span',
+    { attrs: { itemtype: 'https://schema.org/Boolean' } },
+    value === true ? 'true' : 'false'
+  )
 }
 
 /**
- * Decode a `<stencila-number>` element to a `number`.
+ * Decode a `<span itemtype="https://schema.org/Number>` element to a `number`.
  */
 function decodeNumber(elem: HTMLElement): number {
   return parseFloat(elem.innerHTML || '0')
 }
 
 /**
- * Encode a `number` to a `<stencila-number>` element.
+ * Encode a `number` to a `<span itemtype="https://schema.org/Number>` element.
  */
 function encodeNumber(value: number): HTMLElement {
-  return h('stencila-number', value.toString())
+  return h(
+    'span',
+    { attrs: { itemtype: 'https://schema.org/Number' } },
+    value.toString()
+  )
 }
 
 /**
- * Decode a `<stencila-array>` element to a `array`.
+ * Decode a `<span itemtype="https://schema.stenci.la/Array>` element to a `array`.
  */
 function decodeArray(elem: HTMLElement): any[] {
   return JSON5.parse(elem.innerHTML || '[]')
 }
 
 /**
- * Encode a `array` to a `<stencila-array>` element.
+ * Encode a `array` to a `<span itemtype="https://schema.stenci.la/Array>` element.
  */
 function encodeArray(value: any[]): HTMLElement {
-  return h('stencila-array', JSON5.stringify(value))
+  return h(
+    'span',
+    { attrs: { itemtype: 'https://schema.stenci.la/Array' } },
+    JSON5.stringify(value)
+  )
 }
 
 /**
- * Decode a `<stencila-object>` element to a `object`.
+ * Decode a `<span itemtype="https://schema.stenci.la/Object>` element to a `object`.
  */
 function decodeObject(elem: HTMLElement): object {
   return JSON5.parse(elem.innerHTML || '{}')
 }
 
 /**
- * Encode a `object` to a `<stencila-object>` element.
+ * Encode a `object` to a `<span itemtype="https://schema.stenci.la/Object>` element.
  */
 function encodeObject(value: object): HTMLElement {
-  return h('stencila-object', JSON5.stringify(value))
+  return h(
+    'span',
+    { attrs: { itemtype: 'https://schema.stenci.la/Object' } },
+    JSON5.stringify(value)
+  )
 }
 
 /**
- * Decode a `<stencila-thing>` element to a `Thing`.
+ * Decode a `<span itemtype="...">` element to a `Entity`.
  */
-function decodeThing(elem: HTMLElement): stencila.Thing {
-  return JSON5.parse(elem.innerHTML || '{}')
+function decodeEntity(elem: HTMLElement): stencila.Entity {
+  const json = elem.textContent || '{}'
+  try {
+    return JSON5.parse(json)
+  } catch (error) {
+    const { stack } = error
+    log.error({
+      message: `Error parsing JSON: ${json}`,
+      stack
+    })
+    return stencila.entity()
+  }
 }
 
 /**
- * Encode a `Thing` to a `<stencila-thing>` element.
+ * Encode a node type not handled explicitly by one of the
+ * other `encode*` function to a `<span itemtype="https://schema.stenci.la/Entity">` element.
+ * We use `itemtype` `Entity` because usually you want to hide these
+ * nodes in HTML and the `type` is stored in the JSON anyway.
  */
-function encodeThing(thing: stencila.Thing): HTMLElement {
-  return h('stencila-thing', JSON5.stringify(thing))
+function encodeEntity(entity: stencila.Entity): HTMLElement {
+  return h(
+    'span',
+    { attrs: { itemtype: 'https://schema.stenci.la/Entity' } },
+    JSON5.stringify(entity)
+  )
 }
 
 /**
