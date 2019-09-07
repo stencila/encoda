@@ -3,6 +3,9 @@
 exports[`Encode & Decode references encode - citegroup and references 1`] = `
 "<article itemtype=\\"https://schema.org/Article\\" itemscope=\\"true\\">
   <h1 itemprop=\\"headline\\">An example of using the CiteGroup node type</h1>
+  <ol class=\\"authors\\">
+    <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"familyName\\">Bloggs</span><span itemprop=\\"givenName\\">Joe</span></li>
+  </ol>
   <p>Citing two articles <span itemtype=\\"https://schema.stenci.la/CiteGroup\\"><cite><a href=\\"#some-one-else-1991\\">some-one-else-1991</a></cite><cite><a href=\\"#updated-works-2009\\">updated-works-2009</a></cite><cite><a href=\\"https://www.fullUrl.com\\">https://www.fullUrl.com</a></cite></span>.</p>
   <section>
     <h2>References</h2>

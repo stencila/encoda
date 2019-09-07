@@ -74,9 +74,9 @@ export const logWarnLossIfAny = (
   const properties = Object.keys(rest)
   if (properties.length > 0) {
     log.warn(
-      `${codec}:${op} Properties of \`${nodeType(
+      `${codec} Properties of \`${nodeType(
         node
-      )}\` not supported: ${properties.map(prop => `\`${prop}\``).join(', ')}`
+      )}\` not supported by ${op}: ${properties.map(prop => `\`${prop}\``).join(', ')}`
     )
   }
 }

@@ -53,6 +53,15 @@ const optionalHTML = (
   htmlContent: HTMLElement
 ): HTMLElement | undefined => (prop ? htmlContent : undefined)
 
+const encodeMaybe = <T>(
+  maybe: T | undefined,
+  html: (defined: T) => HTMLElement
+): HTMLElement | undefined => {
+  return maybe !== undefined && (Array.isArray(maybe) ? maybe.length > 0 : true)
+    ? html(maybe)
+    : undefined
+}
+
 /**
  * Given a string tries to find and return an HTML element with a matching `itemprop` attribute value
  * @param {HTMLElement} el - HTML element to search within
@@ -573,9 +582,11 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   const {
     type,
     title,
+    authors,
+    datePublished,
     description,
     content = [],
-    references = [],
+    references,
     ...lost
   } = article
   logWarnLossIfAny('html', 'encode', article, lost)
@@ -583,10 +594,12 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   return h(
     'article',
     { attrs: { itemtype: 'https://schema.org/Article', itemscope: true } },
-    optionalHTML(title, encodeTitle(title)),
-    ...encodeDescription(description),
+    encodeTitle(title),
+    encodeMaybe(authors, authors => encodeAuthors(authors)),
+    encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
+    encodeMaybe(description, desc => encodeDescription(desc)),
     ...encodeNodes(content),
-    optionalHTML(references.length > 0, encodeReferences(references))
+    encodeMaybe(references, refs => encodeReferences(refs))
   )
 }
 
@@ -598,19 +611,41 @@ function encodeTitle(title: string | stencila.Node[]): HTMLElement {
   )
 }
 
-function encodeDescription(desc?: string | stencila.Node[]): HTMLElement[] {
-  if (desc === undefined) return []
-  return [
-    h(
-      'section',
-      h('h2', 'Abstract'),
-      h(
-        'p',
-        { itemprop: 'description' },
-        encodeNodes(typeof desc === 'string' ? [desc] : desc)
-      )
+function encodeAuthors(
+  authors: (stencila.Person | stencila.Organization)[]
+): HTMLElement {
+  return h(
+    'ol',
+    { class: 'authors' },
+    ...authors.map(author =>
+      author.type === 'Person'
+        ? encodePerson(author, 'li')
+        : encodeOrganization(author, 'li')
     )
-  ]
+  )
+}
+
+function encodeDate(
+  date: string | stencila.Date,
+  property?: string
+): HTMLElement {
+  return h(
+    'time',
+    { ...(property ? { itemprop: property } : {}), datetime: date },
+    date
+  )
+}
+
+function encodeDescription(desc: string | stencila.Node[]): HTMLElement {
+  return h(
+    'section',
+    h('h2', 'Abstract'),
+    h(
+      'div',
+      { itemprop: 'description' },
+      encodeNodes(typeof desc === 'string' ? [desc] : desc)
+    )
+  )
 }
 
 function encodeReferences(
@@ -687,7 +722,7 @@ function encodeCreativeWork(
   { attrs, as }: CreativeWorkOptions = defaultCreativeWorkOptions
 ): HTMLElement {
   const { id, title, url, authors = [], datePublished, content = [] } = work
-  const elem = h(
+  return h(
     as || creativeWorkTagMap[work.type] || 'div',
     {
       attrs: {
@@ -698,25 +733,11 @@ function encodeCreativeWork(
       id
     },
     h(url ? 'a' : 'span', { itemprop: 'headline', href: url }, title),
-    h(
-      'ol',
-      { class: 'authors' },
-      ...authors.map(author =>
-        author.type === 'Person'
-          ? encodePerson(author, 'li')
-          : encodeOrganization(author, 'li')
-      )
-    ),
-    h(
-      'time',
-      { itemprop: 'datePublished', datetime: datePublished },
-      datePublished
-    ),
+    encodeAuthors(authors),
+    encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     optionalHTML(url, h('a', { itemprop: 'url', href: url }, url)),
-    content.map(encodeNode)
+    encodeNodes(content)
   )
-
-  return elem
 }
 
 function decodePerson(person: HTMLElement): stencila.Person {
@@ -736,12 +757,22 @@ function encodePerson(
   person: stencila.Person,
   as?: keyof HTMLElementTagNameMap
 ): HTMLElement {
+  const {
+    givenNames = [],
+    familyNames = [],
+    url,
+    emails = [],
+    // affiliations,
+    ...lost
+  } = person
+  logWarnLossIfAny('html', 'encode', person, lost)
+
   const name = [
-    h('span', { itemprop: 'familyName' }, person.familyNames),
-    h('span', { itemprop: 'givenName' }, person.givenNames)
+    h('span', { itemprop: 'familyName' }, familyNames.join(' ')),
+    h('span', { itemprop: 'givenName' }, givenNames.join(' '))
   ]
 
-  const elem = h(
+  return h(
     as || 'span',
     {
       attrs: {
@@ -750,19 +781,21 @@ function encodePerson(
         itemprop: 'author'
       }
     },
-    person.url ? h('a', { href: person.url }, ...name) : name
+    url ? h('a', { href: url }, ...name) : name,
+    ...emails.map(email => h('a', { href: `mailto:${email}`, itemprop: 'email'}, email))
   )
-
-  return elem
 }
 
 function encodeOrganization(
   org: stencila.Organization,
   as?: keyof HTMLElementTagNameMap
 ): HTMLElement {
+  const { name, url, ...lost} = org
+  logWarnLossIfAny('html', 'encode', org, lost)
+
   return h(
     as || 'div',
-    org.url ? h('a', { href: org.url }, org.name) : org.name
+    url ? h('a', { href: url }, name) : name
   )
 }
 

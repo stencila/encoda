@@ -340,7 +340,10 @@ describe('Encode & Decode Collections', () => {
     const collection = actual.querySelector('ol')
     const figures = actual.querySelectorAll('figure')
 
-    expect(collection).toHaveAttribute('itemtype', 'https://schema.org/Collection')
+    expect(collection).toHaveAttribute(
+      'itemtype',
+      'https://schema.org/Collection'
+    )
     expect(figures).toHaveLength(2)
   })
 
