@@ -5,21 +5,30 @@ authors:
       - Iyer
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Computer Science Department, University of Massachusetts, Boston,
+          Massachusetts, United States of America
+        type: Organization
   - givenNames:
       - Joshua
     familyNames:
       - Reyes
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Systems Biology, Harvard Medical School, Boston,
+          Massachusetts, United States of America
+        type: Organization
   - givenNames:
       - Timothy
     familyNames:
       - Killingback
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Mathematics Department, University of Massachusetts, Boston,
+          Massachusetts, United States of America
+        type: Organization
 title: >-
   An Application of Evolutionary Game Theory to Social Dilemmas: The Traveler's
   Dilemma and the Minimum Effort Coordination Game

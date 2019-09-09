@@ -332,14 +332,28 @@ function encodeName(person: stencila.Person): xml.Element {
 }
 
 function decodeAff(aff: xml.Element): stencila.Organization {
-  const addressComponents = all(aff, [
+  let name = textOrUndefined(child(aff, 'institution'))
+  let addressComponents = all(aff, [
+    'addr-line',
     'city',
     'state',
     'country',
-    'postal-code'
+    'postal-code',
   ])
+  const url = textOrUndefined(child(aff, 'uri'))
+
+  // Sometimes there is no `<institution>` element and `<addr-line>` is
+  // used for name and address combined. So use the first `addressComponents`
+  // as name if needed.
+  if (name === undefined && addressComponents.length > 0) {
+    const [first, ...rest] = addressComponents
+    name = text(first)
+    addressComponents = rest
+  }
+
   return stencila.organization({
-    name: textOrUndefined(child(aff, 'institution')),
+    name,
+    url,
     address: addressComponents.length
       ? addressComponents.map(text).join(', ')
       : undefined

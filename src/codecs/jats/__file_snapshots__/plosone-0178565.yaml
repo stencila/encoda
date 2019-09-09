@@ -7,8 +7,14 @@ authors:
       - Tiruveedula
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Chemical Engineering, National Institute of Technology
+          Karnataka, Surathkal, Mangalore, India
+        type: Organization
+      - name: >-
+          Department of Chemical Engineering, Indian Institute of Technology
+          Bombay, Powai, Mumbai, India
+        type: Organization
   - givenNames:
       - Pramod
       - P.
@@ -16,9 +22,18 @@ authors:
       - Wangikar
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Chemical Engineering, Indian Institute of Technology
+          Bombay, Powai, Mumbai, India
+        type: Organization
+      - name: >-
+          DBT-Pan IIT Center for Bioenergy, Indian Institute of Technology
+          Bombay, Powai, Mumbai, India
+        type: Organization
+      - name: >-
+          Wadhwani Research Center for Bioengineering, Indian Institute of
+          Technology Bombay, Powai, Mumbai, India
+        type: Organization
 title: >-
   Gene essentiality, conservation index and co-evolution of genes in
   cyanobacteria
