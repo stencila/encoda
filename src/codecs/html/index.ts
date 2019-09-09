@@ -5,6 +5,7 @@
 import { getLogger } from '@stencila/logga'
 import stencila, { cite } from '@stencila/schema'
 import stencila, { Entity } from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import {
   isArticle,
   isCreativeWork,
@@ -419,7 +420,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'object':
       return encodeObject(node as object)
     default:
-      return encodeEntity(node as Entity)
+      return encodeEntity(node as stencila.Entity)
   }
 }
 
@@ -453,8 +454,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node | undefined {
     return decodeNode(body.children[0])
   }
 
-  // TODO: Allow for the different types of creative work based on type in
-  // the jsonld
+  // TODO: Allow for the different types of creative work
   return {
     type: 'Article',
     ...metadata,
@@ -583,7 +583,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     type,
     title,
     authors,
-    datePublished,
+    datePublished = stencila.date(new Date().toISOString()),
     description,
     content = [],
     references,
@@ -594,16 +594,16 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   return h(
     'article',
     { attrs: { itemtype: 'https://schema.org/Article', itemscope: true } },
-    encodeTitle(title),
-    encodeMaybe(authors, authors => encodeAuthors(authors)),
+    encodeTitleProperty(title),
+    encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
-    encodeMaybe(description, desc => encodeDescription(desc)),
+    encodeMaybe(description, desc => encodeDescriptionProperty(desc)),
     ...encodeNodes(content),
-    encodeMaybe(references, refs => encodeReferences(refs))
+    encodeMaybe(references, refs => encodeReferencesProperty(refs))
   )
 }
 
-function encodeTitle(title: string | stencila.Node[]): HTMLElement {
+function encodeTitleProperty(title: string | stencila.Node[]): HTMLElement {
   return h(
     'h1',
     { itemprop: 'headline' },
@@ -611,16 +611,56 @@ function encodeTitle(title: string | stencila.Node[]): HTMLElement {
   )
 }
 
-function encodeAuthors(
+/**
+ * Encode authors and their organizational affiliations.
+ *
+ * This function takes the usual approach of representing
+ * authors and their affiliations as two separate lists with links
+ * between them.
+ */
+function encodeAuthorsProperty(
   authors: (stencila.Person | stencila.Organization)[]
 ): HTMLElement {
+  const orgs = authors
+    .map(author =>
+      stencila.isA('Person', author) && author.affiliations !== undefined
+        ? author.affiliations
+        : []
+    )
+    .reduce((prev, curr) => [...prev, ...curr], [])
+    .reduce(
+      (prev, curr) => {
+        if (curr.name !== undefined && prev[curr.name] === undefined) {
+          const index = Object.keys(prev).length + 1
+          prev[curr.name] = [
+            index,
+            {
+              ...curr,
+              id: `author-organization-${index}`
+            }
+          ]
+        }
+        return prev
+      },
+      {} as { [key: string]: [number, stencila.Organization] }
+    )
   return h(
-    'ol',
-    { class: 'authors' },
-    ...authors.map(author =>
-      author.type === 'Person'
-        ? encodePerson(author, 'li')
-        : encodeOrganization(author, 'li')
+    'div',
+    h(
+      'ol',
+      { class: 'authors' },
+      ...authors.map(author =>
+        author.type === 'Person'
+          ? encodePerson(author, orgs, 'li')
+          : encodeOrganization(author, 'li')
+      )
+    ),
+    h(
+      'ol',
+      { class: 'organizations' },
+      ...Object.values(orgs).map(([index, org]) =>
+        encodeOrganization(org, 'li')
+      )
     )
   )
 }
@@ -629,14 +669,21 @@ function encodeDate(
   date: string | stencila.Date,
   property?: string
 ): HTMLElement {
+  const dateStamp = stencila.isA('Date', date) ? date.value : date
+  const dateString = stencila.isA('Date', date) ? date.value : date
   return h(
     'time',
-    { ...(property ? { itemprop: property } : {}), datetime: date },
-    date
+    {
+      ...(property ? { itemprop: property } : {}),
+      datetime: dateStamp
+    },
+    dateString
   )
 }
 
-function encodeDescription(desc: string | stencila.Node[]): HTMLElement {
+function encodeDescriptionProperty(
+  desc: string | stencila.Node[]
+): HTMLElement {
   return h(
     'section',
     h('h2', 'Abstract'),
@@ -648,7 +695,7 @@ function encodeDescription(desc: string | stencila.Node[]): HTMLElement {
   )
 }
 
-function encodeReferences(
+function encodeReferencesProperty(
   references: (string | stencila.CreativeWork)[]
 ): HTMLElement {
   return h(
@@ -733,7 +780,7 @@ function encodeCreativeWork(
       id
     },
     h(url ? 'a' : 'span', { itemprop: 'headline', href: url }, title),
-    encodeAuthors(authors),
+    encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     optionalHTML(url, h('a', { itemprop: 'url', href: url }, url)),
     encodeNodes(content)
@@ -753,49 +800,142 @@ function decodePerson(person: HTMLElement): stencila.Person {
   }
 }
 
+/**
+ * Encode a `Person` node.
+ *
+ * Create a Microdata `<link>` between the `Person` and the `Organization`.
+ *
+ * @param person The `Person` to encode
+ * @param organizations A map of `Organization`s to allow linking
+ * @param tag The tag to use for the element
+ */
 function encodePerson(
   person: stencila.Person,
-  as?: keyof HTMLElementTagNameMap
+  organizations: { [key: string]: [number, stencila.Organization] },
+  tag?: keyof HTMLElementTagNameMap,
+  property: string = 'author'
 ): HTMLElement {
   const {
-    givenNames = [],
-    familyNames = [],
+    name,
+    givenNames,
+    familyNames,
     url,
-    emails = [],
-    // affiliations,
+    emails,
+    affiliations,
     ...lost
   } = person
   logWarnLossIfAny('html', 'encode', person, lost)
 
-  const name = [
-    h('span', { itemprop: 'familyName' }, familyNames.join(' ')),
-    h('span', { itemprop: 'givenName' }, givenNames.join(' '))
-  ]
+  // For an `Article.author`, GSDTT requires the `name` property
+  // so ensure a value for that...
+  const nameString =
+    name !== undefined
+      ? name
+      : familyNames !== undefined
+      ? givenNames !== undefined
+        ? [...givenNames, ...familyNames].join(' ')
+        : familyNames.join(' ')
+      : 'Anonymous'
+
+  const namesElem = h(
+    'span',
+    {
+      attrs: {
+        itemprop: 'name',
+        // Always use the calculated `nameString` as the content of this property
+        content: nameString
+      }
+    },
+    encodeMaybe(givenNames, names =>
+      h('span', { itemprop: 'givenName' }, names.join(' '))
+    ),
+    encodeMaybe(familyNames, names =>
+      h('span', { itemprop: 'familyName' }, names.join(' '))
+    ),
+    // Display the calculated `nameString` if no given or family names
+    familyNames === undefined && givenNames === undefined ? nameString : undefined
+  )
+
+  const linkElem =
+    url !== undefined
+      ? h('a', { itemprop: 'url', content: url, href: url }, namesElem)
+      : namesElem
+
+  const emailsElem =
+    emails !== undefined
+      ? h(
+          'ol',
+          { class: 'emails' },
+          emails.map(email =>
+            h(
+              'li',
+              h('a', { itemprop: 'email', href: `mailto:${email}` }, email)
+            )
+          )
+        )
+      : undefined
+
+  const affiliationsElem =
+    affiliations !== undefined
+      ? h(
+          'ol',
+          { class: 'affiliations' },
+          affiliations.map(affiliation => {
+            const entry = organizations[affiliation.name || '']
+            if (entry !== undefined) {
+              const [index, org] = entry
+              return h(
+                'li',
+                h('a', { itemprop: 'affiliation', href: `#${org.id}` }, index)
+              )
+            }
+          })
+        )
+      : undefined
 
   return h(
-    as || 'span',
+    tag || 'span',
     {
       attrs: {
         itemtype: 'https://schema.org/Person',
         itemscope: true,
-        itemprop: 'author'
+        itemprop: property
       }
     },
-    url ? h('a', { href: url }, ...name) : name,
-    ...emails.map(email => h('a', { href: `mailto:${email}`, itemprop: 'email'}, email))
+    linkElem,
+    emailsElem,
+    affiliationsElem
   )
 }
 
 function encodeOrganization(
   org: stencila.Organization,
-  as?: keyof HTMLElementTagNameMap
+  tag?: keyof HTMLElementTagNameMap
 ): HTMLElement {
-  const { name, url, ...lost} = org
+  const { id, name, url, address, ...lost } = org
   logWarnLossIfAny('html', 'encode', org, lost)
 
+  const nameElem = h('span', { itemprop: 'name' }, name)
+  const linkElem =
+    url !== undefined
+      ? h('a', { itemprop: 'url', content: url, href: url }, nameElem)
+      : nameElem
+  const addressElem =
+    address !== undefined
+      ? h('address', { itemprop: 'address' }, address)
+      : undefined
   return h(
-    as || 'div',
-    url ? h('a', { href: url }, name) : name
+    tag || 'div',
+    {
+      attrs: {
+        itemtype: 'https://schema.org/Organization',
+        itemscope: true,
+        itemid: `#${id}`
+      },
+      id
+    },
+    linkElem,
+    addressElem
   )
 }
 
@@ -1363,6 +1503,7 @@ function encodeCode(
  * Decode a HTML `<img>` element to a Stencila `ImageObject`.
  */
 function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
+<<<<<<<
   const image: stencila.ImageObject = {
     type: 'ImageObject',
     contentUrl: elem.getAttribute('src') || ''
@@ -1370,16 +1511,36 @@ function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
   if (elem.title) image.title = elem.title
   if (elem.alt) image.text = elem.alt
   return image
+=======
+  const { src, title, alt } = elem
+  return stencila.imageObject(src, {
+    title,
+    text: alt
+  })
+>>>>>>>
 }
 
 /**
  * Encode a Stencila `ImageObject` to a HTML `<img>` element.
+ *
+ * The default is to add `itemprop="image"`, a property of `Thing`,
+ * but other property names may be appropriate for other things
+ * e.g. `diagram` for `AnatomicalStructure`, or `screenshot` for `SorftwareApplication`.
+ * See https://schema.org/ImageObject
  */
-function encodeImageObject(image: stencila.ImageObject): HTMLImageElement {
+function encodeImageObject(
+  image: stencila.ImageObject,
+  property: string = 'image'
+): HTMLImageElement {
+  const { contentUrl, title, text } = image
   return h('img', {
-    src: image.contentUrl,
-    title: image.title,
-    alt: image.text
+    attrs: {
+      itemtype: 'https://schema.org/ImageObject',
+      itemprop: property
+    },
+    src: contentUrl,
+    title,
+    alt: text
   })
 }
 
