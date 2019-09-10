@@ -17,12 +17,12 @@ test('sniff', async () => {
 describe('decode', () => {
   it('creates a flat collection from a flat dir', async () => {
     const collection = await decode(flat)
-    expect(collection).toEqual(flatNode)
+    expect(collection).toMatchObject(flatNode)
   })
 
   it('creates a nested collection from a shallow dir', async () => {
     const collection = await decode(shallow)
-    expect(collection).toEqual(shallowNode)
+    expect(collection).toMatchObject(shallowNode)
   })
 
   it('has a patterns option', async () => {
