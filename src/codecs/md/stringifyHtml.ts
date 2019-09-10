@@ -2,7 +2,7 @@ import * as A from 'fp-ts/lib/Array'
 import { eqString } from 'fp-ts/lib/Eq'
 import { not } from 'fp-ts/lib/function'
 import * as O from 'fp-ts/lib/Option'
-import { Literal, Node, Parent } from 'UNIST'
+import { Literal, Node, Parent } from 'unist'
 import { log } from '.'
 
 const selfClosingTags = [
@@ -93,7 +93,7 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
   let skipUntil: number | undefined
 
   const children = tree.children.reduce(
-    (innerTree: Node[], node: Node, idx) => {
+    (innerTree: Node[], node: Node, idx: number) => {
       if (skipUntil && idx <= skipUntil) {
         return innerTree
       }
