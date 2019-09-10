@@ -1,3 +1,10 @@
+# [0.74.0](https://github.com/stencila/encoda/compare/v0.73.0...v0.74.0) (2019-09-10)
+
+
+### Features
+
+* **CLI:** Allow for multiple output files ([521e198](https://github.com/stencila/encoda/commit/521e198))
+
 # [0.73.0](https://github.com/stencila/encoda/compare/v0.72.0...v0.73.0) (2019-09-10)
 
 
