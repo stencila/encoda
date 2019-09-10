@@ -44,22 +44,20 @@ const log = getLogger('encoda:html')
 const slugger = new GithubSlugger()
 
 /**
- * Given a possibly undefined property, will return the HTML provided as the second argument if `prop` is truthy,
+ * Given a possibly undefined value, or empty array, return the HTML provided as the second argument
  * otherwise returns undefined.
- * @param {unknown} prop - Any possibly falsy value, most often an optional Stencila Schema node property
- * @param {HTMLElement} htmlContent - HTMLElement, usually a direct call to `hyperscript`
+ *
+ * @param {unknown} value - Any possibly falsy value, most often an optional Stencila Schema node property
+ * @param {HTMLElement} html - `HTMLElement` (usually a direct call to `hyperscript`) or function that produces it
  */
-const optionalHTML = (
-  prop: unknown = undefined,
-  htmlContent: HTMLElement
-): HTMLElement | undefined => (prop ? htmlContent : undefined)
-
 const encodeMaybe = <T>(
-  maybe: T | undefined,
-  html: (defined: T) => HTMLElement
+  value: T | undefined,
+  html: HTMLElement | ((defined: T) => HTMLElement)
 ): HTMLElement | undefined => {
-  return maybe !== undefined && (Array.isArray(maybe) ? maybe.length > 0 : true)
-    ? html(maybe)
+  return value !== undefined && (Array.isArray(value) ? value.length > 0 : true)
+    ? typeof html === 'function'
+      ? html(value)
+      : html
     : undefined
 }
 
@@ -199,7 +197,7 @@ export class HTMLCodec extends Codec implements Codec {
 
     if (isStandalone) {
       const nodeToEncode = isBundle ? await bundle(node) : node
-      const { title, ...metadata } = getArticleMetaData(nodeToEncode)
+      const { title = 'Untitled', ...metadata } = getArticleMetaData(nodeToEncode)
       dom = generateHtmlElement(
         stringifyContent(title),
         metadata,
@@ -653,13 +651,15 @@ function encodeAuthorsProperty(
           : encodeOrganization(author, 'li')
       )
     ),
-    optionalHTML(Object.keys(orgs).length, h(
-      'ol',
-      { class: 'organizations' },
-      ...Object.values(orgs).map(([index, org]) =>
-        encodeOrganization(org, 'li')
-      )
-    ))
+    Object.keys(orgs).length > 0
+      ? h(
+          'ol',
+          { class: 'organizations' },
+          ...Object.values(orgs).map(([index, org]) =>
+            encodeOrganization(org, 'li')
+          )
+        )
+      : undefined
   )
 }
 
@@ -780,7 +780,7 @@ function encodeCreativeWork(
     h(url ? 'a' : 'span', { itemprop: 'headline', href: url }, title),
     encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
-    optionalHTML(url, h('a', { itemprop: 'url', href: url }, url)),
+    encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
     encodeNodes(content)
   )
 }
@@ -1041,16 +1041,13 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
  * Encode a `stencila.Cite` to a `<cite>` element.
  */
 function encodeCite(cite: stencila.Cite): HTMLElement {
+  const { prefix, target, suffix, ...lost } = cite
+  logWarnLossIfAny('html', 'encode', cite, lost)
+
   const content = [
-    optionalHTML(
-      cite.prefix,
-      h('span', { itemprop: 'citePrefix' }, [cite.prefix])
-    ),
-    h('a', { href: encodeHref(cite.target) }, cite.target),
-    optionalHTML(
-      cite.suffix,
-      h('span', { itemprop: 'citeSuffix' }, [cite.suffix])
-    )
+    encodeMaybe(prefix, h('span', { itemprop: 'citePrefix' }, [prefix])),
+    h('a', { href: encodeHref(target) }, target),
+    encodeMaybe(suffix, h('span', { itemprop: 'citeSuffix' }, [suffix]))
   ].filter(isDefined)
 
   return h('cite', content)
@@ -1110,8 +1107,8 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
   return h('figure', { id, title: label }, [
     ...encodeNodes(content),
     // TODO: determine best placement of figure label
-    // optionalHTML(label, h('label', label)),
-    optionalHTML(caption.length, h('figcaption', caption.map(encodeNode)))
+    // encodeMaybe(label, h('label', label)),
+    encodeMaybe(caption, h('figcaption', caption.map(encodeNode)))
   ])
 }
 
