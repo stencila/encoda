@@ -34,7 +34,12 @@ export const binary = new BinWrapper()
  * Equivalent to the Pandoc `--data-dir` flag.
  * Instructs Pandoc where to find templates and other assets.
  */
-export const dataDir = path.join(home, isCompiled ? 'dist' : 'src', 'codecs', 'pandoc')
+export const dataDir = path.join(
+  home,
+  isCompiled ? 'dist' : 'src',
+  'codecs',
+  'pandoc'
+)
 
 /**
  * Install the Pandoc binary if it is not already
