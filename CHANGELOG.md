@@ -1,3 +1,23 @@
+# [0.73.0](https://github.com/stencila/encoda/compare/v0.72.0...v0.73.0) (2019-09-10)
+
+
+### Bug Fixes
+
+* Stringify title as needed during decoding ([d12e8ab](https://github.com/stencila/encoda/commit/d12e8ab))
+* Upgrade Schema and Thema and fix tests ([745b681](https://github.com/stencila/encoda/commit/745b681))
+* **HTML:** Encode media to a sibling folder ([b79dac8](https://github.com/stencila/encoda/commit/b79dac8))
+* **HTML:** Fix itemtypes and encode title & description ([3faa828](https://github.com/stencila/encoda/commit/3faa828))
+* **HTML:** Improve encoding of author properties e.g affiliations ([9573dba](https://github.com/stencila/encoda/commit/9573dba))
+* **JATS:** Decode figure id ([1cf817b](https://github.com/stencila/encoda/commit/1cf817b))
+* **JATS:** Encode and decode article abstract ([f469763](https://github.com/stencila/encoda/commit/f469763))
+* **JATS:** Improve decoding of affiliations ([15a6514](https://github.com/stencila/encoda/commit/15a6514))
+
+
+### Features
+
+* **HTML:** Encode article authors ([63c580c](https://github.com/stencila/encoda/commit/63c580c))
+* **JATS:** Decode title and description as content ([b4867fd](https://github.com/stencila/encoda/commit/b4867fd))
+
 # [0.72.0](https://github.com/stencila/encoda/compare/v0.71.3...v0.72.0) (2019-09-10)
 
 
