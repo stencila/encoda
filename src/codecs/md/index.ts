@@ -1271,12 +1271,15 @@ function stringifyExtensions(tree: UNIST.Node) {
 const htmlCodec = new HTMLCodec()
 
 /**
- * Decode a `MDAST.HTML` to a stencila `Node`
+ * Decode a `MDAST.HTML` node to a Stencila `Node`
  *
- * At present this just returns the raw HTML.
+ * This delegates to the `html` codec. If the HTML fragment is
+ * not handled there (e.g. HTML with only non-semantic elements like `<div>`s)
+ * then decode to an empty string
  */
 function decodeHTML(html: MDAST.HTML): stencila.Node {
-  return htmlCodec.decodeHtml(html.value)
+  const node = htmlCodec.decodeHtml(html.value)
+  return node !== undefined ? node : ''
 }
 
 /**

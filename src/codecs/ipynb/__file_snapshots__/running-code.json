@@ -51,10 +51,7 @@
           "text": "Shift-Enter"
         },
         " or pressing the ",
-        "<button class='btn btn-default btn-xs'>",
-        "<i class=\"icon-step-forward fa fa-step-forward\">",
-        "</i>",
-        "</button>",
+        "",
         " button in the toolbar above:"
       ]
     },
@@ -130,10 +127,7 @@
       "type": "Paragraph",
       "content": [
         "Code is run in a separate process called the Kernel.  The Kernel can be interrupted or restarted.  Try running the following cell and then hit the ",
-        "<button class='btn btn-default btn-xs'>",
-        "<i class='icon-stop fa fa-stop'>",
-        "</i>",
-        "</button>",
+        "",
         " button in the toolbar above."
       ]
     },
@@ -244,10 +238,7 @@
       "type": "Paragraph",
       "content": [
         "The kernel maintains the state of a notebook's computations. You can reset this state by restarting the kernel. This is done by clicking on the ",
-        "<button class='btn btn-default btn-xs'>",
-        "<i class='fa fa-repeat icon-repeat'>",
-        "</i>",
-        "</button>",
+        "",
         " in the toolbar above."
       ]
     },

@@ -113,13 +113,19 @@ const propsToValues = (el: HTMLElement) => (
 export class HTMLCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/html']
 
-  public decodeHtml = (htmlContent: VFileContents): stencila.Node => {
+  /**
+   * Decode HTML content.
+   *
+   * Note that, if the HTML does not contain any handled elements, this will
+   * return `undefined`.
+   */
+  public decodeHtml = (
+    htmlContent: VFileContents
+  ): stencila.Node | undefined => {
     const dom = new jsdom.JSDOM(htmlContent)
     const document = dom.window.document
     collapse(document)
-    const node = decodeNode(document)
-    if (!node) throw new Error(`Unable to decode HTML`)
-    return node
+    return decodeNode(document)
   }
 
   /**
@@ -132,7 +138,17 @@ export class HTMLCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const html = await vfile.dump(file)
-    return this.decodeHtml(html)
+    const node = this.decodeHtml(html)
+    if (node === undefined) {
+      log.warn(
+        `No node could be decoded from HTML: ${
+          html.length > 10 ? html.substr(0, 10) + '...' : html
+        }`
+      )
+      return ''
+    } else {
+      return node
+    }
   }
 
   /**
@@ -389,7 +405,7 @@ function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
 /**
  * Decode a `#document` node to a `stencila.Node`.
  */
-function decodeDocument(doc: HTMLDocument): stencila.Node {
+function decodeDocument(doc: HTMLDocument): stencila.Node | undefined {
   const head = doc.querySelector('head')
   if (!head) throw new Error('Document does not have a <head>!')
 
@@ -401,9 +417,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
   delete metadata['@context']
 
   if (!jsonld && body.childElementCount === 1) {
-    const node = decodeNode(body.children[0])
-    if (!node) throw new Error(`Top level node is not defined`)
-    return node
+    return decodeNode(body.children[0])
   }
 
   // TODO: Allow for the different types of creative work based on type in
