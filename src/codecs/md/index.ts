@@ -39,8 +39,10 @@ import { selectAll } from 'unist-util-select'
 import * as vfile from '../../util/vfile'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import { Codec } from '../types'
+import { HTMLCodec } from '../html'
+import { stringifyHTML } from './stringifyHtml'
 
-const log = getLogger('encoda:md')
+export const log = getLogger('encoda:md')
 
 export class MdCodec extends Codec implements Codec {
   public readonly mediaTypes = ['text/markdown', 'text/x-markdown']
@@ -146,7 +148,8 @@ export function decodeMarkdown(md: string): stencila.Node {
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
-  return decodeNode(resolveReferences(mdast))
+
+  return decodeNode(stringifyHTML(resolveReferences(mdast)))
 }
 
 /**
@@ -1265,15 +1268,18 @@ function stringifyExtensions(tree: UNIST.Node) {
   })
 }
 
+const htmlCodec = new HTMLCodec()
+
 /**
- * Decode a `MDAST.HTML` to a stencila `Node`
+ * Decode a `MDAST.HTML` node to a Stencila `Node`
  *
- * At present this just returns the raw HTML.
+ * This delegates to the `html` codec. If the HTML fragment is
+ * not handled there (e.g. HTML with only non-semantic elements like `<div>`s)
+ * then decode to an empty string
  */
-function decodeHTML(html: MDAST.HTML): string {
-  // TODO: Make this function async and and return
-  // the decoded HTML i.e. `return load(html.value, 'html')`
-  return html.value
+function decodeHTML(html: MDAST.HTML): stencila.Node {
+  const node = htmlCodec.decodeHtml(html.value)
+  return node !== undefined ? node : ''
 }
 
 /**

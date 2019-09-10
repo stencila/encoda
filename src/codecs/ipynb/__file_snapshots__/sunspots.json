@@ -89,157 +89,155 @@
       },
       "text": "df.head()",
       "outputs": [
-        [
-          {
-            "type": "Table",
-            "rows": [
-              {
-                "type": "TableRow",
-                "cells": []
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "0"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "1700"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "5"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "1"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "1701"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "11"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "2"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "1702"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "16"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "3"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "1703"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "23"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "4"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "1704"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "36"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+        {
+          "type": "Table",
+          "rows": [
+            {
+              "type": "TableRow",
+              "cells": []
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "1700"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "1701"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "11"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "1702"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "16"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "3"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "1703"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "23"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "4"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "1704"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "36"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -249,157 +247,155 @@
       },
       "text": "df.tail()",
       "outputs": [
-        [
-          {
-            "type": "Table",
-            "rows": [
-              {
-                "type": "TableRow",
-                "cells": []
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "304"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "2004"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "40.4"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "305"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "2005"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "29.8"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "306"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "2006"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "15.2"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "307"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "2007"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "7.5"
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "TableRow",
-                "cells": [
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      {
-                        "type": "Strong",
-                        "content": [
-                          "308"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "2008"
-                    ]
-                  },
-                  {
-                    "type": "TableCell",
-                    "content": [
-                      "2.9"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+        {
+          "type": "Table",
+          "rows": [
+            {
+              "type": "TableRow",
+              "cells": []
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "304"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "2004"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "40.4"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "305"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "2005"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "29.8"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "306"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "2006"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "15.2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "307"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "2007"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "7.5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableRow",
+              "cells": [
+                {
+                  "type": "TableCell",
+                  "content": [
+                    {
+                      "type": "Strong",
+                      "content": [
+                        "308"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "2008"
+                  ]
+                },
+                {
+                  "type": "TableCell",
+                  "content": [
+                    "2.9"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
