@@ -314,24 +314,39 @@ interface ConvertOptions {
  * Convert content from one format to another.
  *
  * @param input The input content (raw or file path).
- * @param outputPath The output file path.
+ * @param outputPaths The output file path/s.
  * @param options Conversion options e.g `from` and `to`: to specify the formats to convert from/to
  * @returns The converted content, or file path (for converters that only write to files).
  */
 export async function convert(
   input: string,
-  outputPath?: string,
+  outputPaths?: string | string[],
   { to, from, encodeOptions }: ConvertOptions = {}
 ): Promise<string | undefined> {
+  let outputPaths_: (string | undefined)[]
+  if (outputPaths === undefined) outputPaths_ = [undefined]
+  else if (typeof outputPaths === 'string') outputPaths_ = [outputPaths]
+  else outputPaths_ = outputPaths
+
   const inputFile = vfile.create(input)
   const node = await decode(inputFile, input, from)
 
-  const outputFile = await encode(node, {
-    ...defaultEncodeOptions,
-    format: to,
-    filePath: outputPath,
-    ...encodeOptions
-  })
-  if (outputPath) await vfile.write(outputFile, outputPath)
-  return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
+  let index = 0
+  for (const outputPath of outputPaths_) {
+    const outputFile = await encode(node, {
+      ...defaultEncodeOptions,
+      format: to,
+      filePath: outputPath,
+      ...encodeOptions
+    })
+    if (outputPath !== undefined) await vfile.write(outputFile, outputPath)
+
+    // The `to` option only applies to the first output
+    to = undefined
+
+    // Return the contents, or path, of the last output file
+    index += 1
+    if (index === outputPaths_.length)
+      return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
+  }
 }

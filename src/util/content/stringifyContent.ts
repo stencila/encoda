@@ -12,6 +12,7 @@ const log = getLogger('encoda:stringify')
  * `gdoc` and `md` codecs.
  */
 export const stringifyContent = (node: stencila.Node): string => {
+  if (node === undefined) return ''
   if (node === null) return 'null'
   if (Array.isArray(node)) return node.map(stringifyContent).join('')
   if (typeof node === 'object') {

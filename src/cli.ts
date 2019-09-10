@@ -67,7 +67,7 @@ configure(options.debug)
       const { to, from, standalone, bundle, ...rest } = options
       const theme = getTheme(options.theme)
 
-      await convert(args[0], args[1], {
+      await convert(args[0], args.slice(1), {
         to,
         from,
         encodeOptions: {
