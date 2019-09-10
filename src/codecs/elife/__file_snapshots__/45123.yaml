@@ -6,7 +6,7 @@ authors:
     type: Person
     affiliations:
       - name: Department of Cell Biology
-        address: Spain
+        address: 'Valencia, Spain'
         type: Organization
   - givenNames:
       - Sacri
@@ -18,12 +18,20 @@ authors:
       - sacramento.rodriguez@uv.es
     affiliations:
       - name: Department of Cell Biology
-        address: Spain
+        address: 'Valencia, Spain'
         type: Organization
       - name: ERI BiotecMed
-        address: Spain
+        address: 'Valencia, Spain'
         type: Organization
 title: Beyond protein-coding genes
+description:
+  - content:
+      - 'A long non-coding RNA called '
+      - type: Emphasis
+        content:
+          - lnc-NR2F1
+      - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
+    type: Paragraph
 type: Article
 content:
   - content:

@@ -3,22 +3,30 @@
 exports[`Encode & Decode references encode - citegroup and references 1`] = `
 "<article itemtype=\\"https://schema.org/Article\\" itemscope=\\"true\\">
   <h1 itemprop=\\"headline\\">An example of using the CiteGroup node type</h1>
-  <ol class=\\"authors\\">
-    <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"familyName\\">Bloggs</span><span itemprop=\\"givenName\\">Joe</span></li>
-  </ol>
+  <div>
+    <ol class=\\"authors\\">
+      <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"name\\" content=\\"Joe Bloggs\\"><span itemprop=\\"givenName\\">Joe</span><span itemprop=\\"familyName\\">Bloggs</span></span></li>
+    </ol>
+  </div>
   <p>Citing two articles <span itemtype=\\"https://schema.stenci.la/CiteGroup\\"><cite><a href=\\"#some-one-else-1991\\">some-one-else-1991</a></cite><cite><a href=\\"#updated-works-2009\\">updated-works-2009</a></cite><cite><a href=\\"https://www.fullUrl.com\\">https://www.fullUrl.com</a></cite></span>.</p>
   <section>
     <h2>References</h2>
     <ol class=\\"references\\">
       <li id=\\"some-one-else-1991\\" itemtype=\\"https://schema.org/CreativeWork\\" itemscope=\\"true\\" itemprop=\\"citation\\"><span itemprop=\\"headline\\">Another article by someone else</span>
-        <ol class=\\"authors\\">
-          <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"familyName\\">Else</span><span itemprop=\\"givenName\\">SomeOne</span></li>
-        </ol><time itemprop=\\"datePublished\\" datetime=\\"1991\\">1991</time>
+        <div>
+          <ol class=\\"authors\\">
+            <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"name\\" content=\\"Some One Else\\"><span itemprop=\\"givenName\\">Some
+                  One</span><span itemprop=\\"familyName\\">Else</span></span></li>
+          </ol>
+        </div><time itemprop=\\"datePublished\\" datetime=\\"1991\\">1991</time>
       </li>
       <li id=\\"update-works-2009\\" itemtype=\\"https://schema.org/CreativeWork\\" itemscope=\\"true\\" itemprop=\\"citation\\"><span itemprop=\\"headline\\">A Better Updated Work</span>
-        <ol class=\\"authors\\">
-          <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"familyName\\">Person</span><span itemprop=\\"givenName\\">SomeBetter</span></li>
-        </ol><time itemprop=\\"datePublished\\" datetime=\\"2009\\">2009</time>
+        <div>
+          <ol class=\\"authors\\">
+            <li itemtype=\\"https://schema.org/Person\\" itemscope=\\"true\\" itemprop=\\"author\\"><span itemprop=\\"name\\" content=\\"Some Better Person\\"><span itemprop=\\"givenName\\">Some
+                  Better</span><span itemprop=\\"familyName\\">Person</span></span></li>
+          </ol>
+        </div><time itemprop=\\"datePublished\\" datetime=\\"2009\\">2009</time>
       </li>
     </ol>
   </section>

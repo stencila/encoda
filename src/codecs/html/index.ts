@@ -3,15 +3,15 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { cite } from '@stencila/schema'
-import stencila, { Entity } from '@stencila/schema'
+// eslint-disable-next-line import/no-duplicates
 import * as stencila from '@stencila/schema'
 import {
   isArticle,
   isCreativeWork,
   markTypes,
   nodeType
-} from '@stencila/schema/dist/util'
+  // eslint-disable-next-line import/no-duplicates
+} from '@stencila/schema'
 import { themePath, themes } from '@stencila/thema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
@@ -583,7 +583,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
     type,
     title,
     authors,
-    datePublished = stencila.date(new Date().toISOString()),
+    datePublished,
     description,
     content = [],
     references,
@@ -594,7 +594,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   return h(
     'article',
     { attrs: { itemtype: 'https://schema.org/Article', itemscope: true } },
-    encodeTitleProperty(title),
+    encodeMaybe(title, title => encodeTitleProperty(title)),
     encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     encodeMaybe(description, desc => encodeDescriptionProperty(desc)),
@@ -621,6 +621,7 @@ function encodeTitleProperty(title: string | stencila.Node[]): HTMLElement {
 function encodeAuthorsProperty(
   authors: (stencila.Person | stencila.Organization)[]
 ): HTMLElement {
+  const init: { [key: string]: [number, stencila.Organization] } = {}
   const orgs = authors
     .map(author =>
       stencila.isA('Person', author) && author.affiliations !== undefined
@@ -628,22 +629,19 @@ function encodeAuthorsProperty(
         : []
     )
     .reduce((prev, curr) => [...prev, ...curr], [])
-    .reduce(
-      (prev, curr) => {
-        if (curr.name !== undefined && prev[curr.name] === undefined) {
-          const index = Object.keys(prev).length + 1
-          prev[curr.name] = [
-            index,
-            {
-              ...curr,
-              id: `author-organization-${index}`
-            }
-          ]
-        }
-        return prev
-      },
-      {} as { [key: string]: [number, stencila.Organization] }
-    )
+    .reduce((prev, curr) => {
+      if (curr.name !== undefined && prev[curr.name] === undefined) {
+        const index = Object.keys(prev).length + 1
+        prev[curr.name] = [
+          index,
+          {
+            ...curr,
+            id: `author-organization-${index}`
+          }
+        ]
+      }
+      return prev
+    }, init)
   return h(
     'div',
     h(
@@ -655,13 +653,13 @@ function encodeAuthorsProperty(
           : encodeOrganization(author, 'li')
       )
     ),
-    h(
+    optionalHTML(Object.keys(orgs).length, h(
       'ol',
       { class: 'organizations' },
       ...Object.values(orgs).map(([index, org]) =>
         encodeOrganization(org, 'li')
       )
-    )
+    ))
   )
 }
 
@@ -853,7 +851,9 @@ function encodePerson(
       h('span', { itemprop: 'familyName' }, names.join(' '))
     ),
     // Display the calculated `nameString` if no given or family names
-    familyNames === undefined && givenNames === undefined ? nameString : undefined
+    familyNames === undefined && givenNames === undefined
+      ? nameString
+      : undefined
   )
 
   const linkElem =
@@ -1031,7 +1031,7 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
   const prefix = elem.querySelector('[itemprop="citePrefix"]')
   const suffix = elem.querySelector('[itemprop="citeSuffix"]')
 
-  return cite(decodeHref(target ? target.getAttribute('href') : '#'), {
+  return stencila.cite(decodeHref(target ? target.getAttribute('href') : '#'), {
     prefix: isDefined(prefix) ? prefix.textContent || undefined : undefined,
     suffix: isDefined(suffix) ? suffix.textContent || undefined : undefined
   })
@@ -1171,7 +1171,7 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
   return h('pre', attrs, code)
 }
 
-function encodeCodeOutput(node: stencila.Node) {
+function encodeCodeOutput(node: stencila.Node): HTMLElement {
   const content = (() => {
     switch (nodeType(node)) {
       case 'string':
@@ -1503,21 +1503,12 @@ function encodeCode(
  * Decode a HTML `<img>` element to a Stencila `ImageObject`.
  */
 function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
-<<<<<<<
-  const image: stencila.ImageObject = {
-    type: 'ImageObject',
-    contentUrl: elem.getAttribute('src') || ''
-  }
-  if (elem.title) image.title = elem.title
-  if (elem.alt) image.text = elem.alt
-  return image
-=======
-  const { src, title, alt } = elem
+  const src = elem.getAttribute('src') || ''
+  const { title, alt } = elem
   return stencila.imageObject(src, {
-    title,
-    text: alt
+    title: title.length > 0 ? title : undefined,
+    text: alt.length > 0 ? alt : undefined
   })
->>>>>>>
 }
 
 /**
@@ -1535,7 +1526,8 @@ function encodeImageObject(
   const { contentUrl, title, text } = image
   return h('img', {
     attrs: {
-      itemtype: 'https://schema.org/ImageObject',
+      // TODO: Consider reinstating `itemtype` here. Currently breaks kitchen sink decode test.
+      // itemtype: 'https://schema.org/ImageObject',
       itemprop: property
     },
     src: contentUrl,

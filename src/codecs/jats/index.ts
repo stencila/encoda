@@ -22,7 +22,6 @@ import {
   Attributes
 } from '../../util/xml'
 import { Codec } from '../types'
-import { nodeType } from '@stencila/schema'
 
 const log = getLogger('encoda:jats')
 
@@ -182,7 +181,8 @@ function encodeArticle(article: stencila.Article): xml.Element {
 function decodeTitle(elem: xml.Element | null): string | stencila.Node[] {
   if (elem === null) return 'Untitled'
   const nodes = decodeElement(elem, initialDecodeState())
-  if (nodes.length === 1 && typeof nodes[0] == 'string') return nodes[0]
+  if (nodes.length === 1 && typeof nodes[0] === 'string')
+    return nodes[0] as string
   else return nodes
 }
 
@@ -205,7 +205,7 @@ function decodeAbstract(
 function encodeAbstract(
   description?: string | stencila.Node[]
 ): xml.Element | null {
-  if (description == undefined) return null
+  if (description === undefined) return null
   const paras =
     typeof description === 'string'
       ? elem('p', description)
@@ -338,7 +338,7 @@ function decodeAff(aff: xml.Element): stencila.Organization {
     'city',
     'state',
     'country',
-    'postal-code',
+    'postal-code'
   ])
   const url = textOrUndefined(child(aff, 'uri'))
 
@@ -577,7 +577,7 @@ interface DecodeState {
   sectionDepth: number
 }
 
-const initialDecodeState = () => ({
+const initialDecodeState = (): DecodeState => ({
   sectionId: '',
   sectionDepth: 0
 })
@@ -607,7 +607,7 @@ interface EncodeState {
   references: { [rid: string]: string }
 }
 
-const initialEncodeState = () => ({
+const initialEncodeState = (): EncodeState => ({
   tables: 0,
   citations: {},
   references: {}
