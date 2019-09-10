@@ -1,3 +1,15 @@
+# [0.72.0](https://github.com/stencila/encoda/compare/v0.71.3...v0.72.0) (2019-09-10)
+
+
+### Bug Fixes
+
+* **HTML, Mardown:** Gracefully handle HTML fragments that are not explicitly decoded ([b8504f6](https://github.com/stencila/encoda/commit/b8504f6))
+
+
+### Features
+
+* **MD:** Decode HTML inside Markdown using Encoda's HTML Codec ([08cf4bf](https://github.com/stencila/encoda/commit/08cf4bf))
+
 ## [0.71.3](https://github.com/stencila/encoda/compare/v0.71.2...v0.71.3) (2019-09-04)
 
 
