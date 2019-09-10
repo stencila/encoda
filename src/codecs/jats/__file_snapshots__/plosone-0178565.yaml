@@ -7,8 +7,14 @@ authors:
       - Tiruveedula
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Chemical Engineering, National Institute of Technology
+          Karnataka, Surathkal, Mangalore, India
+        type: Organization
+      - name: >-
+          Department of Chemical Engineering, Indian Institute of Technology
+          Bombay, Powai, Mumbai, India
+        type: Organization
   - givenNames:
       - Pramod
       - P.
@@ -16,12 +22,55 @@ authors:
       - Wangikar
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Chemical Engineering, Indian Institute of Technology
+          Bombay, Powai, Mumbai, India
+        type: Organization
+      - name: >-
+          DBT-Pan IIT Center for Bioenergy, Indian Institute of Technology
+          Bombay, Powai, Mumbai, India
+        type: Organization
+      - name: >-
+          Wadhwani Research Center for Bioengineering, Indian Institute of
+          Technology Bombay, Powai, Mumbai, India
+        type: Organization
 title: >-
   Gene essentiality, conservation index and co-evolution of genes in
   cyanobacteria
+description:
+  - content:
+      - >-
+        Cyanobacteria, a group of photosynthetic prokaryotes, dominate the earth
+        with ~ 10
+      - type: Superscript
+        content:
+          - '15'
+      - ' g wet biomass. Despite diversity in habitats and an ancient origin, cyanobacterial phylum has retained a significant core genome. Cyanobacteria are being explored for direct conversion of solar energy and carbon dioxide into biofuels. For this, efficient cyanobacterial strains will need to be designed via metabolic engineering. This will require identification of target knockouts to channelize the flow of carbon toward the product of interest while minimizing deletions of essential genes. We propose “Gene Conservation Index” (GCI) as a quick measure to predict gene essentiality in cyanobacteria. GCI is based on phylogenetic profile of a gene constructed with a reduced dataset of cyanobacterial genomes. GCI is the percentage of organism clusters in which the query gene is present in the reduced dataset. Of the 750 genes deemed to be essential in the experimental study on '
+      - type: Emphasis
+        content:
+          - S
+      - '. '
+      - type: Emphasis
+        content:
+          - elongatus
+      - ' PCC 7942, we found 494 to be conserved across the phylum which largely comprise of the essential metabolic pathways. On the contrary, the conserved but non-essential genes broadly comprise of genes required under stress conditions. Exceptions to this rule include genes such as the glycogen synthesis and degradation enzymes, deoxyribose-phosphate aldolase (DERA), glucose-6-phosphate 1-dehydrogenase ('
+      - type: Emphasis
+        content:
+          - zwf
+      - >-
+        ) and fructose-1,6-bisphosphatase class1, which are conserved but
+        non-essential. While the essential genes are to be avoided during gene
+        knockout studies as potentially lethal deletions, the non-essential but
+        conserved set of genes could be interesting targets for metabolic
+        engineering. Further, we identify clusters of co-evolving genes (CCG),
+        which provide insights that may be useful in annotation. Principal
+        component analysis (PCA) plots of the CCGs are demonstrated as data
+        visualization tools that are complementary to the conventional heatmaps.
+        Our dataset consists of phylogenetic profiles for 23,643 non-redundant
+        cyanobacterial genes. We believe that the data and the analysis
+        presented here will be a great resource to the scientific community
+        interested in cyanobacteria.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -293,7 +342,8 @@ content:
         type: Link
       - ' which is used to obtain a reduced genome database.'
     type: Paragraph
-  - content:
+  - id: pone.0178565.g001
+    content:
       - contentUrl: g001.png
         format: image
         meta:
@@ -486,7 +536,8 @@ content:
         ). Conservation indices for the protein profiles were computed based on
         the abridged strings.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g002
+    content:
       - contentUrl: g002.png
         format: image
         meta:
@@ -606,7 +657,8 @@ content:
         that have diverged significantly in the subsets of organisms and are not
         merely paralogs.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g003
+    content:
       - contentUrl: g003.png
         format: image
         meta:
@@ -665,7 +717,8 @@ content:
         type: ListItem
     order: ascending
     type: List
-  - content:
+  - id: pone.0178565.g004
+    content:
       - contentUrl: g004.png
         format: image
         meta:
@@ -1049,7 +1102,8 @@ content:
         used in the three studies. Our analysis includes symbiotic strains which
         may lack some of the core metabolic genes.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g005
+    content:
       - contentUrl: g005.png
         format: image
         meta:
@@ -2336,7 +2390,8 @@ content:
         clusters and further analysis on these proteins will give additional
         information about their functions.
     type: Paragraph
-  - content:
+  - id: pone.0178565.g006
+    content:
       - contentUrl: g006.png
         format: image
         meta:

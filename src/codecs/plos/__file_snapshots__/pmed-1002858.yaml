@@ -6,8 +6,14 @@ authors:
       - Leopold
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+        type: Organization
+      - name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+        type: Organization
   - givenNames:
       - James
       - A.
@@ -15,15 +21,24 @@ authors:
       - Watson
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+        type: Organization
+      - name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+        type: Organization
   - givenNames:
       - Atthanee
     familyNames:
       - Jeeyapant
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+        type: Organization
   - givenNames:
       - Julie
       - A.
@@ -31,7 +46,11 @@ authors:
       - Simpson
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Centre for Epidemiology and Biostatistics, Melbourne School of
+          Population and Global Health, The University of Melbourne, Melbourne,
+          Victoria, Australia
+        type: Organization
   - givenNames:
       - Nguyen
       - H.
@@ -39,7 +58,10 @@ authors:
       - Phu
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Oxford University Clinical Research Unit, Wellcome Trust Major
+          Overseas Programme, Ho Chi Minh City, Vietnam
+        type: Organization
   - givenNames:
       - Tran
       - T.
@@ -47,7 +69,10 @@ authors:
       - Hien
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Oxford University Clinical Research Unit, Wellcome Trust Major
+          Overseas Programme, Ho Chi Minh City, Vietnam
+        type: Organization
   - givenNames:
       - Nicholas
       - P.
@@ -56,8 +81,14 @@ authors:
       - Day
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+        type: Organization
+      - name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+        type: Organization
   - givenNames:
       - Arjen
       - M.
@@ -65,8 +96,14 @@ authors:
       - Dondorp
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+        type: Organization
+      - name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+        type: Organization
   - givenNames:
       - Nicholas
       - J.
@@ -74,11 +111,53 @@ authors:
       - White
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+        type: Organization
+      - name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+        type: Organization
 title: >-
   Investigating causal pathways in severe falciparum malaria: A pooled
   retrospective analysis of clinical studies
+description:
+  - content:
+      - >-
+        Severe falciparum malaria is a medical emergency characterised by
+        potentially lethal vital organ dysfunction. Patient fatality rates even
+        with parenteral artesunate treatment remain high. Despite considerable
+        research into adjuvant therapies targeting organ and tissue dysfunction,
+        none have shown efficacy apart from renal replacement therapy.
+        Understanding the causal contributions of clinical and laboratory
+        abnormalities to mortality is essential for the design and evaluation of
+        novel therapeutic interventions.
+    type: Paragraph
+  - content:
+      - >-
+        We used a structural model causal inference approach to investigate
+        causal relationships between epidemiological, laboratory, and clinical
+        variables in patients with severe falciparum malaria enrolled in
+        clinical trials and their in-hospital mortality. Under this causal
+        model, we analysed records from 9,040 hospitalised children (0–12
+        years, 
+      - type: Emphasis
+        content:
+          - 'n'
+      - ' = 5,635) and adults ('
+      - type: Emphasis
+        content:
+          - 'n'
+      - ' = 3,405, 12–87 years) with severe falciparum malaria from 15 countries in Africa and Asia who were studied prospectively over the past 35 years. On admission, patient covariates associated with increased in-hospital mortality were severity of acidosis (odds ratio [OR] 2.10 for a 7-mEq/L increase in base deficit [95% CI 1.93–2.28]), renal impairment (OR 1.71 for a 2-fold increase in blood urea nitrogen [95% CI 1.58, 1.86]), coma (OR 3.59 [95% CI 3.07–4.21]), seizures (OR 1.40 [95% CI 1.16–1.68]), shock (OR 1.51 [95% CI 1.14–1.99]), and presumed pulmonary oedema (OR 1.58 [95% CI 1.04–2.39]). Lower in-hospital mortality was associated with moderate anaemia (OR 0.87 for a decrease of 10 percentage points in haematocrit [95% CI 0.80–0.95]). Circulating parasite density was not associated with mortality (OR 1.02 for a 6-fold increase [95% CI 0.94–1.11]), so the pathological effects of parasitaemia appear to be mediated entirely by the downstream effects of sequestration. Treatment with an artemisinin derivative decreased mortality compared with quinine (OR 0.64 [95% CI 0.56–0.74]). These estimates were consistent across children and adults (mainly representing African and Asian patients, respectively). Using inverse probability weighting, transfusion was not estimated to be beneficial in children with admission haematocrit values between 15% and 25% (OR 0.99 [95% CI 0.97–1.02]). Except for the effects of artemisinin treatment and transfusion, causal interpretations of these estimates could be biased by unmeasured confounding from severe bacterial sepsis, immunity, and duration of illness.'
+    type: Paragraph
+  - content:
+      - >-
+        These data suggest that moderate anaemia is associated with a reduced
+        risk of death in severe falciparum malaria. This is possibly a direct
+        causal association. The severe anaemia threshold criteria for a
+        definition of severe falciparum malaria should be reconsidered.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -1399,7 +1478,8 @@ content:
         between age and haematocrit in children. The majority of data on young
         children are from the AQUAMAT study.
     type: Paragraph
-  - content:
+  - id: pmed.1002858.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1468,7 +1548,8 @@ content:
         ratios of 4.38 (95% CI 3.75–5.12) and 4.54 (95% CI 3.07–6.71),
         respectively.
     type: Paragraph
-  - content:
+  - id: pmed.1002858.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1604,7 +1685,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pmed.1002858.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1704,7 +1786,8 @@ content:
         type: Link
       - ' the relevant arrows for the estimation of the causal effect of antimalarial treatment, but this estimate is likely to be valid, as either the treatment assignment of an artemisinin derivative versus quinine was randomised (AQUAMAT, AQ, SEAQUAMAT), or it was study dependent and the regression model adjusts for study. Therefore, under an additional assumption of no unknown confounders for treatment assignment in the observational studies, and no systematic bias in patients included in the AAV and QC study (these patients only received artemisinin derivatives and only non-artemisinin drugs, respectively), this adjusted odds ratio can also be interpreted as causal.'
     type: Paragraph
-  - content:
+  - id: pmed.1002858.g004
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1804,7 +1887,8 @@ content:
         type: Cite
       - '].'
     type: Paragraph
-  - content:
+  - id: pmed.1002858.g005
+    content:
       - format: image/png
         meta:
           inline: false

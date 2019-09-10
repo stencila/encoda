@@ -5,7 +5,10 @@ authors:
       - Rodríguez-Mora
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
   - givenNames:
       - Flore
     familyNames:
@@ -13,21 +16,30 @@ authors:
       - Wit
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Molecular Virology and Gene Therapy, Department of Pharmaceutical and
+          Pharmacological Sciences, KU Leuven, Flanders, Belgium
+        type: Organization
   - givenNames:
       - Javier
     familyNames:
       - García-Perez
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
   - givenNames:
       - Mercedes
     familyNames:
       - Bermejo
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
   - givenNames:
       - María
       - Rosa
@@ -35,50 +47,75 @@ authors:
       - López-Huertas
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
+      - name: >-
+          Department of Infectious Diseases, Hospital Ramón y Cajal, Alcalá de
+          Henares University, Instituto Ramón y Cajal de Investigación Sanitaria
+          (IRYCIS), Madrid, Spain
+        type: Organization
   - givenNames:
       - Elena
     familyNames:
       - Mateos
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
   - givenNames:
       - Pilar
     familyNames:
       - Martí
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Neuromuscular Diseases Unit, Neurology Department, Hospital
+          Universitari i Politècnic La Fe, Valencia, Spain
+        type: Organization
   - givenNames:
       - Susana
     familyNames:
       - Rocha
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Laboratory for Photochemistry and Spectroscopy, Molecular Imaging and
+          Photonics, Department of Chemistry, KU Leuven, Flanders, Belgium
+        type: Organization
   - givenNames:
       - Lorena
     familyNames:
       - Vigón
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
   - givenNames:
       - Frauke
     familyNames:
       - Christ
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Molecular Virology and Gene Therapy, Department of Pharmaceutical and
+          Pharmacological Sciences, KU Leuven, Flanders, Belgium
+        type: Organization
   - givenNames:
       - Zeger
     familyNames:
       - Debyser
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Molecular Virology and Gene Therapy, Department of Pharmaceutical and
+          Pharmacological Sciences, KU Leuven, Flanders, Belgium
+        type: Organization
   - givenNames:
       - Juan
       - Jesús
@@ -86,26 +123,64 @@ authors:
       - Vílchez
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Neuromuscular Diseases Unit, Neurology Department, Hospital
+          Universitari i Politècnic La Fe, Valencia, Spain
+        type: Organization
+      - name: >-
+          Centro de Investigación Biomédica en Red de Enfermedades Raras
+          (CIBERER), Spain
+        type: Organization
   - givenNames:
       - Mayte
     familyNames:
       - Coiras
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
   - givenNames:
       - José
     familyNames:
       - Alcamí
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          AIDS Immunopathogenesis Unit, National Center of Microbiology,
+          Instituto de Salud Carlos III, Madrid, Spain
+        type: Organization
+      - name: >-
+          Infectious Diseases Unit, IBIDAPS, Hospital Clínic, University of
+          Barcelona, Spain
+        type: Organization
 title: >-
   The mutation of Transportin 3 gene that causes limb girdle muscular dystrophy
   1F induces protection against HIV-1 infection
+description:
+  - content:
+      - >-
+        The causative mutation responsible for limb girdle muscular dystrophy 1F
+        (LGMD1F) is one heterozygous single nucleotide deletion in the stop
+        codon of the nuclear import factor Transportin 3 gene 
+      - type: Emphasis
+        content:
+          - (TNPO3
+      - >-
+        ). This mutation causes a carboxy-terminal extension of 15 amino acids,
+        producing a protein of unknown function (TNPO3_mut) that is co-expressed
+        with wild-type TNPO3 (TNPO3_wt). TNPO3 has been involved in the nuclear
+        transport of serine/arginine-rich proteins such as splicing factors and
+        also in HIV-1 infection through interaction with the viral integrase and
+        capsid. We analyzed the effect of TNPO3_mut on HIV-1 infection using
+        PBMCs from patients with LGMD1F infected ex vivo. HIV-1 infection was
+        drastically impaired in these cells and viral integration was reduced
+        16-fold. No significant effects on viral reverse transcription and
+        episomal 2-LTR circles were observed suggesting that the integration of
+        HIV-1 genome was restricted. This is the second genetic defect described
+        after CCR5Δ32 that shows strong resistance against HIV-1 infection.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -343,7 +418,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: ppat.1007958.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1102,7 +1178,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: ppat.1007958.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1250,7 +1327,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: ppat.1007958.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1366,7 +1444,8 @@ content:
         ). No significant difference in the efficiency of reverse transcription
         in PBMCs from LGMD1F patients and healthy controls was detected.
     type: Paragraph
-  - content:
+  - id: ppat.1007958.g004
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1501,7 +1580,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: ppat.1007958.g005
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1594,7 +1674,8 @@ content:
         was not able to rescue HIV-1 replication in these cell lines thus
         validating its role as a defective host factor impairing HIV infection.
     type: Paragraph
-  - content:
+  - id: ppat.1007958.g006
+    content:
       - format: image/png
         meta:
           inline: false

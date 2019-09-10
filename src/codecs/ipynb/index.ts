@@ -18,6 +18,7 @@ import { Codec } from '../types'
 import * as nbformat3 from './nbformat-v3'
 import * as nbformat4 from './nbformat-v4'
 import { coerce } from '../../util/coerce'
+import { stringifyContent } from '../../util/content/stringifyContent'
 
 const log = getLogger('encoda:ipynb')
 
@@ -202,7 +203,7 @@ async function encodeNode(node: stencila.Node): Promise<nbformat4.Notebook> {
 
   const metadata = {
     ...meta,
-    title,
+    title: stringifyContent(title),
     authors
   }
 

@@ -13,7 +13,7 @@ import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
-import { dump, load } from '../../util/vfile'
+import * as vfile from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
 import { HTMLCodec, decodeHref } from './'
 
@@ -25,10 +25,10 @@ const { encode, decode } = new HTMLCodec()
 const e = async (
   node: stencila.Node,
   options = { ...defaultEncodeOptions, isStandalone: false }
-) => dump(await encode(node, options))
+) => vfile.dump(await encode(node, options))
 
 const d = async (htmlString: string): Promise<stencila.Node> =>
-  decode(load(htmlString))
+  decode(vfile.load(htmlString))
 
 test('decode', async () => {
   expect(await d(kitchenSink.html)).toEqual(kitchenSink.node)
@@ -36,10 +36,13 @@ test('decode', async () => {
   expect(await d(dt.html)).toEqual(dt.node)
 })
 
-test('encode', async () => {
-  expect(await e(kitchenSink.node)).toEqual(kitchenSink.html)
-  expect(await e(attrs.node)).toEqual(attrs.html)
-  expect(await e(dt.node)).toEqual(dt.html)
+describe('encode', () => {
+  test('Encode kitchenSink', async () =>
+    expect(await e(kitchenSink.node)).toEqual(kitchenSink.html))
+  test('Encode attrs', async () =>
+    expect(await e(attrs.node)).toEqual(attrs.html))
+  test('Encode Datatable', async () =>
+    expect(await e(dt.node)).toEqual(dt.html))
 })
 
 describe('String escaping', () => {
@@ -66,7 +69,7 @@ describe('Encode & Decode cite nodes', () => {
   })
 
   test('decode', async () => {
-    expect(await decode(load(htmlNode))).toEqual(schemaNode)
+    expect(await decode(vfile.load(htmlNode))).toEqual(schemaNode)
   })
 
   test('encode with prefix & suffix', async () => {
@@ -98,7 +101,7 @@ describe('Encode & Decode cite group nodes', () => {
   const cite2 = cite('mySecondTarget')
 
   const schemaNode = citeGroup([cite1, cite2])
-  const htmlNode = `<span itemtype="schema:CiteGroup">
+  const htmlNode = `<span itemtype="https://schema.stenci.la/CiteGroup">
     <cite><a href="myFirstTarget">myFirstTarget</a></cite>
     <cite><a href="mySecondTarget">mySecondTarget</a></cite>
   </ol>`
@@ -109,16 +112,16 @@ describe('Encode & Decode cite group nodes', () => {
     expect(actual.querySelectorAll('cite')).toHaveLength(2)
     expect(actual.querySelector('span')).toHaveAttribute(
       'itemtype',
-      'schema:CiteGroup'
+      'https://schema.stenci.la/CiteGroup'
     )
   })
 
   test('decode', async () => {
-    expect(await decode(load(htmlNode))).toEqual(schemaNode)
+    expect(await decode(vfile.load(htmlNode))).toEqual(schemaNode)
   })
 })
 
-describe('Encode & Decode references', () => {
+describe.skip('Encode & Decode references', () => {
   const schemaNode = article([], 'Article title', {
     references: [
       creativeWork({
@@ -166,7 +169,7 @@ describe('Encode & Decode references', () => {
             items: [
               { type: 'Cite', target: 'some-one-else-1991' },
               { type: 'Cite', target: 'updated-works-2009' },
-              { type: 'Cite', target: 'http://www.fullUrl.com' }
+              { type: 'Cite', target: 'https://www.fullUrl.com' }
             ]
           },
           '.'
@@ -223,30 +226,34 @@ describe('Encode & Decode references', () => {
         Cell flow reorients the axis of planar polarity in the wing epithelium
         of Drosophila
       </a>
-      <ol class="authors">
-        <li
-          itemtype="https://schema.org/Person"
-          itemscope="true"
-          itemprop="author"
-        >
-          <a href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
-            <span itemprop="familyName">Aigouy</span>
-            <span itemprop="givenName">B</span>
-          </a>
-        </li>
-        <li
-          itemtype="https://schema.org/Person"
-          itemscope="true"
-          itemprop="author"
-        >
-          <a
-            href="https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22"
+      <div>
+        <ol class="authors">
+          <li
+            itemtype="https://schema.org/Person"
+            itemscope="true"
+            itemprop="author"
           >
-            <span itemprop="familyName">Farhadifar</span>
-            <span itemprop="givenName">R</span>
-          </a>
-        </li>
-      </ol>
+            <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
+              <span itemprop="name" content="B Aigouy">
+                <span itemprop="givenName">B</span>
+                <span itemprop="familyName">Aigouy</span>
+              </span>
+            </a>
+          </li>
+          <li
+            itemtype="https://schema.org/Person"
+            itemscope="true"
+            itemprop="author"
+          >
+            <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22">
+              <span itemprop="name" content="R Farhadifar">
+                <span itemprop="givenName">R</span>
+                <span itemprop="familyName">Farhadifar</span>
+              </span>
+            </span>
+          </li>
+        </ol>
+      </div>
       <time itemprop="datePublished" datetime="2010">2010</time>
       <a itemprop="url" href="https://doi.org/10.1016/j.cell.2010.07.042">
         https://doi.org/10.1016/j.cell.2010.07.042
@@ -321,7 +328,7 @@ describe('Encode & Decode Collections', () => {
   ])
 
   const htmlNode = `
-    <ol itemtype="schema:Collection">
+    <ol itemtype="https://schema.org/Collection">
       <li>
         <figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>
       </li>
@@ -334,16 +341,14 @@ describe('Encode & Decode Collections', () => {
   test('encode', async () => {
     const actual = doc(await e(schemaNode))
 
-    const collectionHTML = actual.querySelector('ol')
-    const fig = actual.querySelectorAll('figure')
+    const collection = actual.querySelector('ol')
+    const figures = actual.querySelectorAll('figure')
 
-    expect(collectionHTML).toHaveAttribute('itemtype', 'schema:Collection')
-    expect(fig[0]).toHaveAttribute(
+    expect(collection).toHaveAttribute(
       'itemtype',
-      'https://schema.org/CreativeWork'
+      'https://schema.org/Collection'
     )
-    expect(fig[0]).toHaveAttribute('itemscope', 'true')
-    expect(fig).toHaveLength(2)
+    expect(figures).toHaveLength(2)
   })
 
   test('decode', async () => {
@@ -353,7 +358,7 @@ describe('Encode & Decode Collections', () => {
 
 test('encode with different themes', async () => {
   const e = async (options = defaultEncodeOptions) =>
-    dump(await encode(kitchenSink.node, options))
+    vfile.dump(await encode(kitchenSink.node, options))
 
   let html = await e({ theme: 'stencila' })
   expect(html).toMatch(
@@ -374,7 +379,7 @@ test('encode with different themes', async () => {
 
 test('encode with bundling', async () => {
   const e = async (options = defaultEncodeOptions) =>
-    dump(await encode(kitchenSink.node, options))
+    vfile.dump(await encode(kitchenSink.node, options))
 
   const stylesheet = fs.readFileSync(
     require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),
@@ -447,14 +452,15 @@ const kitchenSink = {
   <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
   <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
   <p>A paragraph with <code class="language-python"># code</code>.</p>
-  <p>A paragraph with an image <img src="https://example.org/image.png" title="title"
-      alt="alt text">.</p>
-  <p>Paragraph with a <stencila-boolean>true</stencila-boolean> and a <stencila-boolean>false
-    </stencila-boolean>.</p>
-  <p>A paragraph with other data: a <stencila-null>null</stencila-null>, a <stencila-number>3.14
-    </stencila-number>, and a <stencila-array>[1,2]</stencila-array>.</p>
-  <p>A paragraph with an <stencila-object>{a:1,b:'two'}</stencila-object> and a <stencila-thing>
-      {type:'Person'}</stencila-thing>.</p>
+  <p>A paragraph with an image <img src="https://example.org/image.png" title="title" alt="alt text"
+      itemprop="image">.</p>
+  <p>Paragraph with a <span itemtype="https://schema.org/Boolean">true</span> and a <span
+      itemtype="https://schema.org/Boolean">false</span>.</p>
+  <p>A paragraph with other data: a <span itemtype="https://schema.stenci.la/Null">null</span>, a
+    <span itemtype="https://schema.org/Number">3.14</span>, and a <span
+      itemtype="https://schema.stenci.la/Array">[1,2]</span>.</p>
+  <p>A paragraph with an <span itemtype="https://schema.stenci.la/Object">{a:1,b:'two'}</span> and a
+    <span itemtype="https://schema.stenci.la/Entity">{type:'Person'}</span>.</p>
   <blockquote cite="https://example.org">A blockquote</blockquote>
   <pre><code class="language-r"># Some code
 x = c(1,2)</code></pre>
@@ -768,7 +774,7 @@ const dtNode: stencila.Datatable = {
   ]
 }
 const dt = {
-  html: `<stencila-datatable>
+  html: `<div itemtype="https://schema.stenci.la/Datatable">
   <table>
     <thead>
       <tr>
@@ -791,7 +797,7 @@ const dt = {
       </tr>
     </tbody>
   </table>
-</stencila-datatable>`,
+</div>`,
   node: dtNode
 }
 

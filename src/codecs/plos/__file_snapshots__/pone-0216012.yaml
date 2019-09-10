@@ -5,52 +5,98 @@ authors:
       - Salerni
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Mathematical, Physical and Computer Sciences, University
+          of Parma, Parma, Italy
+        type: Organization
   - givenNames:
       - Rodolfo
     familyNames:
       - Repetto
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Civil, Chemical and Environmental Engineering,
+          University of Genoa, Genoa, Italy
+        type: Organization
   - givenNames:
       - Alon
     familyNames:
       - Harris
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Eugene and Marilyn Glick Eye Institute and Department of
+          Ophthalmology, Indiana University School of Medicine, Indianapolis,
+          IN, United States of America
+        type: Organization
   - givenNames:
       - Peter
     familyNames:
       - Pinsky
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Mechanical Engineering, Stanford University, Stanford,
+          CA, United States of America
+        type: Organization
   - givenNames:
       - Christophe
     familyNames:
       - Prud’homme
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Institute of Advanced Mathematical Research UMR 7501, University of
+          Strasbourg CNRS, Strasbourg, France
+        type: Organization
   - givenNames:
       - Marcela
     familyNames:
       - Szopos
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Laboratoire MAP5 (UMR CNRS 8145), Université Paris Descartes, Sorbonne
+          Paris Cité, France
+        type: Organization
   - givenNames:
       - Giovanna
     familyNames:
       - Guidoboni
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Electrical Engineering and Computer Science, Department
+          of Mathematics, University of Missouri, Columbia, MO, United States of
+          America
+        type: Organization
 title: >-
   Biofluid modeling of the coupled eye-brain system and insights into simulated
   microgravity conditions
+description:
+  - content:
+      - >-
+        This work aims at investigating the interactions between the flow of
+        fluids in the eyes and the brain and their potential implications in
+        structural and functional changes in the eyes of astronauts, a condition
+        also known as spaceflight associated neuro-ocular syndrome (SANS). To
+        this end, we propose a reduced (0-dimensional) mathematical model of
+        fluid flow in the eyes and brain, which is embedded into a simplified
+        whole-body circulation model. In particular, the model accounts for: 
+      - type: Emphasis
+        content:
+          - (i)
+      - ' the flows of blood and aqueous humor in the eyes; '
+      - type: Emphasis
+        content:
+          - (ii)
+      - ' the flows of blood, cerebrospinal fluid and interstitial fluid in the brain; and '
+      - type: Emphasis
+        content:
+          - (iii)
+      - ' their interactions. The model is used to simulate variations in intraocular pressure, intracranial pressure and blood flow due to microgravity conditions, which are thought to be critical factors in SANS. Specifically, the model predicts that both intracranial and intraocular pressures increase in microgravity, even though their respective trends may be different. In such conditions, ocular blood flow is predicted to decrease in the choroid and ciliary body circulations, whereas retinal circulation is found to be less susceptible to microgravity-induced alterations, owing to a purely mechanical component in perfusion control associated with the venous segments. These findings indicate that the particular anatomical architecture of venous drainage in the retina may be one of the reasons why most of the SANS alterations are not observed in the retina but, rather, in other vascular beds, particularly the choroid. Thus, clinical assessment of ocular venous function may be considered as a determinant SANS factor, for which astronauts could be screened on earth and in-flight.'
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -263,7 +309,8 @@ content:
         body vasculature and variations of the IOP and ICP following exposure to
         a microgravity environment.
     type: Paragraph
-  - content:
+  - id: pone.0216012.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -3564,7 +3611,8 @@ content:
         type: Cite
       - '].'
     type: Paragraph
-  - content:
+  - id: pone.0216012.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -4047,7 +4095,8 @@ content:
       =</mml:mo><mml:mstyle displaystyle="true"
       scriptlevel="0"><mml:mfrac><mml:mrow><mml:mi>E</mml:mi><mml:msup><mml:mi>h</mml:mi><mml:mn>3</mml:mn></mml:msup><mml:msup><mml:mi>π</mml:mi><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mn>12</mml:mn><mml:mrow><mml:mo>(</mml:mo><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msup><mml:mi>ν</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mo>)</mml:mo></mml:mrow><mml:msup><mml:mi
       mathvariant="script">A</mml:mi><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mfrac></mml:mstyle><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable>
-  - content:
+  - id: pone.0216012.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -8731,7 +8780,8 @@ content:
               - c
       - ' on earth is ≈ 25 mmHg, which may decrease to 21.7 mmHg in LHDT and to 18.7 mmHg in microgravity conditions. These reference values are indicated with dashed lines in the corresponding figures.'
     type: Paragraph
-  - content:
+  - id: pone.0216012.g004
+    content:
       - format: image/png
         meta:
           inline: false
@@ -9067,7 +9117,8 @@ content:
           - crv
       - ' also collapses, blood flow in the retina starts to drop significantly.'
     type: Paragraph
-  - content:
+  - id: pone.0216012.g005
+    content:
       - format: image/png
         meta:
           inline: false
@@ -9146,7 +9197,8 @@ content:
         and provide a detailed picture of pressure changes in the ocular
         circulation as a response to the LHDT experiment.
     type: Paragraph
-  - content:
+  - id: pone.0216012.g006
+    content:
       - format: image/png
         meta:
           inline: false
@@ -9166,7 +9218,8 @@ content:
           - 'LHDT solid line, M2 dash-dotted line.'
         type: Paragraph
     type: Figure
-  - content:
+  - id: pone.0216012.g007
+    content:
       - format: image/png
         meta:
           inline: false

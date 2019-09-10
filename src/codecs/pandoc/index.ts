@@ -19,6 +19,7 @@ import { RPNGCodec } from '../rpng'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as Pandoc from './types'
+import { stringifyContent } from '../../util/content/stringifyContent'
 
 const rpng = new RPNGCodec()
 
@@ -1074,7 +1075,7 @@ function decodeImage(image: Pandoc.Image): stencila.ImageObject {
  */
 function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
   const url = imageObject.contentUrl || ''
-  const title = imageObject.title || ''
+  const title = stringifyContent(imageObject.title || '')
   const alt: Pandoc.Inline[] = []
   if (imageObject.text) alt.push(encodeString(imageObject.text))
   return {

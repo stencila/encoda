@@ -5,24 +5,51 @@ authors:
       - Iyer
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Computer Science Department, University of Massachusetts, Boston,
+          Massachusetts, United States of America
+        type: Organization
   - givenNames:
       - Joshua
     familyNames:
       - Reyes
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Systems Biology, Harvard Medical School, Boston,
+          Massachusetts, United States of America
+        type: Organization
   - givenNames:
       - Timothy
     familyNames:
       - Killingback
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Mathematics Department, University of Massachusetts, Boston,
+          Massachusetts, United States of America
+        type: Organization
 title: >-
   An Application of Evolutionary Game Theory to Social Dilemmas: The Traveler's
   Dilemma and the Minimum Effort Coordination Game
+description:
+  - content:
+      - >-
+        The Traveler's Dilemma game and the Minimum Effort Coordination game are
+        two social dilemmas that have attracted considerable attention due to
+        the fact that the predictions of classical game theory are at odds with
+        the results found when the games are studied experimentally. Moreover, a
+        direct application of deterministic evolutionary game theory, as
+        embodied in the replicator dynamics, to these games does not explain the
+        observed behavior. In this work, we formulate natural variants of these
+        two games as smoothed continuous-strategy games. We study the
+        evolutionary dynamics of these continuous-strategy games, both
+        analytically and through agent-based simulations, and show that the
+        behavior predicted theoretically is in accord with that observed
+        experimentally. Thus, these variants of the Traveler's Dilemma and the
+        Minimum Effort Coordination games provide a simple resolution of the
+        paradoxical behavior associated with the original games.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -313,7 +340,8 @@ content:
         type: ImageObject
       - ' on average claim levels.'
     type: Paragraph
-  - content:
+  - id: pone-0093988-g001
+    content:
       - contentUrl: g001.png
         format: image
         meta:
@@ -2710,7 +2738,8 @@ content:
         network structure has very little effect on the evolutionary dynamics of
         the game.
     type: Paragraph
-  - content:
+  - id: pone-0093988-g002
+    content:
       - contentUrl: g002.png
         format: image
         meta:
@@ -3034,7 +3063,8 @@ content:
         also suggest that the effect of network structure on the dynamics of the
         smoothed MEC game is negligible.
     type: Paragraph
-  - content:
+  - id: pone-0093988-g003
+    content:
       - contentUrl: g003.png
         format: image
         meta:

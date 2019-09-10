@@ -5,21 +5,30 @@ authors:
       - Sekeyová
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Institute of Virology, Slovak Academy of Sciences, Dubravska cesta,
+          Bratislava, Slovakia
+        type: Organization
   - givenNames:
       - Monika
     familyNames:
       - Danchenko
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Institute of Virology, Slovak Academy of Sciences, Dubravska cesta,
+          Bratislava, Slovakia
+        type: Organization
   - givenNames:
       - Peter
     familyNames:
       - Filipčík
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Institute of Neuroimmunology, Slovak Academy of Sciences, Dubravska
+          cesta, Bratislava, Slovakia
+        type: Organization
   - givenNames:
       - Pierre
       - Edouard
@@ -27,9 +36,30 @@ authors:
       - Fournier
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Aix-Marseille Univ, IRD, AP-HM, SSA, VITROME, IHU
+          Mediterranée-Infection, Marseille, France
+        type: Organization
+      - name: >-
+          Centre National de Référence des Rickettsia, Coxiella et Bartonella,
+          IHU Mediterranée-Infection, Marseille, France
+        type: Organization
 title: Rickettsial infections of the central nervous system
+description:
+  - content:
+      - >-
+        As a result of migrations and globalization, people may face a possible
+        increase in the incidence of central nervous system rickettsial
+        infections (CNS R). These diseases, caused by 
+      - type: Emphasis
+        content:
+          - Rickettsia
+      - ' species and transmitted to humans by arthropod bites, are putatively lethal. However, the diagnosis of CNS R is challenging and often delayed due to their nonspecific clinical presentation and the strict intracellular nature of rickettsiae. Furthermore, transfer of rickettsiae to the brain parenchyma is not yet understood. The aim of this review is to analyze and summarize the features and correlated findings of CNS R in order to focus attention on these intriguing but frequently neglected illnesses. We also incorporated data on CNS infections caused by '
+      - type: Emphasis
+        content:
+          - Rickettsia-
+      - related microorganisms.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -217,7 +247,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pntd.0007469.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -271,7 +302,8 @@ content:
             typhus group; TRG, transitional group.
         type: Paragraph
     type: Figure
-  - content:
+  - id: pntd.0007469.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -307,7 +339,8 @@ content:
           - '].'
         type: Paragraph
     type: Figure
-  - content:
+  - id: pntd.0007469.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -836,7 +869,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pntd.0007469.g004
+    content:
       - format: image/png
         meta:
           inline: false

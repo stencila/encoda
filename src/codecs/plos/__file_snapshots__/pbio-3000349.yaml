@@ -5,7 +5,10 @@ authors:
       - Vachon-Presseau
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Physiology, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
+        type: Organization
   - givenNames:
       - Sara
       - E.
@@ -13,8 +16,14 @@ authors:
       - Berger
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Physiology, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
+        type: Organization
+      - name: >-
+          Healthcare and Life Sciences Department, IBM Watson Research Center,
+          Yorktown Heights, New York, United States of America
+        type: Organization
   - givenNames:
       - Taha
       - B.
@@ -22,7 +31,10 @@ authors:
       - Abdullah
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Physiology, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
+        type: Organization
   - givenNames:
       - James
       - W.
@@ -30,7 +42,11 @@ authors:
       - Griffith
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Medical Social Sciences, Northwestern University
+          Feinberg School of Medicine, Chicago, Illinois, United States of
+          America
+        type: Organization
   - givenNames:
       - Thomas
       - J.
@@ -38,9 +54,20 @@ authors:
       - Schnitzer
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Departments of Internal Medicine and Rheumatology, Northwestern
+          University Feinberg School of Medicine, Chicago, Illinois, United
+          States of America
+        type: Organization
+      - name: >-
+          Department of Physical Medicine and Rehabilitation, Northwestern
+          University Feinberg School of Medicine, Chicago, Illinois, United
+          States of America
+        type: Organization
+      - name: >-
+          Department of Anesthesia, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
+        type: Organization
   - givenNames:
       - A.
       - Vania
@@ -48,12 +75,44 @@ authors:
       - Apkarian
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Physiology, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
+        type: Organization
+      - name: >-
+          Department of Physical Medicine and Rehabilitation, Northwestern
+          University Feinberg School of Medicine, Chicago, Illinois, United
+          States of America
+        type: Organization
+      - name: >-
+          Department of Anesthesia, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
+        type: Organization
 title: >-
   Identification of traits and functional connectivity-based neurotraits of
   chronic pain
+description:
+  - content:
+      - >-
+        Psychological and personality factors, socioeconomic status, and brain
+        properties all contribute to chronic pain but have essentially been
+        studied independently. Here, we administered a broad battery of
+        questionnaires to patients with chronic back pain (CBP) and collected
+        repeated sessions of resting-state functional magnetic resonance imaging
+        (fMRI) brain scans. Clustering and network analyses applied on the
+        questionnaire data revealed four orthogonal dimensions accounting for
+        56% of the variance and defining chronic pain traits. Two of these
+        traits—Pain-trait and Emote-trait—were associated with back pain
+        characteristics and could be related to distinct distributed functional
+        networks in a cross-validation procedure, identifying neurotraits. These
+        neurotraits showed good reliability across four fMRI sessions acquired
+        over five weeks. Further, traits and neurotraits all related to the
+        income, emphasizing the importance of socioeconomic status within the
+        personality space of chronic pain. Our approach is a first step in
+        providing metrics aimed at unifying the psychology and the
+        neurophysiology of chronic pain applicable across diverse clinical
+        conditions.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -302,7 +361,8 @@ content:
         type: Link
       - .
     type: Paragraph
-  - content:
+  - id: pbio.3000349.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -538,7 +598,8 @@ content:
         ). Thus, we uncovered two traits associated with back pain properties,
         in opposite directions and with distinct patterns.
     type: Paragraph
-  - content:
+  - id: pbio.3000349.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -743,7 +804,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pbio.3000349.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -919,7 +981,8 @@ content:
         showed good reliability across the four brain-imaging sessions collected
         weeks apart.
     type: Paragraph
-  - content:
+  - id: pbio.3000349.g004
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1053,7 +1116,8 @@ content:
         affect and physical health, implying that the brain networks were
         directly related with the clinical characteristics of the patients.
     type: Paragraph
-  - content:
+  - id: pbio.3000349.g005
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1175,7 +1239,8 @@ content:
         and Emote-trait, as lower income was linked with higher anxiety and
         catastrophizing and higher income linked with higher optimism.
     type: Paragraph
-  - content:
+  - id: pbio.3000349.g006
+    content:
       - format: image/png
         meta:
           inline: false

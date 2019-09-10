@@ -27,11 +27,15 @@ export default async function unlink(
         case 'ImageObject':
         case 'VideoObject':
           const { contentUrl, ...rest } = node as stencila.MediaObject
-          if (!contentUrl.startsWith('http'))
+          if (
+            !contentUrl.startsWith('http') &&
+            !contentUrl.startsWith('data:')
+          ) {
             return {
               ...rest,
               contentUrl: ''
             }
+          }
       }
       return node
     }

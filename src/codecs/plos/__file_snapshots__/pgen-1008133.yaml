@@ -6,14 +6,20 @@ authors:
       - Sanchez
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Instituto de Agrobiotecnología del Litoral, Consejo Nacional de
+          Investigaciones Científicas y Técnicas (CONICET) Santa Fe, Argentina
+        type: Organization
   - givenNames:
       - Duarte
     familyNames:
       - Mesquita
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Institute for Research in Biomedicine (IRB Barcelona), The Barcelona
+          Institute of Science and Technology, Barcelona, Spain
+        type: Organization
   - givenNames:
       - María
       - C.
@@ -21,34 +27,69 @@ authors:
       - Ingaramo
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Instituto de Agrobiotecnología del Litoral, Consejo Nacional de
+          Investigaciones Científicas y Técnicas (CONICET) Santa Fe, Argentina
+        type: Organization
   - givenNames:
       - Federico
     familyNames:
       - Ariel
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Instituto de Agrobiotecnología del Litoral, Consejo Nacional de
+          Investigaciones Científicas y Técnicas (CONICET) Santa Fe, Argentina
+        type: Organization
+      - name: >-
+          Facultad de Bioquímica y Ciencias Biológicas, Universidad Nacional del
+          Litoral (UNL), Santa Fe, Argentina
+        type: Organization
   - givenNames:
       - Marco
     familyNames:
       - Milán
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Institute for Research in Biomedicine (IRB Barcelona), The Barcelona
+          Institute of Science and Technology, Barcelona, Spain
+        type: Organization
+      - name: >-
+          Institucio Catalana de Recerca i Estudis Avançats (ICREA), Barcelona,
+          Spain
+        type: Organization
   - givenNames:
       - Andrés
     familyNames:
       - Dekanty
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
-title: >-
-  Eiger/TNFα-mediated Dilp8 and ROS production coordinate intra-organ growth in
-  Drosophila
+      - name: >-
+          Instituto de Agrobiotecnología del Litoral, Consejo Nacional de
+          Investigaciones Científicas y Técnicas (CONICET) Santa Fe, Argentina
+        type: Organization
+      - name: >-
+          Facultad de Bioquímica y Ciencias Biológicas, Universidad Nacional del
+          Litoral (UNL), Santa Fe, Argentina
+        type: Organization
+title:
+  - >-
+    Eiger/TNFα-mediated Dilp8 and ROS production coordinate intra-organ growth
+    in 
+  - type: Emphasis
+    content:
+      - Drosophila
+description:
+  - content:
+      - >-
+        Coordinated intra- and inter-organ growth during animal development is
+        essential to ensure a correctly proportioned individual. The 
+      - type: Emphasis
+        content:
+          - Drosophila
+      - ' wing has been a valuable model system to reveal the existence of a stress response mechanism involved in the coordination of growth between adjacent cell populations and to identify a role of the fly orthologue of p53 (Dmp53) in this process. Here we identify the molecular mechanisms used by Dmp53 to regulate growth and proliferation in a non-autonomous manner. First, Dmp53-mediated transcriptional induction of Eiger, the fly orthologue of TNFα ligand, leads to the cell-autonomous activation of JNK. Second, two distinct signaling events downstream of the Eiger/JNK axis are induced in order to independently regulate tissue size and cell number in adjacent cell populations. Whereas expression of the hormone dILP8 acts systemically to reduce growth rates and tissue size of adjacent cell populations, the production of Reactive Oxygen Species—downstream of Eiger/JNK and as a consequence of apoptosis induction—acts in a non-cell-autonomous manner to reduce proliferation rates. Our results unravel how local and systemic signals act concertedly within a tissue to coordinate growth and proliferation, thereby generating well-proportioned organs and functionally integrated adults.'
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -323,7 +364,8 @@ content:
         type: Cite
       - ']).'
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -637,7 +679,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -928,7 +971,8 @@ content:
           - RNAi
       - ' expression.'
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1454,7 +1498,8 @@ content:
         -depleted cells through both Dmp53-dependent and -independent
         mechanisms.
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g004
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1795,7 +1840,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g005
+    content:
       - format: image/png
         meta:
           inline: false
@@ -2170,7 +2216,8 @@ content:
         ). These observations indicate that ROS produced in the slow-growing
         cell population spread to the neighboring compartment.
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g006
+    content:
       - format: image/png
         meta:
           inline: false
@@ -2417,7 +2464,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pgen.1008133.g007
+    content:
       - format: image/png
         meta:
           inline: false

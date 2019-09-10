@@ -5,15 +5,26 @@ authors:
       - Ghurye
     type: Person
     affiliations:
-      - type: Organization
-      - type: Organization
+      - name: >-
+          Department of Computer Science, University of Maryland, College Park,
+          Maryland, United States of America
+        type: Organization
+      - name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
+        type: Organization
   - givenNames:
       - Arang
     familyNames:
       - Rhie
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
+        type: Organization
   - givenNames:
       - Brian
       - P.
@@ -21,28 +32,37 @@ authors:
       - Walenz
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
+        type: Organization
   - givenNames:
       - Anthony
     familyNames:
       - Schmitt
     type: Person
     affiliations:
-      - type: Organization
+      - name: 'Arima Genomics, San Diego, California, United States of America'
+        type: Organization
   - givenNames:
       - Siddarth
     familyNames:
       - Selvaraj
     type: Person
     affiliations:
-      - type: Organization
+      - name: 'Arima Genomics, San Diego, California, United States of America'
+        type: Organization
   - givenNames:
       - Mihai
     familyNames:
       - Pop
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Department of Computer Science, University of Maryland, College Park,
+          Maryland, United States of America
+        type: Organization
   - givenNames:
       - Adam
       - M.
@@ -50,15 +70,40 @@ authors:
       - Phillippy
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
+        type: Organization
   - givenNames:
       - Sergey
     familyNames:
       - Koren
     type: Person
     affiliations:
-      - type: Organization
+      - name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
+        type: Organization
 title: Integrating Hi-C links with assembly graphs for chromosome-scale assembly
+description:
+  - content:
+      - 'Long-read sequencing and novel long-range assays have revolutionized '
+      - type: Emphasis
+        content:
+          - de novo
+      - ' genome assembly by automating the reconstruction of reference-quality genomes. In particular, Hi-C sequencing is becoming an economical method for generating chromosome-scale scaffolds. Despite its increasing popularity, there are limited open-source tools available. Errors, particularly inversions and fusions across chromosomes, remain higher than alternate scaffolding technologies. We present a novel open-source Hi-C scaffolder that does not require an '
+      - type: Emphasis
+        content:
+          - a priori
+      - ' estimate of chromosome number and minimizes errors by scaffolding with the assistance of an assembly graph. We demonstrate higher accuracy than the state-of-the-art methods across a variety of Hi-C library preparations and input assembly sizes. The Python and C++ code for our method is openly available at '
+      - content:
+          - 'https://github.com/machinegun/SALSA'
+        target: 'https://github.com/machinegun/SALSA'
+        type: Link
+      - .
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -265,7 +310,8 @@ content:
         when accurate Hi-C links have been exhausted. Below, we describe each of
         the steps in detail.
     type: Paragraph
-  - content:
+  - id: pcbi.1007273.g001
+    content:
       - format: image/png
         meta:
           inline: false
@@ -389,7 +435,8 @@ content:
           - 'N'
       - ' is the number of intervals. For a maximal clique, the region between the start and end of the smallest interval in the clique is flagged as a mis-assembly and the contig is split into three pieces—the sequence to the left of the region, the junction region itself, and the sequence to the right of the region. The intuition behind choosing the smallest interval is to accurately pinpoint the location of assembly error. Note that this algorithm finds only one misassembly per contig. For more rigorous misassembly detection, same algorithm can be run multiple times on each contig until no more drops in physical coverage are found.'
     type: Paragraph
-  - content:
+  - id: pcbi.1007273.g002
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1679,7 +1726,8 @@ content:
         type: Link
       - .
     type: Paragraph
-  - content:
+  - id: pcbi.1007273.g003
+    content:
       - format: image/png
         meta:
           inline: false
@@ -1704,7 +1752,8 @@ content:
             the graph has 2-4 fold fewer errors than 3D-DNA.
         type: Paragraph
     type: Figure
-  - content:
+  - id: pcbi.1007273.g004
+    content:
       - format: image/png
         meta:
           inline: false
@@ -2284,7 +2333,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: pcbi.1007273.g005
+    content:
       - format: image/png
         meta:
           inline: false
@@ -2324,7 +2374,8 @@ content:
         type: Link
       - ' shows the contiguity plot with corrected NG stats. As expected, the assembly generated with only true links has the highest values for all NGA stats. The curve for SALSA2 assemblies with and without the assembly graph closely matches this curve, implying that the scaffolds generated with SALSA2 are approaching the optimal assembly of this Arima-HiC data.'
     type: Paragraph
-  - content:
+  - id: pcbi.1007273.g006
+    content:
       - format: image/png
         meta:
           inline: false
@@ -2351,7 +2402,8 @@ content:
             fragmented due to scaffolding errors that break the alignment.
         type: Paragraph
     type: Figure
-  - content:
+  - id: pcbi.1007273.g007
+    content:
       - format: image/png
         meta:
           inline: false
@@ -2439,7 +2491,8 @@ content:
         type: Link
       - ' shows the mapping statistics for these libraries. We ran SALSA2 with defaults and 3D-DNA with both the assembly correction turned on and off.'
     type: Paragraph
-  - content:
+  - id: pcbi.1007273.g008
+    content:
       - format: image/png
         meta:
           inline: false

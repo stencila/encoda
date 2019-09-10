@@ -18,7 +18,7 @@ exports[`encode works on mixed collection 1`] = `
         <document id=\\"three\\" type=\\"article\\" path=\\"three.jats.xml\\"></document>
     </documents>
     <assets>
-        <asset id=\\"two\\" type=\\"\\" path=\\"two.csv\\" sync=\\"false\\"></asset>
+        <asset id=\\"two\\" type=\\"text/csv\\" path=\\"two.csv\\" sync=\\"true\\"></asset>
     </assets>
 </dar>"
 `;
@@ -30,7 +30,7 @@ exports[`encode works with multiple media asset protocols 1`] = `
     </documents>
     <assets>
         <asset id=\\"creativework-0-0\\" type=\\"image/png\\" path=\\"creativework-0-0\\" sync=\\"false\\"></asset>
-        <asset id=\\"creativework-0-1\\" type=\\"\\" path=\\"creativework-0-1.png\\" sync=\\"false\\"></asset>
+        <asset id=\\"creativework-0-1\\" type=\\"image/png\\" path=\\"creativework-0-1.png\\" sync=\\"false\\"></asset>
     </assets>
 </dar>"
 `;

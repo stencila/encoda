@@ -14,6 +14,7 @@ import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
+import { stringifyContent } from '../../util/content/stringifyContent'
 
 interface DecodeOptions {
   format: string
@@ -152,7 +153,7 @@ const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
   return {
     type: 'article-journal',
     id: 'id', // TODO id is required
-    title: title,
+    title: stringifyContent(title),
     author: authors.map(encodeAuthor)
   }
 }

@@ -7,7 +7,7 @@ authors:
     type: Person
     affiliations:
       - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: United States
+        address: 'Georgia, United States'
         type: Organization
   - givenNames:
       - Meredith
@@ -19,7 +19,7 @@ authors:
       - medward1@uga.edu
     affiliations:
       - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: United States
+        address: 'Georgia, United States'
         type: Organization
   - givenNames:
       - Zachary
@@ -31,7 +31,7 @@ authors:
       - ZRMeyers@uga.edu
     affiliations:
       - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: United States
+        address: 'Georgia, United States'
         type: Organization
   - givenNames:
       - C
@@ -42,7 +42,7 @@ authors:
     type: Person
     affiliations:
       - name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
-        address: United States
+        address: 'Maryland, United States'
         type: Organization
   - givenNames:
       - Haiping
@@ -51,7 +51,7 @@ authors:
     type: Person
     affiliations:
       - name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
-        address: United States
+        address: 'Maryland, United States'
         type: Organization
   - givenNames:
       - David
@@ -62,7 +62,7 @@ authors:
       - blum@uga.edu
     affiliations:
       - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: United States
+        address: 'Georgia, United States'
         type: Organization
   - type: Person
     emails:
@@ -97,6 +97,36 @@ authors:
 title: >-
   Replication Study: Transcriptional amplification in tumor cells with elevated
   c-Myc
+description:
+  - content:
+      - 'As part of the '
+      - content:
+          - 'Reproducibility Project: Cancer Biology'
+        target: 'https://osf.io/e81xl/wiki/home/'
+        type: Link
+      - >-
+        , we published a Registered Report (Blum et al., 2015), that described
+        how we intended to replicate selected experiments from the paper
+        ‘Transcriptional amplification in tumor cells with elevated c-Myc’ (Lin
+        et al., 2012). Here we report the results. We found overexpression of
+        c-Myc increased total levels of RNA in P493-6 Burkitt’s lymphoma cells;
+        however, while the effect was in the same direction as the original
+        study (Figure 3E; Lin et al., 2012), statistical significance and the
+        size of the effect varied between the original study and the two
+        different lots of serum tested in this replication. Digital gene
+        expression analysis for a set of genes was also performed on P493-6
+        cells before and after c-Myc overexpression. Transcripts from genes that
+        were active before c-Myc induction increased in expression following
+        c-Myc overexpression, similar to the original study (Figure 3F; Lin et
+        al., 2012). Transcripts from genes that were silent before c-Myc
+        induction also increased in expression following c-Myc overexpression,
+        while the original study concluded elevated c-Myc had no effect on
+        silent genes (Figure 3F; Lin et al., 2012). Treating the data as paired,
+        we found a statistically significant increase in gene expression for
+        both active and silent genes upon c-Myc induction, with the change in
+        gene expression greater for active genes compared to silent genes.
+        Finally, we report meta-analyses for each result.
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -270,7 +300,8 @@ content:
         ). After removal of tetracycline, c-Myc levels increased over time
         approaching the levels observed in tetracycline-free conditions.
     type: Paragraph
-  - content:
+  - id: fig1
+    content:
       - contentUrl: fig1.jpg
         format: application/postscript
         meta:
@@ -527,7 +558,8 @@ content:
         in the original study (95.8% (453/473) for serum lot two).
     type: Paragraph
   - parts:
-      - content:
+      - id: fig2
+        content:
           - contentUrl: fig2.jpg
             format: application/postscript
             meta:
@@ -588,7 +620,8 @@ content:
             format: application/octet-stream
             type: MediaObject
         type: Figure
-      - content:
+      - id: fig2s1
+        content:
           - contentUrl: fig2-figsupp1.jpg
             format: application/postscript
             meta:
@@ -654,7 +687,8 @@ content:
               - .
             type: Paragraph
         type: Figure
-      - content:
+      - id: fig2s2
+        content:
           - contentUrl: fig2-figsupp2.jpg
             format: application/postscript
             meta:
@@ -1809,7 +1843,8 @@ content:
         estimate of the original study and serum lot two were within the
         confidence intervals of each other.
     type: Paragraph
-  - content:
+  - id: fig3
+    content:
       - contentUrl: fig3.jpg
         format: application/postscript
         meta:

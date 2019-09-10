@@ -9,7 +9,7 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Cheryl
@@ -20,7 +20,7 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Harue
@@ -31,7 +31,7 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Nicole
@@ -41,7 +41,7 @@ authors:
     type: Person
     affiliations:
       - name: Division of Neuroscience
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - John
@@ -53,7 +53,7 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Robert
@@ -63,7 +63,7 @@ authors:
     type: Person
     affiliations:
       - name: 'Department of Genetics, Genomics and Informatics'
-        address: United States
+        address: 'Memphis, United States'
         type: Organization
   - givenNames:
       - Kim
@@ -75,10 +75,10 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
       - name: Veterans Affairs Portland Health Care System
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Lev
@@ -88,7 +88,7 @@ authors:
     type: Person
     affiliations:
       - name: 'Transgenic Mouse Models Shared Resource, Knight Cancer Institute'
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Aaron
@@ -100,13 +100,13 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
       - name: Veterans Affairs Portland Health Care System
-        address: United States
+        address: 'Portland, United States'
         type: Organization
       - name: Department of Psychiatry
-        address: United States
+        address: 'Portland, United States'
         type: Organization
   - givenNames:
       - Tamara
@@ -120,14 +120,71 @@ authors:
       - name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
-        address: United States
+        address: 'Portland, United States'
         type: Organization
       - name: Veterans Affairs Portland Health Care System
-        address: United States
+        address: 'Portland, United States'
         type: Organization
-title: >-
-  Taar1 gene variants have a causal role in methamphetamine intake and response
-  and interact with Oprm1
+title:
+  - type: Emphasis
+    content:
+      - Taar1
+  - ' gene variants have a causal role in methamphetamine intake and response and interact with '
+  - type: Emphasis
+    content:
+      - Oprm1
+description:
+  - content:
+      - >-
+        We identified a locus on mouse chromosome 10 that accounts for 60% of
+        the genetic variance in methamphetamine intake in mice selectively bred
+        for high versus low methamphetamine consumption. We nominated the trace
+        amine-associated receptor 1 gene, 
+      - type: Emphasis
+        content:
+          - Taar1
+      - >-
+        , as the strongest candidate and identified regulation of the mu-opioid
+        receptor 1 gene, 
+      - type: Emphasis
+        content:
+          - Oprm1
+      - >-
+        , as another contributor. This study exploited CRISPR-Cas9 to test the
+        causal role of 
+      - type: Emphasis
+        content:
+          - Taar1
+      - ' in methamphetamine intake and a genetically-associated thermal response to methamphetamine. The methamphetamine-related traits were rescued, converting them to levels found in methamphetamine-avoiding animals. We used a family of recombinant inbred mouse strains for interval mapping and to examine independent and epistatic effects of '
+      - type: Emphasis
+        content:
+          - Taar1
+      - ' and '
+      - type: Emphasis
+        content:
+          - Oprm1
+      - '. Both methamphetamine intake and the thermal response mapped to '
+      - type: Emphasis
+        content:
+          - Taar1
+      - ' and the independent effect of '
+      - type: Emphasis
+        content:
+          - Taar1
+      - ' was dependent on genotype at '
+      - type: Emphasis
+        content:
+          - Oprm1
+      - '. Our findings encourage investigation of the contribution of '
+      - type: Emphasis
+        content:
+          - Taar1
+      - ' and '
+      - type: Emphasis
+        content:
+          - Oprm1
+      - ' variants to human methamphetamine addiction.'
+    type: Paragraph
 type: Article
 content:
   - content:
@@ -479,7 +536,8 @@ content:
         [1,36]=21.4, p<0.0001). Total volume consumed was greater when mice were
         offered 40 mg/l MA, compared to 20 mg/l MA.
     type: Paragraph
-  - content:
+  - id: fig1
+    content:
       - contentUrl: fig1.jpg
         format: image/tiff
         meta:
@@ -703,7 +761,8 @@ content:
         significantly higher in knock-in than control mice at baseline, by about
         0.6°C, but significantly lower by about 1.2°C, at T30.
     type: Paragraph
-  - content:
+  - id: fig2
+    content:
       - contentUrl: fig2.jpg
         format: image/tiff
         meta:
@@ -886,7 +945,8 @@ content:
         type: Link
       - "), but the strain distribution pattern for total volume did not correspond with the distributions for MA intake at either MA concentration. Total volume consumed was significantly less when water and 20 mg/l MA were available, compared to when water and 40 mg/l MA were available (mean\_±\_SEM\_=\_5.3±0.1 and 5.7\_±\_0.1 for 20 and 40 mg/l, respectively)."
     type: Paragraph
-  - content:
+  - id: fig3
+    content:
       - contentUrl: fig3.jpg
         format: image/tiff
         meta:
@@ -1214,7 +1274,8 @@ content:
               - +/+
       - ' mice.'
     type: Paragraph
-  - content:
+  - id: fig4
+    content:
       - contentUrl: fig4.jpg
         format: image/tiff
         meta:
@@ -1735,7 +1796,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: fig5
+    content:
       - contentUrl: fig5.jpg
         format: image/tiff
         meta:
@@ -2088,7 +2150,8 @@ content:
               - m1J/m1J
       - ' mice were resistant to the hypothermic effects of MA, exhibiting increases in body temperature at all post-MA treatment time points, compared to T0.'
     type: Paragraph
-  - content:
+  - id: fig6
+    content:
       - contentUrl: fig6.jpg
         format: image/tiff
         meta:
@@ -2310,7 +2373,8 @@ content:
         type: Link
       - ).
     type: Paragraph
-  - content:
+  - id: fig7
+    content:
       - contentUrl: fig7.jpg
         format: image/tiff
         meta:
@@ -4167,7 +4231,8 @@ content:
       - tgagaactgttgagcgctgttggtatZZt.
       - ' The ossDNA was designed without a silent mutation and to be asymmetric to provide increased efficiency of the gRNA. Cas9 mRNA (catalog number L-7606) was purchased from TriLink (San Diego, CA, USA).'
     type: Paragraph
-  - content:
+  - id: fig8
+    content:
       - contentUrl: fig8.jpg
         format: image/tiff
         meta:
