@@ -11,7 +11,7 @@ const query2yaml = async (query: string) =>
 
 jest.setTimeout(30 * 1000)
 
-test('decode', async () => {
+test.skip('decode', async () => {
   const done = await nockRecord('carlsson-and-ekre-2019.json')
   expect(
     await query2yaml('Carlsson and Ekre, Tensor Computations in Julia')
