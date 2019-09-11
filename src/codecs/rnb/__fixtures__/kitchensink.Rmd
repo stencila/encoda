@@ -1,0 +1,38 @@
+---
+title: "Kitchensink R Notebook"
+output: html_notebook
+author:
+  - Peter Pan
+  - Captain Hook
+---
+
+This is a test `Rmd` file intended as a comprehensive test of Encoda's `rnb` codec. It should have all the various components that one would expect in a R Notebook e.g. chunks that create plots, different chunk attributes, alternative meta data etc. When you edit and save this file, the actual test fixture, the `kitchensink.nb.html` file, gets saved.
+
+# Inline chunks
+
+Here is an inline chunk `r 2 * 3`. There could be more than one in a paragraph of course, `r sum(1, 2)`.
+
+## Heading level two
+
+### Heading level three
+
+# Block chunks
+
+One string output:
+
+```{r}
+"Hello world"
+```
+
+A number and a string:
+
+```{r}
+print('Hi!')
+1
+```
+
+An image:
+
+```{r}
+plot(1:10)
+```
