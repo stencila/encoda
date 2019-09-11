@@ -26,7 +26,7 @@ import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
 import { columnIndexToName } from '../../codecs/xlsx'
-import { compactObj, isDefined, reduceNonNullable } from '../../util'
+import { compactObj, isDefined } from '../../util'
 import bundle from '../../util/bundle'
 import { toFiles } from '../../util/toFiles'
 import * as vfile from '../../util/vfile'
@@ -132,11 +132,26 @@ export class HTMLCodec extends Codec implements Codec {
    */
   public decodeHtml = (
     htmlContent: VFileContents
-  ): stencila.Node | undefined => {
+  ): stencila.Node => {
     const dom = new jsdom.JSDOM(htmlContent)
     const document = dom.window.document
     collapse(document)
-    return decodeNode(document)
+    const node = decodeNode(document)
+    if (Array.isArray(node)) {
+      if (node.length == 0) {
+        log.warn(
+          `No node could be decoded from HTML: ${
+            htmlContent.length > 10
+              ? htmlContent.toString().substr(0, 10) + '...'
+              : htmlContent
+          }`
+        )
+        return ''
+      } else if (node.length == 1) {
+        return node[0]
+      }
+    }
+    return node
   }
 
   /**
@@ -149,17 +164,7 @@ export class HTMLCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const html = await vfile.dump(file)
-    const node = this.decodeHtml(html)
-    if (node === undefined) {
-      log.warn(
-        `No node could be decoded from HTML: ${
-          html.length > 10 ? html.substr(0, 10) + '...' : html
-        }`
-      )
-      return ''
-    } else {
-      return node
-    }
+    return this.decodeHtml(html)
   }
 
   /**
@@ -197,7 +202,9 @@ export class HTMLCodec extends Codec implements Codec {
 
     if (isStandalone) {
       const nodeToEncode = isBundle ? await bundle(node) : node
-      const { title = 'Untitled', ...metadata } = getArticleMetaData(nodeToEncode)
+      const { title = 'Untitled', ...metadata } = getArticleMetaData(
+        nodeToEncode
+      )
       dom = generateHtmlElement(
         stringifyContent(title),
         metadata,
@@ -236,12 +243,29 @@ const getArticleMetaData = (
   }
 }
 
-const decodeNodes = (nodes: Node[]): (stencila.Node | undefined)[] =>
-  nodes.map(decodeNode)
+const decodeNodes = (nodes: Node[]): stencila.Node[] =>
+  nodes
+    .map(decodeNode)
+    .reduce(
+      (prev: Node[], curr) => [
+        ...prev,
+        ...(Array.isArray(curr) ? curr : [curr])
+      ],
+      []
+    )
 
-const encodeNodes = (nodes: stencila.Node[]): Node[] => nodes.map(encodeNode)
+const decodeChildNodes = (node: Node): stencila.Node[] =>
+  decodeNodes([...node.childNodes])
 
-function decodeNode(node: Node): stencila.Node | undefined {
+const decodeBlockChildNodes = (node: Node): stencila.BlockContent[] =>
+  decodeChildNodes(node).map(n => n as stencila.BlockContent)
+
+const decodeInlineChildNodes = (node: Node): stencila.InlineContent[] =>
+  decodeChildNodes(node)
+    .map(n => n as stencila.InlineContent)
+    .filter(n => n !== '')
+
+function decodeNode(node: Node): stencila.Node | stencila.Node[] {
   const type =
     node instanceof window.HTMLElement ? node.getAttribute('itemtype') : null
 
@@ -259,11 +283,6 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'article':
     case 'schema:Article':
       return decodeArticle(node as HTMLElement)
-
-    case 'div':
-    case 'span':
-    case 'time':
-      return decodeDiv(node as HTMLDivElement)
 
     case 'p':
       return decodeParagraph(node as HTMLParagraphElement)
@@ -327,8 +346,17 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'stencila:Object':
       return decodeObject(node as HTMLElement)
 
+    // Container elements which are 'unwrapped'
+    // by simply decoding their children
+    case 'div':
+    case 'span':
+    case 'time':
+      return decodeChildNodes(node)
+
+    // Elements that are explicitly ignored
+    // i.e. no warning
     case 'script':
-      return undefined
+      return []
 
     case '#text':
       return decodeText(node as Text)
@@ -342,8 +370,10 @@ function decodeNode(node: Node): stencila.Node | undefined {
   if (type !== null) return decodeEntity(node as HTMLElement)
 
   log.warn(`No handler for HTML element <${name}>`)
-  return undefined
+  return []
 }
+
+const encodeNodes = (nodes: stencila.Node[]): Node[] => nodes.map(encodeNode)
 
 const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
   switch (nodeType(node)) {
@@ -422,59 +452,13 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
   }
 }
 
-function decodeBlockChildNodes(node: Node): stencila.BlockContent[] {
-  return Array.from(node.childNodes)
-    .reduce(reduceNonNullable(decodeNode), [])
-    .map(n => n as stencila.BlockContent)
-}
-
-function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
-  return [...node.childNodes]
-    .map(child => decodeNode(child) as stencila.InlineContent)
-    .filter(n => n !== '')
-}
-
 /**
  * Decode a `#document` node to a `stencila.Node`.
  */
-function decodeDocument(doc: HTMLDocument): stencila.Node | undefined {
-  const head = doc.querySelector('head')
-  if (!head) throw new Error('Document does not have a <head>!')
-
+function decodeDocument(doc: HTMLDocument): stencila.Node {
   const body = doc.querySelector('body')
   if (!body) throw new Error('Document does not have a <body>!')
-
-  const jsonld = head.querySelector('script[type="application/ld+json"]')
-  const metadata = jsonld ? JSON.parse(jsonld.innerHTML || '{}') : {}
-  delete metadata['@context']
-
-  if (!jsonld && body.childElementCount === 1) {
-    return decodeNode(body.children[0])
-  }
-
-  // TODO: Allow for the different types of creative work
-  return {
-    type: 'Article',
-    ...metadata,
-    content: decodeBlockChildNodes(body)
-  }
-}
-
-/**
- * Decode a `<div>` node to a Stencila `Node`.
- *
- * A `<div>` is treated as having no semantic meaning
- * and so this function decodes it's children.
- */
-function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
-  const children = [...div.childNodes]
-
-  // If the div only contains a single element, return a Node, rather than a list of Nodes
-  if (children.length === 1) {
-    return decodeNode(children[0])
-  } else {
-    return children.map(decodeNode)
-  }
+  return decodeNodes([...body.childNodes])
 }
 
 /**
@@ -569,7 +553,7 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
     title,
     authors: [],
     references: isNonEmpty(refItems) ? refItems : undefined,
-    content: [...element.childNodes].reduce(reduceNonNullable(decodeNode), [])
+    content: decodeChildNodes(element)
   })
 }
 
@@ -1078,9 +1062,9 @@ function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
  * Decode a `<figure>` element to a `stencila.Figure`.
  */
 function decodeFigure(elem: HTMLElement): stencila.Figure {
-  const content = [...elem.childNodes]
-    .filter(n => n.nodeName.toLowerCase() !== 'figcaption')
-    .reduce(reduceNonNullable(decodeNode), [])
+  const content = decodeNodes(
+    [...elem.childNodes].filter(n => n.nodeName.toLowerCase() !== 'figcaption')
+  )
 
   const caption = elem.querySelector('figcaption')
 
@@ -1096,7 +1080,7 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
  * Decode a `<figcaption>` element to a list of `stencila.Node`s.
  */
 function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
-  return [...elem.childNodes].reduce(reduceNonNullable(decodeNode), [])
+  return decodeChildNodes(elem)
 }
 
 /**
@@ -1117,9 +1101,7 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
  */
 function decodeCollection(collection: HTMLOListElement): stencila.Collection {
   const parts = flatten(
-    ([...collection.childNodes] || []).map(part =>
-      ([...part.childNodes] || []).map(decodeNode)
-    )
+    ([...collection.childNodes] || []).map(decodeChildNodes)
   ).filter(isCreativeWork)
 
   return {
@@ -1255,7 +1237,7 @@ function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
   return {
     type: 'ListItem',
-    content: [...li.childNodes].reduce(reduceNonNullable(decodeNode), [])
+    content: decodeChildNodes(li)
   }
 }
 
@@ -1596,9 +1578,11 @@ function encodeNumber(value: number): HTMLElement {
 
 /**
  * Decode a `<span itemtype="https://schema.stenci.la/Array>` element to a `array`.
+ *
+ * Wrap the decoded array with an array to prevent it getting flattened by `decodeNodes`
  */
-function decodeArray(elem: HTMLElement): any[] {
-  return JSON5.parse(elem.innerHTML || '[]')
+function decodeArray(elem: HTMLElement): [any[]] {
+  return [JSON5.parse(elem.innerHTML || '[]')]
 }
 
 /**

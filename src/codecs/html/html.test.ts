@@ -60,6 +60,20 @@ describe('String escaping', () => {
   })
 })
 
+describe('Decode container elements', () => {
+  test('Nested divs and spans', async () => {
+    expect(
+      await d('<div><div><p><span><strong>Stroonnng</strong<</span></p></div></div>'),
+    ).toEqual({
+      type: 'Paragraph',
+      content: [{
+        type: 'Strong',
+        content: ['Stroonnng']
+      }]
+    })
+  })
+})
+
 describe('Encode & Decode cite nodes', () => {
   const schemaNode = cite('myTarget')
   const htmlNode = `<cite><a href="#myTarget">myTarget</a></cite>`
