@@ -25,15 +25,15 @@ import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
 import path from 'path'
+import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
+import { logWarnLossIfAny } from '../../log'
 import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
+import { stringifyContent } from '../../util/content/stringifyContent'
 import { toFiles } from '../../util/toFiles'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
-import { logWarnLossIfAny } from '../../log'
-import { VFileContents } from 'vfile'
-import { stringifyContent } from '../../util/content/stringifyContent'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -197,7 +197,9 @@ export class HTMLCodec extends Codec implements Codec {
 
     if (isStandalone) {
       const nodeToEncode = isBundle ? await bundle(node) : node
-      const { title = 'Untitled', ...metadata } = getArticleMetaData(nodeToEncode)
+      const { title = 'Untitled', ...metadata } = getArticleMetaData(
+        nodeToEncode
+      )
       dom = generateHtmlElement(
         stringifyContent(title),
         metadata,
@@ -539,7 +541,11 @@ function generateHtmlElement(
       }),
       h('meta', { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' }),
       themeCss,
-      themeJs
+      themeJs,
+      h('script', {
+        src: 'https://unpkg.com/@stencila/components@<=1',
+        type: 'text/javascript'
+      })
     ),
     h('body', body)
   )
@@ -1190,26 +1196,28 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
 
   const codeBlock = encodeCodeBlock({
     type: 'CodeBlock',
-    text: chunk.text || ''
+    text: chunk.text || '',
+    meta: {
+      slot: 'code'
+    }
   })
-  // TODO: Until our themes can handle interactive
-  codeBlock.setAttribute('style', 'display:none')
 
   const outputs = h(
-    'div',
-    { 'data-outputs': true },
+    'figure',
+    {
+      attrs: {
+        slot: 'outputs'
+      }
+    },
     (chunk.outputs || []).map(node => {
-      const content = (() => {
-        switch (nodeType(node)) {
-          case 'string':
-            return h('pre', node as string)
-          case 'ImageObject':
-            return encodeImageObject(node as stencila.ImageObject)
-          default:
-            return encodeNode(node)
-        }
-      })()
-      return h('figure', content)
+      switch (nodeType(node)) {
+        case 'string':
+          return h('pre', node as string)
+        case 'ImageObject':
+          return encodeImageObject(node as stencila.ImageObject)
+        default:
+          return encodeNode(node)
+      }
     })
   )
 
@@ -1373,7 +1381,7 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
 
   // prettier-ignore
   return h('div',
-    { attrs: {itemtype: 'https://schema.stenci.la/Datatable'}},
+    { attrs: { itemtype: 'https://schema.stenci.la/Datatable' } },
     h('table',
       h('thead',
         h('tr', cols.map(col => (
