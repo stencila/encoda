@@ -2,12 +2,13 @@ import callsites from 'callsites'
 import fs from 'fs-extra'
 import * as nock from 'nock'
 import path from 'path'
+import * as vfile from '../util/vfile'
 
 /**
  * Get the full path to a file in the closest `__fixtures__` directory
  */
-export const fixture = (filename: string): string => {
-  let dir = callDir()
+export const fixture = (filename: string, caller: number = 2): string => {
+  let dir = callDir(caller)
   let fixtures = ''
   let attempts = 0
   do {
@@ -18,6 +19,12 @@ export const fixture = (filename: string): string => {
   } while (dir !== '/' && attempts < 5)
   return path.join(fixtures, filename)
 }
+
+/**
+ * Read a fixture into a `VFile`
+ */
+export const readFixture = async (filename: string): Promise<vfile.VFile> =>
+  vfile.read(fixture(filename, 3))
 
 /**
  * Get the full path to a file in the `__file_snapshots__` sibling directory
@@ -45,4 +52,4 @@ export const nockRecord = async (filename: string) => {
 /**
  * The directory of the the calling test file
  */
-const callDir = () => path.dirname(callsites()[2].getFileName() || '')
+const callDir = (caller: number = 2) => path.dirname(callsites()[caller].getFileName() || '')
