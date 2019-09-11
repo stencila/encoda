@@ -1,3 +1,10 @@
+# [0.75.0](https://github.com/stencila/encoda/compare/v0.74.0...v0.75.0) (2019-09-11)
+
+
+### Features
+
+* **HTML:** Wrap CodeChunks in custom Web Component ([b2a31f1](https://github.com/stencila/encoda/commit/b2a31f1))
+
 # [0.74.0](https://github.com/stencila/encoda/compare/v0.73.0...v0.74.0) (2019-09-10)
 
 
