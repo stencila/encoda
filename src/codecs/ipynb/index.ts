@@ -9,14 +9,14 @@ import stencila from '@stencila/schema'
 import { isEntity, nodeType } from '@stencila/schema/dist/util'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
-import fs from 'fs-extra'
-import path from 'path'
 import { dump, load } from '../..'
 import * as dataUri from '../../util/dataUri'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import * as nbformat3 from './nbformat-v3'
+import nbformat3Schema from './nbformat-v3.schema.json'
 import * as nbformat4 from './nbformat-v4'
+import nbformat4Schema from './nbformat-v4.schema.json'
 import { coerce } from '../../util/coerce'
 import { stringifyContent } from '../../util/content/stringifyContent'
 
@@ -151,7 +151,7 @@ async function validateNotebook(
   let validator = validators.getSchema(schemaKey)
   if (!validator) {
     try {
-      const schema = await fs.readJSON(path.join(__dirname, schemaKey))
+      const schema = notebook.nbformat === 3 ? nbformat3Schema : nbformat4Schema
       validators.addSchema(schema, schemaKey)
       validator = validators.getSchema(schemaKey)
     } catch (error) {
