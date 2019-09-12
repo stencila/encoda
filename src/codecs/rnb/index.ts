@@ -5,8 +5,10 @@ import { load, text, first, all, elem } from '../../util/html'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import { HTMLCodec } from '../html'
+import { XmdCodec } from '../xmd'
 
 const htmlCodec = new HTMLCodec()
+const rmdCodec = new XmdCodec()
 
 const log = getLogger('encoda:rnb')
 
@@ -60,12 +62,19 @@ export class RnbCodec extends Codec implements Codec {
 
     // Extract and remove Rmd source so that we can correlate inline chunk outputs
     // to their source
-    let rmd: string | undefined
+    let rmd = ''
     const rmdElem = first(contentElem, '#rmd-source-code')
     if (rmdElem !== null) {
       const base64 = text(rmdElem)
       if (base64 !== null) rmd = Buffer.from(base64, 'base64').toString()
       rmdElem.remove()
+    }
+
+    // Decode the Rmd as an `Article` to obtain any meta-data from YAML header
+    const article = await rmdCodec.decode(vfile.load(rmd))
+    if (!stencila.isA('Article', article)) {
+      log.error('Unable to parse R Notebook embedded Rmd')
+      return null
     }
 
     // In R Notebooks, when a code chunk has multiple outputs it is split into multiple
@@ -94,18 +103,11 @@ export class RnbCodec extends Codec implements Codec {
       outputs.forEach(output => output.remove())
     }
 
-    console.log(contentElem.outerHTML)
-
+    // Decode the HTML fragment into Stencila `Node`s
     const node = htmlCodec.decodeHtml(contentElem.outerHTML)
-    const nodes = (Array.isArray(node) ? node : [node]
-    ).reduce((prev, curr) => [...prev, ...(Array.isArray(curr) ? curr : [curr])], [])
+    const content = Array.isArray(node) ? node : [node]
 
-    const authors: stencila.Person[] = []
-    const title = ''
-
-    return stencila.article(authors, title, {
-      content: nodes
-    })
+    return {...article, content}
   }
 
   public readonly encode = async (): Promise<vfile.VFile> => {
