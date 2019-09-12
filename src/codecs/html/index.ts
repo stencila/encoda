@@ -543,7 +543,14 @@ function generateHtmlElement(
       themeCss,
       themeJs,
       h('script', {
-        src: 'https://unpkg.com/@stencila/components@<=1',
+        src:
+          'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.esm.js',
+        type: 'module'
+      }),
+      h('script', {
+        nomodule: '',
+        src:
+          'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
         type: 'text/javascript'
       })
     ),
