@@ -43,8 +43,8 @@ export class RnbCodec extends Codec implements Codec {
       .replace(/<!-- rnb-chunk-begin -->/g, '<stencila-codechunk>')
       .replace(/<!-- rnb-source-begin [\w=]+ -->/g, '<rnb-source>')
       .replace(/<!-- rnb-source-end -->/g, '</rnb-source>')
-      .replace(/<!-- rnb-(output|plot)-begin [\w=]+ -->/g, '<rnb-output>')
-      .replace(/<!-- rnb-(output|plot)-end -->/g, '</rnb-output>')
+      .replace(/<!-- rnb-(output|plot|frame)-begin [\w=]+ -->/g, '<rnb-output>')
+      .replace(/<!-- rnb-(output|plot|frame)-end -->/g, '</rnb-output>')
       .replace(/<!-- rnb-chunk-end -->/g, '</stencila-codechunk>')
 
     // Transform the HTML so that it is in the format expected by the `html` codec...
@@ -60,8 +60,8 @@ export class RnbCodec extends Codec implements Codec {
     const headerElem = first(contentElem, '#header')
     if (headerElem !== null) headerElem.remove()
 
-    // Extract and remove Rmd source so that we can correlate inline chunk outputs
-    // to their source
+    // Extract and remove Rmd source so that we can parse and coerce frontmatter
+    // and correlate inline chunk outputs to their source
     let rmd = ''
     const rmdElem = first(contentElem, '#rmd-source-code')
     if (rmdElem !== null) {
@@ -75,6 +75,67 @@ export class RnbCodec extends Codec implements Codec {
     if (!stencila.isA('Article', article)) {
       log.error('Unable to parse R Notebook embedded Rmd')
       return null
+    }
+
+    // Find each inline code chunk in Rmd
+    const containers = all(contentElem, 'p, h1, h2, h3, h4, h5')
+    const replacements: {
+      elemIndex: number,
+      begin: number,
+      end: number,
+      source: string,
+      output: string
+    }[] = []
+    let cursorElem = 0
+    let cursorIndex = 0
+    const regex = /`r\s+([^`]*)`/g
+    let sourceMatch
+    while(sourceMatch = regex.exec(rmd)) {
+      const begin = sourceMatch.index
+      const end = regex.lastIndex
+      const source = sourceMatch[1]
+      const before = rmd.substring(Math.max(0, begin - 7), begin).trimLeft()
+      const after = rmd.substring(end, Math.min(rmd.length, end + 3)).trimRight()
+      const outputRegex = RegExp(`${escapeRegex(before)}(.+?)${escapeRegex(after)}`, 'g')
+      for (const container of containers.slice(cursorElem)) {
+        const html = container.innerHTML
+        const elemIndex = containers.indexOf(container)
+        const start = cursorElem === elemIndex ? cursorIndex : 0
+        const outputMatch = outputRegex.exec(html.substring(start))
+        if (outputMatch) {
+          // Replace the output with the source, to improve the matching
+          // success of following inline code chunks.
+          const output = outputMatch[1]
+          const begin = start + outputMatch.index + before.length
+          const end = start + outputRegex.lastIndex - after.length
+          container.innerHTML =
+            html.slice(0, begin) +
+            sourceMatch[0] +
+            html.slice(end)
+          // Record the location that needs eventual replacement
+          // with a code chunk
+          replacements.push({
+            elemIndex, begin, end: begin + sourceMatch[0].length, source, output
+          })
+          cursorElem = elemIndex
+          cursorIndex = end
+          break
+        }
+      }
+    }
+
+    // Do replacement in reverse order so that begin and end points remain value
+    for (const replacement of replacements.reverse()) {
+      const {elemIndex, begin, end, source, output} = replacement
+      const container = containers[elemIndex]
+      const html = container.innerHTML
+      container.innerHTML =
+        html.slice(0, begin) +
+        `<stencila-codeexpression>
+          <code class="language-r" slot="code">${source}</code>
+          <span slot="output">${output}</span>
+        </stencila-codeexpression>` +
+        html.slice(end)
     }
 
     // In R Notebooks, when a code chunk has multiple outputs it is split into multiple
@@ -116,15 +177,27 @@ export class RnbCodec extends Codec implements Codec {
 }
 
 /**
+ * Escape characters in a string so that it is a valid regex
+ */
+const escapeRegex = (regex: string): string =>
+  regex.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+/**
  * Transform a code chunk output HTML element by transforming it
  * into the HTML elements expected by the `html` codec.
  */
 const transformOutput = (outputElem: HTMLElement): HTMLElement => {
-  const preCode = first(outputElem, 'pre>code')
+  const preCode = first(outputElem, 'pre > code')
   if (preCode !== null) return elem('pre', {}, text(preCode) || '')
 
   const img = first(outputElem, 'img')
   if (img !== null) return img
+
+  const table = first(outputElem, 'script[data-pagedtable-source=""]')
+  if (table !== null) {
+    // TODO: Create an HTML table from the JSON
+    return elem('pre', {}, text(table) || '')
+  }
 
   log.warn(`Unhandled chunk output type: ${outputElem.nodeName}`)
   return elem('pre', {}, text(outputElem) || '')

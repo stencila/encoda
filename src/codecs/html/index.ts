@@ -328,6 +328,8 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
       return decodeCite(node as HTMLElement)
     case 'stencila:CiteGroup':
       return decodeCiteGroup(node as HTMLOListElement)
+    case 'stencila-codeexpression':
+      return decodeCodeExpression(node as HTMLElement)
     case 'code':
       return decodeCode(node as HTMLElement)
     case 'img':
@@ -1185,13 +1187,9 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   const attrs = encodeDataAttrs(meta || {})
 
   const codeElem = encodeCodeBlock(
-    stencila.codeBlock(text, {
-      programmingLanguage,
-      meta: {
-        slot: 'code'
-      }
-    })
+    stencila.codeBlock(text, { programmingLanguage })
   )
+  codeElem.setAttribute('slot', 'code')
 
   const outputsElem = encodeMaybe(outputs, outputs =>
     h(
@@ -1206,6 +1204,19 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   )
 
   return h('stencila-codechunk', attrs, codeElem, outputsElem)
+}
+
+/**
+ * Decode a `<stencila-codeexpression>` element to a Stencila `CodeChunk`.
+ */
+function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
+  const codeElem = elem.querySelector('[slot="code"]')
+  const text = codeElem !== null ? codeElem.textContent || '' : ''
+
+  const outputElem = elem.querySelector('[slot="output"]')
+  const output = outputElem !== null ? decodeCodeOutput(outputElem as HTMLElement) : undefined
+
+  return stencila.codeExpression(text, {output})
 }
 
 /**
@@ -1229,6 +1240,7 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
 const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
   switch (elem.nodeName.toLowerCase()) {
     case 'pre':
+    case 'span':
       return elem.textContent || ''
     default:
       return decodeNode(elem)

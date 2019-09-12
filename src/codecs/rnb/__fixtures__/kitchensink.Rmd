@@ -12,6 +12,8 @@ This is a test `Rmd` file intended as a comprehensive test of Encoda's `rnb` cod
 
 Here is an inline chunk `r 2 * 3`. There could be more than one in a paragraph of course, `r sum(1, 2)`.
 
+And some in another paragraph here `r 42` and here `r 43`.
+
 ## Heading level two
 
 ### Heading level three
@@ -30,6 +32,13 @@ A number and a string:
 print('Hi!')
 1
 ```
+
+A `data.frame`:
+
+```{r}
+head(cars)
+```
+
 
 An image:
 
