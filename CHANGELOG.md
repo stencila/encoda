@@ -1,3 +1,11 @@
+## [0.75.1](https://github.com/stencila/encoda/compare/v0.75.0...v0.75.1) (2019-09-12)
+
+
+### Bug Fixes
+
+* **HTML:** Fix encoding of name & slot attributes ([feb44f0](https://github.com/stencila/encoda/commit/feb44f0))
+* **HTML:** Fix resolution of Web Components on UNPKG ([bd0d1ca](https://github.com/stencila/encoda/commit/bd0d1ca))
+
 # [0.75.0](https://github.com/stencila/encoda/compare/v0.74.0...v0.75.0) (2019-09-11)
 
 
