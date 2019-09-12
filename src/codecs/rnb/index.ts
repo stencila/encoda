@@ -76,23 +76,25 @@ export class RnbCodec extends Codec implements Codec {
       const source = sourceElems.map(elem => {
         const code = text(elem)
         elem.remove()
-        return code
+        return code !== null ? code.trimLeft() : ''
       }).join('')
       chunkElem.appendChild(
-        elem('pre', { class: 'language-r' }, elem('code', {}, source))
+        elem('pre', { slot: 'code' }, elem('code', { class: 'language-r' }, source))
       )
 
       // And collect all the outputs into one element
       const outputs = all(chunkElem, 'rnb-output')
       chunkElem.appendChild(
         elem(
-          'div',
-          { 'data-outputs': true },
-          ...outputs.map(decodeOutput)
+          'figure',
+          { 'slot':  'outputs'},
+          ...outputs.map(transformOutput)
         )
       )
       outputs.forEach(output => output.remove())
     }
+
+    console.log(contentElem.outerHTML)
 
     const node = htmlCodec.decodeHtml(contentElem.outerHTML)
     const nodes = (Array.isArray(node) ? node : [node]
@@ -111,12 +113,17 @@ export class RnbCodec extends Codec implements Codec {
   }
 }
 
-const decodeOutput = (outputElem: HTMLElement): HTMLElement => {
+/**
+ * Transform a code chunk output HTML element by transforming it
+ * into the HTML elements expected by the `html` codec.
+ */
+const transformOutput = (outputElem: HTMLElement): HTMLElement => {
   const preCode = first(outputElem, 'pre>code')
-  if (preCode !== null) return elem('figure', {}, text(preCode) || '')
+  if (preCode !== null) return elem('pre', {}, text(preCode) || '')
 
   const img = first(outputElem, 'img')
-  if (img !== null) return elem('figure', {}, img)
+  if (img !== null) return img
 
-  return elem('figure')
+  log.warn(`Unhandled chunk output type: ${outputElem.nodeName}`)
+  return elem('pre', {}, text(outputElem) || '')
 }

@@ -1163,29 +1163,15 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
   return h('pre', { attrs }, code)
 }
 
-function encodeCodeOutput(node: stencila.Node): HTMLElement {
-  const content = (() => {
-    switch (nodeType(node)) {
-      case 'string':
-        return h('pre', node as string)
-      case 'ImageObject':
-        return encodeImageObject(node as stencila.ImageObject)
-      default:
-        return encodeNode(node)
-    }
-  })()
-  return h('figure', content)
-}
-
 /**
  * Decode a `<stencila-codechunk>` element to a Stencila `CodeChunk`.
  */
 function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
-  const codeElem = chunk.querySelector('pre code')
+  const codeElem = chunk.querySelector('[slot="code"]')
   const text = codeElem !== null ? codeElem.textContent || '' : ''
 
-  const outputElems = chunk.querySelectorAll('[data-outputs] figure')
-  const outputs = Array.from(outputElems).map(elem => decodeNode(elem) || null)
+  const outputElems = chunk.querySelectorAll('[slot="outputs"] > *')
+  const outputs = Array.from(outputElems).map(elem => decodeCodeOutput(elem as HTMLElement))
 
   return stencila.codeChunk(text, { outputs })
 }
@@ -1196,70 +1182,34 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
 function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   const { text = '', meta = {}, programmingLanguage, outputs } = chunk
 
-<<<<<<<
-  const codeBlock = encodeCodeBlock({
-    type: 'CodeBlock',
-    text: chunk.text || '',
-    meta: {
-      slot: 'code'
-    }
-  })
-=======
   const attrs = encodeDataAttrs(meta || {})
 
-  const codeBlock = encodeCodeBlock(
-    stencila.codeBlock(text, { programmingLanguage })
-  )
-
-  // TODO: Until our themes can handle interactive
-  codeBlock.setAttribute('style', 'display:none')
->>>>>>>
-
-<<<<<<<
-  const outputs = h(
-    'figure',
-    {
-      attrs: {
-        slot: 'outputs'
-      }
-    },
-    (chunk.outputs || []).map(node => {
-      switch (nodeType(node)) {
-        case 'string':
-          return h('pre', node as string)
-        case 'ImageObject':
-          return encodeImageObject(node as stencila.ImageObject)
-        default:
-          return encodeNode(node)
+  const codeElem = encodeCodeBlock(
+    stencila.codeBlock(text, {
+      programmingLanguage,
+      meta: {
+        slot: 'code'
       }
     })
-=======
-  const outputsElem = encodeMaybe(outputs, outputs =>
-    h(
-      'div',
-      { 'data-outputs': true },
-      outputs.map(node => {
-        const content = (() => {
-          switch (nodeType(node)) {
-            case 'string':
-              return h('pre', node as string)
-            case 'ImageObject':
-              return encodeImageObject(node as stencila.ImageObject)
-            default:
-              return encodeNode(node)
-          }
-        })()
-        return h('figure', content)
-      })
-    )
->>>>>>>
   )
 
-  return h('stencila-codechunk', attrs, codeBlock, outputsElem)
+  const outputsElem = encodeMaybe(outputs, outputs =>
+    h(
+      'figure',
+      {
+        attrs: {
+          slot: 'outputs'
+        }
+      },
+      outputs.map(encodeCodeOutput)
+    )
+  )
+
+  return h('stencila-codechunk', attrs, codeElem, outputsElem)
 }
 
 /**
- * Encode a `stencila.CodeExpression to a `<stencila-codeexpression>` element.
+ * Encode a Stencila `CodeExpression` to a `<stencila-codeexpression>` element.
  */
 function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   const attrs = encodeDataAttrs(expr.meta || {})
@@ -1270,6 +1220,32 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
     attrs,
     encodeCodeOutput(expr.output || '')
   )
+}
+
+/**
+ * Decode an output element of a `<stencila-codechunk>` or
+ * `<stencila-codeexpression>` to Stencila Node.
+ */
+const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
+  switch (elem.nodeName.toLowerCase()) {
+    case 'pre':
+      return elem.textContent || ''
+    default:
+      return decodeNode(elem)
+  }
+}
+
+/**
+ * Encode an output of a `CodeChunk` or `CodeExpression` as
+ * a `HTMLElement`.
+ */
+const encodeCodeOutput = (node: stencila.Node): Node => {
+  switch (nodeType(node)) {
+    case 'string':
+      return h('pre', node as string)
+    default:
+      return encodeNode(node)
+  }
 }
 
 /**
