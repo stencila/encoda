@@ -1178,7 +1178,7 @@ function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
 function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
   const attrs = encodeDataAttrs(block.meta || {})
   const code = encodeCode(block, false)
-  return h('pre', attrs, code)
+  return h('pre', { attrs }, code)
 }
 
 function encodeCodeOutput(node: stencila.Node): HTMLElement {
@@ -1704,16 +1704,21 @@ function decodeDataAttrs(
   return Object.keys(dict).length ? dict : undefined
 }
 
+// These attribute names are fully-formed, and should not be prefixed with `data-`
+const reservedAttrs = ['slot', 'name']
+
 /**
  * Encode a dictionary of strings to `data-` attributes to add to
  * an element (the inverse of `decodeDataAttrs`).
  */
 function encodeDataAttrs(meta: { [key: string]: string }): typeof meta {
-  const attrs: { [key: string]: string } = {}
-  for (const [key, value] of Object.entries(meta)) {
-    attrs['data-' + key] = value
-  }
-  return attrs
+  return Object.entries(meta).reduce(
+    (attrs, [key, value]) => ({
+      ...attrs,
+      [reservedAttrs.includes(key) ? key : `data-${key}`]: value
+    }),
+    {}
+  )
 }
 
 /**
