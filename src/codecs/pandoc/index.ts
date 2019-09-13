@@ -428,6 +428,8 @@ function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
       return encodeQuoteBlock(block)
     case 'CodeBlock':
       return encodeCodeBlock(block)
+    case 'CodeChunk':
+      return encodeCodeChunk(block as stencila.CodeChunk)
     case 'List':
       return encodeList(block)
     case 'Table':
@@ -533,6 +535,25 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
   return {
     t: 'CodeBlock',
     c: [attrs, node.text]
+  }
+}
+
+/**
+ * Encode a Stencila `CodeChunk` to a Pandoc `Div` with an rPNG in it
+ * and a `custom-style` attribute.
+ */
+function encodeCodeChunk(node: stencila.CodeChunk): Pandoc.Div {
+  return {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', 'CodeChunk']]],
+      [
+        {
+          t: 'Para',
+          c: [encodeRPNG(node)]
+        }
+      ]
+    ]
   }
 }
 
@@ -770,6 +791,8 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeQuote(node as stencila.Quote)
     case 'CodeFragment':
       return encodeCodeFragment(node as stencila.CodeFragment)
+    case 'CodeExpression':
+      return encodeCodeExpression(node as stencila.CodeExpression)
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Cite':
@@ -1006,6 +1029,20 @@ function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
 }
 
 /**
+ * Encode a Stencila `CodeExpression` to a Pandoc `Span` with an rPNG in it
+ * and a `custom-style` attribute.
+ */
+function encodeCodeExpression(node: stencila.CodeExpression): Pandoc.Span {
+  return {
+    t: 'Span',
+    c: [
+      ['', [], [['custom-style', 'CodeExpression']]],
+      [ encodeRPNG(node) ]
+    ]
+  }
+}
+
+/**
  * Decode a Pandoc `Link` to a Stencila `Link`.
  */
 function decodeLink(node: Pandoc.Link): stencila.Link {
@@ -1090,16 +1127,24 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
 function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
   return {
     t: 'Para',
-    c: [encodeFallbackInline(node)]
+    c: [encodeRPNG(node)]
   }
 }
 
 /**
- * Encode a Stencila `InlineContent` node as a Pandoc `Image`
- * pointing to a rPNG. This is a fallback encoding for inline nodes
+ * Encode a Stencila `InlineContent` as a Pandoc `Image`.
+ * This is a fallback encoding for inline nodes
  * not handled elsewhere.
  */
 function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
+  return encodeRPNG(node)
+}
+
+/**
+ * Encode a Stencila `Node` as a Pandoc `Image`
+ * pointing to a rPNG.
+ */
+function encodeRPNG(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
     await write(node, imagePath, {
