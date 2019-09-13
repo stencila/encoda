@@ -1,3 +1,11 @@
+## [0.75.4](https://github.com/stencila/encoda/compare/v0.75.3...v0.75.4) (2019-09-13)
+
+
+### Bug Fixes
+
+* **Build:** Update and pin Puppeteer version ([561cae2](https://github.com/stencila/encoda/commit/561cae2))
+* **Deps:**  Upgrade ciitation-js ([b156446](https://github.com/stencila/encoda/commit/b156446))
+
 ## [0.75.3](https://github.com/stencila/encoda/compare/v0.75.2...v0.75.3) (2019-09-13)
 
 
