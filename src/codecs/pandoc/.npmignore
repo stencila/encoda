@@ -1,0 +1,9 @@
+# This avoids the large, platform specific pandoc binaries being included in the NPM package.
+# It is copied into `dist/codecs/pandoc`
+# Generally it is better to whitelist using `files` in `package.json` (https://medium.com/@jdxcode/for-the-love-of-god-dont-use-npmignore-f93c08909d8d).
+# However, `files` and top-level `.npmignore` can not be used together (https://github.com/npm/npm/issues/4479)
+# And over in the `stencila/stencila` repo the `pkg` package need `files` for this package
+# so that it includes all necessary files.
+# It' all rather complicatedd!
+
+binary/
