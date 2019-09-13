@@ -220,7 +220,7 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
       : stencila.isA('Paragraph', title)
       ? title.content.length === 1 && typeof title.content[0] === 'string'
         ? title.content[0]
-        : [title]
+        : title
       : (Array.isArray(title) ? title : [title]).filter(isBlockContent)
 
   // TODO: handle other meta data as necessary
@@ -228,7 +228,7 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
   const content = decodeBlocks(pdoc.blocks)
   return {
     type: 'Article',
-    title: title_,
+    title: typeof title_ === 'string' ? title_ : [title_],
     authors: [],
     ...meta,
     content
