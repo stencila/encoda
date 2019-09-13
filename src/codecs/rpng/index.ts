@@ -27,7 +27,6 @@ const KEYWORD = 'JSON'
 
 export class RPNGCodec extends Codec implements Codec {
   // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
-  // an custom extension to be able to refere to this format more easily.
   public readonly mediaTypes = ['vnd.stencila.rpng']
 
   public readonly extNames = ['rpng']
@@ -76,7 +75,8 @@ export class RPNGCodec extends Codec implements Codec {
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
-    return this.decodeSync(file)
+    const buffer = await vfile.dump(file, 'buffer')
+    return this.decodeSync(buffer)
   }
 
   /**
@@ -86,12 +86,9 @@ export class RPNGCodec extends Codec implements Codec {
    *
    * @param content The content to sniff (a file path).
    */
-  public decodeSync = (file: vfile.VFile): stencila.Node => {
-    if (Buffer.isBuffer(file.contents)) {
-      const json = extract(KEYWORD, file.contents)
-      return JSON.parse(json)
-    }
-    return {}
+  public decodeSync = (buffer: Buffer): stencila.Node => {
+    const json = extract(KEYWORD, buffer)
+    return JSON.parse(json)
   }
 
   /**
@@ -160,7 +157,7 @@ export class RPNGCodec extends Codec implements Codec {
 
     await page.close()
 
-    // Insert JSON of the thing into the image
+    // Insert the Stencila node as JSON into a `tEXt` chunk
     const json = JSON.stringify(node)
     const image = insert(KEYWORD, json, buffer)
 

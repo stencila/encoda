@@ -743,10 +743,8 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
       // the embedded node
       const url = image.contentUrl
       if (url) {
-        // TODO: currently assume url is local file, should we fetch remotes?
         const node = rpng.sniffDecodeSync(url)
-        // TODO: avoid `as`
-        if (typeof node !== 'undefined') return node as stencila.InlineContent
+        if (node !== undefined) return node as stencila.InlineContent
       }
       return image
     default:
