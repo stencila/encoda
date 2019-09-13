@@ -20,6 +20,7 @@ import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
+import { logWarnLossIfAny } from '../../log';
 
 const rpng = new RPNGCodec()
 
@@ -210,26 +211,20 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
 function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
-  const { title, ...meta } = decodeMeta(pdoc.meta)
+  const { title = 'Untitled', ...meta } = decodeMeta(pdoc.meta)
 
-  let titre = 'Untitled'
-  if (title) {
-    const type_ = nodeType(title)
-    if (type_ === 'string') {
-      titre = title as string
-    } else if (type_ === 'Paragraph') {
-      const para = title as stencila.Paragraph
-      // TODO: Avoid as and/or allow for title to be a Paragraph
-      titre = para.content[0] as string
-    }
-  }
+  // Filter the title to ensure only valid content
+  const title_ = typeof title === 'string'
+    ? title
+    : (Array.isArray(title)
+      ? title : [title]).filter(stencila.isBlockContent)
 
-  // TODO: mutate other metadata to conform to schema
+  // TODO: handle other meta data as necessary
 
   const content = decodeBlocks(pdoc.blocks)
   return {
     type: 'Article',
-    title: titre,
+    title: title_,
     authors: [],
     ...meta,
     content
@@ -294,7 +289,7 @@ export function encodeMeta(obj: { [key: string]: any }): Pandoc.Meta {
 /**
  * Decode a Pandoc `MetaValue` to a Stencila `Node`
  */
-function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
+function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node | stencila.Node[] {
   switch (value.t) {
     case 'MetaBool':
       return value.c
@@ -314,12 +309,7 @@ function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
         content: decodeInlines(value.c)
       }
     case 'MetaBlocks':
-      return {
-        // TODO: Currently there is no stencila.Division
-        // so using QuoteBlock instead
-        type: 'QuoteBlock',
-        content: decodeBlocks(value.c)
-      }
+      return decodeBlocks(value.c)
   }
 }
 
