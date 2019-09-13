@@ -1,3 +1,10 @@
+## [0.75.3](https://github.com/stencila/encoda/compare/v0.75.2...v0.75.3) (2019-09-13)
+
+
+### Bug Fixes
+
+* **Build:** Reinstate files property; add nested npmignore ([356b62e](https://github.com/stencila/encoda/commit/356b62e))
+
 ## [0.75.2](https://github.com/stencila/encoda/compare/v0.75.1...v0.75.2) (2019-09-13)
 
 
