@@ -20,7 +20,6 @@ import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
-import { logWarnLossIfAny } from '../../log';
 
 const rpng = new RPNGCodec()
 
@@ -214,10 +213,10 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
   const { title = 'Untitled', ...meta } = decodeMeta(pdoc.meta)
 
   // Filter the title to ensure only valid content
-  const title_ = typeof title === 'string'
-    ? title
-    : (Array.isArray(title)
-      ? title : [title]).filter(stencila.isBlockContent)
+  const title_ =
+    typeof title === 'string'
+      ? title
+      : (Array.isArray(title) ? title : [title]).filter(stencila.isBlockContent)
 
   // TODO: handle other meta data as necessary
 
@@ -289,7 +288,9 @@ export function encodeMeta(obj: { [key: string]: any }): Pandoc.Meta {
 /**
  * Decode a Pandoc `MetaValue` to a Stencila `Node`
  */
-function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node | stencila.Node[] {
+function decodeMetaValue(
+  value: Pandoc.MetaValue
+): stencila.Node | stencila.Node[] {
   switch (value.t) {
     case 'MetaBool':
       return value.c
@@ -406,7 +407,7 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
   }
 
   log.error(`Unhandled Pandoc node type "${block.t}"`)
-  return decodePara({t: 'Para', c: []})
+  return decodePara({ t: 'Para', c: [] })
 }
 
 /**
@@ -453,7 +454,6 @@ function encodeHeading(node: stencila.Heading): Pandoc.Header {
     c: [node.depth, emptyAttrs, encodeInlines(node.content)]
   }
 }
-
 
 /**
  * Decode a Pandoc `Plain` to a Stencila `Paragraph`.
@@ -1034,10 +1034,7 @@ function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
 function encodeCodeExpression(node: stencila.CodeExpression): Pandoc.Span {
   return {
     t: 'Span',
-    c: [
-      ['', [], [['custom-style', 'CodeExpression']]],
-      [ encodeRPNG(node) ]
-    ]
+    c: [['', [], [['custom-style', 'CodeExpression']]], [encodeRPNG(node)]]
   }
 }
 
