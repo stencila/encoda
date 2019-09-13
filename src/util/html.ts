@@ -33,7 +33,8 @@ export const elem = (
     for (const [key, value] of Object.entries(attrs))
       elem.setAttribute(key, value.toString())
   for (const child of children) {
-    if (typeof child === 'string') elem.appendChild(JSDOM.window.document.createTextNode(child))
+    if (typeof child === 'string')
+      elem.appendChild(JSDOM.window.document.createTextNode(child))
     else elem.appendChild(child)
   }
   return elem

@@ -63,13 +63,17 @@ describe('String escaping', () => {
 describe('Decode container elements', () => {
   test('Nested divs and spans', async () => {
     expect(
-      await d('<div><div><p><span><strong>Stroonnng</strong<</span></p></div></div>'),
+      await d(
+        '<div><div><p><span><strong>Stroonnng</strong<</span></p></div></div>'
+      )
     ).toEqual({
       type: 'Paragraph',
-      content: [{
-        type: 'Strong',
-        content: ['Stroonnng']
-      }]
+      content: [
+        {
+          type: 'Strong',
+          content: ['Stroonnng']
+        }
+      ]
     })
   })
 })

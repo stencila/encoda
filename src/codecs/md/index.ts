@@ -363,7 +363,7 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
   const content: stencila.Node[] = []
   for (const child of root.children) {
     if (child.type === 'yaml') {
-      frontmatter = {...frontmatter, ...yaml.safeLoad(child.value)}
+      frontmatter = { ...frontmatter, ...yaml.safeLoad(child.value) }
     } else {
       content.push(decodeNode(child))
     }
@@ -374,7 +374,7 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
     [],
     'Untitled',
     {
-      //...which may be overidden here, or during coercion
+      // ...which may be overidden here, or during coercion
       ...frontmatter,
       content
     }

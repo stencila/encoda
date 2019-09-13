@@ -130,15 +130,13 @@ export class HTMLCodec extends Codec implements Codec {
    * Note that, if the HTML does not contain any handled elements, this will
    * return `undefined`.
    */
-  public decodeHtml = (
-    htmlContent: VFileContents
-  ): stencila.Node => {
+  public decodeHtml = (htmlContent: VFileContents): stencila.Node => {
     const dom = new jsdom.JSDOM(htmlContent)
     const document = dom.window.document
     collapse(document)
     const node = decodeNode(document)
     if (Array.isArray(node)) {
-      if (node.length == 0) {
+      if (node.length === 0) {
         log.warn(
           `No node could be decoded from HTML: ${
             htmlContent.length > 10
@@ -147,7 +145,7 @@ export class HTMLCodec extends Codec implements Codec {
           }`
         )
         return ''
-      } else if (node.length == 1) {
+      } else if (node.length === 1) {
         return node[0]
       }
     }
@@ -331,7 +329,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'stencila-codeexpression':
       return decodeCodeExpression(node as HTMLElement)
     case 'code':
-      return decodeCode(node as HTMLElement)
+      return decodeCodeFragment(node as HTMLElement)
     case 'img':
       return decodeImage(node as HTMLImageElement)
     case 'figure':
@@ -433,7 +431,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
     case 'Code':
-      return encodeCode(node as stencila.Code)
+      return encodeCodeFragment(node as stencila.CodeFragment)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
     case 'Math':
@@ -1142,7 +1140,7 @@ function encodeCollection(collection: stencila.Collection): HTMLOListElement {
 function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
-  const { programmingLanguage, text } = decodeCode(code)
+  const { programmingLanguage, text } = decodeCodeFragment(code)
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
     programmingLanguage,
@@ -1160,8 +1158,12 @@ function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
  * the `<pre>` element with a `data-` prefix.
  */
 function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
-  const attrs = encodeDataAttrs(block.meta || {})
-  const code = encodeCode(block, false)
+  const { text, programmingLanguage, meta = {} } = block
+  const attrs = encodeDataAttrs(meta)
+  const code = encodeCodeFragment(
+    stencila.codeFragment(text, { programmingLanguage }),
+    false
+  )
   return h('pre', { attrs }, code)
 }
 
@@ -1173,7 +1175,9 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
   const text = codeElem !== null ? codeElem.textContent || '' : ''
 
   const outputElems = chunk.querySelectorAll('[slot="outputs"] > *')
-  const outputs = Array.from(outputElems).map(elem => decodeCodeOutput(elem as HTMLElement))
+  const outputs = Array.from(outputElems).map(elem =>
+    decodeCodeOutput(elem as HTMLElement)
+  )
 
   return stencila.codeChunk(text, { outputs })
 }
@@ -1214,9 +1218,12 @@ function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
   const text = codeElem !== null ? codeElem.textContent || '' : ''
 
   const outputElem = elem.querySelector('[slot="output"]')
-  const output = outputElem !== null ? decodeCodeOutput(outputElem as HTMLElement) : undefined
+  const output =
+    outputElem !== null
+      ? decodeCodeOutput(outputElem as HTMLElement)
+      : undefined
 
-  return stencila.codeExpression(text, {output})
+  return stencila.codeExpression(text, { output })
 }
 
 /**
@@ -1494,27 +1501,27 @@ function encodeQuote(quote: stencila.Quote): HTMLQuoteElement {
 }
 
 /**
- * Decode a `<code>` element to a `stencila.Code`.
+ * Decode a `<code>` element to a `stencila.CodeFragment`.
  */
-function decodeCode(elem: HTMLElement): stencila.Code {
-  const code: stencila.Code = { type: 'Code', text: elem.textContent || '' }
+function decodeCodeFragment(elem: HTMLElement): stencila.CodeFragment {
+  const codeFrag = stencila.codeFragment(elem.textContent || '')
   const clas = elem.getAttribute('class')
   if (clas) {
     const match = clas.match(/^language-(\w+)$/)
     if (match) {
-      code.programmingLanguage = match[1]
+      codeFrag.programmingLanguage = match[1]
     }
   }
   const meta = decodeDataAttrs(elem)
-  if (meta) code.meta = meta
-  return code
+  if (meta) codeFrag.meta = meta
+  return codeFrag
 }
 
 /**
- * Encode a `stencila.Code` to a `<code>` element.
+ * Encode a `stencila.CodeFragment` to a `<code>` element.
  */
-function encodeCode(
-  code: stencila.Code,
+function encodeCodeFragment(
+  code: stencila.CodeFragment,
   dataAttrs: boolean = true
 ): HTMLElement {
   return h('code', {

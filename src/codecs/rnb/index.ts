@@ -80,23 +80,28 @@ export class RnbCodec extends Codec implements Codec {
     // Find each inline code chunk in Rmd
     const containers = all(contentElem, 'p, h1, h2, h3, h4, h5')
     const replacements: {
-      elemIndex: number,
-      begin: number,
-      end: number,
-      source: string,
+      elemIndex: number
+      begin: number
+      end: number
+      source: string
       output: string
     }[] = []
     let cursorElem = 0
     let cursorIndex = 0
     const regex = /`r\s+([^`]*)`/g
     let sourceMatch
-    while(sourceMatch = regex.exec(rmd)) {
+    while ((sourceMatch = regex.exec(rmd))) {
       const begin = sourceMatch.index
       const end = regex.lastIndex
       const source = sourceMatch[1]
       const before = rmd.substring(Math.max(0, begin - 7), begin).trimLeft()
-      const after = rmd.substring(end, Math.min(rmd.length, end + 3)).trimRight()
-      const outputRegex = RegExp(`${escapeRegex(before)}(.+?)${escapeRegex(after)}`, 'g')
+      const after = rmd
+        .substring(end, Math.min(rmd.length, end + 3))
+        .trimRight()
+      const outputRegex = RegExp(
+        `${escapeRegex(before)}(.+?)${escapeRegex(after)}`,
+        'g'
+      )
       for (const container of containers.slice(cursorElem)) {
         const html = container.innerHTML
         const elemIndex = containers.indexOf(container)
@@ -109,13 +114,15 @@ export class RnbCodec extends Codec implements Codec {
           const begin = start + outputMatch.index + before.length
           const end = start + outputRegex.lastIndex - after.length
           container.innerHTML =
-            html.slice(0, begin) +
-            sourceMatch[0] +
-            html.slice(end)
+            html.slice(0, begin) + sourceMatch[0] + html.slice(end)
           // Record the location that needs eventual replacement
           // with a code chunk
           replacements.push({
-            elemIndex, begin, end: begin + sourceMatch[0].length, source, output
+            elemIndex,
+            begin,
+            end: begin + sourceMatch[0].length,
+            source,
+            output
           })
           cursorElem = elemIndex
           cursorIndex = end
@@ -126,7 +133,7 @@ export class RnbCodec extends Codec implements Codec {
 
     // Do replacement in reverse order so that begin and end points remain value
     for (const replacement of replacements.reverse()) {
-      const {elemIndex, begin, end, source, output} = replacement
+      const { elemIndex, begin, end, source, output } = replacement
       const container = containers[elemIndex]
       const html = container.innerHTML
       container.innerHTML =
@@ -143,23 +150,25 @@ export class RnbCodec extends Codec implements Codec {
     for (const chunkElem of all(contentElem, 'stencila-codechunk')) {
       // So join all the source code into one `<pre><code>` element
       const sourceElems = all(chunkElem, 'rnb-source')
-      const source = sourceElems.map(elem => {
-        const code = text(elem)
-        elem.remove()
-        return code !== null ? code.trimLeft() : ''
-      }).join('')
+      const source = sourceElems
+        .map(elem => {
+          const code = text(elem)
+          elem.remove()
+          return code !== null ? code.trimLeft() : ''
+        })
+        .join('')
       chunkElem.appendChild(
-        elem('pre', { slot: 'code' }, elem('code', { class: 'language-r' }, source))
+        elem(
+          'pre',
+          { slot: 'code' },
+          elem('code', { class: 'language-r' }, source)
+        )
       )
 
       // And collect all the outputs into one element
       const outputs = all(chunkElem, 'rnb-output')
       chunkElem.appendChild(
-        elem(
-          'figure',
-          { 'slot':  'outputs'},
-          ...outputs.map(transformOutput)
-        )
+        elem('figure', { slot: 'outputs' }, ...outputs.map(transformOutput))
       )
       outputs.forEach(output => output.remove())
     }
@@ -168,7 +177,7 @@ export class RnbCodec extends Codec implements Codec {
     const node = htmlCodec.decodeHtml(contentElem.outerHTML)
     const content = Array.isArray(node) ? node : [node]
 
-    return {...article, content}
+    return { ...article, content }
   }
 
   public readonly encode = async (): Promise<vfile.VFile> => {
