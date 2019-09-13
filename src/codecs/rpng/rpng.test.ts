@@ -39,7 +39,6 @@ test('sniff', async () => {
 test('decode', async () => {
   const file = await read(rpngPath)
   expect(await decode(file)).toEqual(node)
-  expect(decodeSync(file)).toEqual(node)
 })
 
 test('encode', async () => {
