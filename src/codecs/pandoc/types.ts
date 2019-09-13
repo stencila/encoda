@@ -448,6 +448,7 @@ export enum InputFormat {
   creole = 'creole',
   docbook = 'docbook',
   docx = 'docx',
+  docx_styles = 'docx+styles',
   dokuwiki = 'dokuwiki',
   epub = 'epub',
   fb2 = 'fb2',

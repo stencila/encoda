@@ -25,7 +25,7 @@ const rpng = new RPNGCodec()
 
 export { InputFormat, OutputFormat } from './types'
 
-const logger = getLogger('encoda:pandoc')
+const log = getLogger('encoda:pandoc')
 
 interface DecodeOptions {
   flags?: string[]
@@ -155,7 +155,7 @@ let encodePromises: Promise<any>[] = []
  */
 function run(input: string | Buffer, args: string[]): Promise<string> {
   args.push(`--data-dir=${dataDir}`)
-  logger.debug(
+  log.debug(
     `Pandoc spawn\n  path: ${binary.path()}\n  args:\n    ${args.join(
       '\n    '
     )}`
@@ -173,14 +173,14 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
     })
     child.on('close', () => {
       if (stderr) {
-        logger.error(
+        log.error(
           `Pandoc error!\n  message: ${stderr}  args:\n    ${args.join(
             '\n    '
           )}\n`
         )
         reject(new Error(stderr))
       } else {
-        logger.debug(`Pandoc success.`)
+        log.debug(`Pandoc success.`)
         resolve(stdout)
       }
     })
@@ -194,7 +194,7 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
         // before we finish writing to it.
         // @ts-ignore
         if (err.code === 'EPIPE') {
-          logger.debug('Pandoc EPIPE error')
+          log.debug('Pandoc EPIPE error')
         } else {
           reject(err)
         }
@@ -398,6 +398,8 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
   switch (block.t) {
     case 'Header':
       return decodeHeader(block)
+    case 'Plain':
+      return decodePlain(block)
     case 'Para':
       return decodePara(block)
     case 'BlockQuote':
@@ -412,7 +414,9 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
     case 'HorizontalRule':
       return decodeHorizontalRule()
   }
-  throw new Error(`Unhandled Pandoc node type "${block.t}"`)
+
+  log.error(`Unhandled Pandoc node type "${block.t}"`)
+  return decodePara({t: 'Para', c: []})
 }
 
 /**
@@ -460,6 +464,14 @@ function encodeHeading(node: stencila.Heading): Pandoc.Header {
   }
 }
 
+
+/**
+ * Decode a Pandoc `Plain` to a Stencila `Paragraph`.
+ */
+function decodePlain(node: Pandoc.Plain): stencila.Paragraph {
+  return stencila.paragraph(decodeInlines(node.c))
+}
+
 /**
  * Decode a Pandoc `Para` to a Stencila `Paragraph` or
  * other `BlockContent` node.
@@ -473,10 +485,7 @@ function decodePara(node: Pandoc.Para): stencila.BlockContent {
   const content = decodeInlines(node.c)
   if (content.length === 1) {
     const node = content[0]
-    // TODO: fix this dangerous type casting
-    if (nodeType(node) === 'CodeChunk') {
-      return (node as unknown) as stencila.CodeChunk
-    }
+    if (stencila.isA('CodeChunk', node)) return node
   }
   return {
     type: 'Paragraph',
@@ -800,7 +809,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
-  logger.warn(
+  log.warn(
     `Falling back to default encoding for inline node type ${nodeType(node)}.`
   )
   return encodeFallbackInline(node)
