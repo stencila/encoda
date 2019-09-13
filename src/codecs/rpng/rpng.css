@@ -1,0 +1,58 @@
+#target {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 11pt;
+  line-height: 150%;
+  color: #333;
+}
+
+stencila-codechunk,
+stencila-codeexpression {
+  display: inline-block;
+  min-width: 1em;
+  min-height: 1em;
+  border: 1px solid blue;
+}
+
+stencila-codechunk {
+  border-radius: 3px;
+}
+
+stencila-codeexpression {
+  padding: 0.1em;
+  border-radius: 500px;
+}
+
+stencila-codechunk [slot='code'],
+stencila-codeexpression [slot='code'] {
+  display: none;
+}
+
+stencila-codechunk figure[slot='outputs'] {
+  margin: 1em;
+}
+
+stencila-codechunk figure[slot='outputs'] * {
+  margin: 1em auto;
+}
+
+stencila-codeexpression pre[slot='output'] {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+table {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+table th {
+  color: #555;
+  background: rgba(0,0,0,.1);
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  border: 1px solid lightgrey;
+}
