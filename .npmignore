@@ -1,0 +1,10 @@
+# Generally it is better to whitelist using `files` in `package.json` (https://medium.com/@jdxcode/for-the-love-of-god-dont-use-npmignore-f93c08909d8d).
+# However, `files` and `.npmignore` can not be used together (https://github.com/npm/npm/issues/4479)
+# This blacklists everything and then whitelists what we need and
+# blacklists specific tems in /dist.
+# Check this configuration using `npm pack`
+
+/*
+!/dist
+!/install.js
+/dist/codecs/pandoc/binary/

@@ -432,7 +432,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           },
           ' and ',
           {
-            type: 'Code',
+            type: 'CodeFragment',
             text: 'code'
           },
           '.'
@@ -766,7 +766,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
 
 /**
  * Example for testing attributes on
- * `Link`, `Code` and `CodeBlock` nodes.
+ * `Link`, `CodeFragment` and `CodeBlock` nodes.
  */
 const attrs = {
   md: `---
@@ -809,7 +809,7 @@ A \`code\`{lang=r}.
         content: [
           'A ',
           {
-            type: 'Code',
+            type: 'CodeFragment',
             programmingLanguage: 'r',
             text: 'code'
           },

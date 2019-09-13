@@ -1,0 +1,59 @@
+#target {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 11pt;
+  line-height: 150%;
+  color: #333;
+}
+
+stencila-codechunk,
+stencila-codeexpression {
+  display: inline-block;
+  border: 1px solid rgb(9, 58, 221);
+}
+
+stencila-codechunk {
+  min-width: 2em;
+  min-height: 2em;
+  border-radius: 3px;
+}
+
+stencila-codeexpression {
+  min-width: 1em;
+  min-height: 1em;
+  border-radius: 500px;
+}
+
+stencila-codechunk [slot='code'],
+stencila-codeexpression [slot='code'] {
+  display: none;
+}
+
+stencila-codechunk [slot='outputs'] {
+  margin: 1em;
+}
+
+stencila-codechunk [slot='outputs'] * {
+  margin: 1em auto;
+}
+
+stencila-codeexpression [slot='output'] {
+  display: inline-block;
+  margin: 0.1em auto;
+}
+
+table {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+table th {
+  color: #555;
+  background: rgba(0,0,0,.1);
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  border: 1px solid lightgrey;
+}

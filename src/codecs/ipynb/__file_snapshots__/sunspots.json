@@ -60,8 +60,8 @@
       "type": "Paragraph",
       "content": [
         {
-          "type": "Code",
-          "text": "df"
+          "text": "df",
+          "type": "CodeFragment"
         },
         " is shorthand for \"dataframe\", which we can think of as an Excel-like table of values. Dataframes have various methods that can be called to easily learn about the data contained in them, and we'll step through calling some of these methods. Below, we see that we have 309 pairs of (year, activity) to examine... "
       ]
@@ -761,8 +761,8 @@
       "content": [
         "The ",
         {
-          "type": "Code",
-          "text": "setup_device_coords"
+          "text": "setup_device_coords",
+          "type": "CodeFragment"
         },
         " function maps data coordinates to screen coordinates and calculates the vertical and horizontal range of the data in terms of their screen positions..."
       ]
@@ -779,8 +779,8 @@
       "content": [
         "To do the data-to-screen conversion the ",
         {
-          "type": "Code",
-          "text": "setup_device_coords"
+          "text": "setup_device_coords",
+          "type": "CodeFragment"
         },
         " function calls a supporting function to render a plot of the data in device memory..."
       ]
@@ -797,8 +797,8 @@
       "content": [
         "Back to the supporting functions called by ",
         {
-          "type": "Code",
-          "text": "objective_fcn"
+          "text": "objective_fcn",
+          "type": "CodeFragment"
         },
         ", we need to deteremine the lengths and slopes of each line segment in a given plot. The banking method calculates the average orientation of the line segments, where the averaging is weighted by each line segment's length."
       ]
@@ -822,13 +822,13 @@
       "content": [
         "With the objective function (and its supporting functions) defined, we now need a few lines of code to drive everything. We set our desired average banking of the line segments to be 45 degrees (although the algorithms work in units of radians) and then define a grid of possible plot sizes to evaluate the objective function over. Note that the optimization method is called ",
         {
-          "type": "Code",
-          "text": "brute"
+          "text": "brute",
+          "type": "CodeFragment"
         },
         " for a reason: it is a just a brute-force scan of every possible plot size, where we have defined what is possible. Since I already have experience with these data I am limiting the search to be over plotting windows that are longer than they are tall, and I am only searching over $\\frac{1}{2}$ inch step-sizes in the window dimensions because we are not interested in a super-precise solution. The last line of code unpacks a list of values returned in the ",
         {
-          "type": "Code",
-          "text": "results"
+          "text": "results",
+          "type": "CodeFragment"
         },
         " variable into individual variables that we can work with directly."
       ]
@@ -1055,8 +1055,8 @@
         },
         " about this nuanced difference in use cases). In either case, there are no longer excuses for not tightly coupling code, analytical results, and context ",
         {
-          "type": "Code",
-          "text": ":)"
+          "text": ":)",
+          "type": "CodeFragment"
         }
       ]
     },

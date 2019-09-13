@@ -1,0 +1,181 @@
+<html>
+
+  <head>
+    <title>Test for rPNG styling</title>
+    <link rel="stylesheet" type="text/css" href="../rpng.css">
+    <style>
+      body {
+        /* Microsoft Word-like styling. Beware what leeaks into rPNG style! */
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 150%;
+        max-width: 50rem;
+        margin: 3rem auto;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <p>
+      Just a test file for testing the CSS in `rpng.css`. Designed to look
+      a bit like a Word file.
+    </p>
+
+    <h1>CodeExpression nodes</h1>
+
+    <div>
+      Here is a code expressions in some text
+      <div id="target">
+        <stencila-codeexpression>
+          <pre slot="code"><code>x * y</code></pre>
+          <pre slot="output">42.42</pre>
+        </stencila-codeexpression>
+      </div>
+      followed by some more text.
+      This one has no output
+      <div id="target">
+        <stencila-codeexpression>
+          <pre slot="code"><code>x * y</code></pre>
+        </stencila-codeexpression>
+      </div>. Lorem ipsum
+      <div id="target">
+        <stencila-codeexpression>
+          <pre slot="code"><code>x * y</code></pre>
+          <pre slot="output">3</pre>
+        </stencila-codeexpression>
+      </div>
+      dolor sit amet
+      consectetur adipisicing elit. Libero odit
+      <div id="target">
+          <stencila-codeexpression>
+            <pre slot="code"><code>x * y</code></pre>
+            <pre slot="output">Some longer output</pre>
+          </stencila-codeexpression>
+      </div>
+      totam maxime neque?
+      Id, alias? In quas veritatis cumque quaerat id
+      <div id="target">
+          <stencila-codeexpression>
+            <pre slot="code"><code>x * y</code></pre>
+            <pre slot="output">Reaaaaalllyyyyyyyy loooongggggggggggggggggggg output</pre>
+          </stencila-codeexpression>
+      </div>
+      iusto neque maiores voluptatibus
+      natus iure harum, assumenda explicabo?
+    </div>
+
+    <h1>CodeChunk nodes</h1>
+
+    <p>A code chunk with no output. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi aliquam voluptates dolore quo eius, perspiciatis nihil enim dolores saepe, sit, modi aut iusto! Placeat incidunt reiciendis magnam magni eius!</p>
+
+    <div id="target">
+      <stencila-codechunk>
+        <pre slot="code"><code>Some code</code></pre>
+        <figure slot="outputs"></figure>
+      </stencila-codechunk>
+    </div>
+
+    <p>A code chunk with a single text output:</p>
+
+    <div id="target">
+      <stencila-codechunk>
+        <pre slot="code"><code>print(lorem)</code></pre>
+        <figure slot="outputs">
+          <pre>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus molestias libero
+nostrum id sint sapiente consectetur blanditiis quam perferendis praesentium laborum
+quas consequuntur nam modi qui quisquam vel, ab earum?
+</pre>
+        </figure>
+      </stencila-codechunk>
+    </div>
+
+    <p>A code chunk with multiple text output. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio doloribus maxime distinctio tempora reiciendis praesentium delectus, harum nihil dolorum ipsum voluptate odio dicta voluptatibus et minus quaerat porro enim? Velit?</p>
+
+    <div id="target">
+      <stencila-codechunk>
+        <pre slot="code"><code>print(lorem)</code></pre>
+        <figure slot="outputs">
+            <pre>Optimization terminated successfully.
+        Current function value: 2038.118913
+        Iterations 4
+                          Logit Regression Results
+==============================================================================
+Dep. Variable:                 switch   No. Observations:                 3020
+Model:                          Logit   Df Residuals:                     3018
+Method:                           MLE   Df Model:                            1
+Date:                Sat, 22 Dec 2012   Pseudo R-squ.:                 0.01017
+Time:                        13:05:25   Log-Likelihood:                -2038.1
+converged:                       True   LL-Null:                       -2059.0
+                                        LLR p-value:                 9.798e-11
+==================================================================================
+                    coef    std err          z      P&gt;|z|      [95.0% Conf. Int.]
+----------------------------------------------------------------------------------
+Intercept          0.6060      0.060     10.047      0.000         0.488     0.724
+I(dist / 100.)    -0.6219      0.097     -6.383      0.000        -0.813    -0.431
+==================================================================================
+</pre>
+<pre>   switch  arsenic       dist  assoc  educ
+1       1     2.36  16.826000      0     0
+2       1     0.71  47.321999      0     0
+3       0     2.07  20.966999      0    10
+4       1     1.15  21.486000      0    12
+5       1     1.10  40.874001      1    14
+</pre>
+        </figure>
+      </stencila-codechunk>
+    </div>
+
+    <p>A code chunk with an image output. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, porro? Culpa numquam quam voluptatum beatae quidem harum soluta nobis blanditiis, repellendus placeat voluptate est sed impedit porro. Hic, rerum nemo.</p>
+
+    <div id="target">
+      <stencila-codechunk>
+        <pre slot="code"><code>plot</code></pre>
+        <figure slot="outputs">
+          <img src="test.html.media/c6dc710b61000c08aff3a4b884b4fb86.png" itemprop="image">
+      </figure>
+      </stencila-codechunk>
+    </div>
+
+    <p>A code chunk with a table output:</p>
+
+    <div id="target">
+      <stencila-codechunk>
+        <pre slot="code"><code>plot</code></pre>
+        <figure slot="outputs">
+          <table>
+            <tbody>
+              <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+      </stencila-codechunk>
+    </div>
+
+    <h1>
+      Acknowledgements
+    </h1>
+    <p>
+      Thanks to <a href="https://raw.githubusercontent.com/carljv/Will_it_Python/master/ARM/ch5/arsenic_wells_switching.ipynb">this</a>
+      Jupyter notebook for some example outputs.
+    </p>
+  </body>
+</html>

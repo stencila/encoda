@@ -297,8 +297,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
 
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
-    case 'Code':
-      return encodeCode(node as stencila.Code)
+    case 'CodeFragment':
+      return encodeCodeFragment(node as stencila.CodeFragment)
     case 'CodeExpression':
       return encodeCodeExpression(node as stencila.CodeExpression)
     case 'ImageObject':
@@ -923,44 +923,38 @@ function encodeQuote(quote: stencila.Quote): Extension {
 }
 
 /**
- * Decode a `MDAST.InlineCode` to either a static `stencila.Code`
+ * Decode a `MDAST.InlineCode` to either a static `stencila.CodeFragment`
  * or an executable `stencila.CodeExpression`.
  */
 function decodeInlineCode(
   inlineCode: MDAST.InlineCode
-): stencila.Code | stencila.CodeExpression {
+): stencila.CodeFragment | stencila.CodeExpression {
   const attrs =
     inlineCode.data &&
     (inlineCode.data.hProperties as { [key: string]: string })
 
   if (attrs && attrs.type === 'expr') {
-    const codeExpr: stencila.CodeExpression = {
-      type: 'CodeExpression',
-      text: inlineCode.value
-    }
+    const codeExpr = stencila.codeExpression(inlineCode.value)
     const { type, lang, output, ...rest } = attrs
     if (output) codeExpr.output = JSON.parse(output.replace(/"/g, '"'))
     if (lang) codeExpr.programmingLanguage = lang
     if (Object.keys(rest).length) codeExpr.meta = rest
     return codeExpr
   } else {
-    const code: stencila.Code = {
-      type: 'Code',
-      text: inlineCode.value
-    }
+    const codeFrag = stencila.codeFragment(inlineCode.value)
     if (attrs) {
       const { lang, ...rest } = attrs
-      if (lang) code.programmingLanguage = lang
-      if (Object.keys(rest).length) code.meta = rest
+      if (lang) codeFrag.programmingLanguage = lang
+      if (Object.keys(rest).length) codeFrag.meta = rest
     }
-    return code
+    return codeFrag
   }
 }
 
 /**
- * Encode a `stencila.Code` node to a `MDAST.InlineCode`
+ * Encode a `stencila.CodeFragment` node to a `MDAST.InlineCode`
  */
-function encodeCode(code: stencila.Code): MDAST.InlineCode {
+function encodeCodeFragment(code: stencila.CodeFragment): MDAST.InlineCode {
   let attrs
   if (code.programmingLanguage) attrs = { lang: code.programmingLanguage }
   if (code.meta) attrs = { ...attrs, ...code.meta }

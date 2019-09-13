@@ -78,7 +78,7 @@ plot(x,y)
         content: [
           'Just inline code ',
           {
-            type: 'Code',
+            type: 'CodeFragment',
             text: 'a * 6'
           }
         ]

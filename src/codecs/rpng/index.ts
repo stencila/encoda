@@ -15,10 +15,81 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 // eslint-disable-next-line node/no-deprecated-api
 import punycode from 'punycode'
 import { dump } from '../../index'
-import bundle from '../../util/bundle'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
+
+/**
+ * Styling to be applied to a node's HTML fragment
+ * when generating the rPNG.
+ *
+ * This is decoupled from any themes because rPNGs are usually
+ * used in a context where themes do not apply e.g. in a `docx` file.
+ *
+ * Currently, rather than try to do some fancy CSS module loading,
+ * we just copy and paste this file in here.
+ */
+const encodeCss = `
+#target {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 11pt;
+  line-height: 150%;
+  color: #333;
+}
+
+stencila-codechunk,
+stencila-codeexpression {
+  display: inline-block;
+  border: 1px solid rgb(9, 58, 221);
+}
+
+stencila-codechunk {
+  min-width: 2em;
+  min-height: 2em;
+  border-radius: 3px;
+}
+
+stencila-codeexpression {
+  min-width: 1em;
+  min-height: 1em;
+  border-radius: 500px;
+}
+
+stencila-codechunk [slot='code'],
+stencila-codeexpression [slot='code'] {
+  display: none;
+}
+
+stencila-codechunk [slot='outputs'] {
+  margin: 1em;
+}
+
+stencila-codechunk [slot='outputs'] * {
+  margin: 1em auto;
+}
+
+stencila-codeexpression [slot='output'] {
+  display: inline-block;
+  margin: 0.1em auto;
+}
+
+table {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+table th {
+  color: #555;
+  background: rgba(0,0,0,.1);
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  border: 1px solid lightgrey;
+}
+`
 
 /**
  * The keyword to use for the PNG chunk containing the JSON
@@ -27,7 +98,6 @@ const KEYWORD = 'JSON'
 
 export class RPNGCodec extends Codec implements Codec {
   // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
-  // an custom extension to be able to refere to this format more easily.
   public readonly mediaTypes = ['vnd.stencila.rpng']
 
   public readonly extNames = ['rpng']
@@ -76,7 +146,8 @@ export class RPNGCodec extends Codec implements Codec {
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
-    return this.decodeSync(file)
+    const buffer = await vfile.dump(file, 'buffer')
+    return this.decodeSync(buffer)
   }
 
   /**
@@ -86,12 +157,9 @@ export class RPNGCodec extends Codec implements Codec {
    *
    * @param content The content to sniff (a file path).
    */
-  public decodeSync = (file: vfile.VFile): stencila.Node => {
-    if (Buffer.isBuffer(file.contents)) {
-      const json = extract(KEYWORD, file.contents)
-      return JSON.parse(json)
-    }
-    return {}
+  public decodeSync = (buffer: Buffer): stencila.Node => {
+    const json = extract(KEYWORD, buffer)
+    return JSON.parse(json)
   }
 
   /**
@@ -120,50 +188,61 @@ export class RPNGCodec extends Codec implements Codec {
    * "screen-shotting" the HTML to a PNG and then inserting the
    * node's JSON into the image's `tEXt` chunk.
    *
+   * When used with `isStandalone === true` will create a "thumbnail"
+   * of the entire node (e.g. article, dataset) with whatever theme is specified.
+   *
    * @param node The Stencila node to encode
-   * @param options Object containing settings for the encoder. See type
-   * definition for Encode<EncodeRPNGOptions>
+   * @param options Object containing settings for the encoder.
    */
   public readonly encode = async (
     node: stencila.Node,
     options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
+    // isStandalone defaults to false because usually we are generating
+    // rPNGs to be embedded in other files e.g. rDOCX
     const { filePath, isStandalone = false } = options
 
-    const bundled = await bundle(node)
-    const html = await dump(bundled, 'html', {
+    // Generate HTML for the node.
+    // Bundle because Puppeteer will not load local (e.g. `/tmp`) files
+    // Other options e.g. themes are passed through
+    const nodeHtml = await dump(node, 'html', {
       ...options,
-      isStandalone: true
+      isStandalone,
+      isBundle: true
     })
 
+    // If generating an rPNG for a HTML fragment wrap it to be able to
+    // apply some basic styling e.g. padding
+    const pageHtml = isStandalone
+      ? nodeHtml
+      : `<div id="target">${nodeHtml}</div>`
+
     const page = await puppeteer.page()
-    await page.setContent(
-      `<div id="target" style="${
-        isStandalone ? '' : 'display: inline-block; padding: 0.1rem'
-      }">${html}</div>`,
-      {
-        waitUntil: 'networkidle0'
-      }
-    )
+    await page.setContent(pageHtml, { waitUntil: 'networkidle0' })
 
-    const elem = await page.$('#target')
-    if (!elem) throw new Error('Element not found!')
-
-    const buffer = isStandalone
-      ? await page.screenshot({
-          encoding: 'binary',
-          fullPage: true
-        })
-      : await elem.screenshot({
-          encoding: 'binary'
-        })
+    let buffer
+    if (isStandalone) {
+      buffer = await page.screenshot({
+        encoding: 'binary',
+        fullPage: true
+      })
+    } else {
+      await page.addStyleTag({ content: encodeCss })
+      const elem = await page.$('#target')
+      if (!elem)
+        throw new Error('Woaaaah, this should never happen! Element not found!')
+      buffer = await elem.screenshot({
+        encoding: 'binary'
+      })
+    }
 
     await page.close()
 
-    // Insert JSON of the thing into the image
+    // Insert the Stencila node as JSON into a `tEXt` chunk
     const json = JSON.stringify(node)
     const image = insert(KEYWORD, json, buffer)
 
+    // Save to file
     const file = vfile.load(image)
     if (filePath) {
       file.path = filePath

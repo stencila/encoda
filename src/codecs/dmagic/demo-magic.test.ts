@@ -44,7 +44,7 @@ const node: stencila.Article = {
         },
         ' and ',
         {
-          type: 'Code',
+          type: 'CodeFragment',
           text: 'code'
         }
       ]

@@ -3,10 +3,10 @@
  */
 
 import * as stencila from '@stencila/schema'
-import produce from 'immer'
 import { dump, load } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
+import transform from '../../util/transform'
 
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
@@ -45,7 +45,7 @@ export class XmdCodec extends Codec implements Codec {
    * Encode a Stencila node to XMarkdown.
    *
    * This function first transforms the node by converting
-   * any `CodeExpr` nodes to `Code` nodes and `CodeChunk` nodes
+   * any `CodeExpression` nodes to `CodeFragment` nodes and `CodeChunk` nodes
    * to `CodeBlock` nodes. This is intentionally lossy since any results of
    * execution (e.g. error or outputs) are not stored in RMarkdown.
    *
@@ -54,8 +54,23 @@ export class XmdCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    const transformed = produce(node, transform)
+    const transformed = await transform(
+      node,
+      async (node: stencila.Node): Promise<stencila.Node> => {
+        if (stencila.isA('CodeExpression', node)) {
+          const { text, programmingLanguage } = node
+          return stencila.codeFragment(`${programmingLanguage} ${text}`)
+        }
+        if (stencila.isA('CodeChunk', node)) {
+          const { text, programmingLanguage, meta } = node
+          return stencila.codeBlock(text, { programmingLanguage, meta })
+        }
+        return node
+      }
+    )
+
     const cmd = await dump(transformed, 'md')
+
     // Replace Commonmark "info string" with R Markdown curly brace
     // enclosed options
     // TODO: Check parsing of options. Comma separated?
@@ -64,28 +79,5 @@ export class XmdCodec extends Codec implements Codec {
       (match, options: string): string => `\`\`\` {${options}}`
     )
     return vfile.load(xmd)
-
-    // TODO: Transforming a node tree by walking it like this is
-    // a commonly used pattern and should be factored out into it\
-    // a separate function with better type handling
-    // eslint-disable-next-line
-    function transform(node: any): stencila.Node {
-      if (node === null || typeof node !== 'object') return node
-      if (node.type === 'CodeExpression') {
-        return stencila.code(`${node.programmingLanguage} ${node.text}`)
-      }
-      if (node.type === 'CodeChunk') {
-        const codeBlock = stencila.codeBlock(node.text, {
-          programmingLanguage: node.programmingLanguage
-        })
-
-        if (node.meta) codeBlock.meta = node.meta
-        return codeBlock
-      }
-      for (const [key, child] of Object.entries(node)) {
-        node[key] = transform(child)
-      }
-      return node
-    }
   }
 }

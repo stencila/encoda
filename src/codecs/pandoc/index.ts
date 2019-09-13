@@ -25,7 +25,7 @@ const rpng = new RPNGCodec()
 
 export { InputFormat, OutputFormat } from './types'
 
-const logger = getLogger('encoda:pandoc')
+const log = getLogger('encoda:pandoc')
 
 interface DecodeOptions {
   flags?: string[]
@@ -155,7 +155,7 @@ let encodePromises: Promise<any>[] = []
  */
 function run(input: string | Buffer, args: string[]): Promise<string> {
   args.push(`--data-dir=${dataDir}`)
-  logger.debug(
+  log.debug(
     `Pandoc spawn\n  path: ${binary.path()}\n  args:\n    ${args.join(
       '\n    '
     )}`
@@ -173,14 +173,14 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
     })
     child.on('close', () => {
       if (stderr) {
-        logger.error(
+        log.error(
           `Pandoc error!\n  message: ${stderr}  args:\n    ${args.join(
             '\n    '
           )}\n`
         )
         reject(new Error(stderr))
       } else {
-        logger.debug(`Pandoc success.`)
+        log.debug(`Pandoc success.`)
         resolve(stdout)
       }
     })
@@ -194,7 +194,7 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
         // before we finish writing to it.
         // @ts-ignore
         if (err.code === 'EPIPE') {
-          logger.debug('Pandoc EPIPE error')
+          log.debug('Pandoc EPIPE error')
         } else {
           reject(err)
         }
@@ -210,26 +210,25 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
 function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
-  const { title, ...meta } = decodeMeta(pdoc.meta)
+  const { title = 'Untitled', ...meta } = decodeMeta(pdoc.meta)
 
-  let titre = 'Untitled'
-  if (title) {
-    const type_ = nodeType(title)
-    if (type_ === 'string') {
-      titre = title as string
-    } else if (type_ === 'Paragraph') {
-      const para = title as stencila.Paragraph
-      // TODO: Avoid as and/or allow for title to be a Paragraph
-      titre = para.content[0] as string
-    }
-  }
+  // Simplify the title to just a string if possible, otherwise
+  // ensure it's just `BlockContent`
+  const title_ =
+    typeof title === 'string'
+      ? title
+      : stencila.isA('Paragraph', title)
+      ? title.content.length === 1 && typeof title.content[0] === 'string'
+        ? title.content[0]
+        : title
+      : (Array.isArray(title) ? title : [title]).filter(isBlockContent)
 
-  // TODO: mutate other metadata to conform to schema
+  // TODO: handle other meta data as necessary
 
   const content = decodeBlocks(pdoc.blocks)
   return {
     type: 'Article',
-    title: titre,
+    title: typeof title_ === 'string' ? title_ : [title_],
     authors: [],
     ...meta,
     content
@@ -294,7 +293,9 @@ export function encodeMeta(obj: { [key: string]: any }): Pandoc.Meta {
 /**
  * Decode a Pandoc `MetaValue` to a Stencila `Node`
  */
-function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
+function decodeMetaValue(
+  value: Pandoc.MetaValue
+): stencila.Node | stencila.Node[] {
   switch (value.t) {
     case 'MetaBool':
       return value.c
@@ -314,12 +315,7 @@ function decodeMetaValue(value: Pandoc.MetaValue): stencila.Node {
         content: decodeInlines(value.c)
       }
     case 'MetaBlocks':
-      return {
-        // TODO: Currently there is no stencila.Division
-        // so using QuoteBlock instead
-        type: 'QuoteBlock',
-        content: decodeBlocks(value.c)
-      }
+      return decodeBlocks(value.c)
   }
 }
 
@@ -398,6 +394,8 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
   switch (block.t) {
     case 'Header':
       return decodeHeader(block)
+    case 'Plain':
+      return decodePlain(block)
     case 'Para':
       return decodePara(block)
     case 'BlockQuote':
@@ -412,7 +410,9 @@ function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
     case 'HorizontalRule':
       return decodeHorizontalRule()
   }
-  throw new Error(`Unhandled Pandoc node type "${block.t}"`)
+
+  log.error(`Unhandled Pandoc node type "${block.t}"`)
+  return decodePara({ t: 'Para', c: [] })
 }
 
 /**
@@ -428,6 +428,8 @@ function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
       return encodeQuoteBlock(block)
     case 'CodeBlock':
       return encodeCodeBlock(block)
+    case 'CodeChunk':
+      return encodeCodeChunk(block as stencila.CodeChunk)
     case 'List':
       return encodeList(block)
     case 'Table':
@@ -459,6 +461,13 @@ function encodeHeading(node: stencila.Heading): Pandoc.Header {
 }
 
 /**
+ * Decode a Pandoc `Plain` to a Stencila `Paragraph`.
+ */
+function decodePlain(node: Pandoc.Plain): stencila.Paragraph {
+  return stencila.paragraph(decodeInlines(node.c))
+}
+
+/**
  * Decode a Pandoc `Para` to a Stencila `Paragraph` or
  * other `BlockContent` node.
  *
@@ -471,10 +480,7 @@ function decodePara(node: Pandoc.Para): stencila.BlockContent {
   const content = decodeInlines(node.c)
   if (content.length === 1) {
     const node = content[0]
-    // TODO: fix this dangerous type casting
-    if (nodeType(node) === 'CodeChunk') {
-      return (node as unknown) as stencila.CodeChunk
-    }
+    if (stencila.isA('CodeChunk', node)) return node
   }
   return {
     type: 'Paragraph',
@@ -533,6 +539,25 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
   return {
     t: 'CodeBlock',
     c: [attrs, node.text]
+  }
+}
+
+/**
+ * Encode a Stencila `CodeChunk` to a Pandoc `Div` with an rPNG in it
+ * and a `custom-style` attribute.
+ */
+function encodeCodeChunk(node: stencila.CodeChunk): Pandoc.Div {
+  return {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', 'CodeChunk']]],
+      [
+        {
+          t: 'Para',
+          c: [encodeRPNG(node)]
+        }
+      ]
+    ]
   }
 }
 
@@ -743,10 +768,8 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
       // the embedded node
       const url = image.contentUrl
       if (url) {
-        // TODO: currently assume url is local file, should we fetch remotes?
         const node = rpng.sniffDecodeSync(url)
-        // TODO: avoid `as`
-        if (typeof node !== 'undefined') return node as stencila.InlineContent
+        if (node !== undefined) return node as stencila.InlineContent
       }
       return image
     default:
@@ -772,6 +795,8 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeQuote(node as stencila.Quote)
     case 'CodeFragment':
       return encodeCodeFragment(node as stencila.CodeFragment)
+    case 'CodeExpression':
+      return encodeCodeExpression(node as stencila.CodeExpression)
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Cite':
@@ -779,7 +804,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
-  logger.warn(
+  log.warn(
     `Falling back to default encoding for inline node type ${nodeType(node)}.`
   )
   return encodeFallbackInline(node)
@@ -1008,6 +1033,17 @@ function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
 }
 
 /**
+ * Encode a Stencila `CodeExpression` to a Pandoc `Span` with an rPNG in it
+ * and a `custom-style` attribute.
+ */
+function encodeCodeExpression(node: stencila.CodeExpression): Pandoc.Span {
+  return {
+    t: 'Span',
+    c: [['', [], [['custom-style', 'CodeExpression']]], [encodeRPNG(node)]]
+  }
+}
+
+/**
  * Decode a Pandoc `Link` to a Stencila `Link`.
  */
 function decodeLink(node: Pandoc.Link): stencila.Link {
@@ -1092,16 +1128,24 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
 function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
   return {
     t: 'Para',
-    c: [encodeFallbackInline(node)]
+    c: [encodeRPNG(node)]
   }
 }
 
 /**
- * Encode a Stencila `InlineContent` node as a Pandoc `Image`
- * pointing to a rPNG. This is a fallback encoding for inline nodes
+ * Encode a Stencila `InlineContent` as a Pandoc `Image`.
+ * This is a fallback encoding for inline nodes
  * not handled elsewhere.
  */
 function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
+  return encodeRPNG(node)
+}
+
+/**
+ * Encode a Stencila `Node` as a Pandoc `Image`
+ * pointing to a rPNG.
+ */
+function encodeRPNG(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
     await write(node, imagePath, {
