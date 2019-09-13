@@ -41,17 +41,18 @@ const encodeCss = `
 stencila-codechunk,
 stencila-codeexpression {
   display: inline-block;
-  min-width: 1em;
-  min-height: 1em;
-  border: 1px solid blue;
+  border: 1px solid rgb(9, 58, 221);
 }
 
 stencila-codechunk {
+  min-width: 2em;
+  min-height: 2em;
   border-radius: 3px;
 }
 
 stencila-codeexpression {
-  padding: 0.1em;
+  min-width: 1em;
+  min-height: 1em;
   border-radius: 500px;
 }
 
@@ -60,17 +61,17 @@ stencila-codeexpression [slot='code'] {
   display: none;
 }
 
-stencila-codechunk figure[slot='outputs'] {
+stencila-codechunk [slot='outputs'] {
   margin: 1em;
 }
 
-stencila-codechunk figure[slot='outputs'] * {
+stencila-codechunk [slot='outputs'] * {
   margin: 1em auto;
 }
 
-stencila-codeexpression pre[slot='output'] {
+stencila-codeexpression [slot='output'] {
   display: inline-block;
-  margin: 0 auto;
+  margin: 0.1em auto;
 }
 
 table {
@@ -220,15 +221,16 @@ export class RPNGCodec extends Codec implements Codec {
     await page.setContent(pageHtml, { waitUntil: 'networkidle0' })
 
     let buffer
-    if(isStandalone) {
+    if (isStandalone) {
       buffer = await page.screenshot({
         encoding: 'binary',
         fullPage: true
       })
     } else {
-      await page.addStyleTag({content: encodeCss})
+      await page.addStyleTag({ content: encodeCss })
       const elem = await page.$('#target')
-      if (!elem) throw new Error('Woaaaah, this should never happen! Element not found!')
+      if (!elem)
+        throw new Error('Woaaaah, this should never happen! Element not found!')
       buffer = await elem.screenshot({
         encoding: 'binary'
       })
