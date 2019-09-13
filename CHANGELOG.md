@@ -1,3 +1,18 @@
+## [0.75.2](https://github.com/stencila/encoda/compare/v0.75.1...v0.75.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* **MD, XMD:** Use CodeFragment instead of Code node ([ec7a12e](https://github.com/stencila/encoda/commit/ec7a12e))
+* **Pandoc:** Add decoding of Plain; do not throw for others ([224790a](https://github.com/stencila/encoda/commit/224790a))
+* **Pandoc:** Encode CodeChunks and CodeExpressions ([deffe37](https://github.com/stencila/encoda/commit/deffe37))
+* **Pandoc:** Improve docx template ([f0bd690](https://github.com/stencila/encoda/commit/f0bd690)), closes [#62](https://github.com/stencila/encoda/issues/62)
+* **Pandoc:** Improve handling of meta data ([3e8e1ae](https://github.com/stencila/encoda/commit/3e8e1ae))
+* **Pandoc:** Simplify title to string if possible ([371f4dc](https://github.com/stencila/encoda/commit/371f4dc))
+* **rPNG:** Fix decoding of lazily loaded rPNG files ([6f9707d](https://github.com/stencila/encoda/commit/6f9707d))
+* **RPNG:** Improve styling ([62c8bee](https://github.com/stencila/encoda/commit/62c8bee))
+* **RPNG:** Use a specific stylesheet for HTML fragments ([2d8cc07](https://github.com/stencila/encoda/commit/2d8cc07))
+
 ## [0.75.1](https://github.com/stencila/encoda/compare/v0.75.0...v0.75.1) (2019-09-12)
 
 
