@@ -54,17 +54,20 @@ export class XmdCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    const transformed = await transform(node, async (node: stencila.Node): Promise<stencila.Node> => {
-      if (stencila.isA('CodeExpression', node)) {
-        const { text, programmingLanguage } = node
-        return stencila.codeFragment(`${programmingLanguage} ${text}`)
+    const transformed = await transform(
+      node,
+      async (node: stencila.Node): Promise<stencila.Node> => {
+        if (stencila.isA('CodeExpression', node)) {
+          const { text, programmingLanguage } = node
+          return stencila.codeFragment(`${programmingLanguage} ${text}`)
+        }
+        if (stencila.isA('CodeChunk', node)) {
+          const { text, programmingLanguage, meta } = node
+          return stencila.codeBlock(text, { programmingLanguage, meta })
+        }
+        return node
       }
-      if (stencila.isA('CodeChunk', node)) {
-        const { text, programmingLanguage, meta } = node
-        return stencila.codeBlock(text, { programmingLanguage, meta })
-      }
-      return node
-    })
+    )
 
     const cmd = await dump(transformed, 'md')
 
