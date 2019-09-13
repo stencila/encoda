@@ -41,15 +41,12 @@ test('metadata', async () => {
       type: 'Paragraph',
       content: ['Hello']
     },
-    blocks: {
-      type: 'QuoteBlock',
-      content: [
-        {
-          type: 'Paragraph',
-          content: ['World']
-        }
-      ]
-    }
+    blocks: [
+      {
+        type: 'Paragraph',
+        content: ['World']
+      }
+    ]
   }
   const pmeta: P.Meta = {
     null: { t: 'MetaString', c: '!!null' },
@@ -90,8 +87,8 @@ test('metadata', async () => {
       c: [{ t: 'Str', c: 'Hello' }]
     },
     blocks: {
-      t: 'MetaBlocks',
-      c: [{ t: 'Para', c: [{ t: 'Str', c: 'World' }] }]
+      t: 'MetaList',
+      c: [{ t: 'MetaInlines', c: [{ t: 'Str', c: 'World' }] }]
     }
   }
 

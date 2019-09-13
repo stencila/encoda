@@ -212,11 +212,16 @@ function run(input: string | Buffer, args: string[]): Promise<string> {
 function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
   const { title = 'Untitled', ...meta } = decodeMeta(pdoc.meta)
 
-  // Filter the title to ensure only valid content
+  // Simplify the title to just a string if possible, otherwise
+  // ensure it's just `BlockContent`
   const title_ =
     typeof title === 'string'
       ? title
-      : (Array.isArray(title) ? title : [title]).filter(stencila.isBlockContent)
+      : stencila.isA('Paragraph', title)
+      ? title.content.length === 1 && typeof title.content[0] === 'string'
+        ? title.content[0]
+        : [title]
+      : (Array.isArray(title) ? title : [title]).filter(isBlockContent)
 
   // TODO: handle other meta data as necessary
 
