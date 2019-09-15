@@ -1,0 +1,94 @@
+{
+  "authors": [
+    {
+      "givenNames": [
+        "Nokome"
+      ],
+      "familyNames": [
+        "Bentley"
+      ],
+      "type": "Person"
+    }
+  ],
+  "title": "Kitchen sink XMarkdown example",
+  "description": "This example is intended to have a variety of different XMarkdown elements in it.\n",
+  "content": [
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Inline chunks"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Simple ",
+        {
+          "text": "x * y",
+          "type": "CodeExpression",
+          "programmingLanguage": "r"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "With parentheses and brackets (and a different language) ",
+        {
+          "text": "sum(x*y)[1]",
+          "type": "CodeExpression",
+          "programmingLanguage": "python"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Just inline code ",
+        {
+          "text": "a * 6",
+          "type": "CodeFragment"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Heading",
+      "depth": 1,
+      "content": [
+        "Block chunks"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Simple:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "text": "# a comment\ndata = read.table(file)",
+      "programmingLanguage": "r"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "With options:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "text": "plot(x,y)",
+      "programmingLanguage": "r",
+      "meta": {
+        "echo": "FALSE,",
+        "fig.height": "7,",
+        "fig.width": "8"
+      }
+    }
+  ],
+  "type": "Article"
+}

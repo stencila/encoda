@@ -1,0 +1,30 @@
+---
+title: Kitchen sink XMarkdown example
+authors:
+  - Nokome Bentley
+description: |
+  This example is intended to have a variety of different XMarkdown elements in it.
+---
+
+# Inline chunks
+
+Simple `r x * y`.
+
+With parentheses and brackets (and a different language) `python sum(x*y)[1]`.
+
+Just inline code `a * 6`.
+
+# Block chunks
+
+Simple:
+
+``` {r}
+# a comment
+data = read.table(file)
+```
+
+With options:
+
+``` {r echo=FALSE, fig.height=7, fig.width=8}
+plot(x,y)
+```
