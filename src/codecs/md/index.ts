@@ -558,15 +558,15 @@ function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
 }
 
 /**
- * Encode a `stencila.CodeBlock` to a `MDAST.Code`
+ * Encode a `stencila.CodeBlock` to a `MDAST.Code` node.
  */
 function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
-  const meta = block.meta ? stringifyMeta(block.meta) : ''
+  const { text, programmingLanguage, meta } = block
   return {
     type: 'code',
-    lang: block.programmingLanguage,
-    meta,
-    value: block.text
+    lang: programmingLanguage,
+    meta: meta !== undefined ? stringifyMeta(meta) : '',
+    value: text.trimRight()
   }
 }
 

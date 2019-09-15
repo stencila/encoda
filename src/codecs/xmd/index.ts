@@ -7,7 +7,6 @@ import { dump, load } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 import transform from '../../util/transform'
-import { metaProperty } from '@babel/types';
 
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
@@ -85,7 +84,7 @@ export class XmdCodec extends Codec implements Codec {
         let xmd = '```{' + lang
         if (options) {
           // Collect options into a map
-          const optionsMap: {[key:string]: string} = {}
+          const optionsMap: { [key: string]: string } = {}
           const regex = /\s*([^=]+)=((?:[^"][^ ]*)|(?:"(?:[^"\\]|\\.)*"))/g
           let match
           while ((match = regex.exec(options)) !== null) {
@@ -101,7 +100,9 @@ export class XmdCodec extends Codec implements Codec {
           // All other options are comma separated
           optionsArray = [
             ...optionsArray,
-            ...Object.entries(optionsMap).map(([name, value]) => `${name}=${value}`)
+            ...Object.entries(optionsMap).map(
+              ([name, value]) => `${name}=${value}`
+            )
           ]
           xmd += ' ' + optionsArray.join(', ')
         }
