@@ -596,7 +596,7 @@ const inc = (n) =&gt; n + 1</code></pre>
         content: [
           'A paragraph with ',
           {
-            type: 'Code',
+            type: 'CodeFragment',
             programmingLanguage: 'python',
             text: '# code'
           },
@@ -741,7 +741,7 @@ const inc = (n) =&gt; n + 1</code></pre>
 
 /**
  * Example for testing attributes on
- * `Link`, `Code` and `CodeBlock` nodes.
+ * `Link`, `CodeFragment` and `CodeBlock` nodes.
  */
 const attrs = {
   html: `<p>A <a href=\"url\" data-attr1=\"foo\" data-attr2=\"bar baz\" data-attr3=\"\">link</a> and <code
@@ -762,7 +762,7 @@ const attrs = {
       },
       ' and ',
       {
-        type: 'Code',
+        type: 'CodeFragment',
         meta: {
           attr1: 'foo'
         },

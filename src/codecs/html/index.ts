@@ -401,6 +401,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCodeChunk(node as stencila.CodeChunk)
     case 'CodeExpression':
       return encodeCodeExpression(node as stencila.CodeExpression)
+    case 'CodeFragment':
+      return encodeCodeFragment(node as stencila.CodeFragment)
     case 'Collection':
       return encodeCollection(node as stencila.Collection)
     case 'Figure':
@@ -1172,14 +1174,15 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
  */
 function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
   const codeElem = chunk.querySelector('[slot="code"]')
-  const text = codeElem !== null ? codeElem.textContent || '' : ''
+  const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
+  const { text, programmingLanguage } = codeFrag
 
   const outputElems = chunk.querySelectorAll('[slot="outputs"] > *')
   const outputs = Array.from(outputElems).map(elem =>
     decodeCodeOutput(elem as HTMLElement)
   )
 
-  return stencila.codeChunk(text, { outputs })
+  return stencila.codeChunk(text, { programmingLanguage, outputs })
 }
 
 /**
@@ -1211,11 +1214,12 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
 }
 
 /**
- * Decode a `<stencila-codeexpression>` element to a Stencila `CodeChunk`.
+ * Decode a `<stencila-codeexpression>` element to a Stencila `CodeExpression`.
  */
 function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
   const codeElem = elem.querySelector('[slot="code"]')
-  const text = codeElem !== null ? codeElem.textContent || '' : ''
+  const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
+  const { text, programmingLanguage } = codeFrag
 
   const outputElem = elem.querySelector('[slot="output"]')
   const output =
@@ -1223,7 +1227,7 @@ function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
       ? decodeCodeOutput(outputElem as HTMLElement)
       : undefined
 
-  return stencila.codeExpression(text, { output })
+  return stencila.codeExpression(text, { programmingLanguage, output })
 }
 
 /**
