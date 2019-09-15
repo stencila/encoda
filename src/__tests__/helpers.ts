@@ -1,3 +1,4 @@
+import * as stencila from '@stencila/schema'
 import callsites from 'callsites'
 import fs from 'fs-extra'
 import * as nock from 'nock'
@@ -25,6 +26,18 @@ export const fixture = (filename: string, caller: number = 2): string => {
  */
 export const readFixture = async (filename: string): Promise<vfile.VFile> =>
   vfile.read(fixture(filename, 3))
+
+/**
+ * Decode a fixture and JSON stringify it
+ */
+export const fixtureToJson = (
+  decode: (file: vfile.VFile) => Promise<stencila.Node>
+) => async (filename: string): Promise<string> =>
+  JSON.stringify(
+    await decode(await vfile.read(fixture(filename, 3))),
+    null,
+    '  '
+  )
 
 /**
  * Get the full path to a file in the `__file_snapshots__` sibling directory
