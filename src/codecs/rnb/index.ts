@@ -160,8 +160,8 @@ export class RnbCodec extends Codec implements Codec {
       chunkElem.appendChild(
         elem(
           'pre',
-          { slot: 'code' },
-          elem('code', { class: 'language-r' }, source)
+          {},
+          elem('code', { slot: 'code', class: 'language-r' }, source)
         )
       )
 
