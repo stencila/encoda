@@ -1,3 +1,22 @@
+# [0.76.0](https://github.com/stencila/encoda/compare/v0.75.4...v0.76.0) (2019-09-16)
+
+
+### Bug Fixes
+
+* **HTML:** Add decodeCodeChunk function ([7de5e26](https://github.com/stencila/encoda/commit/7de5e26))
+* **HTML:** Handle programmingLanguage in CodeExpression ([b9f6c69](https://github.com/stencila/encoda/commit/b9f6c69))
+* **RNB:** Handle code fragments properly ([9fda258](https://github.com/stencila/encoda/commit/9fda258))
+* **RNB:** Parse and coerce Rmd frontmatter ([8ef82bd](https://github.com/stencila/encoda/commit/8ef82bd))
+* **RNB:** Update to new layout for `CodeChunk` custom elements ([95ccdc6](https://github.com/stencila/encoda/commit/95ccdc6))
+* **XMD:** Fix and improve tests ([331e6f1](https://github.com/stencila/encoda/commit/331e6f1))
+
+
+### Features
+
+* **RNB:** Add correlation of inline code chunks to outputs in HTML ([f6b9e51](https://github.com/stencila/encoda/commit/f6b9e51))
+* **RNB:** Add R Notebook codec ([f9e4b34](https://github.com/stencila/encoda/commit/f9e4b34))
+* **Util:** Add html utility functions ([8a47acc](https://github.com/stencila/encoda/commit/8a47acc))
+
 ## [0.75.4](https://github.com/stencila/encoda/compare/v0.75.3...v0.75.4) (2019-09-13)
 
 
