@@ -1,6 +1,6 @@
 import { XmdCodec } from './'
 import { simple } from './__fixtures__/simple'
-import { snapshot, fixtureToJson } from '../../__tests__/helpers'
+import { snapshot, fixtureToJson, nodeToString } from '../../__tests__/helpers'
 
 const { decode, encode } = new XmdCodec()
 
@@ -19,7 +19,9 @@ describe('decode', () => {
 })
 
 describe('encode', () => {
+  const toXmd = nodeToString(encode)
+
   test('simple.ts', async () => {
-    expect(await encode(simple)).toMatchFile(snapshot('simple.Rmd'))
+    expect(toXmd(simple)).toMatchFile(snapshot('simple.Rmd'))
   })
 })
