@@ -1,0 +1,34 @@
+---
+title: The article title
+authors:
+  - type: Person
+    givenNames:
+      - Jane
+    familyNames:
+      - Jones
+---
+
+```{r}
+x <- 3.14
+```
+
+# A heading
+
+An inline code chunk `r x * 2.2`.
+
+Plain inline code `x * 6`.
+
+## Another heading
+
+A block code chunk
+
+```{r}
+# A comment
+sum(1:10)
+```
+
+A block code chunk with name and options
+
+```{r my_plot, fig.height=7, fig.width=8}
+plot(1:10)
+```

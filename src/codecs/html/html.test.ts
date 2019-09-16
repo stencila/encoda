@@ -60,6 +60,24 @@ describe('String escaping', () => {
   })
 })
 
+describe('Decode container elements', () => {
+  test('Nested divs and spans', async () => {
+    expect(
+      await d(
+        '<div><div><p><span><strong>Stroonnng</strong<</span></p></div></div>'
+      )
+    ).toEqual({
+      type: 'Paragraph',
+      content: [
+        {
+          type: 'Strong',
+          content: ['Stroonnng']
+        }
+      ]
+    })
+  })
+})
+
 describe('Encode & Decode cite nodes', () => {
   const schemaNode = cite('myTarget')
   const htmlNode = `<cite><a href="#myTarget">myTarget</a></cite>`
@@ -578,7 +596,7 @@ const inc = (n) =&gt; n + 1</code></pre>
         content: [
           'A paragraph with ',
           {
-            type: 'Code',
+            type: 'CodeFragment',
             programmingLanguage: 'python',
             text: '# code'
           },
@@ -723,7 +741,7 @@ const inc = (n) =&gt; n + 1</code></pre>
 
 /**
  * Example for testing attributes on
- * `Link`, `Code` and `CodeBlock` nodes.
+ * `Link`, `CodeFragment` and `CodeBlock` nodes.
  */
 const attrs = {
   html: `<p>A <a href=\"url\" data-attr1=\"foo\" data-attr2=\"bar baz\" data-attr3=\"\">link</a> and <code
@@ -744,7 +762,7 @@ const attrs = {
       },
       ' and ',
       {
-        type: 'Code',
+        type: 'CodeFragment',
         meta: {
           attr1: 'foo'
         },

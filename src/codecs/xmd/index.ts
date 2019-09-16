@@ -59,7 +59,11 @@ export class XmdCodec extends Codec implements Codec {
       async (node: stencila.Node): Promise<stencila.Node> => {
         if (stencila.isA('CodeExpression', node)) {
           const { text, programmingLanguage } = node
-          return stencila.codeFragment(`${programmingLanguage} ${text}`)
+          return stencila.codeFragment(
+            programmingLanguage !== undefined
+              ? `${programmingLanguage} ${text}`
+              : text
+          )
         }
         if (stencila.isA('CodeChunk', node)) {
           const { text, programmingLanguage, meta } = node
@@ -72,11 +76,38 @@ export class XmdCodec extends Codec implements Codec {
     const cmd = await dump(transformed, 'md')
 
     // Replace Commonmark "info string" with R Markdown curly brace
-    // enclosed options
-    // TODO: Check parsing of options. Comma separated?
+    // enclosed options. This requires parsing the options so that
+    // they can be made comma separated as required by R Markdown
     const xmd = cmd.replace(
-      /```\s*(\w+[^\n]*)/g,
-      (match, options: string): string => `\`\`\` {${options}}`
+      /```(\w+)(?:[ \t]+(.*?))?\n/g,
+      (match, lang: string, options: string): string => {
+        let xmd = '```{' + lang
+        if (options) {
+          // Collect options into a map
+          const optionsMap: { [key: string]: string } = {}
+          const regex = /\s*([^=]+)=((?:[^"][^ ]*)|(?:"(?:[^"\\]|\\.)*"))/g
+          let match
+          while ((match = regex.exec(options)) !== null) {
+            optionsMap[match[1]] = match[2]
+          }
+
+          let optionsArray: string[] = []
+          // The chunk label always comes first and has no name
+          if (optionsMap.label) {
+            optionsArray = [optionsMap.label]
+            delete optionsMap.label
+          }
+          // All other options are comma separated
+          optionsArray = [
+            ...optionsArray,
+            ...Object.entries(optionsMap).map(
+              ([name, value]) => `${name}=${value}`
+            )
+          ]
+          xmd += ' ' + optionsArray.join(', ')
+        }
+        return xmd + '}\n'
+      }
     )
     return vfile.load(xmd)
   }

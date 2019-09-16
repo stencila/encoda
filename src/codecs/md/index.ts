@@ -41,6 +41,7 @@ import { stringifyContent } from '../../util/content/stringifyContent'
 import { Codec } from '../types'
 import { HTMLCodec } from '../html'
 import { stringifyHTML } from './stringifyHtml'
+import { coerce } from '../../util/coerce'
 
 export const log = getLogger('encoda:md')
 
@@ -57,7 +58,8 @@ export class MdCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const md = await vfile.dump(file)
-    return decodeMarkdown(md)
+    const node = decodeMarkdown(md)
+    return coerce(node)
   }
 
   /**
@@ -357,34 +359,26 @@ function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
  * @param root The MDAST root to decode
  */
 function decodeRoot(root: MDAST.Root): stencila.Article {
-  const article: stencila.Article = {
-    type: 'Article',
-    title: 'Untitled',
-    // TODO: the `create function should automatically add empty
-    // array for array properties that are required
-    authors: []
-  }
-
-  const body: stencila.Node[] = []
+  let frontmatter = {}
+  const content: stencila.Node[] = []
   for (const child of root.children) {
     if (child.type === 'yaml') {
-      const frontmatter = yaml.safeLoad(child.value)
-      // TODO: check the key is a valid property of Article
-      // and if it it isn't ignore it or throw an error
-      // TODO: allow for mutation and aliases, potentially
-      // adding a `stencila.set(article, key, value)` function.
-      for (const [key, value] of Object.entries(frontmatter)) {
-        // TODO: the above should allow removal of the ts-ignore
-        // @ts-ignore
-        article[key] = value
-      }
+      frontmatter = { ...frontmatter, ...yaml.safeLoad(child.value) }
     } else {
-      body.push(decodeNode(child))
+      content.push(decodeNode(child))
     }
   }
-  article.content = body
 
-  return article
+  return stencila.article(
+    // Required properties...
+    [],
+    'Untitled',
+    {
+      // ...which may be overidden here, or during coercion
+      ...frontmatter,
+      content
+    }
+  )
 }
 
 /**
@@ -564,15 +558,15 @@ function decodeCodeblock(code: MDAST.Code): stencila.CodeBlock {
 }
 
 /**
- * Encode a `stencila.CodeBlock` to a `MDAST.Code`
+ * Encode a `stencila.CodeBlock` to a `MDAST.Code` node.
  */
 function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
-  const meta = block.meta ? stringifyMeta(block.meta) : ''
+  const { text, programmingLanguage, meta } = block
   return {
     type: 'code',
-    lang: block.programmingLanguage,
-    meta,
-    value: block.text
+    lang: programmingLanguage,
+    meta: meta !== undefined ? stringifyMeta(meta) : '',
+    value: text.trimRight()
   }
 }
 

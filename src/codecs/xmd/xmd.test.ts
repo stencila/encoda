@@ -1,107 +1,27 @@
-import { dump, load } from '../../util/vfile'
 import { XmdCodec } from './'
+import { simple } from './__fixtures__/simple'
+import { snapshot, fixtureToJson, nodeToString } from '../../__tests__/helpers'
 
 const { decode, encode } = new XmdCodec()
 
-test('decode', async () => {
-  const p = async (xmd: any) => await decode(load(xmd))
-  expect(await p(kitchenSink.xmd)).toEqual(kitchenSink.node)
+describe('decode', () => {
+  const toJson = fixtureToJson(decode)
+
+  test('basic.Rmd', async () => {
+    expect(await toJson('basic.Rmd')).toMatchFile(snapshot('basic.json'))
+  })
+
+  test('kitchensink.Rmd', async () => {
+    expect(await toJson('kitchensink.Rmd')).toMatchFile(
+      snapshot('kitchensink.json')
+    )
+  })
 })
 
-test('encode', async () => {
-  const u = async (node: any) => dump(await encode(node))
-  expect(await u(kitchenSink.node)).toEqual(kitchenSink.xmd)
+describe('encode', () => {
+  const toXmd = nodeToString(encode)
+
+  test('simple.ts', async () => {
+    expect(await toXmd(simple)).toMatchFile(snapshot('simple.Rmd'))
+  })
 })
-
-// An example intended for testing progressively added parser/unparser pairs
-const kitchenSink = {
-  xmd: `---
-title: Untitled
-authors: []
----
-
-# Inline chunks
-
-Simple \`r x * y\`
-
-With parentheses and brackets \`python sum(x*y)[1]\`
-
-Just inline code \`a * 6\`
-
-# Block chunks
-
-\`\`\` {r}
-file = 'data.csv'
-# a comment
-read.table(file)
-\`\`\`
-
-\`\`\` {r fig.height=7 fig.width=8}
-plot(x,y)
-\`\`\`
-`,
-
-  node: {
-    type: 'Article',
-    title: 'Untitled',
-    authors: [],
-    content: [
-      {
-        type: 'Heading',
-        depth: 1,
-        content: ['Inline chunks']
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'Simple ',
-          {
-            type: 'CodeExpression',
-            programmingLanguage: 'r',
-            text: 'x * y'
-          }
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'With parentheses and brackets ',
-          {
-            type: 'CodeExpression',
-            programmingLanguage: 'python',
-            text: 'sum(x*y)[1]'
-          }
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'Just inline code ',
-          {
-            type: 'CodeFragment',
-            text: 'a * 6'
-          }
-        ]
-      },
-      {
-        type: 'Heading',
-        depth: 1,
-        content: ['Block chunks']
-      },
-      {
-        type: 'CodeChunk',
-        programmingLanguage: 'r',
-        text: "file = 'data.csv'\n# a comment\nread.table(file)"
-      },
-      {
-        type: 'CodeChunk',
-        programmingLanguage: 'r',
-        meta: {
-          'fig.height': '7',
-          'fig.width': '8'
-        },
-        text: 'plot(x,y)'
-      }
-    ]
-  }
-}

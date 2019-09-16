@@ -27,8 +27,8 @@ import JSON5 from 'json5'
 import path from 'path'
 import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
+import { compactObj, isDefined } from '../../util'
 import { logWarnLossIfAny } from '../../log'
-import { compactObj, isDefined, reduceNonNullable } from '../../util'
 import bundle from '../../util/bundle'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import { toFiles } from '../../util/toFiles'
@@ -130,13 +130,26 @@ export class HTMLCodec extends Codec implements Codec {
    * Note that, if the HTML does not contain any handled elements, this will
    * return `undefined`.
    */
-  public decodeHtml = (
-    htmlContent: VFileContents
-  ): stencila.Node | undefined => {
+  public decodeHtml = (htmlContent: VFileContents): stencila.Node => {
     const dom = new jsdom.JSDOM(htmlContent)
     const document = dom.window.document
     collapse(document)
-    return decodeNode(document)
+    const node = decodeNode(document)
+    if (Array.isArray(node)) {
+      if (node.length === 0) {
+        log.warn(
+          `No node could be decoded from HTML: ${
+            htmlContent.length > 10
+              ? htmlContent.toString().substr(0, 10) + '...'
+              : htmlContent
+          }`
+        )
+        return ''
+      } else if (node.length === 1) {
+        return node[0]
+      }
+    }
+    return node
   }
 
   /**
@@ -149,17 +162,7 @@ export class HTMLCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const html = await vfile.dump(file)
-    const node = this.decodeHtml(html)
-    if (node === undefined) {
-      log.warn(
-        `No node could be decoded from HTML: ${
-          html.length > 10 ? html.substr(0, 10) + '...' : html
-        }`
-      )
-      return ''
-    } else {
-      return node
-    }
+    return this.decodeHtml(html)
   }
 
   /**
@@ -238,12 +241,29 @@ const getArticleMetaData = (
   }
 }
 
-const decodeNodes = (nodes: Node[]): (stencila.Node | undefined)[] =>
-  nodes.map(decodeNode)
+const decodeNodes = (nodes: Node[]): stencila.Node[] =>
+  nodes
+    .map(decodeNode)
+    .reduce(
+      (prev: Node[], curr) => [
+        ...prev,
+        ...(Array.isArray(curr) ? curr : [curr])
+      ],
+      []
+    )
 
-const encodeNodes = (nodes: stencila.Node[]): Node[] => nodes.map(encodeNode)
+const decodeChildNodes = (node: Node): stencila.Node[] =>
+  decodeNodes([...node.childNodes])
 
-function decodeNode(node: Node): stencila.Node | undefined {
+const decodeBlockChildNodes = (node: Node): stencila.BlockContent[] =>
+  decodeChildNodes(node).map(n => n as stencila.BlockContent)
+
+const decodeInlineChildNodes = (node: Node): stencila.InlineContent[] =>
+  decodeChildNodes(node)
+    .map(n => n as stencila.InlineContent)
+    .filter(n => n !== '')
+
+function decodeNode(node: Node): stencila.Node | stencila.Node[] {
   const type =
     node instanceof window.HTMLElement ? node.getAttribute('itemtype') : null
 
@@ -262,11 +282,6 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'schema:Article':
       return decodeArticle(node as HTMLElement)
 
-    case 'div':
-    case 'span':
-    case 'time':
-      return decodeDiv(node as HTMLDivElement)
-
     case 'p':
       return decodeParagraph(node as HTMLParagraphElement)
     case 'blockquote':
@@ -276,6 +291,8 @@ function decodeNode(node: Node): stencila.Node | undefined {
         return decodeCodeBlock(node as HTMLPreElement)
       }
       break
+    case 'stencila-codechunk':
+      return decodeCodeChunk(node as HTMLElement)
     case 'ul':
       return decodeList(node as HTMLUListElement)
     case 'ol':
@@ -309,8 +326,10 @@ function decodeNode(node: Node): stencila.Node | undefined {
       return decodeCite(node as HTMLElement)
     case 'stencila:CiteGroup':
       return decodeCiteGroup(node as HTMLOListElement)
+    case 'stencila-codeexpression':
+      return decodeCodeExpression(node as HTMLElement)
     case 'code':
-      return decodeCode(node as HTMLElement)
+      return decodeCodeFragment(node as HTMLElement)
     case 'img':
       return decodeImage(node as HTMLImageElement)
     case 'figure':
@@ -329,8 +348,17 @@ function decodeNode(node: Node): stencila.Node | undefined {
     case 'stencila:Object':
       return decodeObject(node as HTMLElement)
 
+    // Container elements which are 'unwrapped'
+    // by simply decoding their children
+    case 'div':
+    case 'span':
+    case 'time':
+      return decodeChildNodes(node)
+
+    // Elements that are explicitly ignored
+    // i.e. no warning
     case 'script':
-      return undefined
+      return []
 
     case '#text':
       return decodeText(node as Text)
@@ -344,8 +372,10 @@ function decodeNode(node: Node): stencila.Node | undefined {
   if (type !== null) return decodeEntity(node as HTMLElement)
 
   log.warn(`No handler for HTML element <${name}>`)
-  return undefined
+  return []
 }
+
+const encodeNodes = (nodes: stencila.Node[]): Node[] => nodes.map(encodeNode)
 
 const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
   switch (nodeType(node)) {
@@ -371,6 +401,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCodeChunk(node as stencila.CodeChunk)
     case 'CodeExpression':
       return encodeCodeExpression(node as stencila.CodeExpression)
+    case 'CodeFragment':
+      return encodeCodeFragment(node as stencila.CodeFragment)
     case 'Collection':
       return encodeCollection(node as stencila.Collection)
     case 'Figure':
@@ -401,7 +433,7 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
     case 'Code':
-      return encodeCode(node as stencila.Code)
+      return encodeCodeFragment(node as stencila.CodeFragment)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
     case 'Math':
@@ -424,59 +456,13 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
   }
 }
 
-function decodeBlockChildNodes(node: Node): stencila.BlockContent[] {
-  return Array.from(node.childNodes)
-    .reduce(reduceNonNullable(decodeNode), [])
-    .map(n => n as stencila.BlockContent)
-}
-
-function decodeInlineChildNodes(node: Node): stencila.InlineContent[] {
-  return [...node.childNodes]
-    .map(child => decodeNode(child) as stencila.InlineContent)
-    .filter(n => n !== '')
-}
-
 /**
  * Decode a `#document` node to a `stencila.Node`.
  */
-function decodeDocument(doc: HTMLDocument): stencila.Node | undefined {
-  const head = doc.querySelector('head')
-  if (!head) throw new Error('Document does not have a <head>!')
-
+function decodeDocument(doc: HTMLDocument): stencila.Node {
   const body = doc.querySelector('body')
   if (!body) throw new Error('Document does not have a <body>!')
-
-  const jsonld = head.querySelector('script[type="application/ld+json"]')
-  const metadata = jsonld ? JSON.parse(jsonld.innerHTML || '{}') : {}
-  delete metadata['@context']
-
-  if (!jsonld && body.childElementCount === 1) {
-    return decodeNode(body.children[0])
-  }
-
-  // TODO: Allow for the different types of creative work
-  return {
-    type: 'Article',
-    ...metadata,
-    content: decodeBlockChildNodes(body)
-  }
-}
-
-/**
- * Decode a `<div>` node to a Stencila `Node`.
- *
- * A `<div>` is treated as having no semantic meaning
- * and so this function decodes it's children.
- */
-function decodeDiv(div: HTMLDivElement): stencila.Node | undefined {
-  const children = [...div.childNodes]
-
-  // If the div only contains a single element, return a Node, rather than a list of Nodes
-  if (children.length === 1) {
-    return decodeNode(children[0])
-  } else {
-    return children.map(decodeNode)
-  }
+  return decodeNodes([...body.childNodes])
 }
 
 /**
@@ -582,7 +568,7 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
     title,
     authors: [],
     references: isNonEmpty(refItems) ? refItems : undefined,
-    content: [...element.childNodes].reduce(reduceNonNullable(decodeNode), [])
+    content: decodeChildNodes(element)
   })
 }
 
@@ -1091,9 +1077,9 @@ function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
  * Decode a `<figure>` element to a `stencila.Figure`.
  */
 function decodeFigure(elem: HTMLElement): stencila.Figure {
-  const content = [...elem.childNodes]
-    .filter(n => n.nodeName.toLowerCase() !== 'figcaption')
-    .reduce(reduceNonNullable(decodeNode), [])
+  const content = decodeNodes(
+    [...elem.childNodes].filter(n => n.nodeName.toLowerCase() !== 'figcaption')
+  )
 
   const caption = elem.querySelector('figcaption')
 
@@ -1109,7 +1095,7 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
  * Decode a `<figcaption>` element to a list of `stencila.Node`s.
  */
 function decodeFigCaption(elem: HTMLElement): stencila.Node[] {
-  return [...elem.childNodes].reduce(reduceNonNullable(decodeNode), [])
+  return decodeChildNodes(elem)
 }
 
 /**
@@ -1130,9 +1116,7 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
  */
 function decodeCollection(collection: HTMLOListElement): stencila.Collection {
   const parts = flatten(
-    ([...collection.childNodes] || []).map(part =>
-      ([...part.childNodes] || []).map(decodeNode)
-    )
+    ([...collection.childNodes] || []).map(decodeChildNodes)
   ).filter(isCreativeWork)
 
   return {
@@ -1158,7 +1142,7 @@ function encodeCollection(collection: stencila.Collection): HTMLOListElement {
 function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
-  const { programmingLanguage, text } = decodeCode(code)
+  const { programmingLanguage, text } = decodeCodeFragment(code)
   const codeblock: stencila.CodeBlock = {
     type: 'CodeBlock',
     programmingLanguage,
@@ -1176,63 +1160,78 @@ function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
  * the `<pre>` element with a `data-` prefix.
  */
 function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
-  const attrs = encodeDataAttrs(block.meta || {})
-  const code = encodeCode(block, false)
+  const { text, programmingLanguage, meta = {} } = block
+  const attrs = encodeDataAttrs(meta)
+  const code = encodeCodeFragment(
+    stencila.codeFragment(text, { programmingLanguage }),
+    false
+  )
   return h('pre', { attrs }, code)
 }
 
-function encodeCodeOutput(node: stencila.Node): HTMLElement {
-  const content = (() => {
-    switch (nodeType(node)) {
-      case 'string':
-        return h('pre', node as string)
-      case 'ImageObject':
-        return encodeImageObject(node as stencila.ImageObject)
-      default:
-        return encodeNode(node)
-    }
-  })()
-  return h('figure', content)
-}
-
 /**
- * Encode a `stencila.CodeChunk` to a `<stencila-codechunk>` element.
+ * Decode a `<stencila-codechunk>` element to a Stencila `CodeChunk`.
  */
-function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
-  const attrs = encodeDataAttrs(chunk.meta || {})
+function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
+  const codeElem = chunk.querySelector('[slot="code"]')
+  const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
+  const { text, programmingLanguage } = codeFrag
 
-  const codeBlock = encodeCodeBlock({
-    type: 'CodeBlock',
-    text: chunk.text || '',
-    meta: {
-      slot: 'code'
-    }
-  })
-
-  const outputs = h(
-    'figure',
-    {
-      attrs: {
-        slot: 'outputs'
-      }
-    },
-    (chunk.outputs || []).map(node => {
-      switch (nodeType(node)) {
-        case 'string':
-          return h('pre', node as string)
-        case 'ImageObject':
-          return encodeImageObject(node as stencila.ImageObject)
-        default:
-          return encodeNode(node)
-      }
-    })
+  const outputElems = chunk.querySelectorAll('[slot="outputs"] > *')
+  const outputs = Array.from(outputElems).map(elem =>
+    decodeCodeOutput(elem as HTMLElement)
   )
 
-  return h('stencila-codechunk', attrs, codeBlock, outputs)
+  return stencila.codeChunk(text, { programmingLanguage, outputs })
 }
 
 /**
- * Encode a `stencila.CodeExpression to a `<stencila-codeexpression>` element.
+ * Encode a Stencila `CodeChunk` to a `<stencila-codechunk>` element.
+ */
+function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
+  const { text = '', meta = {}, programmingLanguage, outputs } = chunk
+
+  const attrs = encodeDataAttrs(meta || {})
+
+  const codeElem = encodeCodeBlock(
+    stencila.codeBlock(text, { programmingLanguage })
+  )
+  codeElem.setAttribute('slot', 'code')
+
+  const outputsElem = encodeMaybe(outputs, outputs =>
+    h(
+      'figure',
+      {
+        attrs: {
+          slot: 'outputs'
+        }
+      },
+      outputs.map(encodeCodeOutput)
+    )
+  )
+
+  return h('stencila-codechunk', attrs, codeElem, outputsElem)
+}
+
+/**
+ * Decode a `<stencila-codeexpression>` element to a Stencila `CodeExpression`.
+ */
+function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
+  const codeElem = elem.querySelector('[slot="code"]')
+  const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
+  const { text, programmingLanguage } = codeFrag
+
+  const outputElem = elem.querySelector('[slot="output"]')
+  const output =
+    outputElem !== null
+      ? decodeCodeOutput(outputElem as HTMLElement)
+      : undefined
+
+  return stencila.codeExpression(text, { programmingLanguage, output })
+}
+
+/**
+ * Encode a Stencila `CodeExpression` to a `<stencila-codeexpression>` element.
  */
 function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   const attrs = encodeDataAttrs(expr.meta || {})
@@ -1243,6 +1242,33 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
     attrs,
     encodeCodeOutput(expr.output || '')
   )
+}
+
+/**
+ * Decode an output element of a `<stencila-codechunk>` or
+ * `<stencila-codeexpression>` to Stencila Node.
+ */
+const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
+  switch (elem.nodeName.toLowerCase()) {
+    case 'pre':
+    case 'span':
+      return elem.textContent || ''
+    default:
+      return decodeNode(elem)
+  }
+}
+
+/**
+ * Encode an output of a `CodeChunk` or `CodeExpression` as
+ * a `HTMLElement`.
+ */
+const encodeCodeOutput = (node: stencila.Node): Node => {
+  switch (nodeType(node)) {
+    case 'string':
+      return h('pre', node as string)
+    default:
+      return encodeNode(node)
+  }
 }
 
 /**
@@ -1270,7 +1296,7 @@ function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
   return {
     type: 'ListItem',
-    content: [...li.childNodes].reduce(reduceNonNullable(decodeNode), [])
+    content: decodeChildNodes(li)
   }
 }
 
@@ -1479,27 +1505,27 @@ function encodeQuote(quote: stencila.Quote): HTMLQuoteElement {
 }
 
 /**
- * Decode a `<code>` element to a `stencila.Code`.
+ * Decode a `<code>` element to a `stencila.CodeFragment`.
  */
-function decodeCode(elem: HTMLElement): stencila.Code {
-  const code: stencila.Code = { type: 'Code', text: elem.textContent || '' }
+function decodeCodeFragment(elem: HTMLElement): stencila.CodeFragment {
+  const codeFrag = stencila.codeFragment(elem.textContent || '')
   const clas = elem.getAttribute('class')
   if (clas) {
     const match = clas.match(/^language-(\w+)$/)
     if (match) {
-      code.programmingLanguage = match[1]
+      codeFrag.programmingLanguage = match[1]
     }
   }
   const meta = decodeDataAttrs(elem)
-  if (meta) code.meta = meta
-  return code
+  if (meta) codeFrag.meta = meta
+  return codeFrag
 }
 
 /**
- * Encode a `stencila.Code` to a `<code>` element.
+ * Encode a `stencila.CodeFragment` to a `<code>` element.
  */
-function encodeCode(
-  code: stencila.Code,
+function encodeCodeFragment(
+  code: stencila.CodeFragment,
   dataAttrs: boolean = true
 ): HTMLElement {
   return h('code', {
@@ -1611,9 +1637,11 @@ function encodeNumber(value: number): HTMLElement {
 
 /**
  * Decode a `<span itemtype="https://schema.stenci.la/Array>` element to a `array`.
+ *
+ * Wrap the decoded array with an array to prevent it getting flattened by `decodeNodes`
  */
-function decodeArray(elem: HTMLElement): any[] {
-  return JSON5.parse(elem.innerHTML || '[]')
+function decodeArray(elem: HTMLElement): [any[]] {
+  return [JSON5.parse(elem.innerHTML || '[]')]
 }
 
 /**

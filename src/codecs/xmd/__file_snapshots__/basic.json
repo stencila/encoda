@@ -1,0 +1,99 @@
+{
+  "authors": [],
+  "title": "Untitled",
+  "content": [
+    {
+      "type": "CodeChunk",
+      "text": "knitr::opts_chunk$set(echo = TRUE)",
+      "programmingLanguage": "r",
+      "meta": {
+        "setup,": "",
+        "include": "FALSE"
+      }
+    },
+    {
+      "type": "Heading",
+      "depth": 2,
+      "content": [
+        "R Markdown"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "This is an R Markdown document ",
+        {
+          "type": "Link",
+          "target": "",
+          "content": [
+            "as created by RStudio"
+          ]
+        },
+        ". Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see ",
+        {
+          "type": "Link",
+          "target": "http://rmarkdown.rstudio.com",
+          "content": [
+            "http://rmarkdown.rstudio.com"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "When you click the ",
+        {
+          "type": "Strong",
+          "content": [
+            "Knit"
+          ]
+        },
+        " button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "text": "summary(cars)",
+      "programmingLanguage": "r",
+      "meta": {
+        "cars": ""
+      }
+    },
+    {
+      "type": "Heading",
+      "depth": 2,
+      "content": [
+        "Including Plots"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "You can also embed plots, for example:"
+      ]
+    },
+    {
+      "type": "CodeChunk",
+      "text": "plot(pressure)",
+      "programmingLanguage": "r",
+      "meta": {
+        "pressure,": "",
+        "echo": "FALSE"
+      }
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Note that the ",
+        {
+          "text": "echo = FALSE",
+          "type": "CodeFragment"
+        },
+        " parameter was added to the code chunk to prevent printing of the R code that generated the plot."
+      ]
+    }
+  ],
+  "type": "Article"
+}
