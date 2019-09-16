@@ -22,6 +22,6 @@ describe('encode', () => {
   const toXmd = nodeToString(encode)
 
   test('simple.ts', async () => {
-    expect(toXmd(simple)).toMatchFile(snapshot('simple.Rmd'))
+    expect(await toXmd(simple)).toMatchFile(snapshot('simple.Rmd'))
   })
 })
