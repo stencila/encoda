@@ -55,7 +55,8 @@ followed by more paragraphs`)
     )
   })
 
-  test('Nested HTML in MD with mixed inline content', async () => {
+  test.skip('Nested HTML in MD with mixed inline content', async () => {
+    // TODO: Reinstate this test
     expect(
       await d(`some paragraphs
 
