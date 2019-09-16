@@ -14,16 +14,22 @@
 
 <!-- toc -->
 
-- [Introduction](#introduction)
-- [Formats](#formats)
-- [Publishers](#publishers)
-- [Install](#install)
-- [Use](#use)
-- [Documentation](#documentation)
-- [Develop](#develop)
-- [Contribute](#contribute)
-- [Contributors](#contributors)
-- [Acknowledgments](#acknowledgments)
+- [Encoda](#encoda)
+        - [Codecs for structured, semantic, composable, and executable documents](#codecs-for-structured-semantic-composable-and-executable-documents)
+  - [Introduction](#introduction)
+  - [Formats](#formats)
+  - [Publishers](#publishers)
+  - [Install](#install)
+  - [Use](#use)
+    - [Converting files](#converting-files)
+    - [Converting folders](#converting-folders)
+    - [Converting command line input](#converting-command-line-input)
+    - [Creating zip archives](#creating-zip-archives)
+  - [Documentation](#documentation)
+  - [Develop](#develop)
+  - [Contribute](#contribute)
+  - [Contributors](#contributors)
+  - [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
 
@@ -169,7 +175,9 @@ npm install @stencila/encoda --global
 
 ## Use
 
-Encoda is intended to be used primarily as a library for other applications. However, it comes with a simple command line script which allows you to use the `convert` function directly e.g.
+Encoda is intended to be used primarily as a library for other applications. However, it comes with a simple command line script which allows you to use the `convert` function directly.
+
+### Converting files
 
 ```bash
 encoda convert notebook.ipynb notebook.docx
@@ -181,11 +189,21 @@ Encoda will determine the input and output formats based on the file extensions.
 encoda convert notebook.ipynb notebook.xml --to jats
 ```
 
+You can also convert to more than one file / format (in this case the `--to` argument only applies to the first output file) e.g.
+
+```bash
+encoda convert report.docx report.Rmd report.html report.jats
+```
+
+### Converting folders
+
 You can decode an entire directory into a `Collection`. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the `Collection` using the `dir` codec into a tree of HTML files e.g.
 
 ```bash
 encoda convert myproject myproject-published --to dir --pattern '**/*.{rmd, csv}'
 ```
+
+### Converting command line input
 
 You can also read content from the first argument. In that case, you'll need to specifying the `--from` format e.g.
 
@@ -199,14 +217,19 @@ You can send output to the console by using `-` as the second argument and speci
 encoda convert paragraph.md - --to yaml
 ```
 
-| Option         | Description                                                                               |
-| -------------- | ----------------------------------------------------------------------------------------- |
-| `--from`       | The format of the input content e.g. `--from md`                                          |
-| `--to`         | The format for the output content e.g. `--to html`                                        |
-| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife` |
-| `--standalone` | Generate a standalone document, not a fragment (default `true`)                           |
-| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)            |
-| `--debug`      | Print debugging information                                                               |
+### Creating zip archives
+
+Use the `--zip` option to create a Zip archive with the outputs of conversion. With `--zip=yes` a zip archive will always be created. With `--zip=maybe`, a zip archive will be created if there are more than two output files. This can be useful for formats such as HTML and Markdown, for which images and other media are stored in a sibling folder.
+
+| Option         | Description                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| `--from`       | The format of the input content e.g. `--from md`                                                         |
+| `--to`         | The format for the output content e.g. `--to html`                                                       |
+| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                |
+| `--standalone` | Generate a standalone document, not a fragment (default `true`)                                          |
+| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                           |
+| `--zip`        | Create `output.zip` containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
+| `--debug`      | Print debugging information                                                                              |
 
 ## Documentation
 
