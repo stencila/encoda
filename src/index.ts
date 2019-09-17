@@ -8,6 +8,8 @@ import {
   GlobalEncodeOptions
 } from './codecs/types'
 import * as vfile from './util/vfile'
+import * as zip from './util/zip'
+import fs from 'fs-extra'
 
 const log = getLogger('encoda')
 
@@ -321,17 +323,20 @@ interface ConvertOptions {
 export async function convert(
   input: string,
   outputPaths?: string | string[],
-  { to, from, encodeOptions }: ConvertOptions = {}
+  { to, from, encodeOptions = defaultEncodeOptions }: ConvertOptions = {}
 ): Promise<string | undefined> {
   let outputPaths_: (string | undefined)[]
   if (outputPaths === undefined) outputPaths_ = [undefined]
   else if (typeof outputPaths === 'string') outputPaths_ = [outputPaths]
   else outputPaths_ = outputPaths
 
+  const { shouldZip } = encodeOptions
+
   const inputFile = vfile.create(input)
   const node = await decode(inputFile, input, from)
 
   let index = 0
+  const files: string[] = []
   for (const outputPath of outputPaths_) {
     const outputFile = await encode(node, {
       ...defaultEncodeOptions,
@@ -339,14 +344,43 @@ export async function convert(
       filePath: outputPath,
       ...encodeOptions
     })
-    if (outputPath !== undefined) await vfile.write(outputFile, outputPath)
+
+    if (outputPath !== undefined) {
+      // Write file to path (note that this may have been done already by
+      // the encoding codec, in which case `outputFile.contents === undefined`
+      // and this is effectively a no-op)
+      await vfile.write(outputFile, outputPath)
+
+      // Record files generated
+      files.push(outputPath)
+      // The convention amongst codecs is to put media files in
+      // a sibling folder with `.media` appended to the name
+      // We rely on that convention here...
+      const mediaFolder = outputPath + '.media'
+      if (await fs.pathExists(mediaFolder)) {
+        for (const child of await fs.readdir(mediaFolder))
+          files.push(path.join(mediaFolder, child))
+      }
+    }
 
     // The `to` option only applies to the first output
     to = undefined
 
-    // Return the contents, or path, of the last output file
+    // Return the contents, or path, of the last output file,
+    // or the zip file, if one was produced.
     index += 1
-    if (index === outputPaths_.length)
-      return outputFile.contents ? vfile.dump(outputFile) : outputFile.path
+    if (index === outputPaths_.length) {
+      if (shouldZip === 'yes' || (files.length > 1 && shouldZip === 'maybe')) {
+        const first = outputPaths_[0]
+        let zipName = 'output.zip'
+        if (outputPaths_.length === 1 && first !== undefined) {
+          const {dir, name} = path.parse(first)
+          zipName = path.join(dir, name + '.zip')
+        }
+        return zip.create(zipName, files, { remove: true })
+      } else if (outputFile.contents !== undefined)
+        return vfile.dump(outputFile)
+      else return outputFile.path
+    }
   }
 }

@@ -7,11 +7,14 @@ export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
   filePath?: string
   isStandalone?: boolean
   isBundle?: boolean
+  shouldZip?: 'yes' | 'no' | 'maybe'
   theme: ThemeNames
+
   codecOptions?: CodecOptions
 }
 
 export const defaultEncodeOptions: GlobalEncodeOptions = {
+  shouldZip: 'no',
   theme: getTheme()
 }
 

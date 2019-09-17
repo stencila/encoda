@@ -51,6 +51,7 @@ const { _, ...options } = minimist(process.argv.slice(2), {
     standalone: true,
     bundle: false,
     theme: themes.stencila,
+    zip: 'no',
     debug: false
   }
 })
@@ -64,7 +65,7 @@ configure(options.debug)
 ;(async () => {
   try {
     if (command === 'convert') {
-      const { to, from, standalone, bundle, ...rest } = options
+      const { to, from, standalone, bundle, zip, ...rest } = options
       const theme = getTheme(options.theme)
 
       await convert(args[0], args.slice(1), {
@@ -73,6 +74,7 @@ configure(options.debug)
         encodeOptions: {
           isStandalone: standalone,
           isBundle: bundle,
+          shouldZip: zip,
           theme,
           codecOptions: rest
         }
@@ -80,7 +82,7 @@ configure(options.debug)
     } else if (['process', 'coerce', 'validate'].includes(command)) {
       const input = args[0]
       const output = args[1] || input
-      const { to, from, standalone, bundle, theme, ...rest } = options
+      const { to, from, standalone, bundle, zip, theme, ...rest } = options
       const node = await read(input, from)
       let processed
       if (command === 'process')
@@ -94,6 +96,7 @@ configure(options.debug)
         format: to,
         isStandalone: standalone,
         isBundle: bundle,
+        shouldZip: zip,
         theme,
         codecOptions: rest
       })
