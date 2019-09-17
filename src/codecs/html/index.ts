@@ -9,7 +9,9 @@ import {
   isArticle,
   isCreativeWork,
   markTypes,
-  nodeType
+  nodeType,
+  isInlineContent,
+  isA
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import { themePath, themes } from '@stencila/thema'
@@ -1218,8 +1220,10 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
  */
 function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
   const codeElem = elem.querySelector('[slot="code"]')
-  const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
-  const { text, programmingLanguage } = codeFrag
+  const { text, ...codeFragment } = decodeCodeFragment(codeElem as HTMLElement)
+  const programmingLanguage =
+    elem.getAttribute('programming-language') ||
+    codeFragment.programmingLanguage
 
   const outputElem = elem.querySelector('[slot="output"]')
   const output =
@@ -1235,13 +1239,13 @@ function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
  */
 function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   const attrs = encodeDataAttrs(expr.meta || {})
-  attrs['text'] = expr.text
-  if (expr.programmingLanguage) attrs['language'] = expr.programmingLanguage
-  return h(
-    'stencila-codeexpression',
-    attrs,
-    encodeCodeOutput(expr.output || '')
-  )
+  if (expr.programmingLanguage)
+    attrs['programming-language'] = expr.programmingLanguage
+
+  return h('stencila-codeexpression', { attrs }, [
+    h('code', { class: expr.programmingLanguage }, expr.text),
+    h('output', [encodeNode(expr.output || '')].filter(isInlineContent))
+  ])
 }
 
 /**
@@ -1250,6 +1254,7 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
  */
 const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
   switch (elem.nodeName.toLowerCase()) {
+    case 'output':
     case 'pre':
     case 'span':
       return elem.textContent || ''

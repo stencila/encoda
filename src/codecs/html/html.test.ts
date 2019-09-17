@@ -2,6 +2,7 @@ import stencila, {
   article,
   cite,
   citeGroup,
+  codeExpression,
   collection,
   creativeWork,
   figure,
@@ -15,7 +16,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
-import { HTMLCodec, decodeHref } from './'
+import { decodeHref, HTMLCodec } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -111,6 +112,29 @@ describe('Encode & Decode cite nodes', () => {
     expect(actual).toHaveProperty('target', 'myTarget')
     expect(actual).toHaveProperty('prefix', '(')
     expect(actual).toHaveProperty('suffix', ')')
+  })
+})
+
+describe('Encode & Decode code-expression nodes', () => {
+  const codeExpressionSchema = codeExpression('x * 2', {
+    output: '42',
+    programmingLanguage: 'python'
+  })
+  const codeExpressionHTML =
+    '<stencila-codeexpression programming-language="python"><code slot="code">x * 2</code><output slot="output">42</output></stencila-codeexpression>'
+
+  test('encode', async () => {
+    const actual = doc(await e(codeExpressionSchema))
+    const code = actual.getElementsByTagName('code')[0]
+    const output = actual.getElementsByTagName('output')[0]
+
+    expect(actual).toContainElement(code)
+    expect(actual).toContainElement(output)
+  })
+
+  test('decode', async () => {
+    const c = await d(codeExpressionHTML)
+    expect(c).toMatchObject(codeExpressionSchema)
   })
 })
 

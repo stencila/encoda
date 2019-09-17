@@ -138,7 +138,7 @@ export class RnbCodec extends Codec implements Codec {
       const html = container.innerHTML
       container.innerHTML =
         html.slice(0, begin) +
-        `<stencila-codeexpression>
+        `<stencila-codeexpression programming-language="r">
           <code class="language-r" slot="code">${source}</code>
           <span slot="output">${output}</span>
         </stencila-codeexpression>` +
