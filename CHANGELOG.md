@@ -1,3 +1,15 @@
+# [0.77.0](https://github.com/stencila/encoda/compare/v0.76.0...v0.77.0) (2019-09-17)
+
+
+### Bug Fixes
+
+* **Zip archive:** Use name of file for archive if possible ([62a2df5](https://github.com/stencila/encoda/commit/62a2df5))
+
+
+### Features
+
+* **Zip archive:** Add option to create zip archive of outputs ([ba85041](https://github.com/stencila/encoda/commit/ba85041))
+
 # [0.76.0](https://github.com/stencila/encoda/compare/v0.75.4...v0.76.0) (2019-09-16)
 
 
