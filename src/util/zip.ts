@@ -18,14 +18,24 @@ import JSZip from 'jszip'
 export const create = async (
   zipPath: string,
   files: string[],
-  options: { remove: boolean }
+  options: { remove: boolean; dir: string }
 ): Promise<string> => {
-  const { remove = false } = options
+  const { remove = false, dir = '' } = options
 
   const zip = new JSZip()
 
   for (const file of files) {
-    zip.file(file, fs.createReadStream(file))
+    let relativePath = file
+
+    if (dir !== '') {
+      let fullDir = dir
+      if (!fullDir.endsWith('/')) fullDir += '/'
+      if (file.startsWith(fullDir)) {
+        relativePath = file.substring(fullDir.length)
+      }
+    }
+
+    zip.file(relativePath, fs.createReadStream(file))
   }
 
   return new Promise(resolve => {
