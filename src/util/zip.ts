@@ -6,6 +6,7 @@
 
 import fs from 'fs-extra'
 import JSZip from 'jszip'
+import * as path from 'path'
 
 /**
  * Create a Zip file
@@ -14,6 +15,7 @@ import JSZip from 'jszip'
  * @param files A list of file paths to include in the zip archive
  * @param options
  * @param options.remove Remove files after creating the zip archive?
+ * @param options.dir The directory being zipped, filenames will be relative to this.
  */
 export const create = async (
   zipPath: string,
@@ -25,17 +27,7 @@ export const create = async (
   const zip = new JSZip()
 
   for (const file of files) {
-    let relativePath = file
-
-    if (dir !== '') {
-      let fullDir = dir
-      if (!fullDir.endsWith('/')) fullDir += '/'
-      if (file.startsWith(fullDir)) {
-        relativePath = file.substring(fullDir.length)
-      }
-    }
-
-    zip.file(relativePath, fs.createReadStream(file))
+    zip.file(path.relative(dir, file), fs.createReadStream(file))
   }
 
   return new Promise(resolve => {
