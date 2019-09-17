@@ -228,7 +228,7 @@ Use the `--zip` option to create a Zip archive with the outputs of conversion. W
 | `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                |
 | `--standalone` | Generate a standalone document, not a fragment (default `true`)                                          |
 | `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                           |
-| `--zip`        | Create `output.zip` containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
+| `--zip`        | Create `.zip` archive containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
 | `--debug`      | Print debugging information                                                                              |
 
 ## Documentation

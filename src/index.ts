@@ -371,7 +371,13 @@ export async function convert(
     index += 1
     if (index === outputPaths_.length) {
       if (shouldZip === 'yes' || (files.length > 1 && shouldZip === 'maybe')) {
-        return zip.create('output.zip', files, { remove: true })
+        const first = outputPaths_[0]
+        let zipName = 'output.zip'
+        if (outputPaths_.length === 1 && first !== undefined) {
+          const {dir, name} = path.parse(first)
+          zipName = path.join(dir, name + '.zip')
+        }
+        return zip.create(zipName, files, { remove: true })
       } else if (outputFile.contents !== undefined)
         return vfile.dump(outputFile)
       else return outputFile.path
