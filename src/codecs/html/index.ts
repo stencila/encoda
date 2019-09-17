@@ -1259,13 +1259,12 @@ const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
 }
 
 /**
- * Encode an output of a `CodeChunk` or `CodeExpression` as
- * a `HTMLElement`.
+ * Encode an output of a `CodeChunk` as an `HTMLElement`.
  */
 const encodeCodeOutput = (node: stencila.Node): Node => {
   switch (nodeType(node)) {
     case 'string':
-      return h('pre', node as string)
+      return h('pre', h('output', node as string))
     default:
       return encodeNode(node)
   }
