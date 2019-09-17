@@ -1,3 +1,10 @@
+## [0.77.1](https://github.com/stencila/encoda/compare/v0.77.0...v0.77.1) (2019-09-17)
+
+
+### Bug Fixes
+
+* Using relative paths in zip media creation ([2bacb06](https://github.com/stencila/encoda/commit/2bacb06))
+
 # [0.77.0](https://github.com/stencila/encoda/compare/v0.76.0...v0.77.0) (2019-09-17)
 
 
