@@ -38,38 +38,38 @@ const encodeCss = `
   color: #333;
 }
 
-stencila-codechunk,
-stencila-codeexpression {
+stencila-code-chunk,
+stencila-code-expression {
   display: inline-block;
   border: 1px solid rgb(9, 58, 221);
 }
 
-stencila-codechunk {
+stencila-code-chunk {
   min-width: 2em;
   min-height: 2em;
   border-radius: 3px;
 }
 
-stencila-codeexpression {
+stencila-code-expression {
   min-width: 1em;
   min-height: 1em;
   border-radius: 500px;
 }
 
-stencila-codechunk [slot='code'],
-stencila-codeexpression [slot='code'] {
+stencila-code-chunk [slot='text'],
+stencila-code-expression [slot='text'] {
   display: none;
 }
 
-stencila-codechunk [slot='outputs'] {
+stencila-code-chunk [slot='outputs'] {
   margin: 1em;
 }
 
-stencila-codechunk [slot='outputs'] * {
+stencila-code-chunk [slot='outputs'] * {
   margin: 1em auto;
 }
 
-stencila-codeexpression [slot='output'] {
+stencila-code-expression [slot='output'] {
   display: inline-block;
   margin: 0.1em auto;
 }

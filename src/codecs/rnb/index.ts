@@ -1,10 +1,10 @@
-import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
+import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
-import { load, text, first, all, elem } from '../../util/html'
+import { all, elem, first, load, text } from '../../util/html'
 import * as vfile from '../../util/vfile'
-import { Codec } from '../types'
 import { HTMLCodec } from '../html'
+import { Codec } from '../types'
 import { XmdCodec } from '../xmd'
 
 const htmlCodec = new HTMLCodec()
@@ -40,12 +40,12 @@ export class RnbCodec extends Codec implements Codec {
     // Replace delimiting comments with opening and closing HTML tags
     // so that we can handle these below
     const html = rnb
-      .replace(/<!-- rnb-chunk-begin -->/g, '<stencila-codechunk>')
+      .replace(/<!-- rnb-chunk-begin -->/g, '<stencila-code-chunk>')
       .replace(/<!-- rnb-source-begin [\w=]+ -->/g, '<rnb-source>')
       .replace(/<!-- rnb-source-end -->/g, '</rnb-source>')
       .replace(/<!-- rnb-(output|plot|frame)-begin [\w=]+ -->/g, '<rnb-output>')
       .replace(/<!-- rnb-(output|plot|frame)-end -->/g, '</rnb-output>')
-      .replace(/<!-- rnb-chunk-end -->/g, '</stencila-codechunk>')
+      .replace(/<!-- rnb-chunk-end -->/g, '</stencila-code-chunk>')
 
     // Transform the HTML so that it is in the format expected by the `html` codec...
 
@@ -138,16 +138,16 @@ export class RnbCodec extends Codec implements Codec {
       const html = container.innerHTML
       container.innerHTML =
         html.slice(0, begin) +
-        `<stencila-codeexpression>
-          <code class="language-r" slot="code">${source}</code>
+        `<stencila-code-expression programming-language="r">
+          <code class="language-r" slot="text">${source}</code>
           <span slot="output">${output}</span>
-        </stencila-codeexpression>` +
+        </stencila-code-expression>` +
         html.slice(end)
     }
 
     // In R Notebooks, when a code chunk has multiple outputs it is split into multiple
     // <rnb-source> and <rnb-output> elements...
-    for (const chunkElem of all(contentElem, 'stencila-codechunk')) {
+    for (const chunkElem of all(contentElem, 'stencila-code-chunk')) {
       // So join all the source code into one `<pre><code>` element
       const sourceElems = all(chunkElem, 'rnb-source')
       const source = sourceElems
@@ -161,7 +161,7 @@ export class RnbCodec extends Codec implements Codec {
         elem(
           'pre',
           {},
-          elem('code', { slot: 'code', class: 'language-r' }, source)
+          elem('code', { slot: 'text', class: 'language-r' }, source)
         )
       )
 

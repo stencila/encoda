@@ -9,7 +9,9 @@ import {
   isArticle,
   isCreativeWork,
   markTypes,
-  nodeType
+  nodeType,
+  isInlineContent,
+  isA
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import { themePath, themes } from '@stencila/thema'
@@ -291,7 +293,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
         return decodeCodeBlock(node as HTMLPreElement)
       }
       break
-    case 'stencila-codechunk':
+    case 'stencila-code-chunk':
       return decodeCodeChunk(node as HTMLElement)
     case 'ul':
       return decodeList(node as HTMLUListElement)
@@ -326,7 +328,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
       return decodeCite(node as HTMLElement)
     case 'stencila:CiteGroup':
       return decodeCiteGroup(node as HTMLOListElement)
-    case 'stencila-codeexpression':
+    case 'stencila-code-expression':
       return decodeCodeExpression(node as HTMLElement)
     case 'code':
       return decodeCodeFragment(node as HTMLElement)
@@ -1170,10 +1172,10 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
 }
 
 /**
- * Decode a `<stencila-codechunk>` element to a Stencila `CodeChunk`.
+ * Decode a `<stencila-code-chunk>` element to a Stencila `CodeChunk`.
  */
 function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
-  const codeElem = chunk.querySelector('[slot="code"]')
+  const codeElem = chunk.querySelector('[slot="text"]')
   const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
   const { text, programmingLanguage } = codeFrag
 
@@ -1186,7 +1188,7 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
 }
 
 /**
- * Encode a Stencila `CodeChunk` to a `<stencila-codechunk>` element.
+ * Encode a Stencila `CodeChunk` to a `<stencila-code-chunk>` element.
  */
 function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   const { text = '', meta = {}, programmingLanguage, outputs } = chunk
@@ -1196,7 +1198,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   const codeElem = encodeCodeBlock(
     stencila.codeBlock(text, { programmingLanguage })
   )
-  codeElem.setAttribute('slot', 'code')
+  codeElem.setAttribute('slot', 'text')
 
   const outputsElem = encodeMaybe(outputs, outputs =>
     h(
@@ -1210,16 +1212,18 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
     )
   )
 
-  return h('stencila-codechunk', attrs, codeElem, outputsElem)
+  return h('stencila-code-chunk', attrs, codeElem, outputsElem)
 }
 
 /**
- * Decode a `<stencila-codeexpression>` element to a Stencila `CodeExpression`.
+ * Decode a `<stencila-code-expression>` element to a Stencila `CodeExpression`.
  */
 function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
-  const codeElem = elem.querySelector('[slot="code"]')
-  const codeFrag = decodeCodeFragment(codeElem as HTMLElement)
-  const { text, programmingLanguage } = codeFrag
+  const codeElem = elem.querySelector('[slot="text"]')
+  const { text, ...codeFragment } = decodeCodeFragment(codeElem as HTMLElement)
+  const programmingLanguage =
+    elem.getAttribute('programming-language') ||
+    codeFragment.programmingLanguage
 
   const outputElem = elem.querySelector('[slot="output"]')
   const output =
@@ -1231,25 +1235,34 @@ function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
 }
 
 /**
- * Encode a Stencila `CodeExpression` to a `<stencila-codeexpression>` element.
+ * Encode a Stencila `CodeExpression` to a `<stencila-code-expression>` element.
  */
 function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   const attrs = encodeDataAttrs(expr.meta || {})
-  attrs['text'] = expr.text
-  if (expr.programmingLanguage) attrs['language'] = expr.programmingLanguage
-  return h(
-    'stencila-codeexpression',
-    attrs,
-    encodeCodeOutput(expr.output || '')
-  )
+  if (expr.programmingLanguage)
+    attrs['programming-language'] = expr.programmingLanguage
+
+  return h('stencila-code-expression', { attrs }, [
+    h(
+      'code',
+      { class: expr.programmingLanguage, attrs: { slot: 'text' } },
+      expr.text
+    ),
+    h(
+      'output',
+      { attrs: { slot: 'output' } },
+      [encodeNode(expr.output || '')].filter(isInlineContent)
+    )
+  ])
 }
 
 /**
- * Decode an output element of a `<stencila-codechunk>` or
- * `<stencila-codeexpression>` to Stencila Node.
+ * Decode an output element of a `<stencila-code-chunk>` or
+ * `<stencila-code-expression>` to Stencila Node.
  */
 const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
   switch (elem.nodeName.toLowerCase()) {
+    case 'output':
     case 'pre':
     case 'span':
       return elem.textContent || ''
@@ -1259,13 +1272,12 @@ const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
 }
 
 /**
- * Encode an output of a `CodeChunk` or `CodeExpression` as
- * a `HTMLElement`.
+ * Encode an output of a `CodeChunk` as an `HTMLElement`.
  */
 const encodeCodeOutput = (node: stencila.Node): Node => {
   switch (nodeType(node)) {
     case 'string':
-      return h('pre', node as string)
+      return h('pre', h('output', node as string))
     default:
       return encodeNode(node)
   }
