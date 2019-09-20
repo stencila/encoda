@@ -27,39 +27,39 @@
     <div>
       Here is a code expressions in some text
       <div id="target">
-        <stencila-codeexpression>
-          <pre slot="code"><code>x * y</code></pre>
+        <stencila-code-expression>
+          <pre slot="text"><code>x * y</code></pre>
           <pre slot="output">42.42</pre>
-        </stencila-codeexpression>
+        </stencila-code-expression>
       </div>
       followed by some more text.
       This one has no output
       <div id="target">
-        <stencila-codeexpression>
-          <pre slot="code"><code>x * y</code></pre>
-        </stencila-codeexpression>
+        <stencila-code-expression>
+          <pre slot="text"><code>x * y</code></pre>
+        </stencila-code-expression>
       </div>. Lorem ipsum
       <div id="target">
-        <stencila-codeexpression>
-          <pre slot="code"><code>x * y</code></pre>
+        <stencila-code-expression>
+          <pre slot="text"><code>x * y</code></pre>
           <pre slot="output">3</pre>
-        </stencila-codeexpression>
+        </stencila-code-expression>
       </div>
       dolor sit amet
       consectetur adipisicing elit. Libero odit
       <div id="target">
-          <stencila-codeexpression>
-            <pre slot="code"><code>x * y</code></pre>
+          <stencila-code-expression>
+            <pre slot="text"><code>x * y</code></pre>
             <pre slot="output">Some longer output</pre>
-          </stencila-codeexpression>
+          </stencila-code-expression>
       </div>
       totam maxime neque?
       Id, alias? In quas veritatis cumque quaerat id
       <div id="target">
-          <stencila-codeexpression>
-            <pre slot="code"><code>x * y</code></pre>
+          <stencila-code-expression>
+            <pre slot="text"><code>x * y</code></pre>
             <pre slot="output">Reaaaaalllyyyyyyyy loooongggggggggggggggggggg output</pre>
-          </stencila-codeexpression>
+          </stencila-code-expression>
       </div>
       iusto neque maiores voluptatibus
       natus iure harum, assumenda explicabo?
@@ -70,17 +70,17 @@
     <p>A code chunk with no output. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi aliquam voluptates dolore quo eius, perspiciatis nihil enim dolores saepe, sit, modi aut iusto! Placeat incidunt reiciendis magnam magni eius!</p>
 
     <div id="target">
-      <stencila-codechunk>
-        <pre slot="code"><code>Some code</code></pre>
+      <stencila-code-chunk>
+        <pre slot="text"><code>Some code</code></pre>
         <figure slot="outputs"></figure>
-      </stencila-codechunk>
+      </stencila-code-chunk>
     </div>
 
     <p>A code chunk with a single text output:</p>
 
     <div id="target">
-      <stencila-codechunk>
-        <pre slot="code"><code>print(lorem)</code></pre>
+      <stencila-code-chunk>
+        <pre slot="text"><code>print(lorem)</code></pre>
         <figure slot="outputs">
           <pre>
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus molestias libero
@@ -88,14 +88,14 @@ nostrum id sint sapiente consectetur blanditiis quam perferendis praesentium lab
 quas consequuntur nam modi qui quisquam vel, ab earum?
 </pre>
         </figure>
-      </stencila-codechunk>
+      </stencila-code-chunk>
     </div>
 
     <p>A code chunk with multiple text output. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio doloribus maxime distinctio tempora reiciendis praesentium delectus, harum nihil dolorum ipsum voluptate odio dicta voluptatibus et minus quaerat porro enim? Velit?</p>
 
     <div id="target">
-      <stencila-codechunk>
-        <pre slot="code"><code>print(lorem)</code></pre>
+      <stencila-code-chunk>
+        <pre slot="text"><code>print(lorem)</code></pre>
         <figure slot="outputs">
             <pre>Optimization terminated successfully.
         Current function value: 2038.118913
@@ -124,25 +124,25 @@ I(dist / 100.)    -0.6219      0.097     -6.383      0.000        -0.813    -0.4
 5       1     1.10  40.874001      1    14
 </pre>
         </figure>
-      </stencila-codechunk>
+      </stencila-code-chunk>
     </div>
 
     <p>A code chunk with an image output. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, porro? Culpa numquam quam voluptatum beatae quidem harum soluta nobis blanditiis, repellendus placeat voluptate est sed impedit porro. Hic, rerum nemo.</p>
 
     <div id="target">
-      <stencila-codechunk>
-        <pre slot="code"><code>plot</code></pre>
+      <stencila-code-chunk>
+        <pre slot="text"><code>plot</code></pre>
         <figure slot="outputs">
           <img src="test.html.media/c6dc710b61000c08aff3a4b884b4fb86.png" itemprop="image">
       </figure>
-      </stencila-codechunk>
+      </stencila-code-chunk>
     </div>
 
     <p>A code chunk with a table output:</p>
 
     <div id="target">
-      <stencila-codechunk>
-        <pre slot="code"><code>plot</code></pre>
+      <stencila-code-chunk>
+        <pre slot="text"><code>plot</code></pre>
         <figure slot="outputs">
           <table>
             <tbody>
@@ -167,7 +167,7 @@ I(dist / 100.)    -0.6219      0.097     -6.383      0.000        -0.813    -0.4
             </tbody>
           </table>
         </figure>
-      </stencila-codechunk>
+      </stencila-code-chunk>
     </div>
 
     <h1>

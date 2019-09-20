@@ -121,7 +121,7 @@ describe('Encode & Decode code-expression nodes', () => {
     programmingLanguage: 'python'
   })
   const codeExpressionHTML =
-    '<stencila-codeexpression programming-language="python"><code slot="code">x * 2</code><output slot="output">42</output></stencila-codeexpression>'
+    '<stencila-code-expression programming-language="python"><code slot="text">x * 2</code><output slot="output">42</output></stencila-code-expression>'
 
   test('encode', async () => {
     const actual = doc(await e(codeExpressionSchema))
