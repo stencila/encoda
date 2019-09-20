@@ -1,3 +1,15 @@
+# [0.78.0](https://github.com/stencila/encoda/compare/v0.77.1...v0.78.0) (2019-09-20)
+
+
+### Bug Fixes
+
+* **HTML:** Encode CodeExpressions as valid inline HTML elements ([b832171](https://github.com/stencila/encoda/commit/b832171))
+
+
+### Features
+
+* **HTML:** Wrap CodeOutput in <output> tags ([b9f9a8c](https://github.com/stencila/encoda/commit/b9f9a8c))
+
 ## [0.77.1](https://github.com/stencila/encoda/compare/v0.77.0...v0.77.1) (2019-09-17)
 
 
