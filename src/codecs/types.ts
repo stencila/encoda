@@ -1,6 +1,6 @@
 import * as stencila from '@stencila/schema'
 import { getTheme, ThemeNames } from '@stencila/thema'
-import { VFile } from '../util/vfile'
+import * as vfile from '../util/vfile'
 
 export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
   format?: string
@@ -61,10 +61,11 @@ export abstract class Codec<
    * Decode a `VFile` to a `stencila.Node`.
    *
    * @param file The `VFile` to decode
+   * @param options Decoding options
    * @returns A promise that resolves to a `stencila.Node`
    */
   public abstract readonly decode: (
-    file: VFile,
+    file: vfile.VFile,
     options?: DecodeOptions
   ) => Promise<stencila.Node>
 
@@ -74,11 +75,40 @@ export abstract class Codec<
    * Encode a `stencila.Node` to a `VFile`.
    *
    * @param node The `stencila.Node` to encode
-   * @param options An optional object allowing for passing extra options and parameters to various codecs.
+   * @param options Encoding options
    * @returns A promise that resolves to a `VFile`
    */
   public abstract readonly encode: (
     node: stencila.Node,
     options?: EncodeOptions & GlobalEncodeOptions
-  ) => Promise<VFile>
+  ) => Promise<vfile.VFile>
+
+  /**
+   * Decode a `stencila.Node` from a `string`.
+   *
+   * This is a convenience method which simply
+   * reads the content of the `VFile` and passes
+   * it to the `decode` method.
+   *
+   * @param content The `string` to decode
+   * @param options Decoding options
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public async load(content: string, options?: DecodeOptions): Promise<stencila.Node> {
+    return this.decode(vfile.load(content), options)
+  }
+
+  /**
+   * Encode a `stencila.Node` to a `string`.
+   *
+   * This is a convenience method which simply
+   * dumps the content of the `VFile` created by
+   * the `encode` method.
+   *
+   * @param node The `stencila.Node` to dump
+   * @returns A promise that resolves to a `string`
+   */
+  public async dump(node: stencila.Node, options?: EncodeOptions & GlobalEncodeOptions): Promise<string> {
+    return vfile.dump(await this.encode(node, options))
+  }
 }
