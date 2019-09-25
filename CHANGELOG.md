@@ -1,3 +1,12 @@
+## [0.78.1](https://github.com/stencila/encoda/compare/v0.78.0...v0.78.1) (2019-09-25)
+
+
+### Bug Fixes
+
+* **R Notebook:** Make rgexes more permissive; warn user if inline chunk not found ([0dfe722](https://github.com/stencila/encoda/commit/0dfe722))
+* **RPNG:** Add small padding; paste new CSS into TS ([01f0d1e](https://github.com/stencila/encoda/commit/01f0d1e))
+* **RPNG Style:** Update rPNG styling ([51f2f35](https://github.com/stencila/encoda/commit/51f2f35))
+
 # [0.78.0](https://github.com/stencila/encoda/compare/v0.77.1...v0.78.0) (2019-09-20)
 
 
