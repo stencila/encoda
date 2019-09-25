@@ -30,30 +30,33 @@ import { Codec, GlobalEncodeOptions } from '../types'
  * we just copy and paste this file in here.
  */
 const encodeCss = `
+:root {
+  /* --color-neutral: ; */
+  --color-neutral-100: #f7fafc;
+  --color-neutral-300: #e2e8f0;
+}
+
 #target {
   display: inline-block;
   font-family: monospace;
   font-size: 11pt;
   line-height: 150%;
   color: #333;
+  padding: 1px;
 }
 
 stencila-code-chunk,
 stencila-code-expression {
   display: inline-block;
-  border: 1px solid rgb(9, 58, 221);
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 0.25rem;
 }
 
-stencila-code-chunk {
-  min-width: 2em;
-  min-height: 2em;
-  border-radius: 3px;
-}
-
+stencila-code-chunk,
 stencila-code-expression {
   min-width: 1em;
   min-height: 1em;
-  border-radius: 500px;
 }
 
 stencila-code-chunk [slot='text'],
@@ -69,9 +72,30 @@ stencila-code-chunk [slot='outputs'] * {
   margin: 1em auto;
 }
 
+stencila-code-chunk::before,
+stencila-code-expression::before {
+  content: 'code';
+  color: transparent;
+  height: 2em;
+  position: relative;
+  left: 0.5em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(29, 100, 243)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-code'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+stencila-code-chunk::before {
+  top: 0.5em;
+  left: 1em;
+  padding-right: 0.5rem;
+}
+
 stencila-code-expression [slot='output'] {
   display: inline-block;
-  margin: 0.1em auto;
+  margin: 0.1em 0.5em 0.1em auto;
 }
 
 table {
@@ -81,7 +105,7 @@ table {
 
 table th {
   color: #555;
-  background: rgba(0,0,0,.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 table th,
