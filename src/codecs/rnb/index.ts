@@ -41,9 +41,9 @@ export class RnbCodec extends Codec implements Codec {
     // so that we can handle these below
     const html = rnb
       .replace(/<!-- rnb-chunk-begin -->/g, '<stencila-code-chunk>')
-      .replace(/<!-- rnb-source-begin [\w=]+ -->/g, '<rnb-source>')
+      .replace(/<!-- rnb-source-begin (.*?)-->/g, '<rnb-source>')
       .replace(/<!-- rnb-source-end -->/g, '</rnb-source>')
-      .replace(/<!-- rnb-(output|plot|frame)-begin [\w=]+ -->/g, '<rnb-output>')
+      .replace(/<!-- rnb-(output|plot|frame)-begin (.*?)-->/g, '<rnb-output>')
       .replace(/<!-- rnb-(output|plot|frame)-end -->/g, '</rnb-output>')
       .replace(/<!-- rnb-chunk-end -->/g, '</stencila-code-chunk>')
 
@@ -88,11 +88,14 @@ export class RnbCodec extends Codec implements Codec {
     }[] = []
     let cursorElem = 0
     let cursorIndex = 0
+    // For each inline code chunk in the Rmd source...
     const regex = /`r\s+([^`]*)`/g
     let sourceMatch
     while ((sourceMatch = regex.exec(rmd))) {
+      // ... get the source Rmd before and after it
       const begin = sourceMatch.index
       const end = regex.lastIndex
+      const chunk = sourceMatch[0]
       const source = sourceMatch[1]
       const before = rmd.substring(Math.max(0, begin - 7), begin).trimLeft()
       const after = rmd
@@ -102,6 +105,9 @@ export class RnbCodec extends Codec implements Codec {
         `${escapeRegex(before)}(.+?)${escapeRegex(after)}`,
         'g'
       )
+      // ... search through the containers (at or beyond the last
+      // container that we found a chunk in)
+      let found = false
       for (const container of containers.slice(cursorElem)) {
         const html = container.innerHTML
         const elemIndex = containers.indexOf(container)
@@ -114,20 +120,26 @@ export class RnbCodec extends Codec implements Codec {
           const begin = start + outputMatch.index + before.length
           const end = start + outputRegex.lastIndex - after.length
           container.innerHTML =
-            html.slice(0, begin) + sourceMatch[0] + html.slice(end)
+            html.slice(0, begin) + chunk + html.slice(end)
           // Record the location that needs eventual replacement
           // with a code chunk
           replacements.push({
             elemIndex,
             begin,
-            end: begin + sourceMatch[0].length,
+            end: begin + chunk.length,
             source,
             output
           })
+          found = true
+
           cursorElem = elemIndex
           cursorIndex = end
           break
         }
+      }
+      if (!found) {
+        log.warn(`Unable to find output of inline code chunk ${chunk}`)
+        log.debug(`Using regex: ${outputRegex.source}`)
       }
     }
 
