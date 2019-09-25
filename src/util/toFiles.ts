@@ -28,6 +28,7 @@ export async function toFiles(
   mediaPath = path.resolve(mediaPath)
 
   await fs.ensureDir(mediaPath)
+  let count = 0
   return transform(
     node,
     async (node: stencila.Node): Promise<stencila.Node> => {
@@ -44,7 +45,11 @@ export async function toFiles(
             if (!protocols.includes('data')) return node
           } else if (!protocols.includes('file')) return node
 
-          const filePath = path.join(mediaPath, path.basename(contentUrl))
+          const filePath = path.join(mediaPath,
+            contentUrl.startsWith('data')
+              ? `${count++}`
+              : path.basename(contentUrl)
+          )
           await toFile(contentUrl, filePath)
           const relPath = path.relative(path.dirname(docPath), filePath)
           return {
