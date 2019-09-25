@@ -1,3 +1,10 @@
+## [0.78.2](https://github.com/stencila/encoda/compare/v0.78.1...v0.78.2) (2019-09-25)
+
+
+### Bug Fixes
+
+* **toFiles:** Do not use dataUri for filename ([26ffdc9](https://github.com/stencila/encoda/commit/26ffdc9))
+
 ## [0.78.1](https://github.com/stencila/encoda/compare/v0.78.0...v0.78.1) (2019-09-25)
 
 
