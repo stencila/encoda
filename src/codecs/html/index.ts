@@ -1238,11 +1238,10 @@ function decodeCodeExpression(elem: HTMLElement): stencila.CodeExpression {
  * Encode a Stencila `CodeExpression` to a `<stencila-code-expression>` element.
  */
 function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
-  const { meta = {}, text, programmingLanguage, output = ''} = expr
+  const { meta = {}, text, programmingLanguage, output = '' } = expr
 
   const attrs = encodeDataAttrs(meta)
-  if (programmingLanguage)
-    attrs['programming-language'] = programmingLanguage
+  if (programmingLanguage) attrs['programming-language'] = programmingLanguage
 
   let outputElem
   if (isInlineContent(output)) outputElem = encodeNode(output)
@@ -1252,16 +1251,8 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   }
 
   return h('stencila-code-expression', { attrs }, [
-    h(
-      'code',
-      { class: programmingLanguage, attrs: { slot: 'text' } },
-      text
-    ),
-    h(
-      'output',
-      { attrs: { slot: 'output' } },
-      outputElem
-    )
+    h('code', { class: programmingLanguage, attrs: { slot: 'text' } }, text),
+    h('output', { attrs: { slot: 'output' } }, outputElem)
   ])
 }
 

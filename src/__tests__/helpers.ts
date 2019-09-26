@@ -45,7 +45,7 @@ export const fixtureToJson = (
 export const nodeToString = (
   encode: (node: stencila.Node) => Promise<vfile.VFile>
 ) => async (node: stencila.Node): Promise<string> =>
-    await vfile.dump(await encode(node))
+  await vfile.dump(await encode(node))
 
 /**
  * Get the full path to a file in the `__file_snapshots__` sibling directory

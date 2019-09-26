@@ -94,7 +94,10 @@ export abstract class Codec<
    * @param options Decoding options
    * @returns A promise that resolves to a `stencila.Node`
    */
-  public async load(content: string, options?: DecodeOptions): Promise<stencila.Node> {
+  public async load(
+    content: string,
+    options?: DecodeOptions
+  ): Promise<stencila.Node> {
     return this.decode(vfile.load(content), options)
   }
 
@@ -108,7 +111,10 @@ export abstract class Codec<
    * @param node The `stencila.Node` to dump
    * @returns A promise that resolves to a `string`
    */
-  public async dump(node: stencila.Node, options?: EncodeOptions & GlobalEncodeOptions): Promise<string> {
+  public async dump(
+    node: stencila.Node,
+    options?: EncodeOptions & GlobalEncodeOptions
+  ): Promise<string> {
     return vfile.dump(await this.encode(node, options))
   }
 }
