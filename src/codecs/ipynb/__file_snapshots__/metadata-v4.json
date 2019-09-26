@@ -1,47 +1,47 @@
 {
   "type": "Article",
-  "title": "Article title",
   "authors": [
     {
+      "type": "Person",
+      "familyNames": [
+        "Carberry"
+      ],
       "givenNames": [
         "Josiah"
       ],
-      "familyNames": [
-        "Carberry"
-      ],
       "honorificSuffix": "PhD",
-      "url": "http://library.brown.edu/about/hay/carberry.php",
-      "type": "Person"
+      "url": "http://library.brown.edu/about/hay/carberry.php"
     },
     {
-      "givenNames": [
-        "Jane"
-      ],
-      "familyNames": [
-        "Carberry"
-      ],
-      "honorificPrefix": "Dr",
+      "type": "Person",
       "emails": [
         "jane.carberry@example.org"
       ],
-      "type": "Person"
+      "familyNames": [
+        "Carberry"
+      ],
+      "givenNames": [
+        "Jane"
+      ],
+      "honorificPrefix": "Dr"
     },
     {
+      "type": "Person",
       "affiliations": [
         {
           "type": "Organization",
           "name": "Brown University"
         }
       ],
-      "type": "Person",
-      "givenNames": [
-        "Janet"
-      ],
       "familyNames": [
         "Carberry"
+      ],
+      "givenNames": [
+        "Janet"
       ]
     }
   ],
+  "title": "Article title",
   "meta": {
     "arbitrary_metadata": {
       "provider": "Deep Thought",

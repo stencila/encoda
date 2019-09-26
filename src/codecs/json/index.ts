@@ -3,6 +3,7 @@
  */
 
 import * as stencila from '@stencila/schema'
+import orderProperties from '../../util/orderProperties'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
@@ -18,6 +19,7 @@ export class JsonCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    return vfile.load(JSON.stringify(node, null, '  '))
+    const ordered = orderProperties(node)
+    return vfile.load(JSON.stringify(ordered, null, '  '))
   }
 }
