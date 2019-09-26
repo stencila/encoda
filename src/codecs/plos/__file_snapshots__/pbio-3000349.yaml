@@ -1,98 +1,97 @@
+type: Article
 authors:
-  - givenNames:
-      - Etienne
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: >-
+          Department of Physiology, Northwestern University Feinberg School of
+          Medicine, Chicago, Illinois, United States of America
     familyNames:
       - Vachon-Presseau
-    type: Person
+    givenNames:
+      - Etienne
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Physiology, Northwestern University Feinberg School of
           Medicine, Chicago, Illinois, United States of America
-        type: Organization
-  - givenNames:
-      - Sara
-      - E.
-    familyNames:
-      - Berger
-    type: Person
-    affiliations:
-      - name: >-
-          Department of Physiology, Northwestern University Feinberg School of
-          Medicine, Chicago, Illinois, United States of America
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Healthcare and Life Sciences Department, IBM Watson Research Center,
           Yorktown Heights, New York, United States of America
-        type: Organization
-  - givenNames:
-      - Taha
-      - B.
     familyNames:
-      - Abdullah
-    type: Person
+      - Berger
+    givenNames:
+      - Sara
+      - E.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Physiology, Northwestern University Feinberg School of
           Medicine, Chicago, Illinois, United States of America
-        type: Organization
-  - givenNames:
-      - James
-      - W.
     familyNames:
-      - Griffith
-    type: Person
+      - Abdullah
+    givenNames:
+      - Taha
+      - B.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Medical Social Sciences, Northwestern University
           Feinberg School of Medicine, Chicago, Illinois, United States of
           America
-        type: Organization
-  - givenNames:
-      - Thomas
-      - J.
     familyNames:
-      - Schnitzer
-    type: Person
+      - Griffith
+    givenNames:
+      - James
+      - W.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Departments of Internal Medicine and Rheumatology, Northwestern
           University Feinberg School of Medicine, Chicago, Illinois, United
           States of America
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Physical Medicine and Rehabilitation, Northwestern
           University Feinberg School of Medicine, Chicago, Illinois, United
           States of America
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Anesthesia, Northwestern University Feinberg School of
           Medicine, Chicago, Illinois, United States of America
-        type: Organization
-  - givenNames:
-      - A.
-      - Vania
     familyNames:
-      - Apkarian
-    type: Person
+      - Schnitzer
+    givenNames:
+      - Thomas
+      - J.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Physiology, Northwestern University Feinberg School of
           Medicine, Chicago, Illinois, United States of America
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Physical Medicine and Rehabilitation, Northwestern
           University Feinberg School of Medicine, Chicago, Illinois, United
           States of America
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Anesthesia, Northwestern University Feinberg School of
           Medicine, Chicago, Illinois, United States of America
-        type: Organization
-title: >-
-  Identification of traits and functional connectivity-based neurotraits of
-  chronic pain
+    familyNames:
+      - Apkarian
+    givenNames:
+      - A.
+      - Vania
 description:
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Psychological and personality factors, socioeconomic status, and brain
         properties all contribute to chronic pain but have essentially been
@@ -112,40 +111,1695 @@ description:
         providing metrics aimed at unifying the psychology and the
         neurophysiology of chronic pain applicable across diverse clinical
         conditions.
-    type: Paragraph
-type: Article
+references:
+  - type: Article
+    id: pbio.3000349.ref001
+    authors:
+      - type: Person
+        familyNames:
+          - Vachon-Presseau
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Centeno
+        givenNames:
+          - MV
+      - type: Person
+        familyNames:
+          - Ren
+        givenNames:
+          - W
+      - type: Person
+        familyNames:
+          - Berger
+        givenNames:
+          - SE
+      - type: Person
+        familyNames:
+          - Tétreault
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Ghantous
+        givenNames:
+          - M
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 612
+      pageStart: 605
+      title: J Dent Res
+      volumeNumber: 95
+    title: The Emotional Brain as a Predictor and Amplifier of Chronic Pain
+  - type: Article
+    id: pbio.3000349.ref002
+    authors:
+      - type: Person
+        familyNames:
+          - Baliki
+        givenNames:
+          - MN
+      - type: Person
+        familyNames:
+          - Apkarian
+        givenNames:
+          - AV
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 91
+      pageStart: 474
+      title: Neuron
+      volumeNumber: 87
+    title: 'Nociception, Pain, Negative Moods, and Behavior Selection'
+  - type: Article
+    id: pbio.3000349.ref003
+    authors:
+      - type: Person
+        familyNames:
+          - Turk
+        givenNames:
+          - DC
+      - type: Person
+        familyNames:
+          - Okifuji
+        givenNames:
+          - A
+    datePublished: '2002'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 90
+      pageStart: 678
+      title: J Consult Clin Psychol
+      volumeNumber: 70
+    title: 'Psychological factors in chronic pain: evolution and revolution'
+  - type: Article
+    id: pbio.3000349.ref004
+    authors:
+      - type: Person
+        familyNames:
+          - Poleshuck
+        givenNames:
+          - EL
+      - type: Person
+        familyNames:
+          - Green
+        givenNames:
+          - CR
+    datePublished: '2008'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 8
+      pageStart: 235
+      title: Pain
+      volumeNumber: 136
+    title: Socioeconomic disadvantage and pain
+  - type: Article
+    id: pbio.3000349.ref005
+    authors:
+      - type: Person
+        familyNames:
+          - Kamper
+        givenNames:
+          - SJ
+      - type: Person
+        familyNames:
+          - Apeldoorn
+        givenNames:
+          - AT
+      - type: Person
+        familyNames:
+          - Chiarotto
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Smeets
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - Ostelo
+        givenNames:
+          - RW
+      - type: Person
+        familyNames:
+          - Guzman
+        givenNames:
+          - J
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      title: Cochrane Database Syst Rev
+    title: Multidisciplinary biopsychosocial rehabilitation for chronic low back pain
+  - type: Article
+    id: pbio.3000349.ref006
+    authors:
+      - type: Person
+        familyNames:
+          - Muscatello
+        givenNames:
+          - MRA
+      - type: Person
+        familyNames:
+          - Bruno
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Mento
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Pandolfo
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Zoccali
+        givenNames:
+          - RA
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 6415
+      pageStart: 6402
+      title: World Journal of Gastroenterology
+      volumeNumber: 22
+    title: Personality traits and emotional patterns in irritable bowel syndrome
+  - type: Article
+    id: pbio.3000349.ref007
+    authors:
+      - type: Person
+        familyNames:
+          - Conversano
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Marchi
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Rebecca
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Carmassi
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Contena
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Bazzichi
+        givenNames:
+          - LM
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 232
+      pageStart: 223
+      title: Clin Pract Epidemiol Ment Health
+      volumeNumber: 14
+    title: >-
+      Personality Traits in Fibromyalgia (FM): Does FM Personality Exists? A
+      Systematic Review
+  - type: Article
+    id: pbio.3000349.ref008
+    authors:
+      - type: Person
+        familyNames:
+          - Johannsen
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Frederiksen
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Jensen
+        givenNames:
+          - AB
+      - type: Person
+        familyNames:
+          - Zachariae
+        givenNames:
+          - R
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: Journal of Pain Research
+    title: >-
+      Psychosocial predictors of posttreatment pain after nonmetastatic breast
+      cancer treatment: a systematic review and meta-analysis of prospective
+      studies
+  - type: Article
+    id: pbio.3000349.ref009
+    authors:
+      - type: Person
+        familyNames:
+          - Meints
+        givenNames:
+          - SM
+      - type: Person
+        familyNames:
+          - Edwards
+        givenNames:
+          - RR
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 182
+      pageStart: 168
+      title: Progress in Neuro-Psychopharmacology and Biological Psychiatry
+      volumeNumber: 87
+    title: Evaluating psychosocial contributions to chronic pain outcomes
+  - type: Article
+    id: pbio.3000349.ref010
+    authors:
+      - type: Person
+        familyNames:
+          - Naylor
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Boag
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Gustin
+        givenNames:
+          - SM
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 67
+      pageStart: 58
+      title: Scand J Pain
+      volumeNumber: 17
+    title: >-
+      New evidence for a pain personality? A critical review of the last 120
+      years of pain and personality
+  - type: Article
+    id: pbio.3000349.ref011
+    authors:
+      - type: Person
+        familyNames:
+          - Sullivan
+        givenNames:
+          - MJ
+      - type: Person
+        familyNames:
+          - Thorn
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Haythornthwaite
+        givenNames:
+          - JA
+      - type: Person
+        familyNames:
+          - Keefe
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Martin
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Bradley
+        givenNames:
+          - LA
+    datePublished: '2001'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 64
+      pageStart: 52
+      title: Clin J Pain
+      volumeNumber: 17
+    title: Theoretical perspectives on the relation between catastrophizing and pain
+  - type: Article
+    id: pbio.3000349.ref012
+    authors:
+      - type: Person
+        familyNames:
+          - Vlaeyen
+        givenNames:
+          - JW
+      - type: Person
+        familyNames:
+          - Linton
+        givenNames:
+          - SJ
+    datePublished: '2000'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 332
+      pageStart: 317
+      title: Pain
+      volumeNumber: 85
+    title: >-
+      Fear-avoidance and its consequences in chronic musculoskeletal pain: a
+      state of the art
+  - type: Article
+    id: pbio.3000349.ref013
+    authors:
+      - type: Person
+        familyNames:
+          - McCracken
+        givenNames:
+          - LM
+    datePublished: '1998'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 27
+      pageStart: 21
+      title: Pain
+      volumeNumber: 74
+    title: >-
+      Learning to live with the pain: acceptance of pain predicts adjustment in
+      persons with chronic pain
+  - type: Article
+    id: pbio.3000349.ref014
+    authors:
+      - type: Person
+        familyNames:
+          - Goldberg
+        givenNames:
+          - LR
+    datePublished: '1992'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 42
+      pageStart: 26
+      title: Psychological Assessment
+      volumeNumber: 4
+    title: The development of markers for the Big-Five factor structure
+  - type: Article
+    id: pbio.3000349.ref015
+    authors:
+      - type: Person
+        familyNames:
+          - Goubert
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Crombez
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Van
+          - Damme
+        givenNames:
+          - S
+    datePublished: '2004'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 41
+      pageStart: 234
+      title: Pain
+      volumeNumber: 107
+    title: >-
+      The role of neuroticism, pain catastrophizing and pain-related fear in
+      vigilance to pain: a structural equations approach
+  - type: Article
+    id: pbio.3000349.ref016
+    authors:
+      - type: Person
+        familyNames:
+          - Griffith
+        givenNames:
+          - JW
+      - type: Person
+        familyNames:
+          - Zinbarg
+        givenNames:
+          - RE
+      - type: Person
+        familyNames:
+          - Craske
+        givenNames:
+          - MG
+      - type: Person
+        familyNames:
+          - Mineka
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Rose
+        givenNames:
+          - RD
+      - type: Person
+        familyNames:
+          - Waters
+        givenNames:
+          - AM
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 36
+      pageStart: 1125
+      title: Psychol Med
+      volumeNumber: 40
+    title: Neuroticism as a common dimension in the internalizing disorders
+  - type: Article
+    id: pbio.3000349.ref017
+    authors:
+      - type: Person
+        familyNames:
+          - Kotov
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Gamez
+        givenNames:
+          - W
+      - type: Person
+        familyNames:
+          - Schmidt
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Watson
+        givenNames:
+          - D
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 821
+      pageStart: 768
+      title: Psychol Bull
+      volumeNumber: 136
+    title: >-
+      Linking “big” personality traits to anxiety, depressive, and substance use
+      disorders: a meta-analysis
+  - type: Article
+    id: pbio.3000349.ref018
+    authors:
+      - type: Person
+        familyNames:
+          - Goodin
+        givenNames:
+          - BR
+      - type: Person
+        familyNames:
+          - Bulls
+        givenNames:
+          - HW
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 329
+      title: Curr Pain Headache Rep
+      volumeNumber: 17
+    title: >-
+      Optimism and the experience of pain: benefits of seeing the glass as half
+      full
+  - type: Article
+    id: pbio.3000349.ref019
+    authors:
+      - type: Person
+        familyNames:
+          - Kabat-Zinn
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Lipworth
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Burney
+        givenNames:
+          - R
+    datePublished: '1985'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 90
+      pageStart: 163
+      title: J Behav Med
+      volumeNumber: 8
+    title: >-
+      The clinical use of mindfulness meditation for the self-regulation of
+      chronic pain
+  - type: Article
+    id: pbio.3000349.ref020
+    authors:
+      - type: Person
+        familyNames:
+          - McCracken
+        givenNames:
+          - LM
+      - type: Person
+        familyNames:
+          - Gauntlett-Gilbert
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Vowles
+        givenNames:
+          - KE
+    datePublished: '2007'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 9
+      pageStart: 63
+      title: Pain
+      volumeNumber: 131
+    title: >-
+      The role of mindfulness in a contextual cognitive-behavioral analysis of
+      chronic pain-related suffering and disability
+  - type: Article
+    id: pbio.3000349.ref021
+    authors:
+      - type: Person
+        familyNames:
+          - Mehling
+        givenNames:
+          - WE
+      - type: Person
+        familyNames:
+          - Wrubel
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Daubenmier
+        givenNames:
+          - JJ
+      - type: Person
+        familyNames:
+          - Price
+        givenNames:
+          - CJ
+      - type: Person
+        familyNames:
+          - Kerr
+        givenNames:
+          - CE
+      - type: Person
+        familyNames:
+          - Silow
+        givenNames:
+          - T
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 6
+      title: Philos Ethics Humanit Med
+      volumeNumber: 6
+    title: >-
+      Body Awareness: a phenomenological inquiry into the common ground of
+      mind-body therapies
+  - type: Article
+    id: pbio.3000349.ref022
+    authors:
+      - type: Person
+        familyNames:
+          - Crombez
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Vlaeyen
+        givenNames:
+          - JW
+      - type: Person
+        familyNames:
+          - Heuts
+        givenNames:
+          - PH
+      - type: Person
+        familyNames:
+          - Lysens
+        givenNames:
+          - R
+    datePublished: '1999'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 339
+      pageStart: 329
+      title: Pain
+      volumeNumber: 80
+    title: >-
+      Pain-related fear is more disabling than pain itself: evidence on the role
+      of pain-related fear in chronic back pain disability
+  - type: Article
+    id: pbio.3000349.ref023
+    authors:
+      - type: Person
+        familyNames:
+          - Kucyi
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Moayedi
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Weissman-Fogel
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Goldberg
+        givenNames:
+          - MB
+      - type: Person
+        familyNames:
+          - Freeman
+        givenNames:
+          - BV
+      - type: Person
+        familyNames:
+          - Tenenbaum
+        givenNames:
+          - HC
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 75
+      pageStart: 3969
+      title: J Neurosci
+      volumeNumber: 34
+    title: >-
+      Enhanced medial prefrontal-default mode network functional connectivity in
+      chronic pain and its association with pain rumination
+  - type: Article
+    id: pbio.3000349.ref024
+    authors:
+      - type: Person
+        familyNames:
+          - Hubbard
+        givenNames:
+          - CS
+      - type: Person
+        familyNames:
+          - Khan
+        givenNames:
+          - SA
+      - type: Person
+        familyNames:
+          - Keaser
+        givenNames:
+          - ML
+      - type: Person
+        familyNames:
+          - Mathur
+        givenNames:
+          - VA
+      - type: Person
+        familyNames:
+          - Goyal
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Seminowicz
+        givenNames:
+          - DA
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      title: eNeuro
+      volumeNumber: 1
+    title: >-
+      Altered Brain Structure and Function Correlate with Disease Severity and
+      Pain Catastrophizing in Migraine Patients
+  - type: Article
+    id: pbio.3000349.ref025
+    authors:
+      - type: Person
+        familyNames:
+          - Loggia
+        givenNames:
+          - ML
+      - type: Person
+        familyNames:
+          - Berna
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Kim
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Cahalan
+        givenNames:
+          - CM
+      - type: Person
+        familyNames:
+          - Martel
+        givenNames:
+          - MO
+      - type: Person
+        familyNames:
+          - Gollub
+        givenNames:
+          - RL
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 9
+      pageStart: 692
+      title: J Pain
+      volumeNumber: 16
+    title: >-
+      The lateral prefrontal cortex mediates the hyperalgesic effects of
+      negative cognitions in chronic pain patients
+  - type: Article
+    id: pbio.3000349.ref026
+    authors:
+      - type: Person
+        familyNames:
+          - Macfarlane
+        givenNames:
+          - GJ
+      - type: Person
+        familyNames:
+          - Norrie
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Atherton
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Power
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Jones
+        givenNames:
+          - GT
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 5
+      pageStart: 1591
+      title: Ann Rheum Dis
+      volumeNumber: 68
+    title: >-
+      The influence of socioeconomic status on the reporting of regional and
+      widespread musculoskeletal pain: results from the 1958 British Birth
+      Cohort Study
+  - type: Article
+    id: pbio.3000349.ref027
+    authors:
+      - type: Person
+        familyNames:
+          - Dorner
+        givenNames:
+          - TE
+      - type: Person
+        familyNames:
+          - Muckenhuber
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Stronegger
+        givenNames:
+          - WJ
+      - type: Person
+        familyNames:
+          - Rasky
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Gustorff
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Freidl
+        givenNames:
+          - W
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 9
+      pageStart: 103
+      title: Eur J Pain
+      volumeNumber: 15
+    title: >-
+      The impact of socio-economic status on pain and the perception of
+      disability due to pain
+  - type: Article
+    id: pbio.3000349.ref028
+    authors:
+      - type: Person
+        familyNames:
+          - Katz
+        givenNames:
+          - JN
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: J Bone Joint Surg Am
+        volumeNumber: 88
+      pageEnd: 4
+      pageStart: 21
+    title: >-
+      Lumbar disc disorders and low-back pain: socioeconomic factors and
+      consequences
+  - type: Article
+    id: pbio.3000349.ref029
+    authors:
+      - type: Person
+        familyNames:
+          - Vachon-Presseau
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Berger
+        givenNames:
+          - SE
+      - type: Person
+        familyNames:
+          - Abdullah
+        givenNames:
+          - TB
+      - type: Person
+        familyNames:
+          - Huang
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Cecchi
+        givenNames:
+          - GA
+      - type: Person
+        familyNames:
+          - Griffith
+        givenNames:
+          - JW
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 3397
+      title: Nature Communications
+      volumeNumber: 9
+    title: >-
+      Brain and psychological determinants of placebo pill response in chronic
+      pain patients
+  - type: Article
+    id: pbio.3000349.ref030
+    authors:
+      - type: Person
+        familyNames:
+          - Craddock
+        givenNames:
+          - RC
+      - type: Person
+        familyNames:
+          - Tungaraza
+        givenNames:
+          - RL
+      - type: Person
+        familyNames:
+          - Milham
+        givenNames:
+          - MP
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      title: Gigascience
+      volumeNumber: 4
+    title: >-
+      Connectomics and new approaches for analyzing human brain functional
+      connectivity
+  - type: Article
+    id: pbio.3000349.ref031
+    authors:
+      - type: Person
+        familyNames:
+          - Fox
+        givenNames:
+          - MD
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 2245
+      pageStart: 2237
+      title: New England Journal of Medicine
+      volumeNumber: 379
+    title: Mapping Symptoms to Brain Networks with the Human Connectome
+  - type: Article
+    id: pbio.3000349.ref032
+    authors:
+      - type: Person
+        familyNames:
+          - Shen
+        givenNames:
+          - X
+      - type: Person
+        familyNames:
+          - Finn
+        givenNames:
+          - ES
+      - type: Person
+        familyNames:
+          - Scheinost
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Rosenberg
+        givenNames:
+          - MD
+      - type: Person
+        familyNames:
+          - Chun
+        givenNames:
+          - MM
+      - type: Person
+        familyNames:
+          - Papademetris
+        givenNames:
+          - X
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 518
+      pageStart: 506
+      title: Nat Protoc
+      volumeNumber: 12
+    title: >-
+      Using connectome-based predictive modeling to predict individual behavior
+      from brain connectivity
+  - type: Article
+    id: pbio.3000349.ref033
+    authors:
+      - type: Person
+        familyNames:
+          - Power
+        givenNames:
+          - JD
+      - type: Person
+        familyNames:
+          - Cohen
+        givenNames:
+          - AL
+      - type: Person
+        familyNames:
+          - Nelson
+        givenNames:
+          - SM
+      - type: Person
+        familyNames:
+          - Wig
+        givenNames:
+          - GS
+      - type: Person
+        familyNames:
+          - Barnes
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Church
+        givenNames:
+          - JA
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 78
+      pageStart: 665
+      title: Neuron
+      volumeNumber: 72
+    title: Functional network organization of the human brain
+  - type: Article
+    id: pbio.3000349.ref034
+    authors:
+      - type: Person
+        familyNames:
+          - Schaefer
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Kong
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Gordon
+        givenNames:
+          - EM
+      - type: Person
+        familyNames:
+          - Laumann
+        givenNames:
+          - TO
+      - type: Person
+        familyNames:
+          - Zuo
+        givenNames:
+          - X-N
+      - type: Person
+        familyNames:
+          - Holmes
+        givenNames:
+          - AJ
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 3114
+      pageStart: 3095
+      title: Cerebral Cortex
+      volumeNumber: 28
+    title: >-
+      Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic
+      Functional Connectivity MRI
+  - type: Article
+    id: pbio.3000349.ref035
+    authors:
+      - type: Person
+        familyNames:
+          - Xing
+        givenNames:
+          - X-X
+      - type: Person
+        familyNames:
+          - Zuo
+        givenNames:
+          - X-N
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 1607
+      pageStart: 1606
+      title: Science Bulletin
+      volumeNumber: 63
+    title: 'The anatomy of reliability: a must read for future human brain mapping'
+  - type: Article
+    id: pbio.3000349.ref036
+    authors:
+      - type: Person
+        familyNames:
+          - Gatchel
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - McGeary
+        givenNames:
+          - DD
+      - type: Person
+        familyNames:
+          - McGeary
+        givenNames:
+          - CA
+      - type: Person
+        familyNames:
+          - Lippe
+        givenNames:
+          - B
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 130
+      pageStart: 119
+      title: Am Psychol
+      volumeNumber: 69
+    title: 'Interdisciplinary chronic pain management: past, present, and future'
+  - type: Article
+    id: pbio.3000349.ref037
+    authors:
+      - type: Person
+        familyNames:
+          - Haythornthwaite
+        givenNames:
+          - JA
+      - type: Person
+        familyNames:
+          - Benrud-Larson
+        givenNames:
+          - LM
+    datePublished: '2000'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 5
+      title: Clin J Pain
+      volumeNumber: 16
+    title: Psychological aspects of neuropathic pain
+  - type: Article
+    id: pbio.3000349.ref038
+    authors:
+      - type: Person
+        familyNames:
+          - Jensen
+        givenNames:
+          - MP
+      - type: Person
+        familyNames:
+          - Turk
+        givenNames:
+          - DC
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 118
+      pageStart: 105
+      title: Am Psychol
+      volumeNumber: 69
+    title: >-
+      Contributions of psychology to the understanding and treatment of people
+      with chronic pain: why it matters to ALL psychologists
+  - type: Article
+    id: pbio.3000349.ref039
+    authors:
+      - type: Person
+        familyNames:
+          - Edwards
+        givenNames:
+          - RR
+      - type: Person
+        familyNames:
+          - Dworkin
+        givenNames:
+          - RH
+      - type: Person
+        familyNames:
+          - Sullivan
+        givenNames:
+          - MD
+      - type: Person
+        familyNames:
+          - Turk
+        givenNames:
+          - DC
+      - type: Person
+        familyNames:
+          - Wasan
+        givenNames:
+          - AD
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 92
+      title: J Pain
+      volumeNumber: 17
+    title: >-
+      The Role of Psychosocial Processes in the Development and Maintenance of
+      Chronic Pain
+  - type: Article
+    id: pbio.3000349.ref040
+    authors:
+      - type: Person
+        familyNames:
+          - Allport
+        givenNames:
+          - GW
+    datePublished: '1961'
+    title: ''
+  - type: Article
+    id: pbio.3000349.ref041
+    authors:
+      - type: Person
+        familyNames:
+          - Ozer
+        givenNames:
+          - DJ
+      - type: Person
+        familyNames:
+          - Benet-Martínez
+        givenNames:
+          - V
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 421
+      pageStart: 401
+      title: Annual Review of Psychology
+      volumeNumber: 57
+    title: Personality and the Prediction of Consequential Outcomes
+  - type: Article
+    id: pbio.3000349.ref042
+    authors:
+      - type: Person
+        familyNames:
+          - Kragel
+        givenNames:
+          - PA
+      - type: Person
+        familyNames:
+          - Koban
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Barrett
+        givenNames:
+          - LF
+      - type: Person
+        familyNames:
+          - Wager
+        givenNames:
+          - TD
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 273
+      pageStart: 257
+      title: Neuron
+      volumeNumber: 99
+    title: >-
+      Representation, Pattern Information, and Brain Signatures: From Neurons to
+      Neuroimaging
+  - type: Article
+    id: pbio.3000349.ref043
+    authors:
+      - type: Person
+        familyNames:
+          - Mansour
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Baria
+        givenNames:
+          - AT
+      - type: Person
+        familyNames:
+          - Tetreault
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Vachon-Presseau
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Chang
+        givenNames:
+          - P-C
+      - type: Person
+        familyNames:
+          - Huang
+        givenNames:
+          - L
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 34853
+      title: Sci Rep
+      volumeNumber: 6
+    title: 'Global disruption of degree rank order: a hallmark of chronic pain'
+  - type: Article
+    id: pbio.3000349.ref044
+    authors:
+      - type: Person
+        familyNames:
+          - Loggia
+        givenNames:
+          - ML
+      - type: Person
+        familyNames:
+          - Kim
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Gollub
+        givenNames:
+          - RL
+      - type: Person
+        familyNames:
+          - Vangel
+        givenNames:
+          - MG
+      - type: Person
+        familyNames:
+          - Kirsch
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Kong
+        givenNames:
+          - J
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 33
+      pageStart: 24
+      title: Pain
+      volumeNumber: 154
+    title: >-
+      Default mode network connectivity encodes clinical pain: an arterial spin
+      labeling study
+  - type: Article
+    id: pbio.3000349.ref045
+    authors:
+      - type: Person
+        familyNames:
+          - Baliki
+        givenNames:
+          - MN
+      - type: Person
+        familyNames:
+          - Mansour
+        givenNames:
+          - AR
+      - type: Person
+        familyNames:
+          - Baria
+        givenNames:
+          - AT
+      - type: Person
+        familyNames:
+          - Apkarian
+        givenNames:
+          - AV
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      title: PLoS ONE
+      volumeNumber: 9
+    title: >-
+      Functional reorganization of the default mode network across chronic pain
+      conditions
+  - type: Article
+    id: pbio.3000349.ref046
+    authors:
+      - type: Person
+        familyNames:
+          - Napadow
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - LaCount
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Park
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - As-Sanie
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Clauw
+        givenNames:
+          - DJ
+      - type: Person
+        familyNames:
+          - Harris
+        givenNames:
+          - RE
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 55
+      pageStart: 2545
+      title: Arthritis Rheum
+      volumeNumber: 62
+    title: >-
+      Intrinsic brain connectivity in fibromyalgia is associated with chronic
+      pain intensity
+  - type: Article
+    id: pbio.3000349.ref047
+    authors:
+      - type: Person
+        familyNames:
+          - Baliki
+        givenNames:
+          - MN
+      - type: Person
+        familyNames:
+          - Petre
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Torbey
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Herrmann
+        givenNames:
+          - KM
+      - type: Person
+        familyNames:
+          - Huang
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Schnitzer
+        givenNames:
+          - TJ
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 1119
+      pageStart: 1117
+      title: Nature Neuroscience
+      volumeNumber: 15
+    title: >-
+      Corticostriatal functional connectivity predicts transition to chronic
+      back pain
+  - type: Article
+    id: pbio.3000349.ref048
+    authors:
+      - type: Person
+        familyNames:
+          - Navratilova
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Porreca
+        givenNames:
+          - F
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 12
+      pageStart: 1304
+      title: Nat Neurosci
+      volumeNumber: 17
+    title: Reward and motivation in pain and pain relief
+  - type: Article
+    id: pbio.3000349.ref049
+    authors:
+      - type: Person
+        familyNames:
+          - Ren
+        givenNames:
+          - W
+      - type: Person
+        familyNames:
+          - Centeno
+        givenNames:
+          - MV
+      - type: Person
+        familyNames:
+          - Berger
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Wu
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Na
+        givenNames:
+          - X
+      - type: Person
+        familyNames:
+          - Liu
+        givenNames:
+          - X
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 2
+      pageStart: 220
+      title: Nat Neurosci
+      volumeNumber: 19
+    title: >-
+      The indirect pathway of the nucleus accumbens shell amplifies neuropathic
+      pain
+  - type: Article
+    id: pbio.3000349.ref050
+    authors:
+      - type: Person
+        familyNames:
+          - Schwartz
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Temkin
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Jurado
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Lim
+        givenNames:
+          - BK
+      - type: Person
+        familyNames:
+          - Heifets
+        givenNames:
+          - BD
+      - type: Person
+        familyNames:
+          - Polepalli
+        givenNames:
+          - JS
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 42
+      pageStart: 535
+      title: Science
+      volumeNumber: 345
+    title: >-
+      Chronic pain. Decreased motivation during chronic pain requires long-term
+      depression in the nucleus accumbens
+  - type: Article
+    id: pbio.3000349.ref051
+    authors:
+      - type: Person
+        familyNames:
+          - Woo
+        givenNames:
+          - CW
+      - type: Person
+        familyNames:
+          - Roy
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Buhle
+        givenNames:
+          - JT
+      - type: Person
+        familyNames:
+          - Wager
+        givenNames:
+          - TD
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      title: PLoS Biol
+      volumeNumber: 13
+    title: >-
+      Distinct brain systems mediate the effects of nociceptive input and
+      self-regulation on pain
+  - type: Article
+    id: pbio.3000349.ref052
+    authors:
+      - type: Person
+        familyNames:
+          - Rios
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Zautra
+        givenNames:
+          - AJ
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 66
+      pageStart: 58
+      title: Health Psychol
+      volumeNumber: 30
+    title: >-
+      Socioeconomic disparities in pain: the role of economic hardship and daily
+      financial worry
+title: >-
+  Identification of traits and functional connectivity-based neurotraits of
+  chronic pain
 content:
-  - content:
-      - Introduction
-    depth: 1
+  - type: Heading
     id: sec001
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
       - >-
         Unraveling mechanisms of chronic pain remains a major scientific
         challenge. There is now strong and convincing evidence that specific
         brain properties contribute to the risk of developing chronic pain and
         that the transition to chronic pain involves brain adaptations that, to
         a large part, construct and mold the state of chronic pain [
-      - target: '#pbio.3000349.ref001'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref001'
       - ','
-      - target: '#pbio.3000349.ref002'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref002'
       - >-
         ]. Additionally, current theories suggest that pain characteristics,
         pain-related disability, and responses to treatment are all partially
         determined by psychological factors and/or personality properties [
-      - target: '#pbio.3000349.ref003'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref003'
       - '], as well as parameters related to socioeconomic status (SES) ['
-      - target: '#pbio.3000349.ref004'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref004'
       - >-
         ]. Although the biopsychosocial (BPS) perspective is actively applied in
         the everyday clinical management of chronic pain [
-      - target: '#pbio.3000349.ref005'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref005'
       - >-
         ], component properties that comprise the concept—namely biological
         processes (brain and body), psychological factors, and the impact of
@@ -157,74 +1811,74 @@ content:
         integration between psychosocial components and underlying biology. Even
         though subgroupings of chronic pain types by psychological dimensions
         have been repeatedly formulated [
-      - target: '#pbio.3000349.ref006'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref006'
       - –
-      - target: '#pbio.3000349.ref010'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref010'
       - >-
         ], a systematic approach of linking such concepts with brain biology
         has, to our knowledge, not been undertaken. Here, we unravel and
         interrelate components of BPS by combining psychological, personality,
         and SES factors with measures of resting state functional connectivity
         to begin to define a unified perspective of chronic pain.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         There is a large body of literature demonstrating that psychological and
         personality factors are important contributors to chronic pain (e.g.,
         the psychological components of BPS). Pain catastrophizing [
-      - target: '#pbio.3000349.ref011'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref011'
       - '] and fear of pain ['
-      - target: '#pbio.3000349.ref012'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref012'
       - >-
         ] represent strong predictors of chronic pain, whereas pain acceptance
         is associated with resilience [
-      - target: '#pbio.3000349.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref013'
       - >-
         ]. Moreover, neuroticism—one factor in the five-factor model of
         personality [
-      - target: '#pbio.3000349.ref014'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref014'
       - >-
         ]—has been shown to moderate the association between catastrophic
         thinking and pain vigilance [
-      - target: '#pbio.3000349.ref015'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref015'
       - >-
         ] and has been associated with substance abuse, anxiety, and major
         depressive disorder [
-      - target: '#pbio.3000349.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref016'
       - ','
-      - target: '#pbio.3000349.ref017'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref017'
       - >-
         ]. In contrast, optimism is usually associated with lower catastrophic
         thinking, higher pain acceptance, and better coping strategies [
-      - target: '#pbio.3000349.ref018'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref018'
       - >-
         ]. Other psychological factors such as mindfulness or body awareness
         have also been linked with improvements in pain, mood disturbance, and
         disability [
-      - target: '#pbio.3000349.ref019'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref019'
       - ','
-      - target: '#pbio.3000349.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref020'
       - '], as well as with better coping strategies for managing chronic pain ['
-      - target: '#pbio.3000349.ref021'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref021'
       - >-
         ]. It is thus unsurprising that psychological factors are usually
         considered better predictors of chronic pain disability than the actual
         injury itself [
-      - target: '#pbio.3000349.ref022'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref022'
       - >-
         ]. Despite their pivotal role in chronic pain, a comprehensive
         multidimensional characterization of psychological and personality
@@ -233,8 +1887,8 @@ content:
         to impact persisting pain interacted with general personality factors to
         give rise to factors that define chronic pain traits, in a chronic back
         pain (CBP) cohort.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The neurobiological underpinnings of chronic pain psychology/personality
         also remain relatively unknown, as few studies have examined the
@@ -243,21 +1897,21 @@ content:
         rumination has been associated with stronger functional connectivity
         between the medial prefrontal cortex and regions within the default mode
         network (DMN) in temporomandibular disorder [
-      - target: '#pbio.3000349.ref023'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref023'
       - >-
         ]. In migraines, seed-based analyses show that pain catastrophizing is
         associated with functional coupling between several brain regions
         (posterior cingulate cortex with the dorsolateral prefrontal cortex and
         the insula with the hippocampus) [
-      - target: '#pbio.3000349.ref024'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref024'
       - >-
         ]. In fibromyalgia, pain catastrophizing has been associated with
         increased dorsolateral prefrontal cortex activity in anticipation of
         pain [
-      - target: '#pbio.3000349.ref025'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref025'
       - >-
         ]. However, these studies tested limited psychological parameters in
         association with brain properties from only a few predefined regions of
@@ -268,37 +1922,37 @@ content:
         pain with its neurobiological framework, which we define as neurotraits.
         Thus, our primary hypothesis was that chronic pain traits can be
         determined from distributed neural representations.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Our third aim was to determine the influence of social components on
         traits and neurotraits by examining the association of SES with these
         dimensions. Many studies show that lower SES is associated with higher
         prevalence of musculoskeletal pain, neuropathic pain, ulcers, and
         sciatica across Europe and North America [
-      - target: '#pbio.3000349.ref004'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref004'
       - >-
         ]. Consistently, the British Birth Cohort study revealed that lower SES
         during adulthood is associated with shoulder, forearm, low back, knee,
         and chronic widespread pain [
-      - target: '#pbio.3000349.ref026'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref026'
       - >-
         ]. Consistent with the BPS model, SES and occupational hazards are
         important risk factors for the onset of back pain and pain disability,
         independent of injury occurrence or type [
-      - target: '#pbio.3000349.ref027'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref027'
       - ','
-      - target: '#pbio.3000349.ref028'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref028'
       - >-
         ]. We therefore hypothesized that SES measured with self-reported
         income, years of education, sex/gender, and race/ethnicity will be
         linked to the traits and underlying neurobiology.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Our results indicate four dimensions comprising chronic pain traits,
         only two of which were associated with back pain characteristics of CBP.
@@ -308,27 +1962,27 @@ content:
         reliable in repeat brain scans. Confirming our starting hypothesis, SES
         was associated with chronic pain traits and their related functional
         networks.
-    type: Paragraph
-  - content:
-      - Results
-    depth: 1
+  - type: Heading
     id: sec002
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Results
+  - type: Paragraph
+    content:
       - >-
         This study is based on data collected in the setting of a Randomized
         Control Trial (RCT) designed to study placebo pill response in chronic
         pain patients [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. Patients with CBP enrolled in the RCT visited the lab on six
         occasions with four visits including brain-imaging sessions (
-      - content:
-          - Fig 1A
-        target: '#pbio.3000349.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g001'
+        content:
+          - Fig 1A
       - >-
         ). A total of 108 CBP patients were included. Group 1 included 62 CBP
         that completed all six visits of the RCT and were used to determine the
@@ -338,47 +1992,40 @@ content:
         various reasons, including claustrophobia, meeting an exclusion
         criterion at a later point in the trial, or dropping out of the study.
         The demographics for these patients can be found in 
-      - content:
-          - S1 Table
+      - type: Link
+        relation: supplementary-material
         target: '#pbio.3000349.s005'
-        relation: supplementary-material
-        type: Link
+        content:
+          - S1 Table
       - '. For each figure, numerical data are available in '
-      - content:
-          - S1 Data
-        target: '#pbio.3000349.s009'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s009'
+        content:
+          - S1 Data
       - ', and a description of the analyses and '
       - type: Emphasis
         content:
           - P
       - ' values are reported in '
-      - content:
-          - S4 Table
-        target: '#pbio.3000349.s008'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s008'
+        content:
+          - S4 Table
       - .
-    type: Paragraph
-  - id: pbio.3000349.g001
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 1
+  - type: Figure
+    id: pbio.3000349.g001
     caption:
-      - content:
+      - type: Heading
+        id: sec002
+        depth: 1
+        content:
           - >-
             Psychological and personality factors identify four chronic pain
             traits.
-        depth: 1
-        id: sec002
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             A. The study design consisted of six visits to the lab, with four of
             these including brain imaging sessions. Questionnaires were
@@ -394,21 +2041,21 @@ content:
             content:
               - r
           - ' values shown in bar from blue to red). C. A network constructed from the Group 1 covariance matrix displays the strongest correlations (top 10%) and topological properties indicated the presence of four communities. Size of the nodes are scaled based on degree count. D. PCA performed on all 36 questionnaire outcomes (Group 1) identified four orthogonal components. Given the observed loadings and network clustering, we label these components as: Pain-trait; Character-trait; Aware-trait; and Emote-trait. Only components loading >0.4 or <−0.4 are depicted. Abbreviations of the psychological factors: PASS and its four subscales: Avoidance (pass/a), Cognitive (pass/c), Fear (pass/f), and Physiological (pass/p); PCS and its three subscales: Rumination (pcs/r), Magnification (pcs/m), and Helplessness (pcs/h); CPAQ and its two subscores: Activity Engagement (cpaq/a) and Pain Willingness (cpaq/pw); MAIA: Not Distracting (maia/nd), Attention Regulation (maia/a), Emotional Awareness (maia/e), and Self-Regulation (maia/sr), Noticing (maia/n), Not Worrying (maia/nw), Body Listening (maia/bl), and Trusting (maia/t); PSQ and its two subscales: Painful (psq/p) and Non-Painful (psq/np); PANAS with Positive (panas/p) subscale; FFM with its five subscales: Observe (ffm/o), Describe (ffm/d), Act with Awareness (ffm/a), Non-Judge (ffm/nj), and Non-React (ffm/nr); ERQ with its Reappraisal (erq/r) and Suppression (erq/s) subscales; ACS; EACS; LOT-R; and LAQ. For each figure, the numerical data are available '
-          - content:
-              - S1 Data
-            target: '#pbio.3000349.s009'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s009'
+            content:
+              - S1 Data
           - ', and a description of the analyses and '
           - type: Emphasis
             content:
               - P
           - ' values are reported in '
-          - content:
-              - S4 Table
-            target: '#pbio.3000349.s008'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s008'
+            content:
+              - S4 Table
           - >-
             . ACS, Attentional Control Scale; CBP, chronic back pain; CPAQ,
             Chronic Pain Acceptance Questionnaire; EACS, Emotional Attentional
@@ -418,23 +2065,30 @@ content:
             of Interoceptive Awareness; PANAS, Positive and Negative Affect
             Scale; PASS, Pain Anxiety Symptoms Scale; PCA; PCS, Pain
             Catastrophizing Scale; PSQ, Pain Sensitivity Questionnaire.
-        type: Paragraph
-    type: Figure
-  - content:
-      - Psychology/personality traits of chronic pain
-    depth: 2
+    label: Fig 1
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec003
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Psychology/personality traits of chronic pain
+  - type: Paragraph
+    content:
       - >-
         We first sought to define the psychology/personality factors of chronic
         pain based on responses to a broad battery of questionnaires in two CBP
         cohorts (Group 1 and Group 2; 
-      - content:
-          - S2 Table
-        target: '#pbio.3000349.s006'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s006'
+        content:
+          - S2 Table
       - >-
         ). We applied clustering and network analysis methods to the covariance
         matrix constructed from responses to questionnaires that surveyed
@@ -450,42 +2104,42 @@ content:
         and personality traits (NEO-5: neuroticism, extraversion, openness,
         conscientiousness, and agreeableness). The associations among subscales
         are presented in 
-      - content:
-          - Fig 1B
-        target: '#pbio.3000349.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g001'
+        content:
+          - Fig 1B
       - ' for both groups of patients. Principal component analysis (PCA) was used to order the 36 subscales in Group 1 and subsequently used to organize the questionnaires for Group 2 in '
-      - content:
-          - Fig 1B
-        target: '#pbio.3000349.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g001'
+        content:
+          - Fig 1B
       - >-
         . As shown in the figure, the pattern of covariance was very similar in
         the two groups.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We used Group 1 data to construct a network from the covariance matrix
         of 36 subscales. This network exhibited high-dimensional topology, as
         community clustering of the subscales segregated into four distinct
         communities (
-      - content:
-          - Fig 1C
-        target: '#pbio.3000349.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g001'
+        content:
+          - Fig 1C
       - >-
         ). PCA analysis applied on the covariance matrix for Group 1 also
         identified four orthogonal principal components with eigenvalues > 2.0
         and explained more than 5% of the variance (representing the elbow in
         the scree plot, 
-      - content:
-          - S1A Fig
-        target: '#pbio.3000349.s001'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s001'
+        content:
+          - S1A Fig
       - >-
         ). The four components together explained 56% of the variance. PCA
         performed for Group 2 data identified the same four components as seen
@@ -504,11 +2158,11 @@ content:
         presence of emotion, and high aptitude for mindfulness. Similar results
         were obtained in Group 2, for which the PCA identified the same four
         domains with factor loadings similarly as seen in Group 1 (
-      - content:
-          - S1B Fig
-        target: '#pbio.3000349.s001'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s001'
+        content:
+          - S1B Fig
       - >-
         ). Although network and PCA analyses resulted in similar results, there
         were also subtle differences in the components identified by each
@@ -519,13 +2173,13 @@ content:
         while the other three dimensions comprise positive domains of character,
         awareness, and emotion, all of which would theoretically counterbalance
         or modulate the primarily negative pain-related dimension.
-    type: Paragraph
-  - content:
-      - Associations between chronic pain traits and back pain characteristics
-    depth: 2
+  - type: Heading
     id: sec004
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Associations between chronic pain traits and back pain characteristics
+  - type: Paragraph
+    content:
       - >-
         We examined the interrelationship between the four trait dimensions of
         chronic pain with the intensity, qualities, and negative affective
@@ -547,73 +2201,66 @@ content:
         equivalent between the two groups with the exception of SF-12p that was
         higher in Group 1. Baseline levels for these measurements are presented
         for both groups in 
-      - content:
-          - S3 Table
-        target: '#pbio.3000349.s007'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s007'
+        content:
+          - S3 Table
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The correlation matrix between trait dimensions and pain measurements
         was calculated for visit 1 (V1) and visit 2 (V2) in Group 1 (
-      - content:
+      - type: Link
+        relation: fig
+        target: '#pbio.3000349.g002'
+        content:
           - Fig 2A
-        target: '#pbio.3000349.g002'
-        relation: fig
-        type: Link
       - ) and for a smaller set of pain measurements for visit 1 in Group 2 (
-      - content:
-          - Fig 2B
-        target: '#pbio.3000349.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g002'
+        content:
+          - Fig 2B
       - >-
         ). Obtained results indicate that Pain-trait was positively related to
         almost all clinical measurements capturing back pain properties at V1
         and V2, while Emote-trait was anticorrelated primarily to the negative
         affective characteristics of CBP (
-      - content:
+      - type: Link
+        relation: fig
+        target: '#pbio.3000349.g002'
+        content:
           - Fig 2A
-        target: '#pbio.3000349.g002'
-        relation: fig
-        type: Link
       - ', Group 1). Similar associations were also observed in Group 2 ('
-      - content:
-          - Fig 2B
-        target: '#pbio.3000349.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g002'
+        content:
+          - Fig 2B
       - >-
         ). Character-trait and Aware-trait showed no reliable relationships with
         pain or negative affect measurements. Consensus analysis between visits
         and groups confirmed these results (
-      - content:
-          - Fig 2C
-        target: '#pbio.3000349.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g002'
+        content:
+          - Fig 2C
       - >-
         ). Thus, we uncovered two traits associated with back pain properties,
         in opposite directions and with distinct patterns.
-    type: Paragraph
-  - id: pbio.3000349.g002
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 2
+  - type: Figure
+    id: pbio.3000349.g002
     caption:
-      - content:
-          - Relating trait dimensions to pain characteristics.
-        depth: 2
+      - type: Heading
         id: sec004
-        type: Heading
-      - content:
+        depth: 2
+        content:
+          - Relating trait dimensions to pain characteristics.
+      - type: Paragraph
+        content:
           - >-
             Correlation matrices indicate the extent of the association of each
             trait with back pain intensity (EMAs, Memory, NRS), quality (MPQs/a,
@@ -644,17 +2291,17 @@ content:
             content:
               - P
           - ' < 0.001 (significant even after Bonferroni correction for all comparisons [56 comparisons in Group 1 and 28 comparisons in Group 2]). For each figure, the numerical data are available '
-          - content:
-              - S1 Data
+          - type: Link
+            relation: supplementary-material
             target: '#pbio.3000349.s009'
-            relation: supplementary-material
-            type: Link
+            content:
+              - S1 Data
           - ', and a description of the analyses and P values are reported in '
-          - content:
-              - S4 Table
-            target: '#pbio.3000349.s008'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s008'
+            content:
+              - S4 Table
           - >-
             . BDI, Beck Depression Index (only collected at V1); EMA, ecological
             momentary assessment (phone app daily pain ratings); NRS, numerical
@@ -662,9 +2309,16 @@ content:
             McGill pain questionnaire/sensory; PANASn, Positive and Negative
             Affect Scale/negative; SF-12p, 12-item short-form survey/physical
             health.
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 2
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         Finally, we assessed if the expression of these chronic pain traits was
         related with how long individuals have been suffering from persisting
@@ -674,21 +2328,21 @@ content:
         content:
           - P
       - ' values > 0.24).'
-    type: Paragraph
-  - content:
+  - type: Heading
+    id: sec005
+    depth: 2
+    content:
       - >-
         Brain functional circuits defining neurotraits for Pain-trait and
         Emote-trait
-    depth: 2
-    id: sec005
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - 'Next, we used a connectomics-based ['
-      - target: '#pbio.3000349.ref030'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref030'
       - ','
-      - target: '#pbio.3000349.ref031'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref031'
       - >-
         ] approach to examine if the two chronic pain traits associated with
         back pain properties can be decoded from functional networks using
@@ -696,19 +2350,19 @@ content:
         connectome-based modeling of functional connectivity to determine if
         brain networks underlying chronic pain traits can be identified based on
         the Shen et al. protocol [
-      - target: '#pbio.3000349.ref032'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref032'
       - >-
         ]. Two different parcellation schemes were used to test the robustness
         of our results. First, we used the Power brain parcellation (see 
-      - content:
-          - Methods
-        target: '#sec016'
+      - type: Link
         relation: sec
-        type: Link
+        target: '#sec016'
+        content:
+          - Methods
       - ' ['
-      - target: '#pbio.3000349.ref033'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref033'
       - >-
         ]) and computed pairwise Pearson correlation coefficients between the
         time courses of each possible pair of 272 nodes; these generated a
@@ -739,8 +2393,8 @@ content:
         functional connections and vice versa for edges negatively correlating
         with the trait. No other approach was tested to determine brain
         circuitry associated with chronic pain traits.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The results of these correlates were validated using the left-out
         patients of the test set. The sum of positive and negative z
@@ -752,11 +2406,11 @@ content:
         content:
           - 'n'
       - ' = 10,000) was used to determine significance. '
-      - content:
-          - Fig 3A
-        target: '#pbio.3000349.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g003'
+        content:
+          - Fig 3A
       - ' shows that three patterns of functional connectivity were successfully cross-validated using this procedure. The Pain-trait score was determined from both positive ('
       - type: Emphasis
         content:
@@ -797,31 +2451,24 @@ content:
         content:
           - P =
       - ' 0.02). Because the features selected in the training set differed across the three folds, a single set of consensus weights was generated from averaging the links across the folds. Thus, an edge selected across all three folds was provided a weight of 1.0, an edge selected in two folds was provided a weight of 0.66, and an edge selected in one fold was provided a weight of 0.33. Links persistent across the three folds were labeled “most stable links” and displayed ('
-      - content:
-          - 'Fig 3B, 3D and 3F'
-        target: '#pbio.3000349.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g003'
+        content:
+          - 'Fig 3B, 3D and 3F'
       - ).
-    type: Paragraph
-  - id: pbio.3000349.g003
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 3
+  - type: Figure
+    id: pbio.3000349.g003
     caption:
-      - content:
+      - type: Heading
+        id: sec005
+        depth: 2
+        content:
           - >-
             Resting state functional connectivity determined Pain-trait and
             Emote-trait.
-        depth: 2
-        id: sec005
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             A. Resting-state fMRI was used to construct functional connectivity
             covariance matrices, and a 3-fold cross-validation procedure was
@@ -844,34 +2491,41 @@ content:
             content:
               - P
           - ' < 0.01. For each figure, the numerical data are available '
-          - content:
-              - S1 Data
-            target: '#pbio.3000349.s009'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s009'
+            content:
+              - S1 Data
           - ' and a description of the analyses, and '
           - type: Emphasis
             content:
               - P
           - ' values are reported in '
-          - content:
-              - S4 Table
-            target: '#pbio.3000349.s008'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s008'
+            content:
+              - S4 Table
           - .
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 3
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         All weighted links were organized based on their connectivity within and
         between the 14 communities of the human brain. The full connectivity
         matrices for all links related to the two traits are also shown (
-      - content:
-          - 'Fig 3C, 3E and 3G'
-        target: '#pbio.3000349.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g003'
+        content:
+          - 'Fig 3C, 3E and 3G'
       - >-
         ). Pain-trait scores were determined from a total of 1,326 weighted
         positive links: mainly between DMN and sensorimotor, cingulate,
@@ -883,8 +2537,8 @@ content:
         and frontoparietal communities (Neurotrait 3). Thus, highly distributed
         networks comprise the neurotraits related to the two chronic pain traits
         specifically reflecting CBP properties.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Because the traits were orthogonalized with the PCA, the edges showed
         little overlap between neurotraits. There was an 8% (108/1326 edges)
@@ -916,32 +2570,32 @@ content:
         content:
           - P
       - ' = 0.51).'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The robustness of our results was then tested by interrogating a
         different brain atlas [
-      - target: '#pbio.3000349.ref034'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref034'
       - >-
         ]. The same cross-validation procedure showed that brain networks
         constructed from the two different parcellation schemes were similar and
         robust for tracking Pain-trait and Emote-trait (
-      - content:
-          - S2 Fig
-        target: '#pbio.3000349.s002'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s002'
+        content:
+          - S2 Fig
       - >-
         ). These results reveal distinct and validated neural networks
         corresponding to the two chronic pain-related traits.
-    type: Paragraph
-  - content:
-      - Neurotraits are reliable across fMRI sessions
-    depth: 2
+  - type: Heading
     id: sec006
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Neurotraits are reliable across fMRI sessions
+  - type: Paragraph
+    content:
       - >-
         All analyses presented thus far were performed on data collected at V1
         (questionnaire data) or V2 (pretreatment brain imaging and questionnaire
@@ -953,52 +2607,45 @@ content:
         content:
           - (r)
       - ' values from the same sets of edges initially identified at V2 ('
-      - content:
-          - Fig 4A
-        target: '#pbio.3000349.g004'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g004'
+        content:
+          - Fig 4A
       - >-
         ) was calculated for the resting state fMRI data collected at V3, V4,
         and V5 (
-      - content:
-          - Fig 4B
-        target: '#pbio.3000349.g004'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g004'
+        content:
+          - Fig 4B
       - >-
         ). The pattern of functional connectivity calculated from
         V3–V5—neurotraits derived weeks after assessing the corresponding
         traits—successfully tracked patients’ scores on Pain-trait and
         Emote-trait. We further quantify the reliability of the neurotraits by
         computing the intraclass correlation (ICC) for each neurotrait [
-      - target: '#pbio.3000349.ref035'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref035'
       - >-
         ]. The average ICC was Neurotrait 1: 0.87 (95% CI: Lower: 0.80; Upper:
         0.92); Neurotrait 2: 0.85 (95% CI: Lower: 0.78; Upper: 0.91); Neurotrait
         3: 0.83 (95% CI: Lower: 0.74; Upper: 0.89). Together, the neurotraits
         showed good reliability across the four brain-imaging sessions collected
         weeks apart.
-    type: Paragraph
-  - id: pbio.3000349.g004
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 4
+  - type: Figure
+    id: pbio.3000349.g004
     caption:
-      - content:
+      - type: Heading
+        id: sec006
+        depth: 2
+        content:
           - >-
             Stability assessment of neurotraits from repeat brain scans over 5
             weeks.
-        depth: 2
-        id: sec006
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             A. Strength of relationships between weighted patterns of
             connectivity that were trained at V2 with corresponding
@@ -1007,73 +2654,80 @@ content:
             scans) and trait scores determined by questionnaires at V1. The
             trait–neurotrait relationship is preserved. *P < 0.05; **P < 0.01;
             ***P < 0.001. For each figure, the numerical data are available 
-          - content:
-              - S1 Data
-            target: '#pbio.3000349.s009'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s009'
+            content:
+              - S1 Data
           - ', and a description of the analyses and '
           - type: Emphasis
             content:
               - P
           - ' values are reported in '
-          - content:
-              - S4 Table
-            target: '#pbio.3000349.s008'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s008'
+            content:
+              - S4 Table
           - .
-        type: Paragraph
-    type: Figure
-  - content:
-      - Associations between neurotraits and back pain characteristics
-    depth: 2
+    label: Fig 4
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec007
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Associations between neurotraits and back pain characteristics
+  - type: Paragraph
+    content:
       - >-
         We directly tested the associations between the identified brain
         networks (Neurotraits) and the clinical characteristics of the CBP
         patients (Group 1). We used data reduction on pain measurements (ratings
         and questionnaires, parameters shown in 
-      - content:
-          - Fig 2A
-        target: '#pbio.3000349.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g002'
+        content:
+          - Fig 2A
       - >-
         ) to limit the number of analyses. We applied PCA and derived three
         chronic pain related components, together explaining 57% of the
         variance, and representing: 1) pain intensity, 2) pain qualities, and 3)
         negative affect and physical health (
-      - content:
-          - Fig 5A
-        target: '#pbio.3000349.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g005'
+        content:
+          - Fig 5A
       - >-
         ). Correlations and partial correlations were used to assess the
         associations between the neurotraits and these three chronic pain
         defining components.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         To increase the reliability of our results, we averaged each neurotrait
         across the four resting-state fMRI sessions. 
-      - content:
+      - type: Link
+        relation: fig
+        target: '#pbio.3000349.g005'
+        content:
           - Fig 5B
-        target: '#pbio.3000349.g005'
-        relation: fig
-        type: Link
       - ' shows that the three neurotraits correlated with the pain intensity and that Neurotrait 2 and Neurotrait 3 correlated with the affect/health component. However, only Neurotrait 1 with pain intensity and Neurotrait 3 with affect/health survived multiple comparisons. There were no significant associations between Neurotraits and the pain quality. Testing the association between the chronic pain components and the Neurotraits from each brain imaging session separately showed relatively consistent results, although the effect on affect/health was no longer present at visit 5 ('
-      - content:
-          - Fig 5C
-        target: '#pbio.3000349.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g005'
+        content:
+          - Fig 5C
       - ).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Next, a series of partial correlations were performed to fully
         understand the interplay between the Neurotraits. The unique
@@ -1084,28 +2738,28 @@ content:
       - >-
         , after controlling for the effect of Neurotrait 3, showed a strong
         association with affect/health (
-      - content:
-          - Fig 5D
-        target: '#pbio.3000349.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g005'
+        content:
+          - Fig 5D
       - >-
         ). The unique contribution of Neurotrait 3, after controlling for
         Neurotrait 1 and Neurotrait 2, also showed a strong association with
         affect/health (
-      - content:
-          - Fig 5F
-        target: '#pbio.3000349.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g005'
+        content:
+          - Fig 5F
       - >-
         ). These findings survived multiple comparisons and were consistent
         across visits when tested separately (
-      - content:
-          - Fig 5E and 5G
-        target: '#pbio.3000349.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g005'
+        content:
+          - Fig 5E and 5G
       - >-
         ). Our results suggest a weak nonspecific association between the three
         Neurotraits and the pain intensity, which mostly dissipated when
@@ -1115,23 +2769,16 @@ content:
         Pain-trait and Emote-trait being independently associated with negative
         affect and physical health, implying that the brain networks were
         directly related with the clinical characteristics of the patients.
-    type: Paragraph
-  - id: pbio.3000349.g005
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 5
+  - type: Figure
+    id: pbio.3000349.g005
     caption:
-      - content:
-          - Association between neurotraits and pain measurements.
-        depth: 2
+      - type: Heading
         id: sec007
-        type: Heading
-      - content:
+        depth: 2
+        content:
+          - Association between neurotraits and pain measurements.
+      - type: Paragraph
+        content:
           - >-
             A. Data reduction was performed to extract three principal
             components reflecting pain intensity, pain quality and
@@ -1166,97 +2813,97 @@ content:
             content:
               - P
           - ' < 0.001. For each figure, the numerical data are available '
-          - content:
-              - S1 Data
-            target: '#pbio.3000349.s009'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s009'
+            content:
+              - S1 Data
           - ', and a description of the analyses and '
           - type: Emphasis
             content:
               - P
           - ' values are reported in '
-          - content:
-              - S4 Table
-            target: '#pbio.3000349.s008'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s008'
+            content:
+              - S4 Table
           - .
-        type: Paragraph
-    type: Figure
-  - content:
-      - 'Associations between traits, neurotraits, and socioeconomic status'
-    depth: 2
+    label: Fig 5
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec008
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - 'Associations between traits, neurotraits, and socioeconomic status'
+  - type: Paragraph
+    content:
       - >-
         The biopsychosocial components of chronic pain have repeatedly been
         linked to SES. Here, we measured SES using self-reported income (US
         dollars earned yearly), race/ethnicity, sex/gender, and years of
         education separately. The years of education and the race/ethnicity (but
         not sex/gender) were strongly associated with income (
-      - content:
-          - S3 Fig
-        target: '#pbio.3000349.s003'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s003'
+        content:
+          - S3 Fig
       - >-
         ) but not with the traits or neurotraits (ps > 0.13). The income was
         most strongly associated with chronic pain traits (when controlling for
         race/ethnicity and years of education), as patients reporting income
         greater than 25,000 expressed a lower level of Pain-trait (
-      - content:
+      - type: Link
+        relation: fig
+        target: '#pbio.3000349.g006'
+        content:
           - Fig 6A
-        target: '#pbio.3000349.g006'
-        relation: fig
-        type: Link
       - ). This finding was replicated in Group 2 (
-      - content:
-          - Fig 6B
-        target: '#pbio.3000349.g006'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g006'
+        content:
+          - Fig 6B
       - >-
         ). Moreover, the effect was not limited to psychological factors, as
         income was strongly linked with both positive and negative connections
         of Neurotrait 1 and Neurotrait 2 (
-      - content:
-          - Fig 6C
-        target: '#pbio.3000349.g006'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g006'
+        content:
+          - Fig 6C
       - >-
         ), showing the association between SES and the individual's psychology
         and underlying neurophysiology. As displayed in 
-      - content:
-          - Fig 6D
-        target: '#pbio.3000349.g006'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g006'
+        content:
+          - Fig 6D
       - >-
         , income mostly correlated with the subscales defining the Pain-trait
         and Emote-trait, as lower income was linked with higher anxiety and
         catastrophizing and higher income linked with higher optimism.
-    type: Paragraph
-  - id: pbio.3000349.g006
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 6
+  - type: Figure
+    id: pbio.3000349.g006
     caption:
-      - content:
+      - type: Heading
+        id: sec008
+        depth: 2
+        content:
           - >-
             Association between socioeconomic factors and traits and
             neurotraits.
-        depth: 2
-        id: sec008
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             A. Income differentiated patients on Pain-trait after controlling
             for ethnicity and years of education (while the inverse was not
@@ -1275,11 +2922,11 @@ content:
             content:
               - P
           - ' < 0.05). All abbreviations are defined in '
-          - content:
-              - Fig 1
-            target: '#pbio.3000349.g001'
+          - type: Link
             relation: fig
-            type: Link
+            target: '#pbio.3000349.g001'
+            content:
+              - Fig 1
           - >-
             . Post-hoc comparisons were Bonferroni corrected for six
             comparisons 
@@ -1294,26 +2941,33 @@ content:
             content:
               - P
           - ' < 0.05. For each figure, the numerical data are available '
-          - content:
-              - S1 Data
+          - type: Link
+            relation: supplementary-material
             target: '#pbio.3000349.s009'
-            relation: supplementary-material
-            type: Link
+            content:
+              - S1 Data
           - ' and a description of the analyses and p-values are reported in '
-          - content:
-              - S4 Table
-            target: '#pbio.3000349.s008'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pbio.3000349.s008'
+            content:
+              - S4 Table
           - .
-        type: Paragraph
-    type: Figure
-  - content:
-      - Associations between traits and responses to treatment
-    depth: 2
+    label: Fig 6
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec009
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Associations between traits and responses to treatment
+  - type: Paragraph
+    content:
       - >-
         We next assessed how the uncovered chronic pain traits can potentially
         be related with responses to treatment. In the current study, we
@@ -1321,30 +2975,30 @@ content:
         settings of a RCT. We calculated the magnitude of placebo response as
         the strongest response (% change in pain) in either of the two treatment
         periods, as was previously done [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. Interestingly, the two traits reflecting back pain properties of CBP,
         Pain-trait, and Emote-trait, were unrelated to the placebo response. In
         contrast, Character-trait and Aware-trait predisposed patients to the
         future magnitude of placebo response (
-      - content:
-          - S4 Fig
-        target: '#pbio.3000349.s004'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s004'
+        content:
+          - S4 Fig
       - >-
         ). The current result highlights the fact that chronic pain traits
         unrelated to pain measurements are still relevant when studying other
         characteristics of patients, such as the likelihood of responding to a
         specific treatment.
-    type: Paragraph
-  - content:
-      - Discussion
-    depth: 1
+  - type: Heading
     id: sec010
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Discussion
+  - type: Paragraph
+    content:
       - >-
         Current work is aimed towards defining the psychological/personality
         traits of chronic pain and integrating these properties with brain
@@ -1361,8 +3015,8 @@ content:
         chronic pain patient along psychological, neurobiological, and social
         dimensions, all underpinning specific traits and their derived brain
         networks.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Here, we advance a novel approach for deriving multivariate dimensions
         of chronic pain. By interrogating patients within a high-dimensional
@@ -1383,13 +3037,13 @@ content:
         brain scans enhances confidence that the studied dimensions are robust,
         meaningful, and biologically grounded characteristics at least for
         neuropathic chronic back pain.
-    type: Paragraph
-  - content:
-      - Traits of chronic pain
-    depth: 2
+  - type: Heading
     id: sec011
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Traits of chronic pain
+  - type: Paragraph
+    content:
       - >-
         The current study systematically delineates the state space of the
         biopsychosocial model for chronic pain. In this regard, the specific
@@ -1398,17 +3052,17 @@ content:
         model has been advocated for over 30 years and is widely used in
         clinical pain settings (mainly in multidisciplinary pain management
         programs) [
-      - target: '#pbio.3000349.ref036'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref036'
       - –
-      - target: '#pbio.3000349.ref038'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref038'
       - '], it still remains a poorly-defined concept ['
-      - target: '#pbio.3000349.ref039'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref039'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Here, we begin to better understand and depict the critical
         biopsychosocial elements for CBP. Components of Pain-trait are all
@@ -1418,8 +3072,8 @@ content:
         (topical or oral analgesics, cortisone and other injectables, surgical
         outcomes, and psychosocial treatments like cognitive behavioral therapy)
         [
-      - target: '#pbio.3000349.ref039'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref039'
       - >-
         ]. The next two factors, Character-trait and Aware-trait, reflect
         positive character as well as awareness and emotional regulation traits
@@ -1434,16 +3088,16 @@ content:
         seems to offset and counteract the negative emotional impact of chronic
         pain. Moreover, given that factors 2–3 predetermined response to placebo
         treatment, and since we have shown (based on this same data [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]) that placebo response is predetermined from personality and brain
         anatomy and functional connectivity, we propose that the trajectories of
         personality reorganization with development of chronic pain, that is the
         interplay between factor 1 and factors 2 and 3, in turn determines CBP
         placebo response types.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Throughout this manuscript, we refer to the PCA factors comprising
         psychological and personality outcome measures as “traits.” Three of
@@ -1463,26 +3117,26 @@ content:
         propose that the identified factors should be “cardinal” or “central”
         traits of chronic back pain as we expect that they dominate and shape
         these patients’ everyday behaviors [
-      - target: '#pbio.3000349.ref040'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref040'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Still, the approach raises new and critical questions that require
         further study. First, there is a general consensus that the human
         population at large is composed of five broad personality traits, also
         known as the Five-Factor-Model [
-      - target: '#pbio.3000349.ref014'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref014'
       - >-
         ]. Our results show that most of these traits are clustered together in
         CBP (Character-trait), while other aspects (Emote-trait) become
         differentially related to chronic pain. Importantly, while subjective
         well-being is observed in individuals scoring high in extraversion and
         low in neuroticism in the population at large [
-      - target: '#pbio.3000349.ref041'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref041'
       - >-
         ], in CBP, these characteristics load on orthogonal factors (that is,
         they vary independently) and relate to distinct properties. How the CBP
@@ -1502,24 +3156,24 @@ content:
         architecture) between these traits may change after different kinds of
         treatments or therapies. Further studies exploring these issues are
         certainly warranted.
-    type: Paragraph
-  - content:
-      - Neurotraits of chronic pain
-    depth: 2
+  - type: Heading
     id: sec012
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Neurotraits of chronic pain
+  - type: Paragraph
+    content:
       - >-
         Data-driven methods provide an unbiased and optimal way to map
         distributed brain representations for complex phenomena [
-      - target: '#pbio.3000349.ref042'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref042'
       - >-
         ], and such an approach is especially appropriate when studying chronic
         pain since recent evidence indicates that pain patients exhibit a
         disruption of functional connectivity throughout the cortex [
-      - target: '#pbio.3000349.ref043'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref043'
       - >-
         ]. We show that Pain-trait and Emote-trait can be determined from
         distributed patterns of functional connectivity in left-out-patients.
@@ -1532,17 +3186,17 @@ content:
         the prefrontal cortex and the DMN, especially Neurotrait 1, consistent
         with earlier evidence showing involvement of these regions in chronic
         pain and catastrophizing [
-      - target: '#pbio.3000349.ref023'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref023'
       - ','
-      - target: '#pbio.3000349.ref044'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref044'
       - –
-      - target: '#pbio.3000349.ref046'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref046'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Our results support the existence of multiple brain systems contributing
         and modulating the chronic pain experience. These systems involve
@@ -1551,22 +3205,22 @@ content:
         literature indicating that several systems may contribute to chronic
         pain. For instance, several studies have indicated that the DMN linked
         with pain catastrophizing determines pain intensity [
-      - target: '#pbio.3000349.ref023'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref023'
       - ','
-      - target: '#pbio.3000349.ref044'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref044'
       - –
-      - target: '#pbio.3000349.ref046'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref046'
       - >-
         ], whereas the mesolimbic system linked with reward/punishment modulates
         pain perception and determines risk for transition to chronic pain [
-      - target: '#pbio.3000349.ref047'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref047'
       - –
-      - target: '#pbio.3000349.ref051'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref051'
       - >-
         ]. Accordingly, we demonstrate that psychological components of
         Pain-trait (pain catastrophizing, anxiety, acceptance) determined
@@ -1581,13 +3235,13 @@ content:
         neuroanatomical and structural brain properties, as these factors may
         further enhance the explanatory power of the neurotraits in relation to
         corresponding psychological/personality traits of CBP.
-    type: Paragraph
-  - content:
-      - Socioeconomic influences on traits and types of chronic pain
-    depth: 2
+  - type: Heading
     id: sec013
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Socioeconomic influences on traits and types of chronic pain
+  - type: Paragraph
+    content:
       - >-
         Chronic pain traits and neurotraits were specifically associated with
         income. One may conclude that these are at least partially interlinked
@@ -1596,8 +3250,8 @@ content:
         previous research findings showing that lower incomes related with
         higher pain scores but also increased disability resulting from chronic
         pain [
-      - target: '#pbio.3000349.ref052'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref052'
       - >-
         ]. Importantly, SES was most strongly linked with subscales defining the
         traits of patients, as income correlated with components of Pain-trait
@@ -1609,13 +3263,13 @@ content:
         social component of the biopsychosocial model and further substantiates
         the idea that chronic pain experience is not only rooted in biology but
         also intimately embedded in society.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - In an earlier preprint version of this manuscript (
-      - content:
-          - 'https://www.biorxiv.org/content/10.1101/421438v1'
+      - type: Link
         target: 'https://www.biorxiv.org/content/10.1101/421438v1'
-        type: Link
+        content:
+          - 'https://www.biorxiv.org/content/10.1101/421438v1'
       - >-
         ), we reported on deriving subtypes (which we defined as
         neuropsychotypes) of CBP based on clustering the CBP patients using
@@ -1623,13 +3277,13 @@ content:
         indicated that the subtypes were not stable, pointing that such
         categorizations were arbitrary. Therefore, these results were removed in
         this version of the manuscript.
-    type: Paragraph
-  - content:
-      - Pitfalls and limitations
-    depth: 2
+  - type: Heading
     id: sec014
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Pitfalls and limitations
+  - type: Paragraph
+    content:
       - >-
         The current study included cross-validation of the neurotraits,
         assessment of within-subject robustness of neurotraits, and a validation
@@ -1647,13 +3301,13 @@ content:
         content:
           - 'n'
       - ' = 46 without brain imaging). Further, patients were excluded if they showed moderate or severe depressive symptom severity, which may influence the generalizability of the results. Moreover, the biological variables were restricted to resting state functional connectivity derived from brain imaging, whereas variables from the periphery or central spinal processing were not included. Finally, the social variables were restricted to sex/gender, race/ethnicity, years of education, and income, while other variables such as working environment, city living, marital status, and access to healthcare were not included or collected, even though they likely also play a role in the expression of pain traits or neurotraits. Therefore, future studies should include additional variables to fully examine the interplay between the neurobiological, psychological, and social components of chronic pain.'
-    type: Paragraph
-  - content:
-      - Conclusions
-    depth: 2
+  - type: Heading
     id: sec015
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Conclusions
+  - type: Paragraph
+    content:
       - >-
         We advance a methodology for identifying traits in neuropathic CBP, but
         the dimensions used to develop the trait space are globally relevant to
@@ -1664,37 +3318,37 @@ content:
         psychology of chronic pain. Future studies are, however, necessary to
         replicate the identified traits and neurotraits, test generalizability
         across chronic pain conditions, and determine their clinical utility.
-    type: Paragraph
-  - content:
-      - Material and methods
-    depth: 1
+  - type: Heading
     id: sec016
-    type: Heading
-  - content:
-      - Ethics statement
-    depth: 2
+    depth: 1
+    content:
+      - Material and methods
+  - type: Heading
     id: sec017
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Ethics statement
+  - type: Paragraph
+    content:
       - >-
         The research has been approved by the Northwestern University IRB (ID:
         R1018-STU80585) in accordance with the principles expressed in the
         Declaration of Helsinki. Written informed consent was obtained for each
         participant.
-    type: Paragraph
-  - content:
-      - Study design
-    depth: 2
+  - type: Heading
     id: sec018
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Study design
+  - type: Paragraph
+    content:
       - >-
         This study was conducted in the setting of a clinical RCT specifically
         designed for assessing the placebo response (ClinicalTrials.gov:
         NCT02013427). The results of the placebo response have been previously
         published [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ], and this is a reanalysis of the same data set. The study consisted of
         six visits spread over approximately 8 weeks, including a baseline
@@ -1702,20 +3356,20 @@ content:
         followed by a washout period. A full description of the study procedure
         on each visit, as well as the results of the placebo manipulation, can
         be found in [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. Here, we restricted our initial analyses to questionnaire and
         brain-imaging data collected prior to placebo treatment. However, the
         brain imaging data acquired after the placebo treatment was used to test
         the stability of cross-validated patterns of functional connectivity.
-    type: Paragraph
-  - content:
-      - Study population
-    depth: 2
+  - type: Heading
     id: sec019
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Study population
+  - type: Paragraph
+    content:
       - >-
         One hundred twenty-nine participants with CBP were initially recruited
         from the general population via advertising in the community and
@@ -1731,13 +3385,13 @@ content:
         Patients with BDI score > 19 were excluded from the RCT. Finally,
         clinical measurements taken at V1 were required to be within the
         pre-specified healthy range [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ] and all participants passed the MRI safety screening requirements at
         each scanning visit.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Of the enrolled 125 patients, 63 chronic pain patients completed the
         study. One of these patients was removed from the brain imaging analyses
@@ -1765,13 +3419,13 @@ content:
         content:
           - 'n'
       - ' = 11). Participants were compensated US$50 for each visit completed, and they were reimbursed up to US$20 for travel and parking expenses if applicable.'
-    type: Paragraph
-  - content:
-      - Software used for data analyses
-    depth: 2
+  - type: Heading
     id: sec020
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Software used for data analyses
+  - type: Paragraph
+    content:
       - >-
         Statistical analyses including data reduction (PCA), test for normality
         of the data (using Shapiro–Wilk test), group comparisons when the data
@@ -1782,18 +3436,18 @@ content:
         Connectome based modeling was performed using Matlab. Modularity
         analysis applied on the questionnaire data was performed with the
         Network analyser app in Cytoskape (
-      - content:
-          - 'https://cytoscape.org/'
+      - type: Link
         target: 'https://cytoscape.org/'
-        type: Link
+        content:
+          - 'https://cytoscape.org/'
       - ) version 3.6.1.
-    type: Paragraph
-  - content:
-      - Ecological momentary assessments using phone app
-    depth: 2
+  - type: Heading
     id: sec021
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Ecological momentary assessments using phone app
+  - type: Paragraph
+    content:
       - >-
         Each patient’s pain was monitored electronically using an app designed
         specifically for the study. The app had a VAS scale with sliding bars on
@@ -1804,13 +3458,13 @@ content:
         of the study to encourage compliance throughout the study. The ratings
         were sent to a secure server and both date- and time-stamped. The
         overall compliance of the phone ratings was on average 76%.
-    type: Paragraph
-  - content:
-      - Other chronic pain measurements
-    depth: 2
+  - type: Heading
     id: sec022
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Other chronic pain measurements
+  - type: Paragraph
+    content:
       - >-
         We assessed chronic pain intensity using multiple measurements. Besides
         the EMAs, a numerical rating scale and a verbal recall of the averaged
@@ -1820,26 +3474,26 @@ content:
         PANAS/negative subscale and the Beck Depression Inventory, Version 1a
         (BDI-1a). Finally, we assessed physical health using the SF-12p physical
         subscale.
-    type: Paragraph
-  - content:
-      - Analysis of questionnaire data
-    depth: 2
+  - type: Heading
     id: sec023
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Analysis of questionnaire data
+  - type: Paragraph
+    content:
       - >-
         A full list of all 13 questionnaires used to measure psychological and
         personality factors can be found in 
-      - content:
-          - S2 Table
-        target: '#pbio.3000349.s006'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s006'
+        content:
+          - S2 Table
       - >-
         . Data from these self-report measures was downloaded directly from
         REDCap as a CSV file and scored in Excel according to their references [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. An option to “skip” a question was provided for each item. If more
         than 20% of the data from a given questionnaire (or questionnaire
@@ -1848,8 +3502,8 @@ content:
         item was replaced by the mean (if the questionnaire had sub-scoring, the
         mean was calculated from the remaining items in the sub-dimension as
         opposed to the entire questionnaire).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Data reduction was performed using two strategies. Firstly, a binarized
         undirected network was constructed using the strongest 10% correlation
@@ -1859,13 +3513,13 @@ content:
         analysis was applied on the 36 subscales to extract four components
         explaining the above 56% of the variance. The components were
         orthogonalized using varimax rotation in SPSS.
-    type: Paragraph
-  - content:
-      - Socioeconomic status
-    depth: 2
+  - type: Heading
     id: sec024
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Socioeconomic status
+  - type: Paragraph
+    content:
       - >-
         Self-reported income was measured with the following categories:
         0–10,000; > 10 < 25,000; > 25,000 < 50,000; > 50,000. Self-reported
@@ -1880,23 +3534,23 @@ content:
         content:
           - 'n'
       - ' are provided on each figure for each analysis.'
-    type: Paragraph
-  - content:
-      - Brain-imaging protocol and data analysis
-    depth: 2
+  - type: Heading
     id: sec025
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Brain-imaging protocol and data analysis
+  - type: Paragraph
+    content:
       - 'Brain-imaging data are the same as in ['
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. The data were acquired with a Siemens Magnetom Prisma 3 Tesla. The
         entire procedure was completed in about 35 min, but an extra 25 min was
         planned to install the patients in a comfortable position and to
         reacquire images, if necessary.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         High-resolution T1-weighted brain images were collected using integrated
         parallel imaging techniques (PAT; GRAPPA) representing receiver
@@ -1905,8 +3559,8 @@ content:
         angle = 9°, acceleration factor of 2, base resolution 256, slices = 176,
         and field of view (FoV) = 256 mm. The encoding directions were from
         anterior to posterior, and the time of acquisition was 5 min and 21 sec.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Blood oxygen level-dependent (BOLD) contrast-sensitive T2*-weighted
         multiband accelerated echo-planar-images were acquired for resting-state
@@ -1924,18 +3578,18 @@ content:
         patients were asked to keep their eyes open and to remain as still as
         possible during acquisition. The procedure was repeated two times (20.4
         minutes).
-    type: Paragraph
-  - content:
-      - Preprocessing of functional images
-    depth: 3
+  - type: Heading
     id: sec026
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Preprocessing of functional images
+  - type: Paragraph
+    content:
       - >-
         The pre-processing was performed using FMRIB Software Library (FSL) and
         in-house software as previously describe [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. The first 120 volumes of each functional dataset were removed in
         order to allow for magnetic field stabilization. The decision to remove
@@ -1964,8 +3618,8 @@ content:
         frequency (0.008–0.05) was > 1. This ICA regression procedure was kept
         very conservative to identify only obvious components related to motion
         or noise.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The functional image registration was optimized according to a two-step
         procedure. All volumes of the functional images were averaged within
@@ -1976,30 +3630,30 @@ content:
         functional images were nonlinearly registered to this common template
         using FNIRT tool from FSL. The registered brains were visually inspected
         to ensure optimal registration.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         On average, relative head motion was relatively low (mean frame
         displacement (FD) = 0.11; STD 0.07 for the first fMRI run, and mean FD =
         0.11; STD 0.09 for the second run). Importantly, between-subject head
         motion was not related with any of the neurotraits (see below).
-    type: Paragraph
-  - content:
-      - Parcellation schemes
-    depth: 3
+  - type: Heading
     id: sec027
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Parcellation schemes
+  - type: Paragraph
+    content:
       - 'The main parcellation scheme was the same as the one used in ['
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. The brain was divided into 264 spherical ROIs (5-mm radius) located
         at coordinates showing reliable activity across a set of tasks and from
         the center of gravity of cortical patches constructed from resting state
         functional connectivity[
-      - target: '#pbio.3000349.ref033'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref033'
       - >-
         ]. In addition, 5-mm radius ROIs were manually added in the bilateral
         amygdala, anterior hippocampus, posterior hippocampus, and NAc. Linear
@@ -2008,33 +3662,33 @@ content:
         time courses were extracted to calculate a 272 x 272 correlation matrix.
         These matrices were used for connectome-based modeling, as described
         below.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         A second parcellation scheme was used to test the robustness of the
         cross-validation results. We used 400 ROIs from [
-      - target: '#pbio.3000349.ref034'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref034'
       - >-
         ] varying from the Power parcellation scheme in the shape and the number
         of ROIs (
-      - content:
-          - S2 Fig
-        target: '#pbio.3000349.s002'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s002'
+        content:
+          - S2 Fig
       - >-
         ). In this parcellation scheme, every voxel was included in one ROI and
         the ROIs were defined from task and resting state functional
         connectivity. Unlike the Power atlas, the Schaefer atlas did not cover
         the subcortical structures and the cerebellum.
-    type: Paragraph
-  - content:
-      - Exclusion of participants
-    depth: 3
+  - type: Heading
     id: sec028
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Exclusion of participants
+  - type: Paragraph
+    content:
       - >-
         One patient was excluded from all fMRI analyses because of aberrant
         values in the correlation matrix (values were above 20 STD from the
@@ -2042,18 +3696,18 @@ content:
         and was never included in any of the analyses (including the behavioral
         analyses). This subject was already identified as problematic and
         excluded in [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         A second participant was excluded because of signal dropout in ROIs near
         the ventricle. This participant was included in our previous placebo
         study because we previously limited our analyses to 122 a priori
         selected ROIs [
-      - target: '#pbio.3000349.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pbio.3000349.ref029'
       - >-
         ]. Here, we used the whole 272 ROIs and had to exclude this participant.
         The final sample size for brain imaging collected at V2 was therefore 
@@ -2061,20 +3715,20 @@ content:
         content:
           - 'n'
       - ' = 61.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'The longitudinal data included a total of '
       - type: Emphasis
         content:
           - 'n'
       - ' = 56 patients that passed quality check for each one of the four brain-imaging sessions.'
-    type: Paragraph
-  - content:
-      - Connectome-based modeling
-    depth: 2
+  - type: Heading
     id: sec029
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Connectome-based modeling
+  - type: Paragraph
+    content:
       - >-
         We used a validated data-driven protocol to determine behaviors (chronic
         pain trait scores) from brain connectivity measures between the ROIs of
@@ -2083,25 +3737,25 @@ content:
         of the sample). The training set was used to build the model, which was
         then applied to the testing set. We defined the traits using a principal
         component analysis applied to the full sample (as in 
-      - content:
-          - Fig 1
-        target: '#pbio.3000349.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g001'
+        content:
+          - Fig 1
       - >-
         ) and did not applied data reduction within the training set prior to
         applying it to the test set. The robustness of the components was
         instead evaluated using a totally independent group of 46 chronic pain
         patients without brain imaging. The consistency of the principal
         components across data sets can be appreciated in 
-      - content:
-          - S1 Fig
-        target: '#pbio.3000349.s001'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s001'
+        content:
+          - S1 Fig
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         To train our model, we used robust regression between each one of the
         36,856 connections with score on Pain-trait and Emote-trait (
@@ -2113,16 +3767,16 @@ content:
         content:
           - 'n'
       - ' − 1 iterations. The end result was a number of stable edges positively or negatively correlating with Pain-trait score and Emote-trait. These edges’ strengths were summed to generate a single value, tracking each subject’s trait score.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         To determine chronic pain traits in new subjects, we extracted the
         summed strength of edges identified in the training set from the brain
         connectivity data in the testing set. This cross-validation procedure
         was repeated for the three folds, rotating, and substituting the 1/3 of
         the patients used in the test set.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Two steps were used to ensure that motion did not influence the
         predictive patterns of brain connectivity. The first one was performed
@@ -2228,49 +3882,49 @@ content:
         content:
           - P
       - ' < 0.001).'
-    type: Paragraph
-  - content:
-      - ICC
-    depth: 2
+  - type: Heading
     id: sec030
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - ICC
+  - type: Paragraph
+    content:
       - >-
         We computed the ICC for each neurotrait using a two-way random model in
         SPSS to assess the absolute consistency of the metric across all four
         scans.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'The numerical data are available in '
-      - content:
-          - S1 Data
-        target: '#pbio.3000349.s009'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pbio.3000349.s009'
+        content:
+          - S1 Data
       - ', the raw data are available at '
-      - content:
-          - 'http://www.openpain.org/placebo_1/'
+      - type: Link
         target: 'http://www.openpain.org/placebo_1/'
-        type: Link
+        content:
+          - 'http://www.openpain.org/placebo_1/'
       - ', and the code is available at '
-      - content:
-          - 'https://github.com/EtienneVP'
+      - type: Link
         target: 'https://github.com/EtienneVP'
-        type: Link
+        content:
+          - 'https://github.com/EtienneVP'
       - .
-    type: Paragraph
-  - content:
+  - type: Heading
+    id: sec031
+    depth: 1
+    content:
       - Supporting information
-    depth: 1
-    id: sec031
-    type: Heading
   - S1 Fig
-  - content:
-      - Number of components from the PCA and correspondence between the groups.
-    depth: 1
+  - type: Heading
     id: sec031
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Number of components from the PCA and correspondence between the groups.
+  - type: Paragraph
+    content:
       - >-
         A. PCA was performed in Group 1 and Group 2 separately. The components
         with eigenvalues greater than 2.0 (symbols in red) were retained and
@@ -2281,23 +3935,23 @@ content:
         (validation). Scatterplots show strong correspondences between loading
         values of each component, across the two groups (validation). CBP,
         chronic back pain; PCA, principal component analysis.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S2 Fig
-  - content:
-      - Cross-parcellation reproducibility.
-    depth: 1
+  - type: Heading
     id: sec031
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Cross-parcellation reproducibility.
+  - type: Paragraph
+    content:
       - 'A–B. The Power atlas used to derive the neurotraits as presented in '
-      - content:
-          - Fig 3
-        target: '#pbio.3000349.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g003'
+        content:
+          - Fig 3
       - >-
         . C. The Schaefer atlas was used as a second atlas to test the
         robustness of our results. D. Pain-trait was determined from both
@@ -2353,19 +4007,19 @@ content:
         content:
           - P
       - ' < 0.001.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S3 Fig
-  - content:
+  - type: Heading
+    id: sec031
+    depth: 1
+    content:
       - >-
         Other measures of socioeconomic status related with income (displayed
         when pooling Group 1 and Group 2).
-    depth: 1
-    id: sec031
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Income depended on race/ethnicity (A) and education (B). HA, AA, WA, HS
         (≤12 [yoe]), AD (12 yoe > AD < 16 yoe), BD (≥16 yoe). All post-hoc
@@ -2381,17 +4035,17 @@ content:
         content:
           - P
       - ' < 0.01. AA, African American; AD, Associate degree; BD, Bachelor’s degree; HA, Hispanic American, HS, high school; WA, White American; yoe, years of education.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S4 Fig
-  - content:
-      - Traits predisposing patients’ responses to placebo pills.
-    depth: 1
+  - type: Heading
     id: sec031
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Traits predisposing patients’ responses to placebo pills.
+  - type: Paragraph
+    content:
       - >-
         Character-trait and Aware-trait predisposed patients to the placebo
         response (% analgesia). Correlation 
@@ -2403,17 +4057,17 @@ content:
         content:
           - P
       - ' < 0.05.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S1 Table
-  - content:
-      - Basic demographics for both groups.
-    depth: 1
+  - type: Heading
     id: sec031
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Basic demographics for both groups.
+  - type: Paragraph
+    content:
       - 'Group 1 was on average 5 years younger than Group 2 (unpaired '
       - type: Emphasis
         content:
@@ -2431,1725 +4085,71 @@ content:
         content:
           - P
       - ' = 0.03). There were no significant differences between the groups for gender, pain duration, or education level.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (PDF)
-    type: Paragraph
   - S2 Table
-  - content:
+  - type: Heading
+    id: sec031
+    depth: 1
+    content:
       - >-
         List of questionnaires administered to patients for profiling
         psychological factors and personality traits.
-    depth: 1
-    id: sec031
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Thirteen self-report measures (36 measures total if divided into
         respective subscales) were completed at designated visits in the study.
         The names and abbreviation are provided for each questionnaire, along
         with the rationale for why each measure was included in our battery.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (DOCX)
-    type: Paragraph
   - S3 Table
-  - content:
+  - type: Heading
+    id: sec031
+    depth: 1
+    content:
       - >-
         Baseline values of back pain characteristics in both CBP groups prior to
         treatment.
-    depth: 1
-    id: sec031
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - >-
         There were no differences in absolute scores of pain measurements
         between the groups, with the exception of physical health (SF-12p),
         which was higher in Group 1 than in Group 2. CBP, chronic back pain.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (PDF)
-    type: Paragraph
   - S4 Table
-  - content:
+  - type: Heading
+    id: sec031
+    depth: 1
+    content:
       - 'Details of statistical tests for results shown in Figs '
-      - content:
-          - '1'
+      - type: Link
+        relation: fig
         target: '#pbio.3000349.g001'
-        relation: fig
-        type: Link
+        content:
+          - '1'
       - –
-      - content:
-          - '6'
-        target: '#pbio.3000349.g006'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pbio.3000349.g006'
+        content:
+          - '6'
       - .
-    depth: 1
-    id: sec031
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - (PDF)
-    type: Paragraph
   - S1 Data
-  - content:
-      - Data underlying figures.
-    depth: 1
+  - type: Heading
     id: sec031
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Data underlying figures.
+  - type: Paragraph
+    content:
       - (XLSX)
-    type: Paragraph
-references:
-  - authors:
-      - givenNames:
-          - E
-        familyNames:
-          - Vachon-Presseau
-        type: Person
-      - givenNames:
-          - MV
-        familyNames:
-          - Centeno
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Ren
-        type: Person
-      - givenNames:
-          - SE
-        familyNames:
-          - Berger
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Tétreault
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Ghantous
-        type: Person
-    title: The Emotional Brain as a Predictor and Amplifier of Chronic Pain
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      pageStart: 605
-      pageEnd: 612
-      title: J Dent Res
-      volumeNumber: 95
-      type: PublicationVolume
-    id: pbio.3000349.ref001
-  - authors:
-      - givenNames:
-          - MN
-        familyNames:
-          - Baliki
-        type: Person
-      - givenNames:
-          - AV
-        familyNames:
-          - Apkarian
-        type: Person
-    title: 'Nociception, Pain, Negative Moods, and Behavior Selection'
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 474
-      pageEnd: 91
-      title: Neuron
-      volumeNumber: 87
-      type: PublicationVolume
-    id: pbio.3000349.ref002
-  - authors:
-      - givenNames:
-          - DC
-        familyNames:
-          - Turk
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Okifuji
-        type: Person
-    title: 'Psychological factors in chronic pain: evolution and revolution'
-    type: Article
-    datePublished: '2002'
-    isPartOf:
-      pageStart: 678
-      pageEnd: 90
-      title: J Consult Clin Psychol
-      volumeNumber: 70
-      type: PublicationVolume
-    id: pbio.3000349.ref003
-  - authors:
-      - givenNames:
-          - EL
-        familyNames:
-          - Poleshuck
-        type: Person
-      - givenNames:
-          - CR
-        familyNames:
-          - Green
-        type: Person
-    title: Socioeconomic disadvantage and pain
-    type: Article
-    datePublished: '2008'
-    isPartOf:
-      pageStart: 235
-      pageEnd: 8
-      title: Pain
-      volumeNumber: 136
-      type: PublicationVolume
-    id: pbio.3000349.ref004
-  - authors:
-      - givenNames:
-          - SJ
-        familyNames:
-          - Kamper
-        type: Person
-      - givenNames:
-          - AT
-        familyNames:
-          - Apeldoorn
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Chiarotto
-        type: Person
-      - givenNames:
-          - RJ
-        familyNames:
-          - Smeets
-        type: Person
-      - givenNames:
-          - RW
-        familyNames:
-          - Ostelo
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Guzman
-        type: Person
-    title: Multidisciplinary biopsychosocial rehabilitation for chronic low back pain
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      title: Cochrane Database Syst Rev
-      type: PublicationVolume
-    id: pbio.3000349.ref005
-  - authors:
-      - givenNames:
-          - MRA
-        familyNames:
-          - Muscatello
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Bruno
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Mento
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Pandolfo
-        type: Person
-      - givenNames:
-          - RA
-        familyNames:
-          - Zoccali
-        type: Person
-    title: Personality traits and emotional patterns in irritable bowel syndrome
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      pageStart: 6402
-      pageEnd: 6415
-      title: World Journal of Gastroenterology
-      volumeNumber: 22
-      type: PublicationVolume
-    id: pbio.3000349.ref006
-  - authors:
-      - givenNames:
-          - C
-        familyNames:
-          - Conversano
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Marchi
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Rebecca
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Carmassi
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Contena
-        type: Person
-      - givenNames:
-          - LM
-        familyNames:
-          - Bazzichi
-        type: Person
-    title: >-
-      Personality Traits in Fibromyalgia (FM): Does FM Personality Exists? A
-      Systematic Review
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 223
-      pageEnd: 232
-      title: Clin Pract Epidemiol Ment Health
-      volumeNumber: 14
-      type: PublicationVolume
-    id: pbio.3000349.ref007
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Johannsen
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Frederiksen
-        type: Person
-      - givenNames:
-          - AB
-        familyNames:
-          - Jensen
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Zachariae
-        type: Person
-    title: >-
-      Psychosocial predictors of posttreatment pain after nonmetastatic breast
-      cancer treatment: a systematic review and meta-analysis of prospective
-      studies
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: Journal of Pain Research
-      type: PublicationVolume
-    id: pbio.3000349.ref008
-  - authors:
-      - givenNames:
-          - SM
-        familyNames:
-          - Meints
-        type: Person
-      - givenNames:
-          - RR
-        familyNames:
-          - Edwards
-        type: Person
-    title: Evaluating psychosocial contributions to chronic pain outcomes
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 168
-      pageEnd: 182
-      title: Progress in Neuro-Psychopharmacology and Biological Psychiatry
-      volumeNumber: 87
-      type: PublicationVolume
-    id: pbio.3000349.ref009
-  - authors:
-      - givenNames:
-          - B
-        familyNames:
-          - Naylor
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Boag
-        type: Person
-      - givenNames:
-          - SM
-        familyNames:
-          - Gustin
-        type: Person
-    title: >-
-      New evidence for a pain personality? A critical review of the last 120
-      years of pain and personality
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      pageStart: 58
-      pageEnd: 67
-      title: Scand J Pain
-      volumeNumber: 17
-      type: PublicationVolume
-    id: pbio.3000349.ref010
-  - authors:
-      - givenNames:
-          - MJ
-        familyNames:
-          - Sullivan
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Thorn
-        type: Person
-      - givenNames:
-          - JA
-        familyNames:
-          - Haythornthwaite
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Keefe
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Martin
-        type: Person
-      - givenNames:
-          - LA
-        familyNames:
-          - Bradley
-        type: Person
-    title: Theoretical perspectives on the relation between catastrophizing and pain
-    type: Article
-    datePublished: '2001'
-    isPartOf:
-      pageStart: 52
-      pageEnd: 64
-      title: Clin J Pain
-      volumeNumber: 17
-      type: PublicationVolume
-    id: pbio.3000349.ref011
-  - authors:
-      - givenNames:
-          - JW
-        familyNames:
-          - Vlaeyen
-        type: Person
-      - givenNames:
-          - SJ
-        familyNames:
-          - Linton
-        type: Person
-    title: >-
-      Fear-avoidance and its consequences in chronic musculoskeletal pain: a
-      state of the art
-    type: Article
-    datePublished: '2000'
-    isPartOf:
-      pageStart: 317
-      pageEnd: 332
-      title: Pain
-      volumeNumber: 85
-      type: PublicationVolume
-    id: pbio.3000349.ref012
-  - authors:
-      - givenNames:
-          - LM
-        familyNames:
-          - McCracken
-        type: Person
-    title: >-
-      Learning to live with the pain: acceptance of pain predicts adjustment in
-      persons with chronic pain
-    type: Article
-    datePublished: '1998'
-    isPartOf:
-      pageStart: 21
-      pageEnd: 27
-      title: Pain
-      volumeNumber: 74
-      type: PublicationVolume
-    id: pbio.3000349.ref013
-  - authors:
-      - givenNames:
-          - LR
-        familyNames:
-          - Goldberg
-        type: Person
-    title: The development of markers for the Big-Five factor structure
-    type: Article
-    datePublished: '1992'
-    isPartOf:
-      pageStart: 26
-      pageEnd: 42
-      title: Psychological Assessment
-      volumeNumber: 4
-      type: PublicationVolume
-    id: pbio.3000349.ref014
-  - authors:
-      - givenNames:
-          - L
-        familyNames:
-          - Goubert
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Crombez
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Van
-          - Damme
-        type: Person
-    title: >-
-      The role of neuroticism, pain catastrophizing and pain-related fear in
-      vigilance to pain: a structural equations approach
-    type: Article
-    datePublished: '2004'
-    isPartOf:
-      pageStart: 234
-      pageEnd: 41
-      title: Pain
-      volumeNumber: 107
-      type: PublicationVolume
-    id: pbio.3000349.ref015
-  - authors:
-      - givenNames:
-          - JW
-        familyNames:
-          - Griffith
-        type: Person
-      - givenNames:
-          - RE
-        familyNames:
-          - Zinbarg
-        type: Person
-      - givenNames:
-          - MG
-        familyNames:
-          - Craske
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Mineka
-        type: Person
-      - givenNames:
-          - RD
-        familyNames:
-          - Rose
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Waters
-        type: Person
-    title: Neuroticism as a common dimension in the internalizing disorders
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      pageStart: 1125
-      pageEnd: 36
-      title: Psychol Med
-      volumeNumber: 40
-      type: PublicationVolume
-    id: pbio.3000349.ref016
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Kotov
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Gamez
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Schmidt
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Watson
-        type: Person
-    title: >-
-      Linking “big” personality traits to anxiety, depressive, and substance use
-      disorders: a meta-analysis
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      pageStart: 768
-      pageEnd: 821
-      title: Psychol Bull
-      volumeNumber: 136
-      type: PublicationVolume
-    id: pbio.3000349.ref017
-  - authors:
-      - givenNames:
-          - BR
-        familyNames:
-          - Goodin
-        type: Person
-      - givenNames:
-          - HW
-        familyNames:
-          - Bulls
-        type: Person
-    title: >-
-      Optimism and the experience of pain: benefits of seeing the glass as half
-      full
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      pageStart: 329
-      title: Curr Pain Headache Rep
-      volumeNumber: 17
-      type: PublicationVolume
-    id: pbio.3000349.ref018
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Kabat-Zinn
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Lipworth
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Burney
-        type: Person
-    title: >-
-      The clinical use of mindfulness meditation for the self-regulation of
-      chronic pain
-    type: Article
-    datePublished: '1985'
-    isPartOf:
-      pageStart: 163
-      pageEnd: 90
-      title: J Behav Med
-      volumeNumber: 8
-      type: PublicationVolume
-    id: pbio.3000349.ref019
-  - authors:
-      - givenNames:
-          - LM
-        familyNames:
-          - McCracken
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Gauntlett-Gilbert
-        type: Person
-      - givenNames:
-          - KE
-        familyNames:
-          - Vowles
-        type: Person
-    title: >-
-      The role of mindfulness in a contextual cognitive-behavioral analysis of
-      chronic pain-related suffering and disability
-    type: Article
-    datePublished: '2007'
-    isPartOf:
-      pageStart: 63
-      pageEnd: 9
-      title: Pain
-      volumeNumber: 131
-      type: PublicationVolume
-    id: pbio.3000349.ref020
-  - authors:
-      - givenNames:
-          - WE
-        familyNames:
-          - Mehling
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Wrubel
-        type: Person
-      - givenNames:
-          - JJ
-        familyNames:
-          - Daubenmier
-        type: Person
-      - givenNames:
-          - CJ
-        familyNames:
-          - Price
-        type: Person
-      - givenNames:
-          - CE
-        familyNames:
-          - Kerr
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Silow
-        type: Person
-    title: >-
-      Body Awareness: a phenomenological inquiry into the common ground of
-      mind-body therapies
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 6
-      title: Philos Ethics Humanit Med
-      volumeNumber: 6
-      type: PublicationVolume
-    id: pbio.3000349.ref021
-  - authors:
-      - givenNames:
-          - G
-        familyNames:
-          - Crombez
-        type: Person
-      - givenNames:
-          - JW
-        familyNames:
-          - Vlaeyen
-        type: Person
-      - givenNames:
-          - PH
-        familyNames:
-          - Heuts
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Lysens
-        type: Person
-    title: >-
-      Pain-related fear is more disabling than pain itself: evidence on the role
-      of pain-related fear in chronic back pain disability
-    type: Article
-    datePublished: '1999'
-    isPartOf:
-      pageStart: 329
-      pageEnd: 339
-      title: Pain
-      volumeNumber: 80
-      type: PublicationVolume
-    id: pbio.3000349.ref022
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Kucyi
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Moayedi
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - Weissman-Fogel
-        type: Person
-      - givenNames:
-          - MB
-        familyNames:
-          - Goldberg
-        type: Person
-      - givenNames:
-          - BV
-        familyNames:
-          - Freeman
-        type: Person
-      - givenNames:
-          - HC
-        familyNames:
-          - Tenenbaum
-        type: Person
-    title: >-
-      Enhanced medial prefrontal-default mode network functional connectivity in
-      chronic pain and its association with pain rumination
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 3969
-      pageEnd: 75
-      title: J Neurosci
-      volumeNumber: 34
-      type: PublicationVolume
-    id: pbio.3000349.ref023
-  - authors:
-      - givenNames:
-          - CS
-        familyNames:
-          - Hubbard
-        type: Person
-      - givenNames:
-          - SA
-        familyNames:
-          - Khan
-        type: Person
-      - givenNames:
-          - ML
-        familyNames:
-          - Keaser
-        type: Person
-      - givenNames:
-          - VA
-        familyNames:
-          - Mathur
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Goyal
-        type: Person
-      - givenNames:
-          - DA
-        familyNames:
-          - Seminowicz
-        type: Person
-    title: >-
-      Altered Brain Structure and Function Correlate with Disease Severity and
-      Pain Catastrophizing in Migraine Patients
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      title: eNeuro
-      volumeNumber: 1
-      type: PublicationVolume
-    id: pbio.3000349.ref024
-  - authors:
-      - givenNames:
-          - ML
-        familyNames:
-          - Loggia
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Berna
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Kim
-        type: Person
-      - givenNames:
-          - CM
-        familyNames:
-          - Cahalan
-        type: Person
-      - givenNames:
-          - MO
-        familyNames:
-          - Martel
-        type: Person
-      - givenNames:
-          - RL
-        familyNames:
-          - Gollub
-        type: Person
-    title: >-
-      The lateral prefrontal cortex mediates the hyperalgesic effects of
-      negative cognitions in chronic pain patients
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 692
-      pageEnd: 9
-      title: J Pain
-      volumeNumber: 16
-      type: PublicationVolume
-    id: pbio.3000349.ref025
-  - authors:
-      - givenNames:
-          - GJ
-        familyNames:
-          - Macfarlane
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Norrie
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Atherton
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Power
-        type: Person
-      - givenNames:
-          - GT
-        familyNames:
-          - Jones
-        type: Person
-    title: >-
-      The influence of socioeconomic status on the reporting of regional and
-      widespread musculoskeletal pain: results from the 1958 British Birth
-      Cohort Study
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      pageStart: 1591
-      pageEnd: 5
-      title: Ann Rheum Dis
-      volumeNumber: 68
-      type: PublicationVolume
-    id: pbio.3000349.ref026
-  - authors:
-      - givenNames:
-          - TE
-        familyNames:
-          - Dorner
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Muckenhuber
-        type: Person
-      - givenNames:
-          - WJ
-        familyNames:
-          - Stronegger
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Rasky
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Gustorff
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Freidl
-        type: Person
-    title: >-
-      The impact of socio-economic status on pain and the perception of
-      disability due to pain
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 103
-      pageEnd: 9
-      title: Eur J Pain
-      volumeNumber: 15
-      type: PublicationVolume
-    id: pbio.3000349.ref027
-  - authors:
-      - givenNames:
-          - JN
-        familyNames:
-          - Katz
-        type: Person
-    title: >-
-      Lumbar disc disorders and low-back pain: socioeconomic factors and
-      consequences
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      pageStart: 21
-      pageEnd: 4
-      isPartOf:
-        title: J Bone Joint Surg Am
-        volumeNumber: 88
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pbio.3000349.ref028
-  - authors:
-      - givenNames:
-          - E
-        familyNames:
-          - Vachon-Presseau
-        type: Person
-      - givenNames:
-          - SE
-        familyNames:
-          - Berger
-        type: Person
-      - givenNames:
-          - TB
-        familyNames:
-          - Abdullah
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Huang
-        type: Person
-      - givenNames:
-          - GA
-        familyNames:
-          - Cecchi
-        type: Person
-      - givenNames:
-          - JW
-        familyNames:
-          - Griffith
-        type: Person
-    title: >-
-      Brain and psychological determinants of placebo pill response in chronic
-      pain patients
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 3397
-      title: Nature Communications
-      volumeNumber: 9
-      type: PublicationVolume
-    id: pbio.3000349.ref029
-  - authors:
-      - givenNames:
-          - RC
-        familyNames:
-          - Craddock
-        type: Person
-      - givenNames:
-          - RL
-        familyNames:
-          - Tungaraza
-        type: Person
-      - givenNames:
-          - MP
-        familyNames:
-          - Milham
-        type: Person
-    title: >-
-      Connectomics and new approaches for analyzing human brain functional
-      connectivity
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      title: Gigascience
-      volumeNumber: 4
-      type: PublicationVolume
-    id: pbio.3000349.ref030
-  - authors:
-      - givenNames:
-          - MD
-        familyNames:
-          - Fox
-        type: Person
-    title: Mapping Symptoms to Brain Networks with the Human Connectome
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 2237
-      pageEnd: 2245
-      title: New England Journal of Medicine
-      volumeNumber: 379
-      type: PublicationVolume
-    id: pbio.3000349.ref031
-  - authors:
-      - givenNames:
-          - X
-        familyNames:
-          - Shen
-        type: Person
-      - givenNames:
-          - ES
-        familyNames:
-          - Finn
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Scheinost
-        type: Person
-      - givenNames:
-          - MD
-        familyNames:
-          - Rosenberg
-        type: Person
-      - givenNames:
-          - MM
-        familyNames:
-          - Chun
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Papademetris
-        type: Person
-    title: >-
-      Using connectome-based predictive modeling to predict individual behavior
-      from brain connectivity
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      pageStart: 506
-      pageEnd: 518
-      title: Nat Protoc
-      volumeNumber: 12
-      type: PublicationVolume
-    id: pbio.3000349.ref032
-  - authors:
-      - givenNames:
-          - JD
-        familyNames:
-          - Power
-        type: Person
-      - givenNames:
-          - AL
-        familyNames:
-          - Cohen
-        type: Person
-      - givenNames:
-          - SM
-        familyNames:
-          - Nelson
-        type: Person
-      - givenNames:
-          - GS
-        familyNames:
-          - Wig
-        type: Person
-      - givenNames:
-          - KA
-        familyNames:
-          - Barnes
-        type: Person
-      - givenNames:
-          - JA
-        familyNames:
-          - Church
-        type: Person
-    title: Functional network organization of the human brain
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 665
-      pageEnd: 78
-      title: Neuron
-      volumeNumber: 72
-      type: PublicationVolume
-    id: pbio.3000349.ref033
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Schaefer
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Kong
-        type: Person
-      - givenNames:
-          - EM
-        familyNames:
-          - Gordon
-        type: Person
-      - givenNames:
-          - TO
-        familyNames:
-          - Laumann
-        type: Person
-      - givenNames:
-          - X-N
-        familyNames:
-          - Zuo
-        type: Person
-      - givenNames:
-          - AJ
-        familyNames:
-          - Holmes
-        type: Person
-    title: >-
-      Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic
-      Functional Connectivity MRI
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 3095
-      pageEnd: 3114
-      title: Cerebral Cortex
-      volumeNumber: 28
-      type: PublicationVolume
-    id: pbio.3000349.ref034
-  - authors:
-      - givenNames:
-          - X-X
-        familyNames:
-          - Xing
-        type: Person
-      - givenNames:
-          - X-N
-        familyNames:
-          - Zuo
-        type: Person
-    title: 'The anatomy of reliability: a must read for future human brain mapping'
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 1606
-      pageEnd: 1607
-      title: Science Bulletin
-      volumeNumber: 63
-      type: PublicationVolume
-    id: pbio.3000349.ref035
-  - authors:
-      - givenNames:
-          - RJ
-        familyNames:
-          - Gatchel
-        type: Person
-      - givenNames:
-          - DD
-        familyNames:
-          - McGeary
-        type: Person
-      - givenNames:
-          - CA
-        familyNames:
-          - McGeary
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Lippe
-        type: Person
-    title: 'Interdisciplinary chronic pain management: past, present, and future'
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 119
-      pageEnd: 130
-      title: Am Psychol
-      volumeNumber: 69
-      type: PublicationVolume
-    id: pbio.3000349.ref036
-  - authors:
-      - givenNames:
-          - JA
-        familyNames:
-          - Haythornthwaite
-        type: Person
-      - givenNames:
-          - LM
-        familyNames:
-          - Benrud-Larson
-        type: Person
-    title: Psychological aspects of neuropathic pain
-    type: Article
-    datePublished: '2000'
-    isPartOf:
-      pageEnd: 5
-      title: Clin J Pain
-      volumeNumber: 16
-      type: PublicationVolume
-    id: pbio.3000349.ref037
-  - authors:
-      - givenNames:
-          - MP
-        familyNames:
-          - Jensen
-        type: Person
-      - givenNames:
-          - DC
-        familyNames:
-          - Turk
-        type: Person
-    title: >-
-      Contributions of psychology to the understanding and treatment of people
-      with chronic pain: why it matters to ALL psychologists
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 105
-      pageEnd: 118
-      title: Am Psychol
-      volumeNumber: 69
-      type: PublicationVolume
-    id: pbio.3000349.ref038
-  - authors:
-      - givenNames:
-          - RR
-        familyNames:
-          - Edwards
-        type: Person
-      - givenNames:
-          - RH
-        familyNames:
-          - Dworkin
-        type: Person
-      - givenNames:
-          - MD
-        familyNames:
-          - Sullivan
-        type: Person
-      - givenNames:
-          - DC
-        familyNames:
-          - Turk
-        type: Person
-      - givenNames:
-          - AD
-        familyNames:
-          - Wasan
-        type: Person
-    title: >-
-      The Role of Psychosocial Processes in the Development and Maintenance of
-      Chronic Pain
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      pageEnd: 92
-      title: J Pain
-      volumeNumber: 17
-      type: PublicationVolume
-    id: pbio.3000349.ref039
-  - authors:
-      - givenNames:
-          - GW
-        familyNames:
-          - Allport
-        type: Person
-    title: ''
-    type: Article
-    datePublished: '1961'
-    id: pbio.3000349.ref040
-  - authors:
-      - givenNames:
-          - DJ
-        familyNames:
-          - Ozer
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Benet-Martínez
-        type: Person
-    title: Personality and the Prediction of Consequential Outcomes
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      pageStart: 401
-      pageEnd: 421
-      title: Annual Review of Psychology
-      volumeNumber: 57
-      type: PublicationVolume
-    id: pbio.3000349.ref041
-  - authors:
-      - givenNames:
-          - PA
-        familyNames:
-          - Kragel
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Koban
-        type: Person
-      - givenNames:
-          - LF
-        familyNames:
-          - Barrett
-        type: Person
-      - givenNames:
-          - TD
-        familyNames:
-          - Wager
-        type: Person
-    title: >-
-      Representation, Pattern Information, and Brain Signatures: From Neurons to
-      Neuroimaging
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 257
-      pageEnd: 273
-      title: Neuron
-      volumeNumber: 99
-      type: PublicationVolume
-    id: pbio.3000349.ref042
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Mansour
-        type: Person
-      - givenNames:
-          - AT
-        familyNames:
-          - Baria
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Tetreault
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Vachon-Presseau
-        type: Person
-      - givenNames:
-          - P-C
-        familyNames:
-          - Chang
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Huang
-        type: Person
-    title: 'Global disruption of degree rank order: a hallmark of chronic pain'
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      pageStart: 34853
-      title: Sci Rep
-      volumeNumber: 6
-      type: PublicationVolume
-    id: pbio.3000349.ref043
-  - authors:
-      - givenNames:
-          - ML
-        familyNames:
-          - Loggia
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Kim
-        type: Person
-      - givenNames:
-          - RL
-        familyNames:
-          - Gollub
-        type: Person
-      - givenNames:
-          - MG
-        familyNames:
-          - Vangel
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - Kirsch
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Kong
-        type: Person
-    title: >-
-      Default mode network connectivity encodes clinical pain: an arterial spin
-      labeling study
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      pageStart: 24
-      pageEnd: 33
-      title: Pain
-      volumeNumber: 154
-      type: PublicationVolume
-    id: pbio.3000349.ref044
-  - authors:
-      - givenNames:
-          - MN
-        familyNames:
-          - Baliki
-        type: Person
-      - givenNames:
-          - AR
-        familyNames:
-          - Mansour
-        type: Person
-      - givenNames:
-          - AT
-        familyNames:
-          - Baria
-        type: Person
-      - givenNames:
-          - AV
-        familyNames:
-          - Apkarian
-        type: Person
-    title: >-
-      Functional reorganization of the default mode network across chronic pain
-      conditions
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      title: PLoS ONE
-      volumeNumber: 9
-      type: PublicationVolume
-    id: pbio.3000349.ref045
-  - authors:
-      - givenNames:
-          - V
-        familyNames:
-          - Napadow
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - LaCount
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Park
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - As-Sanie
-        type: Person
-      - givenNames:
-          - DJ
-        familyNames:
-          - Clauw
-        type: Person
-      - givenNames:
-          - RE
-        familyNames:
-          - Harris
-        type: Person
-    title: >-
-      Intrinsic brain connectivity in fibromyalgia is associated with chronic
-      pain intensity
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      pageStart: 2545
-      pageEnd: 55
-      title: Arthritis Rheum
-      volumeNumber: 62
-      type: PublicationVolume
-    id: pbio.3000349.ref046
-  - authors:
-      - givenNames:
-          - MN
-        familyNames:
-          - Baliki
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Petre
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Torbey
-        type: Person
-      - givenNames:
-          - KM
-        familyNames:
-          - Herrmann
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Huang
-        type: Person
-      - givenNames:
-          - TJ
-        familyNames:
-          - Schnitzer
-        type: Person
-    title: >-
-      Corticostriatal functional connectivity predicts transition to chronic
-      back pain
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      pageStart: 1117
-      pageEnd: 1119
-      title: Nature Neuroscience
-      volumeNumber: 15
-      type: PublicationVolume
-    id: pbio.3000349.ref047
-  - authors:
-      - givenNames:
-          - E
-        familyNames:
-          - Navratilova
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Porreca
-        type: Person
-    title: Reward and motivation in pain and pain relief
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 1304
-      pageEnd: 12
-      title: Nat Neurosci
-      volumeNumber: 17
-      type: PublicationVolume
-    id: pbio.3000349.ref048
-  - authors:
-      - givenNames:
-          - W
-        familyNames:
-          - Ren
-        type: Person
-      - givenNames:
-          - MV
-        familyNames:
-          - Centeno
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Berger
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Wu
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Na
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Liu
-        type: Person
-    title: >-
-      The indirect pathway of the nucleus accumbens shell amplifies neuropathic
-      pain
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      pageStart: 220
-      pageEnd: 2
-      title: Nat Neurosci
-      volumeNumber: 19
-      type: PublicationVolume
-    id: pbio.3000349.ref049
-  - authors:
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Schwartz
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Temkin
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Jurado
-        type: Person
-      - givenNames:
-          - BK
-        familyNames:
-          - Lim
-        type: Person
-      - givenNames:
-          - BD
-        familyNames:
-          - Heifets
-        type: Person
-      - givenNames:
-          - JS
-        familyNames:
-          - Polepalli
-        type: Person
-    title: >-
-      Chronic pain. Decreased motivation during chronic pain requires long-term
-      depression in the nucleus accumbens
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 535
-      pageEnd: 42
-      title: Science
-      volumeNumber: 345
-      type: PublicationVolume
-    id: pbio.3000349.ref050
-  - authors:
-      - givenNames:
-          - CW
-        familyNames:
-          - Woo
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Roy
-        type: Person
-      - givenNames:
-          - JT
-        familyNames:
-          - Buhle
-        type: Person
-      - givenNames:
-          - TD
-        familyNames:
-          - Wager
-        type: Person
-    title: >-
-      Distinct brain systems mediate the effects of nociceptive input and
-      self-regulation on pain
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      title: PLoS Biol
-      volumeNumber: 13
-      type: PublicationVolume
-    id: pbio.3000349.ref051
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Rios
-        type: Person
-      - givenNames:
-          - AJ
-        familyNames:
-          - Zautra
-        type: Person
-    title: >-
-      Socioeconomic disparities in pain: the role of economic hardship and daily
-      financial worry
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 58
-      pageEnd: 66
-      title: Health Psychol
-      volumeNumber: 30
-      type: PublicationVolume
-    id: pbio.3000349.ref052

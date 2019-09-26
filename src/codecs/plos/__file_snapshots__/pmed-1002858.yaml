@@ -1,129 +1,128 @@
+type: Article
 authors:
-  - givenNames:
-      - Stije
-      - J.
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+      - type: Organization
+        name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
     familyNames:
       - Leopold
-    type: Person
+    givenNames:
+      - Stije
+      - J.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
           Medicine, Mahidol University, Bangkok, Thailand
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
-        type: Organization
-  - givenNames:
-      - James
-      - A.
     familyNames:
       - Watson
-    type: Person
+    givenNames:
+      - James
+      - A.
+  - type: Person
     affiliations:
-      - name: >-
-          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
-          Medicine, Mahidol University, Bangkok, Thailand
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
-        type: Organization
-  - givenNames:
-      - Atthanee
     familyNames:
       - Jeeyapant
-    type: Person
+    givenNames:
+      - Atthanee
+  - type: Person
     affiliations:
-      - name: >-
-          Centre for Tropical Medicine and Global Health, Nuffield Department of
-          Medicine, University of Oxford, Oxford, United Kingdom
-        type: Organization
-  - givenNames:
-      - Julie
-      - A.
-    familyNames:
-      - Simpson
-    type: Person
-    affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Centre for Epidemiology and Biostatistics, Melbourne School of
           Population and Global Health, The University of Melbourne, Melbourne,
           Victoria, Australia
-        type: Organization
-  - givenNames:
-      - Nguyen
-      - H.
+    familyNames:
+      - Simpson
+    givenNames:
+      - Julie
+      - A.
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: >-
+          Oxford University Clinical Research Unit, Wellcome Trust Major
+          Overseas Programme, Ho Chi Minh City, Vietnam
     familyNames:
       - Phu
-    type: Person
+    givenNames:
+      - Nguyen
+      - H.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Oxford University Clinical Research Unit, Wellcome Trust Major
           Overseas Programme, Ho Chi Minh City, Vietnam
-        type: Organization
-  - givenNames:
-      - Tran
-      - T.
     familyNames:
       - Hien
-    type: Person
+    givenNames:
+      - Tran
+      - T.
+  - type: Person
     affiliations:
-      - name: >-
-          Oxford University Clinical Research Unit, Wellcome Trust Major
-          Overseas Programme, Ho Chi Minh City, Vietnam
-        type: Organization
-  - givenNames:
+      - type: Organization
+        name: >-
+          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
+          Medicine, Mahidol University, Bangkok, Thailand
+      - type: Organization
+        name: >-
+          Centre for Tropical Medicine and Global Health, Nuffield Department of
+          Medicine, University of Oxford, Oxford, United Kingdom
+    familyNames:
+      - Day
+    givenNames:
       - Nicholas
       - P.
       - J.
-    familyNames:
-      - Day
-    type: Person
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
           Medicine, Mahidol University, Bangkok, Thailand
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
-        type: Organization
-  - givenNames:
-      - Arjen
-      - M.
     familyNames:
       - Dondorp
-    type: Person
+    givenNames:
+      - Arjen
+      - M.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
           Medicine, Mahidol University, Bangkok, Thailand
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Centre for Tropical Medicine and Global Health, Nuffield Department of
           Medicine, University of Oxford, Oxford, United Kingdom
-        type: Organization
-  - givenNames:
-      - Nicholas
-      - J.
     familyNames:
       - White
-    type: Person
-    affiliations:
-      - name: >-
-          Mahidol Oxford Tropical Medicine Research Unit, Faculty of Tropical
-          Medicine, Mahidol University, Bangkok, Thailand
-        type: Organization
-      - name: >-
-          Centre for Tropical Medicine and Global Health, Nuffield Department of
-          Medicine, University of Oxford, Oxford, United Kingdom
-        type: Organization
-title: >-
-  Investigating causal pathways in severe falciparum malaria: A pooled
-  retrospective analysis of clinical studies
+    givenNames:
+      - Nicholas
+      - J.
 description:
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Severe falciparum malaria is a medical emergency characterised by
         potentially lethal vital organ dysfunction. Patient fatality rates even
@@ -133,8 +132,8 @@ description:
         Understanding the causal contributions of clinical and laboratory
         abnormalities to mortality is essential for the design and evaluation of
         novel therapeutic interventions.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We used a structural model causal inference approach to investigate
         causal relationships between epidemiological, laboratory, and clinical
@@ -150,61 +149,1940 @@ description:
         content:
           - 'n'
       - ' = 3,405, 12–87 years) with severe falciparum malaria from 15 countries in Africa and Asia who were studied prospectively over the past 35 years. On admission, patient covariates associated with increased in-hospital mortality were severity of acidosis (odds ratio [OR] 2.10 for a 7-mEq/L increase in base deficit [95% CI 1.93–2.28]), renal impairment (OR 1.71 for a 2-fold increase in blood urea nitrogen [95% CI 1.58, 1.86]), coma (OR 3.59 [95% CI 3.07–4.21]), seizures (OR 1.40 [95% CI 1.16–1.68]), shock (OR 1.51 [95% CI 1.14–1.99]), and presumed pulmonary oedema (OR 1.58 [95% CI 1.04–2.39]). Lower in-hospital mortality was associated with moderate anaemia (OR 0.87 for a decrease of 10 percentage points in haematocrit [95% CI 0.80–0.95]). Circulating parasite density was not associated with mortality (OR 1.02 for a 6-fold increase [95% CI 0.94–1.11]), so the pathological effects of parasitaemia appear to be mediated entirely by the downstream effects of sequestration. Treatment with an artemisinin derivative decreased mortality compared with quinine (OR 0.64 [95% CI 0.56–0.74]). These estimates were consistent across children and adults (mainly representing African and Asian patients, respectively). Using inverse probability weighting, transfusion was not estimated to be beneficial in children with admission haematocrit values between 15% and 25% (OR 0.99 [95% CI 0.97–1.02]). Except for the effects of artemisinin treatment and transfusion, causal interpretations of these estimates could be biased by unmeasured confounding from severe bacterial sepsis, immunity, and duration of illness.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         These data suggest that moderate anaemia is associated with a reduced
         risk of death in severe falciparum malaria. This is possibly a direct
         causal association. The severe anaemia threshold criteria for a
         definition of severe falciparum malaria should be reconsidered.
-    type: Paragraph
-type: Article
+references:
+  - type: Article
+    id: pmed.1002858.ref001
+    authors: []
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Tropical Medicine & International Health
+        volumeNumber: 19
+      pageEnd: 131
+      pageStart: 7
+    title: Severe Malaria
+  - type: Article
+    id: pmed.1002858.ref002
+    authors:
+      - type: Person
+        familyNames:
+          - Norheim
+        givenNames:
+          - OF
+      - type: Person
+        familyNames:
+          - Jha
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Admasu
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Godal
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Hum
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - Kruk
+        givenNames:
+          - ME
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet
+        volumeNumber: 385
+      issueNumber: 9964
+      pageEnd: 252
+      pageStart: 239
+    title: >-
+      Avoiding 40% of the premature deaths in each country, 2010–30: review of
+      national mortality trends to help quantify the UN Sustainable Development
+      Goal for health
+  - type: Article
+    id: pmed.1002858.ref003
+    authors:
+      - type: Person
+        familyNames:
+          - Gomes
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Faiz
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Gyapong
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Warsame
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Agbenyega
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Babiker
+        givenNames:
+          - A
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet
+        volumeNumber: 373
+      issueNumber: 9663
+      pageEnd: 566
+      pageStart: 557
+    title: >-
+      Pre-referral rectal artesunate to prevent death and disability in severe
+      malaria: a placebo-controlled trial
+  - type: Article
+    id: pmed.1002858.ref004
+    authors:
+      - type: Person
+        familyNames:
+          - Keene
+        givenNames:
+          - CM
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Crawley
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Ohuma
+        givenNames:
+          - EO
+      - type: Person
+        familyNames:
+          - Mukaka
+        givenNames:
+          - M
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Clinical Infectious Diseases
+        volumeNumber: 67
+      issueNumber: 7
+      pageEnd: 1062
+      pageStart: 1053
+    title: >-
+      A Competing-Risk Approach for Modeling Length of Stay in Severe Malaria
+      Patients in South-East Asia and the Implications for Planning of Hospital
+      Services
+  - type: Article
+    id: pmed.1002858.ref005
+    authors:
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Nosten
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Stepniewska
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+    datePublished: '2005'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet
+        volumeNumber: 366
+      issueNumber: 9487
+      pageEnd: 725
+      pageStart: 717
+    title: >-
+      Artesunate versus quinine for treatment of severe falciparum malaria: a
+      randomised trial
+  - type: Article
+    id: pmed.1002858.ref006
+    authors:
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Lee
+        givenNames:
+          - SJ
+      - type: Person
+        familyNames:
+          - Faiz
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Mishra
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Price
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Tjitra
+        givenNames:
+          - E
+    datePublished: '2008'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Clinical Infectious Diseases
+        volumeNumber: 47
+      issueNumber: 2
+      pageEnd: 157
+      pageStart: 151
+    title: >-
+      The Relationship between Age and the Manifestations of and Mortality
+      Associated with Severe Malaria
+  - type: Article
+    id: pmed.1002858.ref007
+    authors:
+      - type: Person
+        familyNames:
+          - von
+          - Seidlein
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Olaosebikan
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Hendriksen
+        givenNames:
+          - ICE
+      - type: Person
+        familyNames:
+          - Lee
+        givenNames:
+          - SJ
+      - type: Person
+        familyNames:
+          - Adedoyin
+        givenNames:
+          - OT
+      - type: Person
+        familyNames:
+          - Agbenyega
+        givenNames:
+          - T
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Clinical Infectious Diseases
+        volumeNumber: 54
+      issueNumber: 8
+      pageEnd: 1090
+      pageStart: 1080
+    title: >-
+      Predicting the Clinical Outcome of Severe Falciparum Malaria in African
+      Children: Findings From a Large Randomized Trial
+  - type: Article
+    id: pmed.1002858.ref008
+    authors:
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - Turner
+        givenNames:
+          - GD
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - NP
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Journal of Infectious Diseases
+        volumeNumber: 208
+      issueNumber: 2
+      pageEnd: 198
+      pageStart: 192
+    title: 'Lethal malaria: Marchiafava and Bignami were right'
+  - type: Article
+    id: pmed.1002858.ref009
+    authors:
+      - type: Person
+        familyNames:
+          - Varo
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Crowley
+        givenNames:
+          - VM
+      - type: Person
+        familyNames:
+          - Sitoe
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Madrid
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Serghides
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Kain
+        givenNames:
+          - KC
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Malaria Journal
+        volumeNumber: 17
+      issueNumber: 1
+      pageStart: 47
+    title: 'Adjunctive therapy for severe malaria: a review and critical appraisal'
+  - type: Article
+    id: pmed.1002858.ref010
+    authors:
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - Turner
+        givenNames:
+          - GD
+      - type: Person
+        familyNames:
+          - Medana
+        givenNames:
+          - IM
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - NP
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Trends in Parasitology
+        volumeNumber: 26
+      issueNumber: 1
+      pageEnd: 15
+      pageStart: 11
+    title: The murine cerebral malaria phenomenon
+  - type: Article
+    id: pmed.1002858.ref011
+    authors:
+      - type: Person
+        familyNames:
+          - Phu
+        givenNames:
+          - NH
+      - type: Person
+        familyNames:
+          - Hien
+        givenNames:
+          - TT
+      - type: Person
+        familyNames:
+          - Mai
+        givenNames:
+          - NTH
+      - type: Person
+        familyNames:
+          - Chau
+        givenNames:
+          - TTH
+      - type: Person
+        familyNames:
+          - Chuong
+        givenNames:
+          - LV
+      - type: Person
+        familyNames:
+          - Loc
+        givenNames:
+          - PP
+    datePublished: '2002'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: New England Journal of Medicine
+        volumeNumber: 347
+      issueNumber: 12
+      pageEnd: 902
+      pageStart: 895
+    title: >-
+      Hemofiltration and peritoneal dialysis in infection-associated acute renal
+      failure in Vietnam
+  - type: Article
+    id: pmed.1002858.ref012
+    authors:
+      - type: Person
+        familyNames:
+          - Watson
+        givenNames:
+          - JA
+      - type: Person
+        familyNames:
+          - Leopold
+        givenNames:
+          - SJ
+      - type: Person
+        familyNames:
+          - Simpson
+        givenNames:
+          - JA
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - NP
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+    datePublished: '2019'
+    isPartOf:
+      type: PublicationVolume
+      title: eLife
+      volumeNumber: 8
+    title: >-
+      Collider bias and the apparent protective effect of glucose-6-phosphate
+      dehydrogenase deficiency on cerebral malaria
+  - type: Article
+    id: pmed.1002858.ref013
+    authors:
+      - type: Person
+        familyNames:
+          - Pearl
+        givenNames:
+          - J
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationVolume
+      title: 'Causality: Models, Reasoning and Inference'
+    title: ''
+  - type: Article
+    id: pmed.1002858.ref014
+    authors:
+      - type: Person
+        familyNames:
+          - Rubin
+        givenNames:
+          - DB
+    datePublished: '1974'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of Educational Psychology
+        volumeNumber: 66
+      issueNumber: 5
+      pageStart: 688
+    title: >-
+      Estimating causal effects of treatments in randomized and nonrandomized
+      studies
+  - type: Article
+    id: pmed.1002858.ref015
+    authors:
+      - type: Person
+        familyNames:
+          - Vandenbroucke
+        givenNames:
+          - JP
+      - type: Person
+        familyNames:
+          - Broadbent
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Pearce
+        givenNames:
+          - 'N'
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: International Journal of Epidemiology
+        volumeNumber: 45
+      issueNumber: 6
+      pageEnd: 1786
+      pageStart: 1776
+    title: >-
+      Causality and causal inference in epidemiology: the need for a pluralistic
+      approach
+  - type: Article
+    id: pmed.1002858.ref016
+    authors:
+      - type: Person
+        familyNames:
+          - Krieger
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Davey
+          - Smith
+        givenNames:
+          - G
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: International Journal of Epidemiology
+        volumeNumber: 45
+      issueNumber: 6
+      pageEnd: 1808
+      pageStart: 1787
+    title: >-
+      The tale wagged by the DAG: broadening the scope of causal inference and
+      explanation for epidemiology
+  - type: Article
+    id: pmed.1002858.ref017
+    authors:
+      - type: Person
+        familyNames:
+          - Holland
+        givenNames:
+          - PW
+    datePublished: '1986'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of the American Statistical Association
+        volumeNumber: 81
+      issueNumber: 396
+      pageEnd: 960
+      pageStart: 945
+    title: Statistics and causal inference
+  - type: Article
+    id: pmed.1002858.ref018
+    authors:
+      - type: Person
+        familyNames:
+          - Hernan
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Robins
+        givenNames:
+          - J
+    datePublished: '2019'
+    isPartOf:
+      type: PublicationVolume
+      title: Causal Inference
+    title: ''
+  - type: Article
+    id: pmed.1002858.ref019
+    authors:
+      - type: Person
+        familyNames:
+          - Marchiafava
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Bignami
+        givenNames:
+          - A
+    datePublished: '1894'
+    isPartOf:
+      type: PublicationVolume
+      title: On Summer-Autumnal Fever
+    title: ''
+  - type: Article
+    id: pmed.1002858.ref020
+    authors:
+      - type: Person
+        familyNames:
+          - Charunwatthana
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Faiz
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Ruangveerayut
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Maude
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - Rahman
+        givenNames:
+          - MR
+      - type: Person
+        familyNames:
+          - Roberts
+        givenNames:
+          - LJ
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationVolume
+      title: Critical Care Medicine
+    title: >-
+      N-acetylcysteine as adjunctive treatment in severe malaria: A randomized,
+      double-blinded placebo-controlled clinical trial
+  - type: Article
+    id: pmed.1002858.ref021
+    authors:
+      - type: Person
+        familyNames:
+          - Newton
+        givenNames:
+          - PN
+      - type: Person
+        familyNames:
+          - Angus
+        givenNames:
+          - BJ
+      - type: Person
+        familyNames:
+          - Chierakul
+        givenNames:
+          - W
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Ruangveerayuth
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Silamut
+        givenNames:
+          - K
+    datePublished: '2003'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Clinical Infectious Diseases
+        volumeNumber: 37
+      issueNumber: 1
+      pageEnd: 16
+      pageStart: 7
+    title: >-
+      Randomized comparison of artesunate and quinine in the treatment of severe
+      falciparum malaria
+  - type: Article
+    id: pmed.1002858.ref022
+    authors:
+      - type: Person
+        familyNames:
+          - Maude
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - Hoque
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Hasan
+        givenNames:
+          - MU
+      - type: Person
+        familyNames:
+          - Sayeed
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Akter
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Samad
+        givenNames:
+          - R
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: PLoS ONE
+        volumeNumber: 6
+      issueNumber: 11
+    title: >-
+      Timing of enteral feeding in cerebral malaria in Resource-Poor settings: A
+      randomized trial
+  - type: Article
+    id: pmed.1002858.ref023
+    authors:
+      - type: Person
+        familyNames:
+          - Maude
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - Silamut
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Plewes
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Charunwatthana
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Ho
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Abul
+          - Faiz
+        givenNames:
+          - M
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Journal of Infectious Diseases
+        volumeNumber: 209
+      issueNumber: 1
+      pageEnd: 129
+      pageStart: 120
+    title: >-
+      Randomized controlled trial of levamisole hydrochloride as adjunctive
+      therapy in severe falciparum malaria with high parasitemia
+  - type: Article
+    id: pmed.1002858.ref024
+    authors:
+      - type: Person
+        familyNames:
+          - Plewes
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Kingston
+        givenNames:
+          - HWF
+      - type: Person
+        familyNames:
+          - Ghose
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Wattanakul
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Hassan
+        givenNames:
+          - MMU
+      - type: Person
+        familyNames:
+          - Haider
+        givenNames:
+          - MS
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Clinical Infectious Diseases
+        volumeNumber: 67
+      issueNumber: 7
+      pageEnd: 999
+      pageStart: 991
+    title: >-
+      Acetaminophen as a Renoprotective Adjunctive Treatment in Patients With
+      Severe and Moderately Severe Falciparum Malaria: A Randomized, Controlled,
+      Open-Label Trial
+  - type: Article
+    id: pmed.1002858.ref025
+    authors:
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - Waller
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Kwiatkowski
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Krishna
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Craddock
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Brewster
+        givenNames:
+          - D
+    datePublished: '1989'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet
+        volumeNumber: 334
+      issueNumber: 8675
+      pageEnd: 1316
+      pageStart: 1313
+    title: >-
+      Open comparison of intramuscular chloroquine and quinine in children with
+      severe chloroquine-sensitive falciparum malaria
+  - type: Article
+    id: pmed.1002858.ref026
+    authors:
+      - type: Person
+        familyNames:
+          - Phu
+        givenNames:
+          - NH
+      - type: Person
+        familyNames:
+          - Tuan
+        givenNames:
+          - PQ
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Mai
+        givenNames:
+          - NT
+      - type: Person
+        familyNames:
+          - Chau
+        givenNames:
+          - TT
+      - type: Person
+        familyNames:
+          - Chuong
+        givenNames:
+          - LV
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Malaria Journal
+        volumeNumber: 9
+      issueNumber: 1
+      pageStart: 97
+    title: >-
+      Randomized controlled trial of artesunate or artemether in Vietnamese
+      adults with severe falciparum malaria
+  - type: Article
+    id: pmed.1002858.ref027
+    authors:
+      - type: Person
+        familyNames:
+          - Hien
+        givenNames:
+          - TT
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - NP
+      - type: Person
+        familyNames:
+          - Phu
+        givenNames:
+          - NH
+      - type: Person
+        familyNames:
+          - Mai
+        givenNames:
+          - NTH
+      - type: Person
+        familyNames:
+          - Chau
+        givenNames:
+          - TTH
+      - type: Person
+        familyNames:
+          - Loc
+        givenNames:
+          - PP
+    datePublished: '1996'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: New England Journal of Medicine
+        volumeNumber: 335
+      issueNumber: 2
+      pageEnd: 83
+      pageStart: 76
+    title: >-
+      A controlled trial of artemether or quinine in Vietnamese adults with
+      severe falciparum malaria
+  - type: Article
+    id: pmed.1002858.ref028
+    authors:
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Fanello
+        givenNames:
+          - CI
+      - type: Person
+        familyNames:
+          - Hendriksen
+        givenNames:
+          - IC
+      - type: Person
+        familyNames:
+          - Gomes
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Seni
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Chhaganlal
+        givenNames:
+          - KD
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet
+        volumeNumber: 376
+      issueNumber: 9753
+      pageEnd: 1657
+      pageStart: 1647
+    title: >-
+      Artesunate versus quinine in the treatment of severe falciparum malaria in
+      African children (AQUAMAT): an open-label, randomised trial
+  - type: Article
+    id: pmed.1002858.ref029
+    authors:
+      - type: Person
+        familyNames:
+          - Bates
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Mächler
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Bolker
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Walker
+        givenNames:
+          - S
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of Statistical Software
+        volumeNumber: 67
+      issueNumber: 1
+      pageEnd: 48
+      pageStart: 1
+    title: Fitting Linear Mixed-Effects Models Using lme4
+  - type: Article
+    id: pmed.1002858.ref030
+    authors: []
+    title: ''
+  - type: Article
+    id: pmed.1002858.ref031
+    authors:
+      - type: Person
+        familyNames:
+          - van
+          - der
+          - Wal
+        givenNames:
+          - WM
+      - type: Person
+        familyNames:
+          - Geskus
+        givenNames:
+          - RB
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of Statistical Software
+        volumeNumber: 43
+      issueNumber: 13
+      pageEnd: 23
+      pageStart: 1
+    title: 'ipw: An R Package for Inverse Probability Weighting'
+  - type: Article
+    id: pmed.1002858.ref032
+    authors:
+      - type: Person
+        familyNames:
+          - Lumley
+        givenNames:
+          - T
+    datePublished: '2004'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of Statistical Software
+        volumeNumber: 9
+      issueNumber: 1
+      pageEnd: 19
+      pageStart: 1
+    title: Analysis of Complex Survey Samples
+  - type: Article
+    id: pmed.1002858.ref033
+    authors:
+      - type: Person
+        familyNames:
+          - Austin
+        givenNames:
+          - PC
+      - type: Person
+        familyNames:
+          - Stuart
+        givenNames:
+          - EA
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Statistics in Medicine
+        volumeNumber: 34
+      issueNumber: 28
+      pageEnd: 3679
+      pageStart: 3661
+    title: >-
+      Moving towards best practice when using inverse probability of treatment
+      weighting (IPTW) using the propensity score to estimate causal treatment
+      effects in observational studies
+  - type: Article
+    id: pmed.1002858.ref034
+    authors:
+      - type: Person
+        familyNames:
+          - Beutler
+        givenNames:
+          - E
+    datePublished: '1994'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Blood
+        volumeNumber: 84
+      issueNumber: 11
+      pageEnd: 3636
+      pageStart: 3613
+    title: G6PD deficiency
+  - type: Article
+    id: pmed.1002858.ref035
+    authors:
+      - type: Person
+        familyNames:
+          - Nouraie
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Reading
+        givenNames:
+          - NS
+      - type: Person
+        familyNames:
+          - Campbell
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Minniti
+        givenNames:
+          - CP
+      - type: Person
+        familyNames:
+          - Rana
+        givenNames:
+          - SR
+      - type: Person
+        familyNames:
+          - Luchtman-Jones
+        givenNames:
+          - L
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: British Journal of Haematology
+        volumeNumber: 150
+      issueNumber: 2
+    title: >-
+      Association of G6PD with lower haemoglobin concentration but not increased
+      haemolysis in patients with sickle cell anaemia
+  - type: Article
+    id: pmed.1002858.ref036
+    authors:
+      - type: Person
+        familyNames:
+          - Lo
+        givenNames:
+          - KS
+      - type: Person
+        familyNames:
+          - Wilson
+        givenNames:
+          - JG
+      - type: Person
+        familyNames:
+          - Lange
+        givenNames:
+          - LA
+      - type: Person
+        familyNames:
+          - Folsom
+        givenNames:
+          - AR
+      - type: Person
+        familyNames:
+          - Galarneau
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Ganesh
+        givenNames:
+          - SK
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Human Genetics
+        volumeNumber: 129
+      issueNumber: 3
+      pageEnd: 317
+      pageStart: 307
+    title: >-
+      Genetic association analysis highlights new loci that modulate
+      hematological trait variation in Caucasians and African Americans
+  - type: Article
+    id: pmed.1002858.ref037
+    authors:
+      - type: Person
+        familyNames:
+          - Uyoga
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Ndila
+        givenNames:
+          - CM
+      - type: Person
+        familyNames:
+          - Macharia
+        givenNames:
+          - AW
+      - type: Person
+        familyNames:
+          - Nyutu
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Shah
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Peshu
+        givenNames:
+          - 'N'
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet Haematology
+        volumeNumber: 2
+      issueNumber: 10
+    title: >-
+      Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
+      other diseases in children in Kenya: a case-control and a cohort study
+  - type: Article
+    id: pmed.1002858.ref038
+    authors:
+      - type: Person
+        familyNames:
+          - Scott
+        givenNames:
+          - JAG
+      - type: Person
+        familyNames:
+          - Berkley
+        givenNames:
+          - JA
+      - type: Person
+        familyNames:
+          - Mwangi
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Ochola
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Uyoga
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Macharia
+        givenNames:
+          - A
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Lancet
+        volumeNumber: 378
+      issueNumber: 9799
+      pageEnd: 1323
+      pageStart: 1316
+    title: >-
+      Relation between falciparum malaria and bacteraemia in Kenyan children: a
+      population-based, case-control study and a longitudinal study
+  - type: Article
+    id: pmed.1002858.ref039
+    authors:
+      - type: Person
+        familyNames:
+          - Church
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Maitland
+        givenNames:
+          - K
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: BMC Medicine
+        volumeNumber: 12
+      issueNumber: 1
+      pageStart: 31
+    title: >-
+      Invasive bacterial co-infection in African children with Plasmodium
+      falciparum malaria: a systematic review
+  - type: Article
+    id: pmed.1002858.ref040
+    authors:
+      - type: Person
+        familyNames:
+          - Cole
+        givenNames:
+          - SR
+      - type: Person
+        familyNames:
+          - Platt
+        givenNames:
+          - RW
+      - type: Person
+        familyNames:
+          - Schisterman
+        givenNames:
+          - EF
+      - type: Person
+        familyNames:
+          - Chu
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Westreich
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Richardson
+        givenNames:
+          - D
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: International Journal of Epidemiology
+        volumeNumber: 39
+      issueNumber: 2
+      pageEnd: 420
+      pageStart: 417
+    title: Illustrating bias due to conditioning on a collider
+  - type: Article
+    id: pmed.1002858.ref041
+    authors:
+      - type: Person
+        familyNames:
+          - Kiguli
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Maitland
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - George
+        givenNames:
+          - EC
+      - type: Person
+        familyNames:
+          - Olupot-Olupot
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Opoka
+        givenNames:
+          - RO
+      - type: Person
+        familyNames:
+          - Engoru
+        givenNames:
+          - C
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: BMC Medicine
+        volumeNumber: 13
+      issueNumber: 1
+      pageStart: 21
+    title: >-
+      Anaemia and blood transfusion in African children presenting to hospital
+      with severe febrile illness
+  - type: Article
+    id: pmed.1002858.ref042
+    authors:
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Malaria Journal
+        volumeNumber: 17
+      issueNumber: 1
+      pageStart: 371
+    title: Anaemia and malaria
+  - type: Article
+    id: pmed.1002858.ref043
+    authors:
+      - type: Person
+        familyNames:
+          - VanderWeele
+        givenNames:
+          - TJ
+      - type: Person
+        familyNames:
+          - Ding
+        givenNames:
+          - P
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Annals of Internal Medicine
+        volumeNumber: 167
+      issueNumber: 4
+      pageEnd: 274
+      pageStart: 268
+    title: 'Sensitivity analysis in observational research: introducing the E-value'
+  - type: Article
+    id: pmed.1002858.ref044
+    authors:
+      - type: Person
+        familyNames:
+          - Day
+        givenNames:
+          - NP
+      - type: Person
+        familyNames:
+          - Phu
+        givenNames:
+          - NH
+      - type: Person
+        familyNames:
+          - Mai
+        givenNames:
+          - NTH
+      - type: Person
+        familyNames:
+          - Bethell
+        givenNames:
+          - DB
+      - type: Person
+        familyNames:
+          - Chau
+        givenNames:
+          - TTH
+      - type: Person
+        familyNames:
+          - Loc
+        givenNames:
+          - PP
+    datePublished: '2000'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Critical Care Medicine
+        volumeNumber: 28
+      issueNumber: 5
+      pageEnd: 1362
+      pageStart: 1353
+    title: >-
+      Effects of dopamine and epinephrine infusions on renal hemodynamics in
+      severe malaria and severe sepsis
+  - type: Article
+    id: pmed.1002858.ref045
+    authors:
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Pongponratn
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - NJ
+    datePublished: '2004'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Acta Tropica
+        volumeNumber: 89
+      issueNumber: 3
+      pageEnd: 317
+      pageStart: 309
+    title: >-
+      Reduced microcirculatory flow in severe falciparum malaria:
+      pathophysiology and electron-microscopic pathology
+  - type: Article
+    id: pmed.1002858.ref046
+    authors:
+      - type: Person
+        familyNames:
+          - Dondorp
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Ince
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Charunwatthana
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Hanson
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - van
+          - Kuijen
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Faiz
+        givenNames:
+          - MA
+    datePublished: '2008'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The Journal of Infectious Diseases
+        volumeNumber: 197
+      issueNumber: 1
+      pageEnd: 84
+      pageStart: 79
+    title: >-
+      Direct In Vivo Assessment of Microcirculatory Dysfunction in Severe
+      Falciparum Malaria
+  - type: Article
+    id: pmed.1002858.ref047
+    authors:
+      - type: Person
+        familyNames:
+          - Yeo
+        givenNames:
+          - TW
+      - type: Person
+        familyNames:
+          - Lampah
+        givenNames:
+          - DA
+      - type: Person
+        familyNames:
+          - Gitawati
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Tjitra
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Kenangalem
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - McNeil
+        givenNames:
+          - YR
+    datePublished: '2007'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of Experimental Medicine
+        volumeNumber: 204
+      issueNumber: 11
+      pageEnd: 2704
+      pageStart: 2693
+    title: >-
+      Impaired nitric oxide bioavailability and l-arginine–reversible
+      endothelial dysfunction in adults with falciparum malaria
+  - type: Article
+    id: pmed.1002858.ref048
+    authors:
+      - type: Person
+        familyNames:
+          - Flatt
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Mitchell
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Yipp
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Looareesuwan
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Ho
+        givenNames:
+          - M
+    datePublished: '2005'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: The American Journal of Tropical Medicine and Hygiene
+        volumeNumber: 72
+      issueNumber: 6
+      pageEnd: 665
+      pageStart: 660
+    title: >-
+      Attenuation of cytoadherence of Plasmodium falciparum to microvascular
+      endothelium under flow by hemodilution
+  - type: Article
+    id: pmed.1002858.ref049
+    authors:
+      - type: Person
+        familyNames:
+          - Piety
+        givenNames:
+          - NZ
+      - type: Person
+        familyNames:
+          - Reinhart
+        givenNames:
+          - WH
+      - type: Person
+        familyNames:
+          - Stutz
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Shevkoplyas
+        givenNames:
+          - SS
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Transfusion
+        volumeNumber: 57
+      issueNumber: 9
+      pageEnd: 2266
+      pageStart: 2257
+    title: Optimal hematocrit in an artificial microvascular network
+  - type: Article
+    id: pmed.1002858.ref050
+    authors:
+      - type: Person
+        familyNames:
+          - Rockett
+        givenNames:
+          - KA
+      - type: Person
+        familyNames:
+          - Clarke
+        givenNames:
+          - GM
+      - type: Person
+        familyNames:
+          - Fitzpatrick
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Hubbart
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Jeffreys
+        givenNames:
+          - AE
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature Genetics
+        volumeNumber: 46
+      issueNumber: 11
+      pageStart: 1197
+    title: Reappraisal of known malaria resistance loci in a large multicenter study
+  - type: Article
+    id: pmed.1002858.ref051
+    authors:
+      - type: Person
+        familyNames:
+          - Mpoya
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Kiguli
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Olupot-Olupot
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Opoka
+        givenNames:
+          - RO
+      - type: Person
+        familyNames:
+          - Engoru
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Mallewa
+        givenNames:
+          - M
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Trials
+        volumeNumber: 16
+      issueNumber: 1
+      pageStart: 593
+    title: >-
+      Transfusion and Treatment of severe anaemia in African children (TRACT): a
+      study protocol for a randomised controlled trial
+  - type: Article
+    id: pmed.1002858.ref052
+    authors:
+      - type: Person
+        familyNames:
+          - Hendriksen
+        givenNames:
+          - ICE
+      - type: Person
+        familyNames:
+          - Mwanga-Amumpaire
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - von
+          - Seidlein
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Mtove
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - White
+        givenNames:
+          - LJ
+      - type: Person
+        familyNames:
+          - Olaosebikan
+        givenNames:
+          - R
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: PLoS Med
+        volumeNumber: 9
+      issueNumber: 8
+    title: >-
+      Diagnosing Severe Falciparum Malaria in Parasitaemic African Children: A
+      Prospective Evaluation of Plasma PfHRP2 Measurement
+title: >-
+  Investigating causal pathways in severe falciparum malaria: A pooled
+  retrospective analysis of clinical studies
 content:
-  - content:
-      - Introduction
-    depth: 1
+  - type: Heading
     id: sec007
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
       - >-
         Severe falciparum malaria remains an important cause of premature death
         in malaria-endemic countries [
-      - target: '#pmed.1002858.ref001'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref001'
       - ','
-      - target: '#pmed.1002858.ref002'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref002'
       - >-
         ]. The onset of life-threatening complications can be rapid,
         particularly in children, leaving little or no time to reach hospital [
-      - target: '#pmed.1002858.ref003'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref003'
       - >-
         ]. The majority of in-hospital deaths occur within the first 24 hours
         following admission [
-      - target: '#pmed.1002858.ref004'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref004'
       - >-
         ]. Patient fatality following treatment with parenteral artesunate is
         significantly lower than with quinine but still ranges between 10% and
         30%, depending on the number and severity of complications present on
         admission [
-      - target: '#pmed.1002858.ref005'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref005'
       - –
-      - target: '#pmed.1002858.ref007'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref007'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Assessing the predictive value of admission ‘phenotypes’, as defined by
         clinical and laboratory covariates, on the outcome of severe malaria
         (i.e., risk factors) may improve the recognition of patients who are
         likely to deteriorate and thus help identify those who would benefit
         most from escalation of care [
-      - target: '#pmed.1002858.ref001'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref001'
       - >-
         ]. This does not require ascribing causality. However, determining
         causal relationships between measurable admission variables and outcome
@@ -214,66 +2092,66 @@ content:
         without a clear rationale. Apart from renal replacement therapy, to date
         none of these have been proved effective, and several were shown to be
         harmful [
-      - target: '#pmed.1002858.ref008'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref008'
       - –
-      - target: '#pmed.1002858.ref011'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref011'
       - >-
         ]. From a pragmatic perspective, the use of causal inference tools
         allows for the identification of key confounders and possible selection
         bias [
-      - target: '#pmed.1002858.ref012'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref012'
       - >-
         ]. Subsequent risk factors will be more generalisable than those
         generated from a causal inference-naive prediction model.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         In the absence of randomisation, estimating the direction and magnitude
         of a causal contribution relies on multiple assumptions that are
         nonstatistical in nature [
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - >-
         ]. The past 3 decades have seen considerable advances in the field of
         causal inference, and these have had major implications for epidemiology
         research. Counterfactual reasoning is the dominant framework. This
         attempts to estimate contrasts of potential outcomes between groups who
         did receive and did not receive an exposure of interest [
-      - target: '#pmed.1002858.ref014'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref014'
       - >-
         ]. Causal diagrams, represented by directed acyclic graphs (DAGs), are
         the key algebraic tool. Within the area of causal inference in
         epidemiology, there is debate as to which experimental conditions allow
         for the valid estimation of causal effects [
-      - target: '#pmed.1002858.ref015'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref015'
       - ','
-      - target: '#pmed.1002858.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref016'
       - >-
         ]. ‘No causation without manipulation’ posits that causation can only be
         derived in the presence of well-defined, humanly possible interventions
         [
-      - target: '#pmed.1002858.ref017'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref017'
       - >-
         ]. This implies that the main goal of causal inference is to mimic
         idealised—even if practically unfeasible—randomised experiments [
-      - target: '#pmed.1002858.ref018'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref018'
       - >-
         ]. However, this precludes studying the causal effect of many health
         states, for which multiple different interventions exist with different
         average outcomes, or immutable states such as sex or race [
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         In this work, we take a pragmatic approach to the important question,
         ‘Which clinical or pathological features of severe falciparum malaria
@@ -281,8 +2159,8 @@ content:
         contributions to mortality of key, routinely measured, clinical
         variables in severe falciparum malaria. Our approach is based on the
         structural model causal inference framework [
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - >-
         ], underpinned by mechanistic understanding of the causal and temporal
         processes in severe malaria. We constructed template causal diagrams of
@@ -295,50 +2173,50 @@ content:
         severe falciparum malaria—an acute and life-threatening syndrome—is the
         extensive sequestration of parasitised erythrocytes in the
         microvasculature leading to vital organ dysfunction [
-      - target: '#pmed.1002858.ref001'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref001'
       - ','
-      - target: '#pmed.1002858.ref008'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref008'
       - ','
-      - target: '#pmed.1002858.ref019'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref019'
       - >-
         ]. The resulting causal diagrams were used as a basis for principled
         regression models, with in-hospital death as the predicted outcome,
         using one of the largest prospectively collected pooled datasets of
         patients with severe falciparum malaria, comprising 9,040 children and
         adults from Africa and Southeast Asia.
-    type: Paragraph
-  - content:
-      - Methods
-    depth: 1
+  - type: Heading
     id: sec008
-    type: Heading
-  - content:
-      - Causal inference framework
-    depth: 2
+    depth: 1
+    content:
+      - Methods
+  - type: Heading
     id: sec009
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Causal inference framework
+  - type: Paragraph
+    content:
       - 'We used a structural model causal inference approach ['
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - >-
         ]. All our causal assumptions were formalised in a causal diagram (DAG).
         Clinical and laboratory covariates included in the DAG were chosen
         pragmatically and based on previously described insights into the
         mechanism of disease. The final DAG is displayed in 
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ' and can be accessed online on the DAGitty website ('
-      - content:
-          - 'http://dagitty.net/development/dags.html?id=HJ1OW3'
+      - type: Link
         target: 'http://dagitty.net/development/dags.html?id=HJ1OW3'
-        type: Link
+        content:
+          - 'http://dagitty.net/development/dags.html?id=HJ1OW3'
       - >-
         ). DAGitty is an online platform for the analysis of causal diagrams and
         implements causal calculus (d-separation rules). Conditional on the
@@ -350,19 +2228,19 @@ content:
         (e.g., for a fixed degree of acidosis). This is termed a controlled
         direct effect in the causal inference literature. The total effect
         includes indirect effects via mediating variables (e.g., acidosis).
-    type: Paragraph
-  - content:
-      - DAG describing causal pathways in severe falciparum malaria
-    depth: 3
+  - type: Heading
     id: sec010
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - DAG describing causal pathways in severe falciparum malaria
+  - type: Paragraph
+    content:
       - We based our DAG (
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - >-
         ) on the general assumption that the onset and severity of severe
         falciparum malaria are a function of the sequestered pathogen (parasite)
@@ -378,27 +2256,27 @@ content:
         mechanisms that govern interindividual variation in disease severity and
         organ failure at the time of hospital admission in nonimmune hosts with
         severe falciparum malaria remain poorly understood.
-    type: Paragraph
-  - content:
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+  - type: Paragraph
+    content:
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ' shows the posited direct relationships between circulating parasitaemia (observed), sequestered parasitaemia (unobserved), the main clinical and laboratory determinants of the severe falciparum malaria classification, and death. Circulating parasitaemia is also a determinant of this classification. Implicit stratification resulting from including only patients who are classified as having severe malaria is represented by the vertex ‘Included in study’. Eligibility criteria for patients in the final dataset were based on WHO criteria for severe malaria, with minor variations as stated in the original publications and summarised in '
-      - content:
-          - S1 Table
-        target: '#pmed.1002858.s004'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pmed.1002858.s004'
+        content:
+          - S1 Table
       - >-
         . The time dimension in this DAG, which is not visualised explicitly, is
         very important. For example, the antimalarial treatment received, shown
         by the vertex ‘Drug’, affects parasitaemia directly but only after it
         has been given, which is why there is no arrow from ‘Drug’ to
         ‘Parasitaemia’.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The goal of this analysis was to determine the individual total and
         direct causal effects on mortality (represented by the vertex ‘Death’)
@@ -408,8 +2286,8 @@ content:
         distress and abnormal chest auscultation), and circulating parasitaemia
         (proportion of red blood cells that are parasitised measured in a
         peripheral blood film using light microscopy).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The important unmeasured variables are ‘Sepsis’ and ‘Lactate’ (missing
         in 88% of cases, see section Statistical analysis). A significant
@@ -420,92 +2298,92 @@ content:
         Although severe malaria does predispose to sepsis, many cases in
         children in endemic areas diagnosed as severe malaria are likely to
         represent primary septicaemia with incidental malaria [
-      - target: '#pmed.1002858.ref008'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref008'
       - >-
         ]. In the following, we have assumed that bacterial sepsis caused by the
         malarial infection (predisposition) results in only minor confounding
         bias. Using d-separation rules (for a recent review, see [
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - ']) assuming the DAG in '
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ' is correct, the minimal adjustments that allow for unbiased estimates of the total or direct causal effects are as follows:'
-    type: Paragraph
-  - items:
-      - content:
-          - content:
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The total effect of anaemia on death cannot be estimated;
                 however, the direct effect can be estimated with adjustments
                 required for pulmonary oedema, AKI, shock, acidosis,
                 hypoglycaemia, seizures, and coma.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The direct effect of coma on death can be estimated with
                 adjustments required for pulmonary oedema, AKI, shock, acidosis,
                 hypoglycaemia, anaemia, and seizures (mediator).
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The total (which is also the direct effect) of acidosis on death
                 can be estimated with adjustments required for AKI, anaemia,
                 coma, seizures, hypoglycaemia, pulmonary oedema, and shock.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The direct effect of shock on death can be estimated with
                 adjustments required for AKI, acidosis (mediator), anaemia,
                 coma, hypoglycaemia, pulmonary oedema, and seizures.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The direct effect of AKI on death can be estimated with
                 adjustments required for acidosis (mediator), anaemia, coma,
                 seizures, hypoglycaemia, pulmonary oedema, and shock.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The total (which is also the direct effect) of pulmonary oedema
                 in death can be estimated with adjustments required for AKI,
                 acidosis, anaemia, coma, hypoglycaemia, seizures, parasitaemia,
                 and shock.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The direct effect of parasitaemia on death can be estimated with
                 adjustments required for AKI, acidosis, anaemia, coma,
                 hypoglycaemia, pulmonary oedema, seizures, and shock.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The total (which is also the direct effect) of seizures on death
                 can be estimated with adjustments required for AKI, acidosis,
                 anaemia, coma, hypoglycaemia, pulmonary oedema, and shock.
-            type: Paragraph
-        type: ListItem
     order: unordered
-    type: List
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Any resulting association between these factors and mortality may then
         be interpreted as causal. This causal interpretation relies on three key
@@ -520,53 +2398,53 @@ content:
         in which blood transfusions happen instantaneously). Positivity means
         that every value of the exposure variable (e.g., haematocrit) has a
         nonzero probability of occurring in all patient strata.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         In the statistical analyses, we adjusted for antimalarial treatment
         (‘Drug’) in order to reduce the variance in the final estimates of the
         causal effects. We also adjusted for age and access to care (using the
         proxies study site and country) which explains large differences between
         trials and countries (especially between African and Asian sites).
-    type: Paragraph
-  - content:
-      - ‘Well-definedness’ of causal questions represented in the DAG
-    depth: 3
+  - type: Heading
     id: sec011
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - ‘Well-definedness’ of causal questions represented in the DAG
+  - type: Paragraph
+    content:
       - 'A reasonable criticism of the causal DAG shown in '
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ' is that the arrows from the exposure variables (shown in green) to the outcome variable (‘Death’: red) do not represent well-defined causal questions ['
-      - target: '#pmed.1002858.ref018'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref018'
       - >-
         ]. This corresponds to the interventionist perspective on the potential
         outcomes framework, which has been labelled the ‘restricted potential
         outcomes approach’ [
-      - target: '#pmed.1002858.ref015'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref015'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'We argue that the exposure variables in '
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ' do correspond to well-defined exposures from an interventionist perspective—i.e., there are well-defined interventions. We focus this methodological reflection on haematocrit (anaemia), with analogous arguments for renal failure, acidosis, coma, seizures, and pulmonary oedema. In a population of interest, steady-state haemoglobin concentrations can be thought of as randomly assigned, corresponding to differences in host genetics (e.g., haemoglobinopathies), sex, age, and environmental influences (diet, recent haemolytic events such as malaria, the bone marrow dysfunction associated with malaria, intestinal helminth coinfections, geographical location, and access to healthcare). When considering admission haematocrits in the context of severe-malaria clinical trials, additional factors are important: host immunity, host splenic function, host–parasite interactions, and parasite genetics (all potentially affecting parasite multiplication rates and pathogen load). Note that some of these do confound the relationship with survival and should therefore be adjusted for. However, the non-confounding factors (some host genetics, age, sex, diet, recent haemolysis, bone marrow dysfunction, coinfection) are likely to determine the majority of the variation in haematocrits observed at presentation. These factors are complex, but there is no reason to believe that their overall effect—changing the admission haematocrit—should not be approximately equivalent to the intervention of blood transfusion (or the hypothetical reverse intervention of removing blood). Therefore, we argue that the contribution of anaemia on mortality corresponds to a well-defined (from an interventionist perspective) causal question.'
-    type: Paragraph
-  - content:
-      - Datasets
-    depth: 2
+  - type: Heading
     id: sec012
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Datasets
+  - type: Paragraph
+    content:
       - >-
         We included in this analysis all randomised trials and observational
         studies conducted or coordinated by the Mahidol Oxford Tropical Medicine
@@ -580,10 +2458,12 @@ content:
         ethics committee. All patients, or their attendant relative or guardian,
         provided written informed consent. For further details, see the
         references provided below.
-    type: Paragraph
-  - items:
-      - content:
-          - content:
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 ‘Core Malaria’, Thailand: observational and treatment studies of
                 severe-malaria patients enrolled in hospital-based studies
@@ -593,16 +2473,16 @@ content:
                 content:
                   - 'n'
               - ' = 683) ['
-              - target: '#pmed.1002858.ref020'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref020'
               - ','
-              - target: '#pmed.1002858.ref021'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref021'
               - '].'
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 ‘Core Malaria’, Bangladesh: observational and treatment studies
                 of patients with severe malaria enrolled at the Chittagong
@@ -612,16 +2492,16 @@ content:
                 content:
                   - 'n'
               - ' = 424) ['
-              - target: '#pmed.1002858.ref022'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref022'
               - –
-              - target: '#pmed.1002858.ref024'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref024'
               - '].'
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The quinine versus chloroquine trial in The Gambia (QC): a
                 randomised controlled trial of quinine versus chloroquine in
@@ -633,13 +2513,13 @@ content:
                 content:
                   - 'n'
               - ' = 48) ['
-              - target: '#pmed.1002858.ref025'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref025'
               - '].'
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The artemether versus artesunate trial in Vietnam (AAV): a
                 randomised controlled trial of artesunate versus artemether in
@@ -650,13 +2530,13 @@ content:
                 content:
                   - 'n'
               - ' = 370) ['
-              - target: '#pmed.1002858.ref026'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref026'
               - '].'
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The artemether versus quinine trial in Vietnam (AQ): a
                 randomised controlled trial of parenteral artemether versus
@@ -667,13 +2547,13 @@ content:
                 content:
                   - 'n'
               - ' = 560) ['
-              - target: '#pmed.1002858.ref027'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref027'
               - '].'
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The South East Asian multinational quinine versus artesunate
                 malaria trial (SEAQUAMAT): a multicentre, open-label, randomised
@@ -684,13 +2564,13 @@ content:
                 content:
                   - 'n'
               - ' = 1,461) ['
-              - target: '#pmed.1002858.ref005'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref005'
               - '].'
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 The Africa multinational quinine versus artesunate in
                 severe-malaria trial (AQUAMAT): a multicentre, open-label,
@@ -702,205 +2582,206 @@ content:
                 content:
                   - 'n'
               - ' = 5,494) ['
-              - target: '#pmed.1002858.ref028'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref028'
               - '].'
-            type: Paragraph
-        type: ListItem
     order: unordered
-    type: List
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Details of the study populations and methods used in these studies can
         be found in the individual publications (see 
-      - content:
-          - Table 1
-        target: '#pmed.1002858.t001'
+      - type: Link
         relation: table
-        type: Link
+        target: '#pmed.1002858.t001'
+        content:
+          - Table 1
       - ' for a brief overview). Inclusion criteria varied between some studies, as shown in '
-      - content:
-          - S1 Table
-        target: '#pmed.1002858.s004'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pmed.1002858.s004'
+        content:
+          - S1 Table
       - . Data merging and cleaning were performed using Stata version 14.0.
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
+  - type: Table
+    id: pmed.1002858.t001
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Study name
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Study countries
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Number of patients
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - In-hospital mortality (%)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 'Median age, years (range)'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Parenteral antimalarial treatments
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - References
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - Core Malaria
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Thailand
               - ' '
               - Bangladesh
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1,107'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '22'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 26 (1–80)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Artemether
               - ' '
               - Artesunate
               - ' '
               - Quinine
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '['
-              - target: '#pmed.1002858.ref022'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref022'
               - ']'
               - ' '
               - '['
-              - target: '#pmed.1002858.ref021'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref021'
               - ']'
               - ' '
               - '['
-              - target: '#pmed.1002858.ref024'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref024'
               - ']'
               - ' '
               - '['
-              - target: '#pmed.1002858.ref020'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref020'
               - ']'
               - ' '
               - '['
-              - target: '#pmed.1002858.ref023'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref023'
               - ']'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - AAV
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Vietnam
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '370'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '10'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 32 (15–77)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Artemether
               - ' '
               - Artesunate
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '['
-              - target: '#pmed.1002858.ref026'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref026'
               - ']'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - AQ
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Vietnam
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '560'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '15'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 30 (15–79)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Artemether
               - ' '
               - Quinine
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '['
-              - target: '#pmed.1002858.ref027'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref027'
               - ']'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - QC
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - The Gambia
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '48'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '17'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 4.5 (1–10)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Quinine
               - ' '
               - Chloroquine
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '['
-              - target: '#pmed.1002858.ref025'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref025'
               - ']'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - SEAQUAMAT
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Bangladesh
               - ' '
               - Myanmar
@@ -908,35 +2789,35 @@ content:
               - India
               - ' '
               - Indonesia
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1,461'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '19'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 25 (2–87)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Artesunate
               - ' '
               - Quinine
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '['
-              - target: '#pmed.1002858.ref005'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref005'
               - ']'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - AQUAMAT
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Mozambique
               - ' '
               - Ghana
@@ -954,89 +2835,86 @@ content:
               - Rwanda
               - ' '
               - DRC
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '5,494'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '10'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 2 (0–78)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Artesunate
               - ' '
               - Quinine
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '['
-              - target: '#pmed.1002858.ref028'
-                type: Cite
+              - type: Cite
+                target: '#pmed.1002858.ref028'
               - ']'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - Overall
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '-'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '9,040'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '13'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '4'
               - ' (0–87)'
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-        type: TableRow
-    type: Table
-    id: pmed.1002858.t001
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
     title: >-
       Key characteristics and published references for the pooled dataset of
       severe-malaria patients.
     content: []
-  - content:
-      - Statistical analysis
-    depth: 2
+  - type: Heading
     id: sec013
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Statistical analysis
+  - type: Paragraph
+    content:
       - >-
         All statistical analyses were done in R version 3.4.3 (November 30,
         2017). All analyses are fully reproducible and publicly available as an
         RMarkdown notebook on GitHub, which can be found at 
-      - content:
-          - 'https://github.com/Stije/SevereMalariaAnalysis'
+      - type: Link
         target: 'https://github.com/Stije/SevereMalariaAnalysis'
-        type: Link
+        content:
+          - 'https://github.com/Stije/SevereMalariaAnalysis'
       - >-
         . This analysis of all prospectively studied patients was not
         prespecified using a published statistical analysis plan, and all
         analyses as such should be considered not prespecified.
-    type: Paragraph
-  - content:
-      - Multiple imputation
-    depth: 2
+  - type: Heading
     id: sec014
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Multiple imputation
+  - type: Paragraph
+    content:
       - >-
         In the pooled dataset, several variables were missing in a significant
         proportion of records. Coma status was missing from 229 records (3%),
@@ -1046,17 +2924,19 @@ content:
         7,423 (82%), blood urea nitrogen from 1,544 (17%), plasma creatinine
         from 7,242 (80%), transfusion information from 2,342 (22%), and
         information on hypoglycaemia from 115 records (1%).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Imputation of missing variables was done using known mechanistic
         relationships with other recorded variables and was done sequentially,
         processing from the most-informative recorded variable to the least
         informative.
-    type: Paragraph
-  - items:
-      - content:
-          - content:
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 We used the auxiliary variables bicarbonate, lactate, and
                 respiratory rate to impute missing base deficit values. For base
@@ -1065,65 +2945,63 @@ content:
                 used lactate and then finally respiratory rate for the remaining
                 missing values. Remaining missing values were then modelled from
                 the marginal age-adjusted distributions.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 We used plasma creatinine to impute missing blood urea nitrogen
                 values. Imputation for missing blood urea nitrogen values was
                 also done with a Gaussian linear model on the log scale, with
                 creatinine used as the predictive variable. Remaining missing
                 values were imputed from the marginal distribution.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 Missing pulmonary oedema values were imputed from respiratory
                 rate with Gaussian error.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 Missing haematocrit values were imputed from age with Gaussian
                 error.
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 Missing parasitaemia values were imputed from age on the log
                 scale with Gaussian error.
-            type: Paragraph
-        type: ListItem
     order: unordered
-    type: List
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Every imputation model had random-effect terms for country and study. A
         total of 100 imputed datasets were created for the final analysis. The
         full imputation code is available online at 
-      - content:
-          - 'https://github.com/Stije/SevereMalariaAnalysis'
+      - type: Link
         target: 'https://github.com/Stije/SevereMalariaAnalysis'
-        type: Link
+        content:
+          - 'https://github.com/Stije/SevereMalariaAnalysis'
       - .
-    type: Paragraph
-  - content:
-      - Regression modelling
-    depth: 3
+  - type: Heading
     id: sec015
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Regression modelling
+  - type: Paragraph
+    content:
       - 'Patient data are denoted '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - ', where '
       - type: Emphasis
         content:
@@ -1147,7 +3025,6 @@ content:
             content:
               - i
       - ' is the set of explanatory variables as given above: haematocrit, coma, blood urea nitrogen, base deficit, pulmonary oedema, hypoglycaemia, seizures, shock, parasitaemia, age, treatment drug, study ID, country, and study site.'
-    type: Paragraph
   - type: Math
     language: MathML
     text: >-
@@ -1155,7 +3032,8 @@ content:
       width="0.25em"/><mml:msub><mml:mi
       mathvariant="bold-italic">x</mml:mi><mml:mi
       mathvariant="bold-italic">i</mml:mi></mml:msub></mml:mrow><mml:mo>}</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:msubsup></mml:mrow>
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The estimation of the causal relationship between the set of baseline
         covariates 
@@ -1174,8 +3052,8 @@ content:
             content:
               - i
       - ' from severe-malaria clinical trial data was done as a two-stage process:'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'In the first stage, we did the following: For each imputed dataset '
       - type: Emphasis
         content:
@@ -1241,11 +3119,11 @@ content:
       - >-
         . This model adjusts for confounders and blocks ‘back-door paths’
         conditional on the structural causal model shown in 
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - '. Included in '
       - type: Strong
         content:
@@ -1253,58 +3131,57 @@ content:
             content:
               - x
       - ' as fixed effects is the set of necessary adjustment variables. One exception is ‘Access to care’, which is modelled as an independent random effect using two proxy variables:'
-    type: Paragraph
-  - items:
-      - content:
-          - content:
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - study
-            type: Paragraph
-        type: ListItem
-      - content:
-          - content:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - country
-            type: Paragraph
-        type: ListItem
     order: unordered
-    type: List
-  - content:
+  - type: Paragraph
+    content:
       - 'This model fit estimates the set of parameters '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - '. Parameter estimation was done using the R package ‘lme4’ ['
-      - target: '#pmed.1002858.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref029'
       - '].'
-    type: Paragraph
   - type: Math
     language: MathML
     text: >-
       <mml:mrow><mml:msub><mml:mover accent="true"><mml:mi
       mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mi>j</mml:mi></mml:msub></mml:mrow>
-  - content:
+  - type: Paragraph
+    content:
       - 'In a second stage, the sets of parameters '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - ' were then combined using Rubin’s rules in order to estimate overall fixed and random effects (functions ‘modelFixedEff’, ‘modelRandEffStats’ in ‘merTools’ ['
-      - target: '#pmed.1002858.ref030'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref030'
       - ']) and obtain a global estimate '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - .
-    type: Paragraph
   - type: Math
     language: MathML
     text: >-
@@ -1316,22 +3193,23 @@ content:
     text: >-
       <mml:mover accent="true"><mml:mi
       mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover>
-  - content:
+  - type: Paragraph
+    content:
       - 'The global estimate '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - ' was then used to derive adjusted odds ratios along with CIs for the six factors of interest.'
-    type: Paragraph
   - type: Math
     language: MathML
     text: >-
       <mml:mover accent="true"><mml:mi
       mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover>
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We performed a sensitivity analysis using only the patient records from
         studies done in Asia (
@@ -1339,8 +3217,8 @@ content:
         content:
           - 'n'
       - ' = 3,498). This analysis used 100 imputed datasets, with the same imputation procedures as above. We believe that data from Asian adults will not be significantly confounded by the presence of sepsis, as this has been investigated prospectively, and the estimated prevalence in adult severe falciparum malaria at presentation is less than 2%. This is based on observations from the AQ and AAV studies done in Vietnam, whereby admission blood cultures were performed systematically. In the AQ study, eight patients had positive blood cultures out of 560 (1.4%), and in the AAV study, six out of 220 were positive, but two of these were coagulase-negative staphylococci, which were likely contaminants, giving a global estimate of 1.8% (the remaining 150 records in the AAV study could not be matched).'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We performed an additional sensitivity analysis only using the patient
         records for which there were complete data (
@@ -1348,29 +3226,29 @@ content:
         content:
           - 'n'
       - ' = 5,542). For many of the missing key variables of interest (such as base deficit), values will not be ‘missing completely at random’, but it can be assumed that they are ‘missing at random’ (e.g., the missing status will be independent of the value of the covariate). In most cases, data are missing because the necessary tests or machines were not available for that study. Therefore, a sensitivity analysis only using patient records with full data (for the variables of interest) should not introduce any major biases but will have reduced power.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         A mediation analysis was performed to see whether blood transfusion
         explains the protective effect of lower haematocrit values. As shown by
         the DAG in panel A of 
-      - content:
-          - Fig 5
-        target: '#pmed.1002858.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g005'
+        content:
+          - Fig 5
       - >-
         , to reduce selection bias, we stratified by outcome at 4 hours, only
         selecting those patients who survived more than 4 hours. The model then
         adjusted for transfusion in addition to the set of adjustment covariates
         included in the main model.
-    type: Paragraph
-  - content:
-      - Inverse probability of transfusion weighting using propensity scores
-    depth: 3
+  - type: Heading
     id: sec016
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Inverse probability of transfusion weighting using propensity scores
+  - type: Paragraph
+    content:
       - >-
         In order to obtain marginal causal estimates for the effect of
         transfusion on death in children with admission haematocrits within a
@@ -1381,13 +3259,13 @@ content:
         less than 10. The sample size was not large enough for an equivalent
         analysis in adults, as only the AQ and AAV studies reliably recorded
         transfusion status.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The inverse probability weights were computed using the R package ‘ipw’
         [
-      - target: '#pmed.1002858.ref031'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref031'
       - >-
         ]. This computed stabilised weights for each imputed dataset, whereby
         the numerator of each weight was the marginal probability of the
@@ -1398,8 +3276,8 @@ content:
         country, admission haematocrit, presence of convulsions, base deficit
         (mEq/L), log base 2 blood urea nitrogen (mmol/L), respiratory rate
         (breaths per minute), and age (years).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         This analysis used the data from the AQUAMAT study to estimate the
         effect of transfusion on death. Patients enrolled in the Democratic
@@ -1410,27 +3288,27 @@ content:
         effect of transfusion on death in the IPW population was estimated with
         a robust sandwich estimator using the function ‘svyglm’ from the R
         package ‘survey’ [
-      - target: '#pmed.1002858.ref032'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref032'
       - >-
         ]. Balance of key covariates was assessed by calculating absolute
         standardised differences between the transfused and not-transfused
         groups [
-      - target: '#pmed.1002858.ref033'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref033'
       - '].'
-    type: Paragraph
-  - content:
-      - Results
-    depth: 1
+  - type: Heading
     id: sec017
-    type: Heading
-  - content:
-      - Pooled data and patient characteristics
-    depth: 2
+    depth: 1
+    content:
+      - Results
+  - type: Heading
     id: sec018
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Pooled data and patient characteristics
+  - type: Paragraph
+    content:
       - >-
         We pooled individual patient data from all clinical trials in severe
         falciparum malaria run by or coordinated by the Mahidol Oxford Tropical
@@ -1441,61 +3319,54 @@ content:
         controlled trials in severe malaria and a series of observational
         studies and one small randomised trial (quinine versus chloroquine)
         conducted in The Gambia. 
-      - content:
-          - Table 1
-        target: '#pmed.1002858.t001'
+      - type: Link
         relation: table
-        type: Link
+        target: '#pmed.1002858.t001'
+        content:
+          - Table 1
       - ' gives an overview and summary of the main characteristics of these studies, which span 15 different countries. The inclusion and exclusion criteria of these pooled clinical studies overlapped almost completely and are summarised per individual dataset in '
-      - content:
-          - S1 Table
-        target: '#pmed.1002858.s004'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pmed.1002858.s004'
+        content:
+          - S1 Table
       - >-
         . Overall mortality varied from 10% in the AQUAMAT (mainly African
         children) and AAV (Vietnamese adults) studies to 22% in the Core Malaria
         records (Thai and Bangladeshi adults). Patients from Southeast Asia
         contributed approximately 40% of the total pooled records.
-    type: Paragraph
-  - content:
-      - Exploratory data analysis
-    depth: 2
+  - type: Heading
     id: sec019
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Exploratory data analysis
+  - type: Paragraph
+    content:
       - >-
         The considerable interdependencies between variables are highlighted in
         the bivariate scatter plots along with mixed-effects spline fits (
-      - content:
-          - Fig 1
-        target: '#pmed.1002858.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g001'
+        content:
+          - Fig 1
       - >-
         ). Marked separation in age between the different studies is clearly
         shown in the lower-right panel, with a strong positive correlation
         between age and haematocrit in children. The majority of data on young
         children are from the AQUAMAT study.
-    type: Paragraph
-  - id: pmed.1002858.g001
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 1
+  - type: Figure
+    id: pmed.1002858.g001
     caption:
-      - content:
+      - type: Heading
+        id: sec019
+        depth: 2
+        content:
           - >-
             Scatterplots of observed associations between key patient covariates
             in the pooled severe-malaria dataset.
-        depth: 2
-        id: sec019
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             Mixed-effects spline fits are shown by the thick black lines,
             estimated using generalised additive models, which include
@@ -1510,25 +3381,32 @@ content:
             content:
               - '10'
           - ' scale. AAV, artemether versus artesunate trial in Vietnam; AQ, artemether versus quinine trial in Vietnam; AQUAMAT, Africa multinational quinine versus artesunate in severe-malaria trial; QC, quinine versus chloroquine trial in The Gambia; RBC, red blood cell; SEAQUAMAT, South East Asian multinational quinine versus artesunate malaria trial.'
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 1
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         The estimated univariate regression models, adjusting only for intersite
         and intercountry variability and allowing for nonlinear relationships
         between the four continuous baseline characteristics of interest and
         in-hospital mortality, are shown in 
-      - content:
-          - Fig 2
-        target: '#pmed.1002858.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g002'
+        content:
+          - Fig 2
       - >-
         . Base deficit (acidosis) and blood urea nitrogen (AKI) were strong
         univariate predictors of a fatal outcome with monotonic relationships to
         mortality, as described previously [
-      - target: '#pmed.1002858.ref007'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref007'
       - >-
         ]. By contrast, excess mortality was observed across the range of
         admission haematocrits (95% of the data lie in the haematocrit interval
@@ -1536,37 +3414,30 @@ content:
         death had a ‘U-shape’, whereby both low-admission (below 15%) and
         high-admission (above 35%) haematocrit values were associated with an
         increased risk of death (
-      - content:
-          - Fig 2
-        target: '#pmed.1002858.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g002'
+        content:
+          - Fig 2
       - >-
         ). For the binary predictors, standard logistic regression models were
         used, again adjusting for site and country. Coma and pulmonary oedema
         were the strongest binary predictors of death, with unadjusted risk
         ratios of 4.38 (95% CI 3.75–5.12) and 4.54 (95% CI 3.07–6.71),
         respectively.
-    type: Paragraph
-  - id: pmed.1002858.g002
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 2
+  - type: Figure
+    id: pmed.1002858.g002
     caption:
-      - content:
+      - type: Heading
+        id: sec019
+        depth: 2
+        content:
           - >-
             The unadjusted associations between in-hospital mortality from
             severe falciparum malaria and the eight clinical factors of
             interest.
-        depth: 2
-        id: sec019
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             For the continuous variables (top row), the thick black lines (blue
             shaded areas) show the mean (95% CI) values from a mixed-effects
@@ -1585,16 +3456,23 @@ content:
             content:
               - '10'
           - ' scale. RBC, red blood cell.'
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 2
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
+    id: sec020
+    depth: 2
+    content:
       - >-
         Consequences of key assumptions in the diagram describing causal
         pathways in fatal falciparum malaria
-    depth: 2
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The primary goal of this study was to estimate unbiased causal effects
         on the subsequent in-hospital mortality from severe falciparum malaria
@@ -1611,46 +3489,46 @@ content:
         using glucose-6-phosphate dehydrogenase [G6PD] deficiency, a causal
         genetic variant for lower haemoglobin concentrations in acute infections
         [
-      - target: '#pmed.1002858.ref034'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref034'
       - –
-      - target: '#pmed.1002858.ref036'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref036'
       - >-
         ]) is also not possible, as G6PD deficiency may influence the outcome
         (survival) via other pathways [
-      - target: '#pmed.1002858.ref037'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref037'
       - >-
         ]. Instead, we used a structural causal models framework based on the
         causal diagram (DAG) shown in 
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - >-
         . This necessitates specification of all bivariate causal effects
         between variables of interest via expert knowledge [
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - >-
         ]. This is a subjective exercise but has the benefit of displaying
         transparently all the underlying assumptions.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - Our proposed causal diagram (
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - >-
         ) posits that the extensive sequestration of parasitised erythrocytes in
         the microvasculature is the key pathological process leading to death
         from severe falciparum malaria [
-      - target: '#pmed.1002858.ref019'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref019'
       - >-
         ]. This effect is dependent on immunity and age. Notably, age affects
         the pattern of vital organ dysfunction. In the main analysis, we assumed
@@ -1662,47 +3540,40 @@ content:
         severe falciparum malaria versus primary sepsis with incidental malarial
         parasitaemia, and both are probably underreported in sites with limited
         blood-culture facilities [
-      - target: '#pmed.1002858.ref038'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref038'
       - ','
-      - target: '#pmed.1002858.ref039'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref039'
       - >-
         ]. In African children diagnosed with lethal malaria, sepsis was
         described to be common, but many of these cases had low-parasite-biomass
         infections [
-      - target: '#pmed.1002858.ref008'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref008'
       - >-
         ], indicating that sepsis was the primary pathological process and not
         malaria. Under this assumption that sepsis is a minor confounder, it was
         possible to estimate the direct causal effects for all exposure
         variables of interest (
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ).
-    type: Paragraph
-  - id: pmed.1002858.g003
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 3
+  - type: Figure
+    id: pmed.1002858.g003
     caption:
-      - content:
+      - type: Heading
+        id: sec020
+        depth: 2
+        content:
           - >-
             The DAG used to model the determinants of mortality in severe
             malaria.
-        depth: 2
-        id: sec020
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             Each variable is represented by a vertex in the graph. Green
             vertices are the exposure variables of interest, and ‘Death’ (red)
@@ -1715,11 +3586,11 @@ content:
             facto stratification resulting from the fact that data were
             available only on study patients fulfilling (to varying degrees) the
             predefined WHO severe-malaria criteria (see 
-          - content:
-              - S1 Table
-            target: '#pmed.1002858.s004'
+          - type: Link
             relation: supplementary-material
-            type: Link
+            target: '#pmed.1002858.s004'
+            content:
+              - S1 Table
           - >-
             ). The causal pathway from ‘Sequestration’ via ‘Sepsis’ is shown
             with dashed lines, as it is ignored in the main analysis. If sepsis
@@ -1729,27 +3600,34 @@ content:
             relationships will be confounded. ‘Lactate’ is shown as missing
             here, as it was not recorded for 88% of patients. The reproducible
             DAG that was used to assess necessary adjustment sets (see 
-          - content:
-              - Methods
-            target: '#sec008'
+          - type: Link
             relation: sec
-            type: Link
+            target: '#sec008'
+            content:
+              - Methods
           - ') can be found at '
-          - content:
-              - 'http://dagitty.net/development/dags.html?id=HJ1OW3'
+          - type: Link
             target: 'http://dagitty.net/development/dags.html?id=HJ1OW3'
-            type: Link
+            content:
+              - 'http://dagitty.net/development/dags.html?id=HJ1OW3'
           - >-
             . AKI, acute kidney injury; DAG, directed acyclic graph; Pulm.
             Oedema, pulmonary oedema.
-        type: Paragraph
-    type: Figure
-  - content:
-      - Causal determinants of a fatal outcome in severe falciparum malaria
-    depth: 2
+    label: Fig 3
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec021
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Causal determinants of a fatal outcome in severe falciparum malaria
+  - type: Paragraph
+    content:
       - >-
         Assuming a linear relationship between patient covariates and the
         log-odds of in-hospital mortality, we estimated that the adjusted
@@ -1757,11 +3635,11 @@ content:
         decrease of 10 percentage points in haematocrit, to 3.59 (3.07–4.21),
         for the presence of coma. The full set of estimated causal effects are
         shown in 
-      - content:
-          - Fig 4
-        target: '#pmed.1002858.g004'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g004'
+        content:
+          - Fig 4
       - >-
         , with scaling units corresponding to 1 standard deviation in the
         population distribution. The proportion of parasitised red blood cells
@@ -1769,74 +3647,74 @@ content:
         mortality, with an adjusted mortality odds ratio of 1.02 (0.94–1.11) for
         a 6-fold increase. The effect of parasitaemia was therefore mediated
         entirely by the downstream effects of sequestration, as shown in 
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - >-
         . Treatment with an artemisinin derivative (artesunate or artemether)
         versus treatment with quinine or chloroquine (only 28 patients in the QC
         study received chloroquine) had an adjusted odds ratio for a fatal
         outcome of 0.64 (0.56–0.74). For simplicity, we have not included in 
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - ' the relevant arrows for the estimation of the causal effect of antimalarial treatment, but this estimate is likely to be valid, as either the treatment assignment of an artemisinin derivative versus quinine was randomised (AQUAMAT, AQ, SEAQUAMAT), or it was study dependent and the regression model adjusts for study. Therefore, under an additional assumption of no unknown confounders for treatment assignment in the observational studies, and no systematic bias in patients included in the AAV and QC study (these patients only received artemisinin derivatives and only non-artemisinin drugs, respectively), this adjusted odds ratio can also be interpreted as causal.'
-    type: Paragraph
-  - id: pmed.1002858.g004
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 4
+  - type: Figure
+    id: pmed.1002858.g004
     caption:
-      - content:
+      - type: Heading
+        id: sec021
+        depth: 2
+        content:
           - >-
             Estimated causal effects on mortality of main patient
             characteristics and treatment drug used.
-        depth: 2
-        id: sec021
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - Adjusted odds ratios for death are shown on the log
           - type: Subscript
             content:
               - '2'
           - ' scale (values greater than 1 indicate a higher risk of death) and correspond to the combined results of a logistic regression model fitted to 100 independently imputed datasets. The scale of the unit changes was chosen to be approximately equal to 1 standard deviation of the population distribution (this is on a logarithmic scale for blood urea nitrogen and percent parasitised red blood cells).'
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 4
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         We performed two subgroup analyses with data only from Africa and only
         from Asia, respectively (
-      - content:
-          - S1 Fig
-        target: '#pmed.1002858.s001'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pmed.1002858.s001'
+        content:
+          - S1 Fig
       - >-
         ). Overall, the results are consistent across the two settings (children
         versus adults and high versus low transmission, respectively). The
         subgroup analysis with only patients from Asia provides a sensitivity
         analysis with respect to the assumption of no significant confounding
         from bacterial sepsis (see justification in 
-      - content:
-          - Methods
-        target: '#sec008'
+      - type: Link
         relation: sec
-        type: Link
+        target: '#sec008'
+        content:
+          - Methods
       - >-
         ). These results were also consistent with the results from the
         sensitivity analysis, which used only patient records with no missing
         variables (see online GitHub repository).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Under our causal model assumptions, ‘moderate anaemia’ was protective
         against mortality: a lower absolute admission haematocrit of 10
@@ -1847,13 +3725,13 @@ content:
         admission haematocrits less than or equal to 9% (a haemoglobin of
         approximately 3 g/dL) estimated a stronger protective effect, with an
         odds ratio of 0.83 (95% CI 0.75–0.91).
-    type: Paragraph
-  - content:
-      - Evaluation of the direct causal effect of moderate anaemia on outcome
-    depth: 2
+  - type: Heading
     id: sec022
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Evaluation of the direct causal effect of moderate anaemia on outcome
+  - type: Paragraph
+    content:
       - >-
         Blood transfusion could mediate the relationship between anaemia and
         death. The apparent protective effect of lower haematocrits in severe
@@ -1863,16 +3741,16 @@ content:
         from 15% to 20%). However, a naive mediation analysis via a simple
         adjustment for transfusion status results in selection (‘collider’) bias
         [
-      - target: '#pmed.1002858.ref040'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref040'
       - >-
         ]. This is because of the interaction between time to death and blood
         transfusion, as shown in panel A of 
-      - content:
-          - Fig 5
-        target: '#pmed.1002858.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g005'
+        content:
+          - Fig 5
       - >-
         . Blood transfusions are unlikely to be given to patients who die very
         rapidly after admission, because of the time required to cross-match
@@ -1883,28 +3761,21 @@ content:
         transfusions conditionally independent of their time to death,
         conditional on study site and baseline covariates. The value of 4 hours
         is based on previous detailed reports of time to transfusion [
-      - target: '#pmed.1002858.ref041'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref041'
       - '].'
-    type: Paragraph
-  - id: pmed.1002858.g005
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 5
+  - type: Figure
+    id: pmed.1002858.g005
     caption:
-      - content:
+      - type: Heading
+        id: sec022
+        depth: 2
+        content:
           - >-
             Mediation analysis and possible confounders for the protective
             effect of moderate anaemia on mortality in severe malaria.
-        depth: 2
-        id: sec022
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             (A) One explanation for the apparent protective effect of moderate
             anaemia on fatal outcomes in severe falciparum malaria might be that
@@ -1917,11 +3788,11 @@ content:
             in-hospital mortality, stratified by the survival outcome at 4 hours
             from admission (square vertex). ‘Disease severity’ is a simplified
             representation of the complex web of interactions shown in 
-          - content:
-              - Fig 3
-            target: '#pmed.1002858.g003'
+          - type: Link
             relation: fig
-            type: Link
+            target: '#pmed.1002858.g003'
+            content:
+              - Fig 3
           - >-
             . In particular, we note that ‘Blood transfusion’ is a ‘collider’
             between ‘Anaemia’ and ‘Survival at 1 week’, thereby introducing
@@ -1933,14 +3804,21 @@ content:
             variables related to underlying immunity to malaria, which has
             complex effects both protecting against death and potentially
             causing prolonged illness and more red cell loss [
-          - target: '#pmed.1002858.ref001'
-            type: Cite
+          - type: Cite
+            target: '#pmed.1002858.ref001'
           - >-
             ]. DAG, directed acyclic graph; G6PD, glucose-6-phosphate
             dehydrogenase.
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 5
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         Blood transfusion status was only recorded reliably in the AQUAMAT, AAV,
         and AQ studies (
@@ -1948,21 +3826,21 @@ content:
         content:
           - 'n'
       - ' = 6,307, with no missing values). An analysis stratified by time to death limited to these three studies did not show a statistically significant protective effect for transfusion, with an adjusted odds ratio of 0.90 (0.72–1.63). This can be compared with the ‘naive’ analysis not accounting for the competing risk of death, which gives a substantially lower adjusted odds ratio of 0.61 (0.49–0.78). The estimate of the direct effect of haematocrit was approximately the same as for the non-mediated analysis but was not statistically significant, with an adjusted odds ratio of 0.91 (0.79–1.04); see '
-      - content:
-          - S2 Fig
-        target: '#pmed.1002858.s002'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pmed.1002858.s002'
+        content:
+          - S2 Fig
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We explored the relationship between transfusion and death further in a
         ‘moderate anaemia’ range, defined ad hoc as 15%–25% haematocrit, using
         the data from the AQUAMAT study. The causal effect of transfusion was
         estimated using IPW with propensity scores (for a recent review, see [
-      - target: '#pmed.1002858.ref033'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref033'
       - >-
         ]). In this important subgroup of patients who are above the standard
         thresholds for transfusion (
@@ -1970,25 +3848,25 @@ content:
         content:
           - 'n'
       - ' = 2,214), there was no evidence for a beneficial effect of transfusion, with an odds ratio for death in the transfused group of 0.99 (95% CI 0.97–1.02). '
-      - content:
-          - S3 Fig
-        target: '#pmed.1002858.s003'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pmed.1002858.s003'
+        content:
+          - S3 Fig
       - ' shows the standardised differences between the transfused and not-transfused groups before and after IPW for all the main recorded clinical variables.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The assumption of no unmeasured confounders for the relationship between
         anaemia and death may be incorrect. A simplified DAG in panel B of 
-      - content:
-          - Fig 5
-        target: '#pmed.1002858.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g005'
+        content:
+          - Fig 5
       - ' shows two possible confounding effects. First, anaemia at presentation may be a proxy marker for a longer time course of illness ['
-      - target: '#pmed.1002858.ref042'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref042'
       - >-
         ]. In this scenario, death is a less likely outcome (other more rapidly
         lethal processes having been avoided) compared with a patient with
@@ -1996,13 +3874,13 @@ content:
         unobserved genetic polymorphisms (such as G6PD deficiency or
         haemoglobinopathies, which both cause anaemia directly and protect
         against death in patients with severe malaria [
-      - target: '#pmed.1002858.ref037'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref037'
       - >-
         ]). The e-value of the observed adjusted odds ratio of anaemia on
         mortality is 1.53 (lower bound: 1.25) [
-      - target: '#pmed.1002858.ref043'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref043'
       - >-
         ]. This implies that the unmeasured confounder would need to increase
         the risk of anaemia (as measured by a decrease of 10 absolute percentage
@@ -2016,13 +3894,13 @@ content:
         homozygotes is associated with reduced steady-state haemoglobin
         concentrations), but this has resulted in very few heterozygous and
         homozygous patients having been enrolled in severe malaria studies.
-    type: Paragraph
-  - content:
-      - Discussion
-    depth: 1
+  - type: Heading
     id: sec023
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Discussion
+  - type: Paragraph
+    content:
       - >-
         In the absence of randomisation, causal inference is difficult and
         relies on nonstatistical assumptions supported by expert knowledge.
@@ -2030,8 +3908,8 @@ content:
         readily understood and therefore readily challenged, improves
         transparency and facilitates investigation. Using a structural causal
         models framework [
-      - target: '#pmed.1002858.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref013'
       - >-
         ], direct or total causal effects of the main features of severe malaria
         (anaemia, coma, acidosis, seizures, pulmonary oedema, AKI) on death in
@@ -2042,8 +3920,8 @@ content:
         associated with increased risk, but it also suggested that moderate
         anaemia might confer some survival advantage in patients with severe
         falciparum malaria.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         If it is indeed true that ‘moderate anaemia’ (e.g., haematocrits below
         the median values: 23% in the pooled dataset, 20% in African patients,
@@ -2052,34 +3930,34 @@ content:
         In severe malaria, macrocirculatory changes are characterised by an
         increase in cardiac output and a moderate decrease in peripheral
         vascular resistance so that severe hypotension is rare [
-      - target: '#pmed.1002858.ref044'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref044'
       - >-
         ]. However, microcirculatory flow is severely compromised, with an
         increase in microcirculatory resistance caused by sequestered
         parasitised red cells, generally increased erythrocyte rigidity, and
         clumping of unparasitised and parasitised erythrocytes (rosetting and
         autoagglutination, respectively) [
-      - target: '#pmed.1002858.ref045'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref045'
       - ','
-      - target: '#pmed.1002858.ref046'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref046'
       - >-
         ]. Furthermore, there is evidence that compensatory endothelial
         vasodilation is disturbed, related to nitric oxide depletion [
-      - target: '#pmed.1002858.ref047'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref047'
       - ']. Anaemia reduces cytoadherence ['
-      - target: '#pmed.1002858.ref048'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref048'
       - >-
         ]—the pathological process leading to sequestration—and potentially
         decreases rosette formation (intererythrocytic adhesion). Anaemia also
         reduces blood viscosity, in particular under the low-shear conditions at
         the venular side of the circulation, where sequestration begins [
-      - target: '#pmed.1002858.ref049'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref049'
       - >-
         ]. Thus, moderate anaemia could improve blood flow in the partially
         obstructed microvasculature. The optimal haematocrit, a trade-off
@@ -2087,21 +3965,21 @@ content:
         with severe falciparum malaria, and this could, in part, contribute to
         the observed unadjusted parabolic relationship between mortality and
         haematocrit (reference [
-      - target: '#pmed.1002858.ref042'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref042'
       - '] and '
-      - content:
-          - Fig 2
-        target: '#pmed.1002858.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g002'
+        content:
+          - Fig 2
       - >-
         , top middle). Planned studies that measure the capillary haematocrit
         directly and also determine oxygen delivery in relation to the level of
         anaemia in severe malaria will be important to support or refute these
         hypotheses.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         If moderate anaemia does confer protection against death, it would have
         significant implications for patient management and, particularly, for
@@ -2124,14 +4002,14 @@ content:
         the blood. Moribund patients may be less likely to be transfused.
         Resolution of this important management question requires prospective
         studies assessing blood transfusion thresholds.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Our data do not contain information on host genetic markers, but the
         hypothesis of a protective effect of anaemia in severe malaria could be
         tested on recent large pooled datasets that have collected these data [
-      - target: '#pmed.1002858.ref050'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref050'
       - >-
         ]. Treatment-seeking behaviour is a very important determinant of
         outcome in a rapidly fatal infection, but adjustment for this effect is
@@ -2140,11 +4018,11 @@ content:
         hypothesis must be derived from different data sources. For example, an
         ongoing trial randomising both transfusion and transfusion doses will
         provide high-quality data addressing this exact question [
-      - target: '#pmed.1002858.ref051'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref051'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         This study estimated causal effects from observational data
         (observational with respect to the exposures of interest). The causal
@@ -2163,16 +4041,16 @@ content:
         parasitaemia, or it can be a result of parasite sequestration
         (particularly in the gut). This is mainly an issue in the
         higher-transmission settings in sub-Saharan Africa [
-      - target: '#pmed.1002858.ref052'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref052'
       - >-
         ]. If sepsis (caused by the malarial infection) is included in the DAG
         in 
-      - content:
-          - Fig 3
-        target: '#pmed.1002858.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g003'
+        content:
+          - Fig 3
       - >-
         , then none of the causal effects are identifiable. However, in
         sub-Saharan African settings, the effect is likely to be small, given
@@ -2187,8 +4065,8 @@ content:
         indicating AKI and hypoglycaemia is very high, the specificity of the
         clinical diagnosis of pulmonary oedema from respiratory distress and
         abnormal chest auscultation is lower.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Further clinical investigation is necessary to determine whether there
         is truly any benefit from moderate anaemia in patients with severe
@@ -2203,15 +4081,15 @@ content:
         pathological process would inform indications for blood transfusion and
         hopefully avoid any detrimental effects of overtransfusion in patients
         with severe falciparum malaria [
-      - target: '#pmed.1002858.ref051'
-        type: Cite
+      - type: Cite
+        target: '#pmed.1002858.ref051'
       - >-
         ]. Clearly, this is of critical importance, as severe anaemia is the
         major manifestation of severe malaria in high-transmission settings and
         the main indication for blood transfusion in children in many
         malaria-endemic areas.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         In conclusion, using a causal inference approach to explore the
         relationships between clinical features and mortality in patients with
@@ -2230,59 +4108,59 @@ content:
         could help increase the clinical definition of severe malaria, improve
         the understanding of its pathophysiology, and provide a sound basis for
         developing and evaluating adjunctive interventions.
-    type: Paragraph
-  - content:
+  - type: Heading
+    id: sec024
+    depth: 1
+    content:
       - Supporting information
-    depth: 1
-    id: sec024
-    type: Heading
   - S1 Fig
-  - content:
-      - Comparison between Asian and African data.
-    depth: 1
+  - type: Heading
     id: sec024
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Comparison between Asian and African data.
+  - type: Paragraph
+    content:
       - >-
         Green diamonds (lines): point estimates (95% CI) using data from only
         Asian patients. Blue diamonds (lines): point estimates (95% CI) using
         data from only African patients. Black diamonds (lines): point estimates
         (95% CI) using the whole pooled database, as shown in 
-      - content:
-          - Fig 4
-        target: '#pmed.1002858.g004'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pmed.1002858.g004'
+        content:
+          - Fig 4
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S2 Fig
-  - content:
-      - Mediation analysis looking at the effect of transfusion on survival.
-    depth: 1
+  - type: Heading
     id: sec024
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Mediation analysis looking at the effect of transfusion on survival.
+  - type: Paragraph
+    content:
       - >-
         The forest plot shows the estimated effects on survival of main patient
         characteristics and treatment drug used, stratified by time to death and
         adjusted for transfusion.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S3 Fig
-  - content:
+  - type: Heading
+    id: sec024
+    depth: 1
+    content:
       - >-
         Standardised differences for the major clinical variables between the
         transfused and not-transfused children in the AQUAMAT study with
         baseline haematocrits between 15% and 25%.
-    depth: 1
-    id: sec024
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The black circles show the standardised differences for the original
         population, and the red triangles show the standardised differences for
@@ -2293,1898 +4171,20 @@ content:
         lines show ±10% standardised difference. AQUAMAT, Africa multinational
         quinine versus artesunate in severe-malaria trial; IPW, inverse
         probability weighting.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (TIF)
-    type: Paragraph
   - S1 Table
-  - content:
-      - Inclusion criteria for the studies used in the pooled data analysis.
-    depth: 1
+  - type: Heading
     id: sec024
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Inclusion criteria for the studies used in the pooled data analysis.
+  - type: Paragraph
+    content:
       - >-
         HCT, haematocrit; SB, serum bilirubin; SBP, systolic blood pressure; SC,
         serum creatinine; UO, urine output.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (XLSX)
-    type: Paragraph
-references:
-  - authors: []
-    title: Severe Malaria
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 7
-      pageEnd: 131
-      isPartOf:
-        title: Tropical Medicine & International Health
-        volumeNumber: 19
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref001
-  - authors:
-      - givenNames:
-          - OF
-        familyNames:
-          - Norheim
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Jha
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Admasu
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Godal
-        type: Person
-      - givenNames:
-          - RJ
-        familyNames:
-          - Hum
-        type: Person
-      - givenNames:
-          - ME
-        familyNames:
-          - Kruk
-        type: Person
-    title: >-
-      Avoiding 40% of the premature deaths in each country, 2010–30: review of
-      national mortality trends to help quantify the UN Sustainable Development
-      Goal for health
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 9964
-      pageStart: 239
-      pageEnd: 252
-      isPartOf:
-        title: The Lancet
-        volumeNumber: 385
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref002
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Gomes
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Faiz
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Gyapong
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Warsame
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Agbenyega
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Babiker
-        type: Person
-    title: >-
-      Pre-referral rectal artesunate to prevent death and disability in severe
-      malaria: a placebo-controlled trial
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      issueNumber: 9663
-      pageStart: 557
-      pageEnd: 566
-      isPartOf:
-        title: The Lancet
-        volumeNumber: 373
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref003
-  - authors:
-      - givenNames:
-          - CM
-        familyNames:
-          - Keene
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Crawley
-        type: Person
-      - givenNames:
-          - EO
-        familyNames:
-          - Ohuma
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Mukaka
-        type: Person
-    title: >-
-      A Competing-Risk Approach for Modeling Length of Stay in Severe Malaria
-      Patients in South-East Asia and the Implications for Planning of Hospital
-      Services
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 7
-      pageStart: 1053
-      pageEnd: 1062
-      isPartOf:
-        title: Clinical Infectious Diseases
-        volumeNumber: 67
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref004
-  - authors:
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Nosten
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Stepniewska
-        type: Person
-      - givenNames:
-          - NJ
-        familyNames:
-          - Day
-        type: Person
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-    title: >-
-      Artesunate versus quinine for treatment of severe falciparum malaria: a
-      randomised trial
-    type: Article
-    datePublished: '2005'
-    isPartOf:
-      issueNumber: 9487
-      pageStart: 717
-      pageEnd: 725
-      isPartOf:
-        title: The Lancet
-        volumeNumber: 366
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref005
-  - authors:
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - SJ
-        familyNames:
-          - Lee
-        type: Person
-      - givenNames:
-          - MA
-        familyNames:
-          - Faiz
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Mishra
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Price
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Tjitra
-        type: Person
-    title: >-
-      The Relationship between Age and the Manifestations of and Mortality
-      Associated with Severe Malaria
-    type: Article
-    datePublished: '2008'
-    isPartOf:
-      issueNumber: 2
-      pageStart: 151
-      pageEnd: 157
-      isPartOf:
-        title: Clinical Infectious Diseases
-        volumeNumber: 47
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref006
-  - authors:
-      - givenNames:
-          - L
-        familyNames:
-          - von
-          - Seidlein
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Olaosebikan
-        type: Person
-      - givenNames:
-          - ICE
-        familyNames:
-          - Hendriksen
-        type: Person
-      - givenNames:
-          - SJ
-        familyNames:
-          - Lee
-        type: Person
-      - givenNames:
-          - OT
-        familyNames:
-          - Adedoyin
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Agbenyega
-        type: Person
-    title: >-
-      Predicting the Clinical Outcome of Severe Falciparum Malaria in African
-      Children: Findings From a Large Randomized Trial
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      issueNumber: 8
-      pageStart: 1080
-      pageEnd: 1090
-      isPartOf:
-        title: Clinical Infectious Diseases
-        volumeNumber: 54
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref007
-  - authors:
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-      - givenNames:
-          - GD
-        familyNames:
-          - Turner
-        type: Person
-      - givenNames:
-          - NP
-        familyNames:
-          - Day
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-    title: 'Lethal malaria: Marchiafava and Bignami were right'
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 2
-      pageStart: 192
-      pageEnd: 198
-      isPartOf:
-        title: The Journal of Infectious Diseases
-        volumeNumber: 208
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref008
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Varo
-        type: Person
-      - givenNames:
-          - VM
-        familyNames:
-          - Crowley
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Sitoe
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Madrid
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Serghides
-        type: Person
-      - givenNames:
-          - KC
-        familyNames:
-          - Kain
-        type: Person
-    title: 'Adjunctive therapy for severe malaria: a review and critical appraisal'
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 47
-      isPartOf:
-        title: Malaria Journal
-        volumeNumber: 17
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref009
-  - authors:
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-      - givenNames:
-          - GD
-        familyNames:
-          - Turner
-        type: Person
-      - givenNames:
-          - IM
-        familyNames:
-          - Medana
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - NP
-        familyNames:
-          - Day
-        type: Person
-    title: The murine cerebral malaria phenomenon
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 11
-      pageEnd: 15
-      isPartOf:
-        title: Trends in Parasitology
-        volumeNumber: 26
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref010
-  - authors:
-      - givenNames:
-          - NH
-        familyNames:
-          - Phu
-        type: Person
-      - givenNames:
-          - TT
-        familyNames:
-          - Hien
-        type: Person
-      - givenNames:
-          - NTH
-        familyNames:
-          - Mai
-        type: Person
-      - givenNames:
-          - TTH
-        familyNames:
-          - Chau
-        type: Person
-      - givenNames:
-          - LV
-        familyNames:
-          - Chuong
-        type: Person
-      - givenNames:
-          - PP
-        familyNames:
-          - Loc
-        type: Person
-    title: >-
-      Hemofiltration and peritoneal dialysis in infection-associated acute renal
-      failure in Vietnam
-    type: Article
-    datePublished: '2002'
-    isPartOf:
-      issueNumber: 12
-      pageStart: 895
-      pageEnd: 902
-      isPartOf:
-        title: New England Journal of Medicine
-        volumeNumber: 347
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref011
-  - authors:
-      - givenNames:
-          - JA
-        familyNames:
-          - Watson
-        type: Person
-      - givenNames:
-          - SJ
-        familyNames:
-          - Leopold
-        type: Person
-      - givenNames:
-          - JA
-        familyNames:
-          - Simpson
-        type: Person
-      - givenNames:
-          - NP
-        familyNames:
-          - Day
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-    title: >-
-      Collider bias and the apparent protective effect of glucose-6-phosphate
-      dehydrogenase deficiency on cerebral malaria
-    type: Article
-    datePublished: '2019'
-    isPartOf:
-      title: eLife
-      volumeNumber: 8
-      type: PublicationVolume
-    id: pmed.1002858.ref012
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Pearl
-        type: Person
-    title: ''
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      title: 'Causality: Models, Reasoning and Inference'
-      type: PublicationVolume
-    id: pmed.1002858.ref013
-  - authors:
-      - givenNames:
-          - DB
-        familyNames:
-          - Rubin
-        type: Person
-    title: >-
-      Estimating causal effects of treatments in randomized and nonrandomized
-      studies
-    type: Article
-    datePublished: '1974'
-    isPartOf:
-      issueNumber: 5
-      pageStart: 688
-      isPartOf:
-        title: Journal of Educational Psychology
-        volumeNumber: 66
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref014
-  - authors:
-      - givenNames:
-          - JP
-        familyNames:
-          - Vandenbroucke
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Broadbent
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Pearce
-        type: Person
-    title: >-
-      Causality and causal inference in epidemiology: the need for a pluralistic
-      approach
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 6
-      pageStart: 1776
-      pageEnd: 1786
-      isPartOf:
-        title: International Journal of Epidemiology
-        volumeNumber: 45
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref015
-  - authors:
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Krieger
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Davey
-          - Smith
-        type: Person
-    title: >-
-      The tale wagged by the DAG: broadening the scope of causal inference and
-      explanation for epidemiology
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 6
-      pageStart: 1787
-      pageEnd: 1808
-      isPartOf:
-        title: International Journal of Epidemiology
-        volumeNumber: 45
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref016
-  - authors:
-      - givenNames:
-          - PW
-        familyNames:
-          - Holland
-        type: Person
-    title: Statistics and causal inference
-    type: Article
-    datePublished: '1986'
-    isPartOf:
-      issueNumber: 396
-      pageStart: 945
-      pageEnd: 960
-      isPartOf:
-        title: Journal of the American Statistical Association
-        volumeNumber: 81
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref017
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Hernan
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Robins
-        type: Person
-    title: ''
-    type: Article
-    datePublished: '2019'
-    isPartOf:
-      title: Causal Inference
-      type: PublicationVolume
-    id: pmed.1002858.ref018
-  - authors:
-      - givenNames:
-          - E
-        familyNames:
-          - Marchiafava
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Bignami
-        type: Person
-    title: ''
-    type: Article
-    datePublished: '1894'
-    isPartOf:
-      title: On Summer-Autumnal Fever
-      type: PublicationVolume
-    id: pmed.1002858.ref019
-  - authors:
-      - givenNames:
-          - P
-        familyNames:
-          - Charunwatthana
-        type: Person
-      - givenNames:
-          - MA
-        familyNames:
-          - Faiz
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Ruangveerayut
-        type: Person
-      - givenNames:
-          - RJ
-        familyNames:
-          - Maude
-        type: Person
-      - givenNames:
-          - MR
-        familyNames:
-          - Rahman
-        type: Person
-      - givenNames:
-          - LJ
-        familyNames:
-          - Roberts
-        type: Person
-    title: >-
-      N-acetylcysteine as adjunctive treatment in severe malaria: A randomized,
-      double-blinded placebo-controlled clinical trial
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      title: Critical Care Medicine
-      type: PublicationVolume
-    id: pmed.1002858.ref020
-  - authors:
-      - givenNames:
-          - PN
-        familyNames:
-          - Newton
-        type: Person
-      - givenNames:
-          - BJ
-        familyNames:
-          - Angus
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Chierakul
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Ruangveerayuth
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Silamut
-        type: Person
-    title: >-
-      Randomized comparison of artesunate and quinine in the treatment of severe
-      falciparum malaria
-    type: Article
-    datePublished: '2003'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 7
-      pageEnd: 16
-      isPartOf:
-        title: Clinical Infectious Diseases
-        volumeNumber: 37
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref021
-  - authors:
-      - givenNames:
-          - RJ
-        familyNames:
-          - Maude
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Hoque
-        type: Person
-      - givenNames:
-          - MU
-        familyNames:
-          - Hasan
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Sayeed
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Akter
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Samad
-        type: Person
-    title: >-
-      Timing of enteral feeding in cerebral malaria in Resource-Poor settings: A
-      randomized trial
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      issueNumber: 11
-      isPartOf:
-        title: PLoS ONE
-        volumeNumber: 6
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref022
-  - authors:
-      - givenNames:
-          - RJ
-        familyNames:
-          - Maude
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Silamut
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Plewes
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Charunwatthana
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Ho
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Abul
-          - Faiz
-        type: Person
-    title: >-
-      Randomized controlled trial of levamisole hydrochloride as adjunctive
-      therapy in severe falciparum malaria with high parasitemia
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 120
-      pageEnd: 129
-      isPartOf:
-        title: The Journal of Infectious Diseases
-        volumeNumber: 209
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref023
-  - authors:
-      - givenNames:
-          - K
-        familyNames:
-          - Plewes
-        type: Person
-      - givenNames:
-          - HWF
-        familyNames:
-          - Kingston
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Ghose
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Wattanakul
-        type: Person
-      - givenNames:
-          - MMU
-        familyNames:
-          - Hassan
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Haider
-        type: Person
-    title: >-
-      Acetaminophen as a Renoprotective Adjunctive Treatment in Patients With
-      Severe and Moderately Severe Falciparum Malaria: A Randomized, Controlled,
-      Open-Label Trial
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 7
-      pageStart: 991
-      pageEnd: 999
-      isPartOf:
-        title: Clinical Infectious Diseases
-        volumeNumber: 67
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref024
-  - authors:
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Waller
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Kwiatkowski
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Krishna
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Craddock
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Brewster
-        type: Person
-    title: >-
-      Open comparison of intramuscular chloroquine and quinine in children with
-      severe chloroquine-sensitive falciparum malaria
-    type: Article
-    datePublished: '1989'
-    isPartOf:
-      issueNumber: 8675
-      pageStart: 1313
-      pageEnd: 1316
-      isPartOf:
-        title: The Lancet
-        volumeNumber: 334
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref025
-  - authors:
-      - givenNames:
-          - NH
-        familyNames:
-          - Phu
-        type: Person
-      - givenNames:
-          - PQ
-        familyNames:
-          - Tuan
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Day
-        type: Person
-      - givenNames:
-          - NT
-        familyNames:
-          - Mai
-        type: Person
-      - givenNames:
-          - TT
-        familyNames:
-          - Chau
-        type: Person
-      - givenNames:
-          - LV
-        familyNames:
-          - Chuong
-        type: Person
-    title: >-
-      Randomized controlled trial of artesunate or artemether in Vietnamese
-      adults with severe falciparum malaria
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 97
-      isPartOf:
-        title: Malaria Journal
-        volumeNumber: 9
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref026
-  - authors:
-      - givenNames:
-          - TT
-        familyNames:
-          - Hien
-        type: Person
-      - givenNames:
-          - NP
-        familyNames:
-          - Day
-        type: Person
-      - givenNames:
-          - NH
-        familyNames:
-          - Phu
-        type: Person
-      - givenNames:
-          - NTH
-        familyNames:
-          - Mai
-        type: Person
-      - givenNames:
-          - TTH
-        familyNames:
-          - Chau
-        type: Person
-      - givenNames:
-          - PP
-        familyNames:
-          - Loc
-        type: Person
-    title: >-
-      A controlled trial of artemether or quinine in Vietnamese adults with
-      severe falciparum malaria
-    type: Article
-    datePublished: '1996'
-    isPartOf:
-      issueNumber: 2
-      pageStart: 76
-      pageEnd: 83
-      isPartOf:
-        title: New England Journal of Medicine
-        volumeNumber: 335
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref027
-  - authors:
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - CI
-        familyNames:
-          - Fanello
-        type: Person
-      - givenNames:
-          - IC
-        familyNames:
-          - Hendriksen
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Gomes
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Seni
-        type: Person
-      - givenNames:
-          - KD
-        familyNames:
-          - Chhaganlal
-        type: Person
-    title: >-
-      Artesunate versus quinine in the treatment of severe falciparum malaria in
-      African children (AQUAMAT): an open-label, randomised trial
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      issueNumber: 9753
-      pageStart: 1647
-      pageEnd: 1657
-      isPartOf:
-        title: The Lancet
-        volumeNumber: 376
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref028
-  - authors:
-      - givenNames:
-          - D
-        familyNames:
-          - Bates
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Mächler
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Bolker
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Walker
-        type: Person
-    title: Fitting Linear Mixed-Effects Models Using lme4
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 1
-      pageEnd: 48
-      isPartOf:
-        title: Journal of Statistical Software
-        volumeNumber: 67
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref029
-  - authors: []
-    title: ''
-    type: Article
-    id: pmed.1002858.ref030
-  - authors:
-      - givenNames:
-          - WM
-        familyNames:
-          - van
-          - der
-          - Wal
-        type: Person
-      - givenNames:
-          - RB
-        familyNames:
-          - Geskus
-        type: Person
-    title: 'ipw: An R Package for Inverse Probability Weighting'
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      issueNumber: 13
-      pageStart: 1
-      pageEnd: 23
-      isPartOf:
-        title: Journal of Statistical Software
-        volumeNumber: 43
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref031
-  - authors:
-      - givenNames:
-          - T
-        familyNames:
-          - Lumley
-        type: Person
-    title: Analysis of Complex Survey Samples
-    type: Article
-    datePublished: '2004'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 1
-      pageEnd: 19
-      isPartOf:
-        title: Journal of Statistical Software
-        volumeNumber: 9
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref032
-  - authors:
-      - givenNames:
-          - PC
-        familyNames:
-          - Austin
-        type: Person
-      - givenNames:
-          - EA
-        familyNames:
-          - Stuart
-        type: Person
-    title: >-
-      Moving towards best practice when using inverse probability of treatment
-      weighting (IPTW) using the propensity score to estimate causal treatment
-      effects in observational studies
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 28
-      pageStart: 3661
-      pageEnd: 3679
-      isPartOf:
-        title: Statistics in Medicine
-        volumeNumber: 34
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref033
-  - authors:
-      - givenNames:
-          - E
-        familyNames:
-          - Beutler
-        type: Person
-    title: G6PD deficiency
-    type: Article
-    datePublished: '1994'
-    isPartOf:
-      issueNumber: 11
-      pageStart: 3613
-      pageEnd: 3636
-      isPartOf:
-        title: Blood
-        volumeNumber: 84
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref034
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Nouraie
-        type: Person
-      - givenNames:
-          - NS
-        familyNames:
-          - Reading
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Campbell
-        type: Person
-      - givenNames:
-          - CP
-        familyNames:
-          - Minniti
-        type: Person
-      - givenNames:
-          - SR
-        familyNames:
-          - Rana
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Luchtman-Jones
-        type: Person
-    title: >-
-      Association of G6PD with lower haemoglobin concentration but not increased
-      haemolysis in patients with sickle cell anaemia
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      issueNumber: 2
-      isPartOf:
-        title: British Journal of Haematology
-        volumeNumber: 150
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref035
-  - authors:
-      - givenNames:
-          - KS
-        familyNames:
-          - Lo
-        type: Person
-      - givenNames:
-          - JG
-        familyNames:
-          - Wilson
-        type: Person
-      - givenNames:
-          - LA
-        familyNames:
-          - Lange
-        type: Person
-      - givenNames:
-          - AR
-        familyNames:
-          - Folsom
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Galarneau
-        type: Person
-      - givenNames:
-          - SK
-        familyNames:
-          - Ganesh
-        type: Person
-    title: >-
-      Genetic association analysis highlights new loci that modulate
-      hematological trait variation in Caucasians and African Americans
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 307
-      pageEnd: 317
-      isPartOf:
-        title: Human Genetics
-        volumeNumber: 129
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref036
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Uyoga
-        type: Person
-      - givenNames:
-          - CM
-        familyNames:
-          - Ndila
-        type: Person
-      - givenNames:
-          - AW
-        familyNames:
-          - Macharia
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Nyutu
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Shah
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Peshu
-        type: Person
-    title: >-
-      Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
-      other diseases in children in Kenya: a case-control and a cohort study
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 10
-      isPartOf:
-        title: The Lancet Haematology
-        volumeNumber: 2
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref037
-  - authors:
-      - givenNames:
-          - JAG
-        familyNames:
-          - Scott
-        type: Person
-      - givenNames:
-          - JA
-        familyNames:
-          - Berkley
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - Mwangi
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Ochola
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Uyoga
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Macharia
-        type: Person
-    title: >-
-      Relation between falciparum malaria and bacteraemia in Kenyan children: a
-      population-based, case-control study and a longitudinal study
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      issueNumber: 9799
-      pageStart: 1316
-      pageEnd: 1323
-      isPartOf:
-        title: The Lancet
-        volumeNumber: 378
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref038
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Church
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Maitland
-        type: Person
-    title: >-
-      Invasive bacterial co-infection in African children with Plasmodium
-      falciparum malaria: a systematic review
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 31
-      isPartOf:
-        title: BMC Medicine
-        volumeNumber: 12
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref039
-  - authors:
-      - givenNames:
-          - SR
-        familyNames:
-          - Cole
-        type: Person
-      - givenNames:
-          - RW
-        familyNames:
-          - Platt
-        type: Person
-      - givenNames:
-          - EF
-        familyNames:
-          - Schisterman
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Chu
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Westreich
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Richardson
-        type: Person
-    title: Illustrating bias due to conditioning on a collider
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      issueNumber: 2
-      pageStart: 417
-      pageEnd: 420
-      isPartOf:
-        title: International Journal of Epidemiology
-        volumeNumber: 39
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref040
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Kiguli
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Maitland
-        type: Person
-      - givenNames:
-          - EC
-        familyNames:
-          - George
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Olupot-Olupot
-        type: Person
-      - givenNames:
-          - RO
-        familyNames:
-          - Opoka
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Engoru
-        type: Person
-    title: >-
-      Anaemia and blood transfusion in African children presenting to hospital
-      with severe febrile illness
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 21
-      isPartOf:
-        title: BMC Medicine
-        volumeNumber: 13
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref041
-  - authors:
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-    title: Anaemia and malaria
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 371
-      isPartOf:
-        title: Malaria Journal
-        volumeNumber: 17
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref042
-  - authors:
-      - givenNames:
-          - TJ
-        familyNames:
-          - VanderWeele
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Ding
-        type: Person
-    title: 'Sensitivity analysis in observational research: introducing the E-value'
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 4
-      pageStart: 268
-      pageEnd: 274
-      isPartOf:
-        title: Annals of Internal Medicine
-        volumeNumber: 167
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref043
-  - authors:
-      - givenNames:
-          - NP
-        familyNames:
-          - Day
-        type: Person
-      - givenNames:
-          - NH
-        familyNames:
-          - Phu
-        type: Person
-      - givenNames:
-          - NTH
-        familyNames:
-          - Mai
-        type: Person
-      - givenNames:
-          - DB
-        familyNames:
-          - Bethell
-        type: Person
-      - givenNames:
-          - TTH
-        familyNames:
-          - Chau
-        type: Person
-      - givenNames:
-          - PP
-        familyNames:
-          - Loc
-        type: Person
-    title: >-
-      Effects of dopamine and epinephrine infusions on renal hemodynamics in
-      severe malaria and severe sepsis
-    type: Article
-    datePublished: '2000'
-    isPartOf:
-      issueNumber: 5
-      pageStart: 1353
-      pageEnd: 1362
-      isPartOf:
-        title: Critical Care Medicine
-        volumeNumber: 28
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref044
-  - authors:
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Pongponratn
-        type: Person
-      - givenNames:
-          - NJ
-        familyNames:
-          - White
-        type: Person
-    title: >-
-      Reduced microcirculatory flow in severe falciparum malaria:
-      pathophysiology and electron-microscopic pathology
-    type: Article
-    datePublished: '2004'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 309
-      pageEnd: 317
-      isPartOf:
-        title: Acta Tropica
-        volumeNumber: 89
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref045
-  - authors:
-      - givenNames:
-          - AM
-        familyNames:
-          - Dondorp
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Ince
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Charunwatthana
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Hanson
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - van
-          - Kuijen
-        type: Person
-      - givenNames:
-          - MA
-        familyNames:
-          - Faiz
-        type: Person
-    title: >-
-      Direct In Vivo Assessment of Microcirculatory Dysfunction in Severe
-      Falciparum Malaria
-    type: Article
-    datePublished: '2008'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 79
-      pageEnd: 84
-      isPartOf:
-        title: The Journal of Infectious Diseases
-        volumeNumber: 197
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref046
-  - authors:
-      - givenNames:
-          - TW
-        familyNames:
-          - Yeo
-        type: Person
-      - givenNames:
-          - DA
-        familyNames:
-          - Lampah
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Gitawati
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Tjitra
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Kenangalem
-        type: Person
-      - givenNames:
-          - YR
-        familyNames:
-          - McNeil
-        type: Person
-    title: >-
-      Impaired nitric oxide bioavailability and l-arginine–reversible
-      endothelial dysfunction in adults with falciparum malaria
-    type: Article
-    datePublished: '2007'
-    isPartOf:
-      issueNumber: 11
-      pageStart: 2693
-      pageEnd: 2704
-      isPartOf:
-        title: Journal of Experimental Medicine
-        volumeNumber: 204
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref047
-  - authors:
-      - givenNames:
-          - C
-        familyNames:
-          - Flatt
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Mitchell
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Yipp
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Looareesuwan
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Ho
-        type: Person
-    title: >-
-      Attenuation of cytoadherence of Plasmodium falciparum to microvascular
-      endothelium under flow by hemodilution
-    type: Article
-    datePublished: '2005'
-    isPartOf:
-      issueNumber: 6
-      pageStart: 660
-      pageEnd: 665
-      isPartOf:
-        title: The American Journal of Tropical Medicine and Hygiene
-        volumeNumber: 72
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref048
-  - authors:
-      - givenNames:
-          - NZ
-        familyNames:
-          - Piety
-        type: Person
-      - givenNames:
-          - WH
-        familyNames:
-          - Reinhart
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Stutz
-        type: Person
-      - givenNames:
-          - SS
-        familyNames:
-          - Shevkoplyas
-        type: Person
-    title: Optimal hematocrit in an artificial microvascular network
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 9
-      pageStart: 2257
-      pageEnd: 2266
-      isPartOf:
-        title: Transfusion
-        volumeNumber: 57
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref049
-  - authors:
-      - givenNames:
-          - KA
-        familyNames:
-          - Rockett
-        type: Person
-      - givenNames:
-          - GM
-        familyNames:
-          - Clarke
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Fitzpatrick
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Hubbart
-        type: Person
-      - givenNames:
-          - AE
-        familyNames:
-          - Jeffreys
-        type: Person
-    title: Reappraisal of known malaria resistance loci in a large multicenter study
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      issueNumber: 11
-      pageStart: 1197
-      isPartOf:
-        title: Nature Genetics
-        volumeNumber: 46
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref050
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Mpoya
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Kiguli
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Olupot-Olupot
-        type: Person
-      - givenNames:
-          - RO
-        familyNames:
-          - Opoka
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Engoru
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Mallewa
-        type: Person
-    title: >-
-      Transfusion and Treatment of severe anaemia in African children (TRACT): a
-      study protocol for a randomised controlled trial
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 593
-      isPartOf:
-        title: Trials
-        volumeNumber: 16
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref051
-  - authors:
-      - givenNames:
-          - ICE
-        familyNames:
-          - Hendriksen
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Mwanga-Amumpaire
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - von
-          - Seidlein
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Mtove
-        type: Person
-      - givenNames:
-          - LJ
-        familyNames:
-          - White
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Olaosebikan
-        type: Person
-    title: >-
-      Diagnosing Severe Falciparum Malaria in Parasitaemic African Children: A
-      Prospective Evaluation of Plasma PfHRP2 Measurement
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      issueNumber: 8
-      isPartOf:
-        title: PLoS Med
-        volumeNumber: 9
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pmed.1002858.ref052

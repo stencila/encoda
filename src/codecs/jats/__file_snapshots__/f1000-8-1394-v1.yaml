@@ -1,76 +1,75 @@
+type: Article
 authors:
-  - givenNames:
-      - Dirk
-      - W.
+  - type: Person
+    affiliations:
+      - type: Organization
     familyNames:
       - Lachenmeier
-    type: Person
+    givenNames:
+      - Dirk
+      - W.
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Stephanie
     familyNames:
       - Habel
-    type: Person
+    givenNames:
+      - Stephanie
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Berit
     familyNames:
       - Fischer
-    type: Person
+    givenNames:
+      - Berit
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Frauke
     familyNames:
       - Herbi
-    type: Person
+    givenNames:
+      - Frauke
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Yvonne
     familyNames:
       - Zerbe
-    type: Person
+    givenNames:
+      - Yvonne
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Verena
     familyNames:
       - Bock
-    type: Person
+    givenNames:
+      - Verena
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Tabata
     familyNames:
       - Rajcic
       - de
       - Rezende
-    type: Person
+    givenNames:
+      - Tabata
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Stephan
-      - G.
     familyNames:
       - Walch
-    type: Person
+    givenNames:
+      - Stephan
+      - G.
+  - type: Person
     affiliations:
       - type: Organization
-  - givenNames:
-      - Constanze
     familyNames:
       - Sproll
-    type: Person
-    affiliations:
-      - type: Organization
-title: >-
-  Are side effects of cannabidiol (CBD) products caused by tetrahydrocannabinol
-  (THC) contamination?
+    givenNames:
+      - Constanze
 description:
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Cannabidiol (CBD)-containing products are widely marketed as over the
         counter products, mostly as food supplements, to avoid the strict rules
@@ -107,15 +106,678 @@ description:
         products, the effectiveness of the instrument of food business
         operators' own responsibility for product safety must obviously be
         challenged.
-    type: Paragraph
-type: Article
+references:
+  - type: Article
+    id: ref-1
+    authors:
+      - type: Person
+        familyNames:
+          - Lachenmeier
+        givenNames:
+          - DW
+    datePublished: '2004'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 490
+      pageStart: 481
+      title: Deut Lebensm Rundsch.
+      volumeNumber: 100
+    title: Hemp food products - A problem?
+  - type: Article
+    id: ref-2
+    authors:
+      - type: Person
+        familyNames:
+          - Lachenmeier
+        givenNames:
+          - DW
+      - type: Person
+        familyNames:
+          - Bock
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Deych
+        givenNames:
+          - A
+    datePublished: '2019'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 372
+      pageStart: 351
+      title: Deut Lebensm Rundsch.
+      volumeNumber: 115
+    title: Hemp food products - an update.
+  - type: Article
+    id: ref-3
+    authors: []
+    datePublished: '2018'
+    title: Cannabidiol (CBD) - Critical review report
+  - type: Article
+    id: ref-4
+    authors:
+      - type: Person
+        familyNames:
+          - Sarill
+        givenNames:
+          - M
+    datePublished: '2018'
+    title: 'Researching safety and efficacy of CBD, hemp extracts'
+  - type: Article
+    id: ref-5
+    authors:
+      - type: Person
+        familyNames:
+          - Büechi
+        givenNames:
+          - S
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 371
+      pageStart: 367
+      title: Schweiz Z Ganzheitsmed.
+      volumeNumber: 29
+    title: >-
+      Wirksamkeit von Cannabidiol: Klinische Studien mit Cannabidiol und
+      Cannabidiol-haltigen Extrakten.
+  - type: Article
+    id: ref-6
+    authors:
+      - type: Person
+        familyNames:
+          - Hazekamp
+        givenNames:
+          - A
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 72
+      pageStart: 65
+      title: Med Cannabis Cannabinoids.
+      volumeNumber: 1
+    title: The trouble with CBD oil.
+  - type: Article
+    id: ref-7
+    authors:
+      - type: Person
+        familyNames:
+          - Wilkinson
+        givenNames:
+          - J
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Soft Drinks Int.
+      pageEnd: 44
+      pageStart: 42
+    title: 'Cannabis, hemp and CBDs.'
+  - type: Article
+    id: ref-8
+    authors:
+      - type: Person
+        familyNames:
+          - Press
+        givenNames:
+          - CA
+      - type: Person
+        familyNames:
+          - Knupp
+        givenNames:
+          - KG
+      - type: Person
+        familyNames:
+          - Chapman
+        givenNames:
+          - KE
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 52
+      pageStart: 49
+      title: Epilepsy Behav.
+      volumeNumber: 45
+    title: >-
+      Parental reporting of response to oral cannabis extracts for treatment of
+      refractory epilepsy.
+  - type: Article
+    id: ref-9
+    authors:
+      - type: Person
+        familyNames:
+          - Szaflarski
+        givenNames:
+          - JP
+      - type: Person
+        familyNames:
+          - Bebin
+        givenNames:
+          - EM
+      - type: Person
+        familyNames:
+          - Comi
+        givenNames:
+          - AM
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Epilepsia.
+        volumeNumber: 59
+      issueNumber: 8
+      pageEnd: 1548
+      pageStart: 1540
+    title: >-
+      Long-term safety and treatment effects of cannabidiol in children and
+      adults with treatment-resistant epilepsies: Expanded access program
+      results.
+  - type: Article
+    id: ref-10
+    authors:
+      - type: Person
+        familyNames:
+          - Devinsky
+        givenNames:
+          - O
+      - type: Person
+        familyNames:
+          - Marsh
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Friedman
+        givenNames:
+          - D
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Lancet Neurol.
+        volumeNumber: 15
+      issueNumber: 3
+      pageEnd: 278
+      pageStart: 270
+    title: >-
+      Cannabidiol in patients with treatment-resistant epilepsy: an open-label
+      interventional trial.
+  - type: Article
+    id: ref-11
+    authors:
+      - type: Person
+        familyNames:
+          - Merrick
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Lane
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Sebree
+        givenNames:
+          - T
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Cannabis Cannabinoid Res.
+        volumeNumber: 1
+      issueNumber: 1
+      pageEnd: 112
+      pageStart: 102
+    title: >-
+      Identification of Psychoactive Degradants of Cannabidiol in Simulated
+      Gastric and Physiological Fluid.
+  - type: Article
+    id: ref-12
+    authors: []
+    datePublished: '2019'
+    title: European Pharmacopoeia
+  - type: Article
+    id: ref-13
+    authors:
+      - type: Person
+        familyNames:
+          - Lachenmeier
+        givenNames:
+          - DW
+    datePublished: '2019'
+    title: >-
+      Dataset for “Are side effects of cannabidiol (CBD) products caused by
+      delta9-tetrahydrocannabinol (THC) contamination
+  - type: Article
+    id: ref-14
+    authors: []
+    datePublished: '2000'
+    title: >-
+      BgVV empfiehlt Richtwerte für THC (Tetrahydrocannabinol) in hanfhaltigen
+      Lebensmitteln
+  - type: Article
+    id: ref-15
+    authors: []
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: EFSA J.
+        volumeNumber: 13
+      issueNumber: 6
+      pageStart: 4141
+    title: >-
+      Scientific Opinion on the risks for human health related to the presence
+      of tetrahydrocannabinol (THC) in milk and other food of animal origin.
+  - type: Article
+    id: ref-16
+    authors:
+      - type: Person
+        familyNames:
+          - Marx
+        givenNames:
+          - TK
+      - type: Person
+        familyNames:
+          - Reddeman
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Clewell
+        givenNames:
+          - AE
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 8143582
+      title: J Toxicol.
+      volumeNumber: 2018
+    title: >-
+      An Assessment of the Genotoxicity and Subchronic Toxicity of a
+      Supercritical Fluid Extract of the Aerial Parts of Hemp.
+  - type: Article
+    id: ref-17
+    authors:
+      - type: Person
+        familyNames:
+          - Adams
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Pease
+        givenNames:
+          - DC
+      - type: Person
+        familyNames:
+          - Cain
+        givenNames:
+          - CK
+    datePublished: '1940'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: J Am Chem Soc.
+        volumeNumber: 62
+      issueNumber: 9
+      pageEnd: 2405
+      pageStart: 2402
+    title: >-
+      Structure of cannabidiol. VI. Isomerization of cannabidiol to
+      tetrahydrocannabinol, a physiologically active product. Conversion of
+      cannabidiol to cannabinol.
+  - type: Article
+    id: ref-18
+    authors:
+      - type: Person
+        familyNames:
+          - Adams
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Cain
+        givenNames:
+          - CK
+      - type: Person
+        familyNames:
+          - McPhee
+        givenNames:
+          - WD
+    datePublished: '1941'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: J Am Chem Soc.
+        volumeNumber: 63
+      issueNumber: 8
+      pageEnd: 2213
+      pageStart: 2209
+    title: Structure of cannabidiol. XII. Isomerization to tetrahydrocannabinols.
+  - type: Article
+    id: ref-19
+    authors:
+      - type: Person
+        familyNames:
+          - Watanabe
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Itokawa
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Yamaori
+        givenNames:
+          - S
+    datePublished: '2007'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Forensic Toxicol.
+        volumeNumber: 25
+      issueNumber: 1
+      pageEnd: 21
+      pageStart: 16
+    title: |-
+      Conversion of cannabidiol to Δ
+                              9-tetrahydrocannabinol and related cannabinoids in artificial gastric juice, and their pharmacological effects in mice.
+  - type: Article
+    id: ref-20
+    authors:
+      - type: Person
+        familyNames:
+          - Lachenmeier
+        givenNames:
+          - DW
+      - type: Person
+        familyNames:
+          - Walch
+        givenNames:
+          - SG
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: J Ind Hemp.
+        volumeNumber: 10
+      issueNumber: 2
+      pageEnd: 17
+      pageStart: 5
+    title: Current status of THC in German hemp food products.
+  - type: Article
+    id: ref-21
+    authors:
+      - type: Person
+        familyNames:
+          - Lachenmeier
+        givenNames:
+          - DW
+      - type: Person
+        familyNames:
+          - Walch
+        givenNames:
+          - SG
+    datePublished: '2005'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 826
+      pageStart: 812
+      title: Electron J Environ Agric Food Chem.
+      volumeNumber: 4
+    title: >-
+      Analysis and toxicological evaluation of cannabinoids in hemp food
+      products - a review.
+  - type: Article
+    id: ref-22
+    authors:
+      - type: Person
+        familyNames:
+          - Manthey
+        givenNames:
+          - J
+    datePublished: '2019'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 96
+      pageStart: 93
+      title: Int J Drug Policy.
+      volumeNumber: 68
+    title: 'Cannabis use in Europe: Current trends and public health concerns.'
+  - type: Article
+    id: ref-23
+    authors:
+      - type: Person
+        familyNames:
+          - Nahler
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Grotenhermen
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Zuardi
+        givenNames:
+          - AW
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Cannabis Cannabinoid Res.
+        volumeNumber: 2
+      issueNumber: 1
+      pageEnd: 86
+      pageStart: 81
+    title: >-
+      A Conversion of Oral Cannabidiol to Delta9-Tetrahydrocannabinol Seems Not
+      to Occur in Humans.
+  - type: Article
+    id: ref-24
+    authors:
+      - type: Person
+        familyNames:
+          - Grotenhermen
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Russo
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Zuardi
+        givenNames:
+          - AW
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Cannabis Cannabinoid Res.
+        volumeNumber: 2
+      issueNumber: 1
+      pageEnd: 4
+      pageStart: 1
+    title: >-
+      Even High Doses of Oral Cannabidol Do Not Cause THC-Like Effects in
+      Humans: Comment on Merrick 
+                              et al.Cannabis and Cannabinoid Research 2016;1(1):102-112; DOI: 10.1089/can.2015.0004.
+  - type: Article
+    id: ref-25
+    authors: []
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 22
+      pageStart: 1
+      title: Off J Europ Union.
+    title: >-
+      Regulation (EU) 2015/2283 of the European Parliament and of the Council of
+      25 November 2015 on novel foods, amending Regulation (EU) No 1169/2011 of
+      the European Parliament and of the Council and repealing Regulation (EC)
+      No 258/97 of the European Parliament and of the Council and Commission
+      Regulation (EC) No 1852/2001.
+  - type: Article
+    id: ref-26
+    authors: []
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 63
+      title: Off J Europ Union.
+    title: >-
+      Regulation (EU) No 1169/2011 of the European Parliament and of the Council
+      of 25 October 2011 on the provision of food information to consumers,
+      amending Regulations (EC) No 1924/2006 and (EC) No 1925/2006 of the
+      European Parliament and of the Council, and repealing Commission Directive
+      87/250/EEC, Council Directive 90/496/EEC, Commission Directive 1999/10/EC,
+      Directive 2000/13/EC of the European Parliament and of the Council,
+      Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation
+      (EC) No 608/2004.
+  - type: Article
+    id: ref-27
+    authors: []
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 25
+      pageStart: 9
+      title: Off J Europ Union.
+    title: >-
+      Regulation (EC) No 1924/2006 of the European Parliament and of the Council
+      of 20 December 2006 on nutrition and health claims made on foods.
+  - type: Article
+    id: ref-28
+    authors:
+      - type: Person
+        familyNames:
+          - Lachenmeier
+        givenNames:
+          - DW
+      - type: Person
+        familyNames:
+          - Rehm
+        givenNames:
+          - J
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 8126
+      title: Sci Rep.
+      volumeNumber: 5
+    title: >-
+      Comparative risk assessment of alcohol, tobacco, cannabis and other
+      illicit drugs using the margin of exposure approach.
+  - type: Article
+    id: ref-29
+    authors:
+      - type: Person
+        familyNames:
+          - Grotenhermen
+        givenNames:
+          - F
+    datePublished: '2003'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Clin Pharmacokinet.
+        volumeNumber: 42
+      issueNumber: 4
+      pageEnd: 360
+      pageStart: 327
+    title: Pharmacokinetics and pharmacodynamics of cannabinoids.
+  - type: Article
+    id: ref-30
+    authors:
+      - type: Person
+        familyNames:
+          - Meier
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Vonesch
+        givenNames:
+          - HJ
+    datePublished: '1997'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Schweiz Med Wochenschr.
+        volumeNumber: 127
+      issueNumber: 6
+      pageEnd: 218
+      pageStart: 214
+    title: '[Cannabis poisoning after eating salad].'
+  - type: Article
+    id: ref-31
+    authors: []
+    datePublished: '2018'
+    title: >-
+      Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu
+      hoch – gesundheitliche Beeinträchtigungen sind möglich. Stellungnahme Nr.
+      034/2018 des BfR vom 8. November 2018.
+  - type: Article
+    id: ref-32
+    authors:
+      - type: Person
+        familyNames:
+          - Bonn-Miller
+        givenNames:
+          - MO
+      - type: Person
+        familyNames:
+          - Loflin
+        givenNames:
+          - MJE
+      - type: Person
+        familyNames:
+          - Thomas
+        givenNames:
+          - BF
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: JAMA.
+        volumeNumber: 318
+      issueNumber: 17
+      pageEnd: 1709
+      pageStart: 1708
+    title: Labeling Accuracy of Cannabidiol Extracts Sold Online.
+title: >-
+  Are side effects of cannabidiol (CBD) products caused by tetrahydrocannabinol
+  (THC) contamination?
 content:
-  - content:
-      - Introduction
-    depth: 1
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
       - >-
         Since hemp has again been approved for cultivation as an industrial crop
         in the form of low Δ
@@ -130,15 +792,15 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-1'
-            type: Cite
+          - type: Cite
+            target: '#ref-1'
       - >-
         . Some product groups (e.g., cosmetics, veterinary supplements, waxes or
         room fragrances) may be produced with intended off-label use, such as
         human consumption, in mind and therefore deliberately avoiding the
         strict safety requirements for medicinal or food products.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         From all hemp constituents, cannabidiol (CBD) is currently the compound
         with highest interest. In contrast to THC, the major drug-constituent of
@@ -148,13 +810,13 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-2'
-            type: Cite
+          - type: Cite
+            target: '#ref-2'
           - |-
             ,
                                 
-          - target: '#ref-3'
-            type: Cite
+          - type: Cite
+            target: '#ref-3'
       - >-
         . However, CBD products of all kinds can now also be purchased in
         organic shops, drug stores, supermarkets and via the Internet, mostly by
@@ -166,8 +828,8 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-4'
-            type: Cite
+          - type: Cite
+            target: '#ref-4'
       - >-
         . With the exception of the treatment of Dravet’s syndrome, there is
         little clinical data on the efficacy and safety of CBD, particularly in
@@ -175,16 +837,16 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-5'
-            type: Cite
+          - type: Cite
+            target: '#ref-5'
           - |-
             ,
                                 
-          - target: '#ref-6'
-            type: Cite
+          - type: Cite
+            target: '#ref-6'
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Commercial CBD products are usually crude extracts from whole hemp
         plants (i.e., including flowers and stems). In other ways (e.g., in
@@ -201,13 +863,13 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-6'
-            type: Cite
+          - type: Cite
+            target: '#ref-6'
           - |-
             ,
                                 
-          - target: '#ref-7'
-            type: Cite
+          - type: Cite
+            target: '#ref-7'
       - >-
         . Probably due to cost reasons, no further specific enrichment or
         cleanup of CBD is conducted, so that the commercial extracts are a
@@ -217,19 +879,19 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-6'
-            type: Cite
+          - type: Cite
+            target: '#ref-6'
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The strategy to market CBD oil products as food supplements within the
         framework of food regulations seems to be the most common approach of
         food operators. Some other products, derived from hemp extracts, are CBD
         chewing gum, “CBD flowers” (plant material sold as tea), and cannabis
         resin, wax or pollen products.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         However, no significant food consumption of full-spectrum hemp extracts
         or hemp flowers containing CBD has been documented before 15 May 1997.
@@ -244,11 +906,11 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-2'
-            type: Cite
+          - type: Cite
+            target: '#ref-2'
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Anecdotal cases ranging from malaise to THC-like effects have become
         known to the food control authorities in consumer complaint cases
@@ -259,13 +921,13 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-8'
-            type: Cite
+          - type: Cite
+            target: '#ref-8'
           - |-
             –
                                 
-          - target: '#ref-10'
-            type: Cite
+          - type: Cite
+            target: '#ref-10'
       - >-
         . Currently there are three hypotheses for the cause of the side
         effects: (i) a direct pharmacological effect of CBD, (ii) the
@@ -274,18 +936,18 @@ content:
         products as by-product due to co-extraction and enrichment or
         contamination. In this article, the hypotheses are investigated
         including new evidence from original data.
-    type: Paragraph
-  - content:
-      - Methods
+  - type: Heading
+    id: ''
     depth: 1
+    content:
+      - Methods
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
-      - CBD degradation
     depth: 2
-    id: ''
-    type: Heading
-  - content:
+    content:
+      - CBD degradation
+  - type: Paragraph
+    content:
       - >-
         To investigate CBD degradation, differently concentrated CBD in
         methanolic solutions was used in a range corresponding to typical
@@ -295,11 +957,11 @@ content:
         well as different incubation times and stress factors such as storage
         under light and heat (see 
                             
-      - content:
-          - Table 1
-        target: '#T1'
+      - type: Link
         relation: table
-        type: Link
+        target: '#T1'
+        content:
+          - Table 1
       - |2-
          for full experimental design). The solutions were stored either in standard freezer (-18°C) or refrigerator (8°C) or at room temperature (20°C). Increased temperatures were achieved using a thermostatically controlled laboratory drying oven type “UT6120” (Heraeus, Langenselbold, Germany) set to either 37°C or 60°C. The daylight condition was achieved by storage at a window (south side). For ultraviolet light exposure, six 25 W ultraviolet (UV) fluorescent tubes type “excellent E” (99.1% UVA) built into a facial tanner type “NT 446 U” (Dr. Kern GmbH, Mademühlen, Germany) were placed 15 cm from the surface of the solutions. In deviation of an experimental protocol of Merrick 
                             
@@ -311,51 +973,54 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-11'
-            type: Cite
+          - type: Cite
+            target: '#ref-11'
       - >-
         , a gastric juice without addition of surfactants was used, which was
         strictly produced according to the European pharmacopoeia
                             
       - type: Superscript
         content:
-          - target: '#ref-12'
-            type: Cite
+          - type: Cite
+            target: '#ref-12'
       - ' (0.020 g NaCl + 0.032 g pepsin + 0.8 mL HCl (1 mol/L), filled up to 10 mL with water). As pure CBD was available only in methanolic solution, the final experimental setups contained 0.08 mol/L HCl and 1% methanol due to dilution.'
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
+  - type: Table
+    id: T1
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Experiment
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Temperature (°C)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Light
                                                     
               - ' '
               - exposure
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Storage
                                                     
               - ' '
               - time
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Storage medium
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 CDB concentration in medium
                                                     
               - ' '
               - (µg/L)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Δ
                                                     
@@ -371,465 +1036,462 @@ content:
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '1'
-                    target: '#FN1'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+                    target: '#FN1'
+                    content:
+                      - '1'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Negative control
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '-18'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 14 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Light
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 3 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 14 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Daylight
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 3 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Daylight
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 14 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - UVA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 1 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - UVA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 3 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Temperature
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 5 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 14 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '8'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 5 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '8'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 14 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 3 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '60'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 1 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Methanol
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 1 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '200'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 2 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '200'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 3 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '200'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 1 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '400'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 2 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '400'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '37'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 3 h
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Simulated gastric
                                                     
               - ' '
               - juice
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '400'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 0%
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Positive control
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - None
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 14 days
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 Methanol / 1 mol/L
                                                     
               - ' '
               - 'HCl (50:50)'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '500'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - 27%
-            type: TableCell
-        type: TableRow
-    type: Table
-    id: T1
     title: Cannabidiol (CBD) stability experiments under various storage conditions.
     content: []
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The samples were measured using a triple quadrupole mass spectrometer
         (TSQ Vantage, Thermo Fisher Scientific, San Jose, CA, USA) coupled with
@@ -909,13 +1571,13 @@ content:
         content:
           - '3'
       - ' (Supelco Cerilliant #C-084, 100 µg/mL in methanol)  for quantification of CBD (Supelco Cerilliant #C-045, 1.0 mg/mL in methanol). The certified reference materials were obtained as solutions in ampoules of 1 mL, all supplied by Merck (Darmstadt, Germany). A limit of detection (LOD) of 5 ng/mL was determined. For both procedures, relative standard deviations better than 5% were achieved.'
-    type: Paragraph
-  - content:
-      - THC contamination of commercial products
-    depth: 2
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - THC contamination of commercial products
+  - type: Paragraph
+    content:
       - >-
         To study the possible influence of natively contained THC in hemp
         products as a cause for side effects, a sampling of all available CBD
@@ -925,18 +1587,18 @@ content:
         retailer were sampled between December 2018 and July 2019. A total of 28
         samples (see 
                             
-      - content:
-          - Table 2
-        target: '#T2'
+      - type: Link
         relation: table
-        type: Link
+        target: '#T2'
+        content:
+          - Table 2
       - |2-
          for product designations) were analyzed using the above described liquid chromatographic method with tandem mass spectrometry (LC-MS/MS) for THC content. For toxicological evaluation of the results, the lowest observed adverse effect level (LOAEL) of 2.5 mg THC per day published by the European food safety authority (EFSA) based on human data (central nervous system effects and pulse increase) was used
                             
       - type: Superscript
         content:
-          - target: '#ref-15'
-            type: Cite
+          - type: Cite
+            target: '#ref-15'
       - >-
         . Taking safety factors (factor 3 for extrapolation from LOAEL to no
         observed adverse effect level (NOAEL) and factor 10 for interindividual
@@ -945,26 +1607,29 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-15'
-            type: Cite
+          - type: Cite
+            target: '#ref-15'
       - .
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
+  - type: Table
+    id: T2
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Sample ID
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Product
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 CBD [mg/day]
                                                     
               - ' '
               - (labelling)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 CBD [mg/day]
                                                     
@@ -974,13 +1639,13 @@ content:
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '1'
-                    target: '#FN2'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN2'
+                    content:
+                      - '1'
+          - type: TableCell
+            content:
               - |-
                 THC [mg/day]
                                                     
@@ -990,13 +1655,13 @@ content:
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '1'
-                    target: '#FN2'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN2'
+                    content:
+                      - '1'
+          - type: TableCell
+            content:
               - |-
                 Toxicity assessment
                                                     
@@ -1004,934 +1669,931 @@ content:
               - |-
                 according to Ref. 
                                                     
-              - target: '#ref-2'
-                type: Cite
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+              - type: Cite
+                target: '#ref-2'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180630663'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '200'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '9'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180776480'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '74'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '51'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '4'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190203194'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD pollen
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '2.6'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190267605'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '2000'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '3140'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '30'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180198245'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 CBD buds (hemp flowers &
                                                     
               - ' '
               - leaves)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - |-
                 (1.3)
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '4'
-                    target: '#FN5'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN5'
+                    content:
+                      - '4'
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180198246'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 CBD buds (hemp flowers &
                                                     
               - ' '
               - leaves)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - |-
                 (1.3)
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '4'
-                    target: '#FN5'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN5'
+                    content:
+                      - '4'
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180598182'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD hemp flower supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '500'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - |-
                 (2.3)
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '4'
-                    target: '#FN5'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN5'
+                    content:
+                      - '4'
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180598187'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD hemp flower supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '250'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - |-
                 (1.3)
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '4'
-                    target: '#FN5'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN5'
+                    content:
+                      - '4'
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180781746'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD chewing gum
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '15'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '30'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 (1.5)
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '4'
-                    target: '#FN5'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN5'
+                    content:
+                      - '4'
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190203193'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD wax
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '660'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '860'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 (1.7)
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '4'
+                  - type: Link
+                    relation: other
                     target: '#FN5'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '4'
+          - type: TableCell
+            content:
               - THC > LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180565755'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '24'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '18'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.2'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '180565756'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '12'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '9'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.2'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190080916'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Supplement with hemp extract
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.1'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190080917'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Supplement with hemp extract
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - '4'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.1'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190141197'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '22.32'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '1.6'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190199739'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Supplement with hemp extract
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
-                    target: '#FN4'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN4'
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - '34'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.5'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190203189'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Supplement with hemp extract
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.2'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190203191'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Supplement with hemp extract
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.7'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190207787'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '67.5'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '95'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.4'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190332551'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '42'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.3'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190332552'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '84'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.3'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190332553'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD oil supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '166'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.3'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190303096'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD chewing gum
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '5'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.1'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190304229'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD chewing gum
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '5'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.1'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - ARfD < THC < LOAEL
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190304228'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - CBD supplement
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '20'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - '0.05'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 THC > German guideline
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '5'
-                    target: '#FN6'
+                  - type: Link
                     relation: other
-                    type: Link
+                    target: '#FN6'
+                    content:
+                      - '5'
               - ' '
               - THC < ARfD
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - '190203192'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Supplement with hemp extract
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '3'
+                  - type: Link
+                    relation: other
                     target: '#FN4'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
-              - |-
-                -
-                                                    
-              - type: Superscript
-                content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
-              - '0.07'
-            type: TableCell
-          - content:
-              - |-
-                THC > German guideline
-                                                    
-              - type: Superscript
-                content:
-                  - content:
-                      - '5'
-                    target: '#FN6'
-                    relation: other
-                    type: Link
-              - ' '
-              - THC < ARfD
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - '190272024'
-            type: TableCell
-          - content:
-              - CBD oil
-            type: TableCell
-          - content:
-              - '27'
-            type: TableCell
-          - content:
-              - '38'
-            type: TableCell
-          - content:
-              - '0.01'
-            type: TableCell
-          - content:
-              - |-
-                THC > German guideline
-                                                    
-              - type: Superscript
-                content:
-                  - content:
-                      - '5'
-                    target: '#FN6'
-                    relation: other
-                    type: Link
-              - ' '
-              - THC < ARfD
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - '190203186'
-            type: TableCell
-          - content:
-              - Supplement with hemp extract
-            type: TableCell
-          - content:
-              - |-
-                -
-                                                    
-              - type: Superscript
-                content:
-                  - content:
+                    content:
                       - '3'
-                    target: '#FN3'
-                    relation: other
-                    type: Link
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - |-
                 -
                                                     
               - type: Superscript
                 content:
-                  - content:
-                      - '2'
-                    target: '#FN3'
+                  - type: Link
                     relation: other
-                    type: Link
-            type: TableCell
-          - content:
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
+              - '0.07'
+          - type: TableCell
+            content:
+              - |-
+                THC > German guideline
+                                                    
+              - type: Superscript
+                content:
+                  - type: Link
+                    relation: other
+                    target: '#FN6'
+                    content:
+                      - '5'
+              - ' '
+              - THC < ARfD
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '190272024'
+          - type: TableCell
+            content:
+              - CBD oil
+          - type: TableCell
+            content:
+              - '27'
+          - type: TableCell
+            content:
+              - '38'
+          - type: TableCell
+            content:
+              - '0.01'
+          - type: TableCell
+            content:
+              - |-
+                THC > German guideline
+                                                    
+              - type: Superscript
+                content:
+                  - type: Link
+                    relation: other
+                    target: '#FN6'
+                    content:
+                      - '5'
+              - ' '
+              - THC < ARfD
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - '190203186'
+          - type: TableCell
+            content:
+              - Supplement with hemp extract
+          - type: TableCell
+            content:
+              - |-
+                -
+                                                    
+              - type: Superscript
+                content:
+                  - type: Link
+                    relation: other
+                    target: '#FN3'
+                    content:
+                      - '3'
+          - type: TableCell
+            content:
+              - |-
+                -
+                                                    
+              - type: Superscript
+                content:
+                  - type: Link
+                    relation: other
+                    target: '#FN3'
+                    content:
+                      - '2'
+          - type: TableCell
+            content:
               - Not detectable
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '-'
-            type: TableCell
-        type: TableRow
-    type: Table
-    id: T2
     title: >-
       Results of THC analysis in commercial products based on hemp extracts from
       the German market (2018–2019).
     content: []
-  - content:
-      - Results and discussion
+  - type: Heading
+    id: ''
     depth: 1
+    content:
+      - Results and discussion
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
-      - Direct pharmacological effect of CBD as explanation of side effects
     depth: 2
-    id: ''
-    type: Heading
-  - content:
+    content:
+      - Direct pharmacological effect of CBD as explanation of side effects
+  - type: Paragraph
+    content:
       - >-
         There is not much evidence to assume that chemically pure CBD may
         exhibit THC-like side-effects. The World Health Organization (WHO)
@@ -1939,26 +2601,26 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-3'
-            type: Cite
+          - type: Cite
+            target: '#ref-3'
       - |2-
          and the CBD doses in the food supplements on the market are typically much lower than the ones tested in clinical studies. Additionally, there is a 90-day experiment in rats with a hemp extract (consisting of 26% cannabinoids, 96% CBD and <1% THC) from which a NOAEL of 100 mg/kg bw/day could be derived
                             
       - type: Superscript
         content:
-          - target: '#ref-16'
-            type: Cite
+          - type: Cite
+            target: '#ref-16'
       - >-
         . For CBD this would be about 25 mg/kg bw/day (or 1750 mg/day for a
         person with a body weight of 70 kg). This NOAEL would not be reached by
         the CBD dosages in food supplements.
-    type: Paragraph
-  - content:
-      - CBD conversion into THC as explanation of side effects
-    depth: 2
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - CBD conversion into THC as explanation of side effects
+  - type: Paragraph
+    content:
       - |-
         Some, partly older, 
                             
@@ -1970,18 +2632,18 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-11'
-            type: Cite
+          - type: Cite
+            target: '#ref-11'
           - |-
             ,
                                     
-          - target: '#ref-17'
-            type: Cite
+          - type: Cite
+            target: '#ref-17'
           - |-
             –
                                     
-          - target: '#ref-19'
-            type: Cite
+          - type: Cite
+            target: '#ref-19'
       - |-
         . If these proposals could be confirmed with 
                             
@@ -1993,8 +2655,8 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-20'
-            type: Cite
+          - type: Cite
+            target: '#ref-20'
       - |-
         . However, taking a closer look at these 
                             
@@ -2006,13 +2668,13 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-21'
-            type: Cite
+          - type: Cite
+            target: '#ref-21'
           - |-
             ,
                                     
-          - target: '#ref-22'
-            type: Cite
+          - type: Cite
+            target: '#ref-22'
       - |-
         . Due to the contradicting results, a replication of the 
                             
@@ -2030,11 +2692,11 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-11'
-            type: Cite
+          - type: Cite
+            target: '#ref-11'
       - ' was conducted using an extended experimental design. A more selective LC-MS/MS method and also an ultra-high pressure liquid chromatographic method with quadrupole time-of-flight mass spectrometry (UPLC-QTOF) were used to investigate the CBD degradation.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - |-
         Under these conditions in contrast to Merrick 
                             
@@ -2046,8 +2708,8 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-11'
-            type: Cite
+          - type: Cite
+            target: '#ref-11'
       - >-
         , no conversion of CBD to THC was observed in any of the samples. Only
         in case of the positive control (2 week storage in 0.5 mol/L HCl and 50%
@@ -2055,18 +2717,18 @@ content:
         identified products (with fragments similar to the ones found in CBN and
         THC fragmentations but with other retention times) was observed (
                             
-      - content:
-          - Table 1
-        target: '#T1'
+      - type: Link
         relation: table
-        type: Link
+        target: '#T1'
+        content:
+          - Table 1
       - |-
         , underlying data
                             
       - type: Superscript
         content:
-          - target: '#ref-13'
-            type: Cite
+          - type: Cite
+            target: '#ref-13'
       - >-
         ). From an analytical viewpoint, the use of less selective and specific
         analytical methods, especially from the point of chromatographic
@@ -2079,13 +2741,13 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-23'
-            type: Cite
+          - type: Cite
+            target: '#ref-23'
           - |-
             ,
                                     
-          - target: '#ref-24'
-            type: Cite
+          - type: Cite
+            target: '#ref-24'
       - |2-
          that CBD would not likely react to THC under 
                             
@@ -2093,31 +2755,31 @@ content:
         content:
           - in vivo
       - ' conditions. The only detectable influence leading to degradation is strong acidity, which should be avoided in CBD formulations to ensure stability of products.'
-    type: Paragraph
-  - content:
-      - THC contamination as cause of side effects
-    depth: 2
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - THC contamination as cause of side effects
+  - type: Paragraph
+    content:
       - >-
         Out of 28 samples, 10 samples (36% of the collective) were exceeding the
         THC LOAEL and were assessed as harmful to health. 14 samples (50% of the
         collective) were classified as unsuitable for human consumption due to
         exceeding the ARfD (see 
                             
-      - content:
-          - Table 2
-        target: '#T2'
+      - type: Link
         relation: table
-        type: Link
+        target: '#T2'
+        content:
+          - Table 2
       - |-
         , underlying data
                             
       - type: Superscript
         content:
-          - target: '#ref-13'
-            type: Cite
+          - type: Cite
+            target: '#ref-13'
       - >-
         ). Furthermore, all samples (100%) have been classified as non-compliant
         to Regulation (EU) 2015/2283 of the European Parliament and of the
@@ -2125,15 +2787,15 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-25'
-            type: Cite
+          - type: Cite
+            target: '#ref-25'
       - |2-
          and therefore being unauthorized novel foods. The labelling of 28 samples (100%) was also non-compliant to Regulation (EU) No 1169/2011 of the European Parliament and of the Council of 25 October 2011 on the provision of food information to consumers
                             
       - type: Superscript
         content:
-          - target: '#ref-26'
-            type: Cite
+          - type: Cite
+            target: '#ref-26'
       - >-
         , e.g. due to lack of mandatory food information such as ingredients
         list or use of unapproved health claims in accordance to Regulation (EC)
@@ -2142,29 +2804,29 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-27'
-            type: Cite
+          - type: Cite
+            target: '#ref-27'
       - >-
         . In summary, none of the products in our survey was found as being
         fully compliant with European food regulations.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The THC dose leading to intoxication is considered to be 10 to 20 mg
         (very high dose up to 60 mg) for inhalatory intake
                             
       - type: Superscript
         content:
-          - target: '#ref-28'
-            type: Cite
+          - type: Cite
+            target: '#ref-28'
       - >-
         . The resorption of orally ingested THC varies greatly interindividually
         with respect to both total amount and resorption rate
                             
       - type: Superscript
         content:
-          - target: '#ref-29'
-            type: Cite
+          - type: Cite
+            target: '#ref-29'
       - >-
         . This might be one of the reasons for the individually very different
         psychotropic effects. A single oral dose of 20 mg THC resulted in
@@ -2174,11 +2836,11 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-30'
-            type: Cite
+          - type: Cite
+            target: '#ref-30'
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Some of the CBD oil supplements contained THC in doses up to 30 mg,
         which can easily explain the adverse effects observed by some consumers.
@@ -2191,18 +2853,18 @@ content:
                             
       - type: Superscript
         content:
-          - target: '#ref-14'
-            type: Cite
+          - type: Cite
+            target: '#ref-14'
           - |-
             ,
                                     
-          - target: '#ref-31'
-            type: Cite
+          - type: Cite
+            target: '#ref-31'
       - >-
         , which is 150 µg/kg, a magnitude below the actual contents in the
         products.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Hence our results provide compelling evidence that THC natively
         contained in CBD products by contamination may be a direct cause for
@@ -2211,13 +2873,13 @@ content:
         “THC-free”, used by most manufacturers, even of the highly contaminated
         products, have to be treated as fraudulent or deceptive food
         information.
-    type: Paragraph
-  - content:
-      - Conclusions
-    depth: 1
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Conclusions
+  - type: Paragraph
+    content:
       - >-
         In light of the discussion about the three potential causative factors
         for side effects of CBD products, the described effects can be explained
@@ -2228,18 +2890,18 @@ content:
                         
       - type: Superscript
         content:
-          - target: '#ref-6'
-            type: Cite
+          - type: Cite
+            target: '#ref-6'
       - |2-
          reporting data from the Netherlands on cannabis oils according to which the labelling information for CBD and THC was often different from the actual contents. In 26 out of 46 products the THC content was >1%. Further corresponding results were reported in a study from the USA, in which the CBD content was correctly declared for only 26 of 84 CBD products and 18 of the products had THC contents
                         
       - type: Superscript
         content:
-          - target: '#ref-32'
-            type: Cite
+          - type: Cite
+            target: '#ref-32'
       - .
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         CBD degradation products are currently unknown and need to be
         characterized and toxicologically assessed, e.g. within the context of
@@ -2251,8 +2913,8 @@ content:
         production hygiene also needs to be improved to minimize contamination.
         According to own observations some CBD oils are manufactured in back
         offices not suitable for food production.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         In our opinion the high THC content of CBD products is almost a “small
         scandal” on the food market. Obviously, the manufacturers have -
@@ -2262,731 +2924,69 @@ content:
         for such lifestyle food supplements, the effectiveness of the instrument
         of food business operators’ own responsibility for food safety must
         obviously be challenged.
-    type: Paragraph
-  - content:
-      - Data availability
+  - type: Heading
+    id: ''
     depth: 1
+    content:
+      - Data availability
+  - type: Heading
     id: ''
-    type: Heading
-  - content:
-      - Underlying data
     depth: 2
-    id: ''
-    type: Heading
-  - content:
+    content:
+      - Underlying data
+  - type: Paragraph
+    content:
       - >-
         Open Science Framework: Dataset for “Are side effects of cannabidiol
         (CBD) products caused by delta9-tetrahydrocannabinol (THC)
         contamination?” 
                             
-      - content:
-          - 'https://doi.org/10.17605/OSF.IO/F7ZXY'
+      - type: Link
         target: 'https://dx.doi.org/10.17605/OSF.IO/F7ZXY'
-        type: Link
+        content:
+          - 'https://doi.org/10.17605/OSF.IO/F7ZXY'
       - type: Superscript
         content:
-          - target: '#ref-13'
-            type: Cite
-    type: Paragraph
-  - content:
+          - type: Cite
+            target: '#ref-13'
+  - type: Paragraph
+    content:
       - 'This project contains the following underlying data:'
-    type: Paragraph
-  - items:
-      - content:
-          - content:
+  - type: List
+    items:
+      - type: ListItem
+        content:
+          - type: Paragraph
+            content:
               - >-
                 Dataset for “Are side effects of cannabidiol (CBD) products
                 caused by delta9-tetrahydrocannabinol (THC) contamination” F1000
                 Research.xlsx (Excel spreadsheet with data underlying 
                                             
-              - content:
-                  - Table 1
-                target: '#T1'
+              - type: Link
                 relation: table
-                type: Link
+                target: '#T1'
+                content:
+                  - Table 1
               - |2-
                  and 
                                             
-              - content:
-                  - Table 2
-                target: '#T2'
+              - type: Link
                 relation: table
-                type: Link
+                target: '#T2'
+                content:
+                  - Table 2
               - >-
                 , missing data/empty cells correspond to values outside
                 calibration (CBD) or not measured)
-            type: Paragraph
-        type: ListItem
     order: unordered
-    type: List
-  - content:
+  - type: Paragraph
+    content:
       - |-
         Data are available under the terms of the 
                             
-      - content:
-          - Creative Commons Zero “No rights reserved” data waiver
+      - type: Link
         target: 'http://creativecommons.org/publicdomain/zero/1.0/'
-        type: Link
+        content:
+          - Creative Commons Zero “No rights reserved” data waiver
       - ' (CC0 1.0 Public domain dedication).'
-    type: Paragraph
-references:
-  - authors:
-      - givenNames:
-          - DW
-        familyNames:
-          - Lachenmeier
-        type: Person
-    title: Hemp food products - A problem?
-    type: Article
-    datePublished: '2004'
-    isPartOf:
-      pageStart: 481
-      pageEnd: 490
-      title: Deut Lebensm Rundsch.
-      volumeNumber: 100
-      type: PublicationVolume
-    id: ref-1
-  - authors:
-      - givenNames:
-          - DW
-        familyNames:
-          - Lachenmeier
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Bock
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Deych
-        type: Person
-    title: Hemp food products - an update.
-    type: Article
-    datePublished: '2019'
-    isPartOf:
-      pageStart: 351
-      pageEnd: 372
-      title: Deut Lebensm Rundsch.
-      volumeNumber: 115
-      type: PublicationVolume
-    id: ref-2
-  - authors: []
-    title: Cannabidiol (CBD) - Critical review report
-    type: Article
-    datePublished: '2018'
-    id: ref-3
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Sarill
-        type: Person
-    title: 'Researching safety and efficacy of CBD, hemp extracts'
-    type: Article
-    datePublished: '2018'
-    id: ref-4
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Büechi
-        type: Person
-    title: >-
-      Wirksamkeit von Cannabidiol: Klinische Studien mit Cannabidiol und
-      Cannabidiol-haltigen Extrakten.
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      pageStart: 367
-      pageEnd: 371
-      title: Schweiz Z Ganzheitsmed.
-      volumeNumber: 29
-      type: PublicationVolume
-    id: ref-5
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Hazekamp
-        type: Person
-    title: The trouble with CBD oil.
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 65
-      pageEnd: 72
-      title: Med Cannabis Cannabinoids.
-      volumeNumber: 1
-      type: PublicationVolume
-    id: ref-6
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Wilkinson
-        type: Person
-    title: 'Cannabis, hemp and CBDs.'
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 42
-      pageEnd: 44
-      isPartOf:
-        title: Soft Drinks Int.
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-7
-  - authors:
-      - givenNames:
-          - CA
-        familyNames:
-          - Press
-        type: Person
-      - givenNames:
-          - KG
-        familyNames:
-          - Knupp
-        type: Person
-      - givenNames:
-          - KE
-        familyNames:
-          - Chapman
-        type: Person
-    title: >-
-      Parental reporting of response to oral cannabis extracts for treatment of
-      refractory epilepsy.
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 49
-      pageEnd: 52
-      title: Epilepsy Behav.
-      volumeNumber: 45
-      type: PublicationVolume
-    id: ref-8
-  - authors:
-      - givenNames:
-          - JP
-        familyNames:
-          - Szaflarski
-        type: Person
-      - givenNames:
-          - EM
-        familyNames:
-          - Bebin
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Comi
-        type: Person
-    title: >-
-      Long-term safety and treatment effects of cannabidiol in children and
-      adults with treatment-resistant epilepsies: Expanded access program
-      results.
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 8
-      pageStart: 1540
-      pageEnd: 1548
-      isPartOf:
-        title: Epilepsia.
-        volumeNumber: 59
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-9
-  - authors:
-      - givenNames:
-          - O
-        familyNames:
-          - Devinsky
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Marsh
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Friedman
-        type: Person
-    title: >-
-      Cannabidiol in patients with treatment-resistant epilepsy: an open-label
-      interventional trial.
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 270
-      pageEnd: 278
-      isPartOf:
-        title: Lancet Neurol.
-        volumeNumber: 15
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-10
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Merrick
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Lane
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Sebree
-        type: Person
-    title: >-
-      Identification of Psychoactive Degradants of Cannabidiol in Simulated
-      Gastric and Physiological Fluid.
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 102
-      pageEnd: 112
-      isPartOf:
-        title: Cannabis Cannabinoid Res.
-        volumeNumber: 1
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-11
-  - authors: []
-    title: European Pharmacopoeia
-    type: Article
-    datePublished: '2019'
-    id: ref-12
-  - authors:
-      - givenNames:
-          - DW
-        familyNames:
-          - Lachenmeier
-        type: Person
-    title: >-
-      Dataset for “Are side effects of cannabidiol (CBD) products caused by
-      delta9-tetrahydrocannabinol (THC) contamination
-    type: Article
-    datePublished: '2019'
-    id: ref-13
-  - authors: []
-    title: >-
-      BgVV empfiehlt Richtwerte für THC (Tetrahydrocannabinol) in hanfhaltigen
-      Lebensmitteln
-    type: Article
-    datePublished: '2000'
-    id: ref-14
-  - authors: []
-    title: >-
-      Scientific Opinion on the risks for human health related to the presence
-      of tetrahydrocannabinol (THC) in milk and other food of animal origin.
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 6
-      pageStart: 4141
-      isPartOf:
-        title: EFSA J.
-        volumeNumber: 13
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-15
-  - authors:
-      - givenNames:
-          - TK
-        familyNames:
-          - Marx
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Reddeman
-        type: Person
-      - givenNames:
-          - AE
-        familyNames:
-          - Clewell
-        type: Person
-    title: >-
-      An Assessment of the Genotoxicity and Subchronic Toxicity of a
-      Supercritical Fluid Extract of the Aerial Parts of Hemp.
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 8143582
-      title: J Toxicol.
-      volumeNumber: 2018
-      type: PublicationVolume
-    id: ref-16
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Adams
-        type: Person
-      - givenNames:
-          - DC
-        familyNames:
-          - Pease
-        type: Person
-      - givenNames:
-          - CK
-        familyNames:
-          - Cain
-        type: Person
-    title: >-
-      Structure of cannabidiol. VI. Isomerization of cannabidiol to
-      tetrahydrocannabinol, a physiologically active product. Conversion of
-      cannabidiol to cannabinol.
-    type: Article
-    datePublished: '1940'
-    isPartOf:
-      issueNumber: 9
-      pageStart: 2402
-      pageEnd: 2405
-      isPartOf:
-        title: J Am Chem Soc.
-        volumeNumber: 62
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-17
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Adams
-        type: Person
-      - givenNames:
-          - CK
-        familyNames:
-          - Cain
-        type: Person
-      - givenNames:
-          - WD
-        familyNames:
-          - McPhee
-        type: Person
-    title: Structure of cannabidiol. XII. Isomerization to tetrahydrocannabinols.
-    type: Article
-    datePublished: '1941'
-    isPartOf:
-      issueNumber: 8
-      pageStart: 2209
-      pageEnd: 2213
-      isPartOf:
-        title: J Am Chem Soc.
-        volumeNumber: 63
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-18
-  - authors:
-      - givenNames:
-          - K
-        familyNames:
-          - Watanabe
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Itokawa
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Yamaori
-        type: Person
-    title: |-
-      Conversion of cannabidiol to Δ
-                              9-tetrahydrocannabinol and related cannabinoids in artificial gastric juice, and their pharmacological effects in mice.
-    type: Article
-    datePublished: '2007'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 16
-      pageEnd: 21
-      isPartOf:
-        title: Forensic Toxicol.
-        volumeNumber: 25
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-19
-  - authors:
-      - givenNames:
-          - DW
-        familyNames:
-          - Lachenmeier
-        type: Person
-      - givenNames:
-          - SG
-        familyNames:
-          - Walch
-        type: Person
-    title: Current status of THC in German hemp food products.
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      issueNumber: 2
-      pageStart: 5
-      pageEnd: 17
-      isPartOf:
-        title: J Ind Hemp.
-        volumeNumber: 10
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-20
-  - authors:
-      - givenNames:
-          - DW
-        familyNames:
-          - Lachenmeier
-        type: Person
-      - givenNames:
-          - SG
-        familyNames:
-          - Walch
-        type: Person
-    title: >-
-      Analysis and toxicological evaluation of cannabinoids in hemp food
-      products - a review.
-    type: Article
-    datePublished: '2005'
-    isPartOf:
-      pageStart: 812
-      pageEnd: 826
-      title: Electron J Environ Agric Food Chem.
-      volumeNumber: 4
-      type: PublicationVolume
-    id: ref-21
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Manthey
-        type: Person
-    title: 'Cannabis use in Europe: Current trends and public health concerns.'
-    type: Article
-    datePublished: '2019'
-    isPartOf:
-      pageStart: 93
-      pageEnd: 96
-      title: Int J Drug Policy.
-      volumeNumber: 68
-      type: PublicationVolume
-    id: ref-22
-  - authors:
-      - givenNames:
-          - G
-        familyNames:
-          - Nahler
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Grotenhermen
-        type: Person
-      - givenNames:
-          - AW
-        familyNames:
-          - Zuardi
-        type: Person
-    title: >-
-      A Conversion of Oral Cannabidiol to Delta9-Tetrahydrocannabinol Seems Not
-      to Occur in Humans.
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 81
-      pageEnd: 86
-      isPartOf:
-        title: Cannabis Cannabinoid Res.
-        volumeNumber: 2
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-23
-  - authors:
-      - givenNames:
-          - F
-        familyNames:
-          - Grotenhermen
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Russo
-        type: Person
-      - givenNames:
-          - AW
-        familyNames:
-          - Zuardi
-        type: Person
-    title: >-
-      Even High Doses of Oral Cannabidol Do Not Cause THC-Like Effects in
-      Humans: Comment on Merrick 
-                              et al.Cannabis and Cannabinoid Research 2016;1(1):102-112; DOI: 10.1089/can.2015.0004.
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 1
-      pageEnd: 4
-      isPartOf:
-        title: Cannabis Cannabinoid Res.
-        volumeNumber: 2
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-24
-  - authors: []
-    title: >-
-      Regulation (EU) 2015/2283 of the European Parliament and of the Council of
-      25 November 2015 on novel foods, amending Regulation (EU) No 1169/2011 of
-      the European Parliament and of the Council and repealing Regulation (EC)
-      No 258/97 of the European Parliament and of the Council and Commission
-      Regulation (EC) No 1852/2001.
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 1
-      pageEnd: 22
-      title: Off J Europ Union.
-      type: PublicationVolume
-    id: ref-25
-  - authors: []
-    title: >-
-      Regulation (EU) No 1169/2011 of the European Parliament and of the Council
-      of 25 October 2011 on the provision of food information to consumers,
-      amending Regulations (EC) No 1924/2006 and (EC) No 1925/2006 of the
-      European Parliament and of the Council, and repealing Commission Directive
-      87/250/EEC, Council Directive 90/496/EEC, Commission Directive 1999/10/EC,
-      Directive 2000/13/EC of the European Parliament and of the Council,
-      Commission Directives 2002/67/EC and 2008/5/EC and Commission Regulation
-      (EC) No 608/2004.
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 63
-      title: Off J Europ Union.
-      type: PublicationVolume
-    id: ref-26
-  - authors: []
-    title: >-
-      Regulation (EC) No 1924/2006 of the European Parliament and of the Council
-      of 20 December 2006 on nutrition and health claims made on foods.
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      pageStart: 9
-      pageEnd: 25
-      title: Off J Europ Union.
-      type: PublicationVolume
-    id: ref-27
-  - authors:
-      - givenNames:
-          - DW
-        familyNames:
-          - Lachenmeier
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Rehm
-        type: Person
-    title: >-
-      Comparative risk assessment of alcohol, tobacco, cannabis and other
-      illicit drugs using the margin of exposure approach.
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 8126
-      title: Sci Rep.
-      volumeNumber: 5
-      type: PublicationVolume
-    id: ref-28
-  - authors:
-      - givenNames:
-          - F
-        familyNames:
-          - Grotenhermen
-        type: Person
-    title: Pharmacokinetics and pharmacodynamics of cannabinoids.
-    type: Article
-    datePublished: '2003'
-    isPartOf:
-      issueNumber: 4
-      pageStart: 327
-      pageEnd: 360
-      isPartOf:
-        title: Clin Pharmacokinet.
-        volumeNumber: 42
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-29
-  - authors:
-      - givenNames:
-          - H
-        familyNames:
-          - Meier
-        type: Person
-      - givenNames:
-          - HJ
-        familyNames:
-          - Vonesch
-        type: Person
-    title: '[Cannabis poisoning after eating salad].'
-    type: Article
-    datePublished: '1997'
-    isPartOf:
-      issueNumber: 6
-      pageStart: 214
-      pageEnd: 218
-      isPartOf:
-        title: Schweiz Med Wochenschr.
-        volumeNumber: 127
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-30
-  - authors: []
-    title: >-
-      Tetrahydrocannabinolgehalte sind in vielen hanfhaltigen Lebensmitteln zu
-      hoch – gesundheitliche Beeinträchtigungen sind möglich. Stellungnahme Nr.
-      034/2018 des BfR vom 8. November 2018.
-    type: Article
-    datePublished: '2018'
-    id: ref-31
-  - authors:
-      - givenNames:
-          - MO
-        familyNames:
-          - Bonn-Miller
-        type: Person
-      - givenNames:
-          - MJE
-        familyNames:
-          - Loflin
-        type: Person
-      - givenNames:
-          - BF
-        familyNames:
-          - Thomas
-        type: Person
-    title: Labeling Accuracy of Cannabidiol Extracts Sold Online.
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 17
-      pageStart: 1708
-      pageEnd: 1709
-      isPartOf:
-        title: JAMA.
-        volumeNumber: 318
-        type: PublicationVolume
-      type: PublicationIssue
-    id: ref-32
