@@ -1,21 +1,27 @@
 /**
  * Script to testing getting and putting documents to/from Google Drive, Docs and Sheets.
  *
+ * See the Google Docs API quickstart for getting API credentials set up:
+ * https://developers.google.com/docs/api/quickstart/nodejs
+ *
  * Usage examples:
  *
- * node test/gapis.js docs create mydoc.md
- * node test/gapis.js docs get 1gmzJsAMijXCwZRUchOBsrQ-_6AAPfRaI3rdfwryXxLA mydoc.md
+ * node gapis.js docs create mydoc.md
+ * node gapis.js docs get 1gmzJsAMijXCwZRUchOBsrQ-_6AAPfRaI3rdfwryXxLA mydoc.md
+ * node gapis.js docs get 1gmzJsAMijXCwZRUchOBsrQ-_6AAPfRaI3rdfwryXxLA mydoc.json raw
  *
- * Because this uses functions in dist/index.js ensure you run `make build` afer any changes.
+ * Because this uses functions in `dist/index.js` ensure you run `make build` after
+ * any changes to the code base.
  */
 
 /* eslint-disable */
 
 const fs = require('fs-extra')
+const path = require('path')
 const readline = require('readline')
 const { google } = require('googleapis')
 const { Readable } = require('stream')
-const { load, dump, read, write } = require('..')
+const { load, dump, read, write } = require('../../dist')
 
 // If modifying these scopes, delete .gapi-token.json.
 const SCOPES = [
@@ -26,14 +32,14 @@ const SCOPES = [
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = '.gapi-token.json'
+const TOKEN_PATH = path.join(__dirname, '.gapi-token.json')
 
 /**
  * Create an OAuth2 client for use with the APIs
  */
 async function authorize() {
   return new Promise((resolve, reject) => {
-    fs.readFile('.gapi-credentials.json', (err, content) => {
+    fs.readFile(path.join(__dirname, '.gapi-credentials.json'), (err, content) => {
       if (err) return console.log('Error loading client secret file:', err)
 
       // Authorize a client with credentials, then call the Google Docs API.
