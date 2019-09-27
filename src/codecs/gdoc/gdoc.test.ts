@@ -1,17 +1,51 @@
+import * as stencila from '@stencila/schema'
 import { GDocCodec } from '.'
-import { dump, load } from '../../util/vfile'
 
-const { decode, encode } = new GDocCodec()
+const gdocCodec = new GDocCodec()
 
-test('decode', async () => {
-  const p = async (gdoc: any) =>
-    await decode(load(JSON.stringify(gdoc)), { fetch: false })
-  expect(await p(kitchenSink.gdoc)).toEqual(kitchenSink.node)
+const gdoc2node = async (gdoc: any) => await gdocCodec.load(JSON.stringify(gdoc), { fetch: false })
+const node2gdoc = async (node: any) => JSON.parse(await gdocCodec.dump(node))
+
+test('decode:kitchensink', async () => {
+  expect(await gdoc2node(kitchenSink.gdoc)).toEqual(kitchenSink.node)
 })
 
-test('encode', async () => {
-  const u = async (node: any) => JSON.parse(await dump(await encode(node)))
-  expect(await u(kitchenSink.node)).toEqual(kitchenSink.gdoc)
+test('encode:kitchensink', async () => {
+  expect(await node2gdoc(kitchenSink.node)).toEqual(kitchenSink.gdoc)
+})
+
+describe('decode:title', () => {
+  test('use the title string property', async () => {
+    expect(await gdoc2node({
+      title: 'Title'
+    })).toEqual(
+      stencila.article([], 'Title')
+    )
+  })
+
+  test('override with Title styled paragraph', async () => {
+    expect(await gdoc2node({
+      title: 'Title',
+      body: {
+        content: [
+          {
+            paragraph: {
+              elements: [{ textRun: { content: 'The actual title!' } }],
+              paragraphStyle: { namedStyleType: 'TITLE' }
+            }
+          }
+        ]
+      }
+    })).toEqual(
+      stencila.article([], [stencila.paragraph(['The actual title!'])])
+    )
+  })
+
+  test('set as empty string if neither present', async () => {
+    expect(await gdoc2node({})).toEqual(
+      stencila.article([], '')
+    )
+  })
 })
 
 // An example intended for testing progressively added decoder/encoder pairs

@@ -143,32 +143,44 @@ async function decodeDocument(
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
   decodingFetcher = fetcher.get.bind(fetcher)
 
+  let title: string | stencila.Paragraph[] | undefined = doc.title
+
+  // Decode the content, if any
   let content: stencila.Node[] = []
   const lists: { [key: string]: stencila.List } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
       .map((elem: GDocT.Schema$StructuralElement, index: number) => {
-        if (elem.paragraph) return decodeParagraph(elem.paragraph, lists)
-        else if (elem.sectionBreak) {
+        if (elem.paragraph) {
+          const para = elem.paragraph
+          const block = decodeParagraph(para, lists)
+          // If this para has the `Title` style then set it as the content
+          if (stencila.isParagraph(block) && para.paragraphStyle) {
+            const styleType = para.paragraphStyle.namedStyleType
+            if (styleType && styleType === 'TITLE') {
+              title = [block]
+              return undefined
+            }
+          }
+          return block
+        } else if (elem.sectionBreak) {
           // The first element in the content is always a sectionBreak, so ignore it
           return index === 0 ? undefined : decodeSectionBreak()
-        } else if (elem.table) return decodeTable(elem.table)
-        else {
+        } else if (elem.table) {
+          return decodeTable(elem.table)
+        } else {
           log.warn(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
         }
       })
-      .filter(node => typeof node !== 'undefined') as stencila.Node[]
+      .filter(node => node !== undefined) as stencila.Node[]
   }
 
   // Resolve the fetched resources
   await fetcher.resolve()
 
-  return {
-    type: 'Article',
-    title: doc.title,
-    authors: [],
-    content
-  }
+  return stencila.article([], title || '', {
+    content: content.length > 0 ? content : undefined
+  })
 }
 
 /**
