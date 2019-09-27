@@ -19,7 +19,7 @@ import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
 
-const logger = getLogger('encoda:gdoc')
+const log = getLogger('encoda:gdoc')
 
 interface DecodeOptions {
   fetch: boolean
@@ -115,6 +115,20 @@ class FetchToSame {
 }
 
 /**
+ * Assert that a value is defined.
+ *
+ * In the GDoc Typescript definitions, all properties are optional i.e.
+ * potentially `undefined`. In practice though, working with actual documents,
+ * many of them are reliably present. So this function provides an `undefined`
+ * guard to prevent Typescript complaining while at the same time providing a
+ * stack in the case that something is `undefined`.
+ */
+function assertDefined<T>(value: T | undefined): T | never {
+  if (value === undefined) throw new Error('Value is unexpectedly undefined')
+  return value
+}
+
+/**
  * Decode a GDoc `Document` to a Stencila `Article`
  *
  * Note that currently `TableOfContents` child elements are ignored.
@@ -140,7 +154,7 @@ async function decodeDocument(
           return index === 0 ? undefined : decodeSectionBreak()
         } else if (elem.table) return decodeTable(elem.table)
         else {
-          throw new Error(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
+          log.warn(`Unhandled GDoc element type ${JSON.stringify(elem)}`)
         }
       })
       .filter(node => typeof node !== 'undefined') as stencila.Node[]
@@ -170,7 +184,8 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
     inlineObjects: {}
   }
   encodingGDoc = gdoc
-  const gdocContent = gdoc.body!.content!
+
+  const gdocContent = assertDefined(assertDefined(gdoc.body).content)
 
   // Wrap the node as needed to ensure an array
   // of block element at the top level
@@ -224,7 +239,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
           gdocContent.push(encodeThematicBreak())
           break
         default:
-          throw new Error(`Unhandled Stencila node type "${type_}"`)
+          log.warn(`Unhandled Stencila node type "${type_}"`)
       }
     }
   }
@@ -275,7 +290,7 @@ function encodeHeading(
     type: 'Paragraph',
     content: heading.content
   })
-  elem.paragraph!.paragraphStyle = {
+  assertDefined(elem.paragraph).paragraphStyle = {
     namedStyleType: `HEADING_${heading.depth}`
   }
   return elem
@@ -325,9 +340,8 @@ function decodeList(
   content: stencila.InlineContent[],
   lists: { [key: string]: stencila.List }
 ): stencila.List | undefined {
-  const bullet = para.bullet!
-  const listId = bullet.listId
-  if (!listId) throw new Error('Woaah, the bullet has no list id!')
+  const bullet = assertDefined(para.bullet)
+  const listId = assertDefined(bullet.listId)
 
   // If there is already a list with this id then add this paragraph to it
   const existingList = lists[listId]
@@ -339,18 +353,15 @@ function decodeList(
     return undefined
   } else {
     // TODO: Handle nested lists from GDocs
-    logger.warn(
-      '🥞 Due to current limitations any nested lists will be flattened'
-    )
+    log.warn('🥞 Due to current limitations any nested lists will be flattened')
   }
 
   // Create a new list with this paragraph as it's first item
-  if (!decodingGDoc.lists) throw new Error('WTF, the GDoc has no lists!')
-  const list = decodingGDoc.lists[listId].listProperties
-  if (!(list && list.nestingLevels)) {
-    throw new Error('OMG! That list id can`t be found')
-  }
-  const level = list.nestingLevels[bullet.nestingLevel || 0]
+  const listsObject = assertDefined(decodingGDoc.lists)
+  const listProperties = assertDefined(listsObject[listId].listProperties)
+  const nestingLevels = assertDefined(listProperties.nestingLevels)
+
+  const level = nestingLevels[bullet.nestingLevel || 0]
   // It seems that the only way to tell if a list is ordered on unordered is to look at
   // the glyphType.
   // See https://developers.google.com/docs/api/reference/rest/v1/ListProperties#NestingLevel
@@ -373,7 +384,7 @@ function decodeList(
  * Encode a Stencila `List` to GDoc `Paragraph` elements with a `bullet`.
  */
 function encodeList(list: stencila.List): GDocT.Schema$StructuralElement[] {
-  const lists = encodingGDoc.lists!
+  const lists = assertDefined(encodingGDoc.lists)
   // Generate a unique list id based on the index of the new list
   // Ids are always prefixed with `kix.` (an old code name for GDocs)
   // followed by a unique string. We use the index here for reversability.
@@ -442,9 +453,10 @@ function decodeTable(table: GDocT.Schema$Table): stencila.Table {
                         )
                       }
                     }
-                    throw new Error(
-                      'Sorry, currently can only handle paragraphs here'
+                    log.warn(
+                      'Sorry, currently can only handle paragraphs in table cells'
                     )
+                    return ''
                   }
                 )
               }
@@ -535,26 +547,28 @@ function decodeParagraphElement(
     // Ignore these fields for now.
     return ''
   }
-  // We should never get here, but if we do, throw an error
-  throw new Error(`Unhandled element type ${JSON.stringify(elem)}`)
+
+  // We should never get here, but if we do, warn the user
+  // and return an empty string.
+  log.warn(`Unhandled element type ${JSON.stringify(elem)}`)
+  return ''
 }
 
 function decodeInlineObjectElement(
   elem: GDocT.Schema$InlineObjectElement
 ): stencila.ImageObject {
-  const inlineObjectId = elem.inlineObjectId
-  if (!inlineObjectId) throw new Error('Malformed GDoc data')
-  if (!decodingGDoc.inlineObjects) throw new Error('Malformed GDoc data')
-  const inlineObjectProperties =
-    decodingGDoc.inlineObjects[inlineObjectId].inlineObjectProperties
-  if (!inlineObjectProperties) throw new Error('Malformed GDoc data')
-  const embeddedObject = inlineObjectProperties.embeddedObject
-  if (!embeddedObject) throw new Error('Malformed GDoc data')
-
+  const embeddedObject = assertDefined(
+    assertDefined(
+      assertDefined(decodingGDoc.inlineObjects)[
+        assertDefined(elem.inlineObjectId)
+      ].inlineObjectProperties
+    ).embeddedObject
+  )
   if (embeddedObject.imageProperties) {
     return decodeImage(embeddedObject, embeddedObject.imageProperties)
   } else {
-    throw new Error(`Unhandled embedded object type ${embeddedObject}`)
+    log.warn(`Unhandled embedded object type ${JSON.stringify(embeddedObject)}`)
+    return stencila.imageObject('')
   }
 }
 
@@ -583,12 +597,14 @@ function encodeInlineContent(
     case 'string':
       return encodeString(node as string)
     default:
-      throw new Error(`Unhandled node type ${type_}`)
+      log.warn(`Unhandled node type ${type_}`)
+      return encodeString('')
   }
 }
 
 /**
- * Decode a GDoc `TextRun` to a `string`, `Emphasis`, `Strong`, `Delete`, `Link`, `Subscript` or `Superscript` node.
+ * Decode a GDoc `TextRun` to a `string`, `Emphasis`, `Strong`, `Delete`,
+ * `Link`, `Subscript` or `Superscript` node.
  *
  * A `TextRun` can have multiple 'marking` e.g. a bold italic link. The decoding function
  * only decodes to the most "semantically important" e.g a `Link`.
@@ -682,7 +698,8 @@ function encodeSuperscript(
 }
 
 /**
- * Encode a Stencila `Suberscript` node to a GDoc `TextRun` node with `textStyle.baselineOffset === 'SUBSCRIPT'`.
+ * Encode a Stencila `Subscript` node to a GDoc `TextRun` node
+ * with `textStyle.baselineOffset === 'SUBSCRIPT'`.
  */
 function encodeSubscript(
   node: stencila.Subscript
