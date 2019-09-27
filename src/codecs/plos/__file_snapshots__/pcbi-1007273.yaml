@@ -1,94 +1,95 @@
+type: Article
 authors:
-  - givenNames:
-      - Jay
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: >-
+          Department of Computer Science, University of Maryland, College Park,
+          Maryland, United States of America
+      - type: Organization
+        name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
     familyNames:
       - Ghurye
-    type: Person
+    givenNames:
+      - Jay
+  - type: Person
     affiliations:
-      - name: >-
-          Department of Computer Science, University of Maryland, College Park,
-          Maryland, United States of America
-        type: Organization
-      - name: >-
+      - type: Organization
+        name: >-
           Genome Informatics Section, Computational and Statistical Genomics
           Branch, National Human Genome Research Institute, National Institute
           of Health, Bethesda, Maryland, United States of America
-        type: Organization
-  - givenNames:
-      - Arang
     familyNames:
       - Rhie
-    type: Person
+    givenNames:
+      - Arang
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Genome Informatics Section, Computational and Statistical Genomics
           Branch, National Human Genome Research Institute, National Institute
           of Health, Bethesda, Maryland, United States of America
-        type: Organization
-  - givenNames:
-      - Brian
-      - P.
     familyNames:
       - Walenz
-    type: Person
+    givenNames:
+      - Brian
+      - P.
+  - type: Person
     affiliations:
-      - name: >-
-          Genome Informatics Section, Computational and Statistical Genomics
-          Branch, National Human Genome Research Institute, National Institute
-          of Health, Bethesda, Maryland, United States of America
-        type: Organization
-  - givenNames:
-      - Anthony
+      - type: Organization
+        name: 'Arima Genomics, San Diego, California, United States of America'
     familyNames:
       - Schmitt
-    type: Person
+    givenNames:
+      - Anthony
+  - type: Person
     affiliations:
-      - name: 'Arima Genomics, San Diego, California, United States of America'
-        type: Organization
-  - givenNames:
-      - Siddarth
+      - type: Organization
+        name: 'Arima Genomics, San Diego, California, United States of America'
     familyNames:
       - Selvaraj
-    type: Person
+    givenNames:
+      - Siddarth
+  - type: Person
     affiliations:
-      - name: 'Arima Genomics, San Diego, California, United States of America'
-        type: Organization
-  - givenNames:
-      - Mihai
-    familyNames:
-      - Pop
-    type: Person
-    affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Department of Computer Science, University of Maryland, College Park,
           Maryland, United States of America
-        type: Organization
-  - givenNames:
-      - Adam
-      - M.
+    familyNames:
+      - Pop
+    givenNames:
+      - Mihai
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: >-
+          Genome Informatics Section, Computational and Statistical Genomics
+          Branch, National Human Genome Research Institute, National Institute
+          of Health, Bethesda, Maryland, United States of America
     familyNames:
       - Phillippy
-    type: Person
+    givenNames:
+      - Adam
+      - M.
+  - type: Person
     affiliations:
-      - name: >-
+      - type: Organization
+        name: >-
           Genome Informatics Section, Computational and Statistical Genomics
           Branch, National Human Genome Research Institute, National Institute
           of Health, Bethesda, Maryland, United States of America
-        type: Organization
-  - givenNames:
-      - Sergey
     familyNames:
       - Koren
-    type: Person
-    affiliations:
-      - name: >-
-          Genome Informatics Section, Computational and Statistical Genomics
-          Branch, National Human Genome Research Institute, National Institute
-          of Health, Bethesda, Maryland, United States of America
-        type: Organization
-title: Integrating Hi-C links with assembly graphs for chromosome-scale assembly
+    givenNames:
+      - Sergey
 description:
-  - content:
+  - type: Paragraph
+    content:
       - 'Long-read sequencing and novel long-range assays have revolutionized '
       - type: Emphasis
         content:
@@ -98,27 +99,1693 @@ description:
         content:
           - a priori
       - ' estimate of chromosome number and minimizes errors by scaffolding with the assistance of an assembly graph. We demonstrate higher accuracy than the state-of-the-art methods across a variety of Hi-C library preparations and input assembly sizes. The Python and C++ code for our method is openly available at '
-      - content:
-          - 'https://github.com/machinegun/SALSA'
+      - type: Link
         target: 'https://github.com/machinegun/SALSA'
-        type: Link
+        content:
+          - 'https://github.com/machinegun/SALSA'
       - .
-    type: Paragraph
-type: Article
+references:
+  - type: Article
+    id: pcbi.1007273.ref001
+    authors:
+      - type: Person
+        familyNames:
+          - Nagarajan
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Pop
+        givenNames:
+          - M
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature Reviews Genetics
+        volumeNumber: 14
+      issueNumber: 3
+      pageEnd: 167
+      pageStart: 157
+    title: Sequence assembly demystified
+  - type: Article
+    id: pcbi.1007273.ref002
+    authors:
+      - type: Person
+        familyNames:
+          - Miller
+        givenNames:
+          - JR
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Sutton
+        givenNames:
+          - G
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genomics
+        volumeNumber: 95
+      issueNumber: 6
+      pageEnd: 327
+      pageStart: 315
+    title: Assembly algorithms for next-generation sequencing data
+  - type: Article
+    id: pcbi.1007273.ref003
+    authors:
+      - type: Person
+        familyNames:
+          - Pevzner
+        givenNames:
+          - PA
+      - type: Person
+        familyNames:
+          - Tang
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Waterman
+        givenNames:
+          - MS
+    datePublished: '2001'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 98
+      issueNumber: 17
+      pageEnd: 9753
+      pageStart: 9748
+    title: An Eulerian path approach to DNA fragment assembly
+  - type: Article
+    id: pcbi.1007273.ref004
+    authors:
+      - type: Person
+        familyNames:
+          - Myers
+        givenNames:
+          - EW
+    datePublished: '2005'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Bioinformatics
+        volumeNumber: 21
+    title: The fragment assembly string graph
+  - type: Article
+    id: pcbi.1007273.ref005
+    authors:
+      - type: Person
+        familyNames:
+          - Nagarajan
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Pop
+        givenNames:
+          - M
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Journal of computational biology
+        volumeNumber: 16
+      issueNumber: 7
+      pageEnd: 908
+      pageStart: 897
+    title: >-
+      Parametric complexity of sequence assembly: theory and applications to
+      next generation sequencing
+  - type: Article
+    id: pcbi.1007273.ref006
+    authors:
+      - type: Person
+        familyNames:
+          - Venter
+        givenNames:
+          - JC
+      - type: Person
+        familyNames:
+          - Smith
+        givenNames:
+          - HO
+      - type: Person
+        familyNames:
+          - Hood
+        givenNames:
+          - L
+    datePublished: '1996'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature
+        volumeNumber: 381
+      issueNumber: 6581
+      pageStart: 364
+    title: A new strategy for genome sequencing
+  - type: Article
+    id: pcbi.1007273.ref007
+    authors:
+      - type: Person
+        familyNames:
+          - Gnerre
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - MacCallum
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Przybylski
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Ribeiro
+        givenNames:
+          - FJ
+      - type: Person
+        familyNames:
+          - Burton
+        givenNames:
+          - JN
+      - type: Person
+        familyNames:
+          - Walker
+        givenNames:
+          - BJ
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Proceedings of the National Academy of Sciences
+        volumeNumber: 108
+      issueNumber: 4
+      pageEnd: 1518
+      pageStart: 1513
+    title: >-
+      High-quality draft assemblies of mammalian genomes from massively parallel
+      sequence data
+  - type: Article
+    id: pcbi.1007273.ref008
+    authors:
+      - type: Person
+        familyNames:
+          - Schwartz
+        givenNames:
+          - DC
+      - type: Person
+        familyNames:
+          - Li
+        givenNames:
+          - X
+      - type: Person
+        familyNames:
+          - Hernandez
+        givenNames:
+          - LI
+      - type: Person
+        familyNames:
+          - Ramnarain
+        givenNames:
+          - SP
+      - type: Person
+        familyNames:
+          - Huff
+        givenNames:
+          - EJ
+      - type: Person
+        familyNames:
+          - Wang
+        givenNames:
+          - YK
+    datePublished: '1993'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Science
+        volumeNumber: 262
+      issueNumber: 5130
+      pageEnd: 114
+      pageStart: 110
+    title: >-
+      Ordered restriction maps of Saccharomyces cerevisiae chromosomes
+      constructed by optical mapping
+  - type: Article
+    id: pcbi.1007273.ref009
+    authors:
+      - type: Person
+        familyNames:
+          - Dong
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Xie
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Jiang
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Xiao
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Du
+        givenNames:
+          - X
+      - type: Person
+        familyNames:
+          - Zhang
+        givenNames:
+          - W
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature biotechnology
+        volumeNumber: 31
+      issueNumber: 2
+      pageEnd: 141
+      pageStart: 135
+    title: >-
+      Sequencing and automated whole-genome optical mapping of the genome of a
+      domestic goat (Capra hircus)
+  - type: Article
+    id: pcbi.1007273.ref010
+    authors:
+      - type: Person
+        familyNames:
+          - Shelton
+        givenNames:
+          - JM
+      - type: Person
+        familyNames:
+          - Coleman
+        givenNames:
+          - MC
+      - type: Person
+        familyNames:
+          - Herndon
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Lu
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Lam
+        givenNames:
+          - ET
+      - type: Person
+        familyNames:
+          - Anantharaman
+        givenNames:
+          - T
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: BMC genomics
+        volumeNumber: 16
+      issueNumber: 1
+      pageStart: 734
+    title: >-
+      Tools and pipelines for BioNano data: molecule assembly pipeline and FASTA
+      super scaffolding tool
+  - type: Article
+    id: pcbi.1007273.ref011
+    authors:
+      - type: Person
+        familyNames:
+          - Zheng
+        givenNames:
+          - GX
+      - type: Person
+        familyNames:
+          - Lau
+        givenNames:
+          - BT
+      - type: Person
+        familyNames:
+          - Schnall-Levin
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Jarosz
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Bell
+        givenNames:
+          - JM
+      - type: Person
+        familyNames:
+          - Hindson
+        givenNames:
+          - CM
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      title: Nature biotechnology
+    title: >-
+      Haplotyping germline and cancer genomes with high-throughput linked-read
+      sequencing
+  - type: Article
+    id: pcbi.1007273.ref012
+    authors:
+      - type: Person
+        familyNames:
+          - Weisenfeld
+        givenNames:
+          - NI
+      - type: Person
+        familyNames:
+          - Kumar
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Shah
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Church
+        givenNames:
+          - DM
+      - type: Person
+        familyNames:
+          - Jaffe
+        givenNames:
+          - DB
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome research
+        volumeNumber: 27
+      issueNumber: 5
+      pageEnd: 767
+      pageStart: 757
+    title: Direct determination of diploid genome sequences
+  - type: Article
+    id: pcbi.1007273.ref013
+    authors:
+      - type: Person
+        familyNames:
+          - Yeo
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Coombe
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Warren
+        givenNames:
+          - RL
+      - type: Person
+        familyNames:
+          - Chu
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Birol
+        givenNames:
+          - I
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: Bioinformatics
+    title: 'Arcs: Scaffolding genome drafts with linked reads'
+  - type: Article
+    id: pcbi.1007273.ref014
+    authors:
+      - type: Person
+        familyNames:
+          - Simonis
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Klous
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Splinter
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Moshkin
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Willemsen
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - De
+          - Wit
+        givenNames:
+          - E
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature genetics
+        volumeNumber: 38
+      issueNumber: 11
+      pageEnd: 1354
+      pageStart: 1348
+    title: >-
+      Nuclear organization of active and inactive chromatin domains uncovered by
+      chromosome conformation capture–on-chip (4C)
+  - type: Article
+    id: pcbi.1007273.ref015
+    authors:
+      - type: Person
+        familyNames:
+          - Lieberman-Aiden
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Van
+          - Berkum
+        givenNames:
+          - NL
+      - type: Person
+        familyNames:
+          - Williams
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Imakaev
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Ragoczy
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Telling
+        givenNames:
+          - A
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: science
+        volumeNumber: 326
+      issueNumber: 5950
+      pageEnd: 293
+      pageStart: 289
+    title: >-
+      prehensive mapping of long-range interactions reveals folding principles
+      of the human genome
+  - type: Article
+    id: pcbi.1007273.ref016
+    authors:
+      - type: Person
+        familyNames:
+          - Burton
+        givenNames:
+          - JN
+      - type: Person
+        familyNames:
+          - Adey
+        givenNames:
+          - A
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature biotechnology
+        volumeNumber: 31
+      issueNumber: 12
+      pageEnd: 1125
+      pageStart: 1119
+    title: >-
+      Chromosome-scale scaffolding of de novo genome assemblies based on
+      chromatin interactions
+  - type: Article
+    id: pcbi.1007273.ref017
+    authors:
+      - type: Person
+        familyNames:
+          - Kaplan
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Dekker
+        givenNames:
+          - J
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature biotechnology
+        volumeNumber: 31
+      issueNumber: 12
+      pageEnd: 1147
+      pageStart: 1143
+    title: High-throughput genome scaffolding from in vivo DNA interaction frequency
+  - type: Article
+    id: pcbi.1007273.ref018
+    authors:
+      - type: Person
+        familyNames:
+          - Marie-Nelly
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Marbouty
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Cournac
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Flot
+        givenNames:
+          - JF
+      - type: Person
+        familyNames:
+          - Liti
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Parodi
+        givenNames:
+          - DP
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      title: Nature communications
+      volumeNumber: 5
+    title: High-quality genome (re) assembly using chromosomal contact data
+  - type: Article
+    id: pcbi.1007273.ref019
+    authors:
+      - type: Person
+        familyNames:
+          - Bickhart
+        givenNames:
+          - DM
+      - type: Person
+        familyNames:
+          - Rosen
+        givenNames:
+          - BD
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature Genetics
+        volumeNumber: 49
+      issueNumber: 4
+      pageEnd: 650
+      pageStart: 643
+    title: >-
+      Single-molecule sequencing and chromatin conformation capture enable de
+      novo reference assembly of the domestic goat genome
+  - type: Article
+    id: pcbi.1007273.ref020
+    authors:
+      - type: Person
+        familyNames:
+          - Dudchenko
+        givenNames:
+          - O
+      - type: Person
+        familyNames:
+          - Batra
+        givenNames:
+          - SS
+      - type: Person
+        familyNames:
+          - Omer
+        givenNames:
+          - AD
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Science
+        volumeNumber: 356
+      issueNumber: 6333
+      pageEnd: 95
+      pageStart: 92
+    title: >-
+      De novo assembly of the Aedes aegypti genome using Hi-C yields
+      chromosome-length scaffolds
+  - type: Article
+    id: pcbi.1007273.ref021
+    authors:
+      - type: Person
+        familyNames:
+          - Ghurye
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Pop
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Bickhart
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Chin
+        givenNames:
+          - CS
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: BMC genomics
+        volumeNumber: 18
+      issueNumber: 1
+      pageStart: 527
+    title: Scaffolding of long read assemblies using long range contact information
+  - type: Article
+    id: pcbi.1007273.ref022
+    authors:
+      - type: Person
+        familyNames:
+          - Dixon
+        givenNames:
+          - JR
+      - type: Person
+        familyNames:
+          - Selvaraj
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Yue
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Kim
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Li
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Shen
+        givenNames:
+          - 'Y'
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature
+        volumeNumber: 485
+      issueNumber: 7398
+      pageEnd: 380
+      pageStart: 376
+    title: >-
+      Topological domains in mammalian genomes identified by analysis of
+      chromatin interactions
+  - type: Article
+    id: pcbi.1007273.ref023
+    authors:
+      - type: Person
+        familyNames:
+          - Eid
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Fehr
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Gray
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Luong
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Lyle
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Otto
+        givenNames:
+          - G
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Science
+        volumeNumber: 323
+      issueNumber: 5910
+      pageEnd: 138
+      pageStart: 133
+    title: Real-time DNA sequencing from single polymerase molecules
+  - type: Article
+    id: pcbi.1007273.ref024
+    authors:
+      - type: Person
+        familyNames:
+          - Jain
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Olsen
+        givenNames:
+          - HE
+      - type: Person
+        familyNames:
+          - Paten
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Akeson
+        givenNames:
+          - M
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome biology
+        volumeNumber: 17
+      issueNumber: 1
+      pageStart: 239
+    title: >-
+      The Oxford Nanopore MinION: delivery of nanopore sequencing to the
+      genomics community
+  - type: Article
+    id: pcbi.1007273.ref025
+    authors:
+      - type: Person
+        familyNames:
+          - Li
+        givenNames:
+          - H
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Bioinformatics
+        volumeNumber: 32
+      issueNumber: 14
+      pageEnd: 2110
+      pageStart: 2103
+    title: >-
+      Minimap and miniasm: fast mapping and de novo assembly for noisy long
+      sequences
+  - type: Article
+    id: pcbi.1007273.ref026
+    authors:
+      - type: Person
+        familyNames:
+          - Li
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Durbin
+        givenNames:
+          - R
+    datePublished: '2009'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Bioinformatics
+        volumeNumber: 25
+      issueNumber: 14
+      pageEnd: 1760
+      pageStart: 1754
+    title: Fast and accurate short read alignment with Burrows–Wheeler transform
+  - type: Article
+    id: pcbi.1007273.ref027
+    authors: []
+    title: ''
+  - type: Article
+    id: pcbi.1007273.ref028
+    authors:
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Walenz
+        givenNames:
+          - BP
+      - type: Person
+        familyNames:
+          - Berlin
+        givenNames:
+          - K
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome research
+        volumeNumber: 27
+      issueNumber: 5
+      pageEnd: 736
+      pageStart: 722
+    title: >-
+      Canu: scalable and accurate long-read assembly via adaptive k-mer
+      weighting and repeat separation
+  - type: Article
+    id: pcbi.1007273.ref029
+    authors:
+      - type: Person
+        familyNames:
+          - Chin
+        givenNames:
+          - CS
+      - type: Person
+        familyNames:
+          - Peluso
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Sedlazeck
+        givenNames:
+          - FJ
+      - type: Person
+        familyNames:
+          - Nattestad
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Concepcion
+        givenNames:
+          - GT
+      - type: Person
+        familyNames:
+          - Clum
+        givenNames:
+          - A
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      title: bioRxiv
+    title: Phased Diploid Genome Assembly with Single Molecule Real-Time Sequencing
+  - type: Article
+    id: pcbi.1007273.ref030
+    authors:
+      - type: Person
+        familyNames:
+          - Kolmogorov
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Yuan
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Lin
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Pevzner
+        givenNames:
+          - PA
+    datePublished: '2019'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature biotechnology
+        volumeNumber: 37
+      issueNumber: 5
+      pageStart: 540
+    title: 'Assembly of long, error-prone reads using repeat graphs'
+  - type: Article
+    id: pcbi.1007273.ref031
+    authors:
+      - type: Person
+        familyNames:
+          - Edmonds
+        givenNames:
+          - J
+    datePublished: '1965'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Canadian Journal of mathematics
+        volumeNumber: 17
+      issueNumber: 3
+      pageEnd: 467
+      pageStart: 449
+    title: 'Paths, trees, and flowers'
+  - type: Article
+    id: pcbi.1007273.ref032
+    authors: []
+    title: ''
+  - type: Article
+    id: pcbi.1007273.ref033
+    authors:
+      - type: Person
+        familyNames:
+          - Schneider
+        givenNames:
+          - VA
+      - type: Person
+        familyNames:
+          - Graves-Lindsay
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Howe
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Bouk
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Chen
+        givenNames:
+          - HC
+      - type: Person
+        familyNames:
+          - Kitts
+        givenNames:
+          - PA
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome research
+        volumeNumber: 27
+      issueNumber: 5
+      pageEnd: 864
+      pageStart: 849
+    title: >-
+      Evaluation of GRCh38 and de novo haploid genome assemblies demonstrates
+      the enduring quality of the reference assembly
+  - type: Article
+    id: pcbi.1007273.ref034
+    authors:
+      - type: Person
+        familyNames:
+          - Jain
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Quick
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Rand
+        givenNames:
+          - AC
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 128835
+      title: bioRxiv
+    title: Nanopore sequencing and assembly of a human genome with ultra-long reads
+  - type: Article
+    id: pcbi.1007273.ref035
+    authors:
+      - type: Person
+        familyNames:
+          - Durand
+        givenNames:
+          - NC
+      - type: Person
+        familyNames:
+          - Shamim
+        givenNames:
+          - MS
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Cell systems
+        volumeNumber: 3
+      issueNumber: 1
+      pageEnd: 98
+      pageStart: 95
+    title: >-
+      Juicer provides a one-click system for analyzing loop-resolution Hi-C
+      experiments
+  - type: Article
+    id: pcbi.1007273.ref036
+    authors:
+      - type: Person
+        familyNames:
+          - Kurtz
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Phillippy
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Delcher
+        givenNames:
+          - AL
+      - type: Person
+        familyNames:
+          - Smoot
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Shumway
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Antonescu
+        givenNames:
+          - C
+    datePublished: '2004'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome biology
+        volumeNumber: 5
+      issueNumber: 2
+    title: Versatile and open software for comparing large genomes
+  - type: Article
+    id: pcbi.1007273.ref037
+    authors:
+      - type: Person
+        familyNames:
+          - Pendleton
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Sebra
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Pang
+        givenNames:
+          - AWC
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      title: Nature methods
+    title: >-
+      Assembly and diploid architecture of an individual human genome via
+      single-molecule technologies
+  - type: Article
+    id: pcbi.1007273.ref038
+    authors:
+      - type: Person
+        familyNames:
+          - Salzberg
+        givenNames:
+          - SL
+      - type: Person
+        familyNames:
+          - Phillippy
+        givenNames:
+          - AM
+      - type: Person
+        familyNames:
+          - Zimin
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Puiu
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Magoc
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome research
+        volumeNumber: 22
+      issueNumber: 3
+      pageEnd: 567
+      pageStart: 557
+    title: 'GAGE: A critical evaluation of genome assemblies and assembly algorithms'
+  - type: Article
+    id: pcbi.1007273.ref039
+    authors:
+      - type: Person
+        familyNames:
+          - Böhringer
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Gödde
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Böhringer
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Schulte
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Epplen
+        givenNames:
+          - JT
+    datePublished: '2002'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 61
+      pageStart: 51
+      title: Online J Bioinformatics
+      volumeNumber: 1
+    title: A software package for drawing ideograms automatically
+  - type: Article
+    id: pcbi.1007273.ref040
+    authors:
+      - type: Person
+        familyNames:
+          - Vezzi
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Narzisi
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Mishra
+        givenNames:
+          - B
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: PloS one
+        volumeNumber: 7
+      issueNumber: 2
+    title: Feature-by-feature–evaluating de novo sequence assembly
+  - type: Article
+    id: pcbi.1007273.ref041
+    authors:
+      - type: Person
+        familyNames:
+          - Durand
+        givenNames:
+          - NC
+      - type: Person
+        familyNames:
+          - Robinson
+        givenNames:
+          - JT
+      - type: Person
+        familyNames:
+          - Shamim
+        givenNames:
+          - MS
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Cell systems
+        volumeNumber: 3
+      issueNumber: 1
+      pageEnd: 101
+      pageStart: 99
+    title: >-
+      Juicebox provides a visualization system for Hi-C contact maps with
+      unlimited zoom
+  - type: Article
+    id: pcbi.1007273.ref042
+    authors:
+      - type: Person
+        familyNames:
+          - Naumova
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Imakaev
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Fudenberg
+        givenNames:
+          - G
+    datePublished: '2013'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Science
+        volumeNumber: 342
+      issueNumber: 6161
+      pageEnd: 953
+      pageStart: 948
+    title: Organization of the mitotic chromosome
+  - type: Article
+    id: pcbi.1007273.ref043
+    authors:
+      - type: Person
+        familyNames:
+          - Putnam
+        givenNames:
+          - NH
+      - type: Person
+        familyNames:
+          - O’Connell
+        givenNames:
+          - BL
+      - type: Person
+        familyNames:
+          - Stites
+        givenNames:
+          - JC
+      - type: Person
+        familyNames:
+          - Rice
+        givenNames:
+          - BJ
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome research
+        volumeNumber: 26
+      issueNumber: 3
+      pageEnd: 350
+      pageStart: 342
+    title: >-
+      Chromosome-scale shotgun assembly using an in vitro method for long-range
+      linkage
+  - type: Article
+    id: pcbi.1007273.ref044
+    authors:
+      - type: Person
+        familyNames:
+          - Ghurye
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Small
+        givenNames:
+          - ST
+      - type: Person
+        familyNames:
+          - Redmond
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Howell
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Phillippy
+        givenNames:
+          - AM
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 492777
+      title: bioRxiv
+    title: >-
+      A chromosome-scale assembly of the major African malaria vector Anopheles
+      funestus
+  - type: Article
+    id: pcbi.1007273.ref045
+    authors:
+      - type: Person
+        familyNames:
+          - Roach
+        givenNames:
+          - MJ
+      - type: Person
+        familyNames:
+          - Schmidt
+        givenNames:
+          - SA
+      - type: Person
+        familyNames:
+          - Borneman
+        givenNames:
+          - AR
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: BMC bioinformatics
+        volumeNumber: 19
+      issueNumber: 1
+      pageStart: 460
+    title: >-
+      Purge Haplotigs: allelic contig reassignment for third-gen diploid genome
+      assemblies
+  - type: Article
+    id: pcbi.1007273.ref046
+    authors:
+      - type: Person
+        familyNames:
+          - Zhang
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Zhang
+        givenNames:
+          - X
+      - type: Person
+        familyNames:
+          - Tang
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Zhang
+        givenNames:
+          - Q
+      - type: Person
+        familyNames:
+          - Hua
+        givenNames:
+          - X
+      - type: Person
+        familyNames:
+          - Ma
+        givenNames:
+          - X
+    datePublished: '2018'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Nature genetics
+        volumeNumber: 50
+      issueNumber: 11
+      pageStart: 1565
+    title: >-
+      Allele-defined genome of the autopolyploid sugarcane Saccharum spontaneum
+      L
+  - type: Article
+    id: pcbi.1007273.ref047
+    authors:
+      - type: Person
+        familyNames:
+          - Huang
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Chen
+        givenNames:
+          - Z
+      - type: Person
+        familyNames:
+          - Huang
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Yu
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Yang
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Li
+        givenNames:
+          - J
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Genome research
+        volumeNumber: 22
+      issueNumber: 8
+      pageEnd: 1588
+      pageStart: 1581
+    title: >-
+      HaploMerger: reconstructing allelic relationships for polymorphic diploid
+      genome assemblies
+  - type: Article
+    id: pcbi.1007273.ref048
+    authors:
+      - type: Person
+        familyNames:
+          - Fletez-Brant
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Qiu
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Gorkin
+        givenNames:
+          - DU
+      - type: Person
+        familyNames:
+          - Hu
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Hansen
+        givenNames:
+          - KD
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: bioRxiv
+    title: Removing unwanted variation between samples in Hi-C experiments
+  - type: Article
+    id: pcbi.1007273.ref049
+    authors:
+      - type: Person
+        familyNames:
+          - Matthews
+        givenNames:
+          - BJ
+      - type: Person
+        familyNames:
+          - Dudchenko
+        givenNames:
+          - O
+      - type: Person
+        familyNames:
+          - Kingan
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Koren
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Antoshechkin
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Crawford
+        givenNames:
+          - JE
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 240747
+      title: bioRxiv
+    title: >-
+      Improved Aedes aegypti mosquito reference genome assembly enables
+      biological discovery and vector control
+  - type: Article
+    id: pcbi.1007273.ref050
+    authors:
+      - type: Person
+        familyNames:
+          - Koepfli
+        givenNames:
+          - KP
+      - type: Person
+        familyNames:
+          - Paten
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - O’Brien
+        givenNames:
+          - SJ
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationIssue
+      isPartOf:
+        type: PublicationVolume
+        title: Annu Rev Anim Biosci
+        volumeNumber: 3
+      issueNumber: 1
+      pageEnd: 111
+      pageStart: 57
+    title: 'The Genome 10K Project: a way forward'
+title: Integrating Hi-C links with assembly graphs for chromosome-scale assembly
 content:
-  - content:
+  - type: Paragraph
+    content:
       - 'This is a '
       - type: Emphasis
         content:
           - PLOS Computational Biology
       - ' Methods paper.'
-    type: Paragraph
-  - content:
-      - Introduction
-    depth: 1
+  - type: Heading
     id: sec001
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
       - >-
         Genome assembly is the process of reconstructing a complete genome
         sequence from significantly shorter sequencing reads. Most genome
@@ -126,60 +1793,60 @@ content:
         oversampling of each genomic locus. Reads originating from the same
         locus are identified using assembly software, which can use these
         overlaps to reconstruct the genome sequence [
-      - target: '#pcbi.1007273.ref001'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref001'
       - ', '
-      - target: '#pcbi.1007273.ref002'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref002'
       - ']. Most approaches are based on either a de Bruijn ['
-      - target: '#pcbi.1007273.ref003'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref003'
       - '] or a string graph ['
-      - target: '#pcbi.1007273.ref004'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref004'
       - >-
         ] formulation. Repetitive sequences exceeding the sequencing read length
         [
-      - target: '#pcbi.1007273.ref005'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref005'
       - >-
         ] introduce ambiguity and prevent complete reconstruction. Unambiguous
         reconstructions of the sequence are output as “unitigs” (or often
         “contigs”). Ambiguous reconstructions are output as edges linking
         unitigs. Scaffolding utilizes long-range linking information such as BAC
         or fosmid clones [
-      - target: '#pcbi.1007273.ref006'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref006'
       - ', '
-      - target: '#pcbi.1007273.ref007'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref007'
       - '], optical maps ['
-      - target: '#pcbi.1007273.ref008'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref008'
       - –
-      - target: '#pcbi.1007273.ref010'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref010'
       - '], linked reads ['
-      - target: '#pcbi.1007273.ref011'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref011'
       - –
-      - target: '#pcbi.1007273.ref013'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref013'
       - '], or chromosomal conformation capture ['
-      - target: '#pcbi.1007273.ref014'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref014'
       - >-
         ] to order and orient contigs. If the linking information spans large
         distances on the chromosome, the resulting scaffolds can span entire
         chromosomes or chromosome arms.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Hi-C is a sequencing-based assay originally designed to interrogate the
         3D structure of the genome inside a cell nucleus by measuring the
         contact frequency between all pairs of loci in the genome [
-      - target: '#pcbi.1007273.ref015'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref015'
       - >-
         ]. The contact frequency between a pair of loci strongly correlates with
         the one-dimensional distance between them. Hi-C data can provide linkage
@@ -187,38 +1854,38 @@ content:
         megabases. As a result, Hi-C data can be used for genome scaffolding.
         Shortly after its introduction, Hi-C was used to generate
         chromosome-scale scaffolds [
-      - target: '#pcbi.1007273.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref016'
       - –
-      - target: '#pcbi.1007273.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref020'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'LACHESIS ['
-      - target: '#pcbi.1007273.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref016'
       - >-
         ] is an early method for Hi-C scaffolding that first clusters contigs
         into a user-specified number of chromosome groups and then orients and
         orders the contigs in each group independently to generate scaffolds.
         Thus, the scaffolds inherit any assembly errors present in the contigs.
         The original SALSA1 [
-      - target: '#pcbi.1007273.ref021'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref021'
       - >-
         ] method first corrects the input assembly, using a lack of Hi-C
         coverage as evidence of error. It then orients and orders the corrected
         contigs to generate scaffolds. Recently, the 3D-DNA [
-      - target: '#pcbi.1007273.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref020'
       - '] method was introduced and demonstrated on a draft assembly of the '
       - type: Emphasis
         content:
           - Aedes aegypti
       - ' genome. 3D-DNA also corrects the errors in the input assembly and then iteratively orients and orders contigs into a single megascaffold. This megascaffold is then broken, identifying chromosomal ends based on the Hi-C contact map.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         There are several shortcomings common across currently available tools.
         They are sensitive to input assembly contiguity and Hi-C library
@@ -226,8 +1893,8 @@ content:
         are common when the input contigs are short, as orientation is
         determined by maximizing the interaction frequency between contig ends
         across all possible orientations [
-      - target: '#pcbi.1007273.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref016'
       - >-
         ]. When contigs are long, there are few interactions spanning the full
         length of the contigs, making the true orientation apparent from the
@@ -236,21 +1903,21 @@ content:
         orientation have a similar weight to incorrect orientations. Biological
         factors, such as topologically associated domains (TADs), also confound
         this analysis [
-      - target: '#pcbi.1007273.ref022'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref022'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'SALSA1 ['
-      - target: '#pcbi.1007273.ref021'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref021'
       - >-
         ] addressed some of these challenges, such as not requiring the expected
         number of chromosomes beforehand and correcting assemblies before
         scaffolding them with Hi-C data. We showed that SALSA1 worked better
         than the most widely used method, LACHESIS [
-      - target: '#pcbi.1007273.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref016'
       - >-
         ]. However, SALSA1 often did not generate chromosome-sized scaffolds.
         The contiguity and correctness of the scaffolds depended on the coverage
@@ -261,8 +1928,8 @@ content:
         novel iterative scaffolding method. In addition to this, SALSA2 enables
         the use of an assembly graph to guide scaffolding, thereby minimizing
         errors, particularly orientation errors.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         SALSA2 is an open source software that combines Hi-C linkage information
         with the ambiguous-edge information from a genome assembly graph to
@@ -272,29 +1939,29 @@ content:
         content:
           - a priori
       - ' estimate of chromosome count, as it naturally stops when the Hi-C information is exhausted. We show that SALSA2 produces fewer orientation, ordering, and chimeric errors across a wide range of assembly contiguities. We also demonstrate its robustness to different Hi-C libraries with varying levels of intra-chromosomal contact frequencies. When compared to 3D-DNA, SALSA2 generates more accurate scaffolds across most conditions. To our knowledge, this is the first method to leverage assembly graph information for scaffolding Hi-C data.'
-    type: Paragraph
-  - content:
-      - Methods
-    depth: 1
+  - type: Heading
     id: sec002
-    type: Heading
-  - content:
-      - content:
-          - Fig 1(A)
-        target: '#pcbi.1007273.g001'
+    depth: 1
+    content:
+      - Methods
+  - type: Paragraph
+    content:
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g001'
+        content:
+          - Fig 1(A)
       - ' shows the overview of the SALSA2 pipeline. SALSA2 begins with a draft assembly generated from long reads such as Pacific Biosciences ['
-      - target: '#pcbi.1007273.ref023'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref023'
       - '] or Oxford Nanopore ['
-      - target: '#pcbi.1007273.ref024'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref024'
       - >-
         ]. SALSA2 requires the contig sequences and, optionally, a GFA-formatted
         assembly graph [
-      - target: '#pcbi.1007273.ref025'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref025'
       - >-
         ] representing the ambiguous reconstructions. Hi-C reads are aligned to
         the contig sequences, and contigs are optionally split in regions
@@ -309,22 +1976,15 @@ content:
         iteration are incorrect. This provides a natural stopping condition,
         when accurate Hi-C links have been exhausted. Below, we describe each of
         the steps in detail.
-    type: Paragraph
-  - id: pcbi.1007273.g001
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 1
+  - type: Figure
+    id: pcbi.1007273.g001
     caption:
-      - content: []
-        depth: 1
+      - type: Heading
         id: sec002
-        type: Heading
-      - content:
+        depth: 1
+        content: []
+      - type: Paragraph
+        content:
           - >-
             (A) Overview of the SALSA2 scaffolding algorithm. (B) Linkage
             information obtained from the alignment of Hi-C reads to the
@@ -348,14 +2008,21 @@ content:
             as it would assign more than one edge to already matched nodes. (F)
             Edges between the ends of same contigs are added back to the
             matching to obtain final scaffolds.
-        type: Paragraph
-    type: Figure
-  - content:
-      - Hi-C library preparation
-    depth: 2
+    label: Fig 1
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec003
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Hi-C library preparation
+  - type: Paragraph
+    content:
       - >-
         Hi-C methods first crosslink a sample (cells or tissues) to preserve the
         genome conformation. The crosslinked DNA is then digested using multiple
@@ -368,16 +2035,16 @@ content:
         shearing, the biotinylated fragments are enriched to assure that only
         fragments originating from ligation events are sequenced in paired-end
         mode via Illumina sequencers to inform DNA contiguity.
-    type: Paragraph
-  - content:
-      - Read alignment
-    depth: 2
+  - type: Heading
     id: sec004
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Read alignment
+  - type: Paragraph
+    content:
       - 'Hi-C paired end reads are aligned to contigs using the BWA aligner ['
-      - target: '#pcbi.1007273.ref026'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref026'
       - >-
         ](parameters: -t 12 -B 8) as single end reads. First, the reads mapping
         at multiple locations are ignored as they can cause ambiguities while
@@ -386,23 +2053,23 @@ content:
         to the ligation junction. After filtering the chimeric reads, the
         pairing information is restored. Any PCR duplicates in the paired-end
         alignments are removed using Picard tools [
-      - target: '#pcbi.1007273.ref027'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref027'
       - >-
         ]. Read pairs aligned to different contigs are used to construct the
         initial scaffold graph. The suggested mapping pipeline is available at 
-      - content:
-          - 'http://github.com/ArimaGenomics/mapping_pipeline'
+      - type: Link
         target: 'http://github.com/ArimaGenomics/mapping_pipeline'
-        type: Link
+        content:
+          - 'http://github.com/ArimaGenomics/mapping_pipeline'
       - .
-    type: Paragraph
-  - content:
-      - Contig correction
-    depth: 2
+  - type: Heading
     id: sec005
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Contig correction
+  - type: Paragraph
+    content:
       - >-
         As any assembly is likely to contain mis-assembled sequences, SALSA2
         uses the physical coverage of Hi-C pairs to identify suspicious regions
@@ -414,13 +2081,13 @@ content:
         coverage threshold is not met. A drawback of this approach is that
         coverage can vary, both due to sequencing depth and variation in Hi-C
         link density.
-    type: Paragraph
-  - content:
-      - content:
-          - Fig 2
-        target: '#pcbi.1007273.g002'
+  - type: Paragraph
+    content:
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g002'
+        content:
+          - Fig 2
       - ' sketches the new contig correction algorithm implemented in SALSA2. Instead of the single coverage threshold used in SALSA1, a set of suspicious intervals is found with a sweep of thresholds. For a sweep of thresholds, we find the continuous stretches of regions which have lower physical coverage. Note that there can be multiple intervals for a particular threshold that have multiple stretches of low coverage. In such case, we only consider the interval of the maximum size. These intervals denote the regions of potential misassembly on the contig. Using the collection of these intervals as an interval graph, we find the maximal clique, which is the maximal set of intervals intersecting at any location along the contig. This maximal clique represents the region of the contig which had low coverage for the majority of the tested cutoffs. This can be done in '
       - type: Emphasis
         content:
@@ -434,23 +2101,16 @@ content:
         content:
           - 'N'
       - ' is the number of intervals. For a maximal clique, the region between the start and end of the smallest interval in the clique is flagged as a mis-assembly and the contig is split into three pieces—the sequence to the left of the region, the junction region itself, and the sequence to the right of the region. The intuition behind choosing the smallest interval is to accurately pinpoint the location of assembly error. Note that this algorithm finds only one misassembly per contig. For more rigorous misassembly detection, same algorithm can be run multiple times on each contig until no more drops in physical coverage are found.'
-    type: Paragraph
-  - id: pcbi.1007273.g002
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 2
+  - type: Figure
+    id: pcbi.1007273.g002
     caption:
-      - content:
-          - Example of the mis-assembly detection algorithm in SALSA2.
-        depth: 2
+      - type: Heading
         id: sec005
-        type: Heading
-      - content:
+        depth: 2
+        content:
+          - Example of the mis-assembly detection algorithm in SALSA2.
+      - type: Paragraph
+        content:
           - >-
             The plot shows the position on x-axis and the physical coverage on
             the y-axis. The dotted horizontal lines show the different
@@ -460,53 +2120,60 @@ content:
             clique. The smallest interval (purple) in the clique is identified
             as mis-assembly and the contig is broken in three parts at its
             boundaries.
-        type: Paragraph
-    type: Figure
-  - content:
-      - Assembly graph construction
-    depth: 2
+    label: Fig 2
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec006
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Assembly graph construction
+  - type: Paragraph
+    content:
       - 'For our experiments, we use the unitig assembly graph produced by Canu ['
-      - target: '#pcbi.1007273.ref028'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref028'
       - '] ('
-      - content:
-          - Fig 1(C)
-        target: '#pcbi.1007273.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g001'
+        content:
+          - Fig 1(C)
       - >-
         ), as this is a more conservative assembly output than contig sequences
         that represent various traversals of this graph. SALSA2 requires only a
         GFA format [
-      - target: '#pcbi.1007273.ref025'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref025'
       - >-
         ] representation of the assembly. Since most long-read genome assemblers
         such as FALCON [
-      - target: '#pcbi.1007273.ref029'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref029'
       - '], miniasm ['
-      - target: '#pcbi.1007273.ref025'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref025'
       - '], Canu ['
-      - target: '#pcbi.1007273.ref028'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref028'
       - '], and Flye ['
-      - target: '#pcbi.1007273.ref030'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref030'
       - >-
         ] provide assembly graphs in GFA format, their output is compatible with
         SALSA2 for scaffolding.
-    type: Paragraph
-  - content:
-      - Scaffold graph construction
-    depth: 2
+  - type: Heading
     id: sec007
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Scaffold graph construction
+  - type: Paragraph
+    content:
       - 'The scaffold graph is defined as '
       - type: Emphasis
         content:
@@ -528,19 +2195,19 @@ content:
         content:
           - E
       - ' are derived from the Hi-C read mapping ('
-      - content:
-          - Fig 1B
-        target: '#pcbi.1007273.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g001'
+        content:
+          - Fig 1B
       - >-
         ). The idea of using contig ends as nodes is similar to that used by the
         string graph formulation [
-      - target: '#pcbi.1007273.ref004'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref004'
       - '].'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Modeling each contigs as two nodes allows a pair of contigs to have
         multiple edges in any of the four possible orientations
@@ -548,8 +2215,8 @@ content:
         reverse-reverse). The graph then contains two edge types—one explicitly
         connects two different contigs based on Hi-C data, while the other
         implicitly connects the two ends of the same contig.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         As in SALSA1, we normalize the Hi-C read counts by the frequency of
         restriction enzyme cut sites in each contig. This normalization reduces
@@ -571,12 +2238,12 @@ content:
           - G
       - |2
          as:
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - |-
 
         where 
@@ -602,26 +2269,26 @@ content:
       - >-
         . By the ends, we mean the first and second half of the contig if
         divided at the midpoint along its length.
-    type: Paragraph
   - type: Math
     language: MathML
     text: >-
       <mml:mtable displaystyle="true"><mml:mtr><mml:mtd
       columnalign="right"><mml:mrow><mml:mi>W</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>N</mml:mi><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>C</mml:mi><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>)</mml:mo><mml:mo>+</mml:mo><mml:mi>C</mml:mi><mml:mo>(</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr></mml:mtable>
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We observed that the globally highest edge weight does not always
         capture the correct orientation and ordering information due to
         variations in Hi-C interaction frequencies within a genome. To address
         this, we defined a modified edge ratio, similar to the one described in
         [
-      - target: '#pcbi.1007273.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref020'
       - >-
         ], which captures the relative weights of all the neighboring edges for
         a particular node.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'The best buddy weight '
       - type: Emphasis
         content:
@@ -714,19 +2381,19 @@ content:
         . Once used, the edges are removed from subsequent iterations. Thus, the
         most confident edges are used first but initially low-scoring edges can
         become best in subsequent iterations.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         For the assembly graph, we define a similar ratio. Since the edge
         weights are optional in the GFA specification and do not directly relate
         to the proximity of two contigs on the chromosome, we use the graph
         topology to establish this relationship. Let 
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - ' denote the reverse complement of the contig '
       - type: Emphasis
         content:
@@ -780,34 +2447,34 @@ content:
         content:
           - v
       - '), '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - ', '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - ' and '
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - |
         . With this, the score for a pair of contigs is defined as follows:
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
       - |-
 
         where 
@@ -857,11 +2524,11 @@ content:
         ) > 1. If the orientation implied by the assembly graph differs from the
         orientation implied by the Hi-C data, we remove the Hi-C edge and retain
         the assembly graph edge (
-      - content:
-          - Fig 1D
-        target: '#pcbi.1007273.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g001'
+        content:
+          - Fig 1D
       - ). Computing the score graph requires |
       - type: Emphasis
         content:
@@ -883,7 +2550,6 @@ content:
         content:
           - E
       - '|)) since we do not use the edge weights.'
-    type: Paragraph
   - type: Math
     language: MathML
     text: '<mml:mover accent="true"><mml:mi>u</mml:mi><mml:mo>¯</mml:mo></mml:mover>'
@@ -912,12 +2578,13 @@ content:
       accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>y</mml:mi><mml:mo>}</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>σ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:msup><mml:mi>x</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:munder><mml:mtext>min</mml:mtext><mml:mrow><mml:mi>x</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mover
       accent="true"><mml:mi>u</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mover
       accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>σ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr></mml:mtable>
-  - content:
-      - Contig layout
-    depth: 2
+  - type: Heading
     id: sec008
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Contig layout
+  - type: Paragraph
+    content:
       - >-
         Once we have the hybrid graph, we lay out the contigs to generate
         scaffolds. Since there are implicit edges in the graph 
@@ -941,8 +2608,8 @@ content:
         content:
           - '2'
       - ') time ['
-      - target: '#pcbi.1007273.ref031'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref031'
       - >-
         ]. We iteratively find a maximum matching in the graph by removing nodes
         found in the previous iteration. Using the optimal maximum matching
@@ -966,8 +2633,8 @@ content:
         ) time, which would be extremely slow for large graphs. Instead, we use
         a greedy maximal matching algorithm which is guaranteed to find a
         matching within 1/2-approximation of the optimum [
-      - target: '#pcbi.1007273.ref032'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref032'
       - ']. The greedy matching algorithm takes '
       - type: Emphasis
         content:
@@ -989,38 +2656,38 @@ content:
         content:
           - E
       - '|). The algorithm for contig layout is sketched in Algorithm 1. '
-      - content:
-          - Fig 1(D)–1(F)
-        target: '#pcbi.1007273.g001'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g001'
+        content:
+          - Fig 1(D)–1(F)
       - ' show the layout on an example graph. Contigs which were not scaffolded are inserted in the large scaffolds with the method used in SALSA1. If unitigs are used as an input and the layout of unitigs along contigs is provided as an input to SALSA2, it can replace unitig sequences by contigs in the final scaffolds.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - Algorithm 1
       - ' Contig Layout Algorithm'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - E
       - ': Edges sorted by the best buddy weight'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - M
       - ': Set to store maximal matchings'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - G
       - ': The scaffold graph'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - while
@@ -1032,14 +2699,14 @@ content:
       - type: Strong
         content:
           - do
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - M
       - '* = {}'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - for
@@ -1054,8 +2721,8 @@ content:
       - type: Strong
         content:
           - do
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - if
@@ -1070,8 +2737,8 @@ content:
       - type: Strong
         content:
           - then
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - M
@@ -1083,18 +2750,18 @@ content:
       - type: Emphasis
         content:
           - e
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - end if
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - end for
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - M
@@ -1107,25 +2774,25 @@ content:
         content:
           - M
       - '*'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - ' Remove nodes and edges which are part of '
       - type: Emphasis
         content:
           - M
       - '* from G'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - end while
-    type: Paragraph
-  - content:
-      - Iterative mis-join correction
-    depth: 2
+  - type: Heading
     id: sec009
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Iterative mis-join correction
+  - type: Paragraph
+    content:
       - >-
         Since the contig layout is greedy, it can introduce errors by selecting
         a false Hi-C link which was not eliminated by our ratio scoring. These
@@ -1134,8 +2801,8 @@ content:
         in the last iteration for correctness. Any join with low spanning Hi-C
         support relative to the rest of the scaffold is broken and the links are
         blacklisted for further iterations.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We compute the physical coverage spanned by all read pairs aligned in a
         window of size 
@@ -1155,11 +2822,11 @@ content:
         content:
           - δ
       - ' and 1, otherwise. We then find the maximum sum subarray in this auxiliary array, since it captures the longest stretch of low physical coverage. If the position being tested for a mis-join lies within the region spanned by the maximal clique generated with the maximum sum subarray intervals for different cutoffs ('
-      - content:
-          - Fig 2
-        target: '#pcbi.1007273.g002'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g002'
+        content:
+          - Fig 2
       - >-
         ), the join is marked as incorrect. The physical coverage can be
         computed in 
@@ -1221,14 +2888,14 @@ content:
         content:
           - K
       - ' controls the specificity of the mis-assembly detection, thereby avoiding false positives. The algorithm for mis-join detection is sketched in Algorithm 2. When the majority of joins made in a particular iteration are flagged as incorrect by the algorithm, SASLA2 stops scaffolding and reports the scaffolds generated in the penultimate iteration as the final result.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - Algorithm 2
       - ' Misjoin detection and correction algorithm'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - Cov
@@ -1241,20 +2908,20 @@ content:
         content:
           - p
       - ' on a scaffold'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - A
       - ': Auxiliary array'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - I
       - ': Maximum sum subarray intervals'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - for
@@ -1265,8 +2932,8 @@ content:
       - type: Strong
         content:
           - do
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - if
@@ -1284,8 +2951,8 @@ content:
       - type: Strong
         content:
           - then
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - A
@@ -1294,13 +2961,13 @@ content:
         content:
           - i
       - '] = 1'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - else
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - A
@@ -1309,13 +2976,13 @@ content:
         content:
           - i
       - '] = −1'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - end if
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - s
@@ -1338,8 +3005,8 @@ content:
         content:
           - A
       - )
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - I
@@ -1366,13 +3033,13 @@ content:
             content:
               - δ
       - '}'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - end for
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Emphasis
         content:
           - s
@@ -1385,8 +3052,8 @@ content:
         content:
           - I
       - )
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - if
@@ -1405,164 +3072,162 @@ content:
       - type: Strong
         content:
           - then
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - ' Break the scaffold at position '
       - type: Emphasis
         content:
           - p
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - type: Strong
         content:
           - end if
-    type: Paragraph
-  - content:
-      - Results
-    depth: 1
+  - type: Heading
     id: sec010
-    type: Heading
-  - content:
-      - Dataset description
-    depth: 2
+    depth: 1
+    content:
+      - Results
+  - type: Heading
     id: sec011
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Dataset description
+  - type: Paragraph
+    content:
       - >-
         We created artificial assemblies, each containing contigs of same size,
         by splitting the GRCh38 [
-      - target: '#pcbi.1007273.ref033'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref033'
       - >-
         ] reference into fixed-sized contigs of 200 to 900 kbp. This gave us
         eight assemblies. The assembly graph for each input was built by adding
         edges for any adjacent contigs in the genome. So the simulated assembly
         graph was linear with edges between two adjacent contigs for each contig
         in the graph.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         For real data, we use the recently published NA12878 human dataset
         sequenced with Oxford Nanopore [
-      - target: '#pcbi.1007273.ref034'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref034'
       - '] and assembled with Canu ['
-      - target: '#pcbi.1007273.ref028'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref028'
       - >-
         ]. We use a Hi-C library from Arima Genomics (Arima Genomics, San Diego,
         CA) sequenced to 40x Illumina coverage (SRX3651893). 
-      - content:
-          - Table 1
-        target: '#pcbi.1007273.t001'
+      - type: Link
         relation: table
-        type: Link
+        target: '#pcbi.1007273.t001'
+        content:
+          - Table 1
       - ' shows the statistics for this library. We compare results with the original SALSA(commit—833fb11), SALSA2 with and without the assembly graph input(commit—68a65b4), and 3D-DNA (commit—3f18163). We did not compare our results with LACHESIS because it is no longer supported and is outperformed by 3D-DNA ['
-      - target: '#pcbi.1007273.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref020'
       - >-
         ]. SALSA2 was run using default parameters, with the exception of graph
         incorporation, as listed. For 3D-DNA, alignments were generated using
         the Juicer alignment pipeline [
-      - target: '#pcbi.1007273.ref035'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref035'
       - >-
         ] with defaults (-m haploid -t 15000 -s 2), except for mis-assembly
         detection, as listed. A genome size of 3.2 Gbp was used for contiguity
         statistics for all assemblies.
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
-              - Library
-            type: TableCell
-          - content:
-              - Total read pairs
-            type: TableCell
-          - content:
-              - Mapped read pairs
-            type: TableCell
-          - content:
-              - Intra-contig pairs
-            type: TableCell
-          - content:
-              - Inter-contig pairs
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Arima-HiC
-            type: TableCell
-          - content:
-              - 1.241 B
-            type: TableCell
-          - content:
-              - 1.031 B
-            type: TableCell
-          - content:
-              - 494.41 M
-            type: TableCell
-          - content:
-              - 275.92 M
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Mitotic Hi-C
-            type: TableCell
-          - content:
-              - 156.03 M
-            type: TableCell
-          - content:
-              - 88.38 M
-            type: TableCell
-          - content:
-              - 9.92 M
-            type: TableCell
-          - content:
-              - 47.58 M
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Chicago
-            type: TableCell
-          - content:
-              - 46.27 M
-            type: TableCell
-          - content:
-              - 41.50 M
-            type: TableCell
-          - content:
-              - 19.82 M
-            type: TableCell
-          - content:
-              - 7.72 M
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Mosquito Hi-C
-            type: TableCell
-          - content:
-              - 187.69 M
-            type: TableCell
-          - content:
-              - 111.76 M
-            type: TableCell
-          - content:
-              - 15.77 M
-            type: TableCell
-          - content:
-              - 14.37 M
-            type: TableCell
-        type: TableRow
-    type: Table
+  - type: Table
     id: pcbi.1007273.t001
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Library
+          - type: TableCell
+            content:
+              - Total read pairs
+          - type: TableCell
+            content:
+              - Mapped read pairs
+          - type: TableCell
+            content:
+              - Intra-contig pairs
+          - type: TableCell
+            content:
+              - Inter-contig pairs
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Arima-HiC
+          - type: TableCell
+            content:
+              - 1.241 B
+          - type: TableCell
+            content:
+              - 1.031 B
+          - type: TableCell
+            content:
+              - 494.41 M
+          - type: TableCell
+            content:
+              - 275.92 M
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Mitotic Hi-C
+          - type: TableCell
+            content:
+              - 156.03 M
+          - type: TableCell
+            content:
+              - 88.38 M
+          - type: TableCell
+            content:
+              - 9.92 M
+          - type: TableCell
+            content:
+              - 47.58 M
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Chicago
+          - type: TableCell
+            content:
+              - 46.27 M
+          - type: TableCell
+            content:
+              - 41.50 M
+          - type: TableCell
+            content:
+              - 19.82 M
+          - type: TableCell
+            content:
+              - 7.72 M
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Mosquito Hi-C
+          - type: TableCell
+            content:
+              - 187.69 M
+          - type: TableCell
+            content:
+              - 111.76 M
+          - type: TableCell
+            content:
+              - 15.77 M
+          - type: TableCell
+            content:
+              - 14.37 M
     title: Hi-C library statistics for different datasets used in this paper.
     content:
       - type: element
-        name: p
         elements:
           - type: text
             text: >-
@@ -1571,13 +3236,15 @@ content:
               account for the read pairs where both the reads align to same
               contig and inter-contig read pairs account for the read pairs
               where both reads align to different contigs.
-  - content:
+        name: p
+  - type: Paragraph
+    content:
       - >-
         For evaluation, we also used the GRCh38 reference to define a set of
         true and false links from the Hi-C graph. We mapped the assembly to the
         reference with MUMmer3.23 (nucmer -c 500 -l 20) [
-      - target: '#pcbi.1007273.ref036'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref036'
       - >-
         ] and generated a tiling using MUMmer’s show-tiling utility. For this
         “true link” dataset, any link joining contigs in the same chromosome in
@@ -1585,21 +3252,21 @@ content:
         contig position, orientation, and chromosome assignment. We masked
         sequences in GRCh38 that matched known structural variants from a
         previous assembly of NA12878 [
-      - target: '#pcbi.1007273.ref037'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref037'
       - '] to avoid counting true variations as scaffolding errors.'
-    type: Paragraph
-  - content:
-      - Evaluation on simulated contigs
-    depth: 2
+  - type: Heading
     id: sec012
-    type: Heading
-  - content:
-      - Assembly correction
-    depth: 3
+    depth: 2
+    content:
+      - Evaluation on simulated contigs
+  - type: Heading
     id: sec013
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Assembly correction
+  - type: Paragraph
+    content:
       - >-
         We simulated assembly error by randomly joining 200 pairs of contigs
         from each simulated assembly. All erroneous joins were made between
@@ -1612,30 +3279,30 @@ content:
         sensitivity over all simulated assemblies was 77.62% and the specificity
         was 86.13%. The sensitivity was highest for larger contigs (50% for 200
         kbp versus more than 90% for contigs greater than 500 kbp, 
-      - content:
-          - S1 Table
-        target: '#pcbi.1007273.s004'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pcbi.1007273.s004'
+        content:
+          - S1 Table
       - >-
         ) implying that our algorithm is able to accurately identify errors in
         large contigs, which can have a negative impact on the final scaffolds
         if not corrected. Although we used a cutoff of 20 kbp to evaluate
         sensitivity and specificity, most of the predicted locations of
         misassembly were within 5 kbp from the true misassembly location (
-      - content:
-          - S2 Fig
-        target: '#pcbi.1007273.s003'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pcbi.1007273.s003'
+        content:
+          - S2 Fig
       - ).
-    type: Paragraph
-  - content:
-      - Scaffold mis-join validation
-    depth: 3
+  - type: Heading
     id: sec014
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Scaffold mis-join validation
+  - type: Paragraph
+    content:
       - >-
         As before, we simulated erroneous scaffolds by joining contigs which
         were not within 10 Mbp in the reference or were assigned to different
@@ -1644,11 +3311,11 @@ content:
         remaining contigs were correctly scaffolded (ten contigs per scaffold)
         based on their location in the reference. The average sensitivity was
         67.66% and specificity was 100% (
-      - content:
-          - S2 Table
-        target: '#pcbi.1007273.s005'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pcbi.1007273.s005'
+        content:
+          - S2 Table
       - >-
         )(no correct scaffolds were broken). Most of the un-flagged joins
         occurred near the ends of scaffolds and could be captured by decreasing
@@ -1660,13 +3327,13 @@ content:
         which are hard to capture with Hi-C data alone. This evaluation
         highlights the accuracy of the mis-join detection algorithm to avoid
         over-scaffolding and provide a suitable stopping condition.
-    type: Paragraph
-  - content:
-      - Scaffold accuracy
-    depth: 3
+  - type: Heading
     id: sec015
-    type: Heading
-  - content:
+    depth: 3
+    content:
+      - Scaffold accuracy
+  - type: Paragraph
+    content:
       - >-
         We evaluated scaffolds across three categories of error: orientation,
         order, and chimera. An orientation error occurs whenever the orientation
@@ -1677,8 +3344,8 @@ content:
         different chromosomes in the reference. We broke the assembly at these
         errors and computed corrected scaffold lengths and NGA50 (analogous to
         the corrected NG50 metric defined by Salzberg et al. [
-      - target: '#pcbi.1007273.ref038'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref038'
       - >-
         ]). This statistic corrects for large but erroneous scaffolds which have
         an artificially high NG50. We did not include SALSA1 in the comparison
@@ -1686,33 +3353,33 @@ content:
         scaffolds contained more than 2 contigs. For larger sizes (600 kbp to
         900 kbp), the contiguity widely varied depending upon the minimum
         confidence parameter for accepting links between contigs.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Hi-C scaffolding errors, particularly orientation errors, increased with
         decreasing assembly contiguity. We evaluated scaffolding methods across
         a variety of simulated contig sizes. 
-      - content:
-          - Fig 3
-        target: '#pcbi.1007273.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g003'
+        content:
+          - Fig 3
       - ' shows the comparison of these errors for 3D-DNA, SALSA2 without the assembly graph, and SALSA2 with the graph. SALSA2 produced fewer errors than 3D-DNA across all error types and input sizes. The number of correctly oriented contigs increased significantly when assembly graph information was integrated with the scaffolding, particularly for lower input contig sizes ('
-      - content:
-          - Fig 3
-        target: '#pcbi.1007273.g003'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g003'
+        content:
+          - Fig 3
       - >-
         ). For example, at 400 kbp, the orientation errors with the graph were
         comparable to the orientation errors of the graph-less approach at 900
         kbp. The NGA50 for SALSA2 also increased when assembly graph information
         was included (
-      - content:
-          - Fig 4
-        target: '#pcbi.1007273.g004'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g004'
+        content:
+          - Fig 4
       - >-
         ). This highlights the power of the assembly graph to improve
         scaffolding and correct errors, especially on lower contiguity
@@ -1720,560 +3387,558 @@ content:
         rather than maximizing contiguity, can be preferable for input to Hi-C
         scaffolding. All the assemblies described in this paper are available
         online and can be found at 
-      - content:
-          - 'https://obj.umiacs.umd.edu/paper_assemblies/index.html'
+      - type: Link
         target: 'https://obj.umiacs.umd.edu/paper_assemblies/index.html'
-        type: Link
+        content:
+          - 'https://obj.umiacs.umd.edu/paper_assemblies/index.html'
       - .
-    type: Paragraph
-  - id: pcbi.1007273.g003
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 3
+  - type: Figure
+    id: pcbi.1007273.g003
     caption:
-      - content:
+      - type: Heading
+        id: sec015
+        depth: 3
+        content:
           - >-
             Comparison of orientation, ordering, and chimeric errors in the
             scaffolds produced by SALSA2 and 3D-DNA on the simulated data.
-        depth: 3
-        id: sec015
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             As expected, the number of errors for all error types decrease with
             increasing input contig size. Incorporating the assembly graph
             reduces error across all categories and most assembly sizes, with
             the largest decrease seen in orientation errors. SALSA2 utilizing
             the graph has 2-4 fold fewer errors than 3D-DNA.
-        type: Paragraph
-    type: Figure
-  - id: pcbi.1007273.g004
+    label: Fig 3
     content:
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 4
+  - type: Figure
+    id: pcbi.1007273.g004
     caption:
-      - content:
+      - type: Heading
+        id: sec015
+        depth: 3
+        content:
           - >-
             (A) NGA50 statistic for different input contig sizes and (B) the
             length of longest error-free block for different input contig sizes.
-        depth: 3
-        id: sec015
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             Once again, the assembly graph typically increases both the NGA50
             and the largest correct block.
-        type: Paragraph
-    type: Figure
-  - content:
-      - Evaluation on NA12878
-    depth: 2
+    label: Fig 4
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Heading
     id: sec016
-    type: Heading
-  - content:
-      - content:
-          - Table 2
-        target: '#pcbi.1007273.t002'
+    depth: 2
+    content:
+      - Evaluation on NA12878
+  - type: Paragraph
+    content:
+      - type: Link
         relation: table
-        type: Link
+        target: '#pcbi.1007273.t002'
+        content:
+          - Table 2
       - ' lists the metrics for NA12878 scaffolds. We include an idealized scenario, using only reference-filtered Hi-C edges for comparison. As expected, the scaffolds generated using only true links had the highest NGA50 value and longest error-free scaffold block. SALSA2 scaffolds were generally more accurate and contiguous than the scaffolds generated by SALSA1 and 3D-DNA, even without use of the assembly graph. The addition of the graph further improved the NGA50 and longest error-free scaffold length.'
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
+  - type: Table
+    id: pcbi.1007273.t002
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Dataset
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Method
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NG50(Mbp)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NGA50(Mbp)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Longest Chunk (Mbp)
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Orientation Errors
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Ordering Errors
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - Chimeric Errors
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Arima-HiC
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - SALSA2 true links
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '83.31'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '79.48'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '172.19'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '78'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '101'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - SALSA2 w graph
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '112.08'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '71.54'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '164.46'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '102'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '106'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '90'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - SALSA2 wo graph
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '118.42'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '58.81'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '155.68'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '148'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '112'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '135'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '90.15'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '22.44'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '89.46'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '182'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '133'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '115'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - SALSA1
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '19.09'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '14.81'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '73.14'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '99'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '176'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '96'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Mitotic Hi-C
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - SALSA2 w graph
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '61.97'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '24.18'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '145.53'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '81'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '54'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '19'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - SALSA1
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '27.88'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '15.62'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '85.71'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '142'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '78'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '120'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA w correction
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.199'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '0.627'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '2.24'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '9775'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '10563'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '6159'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA wo correction
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '85.56'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '17.18'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '70.18'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '250'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '215'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '164'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Chicago
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - SALSA2 w graph
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '5.80'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '4.54'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '34.60'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '46'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '60'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '98'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - SALSA1
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '5.21'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '3.94'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '34.60'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '83'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '21'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '187'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA w correction
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '3.63'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '2.74'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '18.62'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '63'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '69'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '324'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA wo correction
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '9.61'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '4.76'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '44.48'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '67'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '63'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '137'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - Illumina Assembly
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - SALSA2 w graph
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '96.78'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '7.99'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '43.56'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '1830'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '2299'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '635'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - SALSA2 wo graph
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '119.57'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '4.16'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '26.22'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '2225'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '2353'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '738'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA w correction
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NA
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - NA
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
               - 3D-DNA wo correction
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - type: Strong
                 content:
                   - '176.09'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '1.00'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '13.12'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '5935'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '3433'
-            type: TableCell
-          - content:
+          - type: TableCell
+            content:
               - '2119'
-            type: TableCell
-        type: TableRow
-    type: Table
-    id: pcbi.1007273.t002
     title: >-
       Scaffold and correctness statistics for NA12878 assemblies scaffolded with
       different Hi-C libraries.
     content:
       - type: element
-        name: p
         elements:
           - type: text
             text: >-
@@ -2290,109 +3955,104 @@ content:
               3D-DNA w correction did not finish within two weeks and is
               omitted. An evaluation of a previously published [
           - type: element
-            name: xref
             attributes:
               ref-type: bibr
               rid: pcbi.1007273.ref020
             elements:
               - type: text
                 text: '20'
+            name: xref
           - type: text
             text: '] 3D-DNA assembly from short-read contigs is included in '
           - type: element
-            name: xref
             attributes:
               ref-type: supplementary-material
               rid: pcbi.1007273.s006
             elements:
               - type: text
                 text: S3 Table
+            name: xref
           - type: text
             text: ' but did not exceed SALSA2’s NGA50.'
-  - content:
+        name: p
+  - type: Paragraph
+    content:
       - >-
         We also evaluated the assemblies using Feature Response Curves (FRC)
         based on scaffolding errors [
-      - target: '#pcbi.1007273.ref040'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref040'
       - >-
         ]. An assembly can have a high raw error count but still be of high
         quality if the errors are restricted to only short scaffolds. FRC
         captures this by showing how quickly error is accumulated, starting from
         the largest scaffolds. 
-      - content:
-          - Fig 5(D)
-        target: '#pcbi.1007273.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g005'
+        content:
+          - Fig 5(D)
       - ' shows the FRC for different assemblies, where the X-axis denotes the cumulative % of assembly errors and the Y-axis denotes the cumulative assembly size. The assemblies with more area under the curve accumulate fewer errors in larger scaffolds and hence are more accurate. SALSA2 scaffolds with and without the graph have similar areas under the curve and closely match the curve of the assembly using only true links. The 3D-DNA scaffolds have the lowest area under the curve, implying that most errors in the assembly occur in the long scaffolds. This is confirmed by the lower NGA50 value for the 3D-DNA assembly ('
-      - content:
-          - Table 2
-        target: '#pcbi.1007273.t002'
+      - type: Link
         relation: table
-        type: Link
+        target: '#pcbi.1007273.t002'
+        content:
+          - Table 2
       - ).
-    type: Paragraph
-  - id: pcbi.1007273.g005
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 5
+  - type: Figure
+    id: pcbi.1007273.g005
     caption:
-      - content:
+      - type: Heading
+        id: sec016
+        depth: 2
+        content:
           - >-
             Feature response curve for (A) assemblies obtained from contigs as
             input (B) assemblies obtained from mitotic Hi-C data and (C)
             assemblies obtained using Dovetail Chicago data.
-        depth: 2
-        id: sec016
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             The best assemblies lie near the top left of the plot, with the
             largest area under the curve.
-        type: Paragraph
-    type: Figure
-  - content:
-      - >-
-        Apart from the correctness, SALSA2 scaffolds were highly contiguous and
-        reached an NG50 of 112.8 Mbp (cf. GRCh38 NG50 of 145 Mbp). 
-      - content:
-          - Fig 6
-        target: '#pcbi.1007273.g006'
-        relation: fig
-        type: Link
-      - ' shows the alignment ideogram for the input contigs as well as the SALSA2 assembly. Every color change indicates an alignment break, either due to error or due to the end of a sequence. The input contigs are fragmented with multiple contigs aligning to the same chromosome, while the SALSA2 scaffolds are highly contiguous and span entire chromosomes in many cases. '
-      - content:
-          - Fig 7(A)
-        target: '#pcbi.1007273.g007'
-        relation: fig
-        type: Link
-      - ' shows the contiguity plot with corrected NG stats. As expected, the assembly generated with only true links has the highest values for all NGA stats. The curve for SALSA2 assemblies with and without the assembly graph closely matches this curve, implying that the scaffolds generated with SALSA2 are approaching the optimal assembly of this Arima-HiC data.'
-    type: Paragraph
-  - id: pcbi.1007273.g006
+    label: Fig 5
     content:
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 6
+  - type: Paragraph
+    content:
+      - >-
+        Apart from the correctness, SALSA2 scaffolds were highly contiguous and
+        reached an NG50 of 112.8 Mbp (cf. GRCh38 NG50 of 145 Mbp). 
+      - type: Link
+        relation: fig
+        target: '#pcbi.1007273.g006'
+        content:
+          - Fig 6
+      - ' shows the alignment ideogram for the input contigs as well as the SALSA2 assembly. Every color change indicates an alignment break, either due to error or due to the end of a sequence. The input contigs are fragmented with multiple contigs aligning to the same chromosome, while the SALSA2 scaffolds are highly contiguous and span entire chromosomes in many cases. '
+      - type: Link
+        relation: fig
+        target: '#pcbi.1007273.g007'
+        content:
+          - Fig 7(A)
+      - ' shows the contiguity plot with corrected NG stats. As expected, the assembly generated with only true links has the highest values for all NGA stats. The curve for SALSA2 assemblies with and without the assembly graph closely matches this curve, implying that the scaffolds generated with SALSA2 are approaching the optimal assembly of this Arima-HiC data.'
+  - type: Figure
+    id: pcbi.1007273.g006
     caption:
-      - content:
-          - 'Chromosome ideogram generated using the coloredChromosomes ['
-          - target: '#pcbi.1007273.ref039'
-            type: Cite
-          - '] package.'
-        depth: 2
+      - type: Heading
         id: sec016
-        type: Heading
-      - content:
+        depth: 2
+        content:
+          - 'Chromosome ideogram generated using the coloredChromosomes ['
+          - type: Cite
+            target: '#pcbi.1007273.ref039'
+          - '] package.'
+      - type: Paragraph
+        content:
           - >-
             Each color switch denotes a change in the aligned sequence, either
             due to large structural error or the end of a contig/scaffold. Left:
@@ -2400,33 +4060,40 @@ content:
             scaffolds aligned to the GRCh38 reference genome. More than ten
             chromosomes are in a single scaffold. Chromosomes 16 and 19 are more
             fragmented due to scaffolding errors that break the alignment.
-        type: Paragraph
-    type: Figure
-  - id: pcbi.1007273.g007
+    label: Fig 6
     content:
-      - format: image/png
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
         meta:
           inline: false
           linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 7
+  - type: Figure
+    id: pcbi.1007273.g007
     caption:
-      - content:
+      - type: Heading
+        id: sec016
+        depth: 2
+        content:
           - >-
             Contiguity plot for scaffolds generated with (A) standard Arima-HiC
             data (B) mitotic Hi-C data and (C) Chicago data.
-        depth: 2
-        id: sec016
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             The X-axis denotes the NGAX statistic and the Y-axis denotes the
             corrected block length to reach the NGAX value. SALSA2 results were
             generated using the assembly graph, unless otherwise noted.
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 7
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         We also evaluated the ability of scaffolding short-read assemblies for
         both 3D-DNA and SALSA2. We did not include SALSA1 in this comparison
@@ -2438,8 +4105,8 @@ content:
         generates scaffolds of much higher NGA50 (7.99 Mbp vs. 1.00 Mbp). The
         number of scaffolding errors across all the categories was much lower in
         SALSA2 compared to 3D-DNA.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         We computed the CPU runtime and memory usage for both the methods while
         scaffolding long and short read assemblies with Arima-HiC data. We
@@ -2453,71 +4120,71 @@ content:
         without assembly correction. When run with assembly correction, 3D-DNA
         ran over 14 days on a 16-core machine without completing so we could not
         report any results.
-    type: Paragraph
-  - content:
-      - Robustness to input library
-    depth: 2
+  - type: Heading
     id: sec017
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Robustness to input library
+  - type: Paragraph
+    content:
       - >-
         We next tested scaffolding using two libraries with different Hi-C
         contact patterns. The first, from [
-      - target: '#pcbi.1007273.ref042'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref042'
       - >-
         ], is sequenced during mitosis. This removes the topological domains and
         generates fewer off-diagonal interactions. The other library was from [
-      - target: '#pcbi.1007273.ref043'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref043'
       - '], are '
       - type: Emphasis
         content:
           - in vitro
       - ' chromatin sequencing library (Chicago) generated by Dovetail Genomics (L1). It also removes off-diagonal matches but has shorter-range interactions, limited by the size of the input molecules. As seen from the contact map in '
-      - content:
-          - Fig 8
-        target: '#pcbi.1007273.g008'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g008'
+        content:
+          - Fig 8
       - >-
         , both the mitotic Hi-C and Chicago libraries follow different
         interaction distributions than the standard Hi-C (Arima-HiC in this
         case). 
-      - content:
-          - Table 1
-        target: '#pcbi.1007273.t001'
+      - type: Link
         relation: table
-        type: Link
+        target: '#pcbi.1007273.t001'
+        content:
+          - Table 1
       - ' shows the mapping statistics for these libraries. We ran SALSA2 with defaults and 3D-DNA with both the assembly correction turned on and off.'
-    type: Paragraph
-  - id: pcbi.1007273.g008
-    content:
-      - format: image/png
-        meta:
-          inline: false
-          linkType: simple
-        type: ImageObject
-        contentUrl: ''
-    label: Fig 8
+  - type: Figure
+    id: pcbi.1007273.g008
     caption:
-      - content:
+      - type: Heading
+        id: sec017
+        depth: 2
+        content:
           - >-
             Contact map of Hi-C interactions on chromosome 3 generated by the
             Juicebox software [
-          - target: '#pcbi.1007273.ref041'
-            type: Cite
+          - type: Cite
+            target: '#pcbi.1007273.ref041'
           - '].'
-        depth: 2
-        id: sec017
-        type: Heading
-      - content:
+      - type: Paragraph
+        content:
           - >-
             The cells sequenced in (A) normal conditions, (B) during mitosis,
             and (C) Dovetail Chicago.
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Fig 8
+    content:
+      - type: ImageObject
+        contentUrl: ''
+        format: image/png
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         For mitotic Hi-C data, we observed that the 3D-DNA mis-assembly
         correction algorithm sheared the input assembly into small pieces, which
@@ -2526,33 +4193,33 @@ content:
         3D-DNA assembly has a higher number of orientation (250 vs. 81) and
         ordering (215 vs. 54) errors compared to SALSA2. The feature response
         curve for the 3D-DNA assembly with breaking is almost a diagonal (
-      - content:
-          - Fig 5(B)
-        target: '#pcbi.1007273.g005'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g005'
+        content:
+          - Fig 5(B)
       - >-
         ) because the sheared contigs appeared to be randomly joined. SALSA2
         scaffolds contain longer stretches of correct scaffolds compared to
         3D-DNA with and without mis-assembly correction (
-      - content:
-          - Fig 7(B)
-        target: '#pcbi.1007273.g007'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#pcbi.1007273.g007'
+        content:
+          - Fig 7(B)
       - >-
         ). SALSA1 scaffolds had a similar error count to SALSA2 but were less
         contiguous.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         For the Chicago libraries, 3D-DNA without correction had the best NGA50
         and largest correct chunk. However, the scaffolds had more chimeric join
         errors than SALSA2. SALSA2 outperformed 3D-DNA in terms of NG50, NGA50,
         and longest chunk when 3D-DNA was run with assembly correction. 3D-DNA
         uses signatures of chromosome ends [
-      - target: '#pcbi.1007273.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref020'
       - >-
         ] to identify break positions which are not prominently present in
         Chicago data. As a result, it generated more chimeric joins compared to
@@ -2561,8 +4228,8 @@ content:
         chromosome-spanning contact information for scaffolding, the NG50 value
         for SALSA2 is 5.8 Mbp, comparable to the equivalent coverage assembly
         (50% L1+L2) in [
-      - target: '#pcbi.1007273.ref043'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref043'
       - >-
         ] but much smaller than Hi-C libraries. Interestingly, SALSA1 was able
         to generate scaffolds of similar contiguity to SALSA2, which can be
@@ -2571,13 +4238,13 @@ content:
         Chicago data it produced a less contiguous assembly due to the shorter
         interaction distance. However, it avoids introducing false chromosome
         joins, unlike 3D-DNA, which appears tuned for a specific contact model.
-    type: Paragraph
-  - content:
-      - Scaffolding non-model organisms
-    depth: 2
+  - type: Heading
     id: sec018
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Scaffolding non-model organisms
+  - type: Paragraph
+    content:
       - >-
         To evaluate the effectiveness of SALSA2 on a non-model organism, we used
         Hi-C data from recently published 
@@ -2585,53 +4252,53 @@ content:
         content:
           - Anopheles funestus
       - ' genome assembly which was scaffolded using an independent method (Phase Genomics or LACHESIS ['
-      - target: '#pcbi.1007273.ref016'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref016'
       - >-
         ]) and manually curated using Illumina mate-pair support as well as FISH
         information [
-      - target: '#pcbi.1007273.ref044'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref044'
       - >-
         ]. This genome had high heterozygosity as the data was sequenced from a
         colony of mosquitoes rather than a single individual. Due to this, the
         assembly had a high duplication rate and was almost double the expected
         genome size. We scaffolded both the full assembly and the assembly after
         running purge haplotigs [
-      - target: '#pcbi.1007273.ref045'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref045'
       - >-
         ] using SALSA2 and 3D-DNA. For the post purge assembly, 3D-DNA generated
         an assembly with higher continuity but with more errors and a similar
         NA50 to SALSA2. (
-      - content:
-          - S3 Table
-        target: '#pcbi.1007273.s006'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pcbi.1007273.s006'
+        content:
+          - S3 Table
       - >-
         ). However, neither method performed well for the full assembly. SALSA2
         was more contiguous than 3D-DNA (
-      - content:
-          - S4 Table
-        target: '#pcbi.1007273.s007'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#pcbi.1007273.s007'
+        content:
+          - S4 Table
       - >-
         ) but was still very fragmented and much larger than the expected genome
         size. We conclude that heterozygous genome scaffolding remains a
         challenge and assemblies must either be de-duplicated beforehand or
         improved algorithms for scaffolding, such as [
-      - target: '#pcbi.1007273.ref046'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref046'
       - '] are needed.'
-    type: Paragraph
-  - content:
-      - Discussion
-    depth: 1
+  - type: Heading
     id: sec019
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Discussion
+  - type: Paragraph
+    content:
       - >-
         In this work, we present the first Hi-C scaffolding method that
         integrates an assembly graph to produce high-accuracy, chromosome-scale
@@ -2640,8 +4307,8 @@ content:
         to guide scaffolding. We also show that SALSA2 outperforms alternative
         Hi-C scaffolding tools on assemblies of varied contiguity, using
         multiple Hi-C library preparations.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         SALSA2’s misassembly correction and scaffold misjoin validation can be
         improved in several ways. The current implementation does not detect a
@@ -2651,24 +4318,24 @@ content:
         coverage for detecting misjoins. Addressing these challenges in misjoin
         detection and misassembly correction is the immediate next step to
         improve the SALSA2 software.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The human genome is relatively homozygous compared to many other
         species. Assembly of many species is further complicated by DNA input
         requirements which necessitates pooling multiple individuals. SALSA2
         does not remove duplication present in an input assembly and thus
         requires pre-processing by another tool, such as Purge Haplotigs [
-      - target: '#pcbi.1007273.ref045'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref045'
       - '] or haplomerger ['
-      - target: '#pcbi.1007273.ref047'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref047'
       - >-
         ]. Once contigs are classified into the “primary” and “haplotig” sets,
         SALSA2 could be run on each of the sets independently.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Hi-C scaffolding has been historically prone to inversion errors when
         the input assembly is highly fragmented. The integration of the assembly
@@ -2681,15 +4348,15 @@ content:
         because the contig NG50 was much higher than in the simulation. However,
         it is not always possible to assemble multi-megabase contigs. In such
         cases, the assembly graph is useful for limiting Hi-C errors.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Most existing Hi-C scaffolding methods also require an estimate for the
         number of chromosomes for a genome. This is implicitly taken to be the
         desired number of scaffolds to output. As demonstrated by the Chicago,
         mitotic, and replicate [
-      - target: '#pcbi.1007273.ref048'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref048'
       - >-
         ] Hi-C libraries, the library as well as the genome influences the
         maximum correct scaffold size. It can be impractical to sweep over
@@ -2697,8 +4364,8 @@ content:
         SALSA2’s mis-join correction algorithm stops scaffolding after the
         useful linking information in a dataset is exhausted, no chromosome
         count is needed as input.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Obtaining the chromosome-scale picture of the genome is important and
         there is a trade-off between accuracy and continuity of the assembly.
@@ -2706,11 +4373,11 @@ content:
         expensive and involved process that can often outpace the cost of the
         rest of the project. Most of the assembly projects using Hi-C data have
         had a significant curation effort to date [
-      - target: '#pcbi.1007273.ref019'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref019'
       - ', '
-      - target: '#pcbi.1007273.ref049'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref049'
       - >-
         ]. Thus, we believe that not introducing errors in the first place is a
         better strategy to avoid the later burden of manual curation of small
@@ -2720,1785 +4387,118 @@ content:
         the chromosome count as input but the algorithm used has not been
         described. Interestingly, it no longer generates single-chromosome
         scaffolds in our experiments, a major claim in [
-      - target: '#pcbi.1007273.ref020'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref020'
       - >-
         ], supporting a conservative scaffolding approach. Even while
         scaffolding short-read assemblies, we observed that SALSA2 generated
         more accurate scaffolds than 3D-DNA, indicating the utility of SALSA2 in
         scaffolding existing short-read assemblies of different genomes with the
         newly generated Hi-C data.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - 'As the Genome10K consortium ['
-      - target: '#pcbi.1007273.ref050'
-        type: Cite
+      - type: Cite
+        target: '#pcbi.1007273.ref050'
       - >-
         ] and independent scientists begin to sequence novel lineages in the
         tree of life, it may be impractical to generate physical or genetics
         maps for every organism. Thus, Hi-C sequencing combined with SALSA2
         presents an economical alternative for the reconstruction of
         chromosome-scale assemblies.
-    type: Paragraph
-  - content:
-      - Supporting information
-    depth: 1
+  - type: Heading
     id: sec020
-    type: Heading
+    depth: 1
+    content:
+      - Supporting information
   - S1 Text
-  - content:
+  - type: Heading
+    id: sec020
+    depth: 1
+    content:
       - >-
         Best buddy scoring effectiveness and commands used run SALSA2 and
         3D-DNA.
-    depth: 1
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - (DOCX)
-    type: Paragraph
   - S1 Fig
-  - content:
-      - Precision at different cutoffs for Hi-C links.
-    depth: 1
+  - type: Heading
     id: sec020
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Precision at different cutoffs for Hi-C links.
+  - type: Paragraph
+    content:
       - >-
         The plot on the left shows the curve for the SALSA2 best buddy weight
         cutoffs and the plot on the right shows the curve for a fixed Hi-C pair
         count cutoff, used in SALSA1, across changing coverage.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (PNG)
-    type: Paragraph
   - S2 Fig
-  - content:
+  - type: Heading
+    id: sec020
+    depth: 1
+    content:
       - >-
         Distribution of the distance between the predicted misassembly location
         to the actual misassembly location in the simulated data.
-    depth: 1
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - (PNG)
-    type: Paragraph
   - S1 Table
-  - content:
+  - type: Heading
+    id: sec020
+    depth: 1
+    content:
       - >-
         Sensitivity and specificity for contigs correction for different contig
         sizes.
-    depth: 1
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - (DOCX)
-    type: Paragraph
   - S2 Table
-  - content:
+  - type: Heading
+    id: sec020
+    depth: 1
+    content:
       - >-
         Sensitivity and specificity for scaffold misjoin correction for
         different contig sizes joined in a scaffold.
-    depth: 1
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - (DOCX)
-    type: Paragraph
   - S3 Table
-  - content:
+  - type: Heading
+    id: sec020
+    depth: 1
+    content:
       - >-
         Scaffold statistics while scaffolding An. funestus deduplicated
         assembly.
-    depth: 1
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - The input assembly had contig N50 of 631.72 kbp.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (DOCX)
-    type: Paragraph
   - S4 Table
-  - content:
+  - type: Heading
+    id: sec020
+    depth: 1
+    content:
       - >-
         Scaffold statistics while scaffolding An. funestus assembly with
         duplications.
-    depth: 1
-    id: sec020
-    type: Heading
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The input assembly had contig N50 of 94.25 kbp. We could not compute
         errors for duplicated assembly as reference genome is primary only and
         aligning duplicated contigs to haploid reference makes it hard to define
         true orientation and ordering.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - (DOCX)
-    type: Paragraph
-references:
-  - authors:
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Nagarajan
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Pop
-        type: Person
-    title: Sequence assembly demystified
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 157
-      pageEnd: 167
-      isPartOf:
-        title: Nature Reviews Genetics
-        volumeNumber: 14
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref001
-  - authors:
-      - givenNames:
-          - JR
-        familyNames:
-          - Miller
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Sutton
-        type: Person
-    title: Assembly algorithms for next-generation sequencing data
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      issueNumber: 6
-      pageStart: 315
-      pageEnd: 327
-      isPartOf:
-        title: Genomics
-        volumeNumber: 95
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref002
-  - authors:
-      - givenNames:
-          - PA
-        familyNames:
-          - Pevzner
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Tang
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Waterman
-        type: Person
-    title: An Eulerian path approach to DNA fragment assembly
-    type: Article
-    datePublished: '2001'
-    isPartOf:
-      issueNumber: 17
-      pageStart: 9748
-      pageEnd: 9753
-      isPartOf:
-        title: Proceedings of the National Academy of Sciences
-        volumeNumber: 98
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref003
-  - authors:
-      - givenNames:
-          - EW
-        familyNames:
-          - Myers
-        type: Person
-    title: The fragment assembly string graph
-    type: Article
-    datePublished: '2005'
-    isPartOf:
-      isPartOf:
-        title: Bioinformatics
-        volumeNumber: 21
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref004
-  - authors:
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Nagarajan
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Pop
-        type: Person
-    title: >-
-      Parametric complexity of sequence assembly: theory and applications to
-      next generation sequencing
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      issueNumber: 7
-      pageStart: 897
-      pageEnd: 908
-      isPartOf:
-        title: Journal of computational biology
-        volumeNumber: 16
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref005
-  - authors:
-      - givenNames:
-          - JC
-        familyNames:
-          - Venter
-        type: Person
-      - givenNames:
-          - HO
-        familyNames:
-          - Smith
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Hood
-        type: Person
-    title: A new strategy for genome sequencing
-    type: Article
-    datePublished: '1996'
-    isPartOf:
-      issueNumber: 6581
-      pageStart: 364
-      isPartOf:
-        title: Nature
-        volumeNumber: 381
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref006
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Gnerre
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - MacCallum
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Przybylski
-        type: Person
-      - givenNames:
-          - FJ
-        familyNames:
-          - Ribeiro
-        type: Person
-      - givenNames:
-          - JN
-        familyNames:
-          - Burton
-        type: Person
-      - givenNames:
-          - BJ
-        familyNames:
-          - Walker
-        type: Person
-    title: >-
-      High-quality draft assemblies of mammalian genomes from massively parallel
-      sequence data
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      issueNumber: 4
-      pageStart: 1513
-      pageEnd: 1518
-      isPartOf:
-        title: Proceedings of the National Academy of Sciences
-        volumeNumber: 108
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref007
-  - authors:
-      - givenNames:
-          - DC
-        familyNames:
-          - Schwartz
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Li
-        type: Person
-      - givenNames:
-          - LI
-        familyNames:
-          - Hernandez
-        type: Person
-      - givenNames:
-          - SP
-        familyNames:
-          - Ramnarain
-        type: Person
-      - givenNames:
-          - EJ
-        familyNames:
-          - Huff
-        type: Person
-      - givenNames:
-          - YK
-        familyNames:
-          - Wang
-        type: Person
-    title: >-
-      Ordered restriction maps of Saccharomyces cerevisiae chromosomes
-      constructed by optical mapping
-    type: Article
-    datePublished: '1993'
-    isPartOf:
-      issueNumber: 5130
-      pageStart: 110
-      pageEnd: 114
-      isPartOf:
-        title: Science
-        volumeNumber: 262
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref008
-  - authors:
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Dong
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Xie
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Jiang
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Xiao
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Du
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Zhang
-        type: Person
-    title: >-
-      Sequencing and automated whole-genome optical mapping of the genome of a
-      domestic goat (Capra hircus)
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 2
-      pageStart: 135
-      pageEnd: 141
-      isPartOf:
-        title: Nature biotechnology
-        volumeNumber: 31
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref009
-  - authors:
-      - givenNames:
-          - JM
-        familyNames:
-          - Shelton
-        type: Person
-      - givenNames:
-          - MC
-        familyNames:
-          - Coleman
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Herndon
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Lu
-        type: Person
-      - givenNames:
-          - ET
-        familyNames:
-          - Lam
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Anantharaman
-        type: Person
-    title: >-
-      Tools and pipelines for BioNano data: molecule assembly pipeline and FASTA
-      super scaffolding tool
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 734
-      isPartOf:
-        title: BMC genomics
-        volumeNumber: 16
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref010
-  - authors:
-      - givenNames:
-          - GX
-        familyNames:
-          - Zheng
-        type: Person
-      - givenNames:
-          - BT
-        familyNames:
-          - Lau
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Schnall-Levin
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Jarosz
-        type: Person
-      - givenNames:
-          - JM
-        familyNames:
-          - Bell
-        type: Person
-      - givenNames:
-          - CM
-        familyNames:
-          - Hindson
-        type: Person
-    title: >-
-      Haplotyping germline and cancer genomes with high-throughput linked-read
-      sequencing
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      title: Nature biotechnology
-      type: PublicationVolume
-    id: pcbi.1007273.ref011
-  - authors:
-      - givenNames:
-          - NI
-        familyNames:
-          - Weisenfeld
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Kumar
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Shah
-        type: Person
-      - givenNames:
-          - DM
-        familyNames:
-          - Church
-        type: Person
-      - givenNames:
-          - DB
-        familyNames:
-          - Jaffe
-        type: Person
-    title: Direct determination of diploid genome sequences
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 5
-      pageStart: 757
-      pageEnd: 767
-      isPartOf:
-        title: Genome research
-        volumeNumber: 27
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref012
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Yeo
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Coombe
-        type: Person
-      - givenNames:
-          - RL
-        familyNames:
-          - Warren
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Chu
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - Birol
-        type: Person
-    title: 'Arcs: Scaffolding genome drafts with linked reads'
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: Bioinformatics
-      type: PublicationVolume
-    id: pcbi.1007273.ref013
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Simonis
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Klous
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Splinter
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Moshkin
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Willemsen
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - De
-          - Wit
-        type: Person
-    title: >-
-      Nuclear organization of active and inactive chromatin domains uncovered by
-      chromosome conformation capture–on-chip (4C)
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      issueNumber: 11
-      pageStart: 1348
-      pageEnd: 1354
-      isPartOf:
-        title: Nature genetics
-        volumeNumber: 38
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref014
-  - authors:
-      - givenNames:
-          - E
-        familyNames:
-          - Lieberman-Aiden
-        type: Person
-      - givenNames:
-          - NL
-        familyNames:
-          - Van
-          - Berkum
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Williams
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Imakaev
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Ragoczy
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Telling
-        type: Person
-    title: >-
-      prehensive mapping of long-range interactions reveals folding principles
-      of the human genome
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      issueNumber: 5950
-      pageStart: 289
-      pageEnd: 293
-      isPartOf:
-        title: science
-        volumeNumber: 326
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref015
-  - authors:
-      - givenNames:
-          - JN
-        familyNames:
-          - Burton
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Adey
-        type: Person
-    title: >-
-      Chromosome-scale scaffolding of de novo genome assemblies based on
-      chromatin interactions
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 12
-      pageStart: 1119
-      pageEnd: 1125
-      isPartOf:
-        title: Nature biotechnology
-        volumeNumber: 31
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref016
-  - authors:
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Kaplan
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Dekker
-        type: Person
-    title: High-throughput genome scaffolding from in vivo DNA interaction frequency
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 12
-      pageStart: 1143
-      pageEnd: 1147
-      isPartOf:
-        title: Nature biotechnology
-        volumeNumber: 31
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref017
-  - authors:
-      - givenNames:
-          - H
-        familyNames:
-          - Marie-Nelly
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Marbouty
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Cournac
-        type: Person
-      - givenNames:
-          - JF
-        familyNames:
-          - Flot
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Liti
-        type: Person
-      - givenNames:
-          - DP
-        familyNames:
-          - Parodi
-        type: Person
-    title: High-quality genome (re) assembly using chromosomal contact data
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      title: Nature communications
-      volumeNumber: 5
-      type: PublicationVolume
-    id: pcbi.1007273.ref018
-  - authors:
-      - givenNames:
-          - DM
-        familyNames:
-          - Bickhart
-        type: Person
-      - givenNames:
-          - BD
-        familyNames:
-          - Rosen
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-    title: >-
-      Single-molecule sequencing and chromatin conformation capture enable de
-      novo reference assembly of the domestic goat genome
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 4
-      pageStart: 643
-      pageEnd: 650
-      isPartOf:
-        title: Nature Genetics
-        volumeNumber: 49
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref019
-  - authors:
-      - givenNames:
-          - O
-        familyNames:
-          - Dudchenko
-        type: Person
-      - givenNames:
-          - SS
-        familyNames:
-          - Batra
-        type: Person
-      - givenNames:
-          - AD
-        familyNames:
-          - Omer
-        type: Person
-    title: >-
-      De novo assembly of the Aedes aegypti genome using Hi-C yields
-      chromosome-length scaffolds
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 6333
-      pageStart: 92
-      pageEnd: 95
-      isPartOf:
-        title: Science
-        volumeNumber: 356
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref020
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Ghurye
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Pop
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Bickhart
-        type: Person
-      - givenNames:
-          - CS
-        familyNames:
-          - Chin
-        type: Person
-    title: Scaffolding of long read assemblies using long range contact information
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 527
-      isPartOf:
-        title: BMC genomics
-        volumeNumber: 18
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref021
-  - authors:
-      - givenNames:
-          - JR
-        familyNames:
-          - Dixon
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Selvaraj
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Yue
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Kim
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Li
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Shen
-        type: Person
-    title: >-
-      Topological domains in mammalian genomes identified by analysis of
-      chromatin interactions
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      issueNumber: 7398
-      pageStart: 376
-      pageEnd: 380
-      isPartOf:
-        title: Nature
-        volumeNumber: 485
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref022
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Eid
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Fehr
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Gray
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Luong
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Lyle
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Otto
-        type: Person
-    title: Real-time DNA sequencing from single polymerase molecules
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      issueNumber: 5910
-      pageStart: 133
-      pageEnd: 138
-      isPartOf:
-        title: Science
-        volumeNumber: 323
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref023
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Jain
-        type: Person
-      - givenNames:
-          - HE
-        familyNames:
-          - Olsen
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Paten
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Akeson
-        type: Person
-    title: >-
-      The Oxford Nanopore MinION: delivery of nanopore sequencing to the
-      genomics community
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 239
-      isPartOf:
-        title: Genome biology
-        volumeNumber: 17
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref024
-  - authors:
-      - givenNames:
-          - H
-        familyNames:
-          - Li
-        type: Person
-    title: >-
-      Minimap and miniasm: fast mapping and de novo assembly for noisy long
-      sequences
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 14
-      pageStart: 2103
-      pageEnd: 2110
-      isPartOf:
-        title: Bioinformatics
-        volumeNumber: 32
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref025
-  - authors:
-      - givenNames:
-          - H
-        familyNames:
-          - Li
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Durbin
-        type: Person
-    title: Fast and accurate short read alignment with Burrows–Wheeler transform
-    type: Article
-    datePublished: '2009'
-    isPartOf:
-      issueNumber: 14
-      pageStart: 1754
-      pageEnd: 1760
-      isPartOf:
-        title: Bioinformatics
-        volumeNumber: 25
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref026
-  - authors: []
-    title: ''
-    type: Article
-    id: pcbi.1007273.ref027
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-      - givenNames:
-          - BP
-        familyNames:
-          - Walenz
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Berlin
-        type: Person
-    title: >-
-      Canu: scalable and accurate long-read assembly via adaptive k-mer
-      weighting and repeat separation
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 5
-      pageStart: 722
-      pageEnd: 736
-      isPartOf:
-        title: Genome research
-        volumeNumber: 27
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref028
-  - authors:
-      - givenNames:
-          - CS
-        familyNames:
-          - Chin
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Peluso
-        type: Person
-      - givenNames:
-          - FJ
-        familyNames:
-          - Sedlazeck
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Nattestad
-        type: Person
-      - givenNames:
-          - GT
-        familyNames:
-          - Concepcion
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Clum
-        type: Person
-    title: Phased Diploid Genome Assembly with Single Molecule Real-Time Sequencing
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      title: bioRxiv
-      type: PublicationVolume
-    id: pcbi.1007273.ref029
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Kolmogorov
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Yuan
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Lin
-        type: Person
-      - givenNames:
-          - PA
-        familyNames:
-          - Pevzner
-        type: Person
-    title: 'Assembly of long, error-prone reads using repeat graphs'
-    type: Article
-    datePublished: '2019'
-    isPartOf:
-      issueNumber: 5
-      pageStart: 540
-      isPartOf:
-        title: Nature biotechnology
-        volumeNumber: 37
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref030
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Edmonds
-        type: Person
-    title: 'Paths, trees, and flowers'
-    type: Article
-    datePublished: '1965'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 449
-      pageEnd: 467
-      isPartOf:
-        title: Canadian Journal of mathematics
-        volumeNumber: 17
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref031
-  - authors: []
-    title: ''
-    type: Article
-    id: pcbi.1007273.ref032
-  - authors:
-      - givenNames:
-          - VA
-        familyNames:
-          - Schneider
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Graves-Lindsay
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Howe
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Bouk
-        type: Person
-      - givenNames:
-          - HC
-        familyNames:
-          - Chen
-        type: Person
-      - givenNames:
-          - PA
-        familyNames:
-          - Kitts
-        type: Person
-    title: >-
-      Evaluation of GRCh38 and de novo haploid genome assemblies demonstrates
-      the enduring quality of the reference assembly
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      issueNumber: 5
-      pageStart: 849
-      pageEnd: 864
-      isPartOf:
-        title: Genome research
-        volumeNumber: 27
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref033
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Jain
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Quick
-        type: Person
-      - givenNames:
-          - AC
-        familyNames:
-          - Rand
-        type: Person
-    title: Nanopore sequencing and assembly of a human genome with ultra-long reads
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      pageStart: 128835
-      title: bioRxiv
-      type: PublicationVolume
-    id: pcbi.1007273.ref034
-  - authors:
-      - givenNames:
-          - NC
-        familyNames:
-          - Durand
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Shamim
-        type: Person
-    title: >-
-      Juicer provides a one-click system for analyzing loop-resolution Hi-C
-      experiments
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 95
-      pageEnd: 98
-      isPartOf:
-        title: Cell systems
-        volumeNumber: 3
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref035
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Kurtz
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Phillippy
-        type: Person
-      - givenNames:
-          - AL
-        familyNames:
-          - Delcher
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Smoot
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Shumway
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Antonescu
-        type: Person
-    title: Versatile and open software for comparing large genomes
-    type: Article
-    datePublished: '2004'
-    isPartOf:
-      issueNumber: 2
-      isPartOf:
-        title: Genome biology
-        volumeNumber: 5
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref036
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Pendleton
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Sebra
-        type: Person
-      - givenNames:
-          - AWC
-        familyNames:
-          - Pang
-        type: Person
-    title: >-
-      Assembly and diploid architecture of an individual human genome via
-      single-molecule technologies
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      title: Nature methods
-      type: PublicationVolume
-    id: pcbi.1007273.ref037
-  - authors:
-      - givenNames:
-          - SL
-        familyNames:
-          - Salzberg
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Phillippy
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Zimin
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Puiu
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Magoc
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-    title: 'GAGE: A critical evaluation of genome assemblies and assembly algorithms'
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 557
-      pageEnd: 567
-      isPartOf:
-        title: Genome research
-        volumeNumber: 22
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref038
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Böhringer
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Gödde
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Böhringer
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Schulte
-        type: Person
-      - givenNames:
-          - JT
-        familyNames:
-          - Epplen
-        type: Person
-    title: A software package for drawing ideograms automatically
-    type: Article
-    datePublished: '2002'
-    isPartOf:
-      pageStart: 51
-      pageEnd: 61
-      title: Online J Bioinformatics
-      volumeNumber: 1
-      type: PublicationVolume
-    id: pcbi.1007273.ref039
-  - authors:
-      - givenNames:
-          - F
-        familyNames:
-          - Vezzi
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Narzisi
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Mishra
-        type: Person
-    title: Feature-by-feature–evaluating de novo sequence assembly
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      issueNumber: 2
-      isPartOf:
-        title: PloS one
-        volumeNumber: 7
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref040
-  - authors:
-      - givenNames:
-          - NC
-        familyNames:
-          - Durand
-        type: Person
-      - givenNames:
-          - JT
-        familyNames:
-          - Robinson
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Shamim
-        type: Person
-    title: >-
-      Juicebox provides a visualization system for Hi-C contact maps with
-      unlimited zoom
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 99
-      pageEnd: 101
-      isPartOf:
-        title: Cell systems
-        volumeNumber: 3
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref041
-  - authors:
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Naumova
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Imakaev
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Fudenberg
-        type: Person
-    title: Organization of the mitotic chromosome
-    type: Article
-    datePublished: '2013'
-    isPartOf:
-      issueNumber: 6161
-      pageStart: 948
-      pageEnd: 953
-      isPartOf:
-        title: Science
-        volumeNumber: 342
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref042
-  - authors:
-      - givenNames:
-          - NH
-        familyNames:
-          - Putnam
-        type: Person
-      - givenNames:
-          - BL
-        familyNames:
-          - O’Connell
-        type: Person
-      - givenNames:
-          - JC
-        familyNames:
-          - Stites
-        type: Person
-      - givenNames:
-          - BJ
-        familyNames:
-          - Rice
-        type: Person
-    title: >-
-      Chromosome-scale shotgun assembly using an in vitro method for long-range
-      linkage
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      issueNumber: 3
-      pageStart: 342
-      pageEnd: 350
-      isPartOf:
-        title: Genome research
-        volumeNumber: 26
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref043
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Ghurye
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-      - givenNames:
-          - ST
-        familyNames:
-          - Small
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Redmond
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Howell
-        type: Person
-      - givenNames:
-          - AM
-        familyNames:
-          - Phillippy
-        type: Person
-    title: >-
-      A chromosome-scale assembly of the major African malaria vector Anopheles
-      funestus
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      pageStart: 492777
-      title: bioRxiv
-      type: PublicationVolume
-    id: pcbi.1007273.ref044
-  - authors:
-      - givenNames:
-          - MJ
-        familyNames:
-          - Roach
-        type: Person
-      - givenNames:
-          - SA
-        familyNames:
-          - Schmidt
-        type: Person
-      - givenNames:
-          - AR
-        familyNames:
-          - Borneman
-        type: Person
-    title: >-
-      Purge Haplotigs: allelic contig reassignment for third-gen diploid genome
-      assemblies
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 460
-      isPartOf:
-        title: BMC bioinformatics
-        volumeNumber: 19
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref045
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Zhang
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Zhang
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Tang
-        type: Person
-      - givenNames:
-          - Q
-        familyNames:
-          - Zhang
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Hua
-        type: Person
-      - givenNames:
-          - X
-        familyNames:
-          - Ma
-        type: Person
-    title: >-
-      Allele-defined genome of the autopolyploid sugarcane Saccharum spontaneum
-      L
-    type: Article
-    datePublished: '2018'
-    isPartOf:
-      issueNumber: 11
-      pageStart: 1565
-      isPartOf:
-        title: Nature genetics
-        volumeNumber: 50
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref046
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Huang
-        type: Person
-      - givenNames:
-          - Z
-        familyNames:
-          - Chen
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Huang
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Yu
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Yang
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Li
-        type: Person
-    title: >-
-      HaploMerger: reconstructing allelic relationships for polymorphic diploid
-      genome assemblies
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      issueNumber: 8
-      pageStart: 1581
-      pageEnd: 1588
-      isPartOf:
-        title: Genome research
-        volumeNumber: 22
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref047
-  - authors:
-      - givenNames:
-          - K
-        familyNames:
-          - Fletez-Brant
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Qiu
-        type: Person
-      - givenNames:
-          - DU
-        familyNames:
-          - Gorkin
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Hu
-        type: Person
-      - givenNames:
-          - KD
-        familyNames:
-          - Hansen
-        type: Person
-    title: Removing unwanted variation between samples in Hi-C experiments
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: bioRxiv
-      type: PublicationVolume
-    id: pcbi.1007273.ref048
-  - authors:
-      - givenNames:
-          - BJ
-        familyNames:
-          - Matthews
-        type: Person
-      - givenNames:
-          - O
-        familyNames:
-          - Dudchenko
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Kingan
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Koren
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - Antoshechkin
-        type: Person
-      - givenNames:
-          - JE
-        familyNames:
-          - Crawford
-        type: Person
-    title: >-
-      Improved Aedes aegypti mosquito reference genome assembly enables
-      biological discovery and vector control
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      pageStart: 240747
-      title: bioRxiv
-      type: PublicationVolume
-    id: pcbi.1007273.ref049
-  - authors:
-      - givenNames:
-          - KP
-        familyNames:
-          - Koepfli
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Paten
-        type: Person
-      - givenNames:
-          - SJ
-        familyNames:
-          - O’Brien
-        type: Person
-    title: 'The Genome 10K Project: a way forward'
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      issueNumber: 1
-      pageStart: 57
-      pageEnd: 111
-      isPartOf:
-        title: Annu Rev Anim Biosci
-        volumeNumber: 3
-        type: PublicationVolume
-      type: PublicationIssue
-    id: pcbi.1007273.ref050

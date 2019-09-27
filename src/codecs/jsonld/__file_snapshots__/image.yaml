@@ -1,10 +1,10 @@
 type: ImageObject
 authors:
-  - givenNames:
-      - Jane
+  - type: Person
     familyNames:
       - Doe
-    type: Person
+    givenNames:
+      - Jane
 contentUrl: /mexico-beach.jpg
 datePublished:
   type: Date

@@ -1,109 +1,108 @@
+type: Article
 authors:
-  - givenNames:
-      - L
-      - Michelle
+  - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Georgia, United States'
+        name: 'University of Georgia, Bioexpression and Fermentation Facility'
     familyNames:
       - Lewis
-    type: Person
+    givenNames:
+      - L
+      - Michelle
+  - type: Person
     affiliations:
-      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
+      - type: Organization
         address: 'Georgia, United States'
-        type: Organization
-  - givenNames:
-      - Meredith
-      - C
-    familyNames:
-      - Edwards
-    type: Person
+        name: 'University of Georgia, Bioexpression and Fermentation Facility'
     emails:
       - medward1@uga.edu
-    affiliations:
-      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: 'Georgia, United States'
-        type: Organization
-  - givenNames:
-      - Zachary
-      - R
     familyNames:
-      - Meyers
-    type: Person
+      - Edwards
+    givenNames:
+      - Meredith
+      - C
+  - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Georgia, United States'
+        name: 'University of Georgia, Bioexpression and Fermentation Facility'
     emails:
       - ZRMeyers@uga.edu
+    familyNames:
+      - Meyers
+    givenNames:
+      - Zachary
+      - R
+  - type: Person
     affiliations:
-      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: 'Georgia, United States'
-        type: Organization
-  - givenNames:
-      - C
-      - Conover
+      - type: Organization
+        address: 'Maryland, United States'
+        name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
     familyNames:
       - Talbot
+    givenNames:
+      - C
+      - Conover
     honorificSuffix: Jr
-    type: Person
+  - type: Person
     affiliations:
-      - name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
+      - type: Organization
         address: 'Maryland, United States'
-        type: Organization
-  - givenNames:
-      - Haiping
+        name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
     familyNames:
       - Hao
-    type: Person
+    givenNames:
+      - Haiping
+  - type: Person
     affiliations:
-      - name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
-        address: 'Maryland, United States'
-        type: Organization
-  - givenNames:
-      - David
-    familyNames:
-      - Blum
-    type: Person
+      - type: Organization
+        address: 'Georgia, United States'
+        name: 'University of Georgia, Bioexpression and Fermentation Facility'
     emails:
       - blum@uga.edu
-    affiliations:
-      - name: 'University of Georgia, Bioexpression and Fermentation Facility'
-        address: 'Georgia, United States'
-        type: Organization
+    familyNames:
+      - Blum
+    givenNames:
+      - David
   - type: Person
     emails:
       - tim@cos.io
       - nicole@scienceexchange.com
-  - givenNames:
-      - Elizabeth
+  - type: Person
     familyNames:
       - Iorns
-    type: Person
-  - givenNames:
-      - Rachel
+    givenNames:
+      - Elizabeth
+  - type: Person
     familyNames:
       - Tsui
-    type: Person
-  - givenNames:
-      - Alexandria
+    givenNames:
+      - Rachel
+  - type: Person
     familyNames:
       - Denis
-    type: Person
-  - givenNames:
-      - Nicole
+    givenNames:
+      - Alexandria
+  - type: Person
     familyNames:
       - Perfito
-    type: Person
-  - givenNames:
-      - Timothy
-      - M
+    givenNames:
+      - Nicole
+  - type: Person
     familyNames:
       - Errington
-    type: Person
-title: >-
-  Replication Study: Transcriptional amplification in tumor cells with elevated
-  c-Myc
+    givenNames:
+      - Timothy
+      - M
 description:
-  - content:
+  - type: Paragraph
+    content:
       - 'As part of the '
-      - content:
-          - 'Reproducibility Project: Cancer Biology'
+      - type: Link
         target: 'https://osf.io/e81xl/wiki/home/'
-        type: Link
+        content:
+          - 'Reproducibility Project: Cancer Biology'
       - >-
         , we published a Registered Report (Blum et al., 2015), that described
         how we intended to replicate selected experiments from the paper
@@ -126,46 +125,2102 @@ description:
         both active and silent genes upon c-Myc induction, with the change in
         gene expression greater for active genes compared to silent genes.
         Finally, we report meta-analyses for each result.
-    type: Paragraph
-type: Article
+references:
+  - type: Article
+    id: bib1
+    authors:
+      - type: Person
+        familyNames:
+          - Altman
+        givenNames:
+          - DG
+      - type: Person
+        familyNames:
+          - Royston
+        givenNames:
+          - P
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationVolume
+      title: BMJ
+      volumeNumber: 332
+    title: The cost of dichotomising continuous variables
+  - type: Article
+    id: bib2
+    authors:
+      - type: Person
+        familyNames:
+          - Biggs
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Macmillan
+        givenNames:
+          - RL
+    datePublished: '1948'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 291
+      pageStart: 288
+      title: Journal of Clinical Pathology
+      volumeNumber: 1
+    title: The error of the red cell count
+  - type: Article
+    id: bib3
+    authors:
+      - type: Person
+        familyNames:
+          - Blum
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Hao
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - McCarthy
+        givenNames:
+          - M
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      title: eLife
+      volumeNumber: 4
+    title: >-
+      Registered report: Transcriptional amplification in tumor cells with
+      elevated c-Myc
+  - type: Article
+    id: bib4
+    authors:
+      - type: Person
+        familyNames:
+          - Cohen
+        givenNames:
+          - J
+    datePublished: '1983'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 253
+      pageStart: 249
+      title: Applied Psychological Measurement
+      volumeNumber: 7
+    title: The cost of dichotomization
+  - type: Article
+    id: bib5
+    authors:
+      - type: Person
+        familyNames:
+          - Duffy
+        givenNames:
+          - DJ
+      - type: Person
+        familyNames:
+          - Krstic
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Halasz
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Schwarzl
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Fey
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Iljin
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Mehta
+        givenNames:
+          - JP
+      - type: Person
+        familyNames:
+          - Killick
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Whilde
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Turriziani
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Haapa-Paananen
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Fey
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Fischer
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Westermann
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Henrich
+        givenNames:
+          - K-O
+      - type: Person
+        familyNames:
+          - Bannert
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Higgins
+        givenNames:
+          - DG
+      - type: Person
+        familyNames:
+          - Kolch
+        givenNames:
+          - W
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 43201
+      pageStart: 43182
+      title: Oncotarget
+      volumeNumber: 6
+    title: >-
+      Integrative omics reveals MYCN as a global suppressor of cellular
+      signalling and enables network-based therapeutic target discovery in
+      neuroblastoma
+  - type: Article
+    id: bib6
+    authors:
+      - type: Person
+        familyNames:
+          - Errington
+        givenNames:
+          - TM
+      - type: Person
+        familyNames:
+          - Iorns
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Gunn
+        givenNames:
+          - W
+      - type: Person
+        familyNames:
+          - Tan
+        givenNames:
+          - FE
+      - type: Person
+        familyNames:
+          - Lomax
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Nosek
+        givenNames:
+          - BA
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      title: eLife
+      volumeNumber: 3
+    title: An open investigation of the reproducibility of cancer biology research
+  - type: Article
+    id: bib7
+    authors:
+      - type: Person
+        familyNames:
+          - Fagnocchi
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Cherubini
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Hatsuda
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Fasciani
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Mazzoleni
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Poli
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Berno
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Rossi
+        givenNames:
+          - RL
+      - type: Person
+        familyNames:
+          - Reinbold
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Endele
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Schroeder
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Rocchigiani
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Szkarłat
+        givenNames:
+          - Ż
+      - type: Person
+        familyNames:
+          - Oliviero
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Dalton
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Zippo
+        givenNames:
+          - A
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      title: Nature Communications
+      volumeNumber: 7
+    title: >-
+      A Myc-driven self-reinforcing regulatory network maintains mouse embryonic
+      stem cell identity
+  - type: Article
+    id: bib8
+    authors:
+      - type: Person
+        familyNames:
+          - Gelman
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Stern
+        givenNames:
+          - H
+    datePublished: '2006'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 331
+      pageStart: 328
+      title: The American Statistician
+      volumeNumber: 60
+    title: >-
+      The difference between “significant” and “not significant” is not itself
+      statistically significant
+  - type: Article
+    id: bib9
+    authors:
+      - type: Person
+        familyNames:
+          - Hart
+        givenNames:
+          - JR
+      - type: Person
+        familyNames:
+          - Roberts
+        givenNames:
+          - TC
+      - type: Person
+        familyNames:
+          - Weinberg
+        givenNames:
+          - MS
+      - type: Person
+        familyNames:
+          - Morris
+        givenNames:
+          - KV
+      - type: Person
+        familyNames:
+          - Vogt
+        givenNames:
+          - PK
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 12554
+      pageStart: 12543
+      title: Oncotarget
+      volumeNumber: 5
+    title: MYC regulates the non-coding transcriptome
+  - type: Article
+    id: bib10
+    authors:
+      - type: Person
+        familyNames:
+          - Hartgerink
+        givenNames:
+          - CHJ
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: eLife
+    title: Composing reproducible manuscripts using R Markdown
+  - type: Article
+    id: bib11
+    authors:
+      - type: Person
+        familyNames:
+          - Hiorns
+        givenNames:
+          - LR
+      - type: Person
+        familyNames:
+          - Bradshaw
+        givenNames:
+          - TD
+      - type: Person
+        familyNames:
+          - Skelton
+        givenNames:
+          - LA
+      - type: Person
+        familyNames:
+          - Yu
+        givenNames:
+          - Q
+      - type: Person
+        familyNames:
+          - Kelland
+        givenNames:
+          - LR
+      - type: Person
+        familyNames:
+          - Leyland-Jones
+        givenNames:
+          - B
+    datePublished: '2004'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 482
+      pageStart: 476
+      title: British Journal of Cancer
+      volumeNumber: 90
+    title: >-
+      Variation in RNA expression and genomic DNA content acquired during cell
+      culture
+  - type: Article
+    id: bib12
+    authors:
+      - type: Person
+        familyNames:
+          - Hsu
+        givenNames:
+          - TY
+      - type: Person
+        familyNames:
+          - Simon
+        givenNames:
+          - LM
+      - type: Person
+        familyNames:
+          - Neill
+        givenNames:
+          - NJ
+      - type: Person
+        familyNames:
+          - Marcotte
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Sayad
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Bland
+        givenNames:
+          - CS
+      - type: Person
+        familyNames:
+          - Echeverria
+        givenNames:
+          - GV
+      - type: Person
+        familyNames:
+          - Sun
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Kurley
+        givenNames:
+          - SJ
+      - type: Person
+        familyNames:
+          - Tyagi
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Karlin
+        givenNames:
+          - KL
+      - type: Person
+        familyNames:
+          - Dominguez-Vidaña
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Hartman
+        givenNames:
+          - JD
+      - type: Person
+        familyNames:
+          - Renwick
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Scorsone
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Bernardi
+        givenNames:
+          - RJ
+      - type: Person
+        familyNames:
+          - Skinner
+        givenNames:
+          - SO
+      - type: Person
+        familyNames:
+          - Jain
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Orellana
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Lagisetti
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Golding
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Jung
+        givenNames:
+          - SY
+      - type: Person
+        familyNames:
+          - Neilson
+        givenNames:
+          - JR
+      - type: Person
+        familyNames:
+          - Zhang
+        givenNames:
+          - XH
+      - type: Person
+        familyNames:
+          - Cooper
+        givenNames:
+          - TA
+      - type: Person
+        familyNames:
+          - Webb
+        givenNames:
+          - TR
+      - type: Person
+        familyNames:
+          - Neel
+        givenNames:
+          - BG
+      - type: Person
+        familyNames:
+          - Shaw
+        givenNames:
+          - CA
+      - type: Person
+        familyNames:
+          - Westbrook
+        givenNames:
+          - TF
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 388
+      pageStart: 384
+      title: Nature
+      volumeNumber: 525
+    title: The spliceosome is a therapeutic vulnerability in MYC-driven cancer
+  - type: Article
+    id: bib13
+    authors:
+      - type: Person
+        familyNames:
+          - Hughes
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Marshall
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Reid
+        givenNames:
+          - 'Y'
+      - type: Person
+        familyNames:
+          - Parkes
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Gelber
+        givenNames:
+          - C
+    datePublished: '2007'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 586
+      pageStart: 575
+      title: 'over-passaged cell lines: how much more data do we need? BioTechniques'
+      volumeNumber: 43
+    title: The costs of using unauthenticated
+  - type: Article
+    id: bib14
+    authors:
+      - type: Person
+        familyNames:
+          - Kleensang
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Vantangoli
+        givenNames:
+          - MM
+      - type: Person
+        familyNames:
+          - Odwin-DaCosta
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Andersen
+        givenNames:
+          - ME
+      - type: Person
+        familyNames:
+          - Boekelheide
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Bouhifd
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Fornace
+        givenNames:
+          - AJ
+      - type: Person
+        familyNames:
+          - Li
+        givenNames:
+          - HH
+      - type: Person
+        familyNames:
+          - Livi
+        givenNames:
+          - CB
+      - type: Person
+        familyNames:
+          - Madnick
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Maertens
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Rosenberg
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Yager
+        givenNames:
+          - JD
+      - type: Person
+        familyNames:
+          - Zhaog
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Hartung
+        givenNames:
+          - T
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      title: Scientific Reports
+      volumeNumber: 6
+    title: >-
+      Genetic variability in a frozen batch of MCF-7 cells invisible in routine
+      authentication affecting cell function
+  - type: Article
+    id: bib15
+    authors:
+      - type: Person
+        familyNames:
+          - Leek
+        givenNames:
+          - JT
+      - type: Person
+        familyNames:
+          - Scharpf
+        givenNames:
+          - RB
+      - type: Person
+        familyNames:
+          - Bravo
+        givenNames:
+          - HC
+      - type: Person
+        familyNames:
+          - Simcha
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Langmead
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Johnson
+        givenNames:
+          - WE
+      - type: Person
+        familyNames:
+          - Geman
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Baggerly
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Irizarry
+        givenNames:
+          - RA
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 739
+      pageStart: 733
+      title: Nature Reviews Genetics
+      volumeNumber: 11
+    title: >-
+      Tackling the widespread and critical impact of batch effects in
+      high-throughput data
+  - type: Article
+    id: bib16
+    authors:
+      - type: Person
+        familyNames:
+          - Lewis
+        givenNames:
+          - LM
+      - type: Person
+        familyNames:
+          - Edwards
+        givenNames:
+          - MC
+      - type: Person
+        familyNames:
+          - Meyers
+        givenNames:
+          - ZR
+      - type: Person
+        familyNames:
+          - Talbot
+        givenNames:
+          - CC
+      - type: Person
+        familyNames:
+          - Hao
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Blum
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Iorns
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Tsui
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Denis
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Perfito
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Errington
+        givenNames:
+          - TM
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: Open Science Framework
+    title: 'Study 48: Replication of Lin et al., 2012 (Cell)'
+  - type: Article
+    id: bib17
+    authors:
+      - type: Person
+        familyNames:
+          - Lin
+        givenNames:
+          - CY
+      - type: Person
+        familyNames:
+          - Lovén
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Rahl
+        givenNames:
+          - PB
+      - type: Person
+        familyNames:
+          - Paranal
+        givenNames:
+          - RM
+      - type: Person
+        familyNames:
+          - Burge
+        givenNames:
+          - CB
+      - type: Person
+        familyNames:
+          - Bradner
+        givenNames:
+          - JE
+      - type: Person
+        familyNames:
+          - Lee
+        givenNames:
+          - TI
+      - type: Person
+        familyNames:
+          - Young
+        givenNames:
+          - RA
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 67
+      pageStart: 56
+      title: Cell
+      volumeNumber: 151
+    title: Transcriptional amplification in tumor cells with elevated c-Myc
+  - type: Article
+    id: bib18
+    authors:
+      - type: Person
+        familyNames:
+          - Lorenzin
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Benary
+        givenNames:
+          - U
+      - type: Person
+        familyNames:
+          - Baluapuri
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Walz
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Jung
+        givenNames:
+          - LA
+      - type: Person
+        familyNames:
+          - von
+          - Eyss
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Kisker
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Wolf
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Eilers
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Wolf
+        givenNames:
+          - E
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      title: eLife
+      volumeNumber: 5
+    title: >-
+      Different promoter affinities account for specificity in MYC-dependent
+      gene regulation
+  - type: Article
+    id: bib19
+    authors:
+      - type: Person
+        familyNames:
+          - Nie
+        givenNames:
+          - Z
+      - type: Person
+        familyNames:
+          - Hu
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Wei
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Cui
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Yamane
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Resch
+        givenNames:
+          - W
+      - type: Person
+        familyNames:
+          - Wang
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Green
+        givenNames:
+          - DR
+      - type: Person
+        familyNames:
+          - Tessarollo
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Casellas
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Zhao
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Levens
+        givenNames:
+          - D
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 79
+      pageStart: 68
+      title: Cell
+      volumeNumber: 151
+    title: >-
+      c-Myc is a universal amplifier of expressed genes in lymphocytes and
+      embryonic stem cells
+  - type: Article
+    id: bib20
+    authors:
+      - type: Person
+        familyNames:
+          - Nielson
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Smyth
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Greenfield
+        givenNames:
+          - P
+    datePublished: '1991'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 563
+      pageStart: 560
+      title: Biotechnology Progress
+      volumeNumber: 7
+    title: >-
+      Hemacytometer Cell Count Distributions: Implications of Non-Poisson
+      Behavior
+  - type: Article
+    id: bib21
+    authors:
+      - type: Person
+        familyNames:
+          - Nieuwenhuis
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Forstmann
+        givenNames:
+          - BU
+      - type: Person
+        familyNames:
+          - Wagenmakers
+        givenNames:
+          - EJ
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 1107
+      pageStart: 1105
+      title: Nature Neuroscience
+      volumeNumber: 14
+    title: >-
+      Erroneous analyses of interactions in neuroscience: a problem of
+      significance
+  - type: Article
+    id: bib22
+    authors:
+      - type: Person
+        familyNames:
+          - Padovan-Merhar
+        givenNames:
+          - O
+      - type: Person
+        familyNames:
+          - Nair
+        givenNames:
+          - GP
+      - type: Person
+        familyNames:
+          - Biaesch
+        givenNames:
+          - AG
+      - type: Person
+        familyNames:
+          - Mayer
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Scarfone
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Foley
+        givenNames:
+          - SW
+      - type: Person
+        familyNames:
+          - Wu
+        givenNames:
+          - AR
+      - type: Person
+        familyNames:
+          - Churchman
+        givenNames:
+          - LS
+      - type: Person
+        familyNames:
+          - Singh
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Raj
+        givenNames:
+          - A
+    datePublished: '2015'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 352
+      pageStart: 339
+      title: Molecular Cell
+      volumeNumber: 58
+    title: >-
+      Single mammalian cells compensate for differences in cellular volume and
+      DNA copy number through independent global transcriptional mechanisms
+  - type: Article
+    id: bib23
+    authors:
+      - type: Person
+        familyNames:
+          - Pajic
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Spitkovsky
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Christoph
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Kempkes
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Schuhmacher
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Staege
+        givenNames:
+          - MS
+      - type: Person
+        familyNames:
+          - Brielmeier
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Ellwart
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Kohlhuber
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Bornkamm
+        givenNames:
+          - GW
+      - type: Person
+        familyNames:
+          - Polack
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Eick
+        givenNames:
+          - D
+    datePublished: '2000'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 793
+      pageStart: 787
+      title: International Journal of Cancer
+      volumeNumber: 87
+    title: Cell cycle activation by c-myc in a burkitt lymphoma model cell line
+  - type: Article
+    id: bib24
+    authors:
+      - type: Person
+        familyNames:
+          - Pratt
+        givenNames:
+          - JW
+    datePublished: '1959'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 667
+      pageStart: 655
+      title: Journal of the American Statistical Association
+      volumeNumber: 54
+    title: Remarks on zeros and ties in the wilcoxon signed rank procedures
+  - type: Article
+    id: bib25
+    authors: []
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: R Foundation for Statistical Computing
+    title: ''
+  - type: Article
+    id: bib26
+    authors:
+      - type: Person
+        familyNames:
+          - Sabò
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Amati
+        givenNames:
+          - B
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      title: Cold Spring Harbor Perspectives in Medicine
+      volumeNumber: 4
+    title: Genome recognition by MYC
+  - type: Article
+    id: bib27
+    authors:
+      - type: Person
+        familyNames:
+          - Sabò
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Kress
+        givenNames:
+          - TR
+      - type: Person
+        familyNames:
+          - Pelizzola
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - de
+          - Pretis
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Gorski
+        givenNames:
+          - MM
+      - type: Person
+        familyNames:
+          - Tesi
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Morelli
+        givenNames:
+          - MJ
+      - type: Person
+        familyNames:
+          - Bora
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Doni
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Verrecchia
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Tonelli
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Fagà
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Bianchi
+        givenNames:
+          - V
+      - type: Person
+        familyNames:
+          - Ronchi
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Low
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Müller
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Guccione
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Campaner
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Amati
+        givenNames:
+          - B
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 492
+      pageStart: 488
+      title: Nature
+      volumeNumber: 511
+    title: >-
+      Selective transcriptional regulation by Myc in cellular growth control and
+      lymphomagenesis
+  - type: Article
+    id: bib28
+    authors:
+      - type: Person
+        familyNames:
+          - Schlosser
+        givenNames:
+          - I
+      - type: Person
+        familyNames:
+          - Hölzel
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Hoffmann
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Burtscher
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Kohlhuber
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Schuhmacher
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Chapman
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Weidle
+        givenNames:
+          - UH
+      - type: Person
+        familyNames:
+          - Eick
+        givenNames:
+          - D
+    datePublished: '2005'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 524
+      pageStart: 520
+      title: Oncogene
+      volumeNumber: 24
+    title: >-
+      Dissection of transcriptional programmes in response to serum and c-Myc in
+      a human B-cell line
+  - type: Article
+    id: bib29
+    authors:
+      - type: Person
+        familyNames:
+          - Schneider
+        givenNames:
+          - CA
+      - type: Person
+        familyNames:
+          - Rasband
+        givenNames:
+          - WS
+      - type: Person
+        familyNames:
+          - Eliceiri
+        givenNames:
+          - KW
+    datePublished: '2012'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 675
+      pageStart: 671
+      title: Nature Methods
+      volumeNumber: 9
+    title: 'NIH Image to ImageJ: 25 years of image analysis'
+  - type: Article
+    id: bib30
+    authors:
+      - type: Person
+        familyNames:
+          - Schuhmacher
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Staege
+        givenNames:
+          - MS
+      - type: Person
+        familyNames:
+          - Pajic
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Polack
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Weidle
+        givenNames:
+          - UH
+      - type: Person
+        familyNames:
+          - Bornkamm
+        givenNames:
+          - GW
+      - type: Person
+        familyNames:
+          - Eick
+        givenNames:
+          - D
+      - type: Person
+        familyNames:
+          - Kohlhuber
+        givenNames:
+          - F
+    datePublished: '1999'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 1258
+      pageStart: 1255
+      title: Current Biology
+      volumeNumber: 9
+    title: Control of cell growth by c-Myc in the absence of cell division
+  - type: Article
+    id: bib31
+    authors:
+      - type: Person
+        familyNames:
+          - Silberzahn
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Uhlmann
+        givenNames:
+          - EL
+      - type: Person
+        familyNames:
+          - Martin
+        givenNames:
+          - DP
+      - type: Person
+        familyNames:
+          - Anselmi
+        givenNames:
+          - P
+      - type: Person
+        familyNames:
+          - Aust
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Awtrey
+        givenNames:
+          - EC
+      - type: Person
+        familyNames:
+          - Bahník
+        givenNames:
+          - Š
+      - type: Person
+        familyNames:
+          - Bai
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Bannard
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Bonnier
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Carlsson
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Cheung
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Christensen
+        givenNames:
+          - G
+      - type: Person
+        familyNames:
+          - Clay
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Craig
+        givenNames:
+          - MA
+      - type: Person
+        familyNames:
+          - Dalla
+          - Rosa
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Dam
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Evans
+        givenNames:
+          - MH
+      - type: Person
+        familyNames:
+          - Cervantes
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Fong
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Gamez-Djokic
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Glenz
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Gordon-McKeon
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Heaton
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Eriksson
+        givenNames:
+          - KH
+      - type: Person
+        familyNames:
+          - Heene
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Hofelich
+          - Mohr
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Högden
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Hui
+        givenNames:
+          - K
+      - type: Person
+        familyNames:
+          - Johannesson
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Kalodimos
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Kaszubowski
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Kennedy
+        givenNames:
+          - DM
+      - type: Person
+        familyNames:
+          - Lei
+        givenNames:
+          - R
+      - type: Person
+        familyNames:
+          - Lindsay
+        givenNames:
+          - TA
+      - type: Person
+        familyNames:
+          - Liverani
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Madan
+        givenNames:
+          - CR
+      - type: Person
+        familyNames:
+          - Molden
+        givenNames:
+          - DC
+      - type: Person
+        familyNames:
+          - Molleman
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Morey
+        givenNames:
+          - RD
+      - type: Person
+        familyNames:
+          - Mulder
+        givenNames:
+          - LB
+      - type: Person
+        familyNames:
+          - Nijstad
+        givenNames:
+          - BA
+      - type: Person
+        familyNames:
+          - Pope
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Pope
+        givenNames:
+          - NG
+      - type: Person
+        familyNames:
+          - Prenoveau
+        givenNames:
+          - JM
+      - type: Person
+        familyNames:
+          - Rink
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Robusto
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Roderique
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Sandberg
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Schlueter
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Schönbrodt
+        givenNames:
+          - FD
+      - type: Person
+        familyNames:
+          - Sherman
+        givenNames:
+          - MF
+      - type: Person
+        familyNames:
+          - Sommer
+        givenNames:
+          - SA
+      - type: Person
+        familyNames:
+          - Sotak
+        givenNames:
+          - KL
+      - type: Person
+        familyNames:
+          - Spain
+        givenNames:
+          - SM
+      - type: Person
+        familyNames:
+          - Spörlein
+        givenNames:
+          - C
+      - type: Person
+        familyNames:
+          - Stafford
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Stefanutti
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Täuber
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Ullrich
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Vianello
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Wagenmakers
+        givenNames:
+          - E-J
+      - type: Person
+        familyNames:
+          - Witkowiak
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Yoon
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Nosek
+        givenNames:
+          - BA
+    datePublished: '2017'
+    isPartOf:
+      type: PublicationVolume
+      title: PsyArXiv
+    title: >-
+      Many analysts, one dataset: Making transparent how variations in
+      analytical choices affect results
+  - type: Article
+    id: bib32
+    authors:
+      - type: Person
+        familyNames:
+          - Trakhtenberg
+        givenNames:
+          - EF
+      - type: Person
+        familyNames:
+          - Pho
+        givenNames:
+          - 'N'
+      - type: Person
+        familyNames:
+          - Holton
+        givenNames:
+          - KM
+      - type: Person
+        familyNames:
+          - Chittenden
+        givenNames:
+          - TW
+      - type: Person
+        familyNames:
+          - Goldberg
+        givenNames:
+          - JL
+      - type: Person
+        familyNames:
+          - Dong
+        givenNames:
+          - L
+    datePublished: '2016'
+    isPartOf:
+      type: PublicationVolume
+      pageStart: 32249
+      title: Scientific Reports
+      volumeNumber: 6
+    title: >-
+      Cell types differ in global coordination of splicing and proportion of
+      highly expressed genes
+  - type: Article
+    id: bib33
+    authors:
+      - type: Person
+        familyNames:
+          - Valentine
+        givenNames:
+          - JC
+      - type: Person
+        familyNames:
+          - Biglan
+        givenNames:
+          - A
+      - type: Person
+        familyNames:
+          - Boruch
+        givenNames:
+          - RF
+      - type: Person
+        familyNames:
+          - Castro
+        givenNames:
+          - FG
+      - type: Person
+        familyNames:
+          - Collins
+        givenNames:
+          - LM
+      - type: Person
+        familyNames:
+          - Flay
+        givenNames:
+          - BR
+      - type: Person
+        familyNames:
+          - Kellam
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Mościcki
+        givenNames:
+          - EK
+      - type: Person
+        familyNames:
+          - Schinke
+        givenNames:
+          - SP
+    datePublished: '2011'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 117
+      pageStart: 103
+      title: Prevention Science
+      volumeNumber: 12
+    title: Replication in prevention science
+  - type: Article
+    id: bib34
+    authors:
+      - type: Person
+        familyNames:
+          - Viechtbauer
+        givenNames:
+          - W
+    datePublished: '2010'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 48
+      pageStart: 1
+      title: Journal of Statistical Software
+      volumeNumber: 36
+    title: Conducting Meta-Analyses in R with the metafor Package
+  - type: Article
+    id: bib35
+    authors:
+      - type: Person
+        familyNames:
+          - Walz
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Lorenzin
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Morton
+        givenNames:
+          - J
+      - type: Person
+        familyNames:
+          - Wiese
+        givenNames:
+          - KE
+      - type: Person
+        familyNames:
+          - von
+          - Eyss
+        givenNames:
+          - B
+      - type: Person
+        familyNames:
+          - Herold
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Rycak
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Dumay-Odelot
+        givenNames:
+          - H
+      - type: Person
+        familyNames:
+          - Karim
+        givenNames:
+          - S
+      - type: Person
+        familyNames:
+          - Bartkuhn
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Roels
+        givenNames:
+          - F
+      - type: Person
+        familyNames:
+          - Wüstefeld
+        givenNames:
+          - T
+      - type: Person
+        familyNames:
+          - Fischer
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Teichmann
+        givenNames:
+          - M
+      - type: Person
+        familyNames:
+          - Zender
+        givenNames:
+          - L
+      - type: Person
+        familyNames:
+          - Wei
+        givenNames:
+          - CL
+      - type: Person
+        familyNames:
+          - Sansom
+        givenNames:
+          - O
+      - type: Person
+        familyNames:
+          - Wolf
+        givenNames:
+          - E
+      - type: Person
+        familyNames:
+          - Eilers
+        givenNames:
+          - M
+    datePublished: '2014'
+    isPartOf:
+      type: PublicationVolume
+      pageEnd: 487
+      pageStart: 483
+      title: Nature
+      volumeNumber: 511
+    title: >-
+      Activation and repression by oncogenic MYC shape tumour-specific gene
+      expression profiles
+title: >-
+  Replication Study: Transcriptional amplification in tumor cells with elevated
+  c-Myc
 content:
-  - content:
-      - Introduction
-    depth: 1
+  - type: Heading
     id: s1
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Introduction
+  - type: Paragraph
+    content:
       - 'The '
-      - content:
-          - 'Reproducibility Project: Cancer Biology'
+      - type: Link
         target: 'https://osf.io/e81xl/wiki/home/'
-        type: Link
+        content:
+          - 'Reproducibility Project: Cancer Biology'
       - ' (RP:CB) is a collaboration between the '
-      - content:
-          - Center for Open Science
+      - type: Link
         target: 'https://centerforopenscience.org/'
-        type: Link
+        content:
+          - Center for Open Science
       - ' and '
-      - content:
-          - Science Exchange
+      - type: Link
         target: 'https://www.scienceexchange.com/'
-        type: Link
+        content:
+          - Science Exchange
       - ' that seeks to address concerns about reproducibility in scientific research by conducting replications of selected experiments from a number of high-profile papers in the field of cancer biology ('
-      - target: '#bib6'
-        type: Cite
+      - type: Cite
+        target: '#bib6'
       - >-
         ). For each of these papers a Registered Report detailing the proposed
         experimental designs and protocols for the replications was peer
         reviewed and published prior to data collection. The present paper is a
         Replication Study that reports the results of the replication
         experiments detailed in the Registered Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ) for a 2012 paper by Lin et al., and uses a number of approaches to
         compare the outcomes of the original experiments and the replications.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         In 2012, Lin et al. reported results that the c-Myc transcription
         factor, a potent oncogene that is frequently overexpressed in a large
@@ -176,84 +2231,84 @@ content:
         content:
           - MYC
       - ' activation in Burkitt’s lymphoma, total levels of RNA per cell were reported to increase when c-Myc was highly expressed compared to conditions where c-Myc expression was low. Additionally, active genes in cells with low c-Myc levels were reported to increase in expression upon c-Myc induction, in contrast to genes that were silent under low c-Myc conditions that did not change.'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - "The Registered Report for the 2012 paper by Lin et al. described the experiments to be replicated\_(Figure\_1B and 3E–F), and summarized the current evidence for these findings ("
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). Since that publication there have been additional studies
         investigating the ability c-Myc to influence the global gene expression
         output of cells. Similar to Lin et al. other studies have reported c-Myc
         dependent amplification of cellular RNA (
-      - target: '#bib9'
-        type: Cite
+      - type: Cite
+        target: '#bib9'
       - '; '
-      - target: '#bib12'
-        type: Cite
+      - type: Cite
+        target: '#bib12'
       - '; '
-      - target: '#bib19'
-        type: Cite
+      - type: Cite
+        target: '#bib19'
       - '; '
-      - target: '#bib27'
-        type: Cite
+      - type: Cite
+        target: '#bib27'
       - >-
         ), although this observation was not reported in all biological systems
         (
-      - target: '#bib7'
-        type: Cite
+      - type: Cite
+        target: '#bib7'
       - '; '
-      - target: '#bib27'
-        type: Cite
+      - type: Cite
+        target: '#bib27'
       - '; '
-      - target: '#bib35'
-        type: Cite
+      - type: Cite
+        target: '#bib35'
       - >-
         ). It has been suggested c-Myc regulates specific genes that indirectly
         lead to RNA amplification (
-      - target: '#bib27'
-        type: Cite
+      - type: Cite
+        target: '#bib27'
       - '; '
-      - target: '#bib26'
-        type: Cite
+      - type: Cite
+        target: '#bib26'
       - '; '
-      - target: '#bib35'
-        type: Cite
+      - type: Cite
+        target: '#bib35'
       - ). This has also been suggested of MYCN (
-      - target: '#bib5'
-        type: Cite
+      - type: Cite
+        target: '#bib5'
       - >-
         ). The reported differences could be a result of the intrinsic variation
         between cell lines in maintaining the transcriptome (
-      - target: '#bib32'
-        type: Cite
+      - type: Cite
+        target: '#bib32'
       - >-
         ). Indeed, a recent study reported that distinct transcriptional
         regulation can be accounted for by differences in promoter affinity
         under different c-Myc expression levels (
-      - target: '#bib18'
-        type: Cite
+      - type: Cite
+        target: '#bib18'
       - ).
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The outcome measures reported in this Replication Study will be
         aggregated with those from the other Replication Studies to create a
         dataset that will be examined to provide evidence about reproducibility
         of cancer biology research, and to identify factors that influence
         reproducibility more generally.
-    type: Paragraph
-  - content:
-      - Results and discussion
-    depth: 1
+  - type: Heading
     id: s2
-    type: Heading
-  - content:
-      - Conditional expression of c-Myc in the B-cell line P493-6
-    depth: 2
+    depth: 1
+    content:
+      - Results and discussion
+  - type: Heading
     id: s2-1
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Conditional expression of c-Myc in the B-cell line P493-6
+  - type: Paragraph
+    content:
       - >-
         To test the effects of increased levels of c-Myc on gene expression we
         used the same human P493-6 B cell line of Burkitt’s lymphoma that
@@ -262,59 +2317,53 @@ content:
         content:
           - MYC
       - ' transgene ('
-      - target: '#bib23'
-        type: Cite
+      - type: Cite
+        target: '#bib23'
       - '; '
-      - target: '#bib30'
-        type: Cite
+      - type: Cite
+        target: '#bib30'
       - >-
         ) as the original study. We performed Western blot analysis to confirm
         c-Myc expression could be reduced to very low levels and then
         reactivated after removal of tetracycline. This is comparable to what
         was reported in Figure 1B of 
-      - target: '#bib17'
-        type: Cite
+      - type: Cite
+        target: '#bib17'
       - ' and described in Protocol 1 in the Registered Report ('
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). Since proliferation of P493-6 cells depend on c-Myc expression and
         the presence of serum (
-      - target: '#bib23'
-        type: Cite
+      - type: Cite
+        target: '#bib23'
       - '; '
-      - target: '#bib30'
-        type: Cite
+      - type: Cite
+        target: '#bib30'
       - >-
         ), with serum reported to stimulate a majority of genes independent of
         c-Myc (
-      - target: '#bib28'
-        type: Cite
+      - type: Cite
+        target: '#bib28'
       - "), we maintained these cells in separate lots of serum to assess whether the results differed. For cells maintained in both lots of serum, treatment with tetracycline resulted in a strong decrease in c-Myc protein levels\_("
-      - content:
-          - Figure 1A
-        target: '#fig1'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig1'
+        content:
+          - Figure 1A
       - >-
         ). After removal of tetracycline, c-Myc levels increased over time
         approaching the levels observed in tetracycline-free conditions.
-    type: Paragraph
-  - id: fig1
-    content:
-      - contentUrl: fig1.jpg
-        format: application/postscript
-        meta:
-          inline: false
-        type: ImageObject
-    label: Figure 1.
+  - type: Figure
+    id: fig1
     caption:
-      - content:
-          - Induction of c-Myc in P493-6 cells and impact on total RNA levels.
-        depth: 2
+      - type: Heading
         id: s2-1
-        type: Heading
-      - content:
+        depth: 2
+        content:
+          - Induction of c-Myc in P493-6 cells and impact on total RNA levels.
+      - type: Paragraph
+        content:
           - >-
             P493-6 cells were grown in the presence of tetracycline (Tet) for 72
             hr and switched into Tet-free growth medium to induce c-Myc
@@ -376,37 +2425,43 @@ content:
             content:
               - a priori
           - " alpha level\_=\_0.05. Additional details for this experiment can be found at "
-          - content:
-              - 'https://osf.io/tfd57/'
+          - type: Link
             target: 'https://osf.io/tfd57/.'
-            type: Link
+            content:
+              - 'https://osf.io/tfd57/'
           - .
-        type: Paragraph
-    type: Figure
-  - content:
-      - Total RNA levels following c-Myc overexpression
-    depth: 2
+    label: Figure 1.
+    content:
+      - type: ImageObject
+        contentUrl: fig1.jpg
+        format: application/postscript
+        meta:
+          inline: false
+  - type: Heading
     id: s2-2
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Total RNA levels following c-Myc overexpression
+  - type: Paragraph
+    content:
       - >-
         We sought to independently replicate whether increased levels of c-Myc
         resulted in increased absolute levels of RNA. This experiment is similar
         to what was reported in Figure 3E of 
-      - target: '#bib17'
-        type: Cite
+      - type: Cite
+        target: '#bib17'
       - ' and used the same extraction method for total RNA quantification, which was described in Protocol 2 in the Registered Report ('
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). Total RNA was isolated from P493-6 cells 0, 1, and 24 hr after
         tetracycline release and the amount of RNA per 1,000 cells was
         quantified (
-      - content:
-          - Figure 1B
-        target: '#fig1'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig1'
+        content:
+          - Figure 1B
       - "). We found that under conditions where c-Myc expression was low (0 hr), there was a mean of 1.55 ng total RNA per 1,000 cells (ng/1 k cells) [n\_=\_3, "
       - type: Emphasis
         content:
@@ -451,39 +2506,39 @@ content:
         measured total RNA from P493-6 cells reported a different level at 0 hr
         (~3 ng/1 k cells), while also reporting increased levels following c-Myc
         expression (
-      - target: '#bib27'
-        type: Cite
+      - type: Cite
+        target: '#bib27'
       - >-
         ). There are multiple possible explanations for these differences, such
         as variation in RNA expression during cell culture passage (
-      - target: '#bib11'
-        type: Cite
+      - type: Cite
+        target: '#bib11'
       - >-
         ), low yield of the RNA isolation procedure (e.g. incomplete
         homogenization), or the high variance associated with manual cell counts
         using a hemacytometer (
-      - target: '#bib2'
-        type: Cite
+      - type: Cite
+        target: '#bib2'
       - '; '
-      - target: '#bib20'
-        type: Cite
+      - type: Cite
+        target: '#bib20'
       - >-
         ). To summarize, for this experiment we found results that were in the
         same direction as the original study and not statistically significant
         for serum lot one, while statistically significant for serum lot two.
-    type: Paragraph
-  - content:
-      - Digital gene expression following c-Myc overexpression
-    depth: 2
+  - type: Heading
     id: s2-3
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Digital gene expression following c-Myc overexpression
+  - type: Paragraph
+    content:
       - "To test whether c-Myc expression amplifies the existing gene expression program, digital gene expression analysis using the NanoString nCounter platform was performed on a set of genes from multiple functional categories. This experiment is similar to what was reported in Figure 3F and Table S1\_of "
-      - target: '#bib17'
-        type: Cite
+      - type: Cite
+        target: '#bib17'
       - ' and described in Protocols 3–4 in the Registered Report ('
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). We quantified mRNA levels/cell of 1369 genes, of which 1212 were the
         same genes as the 1338 genes interrogated in the original study. We used
@@ -496,48 +2551,48 @@ content:
         68% increased from 0 hr to 24 hr, and 59% increased from 1 hr to 24 hr
         upon c-Myc induction. This corresponds to a 1.11, 1.50, and 1.36 times
         increase in median expression, respectively (
-      - content:
-          - Figure 2
+      - type: Link
+        relation: fig
         target: '#fig2'
-        relation: fig
-        type: Link
+        content:
+          - Figure 2
       - ', '
-      - content:
-          - Figure 2—figure supplement 1
-        target: '#fig2s1'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig2s1'
+        content:
+          - Figure 2—figure supplement 1
       - >-
         ). For silent genes, 74% of the genes increased from 0 hr to 1 hr, 66%
         increased from 0 hr to 24 hr, and 50% increased from 1 hr to 24 hr,
         corresponding to a 1.19 and 1.13 times increase, and a 0.05 times
         decrease in median expression, respectively (
-      - content:
-          - Figure 2
+      - type: Link
+        relation: fig
         target: '#fig2'
-        relation: fig
-        type: Link
+        content:
+          - Figure 2
       - ', '
-      - content:
-          - Figure 2—figure supplement 1
-        target: '#fig2s1'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig2s1'
+        content:
+          - Figure 2—figure supplement 1
       - >-
         ). Serum lot two gave similar results, although there were variations in
         the number of genes identified as silent or active as well as the degree
         of increase among the conditions (
-      - content:
-          - Figure 2
+      - type: Link
+        relation: fig
         target: '#fig2'
-        relation: fig
-        type: Link
+        content:
+          - Figure 2
       - ', '
-      - content:
-          - Figure 2—figure supplement 1
-        target: '#fig2s1'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig2s1'
+        content:
+          - Figure 2—figure supplement 1
       - >-
         ). This compares to the original study that identified 755 active genes
         with a median expression of 7.06, and 514 silent genes with a median
@@ -556,26 +2611,18 @@ content:
         lot two). For silent genes, 96.4% (456/473) of the genes we identified
         as silent in serum lot one were common with the silent genes identified
         in the original study (95.8% (453/473) for serum lot two).
-    type: Paragraph
-  - parts:
-      - id: fig2
-        content:
-          - contentUrl: fig2.jpg
-            format: application/postscript
-            meta:
-              inline: false
-            type: ImageObject
-          - contentUrl: elife-30274-fig2-data1-v1.csv
-            format: application/octet-stream
-            type: MediaObject
-        label: Figure 2.
+  - type: Collection
+    parts:
+      - type: Figure
+        id: fig2
         caption:
-          - content:
-              - Digital gene expression analysis.
-            depth: 2
+          - type: Heading
             id: s2-3
-            type: Heading
-          - content:
+            depth: 2
+            content:
+              - Digital gene expression analysis.
+          - type: Paragraph
+            content:
               - >-
                 P493-6 cells grown in the presence of tetracycline (Tet) for 72
                 hr for repression of the conditional p
@@ -583,64 +2630,67 @@ content:
                 content:
                   - myc
               - "-tet construct, were switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. Transcripts/cell estimates from NanoString nCounter gene expression assays (1369 genes assay) for active (left) and silent (right) genes at 0, 1, and 24 hr after release from Tet. Active genes expressed greater than one transcript/cell. Silent genes expressed less than 0.5 transcript/cell. Box and whisker plots with median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Cells grown in serum lot one: active genes\_=\_708, silent genes\_=\_580. Cells grown in serum lot two: active genes\_=\_719, silent genes\_=\_573. Confirmatory analysis is reported in "
-              - content:
-                  - Table 1
+              - type: Link
+                relation: table
                 target: '#table1'
-                relation: table
-                type: Link
+                content:
+                  - Table 1
               - ' and exploratory statistical analysis is reported in '
-              - content:
-                  - Table 2
+              - type: Link
+                relation: table
                 target: '#table2'
-                relation: table
-                type: Link
+                content:
+                  - Table 2
               - "\_and "
-              - content:
-                  - Table 3
-                target: '#table3'
+              - type: Link
                 relation: table
-                type: Link
+                target: '#table3'
+                content:
+                  - Table 3
               - '. Additional details for this experiment can be found at '
-              - content:
-                  - 'https://osf.io/fn2y4/'
+              - type: Link
                 target: 'https://osf.io/fn2y4/.'
-                type: Link
+                content:
+                  - 'https://osf.io/fn2y4/'
               - .
-            type: Paragraph
-          - content:
+          - type: Paragraph
+            content:
               - 10.7554/eLife.30274.006
               - Figure 2—source data 1.
-            type: Paragraph
-          - content:
-              - List of Reporter CodeSets and gene expression values.
-            depth: 2
+          - type: Heading
             id: s2-3
-            type: Heading
-          - contentUrl: elife-30274-fig2-data1-v1.csv
+            depth: 2
+            content:
+              - List of Reporter CodeSets and gene expression values.
+          - type: MediaObject
+            contentUrl: elife-30274-fig2-data1-v1.csv
             format: application/octet-stream
-            type: MediaObject
-        type: Figure
-      - id: fig2s1
+        label: Figure 2.
         content:
-          - contentUrl: fig2-figsupp1.jpg
+          - type: ImageObject
+            contentUrl: fig2.jpg
             format: application/postscript
             meta:
               inline: false
-            type: ImageObject
-        label: Figure 2—figure supplement 1.
+          - type: MediaObject
+            contentUrl: elife-30274-fig2-data1-v1.csv
+            format: application/octet-stream
+      - type: Figure
+        id: fig2s1
         caption:
-          - content:
-              - Logarithmic expression of genes.
-            depth: 2
+          - type: Heading
             id: s2-3
-            type: Heading
-          - content:
+            depth: 2
+            content:
+              - Logarithmic expression of genes.
+          - type: Paragraph
+            content:
               - 'This is the same experiment as in '
-              - content:
-                  - Figure 2
-                target: '#fig2'
+              - type: Link
                 relation: fig
-                type: Link
+                target: '#fig2'
+                content:
+                  - Figure 2
               - . (
               - type: Strong
                 content:
@@ -680,34 +2730,34 @@ content:
                 whiskers representing values within 1.5 IQR of the first and
                 third quartile. Additional details for this experiment can be
                 found at 
-              - content:
-                  - 'https://osf.io/fn2y4/'
+              - type: Link
                 target: 'https://osf.io/fn2y4/.'
-                type: Link
+                content:
+                  - 'https://osf.io/fn2y4/'
               - .
-            type: Paragraph
-        type: Figure
-      - id: fig2s2
+        label: Figure 2—figure supplement 1.
         content:
-          - contentUrl: fig2-figsupp2.jpg
+          - type: ImageObject
+            contentUrl: fig2-figsupp1.jpg
             format: application/postscript
             meta:
               inline: false
-            type: ImageObject
-        label: Figure 2—figure supplement 2.
+      - type: Figure
+        id: fig2s2
         caption:
-          - content:
-              - Comparison of gene expression data as continuous.
-            depth: 2
+          - type: Heading
             id: s2-3
-            type: Heading
-          - content:
+            depth: 2
+            content:
+              - Comparison of gene expression data as continuous.
+          - type: Paragraph
+            content:
               - 'This is the same experiment as in '
-              - content:
-                  - Figure 2
-                target: '#fig2'
+              - type: Link
                 relation: fig
-                type: Link
+                target: '#fig2'
+                content:
+                  - Figure 2
               - . (
               - type: Strong
                 content:
@@ -725,39 +2775,44 @@ content:
                 content:
                   - '2'
               - ' ratio) between the indicated times for all genes analyzed for both lots of serum. Median represented as the line through the box and whiskers representing values within 1.5 IQR of the first and third quartile. Additional details for this experiment can be found at '
-              - content:
-                  - 'https://osf.io/fn2y4/'
+              - type: Link
                 target: 'https://osf.io/fn2y4/.'
-                type: Link
+                content:
+                  - 'https://osf.io/fn2y4/'
               - .
-            type: Paragraph
-        type: Figure
+        label: Figure 2—figure supplement 2.
+        content:
+          - type: ImageObject
+            contentUrl: fig2-figsupp2.jpg
+            format: application/postscript
+            meta:
+              inline: false
     meta:
       usage: figGroup
-    type: Collection
-  - content:
+  - type: Paragraph
+    content:
       - >-
         To test whether active genes, as well as silent genes, increased
         expression during c-Myc induction we performed the confirmatory analysis
         as outlined in the Registered Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). This analysis differed from what was reported in the original study
         by analyzing the data as paired instead of unpaired. As suggested during
         peer review of the Registered Report, this is because expression of the
         same gene, analyzed across different conditions, is not independent (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). We performed a Wilcoxon signed-rank test on active genes comparing
         expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr to 24 hr, which were
         statistically significant for cells grown in both lots of serum (
-      - content:
-          - Table 1
-        target: '#table1'
+      - type: Link
         relation: table
-        type: Link
+        target: '#table1'
+        content:
+          - Table 1
       - >-
         ). The same comparisons were performed on silent genes, which were also
         statistically significant, with the exception of the silent gene
@@ -767,11 +2822,11 @@ content:
         active and silent genes c-Myc induction resulted in statistically
         significant increases in expression, with the exception of the silent
         gene comparison from 0 hr to 1 hr (
-      - content:
-          - Table 1
-        target: '#table1'
+      - type: Link
         relation: table
-        type: Link
+        target: '#table1'
+        content:
+          - Table 1
       - >-
         ). This is in contrast to the results of the unpaired tests that were
         reported in the original study where active genes were reported to have
@@ -781,749 +2836,749 @@ content:
         comparison, which resulted in statistically significant differences
         among the active gene comparisons as well as half of the silent gene
         comparisons (
-      - content:
-          - Table 2
-        target: '#table2'
+      - type: Link
         relation: table
-        type: Link
+        target: '#table2'
+        content:
+          - Table 2
       - ).
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
-              - Genes
-            type: TableCell
-          - content:
-              - Comparison
-            type: TableCell
-          - content:
-              - Study
-            type: TableCell
-          - content:
-              - Z value
-            type: TableCell
-          - content:
-              - P value
-            type: TableCell
-          - content:
-              - Sample size (n)
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Active
-            type: TableCell
-          - content:
-              - 0 hr vs 1 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '14.86'
-            type: TableCell
-          - content:
-              - '1.36e-55'
-            type: TableCell
-          - content:
-              - '708'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '11.83'
-            type: TableCell
-          - content:
-              - '2.83e-34'
-            type: TableCell
-          - content:
-              - '719'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '21.17'
-            type: TableCell
-          - content:
-              - '1.05e-130'
-            type: TableCell
-          - content:
-              - '755'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 0 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '9.922'
-            type: TableCell
-          - content:
-              - '3.67e-24'
-            type: TableCell
-          - content:
-              - '708'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '12.77'
-            type: TableCell
-          - content:
-              - '3.77e-40'
-            type: TableCell
-          - content:
-              - '719'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '23.26'
-            type: TableCell
-          - content:
-              - '3.33e-184'
-            type: TableCell
-          - content:
-              - '755'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 1 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '4.742'
-            type: TableCell
-          - content:
-              - '1.92e-06'
-            type: TableCell
-          - content:
-              - '708'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '10.04'
-            type: TableCell
-          - content:
-              - '9.91e-25'
-            type: TableCell
-          - content:
-              - '719'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '23.26'
-            type: TableCell
-          - content:
-              - '3.33e-184'
-            type: TableCell
-          - content:
-              - '755'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Silent
-            type: TableCell
-          - content:
-              - 0 hr vs 1 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '12.61'
-            type: TableCell
-          - content:
-              - '7.11e-40'
-            type: TableCell
-          - content:
-              - '580'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '7.05'
-            type: TableCell
-          - content:
-              - '9.29e-13'
-            type: TableCell
-          - content:
-              - '572'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - −1.998
-            type: TableCell
-          - content:
-              - '0.0457'
-            type: TableCell
-          - content:
-              - '274'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 0 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '8.328'
-            type: TableCell
-          - content:
-              - '2.22e-17'
-            type: TableCell
-          - content:
-              - '579'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '8.156'
-            type: TableCell
-          - content:
-              - '1.03e-16'
-            type: TableCell
-          - content:
-              - '572'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '3.179'
-            type: TableCell
-          - content:
-              - '0.00144'
-            type: TableCell
-          - content:
-              - '276'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 1 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '0.6853'
-            type: TableCell
-          - content:
-              - '0.493'
-            type: TableCell
-          - content:
-              - '580'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '4.436'
-            type: TableCell
-          - content:
-              - '8.35e-06'
-            type: TableCell
-          - content:
-              - '573'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '5.806'
-            type: TableCell
-          - content:
-              - '4.11e-09'
-            type: TableCell
-          - content:
-              - '236'
-            type: TableCell
-        type: TableRow
-    type: Table
+  - type: Table
     id: table1
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Genes
+          - type: TableCell
+            content:
+              - Comparison
+          - type: TableCell
+            content:
+              - Study
+          - type: TableCell
+            content:
+              - Z value
+          - type: TableCell
+            content:
+              - P value
+          - type: TableCell
+            content:
+              - Sample size (n)
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Active
+          - type: TableCell
+            content:
+              - 0 hr vs 1 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '14.86'
+          - type: TableCell
+            content:
+              - '1.36e-55'
+          - type: TableCell
+            content:
+              - '708'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '11.83'
+          - type: TableCell
+            content:
+              - '2.83e-34'
+          - type: TableCell
+            content:
+              - '719'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '21.17'
+          - type: TableCell
+            content:
+              - '1.05e-130'
+          - type: TableCell
+            content:
+              - '755'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 0 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '9.922'
+          - type: TableCell
+            content:
+              - '3.67e-24'
+          - type: TableCell
+            content:
+              - '708'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '12.77'
+          - type: TableCell
+            content:
+              - '3.77e-40'
+          - type: TableCell
+            content:
+              - '719'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '23.26'
+          - type: TableCell
+            content:
+              - '3.33e-184'
+          - type: TableCell
+            content:
+              - '755'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 1 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '4.742'
+          - type: TableCell
+            content:
+              - '1.92e-06'
+          - type: TableCell
+            content:
+              - '708'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '10.04'
+          - type: TableCell
+            content:
+              - '9.91e-25'
+          - type: TableCell
+            content:
+              - '719'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '23.26'
+          - type: TableCell
+            content:
+              - '3.33e-184'
+          - type: TableCell
+            content:
+              - '755'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Silent
+          - type: TableCell
+            content:
+              - 0 hr vs 1 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '12.61'
+          - type: TableCell
+            content:
+              - '7.11e-40'
+          - type: TableCell
+            content:
+              - '580'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '7.05'
+          - type: TableCell
+            content:
+              - '9.29e-13'
+          - type: TableCell
+            content:
+              - '572'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - −1.998
+          - type: TableCell
+            content:
+              - '0.0457'
+          - type: TableCell
+            content:
+              - '274'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 0 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '8.328'
+          - type: TableCell
+            content:
+              - '2.22e-17'
+          - type: TableCell
+            content:
+              - '579'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '8.156'
+          - type: TableCell
+            content:
+              - '1.03e-16'
+          - type: TableCell
+            content:
+              - '572'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '3.179'
+          - type: TableCell
+            content:
+              - '0.00144'
+          - type: TableCell
+            content:
+              - '276'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 1 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '0.6853'
+          - type: TableCell
+            content:
+              - '0.493'
+          - type: TableCell
+            content:
+              - '580'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '4.436'
+          - type: TableCell
+            content:
+              - '8.35e-06'
+          - type: TableCell
+            content:
+              - '573'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '5.806'
+          - type: TableCell
+            content:
+              - '4.11e-09'
+          - type: TableCell
+            content:
+              - '236'
     title: Confirmatory statistical tests.
     content: []
-  - rows:
-      - cells:
-          - content:
-              - Genes
-            type: TableCell
-          - content:
-              - Comparison
-            type: TableCell
-          - content:
-              - Study
-            type: TableCell
-          - content:
-              - W value
-            type: TableCell
-          - content:
-              - P value
-            type: TableCell
-          - content:
-              - Sample size (n)
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Active
-            type: TableCell
-          - content:
-              - 0 hr vs 1 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '270378'
-            type: TableCell
-          - content:
-              - '0.0103'
-            type: TableCell
-          - content:
-              - '1416'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '274696'
-            type: TableCell
-          - content:
-              - '0.0395'
-            type: TableCell
-          - content:
-              - '1438'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '318799'
-            type: TableCell
-          - content:
-              - '6.67e-05'
-            type: TableCell
-          - content:
-              - '1510'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 0 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '300774'
-            type: TableCell
-          - content:
-              - '7.16e-11'
-            type: TableCell
-          - content:
-              - '1416'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '324564'
-            type: TableCell
-          - content:
-              - '4.74e-17'
-            type: TableCell
-          - content:
-              - '1438'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '400999'
-            type: TableCell
-          - content:
-              - '1.16e-42'
-            type: TableCell
-          - content:
-              - '1510'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 1 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '281679'
-            type: TableCell
-          - content:
-              - '5.45e-05'
-            type: TableCell
-          - content:
-              - '1416'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '308954'
-            type: TableCell
-          - content:
-              - '1.45e-10'
-            type: TableCell
-          - content:
-              - '1438'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '372714'
-            type: TableCell
-          - content:
-              - '4.11e-25'
-            type: TableCell
-          - content:
-              - '1510'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - Silent
-            type: TableCell
-          - content:
-              - 0 hr vs 1 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '187682'
-            type: TableCell
-          - content:
-              - '0.000638'
-            type: TableCell
-          - content:
-              - '1160'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '174695'
-            type: TableCell
-          - content:
-              - '0.0602'
-            type: TableCell
-          - content:
-              - '1146'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '127104'
-            type: TableCell
-          - content:
-              - '0.236'
-            type: TableCell
-          - content:
-              - '1028'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 0 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '185804'
-            type: TableCell
-          - content:
-              - '0.00203'
-            type: TableCell
-          - content:
-              - '1160'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '184470'
-            type: TableCell
-          - content:
-              - '0.000289'
-            type: TableCell
-          - content:
-              - '1146'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '132082'
-            type: TableCell
-          - content:
-              - '0.997'
-            type: TableCell
-          - content:
-              - '1028'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 1 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '166122'
-            type: TableCell
-          - content:
-              - '0.716'
-            type: TableCell
-          - content:
-              - '1160'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '173608'
-            type: TableCell
-          - content:
-              - '0.0918'
-            type: TableCell
-          - content:
-              - '1146'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '136443'
-            type: TableCell
-          - content:
-              - '0.295'
-            type: TableCell
-          - content:
-              - '1028'
-            type: TableCell
-        type: TableRow
-    type: Table
+  - type: Table
     id: table2
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Genes
+          - type: TableCell
+            content:
+              - Comparison
+          - type: TableCell
+            content:
+              - Study
+          - type: TableCell
+            content:
+              - W value
+          - type: TableCell
+            content:
+              - P value
+          - type: TableCell
+            content:
+              - Sample size (n)
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Active
+          - type: TableCell
+            content:
+              - 0 hr vs 1 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '270378'
+          - type: TableCell
+            content:
+              - '0.0103'
+          - type: TableCell
+            content:
+              - '1416'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '274696'
+          - type: TableCell
+            content:
+              - '0.0395'
+          - type: TableCell
+            content:
+              - '1438'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '318799'
+          - type: TableCell
+            content:
+              - '6.67e-05'
+          - type: TableCell
+            content:
+              - '1510'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 0 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '300774'
+          - type: TableCell
+            content:
+              - '7.16e-11'
+          - type: TableCell
+            content:
+              - '1416'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '324564'
+          - type: TableCell
+            content:
+              - '4.74e-17'
+          - type: TableCell
+            content:
+              - '1438'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '400999'
+          - type: TableCell
+            content:
+              - '1.16e-42'
+          - type: TableCell
+            content:
+              - '1510'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 1 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '281679'
+          - type: TableCell
+            content:
+              - '5.45e-05'
+          - type: TableCell
+            content:
+              - '1416'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '308954'
+          - type: TableCell
+            content:
+              - '1.45e-10'
+          - type: TableCell
+            content:
+              - '1438'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '372714'
+          - type: TableCell
+            content:
+              - '4.11e-25'
+          - type: TableCell
+            content:
+              - '1510'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Silent
+          - type: TableCell
+            content:
+              - 0 hr vs 1 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '187682'
+          - type: TableCell
+            content:
+              - '0.000638'
+          - type: TableCell
+            content:
+              - '1160'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '174695'
+          - type: TableCell
+            content:
+              - '0.0602'
+          - type: TableCell
+            content:
+              - '1146'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '127104'
+          - type: TableCell
+            content:
+              - '0.236'
+          - type: TableCell
+            content:
+              - '1028'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 0 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '185804'
+          - type: TableCell
+            content:
+              - '0.00203'
+          - type: TableCell
+            content:
+              - '1160'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '184470'
+          - type: TableCell
+            content:
+              - '0.000289'
+          - type: TableCell
+            content:
+              - '1146'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '132082'
+          - type: TableCell
+            content:
+              - '0.997'
+          - type: TableCell
+            content:
+              - '1028'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 1 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '166122'
+          - type: TableCell
+            content:
+              - '0.716'
+          - type: TableCell
+            content:
+              - '1160'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '173608'
+          - type: TableCell
+            content:
+              - '0.0918'
+          - type: TableCell
+            content:
+              - '1146'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '136443'
+          - type: TableCell
+            content:
+              - '0.295'
+          - type: TableCell
+            content:
+              - '1028'
     title: Exploratory statistical tests.
     content: []
-  - content:
+  - type: Paragraph
+    content:
       - >-
         Importantly, though, the question of whether the change in expression
         among active genes is different than silent genes has not been tested.
         This would require a separate test on their difference (
-      - target: '#bib8'
-        type: Cite
+      - type: Cite
+        target: '#bib8'
       - '; '
-      - target: '#bib21'
-        type: Cite
+      - type: Cite
+        target: '#bib21'
       - >-
         ). To test whether active genes increased in expression during c-Myc
         induction more than silent genes, we performed an exploratory analysis
@@ -1532,11 +3587,11 @@ content:
         silent genes over that same period (e.g. from 0 hr to 24 hr). For both
         the original and replication data, there was a statistically significant
         increase in expression of active genes compared to silent genes (
-      - content:
-          - Table 3
-        target: '#table3'
+      - type: Link
         relation: table
-        type: Link
+        target: '#table3'
+        content:
+          - Table 3
       - >-
         ). This suggests that active genes and silent genes do not have similar
         rates of expression upon c-Myc induction. To summarize, for this
@@ -1544,236 +3599,236 @@ content:
         original study and suggest that while both active and silent genes
         increased in expression upon c-Myc induction, the rate of increase was
         different.
-    type: Paragraph
-  - rows:
-      - cells:
-          - content:
-              - Comparison
-            type: TableCell
-          - content:
-              - Study
-            type: TableCell
-          - content:
-              - W value
-            type: TableCell
-          - content:
-              - P value
-            type: TableCell
-          - content:
-              - Sample size (n)
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - 0 hr vs 1 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '303897'
-            type: TableCell
-          - content:
-              - '7.78e-50'
-            type: TableCell
-          - content:
-              - '1288'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '278646'
-            type: TableCell
-          - content:
-              - '1.1e-27'
-            type: TableCell
-          - content:
-              - '1292'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '349351'
-            type: TableCell
-          - content:
-              - '1.27e-130'
-            type: TableCell
-          - content:
-              - '1269'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - 0 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '272441'
-            type: TableCell
-          - content:
-              - '5.18e-24'
-            type: TableCell
-          - content:
-              - '1288'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '292865'
-            type: TableCell
-          - content:
-              - '7.4e-39'
-            type: TableCell
-          - content:
-              - '1292'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '368182'
-            type: TableCell
-          - content:
-              - '1.14e-163'
-            type: TableCell
-          - content:
-              - '1269'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content:
-              - 1 hr vs 24 hr
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 1'
-            type: TableCell
-          - content:
-              - '235077'
-            type: TableCell
-          - content:
-              - '7.45e-06'
-            type: TableCell
-          - content:
-              - '1288'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - 'RP:CB Lot 2'
-            type: TableCell
-          - content:
-              - '272028'
-            type: TableCell
-          - content:
-              - '3.73e-23'
-            type: TableCell
-          - content:
-              - '1292'
-            type: TableCell
-        type: TableRow
-      - cells:
-          - content: []
-            type: TableCell
-          - content:
-              - target: '#bib17'
-                type: Cite
-            type: TableCell
-          - content:
-              - '332069'
-            type: TableCell
-          - content:
-              - '5.72e-104'
-            type: TableCell
-          - content:
-              - '1269'
-            type: TableCell
-        type: TableRow
-    type: Table
+  - type: Table
     id: table3
+    rows:
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - Comparison
+          - type: TableCell
+            content:
+              - Study
+          - type: TableCell
+            content:
+              - W value
+          - type: TableCell
+            content:
+              - P value
+          - type: TableCell
+            content:
+              - Sample size (n)
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - 0 hr vs 1 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '303897'
+          - type: TableCell
+            content:
+              - '7.78e-50'
+          - type: TableCell
+            content:
+              - '1288'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '278646'
+          - type: TableCell
+            content:
+              - '1.1e-27'
+          - type: TableCell
+            content:
+              - '1292'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '349351'
+          - type: TableCell
+            content:
+              - '1.27e-130'
+          - type: TableCell
+            content:
+              - '1269'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - 0 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '272441'
+          - type: TableCell
+            content:
+              - '5.18e-24'
+          - type: TableCell
+            content:
+              - '1288'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '292865'
+          - type: TableCell
+            content:
+              - '7.4e-39'
+          - type: TableCell
+            content:
+              - '1292'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '368182'
+          - type: TableCell
+            content:
+              - '1.14e-163'
+          - type: TableCell
+            content:
+              - '1269'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content:
+              - 1 hr vs 24 hr
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 1'
+          - type: TableCell
+            content:
+              - '235077'
+          - type: TableCell
+            content:
+              - '7.45e-06'
+          - type: TableCell
+            content:
+              - '1288'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - 'RP:CB Lot 2'
+          - type: TableCell
+            content:
+              - '272028'
+          - type: TableCell
+            content:
+              - '3.73e-23'
+          - type: TableCell
+            content:
+              - '1292'
+      - type: TableRow
+        cells:
+          - type: TableCell
+            content: []
+          - type: TableCell
+            content:
+              - type: Cite
+                target: '#bib17'
+          - type: TableCell
+            content:
+              - '332069'
+          - type: TableCell
+            content:
+              - '5.72e-104'
+          - type: TableCell
+            content:
+              - '1269'
     title: Exploratory statistical tests.
     content: []
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The original study and this replication attempt used the same criteria
         to characterize a gene as silent or active, but there are many negative
         consequences of dichotomizing continuous variables, such as information
         loss, especially with a small gene set (
-      - target: '#bib1'
-        type: Cite
+      - type: Cite
+        target: '#bib1'
       - '; '
-      - target: '#bib4'
-        type: Cite
+      - type: Cite
+        target: '#bib4'
       - >-
         ). Papers published after the original study took an unbiased view by
         collecting comprehensive RNA-sequencing data to assess if the
         transcriptional effects of c-Myc were direct or indirect, concluding
         c-Myc activates and represses transcription of discrete gene sets, which
         in turn leads to induced RNA amplification (
-      - target: '#bib27'
-        type: Cite
+      - type: Cite
+        target: '#bib27'
       - '; '
-      - target: '#bib35'
-        type: Cite
+      - type: Cite
+        target: '#bib35'
       - >-
         ). Furthermore, Sabò and colleagues also used NanoString technology to
         quantify a subset of the differentially expressed genes identified by
         RNA-seq and observed similar results that revealed upward shifts in gene
         expression upon c-Myc induction (
-      - target: '#bib27'
-        type: Cite
+      - type: Cite
+        target: '#bib27'
       - >-
         ). However, instead of dichotomizing genes as active or silent, gene
         expression data was presented as continuous. Similarly, we presented the
         digital gene expression data generated during this replication attempt
         as continuous, which illustrates a general pattern of overall increased
         gene expression following c-Myc induction (
-      - content:
-          - Figure 2—figure supplement 2
-        target: '#fig2s2'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig2s2'
+        content:
+          - Figure 2—figure supplement 2
       - >-
         ). Importantly, though, these results are limited to the 1369 genes
         interrogated in this study and may or may not reflect how the entire
         transcriptome of P493-6 cells respond to c-Myc induction.
-    type: Paragraph
-  - content:
-      - Meta-analyses of original and replicated effects
-    depth: 2
+  - type: Heading
     id: s2-4
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Meta-analyses of original and replicated effects
+  - type: Paragraph
+    content:
       - >-
         We performed a meta-analysis using a random-effects model to combine
         each of the effects described above as pre-specified in the confirmatory
         analysis plan (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). To provide a standardized measure of the effect, a common effect size
         was calculated for each effect from the original and replication
@@ -1786,11 +3841,11 @@ content:
         content:
           - r
       - ' is a standardized measure of the strength and direction of the association between two variables, in this case time during c-Myc induction and gene expression. The estimate of the effect size of one study, as well as the associated uncertainty (i.e. confidence interval), compared to the effect size of the other study provides another approach to compare the original and replication results ('
-      - target: '#bib6'
-        type: Cite
+      - type: Cite
+        target: '#bib6'
       - '; '
-      - target: '#bib33'
-        type: Cite
+      - type: Cite
+        target: '#bib33'
       - >-
         ). Importantly, the width of the confidence interval for each study is a
         reflection of not only the confidence level (e.g. 95%), but also
@@ -1799,8 +3854,8 @@ content:
         content:
           - SD
       - ) and sample size.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         The comparison of total RNA levels at low levels of c-Myc (0 hr)
         compared to high levels of c-Myc (24 hr) resulted in 
@@ -1808,8 +3863,8 @@ content:
         content:
           - d
       - "\_=\_4.19, 95% CI [0.94, 7.37] for the data reported in Figure\_3E of the original study ("
-      - target: '#bib17'
-        type: Cite
+      - type: Cite
+        target: '#bib17'
       - '). This compares to '
       - type: Emphasis
         content:
@@ -1819,11 +3874,11 @@ content:
         content:
           - d
       - "\_=\_4.11, 95% CI [0.90, 7.23] for serum lot two reported in this study. A meta-analysis ("
-      - content:
-          - Figure 3A
-        target: '#fig3'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig3'
+        content:
+          - Figure 3A
       - ') of these effects resulted in '
       - type: Emphasis
         content:
@@ -1842,25 +3897,19 @@ content:
         original study and serum lot two, and vice versa; however the point
         estimate of the original study and serum lot two were within the
         confidence intervals of each other.
-    type: Paragraph
-  - id: fig3
-    content:
-      - contentUrl: fig3.jpg
-        format: application/postscript
-        meta:
-          inline: false
-        type: ImageObject
-    label: Figure 3.
+  - type: Figure
+    id: fig3
     caption:
-      - content:
-          - Meta-analyses of each effect.
-        depth: 2
+      - type: Heading
         id: s2-4
-        type: Heading
-      - content:
+        depth: 2
+        content:
+          - Meta-analyses of each effect.
+      - type: Paragraph
+        content:
           - "Effect size and 95% confidence interval are presented for\_"
-          - target: '#bib17'
-            type: Cite
+          - type: Cite
+            target: '#bib17'
           - >-
             , this replication study (RP:CB), and a random effects meta-analysis
             of those two effects. Cohen’s 
@@ -1872,8 +3921,8 @@ content:
             content:
               - r
           - " is a standardized measure of the correlation (strength and direction) of the association between gene expression and c-Myc induction, with a larger positive value indicating gene expression increased during the course of c-Myc induction. Sample sizes used in\_"
-          - target: '#bib17'
-            type: Cite
+          - type: Cite
+            target: '#bib17'
           - ' and this replication attempt are reported under the study name. ('
           - type: Strong
             content:
@@ -1927,27 +3976,33 @@ content:
             content:
               - p
           - ' = 0.0571). Additional details for these meta-analyses can be found at '
-          - content:
-              - 'https://osf.io/5yscz/'
+          - type: Link
             target: 'https://osf.io/5yscz/'
-            type: Link
+            content:
+              - 'https://osf.io/5yscz/'
           - .
-        type: Paragraph
-    type: Figure
-  - content:
+    label: Figure 3.
+    content:
+      - type: ImageObject
+        contentUrl: fig3.jpg
+        format: application/postscript
+        meta:
+          inline: false
+  - type: Paragraph
+    content:
       - >-
         There were six comparisons of the gene expression data, three for active
         genes and three for silent genes (
-      - content:
-          - Figure 3B
-        target: '#fig3'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig3'
+        content:
+          - Figure 3B
       - >-
         ). These calculations were performed analyzing the data as paired, for
         reasons discussed above and as prespecified in the Registered Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). For active genes, expression at 0 hr to 1 hr, 0 hr to 24 hr, and 1 hr
         to 24 hr the meta-analyses were statistically significant (
@@ -2012,15 +4067,15 @@ content:
         expression analysis indicates that the effect sizes observed from the
         two serum lots tested in this replication attempt, although not
         identical, were more similar to each other than to the original study.
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - >-
         This direct replication provides an opportunity to understand the
         present evidence of these effects. Any known differences, including
         reagents and protocol differences, were identified prior to conducting
         the experimental work and described in the Registered Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). However, this is limited to what was obtainable from the original
         paper and through communication with the original authors, which means
@@ -2029,90 +4084,90 @@ content:
         the cell line, induction time course, and the method used to measure
         gene expression were maintained, others were changed at the time of
         study design (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - ') that could affect results, such as the analytical approach ('
-      - target: '#bib31'
-        type: Cite
+      - type: Cite
+        target: '#bib31'
       - ) and serum lot (
-      - target: '#bib15'
-        type: Cite
+      - type: Cite
+        target: '#bib15'
       - >-
         ). Furthermore, other aspects were unknown or not easily controlled for.
         These include variables such as cell line genetic drift (
-      - target: '#bib13'
-        type: Cite
+      - type: Cite
+        target: '#bib13'
       - '; '
-      - target: '#bib14'
-        type: Cite
+      - type: Cite
+        target: '#bib14'
       - ")\_or changes in cellular volume that can impact overall transcript abundance ("
-      - target: '#bib22'
-        type: Cite
+      - type: Cite
+        target: '#bib22'
       - >-
         ). Whether these or other factors influence the outcomes of this study
         is open to hypothesizing and further investigation, which is facilitated
         by direct replications and transparent reporting.
-    type: Paragraph
-  - content:
-      - Materials and methods
-    depth: 1
+  - type: Heading
     id: s3
-    type: Heading
-  - content:
+    depth: 1
+    content:
+      - Materials and methods
+  - type: Paragraph
+    content:
       - As described in the Registered Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ), we attempted a replication of the experiments reported in Figures 1B
         and 3E-F of 
-      - target: '#bib17'
-        type: Cite
+      - type: Cite
+        target: '#bib17'
       - >-
         . A detailed description of all protocols can be found in the Registered
         Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). Additional detailed experimental notes, data, and analysis are
         available on the Open Science Framework (OSF) (RRID:
-      - content:
-          - SCR_003238
+      - type: Link
         target: 'https://scicrunch.org/resolver/SCR_003238'
-        type: Link
+        content:
+          - SCR_003238
       - ) (
-      - content:
-          - 'https://osf.io/mokeb/'
+      - type: Link
         target: 'https://osf.io/mokeb/'
-        type: Link
+        content:
+          - 'https://osf.io/mokeb/'
       - '; '
-      - target: '#bib16'
-        type: Cite
+      - type: Cite
+        target: '#bib16'
       - ). This includes the R Markdown file (
-      - content:
-          - 'https://osf.io/vdrsh/'
+      - type: Link
         target: 'https://osf.io/vdrsh/'
-        type: Link
+        content:
+          - 'https://osf.io/vdrsh/'
       - >-
         ) that was used to compose this manuscript, which is a reproducible
         document linking the results in the article directly to the data and
         code that produced them (
-      - target: '#bib10'
-        type: Cite
+      - type: Cite
+        target: '#bib10'
       - ).
-    type: Paragraph
-  - content:
-      - Cell culture
-    depth: 2
+  - type: Heading
     id: s3-1
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Cell culture
+  - type: Paragraph
+    content:
       - >-
         P493-6 cells (shared by Young lab, Whitehead Institute for Biomedical
         Research, RRID: 
-      - content:
-          - CVCL_6783
+      - type: Link
         target: 'https://scicrunch.org/resolver/CVCL_6783'
-        type: Link
+        content:
+          - CVCL_6783
       - >-
         ) were maintained in RPMI-1640 supplemented with 1% Ala-Gln and 10%
         tetracycline-free FBS (Clontech, Mountain View, CA, cat# 631105, lot# 1:
@@ -2122,13 +4177,13 @@ content:
         content:
           - '2'
       - '. Quality control data for the cell line are available at '
-      - content:
-          - 'https://osf.io/e6ftz/.'
+      - type: Link
         target: 'https://osf.io/e6ftz/.'
-        type: Link
+        content:
+          - 'https://osf.io/e6ftz/.'
       - ' This includes results confirming the cell line was free of mycoplasma contamination (DDC Medical, Fairfield, Ohio). Additionally, STR DNA profiling of the cell line was performed (DDC Medical, Fairfield, Ohio).'
-    type: Paragraph
-  - content:
+  - type: Paragraph
+    content:
       - For repression of the conditional p
       - type: Emphasis
         content:
@@ -2138,39 +4193,39 @@ content:
         content:
           - MYC
       - ' ('
-      - target: '#bib30'
-        type: Cite
+      - type: Cite
+        target: '#bib30'
       - '). For '
       - type: Emphasis
         content:
           - MYC
       - ' re-induction, cells were washed three times with growth medium and grown in tetracycline-free culture conditions.'
-    type: Paragraph
-  - content:
-      - Western blot
-    depth: 2
+  - type: Heading
     id: s3-2
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Western blot
+  - type: Paragraph
+    content:
       - "P493-6 cells were harvested at the indicated times and total cell lysates were prepared by pelleting\_~1×10"
       - type: Superscript
         content:
           - '7'
       - " cells (determined with a C-chip disposable hemocytometer) at 4°C at 1,200 rpm for 5 min using a refrigerated centrifuge (Eppendorf, Westbury,\_NY,\_model# 5810R). After cell pellets were washed once with ice-cold 1X PBS, pellets were resuspended in RIPA lysis buffer containing 2X SIGMAFAST Protease inhibitors and 2X Phosphatase inhibitor cocktails 2 and 3. Protein concentrations were determined using the Bradford assay according to the manufacturer’s instructions. Sample buffer was added to protein lysates and 50 µg of protein along with protein ladder was resolved by SDS-PAGE and transferred to PVDF membrane as described in the Registered Report ("
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - "). The membrane was blocked with 5% w/v nonfat dry milk in 1X TBS with 0.2% Tween-20 (TBST). Membranes were probed with rabbit anti-c-Myc [clone Y69] (Epitomics,\_Burlingame,\_CA, cat# 1472–1; RRID:"
-      - content:
-          - AB_731658
+      - type: Link
         target: 'https://scicrunch.org/resolver/AB_731658'
-        type: Link
+        content:
+          - AB_731658
       - >-
         ); 1:5000 dilution in 5% w/v nonfat dry milk/TBST and mouse anti-ß-actin
         [clone AC-15] (Sigma-Aldrich, cat# A5441; RRID:
-      - content:
-          - AB_476744
+      - type: Link
         target: 'https://scicrunch.org/resolver/AB_476744'
-        type: Link
+        content:
+          - AB_476744
       - >-
         ); 1:10,000 dilution in 5% w/v nonfat dry milk/TBST. Each incubation was
         followed by washes with TBST and the appropriate secondary antibody:
@@ -2181,32 +4236,32 @@ content:
         ECL Prime Chemiluminescent reagent (Sigma-Aldrich, cat# GERPN2232)
         according to the manufacturer’s instructions. Western blot images were
         acquired with G:BOX iChem XT and GeneSnap software (RRID:
-      - content:
-          - SCR_014249
+      - type: Link
         target: 'https://scicrunch.org/resolver/SCR_014249'
-        type: Link
+        content:
+          - SCR_014249
       - >-
         ), version 7.12.02 (Syngene, Frederick, Maryland) and quantified using
         ImageJ software (RRID:
-      - content:
-          - SCR_003070
+      - type: Link
         target: 'https://scicrunch.org/resolver/SCR_003070'
-        type: Link
+        content:
+          - SCR_003070
       - '), version 1.50i ('
-      - target: '#bib29'
-        type: Cite
+      - type: Cite
+        target: '#bib29'
       - '). All images taken are available at '
-      - content:
-          - 'https://osf.io/ujg7t/.'
+      - type: Link
         target: 'https://osf.io/ujg7t/.'
-        type: Link
-    type: Paragraph
-  - content:
-      - RNA quantification
-    depth: 2
+        content:
+          - 'https://osf.io/ujg7t/.'
+  - type: Heading
     id: s3-3
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - RNA quantification
+  - type: Paragraph
+    content:
       - "P493-6 cells were harvested at the indicated times and total RNA extraction was performed by pelleting\_~1×10"
       - type: Superscript
         content:
@@ -2216,28 +4271,28 @@ content:
         content:
           - g
       - " for 10 min at 4°C. The aqueous phase was recovered and total RNA isolation was performed using the miRVana miRNA extraction kit (Ambion, Waltham,\_MA,\_cat# AM1561) according to the manufacturer’s instructions. Recovered RNA was eluated in 100 µl nuclease-free water. Total RNA concentrations and purity (data available at "
-      - content:
-          - 'https://osf.io/jh5r4/'
+      - type: Link
         target: 'https://osf.io/jh5r4/'
-        type: Link
+        content:
+          - 'https://osf.io/jh5r4/'
       - >-
         ) were measured using a NanoDrop ND-1000 (Thermo Fisher Scientific,
         Waltham, Massachusetts) with the NanoDrop Operating Software, version
         3.3, and converted to ng per 1,000 cells.
-    type: Paragraph
-  - content:
-      - RNA extraction and NanoString nCounter digital gene expression assay
-    depth: 2
+  - type: Heading
     id: s3-4
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - RNA extraction and NanoString nCounter digital gene expression assay
+  - type: Paragraph
+    content:
       - P493-6 cells were harvested at the indicated times and 1 × 10
       - type: Superscript
         content:
           - '6'
       - " cells were collected (number determined with a C-chip disposable hemocytometer) and lysed directly in 100 µl Buffer RLT (Qiagen, Hilden,\_Germany,\_cat# 79216) supplemented with ß-mercaptoethanol to yield a concentration of 10,000 cells per µl. This was performed four independent times. Multiple 4 µl aliquots were stored and shipped at −80°C with temperature monitored during shipping to avoid freeze/thaw cycles. Lysates were processed according to the Cell Lysate Protocol (nCounter Gene Expression Assay Manual, NanoString Technologies, Seattle, Washington) according to the manufacturer’s instructions and as described in the Registered Report ("
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). Three nCounter Reporter CodeSets (nCounter GX Human Immunology Kit,
         nCounter GX Human Kinase Kit, nCounter Custom CodeSet) encompassing 1369
@@ -2254,52 +4309,52 @@ content:
         was above one transcript/cell at 0 hr and transcriptionally silent if
         below 0.5 transcript/cell. A list of all Reporter CodeSets and their
         expression values (transcripts/cell) are available at 
-      - content:
-          - Figure 2—source data 1
-        target: '#fig2sdata1'
+      - type: Link
         relation: supplementary-material
-        type: Link
+        target: '#fig2sdata1'
+        content:
+          - Figure 2—source data 1
       - '. Additional files and analysis scripts are available at '
-      - content:
-          - 'https://osf.io/fn2y4/.'
+      - type: Link
         target: 'https://osf.io/fn2y4/.'
-        type: Link
-    type: Paragraph
-  - content:
-      - Statistical analysis
-    depth: 2
+        content:
+          - 'https://osf.io/fn2y4/.'
+  - type: Heading
     id: s3-5
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Statistical analysis
+  - type: Paragraph
+    content:
       - 'Statistical analysis was performed with R software (RRID:'
-      - content:
-          - SCR_001905
+      - type: Link
         target: 'https://scicrunch.org/resolver/SCR_001905'
-        type: Link
+        content:
+          - SCR_001905
       - '), version 3.3.2 ('
-      - target: '#bib25'
-        type: Cite
+      - type: Cite
+        target: '#bib25'
       - '). All data, csv files, and analysis scripts are available on the OSF ('
-      - content:
-          - 'https://osf.io/mokeb/'
+      - type: Link
         target: 'https://osf.io/mokeb/'
-        type: Link
+        content:
+          - 'https://osf.io/mokeb/'
       - ). Confirmatory statistical analysis was pre-registered (
-      - content:
-          - 'https://osf.io/nj8wb/'
+      - type: Link
         target: 'https://osf.io/nj8wb/'
-        type: Link
+        content:
+          - 'https://osf.io/nj8wb/'
       - >-
         ) before the experimental work began as outlined in the Registered
         Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ). Proposed analysis of gene expression data was conducted by the
         Wilcoxon signed-rank test using the method proposed by Pratt to handle
         zero differences (
-      - target: '#bib24'
-        type: Cite
+      - type: Cite
+        target: '#bib24'
       - >-
         ), with additional exploratory analysis performed using the Wilcoxon
         rank sum test as reported in the original study and a Wilcoxon rank sum
@@ -2323,2096 +4378,41 @@ content:
         content:
           - metafor
       - ' package ('
-      - target: '#bib34'
-        type: Cite
+      - type: Cite
+        target: '#bib34'
       - ') (available at: '
-      - content:
-          - 'https://osf.io/5yscz/'
+      - type: Link
         target: 'https://osf.io/5yscz/'
-        type: Link
+        content:
+          - 'https://osf.io/5yscz/'
       - '). The sample sizes reported in '
-      - content:
-          - Table 1
-        target: '#table1'
+      - type: Link
         relation: table
-        type: Link
+        target: '#table1'
+        content:
+          - Table 1
       - ' and '
-      - content:
-          - Figure 3
-        target: '#fig3'
+      - type: Link
         relation: fig
-        type: Link
+        target: '#fig3'
+        content:
+          - Figure 3
       - ' for the gene analysis comparisons is based on the sample size used in the Wilcoxon signed-rank test, which removes samples with zero differences after ranking ('
-      - target: '#bib24'
-        type: Cite
+      - type: Cite
+        target: '#bib24'
       - >-
         ). The raw original study data were shared by the original authors with
         the summary data published in the Registered Report (
-      - target: '#bib3'
-        type: Cite
+      - type: Cite
+        target: '#bib3'
       - >-
         ) and was used in the power calculations to determine the sample size
         for this study.
-    type: Paragraph
-  - content:
-      - Deviations from registered report
-    depth: 2
+  - type: Heading
     id: s3-6
-    type: Heading
-  - content:
+    depth: 2
+    content:
+      - Deviations from registered report
+  - type: Paragraph
+    content:
       - "The number of flasks, and thus cells, was increased when tetracycline was added to P493-6 cells to account for the cells not proliferating during this period (i.e. there were two Flask B’s as described in the Registered Report, which were pooled prior to seeding). The proposed statistical analysis for the western blot analysis (Protocol 1) described in the Registered Report was not performed since the levels of normalized c-Myc at time 0 hr was at the limit of detection. The number of genes analyzed in the original study, and thus listed in the Registered Report, was reported incorrectly as 1388 instead of 1338 (data shared by original authors). NanoString analysis was conducted using the nCounter RCC Collector Worksheet instead of nSolver Analysis software. Additionally, the statistical tests reported in\_Figure\_3F of the original study incorrectly described the comparisons as between 0 hr and 1 hr instead of between 0 hr and 24 hr (scripts shared by original authors). The corrected values are described above for comparisons and used in the meta-analysis. Additional materials and instrumentation not listed in the Registered Report, but needed during experimentation are also listed."
-    type: Paragraph
-references:
-  - authors:
-      - givenNames:
-          - DG
-        familyNames:
-          - Altman
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Royston
-        type: Person
-    title: The cost of dichotomising continuous variables
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      title: BMJ
-      volumeNumber: 332
-      type: PublicationVolume
-    id: bib1
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Biggs
-        type: Person
-      - givenNames:
-          - RL
-        familyNames:
-          - Macmillan
-        type: Person
-    title: The error of the red cell count
-    type: Article
-    datePublished: '1948'
-    isPartOf:
-      pageStart: 288
-      pageEnd: 291
-      title: Journal of Clinical Pathology
-      volumeNumber: 1
-      type: PublicationVolume
-    id: bib2
-  - authors:
-      - givenNames:
-          - D
-        familyNames:
-          - Blum
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Hao
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - McCarthy
-        type: Person
-    title: >-
-      Registered report: Transcriptional amplification in tumor cells with
-      elevated c-Myc
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      title: eLife
-      volumeNumber: 4
-      type: PublicationVolume
-    id: bib3
-  - authors:
-      - givenNames:
-          - J
-        familyNames:
-          - Cohen
-        type: Person
-    title: The cost of dichotomization
-    type: Article
-    datePublished: '1983'
-    isPartOf:
-      pageStart: 249
-      pageEnd: 253
-      title: Applied Psychological Measurement
-      volumeNumber: 7
-      type: PublicationVolume
-    id: bib4
-  - authors:
-      - givenNames:
-          - DJ
-        familyNames:
-          - Duffy
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Krstic
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Halasz
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Schwarzl
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Fey
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Iljin
-        type: Person
-      - givenNames:
-          - JP
-        familyNames:
-          - Mehta
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Killick
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Whilde
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Turriziani
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Haapa-Paananen
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Fey
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Fischer
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Westermann
-        type: Person
-      - givenNames:
-          - K-O
-        familyNames:
-          - Henrich
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Bannert
-        type: Person
-      - givenNames:
-          - DG
-        familyNames:
-          - Higgins
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Kolch
-        type: Person
-    title: >-
-      Integrative omics reveals MYCN as a global suppressor of cellular
-      signalling and enables network-based therapeutic target discovery in
-      neuroblastoma
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 43182
-      pageEnd: 43201
-      title: Oncotarget
-      volumeNumber: 6
-      type: PublicationVolume
-    id: bib5
-  - authors:
-      - givenNames:
-          - TM
-        familyNames:
-          - Errington
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Iorns
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Gunn
-        type: Person
-      - givenNames:
-          - FE
-        familyNames:
-          - Tan
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Lomax
-        type: Person
-      - givenNames:
-          - BA
-        familyNames:
-          - Nosek
-        type: Person
-    title: An open investigation of the reproducibility of cancer biology research
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      title: eLife
-      volumeNumber: 3
-      type: PublicationVolume
-    id: bib6
-  - authors:
-      - givenNames:
-          - L
-        familyNames:
-          - Fagnocchi
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Cherubini
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Hatsuda
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Fasciani
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Mazzoleni
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Poli
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Berno
-        type: Person
-      - givenNames:
-          - RL
-        familyNames:
-          - Rossi
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Reinbold
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Endele
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Schroeder
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Rocchigiani
-        type: Person
-      - givenNames:
-          - Ż
-        familyNames:
-          - Szkarłat
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Oliviero
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Dalton
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Zippo
-        type: Person
-    title: >-
-      A Myc-driven self-reinforcing regulatory network maintains mouse embryonic
-      stem cell identity
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      title: Nature Communications
-      volumeNumber: 7
-      type: PublicationVolume
-    id: bib7
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Gelman
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Stern
-        type: Person
-    title: >-
-      The difference between “significant” and “not significant” is not itself
-      statistically significant
-    type: Article
-    datePublished: '2006'
-    isPartOf:
-      pageStart: 328
-      pageEnd: 331
-      title: The American Statistician
-      volumeNumber: 60
-      type: PublicationVolume
-    id: bib8
-  - authors:
-      - givenNames:
-          - JR
-        familyNames:
-          - Hart
-        type: Person
-      - givenNames:
-          - TC
-        familyNames:
-          - Roberts
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Weinberg
-        type: Person
-      - givenNames:
-          - KV
-        familyNames:
-          - Morris
-        type: Person
-      - givenNames:
-          - PK
-        familyNames:
-          - Vogt
-        type: Person
-    title: MYC regulates the non-coding transcriptome
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 12543
-      pageEnd: 12554
-      title: Oncotarget
-      volumeNumber: 5
-      type: PublicationVolume
-    id: bib9
-  - authors:
-      - givenNames:
-          - CHJ
-        familyNames:
-          - Hartgerink
-        type: Person
-    title: Composing reproducible manuscripts using R Markdown
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: eLife
-      type: PublicationVolume
-    id: bib10
-  - authors:
-      - givenNames:
-          - LR
-        familyNames:
-          - Hiorns
-        type: Person
-      - givenNames:
-          - TD
-        familyNames:
-          - Bradshaw
-        type: Person
-      - givenNames:
-          - LA
-        familyNames:
-          - Skelton
-        type: Person
-      - givenNames:
-          - Q
-        familyNames:
-          - Yu
-        type: Person
-      - givenNames:
-          - LR
-        familyNames:
-          - Kelland
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Leyland-Jones
-        type: Person
-    title: >-
-      Variation in RNA expression and genomic DNA content acquired during cell
-      culture
-    type: Article
-    datePublished: '2004'
-    isPartOf:
-      pageStart: 476
-      pageEnd: 482
-      title: British Journal of Cancer
-      volumeNumber: 90
-      type: PublicationVolume
-    id: bib11
-  - authors:
-      - givenNames:
-          - TY
-        familyNames:
-          - Hsu
-        type: Person
-      - givenNames:
-          - LM
-        familyNames:
-          - Simon
-        type: Person
-      - givenNames:
-          - NJ
-        familyNames:
-          - Neill
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Marcotte
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Sayad
-        type: Person
-      - givenNames:
-          - CS
-        familyNames:
-          - Bland
-        type: Person
-      - givenNames:
-          - GV
-        familyNames:
-          - Echeverria
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Sun
-        type: Person
-      - givenNames:
-          - SJ
-        familyNames:
-          - Kurley
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Tyagi
-        type: Person
-      - givenNames:
-          - KL
-        familyNames:
-          - Karlin
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Dominguez-Vidaña
-        type: Person
-      - givenNames:
-          - JD
-        familyNames:
-          - Hartman
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Renwick
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Scorsone
-        type: Person
-      - givenNames:
-          - RJ
-        familyNames:
-          - Bernardi
-        type: Person
-      - givenNames:
-          - SO
-        familyNames:
-          - Skinner
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Jain
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Orellana
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Lagisetti
-        type: Person
-      - givenNames:
-          - I
-        familyNames:
-          - Golding
-        type: Person
-      - givenNames:
-          - SY
-        familyNames:
-          - Jung
-        type: Person
-      - givenNames:
-          - JR
-        familyNames:
-          - Neilson
-        type: Person
-      - givenNames:
-          - XH
-        familyNames:
-          - Zhang
-        type: Person
-      - givenNames:
-          - TA
-        familyNames:
-          - Cooper
-        type: Person
-      - givenNames:
-          - TR
-        familyNames:
-          - Webb
-        type: Person
-      - givenNames:
-          - BG
-        familyNames:
-          - Neel
-        type: Person
-      - givenNames:
-          - CA
-        familyNames:
-          - Shaw
-        type: Person
-      - givenNames:
-          - TF
-        familyNames:
-          - Westbrook
-        type: Person
-    title: The spliceosome is a therapeutic vulnerability in MYC-driven cancer
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 384
-      pageEnd: 388
-      title: Nature
-      volumeNumber: 525
-      type: PublicationVolume
-    id: bib12
-  - authors:
-      - givenNames:
-          - P
-        familyNames:
-          - Hughes
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Marshall
-        type: Person
-      - givenNames:
-          - 'Y'
-        familyNames:
-          - Reid
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Parkes
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Gelber
-        type: Person
-    title: The costs of using unauthenticated
-    type: Article
-    datePublished: '2007'
-    isPartOf:
-      pageStart: 575
-      pageEnd: 586
-      title: 'over-passaged cell lines: how much more data do we need? BioTechniques'
-      volumeNumber: 43
-      type: PublicationVolume
-    id: bib13
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Kleensang
-        type: Person
-      - givenNames:
-          - MM
-        familyNames:
-          - Vantangoli
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Odwin-DaCosta
-        type: Person
-      - givenNames:
-          - ME
-        familyNames:
-          - Andersen
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Boekelheide
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Bouhifd
-        type: Person
-      - givenNames:
-          - AJ
-        familyNames:
-          - Fornace
-        type: Person
-      - givenNames:
-          - HH
-        familyNames:
-          - Li
-        type: Person
-      - givenNames:
-          - CB
-        familyNames:
-          - Livi
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Madnick
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Maertens
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Rosenberg
-        type: Person
-      - givenNames:
-          - JD
-        familyNames:
-          - Yager
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Zhaog
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Hartung
-        type: Person
-    title: >-
-      Genetic variability in a frozen batch of MCF-7 cells invisible in routine
-      authentication affecting cell function
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      title: Scientific Reports
-      volumeNumber: 6
-      type: PublicationVolume
-    id: bib14
-  - authors:
-      - givenNames:
-          - JT
-        familyNames:
-          - Leek
-        type: Person
-      - givenNames:
-          - RB
-        familyNames:
-          - Scharpf
-        type: Person
-      - givenNames:
-          - HC
-        familyNames:
-          - Bravo
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Simcha
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Langmead
-        type: Person
-      - givenNames:
-          - WE
-        familyNames:
-          - Johnson
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Geman
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Baggerly
-        type: Person
-      - givenNames:
-          - RA
-        familyNames:
-          - Irizarry
-        type: Person
-    title: >-
-      Tackling the widespread and critical impact of batch effects in
-      high-throughput data
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      pageStart: 733
-      pageEnd: 739
-      title: Nature Reviews Genetics
-      volumeNumber: 11
-      type: PublicationVolume
-    id: bib15
-  - authors:
-      - givenNames:
-          - LM
-        familyNames:
-          - Lewis
-        type: Person
-      - givenNames:
-          - MC
-        familyNames:
-          - Edwards
-        type: Person
-      - givenNames:
-          - ZR
-        familyNames:
-          - Meyers
-        type: Person
-      - givenNames:
-          - CC
-        familyNames:
-          - Talbot
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Hao
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Blum
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Iorns
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Tsui
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Denis
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Perfito
-        type: Person
-      - givenNames:
-          - TM
-        familyNames:
-          - Errington
-        type: Person
-    title: 'Study 48: Replication of Lin et al., 2012 (Cell)'
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: Open Science Framework
-      type: PublicationVolume
-    id: bib16
-  - authors:
-      - givenNames:
-          - CY
-        familyNames:
-          - Lin
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Lovén
-        type: Person
-      - givenNames:
-          - PB
-        familyNames:
-          - Rahl
-        type: Person
-      - givenNames:
-          - RM
-        familyNames:
-          - Paranal
-        type: Person
-      - givenNames:
-          - CB
-        familyNames:
-          - Burge
-        type: Person
-      - givenNames:
-          - JE
-        familyNames:
-          - Bradner
-        type: Person
-      - givenNames:
-          - TI
-        familyNames:
-          - Lee
-        type: Person
-      - givenNames:
-          - RA
-        familyNames:
-          - Young
-        type: Person
-    title: Transcriptional amplification in tumor cells with elevated c-Myc
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      pageStart: 56
-      pageEnd: 67
-      title: Cell
-      volumeNumber: 151
-      type: PublicationVolume
-    id: bib17
-  - authors:
-      - givenNames:
-          - F
-        familyNames:
-          - Lorenzin
-        type: Person
-      - givenNames:
-          - U
-        familyNames:
-          - Benary
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Baluapuri
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Walz
-        type: Person
-      - givenNames:
-          - LA
-        familyNames:
-          - Jung
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - von
-          - Eyss
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Kisker
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Wolf
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Eilers
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Wolf
-        type: Person
-    title: >-
-      Different promoter affinities account for specificity in MYC-dependent
-      gene regulation
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      title: eLife
-      volumeNumber: 5
-      type: PublicationVolume
-    id: bib18
-  - authors:
-      - givenNames:
-          - Z
-        familyNames:
-          - Nie
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Hu
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Wei
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Cui
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Yamane
-        type: Person
-      - givenNames:
-          - W
-        familyNames:
-          - Resch
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Wang
-        type: Person
-      - givenNames:
-          - DR
-        familyNames:
-          - Green
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Tessarollo
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Casellas
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Zhao
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Levens
-        type: Person
-    title: >-
-      c-Myc is a universal amplifier of expressed genes in lymphocytes and
-      embryonic stem cells
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      pageStart: 68
-      pageEnd: 79
-      title: Cell
-      volumeNumber: 151
-      type: PublicationVolume
-    id: bib19
-  - authors:
-      - givenNames:
-          - L
-        familyNames:
-          - Nielson
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Smyth
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Greenfield
-        type: Person
-    title: >-
-      Hemacytometer Cell Count Distributions: Implications of Non-Poisson
-      Behavior
-    type: Article
-    datePublished: '1991'
-    isPartOf:
-      pageStart: 560
-      pageEnd: 563
-      title: Biotechnology Progress
-      volumeNumber: 7
-      type: PublicationVolume
-    id: bib20
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Nieuwenhuis
-        type: Person
-      - givenNames:
-          - BU
-        familyNames:
-          - Forstmann
-        type: Person
-      - givenNames:
-          - EJ
-        familyNames:
-          - Wagenmakers
-        type: Person
-    title: >-
-      Erroneous analyses of interactions in neuroscience: a problem of
-      significance
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 1105
-      pageEnd: 1107
-      title: Nature Neuroscience
-      volumeNumber: 14
-      type: PublicationVolume
-    id: bib21
-  - authors:
-      - givenNames:
-          - O
-        familyNames:
-          - Padovan-Merhar
-        type: Person
-      - givenNames:
-          - GP
-        familyNames:
-          - Nair
-        type: Person
-      - givenNames:
-          - AG
-        familyNames:
-          - Biaesch
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Mayer
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Scarfone
-        type: Person
-      - givenNames:
-          - SW
-        familyNames:
-          - Foley
-        type: Person
-      - givenNames:
-          - AR
-        familyNames:
-          - Wu
-        type: Person
-      - givenNames:
-          - LS
-        familyNames:
-          - Churchman
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Singh
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Raj
-        type: Person
-    title: >-
-      Single mammalian cells compensate for differences in cellular volume and
-      DNA copy number through independent global transcriptional mechanisms
-    type: Article
-    datePublished: '2015'
-    isPartOf:
-      pageStart: 339
-      pageEnd: 352
-      title: Molecular Cell
-      volumeNumber: 58
-      type: PublicationVolume
-    id: bib22
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Pajic
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Spitkovsky
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Christoph
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Kempkes
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Schuhmacher
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Staege
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Brielmeier
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Ellwart
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Kohlhuber
-        type: Person
-      - givenNames:
-          - GW
-        familyNames:
-          - Bornkamm
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Polack
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Eick
-        type: Person
-    title: Cell cycle activation by c-myc in a burkitt lymphoma model cell line
-    type: Article
-    datePublished: '2000'
-    isPartOf:
-      pageStart: 787
-      pageEnd: 793
-      title: International Journal of Cancer
-      volumeNumber: 87
-      type: PublicationVolume
-    id: bib23
-  - authors:
-      - givenNames:
-          - JW
-        familyNames:
-          - Pratt
-        type: Person
-    title: Remarks on zeros and ties in the wilcoxon signed rank procedures
-    type: Article
-    datePublished: '1959'
-    isPartOf:
-      pageStart: 655
-      pageEnd: 667
-      title: Journal of the American Statistical Association
-      volumeNumber: 54
-      type: PublicationVolume
-    id: bib24
-  - authors: []
-    title: ''
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: R Foundation for Statistical Computing
-      type: PublicationVolume
-    id: bib25
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Sabò
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Amati
-        type: Person
-    title: Genome recognition by MYC
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      title: Cold Spring Harbor Perspectives in Medicine
-      volumeNumber: 4
-      type: PublicationVolume
-    id: bib26
-  - authors:
-      - givenNames:
-          - A
-        familyNames:
-          - Sabò
-        type: Person
-      - givenNames:
-          - TR
-        familyNames:
-          - Kress
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Pelizzola
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - de
-          - Pretis
-        type: Person
-      - givenNames:
-          - MM
-        familyNames:
-          - Gorski
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Tesi
-        type: Person
-      - givenNames:
-          - MJ
-        familyNames:
-          - Morelli
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Bora
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Doni
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Verrecchia
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Tonelli
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Fagà
-        type: Person
-      - givenNames:
-          - V
-        familyNames:
-          - Bianchi
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Ronchi
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Low
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Müller
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Guccione
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Campaner
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Amati
-        type: Person
-    title: >-
-      Selective transcriptional regulation by Myc in cellular growth control and
-      lymphomagenesis
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 488
-      pageEnd: 492
-      title: Nature
-      volumeNumber: 511
-      type: PublicationVolume
-    id: bib27
-  - authors:
-      - givenNames:
-          - I
-        familyNames:
-          - Schlosser
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Hölzel
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Hoffmann
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Burtscher
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Kohlhuber
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Schuhmacher
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Chapman
-        type: Person
-      - givenNames:
-          - UH
-        familyNames:
-          - Weidle
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Eick
-        type: Person
-    title: >-
-      Dissection of transcriptional programmes in response to serum and c-Myc in
-      a human B-cell line
-    type: Article
-    datePublished: '2005'
-    isPartOf:
-      pageStart: 520
-      pageEnd: 524
-      title: Oncogene
-      volumeNumber: 24
-      type: PublicationVolume
-    id: bib28
-  - authors:
-      - givenNames:
-          - CA
-        familyNames:
-          - Schneider
-        type: Person
-      - givenNames:
-          - WS
-        familyNames:
-          - Rasband
-        type: Person
-      - givenNames:
-          - KW
-        familyNames:
-          - Eliceiri
-        type: Person
-    title: 'NIH Image to ImageJ: 25 years of image analysis'
-    type: Article
-    datePublished: '2012'
-    isPartOf:
-      pageStart: 671
-      pageEnd: 675
-      title: Nature Methods
-      volumeNumber: 9
-      type: PublicationVolume
-    id: bib29
-  - authors:
-      - givenNames:
-          - M
-        familyNames:
-          - Schuhmacher
-        type: Person
-      - givenNames:
-          - MS
-        familyNames:
-          - Staege
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Pajic
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Polack
-        type: Person
-      - givenNames:
-          - UH
-        familyNames:
-          - Weidle
-        type: Person
-      - givenNames:
-          - GW
-        familyNames:
-          - Bornkamm
-        type: Person
-      - givenNames:
-          - D
-        familyNames:
-          - Eick
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Kohlhuber
-        type: Person
-    title: Control of cell growth by c-Myc in the absence of cell division
-    type: Article
-    datePublished: '1999'
-    isPartOf:
-      pageStart: 1255
-      pageEnd: 1258
-      title: Current Biology
-      volumeNumber: 9
-      type: PublicationVolume
-    id: bib30
-  - authors:
-      - givenNames:
-          - R
-        familyNames:
-          - Silberzahn
-        type: Person
-      - givenNames:
-          - EL
-        familyNames:
-          - Uhlmann
-        type: Person
-      - givenNames:
-          - DP
-        familyNames:
-          - Martin
-        type: Person
-      - givenNames:
-          - P
-        familyNames:
-          - Anselmi
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Aust
-        type: Person
-      - givenNames:
-          - EC
-        familyNames:
-          - Awtrey
-        type: Person
-      - givenNames:
-          - Š
-        familyNames:
-          - Bahník
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Bai
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Bannard
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Bonnier
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Carlsson
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Cheung
-        type: Person
-      - givenNames:
-          - G
-        familyNames:
-          - Christensen
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Clay
-        type: Person
-      - givenNames:
-          - MA
-        familyNames:
-          - Craig
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Dalla
-          - Rosa
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Dam
-        type: Person
-      - givenNames:
-          - MH
-        familyNames:
-          - Evans
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Cervantes
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Fong
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Gamez-Djokic
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Glenz
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Gordon-McKeon
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Heaton
-        type: Person
-      - givenNames:
-          - KH
-        familyNames:
-          - Eriksson
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Heene
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Hofelich
-          - Mohr
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Högden
-        type: Person
-      - givenNames:
-          - K
-        familyNames:
-          - Hui
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Johannesson
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Kalodimos
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Kaszubowski
-        type: Person
-      - givenNames:
-          - DM
-        familyNames:
-          - Kennedy
-        type: Person
-      - givenNames:
-          - R
-        familyNames:
-          - Lei
-        type: Person
-      - givenNames:
-          - TA
-        familyNames:
-          - Lindsay
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Liverani
-        type: Person
-      - givenNames:
-          - CR
-        familyNames:
-          - Madan
-        type: Person
-      - givenNames:
-          - DC
-        familyNames:
-          - Molden
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Molleman
-        type: Person
-      - givenNames:
-          - RD
-        familyNames:
-          - Morey
-        type: Person
-      - givenNames:
-          - LB
-        familyNames:
-          - Mulder
-        type: Person
-      - givenNames:
-          - BA
-        familyNames:
-          - Nijstad
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - Pope
-        type: Person
-      - givenNames:
-          - NG
-        familyNames:
-          - Pope
-        type: Person
-      - givenNames:
-          - JM
-        familyNames:
-          - Prenoveau
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Rink
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Robusto
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Roderique
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Sandberg
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Schlueter
-        type: Person
-      - givenNames:
-          - FD
-        familyNames:
-          - Schönbrodt
-        type: Person
-      - givenNames:
-          - MF
-        familyNames:
-          - Sherman
-        type: Person
-      - givenNames:
-          - SA
-        familyNames:
-          - Sommer
-        type: Person
-      - givenNames:
-          - KL
-        familyNames:
-          - Sotak
-        type: Person
-      - givenNames:
-          - SM
-        familyNames:
-          - Spain
-        type: Person
-      - givenNames:
-          - C
-        familyNames:
-          - Spörlein
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Stafford
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Stefanutti
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Täuber
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Ullrich
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Vianello
-        type: Person
-      - givenNames:
-          - E-J
-        familyNames:
-          - Wagenmakers
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Witkowiak
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Yoon
-        type: Person
-      - givenNames:
-          - BA
-        familyNames:
-          - Nosek
-        type: Person
-    title: >-
-      Many analysts, one dataset: Making transparent how variations in
-      analytical choices affect results
-    type: Article
-    datePublished: '2017'
-    isPartOf:
-      title: PsyArXiv
-      type: PublicationVolume
-    id: bib31
-  - authors:
-      - givenNames:
-          - EF
-        familyNames:
-          - Trakhtenberg
-        type: Person
-      - givenNames:
-          - 'N'
-        familyNames:
-          - Pho
-        type: Person
-      - givenNames:
-          - KM
-        familyNames:
-          - Holton
-        type: Person
-      - givenNames:
-          - TW
-        familyNames:
-          - Chittenden
-        type: Person
-      - givenNames:
-          - JL
-        familyNames:
-          - Goldberg
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Dong
-        type: Person
-    title: >-
-      Cell types differ in global coordination of splicing and proportion of
-      highly expressed genes
-    type: Article
-    datePublished: '2016'
-    isPartOf:
-      pageStart: 32249
-      title: Scientific Reports
-      volumeNumber: 6
-      type: PublicationVolume
-    id: bib32
-  - authors:
-      - givenNames:
-          - JC
-        familyNames:
-          - Valentine
-        type: Person
-      - givenNames:
-          - A
-        familyNames:
-          - Biglan
-        type: Person
-      - givenNames:
-          - RF
-        familyNames:
-          - Boruch
-        type: Person
-      - givenNames:
-          - FG
-        familyNames:
-          - Castro
-        type: Person
-      - givenNames:
-          - LM
-        familyNames:
-          - Collins
-        type: Person
-      - givenNames:
-          - BR
-        familyNames:
-          - Flay
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Kellam
-        type: Person
-      - givenNames:
-          - EK
-        familyNames:
-          - Mościcki
-        type: Person
-      - givenNames:
-          - SP
-        familyNames:
-          - Schinke
-        type: Person
-    title: Replication in prevention science
-    type: Article
-    datePublished: '2011'
-    isPartOf:
-      pageStart: 103
-      pageEnd: 117
-      title: Prevention Science
-      volumeNumber: 12
-      type: PublicationVolume
-    id: bib33
-  - authors:
-      - givenNames:
-          - W
-        familyNames:
-          - Viechtbauer
-        type: Person
-    title: Conducting Meta-Analyses in R with the metafor Package
-    type: Article
-    datePublished: '2010'
-    isPartOf:
-      pageStart: 1
-      pageEnd: 48
-      title: Journal of Statistical Software
-      volumeNumber: 36
-      type: PublicationVolume
-    id: bib34
-  - authors:
-      - givenNames:
-          - S
-        familyNames:
-          - Walz
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Lorenzin
-        type: Person
-      - givenNames:
-          - J
-        familyNames:
-          - Morton
-        type: Person
-      - givenNames:
-          - KE
-        familyNames:
-          - Wiese
-        type: Person
-      - givenNames:
-          - B
-        familyNames:
-          - von
-          - Eyss
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Herold
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Rycak
-        type: Person
-      - givenNames:
-          - H
-        familyNames:
-          - Dumay-Odelot
-        type: Person
-      - givenNames:
-          - S
-        familyNames:
-          - Karim
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Bartkuhn
-        type: Person
-      - givenNames:
-          - F
-        familyNames:
-          - Roels
-        type: Person
-      - givenNames:
-          - T
-        familyNames:
-          - Wüstefeld
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Fischer
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Teichmann
-        type: Person
-      - givenNames:
-          - L
-        familyNames:
-          - Zender
-        type: Person
-      - givenNames:
-          - CL
-        familyNames:
-          - Wei
-        type: Person
-      - givenNames:
-          - O
-        familyNames:
-          - Sansom
-        type: Person
-      - givenNames:
-          - E
-        familyNames:
-          - Wolf
-        type: Person
-      - givenNames:
-          - M
-        familyNames:
-          - Eilers
-        type: Person
-    title: >-
-      Activation and repression by oncogenic MYC shape tumour-specific gene
-      expression profiles
-    type: Article
-    datePublished: '2014'
-    isPartOf:
-      pageStart: 483
-      pageEnd: 487
-      title: Nature
-      volumeNumber: 511
-      type: PublicationVolume
-    id: bib35

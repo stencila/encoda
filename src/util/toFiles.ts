@@ -45,7 +45,8 @@ export async function toFiles(
             if (!protocols.includes('data')) return node
           } else if (!protocols.includes('file')) return node
 
-          const filePath = path.join(mediaPath,
+          const filePath = path.join(
+            mediaPath,
             contentUrl.startsWith('data')
               ? `${count++}`
               : path.basename(contentUrl)

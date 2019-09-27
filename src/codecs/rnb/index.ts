@@ -119,8 +119,7 @@ export class RnbCodec extends Codec implements Codec {
           const output = outputMatch[1]
           const begin = start + outputMatch.index + before.length
           const end = start + outputRegex.lastIndex - after.length
-          container.innerHTML =
-            html.slice(0, begin) + chunk + html.slice(end)
+          container.innerHTML = html.slice(0, begin) + chunk + html.slice(end)
           // Record the location that needs eventual replacement
           // with a code chunk
           replacements.push({
