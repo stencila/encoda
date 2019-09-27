@@ -3,7 +3,8 @@ import { GDocCodec } from '.'
 
 const gdocCodec = new GDocCodec()
 
-const gdoc2node = async (gdoc: any) => await gdocCodec.load(JSON.stringify(gdoc), { fetch: false })
+const gdoc2node = async (gdoc: any) =>
+  await gdocCodec.load(JSON.stringify(gdoc), { fetch: false })
 const node2gdoc = async (node: any) => JSON.parse(await gdocCodec.dump(node))
 
 test('decode:kitchensink', async () => {
@@ -16,45 +17,48 @@ test('encode:kitchensink', async () => {
 
 describe('decode:title', () => {
   test('use the title string property', async () => {
-    expect(await gdoc2node({
-      title: 'Title'
-    })).toEqual(
-      stencila.article([], 'Title')
-    )
+    expect(
+      await gdoc2node({
+        title: 'Title'
+      })
+    ).toEqual(stencila.article([], 'Title'))
   })
 
   test('override with Title styled paragraph', async () => {
-    expect(await gdoc2node({
-      title: 'Title',
-      body: {
-        content: [
-          {
-            paragraph: {
-              elements: [{ textRun: { content: 'The actual title!' } }],
-              paragraphStyle: { namedStyleType: 'TITLE' }
+    expect(
+      await gdoc2node({
+        title: 'Title',
+        body: {
+          content: [
+            {
+              paragraph: {
+                elements: [{ textRun: { content: 'The actual title!' } }],
+                paragraphStyle: { namedStyleType: 'TITLE' }
+              }
             }
-          }
-        ]
-      }
-    })).toEqual(
-      stencila.article([], [stencila.paragraph(['The actual title!'])])
-    )
+          ]
+        }
+      })
+    ).toEqual(stencila.article([], [stencila.paragraph(['The actual title!'])]))
   })
 
   test('set as empty string if neither present', async () => {
-    expect(await gdoc2node({})).toEqual(
-      stencila.article([], '')
-    )
+    expect(await gdoc2node({})).toEqual(stencila.article([], ''))
   })
 })
 
+test('decode:nested-list', async () => {
+  expect(await gdoc2node(nestedList.gdoc)).toEqual(nestedList.node)
+})
+
+// Note that the following fixtrures are missing many styling related properties that
+// are normally in a GDoc. To keep a manageable size, throughout the
+// tree, we've only included the properties that the codec uses.
+// A good way to generate content nodes is to author in GDocs and then
+// fetch using the `gapis.js` script (see there for more details).
+
 // An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
-  // Note that this object is missing many styling related properties that
-  // are normally in a GDoc. To keep it a manageable size, throughout the
-  // object tree, we've only included the properties that the codec uses.
-  // A good way to generate content nodes is to author in GDocs and then
-  // fetch using the `gapis.js` script (see there for more details).
   gdoc: {
     title: 'Title',
     body: {
@@ -290,7 +294,6 @@ const kitchenSink = {
             {
               // Unordered lists do not have a `glyphType`
             }
-            // More nesting levels here ...
           ]
         }
       },
@@ -502,6 +505,129 @@ const kitchenSink = {
       },
       {
         type: 'ThematicBreak'
+      }
+    ]
+  }
+}
+
+const nestedList = {
+  gdoc: {
+    body: {
+      content: [
+        {
+          paragraph: {
+            elements: [{ textRun: { content: 'Parent' } }],
+            bullet: { listId: 'kix.list0' }
+          }
+        },
+        {
+          paragraph: {
+            elements: [{ textRun: { content: 'Child A' } }],
+            bullet: { listId: 'kix.list0', nestingLevel: 1 }
+          }
+        },
+        {
+          paragraph: {
+            elements: [{ textRun: { content: 'Grandchild 1' } }],
+            bullet: { listId: 'kix.list0', nestingLevel: 2 }
+          }
+        },
+        {
+          paragraph: {
+            elements: [{ textRun: { content: 'Child B' } }],
+            bullet: { listId: 'kix.list0', nestingLevel: 1 }
+          }
+        },
+        {
+          paragraph: {
+            elements: [{ textRun: { content: 'Grandchild 2' } }],
+            bullet: { listId: 'kix.list0', nestingLevel: 2 }
+          }
+        }
+      ]
+    },
+    lists: {
+      'kix.list0': {
+        listProperties: {
+          nestingLevels: [{}, { glyphType: '%0' }, {}]
+        }
+      }
+    }
+  },
+
+  node: {
+    type: 'Article',
+    title: '',
+    authors: [],
+    content: [
+      {
+        type: 'List',
+        order: 'unordered',
+        items: [
+          {
+            type: 'ListItem',
+            content: [
+              {
+                type: 'Paragraph',
+                content: ['Parent']
+              },
+              {
+                type: 'List',
+                order: 'ascending',
+                items: [
+                  {
+                    type: 'ListItem',
+                    content: [
+                      {
+                        type: 'Paragraph',
+                        content: ['Child A']
+                      },
+                      {
+                        type: 'List',
+                        order: 'unordered',
+                        items: [
+                          {
+                            type: 'ListItem',
+                            content: [
+                              {
+                                type: 'Paragraph',
+                                content: ['Grandchild 1']
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'ListItem',
+                    content: [
+                      {
+                        type: 'Paragraph',
+                        content: ['Child B']
+                      },
+                      {
+                        type: 'List',
+                        order: 'unordered',
+                        items: [
+                          {
+                            type: 'ListItem',
+                            content: [
+                              {
+                                type: 'Paragraph',
+                                content: ['Grandchild 2']
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   }

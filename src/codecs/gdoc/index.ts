@@ -66,7 +66,7 @@ export class GDocCodec extends Codec<{}, DecodeOptions>
  * of list and images. We use a global object rather than having to pass
  * the reference to the document through all the function calls.
  */
-let decodingGDoc: GDocT.Schema$Document
+let decodingGDoc: GDocT.Schema$Document & { listDepth: number }
 
 /**
  * The GDoc currently being encoded to
@@ -137,7 +137,7 @@ async function decodeDocument(
   doc: GDocT.Schema$Document,
   fetch: boolean
 ): Promise<stencila.Node> {
-  decodingGDoc = doc
+  decodingGDoc = { ...doc, listDepth: 0 }
 
   // Create a fetcher for remove resources
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
@@ -147,7 +147,7 @@ async function decodeDocument(
 
   // Decode the content, if any
   let content: stencila.Node[] = []
-  const lists: { [key: string]: stencila.List } = {}
+  const lists: { [key: string]: stencila.List[] } = {}
   if (doc.body && doc.body.content) {
     content = doc.body.content
       .map((elem: GDocT.Schema$StructuralElement, index: number) => {
@@ -263,7 +263,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
  */
 function decodeParagraph(
   para: GDocT.Schema$Paragraph,
-  lists: { [key: string]: stencila.List }
+  lists: { [key: string]: stencila.List[] }
 ): stencila.Paragraph | stencila.Heading | stencila.List | undefined {
   let content: any[] = []
   if (para.elements) {
@@ -284,7 +284,7 @@ function decodeParagraph(
     }
   }
 
-  if (para.bullet) return decodeList(para, content, lists)
+  if (para.bullet) return decodeListItem(para, content, lists)
 
   return {
     type: 'Paragraph',
@@ -344,56 +344,70 @@ function encodeCodeBlock(
  * Decode a GDoc list item paragraph (one with a `bullet`) to
  * a Stencila `List`.
  *
- * @returns A new `List` or undefined if the paragraph was
+ * @returns A new `List` or `undefined` if the paragraph was
  *        added to an existing list.
  */
-function decodeList(
+function decodeListItem(
   para: GDocT.Schema$Paragraph,
   content: stencila.InlineContent[],
-  lists: { [key: string]: stencila.List }
+  lists: { [key: string]: stencila.List[] }
 ): stencila.List | undefined {
   const bullet = assertDefined(para.bullet)
+  // The list and the depth in that list that this
+  // list item lives at
   const listId = assertDefined(bullet.listId)
+  const listLevel = bullet.nestingLevel || 0
 
-  // If there is already a list with this id then add this paragraph to it
-  const existingList = lists[listId]
+  // The item to add to a list
+  const listItem = stencila.listItem([stencila.paragraph(content)])
+
+  // If we have jumped up a level then it means that the
+  // the list at the lower depth has been finished
+  if (listLevel < decodingGDoc.listDepth) {
+    delete lists[listId][decodingGDoc.listDepth]
+  }
+  decodingGDoc.listDepth = listLevel
+
+  // If there is already a list with this id and level then add the item to it
+  const existingList = lists[listId] && lists[listId][listLevel]
   if (existingList) {
-    existingList.items.push({
-      type: 'ListItem',
-      content: [{ type: 'Paragraph', content }]
-    })
+    existingList.items.push(listItem)
     return undefined
-  } else {
-    // TODO: Handle nested lists from GDocs
-    log.warn('🥞 Due to current limitations any nested lists will be flattened')
   }
 
   // Create a new list with this paragraph as it's first item
-  const listsObject = assertDefined(decodingGDoc.lists)
-  const listProperties = assertDefined(listsObject[listId].listProperties)
-  const nestingLevels = assertDefined(listProperties.nestingLevels)
-
-  const level = nestingLevels[bullet.nestingLevel || 0]
+  const nestingLevels = assertDefined(
+    assertDefined(assertDefined(decodingGDoc.lists)[listId].listProperties)
+      .nestingLevels
+  )
+  const nestingLevel = nestingLevels[listLevel]
   // It seems that the only way to tell if a list is ordered on unordered is to look at
   // the glyphType.
   // See https://developers.google.com/docs/api/reference/rest/v1/ListProperties#NestingLevel
   const order =
-    typeof level.glyphType === 'undefined' ||
-    level.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
+    typeof nestingLevel.glyphType === 'undefined' ||
+    nestingLevel.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
       ? 'unordered'
       : 'ascending'
-  const newList: stencila.List = {
-    type: 'List',
-    order,
-    items: [{ type: 'ListItem', content: [{ type: 'Paragraph', content }] }]
+  const newList = stencila.list([listItem], { order })
+
+  if (listLevel === 0) {
+    // Register the new list so other items can be added.
+    lists[listId] = [newList]
+    return newList
+  } else {
+    // Add the new list to the parent list item
+    const parent = lists[listId][listLevel - 1]
+    assertDefined(parent)
+    assertDefined(parent.items[parent.items.length - 1]).content.push(newList)
+    // Register this list so that it too can act as a parent
+    lists[listId][listLevel] = newList
+    return undefined
   }
-  // Register the new list so other items can be added.
-  lists[listId] = newList
-  return newList
 }
 
 /**
- * Encode a Stencila `List` to GDoc `Paragraph` elements with a `bullet`.
+ * Encode a Stencila `List` to a GDoc `List` and paragraphs that link to it.
  */
 function encodeList(list: stencila.List): GDocT.Schema$StructuralElement[] {
   const lists = assertDefined(encodingGDoc.lists)
@@ -418,6 +432,9 @@ function encodeList(list: stencila.List): GDocT.Schema$StructuralElement[] {
   }))
 }
 
+/**
+ * Encode a Stencila `ListItem` to GDoc `Paragraph` elements with a `bullet`.
+ */
 const encodeListItem = (
   listItem: stencila.ListItem,
   listId: string

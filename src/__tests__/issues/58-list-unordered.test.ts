@@ -29,8 +29,8 @@ describe('issue 58', () => {
     const article = (await read(file)) as stencila.Article
     const md = await dump(article, 'md')
     expect(md).toBe(`---
-title: real converter test
 authors: []
+title: real converter test
 ---
 
 # This is a file created in the HUB
