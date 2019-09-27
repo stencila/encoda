@@ -1,3 +1,17 @@
+# [0.79.0](https://github.com/stencila/encoda/compare/v0.78.2...v0.79.0) (2019-09-27)
+
+
+### Bug Fixes
+
+* **JSON:** Order properties when encoding ([f9a4f4c](https://github.com/stencila/encoda/commit/f9a4f4c))
+* **YAML:** Order properties when encoding ([e4c0522](https://github.com/stencila/encoda/commit/e4c0522))
+
+
+### Features
+
+* **Util:** Add `orderProperties` function ([c4145e9](https://github.com/stencila/encoda/commit/c4145e9))
+* **Util:** Add `transformSync` function ([c9d345b](https://github.com/stencila/encoda/commit/c9d345b))
+
 ## [0.78.2](https://github.com/stencila/encoda/compare/v0.78.1...v0.78.2) (2019-09-25)
 
 
