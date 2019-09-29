@@ -404,18 +404,18 @@ test('encode with different themes', async () => {
 
   let html = await e({ theme: 'stencila' })
   expect(html).toMatch(
-    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/stencila\/index\.js/
+    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/index\.js/
   )
   expect(html).toMatch(
-    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/stencila\/styles\.css/
+    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/styles\.css/
   )
 
   html = await e({ theme: 'eLife' })
   expect(html).toMatch(
-    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/eLife\/index\.js/
+    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/eLife\/index\.js/
   )
   expect(html).toMatch(
-    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\.\d\.\d\/dist\/themes\/eLife\/styles\.css/
+    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/eLife\/styles\.css/
   )
 })
 
