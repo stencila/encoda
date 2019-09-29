@@ -41,6 +41,7 @@ export async function coerce<Key extends keyof stencila.Types>(
 
   /**
    * Recursively walk through the node reshaping it
+   *
    * This function does several things that Ajv will not
    * do for us:
    *   - rename aliases to canonical property names
@@ -61,21 +62,34 @@ export async function coerce<Key extends keyof stencila.Types>(
 
       // Coerce properties...
       for (const [key, child] of Object.entries(node)) {
-        let name = propertyAliases[key]
-        if (name !== undefined) {
-          // Rename aliased property
-          // @ts-ignore
-          node[name] = child
-          // @ts-ignore
-          delete node[key]
-        } else if (properties[key] === undefined) {
-          // Remove additional property (no need to reshape child)
-          log.warn(`Ignoring property ${node.type}.${key}`)
-          // @ts-ignore
-          delete node[key]
-          continue
-        } else {
+        // Match key to a property name...
+        let name: string | undefined
+        if (properties[key] !== undefined) {
+          // `key` is a canonical property name, so just use it
           name = key
+        } else {
+          // Does the key match a property name, or an alias, after
+          // conversion to lower camel case?
+          // Replace spaces, hyphens or underscores followed by lowercase
+          // letter to uppercase letter
+          const lcc = key.replace(
+            /( |-|_)([a-z])/g,
+            (match, separator, letter) => letter.toUpperCase()
+          )
+          name = properties[lcc] !== undefined ? lcc : propertyAliases[lcc]
+          if (name !== undefined) {
+            // Rename aliased property
+            // @ts-ignore
+            node[name] = child
+            // @ts-ignore
+            delete node[key]
+          } else if (properties[key] === undefined) {
+            // Remove additional property (no need to reshape child, so continue)
+            log.warn(`Ignoring property ${node.type}.${key}`)
+            // @ts-ignore
+            delete node[key]
+            continue
+          }
         }
 
         const propertySchema = properties[name]

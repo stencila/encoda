@@ -60,6 +60,28 @@ describe('coerce', () => {
     })
   })
 
+  it('will rename property name and alias variants', async () => {
+    expect(
+      await coerce({
+        type: 'Person',
+        // A variant of a property alias `first-name` -> `firstName` -> `givenNames`
+        'first-name': 'John',
+        // A variant of a property name `family_names` -> `familyNames`
+        family_names: ['Jones'],
+        // A variant of a property alias `alternate name` -> `alternateName` -> `alternateNames`
+        'alternate name': 'Jono',
+        // A variant of a property alias
+        'telephone-number': '939393'
+      })
+    ).toEqual({
+      type: 'Person',
+      givenNames: ['John'],
+      familyNames: ['Jones'],
+      alternateNames: ['Jono'],
+      telephoneNumbers: ['939393']
+    })
+  })
+
   it('will remove additional properties', async () => {
     expect(
       await coerce({
