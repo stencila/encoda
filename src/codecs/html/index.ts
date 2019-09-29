@@ -505,8 +505,9 @@ function generateHtmlElement(
       '..',
       'package.json'
     )).version
+    const themaMajor = themaVersion.split('.')[0]
 
-    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaVersion}/${themePath}/${theme}`
+    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaMajor}/${themePath}/${theme}`
     themeCss = h('link', {
       href: `${themeBaseUrl}/styles.css`,
       rel: 'stylesheet'
