@@ -1,3 +1,18 @@
+# [0.80.0](https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0) (2019-09-30)
+
+
+### Bug Fixes
+
+* **GDoc:** Fix decoding of nested lists. Closes [#103](https://github.com/stencila/encoda/issues/103) ([e97807b](https://github.com/stencila/encoda/commit/e97807b))
+* **GDoc:** Handle Title paragraph style. Closes [#288](https://github.com/stencila/encoda/issues/288) ([3e7a788](https://github.com/stencila/encoda/commit/3e7a788))
+* **GDoc:** Warn instead of throwing; assertDefined func ([b588f10](https://github.com/stencila/encoda/commit/b588f10))
+* **HTML:** Use a major version of Thema styles ([968b7f7](https://github.com/stencila/encoda/commit/968b7f7))
+
+
+### Features
+
+* **Coerce:** Allow for variants of property names and aliases ([977c87f](https://github.com/stencila/encoda/commit/977c87f))
+
 # [0.79.0](https://github.com/stencila/encoda/compare/v0.78.2...v0.79.0) (2019-09-27)
 
 
