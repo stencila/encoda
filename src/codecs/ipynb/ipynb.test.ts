@@ -27,10 +27,7 @@ describe('decode', () => {
     )
   })
 
-  test.skip('running-code', async () => {
-    // TODO: This test is currently failing, seemingly due to a bug
-    // in `md.stringifyHTML` which deals with HTML in HTML. Reinstate
-    // this when that is fixed.
+  test('running-code', async () => {
     expect(await ipynb2json('running-code.ipynb')).toMatchFile(
       snapshot('running-code.json')
     )

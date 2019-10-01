@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import * as stencila from '@stencila/schema'
 import { isEntity, nodeType } from '@stencila/schema/dist/util'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
@@ -181,10 +181,23 @@ async function decodeNotebook(
 ): Promise<stencila.Article> {
   const metadata = await decodeMetadata(notebook.metadata)
 
-  const cells = isv3(notebook, 'Notebook', version)
-    ? notebook.worksheets[0].cells
-    : notebook.cells
-  const content = await decodeCells(cells, version)
+  let language = 'python'
+  let cells
+  if (isv3(notebook, 'Notebook', version)) {
+    const kernelInfo = notebook.metadata.kernel_info
+    if (kernelInfo !== undefined) {
+      language = kernelInfo.language
+    }
+    cells = notebook.worksheets[0].cells
+  } else {
+    const languageInfo = notebook.metadata.language_info
+    if (languageInfo !== undefined) {
+      language = languageInfo.name
+    }
+    cells = notebook.cells
+  }
+
+  const content = await decodeCells(cells, version, language)
 
   return {
     type: 'Article',
@@ -251,7 +264,8 @@ async function decodeMetadata(
  */
 async function decodeCells(
   cells: (nbformat.v3.Cell | nbformat4.Cell)[],
-  version: nbformat.Version = 4
+  version: nbformat.Version = 4,
+  language: string = 'python'
 ): Promise<stencila.BlockContent[]> {
   const blocks: stencila.BlockContent[] = []
   for (const cell of cells) {
@@ -262,7 +276,7 @@ async function decodeCells(
         break
       // TODO: handle `heading` cells
       case 'code':
-        blocks.push(await decodeCodeCell(cell, version))
+        blocks.push(await decodeCodeCell(cell, version, language))
         break
       // TODO: handle `raw` cells
       default:
@@ -347,7 +361,8 @@ async function encodeMarkdownCell(
  */
 async function decodeCodeCell(
   cell: nbformat3.CodeCell | nbformat4.CodeCell,
-  version: nbformat.Version = 4
+  version: nbformat.Version = 4,
+  language: string = 'python'
 ): Promise<stencila.CodeChunk> {
   const { metadata, outputs } = cell
 
@@ -355,16 +370,14 @@ async function decodeCodeCell(
     ? [cell.prompt_number, cell.input]
     : [cell.execution_count, cell.source]
 
-  const codeChunk: stencila.CodeChunk = {
-    type: 'CodeChunk',
-    meta: { ...metadata, execution_count },
-    text: decodeMultilineString(source)
-  }
-
-  if (outputs && outputs.length)
-    codeChunk.outputs = await decodeOutputs(outputs, version)
-
-  return codeChunk
+  return stencila.codeChunk(
+    decodeMultilineString(source),
+    {
+      programmingLanguage: language,
+      meta: { ...metadata, execution_count },
+      outputs: outputs && outputs.length ? await decodeOutputs(outputs, version) : undefined
+    }
+  )
 }
 
 /**

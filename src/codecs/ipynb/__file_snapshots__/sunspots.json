@@ -51,6 +51,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "import statsmodels.api as sm\nimport pandas as pd\ndata_loader = sm.datasets.sunspots.load_pandas()\ndf = data_loader.data",
       "meta": {
         "execution_count": 1
@@ -71,6 +72,7 @@
       "outputs": [
         "<class 'pandas.core.frame.DataFrame'>\nInt64Index: 309 entries, 0 to 308\nData columns:\nYEAR           309  non-null values\nSUNACTIVITY    309  non-null values\ndtypes: float64(2)"
       ],
+      "programmingLanguage": "python",
       "text": "df",
       "meta": {
         "execution_count": 2
@@ -235,6 +237,7 @@
           ]
         }
       ],
+      "programmingLanguage": "python",
       "text": "df.head()",
       "meta": {
         "execution_count": 3
@@ -393,6 +396,7 @@
           ]
         }
       ],
+      "programmingLanguage": "python",
       "text": "df.tail()",
       "meta": {
         "execution_count": 4
@@ -409,6 +413,7 @@
       "outputs": [
         "49    0.9\n50    0.4\n51    0.7\n52    0.8\n53    0.7\nName: SUNACTIVITY"
       ],
+      "programmingLanguage": "python",
       "text": "fractional_nums = df['SUNACTIVITY'].apply(lambda x: x % 1) #Take the modulo of each value with 1 to get the fractional part\nfractional_nums[fractional_nums > 0].head()",
       "meta": {
         "execution_count": 5
@@ -514,6 +519,7 @@
       "outputs": [
         "count    309.000000\nmean      49.752104\nstd       40.452595\nmin        0.000000\n25%       16.000000\n50%       40.000000\n75%       69.800000\nmax      190.200000\n"
       ],
+      "programmingLanguage": "python",
       "text": "print df['SUNACTIVITY'].describe()",
       "meta": {
         "execution_count": 6
@@ -534,6 +540,7 @@
           "format": "image/png"
         }
       ],
+      "programmingLanguage": "python",
       "text": "df.plot(x='YEAR', y='SUNACTIVITY', xlim=(1700,2008))",
       "meta": {
         "execution_count": 7
@@ -554,6 +561,7 @@
           "format": "image/png"
         }
       ],
+      "programmingLanguage": "python",
       "text": "pd.tools.plotting.autocorrelation_plot(df['SUNACTIVITY'])",
       "meta": {
         "execution_count": 8
@@ -574,6 +582,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "import numpy as np\nN2 = df.shape[0] / 2\nfreqs = np.linspace(0, 0.5, num=N2, endpoint=False)[1:] #Nyquist range",
       "meta": {
         "execution_count": 9
@@ -617,6 +626,7 @@
           "format": "image/png"
         }
       ],
+      "programmingLanguage": "python",
       "text": "import scipy as sp\nperiodogram = sp.signal.lombscargle(df['YEAR'], df['SUNACTIVITY'], freqs * 2 * np.pi)\nplt.plot(freqs, periodogram, color='green')",
       "meta": {
         "execution_count": 10
@@ -633,6 +643,7 @@
       "outputs": [
         "Frequency and corresponding time in years at max power: 0.09, 11.0\n"
       ],
+      "programmingLanguage": "python",
       "text": "freq_index_at_max_power = np.argmax(periodogram)\nprint 'Frequency and corresponding time in years at max power: %.2f, %.1f' % (freqs[freq_index_at_max_power], 1 / freqs[freq_index_at_max_power])",
       "meta": {
         "execution_count": 11
@@ -738,6 +749,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "v_data = df['SUNACTIVITY'].max() - df['SUNACTIVITY'].min()\nh_data = df['YEAR'].max() - df['YEAR'].min()\nv_data_diffs = df['SUNACTIVITY'].diff().apply(np.abs)\nvbar_data_diffs = v_data_diffs / v_data    \nh_data_diffs = df['YEAR'].diff().apply(np.abs)\nhbar_data_diffs = h_data_diffs / h_data",
       "meta": {
         "execution_count": 12
@@ -751,6 +763,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "def objective_fcn(width_height, target):\n    dev = setup_device_coords(figsize=width_height)\n    lengths = segment_lengths(dev['aspect ratio'], dev['horizontal_device'])\n    weighted_avg_banking =  np.sum(segment_orientations(dev['aspect ratio']) * lengths) / np.sum(lengths)  \n    return np.abs(weighted_avg_banking - target)",
       "meta": {
         "execution_count": 13
@@ -769,6 +782,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "def setup_device_coords(figsize=(8,6)):\n    h_device, v_device = figsize\n    fig, ax = plot_sunspots(figsize)\n    device_coords = [ax.transData.transform(data_coords) for data_coords in df.values]\n    df_device = pd.DataFrame(device_coords, columns=['YEAR', 'SUNACTIVITY'])    \n    v_device = df_device['SUNACTIVITY'].max() - df_device['SUNACTIVITY'].min()\n    h_device = df_device['YEAR'].max() - df_device['YEAR'].min()\n    aspect_ratio = v_device / h_device\n    v_conversion = v_device / v_data  \n    h_conversion = h_device / h_data\n    fig.clear()\n    return {'aspect ratio': aspect_ratio,\n            'vertical_device': v_device,\n            'horizontal_device': h_device,\n            'vertical conversion': v_conversion,\n            'horizontal conversion': h_conversion}",
       "meta": {
         "execution_count": 14
@@ -787,6 +801,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "def plot_sunspots(figsize, color='blue'):\n    fig = plt.figure(figsize=figsize)\n    fig.canvas.set_window_title('%.1f by %.1f inch window' % (figsize[0], figsize[1]))\n    ax1 = fig.add_subplot(111)\n    df.plot(x='YEAR', y='SUNACTIVITY', ax=ax1, linewidth=2, color=color)\n    fig.tight_layout()\n    ax1.set_xlim(right=df['YEAR'].max())\n    ax1.set_ylim(top=df['SUNACTIVITY'].max())\n    ax1.set_ylabel('Observed Sunspots')\n    ax1.set_title('Sunspot Activity Over Time')\n    return (fig, ax1)",
       "meta": {
         "execution_count": 15
@@ -805,6 +820,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "def segment_lengths(aspect_ratio, h_device):\n    return h_device * np.sqrt(hbar_data_diffs.dropna()**2 + aspect_ratio**2 * vbar_data_diffs.dropna()**2)",
       "meta": {
         "execution_count": 16
@@ -812,6 +828,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "def segment_orientations(aspect_ratio):\n    return np.arctan(aspect_ratio * vbar_data_diffs / hbar_data_diffs)",
       "meta": {
         "execution_count": 17
@@ -835,6 +852,7 @@
     },
     {
       "type": "CodeChunk",
+      "programmingLanguage": "python",
       "text": "import scipy.optimize as spo\ntarget = np.radians(45)   \nslice_obj = np.s_[20:26:0.5, # widths\n                  1:4:0.5]   # heights              \nresults = spo.brute(objective_fcn, slice_obj, args=[target], full_output=True, finish=None)\noptimal_dims, objective_val, search_grid, objective_grid = results",
       "meta": {
         "execution_count": 18
@@ -856,6 +874,7 @@
           "format": "image/png"
         }
       ],
+      "programmingLanguage": "python",
       "text": "plt.close('all')\nax1 = plot_sunspots((8,6))\nprint '\\n\\nWeighted-average banking using default 8 x 6 inch plot window: 87.3 degrees (goal is 45 degrees)' ",
       "meta": {
         "execution_count": 19
@@ -890,6 +909,7 @@
           "format": "image/png"
         }
       ],
+      "programmingLanguage": "python",
       "text": "ax2 = plot_sunspots(optimal_dims, color='red')\nprint '\\n\\nOptimal width and height found to be %.1f by %.1f inches' % (optimal_dims[0], optimal_dims[1])    \nbanking = [np.degrees(target - objective_val),\n           np.degrees(target + objective_val)]    \nprint 'Average banking interval at optimized aspect ratio: (%.2f, %.2f)' % (banking[0], banking[1])",
       "meta": {
         "execution_count": 20
