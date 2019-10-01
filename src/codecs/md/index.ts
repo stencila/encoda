@@ -87,9 +87,7 @@ export class MdCodec extends Codec implements Codec {
 
 const whiteSpaceRegEx = new RegExp(/(^|[^\n\s])[\n]+\s*(?![\n])/g)
 
-type MdastBlockContentTypes = TypeMapGeneric<MDAST.BlockContent>
-
-export const mdastBlockContentTypes: MdastBlockContentTypes = {
+export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   blockquote: 'blockquote',
   code: 'code',
   heading: 'heading',
@@ -100,7 +98,26 @@ export const mdastBlockContentTypes: MdastBlockContentTypes = {
   thematicBreak: 'thematicBreak'
 }
 
+export const mdastPhrasingContentTypes: TypeMapGeneric<
+  MDAST.PhrasingContent
+> = {
+  break: 'break',
+  delete: 'delete',
+  emphasis: 'emphasis',
+  footnote: 'footnote',
+  footnoteReference: 'footnoteReference',
+  html: 'html',
+  image: 'image',
+  imageReference: 'imageReference',
+  inlineCode: 'inlineCode',
+  link: 'link',
+  linkReference: 'linkReference',
+  strong: 'strong',
+  text: 'text'
+}
+
 const isMdastBlockContent = nodeIs(mdastBlockContentTypes)
+const isMdastPhrasingContent = nodeIs(mdastPhrasingContentTypes)
 
 /**
  * Options for `remark-frontmatter` plugin
@@ -656,12 +673,20 @@ function encodeList(list: stencila.List): MDAST.List {
  * Encode a `MDAST.ListItem` to a `stencila.ListItem`
  */
 function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
+  const { checked, content = [] } = listItem
   const _listItem: MDAST.ListItem = {
     type: 'listItem',
-    children: listItem.content.map(encodeNode).filter(isMdastBlockContent)
+    children: content.map(child => {
+      const mdast = encodeNode(child)
+      if (isMdastBlockContent(mdast)) return mdast
+      if (isMdastPhrasingContent(mdast))
+        return { type: 'paragraph', children: [mdast] }
+      log.warn(`Unhandled list item MDAST type ${mdast && mdast.type}`)
+      return { type: 'paragraph', children: [] }
+    })
   }
-  return listItem.checked === true || listItem.checked === false
-    ? { ..._listItem, checked: listItem.checked }
+  return checked === true || checked === false
+    ? { ..._listItem, checked: checked }
     : _listItem
 }
 
