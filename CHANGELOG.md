@@ -1,3 +1,13 @@
+## [0.80.1](https://github.com/stencila/encoda/compare/v0.80.0...v0.80.1) (2019-10-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency immer to v4 ([b9c0a50](https://github.com/stencila/encoda/commit/b9c0a50))
+* **deps:** update dependency remark-attr to ^0.9.0 ([b8cc1da](https://github.com/stencila/encoda/commit/b8cc1da))
+* **IPYNB:** Decode notebook language. Closes [#290](https://github.com/stencila/encoda/issues/290) ([7a3aa5b](https://github.com/stencila/encoda/commit/7a3aa5b))
+* **Markdown:** Handle non-block content in list items ([58250de](https://github.com/stencila/encoda/commit/58250de)), closes [#183](https://github.com/stencila/encoda/issues/183)
+
 # [0.80.0](https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0) (2019-09-30)
 
 
