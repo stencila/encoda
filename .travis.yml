@@ -17,8 +17,9 @@ script:
   # Run tests with
   #   - `nock.back` 'wild' mode to do real HTTP requests so we
   #     know if there is an API change we need to address
+  #   - Two minute default test timeout
   #   - Force exit to prevent hanging
-  - npm run test:wild -- --coverage --forceExit
+  - npm run test:wild -- --coverage --testTimeout=120000 --forceExit
   - npm run docs
   - npm run build
 

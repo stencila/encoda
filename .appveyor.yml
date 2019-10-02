@@ -8,5 +8,5 @@ environment:
   NOCK_MODE: wild
 
 test_script:
-  - npm run test -- --forceExit
+  - npm run test -- --testTimeout=120000 --forceExit
   - npm run build
