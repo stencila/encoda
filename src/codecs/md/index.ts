@@ -42,6 +42,7 @@ import { Codec } from '../types'
 import { HTMLCodec } from '../html'
 import { stringifyHTML } from './stringifyHtml'
 import { coerce } from '../../util/coerce'
+import { isA } from '@stencila/schema'
 
 export const log = getLogger('encoda:md')
 
@@ -607,6 +608,19 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
       if (meta) codeChunk.meta = meta
       if (text) codeChunk.text = text
     }
+
+    if (nodes.length > 1) {
+      codeChunk.outputs = []
+      for (const outputContainer of nodes.slice(1)) {
+        if (!isA('Paragraph', outputContainer)) continue
+
+        outputContainer.content.forEach(output => {
+          if (codeChunk.outputs === undefined) return // TS being dumb
+          if (typeof output === 'string') codeChunk.outputs.push(output.trim())
+          else codeChunk.outputs.push(output)
+        })
+      }
+    }
   }
   return codeChunk
 }
@@ -627,13 +641,9 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   }
   nodes.push(codeBlock)
 
-  // Separate the `output` with a `ThematicBreak`
   if (outputs && outputs.length) {
-    let index = 0
     for (const output of outputs) {
-      if (index !== 0) nodes.push({ type: 'ThematicBreak' })
       nodes.push(output)
-      index += 1
     }
   }
 
