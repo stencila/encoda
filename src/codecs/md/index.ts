@@ -641,9 +641,13 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   }
   nodes.push(codeBlock)
 
+  // Separate the `output` with a `ThematicBreak`
   if (outputs && outputs.length) {
+    let index = 0
     for (const output of outputs) {
+      if (index !== 0) nodes.push({ type: 'ThematicBreak' })
       nodes.push(output)
+      index += 1
     }
   }
 

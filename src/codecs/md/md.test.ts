@@ -351,7 +351,13 @@ ans = 42
 
 !number(42)
 
+* * *
+
 'And some text output!'
+
+* * *
+
+Unquoted text.
 :::
 
 Basic code output \`some_var\`{type=expr lang=python output=43}
@@ -529,7 +535,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
         type: 'CodeChunk',
         programmingLanguage: 'r',
         text: '# A code chunk\nans = 42',
-        outputs: [42, "'And some text output!'"]
+        outputs: [42, "'And some text output!'", 'Unquoted text.']
       },
       {
         type: 'Paragraph',
