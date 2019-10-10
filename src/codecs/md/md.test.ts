@@ -353,6 +353,10 @@ ans = 42
 
 * * *
 
+!array(1,2,3)
+
+* * *
+
 'And some text output!'
 
 * * *
@@ -544,6 +548,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
         text: '# A code chunk\nans = 42',
         outputs: [
           42,
+          [1, 2, 3],
           "'And some text output!'",
           [
             { type: 'Paragraph', content: ['This is some longer output,'] },

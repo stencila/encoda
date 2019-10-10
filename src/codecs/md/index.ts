@@ -42,7 +42,6 @@ import { Codec } from '../types'
 import { HTMLCodec } from '../html'
 import { stringifyHTML } from './stringifyHtml'
 import { coerce } from '../../util/coerce'
-import { isA } from '@stencila/schema'
 
 export const log = getLogger('encoda:md')
 
@@ -592,97 +591,93 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
  * Decode a `chunk:` block extension to a `stencila.CodeChunk`
  */
 function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
-  const codeChunk = stencila.codeChunk('')
-
-  if (ext.content) {
-    const article = decodeMarkdown(ext.content) as stencila.Article
-    const nodes = (article.content && article.content) || []
-    const first = nodes[0]
-    if (isA('CodeBlock', first)) {
-      const codeBlock = first as stencila.CodeBlock
-      const { programmingLanguage, meta, text } = codeBlock
-      codeChunk.programmingLanguage = programmingLanguage
-      codeChunk.meta = meta
-      codeChunk.text = text
-    }
-
-    if (nodes.length > 1) {
-      const outputs: stencila.Node[] = []
-
-      let outputNodes: stencila.Node[] = []
-
-      const pushOutputs = function(
-        allOutputs: stencila.Node[],
-        tempOutputs: stencila.Node[]
-      ) {
-        if (
-          tempOutputs.length === 1 &&
-          isA('Paragraph', tempOutputs[0]) &&
-          tempOutputs[0].content.length === 1
-        ) {
-          allOutputs.push(tempOutputs[0].content[0])
-          return
-        }
-        allOutputs.push(tempOutputs)
-      }
-
-      for (const outputContainer of nodes.slice(1)) {
-        if (isA('ThematicBreak', outputContainer)) {
-          pushOutputs(outputs, outputNodes)
-          outputNodes = []
-          continue
-        }
-
-        outputNodes.push(outputContainer)
-      }
-
-      pushOutputs(outputs, outputNodes)
-
-      codeChunk.outputs = outputs
-    }
+  if (ext.content === undefined) {
+    log.warn(`Code chunk has no content`)
+    return stencila.codeChunk('')
   }
-  return codeChunk
+
+  const article = decodeMarkdown(ext.content) as stencila.Article
+  const nodes = (article.content && article.content) || []
+
+  const first = nodes[0]
+  if (!stencila.isA('CodeBlock', first)) {
+    log.warn(`Code chunk extension has no code`)
+    return stencila.codeChunk('')
+  }
+
+  const { text, programmingLanguage, meta } = first
+
+  const outputs: stencila.Node[] = []
+  if (nodes.length > 1) {
+    const pushOutputs = function(outputNodes: stencila.Node[]) {
+      if (outputNodes.length === 1) {
+        const node = outputNodes[0]
+        if (stencila.isA('Paragraph', node) && node.content.length === 1) {
+          // Unwrap the paragraph (e.g. into a `string`, or `number`)
+          outputs.push(node.content[0])
+        } else {
+          // Singular node
+          outputs.push(node)
+        }
+      }
+      // An array of nodes
+      // In the future these may wrapped into a container node to avoid having
+      // a `BlockContent[]` as an output
+      else outputs.push(outputNodes)
+    }
+
+    let outputNodes: stencila.Node[] = []
+    for (const outputContainer of nodes.slice(1)) {
+      // When a thematic break is encountered, start a new
+      // output
+      if (stencila.isA('ThematicBreak', outputContainer)) {
+        pushOutputs(outputNodes)
+        outputNodes = []
+        continue
+      }
+      outputNodes.push(outputContainer)
+    }
+    pushOutputs(outputNodes)
+  }
+
+  return stencila.codeChunk(text, {
+    programmingLanguage,
+    meta,
+    outputs: outputs.length > 0 ? outputs : undefined
+  })
 }
 
 /**
  * Encode a `stencila.CodeChunk` to a `chunk:` block extension
  */
 function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
-  const { programmingLanguage, meta, text, outputs } = chunk
+  const { programmingLanguage = 'text', meta, text, outputs } = chunk
   const nodes: stencila.Node[] = []
 
-  // Encode the code as a `CodeBlock` with `meta`
-  const codeBlock: stencila.CodeBlock = {
-    type: 'CodeBlock',
-    programmingLanguage: programmingLanguage || 'text',
-    meta,
-    text: text || ''
-  }
-  nodes.push(codeBlock)
+  // Encode the code as a `CodeBlock`
+  nodes.push(
+    stencila.codeBlock(text, {
+      programmingLanguage,
+      meta
+    })
+  )
 
-  const outputForEncode: stencila.Node[] = []
-
-  // Separate the `output` with a `ThematicBreak`
-  if (outputs && outputs.length) {
+  // Separate each item in `outputs` with a `ThematicBreak`
+  if (outputs !== undefined) {
     let index = 0
     for (const output of outputs) {
-      if (index !== 0) outputForEncode.push({ type: 'ThematicBreak' })
-      outputForEncode.push(output)
+      if (index !== 0) nodes.push({ type: 'ThematicBreak' })
+      // If the array only has block content then add those separately instead as an array
+      // This may be obviated if we use a container node instead for block content
+      if (
+        Array.isArray(output) &&
+        output.filter(stencila.isBlockContent).length === output.length
+      ) {
+        nodes.push(...output)
+      } else nodes.push(output)
       index += 1
     }
   }
-
-  let outputMarkdown = ''
-
-  outputForEncode.forEach(node => {
-    if (Array.isArray(node)) {
-      node.forEach(subNode => {
-        outputMarkdown += encodeMarkdown(subNode) + '\n\n'
-      })
-    } else outputMarkdown += encodeMarkdown(node) + '\n\n'
-  })
-
-  //nodes.push(outputMarkdown)
 
   // Encode nodes as Markdown
   const md = encodeMarkdown({ type: 'Article', content: nodes }).trim()
@@ -690,7 +685,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   return {
     type: 'block-extension',
     name: 'chunk',
-    content: md + '\n\n' + outputMarkdown.trim()
+    content: md
   }
 }
 
