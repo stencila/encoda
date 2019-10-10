@@ -592,34 +592,31 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
  * Decode a `chunk:` block extension to a `stencila.CodeChunk`
  */
 function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
-  const codeChunk: stencila.CodeChunk = {
-    type: 'CodeChunk',
-    text: ''
-  }
+  const codeChunk = stencila.codeChunk('')
+
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article
     const nodes = (article.content && article.content) || []
     const first = nodes[0]
-    if (nodeType(first) === 'CodeBlock') {
+    if (isA('CodeBlock', first)) {
       const codeBlock = first as stencila.CodeBlock
       const { programmingLanguage, meta, text } = codeBlock
-      if (programmingLanguage)
-        codeChunk.programmingLanguage = programmingLanguage
-      if (meta) codeChunk.meta = meta
-      if (text) codeChunk.text = text
+      codeChunk.programmingLanguage = programmingLanguage
+      codeChunk.meta = meta
+      codeChunk.text = text
     }
 
     if (nodes.length > 1) {
-      codeChunk.outputs = []
+      const outputs: stencila.Node[] = []
       for (const outputContainer of nodes.slice(1)) {
         if (!isA('Paragraph', outputContainer)) continue
 
         outputContainer.content.forEach(output => {
-          if (codeChunk.outputs === undefined) return // TS being dumb
-          if (typeof output === 'string') codeChunk.outputs.push(output.trim())
-          else codeChunk.outputs.push(output)
+          if (typeof output === 'string') outputs.push(output.trim())
+          else outputs.push(output)
         })
       }
+      codeChunk.outputs = outputs
     }
   }
   return codeChunk
