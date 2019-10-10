@@ -357,6 +357,12 @@ ans = 42
 
 * * *
 
+This is some longer output,
+
+it has lots of lines.
+
+* * *
+
 Unquoted text.
 :::
 
@@ -533,9 +539,18 @@ No output \`a = 1 + 1\`{type=expr lang=python}
       },
       {
         type: 'CodeChunk',
+        meta: undefined,
         programmingLanguage: 'r',
         text: '# A code chunk\nans = 42',
-        outputs: [42, "'And some text output!'", 'Unquoted text.']
+        outputs: [
+          42,
+          "'And some text output!'",
+          [
+            { type: 'Paragraph', content: ['This is some longer output,'] },
+            { type: 'Paragraph', content: ['it has lots of lines.'] }
+          ],
+          'Unquoted text.'
+        ]
       },
       {
         type: 'Paragraph',

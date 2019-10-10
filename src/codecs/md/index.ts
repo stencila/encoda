@@ -608,14 +608,36 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
 
     if (nodes.length > 1) {
       const outputs: stencila.Node[] = []
-      for (const outputContainer of nodes.slice(1)) {
-        if (!isA('Paragraph', outputContainer)) continue
 
-        outputContainer.content.forEach(output => {
-          if (typeof output === 'string') outputs.push(output.trim())
-          else outputs.push(output)
-        })
+      let outputNodes: stencila.Node[] = []
+
+      const pushOutputs = function(
+        allOutputs: stencila.Node[],
+        tempOutputs: stencila.Node[]
+      ) {
+        if (
+          tempOutputs.length === 1 &&
+          isA('Paragraph', tempOutputs[0]) &&
+          tempOutputs[0].content.length === 1
+        ) {
+          allOutputs.push(tempOutputs[0].content[0])
+          return
+        }
+        allOutputs.push(tempOutputs)
       }
+
+      for (const outputContainer of nodes.slice(1)) {
+        if (isA('ThematicBreak', outputContainer)) {
+          pushOutputs(outputs, outputNodes)
+          outputNodes = []
+          continue
+        }
+
+        outputNodes.push(outputContainer)
+      }
+
+      pushOutputs(outputs, outputNodes)
+
       codeChunk.outputs = outputs
     }
   }
@@ -638,15 +660,29 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   }
   nodes.push(codeBlock)
 
+  const outputForEncode: stencila.Node[] = []
+
   // Separate the `output` with a `ThematicBreak`
   if (outputs && outputs.length) {
     let index = 0
     for (const output of outputs) {
-      if (index !== 0) nodes.push({ type: 'ThematicBreak' })
-      nodes.push(output)
+      if (index !== 0) outputForEncode.push({ type: 'ThematicBreak' })
+      outputForEncode.push(output)
       index += 1
     }
   }
+
+  let outputMarkdown = ''
+
+  outputForEncode.forEach(node => {
+    if (Array.isArray(node)) {
+      node.forEach(subNode => {
+        outputMarkdown += encodeMarkdown(subNode) + '\n\n'
+      })
+    } else outputMarkdown += encodeMarkdown(node) + '\n\n'
+  })
+
+  //nodes.push(outputMarkdown)
 
   // Encode nodes as Markdown
   const md = encodeMarkdown({ type: 'Article', content: nodes }).trim()
@@ -654,7 +690,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
   return {
     type: 'block-extension',
     name: 'chunk',
-    content: md
+    content: md + '\n\n' + outputMarkdown.trim()
   }
 }
 
