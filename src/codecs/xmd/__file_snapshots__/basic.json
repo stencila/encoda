@@ -3,13 +3,13 @@
   "title": "Untitled",
   "content": [
     {
-      "type": "CodeChunk",
       "text": "knitr::opts_chunk$set(echo = TRUE)",
       "programmingLanguage": "r",
       "meta": {
         "setup,": "",
         "include": "FALSE"
-      }
+      },
+      "type": "CodeChunk"
     },
     {
       "type": "Heading",
@@ -54,12 +54,12 @@
       ]
     },
     {
-      "type": "CodeChunk",
       "text": "summary(cars)",
       "programmingLanguage": "r",
       "meta": {
         "cars": ""
-      }
+      },
+      "type": "CodeChunk"
     },
     {
       "type": "Heading",
@@ -75,13 +75,13 @@
       ]
     },
     {
-      "type": "CodeChunk",
       "text": "plot(pressure)",
       "programmingLanguage": "r",
       "meta": {
         "pressure,": "",
         "echo": "FALSE"
-      }
+      },
+      "type": "CodeChunk"
     },
     {
       "type": "Paragraph",
