@@ -70,7 +70,11 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "<class 'pandas.core.frame.DataFrame'>\nInt64Index: 309 entries, 0 to 308\nData columns:\nYEAR           309  non-null values\nSUNACTIVITY    309  non-null values\ndtypes: float64(2)"
+        {
+          "type": "CodeBlock",
+          "programmingLanguage": "text",
+          "text": "<class 'pandas.core.frame.DataFrame'>\nInt64Index: 309 entries, 0 to 308\nData columns:\nYEAR           309  non-null values\nSUNACTIVITY    309  non-null values\ndtypes: float64(2)"
+        }
       ],
       "programmingLanguage": "python",
       "text": "df",
@@ -411,7 +415,11 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "49    0.9\n50    0.4\n51    0.7\n52    0.8\n53    0.7\nName: SUNACTIVITY"
+        {
+          "type": "CodeBlock",
+          "programmingLanguage": "text",
+          "text": "49    0.9\n50    0.4\n51    0.7\n52    0.8\n53    0.7\nName: SUNACTIVITY"
+        }
       ],
       "programmingLanguage": "python",
       "text": "fractional_nums = df['SUNACTIVITY'].apply(lambda x: x % 1) #Take the modulo of each value with 1 to get the fractional part\nfractional_nums[fractional_nums > 0].head()",
@@ -517,7 +525,11 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "count    309.000000\nmean      49.752104\nstd       40.452595\nmin        0.000000\n25%       16.000000\n50%       40.000000\n75%       69.800000\nmax      190.200000\n"
+        {
+          "type": "CodeBlock",
+          "programmingLanguage": "text",
+          "text": "count    309.000000\nmean      49.752104\nstd       40.452595\nmin        0.000000\n25%       16.000000\n50%       40.000000\n75%       69.800000\nmax      190.200000\n"
+        }
       ],
       "programmingLanguage": "python",
       "text": "print df['SUNACTIVITY'].describe()",
@@ -641,7 +653,11 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "Frequency and corresponding time in years at max power: 0.09, 11.0\n"
+        {
+          "type": "CodeBlock",
+          "programmingLanguage": "text",
+          "text": "Frequency and corresponding time in years at max power: 0.09, 11.0\n"
+        }
       ],
       "programmingLanguage": "python",
       "text": "freq_index_at_max_power = np.argmax(periodogram)\nprint 'Frequency and corresponding time in years at max power: %.2f, %.1f' % (freqs[freq_index_at_max_power], 1 / freqs[freq_index_at_max_power])",
@@ -867,7 +883,11 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "\n\nWeighted-average banking using default 8 x 6 inch plot window: 87.3 degrees (goal is 45 degrees)\n",
+        {
+          "type": "CodeBlock",
+          "programmingLanguage": "text",
+          "text": "\n\nWeighted-average banking using default 8 x 6 inch plot window: 87.3 degrees (goal is 45 degrees)\n"
+        },
         {
           "type": "ImageObject",
           "contentUrl": "",
@@ -902,7 +922,11 @@
     {
       "type": "CodeChunk",
       "outputs": [
-        "\n\nOptimal width and height found to be 25.0 by 1.5 inches\nAverage banking interval at optimized aspect ratio: (44.91, 45.09)\n",
+        {
+          "type": "CodeBlock",
+          "programmingLanguage": "text",
+          "text": "\n\nOptimal width and height found to be 25.0 by 1.5 inches\nAverage banking interval at optimized aspect ratio: (44.91, 45.09)\n"
+        },
         {
           "type": "ImageObject",
           "contentUrl": "",
