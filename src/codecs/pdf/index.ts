@@ -3,11 +3,7 @@
  */
 
 import * as stencila from '@stencila/schema'
-import {
-  PDFDocument,
-  PDFName,
-  PDFStream
-} from 'pdf-lib'
+import { PDFDocument, PDFName, PDFStream } from 'pdf-lib'
 import { dump, load } from '../..'
 import bundle from '../../util/bundle'
 import * as puppeteer from '../../util/puppeteer'
@@ -58,11 +54,13 @@ export class PDFCodec extends Codec implements Codec {
     node: stencila.Node,
     options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
-    // Bundle the node (i.e. embed all local images into the html)
-    const bundled = await bundle(node)
-
     // Generate HTML that will be used to render the PDF
-    const html = await dump(bundled, 'html', options)
+    // Bundle images into HTML, otherwise Puppeteer will not
+    // load them
+    const html = await dump(node, 'html', {
+      ...options,
+      isBundle: true
+    })
 
     // Render the PDF in the browser
     const page = await puppeteer.page()
@@ -70,6 +68,7 @@ export class PDFCodec extends Codec implements Codec {
     const buffer = await page.pdf({
       format: 'A4',
       printBackground: true,
+      scale: 0.85,
       margin: {
         top: '2.54cm',
         bottom: '2.54cm',
@@ -101,7 +100,7 @@ const creatorTool = 'Stencila Encoda https://github.com/stencila/encoda'
  * @param pdf The PDF document to decode XMP metadata from
  */
 async function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | undefined> {
-  let metadata = pdf.catalog.lookup(PDFName.of('Metadata'), PDFStream)
+  const metadata = pdf.catalog.lookup(PDFName.of('Metadata'), PDFStream)
   if (metadata === undefined) return
 
   const xmpContent = metadata.getContentsString()
@@ -142,8 +141,8 @@ async function encodeXmp(pdf: PDFDocument, node: stencila.Node): Promise<void> {
   let subject
   let producer
 
-  let createDate = new Date()
-  let modifyDate = new Date()
+  const createDate = new Date()
+  const modifyDate = new Date()
 
   const source = await dump(node, 'json')
 
@@ -191,10 +190,10 @@ async function encodeXmp(pdf: PDFDocument, node: stencila.Node): Promise<void> {
           </rdf:Description>
 
         </rdf:RDF>
+        <stencila:source xmlns:stencila="http://ns.stenci.la">
+          <![CDATA[${source}]]>
+        </stencila:source>
       </x:xmpmeta>
-      <stencila:source xmlns:stencila="http://ns.stenci.la">
-        <![CDATA[${source}]]>
-      </stencila:source>
       ${whitespacePadding}
     <?xpacket end="w"?>
   `.trim()
@@ -237,13 +236,13 @@ function encodeInfoDict(pdf: PDFDocument, node: stencila.Node): void {
   }
 
   if (title !== undefined) {
-    if (typeof title == 'string') pdf.setTitle(title)
+    if (typeof title === 'string') pdf.setTitle(title)
     // TODO: handle an array of nodes here
   }
   // TODO: implement similar logic for these fields
-  //pdf.setAuthor()
-  //pdf.setSubject(subject)
-  //pdf.setKeywords(['eggs', 'wall', 'fall', 'king', 'horses', 'men'])
+  // pdf.setAuthor()
+  // pdf.setSubject(subject)
+  // pdf.setKeywords(['eggs', 'wall', 'fall', 'king', 'horses', 'men'])
 
   pdf.setCreator(creatorTool)
   // TODO: convert publication date
