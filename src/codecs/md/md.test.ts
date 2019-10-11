@@ -348,6 +348,26 @@ chunk:
 # A code chunk
 ans = 42
 \`\`\`
+
+!number(42)
+
+* * *
+
+!array(1,2,3)
+
+* * *
+
+'And some text output!'
+
+* * *
+
+This is some longer output,
+
+it has lots of lines.
+
+* * *
+
+Unquoted text.
 :::
 
 Basic code output \`some_var\`{type=expr lang=python output=43}
@@ -523,8 +543,19 @@ No output \`a = 1 + 1\`{type=expr lang=python}
       },
       {
         type: 'CodeChunk',
+        meta: undefined,
         programmingLanguage: 'r',
-        text: '# A code chunk\nans = 42'
+        text: '# A code chunk\nans = 42',
+        outputs: [
+          42,
+          [1, 2, 3],
+          "'And some text output!'",
+          [
+            { type: 'Paragraph', content: ['This is some longer output,'] },
+            { type: 'Paragraph', content: ['it has lots of lines.'] }
+          ],
+          'Unquoted text.'
+        ]
       },
       {
         type: 'Paragraph',

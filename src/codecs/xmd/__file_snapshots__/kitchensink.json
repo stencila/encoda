@@ -69,9 +69,9 @@
       ]
     },
     {
-      "type": "CodeChunk",
       "text": "# a comment\ndata = read.table(file)",
-      "programmingLanguage": "r"
+      "programmingLanguage": "r",
+      "type": "CodeChunk"
     },
     {
       "type": "Paragraph",
@@ -80,14 +80,14 @@
       ]
     },
     {
-      "type": "CodeChunk",
       "text": "plot(x,y)",
       "programmingLanguage": "r",
       "meta": {
         "echo": "FALSE,",
         "fig.height": "7,",
         "fig.width": "8"
-      }
+      },
+      "type": "CodeChunk"
     }
   ],
   "type": "Article"

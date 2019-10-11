@@ -370,14 +370,14 @@ async function decodeCodeCell(
     ? [cell.prompt_number, cell.input]
     : [cell.execution_count, cell.source]
 
-  return stencila.codeChunk(
-    decodeMultilineString(source),
-    {
-      programmingLanguage: language,
-      meta: { ...metadata, execution_count },
-      outputs: outputs && outputs.length ? await decodeOutputs(outputs, version) : undefined
-    }
-  )
+  return stencila.codeChunk(decodeMultilineString(source), {
+    programmingLanguage: language,
+    meta: { ...metadata, execution_count },
+    outputs:
+      outputs && outputs.length
+        ? await decodeOutputs(outputs, version)
+        : undefined
+  })
 }
 
 /**
@@ -387,7 +387,8 @@ async function encodeCodeChunk(
   chunk: stencila.CodeChunk
 ): Promise<nbformat4.CodeCell> {
   const metadata = {}
-  const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
+  const execution_count =
+    (chunk.meta && parseInt(chunk.meta.execution_count)) || 1
   const source = encodeMultilineString(chunk.text || '')
   const outputs: nbformat4.Output[] = await encodeOutputs(
     chunk,
@@ -450,7 +451,7 @@ async function decodeOutput(
         return decodeMimeBundle(output.data, version)
       }
     case 'stream':
-      return decodeMultilineString(output.text)
+      return decodeMimeBundle({ 'text/plain': output.text }, version)
     case 'error':
     case 'pyerr':
       // TODO: decode error
@@ -480,14 +481,17 @@ async function encodeOutputs(
 ): Promise<nbformat4.Output[]> {
   return Promise.all(
     nodes.map(async node => {
-      switch (nodeType(node)) {
-        case 'string':
-          return encodeStream(chunk, node)
-        case 'ImageObject':
-          return encodeDisplayData(chunk, node)
-        default:
-          return encodeExecuteResult(chunk, node)
+      if (typeof node === 'string') {
+        return encodeStream(chunk, node)
+      } else if (
+        stencila.isA('CodeBlock', node) &&
+        node.programmingLanguage === 'text'
+      ) {
+        return encodeStream(chunk, node.text)
+      } else if (stencila.isA('ImageObject', node)) {
+        return encodeDisplayData(chunk, node)
       }
+      return encodeExecuteResult(chunk, node)
     })
   )
 }
@@ -527,7 +531,8 @@ async function encodeExecuteResult(
   chunk: stencila.CodeChunk,
   node: stencila.Node
 ): Promise<nbformat4.ExecuteResult> {
-  const execution_count = (chunk.meta && chunk.meta.execution_count) || 1
+  const execution_count =
+    (chunk.meta && parseInt(chunk.meta.execution_count)) || 1
   return {
     output_type: 'execute_result',
     execution_count,
@@ -570,15 +575,24 @@ async function decodeMimeBundle(
         : data.toString()
 
     if (['image/png', 'image/jpeg'].includes(mimetype)) {
+      // Image mime types as `ImagesObject`
       const dataUrl = `data:${mimetype};base64,${content}`
       const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
         dataUrl
       )
-      return {
-        type: 'ImageObject',
-        format,
-        contentUrl
-      }
+      return stencila.imageObject(contentUrl, { format })
+    } else if (mimetype === 'text/plain') {
+      // Text output, including stdout, is decoded using the `txt` codec
+      // which attempts to parse `numbers` etc (and may in the future,
+      // attempt to parse fixed with table etc). However, if the result
+      // is a `string` (`txt` could not decode anything), containing
+      // preformatting (tabs, newlines or more than one consecutive space),
+      // then decode as a `CodeBlock` since formatting is
+      // often important in text output of cells.
+      const node = await load(content, 'txt')
+      if (typeof node === 'string' && /[ ]{2,}|\t|\n/g.test(node))
+        return stencila.codeBlock(node, { programmingLanguage: 'text' })
+      else return node
     } else {
       // TODO: handle other mime types e.g. application/x+json
       return load(content, mimetype)
