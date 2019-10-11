@@ -18,6 +18,8 @@ export class OrcidCodec extends Codec implements Codec {
 
   public static regex = /^\s*((ORCID\s*:?\s*)|(https?:\/\/orcid\.org\/))?(\d{4}-\d{4}-\d{4}-\d{3}[0-9X])\s*$/i
 
+  public static apiVersion = 'v3.0'
+
   public readonly sniff = async (content: string): Promise<boolean> => {
     return OrcidCodec.regex.test(content)
   }
@@ -30,9 +32,12 @@ export class OrcidCodec extends Codec implements Codec {
     if (match) {
       const orcid = match[4]
       try {
-        const response = await http.get(`https://orcid.org/${orcid}`, {
-          headers: { Accept: 'application/ld+json' }
-        })
+        const response = await http.get(
+          `https://pub.orcid.org/${OrcidCodec.apiVersion}/${orcid}`,
+          {
+            headers: { Accept: 'application/ld+json' }
+          }
+        )
         if (response.statusCode === 200 && response.body)
           return load(response.body, 'jsonld')
       } catch (error) {
