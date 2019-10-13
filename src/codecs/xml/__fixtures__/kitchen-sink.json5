@@ -1,0 +1,33 @@
+[
+  null,
+  true,
+  false,
+  42,
+  3.14,
+  'a string',
+  'with special characters < > & "',
+  [],
+  [1, 2, 3],
+  {},
+  {a: 1, b: 2, c: 3},
+  {
+    type: 'Person',
+    givenNames: ['Joe', 'Jake'],
+    familyNames: ['Jones']
+  },
+  {
+    type: 'Article',
+    content: [
+      {
+        type: 'Paragraph',
+        content: [
+          {
+            type: 'CodeExpression',
+            programmingLanguage: 'python',
+            text: '6 * 7'
+          }
+        ]
+      }
+    ]
+  }
+]

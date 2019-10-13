@@ -58,6 +58,15 @@ const coercers = new Ajv({
 const schemasPath = path.dirname(require.resolve('@stencila/schema'))
 
 /**
+ * Get the version of the `@stencila/schema` package.
+ */
+export async function getVersion(which: 'major' | 'minor' | 'patch' = 'patch') {
+  const pkg = await fs.readJson(path.join(schemasPath, '..', 'package.json'))
+  if (which === 'patch') return pkg.version
+  else return pkg.version.split('.').slice(0, which === 'major' ? 1 : 2).join('.')
+}
+
+/**
  * Read a JSON Schema file from `@stencila/schema`
  *
  * Adds the `"$async": true` keyword so that async validation, with async codec
