@@ -78,6 +78,7 @@ Encoda provides a collection of codecs for converting between, and composing tog
 | YAML                        | [yaml]        | Native   | ✔      | [⚠][yaml-issues]        | ![][yaml-cov]        |
 | Pandoc                      | [pandoc]      | Native   | β      | [⚠][pandoc-issues]      | ![][pandoc-cov]      |
 | Reproducible PNG            | [rpng]        | Native   | β      | [⚠][rpng-issues]        | ![][rpng-cov]        |
+| XML                         | [xml]         | Native   | ✔      |                         | ![][xml-cov]        |
 | **Transport**               |
 | HTTP                        | [http]        |          | ✔      | [⚠][http-issues]        | ![][http-cov]        |
 
@@ -378,6 +379,7 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [txt]: src/codecs/txt
 [xlsx]: src/codecs/xlsx
 [xmd]: src/codecs/xmd
+[xml]: src/codecs/xml
 [yaml]: src/codecs/yaml
 [csv-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csv
 [csvy-issues]: https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy
@@ -435,4 +437,5 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
 [xlsx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx
 [xmd-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd
+[xml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml
 [yaml-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml
