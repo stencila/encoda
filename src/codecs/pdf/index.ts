@@ -2,16 +2,20 @@
  * @module pdf
  */
 
+import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import { PDFDocument, PDFName, PDFStream } from 'pdf-lib'
 import { dump, load } from '../..'
-import bundle from '../../util/bundle'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
+import { decodeDoc as decodeXmlDoc, encodeDoc as encodeXmlDoc } from '../xml'
 import { Codec, GlobalEncodeOptions } from '../types'
+import { stringifyContent } from '../../util/content/stringifyContent';
 
-export class PDFCodec extends Codec implements Codec {
+const log = getLogger('encoda:pdf')
+
+export class PdfCodec extends Codec {
   /**
    * The media types that this codec can decode/encode.
    */
@@ -32,15 +36,17 @@ export class PDFCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
-    const pdf = await PDFDocument.load(buffer)
+    const pdf = await PDFDocument.load(new Uint8Array(buffer))
 
     // Attempt to extract the entire node from XMP metadata
     const node = await decodeXmp(pdf)
     if (node !== undefined) return node
 
     // Fallback to extracting meta-data from info dict
-    const { title = 'Untitled', authors = [] } = decodeInfoDict(pdf)
-    return stencila.article(authors, title)
+    log.warn('PDF file does not appear to be a Reproducible-PDF')
+    const meta  = decodeInfoDict(pdf)
+    const { title, authors, keywords, dateCreated, dateModified } = await decodeMetadata(meta)
+    return stencila.creativeWork( {authors, title, keywords, dateCreated, dateModified })
   }
 
   /**
@@ -79,12 +85,90 @@ export class PDFCodec extends Codec implements Codec {
     await page.close()
 
     // Add meta-data to the PDF
-    const pdf = await PDFDocument.load(buffer)
-    encodeInfoDict(pdf, node)
-    await encodeXmp(pdf, node)
+    const pdf = await PDFDocument.load(new Uint8Array(buffer))
+    const metadata = await encodeMetadata(node)
+    encodeInfoDict(pdf, metadata)
+    await encodeXmp(pdf, metadata, node)
     const bytes = await pdf.save()
 
     return vfile.load(Buffer.from(bytes))
+  }
+}
+
+interface PdfMetadata {
+  title?: string
+  authors?: string[]
+  keywords?: string[]
+  dateCreated?: Date
+  dateModified?: Date
+  dateCurrent?: Date
+}
+
+/**
+ * Decode PDF metadata to a `CreativeWork`.
+ */
+const decodeMetadata = async (metadata: PdfMetadata): Promise<stencila.CreativeWork> => {
+  let { title, authors, keywords, dateCreated, dateModified } = metadata
+
+  let people
+  if (authors !== undefined) {
+    people = await Promise.all(authors.map(async author => load(author, 'person') as Promise<stencila.Person>))
+  }
+  return stencila.creativeWork({
+    title,
+    authors: people,
+    keywords,
+    dateCreated: dateCreated !== undefined ? stencila.date(dateCreated.toISOString()) : undefined,
+    dateModified: dateModified !== undefined ? stencila.date(dateModified.toISOString()) : undefined
+  })
+}
+
+/**
+ * Encode PDF metadata in a `Node` in the form handled by
+ * either XMP or PDF info dict.
+ */
+const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
+  let title
+  let authors
+  let keywords
+  let dateCreated
+  let dateModified
+  const dateCurrent = new Date()
+  if (stencila.isCreativeWork(node)) {
+    ;({
+      title,
+      authors,
+      keywords,
+      dateCreated,
+      dateModified
+    } = node)
+  }
+
+  if (title !== undefined) {
+    title = typeof title === 'string' ? title : stringifyContent(title)
+  }
+
+  if (authors !== undefined) {
+    authors = await Promise.all(authors.map(async author => {
+      if (stencila.isA('Person', author)) return await dump(author, 'person')
+      else return author.name || author.legalName || ''
+    }))
+  }
+
+  dateCreated = dateCreated !== undefined
+    ? new Date(typeof dateCreated === 'string' ? dateCreated : dateCreated.value)
+    : dateCurrent
+  dateModified = dateModified !== undefined
+    ? new Date(typeof dateModified === 'string' ? dateModified : dateModified.value)
+    : dateCurrent
+
+  return {
+    title,
+    authors,
+    keywords,
+    dateCreated,
+    dateModified,
+    dateCurrent
   }
 }
 
@@ -100,20 +184,17 @@ const creatorTool = 'Stencila Encoda https://github.com/stencila/encoda'
  * @param pdf The PDF document to decode XMP metadata from
  */
 async function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | undefined> {
-  const metadata = pdf.catalog.lookup(PDFName.of('Metadata'), PDFStream)
-  if (metadata === undefined) return
+  let metadata
+  try {
+    metadata = pdf.catalog.lookup(PDFName.of('Metadata'), PDFStream)
+    if (metadata === undefined) return
+  } catch {
+    return
+  }
 
   const xmpContent = metadata.getContentsString()
-  const xmp = xml.load(xmpContent, { compact: false }) as xml.Element
-  const source = xml.first(xmp, 'stencila:source')
-  if (source === null) return
-
-  const cdata =
-    source.elements && source.elements[0] && source.elements[0].cdata
-  if (cdata === undefined) return
-
-  const node = await load(cdata, 'json')
-  return node
+  const xmp = xml.load(xmpContent) as xml.Element
+  return decodeXmlDoc(xmp)
 }
 
 /**
@@ -129,24 +210,20 @@ async function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | undefined> {
  * @param pdf The PDF document to add XMP metadata to
  * @param node The node to encode
  */
-async function encodeXmp(pdf: PDFDocument, node: stencila.Node): Promise<void> {
-  let title
-  let authors
-  let keywords
+async function encodeXmp(pdf: PDFDocument, meta: PdfMetadata, node: stencila.Node): Promise<void> {
+  const { title, authors, keywords, dateCreated, dateModified, dateCurrent } = meta
 
-  if (stencila.isCreativeWork(node)) {
-    ;({ title, authors, keywords } = node)
-  }
+  // Dump the entire node as an XL document to put into XMP
+  const nodeDoc = await encodeXmlDoc(node)
+  const nodeXML = xml.dump(nodeDoc)
 
-  let subject
-  let producer
-
-  const createDate = new Date()
-  const modifyDate = new Date()
-
-  const source = await dump(node, 'json')
-
+  /**
+   * Whitespace padding is recommended by the PDF spec
+   * so that additional metadata can be added later without
+   * having to change the byte offset of other objects in the document.
+   */
   const whitespacePadding = new Array(20).fill(' '.repeat(100)).join('\n')
+
   const metadataXML = `
     <?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
       <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
@@ -154,11 +231,17 @@ async function encodeXmp(pdf: PDFDocument, node: stencila.Node): Promise<void> {
 
           <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/">
             <dc:format>application/pdf</dc:format>
-            <dc:creator>
+            ${
+              authors === undefined
+                ? ''
+                : `<dc:creator>
               <rdf:Seq>
-                <rdf:li>${authors}</rdf:li>
+                ${authors
+                  .map(author => `<rdf:li>${author}</rdf:li>`)
+                  .join('\n')}
               </rdf:Seq>
-            </dc:creator>
+            </dc:creator>`
+            }
             <dc:title>
                <rdf:Alt>
                   <rdf:li xml:lang="x-default">${title}</rdf:li>
@@ -177,22 +260,15 @@ async function encodeXmp(pdf: PDFDocument, node: stencila.Node): Promise<void> {
             }
           </rdf:Description>
 
-          <rdf:Description rdf:about="" xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
-            <pdf:Subject>${subject}</pdf:Subject>
-            <pdf:Producer>${producer}</pdf:Producer>
-          </rdf:Description>
-
           <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/">
             <xmp:CreatorTool>${creatorTool}</xmp:CreatorTool>
-            <xmp:CreateDate>${createDate.toISOString()}</xmp:CreateDate>
-            <xmp:ModifyDate>${modifyDate.toISOString()}</xmp:ModifyDate>
-            <xmp:MetadataDate>${new Date().toISOString()}</xmp:MetadataDate>
+            <xmp:CreateDate>${dateCreated}</xmp:CreateDate>
+            <xmp:ModifyDate>${dateModified}</xmp:ModifyDate>
+            <xmp:MetadataDate>${dateCurrent}</xmp:MetadataDate>
           </rdf:Description>
 
         </rdf:RDF>
-        <stencila:source xmlns:stencila="http://ns.stenci.la">
-          <![CDATA[${source}]]>
-        </stencila:source>
+        ${nodeXML}
       </x:xmpmeta>
       ${whitespacePadding}
     <?xpacket end="w"?>
@@ -212,13 +288,38 @@ async function encodeXmp(pdf: PDFDocument, node: stencila.Node): Promise<void> {
  *
  * @param pdf The PDF document to extract metadata from
  */
-function decodeInfoDict(pdf: PDFDocument): any {
+function decodeInfoDict(pdf: PDFDocument): PdfMetadata {
   // @ts-ignore that getInfoDict is private
   const info = pdf.getInfoDict()
-  const title = info.get(PDFName.of('Title')).toString()
-  // TODO finish
+  const extractValue = (name: string): string | undefined => {
+    const value = info.get(PDFName.of(name)).toString()
+    if (value === undefined) return
+    if (value[0] === '(' && value[value.length - 1] === ')') return value.slice(1, -1)
+    return value
+  }
+  const title = extractValue('Title')
+  const authors = extractValue('Author')
+  const keywords = extractValue('Keywords')
+  const extractDate = (name: string): Date | undefined => {
+    const str = extractValue(name)
+    if (str === undefined) return
+    const match = str.match(/D:(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})Z/)
+    if (match === null) return
+    const iso = `${match[1]}-${match[2]}-${match[3]}T${match[4]}:${match[5]}:${match[6]}Z`
+    try {
+      return new Date(iso)
+    } catch {
+      return
+    }
+  }
+  const dateCreated = extractDate('CreationDate')
+  const dateModified = extractDate('ModDate')
   return {
-    title
+    title,
+    authors: authors !== undefined ? authors.split(',') : undefined,
+    keywords: keywords !== undefined ? keywords.split(/\s+/) : undefined,
+    dateCreated,
+    dateModified
   }
 }
 
@@ -229,23 +330,12 @@ function decodeInfoDict(pdf: PDFDocument): any {
  * @param pdf The PDF document to add meta data to
  * @param node The node from which metadata will taken
  */
-function encodeInfoDict(pdf: PDFDocument, node: stencila.Node): void {
-  let title, authors, keywords, datePublished
-  if (stencila.isCreativeWork(node)) {
-    ;({ title, authors, keywords, datePublished } = node)
-  }
-
-  if (title !== undefined) {
-    if (typeof title === 'string') pdf.setTitle(title)
-    // TODO: handle an array of nodes here
-  }
-  // TODO: implement similar logic for these fields
-  // pdf.setAuthor()
-  // pdf.setSubject(subject)
-  // pdf.setKeywords(['eggs', 'wall', 'fall', 'king', 'horses', 'men'])
-
+function encodeInfoDict(pdf: PDFDocument, meta: PdfMetadata): void {
+  const { title, authors, keywords, dateCreated, dateModified } = meta
+  if (title !== undefined) pdf.setTitle(title)
+  if (authors !== undefined) pdf.setAuthor(authors.join(', '))
+  if (keywords !== undefined) pdf.setKeywords(keywords)
+  if (dateCreated !== undefined) pdf.setCreationDate(dateCreated)
+  if (dateModified !== undefined) pdf.setModificationDate(dateModified)
   pdf.setCreator(creatorTool)
-  // TODO: convert publication date
-  // pdf.setCreationDate(datePublished)
-  pdf.setModificationDate(new Date())
 }

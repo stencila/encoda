@@ -54,6 +54,13 @@ export const snapshot = (filename: string): string =>
   path.join(callDir(), '__file_snapshots__', filename)
 
 /**
+ * Get the full path to a file in the `__outputs__` sibling directory
+ */
+export const output = (filename: string): string =>
+path.join(callDir(), '__outputs__', filename)
+
+
+/**
  * Record a nock request / response as a file fixture
  *
  * Attempt to use other solutions for this e.g. `nock-record`
