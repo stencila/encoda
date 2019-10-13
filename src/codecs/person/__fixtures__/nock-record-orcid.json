@@ -1,40 +1,12 @@
 [
     {
-        "scope": "https://orcid.org:443",
-        "method": "GET",
-        "path": "/0000-0002-1825-0097",
-        "body": "",
-        "status": 302,
-        "response": "",
-        "rawHeaders": [
-            "Date",
-            "Wed, 21 Aug 2019 01:31:48 GMT",
-            "Content-Length",
-            "0",
-            "Connection",
-            "close",
-            "Set-Cookie",
-            "__cfduid=d12805ffc1a68d89cfc24349f7d24ec7e1566351107; expires=Thu, 20-Aug-20 01:31:47 GMT; path=/; domain=.orcid.org; HttpOnly",
-            "Location",
-            "https://pub.orcid.org/v2.0/0000-0002-1825-0097",
-            "Set-Cookie",
-            "X-Mapping-fjhppofk=DF3E42B54CBBD87B099C6697B16953F8; path=/",
-            "Expect-CT",
-            "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
-            "Server",
-            "cloudflare",
-            "CF-RAY",
-            "5098d9780a7b1912-AKL"
-        ]
-    },
-    {
         "scope": "https://pub.orcid.org:443",
         "method": "GET",
-        "path": "/v2.0/0000-0002-1825-0097",
+        "path": "/v3.0/0000-0002-1825-0097",
         "body": "",
         "status": 200,
         "response": [
-            "1f8b0800000000000003cd96dd4fdb3010c0dff92bac3e97a449bf79e253d0690cb4c278406872934b6391d8d1d98165a8fffbce494a5a28dad056314b6dd3fb887d3f9fcff7b4c3586b3f50d2c00fd3627bac151b93edb9ae0e6248b9a370de6a9736a6c8a034b804d44ad65211ae3a290c44687ddc0e8d5dfaf8bbdec8efd3d3785879a45cc8136984292ea24b3e8777bacfc503c82f3cadfc3e292d785c69229e8aa478561d719c016251297962002537b0d4df2e9dd9d408792fa1608d07e99c977fa72b127657bd348a4422b81144a37ce51349d7505de09c4bf1b33269575ab95ce10de8040a2ed9b5a4a0501392a5cdabe5b62e7511c42a00a42803bdb4132110ca48005aa36afaf5bd4295019ae21b4f72a8bdc820abc593e3d2eaebe4cbe9e9c5e7e3c6e0a1b4b7ba7e6f306a95e2057d2fdaef0cf210d5e37f1ee160d8f75722ac37771fc12e199a695b0102370a57f77a6d2947564f81de28bc6f265a3d229a923c54a24c71afe3f469b89edfedf507a34ee3f10cef809d838955a812352f58a4909918d8499a27256ca6227680412c0c0426c795e83753fb036eafc9d17257b50db657ebaf8d1615caf6bf2334a0611f7a343650ba2226e7902a2cd861aed991929ae24708d919c734ca938fe1b2b6eaadb1198f86837eafeb7b6f8099a4190f8ccd94099578a4679a829d64421b4246792540334aa5232c32a3e6c8b3b8f8185e4d245b8355a5ea70bc81d5319df6446542ced9552c8847222874cdaeb5151da4592c6642517aada3fbc82347716c9bd4685356a9478e21e3b6a853b821f1027bf628c5cec43cde3d918054ada872d95cd254cbf7d854244941372d567cadfd87921b6d859ce775c62e491d8f72d9e975bdc1d0ef6e20789827f78ccb90e91c231e00cb12ae532a5b8c128fa36511086e8969837959da4396d25d89247d33e56eb7876e73604b84edbf9b1808e8c689fd5ded3bb60bf4bbddf168d069368ddded34bf8bf2bace31a9dbbaba974cc40c3916cecc36200e84b9cb672a376ecc0b37a81b39278b33dbded52e209d47712f320845d9f8baf69f5bb589df5f367f9bb2f637d1bf8c7c1aa88c2aca414e773cb2c9b239594130ec74861e5daee332f6c5cee217810c08e2af0b0000"
+            "1f8b0800000000000003cd96dd4fdb3010c0dff92bac3e97a449bf79e253d0690cb4c278406872934b6391d8d1d98165a8fffbce494a5a28dad056314b6dd3fb887d3f9fcff7b4c3586b3f50d2c00fd3627bac151b93edb9ae0e6248b9a370de6a9736a6c8a034b804d44ad652113e3b69f2521888d03ab91d1abbf4f177bd91dfa7a7f1b07249b99027d208535c44977c0eeff59f8b07905f785a397e525af0b8d2443c1549f1ac3ae23803c4a252f2c4004a6e60a9bf5d3ab3a911f25e42c11a0fd2392fff4e5724ecae7a6914894470238847f9ca2792aec1bac03997e26765d2aeb472b9c21bd009145cb26b4941a126264b9b57cb6d5dea228855004851067a69274220969100b446d5f4ebbb852a0334c5379ee4507b9141568b27c7a5d5d7c997d3d38bcfc78dc143696f75fdde60d42ac50bfa5eb4df19e421aac7ff3cc2c1b0efaf44586fee3e825d3234d3b602046e14aeeef5da528eac9e02bd5178df4cf4f290844a9429ee759c3e0dd7f3bbbdfe60d4693c9ee11db07330b10a55a2e6058b143213033b49f3a484cd54c40e30888581c0e4b812fd666a7fc0ed35395aeeaab6c1f66afdb5d1a242d9fe77840634ec438fc6064a57c4e41c5285053bcc353b525253fc08213be3984679f2315cd656bd3536e3d170d0ef757def0d309334e381b19932a1228ff44c53b0934c6843c828af046846a974844566d41c7916171fc3ab89646bb0aa541d8e37b03aa6d39ea84cc839bb8a05f1480485aed9b5b6a283348bc54c284aaf75741f79e4288e6d931a6dca2af5c83164dc16750a37245e60cf1ea5d89998c7bb271290aa15552e9b4b9a6af91e9b8a2429e8a6c58aafb5ff5072a3ad90f3bcced825a9e3512e3bbdae3718fadd0d040ff3e49e7119329d63c4036059c2754a658b51e271b42c02c12d316d302f4b7bc852ba2b91a46fa6dcedf6d06d0e6c89b0fd77130301dd38b1bfab7dc776817eb73b1e0d3acda6b1bb9de677515ed73926755b5777b0899821c7c299d906c4813077f94ce5c68d79e1067523e7647166dbbbda05a4f328ee4506a1285b5fd7fe73ab36f1fbcbe66f53d6fe26fa97914f0395514539c8e98e47365936272b08869dced0a3cb755cc6bed859fc0247b8dc82b10b0000"
         ],
         "rawHeaders": [
             "Server",
@@ -46,7 +18,7 @@
             "Content-Encoding",
             "gzip",
             "Date",
-            "Wed, 21 Aug 2019 01:31:50 GMT",
+            "Sun, 13 Oct 2019 19:58:26 GMT",
             "Expires",
             "0",
             "Pragma",
@@ -62,7 +34,7 @@
             "Connection",
             "close",
             "Set-Cookie",
-            "X-Mapping-fjhppofk=1F5FD8D0B8B1A8DD0F8680D854A2C10B; path=/",
+            "X-Mapping-fjhppofk=26484D0F5DA32D2D6AF64AA1C9DBBA16; path=/",
             "X-Frame-Options",
             "DENY"
         ]
@@ -78,9 +50,9 @@
             "Location",
             "https://schema.org/",
             "X-Cloud-Trace-Context",
-            "80325ee04d3ea6c0d1c3e2165916e8c9",
+            "c044fa764626611e3a9f54f6a3dc5add",
             "Date",
-            "Wed, 21 Aug 2019 01:31:51 GMT",
+            "Sun, 13 Oct 2019 19:58:27 GMT",
             "Content-Type",
             "text/html",
             "Server",
@@ -110,15 +82,15 @@
             "Vary",
             "Accept, Accept-Encoding",
             "X-Cloud-Trace-Context",
-            "5fc03b9255d390223e0487e8d571f424",
+            "5d923fd4bd1f0389b8151ea567b893b7",
             "Date",
-            "Wed, 21 Aug 2019 01:31:52 GMT",
+            "Sun, 13 Oct 2019 19:58:28 GMT",
             "Server",
             "Google Frontend",
             "Content-Length",
             "0",
             "Alt-Svc",
-            "quic=\":443\"; ma=2592000; v=\"46,43,39\"",
+            "quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000",
             "Connection",
             "close"
         ]
@@ -7358,6 +7330,8 @@
         "rawHeaders": [
             "Access-Control-Allow-Origin",
             "*",
+            "Cache-Control",
+            "public, max-age=600",
             "Vary",
             "Accept, Accept-Encoding",
             "ETag",
@@ -7367,19 +7341,15 @@
             "Content-Type",
             "application/ld+json; charset=utf-8",
             "X-Cloud-Trace-Context",
-            "eebd71ce2106dbba115b29c274b30994",
+            "3d99a4bdb305c791585532c4a3e9dc67",
             "Date",
-            "Wed, 21 Aug 2019 01:31:53 GMT",
+            "Sun, 13 Oct 2019 19:58:29 GMT",
             "Server",
             "Google Frontend",
             "Content-Length",
             "141567",
-            "Cache-Control",
-            "public, max-age=600",
-            "Age",
-            "0",
             "Alt-Svc",
-            "quic=\":443\"; ma=2592000; v=\"46,43,39\"",
+            "quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000",
             "Connection",
             "close"
         ]
