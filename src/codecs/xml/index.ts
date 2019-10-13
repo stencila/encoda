@@ -2,12 +2,12 @@
  * @module xml
  */
 
-import { getLogger } from '@stencila/logga';
-import * as stencila from '@stencila/schema';
-import { getVersion as getSchemaVersion } from '../../util/schemas';
-import * as vfile from '../../util/vfile';
-import * as xml from '../../util/xml';
-import { Codec, GlobalEncodeOptions } from '../types';
+import { getLogger } from '@stencila/logga'
+import * as stencila from '@stencila/schema'
+import { getVersion as getSchemaVersion } from '../../util/schemas'
+import * as vfile from '../../util/vfile'
+import * as xml from '../../util/xml'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 const log = getLogger('encoda:xml')
 
@@ -50,7 +50,7 @@ export class XmlCodec extends Codec {
     options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const doc = await encodeDoc(node, options.isStandalone)
-    const content = xml.dump(doc, {spaces: 4})
+    const content = xml.dump(doc, { spaces: 4 })
     return vfile.load(content)
   }
 }
@@ -63,7 +63,11 @@ export class XmlCodec extends Codec {
 export const decodeDoc = (doc: xml.Element): stencila.Node | undefined => {
   if (doc !== undefined) {
     const stencila = xml.first(doc, 'stencila')
-    if (stencila !== null && stencila.elements !== undefined && stencila.elements.length === 1) {
+    if (
+      stencila !== null &&
+      stencila.elements !== undefined &&
+      stencila.elements.length === 1
+    ) {
       const root = stencila.elements[0]
       return decodeElem(root)
     }
@@ -77,27 +81,31 @@ export const decodeDoc = (doc: xml.Element): stencila.Node | undefined => {
  * @param node The `Node` to encode
  * @param standalone Should the document be a standalone XML document?
  */
-export const encodeDoc = async (node: stencila.Node, standalone: boolean = false): Promise<xml.Element> => {
+export const encodeDoc = async (
+  node: stencila.Node,
+  standalone: boolean = false
+): Promise<xml.Element> => {
   const root = encodeNode(node)
 
   const schemaVersion = await getSchemaVersion('minor')
   const stencila = xml.elem(
     'stencila',
-    {xmlns: `https://schema.stenci.la/${schemaVersion}`},
+    { xmlns: `https://schema.stenci.la/${schemaVersion}` },
     root
   )
 
   return {
     elements: [stencila],
-    ...(
-      standalone ? {
-      declaration: {
-        attributes: {
-          version: '1.0',
-          encoding: 'utf-8'
+    ...(standalone
+      ? {
+          declaration: {
+            attributes: {
+              version: '1.0',
+              encoding: 'utf-8'
+            }
+          }
         }
-      }} : {}
-    )
+      : {})
   }
 }
 
@@ -120,10 +128,12 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
     case 'array':
       return elements.map(decodeElem)
     default:
-      const node = elements.map(child => {
-        const key = xml.attr(child, 'key') || ''
-        return {[key]: decodeElem(child)}
-      }).reduce((prev, curr) => ({...prev, ...curr}), {})
+      const node = elements
+        .map(child => {
+          const key = xml.attr(child, 'key') || ''
+          return { [key]: decodeElem(child) }
+        })
+        .reduce((prev, curr) => ({ ...prev, ...curr }), {})
       return name === 'object' ? node : { type: name, ...node }
   }
 }
@@ -146,12 +156,12 @@ export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
     return xml.elem(type, { key }, node.toString())
   }
   if (type === 'array') {
-    const array = node as Array<stencila.Node>
+    const array = node as stencila.Node[]
     const items = array.map(node => encodeNode(node))
     return xml.elem(type, { key }, ...items)
   }
   const props = Object.entries(node)
-                      .filter(([key, value]) => key !== 'type')
-                      .map(([key, value]) => encodeNode(value, key))
+    .filter(([key, value]) => key !== 'type')
+    .map(([key, value]) => encodeNode(value, key))
   return xml.elem(type, { key }, ...props)
 }

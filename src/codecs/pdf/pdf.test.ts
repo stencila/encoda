@@ -1,7 +1,7 @@
 import { read, write } from '../..'
 import { fixture, output } from '../../__tests__/helpers'
 import { PdfCodec } from '.'
-import * as stencila from '@stencila/schema';
+import * as stencila from '@stencila/schema'
 
 const pdfCodec = new PdfCodec()
 
@@ -9,9 +9,13 @@ jest.setTimeout(30 * 1000) // Extending timeout due to long running test
 
 describe('decode', () => {
   test('meta data from info dict', async () => {
-    const work = await read(fixture('external.pdf')) as stencila.CreativeWork
-    expect(work.title).toEqual('Test reading meta data from an externally created PDF')
-    expect(work.authors).toEqual([stencila.person({givenNames: ['Nokome'], familyNames: ['Bentley']})])
+    const work = (await read(fixture('external.pdf'))) as stencila.CreativeWork
+    expect(work.title).toEqual(
+      'Test reading meta data from an externally created PDF'
+    )
+    expect(work.authors).toEqual([
+      stencila.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] })
+    ])
     expect(work.keywords).toEqual(['test', 'pdf', 'externally', 'created'])
     expect(work.dateCreated).toEqual(stencila.date('2019-10-13T11:00:00.000Z'))
   })
