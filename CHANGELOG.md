@@ -1,3 +1,16 @@
+## [0.80.2](https://github.com/stencila/encoda/compare/v0.80.1...v0.80.2) (2019-10-15)
+
+
+### Bug Fixes
+
+* Decoding/Encoding CodeChunk outputs in MD ([d5479e6](https://github.com/stencila/encoda/commit/d5479e6))
+* Encoding/decoding multi-line markdown codechunk outputs ([b0fb6f6](https://github.com/stencila/encoda/commit/b0fb6f6))
+* Reverted to use thematic break for MD output separation ([f8c61b3](https://github.com/stencila/encoda/commit/f8c61b3))
+* **IPYNB:** Decode preformaated outputs as CodeBlocks ([3e17264](https://github.com/stencila/encoda/commit/3e17264))
+* **IPYNB:** Encode a plain text CodeBlock as a stream ([40ccfe0](https://github.com/stencila/encoda/commit/40ccfe0))
+* **Markdown:** Handle arrays on BlockContent differently in CodeChunk encoding ([3246e31](https://github.com/stencila/encoda/commit/3246e31))
+* **ORCID:** Update to API v3.0 ([ca4c891](https://github.com/stencila/encoda/commit/ca4c891))
+
 ## [0.80.1](https://github.com/stencila/encoda/compare/v0.80.0...v0.80.1) (2019-10-02)
 
 
