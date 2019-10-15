@@ -1,26 +1,31 @@
-import fs from 'fs-extra'
-import path from 'path'
-import * as vfile from '../../util/vfile'
-import articleSimple from '../../__fixtures__/article-simple'
-import { defaultEncodeOptions } from '../types'
-import { PDFCodec } from './'
+import { read, write } from '../..'
+import { fixture, output } from '../../__tests__/helpers'
+import { PdfCodec } from '.'
+import * as stencila from '@stencila/schema'
 
-const { encode, decode } = new PDFCodec()
+const pdfCodec = new PdfCodec()
 
 jest.setTimeout(30 * 1000) // Extending timeout due to long running test
 
-test('decode', async () => {
-  await expect(decode(vfile.create())).rejects.toThrow(
-    /Parsing of PDF files is not supported/
-  )
+describe('decode', () => {
+  test('meta data from info dict', async () => {
+    const work = (await read(fixture('external.pdf'))) as stencila.CreativeWork
+    expect(work.title).toEqual(
+      'Test reading meta data from an externally created PDF'
+    )
+    expect(work.authors).toEqual([
+      stencila.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] })
+    ])
+    expect(work.keywords).toEqual(['test', 'pdf', 'externally', 'created'])
+    expect(work.dateCreated).toEqual(stencila.date('2019-10-13T11:00:00.000Z'))
+  })
 })
 
-test('encode', async () => {
-  const outputs = path.join(__dirname, '__outputs__')
-  await fs.ensureDir(outputs)
-  const filePath = path.join(outputs, 'pdf-encode.pdf')
-  const doc = await encode(articleSimple, { ...defaultEncodeOptions, filePath })
-
-  expect(Buffer.isBuffer(doc.contents)).toBe(true)
-  expect(doc.contents.slice(0, 5).toString()).toBe('%PDF-')
+describe('round-trip', () => {
+  test('kitchen-sink', async () => {
+    const expected = await read(fixture('kitchen-sink.md'))
+    await write(expected, output('kitchen-sink.pdf'))
+    const actual = await read(output('kitchen-sink.pdf'))
+    expect(actual).toEqual(expected)
+  })
 })

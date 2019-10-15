@@ -3,6 +3,7 @@
  */
 
 import fs from 'fs-extra'
+import path from 'path'
 import getStdin from 'get-stdin'
 // @ts-ignore
 import toVFile from 'to-vfile'
@@ -96,15 +97,16 @@ export async function read(content: string): Promise<VFile> {
  * `vfile` has `contents`.
  *
  * @param vfile Virtual file to write
- * @param path The file system path to write to, or `-` to write to stdout.
+ * @param filePath The file system path to write to, or `-` to write to stdout.
  */
-export async function write(vfile: VFile, path: string): Promise<void> {
-  if (!path) throw new Error('Argument `path` is required')
+export async function write(vfile: VFile, filePath: string): Promise<void> {
+  if (!filePath) throw new Error('Argument `filePath` is required')
 
-  if (path === '-') {
+  if (filePath === '-') {
     console.log(await dump(vfile))
-  } else if (path && vfile.contents) {
-    vfile.path = path
+  } else if (filePath && vfile.contents) {
+    await fs.ensureDir(path.dirname(filePath))
+    vfile.path = filePath
     await toVFile.write(vfile)
   }
 }

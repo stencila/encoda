@@ -1,0 +1,44 @@
+<stencila xmlns="https://schema.stenci.la/0.29">
+    <array>
+        <null/>
+        <boolean>true</boolean>
+        <boolean>false</boolean>
+        <number>42</number>
+        <number>3.14</number>
+        <string>a string</string>
+        <string>with special characters &lt; &gt; &amp; "</string>
+        <array/>
+        <array>
+            <number>1</number>
+            <number>2</number>
+            <number>3</number>
+        </array>
+        <object/>
+        <object>
+            <number key="a">1</number>
+            <number key="b">2</number>
+            <number key="c">3</number>
+        </object>
+        <Person>
+            <array key="givenNames">
+                <string>Joe</string>
+                <string>Jake</string>
+            </array>
+            <array key="familyNames">
+                <string>Jones</string>
+            </array>
+        </Person>
+        <Article>
+            <array key="content">
+                <Paragraph>
+                    <array key="content">
+                        <CodeExpression>
+                            <string key="programmingLanguage">python</string>
+                            <string key="text">6 * 7</string>
+                        </CodeExpression>
+                    </array>
+                </Paragraph>
+            </array>
+        </Article>
+    </array>
+</stencila>
