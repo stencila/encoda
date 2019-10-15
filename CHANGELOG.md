@@ -1,3 +1,19 @@
+# [0.81.0](https://github.com/stencila/encoda/compare/v0.80.2...v0.81.0) (2019-10-15)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update thema to latest version ([ef4a82b](https://github.com/stencila/encoda/commit/ef4a82b))
+* **PDF:** Bundle when generating HTML to avoid local files being created. ([9c7c27f](https://github.com/stencila/encoda/commit/9c7c27f))
+* **PDF:** Embed node as XML; handle metadata ([10d11fb](https://github.com/stencila/encoda/commit/10d11fb))
+* **VFile:** When writing a file, ensure that the parent directory exists ([00ff27f](https://github.com/stencila/encoda/commit/00ff27f))
+
+
+### Features
+
+* **PDF:** Make reproducible using XMP metadata ([5bb8625](https://github.com/stencila/encoda/commit/5bb8625))
+* **XML:** Add XML codec ([0bba311](https://github.com/stencila/encoda/commit/0bba311))
+
 ## [0.80.2](https://github.com/stencila/encoda/compare/v0.80.1...v0.80.2) (2019-10-15)
 
 
