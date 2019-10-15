@@ -128,12 +128,13 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
     case 'array':
       return elements.map(decodeElem)
     default:
-      const node = elements
-        .map(child => {
-          const key = xml.attr(child, 'key') || ''
-          return { [key]: decodeElem(child) }
-        })
-        .reduce((prev, curr) => ({ ...prev, ...curr }), {})
+      const node = elements.reduce((prev, curr) => {
+        const key = xml.attr(curr, 'key') || ''
+        return {
+          ...prev,
+          [key]: decodeElem(curr)
+        }
+      }, {})
       return name === 'object' ? node : { type: name, ...node }
   }
 }
