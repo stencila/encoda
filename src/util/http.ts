@@ -54,6 +54,6 @@ export async function download(url: string, filePath: string): Promise<void> {
  *
  * @param url The URL to clear the cache for
  */
-export async function cacheDelete(url: string): Promise<boolean> {
+export function cacheDelete(url: string): boolean {
   return cache.delete('cacheable-request:GET:' + url)
 }

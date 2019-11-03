@@ -50,7 +50,7 @@ export class DarCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode: Codec['decode'] = async (
+  public decode: Codec['decode'] = (
     file: vfile.VFile
   ): Promise<stencila.Article | stencila.Collection> => {
     throw new Error('TODO: Not yet implemented')
@@ -157,7 +157,7 @@ async function encodeDocument(
  * Walks to Stencila `Node` and transforms any `MediaObject` nodes so
  * that they point to file assets within the DAR.
  */
-async function encodeDocumentAssets(
+function encodeDocumentAssets(
   node: stencila.Node,
   docId: string,
   darPath: string
@@ -174,7 +174,7 @@ async function encodeDocumentAssets(
       case 'MediaObject':
       case 'AudioObject':
       case 'ImageObject':
-      case 'VideoObject':
+      case 'VideoObject': {
         const mediaObject = node as stencila.MediaObject
         const id = `${docId}-${assets.length}`
         const [contentUrl, asset] = await encodeAsset(
@@ -187,6 +187,7 @@ async function encodeDocumentAssets(
           ...mediaObject,
           contentUrl
         }
+      }
     }
 
     for (const [key, child] of Object.entries(node)) {
@@ -195,7 +196,7 @@ async function encodeDocumentAssets(
     return node
   }
   const encoded = produce(node, walk) as stencila.Node
-  return { encoded, assets }
+  return Promise.resolve({ encoded, assets })
 }
 
 /**

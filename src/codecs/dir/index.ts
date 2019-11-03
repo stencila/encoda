@@ -183,6 +183,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
   public readonly encode = async (
     node: stencila.Node,
     options: EncodeOptions = this.defaultEncodeOptions
+    // eslint-disable-next-line @typescript-eslint/require-await
   ): Promise<vfile.VFile> => {
     const dirPath = options.filePath || tempy.directory()
     const format = options.format || 'html'

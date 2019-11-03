@@ -12,9 +12,10 @@ import { validate } from './util/validate'
  * This function walks through a node and updates it according to
  * any processing directives on the nodes.
  */
+// eslint-disable-next-line @typescript-eslint/require-await
 export default async function process(
   node: stencila.Node,
-  dir: string = ''
+  dir = ''
 ): Promise<stencila.Node> {
   // A dictionary of nodes assigned to by `import` and used
   // by other directives

@@ -29,7 +29,7 @@ export class XlsxCodec extends Codec implements Codec {
     return decodeWorkbook(workbook)
   }
 
-  public readonly encode = async (
+  public readonly encode = (
     node: stencila.Node,
     { format = 'xlsx' }: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
@@ -38,7 +38,7 @@ export class XlsxCodec extends Codec implements Codec {
       type: format === 'csv' ? 'string' : 'buffer',
       bookType: format as xlsx.BookType
     })
-    return vfile.load(buffer)
+    return Promise.resolve(vfile.load(buffer))
   }
 }
 
@@ -383,7 +383,7 @@ export function columnNameToIndex(name: string): number {
  * @param name The name of the cell
  */
 export function cellNameToPosition(name: string): [number, number] {
-  const match = name.match(cellNameRegEx)
+  const match = cellNameRegEx.exec(name)
   if (!match) throw new Error(`Unexpected cell name "${name}".`)
   const column = columnNameToIndex(match[1])
   const row = parseInt(match[2], 10) - 1
@@ -408,7 +408,7 @@ export function cellPositionToName(position: [number, number]): string {
  * @returns {[string, number]}
  */
 const parseRowAndColumn = (name: string): [string, number] => {
-  const match = name.match(cellNameRegEx)
+  const match = cellNameRegEx.exec(name)
   return match ? [match[1], parseInt(match[2], 10)] : ['A', 1]
 }
 

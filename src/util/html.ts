@@ -53,7 +53,7 @@ export const text = (elem: Node | null): string | null => {
  */
 export const first = (
   elem: HTMLElement | null,
-  selector: string = '*'
+  selector = '*'
 ): HTMLElement | null => {
   if (elem === null) return null
   return elem.querySelector(selector)
@@ -64,7 +64,7 @@ export const first = (
  */
 export const all = (
   elem: HTMLElement | null,
-  selector: string = '*'
+  selector = '*'
 ): HTMLElement[] => {
   if (elem === null) return []
   return Array.from(elem.querySelectorAll(selector))

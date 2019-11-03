@@ -27,11 +27,9 @@ export class DateCodec extends Codec implements Codec {
     return stencila.date(iso)
   }
 
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     let iso = stencila.isA('Date', node) ? node.value : ''
     if (iso.endsWith('T00:00:00.000Z')) iso = iso.substring(0, 10)
-    return vfile.load(iso)
+    return Promise.resolve(vfile.load(iso))
   }
 }

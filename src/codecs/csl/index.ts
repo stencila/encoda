@@ -56,7 +56,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    * See https://citation.js.org/api/tutorial-output_options.html
    * for formats and other options which could be used.
    */
-  public readonly encode = async (
+  public readonly encode = (
     node: stencila.Node,
     options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
@@ -76,7 +76,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
       logErrorNodeType('csl', 'encode', 'CreativeWork', node)
     }
 
-    return vfile.load(content)
+    return Promise.resolve(vfile.load(content))
   }
 }
 
@@ -167,7 +167,7 @@ const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
  * CSL-JSON's `non-dropping-particle` and `dropping-particle`
  * are not currently supported in `Person`.
  */
-const decodeAuthor = async (author: Csl.Person): Promise<stencila.Person> => {
+const decodeAuthor = (author: Csl.Person): Promise<stencila.Person> => {
   const { family, given, suffix, literal, ...lost } = author
 
   if (family === undefined && literal !== undefined) {
@@ -175,11 +175,13 @@ const decodeAuthor = async (author: Csl.Person): Promise<stencila.Person> => {
   }
 
   logWarnLossIfAny('csl', 'decode', author, lost)
-  return stencila.person({
-    familyNames: family !== undefined ? [family] : undefined,
-    givenNames: given !== undefined ? [given] : undefined,
-    honorificSuffix: suffix
-  })
+  return Promise.resolve(
+    stencila.person({
+      familyNames: family !== undefined ? [family] : undefined,
+      givenNames: given !== undefined ? [given] : undefined,
+      honorificSuffix: suffix
+    })
+  )
 }
 
 /**

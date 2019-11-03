@@ -301,7 +301,7 @@ function decodeMetaValue(
       return value.c
     case 'MetaString':
       if (value.c === '!!null') return null
-      if (value.c.slice(0, 9) === '!!number ') {
+      if (value.c.startsWith('!!number ')) {
         return parseFloat(value.c.slice(9))
       }
       return value.c
@@ -762,7 +762,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
       return decodeLink(node)
     case 'Cite':
       return decodeCite(node)
-    case 'Image':
+    case 'Image': {
       const image = decodeImage(node)
       // If the image is an rPNG then decode it and return
       // the embedded node
@@ -772,6 +772,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
         if (node !== undefined) return node as stencila.InlineContent
       }
       return image
+    }
     default:
       return decodeInlineToString(node)
   }

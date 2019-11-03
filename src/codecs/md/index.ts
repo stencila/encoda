@@ -68,11 +68,9 @@ export class MdCodec extends Codec implements Codec {
    * @param thing The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const md = encodeMarkdown(node)
-    return vfile.load(md)
+    return Promise.resolve(vfile.load(md))
   }
 }
 
@@ -231,7 +229,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
     case 'text':
       return decodeText(node as MDAST.Text)
     case 'inline-extension':
-    case 'block-extension':
+    case 'block-extension': {
       const ext = (node as unknown) as Extension
       switch (ext.name) {
         case 'chunk':
@@ -264,6 +262,7 @@ function decodeNode(node: UNIST.Node): stencila.Node {
           }
           return ''
       }
+    }
     case 'html':
       return decodeHTML(node as MDAST.HTML)
 
@@ -1133,9 +1132,10 @@ function decodeBoolean(ext: Extension): boolean {
       return true
     case 'false':
       return false
-    default:
+    default: {
       const value = ext.argument || ext.content || 'true'
       return !!(value === 'true' || value === '1')
+    }
   }
 }
 

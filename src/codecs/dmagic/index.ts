@@ -3,7 +3,7 @@
  */
 
 import stencila from '@stencila/schema'
-import { nodeType } from '@stencila/schema/dist/util'
+import { nodeType, isA } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import path from 'path'
 import { dump } from '../..'
@@ -28,8 +28,7 @@ export class DMagicCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public readonly decode = async (): Promise<stencila.Node> => {
+  public readonly decode = (): Promise<stencila.Node> => {
     throw new Error('Decoding of Demo Magic scripts is not supported.')
   }
 
@@ -67,31 +66,26 @@ let demoMagicSh: string | undefined
 async function encodeNode(node: stencila.Node): Promise<string> {
   if (node === null || typeof node !== 'object') return ''
 
-  switch (nodeType(node)) {
-    case 'Heading':
-      const heading = node as stencila.Heading
-      return `h ${heading.depth} "${await escapedMd(heading)}"\n\n`
-
-    case 'Paragraph':
-      return `p "# ${await escapedMd(node)}"\n\n`
-
-    case 'CodeBlock':
-      const block = node as stencila.CodeBlock
-      if (
-        block.programmingLanguage &&
-        (block.programmingLanguage !== 'bash' &&
-          block.programmingLanguage !== 'sh')
-      ) {
-        return ''
-      }
-      if (block.meta && block.meta.hidden === '') {
-        return `${block.text}\n`
-      }
-      let bash = `pe "${block.text}"\n`
-      if (block.meta) {
-        if (block.meta.pause) bash += `z ${block.meta.pause}\n`
-      }
-      return bash + '\n'
+  if (stencila.isA('Heading', node)) {
+    return `h ${node.depth} "${await escapedMd(node)}"\n\n`
+  } else if (stencila.isA('Paragraph', node)) {
+    return `p "# ${await escapedMd(node)}"\n\n`
+  } else if (stencila.isA('CodeBlock', node)) {
+    const { programmingLanguage, meta, text } = node
+    if (
+      programmingLanguage &&
+      (programmingLanguage !== 'bash' && programmingLanguage !== 'sh')
+    ) {
+      return ''
+    }
+    if (meta && meta.hidden === '') {
+      return `${text}\n`
+    }
+    let bash = `pe "${text}"\n`
+    if (meta) {
+      if (meta.pause) bash += `z ${meta.pause}\n`
+    }
+    return bash + '\n'
   }
 
   // For all other node types, recurse over their children

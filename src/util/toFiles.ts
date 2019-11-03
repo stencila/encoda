@@ -36,7 +36,7 @@ export async function toFiles(
         case 'MediaObject':
         case 'AudioObject':
         case 'ImageObject':
-        case 'VideoObject':
+        case 'VideoObject': {
           const { contentUrl, ...rest } = node as stencila.MediaObject
 
           if (contentUrl.startsWith('http')) {
@@ -57,6 +57,7 @@ export async function toFiles(
             ...rest,
             contentUrl: relPath
           }
+        }
       }
       return node
     }

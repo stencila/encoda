@@ -27,7 +27,7 @@ export default async function bundle(
         case 'MediaObject':
         case 'AudioObject':
         case 'ImageObject':
-        case 'VideoObject':
+        case 'VideoObject': {
           const { contentUrl, ...rest } = node as stencila.MediaObject
           if (
             !contentUrl.startsWith('http') &&
@@ -39,6 +39,7 @@ export default async function bundle(
               contentUrl: data.dataUri
             }
           }
+        }
       }
       return node
     }

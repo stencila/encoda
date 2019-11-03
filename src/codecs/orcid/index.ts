@@ -20,15 +20,15 @@ export class OrcidCodec extends Codec implements Codec {
 
   public static apiVersion = 'v3.0'
 
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    return OrcidCodec.regex.test(content)
+  public readonly sniff = (content: string): Promise<boolean> => {
+    return Promise.resolve(OrcidCodec.regex.exec(content) !== null)
   }
 
   public readonly decode = async (
     file: vfile.VFile | string
   ): Promise<stencila.Node> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
-    const match = content.match(OrcidCodec.regex)
+    const match = OrcidCodec.regex.exec(content)
     if (match) {
       const orcid = match[4]
       try {
@@ -49,7 +49,7 @@ export class OrcidCodec extends Codec implements Codec {
     return stencila.person()
   }
 
-  public readonly encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to an ORCID is not yet implemented`)
   }
 }

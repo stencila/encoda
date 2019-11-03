@@ -83,7 +83,7 @@ export const decodeDoc = (doc: xml.Element): stencila.Node | undefined => {
  */
 export const encodeDoc = async (
   node: stencila.Node,
-  standalone: boolean = false
+  standalone = false
 ): Promise<xml.Element> => {
   const root = encodeNode(node)
 
@@ -127,7 +127,7 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
       return xml.text(elem)
     case 'array':
       return elements.map(decodeElem)
-    default:
+    default: {
       const node = elements.reduce((prev, curr) => {
         const key = xml.attr(curr, 'key') || ''
         return {
@@ -136,6 +136,7 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
         }
       }, {})
       return name === 'object' ? node : { type: name, ...node }
+    }
   }
 }
 

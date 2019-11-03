@@ -90,12 +90,10 @@ export class JatsCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const doc = encodeDocument(node)
     const jats = xml.dump(doc, { spaces: 4 })
-    return vfile.load(jats)
+    return Promise.resolve(vfile.load(jats))
   }
 }
 /**
@@ -181,8 +179,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
 function decodeTitle(elem: xml.Element | null): string | stencila.Node[] {
   if (elem === null) return 'Untitled'
   const nodes = decodeElement(elem, initialDecodeState())
-  if (nodes.length === 1 && typeof nodes[0] === 'string')
-    return nodes[0] as string
+  if (nodes.length === 1 && typeof nodes[0] === 'string') return nodes[0]
   else return nodes
 }
 
@@ -254,7 +251,7 @@ function decodeAuthor(
   if (affRefs.length) {
     person.affiliations = affRefs
       .map(ref => {
-        const id = ref.attributes && ref.attributes['rid']
+        const id = ref.attributes && ref.attributes.rid
         const aff = first(article, 'aff', { id: id })
         if (!aff) {
           log.warn(`Could not find <aff id=${id}>`)
@@ -514,7 +511,7 @@ function encodeReference(
     }
 
     if (stencila.isA('PublicationIssue', work.isPartOf)) {
-      const pi = work.isPartOf as stencila.PublicationIssue
+      const pi = work.isPartOf
 
       if (pi.pageStart !== undefined) {
         subElements.push(elem('fpage', `${pi.pageStart}`))
@@ -539,7 +536,7 @@ function encodeReference(
         }
       }
     } else if (stencila.isA('PublicationVolume', work.isPartOf)) {
-      const pv = work.isPartOf as stencila.PublicationVolume
+      const pv = work.isPartOf
 
       if (pv.title !== undefined)
         subElements.push(elem('source', ...encodeNodes(pv.title)))
@@ -723,23 +720,25 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMark(node as stencila.Subscript, state, 'sub')
     case 'Figure':
       return encodeFigure(node as stencila.Figure, state)
-    case 'ImageObject':
+    case 'ImageObject': {
       const im = node as stencila.ImageObject
       return encodeMedia(
         im,
         im.meta && im.meta.inline ? 'inline-graphic' : 'graphic'
       )
+    }
     case 'MediaObject':
       return encodeMedia(node as stencila.ImageObject, 'media')
     case 'Cite':
       return encodeCite(node as stencila.Cite, state)
     case 'string':
       return [{ type: 'text', text: node as string }]
-    case 'Collection':
+    case 'Collection': {
       const collection = node as stencila.Collection
       if (collection.meta && collection.meta.usage === 'figGroup') {
         return encodeFigGroup(collection, state)
       }
+    }
     // fallthrough expected if not a figGroup
     default:
       log.warn(
@@ -1242,7 +1241,7 @@ function applyMimetype(media: stencila.MediaObject, attrs: Attributes): void {
 
   const jatsType = splitMimetype(media.format)
   if (jatsType.mimetype) {
-    attrs['mimetype'] = jatsType.mimetype
+    attrs.mimetype = jatsType.mimetype
   }
   if (jatsType.mimeSubtype) {
     attrs['mime-subtype'] = jatsType.mimeSubtype
@@ -1272,10 +1271,10 @@ function decodeGraphic(
   const meta: { [key: string]: any } = { inline }
 
   const linkType = attr(elem, 'xlink:type')
-  if (linkType) meta['linkType'] = linkType
+  if (linkType) meta.linkType = linkType
 
   const usage = attr(elem, 'specific-use')
-  if (usage) meta['usage'] = usage
+  if (usage) meta.usage = usage
 
   return [
     stencila.imageObject(attr(elem, 'xlink:href') || '', {

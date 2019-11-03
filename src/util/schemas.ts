@@ -109,7 +109,7 @@ export async function getSchema<Key extends keyof stencila.Types>(
  * Load a schema based on its URI
  */
 export async function loadSchema(uri: string): Promise<stencila.Schema> {
-  const match = uri.match(/([\w]+)\.schema\.json$/)
+  const match = /([\w]+)\.schema\.json$/.exec(uri)
   if (match) return getSchema(match[1] as keyof stencila.Types)
   throw new Error(`Can not resolve schema "${uri}"`)
 }
@@ -175,7 +175,7 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
   try {
     codec = await match(undefined, codecName)
   } catch (error) {
-    if (/^No codec could be found/.test(error.message)) {
+    if (error.message.startsWith('No codec could be found')) {
       log.warn(error.message)
       return true
     } else throw error

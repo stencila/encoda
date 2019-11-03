@@ -16,10 +16,8 @@ export class JsonCodec extends Codec implements Codec {
     return JSON.parse(await vfile.dump(file))
   }
 
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const ordered = orderProperties(node)
-    return vfile.load(JSON.stringify(ordered, null, '  '))
+    return Promise.resolve(vfile.load(JSON.stringify(ordered, null, '  ')))
   }
 }

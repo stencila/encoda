@@ -121,6 +121,7 @@ interface PdfMetadata {
  */
 const decodeMetadata = async (
   metadata: PdfMetadata
+  // eslint-disable-next-line @typescript-eslint/require-await
 ): Promise<stencila.CreativeWork> => {
   const { title, authors, keywords, dateCreated, dateModified } = metadata
 
@@ -168,7 +169,7 @@ const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
 
   if (authors !== undefined) {
     authors = await Promise.all(
-      authors.map(async author => {
+      authors.map(author => {
         if (stencila.isA('Person', author)) return dump(author, 'person')
         else return author.name || author.legalName || ''
       })
@@ -209,18 +210,18 @@ const creatorTool = 'Stencila Encoda https://github.com/stencila/encoda'
  *
  * @param pdf The PDF document to decode XMP metadata from
  */
-async function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | undefined> {
+function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | void> {
   let metadata
   try {
     metadata = pdf.catalog.lookup(PDFName.of('Metadata'), PDFStream)
-    if (metadata === undefined) return
+    if (metadata === undefined) return Promise.resolve()
   } catch {
-    return
+    return Promise.resolve()
   }
 
   const xmpContent = metadata.getContentsString()
   const xmp = xml.load(xmpContent) as xml.Element
-  return decodeXmlDoc(xmp)
+  return Promise.resolve(decodeXmlDoc(xmp))
 }
 
 /**
@@ -341,7 +342,7 @@ function decodeInfoDict(pdf: PDFDocument): PdfMetadata {
   const extractDate = (name: string): Date | undefined => {
     const str = extractValue(name)
     if (str === undefined) return
-    const match = str.match(/D:(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})Z/)
+    const match = /D:(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})Z/.exec(str)
     if (match === null) return
     const iso = `${match[1]}-${match[2]}-${match[3]}T${match[4]}:${match[5]}:${match[6]}Z`
     try {

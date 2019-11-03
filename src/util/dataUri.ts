@@ -27,7 +27,7 @@ export async function toFile(
   dataUri: string,
   filePath?: string
 ): Promise<{ mediaType: string; filePath: string }> {
-  const match = dataUri.match(DATA_URI_REGEX)
+  const match = DATA_URI_REGEX.exec(dataUri)
   if (!match) return { mediaType: '', filePath: '' }
 
   const mediaType = match[1]

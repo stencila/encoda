@@ -11,7 +11,7 @@ const ipynb2json = async (name: string) => {
   const node = await ipynb.decode(await vfile.read(fixture(name)))
   // Unlink to remove references to temporary files which will change
   // between test runs
-  const unlinked = await unlink(node)
+  const unlinked = unlink(node)
   return vfile.dump(await json.encode(unlinked))
 }
 

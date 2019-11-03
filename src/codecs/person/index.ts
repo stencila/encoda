@@ -19,8 +19,8 @@ export class PersonCodec extends Codec implements Codec {
 
   public static regex = /^\s*[A-Z][a-z.]*(\s+[A-Z][a-z.]*)+(\s+<[\w-_@.]+>)?\s*$/
 
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    return PersonCodec.regex.test(content)
+  public readonly sniff = (content: string): Promise<boolean> => {
+    return Promise.resolve(PersonCodec.regex.exec(content) !== null)
   }
 
   /**
@@ -37,7 +37,7 @@ export class PersonCodec extends Codec implements Codec {
     // If there appears to be an ORCID, use that.
     // Use the `OrcidCodec` regex but remove the start and end anchors to match
     // an ORCID anywhere in the string
-    const match = content.match(OrcidCodec.regex.source.slice(1, -1))
+    const match = new RegExp(OrcidCodec.regex.source.slice(1, -1)).exec(content)
     if (match) {
       try {
         const orcid = new OrcidCodec()
@@ -75,9 +75,7 @@ export class PersonCodec extends Codec implements Codec {
    * @param node The `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     let content = ''
 
     if (stencila.isA('Person', node)) {
@@ -96,6 +94,6 @@ export class PersonCodec extends Codec implements Codec {
       )
     }
 
-    return vfile.load(content)
+    return Promise.resolve(vfile.load(content))
   }
 }

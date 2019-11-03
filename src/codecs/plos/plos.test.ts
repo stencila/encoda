@@ -13,7 +13,7 @@ const plos2yaml = async (article: string) => {
   const node = await decode(await vfile.load(`10.1371/journal.${article}`))
   done()
   // Unlink to remove references to local files (which are non-deterministric)
-  const unlinked = await unlink(node)
+  const unlinked = unlink(node)
   // Convert to YAML
   return await vfile.dump(await yaml.encode(unlinked))
 }

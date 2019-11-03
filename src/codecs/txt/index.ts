@@ -40,9 +40,7 @@ export class TxtCodec extends Codec implements Codec {
    * @param node The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const encode = (node: stencila.Node): string => {
       if (node === null) return 'null'
       if (typeof node === 'string') return node
@@ -53,6 +51,6 @@ export class TxtCodec extends Codec implements Codec {
           .join(' ')
       return node.toString()
     }
-    return vfile.load(encode(node))
+    return Promise.resolve(vfile.load(encode(node)))
   }
 }

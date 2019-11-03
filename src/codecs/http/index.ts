@@ -17,8 +17,8 @@ export class HTTPCodec extends Codec implements Codec {
   /**
    * Sniff content to see if it is a HTTP/S URL
    */
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    return /^https?:\/\//.test(content)
+  public readonly sniff = (content: string): Promise<boolean> => {
+    return Promise.resolve(/^https?:\/\//.exec(content) !== null)
   }
 
   /**
@@ -71,7 +71,7 @@ export class HTTPCodec extends Codec implements Codec {
    * It is not possible to encode to a HTTP URL so this
    * function simply throws an error
    */
-  public readonly encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = (): Promise<vfile.VFile> => {
     throw new Error(`Unable to encode to HTTP`)
   }
 }

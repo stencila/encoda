@@ -13,7 +13,7 @@ export default log
  *
  * @param debug In debug mode?
  */
-export const configure = (debug: boolean = false): void => {
+export const configure = (debug = false): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
     logga.defaultHandler(data, {
       level: debug ? logga.LogLevel.debug : logga.LogLevel.info,

@@ -15,15 +15,15 @@ const jats = new JatsCodec()
 export class ElifeCodec extends Codec implements Codec {
   private static regex = /^\s*((elife\s*:?\s*)|(https?:\/\/elifesciences\.org\/articles\/))(\d{5})(v(\d))?\s*$/i
 
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    return ElifeCodec.regex.test(content)
+  public readonly sniff = (content: string): Promise<boolean> => {
+    return Promise.resolve(ElifeCodec.regex.exec(content) !== null)
   }
 
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
-    const match = content.match(ElifeCodec.regex)
+    const match = ElifeCodec.regex.exec(content)
     if (!match) throw new Error('Unable to parse content')
 
     const article = match[4]
@@ -70,7 +70,7 @@ export class ElifeCodec extends Codec implements Codec {
     return jats.decode(vfile.load(jatsNew))
   }
 
-  public readonly encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to an eLife article is not yet implemented`)
   }
 }

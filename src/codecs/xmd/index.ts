@@ -6,7 +6,7 @@ import * as stencila from '@stencila/schema'
 import { dump, load } from '../..'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
-import transform from '../../util/transform'
+import { transformSync } from '../../util/transform'
 
 export class XmdCodec extends Codec implements Codec {
   public readonly extNames = ['xmd', 'rmd']
@@ -54,9 +54,9 @@ export class XmdCodec extends Codec implements Codec {
   public readonly encode = async (
     node: stencila.Node
   ): Promise<vfile.VFile> => {
-    const transformed = await transform(
+    const transformed = transformSync(
       node,
-      async (node: stencila.Node): Promise<stencila.Node> => {
+      (node: stencila.Node): stencila.Node => {
         if (stencila.isA('CodeExpression', node)) {
           const { text, programmingLanguage } = node
           return stencila.codeFragment(

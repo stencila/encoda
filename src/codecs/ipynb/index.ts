@@ -8,6 +8,7 @@ import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import { isEntity, nodeType } from '@stencila/schema/dist/util'
 import Ajv from 'ajv'
+import jsonSchemaDraft04 from 'ajv/lib/refs/json-schema-draft-04.json'
 import betterAjvErrors from 'better-ajv-errors'
 import { dump, load } from '../..'
 import * as dataUri from '../../util/dataUri'
@@ -134,7 +135,7 @@ const validators = new Ajv({
   // For better error reporting
   jsonPointers: true
 })
-validators.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'))
+validators.addMetaSchema(jsonSchemaDraft04)
 
 /**
  * Validate a notebook against a version of `nbformat` JSON Schema
@@ -144,7 +145,7 @@ validators.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'))
  * information for debugging other subsequent errors wth decoding
  * if a notebook is corrupted.
  */
-async function validateNotebook(
+function validateNotebook(
   notebook: nbformat3.Notebook | nbformat4.Notebook
 ): Promise<void> {
   const schemaKey = `nbformat-v${notebook.nbformat}.schema.json`
@@ -170,6 +171,7 @@ async function validateNotebook(
     ) as unknown) as string
     log.warn(`Notebook is not valid:\n${message}`)
   }
+  return Promise.resolve()
 }
 
 /**
@@ -241,20 +243,20 @@ async function decodeMetadata(
   meta: { [key: string]: unknown }
 }> {
   // Extract handled properties
-  let { title = 'Untitled', authors = [], ...rest } = metadata
+  const { title = 'Untitled', authors = [], ...rest } = metadata
 
   // Decode authors to `Person` nodes
-  authors = await Promise.all(
-    authors.map(async (author: string | object) => {
+  const people = authors.map(
+    async (author: string | object): Promise<stencila.Person> => {
       return typeof author === 'string'
-        ? load(author, 'person')
+        ? (load(author, 'person') as Promise<stencila.Person>)
         : coerce(author, 'Person')
-    })
+    }
   )
 
   return {
     title,
-    authors,
+    authors: await Promise.all(people),
     meta: { ...rest }
   }
 }
@@ -265,7 +267,7 @@ async function decodeMetadata(
 async function decodeCells(
   cells: (nbformat.v3.Cell | nbformat4.Cell)[],
   version: nbformat.Version = 4,
-  language: string = 'python'
+  language = 'python'
 ): Promise<stencila.BlockContent[]> {
   const blocks: stencila.BlockContent[] = []
   for (const cell of cells) {
@@ -362,7 +364,7 @@ async function encodeMarkdownCell(
 async function decodeCodeCell(
   cell: nbformat3.CodeCell | nbformat4.CodeCell,
   version: nbformat.Version = 4,
-  language: string = 'python'
+  language = 'python'
 ): Promise<stencila.CodeChunk> {
   const { metadata, outputs } = cell
 
@@ -428,7 +430,7 @@ async function decodeOutputs(
   return nodes
 }
 
-async function decodeOutput(
+function decodeOutput(
   output: nbformat3.Output | nbformat4.Output,
   version: nbformat.Version = 4
 ): Promise<stencila.Node> {
@@ -455,15 +457,15 @@ async function decodeOutput(
     case 'error':
     case 'pyerr':
       // TODO: decode error
-      return ''
+      return Promise.resolve('')
     default:
       // The above should handle all output types but in case of an invalid
       // type, instead of throwing an error, return a JSON code block of output
-      return {
-        type: 'CodeBlock',
-        programmingLanguage: 'json',
-        value: JSON.stringify(output)
-      }
+      return Promise.resolve(
+        stencila.codeBlock(JSON.stringify(output), {
+          programmingLanguage: 'json'
+        })
+      )
   }
 }
 
@@ -475,7 +477,7 @@ async function decodeOutput(
  * So, we don't try to revert to the source that may have been in the `ipynb` originally.
  * Instead, we use the convention of encoding `string`s as `Stream` outputs.
  */
-async function encodeOutputs(
+function encodeOutputs(
   chunk: stencila.CodeChunk,
   nodes: stencila.Node[]
 ): Promise<nbformat4.Output[]> {
@@ -499,10 +501,10 @@ async function encodeOutputs(
 /**
  * Encode a `string` that is a `CodeChunk` `output` as a Jupyter `Stream`.
  */
-async function encodeStream(
+function encodeStream(
   chunk: stencila.CodeChunk,
   node: stencila.Node
-): Promise<nbformat4.Stream> {
+): nbformat4.Stream {
   return {
     output_type: 'stream',
     name: 'stdout',
@@ -615,13 +617,14 @@ async function encodeMimeBundle(
     switch (nodeType(node)) {
       case 'string':
         return ['text/plain', await dump(node, 'text')]
-      case 'ImageObject':
+      case 'ImageObject': {
         const image = node as stencila.ImageObject
         const { mediaType, dataUri: dataUrl } = await dataUri.fromFile(
           image.contentUrl
         )
         const data = dataUrl.split('base64,').pop() || ''
         return [mediaType, data]
+      }
     }
     return ['text/html', await dump(node, 'html')]
   })()

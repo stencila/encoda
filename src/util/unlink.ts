@@ -3,7 +3,7 @@
  */
 
 import * as stencila from '@stencila/schema'
-import transform from './transform'
+import { transformSync } from './transform'
 
 /**
  * Transform a `Node` by removing any links to local resources.
@@ -15,17 +15,15 @@ import transform from './transform'
  *
  * @see bundle
  */
-export default async function unlink(
-  node: stencila.Node
-): Promise<stencila.Node> {
-  return transform(
+export default function unlink(node: stencila.Node): stencila.Node {
+  return transformSync(
     node,
-    async (node: stencila.Node): Promise<stencila.Node> => {
+    (node: stencila.Node): stencila.Node => {
       switch (stencila.nodeType(node)) {
         case 'MediaObject':
         case 'AudioObject':
         case 'ImageObject':
-        case 'VideoObject':
+        case 'VideoObject': {
           const { contentUrl, ...rest } = node as stencila.MediaObject
           if (
             !contentUrl.startsWith('http') &&
@@ -36,6 +34,7 @@ export default async function unlink(
               contentUrl: ''
             }
           }
+        }
       }
       return node
     }

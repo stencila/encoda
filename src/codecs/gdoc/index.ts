@@ -50,12 +50,10 @@ export class GDocCodec extends Codec<{}, DecodeOptions>
    * @param node The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const gdoc = encodeNode(node)
     const json = JSON.stringify(gdoc, null, '  ')
-    return vfile.load(json)
+    return Promise.resolve(vfile.load(json))
   }
 }
 
@@ -88,7 +86,7 @@ let decodingFetcher: (url: string) => string
 class FetchToFile {
   private requests: Promise<void>[] = []
 
-  public get(url: string, ext: string = ''): string {
+  public get(url: string, ext = ''): string {
     const filePath =
       crypto
         .createHash('md5')
@@ -111,7 +109,9 @@ class FetchToSame {
     return url
   }
 
-  public async resolve(): Promise<void> {}
+  public resolve(): Promise<void> {
+    return Promise.resolve()
+  }
 }
 
 /**
@@ -204,28 +204,31 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
   let content: stencila.Node[] = []
   switch (nodeType(node)) {
     // `CreativeWork` types (have `content`)
-    case 'Article':
+    case 'Article': {
       const article = node as stencila.Article
       gdoc.title = stringifyContent(article.title || '')
       content = article.content || []
       break
+    }
     // `BlockContent` types
     case 'Heading':
     case 'Paragraph':
     case 'CodeBlock':
     case 'List':
     case 'Table':
-    case 'ThematicBreak':
+    case 'ThematicBreak': {
       content = [node]
       break
+    }
     // Everything else is wrapped into a `Paragraph`
-    default:
+    default: {
       const para: stencila.Paragraph = {
         type: 'Paragraph',
         // TODO: avoid this use of `as`
         content: [node as stencila.InlineContent]
       }
       content = [para]
+    }
   }
 
   if (content) {
@@ -273,7 +276,7 @@ function decodeParagraph(
   if (para.paragraphStyle) {
     const styleType = para.paragraphStyle.namedStyleType
     if (styleType) {
-      const match = styleType.match(/^HEADING_(\d)$/)
+      const match = /^HEADING_(\d)$/.exec(styleType)
       if (match) {
         return {
           type: 'Heading',

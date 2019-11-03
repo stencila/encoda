@@ -94,7 +94,7 @@ export class JsonLdCodec extends Codec implements Codec {
     const { '@context': context, '@reverse': reverse, ...rest } = compacted
 
     // Transform tree to better match Stencila schema
-    const transformed = await transform(rest, async (node, path) => {
+    const transformed = await transform(rest, node => {
       if (!stencila.isPrimitive(node)) {
         const type = stencila.nodeType(node)
         if (type === 'parray') {
@@ -149,9 +149,7 @@ export class JsonLdCodec extends Codec implements Codec {
     return coerced
   }
 
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     // If necessary, wrap primitive nodes into a https://schema.org/PropertyValue
     const content = stencila.isEntity(node)
       ? node
@@ -169,6 +167,6 @@ export class JsonLdCodec extends Codec implements Codec {
       '  '
     )
 
-    return vfile.load(jsonld)
+    return Promise.resolve(vfile.load(jsonld))
   }
 }

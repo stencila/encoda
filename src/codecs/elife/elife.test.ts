@@ -13,7 +13,7 @@ const elife2yaml = async (article: string) => {
   const node = await decode(await vfile.load(`elife: ${article}`))
   done()
   // Unlink to remove references to local files (which are non-deterministric)
-  const unlinked = await unlink(node)
+  const unlinked = unlink(node)
   // Convert to YAML
   return await vfile.dump(await yaml.encode(unlinked))
 }

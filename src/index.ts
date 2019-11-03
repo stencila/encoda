@@ -94,7 +94,7 @@ export const codecList: string[] = [
 export async function match(
   content?: string,
   format?: string,
-  isOutput: boolean = false
+  isOutput = false
 ): Promise<Codec> {
   // Resolve variables used to match a codec...
   let fileName

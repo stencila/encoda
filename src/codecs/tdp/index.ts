@@ -26,11 +26,9 @@ export class TDPCodec extends Codec implements Codec {
     'tdp'
   ]
 
-  // TODO: Refactor to remove use of any
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-
   public readonly decode = async (
     file: vfile.VFile
+    // eslint-disable-next-line @typescript-eslint/require-await
   ): Promise<stencila.Node> => {
     let pkg: datapackage.Package
     if (file.path) {

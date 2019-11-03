@@ -34,9 +34,7 @@ export class Json5Codec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
-    return vfile.load(json5.stringify(node, null, '  '))
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
+    return Promise.resolve(vfile.load(json5.stringify(node, null, '  ')))
   }
 }

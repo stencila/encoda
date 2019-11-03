@@ -81,16 +81,14 @@ export class CsvCodec extends Codec implements Codec {
     return stencila.datatable(columns)
   }
 
-  public readonly encode = async (
-    node: stencila.Node
-  ): Promise<vfile.VFile> => {
+  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     if (!stencila.isA('Datatable', node)) {
       log.error(
         `When encoding to CSV expected a Datatable, but got a ${stencila.nodeType(
           node
         )}`
       )
-      return vfile.create()
+      return Promise.resolve(vfile.create())
     }
 
     // Transform column-wise data to row-wise
@@ -108,6 +106,6 @@ export class CsvCodec extends Codec implements Codec {
     const fields = node.columns.map(column => column.name)
     const csv = papaparse.unparse({ fields, data })
 
-    return vfile.load(csv)
+    return Promise.resolve(vfile.load(csv))
   }
 }

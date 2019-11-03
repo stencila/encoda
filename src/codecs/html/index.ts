@@ -10,8 +10,7 @@ import {
   isCreativeWork,
   markTypes,
   nodeType,
-  isInlineContent,
-  isA
+  isInlineContent
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import { themePath, themes } from '@stencila/thema'
@@ -366,7 +365,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
       return decodeText(node as Text)
   }
 
-  const match = name.match(/^h(\d)$/)
+  const match = /^h(\d)$/.exec(name)
   if (match) {
     return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
   }
@@ -472,7 +471,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
  * optionally custom CSS to style the document with.
  */
 function generateHtmlElement(
-  title: string = 'Untitled',
+  title = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Node[] = [],
   options: GlobalEncodeOptions = defaultEncodeOptions
@@ -813,7 +812,7 @@ function encodePerson(
   person: stencila.Person,
   organizations: { [key: string]: [number, stencila.Organization] },
   tag?: keyof HTMLElementTagNameMap,
-  property: string = 'author'
+  property = 'author'
 ): HTMLElement {
   const {
     name,
@@ -1011,7 +1010,7 @@ function encodeQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
 }
 
 // Regex to test if a string is a URL. Thanks to https://stackoverflow.com/a/3809435
-var urlRegex = new RegExp(
+const urlRegex = new RegExp(
   /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi
 )
 
@@ -1524,7 +1523,7 @@ function decodeCodeFragment(elem: HTMLElement): stencila.CodeFragment {
   const codeFrag = stencila.codeFragment(elem.textContent || '')
   const clas = elem.getAttribute('class')
   if (clas) {
-    const match = clas.match(/^language-(\w+)$/)
+    const match = /^language-(\w+)$/.exec(clas)
     if (match) {
       codeFrag.programmingLanguage = match[1]
     }
@@ -1539,7 +1538,7 @@ function decodeCodeFragment(elem: HTMLElement): stencila.CodeFragment {
  */
 function encodeCodeFragment(
   code: stencila.CodeFragment,
-  dataAttrs: boolean = true
+  dataAttrs = true
 ): HTMLElement {
   return h('code', {
     class: code.programmingLanguage
@@ -1572,7 +1571,7 @@ function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
  */
 function encodeImageObject(
   image: stencila.ImageObject,
-  property: string = 'image'
+  property = 'image'
 ): HTMLImageElement {
   const { contentUrl, title, text } = image
   return h('img', {

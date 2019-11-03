@@ -1,7 +1,7 @@
 /**
  * Compiler for a Digital Object Identifier (DOI) URL i.e. `http[s]://doi.org/<DOI>`
  */
-
+import stencila from '@stencila/schema'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { decodeCsl } from '../csl'
@@ -17,7 +17,9 @@ export class CrossrefCodec extends Codec implements Codec {
    *
    * See https://www.crossref.org/labs/resolving-citations-we-dont-need-no-stinkin-parser/
    */
-  public readonly decode = async (file: vfile.VFile) => {
+  public readonly decode = async (
+    file: vfile.VFile
+  ): Promise<stencila.node> => {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
       query: {
@@ -48,7 +50,7 @@ export class CrossrefCodec extends Codec implements Codec {
     throw new Error(`Request failed`)
   }
 
-  public readonly encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to a Crossref query is not supported`)
   }
 }

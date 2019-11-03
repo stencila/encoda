@@ -26,7 +26,7 @@ export class RnbCodec extends Codec implements Codec {
       const stat = await fs.stat(content)
       if (stat.isFile()) content = await fs.readFile(content, 'utf8')
     }
-    return /id="rmd-source-code"/.test(content)
+    return content.includes('id="rmd-source-code"')
   }
 
   /**
@@ -191,7 +191,7 @@ export class RnbCodec extends Codec implements Codec {
     return { ...article, content }
   }
 
-  public readonly encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to a R Notebook is not yet implemented`)
   }
 }

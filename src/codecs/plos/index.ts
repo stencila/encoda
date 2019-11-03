@@ -13,8 +13,8 @@ const jats = new JatsCodec()
 export class PlosCodec extends Codec implements Codec {
   private static regex = /^\s*((doi\s*:?\s*)|(https?:\/\/doi.org\/)|(https:\/\/journals\.plos\.org\/([a-z]+)\/article\?id=))?(10\.1371\/journal\.([a-z]+)\.\d+)\s*$/i
 
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    return PlosCodec.regex.test(content)
+  public readonly sniff = (content: string): Promise<boolean> => {
+    return Promise.resolve(PlosCodec.regex.exec(content) !== null)
   }
 
   /**
@@ -27,7 +27,7 @@ export class PlosCodec extends Codec implements Codec {
     journal: string
     doi: string
   } => {
-    const match = identifier.match(PlosCodec.regex)
+    const match = PlosCodec.regex.exec(identifier)
     if (!match)
       throw new Error(`Unable to parse identifier as PLoS DOI: "${identifier}"`)
 
@@ -97,7 +97,7 @@ export class PlosCodec extends Codec implements Codec {
     return jats.decode(vfile.load(jatsNew))
   }
 
-  public readonly encode = async (): Promise<vfile.VFile> => {
+  public readonly encode = (): Promise<vfile.VFile> => {
     throw new Error(`Encoding to a PLoS article is not yet implemented`)
   }
 }

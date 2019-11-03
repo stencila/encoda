@@ -37,7 +37,7 @@ export const executablePath = isPackaged
 const logger = getLogger('encoda:puppeteer')
 
 let browser: puppeteer.Browser | undefined
-var lock = new AsyncLock()
+const lock = new AsyncLock()
 
 /**
  * Startup the browser if it isn't already.
@@ -92,4 +92,8 @@ export async function shutdown(): Promise<void> {
 // We use `beforeExit` because async operations are not supported
 // by `exit`.
 // See https://nodejs.org/api/process.html#process_event_beforeexit
-process.on('beforeExit', shutdown)
+process.on('beforeExit', () => {
+  shutdown().catch(error => {
+    throw error
+  })
+})
