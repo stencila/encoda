@@ -1,8 +1,9 @@
-CHANGELOG.md
-coverage
-src/codecs/**/README.md
-dist
-node_modules
 __file_snapshots__
 __fixtures__
 __outputs__
+.sandbox
+CHANGELOG.md
+coverage
+dist
+node_modules
+src/codecs/**/README.md

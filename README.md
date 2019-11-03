@@ -14,22 +14,20 @@
 
 <!-- toc -->
 
-- [Encoda](#encoda)
-        - [Codecs for structured, semantic, composable, and executable documents](#codecs-for-structured-semantic-composable-and-executable-documents)
-  - [Introduction](#introduction)
-  - [Formats](#formats)
-  - [Publishers](#publishers)
-  - [Install](#install)
-  - [Use](#use)
-    - [Converting files](#converting-files)
-    - [Converting folders](#converting-folders)
-    - [Converting command line input](#converting-command-line-input)
-    - [Creating zip archives](#creating-zip-archives)
-  - [Documentation](#documentation)
-  - [Develop](#develop)
-  - [Contribute](#contribute)
-  - [Contributors](#contributors)
-  - [Acknowledgments](#acknowledgments)
+- [Introduction](#introduction)
+- [Formats](#formats)
+- [Publishers](#publishers)
+- [Install](#install)
+- [Use](#use)
+  - [Converting files](#converting-files)
+  - [Converting folders](#converting-folders)
+  - [Converting command line input](#converting-command-line-input)
+  - [Creating zip archives](#creating-zip-archives)
+- [Documentation](#documentation)
+- [Develop](#develop)
+- [Contribute](#contribute)
+- [Contributors](#contributors)
+- [Acknowledgments](#acknowledgments)
 
 <!-- tocstop -->
 
@@ -78,7 +76,7 @@ Encoda provides a collection of codecs for converting between, and composing tog
 | YAML                        | [yaml]        | Native   | ✔      | [⚠][yaml-issues]        | ![][yaml-cov]        |
 | Pandoc                      | [pandoc]      | Native   | β      | [⚠][pandoc-issues]      | ![][pandoc-cov]      |
 | Reproducible PNG            | [rpng]        | Native   | β      | [⚠][rpng-issues]        | ![][rpng-cov]        |
-| XML                         | [xml]         | Native   | ✔      |                         | ![][xml-cov]        |
+| XML                         | [xml]         | Native   | ✔      |                         | ![][xml-cov]         |
 | **Transport**               |
 | HTTP                        | [http]        |          | ✔      | [⚠][http-issues]        | ![][http-cov]        |
 
@@ -222,15 +220,15 @@ encoda convert paragraph.md - --to yaml
 
 Use the `--zip` option to create a Zip archive with the outputs of conversion. With `--zip=yes` a zip archive will always be created. With `--zip=maybe`, a zip archive will be created if there are more than two output files. This can be useful for formats such as HTML and Markdown, for which images and other media are stored in a sibling folder.
 
-| Option         | Description                                                                                              |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| `--from`       | The format of the input content e.g. `--from md`                                                         |
-| `--to`         | The format for the output content e.g. `--to html`                                                       |
-| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                |
-| `--standalone` | Generate a standalone document, not a fragment (default `true`)                                          |
-| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                           |
+| Option         | Description                                                                                                |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| `--from`       | The format of the input content e.g. `--from md`                                                           |
+| `--to`         | The format for the output content e.g. `--to html`                                                         |
+| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                  |
+| `--standalone` | Generate a standalone document, not a fragment (default `true`)                                            |
+| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                             |
 | `--zip`        | Create `.zip` archive containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
-| `--debug`      | Print debugging information                                                                              |
+| `--debug`      | Print debugging information                                                                                |
 
 ## Documentation
 
