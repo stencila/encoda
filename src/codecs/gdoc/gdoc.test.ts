@@ -1,6 +1,6 @@
 import * as stencila from '@stencila/schema'
-import {fixture, snapshot} from '../../__tests__/helpers'
-import {read, dump} from '../..'
+import { fixture, snapshot } from '../../__tests__/helpers'
+import { read, dump } from '../..'
 import { GDocCodec } from '.'
 
 const gdocCodec = new GDocCodec()
@@ -23,7 +23,9 @@ test('encode:kitchensink', async () => {
 
 describe('decode:fixtures', () => {
   test('test-fixture-1.gdoc', async () =>
-    expect(await gdocFixtureTo('test-fixture-1.gdoc', 'md')).toMatchFile(snapshot('test-fixture-1.md')))
+    expect(await gdocFixtureTo('test-fixture-1.gdoc', 'md')).toMatchFile(
+      snapshot('test-fixture-1.md')
+    ))
 })
 
 describe('decode:title', () => {
