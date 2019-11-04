@@ -118,12 +118,15 @@ class FetchToSame {
  * Assert that a value is defined.
  *
  * In the GDoc Typescript definitions, all properties are optional i.e.
- * potentially `undefined`. In practice though, working with actual documents,
- * many of them are reliably present. So this function provides an `undefined`
- * guard to prevent Typescript complaining while at the same time providing a
- * stack in the case that something is `undefined`.
+ * potentially `undefined`. In 44.0.0, all (?) properties were also allowed
+ * to be `null` (https://github.com/googleapis/google-api-nodejs-client/pull/1824/files).
+ * In practice though, working with actual documents,
+ * many of them are reliably present. So this function provides a `null` and
+ * `undefined` guard to prevent Typescript complaining while at the same
+ * time providing a stack in the case that something is not defined.
  */
-function assertDefined<T>(value: T | undefined): T | never {
+function assertDefined<T>(value: T | null | undefined): T | never {
+  if (value === null) throw new Error('Value is unexpectedly null')
   if (value === undefined) throw new Error('Value is unexpectedly undefined')
   return value
 }
@@ -143,7 +146,7 @@ async function decodeDocument(
   const fetcher = new (fetch ? FetchToFile : FetchToSame)()
   decodingFetcher = fetcher.get.bind(fetcher)
 
-  let title: string | stencila.Paragraph[] | undefined = doc.title
+  let title: string | stencila.Paragraph[] | null | undefined = doc.title
 
   // Decode the content, if any
   let content: stencila.Node[] = []
@@ -651,10 +654,8 @@ function decodeTextRun(
   | stencila.Link
   | stencila.Subscript
   | stencila.Superscript {
-  const { content, textStyle } = textRun
-
-  if (content === undefined) return ''
-
+  const { textStyle } = textRun
+  const content = assertDefined(textRun.content)
   const text = content.endsWith('\n') ? content.slice(0, -1) : content
 
   if (textStyle) {
@@ -772,14 +773,15 @@ function decodeImage(
   embeddedObject: GDocT.Schema$EmbeddedObject,
   imageProperties: GDocT.Schema$ImageProperties
 ): stencila.ImageObject {
-  const { title, description } = embeddedObject
+  let { title, description } = embeddedObject
+  if (title === null) title = undefined
+  if (description === null) description = undefined
+
   const contentUrl = decodingFetcher(imageProperties.contentUri || '')
-  return {
-    type: 'ImageObject',
-    contentUrl,
+  return stencila.imageObject(contentUrl, {
     title,
     text: description
-  }
+  })
 }
 
 /**
