@@ -139,8 +139,9 @@ expect.extend({ toInvert, toMatchFile, toEqualStringContent })
 
 declare global {
   namespace jest {
-    interface Matchers<R> {
+    interface Matchers<R, T> {
       toInvert(node: stencila.Node, fileName?: string): R
+
       /**
        * Compares text values disregarding whitespace differences (including newlines).
        */

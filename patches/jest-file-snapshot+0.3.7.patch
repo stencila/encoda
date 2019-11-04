@@ -1,0 +1,13 @@
+diff --git a/node_modules/jest-file-snapshot/index.d.ts b/node_modules/jest-file-snapshot/index.d.ts
+index 5131b22..43f2972 100644
+--- a/node_modules/jest-file-snapshot/index.d.ts
++++ b/node_modules/jest-file-snapshot/index.d.ts
+@@ -12,7 +12,7 @@ declare interface FileMatcherOptions {
+ 
+ declare global {
+   namespace jest {
+-    interface Matchers<R> {
++    interface Matchers<R, T> {
+       toMatchFile: (
+         output: string,
+         filename?: string,
