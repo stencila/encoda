@@ -1,3 +1,10 @@
+## [0.81.1](https://github.com/stencila/encoda/compare/v0.81.0...v0.81.1) (2019-11-04)
+
+
+### Bug Fixes
+
+* **Puppeteer:** Use pipes instead on WebSockets ([d8d60e7](https://github.com/stencila/encoda/commit/d8d60e719d3139356c5bb3352f731686f5e1f246))
+
 # [0.81.0](https://github.com/stencila/encoda/compare/v0.80.2...v0.81.0) (2019-10-15)
 
 
