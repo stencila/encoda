@@ -34,7 +34,5 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  expect(() => encode()).toThrow(
-    /Encoding to DOI is not yet implemented/
-  )
+  expect(() => encode()).toThrow(/Encoding to DOI is not yet implemented/)
 })

@@ -36,9 +36,7 @@ test('sniff', async () => {
 
 describe('decode', () => {
   it('does not work yet', async () => {
-    expect(() => decode()).toThrow(
-      /TODO: Not yet implemented/
-    )
+    expect(() => decode()).toThrow(/TODO: Not yet implemented/)
   })
 })
 
