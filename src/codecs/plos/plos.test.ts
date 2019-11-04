@@ -100,7 +100,7 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode()).rejects.toThrow(
+  expect(() => encode()).toThrow(
     /Encoding to a PLoS article is not yet implemented/
   )
 })

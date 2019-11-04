@@ -38,7 +38,7 @@ describe('decode', () => {
 
 describe('encode', () => {
   test('it throws an exception', async () => {
-    await expect(encode()).rejects.toThrow(
+    expect(() => encode()).toThrow(
       /Encoding to a R Notebook is not yet implemented/
     )
   })

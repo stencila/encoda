@@ -41,7 +41,7 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode()).rejects.toThrow(
+  expect(() => encode()).toThrow(
     /Encoding to an eLife article is not yet implemented/
   )
 })

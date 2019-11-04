@@ -20,7 +20,7 @@ test.skip('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode()).rejects.toThrow(
+  expect(() => encode()).toThrow(
     /Encoding to a Crossref query is not supported/
   )
 })

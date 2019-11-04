@@ -49,5 +49,5 @@ describe('decode', () => {
 })
 
 test('encode', async () => {
-  await expect(encode()).rejects.toThrow(/^Unable/)
+  expect(() => encode()).toThrow(/^Unable/)
 })

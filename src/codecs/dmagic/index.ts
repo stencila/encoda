@@ -2,8 +2,7 @@
  * @module dmagic
  */
 
-import stencila from '@stencila/schema'
-import { nodeType, isA } from '@stencila/schema/dist/util'
+import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import { dump } from '../..'

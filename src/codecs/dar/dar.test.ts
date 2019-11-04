@@ -36,7 +36,7 @@ test('sniff', async () => {
 
 describe('decode', () => {
   it('does not work yet', async () => {
-    await expect(decode(await vfile.create(empty))).rejects.toThrow(
+    expect(() => decode()).toThrow(
       /TODO: Not yet implemented/
     )
   })

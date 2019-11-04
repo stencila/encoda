@@ -19,7 +19,7 @@ export class CrossrefCodec extends Codec implements Codec {
    */
   public readonly decode = async (
     file: vfile.VFile
-  ): Promise<stencila.node> => {
+  ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const response = await http.get('https://api.crossref.org/works', {
       query: {

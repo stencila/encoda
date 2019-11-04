@@ -50,9 +50,7 @@ export class DarCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns A promise that resolves to a Stencila `Node`
    */
-  public decode: Codec['decode'] = (
-    file: vfile.VFile
-  ): Promise<stencila.Article | stencila.Collection> => {
+  public decode = (): Promise<stencila.Article | stencila.Collection> => {
     throw new Error('TODO: Not yet implemented')
   }
 
@@ -62,8 +60,8 @@ export class DarCodec extends Codec implements Codec {
    * @param node The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public encode: Codec['encode'] = async (
-    node,
+  public encode = async (
+    node: stencila.Node,
     options = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { filePath } = options

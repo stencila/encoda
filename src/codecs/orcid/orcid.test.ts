@@ -39,7 +39,7 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  await expect(encode()).rejects.toThrow(
+  expect(() => encode()).toThrow(
     /Encoding to an ORCID is not yet implemented/
   )
 })
