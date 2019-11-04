@@ -54,7 +54,8 @@ export async function startup(): Promise<puppeteer.Browser> {
         logger.debug('Launching new browser')
         browser = await puppeteer.launch({
           executablePath,
-          headless: true
+          headless: true,
+          pipe: true
         })
         logger.debug(`Browser launched. pid: ${browser.process().pid}`)
       }
