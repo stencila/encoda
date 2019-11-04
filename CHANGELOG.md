@@ -1,3 +1,12 @@
+## [0.81.2](https://github.com/stencila/encoda/compare/v0.81.1...v0.81.2) (2019-11-04)
+
+
+### Bug Fixes
+
+* **Google APIs:** Upgrade to 44.0.0 ([5dd5220](https://github.com/stencila/encoda/commit/5dd5220b08fe94ce7c4a3458c802d8006bb9519c))
+* **Puppeteer:** Upgrade to 2.0.0 ([e69db90](https://github.com/stencila/encoda/commit/e69db90a08f2777ed282677596104d7ac4ee7bb3))
+* **UNIST:** Update utilities to latest versions ([10772ad](https://github.com/stencila/encoda/commit/10772ada5f7da3662e1f434216deeb203242d2bd))
+
 ## [0.81.1](https://github.com/stencila/encoda/compare/v0.81.0...v0.81.1) (2019-11-04)
 
 
