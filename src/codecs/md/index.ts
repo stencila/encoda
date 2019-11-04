@@ -173,11 +173,14 @@ export function decodeMarkdown(md: string): stencila.Node {
  * Encode a Stencila `Node` to a Markdown `string`.
  */
 export function encodeMarkdown(node: stencila.Node): string {
-  let mdast = filter(
-    encodeNode(node),
-    (node: UNIST.Node | undefined) => typeof node !== 'undefined'
-  ) as UNIST.Node
+  const encoded = encodeNode(node)
+  if (encoded === undefined) return ''
 
+  let mdast = filter(
+    encoded,
+    // @ts-ignore
+    (node: UNIST.Node | undefined) => typeof node !== 'undefined'
+  )
   mdast = stringifyExtensions(mdast)
   mdast = stringifyAttrs(mdast)
 
@@ -1387,13 +1390,14 @@ function stringifyMeta(meta: { [key: string]: string }) {
  * and then removing it from the tree.
  */
 function resolveReferences(tree: UNIST.Node): UNIST.Node {
-  const definitions = selectAll('definition', tree).reduce(
-    (prev: { [key: string]: string }, node: MDAST.Definition) => {
-      prev[node.identifier] = node.url
-      return prev
-    },
-    {}
-  )
+  const definitions: { [key: string]: string } = selectAll(
+    'definition',
+    tree
+  ).reduce((prev: { [key: string]: string }, curr: UNIST.Node) => {
+    const def = curr as MDAST.Definition
+    prev[def.identifier] = def.url
+    return prev
+  }, {})
   return filter(
     map(tree, (node: UNIST.Node) => {
       switch (node.type) {
@@ -1412,6 +1416,7 @@ function resolveReferences(tree: UNIST.Node): UNIST.Node {
       }
       return node
     }),
+    // @ts-ignore
     (node: UNIST.Node) => node.type !== 'definition'
   )
 }
