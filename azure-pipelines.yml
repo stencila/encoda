@@ -1,21 +1,71 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# Azure Pipelines config
+#
+# For docs on multi-platform setup see:
+#   https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-multiplatform?view=azure-devops
+# For migration guide see:
+#   https://docs.microsoft.com/en-us/azure/devops/pipelines/migrate/from-travis?view=azure-devops
 
-trigger:
-- master
+jobs:
+  - job: test
+    strategy:
+      matrix:
+        linux_node_10:
+          image_name: ubuntu_latest
+          node_version: 10.x
+        linux_node_12:
+          image_name: ubuntu_latest
+          node_version: 12.x
+        mac:
+          node_version: 12.x
+          image_name: macOS_latest
+        windows:
+          node_version: 12.x
+          image_name: windows_latest
+    pool:
+      vmImage: $(image_name)
+    steps:
+      - displayName: 'Install Node.js $(node_version)'
+        task: NodeTool@0
+        inputs:
+          versionSpec: $(node_version)
 
-pool:
-  vmImage: 'ubuntu-latest'
+      - displayName: 'Install dependencies'
+        script: npm install
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+      - displayName: 'Run tests'
+        script: |
+          # Run tests with
+          #   - `nock.back` 'wild' mode to do real HTTP requests so we
+          #     know if there is an API change we need to address
+          #   - Two minute default test timeout
+          #   - Force exit to prevent hanging
+          npm run test:wild -- --coverage --testTimeout=120000 --forceExit
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+      - displayName: 'Build docs'
+        script: npm run docs
+
+      - displayName: 'Build package'
+        script: npm run build
+
+      - displayName: 'Upload coverage'
+        script: bash <(curl -s https://codecov.io/bash)
+        condition: succeeded()
+
+  - job: deploy
+    dependsOn: test
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - displayName: 'Install Node.js'
+        task: NodeTool@0
+        inputs:
+          versionSpec: 12.x
+
+      - displayName: 'Deploy docs and package'
+        script: |
+          npm install
+          npm run docs
+          npm run build
+          npx semantic-release
+
