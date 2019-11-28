@@ -9,12 +9,13 @@ jobs:
   - job: test
     strategy:
       matrix:
-        linux_node_10:
-          image_name: ubuntu-latest
-          node_version: 10.x
         linux_node_12:
           image_name: ubuntu-latest
           node_version: 12.x
+          nock_mode: wild
+        linux_node_10:
+          image_name: ubuntu-latest
+          node_version: 10.x
         mac:
           node_version: 12.x
           image_name: macOS-latest
@@ -38,8 +39,10 @@ jobs:
           #     know if there is an API change we need to address
           #   - Two minute default test timeout
           #   - Force exit to prevent hanging
-          npm run test:wild -- --coverage --testTimeout=120000 --forceExit
+          npm run test:cover -- --testTimeout=120000 --forceExit
         displayName: 'Run tests'
+        env:
+          NOCK_MODE: $(nock_mode)
 
       - script: npm run docs
         displayName: 'Build docs'
