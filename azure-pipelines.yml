@@ -10,18 +10,24 @@ jobs:
     strategy:
       matrix:
         linux_node_12:
+          # Primary test with latest Node LTS and Nock in 'wild' mode
+          # so that it makes HTTP requests as a way of testing whether
+          # there have been changes in any API we are using
           image_name: ubuntu-latest
           node_version: 12.x
           nock_mode: wild
         linux_node_10:
           image_name: ubuntu-latest
           node_version: 10.x
+          nock_mode: dryrun
         mac:
           node_version: 12.x
           image_name: macOS-latest
+          nock_mode: dryrun
         windows:
           node_version: 12.x
           image_name: windows-latest
+          nock_mode: dryrun
     pool:
       vmImage: $(image_name)
     steps:
@@ -35,10 +41,9 @@ jobs:
 
       - script: |
           # Run tests with
-          #   - `nock.back` 'wild' mode to do real HTTP requests so we
-          #     know if there is an API change we need to address
           #   - Two minute default test timeout
           #   - Force exit to prevent hanging
+          #   - See https://github.com/nock/nock#modes what nock modes do
           npm run test:cover -- --testTimeout=120000 --forceExit
         displayName: 'Run tests'
         env:
