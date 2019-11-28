@@ -24,32 +24,32 @@ jobs:
     pool:
       vmImage: $(image_name)
     steps:
-      - displayName: 'Install Node.js $(node_version)'
-        task: NodeTool@0
+      - task: NodeTool@0
         inputs:
           versionSpec: $(node_version)
+        displayName: 'Install Node.js $(node_version)'
 
-      - displayName: 'Install dependencies'
-        script: npm install
+      - script: npm install
+        displayName: 'Install dependencies'
 
-      - displayName: 'Run tests'
-        script: |
+      - script: |
           # Run tests with
           #   - `nock.back` 'wild' mode to do real HTTP requests so we
           #     know if there is an API change we need to address
           #   - Two minute default test timeout
           #   - Force exit to prevent hanging
           npm run test:wild -- --coverage --testTimeout=120000 --forceExit
+        displayName: 'Run tests'
 
-      - displayName: 'Build docs'
-        script: npm run docs
+      - script: npm run docs
+        displayName: 'Build docs'
 
-      - displayName: 'Build package'
-        script: npm run build
+      - script: npm run build
+        displayName: 'Build package'
 
-      - displayName: 'Upload coverage'
-        script: bash <(curl -s https://codecov.io/bash)
+      - script: bash <(curl -s https://codecov.io/bash)
         condition: succeeded()
+        displayName: 'Upload coverage'
 
   - job: deploy
     dependsOn: test
@@ -57,15 +57,14 @@ jobs:
     pool:
       vmImage: ubuntu-latest
     steps:
-      - displayName: 'Install Node.js'
-        task: NodeTool@0
+      - task: NodeTool@0
         inputs:
           versionSpec: 12.x
+        displayName: 'Install Node.js'
 
-      - displayName: 'Deploy docs and package'
-        script: |
+      - script: |
           npm install
           npm run docs
           npm run build
           npx semantic-release
-
+        displayName: 'Deploy docs and package'
