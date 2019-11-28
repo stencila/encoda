@@ -10,17 +10,17 @@ jobs:
     strategy:
       matrix:
         linux_node_10:
-          image_name: ubuntu_latest
+          image_name: ubuntu-latest
           node_version: 10.x
         linux_node_12:
-          image_name: ubuntu_latest
+          image_name: ubuntu-latest
           node_version: 12.x
         mac:
           node_version: 12.x
-          image_name: macOS_latest
+          image_name: macOS-latest
         windows:
           node_version: 12.x
-          image_name: windows_latest
+          image_name: windows-latest
     pool:
       vmImage: $(image_name)
     steps:
