@@ -135,10 +135,13 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
         []
       )
 
+    // Sort lexically for deterministic results
+    const sorted = nodes.sort((a, b) => (a.route < b.route ? -1 : 1))
+
     // Organize nodes into nested collections of CreativeWorks
     const collections = new Map<string, stencila.Collection>()
     collections.set('', root)
-    for (const { route, node } of nodes) {
+    for (const { route, node } of sorted) {
       let parent = root
       for (const depth of range(0, route.length - 2)) {
         const level = route.slice(0, depth + 1).join('/')
