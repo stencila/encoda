@@ -72,7 +72,7 @@ jobs:
 
   - job: deploy
     dependsOn: test
-    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
     steps:
