@@ -3,7 +3,7 @@
 ##### Codecs for structured, semantic, composable, and executable documents
 
 [![Build status](https://travis-ci.org/stencila/encoda.svg?branch=master)](https://travis-ci.org/stencila/encoda)
-[![Build status](https://dev.azure.com/nokome/stencila/_apis/build/status/stencila.encoda?branchName=master)](https://dev.azure.com/nokome/stencila/_build/latest?definitionId=1&branchName=master)
+[![Build status](https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master)](https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&branchName=master)
 [![Code coverage](https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/encoda)
 [![NPM](https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat)](https://www.npmjs.com/package/@stencila/encoda)
 [![Contributors](https://img.shields.io/badge/contributors-6-orange.svg)](#contribute)
