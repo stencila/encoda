@@ -1,3 +1,13 @@
+## [0.81.3](https://github.com/stencila/encoda/compare/v0.81.2...v0.81.3) (2019-11-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stencila/schema to ^0.31.0 ([3df015a](https://github.com/stencila/encoda/commit/3df015a71555be85276d0580fe0122b382063be6))
+* **deps:** update dependency keyv to v4 ([fe1a0d9](https://github.com/stencila/encoda/commit/fe1a0d907ca7626b2a5dea2074d8d62a428e9c9f))
+* **deps:** update dependency mdast-util-compact to v2 ([d35d795](https://github.com/stencila/encoda/commit/d35d79547aa85210c333c558ad1f059f6983a58c))
+* **Deps:** Upgrade Schema version ([b340649](https://github.com/stencila/encoda/commit/b340649488287dbaa6feb562e713069c4d61bf68))
+
 ## [0.81.2](https://github.com/stencila/encoda/compare/v0.81.1...v0.81.2) (2019-11-04)
 
 
