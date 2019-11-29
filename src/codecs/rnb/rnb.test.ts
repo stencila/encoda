@@ -1,8 +1,13 @@
 import fs from 'fs-extra'
 import { RnbCodec } from '.'
 import { fixture, readFixture, snapshot } from '../../__tests__/helpers'
+import { JsonCodec } from '../json';
 
 const { sniff, decode, encode } = new RnbCodec()
+
+const jsonCodec = new JsonCodec()
+const rnb2json = async (filename: string): Promise<string> =>
+  jsonCodec.dump(await decode(await readFixture(filename)))
 
 describe('sniff', () => {
   test('it is true for a R Notebook', async () => {
@@ -26,9 +31,6 @@ describe('sniff', () => {
 })
 
 describe('decode', () => {
-  const rnb2json = async (filename: string): Promise<string> =>
-    JSON.stringify(await decode(await readFixture(filename)), null, '  ')
-
   test('it matches kitchensink.json snapshot', async () => {
     expect(await rnb2json('kitchensink.nb.html')).toMatchFile(
       snapshot('kitchensink.json')
