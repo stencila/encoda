@@ -1,0 +1,89 @@
+# Azure Pipelines config
+#
+# For docs on multi-platform setup see:
+#   https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started-multiplatform?view=azure-devops
+# For migration guide see:
+#   https://docs.microsoft.com/en-us/azure/devops/pipelines/migrate/from-travis?view=azure-devops
+
+jobs:
+  - job: test
+    strategy:
+      matrix:
+        linux_node_12:
+          # Primary test with latest Node LTS and Nock in 'wild' mode
+          # so that it makes HTTP requests as a way of testing whether
+          # there have been changes in any API we are using
+          image_name: ubuntu-latest
+          node_version: 12.x
+          nock_mode: wild
+        linux_node_10:
+          image_name: ubuntu-latest
+          node_version: 10.x
+          nock_mode: dryrun
+        mac:
+          node_version: 12.x
+          image_name: macOS-latest
+          nock_mode: dryrun
+        windows:
+          node_version: 12.x
+          image_name: windows-latest
+          nock_mode: dryrun
+    pool:
+      vmImage: $(image_name)
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: $(node_version)
+        displayName: 'Install Node.js $(node_version)'
+
+      # Do not convert line endings on checkout, otherwise snapshot
+      # files fail on Windows.
+      # https://github.com/microsoft/azure-pipelines-yaml/issues/11
+      - script: git config --global core.autocrlf false
+        displayName: "Configure Git's conversion of line endings"
+
+      - checkout: self
+        fetchDepth: 10
+        displayName: 'Checkout repo'
+
+      - script: npm install
+        displayName: 'Install dependencies'
+
+      # Run tests with
+      #   - Two minute default test timeout
+      #   - Force exit to prevent hanging
+      #   - See https://github.com/nock/nock#modes what nock modes do
+      - script: npm run test:cover -- --testTimeout=120000 --forceExit
+        displayName: 'Run tests'
+        env:
+          NOCK_MODE: $(nock_mode)
+
+      - script: npm run docs
+        displayName: 'Build docs'
+
+      - script: npm run build
+        displayName: 'Build package'
+
+      # Only upload coverage on Linux (fails on Windows and largely
+      # unncessary to duplicate by OS anyway)
+      - script: bash <(curl -s https://codecov.io/bash)
+        condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
+        displayName: 'Upload coverage'
+
+  - job: deploy
+    dependsOn: test
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: 12.x
+        displayName: 'Install Node.js'
+
+      - script: |
+          npm install
+          npm run docs
+          npm run build
+          npx semantic-release
+        displayName: 'Deploy docs and package'

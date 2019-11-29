@@ -1,11 +1,12 @@
 import delay from 'delay'
 import fs from 'fs-extra'
+import os from 'os'
 import tempy from 'tempy'
 import { codecList, convert, dump, handled, load, match, read, write } from '..'
 import { JsonCodec } from '../codecs/json'
+import { TxtCodec } from '../codecs/txt'
 import { defaultEncodeOptions } from '../codecs/types'
 import { YamlCodec } from '../codecs/yaml'
-import { TxtCodec } from '../codecs/txt'
 import * as ssf from '../codecs/__mocks__/ssf'
 import { fixture } from './helpers'
 
@@ -148,7 +149,7 @@ describe('convert', () => {
     expect(result).toEqual(simpleThingJson)
   })
 
-  if (!process.env.APPVEYOR)
+  if (!os.type().includes('Windows'))
     it('returns a file path for "content-less" vfiles', async () => {
       const inp = `A paragraph\n`
       const out = tempy.file()
