@@ -36,6 +36,16 @@ jobs:
           versionSpec: $(node_version)
         displayName: 'Install Node.js $(node_version)'
 
+      # Do not convert line endings on checkout, otherwise snapshot
+      # files fail on Windows.
+      # https://github.com/microsoft/azure-pipelines-yaml/issues/11
+      - script: git config --global core.autocrlf false
+        displayName: "Configure Git's conversion of line endings"
+
+      - checkout: self
+        fetchDepth: 10
+        displayName: 'Checkout repo'
+
       - script: npm install
         displayName: 'Install dependencies'
 
