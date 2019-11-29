@@ -11,7 +11,7 @@
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli.js",
   "scripts": {
-    "install": "patch-package && node install.js",
+    "install": "node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "test": "jest",
@@ -135,7 +135,6 @@
     "json-schema-to-typescript": "7.1.0",
     "markdown-toc": "1.2.0",
     "nock": "11.7.0",
-    "patch-package": "6.2.0",
     "ts-jest": "24.2.0",
     "ts-node": "8.5.4",
     "typescript": "3.6.4"
