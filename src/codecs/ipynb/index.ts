@@ -5,8 +5,7 @@
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
-import { isEntity, nodeType } from '@stencila/schema/dist/util'
+import stencila, { isEntity, nodeType } from '@stencila/schema'
 import Ajv from 'ajv'
 import jsonSchemaDraft04 from 'ajv/lib/refs/json-schema-draft-04.json'
 import betterAjvErrors from 'better-ajv-errors'
