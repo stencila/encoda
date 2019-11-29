@@ -1,0 +1,66 @@
+<html>
+
+  <head>
+    <title>Date codec</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Date codec</h1>
+      <h1 id="date-codec">Date codec</h1>
+      <p>This is a simple codec for decoding and encoding strings representing dates, including
+        date-times. It is most often used when coercing a property that expects a <code>Date</code>
+        e.g the <code>datePublished</code> property of an <code>Article</code>. It allows authors to
+        use a variety of data formats instead of having to enter an ISO string.</p>
+      <h2 id="encoding-1">Encoding</h2>
+      <p>In the Stencila schema, dates are represented using an <a
+          href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string in the
+        <code>value</code> property, which may include a time component. For example, this
+        <code>Date</code> in 1840:</p>
+      <pre data-import="waitangi"><code class="language-json">{
+  &quot;type&quot;: &quot;Date&quot;,
+  &quot;value&quot;: &quot;1840-02-05T12:20:56.000Z&quot;
+}</code></pre>
+      <p>When encoding to a string, any time component will be preserved by the <code>date</code>
+        codec, so the above date will be encoded as:</p>
+      <pre data-export="waitangi"><code class="language-date">1840-02-05T12:20:56.000Z</code></pre>
+      <p>However, if the time component is <code>T00:00:00.000Z</code> (i.e. midnight UTC) then it
+        will not be encoded. For example, midnight 1 January 1990:</p>
+      <pre data-import="ny1990"><code class="language-json">{
+  &quot;type&quot;: &quot;Date&quot;,
+  &quot;value&quot;: &quot;1990-01-01T00:00:00.000Z&quot;
+}</code></pre>
+      <p>will be encoded as,</p>
+      <pre data-export="ny1990"><code class="language-date">1990-01-01</code></pre>
+      <h2 id="decoding-1">Decoding</h2>
+      <p>The decoding of dates is handled by Javascript&#39;s <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"><code>new
+            Date()</code></a> constructor. This allows for various date formats to be handled. For
+        example, the above <code>Date</code> for midnight 1 January 1990, would be decoded from all
+        of the following:</p>
+      <pre data-equals="ny1990"><code class="language-date">1990</code></pre>
+      <pre data-equals="ny1990"><code class="language-date">1990-01-01</code></pre>
+      <pre data-equals="ny1990"><code class="language-date">1990-01-01T00:00:00.000Z</code></pre>
+      <pre data-equals="ny1990"><code class="language-date">1 January, 1990</code></pre>
+      <pre data-equals="ny1990"><code class="language-date">Jan 1 1990</code></pre>
+      <pre data-equals="ny1990"><code class="language-date">Jan 1 1990 0:00</code></pre>
+      <p>All decoded dates are assumed to be for the UTC timezone. If the string can not be decoded
+        as a date, then a warning will be logged and a <code>Date</code> with an empty string for
+        the <code>value</code> property returned.</p>
+    </article>
+  </body>
+
+</html>

@@ -1,0 +1,503 @@
+{
+  "type": "Collection",
+  "name": ".",
+  "parts": [
+    {
+      "type": "Article",
+      "authors": [],
+      "name": "CHANGELOG",
+      "title": "Untitled",
+      "meta": {
+        "depth": 0
+      }
+    },
+    {
+      "type": "Article",
+      "authors": [],
+      "name": "CONTRIBUTING",
+      "title": "Untitled",
+      "meta": {
+        "depth": 0
+      }
+    },
+    {
+      "type": "Article",
+      "authors": [],
+      "name": "FAQ",
+      "title": "Untitled",
+      "meta": {
+        "depth": 0
+      }
+    },
+    {
+      "type": "Article",
+      "authors": [],
+      "name": "README",
+      "title": "Untitled",
+      "meta": {
+        "depth": 0,
+        "main": true
+      }
+    },
+    {
+      "type": "Collection",
+      "name": "src",
+      "parts": [
+        {
+          "type": "Collection",
+          "name": "codecs",
+          "parts": [
+            {
+              "type": "Collection",
+              "name": "csi",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Comma separated items codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "csv",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "date",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Date codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "dir",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "dmagic",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "docx",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "gdoc",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "html",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "http",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "ipynb",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "jats",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "jats-pandoc",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "json",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "json5",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "jsonld",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "latex",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "md",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "ods",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "odt",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "pandoc",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "pdf",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "person",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "person",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "rpng",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "tdp",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "txt",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "xlsx",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "xmd",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "xml",
+              "parts": [
+                {
+                  "type": "Article",
+                  "authors": [],
+                  "name": "README",
+                  "title": "Untitled",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

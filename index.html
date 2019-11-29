@@ -1,0 +1,821 @@
+<html>
+
+  <head>
+    <title>Untitled</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Untitled</h1>
+      <h1 id="encoda">Encoda</h1>
+      <h5 id="codecs-for-structured-semantic-composable-and-executable-documents">Codecs for
+        structured, semantic, composable, and executable documents</h5>
+      <p><a href="https://travis-ci.org/stencila/encoda"><img
+            src="https://travis-ci.org/stencila/encoda.svg?branch=master" alt="Build status"
+            itemprop="image"></a> <a
+          href="https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&amp;branchName=master"><img
+            src="https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master"
+            alt="Build status" itemprop="image"></a> <a
+          href="https://codecov.io/gh/stencila/encoda"><img
+            src="https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg"
+            alt="Code coverage" itemprop="image"></a> <a
+          href="https://www.npmjs.com/package/@stencila/encoda"><img
+            src="https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat" alt="NPM"
+            itemprop="image"></a> <a href="#contribute"><img
+            src="https://img.shields.io/badge/contributors-6-orange.svg" alt="Contributors"
+            itemprop="image"></a> <a href="https://stencila.github.io/encoda/"><img
+            src="https://img.shields.io/badge/docs-latest-blue.svg" alt="Docs" itemprop="image"></a>
+        <a href="https://gitter.im/stencila/stencila"><img
+            src="https://badges.gitter.im/stencila/stencila.svg" alt="Chat" itemprop="image"></a>
+      </p><span itemtype="https://schema.stenci.la/Null">null</span>
+      <ul>
+        <li>
+          <p><a href="#introduction">Introduction</a></p>
+        </li>
+        <li>
+          <p><a href="#formats">Formats</a></p>
+        </li>
+        <li>
+          <p><a href="#publishers">Publishers</a></p>
+        </li>
+        <li>
+          <p><a href="#install">Install</a></p>
+        </li>
+        <li>
+          <p><a href="#use">Use</a></p>
+          <ul>
+            <li>
+              <p><a href="#converting-files">Converting files</a></p>
+            </li>
+            <li>
+              <p><a href="#converting-folders">Converting folders</a></p>
+            </li>
+            <li>
+              <p><a href="#converting-command-line-input">Converting command line input</a></p>
+            </li>
+            <li>
+              <p><a href="#creating-zip-archives">Creating zip archives</a></p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><a href="#documentation">Documentation</a></p>
+        </li>
+        <li>
+          <p><a href="#develop">Develop</a></p>
+        </li>
+        <li>
+          <p><a href="#contribute">Contribute</a></p>
+        </li>
+        <li>
+          <p><a href="#contributors">Contributors</a></p>
+        </li>
+        <li>
+          <p><a href="#acknowledgments">Acknowledgments</a></p>
+        </li>
+      </ul><span itemtype="https://schema.stenci.la/Null">null</span>
+      <h2 id="introduction">Introduction</h2>
+      <blockquote>
+        <p>&quot;A codec is a device or computer program for encoding or decoding a digital data
+          stream or signal. Codec is a portmanteau of coder-decoder. - <a
+            href="https://en.wikipedia.org/wiki/Codec">Wikipedia</a></p>
+      </blockquote>
+      <p>Encoda provides a collection of codecs for converting between, and composing together,
+        documents in various formats. The aim is not to achieve perfect lossless conversion between
+        alternative document formats; there are already several tools for that. Instead the focus of
+        Encoda is to use existing tools to encode and compose semantic documents in alternative
+        formats.</p>
+      <h2 id="formats">Formats</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Format</td>
+            <td>Codec</td>
+            <td>Approach</td>
+            <td>Status</td>
+            <td>Issues</td>
+            <td>Coverage</td>
+          </tr>
+          <tr>
+            <td><strong>Text</strong></td>
+          </tr>
+          <tr>
+            <td>Plain text</td>
+            <td><a href="src/codecs/txt">txt</a></td>
+            <td>None</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+txt">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Markdown</td>
+            <td><a href="src/codecs/md">md</a></td>
+            <td>Extens</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown">⚠</a></td>
+            <td><img src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>LaTex</td>
+            <td><a href="src/codecs/latex">latex</a></td>
+            <td>-</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+tex">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Microsoft Word</td>
+            <td><a href="src/codecs/docx">docx</a></td>
+            <td>rPNG</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+docx">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Google Docs</td>
+            <td><a href="src/codecs/gdoc">gdoc</a></td>
+            <td>rPNG</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Open Document Text</td>
+            <td><a href="src/codecs/odt">odt</a></td>
+            <td>rPNG</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+odt">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>HTML</td>
+            <td><a href="src/codecs/html">html</a></td>
+            <td>Extens</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+html">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>JATS XML</td>
+            <td><a href="src/codecs/jats">jats</a></td>
+            <td>Extens</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+jats">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>JATS XML (Pandoc-based)</td>
+            <td><a href="src/codecs/jats-pandoc">jats-pandoc</a></td>
+            <td>Extens</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+jats">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Portable Document Format</td>
+            <td><a href="src/codecs/pdf">pdf</a></td>
+            <td>rPNG</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Notebooks</strong></td>
+          </tr>
+          <tr>
+            <td>Jupyter</td>
+            <td><a href="src/codecs/ipynb">ipynb</a></td>
+            <td>Native</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>RMarkdown</td>
+            <td><a href="src/codecs/xmd">xmd</a></td>
+            <td>Native</td>
+            <td>α</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Presentations</strong></td>
+          </tr>
+          <tr>
+            <td>Microsoft Powerpoint</td>
+            <td><a href="src/codecs/pptx">pptx</a></td>
+            <td>rPNG</td>
+            <td>✗</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx">⚠</a></td>
+          </tr>
+          <tr>
+            <td>Demo Magic</td>
+            <td><a href="src/codecs/dmagic">dmagic</a></td>
+            <td>Native</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Spreadsheets</strong></td>
+          </tr>
+          <tr>
+            <td>Microsoft Excel</td>
+            <td><a href="src/codecs/xlsx">xlsx</a></td>
+            <td>Formula</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Google Sheets</td>
+            <td><a href="src/codecs/gsheet">gsheet</a></td>
+            <td>Formula</td>
+            <td>✗</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet">⚠</a></td>
+          </tr>
+          <tr>
+            <td>Open Document Spreadsheet</td>
+            <td><a href="src/codecs/ods">ods</a></td>
+            <td>Formula</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+ods">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Tabular data</strong></td>
+          </tr>
+          <tr>
+            <td>CSV</td>
+            <td><a href="src/codecs/csv">csv</a></td>
+            <td>None</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+csv">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>CSVY</td>
+            <td><a href="src/codecs/csvy">csvy</a></td>
+            <td>None</td>
+            <td>✗</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy">⚠</a></td>
+          </tr>
+          <tr>
+            <td>Tabular Data Package</td>
+            <td><a href="src/codecs/tdp">tdp</a></td>
+            <td>None</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Collections</strong></td>
+          </tr>
+          <tr>
+            <td>Document Archive</td>
+            <td><a href="src/codecs/dar">dar</a></td>
+            <td>Extens</td>
+            <td>ω</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dar">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Filesystem Directory</td>
+            <td><a href="src/codecs/dir">dir</a></td>
+            <td>Extens</td>
+            <td>ω</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dir">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Data interchange, other</strong></td>
+          </tr>
+          <tr>
+            <td>JSON</td>
+            <td><a href="src/codecs/json">json</a></td>
+            <td>Native</td>
+            <td>✔</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+json">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>JSON-LD</td>
+            <td><a href="">json-ld</a></td>
+            <td>Native</td>
+            <td>✔</td>
+            <td><a href="">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>JSON5</td>
+            <td><a href="src/codecs/json5">json5</a></td>
+            <td>Native</td>
+            <td>✔</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+json5">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>YAML</td>
+            <td><a href="src/codecs/yaml">yaml</a></td>
+            <td>Native</td>
+            <td>✔</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Pandoc</td>
+            <td><a href="src/codecs/pandoc">pandoc</a></td>
+            <td>Native</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pandoc">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Reproducible PNG</td>
+            <td><a href="src/codecs/rpng">rpng</a></td>
+            <td>Native</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+rpng">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>XML</td>
+            <td><a href="src/codecs/xml">xml</a></td>
+            <td>Native</td>
+            <td>✔</td>
+            <td></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong>Transport</strong></td>
+          </tr>
+          <tr>
+            <td>HTTP</td>
+            <td><a href="src/codecs/http">http</a></td>
+            <td></td>
+            <td>✔</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+http">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http"
+                itemprop="image"></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Key</strong></p>stencila convert https://elifesciences.org/articles/45187v2
+      ye-et-al-2019.mdstencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to
+      yamltype: Article title: Genetical Implications of the Structure of Deoxyribonucleic Acid
+      authors: - familyNames: - WATSON givenNames: - J. D. type: Person - familyNames: - CRICK
+      givenNames: - F. H. C. type: Person datePublished: &#39;1953,5&#39; isPartOf: issueNumber:
+      &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39; isPartOf: title: Nature type: Periodical
+      type: PublicationVolume type: PublicationIssuestencila convert
+      https://elifesciences.org/articles/45187v2 ye-et-al-2019.mdstencila convert &quot;Watson and
+      Crick 1953&quot; - --from crossref --to yamltype: Article title: Genetical Implications of the
+      Structure of Deoxyribonucleic Acid authors: - familyNames: - WATSON givenNames: - J. D. type:
+      Person - familyNames: - CRICK givenNames: - F. H. C. type: Person datePublished:
+      &#39;1953,5&#39; isPartOf: issueNumber: &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39;
+      isPartOf: title: Nature type: Periodical type: PublicationVolume type: PublicationIssuenpm
+      install @stencila/encoda --globalstencila convert https://elifesciences.org/articles/45187v2
+      ye-et-al-2019.mdstencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to
+      yamltype: Article title: Genetical Implications of the Structure of Deoxyribonucleic Acid
+      authors: - familyNames: - WATSON givenNames: - J. D. type: Person - familyNames: - CRICK
+      givenNames: - F. H. C. type: Person datePublished: &#39;1953,5&#39; isPartOf: issueNumber:
+      &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39; isPartOf: title: Nature type: Periodical
+      type: PublicationVolume type: PublicationIssuenpm install @stencila/encoda --globalencoda
+      convert notebook.ipynb notebook.docxencoda convert notebook.ipynb notebook.xml --to jats<p>If
+        you&#39;d like to see a converter for your favorite format, look at the <a
+          href="https://github.com/stencila/encoda/issues">listed issues</a> and comment under the
+        relevant one. If there is no issue regarding the converter you need, <a
+          href="https://github.com/stencila/encoda/issues/new">create one</a>.</p>
+      <h2 id="publishers">Publishers</h2>
+      <p>Serveral of the codecs in Encoda, deal with fetching content from a particlar publisher.
+        For example, to get an eLife article and read it in Markdown:</p>
+      <pre><code class="language-bash">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
+      <p>Some of these publisher codecs deal with meta data. e.g.</p>
+      <pre><code class="language-bash">stencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to yaml</code></pre>
+      <pre><code class="language-yaml">type: Article
+title: Genetical Implications of the Structure of Deoxyribonucleic Acid
+authors:
+  - familyNames:
+      - WATSON
+    givenNames:
+      - J. D.
+    type: Person
+  - familyNames:
+      - CRICK
+    givenNames:
+      - F. H. C.
+    type: Person
+datePublished: &#39;1953,5&#39;
+isPartOf:
+  issueNumber: &#39;4361&#39;
+  isPartOf:
+    volumeNumber: &#39;171&#39;
+    isPartOf:
+      title: Nature
+      type: Periodical
+    type: PublicationVolume
+  type: PublicationIssue</code></pre>
+      <table>
+        <tbody>
+          <tr>
+            <td>Source</td>
+            <td>Codec</td>
+            <td>Base codec/s</td>
+            <td>Status</td>
+            <td>Issues</td>
+            <td>Coverage</td>
+          </tr>
+          <tr>
+            <td><strong>General</strong></td>
+          </tr>
+          <tr>
+            <td>HTTP</td>
+            <td><a href="src/codecs/http">http</a></td>
+            <td>Based on <code>Content-Type</code> or extension</td>
+            <td>β</td>
+            <td><a href="https://github.com/stencila/encoda/issues?q=is%3Aopen+http">⚠</a></td>
+            <td><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http"
+                itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong><code>Person</code></strong></td>
+          </tr>
+          <tr>
+            <td>ORCID</td>
+            <td><a href="">orcid</a></td>
+            <td><code>jsonld</code></td>
+            <td>β</td>
+            <td><a href="">⚠</a></td>
+            <td><img src="index.html.media" itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong><code>Article</code> metadata</strong></td>
+          </tr>
+          <tr>
+            <td>DOI</td>
+            <td><a href="">doi</a></td>
+            <td><code>csl</code></td>
+            <td>β</td>
+            <td><a href="">⚠</a></td>
+            <td><img src="index.html.media" itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>Crossref</td>
+            <td><a href="">crossref</a></td>
+            <td><code>jsonld</code></td>
+            <td>β</td>
+            <td><a href="">⚠</a></td>
+            <td><img src="index.html.media" itemprop="image"></td>
+          </tr>
+          <tr>
+            <td><strong><code>Article</code> content</strong></td>
+          </tr>
+          <tr>
+            <td>eLife</td>
+            <td><a href="">elife</a></td>
+            <td><code>jats</code></td>
+            <td>β</td>
+            <td><a href="">⚠</a></td>
+            <td><img src="index.html.media" itemprop="image"></td>
+          </tr>
+          <tr>
+            <td>PLoS</td>
+            <td><a href="">plos</a></td>
+            <td><code>jats</code></td>
+            <td>β</td>
+            <td><a href="">⚠</a></td>
+            <td><img src="index.html.media" itemprop="image"></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="install">Install</h2>
+      <p>The easiest way to use Encoda is to install the <a
+          href="https://github.com/stencila/stencila"><code>stencila</code> command line tool</a>.
+        Encoda powers <code>stencila convert</code>, and other commands, in that CLI. However, the
+        version of Encoda in <code>stencila</code>, can lag behind the version in this repo. So if
+        you want the latest functionality, install Encoda as a Node.js package:</p>
+      <pre><code class="language-bash">npm install @stencila/encoda --global</code></pre>
+      <h2 id="use">Use</h2>
+      <p>Encoda is intended to be used primarily as a library for other applications. However, it
+        comes with a simple command line script which allows you to use the <code>convert</code>
+        function directly.</p>
+      <h3 id="converting-files">Converting files</h3>
+      <pre><code class="language-bash">encoda convert notebook.ipynb notebook.docx</code></pre>
+      <p>Encoda will determine the input and output formats based on the file extensions. You can
+        override these using the <code>--from</code> and <code>--to</code> options. e.g.</p>
+      <pre><code class="language-bash">encoda convert notebook.ipynb notebook.xml --to jats</code></pre>
+      <p>You can also convert to more than one file / format (in this case the <code>--to</code>
+        argument only applies to the first output file) e.g.</p>
+      <pre><code class="language-bash">encoda convert report.docx report.Rmd report.html report.jats</code></pre>
+      <h3 id="converting-folders">Converting folders</h3>
+      <p>You can decode an entire directory into a <code>Collection</code>. Encoda will traverse the
+        directory, including subdirectories, decoding each file matching your glob pattern. You can
+        then encode the <code>Collection</code> using the <code>dir</code> codec into a tree of HTML
+        files e.g.</p>
+      <pre><code class="language-bash">encoda convert myproject myproject-published --to dir --pattern &#39;**/*.{rmd, csv}&#39;</code></pre>
+      <h3 id="converting-command-line-input">Converting command line input</h3>
+      <p>You can also read content from the first argument. In that case, you&#39;ll need to
+        specifying the <code>--from</code> format e.g.</p>
+      <pre><code class="language-bash">encoda convert &quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot; --from json5 paragraph.md</code></pre>
+      <p>You can send output to the console by using <code>-</code> as the second argument and
+        specifying the <code>--to</code> format e.g.</p>
+      <pre><code class="language-bash">encoda convert paragraph.md - --to yaml</code></pre>
+      <h3 id="creating-zip-archives">Creating zip archives</h3>
+      <p>Use the <code>--zip</code> option to create a Zip archive with the outputs of conversion.
+        With <code>--zip=yes</code> a zip archive will always be created. With
+        <code>--zip=maybe</code>, a zip archive will be created if there are more than two output
+        files. This can be useful for formats such as HTML and Markdown, for which images and other
+        media are stored in a sibling folder.</p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Option</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td><code>--from</code></td>
+            <td>The format of the input content e.g. <code>--from md</code></td>
+          </tr>
+          <tr>
+            <td><code>--to</code></td>
+            <td>The format for the output content e.g. <code>--to html</code></td>
+          </tr>
+          <tr>
+            <td><code>--theme</code></td>
+            <td>The theme for the output (only applies to HTML, PDF and RPNG output) e.g.
+              <code>--theme eLife</code></td>
+          </tr>
+          <tr>
+            <td><code>--standalone</code></td>
+            <td>Generate a standalone document, not a fragment (default <code>true</code>)</td>
+          </tr>
+          <tr>
+            <td><code>--bundle</code></td>
+            <td>Bundle all assets (e.g images, CSS and JS) into the document (default
+              <code>false</code>)</td>
+          </tr>
+          <tr>
+            <td><code>--zip</code></td>
+            <td>Create <code>.zip</code> archive containing output files? <code>no</code> (default),
+              <code>yes</code>, <code>maybe</code> (only if more than one file)</td>
+          </tr>
+          <tr>
+            <td><code>--debug</code></td>
+            <td>Print debugging information</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="documentation">Documentation</h2>
+      <p>Self-hoisted (documentation converted from various formats to html) and API documentation
+        (generated from source code) is available at: <a
+          href="https://stencila.github.io/encoda">https://stencila.github.io/encoda</a>.</p>
+      <h2 id="develop">Develop</h2>
+      <p>Check how to <a
+          href="https://github.com/stencila/encoda/blob/master/CONTRIBUTING.md">contribute back to
+          the project</a>. All PRs are most welcome! Thank you!</p>
+      <p>Clone the repository and install a development environment:</p>
+      <pre><code class="language-bash">git clone https://github.com/stencila/encoda.git
+cd encoda
+npm install</code></pre>
+      <p>Run the test suite:</p>
+      <pre><code class="language-bash">npm test</code></pre>
+      <p>Or, run a single test file:</p>
+      <pre><code class="language-bash">npx jest tests/xlsx.test.ts</code></pre>
+      <p>To get coverage statistics:</p>
+      <pre><code class="language-bash">npm run cover</code></pre>
+      <p>Or, manually test conversion using the <code>ts-node</code> and the <code>cli.ts</code>
+        script:</p>
+      <pre><code class="language-bash">npm run cli -- convert simple.md simple.html</code></pre>
+      <p>There is a bash script to make that a little shorter and more like real life usage:</p>
+      <pre><code class="language-bash">./encoda convert simple.md simple.html</code></pre>
+      <p>If that is a bit slow, compile the Typescript to Javascript first and use <code>node</code>
+        directly:</p>
+      <pre><code class="language-bash">npm run build
+node dist/cli convert simple.md simple.html</code></pre>
+      <p>There&#39;s also a <code>Makefile</code> if you prefer to run tasks that way e.g.</p>
+      <pre><code class="language-bash">make lint cover check</code></pre>
+      <p>You can also test using the Docker image for a self-contained, host-independent test
+        environment:</p>
+      <pre><code class="language-bash">docker build --tag stencila/encoda .
+docker run stencila/encoda</code></pre>
+      <h2 id="contribute">Contribute</h2>
+      <p>We 💕 contributions! All contributions: ideas 🤔, examples 💡, bug reports 🐛,
+        documentation 📖, code 💻, questions 💬. See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>
+        for more on where to start. You can also provide your feedback on the <a
+          href="https://community.stenci.la">Community Forum</a> and <a
+          href="https://gitter.im/stencila/stencila">Gitter channel</a>.</p>
+      <h2 id="contributors">Contributors</h2><span
+        itemtype="https://schema.stenci.la/Array">[{type:'Table',rows:[{type:'TableRow',cells:[{type:'TableCell',content:[{type:'Link',target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
+        Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
+        Bentley',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖']},'
+        ',{type:'Link',target:'#design-jwijay',content:['🎨']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
+        Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖']}]},{type:'TableCell',content:[{type:'Link',target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
+        Ketch',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖']},'
+        ',{type:'Link',target:'#design-alex-ketch',content:['🎨']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
+        Shaw',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
+        Neff',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛']}]}]},{type:'TableRow',cells:[{type:'TableCell',content:[{type:'Link',target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
+        Silva',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖']}]}]}]},{type:'Paragraph',content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
+        ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}]}]</span><span
+        itemtype="https://schema.stenci.la/Array">[{type:'Table',rows:[{type:'TableRow',cells:[{type:'TableCell',content:[{type:'Link',target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
+        Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
+        Bentley',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖']},'
+        ',{type:'Link',target:'#design-jwijay',content:['🎨']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
+        Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖']}]},{type:'TableCell',content:[{type:'Link',target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
+        Ketch',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖']},'
+        ',{type:'Link',target:'#design-alex-ketch',content:['🎨']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
+        Shaw',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
+        Neff',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛']}]}]},{type:'TableRow',cells:[{type:'TableCell',content:[{type:'Link',target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
+        Silva',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖']}]}]}]},{type:'Paragraph',content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
+        ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}]}]</span><span
+        itemtype="https://schema.stenci.la/Array">[{type:'Table',rows:[{type:'TableRow',cells:[{type:'TableCell',content:[{type:'Link',target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
+        Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
+        Bentley',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖']},'
+        ',{type:'Link',target:'#design-jwijay',content:['🎨']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
+        Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖']}]},{type:'TableCell',content:[{type:'Link',target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
+        Ketch',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖']},'
+        ',{type:'Link',target:'#design-alex-ketch',content:['🎨']}]},{type:'TableCell',content:[{type:'Link',target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
+        Shaw',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻']},'
+        ',{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛']}]},{type:'TableCell',content:[{type:'Link',target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
+        Neff',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛']}]}]},{type:'TableRow',cells:[{type:'TableCell',content:[{type:'Link',target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
+        Silva',type:'ImageObject'},{type:'Subscript',content:[]}]},{type:'Link',target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖']}]}]}]},{type:'Paragraph',content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
+        ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}]}]</span>
+      <p><img src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png"
+          itemprop="image"> <img
+          src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png"
+          itemprop="image"></p>
+      <p><img src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png"
+          itemprop="image"> <img
+          src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png"
+          itemprop="image"></p>
+      <h2 id="acknowledgments">Acknowledgments</h2>
+      <p>Encoda relies on many awesome opens source tools (see <code>package.json</code> for the
+        complete list). We are grateful ❤ to their developers and contributors for all their time
+        and energy. In particular, these tools do a lot of the heavy lifting 💪 under the hood.</p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Tool</td>
+            <td>Use</td>
+          </tr>
+          <tr>
+            <td><img src="https://ajv.js.org/images/ajv_logo.png" alt="Ajv" itemprop="image"></td>
+            <td><a href="https://ajv.js.org/">Ajv</a> is &quot;the fastest JSON Schema validator for
+              Node.js and browser&quot;. Ajv is not only fast, it also has an impressive breadth of
+              functionality. We use Ajv for the <code>validate()</code> and <code>coerce()</code>
+              functions to ensure that ingested data is valid against the Stencila <a
+                href="https://github.com/stencila/schema">schema</a>.</td>
+          </tr>
+          <tr>
+            <td><img src="https://avatars0.githubusercontent.com/u/41587916?s=200&amp;v=4"
+                alt="Citation.js" itemprop="image"></td>
+            <td><a href="https://citation.js.org/"><code>Citation.js</code></a> converts
+              bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it
+              to power the codecs for those formats and APIs.</td>
+          </tr>
+          <tr>
+            <td><img src="https://avatars0.githubusercontent.com/u/5912125?s=200&amp;v=4"
+                alt="Frictionless Data" itemprop="image"></td>
+            <td><a
+                href="https://github.com/frictionlessdata/datapackage-js"><code>datapackage-js</code></a>
+              from the team at <a href="https://frictionlessdata.io/">Frictionless Data</a> is a
+              Javascript library for working with <a
+                href="https://frictionlessdata.io/specs/data-package/">Data Packages</a>. It does a
+              lot of the work in converting between Tabular Data Packages and Stencila Datatables.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Pandoc</strong></td>
+            <td><a href="https://pandoc.org/">Pandoc</a> is a &quot;universal document
+              converter&quot;. It&#39;s able to convert between an impressive number of formats for
+              textual documents. Our <a
+                href="https://github.com/stencila/encoda/blob/c400d798e6b54ea9f88972b038489df79e38895b/src/pandoc-types.ts">Typescript
+                definitions for Pandoc&#39;s AST</a> allow us to leverage this functionality from
+              within Node.js while maintaining type safety. Pandoc powers our converters for Word,
+              JATS and Latex. We have contributed to Pandoc, including developing its <a
+                href="https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/JATS.hs">JATS
+                reader</a>.</td>
+          </tr>
+          <tr>
+            <td><img
+                src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png"
+                alt="Puppeteer" itemprop="image"></td>
+            <td><a href="https://pptr.dev/">Puppeteer</a> is a Node library which provides a
+              high-level API to control Chrome. We use it to take screenshots of HTML snippets as
+              part of generating rPNGs and we plan to use it for <a
+                href="https://github.com/stencila/encoda/issues/53">generating PDFs</a>.</td>
+          </tr>
+          <tr>
+            <td><img src="https://avatars2.githubusercontent.com/u/16309564?s=200&amp;v=4"
+                alt="Remark" itemprop="image"></td>
+            <td><a href="https://remark.js.org/"><code>Remark</code></a> is an ecosystem of plugins
+              for processing Markdown. It&#39;s part of the <a
+                href="https://unifiedjs.github.io/">unified</a> framework for processing text with
+              syntax trees - a similar approach to Pandoc but in Javascript. We use Remark as our
+              Markdown parser because of it&#39;s extensibility.</td>
+          </tr>
+          <tr>
+            <td><img src="https://sheetjs.com/sketch128.png" alt="SheetJs" itemprop="image"></td>
+            <td><a href="https://sheetjs.com">SheetJs</a> is a Javascript library for parsing and
+              writing various spreadhseet formats. We use their <a
+                href="https://github.com/sheetjs/js-xlsx">community edition</a> to power converters
+              for CSV, Excel, and Open Document Spreadsheet formats. They also have a <a
+                href="https://sheetjs.com/pro">pro version</a> if you need extra support and
+              functionality.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Many thanks ❤ to the <a href="https://sloan.org">Alfred P. Sloan Foundation</a> and <a
+          href="https://elifesciences.org">eLife</a> for funding development of this tool.</p>
+      <p><img src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png"
+          itemprop="image"> <img
+          src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png"
+          itemprop="image"></p>
+    </article>
+  </body>
+
+</html>

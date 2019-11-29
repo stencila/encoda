@@ -1,0 +1,54 @@
+<html>
+
+  <head>
+    <title>Untitled</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Untitled</h1>
+      <h1 id="-1"><code>dir</code></h1>
+      <p>The <code>dir</code> codec decodes a filesystem directory into a <code>Collection</code> of
+        <code>CreativeWork</code>s. It encodes a <code>Collection</code> as directory, with each
+        <code>CreativeWork</code> by default being encoded using the <code>html</code> codec.</p>
+      <p>The <code>dir</code> codec is useful for publishing a directory of files (possibly of
+        varying file types) as a directory of HTML (e.g. for publishing documentation).</p>
+      <h2 id="decoding-2">Decoding</h2>
+      <h3 id="main-file">Main file</h3>
+      <p>The <code>main</code> attribute is a <code>boolean</code> indicating if the file is the
+        main file in the directory.</p>
+      <h3 id="node-depth">Node depth</h3>
+      <p>When a directory is decoded, each <code>CreativeWork</code> in the node tree is given a
+        <code>depth</code> on its <code>meta</code> property. This could be used to resolve the root
+        of the tree.</p>
+      <h2 id="encoding-2">Encoding</h2>
+      <p>The <code>dir</code> codec encodes a <code>Collection</code> into a file hierarchy with
+        descendent <code>Collection</code>s encoded as directories and other types of
+        <code>CreativeWork</code>s encoded as files.</p>
+      <p>When decoding a node that is a <code>CreativeWork</code>, but not a
+        <code>Collection</code>, the node is wrapped in a new <code>Collection</code> which has the
+        node as its only <code>part</code>. When decoding a node that is not a
+        <code>CreativeWork</code>, the node is wrapped as the only <code>content</code> of a new
+        <code>CreativeWork</code> and then wrapped in a new <code>Collection</code>.</p>
+      <h3 id="-2"><code>root.json</code></h3>
+      <p>During encoding, a <code>root.json</code> file is created at the top level containing the
+        JSON encoding of the root <code>Collection</code>, including all decendent nodes, but
+        excluding the <code>content</code> property of <code>CreativeWork</code>s. This file is
+        intended to be used as a site map for the generated file tree.</p>
+    </article>
+  </body>
+
+</html>

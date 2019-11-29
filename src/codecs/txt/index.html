@@ -1,0 +1,78 @@
+<html>
+
+  <head>
+    <title>Untitled</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Untitled</h1>
+      <h1 id="-plain-text-codec"><code>txt</code>: Plain text codec</h1>
+      <p>The <code>txt</code> codec is for decoding/encoding from/to plain text. It&#39;s main
+        purpose is to provide a decoder for the <code>text/plain</code> media type (in particular
+        for decoding outputs of Jupyter Notebook cells which have this media type). It may also be
+        useful for decoding user input in plain text form fields.</p>
+      <h2 id="decoding-5">Decoding</h2>
+      <p>The <code>txt</code> codec only decodes content to primitive node types i.e.
+        <code>null</code>, <code>boolean</code>, <code>number</code> and <code>string</code>. It
+        makes no attempt to decode more complex structure or semantics of the content.</p>
+      <p>The string <code>&quot;null&quot;</code> is decoded to <code>null</code>, the string
+        <code>&quot;true&quot;</code> and <code>&quot;false&quot;</code> are decoded to
+        <code>boolean</code> values, and strings with only digits and an optional decimal place are
+        decoded to a <code>number</code>.</p>
+      <p>Everything else is decoded to a <code>string</code>. For example, this plain text content
+        (with some Unicode characters),</p>
+      <pre data-import="ex1"><code class="language-txt">Yay, plain text! 👏</code></pre>
+      <p>is decoded into a <code>string</code>, encoded in <a href="../json5">JSON5</a> as,</p>
+      <pre data-export="ex1"><code class="language-json5">&#39;Yay, plain text! 👏&#39;</code></pre>
+      <h2 id="encoding-5">Encoding</h2>
+      <p>All <code>Node</code> types are encoded as plain text. For non-<code>string</code>
+        primitive nodes, e.g. <code>boolean</code>, <code>number</code>, the plain text
+        representation comes from the <code>toString()</code> method.</p>
+      <p>No attempt is made to perform lossless encoding of more complex nodes. For
+        <code>Array</code> nodes, items are encoded and joined by a single space. For
+        <code>Object</code> nodes, key/value pairs are represented as space separated strings, with
+        pairs joined by a space. For example, the following <code>Article</code> node, encoded as <a
+          href="../json5">JSON5</a>,</p>
+      <pre data-import="ex2"><code class="language-json5">{
+  type: &#39;Article&#39;,
+  title: &#39;My simple article&#39;,
+  authors: [
+    {
+      type: &#39;Person&#39;,
+      givenNames: [&#39;Peter&#39;],
+      familyNames: [&#39;Pan&#39;]
+    }
+  ],
+  content: [
+    {
+      type: &#39;Paragraph&#39;,
+      content: [&#39;My first paragraph.&#39;]
+    }
+  ]
+}</code></pre>
+      <p>is encoded in <code>txt</code> as,</p>
+      <pre
+        data-export="ex2"><code class="language-txt">type Article title My simple article authors type Person givenNames Peter familyNames Pan content type Paragraph content My first paragraph.</code></pre>
+      <h2 id="invertability">Invertability</h2>
+      <p>The <code>txt</code> codec is only invertible for primitive node types. It is lossy for
+        <code>array</code>, <code>object</code> and other more complex node types because it
+        intentionally makes no attempt to encode these as plain text. Use one of the data transfer
+        formats e.g. <code>json</code> or <code>yaml</code> for lossless text-based encoding.</p>
+    </article>
+  </body>
+
+</html>
