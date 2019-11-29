@@ -86,4 +86,7 @@ jobs:
           npm run docs
           npm run build
           npx semantic-release
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+          NPM_TOKEN: $(NPM_TOKEN)
         displayName: 'Deploy docs and package'
