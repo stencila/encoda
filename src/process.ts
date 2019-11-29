@@ -26,7 +26,7 @@ export default async function process(
     if (node === null || typeof node !== 'object') return node
 
     if (node.type === 'Include') {
-      const include = {...node} as stencila.Include
+      const include = { ...node } as stencila.Include
       if (include.source) {
         // TODO: This assumes that the returned node is an CreativeWork
         // Wrap / unwrap to `BlockContent[]` as needed
@@ -36,7 +36,7 @@ export default async function process(
     }
 
     if (node.type === 'CodeBlock') {
-      const code = {...node} as stencila.CodeBlock
+      const code = { ...node } as stencila.CodeBlock
       const meta = code.meta
       if (meta) {
         if ('validate' in meta) {
@@ -55,14 +55,17 @@ export default async function process(
           )
         }
         if (meta.export) {
-          return {...code, text: await dump(
-            _get(meta.export),
-            meta.to || code.programmingLanguage,
-            {
-              ...defaultEncodeOptions,
-              isStandalone: false
-            }
-          )}
+          return {
+            ...code,
+            text: await dump(
+              _get(meta.export),
+              meta.to || code.programmingLanguage,
+              {
+                ...defaultEncodeOptions,
+                isStandalone: false
+              }
+            )
+          }
         }
         if (meta.equals) {
           _equals(
@@ -80,7 +83,7 @@ export default async function process(
     }
 
     if (node.type === 'Link') {
-      const link = {...node} as stencila.Link
+      const link = { ...node } as stencila.Link
       // @ts-ignore
       const meta = link.meta
       if (meta) {
@@ -120,7 +123,7 @@ export default async function process(
     */
 
     if (node.type === 'ImageObject') {
-      const img = {...node} as stencila.ImageObject
+      const img = { ...node } as stencila.ImageObject
       // @ts-ignore
       const meta = img.meta
       if (meta && img.contentUrl) {
@@ -142,7 +145,7 @@ export default async function process(
       }
     }
 
-    const clone = Array.isArray(node) ? [] : {} as {[key:string]: any}
+    const clone = Array.isArray(node) ? [] : ({} as { [key: string]: any })
     for (const [key, child] of Object.entries(node)) {
       clone[key] = await handle(child)
     }
