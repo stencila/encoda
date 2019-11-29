@@ -1,5 +1,4 @@
-import * as stencila from '@stencila/schema'
-import { nodeType } from '@stencila/schema/dist/util'
+import stencila from '@stencila/schema'
 import Ajv from 'ajv'
 import { getErrorMessage, getValidator } from './schemas'
 
@@ -13,7 +12,7 @@ export async function validate<Key extends keyof stencila.Types>(
   node: stencila.Node,
   type?: Key
 ): Promise<void> {
-  if (type === undefined) type = nodeType(node) as Key
+  if (type === undefined) type = stencila.nodeType(node) as Key
   const validator = await getValidator(type)
   try {
     await validator(node)

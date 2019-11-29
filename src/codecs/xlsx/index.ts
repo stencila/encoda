@@ -3,14 +3,12 @@
  */
 
 import stencila, { codeExpression } from '@stencila/schema'
-import { nodeType } from '@stencila/schema/dist/util'
 import { array, option, ord } from 'fp-ts'
 import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
-import { expression } from '@babel/template'
 
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
@@ -81,11 +79,11 @@ function decodeWorkbook(
 }
 
 function encodeNode(node: stencila.Node): xlsx.WorkBook {
-  const type_ = nodeType(node)
+  const type = stencila.nodeType(node)
 
   const sheetNames: string[] = []
   const sheets: { [key: string]: xlsx.WorkSheet } = {}
-  if (type_ === 'Collection') {
+  if (type === 'Collection') {
     const collection = node as stencila.Collection
     if (collection.parts && collection.parts.length > 0) {
       let index = 1

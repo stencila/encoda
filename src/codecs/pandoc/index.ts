@@ -3,12 +3,11 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
-import {
+import stencila, {
   isBlockContent,
   isInlineContent,
   nodeType
-} from '@stencila/schema/dist/util'
+} from '@stencila/schema'
 import childProcess from 'child_process'
 import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'

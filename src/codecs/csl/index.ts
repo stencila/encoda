@@ -6,7 +6,6 @@
  */
 
 import * as stencila from '@stencila/schema'
-import { isA, isCreativeWork } from '@stencila/schema/dist/util'
 // @ts-ignore
 import Cite from 'citation-js'
 import Csl from 'csl-json'
@@ -63,7 +62,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
     const { format = 'json' } = options
 
     let content = ''
-    if (isCreativeWork(node)) {
+    if (stencila.isCreativeWork(node)) {
       const csl = encodeCsl(node)
       const cite = new Cite([csl])
       if (format === 'json') {
@@ -190,7 +189,7 @@ const decodeAuthor = (author: Csl.Person): Promise<stencila.Person> => {
 const encodeAuthor = (
   author: stencila.Person | stencila.Organization
 ): Csl.Person => {
-  return isA('Person', author)
+  return stencila.isA('Person', author)
     ? encodePerson(author)
     : encodeOrganization(author)
 }

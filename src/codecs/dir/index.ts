@@ -3,8 +3,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
-import { isCreativeWork } from '@stencila/schema/dist/util'
+import stencila, { isCreativeWork } from '@stencila/schema'
 import { range } from 'fp-ts/lib/Array'
 import fs from 'fs-extra'
 import globby from 'globby'

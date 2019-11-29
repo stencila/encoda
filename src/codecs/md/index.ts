@@ -3,14 +3,13 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
-import {
+import stencila, {
   isBlockContent,
   isListItem,
   nodeIs,
   nodeType,
   TypeMapGeneric
-} from '@stencila/schema/dist/util'
+} from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
 import * as MDAST from 'mdast'

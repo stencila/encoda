@@ -6,12 +6,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
-import {
-  isInlineContent,
-  isParagraph,
-  nodeType
-} from '@stencila/schema/dist/util'
+import stencila from '@stencila/schema'
 import crypto from 'crypto'
 import { docs_v1 as GDocT } from 'googleapis'
 import { stringifyContent } from '../../util/content/stringifyContent'
@@ -205,7 +200,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
   // Wrap the node as needed to ensure an array
   // of block element at the top level
   let content: stencila.Node[] = []
-  switch (nodeType(node)) {
+  switch (stencila.nodeType(node)) {
     // `CreativeWork` types (have `content`)
     case 'Article': {
       const article = node as stencila.Article
@@ -236,7 +231,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
 
   if (content) {
     for (const node of content) {
-      const type_ = nodeType(node)
+      const type_ = stencila.nodeType(node)
       switch (type_) {
         case 'Heading':
           gdocContent.push(encodeHeading(node as stencila.Heading))
@@ -446,7 +441,7 @@ const encodeListItem = (
   listId: string
 ): GDocT.Schema$Paragraph => {
   const head = listItem.content[0]
-  if (isParagraph(head)) {
+  if (stencila.isParagraph(head)) {
     return {
       elements: head.content.map(encodeInlineContent),
       bullet: {
@@ -456,7 +451,9 @@ const encodeListItem = (
   }
 
   return {
-    elements: listItem.content.filter(isInlineContent).map(encodeInlineContent),
+    elements: listItem.content
+      .filter(stencila.isInlineContent)
+      .map(encodeInlineContent),
     bullet: {
       listId
     }
@@ -613,7 +610,7 @@ function decodeInlineObjectElement(
 function encodeInlineContent(
   node: stencila.InlineContent
 ): GDocT.Schema$ParagraphElement {
-  const type_ = nodeType(node)
+  const type_ = stencila.nodeType(node)
   switch (type_) {
     case 'Emphasis':
       return encodeEmphasis(node as stencila.Emphasis)

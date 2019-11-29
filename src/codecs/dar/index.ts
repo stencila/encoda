@@ -9,7 +9,6 @@
  */
 
 import stencila from '@stencila/schema'
-import { isA, isCreativeWork, nodeType } from '@stencila/schema/dist/util'
 import fs from 'fs-extra'
 import h from 'hyperscript'
 import produce from 'immer'
@@ -71,15 +70,15 @@ export class DarCodec extends Codec implements Codec {
 
     // Generate promises for each document and its assets
     const nodes =
-      isCreativeWork(node) && node.type === 'Collection'
+      stencila.isCreativeWork(node) && node.type === 'Collection'
         ? node.parts || []
         : [node]
     const promises = nodes.map(async (node, index) => {
       const fileId =
-        isCreativeWork(node) && node.name
+        stencila.isCreativeWork(node) && node.name
           ? node.name
-          : `${nodeType(node).toLowerCase()}-${index}`
-      if (isA('Datatable', node)) {
+          : `${stencila.nodeType(node).toLowerCase()}-${index}`
+      if (stencila.isA('Datatable', node)) {
         const fileName = `${fileId}.csv`
         const filePath = path.join(darPath, fileName)
         await write(node, filePath)

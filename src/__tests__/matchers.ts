@@ -1,5 +1,4 @@
 import stencila from '@stencila/schema'
-import { nodeType } from '@stencila/schema/dist/util'
 import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs-extra'
 import diff from 'jest-diff'
@@ -21,7 +20,7 @@ import { getTheme } from '@stencila/thema'
  */
 async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
   if (!fileName) {
-    const typeName = nodeType(node).toLowerCase()
+    const typeName = stencila.nodeType(node).toLowerCase()
     const num = Math.floor(Math.random() * Math.floor(1000))
     fileName = `${typeName}-${num}`
     const ext =

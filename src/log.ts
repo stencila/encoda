@@ -1,6 +1,5 @@
 import * as logga from '@stencila/logga'
 import * as stencila from '@stencila/schema'
-import { nodeType } from '@stencila/schema/dist/util'
 
 const log = logga.getLogger('encoda')
 export default log
@@ -74,7 +73,7 @@ export const logWarnLossIfAny = (
   const properties = Object.keys(rest)
   if (properties.length > 0) {
     log.warn(
-      `${codec} Properties of \`${nodeType(
+      `${codec} Properties of \`${stencila.nodeType(
         node
       )}\` not supported by ${op}: ${properties
         .map(prop => `\`${prop}\``)
@@ -98,7 +97,7 @@ export const logErrorNodeType = (
   node: stencila.Node
 ): void => {
   log.error(
-    `${codec}:${op} Expecting node of type ${types} but got node of type ${nodeType(
+    `${codec}:${op} Expecting node of type ${types} but got node of type ${stencila.nodeType(
       node
     )}`
   )
