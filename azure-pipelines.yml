@@ -49,12 +49,11 @@ jobs:
       - script: npm install
         displayName: 'Install dependencies'
 
-      - script: |
-          # Run tests with
-          #   - Two minute default test timeout
-          #   - Force exit to prevent hanging
-          #   - See https://github.com/nock/nock#modes what nock modes do
-          npm run test:cover -- --testTimeout=120000 --forceExit
+      # Run tests with
+      #   - Two minute default test timeout
+      #   - Force exit to prevent hanging
+      #   - See https://github.com/nock/nock#modes what nock modes do
+      - script: npm run test:cover -- --testTimeout=120000 --forceExit
         displayName: 'Run tests'
         env:
           NOCK_MODE: $(nock_mode)
@@ -65,8 +64,10 @@ jobs:
       - script: npm run build
         displayName: 'Build package'
 
+      # Only upload coverage on Linux (fails on Windows and largely
+      # unncessary to duplicate by OS anyway)
       - script: bash <(curl -s https://codecov.io/bash)
-        condition: succeeded()
+        condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
         displayName: 'Upload coverage'
 
   - job: deploy
