@@ -752,15 +752,14 @@ function decodeCreativeWork(work: HTMLElement): stencila.CreativeWork {
   const headline = workSelector('headline')
   const url = workSelector('url')
 
-  return {
-    type: 'CreativeWork',
+  return stencila.creativeWork({
     title: headline && headline.textContent ? headline.textContent : 'Untitled',
     authors: workSelectorAll('author').map(decodePerson),
     funders: workSelectorAll('funder').map(decodePerson),
     editors: workSelectorAll('editor').map(decodePerson),
     url: url ? url.getAttribute('href') || undefined : undefined,
     ...propsToValues(work)(['dateCreated', 'dateModified', 'datePublished'])
-  }
+  })
 }
 
 function encodeCreativeWork(
@@ -791,12 +790,11 @@ function decodePerson(person: HTMLElement): stencila.Person {
   const href = url && url.getAttribute('href')
   const personProps = propValue(person)
 
-  return {
-    type: 'Person',
+  return stencila.person({
     url: href || undefined,
     familyNames: [personProps('familyName')].filter(isDefined),
     givenNames: [personProps('givenName')].filter(isDefined)
-  }
+  })
 }
 
 /**
@@ -962,7 +960,7 @@ function decodeHeading(
   heading: HTMLHeadingElement,
   depth: number
 ): stencila.Heading {
-  return { type: 'Heading', depth, content: decodeInlineChildNodes(heading) }
+  return stencila.heading(decodeInlineChildNodes(heading), depth)
 }
 
 /**
@@ -979,7 +977,7 @@ function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
  * Decode a `<p>` element to a `stencila.Paragraph`.
  */
 function decodeParagraph(para: HTMLParagraphElement): stencila.Paragraph {
-  return { type: 'Paragraph', content: decodeInlineChildNodes(para) }
+  return stencila.paragraph(decodeInlineChildNodes(para))
 }
 
 /**
@@ -993,13 +991,11 @@ function encodeParagraph(para: stencila.Paragraph): HTMLParagraphElement {
  * Decode a `<blockquote>` element to a `stencila.QuoteBlock`.
  */
 function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
-  const quoteBlock: stencila.QuoteBlock = {
-    type: 'QuoteBlock',
-    content: decodeBlockChildNodes(elem)
-  }
+  const content = decodeBlockChildNodes(elem)
   const cite = elem.getAttribute('cite')
-  if (cite) quoteBlock.cite = cite
-  return quoteBlock
+  return stencila.quoteBlock(content, {
+    cite: cite !== null ? cite : undefined
+  })
 }
 
 /**
@@ -1058,10 +1054,9 @@ function encodeCite(cite: stencila.Cite): HTMLElement {
  * Decode a `<ol itemtype="https://schema.stenci.la/CiteGroup">` element to a `stencila.CiteGroup`.
  */
 function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
-  return {
-    type: 'CiteGroup',
-    items: [...citeGroup.querySelectorAll<HTMLElement>('cite')].map(decodeCite)
-  }
+  return stencila.citeGroup(
+    [...citeGroup.querySelectorAll<HTMLElement>('cite')].map(decodeCite)
+  )
 }
 
 /**
@@ -1085,12 +1080,11 @@ function decodeFigure(elem: HTMLElement): stencila.Figure {
 
   const caption = elem.querySelector('figcaption')
 
-  return {
-    type: 'Figure',
+  return stencila.figure({
     id: elem.getAttribute('id') || undefined,
     content,
     caption: caption ? decodeFigCaption(caption) : undefined
-  }
+  })
 }
 
 /**
@@ -1121,10 +1115,7 @@ function decodeCollection(collection: HTMLOListElement): stencila.Collection {
     ([...collection.childNodes] || []).map(decodeChildNodes)
   ).filter(isCreativeWork)
 
-  return {
-    type: 'Collection',
-    parts
-  }
+  return stencila.collection(parts)
 }
 
 /**
@@ -1145,14 +1136,11 @@ function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
   const code = elem.querySelector('code')
   if (!code) throw new Error('Woaah, this should never happen!')
   const { programmingLanguage, text } = decodeCodeFragment(code)
-  const codeblock: stencila.CodeBlock = {
-    type: 'CodeBlock',
-    programmingLanguage,
-    text
-  }
   const meta = decodeDataAttrs(elem)
-  if (meta) codeblock.meta = meta
-  return codeblock
+  return stencila.codeBlock(text, {
+    programmingLanguage,
+    meta
+  })
 }
 
 /**
@@ -1287,12 +1275,9 @@ const encodeCodeOutput = (node: stencila.Node): Node => {
  * Decode a `<ul>` or `<ol>` element to a `stencila.List`.
  */
 function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
+  const items = [...list.querySelectorAll('li')].map(decodeListItem)
   const order = list.tagName === 'UL' ? 'unordered' : 'ascending'
-  return {
-    type: 'List',
-    order,
-    items: [...list.querySelectorAll('li')].map(decodeListItem)
-  }
+  return stencila.list(items, { order })
 }
 
 /**
@@ -1306,10 +1291,7 @@ function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
  * Decode a `<li>` element to a `stencila.ListItem`.
  */
 function decodeListItem(li: HTMLLIElement): stencila.ListItem {
-  return {
-    type: 'ListItem',
-    content: decodeChildNodes(li)
-  }
+  return stencila.listItem(decodeChildNodes(li))
 }
 
 /**
@@ -1323,25 +1305,17 @@ function encodeListItem(listItem: stencila.ListItem): HTMLLIElement {
  * Decode a `<table>` element to a `stencila.Table`.
  */
 function decodeTable(table: HTMLTableElement): stencila.Table {
-  return compactObj({
-    type: 'Table',
-    id: table.getAttribute('id') || undefined,
-    rows: Array.from(table.querySelectorAll('tr')).map(
-      (row: HTMLTableRowElement): stencila.TableRow => {
-        return {
-          type: 'TableRow',
-          cells: Array.from(row.querySelectorAll('td')).map(
-            (cell: HTMLTableDataCellElement): stencila.TableCell => {
-              return {
-                type: 'TableCell',
-                content: decodeInlineChildNodes(cell)
-              }
-            }
-          )
-        }
-      }
-    )
-  })
+  const rows = Array.from(table.querySelectorAll('tr')).map(
+    (row: HTMLTableRowElement): stencila.TableRow =>
+      stencila.tableRow(
+        Array.from(row.querySelectorAll('td')).map(
+          (cell: HTMLTableDataCellElement): stencila.TableCell =>
+            stencila.tableCell(decodeInlineChildNodes(cell))
+        )
+      )
+  )
+  const id = table.getAttribute('id') || undefined
+  return stencila.table(rows, { id })
 }
 
 /**
@@ -1407,10 +1381,7 @@ function decodeDatatable(elem: HTMLElement): stencila.Datatable {
     }
   }
 
-  return {
-    type: 'Datatable',
-    columns
-  }
+  return stencila.datatable(columns)
 }
 
 /**
@@ -1446,7 +1417,7 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
  * Decode a `<hr>` element to a `stencila.ThematicBreak`.
  */
 function decodeHR(): stencila.ThematicBreak {
-  return { type: 'ThematicBreak' }
+  return stencila.thematicBreak()
 }
 
 /**
@@ -1477,15 +1448,12 @@ function encodeMark(node: stencila.Mark, tag: string): HTMLElement {
  * Decode a `<a>` element to a `stencila.Link`.
  */
 function decodeLink(elem: HTMLAnchorElement): stencila.Link {
-  const link: stencila.Link = {
-    type: 'Link',
-    target: elem.getAttribute('href') || '#',
-    content: decodeInlineChildNodes(elem)
-  }
-
+  const content = decodeInlineChildNodes(elem)
+  const target = elem.getAttribute('href') || '#'
   const meta = decodeDataAttrs(elem)
-  if (meta) link.meta = meta
-  return link
+  return stencila.link(content, target, {
+    meta
+  })
 }
 
 /**
@@ -1503,10 +1471,9 @@ function encodeLink(link: stencila.Link): HTMLAnchorElement {
  * Decode a `<q>` element to a `stencila.Quote`.
  */
 function decodeQuote(elem: HTMLQuoteElement): stencila.Quote {
-  const quote: stencila.Quote = { type: 'Quote', content: [elem.innerHTML] }
+  const content = [elem.innerHTML]
   const cite = elem.getAttribute('cite')
-  if (cite) quote.cite = cite
-  return quote
+  return stencila.quote(content, { cite: cite !== null ? cite : undefined })
 }
 
 /**
