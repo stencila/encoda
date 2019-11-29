@@ -1,34 +1,10 @@
 language: node_js
-node_js:
-  - '10'
-
-# Run on Linux and MacOS
-os:
-  - linux
-  - osx
-
-before_script:
-  - node install
 
 script:
-  # Temporarily disable dependency checking
-  # - npm run check
-  - npm run lint
-  # Run tests with
-  #   - `nock.back` 'wild' mode to do real HTTP requests so we
-  #     know if there is an API change we need to address
-  #   - Two minute default test timeout
-  #   - Force exit to prevent hanging
-  - npm run test:wild -- --coverage --testTimeout=120000 --forceExit
   - npm run docs
-  - npm run build
-
-after_success:
-  # Upload test coverage to codecov.io
-  - bash <(curl -s https://codecov.io/bash)
 
 deploy:
-  # Deploy documentation to Github Pages (only on Linux)
+  # Deploy documentation to Github Pages
   # See https://docs.travis-ci.com/user/deployment/pages/
   - provider: pages
     skip-cleanup: true
@@ -36,12 +12,3 @@ deploy:
     local-dir: docs
     on:
       branch: master
-      condition: $TRAVIS_OS_NAME = linux
-
-  # Do a semantic release (only on Linux)
-  - provider: script
-    skip_cleanup: true
-    script: npx semantic-release
-    on:
-      branch: master
-      condition: $TRAVIS_OS_NAME = linux
