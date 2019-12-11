@@ -39,4 +39,7 @@ async function load(modulePath) {
   // Install Pandoc binary
   const pandoc = await load('./dist/codecs/pandoc/binary')
   await pandoc.install()
+  // Register Encoda as an executor
+  const encoda = await load('./dist/encoda')
+  encoda.run('register')
 })()
