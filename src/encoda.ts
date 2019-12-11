@@ -1,15 +1,7 @@
-import {
-  Listener,
-  // TODO: Now that Executa re-exports logga
-  // and schema, shall we use those instead of
-  // potentially having version conflicts
-  logga,
-  schema,
-  Server,
-  StdioServer,
-  Capabilities
-} from '@stencila/executa'
-import { dump, load } from '.'
+import { Capabilities, Listener, Server, StdioServer } from '@stencila/executa'
+import logga from '@stencila/logga'
+import schema from '@stencila/schema'
+import { codecList, dump, load } from '.'
 
 const log = logga.getLogger('encoda')
 
@@ -42,9 +34,26 @@ export class Encoda extends Listener {
   public capabilities(): Promise<Capabilities> {
     return Promise.resolve({
       manifest: true,
-      // TODO: Populate these with formats available
-      decode: true,
-      encode: true
+      decode: {
+        required: ['content', 'format'],
+        properties: {
+          content: {
+            type: 'string'
+          },
+          format: {
+            enum: codecList
+          }
+        }
+      },
+      encode: {
+        required: ['node', 'format'],
+        properties: {
+          node: true,
+          format: {
+            enum: codecList
+          }
+        }
+      }
     })
   }
 
