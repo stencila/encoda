@@ -31,7 +31,6 @@ import fs from 'fs'
 // @ts-ignore
 import GithubSlugger from 'github-slugger'
 import h from 'hyperscript'
-// @ts-ignore
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
