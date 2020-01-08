@@ -230,6 +230,82 @@ Use the `--zip` option to create a Zip archive with the outputs of conversion. W
 | `--zip`        | Create `.zip` archive containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
 | `--debug`      | Print debugging information                                                                                |
 
+### Using with Executa
+
+Encoda exposes the `decode` and `encode` methods of the [Executa](https://github.com/stencila/executa) API. Register Encoda so that it can be discovered by other executors on your machine,
+
+```bash
+npm run register
+```
+
+You can then use Encoda as a plugin for Executa that provides additional format conversion capabilities. For example, you can use the `query` REPL on a Markdown document:
+
+
+```bash
+npx executa query CHANGELOG.md --repl
+```
+
+You can then use the REPL to explore the structure of the document and do things like create summary documents from it. For example, lets say from some reason we wanted to create a short JATS XML file with the five most recent releases of this package:
+
+```
+jmp > %format jats
+jmp > %dest latest-releases.jats.xml
+jmp > {type: 'Article', content: content[? type==`Heading` && depth==`1`] | [1:5]}
+```
+
+Which creates the `latest-major-releases.jats.xml` file:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+    <front>
+        <title-group>
+            <article-title/>
+        </title-group>
+        <contrib-group/>
+    </front>
+    <body>
+        <sec>
+            <title>
+                <ext-link ext-link-type="uri" xlink:href="https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0">0.80.0</ext-link> (2019-09-30)
+            </title>
+        </sec>
+...
+```
+
+You can query a document in any format supported by Encoda. As another example, lets' fetch a CSV file from Github and get the names of it's columns:
+
+```bash
+npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
+🛈 INFO  encoda:http Fetching "https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv"
+jmp > columns[].name
+[
+  'SetID',
+  'Number',
+  'Variant',
+  'Theme',
+  'Subtheme',
+  'Year',
+  'Name',
+  'Minifigs',
+  'Pieces',
+  'UKPrice',
+  'USPrice',
+  'CAPrice',
+  'EUPrice',
+  'ImageURL',
+  'Owned',
+  'Wanted',
+  'QtyOwned',
+]
+jmp >
+```
+
+See the `%help` REPL command for more examples.
+
+Note: If you have [`executa`](https://github.com/stencila/executa) installed globally, then the `npx` prefix above is not necessary.
+
 ## Documentation
 
 Self-hoisted (documentation converted from various formats to html) and API documentation (generated from source code) is available at: https://stencila.github.io/encoda.
