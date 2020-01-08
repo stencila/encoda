@@ -15,7 +15,7 @@ export default log
 export const configure = (debug = false): void => {
   logga.replaceHandlers((data: logga.LogData): void => {
     logga.defaultHandler(data, {
-      level: debug ? logga.LogLevel.debug : logga.LogLevel.info,
+      maxLevel: debug ? logga.LogLevel.debug : logga.LogLevel.info,
       throttle: {
         // Do not repeat the same message within 5s
         signature: `${data.tag}${data.level}${data.message}`,
