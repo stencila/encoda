@@ -71,7 +71,8 @@ export const codecList: string[] = [
   'pandoc',
   'json5',
   'jsonld',
-  'json'
+  'json',
+  'xml'
 ]
 
 /**
