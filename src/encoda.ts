@@ -1,9 +1,17 @@
-import { Capabilities, Listener, Server, StdioServer } from '@stencila/executa'
-import logga from '@stencila/logga'
-import schema from '@stencila/schema'
-import { codecList, dump, load } from '.'
+import {
+  Capabilities,
+  cli,
+  Listener,
+  Server,
+  StdioServer
+} from '@stencila/executa'
+import { getLogger } from '@stencila/logga'
+import * as schema from '@stencila/schema'
+import { codecList, decode, encode } from '.'
+import { defaultEncodeOptions } from './codecs/types'
+import * as vfile from './util/vfile'
 
-const log = logga.getLogger('encoda')
+const log = getLogger('encoda')
 
 /**
  * An Executa `Listener` which by default listens
@@ -13,18 +21,10 @@ const log = logga.getLogger('encoda')
 export class Encoda extends Listener {
   constructor(
     servers: Server[] = [
-      new StdioServer({ command: 'node', args: [__filename] })
+      new StdioServer({ command: 'node', args: [__filename, 'start'] })
     ]
   ) {
     super('en', servers)
-  }
-
-  /**
-   * Register Encoda so that it can
-   * be discovered by other executors.
-   */
-  public async register(): Promise<void> {
-    StdioServer.register('encoda', await this.manifest())
   }
 
   /**
@@ -35,9 +35,11 @@ export class Encoda extends Listener {
     return Promise.resolve({
       manifest: true,
       decode: {
-        required: ['content', 'format'],
+        // Format is not required (it can be inferred from source)
+        // but if specified, then must be part of the list
+        required: ['source'],
         properties: {
-          content: {
+          source: {
             type: 'string'
           },
           format: {
@@ -46,7 +48,7 @@ export class Encoda extends Listener {
         }
       },
       encode: {
-        required: ['node', 'format'],
+        required: ['node'],
         properties: {
           node: true,
           format: {
@@ -58,39 +60,32 @@ export class Encoda extends Listener {
   }
 
   /**
-   * @override Override of `Executor.decode` to call the `load`
-   * function (which decodes from a string to a `Node`)
+   * @override Override of `Executor.decode`.
    */
-  public async decode(content: string, format: string): Promise<schema.Node> {
-    return load(content, format)
+  public async decode(source: string, format?: string): Promise<schema.Node> {
+    return decode(vfile.create(source), source, format)
   }
 
   /**
-   * @override Override of `Executor.encode` to call the `dump`
-   * function (which encodes a `Node` to a string)
+   * @override Override of `Executor.encode`.
    */
-  public async encode(node: schema.Node, format: string): Promise<string> {
-    return dump(node, format)
+  public async encode(
+    node: schema.Node,
+    dest?: string,
+    format?: string
+  ): Promise<string> {
+    const encoding = await encode(node, {
+      ...defaultEncodeOptions,
+      format,
+      filePath: dest
+    })
+    if (dest !== undefined) {
+      await vfile.write(encoding, dest)
+      return dest
+    } else return encoding.contents.toString()
   }
 }
 
-/**
- * Create an `Encoda` and run one of it's methods.
- *
- * Used by `npm postinstall` to register this interpreter,
- * and below, to start it.
- *
- * @param method The name of the method to run
- */
-// TODO: This is ported from Basha. If it is
-// a generally useful approach then we could make this
-// a generic in Executa so that it does not need to be duplicated.
-export const run = (method: string): void => {
-  const instance = new Encoda()
-  /* eslint-disable @typescript-eslint/unbound-method */
-  const func = method === 'register' ? instance.register : instance.start
-  func.apply(instance).catch(error => log.error(error))
-}
-
-// Default to running `start`
-if (require.main === module) run('start')
+// istanbul ignore next
+if (require.main === module)
+  cli.main(new Encoda()).catch(error => log.error(error))

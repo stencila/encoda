@@ -24,6 +24,7 @@
     "cli": "npx ts-node --files src/cli",
     "build": "tsc -p tsconfig.prod.json && npm run build:pandoc-assets",
     "build:pandoc-assets": "cp src/codecs/pandoc/.npmignore dist/codecs/pandoc/ && cp -r src/codecs/pandoc/templates/. dist/codecs/pandoc/templates/",
+    "register": "npm run build && node dist/encoda register",
     "docs": "npm run docs:readme && npm run docs:dogfood && npm run docs:ts",
     "docs:readme": "markdown-toc -i --maxdepth=4 README.md",
     "docs:dogfood": "npx ts-node --files docs.ts",
@@ -40,7 +41,7 @@
     "url": "https://github.com/stencila/encoda/issues"
   },
   "dependencies": {
-    "@stencila/executa": "^1.2.0",
+    "@stencila/executa": "^1.7.1",
     "@stencila/logga": "^2.0.0",
     "@stencila/schema": "^0.32.0",
     "@stencila/thema": "^1.5.6",
