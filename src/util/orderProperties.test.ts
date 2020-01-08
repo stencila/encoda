@@ -14,15 +14,17 @@ describe('orderProperties', () => {
 
   it('always orders type, id, ...rest (alphabetical), meta and content', async () => {
     await expect(
-      Object.keys(orderProperties({
-        meta: {
-          foo: 'bar'
-        },
-        content: 'First heading',
-        id: 'some-id',
-        depth: 1,
-        type: 'Heading'
-      }) as object)
+      Object.keys(
+        orderProperties({
+          meta: {
+            foo: 'bar'
+          },
+          content: 'First heading',
+          id: 'some-id',
+          depth: 1,
+          type: 'Heading'
+        }) as object
+      )
     ).toEqual(['type', 'id', 'depth', 'meta', 'content'])
   })
 

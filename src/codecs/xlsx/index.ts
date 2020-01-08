@@ -179,11 +179,7 @@ const decodeTable = (
 ): stencila.Table => ({
   type: 'Table',
   name,
-  rows: pipe(
-    cells,
-    cellMapToRowMap,
-    rowMapToTableRows
-  )
+  rows: pipe(cells, cellMapToRowMap, rowMapToTableRows)
 })
 
 const encodeTable = (table: stencila.Table): xlsx.WorkSheet =>

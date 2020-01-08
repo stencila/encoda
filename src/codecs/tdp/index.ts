@@ -38,9 +38,11 @@ export class TDPCodec extends Codec implements Codec {
     }
 
     // Decode resources
-    const parts = await Promise.all(pkg.resources.map(
-      async (resource: datapackage.Resource) => decodeResource(resource)
-    ) as Promise<stencila.Datatable>[])
+    const parts = await Promise.all(
+      pkg.resources.map(async (resource: datapackage.Resource) =>
+        decodeResource(resource)
+      ) as Promise<stencila.Datatable>[]
+    )
 
     // Collection or Datatable ?
     let node: stencila.Datatable | stencila.Collection

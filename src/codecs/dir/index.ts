@@ -109,23 +109,25 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       })
 
     // Read files into nodes in parallel
-    const nodes = (await Promise.all(
-      routes.map(async route => {
-        const node = await read(path.join(dirPath, ...route))
-        if (isCreativeWork(node)) {
-          const { name } = path.parse(route[route.length - 1])
-          const depth = route.length - 1
-          return {
-            route,
-            node: {
-              name,
-              ...node,
-              meta: { ...node.meta, depth }
+    const nodes = (
+      await Promise.all(
+        routes.map(async route => {
+          const node = await read(path.join(dirPath, ...route))
+          if (isCreativeWork(node)) {
+            const { name } = path.parse(route[route.length - 1])
+            const depth = route.length - 1
+            return {
+              route,
+              node: {
+                name,
+                ...node,
+                meta: { ...node.meta, depth }
+              }
             }
           }
-        }
-      })
-    ))
+        })
+      )
+    )
       // Remove files that were not decoded as creative works
       // (using reduce instead of filter to keep Typescript happy)
       .reduce(

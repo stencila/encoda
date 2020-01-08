@@ -95,9 +95,7 @@ export const mdastBlockContentTypes: TypeMapGeneric<MDAST.BlockContent> = {
   thematicBreak: 'thematicBreak'
 }
 
-export const mdastPhrasingContentTypes: TypeMapGeneric<
-  MDAST.PhrasingContent
-> = {
+export const mdastPhrasingContentTypes: TypeMapGeneric<MDAST.PhrasingContent> = {
   break: 'break',
   delete: 'delete',
   emphasis: 'emphasis',
@@ -483,7 +481,7 @@ function decodeHeading(heading: MDAST.Heading): stencila.Heading {
 function encodeHeading(heading: stencila.Heading): MDAST.Heading {
   return {
     type: 'heading',
-    depth: heading.depth as (1 | 2 | 3 | 4 | 5 | 6),
+    depth: heading.depth as 1 | 2 | 3 | 4 | 5 | 6,
     children: heading.content.map(encodeInlineContent)
   }
 }
@@ -1352,9 +1350,11 @@ function stringifyAttrs(tree: UNIST.Node) {
   const md = (node: UNIST.Node) => codec.stringify(node)
   return map(tree, (node: UNIST.Node) => {
     if (types.includes(node.type) && node.data && node.data.hProperties) {
-      const meta = stringifyMeta(node.data.hProperties as {
-        [key: string]: string
-      })
+      const meta = stringifyMeta(
+        node.data.hProperties as {
+          [key: string]: string
+        }
+      )
       const value = `${md(node)}{${meta}}`
       return { type: 'html', value }
     }
