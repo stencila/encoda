@@ -27,7 +27,7 @@ export class CrossrefCodec extends Codec implements Codec {
       }
     })
     if (response.statusCode === 200 && response.body) {
-      const data = JSON.parse(response.body)
+      const data = JSON.parse(response.body as string)
       const csl = data.message.items[0]
       // The output from api.crossref.org is not strictly CSL-JSON
       // See  https://github.com/CrossRef/rest-api-doc/issues/222 for more

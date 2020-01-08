@@ -15,10 +15,10 @@ describe('get', () => {
     await cacheDelete('https://example.org/cached')
 
     let response = await get('https://example.org/cached')
-    expect(response.fromCache).toBe(false)
+    expect(response.isFromCache).toBe(false)
 
     response = await get('https://example.org/cached')
-    expect(response.fromCache).toBe(true)
+    expect(response.isFromCache).toBe(true)
   })
 
   it('will not cache responses if no caching headers are set', async () => {
@@ -28,9 +28,9 @@ describe('get', () => {
       .persist() // Persist so that this can be called twice
 
     let response = await get('https://example.org/not-cached')
-    expect(response.fromCache).toBe(false)
+    expect(response.isFromCache).toBe(false)
 
     response = await get('https://example.org/not-cached')
-    expect(response.fromCache).toBe(false)
+    expect(response.isFromCache).toBe(false)
   })
 })

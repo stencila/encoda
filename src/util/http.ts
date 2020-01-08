@@ -7,13 +7,17 @@
  */
 
 import fs from 'fs-extra'
-import got from 'got'
+import got, { Response } from 'got'
 import stream from 'stream'
 import util from 'util'
 import cache from './app/cacheSync'
 
 const pipeline = util.promisify(stream.pipeline)
 
+/**
+ * A `got` instance with default options for
+ * HTTP requests.
+ */
 const http = got.extend({
   cache,
   headers: {
@@ -28,10 +32,7 @@ const http = got.extend({
  * @param url The URL to get
  * @param options Options to pass to `got`
  */
-export async function get(
-  url: string,
-  options: got.GotOptions<string> = {}
-): Promise<got.Response<string>> {
+export async function get(url: string, options: any = {}): Promise<Response> {
   try {
     return await http.get(url, options)
   } catch (error) {
