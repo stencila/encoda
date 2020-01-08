@@ -32,7 +32,10 @@ const http = got.extend({
  * @param url The URL to get
  * @param options Options to pass to `got`
  */
-export async function get(url: string, options: any = {}): Promise<Response> {
+export async function get(
+  url: string,
+  options: any = {}
+): Promise<Response<string>> {
   try {
     return await http.get(url, options)
   } catch (error) {
