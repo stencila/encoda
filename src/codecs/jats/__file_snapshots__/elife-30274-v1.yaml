@@ -2672,9 +2672,6 @@ content:
             format: application/postscript
             meta:
               inline: false
-          - type: MediaObject
-            contentUrl: elife-30274-fig2-data1-v1.csv
-            format: application/octet-stream
       - type: Figure
         id: fig2s1
         caption:

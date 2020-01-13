@@ -3806,9 +3806,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig1-data1-v3.xlsx
-        format: application/xlsx
   - type: Heading
     id: s2-2
     depth: 2
@@ -4016,9 +4013,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig2-data1-v3.xlsx
-        format: application/xlsx
   - type: Heading
     id: s2-3
     depth: 2
@@ -4215,9 +4209,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig3-data1-v3.xlsx
-        format: application/xlsx
   - type: Paragraph
     content:
       - 'We next examined the data from the BXD mice with regard to '
@@ -4596,9 +4587,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig4-data1-v3.xlsx
-        format: application/xlsx
   - type: Table
     id: table1
     rows:
@@ -5114,9 +5102,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig5-data1-v3.xlsx
-        format: application/xlsx
   - type: Paragraph
     content:
       - 'We next examined the BXD data with regard to '
@@ -5459,9 +5444,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig6-data1-v3.xlsx
-        format: application/xlsx
   - type: Heading
     id: s2-5
     depth: 2
@@ -5596,9 +5578,6 @@ content:
         format: image/tiff
         meta:
           inline: false
-      - type: MediaObject
-        contentUrl: elife-46472-fig7-data1-v3.xlsx
-        format: application/xlsx
   - type: Heading
     id: s3
     depth: 1
