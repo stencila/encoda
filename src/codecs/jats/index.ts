@@ -867,10 +867,8 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
  * Decodes the child elements to an array of Stencila `Node`s
  */
 function decodeDefault(elem: xml.Element, state: DecodeState): stencila.Node[] {
-  return elem.elements
-    ? elem.elements
-        .map(child => decodeElement(child, state))
-        .reduce((prev, curr) => [...prev, ...curr], [])
+  return elem.elements !== undefined
+    ? decodeElements(elem.elements, state)
     : []
 }
 
@@ -882,10 +880,7 @@ function encodeDefault(
   nodes: stencila.Node[],
   state: EncodeState
 ): xml.Element {
-  const elems = nodes
-    .map(node => encodeNode(node, state))
-    .reduce((prev, curr) => [...prev, ...curr], [])
-  return elem(name, ...elems)
+  return elem(name, ...encodeNodes(nodes, state))
 }
 
 /**
