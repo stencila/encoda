@@ -1337,8 +1337,8 @@ function encodeFigure(
   const { label, caption, content = []} = figure
   const children = encodeNodes(content)
   return [elem('fig',
-    caption != undefined ? elem('caption', ...encodeNodes(caption, state)) : null,
     label != undefined ? elem('label', label) : null,
+    caption != undefined ? elem('caption', ...encodeNodes(caption, state)) : null,
     children.length === 0
       ? null
       : children.length === 1

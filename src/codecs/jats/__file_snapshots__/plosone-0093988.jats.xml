@@ -100,6 +100,7 @@
                 <inline-graphic xlink:href="info:doi/10.1371/journal.pone.0093988.e020" xlink:type="simple"/> on average claim levels.
             </p>
             <fig>
+                <label>Figure 1</label>
                 <caption>
                     <title>Results from playing the TD and MEC games with human subjects, adapted from 
                         <xref rid="pone.0093988-Goeree1" ref-type="bibr">Goereeand Holt, 2001</xref>.
@@ -111,7 +112,6 @@
                         <inline-graphic xlink:href="info:doi/10.1371/journal.pone.0093988.e024" xlink:type="simple"/> is high.
                     </p>
                 </caption>
-                <label>Figure 1</label>
                 <graphic xlink:href="g001.png" xlink:type="simple" mimetype="image"/>
             </fig>
             <p>The MEC game has a somewhat similar flavor to the TD game, in that the payoffs are again determined by the minimum of two actions 
@@ -510,6 +510,7 @@
                 <inline-graphic xlink:href="info:doi/10.1371/journal.pone.0093988.e269" xlink:type="simple"/>, exactly as predicted by the adaptive dynamics analysis. This behavior is in good qualitative agreement with the results obtained for the TD game in experiments. Furthermore, these simulation results suggest that network structure has very little effect on the evolutionary dynamics of the game.
             </p>
             <fig>
+                <label>Figure 2</label>
                 <caption>
                     <title>Results from simulating the TD game.</title>
                     <p>(a)(c)(d)(e)(f) Average claims 
@@ -529,7 +530,6 @@
                         <inline-graphic xlink:href="info:doi/10.1371/journal.pone.0093988.e283" xlink:type="simple"/>.
                     </p>
                 </caption>
-                <label>Figure 2</label>
                 <graphic xlink:href="g002.png" xlink:type="simple" mimetype="image"/>
             </fig>
             <p>
@@ -567,6 +567,7 @@
                 <inline-graphic xlink:href="info:doi/10.1371/journal.pone.0093988.e304" xlink:type="simple"/>), which is predicted by the adaptive dynamics analysis. These results also suggest that the effect of network structure on the dynamics of the smoothed MEC game is negligible.
             </p>
             <fig>
+                <label>Figure 3</label>
                 <caption>
                     <title>Results from simulating the MEC game.</title>
                     <p>(a)(c)(d)(e)(f) Average effort levels 
@@ -586,7 +587,6 @@
                         <inline-graphic xlink:href="info:doi/10.1371/journal.pone.0093988.e318" xlink:type="simple"/>.
                     </p>
                 </caption>
-                <label>Figure 3</label>
                 <graphic xlink:href="g003.png" xlink:type="simple" mimetype="image"/>
             </fig>
             <p>

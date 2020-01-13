@@ -157,6 +157,7 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1A</ext-link>). After removal of tetracycline, c-Myc levels increased over time approaching the levels observed in tetracycline-free conditions.
             </p>
             <fig>
+                <label>Figure 1.</label>
                 <caption>
                     <title>Induction of c-Myc in P493-6 cells and impact on total RNA levels.</title>
                     <p>P493-6 cells were grown in the presence of tetracycline (Tet) for 72 hr and switched into Tet-free growth medium to induce c-Myc expression. Cells were cultured in two separate lots of serum. (
@@ -175,7 +176,6 @@
                         <ext-link ext-link-type="uri" xlink:href="https://osf.io/tfd57/.">https://osf.io/tfd57/</ext-link>.
                     </p>
                 </caption>
-                <label>Figure 1.</label>
                 <graphic xlink:href="fig1.jpg" mimetype="application" mime-subtype="postscript"/>
             </fig>
         </sec>
@@ -213,6 +213,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 2.</label>
                     <caption>
                         <title>Digital gene expression analysis.</title>
                         <p>P493-6 cells grown in the presence of tetracycline (Tet) for 72 hr for repression of the conditional p
@@ -226,10 +227,10 @@
                         <title>List of Reporter CodeSets and gene expression values.</title>
                         <media xlink:href="elife-30274-fig2-data1-v1.csv" mimetype="application" mime-subtype="octet-stream"/>
                     </caption>
-                    <label>Figure 2.</label>
                     <graphic xlink:href="fig2.jpg" mimetype="application" mime-subtype="postscript"/>
                 </fig>
                 <fig>
+                    <label>Figure 2—figure supplement 1.</label>
                     <caption>
                         <title>Logarithmic expression of genes.</title>
                         <p>This is the same experiment as in 
@@ -245,10 +246,10 @@
                             <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
                         </p>
                     </caption>
-                    <label>Figure 2—figure supplement 1.</label>
                     <graphic xlink:href="fig2-figsupp1.jpg" mimetype="application" mime-subtype="postscript"/>
                 </fig>
                 <fig>
+                    <label>Figure 2—figure supplement 2.</label>
                     <caption>
                         <title>Comparison of gene expression data as continuous.</title>
                         <p>This is the same experiment as in 
@@ -260,7 +261,6 @@
                             <ext-link ext-link-type="uri" xlink:href="https://osf.io/fn2y4/.">https://osf.io/fn2y4/</ext-link>.
                         </p>
                     </caption>
-                    <label>Figure 2—figure supplement 2.</label>
                     <graphic xlink:href="fig2-figsupp2.jpg" mimetype="application" mime-subtype="postscript"/>
                 </fig>
             </fig-group>
@@ -739,6 +739,7 @@
                 <italic>p</italic>=0.0488). The original and replication results are consistent when considering the direction of the effect, which suggests c-Myc induction increases total RNA levels in P493-6 Burkitt’s lymphoma cells. Noticeably, there was substantial within-study variation observed in this replication attempt, due the different serum lots tested. The point estimate of serum lot one was not within the confidence intervals of the original study and serum lot two, and vice versa; however the point estimate of the original study and serum lot two were within the confidence intervals of each other.
             </p>
             <fig>
+                <label>Figure 3.</label>
                 <caption>
                     <title>Meta-analyses of each effect.</title>
                     <p>Effect size and 95% confidence interval are presented for 
@@ -761,7 +762,6 @@
                         <ext-link ext-link-type="uri" xlink:href="https://osf.io/5yscz/">https://osf.io/5yscz/</ext-link>.
                     </p>
                 </caption>
-                <label>Figure 3.</label>
                 <graphic xlink:href="fig3.jpg" mimetype="application" mime-subtype="postscript"/>
             </fig>
             <p>There were six comparisons of the gene expression data, three for active genes and three for silent genes (

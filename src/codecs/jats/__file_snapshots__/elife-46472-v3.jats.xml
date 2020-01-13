@@ -254,6 +254,7 @@
                 <italic>F</italic>[1,36]=21.4, p&lt;0.0001). Total volume consumed was greater when mice were offered 40 mg/l MA, compared to 20 mg/l MA.
             </p>
             <fig>
+                <label>Figure 1.</label>
                 <caption>
                     <title>Knock-in of 
                         <italic>Taar1
@@ -295,7 +296,6 @@
                     </title>
                     <media xlink:href="elife-46472-fig1-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 1.</label>
                 <graphic xlink:href="fig1.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -324,6 +324,7 @@
                 <italic>F</italic>[4,188]=13.0, p&lt;0.0001). Knock-in mice had a significant hypothermic response to MA at T30 compared to T0, whereas control mice were resistant to the hypothermic effects of MA, instead exhibiting significant MA-induced increases in body temperature at all post-MA treatment time points, compared to T0. Body temperatures were significantly higher in knock-in than control mice at baseline, by about 0.6°C, but significantly lower by about 1.2°C, at T30.
             </p>
             <fig>
+                <label>Figure 2.</label>
                 <caption>
                     <title>Knock-in of 
                         <italic>Taar1
@@ -359,7 +360,6 @@
                     </title>
                     <media xlink:href="elife-46472-fig2-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 2.</label>
                 <graphic xlink:href="fig2.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -385,6 +385,7 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3c</ext-link>), but the strain distribution pattern for total volume did not correspond with the distributions for MA intake at either MA concentration. Total volume consumed was significantly less when water and 20 mg/l MA were available, compared to when water and 40 mg/l MA were available (mean ± SEM = 5.3±0.1 and 5.7 ± 0.1 for 20 and 40 mg/l, respectively).
             </p>
             <fig>
+                <label>Figure 3.</label>
                 <caption>
                     <title>MA consumption and total volume consumed among BXD strains are strain-dependent.</title>
                     <p>MA consumption when MA was offered vs. water for 18h/day at a concentration of (
@@ -421,7 +422,6 @@
                     </title>
                     <media xlink:href="elife-46472-fig3-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 3.</label>
                 <graphic xlink:href="fig3.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
             <p>We next examined the data from the BXD mice with regard to 
@@ -485,6 +485,7 @@
                 </italic> mice.
             </p>
             <fig>
+                <label>Figure 4.</label>
                 <caption>
                     <title>MA consumption is impacted in BXD mice by a 
                         <italic>Taar1</italic> x 
@@ -541,7 +542,6 @@
                     </title>
                     <media xlink:href="elife-46472-fig4-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 4.</label>
                 <graphic xlink:href="fig4.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
             <table-wrap id="table1">
@@ -684,6 +684,7 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig5">Figure 5d</ext-link>).
             </p>
             <fig>
+                <label>Figure 5.</label>
                 <caption>
                     <title>Body temperature among BXD strains treated with saline or MA is strain-dependent.</title>
                     <p>Body temperatures obtained just before (T0) or 30–120 min (T30-120) after injection for (
@@ -737,7 +738,6 @@
                     </title>
                     <media xlink:href="elife-46472-fig5-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 5.</label>
                 <graphic xlink:href="fig5.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
             <p>We next examined the BXD data with regard to 
@@ -795,6 +795,7 @@
                 </italic> mice were resistant to the hypothermic effects of MA, exhibiting increases in body temperature at all post-MA treatment time points, compared to T0.
             </p>
             <fig>
+                <label>Figure 6.</label>
                 <caption>
                     <title>MA-induced hypothermia is impacted in BXD mice by a 
                         <italic>Taar1</italic> x 
@@ -846,7 +847,6 @@
                     </title>
                     <media xlink:href="elife-46472-fig6-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 6.</label>
                 <graphic xlink:href="fig6.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -865,6 +865,7 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig7">Figure 7d</ext-link>).
             </p>
             <fig>
+                <label>Figure 7.</label>
                 <caption>
                     <title>Genome-wide QTL scans identify a significant QTL on mouse chromosome 10 for both MA consumption and MA effect on body temperature.</title>
                     <p>Means for 18 BXD strains were used for mapping of (
@@ -880,7 +881,6 @@
                     <title>BXD means for QTL mapping of MA consumption (mg/kg/18h) from the 40 mg/l concentration and for QTL mapping of 2 mg/kg MA-induced body temperature change.</title>
                     <media xlink:href="elife-46472-fig7-data1-v3.xlsx" mimetype="application" mime-subtype="xlsx"/>
                 </caption>
-                <label>Figure 7.</label>
                 <graphic xlink:href="fig7.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -1511,6 +1511,7 @@
                 <italic>Taar1</italic> ossDNA sequence, which is the reference genotype, is indicated below by the capital C, with the gRNA sequence underlined. The gene editing replaces A with C: cFFctggctccttcactccatggccattgtcgactttctgctgggctgtctgataatgCcctgcagcatggtgagaactgttgagcgctgttggtatZZt. The ossDNA was designed without a silent mutation and to be asymmetric to provide increased efficiency of the gRNA. Cas9 mRNA (catalog number L-7606) was purchased from TriLink (San Diego, CA, USA).
             </p>
             <fig>
+                <label>Figure 8.</label>
                 <caption>
                     <title>Generation of MAHDR-
                         <italic>Taar1
@@ -1578,7 +1579,6 @@
                         </italic> allele.
                     </p>
                 </caption>
-                <label>Figure 8.</label>
                 <graphic xlink:href="fig8.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>

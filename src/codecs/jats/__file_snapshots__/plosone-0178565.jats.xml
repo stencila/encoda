@@ -115,11 +115,11 @@
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.g001">Fig 1</ext-link> which is used to obtain a reduced genome database.
             </p>
             <fig>
+                <label>Fig 1</label>
                 <caption>
                     <title>Data reduction and construction of Clusters of Co-evolving Genes (CCG).</title>
                     <p>Diagrammatic representation for clustering of organisms and proteins. The method is used to reduce the genome dataset and to cluster proteins of the semi-conserved category to obtain CCG.</p>
                 </caption>
-                <label>Fig 1</label>
                 <graphic xlink:href="g001.png" xlink:type="simple" mimetype="image"/>
             </fig>
         </sec>
@@ -171,6 +171,7 @@ where,
                 <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s006">S5 Table</ext-link>). Conservation indices for the protein profiles were computed based on the abridged strings.
             </p>
             <fig>
+                <label>Fig 2</label>
                 <caption>
                     <title>Phylogenetic tree of the 73 cyanobacterial genome groups based on clustering of their phylogenetic profiles.</title>
                     <p>Profiles of 8280 semi-conserved genes were used while clustering the organisms. List of the cyanobacterial strains are given in 
@@ -178,7 +179,6 @@ where,
                         <ext-link ext-link-type="uri" xlink:href="#pone.0178565.s003">S2 Table</ext-link>.
                     </p>
                 </caption>
-                <label>Fig 2</label>
                 <graphic xlink:href="g002.png" xlink:type="simple" mimetype="image"/>
             </fig>
         </sec>
@@ -196,13 +196,13 @@ where,
                 <xref rid="pone.0178565.ref032" ref-type="bibr">Blankenfeldt et al., 2004</xref>]. This suggests that the potentially redundant profiles represent genes that have diverged significantly in the subsets of organisms and are not merely paralogs.
             </p>
             <fig>
+                <label>Fig 3</label>
                 <caption>
                     <title>Potential redundancy in the phylogenetic profiles.</title>
                     <p>Ten representative pairs of redundant profiles that show BLASTP evalue ≤ 10
                         <sup>−10</sup> but fail to meet the criteria of score density and query coverage. The redundant gene pairs are color-coded and assigned symbols in the two plots. (A) A PCA plot that shows the 10 pairs on the first two principal components and (B) Heatmap showing mutually exclusive nature of profile pairs. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively.
                     </p>
                 </caption>
-                <label>Fig 3</label>
                 <graphic xlink:href="g003.png" xlink:type="simple" mimetype="image"/>
             </fig>
         </sec>
@@ -223,11 +223,11 @@ where,
                 </list-item>
             </list>
             <fig>
+                <label>Fig 4</label>
                 <caption>
                     <title>Histogram of gene conservation index (GCI) for the 23,633 phylogenetic profiles.</title>
                     <p>The GCI was calculated based on presence and absence of the query gene in the 73 organism clusters of cyanobacteria.</p>
                 </caption>
-                <label>Fig 4</label>
                 <graphic xlink:href="g004.png" xlink:type="simple" mimetype="image"/>
             </fig>
             <p>About 4% of all query genes (993 profiles) are conserved across the cyanobacterial phylum (
@@ -351,6 +351,7 @@ where,
                 <xref rid="pone.0178565.ref035" ref-type="bibr">Martin et al., 2003</xref>]. These discrepancies may be due to differences in the genome datasets used in the three studies. Our analysis includes symbiotic strains which may lack some of the core metabolic genes.
             </p>
             <fig>
+                <label>Fig 5</label>
                 <caption>
                     <title>Overlap of conserved genes (this work) with core set proteins of Shi and Falkowski [
                         <xref rid="pone.0178565.ref007" ref-type="bibr">Shiand Falkowski, 2008</xref>], structural genes of Martin et al. [
@@ -366,7 +367,6 @@ where,
                         <xref rid="pone.0178565.ref018" ref-type="bibr">Rubin et al., 2015</xref>].
                     </p>
                 </caption>
-                <label>Fig 5</label>
                 <graphic xlink:href="g005.png" xlink:type="simple" mimetype="image"/>
             </fig>
         </sec>
@@ -895,11 +895,11 @@ where,
                 <xref rid="pone.0178565.ref048" ref-type="bibr">Howard et al., 2011</xref>]. The uncharacterized proteins present in the above clusters may have similar functions related to the proteins present in the respective clusters and further analysis on these proteins will give additional information about their functions.
             </p>
             <fig>
+                <label>Fig 6</label>
                 <caption>
                     <title>Clusters of Co-evolving Genes (CCG).</title>
                     <p>Twelve representative CCGs are shown in (A) PCA plot where principle component analysis (PCA) of all the semi-conserved profiles (genes) was performed to plot only the representative genes and (B) Heatmap. Genes of a cluster are color-coded in the two plots. Phylogenetic profiles of genes are clustered using hierarchical clustering with Hamming distance as the metric, average linkage and a cutoff of 0.15. The representative phylogenetic profiles (genes) are then clustered again to depict their relatedness. Organism clusters in the heatmap are based on their genome profiles depicting their evolutionary relationships. In the heatmap, grey and black colors indicate presence and absence of the gene, respectively. Details of the clusters are as follows: Cluster 1: transposase enzymes, Cluster 2: acetamidase/formamidase enzymes, Cluster 3: nitrogen fixation genes, Cluster 4: SH3 domain protein, Cluster 5: sodium symporter proteins, Cluster 6: phosphate ABC transporter proteins, Cluster 7: ATP synthase subunit enzymes, Cluster 8: hydrogenase enzymes, Cluster 9: CRISPR associated proteins, Cluster 10: TPR repeat-containing proteins, Cluster 11: gas vesicle proteins, Cluster 12: ABC transporter proteins.</p>
                 </caption>
-                <label>Fig 6</label>
                 <graphic xlink:href="g006.png" xlink:type="simple" mimetype="image"/>
             </fig>
             <table-wrap id="pone.0178565.t005">

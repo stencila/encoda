@@ -170,11 +170,11 @@
                 <xref rid="bib84" ref-type="bibr">Mendoza et al., 2016</xref>).
             </p>
             <fig>
+                <label>Figure 1.</label>
                 <caption>
                     <title>Strategy identifying genetic vulnerabilities involved with G4 biology.</title>
                     <p>Genome-wide shRNA silencing combined with G4 structure stabilisation by small molecules identifies genes that when depleted compromise cell viability. Cells are infected with a genome-wide pool of shRNA lentiviruses targeting the protein coding genome followed by G4 ligand treatment to stabilise genomic and/or RNA G4 structures. Two general outcomes are possible: a gene is not required in a G4-dependent process so there is no effect on cell viability (left); or gene silencing results in cell death either due to loss of a direct G4 interaction (e.g. binding/unwinding) or indirectly through gene loss in a G4-dependent pathway (right). In absence of ligand, cells are viable in presence of the shRNA. Dotted boxes highlight genotypes of disease significance for possible G4-based therapies (blue) and genes and biological pathways that involve and/or interact with G4 structures (orange).</p>
                 </caption>
-                <label>Figure 1.</label>
                 <graphic xlink:href="fig1.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -201,6 +201,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 2.</label>
                     <caption>
                         <title>shRNA screening pipeline to uncover genetic vulnerabilities to G4 stabilisation.</title>
                         <p>(
@@ -210,10 +211,10 @@
                             <bold>D</bold>) Overall screening approach illustrated for one library pool. Plasmids are retrovirally packaged and A375 cells are infected at multiplicity of infection (MOI) of 0.3 (30%). Following antibiotic selection, an initial time point (t0) is harvested and then cells are cultured for ‘n’ population doublings in DMSO, PDS or PhenDC3 before the final time point was harvested (tF).
                         </p>
                     </caption>
-                    <label>Figure 2.</label>
                     <graphic xlink:href="fig2.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 2—figure supplement 1.</label>
                     <caption>
                         <title>Genome-wide shRNA screen parameter optimisation.</title>
                         <p>(
@@ -224,7 +225,6 @@
                             <italic>XRN1</italic> following DMSO, PDS or PhenDC3 treatment after 7 and 15 population doublings.
                         </p>
                     </caption>
-                    <label>Figure 2—figure supplement 1.</label>
                     <graphic xlink:href="fig2-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
@@ -246,6 +246,7 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3D</ext-link>).
             </p>
             <fig>
+                <label>Figure 3.</label>
                 <caption>
                     <title>Genome-wide screening in A375 cells reveals deficiencies in known G4-associated genes as sensitive to G4-stabilising small molecules.</title>
                     <p>(
@@ -267,7 +268,6 @@
                         <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                     </p>
                 </caption>
-                <label>Figure 3.</label>
                 <graphic xlink:href="fig3.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
             <p>We next explored further genes already implicated in G4 biology, but whose deficiency has not yet been linked with any enhanced sensitivity to G4 ligands. For genes annotated with G4-related terms in the UniprotKB, Gene Ontology (GO) and G4IPDB databases (
@@ -289,6 +289,7 @@
                 <ext-link ext-link-type="uri" xlink:href="#fig4">Figure 4C</ext-link>), we discovered enrichments in helicase C-terminal domains, RNA recognition motifs including RRM, RBD and RNP domains, and DNA-binding domains including zinc fingers, bZIP motifs and HMG boxes. Consistent with the ubiquitin-mediated proteolysis KEGG cluster, enrichments in multifunctional ATPase domains and in ubiquitin hydrolase domains, were also found. These latter findings suggest important areas of biology not previously known to be affected by G4 intervention in mammalian cells.
             </p>
             <fig>
+                <label>Figure 4.</label>
                 <caption>
                     <title>Pathways and processes showing sensitivity to G4-stabilising ligands.</title>
                     <p>(
@@ -298,7 +299,6 @@
                         <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                     </p>
                 </caption>
-                <label>Figure 4.</label>
                 <graphic xlink:href="fig4.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -321,6 +321,7 @@
                 <italic>SMARCE1</italic>.
             </p>
             <fig>
+                <label>Figure 5.</label>
                 <caption>
                     <title>Identification of cancer-associated genes whose loss promotes sensitivity to G4 ligands.</title>
                     <p>(
@@ -332,7 +333,6 @@
                         <bold>C</bold>) Functional interaction network analysis using STRING for the 50 COSMIC proteins indicated in A and B. Clusters are shown using confidence interactions &gt; 0.4 from co-expression and experimental data. Box indicates the DDR cluster.
                     </p>
                 </caption>
-                <label>Figure 5.</label>
                 <graphic xlink:href="fig5.jpg" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
@@ -350,6 +350,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 6.</label>
                     <caption>
                         <title>A custom G4 sensitiser shRNA panel reveals unique and common G4 ligand sensitivities.</title>
                         <p>(
@@ -369,10 +370,10 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                         </p>
                     </caption>
-                    <label>Figure 6.</label>
                     <graphic xlink:href="fig6.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 6—figure supplement 1.</label>
                     <caption>
                         <title>Focused A375 cell screening parallels findings from the genome-wide screen and highlights differences in individual G4 ligand sensitivities.</title>
                         <p>(
@@ -388,7 +389,6 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
                         </p>
                     </caption>
-                    <label>Figure 6—figure supplement 1.</label>
                     <graphic xlink:href="fig6-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
@@ -416,6 +416,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 7.</label>
                     <caption>
                         <title>G4 sensitivities in two different cell lines.</title>
                         <p>(
@@ -432,10 +433,10 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                         </p>
                     </caption>
-                    <label>Figure 7.</label>
                     <graphic xlink:href="fig7.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 7—figure supplement 1.</label>
                     <caption>
                         <title>Focused HT1080 and A375 cell screening reveals shared PDS and PhenDC3 sensitivities.</title>
                         <p>(
@@ -453,7 +454,6 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
                         </p>
                     </caption>
-                    <label>Figure 7—figure supplement 1.</label>
                     <graphic xlink:href="fig7-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
@@ -482,6 +482,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 8.</label>
                     <caption>
                         <title>siRNA knockdowns validate 
                             <italic>BRCA1</italic>, 
@@ -517,10 +518,10 @@
                         </p>
                         <media xlink:href="elife-46793-fig8-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
                     </caption>
-                    <label>Figure 8.</label>
                     <graphic xlink:href="fig8.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 8—figure supplement 1.</label>
                     <caption>
                         <title>Short-term siRNA knockdowns of four key sensitisers in HT1080 cells show dose-dependent growth inhibition with G4-ligands.</title>
                         <p>(
@@ -536,18 +537,18 @@
                             <italic>GAR1</italic>.
                         </p>
                     </caption>
-                    <label>Figure 8—figure supplement 1.</label>
                     <graphic xlink:href="fig8-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 8—figure supplement 2.</label>
                     <caption>
                         <title>Short-term siRNA knockdowns of four key G4-sensitisers in A375 cells show dose-dependent growth inhibition with G4-ligands.</title>
                         <p>A375 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (5 μM and 10 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean ± standard deviation).</p>
                     </caption>
-                    <label>Figure 8—figure supplement 2.</label>
                     <graphic xlink:href="fig8-figsupp2.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 8—figure supplement 3.</label>
                     <caption>
                         <title>Short-term siRNA knockdowns validate four key sensitivities from the shRNA screening in A375 cells.</title>
                         <p>(
@@ -576,7 +577,6 @@
                         </p>
                         <media xlink:href="elife-46793-fig8-figsupp3-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
                     </caption>
-                    <label>Figure 8—figure supplement 3.</label>
                     <graphic xlink:href="fig8-figsupp3.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
@@ -621,6 +621,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 9.</label>
                     <caption>
                         <title>Cell death potentiation mediated by pharmacological inhibition of WEE1 or USP1 with the G4-stabilising ligand PDS.</title>
                         <p>(
@@ -636,10 +637,10 @@
                             <ext-link ext-link-type="uri" xlink:href="#fig9s2">2</ext-link>).
                         </p>
                     </caption>
-                    <label>Figure 9.</label>
                     <graphic xlink:href="fig9.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 9—figure supplement 1.</label>
                     <caption>
                         <title>Synergy calculations for PDS with MK1775 and pimozide.</title>
                         <p>(
@@ -647,10 +648,10 @@
                             <bold>E–H</bold>) 2D BLISS synergy matrix derived from ‘control’ input. Each dose combination is given a synergy score. Blue and a high percentage indicates synergy.
                         </p>
                     </caption>
-                    <label>Figure 9—figure supplement 1.</label>
                     <graphic xlink:href="fig9-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 9—figure supplement 2.</label>
                     <caption>
                         <title>Clonogenic cell survival assay demonstrates enhanced cell death upon treatment with PDS in combination MK1775 or pimozide.</title>
                         <p>Clonogenic survival of HT1080 and A375 cells after 8-day exposure to the indicated drug combinations. (
@@ -663,7 +664,6 @@
                             <bold>J</bold>) cells. Three biological replicates were performed.
                         </p>
                     </caption>
-                    <label>Figure 9—figure supplement 2.</label>
                     <graphic xlink:href="fig9-figsupp2.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
@@ -685,6 +685,7 @@
             </p>
             <fig-group>
                 <fig>
+                    <label>Figure 10.</label>
                     <caption>
                         <title>DDX42 is a predominantly nuclear G4-binding protein.</title>
                         <p>(
@@ -710,10 +711,10 @@
                         </p>
                         <media xlink:href="elife-46793-fig10-data1-v1.pdf" mimetype="application" mime-subtype="pdf"/>
                     </caption>
-                    <label>Figure 10.</label>
                     <graphic xlink:href="fig10.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
+                    <label>Figure 10—figure supplement 1.</label>
                     <caption>
                         <title>Circular dichroism spectroscopy for G4 oligonucleotides.</title>
                         <p>Circular dichroism spectra for G4-forming oligonucleotides (red) and mutated controls (blue) annealed in 100 mM KCl. G4 structures show a characteristic signature with a positive peak at 264 nm and negative peak at 241 nm. (
@@ -721,7 +722,6 @@
                             <bold>B</bold>) MYC promoter DNA G4.
                         </p>
                     </caption>
-                    <label>Figure 10—figure supplement 1.</label>
                     <graphic xlink:href="fig10-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
