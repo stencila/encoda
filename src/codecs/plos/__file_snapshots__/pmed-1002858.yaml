@@ -3026,12 +3026,13 @@ content:
               - i
       - ' is the set of explanatory variables as given above: haematocrit, coma, blood urea nitrogen, base deficit, pulmonary oedema, hypoglycaemia, seizures, shock, parasitaemia, age, treatment drug, study ID, country, and study site.'
   - type: Math
-    language: MathML
+    mathLanguage: MathML
     text: >-
-      <mml:mrow><mml:msubsup><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mrow><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mspace
+      <mml:math display="inline"
+      id="M1"><mml:mrow><mml:msubsup><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mrow><mml:msub><mml:mi>y</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mspace
       width="0.25em"/><mml:msub><mml:mi
       mathvariant="bold-italic">x</mml:mi><mml:mi
-      mathvariant="bold-italic">i</mml:mi></mml:msub></mml:mrow><mml:mo>}</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:msubsup></mml:mrow>
+      mathvariant="bold-italic">i</mml:mi></mml:msub></mml:mrow><mml:mo>}</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>N</mml:mi></mml:msubsup></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3158,10 +3159,11 @@ content:
         target: '#pmed.1002858.ref029'
       - '].'
   - type: Math
-    language: MathML
+    mathLanguage: MathML
     text: >-
-      <mml:mrow><mml:msub><mml:mover accent="true"><mml:mi
-      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mi>j</mml:mi></mml:msub></mml:mrow>
+      <mml:math display="inline" id="M2"><mml:mrow><mml:msub><mml:mover
+      accent="true"><mml:mi
+      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - 'In a second stage, the sets of parameters '
@@ -3183,16 +3185,17 @@ content:
           linkType: simple
       - .
   - type: Math
-    language: MathML
+    mathLanguage: MathML
     text: >-
-      <mml:mrow><mml:msubsup><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mrow><mml:msub><mml:mover
+      <mml:math display="inline"
+      id="M3"><mml:mrow><mml:msubsup><mml:mrow><mml:mrow><mml:mo>{</mml:mo><mml:mrow><mml:msub><mml:mover
       accent="true"><mml:mi
-      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mi>j</mml:mi></mml:msub></mml:mrow><mml:mo>}</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mn>100</mml:mn></mml:mrow></mml:msubsup></mml:mrow>
+      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover><mml:mi>j</mml:mi></mml:msub></mml:mrow><mml:mo>}</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mn>100</mml:mn></mml:mrow></mml:msubsup></mml:mrow></mml:math>
   - type: Math
-    language: MathML
+    mathLanguage: MathML
     text: >-
-      <mml:mover accent="true"><mml:mi
-      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover>
+      <mml:math display="inline" id="M4"><mml:mover accent="true"><mml:mi
+      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:math>
   - type: Paragraph
     content:
       - 'The global estimate '
@@ -3204,10 +3207,10 @@ content:
           linkType: simple
       - ' was then used to derive adjusted odds ratios along with CIs for the six factors of interest.'
   - type: Math
-    language: MathML
+    mathLanguage: MathML
     text: >-
-      <mml:mover accent="true"><mml:mi
-      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover>
+      <mml:math display="inline" id="M5"><mml:mover accent="true"><mml:mi
+      mathvariant="bold-italic">β</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:math>
   - type: Paragraph
     content:
       - >-
