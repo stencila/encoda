@@ -274,11 +274,10 @@ function encodeArticle(article: stencila.Article): xml.Element {
 /**
  * Decode a JATS `<article-title>` element to a Stencila `Article.title`.
  */
-function decodeTitle(elem: xml.Element | null): stencila.Article['title'] {
-  if (elem === null) return 'Untitled'
-  const nodes = decodeElement(elem, initialDecodeState())
-  if (nodes.length === 1 && typeof nodes[0] === 'string') return nodes[0]
-  else return nodes
+function decodeTitle(title: xml.Element | null): stencila.Article['title'] {
+  if (title === null || title.elements === undefined) return 'Untitled'
+  if(title.elements.length === 1 && title.elements[0].type === 'text') return text(title)
+  else return decodeElements(title.elements, initialDecodeState())
 }
 
 /**
@@ -760,6 +759,7 @@ function encodeBody(nodes: stencila.Node[], state: EncodeState): xml.Element {
  * Decode a JATS element to an array of Stencila `Node`s
  */
 function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
+  if (elem.type === 'text') return [elem.text || '']
   switch (elem.name) {
     case 'sec':
       return decodeSection(elem, state)
@@ -800,12 +800,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
     case 'code':
       return decodeCode(elem)
     default:
-      if (elem.type === 'text') {
-        return [elem.text || '']
-      } else {
-        log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
-        return decodeDefault(elem, state)
-      }
+      log.warn(`Using default decoding for JATS element name: "${elem.name}"`)
+      return decodeDefault(elem, state)
   }
 }
 
