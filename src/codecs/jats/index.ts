@@ -832,6 +832,8 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMark(node as stencila.Superscript, state, 'sup')
     case 'Subscript':
       return encodeMark(node as stencila.Subscript, state, 'sub')
+    case 'Math':
+      return encodeMath(node as object)
     case 'Figure':
       return encodeFigure(node as stencila.Figure, state)
     case 'ImageObject': {
@@ -1350,14 +1352,32 @@ function encodeFigure(
 /**
  * Decode a JATS `<mml:math>` element to a Stencila `Math` node.
  */
-function decodeMath(elem: xml.Element): [object] {
+function decodeMath(math: xml.Element): [object] {
   return [
     {
       type: 'Math',
-      language: 'MathML',
-      text: xml.dump(elem)
+      mathLanguage: 'MathML',
+      // Wrapper is needed to dump the entire math element
+      text: xml.dump(elem('wrapper', math))
     }
   ]
+}
+
+/**
+ * Encode a Stencila `Math` node as a JATS `<mml:math>` element.
+ */
+function encodeMath(math: object): xml.Element[] {
+  const { mathLanguage, text = '' } = math as any
+
+  if (mathLanguage !== 'MathML') log.error(`Only MathML is supported`)
+
+  try {
+    const root = xml.load(text, { compact: false }) as xml.Element
+    if (root && root.elements && root.elements.length) return [root.elements[0]]
+  } catch (error) {
+    log.error(`Error parsing MathML:\n${error.message}\n${text}`)
+  }
+  return []
 }
 
 /**
