@@ -69,6 +69,9 @@
             <li>
               <p><a href="#creating-zip-archives">Creating zip archives</a></p>
             </li>
+            <li>
+              <p><a href="#using-with-executa">Using with Executa</a></p>
+            </li>
           </ul>
         </li>
         <li>
@@ -630,6 +633,66 @@ isPartOf:
           </tr>
         </tbody>
       </table>
+      <h3 id="using-with-executa">Using with Executa</h3>
+      <p>Encoda exposes the <code>decode</code> and <code>encode</code> methods of the <a
+          href="https://github.com/stencila/executa">Executa</a> API. Register Encoda so that it can
+        be discovered by other executors on your machine,</p>
+      <pre><code class="language-bash">npm run register</code></pre>
+      <p>You can then use Encoda as a plugin for Executa that provides additional format conversion
+        capabilities. For example, you can use the <code>query</code> REPL on a Markdown document:
+      </p>
+      <pre><code class="language-bash">npx executa query CHANGELOG.md --repl</code></pre>
+      <p>You can then use the REPL to explore the structure of the document and do things like
+        create summary documents from it. For example, lets say from some reason we wanted to create
+        a short JATS XML file with the five most recent releases of this package:</p>
+      <pre><code>jmp &gt; %format jats
+jmp &gt; %dest latest-releases.jats.xml
+jmp &gt; {type: &#39;Article&#39;, content: content[? type==`Heading` &amp;&amp; depth==`1`] | [1:5]}</code></pre>
+      <p>Which creates the <code>latest-major-releases.jats.xml</code> file:</p>
+      <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
+&lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
+    &lt;front&gt;
+        &lt;title-group&gt;
+            &lt;article-title/&gt;
+        &lt;/title-group&gt;
+        &lt;contrib-group/&gt;
+    &lt;/front&gt;
+    &lt;body&gt;
+        &lt;sec&gt;
+            &lt;title&gt;
+                &lt;ext-link ext-link-type=&quot;uri&quot; xlink:href=&quot;https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0&quot;&gt;0.80.0&lt;/ext-link&gt; (2019-09-30)
+            &lt;/title&gt;
+        &lt;/sec&gt;
+...</code></pre>
+      <p>You can query a document in any format supported by Encoda. As another example, lets&#39;
+        fetch a CSV file from Github and get the names of it&#39;s columns:</p>
+      <pre><code class="language-bash">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
+🛈 INFO  encoda:http Fetching &quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;
+jmp &gt; columns[].name
+[
+  &#39;SetID&#39;,
+  &#39;Number&#39;,
+  &#39;Variant&#39;,
+  &#39;Theme&#39;,
+  &#39;Subtheme&#39;,
+  &#39;Year&#39;,
+  &#39;Name&#39;,
+  &#39;Minifigs&#39;,
+  &#39;Pieces&#39;,
+  &#39;UKPrice&#39;,
+  &#39;USPrice&#39;,
+  &#39;CAPrice&#39;,
+  &#39;EUPrice&#39;,
+  &#39;ImageURL&#39;,
+  &#39;Owned&#39;,
+  &#39;Wanted&#39;,
+  &#39;QtyOwned&#39;,
+]
+jmp &gt;</code></pre>
+      <p>See the <code>%help</code> REPL command for more examples.</p>
+      <p>Note: If you have <a href="https://github.com/stencila/executa"><code>executa</code></a>
+        installed globally, then the <code>npx</code> prefix above is not necessary.</p>
       <h2 id="documentation">Documentation</h2>
       <p>Self-hoisted (documentation converted from various formats to html) and API documentation
         (generated from source code) is available at: <a

@@ -90,6 +90,7 @@
 							<li><a href="#converting-folders">Converting folders</a></li>
 							<li><a href="#converting-command-line-input">Converting command line input</a></li>
 							<li><a href="#creating-zip-archives">Creating zip archives</a></li>
+							<li><a href="#using-with-executa">Using with Executa</a></li>
 						</ul>
 					</li>
 					<li><a href="#documentation">Documentation</a></li>
@@ -642,6 +643,59 @@
 							<td>Print debugging information</td>
 						</tr>
 				</tbody></table>
+				<a href="#using-with-executa" id="using-with-executa" style="color: inherit; text-decoration: none;">
+					<h3>Using with Executa</h3>
+				</a>
+				<p>Encoda exposes the <code>decode</code> and <code>encode</code> methods of the <a href="https://github.com/stencila/executa">Executa</a> API. Register Encoda so that it can be discovered by other executors on your machine,</p>
+				<pre><code class="language-bash">npm run register</code></pre>
+				<p>You can then use Encoda as a plugin for Executa that provides additional format conversion capabilities. For example, you can use the <code>query</code> REPL on a Markdown document:</p>
+				<pre><code class="language-bash">npx executa query CHANGELOG.md --repl</code></pre>
+				<p>You can then use the REPL to explore the structure of the document and do things like create summary documents from it. For example, lets say from some reason we wanted to create a short JATS XML file with the five most recent releases of this package:</p>
+				<pre><code><span class="hljs-selector-tag">jmp</span> &gt; %<span class="hljs-selector-tag">format</span> <span class="hljs-selector-tag">jats</span>
+<span class="hljs-selector-tag">jmp</span> &gt; %<span class="hljs-selector-tag">dest</span> <span class="hljs-selector-tag">latest-releases</span><span class="hljs-selector-class">.jats</span><span class="hljs-selector-class">.xml</span>
+<span class="hljs-selector-tag">jmp</span> &gt; {<span class="hljs-attribute">type</span>: <span class="hljs-string">'Article'</span>, content: content[? type==`Heading` &amp;&amp; depth==`<span class="hljs-number">1</span>`] | [<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]}</code></pre><p>Which creates the <code>latest-major-releases.jats.xml</code> file:</p>
+				<pre><code class="language-xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">article</span> <span class="hljs-meta-keyword">PUBLIC</span> <span class="hljs-meta-string">"-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"</span> <span class="hljs-meta-string">"JATS-archivearticle1.dtd"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">"http://www.w3.org/1999/xlink"</span> <span class="hljs-attr">article-type</span>=<span class="hljs-string">"research-article"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">front</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title-group</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">article-title</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">title-group</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">contrib-group</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">front</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">sec</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ext-link</span> <span class="hljs-attr">ext-link-type</span>=<span class="hljs-string">"uri"</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"https://github.com/stencila/encoda/compare/v0.79.0...v0.80.0"</span>&gt;</span>0.80.0<span class="hljs-tag">&lt;/<span class="hljs-name">ext-link</span>&gt;</span> (2019-09-30)
+            <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">sec</span>&gt;</span>
+...</code></pre>
+				<p>You can query a document in any format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and get the names of it&#39;s columns:</p>
+				<pre><code class="language-bash">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
+🛈 INFO  encoda:http Fetching <span class="hljs-string">"https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv"</span>
+jmp &gt; columns[].name
+[
+  <span class="hljs-string">'SetID'</span>,
+  <span class="hljs-string">'Number'</span>,
+  <span class="hljs-string">'Variant'</span>,
+  <span class="hljs-string">'Theme'</span>,
+  <span class="hljs-string">'Subtheme'</span>,
+  <span class="hljs-string">'Year'</span>,
+  <span class="hljs-string">'Name'</span>,
+  <span class="hljs-string">'Minifigs'</span>,
+  <span class="hljs-string">'Pieces'</span>,
+  <span class="hljs-string">'UKPrice'</span>,
+  <span class="hljs-string">'USPrice'</span>,
+  <span class="hljs-string">'CAPrice'</span>,
+  <span class="hljs-string">'EUPrice'</span>,
+  <span class="hljs-string">'ImageURL'</span>,
+  <span class="hljs-string">'Owned'</span>,
+  <span class="hljs-string">'Wanted'</span>,
+  <span class="hljs-string">'QtyOwned'</span>,
+]
+jmp &gt;</code></pre>
+				<p>See the <code>%help</code> REPL command for more examples.</p>
+				<p>Note: If you have <a href="https://github.com/stencila/executa"><code>executa</code></a> installed globally, then the <code>npx</code> prefix above is not necessary.</p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
 				</a>
@@ -883,6 +937,9 @@ docker run stencila/encoda</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_codecs_yaml_index_.html">&quot;codecs/yaml/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_encoda_.html">&quot;encoda&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_index_.html">&quot;index&quot;</a>
