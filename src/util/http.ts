@@ -6,6 +6,7 @@
  * @module util/http
  */
 
+import { getLogger } from '@stencila/logga'
 import fs from 'fs-extra'
 import got, { Response } from 'got'
 import stream from 'stream'
@@ -13,6 +14,8 @@ import util from 'util'
 import cache from './app/cacheSync'
 
 const pipeline = util.promisify(stream.pipeline)
+
+const log = getLogger('encoda:util:http')
 
 /**
  * A `got` instance with default options for
@@ -39,7 +42,10 @@ export async function get(
   try {
     return await http.get(url, options)
   } catch (error) {
-    throw new Error(`Unable to get ${url}: ${error.message}`)
+    const { message, response = {} } = error
+    const { body = '' } = response
+    log.warn(`Unable to get ${url}: ${message}: ${body}`)
+    return response
   }
 }
 
