@@ -5,6 +5,9 @@
 import fs from 'fs-extra'
 import mime from 'mime'
 import tempy from 'tempy'
+import { getLogger } from '@stencila/logga';
+
+const log = getLogger('encoda:util')
 
 const DATA_URI_REGEX = /^data:([\w/+]+);(charset=[\w-]+|base64).*,(.*)/
 
@@ -54,7 +57,12 @@ export async function fromFile(
 ): Promise<{ mediaType: string; dataUri: string }> {
   if (!mediaType) mediaType = mime.getType(filePath) || 'image/png'
 
-  const data = await fs.readFile(filePath, 'base64')
+  let data = ''
+  try {
+    data = await fs.readFile(filePath, 'base64')
+  } catch(error) {
+    log.warn(`When creating data URI from file: ${error.message}`)
+  }
   const dataUri = `data:${mediaType};base64,${data}`
 
   return { mediaType, dataUri }
