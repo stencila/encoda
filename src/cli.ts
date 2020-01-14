@@ -104,8 +104,12 @@ configure(options.debug)
       log.warn(`Ignored unknown command "${command}"`)
     }
   } catch (error) {
+    // Uncaught error: log it and ensure process does not hang.
     log.error(error)
+    process.exit(1)
   } finally {
+    // Success: graceful exit to ensure process does not hang.
     await puppeteer.shutdown()
+    process.exit(0)
   }
 })()
