@@ -2,10 +2,10 @@
  * @module util
  */
 
+import { getLogger } from '@stencila/logga'
 import fs from 'fs-extra'
 import mime from 'mime'
 import tempy from 'tempy'
-import { getLogger } from '@stencila/logga';
 
 const log = getLogger('encoda:util')
 
@@ -60,7 +60,7 @@ export async function fromFile(
   let data = ''
   try {
     data = await fs.readFile(filePath, 'base64')
-  } catch(error) {
+  } catch (error) {
     log.warn(`When creating data URI from file: ${error.message}`)
   }
   const dataUri = `data:${mediaType};base64,${data}`
