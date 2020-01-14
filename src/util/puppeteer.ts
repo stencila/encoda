@@ -55,7 +55,10 @@ export async function startup(): Promise<puppeteer.Browser> {
         browser = await puppeteer.launch({
           executablePath,
           headless: true,
-          pipe: true
+          pipe: true,
+          // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
+          // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
+          args: ['--disable-dev-shm-usage']
         })
         logger.debug(`Browser launched. pid: ${browser.process().pid}`)
       }
