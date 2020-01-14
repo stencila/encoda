@@ -8833,9 +8833,6 @@ content:
             format: image/jpeg
             meta:
               inline: false
-          - type: MediaObject
-            contentUrl: ''
-            format: application/pdf
       - type: Figure
         id: fig8s1
         caption:
@@ -9033,9 +9030,6 @@ content:
             format: image/jpeg
             meta:
               inline: false
-          - type: MediaObject
-            contentUrl: ''
-            format: application/pdf
     meta:
       usage: figGroup
   - type: Paragraph
@@ -9580,9 +9574,6 @@ content:
             format: image/jpeg
             meta:
               inline: false
-          - type: MediaObject
-            contentUrl: ''
-            format: application/pdf
       - type: Figure
         id: fig10s1
         caption:
