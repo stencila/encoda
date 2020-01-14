@@ -205,12 +205,14 @@
   },
   "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
-    "extends": "@stencila/semantic-release-config",
-    "plugins": [
-      "@qiwi/semantic-release-gh-pages-plugin"
-    ]
+    "extends": "@stencila/semantic-release-config"
   },
   "eslintConfig": {
     "extends": "@stencila/eslint-config"
+  },
+  "renovate": {
+    "extends": [
+      "@stencila"
+    ]
   }
 }
