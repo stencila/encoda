@@ -260,37 +260,48 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
 }
 
 /**
- * Decode a GDoc `Paragraph` to a Stencila `Paragraph`, `Heading` or `List` node.
+ * Decode a GDoc `Paragraph` to a Stencila node.
+ *
+ * Usually, the paragraph will be decoded to a `Paragraph`, `Heading` or `List`.
+ * However, if the paragraph contains only one element and that element
+ * is a reproducible image, then it will be decoded to the entity in that image
+ * e.g. `CodeChunk`.
  */
 function decodeParagraph(
   para: GDocT.Schema$Paragraph,
   lists: { [key: string]: stencila.List[] }
-): stencila.Paragraph | stencila.Heading | stencila.List | undefined {
-  let content: any[] = []
-  if (para.elements) {
-    content = para.elements.map(node => decodeParagraphElement(node))
+): stencila.Node | undefined {
+  const { elements = [], paragraphStyle, bullet } = para
+
+  const content = elements.map(decodeParagraphElement)
+
+  // See if the content is a single block content node, and if
+  // so return that. Filtering is necessary to remove empty strings that
+  // are sometimes created during decoding.
+  const visibleContent = content.filter(node => node !== '')
+  if (
+    visibleContent.length === 1 &&
+    stencila.isBlockContent(visibleContent[0])
+  ) {
+    return visibleContent[0]
   }
 
-  if (para.paragraphStyle) {
-    const styleType = para.paragraphStyle.namedStyleType
+  // Ensure that now only have inline content, for the following node types
+  const inlineContent = content.filter(stencila.isInlineContent)
+
+  if (paragraphStyle) {
+    const styleType = paragraphStyle.namedStyleType
     if (styleType) {
       const match = /^HEADING_(\d)$/.exec(styleType)
       if (match) {
-        return {
-          type: 'Heading',
-          depth: parseInt(match[1], 10),
-          content
-        }
+        return stencila.heading(inlineContent, parseInt(match[1], 10))
       }
     }
   }
 
-  if (para.bullet) return decodeListItem(para, content, lists)
+  if (bullet) return decodeListItem(para, inlineContent, lists)
 
-  return {
-    type: 'Paragraph',
-    content
-  }
+  return stencila.paragraph(inlineContent)
 }
 
 /**
@@ -479,10 +490,11 @@ function decodeTable(table: GDocT.Schema$Table): stencila.Table {
                     elem: GDocT.Schema$StructuralElement
                   ): stencila.InlineContent => {
                     if (elem.paragraph) {
-                      if (elem.paragraph.elements) {
-                        return decodeParagraphElement(
-                          elem.paragraph.elements[0]
-                        )
+                      const { elements } = elem.paragraph
+                      if (elements) {
+                        return elements
+                          .map(decodeParagraphElement)
+                          .filter(stencila.isInlineContent)[0]
                       }
                     }
                     log.warn(
@@ -557,7 +569,7 @@ function encodeThematicBreak(): GDocT.Schema$StructuralElement {
  */
 function decodeParagraphElement(
   elem: GDocT.Schema$ParagraphElement
-): stencila.InlineContent {
+): stencila.Entity | stencila.InlineContent {
   // The paragraph element has one of these union fields
   if (elem.textRun) {
     return decodeTextRun(elem.textRun)
@@ -586,9 +598,12 @@ function decodeParagraphElement(
   return ''
 }
 
+/**
+ * Decode a GDoc `InlineObjectElement` to a Stencila `Entity`.
+ */
 function decodeInlineObjectElement(
   elem: GDocT.Schema$InlineObjectElement
-): stencila.ImageObject {
+): stencila.Entity {
   const embeddedObject = assertDefined(
     assertDefined(
       assertDefined(decodingGDoc.inlineObjects)[
@@ -761,7 +776,10 @@ function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
 }
 
 /**
- * Decode a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `ImageObject`.
+ * Decode a GDoc `EmbeddedObject` with `imageProperties` into a Stencila `Entity`.
+ *
+ * If the image has a description that can be parsed as JSON into a Stencila `Entity`,
+ * then that entity will be returned. Otherwise, a `ImageObject` is returned.
  *
  * Because the `imageProperties.contentUri` is ephemeral (lasts about ~30mins) this
  * function fetches the URL before it disappears.
@@ -769,10 +787,26 @@ function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
 function decodeImage(
   embeddedObject: GDocT.Schema$EmbeddedObject,
   imageProperties: GDocT.Schema$ImageProperties
-): stencila.ImageObject {
+): stencila.Entity {
   let { title, description } = embeddedObject
   if (title === null) title = undefined
   if (description === null) description = undefined
+
+  // Check to see if this is a reproducible images i.e. that the
+  // description contains JSON that can be parsed into a Stencila node.
+  if (typeof description === 'string') {
+    let node
+    try {
+      node = JSON.parse(description)
+    } catch {
+      // Do nothing
+    }
+    if (node !== undefined && stencila.isEntity(node)) {
+      // If the description contains a Stencila entity then
+      // return it
+      return node
+    }
+  }
 
   const contentUrl = decodingFetcher(imageProperties.contentUri || '')
   return stencila.imageObject(contentUrl, {
