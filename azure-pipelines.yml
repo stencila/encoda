@@ -50,6 +50,7 @@ jobs:
         displayName: 'Install dependencies'
 
       - script: npm run lint
+        condition: eq(variables['agent.os'], 'Linux')
         displayName: 'Linting'
 
       # Run tests with
