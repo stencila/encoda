@@ -14,6 +14,7 @@
 
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
+import crypto from 'crypto'
 import fs from 'fs-extra'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
@@ -715,13 +716,13 @@ function encodeAuthor(
   if (author.type === 'Person') {
     name = encodeName(author)
     if (author.affiliations) {
-      affs = author.affiliations.map(org => {
-        return elem(
+      affs = author.affiliations.map(org =>
+        elem(
           'aff',
-          { id: 'unique' },
+          { id: crypto.randomBytes(16).toString('hex') },
           elem('institution', org.name ?? '')
         )
-      })
+      )
     }
   } else {
     name = elem('string-name', author.legalName ?? author.name ?? '')
