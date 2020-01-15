@@ -240,7 +240,6 @@ npm run register
 
 You can then use Encoda as a plugin for Executa that provides additional format conversion capabilities. For example, you can use the `query` REPL on a Markdown document:
 
-
 ```bash
 npx executa query CHANGELOG.md --repl
 ```
@@ -357,6 +356,12 @@ If that is a bit slow, compile the Typescript to Javascript first and use `node`
 ```bash
 npm run build
 node dist/cli convert simple.md simple.html
+```
+
+If you are using VSCode, you can use the [Auto Attach feature](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature) to attach to the CLI when running the `cli:debug` NPM script:
+
+```bash
+npm run cli:debug -- convert simple.gdoc simple.ipynb
 ```
 
 There's also a `Makefile` if you prefer to run tasks that way e.g.
