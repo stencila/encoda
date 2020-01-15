@@ -315,13 +315,14 @@ function decodeMetaValue(
   switch (value.t) {
     case 'MetaBool':
       return value.c
-    case 'MetaString':
+    case 'MetaString': {
       if (value.c === '!!null') return null
       if (value.c.startsWith('!!number ')) {
         return parseFloat(value.c.slice(9))
       }
       const int = parseInt(value.c)
       return isNaN(int) ? value.c : int
+    }
     case 'MetaList':
       return value.c.map(decodeMetaValue)
     case 'MetaMap':
