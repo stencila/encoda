@@ -241,6 +241,14 @@ content:
                         
       - type: Cite
         target: '#ref-2'
+        content:
+          - |-
+            Polka 
+                                
+          - type: Emphasis
+            content:
+              - et al
+          - '., 2018'
       - >-
         ). There were 10 journals identified in the PMC corpus that archive some
         peer review materials. These journals take a variety of different
@@ -264,6 +272,8 @@ content:
                         
       - type: Cite
         target: '#ref-3'
+        content:
+          - 'Ross-Hellauer, 2017'
       - >-
         ), but we feel that many of our suggestions and recommendations are
         relevant to most if not all of these approaches.
@@ -595,6 +605,8 @@ content:
                         
       - type: Cite
         target: '#ref-1'
+        content:
+          - '2008'
       - ' April), included the following types of article instances:'
   - type: List
     items:

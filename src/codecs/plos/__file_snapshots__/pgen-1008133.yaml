@@ -2459,46 +2459,66 @@ content:
         involved in cell cycle arrest, DNA repair and apoptosis [
       - type: Cite
         target: '#pgen.1008133.ref001'
+        content:
+          - '1'
       - >-
         ]. Recently, several non-cell-autonomous functions of p53 have been
         reported to be relevant in tissue homeostasis, as well as in tumor
         suppression [
       - type: Cite
         target: '#pgen.1008133.ref002'
+        content:
+          - '2'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref003'
+        content:
+          - '3'
       - >-
         ]. In this regard, the activation of p53 in stromal fibroblasts promotes
         an antitumor microenvironment by impairing the survival and spread of
         adjacent tumor cells [
       - type: Cite
         target: '#pgen.1008133.ref004'
+        content:
+          - '4'
       - –
       - type: Cite
         target: '#pgen.1008133.ref006'
+        content:
+          - '6'
       - >-
         ]. Likewise, reconstituted MCF7 tumors containing p53-deficient
         fibroblasts develop faster and are more aggressive than their
         counterparts carrying wild-type fibroblasts [
       - type: Cite
         target: '#pgen.1008133.ref007'
+        content:
+          - '7'
       - >-
         ]. In fact, the modulation of inflammatory cytokine secretion by
         tumor-mediated activation of p53 has been shown to limit tissue damage [
       - type: Cite
         target: '#pgen.1008133.ref008'
+        content:
+          - '8'
       - '], inhibit adjacent epithelial cell transformation ['
       - type: Cite
         target: '#pgen.1008133.ref004'
+        content:
+          - '4'
       - >-
         ], and promote macrophage-mediated clearance of tumor and apoptotic
         cells [
       - type: Cite
         target: '#pgen.1008133.ref009'
+        content:
+          - '9'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref010'
+        content:
+          - '10'
       - '].'
   - type: Paragraph
     content:
@@ -2512,24 +2532,36 @@ content:
       - ' orthologue of mammalian p53 (Dmp53) has been demonstrated to be essential for tissue and metabolic homeostasis ['
       - type: Cite
         target: '#pgen.1008133.ref002'
+        content:
+          - '2'
       - >-
         ]. In addition to conserved functions that promote apoptosis upon
         stress, Dmp53 participates in non-cell-autonomous responses, regulating
         apoptosis-induced proliferation [
       - type: Cite
         target: '#pgen.1008133.ref011'
+        content:
+          - '11'
       - –
       - type: Cite
         target: '#pgen.1008133.ref013'
+        content:
+          - '13'
       - '], cell competition ['
       - type: Cite
         target: '#pgen.1008133.ref014'
+        content:
+          - '14'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref015'
+        content:
+          - '15'
       - '] and adaptive responses to nutrient stress at the organismal level ['
       - type: Cite
         target: '#pgen.1008133.ref016'
+        content:
+          - '16'
       - ']. Previous studies using the '
       - type: Emphasis
         content:
@@ -2537,18 +2569,26 @@ content:
       - ' wing as a model system demonstrated that adjacent cell populations within an organ grow in a coordinated manner, buffering local variations in growth rate, thereby maintaining tissue homeostasis and allowing the development of well-proportioned wings ['
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref018'
+        content:
+          - '18'
       - >-
         ]. Targeted depletion of growth-promoting genes or disruption of the
         protein biosynthetic machinery in defined regions of the developing wing
         primordium reduces size of adjacent unperturbed territories [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref019'
+        content:
+          - '19'
       - >-
         ]. Activation of Dmp53 in the slow-growing cell population is required
         for proper coordination of intra-organ growth, since depletion of Dmp53
@@ -2556,19 +2596,27 @@ content:
         rise to wings with incorrect proportions [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]. Several molecular mechanisms, involving either a tissue local
         response [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ] or systemic mechanisms coordinating both intra- and inter-organ growth
         [
       - type: Cite
         target: '#pgen.1008133.ref019'
+        content:
+          - '19'
       - –
       - type: Cite
         target: '#pgen.1008133.ref021'
+        content:
+          - '21'
       - '], have been proposed to underlie Dmp53-dependent growth coordination.'
   - type: Paragraph
     content:
@@ -2581,9 +2629,13 @@ content:
       - ' ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref023'
+        content:
+          - '23'
       - >-
         ] as a direct effector of Dmp53 mediating intra-organ growth. We
         demonstrate that Egr acts through its receptor Grindelwald (Grnd) and
@@ -2621,9 +2673,13 @@ content:
       - ' wing imaginal disc, a highly proliferative epithelium that grows extensively during larval development, provides an ideal model to study intra-organ growth coordination ['
       - type: Cite
         target: '#pgen.1008133.ref024'
+        content:
+          - '24'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref025'
+        content:
+          - '25'
       - >-
         ]. We made use of the Gal4/UAS system to drive the expression of a
         cold-sensitive version of type 2 ribosome-inactivating protein Ricin-A
@@ -2684,12 +2740,16 @@ content:
       - '; ['
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]). This non-autonomous decrease in tissue size was also observed when
         growth was compromised in other regions of the wing by means of a
         battery of Gal4 drivers, including wing-specific Gal4 drivers [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]. Along with the decrease in tissue size, a non-autonomous reduction in
         proliferation rates and final cell number was also observed, as
@@ -2708,6 +2768,8 @@ content:
       - '; ['
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - ']).'
   - type: Figure
     id: pgen.1008133.g001
@@ -2881,9 +2943,13 @@ content:
       - '). In addition, 57 genes previously described as p53 targets ['
       - type: Cite
         target: '#pgen.1008133.ref026'
+        content:
+          - '26'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref027'
+        content:
+          - '27'
       - '] were specifically upregulated upon RA'
       - type: Superscript
         content:
@@ -2983,6 +3049,8 @@ content:
       - ') ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - '] and '
       - type: Emphasis
         content:
@@ -3116,6 +3184,8 @@ content:
         adjacent ones [
       - type: Cite
         target: '#pgen.1008133.ref028'
+        content:
+          - '28'
       - ']. RA'
       - type: Superscript
         content:
@@ -3133,9 +3203,13 @@ content:
       - '; ['
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref029'
+        content:
+          - '29'
       - >-
         ]). We then assessed the functional requirement of Egr for apoptosis
         induction. In this regard, RA
@@ -3155,6 +3229,8 @@ content:
         essential role in the non-autonomous decrease of proliferation rates [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]. We then studied whether Egr is also responsible for reducing
         proliferation rates upon RA
@@ -3267,12 +3343,18 @@ content:
       - '-lacZ; ['
       - type: Cite
         target: '#pgen.1008133.ref030'
+        content:
+          - '30'
       - ']) and Eiger protein expression and localization (Eiger-GFP; ['
       - type: Cite
         target: '#pgen.1008133.ref030'
+        content:
+          - '30'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref031'
+        content:
+          - '31'
       - ']). '
       - type: Emphasis
         content:
@@ -3581,6 +3663,8 @@ content:
       - ' locus ['
       - type: Cite
         target: '#pgen.1008133.ref032'
+        content:
+          - '32'
       - >-
         ], chromatin immunoprecipitation (ChIP) assays revealed that Dmp53 binds
         to predicted 
@@ -3634,12 +3718,18 @@ content:
         regulator of tissue growth, proliferation and apoptosis [
       - type: Cite
         target: '#pgen.1008133.ref023'
+        content:
+          - '23'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref033'
+        content:
+          - '33'
       - –
       - type: Cite
         target: '#pgen.1008133.ref038'
+        content:
+          - '38'
       - ']. Our transcriptome analysis indicated that RA'
       - type: Superscript
         content:
@@ -3775,6 +3865,8 @@ content:
         Egr or TNFα receptor homologue Grindelwald (Grnd) [
       - type: Cite
         target: '#pgen.1008133.ref039'
+        content:
+          - '39'
       - ']. Mmp1 ectopic expression caused by '
       - type: Emphasis
         content:
@@ -4105,9 +4197,13 @@ content:
       - ' insulin-like peptide 8 (Dilp8) has been identified as a signaling molecule produced by imaginal discs in response to tissue damage ['
       - type: Cite
         target: '#pgen.1008133.ref040'
+        content:
+          - '40'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref041'
+        content:
+          - '41'
       - >-
         ]. Dilp8 production by slow-growing or damaged tissues results in
         activation of neuronal receptor Lgr3, which in turn downregulates the
@@ -4118,9 +4214,13 @@ content:
         and reduces larval and imaginal discs growth [
       - type: Cite
         target: '#pgen.1008133.ref040'
+        content:
+          - '40'
       - –
       - type: Cite
         target: '#pgen.1008133.ref044'
+        content:
+          - '44'
       - ']. Interestingly, we observed strong upregulation of '
       - type: Emphasis
         content:
@@ -4172,6 +4272,8 @@ content:
       - ' protein trap reporter (hereafter Dilp8-GFP, ['
       - type: Cite
         target: '#pgen.1008133.ref041'
+        content:
+          - '41'
       - >-
         ]) when the transgene was expressed in the dorsal compartment of the
         wing with the 
@@ -4286,12 +4388,18 @@ content:
         to various types of stress [
       - type: Cite
         target: '#pgen.1008133.ref040'
+        content:
+          - '40'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref044'
+        content:
+          - '44'
       - –
       - type: Cite
         target: '#pgen.1008133.ref046'
+        content:
+          - '46'
       - >-
         ]. The inhibition of JNK, but not Xrp1, caused a significant reduction
         in the upregulation of 
@@ -4483,6 +4591,8 @@ content:
       - ' tissues ['
       - type: Cite
         target: '#pgen.1008133.ref047'
+        content:
+          - '47'
       - ']. '
       - type: Emphasis
         content:
@@ -4634,9 +4744,13 @@ content:
         [
       - type: Cite
         target: '#pgen.1008133.ref048'
+        content:
+          - '48'
       - –
       - type: Cite
         target: '#pgen.1008133.ref050'
+        content:
+          - '50'
       - ']. During '
       - type: Emphasis
         content:
@@ -4644,6 +4758,8 @@ content:
       - ' wing regeneration, a burst of ROS generated by dying cells propagates to the nearby surviving tissue, stimulating JNK signaling, which is required for tissue repair ['
       - type: Cite
         target: '#pgen.1008133.ref051'
+        content:
+          - '51'
       - >-
         ]. We then addressed whether ROS were produced downstream of the
         apoptotic pathway in slow-growing compartments. To this end, we
@@ -4694,6 +4810,8 @@ content:
         adjacent cell populations [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]. Interestingly, the non-autonomous reduction of BrdU incorporation
         levels caused by RA
@@ -4769,6 +4887,8 @@ content:
       - ' wing as a model system, we previously demonstrated that impairing growth within defined territories along the wing primordium triggers a Dmp53-dependent reduction of growth and proliferation rates in adjacent non-perturbed cell populations, thus contributing to the generation of smaller but well-proportioned adult wings ['
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]. Here we provide evidence that Dmp53 regulates intra-organ growth by
         inducing the expression of the 
@@ -4778,9 +4898,13 @@ content:
       - ' TNF ligand Eiger ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref023'
+        content:
+          - '23'
       - >-
         ]. We show that Eiger-dependent activation of the JNK pathway in
         slow-growing compartments is required to reduce the growth and
@@ -4845,9 +4969,13 @@ content:
         proliferation and apoptosis [
       - type: Cite
         target: '#pgen.1008133.ref052'
+        content:
+          - '52'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref053'
+        content:
+          - '53'
       - ']. '
       - type: Emphasis
         content:
@@ -4855,21 +4983,29 @@ content:
       - ' type II transmembrane protein Eiger belongs to this family and exerts intrinsic tumor suppressor activity in epithelia by eliminating oncogenic cells through local endocytic JNK activation ['
       - type: Cite
         target: '#pgen.1008133.ref054'
+        content:
+          - '54'
       - >-
         ]. Eiger expression in apoptotic cells activates the JNK pathway in
         neighboring cells, thus propagating apoptotic JNK signaling along the
         tissue as part of a process called apoptosis-induced apoptosis [
       - type: Cite
         target: '#pgen.1008133.ref028'
+        content:
+          - '28'
       - >-
         ]. Moreover, it has been reported that interactions between tumor cells
         and the tumor microenvironment mediated by Eiger and its receptor Grnd
         also drive JNK activation, tumor growth, and invasive behavior [
       - type: Cite
         target: '#pgen.1008133.ref054'
+        content:
+          - '54'
       - –
       - type: Cite
         target: '#pgen.1008133.ref056'
+        content:
+          - '56'
       - >-
         ]. In this work, we showed that Eiger expression in growth-deficient
         cell populations is required for both apoptotic and proliferative
@@ -4892,20 +5028,30 @@ content:
       - ' imaginal discs ['
       - type: Cite
         target: '#pgen.1008133.ref033'
+        content:
+          - '33'
       - –
       - type: Cite
         target: '#pgen.1008133.ref036'
+        content:
+          - '36'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref038'
+        content:
+          - '38'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref057'
+        content:
+          - '57'
       - >-
         ]. In addition, JNK signaling regulates organ size during development
         through a non-canonical, Jun/Fos-independent mechanism [
       - type: Cite
         target: '#pgen.1008133.ref037'
+        content:
+          - '37'
       - >-
         ]. Here we provide evidence that JNK coordinates intra-organ growth in a
         Fos-dependent manner through a mechanism involving the expression of
@@ -4915,12 +5061,18 @@ content:
         metamorphosis and systemically reduces growth [
       - type: Cite
         target: '#pgen.1008133.ref040'
+        content:
+          - '40'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref041'
+        content:
+          - '41'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref044'
+        content:
+          - '44'
       - >-
         ]. In developing wing discs, we have shown that Dilp8 expression in
         slow-growing cell populations contributes to a size reduction of
@@ -4931,12 +5083,18 @@ content:
         thereby coordinating growth with developmental timing [
       - type: Cite
         target: '#pgen.1008133.ref043'
+        content:
+          - '43'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref055'
+        content:
+          - '55'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref058'
+        content:
+          - '58'
       - >-
         ]. In addition to the role of ecdysone in the regulation of
         developmental transitions, moderate ecdysone signaling has been shown to
@@ -4951,23 +5109,33 @@ content:
       - ' ['
       - type: Cite
         target: '#pgen.1008133.ref059'
+        content:
+          - '59'
       - –
       - type: Cite
         target: '#pgen.1008133.ref062'
+        content:
+          - '62'
       - >-
         ]. Indeed, organ growth coordination in response to localized growth
         defects is mediated, at least in part, by reduced ecdysone levels [
       - type: Cite
         target: '#pgen.1008133.ref019'
+        content:
+          - '19'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref021'
+        content:
+          - '21'
       - >-
         ]. Remarkably, the coordination of growth between adjacent wing disc
         compartments can be disrupted by exogenous feeding with
         20-hydroxyecdysone (20E) [
       - type: Cite
         target: '#pgen.1008133.ref019'
+        content:
+          - '19'
       - >-
         ]. Therefore, Eiger/JNK-induced Dilp8 expression in the slow-growing
         compartment most likely regulates growth in a non-autonomous manner via
@@ -4980,15 +5148,23 @@ content:
         regeneration, neoplastic growth and impaired ribosomal function [
       - type: Cite
         target: '#pgen.1008133.ref040'
+        content:
+          - '40'
       - –
       - type: Cite
         target: '#pgen.1008133.ref042'
+        content:
+          - '42'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref044'
+        content:
+          - '44'
       - –
       - type: Cite
         target: '#pgen.1008133.ref046'
+        content:
+          - '46'
       - >-
         ]. While activation of the JNK and Hippo signaling pathways contributes
         to the induction of Dilp8 expression in neoplastic tumors, the JAK/STAT
@@ -5000,6 +5176,8 @@ content:
         on the growth rates of other primordia [
       - type: Cite
         target: '#pgen.1008133.ref044'
+        content:
+          - '44'
       - >-
         ]. Our data provide evidence of an Xrp1-independent and JNK-dependent
         mechanism by which Dilp8 expression is activated in growth-depleted
@@ -5015,14 +5193,20 @@ content:
         cell proliferation, differentiation and senescence [
       - type: Cite
         target: '#pgen.1008133.ref063'
+        content:
+          - '63'
       - –
       - type: Cite
         target: '#pgen.1008133.ref065'
+        content:
+          - '65'
       - >-
         ]. Although p53 is an important regulator of intracellular ROS levels in
         vertebrates, downstream mediators of p53 remain to be elucidated [
       - type: Cite
         target: '#pgen.1008133.ref066'
+        content:
+          - '66'
       - >-
         ]. Here we have shown that ROS production downstream of JNK and the
         apoptotic machinery is required to reduce proliferation rates in 
@@ -5036,9 +5220,13 @@ content:
       - ' imaginal discs ['
       - type: Cite
         target: '#pgen.1008133.ref051'
+        content:
+          - '51'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref067'
+        content:
+          - '67'
       - >-
         ]. In the first case, extracellular ROS generated by the NADPH oxidase
         Duox recruit hemocytes to the dying tissue. Hemocytes release Eiger,
@@ -5046,6 +5234,8 @@ content:
         compensatory proliferation and hyperplastic tissue growth [
       - type: Cite
         target: '#pgen.1008133.ref067'
+        content:
+          - '67'
       - >-
         ]. We found no evidence that hemocytes have a potential analogous role
         in coordinated intra-organ growth. Our results therefore strongly
@@ -5057,6 +5247,8 @@ content:
         proliferation and tissue repair [
       - type: Cite
         target: '#pgen.1008133.ref051'
+        content:
+          - '51'
       - >-
         ]. Thus, whereas ROS-stimulated JNK activity promotes cell proliferation
         in the context of tissue regeneration, JNK-induced ROS reduce
@@ -5190,6 +5382,8 @@ content:
       - ' ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - '], '
       - type: Emphasis
         content:
@@ -5236,6 +5430,8 @@ content:
       - ' ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - '], '
       - type: Emphasis
         content:
@@ -5248,6 +5444,8 @@ content:
       - ' ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - '], '
       - type: Emphasis
         content:
@@ -5260,6 +5458,8 @@ content:
       - ' ['
       - type: Cite
         target: '#pgen.1008133.ref022'
+        content:
+          - '22'
       - '], '
       - type: Emphasis
         content:
@@ -5267,6 +5467,8 @@ content:
       - '-lacZ ['
       - type: Cite
         target: '#pgen.1008133.ref030'
+        content:
+          - '30'
       - '], '
       - type: Emphasis
         content:
@@ -5283,6 +5485,8 @@ content:
       - ' in the text ['
       - type: Cite
         target: '#pgen.1008133.ref033'
+        content:
+          - '33'
       - >-
         ]). RNAi lines for secreted signaling molecules were obtained from VDRC
         (Supporting Information 
@@ -5358,11 +5562,15 @@ content:
       - 'TUNEL was performed as described in ['
       - type: Cite
         target: '#pgen.1008133.ref068'
+        content:
+          - '68'
       - >-
         ] using the In Situ Cell Death Detection Kit provided by Roche
         Diagnostics. BrdU incorporation was performed as described in [
       - type: Cite
         target: '#pgen.1008133.ref068'
+        content:
+          - '68'
       - >-
         ]. Briefly, third-instar larvae were dissected in PBS and incubated with
         5-bromo-2’-deoxy-uridine (10 μM, Roche) for 45 min. They were then
@@ -5398,6 +5606,8 @@ content:
         analyzed and processed using Fiji [
       - type: Cite
         target: '#pgen.1008133.ref069'
+        content:
+          - '69'
       - >-
         ] and Adobe Photoshop. Wing disc orientation and/or position was
         adjusted in the field of view for images presented. No relevant
@@ -5412,6 +5622,8 @@ content:
       - 'In situ hybridization was performed as described in ['
       - type: Cite
         target: '#pgen.1008133.ref068'
+        content:
+          - '68'
       - ']. Antisense DIG-labeled '
       - type: Emphasis
         content:
@@ -5430,6 +5642,8 @@ content:
         differentiates a hair) per defined area, as previously described [
       - type: Cite
         target: '#pgen.1008133.ref017'
+        content:
+          - '17'
       - >-
         ]. At least 10 wings per genotype were scored. Calculated area and cell
         density values for the different genotypes were normalized to control
@@ -5471,6 +5685,8 @@ content:
       - 'ChIP assays were performed following the modEncode protocol ['
       - type: Cite
         target: '#pgen.1008133.ref070'
+        content:
+          - '70'
       - >-
         ]. Fifty L3 larvae were dissected for ChIP assays using anti-p53
         antibodies (DSHB; 7A4). The primers used to detect immunoprecipitated
@@ -5493,6 +5709,8 @@ content:
         IRB Barcelona, as previously described [
       - type: Cite
         target: '#pgen.1008133.ref071'
+        content:
+          - '71'
       - >-
         ]. Three independent RNA samples were prepared from wing imaginal discs
         of late L3 larvae expressing GFP or GFP plus RA
@@ -5646,12 +5864,18 @@ content:
       - '-lacZ ['
       - type: Cite
         target: '#pgen.1008133.ref030'
+        content:
+          - '30'
       - '] and Eiger-GFP ['
       - type: Cite
         target: '#pgen.1008133.ref030'
+        content:
+          - '30'
       - ','
       - type: Cite
         target: '#pgen.1008133.ref031'
+        content:
+          - '31'
       - >-
         ] reporters in the eye and wing imaginal discs of wild-type larvae. (B)
         Wing discs carrying Eiger-GFP protein trap and stained to visualize GFP

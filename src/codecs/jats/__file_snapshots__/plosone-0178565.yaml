@@ -1739,9 +1739,13 @@ content:
         contribute to the global primary production [
       - type: Cite
         target: '#pone.0178565.ref001'
+        content:
+          - '1'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref002'
+        content:
+          - '2'
       - >-
         ]. This ability to sequester atmospheric carbon dioxide and
         photosynthetically convert it to biomass makes cyanobacteria leading
@@ -1749,27 +1753,39 @@ content:
         cyanobacteria contribute significantly to the nitrogen cycle [
       - type: Cite
         target: '#pone.0178565.ref003'
+        content:
+          - '3'
       - >-
         ] and are attracting attention as biofertilizers and for
         nitrogenase-dependent hydrogen production [
       - type: Cite
         target: '#pone.0178565.ref004'
+        content:
+          - '4'
       - >-
         ]. Thus, the cyanobacterial phylum shows significant diversity both in
         terms of their metabolic capability and habitats [
       - type: Cite
         target: '#pone.0178565.ref005'
+        content:
+          - '5'
       - –
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - >-
         ]. Despite this diversity, the phylum has retained a significant core
         genome [
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref008'
+        content:
+          - '8'
       - '].'
   - type: Paragraph
     content:
@@ -1780,41 +1796,59 @@ content:
         produce useful products such as ethanol, butanol, butanediol, etc [
       - type: Cite
         target: '#pone.0178565.ref009'
+        content:
+          - '9'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref010'
+        content:
+          - '10'
       - >-
         ]. Classical metabolic engineering involves knocking out or
         downregulating pathways that drain the carbon away from the product of
         interest [
       - type: Cite
         target: '#pone.0178565.ref011'
+        content:
+          - '11'
       - >-
         ]. Knowledge of essential genes allows mapping of critical points in
         metabolic networks and design of mutants with minimal wasteful
         experimental screening [
       - type: Cite
         target: '#pone.0178565.ref012'
+        content:
+          - '12'
       - ']. Essential genes also play a role in drug designing ['
       - type: Cite
         target: '#pone.0178565.ref013'
+        content:
+          - '13'
       - >-
         ], in identifying potential targets for antibiotics in pathogenic
         microorganism [
       - type: Cite
         target: '#pone.0178565.ref014'
+        content:
+          - '14'
       - '] and in minimal genome construction ['
       - type: Cite
         target: '#pone.0178565.ref015'
+        content:
+          - '15'
       - >-
         ]. Experimental as well as computational methods have been reported for
         identification of essential genes. Conventional experimental methods
         involve gene knockouts [
       - type: Cite
         target: '#pone.0178565.ref016'
+        content:
+          - '16'
       - '] and RNA interference ['
       - type: Cite
         target: '#pone.0178565.ref017'
+        content:
+          - '17'
       - >-
         ] where viability of the organism is checked by deleting or silencing
         the gene. A recently developed method, random bar code transposon-site
@@ -1822,24 +1856,36 @@ content:
         permitting genome-wide gene essentiality testing [
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - >-
         ]. In parallel, a number of computational methods have been proposed in
         the past decade or so that may be time efficient. These are based on
         network topology [
       - type: Cite
         target: '#pone.0178565.ref019'
+        content:
+          - '19'
       - '], gene expression data ['
       - type: Cite
         target: '#pone.0178565.ref020'
+        content:
+          - '20'
       - '], metabolic modelling ['
       - type: Cite
         target: '#pone.0178565.ref021'
+        content:
+          - '21'
       - '], flux balance analysis (FBA) ['
       - type: Cite
         target: '#pone.0178565.ref022'
+        content:
+          - '22'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref023'
+        content:
+          - '23'
       - '] and '
       - type: Superscript
         content:
@@ -1851,6 +1897,8 @@ content:
       - 'C-MFA) ['
       - type: Cite
         target: '#pone.0178565.ref024'
+        content:
+          - '24'
       - >-
         ]. FBA based methods systematically assesses the growth rate of all
         single gene deletion mutants. A gene is termed essential if it’s
@@ -1859,6 +1907,8 @@ content:
         a time [
       - type: Cite
         target: '#pone.0178565.ref022'
+        content:
+          - '22'
       - '].'
   - type: Paragraph
     content:
@@ -1867,22 +1917,30 @@ content:
         prokaryotes. In an early study, Raymond et al. [
       - type: Cite
         target: '#pone.0178565.ref025'
+        content:
+          - '25'
       - >-
         ] performed comparative genomic analysis on different groups of
         photosynthetic prokaryotes for common gene orthologs to propose
         photosynthetic evolution. Subsequently, Shi and Falkowski [
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - >-
         ] enumerated 682 core genes based on conservation in 13 cyanobacterial
         genomes. Larsson et al. [
       - type: Cite
         target: '#pone.0178565.ref026'
+        content:
+          - '26'
       - >-
         ] predicted gene orthologs with a larger genome dataset of 58
         cyanobacterial genomes and identified 404 such orthologs. Beck et al. [
       - type: Cite
         target: '#pone.0178565.ref008'
+        content:
+          - '8'
       - >-
         ] categorized the clusters of likely ortholog genes (CLOGs) identified
         from 16 cyanobacterial strains into core, shared and unique clusters.
@@ -1890,6 +1948,8 @@ content:
         Rubin et al. [
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '] experimentally identified a total of 718 essential genes in '
       - type: Emphasis
         content:
@@ -1934,6 +1994,8 @@ content:
         [
       - type: Cite
         target: '#pone.0178565.ref027'
+        content:
+          - '27'
       - >-
         ], with minor modifications. Briefly, a total of 120 completely
         sequenced cyanobacterial genomes were used to create a local database (
@@ -1955,6 +2017,8 @@ content:
         to remove redundancy at 90% identity level [
       - type: Cite
         target: '#pone.0178565.ref028'
+        content:
+          - '28'
       - >-
         ]. A given query protein sequence was searched against each of the 120
         cyanobacterial genomes using NCBI local BLASTP. A hit was accepted if
@@ -1968,6 +2032,8 @@ content:
         aligned region (Memon et al. [
       - type: Cite
         target: '#pone.0178565.ref029'
+        content:
+          - '29'
       - >-
         ]). These conditions were imposed to minimize spurious hits that result
         from partial domain matches. All proteins that satisfy these criteria
@@ -2170,6 +2236,8 @@ content:
         that based on alignment of concatenated protein sequences [
       - type: Cite
         target: '#pone.0178565.ref005'
+        content:
+          - '5'
       - ']. The tree can be broken down into 4 clades ('
       - type: Link
         relation: fig
@@ -2291,6 +2359,8 @@ content:
         from pantothenate [
       - type: Cite
         target: '#pone.0178565.ref030'
+        content:
+          - '30'
       - >-
         ] (Strauss et al, 2001). Each query protein is present in evolutionarily
         related subset of organisms suggesting that the divergence of the
@@ -2303,9 +2373,13 @@ content:
       - ' (phenazine biosynthesis) family, which is part of the seven-gene operon, responsible for the synthesis of phenazine-1-carboxylic acid ['
       - type: Cite
         target: '#pone.0178565.ref031'
+        content:
+          - '31'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref032'
+        content:
+          - '32'
       - >-
         ]. This suggests that the potentially redundant profiles represent genes
         that have diverged significantly in the subsets of organisms and are not
@@ -2421,6 +2495,8 @@ content:
       - ' sp. A large fraction of proteins in this category are annotated. These proteins participate in key cellular functions such as carbohydrate metabolism, energy metabolism, lipid metabolism, nucleotide metabolism, amino acid metabolism, glycan biosynthesis, metabolism of cofactors and vitamins and genetic information processing like transcription, translation and replication. Shi and Falkowski ['
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - '] have called this set the stable core.'
   - type: Table
     id: pone.0178565.t001
@@ -2657,9 +2733,13 @@ content:
         cell division and in chromosome compaction [
       - type: Cite
         target: '#pone.0178565.ref033'
+        content:
+          - '33'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref034'
+        content:
+          - '34'
       - >-
         ]. We checked for the conservation index of these genes and we find that
         the oscillator genes 
@@ -2692,11 +2772,15 @@ content:
       - 'Initially Martin et al. ['
       - type: Cite
         target: '#pone.0178565.ref035'
+        content:
+          - '35'
       - >-
         ] reported such a set in cyanobacteria which they called structural
         genes. Later Shi and Falkowski [
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - >-
         ] reported such a gene set in cyanobacteria which they called the stable
         core. Only few cyanobacterial genomes were available at that time. Our
@@ -2709,9 +2793,13 @@ content:
         presented by Martin et al. [
       - type: Cite
         target: '#pone.0178565.ref035'
+        content:
+          - '35'
       - '] and Shi and Falkowski ['
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - '] ('
       - type: Link
         relation: fig
@@ -2731,14 +2819,20 @@ content:
       - ' (with UniProt IDs Q8RSW0 and Q8RSW1) are involved in assembly of oxygen evolving complex and unidirectional flow of electrons ['
       - type: Cite
         target: '#pone.0178565.ref036'
+        content:
+          - '36'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref037'
+        content:
+          - '37'
       - >-
         ] are semi-conserved in our dataset but conserved in the dataset of Shi
         and Falkowski [
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - ']. Gene '
       - type: Emphasis
         content:
@@ -2746,11 +2840,15 @@ content:
       - ' (with UniProt ID Q8RSW2) is involved in the assembly of photosystem II and secondary electron transport mechanism ['
       - type: Cite
         target: '#pone.0178565.ref038'
+        content:
+          - '38'
       - >-
         ] is semi-conserved in our dataset is one of the structural gene of
         Martin et al. [
       - type: Cite
         target: '#pone.0178565.ref035'
+        content:
+          - '35'
       - >-
         ]. These discrepancies may be due to differences in the genome datasets
         used in the three studies. Our analysis includes symbiotic strains which
@@ -2767,12 +2865,18 @@ content:
             and Falkowski [
           - type: Cite
             target: '#pone.0178565.ref007'
+            content:
+              - '7'
           - '], structural genes of Martin et al. ['
           - type: Cite
             target: '#pone.0178565.ref035'
+            content:
+              - '35'
           - '] and essential genes of Rubin et al. ['
           - type: Cite
             target: '#pone.0178565.ref018'
+            content:
+              - '18'
           - '] shown for '
           - type: Emphasis
             content:
@@ -2787,18 +2891,26 @@ content:
           - '(A) Overlap of conserved genes (this work), core set proteins ['
           - type: Cite
             target: '#pone.0178565.ref007'
+            content:
+              - '7'
           - '] and structural genes ['
           - type: Cite
             target: '#pone.0178565.ref035'
+            content:
+              - '35'
           - ']. (B) Conserved genes (this work) and essential genes ['
           - type: Cite
             target: '#pone.0178565.ref018'
+            content:
+              - '18'
           - >-
             ]. (C) Conserved genes without clustering of microorganisms and
             removing the microorganism redundancy and the overlap with essential
             genes [
           - type: Cite
             target: '#pone.0178565.ref018'
+            content:
+              - '18'
           - '].'
     label: Fig 5
     content:
@@ -2925,6 +3037,8 @@ content:
       - ' PCC 7942 by Rubin et al. ['
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '] ('
       - type: Link
         relation: supplementary-material
@@ -2973,6 +3087,8 @@ content:
       - ' (cytochrome b559 subunit beta) with UniProt ID Q8RSW2 is involved in the assembly of photosystem II and secondary electron transport mechanism ['
       - type: Cite
         target: '#pone.0178565.ref038'
+        content:
+          - '38'
       - >-
         ]. The gene is semi-conserved in the entire phylum but is conserved in
         clade C. The gene 
@@ -2982,6 +3098,8 @@ content:
       - ' (isochorismate synthase) with UniProt ID B1XJE2 is involved in the conversion of chorismate to isochorismate ['
       - type: Cite
         target: '#pone.0178565.ref039'
+        content:
+          - '39'
       - >-
         ]. The gene is conserved in clades A and D but semi-conserved in the
         entire phylum. The genes 
@@ -2999,6 +3117,8 @@ content:
       - ' (fructose-1,6-bisphosphatase class 1) with UniProt ID B1XNG1 is involved in reductive phase of Pentose Phosphate Pathway (PPP), and catalyses the removal of a phosphate group from fructose 1,6- bisphosphate to form fructose-6-phosphate ['
       - type: Cite
         target: '#pone.0178565.ref040'
+        content:
+          - '40'
       - ']. The gene '
       - type: Emphasis
         content:
@@ -3006,6 +3126,8 @@ content:
       - ' (6-phosphogluconate dehydrogenase, decarboxylating) with UniProt ID B1XM87 is a key enzyme in PPP involved in the conversion of 6-phospho-D-gluconolactone to D-ribulose 5-phosphate ['
       - type: Cite
         target: '#pone.0178565.ref041'
+        content:
+          - '41'
       - ']. The genes are conserved in our data but are non-essential in '
       - type: Emphasis
         content:
@@ -3017,6 +3139,8 @@ content:
       - ' PCC 7942 ['
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - >-
         ]. This may be due to the fact that the PPP pathway may be used under
         certain stress conditions that are not accounted for in the experimental
@@ -3095,6 +3219,8 @@ content:
         essentiality [
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '] for enzymes of select central carbon pathways ('
       - type: Link
         relation: table
@@ -3121,12 +3247,16 @@ content:
       - ' PCC 7942 ['
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - >-
         ]. Similarly, for Calvin cycle, we find that eight of the ten conserved
         enzymes are essential. However, we observe a disagreement with the data
         of Rubin et al. [
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '] in the cases of gene '
       - type: Emphasis
         content:
@@ -3146,6 +3276,8 @@ content:
       - ' PCC 7942 by Rubin et al. ['
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '].'
   - type: Table
     id: pone.0178565.t004
@@ -3970,6 +4102,8 @@ content:
         common evolutionary pressure and hence tend to co-evolve [
       - type: Cite
         target: '#pone.0178565.ref027'
+        content:
+          - '27'
       - >-
         ]. To that end, we clustered the semi-conserved genes using Hamming
         distance as metric and a cutoff of 0.15. A few selected clusters (
@@ -4014,9 +4148,13 @@ content:
       - ' (arsenite-activated ATPase with UniProt ID B5W7R2). The gas vesicle proteins are small, hollow, gas filled protein structures found in several cyanobacteria which allow their positioning at favorable depth for growth ['
       - type: Cite
         target: '#pone.0178565.ref042'
+        content:
+          - '42'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref043'
+        content:
+          - '43'
       - ']. The gene '
       - type: Emphasis
         content:
@@ -4024,9 +4162,13 @@ content:
       - ' is involved in active extrusion of heavy metals and is associated with gas vesicle biogenesis proteins ['
       - type: Cite
         target: '#pone.0178565.ref044'
+        content:
+          - '44'
       - –
       - type: Cite
         target: '#pone.0178565.ref046'
+        content:
+          - '46'
       - >-
         ]. Cluster 9 has 4 proteins, of which three are Clustered Regularly
         Interspaced Short Palindromic Repeats associated (CRISPR) proteins, and
@@ -4035,9 +4177,13 @@ content:
         (virus, transposable elements and conjugative plasmids) [
       - type: Cite
         target: '#pone.0178565.ref047'
+        content:
+          - '47'
       - ', '
       - type: Cite
         target: '#pone.0178565.ref048'
+        content:
+          - '48'
       - >-
         ]. The uncharacterized proteins present in the above clusters may have
         similar functions related to the proteins present in the respective
@@ -4211,6 +4357,8 @@ content:
         2015 [
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '].'
   - type: Paragraph
     content:
@@ -4345,9 +4493,13 @@ content:
       - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '] and database of core proteins by Shi and Falkowski ['
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - '].'
   - type: Paragraph
     content:
@@ -4376,12 +4528,18 @@ content:
         Rubin et al. [
       - type: Cite
         target: '#pone.0178565.ref018'
+        content:
+          - '18'
       - '], database of core proteins by Shi and Falkowski ['
       - type: Cite
         target: '#pone.0178565.ref007'
+        content:
+          - '7'
       - '] and structural genes by Martin et al. ['
       - type: Cite
         target: '#pone.0178565.ref035'
+        content:
+          - '35'
       - '].'
   - type: Paragraph
     content:

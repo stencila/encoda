@@ -1336,11 +1336,15 @@ content:
         content:
           - type: Cite
             target: '#ref-1'
+            content:
+              - '1'
           - |-
             ,
                                 
           - type: Cite
             target: '#ref-2'
+            content:
+              - '2'
       - |-
         . The increasing CO
                         
@@ -1354,6 +1358,8 @@ content:
         content:
           - type: Cite
             target: '#ref-3'
+            content:
+              - '3'
       - >-
         . Additionally, the inherent fragility of dry lands made them
         particularly vulnerable to climate change, even a small change in
@@ -1364,6 +1370,8 @@ content:
         content:
           - type: Cite
             target: '#ref-4'
+            content:
+              - '4'
       - |-
         . IIED
                         
@@ -1371,6 +1379,8 @@ content:
         content:
           - type: Cite
             target: '#ref-5'
+            content:
+              - '5'
       - |2-
          suggests that dry-land regions are projected to significant climate changes, but there still exist substantial variability and uncertainty in these estimates based on different scenarios. Many of the important United Arab Emirates (UAE) plant species, for instance, may be facing major challenges for their survival. Many of such native species are becoming restricted in their distributions because of overgrazing and habitat destruction. In addition to the natural prolonged drought, human activities are also threatening many native plants
                         
@@ -1378,6 +1388,8 @@ content:
         content:
           - type: Cite
             target: '#ref-6'
+            content:
+              - '6'
       - |2-
          and their conservation
                         
@@ -1385,6 +1397,8 @@ content:
         content:
           - type: Cite
             target: '#ref-7'
+            content:
+              - '7'
       - |-
         . The IPCC report
                         
@@ -1392,6 +1406,8 @@ content:
         content:
           - type: Cite
             target: '#ref-8'
+            content:
+              - '8'
       - |2-
          also projected that deserts are going to become hotter and drier. Additionally and in relation to the Arab region, climate change-induced desertification has been prolonged, critically affecting the vulnerability of the local population. The projected warming would lead to seasonal changes in precipitation, evapotranspiration and radiation Hulme and Jenkins
                         
@@ -1399,6 +1415,8 @@ content:
         content:
           - type: Cite
             target: '#ref-9'
+            content:
+              - '9'
       - >-
         . These changes can largely affect the distribution of species and
         habitat composition
@@ -1407,6 +1425,8 @@ content:
         content:
           - type: Cite
             target: '#ref-10'
+            content:
+              - '10'
       - >-
         . Thus, the implications of climate change for biodiversity have led to
         the use of bioclimatic models in order to forecast the species range
@@ -1416,6 +1436,8 @@ content:
         content:
           - type: Cite
             target: '#ref-11'
+            content:
+              - '11'
       - .
   - type: Paragraph
     content:
@@ -1427,6 +1449,8 @@ content:
         content:
           - type: Cite
             target: '#ref-12'
+            content:
+              - '12'
       - >-
         . Ecological envelope models or species distribution models (SDMs) have
         been widely used for projecting the habitat shift and distribution
@@ -1436,6 +1460,8 @@ content:
         content:
           - type: Cite
             target: '#ref-13'
+            content:
+              - '13'
       - |-
         . These models are also used to understand biological processes
                         
@@ -1443,6 +1469,8 @@ content:
         content:
           - type: Cite
             target: '#ref-14'
+            content:
+              - '14'
       - |2-
          and climate change impacts on biodiversity
                         
@@ -1450,11 +1478,15 @@ content:
         content:
           - type: Cite
             target: '#ref-15'
+            content:
+              - '15'
           - |-
             –
                                 
           - type: Cite
             target: '#ref-17'
+            content:
+              - '17'
       - >-
         . Understanding the future distribution of climatically suitable habitat
         allows the conservation planners to assess the vulnerability of species
@@ -1464,11 +1496,15 @@ content:
         content:
           - type: Cite
             target: '#ref-18'
+            content:
+              - '18'
           - |-
             ,
                                 
           - type: Cite
             target: '#ref-19'
+            content:
+              - '19'
       - >-
         . The species occurrence records alone may not be sufficient for
         building robust conservation strategy in light of climate change. While
@@ -1480,11 +1516,15 @@ content:
         content:
           - type: Cite
             target: '#ref-20'
+            content:
+              - '20'
           - |-
             ,
                                 
           - type: Cite
             target: '#ref-21'
+            content:
+              - '21'
       - .
   - type: Paragraph
     content:
@@ -1498,11 +1538,15 @@ content:
         content:
           - type: Cite
             target: '#ref-22'
+            content:
+              - '22'
           - |-
             –
                                 
           - type: Cite
             target: '#ref-24'
+            content:
+              - '24'
       - |-
         . MaxEnt is a species distribution model (SDM)
                         
@@ -1510,6 +1554,8 @@ content:
         content:
           - type: Cite
             target: '#ref-25'
+            content:
+              - '25'
       - |2-
          and it is used for the present study. The hypothesis is that shifting, contracting and expanding species habitats are affected by the ongoing climate change. For this, habitat suitability changes of the selected three species (i.e. 
                         
@@ -1572,6 +1618,8 @@ content:
         content:
           - type: Cite
             target: '#ref-26'
+            content:
+              - '26'
       - .
   - type: Paragraph
     content:
@@ -1585,6 +1633,8 @@ content:
         content:
           - type: Cite
             target: '#ref-27'
+            content:
+              - '27'
       - .
   - type: Paragraph
     content:
@@ -1621,6 +1671,8 @@ content:
         content:
           - type: Cite
             target: '#ref-28'
+            content:
+              - '28'
       - |2-
          and tested for colinearity using the SDM tool in ArcGis 10.1
                             
@@ -1628,6 +1680,8 @@ content:
         content:
           - type: Cite
             target: '#ref-29'
+            content:
+              - '29'
       - |2-
          (an open-source alternative is 
                             
@@ -1653,6 +1707,8 @@ content:
         content:
           - type: Cite
             target: '#ref-30'
+            content:
+              - '30'
       - >-
         . It includes global emissions of greenhouse gases and
         land-use-land-cover. A resolution of approximately 1 km
@@ -1692,6 +1748,8 @@ content:
         content:
           - type: Cite
             target: '#ref-31'
+            content:
+              - '31'
       - >-
         , which is a set of global climate layers generated through
         interpolation of climate data from weather stations on a 30 arc-seconds
@@ -1776,6 +1834,8 @@ content:
         content:
           - type: Cite
             target: '#ref-25'
+            content:
+              - '25'
       - |2-
          was used for this assessment of the three different tree/shrub species distribution. MaxEnt has been used to model species niches and distributions through machine-learning techniques referred to as maximum entropy modeling
                             
@@ -1783,11 +1843,15 @@ content:
         content:
           - type: Cite
             target: '#ref-17'
+            content:
+              - '17'
           - |-
             ,
                                     
           - type: Cite
             target: '#ref-32'
+            content:
+              - '32'
       - >-
         . It is very robust in cases of small sample size of species
         distribution and locations
@@ -1796,6 +1860,8 @@ content:
         content:
           - type: Cite
             target: '#ref-17'
+            content:
+              - '17'
       - .
   - type: Paragraph
     content:
@@ -1808,6 +1874,8 @@ content:
         content:
           - type: Cite
             target: '#ref-33'
+            content:
+              - '33'
       - >-
         . The model expresses a probability distribution where each grid cell is
         predictably suitable to the conditions for a species to occur
@@ -1816,6 +1884,8 @@ content:
         content:
           - type: Cite
             target: '#ref-33'
+            content:
+              - '33'
       - >-
         . To improve model performance and minimize over-fitting, because of the
         impact of correlation among explanatory variables, a Pearson’s
@@ -1826,11 +1896,15 @@ content:
         content:
           - type: Cite
             target: '#ref-34'
+            content:
+              - '34'
           - |-
             –
                                     
           - type: Cite
             target: '#ref-36'
+            content:
+              - '36'
       - |-
         . MaxEnt
                             
@@ -1838,6 +1912,8 @@ content:
         content:
           - type: Cite
             target: '#ref-25'
+            content:
+              - '25'
       - |2-
          is a model for predicting the distribution of species based on environmental parameters and species’ presence data
                             
@@ -1845,6 +1921,8 @@ content:
         content:
           - type: Cite
             target: '#ref-37'
+            content:
+              - '37'
       - |-
         . It uses both continuous and categorical data
                             
@@ -1852,6 +1930,8 @@ content:
         content:
           - type: Cite
             target: '#ref-25'
+            content:
+              - '25'
       - >-
         . MaxEnt has been reported to be comparable to other highly accurate
         prediction methods, even when dealing with small sample sizes
@@ -1860,6 +1940,8 @@ content:
         content:
           - type: Cite
             target: '#ref-38'
+            content:
+              - '38'
       - >-
         . This model was run for the current and future (2050–2070)
         distributions. MaxEnt model was evaluated through the use of the area
@@ -1869,6 +1951,8 @@ content:
         content:
           - type: Cite
             target: '#ref-39'
+            content:
+              - '39'
       - >-
         . While generating response curves, the MaxEnt model estimates the
         relative effect of each predictor
@@ -1877,6 +1961,8 @@ content:
         content:
           - type: Cite
             target: '#ref-40'
+            content:
+              - '40'
       - .
   - type: Heading
     id: ''
@@ -1961,6 +2047,8 @@ content:
         content:
           - type: Cite
             target: '#ref-41'
+            content:
+              - '41'
       - .
   - type: Table
     id: T1
@@ -2438,6 +2526,8 @@ content:
         content:
           - type: Cite
             target: '#ref-42'
+            content:
+              - '42'
       - |-
         . A study by Frosi 
                         
@@ -2451,6 +2541,8 @@ content:
         content:
           - type: Cite
             target: '#ref-43'
+            content:
+              - '43'
       - |2-
          suggested that 
                         
@@ -2470,6 +2562,8 @@ content:
         content:
           - type: Cite
             target: '#ref-44'
+            content:
+              - '44'
       - .
   - type: Paragraph
     content:
@@ -2492,6 +2586,8 @@ content:
         content:
           - type: Cite
             target: '#ref-27'
+            content:
+              - '27'
       - >-
         . In UAE, during the past few decades around 300,000 ha has been planted
         with forests
@@ -2500,6 +2596,8 @@ content:
         content:
           - type: Cite
             target: '#ref-45'
+            content:
+              - '45'
       - >-
         . The main purpose of these plantation is to combat desertification by
         afforestation. These artificial forests utilizes numerous resources with
@@ -2544,6 +2642,8 @@ content:
         content:
           - type: Cite
             target: '#ref-27'
+            content:
+              - '27'
       - |-
         . 
                         
@@ -2563,6 +2663,8 @@ content:
         content:
           - type: Cite
             target: '#ref-27'
+            content:
+              - '27'
       - |-
         . Growth and floral diversity are better under 
                         
@@ -2576,6 +2678,8 @@ content:
         content:
           - type: Cite
             target: '#ref-46'
+            content:
+              - '46'
       - .
   - type: Paragraph
     content:
@@ -2589,6 +2693,8 @@ content:
         content:
           - type: Cite
             target: '#ref-47'
+            content:
+              - '47'
       - .
   - type: Heading
     id: ''
@@ -2629,6 +2735,8 @@ content:
         content:
           - type: Cite
             target: '#ref-41'
+            content:
+              - '41'
       - '. This project contains a zipped folder made up of the following files:'
   - type: List
     items:
