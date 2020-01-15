@@ -1040,7 +1040,7 @@ function decodeXRef(
   state: DecodeState
 ): [stencila.Link | stencila.Cite] {
   return attr(elem, 'ref-type') === 'bibr'
-    ? decodeBibr(elem)
+    ? decodeBibr(elem, state)
     : decodeLink(elem, state)
 }
 
@@ -1060,12 +1060,31 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
 }
 
 /**
- * Decode a JATS `<xref ref-type=="bibr">` element to a Stencila `Cite` node.
+ * Decode a JATS `<xref ref-type="bibr">` element to a Stencila `Cite` node.
  *
- * Reciprocal function of this is `encodeCite`
+ * Decode the content of the citation e.g `Smith et al (1990)` but note that this
+ * may be replaced by other content during encoding.
+ * Reciprocal function of this is `encodeCite`.
  */
-function decodeBibr(elem: xml.Element): [stencila.Cite] {
-  return [stencila.cite(`#${attr(elem, 'rid') || ''}`)]
+function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
+  const { elements } = elem
+
+  let target = attr(elem, 'rid')
+  if (target === null) {
+    log.error(
+      `A <xref ref-type="bibr"> element is missing "rid" attribute: ${text(
+        elem
+      )}`
+    )
+    target = ''
+  }
+
+  const content =
+    elements !== undefined
+      ? decodeElements(elements, state).filter(stencila.isInlineContent)
+      : undefined
+
+  return [stencila.cite(target, { content })]
 }
 
 /**

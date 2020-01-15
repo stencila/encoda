@@ -10,11 +10,10 @@ import fs from 'fs-extra'
 import path from 'path'
 import appHome from '../../util/app/home'
 import isPackaged from '../../util/app/isPackaged'
+import isCompiled from '../../util/app/isCompiled'
 
 const version = '2.7.3'
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`
-
-const isCompiled = __filename.endsWith('.js')
 
 const home = path.join(
   appHome,

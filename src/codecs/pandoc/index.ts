@@ -19,6 +19,7 @@ import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
+import { encodeCsl } from '../csl'
 
 const rpng = new RPNGCodec()
 
@@ -239,6 +240,10 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
  *
  * This function is intended to be the inverse of `decodeDocument`
  * (although it is not yet).
+ *
+ * If the node is an `Article` with `references` then those are
+ * converted to CSL JSON and included in the Pandoc document's
+ * `meta` so that `pandoc-citeproc` can recognize them.
  */
 function encodeNode(
   node: stencila.Node
@@ -251,7 +256,19 @@ function encodeNode(
   if (type_ === 'Article') {
     const { type, content, ...rest } = node as stencila.Article
     standalone = true
-    meta = encodeMeta(rest)
+
+    // Transform meta data as necessary before encoding it
+    meta = encodeMeta(
+      rest.references
+        ? {
+            ...rest,
+            references: rest.references
+              .filter(stencila.isCreativeWork)
+              .map(encodeCsl)
+          }
+        : rest
+    )
+
     // TODO: wrap nodes as necessary and avoid use of `as`
     blocks = encodeBlocks(content as stencila.BlockContent[])
   } else {
@@ -303,7 +320,8 @@ function decodeMetaValue(
       if (value.c.startsWith('!!number ')) {
         return parseFloat(value.c.slice(9))
       }
-      return value.c
+      const int = parseInt(value.c)
+      return isNaN(int) ? value.c : int
     case 'MetaList':
       return value.c.map(decodeMetaValue)
     case 'MetaMap':
@@ -324,10 +342,10 @@ function decodeMetaValue(
  * For `null` and `number`, use a YAML "tags" syntax e.g. `!!null`
  * encoded into a Pandoc `MetaString`.
  */
-function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
+function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue | undefined {
+  if (node === undefined) return undefined
   switch (nodeType(node)) {
     case 'null':
-    case 'undefined':
       return {
         t: 'MetaString',
         c: '!!null'
@@ -340,7 +358,7 @@ function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
     case 'number':
       return {
         t: 'MetaString',
-        c: `!!number ${node}`
+        c: Number.isInteger(node as number) ? `${node}` : `!!number ${node}`
       }
     case 'string':
       return {
@@ -350,7 +368,10 @@ function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
     case 'array':
       return {
         t: 'MetaList',
-        c: (node as any[]).map(encodeMetaValue)
+        c: (node as any[]).reduce((prev: Pandoc.MetaValue[], curr) => {
+          const result = encodeMetaValue(curr)
+          return result !== undefined ? [...prev, result] : prev
+        }, [])
       }
     case 'Paragraph':
       return {
@@ -801,6 +822,8 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeLink(node as stencila.Link)
     case 'Cite':
       return encodeCite(node as stencila.Cite)
+    case 'CiteGroup':
+      return encodeCiteGroup(node as stencila.CiteGroup)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
@@ -1071,22 +1094,78 @@ function encodeLink(node: stencila.Link): Pandoc.Link {
 }
 
 /**
- * Decode a Pandoc `Cite` to a Stencila `Cite`.
+ * Decode a Pandoc `Cite` to a Stencila `Cite` or `CiteGroup`.
+ *
+ * A Pandoc `Cite` is a collection of `Citations`. If there
+ * is only one `Citation` then create a Stencila `Cite`,
+ * otherwise, create a `CiteGroup` (with the first `Cite`
+ * having the inline content)
  */
-function decodeCite(cite: Pandoc.Cite): stencila.Cite {
-  // TODO: finish
-  return stencila.cite('foo')
+function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
+  const citations = cite.c[0]
+  const inlines = cite.c[1]
+
+  const cites = citations.map(citation => {
+    return stencila.cite(citation.citationId, {
+      citationMode:
+        citation.citationMode.t === 'SuppressAuthor'
+          ? 'suppressAuthor'
+          : 'normal'
+    })
+  })
+  if (cites.length > 0) cites[0].content = decodeInlines(inlines)
+  return cites.length === 1 ? cites[0] : stencila.citeGroup(cites)
+}
+
+/**
+ * Encode a Stencila `Cite` to a Pandoc `Citation`.
+ */
+function encodeCitation(cite: stencila.Cite): Pandoc.Citation {
+  const { target = '', citationMode = 'normal' } = cite
+  return {
+    citationId: target,
+    citationPrefix: [],
+    citationSuffix: [],
+    citationMode: {
+      t: citationMode === 'suppressAuthor' ? 'SuppressAuthor' : 'NormalCitation'
+    },
+    citationNoteNum: 0,
+    citationHash: 0
+  }
 }
 
 /**
  * Encode a Stencila `Cite` to a Pandoc `Cite`.
  */
 function encodeCite(cite: stencila.Cite): Pandoc.Cite {
-  // TODO: finish
   const { content = [] } = cite
   return {
     t: 'Cite',
-    c: [[], encodeInlines(content)]
+    c: [[encodeCitation(cite)], encodeInlines(content)]
+  }
+}
+
+/**
+ * Encode a Stencila `CiteGroup` to a Pandoc `Cite`.
+ *
+ * This aggregates all the inlines from each Stencila `Cite` into
+ * the Pandoc `Cite`'s second argument.
+ */
+function encodeCiteGroup(citeGroup: stencila.CiteGroup): Pandoc.Cite {
+  const { items = [] } = citeGroup
+  const citations = items.map(encodeCitation)
+  const inlines = items
+    .map(item => item.content)
+    .reduce(
+      (prev: stencila.InlineContent[], curr) => [
+        ...prev,
+        ...(curr !== undefined ? curr : [])
+      ],
+      []
+    )
+  return {
+    t: 'Cite',
+    c: [citations, encodeInlines(inlines)]
   }
 }
 
@@ -1190,13 +1269,19 @@ function encodeAttrs(attrs: { [key: string]: string } = {}): Pandoc.Attr {
 
 /**
  * `Array.map` but for `objects`.
+ *
+ * If the result of the function call is undefined then
+ * does not insert the entry.
  */
-function objectMap<Result>(
+function objectMap(
   obj: object,
-  func: (key: string, value: any) => Result
-): { [key: string]: Result } {
+  func: (key: string, value: any) => any
+): { [key: string]: any } {
   return Object.assign(
     {},
-    ...Object.entries(obj).map(([k, v]) => ({ [k]: func(k, v) }))
+    ...Object.entries(obj).map(([k, v]) => {
+      const result = func(k, v)
+      return result !== undefined ? { [k]: result } : {}
+    })
   )
 }

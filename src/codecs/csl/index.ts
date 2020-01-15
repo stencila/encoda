@@ -1,19 +1,23 @@
 /**
- * Codec for CSL JSON
- *
- * Also acts a base codec for other bibliographic formats
- * e.g. BibTeX. Based on https://citation.js.org/
+ * @module csl
  */
 
 import * as stencila from '@stencila/schema'
 // @ts-ignore
 import Cite from 'citation-js'
+import crypto from 'crypto'
 import Csl from 'csl-json'
+import path from 'path'
 import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
+import { stringifyContent } from '../../util/content/stringifyContent'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
-import { stringifyContent } from '../../util/content/stringifyContent'
+
+/**
+ * The directory where styles are stored
+ */
+export const stylesDir = path.join(__dirname, 'styles')
 
 interface DecodeOptions {
   format: string
@@ -145,15 +149,28 @@ export async function decodeCsl(
 /**
  * Encode a `CreativeWork` as `Csl.Data`
  */
-const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
-  const { title = 'Untitled', authors = [], ...lost } = cw
-
+export const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
+  const {
+    id,
+    title = 'Untitled',
+    authors = [],
+    datePublished,
+    dateCreated,
+    dateModified,
+    isPartOf,
+    ...lost
+  } = cw
   logWarnLossIfAny('csl', 'encode', cw, lost)
+
+  const date = datePublished || dateModified || dateCreated || undefined
+
   return {
     type: 'article-journal',
-    id: 'id', // TODO id is required
+    id: id !== undefined ? id : crypto.randomBytes(16).toString('hex'),
     title: stringifyContent(title),
-    author: authors.map(encodeAuthor)
+    author: authors.map(encodeAuthor),
+    issued: date !== undefined ? encodeDate(date) : undefined,
+    ...encodeIsPartOf(isPartOf)
   }
 }
 
@@ -168,12 +185,12 @@ const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
  */
 const decodeAuthor = (author: Csl.Person): Promise<stencila.Person> => {
   const { family, given, suffix, literal, ...lost } = author
+  logWarnLossIfAny('csl', 'decode', author, lost)
 
   if (family === undefined && literal !== undefined) {
     return load(literal, 'person') as Promise<stencila.Person>
   }
 
-  logWarnLossIfAny('csl', 'decode', author, lost)
   return Promise.resolve(
     stencila.person({
       familyNames: family !== undefined ? [family] : undefined,
@@ -199,8 +216,8 @@ const encodeAuthor = (
  */
 const encodePerson = (person: stencila.Person): Csl.Person => {
   const { givenNames = [], familyNames = [], honorificSuffix, ...rest } = person
-
   logWarnLossIfAny('csl', 'encode', person, rest)
+
   return {
     given: givenNames.join(' '),
     family: familyNames.join(' '),
@@ -216,8 +233,8 @@ const encodePerson = (person: stencila.Person): Csl.Person => {
  */
 const encodeOrganization = (org: stencila.Organization): Csl.Person => {
   const { name = 'Anonymous' } = org
-
   logWarnLoss('csl', 'encode', 'Does not support organizations as authors')
+
   return {
     literal: name
   }
@@ -228,11 +245,51 @@ const encodeOrganization = (org: stencila.Organization): Csl.Person => {
  */
 const decodeDate = (date: Csl.Date): string => {
   const { 'date-parts': dateParts, raw, literal, ...lost } = date
-
   logWarnLossIfAny('csl', 'decode', date, lost)
+
   if (dateParts !== undefined) return dateParts.join('-')
   if (raw !== undefined) return new Date(raw).toISOString()
   if (literal !== undefined) return literal
 
   return ''
+}
+
+/**
+ * Encode a Stencila `Date` as a `Csl.Date`.
+ */
+const encodeDate = (date: stencila.Date | string): Csl.Date => {
+  const iso = stencila.isA('Date', date) ? date.value : date
+  const obj = new Date(iso + ' UTC')
+  return {
+    'date-parts': [[obj.getFullYear(), obj.getMonth(), obj.getDate()]]
+  }
+}
+
+/**
+ * Encode the `isPartOf` property of a `CreativeWork` into properties of
+ * a `Csl.Data` object.
+ */
+const encodeIsPartOf = (cw: stencila.CreativeWork['isPartOf']): object => {
+  if (cw === undefined) return {}
+
+  if (stencila.isA('PublicationVolume', cw)) {
+    const { title, volumeNumber: volume, pageStart, pageEnd, ...lost } = cw
+    logWarnLossIfAny('csl', 'encode', cw, lost)
+
+    let page = ''
+    if (pageStart) page += pageStart
+    if (pageEnd) page += `-${pageEnd}`
+
+    return {
+      'container-title': title,
+      page
+    }
+  } else {
+    logWarnLoss(
+      'csl',
+      'encode',
+      `Unhandled isPartOf type: ${stencila.nodeType(cw)}`
+    )
+    return {}
+  }
 }

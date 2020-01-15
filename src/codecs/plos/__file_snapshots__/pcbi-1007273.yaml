@@ -1794,21 +1794,31 @@ content:
         locus are identified using assembly software, which can use these
         overlaps to reconstruct the genome sequence [
       - type: Cite
-        target: '#pcbi.1007273.ref001'
+        target: pcbi.1007273.ref001
+        content:
+          - '1'
       - ', '
       - type: Cite
-        target: '#pcbi.1007273.ref002'
+        target: pcbi.1007273.ref002
+        content:
+          - '2'
       - ']. Most approaches are based on either a de Bruijn ['
       - type: Cite
-        target: '#pcbi.1007273.ref003'
+        target: pcbi.1007273.ref003
+        content:
+          - '3'
       - '] or a string graph ['
       - type: Cite
-        target: '#pcbi.1007273.ref004'
+        target: pcbi.1007273.ref004
+        content:
+          - '4'
       - >-
         ] formulation. Repetitive sequences exceeding the sequencing read length
         [
       - type: Cite
-        target: '#pcbi.1007273.ref005'
+        target: pcbi.1007273.ref005
+        content:
+          - '5'
       - >-
         ] introduce ambiguity and prevent complete reconstruction. Unambiguous
         reconstructions of the sequence are output as “unitigs” (or often
@@ -1816,25 +1826,39 @@ content:
         unitigs. Scaffolding utilizes long-range linking information such as BAC
         or fosmid clones [
       - type: Cite
-        target: '#pcbi.1007273.ref006'
+        target: pcbi.1007273.ref006
+        content:
+          - '6'
       - ', '
       - type: Cite
-        target: '#pcbi.1007273.ref007'
+        target: pcbi.1007273.ref007
+        content:
+          - '7'
       - '], optical maps ['
       - type: Cite
-        target: '#pcbi.1007273.ref008'
+        target: pcbi.1007273.ref008
+        content:
+          - '8'
       - –
       - type: Cite
-        target: '#pcbi.1007273.ref010'
+        target: pcbi.1007273.ref010
+        content:
+          - '10'
       - '], linked reads ['
       - type: Cite
-        target: '#pcbi.1007273.ref011'
+        target: pcbi.1007273.ref011
+        content:
+          - '11'
       - –
       - type: Cite
-        target: '#pcbi.1007273.ref013'
+        target: pcbi.1007273.ref013
+        content:
+          - '13'
       - '], or chromosomal conformation capture ['
       - type: Cite
-        target: '#pcbi.1007273.ref014'
+        target: pcbi.1007273.ref014
+        content:
+          - '14'
       - >-
         ] to order and orient contigs. If the linking information spans large
         distances on the chromosome, the resulting scaffolds can span entire
@@ -1846,7 +1870,9 @@ content:
         3D structure of the genome inside a cell nucleus by measuring the
         contact frequency between all pairs of loci in the genome [
       - type: Cite
-        target: '#pcbi.1007273.ref015'
+        target: pcbi.1007273.ref015
+        content:
+          - '15'
       - >-
         ]. The contact frequency between a pair of loci strongly correlates with
         the one-dimensional distance between them. Hi-C data can provide linkage
@@ -1855,16 +1881,22 @@ content:
         Shortly after its introduction, Hi-C was used to generate
         chromosome-scale scaffolds [
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
+        content:
+          - '16'
       - –
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
+        content:
+          - '20'
       - '].'
   - type: Paragraph
     content:
       - 'LACHESIS ['
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
+        content:
+          - '16'
       - >-
         ] is an early method for Hi-C scaffolding that first clusters contigs
         into a user-specified number of chromosome groups and then orients and
@@ -1872,13 +1904,17 @@ content:
         Thus, the scaffolds inherit any assembly errors present in the contigs.
         The original SALSA1 [
       - type: Cite
-        target: '#pcbi.1007273.ref021'
+        target: pcbi.1007273.ref021
+        content:
+          - '21'
       - >-
         ] method first corrects the input assembly, using a lack of Hi-C
         coverage as evidence of error. It then orients and orders the corrected
         contigs to generate scaffolds. Recently, the 3D-DNA [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
+        content:
+          - '20'
       - '] method was introduced and demonstrated on a draft assembly of the '
       - type: Emphasis
         content:
@@ -1894,7 +1930,9 @@ content:
         determined by maximizing the interaction frequency between contig ends
         across all possible orientations [
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
+        content:
+          - '16'
       - >-
         ]. When contigs are long, there are few interactions spanning the full
         length of the contigs, making the true orientation apparent from the
@@ -1904,20 +1942,26 @@ content:
         factors, such as topologically associated domains (TADs), also confound
         this analysis [
       - type: Cite
-        target: '#pcbi.1007273.ref022'
+        target: pcbi.1007273.ref022
+        content:
+          - '22'
       - '].'
   - type: Paragraph
     content:
       - 'SALSA1 ['
       - type: Cite
-        target: '#pcbi.1007273.ref021'
+        target: pcbi.1007273.ref021
+        content:
+          - '21'
       - >-
         ] addressed some of these challenges, such as not requiring the expected
         number of chromosomes beforehand and correcting assemblies before
         scaffolding them with Hi-C data. We showed that SALSA1 worked better
         than the most widely used method, LACHESIS [
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
+        content:
+          - '16'
       - >-
         ]. However, SALSA1 often did not generate chromosome-sized scaffolds.
         The contiguity and correctness of the scaffolds depended on the coverage
@@ -1953,15 +1997,21 @@ content:
           - Fig 1(A)
       - ' shows the overview of the SALSA2 pipeline. SALSA2 begins with a draft assembly generated from long reads such as Pacific Biosciences ['
       - type: Cite
-        target: '#pcbi.1007273.ref023'
+        target: pcbi.1007273.ref023
+        content:
+          - '23'
       - '] or Oxford Nanopore ['
       - type: Cite
-        target: '#pcbi.1007273.ref024'
+        target: pcbi.1007273.ref024
+        content:
+          - '24'
       - >-
         ]. SALSA2 requires the contig sequences and, optionally, a GFA-formatted
         assembly graph [
       - type: Cite
-        target: '#pcbi.1007273.ref025'
+        target: pcbi.1007273.ref025
+        content:
+          - '25'
       - >-
         ] representing the ambiguous reconstructions. Hi-C reads are aligned to
         the contig sequences, and contigs are optionally split in regions
@@ -2044,7 +2094,9 @@ content:
     content:
       - 'Hi-C paired end reads are aligned to contigs using the BWA aligner ['
       - type: Cite
-        target: '#pcbi.1007273.ref026'
+        target: pcbi.1007273.ref026
+        content:
+          - '26'
       - >-
         ](parameters: -t 12 -B 8) as single end reads. First, the reads mapping
         at multiple locations are ignored as they can cause ambiguities while
@@ -2054,7 +2106,9 @@ content:
         pairing information is restored. Any PCR duplicates in the paired-end
         alignments are removed using Picard tools [
       - type: Cite
-        target: '#pcbi.1007273.ref027'
+        target: pcbi.1007273.ref027
+        content:
+          - '27'
       - >-
         ]. Read pairs aligned to different contigs are used to construct the
         initial scaffold graph. The suggested mapping pipeline is available at 
@@ -2137,7 +2191,9 @@ content:
     content:
       - 'For our experiments, we use the unitig assembly graph produced by Canu ['
       - type: Cite
-        target: '#pcbi.1007273.ref028'
+        target: pcbi.1007273.ref028
+        content:
+          - '28'
       - '] ('
       - type: Link
         relation: fig
@@ -2149,21 +2205,31 @@ content:
         that represent various traversals of this graph. SALSA2 requires only a
         GFA format [
       - type: Cite
-        target: '#pcbi.1007273.ref025'
+        target: pcbi.1007273.ref025
+        content:
+          - '25'
       - >-
         ] representation of the assembly. Since most long-read genome assemblers
         such as FALCON [
       - type: Cite
-        target: '#pcbi.1007273.ref029'
+        target: pcbi.1007273.ref029
+        content:
+          - '29'
       - '], miniasm ['
       - type: Cite
-        target: '#pcbi.1007273.ref025'
+        target: pcbi.1007273.ref025
+        content:
+          - '25'
       - '], Canu ['
       - type: Cite
-        target: '#pcbi.1007273.ref028'
+        target: pcbi.1007273.ref028
+        content:
+          - '28'
       - '], and Flye ['
       - type: Cite
-        target: '#pcbi.1007273.ref030'
+        target: pcbi.1007273.ref030
+        content:
+          - '30'
       - >-
         ] provide assembly graphs in GFA format, their output is compatible with
         SALSA2 for scaffolding.
@@ -2204,7 +2270,9 @@ content:
         ). The idea of using contig ends as nodes is similar to that used by the
         string graph formulation [
       - type: Cite
-        target: '#pcbi.1007273.ref004'
+        target: pcbi.1007273.ref004
+        content:
+          - '4'
       - '].'
   - type: Paragraph
     content:
@@ -2284,7 +2352,9 @@ content:
         this, we defined a modified edge ratio, similar to the one described in
         [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
+        content:
+          - '20'
       - >-
         ], which captures the relative weights of all the neighboring edges for
         a particular node.
@@ -2616,7 +2686,9 @@ content:
           - '2'
       - ') time ['
       - type: Cite
-        target: '#pcbi.1007273.ref031'
+        target: pcbi.1007273.ref031
+        content:
+          - '31'
       - >-
         ]. We iteratively find a maximum matching in the graph by removing nodes
         found in the previous iteration. Using the optimal maximum matching
@@ -2641,7 +2713,9 @@ content:
         a greedy maximal matching algorithm which is guaranteed to find a
         matching within 1/2-approximation of the optimum [
       - type: Cite
-        target: '#pcbi.1007273.ref032'
+        target: pcbi.1007273.ref032
+        content:
+          - '32'
       - ']. The greedy matching algorithm takes '
       - type: Emphasis
         content:
@@ -3106,7 +3180,9 @@ content:
         We created artificial assemblies, each containing contigs of same size,
         by splitting the GRCh38 [
       - type: Cite
-        target: '#pcbi.1007273.ref033'
+        target: pcbi.1007273.ref033
+        content:
+          - '33'
       - >-
         ] reference into fixed-sized contigs of 200 to 900 kbp. This gave us
         eight assemblies. The assembly graph for each input was built by adding
@@ -3119,10 +3195,14 @@ content:
         For real data, we use the recently published NA12878 human dataset
         sequenced with Oxford Nanopore [
       - type: Cite
-        target: '#pcbi.1007273.ref034'
+        target: pcbi.1007273.ref034
+        content:
+          - '34'
       - '] and assembled with Canu ['
       - type: Cite
-        target: '#pcbi.1007273.ref028'
+        target: pcbi.1007273.ref028
+        content:
+          - '28'
       - >-
         ]. We use a Hi-C library from Arima Genomics (Arima Genomics, San Diego,
         CA) sequenced to 40x Illumina coverage (SRX3651893). 
@@ -3133,13 +3213,17 @@ content:
           - Table 1
       - ' shows the statistics for this library. We compare results with the original SALSA(commit—833fb11), SALSA2 with and without the assembly graph input(commit—68a65b4), and 3D-DNA (commit—3f18163). We did not compare our results with LACHESIS because it is no longer supported and is outperformed by 3D-DNA ['
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
+        content:
+          - '20'
       - >-
         ]. SALSA2 was run using default parameters, with the exception of graph
         incorporation, as listed. For 3D-DNA, alignments were generated using
         the Juicer alignment pipeline [
       - type: Cite
-        target: '#pcbi.1007273.ref035'
+        target: pcbi.1007273.ref035
+        content:
+          - '35'
       - >-
         ] with defaults (-m haploid -t 15000 -s 2), except for mis-assembly
         detection, as listed. A genome size of 3.2 Gbp was used for contiguity
@@ -3251,7 +3335,9 @@ content:
         true and false links from the Hi-C graph. We mapped the assembly to the
         reference with MUMmer3.23 (nucmer -c 500 -l 20) [
       - type: Cite
-        target: '#pcbi.1007273.ref036'
+        target: pcbi.1007273.ref036
+        content:
+          - '36'
       - >-
         ] and generated a tiling using MUMmer’s show-tiling utility. For this
         “true link” dataset, any link joining contigs in the same chromosome in
@@ -3260,7 +3346,9 @@ content:
         sequences in GRCh38 that matched known structural variants from a
         previous assembly of NA12878 [
       - type: Cite
-        target: '#pcbi.1007273.ref037'
+        target: pcbi.1007273.ref037
+        content:
+          - '37'
       - '] to avoid counting true variations as scaffolding errors.'
   - type: Heading
     id: sec012
@@ -3352,7 +3440,9 @@ content:
         errors and computed corrected scaffold lengths and NGA50 (analogous to
         the corrected NG50 metric defined by Salzberg et al. [
       - type: Cite
-        target: '#pcbi.1007273.ref038'
+        target: pcbi.1007273.ref038
+        content:
+          - '38'
       - >-
         ]). This statistic corrects for large but erroneous scaffolds which have
         an artificially high NG50. We did not include SALSA1 in the comparison
@@ -3988,7 +4078,9 @@ content:
         We also evaluated the assemblies using Feature Response Curves (FRC)
         based on scaffolding errors [
       - type: Cite
-        target: '#pcbi.1007273.ref040'
+        target: pcbi.1007273.ref040
+        content:
+          - '40'
       - >-
         ]. An assembly can have a high raw error count but still be of high
         quality if the errors are restricted to only short scaffolds. FRC
@@ -4056,7 +4148,9 @@ content:
         content:
           - 'Chromosome ideogram generated using the coloredChromosomes ['
           - type: Cite
-            target: '#pcbi.1007273.ref039'
+            target: pcbi.1007273.ref039
+            content:
+              - '39'
           - '] package.'
       - type: Paragraph
         content:
@@ -4138,12 +4232,16 @@ content:
         We next tested scaffolding using two libraries with different Hi-C
         contact patterns. The first, from [
       - type: Cite
-        target: '#pcbi.1007273.ref042'
+        target: pcbi.1007273.ref042
+        content:
+          - '42'
       - >-
         ], is sequenced during mitosis. This removes the topological domains and
         generates fewer off-diagonal interactions. The other library was from [
       - type: Cite
-        target: '#pcbi.1007273.ref043'
+        target: pcbi.1007273.ref043
+        content:
+          - '43'
       - '], are '
       - type: Emphasis
         content:
@@ -4175,7 +4273,9 @@ content:
             Contact map of Hi-C interactions on chromosome 3 generated by the
             Juicebox software [
           - type: Cite
-            target: '#pcbi.1007273.ref041'
+            target: pcbi.1007273.ref041
+            content:
+              - '41'
           - '].'
       - type: Paragraph
         content:
@@ -4226,7 +4326,9 @@ content:
         and longest chunk when 3D-DNA was run with assembly correction. 3D-DNA
         uses signatures of chromosome ends [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
+        content:
+          - '20'
       - >-
         ] to identify break positions which are not prominently present in
         Chicago data. As a result, it generated more chimeric joins compared to
@@ -4236,7 +4338,9 @@ content:
         for SALSA2 is 5.8 Mbp, comparable to the equivalent coverage assembly
         (50% L1+L2) in [
       - type: Cite
-        target: '#pcbi.1007273.ref043'
+        target: pcbi.1007273.ref043
+        content:
+          - '43'
       - >-
         ] but much smaller than Hi-C libraries. Interestingly, SALSA1 was able
         to generate scaffolds of similar contiguity to SALSA2, which can be
@@ -4260,12 +4364,16 @@ content:
           - Anopheles funestus
       - ' genome assembly which was scaffolded using an independent method (Phase Genomics or LACHESIS ['
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
+        content:
+          - '16'
       - >-
         ]) and manually curated using Illumina mate-pair support as well as FISH
         information [
       - type: Cite
-        target: '#pcbi.1007273.ref044'
+        target: pcbi.1007273.ref044
+        content:
+          - '44'
       - >-
         ]. This genome had high heterozygosity as the data was sequenced from a
         colony of mosquitoes rather than a single individual. Due to this, the
@@ -4273,7 +4381,9 @@ content:
         genome size. We scaffolded both the full assembly and the assembly after
         running purge haplotigs [
       - type: Cite
-        target: '#pcbi.1007273.ref045'
+        target: pcbi.1007273.ref045
+        content:
+          - '45'
       - >-
         ] using SALSA2 and 3D-DNA. For the post purge assembly, 3D-DNA generated
         an assembly with higher continuity but with more errors and a similar
@@ -4297,7 +4407,9 @@ content:
         challenge and assemblies must either be de-duplicated beforehand or
         improved algorithms for scaffolding, such as [
       - type: Cite
-        target: '#pcbi.1007273.ref046'
+        target: pcbi.1007273.ref046
+        content:
+          - '46'
       - '] are needed.'
   - type: Heading
     id: sec019
@@ -4334,10 +4446,14 @@ content:
         does not remove duplication present in an input assembly and thus
         requires pre-processing by another tool, such as Purge Haplotigs [
       - type: Cite
-        target: '#pcbi.1007273.ref045'
+        target: pcbi.1007273.ref045
+        content:
+          - '45'
       - '] or haplomerger ['
       - type: Cite
-        target: '#pcbi.1007273.ref047'
+        target: pcbi.1007273.ref047
+        content:
+          - '47'
       - >-
         ]. Once contigs are classified into the “primary” and “haplotig” sets,
         SALSA2 could be run on each of the sets independently.
@@ -4363,7 +4479,9 @@ content:
         desired number of scaffolds to output. As demonstrated by the Chicago,
         mitotic, and replicate [
       - type: Cite
-        target: '#pcbi.1007273.ref048'
+        target: pcbi.1007273.ref048
+        content:
+          - '48'
       - >-
         ] Hi-C libraries, the library as well as the genome influences the
         maximum correct scaffold size. It can be impractical to sweep over
@@ -4381,10 +4499,14 @@ content:
         rest of the project. Most of the assembly projects using Hi-C data have
         had a significant curation effort to date [
       - type: Cite
-        target: '#pcbi.1007273.ref019'
+        target: pcbi.1007273.ref019
+        content:
+          - '19'
       - ', '
       - type: Cite
-        target: '#pcbi.1007273.ref049'
+        target: pcbi.1007273.ref049
+        content:
+          - '49'
       - >-
         ]. Thus, we believe that not introducing errors in the first place is a
         better strategy to avoid the later burden of manual curation of small
@@ -4395,7 +4517,9 @@ content:
         described. Interestingly, it no longer generates single-chromosome
         scaffolds in our experiments, a major claim in [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
+        content:
+          - '20'
       - >-
         ], supporting a conservative scaffolding approach. Even while
         scaffolding short-read assemblies, we observed that SALSA2 generated
@@ -4406,7 +4530,9 @@ content:
     content:
       - 'As the Genome10K consortium ['
       - type: Cite
-        target: '#pcbi.1007273.ref050'
+        target: pcbi.1007273.ref050
+        content:
+          - '50'
       - >-
         ] and independent scientists begin to sequence novel lineages in the
         tree of life, it may be impractical to generate physical or genetics

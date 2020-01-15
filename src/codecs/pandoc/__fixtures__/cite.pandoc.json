@@ -1,0 +1,227 @@
+{
+  "blocks": [
+    {
+      "t": "Para",
+      "c": [
+        {
+          "t": "Str",
+          "c": "Citations"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "in"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "line"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Cite",
+          "c": [
+            [
+              {
+                "citationSuffix": [],
+                "citationNoteNum": 0,
+                "citationMode": {
+                  "t": "AuthorInText"
+                },
+                "citationPrefix": [],
+                "citationId": "WatsonCrick1953",
+                "citationHash": 0
+              }
+            ],
+            [
+              {
+                "t": "Str",
+                "c": "@WatsonCrick1953"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "or"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "grouped"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "in"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "brackets"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Cite",
+          "c": [
+            [
+              {
+                "citationSuffix": [],
+                "citationNoteNum": 0,
+                "citationMode": {
+                  "t": "NormalCitation"
+                },
+                "citationPrefix": [],
+                "citationId": "WatsonCrick1953",
+                "citationHash": 0
+              },
+              {
+                "citationSuffix": [],
+                "citationNoteNum": 0,
+                "citationMode": {
+                  "t": "NormalCitation"
+                },
+                "citationPrefix": [],
+                "citationId": "WatsonCrick1953",
+                "citationHash": 0
+              }
+            ],
+            [
+              {
+                "t": "Str",
+                "c": "[@WatsonCrick1953;"
+              },
+              {
+                "t": "Space"
+              },
+              {
+                "t": "Str",
+                "c": "@WatsonCrick1953]"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "Str",
+          "c": "."
+        }
+      ]
+    }
+  ],
+  "pandoc-api-version": [
+    1,
+    17,
+    5,
+    4
+  ],
+  "meta": {
+    "bibliography": {
+      "t": "MetaList",
+      "c": [
+        {
+          "t": "MetaMap",
+          "c": {
+            "author": {
+              "t": "MetaList",
+              "c": [
+                {
+                  "t": "MetaMap",
+                  "c": {
+                    "family": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "Watson"
+                        }
+                      ]
+                    },
+                    "given": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "J."
+                        },
+                        {
+                          "t": "Space"
+                        },
+                        {
+                          "t": "Str",
+                          "c": "D."
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "t": "MetaMap",
+                  "c": {
+                    "family": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "Crick"
+                        }
+                      ]
+                    },
+                    "given": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "F."
+                        },
+                        {
+                          "t": "Space"
+                        },
+                        {
+                          "t": "Str",
+                          "c": "H."
+                        },
+                        {
+                          "t": "Space"
+                        },
+                        {
+                          "t": "Str",
+                          "c": "C."
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "id": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "WatsonCrick1953"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

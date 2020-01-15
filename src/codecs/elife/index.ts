@@ -27,13 +27,47 @@ export class ElifeCodec extends Codec implements Codec {
     if (!match) throw new Error('Unable to parse content')
 
     const article = match[4]
-    const version = match[6] !== undefined ? match[6] : 1
+
+    let version = match[6]
+    if (version === undefined) {
+      // Version unspecified, so fallback to version 1, but...
+      version = '1'
+      // Try to determine the latest version using the Github API.
+      // This search is intended to return the latest version of the
+      // article with a `<body>` element
+      const url = `https://api.github.com/search/code?q=<body>+repo:elifesciences/elife-article-xml+language:xml+filename:elife-${article}-`
+      const { statusCode, body } = await http.get(url)
+      if (statusCode === 200) {
+        const { items = [] } = JSON.parse(body)
+        if (items.length > 0) {
+          const versions: string[] = items
+            .map((item: { name: string }) => item.name)
+            .sort()
+          const last = versions[versions.length - 1]
+          const match = new RegExp(`^elife-${article}-v(\\d+).xml$`).exec(last)
+          if (match !== null) {
+            version = match[1]
+          } else {
+            log.warn(
+              `Unable to determine latest version number from filename "${last}"`
+            )
+          }
+        } else {
+          log.warn(
+            `Unable to find a version of article "${article}" with body content. Is the article number correct?`
+          )
+        }
+      }
+    }
 
     const url = `https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-${article}-v${version}.xml`
-    const response = await http.get(url)
-    const jatsContent = response.body
+    const { statusCode, body } = await http.get(url)
+    if (statusCode !== 200) {
+      log.error(`Unable to find eLife article with id: ${article}`)
+      return stencila.article([], 'Untitled')
+    }
 
-    const doc = xml.load(jatsContent, { compact: false }) as xml.Element
+    const doc = xml.load(body, { compact: false }) as xml.Element
 
     // Check that there is a <body> element, some don't have one
     if (xml.all(doc, 'body').length === 0) {

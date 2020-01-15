@@ -3523,10 +3523,14 @@ content:
         functional changes in the eyes of many astronauts that pose serious
         challenges for both astronauts and their missions in space [
       - type: Cite
-        target: '#pone.0216012.ref001'
+        target: pone.0216012.ref001
+        content:
+          - '1'
       - –
       - type: Cite
-        target: '#pone.0216012.ref003'
+        target: pone.0216012.ref003
+        content:
+          - '3'
       - >-
         ]. This syndrome, also known as spaceflight associated neuro-ocular
         syndrome (SANS), is characterized by a large number of apparently
@@ -3535,10 +3539,14 @@ content:
         disc protrusion, posterior globe flattening, refractive deficits and
         elevated intracranial pressure [
       - type: Cite
-        target: '#pone.0216012.ref001'
+        target: pone.0216012.ref001
+        content:
+          - '1'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref004'
+        target: pone.0216012.ref004
+        content:
+          - '4'
       - >-
         ]. Added to the complexity of the range of symptoms are the problems of
         susceptibility and genetic predisposition to develop visual problems.
@@ -3550,7 +3558,9 @@ content:
         Various studies of the symptoms experienced by astronauts during
         long-term missions (four to six months) have been performed [
       - type: Cite
-        target: '#pone.0216012.ref002'
+        target: pone.0216012.ref002
+        content:
+          - '2'
       - >-
         ], but their validity is hampered by the small size of the subjects
         cohort. To overcome this difficulty, ground-based microgravity
@@ -3562,10 +3572,14 @@ content:
         increase in left ventricular size without changes in cardiac output,
         arterial pressure, or contractile state [
       - type: Cite
-        target: '#pone.0216012.ref005'
+        target: pone.0216012.ref005
+        content:
+          - '5'
       - ']. Moreover, experiments performed by ['
       - type: Cite
-        target: '#pone.0216012.ref006'
+        target: pone.0216012.ref006
+        content:
+          - '6'
       - >-
         ] confirmed that microvascular pressures measured in the lower lip
         increase, as well as subcutaneous and intramuscular interstitial fluid
@@ -3584,10 +3598,14 @@ content:
           - (ii)
       - ' changes in the brain/central nervous system and intracranial pressure (ICP). However, experimental results are not always consistent among studies. For example, optic disc edema, which is one of the ocular findings associated with SANS, was not observed in the LHDT study conducted by Taibbi et al ['
       - type: Cite
-        target: '#pone.0216012.ref007'
+        target: pone.0216012.ref007
+        content:
+          - '7'
       - '], whereas it was observed in the study conducted by Laurie et al ['
       - type: Cite
-        target: '#pone.0216012.ref008'
+        target: pone.0216012.ref008
+        content:
+          - '8'
       - >-
         ]. This discrepancy in the results might be due to different protocols
         adopted for the study, such as the extent to which head tilt was
@@ -3608,14 +3626,18 @@ content:
         volume/pressure alterations in the eye in zero gravity conditions was
         presented in [
       - type: Cite
-        target: '#pone.0216012.ref009'
+        target: pone.0216012.ref009
+        content:
+          - '9'
       - >-
         ]. The model includes the effects of blood and aqueous humor dynamics,
         ICP, and IOP-dependent ocular compliance. A lumped-parameter model of
         fluid transport in the central nervous system aimed at simulating the
         influence of microgravity on ICP was presented in [
       - type: Cite
-        target: '#pone.0216012.ref010'
+        target: pone.0216012.ref010
+        content:
+          - '10'
       - >-
         ]. The model could be coupled, in the authors’ intention, to lumped
         parameter and finite element models of the eye. The present work
@@ -3623,10 +3645,14 @@ content:
         detailed description of fluid circulations in the eyes and their
         connections to the brain, as sketched in [
       - type: Cite
-        target: '#pone.0216012.ref011'
+        target: pone.0216012.ref011
+        content:
+          - '11'
       - –
       - type: Cite
-        target: '#pone.0216012.ref014'
+        target: pone.0216012.ref014
+        content:
+          - '14'
       - >-
         ]. In particular, the model accounts for the blood flow within three
         major ocular vascular beds, namely retina, choroid and ciliary body. The
@@ -3650,10 +3676,14 @@ content:
         could serve as a basic framework to study pathological states, most
         importantly glaucoma [
       - type: Cite
-        target: '#pone.0216012.ref015'
+        target: pone.0216012.ref015
+        content:
+          - '15'
       - –
       - type: Cite
-        target: '#pone.0216012.ref017'
+        target: pone.0216012.ref017
+        content:
+          - '17'
       - >-
         ], where the interaction between ocular and cerebral hemo-fluid-dynamics
         is thought to play an important role. Specifically, it is
@@ -3661,10 +3691,14 @@ content:
         with other vascular and biomechanical risk factors, strongly affect
         etiology, progression and incidence of glaucoma [
       - type: Cite
-        target: '#pone.0216012.ref018'
+        target: pone.0216012.ref018
+        content:
+          - '18'
       - –
       - type: Cite
-        target: '#pone.0216012.ref022'
+        target: pone.0216012.ref022
+        content:
+          - '22'
       - >-
         ]. As medicine is clearly heading in the direction of tailored diagnosis
         and treatment, the clinical ability to ascertain the relative weight of
@@ -3676,7 +3710,9 @@ content:
         significance of each risk factor can be quantified and novel
         individualized therapeutic approaches can be designed [
       - type: Cite
-        target: '#pone.0216012.ref023'
+        target: pone.0216012.ref023
+        content:
+          - '23'
       - '].'
   - type: Paragraph
     content:
@@ -3730,10 +3766,14 @@ content:
         content:
           - 'Network model of fluid flows in the brain and eyes ['
           - type: Cite
-            target: '#pone.0216012.ref012'
+            target: pone.0216012.ref012
+            content:
+              - '12'
           - –
           - type: Cite
-            target: '#pone.0216012.ref014'
+            target: pone.0216012.ref014
+            content:
+              - '14'
           - '].'
       - type: Paragraph
         content:
@@ -3859,21 +3899,29 @@ content:
         The lumped parameter circuit for the brain adopted in the present work
         was described and validated by Lakin and Stevens in [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ] for microgravity simulations. The eye block combines a model for the
         retinal circulation and a model for the dynamics of aqueous humor that
         have been proposed by some of the authors of this paper in [
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - '] and ['
       - type: Cite
-        target: '#pone.0216012.ref026'
+        target: pone.0216012.ref026
+        content:
+          - '26'
       - >-
         ], respectively, and extends them to account also for the choroidal and
         ciliary body vascular beds [
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - >-
         ]. In this work, we focus on the mean behavior of the system and we
         neglect time variations on both the short time scale of the heart beat
@@ -3890,10 +3938,14 @@ content:
           - '2'
       - ' concentrations ['
       - type: Cite
-        target: '#pone.0216012.ref001'
+        target: pone.0216012.ref001
+        content:
+          - '1'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref002'
+        target: pone.0216012.ref002
+        content:
+          - '2'
       - '].'
   - type: Paragraph
     content:
@@ -3960,7 +4012,9 @@ content:
           - j
       - ' is modeled by the Starling-Landis equation ['
       - type: Cite
-        target: '#pone.0216012.ref028'
+        target: pone.0216012.ref028
+        content:
+          - '28'
       - |
         ]:
       - type: ImageObject
@@ -6810,7 +6864,9 @@ content:
           - (iii)
       - ' interstitial fluid. The cerebrospinal fluid is produced mainly by the choroid plexus. It flows through the ventricular system to the subarachnoid space, where it is absorbed into the blood stream via the sagittal sinus. The interstitial or extracellular fluid fills the interstices of the brain tissue, bathing the neurons. In healthy subjects, only a relatively small amount of fluid is able to leak from blood into the interstitial fluid, owing to the low permeability of the blood-brain barrier ['
       - type: Cite
-        target: '#pone.0216012.ref029'
+        target: pone.0216012.ref029
+        content:
+          - '29'
       - '].'
   - type: Paragraph
     content:
@@ -6818,7 +6874,9 @@ content:
         In this work, we describe the brain via an electrical analogue
         representation of the model proposed by Lakin and Stevens in [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - '], as schematically shown in the “BRAIN” box of '
       - type: Link
         relation: fig
@@ -6889,7 +6947,9 @@ content:
               - CF
       - '. Unlike the choice adopted in ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - '] to impose a constant flux '
       - type: Emphasis
         content:
@@ -6924,18 +6984,26 @@ content:
         We remark that, among the numerous models that have been proposed to
         simulate cerebral fluid-dynamics (see e.g [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref030'
+        target: pone.0216012.ref030
+        content:
+          - '30'
       - –
       - type: Cite
-        target: '#pone.0216012.ref033'
+        target: pone.0216012.ref033
+        content:
+          - '33'
       - >-
         ]), in this work we have adopted the one proposed by Lakin and Stevens
         in [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ] because of its purpose to study the response of intracranial pressure
         in microgravity environments. Indeed, other choices could be made, in
@@ -6950,18 +7018,26 @@ content:
         the brain are quite complex and may vary with posture and external
         conditions [
       - type: Cite
-        target: '#pone.0216012.ref034'
+        target: pone.0216012.ref034
+        content:
+          - '34'
       - –
       - type: Cite
-        target: '#pone.0216012.ref037'
+        target: pone.0216012.ref037
+        content:
+          - '37'
       - >-
         ]) and the mechanisms regulating the flow of lymph through the various
         parts of the brain are still under investigation [
       - type: Cite
-        target: '#pone.0216012.ref038'
+        target: pone.0216012.ref038
+        content:
+          - '38'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref039'
+        target: pone.0216012.ref039
+        content:
+          - '39'
       - ']. These aspects will be included in future developments of the work.'
   - type: Heading
     id: sec006
@@ -7014,16 +7090,22 @@ content:
         side and by the pressure within the optic nerve tissue on the other
         side, which is mainly due to the CSFp in the subarachnoid space [
       - type: Cite
-        target: '#pone.0216012.ref040'
+        target: pone.0216012.ref040
+        content:
+          - '40'
       - >-
         ]. The central retinal artery and vein running through the lamina are
         subjected to external mechanical actions that are produced by the
         deformation of the lamina [
       - type: Cite
-        target: '#pone.0216012.ref041'
+        target: pone.0216012.ref041
+        content:
+          - '41'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref042'
+        target: pone.0216012.ref042
+        content:
+          - '42'
       - '].'
   - type: Figure
     id: pone.0216012.g002
@@ -7389,10 +7471,14 @@ content:
           - Poiseuille law
       - ', describing the fluid flow through the resistor. Following ['
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - '] and ['
       - type: Cite
-        target: '#pone.0216012.ref043'
+        target: pone.0216012.ref043
+        content:
+          - '43'
       - >-
         ], we model deformable tubes as Starling resistors, which reflect the
         physiological high collapsibility of the venous segments when the
@@ -7476,10 +7562,14 @@ content:
           - Fig 3
       - ' (left). In order to evaluate this compressive stress, we use the nonlinear elastic model proposed by some of the authors in ['
       - type: Cite
-        target: '#pone.0216012.ref041'
+        target: pone.0216012.ref041
+        content:
+          - '41'
       - '], with the parameter choices reported in ['
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - ']. This three-dimensional numerical model is employed to compute '
       - type: Emphasis
         content:
@@ -7565,7 +7655,9 @@ content:
                   - LC
           - ' computed using the nonlinear elastic model described in ['
           - type: Cite
-            target: '#pone.0216012.ref041'
+            target: pone.0216012.ref041
+            content:
+              - '41'
           - >-
             ] for various IOP and CSFp levels (black dots) and interpolated
             using using a second order polynomial function (green surface).
@@ -7595,10 +7687,14 @@ content:
           linkType: simple
       - ' to changes in biophysical factors, such as transmural pressure difference, shear stress, oxygen levels and pH (see e.g. ['
       - type: Cite
-        target: '#pone.0216012.ref044'
+        target: pone.0216012.ref044
+        content:
+          - '44'
       - –
       - type: Cite
-        target: '#pone.0216012.ref047'
+        target: pone.0216012.ref047
+        content:
+          - '47'
       - >-
         ]). Active changes in arteriolar diameter are the result of regulatory
         mechanisms whose presence and functionality on earth and in microgravity
@@ -7606,18 +7702,26 @@ content:
         the choroid, where the presence of regulatory mechanisms has been
         discovered only recently and remains, to date, vastly understudied [
       - type: Cite
-        target: '#pone.0216012.ref001'
+        target: pone.0216012.ref001
+        content:
+          - '1'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref048'
+        target: pone.0216012.ref048
+        content:
+          - '48'
       - –
       - type: Cite
-        target: '#pone.0216012.ref050'
+        target: pone.0216012.ref050
+        content:
+          - '50'
       - >-
         ]. Interestingly, there have been reports that the choroid engorges
         during spaceflight [
       - type: Cite
-        target: '#pone.0216012.ref051'
+        target: pone.0216012.ref051
+        content:
+          - '51'
       - >-
         ], although, to date, choroidal flow has not been actually measured
         during spaceflight. Thus, it would be very interesting to include a more
@@ -7639,7 +7743,9 @@ content:
         The aqueous circuit used in this model was proposed by some of the
         authors in [
       - type: Cite
-        target: '#pone.0216012.ref026'
+        target: pone.0216012.ref026
+        content:
+          - '26'
       - '] and its electrical analogue is depicted in cyan in '
       - type: Link
         relation: fig
@@ -7714,13 +7820,19 @@ content:
         epithelium, which creates a difference in ionic concentration that draws
         fluid into the eye via osmosis [
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - ']. Following ['
       - type: Cite
-        target: '#pone.0216012.ref026'
+        target: pone.0216012.ref026
+        content:
+          - '26'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref052'
+        target: pone.0216012.ref052
+        content:
+          - '52'
       - >-
         ], we assume that the active secretion contributes with a constant flow
         rate, which is modeled in the electrical analogue of 
@@ -7797,7 +7909,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -7821,7 +7935,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -7852,7 +7968,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -7885,12 +8003,16 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref052'
+                target: pone.0216012.ref052
+                content:
+                  - '52'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: '#pone.0216012.ref026'
+                target: pone.0216012.ref026
+                content:
+                  - '26'
               - ']'
     title: Summary of model inputs.
     content: []
@@ -7937,13 +8059,19 @@ content:
               - uv
       - ', as in ['
       - type: Cite
-        target: '#pone.0216012.ref026'
+        target: pone.0216012.ref026
+        content:
+          - '26'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref053'
+        target: pone.0216012.ref053
+        content:
+          - '53'
       - '].'
   - type: Paragraph
     content:
@@ -8209,13 +8337,19 @@ content:
         increase in ICP and also a variation in the blood colloid osmotic
         pressure in the brain [
       - type: Cite
-        target: '#pone.0216012.ref001'
+        target: pone.0216012.ref001
+        content:
+          - '1'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref006'
+        target: pone.0216012.ref006
+        content:
+          - '6'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref054'
+        target: pone.0216012.ref054
+        content:
+          - '54'
       - >-
         ]. However, the effect of microgravity on ICP is quite complex. In acute
         zero gravity conditions simulated during parabolic flight, ICP during
@@ -8223,7 +8357,9 @@ content:
         removal of gravity was found to prevent the normal lowering of ICP when
         upright [
       - type: Cite
-        target: '#pone.0216012.ref055'
+        target: pone.0216012.ref055
+        content:
+          - '55'
       - '].'
   - type: Paragraph
     content:
@@ -8231,7 +8367,9 @@ content:
         In the present paper, microgravity conditions are simulated following
         the same approach as in [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - '], namely: '
       - type: Emphasis
         content:
@@ -8274,7 +8412,9 @@ content:
               - CB
       - ' as suggested by ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - '].'
   - type: Paragraph
     content:
@@ -8733,17 +8873,23 @@ content:
     content:
       - 'We remark that a weakened blood/brain barrier was utilized in ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ] to simulate microgravity conditions. However, recent studies showed
         that the ICP drop predicted in [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ] without any dysfunction of the blood/brain barrier actually matched
         data collected during acute weightlessness in parabolic flight [
       - type: Cite
-        target: '#pone.0216012.ref055'
+        target: pone.0216012.ref055
+        content:
+          - '55'
       - >-
         ]. In this work, we opted for not ruling out completely the possibility
         of a dysfunctional blood/brain barrier, since there might be other
@@ -8831,10 +8977,14 @@ content:
               - ah
       - ' ≈ 0 mmHg ['
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref052'
+        target: pone.0216012.ref052
+        content:
+          - '52'
       - '], a reasonable baseline value for '
       - type: Emphasis
         content:
@@ -8864,7 +9014,9 @@ content:
               - c
       - ' values of 21.7 mmHg and 18.7 mmHg, respectively ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - '], which are indeed included in the simulated interval.'
   - type: Heading
     id: sec011
@@ -8881,7 +9033,9 @@ content:
           - Fig 1
       - ' in OpenModelica ['
       - type: Cite
-        target: '#pone.0216012.ref056'
+        target: pone.0216012.ref056
+        content:
+          - '56'
       - >-
         ], which is a free, open-source modeling and simulation environment. In
         particular, we used the analogue electric components environment, which
@@ -8916,12 +9070,16 @@ content:
           - Table 5
       - '. In particular, considering posture, the brain model by Lakin et al ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ] has been calibrated utilizing measurements pertaining to the supine
         position. The retinal model developed by some of the authors [
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ] has been calibrated utilizing measurements of blood velocity obtained
         via Color Doppler Imaging when the individual was resting on a reclined
@@ -8977,7 +9135,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9005,7 +9165,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9033,7 +9195,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9068,7 +9232,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9089,7 +9255,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9111,7 +9279,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9135,7 +9305,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9159,7 +9331,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9183,7 +9357,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9207,7 +9383,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -9241,7 +9419,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9306,7 +9486,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9519,7 +9701,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9538,7 +9722,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9557,7 +9743,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9580,7 +9768,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9601,7 +9791,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9626,7 +9818,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9651,7 +9845,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9672,7 +9868,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9794,7 +9992,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9813,7 +10013,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9832,7 +10034,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9855,7 +10059,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9876,7 +10082,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9901,7 +10109,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9926,7 +10136,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -9947,7 +10159,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref025'
+                target: pone.0216012.ref025
+                content:
+                  - '25'
               - ']'
       - type: TableRow
         cells:
@@ -10164,7 +10378,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref052'
+                target: pone.0216012.ref052
+                content:
+                  - '52'
               - ']'
       - type: TableRow
         cells:
@@ -10185,7 +10401,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref052'
+                target: pone.0216012.ref052
+                content:
+                  - '52'
               - ']'
       - type: TableRow
         cells:
@@ -10207,7 +10425,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref052'
+                target: pone.0216012.ref052
+                content:
+                  - '52'
               - ']'
       - type: TableRow
         cells:
@@ -10233,7 +10453,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref027'
+                target: pone.0216012.ref027
+                content:
+                  - '27'
               - ']'
       - type: TableRow
         cells:
@@ -10252,7 +10474,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref027'
+                target: pone.0216012.ref027
+                content:
+                  - '27'
               - ']'
       - type: TableRow
         cells:
@@ -10278,7 +10502,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref053'
+                target: pone.0216012.ref053
+                content:
+                  - '53'
               - ']'
       - type: TableRow
         cells:
@@ -10297,7 +10523,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref053'
+                target: pone.0216012.ref053
+                content:
+                  - '53'
               - ']'
       - type: TableRow
         cells:
@@ -10333,7 +10561,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -10357,7 +10587,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -10381,7 +10613,9 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pone.0216012.ref024'
+                target: pone.0216012.ref024
+                content:
+                  - '24'
               - ']'
       - type: TableRow
         cells:
@@ -10420,43 +10654,69 @@ content:
         experimental measurements of flow rates and pressures are influenced by
         many factors, including age [
       - type: Cite
-        target: '#pone.0216012.ref057'
+        target: pone.0216012.ref057
+        content:
+          - '57'
       - –
       - type: Cite
-        target: '#pone.0216012.ref059'
+        target: pone.0216012.ref059
+        content:
+          - '59'
       - '], gender ['
       - type: Cite
-        target: '#pone.0216012.ref060'
+        target: pone.0216012.ref060
+        content:
+          - '60'
       - –
       - type: Cite
-        target: '#pone.0216012.ref062'
+        target: pone.0216012.ref062
+        content:
+          - '62'
       - '], posture ['
       - type: Cite
-        target: '#pone.0216012.ref063'
+        target: pone.0216012.ref063
+        content:
+          - '63'
       - –
       - type: Cite
-        target: '#pone.0216012.ref066'
+        target: pone.0216012.ref066
+        content:
+          - '66'
       - '] and time of the day ['
       - type: Cite
-        target: '#pone.0216012.ref061'
+        target: pone.0216012.ref061
+        content:
+          - '61'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref067'
+        target: pone.0216012.ref067
+        content:
+          - '67'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref068'
+        target: pone.0216012.ref068
+        content:
+          - '68'
       - '], not to mention the instrument utilized for the measurement ['
       - type: Cite
-        target: '#pone.0216012.ref069'
+        target: pone.0216012.ref069
+        content:
+          - '69'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref070'
+        target: pone.0216012.ref070
+        content:
+          - '70'
       - '] and the measurement protocol ['
       - type: Cite
-        target: '#pone.0216012.ref007'
+        target: pone.0216012.ref007
+        content:
+          - '7'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref008'
+        target: pone.0216012.ref008
+        content:
+          - '8'
       - >-
         ]. Thus, it would be necessary to collect all the required data for
         model calibration simultaneously on the eyes and brain of a large cohort
@@ -10479,15 +10739,21 @@ content:
           linkType: simple
       - ' for retinal blood flow can be found in ['
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ]. This value results from a review of the experimental measurements
         reported in [
       - type: Cite
-        target: '#pone.0216012.ref071'
+        target: pone.0216012.ref071
+        content:
+          - '71'
       - –
       - type: Cite
-        target: '#pone.0216012.ref075'
+        target: pone.0216012.ref075
+        content:
+          - '75'
       - ']. Similarly, a reference value of '
       - type: ImageObject
         contentUrl: ''
@@ -10497,15 +10763,21 @@ content:
           linkType: simple
       - ' for the blood flow in the ciliary body can be found in ['
       - type: Cite
-        target: '#pone.0216012.ref076'
+        target: pone.0216012.ref076
+        content:
+          - '76'
       - >-
         ]. This value was estimated from measured levels of aqueous-to-plasma
         ascorbate ratio and aqueous production rate [
       - type: Cite
-        target: '#pone.0216012.ref077'
+        target: pone.0216012.ref077
+        content:
+          - '77'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref078'
+        target: pone.0216012.ref078
+        content:
+          - '78'
       - >-
         ] The choice of a reference value for the choroidal blood flow is less
         obvious due to the lack of experimental measurements. Here we choose a
@@ -10518,13 +10790,17 @@ content:
           linkType: simple
       - ', which is within the same range as the findings reported in ['
       - type: Cite
-        target: '#pone.0216012.ref079'
+        target: pone.0216012.ref079
+        content:
+          - '79'
       - >-
         ] obtained using Magnetic Resonance Imaging, while yielding a percent
         ratio between retinal and choroidal blood flow of 10% to 90% as
         indicated in [
       - type: Cite
-        target: '#pone.0216012.ref015'
+        target: pone.0216012.ref015
+        content:
+          - '15'
       - '].'
   - type: Math
     mathLanguage: MathML
@@ -10555,12 +10831,16 @@ content:
           linkType: simple
       - ' mmHg for blood pressure at the level of the ophthalmic artery can be found in ['
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ]. As suggested by the measurements performed via
         ophthalmomanometry-Doppler in [
       - type: Cite
-        target: '#pone.0216012.ref080'
+        target: pone.0216012.ref080
+        content:
+          - '80'
       - '], this value can be estimated as '
       - type: ImageObject
         contentUrl: ''
@@ -10605,18 +10885,24 @@ content:
           linkType: simple
       - ' mmHg for blood pressure at the venous output of the eye can be found in ['
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - >-
         ]. This value is considered as a representative mean value among the
         wide range of measurements reported in the literature, as reviewed in [
       - type: Cite
-        target: '#pone.0216012.ref081'
+        target: pone.0216012.ref081
+        content:
+          - '81'
       - >-
         ]. References values for the pressure distribution inside the circuit
         for the retinal circulation have been computed using the mathematical
         model presented in [
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - ']. Reference values of '
       - type: ImageObject
         contentUrl: ''
@@ -10633,27 +10919,39 @@ content:
           linkType: simple
       - ' mmHg can be found in ['
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - >-
         ]. These values were obtained indirectly from estimates of blood volume
         and vascular compliance. A reference value of 32 mmHg for the pressure
         between arterioles and capillaries can be found in [
       - type: Cite
-        target: '#pone.0216012.ref046'
+        target: pone.0216012.ref046
+        content:
+          - '46'
       - ']. This value is based on the choice adopted in ['
       - type: Cite
-        target: '#pone.0216012.ref082'
+        target: pone.0216012.ref082
+        content:
+          - '82'
       - '], which was based on previous modeling and experimental work ['
       - type: Cite
-        target: '#pone.0216012.ref083'
+        target: pone.0216012.ref083
+        content:
+          - '83'
       - –
       - type: Cite
-        target: '#pone.0216012.ref085'
+        target: pone.0216012.ref085
+        content:
+          - '85'
       - >-
         ]. Reference values for the pressures within the choroidal circulation
         have been set as to mirror those in the ciliary circulation, as in [
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - '].'
   - type: Math
     mathLanguage: MathML
@@ -10720,17 +11018,23 @@ content:
         involved in the calculation of the vascular resistances pertaining to
         CRA and CRV follow directly from the work by [
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ]. For what concerns the parameters involved in the resistances for
         retinal venules, we follow the same approach as in [
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ], where a dichotomous network model for the retinal circulation
         proposed in [
       - type: Cite
-        target: '#pone.0216012.ref086'
+        target: pone.0216012.ref086
+        content:
+          - '86'
       - >-
         ] was used to define the hierarchical architecture of the venous retinal
         segment, leading to the parameter values reported in 
@@ -12072,70 +12376,102 @@ content:
         articles. Specifically, for the circulation in the retina and in the
         central retinal vessels we refer to [
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ], for the circulation in the ciliary body and in the choroid we refer
         to [
       - type: Cite
-        target: '#pone.0216012.ref049'
+        target: pone.0216012.ref049
+        content:
+          - '49'
       - '] and ['
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - '], for the aqueous humor circulation we refer to ['
       - type: Cite
-        target: '#pone.0216012.ref026'
+        target: pone.0216012.ref026
+        content:
+          - '26'
       - >-
         ] and for the cerebral circulation of blood, interstitial fluid and CSF
         we refer to [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ]. The validation of the modeling assumptions concerning the connections
         between the various components has been presented at the 2018 Annual
         Meeting of the Association for Research in Vision and Ophthalmology [
       - type: Cite
-        target: '#pone.0216012.ref013'
+        target: pone.0216012.ref013
+        content:
+          - '13'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref014'
+        target: pone.0216012.ref014
+        content:
+          - '14'
       - >-
         ]. The model proved capable of capturing a slight increase in IOP
         following an increase in blood pressure, consistently with the findings
         of the Rotterdam study [
       - type: Cite
-        target: '#pone.0216012.ref087'
+        target: pone.0216012.ref087
+        content:
+          - '87'
       - '], the Blue Mountains eye population-based study ['
       - type: Cite
-        target: '#pone.0216012.ref088'
+        target: pone.0216012.ref088
+        content:
+          - '88'
       - '] and the Beijing eye study ['
       - type: Cite
-        target: '#pone.0216012.ref089'
+        target: pone.0216012.ref089
+        content:
+          - '89'
       - >-
         ]. The model also predicted a decrease in CSFp with blood pressure,
         consistently with the findings of Ren et al reported in [
       - type: Cite
-        target: '#pone.0216012.ref090'
+        target: pone.0216012.ref090
+        content:
+          - '90'
       - >-
         ]. In addition, the model confirmed that the pressure in the vortex
         veins before they exit the sclera is approximately equal to the IOP over
         a wide range of values, as reported by Bill in [
       - type: Cite
-        target: '#pone.0216012.ref091'
+        target: pone.0216012.ref091
+        content:
+          - '91'
       - >-
         ]. These validation results are quite impressive, considering that these
         studies were not used for model calibration. The successful validation
         of the model blocks considered separately [
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - –
       - type: Cite
-        target: '#pone.0216012.ref027'
+        target: pone.0216012.ref027
+        content:
+          - '27'
       - ', '
       - type: Cite
-        target: '#pone.0216012.ref049'
+        target: pone.0216012.ref049
+        content:
+          - '49'
       - '] and jointly ['
       - type: Cite
-        target: '#pone.0216012.ref013'
+        target: pone.0216012.ref013
+        content:
+          - '13'
       - >-
         ] supports the utilization of the model to study the physiological
         connections between ocular and cerebral fluid flows.
@@ -12276,7 +12612,9 @@ content:
                   - c
           - ' at which each of compartment collapses (black for central retinal vein, red for choroidal venules and blue for ciliary venules). Panel (d) appeared in ['
           - type: Cite
-            target: '#pone.0216012.ref012'
+            target: pone.0216012.ref012
+            content:
+              - '12'
           - '].'
     label: Fig 4
     content:
@@ -12296,7 +12634,9 @@ content:
           - Fig 4
       - ', and in agreement with the results of ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - '], the intracranial pressure grows as '
       - type: Emphasis
         content:
@@ -12550,7 +12890,9 @@ content:
               - c
       - ' and before venules collapse happens, the flux in the retina remains almost constant. This suggests that the particular architecture of the retinal vasculature provides a sort of mechanical (i.e. purely passive) blood flow regulation in response to IOP changes. This behavior was already observed in ['
       - type: Cite
-        target: '#pone.0216012.ref025'
+        target: pone.0216012.ref025
+        content:
+          - '25'
       - >-
         ], who proposed a model of the retinal circulation alone. It is
         interesting to find that this feature is maintained by the full coupled,
@@ -12607,7 +12949,9 @@ content:
                   - c
           - ' at which each of compartment collapses (black for central retinal vein, red for choroidal venules and blue for ciliary venules). Panel (b) appeared in ['
           - type: Cite
-            target: '#pone.0216012.ref012'
+            target: pone.0216012.ref012
+            content:
+              - '12'
           - '].'
     label: Fig 5
     content:
@@ -12698,7 +13042,9 @@ content:
           - Fig (4b)–(4d)
       - ' shows that in microgravity conditions the ICP is smaller than in the case of LHDT, when the effect of blood/brain barrier disruption is not accounted for. ICP increases as the filtration and reflection coefficients are changed. These results are in agreement with the findings of ['
       - type: Cite
-        target: '#pone.0216012.ref024'
+        target: pone.0216012.ref024
+        content:
+          - '24'
       - >-
         ]. The IOP predicted by our model is invariably lower in the cases of
         microgravity than of LHDT, even if it is larger than in physiological
@@ -12736,13 +13082,17 @@ content:
         increase of 2.13 and 1.74 mmHg in the right and left eye, respectively,
         at ten days into bed rest [
       - type: Cite
-        target: '#pone.0216012.ref092'
+        target: pone.0216012.ref092
+        content:
+          - '92'
       - >-
         ]. In another study, Taibbi et al observed that the iCare measurements
         of IOP increased of 1.42 mmHg and 1.79 mmHg from baseline during 14- and
         70-day LHDT studies, respectively [
       - type: Cite
-        target: '#pone.0216012.ref007'
+        target: pone.0216012.ref007
+        content:
+          - '7'
       - >-
         ]. Baseline IOP values for the 16 subjects in the 14 day LHDT study and
         for the 6 subjects in the 70 day LHDT study ranged within 11.91–15.66
@@ -12776,20 +13126,26 @@ content:
         pressure reported in major clinical and population-based studies, as
         reported in [
       - type: Cite
-        target: '#pone.0216012.ref013'
+        target: pone.0216012.ref013
+        content:
+          - '13'
       - >-
         ]. In addition, the model is able to capture the relationship between
         choroidal venous pressure and IOP reported in the seminal work by Bill
         in 1963 [
       - type: Cite
-        target: '#pone.0216012.ref091'
+        target: pone.0216012.ref091
+        content:
+          - '91'
       - >-
         ], thereby suggesting that it may prove instrumental to study blood
         outflow through the vortex veins, which is thought to play a very
         important role in many pathologies but remains very difficult to measure
         [
       - type: Cite
-        target: '#pone.0216012.ref013'
+        target: pone.0216012.ref013
+        content:
+          - '13'
       - '].'
   - type: Paragraph
     content:
@@ -12799,7 +13155,9 @@ content:
         conditions. In this respect our model is complementary to the one
         proposed in [
       - type: Cite
-        target: '#pone.0216012.ref009'
+        target: pone.0216012.ref009
+        content:
+          - '9'
       - >-
         ], which was focused on the short term effects induced by acute
         gravitational variations. Simulation results point at a purely
@@ -12814,7 +13172,9 @@ content:
         the retinal vasculature when exposed to extreme conditions, such as
         those associated with long space flights [
       - type: Cite
-        target: '#pone.0216012.ref002'
+        target: pone.0216012.ref002
+        content:
+          - '2'
       - >-
         ]. It is important to notice that various conditions during space flight
         are thought to alter vascular regulatory capabilities, particularly the

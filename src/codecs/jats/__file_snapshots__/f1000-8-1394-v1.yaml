@@ -793,7 +793,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-1'
+            target: ref-1
+            content:
+              - '1'
       - >-
         . Some product groups (e.g., cosmetics, veterinary supplements, waxes or
         room fragrances) may be produced with intended off-label use, such as
@@ -811,12 +813,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-2'
+            target: ref-2
+            content:
+              - '2'
           - |-
             ,
                                 
           - type: Cite
-            target: '#ref-3'
+            target: ref-3
+            content:
+              - '3'
       - >-
         . However, CBD products of all kinds can now also be purchased in
         organic shops, drug stores, supermarkets and via the Internet, mostly by
@@ -829,7 +835,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-4'
+            target: ref-4
+            content:
+              - '4'
       - >-
         . With the exception of the treatment of Dravet’s syndrome, there is
         little clinical data on the efficacy and safety of CBD, particularly in
@@ -838,12 +846,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-5'
+            target: ref-5
+            content:
+              - '5'
           - |-
             ,
                                 
           - type: Cite
-            target: '#ref-6'
+            target: ref-6
+            content:
+              - '6'
       - .
   - type: Paragraph
     content:
@@ -864,12 +876,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-6'
+            target: ref-6
+            content:
+              - '6'
           - |-
             ,
                                 
           - type: Cite
-            target: '#ref-7'
+            target: ref-7
+            content:
+              - '7'
       - >-
         . Probably due to cost reasons, no further specific enrichment or
         cleanup of CBD is conducted, so that the commercial extracts are a
@@ -880,7 +896,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-6'
+            target: ref-6
+            content:
+              - '6'
       - .
   - type: Paragraph
     content:
@@ -907,7 +925,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-2'
+            target: ref-2
+            content:
+              - '2'
       - .
   - type: Paragraph
     content:
@@ -922,12 +942,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-8'
+            target: ref-8
+            content:
+              - '8'
           - |-
             –
                                 
           - type: Cite
-            target: '#ref-10'
+            target: ref-10
+            content:
+              - '10'
       - >-
         . Currently there are three hypotheses for the cause of the side
         effects: (i) a direct pharmacological effect of CBD, (ii) the
@@ -974,7 +998,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-11'
+            target: ref-11
+            content:
+              - '11'
       - >-
         , a gastric juice without addition of surfactants was used, which was
         strictly produced according to the European pharmacopoeia
@@ -982,7 +1008,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-12'
+            target: ref-12
+            content:
+              - '12'
       - ' (0.020 g NaCl + 0.032 g pepsin + 0.8 mL HCl (1 mol/L), filled up to 10 mL with water). As pure CBD was available only in methanolic solution, the final experimental setups contained 0.08 mol/L HCl and 1% methanol due to dilution.'
   - type: Table
     id: T1
@@ -1598,7 +1626,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-15'
+            target: ref-15
+            content:
+              - '15'
       - >-
         . Taking safety factors (factor 3 for extrapolation from LOAEL to no
         observed adverse effect level (NOAEL) and factor 10 for interindividual
@@ -1608,7 +1638,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-15'
+            target: ref-15
+            content:
+              - '15'
       - .
   - type: Table
     id: T2
@@ -1670,7 +1702,9 @@ content:
                 according to Ref. 
                                                     
               - type: Cite
-                target: '#ref-2'
+                target: ref-2
+                content:
+                  - '2'
       - type: TableRow
         cells:
           - type: TableCell
@@ -2602,14 +2636,18 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-3'
+            target: ref-3
+            content:
+              - '3'
       - |2-
          and the CBD doses in the food supplements on the market are typically much lower than the ones tested in clinical studies. Additionally, there is a 90-day experiment in rats with a hemp extract (consisting of 26% cannabinoids, 96% CBD and <1% THC) from which a NOAEL of 100 mg/kg bw/day could be derived
                             
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-16'
+            target: ref-16
+            content:
+              - '16'
       - >-
         . For CBD this would be about 25 mg/kg bw/day (or 1750 mg/day for a
         person with a body weight of 70 kg). This NOAEL would not be reached by
@@ -2633,17 +2671,23 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-11'
+            target: ref-11
+            content:
+              - '11'
           - |-
             ,
                                     
           - type: Cite
-            target: '#ref-17'
+            target: ref-17
+            content:
+              - '17'
           - |-
             –
                                     
           - type: Cite
-            target: '#ref-19'
+            target: ref-19
+            content:
+              - '19'
       - |-
         . If these proposals could be confirmed with 
                             
@@ -2656,7 +2700,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-20'
+            target: ref-20
+            content:
+              - '20'
       - |-
         . However, taking a closer look at these 
                             
@@ -2669,12 +2715,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-21'
+            target: ref-21
+            content:
+              - '21'
           - |-
             ,
                                     
           - type: Cite
-            target: '#ref-22'
+            target: ref-22
+            content:
+              - '22'
       - |-
         . Due to the contradicting results, a replication of the 
                             
@@ -2693,7 +2743,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-11'
+            target: ref-11
+            content:
+              - '11'
       - ' was conducted using an extended experimental design. A more selective LC-MS/MS method and also an ultra-high pressure liquid chromatographic method with quadrupole time-of-flight mass spectrometry (UPLC-QTOF) were used to investigate the CBD degradation.'
   - type: Paragraph
     content:
@@ -2709,7 +2761,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-11'
+            target: ref-11
+            content:
+              - '11'
       - >-
         , no conversion of CBD to THC was observed in any of the samples. Only
         in case of the positive control (2 week storage in 0.5 mol/L HCl and 50%
@@ -2728,7 +2782,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-13'
+            target: ref-13
+            content:
+              - '13'
       - >-
         ). From an analytical viewpoint, the use of less selective and specific
         analytical methods, especially from the point of chromatographic
@@ -2742,12 +2798,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-23'
+            target: ref-23
+            content:
+              - '23'
           - |-
             ,
                                     
           - type: Cite
-            target: '#ref-24'
+            target: ref-24
+            content:
+              - '24'
       - |2-
          that CBD would not likely react to THC under 
                             
@@ -2779,7 +2839,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-13'
+            target: ref-13
+            content:
+              - '13'
       - >-
         ). Furthermore, all samples (100%) have been classified as non-compliant
         to Regulation (EU) 2015/2283 of the European Parliament and of the
@@ -2788,14 +2850,18 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-25'
+            target: ref-25
+            content:
+              - '25'
       - |2-
          and therefore being unauthorized novel foods. The labelling of 28 samples (100%) was also non-compliant to Regulation (EU) No 1169/2011 of the European Parliament and of the Council of 25 October 2011 on the provision of food information to consumers
                             
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-26'
+            target: ref-26
+            content:
+              - '26'
       - >-
         , e.g. due to lack of mandatory food information such as ingredients
         list or use of unapproved health claims in accordance to Regulation (EC)
@@ -2805,7 +2871,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-27'
+            target: ref-27
+            content:
+              - '27'
       - >-
         . In summary, none of the products in our survey was found as being
         fully compliant with European food regulations.
@@ -2818,7 +2886,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-28'
+            target: ref-28
+            content:
+              - '28'
       - >-
         . The resorption of orally ingested THC varies greatly interindividually
         with respect to both total amount and resorption rate
@@ -2826,7 +2896,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-29'
+            target: ref-29
+            content:
+              - '29'
       - >-
         . This might be one of the reasons for the individually very different
         psychotropic effects. A single oral dose of 20 mg THC resulted in
@@ -2837,7 +2909,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-30'
+            target: ref-30
+            content:
+              - '30'
       - .
   - type: Paragraph
     content:
@@ -2854,12 +2928,16 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-14'
+            target: ref-14
+            content:
+              - '14'
           - |-
             ,
                                     
           - type: Cite
-            target: '#ref-31'
+            target: ref-31
+            content:
+              - '31'
       - >-
         , which is 150 µg/kg, a magnitude below the actual contents in the
         products.
@@ -2891,14 +2969,18 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-6'
+            target: ref-6
+            content:
+              - '6'
       - |2-
          reporting data from the Netherlands on cannabis oils according to which the labelling information for CBD and THC was often different from the actual contents. In 26 out of 46 products the THC content was >1%. Further corresponding results were reported in a study from the USA, in which the CBD content was correctly declared for only 26 of 84 CBD products and 18 of the products had THC contents
                         
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-32'
+            target: ref-32
+            content:
+              - '32'
       - .
   - type: Paragraph
     content:
@@ -2948,7 +3030,9 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-13'
+            target: ref-13
+            content:
+              - '13'
   - type: Paragraph
     content:
       - 'This project contains the following underlying data:'

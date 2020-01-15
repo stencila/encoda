@@ -8,7 +8,7 @@ const { decode, sniff, encode } = new ElifeCodec()
 const yaml = new YamlCodec()
 
 const elife2yaml = async (article: string) => {
-  // Fetch, with recording the complete article
+  // Fetch, with recording, the complete article
   const done = await nockRecord(`nock-record-${article}.json`)
   const node = await decode(await vfile.load(`elife: ${article}`))
   done()
@@ -38,6 +38,8 @@ test('sniff', async () => {
 test('decode', async () => {
   expect(await elife2yaml('46793')).toMatchFile(snapshot('46793.yaml'))
   expect(await elife2yaml('45123')).toMatchFile(snapshot('45123.yaml'))
+  // A non-existent article id, will emit warning but still generate a document
+  expect(await elife2yaml('00000')).toMatchFile(snapshot('00000.yaml'))
 })
 
 test('encode', async () => {
