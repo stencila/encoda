@@ -1,3 +1,27 @@
+# [0.83.0](https://github.com/stencila/encoda/compare/v0.82.1...v0.83.0) (2020-01-15)
+
+
+### Bug Fixes
+
+* **CSL:** Add encoding of dates and isPartOf ([e8aea0c](https://github.com/stencila/encoda/commit/e8aea0c3e5f5eff4cf670af2ad6b76cbfde672c9))
+* **CSL:** Test for the Date objects ([1607a98](https://github.com/stencila/encoda/commit/1607a98d6b2ec9feb0959fbc22f0990b70fbd90b))
+* **DOCX:** Add citations and references handling ([faecc54](https://github.com/stencila/encoda/commit/faecc54229e316a4f1e0d23a9a86ca9f506dd0c0))
+* **GDoc:** Add handling of reproducible images. ([ef63768](https://github.com/stencila/encoda/commit/ef63768011678e2b472d6b8ee17913a1c1e2dec7))
+* **JATS:** Decode content of Cite nodes ([3dfb161](https://github.com/stencila/encoda/commit/3dfb1615b9615e95fb78afe9c7ed06b7ef14c110))
+* **JATS:** Do not preprend hash when creating Cite target ([cfabd77](https://github.com/stencila/encoda/commit/cfabd7778d149889d87f14b06ace160a003e1af7))
+* **Pandoc:** Add handling of Cite and CiteGroup nodes ([12a49a1](https://github.com/stencila/encoda/commit/12a49a1b5620f6477207ee26c416ba3467e26fdd))
+* **Pandoc:** Bidirectional conversion of numbers in meta ([6c49b22](https://github.com/stencila/encoda/commit/6c49b223b7bfb5ba22d46356a2cc707a9eb8070c))
+* **Pandoc:** Transform references to CSL-JSON ([9ba6d5c](https://github.com/stencila/encoda/commit/9ba6d5c0b4a68aa0fd3985ab70cb825846d4a150))
+* **Puppeteer:** Disable /dev/shm usage ([c630e78](https://github.com/stencila/encoda/commit/c630e787aa51fbb488b78b405555dcefcf3c9042))
+* **Util:** Log HTTP errors and return response ([d17afa8](https://github.com/stencila/encoda/commit/d17afa87d8fa7f5a2d732b82c5af836bda14786b))
+
+
+### Features
+
+* **CSL:** Add vendored styles ([ad1b55a](https://github.com/stencila/encoda/commit/ad1b55a40f39ee130d0823a115ab7b19f149418c))
+* **eLife:** Automatically fetch the most recent version of article ([c0b5df5](https://github.com/stencila/encoda/commit/c0b5df5611409f14b43d1bb2cc251407cb035eb6)), closes [#368](https://github.com/stencila/encoda/issues/368)
+* **Markdown:** Encode Cite nodes using Pandoc convention ([80ce013](https://github.com/stencila/encoda/commit/80ce013285a0bc5fa24696f622a22788261003eb))
+
 ## [0.81.3](https://github.com/stencila/encoda/compare/v0.81.2...v0.81.3) (2019-11-29)
 
 
