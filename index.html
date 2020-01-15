@@ -697,7 +697,7 @@ jmp &gt;</code></pre>
       <p>Self-hoisted (documentation converted from various formats to html) and API documentation
         (generated from source code) is available at: <a
           href="https://stencila.github.io/encoda">https://stencila.github.io/encoda</a>.</p>
-      <h2 id="develop">Develop</h2>
+      <h2 id="develop-1">Develop</h2>
       <p>Check how to <a
           href="https://github.com/stencila/encoda/blob/master/CONTRIBUTING.md">contribute back to
           the project</a>. All PRs are most welcome! Thank you!</p>
@@ -720,6 +720,11 @@ npm install</code></pre>
         directly:</p>
       <pre><code class="language-bash">npm run build
 node dist/cli convert simple.md simple.html</code></pre>
+      <p>If you are using VSCode, you can use the <a
+          href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature">Auto
+          Attach feature</a> to attach to the CLI when running the <code>cli:debug</code> NPM
+        script:</p>
+      <pre><code class="language-bash">npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
       <p>There&#39;s also a <code>Makefile</code> if you prefer to run tasks that way e.g.</p>
       <pre><code class="language-bash">make lint cover check</code></pre>
       <p>You can also test using the Docker image for a self-contained, host-independent test

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;util/toFiles&quot; | @stencila/encoda</title>
+	<title>CitationMode | @stencila/encoda</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,84 +56,51 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_util_tofiles_.html">&quot;util/toFiles&quot;</a>
+					<a href="../modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
+				</li>
+				<li>
+					<a href="_codecs_pandoc_types_.citationmode.html">CitationMode</a>
 				</li>
 			</ul>
-			<h1>External module &quot;util/toFiles&quot;</h1>
+			<h1>Interface CitationMode</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">CitationMode</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_util_tofiles_.html#tofiles" class="tsd-kind-icon">to<wbr>Files</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_pandoc_types_.citationmode.html#t" class="tsd-kind-icon">t</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="tofiles" class="tsd-anchor"></a>
-					<h3>to<wbr>Files</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Files<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, docPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mediaPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, protocols<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/util/toFiles.ts#L21">src/util/toFiles.ts:21</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Transform a <code>Node</code> by writing any media to a file in a specified directory.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>bundle</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p>unlink</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
-								</li>
-								<li>
-									<h5>docPath: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The path of the document</p>
-									</div>
-								</li>
-								<li>
-									<h5>mediaPath: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The directory to put media files in</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> protocols: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;data&#x27;, &#x27;http&#x27;, &#x27;file&#x27;]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The URI protocols to write to file e.g. <code>[&#39;file&#39;]</code> for files only</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="t" class="tsd-anchor"></a>
+					<h3>t</h3>
+					<div class="tsd-signature tsd-kind-icon">t<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"AuthorInText"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SuppressAuthor"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"NormalCitation"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/types.ts#L358">src/codecs/pandoc/types.ts:358</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -144,15 +111,24 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_util_tofiles_.html">&quot;util/to<wbr>Files&quot;</a>
+						<a href="../modules/_codecs_pandoc_types_.html">&quot;codecs/pandoc/types&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_util_tofiles_.html#tofiles" class="tsd-kind-icon">to<wbr>Files</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_codecs_pandoc_types_.citationmode.html" class="tsd-kind-icon">Citation<wbr>Mode</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_codecs_pandoc_types_.citationmode.html#t" class="tsd-kind-icon">t</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

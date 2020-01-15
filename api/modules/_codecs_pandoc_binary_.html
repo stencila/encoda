@@ -77,7 +77,6 @@
 								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_codecs_pandoc_binary_.html#binary" class="tsd-kind-icon">binary</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_codecs_pandoc_binary_.html#datadir" class="tsd-kind-icon">data<wbr>Dir</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_pandoc_binary_.html#home" class="tsd-kind-icon">home</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_pandoc_binary_.html#iscompiled" class="tsd-kind-icon">is<wbr>Compiled</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_pandoc_binary_.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
@@ -98,7 +97,7 @@
 					<div class="tsd-signature tsd-kind-icon">base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&#x60;https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}&#x60;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L15">src/codecs/pandoc/binary.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/binary.ts#L16">src/codecs/pandoc/binary.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -108,7 +107,7 @@
 					<div class="tsd-signature tsd-kind-icon">binary<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;new BinWrapper().src(&#x60;${base}-linux.tar.gz&#x60;, &#x27;linux&#x27;, &#x27;x64&#x27;).src(&#x60;${base}-macOS.zip&#x60;, &#x27;darwin&#x27;).src(&#x60;${base}-windows-i386.zip&#x60;, &#x27;win32&#x27;, &#x27;x32&#x27;).src(&#x60;${base}-windows-x86_64.zip&#x60;, &#x27;win32&#x27;, &#x27;x64&#x27;).dest(path.join(home, &#x27;dist&#x27;, &#x27;codecs&#x27;, &#x27;pandoc&#x27;, &#x27;binary&#x27;)).use(process.platform &#x3D;&#x3D;&#x3D; &#x27;win32&#x27; ? &#x27;pandoc.exe&#x27; : &#x27;bin/pandoc&#x27;).version(version)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L24">src/codecs/pandoc/binary.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/binary.ts#L23">src/codecs/pandoc/binary.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -118,7 +117,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;path.join(home,isCompiled ? &#x27;dist&#x27; : &#x27;src&#x27;,&#x27;codecs&#x27;,&#x27;pandoc&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L37">src/codecs/pandoc/binary.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/binary.ts#L36">src/codecs/pandoc/binary.ts:36</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -134,17 +133,7 @@
 					<div class="tsd-signature tsd-kind-icon">home<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;path.join(appHome,...(isPackaged ? [&#x27;node_modules&#x27;, &#x27;@stencila&#x27;, &#x27;encoda&#x27;] : []))</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L19">src/codecs/pandoc/binary.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="iscompiled" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Compiled</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Compiled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;__filename.endsWith(&#x27;.js&#x27;)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L17">src/codecs/pandoc/binary.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/binary.ts#L18">src/codecs/pandoc/binary.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -154,7 +143,7 @@
 					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"2.7.3"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;2.7.3&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L14">src/codecs/pandoc/binary.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/binary.ts#L15">src/codecs/pandoc/binary.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -171,7 +160,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/5388170/src/codecs/pandoc/binary.ts#L48">src/codecs/pandoc/binary.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/20b9155/src/codecs/pandoc/binary.ts#L47">src/codecs/pandoc/binary.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,9 +199,6 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_codecs_pandoc_binary_.html#home" class="tsd-kind-icon">home</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_codecs_pandoc_binary_.html#iscompiled" class="tsd-kind-icon">is<wbr>Compiled</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_codecs_pandoc_binary_.html#version" class="tsd-kind-icon">version</a>
