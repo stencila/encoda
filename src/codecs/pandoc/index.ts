@@ -320,7 +320,8 @@ function decodeMetaValue(
       if (value.c.startsWith('!!number ')) {
         return parseFloat(value.c.slice(9))
       }
-      return value.c
+      const int = parseInt(value.c)
+      return isNaN(int) ? value.c : int
     case 'MetaList':
       return value.c.map(decodeMetaValue)
     case 'MetaMap':

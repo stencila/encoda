@@ -48,7 +48,7 @@ test('metadata', async () => {
     null: null,
     boolean: false,
     number: 3.14,
-    array: [1, 2, 3],
+    array: [1, 2, 3.14],
     object: { a: true, b: 'two' },
     inlines: {
       type: 'Paragraph',
@@ -69,15 +69,15 @@ test('metadata', async () => {
       t: 'MetaList',
       c: [
         {
-          c: '!!number 1',
+          c: '1',
           t: 'MetaString'
         },
         {
-          c: '!!number 2',
+          c: '2',
           t: 'MetaString'
         },
         {
-          c: '!!number 3',
+          c: '!!number 3.14',
           t: 'MetaString'
         }
       ]
