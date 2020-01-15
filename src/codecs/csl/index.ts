@@ -257,11 +257,13 @@ const decodeDate = (date: Csl.Date): string => {
 /**
  * Encode a Stencila `Date` as a `Csl.Date`.
  */
-const encodeDate = (date: stencila.Date | string): Csl.Date => {
-  const iso = stencila.isA('Date', date) ? date.value : date
-  const obj = new Date(iso + ' UTC')
+const encodeDate = (date: Date | stencila.Date | string): Csl.Date => {
+  if (!(date instanceof Date)) {
+    const iso = stencila.isA('Date', date) ? date.value : date
+    date = new Date(iso + ' UTC')
+  }
   return {
-    'date-parts': [[obj.getFullYear(), obj.getMonth(), obj.getDate()]]
+    'date-parts': [[date.getFullYear(), date.getMonth() + 1, date.getDate()]]
   }
 }
 
