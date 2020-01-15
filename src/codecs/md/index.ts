@@ -300,6 +300,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
     case 'ThematicBreak':
       return encodeThematicBreak()
 
+    case 'Cite':
+      return encodeCite(node as stencila.Cite)
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Emphasis':
@@ -826,6 +828,17 @@ function decodeLink(link: MDAST.Link): stencila.Link {
   if (meta) link_.meta = meta
   if (link.title) link_.title = link.title
   return link_
+}
+
+/**
+ * Encode a Stencila `Cite` node to a MDAST `Text` node
+ * with Pandoc style `@`-prefixed citations e.g. `@smith04`.
+ */
+function encodeCite(cite: stencila.Cite): MDAST.Text {
+  return {
+    type: 'text',
+    value: `@${cite.target}`
+  }
 }
 
 /**
