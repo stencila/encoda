@@ -1071,7 +1071,11 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
 
   let target = attr(elem, 'rid')
   if (target === null) {
-    log.error(`A <xref ref-type="bibr"> element is missing "rid" attribute: ${text(elem)}`)
+    log.error(
+      `A <xref ref-type="bibr"> element is missing "rid" attribute: ${text(
+        elem
+      )}`
+    )
     target = ''
   }
 
@@ -1080,7 +1084,7 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
       ? decodeElements(elements, state).filter(stencila.isInlineContent)
       : undefined
 
-      return [stencila.cite(target, { content })]
+  return [stencila.cite(target, { content })]
 }
 
 /**
