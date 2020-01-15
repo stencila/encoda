@@ -1335,14 +1335,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-1'
+            target: ref-1
             content:
               - '1'
           - |-
             ,
                                 
           - type: Cite
-            target: '#ref-2'
+            target: ref-2
             content:
               - '2'
       - |-
@@ -1357,7 +1357,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-3'
+            target: ref-3
             content:
               - '3'
       - >-
@@ -1369,7 +1369,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-4'
+            target: ref-4
             content:
               - '4'
       - |-
@@ -1378,7 +1378,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-5'
+            target: ref-5
             content:
               - '5'
       - |2-
@@ -1387,7 +1387,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-6'
+            target: ref-6
             content:
               - '6'
       - |2-
@@ -1396,7 +1396,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-7'
+            target: ref-7
             content:
               - '7'
       - |-
@@ -1405,7 +1405,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-8'
+            target: ref-8
             content:
               - '8'
       - |2-
@@ -1414,7 +1414,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-9'
+            target: ref-9
             content:
               - '9'
       - >-
@@ -1424,7 +1424,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-10'
+            target: ref-10
             content:
               - '10'
       - >-
@@ -1435,7 +1435,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-11'
+            target: ref-11
             content:
               - '11'
       - .
@@ -1448,7 +1448,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-12'
+            target: ref-12
             content:
               - '12'
       - >-
@@ -1459,7 +1459,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-13'
+            target: ref-13
             content:
               - '13'
       - |-
@@ -1468,7 +1468,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-14'
+            target: ref-14
             content:
               - '14'
       - |2-
@@ -1477,14 +1477,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-15'
+            target: ref-15
             content:
               - '15'
           - |-
             –
                                 
           - type: Cite
-            target: '#ref-17'
+            target: ref-17
             content:
               - '17'
       - >-
@@ -1495,14 +1495,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-18'
+            target: ref-18
             content:
               - '18'
           - |-
             ,
                                 
           - type: Cite
-            target: '#ref-19'
+            target: ref-19
             content:
               - '19'
       - >-
@@ -1515,14 +1515,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-20'
+            target: ref-20
             content:
               - '20'
           - |-
             ,
                                 
           - type: Cite
-            target: '#ref-21'
+            target: ref-21
             content:
               - '21'
       - .
@@ -1537,14 +1537,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-22'
+            target: ref-22
             content:
               - '22'
           - |-
             –
                                 
           - type: Cite
-            target: '#ref-24'
+            target: ref-24
             content:
               - '24'
       - |-
@@ -1553,7 +1553,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-25'
+            target: ref-25
             content:
               - '25'
       - |2-
@@ -1617,7 +1617,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-26'
+            target: ref-26
             content:
               - '26'
       - .
@@ -1632,7 +1632,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-27'
+            target: ref-27
             content:
               - '27'
       - .
@@ -1670,7 +1670,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-28'
+            target: ref-28
             content:
               - '28'
       - |2-
@@ -1679,7 +1679,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-29'
+            target: ref-29
             content:
               - '29'
       - |2-
@@ -1706,7 +1706,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-30'
+            target: ref-30
             content:
               - '30'
       - >-
@@ -1747,7 +1747,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-31'
+            target: ref-31
             content:
               - '31'
       - >-
@@ -1833,7 +1833,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-25'
+            target: ref-25
             content:
               - '25'
       - |2-
@@ -1842,14 +1842,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-17'
+            target: ref-17
             content:
               - '17'
           - |-
             ,
                                     
           - type: Cite
-            target: '#ref-32'
+            target: ref-32
             content:
               - '32'
       - >-
@@ -1859,7 +1859,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-17'
+            target: ref-17
             content:
               - '17'
       - .
@@ -1873,7 +1873,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-33'
+            target: ref-33
             content:
               - '33'
       - >-
@@ -1883,7 +1883,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-33'
+            target: ref-33
             content:
               - '33'
       - >-
@@ -1895,14 +1895,14 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-34'
+            target: ref-34
             content:
               - '34'
           - |-
             –
                                     
           - type: Cite
-            target: '#ref-36'
+            target: ref-36
             content:
               - '36'
       - |-
@@ -1911,7 +1911,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-25'
+            target: ref-25
             content:
               - '25'
       - |2-
@@ -1920,7 +1920,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-37'
+            target: ref-37
             content:
               - '37'
       - |-
@@ -1929,7 +1929,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-25'
+            target: ref-25
             content:
               - '25'
       - >-
@@ -1939,7 +1939,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-38'
+            target: ref-38
             content:
               - '38'
       - >-
@@ -1950,7 +1950,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-39'
+            target: ref-39
             content:
               - '39'
       - >-
@@ -1960,7 +1960,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-40'
+            target: ref-40
             content:
               - '40'
       - .
@@ -2046,7 +2046,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-41'
+            target: ref-41
             content:
               - '41'
       - .
@@ -2525,7 +2525,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-42'
+            target: ref-42
             content:
               - '42'
       - |-
@@ -2540,7 +2540,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-43'
+            target: ref-43
             content:
               - '43'
       - |2-
@@ -2561,7 +2561,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-44'
+            target: ref-44
             content:
               - '44'
       - .
@@ -2585,7 +2585,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-27'
+            target: ref-27
             content:
               - '27'
       - >-
@@ -2595,7 +2595,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-45'
+            target: ref-45
             content:
               - '45'
       - >-
@@ -2641,7 +2641,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-27'
+            target: ref-27
             content:
               - '27'
       - |-
@@ -2662,7 +2662,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-27'
+            target: ref-27
             content:
               - '27'
       - |-
@@ -2677,7 +2677,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-46'
+            target: ref-46
             content:
               - '46'
       - .
@@ -2692,7 +2692,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-47'
+            target: ref-47
             content:
               - '47'
       - .
@@ -2734,7 +2734,7 @@ content:
       - type: Superscript
         content:
           - type: Cite
-            target: '#ref-41'
+            target: ref-41
             content:
               - '41'
       - '. This project contains a zipped folder made up of the following files:'

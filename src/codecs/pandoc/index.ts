@@ -104,7 +104,8 @@ export class PandocCodec extends Codec
 
     const args = [
       `--from=json`,
-      `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`
+      `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`,
+      '--filter=pandoc-citeproc'
     ]
     if (standalone) args.push('--standalone')
     for (const option of flags) {

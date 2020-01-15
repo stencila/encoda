@@ -2048,26 +2048,26 @@ content:
         Severe falciparum malaria remains an important cause of premature death
         in malaria-endemic countries [
       - type: Cite
-        target: '#pmed.1002858.ref001'
+        target: pmed.1002858.ref001
         content:
           - '1'
       - ','
       - type: Cite
-        target: '#pmed.1002858.ref002'
+        target: pmed.1002858.ref002
         content:
           - '2'
       - >-
         ]. The onset of life-threatening complications can be rapid,
         particularly in children, leaving little or no time to reach hospital [
       - type: Cite
-        target: '#pmed.1002858.ref003'
+        target: pmed.1002858.ref003
         content:
           - '3'
       - >-
         ]. The majority of in-hospital deaths occur within the first 24 hours
         following admission [
       - type: Cite
-        target: '#pmed.1002858.ref004'
+        target: pmed.1002858.ref004
         content:
           - '4'
       - >-
@@ -2076,12 +2076,12 @@ content:
         30%, depending on the number and severity of complications present on
         admission [
       - type: Cite
-        target: '#pmed.1002858.ref005'
+        target: pmed.1002858.ref005
         content:
           - '5'
       - –
       - type: Cite
-        target: '#pmed.1002858.ref007'
+        target: pmed.1002858.ref007
         content:
           - '7'
       - '].'
@@ -2094,7 +2094,7 @@ content:
         likely to deteriorate and thus help identify those who would benefit
         most from escalation of care [
       - type: Cite
-        target: '#pmed.1002858.ref001'
+        target: pmed.1002858.ref001
         content:
           - '1'
       - >-
@@ -2107,12 +2107,12 @@ content:
         none of these have been proved effective, and several were shown to be
         harmful [
       - type: Cite
-        target: '#pmed.1002858.ref008'
+        target: pmed.1002858.ref008
         content:
           - '8'
       - –
       - type: Cite
-        target: '#pmed.1002858.ref011'
+        target: pmed.1002858.ref011
         content:
           - '11'
       - >-
@@ -2120,7 +2120,7 @@ content:
         allows for the identification of key confounders and possible selection
         bias [
       - type: Cite
-        target: '#pmed.1002858.ref012'
+        target: pmed.1002858.ref012
         content:
           - '12'
       - >-
@@ -2133,7 +2133,7 @@ content:
         of a causal contribution relies on multiple assumptions that are
         nonstatistical in nature [
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - >-
@@ -2143,7 +2143,7 @@ content:
         attempts to estimate contrasts of potential outcomes between groups who
         did receive and did not receive an exposure of interest [
       - type: Cite
-        target: '#pmed.1002858.ref014'
+        target: pmed.1002858.ref014
         content:
           - '14'
       - >-
@@ -2152,12 +2152,12 @@ content:
         epidemiology, there is debate as to which experimental conditions allow
         for the valid estimation of causal effects [
       - type: Cite
-        target: '#pmed.1002858.ref015'
+        target: pmed.1002858.ref015
         content:
           - '15'
       - ','
       - type: Cite
-        target: '#pmed.1002858.ref016'
+        target: pmed.1002858.ref016
         content:
           - '16'
       - >-
@@ -2165,14 +2165,14 @@ content:
         derived in the presence of well-defined, humanly possible interventions
         [
       - type: Cite
-        target: '#pmed.1002858.ref017'
+        target: pmed.1002858.ref017
         content:
           - '17'
       - >-
         ]. This implies that the main goal of causal inference is to mimic
         idealised—even if practically unfeasible—randomised experiments [
       - type: Cite
-        target: '#pmed.1002858.ref018'
+        target: pmed.1002858.ref018
         content:
           - '18'
       - >-
@@ -2180,7 +2180,7 @@ content:
         states, for which multiple different interventions exist with different
         average outcomes, or immutable states such as sex or race [
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - '].'
@@ -2194,7 +2194,7 @@ content:
         variables in severe falciparum malaria. Our approach is based on the
         structural model causal inference framework [
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - >-
@@ -2210,17 +2210,17 @@ content:
         extensive sequestration of parasitised erythrocytes in the
         microvasculature leading to vital organ dysfunction [
       - type: Cite
-        target: '#pmed.1002858.ref001'
+        target: pmed.1002858.ref001
         content:
           - '1'
       - ','
       - type: Cite
-        target: '#pmed.1002858.ref008'
+        target: pmed.1002858.ref008
         content:
           - '8'
       - ','
       - type: Cite
-        target: '#pmed.1002858.ref019'
+        target: pmed.1002858.ref019
         content:
           - '19'
       - >-
@@ -2243,7 +2243,7 @@ content:
     content:
       - 'We used a structural model causal inference approach ['
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - >-
@@ -2343,7 +2343,7 @@ content:
         children in endemic areas diagnosed as severe malaria are likely to
         represent primary septicaemia with incidental malaria [
       - type: Cite
-        target: '#pmed.1002858.ref008'
+        target: pmed.1002858.ref008
         content:
           - '8'
       - >-
@@ -2351,7 +2351,7 @@ content:
         malarial infection (predisposition) results in only minor confounding
         bias. Using d-separation rules (for a recent review, see [
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - ']) assuming the DAG in '
@@ -2469,7 +2469,7 @@ content:
           - Fig 3
       - ' is that the arrows from the exposure variables (shown in green) to the outcome variable (‘Death’: red) do not represent well-defined causal questions ['
       - type: Cite
-        target: '#pmed.1002858.ref018'
+        target: pmed.1002858.ref018
         content:
           - '18'
       - >-
@@ -2477,7 +2477,7 @@ content:
         outcomes framework, which has been labelled the ‘restricted potential
         outcomes approach’ [
       - type: Cite
-        target: '#pmed.1002858.ref015'
+        target: pmed.1002858.ref015
         content:
           - '15'
       - '].'
@@ -2526,12 +2526,12 @@ content:
                   - 'n'
               - ' = 683) ['
               - type: Cite
-                target: '#pmed.1002858.ref020'
+                target: pmed.1002858.ref020
                 content:
                   - '20'
               - ','
               - type: Cite
-                target: '#pmed.1002858.ref021'
+                target: pmed.1002858.ref021
                 content:
                   - '21'
               - '].'
@@ -2549,12 +2549,12 @@ content:
                   - 'n'
               - ' = 424) ['
               - type: Cite
-                target: '#pmed.1002858.ref022'
+                target: pmed.1002858.ref022
                 content:
                   - '22'
               - –
               - type: Cite
-                target: '#pmed.1002858.ref024'
+                target: pmed.1002858.ref024
                 content:
                   - '24'
               - '].'
@@ -2574,7 +2574,7 @@ content:
                   - 'n'
               - ' = 48) ['
               - type: Cite
-                target: '#pmed.1002858.ref025'
+                target: pmed.1002858.ref025
                 content:
                   - '25'
               - '].'
@@ -2593,7 +2593,7 @@ content:
                   - 'n'
               - ' = 370) ['
               - type: Cite
-                target: '#pmed.1002858.ref026'
+                target: pmed.1002858.ref026
                 content:
                   - '26'
               - '].'
@@ -2612,7 +2612,7 @@ content:
                   - 'n'
               - ' = 560) ['
               - type: Cite
-                target: '#pmed.1002858.ref027'
+                target: pmed.1002858.ref027
                 content:
                   - '27'
               - '].'
@@ -2631,7 +2631,7 @@ content:
                   - 'n'
               - ' = 1,461) ['
               - type: Cite
-                target: '#pmed.1002858.ref005'
+                target: pmed.1002858.ref005
                 content:
                   - '5'
               - '].'
@@ -2651,7 +2651,7 @@ content:
                   - 'n'
               - ' = 5,494) ['
               - type: Cite
-                target: '#pmed.1002858.ref028'
+                target: pmed.1002858.ref028
                 content:
                   - '28'
               - '].'
@@ -2731,35 +2731,35 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref022'
+                target: pmed.1002858.ref022
                 content:
                   - '22'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref021'
+                target: pmed.1002858.ref021
                 content:
                   - '21'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref024'
+                target: pmed.1002858.ref024
                 content:
                   - '24'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref020'
+                target: pmed.1002858.ref020
                 content:
                   - '20'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref023'
+                target: pmed.1002858.ref023
                 content:
                   - '23'
               - ']'
@@ -2791,7 +2791,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref026'
+                target: pmed.1002858.ref026
                 content:
                   - '26'
               - ']'
@@ -2823,7 +2823,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref027'
+                target: pmed.1002858.ref027
                 content:
                   - '27'
               - ']'
@@ -2855,7 +2855,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref025'
+                target: pmed.1002858.ref025
                 content:
                   - '25'
               - ']'
@@ -2893,7 +2893,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref005'
+                target: pmed.1002858.ref005
                 content:
                   - '5'
               - ']'
@@ -2941,7 +2941,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: '#pmed.1002858.ref028'
+                target: pmed.1002858.ref028
                 content:
                   - '28'
               - ']'
@@ -3246,7 +3246,7 @@ content:
           linkType: simple
       - '. Parameter estimation was done using the R package ‘lme4’ ['
       - type: Cite
-        target: '#pmed.1002858.ref029'
+        target: pmed.1002858.ref029
         content:
           - '29'
       - '].'
@@ -3267,7 +3267,7 @@ content:
           linkType: simple
       - ' were then combined using Rubin’s rules in order to estimate overall fixed and random effects (functions ‘modelFixedEff’, ‘modelRandEffStats’ in ‘merTools’ ['
       - type: Cite
-        target: '#pmed.1002858.ref030'
+        target: pmed.1002858.ref030
         content:
           - '30'
       - ']) and obtain a global estimate '
@@ -3362,7 +3362,7 @@ content:
         The inverse probability weights were computed using the R package ‘ipw’
         [
       - type: Cite
-        target: '#pmed.1002858.ref031'
+        target: pmed.1002858.ref031
         content:
           - '31'
       - >-
@@ -3388,7 +3388,7 @@ content:
         a robust sandwich estimator using the function ‘svyglm’ from the R
         package ‘survey’ [
       - type: Cite
-        target: '#pmed.1002858.ref032'
+        target: pmed.1002858.ref032
         content:
           - '32'
       - >-
@@ -3396,7 +3396,7 @@ content:
         standardised differences between the transfused and not-transfused
         groups [
       - type: Cite
-        target: '#pmed.1002858.ref033'
+        target: pmed.1002858.ref033
         content:
           - '33'
       - '].'
@@ -3509,7 +3509,7 @@ content:
         univariate predictors of a fatal outcome with monotonic relationships to
         mortality, as described previously [
       - type: Cite
-        target: '#pmed.1002858.ref007'
+        target: pmed.1002858.ref007
         content:
           - '7'
       - >-
@@ -3595,19 +3595,19 @@ content:
         genetic variant for lower haemoglobin concentrations in acute infections
         [
       - type: Cite
-        target: '#pmed.1002858.ref034'
+        target: pmed.1002858.ref034
         content:
           - '34'
       - –
       - type: Cite
-        target: '#pmed.1002858.ref036'
+        target: pmed.1002858.ref036
         content:
           - '36'
       - >-
         ]) is also not possible, as G6PD deficiency may influence the outcome
         (survival) via other pathways [
       - type: Cite
-        target: '#pmed.1002858.ref037'
+        target: pmed.1002858.ref037
         content:
           - '37'
       - >-
@@ -3622,7 +3622,7 @@ content:
         . This necessitates specification of all bivariate causal effects
         between variables of interest via expert knowledge [
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - >-
@@ -3641,7 +3641,7 @@ content:
         the microvasculature is the key pathological process leading to death
         from severe falciparum malaria [
       - type: Cite
-        target: '#pmed.1002858.ref019'
+        target: pmed.1002858.ref019
         content:
           - '19'
       - >-
@@ -3656,12 +3656,12 @@ content:
         parasitaemia, and both are probably underreported in sites with limited
         blood-culture facilities [
       - type: Cite
-        target: '#pmed.1002858.ref038'
+        target: pmed.1002858.ref038
         content:
           - '38'
       - ','
       - type: Cite
-        target: '#pmed.1002858.ref039'
+        target: pmed.1002858.ref039
         content:
           - '39'
       - >-
@@ -3669,7 +3669,7 @@ content:
         described to be common, but many of these cases had low-parasite-biomass
         infections [
       - type: Cite
-        target: '#pmed.1002858.ref008'
+        target: pmed.1002858.ref008
         content:
           - '8'
       - >-
@@ -3863,7 +3863,7 @@ content:
         adjustment for transfusion status results in selection (‘collider’) bias
         [
       - type: Cite
-        target: '#pmed.1002858.ref040'
+        target: pmed.1002858.ref040
         content:
           - '40'
       - >-
@@ -3885,7 +3885,7 @@ content:
         conditional on study site and baseline covariates. The value of 4 hours
         is based on previous detailed reports of time to transfusion [
       - type: Cite
-        target: '#pmed.1002858.ref041'
+        target: pmed.1002858.ref041
         content:
           - '41'
       - '].'
@@ -3930,7 +3930,7 @@ content:
             complex effects both protecting against death and potentially
             causing prolonged illness and more red cell loss [
           - type: Cite
-            target: '#pmed.1002858.ref001'
+            target: pmed.1002858.ref001
             content:
               - '1'
           - >-
@@ -3967,7 +3967,7 @@ content:
         the data from the AQUAMAT study. The causal effect of transfusion was
         estimated using IPW with propensity scores (for a recent review, see [
       - type: Cite
-        target: '#pmed.1002858.ref033'
+        target: pmed.1002858.ref033
         content:
           - '33'
       - >-
@@ -3995,7 +3995,7 @@ content:
           - Fig 5
       - ' shows two possible confounding effects. First, anaemia at presentation may be a proxy marker for a longer time course of illness ['
       - type: Cite
-        target: '#pmed.1002858.ref042'
+        target: pmed.1002858.ref042
         content:
           - '42'
       - >-
@@ -4006,14 +4006,14 @@ content:
         haemoglobinopathies, which both cause anaemia directly and protect
         against death in patients with severe malaria [
       - type: Cite
-        target: '#pmed.1002858.ref037'
+        target: pmed.1002858.ref037
         content:
           - '37'
       - >-
         ]). The e-value of the observed adjusted odds ratio of anaemia on
         mortality is 1.53 (lower bound: 1.25) [
       - type: Cite
-        target: '#pmed.1002858.ref043'
+        target: pmed.1002858.ref043
         content:
           - '43'
       - >-
@@ -4044,7 +4044,7 @@ content:
         transparency and facilitates investigation. Using a structural causal
         models framework [
       - type: Cite
-        target: '#pmed.1002858.ref013'
+        target: pmed.1002858.ref013
         content:
           - '13'
       - >-
@@ -4068,7 +4068,7 @@ content:
         increase in cardiac output and a moderate decrease in peripheral
         vascular resistance so that severe hypotension is rare [
       - type: Cite
-        target: '#pmed.1002858.ref044'
+        target: pmed.1002858.ref044
         content:
           - '44'
       - >-
@@ -4078,24 +4078,24 @@ content:
         clumping of unparasitised and parasitised erythrocytes (rosetting and
         autoagglutination, respectively) [
       - type: Cite
-        target: '#pmed.1002858.ref045'
+        target: pmed.1002858.ref045
         content:
           - '45'
       - ','
       - type: Cite
-        target: '#pmed.1002858.ref046'
+        target: pmed.1002858.ref046
         content:
           - '46'
       - >-
         ]. Furthermore, there is evidence that compensatory endothelial
         vasodilation is disturbed, related to nitric oxide depletion [
       - type: Cite
-        target: '#pmed.1002858.ref047'
+        target: pmed.1002858.ref047
         content:
           - '47'
       - ']. Anaemia reduces cytoadherence ['
       - type: Cite
-        target: '#pmed.1002858.ref048'
+        target: pmed.1002858.ref048
         content:
           - '48'
       - >-
@@ -4104,7 +4104,7 @@ content:
         reduces blood viscosity, in particular under the low-shear conditions at
         the venular side of the circulation, where sequestration begins [
       - type: Cite
-        target: '#pmed.1002858.ref049'
+        target: pmed.1002858.ref049
         content:
           - '49'
       - >-
@@ -4115,7 +4115,7 @@ content:
         the observed unadjusted parabolic relationship between mortality and
         haematocrit (reference [
       - type: Cite
-        target: '#pmed.1002858.ref042'
+        target: pmed.1002858.ref042
         content:
           - '42'
       - '] and '
@@ -4160,7 +4160,7 @@ content:
         hypothesis of a protective effect of anaemia in severe malaria could be
         tested on recent large pooled datasets that have collected these data [
       - type: Cite
-        target: '#pmed.1002858.ref050'
+        target: pmed.1002858.ref050
         content:
           - '50'
       - >-
@@ -4172,7 +4172,7 @@ content:
         ongoing trial randomising both transfusion and transfusion doses will
         provide high-quality data addressing this exact question [
       - type: Cite
-        target: '#pmed.1002858.ref051'
+        target: pmed.1002858.ref051
         content:
           - '51'
       - '].'
@@ -4197,7 +4197,7 @@ content:
         (particularly in the gut). This is mainly an issue in the
         higher-transmission settings in sub-Saharan Africa [
       - type: Cite
-        target: '#pmed.1002858.ref052'
+        target: pmed.1002858.ref052
         content:
           - '52'
       - >-
@@ -4239,7 +4239,7 @@ content:
         hopefully avoid any detrimental effects of overtransfusion in patients
         with severe falciparum malaria [
       - type: Cite
-        target: '#pmed.1002858.ref051'
+        target: pmed.1002858.ref051
         content:
           - '51'
       - >-

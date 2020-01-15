@@ -1794,29 +1794,29 @@ content:
         locus are identified using assembly software, which can use these
         overlaps to reconstruct the genome sequence [
       - type: Cite
-        target: '#pcbi.1007273.ref001'
+        target: pcbi.1007273.ref001
         content:
           - '1'
       - ', '
       - type: Cite
-        target: '#pcbi.1007273.ref002'
+        target: pcbi.1007273.ref002
         content:
           - '2'
       - ']. Most approaches are based on either a de Bruijn ['
       - type: Cite
-        target: '#pcbi.1007273.ref003'
+        target: pcbi.1007273.ref003
         content:
           - '3'
       - '] or a string graph ['
       - type: Cite
-        target: '#pcbi.1007273.ref004'
+        target: pcbi.1007273.ref004
         content:
           - '4'
       - >-
         ] formulation. Repetitive sequences exceeding the sequencing read length
         [
       - type: Cite
-        target: '#pcbi.1007273.ref005'
+        target: pcbi.1007273.ref005
         content:
           - '5'
       - >-
@@ -1826,37 +1826,37 @@ content:
         unitigs. Scaffolding utilizes long-range linking information such as BAC
         or fosmid clones [
       - type: Cite
-        target: '#pcbi.1007273.ref006'
+        target: pcbi.1007273.ref006
         content:
           - '6'
       - ', '
       - type: Cite
-        target: '#pcbi.1007273.ref007'
+        target: pcbi.1007273.ref007
         content:
           - '7'
       - '], optical maps ['
       - type: Cite
-        target: '#pcbi.1007273.ref008'
+        target: pcbi.1007273.ref008
         content:
           - '8'
       - –
       - type: Cite
-        target: '#pcbi.1007273.ref010'
+        target: pcbi.1007273.ref010
         content:
           - '10'
       - '], linked reads ['
       - type: Cite
-        target: '#pcbi.1007273.ref011'
+        target: pcbi.1007273.ref011
         content:
           - '11'
       - –
       - type: Cite
-        target: '#pcbi.1007273.ref013'
+        target: pcbi.1007273.ref013
         content:
           - '13'
       - '], or chromosomal conformation capture ['
       - type: Cite
-        target: '#pcbi.1007273.ref014'
+        target: pcbi.1007273.ref014
         content:
           - '14'
       - >-
@@ -1870,7 +1870,7 @@ content:
         3D structure of the genome inside a cell nucleus by measuring the
         contact frequency between all pairs of loci in the genome [
       - type: Cite
-        target: '#pcbi.1007273.ref015'
+        target: pcbi.1007273.ref015
         content:
           - '15'
       - >-
@@ -1881,12 +1881,12 @@ content:
         Shortly after its introduction, Hi-C was used to generate
         chromosome-scale scaffolds [
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
         content:
           - '16'
       - –
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
         content:
           - '20'
       - '].'
@@ -1894,7 +1894,7 @@ content:
     content:
       - 'LACHESIS ['
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
         content:
           - '16'
       - >-
@@ -1904,7 +1904,7 @@ content:
         Thus, the scaffolds inherit any assembly errors present in the contigs.
         The original SALSA1 [
       - type: Cite
-        target: '#pcbi.1007273.ref021'
+        target: pcbi.1007273.ref021
         content:
           - '21'
       - >-
@@ -1912,7 +1912,7 @@ content:
         coverage as evidence of error. It then orients and orders the corrected
         contigs to generate scaffolds. Recently, the 3D-DNA [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
         content:
           - '20'
       - '] method was introduced and demonstrated on a draft assembly of the '
@@ -1930,7 +1930,7 @@ content:
         determined by maximizing the interaction frequency between contig ends
         across all possible orientations [
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
         content:
           - '16'
       - >-
@@ -1942,7 +1942,7 @@ content:
         factors, such as topologically associated domains (TADs), also confound
         this analysis [
       - type: Cite
-        target: '#pcbi.1007273.ref022'
+        target: pcbi.1007273.ref022
         content:
           - '22'
       - '].'
@@ -1950,7 +1950,7 @@ content:
     content:
       - 'SALSA1 ['
       - type: Cite
-        target: '#pcbi.1007273.ref021'
+        target: pcbi.1007273.ref021
         content:
           - '21'
       - >-
@@ -1959,7 +1959,7 @@ content:
         scaffolding them with Hi-C data. We showed that SALSA1 worked better
         than the most widely used method, LACHESIS [
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
         content:
           - '16'
       - >-
@@ -1997,19 +1997,19 @@ content:
           - Fig 1(A)
       - ' shows the overview of the SALSA2 pipeline. SALSA2 begins with a draft assembly generated from long reads such as Pacific Biosciences ['
       - type: Cite
-        target: '#pcbi.1007273.ref023'
+        target: pcbi.1007273.ref023
         content:
           - '23'
       - '] or Oxford Nanopore ['
       - type: Cite
-        target: '#pcbi.1007273.ref024'
+        target: pcbi.1007273.ref024
         content:
           - '24'
       - >-
         ]. SALSA2 requires the contig sequences and, optionally, a GFA-formatted
         assembly graph [
       - type: Cite
-        target: '#pcbi.1007273.ref025'
+        target: pcbi.1007273.ref025
         content:
           - '25'
       - >-
@@ -2094,7 +2094,7 @@ content:
     content:
       - 'Hi-C paired end reads are aligned to contigs using the BWA aligner ['
       - type: Cite
-        target: '#pcbi.1007273.ref026'
+        target: pcbi.1007273.ref026
         content:
           - '26'
       - >-
@@ -2106,7 +2106,7 @@ content:
         pairing information is restored. Any PCR duplicates in the paired-end
         alignments are removed using Picard tools [
       - type: Cite
-        target: '#pcbi.1007273.ref027'
+        target: pcbi.1007273.ref027
         content:
           - '27'
       - >-
@@ -2191,7 +2191,7 @@ content:
     content:
       - 'For our experiments, we use the unitig assembly graph produced by Canu ['
       - type: Cite
-        target: '#pcbi.1007273.ref028'
+        target: pcbi.1007273.ref028
         content:
           - '28'
       - '] ('
@@ -2205,29 +2205,29 @@ content:
         that represent various traversals of this graph. SALSA2 requires only a
         GFA format [
       - type: Cite
-        target: '#pcbi.1007273.ref025'
+        target: pcbi.1007273.ref025
         content:
           - '25'
       - >-
         ] representation of the assembly. Since most long-read genome assemblers
         such as FALCON [
       - type: Cite
-        target: '#pcbi.1007273.ref029'
+        target: pcbi.1007273.ref029
         content:
           - '29'
       - '], miniasm ['
       - type: Cite
-        target: '#pcbi.1007273.ref025'
+        target: pcbi.1007273.ref025
         content:
           - '25'
       - '], Canu ['
       - type: Cite
-        target: '#pcbi.1007273.ref028'
+        target: pcbi.1007273.ref028
         content:
           - '28'
       - '], and Flye ['
       - type: Cite
-        target: '#pcbi.1007273.ref030'
+        target: pcbi.1007273.ref030
         content:
           - '30'
       - >-
@@ -2270,7 +2270,7 @@ content:
         ). The idea of using contig ends as nodes is similar to that used by the
         string graph formulation [
       - type: Cite
-        target: '#pcbi.1007273.ref004'
+        target: pcbi.1007273.ref004
         content:
           - '4'
       - '].'
@@ -2352,7 +2352,7 @@ content:
         this, we defined a modified edge ratio, similar to the one described in
         [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
         content:
           - '20'
       - >-
@@ -2686,7 +2686,7 @@ content:
           - '2'
       - ') time ['
       - type: Cite
-        target: '#pcbi.1007273.ref031'
+        target: pcbi.1007273.ref031
         content:
           - '31'
       - >-
@@ -2713,7 +2713,7 @@ content:
         a greedy maximal matching algorithm which is guaranteed to find a
         matching within 1/2-approximation of the optimum [
       - type: Cite
-        target: '#pcbi.1007273.ref032'
+        target: pcbi.1007273.ref032
         content:
           - '32'
       - ']. The greedy matching algorithm takes '
@@ -3180,7 +3180,7 @@ content:
         We created artificial assemblies, each containing contigs of same size,
         by splitting the GRCh38 [
       - type: Cite
-        target: '#pcbi.1007273.ref033'
+        target: pcbi.1007273.ref033
         content:
           - '33'
       - >-
@@ -3195,12 +3195,12 @@ content:
         For real data, we use the recently published NA12878 human dataset
         sequenced with Oxford Nanopore [
       - type: Cite
-        target: '#pcbi.1007273.ref034'
+        target: pcbi.1007273.ref034
         content:
           - '34'
       - '] and assembled with Canu ['
       - type: Cite
-        target: '#pcbi.1007273.ref028'
+        target: pcbi.1007273.ref028
         content:
           - '28'
       - >-
@@ -3213,7 +3213,7 @@ content:
           - Table 1
       - ' shows the statistics for this library. We compare results with the original SALSA(commit—833fb11), SALSA2 with and without the assembly graph input(commit—68a65b4), and 3D-DNA (commit—3f18163). We did not compare our results with LACHESIS because it is no longer supported and is outperformed by 3D-DNA ['
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
         content:
           - '20'
       - >-
@@ -3221,7 +3221,7 @@ content:
         incorporation, as listed. For 3D-DNA, alignments were generated using
         the Juicer alignment pipeline [
       - type: Cite
-        target: '#pcbi.1007273.ref035'
+        target: pcbi.1007273.ref035
         content:
           - '35'
       - >-
@@ -3335,7 +3335,7 @@ content:
         true and false links from the Hi-C graph. We mapped the assembly to the
         reference with MUMmer3.23 (nucmer -c 500 -l 20) [
       - type: Cite
-        target: '#pcbi.1007273.ref036'
+        target: pcbi.1007273.ref036
         content:
           - '36'
       - >-
@@ -3346,7 +3346,7 @@ content:
         sequences in GRCh38 that matched known structural variants from a
         previous assembly of NA12878 [
       - type: Cite
-        target: '#pcbi.1007273.ref037'
+        target: pcbi.1007273.ref037
         content:
           - '37'
       - '] to avoid counting true variations as scaffolding errors.'
@@ -3440,7 +3440,7 @@ content:
         errors and computed corrected scaffold lengths and NGA50 (analogous to
         the corrected NG50 metric defined by Salzberg et al. [
       - type: Cite
-        target: '#pcbi.1007273.ref038'
+        target: pcbi.1007273.ref038
         content:
           - '38'
       - >-
@@ -4078,7 +4078,7 @@ content:
         We also evaluated the assemblies using Feature Response Curves (FRC)
         based on scaffolding errors [
       - type: Cite
-        target: '#pcbi.1007273.ref040'
+        target: pcbi.1007273.ref040
         content:
           - '40'
       - >-
@@ -4148,7 +4148,7 @@ content:
         content:
           - 'Chromosome ideogram generated using the coloredChromosomes ['
           - type: Cite
-            target: '#pcbi.1007273.ref039'
+            target: pcbi.1007273.ref039
             content:
               - '39'
           - '] package.'
@@ -4232,14 +4232,14 @@ content:
         We next tested scaffolding using two libraries with different Hi-C
         contact patterns. The first, from [
       - type: Cite
-        target: '#pcbi.1007273.ref042'
+        target: pcbi.1007273.ref042
         content:
           - '42'
       - >-
         ], is sequenced during mitosis. This removes the topological domains and
         generates fewer off-diagonal interactions. The other library was from [
       - type: Cite
-        target: '#pcbi.1007273.ref043'
+        target: pcbi.1007273.ref043
         content:
           - '43'
       - '], are '
@@ -4273,7 +4273,7 @@ content:
             Contact map of Hi-C interactions on chromosome 3 generated by the
             Juicebox software [
           - type: Cite
-            target: '#pcbi.1007273.ref041'
+            target: pcbi.1007273.ref041
             content:
               - '41'
           - '].'
@@ -4326,7 +4326,7 @@ content:
         and longest chunk when 3D-DNA was run with assembly correction. 3D-DNA
         uses signatures of chromosome ends [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
         content:
           - '20'
       - >-
@@ -4338,7 +4338,7 @@ content:
         for SALSA2 is 5.8 Mbp, comparable to the equivalent coverage assembly
         (50% L1+L2) in [
       - type: Cite
-        target: '#pcbi.1007273.ref043'
+        target: pcbi.1007273.ref043
         content:
           - '43'
       - >-
@@ -4364,14 +4364,14 @@ content:
           - Anopheles funestus
       - ' genome assembly which was scaffolded using an independent method (Phase Genomics or LACHESIS ['
       - type: Cite
-        target: '#pcbi.1007273.ref016'
+        target: pcbi.1007273.ref016
         content:
           - '16'
       - >-
         ]) and manually curated using Illumina mate-pair support as well as FISH
         information [
       - type: Cite
-        target: '#pcbi.1007273.ref044'
+        target: pcbi.1007273.ref044
         content:
           - '44'
       - >-
@@ -4381,7 +4381,7 @@ content:
         genome size. We scaffolded both the full assembly and the assembly after
         running purge haplotigs [
       - type: Cite
-        target: '#pcbi.1007273.ref045'
+        target: pcbi.1007273.ref045
         content:
           - '45'
       - >-
@@ -4407,7 +4407,7 @@ content:
         challenge and assemblies must either be de-duplicated beforehand or
         improved algorithms for scaffolding, such as [
       - type: Cite
-        target: '#pcbi.1007273.ref046'
+        target: pcbi.1007273.ref046
         content:
           - '46'
       - '] are needed.'
@@ -4446,12 +4446,12 @@ content:
         does not remove duplication present in an input assembly and thus
         requires pre-processing by another tool, such as Purge Haplotigs [
       - type: Cite
-        target: '#pcbi.1007273.ref045'
+        target: pcbi.1007273.ref045
         content:
           - '45'
       - '] or haplomerger ['
       - type: Cite
-        target: '#pcbi.1007273.ref047'
+        target: pcbi.1007273.ref047
         content:
           - '47'
       - >-
@@ -4479,7 +4479,7 @@ content:
         desired number of scaffolds to output. As demonstrated by the Chicago,
         mitotic, and replicate [
       - type: Cite
-        target: '#pcbi.1007273.ref048'
+        target: pcbi.1007273.ref048
         content:
           - '48'
       - >-
@@ -4499,12 +4499,12 @@ content:
         rest of the project. Most of the assembly projects using Hi-C data have
         had a significant curation effort to date [
       - type: Cite
-        target: '#pcbi.1007273.ref019'
+        target: pcbi.1007273.ref019
         content:
           - '19'
       - ', '
       - type: Cite
-        target: '#pcbi.1007273.ref049'
+        target: pcbi.1007273.ref049
         content:
           - '49'
       - >-
@@ -4517,7 +4517,7 @@ content:
         described. Interestingly, it no longer generates single-chromosome
         scaffolds in our experiments, a major claim in [
       - type: Cite
-        target: '#pcbi.1007273.ref020'
+        target: pcbi.1007273.ref020
         content:
           - '20'
       - >-
@@ -4530,7 +4530,7 @@ content:
     content:
       - 'As the Genome10K consortium ['
       - type: Cite
-        target: '#pcbi.1007273.ref050'
+        target: pcbi.1007273.ref050
         content:
           - '50'
       - >-

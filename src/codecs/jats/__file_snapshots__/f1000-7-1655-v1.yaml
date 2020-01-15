@@ -240,7 +240,7 @@ content:
         credit for peer reviewers (
                         
       - type: Cite
-        target: '#ref-2'
+        target: ref-2
         content:
           - |-
             Polka 
@@ -271,7 +271,7 @@ content:
         notably the many different flavours of 'open peer review' (
                         
       - type: Cite
-        target: '#ref-3'
+        target: ref-3
         content:
           - 'Ross-Hellauer, 2017'
       - >-
@@ -604,7 +604,7 @@ content:
          (
                         
       - type: Cite
-        target: '#ref-1'
+        target: ref-1
         content:
           - '2008'
       - ' April), included the following types of article instances:'
