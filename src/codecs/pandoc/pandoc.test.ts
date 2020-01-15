@@ -1,14 +1,14 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
-import { dump, load } from '../../util/vfile'
 import * as vfile from '../../util/vfile'
+import { dump, load } from '../../util/vfile'
+import { fixture, snapshot } from '../../__tests__/helpers'
 import { RPNGCodec } from '../rpng'
 import { defaultEncodeOptions } from '../types'
+import { YamlCodec } from '../yaml'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec } from './'
 import * as Pandoc from './types'
-import { YamlCodec } from '../yaml';
-import { fixture, snapshot } from '../../__tests__/helpers';
 
 const { decode, encode } = new PandocCodec()
 const rpng = new RPNGCodec()
@@ -17,7 +17,8 @@ const rpng = new RPNGCodec()
 jest.setTimeout(60 * 1000)
 
 const pdoc2node = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
-const node2pdoc = async (node: any) => JSON.parse(await dump(await encode(node)))
+const node2pdoc = async (node: any) =>
+  JSON.parse(await dump(await encode(node)))
 const yaml = new YamlCodec()
 
 const pjson2yaml = async (pjson: string) =>
@@ -28,7 +29,9 @@ test('decode', async () => {
   expect(got).toEqual(kitchenSink.node)
 
   expect(await pdoc2node(collapseSpaces.pdoc)).toEqual(collapseSpaces.node)
-  expect(await pdoc2node(imageInlinesToString.pdoc)).toEqual(imageInlinesToString.node)
+  expect(await pdoc2node(imageInlinesToString.pdoc)).toEqual(
+    imageInlinesToString.node
+  )
 
   expect(await pjson2yaml('cite.pandoc.json')).toMatchFile(
     snapshot('cite.yaml')
@@ -36,7 +39,6 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-
   let got = await node2pdoc(kitchenSink.node)
   expect(got).toEqual(kitchenSink.pdoc)
 })

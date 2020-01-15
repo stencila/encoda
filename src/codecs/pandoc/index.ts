@@ -802,7 +802,7 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
     case 'Cite':
       return encodeCite(node as stencila.Cite)
     case 'CiteGroup':
-        return encodeCiteGroup(node as stencila.CiteGroup)
+      return encodeCiteGroup(node as stencila.CiteGroup)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
   }
@@ -1085,12 +1085,12 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
   const inlines = cite.c[1]
 
   const cites = citations.map(citation => {
-    return stencila.cite(
-      citation.citationId,
-      {
-        citationMode: citation.citationMode.t === 'SuppressAuthor' ? 'suppressAuthor' : 'normal'
-      }
-    )
+    return stencila.cite(citation.citationId, {
+      citationMode:
+        citation.citationMode.t === 'SuppressAuthor'
+          ? 'suppressAuthor'
+          : 'normal'
+    })
   })
   if (cites.length > 0) cites[0].content = decodeInlines(inlines)
   return cites.length === 1 ? cites[0] : stencila.citeGroup(cites)
@@ -1133,11 +1133,15 @@ function encodeCite(cite: stencila.Cite): Pandoc.Cite {
 function encodeCiteGroup(citeGroup: stencila.CiteGroup): Pandoc.Cite {
   const { items = [] } = citeGroup
   const citations = items.map(encodeCitation)
-  const inlines = items.map(item => item.content)
-                       .reduce(
-                         (prev: stencila.InlineContent[], curr) => [...prev, ...(curr !== undefined ? curr : [])],
-                         []
-                        )
+  const inlines = items
+    .map(item => item.content)
+    .reduce(
+      (prev: stencila.InlineContent[], curr) => [
+        ...prev,
+        ...(curr !== undefined ? curr : [])
+      ],
+      []
+    )
   return {
     t: 'Cite',
     c: [citations, encodeInlines(inlines)]
