@@ -5,12 +5,14 @@
 import stencila from '@stencila/schema'
 import { getTheme } from '@stencila/thema'
 import path from 'path'
+import { ensureArticle } from '../../util/content/ensureArticle'
 import * as vfile from '../../util/vfile'
-import * as P from '../pandoc'
+import { stylesDir } from '../csl'
+import * as Pandoc from '../pandoc'
 import { dataDir } from '../pandoc/binary'
 import { Codec, GlobalEncodeOptions } from '../types'
 
-const pandoc = new P.PandocCodec()
+const pandoc = new Pandoc.PandocCodec()
 
 interface EncodeOptions {
   templatePath?: string
@@ -28,7 +30,7 @@ export class DocxCodec extends Codec<EncodeOptions>
     return pandoc.decode(file, {
       ensureFile: true,
       flags: [`--extract-media=${file.path}.media`],
-      from: P.InputFormat.docx
+      from: Pandoc.InputFormat.docx
     })
   }
 
@@ -39,21 +41,41 @@ export class DocxCodec extends Codec<EncodeOptions>
     'stencila-template.docx'
   )
 
+  /**
+   * Encode a Stencila `Node` to a Microsoft Word `docx` format.
+   *
+   * If the node is not an `Article`, it will be wrapped into one.
+   */
   public readonly encode = async (
     node: stencila.Node,
     { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = this
       .defaultEncodeOptions
-  ): Promise<vfile.VFile> =>
-    pandoc.encode(node, {
+  ): Promise<vfile.VFile> => {
+    const article = ensureArticle(node)
+    const { references, ...rest } = article
+
+    const referenceDoc =
+      codecOptions.templatePath || DocxCodec.defaultTemplatePath
+
+    let bibliographyFlags: string[] = []
+    if (references !== undefined) {
+      // Currently the style is fixed, but in the future will be an encoding option.
+      const cslStyle = path.join(stylesDir, 'apa.csl')
+      bibliographyFlags = [
+        '--filter=pandoc-citeproc',
+        `--metadata=csl:${cslStyle}`,
+        '--metadata=reference-section-title:References'
+      ]
+    }
+
+    return pandoc.encode(article, {
       filePath,
-      format: P.OutputFormat.docx,
+      format: Pandoc.OutputFormat.docx,
       theme: getTheme(),
       codecOptions: {
-        flags: [
-          `--reference-doc=${codecOptions.templatePath ||
-            DocxCodec.defaultTemplatePath}`
-        ],
+        flags: [`--reference-doc=${referenceDoc}`, ...bibliographyFlags],
         ensureFile: true
       }
     })
+  }
 }
