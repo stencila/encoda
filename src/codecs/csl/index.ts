@@ -1,19 +1,22 @@
 /**
- * Codec for CSL JSON
- *
- * Also acts a base codec for other bibliographic formats
- * e.g. BibTeX. Based on https://citation.js.org/
+ * @module csl
  */
 
 import * as stencila from '@stencila/schema'
 // @ts-ignore
 import Cite from 'citation-js'
 import Csl from 'csl-json'
+import path from 'path'
 import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
+import { stringifyContent } from '../../util/content/stringifyContent'
 import * as vfile from '../../util/vfile'
 import { Codec, GlobalEncodeOptions } from '../types'
-import { stringifyContent } from '../../util/content/stringifyContent'
+
+/**
+ * The directory where styles are stored
+ */
+export const stylesDir = path.join(__dirname, 'styles')
 
 interface DecodeOptions {
   format: string
