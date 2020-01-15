@@ -19,6 +19,7 @@ import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { binary, dataDir } from './binary'
 import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
+import { encodeCsl } from '../csl'
 
 const rpng = new RPNGCodec()
 
@@ -104,8 +105,7 @@ export class PandocCodec extends Codec
 
     const args = [
       `--from=json`,
-      `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`,
-      '--filter=pandoc-citeproc'
+      `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`
     ]
     if (standalone) args.push('--standalone')
     for (const option of flags) {
@@ -240,6 +240,10 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
  *
  * This function is intended to be the inverse of `decodeDocument`
  * (although it is not yet).
+ *
+ * If the node is an `Article` with `references` then those are
+ * converted to CSL JSON and included in the Pandoc document's
+ * `meta` so that `pandoc-citeproc` can recognize them.
  */
 function encodeNode(
   node: stencila.Node
@@ -252,7 +256,19 @@ function encodeNode(
   if (type_ === 'Article') {
     const { type, content, ...rest } = node as stencila.Article
     standalone = true
-    meta = encodeMeta(rest)
+
+    // Transform meta data as necessary before encoding it
+    meta = encodeMeta(
+      rest.references
+        ? {
+            ...rest,
+            references: rest.references
+              .filter(stencila.isCreativeWork)
+              .map(encodeCsl)
+          }
+        : rest
+    )
+
     // TODO: wrap nodes as necessary and avoid use of `as`
     blocks = encodeBlocks(content as stencila.BlockContent[])
   } else {
@@ -325,10 +341,10 @@ function decodeMetaValue(
  * For `null` and `number`, use a YAML "tags" syntax e.g. `!!null`
  * encoded into a Pandoc `MetaString`.
  */
-function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
+function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue | undefined {
+  if (node === undefined) return undefined
   switch (nodeType(node)) {
     case 'null':
-    case 'undefined':
       return {
         t: 'MetaString',
         c: '!!null'
@@ -341,7 +357,7 @@ function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
     case 'number':
       return {
         t: 'MetaString',
-        c: `!!number ${node}`
+        c: Number.isInteger(node as number) ? `${node}` : `!!number ${node}`
       }
     case 'string':
       return {
@@ -351,7 +367,10 @@ function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue {
     case 'array':
       return {
         t: 'MetaList',
-        c: (node as any[]).map(encodeMetaValue)
+        c: (node as any[]).reduce((prev: Pandoc.MetaValue[], curr) => {
+          const result = encodeMetaValue(curr)
+          return result !== undefined ? [...prev, result] : prev
+        }, [])
       }
     case 'Paragraph':
       return {
@@ -1249,13 +1268,19 @@ function encodeAttrs(attrs: { [key: string]: string } = {}): Pandoc.Attr {
 
 /**
  * `Array.map` but for `objects`.
+ *
+ * If the result of the function call is undefined then
+ * does not insert the entry.
  */
-function objectMap<Result>(
+function objectMap(
   obj: object,
-  func: (key: string, value: any) => Result
-): { [key: string]: Result } {
+  func: (key: string, value: any) => any
+): { [key: string]: any } {
   return Object.assign(
     {},
-    ...Object.entries(obj).map(([k, v]) => ({ [k]: func(k, v) }))
+    ...Object.entries(obj).map(([k, v]) => {
+      const result = func(k, v)
+      return result !== undefined ? { [k]: result } : {}
+    })
   )
 }
