@@ -19,7 +19,8 @@ jest.setTimeout(60 * 1000)
 const pdoc2node = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
 const node2pdoc = async (node: any) =>
   JSON.parse(await dump(await encode(node)))
-const decodeFixture = async (name: string) => await decode(await vfile.read(fixture(name)))
+const decodeFixture = async (name: string) =>
+  await decode(await vfile.read(fixture(name)))
 
 const json = new JsonCodec()
 
@@ -113,12 +114,12 @@ describe('citations and references', () => {
    * as expected.
    */
   test('decoding', async () => {
-    expect(await json.dump(await decodeFixture('cite.pandoc.json'))).toMatchFile(
-      snapshot('cite.json')
-    )
-    expect(await json.dump(await decodeFixture('cite-bib-file.pandoc.json'))).toMatchFile(
-      snapshot('cite-bib-file.json')
-    )
+    expect(
+      await json.dump(await decodeFixture('cite.pandoc.json'))
+    ).toMatchFile(snapshot('cite.json'))
+    expect(
+      await json.dump(await decodeFixture('cite-bib-file.pandoc.json'))
+    ).toMatchFile(snapshot('cite-bib-file.json'))
   })
 
   /**
@@ -127,10 +128,7 @@ describe('citations and references', () => {
    */
   test('encoding', async () => {
     const pandocJson = await fs.readFile(fixture('cite-refs.pandoc.json'))
-    const html = await run(pandocJson, [
-      '--from=json',
-      '--to=html'
-    ], true)
+    const html = await run(pandocJson, ['--from=json', '--to=html'], true)
     expect(html).toMatchFile(snapshot('cite-refs.html'))
   })
 })
