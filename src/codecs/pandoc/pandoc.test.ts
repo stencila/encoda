@@ -125,7 +125,7 @@ const space = (): Pandoc.Space => ({ t: 'Space', c: undefined })
 // Pandoc element type (we'll add them over time :)
 const kitchenSink: testCase = {
   pdoc: {
-    'pandoc-api-version': [1, 17, 5, 4],
+    'pandoc-api-version': [1, 20],
     meta: {
       title: {
         t: 'MetaString',
