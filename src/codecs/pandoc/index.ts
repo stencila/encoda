@@ -16,7 +16,7 @@ import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import * as vfile from '../../util/vfile'
 import { RPNGCodec } from '../rpng'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
-import { binary, dataDir } from './binary'
+import { binary, dataDir, citeprocBinaryPath } from './binary'
 import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import { encodeCsl } from '../csl'
@@ -42,6 +42,7 @@ const defaultDecodeOptions = {
 interface EncodeOptions {
   flags?: string[]
   ensureFile?: boolean
+  useCiteproc?: boolean
 }
 
 export class PandocCodec extends Codec
@@ -101,7 +102,7 @@ export class PandocCodec extends Codec
     const { standalone, pdoc } = encodeNode(node)
     await Promise.all(encodePromises)
 
-    const { flags = [], ensureFile = false } = codecOptions
+    const { flags = [], ensureFile = false, useCiteproc = false } = codecOptions
 
     const args = [
       `--from=json`,
@@ -123,7 +124,7 @@ export class PandocCodec extends Codec
     }
 
     const json = JSON.stringify(pdoc)
-    const content = await run(json, args)
+    const content = await run(json, args, useCiteproc)
 
     // If content was outputted, then load that into a vfile,
     // otherwise the vfile simply has path to the file created
@@ -152,9 +153,18 @@ let encodePromises: Promise<any>[] = []
 
 /**
  * Run the Pandoc binary
+ *
+ * For performance, only filter using `pndoc-citeproc` is necessary.
  */
-function run(input: string | Buffer, args: string[]): Promise<string> {
+export function run(
+  input: string | Buffer,
+  args: string[],
+  useCiteproc = false
+): Promise<string> {
   args.push(`--data-dir=${dataDir}`)
+
+  if (useCiteproc) args.push(`--filter=${citeprocBinaryPath}`)
+
   log.debug(
     `Pandoc spawn\n  path: ${binary.path()}\n  args:\n    ${args.join(
       '\n    '

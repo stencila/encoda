@@ -1,0 +1,450 @@
+{
+  "blocks": [
+    {
+      "t": "Para",
+      "c": [
+        {
+          "t": "Str",
+          "c": "An"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "example"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "with"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "references"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "in"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "YAML"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "metadata."
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "Example"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "from"
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Str",
+          "c": "https://pandoc.org/MANUAL.html."
+        },
+        {
+          "t": "Space"
+        },
+        {
+          "t": "Cite",
+          "c": [
+            [
+              {
+                "citationSuffix": [],
+                "citationNoteNum": 0,
+                "citationMode": {
+                  "t": "AuthorInText"
+                },
+                "citationPrefix": [],
+                "citationId": "WatsonCrick1953",
+                "citationHash": 0
+              }
+            ],
+            [
+              {
+                "t": "Str",
+                "c": "@WatsonCrick1953"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "Str",
+          "c": "."
+        }
+      ]
+    },
+    {
+      "t": "Header",
+      "c": [
+        1,
+        [
+          "references",
+          [],
+          []
+        ],
+        [
+          {
+            "t": "Str",
+            "c": "References"
+          }
+        ]
+      ]
+    }
+  ],
+  "pandoc-api-version": [
+    1,
+    20
+  ],
+  "meta": {
+    "references": {
+      "t": "MetaList",
+      "c": [
+        {
+          "t": "MetaMap",
+          "c": {
+            "DOI": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "10.1038/171737a0"
+                }
+              ]
+            },
+            "volume": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "171"
+                }
+              ]
+            },
+            "URL": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "http://www.nature.com/nature/journal/v171/n4356/abs/171737a0.html"
+                }
+              ]
+            },
+            "page": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "737-738"
+                }
+              ]
+            },
+            "title-short": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "Molecular"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "structure"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "of"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "nucleic"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "acids"
+                }
+              ]
+            },
+            "container-title": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "Nature"
+                }
+              ]
+            },
+            "language": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "en-GB"
+                }
+              ]
+            },
+            "author": {
+              "t": "MetaList",
+              "c": [
+                {
+                  "t": "MetaMap",
+                  "c": {
+                    "family": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "Watson"
+                        }
+                      ]
+                    },
+                    "given": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "J."
+                        },
+                        {
+                          "t": "Space"
+                        },
+                        {
+                          "t": "Str",
+                          "c": "D."
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "t": "MetaMap",
+                  "c": {
+                    "family": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "Crick"
+                        }
+                      ]
+                    },
+                    "given": {
+                      "t": "MetaInlines",
+                      "c": [
+                        {
+                          "t": "Str",
+                          "c": "F."
+                        },
+                        {
+                          "t": "Space"
+                        },
+                        {
+                          "t": "Str",
+                          "c": "H."
+                        },
+                        {
+                          "t": "Space"
+                        },
+                        {
+                          "t": "Str",
+                          "c": "C."
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "id": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "WatsonCrick1953"
+                }
+              ]
+            },
+            "issued": {
+              "t": "MetaMap",
+              "c": {
+                "date-parts": {
+                  "t": "MetaList",
+                  "c": [
+                    {
+                      "t": "MetaList",
+                      "c": [
+                        {
+                          "t": "MetaInlines",
+                          "c": [
+                            {
+                              "t": "Str",
+                              "c": "1953"
+                            }
+                          ]
+                        },
+                        {
+                          "t": "MetaInlines",
+                          "c": [
+                            {
+                              "t": "Str",
+                              "c": "4"
+                            }
+                          ]
+                        },
+                        {
+                          "t": "MetaInlines",
+                          "c": [
+                            {
+                              "t": "Str",
+                              "c": "25"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "title": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "Molecular"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "structure"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "of"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "nucleic"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "acids:"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "a"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "structure"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "for"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "deoxyribose"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "nucleic"
+                },
+                {
+                  "t": "Space"
+                },
+                {
+                  "t": "Str",
+                  "c": "acid"
+                }
+              ]
+            },
+            "type": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "article-journal"
+                }
+              ]
+            },
+            "issue": {
+              "t": "MetaInlines",
+              "c": [
+                {
+                  "t": "Str",
+                  "c": "4356"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

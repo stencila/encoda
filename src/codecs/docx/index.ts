@@ -52,17 +52,17 @@ export class DocxCodec extends Codec<EncodeOptions>
       .defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const article = ensureArticle(node)
-    const { references, ...rest } = article
+    const { references } = article
 
     const referenceDoc =
       codecOptions.templatePath || DocxCodec.defaultTemplatePath
 
-    let bibliographyFlags: string[] = []
+    let flags: string[] = [`--reference-doc=${referenceDoc}`]
+
     if (references !== undefined) {
       // Currently the style is fixed, but in the future will be an encoding option.
       const cslStyle = path.join(stylesDir, 'apa.csl')
-      bibliographyFlags = [
-        '--filter=pandoc-citeproc',
+      flags = [
         `--metadata=csl:${cslStyle}`,
         '--metadata=reference-section-title:References'
       ]
@@ -73,8 +73,9 @@ export class DocxCodec extends Codec<EncodeOptions>
       format: Pandoc.OutputFormat.docx,
       theme: getTheme(),
       codecOptions: {
-        flags: [`--reference-doc=${referenceDoc}`, ...bibliographyFlags],
-        ensureFile: true
+        flags,
+        ensureFile: true,
+        useCiteproc: references !== undefined
       }
     })
   }

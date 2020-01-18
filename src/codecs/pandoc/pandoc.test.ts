@@ -6,8 +6,8 @@ import { dump, load } from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { RPNGCodec } from '../rpng'
 import { defaultEncodeOptions } from '../types'
-import { YamlCodec } from '../yaml'
-import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec } from './'
+import { JsonCodec } from '../json'
+import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
 
 const { decode, encode } = new PandocCodec()
@@ -19,10 +19,9 @@ jest.setTimeout(60 * 1000)
 const pdoc2node = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
 const node2pdoc = async (node: any) =>
   JSON.parse(await dump(await encode(node)))
-const yaml = new YamlCodec()
+const decodeFixture = async (name: string) => await decode(await vfile.read(fixture(name)))
 
-const pjson2yaml = async (pjson: string) =>
-  vfile.dump(await yaml.encode(await decode(await vfile.read(fixture(pjson)))))
+const json = new JsonCodec()
 
 test('decode', async () => {
   let got = await pdoc2node(kitchenSink.pdoc)
@@ -31,10 +30,6 @@ test('decode', async () => {
   expect(await pdoc2node(collapseSpaces.pdoc)).toEqual(collapseSpaces.node)
   expect(await pdoc2node(imageInlinesToString.pdoc)).toEqual(
     imageInlinesToString.node
-  )
-
-  expect(await pjson2yaml('cite.pandoc.json')).toMatchFile(
-    snapshot('cite.yaml')
   )
 })
 
@@ -110,6 +105,34 @@ test('metadata', async () => {
 
   expect(encoded).toEqual(pmeta)
   expect(decoded).toEqual(meta)
+})
+
+describe('citations and references', () => {
+  /**
+   * Simple tests that decoding from Pandoc JSON works
+   * as expected.
+   */
+  test('decoding', async () => {
+    expect(await json.dump(await decodeFixture('cite.pandoc.json'))).toMatchFile(
+      snapshot('cite.json')
+    )
+    expect(await json.dump(await decodeFixture('cite-bib-file.pandoc.json'))).toMatchFile(
+      snapshot('cite-bib-file.json')
+    )
+  })
+
+  /**
+   * Test that `useCiteproc` works eg. that `pandoc-citeproc`
+   * binary is found. Expects the references section to be populated.
+   */
+  test('encoding', async () => {
+    const pandocJson = await fs.readFile(fixture('cite-refs.pandoc.json'))
+    const html = await run(pandocJson, [
+      '--from=json',
+      '--to=html'
+    ], true)
+    expect(html).toMatchFile(snapshot('cite-refs.html'))
+  })
 })
 
 interface testCase {

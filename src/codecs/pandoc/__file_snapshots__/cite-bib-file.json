@@ -1,0 +1,28 @@
+{
+  "type": "Article",
+  "authors": [],
+  "bibliography": {
+    "type": "Paragraph",
+    "content": [
+      "cite-bib-file.bib"
+    ]
+  },
+  "title": "Untitled",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "Bibliography in a file ",
+        {
+          "type": "Cite",
+          "citationMode": "normal",
+          "target": "WatsonCrick1953",
+          "content": [
+            "@WatsonCrick1953"
+          ]
+        },
+        "."
+      ]
+    }
+  ]
+}

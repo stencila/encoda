@@ -29,6 +29,11 @@ export const binary = new BinWrapper()
   .use(process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc')
   .version(version)
 
+export const citeprocBinaryPath = path.join(
+  binary.dest(),
+  process.platform === 'win32' ? 'pandoc-citeproc.exe' : 'bin/pandoc-citeproc'
+)
+
 /**
  * Equivalent to the Pandoc `--data-dir` flag.
  * Instructs Pandoc where to find templates and other assets.
