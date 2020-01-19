@@ -125,10 +125,11 @@ describe('citations and references', () => {
   /**
    * Test that `useCiteproc` works eg. that `pandoc-citeproc`
    * binary is found. Expects the references section to be populated.
+   * Use `--eol=lf` to avoid difference to snapshot on Windows.
    */
   test('encoding', async () => {
     const pandocJson = await fs.readFile(fixture('cite-refs.pandoc.json'))
-    const html = await run(pandocJson, ['--from=json', '--to=html'], true)
+    const html = await run(pandocJson, ['--from=json', '--to=html', '--eol=lf'], true)
     expect(html).toMatchFile(snapshot('cite-refs.html'))
   })
 })
