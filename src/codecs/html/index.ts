@@ -374,6 +374,8 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
 
     case 'figcaption':
       return decodeFigCaption(node as HTMLElement)
+    case 'math':
+      return decodeMath(node as HTMLElement)
 
     case 'Person':
       return decodePerson(node as HTMLElement)
@@ -496,8 +498,12 @@ const encodeNode = (node: stencila.Node): Node => {
       return encodeLink(node as stencila.Link)
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
-    case 'Code':
-      return encodeCodeFragment(node as stencila.CodeFragment)
+
+    case 'MathBlock':
+      return encodeMath(node as stencila.MathBlock)
+    case 'MathFragment':
+      return encodeMath(node as stencila.MathFragment)
+
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
     case 'Math':
@@ -1778,6 +1784,26 @@ function encodeImageObject(
     title,
     alt: text
   })
+}
+
+/**
+ * Decode a HTML `<math>` element (i.e. embedded MathML) to either a
+ * Stencila `MathFragment` or `MathBlock` depending on the
+ * [`display`](https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math#attr-display)
+ * attribute.
+ *
+ * TODO: This, and `encodeMath`, are preliminary implementations, mainly to try
+ * out the new `MathFragment` and `MatchBlock` schema types with HTML. They need
+ * to be able to deal with languages other than MathML e.g. TeX, ASCIIMath, probably by encoding
+ * `text` in HTML and using KaTeX for genenerating display HTML (since MathMl is
+ * not widely supported).
+ */
+function decodeMath(elem: HTMLElement): stencila.MathFragment | stencila.MathBlock {
+  const text = elem.innerHTML
+  const mathLanguage = 'mathml'
+  const display = elem.getAttribute('display')
+  if (display === 'block') return stencila.mathBlock(text, { mathLanguage })
+  else return stencila.mathFragment(text, { mathLanguage })
 }
 
 /**

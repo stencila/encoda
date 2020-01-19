@@ -201,6 +201,38 @@ describe('Encode & Decode CodeExpression nodes', () => {
   })
 })
 
+describe('Encode & decode Math nodes', () => {
+  const mathml = `<mrow><apply><minus></minus><ci>a</ci><ci>b</ci></apply></mrow>`
+  const frag = stencila.mathFragment(mathml, { mathLanguage: 'mathml' })
+  const block = stencila.mathBlock(mathml, { mathLanguage: 'mathml' })
+
+  test('encode', async () => {
+    expect(await e(frag)).toBe(`<math display="inline">
+  <mrow>
+    <apply>
+      <minus></minus>
+      <ci>a</ci>
+      <ci>b</ci>
+    </apply>
+  </mrow>
+</math>`)
+    expect(await e(block)).toBe(`<math display="block">
+  <mrow>
+    <apply>
+      <minus></minus>
+      <ci>a</ci>
+      <ci>b</ci>
+    </apply>
+  </mrow>
+</math>`)
+  })
+
+  test('decode', async () => {
+    expect(await d(`<math display="inline">${mathml}</math>`)).toEqual(frag)
+    expect(await d(`<math display="block">${mathml}</math>`)).toEqual(block)
+  })
+})
+
 describe('Encode & Decode cite group nodes', () => {
   const cite1 = cite({ target: 'myFirstTarget' })
   const cite2 = cite({ target: 'mySecondTarget' })
