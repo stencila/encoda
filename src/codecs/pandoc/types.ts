@@ -4,9 +4,18 @@
  * @module pandoc/types
  */
 
-type VersionNumber = [number, number, number, number]
-
-export const Version: VersionNumber = [1, 17, 5, 4]
+/**
+ * The `pandoc-types` version number. This must be consistent
+ * with the version used by the Pandoc binary version specified
+ * in `./binary.ts` (tests will error if they are not).
+ *
+ * When changing the types version (due to upgrades in the binary version),
+ * check for any changes in the `pandoc-types` `Definition.hs` file
+ * that may need to be ported to these Typescript types e.g.
+ *    https://github.com/jgm/pandoc-types/compare/1.17.5.4...1.20
+ */
+type VersionNumber = [number, number]
+export const Version: VersionNumber = [1, 20]
 
 export interface Document {
   /**

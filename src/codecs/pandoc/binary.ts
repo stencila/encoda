@@ -12,7 +12,7 @@ import appHome from '../../util/app/home'
 import isPackaged from '../../util/app/isPackaged'
 import isCompiled from '../../util/app/isCompiled'
 
-const version = '2.7.3'
+const version = '2.9.1'
 const base = `https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}`
 
 const home = path.join(
@@ -21,13 +21,18 @@ const home = path.join(
 )
 
 export const binary = new BinWrapper()
-  .src(`${base}-linux.tar.gz`, 'linux', 'x64')
+  .src(`${base}-linux-amd64.tar.gz`, 'linux', 'x64')
   .src(`${base}-macOS.zip`, 'darwin')
   .src(`${base}-windows-i386.zip`, 'win32', 'x32')
   .src(`${base}-windows-x86_64.zip`, 'win32', 'x64')
   .dest(path.join(home, 'dist', 'codecs', 'pandoc', 'binary'))
   .use(process.platform === 'win32' ? 'pandoc.exe' : 'bin/pandoc')
   .version(version)
+
+export const citeprocBinaryPath = path.join(
+  binary.dest(),
+  process.platform === 'win32' ? 'pandoc-citeproc.exe' : 'bin/pandoc-citeproc'
+)
 
 /**
  * Equivalent to the Pandoc `--data-dir` flag.

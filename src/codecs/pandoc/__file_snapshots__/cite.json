@@ -1,0 +1,81 @@
+{
+  "type": "Article",
+  "authors": [],
+  "bibliography": [
+    {
+      "author": [
+        {
+          "family": {
+            "type": "Paragraph",
+            "content": [
+              "Watson"
+            ]
+          },
+          "given": {
+            "type": "Paragraph",
+            "content": [
+              "J. D."
+            ]
+          }
+        },
+        {
+          "family": {
+            "type": "Paragraph",
+            "content": [
+              "Crick"
+            ]
+          },
+          "given": {
+            "type": "Paragraph",
+            "content": [
+              "F. H. C."
+            ]
+          }
+        }
+      ],
+      "id": {
+        "type": "Paragraph",
+        "content": [
+          "WatsonCrick1953"
+        ]
+      }
+    }
+  ],
+  "title": "Untitled",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "Citations in line ",
+        {
+          "type": "Cite",
+          "citationMode": "normal",
+          "target": "WatsonCrick1953",
+          "content": [
+            "@WatsonCrick1953"
+          ]
+        },
+        " or grouped in brackets ",
+        {
+          "type": "CiteGroup",
+          "items": [
+            {
+              "type": "Cite",
+              "citationMode": "normal",
+              "target": "WatsonCrick1953",
+              "content": [
+                "[@WatsonCrick1953; @WatsonCrick1953]"
+              ]
+            },
+            {
+              "type": "Cite",
+              "citationMode": "normal",
+              "target": "WatsonCrick1953"
+            }
+          ]
+        },
+        "."
+      ]
+    }
+  ]
+}
