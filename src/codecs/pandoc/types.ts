@@ -395,10 +395,7 @@ export type Math = Element<'Math', [MathType, string]>
 /**
  * Type of math element (display or inline)
  */
-export enum MathType {
-  'DisplayMath',
-  'InlineMath'
-}
+export type MathType = { t: 'DisplayMath' } | { t: 'InlineMath' }
 
 /**
  * Raw inline

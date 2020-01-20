@@ -471,6 +471,8 @@ function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
       return encodeCodeBlock(block)
     case 'CodeChunk':
       return encodeCodeChunk(block as stencila.CodeChunk)
+    case 'MathBlock':
+      return encodeMath(block, 'DisplayMath')
     case 'List':
       return encodeList(block)
     case 'Table':
@@ -513,16 +515,19 @@ function decodePlain(node: Pandoc.Plain): stencila.Paragraph {
  * Decode a Pandoc `Para` to a Stencila `Paragraph` or
  * other `BlockContent` node.
  *
- * Because a paragraph is used to wrap rPNGs (to ensure a block element
- * at where required) this function checks for `CodeChunk`s and other
- * such encoded elements in a paragraph and returns them if they are the
- * only child node.
+ * A Pandoc `Para` may act as a wrapper for a single element that Stencila
+ * treats as block, rather than inline. For example, a Stencila `MathBlock`
+ * is encoded as a Pandoc `Para` with a single `DisplayMath` `Math` element.
+ * Also a paragraph is used to wrap rPNGs for `CodeChunk`s. Given that, this
+ * function checks for such encoded elements in a paragraph and returns
+ * them if they are the only child node.
  */
 function decodePara(node: Pandoc.Para): stencila.BlockContent {
   const content = decodeInlines(node.c)
   if (content.length === 1) {
     const node = content[0]
-    if (stencila.isA('CodeChunk', node)) return node
+    if (stencila.isA('CodeChunk', node) || stencila.isA('MathBlock', node))
+      return node
   }
   return {
     type: 'Paragraph',
@@ -800,6 +805,11 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
       return decodeQuoted(node)
     case 'Code':
       return decodeCode(node)
+    case 'Math':
+      // As with rPNGs (see below) it is necessary to cast to inline
+      // content here because `Math` may be decodes to a `MathBlock`
+      // See also `decodePara`
+      return decodeMath(node) as stencila.InlineContent
     case 'Link':
       return decodeLink(node)
     case 'Cite':
@@ -840,6 +850,8 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeCodeFragment(node as stencila.CodeFragment)
     case 'CodeExpression':
       return encodeCodeExpression(node as stencila.CodeExpression)
+    case 'MathFragment':
+      return encodeMath(node as stencila.MathFragment, 'InlineMath')
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Cite':
@@ -1086,6 +1098,48 @@ function encodeCodeExpression(node: stencila.CodeExpression): Pandoc.Span {
     t: 'Span',
     c: [['', [], [['custom-style', 'CodeExpression']]], [encodeRPNG(node)]]
   }
+}
+
+/**
+ * Decode a Pandoc `Math` element to a Stencila `Math` node.
+ */
+function decodeMath(elem: Pandoc.Math): stencila.Math {
+  const {
+    c: [{ t: mathType }, text]
+  } = elem
+  return mathType === 'InlineMath'
+    ? stencila.mathFragment(text)
+    : stencila.mathBlock(text)
+}
+
+/**
+ * Encode a Stencila `Math` node to a Pandoc `Math` or `Para` element.
+ *
+ * `MathBlock` nodes are wrapped into a Pandoc `Para`, as Pandoc does
+ * for `DisplayMath`.
+ */
+function encodeMath(node: stencila.Math, type: 'InlineMath'): Pandoc.Math
+function encodeMath(node: stencila.Math, type: 'DisplayMath'): Pandoc.Para
+function encodeMath(
+  node: stencila.Math,
+  type: Pandoc.MathType['t']
+): Pandoc.Math | Pandoc.Para {
+  const { type: nodeType, text } = node
+  if (type === 'InlineMath' && nodeType !== 'MathFragment')
+    log.warn(
+      `Expected a Stencila "MathFragment" node, but got a got a ${nodeType} node`
+    )
+  if (type === 'DisplayMath' && nodeType !== 'MathBlock')
+    log.warn(
+      `Expected a Stencila "MathBlock" node, but got a got a ${nodeType} node`
+    )
+
+  const math: Pandoc.Math = {
+    t: 'Math',
+    c: [{ t: type }, text]
+  }
+  if (nodeType === 'MathFragment') return math
+  else return { t: 'Para', c: [math] }
 }
 
 /**
