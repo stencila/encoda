@@ -1798,7 +1798,9 @@ function encodeImageObject(
  * `text` in HTML and using KaTeX for genenerating display HTML (since MathMl is
  * not widely supported).
  */
-function decodeMath(elem: HTMLElement): stencila.MathFragment | stencila.MathBlock {
+function decodeMath(
+  elem: HTMLElement
+): stencila.MathFragment | stencila.MathBlock {
   const text = elem.innerHTML
   const mathLanguage = 'mathml'
   const display = elem.getAttribute('display')
@@ -1811,8 +1813,15 @@ function decodeMath(elem: HTMLElement): stencila.MathFragment | stencila.MathBlo
  * TODO: `<math>` is not a valid HTML element, and not rendered by browser.
  * @see - https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Using_MathML
  */
-function encodeMath(math: stencila.Math): HTMLElement {
-  return h('math', { attrs: encodeMicrodataAttrs(math) }, [math.text])
+function encodeMath(
+  math: stencila.MathFragment | stencila.MathBlock
+): HTMLElement {
+  return h('math', {
+    attrs: {
+      display: stencila.isA('MathFragment', math) ? 'inline' : 'block'
+    },
+    innerHTML: math.text
+  })
 }
 
 /**

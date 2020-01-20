@@ -139,10 +139,16 @@ describe('citations and references', () => {
 })
 
 describe('math', () => {
-  const article = stencila.article([],'Untitled', {content:[
-    stencila.paragraph(['Some inline math ', stencila.mathFragment('a'), '. And some block math:']),
-    stencila.mathBlock('e = mc^2')
-  ]})
+  const article = stencila.article([], 'Untitled', {
+    content: [
+      stencila.paragraph([
+        'Some inline math ',
+        stencila.mathFragment('a'),
+        '. And some block math:'
+      ]),
+      stencila.mathBlock('e = mc^2')
+    ]
+  })
 
   test('decoding', async () => {
     expect(await decodeFixture('math.pandoc.json')).toEqual(article)
