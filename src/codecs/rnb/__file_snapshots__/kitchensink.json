@@ -1,22 +1,4 @@
 {
-  "authors": [
-    {
-      "givenNames": [
-        "Peter"
-      ],
-      "familyNames": [
-        "Pan"
-      ],
-      "type": "Person"
-    },
-    {
-      "familyNames": [
-        "Hook"
-      ],
-      "honorificPrefix": "Captain",
-      "type": "Person"
-    }
-  ],
   "title": "Kitchensink R Notebook",
   "content": [
     {
@@ -174,5 +156,23 @@
       "type": "CodeChunk"
     }
   ],
-  "type": "Article"
+  "type": "Article",
+  "authors": [
+    {
+      "givenNames": [
+        "Peter"
+      ],
+      "familyNames": [
+        "Pan"
+      ],
+      "type": "Person"
+    },
+    {
+      "familyNames": [
+        "Hook"
+      ],
+      "honorificPrefix": "Captain",
+      "type": "Person"
+    }
+  ]
 }

@@ -29,7 +29,6 @@ describe('issue 58', () => {
     const article = (await read(file)) as stencila.Article
     const md = await dump(article, 'md')
     expect(md).toBe(`---
-authors: []
 title: real converter test
 ---
 

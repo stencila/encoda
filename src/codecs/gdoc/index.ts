@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import stencila from '@stencila/schema'
+import stencila, { isInlineContent } from '@stencila/schema'
 import crypto from 'crypto'
 import { docs_v1 as GDocT } from 'googleapis'
 import { stringifyContent } from '../../util/content/stringifyContent'
@@ -177,6 +177,7 @@ async function decodeDocument(
   await fetcher.resolve()
 
   return stencila.article({
+    title: title ?? undefined,
     content: content.length > 0 ? content : undefined
   })
 }
@@ -529,7 +530,7 @@ function encodeTable(table: stencila.Table): GDocT.Schema$StructuralElement {
             tableCells: row.cells.map(
               (cell: stencila.TableCell): GDocT.Schema$TableCell => {
                 return {
-                  content: cell.content.map(
+                  content: cell.content.filter(isInlineContent).map(
                     (
                       node: stencila.InlineContent
                     ): GDocT.Schema$StructuralElement => {

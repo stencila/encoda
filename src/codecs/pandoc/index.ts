@@ -306,14 +306,14 @@ function encodeNode(
 export function decodeMeta(
   meta: Pandoc.Meta
 ): { [key: string]: stencila.Node } {
-  return objectMap(meta, (key, value) => decodeMetaValue(value))
+  return objectMap(meta, (_, value) => decodeMetaValue(value))
 }
 
 /**
  * Encode an `object` of metadata into a Pandoc `Meta` node
  */
 export function encodeMeta(obj: { [key: string]: any }): Pandoc.Meta {
-  return objectMap(obj, (key, value) => encodeMetaValue(value))
+  return objectMap(obj, (_, value) => encodeMetaValue(value))
 }
 
 /**
@@ -688,7 +688,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
       return [
         encodeParagraph({
           type: 'Paragraph',
-          content: cell.content
+          content: cell.content.filter(isInlineContent)
         })
       ]
     })
@@ -701,7 +701,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
         return [
           encodeParagraph({
             type: 'Paragraph',
-            content: cell.content
+            content: cell.content.filter(isInlineContent)
           })
         ]
       })

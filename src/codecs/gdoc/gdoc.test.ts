@@ -34,7 +34,7 @@ describe('decode:title', () => {
       await gdoc2node({
         title: 'Title'
       })
-    ).toEqual(stencila.article([], 'Title'))
+    ).toEqual(stencila.article({ title: 'Title' }))
   })
 
   test('override with Title styled paragraph', async () => {
@@ -52,11 +52,15 @@ describe('decode:title', () => {
           ]
         }
       })
-    ).toEqual(stencila.article([], [stencila.paragraph(['The actual title!'])]))
+    ).toEqual(
+      stencila.article({
+        title: [stencila.paragraph({ content: ['The actual title!'] })]
+      })
+    )
   })
 
-  test('set as empty string if neither present', async () => {
-    expect(await gdoc2node({})).toEqual(stencila.article([], ''))
+  test('is not set if neither present', async () => {
+    expect(await gdoc2node({})).toEqual(stencila.article({}))
   })
 })
 
@@ -334,7 +338,6 @@ const kitchenSink = {
   node: {
     type: 'Article',
     title: 'Title',
-    authors: [],
     content: [
       {
         type: 'Heading',
@@ -570,8 +573,6 @@ const nestedList = {
 
   node: {
     type: 'Article',
-    title: '',
-    authors: [],
     content: [
       {
         type: 'List',

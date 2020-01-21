@@ -214,13 +214,14 @@ const initialEncodeState = (): EncodeState => ({
 function decodeArticle(elem: xml.Element): stencila.Article {
   const front = child(elem, 'front')
 
-  const article = stencila.article(
-    decodeAuthors(all(front, 'contrib', { 'contrib-type': 'author' }), elem),
-    decodeTitle(first(front, 'article-title')),
-    {
-      description: decodeAbstract(first(front, 'abstract'))
-    }
-  )
+  const article = stencila.article({
+    authors: decodeAuthors(
+      all(front, 'contrib', { 'contrib-type': 'author' }),
+      elem
+    ),
+    title: decodeTitle(first(front, 'article-title')),
+    description: decodeAbstract(first(front, 'abstract'))
+  })
 
   const state: DecodeState = initialDecodeState()
 
@@ -293,7 +294,10 @@ function encodeTitle(title: stencila.Article['title']): xml.Element {
   const articleTitle =
     typeof title === 'string'
       ? elem('article-title', title)
-      : elem('article-title', ...encodeNodes(title, initialEncodeState()))
+      : elem(
+          'article-title',
+          ...encodeNodes(title || 'Untitled', initialEncodeState())
+        )
   return elem('title-group', articleTitle)
 }
 
@@ -342,13 +346,14 @@ function encodeAuthors(authors: stencila.Article['authors']): xml.Element {
     auths: [],
     affs: []
   }
-  const { auths, affs } = authors.map(encodeAuthor).reduce(
-    (prev, curr) => ({
-      auths: [...prev.auths, curr.auth],
-      affs: [...prev.affs, ...curr.affs]
-    }),
-    init
-  )
+  const { auths, affs } =
+    authors?.map(encodeAuthor).reduce(
+      (prev, curr) => ({
+        auths: [...prev.auths, curr.auth],
+        affs: [...prev.affs, ...curr.affs]
+      }),
+      init
+    ) || init
   return elem('contrib-group', ...auths, ...affs)
 }
 
@@ -546,7 +551,7 @@ function decodeReference(
   const rawAuthors = all(elem, 'name')
   const authors = rawAuthors.length ? rawAuthors.map(decodeName) : []
   const title = text(child(elem, 'article-title'))
-  const work = stencila.article(authors, title)
+  const work = stencila.article({ authors, title })
 
   const year = child(elem, 'year')
   if (year) {
@@ -945,13 +950,11 @@ function decodeHeading(
   state: DecodeState
 ): [stencila.Heading] {
   return [
-    stencila.heading(
-      decodeInlineContent(elem.elements || [], state),
-      state.sectionDepth,
-      {
-        id: state.sectionId
-      }
-    )
+    stencila.heading({
+      content: decodeInlineContent(elem.elements || [], state),
+      depth: state.sectionDepth,
+      id: state.sectionId
+    })
   ]
 }
 
@@ -975,7 +978,7 @@ function decodeParagraph(
 ): stencila.Node[] {
   const nodes = decodeElements(elem.elements || [], state)
 
-  const para = stencila.paragraph([])
+  const para = stencila.paragraph({ content: [] })
 
   const blocks: stencila.Node[] = [para]
   for (const node of nodes) {
@@ -1003,10 +1006,10 @@ function encodeParagraph(
  */
 function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
-    stencila.link(
-      decodeInlineContent(elem.elements || [], state),
-      attr(elem, 'xlink:href') || ''
-    )
+    stencila.link({
+      content: decodeInlineContent(elem.elements || [], state),
+      target: attr(elem, 'xlink:href') || ''
+    })
   ]
 }
 
@@ -1049,13 +1052,11 @@ function decodeXRef(
  */
 function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
-    stencila.link(
-      decodeDefault(elem, state).filter(stencila.isInlineContent),
-      `#${attr(elem, 'rid') || ''}`,
-      {
-        relation: attr(elem, 'ref-type') || undefined
-      }
-    )
+    stencila.link({
+      content: decodeDefault(elem, state).filter(stencila.isInlineContent),
+      target: `#${attr(elem, 'rid') || ''}`,
+      relation: attr(elem, 'ref-type') || undefined
+    })
   ]
 }
 
@@ -1084,7 +1085,7 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
       ? decodeElements(elements, state).filter(stencila.isInlineContent)
       : undefined
 
-  return [stencila.cite(target, { content })]
+  return [stencila.cite({ content, target })]
 }
 
 /**
@@ -1165,10 +1166,12 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
     type === 'bullet' || type === 'simple' ? 'unordered' : 'ascending'
   const items = all(elem, 'list-item').map(
     (item): stencila.ListItem => {
-      return stencila.listItem(decodeElements(item.elements || [], state))
+      return stencila.listItem({
+        content: decodeElements(item.elements || [], state)
+      })
     }
   )
-  return [stencila.list(items, { order })]
+  return [stencila.list({ items, order })]
 }
 
 /**
@@ -1191,7 +1194,7 @@ function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Table] {
-  const table = stencila.table([])
+  const table = stencila.table({ rows: [] })
 
   const id = attr(elem, 'id')
   if (id) table.id = id
@@ -1210,13 +1213,13 @@ function decodeTableWrap(
   const rows = all(elem, 'tr')
   if (rows.length) {
     table.rows = rows.map(row => {
-      return stencila.tableRow(
-        all(row, ['td', 'th']).map(cell => {
-          return stencila.tableCell(
-            decodeInlineContent(cell.elements || [], state)
-          )
+      return stencila.tableRow({
+        cells: all(row, ['td', 'th']).map(cell => {
+          return stencila.tableCell({
+            content: decodeInlineContent(cell.elements || [], state)
+          })
         })
-      )
+      })
     })
   }
 
@@ -1260,14 +1263,12 @@ function decodeFigGroup(
   state: DecodeState
 ): [stencila.Collection] {
   return [
-    stencila.collection(
-      all(elem, 'fig').map(figEl => {
+    stencila.collection({
+      parts: all(elem, 'fig').map(figEl => {
         return decodeFigure(figEl, state)[0]
       }),
-      {
-        meta: { usage: 'figGroup' }
-      }
-    )
+      meta: { usage: 'figGroup' }
+    })
   ]
 }
 
@@ -1478,7 +1479,8 @@ function decodeGraphic(
   if (usage) meta.usage = usage
 
   return [
-    stencila.imageObject(attr(elem, 'xlink:href') || '', {
+    stencila.imageObject({
+      contentUrl: attr(elem, 'xlink:href') || '',
       format: extractMimetype(elem),
       meta: meta
     })
@@ -1490,7 +1492,8 @@ function decodeGraphic(
  */
 function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
   return [
-    stencila.mediaObject(attr(elem, 'xlink:href') || '', {
+    stencila.mediaObject({
+      contentUrl: attr(elem, 'xlink:href') || '',
       format: extractMimetype(elem)
     })
   ]
@@ -1525,7 +1528,8 @@ function encodeMedia(
  */
 function decodeCode(elem: xml.Element): [stencila.CodeBlock] {
   return [
-    stencila.codeBlock(text(elem), {
+    stencila.codeBlock({
+      text: text(elem),
       programmingLanguage: attr(elem, 'language') || undefined
     })
   ]

@@ -44,12 +44,13 @@ some paragraphs
 
 followed by more paragraphs`)
     ).toEqual(
-      article([], 'Untitled', {
+      article({
+        title: 'Untitled',
         content: [
-          heading(['Heading 1'], 1),
-          paragraph(['some paragraphs']),
-          paragraph([link(['My link'], '#')]),
-          paragraph(['followed by more paragraphs'])
+          heading({ content: ['Heading 1'], depth: 1 }),
+          paragraph({ content: ['some paragraphs'] }),
+          paragraph({ content: [link({ content: ['My link'], target: '#' })] }),
+          paragraph({ content: ['followed by more paragraphs'] })
         ]
       })
     )
@@ -64,16 +65,19 @@ An inline element in MD <img src="#" /><img src="#2" />, like this image
 
 followed by more paragraphs`)
     ).toEqual(
-      article([], 'Untitled', {
+      article({
+        title: 'Untitled',
         content: [
-          paragraph(['some paragraphs']),
-          paragraph([
-            'An inline element in MD ',
-            imageObject('#'),
-            imageObject('#2'),
-            ', like this image'
-          ]),
-          paragraph(['followed by more paragraphs'])
+          paragraph({ content: ['some paragraphs'] }),
+          paragraph({
+            content: [
+              'An inline element in MD ',
+              imageObject({ contentUrl: '#' }),
+              imageObject({ contentUrl: '#2' }),
+              ', like this image'
+            ]
+          }),
+          paragraph({ content: ['followed by more paragraphs'] })
         ]
       })
     )
@@ -93,11 +97,17 @@ With some nested HTML, and a <cite><a href="#like-this">like-this</a></cite>
 followed by more paragraphs`)
 
     expect(actual).toEqual(
-      article([], 'Untitled', {
+      article({
+        title: 'Untitled',
         content: [
-          paragraph(['some paragraphs']),
-          paragraph(['With some nested HTML, and a ', cite('like-this')]),
-          paragraph(['followed by more paragraphs'])
+          paragraph({ content: ['some paragraphs'] }),
+          paragraph({
+            content: [
+              'With some nested HTML, and a ',
+              cite({ target: 'like-this' })
+            ]
+          }),
+          paragraph({ content: ['followed by more paragraphs'] })
         ]
       })
     )
@@ -123,11 +133,17 @@ With some nested HTML, and a <cite><a href="#like-this">like-this</a></cite></p>
 followed by more paragraphs`)
 
     expect(actual).toEqual(
-      article([], 'Untitled', {
+      article({
+        title: 'Untitled',
         content: [
-          paragraph(['some paragraphs']),
-          paragraph(['With some nested HTML, and a ', cite('like-this')]),
-          paragraph(['followed by more paragraphs'])
+          paragraph({ content: ['some paragraphs'] }),
+          paragraph({
+            content: [
+              'With some nested HTML, and a ',
+              cite({ target: 'like-this' })
+            ]
+          }),
+          paragraph({ content: ['followed by more paragraphs'] })
         ]
       })
     )
@@ -160,12 +176,23 @@ And now more HTML, and a <cite><a href="#like-this-two">like-this-two</a></cite>
 </div>`)
 
     expect(actual).toEqual(
-      article([], 'Untitled', {
+      article({
+        title: 'Untitled',
         content: [
-          paragraph(['some paragraphs']),
-          paragraph(['With some nested HTML, and a ', cite('like-this')]),
-          paragraph(['followed by more paragraphs']),
-          paragraph(['And now more HTML, and a ', cite('like-this-two')])
+          paragraph({ content: ['some paragraphs'] }),
+          paragraph({
+            content: [
+              'With some nested HTML, and a ',
+              cite({ target: 'like-this' })
+            ]
+          }),
+          paragraph({ content: ['followed by more paragraphs'] }),
+          paragraph({
+            content: [
+              'And now more HTML, and a ',
+              cite({ target: 'like-this-two' })
+            ]
+          })
         ]
       })
     )
@@ -184,16 +211,19 @@ An inline element in MD <img src="#" />, like this image <img src="#2" />
 followed by more paragraphs`)
 
     expect(actual).toEqual(
-      article([], 'Untitled', {
+      article({
+        title: 'Untitled',
         content: [
-          paragraph(['some paragraphs']),
-          paragraph([
-            'An inline element in MD ',
-            imageObject('#'),
-            ', like this image ',
-            imageObject('#2')
-          ]),
-          paragraph(['followed by more paragraphs'])
+          paragraph({ content: ['some paragraphs'] }),
+          paragraph({
+            content: [
+              'An inline element in MD ',
+              imageObject({ contentUrl: '#' }),
+              ', like this image ',
+              imageObject({ contentUrl: '#2' })
+            ]
+          }),
+          paragraph({ content: ['followed by more paragraphs'] })
         ]
       })
     )
@@ -803,7 +833,6 @@ No output \`a = 1 + 1\`{type=expr lang=python}
 const attrs = {
   md: `---
 title: Our article
-authors: []
 ---
 
 A [link](url){attr1=foo attr2="bar baz" attr3}.
@@ -817,7 +846,6 @@ A \`code\`{lang=r}.
   node: {
     type: 'Article',
     title: 'Our article',
-    authors: [],
     content: [
       {
         type: 'Paragraph',
@@ -869,7 +897,6 @@ A \`code\`{lang=r}.
 const subSuper = {
   md: `---
 title: What'sup sub?
-authors: []
 ---
 
 A subscript H~2~O. A superscript E = mc^2^.
@@ -877,7 +904,6 @@ A subscript H~2~O. A superscript E = mc^2^.
   node: {
     type: 'Article',
     title: "What'sup sub?",
-    authors: [],
     content: [
       {
         type: 'Paragraph',
@@ -943,10 +969,9 @@ Paragraph five.
 // across lines are decoded into a single line.
 const splitParas = {
   from: `Line1\nline2\nline3\n`,
-  to: `---\nauthors: []\ntitle: Untitled\n---\n\nLine1 line2 line3\n`,
+  to: `---\ntitle: Untitled\n---\n\nLine1 line2 line3\n`,
   node: {
     type: 'Article',
-    authors: [],
     title: 'Untitled',
     content: [
       {
@@ -969,7 +994,6 @@ const references = {
 [bravo]: http://example.com/bravo
 `,
   to: `---
-authors: []
 title: Untitled
 ---
 
@@ -979,7 +1003,6 @@ title: Untitled
 `,
   node: {
     type: 'Article',
-    authors: [],
     title: 'Untitled',
     content: [
       {

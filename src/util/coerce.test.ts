@@ -200,23 +200,11 @@ describe('coerce', () => {
   it('will add default values for missing properties', async () => {
     expect(
       await coerce({
-        type: 'Article',
-        content: [
-          {
-            type: 'Paragraph'
-          }
-        ]
+        type: 'Heading'
       })
     ).toEqual({
-      type: 'Article',
-      title: '',
-      authors: [],
-      content: [
-        {
-          type: 'Paragraph',
-          content: []
-        }
-      ]
+      type: 'Heading',
+      content: []
     })
   })
 
@@ -228,7 +216,7 @@ describe('coerce', () => {
       'Article'
     )
 
-    expect(article.authors[0]).toEqual({
+    expect((article.authors || [])[0]).toEqual({
       type: 'Person',
       givenNames: ['Joe'],
       familyNames: ['Doe'],
@@ -259,12 +247,12 @@ describe('coerce', () => {
       'Article'
     )
 
-    const joe = article.authors[0] as stencila.Person
+    const joe = article.authors![0] as stencila.Person
     expect(joe.givenNames).toEqual(['Joe']) // coerced to an array
     // @ts-ignore
     expect(joe.affiliations[0].name).toEqual('Acme Ltd') // coerced to a string
 
-    const jane = article.authors[1] as stencila.Person
+    const jane = article.authors![1] as stencila.Person
     expect(jane.givenNames).toEqual(['Jane', 'Jill']) // unchanged
     expect(jane.familyNames).toEqual(['Jones']) // coerced to an array
   })
@@ -313,7 +301,7 @@ describe('coerce', () => {
     // The new object has the changes made
     expect(out.type).toEqual('Article')
     expect(out.name).toEqual('42')
-    const outPerson = out.authors[0]
+    const outPerson = out.authors![0]
     // @ts-ignore
     expect(outPerson.givenNames).toEqual(['Jane'])
   })

@@ -121,7 +121,6 @@ const flatNode: stencila.Collection = {
       name: '1',
       meta: { depth: 0 },
       title: 'Untitled',
-      authors: [],
       content: [{ type: 'Heading', depth: 1, content: ['One'] }]
     },
     {
@@ -129,7 +128,6 @@ const flatNode: stencila.Collection = {
       name: '2',
       meta: { depth: 0 },
       title: 'Untitled',
-      authors: [],
       content: [{ type: 'Heading', depth: 1, content: ['Two'] }]
     },
     {
@@ -137,7 +135,6 @@ const flatNode: stencila.Collection = {
       name: '3',
       meta: { depth: 0 },
       title: 'Untitled',
-      authors: [],
       content: [{ type: 'Heading', depth: 1, content: ['Three'] }]
     }
   ]
@@ -157,7 +154,6 @@ const shallowNode: stencila.Collection = {
           name: 'README',
           meta: { depth: 1 },
           title: 'Untitled',
-          authors: [],
           content: [{ type: 'Paragraph', content: ['README'] }]
         },
         {
@@ -165,7 +161,6 @@ const shallowNode: stencila.Collection = {
           name: 'index',
           meta: { depth: 1 },
           title: 'Untitled',
-          authors: [],
           content: [{ type: 'Paragraph', content: ['Index'] }]
         },
         {
@@ -176,7 +171,6 @@ const shallowNode: stencila.Collection = {
             depth: 1
           },
           title: 'Untitled',
-          authors: [],
           content: [{ type: 'Paragraph', content: ['Main'] }]
         }
       ]
@@ -190,7 +184,6 @@ const shallowNode: stencila.Collection = {
           name: 'README',
           meta: { depth: 1 },
           title: 'Untitled',
-          authors: [],
           content: [{ type: 'Paragraph', content: ['README'] }]
         },
         {
@@ -201,7 +194,6 @@ const shallowNode: stencila.Collection = {
             depth: 1
           },
           title: 'Untitled',
-          authors: [],
           content: [{ type: 'Paragraph', content: ['Index'] }]
         }
       ]
@@ -218,7 +210,6 @@ const shallowNode: stencila.Collection = {
             depth: 1
           },
           title: 'Untitled',
-          authors: [],
           content: [{ type: 'Paragraph', content: ['README'] }]
         }
       ]

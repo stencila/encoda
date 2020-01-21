@@ -8,7 +8,8 @@ import stencila, {
   isListItem,
   nodeIs,
   nodeType,
-  TypeMapGeneric
+  TypeMapGeneric,
+  isInlineContent
 } from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
@@ -387,16 +388,12 @@ function decodeRoot(root: MDAST.Root): stencila.Article {
     }
   }
 
-  return stencila.article(
-    // Required properties...
-    [],
-    'Untitled',
-    {
-      // ...which may be overidden here, or during coercion
-      ...frontmatter,
-      content
-    }
-  )
+  return stencila.article({
+    title: 'Untitled',
+    // ...which may be overidden here, or during coercion
+    ...frontmatter,
+    content
+  })
 }
 
 /**
@@ -447,7 +444,7 @@ function decodeInclude(ext: Extension): stencila.Include {
   }
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article
-    include.content = article.content || []
+    include.content = (article.content || []).filter(isBlockContent)
   }
   return include
 }
@@ -594,7 +591,7 @@ function encodeCodeBlock(block: stencila.CodeBlock): MDAST.Code {
 function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
   if (ext.content === undefined) {
     log.warn(`Code chunk has no content`)
-    return stencila.codeChunk('')
+    return stencila.codeChunk({ text: '' })
   }
 
   const article = decodeMarkdown(ext.content) as stencila.Article
@@ -603,7 +600,7 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
   const first = nodes[0]
   if (!stencila.isA('CodeBlock', first)) {
     log.warn(`Code chunk extension has no code`)
-    return stencila.codeChunk('')
+    return stencila.codeChunk({ text: '' })
   }
 
   const { text, programmingLanguage, meta } = first
@@ -641,7 +638,8 @@ function decodeCodeChunk(ext: Extension): stencila.CodeChunk {
     pushOutputs(outputNodes)
   }
 
-  return stencila.codeChunk(text, {
+  return stencila.codeChunk({
+    text,
     programmingLanguage,
     meta,
     outputs: outputs.length > 0 ? outputs : undefined
@@ -657,7 +655,8 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): Extension {
 
   // Encode the code as a `CodeBlock`
   nodes.push(
-    stencila.codeBlock(text, {
+    stencila.codeBlock({
+      text,
       programmingLanguage,
       meta
     })
@@ -784,7 +783,9 @@ function encodeTable(table: stencila.Table): MDAST.Table {
             (cell: stencila.TableCell): MDAST.TableCell => {
               return {
                 type: 'tableCell',
-                children: cell.content.map(encodeInlineContent)
+                children: cell.content
+                  .filter(isInlineContent)
+                  .map(encodeInlineContent)
               }
             }
           )
@@ -921,11 +922,11 @@ function encodeDelete(delet: stencila.Delete): MDAST.Delete {
  * Decode a MDAST `sub` node to a Stencila `Subscript` node.
  */
 const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
-  return stencila.subscript(
-    sub.children.map(node =>
+  return stencila.subscript({
+    content: sub.children.map(node =>
       decodePhrasingContent(node as MDAST.PhrasingContent)
     )
-  )
+  })
 }
 
 /**
@@ -944,11 +945,11 @@ const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
  * Decode a MDAST `sup` node to a Stencila `Superscript` node.
  */
 const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
-  return stencila.superscript(
-    sup.children.map(node =>
+  return stencila.superscript({
+    content: sup.children.map(node =>
       decodePhrasingContent(node as MDAST.PhrasingContent)
     )
-  )
+  })
 }
 
 /**
@@ -1007,14 +1008,14 @@ function decodeInlineCode(
     (inlineCode.data.hProperties as { [key: string]: string })
 
   if (attrs && attrs.type === 'expr') {
-    const codeExpr = stencila.codeExpression(inlineCode.value)
+    const codeExpr = stencila.codeExpression({ text: inlineCode.value })
     const { type, lang, output, ...rest } = attrs
     if (output) codeExpr.output = JSON.parse(output.replace(/"/g, '"'))
     if (lang) codeExpr.programmingLanguage = lang
     if (Object.keys(rest).length) codeExpr.meta = rest
     return codeExpr
   } else {
-    const codeFrag = stencila.codeFragment(inlineCode.value)
+    const codeFrag = stencila.codeFragment({ text: inlineCode.value })
     if (attrs) {
       const { lang, ...rest } = attrs
       if (lang) codeFrag.programmingLanguage = lang
