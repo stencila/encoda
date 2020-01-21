@@ -209,7 +209,15 @@
     "extends": "@stencila/semantic-release-config"
   },
   "eslintConfig": {
-    "extends": "@stencila/eslint-config"
+    "extends": "@stencila/eslint-config",
+    "overrides": [
+      {
+        "files": ["*.test.ts"],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
   },
   "renovate": {
     "extends": [
