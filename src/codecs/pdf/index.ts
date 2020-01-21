@@ -139,11 +139,11 @@ const decodeMetadata = async (
     keywords,
     dateCreated:
       dateCreated !== undefined
-        ? stencila.date(dateCreated.toISOString())
+        ? stencila.date({ value: dateCreated.toISOString() })
         : undefined,
     dateModified:
       dateModified !== undefined
-        ? stencila.date(dateModified.toISOString())
+        ? stencila.date({ value: dateModified.toISOString() })
         : undefined
   })
 }

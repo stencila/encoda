@@ -176,7 +176,7 @@ async function decodeDocument(
   // Resolve the fetched resources
   await fetcher.resolve()
 
-  return stencila.article([], title || '', {
+  return stencila.article({
     content: content.length > 0 ? content : undefined
   })
 }
@@ -294,14 +294,17 @@ function decodeParagraph(
     if (styleType) {
       const match = /^HEADING_(\d)$/.exec(styleType)
       if (match) {
-        return stencila.heading(inlineContent, parseInt(match[1], 10))
+        return stencila.heading({
+          content: inlineContent,
+          depth: parseInt(match[1], 10)
+        })
       }
     }
   }
 
   if (bullet) return decodeListItem(para, inlineContent, lists)
 
-  return stencila.paragraph(inlineContent)
+  return stencila.paragraph({ content: inlineContent })
 }
 
 /**
@@ -371,7 +374,9 @@ function decodeListItem(
   const listLevel = bullet.nestingLevel || 0
 
   // The item to add to a list
-  const listItem = stencila.listItem([stencila.paragraph(content)])
+  const listItem = stencila.listItem({
+    content: [stencila.paragraph({ content })]
+  })
 
   // If we have jumped up a level then it means that the
   // the list at the lower depth has been finished
@@ -401,7 +406,7 @@ function decodeListItem(
     nestingLevel.glyphType === 'GLYPH_TYPE_UNSPECIFIED'
       ? 'unordered'
       : 'ascending'
-  const newList = stencila.list([listItem], { order })
+  const newList = stencila.list({ items: [listItem], order })
 
   if (listLevel === 0) {
     // Register the new list so other items can be added.
@@ -615,7 +620,7 @@ function decodeInlineObjectElement(
     return decodeImage(embeddedObject, embeddedObject.imageProperties)
   } else {
     log.warn(`Unhandled embedded object type ${JSON.stringify(embeddedObject)}`)
-    return stencila.imageObject('')
+    return stencila.imageObject({ contentUrl: '' })
   }
 }
 
@@ -667,18 +672,22 @@ function decodeTextRun(
   | stencila.Subscript
   | stencila.Superscript {
   const { textStyle } = textRun
-  const content = assertDefined(textRun.content)
-  const text = content.endsWith('\n') ? content.slice(0, -1) : content
+  const textContent = assertDefined(textRun.content)
+  const text = textContent.endsWith('\n')
+    ? textContent.slice(0, -1)
+    : textContent
+  const content = [text]
 
   if (textStyle) {
-    if (textStyle.link) return stencila.link([text], textStyle.link.url || '')
+    if (textStyle.link)
+      return stencila.link({ content, target: textStyle.link.url || '' })
     if (textStyle.baselineOffset === 'SUPERSCRIPT')
-      return stencila.superscript([text])
+      return stencila.superscript({ content })
     if (textStyle.baselineOffset === 'SUBSCRIPT')
-      return stencila.subscript([text])
-    if (textStyle.strikethrough) return stencila.del([text])
-    if (textStyle.bold) return stencila.strong([text])
-    if (textStyle.italic) return stencila.emphasis([text])
+      return stencila.subscript({ content })
+    if (textStyle.strikethrough) return stencila.del({ content })
+    if (textStyle.bold) return stencila.strong({ content })
+    if (textStyle.italic) return stencila.emphasis({ content })
   }
 
   return text
@@ -809,7 +818,8 @@ function decodeImage(
   }
 
   const contentUrl = decodingFetcher(imageProperties.contentUri || '')
-  return stencila.imageObject(contentUrl, {
+  return stencila.imageObject({
+    contentUrl,
     title,
     text: description
   })

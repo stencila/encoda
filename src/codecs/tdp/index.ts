@@ -245,11 +245,11 @@ function decodeField(
     }
   }
 
-  // Build the column schema
-  const schema = stencila.arraySchema(items)
-  if (constraints.unique) schema.uniqueItems = true
+  // Build the column validator
+  const validator = stencila.arrayValidator(items)
+  if (constraints.unique) validator.uniqueItems = true
 
-  return stencila.datatableColumn(field.name, values, { schema })
+  return stencila.datatableColumn({ name: field.name, values, validator })
 }
 
 /**
@@ -258,15 +258,14 @@ function decodeField(
 function encodeDatatableColumn(
   column: stencila.DatatableColumn
 ): datapackage.Field {
-  const field = {
-    name: column.name
-  }
-  if (!column.schema) return field
+  const { name, validator } = column
+  const field = { name }
+  if (!validator) return field
 
-  const { type, format, constraints } = encodeDatatableColumnSchema(
-    column.schema
+  const { type, format, constraints } = encodeDatatableColumnValidator(
+    validator
   )
-  if (column.schema.uniqueItems) constraints.unique = true
+  if (validator.uniqueItems) constraints.unique = true
 
   return { ...field, type, format, constraints }
 }
@@ -378,8 +377,8 @@ interface ColumnTypeFormatConstraints {
   }
 }
 
-function encodeDatatableColumnSchema(
-  schema: stencila.ArraySchema
+function encodeDatatableColumnValidator(
+  schema: stencila.ArrayValidator
 ): ColumnTypeFormatConstraints {
   // TODO: this method needs checking and refactoring since changing to
   //  ArraySchema
@@ -399,29 +398,29 @@ function encodeDatatableColumnSchema(
   let type
   let format
   switch (stencila.nodeType(items)) {
-    case 'ConstantSchema':
+    case 'ConstantValidator':
       type = 'object'
       break
-    case 'BooleanSchema':
+    case 'BooleanValidator':
       type = 'boolean'
       break
-    case 'NumberSchema':
+    case 'NumberValidator':
       type = 'number'
       break
-    case 'IntegerSchema':
+    case 'IntegerValidator':
       type = 'integer'
       break
-    case 'StringSchema':
-      if ((items as stencila.StringSchema).minLength)
-        constraints.minLength = (items as stencila.StringSchema).minLength
-      if ((items as stencila.StringSchema).maxLength)
-        constraints.maxLength = (items as stencila.StringSchema).maxLength
-      if ((items as stencila.StringSchema).pattern)
-        constraints.pattern = (items as stencila.StringSchema).pattern
+    case 'StringValidator':
+      if ((items as stencila.StringValidator).minLength)
+        constraints.minLength = (items as stencila.StringValidator).minLength
+      if ((items as stencila.StringValidator).maxLength)
+        constraints.maxLength = (items as stencila.StringValidator).maxLength
+      if ((items as stencila.StringValidator).pattern)
+        constraints.pattern = (items as stencila.StringValidator).pattern
 
       type = 'string'
 
-      format = (items as stencila.StringSchema).pattern
+      format = (items as stencila.StringValidator).pattern
 
       switch (format) {
         case 'date':
@@ -435,15 +434,15 @@ function encodeDatatableColumnSchema(
           break
       }
       break
-    case 'EnumSchema':
-      if ((items as stencila.EnumSchema).values)
-        constraints.enum = (items as stencila.EnumSchema).values
+    case 'EnumValidator':
+      if ((items as stencila.EnumValidator).values)
+        constraints.enum = (items as stencila.EnumValidator).values
       type = 'string'
       break
-    case 'ArraySchema':
+    case 'ArrayValidator':
       type = 'array'
       break
-    case 'TupleSchema':
+    case 'TupleValidator':
       type = 'array'
       break
     default:

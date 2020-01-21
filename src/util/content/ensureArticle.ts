@@ -8,5 +8,5 @@ import { ensureBlockContent } from './ensureBlockContent'
 export const ensureArticle = (node: stencila.Node): stencila.Article => {
   return stencila.isArticle(node)
     ? node
-    : stencila.article([], '', { content: [ensureBlockContent(node)] })
+    : stencila.article({ content: [ensureBlockContent(node)] })
 }

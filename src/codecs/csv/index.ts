@@ -65,7 +65,10 @@ export class CsvCodec extends Codec implements Codec {
 
     // Create columns with pre-allocated array of correct length
     const columns = columnNames.map(name => {
-      return stencila.datatableColumn(name, Array(rowNum))
+      return stencila.datatableColumn({
+        name,
+        values: Array(rowNum)
+      })
     })
 
     // Populate the column values with data
@@ -78,7 +81,7 @@ export class CsvCodec extends Codec implements Codec {
       }
     }
 
-    return stencila.datatable(columns)
+    return stencila.datatable({ columns })
   }
 
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {

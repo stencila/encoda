@@ -129,7 +129,11 @@ describe('citations and references', () => {
    */
   test('encoding', async () => {
     const pandocJson = await fs.readFile(fixture('cite-refs.pandoc.json'))
-    const html = await run(pandocJson, ['--from=json', '--to=html', '--eol=lf'], true)
+    const html = await run(
+      pandocJson,
+      ['--from=json', '--to=html', '--eol=lf'],
+      true
+    )
     expect(html).toMatchFile(snapshot('cite-refs.html'))
   })
 })

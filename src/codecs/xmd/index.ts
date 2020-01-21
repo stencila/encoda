@@ -59,15 +59,16 @@ export class XmdCodec extends Codec implements Codec {
       (node: stencila.Node): stencila.Node => {
         if (stencila.isA('CodeExpression', node)) {
           const { text, programmingLanguage } = node
-          return stencila.codeFragment(
-            programmingLanguage !== undefined
-              ? `${programmingLanguage} ${text}`
-              : text
-          )
+          return stencila.codeFragment({
+            text:
+              programmingLanguage !== undefined
+                ? `${programmingLanguage} ${text}`
+                : text
+          })
         }
         if (stencila.isA('CodeChunk', node)) {
           const { text, programmingLanguage, meta } = node
-          return stencila.codeBlock(text, { programmingLanguage, meta })
+          return stencila.codeBlock({ text, programmingLanguage, meta })
         }
         return node
       }
