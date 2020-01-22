@@ -26,7 +26,7 @@ export class CrossrefCodec extends Codec implements Codec {
         'query.bibliographic': content
       }
     })
-    if (response.statusCode === 200 && response.body) {
+    if (response.statusCode === 200 && response.body.length > 0) {
       const data = JSON.parse(response.body)
       const csl = data.message.items[0]
       // The output from api.crossref.org is not strictly CSL-JSON
@@ -43,7 +43,7 @@ export class CrossrefCodec extends Codec implements Codec {
         'posted-content': 'manuscript',
         'proceedings-article': 'paper-conference'
       }
-      csl.type = replacers[csl.type] || csl.type
+      csl.type = replacers[csl.type] ?? csl.type
 
       return decodeCsl(csl)
     }

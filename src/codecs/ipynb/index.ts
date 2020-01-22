@@ -2,6 +2,18 @@
  * @module ipynb
  */
 
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
+// These eslint-disable are necessary due to automatically generated nbformat type
+// definitions
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
 
 import { getLogger } from '@stencila/logga'

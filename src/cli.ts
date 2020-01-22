@@ -81,7 +81,7 @@ configure(options.debug)
       })
     } else if (['process', 'coerce', 'validate'].includes(command)) {
       const input = args[0]
-      const output = args[1] || input
+      const output = args[1] ?? input
       const { to, from, standalone, bundle, zip, theme, ...rest } = options
       const node = await read(input, from)
       let processed

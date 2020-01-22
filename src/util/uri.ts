@@ -21,7 +21,7 @@ export async function toFile(
 ): Promise<{ mediaType: string; filePath: string }> {
   const extension = path.extname(uri)
   const mediaType = mime.getType(extension) ?? ''
-  if (!filePath) filePath = tempy.file({ extension })
+  if (filePath === undefined) filePath = tempy.file({ extension })
 
   if (dataUri.match(uri)) {
     return dataUri.toFile(uri, filePath)

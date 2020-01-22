@@ -94,12 +94,12 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
 
   const children = tree.children.reduce(
     (innerTree: Node[], node: Node, idx: number) => {
-      if (skipUntil && idx <= skipUntil) {
+      if (skipUntil !== undefined && idx <= skipUntil) {
         return innerTree
       }
 
       // Recursively call `stringifyHTML` if the Node has children of its own
-      if (node.children) {
+      if (node.children !== undefined) {
         return [...innerTree, stringifyHTML(node)]
       }
 

@@ -281,8 +281,8 @@ const encodeIsPartOf = (cw: stencila.CreativeWork['isPartOf']): object => {
     logWarnLossIfAny('csl', 'encode', cw, lost)
 
     let page = ''
-    if (pageStart) page += pageStart
-    if (pageEnd) page += `-${pageEnd}`
+    if (pageStart !== undefined) page += pageStart
+    if (pageEnd !== undefined) page += `-${pageEnd}`
 
     return {
       'container-title': title,

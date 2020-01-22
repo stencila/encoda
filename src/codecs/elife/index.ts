@@ -24,7 +24,7 @@ export class ElifeCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const match = ElifeCodec.regex.exec(content)
-    if (!match) throw new Error('Unable to parse content')
+    if (match === null) throw new Error('Unable to parse content')
 
     const article = match[4]
 

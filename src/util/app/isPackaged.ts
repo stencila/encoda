@@ -8,7 +8,7 @@ import fs from 'fs'
 import path from 'path'
 
 const isPackaged =
-  ((process.mainModule && process.mainModule.id.endsWith('.exe')) ||
+  (process.mainModule?.id.endsWith('.exe') ||
     Object.prototype.hasOwnProperty.call(process, 'pkg')) &&
   fs.existsSync(path.join('/', 'snapshot'))
 

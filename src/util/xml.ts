@@ -4,6 +4,16 @@
  * @module util/xml
  */
 
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 import xmljs from 'xml-js'
 
 export type Element = xmljs.Element

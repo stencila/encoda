@@ -28,7 +28,7 @@ export class PlosCodec extends Codec implements Codec {
     doi: string
   } => {
     const match = PlosCodec.regex.exec(identifier)
-    if (!match)
+    if (match === null)
       throw new Error(`Unable to parse identifier as PLoS DOI: "${identifier}"`)
 
     const doi = match[6]
