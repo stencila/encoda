@@ -1,3 +1,13 @@
+## [0.83.1](https://github.com/stencila/encoda/compare/v0.83.0...v0.83.1) (2020-01-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency globby to v11 ([8a5fc4d](https://github.com/stencila/encoda/commit/8a5fc4dc1dec08f76dba0c3a1b5cc131fa704ff9))
+* **Deps:** Upgrade to Schema 0.35 ([0482dd9](https://github.com/stencila/encoda/commit/0482dd9eb50834063b7c749ee5aa2bcc653c285e))
+* **Pandoc:** Ensure that consisent version of pandoc-citeproc used ([4cb55a5](https://github.com/stencila/encoda/commit/4cb55a5f9e5841b4dddd18973b80c5ebadfeef45))
+* **Pandoc:** Upgrade to 2.9.1 ([7a6b8d8](https://github.com/stencila/encoda/commit/7a6b8d8a44c30b6b924fb182e74ff10d036ff6c6))
+
 # [0.83.0](https://github.com/stencila/encoda/compare/v0.82.1...v0.83.0) (2020-01-15)
 
 
