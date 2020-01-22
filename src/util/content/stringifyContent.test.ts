@@ -15,10 +15,10 @@ describe('stringifyContent', () => {
   test('it stringifies inline content', () => {
     expect(
       stringifyContent([
-        stencila.emphasis(['emphasis']),
-        stencila.strong(['strong']),
-        stencila.subscript(['sub']),
-        stencila.superscript(['sup'])
+        stencila.emphasis({ content: ['emphasis'] }),
+        stencila.strong({ content: ['strong'] }),
+        stencila.subscript({ content: ['sub'] }),
+        stencila.superscript({ content: ['sup'] })
       ])
     ).toEqual('emphasisstrongsubsup')
   })
@@ -26,12 +26,16 @@ describe('stringifyContent', () => {
   test('it stringifies block content', () => {
     expect(
       stringifyContent(
-        stencila.paragraph([
-          'A paragraph with ',
-          stencila.strong(['strong']),
-          ' and ',
-          stencila.strong([stencila.superscript(['super strong'])])
-        ])
+        stencila.paragraph({
+          content: [
+            'A paragraph with ',
+            stencila.strong({ content: ['strong'] }),
+            ' and ',
+            stencila.strong({
+              content: [stencila.superscript({ content: ['super strong'] })]
+            })
+          ]
+        })
       )
     ).toEqual('A paragraph with strong and super strong')
   })

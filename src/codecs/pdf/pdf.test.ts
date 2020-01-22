@@ -17,7 +17,9 @@ describe('decode', () => {
       stencila.person({ givenNames: ['Nokome'], familyNames: ['Bentley'] })
     ])
     expect(work.keywords).toEqual(['test', 'pdf', 'externally', 'created'])
-    expect(work.dateCreated).toEqual(stencila.date('2019-10-13T11:00:00.000Z'))
+    expect(work.dateCreated).toEqual(
+      stencila.date({ value: '2019-10-13T11:00:00.000Z' })
+    )
   })
 })
 

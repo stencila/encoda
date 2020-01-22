@@ -21,10 +21,10 @@ export class DateCodec extends Codec implements Codec {
     if (isNaN(date.getTime())) date = new Date(content)
     if (isNaN(date.getTime())) {
       log.warn(`Unable to decode content to date: "${content}"`)
-      return stencila.date('')
+      return stencila.date({ value: '' })
     }
     const iso = date.toISOString()
-    return stencila.date(iso)
+    return stencila.date({ value: iso })
   }
 
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {

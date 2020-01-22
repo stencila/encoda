@@ -9,7 +9,6 @@ describe('issue 77', () => {
     expect(node).toEqual({
       type: 'Article',
       title: 'Untitled',
-      authors: [],
       content: [
         {
           type: 'CodeBlock',

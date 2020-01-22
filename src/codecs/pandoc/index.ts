@@ -306,14 +306,14 @@ function encodeNode(
 export function decodeMeta(
   meta: Pandoc.Meta
 ): { [key: string]: stencila.Node } {
-  return objectMap(meta, (key, value) => decodeMetaValue(value))
+  return objectMap(meta, (_, value) => decodeMetaValue(value))
 }
 
 /**
  * Encode an `object` of metadata into a Pandoc `Meta` node
  */
 export function encodeMeta(obj: { [key: string]: any }): Pandoc.Meta {
-  return objectMap(obj, (key, value) => encodeMetaValue(value))
+  return objectMap(obj, (_, value) => encodeMetaValue(value))
 }
 
 /**
@@ -485,9 +485,10 @@ function decodeHeader(node: Pandoc.Header): stencila.Heading {
 }
 
 function encodeHeading(node: stencila.Heading): Pandoc.Header {
+  const { depth = 1 } = node
   return {
     t: 'Header',
-    c: [node.depth, emptyAttrs, encodeInlines(node.content)]
+    c: [depth, emptyAttrs, encodeInlines(node.content)]
   }
 }
 
@@ -495,7 +496,7 @@ function encodeHeading(node: stencila.Heading): Pandoc.Header {
  * Decode a Pandoc `Plain` to a Stencila `Paragraph`.
  */
 function decodePlain(node: Pandoc.Plain): stencila.Paragraph {
-  return stencila.paragraph(decodeInlines(node.c))
+  return stencila.paragraph({ content: decodeInlines(node.c) })
 }
 
 /**
@@ -687,7 +688,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
       return [
         encodeParagraph({
           type: 'Paragraph',
-          content: cell.content
+          content: cell.content.filter(isInlineContent)
         })
       ]
     })
@@ -700,7 +701,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
         return [
           encodeParagraph({
             type: 'Paragraph',
-            content: cell.content
+            content: cell.content.filter(isInlineContent)
           })
         ]
       })
@@ -1045,7 +1046,7 @@ function encodeQuote(node: stencila.Quote): Pandoc.Quoted {
  * Decode a Pandoc `Code` element to a Stencila `CodeFragment` node.
  */
 function decodeCode(node: Pandoc.Code): stencila.CodeFragment {
-  const code = stencila.codeFragment(node.c[1])
+  const code = stencila.codeFragment({ text: node.c[1] })
   const attrs = decodeAttrs(node.c[0])
   if (attrs) {
     const language = attrs.classes ? attrs.classes.split(' ')[0] : null
@@ -1117,7 +1118,8 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
   const inlines = cite.c[1]
 
   const cites = citations.map(citation => {
-    return stencila.cite(citation.citationId, {
+    return stencila.cite({
+      target: citation.citationId,
       citationMode:
         citation.citationMode.t === 'SuppressAuthor'
           ? 'suppressAuthor'
@@ -1125,7 +1127,7 @@ function decodeCite(cite: Pandoc.Cite): stencila.Cite | stencila.CiteGroup {
     })
   })
   if (cites.length > 0) cites[0].content = decodeInlines(inlines)
-  return cites.length === 1 ? cites[0] : stencila.citeGroup(cites)
+  return cites.length === 1 ? cites[0] : stencila.citeGroup({ items: cites })
 }
 
 /**

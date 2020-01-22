@@ -80,7 +80,7 @@ describe('Decode container elements', () => {
 })
 
 describe('Encode & Decode cite nodes', () => {
-  const schemaNode = cite('myTarget')
+  const schemaNode = cite({ target: 'myTarget' })
   const htmlNode = `<cite><a href="#myTarget">myTarget</a></cite>`
 
   test('encode', async () => {
@@ -92,7 +92,9 @@ describe('Encode & Decode cite nodes', () => {
   })
 
   test('encode with prefix & suffix', async () => {
-    const actual = doc(await e(cite('myTarget', { prefix: '(', suffix: ')' })))
+    const actual = doc(
+      await e(cite({ target: 'myTarget', prefix: '(', suffix: ')' }))
+    )
     const prefix = getByText(actual, '(')
     const suffix = getByText(actual, ')')
 
@@ -116,7 +118,8 @@ describe('Encode & Decode cite nodes', () => {
 })
 
 describe('Encode & Decode code-expression nodes', () => {
-  const codeExpressionSchema = codeExpression('x * 2', {
+  const codeExpressionSchema = codeExpression({
+    text: 'x * 2',
     output: '42',
     programmingLanguage: 'python'
   })
@@ -139,10 +142,10 @@ describe('Encode & Decode code-expression nodes', () => {
 })
 
 describe('Encode & Decode cite group nodes', () => {
-  const cite1 = cite('myFirstTarget')
-  const cite2 = cite('mySecondTarget')
+  const cite1 = cite({ target: 'myFirstTarget' })
+  const cite2 = cite({ target: 'mySecondTarget' })
 
-  const schemaNode = citeGroup([cite1, cite2])
+  const schemaNode = citeGroup({ items: [cite1, cite2] })
   const htmlNode = `<span itemtype="https://schema.stenci.la/CiteGroup">
     <cite><a href="myFirstTarget">myFirstTarget</a></cite>
     <cite><a href="mySecondTarget">mySecondTarget</a></cite>
@@ -164,7 +167,9 @@ describe('Encode & Decode cite group nodes', () => {
 })
 
 describe.skip('Encode & Decode references', () => {
-  const schemaNode = article([], 'Article title', {
+  const schemaNode = article({
+    authors: [],
+    title: 'Article title',
     references: [
       creativeWork({
         title:
@@ -329,9 +334,12 @@ describe('Encode & Decode figure nodes', () => {
     const actual = doc(
       await e(
         figure({
-          content: [imageObject('someImage')],
+          content: [imageObject({ contentUrl: 'someImage' })],
           label,
-          caption: ['This is a test image. It has a ', link(['link'], '#')]
+          caption: [
+            'This is a test image. It has a ',
+            link({ content: ['link'], target: '#' })
+          ]
         })
       )
     )
@@ -348,8 +356,11 @@ describe('Encode & Decode figure nodes', () => {
 
   test('decode', async () => {
     const schemaNode = figure({
-      content: [imageObject('someImage')],
-      caption: ['This is a test image. It has a ', link(['link'], '#')]
+      content: [imageObject({ contentUrl: 'someImage' })],
+      caption: [
+        'This is a test image. It has a ',
+        link({ content: ['link'], target: '#' })
+      ]
     })
 
     const htmlNode = `<figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>`
@@ -359,15 +370,20 @@ describe('Encode & Decode figure nodes', () => {
 })
 
 describe('Encode & Decode Collections', () => {
-  const schemaNode = collection([
-    figure({
-      content: [imageObject('someImage')],
-      caption: ['This is a test image. It has a ', link(['link'], '#')]
-    }),
-    figure({
-      content: [imageObject('figure2')]
-    })
-  ])
+  const schemaNode = collection({
+    parts: [
+      figure({
+        content: [imageObject({ contentUrl: 'someImage' })],
+        caption: [
+          'This is a test image. It has a ',
+          link({ content: ['link'], target: '#' })
+        ]
+      }),
+      figure({
+        content: [imageObject({ contentUrl: 'figure2' })]
+      })
+    ]
+  })
 
   const htmlNode = `
     <ol itemtype="https://schema.org/Collection">

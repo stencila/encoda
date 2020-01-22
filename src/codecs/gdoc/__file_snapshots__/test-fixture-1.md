@@ -1,5 +1,4 @@
 ---
-authors: []
 title:
   - content:
       - A Google Doc test fixture for Stencila Encoda

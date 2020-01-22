@@ -14,8 +14,8 @@ describe('validate', () => {
     await expect(validate({}, 'Thing')).rejects.toThrow(
       /^ should have required property 'type'$/
     )
-    await expect(validate({ type: 'Article' }, 'Article')).rejects.toThrow(
-      /^ should have required property 'authors'$/
+    await expect(validate({ type: 'Heading' }, 'Heading')).rejects.toThrow(
+      /^ should have required property 'content'$/
     )
   })
 

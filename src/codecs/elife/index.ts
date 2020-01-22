@@ -64,7 +64,7 @@ export class ElifeCodec extends Codec implements Codec {
     const { statusCode, body } = await http.get(url)
     if (statusCode !== 200) {
       log.error(`Unable to find eLife article with id: ${article}`)
-      return stencila.article([], 'Untitled')
+      return stencila.article()
     }
 
     const doc = xml.load(body, { compact: false }) as xml.Element

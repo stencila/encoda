@@ -28,8 +28,6 @@ description: >-
 isPartOf:
   type: Article
   id: 'https://doi.org/10.5438/0000-00ss'
-  authors: []
-  title: ''
 keywords:
   - doi
   - schema.org
@@ -49,6 +47,5 @@ references:
     id: 'https://doi.org/10.5438/55e5-t5c0'
   - type: CreativeWork
     id: 'https://doi.org/10.5438/4k3m-nyvg'
-title: ''
 url: 'https://blog.datacite.org/schema-org-register-dois/'
 version: '1.0'

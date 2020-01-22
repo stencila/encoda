@@ -135,7 +135,9 @@ export async function decodeCsl(
       }
     }
 
-    return stencila.article(authors, title, {
+    return stencila.article({
+      authors,
+      title,
       id,
       datePublished,
       isPartOf

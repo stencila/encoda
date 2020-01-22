@@ -291,7 +291,8 @@ function decodeCell(
   }
 
   if (cell.f) {
-    return codeExpression(cell.f.trim(), {
+    return codeExpression({
+      text: cell.f.trim(),
       programmingLanguage: 'excel',
       output: value
     })

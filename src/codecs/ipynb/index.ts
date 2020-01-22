@@ -217,7 +217,7 @@ async function encodeNode(node: stencila.Node): Promise<nbformat4.Notebook> {
 
   const metadata = {
     ...meta,
-    title: stringifyContent(title),
+    title: stringifyContent(title || ''),
     authors
   }
 
@@ -371,7 +371,8 @@ async function decodeCodeCell(
     ? [cell.prompt_number, cell.input]
     : [cell.execution_count, cell.source]
 
-  return stencila.codeChunk(decodeMultilineString(source), {
+  return stencila.codeChunk({
+    text: decodeMultilineString(source),
     programmingLanguage: language,
     meta: { ...metadata, execution_count },
     outputs:
@@ -461,7 +462,8 @@ function decodeOutput(
       // The above should handle all output types but in case of an invalid
       // type, instead of throwing an error, return a JSON code block of output
       return Promise.resolve(
-        stencila.codeBlock(JSON.stringify(output), {
+        stencila.codeBlock({
+          text: JSON.stringify(output),
           programmingLanguage: 'json'
         })
       )
@@ -581,7 +583,7 @@ async function decodeMimeBundle(
       const { mediaType: format, filePath: contentUrl } = await dataUri.toFile(
         dataUrl
       )
-      return stencila.imageObject(contentUrl, { format })
+      return stencila.imageObject({ contentUrl, format })
     } else if (mimetype === 'text/plain') {
       // Text output, including stdout, is decoded using the `txt` codec
       // which attempts to parse `numbers` etc (and may in the future,
@@ -592,7 +594,7 @@ async function decodeMimeBundle(
       // often important in text output of cells.
       const node = await load(content, 'txt')
       if (typeof node === 'string' && /[ ]{2,}|\t|\n/g.test(node))
-        return stencila.codeBlock(node, { programmingLanguage: 'text' })
+        return stencila.codeBlock({ text: node, programmingLanguage: 'text' })
       else return node
     } else {
       // TODO: handle other mime types e.g. application/x+json
