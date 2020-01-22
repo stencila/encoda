@@ -63,11 +63,7 @@ export class XmlCodec extends Codec {
 export const decodeDoc = (doc: xml.Element): stencila.Node | undefined => {
   if (doc !== undefined) {
     const stencila = xml.first(doc, 'stencila')
-    if (
-      stencila !== null &&
-      stencila.elements !== undefined &&
-      stencila.elements.length === 1
-    ) {
+    if (stencila?.elements !== undefined && stencila.elements.length === 1) {
       const root = stencila.elements[0]
       return decodeElem(root)
     }
@@ -129,7 +125,7 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
       return elements.map(decodeElem)
     default: {
       const node = elements.reduce((prev, curr) => {
-        const key = xml.attr(curr, 'key') || ''
+        const key = xml.attr(curr, 'key') ?? ''
         return {
           ...prev,
           [key]: decodeElem(curr)

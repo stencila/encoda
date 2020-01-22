@@ -82,7 +82,7 @@ export class TDPCodec extends Codec implements Codec {
     const desc: { [key: string]: any } = {
       profile: 'tabular-data-package',
       // Name is the only required property
-      name: cw.name || 'Unnamed'
+      name: cw.name ?? 'Unnamed'
     }
     const title = cw.alternateNames && cw.alternateNames[0]
     if (title) desc.title = title
@@ -202,7 +202,7 @@ async function encodeCreativeWork(
   }
   const desc = {
     profile: 'tabular-data-resource',
-    name: datatable.name || 'Unnamed',
+    name: datatable.name ?? 'Unnamed',
 
     data: await dump(datatable, 'csv'),
     format: 'csv',
@@ -410,17 +410,17 @@ function encodeDatatableColumnValidator(
     case 'IntegerValidator':
       type = 'integer'
       break
-    case 'StringValidator':
-      if ((items as stencila.StringValidator).minLength)
-        constraints.minLength = (items as stencila.StringValidator).minLength
-      if ((items as stencila.StringValidator).maxLength)
-        constraints.maxLength = (items as stencila.StringValidator).maxLength
-      if ((items as stencila.StringValidator).pattern)
-        constraints.pattern = (items as stencila.StringValidator).pattern
+    case 'StringValidator': {
+      const stringValidator = items as stencila.StringValidator
+      if (stringValidator.minLength)
+        constraints.minLength = stringValidator.minLength
+      if (stringValidator.maxLength)
+        constraints.maxLength = stringValidator.maxLength
+      if (stringValidator.pattern) constraints.pattern = stringValidator.pattern
 
       type = 'string'
 
-      format = (items as stencila.StringValidator).pattern
+      format = stringValidator.pattern
 
       switch (format) {
         case 'date':
@@ -434,11 +434,13 @@ function encodeDatatableColumnValidator(
           break
       }
       break
-    case 'EnumValidator':
-      if ((items as stencila.EnumValidator).values)
-        constraints.enum = (items as stencila.EnumValidator).values
+    }
+    case 'EnumValidator': {
+      const enumValidator = items as stencila.EnumValidator
+      if (enumValidator.values) constraints.enum = enumValidator.values
       type = 'string'
       break
+    }
     case 'ArrayValidator':
       type = 'array'
       break

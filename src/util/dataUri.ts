@@ -35,7 +35,7 @@ export async function toFile(
 
   const mediaType = match[1]
   if (!filePath) {
-    const extension = mime.getExtension(mediaType) || 'png'
+    const extension = mime.getExtension(mediaType) ?? 'png'
     filePath = tempy.file({ extension })
   }
 
@@ -55,7 +55,7 @@ export async function fromFile(
   filePath: string,
   mediaType?: string
 ): Promise<{ mediaType: string; dataUri: string }> {
-  if (!mediaType) mediaType = mime.getType(filePath) || 'image/png'
+  if (!mediaType) mediaType = mime.getType(filePath) ?? 'image/png'
 
   let data = ''
   try {

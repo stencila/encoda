@@ -208,7 +208,7 @@ const escapeRegex = (regex: string): string =>
  */
 const transformOutput = (outputElem: HTMLElement): HTMLElement => {
   const preCode = first(outputElem, 'pre > code')
-  if (preCode !== null) return elem('pre', {}, text(preCode) || '')
+  if (preCode !== null) return elem('pre', {}, text(preCode) ?? '')
 
   const img = first(outputElem, 'img')
   if (img !== null) return img
@@ -216,9 +216,9 @@ const transformOutput = (outputElem: HTMLElement): HTMLElement => {
   const table = first(outputElem, 'script[data-pagedtable-source=""]')
   if (table !== null) {
     // TODO: Create an HTML table from the JSON
-    return elem('pre', {}, text(table) || '')
+    return elem('pre', {}, text(table) ?? '')
   }
 
   log.warn(`Unhandled chunk output type: ${outputElem.nodeName}`)
-  return elem('pre', {}, text(outputElem) || '')
+  return elem('pre', {}, text(outputElem) ?? '')
 }

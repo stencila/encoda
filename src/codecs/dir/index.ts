@@ -167,7 +167,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       const rankings = collection.parts
         .map((node, index) => ({
           which: index,
-          rank: mainNames.indexOf(node.name || '')
+          rank: mainNames.indexOf(node.name ?? '')
         }))
         .filter(item => item.rank > -1)
         .sort((a, b) => b.rank - a.rank)
@@ -189,8 +189,8 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     options: EncodeOptions = this.defaultEncodeOptions
     // eslint-disable-next-line @typescript-eslint/require-await
   ): Promise<vfile.VFile> => {
-    const dirPath = options.filePath || tempy.directory()
-    const format = options.format || 'html'
+    const dirPath = options.filePath ?? tempy.directory()
+    const format = options.format ?? 'html'
 
     // Wrap to a collection as necessary
     const cw: stencila.CreativeWork = isCreativeWork(node)
@@ -215,12 +215,12 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       if (node.type === 'Collection') {
         const coll = node as stencila.Collection
         return coll.parts
-          .map(child => walk(child, [...route, node.name || '']))
+          .map(child => walk(child, [...route, node.name ?? '']))
           .reduce((prev, curr) => [...prev, ...curr], [])
       } else {
         return [
           {
-            route: [...route, node.name || 'unnamed'],
+            route: [...route, node.name ?? 'unnamed'],
             node
           }
         ]

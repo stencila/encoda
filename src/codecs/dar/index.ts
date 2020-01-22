@@ -65,13 +65,13 @@ export class DarCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     const { filePath } = options
 
-    const darPath = filePath || path.join(tempy.directory(), '.dar')
+    const darPath = filePath ?? path.join(tempy.directory(), '.dar')
     await fs.ensureDir(darPath)
 
     // Generate promises for each document and its assets
     const nodes =
       stencila.isCreativeWork(node) && node.type === 'Collection'
-        ? node.parts || []
+        ? node.parts ?? []
         : [node]
     const promises = nodes.map(async (node, index) => {
       const fileId =

@@ -198,7 +198,7 @@ export function run(
       reject(err)
     })
 
-    if (input && input.length) {
+    if (input?.length) {
       child.stdin.on('error', err => {
         // Ignore errors where Pandoc closes stdin
         // before we finish writing to it.
@@ -567,7 +567,7 @@ function decodeCodeBlock(node: Pandoc.CodeBlock): stencila.CodeBlock {
  * Encode a Stencila `CodeBlock` to a Pandoc `CodeBlock`.
  */
 function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
-  const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
+  const attrs = encodeAttrs({ classes: node.programmingLanguage ?? '' })
   return {
     t: 'CodeBlock',
     c: [attrs, node.text]
@@ -1060,7 +1060,7 @@ function decodeCode(node: Pandoc.Code): stencila.CodeFragment {
  * with language in the class.
  */
 function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
-  const attrs = encodeAttrs({ classes: node.programmingLanguage || '' })
+  const attrs = encodeAttrs({ classes: node.programmingLanguage ?? '' })
   return {
     t: 'Code',
     c: [attrs, node.text]
@@ -1098,7 +1098,7 @@ function decodeLink(node: Pandoc.Link): stencila.Link {
  * Encode a Stencila `Link` to a Pandoc `Link`.
  */
 function encodeLink(node: stencila.Link): Pandoc.Link {
-  const [url, title] = [node.target, node.title || '']
+  const [url, title] = [node.target, node.title ?? '']
   return {
     t: 'Link',
     c: [emptyAttrs, encodeInlines(node.content), [url, title]]
@@ -1203,7 +1203,7 @@ function decodeImage(image: Pandoc.Image): stencila.ImageObject {
  */
 function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
   const url = imageObject.contentUrl || ''
-  const title = stringifyContent(imageObject.title || '')
+  const title = stringifyContent(imageObject.title ?? '')
   const alt: Pandoc.Inline[] = []
   if (imageObject.text) alt.push(encodeString(imageObject.text))
   return {

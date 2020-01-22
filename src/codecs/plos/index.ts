@@ -73,8 +73,8 @@ export class PlosCodec extends Codec implements Codec {
     const graphics = xml.all(doc, 'graphic')
     for (const graphic of graphics) {
       const href = xml.attr(graphic, 'xlink:href')
-      if (href !== null && href.startsWith(`info:doi/${doi}`)) {
-        const id = href.split('.').pop() || ''
+      if (href?.startsWith(`info:doi/${doi}`)) {
+        const id = href.split('.').pop() ?? ''
         const url =
           `https://journals.plos.org/${journal}/article/` +
           (id.startsWith('e')

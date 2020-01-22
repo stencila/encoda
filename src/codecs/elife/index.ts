@@ -83,7 +83,7 @@ export class ElifeCodec extends Codec implements Codec {
     const graphics = xml.all(doc, 'graphic')
     for (const graphic of graphics) {
       let href = xml.attr(graphic, 'xlink:href')
-      if (href !== null && href.startsWith('elife')) {
+      if (href?.startsWith('elife')) {
         if (!href.endsWith('.tif')) href += '.tif'
         const url = `https://iiif.elifesciences.org/lax:${article}%2F${href}/full/600,/0/default.jpg`
         const filename = href

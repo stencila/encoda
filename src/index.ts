@@ -109,7 +109,7 @@ export async function match(
       .extname(content)
       .slice(1)
       .toLowerCase()
-    mediaType = mime.getType(content) || undefined
+    mediaType = mime.getType(content) ?? undefined
   }
 
   if (format) {
@@ -119,7 +119,7 @@ export async function match(
     if (format.includes('/')) mediaType = format
     else {
       extName = format
-      mediaType = mime.getType(extName) || undefined
+      mediaType = mime.getType(extName) ?? undefined
     }
   }
 

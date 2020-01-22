@@ -44,7 +44,7 @@ export function elem(
  * null elements or those of the wrong type will return ''
  */
 export function text(elem: Element | null): string {
-  return textOrUndefined(elem) || ''
+  return textOrUndefined(elem) ?? ''
 }
 
 /**
@@ -84,7 +84,7 @@ export function intOrUndefined(elem: Element | null): number | undefined {
  * Get an element attribute
  */
 export function attr(elem: Element | null, name: string): string | null {
-  const value = elem && elem.attributes && elem.attributes[name]
+  const value = elem?.attributes?.[name]
   return value ? value.toString() : null
 }
 
@@ -163,7 +163,7 @@ export function all(
   name: string | string[],
   attributes: Attributes = {}
 ): Element[] {
-  if (elem && elem.elements) {
+  if (elem?.elements) {
     return [
       ...elem.elements.filter(child => matches(child, name, attributes)),
       ...elem.elements

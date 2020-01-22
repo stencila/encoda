@@ -88,20 +88,20 @@ function encodeNode(node: stencila.Node): xlsx.WorkBook {
     if (collection.parts && collection.parts.length > 0) {
       let index = 1
       for (const part of collection.parts) {
-        const name = part.name || `Sheet${index}`
+        const name = part.name ?? `Sheet${index}`
         sheetNames.push(name)
         sheets[name] = encodeCreativeWork(part)
         index += 1
       }
     } else {
       // xlsx.Workbooks must have at least one sheet
-      const name = collection.name || 'Empty'
+      const name = collection.name ?? 'Empty'
       sheetNames.push(name)
       sheets[name] = {}
     }
   } else {
     const cw = node as stencila.CreativeWork
-    const name = cw.name || 'Sheet1'
+    const name = cw.name ?? 'Sheet1'
     sheetNames.push(name)
     sheets[name] = encodeCreativeWork(cw)
   }
@@ -205,7 +205,7 @@ function decodeDatatable(
 ): stencila.Datatable {
   // Empty values need to be replaced with `null`
   // so determine extent of the cells
-  const rang = xlsx.utils.decode_range(sheet['!ref'] || 'A1')
+  const rang = xlsx.utils.decode_range(sheet['!ref'] ?? 'A1')
   const cols = rang.e.c
   const rows = rang.e.r
 
@@ -297,7 +297,7 @@ function decodeCell(
       output: value
     })
   } else {
-    return value || null
+    return value ?? null
   }
 }
 

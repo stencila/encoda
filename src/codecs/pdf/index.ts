@@ -171,7 +171,7 @@ const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
     authors = await Promise.all(
       authors.map(author => {
         if (stencila.isA('Person', author)) return dump(author, 'person')
-        else return author.name || author.legalName || ''
+        else return author.name ?? author.legalName ?? ''
       })
     )
   }

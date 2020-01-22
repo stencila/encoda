@@ -160,7 +160,7 @@ const codecCoerce: Ajv.SchemaValidateFunction = async (
     throw new Ajv.ValidationError([
       {
         keyword: 'decoding',
-        dataPath: dataPath || '',
+        dataPath: dataPath ?? '',
         schemaPath: '',
         params: {
           keyword: 'codec'

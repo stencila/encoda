@@ -164,7 +164,7 @@ export const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
   } = cw
   logWarnLossIfAny('csl', 'encode', cw, lost)
 
-  const date = datePublished || dateModified || dateCreated || undefined
+  const date = datePublished ?? dateModified ?? dateCreated ?? undefined
 
   return {
     type: 'article-journal',

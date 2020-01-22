@@ -52,7 +52,7 @@ const isSelfClosing = (tag: string): boolean =>
  * @param {string} html String representation of HTML to parse.
  */
 const getTags = (html: string): string[] =>
-  (html.match(htmlTagRegExp) || []).filter(not(isSelfClosing))
+  (html.match(htmlTagRegExp) ?? []).filter(not(isSelfClosing))
 
 // Helper function for wrapping HTML string content in a custom MDAST style object
 const fullHtmlNode = (value: string): Literal => ({

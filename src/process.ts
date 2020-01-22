@@ -31,7 +31,7 @@ export default async function process(
         // TODO: This assumes that the returned node is an CreativeWork
         // Wrap / unwrap to `BlockContent[]` as needed
         const work = (await _read(include.source)) as stencila.CreativeWork
-        include.content = (work.content || []) as stencila.BlockContent[]
+        include.content = (work.content ?? []) as stencila.BlockContent[]
       }
     }
 
