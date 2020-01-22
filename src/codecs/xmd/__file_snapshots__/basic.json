@@ -1,5 +1,6 @@
 {
   "title": "Untitled",
+  "output": "html_document",
   "content": [
     {
       "text": "knitr::opts_chunk$set(echo = TRUE)",
