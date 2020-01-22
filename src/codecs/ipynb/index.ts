@@ -2,6 +2,18 @@
  * @module ipynb
  */
 
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
+// These eslint-disable are necessary due to automatically generated nbformat type
+// definitions
 /* eslint-disable @typescript-eslint/camelcase, @typescript-eslint/no-namespace */
 
 import { getLogger } from '@stencila/logga'
@@ -217,11 +229,11 @@ async function encodeNode(node: stencila.Node): Promise<nbformat4.Notebook> {
 
   const metadata = {
     ...meta,
-    title: stringifyContent(title || ''),
+    title: stringifyContent(title ?? ''),
     authors
   }
 
-  const cells = await encodeCells(content || [])
+  const cells = await encodeCells(content ?? [])
 
   return {
     nbformat: 4,
@@ -375,10 +387,7 @@ async function decodeCodeCell(
     text: decodeMultilineString(source),
     programmingLanguage: language,
     meta: { ...metadata, execution_count },
-    outputs:
-      outputs && outputs.length
-        ? await decodeOutputs(outputs, version)
-        : undefined
+    outputs: outputs?.length ? await decodeOutputs(outputs, version) : undefined
   })
 }
 
@@ -394,7 +403,7 @@ async function encodeCodeChunk(
   const source = encodeMultilineString(chunk.text || '')
   const outputs: nbformat4.Output[] = await encodeOutputs(
     chunk,
-    chunk.outputs || []
+    chunk.outputs ?? []
   )
   return {
     cell_type: 'code',
@@ -623,7 +632,7 @@ async function encodeMimeBundle(
         const { mediaType, dataUri: dataUrl } = await dataUri.fromFile(
           image.contentUrl
         )
-        const data = dataUrl.split('base64,').pop() || ''
+        const data = dataUrl.split('base64,').pop() ?? ''
         return [mediaType, data]
       }
     }

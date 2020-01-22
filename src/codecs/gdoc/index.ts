@@ -2,8 +2,15 @@
  * @module gdoc
  */
 
-// TODO: Remove use of non-null-assertions
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
 import stencila, { isInlineContent } from '@stencila/schema'
@@ -205,8 +212,8 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
     // `CreativeWork` types (have `content`)
     case 'Article': {
       const article = node as stencila.Article
-      gdoc.title = stringifyContent(article.title || '')
-      content = article.content || []
+      gdoc.title = stringifyContent(article.title ?? '')
+      content = article.content ?? []
       break
     }
     // `BlockContent` types
@@ -372,7 +379,7 @@ function decodeListItem(
   // The list and the depth in that list that this
   // list item lives at
   const listId = assertDefined(bullet.listId)
-  const listLevel = bullet.nestingLevel || 0
+  const listLevel = bullet.nestingLevel ?? 0
 
   // The item to add to a list
   const listItem = stencila.listItem({
@@ -483,15 +490,15 @@ const encodeListItem = (
 function decodeTable(table: GDocT.Schema$Table): stencila.Table {
   return {
     type: 'Table',
-    rows: (table.tableRows || []).map(
+    rows: (table.tableRows ?? []).map(
       (row: GDocT.Schema$TableRow): stencila.TableRow => {
         return {
           type: 'TableRow',
-          cells: (row.tableCells || []).map(
+          cells: (row.tableCells ?? []).map(
             (cell: GDocT.Schema$TableCell): stencila.TableCell => {
               return {
                 type: 'TableCell',
-                content: (cell.content || []).map(
+                content: (cell.content ?? []).map(
                   (
                     elem: GDocT.Schema$StructuralElement
                   ): stencila.InlineContent => {
@@ -681,7 +688,7 @@ function decodeTextRun(
 
   if (textStyle) {
     if (textStyle.link)
-      return stencila.link({ content, target: textStyle.link.url || '' })
+      return stencila.link({ content, target: textStyle.link.url ?? '' })
     if (textStyle.baselineOffset === 'SUPERSCRIPT')
       return stencila.superscript({ content })
     if (textStyle.baselineOffset === 'SUBSCRIPT')
@@ -818,7 +825,7 @@ function decodeImage(
     }
   }
 
-  const contentUrl = decodingFetcher(imageProperties.contentUri || '')
+  const contentUrl = decodingFetcher(imageProperties.contentUri ?? '')
   return stencila.imageObject({
     contentUrl,
     title,
@@ -841,7 +848,7 @@ function encodeImageObject(
         imageProperties: {
           contentUri: imageObject.contentUrl
         },
-        title: stringifyContent(imageObject.title || ''),
+        title: stringifyContent(imageObject.title ?? ''),
         description: imageObject.text
       }
     }

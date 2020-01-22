@@ -164,7 +164,7 @@ export const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
   } = cw
   logWarnLossIfAny('csl', 'encode', cw, lost)
 
-  const date = datePublished || dateModified || dateCreated || undefined
+  const date = datePublished ?? dateModified ?? dateCreated ?? undefined
 
   return {
     type: 'article-journal',
@@ -281,8 +281,8 @@ const encodeIsPartOf = (cw: stencila.CreativeWork['isPartOf']): object => {
     logWarnLossIfAny('csl', 'encode', cw, lost)
 
     let page = ''
-    if (pageStart) page += pageStart
-    if (pageEnd) page += `-${pageEnd}`
+    if (pageStart !== undefined) page += pageStart
+    if (pageEnd !== undefined) page += `-${pageEnd}`
 
     return {
       'container-title': title,

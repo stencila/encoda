@@ -4,7 +4,8 @@ export const reduceNonNullable = <A, B>(callback: (sourceNode: A) => B) => (
   convertedNodes: NonNullable<B>[] = [],
   sourceNode?: A
 ): NonNullable<B>[] => {
-  const decodedNode = sourceNode ? callback(sourceNode) : undefined
+  const decodedNode =
+    sourceNode !== undefined ? callback(sourceNode) : undefined
   return isDefined(decodedNode)
     ? [...convertedNodes, decodedNode]
     : convertedNodes

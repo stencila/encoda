@@ -31,11 +31,11 @@ export async function toFile(
   filePath?: string
 ): Promise<{ mediaType: string; filePath: string }> {
   const match = DATA_URI_REGEX.exec(dataUri)
-  if (!match) return { mediaType: '', filePath: '' }
+  if (match === null) return { mediaType: '', filePath: '' }
 
   const mediaType = match[1]
-  if (!filePath) {
-    const extension = mime.getExtension(mediaType) || 'png'
+  if (filePath === undefined) {
+    const extension = mime.getExtension(mediaType) ?? 'png'
     filePath = tempy.file({ extension })
   }
 
@@ -55,7 +55,7 @@ export async function fromFile(
   filePath: string,
   mediaType?: string
 ): Promise<{ mediaType: string; dataUri: string }> {
-  if (!mediaType) mediaType = mime.getType(filePath) || 'image/png'
+  if (mediaType === undefined) mediaType = mime.getType(filePath) ?? 'image/png'
 
   let data = ''
   try {

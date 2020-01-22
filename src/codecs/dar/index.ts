@@ -1,11 +1,5 @@
 /**
- * # Document Archive (DAR)
- *
  * @module dar
- */
-
-/** A comment required for above to be included in docs.
- * See https://github.com/christopherthielen/typedoc-plugin-external-module-name/issues/300
  */
 
 import stencila from '@stencila/schema'
@@ -65,17 +59,17 @@ export class DarCodec extends Codec implements Codec {
   ): Promise<vfile.VFile> => {
     const { filePath } = options
 
-    const darPath = filePath || path.join(tempy.directory(), '.dar')
+    const darPath = filePath ?? path.join(tempy.directory(), '.dar')
     await fs.ensureDir(darPath)
 
     // Generate promises for each document and its assets
     const nodes =
       stencila.isCreativeWork(node) && node.type === 'Collection'
-        ? node.parts || []
+        ? node.parts ?? []
         : [node]
     const promises = nodes.map(async (node, index) => {
       const fileId =
-        stencila.isCreativeWork(node) && node.name
+        stencila.isCreativeWork(node) && node.name !== undefined
           ? node.name
           : `${stencila.nodeType(node).toLowerCase()}-${index}`
       if (stencila.isA('Datatable', node)) {
@@ -99,9 +93,10 @@ export class DarCodec extends Codec implements Codec {
     const { documents, assets } = (await Promise.all(promises)).reduce(
       (prev: { documents: Element[]; assets: Element[] }, curr) => {
         return {
-          documents: curr.document
-            ? [...prev.documents, curr.document]
-            : prev.documents,
+          documents:
+            curr.document !== null
+              ? [...prev.documents, curr.document]
+              : prev.documents,
           assets: [...prev.assets, ...curr.assets]
         }
       },

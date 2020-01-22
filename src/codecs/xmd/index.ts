@@ -34,7 +34,7 @@ export class XmdCodec extends Codec implements Codec {
       /```\s*{([a-z]+)\s*([^}]*)}\s*\n((.|\n)*?)\n```\s*\n/gm,
       (match, lang: string, options: string, text: string): string => {
         let md = 'chunk:\n:::\n``` ' + lang
-        if (options) md += ` ${options}`
+        if (options.length > 0) md += ` ${options}`
         return md + '\n' + text + '\n```\n:::\n'
       }
     )
@@ -81,9 +81,9 @@ export class XmdCodec extends Codec implements Codec {
     // they can be made comma separated as required by R Markdown
     const xmd = cmd.replace(
       /```(\w+)(?:[ \t]+(.*?))?\n/g,
-      (match, lang: string, options: string): string => {
+      (match, lang: string, options?: string): string => {
         let xmd = '```{' + lang
-        if (options) {
+        if (options !== undefined) {
           // Collect options into a map
           const optionsMap: { [key: string]: string } = {}
           const regex = /\s*([^=]+)=((?:[^"][^ ]*)|(?:"(?:[^"\\]|\\.)*"))/g
@@ -94,7 +94,7 @@ export class XmdCodec extends Codec implements Codec {
 
           let optionsArray: string[] = []
           // The chunk label always comes first and has no name
-          if (optionsMap.label) {
+          if (optionsMap.label !== undefined) {
             optionsArray = [optionsMap.label]
             delete optionsMap.label
           }

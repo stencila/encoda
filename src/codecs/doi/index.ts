@@ -27,7 +27,7 @@ export class DoiCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const match = DoiCodec.regex.exec(content)
-    if (!match) throw new Error('Unable to parse content')
+    if (match === null) throw new Error('Unable to parse content')
     const doi = vfile.load(match[4])
     return DoiCodec.csl.decode(doi, { format: '@doi/id' })
   }

@@ -91,7 +91,7 @@ export class RnbCodec extends Codec implements Codec {
     // For each inline code chunk in the Rmd source...
     const regex = /`r\s+([^`]*)`/g
     let sourceMatch
-    while ((sourceMatch = regex.exec(rmd))) {
+    while ((sourceMatch = regex.exec(rmd)) !== null) {
       // ... get the source Rmd before and after it
       const begin = sourceMatch.index
       const end = regex.lastIndex
@@ -113,7 +113,7 @@ export class RnbCodec extends Codec implements Codec {
         const elemIndex = containers.indexOf(container)
         const start = cursorElem === elemIndex ? cursorIndex : 0
         const outputMatch = outputRegex.exec(html.substring(start))
-        if (outputMatch) {
+        if (outputMatch !== null) {
           // Replace the output with the source, to improve the matching
           // success of following inline code chunks.
           const output = outputMatch[1]
@@ -208,7 +208,7 @@ const escapeRegex = (regex: string): string =>
  */
 const transformOutput = (outputElem: HTMLElement): HTMLElement => {
   const preCode = first(outputElem, 'pre > code')
-  if (preCode !== null) return elem('pre', {}, text(preCode) || '')
+  if (preCode !== null) return elem('pre', {}, text(preCode) ?? '')
 
   const img = first(outputElem, 'img')
   if (img !== null) return img
@@ -216,9 +216,9 @@ const transformOutput = (outputElem: HTMLElement): HTMLElement => {
   const table = first(outputElem, 'script[data-pagedtable-source=""]')
   if (table !== null) {
     // TODO: Create an HTML table from the JSON
-    return elem('pre', {}, text(table) || '')
+    return elem('pre', {}, text(table) ?? '')
   }
 
   log.warn(`Unhandled chunk output type: ${outputElem.nodeName}`)
-  return elem('pre', {}, text(outputElem) || '')
+  return elem('pre', {}, text(outputElem) ?? '')
 }

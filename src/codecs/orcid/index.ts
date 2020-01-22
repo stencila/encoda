@@ -29,7 +29,7 @@ export class OrcidCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const content = typeof file === 'string' ? file : await vfile.dump(file)
     const match = OrcidCodec.regex.exec(content)
-    if (match) {
+    if (match !== null) {
       const orcid = match[4]
       try {
         const response = await http.get(
@@ -38,7 +38,7 @@ export class OrcidCodec extends Codec implements Codec {
             headers: { Accept: 'application/ld+json' }
           }
         )
-        if (response.statusCode === 200 && response.body)
+        if (response.statusCode === 200 && response.body.length > 0)
           return load(response.body, 'jsonld')
       } catch (error) {
         log.error(`Error fetching or decoding JSON-LD: ${error.message}`)

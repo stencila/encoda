@@ -55,7 +55,7 @@ export class DocxCodec extends Codec<EncodeOptions>
     const { references } = article
 
     const referenceDoc =
-      codecOptions.templatePath || DocxCodec.defaultTemplatePath
+      codecOptions.templatePath ?? DocxCodec.defaultTemplatePath
 
     let flags: string[] = [`--reference-doc=${referenceDoc}`]
 

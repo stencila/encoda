@@ -2,6 +2,16 @@
  * @module md
  */
 
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 import { getLogger } from '@stencila/logga'
 import stencila, {
   isBlockContent,
@@ -440,11 +450,11 @@ function encodeArticle(article: stencila.Article): MDAST.Root {
 function decodeInclude(ext: Extension): stencila.Include {
   const include: stencila.Include = {
     type: 'Include',
-    source: ext.argument || ''
+    source: ext.argument ?? ''
   }
   if (ext.content) {
     const article = decodeMarkdown(ext.content) as stencila.Article
-    include.content = (article.content || []).filter(isBlockContent)
+    include.content = (article.content ?? []).filter(isBlockContent)
   }
   return include
 }
@@ -723,7 +733,7 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
       if (isMdastBlockContent(mdast)) return mdast
       if (isMdastPhrasingContent(mdast))
         return { type: 'paragraph', children: [mdast] }
-      log.warn(`Unhandled list item MDAST type ${mdast && mdast.type}`)
+      log.warn(`Unhandled list item MDAST type ${mdast?.type}`)
       return { type: 'paragraph', children: [] }
     })
   }
@@ -1147,7 +1157,7 @@ function decodeBoolean(ext: Extension): boolean {
     case 'false':
       return false
     default: {
-      const value = ext.argument || ext.content || 'true'
+      const value = ext.argument ?? ext.content ?? 'true'
       return !!(value === 'true' || value === '1')
     }
   }
@@ -1171,7 +1181,7 @@ function encodeBoolean(value: boolean): Extension {
  *   - `!number[3.14]`
  */
 function decodeNumber(ext: Extension): number {
-  return parseFloat(ext.argument || ext.content || '0')
+  return parseFloat(ext.argument ?? ext.content ?? '0')
 }
 
 /**
@@ -1196,7 +1206,7 @@ function encodeNumber(value: number): Extension {
  *   - `!array[1, 2]`
  */
 function decodeArray(ext: Extension): any[] {
-  const items = ext.argument || ext.content || ''
+  const items = ext.argument ?? ext.content ?? ''
   const array = JSON5.parse(`[${items}]`)
   return array
 }
@@ -1231,7 +1241,7 @@ function decodeObject(ext: Extension): object {
     }
     if (Object.keys(props).length > 0) return props
   }
-  return JSON5.parse(`{${ext.argument || ext.content}}`)
+  return JSON5.parse(`{${ext.argument ?? ext.content}}`)
 }
 
 /**

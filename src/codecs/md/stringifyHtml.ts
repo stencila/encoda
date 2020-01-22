@@ -52,7 +52,7 @@ const isSelfClosing = (tag: string): boolean =>
  * @param {string} html String representation of HTML to parse.
  */
 const getTags = (html: string): string[] =>
-  (html.match(htmlTagRegExp) || []).filter(not(isSelfClosing))
+  (html.match(htmlTagRegExp) ?? []).filter(not(isSelfClosing))
 
 // Helper function for wrapping HTML string content in a custom MDAST style object
 const fullHtmlNode = (value: string): Literal => ({
@@ -94,12 +94,12 @@ export const stringifyHTML = (tree: Node | Parent): Node => {
 
   const children = tree.children.reduce(
     (innerTree: Node[], node: Node, idx: number) => {
-      if (skipUntil && idx <= skipUntil) {
+      if (skipUntil !== undefined && idx <= skipUntil) {
         return innerTree
       }
 
       // Recursively call `stringifyHTML` if the Node has children of its own
-      if (node.children) {
+      if (node.children !== undefined) {
         return [...innerTree, stringifyHTML(node)]
       }
 

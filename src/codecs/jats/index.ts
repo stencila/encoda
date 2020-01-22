@@ -2,6 +2,16 @@
  * @module jats
  */
 
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
@@ -296,7 +306,7 @@ function encodeTitle(title: stencila.Article['title']): xml.Element {
       ? elem('article-title', title)
       : elem(
           'article-title',
-          ...encodeNodes(title || 'Untitled', initialEncodeState())
+          ...encodeNodes(title ?? 'Untitled', initialEncodeState())
         )
   return elem('title-group', articleTitle)
 }
@@ -353,7 +363,7 @@ function encodeAuthors(authors: stencila.Article['authors']): xml.Element {
         affs: [...prev.affs, ...curr.affs]
       }),
       init
-    ) || init
+    ) ?? init
   return elem('contrib-group', ...auths, ...affs)
 }
 
@@ -416,12 +426,12 @@ function encodeAuthor(
         return elem(
           'aff',
           { id: 'unique' },
-          elem('institution', org.name || '')
+          elem('institution', org.name ?? '')
         )
       })
     }
   } else {
-    name = elem('string-name', author.legalName || author.name || '')
+    name = elem('string-name', author.legalName ?? author.name ?? '')
   }
 
   const affRefs = affs.map(aff =>
@@ -463,7 +473,7 @@ function encodeName(person: stencila.Person): xml.Element {
       person.honorificSuffix ? elem('suffix', person.honorificSuffix) : null
     )
   } else {
-    return elem('string-name', person.name || '')
+    return elem('string-name', person.name ?? '')
   }
 }
 
@@ -556,7 +566,7 @@ function decodeReference(
   const year = child(elem, 'year')
   if (year) {
     const iso = attr(year, 'iso-8601-date')
-    work.datePublished = iso || text(year)
+    work.datePublished = iso ?? text(year)
     // TODO: warn that the date components apart from year are lost?
     // Or also parse month and day
   }
@@ -608,7 +618,7 @@ function encodeReference(
 
     if (title) subElements.push(elem('article-title', ...encodeNodes(title)))
 
-    if (authors && authors.length) {
+    if (authors?.length) {
       const people = authors.filter(stencila.isType('Person')).map(encodeName)
 
       const personGroup = elem(
@@ -699,7 +709,7 @@ function encodeCitationText(work: stencila.CreativeWork): string {
   const { authors, datePublished } = work
   let citeText = ''
 
-  if (authors !== undefined && authors.length) {
+  if (authors?.length) {
     const people = authors.filter(p => stencila.isA('Person', p))
 
     if (people.length) {
@@ -768,7 +778,7 @@ function encodeBody(nodes: stencila.Node[], state: EncodeState): xml.Element {
  * Decode a JATS element to an array of Stencila `Node`s
  */
 function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
-  if (elem.type === 'text') return [elem.text || '']
+  if (elem.type === 'text') return [elem.text ?? '']
   switch (elem.name) {
     case 'sec':
       return decodeSection(elem, state)
@@ -937,7 +947,7 @@ function decodeInlineContent(
  * It is necessary to retain `id` attributes so that any internal links are maintained.
  */
 function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
-  const sectionId = attr(elem, 'id') || ''
+  const sectionId = attr(elem, 'id') ?? ''
   const sectionDepth = state.sectionDepth + 1
   return decodeDefault(elem, { sectionId, sectionDepth })
 }
@@ -951,7 +961,7 @@ function decodeHeading(
 ): [stencila.Heading] {
   return [
     stencila.heading({
-      content: decodeInlineContent(elem.elements || [], state),
+      content: decodeInlineContent(elem.elements ?? [], state),
       depth: state.sectionDepth,
       id: state.sectionId
     })
@@ -976,7 +986,7 @@ function decodeParagraph(
   elem: xml.Element,
   state: DecodeState
 ): stencila.Node[] {
-  const nodes = decodeElements(elem.elements || [], state)
+  const nodes = decodeElements(elem.elements ?? [], state)
 
   const para = stencila.paragraph({ content: [] })
 
@@ -1007,8 +1017,8 @@ function encodeParagraph(
 function decodeExtLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
-      content: decodeInlineContent(elem.elements || [], state),
-      target: attr(elem, 'xlink:href') || ''
+      content: decodeInlineContent(elem.elements ?? [], state),
+      target: attr(elem, 'xlink:href') ?? ''
     })
   ]
 }
@@ -1054,8 +1064,8 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: `#${attr(elem, 'rid') || ''}`,
-      relation: attr(elem, 'ref-type') || undefined
+      target: `#${attr(elem, 'rid') ?? ''}`,
+      relation: attr(elem, 'ref-type') ?? undefined
     })
   ]
 }
@@ -1141,7 +1151,7 @@ function decodeMark<Type extends keyof typeof stencila.markTypes>(
   return [
     {
       type: type,
-      content: decodeInlineContent(elem.elements || [], state)
+      content: decodeInlineContent(elem.elements ?? [], state)
     }
   ]
 }
@@ -1167,7 +1177,7 @@ function decodeList(elem: xml.Element, state: DecodeState): [stencila.List] {
   const items = all(elem, 'list-item').map(
     (item): stencila.ListItem => {
       return stencila.listItem({
-        content: decodeElements(item.elements || [], state)
+        content: decodeElements(item.elements ?? [], state)
       })
     }
   )
@@ -1216,7 +1226,7 @@ function decodeTableWrap(
       return stencila.tableRow({
         cells: all(row, ['td', 'th']).map(cell => {
           return stencila.tableCell({
-            content: decodeInlineContent(cell.elements || [], state)
+            content: decodeInlineContent(cell.elements ?? [], state)
           })
         })
       })
@@ -1330,10 +1340,9 @@ function decodeFigure(
     stencila.figure({
       id: attrOrUndefined(elem, 'id'),
       label: textOrUndefined(child(elem, 'label')),
-      caption:
-        caption && caption.elements && caption.elements.length
-          ? decodeElements(caption.elements, state)
-          : undefined,
+      caption: caption?.elements?.length
+        ? decodeElements(caption.elements, state)
+        : undefined,
       content
     })
   ]
@@ -1391,7 +1400,7 @@ function encodeMath(math: object): xml.Element[] {
 
   try {
     const root = xml.load(text, { compact: false }) as xml.Element
-    if (root && root.elements && root.elements.length) return [root.elements[0]]
+    if (root?.elements?.length) return [root.elements[0]]
   } catch (error) {
     log.error(`Error parsing MathML:\n${error.message}\n${text}`)
   }
@@ -1414,9 +1423,9 @@ function decodeBreak(): [string] {
  * traditional `type/subtype` string.
  */
 function extractMimetype(elem: xml.Element): string {
-  const mimetype = attr(elem, 'mimetype') || ''
+  const mimetype = attr(elem, 'mimetype') ?? ''
 
-  const mimeSubtype = attr(elem, 'mime-subtype') || ''
+  const mimeSubtype = attr(elem, 'mime-subtype') ?? ''
 
   const joiner = mimetype.length && mimeSubtype.length ? '/' : ''
 
@@ -1480,7 +1489,7 @@ function decodeGraphic(
 
   return [
     stencila.imageObject({
-      contentUrl: attr(elem, 'xlink:href') || '',
+      contentUrl: attr(elem, 'xlink:href') ?? '',
       format: extractMimetype(elem),
       meta: meta
     })
@@ -1493,7 +1502,7 @@ function decodeGraphic(
 function decodeMedia(elem: xml.Element): [stencila.MediaObject] {
   return [
     stencila.mediaObject({
-      contentUrl: attr(elem, 'xlink:href') || '',
+      contentUrl: attr(elem, 'xlink:href') ?? '',
       format: extractMimetype(elem)
     })
   ]
@@ -1530,7 +1539,7 @@ function decodeCode(elem: xml.Element): [stencila.CodeBlock] {
   return [
     stencila.codeBlock({
       text: text(elem),
-      programmingLanguage: attr(elem, 'language') || undefined
+      programmingLanguage: attr(elem, 'language') ?? undefined
     })
   ]
 }

@@ -28,7 +28,7 @@ export class PlosCodec extends Codec implements Codec {
     doi: string
   } => {
     const match = PlosCodec.regex.exec(identifier)
-    if (!match)
+    if (match === null)
       throw new Error(`Unable to parse identifier as PLoS DOI: "${identifier}"`)
 
     const doi = match[6]
@@ -73,8 +73,8 @@ export class PlosCodec extends Codec implements Codec {
     const graphics = xml.all(doc, 'graphic')
     for (const graphic of graphics) {
       const href = xml.attr(graphic, 'xlink:href')
-      if (href !== null && href.startsWith(`info:doi/${doi}`)) {
-        const id = href.split('.').pop() || ''
+      if (href?.startsWith(`info:doi/${doi}`)) {
+        const id = href.split('.').pop() ?? ''
         const url =
           `https://journals.plos.org/${journal}/article/` +
           (id.startsWith('e')

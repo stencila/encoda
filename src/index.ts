@@ -1,3 +1,13 @@
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
 import mime from 'mime'
@@ -109,7 +119,7 @@ export async function match(
       .extname(content)
       .slice(1)
       .toLowerCase()
-    mediaType = mime.getType(content) || undefined
+    mediaType = mime.getType(content) ?? undefined
   }
 
   if (format) {
@@ -119,7 +129,7 @@ export async function match(
     if (format.includes('/')) mediaType = format
     else {
       extName = format
-      mediaType = mime.getType(extName) || undefined
+      mediaType = mime.getType(extName) ?? undefined
     }
   }
 

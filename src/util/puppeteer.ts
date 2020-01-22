@@ -82,7 +82,7 @@ export async function shutdown(): Promise<void> {
   await lock.acquire(
     'browser',
     async (): Promise<void> => {
-      if (browser) {
+      if (browser !== undefined) {
         logger.debug(`Closing browser. pid: ${browser.process().pid}`)
         await browser.close()
         logger.debug('Browser closed')

@@ -2,6 +2,16 @@
  * @module dir
  */
 
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 import { getLogger } from '@stencila/logga'
 import stencila, { isCreativeWork } from '@stencila/schema'
 import { range } from 'fp-ts/lib/Array'
@@ -167,7 +177,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       const rankings = collection.parts
         .map((node, index) => ({
           which: index,
-          rank: mainNames.indexOf(node.name || '')
+          rank: mainNames.indexOf(node.name ?? '')
         }))
         .filter(item => item.rank > -1)
         .sort((a, b) => b.rank - a.rank)
@@ -189,8 +199,8 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     options: EncodeOptions = this.defaultEncodeOptions
     // eslint-disable-next-line @typescript-eslint/require-await
   ): Promise<vfile.VFile> => {
-    const dirPath = options.filePath || tempy.directory()
-    const format = options.format || 'html'
+    const dirPath = options.filePath ?? tempy.directory()
+    const format = options.format ?? 'html'
 
     // Wrap to a collection as necessary
     const cw: stencila.CreativeWork = isCreativeWork(node)
@@ -215,12 +225,12 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       if (node.type === 'Collection') {
         const coll = node as stencila.Collection
         return coll.parts
-          .map(child => walk(child, [...route, node.name || '']))
+          .map(child => walk(child, [...route, node.name ?? '']))
           .reduce((prev, curr) => [...prev, ...curr], [])
       } else {
         return [
           {
-            route: [...route, node.name || 'unnamed'],
+            route: [...route, node.name ?? 'unnamed'],
             node
           }
         ]

@@ -1,3 +1,13 @@
+/**
+ * Hello contributor 👋! If you are working on this file, please
+ * endeavor to remove the need for the following `eslint-disable` line 🙏.
+ * Remove the line and run `npx eslint path/to/this/file.ts` to
+ * see which code needs some linting ❤️.
+ * See https://github.com/stencila/encoda/issues/199 for suggestions
+ * on how to refactor code to avoid non-strict boolean expressions.
+ */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+
 import * as stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
@@ -31,7 +41,7 @@ export default async function process(
         // TODO: This assumes that the returned node is an CreativeWork
         // Wrap / unwrap to `BlockContent[]` as needed
         const work = (await _read(include.source)) as stencila.CreativeWork
-        include.content = (work.content || []) as stencila.BlockContent[]
+        include.content = (work.content ?? []) as stencila.BlockContent[]
       }
     }
 

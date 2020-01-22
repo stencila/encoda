@@ -159,6 +159,13 @@
       ]
     }
   },
+  "eslintConfig": {
+    "extends": "@stencila/eslint-config",
+    "rules": {
+      "@typescript-eslint/prefer-nullish-coalescing": "error",
+      "@typescript-eslint/prefer-optional-chain": "error"
+    }
+  },
   "eslintIgnore": [
     "**/__fixtures__/*",
     "**/__mocks__/*",
@@ -207,9 +214,6 @@
   "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
     "extends": "@stencila/semantic-release-config"
-  },
-  "eslintConfig": {
-    "extends": "@stencila/eslint-config"
   },
   "renovate": {
     "extends": [
