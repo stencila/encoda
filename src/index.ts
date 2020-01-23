@@ -77,6 +77,7 @@ export const codecList: string[] = [
   'rpng',
 
   // Templates
+  'njk',
   'pug',
 
   // Data interchange formats

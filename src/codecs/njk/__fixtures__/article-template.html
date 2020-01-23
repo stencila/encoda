@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% for node in content %}
+      {% if node.type == 'Heading' %}
+        <h{{node.depth}}>{{ node.content }}</h{{node.depth}}>
+      {% else %}
+        {{ node | dump }}
+      {% endif %}
+    {% else %}
+      <p>This article is empty 😱</p>
+    {% endfor %}
+  </body>
+</html>
