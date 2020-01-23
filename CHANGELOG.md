@@ -1,3 +1,10 @@
+## [0.83.2](https://github.com/stencila/encoda/compare/v0.83.1...v0.83.2) (2020-01-23)
+
+
+### Bug Fixes
+
+* **MD:** Don't coerce decoded MD AST, avoiding false null values ([7d15806](https://github.com/stencila/encoda/commit/7d158064581ad2aa149b260196f58e8eddec1e4b))
+
 ## [0.83.1](https://github.com/stencila/encoda/compare/v0.83.0...v0.83.1) (2020-01-22)
 
 
