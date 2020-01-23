@@ -40,6 +40,7 @@ describe('decode', () => {
 
 some paragraphs
 
+<!-- A comment which should not be included -->
 <a href="#">My link</a>
 
 followed by more paragraphs`)
@@ -49,6 +50,7 @@ followed by more paragraphs`)
         content: [
           heading({ content: ['Heading 1'], depth: 1 }),
           paragraph({ content: ['some paragraphs'] }),
+          '',
           paragraph({ content: [link({ content: ['My link'], target: '#' })] }),
           paragraph({ content: ['followed by more paragraphs'] })
         ]

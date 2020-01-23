@@ -15,11 +15,11 @@
 import { getLogger } from '@stencila/logga'
 import stencila, {
   isBlockContent,
+  isInlineContent,
   isListItem,
   nodeIs,
   nodeType,
-  TypeMapGeneric,
-  isInlineContent
+  TypeMapGeneric
 } from '@stencila/schema'
 import * as yaml from 'js-yaml'
 import JSON5 from 'json5'
@@ -46,12 +46,11 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
-import * as vfile from '../../util/vfile'
 import { stringifyContent } from '../../util/content/stringifyContent'
-import { Codec } from '../types'
+import * as vfile from '../../util/vfile'
 import { HTMLCodec } from '../html'
+import { Codec } from '../types'
 import { stringifyHTML } from './stringifyHtml'
-import { coerce } from '../../util/coerce'
 
 export const log = getLogger('encoda:md')
 
@@ -68,8 +67,7 @@ export class MdCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const md = await vfile.dump(file)
-    const node = decodeMarkdown(md)
-    return coerce(node)
+    return decodeMarkdown(md)
   }
 
   /**

@@ -1,5 +1,10 @@
 {
   "title": "Kitchensink R Notebook",
+  "output": "html_notebook",
+  "author": [
+    "Peter Pan",
+    "Captain Hook"
+  ],
   "content": [
     {
       "type": "Paragraph",
@@ -156,23 +161,5 @@
       "type": "CodeChunk"
     }
   ],
-  "type": "Article",
-  "authors": [
-    {
-      "givenNames": [
-        "Peter"
-      ],
-      "familyNames": [
-        "Pan"
-      ],
-      "type": "Person"
-    },
-    {
-      "familyNames": [
-        "Hook"
-      ],
-      "honorificPrefix": "Captain",
-      "type": "Person"
-    }
-  ]
+  "type": "Article"
 }
