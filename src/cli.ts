@@ -65,7 +65,7 @@ configure(options.debug)
 ;(async () => {
   try {
     if (command === 'convert') {
-      const { to, from, standalone, bundle, zip, ...rest } = options
+      const { to, from, standalone, bundle, zip, template, ...rest } = options
       const theme = getTheme(options.theme)
 
       await convert(args[0], args.slice(1), {
@@ -75,6 +75,7 @@ configure(options.debug)
           isStandalone: standalone,
           isBundle: bundle,
           shouldZip: zip,
+          template,
           theme,
           codecOptions: rest
         }

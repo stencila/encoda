@@ -1,0 +1,20 @@
+{
+  "type": "Article",
+  "title": "A fixture for testing the Pug codec",
+  "content": [
+    {
+      "type": "Heading",
+      "content": [
+        "Why?"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "It's a pain the write an article in JSON!",
+        "But we want a simple example, not reliant on other codecs, of rendering a Stencila node using a Pug template"
+      ]
+    }
+  ]
+}

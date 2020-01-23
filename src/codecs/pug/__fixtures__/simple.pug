@@ -1,0 +1,16 @@
+p A simple Pug template with some examples taken from the docs and some inline constants for testing decoding Pug to a Stencila Node
+
+- const friends = 10
+case friends
+  when 0
+    p You have no friends
+  when 1
+    p You have a friend
+  default
+    p You have #{friends} friends
+
+- const fruits = ['apple', 'pear', 'kiwi']
+ol
+  each fruit in fruits
+    li= fruit
+

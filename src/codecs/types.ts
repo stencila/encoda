@@ -8,6 +8,7 @@ export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
   isStandalone?: boolean
   isBundle?: boolean
   shouldZip?: 'yes' | 'no' | 'maybe'
+  template?: string
   theme: ThemeNames
 
   codecOptions?: CodecOptions
@@ -87,7 +88,7 @@ export abstract class Codec<
    * Decode a `stencila.Node` from a `string`.
    *
    * This is a convenience method which simply
-   * reads the content of the `VFile` and passes
+   * loads the content into a `VFile` and passes
    * it to the `decode` method.
    *
    * @param content The `string` to decode
@@ -116,5 +117,42 @@ export abstract class Codec<
     options?: EncodeOptions & GlobalEncodeOptions
   ): Promise<string> {
     return vfile.dump(await this.encode(node, options))
+  }
+
+  /**
+   * Read a `stencila.Node` from a file.
+   *
+   * This is a convenience method which simply
+   * reads the file into a `VFile` and passes
+   * it to the `decode` method.
+   *
+   * @param path The path of the file
+   * @param options Decoding options
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public async read(
+    content: string,
+    options?: DecodeOptions
+  ): Promise<stencila.Node> {
+    return this.decode(await vfile.read(content), options)
+  }
+
+  /**
+   * Encode a `stencila.Node` to a file
+   *
+   * This is a convenience method which simply
+   * writes the content of the `VFile` created by
+   * the `encode` method.
+   *
+   * @param node The `stencila.Node` to write
+   * @param path The path of the file
+   * @returns A promise that resolves to a `string`
+   */
+  public async write(
+    node: stencila.Node,
+    path: string,
+    options?: EncodeOptions & GlobalEncodeOptions
+  ): Promise<void> {
+    return vfile.write(await this.encode(node, options), path)
   }
 }

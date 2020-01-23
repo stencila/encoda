@@ -1,0 +1,38 @@
+[
+  {
+    "type": "Paragraph",
+    "content": [
+      "A simple Pug template with some examples taken from the docs and some inline constants for testing decoding Pug to a Stencila Node"
+    ]
+  },
+  {
+    "type": "Paragraph",
+    "content": [
+      "You have 10 friends"
+    ]
+  },
+  {
+    "type": "List",
+    "items": [
+      {
+        "type": "ListItem",
+        "content": [
+          "apple"
+        ]
+      },
+      {
+        "type": "ListItem",
+        "content": [
+          "pear"
+        ]
+      },
+      {
+        "type": "ListItem",
+        "content": [
+          "kiwi"
+        ]
+      }
+    ],
+    "order": "ascending"
+  }
+]

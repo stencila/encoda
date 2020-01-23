@@ -1,0 +1,15 @@
+html
+  head
+    title #{title}
+  body
+    each node in content
+      case node.type
+        when 'Heading'
+          section
+            h1= node.content.join(" ")
+        when 'Paragraph'
+          p= node.content.join(" ")
+        default
+          <!-- Unhandled node type #{node.type} -->
+    else
+      p This article is empty 😱
