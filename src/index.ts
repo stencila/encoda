@@ -237,24 +237,43 @@ export async function decode(
  * Encode (i.e. serialize) a `stencila.Node` to a virtual file.
  *
  * @param node The node to encode
- * @param options Encoding options. Should include at least one of:
- *    - filePath The file path to encode the node to.
- *               Only required for some codecs e.g. those encoding to more than one file.
- *    - format The format to encode the node as.
- *             If undefined then determined from filePath or file path.
+ * @param options Encoding options. To be able to determine the format for encoding, should
+ *                include at least one of:
+ *                   - `filePath` The file path to encode the node to.
+ *                     Required for some codecs e.g. those encoding to more than one file.
+ *                   - `format` The format to encode the node as.
+ *                   - `template` The path to a template file
  */
 export const encode = async (
   node: stencila.Node,
   options: GlobalEncodeOptions = defaultEncodeOptions
 ): Promise<VFile> => {
-  const { filePath, format } = options
-  if (!(filePath || format)) {
+  const { filePath, format, template } = options
+  if (
+    filePath === undefined &&
+    format === undefined &&
+    template === undefined
+  ) {
     throw new Error(
-      'At least one of "filePath" or "format" option must be provided'
+      'At least one of "filePath", "format" or "template" options must be provided'
     )
   }
-  const codec = await match(filePath, format, true)
-  return codec.encode(node, options)
+  // Resolve the codec and the format to be used.
+  let codec
+  let targetFormat
+  if (template !== undefined) {
+    // The templating codec is determined from the `--template`
+    // and `format` (corresponding to --to`) options
+    codec = await match(template, format, true)
+    // The target format (i.e. the one to be used as the default
+    // in `dump` filters inside templates etc) is determined from `filePath`
+    const targetCodec = await match(filePath, undefined, true)
+    targetFormat = targetCodec.extNames?.[0] ?? targetCodec.mediaTypes?.[0]
+  } else {
+    codec = await match(filePath, format, true)
+    targetFormat = format
+  }
+  return codec.encode(node, { ...options, format: targetFormat })
 }
 
 /**

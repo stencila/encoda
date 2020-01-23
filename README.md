@@ -66,6 +66,9 @@ Encoda provides a collection of codecs for converting between, and composing tog
 | CSV                         | [csv]         | None     | β      | [⚠][csv-issues]         | ![][csv-cov]         |
 | CSVY                        | [csvy]        | None     | ✗      | [⚠][csvy-issues]        |
 | Tabular Data Package        | [tdp]         | None     | β      | [⚠][tdp-issues]         | ![][tdp-cov]         |
+| **Templates**               |
+| Nunjucks                    | [njk]         |          | ω      |                         | ![][njk-cov]         |
+| Pug                         | [pug]         |          | ω      |                         | ![][pug-cov]         |
 | **Collections**             |
 | Document Archive            | [dar]         | Extens   | ω      | [⚠][dar-issues]         | ![][dar-cov]         |
 | Filesystem Directory        | [dir]         | Extens   | ω      | [⚠][dir-issues]         | ![][dir-cov]         |
@@ -176,6 +179,17 @@ npm install @stencila/encoda --global
 
 Encoda is intended to be used primarily as a library for other applications. However, it comes with a simple command line script which allows you to use the `convert` function directly.
 
+| Option         | Description                                                                                                |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| `--from`       | The format of the input content e.g. `--from md`                                                           |
+| `--to`         | The format for the output content e.g. `--to html`                                                         |
+| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                  |
+| `--template`   | The path to a template file e.g. `--template folder/template.pug`                                          |
+| `--standalone` | Generate a standalone document, not a fragment (default `true`)                                            |
+| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                             |
+| `--zip`        | Create `.zip` archive containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
+| `--debug`      | Print debugging information                                                                                |
+
 ### Converting files
 
 ```bash
@@ -216,19 +230,49 @@ You can send output to the console by using `-` as the second argument and speci
 encoda convert paragraph.md - --to yaml
 ```
 
+### Using templates to customize outputs
+
+You can use the `--template` option to customize output. Encoda will use the decoded document from the input file as the rendering context for the templating engine. For example, with this CSV file:
+
+```csv
+year,month,count
+2019,12,12
+2020,1,67
+```
+
+and this Pug file,
+
+```pug
+p The #{ type } has #{ columns.length } columns, and #{ columns[0].values.length } rows
+ol
+  each column in columns
+    li= column.name
+```
+
+running,
+
+```bash
+encoda convert data.csv data.html --template template.pug
+```
+
+produces this HTML,
+
+```html
+<p>The Datatable has 3 columns, and 2 rows</p>
+<ol>
+  <li>year</li>
+  <li>month</li>
+  <li>count</li>
+</ol>
+```
+
+Encoda guesses which templating engine to use based on the file name extension of the template. Sometimes, you may wish to use a different filename extension. For example, you could write a Nunjucks template called `template.md` for outputting Markdown. In those cases, use the `--to` option to tell Encoda which codec to use e.g. `--to njk`.
+
+See the docs for individual template codecs e.g. [pug], [njk] for more.
+
 ### Creating zip archives
 
 Use the `--zip` option to create a Zip archive with the outputs of conversion. With `--zip=yes` a zip archive will always be created. With `--zip=maybe`, a zip archive will be created if there are more than two output files. This can be useful for formats such as HTML and Markdown, for which images and other media are stored in a sibling folder.
-
-| Option         | Description                                                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------- |
-| `--from`       | The format of the input content e.g. `--from md`                                                           |
-| `--to`         | The format for the output content e.g. `--to html`                                                         |
-| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                  |
-| `--standalone` | Generate a standalone document, not a fragment (default `true`)                                            |
-| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                             |
-| `--zip`        | Create `.zip` archive containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
-| `--debug`      | Print debugging information                                                                                |
 
 ### Using with Executa
 
@@ -448,10 +492,12 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [json5]: src/codecs/json5
 [latex]: src/codecs/latex
 [md]: src/codecs/md
+[njk]: src/codecs/njk
 [ods]: src/codecs/ods
 [odt]: src/codecs/odt
 [pandoc]: src/codecs/pandoc
 [pdf]: src/codecs/pdf
+[pug]: src/codecs/pug
 [pptx]: src/codecs/pptx
 [rpng]: src/codecs/rpng
 [tdp]: src/codecs/tdp
@@ -506,11 +552,13 @@ Many thanks ❤ to the [Alfred P. Sloan Foundation](https://sloan.org) and [eLif
 [json5-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5
 [latex-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex
 [md-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md
+[njk-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/njk
 [ods-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods
 [odt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt
 [pandoc-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc
 [pdf-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf
 [pptx-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pptx
+[pug-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pug
 [rpng-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng
 [tdp-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp
 [txt-cov]: https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt
