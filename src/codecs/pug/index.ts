@@ -52,14 +52,17 @@ export class PugCodec extends Codec implements Codec {
     node: stencila.Node,
     options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
-    const {template} = options
+    const { template, format } = options
 
     if (template === undefined) {
-      log.error(`The template option is required for this codec`)
+      log.error('The template option is required for this codec')
       return Promise.resolve(vfile.create())
     }
+    if (format !== undefined && !['html', 'text/html'].includes(format)) {
+      log.warn(`Unexpected output format specified for Pug template: ${format}`)
+    }
 
-    const locals = {node, ...(stencila.isEntity(node) ? node : {})}
+    const locals = { node, ...(stencila.isEntity(node) ? node : {}) }
     const html = pug.renderFile(template, locals)
     return Promise.resolve(vfile.load(html))
   }
