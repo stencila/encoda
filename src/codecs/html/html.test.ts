@@ -27,7 +27,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
-import { decodeHref, HTMLCodec, schemaURLs } from './'
+import { decodeHref, HTMLCodec, schemaURLs, stencilaItemProp } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -326,8 +326,12 @@ describe.skip('Encode & Decode references', () => {
 `
 
   test('encode', async () => {
-    const actual = doc(await e(schemaNode)).querySelector('.references')
-    const expected = doc(articleRefs).querySelector('.references')
+    const actual = doc(await e(schemaNode)).querySelector(
+      `[${stencilaItemProp}="references"]`
+    )
+    const expected = doc(articleRefs).querySelector(
+      `[${stencilaItemProp}="references"]`
+    )
     expect(actual!.outerHTML).toEqualStringContent(expected!.outerHTML)
   })
 

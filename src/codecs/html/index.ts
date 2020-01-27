@@ -174,6 +174,13 @@ export const schemaURLs = itemTypes.reduce((types, type) => {
   }
 }, {} as { [key in keyof stencila.Types]: string })
 
+/**
+ * As we enrich most elements with Schema.org attributes, extra `itemprop` attributes do not validate
+ * using Structured Data testing tools. To get around this, and still have semantic element selectors available,
+ * we add Stencila Schema specific attributes as `data-itemprop`s.
+ */
+export const stencilaItemProp = 'data-itemprop'
+
 const window = new jsdom.JSDOM().window
 const document = window.document
 
@@ -716,7 +723,7 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
   }
 
   const references = element.querySelectorAll<HTMLOListElement>(
-    'ol.references > li'
+    'ol[data-itemprop="references"] > li'
   )
 
   const refItems = references ? [...references].map(decodeCreativeWork) : []
@@ -808,7 +815,7 @@ function encodeAuthorsProperty(
       'ol',
       {
         attrs: {
-          itemprop: 'authors'
+          [stencilaItemProp]: 'authors'
         }
       },
       ...authors.map(author =>
@@ -822,9 +829,8 @@ function encodeAuthorsProperty(
           h(
             'ol',
             {
-              class: 'organizations',
               attrs: {
-                itemprop: 'organisations'
+                [stencilaItemProp]: 'organisation'
               }
             },
             ...Object.values(orgs).map(([_, org]) =>
@@ -872,7 +878,11 @@ function encodeReferencesProperty(
   return h(
     'section',
     h('h2', 'References'),
-    h('ol', { class: 'references' }, references.map(encodeReference))
+    h(
+      'ol',
+      { attrs: { [stencilaItemProp]: 'references' } },
+      references.map(encodeReference)
+    )
   )
 }
 
@@ -1037,7 +1047,7 @@ function encodePerson(
     emails !== undefined
       ? h(
           'ol',
-          { class: 'emails' },
+          { attrs: { [stencilaItemProp]: 'emails' } },
           emails.map(email =>
             h(
               'li',
@@ -1051,7 +1061,7 @@ function encodePerson(
     affiliations && organizations
       ? h(
           'ol',
-          { class: 'affiliations' },
+          { attrs: { [stencilaItemProp]: 'affiliations' } },
           affiliations.map(affiliation => {
             const entry = organizations[affiliation.name ?? '']
             if (entry !== undefined) {
