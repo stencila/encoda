@@ -295,6 +295,7 @@ function decodeFront(
   | 'isPartOf'
   | 'licenses'
   | 'keywords'
+  | 'funders'
 > {
   return front === null
     ? {}
@@ -306,7 +307,8 @@ function decodeFront(
         description: decodeAbstract(first(front, 'abstract'), state),
         isPartOf: decodeIsPartOf(front),
         licenses: decodeLicenses(front, state),
-        keywords: decodeKeywords(front)
+        keywords: decodeKeywords(front),
+        funders: decodeFunders(front)
       }
 }
 
@@ -463,6 +465,31 @@ function decodeKeywords(front: xml.Element): stencila.Article['keywords'] {
   return kwds.reduce((prev: string[], curr) => {
     const kwd = textOrUndefined(curr)
     return kwd !== undefined ? [...prev, kwd] : prev
+  }, [])
+}
+
+/**
+ * Decode JATS `<award-group>` elements into a Stencila `Article.funders` property.
+ *
+ * In the long term, it is proposed to use the pending schema.org type `MonetaryGrant`
+ * to represent elements such as `<award-id>`. Currently, this ignores such elements
+ * and directly links the article to funding organizations through the `funders` property.
+ */
+function decodeFunders(front: xml.Element): stencila.Article['funders'] {
+  const funders = all(front, 'funding-source')
+  if (funders.length === 0) return undefined
+
+  return funders.reduce((prev: stencila.Organization[], curr) => {
+    let name = textOrUndefined(first(curr, 'institution'))
+    if (name === undefined) name = textOrUndefined(curr)
+    if (name === undefined) return prev
+    // Avoid duplicates
+    for (const org of prev) {
+      if (org.name === name ) return prev
+    }
+    return name !== undefined
+      ? [...prev, stencila.organization({ name })]
+      : prev
   }, [])
 }
 

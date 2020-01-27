@@ -156,6 +156,11 @@ description:
         draft as to how to represent these materials in the JATS and Crossref
         data models to facilitate the coordination and discoverability of peer
         review materials, and seek feedback on these initial recommendations.
+funders:
+  - type: Organization
+    name: U.S. National Library of Medicine
+  - type: Organization
+    name: Wellcome Trust
 isPartOf:
   type: PublicationVolume
   isPartOf:

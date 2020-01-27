@@ -96,6 +96,15 @@ editors:
       - Perrimon
     givenNames:
       - Norbert
+funders:
+  - type: Organization
+    name: Ministerio de Ciencia e Innovación
+  - type: Organization
+    name: 'Ministry of Science, Innovation and Universities'
+  - type: Organization
+    name: Agencia Nacional de Promoción Científica y Tecnológica
+  - type: Organization
+    name: Universidad Nacional del Litoral
 isPartOf:
   type: PublicationVolume
   isPartOf:

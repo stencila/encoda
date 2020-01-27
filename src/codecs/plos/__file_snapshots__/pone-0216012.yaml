@@ -110,6 +110,15 @@ editors:
     givenNames:
       - Sakamuri
       - V.
+funders:
+  - type: Organization
+    name: National Science Foundation (USA)
+  - type: Organization
+    name: Cercle Gutenberg (France)
+  - type: Organization
+    name: 'University of Strasbourg, France'
+  - type: Organization
+    name: Université de Strasbourg (FR)
 isPartOf:
   type: PublicationVolume
   isPartOf:
