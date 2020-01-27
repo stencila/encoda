@@ -294,6 +294,7 @@ function decodeFront(
   | 'description'
   | 'isPartOf'
   | 'licenses'
+  | 'keywords'
 > {
   return front === null
     ? {}
@@ -304,7 +305,8 @@ function decodeFront(
         title: decodeTitle(first(front, 'article-title'), state),
         description: decodeAbstract(first(front, 'abstract'), state),
         isPartOf: decodeIsPartOf(front),
-        licenses: decodeLicenses(front, state)
+        licenses: decodeLicenses(front, state),
+        keywords: decodeKeywords(front)
       }
 }
 
@@ -449,6 +451,18 @@ function decodeLicenses(
     const p = first(license, 'license-p')
     const content = p !== null ? decodeParagraph(p, state) : undefined
     return [...prev, stencila.creativeWork({ url, content })]
+  }, [])
+}
+
+/**
+ * Decode JATS `<kwd>` elements into a Stencila `Article.keywords` property.
+ */
+function decodeKeywords(front: xml.Element): stencila.Article['keywords'] {
+  const kwds = all(front, 'kwd')
+  if (kwds.length === 0) return undefined
+  return kwds.reduce((prev: string[], curr) => {
+    const kwd = textOrUndefined(curr)
+    return kwd !== undefined ? [...prev, kwd] : prev
   }, [])
 }
 
