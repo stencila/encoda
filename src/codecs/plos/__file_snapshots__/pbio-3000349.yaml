@@ -111,6 +111,18 @@ description:
         providing metrics aimed at unifying the psychology and the
         neurophysiology of chronic pain applicable across diverse clinical
         conditions.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1544-9173
+      - 1545-7885
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Biology
+  volumeNumber: '17'
 references:
   - type: Article
     id: pbio.3000349.ref001

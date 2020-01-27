@@ -32,6 +32,17 @@ description:
         content:
           - lnc-NR2F1
       - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '8'
 references:
   - type: Article
     id: bib1

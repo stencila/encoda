@@ -114,6 +114,17 @@ description:
         killing. We also identify new genes and pathways regulating or
         interacting with G4s and demonstrate that the DDX42 DEAD-box helicase is
         a newly discovered G4-binding protein.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '8'
 references:
   - type: Article
     id: bib1

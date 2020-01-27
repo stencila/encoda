@@ -179,6 +179,18 @@ description:
         episomal 2-LTR circles were observed suggesting that the integration of
         HIV-1 genome was restricted. This is the second genetic defect described
         after CCR5Δ32 that shows strong resistance against HIV-1 infection.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1553-7366
+      - 1553-7374
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Pathogens
+  volumeNumber: '15'
 references:
   - type: Article
     id: ppat.1007958.ref001

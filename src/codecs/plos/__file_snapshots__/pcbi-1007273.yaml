@@ -104,6 +104,18 @@ description:
         content:
           - 'https://github.com/machinegun/SALSA'
       - .
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1553-734X
+      - 1553-7358
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Computational Biology
+  volumeNumber: '15'
 references:
   - type: Article
     id: pcbi.1007273.ref001

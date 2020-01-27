@@ -156,6 +156,18 @@ description:
         risk of death in severe falciparum malaria. This is possibly a direct
         causal association. The severe anaemia threshold criteria for a
         definition of severe falciparum malaria should be reconsidered.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1549-1277
+      - 1549-1676
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Medicine
+  volumeNumber: '16'
 references:
   - type: Article
     id: pmed.1002858.ref001

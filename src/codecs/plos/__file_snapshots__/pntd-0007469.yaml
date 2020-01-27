@@ -60,6 +60,17 @@ description:
         content:
           - Rickettsia-
       - related microorganisms.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1935-2735
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Neglected Tropical Diseases
+  volumeNumber: '13'
 references:
   - type: Article
     id: pntd.0007469.ref001
