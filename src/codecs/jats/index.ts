@@ -285,7 +285,10 @@ function encodeArticle(article: stencila.Article): xml.Element {
 function decodeFront(
   front: xml.Element | null,
   state: DecodeState
-): Pick<stencila.Article, 'authors' | 'title' | 'description' | 'isPartOf'> {
+): Pick<
+  stencila.Article,
+  'authors' | 'datePublished' | 'title' | 'description' | 'isPartOf'
+> {
   return front === null
     ? {}
     : {
@@ -293,6 +296,7 @@ function decodeFront(
           all(front, 'contrib', { 'contrib-type': 'author' }),
           state
         ),
+        datePublished: decodeDatePublished(front),
         title: decodeTitle(first(front, 'article-title'), state),
         description: decodeAbstract(first(front, 'abstract'), state),
         isPartOf: decodeIsPartOf(front)
@@ -349,6 +353,49 @@ function encodeAbstract(
       ? elem('p', description)
       : elem('p', ...encodeNodes(description, initialEncodeState()))
   return elem('abstract', paras)
+}
+
+/**
+ * Decode JATS `<pub-date>` elements into a Stencila `Article.datePublished` property.
+ *
+ * Will return the first date with `date-type==publication` or `pub-type==epub`, or
+ * the first date if none of those exist.
+ */
+function decodeDatePublished(
+  front: xml.Element
+): stencila.Article['datePublished'] {
+  const dates = all(front, 'pub-date')
+  if (dates.length === 0) return undefined
+  for (const date of dates) {
+    if (
+      attr(date, 'date-type') === 'publication' ||
+      attr(date, 'pub-type') === 'epub'
+    ) {
+      return decodeDate(date)
+    }
+  }
+  return decodeDate(dates[0])
+}
+
+/**
+ * Decode a JATS `<date>` or `<pub-date>` element into a Stencila `Date`
+ */
+function decodeDate(date: xml.Element): stencila.Date | undefined {
+  let value
+  const iso = attr(date, 'iso-8601-date')
+  if (iso !== null) value = iso
+  else {
+    const year = text(child(date, 'year'))
+    if (year === null) return undefined
+    value = `${year.padStart(4, '0')}`
+
+    const month = text(child(date, 'month'))
+    if (month !== null) value += `-${month.padStart(2, '0')}`
+
+    const day = text(child(date, 'day'))
+    if (day !== null) value += `-${day.padStart(2, '0')}`
+  }
+  return stencila.date({ value })
 }
 
 /**
