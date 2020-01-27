@@ -692,7 +692,6 @@ x = c(1,2)</code></pre>
   node: {
     type: 'Article',
     title: 'Article title',
-    authors: [],
     content: [
       {
         type: 'Heading',
