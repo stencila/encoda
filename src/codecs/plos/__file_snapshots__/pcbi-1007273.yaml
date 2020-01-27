@@ -128,6 +128,22 @@ isPartOf:
       name: Public Library of Science
     title: PLOS Computational Biology
   volumeNumber: '15'
+licenses:
+  - type: CreativeWork
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            This is an open access article, free of all copyright, and may be
+            freely reproduced, distributed, transmitted, modified, built upon,
+            or otherwise used by anyone for any lawful purpose. The work is made
+            available under the 
+          - type: Link
+            target: 'https://creativecommons.org/publicdomain/zero/1.0/'
+            content:
+              - Creative Commons CC0
+          - ' public domain dedication.'
 references:
   - type: Article
     id: pcbi.1007273.ref001

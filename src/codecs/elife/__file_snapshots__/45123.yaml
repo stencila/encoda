@@ -46,6 +46,20 @@ isPartOf:
       name: 'eLife Sciences Publications, Ltd'
     title: eLife
   volumeNumber: '8'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This article is distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use and redistribution provided that
+            the original author and source are credited.
 references:
   - type: Article
     id: bib1

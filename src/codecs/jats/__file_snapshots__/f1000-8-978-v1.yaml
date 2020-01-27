@@ -168,6 +168,17 @@ isPartOf:
       name: F1000 Research Limited
     title: F1000Research
   volumeNumber: '8'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            This is an open access article distributed under the terms of the
+            Creative Commons Attribution Licence, which permits unrestricted
+            use, distribution, and reproduction in any medium, provided the
+            original work is properly cited.
 references:
   - type: Article
     id: ref-1

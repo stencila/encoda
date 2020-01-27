@@ -287,7 +287,13 @@ function decodeFront(
   state: DecodeState
 ): Pick<
   stencila.Article,
-  'authors' | 'editors' | 'datePublished' | 'title' | 'description' | 'isPartOf'
+  | 'authors'
+  | 'editors'
+  | 'datePublished'
+  | 'title'
+  | 'description'
+  | 'isPartOf'
+  | 'licenses'
 > {
   return front === null
     ? {}
@@ -297,7 +303,8 @@ function decodeFront(
         datePublished: decodeDatePublished(front),
         title: decodeTitle(first(front, 'article-title'), state),
         description: decodeAbstract(first(front, 'abstract'), state),
-        isPartOf: decodeIsPartOf(front)
+        isPartOf: decodeIsPartOf(front),
+        licenses: decodeLicenses(front, state)
       }
 }
 
@@ -424,6 +431,25 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
           : undefined
     })
   })
+}
+
+/**
+ * Decode a JATS `<permissions>` elements into a Stencila `Article.licenses` property.
+ */
+function decodeLicenses(
+  front: xml.Element,
+  state: DecodeState
+): stencila.Article['licenses'] {
+  const permissions = first(front, 'permissions')
+  const licenses = all(permissions, 'license')
+  if (licenses.length === 0) return undefined
+
+  return licenses.reduce((prev: stencila.CreativeWork[], license) => {
+    const url = attrOrUndefined(license, 'xlink:href')
+    const p = first(license, 'license-p')
+    const content = p !== null ? decodeParagraph(p, state) : undefined
+    return [...prev, stencila.creativeWork({ url, content })]
+  }, [])
 }
 
 /**
