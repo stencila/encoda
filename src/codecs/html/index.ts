@@ -48,46 +48,131 @@ import { getThemeAssets } from '../../util/html'
 
 // TODO: These definitions should be moved to Schema project
 const itemTypes: Array<keyof stencila.Types> = [
+  'ArrayValidator',
   'Article',
-  // 'Brand',
-  'Entity',
+  'AudioObject',
+  'BlockContent',
+  'BooleanValidator',
+  'Brand',
   'Cite',
   'CiteGroup',
   'Code',
   'CodeBlock',
+  'CodeBlockTypes',
   'CodeChunk',
+  'CodeError',
   'CodeExpression',
+  'CodeFragment',
+  'CodeFragmentTypes',
+  'CodeTypes',
   'Collection',
+  'ConstantValidator',
+  'ContactPoint',
   'CreativeWork',
+  'CreativeWorkTypes',
   'Datatable',
-  'Organization',
-  'Periodical',
-  'PublicationIssue',
-  'SoftwareSourceCode',
-  'AudioObject',
+  'DatatableColumn',
+  'Date',
   'Delete',
   'Emphasis',
+  'Entity',
+  'EntityTypes',
+  'EnumValidator',
+  'Figure',
+  'Function',
   'Heading',
   'ImageObject',
+  'Include',
+  'InlineContent',
+  'IntegerValidator',
   'Link',
   'List',
   'ListItem',
+  'Mark',
+  'MarkTypes',
+  'Math',
+  'MathBlock',
+  'MathFragment',
+  'MathTypes',
+  'MediaObject',
+  'MediaObjectTypes',
+  'Node',
+  'NumberValidator',
+  'NumberValidatorTypes',
+  'Organization',
   'Paragraph',
+  'Parameter',
+  'Periodical',
+  'Person',
+  'Product',
+  'PublicationIssue',
+  'PublicationVolume',
   'Quote',
   'QuoteBlock',
+  'SoftwareApplication',
+  'SoftwareSourceCode',
+  'StringValidator',
   'Strong',
   'Subscript',
+  'Superscript',
   'Table',
-  'TableRow',
   'TableCell',
+  'TableRow',
   'ThematicBreak',
+  'Thing',
+  'ThingTypes',
+  'TupleValidator',
+  'ValidatorTypes',
+  'Variable',
+  'VariableTypes',
   'VideoObject'
 ]
 
-export const schemaUrls = itemTypes.reduce(
-  (types, type) => ({ ...types, [type]: `https://schema.stenci.la/${type}` }),
-  {} as { [key in keyof stencila.Types]: string }
-)
+/**
+ * Mapping between various Schema entities, and their MicroData `itemType` values.
+ * These are used as CSS selectors in Stencila Thema.
+ * For schemas which don't have an equivalent Schema.org variant, mark it as a proprietary Stencila
+ * Schema object. Otherwise resolve as a Schema.org schema for better SEO and richer web previews.
+ */
+export const schemaURLs = itemTypes.reduce((types, type) => {
+  switch (type) {
+    case 'ArrayValidator':
+    case 'BooleanValidator':
+    case 'CodeBlock':
+    case 'CodeChunk':
+    case 'CodeError':
+    case 'CodeExpression':
+    case 'CodeFragment':
+    case 'ConstantValidator':
+    case 'Datatable':
+    case 'DatatableColumn':
+    case 'Delete':
+    case 'Emphasis':
+    case 'Entity':
+    case 'EnumValidator':
+    case 'Function':
+    case 'Include':
+    case 'InlineContent':
+    case 'IntegerValidator':
+    case 'List':
+    case 'ListItem':
+    case 'Mark':
+    case 'Node':
+    case 'NumberValidator':
+    case 'SoftwareApplication':
+    case 'SoftwareSourceCode':
+    case 'StringValidator':
+    case 'Strong':
+    case 'Subscript':
+    case 'Superscript':
+    case 'ThematicBreak':
+    case 'TupleValidator':
+    case 'Variable':
+      return { ...types, [type]: `https://schema.stenci.la/${type}` }
+    default:
+      return { ...types, [type]: `https://schema.org/${type}` }
+  }
+}, {} as { [key in keyof stencila.Types]: string })
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -106,8 +191,8 @@ const slugger = new GithubSlugger()
  */
 const encodeMaybe = <T>(
   value: T | undefined,
-  html: HTMLElement | ((defined: T) => HTMLElement)
-): HTMLElement | undefined => {
+  html: HTMLElement | ((defined: T) => HTMLElement | HTMLElement[])
+): HTMLElement | HTMLElement[] | undefined => {
   return value !== undefined && (Array.isArray(value) ? value.length > 0 : true)
     ? typeof html === 'function'
       ? html(value)
@@ -325,7 +410,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     type !== null
       ? type
           .replace(/^https?:\/\/schema\.org\//, 'schema:')
-          .replace(/^https?:\/\/schema\.stenci\.la\//, 'stencila:')
+          .replace(/^https?:\/\/schema\.stenci\.la\//, 'schema:')
       : node.nodeName.toLowerCase()
 
   switch (name) {
@@ -341,6 +426,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'blockquote':
       return decodeBlockquote(node as HTMLQuoteElement)
     case 'pre':
+    case 'schema:CodeBlock':
       if (node.firstChild && node.firstChild.nodeName === 'CODE') {
         return decodeCodeBlock(node as HTMLPreElement)
       }
@@ -357,7 +443,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
       return decodeListItem(node as HTMLLIElement)
     case 'table':
       return decodeTable(node as HTMLTableElement)
-    case 'stencila:Datatable':
+    case 'schema:Datatable':
       return decodeDatatable(node as HTMLDivElement)
     case 'hr':
       return decodeHR()
@@ -373,33 +459,40 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'sub':
       return decodeMark(node as HTMLElement, 'Subscript')
     case 'a':
+    case 'schema:Link':
       return decodeLink(node as HTMLAnchorElement)
     case 'q':
       return decodeQuote(node as HTMLQuoteElement)
     case 'cite':
+    case 'schema:Cite':
       return decodeCite(node as HTMLElement)
-    case 'stencila:CiteGroup':
+    case 'schema:CiteGroup':
       return decodeCiteGroup(node as HTMLOListElement)
     case 'stencila-code-expression':
       return decodeCodeExpression(node as HTMLElement)
     case 'code':
+    case 'schema:CodeFragment':
+    case 'schema:Code':
       return decodeCodeFragment(node as HTMLElement)
     case 'img':
+    case 'schema:ImageObject':
       return decodeImage(node as HTMLImageElement)
     case 'figure':
       return decodeFigure(node as HTMLElement)
     case 'figcaption':
       return decodeFigCaption(node as HTMLElement)
+    case 'schema:Person':
+      return decodePerson(node as HTMLElement)
 
-    case 'stencila:Null':
+    case 'schema:Null':
       return decodeNull()
-    case 'schema:Boolean':
+    case 'schema:BooleanValidator':
       return decodeBoolean(node as HTMLElement)
-    case 'schema:Number':
+    case 'schema:NumberValidator':
       return decodeNumber(node as HTMLElement)
-    case 'stencila:Array':
+    case 'schema:ArrayValidator':
       return decodeArray(node as HTMLElement)
-    case 'stencila:Object':
+    case 'schema:Object':
       return decodeObject(node as HTMLElement)
 
     // Container elements which are 'unwrapped'
@@ -418,9 +511,12 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
       return decodeText(node as Text)
   }
 
-  const match = /^h(\d)$/.exec(name)
-  if (match) {
-    return decodeHeading(node as HTMLHeadingElement, parseInt(match[1], 10))
+  const match = (s: string) => /^h(\d)$/i.exec(s)
+  if (match(name) || name === 'schema:Heading') {
+    const tag = match(node.nodeName)
+    const level = tag ? tag[1] : '1'
+    const depth = parseInt(level, 10)
+    return decodeHeading(node as HTMLHeadingElement, depth)
   }
 
   if (type !== null) return decodeEntity(node as HTMLElement)
@@ -457,6 +553,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
       return encodeCodeExpression(node as stencila.CodeExpression)
     case 'CodeFragment':
       return encodeCodeFragment(node as stencila.CodeFragment)
+    case 'Person':
+      return encodePerson(node as stencila.Person)
     case 'CreativeWork':
     case 'Periodical':
     case 'PublicationIssue':
@@ -524,7 +622,8 @@ const encodeNode = (node: stencila.Node, options: {} = {}): Node => {
 function decodeDocument(doc: HTMLDocument): stencila.Node {
   const body = doc.querySelector('body')
   if (!body) throw new Error('Document does not have a <body>!')
-  return decodeNodes([...body.childNodes])
+  const children = [...body.childNodes]
+  return children.length === 0 ? [] : decodeNodes([...body.childNodes])
 }
 
 /**
@@ -649,7 +748,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
 
   return h(
     'article',
-    { attrs: { itemtype: schemaUrls.Article, itemscope: true } },
+    { attrs: { itemtype: schemaURLs.Article, itemscope: true } },
     encodeMaybe(title, title => encodeTitleProperty(title)),
     encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
@@ -662,7 +761,12 @@ function encodeArticle(article: stencila.Article): HTMLElement {
 function encodeTitleProperty(title: string | stencila.Node[]): HTMLElement {
   return h(
     'h1',
-    { itemprop: 'headline' },
+    {
+      attrs: {
+        itemtype: schemaURLs.Heading,
+        itemprop: 'headline'
+      }
+    },
     encodeNodes(typeof title === 'string' ? [title] : title)
   )
 }
@@ -676,7 +780,7 @@ function encodeTitleProperty(title: string | stencila.Node[]): HTMLElement {
  */
 function encodeAuthorsProperty(
   authors: (stencila.Person | stencila.Organization)[]
-): HTMLElement {
+): HTMLElement[] {
   const init: { [key: string]: [number, stencila.Organization] } = {}
   const orgs = authors
     .map(author =>
@@ -698,27 +802,38 @@ function encodeAuthorsProperty(
       }
       return prev
     }, init)
-  return h(
-    'div',
+
+  return [
     h(
       'ol',
-      { class: 'authors' },
+      {
+        attrs: {
+          itemprop: 'authors'
+        }
+      },
       ...authors.map(author =>
         author.type === 'Person'
           ? encodePerson(author, orgs, 'li')
           : encodeOrganization(author, 'li')
       )
     ),
-    Object.keys(orgs).length > 0
-      ? h(
-          'ol',
-          { class: 'organizations' },
-          ...Object.values(orgs).map(([index, org]) =>
-            encodeOrganization(org, 'li')
+    ...(Object.keys(orgs).length > 0
+      ? [
+          h(
+            'ol',
+            {
+              class: 'organizations',
+              attrs: {
+                itemprop: 'organisations'
+              }
+            },
+            ...Object.values(orgs).map(([_, org]) =>
+              encodeOrganization(org, 'li')
+            )
           )
-        )
-      : undefined
-  )
+        ]
+      : [])
+  ]
 }
 
 function encodeDate(
@@ -830,7 +945,7 @@ function encodeCreativeWork(
     {
       attrs: {
         ...attrs,
-        itemtype: schemaUrls[work.type]
+        itemtype: schemaURLs[work.type]
       },
       id
     },
@@ -866,7 +981,7 @@ function decodePerson(person: HTMLElement): stencila.Person {
  */
 function encodePerson(
   person: stencila.Person,
-  organizations: { [key: string]: [number, stencila.Organization] },
+  organizations?: { [key: string]: [number, stencila.Organization] },
   tag?: keyof HTMLElementTagNameMap,
   property = 'author'
 ): HTMLElement {
@@ -933,7 +1048,7 @@ function encodePerson(
       : undefined
 
   const affiliationsElem =
-    affiliations !== undefined
+    affiliations && organizations
       ? h(
           'ol',
           { class: 'affiliations' },
@@ -954,7 +1069,7 @@ function encodePerson(
     tag ?? 'span',
     {
       attrs: {
-        itemtype: 'https://schema.org/Person',
+        itemtype: schemaURLs.Person,
         itemprop: property
       }
     },
@@ -985,7 +1100,7 @@ function encodeOrganization(
     tag ?? 'div',
     {
       attrs: {
-        itemtype: schemaUrls.Organization,
+        itemtype: schemaURLs.Organization,
         itemid: `#${id}`
       },
       id
@@ -1006,12 +1121,16 @@ function encodeInclude(include: stencila.Include): HTMLElement {
   const contentDiv = h('div', content.map(encodeNode))
   contentDiv.setAttribute('itemprop', 'content')
   const elem = h(`div`, contentDiv)
-  elem.setAttribute('itemtype', `https://schema.stenci.la/${nodeType(include)}`)
+  elem.setAttribute(
+    'itemtype',
+    schemaURLs[nodeType(include) as stencila.Entity['type']] ||
+      `https://schema.stenci.la/${nodeType(include)}`
+  )
   return elem
 }
 
 /**
- * Decode a `<h1>` etc element to a `stencila.Heading`.
+ * Decode a `<h1-6>` elements to a `stencila.Heading`.
  */
 function decodeHeading(
   heading: HTMLHeadingElement,
@@ -1029,7 +1148,7 @@ function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
   const id = slugger.slug(text)
   return h(
     `h${heading.depth}`,
-    { id, attrs: { itemtype: schemaUrls.Heading } },
+    { id, attrs: { itemtype: schemaURLs.Heading } },
     content
   )
 }
@@ -1115,7 +1234,7 @@ function encodeCite(cite: stencila.Cite): HTMLElement {
     'cite',
     {
       attrs: {
-        itemtype: schemaUrls.Cite
+        itemtype: schemaURLs.Cite
       }
     },
     content
@@ -1138,7 +1257,7 @@ function decodeCiteGroup(citeGroup: HTMLOListElement): stencila.CiteGroup {
 function encodeCiteGroup(citeGroup: stencila.CiteGroup): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: schemaUrls.CiteGroup } },
+    { attrs: { itemtype: schemaURLs.CiteGroup } },
     citeGroup.items.map(encodeCite)
   )
 }
@@ -1178,7 +1297,7 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
     {
       id,
       title: label,
-      attrs: { itemtype: schemaUrls.Figure }
+      attrs: { itemtype: schemaURLs.Figure }
     },
     [
       ...encodeNodes(content),
@@ -1190,7 +1309,7 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
 }
 
 /**
- * Decode a `<ol itemtype="https://schema.org/Collection">` element to a `stencila.Collection`.
+ * Decode a `<ol itemtype="https://schema.stenci.la/Collection">` element to a `stencila.Collection`.
  */
 function decodeCollection(collection: HTMLOListElement): stencila.Collection {
   const parts = flatten(
@@ -1204,12 +1323,12 @@ function decodeCollection(collection: HTMLOListElement): stencila.Collection {
 }
 
 /**
- * Encode a `stencila.Collection` node to a `<ol itemtype="https://schema.org/Collection">` element.
+ * Encode a `stencila.Collection` node to a `<ol itemtype="https://schema.stenci.la/Collection">` element.
  */
 function encodeCollection(collection: stencila.Collection): HTMLOListElement {
   return h(
     'ol',
-    { attrs: { itemtype: schemaUrls.Collection } },
+    { attrs: { itemtype: schemaURLs.Collection } },
     collection.parts.map(entry => h('li', encodeNode(entry)))
   )
 }
@@ -1245,7 +1364,7 @@ function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
     false
   )
 
-  return h('pre', { attrs: { ...attrs, itemtype: schemaUrls.CodeBlock } }, code)
+  return h('pre', { attrs: { ...attrs, itemtype: schemaURLs.CodeBlock } }, code)
 }
 
 /**
@@ -1291,7 +1410,7 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
 
   return h(
     'stencila-code-chunk',
-    { attrs: { ...attrs, itemtype: schemaUrls.CodeChunk } },
+    { attrs: { ...attrs, itemtype: schemaURLs.CodeChunk } },
     codeElem,
     outputsElem
   )
@@ -1335,7 +1454,7 @@ function encodeCodeExpression(expr: stencila.CodeExpression): HTMLElement {
   return h(
     'stencila-code-expression',
     {
-      attrs: { ...attrs, itemtype: schemaUrls.CodeExpression }
+      attrs: { ...attrs, itemtype: schemaURLs.CodeExpression }
     },
     [
       h('code', { class: programmingLanguage, attrs: { slot: 'text' } }, text),
@@ -1514,7 +1633,7 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
 
   // prettier-ignore
   return h('div',
-    { attrs: { itemtype: schemaUrls.Datatable } },
+    { attrs: { itemtype: schemaURLs.Datatable } },
     h('table',
       h('thead',
         h('tr', cols.map(col => (
@@ -1584,7 +1703,7 @@ function encodeLink(link: stencila.Link): HTMLAnchorElement {
     ...encodeDataAttrs(link.meta ?? {}),
     href: link.target,
     attrs: {
-      itemtype: schemaUrls.Link
+      itemtype: schemaURLs.Link
     }
   }
   return h('a', attrs, link.content.map(encodeNode))
@@ -1632,7 +1751,7 @@ function encodeCodeFragment(
   dataAttrs = true
 ): HTMLElement {
   return h('code', {
-    attrs: { itemtype: schemaUrls.Code },
+    attrs: { itemtype: schemaURLs.Code },
     class: code.programmingLanguage
       ? `language-${code.programmingLanguage}`
       : undefined,
@@ -1660,7 +1779,7 @@ function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
  * The default is to add `itemprop="image"`, a property of `Thing`,
  * but other property names may be appropriate for other things
  * e.g. `diagram` for `AnatomicalStructure`, or `screenshot` for `SorftwareApplication`.
- * See https://schema.org/ImageObject
+ * See https://schema.stenci.la/ImageObject
  */
 function encodeImageObject(
   image: stencila.ImageObject,
@@ -1670,8 +1789,8 @@ function encodeImageObject(
   return h('img', {
     attrs: {
       // TODO: Consider reinstating `itemtype` here. Currently breaks kitchen sink decode test.
-      // itemtype: 'https://schema.org/ImageObject',
-      itemtype: schemaUrls.ImageObject,
+      // itemtype: 'https://schema.stenci.la/ImageObject',
+      itemtype: schemaURLs.ImageObject,
       itemprop: property
     },
     src: contentUrl,
@@ -1706,37 +1825,37 @@ function encodeNull(): HTMLElement {
 }
 
 /**
- * Decode a `<span itemtype="https://schema.org/Boolean>` element to a `boolean`.
+ * Decode a `<span itemtype="https://schema.stenci.la/Boolean>` element to a `boolean`.
  */
 function decodeBoolean(elem: HTMLElement): boolean {
   return elem.innerHTML === 'true'
 }
 
 /**
- * Encode a `boolean` to a `<span itemtype="https://schema.org/Boolean>` element.
+ * Encode a `boolean` to a `<span itemtype="https://schema.stenci.la/Boolean>` element.
  */
 function encodeBoolean(value: boolean): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: 'https://schema.org/Boolean' } },
+    { attrs: { itemtype: schemaURLs.BooleanValidator } },
     value === true ? 'true' : 'false'
   )
 }
 
 /**
- * Decode a `<span itemtype="https://schema.org/Number>` element to a `number`.
+ * Decode a `<span itemtype="https://schema.stenci.la/Number>` element to a `number`.
  */
 function decodeNumber(elem: HTMLElement): number {
   return parseFloat(elem.innerHTML || '0')
 }
 
 /**
- * Encode a `number` to a `<span itemtype="https://schema.org/Number>` element.
+ * Encode a `number` to a `<span itemtype="https://schema.stenci.la/Number>` element.
  */
 function encodeNumber(value: number): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: 'https://schema.org/Number' } },
+    { attrs: { itemtype: schemaURLs.NumberValidator } },
     value.toString()
   )
 }
@@ -1756,7 +1875,7 @@ function decodeArray(elem: HTMLElement): [any[]] {
 function encodeArray(value: any[]): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: 'https://schema.stenci.la/Array' } },
+    { attrs: { itemtype: schemaURLs.ArrayValidator } },
     JSON5.stringify(value)
   )
 }
@@ -1805,7 +1924,7 @@ function decodeEntity(elem: HTMLElement): stencila.Entity {
 function encodeEntity(entity: stencila.Entity): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: schemaUrls.Entity } },
+    { attrs: { itemtype: schemaURLs.Entity } },
     JSON5.stringify(entity)
   )
 }

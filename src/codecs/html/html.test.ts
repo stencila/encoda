@@ -27,7 +27,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
-import { decodeHref, HTMLCodec, schemaUrls } from './'
+import { decodeHref, HTMLCodec, schemaURLs } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -50,11 +50,14 @@ test('decode', async () => {
 
 describe('encode', () => {
   test('Encode kitchenSink', async () =>
-    expect(await e(kitchenSink.node)).toEqual(kitchenSink.html))
-  test('Encode attrs', async () =>
-    expect(await e(attrs.node)).toEqual(attrs.html))
+    expect(await e(kitchenSink.node)).toEqualStringContent(
+      kitchenSink.html,
+      true
+    ))
+  test('E data-attr1="foo"code attrs', async () =>
+    expect(await e(attrs.node)).toEqualStringContent(attrs.html))
   test('Encode Datatable', async () =>
-    expect(await e(dt.node)).toEqual(dt.html))
+    expect(await e(dt.node)).toEqualStringContent(dt.html))
 })
 
 describe('String escaping', () => {
@@ -95,7 +98,11 @@ describe('Encode & Decode cite nodes', () => {
   const htmlNode = `<cite><a href="#myTarget">myTarget</a></cite>`
 
   test('encode', async () => {
-    expect(await e(schemaNode)).toEqual(htmlNode)
+    const node = doc(await e(schemaNode)).querySelector('cite')
+
+    expect(node).toBeDefined()
+    expect(node?.querySelector('a')).toHaveAttribute('href', '#myTarget')
+    expect(node).toHaveTextContent('myTarget')
   })
 
   test('decode', async () => {
@@ -157,7 +164,7 @@ describe('Encode & Decode cite group nodes', () => {
   const cite2 = cite({ target: 'mySecondTarget' })
 
   const schemaNode = citeGroup({ items: [cite1, cite2] })
-  const htmlNode = `<span itemtype="https://schema.stenci.la/CiteGroup">
+  const htmlNode = `<span itemtype="${schemaURLs.CiteGroup}">
     <cite><a href="myFirstTarget">myFirstTarget</a></cite>
     <cite><a href="mySecondTarget">mySecondTarget</a></cite>
   </ol>`
@@ -168,7 +175,7 @@ describe('Encode & Decode cite group nodes', () => {
     expect(actual.querySelectorAll('cite')).toHaveLength(2)
     expect(actual.querySelector('span')).toHaveAttribute(
       'itemtype',
-      'https://schema.stenci.la/CiteGroup'
+      schemaURLs.CiteGroup
     )
   })
 
@@ -273,8 +280,7 @@ describe.skip('Encode & Decode references', () => {
 
   <ol class="references">
     <li
-      itemtype="https://schema.org/CreativeWork"
-      itemscope="true"
+      itemtype="${schemaURLs.CreativeWork}"
       itemprop="citation"
     >
       <a
@@ -287,8 +293,7 @@ describe.skip('Encode & Decode references', () => {
       <div>
         <ol class="authors">
           <li
-            itemtype="https://schema.org/Person"
-            itemscope="true"
+            itemtype="${schemaURLs.Person}"
             itemprop="author"
           >
             <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
@@ -299,8 +304,7 @@ describe.skip('Encode & Decode references', () => {
             </a>
           </li>
           <li
-            itemtype="https://schema.org/Person"
-            itemscope="true"
+            itemtype="${schemaURLs.Person}"
             itemprop="author"
           >
             <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22">
@@ -425,10 +429,10 @@ const nodes = [
 describe.each(nodes)(
   'Encode %s with MicroData',
   // @ts-ignore
-  (schemaType: keyof typeof schemaUrls, node) => {
+  (schemaType: keyof typeof schemaURLs, node) => {
     test('it has itemtype', async () => {
       const actual = doc(await e(node)).querySelector('body > *')
-      expect(actual).toHaveAttribute('itemtype', schemaUrls[schemaType])
+      expect(actual).toHaveAttribute('itemtype', schemaURLs[schemaType])
     })
   }
 )
@@ -450,7 +454,7 @@ describe('Encode & Decode Collections', () => {
   })
 
   const htmlNode = `
-    <ol itemtype="https://schema.org/Collection">
+    <ol itemtype="${schemaURLs.Collection}">
       <li>
         <figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>
       </li>
@@ -466,10 +470,7 @@ describe('Encode & Decode Collections', () => {
     const collection = actual.querySelector('ol')
     const figures = actual.querySelectorAll('figure')
 
-    expect(collection).toHaveAttribute(
-      'itemtype',
-      'https://schema.org/Collection'
-    )
+    expect(collection).toHaveAttribute('itemtype', schemaURLs.Collection)
     expect(figures).toHaveLength(2)
   })
 
@@ -524,22 +525,26 @@ test('encode with bundling', async () => {
 
 test('encode add heading ids', async () => {
   expect(
-    await e({
-      type: 'Heading',
-      depth: 1,
-      content: ['One']
-    })
-  ).toBe('<h1 id="one">One</h1>')
+    doc(
+      await e({
+        type: 'Heading',
+        depth: 1,
+        content: ['One']
+      })
+    ).querySelector('h1')?.id
+  ).toBe('one')
 
   expect(
-    await e({
-      type: 'Heading',
-      depth: 2,
-      content: ['foo 123 $#% 🐶 bar']
-    })
-  ).toEqual('<h2 id="foo-123---bar">foo 123 $#% 🐶 bar</h2>')
+    doc(
+      await e({
+        type: 'Heading',
+        depth: 2,
+        content: ['foo 123 $#% 🐶 bar']
+      })
+    ).querySelector('h2')?.id
+  ).toEqual('foo-123---bar')
 
-  expect(
+  const headingItems = doc(
     await e({
       type: 'Article',
       title: 'Test',
@@ -556,69 +561,129 @@ test('encode add heading ids', async () => {
         }
       ]
     })
-  ).toBe(`<article itemtype="https://schema.org/Article" itemscope="true">
-  <h1 itemprop="headline">Test</h1>
-  <h1 id="duplicated">duplicated</h1>
-  <h1 id="duplicated-1">duplicated</h1>
-</article>`)
+  ).querySelectorAll('h1')
+
+  const ids: string[] = []
+
+  headingItems.forEach(item => {
+    if (item.id) {
+      ids.push(item.id)
+    }
+  })
+
+  expect(ids).toEqual(expect.arrayContaining(['duplicated', 'duplicated-1']))
+})
+
+describe('handle decoding HTML comments', () => {
+  const html = `<p>
+      A paragraph with
+      <!-- <span itemtype="https://schema.stenci.la/Object">{a:1,b:'two'}</span> -->
+      a nested comment
+    </p>`
+
+  const schema = {
+    type: 'Paragraph',
+    content: ['A paragraph with ', 'a nested comment']
+  }
+
+  // test('encode', async () => {
+  //   expect(await e(schema)).toEqualStringContent(html)
+  // })
+
+  test('decode', async () => {
+    expect(await d(html)).toMatchObject(schema)
+  })
 })
 
 // An example intended for testing progressively added decoder/encoder pairs
 const kitchenSink = {
-  html: `<article itemtype="https://schema.org/Article" itemscope="true">
-  <h1 itemprop="headline">Article title</h1>
-  <h1 id="heading-one">Heading one</h1>
-  <h2 id="heading-two">Heading two</h2>
-  <h3 id="heading-three">Heading three</h3>
-  <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
-  <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
-  <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
-  <p>A paragraph with <code class="language-python"># code</code>.</p>
-  <p>A paragraph with an image <img src="https://example.org/image.png" title="title" alt="alt text"
-      itemprop="image">.</p>
-  <p>Paragraph with a <span itemtype="https://schema.org/Boolean">true</span> and a <span
-      itemtype="https://schema.org/Boolean">false</span>.</p>
-  <p>A paragraph with other data: a <span itemtype="https://schema.stenci.la/Null">null</span>, a
-    <span itemtype="https://schema.org/Number">3.14</span>, and a <span
-      itemtype="https://schema.stenci.la/Array">[1,2]</span>.</p>
-  <p>A paragraph with an <span itemtype="https://schema.stenci.la/Object">{a:1,b:'two'}</span> and a
-    <span itemtype="https://schema.stenci.la/Entity">{type:'Person'}</span>.</p>
-  <blockquote cite="https://example.org">A blockquote</blockquote>
-  <pre><code class="language-r"># Some code
+  html: `<article itemtype="${schemaURLs.Article}" itemscope="true">
+    <h1 itemtype="${schemaURLs.Heading}" itemprop="headline">Article title</h1>
+    <h1
+      id="heading-one"
+      itemtype="${schemaURLs.Heading}">Heading one</h1>
+    <h2
+      id="heading-two"
+      itemtype="${schemaURLs.Heading}">Heading two</h2>
+    <h3
+      id="heading-three"
+      itemtype="${schemaURLs.Heading}">Heading three</h3>
+    <p>
+      A paragraph with <em>emphasis</em>, <strong>strong</strong>,
+      <del>delete</del>.
+    </p>
+    <p>
+      A paragraph with
+      <a
+        href="https://example.org"
+        data-attr="foo"
+        itemtype="${schemaURLs.Link}">a <em>rich</em> link</a>.
+    </p>
+    <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
+    <p>
+      A paragraph with
+      <code
+        class="language-python"
+        itemtype="${schemaURLs.Code}"># code</code>.
+    </p>
+    <p>
+      A paragraph with an image
+      <img
+        src="https://example.org/image.png"
+        title="title"
+        alt="alt text"
+        itemtype="${schemaURLs.ImageObject}"
+        itemprop="image">.
+    </p>
+    <p>
+      Paragraph with a
+      <span itemtype="${schemaURLs.BooleanValidator}">true</span>
+      and a
+      <span itemtype="${schemaURLs.BooleanValidator}">false</span>.
+    </p>
+    <p>
+      A paragraph with other data: a
+      <span itemtype="https://schema.stenci.la/Null">null</span>,
+      a
+      <span itemtype="${schemaURLs.NumberValidator}">3.14</span>, and a
+      <span itemtype="${schemaURLs.ArrayValidator}">[1,2]</span>.
+    </p>
+    <blockquote cite="https://example.org">A blockquote</blockquote>
+    <pre itemtype="${schemaURLs.CodeBlock}"><code class="language-r" itemtype="${schemaURLs.Code}"># Some code
 x = c(1,2)</code></pre>
-  <pre><code class="language-js">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
-const inc = (n) =&gt; n + 1</code></pre>
-  <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-  </ul>
-  <ol>
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-  </ol>
-  <table>
-    <tbody>
-      <tr>
-        <td>A</td>
-        <td>B</td>
-        <td>C</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-      </tr>
-    </tbody>
-  </table>
-  <hr>
-</article>`,
+    <pre itemtype="${schemaURLs.CodeBlock}"><code class="language-js" itemtype="${schemaURLs.Code}">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+      const inc = (n) =&gt; n + 1</code></pre>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+    <ol>
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+    </ol>
+    <table>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+  </article>`,
 
   node: {
     type: 'Article',
@@ -737,16 +802,6 @@ const inc = (n) =&gt; n + 1</code></pre>
         ]
       },
       {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with an ',
-          { a: 1, b: 'two' },
-          ' and a ',
-          { type: 'Person' },
-          '.'
-        ]
-      },
-      {
         type: 'QuoteBlock',
         cite: 'https://example.org',
         content: ['A blockquote']
@@ -760,7 +815,7 @@ const inc = (n) =&gt; n + 1</code></pre>
         type: 'CodeBlock',
         programmingLanguage: 'js',
         text:
-          '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\nconst inc = (n) => n + 1'
+          '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\n      const inc = (n) => n + 1'
       },
       {
         type: 'List',
@@ -848,8 +903,8 @@ const inc = (n) =&gt; n + 1</code></pre>
  * `Link`, `CodeFragment` and `CodeBlock` nodes.
  */
 const attrs = {
-  html: `<p>A <a href=\"url\" data-attr1=\"foo\" data-attr2=\"bar baz\" data-attr3=\"\">link</a> and <code
-    data-attr1="foo">da code</code>.</p>`,
+  html: `<p>A <a href="url" data-attr1="foo" data-attr2="bar baz" data-attr3="" itemtype="${schemaURLs.Link}">link</a> and
+    <code itemtype="https://schema.org/Code" data-attr1="foo">da code</code>.</p>`,
   node: {
     type: 'Paragraph',
     content: [
@@ -896,7 +951,7 @@ const dtNode: stencila.Datatable = {
   ]
 }
 const dt = {
-  html: `<div itemtype="https://schema.stenci.la/Datatable">
+  html: `<div itemtype="${schemaURLs.Datatable}">
   <table>
     <thead>
       <tr>
