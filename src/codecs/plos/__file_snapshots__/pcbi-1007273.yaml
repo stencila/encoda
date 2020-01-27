@@ -107,6 +107,15 @@ description:
         content:
           - 'https://github.com/machinegun/SALSA'
       - .
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'Ottawa University, CANADA'
+    familyNames:
+      - Ioshikhes
+    givenNames:
+      - Ilya
 isPartOf:
   type: PublicationVolume
   isPartOf:

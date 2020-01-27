@@ -287,15 +287,13 @@ function decodeFront(
   state: DecodeState
 ): Pick<
   stencila.Article,
-  'authors' | 'datePublished' | 'title' | 'description' | 'isPartOf'
+  'authors' | 'editors' | 'datePublished' | 'title' | 'description' | 'isPartOf'
 > {
   return front === null
     ? {}
     : {
-        authors: decodeAuthors(
-          all(front, 'contrib', { 'contrib-type': 'author' }),
-          state
-        ),
+        authors: decodeAuthors(front, state),
+        editors: decodeEditors(front, state),
         datePublished: decodeDatePublished(front),
         title: decodeTitle(first(front, 'article-title'), state),
         description: decodeAbstract(first(front, 'abstract'), state),
@@ -429,14 +427,17 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
 }
 
 /**
- * Decode a collection JATS `<contrib contrib-type = "author">` elements
+ * Decode JATS `<contrib contrib-type = "author">` elements
  * to a Stencila `Article.authors` property.
  */
 function decodeAuthors(
-  authors: xml.Element[],
+  front: xml.Element,
   state: DecodeState
 ): stencila.Article['authors'] {
-  return authors.map(author => decodeAuthor(author, state))
+  const authors = all(front, 'contrib', { 'contrib-type': 'author' })
+  return authors.length > 0
+    ? authors.map(author => decodeContrib(author, state))
+    : undefined
 }
 
 /**
@@ -460,40 +461,65 @@ function encodeAuthors(authors: stencila.Article['authors']): xml.Element {
 }
 
 /**
- * Decode a JATS `<contrib contrib-type = "author">` element
- * to a Stencila `Person` node.
+ * Decode JATS `<contrib contrib-type = "editors">` elements
+ * to a Stencila `Article.editors` property.
+ */
+function decodeEditors(
+  front: xml.Element,
+  state: DecodeState
+): stencila.Article['editors'] {
+  const editors = all(front, 'contrib', { 'contrib-type': 'editor' })
+  return editors.length > 0
+    ? editors.map(author => decodeContrib(author, state))
+    : undefined
+}
+
+/**
+ * Decode a JATS `<contrib>` element to a Stencila `Person` node.
  *
  * It is necessary to pass the `<article>` element to this function
  * (via `state`) so that author affiliations can be extracted.
  */
-function decodeAuthor(
-  author: xml.Element,
+function decodeContrib(
+  contrib: xml.Element,
   state: DecodeState
 ): stencila.Person {
-  const name = child(author, ['name', 'string-name'])
+  const name = child(contrib, ['name', 'string-name'])
   const person = name ? decodeName(name) : stencila.person()
 
-  const emails = all(author, 'email')
+  const emails = all(contrib, 'email')
   if (emails.length) person.emails = emails.map(text)
 
-  const affRefs = all(author, 'xref', { 'ref-type': 'aff' })
-  if (affRefs.length) {
-    person.affiliations = affRefs
-      .map(ref => {
-        const id = ref.attributes && ref.attributes.rid
-        const aff = first(state.article, 'aff', { id: id })
-        if (!aff) {
-          log.warn(`Could not find <aff id=${id}>`)
-          return null
-        }
-        return decodeAff(aff)
-      })
-      .reduce(
-        (prev: stencila.Organization[], curr) =>
-          curr ? [...prev, curr] : prev,
-        []
-      )
+  let affiliations: stencila.Organization[] = []
+
+  const affs = all(contrib, 'aff')
+  if (affs.length > 0) {
+    affiliations = [...affiliations, ...affs.map(decodeAff)]
   }
+
+  const affRefs = all(contrib, 'xref', { 'ref-type': 'aff' })
+  if (affRefs.length > 0) {
+    affiliations = [
+      ...affiliations,
+      ...affRefs
+        .map(ref => {
+          const id = ref.attributes && ref.attributes.rid
+          const aff = first(state.article, 'aff', { id: id })
+          if (!aff) {
+            log.warn(`Could not find <aff id=${id}>`)
+            return null
+          }
+          return decodeAff(aff)
+        })
+        .reduce(
+          (prev: stencila.Organization[], curr) =>
+            curr ? [...prev, curr] : prev,
+          []
+        )
+    ]
+  }
+
+  if (affiliations.length > 0) person.affiliations = affiliations
 
   return person
 }

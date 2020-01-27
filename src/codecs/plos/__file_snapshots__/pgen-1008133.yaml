@@ -87,6 +87,15 @@ description:
         content:
           - Drosophila
       - ' wing has been a valuable model system to reveal the existence of a stress response mechanism involved in the coordination of growth between adjacent cell populations and to identify a role of the fly orthologue of p53 (Dmp53) in this process. Here we identify the molecular mechanisms used by Dmp53 to regulate growth and proliferation in a non-autonomous manner. First, Dmp53-mediated transcriptional induction of Eiger, the fly orthologue of TNFα ligand, leads to the cell-autonomous activation of JNK. Second, two distinct signaling events downstream of the Eiger/JNK axis are induced in order to independently regulate tissue size and cell number in adjacent cell populations. Whereas expression of the hormone dILP8 acts systemically to reduce growth rates and tissue size of adjacent cell populations, the production of Reactive Oxygen Species—downstream of Eiger/JNK and as a consequence of apoptosis induction—acts in a non-cell-autonomous manner to reduce proliferation rates. Our results unravel how local and systemic signals act concertedly within a tissue to coordinate growth and proliferation, thereby generating well-proportioned organs and functionally integrated adults.'
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'Harvard Medical School, Howard Hughes Medical Institute, UNITED STATES'
+    familyNames:
+      - Perrimon
+    givenNames:
+      - Norbert
 isPartOf:
   type: PublicationVolume
   isPartOf:
