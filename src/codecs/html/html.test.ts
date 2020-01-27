@@ -2,13 +2,24 @@ import stencila, {
   article,
   cite,
   citeGroup,
+  code,
+  codeBlock,
+  codeChunk,
   codeExpression,
   collection,
   creativeWork,
+  datatable,
+  datatableColumn,
   figure,
+  heading,
   imageObject,
   link,
-  person
+  organization,
+  person,
+  periodical,
+  publicationIssue,
+  softwareSourceCode,
+  audioObject
 } from '@stencila/schema'
 import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
@@ -16,7 +27,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
-import { decodeHref, HTMLCodec } from './'
+import { decodeHref, HTMLCodec, schemaUrls } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -368,6 +379,59 @@ describe('Encode & Decode figure nodes', () => {
     expect(await d(htmlNode)).toMatchObject(schemaNode)
   })
 })
+
+const nodes = [
+  ['Article', article({ title: 'Test article' })],
+  // ['Brand', brand('My Brand')],
+  ['Cite', cite({ target: '#id1' })],
+  [
+    'CiteGroup',
+    citeGroup({ items: [cite({ target: '#id1' }), cite({ target: '#id2' })] })
+  ],
+  ['Code', code({ text: 'a + b' })],
+  ['CodeBlock', codeBlock({ text: 'a + b' })],
+  ['CodeChunk', codeChunk({ text: 'a + b' })],
+  ['CodeExpression', codeExpression({ text: 'a + b' })],
+  ['Collection', collection({ parts: [article({ title: 'Test article' })] })],
+  ['CreativeWork', creativeWork()],
+  [
+    'Datatable',
+    datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
+  ],
+  ['Organization', organization({ name: 'Mega Corp' })],
+  ['Periodical', periodical()],
+  ['PublicationIssue', publicationIssue()],
+  ['SoftwareSourceCode', softwareSourceCode()],
+  ['AudioObject', audioObject({ contentUrl: '' })],
+  ['Heading', heading({ content: ['Title'], depth: 1 })],
+  ['ImageObject', imageObject({ contentUrl: '' })],
+  ['Link', link({ content: ['link'], target: 'url' })]
+  // 'Delete',
+  // 'Emphasis',
+  // 'Strong',
+  // 'Subscript',
+  // 'List',
+  // 'ListItem',
+  // 'Paragraph',
+  // 'Quote',
+  // 'QuoteBlock',
+  // 'Table',
+  // 'TableRow',
+  // 'TableCell',
+  // 'ThematicBreak',
+  // 'VideoObject'
+]
+
+describe.each(nodes)(
+  'Encode %s with MicroData',
+  // @ts-ignore
+  (schemaType: keyof typeof schemaUrls, node) => {
+    test('it has itemtype', async () => {
+      const actual = doc(await e(node)).querySelector('body > *')
+      expect(actual).toHaveAttribute('itemtype', schemaUrls[schemaType])
+    })
+  }
+)
 
 describe('Encode & Decode Collections', () => {
   const schemaNode = collection({
