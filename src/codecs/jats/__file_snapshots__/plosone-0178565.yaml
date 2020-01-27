@@ -69,6 +69,17 @@ description:
         cyanobacterial genes. We believe that the data and the analysis
         presented here will be a great resource to the scientific community
         interested in cyanobacteria.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS ONE
+  volumeNumber: '12'
 references:
   - type: Article
     id: pone.0178565.ref001

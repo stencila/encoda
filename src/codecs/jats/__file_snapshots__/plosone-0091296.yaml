@@ -68,6 +68,17 @@ description:
         content:
           - tambu
       - ' areas, are to be supported. The findings of this study call for a holistic approach to assessing the risks posed to reef fish aggregations by fishing, grounded in the principals of fisheries science and emerging social-ecological thinking.'
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLoS ONE
+  volumeNumber: '9'
 references:
   - type: Article
     id: pone.0091296-Mora1

@@ -125,6 +125,17 @@ description:
         both active and silent genes upon c-Myc induction, with the change in
         gene expression greater for active genes compared to silent genes.
         Finally, we report meta-analyses for each result.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '7'
 references:
   - type: Article
     id: bib1

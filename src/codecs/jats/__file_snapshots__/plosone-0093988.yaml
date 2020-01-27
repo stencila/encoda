@@ -48,6 +48,17 @@ description:
         experimentally. Thus, these variants of the Traveler's Dilemma and the
         Minimum Effort Coordination games provide a simple resolution of the
         paradoxical behavior associated with the original games.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLoS ONE
+  volumeNumber: '9'
 references:
   - type: Article
     id: pone.0093988-Kollock1

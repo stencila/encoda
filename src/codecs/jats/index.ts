@@ -285,7 +285,7 @@ function encodeArticle(article: stencila.Article): xml.Element {
 function decodeFront(
   front: xml.Element | null,
   state: DecodeState
-): Pick<stencila.Article, 'authors' | 'title' | 'description'> {
+): Pick<stencila.Article, 'authors' | 'title' | 'description' | 'isPartOf'> {
   return front === null
     ? {}
     : {
@@ -294,7 +294,8 @@ function decodeFront(
           state
         ),
         title: decodeTitle(first(front, 'article-title'), state),
-        description: decodeAbstract(first(front, 'abstract'), state)
+        description: decodeAbstract(first(front, 'abstract'), state),
+        isPartOf: decodeIsPartOf(front)
       }
 }
 
@@ -332,7 +333,7 @@ function encodeTitle(title: stencila.Article['title']): xml.Element {
 function decodeAbstract(
   elem: xml.Element | null,
   state: DecodeState
-): stencila.Article['description'] | undefined {
+): stencila.Article['description'] {
   return elem !== null ? decodeElements(all(elem, 'p'), state) : undefined
 }
 
@@ -348,6 +349,36 @@ function encodeAbstract(
       ? elem('p', description)
       : elem('p', ...encodeNodes(description, initialEncodeState()))
   return elem('abstract', paras)
+}
+
+/**
+ * Decode various JATS `<front>` elements (e.g. `<journal-meta>`, `<volume>`) into a Stencila
+ * `Article.isPartOf` property.
+ */
+function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
+  const journal = first(front, 'journal-meta')
+  if (journal === null) return undefined
+
+  const title = textOrUndefined(first(journal, 'journal-title'))
+  const issn = all(journal, 'issn')
+    .map(textOrUndefined)
+    .reduce(
+      (prev: string[], issn) => (issn !== undefined ? [...prev, issn] : prev),
+      []
+    )
+  const publisher = textOrUndefined(first(journal, 'publisher-name'))
+  const volumeNumber = textOrUndefined(first(front, 'volume'))
+  return stencila.publicationVolume({
+    volumeNumber,
+    isPartOf: stencila.periodical({
+      issn,
+      title,
+      publisher:
+        publisher !== undefined
+          ? stencila.organization({ name: publisher })
+          : undefined
+    })
+  })
 }
 
 /**

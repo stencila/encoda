@@ -154,6 +154,17 @@ description:
       - >-
         Precipitation of coldest quarter (BIO19) had the maximum contribution
         for all the three species under investigation.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2046-1402
+    publisher:
+      type: Organization
+      name: F1000 Research Limited
+    title: F1000Research
+  volumeNumber: '8'
 references:
   - type: Article
     id: ref-1

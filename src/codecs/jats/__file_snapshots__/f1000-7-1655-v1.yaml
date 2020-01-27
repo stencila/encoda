@@ -153,6 +153,17 @@ description:
         draft as to how to represent these materials in the JATS and Crossref
         data models to facilitate the coordination and discoverability of peer
         review materials, and seek feedback on these initial recommendations.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2046-1402
+    publisher:
+      type: Organization
+      name: F1000 Research Limited
+    title: F1000Research
+  volumeNumber: '7'
 references:
   - type: Article
     id: ref-1
