@@ -13,6 +13,7 @@
     "install": "node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
+    "fixtures": "npx ts-node --files src/__fixtures__/make",
     "test": "jest",
     "test:wild": "NOCK_MODE=wild jest",
     "test:cover": "jest --coverage",
