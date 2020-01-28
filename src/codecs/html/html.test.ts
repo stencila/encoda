@@ -641,16 +641,16 @@ const kitchenSink = {
     </p>
     <p>
       Paragraph with a
-      <span itemtype="${schemaURLs.BooleanValidator}">true</span>
+      <span itemtype="${schemaURLs.Boolean}">true</span>
       and a
-      <span itemtype="${schemaURLs.BooleanValidator}">false</span>.
+      <span itemtype="${schemaURLs.Boolean}">false</span>.
     </p>
     <p>
       A paragraph with other data: a
-      <span itemtype="https://schema.stenci.la/Null">null</span>,
+      <span itemtype="${schemaURLs.Null}">null</span>,
       a
-      <span itemtype="${schemaURLs.NumberValidator}">3.14</span>, and a
-      <span itemtype="${schemaURLs.ArrayValidator}">[1,2]</span>.
+      <span itemtype="${schemaURLs.Number}">3.14</span>, and a
+      <span itemtype="${schemaURLs.Array}">[1,2]</span>.
     </p>
     <blockquote cite="https://example.org">A blockquote</blockquote>
     <pre itemtype="${schemaURLs.CodeBlock}"><code class="language-r" itemtype="${schemaURLs.Code}"># Some code

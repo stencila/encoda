@@ -37,16 +37,29 @@ import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import { getThemeAssets } from '../../util/html'
 
-const itemTypes: Array<keyof stencila.Types> = Object.values(entityTypes)
+class PrimitiveTypes {
+  Null = 'Null'
+  Boolean = 'Boolean'
+  Number = 'Number'
+  Object = 'Object'
+  Array = 'Array'
+}
+type AllTypes = PrimitiveTypes & stencila.Types
+const itemTypes: string[] = [
+  ...Object.keys(new PrimitiveTypes()),
+  ...Object.values(entityTypes)
+]
 
 /**
- * Mapping between various Schema entities, and their MicroData `itemType` values.
- * These are used as CSS selectors in Stencila Thema.
- * For schemas which don't have an equivalent Schema.org variant, mark it as a proprietary Stencila
+ * Mapping between Stencila Schema types and their HTML Microdata `itemtype` attributes.
+ * These are used for CSS selectors in Stencila Thema.
+ *
+ * For schemas which don't have an equivalent Schema.org variant, mark it as a Stencila
  * Schema object. Otherwise resolve as a Schema.org schema for better SEO and richer web previews.
  */
 export const schemaURLs = itemTypes.reduce((types, type) => {
   switch (type) {
+    case 'Array':
     case 'ArrayValidator':
     case 'BooleanValidator':
     case 'CodeBlock':
@@ -69,7 +82,9 @@ export const schemaURLs = itemTypes.reduce((types, type) => {
     case 'ListItem':
     case 'Mark':
     case 'Node':
+    case 'Null':
     case 'NumberValidator':
+    case 'Object':
     case 'SoftwareApplication':
     case 'SoftwareSourceCode':
     case 'StringValidator':
@@ -83,7 +98,7 @@ export const schemaURLs = itemTypes.reduce((types, type) => {
     default:
       return { ...types, [type]: `https://schema.org/${type}` }
   }
-}, {} as { [key in keyof stencila.Types]: string })
+}, {} as { [key in keyof AllTypes]: string })
 
 /**
  * As we enrich most elements with Schema.org attributes, extra `itemprop` attributes do not validate
@@ -387,11 +402,11 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
 
     case 'schema:Null':
       return decodeNull()
-    case 'schema:BooleanValidator':
+    case 'schema:Boolean':
       return decodeBoolean(node as HTMLElement)
-    case 'schema:NumberValidator':
+    case 'schema:Number':
       return decodeNumber(node as HTMLElement)
-    case 'schema:ArrayValidator':
+    case 'schema:Array':
       return decodeArray(node as HTMLElement)
     case 'schema:Object':
       return decodeObject(node as HTMLElement)
@@ -1693,47 +1708,39 @@ function decodeNull(): null {
  * Encode a `null` to a `<span itemtype="https://schema.stenci.la/Null>` element.
  */
 function encodeNull(): HTMLElement {
-  return h(
-    'span',
-    { attrs: { itemtype: 'https://schema.stenci.la/Null' } },
-    'null'
-  )
+  return h('span', { attrs: { itemtype: schemaURLs.Null } }, 'null')
 }
 
 /**
- * Decode a `<span itemtype="https://schema.stenci.la/Boolean>` element to a `boolean`.
+ * Decode a `<span itemtype="https://schema.org/Boolean>` element to a `boolean`.
  */
 function decodeBoolean(elem: HTMLElement): boolean {
   return elem.innerHTML === 'true'
 }
 
 /**
- * Encode a `boolean` to a `<span itemtype="https://schema.stenci.la/Boolean>` element.
+ * Encode a `boolean` to a `<span itemtype="https://schema.org/Boolean>` element.
  */
 function encodeBoolean(value: boolean): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: schemaURLs.BooleanValidator } },
+    { attrs: { itemtype: schemaURLs.Boolean } },
     value === true ? 'true' : 'false'
   )
 }
 
 /**
- * Decode a `<span itemtype="https://schema.stenci.la/Number>` element to a `number`.
+ * Decode a `<span itemtype="https://schema.org/Number>` element to a `number`.
  */
 function decodeNumber(elem: HTMLElement): number {
   return parseFloat(elem.innerHTML.length > 0 ? elem.innerHTML : '0')
 }
 
 /**
- * Encode a `number` to a `<span itemtype="https://schema.stenci.la/Number>` element.
+ * Encode a `number` to a `<span itemtype="https://schema.org/Number>` element.
  */
 function encodeNumber(value: number): HTMLElement {
-  return h(
-    'span',
-    { attrs: { itemtype: schemaURLs.NumberValidator } },
-    value.toString()
-  )
+  return h('span', { attrs: { itemtype: schemaURLs.Number } }, value.toString())
 }
 
 /**
@@ -1751,7 +1758,7 @@ function decodeArray(elem: HTMLElement): [any[]] {
 function encodeArray(value: any[]): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: schemaURLs.ArrayValidator } },
+    { attrs: { itemtype: schemaURLs.Array } },
     JSON5.stringify(value)
   )
 }
@@ -1769,7 +1776,7 @@ function decodeObject(elem: HTMLElement): object {
 function encodeObject(value: object): HTMLElement {
   return h(
     'span',
-    { attrs: { itemtype: 'https://schema.stenci.la/Object' } },
+    { attrs: { itemtype: schemaURLs.Object } },
     JSON5.stringify(value)
   )
 }
