@@ -74,7 +74,7 @@ const simpleThing = {
 
 const simpleThingJson = JSON.stringify(simpleThing, null, '  ')
 
-const simpleThingPath = fixture('thing/simple/simple-thing.json')
+const simpleThingPath = fixture('thing/simple.json')
 
 test('load', async () => {
   expect(await load(simpleThingJson, 'json')).toEqual(simpleThing)
