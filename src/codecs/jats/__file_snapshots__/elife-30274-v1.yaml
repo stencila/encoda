@@ -66,35 +66,74 @@ authors:
     givenNames:
       - David
   - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Palo Alto, United States'
+        name: Science Exchange
+      - type: Organization
+        address: 'Palo Alto, United States'
+        name: Science Exchange
+      - type: Organization
+        address: 'Charlottesville, United States'
+        name: Center for Open Science
+      - type: Organization
+        address: 'Palo Alto, United States'
+        name: Science Exchange
+      - type: Organization
+        address: 'Charlottesville, United States'
+        name: Center for Open Science
     emails:
       - tim@cos.io
       - nicole@scienceexchange.com
   - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Palo Alto, United States'
+        name: Science Exchange
     familyNames:
       - Iorns
     givenNames:
       - Elizabeth
   - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Palo Alto, United States'
+        name: Science Exchange
     familyNames:
       - Tsui
     givenNames:
       - Rachel
   - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Charlottesville, United States'
+        name: Center for Open Science
     familyNames:
       - Denis
     givenNames:
       - Alexandria
   - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Palo Alto, United States'
+        name: Science Exchange
     familyNames:
       - Perfito
     givenNames:
       - Nicole
   - type: Person
+    affiliations:
+      - type: Organization
+        address: 'Charlottesville, United States'
+        name: Center for Open Science
     familyNames:
       - Errington
     givenNames:
       - Timothy
       - M
+datePublished:
+  type: Date
+  value: '2018-01-09'
 description:
   - type: Paragraph
     content:
@@ -125,6 +164,55 @@ description:
         both active and silent genes upon c-Myc induction, with the change in
         gene expression greater for active genes compared to silent genes.
         Finally, we report meta-analyses for each result.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        address: United States
+        name: >-
+          Howard Hughes Medical Institute, University of Massachusetts Medical
+          School
+    familyNames:
+      - Green
+    givenNames:
+      - Michael
+      - R
+funders:
+  - type: Organization
+    name: Laura and John Arnold Foundation
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '7'
+keywords:
+  - 'Reproducibility Project: Cancer Biology'
+  - replication
+  - metascience
+  - reproducibility
+  - c-Myc
+  - gene expression
+  - Human
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This article is distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use and redistribution provided that
+            the original author and source are credited.
 references:
   - type: Article
     id: bib1

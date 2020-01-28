@@ -87,6 +87,9 @@ authors:
       - Koren
     givenNames:
       - Sergey
+datePublished:
+  type: Date
+  value: '2019-08-21'
 description:
   - type: Paragraph
     content:
@@ -104,6 +107,43 @@ description:
         content:
           - 'https://github.com/machinegun/SALSA'
       - .
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'Ottawa University, CANADA'
+    familyNames:
+      - Ioshikhes
+    givenNames:
+      - Ilya
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1553-734X
+      - 1553-7358
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Computational Biology
+  volumeNumber: '15'
+licenses:
+  - type: CreativeWork
+    url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            This is an open access article, free of all copyright, and may be
+            freely reproduced, distributed, transmitted, modified, built upon,
+            or otherwise used by anyone for any lawful purpose. The work is made
+            available under the 
+          - type: Link
+            target: 'https://creativecommons.org/publicdomain/zero/1.0/'
+            content:
+              - Creative Commons CC0
+          - ' public domain dedication.'
 references:
   - type: Article
     id: pcbi.1007273.ref001

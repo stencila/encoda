@@ -133,6 +133,9 @@ authors:
       - Stoner
     givenNames:
       - Michael
+datePublished:
+  type: Date
+  value: '2018-10-17'
 description:
   - type: Paragraph
     content:
@@ -153,6 +156,39 @@ description:
         draft as to how to represent these materials in the JATS and Crossref
         data models to facilitate the coordination and discoverability of peer
         review materials, and seek feedback on these initial recommendations.
+funders:
+  - type: Organization
+    name: U.S. National Library of Medicine
+  - type: Organization
+    name: Wellcome Trust
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2046-1402
+    publisher:
+      type: Organization
+      name: F1000 Research Limited
+    title: F1000Research
+  volumeNumber: '7'
+keywords:
+  - peer review
+  - scholarly publishing
+  - JATS
+  - JATS4R
+  - Crossref
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            This is an open access article distributed under the terms of the
+            Creative Commons Attribution Licence, which permits unrestricted
+            use, distribution, and reproduction in any medium, provided the
+            original work is properly cited.
 references:
   - type: Article
     id: ref-1

@@ -45,6 +45,9 @@ authors:
     givenNames:
       - Pierre
       - Edouard
+datePublished:
+  type: Date
+  value: '2019-08-29'
 description:
   - type: Paragraph
     content:
@@ -60,6 +63,41 @@ description:
         content:
           - Rickettsia-
       - related microorganisms.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'Faculty of Science, Ain Shams University (ASU), EGYPT'
+    familyNames:
+      - Samy
+    givenNames:
+      - Abdallah
+      - M.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1935-2735
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Neglected Tropical Diseases
+  volumeNumber: '13'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pntd.0007469.ref001

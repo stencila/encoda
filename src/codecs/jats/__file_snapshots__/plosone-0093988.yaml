@@ -30,6 +30,9 @@ authors:
       - Killingback
     givenNames:
       - Timothy
+datePublished:
+  type: Date
+  value: '2014-04-07'
 description:
   - type: Paragraph
     content:
@@ -48,6 +51,39 @@ description:
         experimentally. Thus, these variants of the Traveler's Dilemma and the
         Minimum Effort Coordination games provide a simple resolution of the
         paradoxical behavior associated with the original games.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'University of Maribor, Slovenia'
+    familyNames:
+      - Perc
+    givenNames:
+      - Matjaž
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLoS ONE
+  volumeNumber: '9'
+licenses:
+  - type: CreativeWork
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open-access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pone.0093988-Kollock1

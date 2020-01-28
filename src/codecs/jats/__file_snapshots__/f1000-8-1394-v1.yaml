@@ -67,6 +67,9 @@ authors:
       - Sproll
     givenNames:
       - Constanze
+datePublished:
+  type: Date
+  value: '2019-08-08'
 description:
   - type: Paragraph
     content:
@@ -106,6 +109,36 @@ description:
         products, the effectiveness of the instrument of food business
         operators' own responsibility for product safety must obviously be
         challenged.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2046-1402
+    publisher:
+      type: Organization
+      name: F1000 Research Limited
+    title: F1000Research
+  volumeNumber: '8'
+keywords:
+  - Tetrahydrocannabinol
+  - cannabidiol
+  - Cannabis sativa
+  - hemp
+  - food supplements
+  - risk assessment
+  - drug effects
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            This is an open access article distributed under the terms of the
+            Creative Commons Attribution Licence, which permits unrestricted
+            use, distribution, and reproduction in any medium, provided the
+            original work is properly cited.
 references:
   - type: Article
     id: ref-1

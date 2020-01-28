@@ -126,6 +126,9 @@ authors:
     givenNames:
       - Tamara
       - J
+datePublished:
+  type: Date
+  value: '2019-07-09'
 description:
   - type: Paragraph
     content:
@@ -178,6 +181,62 @@ description:
         content:
           - Oprm1
       - ' variants to human methamphetamine addiction.'
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        address: United States
+        name: 'University of California, Los Angeles'
+    familyNames:
+      - Flint
+    givenNames:
+      - Jonathan
+funders:
+  - type: Organization
+    name: National Institute on Drug Abuse
+  - type: Organization
+    name: Department of Veterans Affairs
+  - type: Organization
+    name: Oregon Health & Science University
+  - type: Organization
+    name: U.S. Department of Veterans Affairs
+  - type: Organization
+    name: University of Tennessee Center for Integrative and Translational Science
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '8'
+keywords:
+  - trace amine-associated receptor 1
+  - mu-opioid receptor
+  - CRISPR-Cas9
+  - self administration
+  - hypothermia
+  - addiction
+  - Mouse
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/publicdomain/zero/1.0/'
+    content:
+      - type: Paragraph
+        content:
+          - >-
+            This is an open-access article, free of all copyright, and may be
+            freely reproduced, distributed, transmitted, modified, built upon,
+            or otherwise used by anyone for any lawful purpose. The work is made
+            available under the 
+          - type: Link
+            target: 'http://creativecommons.org/publicdomain/zero/1.0/'
+            content:
+              - Creative Commons CC0 public domain dedication
+          - .
 references:
   - type: Article
     id: bib1

@@ -94,6 +94,9 @@ authors:
       - Balasubramanian
     givenNames:
       - Shankar
+datePublished:
+  type: Date
+  value: '2019-07-09'
 description:
   - type: Paragraph
     content:
@@ -114,6 +117,58 @@ description:
         killing. We also identify new genes and pathways regulating or
         interacting with G4s and demonstrate that the DDX42 DEAD-box helicase is
         a newly discovered G4-binding protein.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        address: United States
+        name: 'University of California, Davis'
+    familyNames:
+      - Heyer
+    givenNames:
+      - Wolf-Dietrich
+funders:
+  - type: Organization
+    name: Cancer Research UK
+  - type: Organization
+    name: Royal Society
+  - type: Organization
+    name: Pew Charitable Trusts
+  - type: Organization
+    name: Wellcome
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 2050-084X
+    publisher:
+      type: Organization
+      name: 'eLife Sciences Publications, Ltd'
+    title: eLife
+  volumeNumber: '8'
+keywords:
+  - G-quadruplex
+  - G4
+  - G-quadruplex ligands
+  - genetic vulnerability
+  - nucleic acid structure
+  - cancer
+  - Human
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This article is distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use and redistribution provided that
+            the original author and source are credited.
 references:
   - type: Article
     id: bib1

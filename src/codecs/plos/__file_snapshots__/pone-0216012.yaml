@@ -72,6 +72,9 @@ authors:
       - Guidoboni
     givenNames:
       - Giovanna
+datePublished:
+  type: Date
+  value: '2019-08-14'
 description:
   - type: Paragraph
     content:
@@ -95,6 +98,52 @@ description:
         content:
           - (iii)
       - ' their interactions. The model is used to simulate variations in intraocular pressure, intracranial pressure and blood flow due to microgravity conditions, which are thought to be critical factors in SANS. Specifically, the model predicts that both intracranial and intraocular pressures increase in microgravity, even though their respective trends may be different. In such conditions, ocular blood flow is predicted to decrease in the choroid and ciliary body circulations, whereas retinal circulation is found to be less susceptible to microgravity-induced alterations, owing to a purely mechanical component in perfusion control associated with the venous segments. These findings indicate that the particular anatomical architecture of venous drainage in the retina may be one of the reasons why most of the SANS alterations are not observed in the retina but, rather, in other vascular beds, particularly the choroid. Thus, clinical assessment of ocular venous function may be considered as a determinant SANS factor, for which astronauts could be screened on earth and in-flight.'
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: >-
+          Charles P. Darby Children’s Research Institute, Charleston, SC, UNITED
+          STATES
+    familyNames:
+      - Reddy
+    givenNames:
+      - Sakamuri
+      - V.
+funders:
+  - type: Organization
+    name: National Science Foundation (USA)
+  - type: Organization
+    name: Cercle Gutenberg (France)
+  - type: Organization
+    name: 'University of Strasbourg, France'
+  - type: Organization
+    name: Université de Strasbourg (FR)
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS ONE
+  volumeNumber: '14'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pone.0216012.ref001

@@ -35,6 +35,9 @@ authors:
     givenNames:
       - Pramod
       - P.
+datePublished:
+  type: Date
+  value: '2017-06-08'
 description:
   - type: Paragraph
     content:
@@ -69,6 +72,44 @@ description:
         cyanobacterial genes. We believe that the data and the analysis
         presented here will be a great resource to the scientific community
         interested in cyanobacteria.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'National Center for Biotechnology Information, UNITED STATES'
+    familyNames:
+      - Rogozin
+    givenNames:
+      - Igor
+      - B.
+funders:
+  - type: Organization
+    name: 'Department of Biotechnology, Ministry of Science and Technology'
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS ONE
+  volumeNumber: '12'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pone.0178565.ref001

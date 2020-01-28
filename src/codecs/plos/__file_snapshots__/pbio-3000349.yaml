@@ -89,6 +89,9 @@ authors:
     givenNames:
       - A.
       - Vania
+datePublished:
+  type: Date
+  value: '2019-08-20'
 description:
   - type: Paragraph
     content:
@@ -111,6 +114,41 @@ description:
         providing metrics aimed at unifying the psychology and the
         neurophysiology of chronic pain applicable across diverse clinical
         conditions.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'University of Cambridge, UNITED KINGDOM'
+    familyNames:
+      - Seymour
+    givenNames:
+      - Ben
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1544-9173
+      - 1545-7885
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Biology
+  volumeNumber: '17'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pbio.3000349.ref001

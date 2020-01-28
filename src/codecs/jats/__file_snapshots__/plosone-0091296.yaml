@@ -33,6 +33,9 @@ authors:
       - Nicholas
       - A.
       - J.
+datePublished:
+  type: Date
+  value: '2014-03-19'
 description:
   - type: Paragraph
     content:
@@ -68,6 +71,40 @@ description:
         content:
           - tambu
       - ' areas, are to be supported. The findings of this study call for a holistic approach to assessing the risks posed to reef fish aggregations by fishing, grounded in the principals of fisheries science and emerging social-ecological thinking.'
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'The Australian National University, Australia'
+    familyNames:
+      - Fulton
+    givenNames:
+      - Christopher
+      - J.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1932-6203
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLoS ONE
+  volumeNumber: '9'
+licenses:
+  - type: CreativeWork
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open-access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pone.0091296-Mora1

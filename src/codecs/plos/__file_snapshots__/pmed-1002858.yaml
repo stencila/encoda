@@ -120,6 +120,9 @@ authors:
     givenNames:
       - Nicholas
       - J.
+datePublished:
+  type: Date
+  value: '2019-08-23'
 description:
   - type: Paragraph
     content:
@@ -156,6 +159,42 @@ description:
         risk of death in severe falciparum malaria. This is possibly a direct
         causal association. The severe anaemia threshold criteria for a
         definition of severe falciparum malaria should be reconsidered.
+editors:
+  - type: Person
+    affiliations:
+      - type: Organization
+        name: 'Burnet Institute, AUSTRALIA'
+    familyNames:
+      - Beeson
+    givenNames:
+      - James
+      - G.
+isPartOf:
+  type: PublicationVolume
+  isPartOf:
+    type: Periodical
+    issn:
+      - 1549-1277
+      - 1549-1676
+    publisher:
+      type: Organization
+      name: Public Library of Science
+    title: PLOS Medicine
+  volumeNumber: '16'
+licenses:
+  - type: CreativeWork
+    url: 'http://creativecommons.org/licenses/by/4.0/'
+    content:
+      - type: Paragraph
+        content:
+          - 'This is an open access article distributed under the terms of the '
+          - type: Link
+            target: 'http://creativecommons.org/licenses/by/4.0/'
+            content:
+              - Creative Commons Attribution License
+          - >-
+            , which permits unrestricted use, distribution, and reproduction in
+            any medium, provided the original author and source are credited.
 references:
   - type: Article
     id: pmed.1002858.ref001
