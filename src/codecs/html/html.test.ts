@@ -29,11 +29,16 @@ import * as vfile from '../../util/vfile'
 import { defaultEncodeOptions } from '../types'
 import { decodeHref, HTMLCodec } from './'
 import { encodeMicrodataItemtype, stencilaItemProp, Types } from './microdata'
+import { readFixture, snapshot } from '../../__tests__/helpers'
+import { JsonCodec } from '../json'
+import kitchenSink from '../../__fixtures__/article/kitchen-sink'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
 
-const { encode, decode } = new HTMLCodec()
+const json = new JsonCodec()
+const html = new HTMLCodec()
+const { encode, decode } = html
 
 const e = async (
   node: stencila.Node,
@@ -43,19 +48,26 @@ const e = async (
 const d = async (htmlString: string): Promise<stencila.Node> =>
   decode(vfile.load(htmlString))
 
+const json2html = async (name: string) =>
+  e(await json.decode(await readFixture(name)))
+
 test('decode', async () => {
-  expect(await d(kitchenSink.html)).toEqual(kitchenSink.node)
   expect(await d(attrs.html)).toEqual(attrs.node)
   expect(await d(dt.html)).toEqual(dt.node)
 })
 
-describe.skip('encode', () => {
-  test('Encode kitchenSink', async () =>
-    expect(await e(kitchenSink.node)).toEqualStringContent(
-      kitchenSink.html,
-      true
+describe('encode', () => {
+  test('kitchen-sink', async () =>
+    expect(await e(kitchenSink)).toMatchFile(snapshot('kitchen-sink.html')))
+
+  test('elife/50356', async () =>
+    expect(await json2html('article/journal/elife/50356.json')).toMatchFile(
+      snapshot('elife-50356.html')
     ))
-  test('E data-attr1="foo"code attrs', async () =>
+})
+
+describe.skip('encode', () => {
+  test('Encode attrs', async () =>
     expect(await e(attrs.node)).toEqualStringContent(attrs.html))
   test('Encode Datatable', async () =>
     expect(await e(dt.node)).toEqualStringContent(dt.html))
@@ -499,7 +511,7 @@ describe('Encode & Decode Collections', () => {
 
 test('encode with different themes', async () => {
   const e = async (options = defaultEncodeOptions) =>
-    vfile.dump(await encode(kitchenSink.node, options))
+    vfile.dump(await encode(kitchenSink, options))
 
   let html = await e({ theme: 'stencila' })
   expect(html).toMatch(
@@ -520,7 +532,7 @@ test('encode with different themes', async () => {
 
 test('encode with bundling', async () => {
   const e = async (options = defaultEncodeOptions) =>
-    vfile.dump(await encode(kitchenSink.node, options))
+    vfile.dump(await encode(kitchenSink, options))
 
   const stylesheet = fs.readFileSync(
     require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),
@@ -612,320 +624,6 @@ describe('handle decoding HTML comments', () => {
     expect(await d(html)).toMatchObject(schema)
   })
 })
-
-// An example intended for testing progressively added decoder/encoder pairs
-const kitchenSink = {
-  html: `<article itemtype="${encodeMicrodataItemtype(
-    'Article'
-  )}" itemscope="true">
-    <h1 itemtype="${encodeMicrodataItemtype(
-      'Heading'
-    )}" itemprop="headline">Article title</h1>
-    <h1
-      id="heading-one"
-      itemtype="${encodeMicrodataItemtype('Heading')}">Heading one</h1>
-    <h2
-      id="heading-two"
-      itemtype="${encodeMicrodataItemtype('Heading')}">Heading two</h2>
-    <h3
-      id="heading-three"
-      itemtype="${encodeMicrodataItemtype('Heading')}">Heading three</h3>
-    <p>
-      A paragraph with <em>emphasis</em>, <strong>strong</strong>,
-      <del>delete</del>.
-    </p>
-    <p>
-      A paragraph with
-      <a
-        href="https://example.org"
-        data-attr="foo"
-        itemtype="${encodeMicrodataItemtype('Link')}">a <em>rich</em> link</a>.
-    </p>
-    <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
-    <p>
-      A paragraph with
-      <code
-        class="language-python"
-        itemtype="${encodeMicrodataItemtype('CodeFragment')}"># code</code>.
-    </p>
-    <p>
-      A paragraph with an image
-      <img
-        src="https://example.org/image.png"
-        title="title"
-        alt="alt text"
-        itemtype="${encodeMicrodataItemtype('ImageObject')}"
-        itemprop="image">.
-    </p>
-    <p>
-      Paragraph with a
-      <span itemtype="${encodeMicrodataItemtype('Boolean')}">true</span>
-      and a
-      <span itemtype="${encodeMicrodataItemtype('Boolean')}">false</span>.
-    </p>
-    <p>
-      A paragraph with other data: a
-      <span itemtype="${encodeMicrodataItemtype('Null')}">null</span>,
-      a
-      <span itemtype="${encodeMicrodataItemtype('Number')}">3.14</span>, and a
-      <span itemtype="${encodeMicrodataItemtype('Array')}">[1,2]</span>.
-    </p>
-    <blockquote cite="https://example.org">A blockquote</blockquote>
-    <pre itemtype="${encodeMicrodataItemtype(
-      'CodeBlock'
-    )}"><code class="language-r" itemtype="${encodeMicrodataItemtype(
-    'Code'
-  )}"># Some code
-x = c(1,2)</code></pre>
-    <pre itemtype="${encodeMicrodataItemtype(
-      'CodeBlock'
-    )}"><code class="language-js" itemtype="${encodeMicrodataItemtype(
-    'Code'
-  )}">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
-      const inc = (n) =&gt; n + 1</code></pre>
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ul>
-    <ol>
-      <li>First</li>
-      <li>Second</li>
-      <li>Third</li>
-    </ol>
-    <table>
-      <tbody>
-        <tr>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-  </article>`,
-
-  node: {
-    type: 'Article',
-    title: 'Article title',
-    content: [
-      {
-        type: 'Heading',
-        depth: 1,
-        content: ['Heading one']
-      },
-      {
-        type: 'Heading',
-        depth: 2,
-        content: ['Heading two']
-      },
-      {
-        type: 'Heading',
-        depth: 3,
-        content: ['Heading three']
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'Emphasis',
-            content: ['emphasis']
-          },
-          ', ',
-          {
-            type: 'Strong',
-            content: ['strong']
-          },
-          ', ',
-          {
-            type: 'Delete',
-            content: ['delete']
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'Link',
-            target: 'https://example.org',
-            meta: {
-              attr: 'foo'
-            },
-            content: [
-              'a ',
-              {
-                type: 'Emphasis',
-                content: ['rich']
-              },
-              ' link'
-            ]
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'Quote',
-            cite: 'https://example.org',
-            content: ['quote']
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'CodeFragment',
-            programmingLanguage: 'python',
-            text: '# code'
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with an image ',
-          {
-            type: 'ImageObject',
-            contentUrl: 'https://example.org/image.png',
-            title: 'title',
-            text: 'alt text'
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: ['Paragraph with a ', true, ' and a ', false, '.']
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with other data: a ',
-          null,
-          ', a ',
-          3.14,
-          ', and a ',
-          [1, 2],
-          '.'
-        ]
-      },
-      {
-        type: 'QuoteBlock',
-        cite: 'https://example.org',
-        content: ['A blockquote']
-      },
-      {
-        type: 'CodeBlock',
-        programmingLanguage: 'r',
-        text: '# Some code\nx = c(1,2)'
-      },
-      {
-        type: 'CodeBlock',
-        programmingLanguage: 'js',
-        text:
-          '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\n      const inc = (n) => n + 1'
-      },
-      {
-        type: 'List',
-        order: 'unordered',
-        items: [
-          { type: 'ListItem', content: ['One'] },
-          { type: 'ListItem', content: ['Two'] },
-          { type: 'ListItem', content: ['Three'] }
-        ]
-      },
-      {
-        type: 'List',
-        order: 'ascending',
-        items: [
-          { type: 'ListItem', content: ['First'] },
-          { type: 'ListItem', content: ['Second'] },
-          { type: 'ListItem', content: ['Third'] }
-        ]
-      },
-      {
-        type: 'Table',
-        rows: [
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['A'],
-                type: 'TableCell'
-              },
-              {
-                content: ['B'],
-                type: 'TableCell'
-              },
-              {
-                content: ['C'],
-                type: 'TableCell'
-              }
-            ]
-          },
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['1'],
-                type: 'TableCell'
-              },
-              {
-                content: ['2'],
-                type: 'TableCell'
-              },
-              {
-                content: ['3'],
-                type: 'TableCell'
-              }
-            ]
-          },
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['4'],
-                type: 'TableCell'
-              },
-              {
-                content: ['5'],
-                type: 'TableCell'
-              },
-              {
-                content: ['6'],
-                type: 'TableCell'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        type: 'ThematicBreak'
-      }
-    ]
-  }
-}
 
 /**
  * Example for testing attributes on
