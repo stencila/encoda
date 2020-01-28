@@ -1,10 +1,10 @@
+import { collection } from '@stencila/schema'
+
 /**
  * A heterogenous, single level collection made up of
  * `Article`, `Datatable` and other node types.
  */
-
-const collection = {
-  type: 'Collection',
+export default collection({
   name: 'flat',
   parts: [
     {
@@ -38,6 +38,4 @@ const collection = {
       content: [{ type: 'Heading', depth: 1, content: ['Three'] }]
     }
   ]
-}
-
-export default collection
+})
