@@ -267,66 +267,97 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
       return decodeArticle(node as HTMLElement)
 
     case 'p':
+    case 'Paragraph':
       return decodeParagraph(node as HTMLParagraphElement)
+
     case 'blockquote':
+    case 'QuoteBlock':
       return decodeBlockquote(node as HTMLQuoteElement)
+
     case 'pre':
-    case 'CodeBlock':
       if (node.firstChild?.nodeName === 'CODE') {
         return decodeCodeBlock(node as HTMLPreElement)
       }
       break
+    case 'CodeBlock':
+      return decodeCodeBlock(node as HTMLPreElement)
+
     case 'stencila-code-chunk':
     case 'CodeChunk':
       return decodeCodeChunk(node as HTMLElement)
+
     case 'ul':
-      return decodeList(node as HTMLUListElement)
     case 'ol':
-      return decodeList(node as HTMLOListElement)
+    case 'List':
+      return decodeList(node as HTMLUListElement)
     case 'Collection':
       return decodeCollection(node as HTMLOListElement)
+
     case 'li':
+    case 'ListItem':
       return decodeListItem(node as HTMLLIElement)
+
     case 'table':
+    case 'Table':
       return decodeTable(node as HTMLTableElement)
+
     case 'Datatable':
       return decodeDatatable(node as HTMLDivElement)
+
     case 'hr':
+    case 'ThematicBreak':
       return decodeHR()
 
     case 'em':
+    case 'Emphasis':
       return decodeMark(node as HTMLElement, 'Emphasis')
     case 'strong':
+    case 'Strong':
       return decodeMark(node as HTMLElement, 'Strong')
     case 'del':
+    case 'Delete':
       return decodeMark(node as HTMLElement, 'Delete')
     case 'sup':
+    case 'Superscript':
       return decodeMark(node as HTMLElement, 'Superscript')
     case 'sub':
+    case 'Subscript':
       return decodeMark(node as HTMLElement, 'Subscript')
+
     case 'a':
     case 'Link':
       return decodeLink(node as HTMLAnchorElement)
+
     case 'q':
+    case 'Quote':
       return decodeQuote(node as HTMLQuoteElement)
+
     case 'cite':
     case 'Cite':
       return decodeCite(node as HTMLElement)
+
     case 'CiteGroup':
       return decodeCiteGroup(node as HTMLOListElement)
+
     case 'stencila-code-expression':
     case 'CodeExpression':
       return decodeCodeExpression(node as HTMLElement)
+
     case 'code':
     case 'CodeFragment':
       return decodeCodeFragment(node as HTMLElement)
+
     case 'img':
     case 'ImageObject':
       return decodeImage(node as HTMLImageElement)
+
     case 'figure':
+    case 'Figure':
       return decodeFigure(node as HTMLElement)
+
     case 'figcaption':
       return decodeFigCaption(node as HTMLElement)
+
     case 'Person':
       return decodePerson(node as HTMLElement)
 
