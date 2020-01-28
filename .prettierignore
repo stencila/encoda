@@ -1,9 +1,13 @@
 __file_snapshots__
-__fixtures__
+# Do not format "data" files in fixtures
+**/__fixtures__/**/*.json
+**/__fixtures__/**/*.yaml
+**/__fixtures__/**/*.md
 __outputs__
 .sandbox
 CHANGELOG.md
 coverage
 dist
+docs
 node_modules
 src/codecs/**/README.md
