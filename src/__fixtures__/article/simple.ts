@@ -5,6 +5,7 @@ import { article, heading, paragraph } from '@stencila/schema'
  */
 export default article({
   title: 'The title',
+  authors: [],
   content: [
     heading({
       depth: 1,
