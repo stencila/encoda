@@ -1,11 +1,11 @@
 ---
 title: The article title
 authors:
-  - type: Person
-    givenNames:
+  - givenNames:
       - Jane
     familyNames:
       - Jones
+    type: Person
 ---
 
 ```{r}

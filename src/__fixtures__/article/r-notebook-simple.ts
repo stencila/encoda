@@ -1,28 +1,28 @@
-import * as stencila from '@stencila/schema'
+import { article, codeChunk, heading, paragraph, person } from '@stencila/schema'
 
-export const simple: stencila.Article = {
-  type: 'Article',
+/**
+ * An `Article` representing a simple R notebook: has
+ * some `CodeChunk` and `CodeExpression` nodes along with
+ * other content.
+ */
+export default article({
   title: 'The article title',
   authors: [
-    {
-      type: 'Person',
+    person({
       givenNames: ['Jane'],
       familyNames: ['Jones']
-    }
+    })
   ],
   content: [
-    {
-      type: 'CodeChunk',
+    codeChunk({
       text: "x <- 3.14",
       programmingLanguage: 'r'
-    },
-    {
-      type: 'Heading',
+    }),
+    heading({
       depth: 1,
       content: ['A heading']
-    },
-    {
-      type: 'Paragraph',
+    }),
+    paragraph({
       content: [
         'An inline code chunk ',
         {
@@ -32,9 +32,8 @@ export const simple: stencila.Article = {
         },
         '.'
       ]
-    },
-    {
-      type: 'Paragraph',
+    }),
+    paragraph({
       content: [
         'Plain inline code ',
         {
@@ -43,31 +42,26 @@ export const simple: stencila.Article = {
         },
         '.'
       ]
-    },
-    {
-      type: 'Heading',
+    }),
+    heading({
       depth: 2,
       content: ['Another heading']
-    },
-    {
-      type: 'Paragraph',
+    }),
+    paragraph({
       content: [
         'A block code chunk'
       ]
-    },
-    {
-      type: 'CodeChunk',
+    }),
+    codeChunk({
       text: "# A comment\nsum(1:10)",
       programmingLanguage: 'r'
-    },
-    {
-      type: 'Paragraph',
+    }),
+    paragraph({
       content: [
         'A block code chunk with name and options'
       ]
-    },
-    {
-      type: 'CodeChunk',
+    }),
+    codeChunk({
       text: 'plot(1:10)',
       programmingLanguage: 'r',
       meta: {
@@ -75,6 +69,6 @@ export const simple: stencila.Article = {
         'fig.height': '7',
         'fig.width': '8'
       }
-    }
+    })
   ]
-}
+})
