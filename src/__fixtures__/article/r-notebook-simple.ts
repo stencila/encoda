@@ -1,4 +1,10 @@
-import { article, codeChunk, heading, paragraph, person } from '@stencila/schema'
+import {
+  article,
+  codeChunk,
+  heading,
+  paragraph,
+  person
+} from '@stencila/schema'
 
 /**
  * An `Article` representing a simple R notebook: has
@@ -15,7 +21,7 @@ export default article({
   ],
   content: [
     codeChunk({
-      text: "x <- 3.14",
+      text: 'x <- 3.14',
       programmingLanguage: 'r'
     }),
     heading({
@@ -48,24 +54,20 @@ export default article({
       content: ['Another heading']
     }),
     paragraph({
-      content: [
-        'A block code chunk'
-      ]
+      content: ['A block code chunk']
     }),
     codeChunk({
-      text: "# A comment\nsum(1:10)",
+      text: '# A comment\nsum(1:10)',
       programmingLanguage: 'r'
     }),
     paragraph({
-      content: [
-        'A block code chunk with name and options'
-      ]
+      content: ['A block code chunk with name and options']
     }),
     codeChunk({
       text: 'plot(1:10)',
       programmingLanguage: 'r',
       meta: {
-        'label': 'my_plot',
+        label: 'my_plot',
         'fig.height': '7',
         'fig.width': '8'
       }
