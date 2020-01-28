@@ -3,6 +3,7 @@ import unlink from '../../util/unlink'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { decodeMultilineString, encodeMultilineString, IpynbCodec } from './'
 import { JsonCodec } from '../json'
+import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
 
 const ipynb = new IpynbCodec()
 const json = new JsonCodec()
@@ -14,11 +15,6 @@ const ipynb2json = async (name: string) => {
   const unlinked = unlink(node)
   return vfile.dump(await json.encode(unlinked))
 }
-
-const json2ipynb = async (name: string) =>
-  vfile.dump(
-    await ipynb.encode(await json.decode(await vfile.read(fixture(name))))
-  )
 
 describe('decode', () => {
   test('metadata-v4', async () => {
@@ -47,8 +43,8 @@ describe('decode', () => {
 })
 
 test('encode', async () => {
-  expect(await json2ipynb('kitchen-sink.json')).toMatchFile(
-    snapshot('kitchen-sink.ipynb')
+  expect(await ipynb.dump(jupyterNotebookSimple)).toMatchFile(
+    snapshot('jupyter-notebook-simple.ipynb')
   )
 })
 
