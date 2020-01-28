@@ -28,7 +28,7 @@ const create = async (id: number, version: number = 1) => {
 
   // Check that there is a <body> element, some don't have one
   if (xml.all(doc, 'body').length === 0) {
-    throw new Error (`Article ${id} v${version} has no body`)
+    throw new Error(`Article ${id} v${version} has no body`)
   }
 
   const dir = `elife-${id}-v${version}`
@@ -41,20 +41,19 @@ const create = async (id: number, version: number = 1) => {
     if (href !== null && href.startsWith('elife')) {
       if (!href.endsWith('.tif')) href += '.tif'
       const url = `https://iiif.elifesciences.org/lax:${id}%2F${href}/full/600,/0/default.jpg`
-      const filename = href.replace(`elife-${id}-`, '').replace(`-v${version}.tif`, '.jpg')
+      const filename = href
+        .replace(`elife-${id}-`, '')
+        .replace(`-v${version}.tif`, '.jpg')
       await http.download(url, path.join(dir, filename))
-      if (graphic.attributes !== undefined) graphic.attributes['xlink:href'] = filename
+      if (graphic.attributes !== undefined)
+        graphic.attributes['xlink:href'] = filename
     }
   }
 
-  await fs.writeFile(
-    path.join(dir, `main.jats.xml`),
-    xml.dump(doc),
-    'utf8'
-  )
+  await fs.writeFile(path.join(dir, `main.jats.xml`), xml.dump(doc), 'utf8')
   await fs.writeFile(
     path.join(dir, `main.pretty.xml`),
-    xml.dump(doc, {spaces: 2}),
+    xml.dump(doc, { spaces: 2 }),
     'utf8'
   )
 }

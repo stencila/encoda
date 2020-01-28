@@ -21,14 +21,10 @@ const create = async (id: string, version: number = 1) => {
   const dir = `f1000-${id}-v${version}`
   await fs.ensureDir(dir)
 
-  await fs.writeFile(
-    path.join(dir, `main.jats.xml`),
-    xml.dump(doc),
-    'utf8'
-  )
+  await fs.writeFile(path.join(dir, `main.jats.xml`), xml.dump(doc), 'utf8')
   await fs.writeFile(
     path.join(dir, `main.pretty.xml`),
-    xml.dump(doc, {spaces: 2}),
+    xml.dump(doc, { spaces: 2 }),
     'utf8'
   )
 }
