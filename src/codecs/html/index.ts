@@ -963,7 +963,7 @@ function encodeOrganization(
   tag?: keyof HTMLElementTagNameMap,
   property?: string
 ): HTMLElement {
-  const { id, name, url, address, ...lost } = org
+  const { id, name, url, address, meta, ...lost } = org
   logWarnLossIfAny('html', 'encode', org, lost)
 
   const nameElem = h('span', { itemprop: 'name' }, name)
@@ -976,7 +976,10 @@ function encodeOrganization(
       ? h('address', { itemprop: 'address' }, address)
       : undefined
 
-  return h(tag ?? 'div', encodeAttrs(org, { id, itemprop: property }), linkElem, addressElem)
+  return h(tag ?? 'div', encodeAttrs(org, {
+    id: meta?.itemid.replace(/^#/, '') ?? id,
+    itemprop: property
+  }), linkElem, addressElem)
 }
 
 /**
