@@ -624,7 +624,7 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   return h(
     'article',
     encodeAttrs(article),
-    encodeMaybe(title, title => encodeTitleProperty(title)),
+    encodeTitleProperty(title),
     encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     encodeMaybe(description, desc => encodeDescriptionProperty(desc)),
@@ -633,15 +633,28 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   )
 }
 
-function encodeTitleProperty(title: string | stencila.Node[]): HTMLElement {
+/**
+ * Encode the `Article.title` property to HTML.
+ *
+ * The GSDTT requires that the `Article.headline` property be a string
+ * less than 110 characters so, similarly to `Article.author.name`, a
+ * headline value is calculated.
+ */
+function encodeTitleProperty(
+  title: stencila.Article['title'],
+  tag: 'h1' | 'span' = 'h1'
+): HTMLElement | undefined {
+  if (title === undefined) return undefined
+
+  let headline = stringifyContent(title)
+  if (headline.length > 110) headline = headline.slice(0, 106) + '...'
+
   return h(
-    'h1',
-    {
-      attrs: {
-        itemprop: 'headline'
-      }
-    },
-    encodeNodes(typeof title === 'string' ? [title] : title)
+    tag,
+    headline === title
+      ? { itemprop: 'headline' }
+      : h('meta', { itemprop: 'headline', content: headline }),
+    typeof title === 'string' ? title : encodeNodes(title)
   )
 }
 
@@ -830,11 +843,7 @@ function encodeCreativeWork(
     as ?? creativeWorkTagMap[work.type] ?? 'div',
     // @ts-ignore
     encodeAttrs(work, attrs),
-    h(
-      url !== undefined ? 'a' : 'span',
-      { itemprop: 'headline', href: url },
-      title
-    ),
+    encodeTitleProperty(title, 'span'),
     encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
@@ -1023,11 +1032,7 @@ function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
   const content = heading.content.map(encodeNode)
   const text = content.reduce((prev, curr) => `${prev}${curr.textContent}`, '')
   const id = slugger.slug(text)
-  return h(
-    `h${heading.depth}`,
-    encodeAttrs(heading, {id}),
-    content
-  )
+  return h(`h${heading.depth}`, encodeAttrs(heading, { id }), content)
 }
 
 /**
