@@ -86,7 +86,7 @@ export function encodeMicrodataItem(node: stencila.Node): MicrodataItem | {} {
   const type = titleCase(stencila.nodeType(node))
   const itemtype = encodeMicrodataItemtype(type as keyof Types)
   if (itemtype === undefined) return {}
-  const itemid = stencila.isEntity(node) && node.id !== undefined ? {itemid: node.id} : {}
+  const itemid = stencila.isEntity(node) && node?.meta?.itemid !== undefined ? {itemid: node.meta.itemid} : {}
   return {
     itemscope: '',
     itemtype,

@@ -664,13 +664,23 @@ function encodeAuthorsProperty(
     )
     .reduce((prev, curr) => [...prev, ...curr], [])
     .reduce((prev, curr) => {
-      if (curr.name !== undefined && prev[curr.name] === undefined) {
+      const {name, meta} = curr
+      if (name !== undefined && prev[name] === undefined) {
         const index = Object.keys(prev).length + 1
-        prev[curr.name] = [
+        prev[name] = [
           index,
           {
             ...curr,
-            id: `author-organization-${index}`
+            meta: {
+              ...meta,
+              /**
+                * The [`itemid`](https://www.w3.org/TR/microdata/#dfn-itemid) attribute
+                * must be a valid URL. So we prefix the node's `id` with a hash. Changing
+                * this will break links between entities. See https://moz.com/blog/search-marketers-guide-to-itemref-itemid
+                * for more.
+               */
+              itemid: `#author-organization-${index}`
+            }
           }
         ]
       }
@@ -932,7 +942,7 @@ function encodePerson(
               const [index, org] = entry
               return h(
                 'li',
-                h('a', { itemprop: 'affiliation', href: `#${org.id}` }, index)
+                h('a',  {attrs: { itemprop: 'affiliation', href: org?.meta?.itemid }}, index)
               )
             }
           })
@@ -1760,10 +1770,10 @@ function encodeDataAttrs(
   meta: Record<string, string | undefined>
 ): typeof meta {
   return Object.entries(meta).reduce(
-    (attrs, [key, value]) => ({
+    (attrs, [key, value]) => ( value !== undefined ? {
       ...attrs,
       [reservedAttrs.includes(key) ? key : `data-${key}`]: value
-    }),
+    } : attrs),
     {}
   )
 }
