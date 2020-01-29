@@ -192,13 +192,9 @@ export class HTMLCodec extends Codec implements Codec {
     // in order to make them unique
     slugger.reset()
 
-    let nodeToEncode
-    if (isBundle) nodeToEncode = await bundle(node)
-    else {
-      const docPath = filePath === undefined ? '.' : filePath
-      const mediaPath = filePath === undefined ? './media' : `${filePath}.media`
-      nodeToEncode = await toFiles(node, docPath, mediaPath, ['data', 'file'])
-    }
+    const nodeToEncode = isBundle
+      ? await bundle(node)
+      : await toFiles(node, filePath, ['data', 'file'])
     let dom: HTMLHtmlElement = encodeNode(nodeToEncode) as HTMLHtmlElement
 
     if (isStandalone) {
