@@ -687,8 +687,8 @@ function encodeAuthorsProperty(
       },
       ...authors.map(author =>
         author.type === 'Person'
-          ? encodePerson(author, orgs, 'li')
-          : encodeOrganization(author, 'li')
+          ? encodePerson(author, orgs, 'li', 'author')
+          : encodeOrganization(author, 'li', 'author')
       )
     ),
     ...(Object.keys(orgs).length > 0
@@ -941,7 +941,7 @@ function encodePerson(
 
   return h(
     tag ?? 'span',
-    encodeAttrs(person, property),
+    encodeAttrs(person, {itemprop: property}),
     linkElem,
     emailsElem,
     affiliationsElem
@@ -950,7 +950,8 @@ function encodePerson(
 
 function encodeOrganization(
   org: stencila.Organization,
-  tag?: keyof HTMLElementTagNameMap
+  tag?: keyof HTMLElementTagNameMap,
+  property?: string
 ): HTMLElement {
   const { id, name, url, address, ...lost } = org
   logWarnLossIfAny('html', 'encode', org, lost)
@@ -965,7 +966,7 @@ function encodeOrganization(
       ? h('address', { itemprop: 'address' }, address)
       : undefined
 
-  return h(tag ?? 'div', encodeAttrs(org, { id }), linkElem, addressElem)
+  return h(tag ?? 'div', encodeAttrs(org, { id, itemprop: property }), linkElem, addressElem)
 }
 
 /**
@@ -1749,7 +1750,7 @@ function decodeDataAttrs(
 }
 
 // These attribute names are fully-formed, and should not be prefixed with `data-`
-const reservedAttrs = ['slot', 'name', 'title']
+const reservedAttrs = ['id', 'slot', 'name', 'title', 'itemscope', 'itemtype', 'itemid', 'itemprop', 'itemref']
 
 /**
  * Encode a dictionary of strings to `data-` attributes to add to
