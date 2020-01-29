@@ -664,7 +664,7 @@ function encodeAuthorsProperty(
     )
     .reduce((prev, curr) => [...prev, ...curr], [])
     .reduce((prev, curr) => {
-      const {name, meta} = curr
+      const { name, meta } = curr
       if (name !== undefined && prev[name] === undefined) {
         const index = Object.keys(prev).length + 1
         prev[name] = [
@@ -674,10 +674,10 @@ function encodeAuthorsProperty(
             meta: {
               ...meta,
               /**
-                * The [`itemid`](https://www.w3.org/TR/microdata/#dfn-itemid) attribute
-                * must be a valid URL. So we prefix the node's `id` with a hash. Changing
-                * this will break links between entities. See https://moz.com/blog/search-marketers-guide-to-itemref-itemid
-                * for more.
+               * The [`itemid`](https://www.w3.org/TR/microdata/#dfn-itemid) attribute
+               * must be a valid URL. So we prefix the node's `id` with a hash. Changing
+               * this will break links between entities. See https://moz.com/blog/search-marketers-guide-to-itemref-itemid
+               * for more.
                */
               itemid: `#author-organization-${index}`
             }
@@ -942,7 +942,13 @@ function encodePerson(
               const [index, org] = entry
               return h(
                 'li',
-                h('a',  {attrs: { itemprop: 'affiliation', href: org?.meta?.itemid }}, index)
+                h(
+                  'a',
+                  {
+                    attrs: { itemprop: 'affiliation', href: org?.meta?.itemid }
+                  },
+                  index
+                )
               )
             }
           })
@@ -951,7 +957,7 @@ function encodePerson(
 
   return h(
     tag ?? 'span',
-    encodeAttrs(person, {itemprop: property}),
+    encodeAttrs(person, { itemprop: property }),
     linkElem,
     emailsElem,
     affiliationsElem
@@ -976,10 +982,15 @@ function encodeOrganization(
       ? h('address', { itemprop: 'address' }, address)
       : undefined
 
-  return h(tag ?? 'div', encodeAttrs(org, {
-    id: meta?.itemid.replace(/^#/, '') ?? id,
-    itemprop: property
-  }), linkElem, addressElem)
+  return h(
+    tag ?? 'div',
+    encodeAttrs(org, {
+      id: meta?.itemid.replace(/^#/, '') ?? id,
+      itemprop: property
+    }),
+    linkElem,
+    addressElem
+  )
 }
 
 /**
@@ -1084,16 +1095,16 @@ function decodeCite(elem: HTMLElement): stencila.Cite {
  * Encode a `stencila.Cite` to a `<cite>` element.
  */
 function encodeCite(cite: stencila.Cite): HTMLElement {
-  const { prefix, target, suffix, ...lost } = cite
+  const { prefix, target, suffix, content, ...lost } = cite
   logWarnLossIfAny('html', 'encode', cite, lost)
 
-  const content = [
+  return h(
+    'cite',
+    encodeAttrs(cite),
     encodeMaybe(prefix, h('span', { itemprop: 'citePrefix' }, [prefix])),
-    h('a', { href: encodeHref(target) }, target),
+    h('a', { href: encodeHref(target) }, content ?? target),
     encodeMaybe(suffix, h('span', { itemprop: 'citeSuffix' }, [suffix]))
-  ].filter(isDefined)
-
-  return h('cite', encodeAttrs(cite), content)
+  )
 }
 
 /**
@@ -1763,7 +1774,17 @@ function decodeDataAttrs(
 }
 
 // These attribute names are fully-formed, and should not be prefixed with `data-`
-const reservedAttrs = ['id', 'slot', 'name', 'title', 'itemscope', 'itemtype', 'itemid', 'itemprop', 'itemref']
+const reservedAttrs = [
+  'id',
+  'slot',
+  'name',
+  'title',
+  'itemscope',
+  'itemtype',
+  'itemid',
+  'itemprop',
+  'itemref'
+]
 
 /**
  * Encode a dictionary of strings to `data-` attributes to add to
@@ -1773,10 +1794,13 @@ function encodeDataAttrs(
   meta: Record<string, string | undefined>
 ): typeof meta {
   return Object.entries(meta).reduce(
-    (attrs, [key, value]) => ( value !== undefined ? {
-      ...attrs,
-      [reservedAttrs.includes(key) ? key : `data-${key}`]: value
-    } : attrs),
+    (attrs, [key, value]) =>
+      value !== undefined
+        ? {
+            ...attrs,
+            [reservedAttrs.includes(key) ? key : `data-${key}`]: value
+          }
+        : attrs,
     {}
   )
 }
