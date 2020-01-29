@@ -769,7 +769,7 @@ function encodeReference(
   return typeof reference === 'string'
     ? h('li', reference)
     : encodeCreativeWork(reference, {
-        attrs: { itemprop: 'citation' },
+        attrs: { id: reference.id, itemprop: 'citation' },
         as: 'li'
       })
 }
@@ -1025,7 +1025,7 @@ function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
   const id = slugger.slug(text)
   return h(
     `h${heading.depth}`,
-    { id, attrs: encodeMicrodataAttrs(heading) },
+    encodeAttrs(heading, {id}),
     content
   )
 }
