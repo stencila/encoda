@@ -561,7 +561,9 @@ function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
       return dateType !== null && date !== undefined
         ? {
             ...prev,
-            ...{ [`date${dateType[0].toUpperCase()}${dateType.slice(1)}`]: date }
+            ...{
+              [`date${dateType[0].toUpperCase()}${dateType.slice(1)}`]: date
+            }
           }
         : prev
     },
@@ -1346,14 +1348,32 @@ function decodeXRef(
 }
 
 /**
+ * Decode a JATS `rid` attribute to an valid id.
+ *
+ * The [`rid` (reference to an identifer)](https://jats.nlm.nih.gov/archiving/tag-library/1.1/attribute/rid.html)
+ * attribute is intended to be used for internal identifiers within the document.
+ * This function normalises it so that if can not be confused with a URL.
+ * This is necessary for issues such as [this](https://github.com/stencila/encoda/pull/399#issuecomment-580391161)
+ * where a `rid` "looked like" a URL and so was treated as such.
+ */
+function decodeRid(elem: xml.Element): string {
+  const rid = attr(elem, 'rid')
+  if (rid === null) {
+    log.error(`Element is missing "rid" attribute: ${xml.dump(elem)}`)
+    return ''
+  }
+  return rid.replace(/\./g, '-')
+}
+
+/**
  * Decode a JATS `<xref>` element to a Stencila `Link`.
  */
 function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: `#${attr(elem, 'rid') ?? ''}`, //`
-      relation: attr(elem, 'ref-type') ?? undefined
+      target: `#${decodeRid(elem)}`,
+      relation: attrOrUndefined(elem, 'ref-type')
     })
   ]
 }
@@ -1366,24 +1386,12 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
  * Reciprocal function of this is `encodeCite`.
  */
 function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
-  const { elements } = elem
-
-  let target = attr(elem, 'rid')
-  if (target === null) {
-    log.error(
-      `A <xref ref-type="bibr"> element is missing "rid" attribute: ${text(
-        elem
-      )}`
-    )
-    target = ''
-  }
-
-  const content =
-    elements !== undefined
-      ? decodeElements(elements, state).filter(stencila.isInlineContent)
-      : undefined
-
-  return [stencila.cite({ content, target })]
+  return [
+    stencila.cite({
+      content: decodeDefault(elem, state).filter(stencila.isInlineContent),
+      target: decodeRid(elem)
+    })
+  ]
 }
 
 /**
