@@ -45,6 +45,7 @@ import { stringifyContent } from '../../util/content/stringifyContent'
 import { toFiles } from '../../util/toFiles'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { getThemeAssets } from '../../util/html'
 
 const window = new jsdom.JSDOM().window
 const document = window.document
@@ -214,7 +215,7 @@ export class HTMLCodec extends Codec implements Codec {
       const { title = 'Untitled', ...metadata } = getArticleMetaData(
         nodeToEncode
       )
-      dom = generateHtmlElement(
+      dom = await generateHtmlElement(
         stringifyContent(title),
         metadata,
         [dom],
@@ -480,51 +481,47 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
  * Generate a `<html>` element with supplied title, metadata, body content, and
  * optionally custom CSS to style the document with.
  */
-function generateHtmlElement(
+async function generateHtmlElement(
   title = 'Untitled',
   metadata: { [key: string]: any } = {},
   body: Node[] = [],
   options: GlobalEncodeOptions = defaultEncodeOptions
-): HTMLHtmlElement {
+): Promise<HTMLHtmlElement> {
   const { isBundle = false, theme } = options
 
   log.debug(`Generating <html> elem with options ${JSON.stringify(options)}`)
+
+  const { styles, scripts } = await getThemeAssets(theme, isBundle)
 
   let themeCss
   let themeJs
   if (isBundle) {
     // Bundle the theme into the document
-    const themePath = path.resolve(
-      require.resolve('@stencila/thema'),
-      '..',
-      'themes',
-      theme
+    themeCss = styles.map(style =>
+      h('style', {
+        innerHTML: style
+      })
     )
-    themeCss = h('style', {
-      innerHTML: fs.readFileSync(path.join(themePath, 'styles.css')).toString()
-    })
-    themeJs = h('script', {
-      innerHTML: fs.readFileSync(path.join(themePath, 'index.js')).toString()
-    })
-  } else {
-    // Add links to the theme to the document
-    const themaVersion = require(path.join(
-      require.resolve('@stencila/thema'),
-      '..',
-      '..',
-      'package.json'
-    )).version
-    const themaMajor = themaVersion.split('.')[0]
 
-    const themeBaseUrl = `https://unpkg.com/@stencila/thema@${themaMajor}/${themePath}/${theme}`
-    themeCss = h('link', {
-      href: `${themeBaseUrl}/styles.css`,
-      rel: 'stylesheet'
-    })
-    themeJs = h('script', {
-      src: `${themeBaseUrl}/index.js`,
-      type: 'text/javascript'
-    })
+    themeJs = scripts.map(src =>
+      h('script', {
+        innerHTML: src
+      })
+    )
+  } else {
+    themeCss = styles.map(style =>
+      h('link', {
+        href: style,
+        rel: 'stylesheet'
+      })
+    )
+
+    themeJs = scripts.map(src =>
+      h('script', {
+        src: src,
+        type: 'text/javascript'
+      })
+    )
   }
 
   return h(
@@ -538,8 +535,8 @@ function generateHtmlElement(
         content: 'width=device-width, initial-scale=1.0'
       }),
       h('meta', { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' }),
-      themeCss,
-      themeJs,
+      ...themeCss,
+      ...themeJs,
       h('script', {
         src:
           'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.esm.js',

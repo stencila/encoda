@@ -1,5 +1,5 @@
 import * as stencila from '@stencila/schema'
-import { getTheme, ThemeNames } from '@stencila/thema'
+import { getTheme } from '@stencila/thema'
 import * as vfile from '../util/vfile'
 
 export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
@@ -8,7 +8,7 @@ export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
   isStandalone?: boolean
   isBundle?: boolean
   shouldZip?: 'yes' | 'no' | 'maybe'
-  theme: ThemeNames
+  theme: string
 
   codecOptions?: CodecOptions
 }
