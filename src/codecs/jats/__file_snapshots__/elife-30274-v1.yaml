@@ -184,7 +184,14 @@ isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        propertyID: nlm-ta
+        value: elife
+      - type: PropertyValue
+        propertyID: publisher-id
+        value: eLife
+    issns:
       - 2050-084X
     publisher:
       type: Organization

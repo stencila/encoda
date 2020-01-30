@@ -164,7 +164,11 @@ isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        propertyID: pmc
+        value: F1000Research
+    issns:
       - 2046-1402
     publisher:
       type: Organization

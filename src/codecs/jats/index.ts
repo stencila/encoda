@@ -33,6 +33,7 @@ import {
 } from '../../util/xml'
 import { Codec } from '../types'
 import { ensureArticle } from '../../util/content/ensureArticle'
+import { isDefined } from '../../util'
 
 const log = getLogger('encoda:jats')
 
@@ -416,19 +417,26 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
   if (journal === null) return undefined
 
   const title = textOrUndefined(first(journal, 'journal-title'))
-  const issn = all(journal, 'issn')
+  const issns = all(journal, 'issn')
     .map(textOrUndefined)
-    .reduce(
-      (prev: string[], issn) => (issn !== undefined ? [...prev, issn] : prev),
-      []
-    )
+    .filter(isDefined)
+  const identifiers = all(journal, 'journal-id')
+    .map(elem => {
+      const propertyID = attr(elem, 'journal-id-type') ?? undefined
+      const value = textOrUndefined(elem)
+      if (value !== undefined)
+        return stencila.propertyValue({ propertyID, value })
+    })
+    .filter(isDefined)
+
   const publisher = textOrUndefined(first(journal, 'publisher-name'))
   const volumeNumber = textOrUndefined(first(front, 'volume'))
   return stencila.publicationVolume({
     volumeNumber,
     isPartOf: stencila.periodical({
-      issn,
       title,
+      issns,
+      identifiers,
       publisher:
         publisher !== undefined
           ? stencila.organization({ name: publisher })
@@ -485,7 +493,7 @@ function decodeFunders(front: xml.Element): stencila.Article['funders'] {
     if (name === undefined) return prev
     // Avoid duplicates
     for (const org of prev) {
-      if (org.name === name ) return prev
+      if (org.name === name) return prev
     }
     return name !== undefined
       ? [...prev, stencila.organization({ name })]

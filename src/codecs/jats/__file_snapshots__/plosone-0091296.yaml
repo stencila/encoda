@@ -85,7 +85,17 @@ isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        propertyID: nlm-ta
+        value: PLoS ONE
+      - type: PropertyValue
+        propertyID: publisher-id
+        value: plos
+      - type: PropertyValue
+        propertyID: pmc
+        value: plosone
+    issns:
       - 1932-6203
     publisher:
       type: Organization
