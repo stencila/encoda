@@ -232,11 +232,17 @@ const initialEncodeState = (): EncodeState => ({
 function decodeArticle(article: xml.Element): stencila.Article {
   const state: DecodeState = initialDecodeState(article)
 
-  const front = decodeFront(child(article, 'front'), state)
-  const back = decodeBack(child(article, 'back'))
+  const { meta: metaFront, ...front } = decodeFront(
+    child(article, 'front'),
+    state
+  )
+  const { meta: metaBack, ...back } = decodeBack(child(article, 'back'))
+  const metaAll = { ...metaFront, ...metaBack }
+  const meta = Object.keys(metaAll).length > 0 ? metaAll : undefined
+
   const content = decodeBody(child(article, 'body'), state)
 
-  return stencila.article({ ...front, ...back, content })
+  return stencila.article({ ...front, ...back, meta, content })
 }
 
 /**
@@ -298,6 +304,7 @@ function decodeFront(
   | 'keywords'
   | 'identifiers'
   | 'funders'
+  | 'meta'
 > {
   return front === null
     ? {}
@@ -311,7 +318,8 @@ function decodeFront(
         licenses: decodeLicenses(front, state),
         keywords: decodeKeywords(front),
         identifiers: decodeIdentifiers(front),
-        funders: decodeFunders(front)
+        funders: decodeFunders(front),
+        meta: decodeMetaFront(front)
       }
 }
 
@@ -537,6 +545,36 @@ function decodeFunders(front: xml.Element): stencila.Article['funders'] {
 }
 
 /**
+ * Decode elements from the `<front>` of a JATS article into an `Article.meta` property.
+ */
+function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
+  // Simply extract all footnotes withing the <author-notes> element as plain text
+  const authorNotes = all(first(front, 'author-notes'), 'fn')
+    .map(textOrUndefined)
+    .filter(isDefined)
+
+  // Dates in article history that are not standard properties
+  const dates = all(first(front, 'history'), 'date').reduce(
+    (prev: Record<string, stencila.Date>, curr) => {
+      const dateType = attr(curr, 'date-type')
+      const date = decodeDate(curr)
+      return dateType !== null && date !== undefined
+        ? {
+            ...prev,
+            ...{ [`date${dateType[0].toUpperCase()}${dateType.slice(1)}`]: date }
+          }
+        : prev
+    },
+    {}
+  )
+
+  return {
+    authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
+    ...dates
+  }
+}
+
+/**
  * Decode JATS `<contrib contrib-type = "author">` elements
  * to a Stencila `Article.authors` property.
  */
@@ -744,7 +782,7 @@ function decodeAff(aff: xml.Element): stencila.Organization {
  */
 function decodeBack(
   back: xml.Element | null
-): Pick<stencila.Article, 'references'> {
+): Pick<stencila.Article, 'references' | 'meta'> {
   if (back === null) return {}
   const references = decodeReferences(first(back, 'ref-list'))
   return { references }
