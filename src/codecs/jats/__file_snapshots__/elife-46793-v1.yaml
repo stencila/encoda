@@ -136,16 +136,31 @@ funders:
     name: Pew Charitable Trusts
   - type: Organization
     name: Wellcome
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: '46793'
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.7554/eLife.46793
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e46793
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
     identifiers:
       - type: PropertyValue
-        propertyID: nlm-ta
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
         value: elife
       - type: PropertyValue
-        propertyID: publisher-id
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
         value: eLife
     issns:
       - 2050-084X

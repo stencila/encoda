@@ -60,19 +60,35 @@ editors:
       - Perc
     givenNames:
       - Matjaž
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: PONE-D-14-01441
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.1371/journal.pone.0093988
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e93988
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
     identifiers:
       - type: PropertyValue
-        propertyID: nlm-ta
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
         value: PLoS ONE
       - type: PropertyValue
-        propertyID: publisher-id
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
         value: plos
       - type: PropertyValue
-        propertyID: pmc
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
         value: plosone
     issns:
       - 1932-6203

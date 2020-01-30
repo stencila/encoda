@@ -161,13 +161,23 @@ funders:
     name: U.S. National Library of Medicine
   - type: Organization
     name: Wellcome Trust
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.12688/f1000research.16460.1
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: '1655'
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
     identifiers:
       - type: PropertyValue
-        propertyID: pmc
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
         value: F1000Research
     issns:
       - 2046-1402

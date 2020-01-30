@@ -296,6 +296,7 @@ function decodeFront(
   | 'isPartOf'
   | 'licenses'
   | 'keywords'
+  | 'identifiers'
   | 'funders'
 > {
   return front === null
@@ -309,6 +310,7 @@ function decodeFront(
         isPartOf: decodeIsPartOf(front),
         licenses: decodeLicenses(front, state),
         keywords: decodeKeywords(front),
+        identifiers: decodeIdentifiers(front),
         funders: decodeFunders(front)
       }
 }
@@ -409,8 +411,8 @@ function decodeDate(date: xml.Element): stencila.Date | undefined {
 }
 
 /**
- * Decode various JATS `<front>` elements (e.g. `<journal-meta>`, `<volume>`) into a Stencila
- * `Article.isPartOf` property.
+ * Decode various JATS `<front>` elements (e.g. `<journal-meta>`, `<volume>`)
+ * into a Stencila `Article.isPartOf` property.
  */
 function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
   const journal = first(front, 'journal-meta')
@@ -422,13 +424,13 @@ function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
     .filter(isDefined)
   const identifiers = all(journal, 'journal-id')
     .map(elem => {
-      const propertyID = attr(elem, 'journal-id-type') ?? undefined
+      const name = attr(elem, 'journal-id-type') ?? undefined
+      const propertyID = encodeIdentifierTypeUri(name)
       const value = textOrUndefined(elem)
       if (value !== undefined)
-        return stencila.propertyValue({ propertyID, value })
+        return stencila.propertyValue({ name, propertyID, value })
     })
     .filter(isDefined)
-
   const publisher = textOrUndefined(first(journal, 'publisher-name'))
   const volumeNumber = textOrUndefined(first(front, 'volume'))
   return stencila.publicationVolume({
@@ -474,6 +476,39 @@ function decodeKeywords(front: xml.Element): stencila.Article['keywords'] {
     const kwd = textOrUndefined(curr)
     return kwd !== undefined ? [...prev, kwd] : prev
   }, [])
+}
+
+/**
+ * Decode JATS `<article-id>` and `<elocation-id>` elements into
+ * a Stencila `Article.identifiers` property.
+ */
+function decodeIdentifiers(
+  front: xml.Element
+): stencila.Article['identifiers'] {
+  return [
+    ...all(front, 'article-id').map(elem => {
+      const name = attr(elem, 'pub-id-type') ?? undefined
+      const propertyID = encodeIdentifierTypeUri(name)
+      const value = textOrUndefined(elem)
+      if (value !== undefined)
+        return stencila.propertyValue({
+          name,
+          propertyID,
+          value
+        })
+    }),
+    ...all(front, 'elocation-id').map(elem => {
+      const name = 'elocation-id'
+      const propertyID = encodeIdentifierTypeUri(name)
+      const value = textOrUndefined(elem)
+      if (value !== undefined)
+        return stencila.propertyValue({
+          name,
+          propertyID,
+          value
+        })
+    })
+  ].filter(isDefined)
 }
 
 /**
@@ -1279,7 +1314,7 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: `#${attr(elem, 'rid') ?? ''}`,
+      target: `#${attr(elem, 'rid') ?? ''}`, //`
       relation: attr(elem, 'ref-type') ?? undefined
     })
   ]
@@ -1757,4 +1792,20 @@ function decodeCode(elem: xml.Element): [stencila.CodeBlock] {
       programmingLanguage: attr(elem, 'language') ?? undefined
     })
   ]
+}
+
+/**
+ * Encode the name of an identifier type to a URI for use on
+ * a `propertyID` property.
+ *
+ * See [this](https://github.com/ESIPFed/science-on-schema.org/issues/13#issuecomment-577446582)
+ * which recommends:
+ *
+ *   > a schema:propertyId for each identifier that links back to the identifier scheme using
+ *   > URIs drawn from the http://purl.org/spar/datacite/IdentifierScheme vocabulary or from
+ *   > identifiers.org registered prefixes from https://registry.identifiers.org/registry
+ */
+function encodeIdentifierTypeUri(name?: string): string | undefined {
+  if (name === undefined) return undefined
+  return `https://registry.identifiers.org/registry/${name}`
 }
