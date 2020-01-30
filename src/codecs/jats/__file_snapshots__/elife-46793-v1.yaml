@@ -94,9 +94,15 @@ authors:
       - Balasubramanian
     givenNames:
       - Shankar
+dateAccepted:
+  type: Date
+  value: '2019-06-17'
 datePublished:
   type: Date
   value: '2019-07-09'
+dateReceived:
+  type: Date
+  value: '2019-03-12'
 description:
   - type: Paragraph
     content:
@@ -7263,12 +7269,6 @@ title: Genetic interactions of G-quadruplexes in humans
 meta:
   authorNotes:
     - †These authors contributed equally to this work
-  dateReceived:
-    type: Date
-    value: '2019-03-12'
-  dateAccepted:
-    type: Date
-    value: '2019-06-17'
 content:
   - type: Heading
     id: s1

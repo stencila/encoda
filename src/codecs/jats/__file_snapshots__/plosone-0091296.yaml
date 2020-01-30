@@ -33,9 +33,15 @@ authors:
       - Nicholas
       - A.
       - J.
+dateAccepted:
+  type: Date
+  value: '2014-02-11'
 datePublished:
   type: Date
   value: '2014-03-19'
+dateReceived:
+  type: Date
+  value: '2013-09-30'
 description:
   - type: Paragraph
     content:
@@ -1555,12 +1561,6 @@ meta:
       Conceived and designed the experiments: JR JEC NAJG. Performed the
       experiments: JR. Analyzed the data: JR. Contributed
       reagents/materials/analysis tools: JR. Wrote the paper: JR JEC NAJG.
-  dateReceived:
-    type: Date
-    value: '2013-09-30'
-  dateAccepted:
-    type: Date
-    value: '2014-02-11'
 content:
   - type: Heading
     id: s1

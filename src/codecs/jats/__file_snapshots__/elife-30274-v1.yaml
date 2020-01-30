@@ -131,9 +131,15 @@ authors:
     givenNames:
       - Timothy
       - M
+dateAccepted:
+  type: Date
+  value: '2017-11-16'
 datePublished:
   type: Date
   value: '2018-01-09'
+dateReceived:
+  type: Date
+  value: '2017-07-10'
 description:
   - type: Paragraph
     content:
@@ -2292,13 +2298,7 @@ references:
 title: >-
   Replication Study: Transcriptional amplification in tumor cells with elevated
   c-Myc
-meta:
-  dateReceived:
-    type: Date
-    value: '2017-07-10'
-  dateAccepted:
-    type: Date
-    value: '2017-11-16'
+meta: {}
 content:
   - type: Heading
     id: s1

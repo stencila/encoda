@@ -133,6 +133,9 @@ authors:
       - Stoner
     givenNames:
       - Michael
+dateAccepted:
+  type: Date
+  value: '2018-10-15'
 datePublished:
   type: Date
   value: '2018-10-17'
@@ -264,9 +267,6 @@ meta:
     - >-
       Competing interests: Michael Evans is the Production Manager for F1000
       Platforms, but was not involved in the production of this manuscript.
-  dateAccepted:
-    type: Date
-    value: '2018-10-15'
 content:
   - type: Heading
     id: ''

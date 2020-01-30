@@ -224,6 +224,16 @@ const initialEncodeState = (): EncodeState => ({
 })
 
 /**
+ * Decode an XML element if it is defined.
+ */
+function decodeMaybe<Type extends stencila.Node>(
+  elem: xml.Element | null | undefined,
+  func: ((defined: xml.Element) => Type | undefined)
+): Type | undefined {
+  return isDefined(elem) ? func(elem) : undefined
+}
+
+/**
  * Decode a JATS `<article>` element to a Stencila `Article`.
  *
  * Extracts front- and back-matter, from `<front>` and
@@ -312,6 +322,7 @@ function decodeFront(
         authors: decodeAuthors(front, state),
         editors: decodeEditors(front, state),
         datePublished: decodeDatePublished(front),
+        ...decodeHistory(front),
         title: decodeTitle(first(front, 'article-title'), state),
         description: decodeAbstract(first(front, 'abstract'), state),
         isPartOf: decodeIsPartOf(front),
@@ -545,6 +556,17 @@ function decodeFunders(front: xml.Element): stencila.Article['funders'] {
 }
 
 /**
+ * Decode dates from the `<history>` of a JATS article into an `Article.date*` properties.
+ */
+function decodeHistory(front: xml.Element): Pick<stencila.Article, 'dateReceived' | 'dateAccepted'> {
+  const history = first(front, 'history')
+  return {
+    dateReceived: decodeMaybe<stencila.Date>(child(history, 'date', {'date-type': "received"}), decodeDate),
+    dateAccepted: decodeMaybe<stencila.Date>(child(history, 'date', {'date-type': "accepted"}), decodeDate)
+  }
+}
+
+/**
  * Decode elements from the `<front>` of a JATS article into an `Article.meta` property.
  */
 function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
@@ -553,26 +575,8 @@ function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
     .map(textOrUndefined)
     .filter(isDefined)
 
-  // Dates in article history that are not standard properties
-  const dates = all(first(front, 'history'), 'date').reduce(
-    (prev: Record<string, stencila.Date>, curr) => {
-      const dateType = attr(curr, 'date-type')
-      const date = decodeDate(curr)
-      return dateType !== null && date !== undefined
-        ? {
-            ...prev,
-            ...{
-              [`date${dateType[0].toUpperCase()}${dateType.slice(1)}`]: date
-            }
-          }
-        : prev
-    },
-    {}
-  )
-
   return {
-    authorNotes: authorNotes.length > 0 ? authorNotes : undefined,
-    ...dates
+    authorNotes: authorNotes.length > 0 ? authorNotes : undefined
   }
 }
 
