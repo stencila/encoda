@@ -607,6 +607,7 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
 function encodeArticle(article: stencila.Article): HTMLElement {
   const {
     type,
+    publisher,
     title,
     authors,
     datePublished,
@@ -620,12 +621,53 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   return h(
     'article',
     encodeAttrs(article),
+    encodePublisherProperty(publisher),
     encodeTitleProperty(title),
+    encodeImageProperty(article),
     encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     encodeMaybe(description, desc => encodeDescriptionProperty(desc)),
     ...encodeNodes(content),
     encodeMaybe(references, refs => encodeReferencesProperty(refs))
+  )
+}
+
+/**
+ * Encode the `Article.publisher` property to HTML.
+ *
+ * The GSDTT requires an `Article` to have a `publisher` property
+ * with a `name` and `logo.url`.
+ */
+function encodePublisherProperty(
+  publisher: stencila.Article['publisher']
+): HTMLElement {
+  publisher = publisher ?? stencila.organization()
+
+  const { name = 'Unknown' } = publisher
+  let logo = stencila.isA('Organization', publisher)
+    ? publisher.logo
+    : undefined
+  // TODO: Should be a valid URL, not #
+  if (logo === undefined) logo = stencila.imageObject({ contentUrl: '#' })
+  else if (typeof logo === 'string')
+    logo = stencila.imageObject({ contentUrl: logo })
+
+  return h(
+    'div',
+    encodeAttrs(publisher, { itemprop: 'publisher' }),
+    h('span', { itemprop: 'name' }, name),
+    h(
+      'div',
+      encodeAttrs(logo, { itemprop: 'logo' }),
+      // Both `content` and `src` are necessary here
+      h('img', {
+        attrs: {
+          itemprop: 'url',
+          content: logo.contentUrl,
+          src: logo.contentUrl
+        }
+      })
+    )
   )
 }
 
@@ -652,6 +694,20 @@ function encodeTitleProperty(
       : h('meta', { itemprop: 'headline', content: headline }),
     typeof title === 'string' ? title : encodeNodes(title)
   )
+}
+
+/**
+ * Encode the `Article.image` property to HTML.
+ *
+ * The GSDTT requires an `Article` to have a `image` property.
+ * This scans the article and finds the first `ImageObject`
+ * and uses that. If no images in the article then uses a placeholder.
+ */
+function encodeImageProperty(article: stencila.Article): HTMLElement {
+  // TODO: This should walk the article and find the first `ImageObject`
+  // and use it's contentUrl.
+  const contentUrl = '#'
+  return h('meta', { itemprop: 'image', content: contentUrl })
 }
 
 /**

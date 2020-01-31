@@ -12,7 +12,7 @@ const html = new HTMLCodec()
 const json2html = async (name: string) =>
   html.dump(await json.decode(await readFixture(name)))
 
-describe.skip('Microdata for scholarly Articles', () => {
+describe('Microdata for scholarly Articles', () => {
   const has = (jmespath: string, expect: string | true = true) => ({
     test: jmespath,
     type: 'microdata',
