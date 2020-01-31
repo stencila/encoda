@@ -83,10 +83,9 @@ export const encodeDoc = async (
 ): Promise<xml.Element> => {
   const root = encodeNode(node)
 
-  const schemaVersion = await getSchemaVersion('minor')
   const stencila = xml.elem(
     'stencila',
-    { xmlns: `https://schema.stenci.la/${schemaVersion}` },
+    { xmlns: `https://schema.stenci.la/v${await getSchemaVersion('major')}/xml` },
     root
   )
 
