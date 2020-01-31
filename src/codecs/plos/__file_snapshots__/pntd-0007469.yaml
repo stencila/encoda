@@ -73,11 +73,37 @@ editors:
     givenNames:
       - Abdallah
       - M.
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.1371/journal.pntd.0007469
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: PNTD-D-18-02030
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e0007469
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: PLoS Negl Trop Dis
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: plos
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: plosntds
+    issns:
       - 1935-2735
     publisher:
       type: Organization
@@ -100,7 +126,7 @@ licenses:
             any medium, provided the original author and source are credited.
 references:
   - type: Article
-    id: pntd.0007469.ref001
+    id: pntd-0007469-ref001
     authors:
       - type: Person
         familyNames:
@@ -131,7 +157,7 @@ references:
       volumeNumber: 22
     title: Vector transmitted diseases and climate changes in Europe
   - type: Article
-    id: pntd.0007469.ref002
+    id: pntd-0007469-ref002
     authors:
       - type: Person
         familyNames:
@@ -197,7 +223,7 @@ references:
       volumeNumber: 26
     title: 'Update on tick-borne rickettsioses around the world: a geographic approach'
   - type: Article
-    id: pntd.0007469.ref003
+    id: pntd-0007469-ref003
     authors:
       - type: Person
         familyNames:
@@ -218,7 +244,7 @@ references:
       volumeNumber: 7
     title: Epidemiology of rickettsial diseases
   - type: Article
-    id: pntd.0007469.ref004
+    id: pntd-0007469-ref004
     authors:
       - type: Person
         familyNames:
@@ -249,7 +275,7 @@ references:
       volumeNumber: 8
     title: Recent molecular insights into rickettsial pathogenesis and immunity
   - type: Article
-    id: pntd.0007469.ref005
+    id: pntd-0007469-ref005
     authors:
       - type: Person
         familyNames:
@@ -268,7 +294,7 @@ references:
       volumeNumber: 3
     title: Rickettsioses as causes of CNS infection in southeast Asia
   - type: Article
-    id: pntd.0007469.ref006
+    id: pntd-0007469-ref006
     authors:
       - type: Person
         familyNames:
@@ -330,7 +356,7 @@ references:
       Intra-aural tick bite causing unilateral facial nerve palsy in 29 cases
       over 16 years in Kandy, Sri Lanka: is rickettsial aetiology possible?
   - type: Article
-    id: pntd.0007469.ref007
+    id: pntd-0007469-ref007
     authors:
       - type: Person
         familyNames:
@@ -370,7 +396,7 @@ references:
       volumeNumber: 26
     title: 'Rickettsiosis associated with cerebral infarction: a new case study'
   - type: Article
-    id: pntd.0007469.ref008
+    id: pntd-0007469-ref008
     authors:
       - type: Person
         familyNames:
@@ -416,7 +442,7 @@ references:
       volumeNumber: 22
     title: Visual loss associated with rickettsial disease
   - type: Article
-    id: pntd.0007469.ref009
+    id: pntd-0007469-ref009
     authors:
       - type: Person
         familyNames:
@@ -467,7 +493,7 @@ references:
       volumeNumber: 17
     title: Survival of rat cerebrocortical neurons after rickettsial infection
   - type: Article
-    id: pntd.0007469.ref010
+    id: pntd-0007469-ref010
     authors:
       - type: Person
         familyNames:
@@ -510,7 +536,7 @@ references:
       Persisting Rickettsia typhi Causes Fatal Central Nervous System
       Inflammation
   - type: Article
-    id: pntd.0007469.ref011
+    id: pntd-0007469-ref011
     authors:
       - type: Person
         familyNames:
@@ -531,7 +557,7 @@ references:
       volumeNumber: 4
     title: Rickettsial pathogens and their arthropod vectors
   - type: Article
-    id: pntd.0007469.ref012
+    id: pntd-0007469-ref012
     authors:
       - type: Person
         familyNames:
@@ -557,7 +583,7 @@ references:
       volumeNumber: 18
     title: The history of epidemic typhus
   - type: Article
-    id: pntd.0007469.ref013
+    id: pntd-0007469-ref013
     authors:
       - type: Person
         familyNames:
@@ -573,7 +599,7 @@ references:
         volumeNumber: 45
     title: Pathogenic rickettsiae as bioterrorism agents
   - type: Article
-    id: pntd.0007469.ref014
+    id: pntd-0007469-ref014
     authors:
       - type: Person
         familyNames:
@@ -599,7 +625,7 @@ references:
       volumeNumber: 990
     title: Pathogenic mechanisms of diseases caused by Rickettsia
   - type: Article
-    id: pntd.0007469.ref015
+    id: pntd-0007469-ref015
     authors:
       - type: Person
         familyNames:
@@ -625,7 +651,7 @@ references:
       volumeNumber: 10
     title: Paradoxical evolution of rickettsial genomes
   - type: Article
-    id: pntd.0007469.ref016
+    id: pntd-0007469-ref016
     authors:
       - type: Person
         familyNames:
@@ -651,7 +677,7 @@ references:
       volumeNumber: 17
     title: Invasion of the central nervous system by intracellular bacteria
   - type: Article
-    id: pntd.0007469.ref017
+    id: pntd-0007469-ref017
     authors:
       - type: Person
         familyNames:
@@ -687,7 +713,7 @@ references:
       volumeNumber: 37
     title: Structure and function of the blood-brain barrier
   - type: Article
-    id: pntd.0007469.ref018
+    id: pntd-0007469-ref018
     authors:
       - type: Person
         familyNames:
@@ -728,7 +754,7 @@ references:
       volumeNumber: 62
     title: Pathophysiology of neonatal acute bacterial meningitis
   - type: Article
-    id: pntd.0007469.ref019
+    id: pntd-0007469-ref019
     authors:
       - type: Person
         familyNames:
@@ -744,7 +770,7 @@ references:
       volumeNumber: 6
     title: Mechanisms of microbial traversal of the blood-brain barrier
   - type: Article
-    id: pntd.0007469.ref020
+    id: pntd-0007469-ref020
     authors:
       - type: Person
         familyNames:
@@ -775,7 +801,7 @@ references:
       volumeNumber: 42
     title: In vitro susceptibilities of 27 rickettsiae to 13 antimicrobials
   - type: Article
-    id: pntd.0007469.ref021
+    id: pntd-0007469-ref021
     authors:
       - type: Person
         familyNames:
@@ -808,7 +834,7 @@ references:
       Evaluation of antibiotic susceptibilities of three Rickettsial species
       including Rickettsia felis by a quantitative PCR DNA assay
   - type: Article
-    id: pntd.0007469.ref022
+    id: pntd-0007469-ref022
     authors:
       - type: Person
         familyNames:
@@ -851,7 +877,7 @@ references:
       Efficacy and safety of clarithromycin as treatment for Mediterranean
       spotted fever in children: a randomized controlled trial
   - type: Article
-    id: pntd.0007469.ref023
+    id: pntd-0007469-ref023
     authors:
       - type: Person
         familyNames:
@@ -888,7 +914,7 @@ references:
       Mediterranean spotted fever: clinical and laboratory characteristics of
       415 Sicilian children
   - type: Article
-    id: pntd.0007469.ref024
+    id: pntd-0007469-ref024
     authors:
       - type: Person
         familyNames:
@@ -909,7 +935,7 @@ references:
       volumeNumber: 39
     title: Emergency Evaluation and Management of Encephalitis and Myelitis in Adults
   - type: Article
-    id: pntd.0007469.ref025
+    id: pntd-0007469-ref025
     authors:
       - type: Person
         familyNames:
@@ -943,7 +969,7 @@ references:
       volumeNumber: 88
     title: 'Child Neurology: Rocky Mountain spotted fever encephalitis'
   - type: Article
-    id: pntd.0007469.ref026
+    id: pntd-0007469-ref026
     authors:
       - type: Person
         familyNames:
@@ -966,7 +992,7 @@ references:
       Meningoencephalitis as a major manifestation of Rocky Mountain spotted
       fever
   - type: Article
-    id: pntd.0007469.ref027
+    id: pntd-0007469-ref027
     authors:
       - type: Person
         familyNames:
@@ -996,7 +1022,7 @@ references:
       volumeNumber: 2
     title: ''
   - type: Article
-    id: pntd.0007469.ref028
+    id: pntd-0007469-ref028
     authors:
       - type: Person
         familyNames:
@@ -1046,7 +1072,7 @@ references:
       volumeNumber: 1
     title: ''
   - type: Article
-    id: pntd.0007469.ref029
+    id: pntd-0007469-ref029
     authors:
       - type: Person
         familyNames:
@@ -1069,7 +1095,7 @@ references:
       title: Merritt’s Textbook of Neurology
     title: ''
   - type: Article
-    id: pntd.0007469.ref030
+    id: pntd-0007469-ref030
     authors:
       - type: Person
         familyNames:
@@ -1097,7 +1123,7 @@ references:
       Rocky Mountain spotted fever: clinical, laboratory, and epidemiological
       features of 262 cases
   - type: Article
-    id: pntd.0007469.ref031
+    id: pntd-0007469-ref031
     authors:
       - type: Person
         familyNames:
@@ -1113,7 +1139,7 @@ references:
       volumeNumber: 78
     title: Childhood rickettsiosis
   - type: Article
-    id: pntd.0007469.ref032
+    id: pntd-0007469-ref032
     authors:
       - type: Person
         familyNames:
@@ -1139,7 +1165,7 @@ references:
       volumeNumber: 16
     title: 'Rocky Mountain spotted fever encephalitis: MR findings'
   - type: Article
-    id: pntd.0007469.ref033
+    id: pntd-0007469-ref033
     authors:
       - type: Person
         familyNames:
@@ -1170,7 +1196,7 @@ references:
       volumeNumber: 78
     title: Neurologic complications of Rocky Mountain spotted fever
   - type: Article
-    id: pntd.0007469.ref034
+    id: pntd-0007469-ref034
     authors:
       - type: Person
         familyNames:
@@ -1201,7 +1227,7 @@ references:
       volumeNumber: 37
     title: Deafness associated with Rocky Mountain spotted fever
   - type: Article
-    id: pntd.0007469.ref035
+    id: pntd-0007469-ref035
     authors:
       - type: Person
         familyNames:
@@ -1234,7 +1260,7 @@ references:
       Rocky Mountain spotted fever. A clinical review based on 48 confirmed
       cases, 1943–1986
   - type: Article
-    id: pntd.0007469.ref036
+    id: pntd-0007469-ref036
     authors:
       - type: Person
         familyNames:
@@ -1255,7 +1281,7 @@ references:
       volumeNumber: 20
     title: Long-term sequelae of Rocky Mountain spotted fever
   - type: Article
-    id: pntd.0007469.ref037
+    id: pntd-0007469-ref037
     authors:
       - type: Person
         familyNames:
@@ -1276,7 +1302,7 @@ references:
       volumeNumber: 26
     title: Rickettsial infections and the central nervous system
   - type: Article
-    id: pntd.0007469.ref038
+    id: pntd-0007469-ref038
     authors:
       - type: Person
         familyNames:
@@ -1294,7 +1320,7 @@ references:
       title: Anderson’s Pathology
     title: ''
   - type: Article
-    id: pntd.0007469.ref039
+    id: pntd-0007469-ref039
     authors:
       - type: Person
         familyNames:
@@ -1335,7 +1361,7 @@ references:
       volumeNumber: 24
     title: Central nervous system involvement in patients with scrub typhus
   - type: Article
-    id: pntd.0007469.ref040
+    id: pntd-0007469-ref040
     authors:
       - type: Person
         familyNames:
@@ -1358,7 +1384,7 @@ references:
       Rickettsia rickettsii infection causes apoptotic death of cultured
       cerebellar granule neurons
   - type: Article
-    id: pntd.0007469.ref041
+    id: pntd-0007469-ref041
     authors:
       - type: Person
         familyNames:
@@ -1374,7 +1400,7 @@ references:
       volumeNumber: 17
     title: Central nervous system involvement in Rickettsial diseases
   - type: Article
-    id: pntd.0007469.ref042
+    id: pntd-0007469-ref042
     authors:
       - type: Person
         familyNames:
@@ -1390,7 +1416,7 @@ references:
       volumeNumber: 76
     title: 'Rickettsial diseases: the typhus group of fevers—a review'
   - type: Article
-    id: pntd.0007469.ref043
+    id: pntd-0007469-ref043
     authors:
       - type: Person
         familyNames:
@@ -1433,7 +1459,7 @@ references:
       Selective modulation of antioxidant enzyme activities in host tissues
       during Rickettsia conorii infection
   - type: Article
-    id: pntd.0007469.ref044
+    id: pntd-0007469-ref044
     authors:
       - type: Person
         familyNames:
@@ -1476,7 +1502,7 @@ references:
       Mediterranean spotted fever: clinical, laboratory and epidemiological
       features of 199 cases
   - type: Article
-    id: pntd.0007469.ref045
+    id: pntd-0007469-ref045
     authors:
       - type: Person
         familyNames:
@@ -1512,7 +1538,7 @@ references:
       volumeNumber: 87
     title: The pathology of fatal Mediterranean spotted fever
   - type: Article
-    id: pntd.0007469.ref046
+    id: pntd-0007469-ref046
     authors:
       - type: Person
         familyNames:
@@ -1553,7 +1579,7 @@ references:
       volumeNumber: 96
     title: Mediterranean boutonneuse fever. Study of 246 cases
   - type: Article
-    id: pntd.0007469.ref047
+    id: pntd-0007469-ref047
     authors:
       - type: Person
         familyNames:
@@ -1591,7 +1617,7 @@ references:
       Meningoencephalitis due to Rickettsia conorii. Etiopathological, clinical
       and diagnostic aspects
   - type: Article
-    id: pntd.0007469.ref048
+    id: pntd-0007469-ref048
     authors:
       - type: Person
         familyNames:
@@ -1645,7 +1671,7 @@ references:
       Mediterranean spotted fever and encephalitis: a case report and review of
       the literature
   - type: Article
-    id: pntd.0007469.ref049
+    id: pntd-0007469-ref049
     authors:
       - type: Person
         familyNames:
@@ -1673,7 +1699,7 @@ references:
       Report of eight cases of fatal and severe Mediterranean spotted fever in
       Portugal
   - type: Article
-    id: pntd.0007469.ref050
+    id: pntd-0007469-ref050
     authors:
       - type: Person
         familyNames:
@@ -1707,7 +1733,7 @@ references:
       Presentation of a case of acute encephalomeningomyelitis and review of the
       literature
   - type: Article
-    id: pntd.0007469.ref051
+    id: pntd-0007469-ref051
     authors:
       - type: Person
         familyNames:
@@ -1750,7 +1776,7 @@ references:
       Severe case of Mediterranean spotted fever in Greece with predominantly
       neurological features
   - type: Article
-    id: pntd.0007469.ref052
+    id: pntd-0007469-ref052
     authors:
       - type: Person
         familyNames:
@@ -1793,7 +1819,7 @@ references:
       Mediterranean boutonneuse fever. Apropos of a fatal case in a newborn
       infant
   - type: Article
-    id: pntd.0007469.ref053
+    id: pntd-0007469-ref053
     authors:
       - type: Person
         familyNames:
@@ -1821,7 +1847,7 @@ references:
       Mediterranean boutonneuse fever disclosed by severe neurological
       involvement
   - type: Article
-    id: pntd.0007469.ref054
+    id: pntd-0007469-ref054
     authors:
       - type: Person
         familyNames:
@@ -1854,7 +1880,7 @@ references:
       volumeNumber: 93
     title: Meningoencephalitis caused by Rickettsia conorii
   - type: Article
-    id: pntd.0007469.ref055
+    id: pntd-0007469-ref055
     authors:
       - type: Person
         familyNames:
@@ -1885,7 +1911,7 @@ references:
       volumeNumber: 56
     title: Rickettsial meningoencephalitis in a child—a case report
   - type: Article
-    id: pntd.0007469.ref056
+    id: pntd-0007469-ref056
     authors:
       - type: Person
         familyNames:
@@ -1911,7 +1937,7 @@ references:
       volumeNumber: 167
     title: Meningoencephalitis caused by Rickettsia conorii in a young infant
   - type: Article
-    id: pntd.0007469.ref057
+    id: pntd-0007469-ref057
     authors:
       - type: Person
         familyNames:
@@ -1952,7 +1978,7 @@ references:
       volumeNumber: 58
     title: Mediterranean spotted fever with encephalitis
   - type: Article
-    id: pntd.0007469.ref058
+    id: pntd-0007469-ref058
     authors:
       - type: Person
         familyNames:
@@ -2015,7 +2041,7 @@ references:
       The first report of the rickettsial infections of spotted fever group in
       Japan: three clinical cases
   - type: Article
-    id: pntd.0007469.ref059
+    id: pntd-0007469-ref059
     authors:
       - type: Person
         familyNames:
@@ -2041,7 +2067,7 @@ references:
       volumeNumber: 74
     title: Japanese spotted fever complicated by acute respiratory failure
   - type: Article
-    id: pntd.0007469.ref060
+    id: pntd-0007469-ref060
     authors:
       - type: Person
         familyNames:
@@ -2077,7 +2103,7 @@ references:
       volumeNumber: 7
     title: Japanese spotted fever associated with multiorgan failure
   - type: Article
-    id: pntd.0007469.ref061
+    id: pntd-0007469-ref061
     authors:
       - type: Person
         familyNames:
@@ -2105,7 +2131,7 @@ references:
       Nine cases of Japanese spotted fever, including 3 cases with DIC and MOF
       treated at ICU
   - type: Article
-    id: pntd.0007469.ref062
+    id: pntd-0007469-ref062
     authors:
       - type: Person
         familyNames:
@@ -2151,7 +2177,7 @@ references:
       volumeNumber: 62
     title: A case of spotted fever with central nervous system involvement
   - type: Article
-    id: pntd.0007469.ref063
+    id: pntd-0007469-ref063
     authors:
       - type: Person
         familyNames:
@@ -2187,7 +2213,7 @@ references:
       volumeNumber: 75
     title: A patient with Japanese spotted fever complicated by meningoencephalitis
   - type: Article
-    id: pntd.0007469.ref064
+    id: pntd-0007469-ref064
     authors:
       - type: Person
         familyNames:
@@ -2220,7 +2246,7 @@ references:
       Japanese spotted fever involving the central nervous system: two case
       reports and a literature review
   - type: Article
-    id: pntd.0007469.ref065
+    id: pntd-0007469-ref065
     authors:
       - type: Person
         familyNames:
@@ -2273,7 +2299,7 @@ references:
       Fulminant Japanese spotted fever definitively diagnosed by the polymerase
       chain reaction method
   - type: Article
-    id: pntd.0007469.ref066
+    id: pntd-0007469-ref066
     authors:
       - type: Person
         familyNames:
@@ -2331,7 +2357,7 @@ references:
       A case of Japanese spotted fever complicated with central nervous system
       involvement and multiple organ failure
   - type: Article
-    id: pntd.0007469.ref067
+    id: pntd-0007469-ref067
     authors:
       - type: Person
         familyNames:
@@ -2346,7 +2372,7 @@ references:
       volumeNumber: 350
     title: Tick-borne lymphadenopathy—a new rickettsial disease?
   - type: Article
-    id: pntd.0007469.ref068
+    id: pntd-0007469-ref068
     authors:
       - type: Person
         familyNames:
@@ -2362,7 +2388,7 @@ references:
       volumeNumber: 114
     title: Tick-borne lymphadenopathy (TIBOLA)
   - type: Article
-    id: pntd.0007469.ref069
+    id: pntd-0007469-ref069
     authors:
       - type: Person
         familyNames:
@@ -2390,7 +2416,7 @@ references:
       Contact with horses is a risk factor for tick-borne lymphadenopathy
       (TIBOLA): a case control study
   - type: Article
-    id: pntd.0007469.ref070
+    id: pntd-0007469-ref070
     authors:
       - type: Person
         familyNames:
@@ -2411,7 +2437,7 @@ references:
       volumeNumber: 10
     title: Rickettsioses as paradigms of new or emerging infectious diseases
   - type: Article
-    id: pntd.0007469.ref071
+    id: pntd-0007469-ref071
     authors:
       - type: Person
         familyNames:
@@ -2465,7 +2491,7 @@ references:
       Dermacentor-borne necrosis erythema and lymphadenopathy: clinical and
       epidemiological features of a new tick-borne disease
   - type: Article
-    id: pntd.0007469.ref072
+    id: pntd-0007469-ref072
     authors:
       - type: Person
         familyNames:
@@ -2521,7 +2547,7 @@ references:
       volumeNumber: 1078
     title: 'Rickettsia slovaca infection: DEBONEL/TIBOLA'
   - type: Article
-    id: pntd.0007469.ref073
+    id: pntd-0007469-ref073
     authors:
       - type: Person
         familyNames:
@@ -2554,7 +2580,7 @@ references:
       Rickettsia slovaca in Dermacentor marginatus and tick-borne
       lymphadenopathy, Tuscany, Italy
   - type: Article
-    id: pntd.0007469.ref074
+    id: pntd-0007469-ref074
     authors:
       - type: Person
         familyNames:
@@ -2607,7 +2633,7 @@ references:
       Scalp eschar and neck lymphadenopathy caused by Bartonella henselae after
       Tick Bite
   - type: Article
-    id: pntd.0007469.ref075
+    id: pntd-0007469-ref075
     authors:
       - type: Person
         familyNames:
@@ -2641,7 +2667,7 @@ references:
       from Dermacentor marginatus ticks in Czechoslovakia. Results of
       preliminary serological identification
   - type: Article
-    id: pntd.0007469.ref076
+    id: pntd-0007469-ref076
     authors:
       - type: Person
         familyNames:
@@ -2677,7 +2703,7 @@ references:
       volumeNumber: 350
     title: A new tick-transmitted disease due to Rickettsia slovaca
   - type: Article
-    id: pntd.0007469.ref077
+    id: pntd-0007469-ref077
     authors:
       - type: Person
         familyNames:
@@ -2698,7 +2724,7 @@ references:
       volumeNumber: 3
     title: Tick-borne rickettsioses in Europe
   - type: Article
-    id: pntd.0007469.ref078
+    id: pntd-0007469-ref078
     authors:
       - type: Person
         familyNames:
@@ -2741,7 +2767,7 @@ references:
       Spotless rickettsiosis caused by Rickettsia slovaca and associated with
       Dermacentor ticks
   - type: Article
-    id: pntd.0007469.ref079
+    id: pntd-0007469-ref079
     authors:
       - type: Person
         familyNames:
@@ -2786,7 +2812,7 @@ references:
       volumeNumber: 11
     title: Tick-borne lymphadenopathy (TIBOLA) acquired in Southwestern Germany
   - type: Article
-    id: pntd.0007469.ref080
+    id: pntd-0007469-ref080
     authors:
       - type: Person
         familyNames:
@@ -2812,7 +2838,7 @@ references:
       volumeNumber: 27
     title: First report of an infection with Rickettsia slovaca
   - type: Article
-    id: pntd.0007469.ref081
+    id: pntd-0007469-ref081
     authors:
       - type: Person
         familyNames:
@@ -2842,7 +2868,7 @@ references:
       volumeNumber: 9
     title: 'First isolation of Rickettsia slovaca from a patient, France'
   - type: Article
-    id: pntd.0007469.ref082
+    id: pntd-0007469-ref082
     authors:
       - type: Person
         familyNames:
@@ -2888,7 +2914,7 @@ references:
       volumeNumber: 1063
     title: 'DEBONEL/TIBOLA: is Rickettsia slovaca the only etiological agent?'
   - type: Article
-    id: pntd.0007469.ref083
+    id: pntd-0007469-ref083
     authors:
       - type: Person
         familyNames:
@@ -2951,7 +2977,7 @@ references:
       Rickettsia raoultii sp. nov., a spotted fever group rickettsia associated
       with Dermacentor ticks in Europe and Russia
   - type: Article
-    id: pntd.0007469.ref084
+    id: pntd-0007469-ref084
     authors:
       - type: Person
         familyNames:
@@ -2992,7 +3018,7 @@ references:
       volumeNumber: 15
     title: Rickettsia slovaca and R. raoultii in tick-borne Rickettsioses
   - type: Article
-    id: pntd.0007469.ref085
+    id: pntd-0007469-ref085
     authors:
       - type: Person
         familyNames:
@@ -3045,7 +3071,7 @@ references:
       Molecular diagnosis of African tick bite fever using eschar swabs in a
       traveller returning from Tanzania
   - type: Article
-    id: pntd.0007469.ref086
+    id: pntd-0007469-ref086
     authors:
       - type: Person
         familyNames:
@@ -3088,7 +3114,7 @@ references:
       Rickettsia africae infection complicated with painful sacral syndrome in
       an Italian traveller returning from Zimbabwe
   - type: Article
-    id: pntd.0007469.ref087
+    id: pntd-0007469-ref087
     authors:
       - type: Person
         familyNames:
@@ -3139,7 +3165,7 @@ references:
       volumeNumber: 92
     title: Rickettsia africae infection in a Japanese traveller with many tick bites
   - type: Article
-    id: pntd.0007469.ref088
+    id: pntd-0007469-ref088
     authors:
       - type: Person
         familyNames:
@@ -3200,7 +3226,7 @@ references:
       volumeNumber: 38
     title: Sub-acute neuropathy in patients with African tick bite fever
   - type: Article
-    id: pntd.0007469.ref089
+    id: pntd-0007469-ref089
     authors:
       - type: Person
         familyNames:
@@ -3238,7 +3264,7 @@ references:
       Ixodes ricinus: vector of a hitherto undescribed spotted fever group agent
       in Switzerland
   - type: Article
-    id: pntd.0007469.ref090
+    id: pntd-0007469-ref090
     authors:
       - type: Person
         familyNames:
@@ -3276,7 +3302,7 @@ references:
       Confirmation that Rickettsia helvetica sp. nov. is a distinct species of
       the spotted fever group of rickettsiae
   - type: Article
-    id: pntd.0007469.ref091
+    id: pntd-0007469-ref091
     authors:
       - type: Person
         familyNames:
@@ -3312,7 +3338,7 @@ references:
       volumeNumber: 6
     title: 'Evidence of Rickettsia helvetica infection in humans, eastern France'
   - type: Article
-    id: pntd.0007469.ref092
+    id: pntd-0007469-ref092
     authors:
       - type: Person
         familyNames:
@@ -3340,7 +3366,7 @@ references:
       Association of Rickettsia helvetica with chronic perimyocarditis in sudden
       cardiac death
   - type: Article
-    id: pntd.0007469.ref093
+    id: pntd-0007469-ref093
     authors:
       - type: Person
         familyNames:
@@ -3398,7 +3424,7 @@ references:
       Fever after a tick bite: clinical manifestations and diagnosis of acute
       tick bite-associated infections in northeastern Switzerland
   - type: Article
-    id: pntd.0007469.ref094
+    id: pntd-0007469-ref094
     authors:
       - type: Person
         familyNames:
@@ -3441,7 +3467,7 @@ references:
       Aneruptive fever associated with antibodies to Rickettsia helvetica in
       Europe and Thailand
   - type: Article
-    id: pntd.0007469.ref095
+    id: pntd-0007469-ref095
     authors:
       - type: Person
         familyNames:
@@ -3459,7 +3485,7 @@ references:
       Septicaemia with Rickettsia helvetica in a patient with acute febrile
       illness, rash and myasthenia
   - type: Article
-    id: pntd.0007469.ref096
+    id: pntd-0007469-ref096
     authors:
       - type: Person
         familyNames:
@@ -3485,7 +3511,7 @@ references:
       Coinfection with Rickettsia helvetica and Herpes Simplex Virus 2 in a
       Young Woman with Meningoencephalitis
   - type: Article
-    id: pntd.0007469.ref097
+    id: pntd-0007469-ref097
     authors:
       - type: Person
         familyNames:
@@ -3511,7 +3537,7 @@ references:
       volumeNumber: 16
     title: 'Rickettsia helvetica in patient with meningitis, Sweden, 2006'
   - type: Article
-    id: pntd.0007469.ref098
+    id: pntd-0007469-ref098
     authors:
       - type: Person
         familyNames:
@@ -3532,7 +3558,7 @@ references:
       volumeNumber: 12
     title: Rickettsial infections of the central nervous system
   - type: Article
-    id: pntd.0007469.ref099
+    id: pntd-0007469-ref099
     authors:
       - type: Person
         familyNames:
@@ -3568,7 +3594,7 @@ references:
       volumeNumber: 344
     title: Fatal murine typhus from Spain
   - type: Article
-    id: pntd.0007469.ref100
+    id: pntd-0007469-ref100
     authors:
       - type: Person
         familyNames:
@@ -3591,7 +3617,7 @@ references:
       A comparative study of the pathology of scrub tyohus (Tsutsugamushi
       disease) and other rickettsial diseases
   - type: Article
-    id: pntd.0007469.ref101
+    id: pntd-0007469-ref101
     authors:
       - type: Person
         familyNames:
@@ -3627,7 +3653,7 @@ references:
       volumeNumber: 91
     title: Rickettsia typhi infection in childhood
   - type: Article
-    id: pntd.0007469.ref102
+    id: pntd-0007469-ref102
     authors:
       - type: Person
         familyNames:
@@ -3658,7 +3684,7 @@ references:
       volumeNumber: 151
     title: Rickettsial meningitis and encephalitis
   - type: Article
-    id: pntd.0007469.ref103
+    id: pntd-0007469-ref103
     authors:
       - type: Person
         familyNames:
@@ -3679,7 +3705,7 @@ references:
       volumeNumber: 136
     title: 'Typhus fever: report of an epidemic in New York City in 1847'
   - type: Article
-    id: pntd.0007469.ref104
+    id: pntd-0007469-ref104
     authors:
       - type: Person
         familyNames:
@@ -3710,7 +3736,7 @@ references:
       volumeNumber: 17
     title: Rickettsia typhi infection presenting as subacute meningitis
   - type: Article
-    id: pntd.0007469.ref105
+    id: pntd-0007469-ref105
     authors:
       - type: Person
         familyNames:
@@ -3738,7 +3764,7 @@ references:
       Clinical and laboratory features of murine typhus in south Texas, 1980
       through 1987
   - type: Article
-    id: pntd.0007469.ref106
+    id: pntd-0007469-ref106
     authors:
       - type: Person
         familyNames:
@@ -3759,7 +3785,7 @@ references:
       volumeNumber: 92
     title: Abducens nerve palsy and meningitis by Rickettsia typhi
   - type: Article
-    id: pntd.0007469.ref107
+    id: pntd-0007469-ref107
     authors:
       - type: Person
         familyNames:
@@ -3787,7 +3813,7 @@ references:
       Rickettsialpox; a newly recognized rickettsial disease; isolation of the
       etiological agent
   - type: Article
-    id: pntd.0007469.ref108
+    id: pntd-0007469-ref108
     authors:
       - type: Person
         familyNames:
@@ -3818,7 +3844,7 @@ references:
       volumeNumber: 49
     title: Spotted fever rickettsioses in southern and eastern Europe
   - type: Article
-    id: pntd.0007469.ref109
+    id: pntd-0007469-ref109
     authors:
       - type: Person
         familyNames:
@@ -3864,7 +3890,7 @@ references:
       volumeNumber: 60
     title: 'Rickettsialpox: report of an outbreak and a contemporary review'
   - type: Article
-    id: pntd.0007469.ref110
+    id: pntd-0007469-ref110
     authors:
       - type: Person
         familyNames:
@@ -3905,7 +3931,7 @@ references:
       volumeNumber: 331
     title: 'Rickettsialpox in a New York City hospital, 1980 to 1989'
   - type: Article
-    id: pntd.0007469.ref111
+    id: pntd-0007469-ref111
     authors:
       - type: Person
         familyNames:
@@ -3936,7 +3962,7 @@ references:
       volumeNumber: 33
     title: Genomic study of Rickettsia akari by pulsed-field gel electrophoresis
   - type: Article
-    id: pntd.0007469.ref112
+    id: pntd-0007469-ref112
     authors:
       - type: Person
         familyNames:
@@ -3984,7 +4010,7 @@ references:
       Isolation of Rickettsia akari from a patient in a region where
       Mediterranean spotted fever is endemic
   - type: Article
-    id: pntd.0007469.ref113
+    id: pntd-0007469-ref113
     authors:
       - type: Person
         familyNames:
@@ -4021,7 +4047,7 @@ references:
       volumeNumber: 16
     title: A case of rickettsialpox in Northern Europe
   - type: Article
-    id: pntd.0007469.ref114
+    id: pntd-0007469-ref114
     authors:
       - type: Person
         familyNames:
@@ -4042,7 +4068,7 @@ references:
       volumeNumber: 10
     title: Rickettsioses as paradigms of new or emerging infectious diseases
   - type: Article
-    id: pntd.0007469.ref115
+    id: pntd-0007469-ref115
     authors:
       - type: Person
         familyNames:
@@ -4062,7 +4088,7 @@ references:
       title: Zootaxa
     title: Ticks of Australia. The species that infest domestic animals and humans
   - type: Article
-    id: pntd.0007469.ref116
+    id: pntd-0007469-ref116
     authors:
       - type: Person
         familyNames:
@@ -4093,7 +4119,7 @@ references:
       volumeNumber: 13
     title: Spotted fever group rickettsial infections in Australia
   - type: Article
-    id: pntd.0007469.ref117
+    id: pntd-0007469-ref117
     authors:
       - type: Person
         familyNames:
@@ -4126,7 +4152,7 @@ references:
       Rickettsia australis and Queensland Tick Typhus: A Rickettsial Spotted
       Fever Group Infection in Australia
   - type: Article
-    id: pntd.0007469.ref118
+    id: pntd-0007469-ref118
     authors:
       - type: Person
         familyNames:
@@ -4160,7 +4186,7 @@ references:
       Clinical Manifestations and Outcomes of Rickettsia australis Infection: A
       15-Year Retrospective Study of Hospitalized Patients
   - type: Article
-    id: pntd.0007469.ref119
+    id: pntd-0007469-ref119
     authors:
       - type: Person
         familyNames:
@@ -4186,7 +4212,7 @@ references:
       volumeNumber: 162
     title: Fatal Queensland tick typhus
   - type: Article
-    id: pntd.0007469.ref120
+    id: pntd-0007469-ref120
     authors:
       - type: Person
         familyNames:
@@ -4217,7 +4243,7 @@ references:
       volumeNumber: 13
     title: 'Severe spotted fever group rickettsiosis, Australia'
   - type: Article
-    id: pntd.0007469.ref121
+    id: pntd-0007469-ref121
     authors:
       - type: Person
         familyNames:
@@ -4243,7 +4269,7 @@ references:
       volumeNumber: 15
     title: 'Rickettsia felis infection in man, France'
   - type: Article
-    id: pntd.0007469.ref122
+    id: pntd-0007469-ref122
     authors:
       - type: Person
         familyNames:
@@ -4271,7 +4297,7 @@ references:
       Rickettsia felis infection in Sweden: report of two cases with subacute
       meningitis and review of the literature
   - type: Article
-    id: pntd.0007469.ref123
+    id: pntd-0007469-ref123
     authors:
       - type: Person
         familyNames:
@@ -4344,7 +4370,7 @@ references:
       Isolation of a novel Orientia species (O. chuto sp. nov.) from a patient
       infected in Dubai
   - type: Article
-    id: pntd.0007469.ref124
+    id: pntd-0007469-ref124
     authors:
       - type: Person
         familyNames:
@@ -4377,7 +4403,7 @@ references:
       Classification of Rickettsia tsutsugamushi in a new genus, Orientia gen.
       nov., as Orientia tsutsugamushi comb. nov
   - type: Article
-    id: pntd.0007469.ref125
+    id: pntd-0007469-ref125
     authors:
       - type: Person
         familyNames:
@@ -4424,7 +4450,7 @@ references:
       issueNumber: 1
     title: Rickettsial Infections and Q Fever Amongst Febrile Patients in Bhutan
   - type: Article
-    id: pntd.0007469.ref126
+    id: pntd-0007469-ref126
     authors:
       - type: Person
         familyNames:
@@ -4457,7 +4483,7 @@ references:
       Clinical Manifestations and Complications of Scrub Typhus: A Hospital
       Based Study from North Eastern India
   - type: Article
-    id: pntd.0007469.ref127
+    id: pntd-0007469-ref127
     authors:
       - type: Person
         familyNames:
@@ -4533,7 +4559,7 @@ references:
       Orientia, rickettsia, and leptospira pathogens as causes of CNS infections
       in Laos: a prospective study
   - type: Article
-    id: pntd.0007469.ref128
+    id: pntd-0007469-ref128
     authors:
       - type: Person
         familyNames:
@@ -4631,7 +4657,7 @@ references:
       Infectious causes of encephalitis and meningoencephalitis in Thailand,
       2003–2005
   - type: Article
-    id: pntd.0007469.ref129
+    id: pntd-0007469-ref129
     authors:
       - type: Person
         familyNames:
@@ -4694,7 +4720,7 @@ references:
       Scrub Typhus as a Cause of Acute Encephalitis Syndrome, Gorakhpur, Uttar
       Pradesh, India
   - type: Article
-    id: pntd.0007469.ref130
+    id: pntd-0007469-ref130
     authors:
       - type: Person
         familyNames:
@@ -4732,7 +4758,7 @@ references:
       Clinical Profile of Scrub Typhus Meningoencephalitis among South Indian
       Children
   - type: Article
-    id: pntd.0007469.ref131
+    id: pntd-0007469-ref131
     authors:
       - type: Person
         familyNames:
@@ -4758,7 +4784,7 @@ references:
       volumeNumber: 48
     title: A case of acute monocytic ehrlichiosis with prominent neurologic signs
   - type: Article
-    id: pntd.0007469.ref132
+    id: pntd-0007469-ref132
     authors:
       - type: Person
         familyNames:
@@ -4802,7 +4828,7 @@ references:
       pageStart: 552
     title: Ehrlichial meningitis with cerebrospinal fluid morulae
   - type: Article
-    id: pntd.0007469.ref133
+    id: pntd-0007469-ref133
     authors:
       - type: Person
         familyNames:
@@ -4828,7 +4854,7 @@ references:
       volumeNumber: 14
     title: Isolated abducens nerve palsy in a patient with scrub typhus
   - type: Article
-    id: pntd.0007469.ref134
+    id: pntd-0007469-ref134
     authors:
       - type: Person
         familyNames:
@@ -4871,7 +4897,7 @@ references:
       Successfully Managed Acute Transverse Myelitis Related to Scrub Typhus and
       Serial Image Findings
   - type: Article
-    id: pntd.0007469.ref135
+    id: pntd-0007469-ref135
     authors:
       - type: Person
         familyNames:
@@ -4914,7 +4940,7 @@ references:
       Ehrlichiosis mimicking thrombotic thrombocytopenic purpura. Case report
       and pathological correlation
   - type: Article
-    id: pntd.0007469.ref136
+    id: pntd-0007469-ref136
     authors:
       - type: Person
         familyNames:
@@ -4962,7 +4988,7 @@ references:
       Epidemiologic, clinical, and laboratory findings of human ehrlichiosis in
       the United States, 1988
   - type: Article
-    id: pntd.0007469.ref137
+    id: pntd-0007469-ref137
     authors:
       - type: Person
         familyNames:
@@ -4988,7 +5014,7 @@ references:
       volumeNumber: 83
     title: Neurologic abnormalities in a patient with human ehrlichiosis
   - type: Article
-    id: pntd.0007469.ref138
+    id: pntd-0007469-ref138
     authors:
       - type: Person
         familyNames:
@@ -5024,7 +5050,7 @@ references:
       volumeNumber: 23
     title: Central nervous system manifestations of human ehrlichiosis
   - type: Article
-    id: pntd.0007469.ref139
+    id: pntd-0007469-ref139
     authors:
       - type: Person
         familyNames:
@@ -5047,7 +5073,7 @@ references:
       Ehrlichia Meningitis Mimicking Aneurysmal Subarachnoid Hemorrhage: A Case
       Study for Medical Decision-Making Heuristics
   - type: Article
-    id: pntd.0007469.ref140
+    id: pntd-0007469-ref140
     authors:
       - type: Person
         familyNames:
@@ -5077,7 +5103,7 @@ references:
       title: Infectious diseases of the nervous system
     title: ''
   - type: Article
-    id: pntd.0007469.ref141
+    id: pntd-0007469-ref141
     authors:
       - type: Person
         familyNames:
@@ -5098,7 +5124,7 @@ references:
       volumeNumber: 17
     title: Fourth nerve palsy caused by Ehrlichia chaffeensis
   - type: Article
-    id: pntd.0007469.ref142
+    id: pntd-0007469-ref142
     authors:
       - type: Person
         familyNames:
@@ -5125,7 +5151,7 @@ references:
       Ehrlichiosis presenting as severe sepsis and meningoencephalitis in an
       immunocompetent adult
   - type: Article
-    id: pntd.0007469.ref143
+    id: pntd-0007469-ref143
     authors:
       - type: Person
         familyNames:
@@ -5151,7 +5177,7 @@ references:
       volumeNumber: 135
     title: Ehrlichiosis optic neuritis
   - type: Article
-    id: pntd.0007469.ref144
+    id: pntd-0007469-ref144
     authors:
       - type: Person
         familyNames:
@@ -5167,7 +5193,7 @@ references:
       volumeNumber: 8
     title: Aseptic meningitis associated with Ehrlichia canis infection
   - type: Article
-    id: pntd.0007469.ref145
+    id: pntd-0007469-ref145
     authors:
       - type: Person
         familyNames:
@@ -5208,7 +5234,7 @@ references:
       volumeNumber: 275
     title: Clinical and laboratory characteristics of human granulocytic ehrlichiosis
   - type: Article
-    id: pntd.0007469.ref146
+    id: pntd-0007469-ref146
     authors:
       - type: Person
         familyNames:
@@ -5239,7 +5265,7 @@ references:
       volumeNumber: 46
     title: Brachial plexopathy associated with human granulocytic ehrlichiosis
   - type: Article
-    id: pntd.0007469.ref147
+    id: pntd-0007469-ref147
     authors:
       - type: Person
         familyNames:
@@ -5269,7 +5295,7 @@ references:
       volumeNumber: 18
     title: 'Manifestation of anaplasmosis as cerebral infarction: a case report'
   - type: Article
-    id: pntd.0007469.ref148
+    id: pntd-0007469-ref148
     authors:
       - type: Person
         familyNames:
@@ -5297,7 +5323,7 @@ references:
       Anaplasma phagocytophilum-infected neutrophils enhance transmigration of
       Borrelia burgdorferi across the human blood brain barrier in vitro
   - type: Article
-    id: pntd.0007469.ref149
+    id: pntd-0007469-ref149
     authors:
       - type: Person
         familyNames:
@@ -5340,7 +5366,7 @@ references:
       spp. in small mammals from natural, suburban and urban areas of Eastern
       Slovakia
   - type: Article
-    id: pntd.0007469.ref150
+    id: pntd-0007469-ref150
     authors:
       - type: Person
         familyNames:
@@ -5388,7 +5414,7 @@ references:
       Dogs as sentinels for distribution of spotted-fever group rickettsiae in
       Slovakia
   - type: Article
-    id: pntd.0007469.ref151
+    id: pntd-0007469-ref151
     authors:
       - type: Person
         familyNames:
@@ -5451,7 +5477,7 @@ references:
       Infection by spotted fever rickettsiae in people, dogs, horses and ticks
       in Londrina, Parana State, Brazil
   - type: Article
-    id: pntd.0007469.ref152
+    id: pntd-0007469-ref152
     authors:
       - type: Person
         familyNames:
@@ -5533,7 +5559,7 @@ references:
       phagocytophilum, haemoplasmas and rickettsiae in water buffalo and deer
       species in Central Europe, Hungary
   - type: Article
-    id: pntd.0007469.ref153
+    id: pntd-0007469-ref153
     authors:
       - type: Person
         familyNames:
@@ -5591,7 +5617,7 @@ references:
       Detection and characterization of a novel spotted fever group Rickettsia
       genotype in Haemaphysalis leporispalustris from California, USA
   - type: Article
-    id: pntd.0007469.ref154
+    id: pntd-0007469-ref154
     authors:
       - type: Person
         familyNames:
@@ -5634,7 +5660,7 @@ references:
       Screening for multiple tick-borne pathogens in Ixodes ricinus ticks from
       birds in Denmark during spring and autumn migration seasons
   - type: Article
-    id: pntd.0007469.ref155
+    id: pntd-0007469-ref155
     authors:
       - type: Person
         familyNames:
@@ -5665,7 +5691,7 @@ references:
       volumeNumber: 8
     title: Epidemic typhus
   - type: Article
-    id: pntd.0007469.ref156
+    id: pntd-0007469-ref156
     authors:
       - type: Person
         familyNames:
@@ -5711,6 +5737,9 @@ references:
       volumeNumber: 18
     title: 'Brill-Zinsser disease in Moroccan man, France, 2011'
 title: Rickettsial infections of the central nervous system
+meta:
+  authorNotes:
+    - The authors have declared that no competing interests exist.
 content:
   - type: Heading
     id: sec001
@@ -5727,7 +5756,7 @@ content:
         migration, and trade, with the risk of importing parasites and vectors
         with the goods [
       - type: Cite
-        target: pntd.0007469.ref001
+        target: pntd-0007469-ref001
         content:
           - '1'
       - >-
@@ -5735,19 +5764,19 @@ content:
         illnesses with a clinical spectrum ranging from a mild febrile illness
         to potentially life-threatening complications [
       - type: Cite
-        target: pntd.0007469.ref002
+        target: pntd-0007469-ref002
         content:
           - '2'
       - ','
       - type: Cite
-        target: pntd.0007469.ref003
+        target: pntd-0007469-ref003
         content:
           - '3'
       - >-
         ]. Rickettsial infections can affect many organs, including the central
         nervous system (CNS) [
       - type: Cite
-        target: pntd.0007469.ref004
+        target: pntd-0007469-ref004
         content:
           - '4'
       - >-
@@ -5755,22 +5784,22 @@ content:
         infections include meningitis, encephalitis, and acute disseminated
         encephalomyelitis [
       - type: Cite
-        target: pntd.0007469.ref005
+        target: pntd-0007469-ref005
         content:
           - '5'
       - ']. However, unilateral facial nerve palsy ['
       - type: Cite
-        target: pntd.0007469.ref006
+        target: pntd-0007469-ref006
         content:
           - '6'
       - '], cerebral infarction ['
       - type: Cite
-        target: pntd.0007469.ref007
+        target: pntd-0007469-ref007
         content:
           - '7'
       - '], or visual loss ['
       - type: Cite
-        target: pntd.0007469.ref008
+        target: pntd-0007469-ref008
         content:
           - '8'
       - >-
@@ -5784,7 +5813,7 @@ content:
         demonstrated to cause a profound morphological deterioration and
         intracellular decrease of ATP [
       - type: Cite
-        target: pntd.0007469.ref009
+        target: pntd-0007469-ref009
         content:
           - '9'
       - >-
@@ -5792,7 +5821,7 @@ content:
         reappear after a relatively long time in the CNS in immunocompromised
         mice, causing a fatal neuroinflammation [
       - type: Cite
-        target: pntd.0007469.ref010
+        target: pntd-0007469-ref010
         content:
           - '10'
       - >-
@@ -5861,7 +5890,7 @@ content:
         12 of which cause CNS R (
       - type: Link
         relation: fig
-        target: '#pntd.0007469.g001'
+        target: '#pntd-0007469-g001'
         content:
           - Fig 1
       - '). To these pathogenic '
@@ -5887,18 +5916,18 @@ content:
       - ' that are phylogenetically closely related and are still often referred to as rickettsiae. Rickettsioses are zoonotic diseases that distributed worldwide ('
       - type: Link
         relation: fig
-        target: '#pntd.0007469.g002'
+        target: '#pntd-0007469-g002'
         content:
           - Fig 2
       - ) in foci of endemicity (
       - type: Link
         relation: table
-        target: '#pntd.0007469.t001'
+        target: '#pntd-0007469-t001'
         content:
           - Table 1
       - '), with sporadic and often seasonal outbreaks ['
       - type: Cite
-        target: pntd.0007469.ref011
+        target: pntd-0007469-ref011
         content:
           - '11'
       - ']. However, '
@@ -5911,13 +5940,13 @@ content:
           - prowazekii
       - ' has the potential to reemerge as outbreaks in human populations living in close proximity and impoverished conditions ['
       - type: Cite
-        target: pntd.0007469.ref012
+        target: pntd-0007469-ref012
         content:
           - '12'
       - '] ('
       - type: Link
         relation: fig
-        target: '#pntd.0007469.g003'
+        target: '#pntd-0007469-g003'
         content:
           - Fig 3
       - ).
@@ -5997,17 +6026,17 @@ content:
             rickettsioses, including the prevalence and species diversity of
             rickettsiae in mammals [
           - type: Cite
-            target: pntd.0007469.ref149
+            target: pntd-0007469-ref149
             content:
               - '149'
           - –
           - type: Cite
-            target: pntd.0007469.ref153
+            target: pntd-0007469-ref153
             content:
               - '153'
           - '] and the dispersion of infected ticks by migratory birds ['
           - type: Cite
-            target: pntd.0007469.ref154
+            target: pntd-0007469-ref154
             content:
               - '154'
           - '].'
@@ -6038,7 +6067,7 @@ content:
               - prowazekii
           - ' is classified as a category B bioterrorism agent. It is stable in dried louse feces and can be transmitted through aerosols. Detection of the pathogen in body lice is crucial for monitoring the transmission risk to humans. However, Brill–Zinsser disease, a relapsing form of epidemic typhus that may develop as sporadic cases up to 40 years after the initial acute infection, is unrelated to louse infestation but to stress or a waning immune system that initiates the reactivation of an earlier and latent infection. Patients developing Brill–Zinsser disease may, in turn, be the source of new outbreaks when conditions facilitate louse infestation and transmission ['
           - type: Cite
-            target: pntd.0007469.ref155
+            target: pntd-0007469-ref155
             content:
               - '155'
           - ']. The mechanism of '
@@ -6051,7 +6080,7 @@ content:
               - prowazekii
           - ' latency has not been established. Brill–Zinsser disease should be considered as a possible diagnosis for acute fever in any patient who has lived in an area where epidemic typhus was endemic ['
           - type: Cite
-            target: pntd.0007469.ref156
+            target: pntd-0007469-ref156
             content:
               - '156'
           - '].'
@@ -6487,7 +6516,7 @@ content:
         with the case-fatality rate for highly virulent rickettsiae ranging from
         2% to 30% [
       - type: Cite
-        target: pntd.0007469.ref013
+        target: pntd-0007469-ref013
         content:
           - '13'
       - >-
@@ -6496,7 +6525,7 @@ content:
         delayed diagnosis, hepatic and renal dysfunction, CNS and lung
         involvement) [
       - type: Cite
-        target: pntd.0007469.ref014
+        target: pntd-0007469-ref014
         content:
           - '14'
       - >-
@@ -6509,7 +6538,7 @@ content:
           - Rickettsia
       - ' sp. exhibited the most drastically reduced and degraded genomes compared with closely related species of milder pathogenesis ['
       - type: Cite
-        target: pntd.0007469.ref015
+        target: pntd-0007469-ref015
         content:
           - '15'
       - '].'
@@ -6530,12 +6559,12 @@ content:
         pathogens to enter the CNS are usually classified according to the
         involved cellular route [
       - type: Cite
-        target: pntd.0007469.ref016
+        target: pntd-0007469-ref016
         content:
           - '16'
       - ','
       - type: Cite
-        target: pntd.0007469.ref017
+        target: pntd-0007469-ref017
         content:
           - '17'
       - >-
@@ -6544,12 +6573,12 @@ content:
         mode), or leukocyte-facilitated in infected phagocytes (which is a
         “Trojan horse”-like mechanism) [
       - type: Cite
-        target: pntd.0007469.ref018
+        target: pntd-0007469-ref018
         content:
           - '18'
       - ','
       - type: Cite
-        target: pntd.0007469.ref019
+        target: pntd-0007469-ref019
         content:
           - '19'
       - >-
@@ -6563,7 +6592,7 @@ content:
         antigen-presenting cells through binding to Toll-like receptors (
       - type: Link
         relation: fig
-        target: '#pntd.0007469.g004'
+        target: '#pntd-0007469-g004'
         content:
           - Fig 4
       - ).
@@ -6604,12 +6633,12 @@ content:
         leukocyte populations and express numerous proteins involved in
         inflammation and the immune response [
       - type: Cite
-        target: pntd.0007469.ref016
+        target: pntd-0007469-ref016
         content:
           - '16'
       - ','
       - type: Cite
-        target: pntd.0007469.ref018
+        target: pntd-0007469-ref018
         content:
           - '18'
       - >-
@@ -6628,12 +6657,12 @@ content:
         administered orally and is sufficient to cure rickettsioses. Treatment
         duration is 7 days or until 2 days after apyrexia is obtained [
       - type: Cite
-        target: pntd.0007469.ref020
+        target: pntd-0007469-ref020
         content:
           - '20'
       - ','
       - type: Cite
-        target: pntd.0007469.ref021
+        target: pntd-0007469-ref021
         content:
           - '21'
       - >-
@@ -6641,12 +6670,12 @@ content:
         chloramphenicol and macrolides (azithromycin, clarithromycin, and
         roxytromycin) can be prescribed for treating rickettsial diseases [
       - type: Cite
-        target: pntd.0007469.ref022
+        target: pntd-0007469-ref022
         content:
           - '22'
       - ','
       - type: Cite
-        target: pntd.0007469.ref023
+        target: pntd-0007469-ref023
         content:
           - '23'
       - >-
@@ -6669,14 +6698,14 @@ content:
         underdiagnosed due to underrecognition and low sensitivity of serologies
         at the time of early symptoms [
       - type: Cite
-        target: pntd.0007469.ref024
+        target: pntd-0007469-ref024
         content:
           - '24'
       - >-
         ]. Therefore, it is difficult for clinicians to recognize the clinical,
         biological, and neuroimaging features of this type of encephalitis [
       - type: Cite
-        target: pntd.0007469.ref025
+        target: pntd-0007469-ref025
         content:
           - '25'
       - '].'
@@ -6697,19 +6726,19 @@ content:
           - rickettsii
       - ', frequently presents with neurological symptoms ['
       - type: Cite
-        target: pntd.0007469.ref026
+        target: pntd-0007469-ref026
         content:
           - '26'
       - ','
       - type: Cite
-        target: pntd.0007469.ref027
+        target: pntd-0007469-ref027
         content:
           - '27'
       - >-
         ]. The CNS notably appears to be one of the major systems involved
         during the latest stages of RMSF pathogenesis [
       - type: Cite
-        target: pntd.0007469.ref028
+        target: pntd-0007469-ref028
         content:
           - '28'
       - '].'
@@ -6722,29 +6751,29 @@ content:
         and back stiffness are common. Delirium or coma alternating with
         restlessness is present during the peak of fever [
       - type: Cite
-        target: pntd.0007469.ref026
+        target: pntd-0007469-ref026
         content:
           - '26'
       - ','
       - type: Cite
-        target: pntd.0007469.ref027
+        target: pntd-0007469-ref027
         content:
           - '27'
       - ','
       - type: Cite
-        target: pntd.0007469.ref029
+        target: pntd-0007469-ref029
         content:
           - '29'
       - –
       - type: Cite
-        target: pntd.0007469.ref031
+        target: pntd-0007469-ref031
         content:
           - '31'
       - >-
         ]. Encephalitis, which may be fatal, is a frequent manifestation in case
         of delayed diagnosis and treatment [
       - type: Cite
-        target: pntd.0007469.ref032
+        target: pntd-0007469-ref032
         content:
           - '32'
       - >-
@@ -6759,12 +6788,12 @@ content:
           - rickettsii
       - ' infection, including hemiplegia, deafness, visual disturbance, slurred speech, mental confusion, and cranial neuropathies that may persist for a few weeks following recovery ['
       - type: Cite
-        target: pntd.0007469.ref033
+        target: pntd-0007469-ref033
         content:
           - '33'
       - –
       - type: Cite
-        target: pntd.0007469.ref037
+        target: pntd-0007469-ref037
         content:
           - '37'
       - '].'
@@ -6777,17 +6806,17 @@ content:
         present. The characteristic microscopic lesions are small round nodules
         composed of elongated microglia, lymphocytes, and endothelial cells [
       - type: Cite
-        target: pntd.0007469.ref029
+        target: pntd-0007469-ref029
         content:
           - '29'
       - ','
       - type: Cite
-        target: pntd.0007469.ref038
+        target: pntd-0007469-ref038
         content:
           - '38'
       - ','
       - type: Cite
-        target: pntd.0007469.ref039
+        target: pntd-0007469-ref039
         content:
           - '39'
       - >-
@@ -6799,7 +6828,7 @@ content:
         presence of nodules may be seen in both the meninges and brain
         parenchyma [
       - type: Cite
-        target: pntd.0007469.ref029
+        target: pntd-0007469-ref029
         content:
           - '29'
       - '].'
@@ -6809,7 +6838,7 @@ content:
         To the best of our knowledge, there is just one report of experimental
         in vitro rickettsial infection of neuronal cells. Joshi and Kovacs [
       - type: Cite
-        target: pntd.0007469.ref040
+        target: pntd-0007469-ref040
         content:
           - '40'
       - '] demonstrated that neurons are efficiently infected by '
@@ -6876,7 +6905,7 @@ content:
           - rickettsii
       - ' infection of endothelial cells as a control for infection and infection-induced apoptotic cell death ['
       - type: Cite
-        target: pntd.0007469.ref040
+        target: pntd-0007469-ref040
         content:
           - '40'
       - '].'
@@ -6884,12 +6913,12 @@ content:
     content:
       - 'The CNS is also a crucial target in other rickettsial diseases ['
       - type: Cite
-        target: pntd.0007469.ref041
+        target: pntd-0007469-ref041
         content:
           - '41'
       - ','
       - type: Cite
-        target: pntd.0007469.ref042
+        target: pntd-0007469-ref042
         content:
           - '42'
       - >-
@@ -6897,7 +6926,7 @@ content:
         technique, during the development of mouse-model studies, that
         rickettsiae reach brain tissues when injected intravenously [
       - type: Cite
-        target: pntd.0007469.ref043
+        target: pntd-0007469-ref043
         content:
           - '43'
       - >-
@@ -6906,7 +6935,7 @@ content:
         infections that may affect the nervous system exhibit pathological and
         clinical changes similar to those of RMSF [
       - type: Cite
-        target: pntd.0007469.ref029
+        target: pntd-0007469-ref029
         content:
           - '29'
       - >-
@@ -6934,17 +6963,17 @@ content:
         . Although usually a benign and self-limiting exanthematous febrile
         illness [
       - type: Cite
-        target: pntd.0007469.ref044
+        target: pntd-0007469-ref044
         content:
           - '44'
       - –
       - type: Cite
-        target: pntd.0007469.ref047
+        target: pntd-0007469-ref047
         content:
           - '47'
       - '], MSF has a fatality rate of 2% to 7% among hospitalized patients ['
       - type: Cite
-        target: pntd.0007469.ref048
+        target: pntd-0007469-ref048
         content:
           - '48'
       - >-
@@ -6953,79 +6982,79 @@ content:
         renal failure, thrombocytopenia, myocarditis, pneumonitis, gastric
         hemorrhage, shock, and multiple organ failure [
       - type: Cite
-        target: pntd.0007469.ref044
+        target: pntd-0007469-ref044
         content:
           - '44'
       - –
       - type: Cite
-        target: pntd.0007469.ref047
+        target: pntd-0007469-ref047
         content:
           - '47'
       - ','
       - type: Cite
-        target: pntd.0007469.ref049
+        target: pntd-0007469-ref049
         content:
           - '49'
       - >-
         ]. Furthermore, a few reports in the literature have described CNS
         involvement in the course of MSF, presenting as meningitis [
       - type: Cite
-        target: pntd.0007469.ref050
+        target: pntd-0007469-ref050
         content:
           - '50'
       - ','
       - type: Cite
-        target: pntd.0007469.ref051
+        target: pntd-0007469-ref051
         content:
           - '51'
       - '], encephalitis ['
       - type: Cite
-        target: pntd.0007469.ref045
+        target: pntd-0007469-ref045
         content:
           - '45'
       - ','
       - type: Cite
-        target: pntd.0007469.ref047
+        target: pntd-0007469-ref047
         content:
           - '47'
       - ','
       - type: Cite
-        target: pntd.0007469.ref049
+        target: pntd-0007469-ref049
         content:
           - '49'
       - ','
       - type: Cite
-        target: pntd.0007469.ref050
+        target: pntd-0007469-ref050
         content:
           - '50'
       - ','
       - type: Cite
-        target: pntd.0007469.ref052
+        target: pntd-0007469-ref052
         content:
           - '52'
       - ','
       - type: Cite
-        target: pntd.0007469.ref053
+        target: pntd-0007469-ref053
         content:
           - '53'
       - '], meningoencephalitis ['
       - type: Cite
-        target: pntd.0007469.ref047
+        target: pntd-0007469-ref047
         content:
           - '47'
       - ','
       - type: Cite
-        target: pntd.0007469.ref054
+        target: pntd-0007469-ref054
         content:
           - '54'
       - –
       - type: Cite
-        target: pntd.0007469.ref056
+        target: pntd-0007469-ref056
         content:
           - '56'
       - '], or myelitis ['
       - type: Cite
-        target: pntd.0007469.ref050
+        target: pntd-0007469-ref050
         content:
           - '50'
       - >-
@@ -7033,12 +7062,12 @@ content:
         suffer sequelae. Sequelae were severe, despite an appropriate
         doxycycline treatment of 200 mg every 12 hours [
       - type: Cite
-        target: pntd.0007469.ref054
+        target: pntd-0007469-ref054
         content:
           - '54'
       - ','
       - type: Cite
-        target: pntd.0007469.ref057
+        target: pntd-0007469-ref057
         content:
           - '57'
       - '].'
@@ -7059,14 +7088,14 @@ content:
           - japonica
       - ', was first reported in 1984 ['
       - type: Cite
-        target: pntd.0007469.ref058
+        target: pntd-0007469-ref058
         content:
           - '58'
       - >-
         ]. This rickettsial disease is characterized by high fever, rash, and
         inoculation eschar at the tick bite site [
       - type: Cite
-        target: pntd.0007469.ref058
+        target: pntd-0007469-ref058
         content:
           - '58'
       - ']. JSF is clinically similar to scrub typhus, caused by '
@@ -7079,34 +7108,34 @@ content:
           - tsutsugamushi
       - ', but often with a more severe course ['
       - type: Cite
-        target: pntd.0007469.ref058
+        target: pntd-0007469-ref058
         content:
           - '58'
       - >-
         ]. CNS involvement is rare, but cases complicated by pneumonia or
         meningoencephalitis have been reported [
       - type: Cite
-        target: pntd.0007469.ref059
+        target: pntd-0007469-ref059
         content:
           - '59'
       - –
       - type: Cite
-        target: pntd.0007469.ref061
+        target: pntd-0007469-ref061
         content:
           - '61'
       - ']. There have been only 5 JSF reported cases with CNS involvement ['
       - type: Cite
-        target: pntd.0007469.ref062
+        target: pntd-0007469-ref062
         content:
           - '62'
       - –
       - type: Cite
-        target: pntd.0007469.ref064
+        target: pntd-0007469-ref064
         content:
           - '64'
       - ']. The first fatal case was reported by Kodama and colleagues in 2002 ['
       - type: Cite
-        target: pntd.0007469.ref065
+        target: pntd-0007469-ref065
         content:
           - '65'
       - >-
@@ -7114,7 +7143,7 @@ content:
         patients with nuchal rigidity and 3 patients with seizures. All patients
         had aseptic meningitis [
       - type: Cite
-        target: pntd.0007469.ref066
+        target: pntd-0007469-ref066
         content:
           - '66'
       - '].'
@@ -7142,12 +7171,12 @@ content:
           - raoultii
       - ' cause a rickettsiosis that has successively been named tick-borne lymphadenopathy (TIBOLA) ['
       - type: Cite
-        target: pntd.0007469.ref067
+        target: pntd-0007469-ref067
         content:
           - '67'
       - –
       - type: Cite
-        target: pntd.0007469.ref069
+        target: pntd-0007469-ref069
         content:
           - '69'
       - '], '
@@ -7156,19 +7185,19 @@ content:
           - Dermacentor
       - '-borne necrosis erythema and lymphadenopathy (DEBONEL) ['
       - type: Cite
-        target: pntd.0007469.ref070
+        target: pntd-0007469-ref070
         content:
           - '70'
       - –
       - type: Cite
-        target: pntd.0007469.ref073
+        target: pntd-0007469-ref073
         content:
           - '73'
       - >-
         ], and then scalp eschar and neck lymphadenopathy after tick bite
         (SENLAT) [
       - type: Cite
-        target: pntd.0007469.ref074
+        target: pntd-0007469-ref074
         content:
           - '74'
       - ']. The first '
@@ -7189,17 +7218,17 @@ content:
           - marginatus
       - ' tick collected in central Slovakia and was initially considered nonpathogenic ['
       - type: Cite
-        target: pntd.0007469.ref067
+        target: pntd-0007469-ref067
         content:
           - '67'
       - ','
       - type: Cite
-        target: pntd.0007469.ref075
+        target: pntd-0007469-ref075
         content:
           - '75'
       - ','
       - type: Cite
-        target: pntd.0007469.ref076
+        target: pntd-0007469-ref076
         content:
           - '76'
       - ']. However, in 1997, '
@@ -7212,14 +7241,14 @@ content:
           - slovaca
       - ' was identified as the cause of a clinical entity combining scalp eschar and neck lymphadenopathy after a tick bite ['
       - type: Cite
-        target: pntd.0007469.ref076
+        target: pntd-0007469-ref076
         content:
           - '76'
       - >-
         ]. After MSF, TIBOLA is nowadays the most prevalent tick-borne
         rickettsiosis in Europe [
       - type: Cite
-        target: pntd.0007469.ref077
+        target: pntd-0007469-ref077
         content:
           - '77'
       - '].'
@@ -7230,7 +7259,7 @@ content:
         inoculation eschar to the scalp, surrounded by a circular erythema, and
         painful regional lymphadenopathies [
       - type: Cite
-        target: pntd.0007469.ref078
+        target: pntd-0007469-ref078
         content:
           - '78'
       - >-
@@ -7240,24 +7269,24 @@ content:
         symptoms are fever, nuchal lymphadenopathy, fatigue, dizziness,
         headache, sweat, myalgia, arthralgia, and loss of appetite [
       - type: Cite
-        target: pntd.0007469.ref068
+        target: pntd-0007469-ref068
         content:
           - '68'
       - ','
       - type: Cite
-        target: pntd.0007469.ref079
+        target: pntd-0007469-ref079
         content:
           - '79'
       - >-
         ]. Symptoms suggestive of acute encephalitis with febrile relapses and a
         persistence of neurasthenic disorders have also been reported [
       - type: Cite
-        target: pntd.0007469.ref068
+        target: pntd-0007469-ref068
         content:
           - '68'
       - ','
       - type: Cite
-        target: pntd.0007469.ref080
+        target: pntd-0007469-ref080
         content:
           - '80'
       - '].'
@@ -7273,12 +7302,12 @@ content:
           - slovaca
       - ' was the first demonstrated agent of TIBOLA ['
       - type: Cite
-        target: pntd.0007469.ref076
+        target: pntd-0007469-ref076
         content:
           - '76'
       - '] and was isolated from a patient ['
       - type: Cite
-        target: pntd.0007469.ref081
+        target: pntd-0007469-ref081
         content:
           - '81'
       - '], other '
@@ -7287,12 +7316,12 @@ content:
           - Rickettsia
       - ' species were suspected to be involved in the disease in Spanish reports ['
       - type: Cite
-        target: pntd.0007469.ref071
+        target: pntd-0007469-ref071
         content:
           - '71'
       - ','
       - type: Cite
-        target: pntd.0007469.ref082
+        target: pntd-0007469-ref082
         content:
           - '82'
       - ']. In 2008, '
@@ -7305,7 +7334,7 @@ content:
           - raoultii
       - ' DNA was detected in a tick taken from the scalp of a patient with TIBOLA ['
       - type: Cite
-        target: pntd.0007469.ref083
+        target: pntd-0007469-ref083
         content:
           - '83'
       - ']. In 2009, Parola and colleagues reported 6 more cases of '
@@ -7318,7 +7347,7 @@ content:
           - raoultii
       - ' infection ['
       - type: Cite
-        target: pntd.0007469.ref084
+        target: pntd-0007469-ref084
         content:
           - '84'
       - ']. To date, '
@@ -7339,7 +7368,7 @@ content:
           - slovaca
       - ' ['
       - type: Cite
-        target: pntd.0007469.ref084
+        target: pntd-0007469-ref084
         content:
           - '84'
       - '].'
@@ -7363,12 +7392,12 @@ content:
         and also the most important rickettsiosis worldwide in terms of numbers
         of cases per year [
       - type: Cite
-        target: pntd.0007469.ref085
+        target: pntd-0007469-ref085
         content:
           - '85'
       - –
       - type: Cite
-        target: pntd.0007469.ref087
+        target: pntd-0007469-ref087
         content:
           - '87'
       - >-
@@ -7377,7 +7406,7 @@ content:
         patients with evidence of long-lasting subacute neuropathy following
         ATBF contracted during a safari to southern Africa [
       - type: Cite
-        target: pntd.0007469.ref088
+        target: pntd-0007469-ref088
         content:
           - '88'
       - >-
@@ -7411,14 +7440,14 @@ content:
           - Ixodes ricinus
       - ' ticks in Switzerland in 1979 ['
       - type: Cite
-        target: pntd.0007469.ref089
+        target: pntd-0007469-ref089
         content:
           - '89'
       - >-
         ], but its description as a distinct species of the SFG was confirmed
         only in 1993 [
       - type: Cite
-        target: pntd.0007469.ref090
+        target: pntd-0007469-ref090
         content:
           - '90'
       - >-
@@ -7434,29 +7463,29 @@ content:
           - helvetica
       - ' infection ['
       - type: Cite
-        target: pntd.0007469.ref091
+        target: pntd-0007469-ref091
         content:
           - '91'
       - >-
         ]. Human cases have been reported in several European countries, e.g.,
         Sweden [
       - type: Cite
-        target: pntd.0007469.ref092
+        target: pntd-0007469-ref092
         content:
           - '92'
       - '] (proven by PCR and DNA sequencing), France ['
       - type: Cite
-        target: pntd.0007469.ref091
+        target: pntd-0007469-ref091
         content:
           - '91'
       - '], Switzerland ['
       - type: Cite
-        target: pntd.0007469.ref093
+        target: pntd-0007469-ref093
         content:
           - '93'
       - '], and Italy ['
       - type: Cite
-        target: pntd.0007469.ref094
+        target: pntd-0007469-ref094
         content:
           - '94'
       - >-
@@ -7464,12 +7493,12 @@ content:
         disease has been reported and may be associated with severe symptoms
         such as CNS disorders [
       - type: Cite
-        target: pntd.0007469.ref095
+        target: pntd-0007469-ref095
         content:
           - '95'
       - ','
       - type: Cite
-        target: pntd.0007469.ref096
+        target: pntd-0007469-ref096
         content:
           - '96'
       - >-
@@ -7484,7 +7513,7 @@ content:
           - helvetica
       - ' was even cultured from a patient with subacute meningitis ['
       - type: Cite
-        target: pntd.0007469.ref097
+        target: pntd-0007469-ref097
         content:
           - '97'
       - '].'
@@ -7519,12 +7548,12 @@ content:
         symptoms are similar to the primary infection, although generally milder
         [
       - type: Cite
-        target: pntd.0007469.ref029
+        target: pntd-0007469-ref029
         content:
           - '29'
       - ','
       - type: Cite
-        target: pntd.0007469.ref098
+        target: pntd-0007469-ref098
         content:
           - '98'
       - '].'
@@ -7553,43 +7582,43 @@ content:
         in refugee camps, and a fatal case in the United Kingdom was infected in
         Spain [
       - type: Cite
-        target: pntd.0007469.ref099
+        target: pntd-0007469-ref099
         content:
           - '99'
       - >-
         ]. There is a considerable variability in the frequency of neurological
         manifestations of murine typhus, ranging from 2% to 20% of cases [
       - type: Cite
-        target: pntd.0007469.ref100
+        target: pntd-0007469-ref100
         content:
           - '100'
       - ','
       - type: Cite
-        target: pntd.0007469.ref101
+        target: pntd-0007469-ref101
         content:
           - '101'
       - >-
         ]. Headache is common, but meningitis and encephalitis are occasionally
         reported [
       - type: Cite
-        target: pntd.0007469.ref102
+        target: pntd-0007469-ref102
         content:
           - '102'
       - >-
         ]. Mental confusion, seizures, stupor, and ataxia may occur infrequently
         [
       - type: Cite
-        target: pntd.0007469.ref101
+        target: pntd-0007469-ref101
         content:
           - '101'
       - ','
       - type: Cite
-        target: pntd.0007469.ref103
+        target: pntd-0007469-ref103
         content:
           - '103'
       - –
       - type: Cite
-        target: pntd.0007469.ref105
+        target: pntd-0007469-ref105
         content:
           - '105'
       - >-
@@ -7605,12 +7634,12 @@ content:
           - typhi
       - ' infection. No neurologic sequellae have been reported in the past ['
       - type: Cite
-        target: pntd.0007469.ref029
+        target: pntd-0007469-ref029
         content:
           - '29'
       - ','
       - type: Cite
-        target: pntd.0007469.ref042
+        target: pntd-0007469-ref042
         content:
           - '42'
       - ']. However, recently, an abducens nerve palsy and meningitis induced by '
@@ -7623,7 +7652,7 @@ content:
           - typhi
       - ' has been described ['
       - type: Cite
-        target: pntd.0007469.ref106
+        target: pntd-0007469-ref106
         content:
           - '106'
       - '].'
@@ -7641,7 +7670,7 @@ content:
     content:
       - 'Rickettsialpox was first described in 1946 in New York City, New York ['
       - type: Cite
-        target: pntd.0007469.ref107
+        target: pntd-0007469-ref107
         content:
           - '107'
       - ']. The etiological agent is '
@@ -7658,17 +7687,17 @@ content:
           - Liponyssoides sanguineus
       - ' ['
       - type: Cite
-        target: pntd.0007469.ref108
+        target: pntd-0007469-ref108
         content:
           - '108'
       - ']. Rickettsialpox is still occurring in the state of New York ['
       - type: Cite
-        target: pntd.0007469.ref109
+        target: pntd-0007469-ref109
         content:
           - '109'
       - ','
       - type: Cite
-        target: pntd.0007469.ref110
+        target: pntd-0007469-ref110
         content:
           - '110'
       - '], and European cases of '
@@ -7681,17 +7710,17 @@ content:
           - akari
       - ' infection were reported in Ukraine ['
       - type: Cite
-        target: pntd.0007469.ref111
+        target: pntd-0007469-ref111
         content:
           - '111'
       - '], Croatia ['
       - type: Cite
-        target: pntd.0007469.ref112
+        target: pntd-0007469-ref112
         content:
           - '112'
       - '], and Northern Europe ['
       - type: Cite
-        target: pntd.0007469.ref113
+        target: pntd-0007469-ref113
         content:
           - '113'
       - ']. Clinical signs of '
@@ -7704,7 +7733,7 @@ content:
           - akari
       - ' infection develop about 7 to 10 days after an infected bite. At the mite inoculation site, a vesicle appears, which dries up, leaving a scar. High fever (≤39.4 °C) occurs suddenly, along with severe headache and myalgias (especially in the back). A generalized papular rash develops, which can also be vesicular, resembling chickenpox. Other signs of the disease include regional lymphadenopathy, nausea, and neurological symptoms such as meningitis, photophobia, dizziness, eye movement, and neck stiffness. The disease is self-limiting, usually without complications, but myalgias and headache may persist for 2 more weeks after the rash ['
       - type: Cite
-        target: pntd.0007469.ref114
+        target: pntd-0007469-ref114
         content:
           - '114'
       - '].'
@@ -7730,7 +7759,7 @@ content:
           - Ixodes
       - ' spp. ticks, which are predominantly present along the eastern coast of Australia ['
       - type: Cite
-        target: pntd.0007469.ref115
+        target: pntd-0007469-ref115
         content:
           - '115'
       - >-
@@ -7746,12 +7775,12 @@ content:
           - australis
       - ' shares many clinical features with rickettsialpox. Acute infections often begin with high-grade fever, headache, myalgias, and a maculopapular rash after a short incubation period averaging 5 days ['
       - type: Cite
-        target: pntd.0007469.ref116
+        target: pntd-0007469-ref116
         content:
           - '116'
       - ','
       - type: Cite
-        target: pntd.0007469.ref117
+        target: pntd-0007469-ref117
         content:
           - '117'
       - >-
@@ -7759,7 +7788,7 @@ content:
         multiorgan failure, requiring prolonged hospitalization and admission to
         intensive care [
       - type: Cite
-        target: pntd.0007469.ref118
+        target: pntd-0007469-ref118
         content:
           - '118'
       - ']. Since '
@@ -7772,21 +7801,21 @@ content:
           - australis
       - ' was first isolated in 1946, there has been one reported fatal QTT case ['
       - type: Cite
-        target: pntd.0007469.ref119
+        target: pntd-0007469-ref119
         content:
           - '119'
       - >-
         ]. Less common manifestations of QTT include splenomegaly, abdominal
         pain, renal failure, dry cough, and conjunctivitis [
       - type: Cite
-        target: pntd.0007469.ref120
+        target: pntd-0007469-ref120
         content:
           - '120'
       - >-
         ]. Some reports documented confusion, seizures, and hallucinations as
         features of the disease [
       - type: Cite
-        target: pntd.0007469.ref116
+        target: pntd-0007469-ref116
         content:
           - '116'
       - '].'
@@ -7811,12 +7840,12 @@ content:
           - Ctenocephalides felis
       - ' fleas. Patients often present with elevated fever, headache, and myalgia. A cutaneous rash is inconstant. Other manifestations may include abdominal pain, nausea, vomiting, cough, eschar, and photophobia. Rare cases of neurological involvement have been reported, notably, hearing loss and subacute meningitis ['
       - type: Cite
-        target: pntd.0007469.ref121
+        target: pntd-0007469-ref121
         content:
           - '121'
       - ','
       - type: Cite
-        target: pntd.0007469.ref122
+        target: pntd-0007469-ref122
         content:
           - '122'
       - '].'
@@ -7849,7 +7878,7 @@ content:
           - chuto
       - ' ['
       - type: Cite
-        target: pntd.0007469.ref123
+        target: pntd-0007469-ref123
         content:
           - '123'
       - >-
@@ -7860,19 +7889,19 @@ content:
           - Rickettsia
       - ' species ['
       - type: Cite
-        target: pntd.0007469.ref124
+        target: pntd-0007469-ref124
         content:
           - '124'
       - ','
       - type: Cite
-        target: pntd.0007469.ref125
+        target: pntd-0007469-ref125
         content:
           - '125'
       - >-
         ]. Scrub typhus is a common cause of febrile illness in Asia. Fever and
         headache are the most common features of scrub typhus [
       - type: Cite
-        target: pntd.0007469.ref126
+        target: pntd-0007469-ref126
         content:
           - '126'
       - >-
@@ -7882,12 +7911,12 @@ content:
         disease, e. g., in Laos and Thailand, where meningitis and
         meningoencephalitis occur as severe complications [
       - type: Cite
-        target: pntd.0007469.ref127
+        target: pntd-0007469-ref127
         content:
           - '127'
       - ','
       - type: Cite
-        target: pntd.0007469.ref128
+        target: pntd-0007469-ref128
         content:
           - '128'
       - >-
@@ -7902,12 +7931,12 @@ content:
           - tsutsugamushi
       - ' were also recently described ['
       - type: Cite
-        target: pntd.0007469.ref129
+        target: pntd-0007469-ref129
         content:
           - '129'
       - ','
       - type: Cite
-        target: pntd.0007469.ref130
+        target: pntd-0007469-ref130
         content:
           - '130'
       - '].'
@@ -7945,19 +7974,19 @@ content:
           - chaffeensis
       - ', is not rare ['
       - type: Cite
-        target: pntd.0007469.ref131
+        target: pntd-0007469-ref131
         content:
           - '131'
       - –
       - type: Cite
-        target: pntd.0007469.ref139
+        target: pntd-0007469-ref139
         content:
           - '139'
       - >-
         ]. Severe headache and symptoms of meningeal irritation are present in
         as many as 10% of cases [
       - type: Cite
-        target: pntd.0007469.ref140
+        target: pntd-0007469-ref140
         content:
           - '140'
       - >-
@@ -7966,22 +7995,22 @@ content:
         optic neuritis, seizures, and demyelinating polyneuropathy have been
         reported [
       - type: Cite
-        target: pntd.0007469.ref137
+        target: pntd-0007469-ref137
         content:
           - '137'
       - ','
       - type: Cite
-        target: pntd.0007469.ref138
+        target: pntd-0007469-ref138
         content:
           - '138'
       - ','
       - type: Cite
-        target: pntd.0007469.ref141
+        target: pntd-0007469-ref141
         content:
           - '141'
       - –
       - type: Cite
-        target: pntd.0007469.ref143
+        target: pntd-0007469-ref143
         content:
           - '143'
       - ']. In addition, '
@@ -7994,7 +8023,7 @@ content:
           - canis
       - ' was detected in a child with aseptic meningitis ['
       - type: Cite
-        target: pntd.0007469.ref144
+        target: pntd-0007469-ref144
         content:
           - '144'
       - '].'
@@ -8009,7 +8038,7 @@ content:
           - phagocytophilum
       - ' appears to be a rare agent of CNS infections ['
       - type: Cite
-        target: pntd.0007469.ref145
+        target: pntd-0007469-ref145
         content:
           - '145'
       - >-
@@ -8024,12 +8053,12 @@ content:
           - phagocytophilum
       - ' infection were reported ['
       - type: Cite
-        target: pntd.0007469.ref146
+        target: pntd-0007469-ref146
         content:
           - '146'
       - ','
       - type: Cite
-        target: pntd.0007469.ref147
+        target: pntd-0007469-ref147
         content:
           - '147'
       - ']. In addition, '
@@ -8046,7 +8075,7 @@ content:
           - Borrelia burgdorferi
       - ' across the human blood–brain barrier in vitro ['
       - type: Cite
-        target: pntd.0007469.ref148
+        target: pntd-0007469-ref148
         content:
           - '148'
       - '].'

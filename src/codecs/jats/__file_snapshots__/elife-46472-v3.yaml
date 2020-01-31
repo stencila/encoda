@@ -126,9 +126,15 @@ authors:
     givenNames:
       - Tamara
       - J
+dateAccepted:
+  type: Date
+  value: '2019-07-04'
 datePublished:
   type: Date
   value: '2019-07-09'
+dateReceived:
+  type: Date
+  value: '2019-02-28'
 description:
   - type: Paragraph
     content:
@@ -191,22 +197,106 @@ editors:
       - Flint
     givenNames:
       - Jonathan
-funders:
-  - type: Organization
-    name: National Institute on Drug Abuse
-  - type: Organization
-    name: Department of Veterans Affairs
-  - type: Organization
-    name: Oregon Health & Science University
-  - type: Organization
-    name: U.S. Department of Veterans Affairs
-  - type: Organization
-    name: University of Tennessee Center for Integrative and Translational Science
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: National Institute on Drug Abuse
+    identifiers:
+      - type: PropertyValue
+        value: R01 DA046081
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: National Institute on Drug Abuse
+    identifiers:
+      - type: PropertyValue
+        value: P50 DA018165
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: National Institute on Drug Abuse
+    identifiers:
+      - type: PropertyValue
+        value: U01 DA041579
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: National Institute on Drug Abuse
+    identifiers:
+      - type: PropertyValue
+        value: P30 DA044223
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Department of Veterans Affairs
+    identifiers:
+      - type: PropertyValue
+        value: I01BX002106
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Department of Veterans Affairs
+    identifiers:
+      - type: PropertyValue
+        value: I01BX002758
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Department of Veterans Affairs
+    identifiers:
+      - type: PropertyValue
+        value: I01BX003279
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Oregon Health & Science University
+    identifiers:
+      - type: PropertyValue
+        value: University Shared Resource award
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: U.S. Department of Veterans Affairs
+    identifiers:
+      - type: PropertyValue
+        value: Research Career Scientist Program - Career Scientist award
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: >-
+          University of Tennessee Center for Integrative and Translational
+          Science
+    identifiers:
+      - type: PropertyValue
+        value: Center support
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: '46472'
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.7554/eLife.46472
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e46472
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: elife
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: eLife
+    issns:
       - 2050-084X
     publisher:
       type: Organization
@@ -3395,6 +3485,9 @@ title:
   - type: Emphasis
     content:
       - Oprm1
+meta:
+  authorNotes:
+    - †These authors contributed equally to this work
 content:
   - type: Heading
     id: s1

@@ -24,9 +24,15 @@ authors:
     givenNames:
       - Sacri
       - R
+dateAccepted:
+  type: Date
+  value: '2019-02-15'
 datePublished:
   type: Date
   value: '2019-02-19'
+dateReceived:
+  type: Date
+  value: '2019-02-15'
 description:
   - type: Paragraph
     content:
@@ -35,11 +41,33 @@ description:
         content:
           - lnc-NR2F1
       - ' regulates several neuronal genes, including some involved in autism and intellectual disabilities.'
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: '45123'
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.7554/eLife.45123
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e45123
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: elife
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: eLife
+    issns:
       - 2050-084X
     publisher:
       type: Organization
@@ -657,6 +685,7 @@ references:
       volumeNumber: 49
     title: Aberrant expression of long noncoding RNAs in autistic brain
 title: Beyond protein-coding genes
+meta: {}
 content:
   - type: Paragraph
     content:

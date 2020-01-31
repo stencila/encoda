@@ -133,6 +133,9 @@ authors:
       - Stoner
     givenNames:
       - Michael
+dateAccepted:
+  type: Date
+  value: '2018-10-15'
 datePublished:
   type: Date
   value: '2018-10-17'
@@ -156,16 +159,40 @@ description:
         draft as to how to represent these materials in the JATS and Crossref
         data models to facilitate the coordination and discoverability of peer
         review materials, and seek feedback on these initial recommendations.
-funders:
-  - type: Organization
-    name: U.S. National Library of Medicine
-  - type: Organization
-    name: Wellcome Trust
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: U.S. National Library of Medicine
+    identifiers: []
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Wellcome Trust
+    identifiers:
+      - type: PropertyValue
+        value: '108758'
+      - type: PropertyValue
+        value: 098321
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.12688/f1000research.16460.1
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: '1655'
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: F1000Research
+    issns:
       - 2046-1402
     publisher:
       type: Organization
@@ -244,6 +271,12 @@ references:
       What is open peer review? A systematic review [version 2; referees: 4
       approved].
 title: Publishing peer review materials
+meta:
+  authorNotes:
+    - '*Equal contribution'
+    - >-
+      Competing interests: Michael Evans is the Production Manager for F1000
+      Platforms, but was not involved in the production of this manuscript.
 content:
   - type: Heading
     id: ''

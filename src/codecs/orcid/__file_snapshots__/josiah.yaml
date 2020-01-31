@@ -4,10 +4,18 @@ affiliations:
   - type: Organization
     alternateNames:
       - Psychoceramics
+    identifiers:
+      - type: PropertyValue
+        propertyID: RINGGOLD
+        value: 5468
     name: Wesleyan University
   - type: Organization
     alternateNames:
       - Psychoceramics
+    identifiers:
+      - type: PropertyValue
+        propertyID: RINGGOLD
+        value: 6752
     name: Brown University
 alternateNames:
   - Josiah Stinkney Carberry
@@ -17,4 +25,8 @@ familyNames:
   - Carberry
 givenNames:
   - Josiah
+identifiers:
+  - type: PropertyValue
+    propertyID: Scopus Author ID
+    value: 7007156898
 url: 'http://library.brown.edu/about/hay/carberry.php'

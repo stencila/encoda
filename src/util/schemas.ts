@@ -85,7 +85,16 @@ export async function readSchema<Key extends keyof stencila.Types>(
     const schema = await fs.readJSON(
       path.join(schemasPath, `${type}.schema.json`)
     )
+
+    // The $async keyword and in any definitions schemas
+    // See https://github.com/epoberezkin/ajv/issues/647#issuecomment-350494536
     schema.$async = true
+    if (schema.definitions !== undefined) {
+      for (const definition of Object.values(schema.definitions)) {
+        if (typeof definition === 'object') (definition as any).$async = true
+      }
+    }
+
     schemas.set(type, schema)
     return schema
   } catch (error) {
@@ -96,7 +105,7 @@ export async function readSchema<Key extends keyof stencila.Types>(
 }
 
 /**
- * Get a schema base don its name
+ * Get a schema based on its name
  */
 export async function getSchema<Key extends keyof stencila.Types>(
   type: Key

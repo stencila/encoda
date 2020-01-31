@@ -131,9 +131,15 @@ authors:
     givenNames:
       - Timothy
       - M
+dateAccepted:
+  type: Date
+  value: '2017-11-16'
 datePublished:
   type: Date
   value: '2018-01-09'
+dateReceived:
+  type: Date
+  value: '2017-07-10'
 description:
   - type: Paragraph
     content:
@@ -177,14 +183,39 @@ editors:
     givenNames:
       - Michael
       - R
-funders:
-  - type: Organization
-    name: Laura and John Arnold Foundation
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Laura and John Arnold Foundation
+    identifiers: []
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: '30274'
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.7554/eLife.30274
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e30274
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: elife
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: eLife
+    issns:
       - 2050-084X
     publisher:
       type: Organization
@@ -2270,6 +2301,7 @@ references:
 title: >-
   Replication Study: Transcriptional amplification in tumor cells with elevated
   c-Myc
+meta: {}
 content:
   - type: Heading
     id: s1

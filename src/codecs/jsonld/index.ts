@@ -2,16 +2,16 @@
  * @module jsonld
  */
 
-import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
+import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import jsonld from 'jsonld'
 import path from 'path'
-import { Codec } from '../types'
 import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
-import transform from '../../util/transform'
+import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
+import { Codec } from '../types'
 
 const log = getLogger('encoda:jsonld')
 
@@ -94,40 +94,18 @@ export class JsonLdCodec extends Codec implements Codec {
     const { '@context': context, '@reverse': reverse, ...rest } = compacted
 
     // Transform tree to better match Stencila schema
-    const transformed = await transform(rest, node => {
+    const transformed = await transformSync(rest, node => {
       if (!stencila.isPrimitive(node)) {
         const type = stencila.nodeType(node)
-        if (type === 'parray') {
-          // Unwrap an array of `PropertyValue` or `QuantitativeValue` nodes
-          // into a plain object
-          const array = node as any[]
-          const entries = array
-            .map(item => {
-              const { type, name, value, ...rest } = item
-              if (type === 'PropertyValue' || type === 'QuantitativeValue') {
-                if (name !== undefined) {
-                  return {
-                    [name]:
-                      value !== undefined && Object.keys(rest).length === 0
-                        ? value
-                        : { value, ...rest }
-                  }
-                }
-              }
-              return {}
-            })
-            .reduce((prev, curr) => ({ ...prev, curr }))
-          return Object.keys(entries).length === array.length ? entries : node
-        } else if (type === 'PropertyValue' || type === 'QuantitativeValue') {
-          // Unwrap a singleton `StructuredValue` into a primitive node
-          // or a plain object
+        if (type === 'Date') {
+          // The `jsonld` package uses `@value` for these types.
+          // e.g. `{ type: 'Date', '@value': '2008-01-25' }`
+          // So rename that to plain `value`.
           // @ts-ignore
-          const { type, value, ...rest } = node
-          if (value !== undefined && Object.keys(rest).length === 0)
-            return value
-          else return { value, ...rest }
+          const { '@value': value, ...rest } = node
+          return { ...rest, value }
         } else if (type === 'object') {
-          // `jsonld` expands URI strings into an object with an id e.g.
+          // The `jsonld` package expands URI strings into an object with an id e.g.
           //
           //   "url": {
           //     "id": "http://example.org/"

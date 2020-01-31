@@ -33,6 +33,7 @@ import {
 } from '../../util/xml'
 import { Codec } from '../types'
 import { ensureArticle } from '../../util/content/ensureArticle'
+import { isDefined } from '../../util'
 
 const log = getLogger('encoda:jats')
 
@@ -223,6 +224,16 @@ const initialEncodeState = (): EncodeState => ({
 })
 
 /**
+ * Decode an XML element if it is defined.
+ */
+function decodeMaybe<Type extends stencila.Node>(
+  elem: xml.Element | null | undefined,
+  func: (defined: xml.Element) => Type | undefined
+): Type | undefined {
+  return isDefined(elem) ? func(elem) : undefined
+}
+
+/**
  * Decode a JATS `<article>` element to a Stencila `Article`.
  *
  * Extracts front- and back-matter, from `<front>` and
@@ -231,11 +242,17 @@ const initialEncodeState = (): EncodeState => ({
 function decodeArticle(article: xml.Element): stencila.Article {
   const state: DecodeState = initialDecodeState(article)
 
-  const front = decodeFront(child(article, 'front'), state)
-  const back = decodeBack(child(article, 'back'))
+  const { meta: metaFront, ...front } = decodeFront(
+    child(article, 'front'),
+    state
+  )
+  const { meta: metaBack, ...back } = decodeBack(child(article, 'back'))
+  const metaAll = { ...metaFront, ...metaBack }
+  const meta = Object.keys(metaAll).length > 0 ? metaAll : undefined
+
   const content = decodeBody(child(article, 'body'), state)
 
-  return stencila.article({ ...front, ...back, content })
+  return stencila.article({ ...front, ...back, meta, content })
 }
 
 /**
@@ -295,7 +312,9 @@ function decodeFront(
   | 'isPartOf'
   | 'licenses'
   | 'keywords'
-  | 'funders'
+  | 'identifiers'
+  | 'fundedBy'
+  | 'meta'
 > {
   return front === null
     ? {}
@@ -303,12 +322,15 @@ function decodeFront(
         authors: decodeAuthors(front, state),
         editors: decodeEditors(front, state),
         datePublished: decodeDatePublished(front),
+        ...decodeHistory(front),
         title: decodeTitle(first(front, 'article-title'), state),
         description: decodeAbstract(first(front, 'abstract'), state),
         isPartOf: decodeIsPartOf(front),
         licenses: decodeLicenses(front, state),
         keywords: decodeKeywords(front),
-        funders: decodeFunders(front)
+        identifiers: decodeIdentifiers(front),
+        fundedBy: decodeFunding(front),
+        meta: decodeMetaFront(front)
       }
 }
 
@@ -408,27 +430,34 @@ function decodeDate(date: xml.Element): stencila.Date | undefined {
 }
 
 /**
- * Decode various JATS `<front>` elements (e.g. `<journal-meta>`, `<volume>`) into a Stencila
- * `Article.isPartOf` property.
+ * Decode various JATS `<front>` elements (e.g. `<journal-meta>`, `<volume>`)
+ * into a Stencila `Article.isPartOf` property.
  */
 function decodeIsPartOf(front: xml.Element): stencila.Article['isPartOf'] {
   const journal = first(front, 'journal-meta')
   if (journal === null) return undefined
 
   const title = textOrUndefined(first(journal, 'journal-title'))
-  const issn = all(journal, 'issn')
+  const issns = all(journal, 'issn')
     .map(textOrUndefined)
-    .reduce(
-      (prev: string[], issn) => (issn !== undefined ? [...prev, issn] : prev),
-      []
-    )
+    .filter(isDefined)
+  const identifiers = all(journal, 'journal-id')
+    .map(elem => {
+      const name = attr(elem, 'journal-id-type') ?? undefined
+      const propertyID = encodeIdentifierTypeUri(name)
+      const value = textOrUndefined(elem)
+      if (value !== undefined)
+        return stencila.propertyValue({ name, propertyID, value })
+    })
+    .filter(isDefined)
   const publisher = textOrUndefined(first(journal, 'publisher-name'))
   const volumeNumber = textOrUndefined(first(front, 'volume'))
   return stencila.publicationVolume({
     volumeNumber,
     isPartOf: stencila.periodical({
-      issn,
       title,
+      issns,
+      identifiers,
       publisher:
         publisher !== undefined
           ? stencila.organization({ name: publisher })
@@ -469,28 +498,107 @@ function decodeKeywords(front: xml.Element): stencila.Article['keywords'] {
 }
 
 /**
- * Decode JATS `<award-group>` elements into a Stencila `Article.funders` property.
- *
- * In the long term, it is proposed to use the pending schema.org type `MonetaryGrant`
- * to represent elements such as `<award-id>`. Currently, this ignores such elements
- * and directly links the article to funding organizations through the `funders` property.
+ * Decode JATS `<article-id>` and `<elocation-id>` elements into
+ * a Stencila `Article.identifiers` property.
  */
-function decodeFunders(front: xml.Element): stencila.Article['funders'] {
-  const funders = all(front, 'funding-source')
-  if (funders.length === 0) return undefined
+function decodeIdentifiers(
+  front: xml.Element
+): stencila.Article['identifiers'] {
+  return [
+    ...all(front, 'article-id').map(elem => {
+      const name = attr(elem, 'pub-id-type') ?? undefined
+      const propertyID = encodeIdentifierTypeUri(name)
+      const value = textOrUndefined(elem)
+      if (value !== undefined)
+        return stencila.propertyValue({
+          name,
+          propertyID,
+          value
+        })
+    }),
+    ...all(front, 'elocation-id').map(elem => {
+      const name = 'elocation-id'
+      const propertyID = encodeIdentifierTypeUri(name)
+      const value = textOrUndefined(elem)
+      if (value !== undefined)
+        return stencila.propertyValue({
+          name,
+          propertyID,
+          value
+        })
+    })
+  ].filter(isDefined)
+}
 
-  return funders.reduce((prev: stencila.Organization[], curr) => {
-    let name = textOrUndefined(first(curr, 'institution'))
-    if (name === undefined) name = textOrUndefined(curr)
-    if (name === undefined) return prev
-    // Avoid duplicates
-    for (const org of prev) {
-      if (org.name === name ) return prev
-    }
-    return name !== undefined
-      ? [...prev, stencila.organization({ name })]
-      : prev
-  }, [])
+/**
+ * Decode JATS `<funding-group>` element into a Stencila `Article.fundedBy` property.
+ */
+function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
+  const funding = first(front, 'funding-group')
+  const awards = all(funding, 'award-group')
+  if (awards.length === 0) return undefined
+
+  return awards.map(award => {
+    const identifiers = all(award, 'award-id')
+      .map(id => {
+        const value = textOrUndefined(id)
+        if (value !== undefined) return stencila.propertyValue({ value })
+      })
+      .filter(isDefined)
+
+    const funders = all(award, 'funding-source').reduce(
+      (orgs: stencila.Organization[], org) => {
+        // Prefer <institution>, but fallback to just text content
+        let name = textOrUndefined(first(org, 'institution'))
+        if (name === undefined) name = textOrUndefined(org)
+        if (name === undefined) return orgs
+        // Avoid duplicates
+        for (const org of orgs) {
+          if (org.name === name) return orgs
+        }
+        return [...orgs, stencila.organization({ name })]
+      },
+      []
+    )
+
+    return stencila.monetaryGrant({
+      identifiers,
+      funders
+    })
+  })
+}
+
+/**
+ * Decode dates from the `<history>` of a JATS article into an `Article.date*` properties.
+ */
+function decodeHistory(
+  front: xml.Element
+): Pick<stencila.Article, 'dateReceived' | 'dateAccepted'> {
+  const history = first(front, 'history')
+  return {
+    dateReceived: decodeMaybe<stencila.Date>(
+      child(history, 'date', { 'date-type': 'received' }),
+      decodeDate
+    ),
+    dateAccepted: decodeMaybe<stencila.Date>(
+      child(history, 'date', { 'date-type': 'accepted' }),
+      decodeDate
+    )
+  }
+}
+
+/**
+ * Decode elements from the `<front>` of a JATS article into an `Article.meta` property.
+ */
+function decodeMetaFront(front: xml.Element): stencila.Article['meta'] {
+  // Simply extract all footnotes withing the <author-notes> element as plain text
+  const authorNotes = all(first(front, 'author-notes'), 'fn')
+    .map(textOrUndefined)
+    .filter(isDefined)
+
+  return {
+    authorNotes: authorNotes.length > 0 ? authorNotes : undefined
+  }
 }
 
 /**
@@ -701,7 +809,7 @@ function decodeAff(aff: xml.Element): stencila.Organization {
  */
 function decodeBack(
   back: xml.Element | null
-): Pick<stencila.Article, 'references'> {
+): Pick<stencila.Article, 'references' | 'meta'> {
   if (back === null) return {}
   const references = decodeReferences(first(back, 'ref-list'))
   return { references }
@@ -756,7 +864,7 @@ function encodeReferences(
  */
 function decodeReference(
   elem: xml.Element,
-  refId?: string | null
+  id?: string | null
 ): stencila.CreativeWork {
   const rawAuthors = all(elem, 'name')
   const authors = rawAuthors.length ? rawAuthors.map(decodeName) : []
@@ -794,7 +902,7 @@ function decodeReference(
     }
   }
 
-  if (refId) work.id = refId
+  if (id) work.id = decodeInternalId(id)
 
   return work
 }
@@ -1265,14 +1373,31 @@ function decodeXRef(
 }
 
 /**
+ * Decode a JATS internal identifier.
+ *
+ * This function normalises ids so that if can not be confused with a URL.
+ * This is necessary for issues such as [this](https://github.com/stencila/encoda/pull/399#issuecomment-580391161)
+ * where a `rid` "looked like" a URL and so was treated as such.
+ * The [`rid` (reference to an identifer)](https://jats.nlm.nih.gov/archiving/tag-library/1.1/attribute/rid.html)
+ * attribute is intended to be used for internal identifiers within the document.
+ */
+function decodeInternalId(id: string | null): string {
+  if (id === null) {
+    log.error(`Id is null`)
+    return ''
+  }
+  return id.replace(/\./g, '-')
+}
+
+/**
  * Decode a JATS `<xref>` element to a Stencila `Link`.
  */
 function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: `#${attr(elem, 'rid') ?? ''}`,
-      relation: attr(elem, 'ref-type') ?? undefined
+      target: `#${decodeInternalId(attr(elem, 'rid'))}`,
+      relation: attrOrUndefined(elem, 'ref-type')
     })
   ]
 }
@@ -1285,24 +1410,12 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
  * Reciprocal function of this is `encodeCite`.
  */
 function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
-  const { elements } = elem
-
-  let target = attr(elem, 'rid')
-  if (target === null) {
-    log.error(
-      `A <xref ref-type="bibr"> element is missing "rid" attribute: ${text(
-        elem
-      )}`
-    )
-    target = ''
-  }
-
-  const content =
-    elements !== undefined
-      ? decodeElements(elements, state).filter(stencila.isInlineContent)
-      : undefined
-
-  return [stencila.cite({ content, target })]
+  return [
+    stencila.cite({
+      content: decodeDefault(elem, state).filter(stencila.isInlineContent),
+      target: decodeInternalId(attr(elem, 'rid'))
+    })
+  ]
 }
 
 /**
@@ -1749,4 +1862,20 @@ function decodeCode(elem: xml.Element): [stencila.CodeBlock] {
       programmingLanguage: attr(elem, 'language') ?? undefined
     })
   ]
+}
+
+/**
+ * Encode the name of an identifier type to a URI for use on
+ * a `propertyID` property.
+ *
+ * See [this](https://github.com/ESIPFed/science-on-schema.org/issues/13#issuecomment-577446582)
+ * which recommends:
+ *
+ *   > a schema:propertyId for each identifier that links back to the identifier scheme using
+ *   > URIs drawn from the http://purl.org/spar/datacite/IdentifierScheme vocabulary or from
+ *   > identifiers.org registered prefixes from https://registry.identifiers.org/registry
+ */
+function encodeIdentifierTypeUri(name?: string): string | undefined {
+  if (name === undefined) return undefined
+  return `https://registry.identifiers.org/registry/${name}`
 }

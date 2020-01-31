@@ -94,9 +94,15 @@ authors:
       - Balasubramanian
     givenNames:
       - Shankar
+dateAccepted:
+  type: Date
+  value: '2019-06-17'
 datePublished:
   type: Date
   value: '2019-07-09'
+dateReceived:
+  type: Date
+  value: '2019-03-12'
 description:
   - type: Paragraph
     content:
@@ -127,20 +133,76 @@ editors:
       - Heyer
     givenNames:
       - Wolf-Dietrich
-funders:
-  - type: Organization
-    name: Cancer Research UK
-  - type: Organization
-    name: Royal Society
-  - type: Organization
-    name: Pew Charitable Trusts
-  - type: Organization
-    name: Wellcome
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Cancer Research UK
+    identifiers:
+      - type: PropertyValue
+        value: C14303/A17197
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Cancer Research UK
+    identifiers:
+      - type: PropertyValue
+        value: C9681/A18618
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Cancer Research UK
+    identifiers:
+      - type: PropertyValue
+        value: A21143
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Royal Society
+    identifiers:
+      - type: PropertyValue
+        value: RP130039
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Pew Charitable Trusts
+    identifiers:
+      - type: PropertyValue
+        value: 00028354
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Wellcome
+    identifiers:
+      - type: PropertyValue
+        value: 209441/z/17/z
+identifiers:
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: '46793'
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.7554/eLife.46793
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e46793
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: elife
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: eLife
+    issns:
       - 2050-084X
     publisher:
       type: Organization
@@ -7238,6 +7300,9 @@ references:
       Targeting BRCA1 and BRCA2 deficiencies with G-Quadruplex-Interacting
       compounds
 title: Genetic interactions of G-quadruplexes in humans
+meta:
+  authorNotes:
+    - †These authors contributed equally to this work
 content:
   - type: Heading
     id: s1

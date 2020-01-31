@@ -64,6 +64,9 @@ authors:
     givenNames:
       - Fatima
       - E.
+dateAccepted:
+  type: Date
+  value: '2019-06-07'
 datePublished:
   type: Date
   value: '2019-06-27'
@@ -157,14 +160,33 @@ description:
       - >-
         Precipitation of coldest quarter (BIO19) had the maximum contribution
         for all the three species under investigation.
-funders:
-  - type: Organization
-    name: United Arab Emirates University
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: United Arab Emirates University
+    identifiers:
+      - type: PropertyValue
+        value: 31S347
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.12688/f1000research.19540.1
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: '978'
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: F1000Research
+    issns:
       - 2046-1402
     publisher:
       type: Organization
@@ -1352,6 +1374,9 @@ references:
     datePublished: '2017'
     title: National Climate Change Plan of the United Arab Emirates 2017-2050
 title: Climate change-induced species distribution modeling in hyper-arid ecosystems
+meta:
+  authorNotes:
+    - No competing interests were disclosed.
 content:
   - type: Heading
     id: ''
