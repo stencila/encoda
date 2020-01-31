@@ -1804,8 +1804,8 @@ function decodeMath(
   const text = elem.innerHTML
   const mathLanguage = 'mathml'
   const display = elem.getAttribute('display')
-  if (display === 'block') return stencila.mathBlock(text, { mathLanguage })
-  else return stencila.mathFragment(text, { mathLanguage })
+  if (display === 'block') return stencila.mathBlock({ text, mathLanguage })
+  else return stencila.mathFragment({ text, mathLanguage })
 }
 
 /**

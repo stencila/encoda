@@ -1108,8 +1108,8 @@ function decodeMath(elem: Pandoc.Math): stencila.Math {
     c: [{ t: mathType }, text]
   } = elem
   return mathType === 'InlineMath'
-    ? stencila.mathFragment(text)
-    : stencila.mathBlock(text)
+    ? stencila.mathFragment({ text })
+    : stencila.mathBlock({ text })
 }
 
 /**

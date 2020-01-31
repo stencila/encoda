@@ -203,8 +203,8 @@ describe('Encode & Decode CodeExpression nodes', () => {
 
 describe('Encode & decode Math nodes', () => {
   const mathml = `<mrow><apply><minus></minus><ci>a</ci><ci>b</ci></apply></mrow>`
-  const frag = stencila.mathFragment(mathml, { mathLanguage: 'mathml' })
-  const block = stencila.mathBlock(mathml, { mathLanguage: 'mathml' })
+  const frag = stencila.mathFragment({ text: mathml, mathLanguage: 'mathml' })
+  const block = stencila.mathBlock({ text: mathml, mathLanguage: 'mathml' })
 
   test('encode', async () => {
     expect(await e(frag)).toBe(`<math display="inline">

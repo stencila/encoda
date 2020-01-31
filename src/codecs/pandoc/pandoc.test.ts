@@ -139,14 +139,18 @@ describe('citations and references', () => {
 })
 
 describe('math', () => {
-  const article = stencila.article([], 'Untitled', {
+  const article = stencila.article({
+    title: 'Untitled',
+    authors: [],
     content: [
-      stencila.paragraph([
-        'Some inline math ',
-        stencila.mathFragment('a'),
-        '. And some block math:'
-      ]),
-      stencila.mathBlock('e = mc^2')
+      stencila.paragraph({
+        content: [
+          'Some inline math ',
+          stencila.mathFragment({ text: 'a' }),
+          '. And some block math:'
+        ]
+      }),
+      stencila.mathBlock({ text: 'e = mc^2' })
     ]
   })
 
