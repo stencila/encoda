@@ -228,7 +228,7 @@ const initialEncodeState = (): EncodeState => ({
  */
 function decodeMaybe<Type extends stencila.Node>(
   elem: xml.Element | null | undefined,
-  func: ((defined: xml.Element) => Type | undefined)
+  func: (defined: xml.Element) => Type | undefined
 ): Type | undefined {
   return isDefined(elem) ? func(elem) : undefined
 }
@@ -539,26 +539,31 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
   if (awards.length === 0) return undefined
 
   return awards.map(award => {
-    const identifiers = all(award, 'award-id').map(id => {
-      const value = textOrUndefined(id)
-      if (value !== undefined) return stencila.propertyValue({ value })
-    }).filter(isDefined)
+    const identifiers = all(award, 'award-id')
+      .map(id => {
+        const value = textOrUndefined(id)
+        if (value !== undefined) return stencila.propertyValue({ value })
+      })
+      .filter(isDefined)
 
-    const funders = all(award, 'funding-source').reduce((orgs: stencila.Organization[], org) => {
-      // Prefer <institution>, but fallback to just text content
-      let name = textOrUndefined(first(org, 'institution'))
-      if (name === undefined) name = textOrUndefined(org)
-      if (name === undefined) return orgs
-      // Avoid duplicates
-      for (const org of orgs) {
-        if (org.name === name) return orgs
-      }
-      return [...orgs, stencila.organization({ name })]
-    }, [])
+    const funders = all(award, 'funding-source').reduce(
+      (orgs: stencila.Organization[], org) => {
+        // Prefer <institution>, but fallback to just text content
+        let name = textOrUndefined(first(org, 'institution'))
+        if (name === undefined) name = textOrUndefined(org)
+        if (name === undefined) return orgs
+        // Avoid duplicates
+        for (const org of orgs) {
+          if (org.name === name) return orgs
+        }
+        return [...orgs, stencila.organization({ name })]
+      },
+      []
+    )
 
     return stencila.monetaryGrant({
       identifiers,
-      funders,
+      funders
     })
   })
 }
@@ -566,11 +571,19 @@ function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
 /**
  * Decode dates from the `<history>` of a JATS article into an `Article.date*` properties.
  */
-function decodeHistory(front: xml.Element): Pick<stencila.Article, 'dateReceived' | 'dateAccepted'> {
+function decodeHistory(
+  front: xml.Element
+): Pick<stencila.Article, 'dateReceived' | 'dateAccepted'> {
   const history = first(front, 'history')
   return {
-    dateReceived: decodeMaybe<stencila.Date>(child(history, 'date', {'date-type': "received"}), decodeDate),
-    dateAccepted: decodeMaybe<stencila.Date>(child(history, 'date', {'date-type': "accepted"}), decodeDate)
+    dateReceived: decodeMaybe<stencila.Date>(
+      child(history, 'date', { 'date-type': 'received' }),
+      decodeDate
+    ),
+    dateAccepted: decodeMaybe<stencila.Date>(
+      child(history, 'date', { 'date-type': 'accepted' }),
+      decodeDate
+    )
   }
 }
 
@@ -851,7 +864,7 @@ function encodeReferences(
  */
 function decodeReference(
   elem: xml.Element,
-  refId?: string | null
+  id?: string | null
 ): stencila.CreativeWork {
   const rawAuthors = all(elem, 'name')
   const authors = rawAuthors.length ? rawAuthors.map(decodeName) : []
@@ -889,7 +902,7 @@ function decodeReference(
     }
   }
 
-  if (refId) work.id = refId
+  if (id) work.id = decodeInternalId(id)
 
   return work
 }
@@ -1360,21 +1373,20 @@ function decodeXRef(
 }
 
 /**
- * Decode a JATS `rid` attribute to an valid id.
+ * Decode a JATS internal identifier.
  *
- * The [`rid` (reference to an identifer)](https://jats.nlm.nih.gov/archiving/tag-library/1.1/attribute/rid.html)
- * attribute is intended to be used for internal identifiers within the document.
- * This function normalises it so that if can not be confused with a URL.
+ * This function normalises ids so that if can not be confused with a URL.
  * This is necessary for issues such as [this](https://github.com/stencila/encoda/pull/399#issuecomment-580391161)
  * where a `rid` "looked like" a URL and so was treated as such.
+ * The [`rid` (reference to an identifer)](https://jats.nlm.nih.gov/archiving/tag-library/1.1/attribute/rid.html)
+ * attribute is intended to be used for internal identifiers within the document.
  */
-function decodeRid(elem: xml.Element): string {
-  const rid = attr(elem, 'rid')
-  if (rid === null) {
-    log.error(`Element is missing "rid" attribute: ${xml.dump(elem)}`)
+function decodeInternalId(id: string | null): string {
+  if (id === null) {
+    log.error(`Id is null`)
     return ''
   }
-  return rid.replace(/\./g, '-')
+  return id.replace(/\./g, '-')
 }
 
 /**
@@ -1384,7 +1396,7 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: `#${decodeRid(elem)}`,
+      target: `#${decodeInternalId(attr(elem, 'rid'))}`,
       relation: attrOrUndefined(elem, 'ref-type')
     })
   ]
@@ -1401,7 +1413,7 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
   return [
     stencila.cite({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: decodeRid(elem)
+      target: decodeInternalId(attr(elem, 'rid'))
     })
   ]
 }
