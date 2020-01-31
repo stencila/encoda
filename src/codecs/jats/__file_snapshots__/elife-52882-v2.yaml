@@ -2368,7 +2368,17 @@ content:
           - Kinematics of spontaneous navigation.
       - type: Paragraph
         content:
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf1"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>75</mml:mn></mml:mrow></mml:math>
           - ' fish, '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf2"><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mn>16</mml:mn><mml:mo>,</mml:mo><mml:mn>147</mml:mn></mml:mrow></mml:mrow></mml:math>
           - ' bouts, mean of 7 trajectories per fish. ('
           - type: Strong
             content:
@@ -2390,7 +2400,15 @@ content:
             content:
               - left
           - ') and definition of the reorientation angle '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf3"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
           - ' at bout index '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf4"><mml:mi>n</mml:mi></mml:math>'
           - ' ('
           - type: Emphasis
             content:
@@ -2400,7 +2418,15 @@ content:
             content:
               - C
           - ') Time-sequence of the fish body orientation '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf5"><mml:mi>α</mml:mi></mml:math>'
           - ' (top). Swim bouts elicit rapid re-orientations. The angular dynamics can thus be represented as a series of discrete reorientation events of various amplitudes '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf6"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
           - ' (color code as in ('
           - type: Strong
             content:
@@ -2414,6 +2440,11 @@ content:
             content:
               - pdf
           - ': probability density function) of reorientations '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf7"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
           - '. The two normal distributions used in the fit with '
           - type: Link
             relation: disp-formula
@@ -2421,7 +2452,17 @@ content:
             content:
               - Equation A1
           - ', weighted by '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf8"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
           - ' and '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf9"><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
           - ', are also displayed in dashed blue lines. ('
           - type: Strong
             content:
@@ -2433,24 +2474,59 @@ content:
             content:
               - bout type
           - ' chain controls the forward scoot ('
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf10"><mml:mi>F</mml:mi></mml:math>'
           - ) versus turning (
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf11"><mml:mi>T</mml:mi></mml:math>'
           - ') state, with transitions rates '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf12"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub></mml:math>
           - ' and '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf13"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:math>
           - '. The '
           - type: Emphasis
             content:
               - side
           - ' chain controls the transitions between left ('
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf14"><mml:mi>L</mml:mi></mml:math>'
           - ) and right (
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf15"><mml:mi>R</mml:mi></mml:math>'
           - >-
             ) headings when the animal is in the turning state, with transition
             rate 
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf16"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
           - . (
           - type: Strong
             content:
               - F
           - ') Mean squared reorientation amplitude of bout '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf17"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
           - ' as a function of the squared amplitude of bout '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf18"><mml:mi>n</mml:mi></mml:math>'
           - ' (grey), and its associated analytical fit (blue, Appendix From behavior to circuit modeling of light-seeking navigation in zebrafish larvae '
           - type: Link
             relation: disp-formula
@@ -2462,7 +2538,15 @@ content:
             content:
               - G
           - ') Average reorientation of bout '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf19"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
           - ' as a function of the reorientation at bout '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: '<mml:math id="inf20"><mml:mi>n</mml:mi></mml:math>'
           - ' (grey), and its associated analytical fit (blue, '
           - type: Link
             relation: disp-formula
@@ -2474,6 +2558,11 @@ content:
             content:
               - H
           - ') Correlation in reorientation angles '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf21"><mml:msub><mml:mi>C</mml:mi><mml:mi>q</mml:mi></mml:msub></mml:math>
           - ' as a function of the number of bouts (grey) and associated fit (blue, '
           - type: Link
             relation: disp-formula
@@ -2485,6 +2574,11 @@ content:
             content:
               - I
           - ') Mean square reorientation (MSR) '
+          - type: MathFragment
+            mathLanguage: mathml
+            text: >-
+              <mml:math
+              id="inf22"><mml:msub><mml:mi>M</mml:mi><mml:mi>q</mml:mi></mml:msub></mml:math>
           - ' as a function of the number of bouts, and associated fit (blue, '
           - type: Link
             relation: disp-formula
@@ -2515,100 +2609,6 @@ content:
               - >-
                 https://github.com/elifesciences-publications/programs_closed-loop_phototaxis
           - ).
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf1"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>75</mml:mn></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf2"><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mn>16</mml:mn><mml:mo>,</mml:mo><mml:mn>147</mml:mn></mml:mrow></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf3"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf4"><mml:mi>n</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf5"><mml:mi>α</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf6"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf7"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf8"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf9"><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf10"><mml:mi>F</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf11"><mml:mi>T</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf12"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>T</mml:mi><mml:mo>→</mml:mo><mml:mi>F</mml:mi></mml:mrow></mml:msub></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf13"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>F</mml:mi><mml:mo>→</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:msub></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf14"><mml:mi>L</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf15"><mml:mi>R</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf16"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf17"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf18"><mml:mi>n</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf19"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: '<mml:math id="inf20"><mml:mi>n</mml:mi></mml:math>'
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf21"><mml:msub><mml:mi>C</mml:mi><mml:mi>q</mml:mi></mml:msub></mml:math>
-      - type: Math
-        mathLanguage: MathML
-        text: >-
-          <mml:math
-          id="inf22"><mml:msub><mml:mi>M</mml:mi><mml:mi>q</mml:mi></mml:msub></mml:math>
     label: Figure 1.
     content:
       - type: ImageObject
@@ -2622,6 +2622,11 @@ content:
         Prior to each phototactic assay, the larva was allowed an ≈8 min-long
         period of spontaneous exploration under uniform and constant
         illumination at maximum intensity 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf23"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>450</mml:mn><mml:mo>⁢</mml:mo><mml:mi>μ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>W</mml:mi></mml:mrow></mml:mrow><mml:mo>.</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
       - >-
         . Such pre-conditioning phases were used to promote light-seeking
         behavior (
@@ -2632,15 +2637,20 @@ content:
       - >-
         ), while enabling the quantification of the basal exploratory kinematics
         for each fish.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf23"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>450</mml:mn><mml:mo>⁢</mml:mo><mml:mi>μ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>W</mml:mi></mml:mrow></mml:mrow><mml:mo>.</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - 'Larval zebrafish navigation is comprised of discrete swim bouts lasting '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf24"><mml:mrow><mml:mi/><mml:mo>≈</mml:mo><mml:mrow><mml:mn>100</mml:mn><mml:mo>⁢</mml:mo><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:mrow></mml:math>
       - ' and interspersed with 1 to 2s-long inter-bout intervals ('
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf25"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - ) during which the fish remains still (
       - type: Cite
         target: bib13
@@ -2652,7 +2662,15 @@ content:
         detected from kinematic parameters. As we are mostly interested in the
         orientational dynamics, we extracted a discrete sequence of
         orientations 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf26"><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - ' measured just before each swimming event '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf27"><mml:mi>n</mml:mi></mml:math>'
       - ' ('
       - type: Link
         relation: fig
@@ -2660,30 +2678,12 @@ content:
         content:
           - Figure 1B–C
       - ') from which we computed the bout-induced reorientation angles '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf28"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>
       - .
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf24"><mml:mrow><mml:mi/><mml:mo>≈</mml:mo><mml:mrow><mml:mn>100</mml:mn><mml:mo>⁢</mml:mo><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf25"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf26"><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf27"><mml:mi>n</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf28"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -2694,11 +2694,31 @@ content:
         content:
           - 'Johnson et al., 2019'
       - '), the statistical distribution of the reorientation angles '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf29"><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
       - ' in such unbiased conditions can be correctly captured by the weighted sum of two zero-mean normal distributions, '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: "<mml:math id=\"inf30\"><mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi class=\"ltx_font_mathcaligraphic\">\U0001D4A9</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi class=\"ltx_font_mathcaligraphic\">\U0001D4A9</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>"
       - >-
         , reflecting the predominance of only two distinct bouts types: turning
         bouts (standard deviation 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf31"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math>
       - ) and forward scoots (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf32"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn></mml:mrow></mml:math>
       - ) (
       - type: Link
         relation: fig
@@ -2713,32 +2733,12 @@ content:
         content:
           - Marques et al. (2018)
       - ' during spontaneous swimming and phototactic tasks. In the absence of a visual bias, the turning bouts and forward scoots were found to be nearly equiprobable, '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf33"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mn>0.41</mml:mn></mml:mrow></mml:math>
       - .
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf29"><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: "<mml:math id=\"inf30\"><mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi class=\"ltx_font_mathcaligraphic\">\U0001D4A9</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi class=\"ltx_font_mathcaligraphic\">\U0001D4A9</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:math>"
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf31"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.6</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf32"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf33"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mn>0.41</mml:mn></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -2763,8 +2763,23 @@ content:
         ). Within this scheme, we analytically derived the dependence in the
         amplitude of successive bouts and thus estimated the forward-to-turn and
         turn-to-forward transition rates, noted 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf34"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf35"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' (all analytical derivations are detailed in Appendix From behavior to circuit modeling of light-seeking navigation in zebrafish larvae). We found that '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf36"><mml:mrow><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>≈</mml:mo><mml:mn>0.8</mml:mn></mml:mrow></mml:math>
       - . This indicates that the probability to trigger a turn (
       - type: Emphasis
         content:
@@ -2774,38 +2789,23 @@ content:
         content:
           - resp.
       - ' turn) bout. For the sake of simplicity, we ignore in the following this modest bias in bout selection and assume that the chaining of forward and turning bout is memory-less by setting '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf37"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf38"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
       - >-
         . We checked, using numerical simulations, that this simplifying
         assumption has no significant impact on the long-term navigational
         dynamics: the results presented in the following, notably the diffusion
         coefficient, remain essentially unchanged when this small correlation in
         bout type selection is taken into account.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf34"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf35"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf36"><mml:mrow><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>≈</mml:mo><mml:mn>0.8</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf37"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf38"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - In line with previous observations (
@@ -2830,6 +2830,11 @@ content:
         ). This orientational motor persistence was accounted for by a second
         Markov chain that set the orientation of turning bouts, and was
         controlled by the rate of flipping direction noted 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf39"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -2845,19 +2850,33 @@ content:
         , although the orientational state is updated at each bout, it only
         governs the direction of turning bouts. When a forward bout is
         triggered, its orientation is thus unbiased.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf39"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
   - type: Paragraph
     content:
       - >-
         This model provides an analytical prediction for the mean reorientation
         angle 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf40"><mml:msub><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo
+          stretchy="false">|</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
       - ' at bout '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf41"><mml:mi>n</mml:mi></mml:math>'
       - ' following a reorientation angle '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf42"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>
       - ' at bout '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf43"><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
       - . This expression was used to fit the experimental data (
       - type: Link
         relation: fig
@@ -2865,11 +2884,19 @@ content:
         content:
           - Figure 1G
       - ') and allowed us to estimate the flipping rate '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf44"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.19</mml:mn></mml:mrow></mml:math>
       - ' (99% confidence bounds ±0.017). We further computed the autocorrelation function of the reorientation angles and the Mean Square Reorientation ('
       - type: Emphasis
         content:
           - MSR
       - ') accumulated after '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf45"><mml:mi>n</mml:mi></mml:math>'
       - ' bouts ('
       - type: Link
         relation: fig
@@ -2887,7 +2914,17 @@ content:
         content:
           - Figure 1I
       - '). As a consequence, the effective rotational diffusivity at long time '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf46"><mml:mrow><mml:msub><mml:mi>D</mml:mi><mml:mrow><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>0.3</mml:mn><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>d</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:math>
       - ' is about twice as large than the value expected for a memory-less random walk (i.e. with '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf47"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:math>
       - ', see dashed line in '
       - type: Link
         relation: fig
@@ -2895,43 +2932,6 @@ content:
         content:
           - Figure 1I
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf40"><mml:msub><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow><mml:mrow><mml:mo
-      stretchy="false">|</mml:mo><mml:mi>δ</mml:mi><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf41"><mml:mi>n</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf42"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf43"><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf44"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.19</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf45"><mml:mi>n</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf46"><mml:mrow><mml:msub><mml:mi>D</mml:mi><mml:mrow><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>0.3</mml:mn><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>d</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf47"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -2942,11 +2942,39 @@ content:
         orientations as a function of the time elapsed between them. To do so,
         we first sorted the turning bouts by selecting the large amplitude
         events (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf48"><mml:mrow><mml:mrow><mml:mo
+          stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>α</mml:mi></mml:mrow><mml:mo
+          stretchy="false">|</mml:mo></mml:mrow><mml:mo>&lt;</mml:mo><mml:mrow><mml:mn>0.22</mml:mn><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:mrow></mml:math>
       - >-
         ). We then binarized their values, based on their leftward or rightward
         orientation, yielding a discrete binary signal 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf49"><mml:mrow><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo>±</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mrow></mml:math>
       - '. We finally computed the mean product '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf50"><mml:mrow><mml:mo
+          stretchy="false">⟨</mml:mo><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>p</mml:mi></mml:msub><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo
+          stretchy="false">⟩</mml:mo></mml:mrow></mml:math>
       - ' for various time intervals '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf51"><mml:mrow><mml:mrow><mml:mi
+          mathvariant="normal">Δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>t</mml:mi><mml:mi>p</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>
       - '. The resulting graph, shown in '
       - type: Link
         relation: fig
@@ -2960,68 +2988,40 @@ content:
         is governed by a hidden two-state continuous-time process. The simplest
         one compatible with our observations is the telegraph process, whose
         transition probability over a small interval 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf52"><mml:mrow><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:math>
       - ' reads '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf53"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:math>
       - ', and whose autocorrelation decays as '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf54"><mml:mrow><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:mrow><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
       - '. Setting '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf55"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mi>m</mml:mi></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mn>0.2</mml:mn><mml:mo>⁢</mml:mo><mml:msup><mml:mi>s</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
       - ', this model correctly captures the '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf56"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - '-dependence of the orientational correlation of bouts.'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math id="inf48"><mml:mrow><mml:mrow><mml:mo
-      stretchy="false">|</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>α</mml:mi></mml:mrow><mml:mo
-      stretchy="false">|</mml:mo></mml:mrow><mml:mo>&lt;</mml:mo><mml:mrow><mml:mn>0.22</mml:mn><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf49"><mml:mrow><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo>±</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math id="inf50"><mml:mrow><mml:mo
-      stretchy="false">⟨</mml:mo><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>p</mml:mi></mml:msub><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo
-      stretchy="false">⟩</mml:mo></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math id="inf51"><mml:mrow><mml:mrow><mml:mi
-      mathvariant="normal">Δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>t</mml:mi><mml:mi>p</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>t</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf52"><mml:mrow><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf53"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf54"><mml:mrow><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:mrow><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf55"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mi>m</mml:mi></mml:mrow><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mn>0.2</mml:mn><mml:mo>⁢</mml:mo><mml:msup><mml:mi>s</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf56"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3044,8 +3044,21 @@ content:
         of the light source (tropotaxis regime). The visual stimulus consisted
         of two uniformly lit half-disks, each covering one visual hemifield. The
         intensity delivered to the left and right eyes, noted 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf57"><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf58"><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:math>
       - ' respectively, were locked onto the fish’s orientation '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf59"><mml:mi>θ</mml:mi></mml:math>'
       - ' relative to the virtual light source ('
       - type: Link
         relation: fig
@@ -3053,9 +3066,27 @@ content:
         content:
           - Figure 2A
       - '): the total intensity ('
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf60"><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:math>
       - ') was maintained constant while the contrast '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf61"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>
       - ' was varied linearly with '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf62"><mml:mi>θ</mml:mi></mml:math>'
       - ', with a mirror symmetry at '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf63"><mml:mrow><mml:mi>π</mml:mi><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -3065,43 +3096,12 @@ content:
       - >-
         ). This dependence was chosen to mimic the presence of a distant source
         located at 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf64"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
       - ' for which the contrast is null.'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf57"><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf58"><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf59"><mml:mi>θ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf60"><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf61"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf62"><mml:mi>θ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf63"><mml:mrow><mml:mi>π</mml:mi><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf64"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
   - type: Collection
     parts:
       - type: Figure
@@ -3114,6 +3114,11 @@ content:
               - Contrast-driven phototaxis as a biased random walk.
           - type: Paragraph
             content:
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf65"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>47</mml:mn></mml:mrow></mml:math>
               - " fish, 18,\_322 bouts, mean of 13 trajectories per fish. All statistical analyses are performed on the first 17 bouts, the first one excluded, for each assay. VS : virtual source. ("
               - type: Strong
                 content:
@@ -3121,14 +3126,35 @@ content:
               - >-
                 ) Stimulus pattern delivered to the larva. The orientation
                 relative to the virtual source is noted 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf66"><mml:mi>θ</mml:mi></mml:math>'
               - . (
               - type: Strong
                 content:
                   - B
               - ') Left and right intensities (top panel) and contrast '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf67"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:math>
               - ' (bottom panel) as a function of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf68"><mml:mi>θ</mml:mi></mml:math>'
               - . The virtual light source is defined by a null contrast (
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf69"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
               - ) and corresponds to a stable point (
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf70"><mml:mrow><mml:mfrac><mml:mrow><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>c</mml:mi></mml:mrow><mml:mrow><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:mfrac><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
               - ). (
               - type: Strong
                 content:
@@ -3140,9 +3166,19 @@ content:
               - >-
                 ) Probability density function (pdf) of orientations for all
                 tested fish (
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf71"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>47</mml:mn></mml:mrow></mml:math>
               - >-
                 ). Significantly biased toward the virtual source (V-test for
                 non-uniformity with specified mean 0, 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf72"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>v</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi></mml:mrow></mml:msub><mml:mo>&lt;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>11</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math>
               - ) (
               - type: Strong
                 content:
@@ -3150,8 +3186,19 @@ content:
               - >-
                 ) Definition of the mean resultant vector v for one fish. The
                 points represent the angular positions 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf73"><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
               - ' of the fish relative to the source. The vector v is defined as '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: "<mml:math id=\"inf74\"><mml:mrow><mml:mtext>\U0001D42F</mml:mtext><mml:mo>=</mml:mo><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo largeop=\"true\" symmetric=\"true\">∑</mml:mo><mml:mrow><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow></mml:mrow></mml:math>"
               - '. The mean angle to the source is '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: "<mml:math id=\"inf75\"><mml:mrow><mml:mi>ϕ</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mi>arg</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mtext>\U0001D42F</mml:mtext><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>"
               - ' ('
               - type: Strong
                 content:
@@ -3161,12 +3208,25 @@ content:
                 content:
                   - G
               - ') Mean reorientation '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf76"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
               - ' per bout as a function of contrast '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf77"><mml:mi>c</mml:mi></mml:math>'
               - ' for all fish. Error bars represent the standard error of the mean. Red line is the linear fit with slope 0.2 rad. ('
               - type: Strong
                 content:
                   - H
               - ) Illustration of the shift in turning distribution (
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf78"><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
               - ) induced by a negative contrast. (
               - type: Strong
                 content:
@@ -3189,86 +3249,26 @@ content:
                 content:
                   - L
               - ') Average reorientation at bout '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf79"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
               - ' as a function of the reorientation at bout '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf80"><mml:mi>n</mml:mi></mml:math>'
               - ' in reinforcing (contrast and previous bout orientation are consistent) or conflicting (contrast and previous bout orientation are in conflict) situations. The dashed line is the analytical prediction in the absence of stimulation. ('
               - type: Strong
                 content:
                   - M
               - ') Probability of switching direction '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf81"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
               - ' as a function of the contrast, in situations of conflict or reinforcement.'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf65"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>47</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf66"><mml:mi>θ</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf67"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf68"><mml:mi>θ</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf69"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf70"><mml:mrow><mml:mfrac><mml:mrow><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>c</mml:mi></mml:mrow><mml:mrow><mml:mi>d</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:mfrac><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf71"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>47</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf72"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>v</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi></mml:mrow></mml:msub><mml:mo>&lt;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>11</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf73"><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: "<mml:math id=\"inf74\"><mml:mrow><mml:mtext>\U0001D42F</mml:mtext><mml:mo>=</mml:mo><mml:mrow><mml:mo>|</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mi>N</mml:mi></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo largeop=\"true\" symmetric=\"true\">∑</mml:mo><mml:mrow><mml:mi>exp</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow><mml:mo>|</mml:mo></mml:mrow></mml:mrow></mml:math>"
-          - type: Math
-            mathLanguage: MathML
-            text: "<mml:math id=\"inf75\"><mml:mrow><mml:mi>ϕ</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mi>arg</mml:mi><mml:mo>⁡</mml:mo><mml:mrow><mml:mo stretchy=\"false\">(</mml:mo><mml:mtext>\U0001D42F</mml:mtext><mml:mo stretchy=\"false\">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>"
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf76"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf77"><mml:mi>c</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf78"><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>&lt;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf79"><mml:mrow><mml:mi>n</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf80"><mml:mi>n</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf81"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
         label: Figure 2.
         content:
           - type: ImageObject
@@ -3289,10 +3289,10 @@ content:
           - type: Paragraph
             content:
               - 'Evolution of the mean resultant vector '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf82"><mml:mi>v</mml:mi></mml:math>'
               - ' projected on the direction of the virtual light source with the bout index for the four tested phototactic modalities (uniform illumination : (p1–p3) and stereo-visual contrast). The vertical lines indicate the median number of bouts per sequence in each modality.'
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf82"><mml:mi>v</mml:mi></mml:math>'
         label: Figure 2—figure supplement 1.
         content:
           - type: ImageObject
@@ -3311,20 +3311,20 @@ content:
           - type: Paragraph
             content:
               - 'Slope '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf83"><mml:mi>α</mml:mi></mml:math>'
               - ' of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf84"><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+                  stretchy="false">(</mml:mo><mml:mi>C</mml:mi><mml:mo
+                  stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
               - >-
                 , representing the bias towards the brighter side, at different
                 bout index.
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf83"><mml:mi>α</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf84"><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-              stretchy="false">(</mml:mo><mml:mi>C</mml:mi><mml:mo
-              stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
         label: Figure 2—figure supplement 2.
         content:
           - type: ImageObject
@@ -3341,6 +3341,11 @@ content:
         reference was randomly selected at initiation of each assay. After only
         a few bouts, the animal orientation was found to be statistically biased
         towards 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf85"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
       - ', as shown in '
       - type: Link
         relation: fig
@@ -3356,11 +3361,6 @@ content:
         content:
           - Figure 2E
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf85"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3378,6 +3378,11 @@ content:
         ). In order to mitigate this selection bias, all analyses of stationary
         distributions were restricted to bout indices lower than the median
         number of bouts per trial (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf86"><mml:mrow><mml:mi>N</mml:mi><mml:mo>≤</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:math>
       - >-
         ), and excluding the first bout. Under this condition, we found that
         ~77% of zebrafish larvae display a significant phototactic behavior (
@@ -3398,11 +3403,6 @@ content:
         content:
           - Burgess et al. (2010)
       - ' in actual phototactic assays .'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf86"><mml:mrow><mml:mi>N</mml:mi><mml:mo>≤</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3415,6 +3415,11 @@ content:
         content:
           - Figure 2G
       - ' displays the mean reorientation '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf87"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
       - ' as a function of the instantaneous contrast '
       - type: Emphasis
         content:
@@ -3437,11 +3442,6 @@ content:
       - >-
         ). This effect likely reflects a short term habituation mechanism as the
         overall intensity drops by a factor of 2 at the initiation of the assay.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf87"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3449,6 +3449,11 @@ content:
         the orientational bias, we examined, for all values of the contrast, the
         mean and variance of the two distributions associated with turning bouts
         and forward scoots, as well as the fraction of turning bouts 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf88"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -3478,11 +3483,6 @@ content:
       - >-
         ). These results indicate that the stereo-visual contrast has no impact
         neither on bout type selection nor on bout amplitude.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf88"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3499,7 +3499,15 @@ content:
         contrast tends to evoke a turning bout in a direction opposite to the
         previous one. For each category, we plotted the mean reorientation angle
         at bout 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf89"><mml:mi>n</mml:mi></mml:math>'
       - ' as a function of the reorientation angle at bout '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf90"><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -3509,6 +3517,11 @@ content:
       - >-
         ). We further estimated, for each condition and each value of the
         contrast, the probability of flipping orientation 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf91"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -3516,25 +3529,12 @@ content:
         content:
           - Figure 2M
       - " and Appendix 2). These two graphs show that the stereo-visual contrast continuously modulates the innate motor program by increasing or decreasing the probability of flipping bout orientation from left to right and vice\_versa. Noticeably, in the conflicting situation at maximum contrast, the visual cue and motor persistence almost cancel each other out such that the mean orientation is close to ("
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf92"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>∼</mml:mo><mml:mn>0.4</mml:mn></mml:mrow></mml:math>
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf89"><mml:mi>n</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf90"><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf91"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf92"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>∼</mml:mo><mml:mn>0.4</mml:mn></mml:mrow></mml:math>
   - type: Heading
     id: s2-3
     depth: 2
@@ -3550,8 +3550,21 @@ content:
         total perceived illumination is orientation-dependent (klinotaxis
         regime). We thus imposed a uniform illumination to the fish whose
         intensity 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf93"><mml:mi>I</mml:mi></mml:math>'
       - ' was locked onto the fish orientation '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf94"><mml:mi>θ</mml:mi></mml:math>'
       - ' relative to a virtual light source. We tested three different illumination profiles '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf95"><mml:mrow><mml:mi>I</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mi>θ</mml:mi><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
       - ' as shown in '
       - type: Link
         relation: fig
@@ -3565,19 +3578,6 @@ content:
         content:
           - Figure 3B–E
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf93"><mml:mi>I</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf94"><mml:mi>θ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf95"><mml:mrow><mml:mi>I</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:mi>θ</mml:mi><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:math>
   - type: Collection
     parts:
       - type: Figure
@@ -3592,7 +3592,17 @@ content:
                 illumination.
           - type: Paragraph
             content:
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf96"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>37</mml:mn></mml:mrow></mml:math>
               - ' fish, '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf97"><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mn>26</mml:mn><mml:mo>,</mml:mo><mml:mn>443</mml:mn></mml:mrow></mml:mrow></mml:math>
               - ' bouts, mean of 23 trajectories per fish. ('
               - type: Strong
                 content:
@@ -3600,6 +3610,11 @@ content:
               - >-
                 ) Top panel : Angle-dependent intensity profiles delivered to
                 the larva. The virtual light source is located at 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf98"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
               - ", defined as the point of maximum intensity. The profiles are sinusoidal (uniform 1, purple) or exponentially\_shaped (uniform 2 and 3 orange and yellow,\_respectively). All statistics were computed using bout index two to the median number of bouts per sequence (resp. 27, 17 and 15 for the three profiles). ("
               - type: Strong
                 content:
@@ -3609,9 +3624,29 @@ content:
                 distributions are significantly biased towards the virtual
                 source (V-test for non-uniformity of circular data with
                 specified mean , 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf99"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>v</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub></mml:math>
               - ' respectively '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf100"><mml:msup><mml:mn>9.10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:math>
               - ', '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf101"><mml:msup><mml:mn>2.10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:msup></mml:math>
               - ' and '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf102"><mml:msup><mml:mn>3.10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:math>
               - ).(
               - type: Strong
                 content:
@@ -3621,111 +3656,76 @@ content:
                 content:
                   - F
               - ') Mean reorientation per bout '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf103"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
               - ' of all fish as a function of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf104"><mml:mi>θ</mml:mi></mml:math>'
               - ' for the three profiles. No significant bias towards the source ('
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf105"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
               - ) is observed. (
               - type: Strong
                 content:
                   - G
               - ') Variance of the reorientation angles '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf106"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>θ</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
               - ' as a function of the relative change in intensity experienced at the previous bout '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf107"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
               - . Error bars are standard error of the mean. (
               - type: Strong
                 content:
                   - H
               - ') Standard deviation '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf108"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
               - ' of turning bouts as a function of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf109"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
               - '. The standard deviation of forward scouts was set at '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf110"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
               - ', and '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf111"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
               - ' was then estimated using a double-Gaussian fitting of the bout angles. Error bars are the 99% confidence interval from fit. ('
               - type: Strong
                 content:
                   - I
               - ') Probability of triggering a turning bout as a function of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf112"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
               - . Error bars are the 99% confidence interval from the fit.
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf96"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>37</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf97"><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mrow><mml:mn>26</mml:mn><mml:mo>,</mml:mo><mml:mn>443</mml:mn></mml:mrow></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf98"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf99"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>v</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf100"><mml:msup><mml:mn>9.10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf101"><mml:msup><mml:mn>2.10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:msup></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf102"><mml:msup><mml:mn>3.10</mml:mn><mml:mrow><mml:mo>-</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:msup></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf103"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf104"><mml:mi>θ</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf105"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf106"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>θ</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf107"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf108"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf109"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf110"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf111"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf112"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
         label: Figure 3.
         content:
           - type: ImageObject
@@ -3741,36 +3741,41 @@ content:
             depth: 2
             content:
               - 'Variance of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf113"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:math>
               - ' as a function of three different illumination parameters.'
           - type: Paragraph
             content:
               - >-
                 Testing klinotaxis with spatially uniform illumination
                 (orientational profiles unif 1–3). Change in variance of 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf114"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:math>
               - ' at bout n for two different parameters : absolute intensity '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf115"><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
               - ', absolute change in intensity '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf116"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>
               - ' and relative change in intensity '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf117"><mml:mrow><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mrow></mml:math>
               - .
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf114"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf115"><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf116"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf117"><mml:mrow><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mrow></mml:math>
         label: Figure 3—figure supplement 1.
         content:
           - type: ImageObject
@@ -3797,24 +3802,24 @@ content:
               - >-
                 =12 enucleated zebrafish larvae. No significant change in
                 variance of 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf118"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:math>
               - ' upon decrease of relative difference of intensity. Neutral conditions of control larvae represented with gray dashes. Lower figure : '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf119"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>v</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub></mml:math>
               - ' of two-sample t-tests of the distributions of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf120"><mml:mrow><mml:mo>&lt;</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>θ</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mo>&gt;</mml:mo></mml:mrow></mml:math>
               - ' in the different bins. None of the bins has a significantly different mean value from another.'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf118"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf119"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>v</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf120"><mml:mrow><mml:mo>&lt;</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>θ</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow><mml:mo>&gt;</mml:mo></mml:mrow></mml:math>
         label: Figure 3—figure supplement 2.
         content:
           - type: ImageObject
@@ -3846,8 +3851,21 @@ content:
         ). The use of different profiles allowed us to identify which particular
         feature of the visual stimulus drives this modulation. Although the bout
         amplitude variance was dependent on the intensity 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf121"><mml:mi>I</mml:mi></mml:math>'
       - ' and intensity change '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf122"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
       - ' experienced before the bout, these relationships were found to be inconsistent across the different imposed intensity profiles. In contrast, when plotted as a function of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf123"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
       - ', all curves collapse ('
       - type: Link
         relation: fig
@@ -3868,6 +3886,11 @@ content:
         content:
           - decrement
       - ' (i.e. negative values of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf124"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
       - ). In the terminology of bacterial chemotaxis (
       - type: Cite
         target: bib41
@@ -3879,33 +3902,30 @@ content:
         to a decrease in illumination (corresponding to a negative subjective
         value), whereas its exploratory kinematics remain unchanged upon an
         increase of illumination (positive subjective value).
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf121"><mml:mi>I</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf122"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf123"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf124"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
         Two kinematic parameters can possibly impact the orientational
         diffusivity: the fraction of turning bouts 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf125"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and their characteristic amplitude '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf126"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - >-
         . We thus extracted these two quantities and plotted them as a function
         of 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf127"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -3913,21 +3933,6 @@ content:
         content:
           - Figure 3H–I
       - ). They appear to equally contribute to the observed modulation.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf125"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf126"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf127"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -3948,10 +3953,10 @@ content:
         content:
           - Figure 3—figure supplement 2
       - ', all p-values > 0.14, pairwise '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf128"><mml:mi>T</mml:mi></mml:math>'
       - '-tests).'
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf128"><mml:mi>T</mml:mi></mml:math>'
   - type: Heading
     id: s2-4
     depth: 2
@@ -3984,8 +3989,21 @@ content:
       - >-
         , the rate of flipping orientational state (left-to-right or
         right-to-left) was a linear function of the imposed contrast: 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf129"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>R</mml:mi><mml:mo>→</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>c</mml:mi></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf130"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>l</mml:mi><mml:mo>→</mml:mo><mml:mi>r</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>c</mml:mi></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - '. The value of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf131"><mml:mi>a</mml:mi></mml:math>'
       - ' was set so as to capture the contrast-dependent orientational drift ('
       - type: Link
         relation: fig
@@ -4001,19 +4019,6 @@ content:
         content:
           - Figure 2—figure supplement 2
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf129"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>R</mml:mi><mml:mo>→</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>c</mml:mi></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf130"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>l</mml:mi><mml:mo>→</mml:mo><mml:mi>r</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>c</mml:mi></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf131"><mml:mi>a</mml:mi></mml:math>'
   - type: Collection
     parts:
       - type: Figure
@@ -4097,14 +4102,47 @@ content:
       - >-
         The selection of bout type was in turn linearly modulated by the
         relative change in intensity after negative rectification, 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf132"><mml:mrow><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
+          stretchy="false">(</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>,</mml:mo><mml:mn>0</mml:mn><mml:mo
+          stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - '. Hence, the turn-to-forward and forward-to-turn transition rates read '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf133"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mrow><mml:mi>β</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf134"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mrow><mml:mi>β</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - >-
         , respectively. We also imposed a linear modulation of the turn
         amplitude variance 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf135"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi><mml:mo>⁢</mml:mo><mml:mi>o</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msubsup><mml:mo>-</mml:mo><mml:mrow><mml:mi>γ</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mrow></mml:mrow></mml:math>
       - '. The values of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf136"><mml:mi>β</mml:mi></mml:math>'
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf137"><mml:mi>γ</mml:mi></mml:math>'
       - ' were adjusted to reproduce the observed dependence of the turn-vs-forward ratio and bout amplitude with '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf138"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
       - ' ('
       - type: Link
         relation: fig
@@ -4112,39 +4150,6 @@ content:
         content:
           - Figure 3H–I
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf132"><mml:mrow><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup><mml:mo>=</mml:mo><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
-      stretchy="false">(</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>,</mml:mo><mml:mn>0</mml:mn><mml:mo
-      stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf133"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>→</mml:mo><mml:mi>f</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mrow><mml:mi>β</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf134"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>→</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mrow><mml:mi>β</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf135"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:msubsup><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi><mml:mo>⁢</mml:mo><mml:mi>o</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi></mml:mrow></mml:msubsup><mml:mo>-</mml:mo><mml:mrow><mml:mi>γ</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>-</mml:mo></mml:msup></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf136"><mml:mi>β</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf137"><mml:mi>γ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf138"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -4247,9 +4252,19 @@ content:
         content:
           - Figure 5A
       - ' and the equations governing the network dynamics are provided in Appendix 2. The network consists of two modules selective for leftward and rightward turning, respectively. Recurrent excitation ('
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf139"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
       - >-
         ) drives self-sustained persistent activities over finite periods of
         time. Reciprocal inhibition (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf140"><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub></mml:math>
       - >-
         ) between the left and right modules endows the circuit with an
         antiphasic dynamics. Finally, each ARTR module receives an input current
@@ -4266,16 +4281,6 @@ content:
         content:
           - Wang (2002)
       - .
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf139"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf140"><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub></mml:math>
   - type: Collection
     parts:
       - type: Figure
@@ -4300,7 +4305,17 @@ content:
                 consists of two units whose relative activation controls the
                 orientation of bouts. Persistent and self-alternating dynamics
                 result from the recurrent excitation (
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf141"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
               - ) and reciprocal inhibition (
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf142"><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub></mml:math>
               - >-
                 ) between each unit. They further receive input currents
                 proportional to the illumination of the ipsilateral eye. (
@@ -4322,6 +4337,11 @@ content:
               - >-
                 ) Orientation correlation of turning bouts (thresholded at 0.22
                 rad) as a function of the inter-bout interval 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf143"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
               - >-
                 . Result from the neuronal model is in blue, experimental data
                 are in black. (
@@ -4329,7 +4349,15 @@ content:
                 content:
                   - D
               - ') Mean reorientation '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf144"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
               - ' as a function of the contrast '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf145"><mml:mi>c</mml:mi></mml:math>'
               - . (
               - type: Strong
                 content:
@@ -4337,6 +4365,11 @@ content:
               - >-
                 ) Example traces of the simulated activity for a constant
                 contrast 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf146"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:math>
               - . (
               - type: Strong
                 content:
@@ -4344,46 +4377,18 @@ content:
               - >-
                 ) Probability of flipping orientation as a function of the
                 imposed contrast 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf147"><mml:mi>c</mml:mi></mml:math>'
               - ' in situations of conflict or reinforcement (neuronal model). ('
               - type: Strong
                 content:
                   - G
               - ') Probability distribution function of '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf148"><mml:mi>θ</mml:mi></mml:math>'
               - ' for 10 simulated phototactic trajectories with a linear dependence of average reorientation on contrast. Each trajectory lasted 50,000 s. The dotted line is the orientational distribution in the absence of visual stimulation.'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf141"><mml:msub><mml:mi>w</mml:mi><mml:mi>E</mml:mi></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf142"><mml:msub><mml:mi>w</mml:mi><mml:mi>I</mml:mi></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf143"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf144"><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>θ</mml:mi></mml:mrow><mml:mo>⟩</mml:mo></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf145"><mml:mi>c</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf146"><mml:mrow><mml:mi>c</mml:mi><mml:mo>=</mml:mo><mml:mn>0.5</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf147"><mml:mi>c</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf148"><mml:mi>θ</mml:mi></mml:math>'
         label: Figure 5.
         content:
           - type: ImageObject
@@ -4420,70 +4425,75 @@ content:
             depth: 2
             content:
               - 'Simulated trajectories with different inter-bout intervals '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf149"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
               - .
           - type: Paragraph
             content:
               - >-
                 Examples of simulated trajectories with different inter-bout
                 intervals 
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf150"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
               - ' displaying different fractal dimensions '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: '<mml:math id="inf151"><mml:mi>H</mml:mi></mml:math>'
               - '. Units : mm. ('
               - type: Strong
                 content:
                   - A
               - ') '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf152"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
               - ' s, '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf153"><mml:mrow><mml:mi>H</mml:mi><mml:mo>=</mml:mo><mml:mn>1.5</mml:mn></mml:mrow></mml:math>
               - . (
               - type: Strong
                 content:
                   - B
               - ') '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf154"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math>
               - ' s, '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf155"><mml:mrow><mml:mi>H</mml:mi><mml:mo>=</mml:mo><mml:mn>1.3</mml:mn></mml:mrow></mml:math>
               - ' ('
               - type: Strong
                 content:
                   - C
               - ') '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf156"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math>
               - ' s, '
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math
+                  id="inf157"><mml:mrow><mml:mi>H</mml:mi><mml:mo>=</mml:mo><mml:mn>1.2</mml:mn></mml:mrow></mml:math>
               - . Red segments represent the onset of a sequence.
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf150"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: '<mml:math id="inf151"><mml:mi>H</mml:mi></mml:math>'
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf152"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf153"><mml:mrow><mml:mi>H</mml:mi><mml:mo>=</mml:mo><mml:mn>1.5</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf154"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf155"><mml:mrow><mml:mi>H</mml:mi><mml:mo>=</mml:mo><mml:mn>1.3</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf156"><mml:mrow><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math>
-          - type: Math
-            mathLanguage: MathML
-            text: >-
-              <mml:math
-              id="inf157"><mml:mrow><mml:mi>H</mml:mi><mml:mo>=</mml:mo><mml:mn>1.2</mml:mn></mml:mrow></mml:math>
         label: Figure 5—figure supplement 2.
         content:
           - type: ImageObject
@@ -4578,6 +4588,11 @@ content:
         mechanism between stereovisual bias and motor persistence, in both
         conflicting and reinforcement conditions. We thus computed the
         dependence of the flipping probability 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf158"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' as a function of the contrast in both conditions ('
       - type: Link
         relation: fig
@@ -4593,11 +4608,6 @@ content:
         content:
           - Figure 2M
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf158"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -4617,18 +4627,18 @@ content:
       - >-
         ). Its profile was in quantitative agreement with its experimental
         counterpart (mean resultant vector length 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf159"><mml:mrow><mml:mi>v</mml:mi><mml:mo>=</mml:mo><mml:mn>0.23</mml:mn></mml:mrow></mml:math>
       - ' in simulation for '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf160"><mml:mrow><mml:mi>v</mml:mi><mml:mo>=</mml:mo><mml:mn>0.24</mml:mn></mml:mrow></mml:math>
       - ' in experimental data for bouts 2 to 17).'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf159"><mml:mrow><mml:mi>v</mml:mi><mml:mo>=</mml:mo><mml:mn>0.23</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf160"><mml:mrow><mml:mi>v</mml:mi><mml:mo>=</mml:mo><mml:mn>0.24</mml:mn></mml:mrow></mml:math>
   - type: Heading
     id: s3
     depth: 1
@@ -4749,6 +4759,11 @@ content:
         dynamics. More importantly, we ran most of our analysis using the bout
         number as a time-scale, and thus ignored possible light-driven
         modulations of the inter-bout intervals (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf161"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - >-
         ). We showed, however, that the orientational correlation is controlled
         by an actual time-scale. This result may have significant consequence on
@@ -4757,6 +4772,11 @@ content:
         significantly affect the geometry of the trajectories (and not only the
         speed at which they are explored). We illustrated this process by
         running numerical experiments at similar flipping rate 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf162"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' but increasing bout frequencies. The trajectories, shown in '
       - type: Link
         relation: fig
@@ -4772,16 +4792,6 @@ content:
         content:
           - Horstick et al. (2017)
       - ' in response to sudden light dimming.'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf161"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf162"><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -4789,6 +4799,11 @@ content:
         navigation uses visual cues over relatively short time scales. The bouts
         statistics could be captured with a first-order autoregressive process,
         indicating that the stimulus perceived over one 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf163"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - ' is sufficient to predict the forthcoming bout. However, one should be aware that such observation is only valid provided that the sensory context remains relatively stable. Hence for instance, a prolonged uniform drop in luminosity is known to enhance the overall motor activity (generally estimated by the average displacement over a period of time) for up to several tens of minutes ('
       - type: Cite
         target: bib44
@@ -4830,11 +4845,6 @@ content:
         content:
           - 'Johnson et al., 2019'
       - ) but also affects the phototactic dynamics.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf163"><mml:msub><mml:mi>τ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -4974,46 +4984,46 @@ content:
           - >-
             https://github.com/elifesciences-publications/Analysis_Behavioral_Phototaxis
       - ") in Matlab (The MathWorks), using the PsychToolBox (PTB) version 3.0.14 add-on. Positions and orientations (heading direction) of the fish, as well as bouts characteristics, were extracted online and the illumination pattern was updated accordingly, with a maximum latency of 34 ms. Heading direction was extracted with an accuracy of +\_/-\_0.05 rad ("
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf164"><mml:mrow><mml:mi/><mml:mo>∼</mml:mo><mml:msup><mml:mn>3</mml:mn><mml:mo>∘</mml:mo></mml:msup></mml:mrow></mml:math>
       - "). Behavioral monitoring was restricted to a circular central region of interest (ROI) of 8.2\_cm diameter. When outside the ROI, the fish was actively brought back into the ROI through the opto-motor reflex (OMR), using a concentrically moving circular pattern. One second after the fish re-entered the ROI, a new recording sequence was started."
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf164"><mml:mrow><mml:mi/><mml:mo>∼</mml:mo><mml:msup><mml:mn>3</mml:mn><mml:mo>∘</mml:mo></mml:msup></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
         Prior to the phototactic assay, all tested fish were subjected to a
         period of at least 8 min of habituation under whole-field illumination
         at an intensity of 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf165"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>450</mml:mn><mml:mo>⁢</mml:mo><mml:mi>μ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>W</mml:mi></mml:mrow></mml:mrow><mml:mo>.</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
       - >-
         . For both phototactic paradigms, the absolute orientation of the
         virtual source was randomly selected when initiating a new experimental
         sequence (each time the animal would re-enter the ROI). The orientation
         of the fish relative to the light source 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf166"><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - ' was calculated online using the absolute orientation of the fish '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf167"><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - ' and the orientation of the virtual light source '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf168"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>c</mml:mi><mml:mi>e</mml:mi></mml:mrow></mml:msub><mml:mo>:</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>c</mml:mi><mml:mi>e</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mstyle></mml:math>
       - .
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf165"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mn>450</mml:mn><mml:mo>⁢</mml:mo><mml:mi>μ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>W</mml:mi></mml:mrow></mml:mrow><mml:mo>.</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mo>⁢</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf166"><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf167"><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math id="inf168"><mml:mstyle displaystyle="true"
-      scriptlevel="0"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>c</mml:mi><mml:mi>e</mml:mi></mml:mrow></mml:msub><mml:mo>:</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mi>n</mml:mi></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>s</mml:mi><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>r</mml:mi><mml:mi>c</mml:mi><mml:mi>e</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mstyle></mml:math>
   - type: Paragraph
     content:
       - type: Emphasis
@@ -5025,6 +5035,11 @@ content:
         side of the fish. The separation between the two parts corresponded to
         the animal’s midline. A separation band (2 mm thick) and an angular
         sector (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf169"><mml:msup><mml:mn>30</mml:mn><mml:mo>∘</mml:mo></mml:msup></mml:math>
       - >-
         ) in front of the animal were darkened to avoid interception of light
         coming from the right side of the fish by its left eye and 
@@ -5032,78 +5047,73 @@ content:
         content:
           - vice-versa
       - . The left and right intensities (
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf170"><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf171"><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:math>
       - ') were varied linearly as a function of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf172"><mml:mi>θ</mml:mi></mml:math>'
       - ', such that '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf173"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
       - >-
         . Since during the habituation period, the whole arena was lit at
         maximum intensity 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf174"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
       - ', the total intensity received by the fish drops by a factor of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf175"><mml:mrow><mml:mi/><mml:mo>≈</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math>
       - ' with the establishment of the circle, at the onset of the assay.'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf169"><mml:msup><mml:mn>30</mml:mn><mml:mo>∘</mml:mo></mml:msup></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf170"><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf171"><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf172"><mml:mi>θ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf173"><mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mi>L</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mi>R</mml:mi></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf174"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf175"><mml:mrow><mml:mi/><mml:mo>≈</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
         Although our imposed contrast profile displays two angles for which the
         contrast is null, namely 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf176"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf177"><mml:mi>π</mml:mi></mml:math>'
       - >-
         , only does the first one correspond to a stable equilibrium point.
         When 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf178"><mml:mi>θ</mml:mi></mml:math>'
       - ' is close to zero, any excursion away from this particular direction results in a contrast that drives the animal back to the null angle. Conversely, when '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf179"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>≈</mml:mo><mml:mi>π</mml:mi></mml:mrow></mml:math>
       - ', the contrast drives the animal away from '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf180"><mml:mi>π</mml:mi></mml:math>'
       - ' (unstable equilibrium).'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf176"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf177"><mml:mi>π</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf178"><mml:mi>θ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf179"><mml:mrow><mml:mi>θ</mml:mi><mml:mo>≈</mml:mo><mml:mi>π</mml:mi></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf180"><mml:mi>π</mml:mi></mml:math>'
   - type: Paragraph
     content:
       - type: Emphasis
@@ -5112,30 +5122,30 @@ content:
       - >-
         . The whole arena was illuminated with an intensity locked onto the fish
         orientation 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf181"><mml:mi>θ</mml:mi></mml:math>'
       - ' relative to a virtual light source. The initial orientation was randomly chosen at the beginning of a recording sequence. Three different intensity angular profiles were implemented: (uniform 1) a sinusoidal profile, with a maximum intensity of 60% of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf182"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
       - >-
         , (uniform 2) an exponential profile, with a maximum intensity of 60%
         of 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf183"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and finally (uniform 3) an exponential profile with a maximum intensity of 30% of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf184"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
       - .
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf181"><mml:mi>θ</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf182"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf183"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf184"><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>x</mml:mi></mml:mrow></mml:msub></mml:math>
   - type: Heading
     id: s4-3
     depth: 2
@@ -5172,37 +5182,36 @@ content:
         Individual fish often exhibit a small yet consistent bias toward one
         direction (either leftward or rightward). This bias was subtracted
         before performing the different analyses, in order to guarantee that 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf185"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mi>α</mml:mi><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
       - ' in the absence of a stimulus. The distribution of reorientation angles '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf186"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
       - ' during spontaneous swimming periods was fitted with a constrained double-Gaussian function. We imposed that both the mean absolute angle and variance of the fitting function be consistent with the experimental measurements. This yields an expression with only one independent fitting parameter '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf187"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' in the form:'
-      - (1)
       - using
       - and
       - with
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf185"><mml:mrow><mml:mrow><mml:mo>⟨</mml:mo><mml:mi>α</mml:mi><mml:mo>⟩</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf186"><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf187"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math
       id="m1"><mml:mrow><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
       stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:msqrt><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:mi>π</mml:mi></mml:mrow></mml:msqrt></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mrow><mml:mfrac><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>2</mml:mn></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mfrac><mml:mi>x</mml:mi><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mfrac><mml:mo>)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:msup></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>2</mml:mn></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mfrac><mml:mi>x</mml:mi><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mfrac><mml:mo>)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:msup></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math
       id="m2"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>b</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>+</mml:mo><mml:msqrt><mml:mrow><mml:mrow><mml:msubsup><mml:mi>μ</mml:mi><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>b</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>⁢</mml:mo><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:msubsup><mml:mi>μ</mml:mi><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>b</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>-</mml:mo><mml:mrow><mml:mi>V</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
@@ -5212,13 +5221,13 @@ content:
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:msqrt></mml:mrow><mml:mrow><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
       stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mfrac></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math
       id="m3"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>b</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msqrt><mml:mrow><mml:mi>π</mml:mi><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msqrt></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math
       id="m4"><mml:mrow><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>b</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo>⟨</mml:mo><mml:mrow><mml:mo
@@ -5232,59 +5241,59 @@ content:
         fitted with a constrained double-Gaussian model as in (1). The
         stereovisual data distributions were fitted with two additional mean
         terms 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf188"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf189"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' ; and for the klinotaxis assay, with a constraint on '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf190"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf191"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
       - '. The bins were constructed either on the contrast '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf192"><mml:mi>c</mml:mi></mml:math>'
       - ' experienced just before bout '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: '<mml:math id="inf193"><mml:mi>n</mml:mi></mml:math>'
       - ' or on the relative difference of intensity experienced at bout '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math id="inf194"><mml:mstyle displaystyle="true"
+          scriptlevel="0"><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo>:</mml:mo><mml:mi>δ</mml:mi><mml:mi>I</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mi>I</mml:mi><mml:mo>=</mml:mo><mml:mn>2</mml:mn><mml:mfrac><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
       - .
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf188"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf189"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf190"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf191"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf192"><mml:mi>c</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: '<mml:math id="inf193"><mml:mi>n</mml:mi></mml:math>'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math id="inf194"><mml:mstyle displaystyle="true"
-      scriptlevel="0"><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo>:</mml:mo><mml:mi>δ</mml:mi><mml:mi>I</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mi>I</mml:mi><mml:mo>=</mml:mo><mml:mn>2</mml:mn><mml:mfrac><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>I</mml:mi><mml:mrow><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:math>
   - type: Paragraph
     content:
       - 'All distributions of '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf195"><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
       - ' and analyses of bias were computed using trajectories from bout index two to the median number of bouts per sequence in each type of experiment. The median number of bouts in each experiment was '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf196"><mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>o</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:math>
       - " for the tropotaxis experiment, and 27,\_15,\_17 for the klinotaxis assays for the 3 profiles 1–3, respectively."
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf195"><mml:msub><mml:mi>θ</mml:mi><mml:mi>n</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf196"><mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:msub><mml:mi>d</mml:mi><mml:mrow><mml:mi>s</mml:mi><mml:mo>⁢</mml:mo><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>e</mml:mi><mml:mo>⁢</mml:mo><mml:mi>o</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>=</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:math>
   - type: Heading
     id: s4-4
     depth: 2
@@ -5310,58 +5319,63 @@ content:
       - >-
         At each step, an angular step-size is drawn from the data: either from
         the turning distribution with a probability 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf197"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' or from the forward distribution with a probability '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf198"><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
       - '. Respective means are '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf199"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf200"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and standard deviation '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf201"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf202"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
       - >-
         . The left-vs-right orientations of the turns is set by the probability
         of flipping sides 
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf203"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
       - >-
         . For the spatially constrained simulations, the walker also draws a
         distance step-size (between two successive positions) from two different
         gamma distributions: one for the turning bouts, a second one for the
         scoots. Under neutral conditions (uniform illumination), all parameters
         are constant.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf197"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf198"><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf199"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf200"><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf201"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf202"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf203"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
   - type: Paragraph
     content:
       - 'For the simulation under stereovisual phototactic conditions, '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf204"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' was varied linearly with the contrast (based on the data represented in '
       - type: Link
         relation: fig
@@ -5369,8 +5383,23 @@ content:
         content:
           - Figure 2M
       - '). When simulating temporal phototaxis, the parameters '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf205"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' and '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf206"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' were modulated by the relative illumination change '
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math
+          id="inf207"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>
       - ' experienced at the previous steps (as represented in '
       - type: Link
         relation: fig
@@ -5378,23 +5407,3 @@ content:
         content:
           - Figure 3H–I
       - ).
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf204"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>l</mml:mi><mml:mo>⁢</mml:mo><mml:mi>i</mml:mi><mml:mo>⁢</mml:mo><mml:mi>p</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf205"><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf206"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math
-      id="inf207"><mml:mrow><mml:mrow><mml:mi>δ</mml:mi><mml:mo>⁢</mml:mo><mml:mi>I</mml:mi></mml:mrow><mml:mo>/</mml:mo><mml:mi>I</mml:mi></mml:mrow></mml:math>

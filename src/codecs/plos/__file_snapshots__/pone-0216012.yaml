@@ -4128,13 +4128,6 @@ content:
           - '28'
       - |
         ]:
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (1)
       - |-
 
         where 
@@ -4219,13 +4212,6 @@ content:
           - j
       - |2
          is governed by the hydraulic analogue of Ohm’s law
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (2)
       - |-
 
         where 
@@ -4304,14 +4290,14 @@ content:
         . In the following, owing to the complexity of the eye model, we will
         use different notations to identify the various components of the eye
         circuits.
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M1"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
       columnalign="right"><mml:mrow><mml:msub><mml:mi>Q</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>K</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>[</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>)</mml:mo></mml:mrow><mml:mo>-</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:msub><mml:mi>π</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>π</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>)</mml:mo></mml:mrow><mml:mo>]</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M2"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
@@ -5924,12 +5910,18 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M3"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo>{</mml:mo><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mtext>IOP</mml:mtext></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mtd><mml:mtd
+                  columnalign="left"><mml:mrow><mml:mspace
+                  width="0.0166667em"/><mml:mtext>if</mml:mtext><mml:mspace
+                  width="0.166667em"/><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>&gt;</mml:mo><mml:mtext>IOP</mml:mtext></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd
+                  columnalign="left"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:mtext>IOP</mml:mtext></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>/</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mn>4</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mtd><mml:mtd
+                  columnalign="left"><mml:mrow><mml:mspace
+                  width="0.0166667em"/><mml:mtext>if</mml:mtext><mml:mspace
+                  width="0.166667em"/><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>≤</mml:mo><mml:mtext>IOP</mml:mtext></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -5950,12 +5942,14 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M4"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>
+                  =</mml:mo><mml:mn>8</mml:mn><mml:mi>π</mml:mi><mml:msub><mml:mi>μ</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo>/</mml:mo><mml:msubsup><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -5976,12 +5970,13 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M5"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:msub><mml:mi>E</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:msubsup><mml:mi>h</mml:mi><mml:mi>v</mml:mi><mml:mn>3</mml:mn></mml:msubsup><mml:msup><mml:mi>π</mml:mi><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mn>12</mml:mn><mml:mrow><mml:mo>(</mml:mo><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msubsup><mml:mi>ν</mml:mi><mml:mi>v</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo>)</mml:mo></mml:mrow><mml:msubsup><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -6002,12 +5997,13 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M6"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mn>12</mml:mn><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mi>π</mml:mi><mml:msubsup><mml:mi>h</mml:mi><mml:mi>v</mml:mi><mml:mn>2</mml:mn></mml:msubsup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -6279,33 +6275,37 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M7"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mn>8</mml:mn><mml:mi>π</mml:mi><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msubsup><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
                   - 'n'
               - ' = 1, 2, 3, 4, with '
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M8"><mml:mrow><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mfrac><mml:mrow><mml:mi>π</mml:mi><mml:msubsup><mml:mi
+                  mathvariant="script">D</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mn>4</mml:mn></mml:mfrac></mml:mrow></mml:math>
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M9"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow></mml:msub><mml:msubsup><mml:mi>h</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow><mml:mn>3</mml:mn></mml:msubsup><mml:msup><mml:mi>π</mml:mi><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mn>12</mml:mn><mml:mrow><mml:mo>(</mml:mo><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msubsup><mml:mi>ν</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>)</mml:mo></mml:mrow><mml:msubsup><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -6315,12 +6315,13 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M10"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mn>12</mml:mn><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mi>π</mml:mi><mml:msubsup><mml:mi>h</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -6330,12 +6331,19 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M11"><mml:mrow><mml:msub><mml:mi>R</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo>{</mml:mo><mml:mtable><mml:mtr><mml:mtd
+                  columnalign="left"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mo>Δ</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mtd><mml:mtd
+                  columnalign="left"><mml:mrow><mml:mspace
+                  width="0.166667em"/><mml:mtext>if</mml:mtext><mml:mspace
+                  width="0.166667em"/><mml:mo>Δ</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>&gt;</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd
+                  columnalign="left"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mo>Δ</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mn>4</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mtd><mml:mtd
+                  columnalign="left"><mml:mrow><mml:mspace
+                  width="0.166667em"/><mml:mtext>if</mml:mtext><mml:mspace
+                  width="0.166667em"/><mml:mo>Δ</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>≤</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -6512,33 +6520,38 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M12"><mml:mrow><mml:msub><mml:mi>α</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mn>8</mml:mn><mml:mi>π</mml:mi><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:msubsup><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
                   - 'n'
               - ' = 1, 2, 3, 4, with '
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M13"><mml:mrow><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mfrac><mml:mrow><mml:mi>π</mml:mi><mml:msubsup><mml:mi
+                  mathvariant="script">D</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup></mml:mrow><mml:mn>4</mml:mn></mml:mfrac></mml:mrow></mml:math>
       - type: TableRow
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M14"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>p</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:msub><mml:mi>E</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:msubsup><mml:mi>h</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow><mml:mn>3</mml:mn></mml:msubsup><mml:msup><mml:mi>π</mml:mi><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mn>12</mml:mn><mml:mrow><mml:mo>(</mml:mo><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msubsup><mml:mi>ν</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>)</mml:mo></mml:mrow><mml:msubsup><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mrow><mml:mn>3</mml:mn><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msubsup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -6548,12 +6561,13 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M15"><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:mn>12</mml:mn><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>/</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mi>π</mml:mi><mml:msubsup><mml:mi>h</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math>
               - ' for '
               - type: Emphasis
                 content:
@@ -7449,29 +7463,20 @@ content:
         resistances, we used Poiseuille law to relate flux and pressure drop
         along each single vessel. This leads to the following expression for a
         generic resistance of each component of the circuit
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (3)
       - |-
 
         where 
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M17"><mml:mi
+          mathvariant="script">A</mml:mi></mml:math>
       - ' is the representative cross-sectional area of the compartment, '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M18"><mml:mi
+          mathvariant="script">L</mml:mi></mml:math>
       - ' the representative compartment length, '
       - type: Emphasis
         content:
@@ -7498,19 +7503,17 @@ content:
         content:
           - ρ
       - '. In the case of a single vessel, '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M19"><mml:mi
+          mathvariant="script">A</mml:mi></mml:math>
       - ' and '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M20"><mml:mi
+          mathvariant="script">L</mml:mi></mml:math>
       - ' correspond to the vessel cross-sectional area and length respectively. Also note that the circuit has been constructed in such a way that the resistance of each compartment within the eye (arterioles, capillaries and venules) is split into two resistances with the same characteristics (see '
       - type: Link
         relation: fig
@@ -7520,8 +7523,8 @@ content:
       - >-
         ), resulting in a node representing the mean pressure of the
         compartment.
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M16"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
@@ -7530,26 +7533,6 @@ content:
       scriptlevel="0"><mml:mfrac><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mi>ρ</mml:mi><mml:mi
       mathvariant="script">L</mml:mi></mml:mrow><mml:msup><mml:mi
       mathvariant="script">A</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mfrac></mml:mstyle><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M17"><mml:mi
-      mathvariant="script">A</mml:mi></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M18"><mml:mi
-      mathvariant="script">L</mml:mi></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M19"><mml:mi
-      mathvariant="script">A</mml:mi></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M20"><mml:mi
-      mathvariant="script">L</mml:mi></mml:math>
   - type: Paragraph
     content:
       - 'Variable resistances are indicated by an arrow in '
@@ -7599,23 +7582,9 @@ content:
           - R
       - |2
          we then write
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (4)
       - |
 
         where,
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (5)
       - |-
 
         where 
@@ -7697,8 +7666,8 @@ content:
         content:
           - Fig 3
       - ' (right) and have been fitted using a second order polynomial function, shown in the figure by the green surface. Such a surface is then employed to determine the external pressure acting on the translaminar vascular segments.'
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block"
       id="M21"><mml:mrow><mml:mtable><mml:mtr><mml:mtd><mml:mrow><mml:mi>R</mml:mi><mml:mo>
@@ -7708,8 +7677,8 @@ content:
       width="1pt"/><mml:mo>Δ</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>&gt;</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mfrac><mml:mrow><mml:mn>8</mml:mn><mml:mi>π</mml:mi><mml:mi>μ</mml:mi><mml:mi>ℒ</mml:mi></mml:mrow><mml:mrow><mml:msup><mml:mi
       mathvariant="script">A</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mfrac><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mfrac><mml:mrow><mml:mo>Δ</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mi>t</mml:mi></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mi>p</mml:mi></mml:msub></mml:mrow></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mn>4</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mtext>if</mml:mtext><mml:mspace
       width="1pt"/><mml:mo>Δ</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mi>t</mml:mi></mml:msub><mml:mo>≤</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mrow></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M22"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
@@ -7790,12 +7759,11 @@ content:
         arterioles, where passive and active mechanisms could be included by
         introducing appropriate functional expressions relating changes in the
         representative cross-sectional area 
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M23"><mml:mi
+          mathvariant="script">A</mml:mi></mml:math>
       - ' to changes in biophysical factors, such as transmural pressure difference, shear stress, oxygen levels and pH (see e.g. ['
       - type: Cite
         target: pone-0216012-ref044
@@ -7838,11 +7806,6 @@ content:
         during spaceflight. Thus, it would be very interesting to include a more
         detailed description of choroidal hemodynamics in future developments of
         the model.
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M23"><mml:mi
-      mathvariant="script">A</mml:mi></mml:math>
   - type: Heading
     id: sec008
     depth: 3
@@ -9605,12 +9568,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M24"><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mi>v</mml:mi></mml:msub></mml:math>
           - type: TableCell
             content:
               - 0.80 cm
@@ -9726,12 +9688,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M25"><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 2.61 ⋅10
@@ -9799,12 +9760,14 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M26"><mml:mrow><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>
           - type: TableCell
             content:
               - 0.44 cm
@@ -9820,12 +9783,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M27"><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 0.02 cm
@@ -9841,12 +9803,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M28"><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi><mml:mo>,</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 0.1 cm
@@ -9862,12 +9823,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M29"><mml:msub><mml:mi
+                  mathvariant="script">D</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>a</mml:mi></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 175 ⋅10
@@ -10067,12 +10027,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M30"><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>r</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 1.55 ⋅10
@@ -10090,12 +10049,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M31"><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 0.1 cm
@@ -10111,12 +10069,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M32"><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 0.02 cm
@@ -10132,12 +10089,14 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline"
+                  id="M33"><mml:mrow><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msub><mml:mo>
+                  =</mml:mo><mml:msub><mml:mi
+                  mathvariant="script">L</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mn>4</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>
           - type: TableCell
             content:
               - 0.44 cm
@@ -10153,12 +10112,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M34"><mml:msub><mml:mi
+                  mathvariant="script">D</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>r</mml:mi><mml:mi>v</mml:mi></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 238 ⋅10
@@ -10408,12 +10366,11 @@ content:
         cells:
           - type: TableCell
             content:
-              - type: ImageObject
-                contentUrl: ''
-                format: image/png
-                meta:
-                  inline: false
-                  linkType: simple
+              - type: MathFragment
+                mathLanguage: mathml
+                text: >-
+                  <mml:math display="inline" id="M35"><mml:msub><mml:mi
+                  mathvariant="script">A</mml:mi><mml:mrow><mml:mi>c</mml:mi><mml:mi>h</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub></mml:math>
           - type: TableCell
             content:
               - 5.06 ⋅10
@@ -10842,12 +10799,11 @@ content:
         content:
           - Reference values for blood flow rates in the eye
       - '. A reference value of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M36"><mml:mrow><mml:msub><mml:mover
+          accent="true"><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mi>r</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>40.9</mml:mn><mml:mi>μ</mml:mi><mml:mtext>l</mml:mtext><mml:mo>/</mml:mo><mml:mtext>min</mml:mtext></mml:mrow></mml:math>
       - ' for retinal blood flow can be found in ['
       - type: Cite
         target: pone-0216012-ref025
@@ -10866,12 +10822,11 @@ content:
         content:
           - '75'
       - ']. Similarly, a reference value of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M37"><mml:mrow><mml:msub><mml:mover
+          accent="true"><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>133</mml:mn><mml:mi>μ</mml:mi><mml:mtext>l</mml:mtext><mml:mo>/</mml:mo><mml:mtext>min</mml:mtext></mml:mrow></mml:math>
       - ' for the blood flow in the ciliary body can be found in ['
       - type: Cite
         target: pone-0216012-ref076
@@ -10893,12 +10848,11 @@ content:
         ] The choice of a reference value for the choroidal blood flow is less
         obvious due to the lack of experimental measurements. Here we choose a
         value of 
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M38"><mml:mrow><mml:msub><mml:mover
+          accent="true"><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>368</mml:mn><mml:mi>μ</mml:mi><mml:mtext>l</mml:mtext><mml:mo>/</mml:mo><mml:mtext>min</mml:mtext></mml:mrow></mml:math>
       - ', which is within the same range as the findings reported in ['
       - type: Cite
         target: pone-0216012-ref079
@@ -10913,33 +10867,18 @@ content:
         content:
           - '15'
       - '].'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M36"><mml:mrow><mml:msub><mml:mover
-      accent="true"><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mi>r</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>40.9</mml:mn><mml:mi>μ</mml:mi><mml:mtext>l</mml:mtext><mml:mo>/</mml:mo><mml:mtext>min</mml:mtext></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M37"><mml:mrow><mml:msub><mml:mover
-      accent="true"><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>133</mml:mn><mml:mi>μ</mml:mi><mml:mtext>l</mml:mtext><mml:mo>/</mml:mo><mml:mtext>min</mml:mtext></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M38"><mml:mrow><mml:msub><mml:mover
-      accent="true"><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mn>368</mml:mn><mml:mi>μ</mml:mi><mml:mtext>l</mml:mtext><mml:mo>/</mml:mo><mml:mtext>min</mml:mtext></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - type: Emphasis
         content:
           - Reference values for blood pressures in the eye
       - '. A reference value of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M39"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>E</mml:mi><mml:mi>y</mml:mi><mml:mi>e</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+          =</mml:mo><mml:mn>62</mml:mn><mml:mo>.</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math>
       - ' mmHg for blood pressure at the level of the ophthalmic artery can be found in ['
       - type: Cite
         target: pone-0216012-ref025
@@ -10953,47 +10892,47 @@ content:
         content:
           - '80'
       - '], this value can be estimated as '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M40"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>E</mml:mi><mml:mi>y</mml:mi><mml:mi>e</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+          =</mml:mo><mml:mn>2</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn><mml:mspace
+          width="0.166667em"/><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
       - ', where '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M41"><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
       - ' is the reference value for the mean arterial pressure defined as '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M42"><mml:mrow><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover><mml:mo>
+          =</mml:mo><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn><mml:mspace
+          width="0.166667em"/><mml:mover><mml:mtext>SBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn><mml:mspace
+          width="0.166667em"/><mml:mover><mml:mtext>DBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
       - ', with '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M43"><mml:mover><mml:mtext>SBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
       - ' and '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M44"><mml:mover><mml:mtext>DBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
       - ' denoting the reference values for systolic and diastolic blood pressures, here set at 120 mmHg and 80 mmHg, respectively. A reference value of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M45"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>E</mml:mi><mml:mi>y</mml:mi><mml:mi>e</mml:mi><mml:mo>,</mml:mo><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>
+          =</mml:mo><mml:mn>8</mml:mn></mml:mrow></mml:math>
       - ' mmHg for blood pressure at the venous output of the eye can be found in ['
       - type: Cite
         target: pone-0216012-ref027
@@ -11015,19 +10954,19 @@ content:
         content:
           - '25'
       - ']. Reference values of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M46"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
+          =</mml:mo><mml:mn>60</mml:mn></mml:mrow></mml:math>
       - ' mmHg and '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M47"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>
+          =</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:math>
       - ' mmHg can be found in ['
       - type: Cite
         target: pone-0216012-ref027
@@ -11064,60 +11003,6 @@ content:
         content:
           - '27'
       - '].'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M39"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>E</mml:mi><mml:mi>y</mml:mi><mml:mi>e</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
-      =</mml:mo><mml:mn>62</mml:mn><mml:mo>.</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M40"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>E</mml:mi><mml:mi>y</mml:mi><mml:mi>e</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
-      =</mml:mo><mml:mn>2</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn><mml:mspace
-      width="0.166667em"/><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M41"><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M42"><mml:mrow><mml:mover><mml:mtext>MAP</mml:mtext><mml:mo>¯</mml:mo></mml:mover><mml:mo>
-      =</mml:mo><mml:mn>1</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn><mml:mspace
-      width="0.166667em"/><mml:mover><mml:mtext>SBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:mo>/</mml:mo><mml:mn>3</mml:mn><mml:mspace
-      width="0.166667em"/><mml:mover><mml:mtext>DBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M43"><mml:mover><mml:mtext>SBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M44"><mml:mover><mml:mtext>DBP</mml:mtext><mml:mo>¯</mml:mo></mml:mover></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M45"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>E</mml:mi><mml:mi>y</mml:mi><mml:mi>e</mml:mi><mml:mo>,</mml:mo><mml:mi>o</mml:mi><mml:mi>u</mml:mi><mml:mi>t</mml:mi></mml:mrow></mml:msub><mml:mo>
-      =</mml:mo><mml:mn>8</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M46"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>
-      =</mml:mo><mml:mn>60</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M47"><mml:mrow><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>
-      =</mml:mo><mml:mn>17</mml:mn></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - type: Emphasis
@@ -11160,12 +11045,14 @@ content:
         retina. For what concerns characteristic areas and lengths, we reasoned
         as follows. Let the blood volumes in the venous segments of retinal
         ciliary body and choroidal circulations be defined as 
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M48"><mml:mrow><mml:msub><mml:mi
+          mathvariant="script">V</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>
+          =</mml:mo><mml:msub><mml:mi
+          mathvariant="script">A</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi
+          mathvariant="script">L</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
       - ', for '
       - type: Emphasis
         content:
@@ -11186,43 +11073,14 @@ content:
         . Let us assume that the ratio between blood volumes in the retinal and
         ciliary body (res. choroidal) venous segment is that same as the ratio
         between the corresponding flow rates, namely
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (6)
       - |
 
         Then it follows that
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (7)
       - |
 
         which implies that
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
-      - (8)
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M48"><mml:mrow><mml:msub><mml:mi
-      mathvariant="script">V</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>
-      =</mml:mo><mml:msub><mml:mi
-      mathvariant="script">A</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi
-      mathvariant="script">L</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M49"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
@@ -11233,8 +11091,8 @@ content:
       =</mml:mo><mml:mfrac><mml:msub><mml:mover><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mover><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mi>r</mml:mi></mml:msub></mml:mfrac><mml:mo>,</mml:mo><mml:mspace
       width="1.em"/><mml:mi>i</mml:mi><mml:mo>
       =</mml:mo><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>h</mml:mi><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M50"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
@@ -11245,8 +11103,8 @@ content:
       mathvariant="script">L</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>
       =</mml:mo><mml:mfrac><mml:msub><mml:mover><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mi>i</mml:mi></mml:msub><mml:msub><mml:mover><mml:mi>Q</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mi>r</mml:mi></mml:msub></mml:mfrac><mml:msub><mml:mi
       mathvariant="script">V</mml:mi><mml:mrow><mml:mi>r</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>,</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block" id="M51"><mml:mtable
       displaystyle="true"><mml:mtr><mml:mtd
@@ -12394,12 +12252,11 @@ content:
   - type: Paragraph
     content:
       - 'The value of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline" id="M52"><mml:msub><mml:mi
+          mathvariant="script">A</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math>
       - ', '
       - type: Emphasis
         content:
@@ -12413,49 +12270,26 @@ content:
         content:
           - ch
       - ', is computed imposing that, when '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M53"><mml:mrow><mml:msub><mml:mover><mml:mrow><mml:mo>Δ</mml:mo><mml:mi>p</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover><mml:mi>t</mml:mi></mml:msub><mml:mo>
+          =</mml:mo><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mover><mml:mrow><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mi>P</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
       - ', with '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M54"><mml:mrow><mml:mover><mml:mrow><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mi>P</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover><mml:mo>
+          =</mml:mo><mml:mn>15</mml:mn></mml:mrow></mml:math>
       - ' mmHg, the value of the resistance in the Starling model equals the value of '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M55"><mml:mrow><mml:msub><mml:mover><mml:mi>R</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mover><mml:mi>R</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>
       - ' obtained using Ohm’s law.'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline" id="M52"><mml:msub><mml:mi
-      mathvariant="script">A</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M53"><mml:mrow><mml:msub><mml:mover><mml:mrow><mml:mo>Δ</mml:mo><mml:mi>p</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover><mml:mi>t</mml:mi></mml:msub><mml:mo>
-      =</mml:mo><mml:msub><mml:mover><mml:mi>P</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mover><mml:mrow><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mi>P</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M54"><mml:mrow><mml:mover><mml:mrow><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mi>P</mml:mi></mml:mrow><mml:mo>¯</mml:mo></mml:mover><mml:mo>
-      =</mml:mo><mml:mn>15</mml:mn></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M55"><mml:mrow><mml:msub><mml:mover><mml:mi>R</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mover><mml:mi>R</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mrow><mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -12927,19 +12761,20 @@ content:
             content:
               - c
       - ', in the range '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M56"><mml:mrow><mml:mn>20</mml:mn><mml:mspace
+          width="4.pt"/><mml:mtext>mmHg</mml:mtext><mml:mo>⪅</mml:mo><mml:msub><mml:mi>π</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mo>≤</mml:mo><mml:mn>25</mml:mn><mml:mspace
+          width="4.pt"/><mml:mtext>mmHg</mml:mtext></mml:mrow></mml:math>
       - ' and, for '
-      - type: ImageObject
-        contentUrl: ''
-        format: image/png
-        meta:
-          inline: false
-          linkType: simple
+      - type: MathFragment
+        mathLanguage: mathml
+        text: >-
+          <mml:math display="inline"
+          id="M57"><mml:mrow><mml:msub><mml:mi>π</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mo>⪅</mml:mo><mml:mn>20</mml:mn><mml:mspace
+          width="4.pt"/><mml:mtext>mmHg</mml:mtext></mml:mrow></mml:math>
       - >-
         , the dependency becomes markedly nonlinear. This change in behavior is
         related to the collapse of ciliary venules that occurs when the
@@ -12958,19 +12793,6 @@ content:
             content:
               - c
       - ' and then sharply increases.'
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M56"><mml:mrow><mml:mn>20</mml:mn><mml:mspace
-      width="4.pt"/><mml:mtext>mmHg</mml:mtext><mml:mo>⪅</mml:mo><mml:msub><mml:mi>π</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mo>≤</mml:mo><mml:mn>25</mml:mn><mml:mspace
-      width="4.pt"/><mml:mtext>mmHg</mml:mtext></mml:mrow></mml:math>
-  - type: Math
-    mathLanguage: MathML
-    text: >-
-      <mml:math display="inline"
-      id="M57"><mml:mrow><mml:msub><mml:mi>π</mml:mi><mml:mi>c</mml:mi></mml:msub><mml:mo>⪅</mml:mo><mml:mn>20</mml:mn><mml:mspace
-      width="4.pt"/><mml:mtext>mmHg</mml:mtext></mml:mrow></mml:math>
   - type: Paragraph
     content:
       - >-
