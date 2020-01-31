@@ -4,14 +4,26 @@ affiliations:
   - type: Organization
     alternateNames:
       - Applied Mathematics and Theoretical Physics
+    identifiers:
+      - type: PropertyValue
+        propertyID: RINGGOLD
+        value: 2152
     name: University of Cambridge
   - type: Organization
     alternateNames:
       - Mathematics
+    identifiers:
+      - type: PropertyValue
+        propertyID: RINGGOLD
+        value: 2152
     name: University of Cambridge
   - type: Organization
     alternateNames:
       - 'Physics, Mathematics and Astronomy'
+    identifiers:
+      - type: PropertyValue
+        propertyID: RINGGOLD
+        value: 6469
     name: California Institute of Technology
 familyNames:
   - Hawking

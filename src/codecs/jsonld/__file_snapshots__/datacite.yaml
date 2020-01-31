@@ -25,6 +25,10 @@ description: >-
   2016c). The process we implemented uses a new command line utility and
   integrates well with our the publishing workflow, with (almost) no extra
   effort compared to how we published...
+identifiers:
+  - type: PropertyValue
+    propertyID: DOI
+    value: 'https://doi.org/10.5438/0000-00cc'
 isPartOf:
   type: Article
   id: 'https://doi.org/10.5438/0000-00ss'

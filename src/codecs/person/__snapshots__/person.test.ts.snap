@@ -7,12 +7,26 @@ Object {
       "alternateNames": Array [
         "Psychoceramics",
       ],
+      "identifiers": Array [
+        Object {
+          "propertyID": "RINGGOLD",
+          "type": "PropertyValue",
+          "value": 5468,
+        },
+      ],
       "name": "Wesleyan University",
       "type": "Organization",
     },
     Object {
       "alternateNames": Array [
         "Psychoceramics",
+      ],
+      "identifiers": Array [
+        Object {
+          "propertyID": "RINGGOLD",
+          "type": "PropertyValue",
+          "value": 6752,
+        },
       ],
       "name": "Brown University",
       "type": "Organization",
@@ -30,6 +44,13 @@ Object {
     "Josiah",
   ],
   "id": "https://orcid.org/0000-0002-1825-0097",
+  "identifiers": Array [
+    Object {
+      "propertyID": "Scopus Author ID",
+      "type": "PropertyValue",
+      "value": 7007156898,
+    },
+  ],
   "type": "Person",
   "url": "http://library.brown.edu/about/hay/carberry.php",
 }
