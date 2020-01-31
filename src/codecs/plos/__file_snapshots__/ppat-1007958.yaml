@@ -156,9 +156,15 @@ authors:
       - Alcamí
     givenNames:
       - José
+dateAccepted:
+  type: Date
+  value: '2019-07-03'
 datePublished:
   type: Date
   value: '2019-08-29'
+dateReceived:
+  type: Date
+  value: '2019-01-30'
 description:
   - type: Paragraph
     content:
@@ -191,11 +197,37 @@ editors:
       - Emerman
     givenNames:
       - Michael
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.1371/journal.ppat.1007958
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: PPATHOGENS-D-19-00210
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e1007958
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: PLoS Pathog
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: plos
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: plospath
+    issns:
       - 1553-7366
       - 1553-7374
     publisher:
@@ -219,7 +251,7 @@ licenses:
             any medium, provided the original author and source are credited.
 references:
   - type: Article
-    id: ppat.1007958.ref001
+    id: ppat-1007958-ref001
     authors:
       - type: Person
         familyNames:
@@ -257,7 +289,7 @@ references:
       Dual Role of Host Cell Factors in HIV-1 Replication: Restriction and
       Enhancement of the Viral Cycle
   - type: Article
-    id: ppat.1007958.ref002
+    id: ppat-1007958-ref002
     authors:
       - type: Person
         familyNames:
@@ -282,7 +314,7 @@ references:
       title: Chemokines and Their Receptors in Lymphocyte Traffic and HIV Infection
     title: ''
   - type: Article
-    id: ppat.1007958.ref003
+    id: ppat-1007958-ref003
     authors:
       - type: Person
         familyNames:
@@ -310,7 +342,7 @@ references:
       Nuclear Import of the Pre-Integration Complex (PIC): The Achilles Heel of
       HIV?
   - type: Article
-    id: ppat.1007958.ref004
+    id: ppat-1007958-ref004
     authors:
       - type: Person
         familyNames:
@@ -333,7 +365,7 @@ references:
       HIV-1 cDNA integration: Requirement of HMG I(Y) protein for function of
       preintegration complexes in vitro
   - type: Article
-    id: ppat.1007958.ref005
+    id: ppat-1007958-ref005
     authors:
       - type: Person
         familyNames:
@@ -376,7 +408,7 @@ references:
       LEDGF/p75 functions downstream from preintegration complex formation to
       effect gene-specific HIV-1 integration
   - type: Article
-    id: ppat.1007958.ref006
+    id: ppat-1007958-ref006
     authors:
       - type: Person
         familyNames:
@@ -407,7 +439,7 @@ references:
       title: BioEssays
     title: 'Lentiviral nuclear import: A complex interplay between virus and host'
   - type: Article
-    id: ppat.1007958.ref007
+    id: ppat-1007958-ref007
     authors:
       - type: Person
         familyNames:
@@ -448,7 +480,7 @@ references:
       volumeNumber: 6
     title: Dynamic Oligomerization of Integrase Orchestrates HIV Nuclear Entry
   - type: Article
-    id: ppat.1007958.ref008
+    id: ppat-1007958-ref008
     authors:
       - type: Person
         familyNames:
@@ -489,7 +521,7 @@ references:
       Inhibitors of the integrase-transportin-SR2 interaction block HIV nuclear
       import
   - type: Article
-    id: ppat.1007958.ref009
+    id: ppat-1007958-ref009
     authors:
       - type: Person
         familyNames:
@@ -529,7 +561,7 @@ references:
       title: J Biol Chem
     title: N-terminal half of transportin SR2 interacts with HIV integrase
   - type: Article
-    id: ppat.1007958.ref010
+    id: ppat-1007958-ref010
     authors:
       - type: Person
         familyNames:
@@ -570,7 +602,7 @@ references:
       Transportin 3 promotes a nuclear maturation step required for efficient
       HIV-1 integration
   - type: Article
-    id: ppat.1007958.ref011
+    id: ppat-1007958-ref011
     authors:
       - type: Person
         familyNames:
@@ -614,7 +646,7 @@ references:
       TNPO3 Is Required for HIV-1 Replication after Nuclear Import but prior to
       Integration and Binds the HIV-1 Core
   - type: Article
-    id: ppat.1007958.ref012
+    id: ppat-1007958-ref012
     authors:
       - type: Person
         familyNames:
@@ -656,7 +688,7 @@ references:
       TNPO3 protects HIV-1 replication from CPSF6-mediated capsid stabilization
       in the host cell cytoplasm
   - type: Article
-    id: ppat.1007958.ref013
+    id: ppat-1007958-ref013
     authors:
       - type: Person
         familyNames:
@@ -694,7 +726,7 @@ references:
       A human importin-β family protein, transportin-SR2, interacts with the
       phosphorylated RS domain of SR proteins
   - type: Article
-    id: ppat.1007958.ref014
+    id: ppat-1007958-ref014
     authors:
       - type: Person
         familyNames:
@@ -727,7 +759,7 @@ references:
       A novel splicing regulator shares a nuclear import pathway with SR
       proteins
   - type: Article
-    id: ppat.1007958.ref015
+    id: ppat-1007958-ref015
     authors:
       - type: Person
         familyNames:
@@ -753,7 +785,7 @@ references:
       volumeNumber: 98
     title: Transportin-SR2 mediates nuclear import of phosphorylated SR proteins
   - type: Article
-    id: ppat.1007958.ref016
+    id: ppat-1007958-ref016
     authors:
       - type: Person
         familyNames:
@@ -779,7 +811,7 @@ references:
       volumeNumber: 145
     title: 'Transportin-SR, a nuclear import receptor for SR proteins'
   - type: Article
-    id: ppat.1007958.ref017
+    id: ppat-1007958-ref017
     authors:
       - type: Person
         familyNames:
@@ -822,7 +854,7 @@ references:
       HIV-1 evades innate immune recognition through specific cofactor
       recruitment
   - type: Article
-    id: ppat.1007958.ref018
+    id: ppat-1007958-ref018
     authors:
       - type: Person
         familyNames:
@@ -865,7 +897,7 @@ references:
       Dynamic regulation of HIV-1 mRNA populations analyzed by single-molecule
       enrichment and long-read sequencing
   - type: Article
-    id: ppat.1007958.ref019
+    id: ppat-1007958-ref019
     authors:
       - type: Person
         familyNames:
@@ -908,7 +940,7 @@ references:
       that regulate alternative viral splicing and virus production in
       macrophages
   - type: Article
-    id: ppat.1007958.ref020
+    id: ppat-1007958-ref020
     authors:
       - type: Person
         familyNames:
@@ -952,7 +984,7 @@ references:
       and heterogeneous nuclear ribonucleoprotein A1 at the HIV-1 Tat exon 2
       splicing site
   - type: Article
-    id: ppat.1007958.ref021
+    id: ppat-1007958-ref021
     authors:
       - type: Person
         familyNames:
@@ -983,7 +1015,7 @@ references:
       Dual effect of the SR proteins ASF/SF2, SC35 and 9G8 on HIV-1 RNA splicing
       and virion production
   - type: Article
-    id: ppat.1007958.ref022
+    id: ppat-1007958-ref022
     authors:
       - type: Person
         familyNames:
@@ -1026,7 +1058,7 @@ references:
       Differential effects of the SR proteins 9G8, SC35, ASF/SF2, and SRp40 on
       the utilization of the A1 to A5 splicing sites of HIV-1 RNA
   - type: Article
-    id: ppat.1007958.ref023
+    id: ppat-1007958-ref023
     authors:
       - type: Person
         familyNames:
@@ -1069,7 +1101,7 @@ references:
       Identification of host proteins required for HIV infection through a
       functional genomic screen
   - type: Article
-    id: ppat.1007958.ref024
+    id: ppat-1007958-ref024
     authors:
       - type: Person
         familyNames:
@@ -1112,7 +1144,7 @@ references:
       Global analysis of host-pathogen interactions that regulate early-stage
       HIV-1 replication
   - type: Article
-    id: ppat.1007958.ref025
+    id: ppat-1007958-ref025
     authors:
       - type: Person
         familyNames:
@@ -1154,7 +1186,7 @@ references:
       volumeNumber: 18
     title: Transportin-SR2 Imports HIV into the Nucleus
   - type: Article
-    id: ppat.1007958.ref026
+    id: ppat-1007958-ref026
     authors:
       - type: Person
         familyNames:
@@ -1170,7 +1202,7 @@ references:
       volumeNumber: 2012
     title: The Role of TNPO3 in HIV-1 Replication
   - type: Article
-    id: ppat.1007958.ref027
+    id: ppat-1007958-ref027
     authors:
       - type: Person
         familyNames:
@@ -1185,7 +1217,7 @@ references:
       title: Practical Neurology
     title: Diagnosis and management of the limb girdle muscular dystrophies
   - type: Article
-    id: ppat.1007958.ref028
+    id: ppat-1007958-ref028
     authors:
       - type: Person
         familyNames:
@@ -1228,7 +1260,7 @@ references:
       Autosomal dominant limb-girdle muscular dystrophy: A large kindred with
       evidence for anticipation
   - type: Article
-    id: ppat.1007958.ref029
+    id: ppat-1007958-ref029
     authors:
       - type: Person
         familyNames:
@@ -1271,7 +1303,7 @@ references:
       Structural basis for nuclear import of splicing factors by human
       Transportin 3
   - type: Article
-    id: ppat.1007958.ref030
+    id: ppat-1007958-ref030
     authors:
       - type: Person
         familyNames:
@@ -1314,7 +1346,7 @@ references:
       Limb-girdle muscular dystrophy 1F is caused by a microdeletion in the
       transportin 3 gene
   - type: Article
-    id: ppat.1007958.ref031
+    id: ppat-1007958-ref031
     authors:
       - type: Person
         familyNames:
@@ -1357,7 +1389,7 @@ references:
       Next-Generation Sequencing Identifies Transportin 3 as the Causative Gene
       for LGMD1F
   - type: Article
-    id: ppat.1007958.ref032
+    id: ppat-1007958-ref032
     authors:
       - type: Person
         familyNames:
@@ -1400,7 +1432,7 @@ references:
       Resistance to HIV-1 infection in caucasian individuals bearing mutant
       alleles of the CCR-5 chemokine receptor gene
   - type: Article
-    id: ppat.1007958.ref033
+    id: ppat-1007958-ref033
     authors:
       - type: Person
         familyNames:
@@ -1443,7 +1475,7 @@ references:
       Homozygous defect in HIV-1 coreceptor accounts for resistance of some
       multiply-exposed individuals to HIV-1 infection
   - type: Article
-    id: ppat.1007958.ref034
+    id: ppat-1007958-ref034
     authors:
       - type: Person
         familyNames:
@@ -1473,7 +1505,7 @@ references:
       Computerized system for measurement of force exerted within each pedal
       revolution during cycling
   - type: Article
-    id: ppat.1007958.ref035
+    id: ppat-1007958-ref035
     authors:
       - type: Person
         familyNames:
@@ -1494,7 +1526,7 @@ references:
       volumeNumber: 62
     title: 'Glycogen, Creatine, and High Energy Phosphate in Human Muscle Disease'
   - type: Article
-    id: ppat.1007958.ref036
+    id: ppat-1007958-ref036
     authors:
       - type: Person
         familyNames:
@@ -1525,7 +1557,7 @@ references:
       HIV-1 pre-integration complexes selectively target decondensed chromatin
       in the nuclear periphery
   - type: Article
-    id: ppat.1007958.ref037
+    id: ppat-1007958-ref037
     authors:
       - type: Person
         familyNames:
@@ -1563,7 +1595,7 @@ references:
       title: PLoS Pathogens
     title: 'Host cell factors in HIV replication: Meta-analysis of genome-wide studies'
   - type: Article
-    id: ppat.1007958.ref038
+    id: ppat-1007958-ref038
     authors:
       - type: Person
         familyNames:
@@ -1583,7 +1615,7 @@ references:
       A model for cofactor use during HIV-1 reverse transcription and nuclear
       entry
   - type: Article
-    id: ppat.1007958.ref039
+    id: ppat-1007958-ref039
     authors:
       - type: Person
         familyNames:
@@ -1624,7 +1656,7 @@ references:
       The HIV-1 integrase mutant R263A/K264A is 2-fold defective for TRN-SR2
       binding and viral nuclear import
   - type: Article
-    id: ppat.1007958.ref040
+    id: ppat-1007958-ref040
     authors:
       - type: Person
         familyNames:
@@ -1667,7 +1699,7 @@ references:
       Interaction of the HIV-1 intasome with transportin 3 protein (TNPO3 or
       TRN-SR2)
   - type: Article
-    id: ppat.1007958.ref041
+    id: ppat-1007958-ref041
     authors:
       - type: Person
         familyNames:
@@ -1708,7 +1740,7 @@ references:
       Infection Maps to Human Immunodeficiency Virus Type 1 Capsid and Not
       Integrase
   - type: Article
-    id: ppat.1007958.ref042
+    id: ppat-1007958-ref042
     authors:
       - type: Person
         familyNames:
@@ -1728,7 +1760,7 @@ references:
       Capsid Is a Dominant Determinant of Retrovirus Infectivity in Nondividing
       Cells
   - type: Article
-    id: ppat.1007958.ref043
+    id: ppat-1007958-ref043
     authors:
       - type: Person
         familyNames:
@@ -1748,7 +1780,7 @@ references:
       The cell cycle independence of HIV infections is not determined by known
       karyophilic viral elements
   - type: Article
-    id: ppat.1007958.ref044
+    id: ppat-1007958-ref044
     authors:
       - type: Person
         familyNames:
@@ -1766,7 +1798,7 @@ references:
       title: Nature Reviews Microbiology
     title: Nuclear landscape of HIV-1 infection and integration
   - type: Article
-    id: ppat.1007958.ref045
+    id: ppat-1007958-ref045
     authors:
       - type: Person
         familyNames:
@@ -1806,7 +1838,7 @@ references:
       Capsid-CPSF6 Interaction Licenses Nuclear HIV-1 Trafficking to Sites of
       Viral DNA Integration
   - type: Article
-    id: ppat.1007958.ref046
+    id: ppat-1007958-ref046
     authors:
       - type: Person
         familyNames:
@@ -1844,7 +1876,7 @@ references:
       volumeNumber: 86
     title: 'Nuclear Lamins: Laminopathies and Their Role in Premature Ageing'
   - type: Article
-    id: ppat.1007958.ref047
+    id: ppat-1007958-ref047
     authors:
       - type: Person
         familyNames:
@@ -1877,7 +1909,7 @@ references:
       title: Frontiers in Physiology
     title: The pathogenesis and therapies of striated muscle laminopathies
   - type: Article
-    id: ppat.1007958.ref048
+    id: ppat-1007958-ref048
     authors:
       - type: Person
         familyNames:
@@ -1918,7 +1950,7 @@ references:
       Brain pathology in myotonic dystrophy: when tauopathy meets spliceopathy
       and RNAopathy
   - type: Article
-    id: ppat.1007958.ref049
+    id: ppat-1007958-ref049
     authors:
       - type: Person
         familyNames:
@@ -1938,7 +1970,7 @@ references:
       title: The Lancet Neurology
     title: 'The myotonic dystrophies: Molecular, clinical, and therapeutic challenges'
   - type: Article
-    id: ppat.1007958.ref050
+    id: ppat-1007958-ref050
     authors:
       - type: Person
         familyNames:
@@ -1978,7 +2010,7 @@ references:
       volumeNumber: 8
     title: Interplay between HIV Entry and Transportin-SR2 Dependency
   - type: Article
-    id: ppat.1007958.ref051
+    id: ppat-1007958-ref051
     authors:
       - type: Person
         familyNames:
@@ -2001,7 +2033,7 @@ references:
       Inhibition of HIV-1 infection by TNPO3 depletion is determined by capsid
       and detectable after viral cDNA enters the nucleus
   - type: Article
-    id: ppat.1007958.ref052
+    id: ppat-1007958-ref052
     authors:
       - type: Person
         familyNames:
@@ -2042,7 +2074,7 @@ references:
       HIV integration targeting: A pathway involving transportin-3 and the
       nuclear pore protein RanBP2
   - type: Article
-    id: ppat.1007958.ref053
+    id: ppat-1007958-ref053
     authors:
       - type: Person
         familyNames:
@@ -2080,7 +2112,7 @@ references:
       Deep surveying of alternative splicing complexity in the human
       transcriptome by high-throughput sequencing
   - type: Article
-    id: ppat.1007958.ref054
+    id: ppat-1007958-ref054
     authors:
       - type: Person
         familyNames:
@@ -2121,7 +2153,7 @@ references:
       volumeNumber: 456
     title: Alternative isoform regulation in human tissue transcriptomes
   - type: Article
-    id: ppat.1007958.ref055
+    id: ppat-1007958-ref055
     authors:
       - type: Person
         familyNames:
@@ -2149,7 +2181,7 @@ references:
       The CELF Family of RNA Binding Proteins Is Implicated in Cell-Specific and
       Developmentally Regulated Alternative Splicing
   - type: Article
-    id: ppat.1007958.ref056
+    id: ppat-1007958-ref056
     authors:
       - type: Person
         familyNames:
@@ -2174,7 +2206,7 @@ references:
       title: RNA Biology
     title: Alternative splicing and muscular dystrophy
   - type: Article
-    id: ppat.1007958.ref057
+    id: ppat-1007958-ref057
     authors:
       - type: Person
         familyNames:
@@ -2217,7 +2249,7 @@ references:
       volumeNumber: 18
     title: Expression of IκBα in the nucleus of human peripheral blood T lymphocytes
   - type: Article
-    id: ppat.1007958.ref058
+    id: ppat-1007958-ref058
     authors:
       - type: Person
         familyNames:
@@ -2235,7 +2267,7 @@ references:
       A rapid and sensitive method for the quantitation of microgram quantities
       of protein utilizing the principle of protein-dye binding
   - type: Article
-    id: ppat.1007958.ref059
+    id: ppat-1007958-ref059
     authors:
       - type: Person
         familyNames:
@@ -2273,7 +2305,7 @@ references:
       A new strategy based on recombinant viruses as a tool for assessing drug
       susceptibility of human immunodeficiency virus type 1
   - type: Article
-    id: ppat.1007958.ref060
+    id: ppat-1007958-ref060
     authors:
       - type: Person
         familyNames:
@@ -2312,7 +2344,7 @@ references:
       volumeNumber: 9
     title: 24 Hours in the Life of HIV-1 in a T Cell Line
   - type: Article
-    id: ppat.1007958.ref061
+    id: ppat-1007958-ref061
     authors:
       - type: Person
         familyNames:
@@ -2356,7 +2388,7 @@ references:
       surviving infection with the acquired immune deficiency syndrome
       retrovirus
   - type: Article
-    id: ppat.1007958.ref062
+    id: ppat-1007958-ref062
     authors:
       - type: Person
         familyNames:
@@ -2382,7 +2414,7 @@ references:
       volumeNumber: 7
     title: A quantitative assay for HIV DNA integration in vivo
   - type: Article
-    id: ppat.1007958.ref063
+    id: ppat-1007958-ref063
     authors:
       - type: Person
         familyNames:
@@ -2405,7 +2437,7 @@ references:
       Analysis of Early Human Immunodeficiency Virus Type 1 DNA Synthesis by Use
       of a New Sensitive Assay for Quantifying Integrated Provirus
   - type: Article
-    id: ppat.1007958.ref064
+    id: ppat-1007958-ref064
     authors:
       - type: Person
         familyNames:
@@ -2429,7 +2461,7 @@ references:
       Immunodeficiency Virus Type 1 Core and Nuclear Import of the Viral
       Preintegration Complex
   - type: Article
-    id: ppat.1007958.ref065
+    id: ppat-1007958-ref065
     authors:
       - type: Person
         familyNames:
@@ -2473,7 +2505,7 @@ references:
       replication in human CD4+ T cells reveals an effect on retrotranscription
       in addition to viral transcription
   - type: Article
-    id: ppat.1007958.ref066
+    id: ppat-1007958-ref066
     authors:
       - type: Person
         familyNames:
@@ -2516,7 +2548,7 @@ references:
       HIV virions as nanoscopic test tubes for probing oligomerization of the
       integrase enzyme
   - type: Article
-    id: ppat.1007958.ref067
+    id: ppat-1007958-ref067
     authors:
       - type: Person
         familyNames:
@@ -2554,7 +2586,7 @@ references:
       Multiply attenuated lentiviral vector achieves efficient gene delivery in
       vivo
   - type: Article
-    id: ppat.1007958.ref068
+    id: ppat-1007958-ref068
     authors:
       - type: Person
         familyNames:
@@ -2584,7 +2616,7 @@ references:
       title: Virology
     title: Vpr is required for efficient replication of HIV-1.pdf
   - type: Article
-    id: ppat.1007958.ref069
+    id: ppat-1007958-ref069
     authors:
       - type: Person
         familyNames:
@@ -2629,6 +2661,9 @@ references:
 title: >-
   The mutation of Transportin 3 gene that causes limb girdle muscular dystrophy
   1F induces protection against HIV-1 infection
+meta:
+  authorNotes:
+    - The authors have declared that no competing interest exist.
 content:
   - type: Heading
     id: sec001
@@ -2641,7 +2676,7 @@ content:
         Productive HIV-1 infection requires the interaction with cellular
         co-factors at virtually all the steps of the viral replication cycle [
       - type: Cite
-        target: ppat.1007958.ref001
+        target: ppat-1007958-ref001
         content:
           - '1'
       - >-
@@ -2649,7 +2684,7 @@ content:
         successive interactions with CD4 receptor combined with CXC chemokine
         receptor type 4 (CXCR4) or CC chemokine receptor type 5 (CCR5) [
       - type: Cite
-        target: ppat.1007958.ref002
+        target: ppat-1007958-ref002
         content:
           - '2'
       - >-
@@ -2665,12 +2700,12 @@ content:
         lamina-associated polypeptide 2α (LAP2α) and lens-epithelium derived
         growth factor (LEDGF/p75) [
       - type: Cite
-        target: ppat.1007958.ref003
+        target: ppat-1007958-ref003
         content:
           - '3'
       - –
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - >-
@@ -2678,7 +2713,7 @@ content:
         and Transportin 3 (TNPO3, also called TRN-SR2) have also been involved
         in HIV-1 nuclear import [
       - type: Cite
-        target: ppat.1007958.ref008
+        target: ppat-1007958-ref008
         content:
           - '8'
       - >-
@@ -2686,24 +2721,24 @@ content:
         been confirmed that N-terminal end of TNPO3 protein act as a direct
         binding partner of HIV-1 IN [
       - type: Cite
-        target: ppat.1007958.ref009
+        target: ppat-1007958-ref009
         content:
           - '9'
       - ']. Interaction with the viral CA has also been documented ['
       - type: Cite
-        target: ppat.1007958.ref010
+        target: ppat-1007958-ref010
         content:
           - '10'
       - ','
       - type: Cite
-        target: ppat.1007958.ref011
+        target: ppat-1007958-ref011
         content:
           - '11'
       - >-
         ] and nearly 30 CA-mutants able to modify HIV-1 dependence on TNPO3 have
         been described [
       - type: Cite
-        target: ppat.1007958.ref012
+        target: ppat-1007958-ref012
         content:
           - '12'
       - '].'
@@ -2711,12 +2746,12 @@ content:
     content:
       - 'TNPO3 is a member of the karyopherin β superfamily of proteins ['
       - type: Cite
-        target: ppat.1007958.ref013
+        target: ppat-1007958-ref013
         content:
           - '13'
       - ','
       - type: Cite
-        target: ppat.1007958.ref014
+        target: ppat-1007958-ref014
         content:
           - '14'
       - >-
@@ -2726,12 +2761,12 @@ content:
         factor 2 (SRSF2, also known as SC35) and cleavage and
         polyadenylation-specific factor 6 (CPSF6) [
       - type: Cite
-        target: ppat.1007958.ref015
+        target: ppat-1007958-ref015
         content:
           - '15'
       - ','
       - type: Cite
-        target: ppat.1007958.ref016
+        target: ppat-1007958-ref016
         content:
           - '16'
       - >-
@@ -2741,14 +2776,14 @@ content:
         mutation N74D that cannot interact with CPSF6 trigger innate sensors
         that induce an antiviral state against HIV-1 infection in macrophages [
       - type: Cite
-        target: ppat.1007958.ref017
+        target: ppat-1007958-ref017
         content:
           - '17'
       - >-
         ]. Moreover, as HIV-1 is highly dependent on the cellular splicing
         machinery [
       - type: Cite
-        target: ppat.1007958.ref018
+        target: ppat-1007958-ref018
         content:
           - '18'
       - >-
@@ -2756,31 +2791,31 @@ content:
         HIV-1 replication through changes in the post-transcriptional mRNA
         maturation [
       - type: Cite
-        target: ppat.1007958.ref019
+        target: ppat-1007958-ref019
         content:
           - '19'
       - –
       - type: Cite
-        target: ppat.1007958.ref022
+        target: ppat-1007958-ref022
         content:
           - '22'
       - >-
         ]. TNPO3 has been identified as a HIV-1 co-factor in two independent
         genome-wide siRNA screens [
       - type: Cite
-        target: ppat.1007958.ref023
+        target: ppat-1007958-ref023
         content:
           - '23'
       - ','
       - type: Cite
-        target: ppat.1007958.ref024
+        target: ppat-1007958-ref024
         content:
           - '24'
       - >-
         ] and as a specific binding partner of HIV-1 IN in a yeast two-hybrid
         screen [
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - >-
@@ -2789,7 +2824,7 @@ content:
         its precise role during HIV-1 nuclear import and viral integration is
         not fully understood [
       - type: Cite
-        target: ppat.1007958.ref026
+        target: ppat-1007958-ref026
         content:
           - '26'
       - '].'
@@ -2801,7 +2836,7 @@ content:
         weakness with histological signs of muscle degeneration and regeneration
         [
       - type: Cite
-        target: ppat.1007958.ref027
+        target: ppat-1007958-ref027
         content:
           - '27'
       - >-
@@ -2809,7 +2844,7 @@ content:
         affecting 32 individuals in one large Spanish kindred spanning six
         generations [
       - type: Cite
-        target: ppat.1007958.ref028
+        target: ppat-1007958-ref028
         content:
           - '28'
       - >-
@@ -2821,27 +2856,27 @@ content:
           - TNPO3
       - ' gene, common to both protein isoforms encoded by this gene. As a result, the cells from these patients may synthesize both TNPO3_wt and TNPO3_mut proteins forms, being TNO3P-mut an extended form of TNPO3 with fifteen additional amino acids in the C-terminal end. Because the cargo-binding domain of TNPO3 resides in this part of the molecule ['
       - type: Cite
-        target: ppat.1007958.ref029
+        target: ppat-1007958-ref029
         content:
           - '29'
       - '], this function might be altered in the mutated protein ['
       - type: Cite
-        target: ppat.1007958.ref030
+        target: ppat-1007958-ref030
         content:
           - '30'
       - ','
       - type: Cite
-        target: ppat.1007958.ref031
+        target: ppat-1007958-ref031
         content:
           - '31'
       - ']. Being TNPO3 a co-factor of HIV-1 replication ['
       - type: Cite
-        target: ppat.1007958.ref023
+        target: ppat-1007958-ref023
         content:
           - '23'
       - –
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - >-
@@ -2853,12 +2888,12 @@ content:
           - TNPO3
       - ' present in patients with LGMD1F protected PBMCs from HIV-1 infection. Therefore, this is the second genetic defect described so far after CCR5-Δ32 deletion ['
       - type: Cite
-        target: ppat.1007958.ref032
+        target: ppat-1007958-ref032
         content:
           - '32'
       - ','
       - type: Cite
-        target: ppat.1007958.ref033
+        target: ppat-1007958-ref033
         content:
           - '33'
       - '] that is able to confer resistance to HIV-1 infection.'
@@ -2879,13 +2914,13 @@ content:
         these patients belong to a Spanish/Italian family that shares a common
         old ancestor born in south-eastern Spain [
       - type: Cite
-        target: ppat.1007958.ref028
+        target: ppat-1007958-ref028
         content:
           - '28'
       - '], specifically to generations III, IV and V in the family tree ('
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g001'
+        target: '#ppat-1007958-g001'
         content:
           - Fig 1A
       - >-
@@ -2894,7 +2929,7 @@ content:
         features (
       - type: Link
         relation: table
-        target: '#ppat.1007958.t001'
+        target: '#ppat-1007958-t001'
         content:
           - Table 1
       - >-
@@ -2909,12 +2944,12 @@ content:
         brace for walking or standing. Eight patients were graded as 3–4 in the
         Brooke score and were unable to elevate their shoulders [
       - type: Cite
-        target: ppat.1007958.ref034
+        target: ppat-1007958-ref034
         content:
           - '34'
       - ','
       - type: Cite
-        target: ppat.1007958.ref035
+        target: ppat-1007958-ref035
         content:
           - '35'
       - >-
@@ -2927,7 +2962,7 @@ content:
       - ' gene. LGMD1F patients show a heterozygous single nucleotide deletion (c.2771del) in exon 23 that generates a 15 amino acid extension of the C-terminus of the protein ('
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g001'
+        target: '#ppat-1007958-g001'
         content:
           - Fig 1B
       - ).
@@ -3669,7 +3704,7 @@ content:
         co-dominant expression of each allele (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g002'
+        target: '#ppat-1007958-g002'
         content:
           - Fig 2A and 2B
       - '), in comparison with dominant expression of '
@@ -3687,7 +3722,7 @@ content:
       - ' allele, protein extracts from four patients and two healthy controls were analyzed by immunoblotting using an antibody against TNPO3 that recognized both forms of the protein. Similar levels of TNPO3_wt and TNPO3_mut isoforms were observed in LGMD1F patients, whereas only one band corresponding to TNPO3_wt was observed in healthy controls ('
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g002'
+        target: '#ppat-1007958-g002'
         content:
           - Fig 2C
       - ).
@@ -3751,7 +3786,7 @@ content:
         difference with healthy controls was found (
       - type: Link
         relation: supplementary-material
-        target: '#ppat.1007958.s001'
+        target: '#ppat-1007958-s001'
         content:
           - S1A Fig
       - >-
@@ -3761,7 +3796,7 @@ content:
         observed (
       - type: Link
         relation: supplementary-material
-        target: '#ppat.1007958.s001'
+        target: '#ppat-1007958-s001'
         content:
           - S1B Fig
       - >-
@@ -3778,7 +3813,7 @@ content:
         TNPO3 is involved in nuclear import of splicing factors such as ASF/SF2,
         SC35 and CPSF6 [
       - type: Cite
-        target: ppat.1007958.ref029
+        target: ppat-1007958-ref029
         content:
           - '29'
       - >-
@@ -3786,7 +3821,7 @@ content:
         accumulation of CPSF6 –a predominantly nuclear protein- in the cytoplasm
         [
       - type: Cite
-        target: ppat.1007958.ref012
+        target: ppat-1007958-ref012
         content:
           - '12'
       - >-
@@ -3797,7 +3832,7 @@ content:
         cytoplasmatic CPSF6 (
       - type: Link
         relation: supplementary-material
-        target: '#ppat.1007958.s002'
+        target: '#ppat-1007958-s002'
         content:
           - S2 Fig
       - ).
@@ -3815,7 +3850,7 @@ content:
         vivo by spinoculation with NL4.3-Renilla and NL4.3_N74D-Renilla, a CA
         mutant in which the nuclear import is independent of TNPO3 [
       - type: Cite
-        target: ppat.1007958.ref017
+        target: ppat-1007958-ref017
         content:
           - '17'
       - >-
@@ -3826,7 +3861,7 @@ content:
         after infection with either virus (
       - type: Link
         relation: supplementary-material
-        target: '#ppat.1007958.s003'
+        target: '#ppat-1007958-s003'
         content:
           - S3A and S3B Fig
       - >-
@@ -3834,7 +3869,7 @@ content:
         patients 3–7 days after infection with NL4.3-Renilla (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g003'
+        target: '#ppat-1007958-g003'
         content:
           - Fig 3A
       - >-
@@ -3842,7 +3877,7 @@ content:
         virus was observed (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g003'
+        target: '#ppat-1007958-g003'
         content:
           - Fig 3B
       - ).
@@ -3918,7 +3953,7 @@ content:
       - <0.0001) (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g003'
+        target: '#ppat-1007958-g003'
         content:
           - Fig 3C
       - ).
@@ -3932,7 +3967,7 @@ content:
         with NL4.3_N74D-Renilla (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g003'
+        target: '#ppat-1007958-g003'
         content:
           - Fig 3D
       - >-
@@ -3957,7 +3992,7 @@ content:
         qPCR (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g004'
+        target: '#ppat-1007958-g004'
         content:
           - Fig 4A
       - >-
@@ -4008,7 +4043,7 @@ content:
         PBMCs from LGMD1F patients and healthy controls (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g004'
+        target: '#ppat-1007958-g004'
         content:
           - Fig 4B
       - ).
@@ -4025,7 +4060,7 @@ content:
       - <0.0001) (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g004'
+        target: '#ppat-1007958-g004'
         content:
           - Fig 4C
       - >-
@@ -4044,12 +4079,12 @@ content:
         CD4+ T cells isolated from patients with LGMD1F and healthy controls
         were infected with fluorescently labeled particles (HIV-IN-eGFP) [
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - ','
       - type: Cite
-        target: ppat.1007958.ref036
+        target: ppat-1007958-ref036
         content:
           - '36'
       - >-
@@ -4060,13 +4095,13 @@ content:
         the number of uninfected cells (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g005'
+        target: '#ppat-1007958-g005'
         content:
           - Fig 5A
       - '), nor in the number of cytoplasmic and nuclear PICs per cell ('
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g005'
+        target: '#ppat-1007958-g005'
         content:
           - Fig 5B and 5C
       - >-
@@ -4079,7 +4114,7 @@ content:
       - <0.001) (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g005'
+        target: '#ppat-1007958-g005'
         content:
           - Fig 5A
       - >-
@@ -4087,7 +4122,7 @@ content:
         from patients with LGMD1F compared to the healthy controls (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g005'
+        target: '#ppat-1007958-g005'
         content:
           - Fig 5B
       - ) (
@@ -4099,7 +4134,7 @@ content:
         there was no significant difference in the number of nuclear PICs (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g005'
+        target: '#ppat-1007958-g005'
         content:
           - Fig 5C and 5D
       - ).
@@ -4170,7 +4205,7 @@ content:
         blot, immunocytochemistry and RT-PCR (
       - type: Link
         relation: supplementary-material
-        target: '#ppat.1007958.s004'
+        target: '#ppat-1007958-s004'
         content:
           - S4 Fig
       - '). Next, we compared the luciferase signal of HIV-fLuc'
@@ -4180,17 +4215,17 @@ content:
       - ' in a cell line containing TNPO3_wt which was transduced with an empty vector (control shRNA + empty vector). As described before, depletion of TNPO3 (TNPO3 shRNA + empty vector), resulted in a three-fold drop in luciferase activity, reflecting a decreased viral infectivity ('
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g006'
+        target: '#ppat-1007958-g006'
         content:
           - Fig 6
       - ') (p<0.01) ['
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - ','
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - >-
@@ -4245,63 +4280,63 @@ content:
         this regard, TNPO3 and other importins have been previously described as
         essential cellular proteins for HIV-1 infection [
       - type: Cite
-        target: ppat.1007958.ref023
+        target: ppat-1007958-ref023
         content:
           - '23'
       - –
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - ','
       - type: Cite
-        target: ppat.1007958.ref037
+        target: ppat-1007958-ref037
         content:
           - '37'
       - >-
         ]. However the exact mechanism of action of TNPO3 still remains a matter
         of controversy [
       - type: Cite
-        target: ppat.1007958.ref038
+        target: ppat-1007958-ref038
         content:
           - '38'
       - >-
         ]. Some studies suggest that TNPO3 participates in the nuclear import of
         PICs [
       - type: Cite
-        target: ppat.1007958.ref009
+        target: ppat-1007958-ref009
         content:
           - '9'
       - ','
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - ','
       - type: Cite
-        target: ppat.1007958.ref039
+        target: ppat-1007958-ref039
         content:
           - '39'
       - ','
       - type: Cite
-        target: ppat.1007958.ref040
+        target: ppat-1007958-ref040
         content:
           - '40'
       - >-
         ] whereas other authors propose that TNPO3 promotes HIV-1 infection
         though the interaction with HIV-1 CA [
       - type: Cite
-        target: ppat.1007958.ref041
+        target: ppat-1007958-ref041
         content:
           - '41'
       - –
       - type: Cite
-        target: ppat.1007958.ref043
+        target: ppat-1007958-ref043
         content:
           - '43'
       - '] or indirectly through the interaction of CPSF6 with HIV-1 CA ['
       - type: Cite
-        target: ppat.1007958.ref012
+        target: ppat-1007958-ref012
         content:
           - '12'
       - >-
@@ -4309,21 +4344,21 @@ content:
         interaction with CA and/or the IN and their respective cellular partners
         such as CPSF6 or LEDGF/p75 [
       - type: Cite
-        target: ppat.1007958.ref038
+        target: ppat-1007958-ref038
         content:
           - '38'
       - >-
         ] has been proposed. These cellular host factors may affect the nuclear
         landscape of HIV-1 infection [
       - type: Cite
-        target: ppat.1007958.ref044
+        target: ppat-1007958-ref044
         content:
           - '44'
       - >-
         ] by targeting the viral genome to silent or actively transcribed
         chromatin [
       - type: Cite
-        target: ppat.1007958.ref045
+        target: ppat-1007958-ref045
         content:
           - '45'
       - >-
@@ -4336,7 +4371,7 @@ content:
         target to HIV-1 infection and only recently new hits impeding TNPO3-IN
         interactions blocking HIV-1 nuclear transport have been described [
       - type: Cite
-        target: ppat.1007958.ref008
+        target: ppat-1007958-ref008
         content:
           - '8'
       - >-
@@ -4348,12 +4383,12 @@ content:
           - TNPO3
       - ' gene, which leads to the addition of 15 amino acids to the C-terminal end ['
       - type: Cite
-        target: ppat.1007958.ref030
+        target: ppat-1007958-ref030
         content:
           - '30'
       - ','
       - type: Cite
-        target: ppat.1007958.ref031
+        target: ppat-1007958-ref031
         content:
           - '31'
       - >-
@@ -4363,7 +4398,7 @@ content:
         the nucleus. This suggests that TNPO3 mutation could affect the
         subcellular localization of the protein [
       - type: Cite
-        target: ppat.1007958.ref031
+        target: ppat-1007958-ref031
         content:
           - '31'
       - >-
@@ -4371,12 +4406,12 @@ content:
         end, the additional 15 amino acids may also alter its cargo binding
         properties and subsequently influence alternative splicing [
       - type: Cite
-        target: ppat.1007958.ref030
+        target: ppat-1007958-ref030
         content:
           - '30'
       - ','
       - type: Cite
-        target: ppat.1007958.ref031
+        target: ppat-1007958-ref031
         content:
           - '31'
       - >-
@@ -4387,12 +4422,12 @@ content:
         structure located below the nuclear membrane which functions include
         among others the regulation of the nuclear transport [
       - type: Cite
-        target: ppat.1007958.ref046
+        target: ppat-1007958-ref046
         content:
           - '46'
       - ','
       - type: Cite
-        target: ppat.1007958.ref047
+        target: ppat-1007958-ref047
         content:
           - '47'
       - >-
@@ -4400,12 +4435,12 @@ content:
         mutations in splicing factors. For these reasons the term
         “splicepathies” has been proposed to design these genetic diseases [
       - type: Cite
-        target: ppat.1007958.ref048
+        target: ppat-1007958-ref048
         content:
           - '48'
       - ','
       - type: Cite
-        target: ppat.1007958.ref049
+        target: ppat-1007958-ref049
         content:
           - '49'
       - >-
@@ -4428,7 +4463,7 @@ content:
           - TNPO3
       - ' gene because the infectivity was not affected when we infected with an HIV-1 clone carrying a CA-mutation (N74D), in which the nuclear transport is independent of TNPO3. As previously described ['
       - type: Cite
-        target: ppat.1007958.ref017
+        target: ppat-1007958-ref017
         content:
           - '17'
       - >-
@@ -4464,7 +4499,7 @@ content:
         _mut allele was expressed and translated as a 15 amino acids longer
         protein than TNPO3_wt [
       - type: Cite
-        target: ppat.1007958.ref031
+        target: ppat-1007958-ref031
         content:
           - '31'
       - >-
@@ -4476,12 +4511,12 @@ content:
         proposed that TNPO3 multimerizes in order to carry out its nuclear
         import functions [
       - type: Cite
-        target: ppat.1007958.ref029
+        target: ppat-1007958-ref029
         content:
           - '29'
       - ','
       - type: Cite
-        target: ppat.1007958.ref040
+        target: ppat-1007958-ref040
         content:
           - '40'
       - >-
@@ -4497,7 +4532,7 @@ content:
         first time and correlates with previous work showing that TNPO3
         knockdown causes CPSF6 to accumulate in the cytoplasm [
       - type: Cite
-        target: ppat.1007958.ref012
+        target: ppat-1007958-ref012
         content:
           - '12'
       - >-
@@ -4526,39 +4561,39 @@ content:
         has been previously described that TNPO3 depletion leads to a reduction
         in nuclear 2-LTR circles during HIV-1 infection [
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - ','
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - ','
       - type: Cite
-        target: ppat.1007958.ref050
+        target: ppat-1007958-ref050
         content:
           - '50'
       - '], although other studies did not corroborate these results ['
       - type: Cite
-        target: ppat.1007958.ref010
+        target: ppat-1007958-ref010
         content:
           - '10'
       - ','
       - type: Cite
-        target: ppat.1007958.ref011
+        target: ppat-1007958-ref011
         content:
           - '11'
       - ','
       - type: Cite
-        target: ppat.1007958.ref051
+        target: ppat-1007958-ref051
         content:
           - '51'
       - >-
         ]. This discrepancy has been attributed to the different primer sets
         used to detect the intranuclear viral DNA products [
       - type: Cite
-        target: ppat.1007958.ref012
+        target: ppat-1007958-ref012
         content:
           - '12'
       - >-
@@ -4567,7 +4602,7 @@ content:
         circles 24 hours post-infection (
       - type: Link
         relation: fig
-        target: '#ppat.1007958.g004'
+        target: '#ppat-1007958-g004'
         content:
           - Fig 4B
       - >-
@@ -4592,7 +4627,7 @@ content:
         increase in CA stability due to cytosolic CPSF6 location after silencing
         TNPO3 has been proposed [
       - type: Cite
-        target: ppat.1007958.ref012
+        target: ppat-1007958-ref012
         content:
           - '12'
       - >-
@@ -4603,7 +4638,7 @@ content:
         recruitment of cellular factors to the CA, including TNPO3 and CPSF6 to
         the CA [
       - type: Cite
-        target: ppat.1007958.ref016
+        target: ppat-1007958-ref016
         content:
           - '16'
       - >-
@@ -4618,7 +4653,7 @@ content:
         entry through TNPO3-independent mechanisms in patients with LGMD1F leads
         to different selection of chromosomal integration sites [
       - type: Cite
-        target: ppat.1007958.ref052
+        target: ppat-1007958-ref052
         content:
           - '52'
       - '].'
@@ -4640,31 +4675,31 @@ content:
         affecting the nuclear import of essential factors for alternative
         splicing such as SC35 and CPSF6 [
       - type: Cite
-        target: ppat.1007958.ref015
+        target: ppat-1007958-ref015
         content:
           - '15'
       - ','
       - type: Cite
-        target: ppat.1007958.ref016
+        target: ppat-1007958-ref016
         content:
           - '16'
       - >-
         ]. It has been described that skeletal muscle is the tissue with the
         highest number of differentially expressed alternative exons [
       - type: Cite
-        target: ppat.1007958.ref053
+        target: ppat-1007958-ref053
         content:
           - '53'
       - ','
       - type: Cite
-        target: ppat.1007958.ref054
+        target: ppat-1007958-ref054
         content:
           - '54'
       - >-
         ], including isoforms of myogenic transcription factors, metabolic
         enzymes and myofibrillar proteins [
       - type: Cite
-        target: ppat.1007958.ref055
+        target: ppat-1007958-ref055
         content:
           - '55'
       - >-
@@ -4676,7 +4711,7 @@ content:
         pattern of muscle-specific transcripts processed by alternative splicing
         [
       - type: Cite
-        target: ppat.1007958.ref056
+        target: ppat-1007958-ref056
         content:
           - '56'
       - >-
@@ -4715,12 +4750,12 @@ content:
         extremity functions were assessed using Brooke and Vignos scores,
         respectively [
       - type: Cite
-        target: ppat.1007958.ref034
+        target: ppat-1007958-ref034
         content:
           - '34'
       - ','
       - type: Cite
-        target: ppat.1007958.ref035
+        target: ppat-1007958-ref035
         content:
           - '35'
       - >-
@@ -4781,12 +4816,12 @@ content:
     content:
       - 'Whole protein extracts were obtained as described previously ['
       - type: Cite
-        target: ppat.1007958.ref057
+        target: ppat-1007958-ref057
         content:
           - '57'
       - '] and protein concentration was determined by Bradford method ['
       - type: Cite
-        target: ppat.1007958.ref058
+        target: ppat-1007958-ref058
         content:
           - '58'
       - >-
@@ -4816,7 +4851,7 @@ content:
           - renilla luciferase
       - ' gene. The pNL4.3_N74D-Renilla clone was generated introducing the N74D mutation in the nucleotide position 1405 of the previously described plasmid pNL4.3-Renilla ['
       - type: Cite
-        target: ppat.1007958.ref059
+        target: ppat-1007958-ref059
         content:
           - '59'
       - >-
@@ -4835,7 +4870,7 @@ content:
         Systems, Oak Ridge, TN). Data were normalized for protein concentration
         measured with the Bradford method [
       - type: Cite
-        target: ppat.1007958.ref058
+        target: ppat-1007958-ref058
         content:
           - '58'
       - >-
@@ -4855,14 +4890,14 @@ content:
         for R and U5 regions of the HIV-1 long terminal repeat (LTR), as
         described [
       - type: Cite
-        target: ppat.1007958.ref060
+        target: ppat-1007958-ref060
         content:
           - '60'
       - >-
         ]. Serial dilutions of genomic DNA from 8E5 cell line, which contains a
         single integrated copy of HIV-1 [
       - type: Cite
-        target: ppat.1007958.ref061
+        target: ppat-1007958-ref061
         content:
           - '61'
       - '], were used as a standard curve. The '
@@ -4911,17 +4946,17 @@ content:
         extracted using DNeasy Blood and Tissue kit (Qiagen) as described above
         and the integrated HIV-DNA was measured by nested Alu–HIV-LTR PCR [
       - type: Cite
-        target: ppat.1007958.ref062
+        target: ppat-1007958-ref062
         content:
           - '62'
       - –
       - type: Cite
-        target: ppat.1007958.ref064
+        target: ppat-1007958-ref064
         content:
           - '64'
       - '] with modifications ['
       - type: Cite
-        target: ppat.1007958.ref065
+        target: ppat-1007958-ref065
         content:
           - '65'
       - >-
@@ -4944,17 +4979,17 @@ content:
         HIV-1 particles containing fluorescently labeled IN (HIV-IN-eGFP) were
         generated by Vpr-mediated trans-incorporation as described before [
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - ','
       - type: Cite
-        target: ppat.1007958.ref036
+        target: ppat-1007958-ref036
         content:
           - '36'
       - ','
       - type: Cite
-        target: ppat.1007958.ref066
+        target: ppat-1007958-ref066
         content:
           - '66'
       - >-
@@ -4975,7 +5010,7 @@ content:
         Olympus, Tokyo, Japan). An in-house MatLab routine (MatWorks) was used
         to determine the localization and number of IN-eGFP complexes [
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - >-
@@ -5000,12 +5035,12 @@ content:
         vectors for the stable expression of TNPO3 were produced as described
         before [
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - ','
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - ']. In short, 6.5x10'
@@ -5014,7 +5049,7 @@ content:
           - '6'
       - ' HEK-293T cells were transfected with 10 μg of the packaging construct pCMVδR8.91 ['
       - type: Cite
-        target: ppat.1007958.ref067
+        target: ppat-1007958-ref067
         content:
           - '67'
       - >-
@@ -5030,12 +5065,12 @@ content:
         HeLaP4 cells, a kind gift from Dr. P. Charneau (Institut Pasteur,
         France), and HeLaP4 cells stably depleted of TNPO3 [
       - type: Cite
-        target: ppat.1007958.ref007
+        target: ppat-1007958-ref007
         content:
           - '7'
       - ','
       - type: Cite
-        target: ppat.1007958.ref025
+        target: ppat-1007958-ref025
         content:
           - '25'
       - >-
@@ -5059,12 +5094,12 @@ content:
           - VSV-G
       - ' ['
       - type: Cite
-        target: ppat.1007958.ref068
+        target: ppat-1007958-ref068
         content:
           - '68'
       - ','
       - type: Cite
-        target: ppat.1007958.ref069
+        target: ppat-1007958-ref069
         content:
           - '69'
       - >-

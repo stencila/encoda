@@ -89,9 +89,15 @@ authors:
     givenNames:
       - A.
       - Vania
+dateAccepted:
+  type: Date
+  value: '2019-07-16'
 datePublished:
   type: Date
   value: '2019-08-20'
+dateReceived:
+  type: Date
+  value: '2018-11-12'
 description:
   - type: Paragraph
     content:
@@ -123,11 +129,37 @@ editors:
       - Seymour
     givenNames:
       - Ben
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.1371/journal.pbio.3000349
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: PBIOLOGY-D-18-01201
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e3000349
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: PLoS Biol
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: plos
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: plosbiol
+    issns:
       - 1544-9173
       - 1545-7885
     publisher:
@@ -151,7 +183,7 @@ licenses:
             any medium, provided the original author and source are credited.
 references:
   - type: Article
-    id: pbio.3000349.ref001
+    id: pbio-3000349-ref001
     authors:
       - type: Person
         familyNames:
@@ -192,7 +224,7 @@ references:
       volumeNumber: 95
     title: The Emotional Brain as a Predictor and Amplifier of Chronic Pain
   - type: Article
-    id: pbio.3000349.ref002
+    id: pbio-3000349-ref002
     authors:
       - type: Person
         familyNames:
@@ -213,7 +245,7 @@ references:
       volumeNumber: 87
     title: 'Nociception, Pain, Negative Moods, and Behavior Selection'
   - type: Article
-    id: pbio.3000349.ref003
+    id: pbio-3000349-ref003
     authors:
       - type: Person
         familyNames:
@@ -234,7 +266,7 @@ references:
       volumeNumber: 70
     title: 'Psychological factors in chronic pain: evolution and revolution'
   - type: Article
-    id: pbio.3000349.ref004
+    id: pbio-3000349-ref004
     authors:
       - type: Person
         familyNames:
@@ -255,7 +287,7 @@ references:
       volumeNumber: 136
     title: Socioeconomic disadvantage and pain
   - type: Article
-    id: pbio.3000349.ref005
+    id: pbio-3000349-ref005
     authors:
       - type: Person
         familyNames:
@@ -293,7 +325,7 @@ references:
       title: Cochrane Database Syst Rev
     title: Multidisciplinary biopsychosocial rehabilitation for chronic low back pain
   - type: Article
-    id: pbio.3000349.ref006
+    id: pbio-3000349-ref006
     authors:
       - type: Person
         familyNames:
@@ -329,7 +361,7 @@ references:
       volumeNumber: 22
     title: Personality traits and emotional patterns in irritable bowel syndrome
   - type: Article
-    id: pbio.3000349.ref007
+    id: pbio-3000349-ref007
     authors:
       - type: Person
         familyNames:
@@ -372,7 +404,7 @@ references:
       Personality Traits in Fibromyalgia (FM): Does FM Personality Exists? A
       Systematic Review
   - type: Article
-    id: pbio.3000349.ref008
+    id: pbio-3000349-ref008
     authors:
       - type: Person
         familyNames:
@@ -403,7 +435,7 @@ references:
       cancer treatment: a systematic review and meta-analysis of prospective
       studies
   - type: Article
-    id: pbio.3000349.ref009
+    id: pbio-3000349-ref009
     authors:
       - type: Person
         familyNames:
@@ -424,7 +456,7 @@ references:
       volumeNumber: 87
     title: Evaluating psychosocial contributions to chronic pain outcomes
   - type: Article
-    id: pbio.3000349.ref010
+    id: pbio-3000349-ref010
     authors:
       - type: Person
         familyNames:
@@ -452,7 +484,7 @@ references:
       New evidence for a pain personality? A critical review of the last 120
       years of pain and personality
   - type: Article
-    id: pbio.3000349.ref011
+    id: pbio-3000349-ref011
     authors:
       - type: Person
         familyNames:
@@ -493,7 +525,7 @@ references:
       volumeNumber: 17
     title: Theoretical perspectives on the relation between catastrophizing and pain
   - type: Article
-    id: pbio.3000349.ref012
+    id: pbio-3000349-ref012
     authors:
       - type: Person
         familyNames:
@@ -516,7 +548,7 @@ references:
       Fear-avoidance and its consequences in chronic musculoskeletal pain: a
       state of the art
   - type: Article
-    id: pbio.3000349.ref013
+    id: pbio-3000349-ref013
     authors:
       - type: Person
         familyNames:
@@ -534,7 +566,7 @@ references:
       Learning to live with the pain: acceptance of pain predicts adjustment in
       persons with chronic pain
   - type: Article
-    id: pbio.3000349.ref014
+    id: pbio-3000349-ref014
     authors:
       - type: Person
         familyNames:
@@ -550,7 +582,7 @@ references:
       volumeNumber: 4
     title: The development of markers for the Big-Five factor structure
   - type: Article
-    id: pbio.3000349.ref015
+    id: pbio-3000349-ref015
     authors:
       - type: Person
         familyNames:
@@ -579,7 +611,7 @@ references:
       The role of neuroticism, pain catastrophizing and pain-related fear in
       vigilance to pain: a structural equations approach
   - type: Article
-    id: pbio.3000349.ref016
+    id: pbio-3000349-ref016
     authors:
       - type: Person
         familyNames:
@@ -620,7 +652,7 @@ references:
       volumeNumber: 40
     title: Neuroticism as a common dimension in the internalizing disorders
   - type: Article
-    id: pbio.3000349.ref017
+    id: pbio-3000349-ref017
     authors:
       - type: Person
         familyNames:
@@ -653,7 +685,7 @@ references:
       Linking “big” personality traits to anxiety, depressive, and substance use
       disorders: a meta-analysis
   - type: Article
-    id: pbio.3000349.ref018
+    id: pbio-3000349-ref018
     authors:
       - type: Person
         familyNames:
@@ -675,7 +707,7 @@ references:
       Optimism and the experience of pain: benefits of seeing the glass as half
       full
   - type: Article
-    id: pbio.3000349.ref019
+    id: pbio-3000349-ref019
     authors:
       - type: Person
         familyNames:
@@ -703,7 +735,7 @@ references:
       The clinical use of mindfulness meditation for the self-regulation of
       chronic pain
   - type: Article
-    id: pbio.3000349.ref020
+    id: pbio-3000349-ref020
     authors:
       - type: Person
         familyNames:
@@ -731,7 +763,7 @@ references:
       The role of mindfulness in a contextual cognitive-behavioral analysis of
       chronic pain-related suffering and disability
   - type: Article
-    id: pbio.3000349.ref021
+    id: pbio-3000349-ref021
     authors:
       - type: Person
         familyNames:
@@ -773,7 +805,7 @@ references:
       Body Awareness: a phenomenological inquiry into the common ground of
       mind-body therapies
   - type: Article
-    id: pbio.3000349.ref022
+    id: pbio-3000349-ref022
     authors:
       - type: Person
         familyNames:
@@ -806,7 +838,7 @@ references:
       Pain-related fear is more disabling than pain itself: evidence on the role
       of pain-related fear in chronic back pain disability
   - type: Article
-    id: pbio.3000349.ref023
+    id: pbio-3000349-ref023
     authors:
       - type: Person
         familyNames:
@@ -849,7 +881,7 @@ references:
       Enhanced medial prefrontal-default mode network functional connectivity in
       chronic pain and its association with pain rumination
   - type: Article
-    id: pbio.3000349.ref024
+    id: pbio-3000349-ref024
     authors:
       - type: Person
         familyNames:
@@ -890,7 +922,7 @@ references:
       Altered Brain Structure and Function Correlate with Disease Severity and
       Pain Catastrophizing in Migraine Patients
   - type: Article
-    id: pbio.3000349.ref025
+    id: pbio-3000349-ref025
     authors:
       - type: Person
         familyNames:
@@ -933,7 +965,7 @@ references:
       The lateral prefrontal cortex mediates the hyperalgesic effects of
       negative cognitions in chronic pain patients
   - type: Article
-    id: pbio.3000349.ref026
+    id: pbio-3000349-ref026
     authors:
       - type: Person
         familyNames:
@@ -972,7 +1004,7 @@ references:
       widespread musculoskeletal pain: results from the 1958 British Birth
       Cohort Study
   - type: Article
-    id: pbio.3000349.ref027
+    id: pbio-3000349-ref027
     authors:
       - type: Person
         familyNames:
@@ -1015,7 +1047,7 @@ references:
       The impact of socio-economic status on pain and the perception of
       disability due to pain
   - type: Article
-    id: pbio.3000349.ref028
+    id: pbio-3000349-ref028
     authors:
       - type: Person
         familyNames:
@@ -1035,7 +1067,7 @@ references:
       Lumbar disc disorders and low-back pain: socioeconomic factors and
       consequences
   - type: Article
-    id: pbio.3000349.ref029
+    id: pbio-3000349-ref029
     authors:
       - type: Person
         familyNames:
@@ -1077,7 +1109,7 @@ references:
       Brain and psychological determinants of placebo pill response in chronic
       pain patients
   - type: Article
-    id: pbio.3000349.ref030
+    id: pbio-3000349-ref030
     authors:
       - type: Person
         familyNames:
@@ -1103,7 +1135,7 @@ references:
       Connectomics and new approaches for analyzing human brain functional
       connectivity
   - type: Article
-    id: pbio.3000349.ref031
+    id: pbio-3000349-ref031
     authors:
       - type: Person
         familyNames:
@@ -1119,7 +1151,7 @@ references:
       volumeNumber: 379
     title: Mapping Symptoms to Brain Networks with the Human Connectome
   - type: Article
-    id: pbio.3000349.ref032
+    id: pbio-3000349-ref032
     authors:
       - type: Person
         familyNames:
@@ -1162,7 +1194,7 @@ references:
       Using connectome-based predictive modeling to predict individual behavior
       from brain connectivity
   - type: Article
-    id: pbio.3000349.ref033
+    id: pbio-3000349-ref033
     authors:
       - type: Person
         familyNames:
@@ -1203,7 +1235,7 @@ references:
       volumeNumber: 72
     title: Functional network organization of the human brain
   - type: Article
-    id: pbio.3000349.ref034
+    id: pbio-3000349-ref034
     authors:
       - type: Person
         familyNames:
@@ -1246,7 +1278,7 @@ references:
       Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic
       Functional Connectivity MRI
   - type: Article
-    id: pbio.3000349.ref035
+    id: pbio-3000349-ref035
     authors:
       - type: Person
         familyNames:
@@ -1267,7 +1299,7 @@ references:
       volumeNumber: 63
     title: 'The anatomy of reliability: a must read for future human brain mapping'
   - type: Article
-    id: pbio.3000349.ref036
+    id: pbio-3000349-ref036
     authors:
       - type: Person
         familyNames:
@@ -1298,7 +1330,7 @@ references:
       volumeNumber: 69
     title: 'Interdisciplinary chronic pain management: past, present, and future'
   - type: Article
-    id: pbio.3000349.ref037
+    id: pbio-3000349-ref037
     authors:
       - type: Person
         familyNames:
@@ -1318,7 +1350,7 @@ references:
       volumeNumber: 16
     title: Psychological aspects of neuropathic pain
   - type: Article
-    id: pbio.3000349.ref038
+    id: pbio-3000349-ref038
     authors:
       - type: Person
         familyNames:
@@ -1341,7 +1373,7 @@ references:
       Contributions of psychology to the understanding and treatment of people
       with chronic pain: why it matters to ALL psychologists
   - type: Article
-    id: pbio.3000349.ref039
+    id: pbio-3000349-ref039
     authors:
       - type: Person
         familyNames:
@@ -1378,7 +1410,7 @@ references:
       The Role of Psychosocial Processes in the Development and Maintenance of
       Chronic Pain
   - type: Article
-    id: pbio.3000349.ref040
+    id: pbio-3000349-ref040
     authors:
       - type: Person
         familyNames:
@@ -1388,7 +1420,7 @@ references:
     datePublished: '1961'
     title: ''
   - type: Article
-    id: pbio.3000349.ref041
+    id: pbio-3000349-ref041
     authors:
       - type: Person
         familyNames:
@@ -1409,7 +1441,7 @@ references:
       volumeNumber: 57
     title: Personality and the Prediction of Consequential Outcomes
   - type: Article
-    id: pbio.3000349.ref042
+    id: pbio-3000349-ref042
     authors:
       - type: Person
         familyNames:
@@ -1442,7 +1474,7 @@ references:
       Representation, Pattern Information, and Brain Signatures: From Neurons to
       Neuroimaging
   - type: Article
-    id: pbio.3000349.ref043
+    id: pbio-3000349-ref043
     authors:
       - type: Person
         familyNames:
@@ -1482,7 +1514,7 @@ references:
       volumeNumber: 6
     title: 'Global disruption of degree rank order: a hallmark of chronic pain'
   - type: Article
-    id: pbio.3000349.ref044
+    id: pbio-3000349-ref044
     authors:
       - type: Person
         familyNames:
@@ -1525,7 +1557,7 @@ references:
       Default mode network connectivity encodes clinical pain: an arterial spin
       labeling study
   - type: Article
-    id: pbio.3000349.ref045
+    id: pbio-3000349-ref045
     authors:
       - type: Person
         familyNames:
@@ -1556,7 +1588,7 @@ references:
       Functional reorganization of the default mode network across chronic pain
       conditions
   - type: Article
-    id: pbio.3000349.ref046
+    id: pbio-3000349-ref046
     authors:
       - type: Person
         familyNames:
@@ -1599,7 +1631,7 @@ references:
       Intrinsic brain connectivity in fibromyalgia is associated with chronic
       pain intensity
   - type: Article
-    id: pbio.3000349.ref047
+    id: pbio-3000349-ref047
     authors:
       - type: Person
         familyNames:
@@ -1642,7 +1674,7 @@ references:
       Corticostriatal functional connectivity predicts transition to chronic
       back pain
   - type: Article
-    id: pbio.3000349.ref048
+    id: pbio-3000349-ref048
     authors:
       - type: Person
         familyNames:
@@ -1663,7 +1695,7 @@ references:
       volumeNumber: 17
     title: Reward and motivation in pain and pain relief
   - type: Article
-    id: pbio.3000349.ref049
+    id: pbio-3000349-ref049
     authors:
       - type: Person
         familyNames:
@@ -1706,7 +1738,7 @@ references:
       The indirect pathway of the nucleus accumbens shell amplifies neuropathic
       pain
   - type: Article
-    id: pbio.3000349.ref050
+    id: pbio-3000349-ref050
     authors:
       - type: Person
         familyNames:
@@ -1749,7 +1781,7 @@ references:
       Chronic pain. Decreased motivation during chronic pain requires long-term
       depression in the nucleus accumbens
   - type: Article
-    id: pbio.3000349.ref051
+    id: pbio-3000349-ref051
     authors:
       - type: Person
         familyNames:
@@ -1780,7 +1812,7 @@ references:
       Distinct brain systems mediate the effects of nociceptive input and
       self-regulation on pain
   - type: Article
-    id: pbio.3000349.ref052
+    id: pbio-3000349-ref052
     authors:
       - type: Person
         familyNames:
@@ -1805,6 +1837,9 @@ references:
 title: >-
   Identification of traits and functional connectivity-based neurotraits of
   chronic pain
+meta:
+  authorNotes:
+    - The authors have declared that no competing interests exist.
 content:
   - type: Heading
     id: sec001
@@ -1820,12 +1855,12 @@ content:
         that the transition to chronic pain involves brain adaptations that, to
         a large part, construct and mold the state of chronic pain [
       - type: Cite
-        target: pbio.3000349.ref001
+        target: pbio-3000349-ref001
         content:
           - '1'
       - ','
       - type: Cite
-        target: pbio.3000349.ref002
+        target: pbio-3000349-ref002
         content:
           - '2'
       - >-
@@ -1833,19 +1868,19 @@ content:
         pain-related disability, and responses to treatment are all partially
         determined by psychological factors and/or personality properties [
       - type: Cite
-        target: pbio.3000349.ref003
+        target: pbio-3000349-ref003
         content:
           - '3'
       - '], as well as parameters related to socioeconomic status (SES) ['
       - type: Cite
-        target: pbio.3000349.ref004
+        target: pbio-3000349-ref004
         content:
           - '4'
       - >-
         ]. Although the biopsychosocial (BPS) perspective is actively applied in
         the everyday clinical management of chronic pain [
       - type: Cite
-        target: pbio.3000349.ref005
+        target: pbio-3000349-ref005
         content:
           - '5'
       - >-
@@ -1860,12 +1895,12 @@ content:
         though subgroupings of chronic pain types by psychological dimensions
         have been repeatedly formulated [
       - type: Cite
-        target: pbio.3000349.ref006
+        target: pbio-3000349-ref006
         content:
           - '6'
       - –
       - type: Cite
-        target: pbio.3000349.ref010
+        target: pbio-3000349-ref010
         content:
           - '10'
       - >-
@@ -1881,52 +1916,52 @@ content:
         personality factors are important contributors to chronic pain (e.g.,
         the psychological components of BPS). Pain catastrophizing [
       - type: Cite
-        target: pbio.3000349.ref011
+        target: pbio-3000349-ref011
         content:
           - '11'
       - '] and fear of pain ['
       - type: Cite
-        target: pbio.3000349.ref012
+        target: pbio-3000349-ref012
         content:
           - '12'
       - >-
         ] represent strong predictors of chronic pain, whereas pain acceptance
         is associated with resilience [
       - type: Cite
-        target: pbio.3000349.ref013
+        target: pbio-3000349-ref013
         content:
           - '13'
       - >-
         ]. Moreover, neuroticism—one factor in the five-factor model of
         personality [
       - type: Cite
-        target: pbio.3000349.ref014
+        target: pbio-3000349-ref014
         content:
           - '14'
       - >-
         ]—has been shown to moderate the association between catastrophic
         thinking and pain vigilance [
       - type: Cite
-        target: pbio.3000349.ref015
+        target: pbio-3000349-ref015
         content:
           - '15'
       - >-
         ] and has been associated with substance abuse, anxiety, and major
         depressive disorder [
       - type: Cite
-        target: pbio.3000349.ref016
+        target: pbio-3000349-ref016
         content:
           - '16'
       - ','
       - type: Cite
-        target: pbio.3000349.ref017
+        target: pbio-3000349-ref017
         content:
           - '17'
       - >-
         ]. In contrast, optimism is usually associated with lower catastrophic
         thinking, higher pain acceptance, and better coping strategies [
       - type: Cite
-        target: pbio.3000349.ref018
+        target: pbio-3000349-ref018
         content:
           - '18'
       - >-
@@ -1934,17 +1969,17 @@ content:
         have also been linked with improvements in pain, mood disturbance, and
         disability [
       - type: Cite
-        target: pbio.3000349.ref019
+        target: pbio-3000349-ref019
         content:
           - '19'
       - ','
       - type: Cite
-        target: pbio.3000349.ref020
+        target: pbio-3000349-ref020
         content:
           - '20'
       - '], as well as with better coping strategies for managing chronic pain ['
       - type: Cite
-        target: pbio.3000349.ref021
+        target: pbio-3000349-ref021
         content:
           - '21'
       - >-
@@ -1952,7 +1987,7 @@ content:
         considered better predictors of chronic pain disability than the actual
         injury itself [
       - type: Cite
-        target: pbio.3000349.ref022
+        target: pbio-3000349-ref022
         content:
           - '22'
       - >-
@@ -1974,7 +2009,7 @@ content:
         between the medial prefrontal cortex and regions within the default mode
         network (DMN) in temporomandibular disorder [
       - type: Cite
-        target: pbio.3000349.ref023
+        target: pbio-3000349-ref023
         content:
           - '23'
       - >-
@@ -1983,7 +2018,7 @@ content:
         (posterior cingulate cortex with the dorsolateral prefrontal cortex and
         the insula with the hippocampus) [
       - type: Cite
-        target: pbio.3000349.ref024
+        target: pbio-3000349-ref024
         content:
           - '24'
       - >-
@@ -1991,7 +2026,7 @@ content:
         increased dorsolateral prefrontal cortex activity in anticipation of
         pain [
       - type: Cite
-        target: pbio.3000349.ref025
+        target: pbio-3000349-ref025
         content:
           - '25'
       - >-
@@ -2013,7 +2048,7 @@ content:
         prevalence of musculoskeletal pain, neuropathic pain, ulcers, and
         sciatica across Europe and North America [
       - type: Cite
-        target: pbio.3000349.ref004
+        target: pbio-3000349-ref004
         content:
           - '4'
       - >-
@@ -2021,7 +2056,7 @@ content:
         during adulthood is associated with shoulder, forearm, low back, knee,
         and chronic widespread pain [
       - type: Cite
-        target: pbio.3000349.ref026
+        target: pbio-3000349-ref026
         content:
           - '26'
       - >-
@@ -2029,12 +2064,12 @@ content:
         important risk factors for the onset of back pain and pain disability,
         independent of injury occurrence or type [
       - type: Cite
-        target: pbio.3000349.ref027
+        target: pbio-3000349-ref027
         content:
           - '27'
       - ','
       - type: Cite
-        target: pbio.3000349.ref028
+        target: pbio-3000349-ref028
         content:
           - '28'
       - >-
@@ -2064,7 +2099,7 @@ content:
         Control Trial (RCT) designed to study placebo pill response in chronic
         pain patients [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -2072,7 +2107,7 @@ content:
         occasions with four visits including brain-imaging sessions (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g001'
+        target: '#pbio-3000349-g001'
         content:
           - Fig 1A
       - >-
@@ -2086,13 +2121,13 @@ content:
         The demographics for these patients can be found in 
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s005'
+        target: '#pbio-3000349-s005'
         content:
           - S1 Table
       - '. For each figure, numerical data are available in '
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s009'
+        target: '#pbio-3000349-s009'
         content:
           - S1 Data
       - ', and a description of the analyses and '
@@ -2102,7 +2137,7 @@ content:
       - ' values are reported in '
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s008'
+        target: '#pbio-3000349-s008'
         content:
           - S4 Table
       - .
@@ -2135,7 +2170,7 @@ content:
           - ' values shown in bar from blue to red). C. A network constructed from the Group 1 covariance matrix displays the strongest correlations (top 10%) and topological properties indicated the presence of four communities. Size of the nodes are scaled based on degree count. D. PCA performed on all 36 questionnaire outcomes (Group 1) identified four orthogonal components. Given the observed loadings and network clustering, we label these components as: Pain-trait; Character-trait; Aware-trait; and Emote-trait. Only components loading >0.4 or <−0.4 are depicted. Abbreviations of the psychological factors: PASS and its four subscales: Avoidance (pass/a), Cognitive (pass/c), Fear (pass/f), and Physiological (pass/p); PCS and its three subscales: Rumination (pcs/r), Magnification (pcs/m), and Helplessness (pcs/h); CPAQ and its two subscores: Activity Engagement (cpaq/a) and Pain Willingness (cpaq/pw); MAIA: Not Distracting (maia/nd), Attention Regulation (maia/a), Emotional Awareness (maia/e), and Self-Regulation (maia/sr), Noticing (maia/n), Not Worrying (maia/nw), Body Listening (maia/bl), and Trusting (maia/t); PSQ and its two subscales: Painful (psq/p) and Non-Painful (psq/np); PANAS with Positive (panas/p) subscale; FFM with its five subscales: Observe (ffm/o), Describe (ffm/d), Act with Awareness (ffm/a), Non-Judge (ffm/nj), and Non-React (ffm/nr); ERQ with its Reappraisal (erq/r) and Suppression (erq/s) subscales; ACS; EACS; LOT-R; and LAQ. For each figure, the numerical data are available '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s009'
+            target: '#pbio-3000349-s009'
             content:
               - S1 Data
           - ', and a description of the analyses and '
@@ -2145,7 +2180,7 @@ content:
           - ' values are reported in '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s008'
+            target: '#pbio-3000349-s008'
             content:
               - S4 Table
           - >-
@@ -2178,7 +2213,7 @@ content:
         cohorts (Group 1 and Group 2; 
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s006'
+        target: '#pbio-3000349-s006'
         content:
           - S2 Table
       - >-
@@ -2198,13 +2233,13 @@ content:
         are presented in 
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g001'
+        target: '#pbio-3000349-g001'
         content:
           - Fig 1B
       - ' for both groups of patients. Principal component analysis (PCA) was used to order the 36 subscales in Group 1 and subsequently used to organize the questionnaires for Group 2 in '
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g001'
+        target: '#pbio-3000349-g001'
         content:
           - Fig 1B
       - >-
@@ -2219,7 +2254,7 @@ content:
         communities (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g001'
+        target: '#pbio-3000349-g001'
         content:
           - Fig 1C
       - >-
@@ -2229,7 +2264,7 @@ content:
         the scree plot, 
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s001'
+        target: '#pbio-3000349-s001'
         content:
           - S1A Fig
       - >-
@@ -2252,7 +2287,7 @@ content:
         domains with factor loadings similarly as seen in Group 1 (
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s001'
+        target: '#pbio-3000349-s001'
         content:
           - S1B Fig
       - >-
@@ -2295,7 +2330,7 @@ content:
         for both groups in 
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s007'
+        target: '#pbio-3000349-s007'
         content:
           - S3 Table
       - .
@@ -2306,13 +2341,13 @@ content:
         was calculated for visit 1 (V1) and visit 2 (V2) in Group 1 (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g002'
+        target: '#pbio-3000349-g002'
         content:
           - Fig 2A
       - ) and for a smaller set of pain measurements for visit 1 in Group 2 (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g002'
+        target: '#pbio-3000349-g002'
         content:
           - Fig 2B
       - >-
@@ -2322,13 +2357,13 @@ content:
         affective characteristics of CBP (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g002'
+        target: '#pbio-3000349-g002'
         content:
           - Fig 2A
       - ', Group 1). Similar associations were also observed in Group 2 ('
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g002'
+        target: '#pbio-3000349-g002'
         content:
           - Fig 2B
       - >-
@@ -2337,7 +2372,7 @@ content:
         and groups confirmed these results (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g002'
+        target: '#pbio-3000349-g002'
         content:
           - Fig 2C
       - >-
@@ -2385,13 +2420,13 @@ content:
           - ' < 0.001 (significant even after Bonferroni correction for all comparisons [56 comparisons in Group 1 and 28 comparisons in Group 2]). For each figure, the numerical data are available '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s009'
+            target: '#pbio-3000349-s009'
             content:
               - S1 Data
           - ', and a description of the analyses and P values are reported in '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s008'
+            target: '#pbio-3000349-s008'
             content:
               - S4 Table
           - >-
@@ -2431,12 +2466,12 @@ content:
     content:
       - 'Next, we used a connectomics-based ['
       - type: Cite
-        target: pbio.3000349.ref030
+        target: pbio-3000349-ref030
         content:
           - '30'
       - ','
       - type: Cite
-        target: pbio.3000349.ref031
+        target: pbio-3000349-ref031
         content:
           - '31'
       - >-
@@ -2447,7 +2482,7 @@ content:
         brain networks underlying chronic pain traits can be identified based on
         the Shen et al. protocol [
       - type: Cite
-        target: pbio.3000349.ref032
+        target: pbio-3000349-ref032
         content:
           - '32'
       - >-
@@ -2460,7 +2495,7 @@ content:
           - Methods
       - ' ['
       - type: Cite
-        target: pbio.3000349.ref033
+        target: pbio-3000349-ref033
         content:
           - '33'
       - >-
@@ -2508,7 +2543,7 @@ content:
       - ' = 10,000) was used to determine significance. '
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g003'
+        target: '#pbio-3000349-g003'
         content:
           - Fig 3A
       - ' shows that three patterns of functional connectivity were successfully cross-validated using this procedure. The Pain-trait score was determined from both positive ('
@@ -2553,7 +2588,7 @@ content:
       - ' 0.02). Because the features selected in the training set differed across the three folds, a single set of consensus weights was generated from averaging the links across the folds. Thus, an edge selected across all three folds was provided a weight of 1.0, an edge selected in two folds was provided a weight of 0.66, and an edge selected in one fold was provided a weight of 0.33. Links persistent across the three folds were labeled “most stable links” and displayed ('
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g003'
+        target: '#pbio-3000349-g003'
         content:
           - 'Fig 3B, 3D and 3F'
       - ).
@@ -2593,7 +2628,7 @@ content:
           - ' < 0.01. For each figure, the numerical data are available '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s009'
+            target: '#pbio-3000349-s009'
             content:
               - S1 Data
           - ' and a description of the analyses, and '
@@ -2603,7 +2638,7 @@ content:
           - ' values are reported in '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s008'
+            target: '#pbio-3000349-s008'
             content:
               - S4 Table
           - .
@@ -2623,7 +2658,7 @@ content:
         matrices for all links related to the two traits are also shown (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g003'
+        target: '#pbio-3000349-g003'
         content:
           - 'Fig 3C, 3E and 3G'
       - >-
@@ -2676,7 +2711,7 @@ content:
         The robustness of our results was then tested by interrogating a
         different brain atlas [
       - type: Cite
-        target: pbio.3000349.ref034
+        target: pbio-3000349-ref034
         content:
           - '34'
       - >-
@@ -2685,7 +2720,7 @@ content:
         robust for tracking Pain-trait and Emote-trait (
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s002'
+        target: '#pbio-3000349-s002'
         content:
           - S2 Fig
       - >-
@@ -2711,7 +2746,7 @@ content:
       - ' values from the same sets of edges initially identified at V2 ('
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g004'
+        target: '#pbio-3000349-g004'
         content:
           - Fig 4A
       - >-
@@ -2719,7 +2754,7 @@ content:
         and V5 (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g004'
+        target: '#pbio-3000349-g004'
         content:
           - Fig 4B
       - >-
@@ -2729,7 +2764,7 @@ content:
         Emote-trait. We further quantify the reliability of the neurotraits by
         computing the intraclass correlation (ICC) for each neurotrait [
       - type: Cite
-        target: pbio.3000349.ref035
+        target: pbio-3000349-ref035
         content:
           - '35'
       - >-
@@ -2760,7 +2795,7 @@ content:
             ***P < 0.001. For each figure, the numerical data are available 
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s009'
+            target: '#pbio-3000349-s009'
             content:
               - S1 Data
           - ', and a description of the analyses and '
@@ -2770,7 +2805,7 @@ content:
           - ' values are reported in '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s008'
+            target: '#pbio-3000349-s008'
             content:
               - S4 Table
           - .
@@ -2796,7 +2831,7 @@ content:
         and questionnaires, parameters shown in 
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g002'
+        target: '#pbio-3000349-g002'
         content:
           - Fig 2A
       - >-
@@ -2806,7 +2841,7 @@ content:
         negative affect and physical health (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g005'
+        target: '#pbio-3000349-g005'
         content:
           - Fig 5A
       - >-
@@ -2820,13 +2855,13 @@ content:
         across the four resting-state fMRI sessions. 
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g005'
+        target: '#pbio-3000349-g005'
         content:
           - Fig 5B
       - ' shows that the three neurotraits correlated with the pain intensity and that Neurotrait 2 and Neurotrait 3 correlated with the affect/health component. However, only Neurotrait 1 with pain intensity and Neurotrait 3 with affect/health survived multiple comparisons. There were no significant associations between Neurotraits and the pain quality. Testing the association between the chronic pain components and the Neurotraits from each brain imaging session separately showed relatively consistent results, although the effect on affect/health was no longer present at visit 5 ('
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g005'
+        target: '#pbio-3000349-g005'
         content:
           - Fig 5C
       - ).
@@ -2844,7 +2879,7 @@ content:
         association with affect/health (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g005'
+        target: '#pbio-3000349-g005'
         content:
           - Fig 5D
       - >-
@@ -2853,7 +2888,7 @@ content:
         affect/health (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g005'
+        target: '#pbio-3000349-g005'
         content:
           - Fig 5F
       - >-
@@ -2861,7 +2896,7 @@ content:
         across visits when tested separately (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g005'
+        target: '#pbio-3000349-g005'
         content:
           - Fig 5E and 5G
       - >-
@@ -2919,7 +2954,7 @@ content:
           - ' < 0.001. For each figure, the numerical data are available '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s009'
+            target: '#pbio-3000349-s009'
             content:
               - S1 Data
           - ', and a description of the analyses and '
@@ -2929,7 +2964,7 @@ content:
           - ' values are reported in '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s008'
+            target: '#pbio-3000349-s008'
             content:
               - S4 Table
           - .
@@ -2956,7 +2991,7 @@ content:
         not sex/gender) were strongly associated with income (
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s003'
+        target: '#pbio-3000349-s003'
         content:
           - S3 Fig
       - >-
@@ -2966,13 +3001,13 @@ content:
         greater than 25,000 expressed a lower level of Pain-trait (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g006'
+        target: '#pbio-3000349-g006'
         content:
           - Fig 6A
       - ). This finding was replicated in Group 2 (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g006'
+        target: '#pbio-3000349-g006'
         content:
           - Fig 6B
       - >-
@@ -2981,7 +3016,7 @@ content:
         of Neurotrait 1 and Neurotrait 2 (
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g006'
+        target: '#pbio-3000349-g006'
         content:
           - Fig 6C
       - >-
@@ -2989,7 +3024,7 @@ content:
         and underlying neurophysiology. As displayed in 
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g006'
+        target: '#pbio-3000349-g006'
         content:
           - Fig 6D
       - >-
@@ -3028,7 +3063,7 @@ content:
           - ' < 0.05). All abbreviations are defined in '
           - type: Link
             relation: fig
-            target: '#pbio.3000349.g001'
+            target: '#pbio-3000349-g001'
             content:
               - Fig 1
           - >-
@@ -3047,13 +3082,13 @@ content:
           - ' < 0.05. For each figure, the numerical data are available '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s009'
+            target: '#pbio-3000349-s009'
             content:
               - S1 Data
           - ' and a description of the analyses and p-values are reported in '
           - type: Link
             relation: supplementary-material
-            target: '#pbio.3000349.s008'
+            target: '#pbio-3000349-s008'
             content:
               - S4 Table
           - .
@@ -3080,7 +3115,7 @@ content:
         the strongest response (% change in pain) in either of the two treatment
         periods, as was previously done [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3090,7 +3125,7 @@ content:
         future magnitude of placebo response (
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s004'
+        target: '#pbio-3000349-s004'
         content:
           - S4 Fig
       - >-
@@ -3159,17 +3194,17 @@ content:
         clinical pain settings (mainly in multidisciplinary pain management
         programs) [
       - type: Cite
-        target: pbio.3000349.ref036
+        target: pbio-3000349-ref036
         content:
           - '36'
       - –
       - type: Cite
-        target: pbio.3000349.ref038
+        target: pbio-3000349-ref038
         content:
           - '38'
       - '], it still remains a poorly-defined concept ['
       - type: Cite
-        target: pbio.3000349.ref039
+        target: pbio-3000349-ref039
         content:
           - '39'
       - '].'
@@ -3185,7 +3220,7 @@ content:
         outcomes, and psychosocial treatments like cognitive behavioral therapy)
         [
       - type: Cite
-        target: pbio.3000349.ref039
+        target: pbio-3000349-ref039
         content:
           - '39'
       - >-
@@ -3203,7 +3238,7 @@ content:
         pain. Moreover, given that factors 2–3 predetermined response to placebo
         treatment, and since we have shown (based on this same data [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3234,7 +3269,7 @@ content:
         traits of chronic back pain as we expect that they dominate and shape
         these patients’ everyday behaviors [
       - type: Cite
-        target: pbio.3000349.ref040
+        target: pbio-3000349-ref040
         content:
           - '40'
       - '].'
@@ -3246,7 +3281,7 @@ content:
         population at large is composed of five broad personality traits, also
         known as the Five-Factor-Model [
       - type: Cite
-        target: pbio.3000349.ref014
+        target: pbio-3000349-ref014
         content:
           - '14'
       - >-
@@ -3256,7 +3291,7 @@ content:
         well-being is observed in individuals scoring high in extraversion and
         low in neuroticism in the population at large [
       - type: Cite
-        target: pbio.3000349.ref041
+        target: pbio-3000349-ref041
         content:
           - '41'
       - >-
@@ -3289,7 +3324,7 @@ content:
         Data-driven methods provide an unbiased and optimal way to map
         distributed brain representations for complex phenomena [
       - type: Cite
-        target: pbio.3000349.ref042
+        target: pbio-3000349-ref042
         content:
           - '42'
       - >-
@@ -3297,7 +3332,7 @@ content:
         pain since recent evidence indicates that pain patients exhibit a
         disruption of functional connectivity throughout the cortex [
       - type: Cite
-        target: pbio.3000349.ref043
+        target: pbio-3000349-ref043
         content:
           - '43'
       - >-
@@ -3313,17 +3348,17 @@ content:
         with earlier evidence showing involvement of these regions in chronic
         pain and catastrophizing [
       - type: Cite
-        target: pbio.3000349.ref023
+        target: pbio-3000349-ref023
         content:
           - '23'
       - ','
       - type: Cite
-        target: pbio.3000349.ref044
+        target: pbio-3000349-ref044
         content:
           - '44'
       - –
       - type: Cite
-        target: pbio.3000349.ref046
+        target: pbio-3000349-ref046
         content:
           - '46'
       - '].'
@@ -3338,29 +3373,29 @@ content:
         pain. For instance, several studies have indicated that the DMN linked
         with pain catastrophizing determines pain intensity [
       - type: Cite
-        target: pbio.3000349.ref023
+        target: pbio-3000349-ref023
         content:
           - '23'
       - ','
       - type: Cite
-        target: pbio.3000349.ref044
+        target: pbio-3000349-ref044
         content:
           - '44'
       - –
       - type: Cite
-        target: pbio.3000349.ref046
+        target: pbio-3000349-ref046
         content:
           - '46'
       - >-
         ], whereas the mesolimbic system linked with reward/punishment modulates
         pain perception and determines risk for transition to chronic pain [
       - type: Cite
-        target: pbio.3000349.ref047
+        target: pbio-3000349-ref047
         content:
           - '47'
       - –
       - type: Cite
-        target: pbio.3000349.ref051
+        target: pbio-3000349-ref051
         content:
           - '51'
       - >-
@@ -3393,7 +3428,7 @@ content:
         higher pain scores but also increased disability resulting from chronic
         pain [
       - type: Cite
-        target: pbio.3000349.ref052
+        target: pbio-3000349-ref052
         content:
           - '52'
       - >-
@@ -3492,7 +3527,7 @@ content:
         NCT02013427). The results of the placebo response have been previously
         published [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3503,7 +3538,7 @@ content:
         on each visit, as well as the results of the placebo manipulation, can
         be found in [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3534,7 +3569,7 @@ content:
         clinical measurements taken at V1 were required to be within the
         pre-specified healthy range [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3636,14 +3671,14 @@ content:
         personality factors can be found in 
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s006'
+        target: '#pbio-3000349-s006'
         content:
           - S2 Table
       - >-
         . Data from these self-report measures was downloaded directly from
         REDCap as a CSV file and scored in Excel according to their references [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3695,7 +3730,7 @@ content:
     content:
       - 'Brain-imaging data are the same as in ['
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3743,7 +3778,7 @@ content:
         The pre-processing was performed using FMRIB Software Library (FSL) and
         in-house software as previously describe [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3802,7 +3837,7 @@ content:
     content:
       - 'The main parcellation scheme was the same as the one used in ['
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3811,7 +3846,7 @@ content:
         the center of gravity of cortical patches constructed from resting state
         functional connectivity[
       - type: Cite
-        target: pbio.3000349.ref033
+        target: pbio-3000349-ref033
         content:
           - '33'
       - >-
@@ -3828,7 +3863,7 @@ content:
         A second parcellation scheme was used to test the robustness of the
         cross-validation results. We used 400 ROIs from [
       - type: Cite
-        target: pbio.3000349.ref034
+        target: pbio-3000349-ref034
         content:
           - '34'
       - >-
@@ -3836,7 +3871,7 @@ content:
         of ROIs (
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s002'
+        target: '#pbio-3000349-s002'
         content:
           - S2 Fig
       - >-
@@ -3859,7 +3894,7 @@ content:
         analyses). This subject was already identified as problematic and
         excluded in [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - '].'
@@ -3871,7 +3906,7 @@ content:
         study because we previously limited our analyses to 122 a priori
         selected ROIs [
       - type: Cite
-        target: pbio.3000349.ref029
+        target: pbio-3000349-ref029
         content:
           - '29'
       - >-
@@ -3905,7 +3940,7 @@ content:
         component analysis applied to the full sample (as in 
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g001'
+        target: '#pbio-3000349-g001'
         content:
           - Fig 1
       - >-
@@ -3916,7 +3951,7 @@ content:
         components across data sets can be appreciated in 
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s001'
+        target: '#pbio-3000349-s001'
         content:
           - S1 Fig
       - .
@@ -4064,7 +4099,7 @@ content:
       - 'The numerical data are available in '
       - type: Link
         relation: supplementary-material
-        target: '#pbio.3000349.s009'
+        target: '#pbio-3000349-s009'
         content:
           - S1 Data
       - ', the raw data are available at '
@@ -4115,7 +4150,7 @@ content:
       - 'A–B. The Power atlas used to derive the neurotraits as presented in '
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g003'
+        target: '#pbio-3000349-g003'
         content:
           - Fig 3
       - >-
@@ -4297,13 +4332,13 @@ content:
       - 'Details of statistical tests for results shown in Figs '
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g001'
+        target: '#pbio-3000349-g001'
         content:
           - '1'
       - –
       - type: Link
         relation: fig
-        target: '#pbio.3000349.g006'
+        target: '#pbio-3000349-g006'
         content:
           - '6'
       - .

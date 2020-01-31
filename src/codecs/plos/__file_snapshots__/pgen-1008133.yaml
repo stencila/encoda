@@ -74,9 +74,15 @@ authors:
       - Dekanty
     givenNames:
       - Andrés
+dateAccepted:
+  type: Date
+  value: '2019-08-07'
 datePublished:
   type: Date
   value: '2019-08-19'
+dateReceived:
+  type: Date
+  value: '2019-04-09'
 description:
   - type: Paragraph
     content:
@@ -96,20 +102,73 @@ editors:
       - Perrimon
     givenNames:
       - Norbert
-funders:
-  - type: Organization
-    name: Ministerio de Ciencia e Innovación
-  - type: Organization
-    name: 'Ministry of Science, Innovation and Universities'
-  - type: Organization
-    name: Agencia Nacional de Promoción Científica y Tecnológica
-  - type: Organization
-    name: Universidad Nacional del Litoral
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Ministerio de Ciencia e Innovación
+    identifiers:
+      - type: PropertyValue
+        value: SIGNAGROWTH-BFU2013-44485
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: 'Ministry of Science, Innovation and Universities'
+    identifiers:
+      - type: PropertyValue
+        value: INTERGROWTH-BFU2016-77587-P
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Agencia Nacional de Promoción Científica y Tecnológica
+    identifiers:
+      - type: PropertyValue
+        value: PICT-2014-1412
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Agencia Nacional de Promoción Científica y Tecnológica
+    identifiers:
+      - type: PropertyValue
+        value: PICT-2015-0032
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Universidad Nacional del Litoral
+    identifiers:
+      - type: PropertyValue
+        value: CAI+D
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.1371/journal.pgen.1008133
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: PGENETICS-D-19-00590
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e1008133
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: PLoS Genet
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: plos
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: plosgen
+    issns:
       - 1553-7390
       - 1553-7404
     publisher:
@@ -133,7 +192,7 @@ licenses:
             any medium, provided the original author and source are credited.
 references:
   - type: Article
-    id: pgen.1008133.ref001
+    id: pgen-1008133-ref001
     authors:
       - type: Person
         familyNames:
@@ -161,7 +220,7 @@ references:
       P53 in Survival, Death and Metabolic Health: a Lifeguard With a Licence To
       Kill
   - type: Article
-    id: pgen.1008133.ref002
+    id: pgen-1008133-ref002
     authors:
       - type: Person
         familyNames:
@@ -185,7 +244,7 @@ references:
       volumeNumber: 53
     title: 'Regulation and function of p53 : a perspective from Drosophila studies'
   - type: Article
-    id: pgen.1008133.ref003
+    id: pgen-1008133-ref003
     authors:
       - type: Person
         familyNames:
@@ -206,7 +265,7 @@ references:
       volumeNumber: 170
     title: Putting p53 in Context
   - type: Article
-    id: pgen.1008133.ref004
+    id: pgen-1008133-ref004
     authors:
       - type: Person
         familyNames:
@@ -247,7 +306,7 @@ references:
       volumeNumber: 153
     title: Non-cell-autonomous tumor suppression by p53
   - type: Article
-    id: pgen.1008133.ref005
+    id: pgen-1008133-ref005
     authors:
       - type: Person
         familyNames:
@@ -281,7 +340,7 @@ references:
       Selective evolution of stromal mesenchyme with p53 loss in response to
       epithelial tumorigenesis
   - type: Article
-    id: pgen.1008133.ref006
+    id: pgen-1008133-ref006
     authors:
       - type: Person
         familyNames:
@@ -322,7 +381,7 @@ references:
       volumeNumber: 357
     title: Breast-Cancer Stromal Cells with TP53 Mutations and Nodal Metastases
   - type: Article
-    id: pgen.1008133.ref007
+    id: pgen-1008133-ref007
     authors:
       - type: Person
         familyNames:
@@ -365,7 +424,7 @@ references:
       Evidence for nonautonomous effect of p53 tumor suppressor in
       carcinogenesis
   - type: Article
-    id: pgen.1008133.ref008
+    id: pgen-1008133-ref008
     authors:
       - type: Person
         familyNames:
@@ -406,7 +465,7 @@ references:
       volumeNumber: 134
     title: Senescence of Activated Stellate Cells Limits Liver Fibrosis
   - type: Article
-    id: pgen.1008133.ref009
+    id: pgen-1008133-ref009
     authors:
       - type: Person
         familyNames:
@@ -449,7 +508,7 @@ references:
       Senescence and tumour clearance is triggered by p53 restoration in murine
       liver carcinomas
   - type: Article
-    id: pgen.1008133.ref010
+    id: pgen-1008133-ref010
     authors:
       - type: Person
         familyNames:
@@ -491,7 +550,7 @@ references:
       Control of signaling-mediated clearance of apoptotic cells by the tumor
       suppressor p53
   - type: Article
-    id: pgen.1008133.ref011
+    id: pgen-1008133-ref011
     authors:
       - type: Person
         familyNames:
@@ -534,7 +593,7 @@ references:
       Drosophila p53 isoforms differentially regulate apoptosis and
       apoptosis-induced proliferation
   - type: Article
-    id: pgen.1008133.ref012
+    id: pgen-1008133-ref012
     authors:
       - type: Person
         familyNames:
@@ -562,7 +621,7 @@ references:
       Compensatory proliferation in Drosophila imaginal discs requires
       Dronc-dependent p53 activity
   - type: Article
-    id: pgen.1008133.ref013
+    id: pgen-1008133-ref013
     authors:
       - type: Person
         familyNames:
@@ -585,7 +644,7 @@ references:
       Maintenance of imaginal disc plasticity and regenerative potential in
       Drosophila by p53
   - type: Article
-    id: pgen.1008133.ref014
+    id: pgen-1008133-ref014
     authors:
       - type: Person
         familyNames:
@@ -630,7 +689,7 @@ references:
       Supercompetitor status of drosophila Myc cells requires p53 as a Fitness
       sensor to reprogram metabolism and promote viability
   - type: Article
-    id: pgen.1008133.ref015
+    id: pgen-1008133-ref015
     authors:
       - type: Person
         familyNames:
@@ -661,7 +720,7 @@ references:
       Chronic activation of JNK JAK/STAT and oxidative stress signalling causes
       the loser cell status
   - type: Article
-    id: pgen.1008133.ref016
+    id: pgen-1008133-ref016
     authors:
       - type: Person
         familyNames:
@@ -689,7 +748,7 @@ references:
       MicroRNA-Mediated Regulation of Dp53 in the Drosophila Fat Body
       Contributes to Metabolic Adaptation to Nutrient Deprivation
   - type: Article
-    id: pgen.1008133.ref017
+    id: pgen-1008133-ref017
     authors:
       - type: Person
         familyNames:
@@ -715,7 +774,7 @@ references:
       A dp53-dependent mechanism involved in coordinating tissue growth in
       Drosophila
   - type: Article
-    id: pgen.1008133.ref018
+    id: pgen-1008133-ref018
     authors:
       - type: Person
         familyNames:
@@ -741,7 +800,7 @@ references:
       volumeNumber: 91
     title: Cell interactions in the control of size in Drosophila wings
   - type: Article
-    id: pgen.1008133.ref019
+    id: pgen-1008133-ref019
     authors:
       - type: Person
         familyNames:
@@ -774,7 +833,7 @@ references:
       Intra-organ growth coordination in Drosophila is mediated by systemic
       ecdysone signaling
   - type: Article
-    id: pgen.1008133.ref020
+    id: pgen-1008133-ref020
     authors:
       - type: Person
         familyNames:
@@ -813,7 +872,7 @@ references:
       Regeneration Is Mediated by Signaling Through the Relaxin Receptor Lgr3 in
       the Prothoracic Gland
   - type: Article
-    id: pgen.1008133.ref021
+    id: pgen-1008133-ref021
     authors:
       - type: Person
         familyNames:
@@ -836,7 +895,7 @@ references:
       The coordination of growth among Drosophila organs in response to
       localized growth-perturbation
   - type: Article
-    id: pgen.1008133.ref022
+    id: pgen-1008133-ref022
     authors:
       - type: Person
         familyNames:
@@ -877,7 +936,7 @@ references:
       volumeNumber: 21
     title: 'Eiger, a TNF superfamily ligand that triggers the Drosophila JNK pathway'
   - type: Article
-    id: pgen.1008133.ref023
+    id: pgen-1008133-ref023
     authors:
       - type: Person
         familyNames:
@@ -905,7 +964,7 @@ references:
       Evolution of TNF signaling mechanisms: JNK-dependent apoptosis triggered
       by Eiger, the Drosophila homolog of the TNF superfamily
   - type: Article
-    id: pgen.1008133.ref024
+    id: pgen-1008133-ref024
     authors:
       - type: Person
         familyNames:
@@ -933,7 +992,7 @@ references:
       Systemic signalling and local effectors in developmental stability, body
       symmetry, and size
   - type: Article
-    id: pgen.1008133.ref025
+    id: pgen-1008133-ref025
     authors:
       - type: Person
         familyNames:
@@ -954,7 +1013,7 @@ references:
       volumeNumber: 12
     title: The interplay between morphogens and tissue growth
   - type: Article
-    id: pgen.1008133.ref026
+    id: pgen-1008133-ref026
     authors:
       - type: Person
         familyNames:
@@ -990,7 +1049,7 @@ references:
       volumeNumber: 26
     title: p53 directs focused genomic responses in Drosophila
   - type: Article
-    id: pgen.1008133.ref027
+    id: pgen-1008133-ref027
     authors:
       - type: Person
         familyNames:
@@ -1025,7 +1084,7 @@ references:
       Genome-wide expression analysis identifies a modulator of ionizing
       radiation-induced p53-independent apoptosis in Drosophila melanogaster
   - type: Article
-    id: pgen.1008133.ref028
+    id: pgen-1008133-ref028
     authors:
       - type: Person
         familyNames:
@@ -1051,7 +1110,7 @@ references:
       Apoptotic cells can induce non-autonomous apoptosis through the TNF
       pathway
   - type: Article
-    id: pgen.1008133.ref029
+    id: pgen-1008133-ref029
     authors:
       - type: Person
         familyNames:
@@ -1077,7 +1136,7 @@ references:
       volumeNumber: 94
     title: Developmental parameters of cell death in the wing disc of Drosophila
   - type: Article
-    id: pgen.1008133.ref030
+    id: pgen-1008133-ref030
     authors:
       - type: Person
         familyNames:
@@ -1101,7 +1160,7 @@ references:
       volumeNumber: 114
     title: Feedback amplification loop drives malignant growth in epithelial tissues
   - type: Article
-    id: pgen.1008133.ref031
+    id: pgen-1008133-ref031
     authors:
       - type: Person
         familyNames:
@@ -1142,7 +1201,7 @@ references:
       A genome-wide resource for the analysis of protein localisation in
       Drosophila
   - type: Article
-    id: pgen.1008133.ref032
+    id: pgen-1008133-ref032
     authors:
       - type: Person
         familyNames:
@@ -1185,7 +1244,7 @@ references:
       title: Mol Biol Cell
     title: Drosophila p53 directs non-apoptotic programs in postmitotic tissue
   - type: Article
-    id: pgen.1008133.ref033
+    id: pgen-1008133-ref033
     authors:
       - type: Person
         familyNames:
@@ -1213,7 +1272,7 @@ references:
       Origin and proliferation of blastema cells during regeneration of
       Drosophila wing imaginal discs
   - type: Article
-    id: pgen.1008133.ref034
+    id: pgen-1008133-ref034
     authors:
       - type: Person
         familyNames:
@@ -1251,7 +1310,7 @@ references:
       Aneuploidy-induced delaminating cells drive tumorigenesis in Drosophila
       epithelia
   - type: Article
-    id: pgen.1008133.ref035
+    id: pgen-1008133-ref035
     authors:
       - type: Person
         familyNames:
@@ -1279,7 +1338,7 @@ references:
       Loss of cell polarity drives tumor growth and invasion through JNK
       activation in Drosophila
   - type: Article
-    id: pgen.1008133.ref036
+    id: pgen-1008133-ref036
     authors:
       - type: Person
         familyNames:
@@ -1302,7 +1361,7 @@ references:
       JNK- and Fos-regulated Mmp1 expression cooperates with Ras to induce
       invasive tumors in Drosophila
   - type: Article
-    id: pgen.1008133.ref037
+    id: pgen-1008133-ref037
     authors:
       - type: Person
         familyNames:
@@ -1343,7 +1402,7 @@ references:
       volumeNumber: 5
     title: Localized JNK signaling regulates organ size during development
   - type: Article
-    id: pgen.1008133.ref038
+    id: pgen-1008133-ref038
     authors:
       - type: Person
         familyNames:
@@ -1386,7 +1445,7 @@ references:
       JNK-dependent cell cycle stalling in G2 promotes survival and
       senescence-like phenotypes in tissue stress
   - type: Article
-    id: pgen.1008133.ref039
+    id: pgen-1008133-ref039
     authors:
       - type: Person
         familyNames:
@@ -1429,7 +1488,7 @@ references:
       The Drosophila TNF receptor Grindelwald couples loss of cell polarity and
       neoplastic growth
   - type: Article
-    id: pgen.1008133.ref040
+    id: pgen-1008133-ref040
     authors:
       - type: Person
         familyNames:
@@ -1457,7 +1516,7 @@ references:
       Secreted peptide Dilp8 coordinates Drosophila tissue growth with
       developmental timing
   - type: Article
-    id: pgen.1008133.ref041
+    id: pgen-1008133-ref041
     authors:
       - type: Person
         familyNames:
@@ -1495,7 +1554,7 @@ references:
       Imaginal discs secrete insulin-like peptide 8 to mediate plasticity of
       growth and maturation
   - type: Article
-    id: pgen.1008133.ref042
+    id: pgen-1008133-ref042
     authors:
       - type: Person
         familyNames:
@@ -1527,7 +1586,7 @@ references:
       The Hippo signalling pathway coordinates organ growth and limits
       developmental variability by controlling dilp8 expression
   - type: Article
-    id: pgen.1008133.ref043
+    id: pgen-1008133-ref043
     authors:
       - type: Person
         familyNames:
@@ -1563,7 +1622,7 @@ references:
       A brain circuit that synchronizes growth and maturation revealed through
       Dilp8 binding to Lgr3
   - type: Article
-    id: pgen.1008133.ref044
+    id: pgen-1008133-ref044
     authors:
       - type: Person
         familyNames:
@@ -1600,7 +1659,7 @@ references:
       Inter-Organ Growth Coordination Is Mediated by the Xrp1-Dilp8 Axis in
       Drosophila
   - type: Article
-    id: pgen.1008133.ref045
+    id: pgen-1008133-ref045
     authors:
       - type: Person
         familyNames:
@@ -1638,7 +1697,7 @@ references:
       Rac1/Slpr/JNK/Dilp8 signaling favoring tissue homeostasis in a chronic ER
       stress Drosophila model
   - type: Article
-    id: pgen.1008133.ref046
+    id: pgen-1008133-ref046
     authors:
       - type: Person
         familyNames:
@@ -1676,7 +1735,7 @@ references:
       During Drosophila disc regeneration, JAK/STAT coordinates cell
       proliferation with Dilp8-mediated developmental delay
   - type: Article
-    id: pgen.1008133.ref047
+    id: pgen-1008133-ref047
     authors:
       - type: Person
         familyNames:
@@ -1699,7 +1758,7 @@ references:
       Keap1/Nrf2 signaling regulates oxidative stress tolerance and lifespan in
       Drosophila
   - type: Article
-    id: pgen.1008133.ref048
+    id: pgen-1008133-ref048
     authors:
       - type: Person
         familyNames:
@@ -1718,7 +1777,7 @@ references:
       volumeNumber: 24
     title: ROS Function in Redox Signaling and Oxidative Stress
   - type: Article
-    id: pgen.1008133.ref049
+    id: pgen-1008133-ref049
     authors:
       - type: Person
         familyNames:
@@ -1751,7 +1810,7 @@ references:
       A tissue-scale gradient of hydrogen peroxide mediates rapid wound
       detection in zebrafish
   - type: Article
-    id: pgen.1008133.ref050
+    id: pgen-1008133-ref050
     authors:
       - type: Person
         familyNames:
@@ -1793,7 +1852,7 @@ references:
       Sustained production of ROS triggers compensatory proliferation and is
       required for regeneration to proceed
   - type: Article
-    id: pgen.1008133.ref051
+    id: pgen-1008133-ref051
     authors:
       - type: Person
         familyNames:
@@ -1836,7 +1895,7 @@ references:
       ROS-Induced JNK and p38 Signaling Is Required for Unpaired Cytokine
       Activation during Drosophila Regeneration
   - type: Article
-    id: pgen.1008133.ref052
+    id: pgen-1008133-ref052
     authors:
       - type: Person
         familyNames:
@@ -1859,7 +1918,7 @@ references:
       The Drosophila TNF ortholog Eiger: emerging physiological roles and
       evolution of the TNF system
   - type: Article
-    id: pgen.1008133.ref053
+    id: pgen-1008133-ref053
     authors:
       - type: Person
         familyNames:
@@ -1875,7 +1934,7 @@ references:
       volumeNumber: 232
     title: 'Dissecting JNK signaling, one KKKinase at a time'
   - type: Article
-    id: pgen.1008133.ref054
+    id: pgen-1008133-ref054
     authors:
       - type: Person
         familyNames:
@@ -1913,7 +1972,7 @@ references:
       Intrinsic tumor suppression and epithelial maintenance by endocytic
       activation of Eiger/TNF signaling in Drosophila
   - type: Article
-    id: pgen.1008133.ref055
+    id: pgen-1008133-ref055
     authors:
       - type: Person
         familyNames:
@@ -1956,7 +2015,7 @@ references:
       Drosophila Lgr3 Couples Organ Growth with Maturation and Ensures
       Developmental Stability
   - type: Article
-    id: pgen.1008133.ref056
+    id: pgen-1008133-ref056
     authors:
       - type: Person
         familyNames:
@@ -1999,7 +2058,7 @@ references:
       Elimination of Oncogenic Neighbors by JNK-Mediated Engulfment in
       Drosophila
   - type: Article
-    id: pgen.1008133.ref057
+    id: pgen-1008133-ref057
     authors:
       - type: Person
         familyNames:
@@ -2027,7 +2086,7 @@ references:
       Yorkie and JNK Control Tumorigenesis in Drosophila Cells with Cytokinesis
       Failure
   - type: Article
-    id: pgen.1008133.ref058
+    id: pgen-1008133-ref058
     authors:
       - type: Person
         familyNames:
@@ -2069,7 +2128,7 @@ references:
       Dilp8 requires the neuronal relaxin receptor Lgr3 to couple growth to
       developmental timing
   - type: Article
-    id: pgen.1008133.ref059
+    id: pgen-1008133-ref059
     authors:
       - type: Person
         familyNames:
@@ -2097,7 +2156,7 @@ references:
       The steroid hormone ecdysone controls systemic growth by repressing dMyc
       function in Drosophila fat cells
   - type: Article
-    id: pgen.1008133.ref060
+    id: pgen-1008133-ref060
     authors:
       - type: Person
         familyNames:
@@ -2130,7 +2189,7 @@ references:
       Nitric oxide synthase regulates growth coordination during Drosophila
       melanogaster imaginal disc regeneration
   - type: Article
-    id: pgen.1008133.ref061
+    id: pgen-1008133-ref061
     authors:
       - type: Person
         familyNames:
@@ -2153,7 +2212,7 @@ references:
       Ecdysteroid control of cell proliferation during optic lobe neurogenesis
       in the moth Manduca sexta
   - type: Article
-    id: pgen.1008133.ref062
+    id: pgen-1008133-ref062
     authors:
       - type: Person
         familyNames:
@@ -2195,7 +2254,7 @@ references:
       Ecdysone promotes growth of imaginal discs through the regulation of Thor
       in D
   - type: Article
-    id: pgen.1008133.ref063
+    id: pgen-1008133-ref063
     authors:
       - type: Person
         familyNames:
@@ -2211,7 +2270,7 @@ references:
       volumeNumber: 194
     title: Signal transduction by reactive oxygen species
   - type: Article
-    id: pgen.1008133.ref064
+    id: pgen-1008133-ref064
     authors:
       - type: Person
         familyNames:
@@ -2237,7 +2296,7 @@ references:
       volumeNumber: 141
     title: Stem cells and the impact of ROS signaling
   - type: Article
-    id: pgen.1008133.ref065
+    id: pgen-1008133-ref065
     authors:
       - type: Person
         familyNames:
@@ -2260,7 +2319,7 @@ references:
       Reactive oxygen species prime Drosophila haematopoietic progenitors for
       differentiation
   - type: Article
-    id: pgen.1008133.ref066
+    id: pgen-1008133-ref066
     authors:
       - type: Person
         familyNames:
@@ -2281,7 +2340,7 @@ references:
       volumeNumber: 15
     title: 'p53, oxidative stress, and aging'
   - type: Article
-    id: pgen.1008133.ref067
+    id: pgen-1008133-ref067
     authors:
       - type: Person
         familyNames:
@@ -2324,7 +2383,7 @@ references:
       Extracellular Reactive Oxygen Species Drive Apoptosis-Induced
       Proliferation via Drosophila Macrophages
   - type: Article
-    id: pgen.1008133.ref068
+    id: pgen-1008133-ref068
     authors:
       - type: Person
         familyNames:
@@ -2352,7 +2411,7 @@ references:
       Cell cycling and patterned cell proliferation in the Drosophila wing
       during metamorphosis
   - type: Article
-    id: pgen.1008133.ref069
+    id: pgen-1008133-ref069
     authors:
       - type: Person
         familyNames:
@@ -2393,7 +2452,7 @@ references:
       volumeNumber: 9
     title: 'Fiji: an open-source platform for biological-image analysis'
   - type: Article
-    id: pgen.1008133.ref070
+    id: pgen-1008133-ref070
     authors:
       - type: Person
         familyNames:
@@ -2434,7 +2493,7 @@ references:
       volumeNumber: 22
     title: ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia
   - type: Article
-    id: pgen.1008133.ref071
+    id: pgen-1008133-ref071
     authors:
       - type: Person
         familyNames:
@@ -2483,6 +2542,9 @@ title:
   - type: Emphasis
     content:
       - Drosophila
+meta:
+  authorNotes:
+    - The authors have declared that no competing interests exist.
 content:
   - type: Heading
     id: sec001
@@ -2505,7 +2567,7 @@ content:
         through direct transcriptional activation of specific target genes
         involved in cell cycle arrest, DNA repair and apoptosis [
       - type: Cite
-        target: pgen.1008133.ref001
+        target: pgen-1008133-ref001
         content:
           - '1'
       - >-
@@ -2513,12 +2575,12 @@ content:
         reported to be relevant in tissue homeostasis, as well as in tumor
         suppression [
       - type: Cite
-        target: pgen.1008133.ref002
+        target: pgen-1008133-ref002
         content:
           - '2'
       - ','
       - type: Cite
-        target: pgen.1008133.ref003
+        target: pgen-1008133-ref003
         content:
           - '3'
       - >-
@@ -2526,12 +2588,12 @@ content:
         an antitumor microenvironment by impairing the survival and spread of
         adjacent tumor cells [
       - type: Cite
-        target: pgen.1008133.ref004
+        target: pgen-1008133-ref004
         content:
           - '4'
       - –
       - type: Cite
-        target: pgen.1008133.ref006
+        target: pgen-1008133-ref006
         content:
           - '6'
       - >-
@@ -2539,31 +2601,31 @@ content:
         fibroblasts develop faster and are more aggressive than their
         counterparts carrying wild-type fibroblasts [
       - type: Cite
-        target: pgen.1008133.ref007
+        target: pgen-1008133-ref007
         content:
           - '7'
       - >-
         ]. In fact, the modulation of inflammatory cytokine secretion by
         tumor-mediated activation of p53 has been shown to limit tissue damage [
       - type: Cite
-        target: pgen.1008133.ref008
+        target: pgen-1008133-ref008
         content:
           - '8'
       - '], inhibit adjacent epithelial cell transformation ['
       - type: Cite
-        target: pgen.1008133.ref004
+        target: pgen-1008133-ref004
         content:
           - '4'
       - >-
         ], and promote macrophage-mediated clearance of tumor and apoptotic
         cells [
       - type: Cite
-        target: pgen.1008133.ref009
+        target: pgen-1008133-ref009
         content:
           - '9'
       - ','
       - type: Cite
-        target: pgen.1008133.ref010
+        target: pgen-1008133-ref010
         content:
           - '10'
       - '].'
@@ -2578,7 +2640,7 @@ content:
           - Drosophila
       - ' orthologue of mammalian p53 (Dmp53) has been demonstrated to be essential for tissue and metabolic homeostasis ['
       - type: Cite
-        target: pgen.1008133.ref002
+        target: pgen-1008133-ref002
         content:
           - '2'
       - >-
@@ -2586,27 +2648,27 @@ content:
         stress, Dmp53 participates in non-cell-autonomous responses, regulating
         apoptosis-induced proliferation [
       - type: Cite
-        target: pgen.1008133.ref011
+        target: pgen-1008133-ref011
         content:
           - '11'
       - –
       - type: Cite
-        target: pgen.1008133.ref013
+        target: pgen-1008133-ref013
         content:
           - '13'
       - '], cell competition ['
       - type: Cite
-        target: pgen.1008133.ref014
+        target: pgen-1008133-ref014
         content:
           - '14'
       - ','
       - type: Cite
-        target: pgen.1008133.ref015
+        target: pgen-1008133-ref015
         content:
           - '15'
       - '] and adaptive responses to nutrient stress at the organismal level ['
       - type: Cite
-        target: pgen.1008133.ref016
+        target: pgen-1008133-ref016
         content:
           - '16'
       - ']. Previous studies using the '
@@ -2615,12 +2677,12 @@ content:
           - Drosophila
       - ' wing as a model system demonstrated that adjacent cell populations within an organ grow in a coordinated manner, buffering local variations in growth rate, thereby maintaining tissue homeostasis and allowing the development of well-proportioned wings ['
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - ','
       - type: Cite
-        target: pgen.1008133.ref018
+        target: pgen-1008133-ref018
         content:
           - '18'
       - >-
@@ -2628,12 +2690,12 @@ content:
         protein biosynthetic machinery in defined regions of the developing wing
         primordium reduces size of adjacent unperturbed territories [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - ','
       - type: Cite
-        target: pgen.1008133.ref019
+        target: pgen-1008133-ref019
         content:
           - '19'
       - >-
@@ -2642,26 +2704,26 @@ content:
         uncouples the growth of adjacent cell populations and ultimately gives
         rise to wings with incorrect proportions [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
         ]. Several molecular mechanisms, involving either a tissue local
         response [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
         ] or systemic mechanisms coordinating both intra- and inter-organ growth
         [
       - type: Cite
-        target: pgen.1008133.ref019
+        target: pgen-1008133-ref019
         content:
           - '19'
       - –
       - type: Cite
-        target: pgen.1008133.ref021
+        target: pgen-1008133-ref021
         content:
           - '21'
       - '], have been proposed to underlie Dmp53-dependent growth coordination.'
@@ -2675,12 +2737,12 @@ content:
           - Drosophila
       - ' ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - ','
       - type: Cite
-        target: pgen.1008133.ref023
+        target: pgen-1008133-ref023
         content:
           - '23'
       - >-
@@ -2719,12 +2781,12 @@ content:
           - Drosophila
       - ' wing imaginal disc, a highly proliferative epithelium that grows extensively during larval development, provides an ideal model to study intra-organ growth coordination ['
       - type: Cite
-        target: pgen.1008133.ref024
+        target: pgen-1008133-ref024
         content:
           - '24'
       - ','
       - type: Cite
-        target: pgen.1008133.ref025
+        target: pgen-1008133-ref025
         content:
           - '25'
       - >-
@@ -2781,12 +2843,12 @@ content:
       - ' to the A or P compartments of the wing disc reduced the size of both transgene-expressing and adjacent wild-type territories ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1A–1C
       - '; ['
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
@@ -2794,7 +2856,7 @@ content:
         growth was compromised in other regions of the wing by means of a
         battery of Gal4 drivers, including wing-specific Gal4 drivers [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
@@ -2803,18 +2865,18 @@ content:
         determined by measurements of BrdU incorporation (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1D–1F
       - ) and cell density in adult wings (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1G and 1H
       - '; ['
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - ']).'
@@ -2946,13 +3008,13 @@ content:
         differentially expressed genes (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1I
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s007'
+        target: '#pgen-1008133-s007'
         content:
           - S1 Table
       - >-
@@ -2974,7 +3036,7 @@ content:
         cellular response (
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s001'
+        target: '#pgen-1008133-s001'
         content:
           - S1A Fig
       - >-
@@ -2984,17 +3046,17 @@ content:
         metabolism, cytokine signaling and extracellular proteins (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1J
       - '). In addition, 57 genes previously described as p53 targets ['
       - type: Cite
-        target: pgen.1008133.ref026
+        target: pgen-1008133-ref026
         content:
           - '26'
       - ','
       - type: Cite
-        target: pgen.1008133.ref027
+        target: pgen-1008133-ref027
         content:
           - '27'
       - '] were specifically upregulated upon RA'
@@ -3004,7 +3066,7 @@ content:
       - ' expression ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s001'
+        target: '#pgen-1008133-s001'
         content:
           - S1C Fig
       - >-
@@ -3030,19 +3092,19 @@ content:
         proteins (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1J
       - ', '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s002'
+        target: '#pgen-1008133-s002'
         content:
           - S2A Fig
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s009'
+        target: '#pgen-1008133-s009'
         content:
           - S3 Table
       - >-
@@ -3058,7 +3120,7 @@ content:
       - ' transgenic RNAi lines ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s008'
+        target: '#pgen-1008133-s008'
         content:
           - S2 Table
       - >-
@@ -3081,7 +3143,7 @@ content:
       - ' expression, which resulted in adult wings bearing unproportioned compartments ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g002'
+        target: '#pgen-1008133-g002'
         content:
           - Fig 2A and 2B
       - >-
@@ -3095,7 +3157,7 @@ content:
           - IR
       - ') ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - '] and '
@@ -3105,13 +3167,13 @@ content:
       - ' homozygous mutants ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g002'
+        target: '#pgen-1008133-g002'
         content:
           - Fig 2B
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s002'
+        target: '#pgen-1008133-s002'
         content:
           - S2B Fig
       - '). Of note, the sole expression of '
@@ -3135,7 +3197,7 @@ content:
       - ' had no effect on wing size ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s002'
+        target: '#pgen-1008133-s002'
         content:
           - S2D Fig
       - ).
@@ -3230,7 +3292,7 @@ content:
         dying cells within a specific compartment induce apoptosis in the
         adjacent ones [
       - type: Cite
-        target: pgen.1008133.ref028
+        target: pgen-1008133-ref028
         content:
           - '28'
       - ']. RA'
@@ -3244,17 +3306,17 @@ content:
       - ' wing discs elicited apoptosis in both transgene-expressing and adjacent wild-type territories ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g002'
+        target: '#pgen-1008133-g002'
         content:
           - Fig 2C
       - '; ['
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - ','
       - type: Cite
-        target: pgen.1008133.ref029
+        target: pgen-1008133-ref029
         content:
           - '29'
       - >-
@@ -3268,14 +3330,14 @@ content:
         compartments when Egr was depleted (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g002'
+        target: '#pgen-1008133-g002'
         content:
           - Fig 2D and 2E
       - >-
         ). Apoptosis is not required for wing size reduction, but it plays an
         essential role in the non-autonomous decrease of proliferation rates [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
@@ -3294,13 +3356,13 @@ content:
       - ' expression largely rescued the non-autonomous effects of RA on both BrdU incorporation levels and number of mitotic—PH3-positive—cells ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g002'
+        target: '#pgen-1008133-g002'
         content:
           - Fig 2F and 2G
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s002'
+        target: '#pgen-1008133-s002'
         content:
           - S2C Fig
       - '). Similar results were observed in homozygous '
@@ -3315,7 +3377,7 @@ content:
       - ' mutant animals ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g002'
+        target: '#pgen-1008133-g002'
         content:
           - Fig 2H
       - >-
@@ -3341,13 +3403,13 @@ content:
       - '-expressing cells ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3D
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s001'
+        target: '#pgen-1008133-s001'
         content:
           - S1A Fig
       - '). RNA '
@@ -3372,7 +3434,7 @@ content:
       - '-expressing wing disc territory ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3A–3C
       - '). These findings were confirmed using '
@@ -3389,17 +3451,17 @@ content:
           - egr
       - '-lacZ; ['
       - type: Cite
-        target: pgen.1008133.ref030
+        target: pgen-1008133-ref030
         content:
           - '30'
       - ']) and Eiger protein expression and localization (Eiger-GFP; ['
       - type: Cite
-        target: pgen.1008133.ref030
+        target: pgen-1008133-ref030
         content:
           - '30'
       - ','
       - type: Cite
-        target: pgen.1008133.ref031
+        target: pgen-1008133-ref031
         content:
           - '31'
       - ']). '
@@ -3412,19 +3474,19 @@ content:
       - '-expression in the A compartment ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3E and 3E’
       - '), P compartment ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s003'
+        target: '#pgen-1008133-s003'
         content:
           - S3B Fig
       - ) and in clones of cells (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3F and 3F’
       - ') showed strong activation of '
@@ -3658,13 +3720,13 @@ content:
       - ' ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3I
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s003'
+        target: '#pgen-1008133-s003'
         content:
           - S3C Fig
       - >-
@@ -3686,7 +3748,7 @@ content:
       - ' mRNA levels ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3J
       - ', with the use of a wing specific Gal4 driver, '
@@ -3700,7 +3762,7 @@ content:
       - '-lacZ in wing discs cells ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3G–3H’
       - '). Consistent with recent reports showing Dmp53 binding to '
@@ -3709,7 +3771,7 @@ content:
           - egr
       - ' locus ['
       - type: Cite
-        target: pgen.1008133.ref032
+        target: pgen-1008133-ref032
         content:
           - '32'
       - >-
@@ -3725,7 +3787,7 @@ content:
       - ' binding sites with similar efficiency ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g003'
+        target: '#pgen-1008133-g003'
         content:
           - Fig 3K
       - >-
@@ -3764,17 +3826,17 @@ content:
         The JNK cascade is a conserved stress response pathway and an important
         regulator of tissue growth, proliferation and apoptosis [
       - type: Cite
-        target: pgen.1008133.ref023
+        target: pgen-1008133-ref023
         content:
           - '23'
       - ','
       - type: Cite
-        target: pgen.1008133.ref033
+        target: pgen-1008133-ref033
         content:
           - '33'
       - –
       - type: Cite
-        target: pgen.1008133.ref038
+        target: pgen-1008133-ref038
         content:
           - '38'
       - ']. Our transcriptome analysis indicated that RA'
@@ -3828,19 +3890,19 @@ content:
       - ) (
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s001'
+        target: '#pgen-1008133-s001'
         content:
           - S1A and S1B
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s004'
+        target: '#pgen-1008133-s004'
         content:
           - S4A
       - ' Figs and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s009'
+        target: '#pgen-1008133-s009'
         content:
           - S3 Table
       - '). Consistently, we noted activation of the JNK reporter '
@@ -3854,7 +3916,7 @@ content:
       - ' ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4A
       - ') and a significant increase in Mmp1 protein levels in those expressing '
@@ -3867,13 +3929,13 @@ content:
       - ' ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4B–4D
       - ', see also '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s004'
+        target: '#pgen-1008133-s004'
         content:
           - S4B Fig
       - '). Mmp1 expression was completely blocked in '
@@ -3903,7 +3965,7 @@ content:
       - '; '
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4F and 4G
       - >-
@@ -3911,7 +3973,7 @@ content:
         slow-growing tissues, we measured Mmp1 protein levels after depletion of
         Egr or TNFα receptor homologue Grindelwald (Grnd) [
       - type: Cite
-        target: pgen.1008133.ref039
+        target: pgen-1008133-ref039
         content:
           - '39'
       - ']. Mmp1 ectopic expression caused by '
@@ -3935,7 +3997,7 @@ content:
       - ' ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4H and 4I
       - >-
@@ -3962,7 +4024,7 @@ content:
       - '-induced expression of Mmp1 ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4J
       - '), it caused only a partial reduction of Mmp1 levels in '
@@ -3972,7 +4034,7 @@ content:
       - '-depleted cells ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4E
       - '). These results suggest that JNK is induced in '
@@ -4131,7 +4193,7 @@ content:
       - ' expression ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4N
       - >-
@@ -4164,7 +4226,7 @@ content:
       - ' expression on BrdU incorporation levels and number of mitotic PH3-positive cells ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4K and 4O
       - >-
@@ -4182,7 +4244,7 @@ content:
       - ' ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4L and 4M
       - >-
@@ -4194,7 +4256,7 @@ content:
       - ', '
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g004'
+        target: '#pgen-1008133-g004'
         content:
           - Fig 4L and 4M
       - ). The expression of Tak1
@@ -4221,7 +4283,7 @@ content:
       - ' wings had no effect on wing size ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s004'
+        target: '#pgen-1008133-s004'
         content:
           - S4C Fig
       - >-
@@ -4243,12 +4305,12 @@ content:
           - Drosophila
       - ' insulin-like peptide 8 (Dilp8) has been identified as a signaling molecule produced by imaginal discs in response to tissue damage ['
       - type: Cite
-        target: pgen.1008133.ref040
+        target: pgen-1008133-ref040
         content:
           - '40'
       - ','
       - type: Cite
-        target: pgen.1008133.ref041
+        target: pgen-1008133-ref041
         content:
           - '41'
       - >-
@@ -4260,12 +4322,12 @@ content:
         induction of Dilp8 production by damaged tissues delays metamorphosis
         and reduces larval and imaginal discs growth [
       - type: Cite
-        target: pgen.1008133.ref040
+        target: pgen-1008133-ref040
         content:
           - '40'
       - –
       - type: Cite
-        target: pgen.1008133.ref044
+        target: pgen-1008133-ref044
         content:
           - '44'
       - ']. Interestingly, we observed strong upregulation of '
@@ -4294,19 +4356,19 @@ content:
       - '; '
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5A and 5B
       - ', see also '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s001'
+        target: '#pgen-1008133-s001'
         content:
           - S1A Fig
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s007'
+        target: '#pgen-1008133-s007'
         content:
           - S1 Table
       - '), and induction of the '
@@ -4318,7 +4380,7 @@ content:
           - MI00727
       - ' protein trap reporter (hereafter Dilp8-GFP, ['
       - type: Cite
-        target: pgen.1008133.ref041
+        target: pgen-1008133-ref041
         content:
           - '41'
       - >-
@@ -4330,7 +4392,7 @@ content:
       - ' driver ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5C and 5D
       - ).
@@ -4434,17 +4496,17 @@ content:
         protein Xrp1, have been shown to regulate Dilp8 expression in response
         to various types of stress [
       - type: Cite
-        target: pgen.1008133.ref040
+        target: pgen-1008133-ref040
         content:
           - '40'
       - ','
       - type: Cite
-        target: pgen.1008133.ref044
+        target: pgen-1008133-ref044
         content:
           - '44'
       - –
       - type: Cite
-        target: pgen.1008133.ref046
+        target: pgen-1008133-ref046
         content:
           - '46'
       - >-
@@ -4460,13 +4522,13 @@ content:
       - ' ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5B
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s005'
+        target: '#pgen-1008133-s005'
         content:
           - S5A Fig
       - '). Consistently, Egr/JNK pathway inhibition suppressed RA'
@@ -4476,13 +4538,13 @@ content:
       - '-induced Dilp8-GFP expression ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5E
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s005'
+        target: '#pgen-1008133-s005'
         content:
           - S5D Fig
       - ). To examine whether Dilp8 production following RA
@@ -4515,7 +4577,7 @@ content:
       - ' expression ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5F
       - >-
@@ -4537,7 +4599,7 @@ content:
       - ) showed a non-autonomous reduction of adult wing size (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5G
       - >-
@@ -4545,7 +4607,7 @@ content:
         discs fully rescued wing size (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5G
       - >-
@@ -4579,7 +4641,7 @@ content:
       - ' expression ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g005'
+        target: '#pgen-1008133-g005'
         content:
           - Fig 5H–5L
       - >-
@@ -4587,7 +4649,7 @@ content:
         but also the number of cells in the resulting adult wings (
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s005'
+        target: '#pgen-1008133-s005'
         content:
           - S5C Fig
       - >-
@@ -4616,13 +4678,13 @@ content:
         S-transferases and other detoxifying genes (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g001'
+        target: '#pgen-1008133-g001'
         content:
           - Fig 1J
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s009'
+        target: '#pgen-1008133-s009'
         content:
           - S3 Table
       - >-
@@ -4637,7 +4699,7 @@ content:
           - Drosophila
       - ' tissues ['
       - type: Cite
-        target: pgen.1008133.ref047
+        target: pgen-1008133-ref047
         content:
           - '47'
       - ']. '
@@ -4660,13 +4722,13 @@ content:
       - ' expression ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6A–6B’
       - ' and '
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s006'
+        target: '#pgen-1008133-s006'
         content:
           - S6A Fig
       - '). Whereas '
@@ -4678,7 +4740,7 @@ content:
         in the transgene-expressing compartment (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6B’
       - '), which is consistent with cellular stress and apoptosis induction, '
@@ -4690,7 +4752,7 @@ content:
         epithelial cells (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6B
       - '). Importantly, RA'
@@ -4706,13 +4768,13 @@ content:
         antioxidants N-acetylcysteine (NAC), vitamin C and vitamin E (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6C
       - '), whereas vehicle treatment had no effect on this parameter ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s006'
+        target: '#pgen-1008133-s006'
         content:
           - S6A Fig
       - >-
@@ -4790,12 +4852,12 @@ content:
         important during wound healing and regeneration in many model organisms
         [
       - type: Cite
-        target: pgen.1008133.ref048
+        target: pgen-1008133-ref048
         content:
           - '48'
       - –
       - type: Cite
-        target: pgen.1008133.ref050
+        target: pgen-1008133-ref050
         content:
           - '50'
       - ']. During '
@@ -4804,7 +4866,7 @@ content:
           - Drosophila
       - ' wing regeneration, a burst of ROS generated by dying cells propagates to the nearby surviving tissue, stimulating JNK signaling, which is required for tissue repair ['
       - type: Cite
-        target: pgen.1008133.ref051
+        target: pgen-1008133-ref051
         content:
           - '51'
       - >-
@@ -4833,7 +4895,7 @@ content:
         territories (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6E
       - >-
@@ -4845,7 +4907,7 @@ content:
       - '-GFP was not induced upon expression of the JNK phosphatase Puckered ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6D
       - ).
@@ -4856,7 +4918,7 @@ content:
         slow-growing domains is required to reduce the proliferation rates of
         adjacent cell populations [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
@@ -4875,7 +4937,7 @@ content:
       - ' expression was largely rescued by supplementing the medium with antioxidants ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6F–6G
       - '). Both '
@@ -4888,7 +4950,7 @@ content:
         dismutase 2 (Sod2) (
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s006'
+        target: '#pgen-1008133-s006'
         content:
           - S6A and S6B Fig
       - '). Of note, neither RA'
@@ -4898,7 +4960,7 @@ content:
       - '-induced apoptosis ('
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g006'
+        target: '#pgen-1008133-g006'
         content:
           - Fig 6H
       - ) nor Dilp8-GFP upregulation upon RA
@@ -4908,7 +4970,7 @@ content:
       - ' expression ('
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s005'
+        target: '#pgen-1008133-s005'
         content:
           - S5E Fig
       - >-
@@ -4933,7 +4995,7 @@ content:
           - Drosophila
       - ' wing as a model system, we previously demonstrated that impairing growth within defined territories along the wing primordium triggers a Dmp53-dependent reduction of growth and proliferation rates in adjacent non-perturbed cell populations, thus contributing to the generation of smaller but well-proportioned adult wings ['
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
@@ -4944,12 +5006,12 @@ content:
           - Drosophila
       - ' TNF ligand Eiger ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - ','
       - type: Cite
-        target: pgen.1008133.ref023
+        target: pgen-1008133-ref023
         content:
           - '23'
       - >-
@@ -4962,7 +5024,7 @@ content:
         mechanisms downstream of Eiger-JNK signaling (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g007'
+        target: '#pgen-1008133-g007'
         content:
           - Fig 7
       - >-
@@ -4976,7 +5038,7 @@ content:
         parts of an organ (
       - type: Link
         relation: fig
-        target: '#pgen.1008133.g007'
+        target: '#pgen-1008133-g007'
         content:
           - Fig 7
       - ).
@@ -5015,12 +5077,12 @@ content:
         and they act mainly through JNK signaling to regulate growth,
         proliferation and apoptosis [
       - type: Cite
-        target: pgen.1008133.ref052
+        target: pgen-1008133-ref052
         content:
           - '52'
       - ','
       - type: Cite
-        target: pgen.1008133.ref053
+        target: pgen-1008133-ref053
         content:
           - '53'
       - ']. '
@@ -5029,7 +5091,7 @@ content:
           - Drosophila
       - ' type II transmembrane protein Eiger belongs to this family and exerts intrinsic tumor suppressor activity in epithelia by eliminating oncogenic cells through local endocytic JNK activation ['
       - type: Cite
-        target: pgen.1008133.ref054
+        target: pgen-1008133-ref054
         content:
           - '54'
       - >-
@@ -5037,7 +5099,7 @@ content:
         neighboring cells, thus propagating apoptotic JNK signaling along the
         tissue as part of a process called apoptosis-induced apoptosis [
       - type: Cite
-        target: pgen.1008133.ref028
+        target: pgen-1008133-ref028
         content:
           - '28'
       - >-
@@ -5045,12 +5107,12 @@ content:
         and the tumor microenvironment mediated by Eiger and its receptor Grnd
         also drive JNK activation, tumor growth, and invasive behavior [
       - type: Cite
-        target: pgen.1008133.ref054
+        target: pgen-1008133-ref054
         content:
           - '54'
       - –
       - type: Cite
-        target: pgen.1008133.ref056
+        target: pgen-1008133-ref056
         content:
           - '56'
       - >-
@@ -5074,29 +5136,29 @@ content:
           - Drosophila
       - ' imaginal discs ['
       - type: Cite
-        target: pgen.1008133.ref033
+        target: pgen-1008133-ref033
         content:
           - '33'
       - –
       - type: Cite
-        target: pgen.1008133.ref036
+        target: pgen-1008133-ref036
         content:
           - '36'
       - ','
       - type: Cite
-        target: pgen.1008133.ref038
+        target: pgen-1008133-ref038
         content:
           - '38'
       - ','
       - type: Cite
-        target: pgen.1008133.ref057
+        target: pgen-1008133-ref057
         content:
           - '57'
       - >-
         ]. In addition, JNK signaling regulates organ size during development
         through a non-canonical, Jun/Fos-independent mechanism [
       - type: Cite
-        target: pgen.1008133.ref037
+        target: pgen-1008133-ref037
         content:
           - '37'
       - >-
@@ -5107,17 +5169,17 @@ content:
         signaling molecule produced by damaged imaginal discs, delays
         metamorphosis and systemically reduces growth [
       - type: Cite
-        target: pgen.1008133.ref040
+        target: pgen-1008133-ref040
         content:
           - '40'
       - ','
       - type: Cite
-        target: pgen.1008133.ref041
+        target: pgen-1008133-ref041
         content:
           - '41'
       - ','
       - type: Cite
-        target: pgen.1008133.ref044
+        target: pgen-1008133-ref044
         content:
           - '44'
       - >-
@@ -5129,17 +5191,17 @@ content:
         synthesis of molting hormone ecdysone and/or insulin-like peptides,
         thereby coordinating growth with developmental timing [
       - type: Cite
-        target: pgen.1008133.ref043
+        target: pgen-1008133-ref043
         content:
           - '43'
       - ','
       - type: Cite
-        target: pgen.1008133.ref055
+        target: pgen-1008133-ref055
         content:
           - '55'
       - ','
       - type: Cite
-        target: pgen.1008133.ref058
+        target: pgen-1008133-ref058
         content:
           - '58'
       - >-
@@ -5155,24 +5217,24 @@ content:
           - in vivo
       - ' ['
       - type: Cite
-        target: pgen.1008133.ref059
+        target: pgen-1008133-ref059
         content:
           - '59'
       - –
       - type: Cite
-        target: pgen.1008133.ref062
+        target: pgen-1008133-ref062
         content:
           - '62'
       - >-
         ]. Indeed, organ growth coordination in response to localized growth
         defects is mediated, at least in part, by reduced ecdysone levels [
       - type: Cite
-        target: pgen.1008133.ref019
+        target: pgen-1008133-ref019
         content:
           - '19'
       - ','
       - type: Cite
-        target: pgen.1008133.ref021
+        target: pgen-1008133-ref021
         content:
           - '21'
       - >-
@@ -5180,7 +5242,7 @@ content:
         compartments can be disrupted by exogenous feeding with
         20-hydroxyecdysone (20E) [
       - type: Cite
-        target: pgen.1008133.ref019
+        target: pgen-1008133-ref019
         content:
           - '19'
       - >-
@@ -5194,22 +5256,22 @@ content:
         expression upon several insults, including tissue damage, tissue
         regeneration, neoplastic growth and impaired ribosomal function [
       - type: Cite
-        target: pgen.1008133.ref040
+        target: pgen-1008133-ref040
         content:
           - '40'
       - –
       - type: Cite
-        target: pgen.1008133.ref042
+        target: pgen-1008133-ref042
         content:
           - '42'
       - ','
       - type: Cite
-        target: pgen.1008133.ref044
+        target: pgen-1008133-ref044
         content:
           - '44'
       - –
       - type: Cite
-        target: pgen.1008133.ref046
+        target: pgen-1008133-ref046
         content:
           - '46'
       - >-
@@ -5222,7 +5284,7 @@ content:
         growth rates of adjacent cell populations within the wing disc, as well
         on the growth rates of other primordia [
       - type: Cite
-        target: pgen.1008133.ref044
+        target: pgen-1008133-ref044
         content:
           - '44'
       - >-
@@ -5239,19 +5301,19 @@ content:
         signaling molecules, influencing numerous cellular responses, including
         cell proliferation, differentiation and senescence [
       - type: Cite
-        target: pgen.1008133.ref063
+        target: pgen-1008133-ref063
         content:
           - '63'
       - –
       - type: Cite
-        target: pgen.1008133.ref065
+        target: pgen-1008133-ref065
         content:
           - '65'
       - >-
         ]. Although p53 is an important regulator of intracellular ROS levels in
         vertebrates, downstream mediators of p53 remain to be elucidated [
       - type: Cite
-        target: pgen.1008133.ref066
+        target: pgen-1008133-ref066
         content:
           - '66'
       - >-
@@ -5266,12 +5328,12 @@ content:
           - Drosophila
       - ' imaginal discs ['
       - type: Cite
-        target: pgen.1008133.ref051
+        target: pgen-1008133-ref051
         content:
           - '51'
       - ','
       - type: Cite
-        target: pgen.1008133.ref067
+        target: pgen-1008133-ref067
         content:
           - '67'
       - >-
@@ -5280,7 +5342,7 @@ content:
         which promotes JNK activation in epithelial disc cells, thereby driving
         compensatory proliferation and hyperplastic tissue growth [
       - type: Cite
-        target: pgen.1008133.ref067
+        target: pgen-1008133-ref067
         content:
           - '67'
       - >-
@@ -5293,7 +5355,7 @@ content:
         cells, thereby stimulating JNK signaling, which is required for cell
         proliferation and tissue repair [
       - type: Cite
-        target: pgen.1008133.ref051
+        target: pgen-1008133-ref051
         content:
           - '51'
       - >-
@@ -5428,7 +5490,7 @@ content:
           - IR
       - ' ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - '], '
@@ -5476,7 +5538,7 @@ content:
           - IR
       - ' ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - '], '
@@ -5490,7 +5552,7 @@ content:
               - '1'
       - ' ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - '], '
@@ -5504,7 +5566,7 @@ content:
               - '3'
       - ' ['
       - type: Cite
-        target: pgen.1008133.ref022
+        target: pgen-1008133-ref022
         content:
           - '22'
       - '], '
@@ -5513,7 +5575,7 @@ content:
           - eiger
       - '-lacZ ['
       - type: Cite
-        target: pgen.1008133.ref030
+        target: pgen-1008133-ref030
         content:
           - '30'
       - '], '
@@ -5531,7 +5593,7 @@ content:
           - DN
       - ' in the text ['
       - type: Cite
-        target: pgen.1008133.ref033
+        target: pgen-1008133-ref033
         content:
           - '33'
       - >-
@@ -5539,7 +5601,7 @@ content:
         (Supporting Information 
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s008'
+        target: '#pgen-1008133-s008'
         content:
           - S2 Table
       - ).
@@ -5608,14 +5670,14 @@ content:
     content:
       - 'TUNEL was performed as described in ['
       - type: Cite
-        target: pgen.1008133.ref068
+        target: pgen-1008133-ref068
         content:
           - '68'
       - >-
         ] using the In Situ Cell Death Detection Kit provided by Roche
         Diagnostics. BrdU incorporation was performed as described in [
       - type: Cite
-        target: pgen.1008133.ref068
+        target: pgen-1008133-ref068
         content:
           - '68'
       - >-
@@ -5652,7 +5714,7 @@ content:
         Images were acquired on a Leica SP8 inverted confocal microscope and
         analyzed and processed using Fiji [
       - type: Cite
-        target: pgen.1008133.ref069
+        target: pgen-1008133-ref069
         content:
           - '69'
       - >-
@@ -5668,7 +5730,7 @@ content:
     content:
       - 'In situ hybridization was performed as described in ['
       - type: Cite
-        target: pgen.1008133.ref068
+        target: pgen-1008133-ref068
         content:
           - '68'
       - ']. Antisense DIG-labeled '
@@ -5688,7 +5750,7 @@ content:
         Fiji. Cell density was measured as the number of hairs (each wing cell
         differentiates a hair) per defined area, as previously described [
       - type: Cite
-        target: pgen.1008133.ref017
+        target: pgen-1008133-ref017
         content:
           - '17'
       - >-
@@ -5714,7 +5776,7 @@ content:
         with specific primers (
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s010'
+        target: '#pgen-1008133-s010'
         content:
           - S4 Table
       - >-
@@ -5731,7 +5793,7 @@ content:
     content:
       - 'ChIP assays were performed following the modEncode protocol ['
       - type: Cite
-        target: pgen.1008133.ref070
+        target: pgen-1008133-ref070
         content:
           - '70'
       - >-
@@ -5740,7 +5802,7 @@ content:
         DNA are listed in 
       - type: Link
         relation: supplementary-material
-        target: '#pgen.1008133.s010'
+        target: '#pgen-1008133-s010'
         content:
           - S4 Table
       - .
@@ -5755,7 +5817,7 @@ content:
         Transcription profiles were obtained at the Functional Genomics Core of
         IRB Barcelona, as previously described [
       - type: Cite
-        target: pgen.1008133.ref071
+        target: pgen-1008133-ref071
         content:
           - '71'
       - >-
@@ -5910,17 +5972,17 @@ content:
           - egr
       - '-lacZ ['
       - type: Cite
-        target: pgen.1008133.ref030
+        target: pgen-1008133-ref030
         content:
           - '30'
       - '] and Eiger-GFP ['
       - type: Cite
-        target: pgen.1008133.ref030
+        target: pgen-1008133-ref030
         content:
           - '30'
       - ','
       - type: Cite
-        target: pgen.1008133.ref031
+        target: pgen-1008133-ref031
         content:
           - '31'
       - >-

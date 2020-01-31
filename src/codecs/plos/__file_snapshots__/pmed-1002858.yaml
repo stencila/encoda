@@ -120,9 +120,15 @@ authors:
     givenNames:
       - Nicholas
       - J.
+dateAccepted:
+  type: Date
+  value: '2019-07-25'
 datePublished:
   type: Date
   value: '2019-08-23'
+dateReceived:
+  type: Date
+  value: '2019-01-18'
 description:
   - type: Paragraph
     content:
@@ -169,11 +175,37 @@ editors:
     givenNames:
       - James
       - G.
+identifiers:
+  - type: PropertyValue
+    name: doi
+    propertyID: 'https://registry.identifiers.org/registry/doi'
+    value: 10.1371/journal.pmed.1002858
+  - type: PropertyValue
+    name: publisher-id
+    propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+    value: PMEDICINE-D-19-00206
+  - type: PropertyValue
+    name: elocation-id
+    propertyID: 'https://registry.identifiers.org/registry/elocation-id'
+    value: e1002858
 isPartOf:
   type: PublicationVolume
   isPartOf:
     type: Periodical
-    issn:
+    identifiers:
+      - type: PropertyValue
+        name: nlm-ta
+        propertyID: 'https://registry.identifiers.org/registry/nlm-ta'
+        value: PLoS Med
+      - type: PropertyValue
+        name: publisher-id
+        propertyID: 'https://registry.identifiers.org/registry/publisher-id'
+        value: plos
+      - type: PropertyValue
+        name: pmc
+        propertyID: 'https://registry.identifiers.org/registry/pmc'
+        value: plosmed
+    issns:
       - 1549-1277
       - 1549-1676
     publisher:
@@ -197,7 +229,7 @@ licenses:
             any medium, provided the original author and source are credited.
 references:
   - type: Article
-    id: pmed.1002858.ref001
+    id: pmed-1002858-ref001
     authors: []
     datePublished: '2014'
     isPartOf:
@@ -210,7 +242,7 @@ references:
       pageStart: 7
     title: Severe Malaria
   - type: Article
-    id: pmed.1002858.ref002
+    id: pmed-1002858-ref002
     authors:
       - type: Person
         familyNames:
@@ -257,7 +289,7 @@ references:
       national mortality trends to help quantify the UN Sustainable Development
       Goal for health
   - type: Article
-    id: pmed.1002858.ref003
+    id: pmed-1002858-ref003
     authors:
       - type: Person
         familyNames:
@@ -303,7 +335,7 @@ references:
       Pre-referral rectal artesunate to prevent death and disability in severe
       malaria: a placebo-controlled trial
   - type: Article
-    id: pmed.1002858.ref004
+    id: pmed-1002858-ref004
     authors:
       - type: Person
         familyNames:
@@ -345,7 +377,7 @@ references:
       Patients in South-East Asia and the Implications for Planning of Hospital
       Services
   - type: Article
-    id: pmed.1002858.ref005
+    id: pmed-1002858-ref005
     authors:
       - type: Person
         familyNames:
@@ -386,7 +418,7 @@ references:
       Artesunate versus quinine for treatment of severe falciparum malaria: a
       randomised trial
   - type: Article
-    id: pmed.1002858.ref006
+    id: pmed-1002858-ref006
     authors:
       - type: Person
         familyNames:
@@ -432,7 +464,7 @@ references:
       The Relationship between Age and the Manifestations of and Mortality
       Associated with Severe Malaria
   - type: Article
-    id: pmed.1002858.ref007
+    id: pmed-1002858-ref007
     authors:
       - type: Person
         familyNames:
@@ -479,7 +511,7 @@ references:
       Predicting the Clinical Outcome of Severe Falciparum Malaria in African
       Children: Findings From a Large Randomized Trial
   - type: Article
-    id: pmed.1002858.ref008
+    id: pmed-1002858-ref008
     authors:
       - type: Person
         familyNames:
@@ -513,7 +545,7 @@ references:
       pageStart: 192
     title: 'Lethal malaria: Marchiafava and Bignami were right'
   - type: Article
-    id: pmed.1002858.ref009
+    id: pmed-1002858-ref009
     authors:
       - type: Person
         familyNames:
@@ -556,7 +588,7 @@ references:
       pageStart: 47
     title: 'Adjunctive therapy for severe malaria: a review and critical appraisal'
   - type: Article
-    id: pmed.1002858.ref010
+    id: pmed-1002858-ref010
     authors:
       - type: Person
         familyNames:
@@ -595,7 +627,7 @@ references:
       pageStart: 11
     title: The murine cerebral malaria phenomenon
   - type: Article
-    id: pmed.1002858.ref011
+    id: pmed-1002858-ref011
     authors:
       - type: Person
         familyNames:
@@ -641,7 +673,7 @@ references:
       Hemofiltration and peritoneal dialysis in infection-associated acute renal
       failure in Vietnam
   - type: Article
-    id: pmed.1002858.ref012
+    id: pmed-1002858-ref012
     authors:
       - type: Person
         familyNames:
@@ -682,7 +714,7 @@ references:
       Collider bias and the apparent protective effect of glucose-6-phosphate
       dehydrogenase deficiency on cerebral malaria
   - type: Article
-    id: pmed.1002858.ref013
+    id: pmed-1002858-ref013
     authors:
       - type: Person
         familyNames:
@@ -695,7 +727,7 @@ references:
       title: 'Causality: Models, Reasoning and Inference'
     title: ''
   - type: Article
-    id: pmed.1002858.ref014
+    id: pmed-1002858-ref014
     authors:
       - type: Person
         familyNames:
@@ -715,7 +747,7 @@ references:
       Estimating causal effects of treatments in randomized and nonrandomized
       studies
   - type: Article
-    id: pmed.1002858.ref015
+    id: pmed-1002858-ref015
     authors:
       - type: Person
         familyNames:
@@ -746,7 +778,7 @@ references:
       Causality and causal inference in epidemiology: the need for a pluralistic
       approach
   - type: Article
-    id: pmed.1002858.ref016
+    id: pmed-1002858-ref016
     authors:
       - type: Person
         familyNames:
@@ -773,7 +805,7 @@ references:
       The tale wagged by the DAG: broadening the scope of causal inference and
       explanation for epidemiology
   - type: Article
-    id: pmed.1002858.ref017
+    id: pmed-1002858-ref017
     authors:
       - type: Person
         familyNames:
@@ -792,7 +824,7 @@ references:
       pageStart: 945
     title: Statistics and causal inference
   - type: Article
-    id: pmed.1002858.ref018
+    id: pmed-1002858-ref018
     authors:
       - type: Person
         familyNames:
@@ -810,7 +842,7 @@ references:
       title: Causal Inference
     title: ''
   - type: Article
-    id: pmed.1002858.ref019
+    id: pmed-1002858-ref019
     authors:
       - type: Person
         familyNames:
@@ -828,7 +860,7 @@ references:
       title: On Summer-Autumnal Fever
     title: ''
   - type: Article
-    id: pmed.1002858.ref020
+    id: pmed-1002858-ref020
     authors:
       - type: Person
         familyNames:
@@ -868,7 +900,7 @@ references:
       N-acetylcysteine as adjunctive treatment in severe malaria: A randomized,
       double-blinded placebo-controlled clinical trial
   - type: Article
-    id: pmed.1002858.ref021
+    id: pmed-1002858-ref021
     authors:
       - type: Person
         familyNames:
@@ -914,7 +946,7 @@ references:
       Randomized comparison of artesunate and quinine in the treatment of severe
       falciparum malaria
   - type: Article
-    id: pmed.1002858.ref022
+    id: pmed-1002858-ref022
     authors:
       - type: Person
         familyNames:
@@ -958,7 +990,7 @@ references:
       Timing of enteral feeding in cerebral malaria in Resource-Poor settings: A
       randomized trial
   - type: Article
-    id: pmed.1002858.ref023
+    id: pmed-1002858-ref023
     authors:
       - type: Person
         familyNames:
@@ -1005,7 +1037,7 @@ references:
       Randomized controlled trial of levamisole hydrochloride as adjunctive
       therapy in severe falciparum malaria with high parasitemia
   - type: Article
-    id: pmed.1002858.ref024
+    id: pmed-1002858-ref024
     authors:
       - type: Person
         familyNames:
@@ -1052,7 +1084,7 @@ references:
       Severe and Moderately Severe Falciparum Malaria: A Randomized, Controlled,
       Open-Label Trial
   - type: Article
-    id: pmed.1002858.ref025
+    id: pmed-1002858-ref025
     authors:
       - type: Person
         familyNames:
@@ -1098,7 +1130,7 @@ references:
       Open comparison of intramuscular chloroquine and quinine in children with
       severe chloroquine-sensitive falciparum malaria
   - type: Article
-    id: pmed.1002858.ref026
+    id: pmed-1002858-ref026
     authors:
       - type: Person
         familyNames:
@@ -1143,7 +1175,7 @@ references:
       Randomized controlled trial of artesunate or artemether in Vietnamese
       adults with severe falciparum malaria
   - type: Article
-    id: pmed.1002858.ref027
+    id: pmed-1002858-ref027
     authors:
       - type: Person
         familyNames:
@@ -1189,7 +1221,7 @@ references:
       A controlled trial of artemether or quinine in Vietnamese adults with
       severe falciparum malaria
   - type: Article
-    id: pmed.1002858.ref028
+    id: pmed-1002858-ref028
     authors:
       - type: Person
         familyNames:
@@ -1235,7 +1267,7 @@ references:
       Artesunate versus quinine in the treatment of severe falciparum malaria in
       African children (AQUAMAT): an open-label, randomised trial
   - type: Article
-    id: pmed.1002858.ref029
+    id: pmed-1002858-ref029
     authors:
       - type: Person
         familyNames:
@@ -1269,11 +1301,11 @@ references:
       pageStart: 1
     title: Fitting Linear Mixed-Effects Models Using lme4
   - type: Article
-    id: pmed.1002858.ref030
+    id: pmed-1002858-ref030
     authors: []
     title: ''
   - type: Article
-    id: pmed.1002858.ref031
+    id: pmed-1002858-ref031
     authors:
       - type: Person
         familyNames:
@@ -1299,7 +1331,7 @@ references:
       pageStart: 1
     title: 'ipw: An R Package for Inverse Probability Weighting'
   - type: Article
-    id: pmed.1002858.ref032
+    id: pmed-1002858-ref032
     authors:
       - type: Person
         familyNames:
@@ -1318,7 +1350,7 @@ references:
       pageStart: 1
     title: Analysis of Complex Survey Samples
   - type: Article
-    id: pmed.1002858.ref033
+    id: pmed-1002858-ref033
     authors:
       - type: Person
         familyNames:
@@ -1345,7 +1377,7 @@ references:
       weighting (IPTW) using the propensity score to estimate causal treatment
       effects in observational studies
   - type: Article
-    id: pmed.1002858.ref034
+    id: pmed-1002858-ref034
     authors:
       - type: Person
         familyNames:
@@ -1364,7 +1396,7 @@ references:
       pageStart: 3613
     title: G6PD deficiency
   - type: Article
-    id: pmed.1002858.ref035
+    id: pmed-1002858-ref035
     authors:
       - type: Person
         familyNames:
@@ -1408,7 +1440,7 @@ references:
       Association of G6PD with lower haemoglobin concentration but not increased
       haemolysis in patients with sickle cell anaemia
   - type: Article
-    id: pmed.1002858.ref036
+    id: pmed-1002858-ref036
     authors:
       - type: Person
         familyNames:
@@ -1454,7 +1486,7 @@ references:
       Genetic association analysis highlights new loci that modulate
       hematological trait variation in Caucasians and African Americans
   - type: Article
-    id: pmed.1002858.ref037
+    id: pmed-1002858-ref037
     authors:
       - type: Person
         familyNames:
@@ -1498,7 +1530,7 @@ references:
       Glucose-6-phosphate dehydrogenase deficiency and the risk of malaria and
       other diseases in children in Kenya: a case-control and a cohort study
   - type: Article
-    id: pmed.1002858.ref038
+    id: pmed-1002858-ref038
     authors:
       - type: Person
         familyNames:
@@ -1544,7 +1576,7 @@ references:
       Relation between falciparum malaria and bacteraemia in Kenyan children: a
       population-based, case-control study and a longitudinal study
   - type: Article
-    id: pmed.1002858.ref039
+    id: pmed-1002858-ref039
     authors:
       - type: Person
         familyNames:
@@ -1569,7 +1601,7 @@ references:
       Invasive bacterial co-infection in African children with Plasmodium
       falciparum malaria: a systematic review
   - type: Article
-    id: pmed.1002858.ref040
+    id: pmed-1002858-ref040
     authors:
       - type: Person
         familyNames:
@@ -1613,7 +1645,7 @@ references:
       pageStart: 417
     title: Illustrating bias due to conditioning on a collider
   - type: Article
-    id: pmed.1002858.ref041
+    id: pmed-1002858-ref041
     authors:
       - type: Person
         familyNames:
@@ -1658,7 +1690,7 @@ references:
       Anaemia and blood transfusion in African children presenting to hospital
       with severe febrile illness
   - type: Article
-    id: pmed.1002858.ref042
+    id: pmed-1002858-ref042
     authors:
       - type: Person
         familyNames:
@@ -1676,7 +1708,7 @@ references:
       pageStart: 371
     title: Anaemia and malaria
   - type: Article
-    id: pmed.1002858.ref043
+    id: pmed-1002858-ref043
     authors:
       - type: Person
         familyNames:
@@ -1700,7 +1732,7 @@ references:
       pageStart: 268
     title: 'Sensitivity analysis in observational research: introducing the E-value'
   - type: Article
-    id: pmed.1002858.ref044
+    id: pmed-1002858-ref044
     authors:
       - type: Person
         familyNames:
@@ -1746,7 +1778,7 @@ references:
       Effects of dopamine and epinephrine infusions on renal hemodynamics in
       severe malaria and severe sepsis
   - type: Article
-    id: pmed.1002858.ref045
+    id: pmed-1002858-ref045
     authors:
       - type: Person
         familyNames:
@@ -1777,7 +1809,7 @@ references:
       Reduced microcirculatory flow in severe falciparum malaria:
       pathophysiology and electron-microscopic pathology
   - type: Article
-    id: pmed.1002858.ref046
+    id: pmed-1002858-ref046
     authors:
       - type: Person
         familyNames:
@@ -1824,7 +1856,7 @@ references:
       Direct In Vivo Assessment of Microcirculatory Dysfunction in Severe
       Falciparum Malaria
   - type: Article
-    id: pmed.1002858.ref047
+    id: pmed-1002858-ref047
     authors:
       - type: Person
         familyNames:
@@ -1870,7 +1902,7 @@ references:
       Impaired nitric oxide bioavailability and l-arginine–reversible
       endothelial dysfunction in adults with falciparum malaria
   - type: Article
-    id: pmed.1002858.ref048
+    id: pmed-1002858-ref048
     authors:
       - type: Person
         familyNames:
@@ -1911,7 +1943,7 @@ references:
       Attenuation of cytoadherence of Plasmodium falciparum to microvascular
       endothelium under flow by hemodilution
   - type: Article
-    id: pmed.1002858.ref049
+    id: pmed-1002858-ref049
     authors:
       - type: Person
         familyNames:
@@ -1945,7 +1977,7 @@ references:
       pageStart: 2257
     title: Optimal hematocrit in an artificial microvascular network
   - type: Article
-    id: pmed.1002858.ref050
+    id: pmed-1002858-ref050
     authors:
       - type: Person
         familyNames:
@@ -1983,7 +2015,7 @@ references:
       pageStart: 1197
     title: Reappraisal of known malaria resistance loci in a large multicenter study
   - type: Article
-    id: pmed.1002858.ref051
+    id: pmed-1002858-ref051
     authors:
       - type: Person
         familyNames:
@@ -2028,7 +2060,7 @@ references:
       Transfusion and Treatment of severe anaemia in African children (TRACT): a
       study protocol for a randomised controlled trial
   - type: Article
-    id: pmed.1002858.ref052
+    id: pmed-1002858-ref052
     authors:
       - type: Person
         familyNames:
@@ -2075,6 +2107,11 @@ references:
 title: >-
   Investigating causal pathways in severe falciparum malaria: A pooled
   retrospective analysis of clinical studies
+meta:
+  authorNotes:
+    - >-
+      NJW is a member of the Editorial Board of PLOS Medicine. All the other
+      authors have declared that no competing interests exist.
 content:
   - type: Heading
     id: sec007
@@ -2087,26 +2124,26 @@ content:
         Severe falciparum malaria remains an important cause of premature death
         in malaria-endemic countries [
       - type: Cite
-        target: pmed.1002858.ref001
+        target: pmed-1002858-ref001
         content:
           - '1'
       - ','
       - type: Cite
-        target: pmed.1002858.ref002
+        target: pmed-1002858-ref002
         content:
           - '2'
       - >-
         ]. The onset of life-threatening complications can be rapid,
         particularly in children, leaving little or no time to reach hospital [
       - type: Cite
-        target: pmed.1002858.ref003
+        target: pmed-1002858-ref003
         content:
           - '3'
       - >-
         ]. The majority of in-hospital deaths occur within the first 24 hours
         following admission [
       - type: Cite
-        target: pmed.1002858.ref004
+        target: pmed-1002858-ref004
         content:
           - '4'
       - >-
@@ -2115,12 +2152,12 @@ content:
         30%, depending on the number and severity of complications present on
         admission [
       - type: Cite
-        target: pmed.1002858.ref005
+        target: pmed-1002858-ref005
         content:
           - '5'
       - –
       - type: Cite
-        target: pmed.1002858.ref007
+        target: pmed-1002858-ref007
         content:
           - '7'
       - '].'
@@ -2133,7 +2170,7 @@ content:
         likely to deteriorate and thus help identify those who would benefit
         most from escalation of care [
       - type: Cite
-        target: pmed.1002858.ref001
+        target: pmed-1002858-ref001
         content:
           - '1'
       - >-
@@ -2146,12 +2183,12 @@ content:
         none of these have been proved effective, and several were shown to be
         harmful [
       - type: Cite
-        target: pmed.1002858.ref008
+        target: pmed-1002858-ref008
         content:
           - '8'
       - –
       - type: Cite
-        target: pmed.1002858.ref011
+        target: pmed-1002858-ref011
         content:
           - '11'
       - >-
@@ -2159,7 +2196,7 @@ content:
         allows for the identification of key confounders and possible selection
         bias [
       - type: Cite
-        target: pmed.1002858.ref012
+        target: pmed-1002858-ref012
         content:
           - '12'
       - >-
@@ -2172,7 +2209,7 @@ content:
         of a causal contribution relies on multiple assumptions that are
         nonstatistical in nature [
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - >-
@@ -2182,7 +2219,7 @@ content:
         attempts to estimate contrasts of potential outcomes between groups who
         did receive and did not receive an exposure of interest [
       - type: Cite
-        target: pmed.1002858.ref014
+        target: pmed-1002858-ref014
         content:
           - '14'
       - >-
@@ -2191,12 +2228,12 @@ content:
         epidemiology, there is debate as to which experimental conditions allow
         for the valid estimation of causal effects [
       - type: Cite
-        target: pmed.1002858.ref015
+        target: pmed-1002858-ref015
         content:
           - '15'
       - ','
       - type: Cite
-        target: pmed.1002858.ref016
+        target: pmed-1002858-ref016
         content:
           - '16'
       - >-
@@ -2204,14 +2241,14 @@ content:
         derived in the presence of well-defined, humanly possible interventions
         [
       - type: Cite
-        target: pmed.1002858.ref017
+        target: pmed-1002858-ref017
         content:
           - '17'
       - >-
         ]. This implies that the main goal of causal inference is to mimic
         idealised—even if practically unfeasible—randomised experiments [
       - type: Cite
-        target: pmed.1002858.ref018
+        target: pmed-1002858-ref018
         content:
           - '18'
       - >-
@@ -2219,7 +2256,7 @@ content:
         states, for which multiple different interventions exist with different
         average outcomes, or immutable states such as sex or race [
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - '].'
@@ -2233,7 +2270,7 @@ content:
         variables in severe falciparum malaria. Our approach is based on the
         structural model causal inference framework [
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - >-
@@ -2249,17 +2286,17 @@ content:
         extensive sequestration of parasitised erythrocytes in the
         microvasculature leading to vital organ dysfunction [
       - type: Cite
-        target: pmed.1002858.ref001
+        target: pmed-1002858-ref001
         content:
           - '1'
       - ','
       - type: Cite
-        target: pmed.1002858.ref008
+        target: pmed-1002858-ref008
         content:
           - '8'
       - ','
       - type: Cite
-        target: pmed.1002858.ref019
+        target: pmed-1002858-ref019
         content:
           - '19'
       - >-
@@ -2282,7 +2319,7 @@ content:
     content:
       - 'We used a structural model causal inference approach ['
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - >-
@@ -2292,7 +2329,7 @@ content:
         mechanism of disease. The final DAG is displayed in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ' and can be accessed online on the DAGitty website ('
@@ -2321,7 +2358,7 @@ content:
       - We based our DAG (
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - >-
@@ -2343,13 +2380,13 @@ content:
     content:
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ' shows the posited direct relationships between circulating parasitaemia (observed), sequestered parasitaemia (unobserved), the main clinical and laboratory determinants of the severe falciparum malaria classification, and death. Circulating parasitaemia is also a determinant of this classification. Implicit stratification resulting from including only patients who are classified as having severe malaria is represented by the vertex ‘Included in study’. Eligibility criteria for patients in the final dataset were based on WHO criteria for severe malaria, with minor variations as stated in the original publications and summarised in '
       - type: Link
         relation: supplementary-material
-        target: '#pmed.1002858.s004'
+        target: '#pmed-1002858-s004'
         content:
           - S1 Table
       - >-
@@ -2382,7 +2419,7 @@ content:
         children in endemic areas diagnosed as severe malaria are likely to
         represent primary septicaemia with incidental malaria [
       - type: Cite
-        target: pmed.1002858.ref008
+        target: pmed-1002858-ref008
         content:
           - '8'
       - >-
@@ -2390,13 +2427,13 @@ content:
         malarial infection (predisposition) results in only minor confounding
         bias. Using d-separation rules (for a recent review, see [
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - ']) assuming the DAG in '
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ' is correct, the minimal adjustments that allow for unbiased estimates of the total or direct causal effects are as follows:'
@@ -2503,12 +2540,12 @@ content:
       - 'A reasonable criticism of the causal DAG shown in '
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ' is that the arrows from the exposure variables (shown in green) to the outcome variable (‘Death’: red) do not represent well-defined causal questions ['
       - type: Cite
-        target: pmed.1002858.ref018
+        target: pmed-1002858-ref018
         content:
           - '18'
       - >-
@@ -2516,7 +2553,7 @@ content:
         outcomes framework, which has been labelled the ‘restricted potential
         outcomes approach’ [
       - type: Cite
-        target: pmed.1002858.ref015
+        target: pmed-1002858-ref015
         content:
           - '15'
       - '].'
@@ -2525,7 +2562,7 @@ content:
       - 'We argue that the exposure variables in '
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ' do correspond to well-defined exposures from an interventionist perspective—i.e., there are well-defined interventions. We focus this methodological reflection on haematocrit (anaemia), with analogous arguments for renal failure, acidosis, coma, seizures, and pulmonary oedema. In a population of interest, steady-state haemoglobin concentrations can be thought of as randomly assigned, corresponding to differences in host genetics (e.g., haemoglobinopathies), sex, age, and environmental influences (diet, recent haemolytic events such as malaria, the bone marrow dysfunction associated with malaria, intestinal helminth coinfections, geographical location, and access to healthcare). When considering admission haematocrits in the context of severe-malaria clinical trials, additional factors are important: host immunity, host splenic function, host–parasite interactions, and parasite genetics (all potentially affecting parasite multiplication rates and pathogen load). Note that some of these do confound the relationship with survival and should therefore be adjusted for. However, the non-confounding factors (some host genetics, age, sex, diet, recent haemolysis, bone marrow dysfunction, coinfection) are likely to determine the majority of the variation in haematocrits observed at presentation. These factors are complex, but there is no reason to believe that their overall effect—changing the admission haematocrit—should not be approximately equivalent to the intervention of blood transfusion (or the hypothetical reverse intervention of removing blood). Therefore, we argue that the contribution of anaemia on mortality corresponds to a well-defined (from an interventionist perspective) causal question.'
@@ -2565,12 +2602,12 @@ content:
                   - 'n'
               - ' = 683) ['
               - type: Cite
-                target: pmed.1002858.ref020
+                target: pmed-1002858-ref020
                 content:
                   - '20'
               - ','
               - type: Cite
-                target: pmed.1002858.ref021
+                target: pmed-1002858-ref021
                 content:
                   - '21'
               - '].'
@@ -2588,12 +2625,12 @@ content:
                   - 'n'
               - ' = 424) ['
               - type: Cite
-                target: pmed.1002858.ref022
+                target: pmed-1002858-ref022
                 content:
                   - '22'
               - –
               - type: Cite
-                target: pmed.1002858.ref024
+                target: pmed-1002858-ref024
                 content:
                   - '24'
               - '].'
@@ -2613,7 +2650,7 @@ content:
                   - 'n'
               - ' = 48) ['
               - type: Cite
-                target: pmed.1002858.ref025
+                target: pmed-1002858-ref025
                 content:
                   - '25'
               - '].'
@@ -2632,7 +2669,7 @@ content:
                   - 'n'
               - ' = 370) ['
               - type: Cite
-                target: pmed.1002858.ref026
+                target: pmed-1002858-ref026
                 content:
                   - '26'
               - '].'
@@ -2651,7 +2688,7 @@ content:
                   - 'n'
               - ' = 560) ['
               - type: Cite
-                target: pmed.1002858.ref027
+                target: pmed-1002858-ref027
                 content:
                   - '27'
               - '].'
@@ -2670,7 +2707,7 @@ content:
                   - 'n'
               - ' = 1,461) ['
               - type: Cite
-                target: pmed.1002858.ref005
+                target: pmed-1002858-ref005
                 content:
                   - '5'
               - '].'
@@ -2690,7 +2727,7 @@ content:
                   - 'n'
               - ' = 5,494) ['
               - type: Cite
-                target: pmed.1002858.ref028
+                target: pmed-1002858-ref028
                 content:
                   - '28'
               - '].'
@@ -2702,13 +2739,13 @@ content:
         be found in the individual publications (see 
       - type: Link
         relation: table
-        target: '#pmed.1002858.t001'
+        target: '#pmed-1002858-t001'
         content:
           - Table 1
       - ' for a brief overview). Inclusion criteria varied between some studies, as shown in '
       - type: Link
         relation: supplementary-material
-        target: '#pmed.1002858.s004'
+        target: '#pmed-1002858-s004'
         content:
           - S1 Table
       - . Data merging and cleaning were performed using Stata version 14.0.
@@ -2770,35 +2807,35 @@ content:
             content:
               - '['
               - type: Cite
-                target: pmed.1002858.ref022
+                target: pmed-1002858-ref022
                 content:
                   - '22'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: pmed.1002858.ref021
+                target: pmed-1002858-ref021
                 content:
                   - '21'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: pmed.1002858.ref024
+                target: pmed-1002858-ref024
                 content:
                   - '24'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: pmed.1002858.ref020
+                target: pmed-1002858-ref020
                 content:
                   - '20'
               - ']'
               - ' '
               - '['
               - type: Cite
-                target: pmed.1002858.ref023
+                target: pmed-1002858-ref023
                 content:
                   - '23'
               - ']'
@@ -2830,7 +2867,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: pmed.1002858.ref026
+                target: pmed-1002858-ref026
                 content:
                   - '26'
               - ']'
@@ -2862,7 +2899,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: pmed.1002858.ref027
+                target: pmed-1002858-ref027
                 content:
                   - '27'
               - ']'
@@ -2894,7 +2931,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: pmed.1002858.ref025
+                target: pmed-1002858-ref025
                 content:
                   - '25'
               - ']'
@@ -2932,7 +2969,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: pmed.1002858.ref005
+                target: pmed-1002858-ref005
                 content:
                   - '5'
               - ']'
@@ -2980,7 +3017,7 @@ content:
             content:
               - '['
               - type: Cite
-                target: pmed.1002858.ref028
+                target: pmed-1002858-ref028
                 content:
                   - '28'
               - ']'
@@ -3251,7 +3288,7 @@ content:
         conditional on the structural causal model shown in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - '. Included in '
@@ -3285,7 +3322,7 @@ content:
           linkType: simple
       - '. Parameter estimation was done using the R package ‘lme4’ ['
       - type: Cite
-        target: pmed.1002858.ref029
+        target: pmed-1002858-ref029
         content:
           - '29'
       - '].'
@@ -3306,7 +3343,7 @@ content:
           linkType: simple
       - ' were then combined using Rubin’s rules in order to estimate overall fixed and random effects (functions ‘modelFixedEff’, ‘modelRandEffStats’ in ‘merTools’ ['
       - type: Cite
-        target: pmed.1002858.ref030
+        target: pmed-1002858-ref030
         content:
           - '30'
       - ']) and obtain a global estimate '
@@ -3370,7 +3407,7 @@ content:
         the DAG in panel A of 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g005'
+        target: '#pmed-1002858-g005'
         content:
           - Fig 5
       - >-
@@ -3401,7 +3438,7 @@ content:
         The inverse probability weights were computed using the R package ‘ipw’
         [
       - type: Cite
-        target: pmed.1002858.ref031
+        target: pmed-1002858-ref031
         content:
           - '31'
       - >-
@@ -3427,7 +3464,7 @@ content:
         a robust sandwich estimator using the function ‘svyglm’ from the R
         package ‘survey’ [
       - type: Cite
-        target: pmed.1002858.ref032
+        target: pmed-1002858-ref032
         content:
           - '32'
       - >-
@@ -3435,7 +3472,7 @@ content:
         standardised differences between the transfused and not-transfused
         groups [
       - type: Cite
-        target: pmed.1002858.ref033
+        target: pmed-1002858-ref033
         content:
           - '33'
       - '].'
@@ -3463,13 +3500,13 @@ content:
         conducted in The Gambia. 
       - type: Link
         relation: table
-        target: '#pmed.1002858.t001'
+        target: '#pmed-1002858-t001'
         content:
           - Table 1
       - ' gives an overview and summary of the main characteristics of these studies, which span 15 different countries. The inclusion and exclusion criteria of these pooled clinical studies overlapped almost completely and are summarised per individual dataset in '
       - type: Link
         relation: supplementary-material
-        target: '#pmed.1002858.s004'
+        target: '#pmed-1002858-s004'
         content:
           - S1 Table
       - >-
@@ -3489,7 +3526,7 @@ content:
         the bivariate scatter plots along with mixed-effects spline fits (
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g001'
+        target: '#pmed-1002858-g001'
         content:
           - Fig 1
       - >-
@@ -3540,7 +3577,7 @@ content:
         in-hospital mortality, are shown in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g002'
+        target: '#pmed-1002858-g002'
         content:
           - Fig 2
       - >-
@@ -3548,7 +3585,7 @@ content:
         univariate predictors of a fatal outcome with monotonic relationships to
         mortality, as described previously [
       - type: Cite
-        target: pmed.1002858.ref007
+        target: pmed-1002858-ref007
         content:
           - '7'
       - >-
@@ -3560,7 +3597,7 @@ content:
         increased risk of death (
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g002'
+        target: '#pmed-1002858-g002'
         content:
           - Fig 2
       - >-
@@ -3634,19 +3671,19 @@ content:
         genetic variant for lower haemoglobin concentrations in acute infections
         [
       - type: Cite
-        target: pmed.1002858.ref034
+        target: pmed-1002858-ref034
         content:
           - '34'
       - –
       - type: Cite
-        target: pmed.1002858.ref036
+        target: pmed-1002858-ref036
         content:
           - '36'
       - >-
         ]) is also not possible, as G6PD deficiency may influence the outcome
         (survival) via other pathways [
       - type: Cite
-        target: pmed.1002858.ref037
+        target: pmed-1002858-ref037
         content:
           - '37'
       - >-
@@ -3654,14 +3691,14 @@ content:
         causal diagram (DAG) shown in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - >-
         . This necessitates specification of all bivariate causal effects
         between variables of interest via expert knowledge [
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - >-
@@ -3672,7 +3709,7 @@ content:
       - Our proposed causal diagram (
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - >-
@@ -3680,7 +3717,7 @@ content:
         the microvasculature is the key pathological process leading to death
         from severe falciparum malaria [
       - type: Cite
-        target: pmed.1002858.ref019
+        target: pmed-1002858-ref019
         content:
           - '19'
       - >-
@@ -3695,12 +3732,12 @@ content:
         parasitaemia, and both are probably underreported in sites with limited
         blood-culture facilities [
       - type: Cite
-        target: pmed.1002858.ref038
+        target: pmed-1002858-ref038
         content:
           - '38'
       - ','
       - type: Cite
-        target: pmed.1002858.ref039
+        target: pmed-1002858-ref039
         content:
           - '39'
       - >-
@@ -3708,7 +3745,7 @@ content:
         described to be common, but many of these cases had low-parasite-biomass
         infections [
       - type: Cite
-        target: pmed.1002858.ref008
+        target: pmed-1002858-ref008
         content:
           - '8'
       - >-
@@ -3718,7 +3755,7 @@ content:
         variables of interest (
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ).
@@ -3748,7 +3785,7 @@ content:
             predefined WHO severe-malaria criteria (see 
           - type: Link
             relation: supplementary-material
-            target: '#pmed.1002858.s004'
+            target: '#pmed-1002858-s004'
             content:
               - S1 Table
           - >-
@@ -3797,7 +3834,7 @@ content:
         shown in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g004'
+        target: '#pmed-1002858-g004'
         content:
           - Fig 4
       - >-
@@ -3809,7 +3846,7 @@ content:
         entirely by the downstream effects of sequestration, as shown in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - >-
@@ -3819,7 +3856,7 @@ content:
         outcome of 0.64 (0.56–0.74). For simplicity, we have not included in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - ' the relevant arrows for the estimation of the causal effect of antimalarial treatment, but this estimate is likely to be valid, as either the treatment assignment of an artemisinin derivative versus quinine was randomised (AQUAMAT, AQ, SEAQUAMAT), or it was study dependent and the regression model adjusts for study. Therefore, under an additional assumption of no unknown confounders for treatment assignment in the observational studies, and no systematic bias in patients included in the AAV and QC study (these patients only received artemisinin derivatives and only non-artemisinin drugs, respectively), this adjusted odds ratio can also be interpreted as causal.'
@@ -3855,7 +3892,7 @@ content:
         from Asia, respectively (
       - type: Link
         relation: supplementary-material
-        target: '#pmed.1002858.s001'
+        target: '#pmed-1002858-s001'
         content:
           - S1 Fig
       - >-
@@ -3902,7 +3939,7 @@ content:
         adjustment for transfusion status results in selection (‘collider’) bias
         [
       - type: Cite
-        target: pmed.1002858.ref040
+        target: pmed-1002858-ref040
         content:
           - '40'
       - >-
@@ -3910,7 +3947,7 @@ content:
         transfusion, as shown in panel A of 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g005'
+        target: '#pmed-1002858-g005'
         content:
           - Fig 5
       - >-
@@ -3924,7 +3961,7 @@ content:
         conditional on study site and baseline covariates. The value of 4 hours
         is based on previous detailed reports of time to transfusion [
       - type: Cite
-        target: pmed.1002858.ref041
+        target: pmed-1002858-ref041
         content:
           - '41'
       - '].'
@@ -3954,7 +3991,7 @@ content:
             representation of the complex web of interactions shown in 
           - type: Link
             relation: fig
-            target: '#pmed.1002858.g003'
+            target: '#pmed-1002858-g003'
             content:
               - Fig 3
           - >-
@@ -3969,7 +4006,7 @@ content:
             complex effects both protecting against death and potentially
             causing prolonged illness and more red cell loss [
           - type: Cite
-            target: pmed.1002858.ref001
+            target: pmed-1002858-ref001
             content:
               - '1'
           - >-
@@ -3994,7 +4031,7 @@ content:
       - ' = 6,307, with no missing values). An analysis stratified by time to death limited to these three studies did not show a statistically significant protective effect for transfusion, with an adjusted odds ratio of 0.90 (0.72–1.63). This can be compared with the ‘naive’ analysis not accounting for the competing risk of death, which gives a substantially lower adjusted odds ratio of 0.61 (0.49–0.78). The estimate of the direct effect of haematocrit was approximately the same as for the non-mediated analysis but was not statistically significant, with an adjusted odds ratio of 0.91 (0.79–1.04); see '
       - type: Link
         relation: supplementary-material
-        target: '#pmed.1002858.s002'
+        target: '#pmed-1002858-s002'
         content:
           - S2 Fig
       - .
@@ -4006,7 +4043,7 @@ content:
         the data from the AQUAMAT study. The causal effect of transfusion was
         estimated using IPW with propensity scores (for a recent review, see [
       - type: Cite
-        target: pmed.1002858.ref033
+        target: pmed-1002858-ref033
         content:
           - '33'
       - >-
@@ -4018,7 +4055,7 @@ content:
       - ' = 2,214), there was no evidence for a beneficial effect of transfusion, with an odds ratio for death in the transfused group of 0.99 (95% CI 0.97–1.02). '
       - type: Link
         relation: supplementary-material
-        target: '#pmed.1002858.s003'
+        target: '#pmed-1002858-s003'
         content:
           - S3 Fig
       - ' shows the standardised differences between the transfused and not-transfused groups before and after IPW for all the main recorded clinical variables.'
@@ -4029,12 +4066,12 @@ content:
         anaemia and death may be incorrect. A simplified DAG in panel B of 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g005'
+        target: '#pmed-1002858-g005'
         content:
           - Fig 5
       - ' shows two possible confounding effects. First, anaemia at presentation may be a proxy marker for a longer time course of illness ['
       - type: Cite
-        target: pmed.1002858.ref042
+        target: pmed-1002858-ref042
         content:
           - '42'
       - >-
@@ -4045,14 +4082,14 @@ content:
         haemoglobinopathies, which both cause anaemia directly and protect
         against death in patients with severe malaria [
       - type: Cite
-        target: pmed.1002858.ref037
+        target: pmed-1002858-ref037
         content:
           - '37'
       - >-
         ]). The e-value of the observed adjusted odds ratio of anaemia on
         mortality is 1.53 (lower bound: 1.25) [
       - type: Cite
-        target: pmed.1002858.ref043
+        target: pmed-1002858-ref043
         content:
           - '43'
       - >-
@@ -4083,7 +4120,7 @@ content:
         transparency and facilitates investigation. Using a structural causal
         models framework [
       - type: Cite
-        target: pmed.1002858.ref013
+        target: pmed-1002858-ref013
         content:
           - '13'
       - >-
@@ -4107,7 +4144,7 @@ content:
         increase in cardiac output and a moderate decrease in peripheral
         vascular resistance so that severe hypotension is rare [
       - type: Cite
-        target: pmed.1002858.ref044
+        target: pmed-1002858-ref044
         content:
           - '44'
       - >-
@@ -4117,24 +4154,24 @@ content:
         clumping of unparasitised and parasitised erythrocytes (rosetting and
         autoagglutination, respectively) [
       - type: Cite
-        target: pmed.1002858.ref045
+        target: pmed-1002858-ref045
         content:
           - '45'
       - ','
       - type: Cite
-        target: pmed.1002858.ref046
+        target: pmed-1002858-ref046
         content:
           - '46'
       - >-
         ]. Furthermore, there is evidence that compensatory endothelial
         vasodilation is disturbed, related to nitric oxide depletion [
       - type: Cite
-        target: pmed.1002858.ref047
+        target: pmed-1002858-ref047
         content:
           - '47'
       - ']. Anaemia reduces cytoadherence ['
       - type: Cite
-        target: pmed.1002858.ref048
+        target: pmed-1002858-ref048
         content:
           - '48'
       - >-
@@ -4143,7 +4180,7 @@ content:
         reduces blood viscosity, in particular under the low-shear conditions at
         the venular side of the circulation, where sequestration begins [
       - type: Cite
-        target: pmed.1002858.ref049
+        target: pmed-1002858-ref049
         content:
           - '49'
       - >-
@@ -4154,13 +4191,13 @@ content:
         the observed unadjusted parabolic relationship between mortality and
         haematocrit (reference [
       - type: Cite
-        target: pmed.1002858.ref042
+        target: pmed-1002858-ref042
         content:
           - '42'
       - '] and '
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g002'
+        target: '#pmed-1002858-g002'
         content:
           - Fig 2
       - >-
@@ -4199,7 +4236,7 @@ content:
         hypothesis of a protective effect of anaemia in severe malaria could be
         tested on recent large pooled datasets that have collected these data [
       - type: Cite
-        target: pmed.1002858.ref050
+        target: pmed-1002858-ref050
         content:
           - '50'
       - >-
@@ -4211,7 +4248,7 @@ content:
         ongoing trial randomising both transfusion and transfusion doses will
         provide high-quality data addressing this exact question [
       - type: Cite
-        target: pmed.1002858.ref051
+        target: pmed-1002858-ref051
         content:
           - '51'
       - '].'
@@ -4236,7 +4273,7 @@ content:
         (particularly in the gut). This is mainly an issue in the
         higher-transmission settings in sub-Saharan Africa [
       - type: Cite
-        target: pmed.1002858.ref052
+        target: pmed-1002858-ref052
         content:
           - '52'
       - >-
@@ -4244,7 +4281,7 @@ content:
         in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g003'
+        target: '#pmed-1002858-g003'
         content:
           - Fig 3
       - >-
@@ -4278,7 +4315,7 @@ content:
         hopefully avoid any detrimental effects of overtransfusion in patients
         with severe falciparum malaria [
       - type: Cite
-        target: pmed.1002858.ref051
+        target: pmed-1002858-ref051
         content:
           - '51'
       - >-
@@ -4326,7 +4363,7 @@ content:
         (95% CI) using the whole pooled database, as shown in 
       - type: Link
         relation: fig
-        target: '#pmed.1002858.g004'
+        target: '#pmed-1002858-g004'
         content:
           - Fig 4
       - .
