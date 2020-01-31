@@ -133,15 +133,49 @@ editors:
       - Heyer
     givenNames:
       - Wolf-Dietrich
-funders:
-  - type: Organization
-    name: Cancer Research UK
-  - type: Organization
-    name: Royal Society
-  - type: Organization
-    name: Pew Charitable Trusts
-  - type: Organization
-    name: Wellcome
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Cancer Research UK
+    identifiers:
+      - type: PropertyValue
+        value: C14303/A17197
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Cancer Research UK
+    identifiers:
+      - type: PropertyValue
+        value: C9681/A18618
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Cancer Research UK
+    identifiers:
+      - type: PropertyValue
+        value: A21143
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Royal Society
+    identifiers:
+      - type: PropertyValue
+        value: RP130039
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Pew Charitable Trusts
+    identifiers:
+      - type: PropertyValue
+        value: 00028354
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Wellcome
+    identifiers:
+      - type: PropertyValue
+        value: 209441/z/17/z
 identifiers:
   - type: PropertyValue
     name: publisher-id

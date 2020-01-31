@@ -159,11 +159,21 @@ description:
         draft as to how to represent these materials in the JATS and Crossref
         data models to facilitate the coordination and discoverability of peer
         review materials, and seek feedback on these initial recommendations.
-funders:
-  - type: Organization
-    name: U.S. National Library of Medicine
-  - type: Organization
-    name: Wellcome Trust
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: U.S. National Library of Medicine
+    identifiers: []
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: Wellcome Trust
+    identifiers:
+      - type: PropertyValue
+        value: '108758'
+      - type: PropertyValue
+        value: 098321
 identifiers:
   - type: PropertyValue
     name: doi

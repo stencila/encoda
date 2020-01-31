@@ -160,9 +160,14 @@ description:
       - >-
         Precipitation of coldest quarter (BIO19) had the maximum contribution
         for all the three species under investigation.
-funders:
-  - type: Organization
-    name: United Arab Emirates University
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: United Arab Emirates University
+    identifiers:
+      - type: PropertyValue
+        value: 31S347
 identifiers:
   - type: PropertyValue
     name: doi

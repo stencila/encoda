@@ -313,7 +313,7 @@ function decodeFront(
   | 'licenses'
   | 'keywords'
   | 'identifiers'
-  | 'funders'
+  | 'fundedBy'
   | 'meta'
 > {
   return front === null
@@ -329,7 +329,7 @@ function decodeFront(
         licenses: decodeLicenses(front, state),
         keywords: decodeKeywords(front),
         identifiers: decodeIdentifiers(front),
-        funders: decodeFunders(front),
+        fundedBy: decodeFunding(front),
         meta: decodeMetaFront(front)
       }
 }
@@ -531,28 +531,36 @@ function decodeIdentifiers(
 }
 
 /**
- * Decode JATS `<award-group>` elements into a Stencila `Article.funders` property.
- *
- * In the long term, it is proposed to use the pending schema.org type `MonetaryGrant`
- * to represent elements such as `<award-id>`. Currently, this ignores such elements
- * and directly links the article to funding organizations through the `funders` property.
+ * Decode JATS `<funding-group>` element into a Stencila `Article.fundedBy` property.
  */
-function decodeFunders(front: xml.Element): stencila.Article['funders'] {
-  const funders = all(front, 'funding-source')
-  if (funders.length === 0) return undefined
+function decodeFunding(front: xml.Element): stencila.Article['fundedBy'] {
+  const funding = first(front, 'funding-group')
+  const awards = all(funding, 'award-group')
+  if (awards.length === 0) return undefined
 
-  return funders.reduce((prev: stencila.Organization[], curr) => {
-    let name = textOrUndefined(first(curr, 'institution'))
-    if (name === undefined) name = textOrUndefined(curr)
-    if (name === undefined) return prev
-    // Avoid duplicates
-    for (const org of prev) {
-      if (org.name === name) return prev
-    }
-    return name !== undefined
-      ? [...prev, stencila.organization({ name })]
-      : prev
-  }, [])
+  return awards.map(award => {
+    const identifiers = all(award, 'award-id').map(id => {
+      const value = textOrUndefined(id)
+      if (value !== undefined) return stencila.propertyValue({ value })
+    }).filter(isDefined)
+
+    const funders = all(award, 'funding-source').reduce((orgs: stencila.Organization[], org) => {
+      // Prefer <institution>, but fallback to just text content
+      let name = textOrUndefined(first(org, 'institution'))
+      if (name === undefined) name = textOrUndefined(org)
+      if (name === undefined) return orgs
+      // Avoid duplicates
+      for (const org of orgs) {
+        if (org.name === name) return orgs
+      }
+      return [...orgs, stencila.organization({ name })]
+    }, [])
+
+    return stencila.monetaryGrant({
+      identifiers,
+      funders,
+    })
+  })
 }
 
 /**

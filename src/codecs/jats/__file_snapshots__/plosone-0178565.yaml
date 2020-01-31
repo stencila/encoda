@@ -88,9 +88,14 @@ editors:
     givenNames:
       - Igor
       - B.
-funders:
-  - type: Organization
-    name: 'Department of Biotechnology, Ministry of Science and Technology'
+fundedBy:
+  - type: MonetaryGrant
+    funders:
+      - type: Organization
+        name: 'Department of Biotechnology, Ministry of Science and Technology'
+    identifiers:
+      - type: PropertyValue
+        value: BT/EB/PAN IIT/2012
 identifiers:
   - type: PropertyValue
     name: doi
