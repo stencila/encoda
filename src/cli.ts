@@ -44,6 +44,7 @@ import * as puppeteer from './util/puppeteer'
 import { coerce } from './util/coerce'
 import { validate } from './util/validate'
 import { getTheme, themes } from '@stencila/thema'
+import { isTheme } from './util/html'
 
 const { _, ...options } = minimist(process.argv.slice(2), {
   boolean: ['standalone', 'bundle', 'debug'],
@@ -66,7 +67,9 @@ configure(options.debug)
   try {
     if (command === 'convert') {
       const { to, from, standalone, bundle, zip, ...rest } = options
-      const theme = getTheme(options.theme)
+      const theme = isTheme(options.theme)
+        ? getTheme(options.theme)
+        : options.theme
 
       await convert(args[0], args.slice(1), {
         to,
