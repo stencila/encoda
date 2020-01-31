@@ -200,7 +200,7 @@ export class HTMLCodec extends Codec implements Codec {
     if (isStandalone) {
       const nodeToEncode = isBundle ? await bundle(node) : node
       const { title = 'Untitled' } = getArticleMetaData(nodeToEncode)
-      dom = generateHtmlElement(stringifyContent(title), [dom], options)
+      dom = await generateHtmlElement(stringifyContent(title), [dom], options)
     }
 
     const beautifulHtml = beautify(dom.outerHTML)
