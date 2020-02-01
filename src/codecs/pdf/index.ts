@@ -251,7 +251,7 @@ async function encodeXmp(
     dateCurrent
   } = meta
 
-  // Dump the entire node as an XL document to put into XMP
+  // Dump the entire node as an XML document to put into XMP
   const nodeDoc = await encodeXmlDoc(node)
   const nodeXML = xml.dump(nodeDoc)
 
