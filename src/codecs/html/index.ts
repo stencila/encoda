@@ -6,6 +6,7 @@ import { getLogger } from '@stencila/logga'
 // eslint-disable-next-line import/no-duplicates
 import * as stencila from '@stencila/schema'
 import {
+  isA,
   isArticle,
   isCreativeWork,
   isInlineContent,
@@ -32,6 +33,7 @@ import bundle from '../../util/bundle'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import { getThemeAssets } from '../../util/html'
 import { toFiles } from '../../util/toFiles'
+import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import {
@@ -47,6 +49,14 @@ const log = getLogger('encoda:html')
 
 // Ensures unique `id` attributes (e.g. for headings)
 const slugger = new GithubSlugger()
+
+/**
+ * Generate placeholder using given dimensions and text.
+ */
+const placeholderImg = (text: string, width: number, height = width): string =>
+  `https://via.placeholder.com/${width}x${height}/dbdbdb/4a4a4a.png?text=${encodeURI(
+    truncate(text, 109)
+  )}`
 
 /**
  * Given a possibly undefined value, or empty array, return the HTML provided as the second argument
@@ -668,8 +678,10 @@ function encodePublisherProperty(
   let logo = stencila.isA('Organization', publisher)
     ? publisher.logo
     : undefined
-  // TODO: Should be a valid URL, not #
-  if (logo === undefined) logo = stencila.imageObject({ contentUrl: '#' })
+  if (logo === undefined)
+    logo = stencila.imageObject({
+      contentUrl: placeholderImg(publisher.name ?? '', 600, 60)
+    })
   else if (typeof logo === 'string')
     logo = stencila.imageObject({ contentUrl: logo })
 
@@ -705,8 +717,7 @@ function encodeTitleProperty(
 ): HTMLElement | undefined {
   if (title === undefined) return undefined
 
-  let headline = stringifyContent(title)
-  if (headline.length > 110) headline = headline.slice(0, 106) + '...'
+  const headline = truncate(stringifyContent(title), 109)
 
   return h(
     tag,
@@ -725,9 +736,10 @@ function encodeTitleProperty(
  * and uses that. If no images in the article then uses a placeholder.
  */
 function encodeImageProperty(article: stencila.Article): HTMLElement {
-  // TODO: This should walk the article and find the first `ImageObject`
-  // and use it's contentUrl.
-  const contentUrl = '#'
+  const img = article.content?.find(node => isA('ImageObject', node))
+  const headline = typeof article.title === 'string' ? article.title : ''
+  const fallback = placeholderImg(headline, 1200, 714)
+  const contentUrl = isA('ImageObject', img) ? img.contentUrl : fallback
   return h('meta', { itemprop: 'image', content: contentUrl })
 }
 
