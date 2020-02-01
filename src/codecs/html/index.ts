@@ -822,15 +822,31 @@ function encodeDate(
   property?: string
 ): HTMLElement {
   const dateString = stencila.isA('Date', date) ? date.value : date
-  return h(
+  const timeEl = h(
     'time',
     { attrs: encodeMicrodataAttrs(stencila.date({ value: dateString })) },
     {
-      ...(property !== undefined ? { itemprop: property } : {}),
       datetime: dateString
     },
     dateString
   )
+
+  // Google's Structured Data testing tool does not identify `Date` values if the element
+  // has `itemscope` and `itemtype` attributes defined, so we nest it in a `span` and add a `meta` element.
+  if (isDefined(property)) {
+    return h(
+      'span',
+      h('meta', {
+        attrs: {
+          itemprop: property,
+          content: dateString
+        }
+      }),
+      timeEl
+    )
+  }
+
+  return timeEl
 }
 
 function encodeDescriptionProperty(
@@ -923,12 +939,21 @@ function encodeCreativeWork(
   work: stencila.CreativeWork,
   { attrs, as }: CreativeWorkOptions = defaultCreativeWorkOptions
 ): HTMLElement {
-  const { id, title, url, authors = [], datePublished, content = [] } = work
+  const {
+    title,
+    url,
+    authors = [],
+    publisher,
+    datePublished,
+    content = []
+  } = work
   return h(
     as ?? creativeWorkTagMap[work.type] ?? 'div',
     // @ts-ignore
     encodeAttrs(work, attrs),
+    encodePublisherProperty(publisher),
     encodeTitleProperty(title, 'span'),
+    isA('Article', work) ? encodeImageProperty(work) : [],
     encodeAuthorsProperty(authors),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
     encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
