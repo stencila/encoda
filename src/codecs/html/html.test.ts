@@ -1,37 +1,60 @@
 import stencila, {
   article,
+  audioObject,
   cite,
   citeGroup,
   code,
   codeBlock,
   codeChunk,
   codeExpression,
+  codeFragment,
   collection,
   creativeWork,
   datatable,
   datatableColumn,
+  date,
+  del,
+  emphasis,
+  Entity,
+  entity,
   figure,
   heading,
   imageObject,
+  include,
   link,
+  list,
+  listItem,
+  mark,
+  mediaObject,
   organization,
-  person,
+  paragraph,
   periodical,
+  person,
   publicationIssue,
+  publicationVolume,
+  quote,
+  quoteBlock,
   softwareSourceCode,
-  audioObject
+  strong,
+  subscript,
+  superscript,
+  table,
+  tableCell,
+  tableRow,
+  thematicBreak,
+  videoObject
 } from '@stencila/schema'
 import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
+import kitchenSink from '../../__fixtures__/article/kitchen-sink'
+import { readFixture, snapshot } from '../../__tests__/helpers'
+import { JsonCodec } from '../json'
 import { defaultEncodeOptions } from '../types'
 import { decodeHref, HTMLCodec } from './'
 import { encodeMicrodataItemtype, stencilaItemProp, Types } from './microdata'
-import { readFixture, snapshot } from '../../__tests__/helpers'
-import { JsonCodec } from '../json'
-import kitchenSink from '../../__fixtures__/article/kitchen-sink'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -77,7 +100,7 @@ describe('String escaping', () => {
   test('Escape HTML entities', async () => {
     expect(
       await e({ type: 'Paragraph', content: ['<em>', '<strong>'] })
-    ).toEqual('<p>&lt;em&gt;&lt;strong&gt;</p>')
+    ).toMatch('lt;em&gt;&lt;strong&gt;')
   })
 
   test('Convert HTML entities back', async () => {
@@ -407,9 +430,9 @@ describe('Encode & Decode figure nodes', () => {
   })
 })
 
-const nodes = [
+const nodes: [string, Entity][] = [
   ['Article', article({ title: 'Test article' })],
-  // ['Brand', brand('My Brand')],
+  ['AudioObject', audioObject({ contentUrl: '' })],
   ['Cite', cite({ target: '#id1' })],
   [
     'CiteGroup',
@@ -418,48 +441,82 @@ const nodes = [
   ['Code', code({ text: 'a + b' })],
   ['CodeBlock', codeBlock({ text: 'a + b' })],
   ['CodeChunk', codeChunk({ text: 'a + b' })],
+  // ['CodeError', codeError()],
   ['CodeExpression', codeExpression({ text: 'a + b' })],
+  ['CodeFragment', codeFragment({ text: 'a + b' })],
   ['Collection', collection({ parts: [article({ title: 'Test article' })] })],
+  // ['ContactPoint', contactPoint()],
   ['CreativeWork', creativeWork()],
   [
     'Datatable',
     datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
   ],
-  ['Organization', organization({ name: 'Mega Corp' })],
-  ['Periodical', periodical()],
-  ['PublicationIssue', publicationIssue()],
-  ['SoftwareSourceCode', softwareSourceCode()],
-  ['AudioObject', audioObject({ contentUrl: '' })],
+  // [
+  //   'DatatableColumn',
+  //   datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
+  // ],
+  ['Date', date({ value: '2021/02/13' })],
+  ['Delete', del({ content: [] })],
+  ['Emphasis', emphasis({ content: [] })],
+  ['Entity', entity()],
+  ['Figure', figure()],
+  // ['Function', function_()],
   ['Heading', heading({ content: ['Title'], depth: 1 })],
   ['ImageObject', imageObject({ contentUrl: '' })],
-  ['Link', link({ content: ['link'], target: 'url' })]
-  // 'Delete',
-  // 'Emphasis',
-  // 'Strong',
-  // 'Subscript',
-  // 'List',
-  // 'ListItem',
-  // 'Paragraph',
-  // 'Quote',
-  // 'QuoteBlock',
-  // 'Table',
-  // 'TableRow',
-  // 'TableCell',
-  // 'ThematicBreak',
-  // 'VideoObject'
+  ['Include', include({ source: '#' })],
+  ['Link', link({ content: ['link'], target: 'url' })],
+  ['List', list({ items: [] })],
+  ['ListItem', listItem({ content: [] })],
+  ['Mark', mark({ content: [] })],
+  // ['Math', math({ text: '1 + 2' })],
+  // ['MathBlock', mathBlock({ text: '1 + 2' })],
+  // ['MathFragment', mathFragment({ text: '1 + 2' })],
+  ['MediaObject', mediaObject({ contentUrl: '' })],
+  ['Organization', organization({ name: 'Mega Corp' })],
+  ['Paragraph', paragraph({ content: [] })],
+  // ['Parameter', parameter({ name: '' })],
+  ['Periodical', periodical()],
+  ['Person', person()],
+  // ['Product', product()],
+  ['PublicationIssue', publicationIssue()],
+  ['PublicationVolume', publicationVolume()],
+  ['Quote', quote({ content: [] })],
+  ['QuoteBlock', quoteBlock({ content: [] })],
+  // ['SoftwareApplication', softwareApplication()],
+  ['SoftwareSourceCode', softwareSourceCode()],
+  ['Strong', strong({ content: [] })],
+  ['Subscript', subscript({ content: [] })],
+  ['Superscript', superscript({ content: [] })],
+  ['Table', table({ rows: [] })],
+  // NOTE: TableCells and `TableRows` must be tested within a `Table` for it to be valid HTML.
+  // Otherwise the beautification step will strip the free-floating cells and rows.
+  [
+    'TableCell',
+    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] })
+  ],
+  [
+    'TableRow',
+    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] })
+  ],
+  ['ThematicBreak', thematicBreak()],
+  // ['Thing', thing()],
+  // ['Variable', variable({ name: '' })],
+  ['VideoObject', videoObject({ contentUrl: '' })]
 ]
 
-describe('Encode with Microdata', () => {
+describe.only('Encode with Microdata', () => {
   test.each(nodes)(
     '%s has itemscope and itemtype',
     // @ts-ignore
     async (schemaType: keyof Types, node) => {
-      const actual = doc(await e(node)).querySelector('body > *')
-      expect(actual).toHaveAttribute('itemscope')
-      expect(actual).toHaveAttribute(
-        'itemtype',
-        encodeMicrodataItemtype(schemaType)
+      const schemaUri = encodeMicrodataItemtype(schemaType)
+      const actual = doc(await e(node)).querySelector(
+        `[itemtype='${schemaUri}']`
       )
+
+      expect(actual).toBeInTheDocument()
+      expect(actual).toHaveAttribute('itemscope')
+      expect(actual).toHaveAttribute('itemtype')
     }
   )
 })

@@ -8,37 +8,36 @@ import * as stencila from '@stencila/schema'
 import {
   isArticle,
   isCreativeWork,
+  isInlineContent,
   markTypes,
   nodeType,
-  isInlineContent
+  thematicBreak
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
-import { themePath, themes } from '@stencila/thema'
+import { themes } from '@stencila/thema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import { flatten, isNonEmpty } from 'fp-ts/lib/Array'
-import fs from 'fs-extra'
 // @ts-ignore
 import GithubSlugger from 'github-slugger'
 import h from 'hyperscript'
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
-import path from 'path'
 import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
-import { isDefined } from '../../util'
 import { logWarnLossIfAny } from '../../log'
+import { isDefined } from '../../util'
 import bundle from '../../util/bundle'
 import { stringifyContent } from '../../util/content/stringifyContent'
+import { getThemeAssets } from '../../util/html'
 import { toFiles } from '../../util/toFiles'
 import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
-import { getThemeAssets } from '../../util/html'
 import {
-  stencilaItemProp,
+  decodeMicrodataItemtype,
   encodeMicrodataAttrs,
-  decodeMicrodataItemtype
+  stencilaItemProp
 } from './microdata'
 
 const window = new jsdom.JSDOM().window
@@ -297,6 +296,15 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     case 'Table':
       return decodeTable(node as HTMLTableElement)
 
+    case 'th':
+    case 'tr':
+    case 'TableRow':
+      return decodeTableRow(node as HTMLTableRowElement)
+
+    case 'td':
+    case 'TableCell':
+      return decodeTableCell(node as HTMLTableCellElement)
+
     case 'Datatable':
       return decodeDatatable(node as HTMLDivElement)
 
@@ -306,6 +314,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
 
     case 'em':
     case 'Emphasis':
+    case 'Mark':
       return decodeMark(node as HTMLElement, 'Emphasis')
     case 'strong':
     case 'Strong':
@@ -431,8 +440,11 @@ const encodeNode = (node: stencila.Node): Node => {
     case 'CreativeWork':
     case 'Periodical':
     case 'PublicationIssue':
+    case 'PublicationVolume':
     case 'SoftwareSourceCode':
     case 'AudioObject':
+    case 'VideoObject':
+    case 'MediaObject':
       return encodeCreativeWork(node as stencila.CreativeWork)
     case 'Collection':
       return encodeCollection(node as stencila.Collection)
@@ -444,13 +456,20 @@ const encodeNode = (node: stencila.Node): Node => {
       return encodeListItem(node as stencila.ListItem)
     case 'Table':
       return encodeTable(node as stencila.Table)
+    case 'TableRow':
+      return encodeTableRow(node as stencila.TableRow)
+    case 'TableCell':
+      return encodeTableCell(node as stencila.TableCell)
     case 'Datatable':
       return encodeDatatable(node as stencila.Datatable)
+    case 'Date':
+      return encodeDate(node as stencila.Date)
     case 'ThematicBreak':
       return encodeThematicBreak()
     case 'Organization':
       return encodeOrganization(node as stencila.Organization)
 
+    case 'Mark':
     case 'Emphasis':
       return encodeMark(node as stencila.Emphasis, 'em')
     case 'Strong':
@@ -470,7 +489,9 @@ const encodeNode = (node: stencila.Node): Node => {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
     case 'Math':
-      return encodeMath(node as object)
+    case 'MathBlock':
+    case 'MathFragment':
+      return encodeMath(node as stencila.Math)
 
     case 'null':
       return encodeNull()
@@ -788,13 +809,13 @@ function encodeDate(
   date: string | stencila.Date,
   property?: string
 ): HTMLElement {
-  const dateStamp = stencila.isA('Date', date) ? date.value : date
   const dateString = stencila.isA('Date', date) ? date.value : date
   return h(
     'time',
+    { attrs: encodeMicrodataAttrs(stencila.date({ value: dateString })) },
     {
       ...(property !== undefined ? { itemprop: property } : {}),
-      datetime: dateStamp
+      datetime: dateString
     },
     dateString
   )
@@ -1098,7 +1119,11 @@ function decodeParagraph(para: HTMLParagraphElement): stencila.Paragraph {
  * Encode a `stencila.Paragraph` to a `<p>` element.
  */
 function encodeParagraph(para: stencila.Paragraph): HTMLParagraphElement {
-  return h('p', para.content.map(encodeNode))
+  return h(
+    'p',
+    { attrs: encodeMicrodataAttrs(para) },
+    para.content.map(encodeNode)
+  )
 }
 
 /**
@@ -1115,7 +1140,11 @@ function decodeBlockquote(elem: HTMLQuoteElement): stencila.QuoteBlock {
  * Encode a `stencila.QuoteBlock` to a `<blockquote>` element.
  */
 function encodeQuoteBlock(block: stencila.QuoteBlock): HTMLQuoteElement {
-  return h('blockquote', { cite: block.cite }, block.content.map(encodeNode))
+  return h(
+    'blockquote',
+    { attrs: encodeMicrodataAttrs(block), cite: block.cite },
+    block.content.map(encodeNode)
+  )
 }
 
 // Regex to test if a string is a URL. Thanks to https://stackoverflow.com/a/3809435
@@ -1402,7 +1431,11 @@ function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
  * Encode a `stencila.List` to a `<ul>` or `<ol>` element.
  */
 function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
-  return h(list.order === 'unordered' ? 'ul' : 'ol', list.items.map(encodeNode))
+  return h(
+    list.order === 'unordered' ? 'ul' : 'ol',
+    { attrs: encodeMicrodataAttrs(list) },
+    list.items.map(encodeNode)
+  )
 }
 
 /**
@@ -1416,7 +1449,11 @@ function decodeListItem(li: HTMLLIElement): stencila.ListItem {
  * Encode a `stencila.ListItem` to a `<li>` element.
  */
 function encodeListItem(listItem: stencila.ListItem): HTMLLIElement {
-  return h('li', listItem.content.map(encodeNode))
+  return h(
+    'li',
+    { attrs: encodeMicrodataAttrs(listItem) },
+    listItem.content.map(encodeNode)
+  )
 }
 
 /**
@@ -1425,19 +1462,7 @@ function encodeListItem(listItem: stencila.ListItem): HTMLLIElement {
 function decodeTable(table: HTMLTableElement): stencila.Table {
   return stencila.table({
     id: table.getAttribute('id') ?? undefined,
-    rows: Array.from(table.querySelectorAll('tr')).map(
-      (row: HTMLTableRowElement): stencila.TableRow => {
-        return stencila.tableRow({
-          cells: Array.from(row.querySelectorAll('td')).map(
-            (cell: HTMLTableDataCellElement): stencila.TableCell => {
-              return stencila.tableCell({
-                content: decodeInlineChildNodes(cell)
-              })
-            }
-          )
-        })
-      }
-    )
+    rows: Array.from(table.querySelectorAll('tr')).map(decodeTableRow)
   })
 }
 
@@ -1447,22 +1472,48 @@ function decodeTable(table: HTMLTableElement): stencila.Table {
 function encodeTable(table: stencila.Table): HTMLTableElement {
   return h(
     'table',
-    { id: table.id },
-    h(
-      'tbody',
-      table.rows.map(
-        (row: stencila.TableRow): HTMLTableRowElement => {
-          return h(
-            'tr',
-            row.cells.map(
-              (cell: stencila.TableCell): HTMLTableDataCellElement => {
-                return h('td', cell.content.map(encodeNode))
-              }
-            )
-          )
-        }
-      )
-    )
+    { id: table.id, attrs: encodeMicrodataAttrs(table) },
+    h('tbody', table.rows.map(encodeTableRow))
+  )
+}
+
+/**
+ * Decode a `<tr>` element to a `stencila.TableRow`.
+ */
+function decodeTableRow(row: HTMLTableRowElement): stencila.TableRow {
+  return stencila.tableRow({
+    cells: Array.from(row.querySelectorAll('td')).map(decodeTableCell)
+  })
+}
+
+/**
+ * Encode a `stencila.TableRow` to a `<tr>` element.
+ */
+function encodeTableRow(row: stencila.TableRow): HTMLTableRowElement {
+  return h(
+    'tr',
+    { attrs: encodeMicrodataAttrs(row) },
+    row.cells.map(encodeTableCell)
+  )
+}
+
+/**
+ * Decode a `<td>` element to a `stencila.TableCell`.
+ */
+function decodeTableCell(cell: HTMLTableDataCellElement): stencila.TableCell {
+  return stencila.tableCell({
+    content: decodeInlineChildNodes(cell)
+  })
+}
+
+/**
+ * Encode a `stencila.TableCell` to a `<td>` element.
+ */
+function encodeTableCell(cell: stencila.TableCell): HTMLTableDataCellElement {
+  return h(
+    'td',
+    { attrs: encodeMicrodataAttrs(cell) },
+    cell.content.map(encodeNode)
   )
 }
 
@@ -1526,9 +1577,9 @@ function encodeDatatable(datatable: stencila.Datatable): HTMLElement {
           h('th', col.name)
         )))
       ),
-      h('tbody', rows.map((_, row) => (
+      h('tbody',rows.map((_, row) => (
         h('tr', cols.map(col => (
-          h('td', col.values[row])
+          h('td', {attrs: encodeMicrodataAttrs(col)}, col.values[row])
         )))
       )))
     )
@@ -1546,7 +1597,7 @@ function decodeHR(): stencila.ThematicBreak {
  * Encode a `stencila.ThematicBreak` to a `<hr>` element.
  */
 function encodeThematicBreak(): HTMLHRElement {
-  return h('hr')
+  return h('hr', { attrs: encodeMicrodataAttrs(thematicBreak()) })
 }
 
 /**
@@ -1563,7 +1614,11 @@ function decodeMark<Type extends keyof typeof markTypes>(
  * Encode a `Mark` node to an inline element e.g. `<em>`.
  */
 function encodeMark(node: stencila.Mark, tag: string): HTMLElement {
-  return h(tag, node.content.map(encodeNode))
+  return h(
+    tag,
+    { attrs: encodeMicrodataAttrs(node) },
+    node.content.map(encodeNode)
+  )
 }
 
 /**
@@ -1603,7 +1658,11 @@ function decodeQuote(elem: HTMLQuoteElement): stencila.Quote {
  * Encode a `stencila.Quote` to a `<q>` element.
  */
 function encodeQuote(quote: stencila.Quote): HTMLQuoteElement {
-  return h('q', { cite: quote.cite }, quote.content)
+  return h(
+    'q',
+    { attrs: encodeMicrodataAttrs(quote), cite: quote.cite },
+    quote.content
+  )
 }
 
 /**
@@ -1677,9 +1736,11 @@ function encodeImageObject(
 
 /**
  * Encode a Stencila `Math` node to a HTML `<math>` element.
+ * TODO: `<math>` is not a valid HTML element, and not rendered by browser.
+ * @see - https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Using_MathML
  */
-function encodeMath(math: any): HTMLElement {
-  return h('math', { innerHTML: math.text })
+function encodeMath(math: stencila.Math): HTMLElement {
+  return h('math', { attrs: encodeMicrodataAttrs(math) }, [math.text])
 }
 
 /**
