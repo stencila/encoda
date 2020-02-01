@@ -855,11 +855,11 @@ function encodeDescriptionProperty(
   return h(
     'section',
     h('h2', 'Abstract'),
-    h(
-      'div',
-      { itemprop: 'description' },
-      encodeNodes(typeof desc === 'string' ? [desc] : desc)
-    )
+    h('meta', {
+      itemprop: 'description',
+      content: stringifyContent(desc)
+    }),
+    encodeNodes(typeof desc === 'string' ? [desc] : desc)
   )
 }
 
@@ -1140,7 +1140,7 @@ function decodeHeading(
  */
 function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
   const content = heading.content.map(encodeNode)
-  const text = content.reduce((prev, curr) => `${prev}${curr.textContent}`, '')
+  const text = stringifyContent(content)
   const id = slugger.slug(text)
   return h(`h${heading.depth}`, encodeAttrs(heading, { id }), content)
 }
