@@ -101,7 +101,7 @@ export class ElifeCodec extends Codec implements Codec {
     // Dump the new JATS with `xlink:href`s to local images
     const jatsNew = xml.dump(doc)
 
-    return jats.decode(vfile.load(jatsNew))
+    return jats.load(jatsNew)
   }
 
   public readonly encode = (): Promise<vfile.VFile> => {
