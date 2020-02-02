@@ -13,7 +13,7 @@ const log = getLogger('encoda:stringify')
  */
 export const stringifyContent = (node: stencila.Node): string => {
   if (node === undefined) return ''
-  if (node === null) return ''
+  if (node === null) return 'null'
   if (Array.isArray(node)) return node.map(stringifyContent).join('')
   if (typeof node === 'object') {
     if ('content' in node) {
