@@ -1,3 +1,22 @@
+# [0.85.0](https://github.com/stencila/encoda/compare/v0.84.0...v0.85.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* **Deps:** Move jsdom to dependencies and add another runtime test for HTMLElement ([d08fdbd](https://github.com/stencila/encoda/commit/d08fdbd815adfef6ad08113e22656e28ebbddcff))
+* **HTTP util:** Use plain fs to fix bug in download ([28ab860](https://github.com/stencila/encoda/commit/28ab86083484a6046db448f127e2d46ab216e3c3))
+* **JATS:** Break apart paragraph properly ([7da0ef9](https://github.com/stencila/encoda/commit/7da0ef9f181c0ff1dbdfefb76d0dadf0da384bb9)), closes [#403](https://github.com/stencila/encoda/issues/403)
+* **JATS:** Ensure affiliations have a unique id ([c739b74](https://github.com/stencila/encoda/commit/c739b74051124c268f21c099b38b48ed20923a8c))
+* **JATS:** Improve handling of math nodes. ([7caba3c](https://github.com/stencila/encoda/commit/7caba3c0e2eda20271da8807bb63f0e98e368f17)), closes [#403](https://github.com/stencila/encoda/issues/403)
+* **JATS:** When encoding use article-meta ([53ceb9f](https://github.com/stencila/encoda/commit/53ceb9f3018fabf9755c84538a469cbf61f05248)), closes [#380](https://github.com/stencila/encoda/issues/380)
+
+
+### Features
+
+* **HTML:** Add encoding and decoding of Math nodes ([8120a78](https://github.com/stencila/encoda/commit/8120a78e222f170ac64042b15839d1cc7b082996))
+* **HTML:** Encoding of Math in HTML using MathJax ([fc52d9d](https://github.com/stencila/encoda/commit/fc52d9dc941261f9331443c9065139ff1ad902d3))
+* **Pandoc:** Add encoding and decoding of Math nodes ([a821a25](https://github.com/stencila/encoda/commit/a821a2574ae43c75103ac9016307233520864c9d))
+
 # [0.84.0](https://github.com/stencila/encoda/compare/v0.83.2...v0.84.0) (2020-02-02)
 
 
