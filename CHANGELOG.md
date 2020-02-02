@@ -1,3 +1,54 @@
+# [0.84.0](https://github.com/stencila/encoda/compare/v0.83.2...v0.84.0) (2020-02-02)
+
+
+### Bug Fixes
+
+* **Deps:** Update to Schema 0.36.0 ([cbefbcd](https://github.com/stencila/encoda/commit/cbefbcd0003b73b316250b3f0cf7db7e03635005))
+* **HTML:** Add ids to reference items so links work ([d9f4e25](https://github.com/stencila/encoda/commit/d9f4e25a08d1c242985668e5c2f093a003b8fc4e))
+* **HTML:** Add missing publishedDate properties to Articles ([04eaf4b](https://github.com/stencila/encoda/commit/04eaf4b12592655a5fb2a253ae826d57cac5ae93))
+* **HTML:** Do not write media files if no filePath. ([9aab5ac](https://github.com/stencila/encoda/commit/9aab5ac6a07fd9212f2c51fa678ec4495f8bc746)), closes [#381](https://github.com/stencila/encoda/issues/381)
+* **HTML:** Fix itemtypes for primitives e.g boolean nodes ([0d40203](https://github.com/stencila/encoda/commit/0d402037ef598bbc6624ca37cb977f120b5ecf39))
+* **HTML:** Fix organization id so that link works ([be54979](https://github.com/stencila/encoda/commit/be5497953857b3c823851a960c75d82a5a8677b6))
+* **HTML:** Fix tests & decoding of elements ([ca0531e](https://github.com/stencila/encoda/commit/ca0531e75a461b8a3fba33efc1d150cb464b4e3c))
+* **HTML:** Make Article description encoding conform to Schema.org ([a408ffb](https://github.com/stencila/encoda/commit/a408ffbf78b6a74d8e3778ac960f9202590f6fb4))
+* **HTML:** Use the content of Cite nodes if available ([cd35e82](https://github.com/stencila/encoda/commit/cd35e826b5bf54c3e371a6dd433f4b11db68db91))
+* **HTML Microdata:** Do not set undefined itemid ([dab0ba3](https://github.com/stencila/encoda/commit/dab0ba3147c9b83cc4c39eaaeec2aa617ba60725))
+* **HTML Microdata:** Fix the encoding of author itemprop ([1ced19b](https://github.com/stencila/encoda/commit/1ced19b9964247f1e978c7122e68cbdd5242bc7c))
+* **HTML Microdata:** Fix the Microdata test by adding article image and publisher properties. ([68ffc4c](https://github.com/stencila/encoda/commit/68ffc4c707284e362711798ca273852b76cb2e32))
+* **HTML Microdata:** Limit itemprop headline to 110 characters ([efd4a73](https://github.com/stencila/encoda/commit/efd4a7344cca75a4dfb8fe6c2f8ce63378a36186))
+* **HTML MIcrodata:** Do not create itemid from id ([10a5ac1](https://github.com/stencila/encoda/commit/10a5ac13a9c4dda6d6ee2f7a0411cd8bef844253))
+* **JATS:** Add decoding of article-id and elocation-id ([062a4af](https://github.com/stencila/encoda/commit/062a4afa6c6ee66470d782bcd5a0d45510048e00)), closes [#395](https://github.com/stencila/encoda/issues/395)
+* **JATS:** Add decoding of journal-id ([ec456bf](https://github.com/stencila/encoda/commit/ec456bf2abd94b0c08fa1af8c00530e41fa55f0d))
+* **JATS:** Also decode ids in references ([5b247ab](https://github.com/stencila/encoda/commit/5b247ab7bd124d8df20042835b10f8a3b669c4a6))
+* **JATS:** Decode article meta properties from front ([63a94a5](https://github.com/stencila/encoda/commit/63a94a5931df199cdaa7798e01d133060ae4bfdd))
+* **JATS:** Make dateAccepted and dateReceived first class properties ([150401e](https://github.com/stencila/encoda/commit/150401e2d5ae8e99bd05e6c838d3f9cecda2d24a))
+* **JATS:** Normalize rid when decoding. ([9885cfa](https://github.com/stencila/encoda/commit/9885cfa55f8c6834ed9c2363be943546798bd43e))
+* **JSON-LD:** Handle PropertyValue and Date nodes properly ([2aa4503](https://github.com/stencila/encoda/commit/2aa450309b4648f94f33be92b7c4f79364ded989))
+* **MicroData:** Add Schema.org Text node primitive to list of types ([2cd57ce](https://github.com/stencila/encoda/commit/2cd57cea8e551ba052bd854a42f8c727c931dc11))
+* **Util:** Make sub-schemas async as well ([155a00f](https://github.com/stencila/encoda/commit/155a00f4991bfe3f89393f8bee16fecc865f0bef))
+* **XML:** Use major versions URL ([a5131b0](https://github.com/stencila/encoda/commit/a5131b0cfaf170a0a65048dd0f9488ddf33ef71c))
+
+
+### Features
+
+* **HTML:** Add fallback images for Publisher Logo and Article image ([9570fa6](https://github.com/stencila/encoda/commit/9570fa6b0ba9972a1e6c39d3eecebae5bf921c3a))
+* **HTML:** Add MicroData attributes to elements ([f6d49db](https://github.com/stencila/encoda/commit/f6d49db0f6d64e64e8634659e4baf40300dbee2e))
+* **HTML:** Encode custom Schema attributes as data-itemprops ([c0073a6](https://github.com/stencila/encoda/commit/c0073a6ecb1693b00c70015f7740755bf480a2f4))
+* **HTML:** Use a meta tag when encoding fallback publisher logo & name ([058cf91](https://github.com/stencila/encoda/commit/058cf91c5e320f196e6f29e8a9619640897666eb))
+* **jats:** Decode funding to fundedBy with MonetaryGrant nodes ([eb2a8a8](https://github.com/stencila/encoda/commit/eb2a8a85257b54e5ab6752a08f4cba64a69b5637))
+* **JATS:** Add decoding of datePublished ([c484269](https://github.com/stencila/encoda/commit/c4842694defe0823b73bb9e293df419f21214643))
+* **JATS:** Add decoding of editors ([11045af](https://github.com/stencila/encoda/commit/11045afcd86d735fa919ff96f3666ea87a3d6b8a))
+* **JATS:** Add decoding of funders ([684d234](https://github.com/stencila/encoda/commit/684d234110b15a78738fa73a5d3330dfb2bf0c9a))
+* **JATS:** Add decoding of isPartOf property ([15d83b3](https://github.com/stencila/encoda/commit/15d83b31a3bc093fea97c8c3c03ab18a8abace13)), closes [#395](https://github.com/stencila/encoda/issues/395)
+* **JATS:** Add decoding of keywords ([3e18dd7](https://github.com/stencila/encoda/commit/3e18dd778e6cb61bf6a1c64baab0dd343ada944b))
+* **JATS:** Add decoding of licences ([d437189](https://github.com/stencila/encoda/commit/d43718941f1d029eebdf35ddbb6482e05ee74626))
+* **Theme:** Add ability to pass URLs as theme argument ([1690234](https://github.com/stencila/encoda/commit/16902343111356e9b9a3a849a01455263c97b1a1)), closes [#397](https://github.com/stencila/encoda/issues/397)
+
+
+### Reverts
+
+* **StringifyContent:** Revert converting Null values to empty strings ([fbedcc6](https://github.com/stencila/encoda/commit/fbedcc6f66817ee7edd1ea3522fa5dc64fe28cb2))
+
 ## [0.83.2](https://github.com/stencila/encoda/compare/v0.83.1...v0.83.2) (2020-01-23)
 
 
