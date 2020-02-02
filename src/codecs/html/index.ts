@@ -318,8 +318,16 @@ const decodeInlineChildNodes = (node: Node): stencila.InlineContent[] =>
     .filter(n => n !== '')
 
 function decodeNode(node: Node): stencila.Node | stencila.Node[] {
+  // TODO: Avoid the following use of `@ts-ignore` and `as`
+  // With major version upgrade to jsdom (and others 7b8399a791b5b8c9e6cd7e146b143c0ebd1c9257)
+  // the `test node instanceof window.HTMLElement` was always falsy and
+  // the `typeof node.getAttribute === 'function'` is intended as a temporary workaround
   const type =
-    node instanceof window.HTMLElement ? node.getAttribute('itemtype') : null
+    node instanceof window.HTMLElement ||
+    // @ts-ignore
+    typeof node.getAttribute === 'function'
+      ? (node as HTMLElement).getAttribute('itemtype')
+      : null
   const name =
     type !== null ? decodeMicrodataItemtype(type) : node.nodeName.toLowerCase()
 
