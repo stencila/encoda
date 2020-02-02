@@ -18,15 +18,31 @@
   </head>
 
   <body>
-    <article itemtype="https://schema.org/Article" itemscope="true">
+    <article itemscope="" itemtype="http://schema.org/Article">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
       <h1 itemprop="headline">Untitled</h1>
-      <h1 id="xml-codec">XML codec</h1>
-      <p>The <code>xml</code> codec provides an alternative to the other document interchange
-        formats such as <code>json</code> and <code>yaml</code>. It is used within Encoda to embed a
-        document within the XML metadata of PDF documents.</p>
-      <p>The <code>xml</code> codec encodes document nodes as XML elements with tag names equal to
-        the node type name and a <code>key</code> attribute where necessary e.g.</p>
-      <pre><code class="language-xml">&lt;person&gt;
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
+      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="xml-codec">XML codec</h1>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">xml</code> codec provides an alternative
+        to the other document interchange formats such as <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">json</code> and <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">yaml</code>. It is used within Encoda to
+        embed a document within the XML metadata of PDF documents.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">xml</code> codec encodes document nodes as
+        XML elements with tag names equal to the node type name and a <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">key</code> attribute where necessary e.g.
+      </p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-xml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&lt;person&gt;
   &lt;array key=&quot;givenNames&quot;&gt;
     &lt;string&gt;Jim&lt;/string&gt;
     &lt;string&gt;Jake&lt;/string&gt;

@@ -85,19 +85,22 @@
 					<a name="tofiles" class="tsd-anchor"></a>
 					<h3>to<wbr>Files</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Files<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, docPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mediaPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, protocols<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Files<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, docPath<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, protocols<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2e0c60a/src/util/toFiles.ts#L21">src/util/toFiles.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/util/toFiles.ts#L24">src/util/toFiles.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Transform a <code>Node</code> by writing any media to a file in a specified directory.</p>
 								</div>
+								<p>If <code>docPath === undefined</code>, then no files are written, and the <code>contentUrl</code>
+									of each <code>MediaObject</code> is set to <code>#</code>. This is intended for the case where
+								content is being generated, but is not intended for distribution e.g. during testing.</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p>bundle</p>
@@ -113,15 +116,9 @@
 									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
 								</li>
 								<li>
-									<h5>docPath: <span class="tsd-signature-type">string</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> docPath: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The path of the document</p>
-									</div>
-								</li>
-								<li>
-									<h5>mediaPath: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The directory to put media files in</p>
+										<p>The path to the document.</p>
 									</div>
 								</li>
 								<li>

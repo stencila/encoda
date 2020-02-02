@@ -624,25 +624,14 @@
 						</tr>
 						<tr>
 							<td><code>--theme</code></td>
-							<td>The theme for the output (only applies to HTML, PDF and RPNG output) e.g. <code>--theme eLife</code></td>
-						</tr>
-						<tr>
-							<td><code>--standalone</code></td>
-							<td>Generate a standalone document, not a fragment (default <code>true</code>)</td>
-						</tr>
-						<tr>
-							<td><code>--bundle</code></td>
-							<td>Bundle all assets (e.g images, CSS and JS) into the document (default <code>false</code>)</td>
-						</tr>
-						<tr>
-							<td><code>--zip</code></td>
-							<td>Create <code>.zip</code> archive containing output files? <code>no</code> (default), <code>yes</code>, <code>maybe</code> (only if more than one file)</td>
-						</tr>
-						<tr>
-							<td><code>--debug</code></td>
-							<td>Print debugging information</td>
+							<td>The theme for the output (only applies to HTML, PDF and RPNG output) e.g. <code>--theme eLife</code>. Either a</td>
 						</tr>
 				</tbody></table>
+				<p><a href="https://github.com/stencila/thema#available-themes">Thema theme name</a> or a path/URL to a directory containing a
+					<code>styles.css</code> and a <code>index.js</code> file. |
+					| <code>--standalone</code> | Generate a standalone document, not a fragment (default <code>true</code>) |
+					| <code>--bundle</code> | Bundle all assets (e.g images, CSS and JS) into the document (default <code>false</code>) |
+				| <code>--debug</code> | Print debugging information |</p>
 				<a href="#using-with-executa" id="using-with-executa" style="color: inherit; text-decoration: none;">
 					<h3>Using with Executa</h3>
 				</a>
@@ -857,6 +846,9 @@ docker run stencila/encoda</code></pre>
 						<a href="modules/_codecs_html_index_.html">&quot;codecs/html/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_codecs_html_microdata_.html">&quot;codecs/html/microdata&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_codecs_http_index_.html">&quot;codecs/http/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -1011,6 +1003,9 @@ docker run stencila/encoda</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_util_transform_.html">&quot;util/transform&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_util_truncate_.html">&quot;util/truncate&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_util_unlink_.html">&quot;util/unlink&quot;</a>

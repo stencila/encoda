@@ -18,19 +18,35 @@
   </head>
 
   <body>
-    <article itemtype="https://schema.org/Article" itemscope="true">
+    <article itemscope="" itemtype="http://schema.org/Article">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
       <h1 itemprop="headline">Untitled</h1>
-      <h1 id="-16"><code>rpng</code></h1>
-      <p>A codec for Reproducible PNGs (rPNG) files.</p>
-      <p>This codec decodes from, and encodes to, a rPNG which embeds the Stencila node into the
-        <code>tEXt</code> chunk of the PNG.</p>
-      <p>This has been implemented here to make use of the HTML converter to render the results. It
-        currently using Puppetter and so will not work in the browser. In the future we may use
-        <code>html2canvas</code> and <code>canvas2image</code> to enable rPNGs to be <a
-          href="https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f">generated
-          in the browser</a>.</p>
-      <p>See <a
-          href="http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html#C.Anc-text">http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html#C.Anc-text</a>
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
+      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="rpngcodefragment"><code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">rpng</code></h1>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A codec for Reproducible PNGs
+        (rPNG) files.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This codec decodes from, and
+        encodes to, a rPNG which embeds the Stencila node into the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">tEXt</code> chunk of the PNG.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This has been implemented here to
+        make use of the HTML converter to render the results. It currently using Puppetter and so
+        will not work in the browser. In the future we may use <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">html2canvas</code> and <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">canvas2image</code> to enable rPNGs to be
+        <a href="https://medium.com/@danielsternlicht/capturing-dom-elements-screenshots-server-side-vs-client-side-approaches-6901c706c56f"
+          itemscope="" itemtype="http://schema.stenci.la/Link">generated in the browser</a>.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">See <a
+          href="http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html#C.Anc-text" itemscope=""
+          itemtype="http://schema.stenci.la/Link">http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html#C.Anc-text</a>
       </p>
     </article>
   </body>

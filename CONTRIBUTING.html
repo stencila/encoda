@@ -18,29 +18,53 @@
   </head>
 
   <body>
-    <article itemtype="https://schema.org/Article" itemscope="true">
+    <article itemscope="" itemtype="http://schema.org/Article">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
       <h1 itemprop="headline">Untitled</h1>
-      <h1 id="contributing-to-stencila">Contributing to Stencila</h1>
-      <p><em>The contribution guidelines are based on the guidelines provided by <a
-            href="http://carpentries.org">Software and Data Carpentry</a>.</em></p>
-      <p><a href="http://stenci.la/">Stencila</a> is an open-source community-driven project. We
-        encourage and welcome contributions from all community members.</p>
-      <h2 id="general-contribution-guidelines">General contribution guidelines</h2>
-      <p>We prefer the contributions to be made via <a href="http://github.com">GitHub</a>. If you
-        are comfortable with Git and GitHub, you can submit a pull request (PR). In Stencila we
-        follow a commonly used workflow for <a
-          href="https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github">contributing
-          to open source projects</a> (see also <a
-          href="https://guides.github.com/introduction/flow/">GitHub instructions</a>).</p>
-      <h2 id="licensing-and-contributor-agreement">Licensing and contributor agreement</h2>
-      <p>By contributing, you agree that we may redistribute your work under <a href="LICENSE">our
-          license</a>. Everyone involved with Stencila agrees to abide by our <a
-          href="https://github.com/stencila/policies/blob/master/CONDUCT.md">code of conduct</a>.
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
+      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contributing-to-stencila">
+        Contributing to Stencila</h1>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><em itemscope=""
+          itemtype="http://schema.stenci.la/Emphasis">The contribution guidelines are based on the
+          guidelines provided by <a href="http://carpentries.org" itemscope=""
+            itemtype="http://schema.stenci.la/Link">Software and Data Carpentry</a>.</em></p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="http://stenci.la/"
+          itemscope="" itemtype="http://schema.stenci.la/Link">Stencila</a> is an open-source
+        community-driven project. We encourage and welcome contributions from all community members.
       </p>
-      <h3 id="contributors-list">Contributors list</h3>
-      <p>This project follows the <a href="https://allcontributors.org">all-contributors</a>
-        specification. Please add contribuors, including yourself, using,</p>
-      <pre><code class="language-bash"># Check for missing contributors
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="general-contribution-guidelines">General contribution guidelines</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">We prefer the contributions to be
+        made via <a href="http://github.com" itemscope=""
+          itemtype="http://schema.stenci.la/Link">GitHub</a>. If you are comfortable with Git and
+        GitHub, you can submit a pull request (PR). In Stencila we follow a commonly used workflow
+        for <a
+          href="https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github"
+          itemscope="" itemtype="http://schema.stenci.la/Link">contributing to open source
+          projects</a> (see also <a href="https://guides.github.com/introduction/flow/" itemscope=""
+          itemtype="http://schema.stenci.la/Link">GitHub instructions</a>).</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="licensing-and-contributor-agreement">Licensing and contributor agreement</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">By contributing, you agree that
+        we may redistribute your work under <a href="LICENSE" itemscope=""
+          itemtype="http://schema.stenci.la/Link">our license</a>. Everyone involved with Stencila
+        agrees to abide by our <a href="https://github.com/stencila/policies/blob/master/CONDUCT.md"
+          itemscope="" itemtype="http://schema.stenci.la/Link">code of conduct</a>.</p>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contributors-list">
+        Contributors list</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This project follows the <a
+          href="https://allcontributors.org" itemscope=""
+          itemtype="http://schema.stenci.la/Link">all-contributors</a> specification. Please add
+        contribuors, including yourself, using,</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment"># Check for missing contributors
 npx all-contributors check
 # Add new contributor &lt;username&gt;, who made a contribution of type &lt;contribution&gt;
 npx all-contributors add &lt;username&gt; &lt;contribution&gt;
@@ -48,14 +72,20 @@ npx all-contributors add &lt;username&gt; &lt;contribution&gt;
 npx all-contributors add octocat code,doc
 # Regenerate the readme table
 npx all-contributors generate</code></pre>
-      <p>See the list of contribution codes <a
-          href="https://allcontributors.org/docs/en/emoji-key">here</a>.</p>
-      <h2 id="get-in-touch">Get in touch!</h2>
-      <p>You can chat with the team at our <a
-          href="https://github.com/stencila/libcore/blob/master/docs/community.stenci.la">community
-          forum</a>, on Twitter <a href="https://twitter.com/stencila">@Stencila</a>, <a
-          href="https://gitter.im/stencila/stencila/">Gitter</a>, or email to <a
-          href="mailto:hello@stenci.la">hello@stenci.la</a></p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">See the list of contribution
+        codes <a href="https://allcontributors.org/docs/en/emoji-key" itemscope=""
+          itemtype="http://schema.stenci.la/Link">here</a>.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="get-in-touch">Get in touch!
+      </h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can chat with the team at our
+        <a href="https://github.com/stencila/libcore/blob/master/docs/community.stenci.la"
+          itemscope="" itemtype="http://schema.stenci.la/Link">community forum</a>, on Twitter <a
+          href="https://twitter.com/stencila" itemscope=""
+          itemtype="http://schema.stenci.la/Link">@Stencila</a>, <a
+          href="https://gitter.im/stencila/stencila/" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Gitter</a>, or email to <a
+          href="mailto:hello@stenci.la" itemscope=""
+          itemtype="http://schema.stenci.la/Link">hello@stenci.la</a></p>
     </article>
   </body>
 

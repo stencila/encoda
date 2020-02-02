@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Types | @stencila/encoda</title>
+	<title>MicrodataProperty | @stencila/encoda</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,19 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_codecs_ipynb_index_.html">&quot;codecs/ipynb/index&quot;</a>
+					<a href="../modules/_codecs_html_microdata_.html">&quot;codecs/html/microdata&quot;</a>
 				</li>
 				<li>
-					<a href="../modules/_codecs_ipynb_index_.nbformat.html">nbformat</a>
-				</li>
-				<li>
-					<a href="../modules/_codecs_ipynb_index_.nbformat.v3.html">v3</a>
-				</li>
-				<li>
-					<a href="_codecs_ipynb_index_.nbformat.v3.types.html">Types</a>
+					<a href="_codecs_html_microdata_.microdataproperty.html">MicrodataProperty</a>
 				</li>
 			</ul>
-			<h1>Interface Types</h1>
+			<h1>Interface MicrodataProperty</h1>
 		</div>
 	</div>
 </header>
@@ -78,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Types that we need to check for using <code>isa</code> typeguard</p>
+						<p>Attributes for Microdata <a href="https://www.w3.org/TR/microdata/#names:-the-itemprop-attribute">&quot;properties&quot;</a></p>
 					</div>
 				</div>
 			</section>
@@ -86,7 +80,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Types</span>
+						<span class="target">MicrodataProperty</span>
 					</li>
 				</ul>
 			</section>
@@ -97,10 +91,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_ipynb_index_.nbformat.v3.types.html#cell" class="tsd-kind-icon">Cell</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_ipynb_index_.nbformat.v3.types.html#displaydata" class="tsd-kind-icon">Display<wbr>Data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_ipynb_index_.nbformat.v3.types.html#notebook" class="tsd-kind-icon">Notebook</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_ipynb_index_.nbformat.v3.types.html#pyout" class="tsd-kind-icon">Pyout</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_html_microdata_.microdataproperty.html#itemprop" class="tsd-kind-icon">itemprop</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_html_microdata_.microdataproperty.html#itemref" class="tsd-kind-icon">itemref</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,42 +101,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="cell" class="tsd-anchor"></a>
-					<h3>Cell</h3>
-					<div class="tsd-signature tsd-kind-icon">Cell<span class="tsd-signature-symbol">:</span> <a href="_codecs_ipynb_index_.nbformat.v3.types.html#cell" class="tsd-signature-type">Cell</a></div>
+					<a name="itemprop" class="tsd-anchor"></a>
+					<h3>itemprop</h3>
+					<div class="tsd-signature tsd-kind-icon">itemprop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/codecs/ipynb/index.ts#L64">src/codecs/ipynb/index.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/codecs/html/microdata.ts#L60">src/codecs/html/microdata.ts:60</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="displaydata" class="tsd-anchor"></a>
-					<h3>Display<wbr>Data</h3>
-					<div class="tsd-signature tsd-kind-icon">Display<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DisplayData</span></div>
+					<a name="itemref" class="tsd-anchor"></a>
+					<h3>itemref</h3>
+					<div class="tsd-signature tsd-kind-icon">itemref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/codecs/ipynb/index.ts#L66">src/codecs/ipynb/index.ts:66</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="notebook" class="tsd-anchor"></a>
-					<h3>Notebook</h3>
-					<div class="tsd-signature tsd-kind-icon">Notebook<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Notebook</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/codecs/ipynb/index.ts#L63">src/codecs/ipynb/index.ts:63</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="pyout" class="tsd-anchor"></a>
-					<h3>Pyout</h3>
-					<div class="tsd-signature tsd-kind-icon">Pyout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pyout</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/codecs/ipynb/index.ts#L65">src/codecs/ipynb/index.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/7064daf/src/codecs/html/microdata.ts#L61">src/codecs/html/microdata.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,45 +129,68 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_codecs_ipynb_index_.html">&quot;codecs/ipynb/index&quot;</a>
-						<ul>
-							<li class="current tsd-kind-module tsd-parent-kind-external-module tsd-is-not-exported">
-								<a href="../modules/_codecs_ipynb_index_.nbformat.html">nbformat</a>
-								<ul>
-									<li class="current tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/_codecs_ipynb_index_.nbformat.v3.html">v3</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+						<a href="../modules/_codecs_html_microdata_.html">&quot;codecs/html/microdata&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_codecs_html_microdata_.microdataitem.html" class="tsd-kind-icon">Microdata<wbr>Item</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_codecs_ipynb_index_.nbformat.v3.types.html" class="tsd-kind-icon">Types</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_codecs_html_microdata_.microdataproperty.html" class="tsd-kind-icon">Microdata<wbr>Property</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_ipynb_index_.nbformat.v3.types.html#cell" class="tsd-kind-icon">Cell</a>
+								<a href="_codecs_html_microdata_.microdataproperty.html#itemprop" class="tsd-kind-icon">itemprop</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_ipynb_index_.nbformat.v3.types.html#displaydata" class="tsd-kind-icon">Display<wbr>Data</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_ipynb_index_.nbformat.v3.types.html#notebook" class="tsd-kind-icon">Notebook</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_ipynb_index_.nbformat.v3.types.html#pyout" class="tsd-kind-icon">Pyout</a>
+								<a href="_codecs_html_microdata_.microdataproperty.html#itemref" class="tsd-kind-icon">itemref</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_codecs_ipynb_index_.nbformat.v3.html#cell" class="tsd-kind-icon">Cell</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#microdata" class="tsd-kind-icon">Microdata</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#types" class="tsd-kind-icon">Types</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_html_microdata_.html#context" class="tsd-kind-icon">context</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_html_microdata_.html#idtoterm" class="tsd-kind-icon">id<wbr>ToTerm</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_html_microdata_.html#log" class="tsd-kind-icon">log</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#stencilaitemprop" class="tsd-kind-icon">stencila<wbr>Item<wbr>Prop</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_html_microdata_.html#termtoid" class="tsd-kind-icon">term<wbr>ToId</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#decodemicrodataitemtype" class="tsd-kind-icon">decode<wbr>Microdata<wbr>Itemtype</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataattrs" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Attrs</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataitem" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataitemprop" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Itemprop</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataitemtype" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Itemtype</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataproperty" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Property</a>
 					</li>
 				</ul>
 			</nav>

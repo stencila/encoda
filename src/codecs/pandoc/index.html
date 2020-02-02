@@ -18,19 +18,38 @@
   </head>
 
   <body>
-    <article itemtype="https://schema.org/Article" itemscope="true">
+    <article itemscope="" itemtype="http://schema.org/Article">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
       <h1 itemprop="headline">Untitled</h1>
-      <h1 id="-15"><code>pandoc</code></h1>
-      <p>Typescript definitions for Pandoc.</p>
-      <p>These type definitions are based on the definitions in <a
-          href="https://github.com/jgm/pandoc-types/blob/1.17.5.4/Text/Pandoc/Definition.hs"><code>pandoc-types
-            v1.17.5.4</code></a>. That is the version used in Pandoc v2.7.2.</p>
-      <p>Most of the comment strings are copy-pasted directly from there.</p>
-      <p>To check these type definitions are correct with respect to what Pandoc actually consumes
-        and produces it can be useful to test Markdown or HTML snippets at the console like this
-        (<code>jq</code> used for ease of viewing output):</p>
-      <pre><code class="language-bash">echo &#39;A &quot;quote&quot;&#39; | ./vendor/bin/pandoc --from markdown --to json | jq .blocks</code></pre>
-      <pre><code class="language-json">[
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
+      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="pandoccodefragment"><code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">pandoc</code></h1>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Typescript definitions for
+        Pandoc.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">These type definitions are based
+        on the definitions in <a
+          href="https://github.com/jgm/pandoc-types/blob/1.17.5.4/Text/Pandoc/Definition.hs"
+          itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">pandoc-types v1.17.5.4</code></a>. That
+        is the version used in Pandoc v2.7.2.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Most of the comment strings are
+        copy-pasted directly from there.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To check these type definitions
+        are correct with respect to what Pandoc actually consumes and produces it can be useful to
+        test Markdown or HTML snippets at the console like this (<code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">jq</code> used for ease of viewing
+        output):</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">echo &#39;A &quot;quote&quot;&#39; | ./vendor/bin/pandoc --from markdown --to json | jq .blocks</code></pre>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">[
 {
     &quot;t&quot;: &quot;Para&quot;,
     &quot;c&quot;: [
