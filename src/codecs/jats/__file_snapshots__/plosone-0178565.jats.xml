@@ -2,53 +2,55 @@
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
 <article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
     <front>
-        <title-group>
-            <article-title>Gene essentiality, conservation index and co-evolution of genes in cyanobacteria</article-title>
-        </title-group>
-        <contrib-group>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Tiruveedula</surname>
-                    <given-names>Gopi Siva Sai</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Wangikar</surname>
-                    <given-names>Pramod P.</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <aff id="unique">
-                <institution>Department of Chemical Engineering, National Institute of Technology Karnataka, Surathkal, Mangalore, India</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Department of Chemical Engineering, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Department of Chemical Engineering, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
-            </aff>
-            <aff id="unique">
-                <institution>DBT-Pan IIT Center for Bioenergy, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Wadhwani Research Center for Bioengineering, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
-            </aff>
-        </contrib-group>
-        <abstract>
-            <p>
-                <p>Cyanobacteria, a group of photosynthetic prokaryotes, dominate the earth with ~ 10
-                    <sup>15</sup> g wet biomass. Despite diversity in habitats and an ancient origin, cyanobacterial phylum has retained a significant core genome. Cyanobacteria are being explored for direct conversion of solar energy and carbon dioxide into biofuels. For this, efficient cyanobacterial strains will need to be designed via metabolic engineering. This will require identification of target knockouts to channelize the flow of carbon toward the product of interest while minimizing deletions of essential genes. We propose “Gene Conservation Index” (GCI) as a quick measure to predict gene essentiality in cyanobacteria. GCI is based on phylogenetic profile of a gene constructed with a reduced dataset of cyanobacterial genomes. GCI is the percentage of organism clusters in which the query gene is present in the reduced dataset. Of the 750 genes deemed to be essential in the experimental study on 
-                    <italic>S</italic>. 
-                    <italic>elongatus</italic> PCC 7942, we found 494 to be conserved across the phylum which largely comprise of the essential metabolic pathways. On the contrary, the conserved but non-essential genes broadly comprise of genes required under stress conditions. Exceptions to this rule include genes such as the glycogen synthesis and degradation enzymes, deoxyribose-phosphate aldolase (DERA), glucose-6-phosphate 1-dehydrogenase (
-                    <italic>zwf</italic>) and fructose-1,6-bisphosphatase class1, which are conserved but non-essential. While the essential genes are to be avoided during gene knockout studies as potentially lethal deletions, the non-essential but conserved set of genes could be interesting targets for metabolic engineering. Further, we identify clusters of co-evolving genes (CCG), which provide insights that may be useful in annotation. Principal component analysis (PCA) plots of the CCGs are demonstrated as data visualization tools that are complementary to the conventional heatmaps. Our dataset consists of phylogenetic profiles for 23,643 non-redundant cyanobacterial genes. We believe that the data and the analysis presented here will be a great resource to the scientific community interested in cyanobacteria.
+        <article-meta>
+            <title-group>
+                <article-title>Gene essentiality, conservation index and co-evolution of genes in cyanobacteria</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Tiruveedula</surname>
+                        <given-names>Gopi Siva Sai</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Wangikar</surname>
+                        <given-names>Pramod P.</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Department of Chemical Engineering, National Institute of Technology Karnataka, Surathkal, Mangalore, India</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Department of Chemical Engineering, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Department of Chemical Engineering, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>DBT-Pan IIT Center for Bioenergy, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Wadhwani Research Center for Bioengineering, Indian Institute of Technology Bombay, Powai, Mumbai, India</institution>
+                </aff>
+            </contrib-group>
+            <abstract>
+                <p>
+                    <p>Cyanobacteria, a group of photosynthetic prokaryotes, dominate the earth with ~ 10
+                        <sup>15</sup> g wet biomass. Despite diversity in habitats and an ancient origin, cyanobacterial phylum has retained a significant core genome. Cyanobacteria are being explored for direct conversion of solar energy and carbon dioxide into biofuels. For this, efficient cyanobacterial strains will need to be designed via metabolic engineering. This will require identification of target knockouts to channelize the flow of carbon toward the product of interest while minimizing deletions of essential genes. We propose “Gene Conservation Index” (GCI) as a quick measure to predict gene essentiality in cyanobacteria. GCI is based on phylogenetic profile of a gene constructed with a reduced dataset of cyanobacterial genomes. GCI is the percentage of organism clusters in which the query gene is present in the reduced dataset. Of the 750 genes deemed to be essential in the experimental study on 
+                        <italic>S</italic>. 
+                        <italic>elongatus</italic> PCC 7942, we found 494 to be conserved across the phylum which largely comprise of the essential metabolic pathways. On the contrary, the conserved but non-essential genes broadly comprise of genes required under stress conditions. Exceptions to this rule include genes such as the glycogen synthesis and degradation enzymes, deoxyribose-phosphate aldolase (DERA), glucose-6-phosphate 1-dehydrogenase (
+                        <italic>zwf</italic>) and fructose-1,6-bisphosphatase class1, which are conserved but non-essential. While the essential genes are to be avoided during gene knockout studies as potentially lethal deletions, the non-essential but conserved set of genes could be interesting targets for metabolic engineering. Further, we identify clusters of co-evolving genes (CCG), which provide insights that may be useful in annotation. Principal component analysis (PCA) plots of the CCGs are demonstrated as data visualization tools that are complementary to the conventional heatmaps. Our dataset consists of phylogenetic profiles for 23,643 non-redundant cyanobacterial genes. We believe that the data and the analysis presented here will be a great resource to the scientific community interested in cyanobacteria.
+                    </p>
                 </p>
-            </p>
-        </abstract>
+            </abstract>
+        </article-meta>
     </front>
     <body>
         <sec>

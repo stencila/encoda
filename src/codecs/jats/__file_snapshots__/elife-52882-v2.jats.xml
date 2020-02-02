@@ -2,104 +2,106 @@
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
 <article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
     <front>
-        <title-group>
-            <article-title>From behavior to circuit modeling of light-seeking navigation in zebrafish larvae</article-title>
-        </title-group>
-        <contrib-group>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Karpenko</surname>
-                    <given-names>Sophia</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Wolf</surname>
-                    <given-names>Sebastien</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Lafaye</surname>
-                    <given-names>Julie</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Le Goc</surname>
-                    <given-names>Guillaume</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Panier</surname>
-                    <given-names>Thomas</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Bormuth</surname>
-                    <given-names>Volker</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Candelier</surname>
-                    <given-names>Raphaël</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Debrégeas</surname>
-                    <given-names>Georges</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Université Paris Sciences et Lettres</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Laboratoire de Physique de l’Ecole Normale Supérieure, CNRS UMR 8023 &amp; PSL Research</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Institut de Biologie de l’Ecole Normale Supérieure, CNRS, INSERM, UMR 8197 &amp; PSL Research</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
-            </aff>
-        </contrib-group>
-        <abstract>
-            <p>
-                <p>Bridging brain-scale circuit dynamics and organism-scale behavior is a central challenge in neuroscience. It requires the concurrent development of minimal behavioral and neural circuit models that can quantitatively capture basic sensorimotor operations. Here, we focus on light-seeking navigation in zebrafish larvae. Using a virtual reality assay, we first characterize how motor and visual stimulation sequences govern the selection of discrete swim-bout events that subserve the fish navigation in the presence of a distant light source. These mechanisms are combined into a comprehensive Markov-chain model of navigation that quantitatively predicts the stationary distribution of the fish’s body orientation under any given illumination profile. We then map this behavioral description onto a neuronal model of the ARTR, a small neural circuit involved in the orientation-selection of swim bouts. We demonstrate that this visually-biased decision-making circuit can capture the statistics of both spontaneous and contrast-driven navigation.</p>
-            </p>
-        </abstract>
+        <article-meta>
+            <title-group>
+                <article-title>From behavior to circuit modeling of light-seeking navigation in zebrafish larvae</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Karpenko</surname>
+                        <given-names>Sophia</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Wolf</surname>
+                        <given-names>Sebastien</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Lafaye</surname>
+                        <given-names>Julie</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Le Goc</surname>
+                        <given-names>Guillaume</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Panier</surname>
+                        <given-names>Thomas</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Bormuth</surname>
+                        <given-names>Volker</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Candelier</surname>
+                        <given-names>Raphaël</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Debrégeas</surname>
+                        <given-names>Georges</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Université Paris Sciences et Lettres</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Laboratoire de Physique de l’Ecole Normale Supérieure, CNRS UMR 8023 &amp; PSL Research</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Institut de Biologie de l’Ecole Normale Supérieure, CNRS, INSERM, UMR 8197 &amp; PSL Research</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS), Laboratoire Jean Perrin (LJP)</institution>
+                </aff>
+            </contrib-group>
+            <abstract>
+                <p>
+                    <p>Bridging brain-scale circuit dynamics and organism-scale behavior is a central challenge in neuroscience. It requires the concurrent development of minimal behavioral and neural circuit models that can quantitatively capture basic sensorimotor operations. Here, we focus on light-seeking navigation in zebrafish larvae. Using a virtual reality assay, we first characterize how motor and visual stimulation sequences govern the selection of discrete swim-bout events that subserve the fish navigation in the presence of a distant light source. These mechanisms are combined into a comprehensive Markov-chain model of navigation that quantitatively predicts the stationary distribution of the fish’s body orientation under any given illumination profile. We then map this behavioral description onto a neuronal model of the ARTR, a small neural circuit involved in the orientation-selection of swim bouts. We demonstrate that this visually-biased decision-making circuit can capture the statistics of both spontaneous and contrast-driven navigation.</p>
+                </p>
+            </abstract>
+        </article-meta>
     </front>
     <body>
         <sec>

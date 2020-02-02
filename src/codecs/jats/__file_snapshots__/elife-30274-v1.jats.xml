@@ -2,152 +2,154 @@
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
 <article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
     <front>
-        <title-group>
-            <article-title>Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc</article-title>
-        </title-group>
-        <contrib-group>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Lewis</surname>
-                    <given-names>L Michelle</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Edwards</surname>
-                    <given-names>Meredith C</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Meyers</surname>
-                    <given-names>Zachary R</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Talbot</surname>
-                    <given-names>C Conover</given-names>
-                    <suffix>Jr</suffix>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Hao</surname>
-                    <given-names>Haiping</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Blum</surname>
-                    <given-names>David</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <string-name/>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Iorns</surname>
-                    <given-names>Elizabeth</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Tsui</surname>
-                    <given-names>Rachel</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Denis</surname>
-                    <given-names>Alexandria</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Perfito</surname>
-                    <given-names>Nicole</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <contrib contrib-type="author">
-                <name>
-                    <surname>Errington</surname>
-                    <given-names>Timothy M</given-names>
-                </name>
-                <xref ref-type="aff" rid="unique"/>
-            </contrib>
-            <aff id="unique">
-                <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
-            </aff>
-            <aff id="unique">
-                <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
-            </aff>
-            <aff id="unique">
-                <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Johns Hopkins University, Deep Sequencing and Microarray Core Facility</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Johns Hopkins University, Deep Sequencing and Microarray Core Facility</institution>
-            </aff>
-            <aff id="unique">
-                <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Science Exchange</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Science Exchange</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Center for Open Science</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Science Exchange</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Center for Open Science</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Science Exchange</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Science Exchange</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Center for Open Science</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Science Exchange</institution>
-            </aff>
-            <aff id="unique">
-                <institution>Center for Open Science</institution>
-            </aff>
-        </contrib-group>
-        <abstract>
-            <p>
-                <p>As part of the 
-                    <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link>, we published a Registered Report (Blum et al., 2015), that described how we intended to replicate selected experiments from the paper ‘Transcriptional amplification in tumor cells with elevated c-Myc’ (Lin et al., 2012). Here we report the results. We found overexpression of c-Myc increased total levels of RNA in P493-6 Burkitt’s lymphoma cells; however, while the effect was in the same direction as the original study (Figure 3E; Lin et al., 2012), statistical significance and the size of the effect varied between the original study and the two different lots of serum tested in this replication. Digital gene expression analysis for a set of genes was also performed on P493-6 cells before and after c-Myc overexpression. Transcripts from genes that were active before c-Myc induction increased in expression following c-Myc overexpression, similar to the original study (Figure 3F; Lin et al., 2012). Transcripts from genes that were silent before c-Myc induction also increased in expression following c-Myc overexpression, while the original study concluded elevated c-Myc had no effect on silent genes (Figure 3F; Lin et al., 2012). Treating the data as paired, we found a statistically significant increase in gene expression for both active and silent genes upon c-Myc induction, with the change in gene expression greater for active genes compared to silent genes. Finally, we report meta-analyses for each result.
+        <article-meta>
+            <title-group>
+                <article-title>Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Lewis</surname>
+                        <given-names>L Michelle</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Edwards</surname>
+                        <given-names>Meredith C</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Meyers</surname>
+                        <given-names>Zachary R</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Talbot</surname>
+                        <given-names>C Conover</given-names>
+                        <suffix>Jr</suffix>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Hao</surname>
+                        <given-names>Haiping</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Blum</surname>
+                        <given-names>David</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <string-name/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Iorns</surname>
+                        <given-names>Elizabeth</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Tsui</surname>
+                        <given-names>Rachel</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Denis</surname>
+                        <given-names>Alexandria</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Perfito</surname>
+                        <given-names>Nicole</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Errington</surname>
+                        <given-names>Timothy M</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="00000000000000000000000000000000"/>
+                </contrib>
+                <aff id="00000000000000000000000000000000">
+                    <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Johns Hopkins University, Deep Sequencing and Microarray Core Facility</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Johns Hopkins University, Deep Sequencing and Microarray Core Facility</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>University of Georgia, Bioexpression and Fermentation Facility</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Science Exchange</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Science Exchange</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Center for Open Science</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Science Exchange</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Center for Open Science</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Science Exchange</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Science Exchange</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Center for Open Science</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Science Exchange</institution>
+                </aff>
+                <aff id="00000000000000000000000000000000">
+                    <institution>Center for Open Science</institution>
+                </aff>
+            </contrib-group>
+            <abstract>
+                <p>
+                    <p>As part of the 
+                        <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link>, we published a Registered Report (Blum et al., 2015), that described how we intended to replicate selected experiments from the paper ‘Transcriptional amplification in tumor cells with elevated c-Myc’ (Lin et al., 2012). Here we report the results. We found overexpression of c-Myc increased total levels of RNA in P493-6 Burkitt’s lymphoma cells; however, while the effect was in the same direction as the original study (Figure 3E; Lin et al., 2012), statistical significance and the size of the effect varied between the original study and the two different lots of serum tested in this replication. Digital gene expression analysis for a set of genes was also performed on P493-6 cells before and after c-Myc overexpression. Transcripts from genes that were active before c-Myc induction increased in expression following c-Myc overexpression, similar to the original study (Figure 3F; Lin et al., 2012). Transcripts from genes that were silent before c-Myc induction also increased in expression following c-Myc overexpression, while the original study concluded elevated c-Myc had no effect on silent genes (Figure 3F; Lin et al., 2012). Treating the data as paired, we found a statistically significant increase in gene expression for both active and silent genes upon c-Myc induction, with the change in gene expression greater for active genes compared to silent genes. Finally, we report meta-analyses for each result.
+                    </p>
                 </p>
-            </p>
-        </abstract>
+            </abstract>
+        </article-meta>
     </front>
     <body>
         <sec>

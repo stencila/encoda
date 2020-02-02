@@ -15,6 +15,8 @@ const { sniff } = new JatsCodec()
  * ```
  */
 
+jest.mock('crypto')
+
 const fixture = (name: string) =>
   path.join(__dirname, '__fixtures__', name, 'main.jats.xml')
 
