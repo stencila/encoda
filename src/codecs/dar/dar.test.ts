@@ -2,10 +2,8 @@ import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
 import { DarCodec } from '.'
-import * as vfile from '../../util/vfile'
-// Fixtures
-import flat from '../../__fixtures__/collection-flat'
-import mixed from '../../__fixtures__/collection-mixed'
+import flat from '../../__fixtures__/collection/flat'
+import mixed from '../../__fixtures__/collection/mixed'
 import { defaultEncodeOptions } from '../types'
 
 const { decode, encode, sniff } = new DarCodec()

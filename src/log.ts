@@ -1,5 +1,6 @@
 import * as logga from '@stencila/logga'
 import * as stencila from '@stencila/schema'
+import { deleteAt } from 'fp-ts/lib/Record'
 
 const log = logga.getLogger('encoda')
 export default log
@@ -66,10 +67,9 @@ export const logWarnLossIfAny = (
   codec: string,
   op: CodecOperation,
   node: stencila.Node,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  lost: { [key: string]: any }
+  lost: object
 ): void => {
-  const { type, ...rest } = lost
+  const rest = deleteAt('type')(lost)
   const properties = Object.keys(rest)
   if (properties.length > 0) {
     log.warn(

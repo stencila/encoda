@@ -1,27 +1,67 @@
 import stencila, {
   article,
+  audioObject,
   cite,
   citeGroup,
+  code,
+  codeBlock,
+  codeChunk,
   codeExpression,
+  codeFragment,
   collection,
   creativeWork,
+  datatable,
+  datatableColumn,
+  date,
+  del,
+  emphasis,
+  Entity,
+  entity,
   figure,
+  heading,
   imageObject,
+  include,
   link,
-  person
+  list,
+  listItem,
+  mark,
+  mediaObject,
+  organization,
+  paragraph,
+  periodical,
+  person,
+  publicationIssue,
+  publicationVolume,
+  quote,
+  quoteBlock,
+  softwareSourceCode,
+  strong,
+  subscript,
+  superscript,
+  table,
+  tableCell,
+  tableRow,
+  thematicBreak,
+  videoObject
 } from '@stencila/schema'
 import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
+import kitchenSink from '../../__fixtures__/article/kitchen-sink'
+import { readFixture, snapshot } from '../../__tests__/helpers'
+import { JsonCodec } from '../json'
 import { defaultEncodeOptions } from '../types'
 import { decodeHref, HTMLCodec } from './'
+import { encodeMicrodataItemtype, stencilaItemProp, Types } from './microdata'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
 
-const { encode, decode } = new HTMLCodec()
+const json = new JsonCodec()
+const html = new HTMLCodec()
+const { encode, decode } = html
 
 const e = async (
   node: stencila.Node,
@@ -31,26 +71,36 @@ const e = async (
 const d = async (htmlString: string): Promise<stencila.Node> =>
   decode(vfile.load(htmlString))
 
+const json2html = async (name: string) =>
+  e(await json.decode(await readFixture(name)))
+
 test('decode', async () => {
-  expect(await d(kitchenSink.html)).toEqual(kitchenSink.node)
   expect(await d(attrs.html)).toEqual(attrs.node)
   expect(await d(dt.html)).toEqual(dt.node)
 })
 
 describe('encode', () => {
-  test('Encode kitchenSink', async () =>
-    expect(await e(kitchenSink.node)).toEqual(kitchenSink.html))
+  test('kitchen-sink', async () =>
+    expect(await e(kitchenSink)).toMatchFile(snapshot('kitchen-sink.html')))
+
+  test('elife/50356', async () =>
+    expect(await json2html('article/journal/elife/50356.json')).toMatchFile(
+      snapshot('elife-50356.html')
+    ))
+})
+
+describe.skip('encode', () => {
   test('Encode attrs', async () =>
-    expect(await e(attrs.node)).toEqual(attrs.html))
+    expect(await e(attrs.node)).toEqualStringContent(attrs.html))
   test('Encode Datatable', async () =>
-    expect(await e(dt.node)).toEqual(dt.html))
+    expect(await e(dt.node)).toEqualStringContent(dt.html))
 })
 
 describe('String escaping', () => {
   test('Escape HTML entities', async () => {
     expect(
       await e({ type: 'Paragraph', content: ['<em>', '<strong>'] })
-    ).toEqual('<p>&lt;em&gt;&lt;strong&gt;</p>')
+    ).toMatch('lt;em&gt;&lt;strong&gt;')
   })
 
   test('Convert HTML entities back', async () => {
@@ -84,7 +134,11 @@ describe('Encode & Decode cite nodes', () => {
   const htmlNode = `<cite><a href="#myTarget">myTarget</a></cite>`
 
   test('encode', async () => {
-    expect(await e(schemaNode)).toEqual(htmlNode)
+    const node = doc(await e(schemaNode)).querySelector('cite')
+
+    expect(node).toBeDefined()
+    expect(node?.querySelector('a')).toHaveAttribute('href', '#myTarget')
+    expect(node).toHaveTextContent('myTarget')
   })
 
   test('decode', async () => {
@@ -117,17 +171,23 @@ describe('Encode & Decode cite nodes', () => {
   })
 })
 
-describe('Encode & Decode code-expression nodes', () => {
-  const codeExpressionSchema = codeExpression({
+describe('Encode & Decode CodeExpression nodes', () => {
+  const codeExpressionNode = codeExpression({
     text: 'x * 2',
     output: '42',
     programmingLanguage: 'python'
   })
-  const codeExpressionHTML =
-    '<stencila-code-expression programming-language="python"><code slot="text">x * 2</code><output slot="output">42</output></stencila-code-expression>'
+  const codeExpressionHTML = `
+    <stencila-code-expression
+      itemtype="${encodeMicrodataItemtype('CodeExpression')}"
+      programming-language="python"
+    >
+      <code slot="text">x * 2</code>
+      <output slot="output">42</output>
+    </stencila-code-expression>`
 
   test('encode', async () => {
-    const actual = doc(await e(codeExpressionSchema))
+    const actual = doc(await e(codeExpressionNode))
     const code = actual.getElementsByTagName('code')[0]
     const output = actual.getElementsByTagName('output')[0]
 
@@ -137,7 +197,7 @@ describe('Encode & Decode code-expression nodes', () => {
 
   test('decode', async () => {
     const c = await d(codeExpressionHTML)
-    expect(c).toMatchObject(codeExpressionSchema)
+    expect(c).toMatchObject(codeExpressionNode)
   })
 })
 
@@ -146,7 +206,7 @@ describe('Encode & Decode cite group nodes', () => {
   const cite2 = cite({ target: 'mySecondTarget' })
 
   const schemaNode = citeGroup({ items: [cite1, cite2] })
-  const htmlNode = `<span itemtype="https://schema.stenci.la/CiteGroup">
+  const htmlNode = `<span itemtype="${encodeMicrodataItemtype('CiteGroup')}">
     <cite><a href="myFirstTarget">myFirstTarget</a></cite>
     <cite><a href="mySecondTarget">mySecondTarget</a></cite>
   </ol>`
@@ -157,7 +217,7 @@ describe('Encode & Decode cite group nodes', () => {
     expect(actual.querySelectorAll('cite')).toHaveLength(2)
     expect(actual.querySelector('span')).toHaveAttribute(
       'itemtype',
-      'https://schema.stenci.la/CiteGroup'
+      encodeMicrodataItemtype('CiteGroup')
     )
   })
 
@@ -262,8 +322,7 @@ describe.skip('Encode & Decode references', () => {
 
   <ol class="references">
     <li
-      itemtype="https://schema.org/CreativeWork"
-      itemscope="true"
+      itemtype="${encodeMicrodataItemtype('CreativeWork')}"
       itemprop="citation"
     >
       <a
@@ -276,8 +335,7 @@ describe.skip('Encode & Decode references', () => {
       <div>
         <ol class="authors">
           <li
-            itemtype="https://schema.org/Person"
-            itemscope="true"
+            itemtype="${encodeMicrodataItemtype('Person')}"
             itemprop="author"
           >
             <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
@@ -288,8 +346,7 @@ describe.skip('Encode & Decode references', () => {
             </a>
           </li>
           <li
-            itemtype="https://schema.org/Person"
-            itemscope="true"
+            itemtype="${encodeMicrodataItemtype('Person')}"
             itemprop="author"
           >
             <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22">
@@ -311,8 +368,12 @@ describe.skip('Encode & Decode references', () => {
 `
 
   test('encode', async () => {
-    const actual = doc(await e(schemaNode)).querySelector('.references')
-    const expected = doc(articleRefs).querySelector('.references')
+    const actual = doc(await e(schemaNode)).querySelector(
+      `[${stencilaItemProp}="references"]`
+    )
+    const expected = doc(articleRefs).querySelector(
+      `[${stencilaItemProp}="references"]`
+    )
     expect(actual!.outerHTML).toEqualStringContent(expected!.outerHTML)
   })
 
@@ -369,6 +430,97 @@ describe('Encode & Decode figure nodes', () => {
   })
 })
 
+const nodes: [string, Entity][] = [
+  ['Article', article({ title: 'Test article' })],
+  ['AudioObject', audioObject({ contentUrl: '' })],
+  ['Cite', cite({ target: '#id1' })],
+  [
+    'CiteGroup',
+    citeGroup({ items: [cite({ target: '#id1' }), cite({ target: '#id2' })] })
+  ],
+  ['Code', code({ text: 'a + b' })],
+  ['CodeBlock', codeBlock({ text: 'a + b' })],
+  ['CodeChunk', codeChunk({ text: 'a + b' })],
+  // ['CodeError', codeError()],
+  ['CodeExpression', codeExpression({ text: 'a + b' })],
+  ['CodeFragment', codeFragment({ text: 'a + b' })],
+  ['Collection', collection({ parts: [article({ title: 'Test article' })] })],
+  // ['ContactPoint', contactPoint()],
+  ['CreativeWork', creativeWork()],
+  [
+    'Datatable',
+    datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
+  ],
+  // [
+  //   'DatatableColumn',
+  //   datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
+  // ],
+  ['Date', date({ value: '2021/02/13' })],
+  ['Delete', del({ content: [] })],
+  ['Emphasis', emphasis({ content: [] })],
+  ['Entity', entity()],
+  ['Figure', figure()],
+  // ['Function', function_()],
+  ['Heading', heading({ content: ['Title'], depth: 1 })],
+  ['ImageObject', imageObject({ contentUrl: '' })],
+  ['Include', include({ source: '#' })],
+  ['Link', link({ content: ['link'], target: 'url' })],
+  ['List', list({ items: [] })],
+  ['ListItem', listItem({ content: [] })],
+  ['Mark', mark({ content: [] })],
+  // ['Math', math({ text: '1 + 2' })],
+  // ['MathBlock', mathBlock({ text: '1 + 2' })],
+  // ['MathFragment', mathFragment({ text: '1 + 2' })],
+  ['MediaObject', mediaObject({ contentUrl: '' })],
+  ['Organization', organization({ name: 'Mega Corp' })],
+  ['Paragraph', paragraph({ content: [] })],
+  // ['Parameter', parameter({ name: '' })],
+  ['Periodical', periodical()],
+  ['Person', person()],
+  // ['Product', product()],
+  ['PublicationIssue', publicationIssue()],
+  ['PublicationVolume', publicationVolume()],
+  ['Quote', quote({ content: [] })],
+  ['QuoteBlock', quoteBlock({ content: [] })],
+  // ['SoftwareApplication', softwareApplication()],
+  ['SoftwareSourceCode', softwareSourceCode()],
+  ['Strong', strong({ content: [] })],
+  ['Subscript', subscript({ content: [] })],
+  ['Superscript', superscript({ content: [] })],
+  ['Table', table({ rows: [] })],
+  // NOTE: TableCells and `TableRows` must be tested within a `Table` for it to be valid HTML.
+  // Otherwise the beautification step will strip the free-floating cells and rows.
+  [
+    'TableCell',
+    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] })
+  ],
+  [
+    'TableRow',
+    table({ rows: [tableRow({ cells: [tableCell({ content: [] })] })] })
+  ],
+  ['ThematicBreak', thematicBreak()],
+  // ['Thing', thing()],
+  // ['Variable', variable({ name: '' })],
+  ['VideoObject', videoObject({ contentUrl: '' })]
+]
+
+describe.only('Encode with Microdata', () => {
+  test.each(nodes)(
+    '%s has itemscope and itemtype',
+    // @ts-ignore
+    async (schemaType: keyof Types, node) => {
+      const schemaUri = encodeMicrodataItemtype(schemaType)
+      const actual = doc(await e(node)).querySelector(
+        `[itemtype='${schemaUri}']`
+      )
+
+      expect(actual).toBeInTheDocument()
+      expect(actual).toHaveAttribute('itemscope')
+      expect(actual).toHaveAttribute('itemtype')
+    }
+  )
+})
+
 describe('Encode & Decode Collections', () => {
   const schemaNode = collection({
     parts: [
@@ -386,7 +538,7 @@ describe('Encode & Decode Collections', () => {
   })
 
   const htmlNode = `
-    <ol itemtype="https://schema.org/Collection">
+    <ol itemtype="${encodeMicrodataItemtype('Collection')}">
       <li>
         <figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>
       </li>
@@ -404,7 +556,7 @@ describe('Encode & Decode Collections', () => {
 
     expect(collection).toHaveAttribute(
       'itemtype',
-      'https://schema.org/Collection'
+      encodeMicrodataItemtype('Collection')
     )
     expect(figures).toHaveLength(2)
   })
@@ -416,7 +568,7 @@ describe('Encode & Decode Collections', () => {
 
 test('encode with different themes', async () => {
   const e = async (options = defaultEncodeOptions) =>
-    vfile.dump(await encode(kitchenSink.node, options))
+    vfile.dump(await encode(kitchenSink, options))
 
   let html = await e({ theme: 'stencila' })
   expect(html).toMatch(
@@ -437,7 +589,7 @@ test('encode with different themes', async () => {
 
 test('encode with bundling', async () => {
   const e = async (options = defaultEncodeOptions) =>
-    vfile.dump(await encode(kitchenSink.node, options))
+    vfile.dump(await encode(kitchenSink, options))
 
   const stylesheet = fs.readFileSync(
     require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),
@@ -460,22 +612,26 @@ test('encode with bundling', async () => {
 
 test('encode add heading ids', async () => {
   expect(
-    await e({
-      type: 'Heading',
-      depth: 1,
-      content: ['One']
-    })
-  ).toBe('<h1 id="one">One</h1>')
+    doc(
+      await e({
+        type: 'Heading',
+        depth: 1,
+        content: ['One']
+      })
+    ).querySelector('h1')?.id
+  ).toBe('one')
 
   expect(
-    await e({
-      type: 'Heading',
-      depth: 2,
-      content: ['foo 123 $#% 🐶 bar']
-    })
-  ).toEqual('<h2 id="foo-123---bar">foo 123 $#% 🐶 bar</h2>')
+    doc(
+      await e({
+        type: 'Heading',
+        depth: 2,
+        content: ['foo 123 $#% 🐶 bar']
+      })
+    ).querySelector('h2')?.id
+  ).toEqual('foo-123---bar')
 
-  expect(
+  const headingItems = doc(
     await e({
       type: 'Article',
       title: 'Test',
@@ -492,300 +648,52 @@ test('encode add heading ids', async () => {
         }
       ]
     })
-  ).toBe(`<article itemtype="https://schema.org/Article" itemscope="true">
-  <h1 itemprop="headline">Test</h1>
-  <h1 id="duplicated">duplicated</h1>
-  <h1 id="duplicated-1">duplicated</h1>
-</article>`)
+  ).querySelectorAll('h1')
+
+  const ids: string[] = []
+
+  headingItems.forEach(item => {
+    if (item.id) {
+      ids.push(item.id)
+    }
+  })
+
+  expect(ids).toEqual(expect.arrayContaining(['duplicated', 'duplicated-1']))
 })
 
-// An example intended for testing progressively added decoder/encoder pairs
-const kitchenSink = {
-  html: `<article itemtype="https://schema.org/Article" itemscope="true">
-  <h1 itemprop="headline">Article title</h1>
-  <h1 id="heading-one">Heading one</h1>
-  <h2 id="heading-two">Heading two</h2>
-  <h3 id="heading-three">Heading three</h3>
-  <p>A paragraph with <em>emphasis</em>, <strong>strong</strong>, <del>delete</del>.</p>
-  <p>A paragraph with <a href="https://example.org" data-attr="foo">a <em>rich</em> link</a>.</p>
-  <p>A paragraph with <q cite="https://example.org">quote</q>.</p>
-  <p>A paragraph with <code class="language-python"># code</code>.</p>
-  <p>A paragraph with an image <img src="https://example.org/image.png" title="title" alt="alt text"
-      itemprop="image">.</p>
-  <p>Paragraph with a <span itemtype="https://schema.org/Boolean">true</span> and a <span
-      itemtype="https://schema.org/Boolean">false</span>.</p>
-  <p>A paragraph with other data: a <span itemtype="https://schema.stenci.la/Null">null</span>, a
-    <span itemtype="https://schema.org/Number">3.14</span>, and a <span
-      itemtype="https://schema.stenci.la/Array">[1,2]</span>.</p>
-  <p>A paragraph with an <span itemtype="https://schema.stenci.la/Object">{a:1,b:'two'}</span> and a
-    <span itemtype="https://schema.stenci.la/Entity">{type:'Person'}</span>.</p>
-  <blockquote cite="https://example.org">A blockquote</blockquote>
-  <pre><code class="language-r"># Some code
-x = c(1,2)</code></pre>
-  <pre><code class="language-js">// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
-const inc = (n) =&gt; n + 1</code></pre>
-  <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-  </ul>
-  <ol>
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-  </ol>
-  <table>
-    <tbody>
-      <tr>
-        <td>A</td>
-        <td>B</td>
-        <td>C</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-      </tr>
-    </tbody>
-  </table>
-  <hr>
-</article>`,
+describe('handle decoding HTML comments', () => {
+  const html = `<p>
+      A paragraph with
+      <!-- <span itemtype="https://schema.stenci.la/Object">{a:1,b:'two'}</span> -->
+      a nested comment
+    </p>`
 
-  node: {
-    type: 'Article',
-    title: 'Article title',
-    authors: [],
-    content: [
-      {
-        type: 'Heading',
-        depth: 1,
-        content: ['Heading one']
-      },
-      {
-        type: 'Heading',
-        depth: 2,
-        content: ['Heading two']
-      },
-      {
-        type: 'Heading',
-        depth: 3,
-        content: ['Heading three']
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'Emphasis',
-            content: ['emphasis']
-          },
-          ', ',
-          {
-            type: 'Strong',
-            content: ['strong']
-          },
-          ', ',
-          {
-            type: 'Delete',
-            content: ['delete']
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'Link',
-            target: 'https://example.org',
-            meta: {
-              attr: 'foo'
-            },
-            content: [
-              'a ',
-              {
-                type: 'Emphasis',
-                content: ['rich']
-              },
-              ' link'
-            ]
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'Quote',
-            cite: 'https://example.org',
-            content: ['quote']
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with ',
-          {
-            type: 'CodeFragment',
-            programmingLanguage: 'python',
-            text: '# code'
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with an image ',
-          {
-            type: 'ImageObject',
-            contentUrl: 'https://example.org/image.png',
-            title: 'title',
-            text: 'alt text'
-          },
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: ['Paragraph with a ', true, ' and a ', false, '.']
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with other data: a ',
-          null,
-          ', a ',
-          3.14,
-          ', and a ',
-          [1, 2],
-          '.'
-        ]
-      },
-      {
-        type: 'Paragraph',
-        content: [
-          'A paragraph with an ',
-          { a: 1, b: 'two' },
-          ' and a ',
-          { type: 'Person' },
-          '.'
-        ]
-      },
-      {
-        type: 'QuoteBlock',
-        cite: 'https://example.org',
-        content: ['A blockquote']
-      },
-      {
-        type: 'CodeBlock',
-        programmingLanguage: 'r',
-        text: '# Some code\nx = c(1,2)'
-      },
-      {
-        type: 'CodeBlock',
-        programmingLanguage: 'js',
-        text:
-          '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\nconst inc = (n) => n + 1'
-      },
-      {
-        type: 'List',
-        order: 'unordered',
-        items: [
-          { type: 'ListItem', content: ['One'] },
-          { type: 'ListItem', content: ['Two'] },
-          { type: 'ListItem', content: ['Three'] }
-        ]
-      },
-      {
-        type: 'List',
-        order: 'ascending',
-        items: [
-          { type: 'ListItem', content: ['First'] },
-          { type: 'ListItem', content: ['Second'] },
-          { type: 'ListItem', content: ['Third'] }
-        ]
-      },
-      {
-        type: 'Table',
-        rows: [
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['A'],
-                type: 'TableCell'
-              },
-              {
-                content: ['B'],
-                type: 'TableCell'
-              },
-              {
-                content: ['C'],
-                type: 'TableCell'
-              }
-            ]
-          },
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['1'],
-                type: 'TableCell'
-              },
-              {
-                content: ['2'],
-                type: 'TableCell'
-              },
-              {
-                content: ['3'],
-                type: 'TableCell'
-              }
-            ]
-          },
-          {
-            type: 'TableRow',
-            cells: [
-              {
-                content: ['4'],
-                type: 'TableCell'
-              },
-              {
-                content: ['5'],
-                type: 'TableCell'
-              },
-              {
-                content: ['6'],
-                type: 'TableCell'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        type: 'ThematicBreak'
-      }
-    ]
+  const schema = {
+    type: 'Paragraph',
+    content: ['A paragraph with ', 'a nested comment']
   }
-}
+
+  // test('encode', async () => {
+  //   expect(await e(schema)).toEqualStringContent(html)
+  // })
+
+  test('decode', async () => {
+    expect(await d(html)).toMatchObject(schema)
+  })
+})
 
 /**
  * Example for testing attributes on
  * `Link`, `CodeFragment` and `CodeBlock` nodes.
  */
 const attrs = {
-  html: `<p>A <a href=\"url\" data-attr1=\"foo\" data-attr2=\"bar baz\" data-attr3=\"\">link</a> and <code
-    data-attr1="foo">da code</code>.</p>`,
+  html: `
+    <p>A <a href="url" data-attr1="foo" data-attr2="bar baz" data-attr3="" itemtype="${encodeMicrodataItemtype(
+      'Link'
+    )}">link</a> and
+    <code itemtype="${encodeMicrodataItemtype(
+      'CodeFragment'
+    )}" data-attr1="foo">da code</code>.</p>`,
   node: {
     type: 'Paragraph',
     content: [
@@ -832,7 +740,7 @@ const dtNode: stencila.Datatable = {
   ]
 }
 const dt = {
-  html: `<div itemtype="https://schema.stenci.la/Datatable">
+  html: `<div itemtype="${encodeMicrodataItemtype('Datatable')}">
   <table>
     <thead>
       <tr>

@@ -85,7 +85,9 @@ export const encodeDoc = async (
 
   const stencila = xml.elem(
     'stencila',
-    { xmlns: `https://schema.stenci.la/v${await getSchemaVersion('major')}/xml` },
+    {
+      xmlns: `https://schema.stenci.la/v${await getSchemaVersion('major')}/xml`
+    },
     root
   )
 

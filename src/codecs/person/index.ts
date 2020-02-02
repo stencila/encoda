@@ -13,7 +13,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 
 import * as stencila from '@stencila/schema'
-// @ts-ignore
 import parseAuthor from 'parse-author'
 // @ts-ignore
 import { parseFullName } from 'parse-full-name'

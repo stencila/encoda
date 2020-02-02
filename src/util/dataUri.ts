@@ -5,6 +5,7 @@
 import { getLogger } from '@stencila/logga'
 import fs from 'fs-extra'
 import mime from 'mime'
+import path from 'path'
 import tempy from 'tempy'
 
 const log = getLogger('encoda:util')
@@ -40,6 +41,7 @@ export async function toFile(
   }
 
   const data = dataUri.split(';base64,').pop()
+  await fs.ensureDir(path.dirname(filePath))
   await fs.writeFile(filePath, data, 'base64')
 
   return { mediaType, filePath }

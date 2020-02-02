@@ -1,4 +1,4 @@
-import articleSimple from '../../__fixtures__/article-simple'
+import articleSimple from '../../__fixtures__/article/simple'
 import { ODTCodec } from './'
 
 test.skip('invertible', async () => {

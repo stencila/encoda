@@ -7,7 +7,6 @@
   ],
   "content": [
     {
-      "type": "Paragraph",
       "content": [
         "This is a test ",
         {
@@ -25,17 +24,17 @@
           "type": "CodeFragment"
         },
         " file, gets saved."
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
-      "type": "Heading",
       "depth": 1,
       "content": [
         "Inline chunks"
-      ]
+      ],
+      "type": "Heading"
     },
     {
-      "type": "Paragraph",
       "content": [
         "Here is an inline chunk ",
         {
@@ -52,10 +51,10 @@
           "type": "CodeExpression"
         },
         "."
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
-      "type": "Paragraph",
       "content": [
         "And some in another paragraph here ",
         {
@@ -72,34 +71,35 @@
           "type": "CodeExpression"
         },
         "."
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
-      "type": "Heading",
       "depth": 2,
       "content": [
         "Heading level two"
-      ]
+      ],
+      "type": "Heading"
     },
     {
-      "type": "Heading",
       "depth": 3,
       "content": [
         "Heading level three"
-      ]
+      ],
+      "type": "Heading"
     },
     {
-      "type": "Heading",
       "depth": 1,
       "content": [
         "Block chunks"
-      ]
+      ],
+      "type": "Heading"
     },
     {
-      "type": "Paragraph",
       "content": [
         "One string output:"
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
       "text": "\"Hello world\"\n",
@@ -110,10 +110,10 @@
       "type": "CodeChunk"
     },
     {
-      "type": "Paragraph",
       "content": [
         "A number and a string:"
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
       "text": "print('Hi!')\n1\n",
@@ -125,7 +125,6 @@
       "type": "CodeChunk"
     },
     {
-      "type": "Paragraph",
       "content": [
         "A ",
         {
@@ -133,7 +132,8 @@
           "type": "CodeFragment"
         },
         ":"
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
       "text": "head(cars)\n",
@@ -144,10 +144,10 @@
       "type": "CodeChunk"
     },
     {
-      "type": "Paragraph",
       "content": [
         "An image:"
-      ]
+      ],
+      "type": "Paragraph"
     },
     {
       "text": "plot(1:10)\n",

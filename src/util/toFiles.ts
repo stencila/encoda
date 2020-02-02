@@ -11,8 +11,11 @@ import { toFile } from './uri'
 /**
  * Transform a `Node` by writing any media to a file in a specified directory.
  *
- * @param docPath The path of the document
- * @param mediaPath The directory to put media files in
+ * If `docPath === undefined`, then no files are written, and the `contentUrl`
+ * of each `MediaObject` is set to `#`. This is intended for the case where
+ * content is being generated, but is not intended for distribution e.g. during testing.
+ *
+ * @param docPath The path to the document.
  * @param protocols The URI protocols to write to file e.g. `['file']` for files only
  *
  * @see bundle
@@ -20,14 +23,12 @@ import { toFile } from './uri'
  */
 export async function toFiles(
   node: stencila.Node,
-  docPath: string,
-  mediaPath: string,
+  docPath?: string,
   protocols: string[] = ['data', 'http', 'file']
 ): Promise<stencila.Node> {
-  docPath = path.resolve(docPath)
-  mediaPath = path.resolve(mediaPath)
-
-  await fs.ensureDir(mediaPath)
+  const docDir =
+    docPath !== undefined ? path.dirname(path.resolve(docPath)) : process.cwd()
+  const mediaDir = path.resolve((docPath ?? '') + '.media')
   let count = 0
   return transform(
     node,
@@ -45,17 +46,23 @@ export async function toFiles(
             if (!protocols.includes('data')) return node
           } else if (!protocols.includes('file')) return node
 
+          if (docPath === undefined)
+            return {
+              ...rest,
+              contentUrl: '#'
+            }
+
           const filePath = path.join(
-            mediaPath,
+            mediaDir,
             contentUrl.startsWith('data')
               ? `${count++}`
               : path.basename(contentUrl)
           )
+
           await toFile(contentUrl, filePath)
-          const relPath = path.relative(path.dirname(docPath), filePath)
           return {
             ...rest,
-            contentUrl: relPath
+            contentUrl: path.relative(docDir, filePath)
           }
         }
       }

@@ -8,17 +8,17 @@ import * as vfile from '../util/vfile'
 /**
  * Get the full path to a file in the closest `__fixtures__` directory
  */
-export const fixture = (filename: string, caller: number = 2): string => {
+export const fixture = (filePath: string, caller: number = 2): string => {
   let dir = callDir(caller)
   let fixtures = ''
   let attempts = 0
   do {
     fixtures = path.join(dir, '__fixtures__')
-    if (fs.pathExistsSync(fixtures)) break
+    if (fs.pathExistsSync(path.join(fixtures, filePath))) break
     dir = path.dirname(dir)
     attempts += 1
   } while (dir !== '/' && attempts < 5)
-  return path.join(fixtures, filename)
+  return path.join(fixtures, filePath)
 }
 
 /**

@@ -1,5 +1,5 @@
 import { XmdCodec } from './'
-import { simple } from './__fixtures__/simple'
+import notebook from '../../__fixtures__/article/r-notebook-simple'
 import { snapshot, fixtureToJson, nodeToString } from '../../__tests__/helpers'
 
 const { decode, encode } = new XmdCodec()
@@ -21,7 +21,7 @@ describe('decode', () => {
 describe('encode', () => {
   const toXmd = nodeToString(encode)
 
-  test('simple.ts', async () => {
-    expect(await toXmd(simple)).toMatchFile(snapshot('simple.Rmd'))
+  test('r-notebook-simple', async () => {
+    expect(await toXmd(notebook)).toMatchFile(snapshot('r-notebook-simple.Rmd'))
   })
 })

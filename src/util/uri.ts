@@ -29,8 +29,10 @@ export async function toFile(
     await download(uri, filePath)
     return { mediaType, filePath }
   } else {
-    if ((await fs.pathExists(uri)) && uri !== filePath)
+    if ((await fs.pathExists(uri)) && uri !== filePath) {
+      await fs.ensureDir(path.dirname(filePath))
       await fs.copyFile(uri, filePath)
+    }
     return { mediaType, filePath }
   }
 }
