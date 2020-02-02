@@ -1298,23 +1298,30 @@ function encodeHeading(
 /**
  * Decode a JATS `<p>` element to an array of Stencila block
  * content nodes.
+ *
+ * This function handles the 'breaking apart' of a paragraph
+ * when an element inside it is decoded to block content
  */
 function decodeParagraph(
   elem: xml.Element,
   state: DecodeState
 ): stencila.Node[] {
   const nodes = decodeElements(elem.elements ?? [], state)
-
-  const para = stencila.paragraph({ content: [] })
-
-  const blocks: stencila.Node[] = [para]
+  let para: stencila.Paragraph | undefined = stencila.paragraph({ content: [] })
+  const blocks: stencila.Node[] = []
   for (const node of nodes) {
     if (stencila.isInlineContent(node)) {
-      para.content.push(node)
+      if (para === undefined) para = stencila.paragraph({ content: [node] })
+      else para.content.push(node)
     } else {
+      if (para !== undefined) {
+        blocks.push(para)
+        para = undefined
+      }
       blocks.push(node)
     }
   }
+  if (para !== undefined) blocks.push(para)
   return blocks
 }
 
@@ -1706,7 +1713,9 @@ function encodeFigure(
  * not available, uses an image as an alternative (which is wrapped in
  * a paragraph for display formulas).
  */
-function decodeMath(formula: xml.Element): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
+function decodeMath(
+  formula: xml.Element
+): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
   const inline = formula.name === 'inline-formula'
   const mathml = first(formula, 'mml:math')
 
@@ -1714,12 +1723,13 @@ function decodeMath(formula: xml.Element): (stencila.Math | stencila.ImageObject
     const graphic = first(formula, ['graphic', 'inline-graphic'])
     if (graphic === null) return []
     const image = decodeGraphic(graphic, inline)
-    return inline ? image : [stencila.paragraph({content: image})]
+    return inline ? image : [stencila.paragraph({ content: image })]
   }
 
   // Wrapper is needed to dump the entire math element
   const text = xml.dump(elem('wrapper', mathml))
-  return [(inline ? stencila.mathFragment : stencila.mathBlock)({
+  return [
+    (inline ? stencila.mathFragment : stencila.mathBlock)({
       mathLanguage: 'mathml',
       text
     })

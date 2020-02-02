@@ -1488,6 +1488,16 @@ content:
           inline: true
           linkType: simple
       - '-claimant is defined by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e010.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         In this context a Nash equilibrium is a pair of claims, such that, if
         each claim is known to the other traveler then neither has reason to
@@ -1596,14 +1606,6 @@ content:
           inline: true
           linkType: simple
       - ' on average claim levels.'
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e010.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Figure
     id: pone-0093988-g001
     caption:
@@ -1732,14 +1734,6 @@ content:
           inline: true
           linkType: simple
       - '-strategist defined by '
-      - 'where '
-      - type: ImageObject
-        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e033'
-        format: ''
-        meta:
-          inline: true
-          linkType: simple
-      - ' is a cost parameter. The MEC game suffers from the opposite problem to that of the TD game. Instead of exhibiting a single, deficient, Nash equilibrium, the MEC game exhibits multiple Nash equilibria; it is easy to see that any common effort level is a Nash equilibrium. Moreover, standard refinements of the Nash equilibrium concept do not select a subset of the equilibria. For instance, the Nash equilibria are strict, and thus trembling hand-perfect. Hence, classical game theory provides no obvious criterion to choose among them.'
   - type: Paragraph
     content:
       - type: ImageObject
@@ -1748,6 +1742,16 @@ content:
         meta:
           inline: false
           linkType: simple
+  - type: Paragraph
+    content:
+      - 'where '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e033'
+        format: ''
+        meta:
+          inline: true
+          linkType: simple
+      - ' is a cost parameter. The MEC game suffers from the opposite problem to that of the TD game. Instead of exhibiting a single, deficient, Nash equilibrium, the MEC game exhibits multiple Nash equilibria; it is easy to see that any common effort level is a Nash equilibrium. Moreover, standard refinements of the Nash equilibrium concept do not select a subset of the equilibria. For instance, the Nash equilibria are strict, and thus trembling hand-perfect. Hence, classical game theory provides no obvious criterion to choose among them.'
   - type: Paragraph
     content:
       - >-
@@ -1992,6 +1996,16 @@ content:
         . For such games the role played by errors is potentially important. To
         be precise, let us consider the class of continuous-strategy games with
         payoff function given by 
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e038.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'where '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e039'
@@ -2032,6 +2046,16 @@ content:
           inline: true
           linkType: simple
       - '-strategist in such a game being given by a function of the form '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e044.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'where '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e045'
@@ -2153,22 +2177,6 @@ content:
           inline: true
           linkType: simple
       - ' as the smoothing function. In the limit in which the smoothing function tends to the Heaviside step function the expected payoff (4) approaches the payoff (3).'
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e038.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e044.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Paragraph
     content:
       - >-
@@ -2346,6 +2354,16 @@ content:
         defined for continuous strategies. The continuous forms of the TD and
         MEC games are examples of a broad class of continuous-strategy 2-person
         games with payoff functions given by 
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e062.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'for affine functions '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e063'
@@ -2381,7 +2399,27 @@ content:
         meta:
           inline: true
           linkType: simple
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e068.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'as '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e069.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         Games of this form have discontinuous payoff functions. Such a
         discontinuous payoff function is only possible in an idealized world
@@ -2463,30 +2501,6 @@ content:
       - ' as the smoothing parameter.'
   - type: Paragraph
     content:
-      - type: ImageObject
-        contentUrl: e062.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e068.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e069.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
       - >-
         To obtain the smoothed version of the game defined by (7) we simply
         replace 
@@ -2504,14 +2518,6 @@ content:
           inline: true
           linkType: simple
       - '. Thus, the payoff function of the smoothed game is given by '
-      - 'We note that for sufficiently large values of '
-      - type: ImageObject
-        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e083'
-        format: ''
-        meta:
-          inline: true
-          linkType: simple
-      - ' the smoothed game approximates the original game arbitrarily well.'
   - type: Paragraph
     content:
       - type: ImageObject
@@ -2522,6 +2528,16 @@ content:
           linkType: simple
   - type: Paragraph
     content:
+      - 'We note that for sufficiently large values of '
+      - type: ImageObject
+        contentUrl: 'info:doi/10.1371/journal.pone.0093988.e083'
+        format: ''
+        meta:
+          inline: true
+          linkType: simple
+      - ' the smoothed game approximates the original game arbitrarily well.'
+  - type: Paragraph
+    content:
       - 'A convenient '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e084'
@@ -2530,9 +2546,6 @@ content:
           inline: true
           linkType: simple
       - '-parameter family of smoothing functions is given by '
-      - >-
-        and we shall use this family when explicit smoothing functions are
-        required.
   - type: Paragraph
     content:
       - type: ImageObject
@@ -2541,6 +2554,11 @@ content:
         meta:
           inline: false
           linkType: simple
+  - type: Paragraph
+    content:
+      - >-
+        and we shall use this family when explicit smoothing functions are
+        required.
   - type: Heading
     id: s2a
     depth: 2
@@ -2586,6 +2604,16 @@ content:
           inline: true
           linkType: simple
       - '-strategist is given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e091.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         We now define a variant of the TD game defined by (10), in which the
         discontinuity in the payoff function is removed by the smoothing
@@ -2607,6 +2635,16 @@ content:
       - >-
         . We therefore have that the payoff function for the smoothed TD game is
         given by 
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e094.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         We shall assume, without loss of generality, that the strategy space in
         the smoothed TD game is the interval 
@@ -2626,22 +2664,6 @@ content:
       - >-
         . With the payoff function defined by (11), the smoothed TD game
         represents a natural variant of the original TD game.
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e091.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e094.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Heading
     id: s2b
     depth: 2
@@ -2695,7 +2717,27 @@ content:
           inline: true
           linkType: simple
       - '-strategist is given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e103.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'Using (12) allows us to write the payoff function for the MEC game as '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e104.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         Without loss of generality we can take the strategy space to be the unit
         interval (i.e. 
@@ -2729,22 +2771,6 @@ content:
       - ' are Hicks inefficient.'
   - type: Paragraph
     content:
-      - type: ImageObject
-        contentUrl: e103.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e104.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
       - 'To obtain the smoothed MEC game we again replace '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e109'
@@ -2760,9 +2786,6 @@ content:
           inline: true
           linkType: simple
       - '. The payoff function of the smoothed MEC game is therefore given by '
-      - >-
-        With the payoff function defined by (14), the smoothed MEC game
-        represents a natural variant of the original MEC game.
   - type: Paragraph
     content:
       - type: ImageObject
@@ -2771,6 +2794,11 @@ content:
         meta:
           inline: false
           linkType: simple
+  - type: Paragraph
+    content:
+      - >-
+        With the payoff function defined by (14), the smoothed MEC game
+        represents a natural variant of the original MEC game.
   - type: Heading
     id: s2c
     depth: 2
@@ -3014,6 +3042,16 @@ content:
       - >-
         The adaptive dynamics of smoothed games with payoff function defined by
         (8) may be analyzed as follows. The invasion fitness is given by 
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e140.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'Thus, the selection gradient '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e141'
@@ -3022,9 +3060,29 @@ content:
           inline: true
           linkType: simple
       - ' is given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e142.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - >-
         The adaptive dynamics of such a game is therefore determined by the
         differential equation 
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e143.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'The existence of singular strategies '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e144'
@@ -3068,30 +3126,6 @@ content:
           inline: true
           linkType: simple
       - . We shall now apply these results to the TD and MEC games.
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e140.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e142.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e143.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Heading
     id: s2d
     depth: 2
@@ -3137,6 +3171,16 @@ content:
           inline: true
           linkType: simple
       - ' is given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e155.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'and the adaptive dynamics of '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e156'
@@ -3145,6 +3189,16 @@ content:
           inline: true
           linkType: simple
       - ' is consequently determined by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e157.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'Since '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e158'
@@ -3272,22 +3326,6 @@ content:
           inline: true
           linkType: simple
       - .
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e155.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e157.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Heading
     id: s2e
     depth: 2
@@ -3333,6 +3371,16 @@ content:
           inline: true
           linkType: simple
       - ' is given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e180.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'and the adaptive dynamics of '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e181'
@@ -3341,6 +3389,16 @@ content:
           inline: true
           linkType: simple
       - ' is therefore determined by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e182.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'Again, since '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e183'
@@ -3469,22 +3527,6 @@ content:
         . Since the adaptive dynamics of the smoothed MEC game is independent of
         the smoothing function, these results hold for any smoothing of the
         game.
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e180.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e182.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Paragraph
     content:
       - >-
@@ -3777,6 +3819,16 @@ content:
           inline: true
           linkType: simple
       - ' given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e232.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'the focal individual '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e233'
@@ -3808,14 +3860,6 @@ content:
           inline: true
           linkType: simple
       - ' times.'
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e232.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Paragraph
     content:
       - >-
@@ -3918,6 +3962,16 @@ content:
           inline: true
           linkType: simple
       - ') is given by '
+  - type: Paragraph
+    content:
+      - type: ImageObject
+        contentUrl: e249.png
+        format: ''
+        meta:
+          inline: false
+          linkType: simple
+  - type: Paragraph
+    content:
       - 'where '
       - type: ImageObject
         contentUrl: 'info:doi/10.1371/journal.pone.0093988.e250'
@@ -3938,14 +3992,6 @@ content:
         The results presented in the next section on the evolutionary dynamics
         of the TD and MEC games arise from simulations using the Fermi update
         rule (22).
-  - type: Paragraph
-    content:
-      - type: ImageObject
-        contentUrl: e249.png
-        format: ''
-        meta:
-          inline: false
-          linkType: simple
   - type: Heading
     id: s3
     depth: 1

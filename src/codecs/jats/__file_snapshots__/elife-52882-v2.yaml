@@ -5200,9 +5200,6 @@ content:
           <mml:math
           id="inf187"><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:math>
       - ' in the form:'
-      - using
-      - and
-      - with
   - type: MathBlock
     mathLanguage: mathml
     text: >-
@@ -5210,6 +5207,9 @@ content:
       id="m1"><mml:mrow><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
       stretchy="false">(</mml:mo><mml:mi>x</mml:mi><mml:mo
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:msqrt><mml:mrow><mml:mn>2</mml:mn><mml:mo>⁢</mml:mo><mml:mi>π</mml:mi></mml:mrow></mml:msqrt></mml:mfrac><mml:mo>⁢</mml:mo><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mrow><mml:mfrac><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>2</mml:mn></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mfrac><mml:mi>x</mml:mi><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mfrac><mml:mo>)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:msup></mml:mrow><mml:mo>+</mml:mo><mml:mrow><mml:mfrac><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mi>f</mml:mi></mml:msub></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mn>2</mml:mn></mml:mfrac><mml:mo>⁢</mml:mo><mml:msup><mml:mrow><mml:mo>(</mml:mo><mml:mfrac><mml:mi>x</mml:mi><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:mfrac><mml:mo>)</mml:mo></mml:mrow><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:mrow></mml:msup></mml:mrow></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - using
   - type: MathBlock
     mathLanguage: mathml
     text: >-
@@ -5221,11 +5221,17 @@ content:
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow><mml:mo>]</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:msqrt></mml:mrow><mml:mrow><mml:msubsup><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow><mml:mn>2</mml:mn></mml:msubsup><mml:mo>+</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:mrow><mml:mo
       stretchy="false">(</mml:mo><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow><mml:mo
       stretchy="false">)</mml:mo></mml:mrow></mml:mrow></mml:mrow></mml:mfrac></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - and
   - type: MathBlock
     mathLanguage: mathml
     text: >-
       <mml:math
       id="m3"><mml:mrow><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>f</mml:mi><mml:mo>⁢</mml:mo><mml:mi>w</mml:mi><mml:mo>⁢</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mrow><mml:msub><mml:mi>μ</mml:mi><mml:mrow><mml:mi>a</mml:mi><mml:mo>⁢</mml:mo><mml:mi>b</mml:mi><mml:mo>⁢</mml:mo><mml:mi>s</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msqrt><mml:mrow><mml:mi>π</mml:mi><mml:mo>/</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msqrt></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub><mml:mo>⁢</mml:mo><mml:msub><mml:mi>σ</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mrow><mml:mrow><mml:mn>1</mml:mn><mml:mo>-</mml:mo><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mo>⁢</mml:mo><mml:mi>u</mml:mi><mml:mo>⁢</mml:mo><mml:mi>r</mml:mi><mml:mo>⁢</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:math>
+  - type: Paragraph
+    content:
+      - with
   - type: MathBlock
     mathLanguage: mathml
     text: >-

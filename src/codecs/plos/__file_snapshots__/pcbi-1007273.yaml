@@ -2385,6 +2385,14 @@ content:
           - G
       - |2
          as:
+  - type: MathBlock
+    mathLanguage: mathml
+    text: >-
+      <mml:math display="block" id="M1"><mml:mtable
+      displaystyle="true"><mml:mtr><mml:mtd
+      columnalign="right"><mml:mrow><mml:mi>W</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>N</mml:mi><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>C</mml:mi><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>)</mml:mo><mml:mo>+</mml:mo><mml:mi>C</mml:mi><mml:mo>(</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
+  - type: Paragraph
+    content:
       - |-
 
         where 
@@ -2410,12 +2418,6 @@ content:
       - >-
         . By the ends, we mean the first and second half of the contig if
         divided at the midpoint along its length.
-  - type: MathBlock
-    mathLanguage: mathml
-    text: >-
-      <mml:math display="block" id="M1"><mml:mtable
-      displaystyle="true"><mml:mtr><mml:mtd
-      columnalign="right"><mml:mrow><mml:mi>W</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>N</mml:mi><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>C</mml:mi><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>)</mml:mo><mml:mo>+</mml:mo><mml:mi>C</mml:mi><mml:mo>(</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
   - type: Paragraph
     content:
       - >-
@@ -2613,6 +2615,18 @@ content:
           accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>)</mml:mo></mml:mrow></mml:math>
       - |
         . With this, the score for a pair of contigs is defined as follows:
+  - type: MathBlock
+    mathLanguage: mathml
+    text: >-
+      <mml:math display="block" id="M6"><mml:mtable
+      displaystyle="true"><mml:mtr><mml:mtd
+      columnalign="right"><mml:mrow><mml:mi>S</mml:mi><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mi>e</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:munder><mml:mtext>min</mml:mtext><mml:mrow><mml:msup><mml:mi>x</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mover
+      accent="true"><mml:mi>u</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>x</mml:mi><mml:mo>}</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mover
+      accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>y</mml:mi><mml:mo>}</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>σ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:msup><mml:mi>x</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:munder><mml:mtext>min</mml:mtext><mml:mrow><mml:mi>x</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mover
+      accent="true"><mml:mi>u</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mover
+      accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>σ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
+  - type: Paragraph
+    content:
       - |-
 
         where 
@@ -2688,16 +2702,6 @@ content:
         content:
           - E
       - '|)) since we do not use the edge weights.'
-  - type: MathBlock
-    mathLanguage: mathml
-    text: >-
-      <mml:math display="block" id="M6"><mml:mtable
-      displaystyle="true"><mml:mtr><mml:mtd
-      columnalign="right"><mml:mrow><mml:mi>S</mml:mi><mml:mi>c</mml:mi><mml:mi>o</mml:mi><mml:mi>r</mml:mi><mml:mi>e</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mi>v</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:munder><mml:mtext>min</mml:mtext><mml:mrow><mml:msup><mml:mi>x</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mover
-      accent="true"><mml:mi>u</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>x</mml:mi><mml:mo>}</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mover
-      accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>-</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>y</mml:mi><mml:mo>}</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>σ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:msup><mml:mi>x</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>y</mml:mi><mml:mo>′</mml:mo></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:munder><mml:mtext>min</mml:mtext><mml:mrow><mml:mi>x</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo><mml:mover
-      accent="true"><mml:mi>u</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo>∈</mml:mo><mml:mrow><mml:mo>{</mml:mo><mml:mi>v</mml:mi><mml:mo>,</mml:mo><mml:mover
-      accent="true"><mml:mi>v</mml:mi><mml:mo>¯</mml:mo></mml:mover><mml:mo>}</mml:mo></mml:mrow></mml:mrow></mml:munder><mml:mi>σ</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>,</mml:mo><mml:mi>y</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mfrac></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
   - type: Heading
     id: sec008
     depth: 2
