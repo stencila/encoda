@@ -50,12 +50,14 @@ const log = getLogger('encoda:html')
 // Ensures unique `id` attributes (e.g. for headings)
 const slugger = new GithubSlugger()
 
+const headlineMaxLength = 110
+
 /**
  * Generate placeholder using given dimensions and text.
  */
 const placeholderImg = (text: string, width: number, height = width): string =>
   `https://via.placeholder.com/${width}x${height}/dbdbdb/4a4a4a.png?text=${encodeURI(
-    truncate(text, 109)
+    truncate(text, headlineMaxLength)
   )}`
 
 /**
@@ -717,7 +719,7 @@ function encodeTitleProperty(
 ): HTMLElement | undefined {
   if (title === undefined) return undefined
 
-  const headline = truncate(stringifyContent(title), 109)
+  const headline = truncate(stringifyContent(title), headlineMaxLength)
 
   return h(
     tag,
