@@ -15,6 +15,7 @@ export type Types = {
   Null: 'Null'
   Boolean: 'Boolean'
   Number: 'Number'
+  Text: 'Text'
   Object: 'Object'
   Array: 'Array'
 } & stencila.Types
@@ -114,6 +115,7 @@ export function decodeMicrodataItemtype(itemtype: string): keyof Types {
   switch (id) {
     case 'schema:Boolean':
     case 'schema:Number':
+    case 'schema:Text':
     case 'stencila:Null':
     case 'stencila:Object':
     case 'stencila:Array':
@@ -148,6 +150,7 @@ export function encodeMicrodataItemtype(type: keyof Types): string | undefined {
   switch (type) {
     case 'Boolean':
     case 'Number':
+    case 'Text':
       return `http://schema.org/${type}`
     case 'Null':
     case 'Object':
