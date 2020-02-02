@@ -25,6 +25,8 @@ import h from 'hyperscript'
 import { html as beautifyHtml } from 'js-beautify'
 import jsdom from 'jsdom'
 import JSON5 from 'json5'
+// @ts-ignore
+import MathJax from 'mathjax-node'
 import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
@@ -47,10 +49,57 @@ const document = window.document
 
 const log = getLogger('encoda:html')
 
+// The maximum length for a Article headline
+const headlineMaxLength = 110
+
 // Ensures unique `id` attributes (e.g. for headings)
 const slugger = new GithubSlugger()
 
-const headlineMaxLength = 110
+/**
+ * MathJax typesetting promises.
+ *
+ * A global list of promises that need to be awaited when encoding a
+ * node. See `mathJaxTypeset`. This is a bit hackish but allows the use
+ * of async MathJax rendering within a deeply nested `encode*` function,
+ * with out having to make all the `encode*` functions async.
+ */
+let mathJaxPromises: Promise<unknown>[] = []
+
+/**
+ * Reset the set of MathJax promises to be awaited.
+ */
+function mathJaxInit(): void {
+  mathJaxPromises = []
+}
+
+/**
+ * Render math as HTML using MathJax and set the `innerHTML` of the
+ * `elem`.
+ */
+function mathJaxTypeset(elem: HTMLElement, options: unknown): void {
+  mathJaxPromises.push(
+    MathJax.typeset(options)
+      .then((result: any) => {
+        elem.innerHTML = result.html
+      })
+      .catch((error: Error) => log.error(error))
+  )
+}
+
+/**
+ * Wait for all MathJax typesetting promises and, if there are any,
+ * return the necessary CSS to insert into the page.
+ */
+async function mathJaxFinish(): Promise<string | undefined> {
+  if (mathJaxPromises.length === 0) return undefined
+
+  await Promise.all(mathJaxPromises)
+
+  const result = await MathJax.typeset({ css: true })
+  const { errors, css } = result
+  if (errors) errors.map((error: string) => log.error(error))
+  return css as string
+}
 
 /**
  * Generate placeholder using given dimensions and text.
@@ -203,15 +252,24 @@ export class HTMLCodec extends Codec implements Codec {
     // in order to make them unique
     slugger.reset()
 
+    mathJaxInit()
+
     const nodeToEncode = isBundle
       ? await bundle(node)
       : await toFiles(node, filePath, ['data', 'file'])
     let dom: HTMLHtmlElement = encodeNode(nodeToEncode) as HTMLHtmlElement
 
+    const mathjaxCss = await mathJaxFinish()
+
     if (isStandalone) {
       const nodeToEncode = isBundle ? await bundle(node) : node
       const { title = 'Untitled' } = getArticleMetaData(nodeToEncode)
-      dom = await generateHtmlElement(stringifyContent(title), [dom], options)
+      dom = await generateHtmlElement(
+        stringifyContent(title),
+        [dom],
+        mathjaxCss,
+        options
+      )
     }
 
     const beautifulHtml = beautify(dom.outerHTML)
@@ -500,9 +558,8 @@ const encodeNode = (node: stencila.Node): Node => {
       return encodeQuote(node as stencila.Quote)
 
     case 'MathBlock':
-      return encodeMath(node as stencila.MathBlock)
     case 'MathFragment':
-      return encodeMath(node as stencila.MathFragment)
+      return encodeMath(node as stencila.Math)
 
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
@@ -545,6 +602,7 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
 async function generateHtmlElement(
   title = 'Untitled',
   body: Node[] = [],
+  css?: string,
   options: GlobalEncodeOptions = defaultEncodeOptions
 ): Promise<HTMLHtmlElement> {
   const { isBundle = false, theme } = options
@@ -584,6 +642,10 @@ async function generateHtmlElement(
     )
   }
 
+  const pageCss = h('style', {
+    innerHTML: css
+  })
+
   return h(
     'html',
     h(
@@ -607,7 +669,8 @@ async function generateHtmlElement(
         src:
           'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
         type: 'text/javascript'
-      })
+      }),
+      pageCss
     ),
     h('body', body)
   )
@@ -1798,30 +1861,50 @@ function encodeImageObject(
  * `text` in HTML and using KaTeX for genenerating display HTML (since MathMl is
  * not widely supported).
  */
-function decodeMath(
-  elem: HTMLElement
-): stencila.MathFragment | stencila.MathBlock {
+function decodeMath(elem: HTMLElement): stencila.Math {
   const text = elem.innerHTML
   const mathLanguage = 'mathml'
   const display = elem.getAttribute('display')
-  if (display === 'block') return stencila.mathBlock({ text, mathLanguage })
-  else return stencila.mathFragment({ text, mathLanguage })
+  return (display === 'block' ? stencila.mathBlock : stencila.mathFragment)({
+    text,
+    mathLanguage
+  })
 }
 
 /**
- * Encode a Stencila `Math` node to a HTML `<math>` element.
- * TODO: `<math>` is not a valid HTML element, and not rendered by browser.
- * @see - https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Using_MathML
+ * Encode a Stencila `Math` node to a HTML.
+ *
+ * Uses MathJax to render math as HTML because (a) native MathML support is
+ * [limited](https://caniuse.com/#feat=mathml) and (b) MathJax rendering in the browser is slow.
+ * See https://joa.sh/posts/2015-09-14-prerender-mathjax.html for pros and
+ * cons of this approach.
+ *
+ * In the future this may be replace by a custom web component to allow for
+ * editing math, similar to `encodeCodeChunk`.
  */
-function encodeMath(
-  math: stencila.MathFragment | stencila.MathBlock
-): HTMLElement {
-  return h('math', {
+function encodeMath(math: stencila.Math): HTMLElement {
+  const { text, mathLanguage } = math
+  const format = mathLanguage?.toLowerCase()
+  const elem = h('span', {
     attrs: {
+      ...encodeMicrodataAttrs(math),
       display: stencila.isA('MathFragment', math) ? 'inline' : 'block'
-    },
-    innerHTML: math.text
+    }
   })
+  mathJaxTypeset(elem, {
+    math: text,
+    format:
+      format === 'mathml'
+        ? 'MathML'
+        : format === 'tex'
+        ? 'TeX'
+        : format === 'asciimath'
+        ? 'AsciiMath'
+        : format,
+    html: true,
+    css: true
+  })
+  return elem
 }
 
 /**

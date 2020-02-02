@@ -50,6 +50,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import kitchenSink from '../../__fixtures__/article/kitchen-sink'
+import mathArticle from '../../__fixtures__/article/math'
 import { readFixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 import { defaultEncodeOptions } from '../types'
@@ -202,35 +203,8 @@ describe('Encode & Decode CodeExpression nodes', () => {
 })
 
 describe('Encode & decode Math nodes', () => {
-  const mathml = `<mrow><apply><minus></minus><ci>a</ci><ci>b</ci></apply></mrow>`
-  const frag = stencila.mathFragment({ text: mathml, mathLanguage: 'mathml' })
-  const block = stencila.mathBlock({ text: mathml, mathLanguage: 'mathml' })
-
-  test('encode', async () => {
-    expect(await e(frag)).toBe(`<math display="inline">
-  <mrow>
-    <apply>
-      <minus></minus>
-      <ci>a</ci>
-      <ci>b</ci>
-    </apply>
-  </mrow>
-</math>`)
-    expect(await e(block)).toBe(`<math display="block">
-  <mrow>
-    <apply>
-      <minus></minus>
-      <ci>a</ci>
-      <ci>b</ci>
-    </apply>
-  </mrow>
-</math>`)
-  })
-
-  test('decode', async () => {
-    expect(await d(`<math display="inline">${mathml}</math>`)).toEqual(frag)
-    expect(await d(`<math display="block">${mathml}</math>`)).toEqual(block)
-  })
+  test('article/math', async () =>
+    expect(await e(mathArticle)).toMatchFile(snapshot('article-math.html')))
 })
 
 describe('Encode & Decode cite group nodes', () => {
@@ -536,7 +510,7 @@ const nodes: [string, Entity][] = [
   ['VideoObject', videoObject({ contentUrl: '' })]
 ]
 
-describe.only('Encode with Microdata', () => {
+describe('Encode with Microdata', () => {
   test.each(nodes)(
     '%s has itemscope and itemtype',
     // @ts-ignore
