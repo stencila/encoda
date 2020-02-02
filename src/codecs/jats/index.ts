@@ -258,9 +258,6 @@ function decodeArticle(article: xml.Element): stencila.Article {
 
 /**
  * Encode a Stencila `Article` as a JATS `<article>`.
- *
- * Extracts front- and back-matter, from `<fronnt>` and
- * `<back>` respectively and decodes `<body>`.
  */
 function encodeArticle(article: stencila.Article): xml.Element {
   const {
@@ -273,9 +270,12 @@ function encodeArticle(article: stencila.Article): xml.Element {
 
   const front = elem(
     'front',
-    encodeTitle(title),
-    encodeAuthors(authors),
-    encodeAbstract(description)
+    elem(
+      'article-meta',
+      encodeTitle(title),
+      encodeAuthors(authors),
+      encodeAbstract(description)
+    )
   )
 
   const state: EncodeState = initialEncodeState()
