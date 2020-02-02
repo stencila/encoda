@@ -220,15 +220,17 @@ encoda convert paragraph.md - --to yaml
 
 Use the `--zip` option to create a Zip archive with the outputs of conversion. With `--zip=yes` a zip archive will always be created. With `--zip=maybe`, a zip archive will be created if there are more than two output files. This can be useful for formats such as HTML and Markdown, for which images and other media are stored in a sibling folder.
 
-| Option         | Description                                                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------- |
-| `--from`       | The format of the input content e.g. `--from md`                                                           |
-| `--to`         | The format for the output content e.g. `--to html`                                                         |
-| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`                  |
-| `--standalone` | Generate a standalone document, not a fragment (default `true`)                                            |
-| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)                             |
-| `--zip`        | Create `.zip` archive containing output files? `no` (default), `yes`, `maybe` (only if more than one file) |
-| `--debug`      | Print debugging information                                                                                |
+| Option    | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `--from`  | The format of the input content e.g. `--from md`                                                    |
+| `--to`    | The format for the output content e.g. `--to html`                                                  |
+| `--theme` | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife`. Either a |
+
+[Thema theme name](https://github.com/stencila/thema#available-themes) or a path/URL to a directory containing a
+`styles.css` and a `index.js` file. |
+| `--standalone` | Generate a standalone document, not a fragment (default `true`) |
+| `--bundle` | Bundle all assets (e.g images, CSS and JS) into the document (default `false`) |
+| `--debug` | Print debugging information |
 
 ### Using with Executa
 
