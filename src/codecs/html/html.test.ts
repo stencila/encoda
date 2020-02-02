@@ -3,7 +3,6 @@ import stencila, {
   audioObject,
   cite,
   citeGroup,
-  code,
   codeBlock,
   codeChunk,
   codeExpression,
@@ -25,6 +24,8 @@ import stencila, {
   list,
   listItem,
   mark,
+  mathBlock,
+  mathFragment,
   mediaObject,
   organization,
   paragraph,
@@ -50,6 +51,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import kitchenSink from '../../__fixtures__/article/kitchen-sink'
+import mathArticle from '../../__fixtures__/article/math'
 import { readFixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 import { defaultEncodeOptions } from '../types'
@@ -199,6 +201,11 @@ describe('Encode & Decode CodeExpression nodes', () => {
     const c = await d(codeExpressionHTML)
     expect(c).toMatchObject(codeExpressionNode)
   })
+})
+
+describe('Encode & decode Math nodes', () => {
+  test('article/math', async () =>
+    expect(await e(mathArticle)).toMatchFile(snapshot('article-math.html')))
 })
 
 describe('Encode & Decode cite group nodes', () => {
@@ -438,7 +445,6 @@ const nodes: [string, Entity][] = [
     'CiteGroup',
     citeGroup({ items: [cite({ target: '#id1' }), cite({ target: '#id2' })] })
   ],
-  ['Code', code({ text: 'a + b' })],
   ['CodeBlock', codeBlock({ text: 'a + b' })],
   ['CodeChunk', codeChunk({ text: 'a + b' })],
   // ['CodeError', codeError()],
@@ -468,9 +474,8 @@ const nodes: [string, Entity][] = [
   ['List', list({ items: [] })],
   ['ListItem', listItem({ content: [] })],
   ['Mark', mark({ content: [] })],
-  // ['Math', math({ text: '1 + 2' })],
-  // ['MathBlock', mathBlock({ text: '1 + 2' })],
-  // ['MathFragment', mathFragment({ text: '1 + 2' })],
+  ['MathBlock', mathBlock({ text: '1 + 2' })],
+  ['MathFragment', mathFragment({ text: '1 + 2' })],
   ['MediaObject', mediaObject({ contentUrl: '' })],
   ['Organization', organization({ name: 'Mega Corp' })],
   ['Paragraph', paragraph({ content: [] })],
@@ -504,7 +509,7 @@ const nodes: [string, Entity][] = [
   ['VideoObject', videoObject({ contentUrl: '' })]
 ]
 
-describe.only('Encode with Microdata', () => {
+describe('Encode with Microdata', () => {
   test.each(nodes)(
     '%s has itemscope and itemtype',
     // @ts-ignore

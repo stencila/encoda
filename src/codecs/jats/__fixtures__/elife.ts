@@ -22,7 +22,7 @@ import path from 'path'
  * for potential minor problems with prettifying XML.
  */
 const create = async (id: number, version: number = 1) => {
-  const url = `https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-${id}-v${version}.xml`
+  const url = `https://elifesciences.org/articles/${id}v${version}.xml`
   const jats = await http.get(url)
   const doc = xml.load(jats.body, { compact: false }) as xml.Element
 

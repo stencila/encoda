@@ -1119,7 +1119,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeMark(elem, state, 'Superscript')
     case 'sub':
       return decodeMark(elem, state, 'Subscript')
-    case 'mml:math':
+    case 'inline-formula':
+    case 'disp-formula':
       return decodeMath(elem)
     case 'break':
       return decodeBreak()
@@ -1158,8 +1159,9 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMark(node as stencila.Superscript, state, 'sup')
     case 'Subscript':
       return encodeMark(node as stencila.Subscript, state, 'sub')
-    case 'Math':
-      return encodeMath(node as object)
+    case 'MathFragment':
+    case 'MathBlock':
+      return encodeMath(node as stencila.Math)
     case 'Figure':
       return encodeFigure(node as stencila.Figure, state)
     case 'ImageObject': {
@@ -1296,23 +1298,30 @@ function encodeHeading(
 /**
  * Decode a JATS `<p>` element to an array of Stencila block
  * content nodes.
+ *
+ * This function handles the 'breaking apart' of a paragraph
+ * when an element inside it is decoded to block content
  */
 function decodeParagraph(
   elem: xml.Element,
   state: DecodeState
 ): stencila.Node[] {
   const nodes = decodeElements(elem.elements ?? [], state)
-
-  const para = stencila.paragraph({ content: [] })
-
-  const blocks: stencila.Node[] = [para]
+  let para: stencila.Paragraph | undefined = stencila.paragraph({ content: [] })
+  const blocks: stencila.Node[] = []
   for (const node of nodes) {
     if (stencila.isInlineContent(node)) {
-      para.content.push(node)
+      if (para === undefined) para = stencila.paragraph({ content: [node] })
+      else para.content.push(node)
     } else {
+      if (para !== undefined) {
+        blocks.push(para)
+        para = undefined
+      }
       blocks.push(node)
     }
   }
+  if (para !== undefined) blocks.push(para)
   return blocks
 }
 
@@ -1697,26 +1706,43 @@ function encodeFigure(
 }
 
 /**
- * Decode a JATS `<mml:math>` element to a Stencila `Math` node.
+ * Decode a JATS `<inline-formula>` or `<disp-formula>` element to a
+ * Stencila `MathFragment`, `MathBlock` or `ImageObject` node.
+ *
+ * This function preferentially uses `<mml:math>` but, if that is
+ * not available, uses an image as an alternative (which is wrapped in
+ * a paragraph for display formulas).
  */
-function decodeMath(math: xml.Element): [object] {
+function decodeMath(
+  formula: xml.Element
+): (stencila.Math | stencila.ImageObject | stencila.Paragraph)[] {
+  const inline = formula.name === 'inline-formula'
+  const mathml = first(formula, 'mml:math')
+
+  if (mathml === null) {
+    const graphic = first(formula, ['graphic', 'inline-graphic'])
+    if (graphic === null) return []
+    const image = decodeGraphic(graphic, inline)
+    return inline ? image : [stencila.paragraph({ content: image })]
+  }
+
+  // Wrapper is needed to dump the entire math element
+  const text = xml.dump(elem('wrapper', mathml))
   return [
-    {
-      type: 'Math',
-      mathLanguage: 'MathML',
-      // Wrapper is needed to dump the entire math element
-      text: xml.dump(elem('wrapper', math))
-    }
+    (inline ? stencila.mathFragment : stencila.mathBlock)({
+      mathLanguage: 'mathml',
+      text
+    })
   ]
 }
 
 /**
  * Encode a Stencila `Math` node as a JATS `<mml:math>` element.
  */
-function encodeMath(math: object): xml.Element[] {
-  const { mathLanguage, text = '' } = math as any
+function encodeMath(math: stencila.Math): xml.Element[] {
+  const { mathLanguage, text = '' } = math
 
-  if (mathLanguage !== 'MathML') log.error(`Only MathML is supported`)
+  if (mathLanguage !== 'mathml') log.error(`Only MathML is supported`)
 
   try {
     const root = xml.load(text, { compact: false }) as xml.Element

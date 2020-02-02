@@ -60,6 +60,9 @@ test('decode', async () => {
   expect(await jats2yaml('elife-46793-v1')).toMatchFile(
     snapshot('elife-46793-v1.yaml')
   )
+  expect(await jats2yaml('elife-52882-v2')).toMatchFile(
+    snapshot('elife-52882-v2.yaml')
+  )
 
   expect(await jats2yaml('f1000-7-1655-v1')).toMatchFile(
     snapshot('f1000-7-1655-v1.yaml')
@@ -97,6 +100,9 @@ test('decode+encode', async () => {
   )
   expect(await jats2jats('elife-46793-v1')).toMatchFile(
     snapshot('elife-46793-v1.jats.xml')
+  )
+  expect(await jats2jats('elife-52882-v2')).toMatchFile(
+    snapshot('elife-52882-v2.jats.xml')
   )
 
   expect(await jats2jats('f1000-7-1655-v1')).toMatchFile(

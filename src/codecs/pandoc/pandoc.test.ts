@@ -2,7 +2,6 @@ import stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import * as vfile from '../../util/vfile'
-import { dump, load } from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { RPNGCodec } from '../rpng'
 import { defaultEncodeOptions } from '../types'
@@ -10,19 +9,20 @@ import { JsonCodec } from '../json'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
 
-const { decode, encode } = new PandocCodec()
-const rpng = new RPNGCodec()
-
 // Set a high timeout to avoid occasional failures on CI
 jest.setTimeout(60 * 1000)
 
-const pdoc2node = async (pdoc: any) => await decode(load(JSON.stringify(pdoc)))
+const pandoc = new PandocCodec()
+const { decode, encode } = pandoc
+const rpng = new RPNGCodec()
+const json = new JsonCodec()
+
+const pdoc2node = async (pdoc: any) =>
+  await decode(vfile.load(JSON.stringify(pdoc)))
 const node2pdoc = async (node: any) =>
-  JSON.parse(await dump(await encode(node)))
+  JSON.parse(await vfile.dump(await encode(node)))
 const decodeFixture = async (name: string) =>
   await decode(await vfile.read(fixture(name)))
-
-const json = new JsonCodec()
 
 test('decode', async () => {
   let got = await pdoc2node(kitchenSink.pdoc)
@@ -135,6 +135,31 @@ describe('citations and references', () => {
       true
     )
     expect(html).toMatchFile(snapshot('cite-refs.html'))
+  })
+})
+
+describe('math', () => {
+  const article = stencila.article({
+    title: 'Untitled',
+    authors: [],
+    content: [
+      stencila.paragraph({
+        content: [
+          'Some inline math ',
+          stencila.mathFragment({ text: 'a' }),
+          '. And some block math:'
+        ]
+      }),
+      stencila.mathBlock({ text: 'e = mc^2' })
+    ]
+  })
+
+  test('decoding', async () => {
+    expect(await decodeFixture('math.pandoc.json')).toEqual(article)
+  })
+
+  test('decoding', async () => {
+    expect(await pandoc.dump(article)).toMatchFile(snapshot('math.pandoc.json'))
   })
 })
 
@@ -602,7 +627,7 @@ describe('rPNG encoding & decoding of "special" node types', () => {
       const expected = rPNGNode(value)
 
       const actual = await decode(
-        load(JSON.stringify(pdoc([rPNG.path!, name])))
+        vfile.load(JSON.stringify(pdoc([rPNG.path!, name])))
       )
 
       expect(actual).toEqual(expected)

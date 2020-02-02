@@ -2181,17 +2181,8 @@ content:
         the conventional Hamming distance by ignoring the elements of profiles
         where both the proteins are absent. The modified formula of Hamming
         distance is:
-      - type: ImageObject
-        contentUrl: e001.png
-        format: image
-        meta:
-          inline: false
-          linkType: simple
-      - |
-
-        where,
-  - type: Math
-    mathLanguage: MathML
+  - type: MathBlock
+    mathLanguage: mathml
     text: >-
       <mml:math display="block"
       id="M1"><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mrow><mml:mstyle
@@ -2209,6 +2200,11 @@ content:
       displaystyle="false"><mml:mo>∑</mml:mo></mml:mstyle><mml:mrow><mml:msub><mml:mrow><mml:mi
       mathvariant="normal">P</mml:mi></mml:mrow><mml:mrow><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi
       mathvariant="normal">P</mml:mi></mml:mrow><mml:mrow><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mrow></mml:mfrac></mml:math>
+  - type: Paragraph
+    content:
+      - |
+
+        where,
   - type: List
     items:
       - type: ListItem
