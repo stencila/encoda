@@ -1,4 +1,4 @@
-import { article, heading, paragraph, mathFragment, mathBlock } from '@stencila/schema'
+import { article, paragraph, mathFragment, mathBlock } from '@stencila/schema'
 
 /**
  * A small `Article` with various types of `Math` nodes
@@ -12,7 +12,10 @@ export default article({
         ', ',
         mathFragment({ mathLanguage: 'asciimath', text: 'pi' }),
         ' and ',
-        mathFragment({ mathLanguage: 'mathml', text: '<math><mrow><mi>&pi;</mi></mrow></math>' }),
+        mathFragment({
+          mathLanguage: 'mathml',
+          text: '<math><mrow><mi>&pi;</mi></mrow></math>'
+        }),
         '.'
       ]
     }),

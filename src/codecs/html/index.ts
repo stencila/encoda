@@ -97,7 +97,7 @@ async function mathJaxFinish(): Promise<string | undefined> {
 
   const result = await MathJax.typeset({ css: true })
   const { errors, css } = result
-  if (errors) errors.map((error: string) => log.error(error))
+  if (Array.isArray(errors)) errors.map((error: string) => log.error(error))
   return css as string
 }
 
@@ -563,10 +563,6 @@ const encodeNode = (node: stencila.Node): Node => {
 
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
-    case 'Math':
-    case 'MathBlock':
-    case 'MathFragment':
-      return encodeMath(node as stencila.Math)
 
     case 'null':
       return encodeNull()
@@ -642,9 +638,12 @@ async function generateHtmlElement(
     )
   }
 
-  const pageCss = h('style', {
-    innerHTML: css
-  })
+  const pageCss =
+    css !== undefined
+      ? h('style', {
+          innerHTML: css
+        })
+      : undefined
 
   return h(
     'html',
@@ -1900,7 +1899,7 @@ function encodeMath(math: stencila.Math): HTMLElement {
         ? 'TeX'
         : format === 'asciimath'
         ? 'AsciiMath'
-        : format,
+        : format ?? 'TeX',
     html: true,
     css: true
   })
