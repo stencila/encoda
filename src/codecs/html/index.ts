@@ -805,7 +805,7 @@ function encodeAuthorsProperty(
             'ol',
             {
               attrs: {
-                [stencilaItemProp]: 'organisation'
+                [stencilaItemProp]: 'organizations'
               }
             },
             ...Object.values(orgs).map(([_, org]) =>
