@@ -676,26 +676,33 @@ function encodePublisherProperty(
 ): HTMLElement {
   publisher = publisher ?? stencila.organization()
 
+  // If a publisher logo was found, insert as an image, otherwise as an invisitble `meta` tag
   const { name = 'Unknown' } = publisher
+  const nameTag = isDefined(publisher.name) ? 'span' : 'meta'
+
   let logo = stencila.isA('Organization', publisher)
     ? publisher.logo
     : undefined
-  if (logo === undefined)
+
+  // If a publisher logo is found, insert as an image, otherwise as an invisitble `meta` tag
+  let logoTag = 'img'
+  if (logo === undefined) {
+    logoTag = 'meta'
     logo = stencila.imageObject({
-      contentUrl: placeholderImg(publisher.name ?? '', 600, 60)
+      contentUrl: placeholderImg(name, 600, 60)
     })
-  else if (typeof logo === 'string')
+  } else if (typeof logo === 'string')
     logo = stencila.imageObject({ contentUrl: logo })
 
   return h(
     'div',
     encodeAttrs(publisher, { itemprop: 'publisher' }),
-    h('span', { itemprop: 'name' }, name),
+    h(nameTag, { itemprop: 'name', content: name }, name),
     h(
       'div',
       encodeAttrs(logo, { itemprop: 'logo' }),
       // Both `content` and `src` are necessary here
-      h('img', {
+      h(logoTag, {
         attrs: {
           itemprop: 'url',
           content: logo.contentUrl,
