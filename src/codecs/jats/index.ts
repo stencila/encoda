@@ -812,7 +812,13 @@ function decodeBack(
   back: xml.Element | null
 ): Pick<stencila.Article, 'references' | 'meta'> {
   if (back === null) return {}
+
+  // decodeAcknowledgements(first(back, 'ack')) #410
+  // decodeAppendices(first(back, 'app-group')) #400
+  // decodeDataAvailability(first('sec', {'sec-type': 'data-availability')) #409
+  // decodeSupplementaryMaterial(first('sec', {'sec-type': 'supplementary-material')) #418
   const references = decodeReferences(first(back, 'ref-list'))
+
   return { references }
 }
 
