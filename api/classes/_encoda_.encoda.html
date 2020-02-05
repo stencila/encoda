@@ -150,7 +150,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Listener.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/7370600/src/encoda.ts#L21">src/encoda.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/4e32768/src/encoda.ts#L21">src/encoda.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -421,7 +421,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Executor.capabilities</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/7370600/src/encoda.ts#L34">src/encoda.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/4e32768/src/encoda.ts#L34">src/encoda.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -486,7 +486,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Executor.decode</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/7370600/src/encoda.ts#L65">src/encoda.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/4e32768/src/encoda.ts#L65">src/encoda.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -558,13 +558,18 @@
 							<aside class="tsd-sources">
 								<p>Overrides Executor.encode</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/7370600/src/encoda.ts#L72">src/encoda.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/4e32768/src/encoda.ts#L78">src/encoda.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>override</dt>
 									<dd><p>Override of <code>Executor.encode</code>.</p>
+										<p>Return the encoded content as a <code>string</code>.
+											The string be base64 encoded if the codec returns a  <code>Vfile</code> who&#39;s
+											content is a <code>Buffer</code> (e.g. <code>rpng</code>).
+											<code>VFile</code>s with string content (e.g. <code>md</code>, <code>html</code>) are NOT base64 encoded.
+										Clients will need to deal with the two alternatives.</p>
 									</dd>
 								</dl>
 							</div>
