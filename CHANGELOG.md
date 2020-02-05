@@ -1,3 +1,10 @@
+## [0.85.1](https://github.com/stencila/encoda/compare/v0.85.0...v0.85.1) (2020-02-05)
+
+
+### Bug Fixes
+
+* **Encode:** Return base64 encoded string for Buffer content ([4e32768](https://github.com/stencila/encoda/commit/4e32768cb64a18f1e2f78f87ad2f2b67194c08cc))
+
 # [0.85.0](https://github.com/stencila/encoda/compare/v0.84.0...v0.85.0) (2020-02-02)
 
 
