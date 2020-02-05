@@ -38,6 +38,8 @@ import { isDefined } from '../../util'
 
 const log = getLogger('encoda:jats')
 
+type Content = stencila.InlineContent | stencila.BlockContent
+
 /**
  * The DOCTYPE to use when encoding to JATS
  */
@@ -91,7 +93,7 @@ export class JatsCodec extends Codec implements Codec {
    */
   public readonly decode = async (
     file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  ): Promise<stencila.Article | Content[]> => {
     const jats = await vfile.dump(file)
     const doc = xml.load(jats, { compact: false }) as xml.Element
     return decodeDocument(doc)
@@ -118,12 +120,19 @@ export class JatsCodec extends Codec implements Codec {
 /**
  * Decode a JATS XML document to a Stencila `Node`.
  *
- * If there is no `<article>` element the returned node
- * is `null`.
+ * If there is no `<article>` element then returns an array of `Content` nodes.
  */
-function decodeDocument(doc: xml.Element): stencila.Node {
+function decodeDocument(doc: xml.Element): stencila.Article | Content[] {
   const article = first(doc, 'article')
-  return article ? decodeArticle(article) : null
+  if (article !== null) return decodeArticle(article)
+
+  const { elements } = doc
+  if (elements === undefined) {
+    log.warn('No elements in XML document')
+    return []
+  }
+
+  return decodeElements(elements, initialDecodeState(doc)) as Content[]
 }
 
 /**
