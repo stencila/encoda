@@ -68,6 +68,12 @@ export class Encoda extends Listener {
 
   /**
    * @override Override of `Executor.encode`.
+   *
+   * Return the encoded content as a `string`.
+   * The string be base64 encoded if the codec returns a  `Vfile` who's
+   * content is a `Buffer` (e.g. `rpng`).
+   * `VFile`s with string content (e.g. `md`, `html`) are NOT base64 encoded.
+   * Clients will need to deal with the two alternatives.
    */
   public async encode(
     node: schema.Node,
@@ -82,7 +88,9 @@ export class Encoda extends Listener {
     if (dest !== undefined) {
       await vfile.write(encoding, dest)
       return dest
-    } else return encoding.contents.toString()
+    } else {
+      return encoding.toString('base64')
+    }
   }
 }
 
