@@ -1,3 +1,10 @@
+## [0.85.2](https://github.com/stencila/encoda/compare/v0.85.1...v0.85.2) (2020-02-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stencila/schema to ^0.37.0 ([778cc1b](https://github.com/stencila/encoda/commit/778cc1b96e29d8c74d207f510b1f92ca9a97d91c))
+
 ## [0.85.1](https://github.com/stencila/encoda/compare/v0.85.0...v0.85.1) (2020-02-05)
 
 
