@@ -56,7 +56,7 @@ jobs:
       # Run tests with
       #   - Two minute default test timeout
       #   - Force exit to prevent hanging
-      #   - See https://github.com/nock/nock#modes what nock modes do
+      #   - See https://github.com/nock/nock#modes for what nock modes do
       - script: npm run test:cover -- --testTimeout=120000 --forceExit
         displayName: 'Run tests'
         env:
@@ -78,6 +78,22 @@ jobs:
       - script: bash <(curl -s https://codecov.io/bash)
         condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
         displayName: 'Upload coverage'
+
+  - job: test_docker
+    dependsOn: test
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: NodeTool@0
+        displayName: 'Install Node.js'
+        inputs:
+          versionSpec: '12.x'
+
+      - task: DockerInstaller@0
+        displayName: 'Install Docker'
+
+      - script: npm run test:docker
+        displayName: 'Run tests in Docker'
 
   - job: deploy
     dependsOn: test

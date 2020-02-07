@@ -1,7 +1,12 @@
-coverage
-docs
-node_modules
-**/__fixtures__
+.DS_Store
+.git
 **/__outputs__
-**/__tests__
 **/*.out.*
+*credentials.json
+*token.json
+/.sandbox
+/coverage
+/dist
+/docs
+/node_modules
+temp.*
