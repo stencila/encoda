@@ -1,5 +1,7 @@
 import { themePath, themes } from '@stencila/thema'
+import nock from 'nock'
 import { getThemeAssets, isTheme } from './html'
+
 
 const themaThemes = Object.entries(themes)
 const themeUrl = 'http://unpkg.com/@stencila/thema@1.5.3/dist/themes/stencila'
@@ -57,6 +59,12 @@ describe('Resolve theme arguments', () => {
   })
 
   test('Fetching UNPKG asset by Thema name', async () => {
+    nock(`https://unpkg.com/@stencila/thema@1/dist/themes/${themes.elife}`)
+      .get('/index.js')
+      .reply(200)
+      .get('/styles.css')
+      .reply(200)
+
     const theme = await getThemeAssets(themes.elife)
 
     expect(theme.scripts[0]).toMatch(
