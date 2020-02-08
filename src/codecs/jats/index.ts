@@ -96,7 +96,7 @@ export class JatsCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Article | Content[]> => {
     const jats = await vfile.dump(file)
-    const doc = xml.load(jats, { compact: false }) as xml.Element
+    const doc = xml.load(jats)
     return decodeDocument(doc)
   }
 
@@ -1795,7 +1795,7 @@ function encodeMath(math: stencila.Math): xml.Element[] {
   if (mathLanguage !== 'mathml') log.error(`Only MathML is supported`)
 
   try {
-    const root = xml.load(text, { compact: false }) as xml.Element
+    const root = xml.load(text)
     if (root?.elements?.length) return [root.elements[0]]
   } catch (error) {
     log.error(`Error parsing MathML:\n${error.message}\n${text}`)

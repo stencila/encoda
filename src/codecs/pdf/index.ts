@@ -220,7 +220,7 @@ function decodeXmp(pdf: PDFDocument): Promise<stencila.Node | void> {
   }
 
   const xmpContent = metadata.getContentsString()
-  const xmp = xml.load(xmpContent) as xml.Element
+  const xmp = xml.load(xmpContent)
   return Promise.resolve(decodeXmlDoc(xmp))
 }
 
