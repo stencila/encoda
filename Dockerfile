@@ -45,4 +45,4 @@ COPY --chown=encoda:encoda . .
 RUN npm install
 
 # Run the tests
-CMD npm test
+CMD npm test -- --testTimeout=120000 --forceExit
