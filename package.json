@@ -50,6 +50,7 @@
     "@stencila/thema": "^1.12.0",
     "ajv": "^6.12.0",
     "appdata-path": "^1.0.0",
+    "array-flat-polyfill": "^1.0.1",
     "async-lock": "^1.2.2",
     "better-ajv-errors": "^0.6.7",
     "bin-wrapper": "^4.1.0",
@@ -101,8 +102,10 @@
     "unist-util-select": "^3.0.1",
     "unixify": "^1.0.0",
     "vfile": "^4.0.3",
+    "w3c-xmlserializer": "^2.0.0",
     "xlsx": "^0.15.5",
-    "xml-js": "^1.6.11"
+    "xml-js": "^1.6.11",
+    "xslt-ts": "^1.1.8"
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "1.15.9",
@@ -131,6 +134,7 @@
     "@types/punycode": "2.1.0",
     "@types/puppeteer": "2.0.1",
     "@types/unist": "2.0.3",
+    "@types/w3c-xmlserializer": "^2.0.0",
     "callsites": "3.1.0",
     "csl-json": "0.1.0",
     "delay": "4.3.0",
