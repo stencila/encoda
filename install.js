@@ -26,7 +26,8 @@ async function load(modulePath) {
     if (error.code !== 'MODULE_NOT_FOUND') throw error
 
     // If we are here, then we are in development, but
-    // the module has not yet been compiled to Javascript
+    // the module has not yet been compiled to Javascript.
+    // So compile this package and then require the module.
     const childProcess = require('child_process')
     const util = require('util')
     const exec = util.promisify(childProcess.exec)
