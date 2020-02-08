@@ -84,15 +84,12 @@ jobs:
     pool:
       vmImage: ubuntu-latest
     steps:
-      - task: NodeTool@0
-        displayName: 'Install Node.js'
-        inputs:
-          versionSpec: '12.x'
-
       - task: DockerInstaller@0
         displayName: 'Install Docker'
 
-      - script: npm run test:docker
+      - script: |
+          docker build --tag stencila/encoda .
+          docker run --init --rm --cap-add=SYS_ADMIN stencila/encoda
         displayName: 'Run tests in Docker'
 
   - job: release
