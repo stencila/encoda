@@ -43,6 +43,8 @@ export const mathmlInlineString = mathmlString.replace(
 
 export const texString = 'E = mc^2'
 
+export const texBlockString = `\\displaystyle ${texString}`
+
 export const texBlock = mathBlock({
   mathLanguage: 'tex',
   text: texString
