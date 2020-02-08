@@ -37,7 +37,7 @@ export const executablePath = isPackaged
       )
   : puppeteer.executablePath()
 
-if (!fs.pathExists(executablePath))
+if (!fs.pathExistsSync(executablePath))
   log.error(`Chromium does not exist in expected location: ${executablePath}`)
 
 /**
