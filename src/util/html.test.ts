@@ -1,5 +1,5 @@
 import { themePath, themes } from '@stencila/thema'
-import nock from 'nock'
+import { nockRecord } from '../__tests__/helpers'
 import { getThemeAssets, isTheme } from './html'
 
 
@@ -59,12 +59,6 @@ describe('Resolve theme arguments', () => {
   })
 
   test('Fetching UNPKG asset by Thema name', async () => {
-    nock(`https://unpkg.com/@stencila/thema@1/dist/themes/${themes.elife}`)
-      .get('/index.js')
-      .reply(200)
-      .get('/styles.css')
-      .reply(200)
-
     const theme = await getThemeAssets(themes.elife)
 
     expect(theme.scripts[0]).toMatch(
@@ -86,7 +80,9 @@ describe('Resolve theme arguments', () => {
   )
 
   test('Bundle theme contents from URL', async () => {
+    const stopRecording = await nockRecord('nock-record-theme-from-url.json')
     const theme = await getThemeAssets(themeUrl, true)
+    stopRecording()
 
     expect(theme.scripts[0]).toMatch('parcelRequire=')
     expect(theme.styles[0]).toMatch(/\[itemprop=.*\]{/)
