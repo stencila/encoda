@@ -95,7 +95,7 @@ jobs:
       - script: npm run test:docker
         displayName: 'Run tests in Docker'
 
-  - job: deploy
+  - job: release
     dependsOn: test
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
@@ -118,4 +118,4 @@ jobs:
           GIT_COMMITTER_EMAIL: ci@stenci.la
           GITHUB_TOKEN: $(GITHUB_TOKEN)
           NPM_TOKEN: $(NPM_TOKEN)
-        displayName: 'Deploy docs and package'
+        displayName: 'Release package'
