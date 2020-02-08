@@ -4,9 +4,12 @@
 
 import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
+import fs from 'fs-extra'
 import path from 'path'
 import puppeteer from 'puppeteer'
 import isPackaged from './app/isPackaged'
+
+const log = getLogger('encoda:puppeteer')
 
 /**
  * The following code is necessary to ensure the Chromium binary can be correctly
@@ -34,8 +37,14 @@ export const executablePath = isPackaged
       )
   : puppeteer.executablePath()
 
-const logger = getLogger('encoda:puppeteer')
+if (!fs.pathExists(executablePath))
+  log.error(`Chromium does not exist in expected location: ${executablePath}`)
 
+/**
+ * Module global Puppeteer instance
+ * and mutex lock to prevent conflicts between
+ * concurrent requests to `startup` or `shutdown`
+ */
 let browser: puppeteer.Browser | undefined
 const lock = new AsyncLock()
 
@@ -51,16 +60,15 @@ export async function startup(): Promise<puppeteer.Browser> {
     'browser',
     async (): Promise<puppeteer.Browser> => {
       if (typeof browser === 'undefined') {
-        logger.debug('Launching new browser')
+        log.debug('Launching new browser')
         browser = await puppeteer.launch({
           executablePath,
-          headless: true,
           pipe: true,
           // Use /tmp instead of /dev/shm to avoid issues like: https://dev.azure.com/stencila/stencila/_build/results?buildId=205&view=logs&j=b17395f6-68a3-5682-0476-d3f6f1043109&t=e59dc482-4022-5828-e063-e9c9e022e048&l=440
           // See https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md#tips
           args: ['--disable-dev-shm-usage']
         })
-        logger.debug(`Browser launched. pid: ${browser.process().pid}`)
+        log.debug(`Browser launched. pid: ${browser.process().pid}`)
       }
       return browser
     }
@@ -83,9 +91,9 @@ export async function shutdown(): Promise<void> {
     'browser',
     async (): Promise<void> => {
       if (browser !== undefined) {
-        logger.debug(`Closing browser. pid: ${browser.process().pid}`)
+        log.debug(`Closing browser. pid: ${browser.process().pid}`)
         await browser.close()
-        logger.debug('Browser closed')
+        log.debug('Browser closed')
         browser = undefined
       }
     }
