@@ -1140,27 +1140,40 @@ function decodeMath(elem: Pandoc.Math): stencila.Math {
  * Encode a Stencila `Math` node to a Pandoc `Math` or `Para` element.
  *
  * `MathBlock` nodes are wrapped into a Pandoc `Para`, as Pandoc does
- * for `DisplayMath`.
+ * for `DisplayMath`. If the necessary, the math `text` is translated to TeX
+ * (the math language that Pandoc assumes). If no translation is possible
+ * a warning is logged and the Tex is empty
+ *
+ * @param node The Stencila `Math` node to encode
+ * @param pandocType The Pandoc element type to encode as
  */
-function encodeMath(node: stencila.Math, type: 'InlineMath'): Pandoc.Math
-function encodeMath(node: stencila.Math, type: 'DisplayMath'): Pandoc.Para
+function encodeMath(node: stencila.Math, pandocType: 'InlineMath'): Pandoc.Math
+function encodeMath(node: stencila.Math, pandocType: 'DisplayMath'): Pandoc.Para
 function encodeMath(
   node: stencila.Math,
-  type: Pandoc.MathType['t']
+  pandocType: Pandoc.MathType['t']
 ): Pandoc.Math | Pandoc.Para {
-  const { type: nodeType, text } = node
-  if (type === 'InlineMath' && nodeType !== 'MathFragment')
+  const { type: nodeType, text, mathLanguage = 'tex' } = node
+  if (pandocType === 'InlineMath' && nodeType !== 'MathFragment')
     log.warn(
       `Expected a Stencila "MathFragment" node, but got a got a ${nodeType} node`
     )
-  if (type === 'DisplayMath' && nodeType !== 'MathBlock')
+  if (pandocType === 'DisplayMath' && nodeType !== 'MathBlock')
     log.warn(
       `Expected a Stencila "MathBlock" node, but got a got a ${nodeType} node`
     )
 
+  let tex
+  if (mathLanguage === 'tex') {
+    tex = text
+  } else {
+    log.warn(`Unable to encode a Math node with mathLanguage "${mathLanguage}"`)
+    tex = ''
+  }
+
   const math: Pandoc.Math = {
     t: 'Math',
-    c: [{ t: type }, text]
+    c: [{ t: pandocType }, tex]
   }
   if (nodeType === 'MathFragment') return math
   else return { t: 'Para', c: [math] }
