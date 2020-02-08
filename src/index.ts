@@ -73,6 +73,9 @@ export const codecList: string[] = [
   'txt',
   'xmd',
 
+  // Math
+  'mathml',
+
   // Scripts
   'dmagic',
 
