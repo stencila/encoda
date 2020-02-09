@@ -1,17 +1,17 @@
+import * as schema from '@stencila/schema'
+import { MathMLCodec } from '.'
 import {
-  mathmlInlineString,
+  asciimathBlock,
+  asciimathFragment,
+  mathmlBlock,
   mathmlBlockString,
   mathmlFragment,
-  mathmlBlock,
-  texFragment,
+  mathmlInlineString,
+  mathmlString,
   texBlock,
-  asciimathFragment,
-  asciimathBlock,
+  texFragment,
   texString
 } from '../../__fixtures__/math/kitchen-sink'
-import { MathMLCodec } from '.'
-import { mathmlString } from '../../__fixtures__/math/kitchen-sink'
-import * as schema from '@stencila/schema'
 
 const mathml = new MathMLCodec()
 
@@ -70,7 +70,7 @@ describe('encode', () => {
     expect(await encode(texFragment)).toMatch(mml)
     expect(await encode(texBlock)).toMatch(mml)
 
-    // No `mathLanguage`, assumes to `tex`
+    // No `mathLanguage`, assumed to be `tex`
     expect(await encode(schema.mathFragment({ text: texString }))).toMatch(mml)
   })
 

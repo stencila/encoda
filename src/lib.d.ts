@@ -2,7 +2,7 @@
 
 declare module 'asciimath2tex' {
   export default class AsciiMathParser {
-    parse (asciimath: string): string
+    parse(asciimath: string): string
   }
 }
 
