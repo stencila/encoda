@@ -211,4 +211,5 @@ export function encodeMicrodataItemprop(property: string): string | undefined {
  * using Structured Data testing tools. To get around this, and still have semantic element selectors available,
  * we add Stencila Schema specific attributes as `data-itemprop`s.
  */
+export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'

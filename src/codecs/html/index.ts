@@ -40,8 +40,10 @@ import * as vfile from '../../util/vfile'
 import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
 import {
   decodeMicrodataItemtype,
+  encodeMicrodataItemtype,
   encodeMicrodataAttrs,
-  stencilaItemProp
+  stencilaItemProp,
+  stencilaItemType
 } from './microdata'
 
 const window = new jsdom.JSDOM().window
@@ -806,8 +808,9 @@ function encodeTitleProperty(
 
   return h(
     tag,
+    {[headline === title ?  'itemprop' : stencilaItemProp]: 'headline'},
     headline === title
-      ? { itemprop: 'headline' }
+      ? undefined
       : h('meta', { itemprop: 'headline', content: headline }),
     typeof title === 'string' ? title : encodeNodes(title)
   )
@@ -939,7 +942,12 @@ function encodeDescriptionProperty(
 ): HTMLElement {
   return h(
     'section',
-    h('h2', 'Abstract'),
+    { [stencilaItemProp]: 'description' },
+    h(
+      'h2',
+      { [stencilaItemType]: encodeMicrodataItemtype('Heading') },
+      'Abstract'
+    ),
     h('meta', {
       itemprop: 'description',
       content: stringifyContent(desc)
@@ -953,10 +961,14 @@ function encodeReferencesProperty(
 ): HTMLElement {
   return h(
     'section',
-    h('h2', 'References'),
+    { [stencilaItemProp]: 'references' },
+    h(
+      'h2',
+      { [stencilaItemType]: encodeMicrodataItemtype('Heading') },
+      'References'
+    ),
     h(
       'ol',
-      { attrs: { [stencilaItemProp]: 'references' } },
       references.map(encodeReference)
     )
   )
