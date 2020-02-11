@@ -165,11 +165,7 @@
     }
   },
   "eslintConfig": {
-    "extends": "@stencila/eslint-config",
-    "rules": {
-      "@typescript-eslint/prefer-nullish-coalescing": "error",
-      "@typescript-eslint/prefer-optional-chain": "error"
-    }
+    "extends": "@stencila/eslint-config"
   },
   "eslintIgnore": [
     "**/__fixtures__/*",
