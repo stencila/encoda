@@ -1894,8 +1894,7 @@ function encodeMath(math: stencila.Math): HTMLElement {
   const format = mathLanguage?.toLowerCase()
   const elem = h('span', {
     attrs: {
-      ...encodeMicrodataAttrs(math),
-      display: stencila.isA('MathFragment', math) ? 'inline' : 'block'
+      ...encodeMicrodataAttrs(math)
     }
   })
   mathJaxTypeset(elem, {
@@ -1903,11 +1902,12 @@ function encodeMath(math: stencila.Math): HTMLElement {
     format:
       format === 'mathml'
         ? 'MathML'
-        : format === 'tex'
-        ? 'TeX'
         : format === 'asciimath'
         ? 'AsciiMath'
-        : format ?? 'TeX',
+        : stencila.isA('MathFragment', math)
+        ? 'inline-TeX'
+        : 'TeX',
+
     html: true,
     css: true
   })
