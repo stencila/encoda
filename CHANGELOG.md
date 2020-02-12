@@ -1,3 +1,12 @@
+## [0.85.3](https://github.com/stencila/encoda/compare/v0.85.2...v0.85.3) (2020-02-12)
+
+
+### Bug Fixes
+
+* **HTML:** Use data-itemtype on created elements; ensure itemprop at right level ([356b8e0](https://github.com/stencila/encoda/commit/356b8e08f71880f12236bac7b0bcb2c272f4f60b))
+* **HTML:** Use the correct MathJax format for math fragments ([9750613](https://github.com/stencila/encoda/commit/97506132b2a2cb986ad96cd6bdce464638793196))
+* **stringifyContent:** Reduce noise ([d028152](https://github.com/stencila/encoda/commit/d02815297258b28bced09db6213372fd7335c8dc)), closes [#428](https://github.com/stencila/encoda/issues/428)
+
 ## [0.85.2](https://github.com/stencila/encoda/compare/v0.85.1...v0.85.2) (2020-02-06)
 
 
