@@ -55,7 +55,7 @@ export class DarCodec extends Codec implements Codec {
    */
   public encode = async (
     node: stencila.Node,
-    options = this.defaultEncodeOptions
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { filePath } = options
 

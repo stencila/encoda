@@ -5,7 +5,7 @@
 import stencila from '@stencila/schema'
 import * as vfile from '../../util/vfile'
 import * as Pandoc from '../pandoc'
-import { Codec } from '../types'
+import { Codec, GlobalEncodeOptions } from '../types'
 
 const pandoc = new Pandoc.PandocCodec()
 
@@ -21,7 +21,7 @@ export class JatsPandocCodec extends Codec implements Codec {
 
   public readonly encode = async (
     node: stencila.Node,
-    options = this.defaultEncodeOptions
+    options: GlobalEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     return pandoc.encode(node, {
       ...options,

@@ -2,18 +2,40 @@ import * as stencila from '@stencila/schema'
 import { getTheme } from '@stencila/thema'
 import * as vfile from '../util/vfile'
 
+/**
+ * Encoding options that are common to all codecs.
+ *
+ * Codecs are encouraged to respect these options but
+ * are not forced to. Indeed, some options do not make sense for
+ * some codecs. For example, for the PDF codec `isStandalone`
+ * is always `true` so if `isStandalone: false` is supplied
+ * as an option it will be ignored. Futhermore, some combinations
+ * of options are pointless e.g. a `theme` when `isStandalone: false`
+ */
 export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
   format?: string
   filePath?: string
   isStandalone?: boolean
   isBundle?: boolean
   shouldZip?: 'yes' | 'no' | 'maybe'
-  theme: string
+  theme?: string
 
   codecOptions?: CodecOptions
 }
 
-export const defaultEncodeOptions: GlobalEncodeOptions = {
+/**
+ * Default values for encoding options.
+ *
+ * This set of defaults provide a way of promoting consistency amongst
+ * codecs. Instead of, for example, one codec defaulting
+ * to `isStandalone: true` and another to `false`.
+ */
+export const defaultEncodeOptions: Required<Pick<
+  GlobalEncodeOptions,
+  'isStandalone' | 'isBundle' | 'shouldZip' | 'theme'
+>> = {
+  isStandalone: false,
+  isBundle: false,
   shouldZip: 'no',
   theme: getTheme()
 }
