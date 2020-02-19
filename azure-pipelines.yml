@@ -56,7 +56,7 @@ jobs:
       # Run tests with
       #   - Two minute default test timeout
       #   - Force exit to prevent hanging
-      #   - See https://github.com/nock/nock#modes what nock modes do
+      #   - See https://github.com/nock/nock#modes for what nock modes do
       - script: npm run test:cover -- --testTimeout=120000 --forceExit
         displayName: 'Run tests'
         env:
@@ -79,7 +79,20 @@ jobs:
         condition: and(succeeded(), eq(variables['agent.os'], 'Linux'))
         displayName: 'Upload coverage'
 
-  - job: deploy
+  - job: test_docker
+    dependsOn: test
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: DockerInstaller@0
+        displayName: 'Install Docker'
+
+      - script: |
+          docker build --tag stencila/encoda .
+          docker run --init --rm --cap-add=SYS_ADMIN stencila/encoda
+        displayName: 'Run tests in Docker'
+
+  - job: release
     dependsOn: test
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
@@ -102,4 +115,4 @@ jobs:
           GIT_COMMITTER_EMAIL: ci@stenci.la
           GITHUB_TOKEN: $(GITHUB_TOKEN)
           NPM_TOKEN: $(NPM_TOKEN)
-        displayName: 'Deploy docs and package'
+        displayName: 'Release package'

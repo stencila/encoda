@@ -323,25 +323,7 @@ cd encoda
 npm install
 ```
 
-Run the test suite:
-
-```bash
-npm test
-```
-
-Or, run a single test file:
-
-```bash
-npx jest tests/xlsx.test.ts
-```
-
-To get coverage statistics:
-
-```bash
-npm run cover
-```
-
-Or, manually test conversion using the `ts-node` and the `cli.ts` script:
+You can manually test conversion using the `ts-node` and the `cli.ts` script:
 
 ```bash
 npm run cli -- convert simple.md simple.html
@@ -366,18 +348,57 @@ If you are using VSCode, you can use the [Auto Attach feature](https://code.visu
 npm run cli:debug -- convert simple.gdoc simple.ipynb
 ```
 
+## Testing
+
+### Running tests locally
+
+Run the test suite using:
+
+```bash
+npm test
+```
+
+Or, run a single test file e.g.
+
+```bash
+npx jest tests/xlsx.test.ts --watch
+```
+
+To get coverage statistics:
+
+```bash
+npm run cover
+```
+
 There's also a `Makefile` if you prefer to run tasks that way e.g.
 
 ```bash
-make lint cover check
+make lint cover
 ```
 
-You can also test using the Docker image for a self-contained, host-independent test environment:
+### Running test in Docker
+
+You can also test this package using with a Docker container:
 
 ```bash
-docker build --tag stencila/encoda .
-docker run stencila/encoda
+npm run test:docker
 ```
+
+## Writing tests
+
+#### Recording and using network fixtures
+
+As far as possible, tests should be able to run with no network access. We use [Nock Back](https://github.com/nock/nock#nock-back) to record and play back network requests and responses. Use the `nockRecord` helper function for this with the convention of starting the fixture file with `nock-record-` e.g.
+
+```ts
+const stopRecording = await nockRecord('nock-record-<name-of-test>.json')
+// Do some things that connect to the interwebs
+stopRecording()
+```
+
+Note that the `util/http` module has caching so that you may need to remove the cache for the recording of fixtures to work e.g. `rm -rf ~/.config/stencila/encoda/cache/`
+
+As part of continuous integration, tests are run with both `NOCK_MODE=wild` (which ignores recording) to test that tests still work when using real network connections, and `NOCK_MODE=dryrun` (for speed and consistency with the default).
 
 ## Contribute
 

@@ -1,5 +1,7 @@
 import { themePath, themes } from '@stencila/thema'
+import { nockRecord } from '../__tests__/helpers'
 import { getThemeAssets, isTheme } from './html'
+
 
 const themaThemes = Object.entries(themes)
 const themeUrl = 'http://unpkg.com/@stencila/thema@1.5.3/dist/themes/stencila'
@@ -78,7 +80,9 @@ describe('Resolve theme arguments', () => {
   )
 
   test('Bundle theme contents from URL', async () => {
+    const stopRecording = await nockRecord('nock-record-theme-from-url.json')
     const theme = await getThemeAssets(themeUrl, true)
+    stopRecording()
 
     expect(theme.scripts[0]).toMatch('parcelRequire=')
     expect(theme.styles[0]).toMatch(/\[itemprop=.*\]{/)
