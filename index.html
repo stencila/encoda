@@ -119,6 +119,34 @@
               itemscope="" itemtype="http://schema.stenci.la/Link">Develop</a></p>
         </li>
         <li itemscope="" itemtype="http://schema.org/ListItem">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#testing"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Testing</a></p>
+          <ul itemscope="" itemtype="http://schema.org/ItemList">
+            <li itemscope="" itemtype="http://schema.org/ListItem">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#running-tests-locally" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Running tests locally</a></p>
+            </li>
+            <li itemscope="" itemtype="http://schema.org/ListItem">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#running-test-in-docker" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Running test in Docker</a></p>
+            </li>
+          </ul>
+        </li>
+        <li itemscope="" itemtype="http://schema.org/ListItem">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#writing-tests"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Writing tests</a></p>
+          <ul itemscope="" itemtype="http://schema.org/ItemList">
+            <li itemscope="" itemtype="http://schema.org/ListItem">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#recording-and-using-network-fixtures" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Recording and using network fixtures</a>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li itemscope="" itemtype="http://schema.org/ListItem">
           <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#contribute"
               itemscope="" itemtype="http://schema.stenci.la/Link">Contribute</a></p>
         </li>
@@ -950,16 +978,7 @@ jmp &gt;</code></pre>
       <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">git clone https://github.com/stencila/encoda.git
 cd encoda
 npm install</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the test suite:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm test</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Or, run a single test file:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx jest tests/xlsx.test.ts</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To get coverage statistics:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cover</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Or, manually test conversion
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can manually test conversion
         using the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">ts-node</code>
         and the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">cli.ts</code>
         script:</p>
@@ -982,15 +1001,56 @@ node dist/cli convert simple.md simple.html</code></pre>
           itemtype="http://schema.stenci.la/CodeFragment">cli:debug</code> NPM script:</p>
       <pre itemscope=""
         itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="testing">Testing</h2>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-tests-locally">Running
+        tests locally</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the test suite using:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm test</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Or, run a single test file e.g.
+      </p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx jest tests/xlsx.test.ts --watch</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To get coverage statistics:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cover</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There&#39;s also a <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Makefile</code> if you prefer
         to run tasks that way e.g.</p>
       <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">make lint cover check</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also test using the
-        Docker image for a self-contained, host-independent test environment:</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">docker build --tag stencila/encoda .
-docker run stencila/encoda</code></pre>
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">make lint cover</code></pre>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-test-in-docker">
+        Running test in Docker</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also test this package
+        using with a Docker container:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run test:docker</code></pre>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="writing-tests">Writing tests
+      </h2>
+      <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="recording-and-using-network-fixtures">Recording and using network fixtures</h4>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As far as possible, tests should
+        be able to run with no network access. We use <a
+          href="https://github.com/nock/nock#nock-back" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Nock Back</a> to record and play back network
+        requests and responses. Use the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">nockRecord</code> helper function for this
+        with the convention of starting the fixture file with <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">nock-record-</code> e.g.</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">const stopRecording = await nockRecord(&#39;nock-record-&lt;name-of-test&gt;.json&#39;)
+// Do some things that connect to the interwebs
+stopRecording()</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Note that the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">util/http</code> module has caching so
+        that you may need to remove the cache for the recording of fixtures to work e.g. <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">rm -rf
+          ~/.config/stencila/encoda/cache/</code></p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As part of continuous
+        integration, tests are run with both <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">NOCK_MODE=wild</code> (which ignores
+        recording) to test that tests still work when using real network connections, and <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">NOCK_MODE=dryrun</code> (for
+        speed and consistency with the default).</p>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contribute">Contribute</h2>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">We 💕 contributions! All
         contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions

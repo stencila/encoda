@@ -117,17 +117,17 @@
 					<div class="tsd-signature tsd-kind-icon">Microdata<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_codecs_html_microdata_.microdataitem.html" class="tsd-signature-type">MicrodataItem</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_codecs_html_microdata_.microdataproperty.html" class="tsd-signature-type">MicrodataProperty</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L64">src/codecs/html/microdata.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L64">src/codecs/html/microdata.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
 					<a name="types" class="tsd-anchor"></a>
 					<h3>Types</h3>
-					<div class="tsd-signature tsd-kind-icon">Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Types</span></div>
+					<div class="tsd-signature tsd-kind-icon">Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>Array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Array"</span><span class="tsd-signature-symbol">; </span>Boolean<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Boolean"</span><span class="tsd-signature-symbol">; </span>Null<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Null"</span><span class="tsd-signature-symbol">; </span>Number<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Number"</span><span class="tsd-signature-symbol">; </span>Object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Object"</span><span class="tsd-signature-symbol">; </span>Text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"Text"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Types</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L14">src/codecs/html/microdata.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L14">src/codecs/html/microdata.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,10 +137,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="context" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> context</h3>
-					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;fs.readJSONSync(path.join(path.dirname(require.resolve(&#x27;@stencila/schema&#x27;)),&#x27;stencila.jsonld&#x27;))[&#x27;@context&#x27;] as Record&lt;string, string | { &#x27;@id&#x27;: string }&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> = fs.readJSONSync(path.join(path.dirname(require.resolve(&#x27;@stencila/schema&#x27;)),&#x27;stencila.jsonld&#x27;))[&#x27;@context&#x27;] as Record&lt;string, string | { &#x27;@id&#x27;: string }&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L25">src/codecs/html/microdata.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L25">src/codecs/html/microdata.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -155,37 +155,37 @@
 					<div class="tsd-signature tsd-kind-icon">id<wbr>ToTerm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L35">src/codecs/html/microdata.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L35">src/codecs/html/microdata.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="log" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> log</h3>
-					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> =&nbsp;getLogger(&#x27;encoda:html:microdata&#x27;)</span></div>
+					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;encoda:html:microdata&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L12">src/codecs/html/microdata.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L12">src/codecs/html/microdata.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
 					<a name="stencilaitemprop" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> stencila<wbr>Item<wbr>Prop</h3>
-					<div class="tsd-signature tsd-kind-icon">stencila<wbr>Item<wbr>Prop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"data-itemprop"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;data-itemprop&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">stencila<wbr>Item<wbr>Prop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"data-itemprop"</span><span class="tsd-signature-symbol"> = &quot;data-itemprop&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L215">src/codecs/html/microdata.ts:215</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L215">src/codecs/html/microdata.ts:215</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
 					<a name="stencilaitemtype" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> stencila<wbr>Item<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">stencila<wbr>Item<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"data-itemtype"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;data-itemtype&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">stencila<wbr>Item<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"data-itemtype"</span><span class="tsd-signature-symbol"> = &quot;data-itemtype&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L214">src/codecs/html/microdata.ts:214</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L214">src/codecs/html/microdata.ts:214</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">term<wbr>ToId<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L34">src/codecs/html/microdata.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L34">src/codecs/html/microdata.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -213,13 +213,13 @@
 					<a name="decodemicrodataitemtype" class="tsd-anchor"></a>
 					<h3>decode<wbr>Microdata<wbr>Itemtype</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Microdata<wbr>Itemtype<span class="tsd-signature-symbol">(</span>itemtype<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Types</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Microdata<wbr>Itemtype<span class="tsd-signature-symbol">(</span>itemtype<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><a href="_codecs_html_microdata_.html#types" class="tsd-signature-type">Types</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L107">src/codecs/html/microdata.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L107">src/codecs/html/microdata.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,7 +233,7 @@
 									<h5>itemtype: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">keyof Types</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">keyof </span><a href="_codecs_html_microdata_.html#types" class="tsd-signature-type">Types</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -241,13 +241,13 @@
 					<a name="encodemicrodataattrs" class="tsd-anchor"></a>
 					<h3>encode<wbr>Microdata<wbr>Attrs</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Attrs<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, property<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_codecs_html_microdata_.html#microdata" class="tsd-signature-type">Microdata</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">__type</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Attrs<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, property<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_codecs_html_microdata_.html#microdata" class="tsd-signature-type">Microdata</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L72">src/codecs/html/microdata.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L72">src/codecs/html/microdata.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -270,10 +270,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_codecs_html_microdata_.html#microdata" class="tsd-signature-type">Microdata</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">__type</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <a href="_codecs_html_microdata_.html#microdata" class="tsd-signature-type">Microdata</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -281,13 +278,13 @@
 					<a name="encodemicrodataitem" class="tsd-anchor"></a>
 					<h3>encode<wbr>Microdata<wbr>Item</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Item<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_html_microdata_.microdataitem.html" class="tsd-signature-type">MicrodataItem</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">__type</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Item<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_html_microdata_.microdataitem.html" class="tsd-signature-type">MicrodataItem</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L85">src/codecs/html/microdata.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L85">src/codecs/html/microdata.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -301,10 +298,7 @@
 									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_codecs_html_microdata_.microdataitem.html" class="tsd-signature-type">MicrodataItem</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">__type</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_codecs_html_microdata_.microdataitem.html" class="tsd-signature-type">MicrodataItem</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -318,7 +312,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L197">src/codecs/html/microdata.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L197">src/codecs/html/microdata.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -336,10 +330,7 @@
 									<h5>property: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">undefined</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -347,13 +338,13 @@
 					<a name="encodemicrodataitemtype" class="tsd-anchor"></a>
 					<h3>encode<wbr>Microdata<wbr>Itemtype</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Itemtype<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Types</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Itemtype<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><a href="_codecs_html_microdata_.html#types" class="tsd-signature-type">Types</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L147">src/codecs/html/microdata.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L147">src/codecs/html/microdata.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -372,16 +363,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">keyof Types</span></h5>
+									<h5>type: <span class="tsd-signature-symbol">keyof </span><a href="_codecs_html_microdata_.html#types" class="tsd-signature-type">Types</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The name of the type e.g. <code>&#39;Article&#39;</code></p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">undefined</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -389,13 +377,13 @@
 					<a name="encodemicrodataproperty" class="tsd-anchor"></a>
 					<h3>encode<wbr>Microdata<wbr>Property</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Property<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_html_microdata_.microdataproperty.html" class="tsd-signature-type">MicrodataProperty</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">__type</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<wbr>Microdata<wbr>Property<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_html_microdata_.microdataproperty.html" class="tsd-signature-type">MicrodataProperty</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/262199d/src/codecs/html/microdata.ts#L179">src/codecs/html/microdata.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L179">src/codecs/html/microdata.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,10 +397,7 @@
 									<h5>property: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_codecs_html_microdata_.microdataproperty.html" class="tsd-signature-type">MicrodataProperty</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">__type</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_codecs_html_microdata_.microdataproperty.html" class="tsd-signature-type">MicrodataProperty</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h4>
 						</li>
 					</ul>
 				</section>
