@@ -37,12 +37,18 @@ RUN useradd --create-home encoda
 WORKDIR /home/encoda
 USER encoda
 
-# Copy over everything and install.
-# Do not do the dusual Node package / Docker optimization of copying over
-# `package.json` and installing in a seperate layer because that is not possible given
-# how our `install.js` script works.
-COPY --chown=encoda:encoda . .
-RUN npm install
+# Copy package.json and install
+# In a separate layer to avoid long reinstall everytime an unrelated files changes
+# Use `--ignore-scripts` option otherwise our own `install.js` script will fail
+COPY package.json ./
+RUN npm install --ignore-scripts
+
+# Copy over other file and run the necessary install scripts that
+# we previously ignored.
+COPY tsconfig.json install.js ./
+COPY --chown=encoda:encoda src ./src
+RUN node install.js \
+ && cd node_modules/puppeteer && npm install
 
 # Run the tests
 CMD npm test -- --testTimeout=120000 --forceExit
