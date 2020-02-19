@@ -234,9 +234,13 @@ export class HTMLCodec extends Codec implements Codec {
   }
 
   /**
-   * Encode a `stencila.Node` to a `VFile` with HTML contents.
+   * Encode a Stencila `Node` to a `VFile` with HTML contents.
    *
-   * @param node The `stencila.Node` to encode. Will be mutated to an `Node`.
+   * The attribute `data-itemscope="root"` is added to the root node
+   * of the encoded HTML. This attribute can be used to scope CSS variables
+   * to within the top-level Stencila Node.
+   *
+   * @param node The `Node` to encode.
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = async (
@@ -259,12 +263,13 @@ export class HTMLCodec extends Codec implements Codec {
     const nodeToEncode = isBundle
       ? await bundle(node)
       : await toFiles(node, filePath, ['data', 'file'])
-    let dom: HTMLHtmlElement = encodeNode(nodeToEncode) as HTMLHtmlElement
+
+    let dom = encodeNode(nodeToEncode) as HTMLElement
+    dom.setAttribute('data-itemscope', 'root')
 
     const mathjaxCss = await mathJaxFinish()
 
     if (isStandalone) {
-      const nodeToEncode = isBundle ? await bundle(node) : node
       const { title = 'Untitled' } = getArticleMetaData(nodeToEncode)
       dom = await generateHtmlElement(
         stringifyContent(title),
