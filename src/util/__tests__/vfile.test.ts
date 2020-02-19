@@ -15,8 +15,7 @@ test('isPath', () => {
 
   // Current directory
   // Files that exist
-  expect(isPath('README.md')).toBe(true)
-  expect(isPath('LICENSE')).toBe(true)
+  expect(isPath('package.json')).toBe(true)
   // Files that don't
   expect(isPath('foo.txt')).toBe(false)
   expect(isPath('foo/bar.txt')).toBe(false)
