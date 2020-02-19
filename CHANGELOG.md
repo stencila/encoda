@@ -1,3 +1,16 @@
+# [0.86.0](https://github.com/stencila/encoda/compare/v0.85.3...v0.86.0) (2020-02-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency tempy to ^0.4.0 ([468864c](https://github.com/stencila/encoda/commit/468864c08aa2b2a559ff1977853c92101b5634da))
+* **Puppeteer:** Use sync function ([cfb8241](https://github.com/stencila/encoda/commit/cfb824128af2311fc1653949a0648df9db20af48))
+
+
+### Features
+
+* **Puppeteer:** Check that executable exists ([45be5b1](https://github.com/stencila/encoda/commit/45be5b1c17b36423832c7f58401becca01e482a6))
+
 ## [0.85.3](https://github.com/stencila/encoda/compare/v0.85.2...v0.85.3) (2020-02-12)
 
 
