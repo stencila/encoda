@@ -54,7 +54,7 @@ import kitchenSink from '../../__fixtures__/article/kitchen-sink'
 import mathArticle from '../../__fixtures__/article/math'
 import { readFixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
-import { defaultEncodeOptions } from '../types'
+import { commonEncodeDefaults } from '../types'
 import { decodeHref, HTMLCodec } from './'
 import { encodeMicrodataItemtype, stencilaItemProp, Types } from './microdata'
 
@@ -68,7 +68,7 @@ const dump = html.dump.bind(html)
 
 const e = async (
   node: stencila.Node,
-  options = { ...defaultEncodeOptions, isStandalone: false }
+  options = { ...commonEncodeDefaults, isStandalone: false }
 ) => vfile.dump(await encode(node, options))
 
 const d = async (htmlString: string): Promise<stencila.Node> =>

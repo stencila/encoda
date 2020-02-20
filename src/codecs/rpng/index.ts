@@ -230,7 +230,7 @@ export class RPNGCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     // isStandalone defaults to false because usually we are generating
     // rPNGs to be embedded in other files e.g. rDOCX

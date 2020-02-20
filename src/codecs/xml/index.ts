@@ -47,7 +47,7 @@ export class XmlCodec extends Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const doc = await encodeDoc(node, options.isStandalone)
     const content = xml.dump(doc, { spaces: 4 })

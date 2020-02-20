@@ -5,7 +5,7 @@ import tempy from 'tempy'
 import { codecList, convert, dump, handled, load, match, read, write } from '..'
 import { JsonCodec } from '../codecs/json'
 import { TxtCodec } from '../codecs/txt'
-import { defaultEncodeOptions } from '../codecs/types'
+import { commonEncodeDefaults } from '../codecs/types'
 import { YamlCodec } from '../codecs/yaml'
 import * as ssf from '../codecs/__mocks__/ssf'
 import { fixture } from './helpers'
@@ -114,7 +114,7 @@ describe('write', () => {
 
   it('works with stdout', async () => {
     const consoleLog = jest.spyOn(console, 'log')
-    await write(simpleThing, '-', { ...defaultEncodeOptions, format: 'json' })
+    await write(simpleThing, '-', { ...commonEncodeDefaults, format: 'json' })
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
   })
 })

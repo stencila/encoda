@@ -23,13 +23,18 @@ import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
 import { write } from '../..'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
-import * as vfile from '../../util/vfile'
-import { RPNGCodec } from '../rpng'
-import { Codec, defaultEncodeOptions, CommonEncodeOptions } from '../types'
-import { binary, dataDir, citeprocBinaryPath } from './binary'
-import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
+import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
+import { RPNGCodec } from '../rpng'
+import {
+  Codec,
+  commonEncodeDefaults,
+  CommonEncodeOptions,
+  CommonDecodeOptions
+} from '../types'
+import { binary, citeprocBinaryPath, dataDir } from './binary'
+import * as Pandoc from './types'
 
 const rpng = new RPNGCodec()
 
@@ -37,57 +42,65 @@ export { InputFormat, OutputFormat } from './types'
 
 const log = getLogger('encoda:pandoc')
 
-interface DecodeOptions {
-  flags?: string[]
+/**
+ * Settings for derived codecs to use to
+ * customize the decoding behavior for particular formats.
+ * Not user options.
+ */
+interface DecodeSettings {
+  pandocFormat?: Pandoc.InputFormat
+  pandocArgs?: string[]
   ensureFile?: boolean
-  from?: Pandoc.InputFormat
 }
 
-const defaultDecodeOptions = {
-  ensureFile: false,
-  from: Pandoc.InputFormat.json,
-  flags: []
-}
-
-interface EncodeOptions {
-  flags?: string[]
+/**
+ * Settings for derived codecs to use to
+ * customize the encoding behavior for particular formats.
+ * Not user options.
+ */
+interface EncodeSettings {
+  pandocFormat?: Pandoc.OutputFormat
+  pandocArgs?: string[]
   ensureFile?: boolean
+  templatePath?: string
   useCiteproc?: boolean
 }
 
-export class PandocCodec extends Codec
-  implements Codec<EncodeOptions, DecodeOptions> {
+export class PandocCodec extends Codec implements Codec {
   // Although this codec is usually used as a base for others (e.g `docx`),
   // the following definitions allow Pandoc JSON to be decoded or encoded
   // directly
   public readonly mediaTypes = ['application/pandoc+json']
-
   public readonly extNames = ['pandoc']
 
   /**
    * Decode a `VFile` to a `stencila.Node`.
    *
    * @param file The `VFile` to decode
+   * @param options User options
+   * @param settings Pandoc settings used by derived codecs
    * @returns A promise that resolves to a `stencila.Node`
    */
   public readonly decode = async (
     file: vfile.VFile,
-    options: DecodeOptions = {}
+    options: CommonDecodeOptions = this.commonDecodeDefaults,
+    settings: DecodeSettings = {}
   ): Promise<stencila.Node> => {
-    const { from, ensureFile, flags: cliOptions } = {
-      ...defaultDecodeOptions,
-      ...options
+    const {
+      pandocFormat = Pandoc.OutputFormat.json,
+      pandocArgs = [],
+      ensureFile = false
+    } = settings
+
+    const args = [`--from=${pandocFormat}`, `--to=json`].concat(pandocArgs)
+
+    const { path, contents } = file
+    if (!contents || ensureFile) {
+      if (ensureFile && !path) throw new Error('Must supply a file')
+      args.push(`${path}`)
     }
 
-    const args = [`--from=${from}`, `--to=json`].concat(cliOptions)
-
-    const content = file.contents
-    if (!content || ensureFile) {
-      if (ensureFile && !file.path) throw new Error('Must supply a file')
-      args.push(`${file.path}`)
-    }
-
-    const json = await run(content, args)
+    const json = await run(contents, args)
     const pdoc = JSON.parse(json)
     return decodeDocument(pdoc)
   }
@@ -102,24 +115,25 @@ export class PandocCodec extends Codec
    */
   public readonly encode = async (
     node: stencila.Node,
-    {
-      filePath,
-      format = Pandoc.OutputFormat.json,
-      codecOptions = { flags: [], ensureFile: false }
-    }: CommonEncodeOptions<EncodeOptions> = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults,
+    settings: EncodeSettings = {}
   ): Promise<vfile.VFile> => {
+    let { format, filePath } = { ...this.commonEncodeDefaults, ...options }
+
+    const {
+      pandocFormat = Pandoc.OutputFormat.json,
+      pandocArgs = [],
+      ensureFile = false,
+      useCiteproc = false
+    } = settings
+
     encodePromises = []
     const { standalone, pdoc } = encodeNode(node)
     await Promise.all(encodePromises)
 
-    const { flags = [], ensureFile = false, useCiteproc = false } = codecOptions
-
-    const args = [
-      `--from=json`,
-      `--to=${format === 'pandoc' ? Pandoc.OutputFormat.json : format}`
-    ]
+    const args = [`--from=json`, `--to=${pandocFormat}`]
     if (standalone) args.push('--standalone')
-    for (const option of flags) {
+    for (const option of pandocArgs) {
       if (!(!standalone && option.startsWith('--template'))) args.push(option)
     }
 
@@ -127,7 +141,8 @@ export class PandocCodec extends Codec
       let output
       if (!filePath || filePath === '-') {
         // Create a new file path, which is returned as `vfile.path`
-        output = nodeType(node).toLowerCase() + '.' + format
+        output = nodeType(node).toLowerCase()
+        if (format !== undefined) output += `.${format}`
         filePath = output
       } else output = filePath
       args.push(`--output=${output}`)
@@ -164,7 +179,7 @@ let encodePromises: Promise<any>[] = []
 /**
  * Run the Pandoc binary
  *
- * For performance, only filter using `pndoc-citeproc` is necessary.
+ * For performance, only filter using `pandoc-citeproc` is necessary.
  */
 export function run(
   input: string | Buffer,
@@ -1305,7 +1320,7 @@ function encodeRPNG(node: stencila.Node): Pandoc.Image {
   const imagePath = tempy.file({ extension: 'png' })
   const promise = (async () => {
     await write(node, imagePath, {
-      ...defaultEncodeOptions,
+      ...commonEncodeDefaults,
       format: 'rpng',
       isStandalone: false
     })

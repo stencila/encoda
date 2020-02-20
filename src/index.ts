@@ -14,8 +14,9 @@ import mime from 'mime'
 import path from 'path'
 import {
   Codec,
-  defaultEncodeOptions,
-  CommonEncodeOptions
+  commonEncodeDefaults,
+  CommonEncodeOptions,
+  CommonDecodeOptions
 } from './codecs/types'
 import * as vfile from './util/vfile'
 import * as zip from './util/zip'
@@ -241,7 +242,7 @@ export async function decode(
  */
 export const encode = async (
   node: stencila.Node,
-  options: CommonEncodeOptions = defaultEncodeOptions
+  options: CommonEncodeOptions = commonEncodeDefaults
 ): Promise<VFile> => {
   const { filePath, format } = options
   if (!(filePath || format)) {
@@ -277,7 +278,7 @@ export async function load(
 export async function dump(
   node: stencila.Node,
   format: string,
-  options: CommonEncodeOptions = defaultEncodeOptions
+  options: CommonEncodeOptions = commonEncodeDefaults
 ): Promise<string> {
   const file = await encode(node, { ...options, format })
   return vfile.dump(file)
@@ -310,7 +311,7 @@ export async function read(
 export async function write(
   node: stencila.Node,
   filePath: string,
-  options: CommonEncodeOptions = defaultEncodeOptions
+  options: CommonEncodeOptions = commonEncodeDefaults
 ): Promise<VFile> {
   const file = await encode(node, { ...options, filePath })
   await vfile.write(file, filePath)
@@ -321,6 +322,7 @@ interface ConvertOptions {
   to?: string
   from?: string
   encodeOptions?: CommonEncodeOptions
+  decodeOptions?: CommonDecodeOptions
 }
 
 /**
@@ -334,14 +336,16 @@ interface ConvertOptions {
 export async function convert(
   input: string,
   outputPaths?: string | string[],
-  { to, from, encodeOptions = defaultEncodeOptions }: ConvertOptions = {}
+  options: ConvertOptions = {}
 ): Promise<string | undefined> {
+  let { to, from, encodeOptions, decodeOptions } = options
+
   let outputPaths_: (string | undefined)[]
   if (outputPaths === undefined) outputPaths_ = [undefined]
   else if (typeof outputPaths === 'string') outputPaths_ = [outputPaths]
   else outputPaths_ = outputPaths
 
-  const { shouldZip } = encodeOptions
+  const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
 
   const inputFile = vfile.create(input)
   const node = await decode(inputFile, input, from)
@@ -350,7 +354,7 @@ export async function convert(
   const files: string[] = []
   for (const outputPath of outputPaths_) {
     const outputFile = await encode(node, {
-      ...defaultEncodeOptions,
+      ...commonEncodeDefaults,
       format: to,
       filePath: outputPath,
       ...encodeOptions

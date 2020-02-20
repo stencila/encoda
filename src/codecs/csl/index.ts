@@ -12,19 +12,14 @@ import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import * as vfile from '../../util/vfile'
-import { Codec, CommonEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
 
 /**
  * The directory where styles are stored
  */
 export const stylesDir = path.join(__dirname, 'styles')
 
-interface DecodeOptions {
-  format: string
-}
-
-export class CSLCodec extends Codec<{}, DecodeOptions>
-  implements Codec<{}, DecodeOptions> {
+export class CSLCodec extends Codec implements Codec {
   public readonly mediaTypes = ['application/vnd.citationstyles.csl+json']
 
   public readonly extNames = ['csl']
@@ -34,16 +29,21 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    */
   public readonly decode = async (
     file: vfile.VFile,
-    options = { format: '@csl/object' }
+    options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
+    const { format = '@csl/object' } = {
+      ...this.commonDecodeDefaults,
+      ...options
+    }
+
     const content: string = await vfile.dump(file)
 
     let csls
     try {
-      csls = await Cite.inputAsync(content, { forceType: options.format })
+      csls = await Cite.inputAsync(content, { forceType: format })
     } catch (error) {
       throw new Error(
-        `Error when parsing content of format ${options.format}: ${error.message}`
+        `Error when parsing content of format ${format}: ${error.message}`
       )
     }
 
@@ -61,7 +61,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    */
   public readonly encode = (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const { format = 'json' } = options
 

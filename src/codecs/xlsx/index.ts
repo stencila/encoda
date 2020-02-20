@@ -39,7 +39,7 @@ export class XlsxCodec extends Codec implements Codec {
 
   public readonly encode = (
     node: stencila.Node,
-    { format = 'xlsx' }: CommonEncodeOptions = this.defaultEncodeOptions
+    { format = 'xlsx' }: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const workbook = encodeNode(node)
     const buffer = xlsx.write(workbook, {

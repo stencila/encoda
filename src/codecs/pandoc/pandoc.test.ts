@@ -4,7 +4,7 @@ import path from 'path'
 import * as vfile from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { RPNGCodec } from '../rpng'
-import { defaultEncodeOptions } from '../types'
+import { commonEncodeDefaults } from '../types'
 import { JsonCodec } from '../json'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
@@ -620,7 +620,7 @@ describe('rPNG encoding & decoding of "special" node types', () => {
     'decode: %s',
     async (name: string, value: stencila.Node, done: jest.DoneCallback) => {
       const rPNG = await rpng.encode(value, {
-        ...defaultEncodeOptions,
+        ...commonEncodeDefaults,
         filePath: path.join(output, `${name}.png`)
       })
 

@@ -70,7 +70,7 @@ export class PdfCodec extends Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: CommonEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     // Generate HTML that will be used to render the PDF
     // Bundle images into HTML, otherwise Puppeteer will not
