@@ -7,7 +7,7 @@ import * as stencila from '@stencila/schema'
 import { getVersion as getSchemaVersion } from '../../util/schemas'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 const log = getLogger('encoda:xml')
 
@@ -47,7 +47,7 @@ export class XmlCodec extends Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const doc = await encodeDoc(node, options.isStandalone)
     const content = xml.dump(doc, { spaces: 4 })

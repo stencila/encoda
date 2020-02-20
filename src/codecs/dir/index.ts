@@ -24,11 +24,11 @@ import trash from 'trash'
 import unixify from 'unixify'
 import { read, write } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 const log = getLogger('encoda:dir')
 
-interface EncodeOptions extends GlobalEncodeOptions {
+interface EncodeOptions extends CommonEncodeOptions {
   /**
    * The format to decode parts of the `Collection` as.
    * Defaults to `html`.

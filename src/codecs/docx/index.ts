@@ -10,7 +10,7 @@ import * as vfile from '../../util/vfile'
 import { stylesDir } from '../csl'
 import * as Pandoc from '../pandoc'
 import { dataDir } from '../pandoc/binary'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 const pandoc = new Pandoc.PandocCodec()
 
@@ -48,7 +48,7 @@ export class DocxCodec extends Codec<EncodeOptions>
    */
   public readonly encode = async (
     node: stencila.Node,
-    { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = this
+    { filePath, codecOptions = {} }: CommonEncodeOptions<EncodeOptions> = this
       .defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const article = ensureArticle(node)

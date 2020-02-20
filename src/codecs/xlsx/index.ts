@@ -18,7 +18,7 @@ import { range } from 'fp-ts/lib/Array'
 import { pipe } from 'fp-ts/lib/pipeable'
 import * as xlsx from 'xlsx'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 const cellNameRegEx = /^([A-Z]+)([1-9][0-9]*)$/
 
@@ -39,7 +39,7 @@ export class XlsxCodec extends Codec implements Codec {
 
   public readonly encode = (
     node: stencila.Node,
-    { format = 'xlsx' }: GlobalEncodeOptions = this.defaultEncodeOptions
+    { format = 'xlsx' }: CommonEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const workbook = encodeNode(node)
     const buffer = xlsx.write(workbook, {

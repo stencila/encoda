@@ -25,7 +25,7 @@ import { write } from '../..'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import * as vfile from '../../util/vfile'
 import { RPNGCodec } from '../rpng'
-import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { Codec, defaultEncodeOptions, CommonEncodeOptions } from '../types'
 import { binary, dataDir, citeprocBinaryPath } from './binary'
 import * as Pandoc from './types'
 import { stringifyContent } from '../../util/content/stringifyContent'
@@ -106,7 +106,7 @@ export class PandocCodec extends Codec
       filePath,
       format = Pandoc.OutputFormat.json,
       codecOptions = { flags: [], ensureFile: false }
-    }: GlobalEncodeOptions<EncodeOptions> = this.defaultEncodeOptions
+    }: CommonEncodeOptions<EncodeOptions> = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     encodePromises = []
     const { standalone, pdoc } = encodeNode(node)

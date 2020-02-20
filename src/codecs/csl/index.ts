@@ -12,7 +12,7 @@ import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 /**
  * The directory where styles are stored
@@ -61,7 +61,7 @@ export class CSLCodec extends Codec<{}, DecodeOptions>
    */
   public readonly encode = (
     node: stencila.Node,
-    options: GlobalEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { format = 'json' } = options
 

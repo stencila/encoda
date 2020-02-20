@@ -37,7 +37,7 @@ import { getThemeAssets } from '../../util/html'
 import { toFiles } from '../../util/toFiles'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 import {
   decodeMicrodataItemtype,
   encodeMicrodataItemtype,
@@ -241,7 +241,7 @@ export class HTMLCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.defaultEncodeOptions
   ): Promise<vfile.VFile> => {
     const { filePath, isStandalone, isBundle, theme } = {
       ...this.defaultEncodeOptions,

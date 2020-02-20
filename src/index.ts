@@ -15,7 +15,7 @@ import path from 'path'
 import {
   Codec,
   defaultEncodeOptions,
-  GlobalEncodeOptions
+  CommonEncodeOptions
 } from './codecs/types'
 import * as vfile from './util/vfile'
 import * as zip from './util/zip'
@@ -241,7 +241,7 @@ export async function decode(
  */
 export const encode = async (
   node: stencila.Node,
-  options: GlobalEncodeOptions = defaultEncodeOptions
+  options: CommonEncodeOptions = defaultEncodeOptions
 ): Promise<VFile> => {
   const { filePath, format } = options
   if (!(filePath || format)) {
@@ -277,7 +277,7 @@ export async function load(
 export async function dump(
   node: stencila.Node,
   format: string,
-  options: GlobalEncodeOptions = defaultEncodeOptions
+  options: CommonEncodeOptions = defaultEncodeOptions
 ): Promise<string> {
   const file = await encode(node, { ...options, format })
   return vfile.dump(file)
@@ -310,7 +310,7 @@ export async function read(
 export async function write(
   node: stencila.Node,
   filePath: string,
-  options: GlobalEncodeOptions = defaultEncodeOptions
+  options: CommonEncodeOptions = defaultEncodeOptions
 ): Promise<VFile> {
   const file = await encode(node, { ...options, filePath })
   await vfile.write(file, filePath)
@@ -320,7 +320,7 @@ export async function write(
 interface ConvertOptions {
   to?: string
   from?: string
-  encodeOptions?: GlobalEncodeOptions
+  encodeOptions?: CommonEncodeOptions
 }
 
 /**

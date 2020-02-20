@@ -4,7 +4,7 @@ import globby from 'globby'
 import path from 'path'
 import { DirCodec } from '.'
 import * as vfile from '../../util/vfile'
-import { defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { defaultEncodeOptions, CommonEncodeOptions } from '../types'
 
 const { decode, encode, sniff } = new DirCodec()
 
@@ -84,7 +84,7 @@ describe('decode', () => {
 })
 
 describe('encode', () => {
-  const e = (n: stencila.Node, options: Omit<GlobalEncodeOptions, 'theme'>) =>
+  const e = (n: stencila.Node, options: Omit<CommonEncodeOptions, 'theme'>) =>
     encode(n, { ...defaultEncodeOptions, ...options })
 
   it('creates a directory', async () => {

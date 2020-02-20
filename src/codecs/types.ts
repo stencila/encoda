@@ -12,7 +12,7 @@ import * as vfile from '../util/vfile'
  * as an option it will be ignored. Futhermore, some combinations
  * of options are pointless e.g. a `theme` when `isStandalone: false`
  */
-export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
+export interface CommonEncodeOptions<CodecOptions extends object = {}> {
   format?: string
   filePath?: string
   isStandalone?: boolean
@@ -31,7 +31,7 @@ export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
  * to `isStandalone: true` and another to `false`.
  */
 export const defaultEncodeOptions: Required<Pick<
-  GlobalEncodeOptions,
+  CommonEncodeOptions,
   'isStandalone' | 'isBundle' | 'shouldZip' | 'theme'
 >> = {
   isStandalone: false,
@@ -102,7 +102,7 @@ export abstract class Codec<
    */
   public abstract readonly encode: (
     node: stencila.Node,
-    options?: EncodeOptions & GlobalEncodeOptions
+    options?: EncodeOptions & CommonEncodeOptions
   ) => Promise<vfile.VFile>
 
   /**
@@ -135,7 +135,7 @@ export abstract class Codec<
    */
   public async dump(
     node: stencila.Node,
-    options?: EncodeOptions & GlobalEncodeOptions
+    options?: EncodeOptions & CommonEncodeOptions
   ): Promise<string> {
     return vfile.dump(await this.encode(node, options))
   }
