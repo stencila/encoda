@@ -79,7 +79,7 @@ configure(options.debug)
           isBundle: bundle,
           shouldZip: zip,
           theme,
-          codecOptions: rest
+          ...rest
         }
       })
     } else if (['process', 'coerce', 'validate'].includes(command)) {
@@ -101,7 +101,7 @@ configure(options.debug)
         isBundle: bundle,
         shouldZip: zip,
         theme,
-        codecOptions: rest
+        ...rest
       })
     } else {
       log.warn(`Ignored unknown command "${command}"`)
