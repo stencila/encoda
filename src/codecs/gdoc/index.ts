@@ -19,11 +19,11 @@ import { docs_v1 as GDocT } from 'googleapis'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
-import { Codec } from '../types'
+import { Codec, CommonDecodeOptions } from '../types'
 
 const log = getLogger('encoda:gdoc')
 
-interface DecodeOptions {
+interface DecodeOptions extends CommonDecodeOptions {
   fetch: boolean
 }
 

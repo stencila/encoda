@@ -37,7 +37,7 @@ import { getThemeAssets } from '../../util/html'
 import { toFiles } from '../../util/toFiles'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
-import { Codec, defaultEncodeOptions, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 import {
   decodeMicrodataItemtype,
   encodeMicrodataItemtype,
@@ -245,14 +245,12 @@ export class HTMLCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const {
-      filePath,
-      isStandalone = true,
-      isBundle = false,
-      theme = themes.stencila
-    } = options
+    const { filePath, isStandalone, isBundle, theme } = {
+      ...this.commonEncodeDefaults,
+      ...options
+    }
 
     // Reset the slugger to avoid unnecessarily adding numbers to ids
     // in order to make them unique
@@ -274,8 +272,9 @@ export class HTMLCodec extends Codec implements Codec {
       dom = await generateHtmlElement(
         stringifyContent(title),
         [dom],
-        mathjaxCss,
-        options
+        isBundle,
+        theme,
+        mathjaxCss
       )
     }
 
@@ -609,17 +608,17 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
 /**
  * Generate a `<html>` element with supplied title, metadata, body content, and
  * optionally custom CSS to style the document with.
+ *
+ * TODO: This function needs refactoring. It only called from one location
+ * and it may be better to move some of all of it there.
  */
 async function generateHtmlElement(
-  title = 'Untitled',
-  body: Node[] = [],
-  css?: string,
-  options: GlobalEncodeOptions = defaultEncodeOptions
+  title: string,
+  body: Node[],
+  isBundle: boolean,
+  theme: string,
+  css?: string
 ): Promise<HTMLHtmlElement> {
-  const { isBundle = false, theme } = options
-
-  log.debug(`Generating <html> elem with options ${JSON.stringify(options)}`)
-
   const { styles, scripts } = await getThemeAssets(theme, isBundle)
 
   let themeCss
@@ -813,7 +812,7 @@ function encodeTitleProperty(
 
   return h(
     tag,
-    {[headline === title ?  'itemprop' : stencilaItemProp]: 'headline'},
+    { [headline === title ? 'itemprop' : stencilaItemProp]: 'headline' },
     headline === title
       ? undefined
       : h('meta', { itemprop: 'headline', content: headline }),
@@ -972,10 +971,7 @@ function encodeReferencesProperty(
       { [stencilaItemType]: encodeMicrodataItemtype('Heading') },
       'References'
     ),
-    h(
-      'ol',
-      references.map(encodeReference)
-    )
+    h('ol', references.map(encodeReference))
   )
 }
 

@@ -3,43 +3,31 @@
  */
 
 import stencila from '@stencila/schema'
-import { getTheme } from '@stencila/thema'
 import path from 'path'
 import { ensureArticle } from '../../util/content/ensureArticle'
 import * as vfile from '../../util/vfile'
 import { stylesDir } from '../csl'
-import * as Pandoc from '../pandoc'
+import { InputFormat, OutputFormat, PandocCodec } from '../pandoc'
 import { dataDir } from '../pandoc/binary'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 
-const pandoc = new Pandoc.PandocCodec()
+const pandoc = new PandocCodec()
 
-interface EncodeOptions {
-  templatePath?: string
-}
-
-export class DocxCodec extends Codec<EncodeOptions>
-  implements Codec<EncodeOptions> {
+export class DocxCodec extends Codec implements Codec {
   public readonly mediaTypes = [
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   ]
 
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile,
+    options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
-    return pandoc.decode(file, {
-      ensureFile: true,
-      flags: [`--extract-media=${file.path}.media`],
-      from: Pandoc.InputFormat.docx
+    return pandoc.decode(file, options, {
+      pandocFormat: InputFormat.docx,
+      pandocArgs: [`--extract-media=${file.path}.media`],
+      ensureFile: true
     })
   }
-
-  /** Used to style conversion outputs targeting Microsoft Word */
-  private static defaultTemplatePath = path.join(
-    dataDir,
-    'templates',
-    'stencila-template.docx'
-  )
 
   /**
    * Encode a Stencila `Node` to a Microsoft Word `docx` format.
@@ -48,35 +36,27 @@ export class DocxCodec extends Codec<EncodeOptions>
    */
   public readonly encode = async (
     node: stencila.Node,
-    { filePath, codecOptions = {} }: GlobalEncodeOptions<EncodeOptions> = this
-      .defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const article = ensureArticle(node)
-    const { references } = article
 
-    const referenceDoc =
-      codecOptions.templatePath ?? DocxCodec.defaultTemplatePath
-
-    let flags: string[] = [`--reference-doc=${referenceDoc}`]
-
-    if (references !== undefined) {
+    const refDoc = path.join(dataDir, 'templates', 'stencila-template.docx')
+    const pandocArgs = [`--reference-doc=${refDoc}`]
+    const useCiteproc = article.references !== undefined
+    if (useCiteproc) {
       // Currently the style is fixed, but in the future will be an encoding option.
       const cslStyle = path.join(stylesDir, 'apa.csl')
-      flags = [
+      pandocArgs.push(
         `--metadata=csl:${cslStyle}`,
         '--metadata=reference-section-title:References'
-      ]
+      )
     }
 
-    return pandoc.encode(article, {
-      filePath,
-      format: Pandoc.OutputFormat.docx,
-      theme: getTheme(),
-      codecOptions: {
-        flags,
-        ensureFile: true,
-        useCiteproc: references !== undefined
-      }
+    return pandoc.encode(article, options, {
+      pandocFormat: OutputFormat.docx,
+      pandocArgs,
+      ensureFile: true,
+      useCiteproc
     })
   }
 }

@@ -12,7 +12,7 @@ import * as stencila from '@stencila/schema'
 import assert from 'assert'
 import path from 'path'
 import { dump, load, read, write } from '.'
-import { defaultEncodeOptions } from './codecs/types'
+import { commonEncodeDefaults } from './codecs/types'
 import { coerce } from './util/coerce'
 import { validate } from './util/validate'
 
@@ -69,7 +69,7 @@ export default async function process(
             _get(meta.export),
             meta.to || code.programmingLanguage,
             {
-              ...defaultEncodeOptions,
+              ...commonEncodeDefaults,
               isStandalone: false
             }
           )
@@ -223,7 +223,7 @@ export default async function process(
   ): Promise<void> {
     try {
       const targetPath = './' + path.join(dir, target)
-      await write(node, targetPath, { ...defaultEncodeOptions, format })
+      await write(node, targetPath, { ...commonEncodeDefaults, format })
     } catch (error) {
       throw Error(`Error: writing "${target}": ${error} `)
     }

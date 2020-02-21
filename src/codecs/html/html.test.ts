@@ -54,7 +54,7 @@ import kitchenSink from '../../__fixtures__/article/kitchen-sink'
 import mathArticle from '../../__fixtures__/article/math'
 import { readFixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
-import { defaultEncodeOptions } from '../types'
+import { commonEncodeDefaults } from '../types'
 import { decodeHref, HTMLCodec } from './'
 import { encodeMicrodataItemtype, stencilaItemProp, Types } from './microdata'
 
@@ -64,10 +64,11 @@ const doc = (innerHTML: string) =>
 const json = new JsonCodec()
 const html = new HTMLCodec()
 const { encode, decode } = html
+const dump = html.dump.bind(html)
 
 const e = async (
   node: stencila.Node,
-  options = { ...defaultEncodeOptions, isStandalone: false }
+  options = { ...commonEncodeDefaults, isStandalone: false }
 ) => vfile.dump(await encode(node, options))
 
 const d = async (htmlString: string): Promise<stencila.Node> =>
@@ -572,10 +573,10 @@ describe('Encode & Decode Collections', () => {
 })
 
 test('encode with different themes', async () => {
-  const e = async (options = defaultEncodeOptions) =>
-    vfile.dump(await encode(kitchenSink, options))
-
-  let html = await e({ theme: 'stencila' })
+  let html = await dump(stencila.article(), {
+    theme: 'stencila',
+    isStandalone: true
+  })
   expect(html).toMatch(
     /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/index\.js/
   )
@@ -583,7 +584,7 @@ test('encode with different themes', async () => {
     /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/styles\.css/
   )
 
-  html = await e({ theme: 'eLife' })
+  html = await dump(stencila.article(), { theme: 'eLife', isStandalone: true })
   expect(html).toMatch(
     /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/eLife\/index\.js/
   )
@@ -593,9 +594,6 @@ test('encode with different themes', async () => {
 })
 
 test('encode with bundling', async () => {
-  const e = async (options = defaultEncodeOptions) =>
-    vfile.dump(await encode(kitchenSink, options))
-
   const stylesheet = fs.readFileSync(
     require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),
     'utf8'
@@ -610,7 +608,11 @@ test('encode with bundling', async () => {
   // affects indentation.
   // Previously we used a snapshot for this but that is avoided
   // here since it will fail when Thema is upgraded.
-  let html = await e({ theme: 'eLife', isBundle: true })
+  let html = await dump(stencila.article(), {
+    theme: 'eLife',
+    isStandalone: true,
+    isBundle: true
+  })
   expect(html).toMatch(stylesheet.trim().split('\n')[1])
   expect(html).toMatch(js.trim().split('\n')[1])
 })

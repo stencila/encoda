@@ -8,7 +8,7 @@ import {
 import { getLogger } from '@stencila/logga'
 import * as schema from '@stencila/schema'
 import { codecList, decode, encode } from '.'
-import { defaultEncodeOptions } from './codecs/types'
+import { commonEncodeDefaults } from './codecs/types'
 import * as vfile from './util/vfile'
 
 const log = getLogger('encoda')
@@ -81,7 +81,7 @@ export class Encoda extends Listener {
     format?: string
   ): Promise<string> {
     const encoding = await encode(node, {
-      ...defaultEncodeOptions,
+      ...commonEncodeDefaults,
       format,
       filePath: dest
     })

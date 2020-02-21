@@ -24,19 +24,20 @@ import trash from 'trash'
 import unixify from 'unixify'
 import { read, write } from '../..'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
 
 const log = getLogger('encoda:dir')
 
-interface EncodeOptions extends GlobalEncodeOptions {
+interface EncodeOptions extends CommonEncodeOptions {
   /**
    * The format to decode parts of the `Collection` as.
-   * Defaults to `html`.
+   * Defaults to `html`. Different from the common option
+   * `format`, which in this case is `dir`.
    */
-  format?: string
+  fileFormat?: string
 }
 
-interface DecodeOptions {
+interface DecodeOptions extends CommonDecodeOptions {
   /**
    * Minimatch patterns to use to select only some of the included
    * files. Defaults to '**\/\*' (i.e. everything, including in
@@ -196,11 +197,11 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
 
   public readonly encode = async (
     node: stencila.Node,
-    options: EncodeOptions = this.defaultEncodeOptions
+    options: EncodeOptions = this.commonEncodeDefaults
     // eslint-disable-next-line @typescript-eslint/require-await
   ): Promise<vfile.VFile> => {
     const dirPath = options.filePath ?? tempy.directory()
-    const format = options.format ?? 'html'
+    const format = options.fileFormat ?? 'html'
 
     // Wrap to a collection as necessary
     const cw: stencila.CreativeWork = isCreativeWork(node)

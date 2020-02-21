@@ -1,22 +1,78 @@
 import * as stencila from '@stencila/schema'
 import { getTheme } from '@stencila/thema'
 import * as vfile from '../util/vfile'
-
-export interface GlobalEncodeOptions<CodecOptions extends object = {}> {
+/**
+ * Encoding options that are common to all codecs.
+ *
+ * Codecs are encouraged to respect these options but
+ * are not forced to. Indeed, some options do not make sense for
+ * some codecs. For example, for the PDF codec `isStandalone`
+ * is always `true` so if `isStandalone: false` is supplied
+ * as an option it will be ignored. Futhermore, some combinations
+ * of options are pointless e.g. a `theme` when `isStandalone: false`
+ */
+export interface CommonEncodeOptions {
   format?: string
   filePath?: string
   isStandalone?: boolean
   isBundle?: boolean
   shouldZip?: 'yes' | 'no' | 'maybe'
-  theme: string
-
-  codecOptions?: CodecOptions
+  theme?: string
 }
 
-export const defaultEncodeOptions: GlobalEncodeOptions = {
+/**
+ * Default values for encoding options.
+ *
+ * This set of defaults provide a way of promoting consistency amongst
+ * codecs. Instead of, for example, one codec defaulting
+ * to `isStandalone: true` and another to `false`. It does not
+ * enforce consistency however.
+ */
+type CommonEncodeDefaults = Required<
+  Pick<CommonEncodeOptions, 'isStandalone' | 'isBundle' | 'shouldZip' | 'theme'>
+>
+export const commonEncodeDefaults: CommonEncodeDefaults = {
+  isStandalone: false,
+  isBundle: false,
   shouldZip: 'no',
   theme: getTheme()
 }
+
+/**
+ * Decoding options that are common to all codecs.
+ *
+ * See notes for `CommonEncodeOptions` for how these are used.
+ */
+export interface CommonDecodeOptions {
+  /**
+   * The format to decode content from.
+   *
+   * Most codecs only decode from one format. However,
+   * for those codecs that support multiple formats,
+   * this options lets the user specify which one.
+   */
+  format?: string
+
+  /**
+   * The node type to decode content to.
+   *
+   * Many codecs decode to a single node type.
+   * e.g. the `docx` codec always decodes to an `Article`.
+   * However, some `codecs` can decode to multiple node types.
+   * e.g. the `yaml` and `xlsx` codecs.
+   * This option allows the user to be explicit about which node type
+   * they expect content to be decode to.
+   */
+  asType?: keyof stencila.Types
+}
+
+/**
+ * Default values for encoding options.
+ *
+ * See notes for `commonEncodeDefaults` for why these exist.
+ */
+type CommonDecodeDefaults = {}
+export const commonDecodeDefaults: CommonDecodeDefaults = {}
 
 /**
  * The interface for a codec.
@@ -26,8 +82,8 @@ export const defaultEncodeOptions: GlobalEncodeOptions = {
  * differs from the usage of [`unified`](https://github.com/unifiedjs/unified#processorcodec).
  */
 export abstract class Codec<
-  EncodeOptions extends object = {},
-  DecodeOptions extends object = {}
+  EncodeOptions extends CommonEncodeOptions = {},
+  DecodeOptions extends CommonDecodeOptions = {}
 > {
   /**
    * An array of [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml)
@@ -58,6 +114,16 @@ export abstract class Codec<
   public readonly sniff?: (content: string) => Promise<boolean>
 
   /**
+   * The default encode options for this codec
+   */
+  protected commonEncodeDefaults: CommonEncodeDefaults = commonEncodeDefaults
+
+  /**
+   * The default decode options for this codec
+   */
+  protected commonDecodeDefaults: CommonDecodeDefaults = commonDecodeDefaults
+
+  /**
    * Decode a `VFile` to a `stencila.Node`.
    *
    * @param file The `VFile` to decode
@@ -66,10 +132,8 @@ export abstract class Codec<
    */
   public abstract readonly decode: (
     file: vfile.VFile,
-    options?: DecodeOptions
+    options?: CommonDecodeOptions & DecodeOptions
   ) => Promise<stencila.Node>
-
-  protected defaultEncodeOptions = defaultEncodeOptions
 
   /**
    * Encode a `stencila.Node` to a `VFile`.
@@ -80,7 +144,7 @@ export abstract class Codec<
    */
   public abstract readonly encode: (
     node: stencila.Node,
-    options?: EncodeOptions & GlobalEncodeOptions
+    options?: CommonEncodeOptions & EncodeOptions
   ) => Promise<vfile.VFile>
 
   /**
@@ -96,7 +160,7 @@ export abstract class Codec<
    */
   public async load(
     content: string,
-    options?: DecodeOptions
+    options?: CommonDecodeOptions & DecodeOptions
   ): Promise<stencila.Node> {
     return this.decode(vfile.load(content), options)
   }
@@ -113,7 +177,7 @@ export abstract class Codec<
    */
   public async dump(
     node: stencila.Node,
-    options?: EncodeOptions & GlobalEncodeOptions
+    options?: CommonEncodeOptions & EncodeOptions
   ): Promise<string> {
     return vfile.dump(await this.encode(node, options))
   }

@@ -10,7 +10,7 @@ import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { decodeDoc as decodeXmlDoc, encodeDoc as encodeXmlDoc } from '../xml'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 import { stringifyContent } from '../../util/content/stringifyContent'
 
 const log = getLogger('encoda:pdf')
@@ -70,7 +70,7 @@ export class PdfCodec extends Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     // Generate HTML that will be used to render the PDF
     // Bundle images into HTML, otherwise Puppeteer will not

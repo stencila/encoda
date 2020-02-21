@@ -27,7 +27,7 @@ import punycode from 'punycode'
 import { dump } from '../../index'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 /**
  * Styling to be applied to a node's HTML fragment
@@ -230,7 +230,7 @@ export class RPNGCodec extends Codec implements Codec {
    */
   public readonly encode = async (
     node: stencila.Node,
-    options: GlobalEncodeOptions = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     // isStandalone defaults to false because usually we are generating
     // rPNGs to be embedded in other files e.g. rDOCX

@@ -13,7 +13,7 @@ import tempy from 'tempy'
 import { write } from '../..'
 import * as uri from '../../util/uri'
 import * as vfile from '../../util/vfile'
-import { Codec, GlobalEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions } from '../types'
 
 export class DarCodec extends Codec implements Codec {
   public readonly extNames = ['dar']
@@ -55,7 +55,7 @@ export class DarCodec extends Codec implements Codec {
    */
   public encode = async (
     node: stencila.Node,
-    options = this.defaultEncodeOptions
+    options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     const { filePath } = options
 
@@ -129,7 +129,7 @@ async function encodeDocument(
   node: stencila.Node,
   id: string,
   darPath: string,
-  options: GlobalEncodeOptions
+  options: CommonEncodeOptions
 ): Promise<Element> {
   const documentFile = `${id}.jats.xml`
   const documentPath = path.join(darPath, documentFile)
