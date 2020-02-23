@@ -654,7 +654,7 @@ function encodeInlineContent(
       return encodeLink(node as stencila.Link)
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
-    case 'string':
+    case 'Text':
       return encodeString(node as string)
     default:
       log.warn(`Unhandled node type ${type_}`)

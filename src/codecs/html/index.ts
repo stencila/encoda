@@ -578,17 +578,17 @@ const encodeNode = (node: stencila.Node): Node => {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
 
-    case 'null':
+    case 'Null':
       return encodeNull()
-    case 'boolean':
+    case 'Boolean':
       return encodeBoolean(node as boolean)
-    case 'number':
+    case 'Number':
       return encodeNumber(node as number)
-    case 'string':
+    case 'Text':
       return encodeString(node as string)
-    case 'array':
+    case 'Array':
       return encodeArray(node as unknown[])
-    case 'object':
+    case 'Object':
       return encodeObject(node as object)
     default:
       return encodeEntity(node as stencila.Entity)
@@ -1544,7 +1544,7 @@ const decodeCodeOutput = (elem: HTMLElement): stencila.Node => {
  */
 const encodeCodeOutput = (node: stencila.Node): Node => {
   switch (nodeType(node)) {
-    case 'string':
+    case 'Text':
       return h('pre', h('output', node as string))
     default:
       return encodeNode(node)

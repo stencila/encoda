@@ -104,7 +104,7 @@ export class JsonLdCodec extends Codec implements Codec {
           // @ts-ignore
           const { '@value': value, ...rest } = node
           return { ...rest, value }
-        } else if (type === 'object') {
+        } else if (type === 'Object') {
           // The `jsonld` package expands URI strings into an object with an id e.g.
           //
           //   "url": {

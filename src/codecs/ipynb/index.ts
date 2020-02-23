@@ -625,7 +625,7 @@ async function encodeMimeBundle(
 ): Promise<nbformat.MimeBundle> {
   const [mediaType, data] = await (async (): Promise<[string, string]> => {
     switch (nodeType(node)) {
-      case 'string':
+      case 'Text':
         return ['text/plain', await dump(node, 'text')]
       case 'ImageObject': {
         const image = node as stencila.ImageObject

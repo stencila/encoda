@@ -114,15 +114,15 @@ export const encodeDoc = async (
 export const decodeElem = (elem: xml.Element): stencila.Node => {
   const { name, elements = [] } = elem
   switch (name) {
-    case 'null':
+    case 'Null':
       return null
-    case 'boolean':
+    case 'Boolean':
       return xml.text(elem) === 'true'
-    case 'number':
+    case 'Number':
       return parseFloat(xml.text(elem))
-    case 'string':
+    case 'Text':
       return xml.text(elem)
-    case 'array':
+    case 'Array':
       return elements.map(decodeElem)
     default: {
       const node = elements.reduce((prev, curr) => {
@@ -132,7 +132,7 @@ export const decodeElem = (elem: xml.Element): stencila.Node => {
           [key]: decodeElem(curr)
         }
       }, {})
-      return name === 'object' ? node : { type: name, ...node }
+      return name === 'Object' ? node : { type: name, ...node }
     }
   }
 }
@@ -151,10 +151,10 @@ export const encodeNode = (node: stencila.Node, key?: string): xml.Element => {
   if (node === null) {
     return xml.elem(type, { key })
   }
-  if (type === 'boolean' || type === 'number' || type === 'string') {
+  if (type === 'Boolean' || type === 'Number' || type === 'Text') {
     return xml.elem(type, { key }, node.toString())
   }
-  if (type === 'array') {
+  if (type === 'Array') {
     const array = node as stencila.Node[]
     const items = array.map(node => encodeNode(node))
     return xml.elem(type, { key }, ...items)

@@ -1185,7 +1185,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMedia(node as stencila.ImageObject, 'media')
     case 'Cite':
       return encodeCite(node as stencila.Cite, state)
-    case 'string':
+    case 'Text':
       return [{ type: 'text', text: node as string }]
     case 'Collection': {
       const collection = node as stencila.Collection

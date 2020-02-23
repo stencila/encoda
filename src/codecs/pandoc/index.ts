@@ -381,27 +381,27 @@ function decodeMetaValue(
 function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue | undefined {
   if (node === undefined) return undefined
   switch (nodeType(node)) {
-    case 'null':
+    case 'Null':
       return {
         t: 'MetaString',
         c: '!!null'
       }
-    case 'boolean':
+    case 'Boolean':
       return {
         t: 'MetaBool',
         c: node as boolean
       }
-    case 'number':
+    case 'Number':
       return {
         t: 'MetaString',
         c: Number.isInteger(node as number) ? `${node}` : `!!number ${node}`
       }
-    case 'string':
+    case 'Text':
       return {
         t: 'MetaString',
         c: node as string
       }
-    case 'array':
+    case 'Array':
       return {
         t: 'MetaList',
         c: (node as any[]).reduce((prev: Pandoc.MetaValue[], curr) => {
@@ -420,7 +420,7 @@ function encodeMetaValue(node: stencila.Node): Pandoc.MetaValue | undefined {
         c: encodeBlocks((node as stencila.QuoteBlock).content)
       }
     // For both plain objects, and object with `type`, create a `MetaMap`
-    case 'object':
+    case 'Object':
     default:
       return {
         t: 'MetaMap',
@@ -847,7 +847,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
 
 function encodeInline(node: stencila.Node): Pandoc.Inline {
   switch (nodeType(node)) {
-    case 'string':
+    case 'Text':
       return encodeString(node as string)
     case 'Emphasis':
       return encodeEmph(node as stencila.Emphasis)
