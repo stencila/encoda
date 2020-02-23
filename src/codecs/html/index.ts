@@ -14,7 +14,8 @@ import {
   nodeType,
   thematicBreak,
   microdata,
-  microdataType
+  microdataType,
+  microdataItemtype
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import { themes } from '@stencila/thema'
@@ -41,7 +42,6 @@ import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonEncodeOptions } from '../types'
 import {
-  encodeMicrodataItemtype,
   encodeMicrodataAttrs,
   stencilaItemProp,
   stencilaItemType
@@ -950,7 +950,7 @@ function encodeDescriptionProperty(
     { [stencilaItemProp]: 'description' },
     h(
       'h2',
-      { [stencilaItemType]: encodeMicrodataItemtype('Heading') },
+      { [stencilaItemType]: microdataItemtype('Heading') },
       'Abstract'
     ),
     h('meta', {
@@ -969,7 +969,7 @@ function encodeReferencesProperty(
     { [stencilaItemProp]: 'references' },
     h(
       'h2',
-      { [stencilaItemType]: encodeMicrodataItemtype('Heading') },
+      { [stencilaItemType]: microdataItemtype('Heading') },
       'References'
     ),
     h('ol', references.map(encodeReference))
