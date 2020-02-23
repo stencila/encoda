@@ -12,7 +12,9 @@ import {
   isInlineContent,
   markTypes,
   nodeType,
-  thematicBreak
+  thematicBreak,
+  microdata,
+  microdataType
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import { themes } from '@stencila/thema'
@@ -39,7 +41,6 @@ import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonEncodeOptions } from '../types'
 import {
-  decodeMicrodataItemtype,
   encodeMicrodataItemtype,
   encodeMicrodataAttrs,
   stencilaItemProp,
@@ -328,16 +329,16 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
   // With major version upgrade to jsdom (and others 7b8399a791b5b8c9e6cd7e146b143c0ebd1c9257)
   // the `test node instanceof window.HTMLElement` was always falsy and
   // the `typeof node.getAttribute === 'function'` is intended as a temporary workaround
-  const type =
+  const itemtype =
     node instanceof window.HTMLElement ||
     // @ts-ignore
     typeof node.getAttribute === 'function'
       ? (node as HTMLElement).getAttribute('itemtype')
       : null
-  const name =
-    type !== null ? decodeMicrodataItemtype(type) : node.nodeName.toLowerCase()
+  const type = itemtype !== null ? microdataType(itemtype) : undefined
+  const tag = node.nodeName.toLowerCase()
 
-  switch (name) {
+  switch (type ?? tag) {
     case '#document':
       return decodeDocument(node as HTMLDocument)
 
@@ -487,7 +488,7 @@ function decodeNode(node: Node): stencila.Node | stencila.Node[] {
     return decodeHeading(node as HTMLHeadingElement, depth)
   }
 
-  if (type !== null) return decodeEntity(node as HTMLElement)
+  if (itemtype !== null) return decodeEntity(node as HTMLElement)
 
   log.warn(`No handler for HTML element <${name}>`)
   return []

@@ -99,38 +99,6 @@ export function encodeMicrodataItem(node: stencila.Node): MicrodataItem | {} {
 }
 
 /**
- * Get the Stencila Schema type for a HTML Microdata `itemtype`.
- *
- * @param {string} type
- * @returns {keyof Types}
- */
-export function decodeMicrodataItemtype(itemtype: string): keyof Types {
-  // Compact the id by replacing known prefixes
-  const id = itemtype
-    .replace(/^https?:\/\/schema\.org\//, 'schema:')
-    .replace(/^https?:\/\/schema\.stenci\.la\//, 'stencila:')
-
-  // Primitive types that are not included in the
-  // JSON-LD `@context`.
-  switch (id) {
-    case 'schema:Boolean':
-    case 'schema:Number':
-    case 'schema:Text':
-    case 'stencila:Null':
-    case 'stencila:Object':
-    case 'stencila:Array':
-      return id.split(':')[1] as keyof Types
-  }
-
-  const term = idToTerm[id]
-  if (term === undefined) {
-    log.error(`Unhandled itemtype: ${itemtype}`)
-    return 'Entity'
-  }
-  return term as keyof Types
-}
-
-/**
  * Get the value of the HTML Microdata `itemtype` attribute
  * for a Stencila Schema type.
  *
