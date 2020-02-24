@@ -161,7 +161,7 @@ function validateNotebook(
 ): Promise<void> {
   const schemaKey = `nbformat-v${notebook.nbformat}.schema.json`
   let validator = validators.getSchema(schemaKey)
-  if (!validator) {
+  if (validator === undefined) {
     try {
       const schema = notebook.nbformat === 3 ? nbformat3Schema : nbformat4Schema
       validators.addSchema(schema, schemaKey)
@@ -169,6 +169,10 @@ function validateNotebook(
     } catch (error) {
       log.error(`Error when attempting to add schema: ${error.message}`)
     }
+  }
+  if (validator === undefined) {
+    log.error(`Error attempting to create validator`)
+    return Promise.resolve()
   }
   if (!validator(notebook)) {
     const message = (betterAjvErrors(
