@@ -723,7 +723,7 @@ function encodeList(list: stencila.List): MDAST.List {
  * Encode a `MDAST.ListItem` to a `stencila.ListItem`
  */
 function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
-  const { checked, content = [] } = listItem
+  const { isChecked, content = [] } = listItem
   const _listItem: MDAST.ListItem = {
     type: 'listItem',
     children: content.map(child => {
@@ -735,8 +735,8 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
       return { type: 'paragraph', children: [] }
     })
   }
-  return checked === true || checked === false
-    ? { ..._listItem, checked: checked }
+  return isChecked !== undefined
+    ? { ..._listItem, checked: isChecked }
     : _listItem
 }
 
@@ -749,7 +749,7 @@ function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
     content: listItem.children.map(decodeNode).filter(isBlockContent)
   }
   return listItem.checked === true || listItem.checked === false
-    ? { ..._listItem, checked: listItem.checked || false }
+    ? { ..._listItem, isChecked: listItem.checked || false }
     : _listItem
 }
 
