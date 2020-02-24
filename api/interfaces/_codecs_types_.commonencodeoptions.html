@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MicrodataItem | @stencila/encoda</title>
+	<title>CommonEncodeOptions | @stencila/encoda</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_codecs_html_microdata_.html">&quot;codecs/html/microdata&quot;</a>
+					<a href="../modules/_codecs_types_.html">&quot;codecs/types&quot;</a>
 				</li>
 				<li>
-					<a href="_codecs_html_microdata_.microdataitem.html">MicrodataItem</a>
+					<a href="_codecs_types_.commonencodeoptions.html">CommonEncodeOptions</a>
 				</li>
 			</ul>
-			<h1>Interface MicrodataItem</h1>
+			<h1>Interface CommonEncodeOptions</h1>
 		</div>
 	</div>
 </header>
@@ -72,17 +72,26 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Attributes for Microdata <a href="https://www.w3.org/TR/microdata/#items">&quot;items&quot;</a></p>
+						<p>Encoding options that are common to all codecs.</p>
 					</div>
-					<p>&quot;The itemtype attribute must not be specified on elements that do not have
-					an itemscope attribute specified.&quot;</p>
+					<p>Codecs are encouraged to respect these options but
+						are not forced to. Indeed, some options do not make sense for
+						some codecs. For example, for the PDF codec <code>isStandalone</code>
+						is always <code>true</code> so if <code>isStandalone: false</code> is supplied
+						as an option it will be ignored. Futhermore, some combinations
+					of options are pointless e.g. a <code>theme</code> when <code>isStandalone: false</code></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">MicrodataItem</span>
+						<span class="target">CommonEncodeOptions</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -93,9 +102,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_html_microdata_.microdataitem.html#itemid" class="tsd-kind-icon">itemid</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_html_microdata_.microdataitem.html#itemscope" class="tsd-kind-icon">itemscope</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_html_microdata_.microdataitem.html#itemtype" class="tsd-kind-icon">itemtype</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commonencodeoptions.html#filepath" class="tsd-kind-icon">file<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commonencodeoptions.html#format" class="tsd-kind-icon">format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commonencodeoptions.html#isbundle" class="tsd-kind-icon">is<wbr>Bundle</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commonencodeoptions.html#isstandalone" class="tsd-kind-icon">is<wbr>Standalone</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commonencodeoptions.html#shouldzip" class="tsd-kind-icon">should<wbr>Zip</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_codecs_types_.commonencodeoptions.html#theme" class="tsd-kind-icon">theme</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,32 +116,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> itemid</h3>
-					<div class="tsd-signature tsd-kind-icon">itemid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="filepath" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> file<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">file<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L53">src/codecs/html/microdata.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L16">src/codecs/types.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemscope" class="tsd-anchor"></a>
-					<h3>itemscope</h3>
-					<div class="tsd-signature tsd-kind-icon">itemscope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">""</span></div>
+					<a name="format" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> format</h3>
+					<div class="tsd-signature tsd-kind-icon">format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L51">src/codecs/html/microdata.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L15">src/codecs/types.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemtype" class="tsd-anchor"></a>
-					<h3>itemtype</h3>
-					<div class="tsd-signature tsd-kind-icon">itemtype<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="isbundle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Bundle</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Bundle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/html/microdata.ts#L52">src/codecs/html/microdata.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L18">src/codecs/types.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="isstandalone" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Standalone</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Standalone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L17">src/codecs/types.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="shouldzip" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> should<wbr>Zip</h3>
+					<div class="tsd-signature tsd-kind-icon">should<wbr>Zip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"yes"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"no"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"maybe"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L19">src/codecs/types.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="theme" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> theme</h3>
+					<div class="tsd-signature tsd-kind-icon">theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L20">src/codecs/types.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -142,74 +184,56 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html">&quot;codecs/html/microdata&quot;</a>
+						<a href="../modules/_codecs_types_.html">&quot;codecs/types&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/_codecs_types_.codec.html" class="tsd-kind-icon">Codec</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_codecs_types_.commondecodeoptions.html" class="tsd-kind-icon">Common<wbr>Decode<wbr>Options</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_codecs_html_microdata_.microdataitem.html" class="tsd-kind-icon">Microdata<wbr>Item</a>
+						<a href="_codecs_types_.commonencodeoptions.html" class="tsd-kind-icon">Common<wbr>Encode<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_html_microdata_.microdataitem.html#itemid" class="tsd-kind-icon">itemid</a>
+								<a href="_codecs_types_.commonencodeoptions.html#filepath" class="tsd-kind-icon">file<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_html_microdata_.microdataitem.html#itemscope" class="tsd-kind-icon">itemscope</a>
+								<a href="_codecs_types_.commonencodeoptions.html#format" class="tsd-kind-icon">format</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_codecs_html_microdata_.microdataitem.html#itemtype" class="tsd-kind-icon">itemtype</a>
+								<a href="_codecs_types_.commonencodeoptions.html#isbundle" class="tsd-kind-icon">is<wbr>Bundle</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_codecs_types_.commonencodeoptions.html#isstandalone" class="tsd-kind-icon">is<wbr>Standalone</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_codecs_types_.commonencodeoptions.html#shouldzip" class="tsd-kind-icon">should<wbr>Zip</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_codecs_types_.commonencodeoptions.html#theme" class="tsd-kind-icon">theme</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_codecs_html_microdata_.microdataproperty.html" class="tsd-kind-icon">Microdata<wbr>Property</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_types_.html#commondecodedefaults" class="tsd-kind-icon">Common<wbr>Decode<wbr>Defaults</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#microdata" class="tsd-kind-icon">Microdata</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#types" class="tsd-kind-icon">Types</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_html_microdata_.html#context" class="tsd-kind-icon">context</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_html_microdata_.html#idtoterm" class="tsd-kind-icon">id<wbr>ToTerm</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_html_microdata_.html#log" class="tsd-kind-icon">log</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_types_.html#commonencodedefaults" class="tsd-kind-icon">Common<wbr>Encode<wbr>Defaults</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#stencilaitemprop" class="tsd-kind-icon">stencila<wbr>Item<wbr>Prop</a>
+						<a href="../modules/_codecs_types_.html#commondecodedefaults-1" class="tsd-kind-icon">common<wbr>Decode<wbr>Defaults</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#stencilaitemtype" class="tsd-kind-icon">stencila<wbr>Item<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_html_microdata_.html#termtoid" class="tsd-kind-icon">term<wbr>ToId</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#decodemicrodataitemtype" class="tsd-kind-icon">decode<wbr>Microdata<wbr>Itemtype</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataattrs" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Attrs</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataitem" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Item</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataitemprop" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Itemprop</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataitemtype" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Itemtype</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_html_microdata_.html#encodemicrodataproperty" class="tsd-kind-icon">encode<wbr>Microdata<wbr>Property</a>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
+						<a href="../modules/_codecs_types_.html#commonencodedefaults-1" class="tsd-kind-icon">common<wbr>Encode<wbr>Defaults</a>
 					</li>
 				</ul>
 			</nav>

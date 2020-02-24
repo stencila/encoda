@@ -62,7 +62,7 @@
 					<a href="_codecs_docx_index_.docxcodec.html">DocxCodec</a>
 				</li>
 			</ul>
-			<h1>Class DocxCodec&lt;DecodeOptions&gt;</h1>
+			<h1>Class DocxCodec&lt;EncodeOptions, DecodeOptions&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,10 @@
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>DecodeOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
+						<h4>EncodeOptions<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a></h4>
+					</li>
+					<li>
+						<h4>DecodeOptions<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-signature-type">CommonDecodeOptions</a></h4>
 					</li>
 				</ul>
 			</section>
@@ -81,7 +84,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_codecs_types_.codec.html" class="tsd-signature-type">Codec</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a><span class="tsd-signature-symbol">&gt;</span>
+						<a href="_codecs_types_.codec.html" class="tsd-signature-type">Codec</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">DocxCodec</span>
@@ -93,7 +96,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="_codecs_types_.codec.html" class="tsd-signature-type">Codec</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="_codecs_types_.codec.html" class="tsd-signature-type">Codec</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -103,12 +106,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_codecs_docx_index_.docxcodec.html#defaultencodeoptions" class="tsd-kind-icon">default<wbr>Encode<wbr>Options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_codecs_docx_index_.docxcodec.html#commondecodedefaults" class="tsd-kind-icon">common<wbr>Decode<wbr>Defaults</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_codecs_docx_index_.docxcodec.html#commonencodedefaults" class="tsd-kind-icon">common<wbr>Encode<wbr>Defaults</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_docx_index_.docxcodec.html#extnames" class="tsd-kind-icon">ext<wbr>Names</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_docx_index_.docxcodec.html#filenames" class="tsd-kind-icon">file<wbr>Names</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_codecs_docx_index_.docxcodec.html#mediatypes" class="tsd-kind-icon">media<wbr>Types</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_docx_index_.docxcodec.html#sniff" class="tsd-kind-icon">sniff</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_codecs_docx_index_.docxcodec.html#defaulttemplatepath" class="tsd-kind-icon">default<wbr>Template<wbr>Path</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -126,15 +129,36 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="defaultencodeoptions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> default<wbr>Encode<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Encode<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_codecs_types_.globalencodeoptions.html" class="tsd-signature-type">GlobalEncodeOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = defaultEncodeOptions</span></div>
+					<a name="commondecodedefaults" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> common<wbr>Decode<wbr>Defaults</h3>
+					<div class="tsd-signature tsd-kind-icon">common<wbr>Decode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <a href="../modules/_codecs_types_.html#commondecodedefaults" class="tsd-signature-type">CommonDecodeDefaults</a><span class="tsd-signature-symbol"> = commonDecodeDefaults</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#defaultencodeoptions">defaultEncodeOptions</a></p>
+						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#commondecodedefaults">commonDecodeDefaults</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L72">src/codecs/types.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L124">src/codecs/types.ts:124</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The default decode options for this codec</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="commonencodedefaults" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> common<wbr>Encode<wbr>Defaults</h3>
+					<div class="tsd-signature tsd-kind-icon">common<wbr>Encode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <a href="../modules/_codecs_types_.html#commonencodedefaults" class="tsd-signature-type">CommonEncodeDefaults</a><span class="tsd-signature-symbol"> = commonEncodeDefaults</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#commonencodedefaults">commonEncodeDefaults</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L119">src/codecs/types.ts:119</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The default encode options for this codec</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="extnames" class="tsd-anchor"></a>
@@ -143,7 +167,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#extnames">extNames</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L50">src/codecs/types.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L106">src/codecs/types.ts:106</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -161,7 +185,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#filenames">fileNames</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L43">src/codecs/types.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L99">src/codecs/types.ts:99</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -179,7 +203,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#mediatypes">mediaTypes</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/docx/index.ts#L23">src/codecs/docx/index.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/docx/index.ts#L17">src/codecs/docx/index.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -190,7 +214,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#sniff">sniff</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L58">src/codecs/types.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L114">src/codecs/types.ts:114</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,21 +226,6 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="defaulttemplatepath" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> default<wbr>Template<wbr>Path</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Template<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = path.join(dataDir,&#x27;templates&#x27;,&#x27;stencila-template.docx&#x27;)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/docx/index.ts#L38">src/codecs/docx/index.ts:38</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Used to style conversion outputs targeting Microsoft Word</p>
-						</div>
-					</div>
-				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
@@ -224,20 +233,23 @@
 					<a name="decode" class="tsd-anchor"></a>
 					<h3>decode</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-signature-type">CommonDecodeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#decode">decode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/docx/index.ts#L27">src/codecs/docx/index.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/docx/index.ts#L21">src/codecs/docx/index.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>file: <span class="tsd-signature-type">VFile</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-signature-type">CommonDecodeOptions</a><span class="tsd-signature-symbol"> = this.commonDecodeDefaults</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -248,14 +260,14 @@
 					<a name="dump" class="tsd-anchor"></a>
 					<h3>dump</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_codecs_types_.globalencodeoptions.html" class="tsd-signature-type">GlobalEncodeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">EncodeOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L114">src/codecs/types.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L178">src/codecs/types.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -275,7 +287,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_codecs_types_.globalencodeoptions.html" class="tsd-signature-type">GlobalEncodeOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">EncodeOptions</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -287,14 +299,14 @@
 					<a name="encode" class="tsd-anchor"></a>
 					<h3>encode</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>codecOptions<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a><span class="tsd-signature-symbol">; </span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#encode">encode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/docx/index.ts#L49">src/codecs/docx/index.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/docx/index.ts#L37">src/codecs/docx/index.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -309,15 +321,7 @@
 									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>codecOptions<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a><span class="tsd-signature-symbol">; </span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = this.defaultEncodeOptions</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>codec<wbr>Options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-signature-type">EncodeOptions</a></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5>file<wbr>Path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-									</ul>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol"> = this.commonEncodeDefaults</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -328,14 +332,14 @@
 					<a name="load" class="tsd-anchor"></a>
 					<h3>load</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">DecodeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-signature-type">CommonDecodeOptions</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">DecodeOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#load">load</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L97">src/codecs/types.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L161">src/codecs/types.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +359,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="" class="tsd-signature-type">DecodeOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-signature-type">CommonDecodeOptions</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">DecodeOptions</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Decoding options</p>
 									</div>
@@ -387,7 +391,10 @@
 						<a href="_codecs_docx_index_.docxcodec.html" class="tsd-kind-icon">Docx<wbr>Codec</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="_codecs_docx_index_.docxcodec.html#defaultencodeoptions" class="tsd-kind-icon">default<wbr>Encode<wbr>Options</a>
+								<a href="_codecs_docx_index_.docxcodec.html#commondecodedefaults" class="tsd-kind-icon">common<wbr>Decode<wbr>Defaults</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_codecs_docx_index_.docxcodec.html#commonencodedefaults" class="tsd-kind-icon">common<wbr>Encode<wbr>Defaults</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_codecs_docx_index_.docxcodec.html#extnames" class="tsd-kind-icon">ext<wbr>Names</a>
@@ -400,9 +407,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_codecs_docx_index_.docxcodec.html#sniff" class="tsd-kind-icon">sniff</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="_codecs_docx_index_.docxcodec.html#defaulttemplatepath" class="tsd-kind-icon">default<wbr>Template<wbr>Path</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_codecs_docx_index_.docxcodec.html#decode" class="tsd-kind-icon">decode</a>
@@ -420,9 +424,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../interfaces/_codecs_docx_index_.encodeoptions.html" class="tsd-kind-icon">Encode<wbr>Options</a>
-					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../modules/_codecs_docx_index_.html#pandoc" class="tsd-kind-icon">pandoc</a>
 					</li>

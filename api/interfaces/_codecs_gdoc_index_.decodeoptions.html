@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DecodeOptions</span>
+						<a href="_codecs_types_.commondecodeoptions.html" class="tsd-signature-type">CommonDecodeOptions</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">DecodeOptions</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,7 +89,9 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#astype" class="tsd-kind-icon">as<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#fetch" class="tsd-kind-icon">fetch</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#format" class="tsd-kind-icon">format</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,15 +99,56 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="astype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> as<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">as<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">Types</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_codecs_types_.commondecodeoptions.html">CommonDecodeOptions</a>.<a href="_codecs_types_.commondecodeoptions.html#astype">asType</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L66">src/codecs/types.ts:66</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The node type to decode content to.</p>
+						</div>
+						<p>Many codecs decode to a single node type.
+							e.g. the <code>docx</code> codec always decodes to an <code>Article</code>.
+							However, some <code>codecs</code> can decode to multiple node types.
+							e.g. the <code>yaml</code> and <code>xlsx</code> codecs.
+							This option allows the user to be explicit about which node type
+						they expect content to be decode to.</p>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="fetch" class="tsd-anchor"></a>
 					<h3>fetch</h3>
 					<div class="tsd-signature tsd-kind-icon">fetch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/gdoc/index.ts#L27">src/codecs/gdoc/index.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/gdoc/index.ts#L27">src/codecs/gdoc/index.ts:27</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="format" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> format</h3>
+					<div class="tsd-signature tsd-kind-icon">format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_codecs_types_.commondecodeoptions.html">CommonDecodeOptions</a>.<a href="_codecs_types_.commondecodeoptions.html#format">format</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L54">src/codecs/types.ts:54</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The format to decode content from.</p>
+						</div>
+						<p>Most codecs only decode from one format. However,
+							for those codecs that support multiple formats,
+						this options lets the user specify which one.</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -131,8 +179,14 @@
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_codecs_gdoc_index_.decodeoptions.html" class="tsd-kind-icon">Decode<wbr>Options</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_codecs_gdoc_index_.decodeoptions.html#astype" class="tsd-kind-icon">as<wbr>Type</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 								<a href="_codecs_gdoc_index_.decodeoptions.html#fetch" class="tsd-kind-icon">fetch</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_codecs_gdoc_index_.decodeoptions.html#format" class="tsd-kind-icon">format</a>
 							</li>
 						</ul>
 					</li>

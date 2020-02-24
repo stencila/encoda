@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DecodeOptions | @stencila/encoda</title>
+	<title>DecodeSettings | @stencila/encoda</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,24 +56,33 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_codecs_csl_index_.html">&quot;codecs/csl/index&quot;</a>
+					<a href="../modules/_codecs_pandoc_index_.html">&quot;codecs/pandoc/index&quot;</a>
 				</li>
 				<li>
-					<a href="_codecs_csl_index_.decodeoptions.html">DecodeOptions</a>
+					<a href="_codecs_pandoc_index_.decodesettings.html">DecodeSettings</a>
 				</li>
 			</ul>
-			<h1>Interface DecodeOptions</h1>
+			<h1>Interface DecodeSettings</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Settings for derived codecs to use to
+							customize the decoding behavior for particular formats.
+						Not user options.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DecodeOptions</span>
+						<span class="target">DecodeSettings</span>
 					</li>
 				</ul>
 			</section>
@@ -84,7 +93,9 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_csl_index_.decodeoptions.html#format" class="tsd-kind-icon">format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_pandoc_index_.decodesettings.html#ensurefile" class="tsd-kind-icon">ensure<wbr>File</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_pandoc_index_.decodesettings.html#pandocargs" class="tsd-kind-icon">pandoc<wbr>Args</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_pandoc_index_.decodesettings.html#pandocformat" class="tsd-kind-icon">pandoc<wbr>Format</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,12 +104,32 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="format" class="tsd-anchor"></a>
-					<h3>format</h3>
-					<div class="tsd-signature tsd-kind-icon">format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="ensurefile" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> ensure<wbr>File</h3>
+					<div class="tsd-signature tsd-kind-icon">ensure<wbr>File<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/csl/index.ts#L23">src/codecs/csl/index.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/pandoc/index.ts#L53">src/codecs/pandoc/index.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="pandocargs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> pandoc<wbr>Args</h3>
+					<div class="tsd-signature tsd-kind-icon">pandoc<wbr>Args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/pandoc/index.ts#L52">src/codecs/pandoc/index.ts:52</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="pandocformat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> pandoc<wbr>Format</h3>
+					<div class="tsd-signature tsd-kind-icon">pandoc<wbr>Format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pandoc.InputFormat</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/pandoc/index.ts#L51">src/codecs/pandoc/index.ts:51</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -111,57 +142,30 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_codecs_csl_index_.html">&quot;codecs/csl/index&quot;</a>
+						<a href="../modules/_codecs_pandoc_index_.html">&quot;codecs/pandoc/index&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_codecs_csl_index_.cslcodec.html" class="tsd-kind-icon">CSLCodec</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_codecs_csl_index_.decodeoptions.html" class="tsd-kind-icon">Decode<wbr>Options</a>
+						<a href="_codecs_pandoc_index_.decodesettings.html" class="tsd-kind-icon">Decode<wbr>Settings</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_codecs_csl_index_.decodeoptions.html#format" class="tsd-kind-icon">format</a>
+								<a href="_codecs_pandoc_index_.decodesettings.html#ensurefile" class="tsd-kind-icon">ensure<wbr>File</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_codecs_pandoc_index_.decodesettings.html#pandocargs" class="tsd-kind-icon">pandoc<wbr>Args</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_codecs_pandoc_index_.decodesettings.html#pandocformat" class="tsd-kind-icon">pandoc<wbr>Format</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_csl_index_.html#stylesdir" class="tsd-kind-icon">styles<wbr>Dir</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#decodeauthor" class="tsd-kind-icon">decode<wbr>Author</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_csl_index_.html#decodecsl" class="tsd-kind-icon">decode<wbr>Csl</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#decodedate" class="tsd-kind-icon">decode<wbr>Date</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#encodeauthor" class="tsd-kind-icon">encode<wbr>Author</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_codecs_csl_index_.html#encodecsl" class="tsd-kind-icon">encode<wbr>Csl</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#encodedate" class="tsd-kind-icon">encode<wbr>Date</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#encodeispartof" class="tsd-kind-icon">encode<wbr>IsPart<wbr>Of</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#encodeorganization" class="tsd-kind-icon">encode<wbr>Organization</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_csl_index_.html#encodeperson" class="tsd-kind-icon">encode<wbr>Person</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

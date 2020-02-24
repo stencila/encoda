@@ -1,59 +1,39 @@
-<html>
-
-  <head>
-    <title>Untitled</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
-      rel="stylesheet">
-    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
-      type="text/javascript"></script>
-    <script
-      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
-      type="module"></script>
-    <script
-      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
-      type="text/javascript"></script>
-  </head>
-
-  <body>
-    <article itemscope="" itemtype="http://schema.org/Article">
-      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-        <meta itemprop="name" content="Unknown">
-        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-          <meta itemprop="url"
-            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-        </div>
-      </div>
-      <h1 itemprop="headline">Untitled</h1>
-      <meta itemprop="image"
-        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
-      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="faq">FAQ</h1>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading"
-        id="developmenttechnical-questions">Development/Technical Questions</h2>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading"
-        id="why-do-all-the-codecs-both-extendcodefragment-and-implementcodefragment-codec-shouldnt-just-extending-accomplish-the-method-checking">
-        Why do all the codecs both <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">extend</code> and <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">implement</code> Codec? Shouldn&#39;t just
-        extending accomplish the method checking?</h2>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">One of the primary reasons for
-        using classes was to improve the type safety of the Codecs and ensure they all conform to
-        the required interfaces.</p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Due to the nature of how the
-        implementation of properties are enforced in TypeScript, and the ability to check class
-        inheritance at runtime, we use both the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">extend</code> and <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">implement</code> keywords.</p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Below is an example demonstrating
-        the shortcomings of each <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">keyword</code> when used by itself.</p>
-      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading"
-        id="only-using-extendscodefragment">Only using <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">extends</code></h3>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">class A {
+<article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+  <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+    <meta itemprop="name" content="Unknown">
+    <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+      <meta itemprop="url"
+        content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+        src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+    </div>
+  </div>
+  <h1 itemprop="headline">Untitled</h1>
+  <meta itemprop="image"
+    content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
+  <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="faq">FAQ</h1>
+  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="developmenttechnical-questions">
+    Development/Technical Questions</h2>
+  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading"
+    id="why-do-all-the-codecs-both-extendcodefragment-and-implementcodefragment-codec-shouldnt-just-extending-accomplish-the-method-checking">
+    Why do all the codecs both <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">extend</code> and <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">implement</code> Codec? Shouldn&#39;t just
+    extending accomplish the method checking?</h2>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">One of the primary reasons for using
+    classes was to improve the type safety of the Codecs and ensure they all conform to the required
+    interfaces.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Due to the nature of how the
+    implementation of properties are enforced in TypeScript, and the ability to check class
+    inheritance at runtime, we use both the <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">extend</code> and <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">implement</code> keywords.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Below is an example demonstrating the
+    shortcomings of each <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">keyword</code> when used by itself.</p>
+  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="only-using-extendscodefragment">
+    Only using <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">extends</code>
+  </h3>
+  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">class A {
   public mediaTypes: string[]
   public extNames?: string[]
   public encode: (n: Node) =&gt; Promise&lt;VFile&gt;
@@ -65,7 +45,7 @@ class B extends A {
 
 B.prototype instanceof A // true
 // 👍 Class inheritance can be validated at runtime</code></pre>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">abstract class A {
+  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">abstract class A {
   public abstract mediaTypes: string[]
   public abstract extNames?: string[]
   public abstract encode: (n: Node) =&gt; Promise&lt;VFile&gt;
@@ -78,7 +58,7 @@ class B extends A {
 B.prototype instanceof A // false
 // 👎 Class inheritance cannot be validated at runtime
 // This is necessary to dynamically import and instantiate a codec at runtime</code></pre>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">abstract class A {
+  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">abstract class A {
   public abstract mediaTypes: string[]
   public extNames?: string[]
   // ⚠️ Optional methods/properties are not marked as `abstract`, otherwise TypeScript
@@ -93,7 +73,4 @@ class B extends A {
 
 B.prototype instanceof A // true
 // 👍 Class inheritance can be validated at runtime</code></pre>
-    </article>
-  </body>
-
-</html>
+</article>

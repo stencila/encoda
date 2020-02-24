@@ -1,96 +1,70 @@
-<html>
-
-  <head>
-    <title>Untitled</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
-      rel="stylesheet">
-    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
-      type="text/javascript"></script>
-    <script
-      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
-      type="module"></script>
-    <script
-      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
-      type="text/javascript"></script>
-  </head>
-
-  <body>
-    <article itemscope="" itemtype="http://schema.org/Article">
-      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-        <meta itemprop="name" content="Unknown">
-        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-          <meta itemprop="url"
-            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-        </div>
-      </div>
-      <h1 itemprop="headline">Untitled</h1>
-      <meta itemprop="image"
-        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
-      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="dircodefragment"><code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">dir</code></h1>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec decodes a filesystem
-        directory into a <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Collection</code> of <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>s. It encodes a <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code> as
-        directory, with each <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code> by default being
-        encoded using the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">html</code> codec.</p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec is useful for publishing
-        a directory of files (possibly of varying file types) as a directory of HTML (e.g. for
-        publishing documentation).</p>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding-2">Decoding</h2>
-      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="main-file">Main file</h3>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">main</code> attribute is a <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">boolean</code> indicating if
-        the file is the main file in the directory.</p>
-      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="node-depth">Node depth</h3>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When a directory is decoded, each
-        <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code> in
-        the node tree is given a <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">depth</code> on its <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">meta</code> property. This could be used
-        to resolve the root of the tree.</p>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding-2">Encoding</h2>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec encodes a <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code> into a file
-        hierarchy with descendent <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Collection</code>s encoded as directories
-        and other types of <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>s encoded as files.</p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When decoding a node that is a
-        <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>, but
-        not a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code>,
-        the node is wrapped in a new <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Collection</code> which has the node as
-        its only <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">part</code>.
-        When decoding a node that is not a <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>, the node is wrapped
-        as the only <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">content</code> of a new <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code> and then wrapped in a
-        new <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code>.
-      </p>
-      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="rootjsoncodefragment"><code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">root.json</code></h3>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">During encoding, a <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">root.json</code> file is
-        created at the top level containing the JSON encoding of the root <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Collection</code>, including all decendent
-        nodes, but excluding the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">content</code> property of <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>s. This
-        file is intended to be used as a site map for the generated file tree.</p>
-    </article>
-  </body>
-
-</html>
+<article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+  <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+    <meta itemprop="name" content="Unknown">
+    <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+      <meta itemprop="url"
+        content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+        src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+    </div>
+  </div>
+  <h1 itemprop="headline">Untitled</h1>
+  <meta itemprop="image"
+    content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
+  <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="dircodefragment"><code
+      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">dir</code></h1>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec decodes a filesystem
+    directory into a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">Collection</code> of <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>s. It encodes a <code
+      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code> as directory,
+    with each <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>
+    by default being encoded using the <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">html</code> codec.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec is useful for publishing a
+    directory of files (possibly of varying file types) as a directory of HTML (e.g. for publishing
+    documentation).</p>
+  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding-2">Decoding</h2>
+  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="main-file">Main file</h3>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">main</code> attribute is a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">boolean</code> indicating if the file is the
+    main file in the directory.</p>
+  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="node-depth">Node depth</h3>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When a directory is decoded, each
+    <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code> in the
+    node tree is given a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">depth</code> on its <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">meta</code> property. This could be used to
+    resolve the root of the tree.</p>
+  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding-2">Encoding</h2>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec encodes a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">Collection</code> into a file hierarchy with
+    descendent <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code>s
+    encoded as directories and other types of <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>s encoded as files.</p>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When decoding a node that is a <code
+      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>, but not a
+    <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code>, the node
+    is wrapped in a new <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">Collection</code> which has the node as its
+    only <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">part</code>. When
+    decoding a node that is not a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>, the node is wrapped as
+    the only <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">content</code> of a
+    new <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code> and
+    then wrapped in a new <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">Collection</code>.</p>
+  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="rootjsoncodefragment"><code
+      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">root.json</code></h3>
+  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">During encoding, a <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">root.json</code> file is created at the top
+    level containing the JSON encoding of the root <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">Collection</code>, including all decendent
+    nodes, but excluding the <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">content</code> property of <code itemscope=""
+      itemtype="http://schema.stenci.la/CodeFragment">CreativeWork</code>s. This file is intended to
+    be used as a site map for the generated file tree.</p>
+</article>

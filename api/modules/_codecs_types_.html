@@ -79,46 +79,136 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter"><a href="../interfaces/_codecs_types_.globalencodeoptions.html" class="tsd-kind-icon">Global<wbr>Encode<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-kind-icon">Common<wbr>Decode<wbr>Options</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-kind-icon">Common<wbr>Encode<wbr>Options</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_types_.html#commondecodedefaults" class="tsd-kind-icon">Common<wbr>Decode<wbr>Defaults</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_types_.html#commonencodedefaults" class="tsd-kind-icon">Common<wbr>Encode<wbr>Defaults</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_codecs_types_.html#commondecodedefaults-1" class="tsd-kind-icon">common<wbr>Decode<wbr>Defaults</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Object literals</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_codecs_types_.html#defaultencodeoptions" class="tsd-kind-icon">default<wbr>Encode<wbr>Options</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-external-module"><a href="_codecs_types_.html#commonencodedefaults-1" class="tsd-kind-icon">common<wbr>Encode<wbr>Defaults</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="commondecodedefaults" class="tsd-anchor"></a>
+					<h3>Common<wbr>Decode<wbr>Defaults</h3>
+					<div class="tsd-signature tsd-kind-icon">Common<wbr>Decode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L74">src/codecs/types.ts:74</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Default values for encoding options.</p>
+						</div>
+						<p>See notes for <code>commonEncodeDefaults</code> for why these exist.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="commonencodedefaults" class="tsd-anchor"></a>
+					<h3>Common<wbr>Encode<wbr>Defaults</h3>
+					<div class="tsd-signature tsd-kind-icon">Common<wbr>Encode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Required</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"isStandalone"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isBundle"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"shouldZip"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"theme"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L31">src/codecs/types.ts:31</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Default values for encoding options.</p>
+						</div>
+						<p>This set of defaults provide a way of promoting consistency amongst
+							codecs. Instead of, for example, one codec defaulting
+							to <code>isStandalone: true</code> and another to <code>false</code>. It does not
+						enforce consistency however.</p>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="commondecodedefaults-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> common<wbr>Decode<wbr>Defaults</h3>
+					<div class="tsd-signature tsd-kind-icon">common<wbr>Decode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <a href="_codecs_types_.html#commondecodedefaults" class="tsd-signature-type">CommonDecodeDefaults</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L75">src/codecs/types.ts:75</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Object literals</h2>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
-					<a name="defaultencodeoptions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Encode<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Encode<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="commonencodedefaults-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> common<wbr>Encode<wbr>Defaults</h3>
+					<div class="tsd-signature tsd-kind-icon">common<wbr>Encode<wbr>Defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L16">src/codecs/types.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L34">src/codecs/types.ts:34</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultencodeoptions.shouldzip" class="tsd-anchor"></a>
-						<h3>should<wbr>Zip</h3>
-						<div class="tsd-signature tsd-kind-icon">should<wbr>Zip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"no"</span><span class="tsd-signature-symbol"> = &quot;no&quot;</span></div>
+						<a name="commonencodedefaults-1.isbundle" class="tsd-anchor"></a>
+						<h3>is<wbr>Bundle</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Bundle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> = false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L17">src/codecs/types.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L36">src/codecs/types.ts:36</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultencodeoptions.theme" class="tsd-anchor"></a>
+						<a name="commonencodedefaults-1.isstandalone" class="tsd-anchor"></a>
+						<h3>is<wbr>Standalone</h3>
+						<div class="tsd-signature tsd-kind-icon">is<wbr>Standalone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> = false</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L35">src/codecs/types.ts:35</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="commonencodedefaults-1.shouldzip" class="tsd-anchor"></a>
+						<h3>should<wbr>Zip</h3>
+						<div class="tsd-signature tsd-kind-icon">should<wbr>Zip<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"no"</span><span class="tsd-signature-symbol"> = &quot;no&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L37">src/codecs/types.ts:37</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="commonencodedefaults-1.theme" class="tsd-anchor"></a>
 						<h3>theme</h3>
 						<div class="tsd-signature tsd-kind-icon">theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"eLife"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"nature"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"plos"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"stencila"</span><span class="tsd-signature-symbol"> = getTheme()</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/stencila/encoda/blob/2b7a011/src/codecs/types.ts#L18">src/codecs/types.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/stencila/encoda/blob/3b6eb23/src/codecs/types.ts#L38">src/codecs/types.ts:38</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -141,11 +231,23 @@
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="../classes/_codecs_types_.codec.html" class="tsd-kind-icon">Codec</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../interfaces/_codecs_types_.globalencodeoptions.html" class="tsd-kind-icon">Global<wbr>Encode<wbr>Options</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_codecs_types_.commondecodeoptions.html" class="tsd-kind-icon">Common<wbr>Decode<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-kind-icon">Common<wbr>Encode<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_codecs_types_.html#commondecodedefaults" class="tsd-kind-icon">Common<wbr>Decode<wbr>Defaults</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_codecs_types_.html#commonencodedefaults" class="tsd-kind-icon">Common<wbr>Encode<wbr>Defaults</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="_codecs_types_.html#commondecodedefaults-1" class="tsd-kind-icon">common<wbr>Decode<wbr>Defaults</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="_codecs_types_.html#defaultencodeoptions" class="tsd-kind-icon">default<wbr>Encode<wbr>Options</a>
+						<a href="_codecs_types_.html#commonencodedefaults-1" class="tsd-kind-icon">common<wbr>Encode<wbr>Defaults</a>
 					</li>
 				</ul>
 			</nav>
