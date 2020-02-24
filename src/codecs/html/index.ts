@@ -1365,7 +1365,13 @@ function encodeFigure(figure: stencila.Figure): HTMLElement {
     ...encodeNodes(content),
     // TODO: determine best placement of figure label
     // encodeMaybe(label, h('label', label)),
-    encodeMaybe(caption, h('figcaption', typeof caption === 'string' ? caption : caption.map(encodeNode)))
+    encodeMaybe(
+      caption,
+      h(
+        'figcaption',
+        typeof caption === 'string' ? caption : caption.map(encodeNode)
+      )
+    )
   ])
 }
 
