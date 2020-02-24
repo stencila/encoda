@@ -8,6 +8,7 @@
  */
 
 import stencila from '@stencila/schema'
+import JsonSchema from '@stencila/schema/dist/ts/jsonSchema'
 import Ajv from 'ajv'
 import betterAjvErrors from 'better-ajv-errors'
 import fs from 'fs-extra'
@@ -21,7 +22,7 @@ const log = getLogger('encoda:coerce')
 /**
  * Cache of `Schema` objects
  */
-const schemas = new Map<string, stencila.Schema>()
+const schemas = new Map<string, JsonSchema>()
 
 /**
  * Cache of compiled schema validation functions
@@ -80,7 +81,7 @@ export async function getVersion(
  */
 export async function readSchema<Key extends keyof stencila.Types>(
   type: Key
-): Promise<stencila.Schema> {
+): Promise<JsonSchema> {
   try {
     const schema = await fs.readJSON(
       path.join(schemasPath, `${type}.schema.json`)
@@ -109,7 +110,7 @@ export async function readSchema<Key extends keyof stencila.Types>(
  */
 export async function getSchema<Key extends keyof stencila.Types>(
   type: Key
-): Promise<stencila.Schema> {
+): Promise<JsonSchema> {
   const schema = schemas.get(type)
   return schema !== undefined ? schema : readSchema(type)
 }
@@ -117,7 +118,7 @@ export async function getSchema<Key extends keyof stencila.Types>(
 /**
  * Load a schema based on its URI
  */
-export async function loadSchema(uri: string): Promise<stencila.Schema> {
+export async function loadSchema(uri: string): Promise<JsonSchema> {
   const match = /([\w]+)\.schema\.json$/.exec(uri)
   if (match !== null) return getSchema(match[1] as keyof stencila.Types)
   throw new Error(`Can not resolve schema "${uri}"`)

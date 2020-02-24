@@ -37,10 +37,10 @@ RUN useradd --create-home encoda
 WORKDIR /home/encoda
 USER encoda
 
-# Copy package.json and install
+# Copy package.json and package-lock.json and install
 # In a separate layer to avoid long reinstall everytime an unrelated files changes
 # Use `--ignore-scripts` option otherwise our own `install.js` script will fail
-COPY package.json ./
+COPY package*.json ./
 RUN npm install --ignore-scripts
 
 # Copy over other file and run the necessary install scripts that

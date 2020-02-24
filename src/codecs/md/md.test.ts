@@ -699,7 +699,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
         items: [
           {
             type: 'ListItem',
-            checked: false,
+            isChecked: false,
             content: [
               {
                 type: 'Paragraph',
@@ -709,7 +709,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           },
           {
             type: 'ListItem',
-            checked: true,
+            isChecked: true,
             content: [
               {
                 type: 'Paragraph',
@@ -719,7 +719,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           },
           {
             type: 'ListItem',
-            checked: false,
+            isChecked: false,
             content: [
               {
                 type: 'Paragraph',
@@ -735,7 +735,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
         items: [
           {
             type: 'ListItem',
-            checked: false,
+            isChecked: false,
             content: [
               {
                 type: 'Paragraph',
@@ -745,7 +745,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           },
           {
             type: 'ListItem',
-            checked: true,
+            isChecked: true,
             content: [
               {
                 type: 'Paragraph',
@@ -755,7 +755,7 @@ No output \`a = 1 + 1\`{type=expr lang=python}
           },
           {
             type: 'ListItem',
-            checked: false,
+            isChecked: false,
             content: [
               {
                 type: 'Paragraph',

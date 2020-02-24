@@ -58,12 +58,12 @@ test('issue 183: conversion of lists to Markdown fails', async () => {
         items: [
           {
             type: 'ListItem',
-            checked: false,
+            isChecked: false,
             content: ['Todo item']
           },
           {
             type: 'ListItem',
-            checked: true,
+            isChecked: true,
             content: ['Completed todo item']
           }
         ]

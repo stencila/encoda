@@ -46,24 +46,26 @@ import { validate } from './util/validate'
 import { getTheme, themes } from '@stencila/thema'
 import { isTheme } from './util/html'
 
-const { _, ...options } = minimist(process.argv.slice(2), {
-  boolean: ['standalone', 'bundle', 'debug'],
-  default: {
-    standalone: true,
-    bundle: false,
-    theme: themes.stencila,
-    zip: 'no',
-    debug: false
-  }
-})
-const command = _[0]
-const args = _.slice(1)
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+if (module.parent === null) cli()
 
-// Configure the log
-configure(options.debug)
+async function cli(): Promise<void> {
+  const { _, ...options } = minimist(process.argv.slice(2), {
+    boolean: ['standalone', 'bundle', 'debug'],
+    default: {
+      standalone: true,
+      bundle: false,
+      theme: themes.stencila,
+      zip: 'no',
+      debug: false
+    }
+  })
+  const command = _[0] ?? ''
+  const args = _.slice(1)
 
-//  eslint-disable-next-line
-;(async () => {
+  // Configure the log
+  configure(options.debug)
+
   try {
     if (command === 'convert') {
       const { to, from, standalone, bundle, zip, ...rest } = options
@@ -115,4 +117,4 @@ configure(options.debug)
     await puppeteer.shutdown()
     process.exit(0)
   }
-})()
+}

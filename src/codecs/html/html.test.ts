@@ -42,8 +42,10 @@ import stencila, {
   table,
   tableCell,
   tableRow,
+  Types,
   thematicBreak,
-  videoObject
+  videoObject,
+  microdataItemtype
 } from '@stencila/schema'
 import { getByText } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
@@ -55,8 +57,7 @@ import mathArticle from '../../__fixtures__/article/math'
 import { readFixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 import { commonEncodeDefaults } from '../types'
-import { decodeHref, HTMLCodec } from './'
-import { encodeMicrodataItemtype, stencilaItemProp, Types } from './microdata'
+import { decodeHref, HTMLCodec, stencilaItemProp } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
@@ -182,7 +183,7 @@ describe('Encode & Decode CodeExpression nodes', () => {
   })
   const codeExpressionHTML = `
     <stencila-code-expression
-      itemtype="${encodeMicrodataItemtype('CodeExpression')}"
+      itemtype="${microdataItemtype('CodeExpression')}"
       programming-language="python"
     >
       <code slot="text">x * 2</code>
@@ -214,7 +215,7 @@ describe('Encode & Decode cite group nodes', () => {
   const cite2 = cite({ target: 'mySecondTarget' })
 
   const schemaNode = citeGroup({ items: [cite1, cite2] })
-  const htmlNode = `<span itemtype="${encodeMicrodataItemtype('CiteGroup')}">
+  const htmlNode = `<span itemtype="${microdataItemtype('CiteGroup')}">
     <cite><a href="myFirstTarget">myFirstTarget</a></cite>
     <cite><a href="mySecondTarget">mySecondTarget</a></cite>
   </ol>`
@@ -225,7 +226,7 @@ describe('Encode & Decode cite group nodes', () => {
     expect(actual.querySelectorAll('cite')).toHaveLength(2)
     expect(actual.querySelector('span')).toHaveAttribute(
       'itemtype',
-      encodeMicrodataItemtype('CiteGroup')
+      microdataItemtype('CiteGroup')
     )
   })
 
@@ -330,7 +331,7 @@ describe.skip('Encode & Decode references', () => {
 
   <ol class="references">
     <li
-      itemtype="${encodeMicrodataItemtype('CreativeWork')}"
+      itemtype="${microdataItemtype('CreativeWork')}"
       itemprop="citation"
     >
       <a
@@ -343,7 +344,7 @@ describe.skip('Encode & Decode references', () => {
       <div>
         <ol class="authors">
           <li
-            itemtype="${encodeMicrodataItemtype('Person')}"
+            itemtype="${microdataItemtype('Person')}"
             itemprop="author"
           >
             <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:B+Aigouy%22">
@@ -354,7 +355,7 @@ describe.skip('Encode & Decode references', () => {
             </a>
           </li>
           <li
-            itemtype="${encodeMicrodataItemtype('Person')}"
+            itemtype="${microdataItemtype('Person')}"
             itemprop="author"
           >
             <a itemprop="url" href="https://scholar.google.com/scholar?q=%22author:R+Farhadifar%22">
@@ -515,7 +516,7 @@ describe('Encode with Microdata', () => {
     '%s has itemscope and itemtype',
     // @ts-ignore
     async (schemaType: keyof Types, node) => {
-      const schemaUri = encodeMicrodataItemtype(schemaType)
+      const schemaUri = microdataItemtype(schemaType)
       const actual = doc(await e(node)).querySelector(
         `[itemtype='${schemaUri}']`
       )
@@ -544,7 +545,7 @@ describe('Encode & Decode Collections', () => {
   })
 
   const htmlNode = `
-    <ol itemtype="${encodeMicrodataItemtype('Collection')}">
+    <ol itemtype="${microdataItemtype('Collection')}">
       <li>
         <figure><img src="someImage" /><figcaption>This is a test image. It has a <a href="#">link</a></figcaption></figure>
       </li>
@@ -562,7 +563,7 @@ describe('Encode & Decode Collections', () => {
 
     expect(collection).toHaveAttribute(
       'itemtype',
-      encodeMicrodataItemtype('Collection')
+      microdataItemtype('Collection')
     )
     expect(figures).toHaveLength(2)
   })
@@ -695,10 +696,10 @@ describe('handle decoding HTML comments', () => {
  */
 const attrs = {
   html: `
-    <p>A <a href="url" data-attr1="foo" data-attr2="bar baz" data-attr3="" itemtype="${encodeMicrodataItemtype(
+    <p>A <a href="url" data-attr1="foo" data-attr2="bar baz" data-attr3="" itemtype="${microdataItemtype(
       'Link'
     )}">link</a> and
-    <code itemtype="${encodeMicrodataItemtype(
+    <code itemtype="${microdataItemtype(
       'CodeFragment'
     )}" data-attr1="foo">da code</code>.</p>`,
   node: {
@@ -747,7 +748,7 @@ const dtNode: stencila.Datatable = {
   ]
 }
 const dt = {
-  html: `<div itemtype="${encodeMicrodataItemtype('Datatable')}">
+  html: `<div itemtype="${microdataItemtype('Datatable')}">
   <table>
     <thead>
       <tr>

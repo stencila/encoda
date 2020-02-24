@@ -392,7 +392,7 @@ function encodeDatatableColumnValidator(
 ): ColumnTypeFormatConstraints {
   // TODO: this method needs checking and refactoring since changing to
   //  ArraySchema
-  const items = schema.items
+  const items = schema.itemsValidator
 
   if (items === undefined)
     return {

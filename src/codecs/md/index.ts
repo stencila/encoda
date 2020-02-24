@@ -333,17 +333,17 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
     case 'ImageObject':
       return encodeImageObject(node as stencila.ImageObject)
 
-    case 'string':
+    case 'Text':
       return encodeString(node as string)
-    case 'null':
+    case 'Null':
       return encodeNull()
-    case 'boolean':
+    case 'Boolean':
       return encodeBoolean(node as boolean)
-    case 'number':
+    case 'Number':
       return encodeNumber(node as number)
-    case 'array':
+    case 'Array':
       return encodeArray(node as any[])
-    case 'object':
+    case 'Object':
       return encodeObject(node as object)
 
     default:
@@ -516,7 +516,7 @@ function encodeParagraph(
   if (
     content.length === 0 ||
     (content.length === 1 &&
-      nodeType(content[0]) === 'string' &&
+      nodeType(content[0]) === 'Text' &&
       (content[0] as string).trim().length === 0)
   ) {
     return undefined
@@ -723,7 +723,7 @@ function encodeList(list: stencila.List): MDAST.List {
  * Encode a `MDAST.ListItem` to a `stencila.ListItem`
  */
 function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
-  const { checked, content = [] } = listItem
+  const { isChecked, content = [] } = listItem
   const _listItem: MDAST.ListItem = {
     type: 'listItem',
     children: content.map(child => {
@@ -735,8 +735,8 @@ function encodeListItem(listItem: stencila.ListItem): MDAST.ListItem {
       return { type: 'paragraph', children: [] }
     })
   }
-  return checked === true || checked === false
-    ? { ..._listItem, checked: checked }
+  return isChecked !== undefined
+    ? { ..._listItem, checked: isChecked }
     : _listItem
 }
 
@@ -749,7 +749,7 @@ function decodeListItem(listItem: MDAST.ListItem): stencila.ListItem {
     content: listItem.children.map(decodeNode).filter(isBlockContent)
   }
   return listItem.checked === true || listItem.checked === false
-    ? { ..._listItem, checked: listItem.checked || false }
+    ? { ..._listItem, isChecked: listItem.checked || false }
     : _listItem
 }
 

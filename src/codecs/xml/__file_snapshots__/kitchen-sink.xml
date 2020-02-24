@@ -1,44 +1,44 @@
 <stencila xmlns="https://schema.stenci.la/v0/xml">
-    <array>
-        <null/>
-        <boolean>true</boolean>
-        <boolean>false</boolean>
-        <number>42</number>
-        <number>3.14</number>
-        <string>a string</string>
-        <string>with special characters &lt; &gt; &amp; "</string>
-        <array/>
-        <array>
-            <number>1</number>
-            <number>2</number>
-            <number>3</number>
-        </array>
-        <object/>
-        <object>
-            <number key="a">1</number>
-            <number key="b">2</number>
-            <number key="c">3</number>
-        </object>
+    <Array>
+        <Null/>
+        <Boolean>true</Boolean>
+        <Boolean>false</Boolean>
+        <Number>42</Number>
+        <Number>3.14</Number>
+        <Text>a string</Text>
+        <Text>with special characters &lt; &gt; &amp; "</Text>
+        <Array/>
+        <Array>
+            <Number>1</Number>
+            <Number>2</Number>
+            <Number>3</Number>
+        </Array>
+        <Object/>
+        <Object>
+            <Number key="a">1</Number>
+            <Number key="b">2</Number>
+            <Number key="c">3</Number>
+        </Object>
         <Person>
-            <array key="givenNames">
-                <string>Joe</string>
-                <string>Jake</string>
-            </array>
-            <array key="familyNames">
-                <string>Jones</string>
-            </array>
+            <Array key="givenNames">
+                <Text>Joe</Text>
+                <Text>Jake</Text>
+            </Array>
+            <Array key="familyNames">
+                <Text>Jones</Text>
+            </Array>
         </Person>
         <Article>
-            <array key="content">
+            <Array key="content">
                 <Paragraph>
-                    <array key="content">
+                    <Array key="content">
                         <CodeExpression>
-                            <string key="programmingLanguage">python</string>
-                            <string key="text">6 * 7</string>
+                            <Text key="programmingLanguage">python</Text>
+                            <Text key="text">6 * 7</Text>
                         </CodeExpression>
-                    </array>
+                    </Array>
                 </Paragraph>
-            </array>
+            </Array>
         </Article>
-    </array>
+    </Array>
 </stencila>
