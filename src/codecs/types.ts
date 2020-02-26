@@ -1,5 +1,4 @@
 import * as stencila from '@stencila/schema'
-import { getTheme } from '@stencila/thema'
 import * as vfile from '../util/vfile'
 /**
  * Encoding options that are common to all codecs.
@@ -35,7 +34,7 @@ export const commonEncodeDefaults: CommonEncodeDefaults = {
   isStandalone: false,
   isBundle: false,
   shouldZip: 'no',
-  theme: getTheme()
+  theme: 'stencila'
 }
 
 /**

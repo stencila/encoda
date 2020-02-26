@@ -8,12 +8,19 @@
  * @module util/html
  */
 
-import { getTheme, themePath, themes } from '@stencila/thema'
+import {
+  getTheme,
+  isTheme,
+  styleEntry,
+  scriptEntry,
+  ThemaAssets
+} from '@stencila/thema'
 import fs from 'fs'
 import jsdom from 'jsdom'
 import path from 'path'
 import { toFile } from './uri'
 import { isPath } from './vfile'
+import log from '../log'
 
 const JSDOM = new jsdom.JSDOM()
 
@@ -91,20 +98,46 @@ export const allName = (elem: HTMLElement | null, name: string): Node[] => {
   }, [])
 }
 
-interface Theme {
-  styles: string[]
-  scripts: string[]
+const themeNotFound = (themeName: string): ThemaAssets => {
+  log.warn(`Theme assets could not be found for theme: '${themeName}'`)
+
+  return {
+    styles: [],
+    scripts: []
+  }
 }
 
 /**
- * Tests whether a given string is a valid Thema theme or not.
+ * Given an array of filepaths or URLs, returns the file contents as strings.
+ *
+ * @async
+ * @param {string[]} assets - Filepaths or URLs to read
+ * @return {Promise<string[]>} - Promise resolving to the file contents
  */
-export const isTheme = (theme: string): boolean =>
-  !isPath(theme) && Object.keys(themes).includes(theme.toLowerCase().trim())
+const fetchAssets = async (assets: string[]): Promise<string[]> =>
+  Promise.all(
+    assets.map(asset =>
+      toFile(asset).then(file => fs.readFileSync(file.filePath).toString())
+    )
+  )
 
-export const resolveTheme = (theme: string): Theme => {
-  const styles = 'styles.css'
-  const js = 'index.js'
+/**
+ * Given a theme name, path, or URL, attempt to resolve it into theme Stylesheet and JavaScript entry files
+ * (`style.css` and `index.js`).
+ *
+ * @param {string} theme - Can be a Thema theme name, or a URL/filepath to a directory following Thema theme conventional structure
+ * @return {ThemaAssets} - An object containing all the theme‘s CSS and JavaScript files as an array.
+ */
+export const getThemeAssets = async (
+  theme: string,
+  isBundle = false
+): Promise<ThemaAssets> => {
+  let resolvedTheme = getTheme(theme, !isBundle)
+
+  // If theme could be resolved, it is a Thema theme and no other processing needs to be done
+  if (resolvedTheme !== undefined) {
+    return resolvedTheme
+  }
 
   /**
    * If the given `theme` string does not end with a file extensions,
@@ -116,7 +149,8 @@ export const resolveTheme = (theme: string): Theme => {
   const getThemePath = (dir: string, file: string): string =>
     path.join(path.dirname(dir), themeDir(dir), file)
 
-  // If theme is a URL, use it as a directory to look for theme assets based on naming conventions
+  // If theme is a URL, use it as a directory to look for theme assets based on Thema naming conventions
+  // looking for a `styles.css` and `index.js` files.
   if (theme.includes('://')) {
     // Process the theme URL to clean trailing slashes or file names
     const cleanUrl = theme.endsWith('/')
@@ -129,94 +163,39 @@ export const resolveTheme = (theme: string): Theme => {
       parts.length > 3 && endsInFile ? parts.slice(0, parts.length - 1) : parts
     const url = urlParts.join('/')
 
-    return {
-      styles: [`${url}/${styles}`],
-      scripts: [`${url}/${js}`]
+    resolvedTheme = {
+      styles: [`${url}/${styleEntry}`],
+      scripts: [`${url}/${scriptEntry}`]
     }
   }
 
-  // Otherwise check if theme is a filepath
-  if (isPath(theme)) {
-    return {
-      styles: [getThemePath(theme, styles)],
-      scripts: [getThemePath(theme, js)]
+  // If theme is a filepath, and contains stylesheet and JavaScript entry files, it is a valid Thema theme
+  if (
+    isPath(theme) &&
+    fs.existsSync(path.join(theme, styleEntry)) &&
+    fs.existsSync(path.join(theme, scriptEntry))
+  ) {
+    resolvedTheme = {
+      styles: [getThemePath(theme, styleEntry)],
+      scripts: [getThemePath(theme, scriptEntry)]
     }
   }
 
-  // Finally, fall back to looking for theme in Thema package
+  // If a theme could not be resolved, return an empty theme and log a warning message
+  if (resolvedTheme === undefined) {
+    return themeNotFound(theme)
+  }
+
+  // If a theme is to be bundled, read the contents of the theme files
+  const styles = isBundle
+    ? await fetchAssets(resolvedTheme.styles)
+    : resolvedTheme.styles
+  const scripts = isBundle
+    ? await fetchAssets(resolvedTheme.scripts)
+    : resolvedTheme.scripts
+
   return {
-    styles: [getThemePath(themePath, `${getTheme(theme)}/${styles}`)],
-    scripts: [getThemePath(themePath, `${getTheme(theme)}/${js}`)]
+    styles,
+    scripts
   }
-}
-
-const themaVersion = require(path.join(
-  require.resolve('@stencila/thema'),
-  '..',
-  '..',
-  'package.json'
-)).version
-
-const themaMajor = themaVersion.split('.')[0]
-
-/**
- * Return a CDN link to an asset, cleaning up any Windows specific path separators.
- */
-export const generateCDNUrl = (asset: string): string => {
-  return `https://unpkg.com/@stencila/thema@${themaMajor}/${asset}`.replace(
-    /\\/g,
-    '/'
-  )
-}
-
-/**
- * Fetches theme file contents either from a local filepath or a URL, returning the contents as a string
- */
-export const getThemeAssets = async (
-  theme: string,
-  isBundle = false
-): Promise<Theme> => {
-  const resolvedTheme = resolveTheme(theme)
-
-  // If we are bundling the theme, return the contents of the file, otherwise a link the to CDN hosted Thema file
-  const contentsFromThema = (asset: string): string => {
-    return !isBundle
-      ? generateCDNUrl(asset)
-      : fs
-          .readFileSync(
-            path.join(require.resolve('@stencila/thema'), '..', '..', asset)
-          )
-          .toString()
-  }
-
-  // Update Thema assets with either file contents, or as a link to CDN hosted version
-  if (isTheme(theme)) {
-    return Object.entries(resolvedTheme).reduce(
-      (_theme: Theme, [key, assets]) => ({
-        ..._theme,
-        [key]: assets.map(contentsFromThema)
-      }),
-      { styles: [], scripts: [] }
-    )
-  }
-
-  const fetchAssets = async (assets: string[]): Promise<string[]> =>
-    Promise.all(
-      assets.map(asset =>
-        toFile(asset).then(file => fs.readFileSync(file.filePath).toString())
-      )
-    )
-
-  // Fetch file contents for inlining when bundling assets
-  if (isBundle) {
-    const styles = await fetchAssets(resolvedTheme.styles)
-    const scripts = await fetchAssets(resolvedTheme.scripts)
-
-    return {
-      styles,
-      scripts
-    }
-  }
-
-  return resolvedTheme
 }

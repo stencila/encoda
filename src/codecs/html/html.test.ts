@@ -573,35 +573,58 @@ describe('Encode & Decode Collections', () => {
   })
 })
 
-test('encode with different themes', async () => {
+test('encode with different themes - default theme', async () => {
   let html = await dump(stencila.article(), {
-    theme: 'stencila',
     isStandalone: true
   })
+
   expect(html).toMatch(
     /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/index\.js/
   )
+
   expect(html).toMatch(
     /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/styles\.css/
   )
+})
 
-  html = await dump(stencila.article(), { theme: 'eLife', isStandalone: true })
+test('encode with different themes - stencila', async () => {
+  const html = await dump(stencila.article(), {
+    theme: 'stencila',
+    isStandalone: true
+  })
+
   expect(html).toMatch(
-    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/eLife\/index\.js/
+    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/index\.js/
   )
+
   expect(html).toMatch(
-    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/eLife\/styles\.css/
+    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/stencila\/styles\.css/
+  )
+})
+
+test('encode with different themes - stencila', async () => {
+  const html = await dump(stencila.article(), {
+    theme: 'eLife',
+    isStandalone: true
+  })
+
+  expect(html).toMatch(
+    /<script src="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/elife\/index\.js/
+  )
+
+  expect(html).toMatch(
+    /<link href="https:\/\/unpkg\.com\/@stencila\/thema@\d\/dist\/themes\/elife\/styles\.css/
   )
 })
 
 test('encode with bundling', async () => {
   const stylesheet = fs.readFileSync(
-    require.resolve('@stencila/thema/dist/themes/eLife/styles.css'),
+    require.resolve('@stencila/thema/dist/themes/elife/styles.css'),
     'utf8'
   )
 
   const js = fs.readFileSync(
-    require.resolve('@stencila/thema/dist/themes/eLife/index.js'),
+    require.resolve('@stencila/thema/dist/themes/elife/index.js'),
     'utf8'
   )
 
@@ -609,13 +632,24 @@ test('encode with bundling', async () => {
   // affects indentation.
   // Previously we used a snapshot for this but that is avoided
   // here since it will fail when Thema is upgraded.
-  let html = await dump(stencila.article(), {
-    theme: 'eLife',
-    isStandalone: true,
-    isBundle: true
-  })
-  expect(html).toMatch(stylesheet.trim().split('\n')[1])
-  expect(html).toMatch(js.trim().split('\n')[1])
+  let html = doc(
+    await dump(stencila.article(), {
+      theme: 'eLife',
+      isStandalone: true,
+      isBundle: true
+    })
+  )
+
+  const style = html.querySelector('style')
+  const script = html.querySelector('script')
+  const whitespace = new RegExp(/[\s\n\t]/gm)
+
+  expect(style?.textContent?.replace(whitespace, '')).toEqualStringContent(
+    stylesheet.replace(whitespace, '')
+  )
+  expect(script?.textContent?.replace(whitespace, '')).toEqualStringContent(
+    js.replace(whitespace, '')
+  )
 })
 
 test('encode add heading ids', async () => {
