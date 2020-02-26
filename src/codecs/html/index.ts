@@ -15,7 +15,8 @@ import {
   thematicBreak,
   microdata,
   microdataType,
-  microdataItemtype
+  microdataItemtype,
+  microdataRoot
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import { themes } from '@stencila/thema'
@@ -262,7 +263,9 @@ export class HTMLCodec extends Codec implements Codec {
       : await toFiles(node, filePath, ['data', 'file'])
 
     let dom = encodeNode(nodeToEncode) as HTMLElement
-    dom.setAttribute('data-itemscope', 'root')
+
+    const [name, value] = Object.entries(microdataRoot())[0]
+    dom.setAttribute(name, value as string)
 
     const mathjaxCss = await mathJaxFinish()
 
