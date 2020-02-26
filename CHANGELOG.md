@@ -1,3 +1,20 @@
+## [0.86.2](https://github.com/stencila/encoda/compare/v0.86.1...v0.86.2) (2020-02-26)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.9.0 ([73be1ae](https://github.com/stencila/encoda/commit/73be1ae02eb59dc21b2014937e3e4a9ff57ca2fd))
+* **dependencies:** update dependency @stencila/logga to ^2.1.0 ([ae28aa1](https://github.com/stencila/encoda/commit/ae28aa1041be8719cb6f3026130bfb7068e102be))
+* **dependencies:** update dependency fp-ts to ^2.5.1 ([90d2417](https://github.com/stencila/encoda/commit/90d2417c72552c58933a1bd92a6c62dc2db69934))
+* **dependencies:** update dependency github-slugger to ^1.3.0 ([f65b201](https://github.com/stencila/encoda/commit/f65b201538a32b05a918a1a8b0af088cecb2585d))
+* **dependencies:** update dependency got to ^10.6.0 ([ab786af](https://github.com/stencila/encoda/commit/ab786af24c73bf53ae20114fe0f55b1cd87d111c))
+* **dependencies:** update dependency js-beautify to ^1.10.3 ([260b992](https://github.com/stencila/encoda/commit/260b992f04f859045b43738d5947051cb3d6924a))
+* **dependencies:** update dependency js-yaml to ^3.13.1 ([31fed08](https://github.com/stencila/encoda/commit/31fed08732826d8e3c9a6b330b1409a07aca92c8))
+* **dependencies:** update dependency jsdom to ^16.2.0 ([766a08e](https://github.com/stencila/encoda/commit/766a08e65da5dad25fefb0b3018f07f261b99f9e))
+* **dependencies:** update dependency jsonld to ^2.0.2 ([2ab3a07](https://github.com/stencila/encoda/commit/2ab3a070a99a334ff64f006a994a15faa18960b0))
+* **dependencies:** update dependency mdast-util-compact to ^2.0.1 ([a4f6408](https://github.com/stencila/encoda/commit/a4f6408767d5e87e927938d943c7f02fe670ac3e))
+* **Dependencies:** Update several prod deps ([e008fda](https://github.com/stencila/encoda/commit/e008fdaef36c94429f2b7024548b03e93da64807))
+
 ## [0.86.1](https://github.com/stencila/encoda/compare/v0.86.0...v0.86.1) (2020-02-24)
 
 
