@@ -43,8 +43,7 @@ import { default as processNode } from './process'
 import * as puppeteer from './util/puppeteer'
 import { coerce } from './util/coerce'
 import { validate } from './util/validate'
-import { getTheme, themes } from '@stencila/thema'
-import { isTheme } from './util/html'
+import { themes } from '@stencila/thema'
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 if (module.parent === null) cli()
@@ -68,10 +67,7 @@ async function cli(): Promise<void> {
 
   try {
     if (command === 'convert') {
-      const { to, from, standalone, bundle, zip, ...rest } = options
-      const theme = isTheme(options.theme)
-        ? getTheme(options.theme)
-        : options.theme
+      const { to, from, standalone, bundle, theme, zip, ...rest } = options
 
       await convert(args[0], args.slice(1), {
         to,

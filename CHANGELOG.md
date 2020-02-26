@@ -1,3 +1,13 @@
+## [0.86.1](https://github.com/stencila/encoda/compare/v0.86.0...v0.86.1) (2020-02-24)
+
+
+### Bug Fixes
+
+* **Dependencies:** Upgrade to Schema v0.39 ([21238bc](https://github.com/stencila/encoda/commit/21238bc24dbbadf99a7c80cbd361e7b58dba5dba))
+* **HTML:** Add data-itemscope=root to top level node ([2859e32](https://github.com/stencila/encoda/commit/2859e329345b6d0b6f572d64f8bd8cacf3637fc4))
+* **IPYNB:** Check for undefined validator again ([f539d15](https://github.com/stencila/encoda/commit/f539d1566d854008bf1018e2eae4d49d40d5d62c))
+* **Types:** Use new node types for primitives ([56895b8](https://github.com/stencila/encoda/commit/56895b88b483954cbad661b3fbdc62497b8652c3))
+
 # [0.86.0](https://github.com/stencila/encoda/compare/v0.85.3...v0.86.0) (2020-02-19)
 
 
