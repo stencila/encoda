@@ -1561,12 +1561,25 @@ function decodeList(list: HTMLUListElement | HTMLOListElement): stencila.List {
 
 /**
  * Encode a `stencila.List` to a `<ul>` or `<ol>` element.
+ *
+ * GSDTT requires that each `ListItem` have a `position`.
+ * So this function generates a default position (overridden
+ * if an item has one) based on the order of items.
  */
 function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
   return h(
     list.order === 'unordered' ? 'ul' : 'ol',
     { attrs: microdata(list) },
-    list.items.map(encodeNode)
+    list.items.map((item, index) =>
+      encodeNode({
+        // TODO: refactor when `position` is a prop of ListItem
+        meta: {
+          position: index + 1,
+          ...item.meta
+        },
+        ...item
+      })
+    )
   )
 }
 
@@ -1579,12 +1592,22 @@ function decodeListItem(li: HTMLLIElement): stencila.ListItem {
 
 /**
  * Encode a `stencila.ListItem` to a `<li>` element.
+ *
+ * GSDTT requires `position` and `url` on each item.
+ * So this functions ensure that.
  */
-function encodeListItem(listItem: stencila.ListItem): HTMLLIElement {
+function encodeListItem(
+  listItem: stencila.ListItem,
+  property = 'items'
+): HTMLLIElement {
+  // TODO: refactor when `position` and `url` are props of ListItem
+  const { content = [], id, meta: { position = 0, url } = {} } = listItem
   return h(
     'li',
-    { attrs: microdata(listItem) },
-    listItem.content.map(encodeNode)
+    { attrs: microdata(listItem, property), id: id ?? position },
+    h('meta', { attrs: { itemprop: 'position', content: position } }),
+    h('meta', { attrs: { itemprop: 'url', content: url ?? `#${position}` } }),
+    content.map(encodeNode)
   )
 }
 
