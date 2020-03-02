@@ -28,7 +28,7 @@ import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
 
 const log = getLogger('encoda:dir')
 
-interface EncodeOptions extends CommonEncodeOptions {
+export interface EncodeOptions extends CommonEncodeOptions {
   /**
    * The format to decode parts of the `Collection` as.
    * Defaults to `html`. Different from the common option
@@ -37,7 +37,7 @@ interface EncodeOptions extends CommonEncodeOptions {
   fileFormat?: string
 }
 
-interface DecodeOptions extends CommonDecodeOptions {
+export interface DecodeOptions extends CommonDecodeOptions {
   /**
    * Minimatch patterns to use to select only some of the included
    * files. Defaults to '**\/\*' (i.e. everything, including in
@@ -198,7 +198,6 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
   public readonly encode = async (
     node: stencila.Node,
     options: EncodeOptions = this.commonEncodeDefaults
-    // eslint-disable-next-line @typescript-eslint/require-await
   ): Promise<vfile.VFile> => {
     const dirPath = options.filePath ?? tempy.directory()
     const format = options.fileFormat ?? 'html'
@@ -281,5 +280,16 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     )
 
     return vfile.create(dirPath)
+  }
+
+  /**
+   * @override Override of {@link Codec.read} to "read" from a
+   * directory and return a `Collection`.
+   */
+  public async read(
+    source: string,
+    options?: DecodeOptions
+  ): Promise<stencila.Collection> {
+    return this.decode(await vfile.create(source), options)
   }
 }

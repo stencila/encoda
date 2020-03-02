@@ -2,33 +2,31 @@ import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import globby from 'globby'
 import path from 'path'
-import { DirCodec } from '.'
-import * as vfile from '../../util/vfile'
-import { commonEncodeDefaults, CommonEncodeOptions } from '../types'
+import { DirCodec, DecodeOptions } from '.'
 
-const { decode, encode, sniff } = new DirCodec()
+const codec = new DirCodec()
 
 test('sniff', async () => {
-  expect(await sniff(__dirname)).toBe(true)
-  expect(await sniff(__filename)).toBe(false)
-  expect(await sniff('foo bar')).toBe(false)
+  expect(await codec.sniff(__dirname)).toBe(true)
+  expect(await codec.sniff(__filename)).toBe(false)
+  expect(await codec.sniff('foo bar')).toBe(false)
 })
 
 describe('decode', () => {
   it('creates a flat collection from a flat dir', async () => {
-    const collection = await decode(flat)
+    const collection = await codec.read(flat)
     expect(collection).toMatchObject(flatNode)
   })
 
   it('creates a nested collection from a shallow dir', async () => {
-    const collection = await decode(shallow)
+    const collection = await codec.read(shallow)
     expect(collection).toMatchObject(shallowNode)
   })
 
   it('has a patterns option', async () => {
     expect(
       nodes(
-        await decode(shallow, {
+        await codec.read(shallow, {
           patterns: ['**/README.*']
         })
       ).sort()
@@ -40,7 +38,7 @@ describe('decode', () => {
 
     expect(
       nodes(
-        await decode(shallow, {
+        await codec.read(shallow, {
           patterns: ['**/a/*']
         })
       ).sort()
@@ -50,7 +48,7 @@ describe('decode', () => {
   it('has a mainNames option', async () => {
     expect(
       mains(
-        await decode(shallow, {
+        await codec.read(shallow, {
           mainNames: []
         })
       )
@@ -58,7 +56,7 @@ describe('decode', () => {
 
     expect(
       mains(
-        await decode(shallow, {
+        await codec.read(shallow, {
           mainNames: ['index']
         })
       )
@@ -66,7 +64,7 @@ describe('decode', () => {
 
     expect(
       mains(
-        await decode(shallow, {
+        await codec.read(shallow, {
           mainNames: ['README', 'index']
         })
       )
@@ -78,19 +76,17 @@ describe('decode', () => {
   })
 
   it('creates a nested collection from a deep dir', async () => {
-    const collection = await decode(deep)
+    const collection = await codec.read(deep)
     expect(tree(collection)).toEqual(deepTree)
   })
 })
 
-describe('encode', () => {
-  const e = (n: stencila.Node, options: Omit<CommonEncodeOptions, 'theme'>) =>
-    encode(n, { ...commonEncodeDefaults, ...options })
-
+describe.skip('encode', () => {
   it('creates a directory', async () => {
     const dir = path.join(__dirname, '__outputs__', 'flat')
     await fs.remove(dir)
-    await e(flatNode, { filePath: dir })
+    await codec.write(flatNode, dir)
+
     const files = await globby('**/*', { cwd: dir })
     expect(files.sort()).toEqual(['1.html', '2.html', '3.html', 'root.json'])
   })
@@ -98,7 +94,8 @@ describe('encode', () => {
   it('uses index.html for main files', async () => {
     const dir = path.join(__dirname, '__outputs__', 'shallow')
     await fs.remove(dir)
-    await e(shallowNode, { filePath: dir })
+    await codec.write(shallowNode, dir)
+
     const files = await globby('**/*', { cwd: dir })
     expect(files.sort()).toEqual([
       'a/README.html',
@@ -111,7 +108,7 @@ describe('encode', () => {
   })
 })
 
-const flat = vfile.create(path.join(__dirname, '__fixtures__', 'flat'))
+const flat = path.join(__dirname, '__fixtures__', 'flat')
 const flatNode: stencila.Collection = {
   type: 'Collection',
   name: 'flat',
@@ -120,27 +117,24 @@ const flatNode: stencila.Collection = {
       type: 'Article',
       name: '1',
       meta: { depth: 0 },
-      title: 'Untitled',
-      content: [{ type: 'Heading', depth: 1, content: ['One'] }]
+      title: 'One'
     },
     {
       type: 'Article',
       name: '2',
       meta: { depth: 0 },
-      title: 'Untitled',
-      content: [{ type: 'Heading', depth: 1, content: ['Two'] }]
+      title: 'Two'
     },
     {
       type: 'Article',
       name: '3',
       meta: { depth: 0 },
-      title: 'Untitled',
-      content: [{ type: 'Heading', depth: 1, content: ['Three'] }]
+      title: 'Three'
     }
   ]
 }
 
-const shallow = vfile.create(path.join(__dirname, '__fixtures__', 'shallow'))
+const shallow = path.join(__dirname, '__fixtures__', 'shallow')
 const shallowNode: stencila.Collection = {
   type: 'Collection',
   name: 'shallow',
@@ -153,14 +147,12 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'README',
           meta: { depth: 1 },
-          title: 'Untitled',
           content: [{ type: 'Paragraph', content: ['README'] }]
         },
         {
           type: 'Article',
           name: 'index',
           meta: { depth: 1 },
-          title: 'Untitled',
           content: [{ type: 'Paragraph', content: ['Index'] }]
         },
         {
@@ -170,7 +162,6 @@ const shallowNode: stencila.Collection = {
             main: true,
             depth: 1
           },
-          title: 'Untitled',
           content: [{ type: 'Paragraph', content: ['Main'] }]
         }
       ]
@@ -183,7 +174,6 @@ const shallowNode: stencila.Collection = {
           type: 'Article',
           name: 'README',
           meta: { depth: 1 },
-          title: 'Untitled',
           content: [{ type: 'Paragraph', content: ['README'] }]
         },
         {
@@ -193,7 +183,6 @@ const shallowNode: stencila.Collection = {
             main: true,
             depth: 1
           },
-          title: 'Untitled',
           content: [{ type: 'Paragraph', content: ['Index'] }]
         }
       ]
@@ -209,7 +198,6 @@ const shallowNode: stencila.Collection = {
             main: true,
             depth: 1
           },
-          title: 'Untitled',
           content: [{ type: 'Paragraph', content: ['README'] }]
         }
       ]
@@ -217,7 +205,7 @@ const shallowNode: stencila.Collection = {
   ]
 }
 
-const deep = vfile.create(path.join(__dirname, '__fixtures__', 'deep'))
+const deep = path.join(__dirname, '__fixtures__', 'deep')
 const deepTree = {
   name: 'deep',
   parts: [
