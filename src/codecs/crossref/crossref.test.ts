@@ -9,8 +9,6 @@ const yaml = new YamlCodec()
 const query2yaml = async (query: string) =>
   vfile.dump(await yaml.encode(await decode(await vfile.load(query))))
 
-jest.setTimeout(30 * 1000)
-
 test.skip('decode', async () => {
   const done = await nockRecord('carlsson-and-ekre-2019.json')
   expect(

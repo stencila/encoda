@@ -42,7 +42,6 @@ test('decode', async () => {
 })
 
 test('encode', async () => {
-  jest.setTimeout(30 * 1000) // Extending timeout due to failing test on AppVeyor
   const file = await encode(node)
   expect(file).toBeInstanceOf(vfile)
   expect(await decode(file)).toEqual(node)

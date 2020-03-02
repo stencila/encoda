@@ -19,8 +19,6 @@ const pdf = path.join(__dirname, '34-xlsx-to-pdf.out.pdf')
  */
 
 describe('issue 34: XLSX to PDF conversion fails', () => {
-  jest.setTimeout(30 * 1000) // Extending timeout due to long running test
-
   test('read', async () => {
     const datatable = await read(xlsx)
 

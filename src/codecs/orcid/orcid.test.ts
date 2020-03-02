@@ -10,8 +10,6 @@ const yaml = new YamlCodec()
 const orcid2yaml = async (orcid: string) =>
   vfile.dump(await yaml.encode(await decode(await vfile.load(orcid))))
 
-jest.setTimeout(30 * 1000)
-
 test('sniff', async () => {
   expect(await sniff('0000-0002-1825-0097')).toBe(true)
   expect(await sniff('ORCID 0000-0002-1825-0097')).toBe(true)

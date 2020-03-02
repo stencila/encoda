@@ -11,7 +11,6 @@ import * as ssf from './codecs/__mocks__/ssf'
 import { fixture } from './__tests__/helpers'
 
 describe('match', () => {
-  jest.setTimeout(30 * 1000) // Extending timeout due to long running tests
   codecList.push('__mocks__/ssf')
 
   it('works with file paths', async () => {

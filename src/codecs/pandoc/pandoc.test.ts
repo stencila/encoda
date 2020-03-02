@@ -9,9 +9,6 @@ import { JsonCodec } from '../json'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
 
-// Set a high timeout to avoid occasional failures on CI
-jest.setTimeout(60 * 1000)
-
 const pandoc = new PandocCodec()
 const { decode, encode } = pandoc
 const rpng = new RPNGCodec()
