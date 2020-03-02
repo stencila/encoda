@@ -9,10 +9,10 @@ import jsonld from 'jsonld'
 import path from 'path'
 import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
+import orderProperties from '../../util/orderProperties'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
-import orderProperties from '../../util/orderProperties'
 
 const log = getLogger('encoda:jsonld')
 
@@ -137,7 +137,7 @@ export class JsonLdCodec extends Codec implements Codec {
    */
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
     const content = stencila.isEntity(node)
-      ? orderProperties(node) as stencila.Entity
+      ? (orderProperties(node) as stencila.Entity)
       : {
           type: 'PropertyValue',
           value: node
