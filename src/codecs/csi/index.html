@@ -1,46 +1,69 @@
-<article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
-  <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-    <meta itemprop="name" content="Unknown">
-    <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-      <meta itemprop="url"
-        content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-        src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-    </div>
-  </div>
-  <h1 itemprop="headline">Comma separated items codec</h1>
-  <meta itemprop="image"
-    content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Comma%20separated%20items%20codec">
-  <h1 itemscope="" itemtype="http://schema.stenci.la/Heading"
-    id="csicodefragment-comma-separated-items-codec"><code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">csi</code>: Comma separated items codec</h1>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">csi</code> codec is for decoding/encoding
-    from/to a comma separated list of items in plain text.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding">Decoding</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This codec is most often used for
-    decoding a list of strings e.g.</p>
-  <pre data-import="fruits" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-csi" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">apples, pears, kiwi</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded into an array of <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code>s, encoded in <a
-      href="../json" itemscope="" itemtype="http://schema.stenci.la/Link">JSON</a> as,</p>
-  <pre data-export="fruits" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">[
+<html>
+
+  <head>
+    <title>Comma separated items codec</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
+      <h1 itemprop="headline">Comma separated items codec</h1>
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Comma%20separated%20items%20codec">
+      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="csicodefragment-comma-separated-items-codec"><code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">csi</code>: Comma separated items codec
+      </h1>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">csi</code> codec is for decoding/encoding
+        from/to a comma separated list of items in plain text.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding">Decoding</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This codec is most often used for
+        decoding a list of strings e.g.</p>
+      <pre data-import="fruits" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-csi" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">apples, pears, kiwi</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded into an array of <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code>s, encoded in <a
+          href="../json" itemscope="" itemtype="http://schema.stenci.la/Link">JSON</a> as,</p>
+      <pre data-export="fruits" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">[
   &quot;apples&quot;,
   &quot;pears&quot;,
   &quot;kiwi&quot;
 ]</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">csi</code> codec is used in the schemas for
-    types such as <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Article</code>
-    to allow shorthand entry of properties such as <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">authors</code> and <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">keywords</code> e.g. this YAML article,</p>
-  <pre data-import="article" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">csi</code> codec is used in the schemas
+        for types such as <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">Article</code> to allow shorthand entry of
+        properties such as <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">authors</code> and <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">keywords</code> e.g. this YAML article,
+      </p>
+      <pre data-import="article" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
 title: On the names on people
 authors: Dr Jane Carter, Carter Scott, Scott Simpson III
 keywords: alliteration, given names, surnames</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded into this,</p>
-  <pre data-export="article" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded into this,</p>
+      <pre data-export="article" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
 title: On the names on people
 authors:
   - givenNames:
@@ -56,23 +79,26 @@ keywords:
   - given names
   - surnames
 </code></pre>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding">Encoding</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If the node to be encoded is not an
-    array, it is wrapped as a single item array. All items in the encoded array are then encoded as
-    text (using <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">JSON.stringify()</code> for <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">object</code> and <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">array</code> items) and separated by a comma
-    and space. For example, this array of mixed node types:</p>
-  <pre data-import="mixes" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">[1, &quot;two&quot;, false, {&quot;a&quot;: &quot;eh?&quot;}, [4, 5, 6]]</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded to comma separated items
-    as,</p>
-  <pre data-export="mixes" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-csi" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1, two, false, {&quot;a&quot;:&quot;eh?&quot;}, [4,5,6]</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Although the above example looks like
-    JSON, the encoded text is intended for human consumption. Use one of the codecs intended for
-    lossless machine readability e.g. <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">json</code>, or <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">yaml</code>, if that is what you need.</p>
-</article>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding">Encoding</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If the node to be encoded is not
+        an array, it is wrapped as a single item array. All items in the encoded array are then
+        encoded as text (using <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">JSON.stringify()</code> for <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">object</code> and <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">array</code> items) and
+        separated by a comma and space. For example, this array of mixed node types:</p>
+      <pre data-import="mixes" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">[1, &quot;two&quot;, false, {&quot;a&quot;: &quot;eh?&quot;}, [4, 5, 6]]</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded to comma separated
+        items as,</p>
+      <pre data-export="mixes" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-csi" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1, two, false, {&quot;a&quot;:&quot;eh?&quot;}, [4,5,6]</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Although the above example looks
+        like JSON, the encoded text is intended for human consumption. Use one of the codecs
+        intended for lossless machine readability e.g. <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">json</code>, or <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">yaml</code>, if that is what you need.</p>
+    </article>
+  </body>
+
+</html>

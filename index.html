@@ -1,613 +1,694 @@
-<article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
-  <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-    <meta itemprop="name" content="Unknown">
-    <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-      <meta itemprop="url"
-        content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-        src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-    </div>
-  </div>
-  <h1 itemprop="headline">Untitled</h1>
-  <meta itemprop="image"
-    content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Untitled">
-  <h1 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoda">Encoda</h1>
-  <h5 itemscope="" itemtype="http://schema.stenci.la/Heading"
-    id="codecs-for-structured-semantic-composable-and-executable-documents">Codecs for structured,
-    semantic, composable, and executable documents</h5>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-      href="https://travis-ci.org/stencila/encoda" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><img
-        src="https://travis-ci.org/stencila/encoda.svg?branch=master" alt="Build status"
-        itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
-      href="https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&amp;branchName=master"
-      itemscope="" itemtype="http://schema.stenci.la/Link"><img
-        src="https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master"
-        alt="Build status" itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
-      href="https://codecov.io/gh/stencila/encoda" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><img
-        src="https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg"
-        alt="Code coverage" itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
-      href="https://www.npmjs.com/package/@stencila/encoda" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><img
-        src="https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat" alt="NPM" itemscope=""
-        itemtype="http://schema.org/ImageObject"></a> <a href="#contribute" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><img
-        src="https://img.shields.io/badge/contributors-6-orange.svg" alt="Contributors" itemscope=""
-        itemtype="http://schema.org/ImageObject"></a> <a href="https://stencila.github.io/encoda/"
-      itemscope="" itemtype="http://schema.stenci.la/Link"><img
-        src="https://img.shields.io/badge/docs-latest-blue.svg" alt="Docs" itemscope=""
-        itemtype="http://schema.org/ImageObject"></a> <a href="https://gitter.im/stencila/stencila"
-      itemscope="" itemtype="http://schema.stenci.la/Link"><img
-        src="https://badges.gitter.im/stencila/stencila.svg" alt="Chat" itemscope=""
-        itemtype="http://schema.org/ImageObject"></a></p>
-  <ul itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#introduction"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Introduction</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#formats" itemscope=""
-          itemtype="http://schema.stenci.la/Link">Formats</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#publishers"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Publishers</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#install" itemscope=""
-          itemtype="http://schema.stenci.la/Link">Install</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#use" itemscope=""
-          itemtype="http://schema.stenci.la/Link">Use</a></p>
+<html>
+
+  <head>
+    <title>Encoda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
+      <h1 itemprop="headline">Encoda</h1>
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=Encoda">
+      <h5 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="codecs-for-structured-semantic-composable-and-executable-documents">Codecs for
+        structured, semantic, composable, and executable documents</h5>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+          href="https://travis-ci.org/stencila/encoda" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><img
+            src="https://travis-ci.org/stencila/encoda.svg?branch=master" alt="Build status"
+            itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
+          href="https://dev.azure.com/stencila/stencila/_build/latest?definitionId=1&amp;branchName=master"
+          itemscope="" itemtype="http://schema.stenci.la/Link"><img
+            src="https://dev.azure.com/stencila/stencila/_apis/build/status/stencila.encoda?branchName=master"
+            alt="Build status" itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
+          href="https://codecov.io/gh/stencila/encoda" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><img
+            src="https://codecov.io/gh/stencila/encoda/branch/master/graph/badge.svg"
+            alt="Code coverage" itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
+          href="https://www.npmjs.com/package/@stencila/encoda" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><img
+            src="https://img.shields.io/npm/v/@stencila/encoda.svg?style=flat" alt="NPM"
+            itemscope="" itemtype="http://schema.org/ImageObject"></a> <a href="#contribute"
+          itemscope="" itemtype="http://schema.stenci.la/Link"><img
+            src="https://img.shields.io/badge/contributors-6-orange.svg" alt="Contributors"
+            itemscope="" itemtype="http://schema.org/ImageObject"></a> <a
+          href="https://stencila.github.io/encoda/" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><img
+            src="https://img.shields.io/badge/docs-latest-blue.svg" alt="Docs" itemscope=""
+            itemtype="http://schema.org/ImageObject"></a> <a
+          href="https://gitter.im/stencila/stencila" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><img
+            src="https://badges.gitter.im/stencila/stencila.svg" alt="Chat" itemscope=""
+            itemtype="http://schema.org/ImageObject"></a></p>
       <ul itemscope="" itemtype="http://schema.org/ItemList">
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#converting-files"
-              itemscope="" itemtype="http://schema.stenci.la/Link">Converting files</a></p>
+        <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="1">
+          <meta itemprop="url" content="#1">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#introduction"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Introduction</a></p>
         </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#converting-folders"
-              itemscope="" itemtype="http://schema.stenci.la/Link">Converting folders</a></p>
+        <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="2">
+          <meta itemprop="url" content="#2">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#formats"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Formats</a></p>
         </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-              href="#converting-command-line-input" itemscope=""
-              itemtype="http://schema.stenci.la/Link">Converting command line input</a></p>
+        <li id="3" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="3">
+          <meta itemprop="url" content="#3">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#publishers"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Publishers</a></p>
         </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-              href="#creating-zip-archives" itemscope=""
-              itemtype="http://schema.stenci.la/Link">Creating zip archives</a></p>
+        <li id="4" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="4">
+          <meta itemprop="url" content="#4">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#install"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Install</a></p>
         </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#using-with-executa"
-              itemscope="" itemtype="http://schema.stenci.la/Link">Using with Executa</a></p>
+        <li id="5" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="5">
+          <meta itemprop="url" content="#5">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#use" itemscope=""
+              itemtype="http://schema.stenci.la/Link">Use</a></p>
+          <ul itemscope="" itemtype="http://schema.org/ItemList">
+            <li id="1" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="1">
+              <meta itemprop="url" content="#1">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#converting-files" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Converting files</a></p>
+            </li>
+            <li id="2" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="2">
+              <meta itemprop="url" content="#2">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#converting-folders" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Converting folders</a></p>
+            </li>
+            <li id="3" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="3">
+              <meta itemprop="url" content="#3">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#converting-command-line-input" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Converting command line input</a></p>
+            </li>
+            <li id="4" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="4">
+              <meta itemprop="url" content="#4">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#creating-zip-archives" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Creating zip archives</a></p>
+            </li>
+            <li id="5" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="5">
+              <meta itemprop="url" content="#5">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#using-with-executa" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Using with Executa</a></p>
+            </li>
+          </ul>
+        </li>
+        <li id="6" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="6">
+          <meta itemprop="url" content="#6">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#documentation"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Documentation</a></p>
+        </li>
+        <li id="7" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="7">
+          <meta itemprop="url" content="#7">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#develop"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Develop</a></p>
+        </li>
+        <li id="8" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="8">
+          <meta itemprop="url" content="#8">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#testing"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Testing</a></p>
+          <ul itemscope="" itemtype="http://schema.org/ItemList">
+            <li id="1" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="1">
+              <meta itemprop="url" content="#1">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#running-tests-locally" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Running tests locally</a></p>
+            </li>
+            <li id="2" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="2">
+              <meta itemprop="url" content="#2">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#running-test-in-docker" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Running test in Docker</a></p>
+            </li>
+          </ul>
+        </li>
+        <li id="9" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="9">
+          <meta itemprop="url" content="#9">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#writing-tests"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Writing tests</a></p>
+          <ul itemscope="" itemtype="http://schema.org/ItemList">
+            <li id="1" itemscope="" itemtype="http://schema.org/ListItem"
+              itemprop="itemListElement">
+              <meta itemprop="position" content="1">
+              <meta itemprop="url" content="#1">
+              <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+                  href="#recording-and-using-network-fixtures" itemscope=""
+                  itemtype="http://schema.stenci.la/Link">Recording and using network fixtures</a>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li id="10" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="10">
+          <meta itemprop="url" content="#10">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#contribute"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Contribute</a></p>
+        </li>
+        <li id="11" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="11">
+          <meta itemprop="url" content="#11">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#contributors"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Contributors</a></p>
+        </li>
+        <li id="12" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="12">
+          <meta itemprop="url" content="#12">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#acknowledgments"
+              itemscope="" itemtype="http://schema.stenci.la/Link">Acknowledgments</a></p>
         </li>
       </ul>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#documentation"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Documentation</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#develop" itemscope=""
-          itemtype="http://schema.stenci.la/Link">Develop</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#testing" itemscope=""
-          itemtype="http://schema.stenci.la/Link">Testing</a></p>
-      <ul itemscope="" itemtype="http://schema.org/ItemList">
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-              href="#running-tests-locally" itemscope=""
-              itemtype="http://schema.stenci.la/Link">Running tests locally</a></p>
-        </li>
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-              href="#running-test-in-docker" itemscope=""
-              itemtype="http://schema.stenci.la/Link">Running test in Docker</a></p>
-        </li>
-      </ul>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#writing-tests"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Writing tests</a></p>
-      <ul itemscope="" itemtype="http://schema.org/ItemList">
-        <li itemscope="" itemtype="http://schema.org/ListItem">
-          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-              href="#recording-and-using-network-fixtures" itemscope=""
-              itemtype="http://schema.stenci.la/Link">Recording and using network fixtures</a></p>
-        </li>
-      </ul>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#contribute"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Contribute</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#contributors"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Contributors</a></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a href="#acknowledgments"
-          itemscope="" itemtype="http://schema.stenci.la/Link">Acknowledgments</a></p>
-    </li>
-  </ul>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="introduction">Introduction</h2>
-  <blockquote itemscope="" itemtype="http://schema.stenci.la/QuoteBlock">
-    <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">&quot;A codec is a device or
-      computer program for encoding or decoding a digital data stream or signal. Codec is a
-      portmanteau of coder-decoder. - <a href="https://en.wikipedia.org/wiki/Codec" itemscope=""
-        itemtype="http://schema.stenci.la/Link">Wikipedia</a></p>
-  </blockquote>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda provides a collection of
-    codecs for converting between, and composing together, documents in various formats. The aim is
-    not to achieve perfect lossless conversion between alternative document formats; there are
-    already several tools for that. Instead the focus of Encoda is to use existing tools to encode
-    and compose semantic documents in alternative formats.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="formats">Formats</h2>
-  <table itemscope="" itemtype="http://schema.org/Table">
-    <tbody>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Format</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Codec</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Approach</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Status</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Issues</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Coverage</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Text</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Plain text</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/txt"
-            itemscope="" itemtype="http://schema.stenci.la/Link">txt</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+txt" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Markdown</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/md"
-            itemscope="" itemtype="http://schema.stenci.la/Link">md</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">LaTex</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/latex"
-            itemscope="" itemtype="http://schema.stenci.la/Link">latex</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">-</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+tex" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Microsoft Word</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/docx"
-            itemscope="" itemtype="http://schema.stenci.la/Link">docx</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+docx" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Google Docs</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/gdoc"
-            itemscope="" itemtype="http://schema.stenci.la/Link">gdoc</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Open Document Text</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/odt"
-            itemscope="" itemtype="http://schema.stenci.la/Link">odt</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+odt" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">HTML</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/html"
-            itemscope="" itemtype="http://schema.stenci.la/Link">html</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+html" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JATS XML</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/jats"
-            itemscope="" itemtype="http://schema.stenci.la/Link">jats</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+jats" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JATS XML (Pandoc-based)</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="src/codecs/jats-pandoc" itemscope=""
-            itemtype="http://schema.stenci.la/Link">jats-pandoc</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+jats" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Portable Document Format</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/pdf"
-            itemscope="" itemtype="http://schema.stenci.la/Link">pdf</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Notebooks</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Jupyter</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/ipynb"
-            itemscope="" itemtype="http://schema.stenci.la/Link">ipynb</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">RMarkdown</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xmd"
-            itemscope="" itemtype="http://schema.stenci.la/Link">xmd</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Presentations</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Microsoft Powerpoint</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/pptx"
-            itemscope="" itemtype="http://schema.stenci.la/Link">pptx</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✗</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Demo Magic</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dmagic"
-            itemscope="" itemtype="http://schema.stenci.la/Link">dmagic</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Spreadsheets</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Microsoft Excel</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xlsx"
-            itemscope="" itemtype="http://schema.stenci.la/Link">xlsx</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Formula</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Google Sheets</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/gsheet"
-            itemscope="" itemtype="http://schema.stenci.la/Link">gsheet</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Formula</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✗</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Open Document Spreadsheet</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/ods"
-            itemscope="" itemtype="http://schema.stenci.la/Link">ods</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Formula</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+ods" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Tabular data</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">CSV</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/csv"
-            itemscope="" itemtype="http://schema.stenci.la/Link">csv</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+csv" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">CSVY</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/csvy"
-            itemscope="" itemtype="http://schema.stenci.la/Link">csvy</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✗</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Tabular Data Package</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/tdp"
-            itemscope="" itemtype="http://schema.stenci.la/Link">tdp</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Collections</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Document Archive</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dar"
-            itemscope="" itemtype="http://schema.stenci.la/Link">dar</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">ω</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dar" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Filesystem Directory</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dir"
-            itemscope="" itemtype="http://schema.stenci.la/Link">dir</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">ω</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dir" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Data interchange, other</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/json"
-            itemscope="" itemtype="http://schema.stenci.la/Link">json</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+json" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON-LD</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">json-ld</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON5</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/json5"
-            itemscope="" itemtype="http://schema.stenci.la/Link">json5</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+json5" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">YAML</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/yaml"
-            itemscope="" itemtype="http://schema.stenci.la/Link">yaml</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Pandoc</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/pandoc"
-            itemscope="" itemtype="http://schema.stenci.la/Link">pandoc</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pandoc" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Reproducible PNG</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/rpng"
-            itemscope="" itemtype="http://schema.stenci.la/Link">rpng</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+rpng" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">XML</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xml"
-            itemscope="" itemtype="http://schema.stenci.la/Link">xml</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Transport</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">HTTP</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/http"
-            itemscope="" itemtype="http://schema.stenci.la/Link">http</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+http" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-    </tbody>
-  </table>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
-      itemtype="http://schema.stenci.la/Strong">Key</strong></p>stencila convert
-  https://elifesciences.org/articles/45187v2 ye-et-al-2019.mdstencila convert &quot;Watson and Crick
-  1953&quot; - --from crossref --to yamltype: Article title: Genetical Implications of the Structure
-  of Deoxyribonucleic Acid authors: - familyNames: - WATSON givenNames: - J. D. type: Person -
-  familyNames: - CRICK givenNames: - F. H. C. type: Person datePublished: &#39;1953,5&#39; isPartOf:
-  issueNumber: &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39; isPartOf: title: Nature type:
-  Periodical type: PublicationVolume type: PublicationIssuestencila convert
-  https://elifesciences.org/articles/45187v2 ye-et-al-2019.mdstencila convert &quot;Watson and Crick
-  1953&quot; - --from crossref --to yamltype: Article title: Genetical Implications of the Structure
-  of Deoxyribonucleic Acid authors: - familyNames: - WATSON givenNames: - J. D. type: Person -
-  familyNames: - CRICK givenNames: - F. H. C. type: Person datePublished: &#39;1953,5&#39; isPartOf:
-  issueNumber: &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39; isPartOf: title: Nature type:
-  Periodical type: PublicationVolume type: PublicationIssuenpm install @stencila/encoda
-  --globalstencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.mdstencila
-  convert &quot;Watson and Crick 1953&quot; - --from crossref --to yamltype: Article title:
-  Genetical Implications of the Structure of Deoxyribonucleic Acid authors: - familyNames: - WATSON
-  givenNames: - J. D. type: Person - familyNames: - CRICK givenNames: - F. H. C. type: Person
-  datePublished: &#39;1953,5&#39; isPartOf: issueNumber: &#39;4361&#39; isPartOf: volumeNumber:
-  &#39;171&#39; isPartOf: title: Nature type: Periodical type: PublicationVolume type:
-  PublicationIssuenpm install @stencila/encoda --globalencoda convert notebook.ipynb
-  notebook.docxencoda convert notebook.ipynb notebook.xml --to jats<p itemscope=""
-    itemtype="http://schema.stenci.la/Paragraph">If you&#39;d like to see a converter for your
-    favorite format, look at the <a href="https://github.com/stencila/encoda/issues" itemscope=""
-      itemtype="http://schema.stenci.la/Link">listed issues</a> and comment under the relevant one.
-    If there is no issue regarding the converter you need, <a
-      href="https://github.com/stencila/encoda/issues/new" itemscope=""
-      itemtype="http://schema.stenci.la/Link">create one</a>.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="publishers">Publishers</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Serveral of the codecs in Encoda,
-    deal with fetching content from a particlar publisher. For example, to get an eLife article and
-    read it in Markdown:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Some of these publisher codecs deal
-    with meta data. e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to yaml</code></pre>
-  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="introduction">Introduction
+      </h2>
+      <blockquote itemscope="" itemtype="http://schema.stenci.la/QuoteBlock">
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">&quot;A codec is a device or
+          computer program for encoding or decoding a digital data stream or signal. Codec is a
+          portmanteau of coder-decoder. - <a href="https://en.wikipedia.org/wiki/Codec" itemscope=""
+            itemtype="http://schema.stenci.la/Link">Wikipedia</a></p>
+      </blockquote>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda provides a collection of
+        codecs for converting between, and composing together, documents in various formats. The aim
+        is not to achieve perfect lossless conversion between alternative document formats; there
+        are already several tools for that. Instead the focus of Encoda is to use existing tools to
+        encode and compose semantic documents in alternative formats.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="formats">Formats</h2>
+      <table itemscope="" itemtype="http://schema.org/Table">
+        <tbody>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Format</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Codec</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Approach</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Status</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Issues</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Coverage</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Text</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Plain text</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/txt"
+                itemscope="" itemtype="http://schema.stenci.la/Link">txt</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+txt" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/txt"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Markdown</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/md"
+                itemscope="" itemtype="http://schema.stenci.la/Link">md</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+markdown" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/md"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">LaTex</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/latex"
+                itemscope="" itemtype="http://schema.stenci.la/Link">latex</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">-</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+tex" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/latex"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Microsoft Word</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/docx"
+                itemscope="" itemtype="http://schema.stenci.la/Link">docx</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+docx" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/docx"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Google Docs</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/gdoc"
+                itemscope="" itemtype="http://schema.stenci.la/Link">gdoc</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+gdoc" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/gdoc"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Open Document Text</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/odt"
+                itemscope="" itemtype="http://schema.stenci.la/Link">odt</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+odt" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/odt"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">HTML</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/html"
+                itemscope="" itemtype="http://schema.stenci.la/Link">html</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+html" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/html"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JATS XML</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/jats"
+                itemscope="" itemtype="http://schema.stenci.la/Link">jats</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+jats" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JATS XML (Pandoc-based)
+            </td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="src/codecs/jats-pandoc" itemscope=""
+                itemtype="http://schema.stenci.la/Link">jats-pandoc</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+jats" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jats-pandoc"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Portable Document Format
+            </td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/pdf"
+                itemscope="" itemtype="http://schema.stenci.la/Link">pdf</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pdf" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pdf"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Notebooks</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Jupyter</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/ipynb"
+                itemscope="" itemtype="http://schema.stenci.la/Link">ipynb</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+ipynb" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ipynb"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">RMarkdown</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xmd"
+                itemscope="" itemtype="http://schema.stenci.la/Link">xmd</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">α</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+rmd" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xmd"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Presentations</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Microsoft Powerpoint</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/pptx"
+                itemscope="" itemtype="http://schema.stenci.la/Link">pptx</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">rPNG</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✗</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pptx" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Demo Magic</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="src/codecs/dmagic" itemscope=""
+                itemtype="http://schema.stenci.la/Link">dmagic</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dmagic" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dmagic"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Spreadsheets</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Microsoft Excel</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xlsx"
+                itemscope="" itemtype="http://schema.stenci.la/Link">xlsx</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Formula</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+xlsx" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xlsx"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Google Sheets</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="src/codecs/gsheet" itemscope=""
+                itemtype="http://schema.stenci.la/Link">gsheet</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Formula</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✗</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+gsheet" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Open Document Spreadsheet
+            </td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/ods"
+                itemscope="" itemtype="http://schema.stenci.la/Link">ods</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Formula</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+ods" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/ods"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Tabular data</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">CSV</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/csv"
+                itemscope="" itemtype="http://schema.stenci.la/Link">csv</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+csv" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/csv"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">CSVY</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/csvy"
+                itemscope="" itemtype="http://schema.stenci.la/Link">csvy</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✗</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+csvy" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Tabular Data Package</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/tdp"
+                itemscope="" itemtype="http://schema.stenci.la/Link">tdp</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">None</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+tdp" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/tdp"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Collections</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Document Archive</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dar"
+                itemscope="" itemtype="http://schema.stenci.la/Link">dar</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">ω</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dar" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dar"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Filesystem Directory</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/dir"
+                itemscope="" itemtype="http://schema.stenci.la/Link">dir</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Extens</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">ω</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+dir" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/dir"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Data interchange, other</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/json"
+                itemscope="" itemtype="http://schema.stenci.la/Link">json</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+json" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON-LD</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">json-ld</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/jsonld"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">JSON5</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/json5"
+                itemscope="" itemtype="http://schema.stenci.la/Link">json5</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+json5" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/json5"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">YAML</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/yaml"
+                itemscope="" itemtype="http://schema.stenci.la/Link">yaml</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+yaml" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/yaml"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Pandoc</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="src/codecs/pandoc" itemscope=""
+                itemtype="http://schema.stenci.la/Link">pandoc</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+pandoc" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/pandoc"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Reproducible PNG</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/rpng"
+                itemscope="" itemtype="http://schema.stenci.la/Link">rpng</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+rpng" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/rpng"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">XML</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/xml"
+                itemscope="" itemtype="http://schema.stenci.la/Link">xml</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Native</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/xml"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Transport</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">HTTP</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/http"
+                itemscope="" itemtype="http://schema.stenci.la/Link">http</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">✔</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+http" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+        </tbody>
+      </table>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><strong itemscope=""
+          itemtype="http://schema.stenci.la/Strong">Key</strong></p>stencila convert
+      https://elifesciences.org/articles/45187v2 ye-et-al-2019.mdstencila convert &quot;Watson and
+      Crick 1953&quot; - --from crossref --to yamltype: Article title: Genetical Implications of the
+      Structure of Deoxyribonucleic Acid authors: - familyNames: - WATSON givenNames: - J. D. type:
+      Person - familyNames: - CRICK givenNames: - F. H. C. type: Person datePublished:
+      &#39;1953,5&#39; isPartOf: issueNumber: &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39;
+      isPartOf: title: Nature type: Periodical type: PublicationVolume type:
+      PublicationIssuestencila convert https://elifesciences.org/articles/45187v2
+      ye-et-al-2019.mdstencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to
+      yamltype: Article title: Genetical Implications of the Structure of Deoxyribonucleic Acid
+      authors: - familyNames: - WATSON givenNames: - J. D. type: Person - familyNames: - CRICK
+      givenNames: - F. H. C. type: Person datePublished: &#39;1953,5&#39; isPartOf: issueNumber:
+      &#39;4361&#39; isPartOf: volumeNumber: &#39;171&#39; isPartOf: title: Nature type: Periodical
+      type: PublicationVolume type: PublicationIssuenpm install @stencila/encoda --globalstencila
+      convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.mdstencila convert
+      &quot;Watson and Crick 1953&quot; - --from crossref --to yamltype: Article title: Genetical
+      Implications of the Structure of Deoxyribonucleic Acid authors: - familyNames: - WATSON
+      givenNames: - J. D. type: Person - familyNames: - CRICK givenNames: - F. H. C. type: Person
+      datePublished: &#39;1953,5&#39; isPartOf: issueNumber: &#39;4361&#39; isPartOf: volumeNumber:
+      &#39;171&#39; isPartOf: title: Nature type: Periodical type: PublicationVolume type:
+      PublicationIssuenpm install @stencila/encoda --globalencoda convert notebook.ipynb
+      notebook.docxencoda convert notebook.ipynb notebook.xml --to jats<p itemscope=""
+        itemtype="http://schema.stenci.la/Paragraph">If you&#39;d like to see a converter for your
+        favorite format, look at the <a href="https://github.com/stencila/encoda/issues"
+          itemscope="" itemtype="http://schema.stenci.la/Link">listed issues</a> and comment under
+        the relevant one. If there is no issue regarding the converter you need, <a
+          href="https://github.com/stencila/encoda/issues/new" itemscope=""
+          itemtype="http://schema.stenci.la/Link">create one</a>.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="publishers">Publishers</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Serveral of the codecs in Encoda,
+        deal with fetching content from a particlar publisher. For example, to get an eLife article
+        and read it in Markdown:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Some of these publisher codecs
+        deal with meta data. e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to yaml</code></pre>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
 title: Genetical Implications of the Structure of Deoxyribonucleic Acid
 authors:
   - familyNames:
@@ -630,249 +711,254 @@ isPartOf:
       type: Periodical
     type: PublicationVolume
   type: PublicationIssue</code></pre>
-  <table itemscope="" itemtype="http://schema.org/Table">
-    <tbody>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Source</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Codec</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Base codec/s</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Status</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Issues</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Coverage</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">General</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">HTTP</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/http"
-            itemscope="" itemtype="http://schema.stenci.la/Link">http</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Based on <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> or extension</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/stencila/encoda/issues?q=is%3Aopen+http" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong"><code itemscope=""
-              itemtype="http://schema.stenci.la/CodeFragment">Person</code></strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">ORCID</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">orcid</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">jsonld</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="index.html.media"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong"><code itemscope=""
-              itemtype="http://schema.stenci.la/CodeFragment">Article</code> metadata</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">DOI</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">doi</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">csl</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="index.html.media"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Crossref</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">crossref</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">jsonld</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="index.html.media"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong"><code itemscope=""
-              itemtype="http://schema.stenci.la/CodeFragment">Article</code> content</strong></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">eLife</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">elife</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">jats</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="index.html.media"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">PLoS</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">plos</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">jats</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
-            itemtype="http://schema.stenci.la/Link">⚠</a></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="index.html.media"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-      </tr>
-    </tbody>
-  </table>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="install">Install</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The easiest way to use Encoda is to
-    install the <a href="https://github.com/stencila/stencila" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><code itemscope=""
-        itemtype="http://schema.stenci.la/CodeFragment">stencila</code> command line tool</a>.
-    Encoda powers <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila
-      convert</code>, and other commands, in that CLI. However, the version of Encoda in <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila</code>, can lag behind
-    the version in this repo. So if you want the latest functionality, install Encoda as a Node.js
-    package:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm install @stencila/encoda --global</code></pre>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="use">Use</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda is intended to be used
-    primarily as a library for other applications. However, it comes with a simple command line
-    script which allows you to use the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">convert</code> function directly.</p>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-files">Converting files
-  </h3>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert notebook.ipynb notebook.docx</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda will determine the input and
-    output formats based on the file extensions. You can override these using the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--from</code> and <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--to</code> options. e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert notebook.ipynb notebook.xml --to jats</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also convert to more than one
-    file / format (in this case the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--to</code> argument only applies to the first
-    output file) e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert report.docx report.Rmd report.html report.jats</code></pre>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-folders">Converting
-    folders</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can decode an entire directory
-    into a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Collection</code>.
-    Encoda will traverse the directory, including subdirectories, decoding each file matching your
-    glob pattern. You can then encode the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">Collection</code> using the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec into a tree of HTML files
-    e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert myproject myproject-published --to dir --pattern &#39;**/*.{rmd, csv}&#39;</code></pre>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-command-line-input">
-    Converting command line input</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also read content from the
-    first argument. In that case, you&#39;ll need to specifying the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--from</code> format e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert &quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot; --from json5 paragraph.md</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can send output to the console by
-    using <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">-</code> as the second
-    argument and specifying the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--to</code> format e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert paragraph.md - --to yaml</code></pre>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="creating-zip-archives">Creating
-    zip archives</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Use the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--zip</code> option to create a Zip archive
-    with the outputs of conversion. With <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--zip=yes</code> a zip archive will always be
-    created. With <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--zip=maybe</code>, a zip archive will be
-    created if there are more than two output files. This can be useful for formats such as HTML and
-    Markdown, for which images and other media are stored in a sibling folder.</p>
-  <table itemscope="" itemtype="http://schema.org/Table">
-    <tbody>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Option</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Description</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">--from</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">The format of the input
-          content e.g. <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--from
-            md</code></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">--to</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">The format for the output
-          content e.g. <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--to
-            html</code></td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">--theme</code></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">The theme for the output (only
-          applies to HTML, PDF and RPNG output) e.g. <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">--theme eLife</code>. Either a</td>
-      </tr>
-    </tbody>
-  </table>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
-      href="https://github.com/stencila/thema#available-themes" itemscope=""
-      itemtype="http://schema.stenci.la/Link">Thema theme name</a> or a path/URL to a directory
-    containing a <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">styles.css</code> and a <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">index.js</code> file. | | <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--standalone</code> | Generate a standalone
-    document, not a fragment (default <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">true</code>) | | <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--bundle</code> | Bundle all assets (e.g
-    images, CSS and JS) into the document (default <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">false</code>) | | <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">--debug</code> | Print debugging information |
-  </p>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="using-with-executa">Using with
-    Executa</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda exposes the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">decode</code> and <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">encode</code> methods of the <a
-      href="https://github.com/stencila/executa" itemscope=""
-      itemtype="http://schema.stenci.la/Link">Executa</a> API. Register Encoda so that it can be
-    discovered by other executors on your machine,</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run register</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can then use Encoda as a plugin
-    for Executa that provides additional format conversion capabilities. For example, you can use
-    the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">query</code> REPL on a
-    Markdown document:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx executa query CHANGELOG.md --repl</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can then use the REPL to explore
-    the structure of the document and do things like create summary documents from it. For example,
-    lets say from some reason we wanted to create a short JATS XML file with the five most recent
-    releases of this package:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">jmp &gt; %format jats
+      <table itemscope="" itemtype="http://schema.org/Table">
+        <tbody>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Source</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Codec</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Base codec/s</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Status</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Issues</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Coverage</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">General</strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">HTTP</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="src/codecs/http"
+                itemscope="" itemtype="http://schema.stenci.la/Link">http</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Based on <code
+                itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> or
+              extension</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/stencila/encoda/issues?q=is%3Aopen+http" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://badger.nokome.now.sh/codecov-folder/stencila/encoda/src/codecs/http"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong"><code itemscope=""
+                  itemtype="http://schema.stenci.la/CodeFragment">Person</code></strong></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">ORCID</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">orcid</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">jsonld</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="docs.media"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong"><code itemscope=""
+                  itemtype="http://schema.stenci.la/CodeFragment">Article</code> metadata</strong>
+            </td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">DOI</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">doi</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">csl</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="docs.media"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Crossref</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">crossref</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">jsonld</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="docs.media"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong"><code itemscope=""
+                  itemtype="http://schema.stenci.la/CodeFragment">Article</code> content</strong>
+            </td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">eLife</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">elife</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">jats</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="docs.media"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">PLoS</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">plos</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">jats</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">β</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="" itemscope=""
+                itemtype="http://schema.stenci.la/Link">⚠</a></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img src="docs.media"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="install">Install</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The easiest way to use Encoda is
+        to install the <a href="https://github.com/stencila/stencila" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">stencila</code> command line tool</a>.
+        Encoda powers <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila
+          convert</code>, and other commands, in that CLI. However, the version of Encoda in <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila</code>, can lag
+        behind the version in this repo. So if you want the latest functionality, install Encoda as
+        a Node.js package:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm install @stencila/encoda --global</code></pre>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="use">Use</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda is intended to be used
+        primarily as a library for other applications. However, it comes with a simple command line
+        script which allows you to use the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">convert</code> function directly.</p>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-files">Converting
+        files</h3>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert notebook.ipynb notebook.docx</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda will determine the input
+        and output formats based on the file extensions. You can override these using the <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--from</code> and <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--to</code> options. e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert notebook.ipynb notebook.xml --to jats</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also convert to more than
+        one file / format (in this case the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--to</code> argument only applies to the
+        first output file) e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert report.docx report.Rmd report.html report.jats</code></pre>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-folders">Converting
+        folders</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can decode an entire
+        directory into a <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">Collection</code>. Encoda will traverse
+        the directory, including subdirectories, decoding each file matching your glob pattern. You
+        can then encode the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">Collection</code> using the <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec into a tree
+        of HTML files e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert myproject myproject-published --to dir --pattern &#39;**/*.{rmd, csv}&#39;</code></pre>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="converting-command-line-input">Converting command line input</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also read content from
+        the first argument. In that case, you&#39;ll need to specifying the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--from</code> format e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert &quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot; --from json5 paragraph.md</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can send output to the
+        console by using <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">-</code>
+        as the second argument and specifying the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--to</code> format e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert paragraph.md - --to yaml</code></pre>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="creating-zip-archives">
+        Creating zip archives</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Use the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--zip</code> option to create a Zip
+        archive with the outputs of conversion. With <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--zip=yes</code> a zip archive will always
+        be created. With <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--zip=maybe</code>, a zip archive will be
+        created if there are more than two output files. This can be useful for formats such as HTML
+        and Markdown, for which images and other media are stored in a sibling folder.</p>
+      <table itemscope="" itemtype="http://schema.org/Table">
+        <tbody>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Option</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Description</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">--from</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">The format of the input
+              content e.g. <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--from
+                md</code></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">--to</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">The format for the output
+              content e.g. <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--to
+                html</code></td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">--theme</code></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">The theme for the output
+              (only applies to HTML, PDF and RPNG output) e.g. <code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">--theme eLife</code>. Either a</td>
+          </tr>
+        </tbody>
+      </table>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><a
+          href="https://github.com/stencila/thema#available-themes" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Thema theme name</a> or a path/URL to a directory
+        containing a <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">styles.css</code> and a <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">index.js</code> file. | | <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--standalone</code> |
+        Generate a standalone document, not a fragment (default <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">true</code>) | | <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--bundle</code> | Bundle all assets (e.g
+        images, CSS and JS) into the document (default <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">false</code>) | | <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">--debug</code> | Print debugging
+        information |</p>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="using-with-executa">Using with
+        Executa</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda exposes the <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">decode</code> and <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encode</code> methods of the
+        <a href="https://github.com/stencila/executa" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Executa</a> API. Register Encoda so that it can be
+        discovered by other executors on your machine,</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run register</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can then use Encoda as a
+        plugin for Executa that provides additional format conversion capabilities. For example, you
+        can use the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">query</code>
+        REPL on a Markdown document:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx executa query CHANGELOG.md --repl</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can then use the REPL to
+        explore the structure of the document and do things like create summary documents from it.
+        For example, lets say from some reason we wanted to create a short JATS XML file with the
+        five most recent releases of this package:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">jmp &gt; %format jats
 jmp &gt; %dest latest-releases.jats.xml
 jmp &gt; {type: &#39;Article&#39;, content: content[? type==`Heading` &amp;&amp; depth==`1`] | [1:5]}</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Which creates the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">latest-major-releases.jats.xml</code> file:
-  </p>
-  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-xml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Which creates the <code
+          itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">latest-major-releases.jats.xml</code>
+        file:</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-xml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
 &lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
     &lt;front&gt;
@@ -888,10 +974,10 @@ jmp &gt; {type: &#39;Article&#39;, content: content[? type==`Heading` &amp;&amp;
             &lt;/title&gt;
         &lt;/sec&gt;
 ...</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can query a document in any
-    format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and get
-    the names of it&#39;s columns:</p>
-  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can query a document in any
+        format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and
+        get the names of it&#39;s columns:</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
 🛈 INFO  encoda:http Fetching &quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;
 jmp &gt; columns[].name
 [
@@ -914,287 +1000,305 @@ jmp &gt; columns[].name
   &#39;QtyOwned&#39;,
 ]
 jmp &gt;</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">See the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">%help</code> REPL command for more examples.
-  </p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Note: If you have <a
-      href="https://github.com/stencila/executa" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><code itemscope=""
-        itemtype="http://schema.stenci.la/CodeFragment">executa</code></a> installed globally, then
-    the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx</code> prefix above
-    is not necessary.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="documentation">Documentation</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Self-hoisted (documentation converted
-    from various formats to html) and API documentation (generated from source code) is available
-    at: <a href="https://stencila.github.io/encoda" itemscope=""
-      itemtype="http://schema.stenci.la/Link">https://stencila.github.io/encoda</a>.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="develop-1">Develop</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Check how to <a
-      href="https://github.com/stencila/encoda/blob/master/CONTRIBUTING.md" itemscope=""
-      itemtype="http://schema.stenci.la/Link">contribute back to the project</a>. All PRs are most
-    welcome! Thank you!</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Clone the repository and install a
-    development environment:</p>
-  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">git clone https://github.com/stencila/encoda.git
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">See the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">%help</code> REPL command for more
+        examples.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Note: If you have <a
+          href="https://github.com/stencila/executa" itemscope=""
+          itemtype="http://schema.stenci.la/Link"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">executa</code></a> installed globally,
+        then the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx</code>
+        prefix above is not necessary.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="documentation">Documentation
+      </h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Self-hoisted (documentation
+        converted from various formats to html) and API documentation (generated from source code)
+        is available at: <a href="https://stencila.github.io/encoda" itemscope=""
+          itemtype="http://schema.stenci.la/Link">https://stencila.github.io/encoda</a>.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="develop-1">Develop</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Check how to <a
+          href="https://github.com/stencila/encoda/blob/master/CONTRIBUTING.md" itemscope=""
+          itemtype="http://schema.stenci.la/Link">contribute back to the project</a>. All PRs are
+        most welcome! Thank you!</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Clone the repository and install
+        a development environment:</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">git clone https://github.com/stencila/encoda.git
 cd encoda
 npm install</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can manually test conversion
-    using the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">ts-node</code> and
-    the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">cli.ts</code> script:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli -- convert simple.md simple.html</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There is a bash script to make that a
-    little shorter and more like real life usage:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">./encoda convert simple.md simple.html</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If that is a bit slow, compile the
-    Typescript to Javascript first and use <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">node</code> directly:</p>
-  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run build
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can manually test conversion
+        using the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">ts-node</code>
+        and the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">cli.ts</code>
+        script:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli -- convert simple.md simple.html</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There is a bash script to make
+        that a little shorter and more like real life usage:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">./encoda convert simple.md simple.html</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If that is a bit slow, compile
+        the Typescript to Javascript first and use <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">node</code> directly:</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run build
 node dist/cli convert simple.md simple.html</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If you are using VSCode, you can use
-    the <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature"
-      itemscope="" itemtype="http://schema.stenci.la/Link">Auto Attach feature</a> to attach to the
-    CLI when running the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">cli:debug</code> NPM script:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="testing">Testing</h2>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-tests-locally">Running
-    tests locally</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the test suite using:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm test</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Or, run a single test file e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx jest tests/xlsx.test.ts --watch</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To get coverage statistics:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cover</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There&#39;s also a <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">Makefile</code> if you prefer to run tasks
-    that way e.g.</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">make lint cover</code></pre>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-test-in-docker">Running
-    test in Docker</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also test this package using
-    with a Docker container:</p>
-  <pre itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run test:docker</code></pre>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="writing-tests">Writing tests</h2>
-  <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
-    id="recording-and-using-network-fixtures">Recording and using network fixtures</h4>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As far as possible, tests should be
-    able to run with no network access. We use <a href="https://github.com/nock/nock#nock-back"
-      itemscope="" itemtype="http://schema.stenci.la/Link">Nock Back</a> to record and play back
-    network requests and responses. Use the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">nockRecord</code> helper function for this
-    with the convention of starting the fixture file with <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">nock-record-</code> e.g.</p>
-  <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">const stopRecording = await nockRecord(&#39;nock-record-&lt;name-of-test&gt;.json&#39;)
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If you are using VSCode, you can
+        use the <a
+          href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_auto-attach-feature"
+          itemscope="" itemtype="http://schema.stenci.la/Link">Auto Attach feature</a> to attach to
+        the CLI when running the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">cli:debug</code> NPM script:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="testing">Testing</h2>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-tests-locally">Running
+        tests locally</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the test suite using:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm test</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Or, run a single test file e.g.
+      </p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx jest tests/xlsx.test.ts --watch</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To get coverage statistics:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cover</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There&#39;s also a <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Makefile</code> if you prefer
+        to run tasks that way e.g.</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">make lint cover</code></pre>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-test-in-docker">
+        Running test in Docker</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also test this package
+        using with a Docker container:</p>
+      <pre itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run test:docker</code></pre>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="writing-tests">Writing tests
+      </h2>
+      <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="recording-and-using-network-fixtures">Recording and using network fixtures</h4>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As far as possible, tests should
+        be able to run with no network access. We use <a
+          href="https://github.com/nock/nock#nock-back" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Nock Back</a> to record and play back network
+        requests and responses. Use the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">nockRecord</code> helper function for this
+        with the convention of starting the fixture file with <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">nock-record-</code> e.g.</p>
+      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">const stopRecording = await nockRecord(&#39;nock-record-&lt;name-of-test&gt;.json&#39;)
 // Do some things that connect to the interwebs
 stopRecording()</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Note that the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">util/http</code> module has caching so that
-    you may need to remove the cache for the recording of fixtures to work e.g. <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">rm -rf ~/.config/stencila/encoda/cache/</code>
-  </p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As part of continuous integration,
-    tests are run with both <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">NOCK_MODE=wild</code> (which ignores
-    recording) to test that tests still work when using real network connections, and <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">NOCK_MODE=dryrun</code> (for
-    speed and consistency with the default).</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contribute">Contribute</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">We 💕 contributions! All
-    contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions 💬.
-    See <a href="CONTRIBUTING.md" itemscope=""
-      itemtype="http://schema.stenci.la/Link">CONTRIBUTING.md</a> for more on where to start. You
-    can also provide your feedback on the <a href="https://community.stenci.la" itemscope=""
-      itemtype="http://schema.stenci.la/Link">Community Forum</a> and <a
-      href="https://gitter.im/stencila/stencila" itemscope=""
-      itemtype="http://schema.stenci.la/Link">Gitter channel</a>.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contributors">Contributors</h2>
-  <span itemscope=""
-    itemtype="http://schema.stenci.la/Array">[{rows:[{cells:[{content:[{target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
-    Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
-    Bentley',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖'],type:'Link'},'
-    ',{target:'#design-jwijay',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
-    Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖'],type:'Link'}],type:'TableCell'},{content:[{target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
-    Ketch',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖'],type:'Link'},'
-    ',{target:'#design-alex-ketch',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
-    Shaw',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
-    Neff',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛'],type:'Link'}],type:'TableCell'}],type:'TableRow'},{cells:[{content:[{target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
-    Silva',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖'],type:'Link'}],type:'TableCell'}],type:'TableRow'}],type:'Table'},{content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
-    ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}],type:'Paragraph'}]</span><span
-    itemscope=""
-    itemtype="http://schema.stenci.la/Array">[{rows:[{cells:[{content:[{target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
-    Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
-    Bentley',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖'],type:'Link'},'
-    ',{target:'#design-jwijay',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
-    Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖'],type:'Link'}],type:'TableCell'},{content:[{target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
-    Ketch',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖'],type:'Link'},'
-    ',{target:'#design-alex-ketch',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
-    Shaw',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
-    Neff',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛'],type:'Link'}],type:'TableCell'}],type:'TableRow'},{cells:[{content:[{target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
-    Silva',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖'],type:'Link'}],type:'TableCell'}],type:'TableRow'}],type:'Table'},{content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
-    ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}],type:'Paragraph'}]</span><span
-    itemscope=""
-    itemtype="http://schema.stenci.la/Array">[{rows:[{cells:[{content:[{target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
-    Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
-    Bentley',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖'],type:'Link'},'
-    ',{target:'#design-jwijay',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
-    Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖'],type:'Link'}],type:'TableCell'},{content:[{target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
-    Ketch',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖'],type:'Link'},'
-    ',{target:'#design-alex-ketch',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
-    Shaw',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻'],type:'Link'},'
-    ',{target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
-    Neff',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛'],type:'Link'}],type:'TableCell'}],type:'TableRow'},{cells:[{content:[{target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
-    Silva',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖'],type:'Link'}],type:'TableCell'}],type:'TableRow'}],type:'Table'},{content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
-    ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}],type:'Paragraph'}]</span>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><img
-      src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png" itemscope=""
-      itemtype="http://schema.org/ImageObject"> <img
-      src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png" itemscope=""
-      itemtype="http://schema.org/ImageObject"></p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><img
-      src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png" itemscope=""
-      itemtype="http://schema.org/ImageObject"> <img
-      src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png" itemscope=""
-      itemtype="http://schema.org/ImageObject"></p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="acknowledgments">Acknowledgments
-  </h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda relies on many awesome opens
-    source tools (see <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">package.json</code> for the complete list). We
-    are grateful ❤ to their developers and contributors for all their time and energy. In
-    particular, these tools do a lot of the heavy lifting 💪 under the hood.</p>
-  <table itemscope="" itemtype="http://schema.org/Table">
-    <tbody>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Tool</td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Use</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://ajv.js.org/images/ajv_logo.png" alt="Ajv" itemscope=""
-            itemtype="http://schema.org/ImageObject"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="https://ajv.js.org/"
-            itemscope="" itemtype="http://schema.stenci.la/Link">Ajv</a> is &quot;the fastest JSON
-          Schema validator for Node.js and browser&quot;. Ajv is not only fast, it also has an
-          impressive breadth of functionality. We use Ajv for the <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">validate()</code> and <code itemscope=""
-            itemtype="http://schema.stenci.la/CodeFragment">coerce()</code> functions to ensure that
-          ingested data is valid against the Stencila <a href="https://github.com/stencila/schema"
-            itemscope="" itemtype="http://schema.stenci.la/Link">schema</a>.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://avatars0.githubusercontent.com/u/41587916?s=200&amp;v=4" alt="Citation.js"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://citation.js.org/" itemscope=""
-            itemtype="http://schema.stenci.la/Link"><code itemscope=""
-              itemtype="http://schema.stenci.la/CodeFragment">Citation.js</code></a> converts
-          bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it to
-          power the codecs for those formats and APIs.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://avatars0.githubusercontent.com/u/5912125?s=200&amp;v=4"
-            alt="Frictionless Data" itemscope="" itemtype="http://schema.org/ImageObject"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://github.com/frictionlessdata/datapackage-js" itemscope=""
-            itemtype="http://schema.stenci.la/Link"><code itemscope=""
-              itemtype="http://schema.stenci.la/CodeFragment">datapackage-js</code></a> from the
-          team at <a href="https://frictionlessdata.io/" itemscope=""
-            itemtype="http://schema.stenci.la/Link">Frictionless Data</a> is a Javascript library
-          for working with <a href="https://frictionlessdata.io/specs/data-package/" itemscope=""
-            itemtype="http://schema.stenci.la/Link">Data Packages</a>. It does a lot of the work in
-          converting between Tabular Data Packages and Stencila Datatables.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
-            itemtype="http://schema.stenci.la/Strong">Pandoc</strong></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="https://pandoc.org/"
-            itemscope="" itemtype="http://schema.stenci.la/Link">Pandoc</a> is a &quot;universal
-          document converter&quot;. It&#39;s able to convert between an impressive number of formats
-          for textual documents. Our <a
-            href="https://github.com/stencila/encoda/blob/c400d798e6b54ea9f88972b038489df79e38895b/src/pandoc-types.ts"
-            itemscope="" itemtype="http://schema.stenci.la/Link">Typescript definitions for
-            Pandoc&#39;s AST</a> allow us to leverage this functionality from within Node.js while
-          maintaining type safety. Pandoc powers our converters for Word, JATS and Latex. We have
-          contributed to Pandoc, including developing its <a
-            href="https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/JATS.hs"
-            itemscope="" itemtype="http://schema.stenci.la/Link">JATS reader</a>.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png"
-            alt="Puppeteer" itemscope="" itemtype="http://schema.org/ImageObject"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="https://pptr.dev/"
-            itemscope="" itemtype="http://schema.stenci.la/Link">Puppeteer</a> is a Node library
-          which provides a high-level API to control Chrome. We use it to take screenshots of HTML
-          snippets as part of generating rPNGs and we plan to use it for <a
-            href="https://github.com/stencila/encoda/issues/53" itemscope=""
-            itemtype="http://schema.stenci.la/Link">generating PDFs</a>.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://avatars2.githubusercontent.com/u/16309564?s=200&amp;v=4" alt="Remark"
-            itemscope="" itemtype="http://schema.org/ImageObject"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
-            href="https://remark.js.org/" itemscope="" itemtype="http://schema.stenci.la/Link"><code
-              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Remark</code></a> is an
-          ecosystem of plugins for processing Markdown. It&#39;s part of the <a
-            href="https://unifiedjs.github.io/" itemscope=""
-            itemtype="http://schema.stenci.la/Link">unified</a> framework for processing text with
-          syntax trees - a similar approach to Pandoc but in Javascript. We use Remark as our
-          Markdown parser because of it&#39;s extensibility.</td>
-      </tr>
-      <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
-            src="https://sheetjs.com/sketch128.png" alt="SheetJs" itemscope=""
-            itemtype="http://schema.org/ImageObject"></td>
-        <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a href="https://sheetjs.com"
-            itemscope="" itemtype="http://schema.stenci.la/Link">SheetJs</a> is a Javascript library
-          for parsing and writing various spreadhseet formats. We use their <a
-            href="https://github.com/sheetjs/js-xlsx" itemscope=""
-            itemtype="http://schema.stenci.la/Link">community edition</a> to power converters for
-          CSV, Excel, and Open Document Spreadsheet formats. They also have a <a
-            href="https://sheetjs.com/pro" itemscope="" itemtype="http://schema.stenci.la/Link">pro
-            version</a> if you need extra support and functionality.</td>
-      </tr>
-    </tbody>
-  </table>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Many thanks ❤ to the <a
-      href="https://sloan.org" itemscope="" itemtype="http://schema.stenci.la/Link">Alfred P. Sloan
-      Foundation</a> and <a href="https://elifesciences.org" itemscope=""
-      itemtype="http://schema.stenci.la/Link">eLife</a> for funding development of this tool.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><img
-      src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png" itemscope=""
-      itemtype="http://schema.org/ImageObject"> <img
-      src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png" itemscope=""
-      itemtype="http://schema.org/ImageObject"></p>
-</article>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Note that the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">util/http</code> module has caching so
+        that you may need to remove the cache for the recording of fixtures to work e.g. <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">rm -rf
+          ~/.config/stencila/encoda/cache/</code></p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">As part of continuous
+        integration, tests are run with both <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">NOCK_MODE=wild</code> (which ignores
+        recording) to test that tests still work when using real network connections, and <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">NOCK_MODE=dryrun</code> (for
+        speed and consistency with the default).</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contribute">Contribute</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">We 💕 contributions! All
+        contributions: ideas 🤔, examples 💡, bug reports 🐛, documentation 📖, code 💻, questions
+        💬. See <a href="CONTRIBUTING.md" itemscope=""
+          itemtype="http://schema.stenci.la/Link">CONTRIBUTING.md</a> for more on where to start.
+        You can also provide your feedback on the <a href="https://community.stenci.la" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Community Forum</a> and <a
+          href="https://gitter.im/stencila/stencila" itemscope=""
+          itemtype="http://schema.stenci.la/Link">Gitter channel</a>.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="contributors">Contributors
+      </h2><span itemscope=""
+        itemtype="http://schema.stenci.la/Array">[{rows:[{cells:[{content:[{target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
+        Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
+        Bentley',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖'],type:'Link'},'
+        ',{target:'#design-jwijay',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
+        Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖'],type:'Link'}],type:'TableCell'},{content:[{target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
+        Ketch',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖'],type:'Link'},'
+        ',{target:'#design-alex-ketch',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
+        Shaw',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
+        Neff',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛'],type:'Link'}],type:'TableCell'}],type:'TableRow'},{cells:[{content:[{target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
+        Silva',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖'],type:'Link'}],type:'TableCell'}],type:'TableRow'}],type:'Table'},{content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
+        ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}],type:'Paragraph'}]</span><span
+        itemscope=""
+        itemtype="http://schema.stenci.la/Array">[{rows:[{cells:[{content:[{target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
+        Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
+        Bentley',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖'],type:'Link'},'
+        ',{target:'#design-jwijay',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
+        Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖'],type:'Link'}],type:'TableCell'},{content:[{target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
+        Ketch',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖'],type:'Link'},'
+        ',{target:'#design-alex-ketch',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
+        Shaw',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
+        Neff',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛'],type:'Link'}],type:'TableCell'}],type:'TableRow'},{cells:[{content:[{target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
+        Silva',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖'],type:'Link'}],type:'TableCell'}],type:'TableRow'}],type:'Table'},{content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
+        ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}],type:'Paragraph'}]</span><span
+        itemscope=""
+        itemtype="http://schema.stenci.la/Array">[{rows:[{cells:[{content:[{target:'http://stenci.la',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/2358535?v=4',text:'Aleksandra
+        Pawlik',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=apawlik',content:['📖'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Aapawlik',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/nokome',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1152336?v=4',text:'Nokome
+        Bentley',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=nokome',content:['📖'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Anokome',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://toki.io',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/10161095?v=4',text:'Jacqueline',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=jwijay',content:['📖'],type:'Link'},'
+        ',{target:'#design-jwijay',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/hamishmack',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/620450?v=4',text:'Hamish
+        Mackenzie',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=hamishmack',content:['📖'],type:'Link'}],type:'TableCell'},{content:[{target:'http://ketch.me',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/1646307?v=4',text:'Alex
+        Ketch',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/commits?author=alex-ketch',content:['📖'],type:'Link'},'
+        ',{target:'#design-alex-ketch',content:['🎨'],type:'Link'}],type:'TableCell'},{content:[{target:'https://github.com/beneboy',content:[{contentUrl:'https://avatars1.githubusercontent.com/u/292725?v=4',text:'Ben
+        Shaw',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=beneboy',content:['💻'],type:'Link'},'
+        ',{target:'https://github.com/stencila/encoda/issues?q=author%3Abeneboy',content:['🐛'],type:'Link'}],type:'TableCell'},{content:[{target:'http://humanrights.washington.edu',content:[{contentUrl:'https://avatars2.githubusercontent.com/u/16355618?v=4',text:'Phil
+        Neff',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/issues?q=author%3Aphilneff',content:['🐛'],type:'Link'}],type:'TableCell'}],type:'TableRow'},{cells:[{content:[{target:'http://rgaiacs.com',content:[{contentUrl:'https://avatars0.githubusercontent.com/u/1506457?v=4',text:'Raniere
+        Silva',type:'ImageObject'},{type:'Subscript',content:[]}],type:'Link'},{target:'https://github.com/stencila/encoda/commits?author=rgaiacs',content:['📖'],type:'Link'}],type:'TableCell'}],type:'TableRow'}],type:'Table'},{content:[{contentUrl:'https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png',type:'ImageObject'},'
+        ',{contentUrl:'https://www.force11.org/sites/default/files/elife-full-color-horizontal.png',type:'ImageObject'}],type:'Paragraph'}]</span>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><img
+          src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png"
+          itemscope="" itemtype="http://schema.org/ImageObject"> <img
+          src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png"
+          itemscope="" itemtype="http://schema.org/ImageObject"></p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><img
+          src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png"
+          itemscope="" itemtype="http://schema.org/ImageObject"> <img
+          src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png"
+          itemscope="" itemtype="http://schema.org/ImageObject"></p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="acknowledgments">
+        Acknowledgments</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda relies on many awesome
+        opens source tools (see <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">package.json</code> for the complete
+        list). We are grateful ❤ to their developers and contributors for all their time and energy.
+        In particular, these tools do a lot of the heavy lifting 💪 under the hood.</p>
+      <table itemscope="" itemtype="http://schema.org/Table">
+        <tbody>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Tool</td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell">Use</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://ajv.js.org/images/ajv_logo.png" alt="Ajv" itemscope=""
+                itemtype="http://schema.org/ImageObject"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://ajv.js.org/" itemscope=""
+                itemtype="http://schema.stenci.la/Link">Ajv</a> is &quot;the fastest JSON Schema
+              validator for Node.js and browser&quot;. Ajv is not only fast, it also has an
+              impressive breadth of functionality. We use Ajv for the <code itemscope=""
+                itemtype="http://schema.stenci.la/CodeFragment">validate()</code> and <code
+                itemscope="" itemtype="http://schema.stenci.la/CodeFragment">coerce()</code>
+              functions to ensure that ingested data is valid against the Stencila <a
+                href="https://github.com/stencila/schema" itemscope=""
+                itemtype="http://schema.stenci.la/Link">schema</a>.</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://avatars0.githubusercontent.com/u/41587916?s=200&amp;v=4"
+                alt="Citation.js" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://citation.js.org/" itemscope=""
+                itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                  itemtype="http://schema.stenci.la/CodeFragment">Citation.js</code></a> converts
+              bibliographic formats like BibTeX, BibJSON, DOI, and Wikidata to CSL-JSON. We use it
+              to power the codecs for those formats and APIs.</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://avatars0.githubusercontent.com/u/5912125?s=200&amp;v=4"
+                alt="Frictionless Data" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://github.com/frictionlessdata/datapackage-js" itemscope=""
+                itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                  itemtype="http://schema.stenci.la/CodeFragment">datapackage-js</code></a> from the
+              team at <a href="https://frictionlessdata.io/" itemscope=""
+                itemtype="http://schema.stenci.la/Link">Frictionless Data</a> is a Javascript
+              library for working with <a href="https://frictionlessdata.io/specs/data-package/"
+                itemscope="" itemtype="http://schema.stenci.la/Link">Data Packages</a>. It does a
+              lot of the work in converting between Tabular Data Packages and Stencila Datatables.
+            </td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><strong itemscope=""
+                itemtype="http://schema.stenci.la/Strong">Pandoc</strong></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://pandoc.org/" itemscope=""
+                itemtype="http://schema.stenci.la/Link">Pandoc</a> is a &quot;universal document
+              converter&quot;. It&#39;s able to convert between an impressive number of formats for
+              textual documents. Our <a
+                href="https://github.com/stencila/encoda/blob/c400d798e6b54ea9f88972b038489df79e38895b/src/pandoc-types.ts"
+                itemscope="" itemtype="http://schema.stenci.la/Link">Typescript definitions for
+                Pandoc&#39;s AST</a> allow us to leverage this functionality from within Node.js
+              while maintaining type safety. Pandoc powers our converters for Word, JATS and Latex.
+              We have contributed to Pandoc, including developing its <a
+                href="https://github.com/jgm/pandoc/blob/master/src/Text/Pandoc/Readers/JATS.hs"
+                itemscope="" itemtype="http://schema.stenci.la/Link">JATS reader</a>.</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png"
+                alt="Puppeteer" itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://pptr.dev/" itemscope=""
+                itemtype="http://schema.stenci.la/Link">Puppeteer</a> is a Node library which
+              provides a high-level API to control Chrome. We use it to take screenshots of HTML
+              snippets as part of generating rPNGs and we plan to use it for <a
+                href="https://github.com/stencila/encoda/issues/53" itemscope=""
+                itemtype="http://schema.stenci.la/Link">generating PDFs</a>.</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://avatars2.githubusercontent.com/u/16309564?s=200&amp;v=4" alt="Remark"
+                itemscope="" itemtype="http://schema.org/ImageObject"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://remark.js.org/" itemscope=""
+                itemtype="http://schema.stenci.la/Link"><code itemscope=""
+                  itemtype="http://schema.stenci.la/CodeFragment">Remark</code></a> is an ecosystem
+              of plugins for processing Markdown. It&#39;s part of the <a
+                href="https://unifiedjs.github.io/" itemscope=""
+                itemtype="http://schema.stenci.la/Link">unified</a> framework for processing text
+              with syntax trees - a similar approach to Pandoc but in Javascript. We use Remark as
+              our Markdown parser because of it&#39;s extensibility.</td>
+          </tr>
+          <tr itemscope="" itemtype="http://schema.stenci.la/TableRow">
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><img
+                src="https://sheetjs.com/sketch128.png" alt="SheetJs" itemscope=""
+                itemtype="http://schema.org/ImageObject"></td>
+            <td itemscope="" itemtype="http://schema.stenci.la/TableCell"><a
+                href="https://sheetjs.com" itemscope=""
+                itemtype="http://schema.stenci.la/Link">SheetJs</a> is a Javascript library for
+              parsing and writing various spreadhseet formats. We use their <a
+                href="https://github.com/sheetjs/js-xlsx" itemscope=""
+                itemtype="http://schema.stenci.la/Link">community edition</a> to power converters
+              for CSV, Excel, and Open Document Spreadsheet formats. They also have a <a
+                href="https://sheetjs.com/pro" itemscope=""
+                itemtype="http://schema.stenci.la/Link">pro version</a> if you need extra support
+              and functionality.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Many thanks ❤ to the <a
+          href="https://sloan.org" itemscope="" itemtype="http://schema.stenci.la/Link">Alfred P.
+          Sloan Foundation</a> and <a href="https://elifesciences.org" itemscope=""
+          itemtype="http://schema.stenci.la/Link">eLife</a> for funding development of this tool.
+      </p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph"><img
+          src="https://sloan.org/storage/app/media/Logos/Sloan-Logo-stacked-black-web.png"
+          itemscope="" itemtype="http://schema.org/ImageObject"> <img
+          src="https://www.force11.org/sites/default/files/elife-full-color-horizontal.png"
+          itemscope="" itemtype="http://schema.org/ImageObject"></p>
+    </article>
+  </body>
+
+</html>

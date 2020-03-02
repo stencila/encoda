@@ -92,6 +92,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#astype" class="tsd-kind-icon">as<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#fetch" class="tsd-kind-icon">fetch</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#format" class="tsd-kind-icon">format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_codecs_gdoc_index_.decodeoptions.html#isstandalone" class="tsd-kind-icon">is<wbr>Standalone</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,7 +107,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.commondecodeoptions.html">CommonDecodeOptions</a>.<a href="_codecs_types_.commondecodeoptions.html#astype">asType</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3d335cf/src/codecs/types.ts#L65">src/codecs/types.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2173fee/src/codecs/types.ts#L77">src/codecs/types.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -127,7 +128,7 @@
 					<div class="tsd-signature tsd-kind-icon">fetch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3d335cf/src/codecs/gdoc/index.ts#L27">src/codecs/gdoc/index.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2173fee/src/codecs/gdoc/index.ts#L27">src/codecs/gdoc/index.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -138,7 +139,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.commondecodeoptions.html">CommonDecodeOptions</a>.<a href="_codecs_types_.commondecodeoptions.html#format">format</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/3d335cf/src/codecs/types.ts#L53">src/codecs/types.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2173fee/src/codecs/types.ts#L53">src/codecs/types.ts:53</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -148,6 +149,28 @@
 						<p>Most codecs only decode from one format. However,
 							for those codecs that support multiple formats,
 						this options lets the user specify which one.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isstandalone" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Standalone</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Standalone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_codecs_types_.commondecodeoptions.html">CommonDecodeOptions</a>.<a href="_codecs_types_.commondecodeoptions.html#isstandalone">isStandalone</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2173fee/src/codecs/types.ts#L65">src/codecs/types.ts:65</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Should the content be treated as a standalone
+							document or as a fragment?</p>
+						</div>
+						<p>This option affects whether codecs will attempt
+							to extract metadata etc from the content. If this
+							option is <code>false</code>, some codecs will default to returning
+							an array of content nodes, instead of for example an
+						<code>Article</code> node.</p>
 					</div>
 				</section>
 			</section>
@@ -187,6 +210,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
 								<a href="_codecs_gdoc_index_.decodeoptions.html#format" class="tsd-kind-icon">format</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_codecs_gdoc_index_.decodeoptions.html#isstandalone" class="tsd-kind-icon">is<wbr>Standalone</a>
 							</li>
 						</ul>
 					</li>

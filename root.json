@@ -5,7 +5,16 @@
     {
       "type": "Article",
       "name": "CHANGELOG",
-      "title": "Untitled",
+      "title": [
+        {
+          "type": "Link",
+          "target": "https://github.com/stencila/encoda/compare/v0.85.3...v0.86.0",
+          "content": [
+            "0.86.0"
+          ]
+        },
+        " (2020-02-19)"
+      ],
       "meta": {
         "depth": 0
       }
@@ -13,7 +22,7 @@
     {
       "type": "Article",
       "name": "CONTRIBUTING",
-      "title": "Untitled",
+      "title": "Contributing to Stencila",
       "meta": {
         "depth": 0
       }
@@ -21,7 +30,7 @@
     {
       "type": "Article",
       "name": "FAQ",
-      "title": "Untitled",
+      "title": "FAQ",
       "meta": {
         "depth": 0
       }
@@ -29,7 +38,7 @@
     {
       "type": "Article",
       "name": "README",
-      "title": "Untitled",
+      "title": "Encoda",
       "meta": {
         "depth": 0,
         "main": true
@@ -66,7 +75,13 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "csl"
+                    },
+                    ": Citation Style Language Codec"
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -81,7 +96,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "csv"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -112,7 +132,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "dir"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -127,7 +152,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "dmagic"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -142,7 +172,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "docx"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -157,7 +192,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "gdoc"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -172,7 +212,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "html"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -187,7 +232,13 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "http"
+                    },
+                    ": HTTP codec"
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -202,7 +253,13 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "ipynb"
+                    },
+                    ": Jupyter Notebook codec"
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -217,7 +274,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "jats"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -232,7 +294,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "jats"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -247,7 +314,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "json"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -262,7 +334,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "JSON5 codec",
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -277,7 +349,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "JSON-LD codec",
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -292,7 +364,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "latex"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -307,7 +384,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "md"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -322,7 +404,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "ods"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -337,7 +424,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "odt"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -352,7 +444,12 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "pandoc"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -367,7 +464,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "PDF codec",
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -393,12 +490,37 @@
             },
             {
               "type": "Collection",
+              "name": "png",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "png"
+                    }
+                  ],
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
               "name": "rpng",
               "parts": [
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "rpng"
+                    }
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -413,7 +535,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "TDP: Tabular Data Package",
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -428,7 +550,13 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": [
+                    {
+                      "type": "CodeFragment",
+                      "text": "txt"
+                    },
+                    ": Plain text codec"
+                  ],
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -443,7 +571,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "XLSX: Microsoft Excel",
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -458,7 +586,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "XMD: RMarkdown and other language variants",
                   "meta": {
                     "depth": 3,
                     "main": true
@@ -473,7 +601,7 @@
                 {
                   "type": "Article",
                   "name": "README",
-                  "title": "Untitled",
+                  "title": "XML codec",
                   "meta": {
                     "depth": 3,
                     "main": true

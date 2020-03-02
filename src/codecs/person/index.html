@@ -1,39 +1,60 @@
-<article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
-  <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-    <meta itemprop="name" content="Unknown">
-    <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-      <meta itemprop="url"
-        content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-        src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-    </div>
-  </div>
-  <h1 itemprop="headline">person</h1>
-  <meta itemprop="image"
-    content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=person">
-  <h1 itemscope="" itemtype="http://schema.stenci.la/Heading"
-    id="personcodefragment-a-codec-for-plain-text-representation-of-humans"><code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">person</code>: a codec for plain text
-    representation of humans</h1>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">person</code> codec is most often used for
-    decoding a simple string of plain text representing a person e.g. in the YAML header of a R
-    Markdown file, or the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">package.json</code> file of a NPM Javascript
-    package.</p>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding-4">Decoding</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Decoding a string is done in two
-    phases.</p>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="orcid-detection-and-use">ORCID
-    detection and use</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If the string contains an <a
-      href="https://orcid.org" itemscope="" itemtype="http://schema.stenci.la/Link">ORCID</a>, then
-    the <a href="../orcid" itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
-        itemtype="http://schema.stenci.la/CodeFragment">orcid</code></a> codec is used to fetch the
-    metadata for that person and other data in the string is ignored. For example,</p>
-  <pre data-import="josiah" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Miss Josiah Carbeeeerry (https://orcid.org/0000-0002-1825-0097)</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
-  <pre data-export="josiah" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+<html>
+
+  <head>
+    <title>person</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
+      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+        <meta itemprop="name" content="Unknown">
+        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
+          <meta itemprop="url"
+            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
+            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+        </div>
+      </div>
+      <h1 itemprop="headline">person</h1>
+      <meta itemprop="image"
+        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=person">
+      <h1 itemscope="" itemtype="http://schema.stenci.la/Heading"
+        id="personcodefragment-a-codec-for-plain-text-representation-of-humans"><code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">person</code>: a codec for plain text
+        representation of humans</h1>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">person</code> codec is most often used for
+        decoding a simple string of plain text representing a person e.g. in the YAML header of a R
+        Markdown file, or the <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">package.json</code> file of a NPM
+        Javascript package.</p>
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding-4">Decoding</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Decoding a string is done in two
+        phases.</p>
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="orcid-detection-and-use">ORCID
+        detection and use</h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If the string contains an <a
+          href="https://orcid.org" itemscope="" itemtype="http://schema.stenci.la/Link">ORCID</a>,
+        then the <a href="../orcid" itemscope="" itemtype="http://schema.stenci.la/Link"><code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">orcid</code></a> codec is
+        used to fetch the metadata for that person and other data in the string is ignored. For
+        example,</p>
+      <pre data-import="josiah" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Miss Josiah Carbeeeerry (https://orcid.org/0000-0002-1825-0097)</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
+      <pre data-export="josiah" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
   &quot;id&quot;: &quot;http://orcid.org/0000-0002-1825-0097&quot;,
   &quot;type&quot;: &quot;Person&quot;,
   &quot;url&quot;: &quot;http://library.brown.edu/about/hay/carberry.php&quot;,
@@ -65,14 +86,15 @@
     &quot;Josiah&quot;
   ]
 }</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The ORCID can appear anywhere in the
-    string, optionally prefixed with <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">http://orcid.org/</code> or <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">ORCID</code>. For example, this raw ORCID,</p>
-  <pre data-import="stephen" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">0000-0002-9079-593X</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to</p>
-  <pre data-export="stephen" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The ORCID can appear anywhere in
+        the string, optionally prefixed with <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">http://orcid.org/</code> or <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">ORCID</code>. For example,
+        this raw ORCID,</p>
+      <pre data-import="stephen" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">0000-0002-9079-593X</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to</p>
+      <pre data-export="stephen" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
   &quot;id&quot;: &quot;http://orcid.org/0000-0002-9079-593X&quot;,
   &quot;type&quot;: &quot;Person&quot;,
   &quot;affiliations&quot;: [
@@ -105,50 +127,66 @@
     &quot;Stephen&quot;
   ]
 }</code></pre>
-  <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="text-parsing">Text parsing</h3>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If no ORCID is detected, or if ORCID
-    decoding fails (e.g. due to no network access) then the text string is parsed to extract:</p>
-  <ul itemscope="" itemtype="http://schema.org/ItemList">
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">given names (and or initials)</p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">family name</p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">a prefix (title) e.g. <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Mr</code>, <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Dr</code>, <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Her Majesty</code></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">a suffix e.g. <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">PhD</code>, <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Esquire</code>, <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Jnr</code>, <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">III</code></p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">email (inside angle brackets
-        <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&lt;&gt;</code>)</p>
-    </li>
-    <li itemscope="" itemtype="http://schema.org/ListItem">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">URL (inside parentheses <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">()</code>)</p>
-    </li>
-  </ul>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For a complete list of the prefixes
-    and suffixes supported see the <a
-      href="https://github.com/dschnelldavis/parse-full-name/blob/master/index.js#L108" itemscope=""
-      itemtype="http://schema.stenci.la/Link"><code itemscope=""
-        itemtype="http://schema.stenci.la/CodeFragment">parse-full-name</code></a> library used by
-    this codec.</p>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">All of these properties are optional
-    and &quot;last name first followed by comma&quot; order is also supported. For example,</p>
-  <pre data-import="john" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Doe, J. PhD</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
-  <pre data-export="john" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="text-parsing">Text parsing
+      </h3>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If no ORCID is detected, or if
+        ORCID decoding fails (e.g. due to no network access) then the text string is parsed to
+        extract:</p>
+      <ul itemscope="" itemtype="http://schema.org/ItemList">
+        <li id="1" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="1">
+          <meta itemprop="url" content="#1">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">given names (and or initials)
+          </p>
+        </li>
+        <li id="2" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="2">
+          <meta itemprop="url" content="#2">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">family name</p>
+        </li>
+        <li id="3" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="3">
+          <meta itemprop="url" content="#3">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">a prefix (title) e.g. <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Mr</code>, <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Dr</code>, <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Her Majesty</code></p>
+        </li>
+        <li id="4" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="4">
+          <meta itemprop="url" content="#4">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">a suffix e.g. <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">PhD</code>, <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Esquire</code>, <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Jnr</code>, <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">III</code></p>
+        </li>
+        <li id="5" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="5">
+          <meta itemprop="url" content="#5">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">email (inside angle brackets
+            <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&lt;&gt;</code>)</p>
+        </li>
+        <li id="6" itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+          <meta itemprop="position" content="6">
+          <meta itemprop="url" content="#6">
+          <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">URL (inside parentheses <code
+              itemscope="" itemtype="http://schema.stenci.la/CodeFragment">()</code>)</p>
+        </li>
+      </ul>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For a complete list of the
+        prefixes and suffixes supported see the <a
+          href="https://github.com/dschnelldavis/parse-full-name/blob/master/index.js#L108"
+          itemscope="" itemtype="http://schema.stenci.la/Link"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">parse-full-name</code></a> library used
+        by this codec.</p>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">All of these properties are
+        optional and &quot;last name first followed by comma&quot; order is also supported. For
+        example,</p>
+      <pre data-import="john" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Doe, J. PhD</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
+      <pre data-export="john" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
   &quot;givenNames&quot;: [
     &quot;J.&quot;
   ],
@@ -158,12 +196,12 @@
   &quot;honorificSuffix&quot;: &quot;PhD&quot;,
   &quot;type&quot;: &quot;Person&quot;
 }</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">whereas this, more complete example,
-  </p>
-  <pre data-import="jane" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Judge Jane J. Jones PhD IV (http://example.org/jones/jane) &lt;jjjj@example.org&gt;</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
-  <pre data-export="jane" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">whereas this, more complete
+        example,</p>
+      <pre data-import="jane" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Judge Jane J. Jones PhD IV (http://example.org/jones/jane) &lt;jjjj@example.org&gt;</code></pre>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
+      <pre data-export="jane" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
   &quot;givenNames&quot;: [
     &quot;Jane&quot;,
     &quot;J.&quot;
@@ -179,14 +217,15 @@
   &quot;url&quot;: &quot;http://example.org/jones/jane&quot;,
   &quot;type&quot;: &quot;Person&quot;
 }</code></pre>
-  <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding-4">Encoding</h2>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When encoding a <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">Person</code> this codec simply constructs a
-    string that is compatible with the decoding above. That means that other properties (e.g. <code
-      itemscope="" itemtype="http://schema.stenci.la/CodeFragment">affiliations</code>) will be
-    lost. For example, this <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">Person</code> node,</p>
-  <pre data-import="jill" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding-4">Encoding</h2>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When encoding a <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Person</code> this codec
+        simply constructs a string that is compatible with the decoding above. That means that other
+        properties (e.g. <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">affiliations</code>) will be lost. For
+        example, this <code itemscope=""
+          itemtype="http://schema.stenci.la/CodeFragment">Person</code> node,</p>
+      <pre data-import="jill" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
   &quot;type&quot;: &quot;Person&quot;,
   &quot;givenNames&quot;: [&quot;Jill&quot;, &quot;J.&quot;],
   &quot;familyNames&quot;: [&quot;James&quot;],
@@ -201,8 +240,11 @@
     }
   ]
 }</code></pre>
-  <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded by the <code itemscope=""
-      itemtype="http://schema.stenci.la/CodeFragment">person</code> codec as,</p>
-  <pre data-export="jill" itemscope=""
-    itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Dr Jill J. James PhD &lt;jill@example.com&gt; (http://example.com/jill)</code></pre>
-</article>
+      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded by the <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">person</code> codec as,</p>
+      <pre data-export="jill" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Dr Jill J. James PhD &lt;jill@example.com&gt; (http://example.com/jill)</code></pre>
+    </article>
+  </body>
+
+</html>
