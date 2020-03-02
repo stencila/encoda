@@ -63,7 +63,7 @@ export class Encoda extends Listener {
    * @override Override of `Executor.decode`.
    */
   public async decode(source: string, format?: string): Promise<schema.Node> {
-    return decode(vfile.create(source), source, {format})
+    return decode(vfile.create(source), source, { format })
   }
 
   /**

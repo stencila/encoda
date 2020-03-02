@@ -19,7 +19,6 @@ import {
   microdataRoot
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
-import { themes } from '@stencila/thema'
 import collapse from 'collapse-whitespace'
 import escape from 'escape-html'
 import { flatten, isNonEmpty } from 'fp-ts/lib/Array'
@@ -1601,7 +1600,8 @@ function encodeListItem(
   property = 'items'
 ): HTMLLIElement {
   // TODO: refactor when `position` and `url` are props of ListItem
-  const { content = [], id, meta: { position = 0, url } = {} } = listItem
+  const { content = [], id, meta = {} } = listItem
+  const { position = 0, url } = meta
   return h(
     'li',
     { attrs: microdata(listItem, property), id: id ?? position },
