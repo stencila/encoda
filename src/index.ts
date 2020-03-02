@@ -15,6 +15,7 @@ import path from 'path'
 import {
   Codec,
   commonEncodeDefaults,
+  commonDecodeDefaults,
   CommonEncodeOptions,
   CommonDecodeOptions
 } from './codecs/types'
@@ -74,8 +75,9 @@ export const codecList: string[] = [
   // Scripts
   'dmagic',
 
-  // Images
+  // Images,
   'rpng',
+  'png',
 
   // Data interchange formats
   'yaml',
@@ -221,13 +223,14 @@ export async function handled(
  * @param content The file path
  * @param format The media type
  */
-export async function decode(
+export async function decode<Options extends CommonDecodeOptions>(
   file: VFile,
   content?: string,
-  format?: string
+  options: Options = commonDecodeDefaults as Options
 ): Promise<stencila.Node> {
+  const { format } = options
   const codec = await match(content, format)
-  return codec.decode(file)
+  return codec.decode(file, options)
 }
 
 /**
@@ -240,10 +243,10 @@ export async function decode(
  *    - format The format to encode the node as.
  *             If undefined then determined from filePath or file path.
  */
-export const encode = async (
+export async function encode<Options extends CommonEncodeOptions>(
   node: stencila.Node,
-  options: CommonEncodeOptions = commonEncodeDefaults
-): Promise<VFile> => {
+  options: Options = commonEncodeDefaults as Options
+): Promise<VFile> {
   const { filePath, format } = options
   if (!(filePath || format)) {
     throw new Error(
@@ -260,12 +263,13 @@ export const encode = async (
  * @param content The content to load.
  * @param format The format to load the content as.
  */
-export async function load(
+export async function load<Options extends CommonDecodeOptions>(
   content: string,
-  format: string
+  format: string,
+  options: Options = commonDecodeDefaults as Options
 ): Promise<stencila.Node> {
   const file = vfile.load(content)
-  return decode(file, undefined, format)
+  return decode(file, undefined, { format, ...options })
 }
 
 /**
@@ -275,12 +279,12 @@ export async function load(
  * @param format The format to dump the node as.
  * @param options Encoding options.
  */
-export async function dump(
+export async function dump<Options extends CommonEncodeOptions>(
   node: stencila.Node,
   format: string,
-  options: CommonEncodeOptions = commonEncodeDefaults
+  options: Options = commonEncodeDefaults as Options
 ): Promise<string> {
-  const file = await encode(node, { ...options, format })
+  const file = await encode(node, { format, ...options })
   return vfile.dump(file)
 }
 
@@ -292,12 +296,13 @@ export async function dump(
  * @param format The format to read the file as.
  *               If undefined then determined from content or file path.
  */
-export async function read(
+export async function read<Options extends CommonDecodeOptions>(
   content: string,
-  format?: string
+  format?: string,
+  options: Options = commonDecodeDefaults as Options
 ): Promise<stencila.Node> {
   const file = await vfile.read(content)
-  return decode(file, content, format)
+  return decode(file, content, { format, ...options })
 }
 
 /**
@@ -308,12 +313,12 @@ export async function read(
  *                 Use `-` write to standard output.
  * @param options Encoding options.
  */
-export async function write(
+export async function write<Options extends CommonEncodeOptions>(
   node: stencila.Node,
   filePath: string,
-  options: CommonEncodeOptions = commonEncodeDefaults
+  options: Options = commonEncodeDefaults as Options
 ): Promise<VFile> {
-  const file = await encode(node, { ...options, filePath })
+  const file = await encode(node, { filePath, ...options })
   await vfile.write(file, filePath)
   return file
 }
@@ -348,7 +353,7 @@ export async function convert(
   const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
 
   const inputFile = vfile.create(input)
-  const node = await decode(inputFile, input, from)
+  const node = await decode(inputFile, input, { format: from })
 
   let index = 0
   const files: string[] = []
