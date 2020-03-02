@@ -1,3 +1,23 @@
+# [0.87.0](https://github.com/stencila/encoda/compare/v0.86.2...v0.87.0) (2020-03-02)
+
+
+### Bug Fixes
+
+* **DAR:** Add await and use JATS codec ([c84e87b](https://github.com/stencila/encoda/commit/c84e87b99d4f576816d3c93d58c6b5d1f5da38b6))
+* **Dir:** Set output format for files; simplify some code ([d270bad](https://github.com/stencila/encoda/commit/d270bad4c65acf3f53810817ca94781fcc7ad30e))
+* **Encoda script:** Format as option ([e24b365](https://github.com/stencila/encoda/commit/e24b365e5357afa5ced0203af904bf4c4d7f177e))
+* **HTML:** Add more microdata to list and list item nodes ([468805b](https://github.com/stencila/encoda/commit/468805bffd2788f0d44cf789855d0eb45528196b))
+* **Pandoc:** Do not use defaults for authors and title ([fe0eb81](https://github.com/stencila/encoda/commit/fe0eb814ded2f73f46ae3cd9fc9eba73dc17f7d2))
+* **XML:** Improve and test error handling ([f5c28b6](https://github.com/stencila/encoda/commit/f5c28b6049dabcaa1207b242f10ea642cdda9742))
+
+
+### Features
+
+* **Codecs:** Add an isStandalone decode option ([a0d281b](https://github.com/stencila/encoda/commit/a0d281b79d038cb457459e192882e0253975b7bc))
+* **Codecs:** Add read and write methods ([618c383](https://github.com/stencila/encoda/commit/618c3835d52ae6b76100509027be36c026b56402))
+* **Markdown:** Treat first H1 as title ([bf0eb8a](https://github.com/stencila/encoda/commit/bf0eb8ad0f165c5f110e607aa5e241d36d493508)), closes [#443](https://github.com/stencila/encoda/issues/443)
+* **PNG:** Add a PNG codec ([6f900e5](https://github.com/stencila/encoda/commit/6f900e57a8505845f3da993693f030c3825a295c))
+
 ## [0.86.2](https://github.com/stencila/encoda/compare/v0.86.1...v0.86.2) (2020-02-26)
 
 
