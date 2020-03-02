@@ -4,8 +4,6 @@ import { nockRecord, snapshot } from '../../__tests__/helpers'
 
 const { sniff, encode } = new DoiCodec()
 
-jest.setTimeout(30 * 1000)
-
 test('sniff', async () => {
   expect(await sniff('10.1001/this/is/a/doi')).toBe(true)
   expect(await sniff('doi 10.1001/ok')).toBe(true)

@@ -53,6 +53,18 @@ export interface CommonDecodeOptions {
   format?: string
 
   /**
+   * Should the content be treated as a standalone
+   * document or as a fragment?
+   *
+   * This option affects whether codecs will attempt
+   * to extract metadata etc from the content. If this
+   * option is `false`, some codecs will default to returning
+   * an array of content nodes, instead of for example an
+   * `Article` node.
+   */
+  isStandalone?: boolean
+
+  /**
    * The node type to decode content to.
    *
    * Many codecs decode to a single node type.
@@ -70,8 +82,12 @@ export interface CommonDecodeOptions {
  *
  * See notes for `commonEncodeDefaults` for why these exist.
  */
-type CommonDecodeDefaults = {}
-export const commonDecodeDefaults: CommonDecodeDefaults = {}
+type CommonDecodeDefaults = Required<Pick<CommonDecodeOptions, 'isStandalone'>>
+export const commonDecodeDefaults: CommonDecodeDefaults = {
+  // To avoid breaking changes this is true, but may be changed to
+  // false for consistency with default for encoding (false)
+  isStandalone: true
+}
 
 /**
  * The interface for a codec.
@@ -131,7 +147,7 @@ export abstract class Codec<
    */
   public abstract readonly decode: (
     file: vfile.VFile,
-    options?: CommonDecodeOptions & DecodeOptions
+    options?: DecodeOptions
   ) => Promise<stencila.Node>
 
   /**
@@ -143,7 +159,7 @@ export abstract class Codec<
    */
   public abstract readonly encode: (
     node: stencila.Node,
-    options?: CommonEncodeOptions & EncodeOptions
+    options?: EncodeOptions
   ) => Promise<vfile.VFile>
 
   /**
@@ -159,7 +175,7 @@ export abstract class Codec<
    */
   public async load(
     content: string,
-    options?: CommonDecodeOptions & DecodeOptions
+    options?: DecodeOptions
   ): Promise<stencila.Node> {
     return this.decode(vfile.load(content), options)
   }
@@ -176,8 +192,48 @@ export abstract class Codec<
    */
   public async dump(
     node: stencila.Node,
-    options?: CommonEncodeOptions & EncodeOptions
+    options?: EncodeOptions
   ): Promise<string> {
     return vfile.dump(await this.encode(node, options))
+  }
+
+  /**
+   * Read a `stencila.Node` from a file.
+   *
+   * This is a convenience method which simply
+   * reads the file into a `VFile` and passes
+   * it to the `decode` method.
+   *
+   * @param path The path of the file
+   * @param options Decoding options
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public async read(
+    content: string,
+    options?: DecodeOptions
+  ): Promise<stencila.Node> {
+    return this.decode(await vfile.read(content), options)
+  }
+
+  /**
+   * Encode a `stencila.Node` to a file
+   *
+   * This is a convenience method which simply
+   * writes the content of the `VFile` created by
+   * the `encode` method.
+   *
+   * @param node The `stencila.Node` to write
+   * @param filePath The path of the file
+   * @returns A promise that resolves to a `string`
+   */
+  public async write(
+    node: stencila.Node,
+    filePath: string,
+    options?: EncodeOptions
+  ): Promise<void> {
+    return vfile.write(
+      await this.encode(node, { filePath, ...options } as EncodeOptions),
+      filePath
+    )
   }
 }

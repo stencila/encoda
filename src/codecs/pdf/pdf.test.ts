@@ -5,8 +5,6 @@ import * as stencila from '@stencila/schema'
 
 const pdfCodec = new PdfCodec()
 
-jest.setTimeout(30 * 1000) // Extending timeout due to long running test
-
 describe('decode', () => {
   test('meta data from info dict', async () => {
     const work = (await read(fixture('external.pdf'))) as stencila.CreativeWork

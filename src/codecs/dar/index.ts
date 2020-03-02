@@ -134,7 +134,7 @@ async function encodeDocument(
   const documentFile = `${id}.jats.xml`
   const documentPath = path.join(darPath, documentFile)
 
-  await write(node, documentPath, { ...options, format: 'jats-pandoc' })
+  await write(node, documentPath, { ...options, format: 'jats' })
 
   const elem = h('document')
   elem.setAttribute('id', id)
@@ -149,7 +149,7 @@ async function encodeDocument(
  * Walks to Stencila `Node` and transforms any `MediaObject` nodes so
  * that they point to file assets within the DAR.
  */
-function encodeDocumentAssets(
+async function encodeDocumentAssets(
   node: stencila.Node,
   docId: string,
   darPath: string
@@ -187,7 +187,7 @@ function encodeDocumentAssets(
     }
     return node
   }
-  const encoded = produce(node, walk) as stencila.Node
+  const encoded = (await produce(node, walk)) as stencila.Node
   return Promise.resolve({ encoded, assets })
 }
 

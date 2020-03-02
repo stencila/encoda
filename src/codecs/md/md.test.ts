@@ -36,7 +36,7 @@ describe('decode', () => {
 
   test('Nested HTML in MD', async () => {
     expect(
-      await d(`# Heading 1
+      await d(`## First heading
 
 some paragraphs
 
@@ -46,9 +46,8 @@ some paragraphs
 followed by more paragraphs`)
     ).toEqual(
       article({
-        title: 'Untitled',
         content: [
-          heading({ content: ['Heading 1'], depth: 1 }),
+          heading({ content: ['First heading'], depth: 2 }),
           paragraph({ content: ['some paragraphs'] }),
           '',
           paragraph({ content: [link({ content: ['My link'], target: '#' })] }),
@@ -100,7 +99,6 @@ followed by more paragraphs`)
 
     expect(actual).toEqual(
       article({
-        title: 'Untitled',
         content: [
           paragraph({ content: ['some paragraphs'] }),
           paragraph({
@@ -136,7 +134,6 @@ followed by more paragraphs`)
 
     expect(actual).toEqual(
       article({
-        title: 'Untitled',
         content: [
           paragraph({ content: ['some paragraphs'] }),
           paragraph({
@@ -179,7 +176,6 @@ And now more HTML, and a <cite><a href="#like-this-two">like-this-two</a></cite>
 
     expect(actual).toEqual(
       article({
-        title: 'Untitled',
         content: [
           paragraph({ content: ['some paragraphs'] }),
           paragraph({
@@ -971,10 +967,9 @@ Paragraph five.
 // across lines are decoded into a single line.
 const splitParas = {
   from: `Line1\nline2\nline3\n`,
-  to: `---\ntitle: Untitled\n---\n\nLine1 line2 line3\n`,
+  to: `Line1 line2 line3\n`,
   node: {
     type: 'Article',
-    title: 'Untitled',
     content: [
       {
         type: 'Paragraph',
@@ -987,25 +982,19 @@ const splitParas = {
 // Example for testing that paragraphs that are split
 // across lines are decoded into a single line.
 const references = {
-  from: `
-[al**ph**a][alpha] [Bravo][bravo]
+  from: `[al**ph**a][alpha] [Bravo][bravo]
 
 ![alpha] ![Bravo][bravo]
 
 [alpha]: http://example.com/alpha
 [bravo]: http://example.com/bravo
 `,
-  to: `---
-title: Untitled
----
-
-[al**ph**a](http://example.com/alpha) [Bravo](http://example.com/bravo)
+  to: `[al**ph**a](http://example.com/alpha) [Bravo](http://example.com/bravo)
 
 ![alpha](http://example.com/alpha) ![Bravo](http://example.com/bravo)
 `,
   node: {
     type: 'Article',
-    title: 'Untitled',
     content: [
       {
         type: 'Paragraph',

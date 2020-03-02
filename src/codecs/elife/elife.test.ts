@@ -19,8 +19,6 @@ const elife2yaml = async (article: string) => {
   return await await yaml.dump(unlinked)
 }
 
-jest.setTimeout(30 * 1000)
-
 test('sniff', async () => {
   expect(await sniff('elife:45187')).toBe(true)
   expect(await sniff('elife: 45187')).toBe(true)

@@ -9,9 +9,6 @@ import { JsonCodec } from '../json'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
 
-// Set a high timeout to avoid occasional failures on CI
-jest.setTimeout(60 * 1000)
-
 const pandoc = new PandocCodec()
 const { decode, encode } = pandoc
 const rpng = new RPNGCodec()
@@ -140,8 +137,6 @@ describe('citations and references', () => {
 
 describe('math', () => {
   const article = stencila.article({
-    title: 'Untitled',
-    authors: [],
     content: [
       stencila.paragraph({
         content: [
@@ -498,8 +493,6 @@ const collapseSpaces: testCase = {
   },
   node: {
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Paragraph',
@@ -557,8 +550,6 @@ const imageInlinesToString: testCase = {
   },
   node: {
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Paragraph',
@@ -606,8 +597,6 @@ describe('rPNG encoding & decoding of "special" node types', () => {
 
   const rPNGNode = (node: stencila.Node): stencila.Node => ({
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Paragraph',

@@ -7,8 +7,6 @@ import { YamlCodec } from '../yaml'
 const yaml = new YamlCodec()
 const jsonld = new JsonLdCodec()
 
-jest.setTimeout(60 * 1000)
-
 /**
  * Use nock-record to record all HTTP requests during this test suite
  *

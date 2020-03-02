@@ -7,8 +7,6 @@ import { PersonCodec } from './'
 
 const { sniff, decode, encode } = new PersonCodec()
 
-jest.setTimeout(30 * 1000)
-
 test('sniff', async () => {
   expect(await sniff('Joe Jones')).toBe(true)
   expect(await sniff('J Jones')).toBe(true)

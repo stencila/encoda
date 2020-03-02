@@ -245,29 +245,9 @@ export function run(
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
 function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
-  const { title = 'Untitled', ...meta } = decodeMeta(pdoc.meta)
-
-  // Simplify the title to just a string if possible, otherwise
-  // ensure it's just `BlockContent`
-  const title_ =
-    typeof title === 'string'
-      ? title
-      : stencila.isA('Paragraph', title)
-      ? title.content.length === 1 && typeof title.content[0] === 'string'
-        ? title.content[0]
-        : title
-      : (Array.isArray(title) ? title : [title]).filter(isBlockContent)
-
-  // TODO: handle other meta data as necessary
-
+  const meta = decodeMeta(pdoc.meta)
   const content = decodeBlocks(pdoc.blocks)
-  return {
-    type: 'Article',
-    title: typeof title_ === 'string' ? title_ : [title_],
-    authors: [],
-    ...meta,
-    content
-  }
+  return stencila.article({ ...meta, content })
 }
 
 /**
@@ -326,12 +306,40 @@ function encodeNode(
 }
 
 /**
- * Decode a Pandoc `Meta` node to an `object`
+ * Decode a Pandoc `Meta` node to an `object`.
+ *
+ * This function also translates the names / values
+ * of Pandoc meta data (e.g. as used in template) to
+ * names / values used ib Stencila schema.
  */
 export function decodeMeta(
   meta: Pandoc.Meta
 ): { [key: string]: stencila.Node } {
-  return objectMap(meta, (_, value) => decodeMetaValue(value))
+  const { title, author, date, ...rest } = objectMap(meta, (_, value) =>
+    decodeMetaValue(value)
+  )
+
+  if (title !== undefined) {
+    rest.title =
+      typeof title === 'string'
+        ? title
+        : stencila.isA('Paragraph', title)
+        ? title.content.length === 1 && typeof title.content[0] === 'string'
+          ? title.content[0]
+          : title
+        : (Array.isArray(title) ? title : [title]).filter(isBlockContent)
+  }
+
+  if (author !== undefined && Array.isArray(author) && author.length > 0) {
+    rest.authors = author
+  }
+
+  if (date !== undefined) {
+    const content = stringifyContent(date)
+    if (content.length > 0) rest.datePublished = content
+  }
+
+  return rest
 }
 
 /**

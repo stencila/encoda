@@ -18,8 +18,6 @@ const plos2yaml = async (article: string) => {
   return await vfile.dump(await yaml.encode(unlinked))
 }
 
-jest.setTimeout(5 * 60 * 1000)
-
 test('sniff', async () => {
   expect(await sniff('10.1371/journal.pone.0216012')).toBe(true)
   expect(await sniff('doi: 10.1371/journal.pone.0216012')).toBe(true)

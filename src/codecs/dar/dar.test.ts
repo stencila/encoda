@@ -7,8 +7,6 @@ import mixed from '../../__fixtures__/collection/mixed'
 
 const { decode, encode, sniff } = new DarCodec()
 
-jest.setTimeout(30 * 1000)
-
 const empty = path.join(__dirname, '__fixtures__', 'empty.dar')
 
 // Create an output DAR name and remove it if it already exists

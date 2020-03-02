@@ -342,10 +342,10 @@ async function decodeMarkdownCell(
   // TODO: handle metadata
   const { source } = cell
   const markdown = decodeMultilineString(source)
-  const node = await load(markdown, format === 'html' ? 'html' : 'md')
-  // TODO: avoid this type casting
-  const article = node as stencila.Article
-  return article.content as stencila.BlockContent[]
+  const content = await load(markdown, format === 'html' ? 'html' : 'md', {
+    isStandalone: false
+  })
+  return content as stencila.BlockContent[]
 }
 
 /**
