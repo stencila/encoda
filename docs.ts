@@ -5,17 +5,15 @@
  */
 
 import * as logga from '@stencila/logga'
-import { themes } from '@stencila/thema'
 import { DirCodec } from './src/codecs/dir'
-import * as vfile from './src/util/vfile'
-
-const { decode, encode } = new DirCodec()
-
-logga.replaceHandlers((data: logga.LogData) => {
-  if (data.level < 1) logga.defaultHandler(data)
-})
 ;(async () => {
-  const docs = await decode(vfile.create('.'), {
+  logga.replaceHandlers((data: logga.LogData) => {
+    if (data.level < 1) logga.defaultHandler(data)
+  })
+
+  const dir = new DirCodec()
+
+  const docs = await dir.read('.', {
     patterns: [
       '*.md',
       'src/**/README.*',
@@ -24,8 +22,9 @@ logga.replaceHandlers((data: logga.LogData) => {
       '!**/__tests__'
     ]
   })
-  await encode(docs, {
-    filePath: 'docs',
-    theme: themes.stencila
+
+  await dir.write(docs, 'docs', {
+    isStandalone: true,
+    theme: 'stencila'
   })
 })()
