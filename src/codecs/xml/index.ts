@@ -30,13 +30,14 @@ export class XmlCodec extends Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
-    const doc = xml.load(content) as xml.Element
-    const node = decodeDoc(doc)
-    if (node === undefined) {
-      log.warn(`Unable to parse content as Stencila XML`)
+    let doc
+    try {
+      doc = xml.load(content) as xml.Element
+    } catch (error) {
+      log.error(error)
       return null
     }
-    return node
+    return decodeDoc(doc)
   }
 
   /**
@@ -60,15 +61,15 @@ export class XmlCodec extends Codec {
  *
  * @param doc The top level XML element to decode
  */
-export const decodeDoc = (doc: xml.Element): stencila.Node | undefined => {
-  if (doc !== undefined) {
-    const stencila = xml.first(doc, 'stencila')
-    if (stencila?.elements !== undefined && stencila.elements.length === 1) {
-      const root = stencila.elements[0]
-      return decodeElem(root)
-    }
+export const decodeDoc = (doc: xml.Element): stencila.Node => {
+  const stencila = xml.first(doc, 'stencila')
+  if (stencila?.elements !== undefined && stencila.elements.length === 1) {
+    const root = stencila.elements[0]
+    return decodeElem(root)
+  } else {
+    log.warn('Unable to decode XML document')
+    return null
   }
-  return undefined
 }
 
 /**
