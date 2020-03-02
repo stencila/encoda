@@ -48,8 +48,6 @@ test('issue 95: extra bullet in blockquote', async () => {
 
   const expectedFromDocx: stencila.Article = {
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Heading',

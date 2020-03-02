@@ -137,8 +137,6 @@ describe('citations and references', () => {
 
 describe('math', () => {
   const article = stencila.article({
-    title: 'Untitled',
-    authors: [],
     content: [
       stencila.paragraph({
         content: [
@@ -495,8 +493,6 @@ const collapseSpaces: testCase = {
   },
   node: {
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Paragraph',
@@ -554,8 +550,6 @@ const imageInlinesToString: testCase = {
   },
   node: {
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Paragraph',
@@ -603,8 +597,6 @@ describe('rPNG encoding & decoding of "special" node types', () => {
 
   const rPNGNode = (node: stencila.Node): stencila.Node => ({
     type: 'Article',
-    title: 'Untitled',
-    authors: [],
     content: [
       {
         type: 'Paragraph',
