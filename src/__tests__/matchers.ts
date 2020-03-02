@@ -41,7 +41,7 @@ async function toInvert(codec: Codec, node: stencila.Node, fileName?: string) {
         let extra
         if (file.path)
           extra = `\n\nthe generated file was: ${path.relative(
-            path.dirname(__dirname),
+            path.dirname(path.dirname(__dirname)),
             file.path
           )}`
         else extra = `\n\nthe generated content was: ${file.contents}`

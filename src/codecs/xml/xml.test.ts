@@ -16,9 +16,7 @@ describe('decode', () => {
 describe('round-trip', () => {
   test('kitchen-sink', async () => {
     const expected = await read(fixture('kitchen-sink.json5'))
-    expect(await xml.dump(expected)).toMatchFile(
-      snapshot('kitchen-sink.xml')
-    )
+    expect(await xml.dump(expected)).toMatchFile(snapshot('kitchen-sink.xml'))
     const actual = await xml.read(snapshot('kitchen-sink.xml'))
     expect(actual).toEqual(expected)
   })
