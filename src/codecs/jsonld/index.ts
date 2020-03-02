@@ -12,6 +12,7 @@ import * as http from '../../util/http'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
+import orderProperties from '../../util/orderProperties'
 
 const log = getLogger('encoda:jsonld')
 
@@ -127,10 +128,16 @@ export class JsonLdCodec extends Codec implements Codec {
     return coerced
   }
 
+  /**
+   * @implements {@link Codec.decode}
+   *
+   * @details For `Entity` nodes will order properties as is done by
+   * similar codecs e.g. `json`, `yaml`. Wraps primitive nodes into
+   * a https://schema.org/PropertyValue.
+   */
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    // If necessary, wrap primitive nodes into a https://schema.org/PropertyValue
     const content = stencila.isEntity(node)
-      ? node
+      ? orderProperties(node) as stencila.Entity
       : {
           type: 'PropertyValue',
           value: node
