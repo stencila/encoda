@@ -180,4 +180,41 @@ export abstract class Codec<
   ): Promise<string> {
     return vfile.dump(await this.encode(node, options))
   }
+
+  /**
+   * Read a `stencila.Node` from a file.
+   *
+   * This is a convenience method which simply
+   * reads the file into a `VFile` and passes
+   * it to the `decode` method.
+   *
+   * @param path The path of the file
+   * @param options Decoding options
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public async read(
+    content: string,
+    options?: DecodeOptions
+  ): Promise<stencila.Node> {
+    return this.decode(await vfile.read(content), options)
+  }
+
+  /**
+   * Encode a `stencila.Node` to a file
+   *
+   * This is a convenience method which simply
+   * writes the content of the `VFile` created by
+   * the `encode` method.
+   *
+   * @param node The `stencila.Node` to write
+   * @param path The path of the file
+   * @returns A promise that resolves to a `string`
+   */
+  public async write(
+    node: stencila.Node,
+    path: string,
+    options?: EncodeOptions
+  ): Promise<void> {
+    return vfile.write(await this.encode(node, options), path)
+  }
 }
