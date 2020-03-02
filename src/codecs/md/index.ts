@@ -49,7 +49,7 @@ import { selectAll } from 'unist-util-select'
 import { stringifyContent } from '../../util/content/stringifyContent'
 import * as vfile from '../../util/vfile'
 import { HTMLCodec } from '../html'
-import { Codec } from '../types'
+import { Codec, CommonDecodeOptions } from '../types'
 import { stringifyHTML } from './stringifyHtml'
 
 export const log = getLogger('encoda:md')
@@ -64,10 +64,12 @@ export class MdCodec extends Codec implements Codec {
    * @returns A promise that resolves to a `stencila.Node`
    */
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile,
+    options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
+    const { isStandalone } = options
     const md = await vfile.dump(file)
-    return decodeMarkdown(md)
+    return decodeMarkdown(md, isStandalone)
   }
 
   /**
@@ -162,7 +164,10 @@ for (const ext of GENERIC_EXTENSIONS) {
 /**
  * Decode a string of Markdown content to a Stencila `Node`
  */
-export function decodeMarkdown(md: string): stencila.Node {
+export function decodeMarkdown(
+  md: string,
+  isStandalone = true
+): stencila.Article | stencila.Node[] {
   const mdast = unified()
     .use(parser, { commonmark: true })
     .use(frontmatter, FRONTMATTER_OPTIONS)
@@ -171,8 +176,9 @@ export function decodeMarkdown(md: string): stencila.Node {
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
+  const root = stringifyHTML(resolveReferences(mdast)) as MDAST.Root
 
-  return decodeNode(stringifyHTML(resolveReferences(mdast)))
+  return isStandalone ? decodeArticle(root) : root.children.map(decodeNode)
 }
 
 /**
@@ -199,9 +205,6 @@ export function encodeMarkdown(node: stencila.Node): string {
 function decodeNode(node: UNIST.Node): stencila.Node {
   const type = node.type
   switch (type) {
-    case 'root':
-      return decodeRoot(node as MDAST.Root)
-
     case 'heading':
       return decodeHeading(node as MDAST.Heading)
     case 'paragraph':
@@ -383,23 +386,38 @@ function encodeBlockContent(node: stencila.BlockContent): MDAST.BlockContent {
  * meta data is added to the top level of the document. Other
  * child nodes are added to the article's `content` property.
  *
+ * If the first content node if a level 1 heading, use
+ * it as the `title`.
+ *
  * @param root The MDAST root to decode
  */
-function decodeRoot(root: MDAST.Root): stencila.Article {
-  let frontmatter = {}
+function decodeArticle(root: MDAST.Root): stencila.Article {
+  let title
+  let meta
   const content: stencila.Node[] = []
   for (const child of root.children) {
     if (child.type === 'yaml') {
-      frontmatter = { ...frontmatter, ...yaml.safeLoad(child.value) }
+      const frontmatter = yaml.safeLoad(child.value)
+      if ('title' in frontmatter) title = frontmatter.title
+      meta = frontmatter
+    } else if (
+      title === undefined &&
+      child.type === 'heading' &&
+      child.depth === 1
+    ) {
+      const content = child.children.map(decodeNode)
+      title =
+        content.length === 1 && typeof content[0] === 'string'
+          ? content[0]
+          : content
     } else {
       content.push(decodeNode(child))
     }
   }
 
   return stencila.article({
-    title: 'Untitled',
-    // ...which may be overidden here, or during coercion
-    ...frontmatter,
+    title,
+    ...meta,
     content
   })
 }
@@ -1239,7 +1257,7 @@ function decodeObject(ext: Extension): object {
     }
     if (Object.keys(props).length > 0) return props
   }
-  return JSON5.parse(`{${ext.argument ?? ext.content}}`)
+  return JSON5.parse(`{${ext.argument ?? ext.content}}`) // ` to "escape" syntax highlighting
 }
 
 /**

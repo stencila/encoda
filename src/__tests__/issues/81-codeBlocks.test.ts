@@ -8,7 +8,6 @@ describe('issue 77', () => {
     const node = await read(file, 'md')
     expect(node).toEqual({
       type: 'Article',
-      title: 'Untitled',
       content: [
         {
           type: 'CodeBlock',
