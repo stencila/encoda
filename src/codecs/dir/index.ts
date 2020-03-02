@@ -203,14 +203,12 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     const format = options.fileFormat ?? 'html'
 
     // Wrap to a collection as necessary
-    const cw: stencila.CreativeWork = isCreativeWork(node)
+    const cw = stencila.isCreativeWork(node)
       ? node
-      : { type: 'CreativeWork', content: [node] }
-
-    const root: stencila.Collection =
-      cw.type === 'Collection'
-        ? (node as stencila.Collection)
-        : { type: 'Collection', parts: [cw] }
+      : stencila.creativeWork({ content: [node] })
+    const root = stencila.isA('Collection', cw)
+      ? (node as stencila.Collection)
+      : stencila.collection({ parts: [cw] })
 
     // Create a flattened list of nodes and their routes and
     // add `meta.root` to point to the root collection
@@ -222,9 +220,8 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       route: string[]
       node: stencila.CreativeWork
     }[] {
-      if (node.type === 'Collection') {
-        const coll = node as stencila.Collection
-        return coll.parts
+      if (stencila.isA('Collection', node)) {
+        return node.parts
           .map(child => walk(child, [...route, node.name ?? '']))
           .reduce((prev, curr) => [...prev, ...curr], [])
       } else {
@@ -237,7 +234,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
       }
     }
 
-    // Trash directory if it already exists
+    // Trash destination directory if it already exists
     if (await fs.pathExists(dirPath)) {
       await trash(dirPath)
       log.info(`Existing directory "${dirPath}" sent to trash`)
@@ -251,14 +248,13 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
     }
 
     // Output the root `Collection` as JSON so that is can be used as
-    // a 'sitemap' for the directory. But to minimise size remove
+    // a 'sitemap' for the directory. But to minimize size remove
     // any `content`.
     function strip(node: stencila.CreativeWork): stencila.CreativeWork {
-      if (node.type === 'Collection') {
-        const coll = node as stencila.Collection
+      if (stencila.isA('Collection', node)) {
         return {
-          ...coll,
-          parts: coll.parts.map(child => strip(child))
+          ...node,
+          parts: node.parts.map(child => strip(child))
         }
       } else {
         const { content, ...rest } = node
@@ -275,7 +271,7 @@ export class DirCodec extends Codec<EncodeOptions, DecodeOptions>
           '.' +
           format
         const filePath = path.join(dirPath, ...route.slice(1, -1), fileName)
-        return write(node, filePath, options)
+        return write(node, filePath, { ...options, format })
       })
     )
 

@@ -81,7 +81,7 @@ describe('decode', () => {
   })
 })
 
-describe.skip('encode', () => {
+describe('encode', () => {
   it('creates a directory', async () => {
     const dir = path.join(__dirname, '__outputs__', 'flat')
     await fs.remove(dir)
