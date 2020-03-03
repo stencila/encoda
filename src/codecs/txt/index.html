@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title>txtCodeFragment: Plain text codec</title>
+    <title>txt CodeFragment : Plain text codec</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <h1 data-itemprop="headline">
-        <meta itemprop="headline" content="txtCodeFragment: Plain text codec"><code itemscope=""
+        <meta itemprop="headline" content="txt CodeFragment : Plain text codec"><code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">txt</code>: Plain text codec</h1>
       <meta itemprop="image" content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
@@ -78,8 +78,9 @@
         lossless encoding of more complex nodes. For <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Array</code> nodes, items are encoded and
         joined by a single space. For <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Object</code> nodes, key/value pairs are
-        represented as space separated strings, with pairs joined by a space. For example, the
+          itemtype="http://schema.stenci.la/CodeFragment">Object</code> nodes, if there is a <code
+          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">content</code> node then that
+        is encoded only, otherwise values are encoded as space separated strings. For example, the
         following <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Article</code>
         node, encoded as <a href="../json5" itemscope=""
           itemtype="http://schema.stenci.la/Link">JSON5</a>,</p>
@@ -103,7 +104,7 @@
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded in <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">txt</code> as,</p>
       <pre data-export="ex2" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type Article title My simple article authors type Person givenNames Peter familyNames Pan content type Paragraph content My first paragraph.</code></pre>
+        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">My first paragraph.</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="invertability">Invertability
       </h2>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
