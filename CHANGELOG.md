@@ -1,3 +1,11 @@
+# [0.88.0](https://github.com/stencila/encoda/compare/v0.87.0...v0.88.0) (2020-03-03)
+
+
+### Features
+
+* **HTML:** Encode an array as a fragment ([9190db9](https://github.com/stencila/encoda/commit/9190db9fbc77510c73359b4a53fca9b1977e23a0))
+* **Shutdown:** Add top-level shutdown function ([ab04d79](https://github.com/stencila/encoda/commit/ab04d79f323af8f8358021cefa694e4e26be32da))
+
 # [0.87.0](https://github.com/stencila/encoda/compare/v0.86.2...v0.87.0) (2020-03-02)
 
 
