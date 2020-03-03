@@ -261,7 +261,10 @@ export class HTMLCodec extends Codec implements Codec {
       ? await bundle(node)
       : await toFiles(node, filePath, ['data', 'file'])
 
-    let dom = encodeNode(nodeToEncode) as HTMLElement
+    const fragment = Array.isArray(nodeToEncode)
+    let dom = Array.isArray(nodeToEncode)
+      ? h('div', encodeNodes(nodeToEncode))
+      : (encodeNode(nodeToEncode) as HTMLElement)
 
     const [name, value] = Object.entries(microdataRoot())[0]
     dom.setAttribute(name, value as string)
@@ -279,7 +282,8 @@ export class HTMLCodec extends Codec implements Codec {
       )
     }
 
-    const beautifulHtml = beautify(dom.outerHTML)
+    const html = fragment ? dom.innerHTML : dom.outerHTML
+    const beautifulHtml = beautify(html)
     return vfile.load(beautifulHtml)
   }
 }
