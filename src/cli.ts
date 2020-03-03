@@ -37,10 +37,9 @@
 import { default as log, configure } from './log'
 import minimist from 'minimist'
 import path from 'path'
-import { convert, read, write } from './index'
+import { convert, read, write, shutdown } from './index'
 // eslint-disable-next-line import/no-named-default
 import { default as processNode } from './process'
-import * as puppeteer from './util/puppeteer'
 import { coerce } from './util/coerce'
 import { validate } from './util/validate'
 import { themes } from '@stencila/thema'
@@ -110,7 +109,7 @@ async function cli(): Promise<void> {
     process.exit(1)
   } finally {
     // Success: graceful exit to ensure process does not hang.
-    await puppeteer.shutdown()
+    await shutdown()
     process.exit(0)
   }
 }

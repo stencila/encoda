@@ -187,7 +187,6 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/dist"
     ],
-    "globalTeardown": "<rootDir>/src/__tests__/teardown.ts",
     "testPathIgnorePatterns": [
       "<rootDir>/dist/",
       "__tests__/setup.ts",

@@ -19,6 +19,7 @@ import {
   CommonEncodeOptions,
   CommonDecodeOptions
 } from './codecs/types'
+import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
 import * as zip from './util/zip'
 import fs from 'fs-extra'
@@ -405,4 +406,15 @@ export async function convert(
       else return outputFile.path
     }
   }
+}
+
+/**
+ * Shutdown Encoda.
+ *
+ * Some modules need to be explicitly shutdown to prevent
+ * node from hanging. This functions collects those in one
+ * place.
+ */
+export async function shutdown() {
+  await puppeteer.shutdown()
 }
