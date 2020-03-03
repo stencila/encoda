@@ -16,7 +16,7 @@ import { getLogger } from '@stencila/logga'
 import stencila, { isInlineContent } from '@stencila/schema'
 import crypto from 'crypto'
 import { docs_v1 as GDocT } from 'googleapis'
-import { stringifyContent } from '../../util/content/stringifyContent'
+import { TxtCodec } from '../txt'
 import * as http from '../../util/http'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonDecodeOptions } from '../types'
@@ -212,7 +212,7 @@ function encodeNode(node: stencila.Node): GDocT.Schema$Document {
     // `CreativeWork` types (have `content`)
     case 'Article': {
       const article = node as stencila.Article
-      gdoc.title = stringifyContent(article.title ?? '')
+      gdoc.title = TxtCodec.stringify(article.title ?? '')
       content = article.content ?? []
       break
     }
@@ -707,7 +707,7 @@ function decodeTextRun(
 function encodeEmphasis(em: stencila.Emphasis): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyContent(em.content),
+      content: TxtCodec.stringify(em),
       textStyle: {
         italic: true
       }
@@ -721,7 +721,7 @@ function encodeEmphasis(em: stencila.Emphasis): GDocT.Schema$ParagraphElement {
 function encodeStrong(strong: stencila.Strong): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyContent(strong.content),
+      content: TxtCodec.stringify(strong),
       textStyle: {
         bold: true
       }
@@ -735,7 +735,7 @@ function encodeStrong(strong: stencila.Strong): GDocT.Schema$ParagraphElement {
 function encodeDelete(node: stencila.Delete): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyContent(node.content),
+      content: TxtCodec.stringify(node),
       textStyle: {
         strikethrough: true
       }
@@ -751,7 +751,7 @@ function encodeSuperscript(
 ): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyContent(node.content),
+      content: TxtCodec.stringify(node),
       textStyle: {
         baselineOffset: 'SUPERSCRIPT'
       }
@@ -768,7 +768,7 @@ function encodeSubscript(
 ): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyContent(node.content),
+      content: TxtCodec.stringify(node),
       textStyle: {
         baselineOffset: 'SUBSCRIPT'
       }
@@ -782,7 +782,7 @@ function encodeSubscript(
 function encodeLink(link: stencila.Link): GDocT.Schema$ParagraphElement {
   return {
     textRun: {
-      content: stringifyContent(link.content),
+      content: TxtCodec.stringify(link),
       textStyle: {
         link: {
           url: link.target
@@ -848,7 +848,7 @@ function encodeImageObject(
         imageProperties: {
           contentUri: imageObject.contentUrl
         },
-        title: stringifyContent(imageObject.title ?? ''),
+        title: TxtCodec.stringify(imageObject.title ?? ''),
         description: imageObject.text
       }
     }

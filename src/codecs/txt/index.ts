@@ -41,16 +41,30 @@ export class TxtCodec extends Codec implements Codec {
    * @returns A promise that resolves to a `VFile`
    */
   public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const encode = (node: stencila.Node): string => {
+    return Promise.resolve(vfile.load(TxtCodec.stringify(node)))
+  }
+
+  /**
+   * Encode a Stencila `Node` to a `string`.
+   *
+   * @param node The Stencila `Node` to encode
+   * @returns A string with the text content of the node
+   */
+  public static readonly stringify = (node: stencila.Node): string => {
+    const stringify = (node: stencila.Node): string => {
       if (node === null) return 'null'
       if (typeof node === 'string') return node
-      if (Array.isArray(node)) return node.map(encode).join(' ')
-      if (typeof node === 'object')
-        return Object.entries(node)
-          .map(([key, value]) => `${key} ${encode(value)}`)
-          .join(' ')
+      if (Array.isArray(node)) return node.map(stringify).join(' ')
+      if (typeof node === 'object') {
+        if ('content' in node && Array.isArray(node.content))
+          return node.content.map(stringify).join('')
+        else
+          return Object.entries(node)
+            .map(([key, value]) => stringify(value))
+            .join(' ')
+      }
       return node.toString()
     }
-    return Promise.resolve(vfile.load(encode(node)))
+    return stringify(node)
   }
 }

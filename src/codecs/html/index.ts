@@ -35,7 +35,7 @@ import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
 import bundle from '../../util/bundle'
-import { stringifyContent } from '../../util/content/stringifyContent'
+import { TxtCodec } from '../txt'
 import { getThemeAssets } from '../../util/html'
 import { toFiles } from '../../util/toFiles'
 import { truncate } from '../../util/truncate'
@@ -271,7 +271,7 @@ export class HTMLCodec extends Codec implements Codec {
     if (isStandalone) {
       const { title = 'Untitled' } = getArticleMetaData(nodeToEncode)
       dom = await generateHtmlElement(
-        stringifyContent(title),
+        TxtCodec.stringify(title),
         [dom],
         isBundle,
         theme,
@@ -809,7 +809,7 @@ function encodeTitleProperty(
 ): HTMLElement | undefined {
   if (title === undefined) return undefined
 
-  const headline = truncate(stringifyContent(title), headlineMaxLength)
+  const headline = truncate(TxtCodec.stringify(title), headlineMaxLength)
 
   return h(
     tag,
@@ -951,7 +951,7 @@ function encodeDescriptionProperty(
     h('h2', { [stencilaItemType]: microdataItemtype('Heading') }, 'Abstract'),
     h('meta', {
       itemprop: 'description',
-      content: stringifyContent(desc)
+      content: TxtCodec.stringify(desc)
     }),
     encodeNodes(typeof desc === 'string' ? [desc] : desc)
   )
@@ -1232,7 +1232,7 @@ function decodeHeading(
  */
 function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
   const content = heading.content.map(encodeNode)
-  const text = stringifyContent(heading.content)
+  const text = TxtCodec.stringify(heading)
   const id = slugger.slug(text)
   return h(`h${heading.depth}`, encodeAttrs(heading, { id }), content)
 }

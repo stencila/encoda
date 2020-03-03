@@ -11,7 +11,7 @@ import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
 import { decodeDoc as decodeXmlDoc, encodeDoc as encodeXmlDoc } from '../xml'
 import { Codec, CommonEncodeOptions } from '../types'
-import { stringifyContent } from '../../util/content/stringifyContent'
+import { TxtCodec } from '../txt'
 
 const log = getLogger('encoda:pdf')
 
@@ -164,7 +164,7 @@ const encodeMetadata = async (node: stencila.Node): Promise<PdfMetadata> => {
   }
 
   if (title !== undefined) {
-    title = typeof title === 'string' ? title : stringifyContent(title)
+    title = typeof title === 'string' ? title : TxtCodec.stringify(title)
   }
 
   if (authors !== undefined) {

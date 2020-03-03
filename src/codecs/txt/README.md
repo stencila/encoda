@@ -24,7 +24,7 @@ is decoded into a `string`, encoded in [JSON5](../json5) as,
 
 All `Node` types are encoded as plain text. For non-`string` primitive nodes, e.g. `boolean`, `number`, the plain text representation comes from the `toString()` method.
 
-No attempt is made to perform lossless encoding of more complex nodes. For `Array` nodes, items are encoded and joined by a single space. For `Object` nodes, key/value pairs are represented as space separated strings, with pairs joined by a space. For example, the following `Article` node, encoded as [JSON5](../json5),
+No attempt is made to perform lossless encoding of more complex nodes. For `Array` nodes, items are encoded and joined by a single space. For `Object` nodes, if there is a `content` node then that is encoded only, otherwise values are encoded as space separated strings. For example, the following `Article` node, encoded as [JSON5](../json5),
 
 ```json5 import=ex2
 {
@@ -49,7 +49,7 @@ No attempt is made to perform lossless encoding of more complex nodes. For `Arra
 is encoded in `txt` as,
 
 ```txt export=ex2
-type Article title My simple article authors type Person givenNames Peter familyNames Pan content type Paragraph content My first paragraph.
+My first paragraph.
 ```
 
 ## Invertability

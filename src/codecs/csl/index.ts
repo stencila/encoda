@@ -10,7 +10,7 @@ import Csl from 'csl-json'
 import path from 'path'
 import { load } from '../..'
 import { logErrorNodeType, logWarnLoss, logWarnLossIfAny } from '../../log'
-import { stringifyContent } from '../../util/content/stringifyContent'
+import { TxtCodec } from '../txt'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
 
@@ -169,7 +169,7 @@ export const encodeCsl = (cw: stencila.CreativeWork): Csl.Data => {
   return {
     type: 'article-journal',
     id: id !== undefined ? id : crypto.randomBytes(16).toString('hex'),
-    title: stringifyContent(title),
+    title: TxtCodec.stringify(title),
     author: authors.map(encodeAuthor),
     issued: date !== undefined ? encodeDate(date) : undefined,
     ...encodeIsPartOf(isPartOf)

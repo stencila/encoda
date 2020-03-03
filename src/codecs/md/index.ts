@@ -46,9 +46,9 @@ import filter from 'unist-util-filter'
 import map from 'unist-util-map'
 // @ts-ignore
 import { selectAll } from 'unist-util-select'
-import { stringifyContent } from '../../util/content/stringifyContent'
 import * as vfile from '../../util/vfile'
 import { HTMLCodec } from '../html'
+import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions } from '../types'
 import { stringifyHTML } from './stringifyHtml'
 
@@ -963,7 +963,7 @@ const decodeSubscript = (sub: MDAST.Parent): stencila.Subscript => {
 const encodeSubscript = (sub: stencila.Subscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `~${stringifyContent(sub.content)}~`
+    value: `~${TxtCodec.stringify(sub)}~`
   }
 }
 
@@ -986,7 +986,7 @@ const decodeSuperscript = (sup: MDAST.Parent): stencila.Superscript => {
 const encodeSuperscript = (sup: stencila.Superscript): MDAST.Text => {
   return {
     type: 'text',
-    value: `^${stringifyContent(sup.content)}^`
+    value: `^${TxtCodec.stringify(sup)}^`
   }
 }
 
@@ -1113,7 +1113,7 @@ function encodeImageObject(imageObject: stencila.ImageObject): MDAST.Image {
     type: 'image',
     url: imageObject.contentUrl || ''
   }
-  if (imageObject.title) image.title = stringifyContent(imageObject.title)
+  if (imageObject.title) image.title = TxtCodec.stringify(imageObject.title)
   if (imageObject.text) image.alt = imageObject.text
   if (imageObject.meta) image.data = { hProperties: imageObject.meta }
   return image

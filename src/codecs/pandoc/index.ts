@@ -23,7 +23,7 @@ import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
 import { write } from '../..'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
-import { stringifyContent } from '../../util/content/stringifyContent'
+import { TxtCodec } from '../txt'
 import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
 import { RPNGCodec } from '../rpng'
@@ -335,7 +335,7 @@ export function decodeMeta(
   }
 
   if (date !== undefined) {
-    const content = stringifyContent(date)
+    const content = TxtCodec.stringify(date)
     if (content.length > 0) rest.datePublished = content
   }
 
@@ -1290,7 +1290,7 @@ function decodeImage(image: Pandoc.Image): stencila.ImageObject {
  */
 function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
   const url = imageObject.contentUrl || ''
-  const title = stringifyContent(imageObject.title ?? '')
+  const title = TxtCodec.stringify(imageObject.title ?? '')
   const alt: Pandoc.Inline[] = []
   if (imageObject.text) alt.push(encodeString(imageObject.text))
   return {
