@@ -1,3 +1,17 @@
+## [0.88.1](https://github.com/stencila/encoda/compare/v0.88.0...v0.88.1) (2020-03-05)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.9.1 ([6b4d318](https://github.com/stencila/encoda/commit/6b4d318a0bd7e25627bb5635a9b22430824f666e))
+* **dependencies:** update dependency @stencila/thema to ^1.12.0 ([973c908](https://github.com/stencila/encoda/commit/973c908cd3f3cf902a691b24ab08a49c0949a554))
+* **dependencies:** update dependency fp-ts to ^2.5.3 ([30bf37e](https://github.com/stencila/encoda/commit/30bf37edb766f81285d4722fc4e6508e84fce2f8))
+* **dependencies:** update dependency immer to v6 ([62e1f6e](https://github.com/stencila/encoda/commit/62e1f6e36d77b18dee54be9d725bf3477003504c))
+* **dependencies:** update dependency pdf-lib to ^1.4.0 ([faa2585](https://github.com/stencila/encoda/commit/faa25856f08fc8a4e4ccd4c452957889502e358a))
+* **dependencies:** update dependency to-vfile to ^6.0.1 ([fe7fb98](https://github.com/stencila/encoda/commit/fe7fb9860531496b88f46f0538ebf488541a6e6c))
+* **dependencies:** update dependency vfile to ^4.0.3 ([30f5912](https://github.com/stencila/encoda/commit/30f5912005b918c486eca6a6fc5d7b6b91c3bd92))
+* **Dependencies:** Update package-lock.json ([2a0a42b](https://github.com/stencila/encoda/commit/2a0a42b8ff98b385953ae17eca41273c80b72ca1))
+
 # [0.88.0](https://github.com/stencila/encoda/compare/v0.87.0...v0.88.0) (2020-03-03)
 
 
