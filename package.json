@@ -95,7 +95,6 @@
     "tempy": "^0.4.0",
     "to-vfile": "^6.0.1",
     "trash": "^6.1.1",
-    "typedoc": "^0.16.10",
     "unified": "^8.4.2",
     "unist-util-filter": "^2.0.2",
     "unist-util-map": "^2.0.1",
@@ -145,6 +144,7 @@
     "structured-data-testing-tool": "3.5.1",
     "ts-jest": "25.2.1",
     "ts-node": "8.6.2",
+    "typedoc": "0.16.11",
     "typescript": "3.8.3"
   },
   "commitlint": {
