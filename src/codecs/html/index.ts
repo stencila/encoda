@@ -1183,7 +1183,7 @@ function encodeOrganization(
   tag?: keyof HTMLElementTagNameMap,
   property?: string
 ): HTMLElement {
-  const { id, name, url, address, meta, ...lost } = org
+  const { id, name, url, address, meta, parentOrganization, ...lost } = org
   logWarnLossIfAny('html', 'encode', org, lost)
 
   const nameElem = h('span', { itemprop: 'name' }, name)
@@ -1191,11 +1191,6 @@ function encodeOrganization(
     url !== undefined
       ? h('a', { itemprop: 'url', content: url, href: url }, nameElem)
       : nameElem
-  const addressElem =
-    address !== undefined
-      ? h('address', { itemprop: 'address' }, address)
-      : undefined
-
   return h(
     tag ?? 'div',
     encodeAttrs(org, {
@@ -1204,7 +1199,56 @@ function encodeOrganization(
       itemprop: property
     }),
     linkElem,
-    addressElem
+    encodeMaybe(parentOrganization, org =>
+      encodeOrganization(org, 'span', 'parentOrganization')
+    ),
+    encodeAddressProperty(address)
+  )
+}
+
+/**
+ * Encode an `address` property.
+ *
+ * For `PostalAddress` types, this follows the
+ * Microdata examples at https://schema.org/address
+ * except that it uses an `<address>` element instead of a `<div>`.
+ */
+function encodeAddressProperty(
+  address: stencila.Organization['address'],
+  tag: keyof HTMLElementTagNameMap = 'address',
+  property = 'address'
+): HTMLElement | undefined {
+  if (address === undefined) return undefined
+
+  if (typeof address === 'string')
+    return h(tag, { attrs: microdata(address, property) }, address)
+
+  const {
+    postOfficeBoxNumber,
+    streetAddress,
+    addressLocality,
+    addressRegion,
+    addressCountry,
+    ...lost
+  } = address
+  logWarnLossIfAny('html', 'encode', address, lost)
+
+  const parts = {
+    postOfficeBoxNumber,
+    streetAddress,
+    addressLocality,
+    addressRegion,
+    addressCountry
+  }
+
+  return h(
+    tag,
+    { attrs: microdata(address, property) },
+    ...Object.entries(parts).map(([property, value]) =>
+      value !== undefined
+        ? h('span', { attrs: microdata(value, property) }, value)
+        : undefined
+    )
   )
 }
 
