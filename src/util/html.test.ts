@@ -1,6 +1,6 @@
 import { themePath, themes } from '@stencila/thema'
 import { nockRecord } from '../__tests__/helpers'
-import { getThemeAssets, isTheme } from './html'
+import { getThemeAssets } from './html'
 
 const themaThemes = Object.entries(themes)
 const themeUrl = 'http://unpkg.com/@stencila/thema@1.5.3/dist/themes/stencila'

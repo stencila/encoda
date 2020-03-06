@@ -43,8 +43,12 @@ describe('encode', () => {
     expect(await encode(asciimathFragment)).toMatch('E = m c^{2}')
     expect(await encode(asciimathBlock)).toMatch('E = m c^{2}')
 
-    await expect(encode(mathmlFragment)).rejects.toThrow('not implemented: include')
-    await expect(encode(mathmlBlock)).rejects.toThrow('not implemented: include')
+    await expect(encode(mathmlFragment)).rejects.toThrow(
+      'not implemented: include'
+    )
+    await expect(encode(mathmlBlock)).rejects.toThrow(
+      'not implemented: include'
+    )
 
     // No `mathLanguage`, assumed to be `tex`
     expect(await encode(schema.mathFragment({ text: texString }))).toMatch(

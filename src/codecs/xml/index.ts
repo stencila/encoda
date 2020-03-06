@@ -30,7 +30,13 @@ export class XmlCodec extends Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
-    const doc = xml.load(content)
+    let doc
+    try {
+      doc = xml.load(content)
+    } catch (error) {
+      log.error(error)
+      return null
+    }
     const node = decodeDoc(doc)
     if (node === undefined) {
       log.warn(`Unable to parse content as Stencila XML`)
