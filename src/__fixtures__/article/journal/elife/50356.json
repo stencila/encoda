@@ -6,8 +6,16 @@
       "affiliations": [
         {
           "type": "Organization",
-          "address": "Barcelona, Spain",
-          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences"
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Spain",
+            "addressLocality": "Barcelona"
+          },
+          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences",
+          "parentOrganization": {
+            "type": "Organization",
+            "name": "Universitat Pompeu Fabra"
+          }
         }
       ],
       "familyNames": [
@@ -22,8 +30,16 @@
       "affiliations": [
         {
           "type": "Organization",
-          "address": "Barcelona, Spain",
-          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences"
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Spain",
+            "addressLocality": "Barcelona"
+          },
+          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences",
+          "parentOrganization": {
+            "type": "Organization",
+            "name": "Universitat Pompeu Fabra"
+          }
         }
       ],
       "familyNames": [
@@ -38,8 +54,16 @@
       "affiliations": [
         {
           "type": "Organization",
-          "address": "Barcelona, Spain",
-          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences"
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Spain",
+            "addressLocality": "Barcelona"
+          },
+          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences",
+          "parentOrganization": {
+            "type": "Organization",
+            "name": "Universitat Pompeu Fabra"
+          }
         }
       ],
       "emails": [
@@ -57,12 +81,24 @@
       "affiliations": [
         {
           "type": "Organization",
-          "address": "Barcelona, Spain",
-          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences"
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Spain",
+            "addressLocality": "Barcelona"
+          },
+          "name": "Laboratory of Neuropharmacology, Department of Experimental and Health Sciences",
+          "parentOrganization": {
+            "type": "Organization",
+            "name": "Universitat Pompeu Fabra"
+          }
         },
         {
           "type": "Organization",
-          "address": "Barcelona, Spain",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "Spain",
+            "addressLocality": "Barcelona"
+          },
           "name": "IMIM (Hospital del Mar Medical Research Institute)"
         }
       ],
@@ -77,9 +113,17 @@
       ]
     }
   ],
+  "dateAccepted": {
+    "type": "Date",
+    "value": "2019-12-26"
+  },
   "datePublished": {
     "type": "Date",
     "value": "2020-01-14"
+  },
+  "dateReceived": {
+    "type": "Date",
+    "value": "2019-07-19"
   },
   "description": [
     {
@@ -95,7 +139,10 @@
       "affiliations": [
         {
           "type": "Organization",
-          "address": "United States",
+          "address": {
+            "type": "PostalAddress",
+            "addressCountry": "United States"
+          },
           "name": "University of California, San Francisco"
         }
       ],
@@ -107,25 +154,122 @@
       ]
     }
   ],
-  "funders": [
+  "fundedBy": [
     {
-      "type": "Organization",
-      "name": "Instituto de Salud Carlos III"
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Instituto de Salud Carlos III"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "RD16/0017/0020"
+        }
+      ]
     },
     {
-      "type": "Organization",
-      "name": "Ministerio de Ciencia, Innovación y Universidades"
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Ministerio de Ciencia, Innovación y Universidades"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "SAF2017-84060-R-AEI/FEDER-UE"
+        }
+      ]
     },
     {
-      "type": "Organization",
-      "name": "Agència de Gestió d’Ajuts Universitaris i de Recerca"
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Agència de Gestió d’Ajuts Universitaris i de Recerca"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "ICREA Academia 2015"
+        }
+      ]
+    },
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Agència de Gestió d’Ajuts Universitaris i de Recerca"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "2019FI_B2_00111"
+        }
+      ]
+    },
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Agència de Gestió d’Ajuts Universitaris i de Recerca"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "2017 SGR 669"
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "PropertyValue",
+      "name": "publisher-id",
+      "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+      "value": "50356"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "doi",
+      "propertyID": "https://registry.identifiers.org/registry/doi",
+      "value": "10.7554/eLife.50356"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "elocation-id",
+      "propertyID": "https://registry.identifiers.org/registry/elocation-id",
+      "value": "e50356"
     }
   ],
   "isPartOf": {
     "type": "PublicationVolume",
     "isPartOf": {
       "type": "Periodical",
-      "issn": [
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "nlm-ta",
+          "propertyID": "https://registry.identifiers.org/registry/nlm-ta",
+          "value": "elife"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "publisher-id",
+          "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+          "value": "eLife"
+        }
+      ],
+      "issns": [
         "2050-084X"
       ],
       "publisher": {
@@ -4177,6 +4321,11 @@
     }
   ],
   "title": "Disease-modifying effects of natural Δ9-tetrahydrocannabinol in endometriosis-associated pain",
+  "meta": {
+    "authorNotes": [
+      "†These authors contributed equally to this work"
+    ]
+  },
   "content": [
     {
       "type": "Heading",
@@ -4624,7 +4773,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig1.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig1.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4669,7 +4818,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig1-figsupp1.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig1-figsupp1.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4714,7 +4863,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig1-figsupp2.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig1-figsupp2.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4759,7 +4908,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig1-figsupp3.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig1-figsupp3.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4923,7 +5072,7 @@
       "content": [
         {
           "type": "ImageObject",
-          "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig2.jpg",
+          "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig2.jpg",
           "format": "image/jpeg",
           "meta": {
             "inline": false
@@ -5139,7 +5288,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig3.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig3.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5170,7 +5319,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig3-figsupp1.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig3-figsupp1.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5201,7 +5350,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig3-figsupp2.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig3-figsupp2.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5246,7 +5395,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig3-figsupp3.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig3-figsupp3.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5581,7 +5730,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig4.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig4.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5647,7 +5796,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "/tmp/ec70eb4bfe09c15a751a8a87768f3f98/fig4-figsupp1.jpg",
+              "contentUrl": "/tmp/a2ab13884119d58baec80778a3399804/fig4-figsupp1.jpg",
               "format": "image/jpeg",
               "meta": {
                 "inline": false

@@ -1,7 +1,12 @@
 /**
  * A script to regenerate `*.json` text fixture files.
+ * Run it using:
  *
- * Add entries to `fixtures` following the pattern ot
+ * ```bash
+ * npm run fixtures
+ * ```
+ *
+ * Add entries to `fixtures` following the pattern for
  * other entries. Destination files should always have
  * `.json` extension.
  *
@@ -9,7 +14,6 @@
  * involved are updated.
  */
 
-import fs from 'fs-extra'
 import path from 'path'
 import { convert } from '..'
 
