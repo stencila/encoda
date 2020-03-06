@@ -3,8 +3,14 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Valencia, Spain'
+        address:
+          type: PostalAddress
+          addressCountry: Spain
+          addressLocality: Valencia
         name: Department of Cell Biology
+        parentOrganization:
+          type: Organization
+          name: University of Valencia
     familyNames:
       - Lozano-Ureña
     givenNames:
@@ -12,11 +18,23 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Valencia, Spain'
+        address:
+          type: PostalAddress
+          addressCountry: Spain
+          addressLocality: Valencia
         name: Department of Cell Biology
+        parentOrganization:
+          type: Organization
+          name: University of Valencia
       - type: Organization
-        address: 'Valencia, Spain'
+        address:
+          type: PostalAddress
+          addressCountry: Spain
+          addressLocality: Valencia
         name: ERI BiotecMed
+        parentOrganization:
+          type: Organization
+          name: University of Valencia
     emails:
       - sacramento.rodriguez@uv.es
     familyNames:

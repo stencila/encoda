@@ -24,6 +24,7 @@ import {
   attr,
   attrOrUndefined,
   child,
+  children,
   first,
   all,
   text,
@@ -782,9 +783,18 @@ function encodeName(person: stencila.Person): xml.Element {
 
 /**
  * Decode a JATS `<aff>` element into a Stencila `Organization` node.
+ *
+ * Uses the first `<institution>` element as the name of the organization.
+ * Sometimes there is no `<institution>` element and `<addr-line>` is
+ * used for name and address combined. So this uses the first address components
+ * as the name if necessary.
+ *
+ * When there are multiple `<institution>` elements this decodes them
+ * assuming that they are ordered hierarchically i.e. that the first
+ * is a part of the second etc. See https://github.com/stencila/encoda/issues/458
  */
 function decodeAff(aff: xml.Element): stencila.Organization {
-  let name = textOrUndefined(child(aff, 'institution'))
+  const institutions = children(aff, 'institution')
   let addressComponents = all(aff, [
     'addr-line',
     'city',
@@ -794,21 +804,50 @@ function decodeAff(aff: xml.Element): stencila.Organization {
   ])
   const url = textOrUndefined(child(aff, 'uri'))
 
-  // Sometimes there is no `<institution>` element and `<addr-line>` is
-  // used for name and address combined. So use the first `addressComponents`
-  // as name if needed.
+  let name = textOrUndefined(institutions[0] ?? null)
   if (name === undefined && addressComponents.length > 0) {
     const [first, ...rest] = addressComponents
     name = text(first)
     addressComponents = rest
   }
 
+  const parentOrganization =
+    institutions.length <= 1
+      ? undefined
+      : institutions.slice(1).reduce((prev, curr) => {
+          const parent = stencila.organization({ name: textOrUndefined(curr) })
+          prev.parentOrganization = parent
+          return parent
+        }, stencila.organization({ name: textOrUndefined(institutions[1]) }))
+
+  const addressProperties = addressComponents.reduce((prev, curr) => {
+    const mapping: Record<string, string> = {
+      'addr-line': 'streetAddress',
+      city: 'addressLocality',
+      state: 'addressRegion',
+      country: 'addressCountry',
+      'postal-code': 'postalCode'
+    }
+    const property = mapping[curr.name ?? '']
+    return { ...prev, [property]: textOrUndefined(curr) }
+  }, {} as Record<string, string | undefined>)
+
+  const { streetAddress, addressLocality } = addressProperties
+  if (streetAddress !== undefined && addressLocality === undefined) {
+    addressProperties.streetAddress = undefined
+    addressProperties.addressLocality = streetAddress
+  }
+
+  const address =
+    Object.values(addressProperties).filter(isDefined).length > 0
+      ? stencila.postalAddress(addressProperties)
+      : undefined
+
   return stencila.organization({
     name,
+    parentOrganization,
     url,
-    address: addressComponents.length
-      ? addressComponents.map(text).join(', ')
-      : undefined
+    address
   })
 }
 

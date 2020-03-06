@@ -3,10 +3,16 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
     familyNames:
       - Stafford
     givenNames:
@@ -15,10 +21,16 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
     familyNames:
       - Reed
     givenNames:
@@ -26,10 +38,16 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
     familyNames:
       - Baba
     givenNames:
@@ -37,8 +55,14 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: Division of Neuroscience
+        parentOrganization:
+          type: Organization
+          name: Oregon National Primate Research Center
     familyNames:
       - Walter
     givenNames:
@@ -47,10 +71,16 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
     familyNames:
       - Mootz
     givenNames:
@@ -59,8 +89,14 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Memphis, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Memphis
         name: 'Department of Genetics, Genomics and Informatics'
+        parentOrganization:
+          type: Organization
+          name: University of Tennessee Health Sciences Center
     familyNames:
       - Williams
     givenNames:
@@ -69,12 +105,21 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: Veterans Affairs Portland Health Care System
     familyNames:
       - Neve
@@ -84,8 +129,14 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: 'Transgenic Mouse Models Shared Resource, Knight Cancer Institute'
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
     familyNames:
       - Fedorov
     givenNames:
@@ -94,16 +145,31 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: Veterans Affairs Portland Health Care System
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: Department of Psychiatry
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
     familyNames:
       - Janowsky
     givenNames:
@@ -112,12 +178,21 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: >-
           Department of Behavioral Neuroscience and Methamphetamine Abuse
           Research Center
+        parentOrganization:
+          type: Organization
+          name: Oregon Health & Science University
       - type: Organization
-        address: 'Portland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Portland
         name: Veterans Affairs Portland Health Care System
     emails:
       - phillipt@ohsu.edu
@@ -191,7 +266,9 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        address: United States
+        address:
+          type: PostalAddress
+          addressCountry: United States
         name: 'University of California, Los Angeles'
     familyNames:
       - Flint

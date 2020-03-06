@@ -3,7 +3,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
     familyNames:
       - Zyner
@@ -13,7 +16,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
     familyNames:
       - Mulhearn
@@ -23,8 +29,14 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Department of Chemistry
+        parentOrganization:
+          type: Organization
+          name: University of Cambridge
     familyNames:
       - Adhikari
     givenNames:
@@ -32,7 +44,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
     familyNames:
       - Martínez
@@ -42,8 +57,14 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Department of Chemistry
+        parentOrganization:
+          type: Organization
+          name: University of Cambridge
     familyNames:
       - Di
       - Antonio
@@ -52,7 +73,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
     familyNames:
       - Erard
@@ -61,7 +85,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
     familyNames:
       - Hannon
@@ -71,7 +98,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
     familyNames:
       - Tannahill
@@ -80,14 +110,29 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Cancer Research United Kingdom Cambridge Institute
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: Department of Chemistry
+        parentOrganization:
+          type: Organization
+          name: University of Cambridge
       - type: Organization
-        address: 'Cambridge, United Kingdom'
+        address:
+          type: PostalAddress
+          addressCountry: United Kingdom
+          addressLocality: Cambridge
         name: School of Clinical Medicine
+        parentOrganization:
+          type: Organization
+          name: University of Cambridge
     emails:
       - sb10031@cam.ac.uk
     familyNames:
@@ -127,7 +172,9 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        address: United States
+        address:
+          type: PostalAddress
+          addressCountry: United States
         name: 'University of California, Davis'
     familyNames:
       - Heyer

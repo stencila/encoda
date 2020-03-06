@@ -145,6 +145,19 @@ export function child(
 }
 
 /**
+ * Get all child elements that match name/s and attributes
+ */
+export function children(
+  elem: Element | null,
+  name: string | string[],
+  attributes: Attributes = {}
+): Element[] {
+  return elem?.elements
+    ? elem.elements.filter(child => matches(child, name, attributes))
+    : []
+}
+
+/**
  * Get the first descendent element that matches name/s and attributes
  */
 export function first(

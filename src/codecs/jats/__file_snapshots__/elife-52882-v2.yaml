@@ -3,12 +3,18 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: Université Paris Sciences et Lettres
     familyNames:
       - Karpenko
@@ -17,12 +23,18 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Laboratoire de Physique de l’Ecole Normale Supérieure, CNRS UMR 8023 &
           PSL Research
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Institut de Biologie de l’Ecole Normale Supérieure, CNRS, INSERM, UMR
           8197 & PSL Research
@@ -33,7 +45,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
@@ -44,7 +59,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
@@ -56,7 +74,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
@@ -67,7 +88,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
@@ -78,7 +102,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
@@ -89,7 +116,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Paris, France'
+        address:
+          type: PostalAddress
+          addressCountry: France
+          addressLocality: Paris
         name: >-
           Sorbonne Université, CNRS, Institut de Biologie Paris-Seine (IBPS),
           Laboratoire Jean Perrin (LJP)
@@ -132,7 +162,9 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        address: United States
+        address:
+          type: PostalAddress
+          addressCountry: United States
         name: Emory University
     familyNames:
       - Berman

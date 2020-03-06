@@ -3,7 +3,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Georgia, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Georgia
         name: 'University of Georgia, Bioexpression and Fermentation Facility'
     familyNames:
       - Lewis
@@ -13,7 +16,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Georgia, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Georgia
         name: 'University of Georgia, Bioexpression and Fermentation Facility'
     emails:
       - medward1@uga.edu
@@ -25,7 +31,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Georgia, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Georgia
         name: 'University of Georgia, Bioexpression and Fermentation Facility'
     emails:
       - ZRMeyers@uga.edu
@@ -37,7 +46,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Maryland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Maryland
         name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
     familyNames:
       - Talbot
@@ -48,7 +60,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Maryland, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Maryland
         name: 'Johns Hopkins University, Deep Sequencing and Microarray Core Facility'
     familyNames:
       - Hao
@@ -57,7 +72,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Georgia, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Georgia
         name: 'University of Georgia, Bioexpression and Fermentation Facility'
     emails:
       - blum@uga.edu
@@ -68,19 +86,34 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Palo Alto, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Palo Alto
         name: Science Exchange
       - type: Organization
-        address: 'Palo Alto, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Palo Alto
         name: Science Exchange
       - type: Organization
-        address: 'Charlottesville, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Charlottesville
         name: Center for Open Science
       - type: Organization
-        address: 'Palo Alto, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Palo Alto
         name: Science Exchange
       - type: Organization
-        address: 'Charlottesville, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Charlottesville
         name: Center for Open Science
     emails:
       - tim@cos.io
@@ -88,7 +121,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Palo Alto, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Palo Alto
         name: Science Exchange
     familyNames:
       - Iorns
@@ -97,7 +133,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Palo Alto, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Palo Alto
         name: Science Exchange
     familyNames:
       - Tsui
@@ -106,7 +145,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Charlottesville, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Charlottesville
         name: Center for Open Science
     familyNames:
       - Denis
@@ -115,7 +157,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Palo Alto, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Palo Alto
         name: Science Exchange
     familyNames:
       - Perfito
@@ -124,7 +169,10 @@ authors:
   - type: Person
     affiliations:
       - type: Organization
-        address: 'Charlottesville, United States'
+        address:
+          type: PostalAddress
+          addressCountry: United States
+          addressLocality: Charlottesville
         name: Center for Open Science
     familyNames:
       - Errington
@@ -174,7 +222,9 @@ editors:
   - type: Person
     affiliations:
       - type: Organization
-        address: United States
+        address:
+          type: PostalAddress
+          addressCountry: United States
         name: >-
           Howard Hughes Medical Institute, University of Massachusetts Medical
           School
