@@ -77,7 +77,11 @@ export const nockRecord = async (filename: string) => {
 }
 
 /**
- * The directory of the the calling test file
+ * The directory of the calling test file
  */
-const callDir = (caller: number = 2) =>
-  path.dirname(callsites()[caller]?.getFileName() || '')
+const callDir = (caller: number = 2) => {
+  const callsite = callsites()[caller]
+  return callsite !== undefined
+    ? path.dirname(callsite.getFileName() ?? '')
+    : ''
+}
