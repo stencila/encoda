@@ -1,3 +1,12 @@
+## [0.88.2](https://github.com/stencila/encoda/compare/v0.88.1...v0.88.2) (2020-03-06)
+
+
+### Bug Fixes
+
+* **HTML:** Improve encoding of oranganization; upgrade Microdata encoding ([f24cfc1](https://github.com/stencila/encoda/commit/f24cfc15c431c481a357f81c1b8f7a11e7eac43a))
+* **HTML, JATS, GDoc, Pandoc:** Upgrade to new Schema version and make related ListItem changes ([500be23](https://github.com/stencila/encoda/commit/500be23d2a5bc130579988b9c6a9dd4ab9612018)), closes [#306](https://github.com/stencila/encoda/issues/306)
+* **JATS:** Fix decoding of affiliation instriutions and address ([fb89241](https://github.com/stencila/encoda/commit/fb89241dfc8581e718a2c0f13209a2c56bb6eb8b)), closes [#458](https://github.com/stencila/encoda/issues/458)
+
 ## [0.88.1](https://github.com/stencila/encoda/compare/v0.88.0...v0.88.1) (2020-03-05)
 
 
