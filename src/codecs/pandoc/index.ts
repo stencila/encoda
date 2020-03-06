@@ -660,8 +660,9 @@ function encodeList(
     { t: Pandoc.ListNumberStyle.DefaultStyle },
     { t: Pandoc.ListNumberDelim.DefaultDelim }
   ]
-  const blocks: Pandoc.Block[][] = node.items.map(listItem => {
-    return listItem.content.map(ensureBlockContent).map(encodeBlock)
+  const blocks: Pandoc.Block[][] = node.items.map(item => {
+    const { content = [] } = item
+    return content.map(ensureBlockContent).map(encodeBlock)
   })
   if (node.order === 'ascending') {
     return { t: 'OrderedList', c: [listAttrs, blocks] }

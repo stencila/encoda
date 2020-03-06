@@ -13,7 +13,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-non-null-assertion */
 
 import { getLogger } from '@stencila/logga'
-import stencila, { isInlineContent } from '@stencila/schema'
+import stencila, { isInlineContent, paragraph } from '@stencila/schema'
 import crypto from 'crypto'
 import { docs_v1 as GDocT } from 'googleapis'
 import { TxtCodec } from '../txt'
@@ -423,8 +423,7 @@ function decodeListItem(
   } else {
     // Add the new list to the parent list item
     const parent = lists[listId][listLevel - 1]
-    assertDefined(parent)
-    assertDefined(parent.items[parent.items.length - 1]).content.push(newList)
+    assertDefined(parent.items[parent.items.length - 1].content).push(newList)
     // Register this list so that it too can act as a parent
     lists[listId][listLevel] = newList
     return undefined
@@ -463,8 +462,10 @@ function encodeList(list: stencila.List): GDocT.Schema$StructuralElement[] {
 const encodeListItem = (
   listItem: stencila.ListItem,
   listId: string
-): GDocT.Schema$Paragraph => {
-  const head = listItem.content[0]
+): GDocT.Schema$Paragraph | undefined => {
+  const { content = [] } = listItem
+
+  const head = content[0]
   if (stencila.isParagraph(head)) {
     return {
       elements: head.content.map(encodeInlineContent),
@@ -475,9 +476,7 @@ const encodeListItem = (
   }
 
   return {
-    elements: listItem.content
-      .filter(stencila.isInlineContent)
-      .map(encodeInlineContent),
+    elements: content.filter(stencila.isInlineContent).map(encodeInlineContent),
     bullet: {
       listId
     }

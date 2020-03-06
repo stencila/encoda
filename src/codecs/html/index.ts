@@ -1575,11 +1575,7 @@ function encodeList(list: stencila.List): HTMLUListElement | HTMLOListElement {
     { attrs: microdata(list) },
     list.items.map((item, index) =>
       encodeNode({
-        // TODO: refactor when `position` is a prop of ListItem
-        meta: {
-          position: index + 1,
-          ...item.meta
-        },
+        position: item.position ?? index + 1,
         ...item
       })
     )
@@ -1596,22 +1592,28 @@ function decodeListItem(li: HTMLLIElement): stencila.ListItem {
 /**
  * Encode a `stencila.ListItem` to a `<li>` element.
  *
+ * If the `content` of the `ListItem` is a single `Paragraph`
+ * then it is "unwrapped".
+ *
  * GSDTT requires `position` and `url` on each item.
- * So this functions ensure that.
+ * This function ensures that.
  */
 function encodeListItem(
   listItem: stencila.ListItem,
   property = 'items'
 ): HTMLLIElement {
-  // TODO: refactor when `position` and `url` are props of ListItem
-  const { content = [], id, meta = {} } = listItem
-  const { position = 0, url } = meta
+  const { content = [], isChecked, id, position, url } = listItem
   return h(
     'li',
     { attrs: microdata(listItem, property), id: id ?? position },
     h('meta', { attrs: { itemprop: 'position', content: position } }),
     h('meta', { attrs: { itemprop: 'url', content: url ?? `#${position}` } }),
-    content.map(encodeNode)
+    isChecked === undefined
+      ? undefined
+      : h('input', { type: 'checkbox', ...(isChecked ? { checked: '' } : {}) }),
+    content.length === 1 && stencila.isA('Paragraph', content[0])
+      ? encodeNodes(content[0].content)
+      : content.map(encodeNode)
   )
 }
 

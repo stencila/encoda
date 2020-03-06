@@ -1531,7 +1531,8 @@ function encodeList(node: stencila.List, state: EncodeState): [xml.Element] {
     'list-type': node.order === 'unordered' ? 'bullet' : 'order'
   }
   const items = node.items.map(item => {
-    return elem('list-item', ...encodeNodes(item.content, state))
+    const { content = [] } = item
+    return elem('list-item', ...encodeNodes(content, state))
   })
   return [elem('list', attrs, ...items)]
 }
