@@ -200,7 +200,7 @@
 					<div class="tsd-signature tsd-kind-icon">Content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">stencila.InlineContent</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">stencila.BlockContent</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L41">src/codecs/jats/index.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L42">src/codecs/jats/index.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -213,7 +213,7 @@
 					<div class="tsd-signature tsd-kind-icon">DOCTYPE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;"</span><span class="tsd-signature-symbol"> = &quot;article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L46">src/codecs/jats/index.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L47">src/codecs/jats/index.ts:47</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -228,7 +228,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;encoda:jats&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L39">src/codecs/jats/index.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L40">src/codecs/jats/index.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -245,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1795">src/codecs/jats/index.ts:1795</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1835">src/codecs/jats/index.ts:1835</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -277,7 +277,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L378">src/codecs/jats/index.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L379">src/codecs/jats/index.ts:379</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -308,13 +308,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L786">src/codecs/jats/index.ts:786</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L796">src/codecs/jats/index.ts:796</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Decode a JATS <code>&lt;aff&gt;</code> element into a Stencila <code>Organization</code> node.</p>
 								</div>
+								<p>Uses the first <code>&lt;institution&gt;</code> element as the name of the organization.
+									Sometimes there is no <code>&lt;institution&gt;</code> element and <code>&lt;addr-line&gt;</code> is
+									used for name and address combined. So this uses the first address components
+								as the name if necessary.</p>
+								<p>When there are multiple <code>&lt;institution&gt;</code> elements this decodes them
+									assuming that they are ordered hierarchically i.e. that the first
+								is a part of the second etc. See <a href="https://github.com/stencila/encoda/issues/458">https://github.com/stencila/encoda/issues/458</a></p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -336,7 +343,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L252">src/codecs/jats/index.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L253">src/codecs/jats/index.ts:253</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -366,7 +373,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L618">src/codecs/jats/index.ts:618</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L619">src/codecs/jats/index.ts:619</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -398,7 +405,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L820">src/codecs/jats/index.ts:820</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L859">src/codecs/jats/index.ts:859</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -426,7 +433,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1431">src/codecs/jats/index.ts:1431</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1470">src/codecs/jats/index.ts:1470</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -460,7 +467,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1070">src/codecs/jats/index.ts:1070</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1109">src/codecs/jats/index.ts:1109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -491,7 +498,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1773">src/codecs/jats/index.ts:1773</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1813">src/codecs/jats/index.ts:1813</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -516,7 +523,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1894">src/codecs/jats/index.ts:1894</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1934">src/codecs/jats/index.ts:1934</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,7 +551,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L668">src/codecs/jats/index.ts:668</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L669">src/codecs/jats/index.ts:669</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -577,7 +584,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L424">src/codecs/jats/index.ts:424</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L425">src/codecs/jats/index.ts:425</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -605,7 +612,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L405">src/codecs/jats/index.ts:405</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L406">src/codecs/jats/index.ts:406</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -635,7 +642,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1211">src/codecs/jats/index.ts:1211</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1250">src/codecs/jats/index.ts:1250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -667,7 +674,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L125">src/codecs/jats/index.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L126">src/codecs/jats/index.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -696,7 +703,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L652">src/codecs/jats/index.ts:652</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L653">src/codecs/jats/index.ts:653</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -728,7 +735,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1101">src/codecs/jats/index.ts:1101</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1140">src/codecs/jats/index.ts:1140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -759,7 +766,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1229">src/codecs/jats/index.ts:1229</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1268">src/codecs/jats/index.ts:1268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -790,7 +797,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1351">src/codecs/jats/index.ts:1351</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1390">src/codecs/jats/index.ts:1390</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -821,7 +828,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1610">src/codecs/jats/index.ts:1610</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1650">src/codecs/jats/index.ts:1650</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -852,7 +859,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1647">src/codecs/jats/index.ts:1647</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1687">src/codecs/jats/index.ts:1687</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -885,7 +892,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L312">src/codecs/jats/index.ts:312</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L313">src/codecs/jats/index.ts:313</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -916,7 +923,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L546">src/codecs/jats/index.ts:546</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L547">src/codecs/jats/index.ts:547</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -944,7 +951,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1834">src/codecs/jats/index.ts:1834</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1874">src/codecs/jats/index.ts:1874</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -976,7 +983,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1285">src/codecs/jats/index.ts:1285</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1324">src/codecs/jats/index.ts:1324</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1007,7 +1014,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L584">src/codecs/jats/index.ts:584</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L585">src/codecs/jats/index.ts:585</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1035,7 +1042,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L514">src/codecs/jats/index.ts:514</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L515">src/codecs/jats/index.ts:515</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1064,7 +1071,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1258">src/codecs/jats/index.ts:1258</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1297">src/codecs/jats/index.ts:1297</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1096,7 +1103,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1403">src/codecs/jats/index.ts:1403</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1442">src/codecs/jats/index.ts:1442</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1129,7 +1136,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L446">src/codecs/jats/index.ts:446</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L447">src/codecs/jats/index.ts:447</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1158,7 +1165,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L501">src/codecs/jats/index.ts:501</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L502">src/codecs/jats/index.ts:502</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1186,7 +1193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L482">src/codecs/jats/index.ts:482</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L483">src/codecs/jats/index.ts:483</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1217,7 +1224,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1414">src/codecs/jats/index.ts:1414</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1453">src/codecs/jats/index.ts:1453</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1248,7 +1255,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1512">src/codecs/jats/index.ts:1512</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1551">src/codecs/jats/index.ts:1551</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1279,7 +1286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1485">src/codecs/jats/index.ts:1485</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1524">src/codecs/jats/index.ts:1524</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1320,7 +1327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1726">src/codecs/jats/index.ts:1726</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1766">src/codecs/jats/index.ts:1766</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1352,7 +1359,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L239">src/codecs/jats/index.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L240">src/codecs/jats/index.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1407,7 +1414,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1858">src/codecs/jats/index.ts:1858</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1898">src/codecs/jats/index.ts:1898</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1435,7 +1442,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L603">src/codecs/jats/index.ts:603</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L604">src/codecs/jats/index.ts:604</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1463,7 +1470,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L754">src/codecs/jats/index.ts:754</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L755">src/codecs/jats/index.ts:755</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1491,7 +1498,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1315">src/codecs/jats/index.ts:1315</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1354">src/codecs/jats/index.ts:1354</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1525,7 +1532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L875">src/codecs/jats/index.ts:875</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L914">src/codecs/jats/index.ts:914</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1557,7 +1564,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L832">src/codecs/jats/index.ts:832</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L871">src/codecs/jats/index.ts:871</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1586,7 +1593,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1272">src/codecs/jats/index.ts:1272</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1311">src/codecs/jats/index.ts:1311</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1620,7 +1627,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1542">src/codecs/jats/index.ts:1542</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1582">src/codecs/jats/index.ts:1582</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1651,7 +1658,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L350">src/codecs/jats/index.ts:350</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L351">src/codecs/jats/index.ts:351</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1682,7 +1689,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1385">src/codecs/jats/index.ts:1385</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1424">src/codecs/jats/index.ts:1424</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1718,7 +1725,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L388">src/codecs/jats/index.ts:388</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L389">src/codecs/jats/index.ts:389</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1746,7 +1753,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L271">src/codecs/jats/index.ts:271</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L272">src/codecs/jats/index.ts:272</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1774,7 +1781,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L717">src/codecs/jats/index.ts:717</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L718">src/codecs/jats/index.ts:718</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1812,7 +1819,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L632">src/codecs/jats/index.ts:632</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L633">src/codecs/jats/index.ts:633</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1841,7 +1848,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1080">src/codecs/jats/index.ts:1080</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1119">src/codecs/jats/index.ts:1119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1872,7 +1879,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1026">src/codecs/jats/index.ts:1026</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1065">src/codecs/jats/index.ts:1065</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1901,7 +1908,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1443">src/codecs/jats/index.ts:1443</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1482">src/codecs/jats/index.ts:1482</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1932,7 +1939,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1218">src/codecs/jats/index.ts:1218</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1257">src/codecs/jats/index.ts:1257</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1966,7 +1973,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L144">src/codecs/jats/index.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L145">src/codecs/jats/index.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1996,7 +2003,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1627">src/codecs/jats/index.ts:1627</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1667">src/codecs/jats/index.ts:1667</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2027,7 +2034,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1696">src/codecs/jats/index.ts:1696</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1736">src/codecs/jats/index.ts:1736</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2060,7 +2067,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1301">src/codecs/jats/index.ts:1301</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1340">src/codecs/jats/index.ts:1340</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2091,7 +2098,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1914">src/codecs/jats/index.ts:1914</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1954">src/codecs/jats/index.ts:1954</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2127,7 +2134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1363">src/codecs/jats/index.ts:1363</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1402">src/codecs/jats/index.ts:1402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2158,7 +2165,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1529">src/codecs/jats/index.ts:1529</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1568">src/codecs/jats/index.ts:1568</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2189,7 +2196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1501">src/codecs/jats/index.ts:1501</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1540">src/codecs/jats/index.ts:1540</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2223,7 +2230,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1752">src/codecs/jats/index.ts:1752</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1792">src/codecs/jats/index.ts:1792</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2251,7 +2258,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1870">src/codecs/jats/index.ts:1870</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1910">src/codecs/jats/index.ts:1910</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2282,7 +2289,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L767">src/codecs/jats/index.ts:767</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L768">src/codecs/jats/index.ts:768</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2311,7 +2318,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1152">src/codecs/jats/index.ts:1152</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1191">src/codecs/jats/index.ts:1191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2342,7 +2349,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1241">src/codecs/jats/index.ts:1241</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1280">src/codecs/jats/index.ts:1280</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2373,7 +2380,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1341">src/codecs/jats/index.ts:1341</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1380">src/codecs/jats/index.ts:1380</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2404,7 +2411,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L924">src/codecs/jats/index.ts:924</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L963">src/codecs/jats/index.ts:963</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2436,7 +2443,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L856">src/codecs/jats/index.ts:856</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L895">src/codecs/jats/index.ts:895</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2470,7 +2477,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1581">src/codecs/jats/index.ts:1581</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1621">src/codecs/jats/index.ts:1621</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2501,7 +2508,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L364">src/codecs/jats/index.ts:364</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L365">src/codecs/jats/index.ts:365</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2530,7 +2537,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1781">src/codecs/jats/index.ts:1781</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1821">src/codecs/jats/index.ts:1821</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2559,7 +2566,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L191">src/codecs/jats/index.ts:191</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L192">src/codecs/jats/index.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2582,7 +2589,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L230">src/codecs/jats/index.ts:230</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L231">src/codecs/jats/index.ts:231</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_codecs_jats_index_.encodestate.html" class="tsd-signature-type">EncodeState</a></h4>
@@ -2599,7 +2606,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1465">src/codecs/jats/index.ts:1465</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1504">src/codecs/jats/index.ts:1504</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2631,7 +2638,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/2a0a42b8/src/codecs/jats/index.ts#L1821">src/codecs/jats/index.ts:1821</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/c58a1acb/src/codecs/jats/index.ts#L1861">src/codecs/jats/index.ts:1861</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
