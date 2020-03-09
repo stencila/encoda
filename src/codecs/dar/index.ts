@@ -13,7 +13,10 @@ import tempy from 'tempy'
 import { write } from '../..'
 import * as uri from '../../util/uri'
 import * as vfile from '../../util/vfile'
+import { JatsCodec } from '../jats'
 import { Codec, CommonEncodeOptions } from '../types'
+
+const jatsCodec = new JatsCodec()
 
 export class DarCodec extends Codec implements Codec {
   public readonly extNames = ['dar']
@@ -134,7 +137,7 @@ async function encodeDocument(
   const documentFile = `${id}.jats.xml`
   const documentPath = path.join(darPath, documentFile)
 
-  await write(node, documentPath, { ...options, format: 'jats' })
+  await jatsCodec.write(node, documentPath, { ...options, isStandalone: true })
 
   const elem = h('document')
   elem.setAttribute('id', id)
