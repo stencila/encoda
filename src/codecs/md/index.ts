@@ -51,6 +51,10 @@ import { HTMLCodec } from '../html'
 import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions } from '../types'
 import { stringifyHTML } from './stringifyHtml'
+import { TexCodec } from '../tex'
+import transform from '../../util/transform'
+
+const texCodec = new TexCodec()
 
 export const log = getLogger('encoda:md')
 
@@ -78,8 +82,9 @@ export class MdCodec extends Codec implements Codec {
    * @param thing The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const md = encodeMarkdown(node)
+  public readonly encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+    const prepared = await encodePrepare(node)
+    const md = encodeMarkdown(prepared)
     return Promise.resolve(vfile.load(md))
   }
 }
@@ -202,6 +207,28 @@ export function encodeMarkdown(node: stencila.Node): string {
     .stringify(mdast)
 }
 
+/**
+ * Do any async operations necessary on the node tree before encoding it.
+ *
+ * This avoids having to "taint" the whole decode function call stack with
+ * async calls.
+ */
+async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
+  return transform(node, async node => {
+    if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
+      if (node.mathLanguage !== 'tex') {
+        const text = await texCodec.dump(node)
+        return {
+          ...node,
+          mathLanguage: 'tex',
+          text
+        }
+      }
+    }
+    return node
+  })
+}
+
 function decodeNode(node: UNIST.Node): stencila.Node {
   const type = node.type
   switch (type) {
@@ -299,6 +326,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
       return encodeParagraph(node as stencila.Paragraph)
     case 'QuoteBlock':
       return encodeQuoteBlock(node as stencila.QuoteBlock)
+    case 'MathBlock':
+      return encodeMath(node as stencila.MathBlock)
     case 'CodeBlock':
       return encodeCodeBlock(node as stencila.CodeBlock)
     case 'CodeChunk':
@@ -329,6 +358,8 @@ function encodeNode(node: stencila.Node): UNIST.Node | undefined {
 
     case 'Quote':
       return encodeQuote(node as stencila.Quote)
+    case 'MathFragment':
+      return encodeMath(node as stencila.MathFragment)
     case 'CodeFragment':
       return encodeCodeFragment(node as stencila.CodeFragment)
     case 'CodeExpression':
@@ -1019,6 +1050,22 @@ function encodeQuote(quote: stencila.Quote): Extension {
     // TODO: Handle cases where content is more than one string
     content: quote.content[0] as string,
     argument: quote.cite as string
+  }
+}
+
+/**
+ * Encode a `MathFragment` or `MathBlock` to TeX with delimiters.
+ *
+ * Uses an MDAST `HTML` node to avoid escaping of back slashes etc
+ */
+function encodeMath(math: stencila.Math): MDAST.HTML {
+  const { type, mathLanguage, text } = math
+  const [begin, end] = type === 'MathFragment' ? ['$', '$'] : ['$$\n', '\n$$']
+  if (mathLanguage !== 'tex')
+    log.warn(`Math node contains unhandled math language: ${mathLanguage}`)
+  return {
+    type: 'html',
+    value: `${begin}${text.trim()}${end}`
   }
 }
 
