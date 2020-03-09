@@ -82,7 +82,9 @@ export class MdCodec extends Codec implements Codec {
    * @param thing The `stencila.Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = async (node: stencila.Node): Promise<vfile.VFile> => {
+  public readonly encode = async (
+    node: stencila.Node
+  ): Promise<vfile.VFile> => {
     const prepared = await encodePrepare(node)
     const md = encodeMarkdown(prepared)
     return Promise.resolve(vfile.load(md))

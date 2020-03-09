@@ -53,7 +53,10 @@ export class Processor {
    * @param stylesheet The XSLT stylesheet to use
    * @param xmlns The default XML Namespace to use
    */
-  static async create(stylesheet: string, xmlns: Record<string, string> = {}): Promise<Processor> {
+  static async create(
+    stylesheet: string,
+    xmlns: Record<string, string> = {}
+  ): Promise<Processor> {
     const processor = new Processor(xmlns)
 
     // Set up the page context
@@ -96,9 +99,11 @@ export class Processor {
         const { xsltProcessor, domParser, xmlSerializer } = window
 
         // Set the XML namespaces on wrapper
-        const attrs = Object.entries(xmlns).map(([key, value]) => {
-          return `xmlns${key === '' ? '' : (':' + key)}="${value}"`
-        }).join(' ')
+        const attrs = Object.entries(xmlns)
+          .map(([key, value]) => {
+            return `xmlns${key === '' ? '' : ':' + key}="${value}"`
+          })
+          .join(' ')
         const wrap = `<wrap ${attrs}>${xml}</wrap>`
 
         // Parse the input document and send back any errors
