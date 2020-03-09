@@ -75,10 +75,11 @@ export class TexCodec extends Codec implements Codec {
           path.join(__dirname, 'mmltex.xsl'),
           'utf8'
         )
-        mathmlProcessor = await xslt.Processor.create(
-          stylesheet,
-          'http://www.w3.org/1998/Math/MathML'
-        )
+        const ns = 'http://www.w3.org/1998/Math/MathML'
+        mathmlProcessor = await xslt.Processor.create(stylesheet, {
+          '': ns,
+          mml: ns
+        })
       }
       tex = await mathmlProcessor.transform(text)
     } else {
