@@ -24,7 +24,7 @@ import path from 'path'
 const create = async (id: number, version: number = 1) => {
   const url = `https://elifesciences.org/articles/${id}v${version}.xml`
   const jats = await http.get(url)
-  const doc = xml.load(jats.body, { compact: false }) as xml.Element
+  const doc = xml.load(jats.body) as xml.Element
 
   // Check that there is a <body> element, some don't have one
   if (xml.all(doc, 'body').length === 0) {

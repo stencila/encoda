@@ -32,9 +32,14 @@ export class XmlCodec extends Codec {
     const content = await vfile.dump(file)
     let doc
     try {
-      doc = xml.load(content) as xml.Element
+      doc = xml.load(content)
     } catch (error) {
       log.error(error)
+      return null
+    }
+    const node = decodeDoc(doc)
+    if (node === undefined) {
+      log.warn(`Unable to parse content as Stencila XML`)
       return null
     }
     return decodeDoc(doc)

@@ -80,8 +80,12 @@ export const nockRecord = async (filename: string) => {
  * The directory of the calling test file
  */
 const callDir = (caller: number = 2) => {
-  const callsite = callsites()[caller]
-  return callsite !== undefined
-    ? path.dirname(callsite.getFileName() ?? '')
-    : ''
+  try {
+    const callsite = callsites()[caller]
+    return callsite !== undefined
+      ? path.dirname(callsite.getFileName() ?? '')
+      : ''
+  } catch {
+    return ''
+  }
 }

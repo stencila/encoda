@@ -16,7 +16,7 @@ import path from 'path'
 const create = async (id: string, version: number = 1) => {
   const url = `https://f1000research.com/articles/${id}/v${version}/xml`
   const jats = await http.get(url)
-  const doc = xml.load(jats.body, { compact: false }) as xml.Element
+  const doc = xml.load(jats.body) as xml.Element
 
   const dir = `f1000-${id}-v${version}`
   await fs.ensureDir(dir)

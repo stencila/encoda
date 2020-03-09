@@ -1,5 +1,11 @@
 /* eslint-disable import/export */
 
+declare module 'asciimath2tex' {
+  export default class AsciiMathParser {
+    parse(asciimath: string): string
+  }
+}
+
 declare module 'png-chunks-extract' {
   export interface Chunk {
     name: string

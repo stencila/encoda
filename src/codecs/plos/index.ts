@@ -64,7 +64,7 @@ export class PlosCodec extends Codec implements Codec {
     const url = `http://journals.plos.org/${journal}/article/file?id=${doi}&type=manuscript`
     const response = await http.get(url)
     const jatsContent = response.body
-    const doc = xml.load(jatsContent, { compact: false }) as xml.Element
+    const doc = xml.load(jatsContent)
 
     const dir = tempy.directory()
     await fs.ensureDir(dir)

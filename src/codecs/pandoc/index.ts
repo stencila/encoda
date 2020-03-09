@@ -23,20 +23,23 @@ import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
 import { write } from '../..'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
-import { TxtCodec } from '../txt'
 import * as vfile from '../../util/vfile'
+import transform from '../../util/transform'
 import { encodeCsl } from '../csl'
 import { RPNGCodec } from '../rpng'
+import { TexCodec } from '../tex'
+import { TxtCodec } from '../txt'
 import {
   Codec,
+  CommonDecodeOptions,
   commonEncodeDefaults,
-  CommonEncodeOptions,
-  CommonDecodeOptions
+  CommonEncodeOptions
 } from '../types'
 import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
 
-const rpng = new RPNGCodec()
+const rpngCodec = new RPNGCodec()
+const texCodec = new TexCodec()
 
 export { InputFormat, OutputFormat } from './types'
 
@@ -127,10 +130,11 @@ export class PandocCodec extends Codec implements Codec {
       useCiteproc = false
     } = settings
 
-    encodePromises = []
-    const { standalone, pdoc } = encodeNode(node)
-    await Promise.all(encodePromises)
+    const prepared = await encodePrepare(node)
 
+    encodePromises = []
+    const { standalone, pdoc } = encodeNode(prepared)
+    await Promise.all(encodePromises)
     const args = [`--from=json`, `--to=${pandocFormat}`]
     if (standalone) args.push('--standalone')
     for (const option of pandocArgs) {
@@ -248,6 +252,28 @@ function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
   const meta = decodeMeta(pdoc.meta)
   const content = decodeBlocks(pdoc.blocks)
   return stencila.article({ ...meta, content })
+}
+
+/**
+ * Do any async operations necessary on the node tree before encoding it.
+ *
+ * This avoids having to "taint" the whole decode function call stack with
+ * async calls.
+ */
+async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
+  return transform(node, async node => {
+    if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
+      if (node.mathLanguage !== 'tex') {
+        const text = await texCodec.dump(node)
+        return {
+          ...node,
+          mathLanguage: 'tex',
+          text
+        }
+      }
+    }
+    return node
+  })
 }
 
 /**
@@ -844,7 +870,7 @@ function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
       // the embedded node
       const url = image.contentUrl
       if (url) {
-        const node = rpng.sniffDecodeSync(url)
+        const node = rpngCodec.sniffDecodeSync(url)
         if (node !== undefined) return node as stencila.InlineContent
       }
       return image
@@ -1140,27 +1166,40 @@ function decodeMath(elem: Pandoc.Math): stencila.Math {
  * Encode a Stencila `Math` node to a Pandoc `Math` or `Para` element.
  *
  * `MathBlock` nodes are wrapped into a Pandoc `Para`, as Pandoc does
- * for `DisplayMath`.
+ * for `DisplayMath`. If the necessary, the math `text` is translated to TeX
+ * (the math language that Pandoc assumes). If no translation is possible
+ * a warning is logged and the Tex is empty
+ *
+ * @param node The Stencila `Math` node to encode
+ * @param pandocType The Pandoc element type to encode as
  */
-function encodeMath(node: stencila.Math, type: 'InlineMath'): Pandoc.Math
-function encodeMath(node: stencila.Math, type: 'DisplayMath'): Pandoc.Para
+function encodeMath(node: stencila.Math, pandocType: 'InlineMath'): Pandoc.Math
+function encodeMath(node: stencila.Math, pandocType: 'DisplayMath'): Pandoc.Para
 function encodeMath(
   node: stencila.Math,
-  type: Pandoc.MathType['t']
+  pandocType: Pandoc.MathType['t']
 ): Pandoc.Math | Pandoc.Para {
-  const { type: nodeType, text } = node
-  if (type === 'InlineMath' && nodeType !== 'MathFragment')
+  const { type: nodeType, text, mathLanguage = 'tex' } = node
+  if (pandocType === 'InlineMath' && nodeType !== 'MathFragment')
     log.warn(
       `Expected a Stencila "MathFragment" node, but got a got a ${nodeType} node`
     )
-  if (type === 'DisplayMath' && nodeType !== 'MathBlock')
+  if (pandocType === 'DisplayMath' && nodeType !== 'MathBlock')
     log.warn(
       `Expected a Stencila "MathBlock" node, but got a got a ${nodeType} node`
     )
 
+  let tex
+  if (mathLanguage === 'tex') {
+    tex = text
+  } else {
+    log.warn(`Unable to encode a Math node with mathLanguage "${mathLanguage}"`)
+    tex = ''
+  }
+
   const math: Pandoc.Math = {
     t: 'Math',
-    c: [{ t: type }, text]
+    c: [{ t: pandocType }, tex]
   }
   if (nodeType === 'MathFragment') return math
   else return { t: 'Para', c: [math] }
@@ -1301,24 +1340,25 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
 }
 
 /**
- * Encode a Stencila `BlockContent` node as a Pandoc `Para` with
- * an rPNG. This is a fallback encoding for block nodes
- * not handled elsewhere.
+ * Encode a Stencila `BlockContent` node as an empty Pandoc `Para`.
+ * This is a fallback encoding for block nodes not handled elsewhere.
  */
 function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
+  log.warn(`Unhandled node type when encoding: ${stencila.nodeType(node)}`)
   return {
     t: 'Para',
-    c: [encodeRPNG(node)]
+    c: []
   }
 }
 
 /**
- * Encode a Stencila `InlineContent` as a Pandoc `Image`.
+ * Encode a Stencila `InlineContent` as an empty Pandoc `Str`.
  * This is a fallback encoding for inline nodes
  * not handled elsewhere.
  */
-function encodeFallbackInline(node: stencila.Node): Pandoc.Image {
-  return encodeRPNG(node)
+function encodeFallbackInline(node: stencila.Node): Pandoc.Str {
+  log.warn(`Unhandled node type when encoding: ${stencila.nodeType(node)}`)
+  return { t: 'Str', c: '' }
 }
 
 /**

@@ -19,7 +19,18 @@ import xmljs from 'xml-js'
 export type Element = xmljs.Element
 export type Attributes = xmljs.Attributes
 
-export const load = xmljs.xml2js
+/**
+ * Load (i.e. parse) a XML document from a string
+ *
+ * @param xml The XML string to load
+ */
+export function load(xml: string): Element {
+  return xmljs.xml2js(xml, { compact: false }) as Element
+}
+
+/**
+ * Dump (i.e. serialize) a XML document to a string
+ */
 export const dump = xmljs.js2xml
 
 /**

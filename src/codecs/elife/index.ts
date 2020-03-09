@@ -67,7 +67,7 @@ export class ElifeCodec extends Codec implements Codec {
       return stencila.article()
     }
 
-    const doc = xml.load(body, { compact: false }) as xml.Element
+    const doc = xml.load(body)
 
     // Check that there is a <body> element, some don't have one
     if (xml.all(doc, 'body').length === 0) {

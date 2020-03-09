@@ -1,19 +1,16 @@
-import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
 import { JatsCodec } from '.'
 import { convert } from '../..'
 import { snapshot } from '../../__tests__/helpers'
+import {
+  asciimathFragment,
+  texFragment,
+  mathmlFragment,
+  texBlock
+} from '../../__fixtures__/math/kitchen-sink'
 
-const { sniff } = new JatsCodec()
-
-/**
- * This test suite uses fixtures and file snapshots. During development
- * it can be useful to update the snapshots on the fly for manual inspection:
- *
- * ```bash
- * npx jest codecs/jats/jats.test.ts --watch --updateSnapshot
- * ```
- */
+const jats = new JatsCodec()
+const { sniff } = jats
 
 jest.mock('crypto')
 
@@ -87,12 +84,39 @@ test('decode', async () => {
   )
 })
 
+describe('encode: Math', () => {
+  it('encodes TeX nodes using <tex-math>', async () => {
+    expect(await jats.dump(texFragment, { isStandalone: false })).toMatchFile(
+      snapshot('math-tex-fragment.jats.xml')
+    )
+  })
+  it('encodes AsciiMath using <mml:math>', async () => {
+    expect(
+      await jats.dump(asciimathFragment, { isStandalone: false })
+    ).toMatchFile(snapshot('math-asciimath-fragment.jats.xml'))
+  })
+  it('encodes MathML using <mml:math>', async () => {
+    expect(
+      await jats.dump(mathmlFragment, { isStandalone: false })
+    ).toMatchFile(snapshot('math-mathml-fragment.jats.xml'))
+  })
+  it('encodes MathBlocks using <display-formula>', async () => {
+    expect(await jats.dump(texBlock, { isStandalone: false })).toMatchFile(
+      snapshot('math-tex-block.jats.xml')
+    )
+  })
+})
+
 test('decode+encode', async () => {
   /**
    * Round trip conversion from JATS to JATS
    */
   const jats2jats = async (name: string) =>
-    convert(fixture(name), undefined, { from: 'jats', to: 'jats' })
+    convert(fixture(name), undefined, {
+      from: 'jats',
+      to: 'jats',
+      encodeOptions: { isStandalone: true }
+    })
 
   expect(await jats2jats('elife-30274-v1')).toMatchFile(
     snapshot('elife-30274-v1.jats.xml')
