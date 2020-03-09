@@ -129,127 +129,129 @@
             <title>Modified Hamming distance</title>
             <p>To test if any of the profile pairs are mutually exclusive, we modified the conventional Hamming distance by ignoring the elements of profiles where both the proteins are absent. The modified formula of Hamming distance is:
 </p>
-            <mml:math display="block" id="M1">
-                <mml:mi>d</mml:mi>
-                <mml:mo>=</mml:mo>
-                <mml:mfrac>
-                    <mml:mrow>
+            <display-formula>
+                <mml:math display="block" id="M1">
+                    <mml:mi>d</mml:mi>
+                    <mml:mo>=</mml:mo>
+                    <mml:mfrac>
                         <mml:mrow>
-                            <mml:mstyle displaystyle="true">
-                                <mml:mo>∑</mml:mo>
-                            </mml:mstyle>
                             <mml:mrow>
-                                <mml:msub>
-                                    <mml:mrow>
-                                        <mml:mi mathvariant="normal">P</mml:mi>
-                                    </mml:mrow>
-                                    <mml:mrow>
-                                        <mml:mn>1</mml:mn>
-                                    </mml:mrow>
-                                </mml:msub>
-                                <mml:mo>+</mml:mo>
+                                <mml:mstyle displaystyle="true">
+                                    <mml:mo>∑</mml:mo>
+                                </mml:mstyle>
                                 <mml:mrow>
-                                    <mml:mstyle displaystyle="false">
-                                        <mml:mo>∑</mml:mo>
-                                    </mml:mstyle>
-                                    <mml:mrow>
-                                        <mml:msub>
-                                            <mml:mrow>
-                                                <mml:mi mathvariant="normal">P</mml:mi>
-                                            </mml:mrow>
-                                            <mml:mrow>
-                                                <mml:mn>2</mml:mn>
-                                            </mml:mrow>
-                                        </mml:msub>
-                                        <mml:mo>−</mml:mo>
-                                        <mml:mn>2</mml:mn>
+                                    <mml:msub>
                                         <mml:mrow>
-                                            <mml:mstyle displaystyle="false">
-                                                <mml:mo>∑</mml:mo>
-                                            </mml:mstyle>
+                                            <mml:mi mathvariant="normal">P</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mn>1</mml:mn>
+                                        </mml:mrow>
+                                    </mml:msub>
+                                    <mml:mo>+</mml:mo>
+                                    <mml:mrow>
+                                        <mml:mstyle displaystyle="false">
+                                            <mml:mo>∑</mml:mo>
+                                        </mml:mstyle>
+                                        <mml:mrow>
+                                            <mml:msub>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="normal">P</mml:mi>
+                                                </mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mn>2</mml:mn>
+                                                </mml:mrow>
+                                            </mml:msub>
+                                            <mml:mo>−</mml:mo>
+                                            <mml:mn>2</mml:mn>
                                             <mml:mrow>
-                                                <mml:msub>
-                                                    <mml:mrow>
-                                                        <mml:mi mathvariant="normal">P</mml:mi>
-                                                    </mml:mrow>
-                                                    <mml:mrow>
-                                                        <mml:mn>1</mml:mn>
-                                                    </mml:mrow>
-                                                </mml:msub>
-                                                <mml:msub>
-                                                    <mml:mrow>
-                                                        <mml:mi mathvariant="normal">P</mml:mi>
-                                                    </mml:mrow>
-                                                    <mml:mrow>
-                                                        <mml:mn>2</mml:mn>
-                                                    </mml:mrow>
-                                                </mml:msub>
+                                                <mml:mstyle displaystyle="false">
+                                                    <mml:mo>∑</mml:mo>
+                                                </mml:mstyle>
+                                                <mml:mrow>
+                                                    <mml:msub>
+                                                        <mml:mrow>
+                                                            <mml:mi mathvariant="normal">P</mml:mi>
+                                                        </mml:mrow>
+                                                        <mml:mrow>
+                                                            <mml:mn>1</mml:mn>
+                                                        </mml:mrow>
+                                                    </mml:msub>
+                                                    <mml:msub>
+                                                        <mml:mrow>
+                                                            <mml:mi mathvariant="normal">P</mml:mi>
+                                                        </mml:mrow>
+                                                        <mml:mrow>
+                                                            <mml:mn>2</mml:mn>
+                                                        </mml:mrow>
+                                                    </mml:msub>
+                                                </mml:mrow>
                                             </mml:mrow>
                                         </mml:mrow>
                                     </mml:mrow>
                                 </mml:mrow>
                             </mml:mrow>
                         </mml:mrow>
-                    </mml:mrow>
-                    <mml:mrow>
                         <mml:mrow>
-                            <mml:mstyle displaystyle="false">
-                                <mml:mo>∑</mml:mo>
-                            </mml:mstyle>
                             <mml:mrow>
-                                <mml:msub>
-                                    <mml:mrow>
-                                        <mml:mi mathvariant="normal">P</mml:mi>
-                                    </mml:mrow>
-                                    <mml:mrow>
-                                        <mml:mn>1</mml:mn>
-                                    </mml:mrow>
-                                </mml:msub>
-                                <mml:mo>+</mml:mo>
+                                <mml:mstyle displaystyle="false">
+                                    <mml:mo>∑</mml:mo>
+                                </mml:mstyle>
                                 <mml:mrow>
-                                    <mml:mstyle displaystyle="false">
-                                        <mml:mo>∑</mml:mo>
-                                    </mml:mstyle>
-                                    <mml:mrow>
-                                        <mml:msub>
-                                            <mml:mrow>
-                                                <mml:mi mathvariant="normal">P</mml:mi>
-                                            </mml:mrow>
-                                            <mml:mrow>
-                                                <mml:mn>2</mml:mn>
-                                            </mml:mrow>
-                                        </mml:msub>
-                                        <mml:mo>−</mml:mo>
+                                    <mml:msub>
                                         <mml:mrow>
-                                            <mml:mstyle displaystyle="false">
-                                                <mml:mo>∑</mml:mo>
-                                            </mml:mstyle>
+                                            <mml:mi mathvariant="normal">P</mml:mi>
+                                        </mml:mrow>
+                                        <mml:mrow>
+                                            <mml:mn>1</mml:mn>
+                                        </mml:mrow>
+                                    </mml:msub>
+                                    <mml:mo>+</mml:mo>
+                                    <mml:mrow>
+                                        <mml:mstyle displaystyle="false">
+                                            <mml:mo>∑</mml:mo>
+                                        </mml:mstyle>
+                                        <mml:mrow>
+                                            <mml:msub>
+                                                <mml:mrow>
+                                                    <mml:mi mathvariant="normal">P</mml:mi>
+                                                </mml:mrow>
+                                                <mml:mrow>
+                                                    <mml:mn>2</mml:mn>
+                                                </mml:mrow>
+                                            </mml:msub>
+                                            <mml:mo>−</mml:mo>
                                             <mml:mrow>
-                                                <mml:msub>
-                                                    <mml:mrow>
-                                                        <mml:mi mathvariant="normal">P</mml:mi>
-                                                    </mml:mrow>
-                                                    <mml:mrow>
-                                                        <mml:mn>1</mml:mn>
-                                                    </mml:mrow>
-                                                </mml:msub>
-                                                <mml:msub>
-                                                    <mml:mrow>
-                                                        <mml:mi mathvariant="normal">P</mml:mi>
-                                                    </mml:mrow>
-                                                    <mml:mrow>
-                                                        <mml:mn>2</mml:mn>
-                                                    </mml:mrow>
-                                                </mml:msub>
+                                                <mml:mstyle displaystyle="false">
+                                                    <mml:mo>∑</mml:mo>
+                                                </mml:mstyle>
+                                                <mml:mrow>
+                                                    <mml:msub>
+                                                        <mml:mrow>
+                                                            <mml:mi mathvariant="normal">P</mml:mi>
+                                                        </mml:mrow>
+                                                        <mml:mrow>
+                                                            <mml:mn>1</mml:mn>
+                                                        </mml:mrow>
+                                                    </mml:msub>
+                                                    <mml:msub>
+                                                        <mml:mrow>
+                                                            <mml:mi mathvariant="normal">P</mml:mi>
+                                                        </mml:mrow>
+                                                        <mml:mrow>
+                                                            <mml:mn>2</mml:mn>
+                                                        </mml:mrow>
+                                                    </mml:msub>
+                                                </mml:mrow>
                                             </mml:mrow>
                                         </mml:mrow>
                                     </mml:mrow>
                                 </mml:mrow>
                             </mml:mrow>
                         </mml:mrow>
-                    </mml:mrow>
-                </mml:mfrac>
-            </mml:math>
+                    </mml:mfrac>
+                </mml:math>
+            </display-formula>
             <p>
 where,
 </p>

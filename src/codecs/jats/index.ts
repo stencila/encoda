@@ -16,28 +16,31 @@ import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
 import crypto from 'crypto'
 import fs from 'fs-extra'
+import { isDefined } from '../../util'
+import { ensureArticle } from '../../util/content/ensureArticle'
+import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
 import * as xml from '../../util/xml'
 import {
-  elem,
+  all,
   attr,
+  Attributes,
   attrOrUndefined,
   child,
   children,
+  elem,
   first,
-  all,
-  text,
-  textOrUndefined,
-  splitTextOrUndefined,
   intOrUndefined,
-  Attributes
+  splitTextOrUndefined,
+  text,
+  textOrUndefined
 } from '../../util/xml'
-import { Codec } from '../types'
-import { ensureArticle } from '../../util/content/ensureArticle'
-import { isDefined } from '../../util'
+import { MathMLCodec } from '../mathml'
+import { Codec, CommonEncodeOptions } from '../types'
 
 const log = getLogger('encoda:jats')
+const mathml = new MathMLCodec()
 
 type Content = stencila.InlineContent | stencila.BlockContent
 
@@ -106,8 +109,32 @@ export class JatsCodec extends Codec implements Codec {
    * @param thing The Stencila `Node` to encode
    * @returns A promise that resolves to a `VFile`
    */
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const doc = encodeDocument(node)
+  public readonly encode = async (
+    node: stencila.Node,
+    options: CommonEncodeOptions = this.commonEncodeDefaults
+  ): Promise<vfile.VFile> => {
+    const { isStandalone } = { ...this.commonEncodeDefaults, ...options }
+    const doc = isStandalone
+      ? {
+          declaration: {
+            attributes: {
+              version: '1.0',
+              encoding: 'utf-8'
+            }
+          },
+          elements: [
+            {
+              type: 'doctype',
+              doctype: DOCTYPE
+            },
+            encodeArticle(
+              (await encodePrepare(ensureArticle(node))) as stencila.Article
+            )
+          ]
+        }
+      : {
+          elements: encodeNode(await encodePrepare(node), initialEncodeState())
+        }
     const jats = xml.dump(doc, { spaces: 4 })
     return Promise.resolve(vfile.load(jats))
   }
@@ -137,28 +164,25 @@ function decodeDocument(doc: xml.Element): stencila.Article | Content[] {
 }
 
 /**
- * Encode a Stencila `Node` to a JATS XML document.
+ * Do any async actions necessary on the node tree before encoding it.
  *
- * If the node is not an `Article`, it will be wrapped
- * into one.
+ * This avoids having to "taint" the whole decode function call stack with
+ * async calls.
  */
-function encodeDocument(node: stencila.Node): xml.Element {
-  const article = ensureArticle(node)
-  return {
-    declaration: {
-      attributes: {
-        version: '1.0',
-        encoding: 'utf-8'
+async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
+  return transform(node, async node => {
+    if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
+      if (node.mathLanguage !== 'mathml' && node.mathLanguage !== 'tex') {
+        const text = await mathml.dump(node)
+        return {
+          ...node,
+          mathLanguage: 'mathml',
+          text
+        }
       }
-    },
-    elements: [
-      {
-        type: 'doctype',
-        doctype: DOCTYPE
-      },
-      encodeArticle(article)
-    ]
-  }
+    }
+    return node
+  })
 }
 
 /**
@@ -1787,20 +1811,30 @@ function decodeMath(
 }
 
 /**
- * Encode a Stencila `Math` node as a JATS `<mml:math>` element.
+ * Encode a Stencila `Math` node as a JATS `<inline-formula>` or
+ * `<display-formula>` element.
  */
 function encodeMath(math: stencila.Math): xml.Element[] {
   const { mathLanguage, text = '' } = math
 
-  if (mathLanguage !== 'mathml') log.error(`Only MathML is supported`)
-
-  try {
-    const root = xml.load(text)
-    if (root?.elements?.length) return [root.elements[0]]
-  } catch (error) {
-    log.error(`Error parsing MathML:\n${error.message}\n${text}`)
+  let inner: xml.Element | undefined
+  if (mathLanguage === 'tex') {
+    inner = elem('tex-math', text)
+  } else {
+    try {
+      const root = xml.load(text)
+      if (root?.elements?.length) inner = root.elements[0]
+    } catch (error) {
+      log.error(`Error parsing MathML:\n${error.message}\n${text}`)
+    }
   }
-  return []
+
+  return [
+    elem(
+      math.type === 'MathFragment' ? 'inline-formula' : 'display-formula',
+      inner
+    )
+  ]
 }
 
 /**
