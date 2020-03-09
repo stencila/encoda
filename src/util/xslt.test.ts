@@ -23,14 +23,14 @@ describe('transform', () => {
 
   test('returns parse errors', async () => {
     expect(await transform('<foo>', stylesheet1)).toMatch(
-      /error on line 1 at column 6/
+      /Opening and ending tag mismatch: foo/
     )
   })
 })
 
 // Example from https://en.wikipedia.org/wiki/XSLT (with some modification)
 
-const doc1 = `<?xml version="1.0" ?>
+const doc1 = `
 <persons>
   <person username="JS1">
     <name>John</name>
