@@ -38,12 +38,12 @@ export class Processor {
   page?: puppeteer.Page
 
   /**
-   * The default XML Namespace to use for XML content
+   * The default XML namespaces to use for XML content
    * begin transformed by this processor.
    */
-  xmlns: string
+  xmlns: Record<string, string>
 
-  constructor(xmlns = '') {
+  constructor(xmlns: Record<string, string> = {}) {
     this.xmlns = xmlns
   }
 
@@ -53,7 +53,7 @@ export class Processor {
    * @param stylesheet The XSLT stylesheet to use
    * @param xmlns The default XML Namespace to use
    */
-  static async create(stylesheet: string, xmlns = ''): Promise<Processor> {
+  static async create(stylesheet: string, xmlns: Record<string, string> = {}): Promise<Processor> {
     const processor = new Processor(xmlns)
 
     // Set up the page context
@@ -95,17 +95,18 @@ export class Processor {
         // @ts-ignore properties set on window inside Puppeteer page context
         const { xsltProcessor, domParser, xmlSerializer } = window
 
+        // Set the XML namespaces on wrapper
+        const attrs = Object.entries(xmlns).map(([key, value]) => {
+          return `xmlns${key === '' ? '' : (':' + key)}="${value}"`
+        }).join(' ')
+        const wrap = `<wrap ${attrs}>${xml}</wrap>`
+
         // Parse the input document and send back any errors
-        const input = domParser.parseFromString(xml, 'text/xml')
+        const input = domParser.parseFromString(wrap, 'text/xml')
           .firstElementChild
         if (input === null) return `Error parsing XML: ${xml}`
         const error = input.querySelector('parsererror')
         if (error !== null) return error.textContent
-
-        // Set the default XML namespace it it has not already been set
-        if (input.getAttribute('xmlns') === null && xmlns.length > 0) {
-          input.setAttribute('xmlns', xmlns)
-        }
 
         // Do the transformation
         const output = xsltProcessor.transformToDocument(input)
