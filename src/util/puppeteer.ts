@@ -6,10 +6,10 @@ import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
 import fs from 'fs-extra'
 import path from 'path'
-import puppeteer, {Page, Browser} from 'puppeteer'
+import puppeteer, { Page, Browser } from 'puppeteer'
 import isPackaged from './app/isPackaged'
 
-export {Page, Browser}
+export { Page, Browser }
 
 const log = getLogger('encoda:puppeteer')
 

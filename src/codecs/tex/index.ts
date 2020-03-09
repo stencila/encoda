@@ -13,6 +13,9 @@ import { Codec } from '../types'
 
 const log = getLogger('encoda:tex')
 
+// Just-in-time created XSLT processort for MathML to Tex
+let mathmlProcessor: xslt.Processor | undefined
+
 export class TexCodec extends Codec implements Codec {
   /**
    * The media types that this codec can decode/encode.
@@ -67,11 +70,17 @@ export class TexCodec extends Codec implements Codec {
     else if (format === 'asciimath') {
       tex = new AsciiMathParser().parse(text)
     } else if (format === 'mathml') {
-      const xsl = await fs.readFile(
-        path.join(__dirname, 'mml-tex', 'mmltex.xsl'),
-        'utf8'
-      )
-      tex = xslt.transform(text, xsl)
+      if (mathmlProcessor === undefined) {
+        const stylesheet = await fs.readFile(
+          path.join(__dirname, 'mmltex.xsl'),
+          'utf8'
+        )
+        mathmlProcessor = await xslt.Processor.create(
+          stylesheet,
+          'http://www.w3.org/1998/Math/MathML'
+        )
+      }
+      tex = await mathmlProcessor.transform(text)
     } else {
       log.warn(`Unable to translate math language to TeX: ${mathLanguage}`)
       tex = ''

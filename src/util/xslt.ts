@@ -43,7 +43,7 @@ export class Processor {
    */
   xmlns: string
 
-  constructor(xmlns: string = '') {
+  constructor(xmlns = '') {
     this.xmlns = xmlns
   }
 
@@ -53,10 +53,7 @@ export class Processor {
    * @param stylesheet The XSLT stylesheet to use
    * @param xmlns The default XML Namespace to use
    */
-  static async create(
-    stylesheet: string,
-    xmlns: string = ''
-  ): Promise<Processor> {
+  static async create(stylesheet: string, xmlns = ''): Promise<Processor> {
     const processor = new Processor(xmlns)
 
     // Set up the page context
@@ -70,6 +67,7 @@ export class Processor {
 `)
     /* istanbul ignore next */
     await page.evaluate(function(stylesheet: string) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore properties set on window inside Puppeteer page context
       const { xsltProcessor, domParser } = window
       xsltProcessor.importStylesheet(
@@ -93,27 +91,32 @@ export class Processor {
     /* istanbul ignore next */
     return this.page.evaluate(
       function(xml, xmlns) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore properties set on window inside Puppeteer page context
         const { xsltProcessor, domParser, xmlSerializer } = window
 
         // Parse the input document and send back any errors
         const input = domParser.parseFromString(xml, 'text/xml')
           .firstElementChild
+        if (input === null) return `Error parsing XML: ${xml}`
         const error = input.querySelector('parsererror')
-        if (error) return error.textContent
+        if (error !== null) return error.textContent
 
         // Set the default XML namespace it it has not already been set
-        if (!input.getAttribute('xmlns') && xmlns) {
+        if (input.getAttribute('xmlns') === null && xmlns.length > 0) {
           input.setAttribute('xmlns', xmlns)
         }
 
         // Do the transformation
         const output = xsltProcessor.transformToDocument(input)
+        if (output === null) return `Error transforming XML: ${xml}`
 
         // For stylesheets with <xsl:output method="text">, Chrome wraps the
         // result in a `<pre>` element
         const result = output.querySelector('pre')
-        return result ? result.textContent : xmlSerializer.serializeToString(output)
+        return result !== null
+          ? result.textContent
+          : xmlSerializer.serializeToString(output)
       },
       xml,
       this.xmlns
@@ -127,7 +130,10 @@ export class Processor {
  * @param xml The XML document to transform
  * @param stylesheet The XSLT stylesheet to transform it with
  */
-export async function transform(xml: string, stylesheet: string) {
+export async function transform(
+  xml: string,
+  stylesheet: string
+): Promise<string> {
   const processor = await Processor.create(stylesheet)
   return processor.transform(xml)
 }
