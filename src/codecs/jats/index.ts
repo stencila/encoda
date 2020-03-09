@@ -136,7 +136,7 @@ export class JatsCodec extends Codec implements Codec {
           elements: encodeNode(await encodePrepare(node), initialEncodeState())
         }
     const jats = xml.dump(doc, { spaces: 4 })
-    return Promise.resolve(vfile.load(jats))
+    return vfile.load(jats)
   }
 }
 
