@@ -6,8 +6,10 @@ import { getLogger } from '@stencila/logga'
 import AsyncLock from 'async-lock'
 import fs from 'fs-extra'
 import path from 'path'
-import puppeteer from 'puppeteer'
+import puppeteer, {Page, Browser} from 'puppeteer'
 import isPackaged from './app/isPackaged'
+
+export {Page, Browser}
 
 const log = getLogger('encoda:puppeteer')
 
@@ -45,7 +47,7 @@ if (!fs.pathExistsSync(executablePath))
  * and mutex lock to prevent conflicts between
  * concurrent requests to `startup` or `shutdown`
  */
-let browser: puppeteer.Browser | undefined
+let browser: Browser | undefined
 const lock = new AsyncLock()
 
 /**
@@ -55,10 +57,10 @@ const lock = new AsyncLock()
  * async calls to startup() don't race to create the
  * singleton browser instance.
  */
-export async function startup(): Promise<puppeteer.Browser> {
+export async function startup(): Promise<Browser> {
   return lock.acquire(
     'browser',
-    async (): Promise<puppeteer.Browser> => {
+    async (): Promise<Browser> => {
       if (typeof browser === 'undefined') {
         log.debug('Launching new browser')
         browser = await puppeteer.launch({
@@ -78,7 +80,7 @@ export async function startup(): Promise<puppeteer.Browser> {
 /**
  * Create a new page
  */
-export async function page(): Promise<puppeteer.Page> {
+export async function page(): Promise<Page> {
   const browser = await startup()
   return browser.newPage()
 }

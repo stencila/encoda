@@ -50,7 +50,6 @@
     "@stencila/thema": "^1.12.0",
     "ajv": "^6.12.0",
     "appdata-path": "^1.0.0",
-    "array-flat-polyfill": "^1.0.1",
     "asciimath2tex": "^1.1.0",
     "async-lock": "^1.2.2",
     "better-ajv-errors": "^0.6.7",
@@ -104,10 +103,8 @@
     "unist-util-select": "^3.0.1",
     "unixify": "^1.0.0",
     "vfile": "^4.0.3",
-    "w3c-xmlserializer": "^2.0.0",
     "xlsx": "^0.15.5",
-    "xml-js": "^1.6.11",
-    "xslt-ts": "^1.1.8"
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "1.15.9",

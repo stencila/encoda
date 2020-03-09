@@ -1,17 +1,30 @@
-import { transform } from './xslt'
+import { transform, Processor } from './xslt'
 
-/**
- * These tests just test integration with `xslt-ts`, see
- * that package for more testing of transformation correctness.
- */
-
-describe('transform', () => {
-  test('example1', () => {
-    expect(transform(doc1, stylesheet1)).toEqual(output1)
+describe('Processor', () => {
+  test('returns empty string if not initialize', async () => {
+    const proc = await Processor.create(stylesheet1)
+    expect(await proc.transform(doc1)).toEqual(output1)
   })
 
-  test('example2', () => {
-    expect(transform(doc2, stylesheet2)).toEqual(output2)
+  test('returns empty string if not initialize', async () => {
+    const proc = new Processor()
+    expect(await proc.transform('<foo>')).toEqual('')
+  })
+})
+
+describe('transform', () => {
+  test('example1', async () => {
+    expect(await transform(doc1, stylesheet1)).toEqual(output1)
+  })
+
+  test('example2', async () => {
+    expect(await transform(doc2, stylesheet2)).toEqual(output2)
+  })
+
+  test('returns parse errors', async () => {
+    expect(await transform('<foo>', stylesheet1)).toMatch(
+      /error on line 1 at column 6/
+    )
   })
 })
 
@@ -47,7 +60,10 @@ const stylesheet1 = `<?xml version="1.0" encoding="UTF-8"?>
 
 </xsl:stylesheet>`
 
-const output1 = `<root><name username="JS1">John</name><name username="MI1">Morka</name></root>`
+const output1 = `<root>
+  <name username="JS1">John</name>
+  <name username="MI1">Morka</name>
+</root>`
 
 // Example from https://github.com/backslash47/xslt/blob/8f8ddf0282d1db720912a5835687642fd21745ac/test/simple-test.ts
 
