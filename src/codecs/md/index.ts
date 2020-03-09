@@ -33,6 +33,8 @@ import frontmatter from 'remark-frontmatter'
 // @ts-ignore
 import genericExtensions from 'remark-generic-extensions'
 // @ts-ignore
+import math from 'remark-math'
+// @ts-ignore
 import parser from 'remark-parse'
 // @ts-ignore
 import stringifier from 'remark-stringify'
@@ -180,6 +182,7 @@ export function decodeMarkdown(
     .use(frontmatter, FRONTMATTER_OPTIONS)
     .use(attrs, ATTR_OPTIONS)
     .use(subSuper)
+    .use(math)
     .use(genericExtensions, { elements: extensionHandlers })
     .parse(md)
   compact(mdast, true)
@@ -240,6 +243,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeParagraph(node as MDAST.Paragraph)
     case 'blockquote':
       return decodeBlockquote(node as MDAST.Blockquote)
+    case 'math':
+      return decodeMath(node as MDAST.Literal)
     case 'code':
       return decodeCodeblock(node as MDAST.Code)
     case 'list':
@@ -263,6 +268,8 @@ function decodeNode(node: UNIST.Node): stencila.Node {
       return decodeSubscript(node as MDAST.Parent)
     case 'sup':
       return decodeSuperscript(node as MDAST.Parent)
+    case 'inlineMath':
+      return decodeMath(node as MDAST.Literal)
     case 'inlineCode':
       return decodeInlineCode(node as MDAST.InlineCode)
     case 'image':
@@ -1053,6 +1060,20 @@ function encodeQuote(quote: stencila.Quote): Extension {
     content: quote.content[0] as string,
     argument: quote.cite as string
   }
+}
+
+/**
+ * Decode a MDAST `inlineMath` or `math` node to either a Stencila `MathFragment`
+ * or `MathBlock`.
+ */
+function decodeMath(
+  math: MDAST.Literal
+): stencila.MathFragment | stencila.MathBlock {
+  const {type, value} = math
+  return (type === 'inlineMath' ? stencila.mathFragment : stencila.mathBlock)({
+    mathLanguage: 'tex',
+    text: value
+  })
 }
 
 /**

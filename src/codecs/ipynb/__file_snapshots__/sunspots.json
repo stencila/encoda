@@ -626,7 +626,13 @@
             "angular frequencies"
           ]
         },
-        ", which is why we need to multiply the values by $2\\pi$. (The Lomb-Scargle method is flexible in that the time series need not be uniformly sampled.)"
+        ", which is why we need to multiply the values by ",
+        {
+          "type": "MathFragment",
+          "mathLanguage": "tex",
+          "text": "2\\pi"
+        },
+        ". (The Lomb-Scargle method is flexible in that the time series need not be uniformly sampled.)"
       ]
     },
     {
@@ -743,7 +749,12 @@
         {
           "type": "Emphasis",
           "content": [
-            "The Details of Banking to 45$^\\circ$"
+            "The Details of Banking to 45",
+            {
+              "type": "MathFragment",
+              "mathLanguage": "tex",
+              "text": "^\\circ"
+            }
           ]
         },
         " section in ",
@@ -858,7 +869,13 @@
           "type": "CodeFragment",
           "text": "brute"
         },
-        " for a reason: it is a just a brute-force scan of every possible plot size, where we have defined what is possible. Since I already have experience with these data I am limiting the search to be over plotting windows that are longer than they are tall, and I am only searching over $\\frac{1}{2}$ inch step-sizes in the window dimensions because we are not interested in a super-precise solution. The last line of code unpacks a list of values returned in the ",
+        " for a reason: it is a just a brute-force scan of every possible plot size, where we have defined what is possible. Since I already have experience with these data I am limiting the search to be over plotting windows that are longer than they are tall, and I am only searching over ",
+        {
+          "type": "MathFragment",
+          "mathLanguage": "tex",
+          "text": "\\frac{1}{2}"
+        },
+        " inch step-sizes in the window dimensions because we are not interested in a super-precise solution. The last line of code unpacks a list of values returned in the ",
         {
           "type": "CodeFragment",
           "text": "results"

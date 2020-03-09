@@ -1,0 +1,51 @@
+{
+  "type": "Article",
+  "content": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "When ",
+        {
+          "type": "MathFragment",
+          "mathLanguage": "tex",
+          "text": "a \\ne 0"
+        },
+        ", there are two solutions to ",
+        {
+          "type": "MathFragment",
+          "mathLanguage": "tex",
+          "text": "ax^2 + bx + c = 0"
+        },
+        ","
+      ]
+    },
+    {
+      "type": "MathBlock",
+      "mathLanguage": "tex",
+      "text": "x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}"
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Lift(",
+        {
+          "type": "MathFragment",
+          "mathLanguage": "tex",
+          "text": "L"
+        },
+        ") can be determined by Lift Coefficient (",
+        {
+          "type": "MathFragment",
+          "mathLanguage": "tex",
+          "text": "C_L"
+        },
+        ") like the following equation."
+      ]
+    },
+    {
+      "type": "MathBlock",
+      "mathLanguage": "tex",
+      "text": "L = \\frac{1}{2} \\rho v^2 S C_L"
+    }
+  ]
+}
