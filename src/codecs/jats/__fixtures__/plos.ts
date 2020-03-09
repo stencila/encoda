@@ -14,7 +14,7 @@ import path from 'path'
 const create = async (doi: string, journal: string = 'plosone') => {
   const url = `http://journals.plos.org/${journal}/article/file?id=${doi}&type=manuscript`
   const jats = await http.get(url)
-  const doc = xml.load(jats.body, { compact: false }) as xml.Element
+  const doc = xml.load(jats.body) as xml.Element
 
   const id = doi.split('.').pop()
   const dir = `${journal}-${id}`
