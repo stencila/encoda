@@ -8,12 +8,6 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
-// Node.js built-in punycore is deprecated.
-// However, if we add a trailing slash below to import the userland version as suggested at
-// https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md
-// `pkg` has problems resolving the module. So instead we ignore eslint complaint:
-// eslint-disable-next-line node/no-deprecated-api
-import punycode from 'punycode'
 import * as vfile from '../../util/vfile'
 import { PngCodec } from '../png'
 import { Codec, CommonEncodeOptions } from '../types'
@@ -157,7 +151,7 @@ export function find(
     if (chunk.name === 'tEXt') {
       const entry = pngText.decode(chunk.data)
       if (entry.keyword === keyword) {
-        return [index, punycode.decode(entry.text)]
+        return [index, Buffer.from(entry.text, 'base64').toString('utf8')]
       }
     }
     index += 1
@@ -201,7 +195,10 @@ export function insert(keyword: string, text: string, image: Buffer): Buffer {
   const chunks: Chunk[] = pngExtract(image)
   const [index, current] = find(keyword, chunks)
   if (current !== undefined) chunks.splice(index, 1)
-  const chunk = pngText.encode(keyword, punycode.encode(text))
+  const chunk = pngText.encode(
+    keyword,
+    Buffer.from(text, 'utf8').toString('base64')
+  )
   chunks.splice(-1, 0, chunk)
   return Buffer.from(pngEncode(chunks))
 }
