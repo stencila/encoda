@@ -24,19 +24,16 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 // `pkg` has problems resolving the module. So instead we ignore eslint complaint:
 // eslint-disable-next-line node/no-deprecated-api
 import punycode from 'punycode'
-import { dump } from '../../index'
-import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
 import { PngCodec } from '../png'
 
 /**
- * The keyword to use for the PNG chunk containing the JSON
+ * The keyword to use for the PNG chunk containing the JSON-LD
  */
-const KEYWORD = 'JSON'
+const KEYWORD = 'JSON-LD'
 
-export class RpngCodec extends PngCodec implements Codec {
-
+export class RpngCodec extends Codec implements Codec {
   /**
    * @override Overrides {@link PngCodec.mediaTypes} to provide
    * a vendor media type similar to [image/vnd.mozilla.apng](https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng)
@@ -83,7 +80,7 @@ export class RpngCodec extends PngCodec implements Codec {
   }
 
   /**
-   * Decode a rPNG to a Stencila node.
+   * Decode a RPNG to a Stencila node.
    *
    * This is done by extracting the JSON
    * from the `tEXt` chunk and parsing it.
@@ -112,7 +109,7 @@ export class RpngCodec extends PngCodec implements Codec {
   }
 
   /**
-   * Sniff and decode a file if it is a rPNG.
+   * Sniff and decode a file if it is a RPNG.
    *
    * This function is like combining `sniffSync()` and `decodeSync()`
    * but is faster because it only reads the file contents once.
@@ -131,14 +128,7 @@ export class RpngCodec extends PngCodec implements Codec {
   }
 
   /**
-   * Encode a Stencila node to a rPNG.
-   *
-   * This is done by dumping the node to HTML,
-   * "screen-shotting" the HTML to a PNG and then inserting the
-   * node's JSON into the image's `tEXt` chunk.
-   *
-   * When used with `isStandalone === true` will create a "thumbnail"
-   * of the entire node (e.g. article, dataset) with whatever theme is specified.
+   * Encode a Stencila node to a RPNG.
    *
    * @param node The Stencila node to encode
    * @param options Object containing settings for the encoder.
@@ -147,57 +137,19 @@ export class RpngCodec extends PngCodec implements Codec {
     node: stencila.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    // isStandalone defaults to false because usually we are generating
-    // rPNGs to be embedded in other files e.g. rDOCX
-    const { filePath, isStandalone = false } = options
-
-    // Generate HTML for the node.
-    // Bundle because Puppeteer will not load local (e.g. `/tmp`) files
-    // Other options e.g. themes are passed through
-    const nodeHtml = await dump(node, 'html', {
+    // Generate the PNG and get it as a `Buffer`
+    const pngCodec = new PngCodec()
+    const png = await pngCodec.encode(node, {
       ...options,
-      isStandalone,
-      isBundle: true
+      theme: 'rpng'
     })
+    const buffer = await vfile.dump(png, 'buffer')
 
-    // If generating an rPNG for a HTML fragment wrap it to be able to
-    // apply some basic styling e.g. padding
-    const pageHtml = isStandalone
-      ? nodeHtml
-      : `<div id="target">${nodeHtml}</div>`
-
-    const page = await puppeteer.page()
-    await page.setContent(pageHtml, { waitUntil: 'networkidle0' })
-
-    let buffer
-    if (isStandalone) {
-      buffer = await page.screenshot({
-        encoding: 'binary',
-        fullPage: true
-      })
-    } else {
-      const elem = await page.$('#target')
-      if (!elem)
-        throw new Error('Woaaaah, this should never happen! Element not found!')
-      buffer = await elem.screenshot({
-        encoding: 'binary'
-      })
-    }
-
-    await page.close()
-
-    // Insert the Stencila node as JSON into a `tEXt` chunk
+    // Insert the node as JSON-LD into a `zTXt` chunk
     const json = JSON.stringify(node)
     const image = insert(KEYWORD, json, buffer)
 
-    // Save to file
-    const file = vfile.load(image)
-    if (filePath) {
-      file.path = filePath
-      await vfile.write(file, filePath)
-    }
-
-    return file
+    return vfile.load(image)
   }
 }
 
