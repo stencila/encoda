@@ -38,10 +38,8 @@ export class PngCodec extends Codec implements Codec {
    * @override {@link Codec.decode}
    */
   public readonly decode = async (
-    file: vfile.VFile,
-    options: DecodeOptions = this.commonDecodeDefaults
+    file: vfile.VFile
   ): Promise<schema.Node> => {
-    // TODO: Sniff the content of the file to detect if it is a RPNG
     let filePath = file.path
     if (filePath === undefined) {
       filePath = tempy.file({ extension: 'png' })
@@ -65,11 +63,11 @@ export class PngCodec extends Codec implements Codec {
     node: schema.Node,
     options: EncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const { size } = options
+    const { isStandalone, size } = { ...this.commonEncodeDefaults, ...options }
 
     // Generate HTML for the node.
-    // Standalone so that if theme option is respected
-    // Bundle because Puppeteer will not load local (e.g. `/tmp`) files
+    // Standalone: so that the theme option is respected.
+    // Bundle: because Puppeteer will not load local (e.g. `/tmp`) files.
     // Other options e.g. themes are passed through
     const html = await dump(node, 'html', {
       ...options,
@@ -84,11 +82,37 @@ export class PngCodec extends Codec implements Codec {
         width: size.width,
         height: size.height
       })
+
     await page.setContent(html, { waitUntil: 'networkidle0' })
-    const buffer = await page.screenshot({
-      encoding: 'binary',
-      fullPage: size === undefined
-    })
+
+    let buffer
+    if (isStandalone) {
+      buffer = await page.screenshot({
+        encoding: 'binary',
+        fullPage: size === undefined
+      })
+    } else {
+      const [key, value] = Object.entries(schema.microdataRoot())[0]
+      const elem = await page.$(`[${key}=${value}]`)
+      if (elem === null)
+        throw new Error('Woaaaah, this should never happen! Element not found!')
+      const boundingBox = await elem.boundingBox()
+      const viewPort = page.viewport()
+      buffer = await elem.screenshot({
+        encoding: 'binary',
+        ...(size !== undefined && boundingBox !== null
+          ? {
+              clip: {
+                x: boundingBox.x,
+                y: boundingBox.y,
+                width: Math.min(boundingBox.width, viewPort.width),
+                height: Math.min(boundingBox.height, viewPort.height)
+              }
+            }
+          : {})
+      })
+    }
+
     await page.close()
 
     return vfile.load(buffer)
