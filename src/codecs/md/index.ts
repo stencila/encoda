@@ -1069,7 +1069,7 @@ function encodeQuote(quote: stencila.Quote): Extension {
 function decodeMath(
   math: MDAST.Literal
 ): stencila.MathFragment | stencila.MathBlock {
-  const {type, value} = math
+  const { type, value } = math
   return (type === 'inlineMath' ? stencila.mathFragment : stencila.mathBlock)({
     mathLanguage: 'tex',
     text: value

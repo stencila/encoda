@@ -8,7 +8,9 @@ const pdfCodec = new PdfCodec()
 
 describe('decode', () => {
   test('meta data from info dict', async () => {
-    const {title, authors, keywords, dateCreated} = (await pdfCodec.read(fixture('external.pdf'))) as stencila.CreativeWork
+    const { title, authors, keywords, dateCreated } = (await pdfCodec.read(
+      fixture('external.pdf')
+    )) as stencila.CreativeWork
     expect(title).toEqual(
       'Test reading meta data from an externally created PDF'
     )

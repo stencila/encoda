@@ -1,4 +1,11 @@
-import stencila, { article, cite, heading, imageObject, link, paragraph } from '@stencila/schema'
+import stencila, {
+  article,
+  cite,
+  heading,
+  imageObject,
+  link,
+  paragraph
+} from '@stencila/schema'
 import { dump, load } from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
@@ -226,10 +233,9 @@ followed by more paragraphs`)
 })
 
 describe('decode: fixtures', () => {
-  const mdToJson = async (file: string) => jsonCodec.dump(await mdCodec.read(fixture(file)))
-  test.each([
-    'math.md'
-  ])('%s', async (file) => {
+  const mdToJson = async (file: string) =>
+    jsonCodec.dump(await mdCodec.read(fixture(file)))
+  test.each(['math.md'])('%s', async file => {
     expect(await mdToJson(file)).toMatchFile(snapshot(file + '.json'))
   })
 })
