@@ -48,10 +48,10 @@ test('JSON strings should not get converted to numbers', async () => {
     }
   ]
 }`
-  const table = await jsonCodec.load(json) as stencila.Table
+  const table = (await jsonCodec.load(json)) as stencila.Table
 
   expect(table?.rows?.[0].cells?.[0].content[0]).toBe(1)
-  expect(table?.rows?.[0].cells?.[1].content[0]).toBe("2")
+  expect(table?.rows?.[0].cells?.[1].content[0]).toBe('2')
 
   expect(await jsonCodec.dump(table)).toEqual(json)
   expect(await mdCodec.dump(table)).toMatchFile(

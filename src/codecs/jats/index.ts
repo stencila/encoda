@@ -1214,6 +1214,9 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
  */
 function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
   switch (stencila.nodeType(node)) {
+    case 'Article':
+      return [encodeArticle(node as stencila.Article)]
+
     case 'Heading':
       return encodeHeading(node as stencila.Heading, state)
     case 'Paragraph':
@@ -1253,7 +1256,7 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       if (collection.meta && collection.meta.usage === 'figGroup') {
         return encodeFigGroup(collection, state)
       }
-      // fallthrough expected if not a figGroup
+      break
     }
 
     case 'Null':
@@ -1264,15 +1267,12 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return [{ type: 'text', text: JSON.stringify(node) }]
     case 'Text':
       return [{ type: 'text', text: node as string }]
-
-    default:
-      log.warn(
-        `Unhandled node type when encoding to JATS: "${stencila.nodeType(
-          node
-        )}"`
-      )
-      return []
   }
+
+  log.warn(
+    `Unhandled node type when encoding to JATS: "${stencila.nodeType(node)}"`
+  )
+  return []
 }
 
 /**
