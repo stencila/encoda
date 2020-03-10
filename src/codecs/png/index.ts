@@ -37,9 +37,7 @@ export class PngCodec extends Codec implements Codec {
    *
    * @override {@link Codec.decode}
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<schema.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     let filePath = file.path
     if (filePath === undefined) {
       filePath = tempy.file({ extension: 'png' })

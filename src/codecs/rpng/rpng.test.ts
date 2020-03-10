@@ -1,6 +1,13 @@
 import fs from 'fs-extra'
-import { pythonCodeChunk, rCodeExpression, rCodeExpressionNoOutput } from '../../__fixtures__/code/kitchen-sink'
-import { asciimathFragment, texBlock } from '../../__fixtures__/math/kitchen-sink'
+import {
+  pythonCodeChunk,
+  rCodeExpression,
+  rCodeExpressionNoOutput
+} from '../../__fixtures__/code/kitchen-sink'
+import {
+  asciimathFragment,
+  texBlock
+} from '../../__fixtures__/math/kitchen-sink'
 import { snapshot } from '../../__tests__/helpers'
 import { extract, has, insert, RpngCodec } from './'
 
@@ -45,21 +52,23 @@ describe('encode+decode', () => {
 })
 
 test('insert, has, extract', async () => {
-  let image = await fs.readFile(rpngPath)
   const keyword = 'MyTextChunkKeyword'
   const content = 'Some content'
 
+  let image = await fs.readFile(rpngPath)
   image = insert(keyword, content, image)
   expect(has(keyword, image)).toBe(true)
   expect(extract(keyword, image)).toEqual(content)
 })
 
-test('encoding of extended character sets', async () => {
-  let image = await fs.readFile(rpngPath)
+describe('encoding of extended character sets', () => {
   const keyword = 'MyExtendedCharChunkKeyword'
   const content = 'An emoji: 🎉'
 
-  image = insert(keyword, content, image)
-  expect(has(keyword, image)).toBe(true)
-  expect(extract(keyword, image)).toEqual(content)
+  test.each(['tEXt', 'zTXt'])('%s', async type => {
+    let image = await fs.readFile(rpngPath)
+    image = insert(keyword, content, image, type as 'tEXt' | 'zTXt')
+    expect(has(keyword, image)).toBe(true)
+    expect(extract(keyword, image)).toEqual(content)
+  })
 })

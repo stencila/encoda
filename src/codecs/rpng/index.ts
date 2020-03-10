@@ -8,6 +8,7 @@ import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
+import zlib from 'zlib'
 import * as vfile from '../../util/vfile'
 import { PngCodec } from '../png'
 import { Codec, CommonEncodeOptions } from '../types'
@@ -128,7 +129,7 @@ export class RpngCodec extends Codec implements Codec {
     })
     const buffer = await vfile.dump(png, 'buffer')
 
-    // Insert the node as JSON-LD into a `zTXt` chunk
+    // Insert the node as JSON-LD into a chunk
     const json = JSON.stringify(node)
     const image = insert(KEYWORD, json, buffer)
 
@@ -147,11 +148,13 @@ export function find(
   chunks: Chunk[]
 ): [number, string | undefined] {
   let index = 0
-  for (const chunk of chunks) {
-    if (chunk.name === 'tEXt') {
-      const entry = pngText.decode(chunk.data)
+  for (const { name, data } of chunks) {
+    if (name === 'tEXt' || name === 'zTXt') {
+      const entry = name === 'tEXt' ? pngText.decode(data) : ztxtDecode(data)
       if (entry.keyword === keyword) {
-        return [index, Buffer.from(entry.text, 'base64').toString('utf8')]
+        const buffer = Buffer.from(entry.text, 'base64')
+        const value = name === 'tEXt' ? buffer : zlib.inflateSync(buffer)
+        return [index, value.toString('utf8')]
       }
     }
     index += 1
@@ -190,15 +193,65 @@ export function extract(keyword: string, image: Buffer): string {
  * @param keyword The keyword for the text chunk
  * @param text The text to insert
  * @param image The image to insert into
+ * @param type The type of chunk to insert
  */
-export function insert(keyword: string, text: string, image: Buffer): Buffer {
+export function insert(
+  keyword: string,
+  text: string,
+  image: Buffer,
+  type: 'tEXt' | 'zTXt' = 'zTXt'
+): Buffer {
   const chunks: Chunk[] = pngExtract(image)
   const [index, current] = find(keyword, chunks)
   if (current !== undefined) chunks.splice(index, 1)
-  const chunk = pngText.encode(
-    keyword,
-    Buffer.from(text, 'utf8').toString('base64')
-  )
+  const chunk =
+    type === 'tEXt'
+      ? pngText.encode(keyword, Buffer.from(text, 'utf8').toString('base64'))
+      : ztxtEncode(keyword, zlib.deflateSync(text).toString('base64'))
   chunks.splice(-1, 0, chunk)
   return Buffer.from(pngEncode(chunks))
+}
+
+/**
+ * Encode a PNG `zTXt` chunk.
+ */
+function ztxtEncode(
+  keyword: string,
+  content: string
+): {
+  name: string
+  data: Buffer
+} {
+  return {
+    name: 'zTXt',
+    data: Buffer.concat([
+      Buffer.from(keyword, 'utf8'),
+      Buffer.alloc(2), // separator and compression
+      Buffer.from(content, 'utf8')
+    ])
+  }
+}
+
+/**
+ * Decode PNG `zTXt` chunk data.
+ */
+function ztxtDecode(data: Uint8Array | Buffer) {
+  let section = 0
+  let text = ''
+  let keyword = ''
+
+  for (const code of data) {
+    if (section === 0) {
+      if (code !== 0) keyword += String.fromCharCode(code)
+      else section = 1
+    } else if (section === 1) {
+      // 1==separator 2==compression
+      section = 2
+    } else {
+      if (code !== 0) text += String.fromCharCode(code)
+      else throw new Error('0x00 character is not permitted in xTXt content')
+    }
+  }
+
+  return { keyword, text }
 }
