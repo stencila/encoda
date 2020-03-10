@@ -69,6 +69,29 @@ export class RpngCodec extends Codec implements Codec {
   }
 
   /**
+   * Sniff and decode a RPNG to a Stencila node.
+   *
+   * This is combined the `sniff` and `decode` methods,
+   * which is more efficient if both operations are needed
+   * because the image does not need to be read twice.
+   *
+   * @param source The source to sniff (a file path)
+   * @returns The Stencila node if any, `undefined` otherwise
+   */
+  public readonly sniffDecode = async (
+    source: string
+  ): Promise<stencila.Node | undefined> => {
+    if (path.extname(source) === '.png') {
+      if (await fs.pathExists(source)) {
+        const image = await fs.readFile(source)
+        const chunks: Chunk[] = pngExtract(image)
+        const jsonLd = find(KEYWORD, chunks)[1]
+        if (jsonLd !== undefined) return await jsonLdCodec.load(jsonLd)
+      }
+    }
+  }
+
+  /**
    * Encode a Stencila node to a RPNG.
    *
    * @param node The Stencila node to encode
