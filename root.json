@@ -379,6 +379,21 @@
             },
             {
               "type": "Collection",
+              "name": "mathml",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "MathML codec",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
               "name": "md",
               "parts": [
                 {
@@ -536,6 +551,21 @@
                   "type": "Article",
                   "name": "README",
                   "title": "TDP: Tabular Data Package",
+                  "meta": {
+                    "depth": 3,
+                    "main": true
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Collection",
+              "name": "tex",
+              "parts": [
+                {
+                  "type": "Article",
+                  "name": "README",
+                  "title": "TeX codec",
                   "meta": {
                     "depth": 3,
                     "main": true
