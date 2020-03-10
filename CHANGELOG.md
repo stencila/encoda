@@ -1,3 +1,29 @@
+# [0.89.0](https://github.com/stencila/encoda/compare/v0.88.2...v0.89.0) (2020-03-10)
+
+
+### Bug Fixes
+
+* Merging and formatting ([9e50fe0](https://github.com/stencila/encoda/commit/9e50fe0c31894119563917c08f7fc177d3ad5edb))
+* **DAR:** Specify isStandalone ([87bce99](https://github.com/stencila/encoda/commit/87bce99bd3767c810771bc56257d6b33656b33a8))
+* **Dockerfile:** Add package patches to postinstall step ([162ccfa](https://github.com/stencila/encoda/commit/162ccfaf4e5d085e043b395eeac63c01d12a52bb))
+* **JATS:** Allow encoding of an article as a fragment ([28b5878](https://github.com/stencila/encoda/commit/28b587815f72a164fc8f7c5e9e72e046f5b2d162)), closes [#178](https://github.com/stencila/encoda/issues/178)
+* **JATS:** Encoding of primitives ([46ad634](https://github.com/stencila/encoda/commit/46ad634b477363d4078343c8bd819400043efee7))
+* **JATS:** Improve encoding of math nodes ([9d654d0](https://github.com/stencila/encoda/commit/9d654d0798f2a46f7429c40a139e968b98de012e))
+* **Markdown:** Add encoding of math nodes ([bc9aca4](https://github.com/stencila/encoda/commit/bc9aca4182c40ed14d1011526491c75641613f0a))
+* **Pandoc:** Encode Math nodes usng TeX ([cac6315](https://github.com/stencila/encoda/commit/cac631552acc043d7948eb690332c3adc8c040f2))
+* **Pandoc:** Warn if math language is not TeX ([0d1c397](https://github.com/stencila/encoda/commit/0d1c3979988e517edd7196bc48723341470a7d70))
+* **TeX:** Allow for namespace ie. <math> and <mml:math> ([3e6a165](https://github.com/stencila/encoda/commit/3e6a1653a99bd1c8c42310b36a1f51df5e6096e9))
+* **TeX:** Use pre-compiled mmltex.xsl file ([2bf6aed](https://github.com/stencila/encoda/commit/2bf6aed5d4f583f0e552fb230452da49576c7fc0))
+* **XSLT:** Allow for multiple namespaces ([770dff7](https://github.com/stencila/encoda/commit/770dff7263e82f4840240dd50116d0941bd00a34))
+
+
+### Features
+
+* **Markdown:** Add parsing of math ([a0688bf](https://github.com/stencila/encoda/commit/a0688bffb16f1fbd8d66431c3834042c720f6598)), closes [#27](https://github.com/stencila/encoda/issues/27)
+* **MathML:** Add MathML codec ([1323e23](https://github.com/stencila/encoda/commit/1323e23604ef62d0c2c2ccadb688e32d56cc4b82))
+* **TeX:** Add TeX codec for converting math nodes ([16d3a8c](https://github.com/stencila/encoda/commit/16d3a8ca98cd0d3df12fa46f959c7343f0cfb8bb))
+* **XSLT:** Add XSLT utility module ([63174ae](https://github.com/stencila/encoda/commit/63174ae91a7ddd017166d261f5a2b1dd81664dfb))
+
 ## [0.88.2](https://github.com/stencila/encoda/compare/v0.88.1...v0.88.2) (2020-03-06)
 
 
