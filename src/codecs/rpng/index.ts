@@ -27,28 +27,38 @@ import punycode from 'punycode'
 import { dump } from '../../index'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
-import { Codec, CommonEncodeOptions } from '../types'
+import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
+import { PngCodec } from '../png'
 
 /**
  * The keyword to use for the PNG chunk containing the JSON
  */
 const KEYWORD = 'JSON'
 
-export class RPNGCodec extends Codec implements Codec {
-  // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
-  public readonly mediaTypes = ['vnd.stencila.rpng']
+export class RpngCodec extends PngCodec implements Codec {
 
+  /**
+   * @override Overrides {@link PngCodec.mediaTypes} to provide
+   * a vendor media type similar to [image/vnd.mozilla.apng](https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng)
+   * for example.
+   */
+  public readonly mediaTypes = ['image/vnd.stencila.rpng']
+
+  /**
+   * @override Overrides {@link PngCodec.extNames} to provide
+   * an extension name to match files with this codec.
+   */
   public readonly extNames = ['rpng']
 
   /**
-   * Sniff a PNG file to see if it is an rPNG
+   * Sniff a PNG file to see if it is an RPNG
    *
-   * @param content The content to sniff (a file path)
+   * @param source The source to sniff (a file path)
    */
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    if (path.extname(content) === '.png') {
-      if (await fs.pathExists(content)) {
-        const contents = await fs.readFile(content)
+  public readonly sniff = async (source: string): Promise<boolean> => {
+    if (path.extname(source) === '.png') {
+      if (await fs.pathExists(source)) {
+        const contents = await fs.readFile(source)
         return has(KEYWORD, contents)
       }
     }
@@ -60,12 +70,12 @@ export class RPNGCodec extends Codec implements Codec {
    *
    * @see sniff
    *
-   * @param content The content to sniff (a file path)
+   * @param source The source to sniff (a file path)
    */
-  public sniffSync = (content: string): boolean => {
-    if (path.extname(content) === '.png') {
-      if (fs.existsSync(content)) {
-        const contents = fs.readFileSync(content)
+  public sniffSync = (source: string): boolean => {
+    if (path.extname(source) === '.png') {
+      if (fs.existsSync(source)) {
+        const contents = fs.readFileSync(source)
         return has(KEYWORD, contents)
       }
     }
@@ -82,7 +92,8 @@ export class RPNGCodec extends Codec implements Codec {
    * @returns The Stencila node
    */
   public readonly decode = async (
-    file: vfile.VFile
+    file: vfile.VFile,
+    options: CommonDecodeOptions = this.commonDecodeDefaults
   ): Promise<stencila.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
     return this.decodeSync(buffer)

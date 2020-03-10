@@ -40,7 +40,7 @@ export class PngCodec extends Codec implements Codec {
   public readonly decode = async (
     file: vfile.VFile,
     options: DecodeOptions = this.commonDecodeDefaults
-  ): Promise<schema.ImageObject> => {
+  ): Promise<schema.Node> => {
     // TODO: Sniff the content of the file to detect if it is a RPNG
     let filePath = file.path
     if (filePath === undefined) {

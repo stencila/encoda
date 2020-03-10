@@ -26,7 +26,7 @@ import { ensureBlockContent } from '../../util/content/ensureBlockContent'
 import * as vfile from '../../util/vfile'
 import transform from '../../util/transform'
 import { encodeCsl } from '../csl'
-import { RPNGCodec } from '../rpng'
+import { RpngCodec } from '../rpng'
 import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
 import {
@@ -38,7 +38,7 @@ import {
 import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
 
-const rpngCodec = new RPNGCodec()
+const rpngCodec = new RpngCodec()
 const texCodec = new TexCodec()
 
 export { InputFormat, OutputFormat } from './types'
