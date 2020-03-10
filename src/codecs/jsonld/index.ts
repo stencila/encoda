@@ -4,15 +4,14 @@
 
 import { getLogger } from '@stencila/logga'
 import * as stencila from '@stencila/schema'
-import fs from 'fs-extra'
 import jsonld from 'jsonld'
-import path from 'path'
 import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
 import orderProperties from '../../util/orderProperties'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
+import { jsonLdContext, jsonLdUrl } from '@stencila/schema'
 
 const log = getLogger('encoda:jsonld')
 
@@ -65,28 +64,17 @@ export class JsonLdCodec extends Codec implements Codec {
 
   public readonly extNames = ['jsonld']
 
-  private static context: { [key: string]: any } = {}
-
   public readonly decode = async (
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const content = await vfile.dump(file)
     const data = JSON.parse(content)
 
-    // Load the Stencila JSON-LD context if necessary
-    if (Object.keys(JsonLdCodec.context).length === 0) {
-      const location = path.join(
-        path.dirname(require.resolve('@stencila/schema')),
-        'stencila.jsonld'
-      )
-      JsonLdCodec.context = await fs.readJSON(location)
-    }
-
     // Expand the data (thereby removing it's context) and then compact it
     // using the Stencila `@context` (thereby changing property names
     // and types to those in the schema).
     const expanded = await jsonld.expand(data, { documentLoader })
-    const compacted = await jsonld.compact(expanded, JsonLdCodec.context, {
+    const compacted = await jsonld.compact(expanded, jsonLdContext(), {
       documentLoader
     })
 
@@ -131,7 +119,7 @@ export class JsonLdCodec extends Codec implements Codec {
   /**
    * @implements {@link Codec.decode}
    *
-   * @details For `Entity` nodes will order properties as is done by
+   * @details For `Entity` nodes this function will order properties as is done by
    * similar codecs e.g. `json`, `yaml`. Wraps primitive nodes into
    * a https://schema.org/PropertyValue.
    */
@@ -145,7 +133,7 @@ export class JsonLdCodec extends Codec implements Codec {
 
     const jsonld = JSON.stringify(
       {
-        '@context': 'http://schema.stenci.la',
+        '@context': jsonLdUrl(),
         ...content
       },
       null,
