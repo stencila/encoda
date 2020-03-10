@@ -1248,15 +1248,23 @@ function encodeNode(node: stencila.Node, state: EncodeState): xml.Element[] {
       return encodeMedia(node as stencila.ImageObject, 'media')
     case 'Cite':
       return encodeCite(node as stencila.Cite, state)
-    case 'Text':
-      return [{ type: 'text', text: node as string }]
     case 'Collection': {
       const collection = node as stencila.Collection
       if (collection.meta && collection.meta.usage === 'figGroup') {
         return encodeFigGroup(collection, state)
       }
+      // fallthrough expected if not a figGroup
     }
-    // fallthrough expected if not a figGroup
+
+    case 'Null':
+    case 'Boolean':
+    case 'Number':
+    case 'Array':
+    case 'Object':
+      return [{ type: 'text', text: JSON.stringify(node) }]
+    case 'Text':
+      return [{ type: 'text', text: node as string }]
+
     default:
       log.warn(
         `Unhandled node type when encoding to JATS: "${stencila.nodeType(
