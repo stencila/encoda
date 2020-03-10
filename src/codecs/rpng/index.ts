@@ -2,16 +2,6 @@
  * @module rpng
  */
 
-/**
- * Hello contributor 👋! If you are working on this file, please
- * endeavor to remove the need for the following `eslint-disable` line 🙏.
- * Remove the line and run `npx eslint path/to/this/file.ts` to
- * see which code needs some linting ❤️.
- * See https://github.com/stencila/encoda/issues/199 for suggestions
- * on how to refactor code to avoid non-strict boolean expressions.
- */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-
 import * as stencila from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
@@ -25,8 +15,8 @@ import pngExtract, { Chunk } from 'png-chunks-extract'
 // eslint-disable-next-line node/no-deprecated-api
 import punycode from 'punycode'
 import * as vfile from '../../util/vfile'
-import { Codec, CommonEncodeOptions, CommonDecodeOptions } from '../types'
 import { PngCodec } from '../png'
+import { Codec, CommonEncodeOptions } from '../types'
 
 /**
  * The keyword to use for the PNG chunk containing the JSON-LD
@@ -89,8 +79,7 @@ export class RpngCodec extends Codec implements Codec {
    * @returns The Stencila node
    */
   public readonly decode = async (
-    file: vfile.VFile,
-    options: CommonDecodeOptions = this.commonDecodeDefaults
+    file: vfile.VFile
   ): Promise<stencila.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
     return this.decodeSync(buffer)
@@ -122,7 +111,7 @@ export class RpngCodec extends Codec implements Codec {
         const image = fs.readFileSync(filePath)
         const chunks: Chunk[] = pngExtract(image)
         const [h, json] = find(KEYWORD, chunks)
-        if (json) return JSON.parse(json)
+        if (json !== undefined) return JSON.parse(json)
       }
     }
   }
@@ -184,8 +173,8 @@ export function find(
  */
 export function has(keyword: string, image: Buffer): boolean {
   const chunks: Chunk[] = pngExtract(image)
-  const [h, text] = find(keyword, chunks)
-  return !!text
+  const text = find(keyword, chunks)[1]
+  return text !== undefined
 }
 
 /**
@@ -196,8 +185,8 @@ export function has(keyword: string, image: Buffer): boolean {
  */
 export function extract(keyword: string, image: Buffer): string {
   const chunks: Chunk[] = pngExtract(image)
-  const [h, text] = find(keyword, chunks)
-  if (!text) throw Error('No chunk found')
+  const text = find(keyword, chunks)[1]
+  if (text === undefined) throw Error('No chunk found')
   return text
 }
 
@@ -211,7 +200,7 @@ export function extract(keyword: string, image: Buffer): string {
 export function insert(keyword: string, text: string, image: Buffer): Buffer {
   const chunks: Chunk[] = pngExtract(image)
   const [index, current] = find(keyword, chunks)
-  if (current) chunks.splice(index, 1)
+  if (current !== undefined) chunks.splice(index, 1)
   const chunk = pngText.encode(keyword, punycode.encode(text))
   chunks.splice(-1, 0, chunk)
   return Buffer.from(pngEncode(chunks))

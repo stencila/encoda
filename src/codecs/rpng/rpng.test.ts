@@ -1,15 +1,8 @@
 import fs from 'fs-extra'
-import { extract, has, insert, RpngCodec } from './'
+import { pythonCodeChunk, rCodeExpression, rCodeExpressionNoOutput } from '../../__fixtures__/code/kitchen-sink'
+import { asciimathFragment, texBlock } from '../../__fixtures__/math/kitchen-sink'
 import { snapshot } from '../../__tests__/helpers'
-import {
-  asciimathFragment,
-  texBlock
-} from '../../__fixtures__/math/kitchen-sink'
-import {
-  rCodeExpression,
-  rCodeExpressionNoOutput,
-  pythonCodeChunk
-} from '../../__fixtures__/code/kitchen-sink'
+import { extract, has, insert, RpngCodec } from './'
 
 const rpngCodec = new RpngCodec()
 
@@ -28,6 +21,13 @@ test('sniff', async () => {
 
   expect(rpngCodec.sniffSync(rpngPath)).toBe(true)
   expect(rpngCodec.sniffSync('/some/file.zip')).toBe(false)
+})
+
+test('sniffDecodeSync', async () => {
+  expect(await rpngCodec.sniffDecodeSync(rpngPath)).toEqual({
+    type: 'Paragraph',
+    content: ['Hello world']
+  })
 })
 
 describe('encode+decode', () => {
