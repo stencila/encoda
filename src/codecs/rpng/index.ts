@@ -10,6 +10,7 @@ import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import zlib from 'zlib'
 import * as vfile from '../../util/vfile'
+import { JsonLdCodec } from '../jsonld'
 import { PngCodec } from '../png'
 import { Codec, CommonEncodeOptions } from '../types'
 
@@ -17,6 +18,9 @@ import { Codec, CommonEncodeOptions } from '../types'
  * The keyword to use for the PNG chunk containing the JSON-LD
  */
 const KEYWORD = 'JSON-LD'
+
+const jsonLdCodec = new JsonLdCodec()
+const pngCodec = new PngCodec()
 
 export class RpngCodec extends Codec implements Codec {
   /**
@@ -48,23 +52,6 @@ export class RpngCodec extends Codec implements Codec {
   }
 
   /**
-   * Synchronous version of `sniff()`.
-   *
-   * @see sniff
-   *
-   * @param source The source to sniff (a file path)
-   */
-  public sniffSync = (source: string): boolean => {
-    if (path.extname(source) === '.png') {
-      if (fs.existsSync(source)) {
-        const contents = fs.readFileSync(source)
-        return has(KEYWORD, contents)
-      }
-    }
-    return false
-  }
-
-  /**
    * Decode a RPNG to a Stencila node.
    *
    * This is done by extracting the JSON
@@ -77,38 +64,8 @@ export class RpngCodec extends Codec implements Codec {
     file: vfile.VFile
   ): Promise<stencila.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
-    return this.decodeSync(buffer)
-  }
-
-  /**
-   * Synchronous version of `decode()`.
-   *
-   * @see decode
-   *
-   * @param content The content to sniff (a file path).
-   */
-  public decodeSync = (buffer: Buffer): stencila.Node => {
-    const json = extract(KEYWORD, buffer)
-    return JSON.parse(json)
-  }
-
-  /**
-   * Sniff and decode a file if it is a RPNG.
-   *
-   * This function is like combining `sniffSync()` and `decodeSync()`
-   * but is faster because it only reads the file contents once.
-   *
-   * @param filePath The file path to sniff.
-   */
-  public sniffDecodeSync = (filePath: string): stencila.Node | undefined => {
-    if (path.extname(filePath) === '.png') {
-      if (fs.existsSync(filePath)) {
-        const image = fs.readFileSync(filePath)
-        const chunks: Chunk[] = pngExtract(image)
-        const [h, json] = find(KEYWORD, chunks)
-        if (json !== undefined) return JSON.parse(json)
-      }
-    }
+    const jsonLd = extract(KEYWORD, buffer)
+    return await jsonLdCodec.load(jsonLd)
   }
 
   /**
@@ -122,7 +79,6 @@ export class RpngCodec extends Codec implements Codec {
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
     // Generate the PNG and get it as a `Buffer`
-    const pngCodec = new PngCodec()
     const png = await pngCodec.encode(node, {
       ...options,
       theme: 'rpng'
@@ -130,8 +86,8 @@ export class RpngCodec extends Codec implements Codec {
     const buffer = await vfile.dump(png, 'buffer')
 
     // Insert the node as JSON-LD into a chunk
-    const json = JSON.stringify(node)
-    const image = insert(KEYWORD, json, buffer)
+    const jsonLd = await jsonLdCodec.dump(node)
+    const image = insert(KEYWORD, jsonLd, buffer)
 
     return vfile.load(image)
   }

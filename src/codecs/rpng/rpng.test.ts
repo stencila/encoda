@@ -25,16 +25,6 @@ beforeAll(async () => {
 test('sniff', async () => {
   expect(await rpngCodec.sniff(rpngPath)).toBe(true)
   expect(await rpngCodec.sniff('/some/file.zip')).toBe(false)
-
-  expect(rpngCodec.sniffSync(rpngPath)).toBe(true)
-  expect(rpngCodec.sniffSync('/some/file.zip')).toBe(false)
-})
-
-test('sniffDecodeSync', async () => {
-  expect(await rpngCodec.sniffDecodeSync(rpngPath)).toEqual({
-    type: 'Paragraph',
-    content: ['Hello world']
-  })
 })
 
 describe('encode+decode', () => {
@@ -51,18 +41,8 @@ describe('encode+decode', () => {
   })
 })
 
-test('insert, has, extract', async () => {
-  const keyword = 'MyTextChunkKeyword'
-  const content = 'Some content'
-
-  let image = await fs.readFile(rpngPath)
-  image = insert(keyword, content, image)
-  expect(has(keyword, image)).toBe(true)
-  expect(extract(keyword, image)).toEqual(content)
-})
-
 describe('encoding of extended character sets', () => {
-  const keyword = 'MyExtendedCharChunkKeyword'
+  const keyword = 'MyChunkKeyword'
   const content = 'An emoji: 🎉'
 
   test.each(['tEXt', 'zTXt'])('%s', async type => {
