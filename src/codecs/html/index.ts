@@ -11,12 +11,12 @@ import {
   isCreativeWork,
   isInlineContent,
   markTypes,
-  nodeType,
-  thematicBreak,
   microdata,
-  microdataType,
   microdataItemtype,
-  microdataRoot
+  microdataRoot,
+  microdataType,
+  nodeType,
+  thematicBreak
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import collapse from 'collapse-whitespace'
@@ -34,12 +34,10 @@ import { VFileContents } from 'vfile'
 import { columnIndexToName } from '../../codecs/xlsx'
 import { logWarnLossIfAny } from '../../log'
 import { isDefined } from '../../util'
-import bundle from '../../util/bundle'
-import { TxtCodec } from '../txt'
 import { getThemeAssets } from '../../util/html'
-import { toFiles } from '../../util/toFiles'
 import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
+import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
 
 export const stencilaItemType = 'data-itemtype'
@@ -246,7 +244,7 @@ export class HTMLCodec extends Codec implements Codec {
     node: stencila.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    const { filePath, isStandalone, isBundle, theme } = {
+    const { isStandalone, isBundle, theme } = {
       ...this.commonEncodeDefaults,
       ...options
     }
@@ -257,14 +255,10 @@ export class HTMLCodec extends Codec implements Codec {
 
     mathJaxInit()
 
-    const nodeToEncode = isBundle
-      ? await bundle(node)
-      : await toFiles(node, filePath, ['data', 'file'])
-
-    const fragment = Array.isArray(nodeToEncode)
-    let dom = Array.isArray(nodeToEncode)
-      ? h('div', encodeNodes(nodeToEncode))
-      : (encodeNode(nodeToEncode) as HTMLElement)
+    const fragment = Array.isArray(node)
+    let dom = Array.isArray(node)
+      ? h('div', encodeNodes(node))
+      : (encodeNode(node) as HTMLElement)
 
     const [name, value] = Object.entries(microdataRoot())[0]
     dom.setAttribute(name, value as string)
@@ -272,7 +266,7 @@ export class HTMLCodec extends Codec implements Codec {
     const mathjaxCss = await mathJaxFinish()
 
     if (isStandalone) {
-      const { title = 'Untitled' } = getArticleMetaData(nodeToEncode)
+      const { title = 'Untitled' } = getArticleMetaData(node)
       dom = await generateHtmlElement(
         TxtCodec.stringify(title),
         [dom],

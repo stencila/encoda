@@ -1,6 +1,6 @@
 import { PlosCodec } from '.'
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 import * as vfile from '../../util/vfile'
-import unlink from '../../util/unlink'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 
@@ -13,7 +13,7 @@ const plos2yaml = async (article: string) => {
   const node = await decode(await vfile.load(`10.1371/journal.${article}`))
   done()
   // Unlink to remove references to local files (which are non-deterministric)
-  const unlinked = unlink(node)
+  const unlinked = unlinkFiles(node)
   // Convert to YAML
   return await vfile.dump(await yaml.encode(unlinked))
 }
