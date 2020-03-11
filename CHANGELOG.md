@@ -1,3 +1,23 @@
+## [0.90.1](https://github.com/stencila/encoda/compare/v0.90.0...v0.90.1) (2020-03-11)
+
+
+### Bug Fixes
+
+* **Convert function:** Retain behaviour of returning string if no to path ([2e8a9ea](https://github.com/stencila/encoda/commit/2e8a9eaae0ad38cb2db3991b6de628927c9f2822))
+* **dependencies:** update dependency @stencila/executa to ^1.9.2 ([915b562](https://github.com/stencila/encoda/commit/915b562e381f65ce27c6336f5c02b0ae8e59499c))
+* **dependencies:** update dependency @stencila/schema to ^0.41.2 ([c60d8fb](https://github.com/stencila/encoda/commit/c60d8fbae4021c0aa9416ce9dce79d6508108345))
+* **dependencies:** update dependency @stencila/thema to ^1.14.1 ([80c8353](https://github.com/stencila/encoda/commit/80c8353a16eb3213deaccc2d1f8e4fa9c3c38481))
+* **dependencies:** update dependency citation-js to ^0.5.0-alpha.5 ([8e8fc0e](https://github.com/stencila/encoda/commit/8e8fc0ed48eea51bb4aad582ac734d55da5746ac))
+* **dependencies:** update dependency jsdom to ^16.2.1 ([05e1be0](https://github.com/stencila/encoda/commit/05e1be071a3e5a56f669ef1ad6e825017df5b5fe))
+* **dependencies:** update dependency minimist to ^1.2.3 ([5692dea](https://github.com/stencila/encoda/commit/5692dea00d3ba7b88959c23c462dc8697a98fa62))
+* **dependencies:** update dependency patch-package to ^6.2.1 ([5eeddf3](https://github.com/stencila/encoda/commit/5eeddf37b8f6bec3e6d9a39c5882e928be754a5d))
+* **dependencies:** update dependency pdf-lib to ^1.4.1 ([6fef1f5](https://github.com/stencila/encoda/commit/6fef1f5fdd82d1cd12f3b94b95bb0d6541af850b))
+* **dependencies:** update dependency tempy to ^0.5.0 ([5a8f137](https://github.com/stencila/encoda/commit/5a8f137d4f2bc092ccd265e11d9a81ee7af20366))
+* **Dependencies:** Changes to Thema and to-vfile versions ([4a39bbd](https://github.com/stencila/encoda/commit/4a39bbd0b335d184d227471fa789a5fb2e8f2130))
+* **JSON-LD:** Upgrade jsonld package and fix tests ([5b0f607](https://github.com/stencila/encoda/commit/5b0f6071c9c1c177222c082c4629079a7b37acbc))
+* **Package:** Include patches in package ([62ecf35](https://github.com/stencila/encoda/commit/62ecf35e8824f153cf79a1020ed7970fd29f12e6))
+* **Pandoc:** Pass on warnings and do not reject ([5c59927](https://github.com/stencila/encoda/commit/5c5992713487e7239b06505ca528f31179f37ee4))
+
 # [0.90.0](https://github.com/stencila/encoda/compare/v0.89.0...v0.90.0) (2020-03-11)
 
 
