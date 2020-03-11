@@ -194,7 +194,6 @@ export async function match(
   let message = 'No codec could be found'
   if (content !== undefined) message += ` for source "${content}"`
   if (format !== undefined) message += ` for format "${format}"`
-  console.log(fileName, extName, mediaType)
   message += '. Falling back to plain text codec.'
   log.warn(message)
 
@@ -328,10 +327,10 @@ export async function write<Options extends CommonEncodeOptions>(
 }
 
 interface ConvertOptions {
-  to?: string
   from?: string
-  encodeOptions?: CommonEncodeOptions
+  to?: string
   decodeOptions?: CommonDecodeOptions
+  encodeOptions?: CommonEncodeOptions
 }
 
 /**
@@ -347,19 +346,17 @@ export async function convert(
   outputPaths?: string | string[],
   options: ConvertOptions = {}
 ): Promise<string | undefined> {
-  let { to, from, encodeOptions, decodeOptions } = options
-
-  let outputPaths_: string[]
-  if (outputPaths === undefined) outputPaths_ = ['-']
-  else if (typeof outputPaths === 'string') outputPaths_ = [outputPaths]
-  else outputPaths_ = outputPaths
+  let { from, decodeOptions, to, encodeOptions } = options
 
   const node = await read(input, from, decodeOptions)
+
+  if (outputPaths === undefined) return dump(node, to ?? 'txt', encodeOptions)
+  else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
   const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
   const files: string[] = []
-  for (const outputPath of outputPaths_) {
+  for (const outputPath of outputPaths) {
     await write(node, outputPath, { format: to, ...encodeOptions })
 
     // Record files generated
@@ -380,12 +377,12 @@ export async function convert(
     // Return the path of the last output file,
     // or the zip file, if one was produced.
     index += 1
-    if (index === outputPaths_.length) {
+    if (index === outputPaths.length) {
       if (shouldZip === 'yes' || (files.length > 1 && shouldZip === 'maybe')) {
-        const first = outputPaths_[0]
+        const first = outputPaths[0]
         let zipName = 'output.zip'
         let outputDir = ''
-        if (outputPaths_.length === 1 && first !== undefined) {
+        if (outputPaths.length === 1 && first !== undefined) {
           const { dir, name } = path.parse(first)
           zipName = path.join(dir, name + '.zip')
           outputDir = dir
