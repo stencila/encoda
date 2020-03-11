@@ -1,68 +1,103 @@
-import fs from 'fs'
-import path from 'path'
-import { read } from '../../util/vfile'
-import { extract, has, insert, RPNGCodec } from './'
-import vfile = require('vfile')
+import fs from 'fs-extra'
+import {
+  pythonCodeChunk,
+  rCodeExpression,
+  rCodeExpressionNoOutput
+} from '../../__fixtures__/code/kitchen-sink'
+import {
+  asciimathFragment,
+  texBlock
+} from '../../__fixtures__/math/kitchen-sink'
+import { snapshot } from '../../__tests__/helpers'
+import { PngCodec } from '../png'
+import { extract, has, insert, RpngCodec } from './'
+import * as schema from '@stencila/schema'
 
-const { decode, decodeSync, encode, sniff, sniffSync } = new RPNGCodec()
+const pngCodec = new PngCodec()
+const rpngCodec = new RpngCodec()
 
-// TODO add additional test files
+const testNode = { type: 'Paragraph', content: ['Hello world'] }
+const rpngPath = snapshot('hello-world.png')
+const pngPath = snapshot('hello-world-plain.png')
 
-// This PNG was generated from one of the other fixtures using:
-//   npx ts-node --files src/cli.ts tests/fixtures/paragraph/simple/simple.json --to rpng tests/fixtures/rpng/rpng.png
-const rpngPath = path.join(__dirname, '__fixtures__', 'rpng.png')
-// ... and this is the node for that fixture:
-const node = {
-  type: 'Article',
-  content: [
-    {
-      type: 'Paragraph',
-      content: ['The first paragraph.']
-    },
-    {
-      type: 'Paragraph',
-      content: [
-        'The second paragraph which is longer. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-      ]
-    }
-  ]
-}
+beforeAll(async () => {
+  await rpngCodec.write(testNode, rpngPath)
+  await pngCodec.write(testNode, pngPath)
+})
 
 test('sniff', async () => {
-  expect(await sniff(rpngPath)).toBe(true)
-  expect(await sniff('/some/file.zip')).toBe(false)
-
-  expect(sniffSync(rpngPath)).toBe(true)
-  expect(sniffSync('/some/file.zip')).toBe(false)
+  expect(await rpngCodec.sniff(rpngPath)).toBe(true)
+  expect(await rpngCodec.sniff(pngPath)).toBe(false)
+  expect(await rpngCodec.sniff('/some/file.zip')).toBe(false)
 })
 
-test('decode', async () => {
-  const file = await read(rpngPath)
-  expect(await decode(file)).toEqual(node)
+test('sniffDecode', async () => {
+  expect(await rpngCodec.sniffDecode(rpngPath)).toEqual(testNode)
+  expect(await rpngCodec.sniffDecode(pngPath)).toEqual(undefined)
+  expect(await rpngCodec.sniffDecode('/some/file.zip')).toEqual(undefined)
 })
 
-test('encode', async () => {
-  const file = await encode(node)
-  expect(file).toBeInstanceOf(vfile)
-  expect(await decode(file)).toEqual(node)
+describe('encode+decode', () => {
+  test.each([
+    ['asciimath-fragment', asciimathFragment],
+    ['tex-block', texBlock],
+    ['r-code-expression', rCodeExpression],
+    ['r-code-expression-no-output', rCodeExpressionNoOutput],
+    ['python-code-chunk', pythonCodeChunk]
+  ])('%s', async (name, node) => {
+    const file = snapshot(name + '.png')
+    await rpngCodec.write(node, file)
+    expect(await rpngCodec.read(file)).toEqual(node)
+  })
+
+  test('Paragraph with an ImageObject pointing to local file', async () => {
+    const inp = schema.paragraph({
+      content: [
+        'Here is an image: ',
+        schema.imageObject({
+          contentUrl: pngPath
+        }),
+        '.'
+      ]
+    })
+    const file = await rpngCodec.encode(inp)
+
+    const out = await rpngCodec.decode(file) as schema.Paragraph
+    expect(schema.isA('Paragraph', out)).toBe(true)
+
+    const image = out.content?.[1] as schema.ImageObject
+    expect(schema.isA('ImageObject', image)).toBe(true)
+    expect(image.contentUrl).toMatch(/^data:image\/png;base64/)
+  })
+
+  test('CodeChunk with a single image output', async () => {
+    const inp = schema.codeChunk({
+      text: 'plot(1,1)',
+      outputs: [
+        schema.imageObject({
+          contentUrl: pngPath
+        })
+      ]
+    })
+    const file = await rpngCodec.encode(inp)
+
+    const out = await rpngCodec.decode(file) as schema.CodeChunk
+    expect(schema.isA('CodeChunk', out)).toBe(true)
+
+    const image = out.outputs?.[0] as schema.ImageObject
+    expect(schema.isA('ImageObject', image)).toBe(true)
+    expect(image.contentUrl).toMatch(/^data:image\/png;base64/)
+  })
 })
 
-test('insert, has, extract', () => {
-  let image = fs.readFileSync(rpngPath)
-  const keyword = 'MyTextChunkKeyword'
-  const content = 'Some content'
-
-  image = insert(keyword, content, image)
-  expect(has(keyword, image)).toBe(true)
-  expect(extract(keyword, image)).toEqual(content)
-})
-
-test('encoding of extended character sets', () => {
-  let image = fs.readFileSync(rpngPath)
-  const keyword = 'MyExtendedCharChunkKeyword'
+describe('encoding of extended character sets', () => {
+  const keyword = 'MyChunkKeyword'
   const content = 'An emoji: 🎉'
 
-  image = insert(keyword, content, image)
-  expect(has(keyword, image)).toBe(true)
-  expect(extract(keyword, image)).toEqual(content)
+  test.each(['tEXt', 'zTXt'])('%s', async type => {
+    let image = await fs.readFile(rpngPath)
+    image = insert(content, image, keyword, type as 'tEXt' | 'zTXt')
+    expect(has(image, keyword)).toBe(true)
+    expect(extract(image, keyword)).toEqual(content)
+  })
 })

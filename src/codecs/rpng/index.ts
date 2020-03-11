@@ -2,174 +2,59 @@
  * @module rpng
  */
 
-/**
- * Hello contributor 👋! If you are working on this file, please
- * endeavor to remove the need for the following `eslint-disable` line 🙏.
- * Remove the line and run `npx eslint path/to/this/file.ts` to
- * see which code needs some linting ❤️.
- * See https://github.com/stencila/encoda/issues/199 for suggestions
- * on how to refactor code to avoid non-strict boolean expressions.
- */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-
-import * as stencila from '@stencila/schema'
+import * as schema from '@stencila/schema'
 import fs from 'fs-extra'
 import path from 'path'
 import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
-// Node.js built-in punycore is deprecated.
-// However, if we add a trailing slash below to import the userland version as suggested at
-// https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md
-// `pkg` has problems resolving the module. So instead we ignore eslint complaint:
-// eslint-disable-next-line node/no-deprecated-api
-import punycode from 'punycode'
-import { dump } from '../../index'
-import * as puppeteer from '../../util/puppeteer'
+import zlib from 'zlib'
+import bundle from '../../util/bundle'
+import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
+import { JsonLdCodec } from '../jsonld'
+import { PngCodec } from '../png'
 import { Codec, CommonEncodeOptions } from '../types'
 
 /**
- * Styling to be applied to a node's HTML fragment
- * when generating the rPNG.
- *
- * This is decoupled from any themes because rPNGs are usually
- * used in a context where themes do not apply e.g. in a `docx` file.
- *
- * Currently, rather than try to do some fancy CSS module loading,
- * we just copy and paste this file in here.
+ * The keyword to use for the PNG chunk containing the JSON-LD
  */
-const encodeCss = `
-:root {
-  /* --color-neutral: ; */
-  --color-neutral-100: #f7fafc;
-  --color-neutral-300: #e2e8f0;
-}
+const KEYWORD = 'JSON-LD'
 
-#target {
-  display: inline-block;
-  font-family: monospace;
-  font-size: 11pt;
-  line-height: 150%;
-  color: #333;
-  padding: 1px;
-}
+const jsonLdCodec = new JsonLdCodec()
+const pngCodec = new PngCodec()
 
-stencila-code-chunk,
-stencila-code-expression {
-  display: inline-block;
-  background: var(--color-neutral-100);
-  border: 1px solid var(--color-neutral-300);
-  border-radius: 0.25rem;
-}
+export class RpngCodec extends Codec implements Codec {
+  /**
+   * @override Overrides {@link PngCodec.mediaTypes} to provide
+   * a vendor media type similar to [image/vnd.mozilla.apng](https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng)
+   * for example.
+   */
+  public readonly mediaTypes = ['image/vnd.stencila.rpng']
 
-stencila-code-chunk,
-stencila-code-expression {
-  min-width: 1em;
-  min-height: 1em;
-}
-
-stencila-code-chunk [slot='text'],
-stencila-code-expression [slot='text'] {
-  display: none;
-}
-
-stencila-code-chunk [slot='outputs'] {
-  margin: 1em;
-}
-
-stencila-code-chunk [slot='outputs'] * {
-  margin: 1em auto;
-}
-
-stencila-code-chunk::before,
-stencila-code-expression::before {
-  content: 'code';
-  color: transparent;
-  height: 2em;
-  position: relative;
-  left: 0.5em;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  text-transform: uppercase;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(29, 100, 243)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-code'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-stencila-code-chunk::before {
-  top: 0.5em;
-  left: 1em;
-  padding-right: 0.5rem;
-}
-
-stencila-code-expression [slot='output'] {
-  display: inline-block;
-  margin: 0.1em 0.5em 0.1em auto;
-}
-
-table {
-  border: 1px solid grey;
-  border-collapse: collapse;
-}
-
-table th {
-  color: #555;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-table th,
-table td {
-  padding: 0.5em;
-  border: 1px solid lightgrey;
-}
-`
-
-/**
- * The keyword to use for the PNG chunk containing the JSON
- */
-const KEYWORD = 'JSON'
-
-export class RPNGCodec extends Codec implements Codec {
-  // A vendor media type similar to https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng
-  public readonly mediaTypes = ['vnd.stencila.rpng']
-
+  /**
+   * @override Overrides {@link PngCodec.extNames} to provide
+   * an extension name to match files with this codec.
+   */
   public readonly extNames = ['rpng']
 
   /**
-   * Sniff a PNG file to see if it is an rPNG
+   * Sniff a PNG file to see if it is an RPNG
    *
-   * @param content The content to sniff (a file path)
+   * @param source The source to sniff (a file path)
    */
-  public readonly sniff = async (content: string): Promise<boolean> => {
-    if (path.extname(content) === '.png') {
-      if (await fs.pathExists(content)) {
-        const contents = await fs.readFile(content)
-        return has(KEYWORD, contents)
+  public readonly sniff = async (source: string): Promise<boolean> => {
+    if (path.extname(source) === '.png') {
+      if (await fs.pathExists(source)) {
+        const contents = await fs.readFile(source)
+        return has(contents)
       }
     }
     return false
   }
 
   /**
-   * Synchronous version of `sniff()`.
-   *
-   * @see sniff
-   *
-   * @param content The content to sniff (a file path)
-   */
-  public sniffSync = (content: string): boolean => {
-    if (path.extname(content) === '.png') {
-      if (fs.existsSync(content)) {
-        const contents = fs.readFileSync(content)
-        return has(KEYWORD, contents)
-      }
-    }
-    return false
-  }
-
-  /**
-   * Decode a rPNG to a Stencila node.
+   * Decode a RPNG to a Stencila node.
    *
    * This is done by extracting the JSON
    * from the `tEXt` chunk and parsing it.
@@ -177,132 +62,131 @@ export class RPNGCodec extends Codec implements Codec {
    * @param file The `VFile` to decode
    * @returns The Stencila node
    */
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
-    return this.decodeSync(buffer)
+    const jsonLd = extract(buffer)
+    return decode(jsonLd, buffer)
   }
 
   /**
-   * Synchronous version of `decode()`.
+   * Sniff and decode a RPNG to a Stencila node.
    *
-   * @see decode
+   * Combines the `sniff` and `decode` methods.
+   * Doing so is more efficient if both operations are needed
+   * because the image does not need to be read twice.
    *
-   * @param content The content to sniff (a file path).
+   * @param source The source to sniff (a file path)
+   * @returns The Stencila node if any, `undefined` otherwise
    */
-  public decodeSync = (buffer: Buffer): stencila.Node => {
-    const json = extract(KEYWORD, buffer)
-    return JSON.parse(json)
-  }
-
-  /**
-   * Sniff and decode a file if it is a rPNG.
-   *
-   * This function is like combining `sniffSync()` and `decodeSync()`
-   * but is faster because it only reads the file contents once.
-   *
-   * @param filePath The file path to sniff.
-   */
-  public sniffDecodeSync = (filePath: string): stencila.Node | undefined => {
-    if (path.extname(filePath) === '.png') {
-      if (fs.existsSync(filePath)) {
-        const image = fs.readFileSync(filePath)
-        const chunks: Chunk[] = pngExtract(image)
-        const [h, json] = find(KEYWORD, chunks)
-        if (json) return JSON.parse(json)
+  public readonly sniffDecode = async (
+    source: string
+  ): Promise<schema.Node | undefined> => {
+    if (path.extname(source) === '.png') {
+      if (await fs.pathExists(source)) {
+        const buffer = await fs.readFile(source)
+        const jsonLd = find(pngExtract(buffer))[1]
+        if (jsonLd !== undefined) return decode(jsonLd, buffer)
       }
     }
   }
 
   /**
-   * Encode a Stencila node to a rPNG.
-   *
-   * This is done by dumping the node to HTML,
-   * "screen-shotting" the HTML to a PNG and then inserting the
-   * node's JSON into the image's `tEXt` chunk.
-   *
-   * When used with `isStandalone === true` will create a "thumbnail"
-   * of the entire node (e.g. article, dataset) with whatever theme is specified.
+   * Encode a Stencila node to a RPNG.
    *
    * @param node The Stencila node to encode
    * @param options Object containing settings for the encoder.
    */
   public readonly encode = async (
-    node: stencila.Node,
+    node: schema.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    // isStandalone defaults to false because usually we are generating
-    // rPNGs to be embedded in other files e.g. rDOCX
-    const { filePath, isStandalone = false } = options
+    // Special handling for nodes that already have an image as output.
+    // For these, we do not want to repeat the image within a chunk
+    // within the image. Instead we make it self-referencing.
+    let transformed = node
+    if (schema.isA('CodeChunk', node)) {
+      const { outputs, ...rest } = node
+      if (outputs?.length === 1) {
+        const output = outputs[0]
+        if (schema.isA('ImageObject', output)) {
+          const { contentUrl, ...other } = output
+          transformed = schema.codeChunk({
+            ...rest,
+            outputs: [
+              schema.imageObject({
+                contentUrl: 'data:self',
+                ...other
+              })
+            ]
+          })
+        }
+      }
+    }
 
-    // Generate HTML for the node.
-    // Bundle because Puppeteer will not load local (e.g. `/tmp`) files
-    // Other options e.g. themes are passed through
-    const nodeHtml = await dump(node, 'html', {
+    // Bundle the node so there are no media resources
+    // pointing to local files within the generated JSON-LD
+    const bundled = await bundle(transformed)
+
+    // Generate the PNG and get it as a `Buffer`
+    const png = await pngCodec.encode(bundled, {
       ...options,
-      isStandalone,
-      isBundle: true
+      theme: 'rpng'
     })
+    const buffer = await vfile.dump(png, 'buffer')
 
-    // If generating an rPNG for a HTML fragment wrap it to be able to
-    // apply some basic styling e.g. padding
-    const pageHtml = isStandalone
-      ? nodeHtml
-      : `<div id="target">${nodeHtml}</div>`
+    // Insert the node as JSON-LD into a chunk
+    const jsonLd = await jsonLdCodec.dump(bundled)
+    const image = insert(jsonLd, buffer)
 
-    const page = await puppeteer.page()
-    await page.setContent(pageHtml, { waitUntil: 'networkidle0' })
-
-    let buffer
-    if (isStandalone) {
-      buffer = await page.screenshot({
-        encoding: 'binary',
-        fullPage: true
-      })
-    } else {
-      await page.addStyleTag({ content: encodeCss })
-      const elem = await page.$('#target')
-      if (!elem)
-        throw new Error('Woaaaah, this should never happen! Element not found!')
-      buffer = await elem.screenshot({
-        encoding: 'binary'
-      })
-    }
-
-    await page.close()
-
-    // Insert the Stencila node as JSON into a `tEXt` chunk
-    const json = JSON.stringify(node)
-    const image = insert(KEYWORD, json, buffer)
-
-    // Save to file
-    const file = vfile.load(image)
-    if (filePath) {
-      file.path = filePath
-      await vfile.write(file, filePath)
-    }
-
-    return file
+    return vfile.load(image)
   }
+}
+
+/**
+ * Decode the JSON-LD from an image by replacing any `data:self`
+ * references in `ImageObject`s with the content to the image
+ * itself.
+ *
+ * This currently does not remove the special `zTXt` chunk from the
+ * buffer.
+ *
+ * @param jsonLd The JSON-LD extracted from the image
+ * @param buffer The image buffer
+ */
+async function decode(jsonLd: string, buffer: Buffer): Promise<schema.Node> {
+  const root = await jsonLdCodec.load(jsonLd)
+  return transformSync(root, node => {
+    if (schema.isA('ImageObject', node)) {
+      const { contentUrl } = node
+      if (contentUrl === 'data:self') {
+        return {
+          ...node,
+          contentUrl: `data:image/png;base64,${buffer.toString('base64')}`
+        }
+      }
+    }
+    return node
+  })
 }
 
 /**
  * Find a text chunk in an image
  *
- * @param keyword The keyword for the text chunk
  * @param chunks The image chunks to search through
+ * @param keyword The keyword for the text chunk
  */
 export function find(
-  keyword: string,
-  chunks: Chunk[]
+  chunks: Chunk[],
+  keyword: string = KEYWORD
 ): [number, string | undefined] {
   let index = 0
-  for (const chunk of chunks) {
-    if (chunk.name === 'tEXt') {
-      const entry = pngText.decode(chunk.data)
+  for (const { name, data } of chunks) {
+    if (name === 'tEXt' || name === 'zTXt') {
+      const entry = name === 'tEXt' ? pngText.decode(data) : ztxtDecode(data)
       if (entry.keyword === keyword) {
-        return [index, punycode.decode(entry.text)]
+        const buffer = Buffer.from(entry.text, 'base64')
+        const value = name === 'tEXt' ? buffer : zlib.inflateSync(buffer)
+        return [index, value.toString('utf8')]
       }
     }
     index += 1
@@ -313,40 +197,98 @@ export function find(
 /**
  * Does an image have a text chunk with the given keyword?
  *
- * @param keyword The keyword for the text chunk
  * @param image The image `Buffer`
+ * @param keyword The keyword for the text chunk
  */
-export function has(keyword: string, image: Buffer): boolean {
+export function has(image: Buffer, keyword: string = KEYWORD): boolean {
   const chunks: Chunk[] = pngExtract(image)
-  const [h, text] = find(keyword, chunks)
-  return !!text
+  const text = find(chunks, keyword)[1]
+  return text !== undefined
 }
 
 /**
  * Extract a text chunk from an image
  *
- * @param keyword The keyword for the text chunk
  * @param image The image `Buffer`
+ * @param keyword The keyword for the text chunk
  */
-export function extract(keyword: string, image: Buffer): string {
+export function extract(image: Buffer, keyword: string = KEYWORD): string {
   const chunks: Chunk[] = pngExtract(image)
-  const [h, text] = find(keyword, chunks)
-  if (!text) throw Error('No chunk found')
+  const text = find(chunks, keyword)[1]
+  if (text === undefined) throw Error('No chunk found')
   return text
 }
 
 /**
  * Insert a text chunk into an image
  *
- * @param keyword The keyword for the text chunk
  * @param text The text to insert
  * @param image The image to insert into
+ * @param keyword The keyword for the text chunk
+ * @param type The type of chunk to insert
  */
-export function insert(keyword: string, text: string, image: Buffer): Buffer {
+export function insert(
+  text: string,
+  image: Buffer,
+  keyword: string = KEYWORD,
+  type: 'tEXt' | 'zTXt' = 'zTXt'
+): Buffer {
   const chunks: Chunk[] = pngExtract(image)
-  const [index, current] = find(keyword, chunks)
-  if (current) chunks.splice(index, 1)
-  const chunk = pngText.encode(keyword, punycode.encode(text))
+  const [index, current] = find(chunks, keyword)
+  if (current !== undefined) chunks.splice(index, 1)
+  const chunk =
+    type === 'tEXt'
+      ? pngText.encode(keyword, Buffer.from(text, 'utf8').toString('base64'))
+      : ztxtEncode(keyword, zlib.deflateSync(text).toString('base64'))
   chunks.splice(-1, 0, chunk)
   return Buffer.from(pngEncode(chunks))
+}
+
+/**
+ * Encode a PNG `zTXt` chunk.
+ */
+function ztxtEncode(
+  keyword: string,
+  content: string
+): {
+  name: string
+  data: Buffer
+} {
+  return {
+    name: 'zTXt',
+    data: Buffer.concat([
+      Buffer.from(keyword, 'utf8'),
+      Buffer.alloc(2), // separator and compression
+      Buffer.from(content, 'utf8')
+    ])
+  }
+}
+
+/**
+ * Decode PNG `zTXt` chunk data.
+ */
+function ztxtDecode(
+  data: Uint8Array | Buffer
+): {
+  keyword: string
+  text: string
+} {
+  let section = 0
+  let text = ''
+  let keyword = ''
+
+  for (const code of data) {
+    if (section === 0) {
+      if (code !== 0) keyword += String.fromCharCode(code)
+      else section = 1
+    } else if (section === 1) {
+      // 1==separator 2==compression
+      section = 2
+    } else {
+      if (code !== 0) text += String.fromCharCode(code)
+      else throw new Error('0x00 character is not permitted in xTXt content')
+    }
+  }
+
+  return { keyword, text }
 }

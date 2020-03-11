@@ -1,17 +1,13 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
-import path from 'path'
 import * as vfile from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
-import { RPNGCodec } from '../rpng'
-import { commonEncodeDefaults } from '../types'
 import { JsonCodec } from '../json'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
 
 const pandoc = new PandocCodec()
 const { decode, encode } = pandoc
-const rpng = new RPNGCodec()
 const json = new JsonCodec()
 
 const pdoc2node = async (pdoc: any) =>
@@ -565,70 +561,6 @@ const imageInlinesToString: testCase = {
     ]
   }
 }
-
-describe('rPNG encoding & decoding of "special" node types', () => {
-  const output = path.join(__dirname, '__outputs__', 'pandoc-rpngs')
-  fs.ensureDirSync(output)
-
-  const nodeMap = {
-    null: null,
-    boolean: false,
-    number: 3.14,
-    array: [1, 2, 3],
-    object: { a: 1, b: 'two' },
-    Thing: { type: 'Thing', name: 'thing' },
-    Person: { type: 'Person', givenNames: ['John'] }
-  }
-
-  const pdoc = (rPNG: Pandoc.Target): Pandoc.Document => ({
-    'pandoc-api-version': Pandoc.Version,
-    meta: {},
-    blocks: [
-      {
-        t: 'Para',
-        c: [
-          str('A paragraph with primitives: a null '),
-          { t: 'Image', c: [emptyAttrs, [], rPNG] },
-          str('.')
-        ]
-      }
-    ]
-  })
-
-  const rPNGNode = (node: stencila.Node): stencila.Node => ({
-    type: 'Article',
-    content: [
-      {
-        type: 'Paragraph',
-        content: ['A paragraph with primitives: a null ', node, '.']
-      }
-    ]
-  })
-
-  test.each<any>(Object.entries(nodeMap))(
-    'decode: %s',
-    async (name: string, value: stencila.Node, done: jest.DoneCallback) => {
-      const rPNG = await rpng.encode(value, {
-        ...commonEncodeDefaults,
-        filePath: path.join(output, `${name}.png`)
-      })
-
-      const expected = rPNGNode(value)
-
-      const actual = await decode(
-        vfile.load(JSON.stringify(pdoc([rPNG.path!, name])))
-      )
-
-      expect(actual).toEqual(expected)
-      done()
-    }
-  )
-
-  // Skipping this until resolve how to deal with output RPNG paths
-  test.skip('decode', () => {
-    // expect(JSON.parse(await dump(await encode(node)))).toEqual(pdoc)
-  })
-})
 
 // A very simple test of the approach to typing Pandoc nodes
 test('types', () => {

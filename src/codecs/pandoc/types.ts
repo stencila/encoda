@@ -106,6 +106,35 @@ export type Block =
   | Null
 
 /**
+ * Is an element a `Block` type guard
+ */
+export function isBlock(elem: unknown): elem is Block {
+  return (
+    typeof elem === 'object' &&
+    elem !== null &&
+    't' in elem &&
+    [
+      'Plain',
+      'Para',
+      'LineBlock',
+      'CodeBlock',
+      'RawBlock',
+      'BlockQuote',
+      'OrderedList',
+      'BulletList',
+      'DefinitionList',
+      'Header',
+      'HorizontalRule',
+      'Table',
+      'Div',
+      'Null'
+    ]
+      // @ts-ignore
+      .includes(elem.t)
+  )
+}
+
+/**
  * Plain text, not a paragraph
  */
 export type Plain = Element<'Plain', Inline[]>
@@ -277,6 +306,40 @@ export type Inline =
   | Image
   | Note
   | Span
+
+/**
+ * Is an element an `Inline` type guard
+ */
+export function isInline(elem: unknown): elem is Inline {
+  return (
+    typeof elem === 'object' &&
+    elem !== null &&
+    't' in elem &&
+    [
+      'Str',
+      'Emph',
+      'Strong',
+      'Strikeout',
+      'Superscript',
+      'Subscript',
+      'SmallCaps',
+      'Quoted',
+      'Cite',
+      'Code',
+      'Space',
+      'SoftBreak',
+      'LineBreak',
+      'Math',
+      'RawInline',
+      'Link',
+      'Image',
+      'Note',
+      'Span'
+    ]
+      // @ts-ignore
+      .includes(elem.t)
+  )
+}
 
 export type Str = Element<'Str', string>
 

@@ -3,10 +3,8 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
-import fs from 'fs-extra'
+import * as schema from '@stencila/schema'
 import jsonld from 'jsonld'
-import path from 'path'
 import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
 import orderProperties from '../../util/orderProperties'
@@ -23,7 +21,7 @@ const contexts: { [key: string]: unknown } = {}
 
 /**
  * Custom document loader that loads from the
- * in-memory cache first if possible. Uses
+ * in-memory cache, and on disk, if possible. Uses
  * the `util/http` module to fetch for it's
  * on-disk caching based on response headers.
  *
@@ -41,6 +39,12 @@ const documentLoader = async (url: string): Promise<any> => {
     return {
       document: contexts[url]
     }
+  }
+  // Use on-disk Stencila Schema context if possible
+  if (url === schema.jsonLdUrl()) {
+    const document = { '@context': schema.jsonLdContext() }
+    contexts[url] = document
+    return { document }
   }
   // Fetch from remote
   let response
@@ -65,28 +69,15 @@ export class JsonLdCodec extends Codec implements Codec {
 
   public readonly extNames = ['jsonld']
 
-  private static context: { [key: string]: any } = {}
-
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
     const data = JSON.parse(content)
-
-    // Load the Stencila JSON-LD context if necessary
-    if (Object.keys(JsonLdCodec.context).length === 0) {
-      const location = path.join(
-        path.dirname(require.resolve('@stencila/schema')),
-        'stencila.jsonld'
-      )
-      JsonLdCodec.context = await fs.readJSON(location)
-    }
 
     // Expand the data (thereby removing it's context) and then compact it
     // using the Stencila `@context` (thereby changing property names
     // and types to those in the schema).
     const expanded = await jsonld.expand(data, { documentLoader })
-    const compacted = await jsonld.compact(expanded, JsonLdCodec.context, {
+    const compacted = await jsonld.compact(expanded, schema.jsonLdContext(), {
       documentLoader
     })
 
@@ -95,9 +86,9 @@ export class JsonLdCodec extends Codec implements Codec {
     const { '@context': context, '@reverse': reverse, ...rest } = compacted
 
     // Transform tree to better match Stencila schema
-    const transformed = await transformSync(rest, node => {
-      if (!stencila.isPrimitive(node)) {
-        const type = stencila.nodeType(node)
+    const transformed = transformSync(rest, node => {
+      if (!schema.isPrimitive(node)) {
+        const type = schema.nodeType(node)
         if (type === 'Date') {
           // The `jsonld` package uses `@value` for these types.
           // e.g. `{ type: 'Date', '@value': '2008-01-25' }`
@@ -131,13 +122,13 @@ export class JsonLdCodec extends Codec implements Codec {
   /**
    * @implements {@link Codec.decode}
    *
-   * @details For `Entity` nodes will order properties as is done by
+   * @details For `Entity` nodes this function will order properties as is done by
    * similar codecs e.g. `json`, `yaml`. Wraps primitive nodes into
    * a https://schema.org/PropertyValue.
    */
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const content = stencila.isEntity(node)
-      ? (orderProperties(node) as stencila.Entity)
+  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
+    const content = schema.isEntity(node)
+      ? (orderProperties(node) as schema.Entity)
       : {
           type: 'PropertyValue',
           value: node
@@ -145,7 +136,7 @@ export class JsonLdCodec extends Codec implements Codec {
 
     const jsonld = JSON.stringify(
       {
-        '@context': 'http://schema.stenci.la',
+        '@context': schema.jsonLdUrl(),
         ...content
       },
       null,
