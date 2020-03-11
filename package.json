@@ -4,6 +4,7 @@
   "description": "Codecs for executable document formats",
   "files": [
     "install.js",
+    "patches",
     "dist"
   ],
   "main": "./dist/index.js",
