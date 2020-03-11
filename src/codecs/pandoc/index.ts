@@ -193,7 +193,7 @@ export function run(
     })
     child.on('close', () => {
       if (stderr) {
-        if (/\[WARNING\]/.test(stderr))
+        if (stderr.includes('[WARNING]'))
           log.warn(stderr.replace(/\[WARNING\]/, ''))
         else return reject(new Error(stderr))
       }
