@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RPNGCodec | @stencila/encoda</title>
+	<title>RpngCodec | @stencila/encoda</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_codecs_rpng_index_.html">&quot;codecs/rpng/index&quot;</a>
 				</li>
 				<li>
-					<a href="_codecs_rpng_index_.rpngcodec.html">RPNGCodec</a>
+					<a href="_codecs_rpng_index_.rpngcodec.html">RpngCodec</a>
 				</li>
 			</ul>
-			<h1>Class RPNGCodec&lt;EncodeOptions, DecodeOptions&gt;</h1>
+			<h1>Class RpngCodec&lt;EncodeOptions, DecodeOptions&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -87,7 +87,7 @@
 						<a href="_codecs_types_.codec.html" class="tsd-signature-type">Codec</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">RPNGCodec</span>
+								<span class="target">RpngCodec</span>
 							</li>
 						</ul>
 					</li>
@@ -117,14 +117,12 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_codecs_rpng_index_.rpngcodec.html#decode" class="tsd-kind-icon">decode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_codecs_rpng_index_.rpngcodec.html#decodesync" class="tsd-kind-icon">decode<wbr>Sync</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_rpng_index_.rpngcodec.html#dump" class="tsd-kind-icon">dump</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_codecs_rpng_index_.rpngcodec.html#encode" class="tsd-kind-icon">encode</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_rpng_index_.rpngcodec.html#load" class="tsd-kind-icon">load</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_rpng_index_.rpngcodec.html#read" class="tsd-kind-icon">read</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_codecs_rpng_index_.rpngcodec.html#sniff" class="tsd-kind-icon">sniff</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_codecs_rpng_index_.rpngcodec.html#sniffdecodesync" class="tsd-kind-icon">sniff<wbr>Decode<wbr>Sync</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_codecs_rpng_index_.rpngcodec.html#sniffsync" class="tsd-kind-icon">sniff<wbr>Sync</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_codecs_rpng_index_.rpngcodec.html#sniffdecode" class="tsd-kind-icon">sniff<wbr>Decode</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_codecs_rpng_index_.rpngcodec.html#write" class="tsd-kind-icon">write</a></li>
 							</ul>
 						</section>
@@ -140,7 +138,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#commondecodedefaults">commonDecodeDefaults</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L139">src/codecs/types.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L139">src/codecs/types.ts:139</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -156,7 +154,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#commonencodedefaults">commonEncodeDefaults</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L134">src/codecs/types.ts:134</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L134">src/codecs/types.ts:134</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -172,9 +170,17 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#extnames">extNames</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L137">src/codecs/rpng/index.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L39">src/codecs/rpng/index.ts:39</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>override</dt>
+							<dd><p>Overrides <a href="_codecs_png_index_.pngcodec.html#extnames">PngCodec.extNames</a> to provide
+								an extension name to match files with this codec.</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="filenames" class="tsd-anchor"></a>
@@ -183,7 +189,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#filenames">fileNames</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L114">src/codecs/types.ts:114</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L114">src/codecs/types.ts:114</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -197,13 +203,22 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 					<a name="mediatypes" class="tsd-anchor"></a>
 					<h3>media<wbr>Types</h3>
-					<div class="tsd-signature tsd-kind-icon">media<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;vnd.stencila.rpng&#x27;]</span></div>
+					<div class="tsd-signature tsd-kind-icon">media<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;image/vnd.stencila.rpng&#x27;]</span></div>
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#mediatypes">mediaTypes</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L135">src/codecs/rpng/index.ts:135</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L33">src/codecs/rpng/index.ts:33</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>override</dt>
+							<dd><p>Overrides <a href="_codecs_png_index_.pngcodec.html#mediatypes">PngCodec.mediaTypes</a> to provide
+									a vendor media type similar to <a href="https://www.iana.org/assignments/media-types/image/vnd.mozilla.apng">image/vnd.mozilla.apng</a>
+								for example.</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -212,19 +227,19 @@
 					<a name="decode" class="tsd-anchor"></a>
 					<h3>decode</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#decode">decode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L180">src/codecs/rpng/index.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L65">src/codecs/rpng/index.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Decode a rPNG to a Stencila node.</p>
+									<p>Decode a RPNG to a Stencila node.</p>
 								</div>
 								<p>This is done by extracting the JSON
 								from the <code>tEXt</code> chunk and parsing it.</p>
@@ -240,41 +255,8 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The Stencila node</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="decodesync" class="tsd-anchor"></a>
-					<h3>decode<wbr>Sync</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">decode<wbr>Sync<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L194">src/codecs/rpng/index.ts:194</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Synchronous version of <code>decode()</code>.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>decode</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">stencila.Node</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -289,7 +271,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L193">src/codecs/types.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L193">src/codecs/types.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,30 +303,25 @@
 					<a name="encode" class="tsd-anchor"></a>
 					<h3>encode</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_codecs_types_.commonencodeoptions.html" class="tsd-signature-type">CommonEncodeOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">VFile</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#encode">encode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L231">src/codecs/rpng/index.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L99">src/codecs/rpng/index.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Encode a Stencila node to a rPNG.</p>
+									<p>Encode a Stencila node to a RPNG.</p>
 								</div>
-								<p>This is done by dumping the node to HTML,
-									&quot;screen-shotting&quot; the HTML to a PNG and then inserting the
-								node&#39;s JSON into the image&#39;s <code>tEXt</code> chunk.</p>
-								<p>When used with <code>isStandalone === true</code> will create a &quot;thumbnail&quot;
-								of the entire node (e.g. article, dataset) with whatever theme is specified.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>node: <span class="tsd-signature-type">stencila.Node</span></h5>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>The Stencila node to encode</p>
@@ -375,7 +352,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#load">load</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L176">src/codecs/types.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L176">src/codecs/types.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -417,7 +394,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L211">src/codecs/types.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L211">src/codecs/types.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -449,28 +426,28 @@
 					<a name="sniff" class="tsd-anchor"></a>
 					<h3>sniff</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">sniff<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">sniff<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#sniff">sniff</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L144">src/codecs/rpng/index.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L46">src/codecs/rpng/index.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Sniff a PNG file to see if it is an rPNG</p>
+									<p>Sniff a PNG file to see if it is an RPNG</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>content: <span class="tsd-signature-type">string</span></h5>
+									<h5>source: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The content to sniff (a file path)</p>
+											<p>The source to sniff (a file path)</p>
 										</div>
 									</div>
 								</li>
@@ -480,75 +457,39 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="sniffdecodesync" class="tsd-anchor"></a>
-					<h3>sniff<wbr>Decode<wbr>Sync</h3>
+					<a name="sniffdecode" class="tsd-anchor"></a>
+					<h3>sniff<wbr>Decode</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">sniff<wbr>Decode<wbr>Sync<span class="tsd-signature-symbol">(</span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">sniff<wbr>Decode<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L207">src/codecs/rpng/index.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L81">src/codecs/rpng/index.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Sniff and decode a file if it is a rPNG.</p>
+									<p>Sniff and decode a RPNG to a Stencila node.</p>
 								</div>
-								<p>This function is like combining <code>sniffSync()</code> and <code>decodeSync()</code>
-								but is faster because it only reads the file contents once.</p>
+								<p>Combines the <code>sniff</code> and <code>decode</code> methods.
+									Doing so is more efficient if both operations are needed
+								because the image does not need to be read twice.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>filePath: <span class="tsd-signature-type">string</span></h5>
+									<h5>source: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The file path to sniff.</p>
+											<p>The source to sniff (a file path)</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">stencila.Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="sniffsync" class="tsd-anchor"></a>
-					<h3>sniff<wbr>Sync</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">sniff<wbr>Sync<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L161">src/codecs/rpng/index.ts:161</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Synchronous version of <code>sniff()</code>.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p>sniff</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>content: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The content to sniff (a file path)</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The Stencila node if any, <code>undefined</code> otherwise</p>
 						</li>
 					</ul>
 				</section>
@@ -563,7 +504,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_codecs_types_.codec.html">Codec</a>.<a href="_codecs_types_.codec.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/types.ts#L229">src/codecs/types.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/types.ts#L229">src/codecs/types.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -615,7 +556,7 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_codecs_rpng_index_.rpngcodec.html" class="tsd-kind-icon">RPNGCodec</a>
+						<a href="_codecs_rpng_index_.rpngcodec.html" class="tsd-kind-icon">Rpng<wbr>Codec</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_codecs_rpng_index_.rpngcodec.html#commondecodedefaults" class="tsd-kind-icon">common<wbr>Decode<wbr>Defaults</a>
@@ -635,9 +576,6 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_codecs_rpng_index_.rpngcodec.html#decode" class="tsd-kind-icon">decode</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_codecs_rpng_index_.rpngcodec.html#decodesync" class="tsd-kind-icon">decode<wbr>Sync</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_codecs_rpng_index_.rpngcodec.html#dump" class="tsd-kind-icon">dump</a>
 							</li>
@@ -654,10 +592,7 @@
 								<a href="_codecs_rpng_index_.rpngcodec.html#sniff" class="tsd-kind-icon">sniff</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_codecs_rpng_index_.rpngcodec.html#sniffdecodesync" class="tsd-kind-icon">sniff<wbr>Decode<wbr>Sync</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_codecs_rpng_index_.rpngcodec.html#sniffsync" class="tsd-kind-icon">sniff<wbr>Sync</a>
+								<a href="_codecs_rpng_index_.rpngcodec.html#sniffdecode" class="tsd-kind-icon">sniff<wbr>Decode</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_codecs_rpng_index_.rpngcodec.html#write" class="tsd-kind-icon">write</a>
@@ -670,7 +605,13 @@
 						<a href="../modules/_codecs_rpng_index_.html#keyword" class="tsd-kind-icon">KEYWORD</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_codecs_rpng_index_.html#encodecss" class="tsd-kind-icon">encode<wbr>Css</a>
+						<a href="../modules/_codecs_rpng_index_.html#jsonldcodec" class="tsd-kind-icon">json<wbr>LdCodec</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_rpng_index_.html#pngcodec" class="tsd-kind-icon">png<wbr>Codec</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_rpng_index_.html#decode" class="tsd-kind-icon">decode</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_codecs_rpng_index_.html#extract" class="tsd-kind-icon">extract</a>
@@ -683,6 +624,12 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_codecs_rpng_index_.html#insert" class="tsd-kind-icon">insert</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_rpng_index_.html#ztxtdecode" class="tsd-kind-icon">ztxt<wbr>Decode</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_codecs_rpng_index_.html#ztxtencode" class="tsd-kind-icon">ztxt<wbr>Encode</a>
 					</li>
 				</ul>
 			</nav>

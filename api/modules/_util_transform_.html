@@ -92,7 +92,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/util/transform.ts#L15">src/util/transform.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/util/transform.ts#L25">src/util/transform.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -100,6 +100,17 @@
 									<p>Transform a <code>Node</code> by applying a transformer function to
 									each node and its children.</p>
 								</div>
+								<p>This function has three characteristics to be aware of</p>
+								<ul>
+									<li>recursively traverses <strong>all</strong> nodes, including the nodes
+									resulting from transformation</li>
+									<li>awaits for the result of transformation of each child, in order</li>
+									<li>depth first</li>
+								</ul>
+								<p>These characteristics make it suitable for doing an &quot;in order&quot; traversal
+									of a node e.g. executing the nodes in a document in the order that they appear.
+									But in some cases it may be better to use a different function e.g. in
+								cases where you wish to traverse all nodes but the order does not matter.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -151,7 +162,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/util/transform.ts#L39">src/util/transform.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/util/transform.ts#L58">src/util/transform.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

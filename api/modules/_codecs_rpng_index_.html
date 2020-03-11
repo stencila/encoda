@@ -66,15 +66,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>module</dt>
-						<dd><p>rpng</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -82,23 +73,27 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter"><a href="../classes/_codecs_rpng_index_.rpngcodec.html" class="tsd-kind-icon">RPNGCodec</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter"><a href="../classes/_codecs_rpng_index_.rpngcodec.html" class="tsd-kind-icon">Rpng<wbr>Codec</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#keyword" class="tsd-kind-icon">KEYWORD</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#encodecss" class="tsd-kind-icon">encode<wbr>Css</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#jsonldcodec" class="tsd-kind-icon">json<wbr>LdCodec</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#pngcodec" class="tsd-kind-icon">png<wbr>Codec</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#decode" class="tsd-kind-icon">decode</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_codecs_rpng_index_.html#extract" class="tsd-kind-icon">extract</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_codecs_rpng_index_.html#find" class="tsd-kind-icon">find</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_codecs_rpng_index_.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_codecs_rpng_index_.html#insert" class="tsd-kind-icon">insert</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#ztxtdecode" class="tsd-kind-icon">ztxt<wbr>Decode</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_codecs_rpng_index_.html#ztxtencode" class="tsd-kind-icon">ztxt<wbr>Encode</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,52 +104,93 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="keyword" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> KEYWORD</h3>
-					<div class="tsd-signature tsd-kind-icon">KEYWORD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"JSON"</span><span class="tsd-signature-symbol"> = &quot;JSON&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">KEYWORD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"JSON-LD"</span><span class="tsd-signature-symbol"> = &quot;JSON-LD&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L131">src/codecs/rpng/index.ts:131</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L22">src/codecs/rpng/index.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The keyword to use for the PNG chunk containing the JSON</p>
+							<p>The keyword to use for the PNG chunk containing the JSON-LD</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="encodecss" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> encode<wbr>Css</h3>
-					<div class="tsd-signature tsd-kind-icon">encode<wbr>Css<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">":root {/* --color-neutral: ; */--color-neutral-100: #f7fafc;--color-neutral-300: #e2e8f0;}#target {display: inline-block;font-family: monospace;font-size: 11pt;line-height: 150%;color: #333;padding: 1px;}stencila-code-chunk,stencila-code-expression {display: inline-block;background: var(--color-neutral-100);border: 1px solid var(--color-neutral-300);border-radius: 0.25rem;}stencila-code-chunk,stencila-code-expression {min-width: 1em;min-height: 1em;}stencila-code-chunk [slot&#x3D;&#x27;text&#x27;],stencila-code-expression [slot&#x3D;&#x27;text&#x27;] {display: none;}stencila-code-chunk [slot&#x3D;&#x27;outputs&#x27;] {margin: 1em;}stencila-code-chunk [slot&#x3D;&#x27;outputs&#x27;] * {margin: 1em auto;}stencila-code-chunk::before,stencila-code-expression::before {content: &#x27;code&#x27;;color: transparent;height: 2em;position: relative;left: 0.5em;font-size: 0.8rem;line-height: 1.5;text-transform: uppercase;background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns&#x3D;&#x27;http://www.w3.org/2000/svg&#x27; width&#x3D;&#x27;24&#x27; height&#x3D;&#x27;24&#x27; viewBox&#x3D;&#x27;0 0 24 24&#x27; fill&#x3D;&#x27;none&#x27; stroke&#x3D;&#x27;rgb(29, 100, 243)&#x27; stroke-width&#x3D;&#x27;2&#x27; stroke-linecap&#x3D;&#x27;round&#x27; stroke-linejoin&#x3D;&#x27;round&#x27; class&#x3D;&#x27;feather feather-code&#x27;%3E%3Cpolyline points&#x3D;&#x27;16 18 22 12 16 6&#x27;/%3E%3Cpolyline points&#x3D;&#x27;8 6 2 12 8 18&#x27;/%3E%3C/svg%3E&quot;);background-repeat: no-repeat;background-size: contain;}stencila-code-chunk::before {top: 0.5em;left: 1em;padding-right: 0.5rem;}stencila-code-expression [slot&#x3D;&#x27;output&#x27;] {display: inline-block;margin: 0.1em 0.5em 0.1em auto;}table {border: 1px solid grey;border-collapse: collapse;}table th {color: #555;background: rgba(0, 0, 0, 0.1);}table th,table td {padding: 0.5em;border: 1px solid lightgrey;}"</span><span class="tsd-signature-symbol"> = &#x60;:root {/* --color-neutral: ; */--color-neutral-100: #f7fafc;--color-neutral-300: #e2e8f0;}#target {display: inline-block;font-family: monospace;font-size: 11pt;line-height: 150%;color: #333;padding: 1px;}stencila-code-chunk,stencila-code-expression {display: inline-block;background: var(--color-neutral-100);border: 1px solid var(--color-neutral-300);border-radius: 0.25rem;}stencila-code-chunk,stencila-code-expression {min-width: 1em;min-height: 1em;}stencila-code-chunk [slot&#x3D;&#x27;text&#x27;],stencila-code-expression [slot&#x3D;&#x27;text&#x27;] {display: none;}stencila-code-chunk [slot&#x3D;&#x27;outputs&#x27;] {margin: 1em;}stencila-code-chunk [slot&#x3D;&#x27;outputs&#x27;] * {margin: 1em auto;}stencila-code-chunk::before,stencila-code-expression::before {content: &#x27;code&#x27;;color: transparent;height: 2em;position: relative;left: 0.5em;font-size: 0.8rem;line-height: 1.5;text-transform: uppercase;background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns&#x3D;&#x27;http://www.w3.org/2000/svg&#x27; width&#x3D;&#x27;24&#x27; height&#x3D;&#x27;24&#x27; viewBox&#x3D;&#x27;0 0 24 24&#x27; fill&#x3D;&#x27;none&#x27; stroke&#x3D;&#x27;rgb(29, 100, 243)&#x27; stroke-width&#x3D;&#x27;2&#x27; stroke-linecap&#x3D;&#x27;round&#x27; stroke-linejoin&#x3D;&#x27;round&#x27; class&#x3D;&#x27;feather feather-code&#x27;%3E%3Cpolyline points&#x3D;&#x27;16 18 22 12 16 6&#x27;/%3E%3Cpolyline points&#x3D;&#x27;8 6 2 12 8 18&#x27;/%3E%3C/svg%3E&quot;);background-repeat: no-repeat;background-size: contain;}stencila-code-chunk::before {top: 0.5em;left: 1em;padding-right: 0.5rem;}stencila-code-expression [slot&#x3D;&#x27;output&#x27;] {display: inline-block;margin: 0.1em 0.5em 0.1em auto;}table {border: 1px solid grey;border-collapse: collapse;}table th {color: #555;background: rgba(0, 0, 0, 0.1);}table th,table td {padding: 0.5em;border: 1px solid lightgrey;}&#x60;</span></div>
+					<a name="jsonldcodec" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> json<wbr>LdCodec</h3>
+					<div class="tsd-signature tsd-kind-icon">json<wbr>LdCodec<span class="tsd-signature-symbol">:</span> <a href="../classes/_codecs_jsonld_index_.jsonldcodec.html" class="tsd-signature-type">JsonLdCodec</a><span class="tsd-signature-symbol"> = new JsonLdCodec()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L42">src/codecs/rpng/index.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L24">src/codecs/rpng/index.ts:24</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Styling to be applied to a node&#39;s HTML fragment
-							when generating the rPNG.</p>
-						</div>
-						<p>This is decoupled from any themes because rPNGs are usually
-						used in a context where themes do not apply e.g. in a <code>docx</code> file.</p>
-						<p>Currently, rather than try to do some fancy CSS module loading,
-						we just copy and paste this file in here.</p>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="pngcodec" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> png<wbr>Codec</h3>
+					<div class="tsd-signature tsd-kind-icon">png<wbr>Codec<span class="tsd-signature-symbol">:</span> <a href="../classes/_codecs_png_index_.pngcodec.html" class="tsd-signature-type">PngCodec</a><span class="tsd-signature-symbol"> = new PngCodec()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L25">src/codecs/rpng/index.ts:25</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="extract" class="tsd-anchor"></a>
-					<h3>extract</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">extract<span class="tsd-signature-symbol">(</span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="decode" class="tsd-anchor"></a>
+					<h3>decode</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">decode<span class="tsd-signature-symbol">(</span>jsonLd<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L331">src/codecs/rpng/index.ts:331</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L156">src/codecs/rpng/index.ts:156</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decode the JSON-LD from an image by replacing any <code>data:self</code>
+										references in <code>ImageObject</code>s with the content to the image
+									itself.</p>
+								</div>
+								<p>This currently does not remove the special <code>zTXt</code> chunk from the
+								buffer.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>jsonLd: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The JSON-LD extracted from the image</p>
+									</div>
+								</li>
+								<li>
+									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The image buffer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">schema.Node</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="extract" class="tsd-anchor"></a>
+					<h3>extract</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">extract<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, keyword<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L215">src/codecs/rpng/index.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -165,15 +201,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>keyword: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The keyword for the text chunk</p>
-									</div>
-								</li>
-								<li>
 									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The image <code>Buffer</code></p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> keyword: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = KEYWORD</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The keyword for the text chunk</p>
 									</div>
 								</li>
 							</ul>
@@ -185,13 +221,13 @@
 					<a name="find" class="tsd-anchor"></a>
 					<h3>find</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, chunks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Chunk</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>chunks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Chunk</span><span class="tsd-signature-symbol">[]</span>, keyword<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L296">src/codecs/rpng/index.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L178">src/codecs/rpng/index.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,15 +238,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>keyword: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The keyword for the text chunk</p>
-									</div>
-								</li>
-								<li>
 									<h5>chunks: <span class="tsd-signature-type">Chunk</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The image chunks to search through</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> keyword: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = KEYWORD</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The keyword for the text chunk</p>
 									</div>
 								</li>
 							</ul>
@@ -222,13 +258,13 @@
 					<a name="has" class="tsd-anchor"></a>
 					<h3>has</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, keyword<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L319">src/codecs/rpng/index.ts:319</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L203">src/codecs/rpng/index.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -239,15 +275,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>keyword: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The keyword for the text chunk</p>
-									</div>
-								</li>
-								<li>
 									<h5>image: <span class="tsd-signature-type">Buffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The image <code>Buffer</code></p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> keyword: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = KEYWORD</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The keyword for the text chunk</p>
 									</div>
 								</li>
 							</ul>
@@ -259,13 +295,13 @@
 					<a name="insert" class="tsd-anchor"></a>
 					<h3>insert</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, keyword<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"tEXt"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"zTXt"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/stencila/encoda/blob/36497163/src/codecs/rpng/index.ts#L345">src/codecs/rpng/index.ts:345</a></li>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L230">src/codecs/rpng/index.ts:230</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -275,12 +311,6 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li>
-									<h5>keyword: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The keyword for the text chunk</p>
-									</div>
-								</li>
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
@@ -293,8 +323,95 @@
 										<p>The image to insert into</p>
 									</div>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> keyword: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = KEYWORD</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The keyword for the text chunk</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> type: <span class="tsd-signature-type">"tEXt"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"zTXt"</span><span class="tsd-signature-symbol"> = &quot;zTXt&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The type of chunk to insert</p>
+									</div>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="ztxtdecode" class="tsd-anchor"></a>
+					<h3>ztxt<wbr>Decode</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">ztxt<wbr>Decode<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L270">src/codecs/rpng/index.ts:270</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decode PNG <code>zTXt</code> chunk data.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="ztxtencode" class="tsd-anchor"></a>
+					<h3>ztxt<wbr>Encode</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">ztxt<wbr>Encode<span class="tsd-signature-symbol">(</span>keyword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/a31a2d09/src/codecs/rpng/index.ts#L250">src/codecs/rpng/index.ts:250</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Encode a PNG <code>zTXt</code> chunk.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>keyword: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>content: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -314,13 +431,19 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../classes/_codecs_rpng_index_.rpngcodec.html" class="tsd-kind-icon">RPNGCodec</a>
+						<a href="../classes/_codecs_rpng_index_.rpngcodec.html" class="tsd-kind-icon">Rpng<wbr>Codec</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_codecs_rpng_index_.html#keyword" class="tsd-kind-icon">KEYWORD</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_codecs_rpng_index_.html#encodecss" class="tsd-kind-icon">encode<wbr>Css</a>
+						<a href="_codecs_rpng_index_.html#jsonldcodec" class="tsd-kind-icon">json<wbr>LdCodec</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_codecs_rpng_index_.html#pngcodec" class="tsd-kind-icon">png<wbr>Codec</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_codecs_rpng_index_.html#decode" class="tsd-kind-icon">decode</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_codecs_rpng_index_.html#extract" class="tsd-kind-icon">extract</a>
@@ -333,6 +456,12 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_codecs_rpng_index_.html#insert" class="tsd-kind-icon">insert</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_codecs_rpng_index_.html#ztxtdecode" class="tsd-kind-icon">ztxt<wbr>Decode</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_codecs_rpng_index_.html#ztxtencode" class="tsd-kind-icon">ztxt<wbr>Encode</a>
 					</li>
 				</ul>
 			</nav>
