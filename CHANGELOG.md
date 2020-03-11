@@ -1,3 +1,10 @@
+## [0.90.2](https://github.com/stencila/encoda/compare/v0.90.1...v0.90.2) (2020-03-11)
+
+
+### Bug Fixes
+
+* **Package:** Remove patch-package and use asciimath2tex fork ([8d34518](https://github.com/stencila/encoda/commit/8d3451889280bef9f4631d015c160b5e2e3ac30f))
+
 ## [0.90.1](https://github.com/stencila/encoda/compare/v0.90.0...v0.90.1) (2020-03-11)
 
 
