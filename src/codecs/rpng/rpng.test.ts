@@ -1,6 +1,13 @@
 import fs from 'fs-extra'
-import { pythonCodeChunk, rCodeExpression, rCodeExpressionNoOutput } from '../../__fixtures__/code/kitchen-sink'
-import { asciimathFragment, texBlock } from '../../__fixtures__/math/kitchen-sink'
+import {
+  pythonCodeChunk,
+  rCodeExpression,
+  rCodeExpressionNoOutput
+} from '../../__fixtures__/code/kitchen-sink'
+import {
+  asciimathFragment,
+  texBlock
+} from '../../__fixtures__/math/kitchen-sink'
 import { snapshot } from '../../__tests__/helpers'
 import { PngCodec } from '../png'
 import { extract, has, insert, RpngCodec } from './'

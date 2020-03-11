@@ -65,7 +65,7 @@ export class RpngCodec extends Codec implements Codec {
   ): Promise<stencila.Node> => {
     const buffer = await vfile.dump(file, 'buffer')
     const jsonLd = extract(KEYWORD, buffer)
-    return await jsonLdCodec.load(jsonLd)
+    return jsonLdCodec.load(jsonLd)
   }
 
   /**
@@ -86,7 +86,7 @@ export class RpngCodec extends Codec implements Codec {
         const image = await fs.readFile(source)
         const chunks: Chunk[] = pngExtract(image)
         const jsonLd = find(KEYWORD, chunks)[1]
-        if (jsonLd !== undefined) return await jsonLdCodec.load(jsonLd)
+        if (jsonLd !== undefined) return jsonLdCodec.load(jsonLd)
       }
     }
   }
@@ -214,7 +214,12 @@ function ztxtEncode(
 /**
  * Decode PNG `zTXt` chunk data.
  */
-function ztxtDecode(data: Uint8Array | Buffer) {
+function ztxtDecode(
+  data: Uint8Array | Buffer
+): {
+  keyword: string
+  text: string
+} {
   let section = 0
   let text = ''
   let keyword = ''

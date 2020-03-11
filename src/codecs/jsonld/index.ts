@@ -3,7 +3,7 @@
  */
 
 import { getLogger } from '@stencila/logga'
-import * as stencila from '@stencila/schema'
+import * as schema from '@stencila/schema'
 import jsonld from 'jsonld'
 import { coerce } from '../../util/coerce'
 import * as http from '../../util/http'
@@ -11,7 +11,6 @@ import orderProperties from '../../util/orderProperties'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { Codec } from '../types'
-import { jsonLdContext, jsonLdUrl } from '@stencila/schema'
 
 const log = getLogger('encoda:jsonld')
 
@@ -64,9 +63,7 @@ export class JsonLdCodec extends Codec implements Codec {
 
   public readonly extNames = ['jsonld']
 
-  public readonly decode = async (
-    file: vfile.VFile
-  ): Promise<stencila.Node> => {
+  public readonly decode = async (file: vfile.VFile): Promise<schema.Node> => {
     const content = await vfile.dump(file)
     const data = JSON.parse(content)
 
@@ -74,7 +71,7 @@ export class JsonLdCodec extends Codec implements Codec {
     // using the Stencila `@context` (thereby changing property names
     // and types to those in the schema).
     const expanded = await jsonld.expand(data, { documentLoader })
-    const compacted = await jsonld.compact(expanded, jsonLdContext(), {
+    const compacted = await jsonld.compact(expanded, schema.jsonLdContext(), {
       documentLoader
     })
 
@@ -83,9 +80,9 @@ export class JsonLdCodec extends Codec implements Codec {
     const { '@context': context, '@reverse': reverse, ...rest } = compacted
 
     // Transform tree to better match Stencila schema
-    const transformed = await transformSync(rest, node => {
-      if (!stencila.isPrimitive(node)) {
-        const type = stencila.nodeType(node)
+    const transformed = transformSync(rest, node => {
+      if (!schema.isPrimitive(node)) {
+        const type = schema.nodeType(node)
         if (type === 'Date') {
           // The `jsonld` package uses `@value` for these types.
           // e.g. `{ type: 'Date', '@value': '2008-01-25' }`
@@ -123,9 +120,9 @@ export class JsonLdCodec extends Codec implements Codec {
    * similar codecs e.g. `json`, `yaml`. Wraps primitive nodes into
    * a https://schema.org/PropertyValue.
    */
-  public readonly encode = (node: stencila.Node): Promise<vfile.VFile> => {
-    const content = stencila.isEntity(node)
-      ? (orderProperties(node) as stencila.Entity)
+  public readonly encode = (node: schema.Node): Promise<vfile.VFile> => {
+    const content = schema.isEntity(node)
+      ? (orderProperties(node) as schema.Entity)
       : {
           type: 'PropertyValue',
           value: node
@@ -133,7 +130,7 @@ export class JsonLdCodec extends Codec implements Codec {
 
     const jsonld = JSON.stringify(
       {
-        '@context': jsonLdUrl(),
+        '@context': schema.jsonLdUrl(),
         ...content
       },
       null,
