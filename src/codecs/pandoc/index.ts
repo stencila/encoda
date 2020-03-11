@@ -193,16 +193,12 @@ export function run(
     })
     child.on('close', () => {
       if (stderr) {
-        log.error(
-          `Pandoc error!\n  message: ${stderr}  args:\n    ${args.join(
-            '\n    '
-          )}\n`
-        )
-        reject(new Error(stderr))
-      } else {
-        log.debug(`Pandoc success.`)
-        resolve(stdout)
+        if (/\[WARNING\]/.test(stderr))
+          log.warn(stderr.replace(/\[WARNING\]/, ''))
+        else return reject(new Error(stderr))
       }
+      log.debug(`Pandoc success.`)
+      resolve(stdout)
     })
     child.on('error', err => {
       reject(err)
