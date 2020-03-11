@@ -1,5 +1,5 @@
 import { ElifeCodec } from '.'
-import unlink from '../../util/unlink'
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 import { nockRecord, snapshot } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 
@@ -14,7 +14,7 @@ const elife2yaml = async (article: string) => {
   const node = await elife.load(`elife: ${article}`)
   done()
   // Unlink to remove references to local files (which are non-deterministic)
-  const unlinked = unlink(node)
+  const unlinked = unlinkFiles(node)
   // Convert to YAML
   return await await yaml.dump(unlinked)
 }

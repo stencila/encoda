@@ -1,5 +1,7 @@
 import * as stencila from '@stencila/schema'
 import * as vfile from '../util/vfile'
+import { toFiles } from '../util/media/toFiles'
+import { fromFiles } from '../util/media/fromFiles'
 /**
  * Encoding options that are common to all codecs.
  *
@@ -231,8 +233,12 @@ export abstract class Codec<
     filePath: string,
     options?: EncodeOptions
   ): Promise<void> {
+    const { isBundle } = { ...this.commonEncodeDefaults, ...options }
+    const transformed = isBundle
+      ? await fromFiles(node)
+      : await toFiles(node, filePath, ['data', 'file'])
     return vfile.write(
-      await this.encode(node, { filePath, ...options } as EncodeOptions),
+      await this.encode(transformed, { filePath, ...options } as EncodeOptions),
       filePath
     )
   }

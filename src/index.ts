@@ -1,28 +1,18 @@
-/**
- * Hello contributor 👋! If you are working on this file, please
- * endeavor to remove the need for the following `eslint-disable` line 🙏.
- * Remove the line and run `npx eslint path/to/this/file.ts` to
- * see which code needs some linting ❤️.
- * See https://github.com/stencila/encoda/issues/199 for suggestions
- * on how to refactor code to avoid non-strict boolean expressions.
- */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-
-import * as stencila from '@stencila/schema'
 import { getLogger } from '@stencila/logga'
+import * as stencila from '@stencila/schema'
+import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
 import {
   Codec,
-  commonEncodeDefaults,
   commonDecodeDefaults,
-  CommonEncodeOptions,
-  CommonDecodeOptions
+  CommonDecodeOptions,
+  commonEncodeDefaults,
+  CommonEncodeOptions
 } from './codecs/types'
 import * as puppeteer from './util/puppeteer'
 import * as vfile from './util/vfile'
 import * as zip from './util/zip'
-import fs from 'fs-extra'
 
 const log = getLogger('encoda')
 
@@ -115,12 +105,12 @@ export async function match(
   isOutput = false
 ): Promise<Codec> {
   // Resolve variables used to match a codec...
-  let fileName
-  let extName
-  let mediaType
+  let fileName: string | undefined
+  let extName: string | undefined
+  let mediaType: string | undefined
 
   // If the content is a path then begin with derived values
-  if (content && (vfile.isPath(content) || isOutput)) {
+  if (content !== undefined && (vfile.isPath(content) || isOutput)) {
     fileName = path.basename(content)
     extName = path
       .extname(content)
@@ -129,7 +119,7 @@ export async function match(
     mediaType = mime.getType(content) ?? undefined
   }
 
-  if (format) {
+  if (format !== undefined) {
     // Override with supplied format assuming that
     // media types always have a forward slash and extension names
     // never do.
@@ -159,7 +149,12 @@ export async function match(
       // Do not log MODULE_NOT_FOUND warnings here since not finding a matching module
       // is normal behavior and doing so causes unnecessary noise and anxiety :)
       // (But do warn if a module other than that looked for was not found!)
-      if (!(error.code === 'MODULE_NOT_FOUND' && error.message.includes(name)))
+      if (
+        !(
+          error.code === 'MODULE_NOT_FOUND' &&
+          error.message.includes(name) === true
+        )
+      )
         log.warn(error)
     }
   }
@@ -175,26 +170,30 @@ export async function match(
     codec = await getCodec(codecName)
     if (codec === undefined) continue
 
-    if (fileName && codec.fileNames && codec.fileNames.includes(fileName)) {
+    if (fileName !== undefined && codec.fileNames?.includes(fileName)) {
       return codec
     }
 
-    if (extName && codec.extNames && codec.extNames.includes(extName)) {
+    if (extName !== undefined && codec.extNames?.includes(extName)) {
       return codec
     }
 
-    if (mediaType && codec.mediaTypes && codec.mediaTypes.includes(mediaType)) {
+    if (mediaType !== undefined && codec.mediaTypes?.includes(mediaType)) {
       return codec
     }
 
-    if (content && codec.sniff && (await codec.sniff(content))) {
+    if (
+      content !== undefined &&
+      codec.sniff !== undefined &&
+      (await codec.sniff(content))
+    ) {
       return codec
     }
   }
 
   let message = 'No codec could be found'
-  if (content) message += ` for content "${content}"`
-  if (format) message += ` for format "${format}"`
+  if (content !== undefined) message += ` for source "${content}"`
+  if (format !== undefined) message += ` for format "${format}"`
   message += '. Falling back to plain text codec.'
   log.warn(message)
 
@@ -252,7 +251,7 @@ export async function encode<Options extends CommonEncodeOptions>(
   options: Options = commonEncodeDefaults as Options
 ): Promise<VFile> {
   const { filePath, format } = options
-  if (!(filePath || format)) {
+  if ((filePath ?? format) === undefined) {
     throw new Error(
       'At least one of "filePath" or "format" option must be provided'
     )
@@ -272,8 +271,8 @@ export async function load<Options extends CommonDecodeOptions>(
   format: string,
   options: Options = commonDecodeDefaults as Options
 ): Promise<stencila.Node> {
-  const file = vfile.load(content)
-  return decode(file, undefined, { format, ...options })
+  const codec = await match(content, format)
+  return codec.load(content, { format, ...options })
 }
 
 /**
@@ -288,25 +287,25 @@ export async function dump<Options extends CommonEncodeOptions>(
   format: string,
   options: Options = commonEncodeDefaults as Options
 ): Promise<string> {
-  const file = await encode(node, { format, ...options })
-  return vfile.dump(file)
+  const codec = await match(undefined, format, true)
+  return codec.dump(node, { format, ...options })
 }
 
 /**
  * Read a file to a `stencila.Node`.
  *
- * @param content The raw content or file path to read.
+ * @param source The raw content or file path to read.
  *                Use `-` to read from standard input.
  * @param format The format to read the file as.
  *               If undefined then determined from content or file path.
  */
 export async function read<Options extends CommonDecodeOptions>(
-  content: string,
+  source: string,
   format?: string,
   options: Options = commonDecodeDefaults as Options
 ): Promise<stencila.Node> {
-  const file = await vfile.read(content)
-  return decode(file, content, { format, ...options })
+  const codec = await match(source, format)
+  return codec.read(source, { format, ...options })
 }
 
 /**
@@ -321,17 +320,17 @@ export async function write<Options extends CommonEncodeOptions>(
   node: stencila.Node,
   filePath: string,
   options: Options = commonEncodeDefaults as Options
-): Promise<VFile> {
-  const file = await encode(node, { filePath, ...options })
-  await vfile.write(file, filePath)
-  return file
+): Promise<void> {
+  const { format } = { ...commonEncodeDefaults, ...options }
+  const codec = await match(filePath, format, true)
+  return codec.write(node, filePath, options)
 }
 
 interface ConvertOptions {
-  to?: string
   from?: string
-  encodeOptions?: CommonEncodeOptions
+  to?: string
   decodeOptions?: CommonDecodeOptions
+  encodeOptions?: CommonEncodeOptions
 }
 
 /**
@@ -347,66 +346,49 @@ export async function convert(
   outputPaths?: string | string[],
   options: ConvertOptions = {}
 ): Promise<string | undefined> {
-  let { to, from, encodeOptions, decodeOptions } = options
+  let { from, decodeOptions, to, encodeOptions } = options
 
-  let outputPaths_: (string | undefined)[]
-  if (outputPaths === undefined) outputPaths_ = [undefined]
-  else if (typeof outputPaths === 'string') outputPaths_ = [outputPaths]
-  else outputPaths_ = outputPaths
+  const node = await read(input, from, decodeOptions)
 
-  const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
-
-  const inputFile = vfile.create(input)
-  const node = await decode(inputFile, input, { format: from })
+  if (outputPaths === undefined) return dump(node, to ?? 'txt', encodeOptions)
+  else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
+  const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
   const files: string[] = []
-  for (const outputPath of outputPaths_) {
-    const outputFile = await encode(node, {
-      ...commonEncodeDefaults,
-      format: to,
-      filePath: outputPath,
-      ...encodeOptions
-    })
+  for (const outputPath of outputPaths) {
+    await write(node, outputPath, { format: to, ...encodeOptions })
 
-    if (outputPath !== undefined) {
-      // Write file to path (note that this may have been done already by
-      // the encoding codec, in which case `outputFile.contents === undefined`
-      // and this is effectively a no-op)
-      await vfile.write(outputFile, outputPath)
+    // Record files generated
+    files.push(outputPath)
 
-      // Record files generated
-      files.push(outputPath)
-      // The convention amongst codecs is to put media files in
-      // a sibling folder with `.media` appended to the name
-      // We rely on that convention here...
-      const mediaFolder = outputPath + '.media'
-      if (await fs.pathExists(mediaFolder)) {
-        for (const child of await fs.readdir(mediaFolder))
-          files.push(path.join(mediaFolder, child))
-      }
+    // The convention amongst codecs is to put media files in
+    // a sibling folder with `.media` appended to the name
+    // We rely on that convention here...
+    const mediaFolder = outputPath + '.media'
+    if (await fs.pathExists(mediaFolder)) {
+      for (const child of await fs.readdir(mediaFolder))
+        files.push(path.join(mediaFolder, child))
     }
 
     // The `to` option only applies to the first output
     to = undefined
 
-    // Return the contents, or path, of the last output file,
+    // Return the path of the last output file,
     // or the zip file, if one was produced.
     index += 1
-    if (index === outputPaths_.length) {
+    if (index === outputPaths.length) {
       if (shouldZip === 'yes' || (files.length > 1 && shouldZip === 'maybe')) {
-        const first = outputPaths_[0]
+        const first = outputPaths[0]
         let zipName = 'output.zip'
         let outputDir = ''
-        if (outputPaths_.length === 1 && first !== undefined) {
+        if (outputPaths.length === 1 && first !== undefined) {
           const { dir, name } = path.parse(first)
           zipName = path.join(dir, name + '.zip')
           outputDir = dir
         }
         return zip.create(zipName, files, { remove: true, dir: outputDir })
-      } else if (outputFile.contents !== undefined)
-        return vfile.dump(outputFile)
-      else return outputFile.path
+      } else return outputPath
     }
   }
 }
@@ -418,6 +400,6 @@ export async function convert(
  * node from hanging. This functions collects those in one
  * place.
  */
-export async function shutdown() {
+export async function shutdown(): Promise<void> {
   await puppeteer.shutdown()
 }

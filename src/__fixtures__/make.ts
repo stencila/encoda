@@ -12,10 +12,14 @@
  *
  * This script should be rerun when the decoding codecs
  * involved are updated.
+ *
+ * Media files are 'unlinked' to prevent are large number
+ * of files being created.
  */
 
 import path from 'path'
-import { convert } from '..'
+import { read, write } from '..'
+import { unlinkFiles } from '../util/media/unlinkFiles'
 
 const fixtures = [
   {
@@ -24,6 +28,10 @@ const fixtures = [
   }
 ]
 
-for (const { src, dest } of fixtures) {
-  convert(src, path.join(__dirname, ...dest)).catch(console.log)
-}
+Promise.all(
+  fixtures.map(async ({ src, dest }) => {
+    const node = await read(src)
+    const unlinked = await unlinkFiles(node)
+    await write(unlinked, path.join(__dirname, ...dest))
+  })
+).catch(console.log)

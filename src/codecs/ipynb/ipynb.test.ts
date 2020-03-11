@@ -1,9 +1,9 @@
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 import * as vfile from '../../util/vfile'
-import unlink from '../../util/unlink'
-import { fixture, snapshot } from '../../__tests__/helpers'
-import { decodeMultilineString, encodeMultilineString, IpynbCodec } from './'
-import { JsonCodec } from '../json'
 import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
+import { fixture, snapshot } from '../../__tests__/helpers'
+import { JsonCodec } from '../json'
+import { decodeMultilineString, encodeMultilineString, IpynbCodec } from './'
 
 const ipynb = new IpynbCodec()
 const json = new JsonCodec()
@@ -12,7 +12,7 @@ const ipynb2json = async (name: string) => {
   const node = await ipynb.decode(await vfile.read(fixture(name)))
   // Unlink to remove references to temporary files which will change
   // between test runs
-  const unlinked = unlink(node)
+  const unlinked = unlinkFiles(node)
   return vfile.dump(await json.encode(unlinked))
 }
 

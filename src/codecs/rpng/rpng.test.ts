@@ -62,7 +62,7 @@ describe('encode+decode', () => {
     })
     const file = await rpngCodec.encode(inp)
 
-    const out = await rpngCodec.decode(file) as schema.Paragraph
+    const out = (await rpngCodec.decode(file)) as schema.Paragraph
     expect(schema.isA('Paragraph', out)).toBe(true)
 
     const image = out.content?.[1] as schema.ImageObject
@@ -81,7 +81,7 @@ describe('encode+decode', () => {
     })
     const file = await rpngCodec.encode(inp)
 
-    const out = await rpngCodec.decode(file) as schema.CodeChunk
+    const out = (await rpngCodec.decode(file)) as schema.CodeChunk
     expect(schema.isA('CodeChunk', out)).toBe(true)
 
     const image = out.outputs?.[0] as schema.ImageObject

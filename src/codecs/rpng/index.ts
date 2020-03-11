@@ -9,7 +9,7 @@ import pngText from 'png-chunk-text'
 import pngEncode from 'png-chunks-encode'
 import pngExtract, { Chunk } from 'png-chunks-extract'
 import zlib from 'zlib'
-import bundle from '../../util/bundle'
+import { fromFiles } from '../../util/media/fromFiles'
 import { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { JsonLdCodec } from '../jsonld'
@@ -125,7 +125,7 @@ export class RpngCodec extends Codec implements Codec {
 
     // Bundle the node so there are no media resources
     // pointing to local files within the generated JSON-LD
-    const bundled = await bundle(transformed)
+    const bundled = await fromFiles(transformed)
 
     // Generate the PNG and get it as a `Buffer`
     const png = await pngCodec.encode(bundled, {

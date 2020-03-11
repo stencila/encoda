@@ -126,7 +126,7 @@ describe('convert', () => {
       const result = await convert(inp, out)
 
       expect(fs.readJsonSync(inp)).toEqual(fs.readJsonSync(out))
-      expect(result).toEqual(simpleThingJson)
+      expect(result).toEqual(out)
     })
 
   it('works with content as an argument and return', async () => {
@@ -145,7 +145,7 @@ describe('convert', () => {
     const result = await convert(inp, '-', { from: 'json', to: 'json' })
 
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
-    expect(result).toEqual(simpleThingJson)
+    expect(result).toEqual('-')
   })
 
   if (!os.type().includes('Windows'))

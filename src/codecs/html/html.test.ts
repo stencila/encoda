@@ -54,7 +54,7 @@ import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
 import kitchenSink from '../../__fixtures__/article/kitchen-sink'
 import mathArticle from '../../__fixtures__/article/math'
-import { readFixture, snapshot } from '../../__tests__/helpers'
+import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 import { commonEncodeDefaults } from '../types'
 import { decodeHref, HTMLCodec, stencilaItemProp } from './'
@@ -62,10 +62,9 @@ import { decodeHref, HTMLCodec, stencilaItemProp } from './'
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
 
-const json = new JsonCodec()
-const html = new HTMLCodec()
-const { encode, decode } = html
-const dump = html.dump.bind(html)
+const jsonCodec = new JsonCodec()
+const htmlCodec = new HTMLCodec()
+const { encode, decode } = htmlCodec
 
 const e = async (
   node: stencila.Node,
@@ -76,7 +75,7 @@ const d = async (htmlString: string): Promise<stencila.Node> =>
   decode(vfile.load(htmlString))
 
 const json2html = async (name: string) =>
-  e(await json.decode(await readFixture(name)))
+  htmlCodec.dump(await jsonCodec.read(fixture(name)))
 
 test('decode', async () => {
   expect(await d(attrs.html)).toEqual(attrs.node)
@@ -574,7 +573,7 @@ describe('Encode & Decode Collections', () => {
 })
 
 test('encode with different themes - default theme', async () => {
-  let html = await dump(stencila.article(), {
+  let html = await htmlCodec.dump(stencila.article(), {
     isStandalone: true
   })
 
@@ -588,7 +587,7 @@ test('encode with different themes - default theme', async () => {
 })
 
 test('encode with different themes - stencila', async () => {
-  const html = await dump(stencila.article(), {
+  const html = await htmlCodec.dump(stencila.article(), {
     theme: 'stencila',
     isStandalone: true
   })
@@ -603,7 +602,7 @@ test('encode with different themes - stencila', async () => {
 })
 
 test('encode with different themes - stencila', async () => {
-  const html = await dump(stencila.article(), {
+  const html = await htmlCodec.dump(stencila.article(), {
     theme: 'eLife',
     isStandalone: true
   })
@@ -633,7 +632,7 @@ test('encode with bundling', async () => {
   // Previously we used a snapshot for this but that is avoided
   // here since it will fail when Thema is upgraded.
   let html = doc(
-    await dump(stencila.article(), {
+    await htmlCodec.dump(stencila.article(), {
       theme: 'eLife',
       isStandalone: true,
       isBundle: true
