@@ -46,10 +46,8 @@ RUN npm install --ignore-scripts
 # Copy over other file and run the necessary install scripts that
 # we previously ignored.
 COPY tsconfig.json install.js ./
-COPY patches ./patches/
 COPY --chown=encoda:encoda src ./src
 RUN node install.js \
- && npx patch-package \
  && cd node_modules/puppeteer && npm install
 
 # Run the tests

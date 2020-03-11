@@ -4,14 +4,13 @@
   "description": "Codecs for executable document formats",
   "files": [
     "install.js",
-    "patches",
     "dist"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli.js",
   "scripts": {
-    "install": "patch-package && node install.js",
+    "install": "node install.js",
     "format": "npx prettier --write './**/*.{js,json,md,ts,yaml}'",
     "lint": "eslint 'src/**/*.{ts,js}' --fix",
     "fixtures": "npx ts-node --files src/__fixtures__/make",
@@ -51,7 +50,7 @@
     "@stencila/thema": "^1.14.0",
     "ajv": "^6.12.0",
     "appdata-path": "^1.0.0",
-    "asciimath2tex": "^1.1.0",
+    "asciimath2tex": "nokome/asciimath2tex#168f4bd7514c9161c39269283fbaa1fc6e3118c4",
     "async-lock": "^1.2.2",
     "better-ajv-errors": "^0.6.7",
     "bin-wrapper": "^4.1.0",
@@ -82,7 +81,6 @@
     "papaparse": "^5.1.1",
     "parse-author": "^2.0.0",
     "parse-full-name": "^1.2.4",
-    "patch-package": "^6.2.1",
     "pdf-lib": "^1.4.1",
     "png-chunk-text": "^1.0.0",
     "png-chunks-encode": "^1.0.0",
