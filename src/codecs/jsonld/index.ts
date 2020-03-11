@@ -21,7 +21,7 @@ const contexts: { [key: string]: unknown } = {}
 
 /**
  * Custom document loader that loads from the
- * in-memory cache first if possible. Uses
+ * in-memory cache, and on disk, if possible. Uses
  * the `util/http` module to fetch for it's
  * on-disk caching based on response headers.
  *
@@ -39,6 +39,12 @@ const documentLoader = async (url: string): Promise<any> => {
     return {
       document: contexts[url]
     }
+  }
+  // Use on-disk Stencila Schema context if possible
+  if (url === schema.jsonLdUrl()) {
+    const document = { '@context': schema.jsonLdContext() }
+    contexts[url] = document
+    return {document}
   }
   // Fetch from remote
   let response
