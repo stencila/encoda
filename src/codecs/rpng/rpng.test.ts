@@ -11,6 +11,7 @@ import {
 import { snapshot } from '../../__tests__/helpers'
 import { PngCodec } from '../png'
 import { extract, has, insert, RpngCodec } from './'
+import * as schema from '@stencila/schema'
 
 const pngCodec = new PngCodec()
 const rpngCodec = new RpngCodec()
@@ -48,6 +49,45 @@ describe('encode+decode', () => {
     await rpngCodec.write(node, file)
     expect(await rpngCodec.read(file)).toEqual(node)
   })
+
+  test('Paragraph with an ImageObject pointing to local file', async () => {
+    const inp = schema.paragraph({
+      content: [
+        'Here is an image: ',
+        schema.imageObject({
+          contentUrl: pngPath
+        }),
+        '.'
+      ]
+    })
+    const file = await rpngCodec.encode(inp)
+
+    const out = await rpngCodec.decode(file) as schema.Paragraph
+    expect(schema.isA('Paragraph', out)).toBe(true)
+
+    const image = out.content?.[1] as schema.ImageObject
+    expect(schema.isA('ImageObject', image)).toBe(true)
+    expect(image.contentUrl).toMatch(/^data:image\/png;base64/)
+  })
+
+  test('CodeChunk with a single image output', async () => {
+    const inp = schema.codeChunk({
+      text: 'plot(1,1)',
+      outputs: [
+        schema.imageObject({
+          contentUrl: pngPath
+        })
+      ]
+    })
+    const file = await rpngCodec.encode(inp)
+
+    const out = await rpngCodec.decode(file) as schema.CodeChunk
+    expect(schema.isA('CodeChunk', out)).toBe(true)
+
+    const image = out.outputs?.[0] as schema.ImageObject
+    expect(schema.isA('ImageObject', image)).toBe(true)
+    expect(image.contentUrl).toMatch(/^data:image\/png;base64/)
+  })
 })
 
 describe('encoding of extended character sets', () => {
@@ -56,8 +96,8 @@ describe('encoding of extended character sets', () => {
 
   test.each(['tEXt', 'zTXt'])('%s', async type => {
     let image = await fs.readFile(rpngPath)
-    image = insert(keyword, content, image, type as 'tEXt' | 'zTXt')
-    expect(has(keyword, image)).toBe(true)
-    expect(extract(keyword, image)).toEqual(content)
+    image = insert(content, image, keyword, type as 'tEXt' | 'zTXt')
+    expect(has(image, keyword)).toBe(true)
+    expect(extract(image, keyword)).toEqual(content)
   })
 })

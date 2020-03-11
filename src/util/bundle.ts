@@ -2,11 +2,12 @@
  * @module util
  */
 
-import * as stencila from '@stencila/schema'
+import * as schema from '@stencila/schema'
 import * as dataUri from './dataUri'
 import transform from './transform'
+
 /**
- * Transform a `Node` by replacing any links to local resources
+ * Transform a `Node` by replacing any links to _local_ resources
  * with data URIs.
  *
  * This is used to create standalone HTML pages
@@ -17,27 +18,17 @@ import transform from './transform'
  * Currently only handles `MediaObject` nodes, but could be used for other
  * node types in the future.
  */
-export default async function bundle(
-  node: stencila.Node
-): Promise<stencila.Node> {
+export default async function bundle(node: schema.Node): Promise<schema.Node> {
   return transform(
     node,
-    async (node: stencila.Node): Promise<stencila.Node> => {
-      switch (stencila.nodeType(node)) {
-        case 'MediaObject':
-        case 'AudioObject':
-        case 'ImageObject':
-        case 'VideoObject': {
-          const { contentUrl, ...rest } = node as stencila.MediaObject
-          if (
-            !contentUrl.startsWith('http') &&
-            !contentUrl.startsWith('data:')
-          ) {
-            const data = await dataUri.fromFile(contentUrl)
-            return {
-              ...rest,
-              contentUrl: data.dataUri
-            }
+    async (node: schema.Node): Promise<schema.Node> => {
+      if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
+        const { contentUrl, ...rest } = node
+        if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
+          const data = await dataUri.fromFile(contentUrl)
+          return {
+            ...rest,
+            contentUrl: data.dataUri
           }
         }
       }

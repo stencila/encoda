@@ -44,7 +44,7 @@ const documentLoader = async (url: string): Promise<any> => {
   if (url === schema.jsonLdUrl()) {
     const document = { '@context': schema.jsonLdContext() }
     contexts[url] = document
-    return {document}
+    return { document }
   }
   // Fetch from remote
   let response
