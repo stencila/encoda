@@ -1,11 +1,15 @@
-import { toMatchFile } from 'jest-file-snapshot'
 import { JsonLdCodec } from '.'
-import * as vfile from '../../util/vfile'
 import { fixture, snapshot, nockRecord } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
 
 const yaml = new YamlCodec()
 const jsonld = new JsonLdCodec()
+
+const jsonld2yaml = async (name: string) =>
+  yaml.dump(await jsonld.read(fixture(name)))
+
+const yaml2jsonld = async (name: string) =>
+  jsonld.dump(await yaml.read(fixture(name)))
 
 /**
  * Use nock-record to record all HTTP requests during this test suite
@@ -27,16 +31,6 @@ beforeAll(async () => {
 afterAll(async () => {
   nockDone()
 })
-
-const jsonld2yaml = async (name: string) =>
-  vfile.dump(
-    await yaml.encode(await jsonld.decode(await vfile.read(fixture(name))))
-  )
-
-const yaml2jsonld = async (name: string) =>
-  vfile.dump(
-    await jsonld.encode(await yaml.decode(await vfile.read(fixture(name))))
-  )
 
 describe('decode', () => {
   test('orcid', async () => {
