@@ -16,7 +16,8 @@ import {
   microdataRoot,
   microdataType,
   nodeType,
-  thematicBreak
+  thematicBreak,
+  microdataProperty
   // eslint-disable-next-line import/no-duplicates
 } from '@stencila/schema'
 import collapse from 'collapse-whitespace'
@@ -886,21 +887,18 @@ function encodeAuthorsProperty(
       },
       ...authors.map(author =>
         author.type === 'Person'
-          ? encodePerson(author, orgs, 'li', 'author')
-          : encodeOrganization(author, 'li', 'author')
+          ? encodePerson(author, 'authors', orgs, 'li')
+          : encodeOrganization(author, 'authors', 'li')
       )
     ),
     ...(Object.keys(orgs).length > 0
       ? [
           h(
             'ol',
-            {
-              attrs: {
-                [stencilaItemProp]: 'affiliations'
-              }
-            },
-            ...Object.values(orgs).map(([_, org]) =>
-              encodeOrganization(org, 'li')
+            microdata(orgs, 'affiliations', 'array'),
+            Object.values(orgs).map(([_, org]) =>
+              // Do not give a property since these are linked.
+              encodeOrganization(org, undefined, 'li')
             )
           )
         ]
@@ -1065,22 +1063,26 @@ function decodePerson(person: HTMLElement): stencila.Person {
 /**
  * Encode a `Person` node.
  *
- * Create a Microdata `<link>` between the `Person` and the `Organization`.
+ * - Ensures an `itemprop=name` for conformance with GSDTT.
+ *
+ * - Creates a link between the `Person` and the `Organization`
+ *   that they are affiliated with.
  *
  * @param person The `Person` to encode
+ * @param property The property that the person belongs to
  * @param organizations A map of `Organization`s to allow linking
  * @param tag The tag to use for the element
  */
 function encodePerson(
   person: stencila.Person,
+  property = 'authors',
   organizations?: { [key: string]: [number, stencila.Organization] },
-  tag?: keyof HTMLElementTagNameMap,
-  property = 'author'
+  tag: keyof HTMLElementTagNameMap = 'span'
 ): HTMLElement {
   const {
     name,
-    givenNames,
-    familyNames,
+    givenNames = [],
+    familyNames = [],
     url,
     emails,
     affiliations,
@@ -1088,52 +1090,57 @@ function encodePerson(
   } = person
   logWarnLossIfAny('html', 'encode', person, lost)
 
-  // For an `Article.author`, GSDTT requires the `name` property
-  // so ensure a value for that...
   const nameString =
     name !== undefined
       ? name
-      : familyNames !== undefined
-      ? givenNames !== undefined
+      : familyNames.length !== 0
+      ? givenNames.length !== 0
         ? [...givenNames, ...familyNames].join(' ')
         : familyNames.join(' ')
       : 'Anonymous'
 
-  const namesElem = h(
-    'span',
-    {
-      attrs: {
-        itemprop: 'name',
-        // Always use the calculated `nameString` as the content of this property
-        content: nameString
-      }
-    },
-    encodeMaybe(givenNames, names =>
-      h('span', { itemprop: 'givenName' }, names.join(' '))
-    ),
-    encodeMaybe(familyNames, names =>
-      h('span', { itemprop: 'familyName' }, names.join(' '))
-    ),
-    // Display the calculated `nameString` if no given or family names
-    familyNames === undefined && givenNames === undefined
-      ? nameString
-      : undefined
-  )
+  const nameElem =
+    familyNames.length === 0 && givenNames.length === 0
+      ? // Display the calculated `nameString` if no given or family names
+        h('span', microdata(nameString, 'name'), nameString)
+      : // Otherwise, use a <meta> tag
+        h('meta', { ...microdata(nameString, 'name'), content: nameString })
 
-  const linkElem =
-    url !== undefined
-      ? h('a', { itemprop: 'url', content: url, href: url }, namesElem)
-      : namesElem
+  const givenNamesElem =
+    givenNames.length !== 0
+      ? h(
+          'span',
+          microdata(givenNames, 'givenNames', 'array'),
+          givenNames.map(givenName =>
+            h('span', microdata(givenName, 'givenNames', 'item'), givenName)
+          )
+        )
+      : undefined
+
+  const familyNamesElem =
+    familyNames.length !== 0
+      ? h(
+          'span',
+          microdata(familyNames, 'familyNames', 'array'),
+          familyNames.map(familyName =>
+            h('span', microdata(familyName, 'familyNames', 'item'), familyName)
+          )
+        )
+      : undefined
 
   const emailsElem =
     emails !== undefined
       ? h(
-          'ol',
-          { attrs: { [stencilaItemProp]: 'emails' } },
+          'span',
+          microdata(emails, 'emails', 'array'),
           emails.map(email =>
             h(
-              'li',
-              h('a', { itemprop: 'email', href: `mailto:${email}` }, email)
+              'a',
+              {
+                ...microdata(email, 'emails', 'item'),
+                href: `mailto:${email}`
+              },
+              email
             )
           )
         )
@@ -1142,21 +1149,19 @@ function encodePerson(
   const affiliationsElem =
     affiliations !== undefined && organizations !== undefined
       ? h(
-          'ol',
-          { attrs: { [stencilaItemProp]: 'affiliations' } },
+          'span',
+          microdata(affiliations, 'affiliations', 'array'),
           affiliations.map(affiliation => {
             const entry = organizations[affiliation.name ?? '']
             if (entry !== undefined) {
               const [index, org] = entry
               return h(
-                'li',
-                h(
-                  'a',
-                  {
-                    attrs: { itemprop: 'affiliation', href: org?.meta?.itemid }
-                  },
-                  index
-                )
+                'a',
+                {
+                  ...microdata(affiliation, 'affiliations', 'item'),
+                  href: org?.meta?.itemid
+                },
+                index
               )
             }
           })
@@ -1164,9 +1169,11 @@ function encodePerson(
       : undefined
 
   return h(
-    tag ?? 'span',
-    encodeAttrs(person, { itemprop: property }),
-    linkElem,
+    tag,
+    { attrs: microdata(person, property) },
+    nameElem,
+    givenNamesElem,
+    familyNamesElem,
     emailsElem,
     affiliationsElem
   )
@@ -1174,8 +1181,8 @@ function encodePerson(
 
 function encodeOrganization(
   org: stencila.Organization,
-  tag?: keyof HTMLElementTagNameMap,
-  property?: string
+  property?: string,
+  tag: keyof HTMLElementTagNameMap = 'span'
 ): HTMLElement {
   const { id, name, url, address, meta, parentOrganization, ...lost } = org
   logWarnLossIfAny('html', 'encode', org, lost)
@@ -1185,16 +1192,17 @@ function encodeOrganization(
     url !== undefined
       ? h('a', { itemprop: 'url', content: url, href: url }, nameElem)
       : nameElem
+
   return h(
-    tag ?? 'div',
+    tag,
     encodeAttrs(org, {
       itemid: meta?.itemid,
       id: meta?.itemid.replace(/^#/, '') ?? id,
-      itemprop: property
+      ...(property !== undefined ? microdataProperty(property) : {})
     }),
     linkElem,
     encodeMaybe(parentOrganization, org =>
-      encodeOrganization(org, 'span', 'parentOrganization')
+      encodeOrganization(org, 'parentOrganization')
     ),
     encodeAddressProperty(address)
   )
