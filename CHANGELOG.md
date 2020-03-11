@@ -1,3 +1,22 @@
+# [0.90.0](https://github.com/stencila/encoda/compare/v0.89.0...v0.90.0) (2020-03-11)
+
+
+### Bug Fixes
+
+* **JSON-LD:** Use schema functions for getting context and it's URL ([eaea7a1](https://github.com/stencila/encoda/commit/eaea7a13b14febbac9f012f21c0e4d79bfa251de)), closes [#388](https://github.com/stencila/encoda/issues/388)
+* **PNG:** Improve handling of isStandalone flag ([4fe788b](https://github.com/stencila/encoda/commit/4fe788b296ce6245e5c8421e927c33aad98610de))
+* **RPNG:** Bundle or self-reference images ([e732a64](https://github.com/stencila/encoda/commit/e732a64a2dd2dfd9673e3f545efdf010b5459af7))
+* **RPNG:** Use base64 instead of punycode ([0f4c177](https://github.com/stencila/encoda/commit/0f4c1775969795ef424f9f8e409bb210811bbd22))
+* **RPNG:** Use JSON-LD and remove sync functions ([4359cbd](https://github.com/stencila/encoda/commit/4359cbd98d81c31a910998f6fc544df0c74b91c8))
+* **RPNG:** Use PNG codec; change keyword ([5e913e4](https://github.com/stencila/encoda/commit/5e913e45d18519931a83e4150cff3e256b179bca))
+* **RPNG:** Use zTXt chunks ([48a20c3](https://github.com/stencila/encoda/commit/48a20c3d31b5897d96a69f9358a64b27ba2d4737))
+
+
+### Features
+
+* **JSON-LD:** Use local copy of Stencila context if possible ([278659c](https://github.com/stencila/encoda/commit/278659c8eeddd37fd0679ab4fa0815b6380d78dc))
+* **RPNG:** Add async sniffDecode function ([00179ee](https://github.com/stencila/encoda/commit/00179eec8b1655231774a004ebafc1cb671fdee9))
+
 # [0.89.0](https://github.com/stencila/encoda/compare/v0.88.2...v0.89.0) (2020-03-10)
 
 
