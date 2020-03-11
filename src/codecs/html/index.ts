@@ -906,36 +906,25 @@ function encodeAuthorsProperty(
   ]
 }
 
+/**
+ * Encode a `Date` node as a HTML `<time>` element.
+ *
+ * Note that since a `Date` is a basic, atomic https://schema.org/DataType
+ * it does not have an `itemtype` property.
+ *
+ * @param date The date to encode
+ * @param property The property the data belongs to
+ */
 function encodeDate(
   date: string | stencila.Date,
   property?: string
 ): HTMLElement {
-  const dateString = stencila.isA('Date', date) ? date.value : date
-  const timeEl = h(
+  const value = stencila.isA('Date', date) ? date.value : date
+  return h(
     'time',
-    { attrs: microdata(stencila.date({ value: dateString })) },
-    {
-      datetime: dateString
-    },
-    dateString
+    { ...microdata(value, property), datetime: value },
+    value
   )
-
-  // Google's Structured Data testing tool does not identify `Date` values if the element
-  // has `itemscope` and `itemtype` attributes defined, so we nest it in a `span` and add a `meta` element.
-  if (isDefined(property)) {
-    return h(
-      'span',
-      h('meta', {
-        attrs: {
-          itemprop: property,
-          content: dateString
-        }
-      }),
-      timeEl
-    )
-  }
-
-  return timeEl
 }
 
 function encodeDescriptionProperty(

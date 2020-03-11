@@ -462,7 +462,6 @@ const nodes: [string, Entity][] = [
   //   'DatatableColumn',
   //   datatable({ columns: [datatableColumn({ name: 'A', values: [] })] })
   // ],
-  ['Date', date({ value: '2021/02/13' })],
   ['Delete', del({ content: [] })],
   ['Emphasis', emphasis({ content: [] })],
   ['Entity', entity()],
