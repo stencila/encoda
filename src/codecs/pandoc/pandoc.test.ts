@@ -1,17 +1,13 @@
 import stencila from '@stencila/schema'
 import fs from 'fs-extra'
-import path from 'path'
 import * as vfile from '../../util/vfile'
 import { fixture, snapshot } from '../../__tests__/helpers'
-import { RpngCodec } from '../rpng'
-import { commonEncodeDefaults } from '../types'
 import { JsonCodec } from '../json'
 import { decodeMeta, emptyAttrs, encodeMeta, PandocCodec, run } from './'
 import * as Pandoc from './types'
 
 const pandoc = new PandocCodec()
 const { decode, encode } = pandoc
-const rpng = new RpngCodec()
 const json = new JsonCodec()
 
 const pdoc2node = async (pdoc: any) =>

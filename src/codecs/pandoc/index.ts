@@ -21,20 +21,14 @@ import stencila, {
 import childProcess from 'child_process'
 import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
-import { write } from '../..'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
-import * as vfile from '../../util/vfile'
 import transform from '../../util/transform'
+import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
 import { RpngCodec } from '../rpng'
 import { TexCodec } from '../tex'
 import { TxtCodec } from '../txt'
-import {
-  Codec,
-  CommonDecodeOptions,
-  commonEncodeDefaults,
-  CommonEncodeOptions
-} from '../types'
+import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
 
@@ -105,7 +99,7 @@ export class PandocCodec extends Codec implements Codec {
 
     const json = await run(contents, args)
     const pdoc = JSON.parse(json)
-    return decodeDocument(pdoc)
+    return decodeDocument(await decodeDocumentAsync(pdoc))
   }
 
   /**
@@ -130,11 +124,8 @@ export class PandocCodec extends Codec implements Codec {
       useCiteproc = false
     } = settings
 
-    const prepared = await encodePrepare(node)
+    const { standalone, pdoc } = encodeNode(await encodeDocumentAsync(node))
 
-    encodePromises = []
-    const { standalone, pdoc } = encodeNode(prepared)
-    await Promise.all(encodePromises)
     const args = [`--from=json`, `--to=${pandocFormat}`]
     if (standalone) args.push('--standalone')
     for (const option of pandocArgs) {
@@ -169,16 +160,6 @@ export class PandocCodec extends Codec implements Codec {
     } else return vfile.create(undefined, { path: filePath })
   }
 }
-
-/**
- * Promises for resources (usually rPNGs) to
- * be generated during encoding.
- *
- * This approach of having a global set of promises
- * is a bit hacky but allows us to keep the nested chain
- * of encoding functions synchronous.
- */
-let encodePromises: Promise<any>[] = []
 
 /**
  * Run the Pandoc binary
@@ -246,34 +227,58 @@ export function run(
 }
 
 /**
+ * Do any asynchronous decoding of a Pandoc `Document` before doing
+ * synchronous decoding.
+ */
+async function decodeDocumentAsync(
+  pdoc: Pandoc.Document
+): Promise<Pandoc.Document> {
+  return transform(pdoc, async elem => {
+    if (elem === null || (typeof elem === 'object' && !('t' in elem)))
+      return elem
+
+    const { t } = elem as Pandoc.Block | Pandoc.Inline
+    switch (t) {
+      case 'Image': {
+        const image = decodeImage(elem as Pandoc.Image)
+        // If the image is an rPNG then decode it and return
+        // the embedded node
+        const { contentUrl } = image
+        if (contentUrl) {
+          const node = await rpngCodec.sniffDecode(contentUrl)
+          if (node !== undefined) return node
+        }
+      }
+    }
+    return elem
+  }) as Promise<Pandoc.Document>
+}
+
+/**
+ * Do any asynchronous encoding of a Pandoc `Document` before doing
+ * synchronous encoding.
+ */
+async function encodeDocumentAsync(
+  node: stencila.Node
+): Promise<stencila.Node> {
+  return transform(node, async node => {
+    if (stencila.isA('MathBlock', node)) return encodeMath(node, 'DisplayMath')
+    else if (stencila.isA('MathFragment', node))
+      return encodeMath(node, 'InlineMath')
+    else if (stencila.isA('CodeBlock', node)) return encodeCodeBlock(node)
+    else if (stencila.isA('CodeExpression', node))
+      return encodeCodeExpression(node)
+    return node
+  })
+}
+
+/**
  * Decode a Pandoc `Document` to a Stencila `Article`.
  */
 function decodeDocument(pdoc: Pandoc.Document): stencila.Article {
   const meta = decodeMeta(pdoc.meta)
   const content = decodeBlocks(pdoc.blocks)
   return stencila.article({ ...meta, content })
-}
-
-/**
- * Do any async operations necessary on the node tree before encoding it.
- *
- * This avoids having to "taint" the whole decode function call stack with
- * async calls.
- */
-async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
-  return transform(node, async node => {
-    if (stencila.isA('MathFragment', node) || stencila.isA('MathBlock', node)) {
-      if (node.mathLanguage !== 'tex') {
-        const text = await texCodec.dump(node)
-        return {
-          ...node,
-          mathLanguage: 'tex',
-          text
-        }
-      }
-    }
-    return node
-  })
 }
 
 /**
@@ -480,56 +485,58 @@ function encodeBlocks(nodes: stencila.BlockContent[]): Pandoc.Block[] {
 /**
  * Decode a Pandoc `Block` element to a Stencila `BlockContent` node.
  */
-function decodeBlock(block: Pandoc.Block): stencila.BlockContent {
-  switch (block.t) {
+function decodeBlock(elem: Pandoc.Block): stencila.BlockContent {
+  // Already decoded elements
+  if (stencila.isBlockContent(elem)) return elem
+
+  switch (elem.t) {
     case 'Header':
-      return decodeHeader(block)
+      return decodeHeader(elem)
     case 'Plain':
-      return decodePlain(block)
+      return decodePlain(elem)
     case 'Para':
-      return decodePara(block)
+      return decodePara(elem)
     case 'BlockQuote':
-      return decodeBlockQuote(block)
+      return decodeBlockQuote(elem)
     case 'CodeBlock':
-      return decodeCodeBlock(block)
+      return decodeCodeBlock(elem)
     case 'BulletList':
     case 'OrderedList':
-      return decodeList(block as Pandoc.OrderedList)
+      return decodeList(elem as Pandoc.OrderedList)
     case 'Table':
-      return decodeTable(block)
+      return decodeTable(elem)
     case 'HorizontalRule':
       return decodeHorizontalRule()
   }
 
-  log.error(`Unhandled Pandoc node type "${block.t}"`)
+  log.error(`Unhandled Pandoc node type "${elem.t}"`)
   return decodePara({ t: 'Para', c: [] })
 }
 
 /**
  * Encode a Stencila `BlockContent` node to a Pandoc `Block` element.
  */
-function encodeBlock(block: stencila.BlockContent): Pandoc.Block {
-  switch (block.type) {
+function encodeBlock(node: stencila.BlockContent): Pandoc.Block {
+  // Already encoded nodes
+  if (Pandoc.isBlock(node)) return node
+
+  switch (node.type) {
     case 'Heading':
-      return encodeHeading(block)
+      return encodeHeading(node)
     case 'Paragraph':
-      return encodeParagraph(block)
+      return encodeParagraph(node)
     case 'QuoteBlock':
-      return encodeQuoteBlock(block)
+      return encodeQuoteBlock(node)
     case 'CodeBlock':
-      return encodeCodeBlock(block)
-    case 'CodeChunk':
-      return encodeCodeChunk(block as stencila.CodeChunk)
-    case 'MathBlock':
-      return encodeMath(block, 'DisplayMath')
+      return encodeCodeBlock(node)
     case 'List':
-      return encodeList(block)
+      return encodeList(node)
     case 'Table':
-      return encodeTable(block)
+      return encodeTable(node)
     case 'ThematicBreak':
       return encodeThematicBreak()
   }
-  return encodeFallbackBlock(block)
+  return encodeFallbackBlock(node)
 }
 
 /**
@@ -642,7 +649,7 @@ function encodeCodeBlock(node: stencila.CodeBlock): Pandoc.CodeBlock {
  * Encode a Stencila `CodeChunk` to a Pandoc `Div` with an rPNG in it
  * and a `custom-style` attribute.
  */
-function encodeCodeChunk(node: stencila.CodeChunk): Pandoc.Div {
+async function encodeCodeChunk(node: stencila.CodeChunk): Promise<Pandoc.Div> {
   return {
     t: 'Div',
     c: [
@@ -650,7 +657,7 @@ function encodeCodeChunk(node: stencila.CodeChunk): Pandoc.Div {
       [
         {
           t: 'Para',
-          c: [encodeRPNG(node)]
+          c: [await encodeRpng(node)]
         }
       ]
     ]
@@ -835,52 +842,49 @@ function encodeInlines(nodes: stencila.InlineContent[]): Pandoc.Inline[] {
 /**
  * Decode a Pandoc `Inline` node to a Stencila `InlineContent` node
  */
-function decodeInline(node: Pandoc.Inline): stencila.InlineContent {
-  switch (node.t) {
+function decodeInline(elem: Pandoc.Inline): stencila.InlineContent {
+  // Already decoded elements
+  if (stencila.isInlineContent(elem)) return elem
+
+  switch (elem.t) {
     case 'Space':
       return decodeSpace()
     case 'Str':
-      return decodeStr(node)
+      return decodeStr(elem)
     case 'Emph':
-      return decodeEmph(node)
+      return decodeEmph(elem)
     case 'Strong':
-      return decodeStrong(node)
+      return decodeStrong(elem)
     case 'Strikeout':
-      return decodeStrikeout(node)
+      return decodeStrikeout(elem)
     case 'Subscript':
-      return decodeSubscript(node)
+      return decodeSubscript(elem)
     case 'Superscript':
-      return decodeSuperscript(node)
+      return decodeSuperscript(elem)
     case 'Quoted':
-      return decodeQuoted(node)
+      return decodeQuoted(elem)
     case 'Code':
-      return decodeCode(node)
+      return decodeCode(elem)
     case 'Math':
-      // As with rPNGs (see below) it is necessary to cast to inline
-      // content here because `Math` may be decodes to a `MathBlock`
+      // It is necessary to cast to inline
+      // content here because `Math` may be decoded to a `MathBlock`
       // See also `decodePara`
-      return decodeMath(node) as stencila.InlineContent
+      return decodeMath(elem) as stencila.InlineContent
     case 'Link':
-      return decodeLink(node)
+      return decodeLink(elem)
     case 'Cite':
-      return decodeCite(node)
-    case 'Image': {
-      const image = decodeImage(node)
-      // If the image is an rPNG then decode it and return
-      // the embedded node
-      const url = image.contentUrl
-      if (url) {
-        const node = rpngCodec.sniffDecodeSync(url)
-        if (node !== undefined) return node as stencila.InlineContent
-      }
-      return image
-    }
+      return decodeCite(elem)
+    case 'Image':
+      return decodeImage(elem)
     default:
-      return decodeInlineToString(node)
+      return decodeInlineToString(elem)
   }
 }
 
 function encodeInline(node: stencila.Node): Pandoc.Inline {
+  // Already encoded nodes
+  if (Pandoc.isInline(node)) return node
+
   switch (nodeType(node)) {
     case 'Text':
       return encodeString(node as string)
@@ -898,10 +902,6 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
       return encodeQuote(node as stencila.Quote)
     case 'CodeFragment':
       return encodeCodeFragment(node as stencila.CodeFragment)
-    case 'CodeExpression':
-      return encodeCodeExpression(node as stencila.CodeExpression)
-    case 'MathFragment':
-      return encodeMath(node as stencila.MathFragment, 'InlineMath')
     case 'Link':
       return encodeLink(node as stencila.Link)
     case 'Cite':
@@ -1143,10 +1143,15 @@ function encodeCodeFragment(node: stencila.CodeFragment): Pandoc.Code {
  * Encode a Stencila `CodeExpression` to a Pandoc `Span` with an rPNG in it
  * and a `custom-style` attribute.
  */
-function encodeCodeExpression(node: stencila.CodeExpression): Pandoc.Span {
+async function encodeCodeExpression(
+  node: stencila.CodeExpression
+): Promise<Pandoc.Span> {
   return {
     t: 'Span',
-    c: [['', [], [['custom-style', 'CodeExpression']]], [encodeRPNG(node)]]
+    c: [
+      ['', [], [['custom-style', 'CodeExpression']]],
+      [await encodeRpng(node)]
+    ]
   }
 }
 
@@ -1173,12 +1178,18 @@ function decodeMath(elem: Pandoc.Math): stencila.Math {
  * @param node The Stencila `Math` node to encode
  * @param pandocType The Pandoc element type to encode as
  */
-function encodeMath(node: stencila.Math, pandocType: 'InlineMath'): Pandoc.Math
-function encodeMath(node: stencila.Math, pandocType: 'DisplayMath'): Pandoc.Para
-function encodeMath(
+async function encodeMath(
+  node: stencila.Math,
+  pandocType: 'InlineMath'
+): Promise<Pandoc.Math>
+async function encodeMath(
+  node: stencila.Math,
+  pandocType: 'DisplayMath'
+): Promise<Pandoc.Para>
+async function encodeMath(
   node: stencila.Math,
   pandocType: Pandoc.MathType['t']
-): Pandoc.Math | Pandoc.Para {
+): Promise<Pandoc.Math | Pandoc.Para> {
   const { type: nodeType, text, mathLanguage = 'tex' } = node
   if (pandocType === 'InlineMath' && nodeType !== 'MathFragment')
     log.warn(
@@ -1189,13 +1200,7 @@ function encodeMath(
       `Expected a Stencila "MathBlock" node, but got a got a ${nodeType} node`
     )
 
-  let tex
-  if (mathLanguage === 'tex') {
-    tex = text
-  } else {
-    log.warn(`Unable to encode a Math node with mathLanguage "${mathLanguage}"`)
-    tex = ''
-  }
+  const tex = mathLanguage === 'tex' ? text : await texCodec.dump(node)
 
   const math: Pandoc.Math = {
     t: 'Math',
@@ -1363,19 +1368,11 @@ function encodeFallbackInline(node: stencila.Node): Pandoc.Str {
 
 /**
  * Encode a Stencila `Node` as a Pandoc `Image`
- * pointing to a rPNG.
+ * pointing to a RPNG.
  */
-function encodeRPNG(node: stencila.Node): Pandoc.Image {
+async function encodeRpng(node: stencila.Node): Promise<Pandoc.Image> {
   const imagePath = tempy.file({ extension: 'png' })
-  const promise = (async () => {
-    await write(node, imagePath, {
-      ...commonEncodeDefaults,
-      format: 'rpng',
-      isStandalone: false
-    })
-  })()
-  encodePromises.push(promise)
-
+  await rpngCodec.write(node, imagePath)
   const url = imagePath
   const title = nodeType(node)
   return {
