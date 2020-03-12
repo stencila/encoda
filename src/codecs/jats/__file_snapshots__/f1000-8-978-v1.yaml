@@ -232,11 +232,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Lett.
+        isPartOf:
+          type: Periodical
+          name: Ecol Lett.
         volumeNumber: 15
       issueNumber: 4
-      pageEnd: 377
-      pageStart: 365
+    pageEnd: 377
+    pageStart: 365
     title: Impacts of climate change on the future of biodiversity.
   - type: Article
     id: ref-2
@@ -259,10 +261,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 127
-      pageStart: 115
-      title: Biol Conserv.
+      isPartOf:
+        type: Periodical
+        name: Biol Conserv.
       volumeNumber: 165
+    pageEnd: 127
+    pageStart: 115
     title: >-
       Reframing ecosystem management in the era of climate change: issues and
       knowledge from forests.
@@ -287,10 +291,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 314
-      pageStart: 307
-      title: Ecol Complex.
+      isPartOf:
+        type: Periodical
+        name: Ecol Complex.
       volumeNumber: 20
+    pageEnd: 314
+    pageStart: 307
     title: >-
       Prediction of climate warming impacts on plant species could be more
       complex than expected. evidence from a case study in the himalaya.
@@ -335,10 +341,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 36
-      pageStart: 28
-      title: J Arid Environ.
+      isPartOf:
+        type: Periodical
+        name: J Arid Environ.
       volumeNumber: 117
+    pageEnd: 36
+    pageStart: 28
     title: >-
       Relationships between landforms, soil characteristics and dominant
       xerophytes in the hyper-arid northern united arab emirates.
@@ -365,11 +373,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nat Resour.
+        isPartOf:
+          type: Periodical
+          name: Nat Resour.
         volumeNumber: 3
       issueNumber: 1
-      pageEnd: 5
-      pageStart: 1
+    pageEnd: 5
+    pageStart: 1
     title: >-
       Early Growth Stages of the Rare Acridocarpus orientalis in the UAE-A First
       Step towards Conservation.
@@ -377,6 +387,9 @@ references:
     id: ref-8
     authors: []
     datePublished: '2007'
+    isPartOf:
+      type: PublicationVolume
+      volumeNumber: 996
     title: The physical science basis
   - type: Article
     id: ref-9
@@ -416,11 +429,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Model.
+        isPartOf:
+          type: Periodical
+          name: Ecol Model.
         volumeNumber: 154
       issueNumber: 3
-      pageEnd: 300
-      pageStart: 289
+    pageEnd: 300
+    pageStart: 289
     title: >-
       Species: a spatial evaluation of climate impact on the envelope of
       species.
@@ -442,11 +457,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Trends Ecol Evol.
+        isPartOf:
+          type: Periodical
+          name: Trends Ecol Evol.
         volumeNumber: 22
       issueNumber: 1
-      pageEnd: 47
-      pageStart: 42
+    pageEnd: 47
+    pageStart: 42
     title: Ensemble forecasting of species distributions.
   - type: Article
     id: ref-12
@@ -469,10 +486,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 269
-      pageStart: 260
-      title: Ecol Eng.
+      isPartOf:
+        type: Periodical
+        name: Ecol Eng.
       volumeNumber: 92
+    pageEnd: 269
+    pageStart: 260
     title: >-
       Maxent modeling for predicting the potential distribution of endangered
       medicinal plant (
@@ -500,11 +519,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Environ Manage.
+        isPartOf:
+          type: Periodical
+          name: Environ Manage.
         volumeNumber: 60
       issueNumber: 3
-      pageEnd: 435
-      pageStart: 422
+    pageEnd: 435
+    pageStart: 422
     title: |-
       Climatic-induced shifts in the distribution of teak (
                               tectona grandis) in tropical asia: implications for forest management and planning.
@@ -526,11 +547,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecology.
+        isPartOf:
+          type: Periodical
+          name: Ecology.
         volumeNumber: 82
       issueNumber: 9
-      pageEnd: 2573
-      pageStart: 2560
+    pageEnd: 2573
+    pageStart: 2560
     title: >-
       Competitive interactions between tree species in new zealand’s old-growth
       indigenous forests.
@@ -557,11 +580,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Conserv Biol.
+        isPartOf:
+          type: Periodical
+          name: Conserv Biol.
         volumeNumber: 17
       issueNumber: 6
-      pageEnd: 1600
-      pageStart: 1591
+    pageEnd: 1600
+    pageStart: 1591
     title: >-
       Avoiding pitfalls of using species distribution models in conservation
       planning.
@@ -588,11 +613,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Appl Ecol.
+        isPartOf:
+          type: Periodical
+          name: J Appl Ecol.
         volumeNumber: 43
       issueNumber: 3
-      pageEnd: 392
-      pageStart: 386
+    pageEnd: 392
+    pageStart: 386
     title: Making better biogeographical predictions of species’ distributions.
   - type: Article
     id: ref-17
@@ -617,11 +644,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Biogeogr.
+        isPartOf:
+          type: Periodical
+          name: J Biogeogr.
         volumeNumber: 34
       issueNumber: 1
-      pageEnd: 117
-      pageStart: 102
+    pageEnd: 117
+    pageStart: 102
     title: >-
       Predicting species distributions from small numbers of occurrence records:
       a test case using cryptic geckos in madagascar.
@@ -646,10 +675,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 366
-      pageStart: 357
-      title: Forest Ecol Manag.
+      isPartOf:
+        type: Periodical
+        name: Forest Ecol Manag.
       volumeNumber: 360
+    pageEnd: 366
+    pageStart: 357
     title: >-
       Climatic niche models and their consensus projections for future climates
       for four major forest tree species in the Asia–Pacific region.
@@ -676,11 +707,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: IForest.
+        isPartOf:
+          type: Periodical
+          name: IForest.
         volumeNumber: 11
       issueNumber: 5
-      pageEnd: 650
-      pageStart: 643
+    pageEnd: 650
+    pageStart: 643
     title: |-
       Predicting the impacts of climate change on the distribution of 
                               juniperus excelsa m. bieb. in the central and eastern alborz mountains, iran.
@@ -707,11 +740,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Lett.
+        isPartOf:
+          type: Periodical
+          name: Ecol Lett.
         volumeNumber: 9
       issueNumber: 10
-      pageEnd: 1145
-      pageStart: 1136
+    pageEnd: 1145
+    pageStart: 1136
     title: >-
       Tradeoffs of different types of species occurrence data for use in
       systematic conservation planning.
@@ -738,11 +773,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Lett.
+        isPartOf:
+          type: Periodical
+          name: Ecol Lett.
         volumeNumber: 16
       issueNumber: 12
-      pageEnd: 1435
-      pageStart: 1424
+    pageEnd: 1435
+    pageStart: 1424
     title: Predicting species distributions for conservation decisions.
   - type: Article
     id: ref-22
@@ -767,11 +804,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Model.
+        isPartOf:
+          type: Periodical
+          name: Ecol Model.
         volumeNumber: 190
       issueNumber: 3
-      pageEnd: 259
-      pageStart: 231
+    pageEnd: 259
+    pageStart: 231
     title: Maximum entropy modeling of species geographic distributions.
   - type: Article
     id: ref-23
@@ -796,11 +835,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecography.
+        isPartOf:
+          type: Periodical
+          name: Ecography.
         volumeNumber: 29
       issueNumber: 5
-      pageEnd: 785
-      pageStart: 773
+    pageEnd: 785
+    pageStart: 773
     title: >-
       The effect of sample size and species characteristics on performance of
       different species distribution modeling methods.
@@ -815,10 +856,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 117
-      pageStart: 102
-      title: Madagascar J Biogeogr.
+      isPartOf:
+        type: Periodical
+        name: Madagascar J Biogeogr.
       volumeNumber: 1
+    pageEnd: 117
+    pageStart: 102
     title: 'Raxworthy cj, nakamura m, townsend peterson a.'
   - type: Article
     id: ref-25
@@ -843,11 +886,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Model.
+        isPartOf:
+          type: Periodical
+          name: Ecol Model.
         volumeNumber: 190
       issueNumber: 3
-      pageEnd: 259
-      pageStart: 231
+    pageEnd: 259
+    pageStart: 231
     title: Maximum entropy modeling of species geographic distributions.
   - type: Article
     id: ref-26
@@ -872,11 +917,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Am J Ophthalmol.
+        isPartOf:
+          type: Periodical
+          name: Am J Ophthalmol.
         volumeNumber: 139
       issueNumber: 1
-      pageEnd: 202
-      pageStart: 199
+    pageEnd: 202
+    pageStart: 199
     title: Calotropis procera (ushaar) keratitis.
   - type: Article
     id: ref-27
@@ -896,11 +943,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Forest Ecol Manag.
+        isPartOf:
+          type: Periodical
+          name: Forest Ecol Manag.
         volumeNumber: 213
       issueNumber: 1
-      pageEnd: 296
-      pageStart: 288
+    pageEnd: 296
+    pageStart: 288
     title: Artificial forests as conservation sites for the native flora of the uae.
   - type: Article
     id: ref-28
@@ -950,10 +999,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clim Change.
+        isPartOf:
+          type: Periodical
+          name: Clim Change.
         volumeNumber: 109
       issueNumber: 1
-      pageStart: 77
+    pageStart: 77
     title: 'Rcp 4.5: a pathway for stabilization of radiative forcing by 2100.'
   - type: Article
     id: ref-31
@@ -978,11 +1029,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Int J Climatol.
+        isPartOf:
+          type: Periodical
+          name: Int J Climatol.
         volumeNumber: 25
       issueNumber: 15
-      pageEnd: 1978
-      pageStart: 1965
+    pageEnd: 1978
+    pageStart: 1965
     title: Very high resolution interpolated climate surfaces for global land areas.
   - type: Article
     id: ref-32
@@ -1007,11 +1060,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecography.
+        isPartOf:
+          type: Periodical
+          name: Ecography.
         volumeNumber: 29
       issueNumber: 2
-      pageEnd: 151
-      pageStart: 129
+    pageEnd: 151
+    pageStart: 129
     title: >-
       Novel methods improve prediction of species’ distributions from occurrence
       data.
@@ -1038,7 +1093,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS One.
+        isPartOf:
+          type: Periodical
+          name: PLoS One.
         volumeNumber: 2
       issueNumber: 7
     title: >-
@@ -1062,11 +1119,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Ecol Nat Environ.
+        isPartOf:
+          type: Periodical
+          name: J Ecol Nat Environ.
         volumeNumber: 1
       issueNumber: 4
-      pageEnd: 98
-      pageStart: 94
+    pageEnd: 98
+    pageStart: 94
     title: >-
       Maxent modeling for predicting suitable habitat for threatened and
       endangered tree 
@@ -1094,11 +1153,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecography.
+        isPartOf:
+          type: Periodical
+          name: Ecography.
         volumeNumber: 32
       issueNumber: 1
-      pageEnd: 192
-      pageStart: 180
+    pageEnd: 192
+    pageStart: 180
     title: >-
       Botanical richness and endemicity patterns of borneo derived from species
       distribution models.
@@ -1125,7 +1186,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS One.
+        isPartOf:
+          type: Periodical
+          name: PLoS One.
         volumeNumber: 5
       issueNumber: 10
     title: >-
@@ -1156,11 +1219,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Divers Distrib.
+        isPartOf:
+          type: Periodical
+          name: Divers Distrib.
         volumeNumber: 17
       issueNumber: 1
-      pageEnd: 57
-      pageStart: 43
+    pageEnd: 57
+    pageStart: 43
     title: A statistical explanation of maxent for ecologists.
   - type: Article
     id: ref-38
@@ -1181,11 +1246,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ecol Model.
+        isPartOf:
+          type: Periodical
+          name: Ecol Model.
         volumeNumber: 222
       issueNumber: 15
-      pageEnd: 2811
-      pageStart: 2796
+    pageEnd: 2811
+    pageStart: 2796
     title: >-
       Species-specific tuning increases robustness to sampling bias in models of
       species distributions: an implementation with maxent.
@@ -1212,11 +1279,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Appl Ecol.
+        isPartOf:
+          type: Periodical
+          name: J Appl Ecol.
         volumeNumber: 43
       issueNumber: 6
-      pageEnd: 1232
-      pageStart: 1223
+    pageEnd: 1232
+    pageStart: 1223
     title: >-
       Assessing the accuracy of species distribution models: prevalence, kappa
       and the true skill statistic (tss).
@@ -1241,10 +1310,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 31
-      pageStart: 23
-      title: Acta Oecol.
+      isPartOf:
+        type: Periodical
+        name: Acta Oecol.
       volumeNumber: 49
+    pageEnd: 31
+    pageStart: 23
     title: >-
       Predicting impacts of climate change on medicinal asclepiads of pakistan
       using maxent modeling.
@@ -1281,7 +1352,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS One.
+        isPartOf:
+          type: Periodical
+          name: PLoS One.
         volumeNumber: 9
       issueNumber: 2
     title: >-
@@ -1311,11 +1384,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Physiol Plant.
+        isPartOf:
+          type: Periodical
+          name: Acta Physiol Plant.
         volumeNumber: 35
       issueNumber: 2
-      pageEnd: 344
-      pageStart: 335
+    pageEnd: 344
+    pageStart: 335
     title: |-
       Ecophysiological performance of 
                               calotropis procera: an exotic and evergreen species in caatinga, brazilian semi-arid.
@@ -1360,11 +1435,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Arid Environ.
+        isPartOf:
+          type: Periodical
+          name: J Arid Environ.
         volumeNumber: 73
       issueNumber: 3
-      pageEnd: 354
-      pageStart: 347
+    pageEnd: 354
+    pageStart: 347
     title: >-
       Camel grazing affects species diversity and community structure in the
       deserts of the UAE.

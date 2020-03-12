@@ -176,11 +176,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Algological Studies
+        isPartOf:
+          type: Periodical
+          name: Algological Studies
         volumeNumber: 109
       issueNumber: 1
-      pageEnd: 27
-      pageStart: 213
+    pageEnd: 27
+    pageStart: 213
     title: Estimates of global cyanobacterial biomass and its distribution
   - type: Article
     id: pone-0178565-ref002
@@ -192,9 +194,8 @@ references:
           - BA
     datePublished: '2012'
     isPartOf:
-      type: PublicationVolume
-      title: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
-    title: ''
+      type: Periodical
+      name: 'Ecology of Cyanobacteria II: Their Diversity in Space and Time'
   - type: Article
     id: pone-0178565-ref003
     authors:
@@ -233,11 +234,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature
+        isPartOf:
+          type: Periodical
+          name: Nature
         volumeNumber: 412
       issueNumber: 6847
-      pageEnd: 8
-      pageStart: 635
+    pageEnd: 8
+    pageStart: 635
     title: Unicellular cyanobacteria fix N2 in the subtropical North Pacific Ocean
   - type: Article
     id: pone-0178565-ref004
@@ -272,11 +275,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biotechnology and bioengineering
+        isPartOf:
+          type: Periodical
+          name: Biotechnology and bioengineering
         volumeNumber: 110
       issueNumber: 9
-      pageEnd: 9
-      pageStart: 2371
+    pageEnd: 9
+    pageStart: 2371
     title: >-
       Rhythm of carbon and nitrogen fixation in unicellular cyanobacteria under
       turbulent and highly aerobic conditions
@@ -318,11 +323,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 110
       issueNumber: 3
-      pageEnd: 8
-      pageStart: 1053
+    pageEnd: 8
+    pageStart: 1053
     title: >-
       Improving the coverage of the cyanobacterial phylum using diversity-driven
       genome sequencing
@@ -359,11 +366,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Microbiology
+        isPartOf:
+          type: Periodical
+          name: Microbiology
         volumeNumber: 111
       issueNumber: 1
-      pageEnd: 61
-      pageStart: 1
+    pageEnd: 61
+    pageStart: 1
     title: >-
       Generic assignments, strain histories and properties of pure cultures of
       cyanobacteria
@@ -385,11 +394,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 105
       issueNumber: 7
-      pageEnd: 5
-      pageStart: 2510
+    pageEnd: 5
+    pageStart: 2510
     title: 'Genome evolution in cyanobacteria: the stable core and the variable shell'
   - type: Article
     id: pone-0178565-ref008
@@ -419,10 +430,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC genomics
+        isPartOf:
+          type: Periodical
+          name: BMC genomics
         volumeNumber: 13
       issueNumber: 1
-      pageStart: 1
+    pageStart: 1
     title: >-
       The diversity of cyanobacterial metabolism: genome analysis of multiple
       phototrophic microorganisms
@@ -454,11 +467,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 110
       issueNumber: 4
-      pageEnd: 54
-      pageStart: 1249
+    pageEnd: 54
+    pageStart: 1249
     title: 'Cyanobacterial conversion of carbon dioxide to 2, 3-butanediol'
   - type: Article
     id: pone-0178565-ref010
@@ -481,9 +496,11 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageStart: 7
-      title: Frontiers in bioengineering and biotechnology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in bioengineering and biotechnology
       volumeNumber: 1
+    pageStart: 7
     title: Cyanobacteria as a platform for biofuel production
   - type: Article
     id: pone-0178565-ref011
@@ -498,11 +515,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Metabolic engineering
+        isPartOf:
+          type: Periodical
+          name: Metabolic engineering
         volumeNumber: 1
       issueNumber: 1
-      pageEnd: 11
-      pageStart: 1
+    pageEnd: 11
+    pageStart: 1
     title: Metabolic fluxes and metabolic engineering
   - type: Article
     id: pone-0178565-ref012
@@ -542,11 +561,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of bacteriology
+        isPartOf:
+          type: Periodical
+          name: Journal of bacteriology
         volumeNumber: 188
       issueNumber: 23
-      pageEnd: 71
-      pageStart: 8259
+    pageEnd: 71
+    pageStart: 8259
     title: >-
       Experimental and computational assessment of conditionally essential genes
       in Escherichia coli
@@ -588,11 +609,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 100
       issueNumber: 12
-      pageEnd: 8
-      pageStart: 7213
+    pageEnd: 8
+    pageStart: 7213
     title: >-
       A postgenomic method for predicting essential genes at subsaturation
       levels of mutagenesis: application to Mycobacterium tuberculosis
@@ -614,10 +637,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC microbiology
+        isPartOf:
+          type: Periodical
+          name: BMC microbiology
         volumeNumber: 5
       issueNumber: 1
-      pageStart: 1
+    pageStart: 1
     title: >-
       Genome-scale reconstruction of the metabolic network in Staphylococcus
       aureus N315: an initial draft to the two-dimensional annotation
@@ -634,11 +659,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 93
       issueNumber: 19
-      pageEnd: 6
-      pageStart: 10004
+    pageEnd: 6
+    pageStart: 10004
     title: 'The minimal cell genome:" on being the right size"'
   - type: Article
     id: pone-0178565-ref016
@@ -678,11 +705,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: nature
+        isPartOf:
+          type: Periodical
+          name: nature
         volumeNumber: 418
       issueNumber: 6896
-      pageEnd: 91
-      pageStart: 387
+    pageEnd: 91
+    pageStart: 387
     title: Functional profiling of the Saccharomyces cerevisiae genome
   - type: Article
     id: pone-0178565-ref017
@@ -702,11 +731,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Immunology and cell biology
+        isPartOf:
+          type: Periodical
+          name: Immunology and cell biology
         volumeNumber: 83
       issueNumber: 3
-      pageEnd: 23
-      pageStart: 217
+    pageEnd: 23
+    pageStart: 217
     title: Genome-wide screening for gene function using RNAi in mammalian cells
   - type: Article
     id: pone-0178565-ref018
@@ -746,7 +777,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 112
       issueNumber: 48
     title: The essential gene set of a photosynthetic organism
@@ -778,11 +811,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature
+        isPartOf:
+          type: Periodical
+          name: Nature
         volumeNumber: 411
       issueNumber: 6833
-      pageEnd: 2
-      pageStart: 41
+    pageEnd: 2
+    pageStart: 41
     title: Lethality and centrality in protein networks
   - type: Article
     id: pone-0178565-ref020
@@ -812,11 +847,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Bioinformatics
+        isPartOf:
+          type: Periodical
+          name: Bioinformatics
         volumeNumber: 20
       issueNumber: 14
-      pageEnd: 50
-      pageStart: 2242
+    pageEnd: 50
+    pageStart: 2242
     title: >-
       Gene co-expression network topology provides a framework for molecular
       characterization of cellular state
@@ -830,10 +867,10 @@ references:
           - G
     datePublished: '2015'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 204
-      pageStart: 183
-      title: 'Gene Essentiality: Methods and Protocols'
+      type: Periodical
+      name: 'Gene Essentiality: Methods and Protocols'
+    pageEnd: 204
+    pageStart: 183
     title: >-
       Computational prediction of essential metabolic genes using
       constraint-based approaches
@@ -860,10 +897,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Molecular systems biology
+        isPartOf:
+          type: Periodical
+          name: Molecular systems biology
         volumeNumber: 5
       issueNumber: 1
-      pageStart: 301
+    pageStart: 301
     title: Genome‐scale gene/reaction essentiality and synthetic lethality analysis
   - type: Article
     id: pone-0178565-ref023
@@ -895,8 +934,8 @@ references:
           - PP
     datePublished: '2016'
     isPartOf:
-      type: PublicationVolume
-      title: Bioresource technology
+      type: Periodical
+      name: Bioresource technology
     title: >-
       Metabolic model of Synechococcus sp. PCC 7002: Prediction of flux
       distribution and network modification for enhanced biofuel production
@@ -928,11 +967,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Photosynthesis research
+        isPartOf:
+          type: Periodical
+          name: Photosynthesis research
         volumeNumber: 118
       issueNumber: 1
-      pageEnd: 8
-      pageStart: 191
+    pageEnd: 8
+    pageStart: 191
     title: >-
       Metabolic flux analysis of Cyanothece sp. ATCC 51142 under mixotrophic
       conditions
@@ -969,11 +1010,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Science
+        isPartOf:
+          type: Periodical
+          name: Science
         volumeNumber: 298
       issueNumber: 5598
-      pageEnd: 20
-      pageStart: 1616
+    pageEnd: 20
+    pageStart: 1616
     title: Whole-genome analysis of photosynthetic prokaryotes
   - type: Article
     id: pone-0178565-ref026
@@ -998,10 +1041,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC evolutionary biology
+        isPartOf:
+          type: Periodical
+          name: BMC evolutionary biology
         volumeNumber: 11
       issueNumber: 1
-      pageStart: 1
+    pageStart: 1
     title: >-
       Genome fluctuations in cyanobacteria reflect evolutionary, developmental
       and adaptive traits
@@ -1038,11 +1083,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 96
       issueNumber: 8
-      pageEnd: 8
-      pageStart: 4285
+    pageEnd: 8
+    pageStart: 4285
     title: >-
       Assigning protein functions by comparative genome analysis: protein
       phylogenetic profiles
@@ -1079,11 +1126,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Bioinformatics
+        isPartOf:
+          type: Periodical
+          name: Bioinformatics
         volumeNumber: 28
       issueNumber: 23
-      pageEnd: 2
-      pageStart: 3150
+    pageEnd: 2
+    pageStart: 3150
     title: 'CD-HIT: accelerated for clustering the next-generation sequencing data'
   - type: Article
     id: pone-0178565-ref029
@@ -1113,11 +1162,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Antonie Van Leeuwenhoek
+        isPartOf:
+          type: Periodical
+          name: Antonie Van Leeuwenhoek
         volumeNumber: 103
       issueNumber: 2
-      pageEnd: 46
-      pageStart: 331
+    pageEnd: 46
+    pageStart: 331
     title: A global analysis of adaptive evolution of operons in cyanobacteria
   - type: Article
     id: pone-0178565-ref030
@@ -1152,11 +1203,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of Biological Chemistry
+        isPartOf:
+          type: Periodical
+          name: Journal of Biological Chemistry
         volumeNumber: 276
       issueNumber: 17
-      pageEnd: 6
-      pageStart: 13513
+    pageEnd: 6
+    pageStart: 13513
     title: >-
       Phosphopantothenoylcysteine synthetase from Escherichia coli
       Identification and characterization of the last unidentified coenzyme A
@@ -1199,11 +1252,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biochemistry
+        isPartOf:
+          type: Periodical
+          name: Biochemistry
         volumeNumber: 43
       issueNumber: 39
-      pageEnd: 35
-      pageStart: 12427
+    pageEnd: 35
+    pageStart: 12427
     title: >-
       Structure and function of the phenazine biosynthesis protein PhzF from
       Pseudomonas fluorescens 2–79
@@ -1245,13 +1300,15 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: >-
-          Proceedings of the National Academy of Sciences of the United States
-          of America
+        isPartOf:
+          type: Periodical
+          name: >-
+            Proceedings of the National Academy of Sciences of the United States
+            of America
         volumeNumber: 101
       issueNumber: 47
-      pageEnd: 6
-      pageStart: 16431
+    pageEnd: 6
+    pageStart: 16431
     title: >-
       Structure and function of the phenazine biosynthetic protein PhzF from
       Pseudomonas fluorescens
@@ -1273,11 +1330,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Microbiology and Molecular Biology Reviews
+        isPartOf:
+          type: Periodical
+          name: Microbiology and Molecular Biology Reviews
         volumeNumber: 79
       issueNumber: 4
-      pageEnd: 85
-      pageStart: 373
+    pageEnd: 85
+    pageStart: 373
     title: Circadian rhythms in cyanobacteria
   - type: Article
     id: pone-0178565-ref034
@@ -1315,9 +1374,11 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageStart: 374
-      title: Frontiers in microbiology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in microbiology
       volumeNumber: 4
+    pageStart: 374
     title: >-
       Rhythmic and sustained oscillations in metabolism and gene expression of
       Cyanothece sp. ATCC 51142 under constant light
@@ -1359,11 +1420,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Photosynthesis research
+        isPartOf:
+          type: Periodical
+          name: Photosynthesis research
         volumeNumber: 75
       issueNumber: 3
-      pageEnd: 21
-      pageStart: 211
+    pageEnd: 21
+    pageStart: 211
     title: Cyanobacterial signature genes
   - type: Article
     id: pone-0178565-ref036
@@ -1394,11 +1457,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biochemistry
+        isPartOf:
+          type: Periodical
+          name: Biochemistry
         volumeNumber: 43
       issueNumber: 8
-      pageEnd: 308
-      pageStart: 2297
+    pageEnd: 308
+    pageStart: 2297
     title: >-
       Photosystem II proteins PsbL and PsbJ regulate electron flow to the
       plastoquinone pool
@@ -1440,11 +1505,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: European Journal of Biochemistry
+        isPartOf:
+          type: Periodical
+          name: European Journal of Biochemistry
         volumeNumber: 271
       issueNumber: 1
-      pageEnd: 107
-      pageStart: 96
+    pageEnd: 107
+    pageStart: 96
     title: >-
       Protein assembly of photosystem II and accumulation of subcomplexes in the
       absence of low molecular mass subunits PsbL and PsbJ
@@ -1486,11 +1553,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: FEBS letters
+        isPartOf:
+          type: Periodical
+          name: FEBS letters
         volumeNumber: 535
       issueNumber: 1
-      pageEnd: 65
-      pageStart: 159
+    pageEnd: 65
+    pageStart: 159
     title: >-
       Mössbauer studies of the non‐heme iron and cytochrome b 559 in a
       Chlamydomonas reinhardtii PSI− mutant and their interactions with
@@ -1523,11 +1592,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biochemistry
+        isPartOf:
+          type: Periodical
+          name: Biochemistry
         volumeNumber: 29
       issueNumber: 6
-      pageEnd: 25
-      pageStart: 1417
+    pageEnd: 25
+    pageStart: 1417
     title: >-
       Overexpression, purification and characterization of isochorismate
       synthase (EntC), the first enzyme involved in the biosynthesis of
@@ -1560,11 +1631,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biochemical and biophysical research communications
+        isPartOf:
+          type: Periodical
+          name: Biochemical and biophysical research communications
         volumeNumber: 135
       issueNumber: 2
-      pageEnd: 81
-      pageStart: 374
+    pageEnd: 81
+    pageStart: 374
     title: 'Amino acid sequence homology among fructose-1, 6-bisphosphatases'
   - type: Article
     id: pone-0178565-ref041
@@ -1584,11 +1657,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of bacteriology
+        isPartOf:
+          type: Periodical
+          name: Journal of bacteriology
         volumeNumber: 172
       issueNumber: 7
-      pageEnd: 31
-      pageStart: 4023
+    pageEnd: 31
+    pageStart: 4023
     title: >-
       Genetic tagging, cloning, and DNA sequence of the Synechococcus sp. strain
       PCC 7942 gene (gnd) encoding 6-phosphogluconate dehydrogenase
@@ -1610,10 +1685,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biochemical Journal
+        isPartOf:
+          type: Periodical
+          name: Biochemical Journal
         volumeNumber: 264
       issueNumber: 2
-      pageStart: 313
+    pageStart: 313
     title: Gas vesicle proteins
   - type: Article
     id: pone-0178565-ref043
@@ -1638,11 +1715,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Gene
+        isPartOf:
+          type: Periodical
+          name: Gene
         volumeNumber: 102
       issueNumber: 1
-      pageEnd: 22
-      pageStart: 117
+    pageEnd: 22
+    pageStart: 117
     title: >-
       Structure and organization of the gas vesicle gene cluster on the
       Halobacterium halobium plasmid pNRC100
@@ -1659,11 +1738,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Research in microbiology
+        isPartOf:
+          type: Periodical
+          name: Research in microbiology
         volumeNumber: 141
       issueNumber: 3
-      pageEnd: 41
-      pageStart: 336
+    pageEnd: 41
+    pageStart: 336
     title: >-
       The plasmid-encoded arsenical resistance pump: an anion-translocating
       ATPase
@@ -1695,11 +1776,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The EMBO journal
+        isPartOf:
+          type: Periodical
+          name: The EMBO journal
         volumeNumber: 19
       issueNumber: 17
-      pageEnd: 45
-      pageStart: 4838
+    pageEnd: 45
+    pageStart: 4838
     title: >-
       Structure of the ArsA ATPase: the catalytic subunit of a heavy metal
       resistance pump
@@ -1718,9 +1801,9 @@ references:
           - MH
     datePublished: '2010'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 2010
-      title: International journal of microbiology
+      type: Periodical
+      name: International journal of microbiology
+    pageStart: 2010
     title: Functional promiscuity of homologues of the bacterial ArsA ATPases
   - type: Article
     id: pone-0178565-ref047
@@ -1755,10 +1838,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biology direct
+        isPartOf:
+          type: Periodical
+          name: Biology direct
         volumeNumber: 1
       issueNumber: 1
-      pageStart: 1
+    pageStart: 1
     title: >-
       A putative RNA-interference-based immune system in prokaryotes:
       computational analysis of the predicted enzymatic machinery, functional
@@ -1791,11 +1876,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biochemical Journal
+        isPartOf:
+          type: Periodical
+          name: Biochemical Journal
         volumeNumber: 439
       issueNumber: 1
-      pageEnd: 95
-      pageStart: 85
+    pageEnd: 95
+    pageStart: 85
     title: >-
       Helicase dissociation and annealing of RNA-DNA hybrids by Escherichia coli
       Cas3 protein

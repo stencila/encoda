@@ -284,10 +284,12 @@ references:
     datePublished: '1974'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1294
-      pageStart: 1292
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 184
+    pageEnd: 1294
+    pageStart: 1292
     title: >-
       "Decision"-making in bacteria: chemotactic response of Escherichia coli to
       conflicting stimuli
@@ -322,10 +324,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 420
-      pageStart: 413
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 10
+    pageEnd: 420
+    pageStart: 413
     title: >-
       Whole-brain functional imaging at cellular resolution using light-sheet
       microscopy
@@ -340,10 +344,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 129
-      pageStart: 128
-      title: Journal of Statistical Software
+      isPartOf:
+        type: Periodical
+        name: Journal of Statistical Software
       volumeNumber: 1
+    pageEnd: 129
+    pageStart: 128
     title: 'CircStat: a MATLAB toolbox for circular statistics'
   - type: Article
     id: bib4
@@ -361,10 +367,12 @@ references:
     datePublished: '1972'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 504
-      pageStart: 500
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 239
+    pageEnd: 504
+    pageStart: 500
     title: Chemotaxis in E coli analysed by 3D tracking
   - type: Article
     id: bib5
@@ -387,7 +395,9 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Systems Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Systems Neuroscience
       volumeNumber: 5
     title: Prey capture behavior evoked by simple visual stimuli in larval zebrafish
   - type: Article
@@ -406,10 +416,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 846
-      pageStart: 831
-      title: Current Biology
+      isPartOf:
+        type: Periodical
+        name: Current Biology
       volumeNumber: 25
+    pageEnd: 846
+    pageStart: 831
     title: Visuomotor transformations underlying hunting behavior in zebrafish
   - type: Article
     id: bib7
@@ -427,10 +439,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 85
-      pageStart: 63
-      title: Journal of Computational Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Journal of Computational Neuroscience
       volumeNumber: 11
+    pageEnd: 85
+    pageStart: 63
     title: >-
       Effects of neuromodulation in a cortical network model of object working
       memory dominated by recurrent inhibition
@@ -450,10 +464,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2579
-      pageStart: 2565
-      title: The Journal of Experimental Biology
+      isPartOf:
+        type: Periodical
+        name: The Journal of Experimental Biology
       volumeNumber: 203
+    pageEnd: 2579
+    pageStart: 2565
     title: >-
       Locomotor repertoire of the larval zebrafish: swimming, turning and prey
       capture
@@ -478,10 +494,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 386
-      pageStart: 381
-      title: Current Biology
+      isPartOf:
+        type: Periodical
+        name: Current Biology
       volumeNumber: 20
+    pageEnd: 386
+    pageStart: 381
     title: >-
       Distinct retinal pathways drive spatial orientation behaviors in zebrafish
       navigation
@@ -501,10 +519,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2539
-      pageStart: 2526
-      title: Journal of Experimental Biology
+      isPartOf:
+        type: Periodical
+        name: Journal of Experimental Biology
       volumeNumber: 210
+    pageEnd: 2539
+    pageStart: 2526
     title: >-
       Modulation of locomotor activity in larval zebrafish during light
       adaptation
@@ -524,10 +544,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1396
-      pageStart: 1391
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 107
+    pageEnd: 1396
+    pageStart: 1391
     title: Bacterial strategies for chemotaxis response
   - type: Article
     id: bib12
@@ -545,10 +567,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 13
-      pageStart: 1
-      title: Frontiers in Systems Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Systems Neuroscience
       volumeNumber: 8
+    pageEnd: 13
+    pageStart: 1
     title: Navigational strategies underlying phototaxis in larval zebrafish
   - type: Article
     id: bib13
@@ -606,7 +630,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 5
     title: >-
       Brain-wide mapping of neural activity controlling zebrafish exploratory
@@ -627,10 +653,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 663
-      pageStart: 646
-      title: Developmental Biology
+      isPartOf:
+        type: Periodical
+        name: Developmental Biology
       volumeNumber: 180
+    pageEnd: 663
+    pageStart: 646
     title: The development of vision in the zebrafish (Danio rerio)
   - type: Article
     id: bib15
@@ -668,10 +696,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 19131
-      pageStart: 19126
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 104
+    pageEnd: 19131
+    pageStart: 19126
     title: OFF ganglion cells cannot drive the optokinetic reflex in zebrafish
   - type: Article
     id: bib16
@@ -699,10 +729,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6039
-      pageStart: 6034
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 107
+    pageEnd: 6039
+    pageStart: 6034
     title: Zebrafish larvae lose vision at night
   - type: Article
     id: bib17
@@ -714,9 +746,8 @@ references:
           - GT
     datePublished: '1860'
     isPartOf:
-      type: PublicationVolume
-      title: Elemente Der Psychophysik
-    title: ''
+      type: Periodical
+      name: Elemente Der Psychophysik
   - type: Article
     id: bib18
     authors:
@@ -753,10 +784,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2047
-      pageStart: 2042
-      title: Current Biology
+      isPartOf:
+        type: Periodical
+        name: Current Biology
       volumeNumber: 22
+    pageEnd: 2047
+    pageStart: 2042
     title: >-
       Deep brain photoreceptors control light-seeking behavior in zebrafish
       larvae
@@ -781,10 +814,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 578
-      pageStart: 573
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 431
+    pageEnd: 578
+    pageStart: 573
     title: >-
       Small modulation of ongoing cortical dynamics by sensory input during
       natural vision
@@ -803,9 +838,8 @@ references:
           - DL
     datePublished: '1961'
     isPartOf:
-      type: PublicationVolume
-      title: 'The Orientation of Animals, Kinesis, Taxes and Compass Reactions'
-    title: ''
+      type: Periodical
+      name: 'The Orientation of Animals, Kinesis, Taxes and Compass Reactions'
   - type: Article
     id: bib21
     authors:
@@ -817,7 +851,9 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      title: Behavioral and Brain Sciences
+      isPartOf:
+        type: Periodical
+        name: Behavioral and Brain Sciences
       volumeNumber: 18
     title: >-
       The hebbian paradigm reintegrated: local reverberations as internal
@@ -843,7 +879,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 10
     title: The behavioral space of zebrafish locomotion and its neural network analog
   - type: Article
@@ -867,10 +905,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 441
-      pageStart: 410
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 2
+    pageEnd: 441
+    pageStart: 410
     title: Active sampling and decision making in Drosophila chemotaxis
   - type: Article
     id: bib24
@@ -888,10 +928,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 215
-      pageStart: 208
-      title: Current Opinion in Neurobiology
+      isPartOf:
+        type: Periodical
+        name: Current Opinion in Neurobiology
       volumeNumber: 22
+    pageEnd: 215
+    pageStart: 208
     title: >-
       Active sensation during orientation behavior in the Drosophila larva: more
       sense than luck
@@ -921,10 +963,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 16
-      pageStart: 1
-      title: BMC Biology
+      isPartOf:
+        type: Periodical
+        name: BMC Biology
       volumeNumber: 15
+    pageEnd: 16
+    pageStart: 1
     title: >-
       Search strategy is regulated by somatostatin signaling and deep brain
       photoreceptors in zebrafish
@@ -974,10 +1018,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 16
-      pageStart: 1
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 9
+    pageEnd: 16
+    pageStart: 1
     title: >-
       Dedicated photoreceptor pathways in Drosophila larvae mediate navigation
       by processing either spatial or temporal cues
@@ -1026,8 +1072,8 @@ references:
           - F
     datePublished: '2019'
     isPartOf:
-      type: PublicationVolume
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
     title: >-
       Probabilistic models of larval zebrafish behavior: structure on many
       scales
@@ -1083,7 +1129,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 110
     title: Sensorimotor structure of Drosophila larva phototaxis
   - type: Article
@@ -1094,11 +1142,10 @@ references:
           - Karpenko
         givenNames:
           - S
-    datePublished: '2019'
+    datePublished: 2019a
     isPartOf:
-      type: PublicationVolume
-      title: GitLab
-    title: ''
+      type: Periodical
+      name: GitLab
   - type: Article
     id: bib30
     authors:
@@ -1107,11 +1154,10 @@ references:
           - Karpenko
         givenNames:
           - S
-    datePublished: '2019'
+    datePublished: 2019b
     isPartOf:
-      type: PublicationVolume
-      title: GitLab
-    title: ''
+      type: Periodical
+      name: GitLab
   - type: Article
     id: bib31
     authors:
@@ -1163,7 +1209,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 10
     title: Statistical analysis of zebrafish locomotor response
   - type: Article
@@ -1182,10 +1230,12 @@ references:
     datePublished: '1975'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 496
-      pageStart: 477
-      title: Journal of Theoretical Biology
+      isPartOf:
+        type: Periodical
+        name: Journal of Theoretical Biology
       volumeNumber: 50
+    pageEnd: 496
+    pageStart: 477
     title: Statistical measures of bacterial motility
   - type: Article
     id: bib33
@@ -1203,10 +1253,12 @@ references:
     datePublished: '1972'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2512
-      pageStart: 2509
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 69
+    pageEnd: 2512
+    pageStart: 2509
     title: The gradient-sensing mechanism in bacterial chemotaxis
   - type: Article
     id: bib34
@@ -1229,10 +1281,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1360
-      pageStart: 1351
-      title: Proceedings of the Royal Society of London
+      isPartOf:
+        type: Periodical
+        name: Proceedings of the Royal Society of London
       volumeNumber: 266
+    pageEnd: 1360
+    pageStart: 1351
     title: >-
       Phototaxis during the slug stage of Dictyostelium discoideum: a model
       study
@@ -1262,10 +1316,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 195
-      pageStart: 181
-      title: Current Biology
+      isPartOf:
+        type: Periodical
+        name: Current Biology
       volumeNumber: 28
+    pageEnd: 195
+    pageStart: 181
     title: >-
       Structure of the zebrafish locomotor repertoire revealed with unsupervised
       behavioral clustering
@@ -1290,10 +1346,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1032
-      pageStart: 1023
-      title: Journal of Comparative Physiology A
+      isPartOf:
+        type: Periodical
+        name: Journal of Comparative Physiology A
       volumeNumber: 200
+    pageEnd: 1032
+    pageStart: 1023
     title: >-
       Photo-tropotaxis based on projection through the cerebral commissure in
       the terrestrial slug Limax
@@ -1373,10 +1431,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 367
-      pageStart: 351
-      title: International Journal of Comparative Psychology
+      isPartOf:
+        type: Periodical
+        name: International Journal of Comparative Psychology
       volumeNumber: 20
+    pageEnd: 367
+    pageStart: 351
     title: >-
       A comparative analysis of the preference for dark environments in five
       teleosts
@@ -1401,7 +1461,9 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 7
     title: >-
       Fin-tail coordination during escape and predatory behavior in larval
@@ -1422,10 +1484,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2337
-      pageStart: 2329
-      title: Biophysical Journal
+      isPartOf:
+        type: Periodical
+        name: Biophysical Journal
       volumeNumber: 92
+    pageEnd: 2337
+    pageStart: 2329
     title: >-
       Effects of adaptation in maintaining high sensitivity over a wide range of
       backgrounds for Escherichia coli chemotaxis
@@ -1460,10 +1524,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3378
-      pageStart: 3369
-      title: Journal of Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Journal of Neuroscience
       volumeNumber: 25
+    pageEnd: 3378
+    pageStart: 3369
     title: Step-response analysis of chemotaxis in Caenorhabditis elegans
   - type: Article
     id: bib41
@@ -1486,10 +1552,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6537
-      pageStart: 6532
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 113
+    pageEnd: 6537
+    pageStart: 6532
     title: Single-cell twitching chemotaxis in developing biofilms
   - type: Article
     id: bib42
@@ -1507,10 +1575,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 281
-      pageStart: 275
-      title: Visual Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Visual Neuroscience
       volumeNumber: 22
+    pageEnd: 281
+    pageStart: 275
     title: >-
       Channeling of red and green cone inputs to the zebrafish optomotor
       response
@@ -1555,10 +1625,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 11
-      pageStart: 1
-      title: Frontiers in Neural Circuits
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Neural Circuits
       volumeNumber: 7
+    pageEnd: 11
+    pageStart: 1
     title: >-
       Fast functional imaging of multiple brain regions in intact zebrafish
       larvae using selective plane illumination microscopy
@@ -1593,10 +1665,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 13410
-      pageStart: 13400
-      title: Journal of Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Journal of Neuroscience
       volumeNumber: 26
+    pageEnd: 13410
+    pageStart: 13400
     title: >-
       Hypocretin/Orexin overexpression induces an Insomnia-Like phenotype in
       zebrafish
@@ -1626,10 +1700,12 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 567
-      pageStart: 553
-      title: Journal of Insect Behavior
+      isPartOf:
+        type: Periodical
+        name: Journal of Insect Behavior
       volumeNumber: 7
+    pageEnd: 567
+    pageStart: 553
     title: >-
       Sensorimotor transformation from light reception to phototactic behavior
       inDrosophila larvae (Diptera: Drosophilidae)
@@ -1654,10 +1730,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1553
-      pageStart: 1551
-      title: Brazilian Journal of Medical and Biological Research
+      isPartOf:
+        type: Periodical
+        name: Brazilian Journal of Medical and Biological Research
       volumeNumber: 32
+    pageEnd: 1553
+    pageStart: 1551
     title: Natural preference of zebrafish (Danio rerio) for a dark environment
   - type: Article
     id: bib47
@@ -1675,10 +1753,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 633
-      pageStart: 628
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 93
+    pageEnd: 633
+    pageStart: 628
     title: 'Motion perception: seeing and deciding'
   - type: Article
     id: bib48
@@ -1696,10 +1776,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1936
-      pageStart: 1916
-      title: Journal of Neurophysiology
+      isPartOf:
+        type: Periodical
+        name: Journal of Neurophysiology
       volumeNumber: 86
+    pageEnd: 1936
+    pageStart: 1916
     title: >-
       Neural basis of a perceptual decision in the parietal cortex (area LIP) of
       the rhesus monkey
@@ -1729,7 +1811,9 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      title: PLOS Computational Biology
+      isPartOf:
+        type: Periodical
+        name: PLOS Computational Biology
       volumeNumber: 4
     title: Dimensionality and dynamics in the behavior of C. elegans
   - type: Article
@@ -1778,7 +1862,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 7
     title: >-
       Sensorimotor pathway controlling stopping behavior during chemotaxis in
@@ -1809,10 +1895,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1946
-      pageStart: 1943
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 286
+    pageEnd: 1946
+    pageStart: 1943
     title: >-
       Linking spontaneous activity of single cortical neurons and the underlying
       functional architecture
@@ -1832,10 +1920,12 @@ references:
     datePublished: '1930'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 841
-      pageStart: 823
-      title: Physical Review
+      isPartOf:
+        type: Periodical
+        name: Physical Review
       volumeNumber: 36
+    pageEnd: 841
+    pageStart: 823
     title: On the theory of the brownian motion
   - type: Article
     id: bib53
@@ -1848,10 +1938,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 463
-      pageStart: 455
-      title: Trends in Neurosciences
+      isPartOf:
+        type: Periodical
+        name: Trends in Neurosciences
       volumeNumber: 24
+    pageEnd: 463
+    pageStart: 455
     title: Synaptic reverberation underlying mnemonic persistent activity
   - type: Article
     id: bib54
@@ -1864,10 +1956,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 968
-      pageStart: 955
-      title: Neuron
+      isPartOf:
+        type: Periodical
+        name: Neuron
       volumeNumber: 36
+    pageEnd: 968
+    pageStart: 955
     title: Probabilistic decision making by slow reverberation in cortical circuits
   - type: Article
     id: bib55
@@ -1880,10 +1974,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 234
-      pageStart: 215
-      title: Neuron
+      isPartOf:
+        type: Periodical
+        name: Neuron
       volumeNumber: 60
+    pageEnd: 234
+    pageStart: 215
     title: Decision making in recurrent neuronal circuits
   - type: Article
     id: bib56
@@ -1896,10 +1992,12 @@ references:
     datePublished: '1973'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 821
-      pageStart: 817
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 70
+    pageEnd: 821
+    pageStart: 817
     title: >-
       Chemotaxis by the nematode Caenorhabditis elegans: identification of
       attractants and analysis of the response by use of mutants
@@ -1929,10 +2027,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 922
-      pageStart: 916
-      title: Nature Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Nature Neuroscience
       volumeNumber: 11
+    pageEnd: 922
+    pageStart: 916
     title: Light-sensitive neurons and channels mediate phototaxis in C. elegans
   - type: Article
     id: bib58
@@ -1995,10 +2095,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 12
-      pageStart: 1
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 8
+    pageEnd: 12
+    pageStart: 1
     title: Sensorimotor computation underlying phototaxis in zebrafish
   - type: Article
     id: bib59
@@ -2026,10 +2128,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 12849
-      pageStart: 12846
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 107
+    pageEnd: 12849
+    pageStart: 12846
     title: >-
       Asymmetry in the clockwise and counterclockwise rotation of the bacterial
       flagellar motor

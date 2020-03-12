@@ -247,11 +247,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature.
+        isPartOf:
+          type: Periodical
+          name: Nature.
         volumeNumber: 560
       issueNumber: 7720
-      pageEnd: 547
-      pageStart: 545
+    pageEnd: 547
+    pageStart: 545
     title: Publish peer reviews.
   - type: Article
     id: ref-3
@@ -264,9 +266,11 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageStart: 588
-      title: F1000Res.
+      isPartOf:
+        type: Periodical
+        name: F1000Res.
       volumeNumber: 6
+    pageStart: 588
     title: >-
       What is open peer review? A systematic review [version 2; referees: 4
       approved].

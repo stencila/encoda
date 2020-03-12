@@ -172,7 +172,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS Biol
+        isPartOf:
+          type: Periodical
+          name: PLoS Biol
         volumeNumber: 9
       issueNumber: 4
     title: >-
@@ -204,10 +206,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 458
-      pageStart: 453
-      title: Conserv Biol
+      isPartOf:
+        type: Periodical
+        name: Conserv Biol
       volumeNumber: 27
+    pageEnd: 458
+    pageStart: 453
     title: >-
       Global effects of local human population density and distance to markets
       on the condition of coral reef fisheries
@@ -244,10 +248,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 136
-      pageStart: 119
-      title: Fish Fish
+      isPartOf:
+        type: Periodical
+        name: Fish Fish
       volumeNumber: 14
+    pageEnd: 136
+    pageStart: 119
     title: >-
       Fishing groupers towards extinction: a global assessment of threats and
       extinction risks in a billion dollar fishery
@@ -262,19 +268,19 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 181
-      pageStart: 157
-      title: Environ Biol Fishes
+      isPartOf:
+        type: Periodical
+        name: Environ Biol Fishes
       volumeNumber: 55
+    pageEnd: 181
+    pageStart: 157
     title: Using behaviour and ecology to exploit schooling fishes
   - type: Article
     id: pone-0091296-Pitcher1
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Hamilton1
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Aswani1
     authors:
@@ -291,10 +297,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 341
-      pageStart: 325
-      title: Hum Ecol
+      isPartOf:
+        type: Periodical
+        name: Hum Ecol
       volumeNumber: 36
+    pageEnd: 341
+    pageStart: 325
     title: 'Lagoon ecology and social strategies: habitat diversity and ethnobiology'
   - type: Article
     id: pone-0091296-Claro1
@@ -324,10 +332,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 16
-      pageStart: 7
-      title: Fish Res
+      isPartOf:
+        type: Periodical
+        name: Fish Res
       volumeNumber: 99
+    pageEnd: 16
+    pageStart: 7
     title: >-
       Historical analysis of Cuban commercial fishing effort and the effects on
       management interventions on important reef fishes from 1960–2005
@@ -352,10 +362,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1858
-      pageStart: 1850
-      title: Biol Conserv
+      isPartOf:
+        type: Periodical
+        name: Biol Conserv
       volumeNumber: 144
+    pageEnd: 1858
+    pageStart: 1850
     title: >-
       Community-based conservation results in the recovery of reef fish spawning
       aggregations in the Coral Triangle
@@ -380,10 +392,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 16
-      pageStart: 1
-      title: Bull Mar Sci
+      isPartOf:
+        type: Periodical
+        name: Bull Mar Sci
       volumeNumber: 79
+    pageEnd: 16
+    pageStart: 1
     title: >-
       Fishery-dependent evaluation of a spawning aggregation of tiger grouper
       (Mycteroperca tigris) at Vieques Island, Puerto Rico
@@ -413,10 +427,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 431
-      pageStart: 415
-      title: Bull Mar Sci
+      isPartOf:
+        type: Periodical
+        name: Bull Mar Sci
       volumeNumber: 83
+    pageEnd: 431
+    pageStart: 415
     title: >-
       Dynamics of camouflage (Epinephelus polyphekadion) and brown marbled
       grouper (E. fuscoguttatus) spawning aggregations at a remote atoll,
@@ -437,10 +453,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 726
-      pageStart: 698
-      title: Bull Mar Sci
+      isPartOf:
+        type: Periodical
+        name: Bull Mar Sci
       volumeNumber: 60
+    pageEnd: 726
+    pageStart: 698
     title: 'Tropical reef fish spawning aggregations: defined and reviewed'
   - type: Article
     id: pone-0091296-SadovydeMitcheson2
@@ -475,10 +493,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1244
-      pageStart: 1233
-      title: Conserv Biol
+      isPartOf:
+        type: Periodical
+        name: Conserv Biol
       volumeNumber: 22
+    pageEnd: 1244
+    pageStart: 1233
     title: A global baseline for spawning aggregations of reef fishes
   - type: Article
     id: pone-0091296-Wilberg1
@@ -506,10 +526,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 24
-      pageStart: 7
-      title: Rev Fish Sci
+      isPartOf:
+        type: Periodical
+        name: Rev Fish Sci
       volumeNumber: 18
+    pageEnd: 24
+    pageStart: 7
     title: >-
       Incorporating time-varying catchability into population dynamic stock
       assessment models
@@ -539,10 +561,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 453
-      pageStart: 443
-      title: Coral Reefs
+      isPartOf:
+        type: Periodical
+        name: Coral Reefs
       volumeNumber: 31
+    pageEnd: 453
+    pageStart: 443
     title: >-
       Reproductive movement, residency and fisheries vulnerability of
       brown-marbled grouper, Epinephelus fuscoguttatus (Forsskål, 1775)
@@ -577,10 +601,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 247
-      pageStart: 233
-      title: Mar Ecol Prog Ser
+      isPartOf:
+        type: Periodical
+        name: Mar Ecol Prog Ser
       volumeNumber: 475
+    pageEnd: 247
+    pageStart: 233
     title: >-
       Temporal dynamics, residency and site fidelity of spawning aggregations of
       a herbivorous tropical reef fish, Siganus sutor
@@ -600,10 +626,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 210
-      pageStart: 201
-      title: Environ Biol Fishes
+      isPartOf:
+        type: Periodical
+        name: Environ Biol Fishes
       volumeNumber: 73
+    pageEnd: 210
+    pageStart: 201
     title: >-
       Movement patterns, home range size and habitat utilization of the
       bluespine unicornfish, Naso unicornis (Acanthuridae) in a Hawaiian marine
@@ -629,10 +657,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 538
-      pageStart: 525
-      title: Environ Biol Fishes
+      isPartOf:
+        type: Periodical
+        name: Environ Biol Fishes
       volumeNumber: 92
+    pageEnd: 538
+    pageStart: 525
     title: >-
       Tracking and mapping sun-synchronous migrations and diel space use
       patterns of Haemulon sciurus and Lutjanus apodus in the U.S. Virgin
@@ -653,12 +683,14 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 29
-      pageStart: 22
-      title: >-
-        SPC Traditional Marine Resource and Management and Knowledge Information
-        Bulletin
+      isPartOf:
+        type: Periodical
+        name: >-
+          SPC Traditional Marine Resource and Management and Knowledge
+          Information Bulletin
       volumeNumber: 12
+    pageEnd: 29
+    pageStart: 22
     title: >-
       Traditional knowledge possessed by the fishers of Marovo Lagoon, Solomon
       Islands, concerning fish aggregating behaviour
@@ -678,10 +710,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 181
-      pageStart: 155
-      title: Coast Manage
+      isPartOf:
+        type: Periodical
+        name: Coast Manage
       volumeNumber: 25
+    pageEnd: 181
+    pageStart: 155
     title: >-
       Trends in development in coastal area management in tropical countries:
       from central to community orientation
@@ -696,10 +730,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 296
-      pageStart: 289
-      title: Mar Ecol Prog Ser
+      isPartOf:
+        type: Periodical
+        name: Mar Ecol Prog Ser
       volumeNumber: 327
+    pageEnd: 296
+    pageStart: 289
     title: >-
       Disappearance of a Nassau grouper spawning aggregation off the southern
       Mexican Caribbean Coast
@@ -714,10 +750,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1045
-      pageStart: 1035
-      title: Coral Reefs
+      isPartOf:
+        type: Periodical
+        name: Coral Reefs
       volumeNumber: 26
+    pageEnd: 1045
+    pageStart: 1035
     title: >-
       Designing marine reserves to reflect local socioeconomic conditions:
       lessons from long-enduring customary management systems
@@ -742,10 +780,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 88
-      pageStart: 75
-      title: Environ Conserv
+      isPartOf:
+        type: Periodical
+        name: Environ Conserv
       volumeNumber: 38
+    pageEnd: 88
+    pageStart: 75
     title: >-
       Perceptions of trends in Seychelles artisanal trap fisheries: comparing
       catch monitoring, underwater visual census and fishers' knowledge
@@ -760,10 +800,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 235
-      pageStart: 207
-      title: Ocean Coast Manage
+      isPartOf:
+        type: Periodical
+        name: Ocean Coast Manage
       volumeNumber: 40
+    pageEnd: 235
+    pageStart: 207
     title: >-
       Patterns of marine harvest effort in south western New Georgia, Solomon
       Islands: resource management or optimal foraging
@@ -783,17 +825,18 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 57
-      pageStart: 49
-      title: Coral Reefs
+      isPartOf:
+        type: Periodical
+        name: Coral Reefs
       volumeNumber: 17
+    pageEnd: 57
+    pageStart: 49
     title: >-
       Spatial, temporal and habitat-related variation in the abundance of large
       predatory fish at One Tree Reef, Australia
   - type: Article
     id: pone-0091296-Choat1
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Heyman1
     authors:
@@ -810,17 +853,18 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 551
-      pageStart: 531
-      title: Bull Mar Sci
+      isPartOf:
+        type: Periodical
+        name: Bull Mar Sci
       volumeNumber: 83
+    pageEnd: 551
+    pageStart: 531
     title: >-
       Characterization of transient multi-species reef fish spawning
       aggregations at Gladden Spit, Belize
   - type: Article
     id: pone-0091296-Matlin1
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Sadovy1
     authors:
@@ -837,10 +881,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 262
-      pageStart: 254
-      title: Coral Reefs
+      isPartOf:
+        type: Periodical
+        name: Coral Reefs
       volumeNumber: 24
+    pageEnd: 262
+    pageStart: 254
     title: Are aggregation-fisheries sustainable? Reef fish fisheries as a case study
   - type: Article
     id: pone-0091296-Hobday1
@@ -873,10 +919,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 384
-      pageStart: 372
-      title: Fish Res
+      isPartOf:
+        type: Periodical
+        name: Fish Res
       volumeNumber: 108
+    pageEnd: 384
+    pageStart: 372
     title: Ecological risk assessment for the effects of fishing
   - type: Article
     id: pone-0091296-Patrick1
@@ -909,17 +957,18 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 322
-      pageStart: 305
-      title: Fish Bull
+      isPartOf:
+        type: Periodical
+        name: Fish Bull
       volumeNumber: 108
+    pageEnd: 322
+    pageStart: 305
     title: >-
       Using productivity and susceptibility indices to assess the vulnerability
       of United States fish stocks to overfishing
   - type: Article
     id: pone-0091296-Froese1
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-ArregunSnchez1
     authors:
@@ -931,10 +980,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 242
-      pageStart: 221
-      title: Rev Fish Biol Fish
+      isPartOf:
+        type: Periodical
+        name: Rev Fish Biol Fish
       volumeNumber: 6
+    pageEnd: 242
+    pageStart: 221
     title: 'Catchability: a key parameter for fish stock assessment'
   - type: Article
     id: pone-0091296-Cinner3
@@ -967,10 +1018,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 212
-      pageStart: 206
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 19
+    pageEnd: 212
+    pageStart: 206
     title: Linking social and ecological systems to sustain coral reef fisheries
   - type: Article
     id: pone-0091296-Samoilys1
@@ -1003,10 +1056,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1346
-      pageStart: 1335
-      title: 'Proc 10th Int Coral Reef Symp, Okinawa'
+      isPartOf:
+        type: Periodical
+        name: 'Proc 10th Int Coral Reef Symp, Okinawa'
       volumeNumber: 1
+    pageEnd: 1346
+    pageStart: 1335
     title: >-
       Preliminary findings on spawning aggregations of reef fishes in East
       Africa
@@ -1036,10 +1091,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 349
-      pageStart: 341
-      title: Conserv Biol
+      isPartOf:
+        type: Periodical
+        name: Conserv Biol
       volumeNumber: 25
+    pageEnd: 349
+    pageStart: 341
     title: >-
       Effects of customary marine closures on fish behaviour, spear-fishing
       success, and underwater visual surveys
@@ -1064,10 +1121,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1723
-      pageStart: 1714
-      title: Conserv Biol
+      isPartOf:
+        type: Periodical
+        name: Conserv Biol
       volumeNumber: 19
+    pageEnd: 1723
+    pageStart: 1714
     title: >-
       Conservation and community benefits from traditional coral reef management
       at Ahus Island, Papua New Guinea
@@ -1082,9 +1141,11 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageStart: 32
-      title: Ecol Soc
+      isPartOf:
+        type: Periodical
+        name: Ecol Soc
       volumeNumber: 11
+    pageStart: 32
     title: >-
       Supporting and enhancing development of heterogeneous ecological knowledge
       among resource users in a Kenyan seascape
@@ -1104,10 +1165,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 489
-      pageStart: 463
-      title: Hum Ecol
+      isPartOf:
+        type: Periodical
+        name: Hum Ecol
       volumeNumber: 31
+    pageEnd: 489
+    pageStart: 463
     title: >-
       Who knows? On the importance of identifying ‘experts’ when researching
       local ecological knowledge
@@ -1127,10 +1190,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 835
-      pageStart: 832
-      title: Conserv Biol
+      isPartOf:
+        type: Periodical
+        name: Conserv Biol
       volumeNumber: 22
+    pageEnd: 835
+    pageStart: 832
     title: 'Funding priorities: big barriers to small-scale fisheries'
   - type: Article
     id: pone-0091296-Newton1
@@ -1163,10 +1228,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 658
-      pageStart: 655
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 17
+    pageEnd: 658
+    pageStart: 655
     title: Current and future sustainability of island coral reef fisheries
   - type: Article
     id: pone-0091296-Mangi1
@@ -1184,10 +1251,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1660
-      pageStart: 1646
-      title: Mar Pollut Bull
+      isPartOf:
+        type: Periodical
+        name: Mar Pollut Bull
       volumeNumber: 52
+    pageEnd: 1660
+    pageStart: 1646
     title: >-
       Quantifying the environmental impacts of artisanal fishing gear on Kenya's
       coral reef ecosystems
@@ -1212,10 +1281,12 @@ references:
     datePublished: '1985'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 13
-      pageStart: 12
-      title: 1CLARM Quart
+      isPartOf:
+        type: Periodical
+        name: 1CLARM Quart
       volumeNumber: 8
+    pageEnd: 13
+    pageStart: 12
     title: >-
       Traditional muro-ami, an effective but resource destructive coral reef
       fishing gear
@@ -1235,17 +1306,18 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 300
-      pageStart: 289
-      title: J R Stat Soc Ser B
+      isPartOf:
+        type: Periodical
+        name: J R Stat Soc Ser B
       volumeNumber: 57
+    pageEnd: 300
+    pageStart: 289
     title: >-
       Controlling the false discovery rate: a practical and powerful approach to
       multiple testing
   - type: Article
     id: pone-0091296-Legendre1
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Johannes2
     authors:
@@ -1257,10 +1329,12 @@ references:
     datePublished: '1978'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 364
-      pageStart: 349
-      title: Annu Rev Ecol Syst
+      isPartOf:
+        type: Periodical
+        name: Annu Rev Ecol Syst
       volumeNumber: 9
+    pageEnd: 364
+    pageStart: 349
     title: Traditional marine conservation methods in Oceania and their demise
   - type: Article
     id: pone-0091296-Colding1
@@ -1278,10 +1352,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 600
-      pageStart: 584
-      title: Ecol Appl
+      isPartOf:
+        type: Periodical
+        name: Ecol Appl
       volumeNumber: 11
+    pageEnd: 600
+    pageStart: 584
     title: >-
       Social taboos: “Invisible” systems of local resource management and
       biological conservation
@@ -1296,15 +1372,16 @@ references:
     datePublished: '1982'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 915
-      pageStart: 904
-      title: Anthropos
+      isPartOf:
+        type: Periodical
+        name: Anthropos
       volumeNumber: 77
+    pageEnd: 915
+    pageStart: 904
     title: 'Fishing practices on Ponam Island (Manus Province, Papua New Guinea)'
   - type: Article
     id: pone-0091296-Carrier2
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Newman1
     authors:
@@ -1321,10 +1398,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 851
-      pageStart: 843
-      title: Mar Freshw Res
+      isPartOf:
+        type: Periodical
+        name: Mar Freshw Res
       volumeNumber: 52
+    pageEnd: 851
+    pageStart: 843
     title: >-
       Spatial and temporal variation in assemblages of Lutjanidae, Lethrinidae
       and associated fish species among mid-continental shelf reefs in the
@@ -1345,10 +1424,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 507
-      pageStart: 493
-      title: 'Aquatic Conservation: Mar Freshw Ecosyst'
+      isPartOf:
+        type: Periodical
+        name: 'Aquatic Conservation: Mar Freshw Ecosyst'
       volumeNumber: 18
+    pageEnd: 507
+    pageStart: 493
     title: >-
       A framework for adaptive gear and ecosystem-based management in the
       artisanal coral reef fishery of Papua New Guinea
@@ -1375,10 +1456,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 210
-      pageStart: 203
-      title: Fish Res
+      isPartOf:
+        type: Periodical
+        name: Fish Res
       volumeNumber: 78
+    pageEnd: 210
+    pageStart: 203
     title: >-
       Age, growth and reproduction of the blackspot snapper, Lutjanus
       fulviflamma (Forsskål, 1775), in the southern Arabian Gulf
@@ -1393,10 +1476,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 302
-      pageStart: 265
-      title: Oceanogr Mar Biol Ann Rev
+      isPartOf:
+        type: Periodical
+        name: Oceanogr Mar Biol Ann Rev
       volumeNumber: 42
+    pageEnd: 302
+    pageStart: 265
     title: >-
       Spawning aggregations of coral reef fishes: characteristics, hypotheses,
       threats and management
@@ -1416,10 +1501,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 203
-      pageStart: 194
-      title: Fish Bull
+      isPartOf:
+        type: Periodical
+        name: Fish Bull
       volumeNumber: 106
+    pageEnd: 203
+    pageStart: 194
     title: >-
       The vulnerability of reproductively active squaretail coralgrouper
       (Plectropomus areolatus) to fishing
@@ -1434,10 +1521,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 280
-      pageStart: 269
-      title: Ichthyol Res
+      isPartOf:
+        type: Periodical
+        name: Ichthyol Res
       volumeNumber: 53
+    pageEnd: 280
+    pageStart: 269
     title: >-
       Reproductive and sexual characteristics in five Lethrinus species in
       waters off the Ryukyu Islands
@@ -1457,21 +1546,21 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1116
-      pageStart: 1109
-      title: Fish Sci
+      isPartOf:
+        type: Periodical
+        name: Fish Sci
       volumeNumber: 75
+    pageEnd: 1116
+    pageStart: 1109
     title: >-
       Site fidelity, size, and spatial arrangement of daytime home range of
       thumbprint emperor Lethrinus harak (Lethrinidae)
   - type: Article
     id: pone-0091296-Johannes3
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-Parrish2
     authors: []
-    title: ''
   - type: Article
     id: pone-0091296-KaundaArara1
     authors:
@@ -1488,10 +1577,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 372
-      pageStart: 363
-      title: Environ Biol Fishes
+      isPartOf:
+        type: Periodical
+        name: Environ Biol Fishes
       volumeNumber: 70
+    pageEnd: 372
+    pageStart: 363
     title: >-
       Out-migration of tagged fishes from marine reef national parks to
       fisheries in coastal Kenya
@@ -1516,10 +1607,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 339
-      pageStart: 333
-      title: Proc R Soc B
+      isPartOf:
+        type: Periodical
+        name: Proc R Soc B
       volumeNumber: 265
+    pageEnd: 339
+    pageStart: 333
     title: Life history correlates of responses to fisheries exploitation
   - type: Article
     id: pone-0091296-Cinner5
@@ -1547,9 +1640,11 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageStart: 31
-      title: Ecol Soc
+      isPartOf:
+        type: Periodical
+        name: Ecol Soc
       volumeNumber: 11
+    pageStart: 31
     title: Periodic closures as adaptive coral reef management in the Indo-Pacific
 title: >-
   The Influence of Fisher Knowledge on the Susceptibility of Reef Fish

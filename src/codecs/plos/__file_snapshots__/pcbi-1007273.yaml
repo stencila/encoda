@@ -195,11 +195,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature Reviews Genetics
+        isPartOf:
+          type: Periodical
+          name: Nature Reviews Genetics
         volumeNumber: 14
       issueNumber: 3
-      pageEnd: 167
-      pageStart: 157
+    pageEnd: 167
+    pageStart: 157
     title: Sequence assembly demystified
   - type: Article
     id: pcbi-1007273-ref002
@@ -224,11 +226,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genomics
+        isPartOf:
+          type: Periodical
+          name: Genomics
         volumeNumber: 95
       issueNumber: 6
-      pageEnd: 327
-      pageStart: 315
+    pageEnd: 327
+    pageStart: 315
     title: Assembly algorithms for next-generation sequencing data
   - type: Article
     id: pcbi-1007273-ref003
@@ -253,11 +257,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 98
       issueNumber: 17
-      pageEnd: 9753
-      pageStart: 9748
+    pageEnd: 9753
+    pageStart: 9748
     title: An Eulerian path approach to DNA fragment assembly
   - type: Article
     id: pcbi-1007273-ref004
@@ -269,11 +275,11 @@ references:
           - EW
     datePublished: '2005'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: Bioinformatics
-        volumeNumber: 21
+        type: Periodical
+        name: Bioinformatics
+      volumeNumber: 21
     title: The fragment assembly string graph
   - type: Article
     id: pcbi-1007273-ref005
@@ -293,11 +299,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of computational biology
+        isPartOf:
+          type: Periodical
+          name: Journal of computational biology
         volumeNumber: 16
       issueNumber: 7
-      pageEnd: 908
-      pageStart: 897
+    pageEnd: 908
+    pageStart: 897
     title: >-
       Parametric complexity of sequence assembly: theory and applications to
       next generation sequencing
@@ -324,10 +332,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature
+        isPartOf:
+          type: Periodical
+          name: Nature
         volumeNumber: 381
       issueNumber: 6581
-      pageStart: 364
+    pageStart: 364
     title: A new strategy for genome sequencing
   - type: Article
     id: pcbi-1007273-ref007
@@ -367,11 +377,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Proceedings of the National Academy of Sciences
+        isPartOf:
+          type: Periodical
+          name: Proceedings of the National Academy of Sciences
         volumeNumber: 108
       issueNumber: 4
-      pageEnd: 1518
-      pageStart: 1513
+    pageEnd: 1518
+    pageStart: 1513
     title: >-
       High-quality draft assemblies of mammalian genomes from massively parallel
       sequence data
@@ -413,11 +425,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Science
+        isPartOf:
+          type: Periodical
+          name: Science
         volumeNumber: 262
       issueNumber: 5130
-      pageEnd: 114
-      pageStart: 110
+    pageEnd: 114
+    pageStart: 110
     title: >-
       Ordered restriction maps of Saccharomyces cerevisiae chromosomes
       constructed by optical mapping
@@ -459,11 +473,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature biotechnology
+        isPartOf:
+          type: Periodical
+          name: Nature biotechnology
         volumeNumber: 31
       issueNumber: 2
-      pageEnd: 141
-      pageStart: 135
+    pageEnd: 141
+    pageStart: 135
     title: >-
       Sequencing and automated whole-genome optical mapping of the genome of a
       domestic goat (Capra hircus)
@@ -505,10 +521,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC genomics
+        isPartOf:
+          type: Periodical
+          name: BMC genomics
         volumeNumber: 16
       issueNumber: 1
-      pageStart: 734
+    pageStart: 734
     title: >-
       Tools and pipelines for BioNano data: molecule assembly pipeline and FASTA
       super scaffolding tool
@@ -547,8 +565,8 @@ references:
           - CM
     datePublished: '2016'
     isPartOf:
-      type: PublicationVolume
-      title: Nature biotechnology
+      type: Periodical
+      name: Nature biotechnology
     title: >-
       Haplotyping germline and cancer genomes with high-throughput linked-read
       sequencing
@@ -585,11 +603,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome research
+        isPartOf:
+          type: Periodical
+          name: Genome research
         volumeNumber: 27
       issueNumber: 5
-      pageEnd: 767
-      pageStart: 757
+    pageEnd: 767
+    pageStart: 757
     title: Direct determination of diploid genome sequences
   - type: Article
     id: pcbi-1007273-ref013
@@ -621,8 +641,8 @@ references:
           - I
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: Bioinformatics
+      type: Periodical
+      name: Bioinformatics
     title: 'Arcs: Scaffolding genome drafts with linked reads'
   - type: Article
     id: pcbi-1007273-ref014
@@ -663,11 +683,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature genetics
+        isPartOf:
+          type: Periodical
+          name: Nature genetics
         volumeNumber: 38
       issueNumber: 11
-      pageEnd: 1354
-      pageStart: 1348
+    pageEnd: 1354
+    pageStart: 1348
     title: >-
       Nuclear organization of active and inactive chromatin domains uncovered by
       chromosome conformation capture–on-chip (4C)
@@ -710,11 +732,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: science
+        isPartOf:
+          type: Periodical
+          name: science
         volumeNumber: 326
       issueNumber: 5950
-      pageEnd: 293
-      pageStart: 289
+    pageEnd: 293
+    pageStart: 289
     title: >-
       prehensive mapping of long-range interactions reveals folding principles
       of the human genome
@@ -736,11 +760,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature biotechnology
+        isPartOf:
+          type: Periodical
+          name: Nature biotechnology
         volumeNumber: 31
       issueNumber: 12
-      pageEnd: 1125
-      pageStart: 1119
+    pageEnd: 1125
+    pageStart: 1119
     title: >-
       Chromosome-scale scaffolding of de novo genome assemblies based on
       chromatin interactions
@@ -762,11 +788,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature biotechnology
+        isPartOf:
+          type: Periodical
+          name: Nature biotechnology
         volumeNumber: 31
       issueNumber: 12
-      pageEnd: 1147
-      pageStart: 1143
+    pageEnd: 1147
+    pageStart: 1143
     title: High-throughput genome scaffolding from in vivo DNA interaction frequency
   - type: Article
     id: pcbi-1007273-ref018
@@ -804,7 +832,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: Nature communications
+      isPartOf:
+        type: Periodical
+        name: Nature communications
       volumeNumber: 5
     title: High-quality genome (re) assembly using chromosomal contact data
   - type: Article
@@ -830,11 +860,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature Genetics
+        isPartOf:
+          type: Periodical
+          name: Nature Genetics
         volumeNumber: 49
       issueNumber: 4
-      pageEnd: 650
-      pageStart: 643
+    pageEnd: 650
+    pageStart: 643
     title: >-
       Single-molecule sequencing and chromatin conformation capture enable de
       novo reference assembly of the domestic goat genome
@@ -861,11 +893,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Science
+        isPartOf:
+          type: Periodical
+          name: Science
         volumeNumber: 356
       issueNumber: 6333
-      pageEnd: 95
-      pageStart: 92
+    pageEnd: 95
+    pageStart: 92
     title: >-
       De novo assembly of the Aedes aegypti genome using Hi-C yields
       chromosome-length scaffolds
@@ -902,10 +936,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC genomics
+        isPartOf:
+          type: Periodical
+          name: BMC genomics
         volumeNumber: 18
       issueNumber: 1
-      pageStart: 527
+    pageStart: 527
     title: Scaffolding of long read assemblies using long range contact information
   - type: Article
     id: pcbi-1007273-ref022
@@ -945,11 +981,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature
+        isPartOf:
+          type: Periodical
+          name: Nature
         volumeNumber: 485
       issueNumber: 7398
-      pageEnd: 380
-      pageStart: 376
+    pageEnd: 380
+    pageStart: 376
     title: >-
       Topological domains in mammalian genomes identified by analysis of
       chromatin interactions
@@ -991,11 +1029,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Science
+        isPartOf:
+          type: Periodical
+          name: Science
         volumeNumber: 323
       issueNumber: 5910
-      pageEnd: 138
-      pageStart: 133
+    pageEnd: 138
+    pageStart: 133
     title: Real-time DNA sequencing from single polymerase molecules
   - type: Article
     id: pcbi-1007273-ref024
@@ -1025,10 +1065,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome biology
+        isPartOf:
+          type: Periodical
+          name: Genome biology
         volumeNumber: 17
       issueNumber: 1
-      pageStart: 239
+    pageStart: 239
     title: >-
       The Oxford Nanopore MinION: delivery of nanopore sequencing to the
       genomics community
@@ -1045,11 +1087,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Bioinformatics
+        isPartOf:
+          type: Periodical
+          name: Bioinformatics
         volumeNumber: 32
       issueNumber: 14
-      pageEnd: 2110
-      pageStart: 2103
+    pageEnd: 2110
+    pageStart: 2103
     title: >-
       Minimap and miniasm: fast mapping and de novo assembly for noisy long
       sequences
@@ -1071,16 +1115,17 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Bioinformatics
+        isPartOf:
+          type: Periodical
+          name: Bioinformatics
         volumeNumber: 25
       issueNumber: 14
-      pageEnd: 1760
-      pageStart: 1754
+    pageEnd: 1760
+    pageStart: 1754
     title: Fast and accurate short read alignment with Burrows–Wheeler transform
   - type: Article
     id: pcbi-1007273-ref027
     authors: []
-    title: ''
   - type: Article
     id: pcbi-1007273-ref028
     authors:
@@ -1104,11 +1149,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome research
+        isPartOf:
+          type: Periodical
+          name: Genome research
         volumeNumber: 27
       issueNumber: 5
-      pageEnd: 736
-      pageStart: 722
+    pageEnd: 736
+    pageStart: 722
     title: >-
       Canu: scalable and accurate long-read assembly via adaptive k-mer
       weighting and repeat separation
@@ -1147,8 +1194,8 @@ references:
           - A
     datePublished: '2016'
     isPartOf:
-      type: PublicationVolume
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
     title: Phased Diploid Genome Assembly with Single Molecule Real-Time Sequencing
   - type: Article
     id: pcbi-1007273-ref030
@@ -1178,10 +1225,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature biotechnology
+        isPartOf:
+          type: Periodical
+          name: Nature biotechnology
         volumeNumber: 37
       issueNumber: 5
-      pageStart: 540
+    pageStart: 540
     title: 'Assembly of long, error-prone reads using repeat graphs'
   - type: Article
     id: pcbi-1007273-ref031
@@ -1196,16 +1245,17 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Canadian Journal of mathematics
+        isPartOf:
+          type: Periodical
+          name: Canadian Journal of mathematics
         volumeNumber: 17
       issueNumber: 3
-      pageEnd: 467
-      pageStart: 449
+    pageEnd: 467
+    pageStart: 449
     title: 'Paths, trees, and flowers'
   - type: Article
     id: pcbi-1007273-ref032
     authors: []
-    title: ''
   - type: Article
     id: pcbi-1007273-ref033
     authors:
@@ -1244,11 +1294,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome research
+        isPartOf:
+          type: Periodical
+          name: Genome research
         volumeNumber: 27
       issueNumber: 5
-      pageEnd: 864
-      pageStart: 849
+    pageEnd: 864
+    pageStart: 849
     title: >-
       Evaluation of GRCh38 and de novo haploid genome assemblies demonstrates
       the enduring quality of the reference assembly
@@ -1277,9 +1329,9 @@ references:
           - AC
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 128835
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
+    pageStart: 128835
     title: Nanopore sequencing and assembly of a human genome with ultra-long reads
   - type: Article
     id: pcbi-1007273-ref035
@@ -1299,11 +1351,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Cell systems
+        isPartOf:
+          type: Periodical
+          name: Cell systems
         volumeNumber: 3
       issueNumber: 1
-      pageEnd: 98
-      pageStart: 95
+    pageEnd: 98
+    pageStart: 95
     title: >-
       Juicer provides a one-click system for analyzing loop-resolution Hi-C
       experiments
@@ -1345,7 +1399,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome biology
+        isPartOf:
+          type: Periodical
+          name: Genome biology
         volumeNumber: 5
       issueNumber: 2
     title: Versatile and open software for comparing large genomes
@@ -1369,8 +1425,8 @@ references:
           - AWC
     datePublished: '2015'
     isPartOf:
-      type: PublicationVolume
-      title: Nature methods
+      type: Periodical
+      name: Nature methods
     title: >-
       Assembly and diploid architecture of an individual human genome via
       single-molecule technologies
@@ -1412,11 +1468,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome research
+        isPartOf:
+          type: Periodical
+          name: Genome research
         volumeNumber: 22
       issueNumber: 3
-      pageEnd: 567
-      pageStart: 557
+    pageEnd: 567
+    pageStart: 557
     title: 'GAGE: A critical evaluation of genome assemblies and assembly algorithms'
   - type: Article
     id: pcbi-1007273-ref039
@@ -1449,10 +1507,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 61
-      pageStart: 51
-      title: Online J Bioinformatics
+      isPartOf:
+        type: Periodical
+        name: Online J Bioinformatics
       volumeNumber: 1
+    pageEnd: 61
+    pageStart: 51
     title: A software package for drawing ideograms automatically
   - type: Article
     id: pcbi-1007273-ref040
@@ -1477,7 +1537,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PloS one
+        isPartOf:
+          type: Periodical
+          name: PloS one
         volumeNumber: 7
       issueNumber: 2
     title: Feature-by-feature–evaluating de novo sequence assembly
@@ -1504,11 +1566,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Cell systems
+        isPartOf:
+          type: Periodical
+          name: Cell systems
         volumeNumber: 3
       issueNumber: 1
-      pageEnd: 101
-      pageStart: 99
+    pageEnd: 101
+    pageStart: 99
     title: >-
       Juicebox provides a visualization system for Hi-C contact maps with
       unlimited zoom
@@ -1535,11 +1599,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Science
+        isPartOf:
+          type: Periodical
+          name: Science
         volumeNumber: 342
       issueNumber: 6161
-      pageEnd: 953
-      pageStart: 948
+    pageEnd: 953
+    pageStart: 948
     title: Organization of the mitotic chromosome
   - type: Article
     id: pcbi-1007273-ref043
@@ -1569,11 +1635,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome research
+        isPartOf:
+          type: Periodical
+          name: Genome research
         volumeNumber: 26
       issueNumber: 3
-      pageEnd: 350
-      pageStart: 342
+    pageEnd: 350
+    pageStart: 342
     title: >-
       Chromosome-scale shotgun assembly using an in vitro method for long-range
       linkage
@@ -1612,9 +1680,9 @@ references:
           - AM
     datePublished: '2018'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 492777
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
+    pageStart: 492777
     title: >-
       A chromosome-scale assembly of the major African malaria vector Anopheles
       funestus
@@ -1641,10 +1709,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC bioinformatics
+        isPartOf:
+          type: Periodical
+          name: BMC bioinformatics
         volumeNumber: 19
       issueNumber: 1
-      pageStart: 460
+    pageStart: 460
     title: >-
       Purge Haplotigs: allelic contig reassignment for third-gen diploid genome
       assemblies
@@ -1686,10 +1756,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature genetics
+        isPartOf:
+          type: Periodical
+          name: Nature genetics
         volumeNumber: 50
       issueNumber: 11
-      pageStart: 1565
+    pageStart: 1565
     title: >-
       Allele-defined genome of the autopolyploid sugarcane Saccharum spontaneum
       L
@@ -1731,11 +1803,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Genome research
+        isPartOf:
+          type: Periodical
+          name: Genome research
         volumeNumber: 22
       issueNumber: 8
-      pageEnd: 1588
-      pageStart: 1581
+    pageEnd: 1588
+    pageStart: 1581
     title: >-
       HaploMerger: reconstructing allelic relationships for polymorphic diploid
       genome assemblies
@@ -1769,8 +1843,8 @@ references:
           - KD
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
     title: Removing unwanted variation between samples in Hi-C experiments
   - type: Article
     id: pcbi-1007273-ref049
@@ -1807,9 +1881,9 @@ references:
           - JE
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 240747
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
+    pageStart: 240747
     title: >-
       Improved Aedes aegypti mosquito reference genome assembly enables
       biological discovery and vector control
@@ -1836,11 +1910,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Annu Rev Anim Biosci
+        isPartOf:
+          type: Periodical
+          name: Annu Rev Anim Biosci
         volumeNumber: 3
       issueNumber: 1
-      pageEnd: 111
-      pageStart: 57
+    pageEnd: 111
+    pageStart: 57
     title: 'The Genome 10K Project: a way forward'
 title: Integrating Hi-C links with assembly graphs for chromosome-scale assembly
 meta:

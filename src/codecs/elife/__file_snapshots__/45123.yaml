@@ -232,7 +232,9 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 8
     title: >-
       The novel lncRNA lnc-NR2F1 is pro-neurogenic and mutated in human
@@ -313,10 +315,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3160
-      pageStart: 3145
-      title: The EMBO Journal
+      isPartOf:
+        type: Periodical
+        name: The EMBO Journal
       volumeNumber: 32
+    pageEnd: 3160
+    pageStart: 3145
     title: "Transcriptome sequencing during mouse brain development identifies long non-coding RNAs functionally involved in neurogenic\_commitment"
   - type: Article
     id: bib3
@@ -359,10 +363,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1421
-      pageStart: 1409
-      title: Cerebral Cortex
+      isPartOf:
+        type: Periodical
+        name: Cerebral Cortex
       volumeNumber: 24
+    pageEnd: 1421
+    pageStart: 1409
     title: "Sp8 and COUP-TF1 reciprocally regulate patterning and Fgf\_signaling in cortical progenitors"
   - type: Article
     id: bib4
@@ -401,7 +407,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Scientific Reports
+      isPartOf:
+        type: Periodical
+        name: Scientific Reports
       volumeNumber: 6
     title: >-
       Identification of long non-coding RNAs involved in neuronal development
@@ -547,10 +555,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1789
-      pageStart: 1775
-      title: Genome Research
+      isPartOf:
+        type: Periodical
+        name: Genome Research
       volumeNumber: 22
+    pageEnd: 1789
+    pageStart: 1775
     title: >-
       The GENCODE v7 catalog of human long noncoding RNAs: analysis of their
       gene structure, evolution, and expression
@@ -580,7 +590,9 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      title: PLOS Genetics
+      isPartOf:
+        type: Periodical
+        name: PLOS Genetics
       volumeNumber: 5
     title: >-
       Genomic and transcriptional co-localization of protein-coding and long
@@ -606,10 +618,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 641
-      pageStart: 629
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 136
+    pageEnd: 641
+    pageStart: 629
     title: Evolution and functions of long noncoding RNAs
   - type: Article
     id: bib8
@@ -627,7 +641,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Neurology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Neurology
       volumeNumber: 8
     title: 'Editorial: Non-coding RNAs in neurodevelopmental disorders'
   - type: Article
@@ -678,7 +694,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Molecular Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Molecular Neuroscience
       volumeNumber: 6
     title: Long non-coding RNAs in neurodevelopmental disorders
   - type: Article
@@ -697,10 +715,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 593
-      pageStart: 589
-      title: Journal of Molecular Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Journal of Molecular Neuroscience
       volumeNumber: 49
+    pageEnd: 593
+    pageStart: 589
     title: Aberrant expression of long noncoding RNAs in autistic brain
 title: Beyond protein-coding genes
 meta: {}

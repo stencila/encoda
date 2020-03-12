@@ -207,7 +207,6 @@ references:
   - type: Article
     id: pone-0216012-ref001
     authors: []
-    title: ''
   - type: Article
     id: pone-0216012-ref002
     authors:
@@ -231,11 +230,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Life
+        isPartOf:
+          type: Periodical
+          name: Life
         volumeNumber: 4
       issueNumber: 4
-      pageEnd: 665
-      pageStart: 621
+    pageEnd: 665
+    pageStart: 621
     title: Microgravity-induced fluid shift and ophthalmic changes
   - type: Article
     id: pone-0216012-ref003
@@ -247,9 +248,8 @@ references:
           - E
     datePublished: '2015'
     isPartOf:
-      type: PublicationVolume
-      title: Microgravity and vision impairments in astronauts
-    title: ''
+      type: Periodical
+      name: Microgravity and vision impairments in astronauts
   - type: Article
     id: pone-0216012-ref004
     authors:
@@ -343,11 +343,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Ophthalmology
         volumeNumber: 118
       issueNumber: 10
-      pageEnd: 2069
-      pageStart: 2058
+    pageEnd: 2069
+    pageStart: 2058
     title: >-
       Optic disc edema, globe flattening, choroidal folds, and hyperopic shifts
       observed in astronauts after long-duration space flight
@@ -380,11 +382,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Astronaut
+        isPartOf:
+          type: Periodical
+          name: Acta Astronaut
         volumeNumber: 7
       issueNumber: 4
-      pageEnd: 553
-      pageStart: 543
+    pageEnd: 553
+    pageStart: 543
     title: >-
       Early cardiovascular adaptation to zero gravity simulated by head-down
       tilt
@@ -426,11 +430,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Appl Physiol
+        isPartOf:
+          type: Periodical
+          name: J Appl Physiol
         volumeNumber: 71
       issueNumber: 6
-      pageEnd: 2475
-      pageStart: 2469
+    pageEnd: 2475
+    pageStart: 2469
     title: >-
       Transcapillary fluid shifts in tissues of the head and neck during and
       after simulated microgravity
@@ -477,11 +483,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 57
       issueNumber: 2
-      pageEnd: 501
-      pageStart: 495
+    pageEnd: 501
+    pageStart: 495
     title: Ocular outcomes comparison between 14-and 70-day head-down-tilt bed rest
   - type: Article
     id: pone-0216012-ref008
@@ -526,11 +534,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Ophthalmology
         volumeNumber: 126
       issueNumber: 3
-      pageEnd: 468
-      pageStart: 467
+    pageEnd: 468
+    pageStart: 467
     title: Optic disc edema after 30 days of strict head-down tilt bed rest
   - type: Article
     id: pone-0216012-ref009
@@ -575,11 +585,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Appl Physiol
+        isPartOf:
+          type: Periodical
+          name: J Appl Physiol
         volumeNumber: 123
       issueNumber: 2
-      pageEnd: 363
-      pageStart: 352
+    pageEnd: 363
+    pageStart: 352
     title: >-
       The impact of ocular hemodynamics and intracranial pressure on intraocular
       pressure during acute gravitational changes
@@ -628,13 +640,11 @@ references:
           - JG
     datePublished: '2015'
     isPartOf:
-      type: PublicationVolume
-      title: NASA Human Research Program Investigators Workshop
-    title: ''
+      type: Periodical
+      name: NASA Human Research Program Investigators Workshop
   - type: Article
     id: pone-0216012-ref011
     authors: []
-    title: ''
   - type: Article
     id: pone-0216012-ref012
     authors:
@@ -678,11 +688,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal for Modeling in Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Journal for Modeling in Ophthalmology
         volumeNumber: 2
       issueNumber: 2
-      pageEnd: 68
-      pageStart: 64
+    pageEnd: 68
+    pageStart: 64
     title: >-
       Mathematical modeling of ocular and cerebral hemo-fluid dynamics:
       application to VIIP
@@ -719,10 +731,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 59
       issueNumber: 9
-      pageStart: 1665
+    pageStart: 1665
     title: >-
       Relationship between intraocular pressure, blood pressure and
       cerebrospinal fluid pressure: a theoretical approach
@@ -756,8 +770,8 @@ references:
           - A
     datePublished: '2019'
     isPartOf:
-      type: PublicationVolume
-      title: Journal for Modeling in Ophthalmology
+      type: Periodical
+      name: Journal for Modeling in Ophthalmology
     title: >-
       Relationship between intraocular pressure, blood pressure and
       cerebrospinal fluid pressure: a theoretical approach
@@ -776,9 +790,8 @@ references:
           - A
     datePublished: '2009'
     isPartOf:
-      type: PublicationVolume
-      title: The 6th consensus report of the World Glaucoma Association
-    title: ''
+      type: Periodical
+      name: The 6th consensus report of the World Glaucoma Association
   - type: Article
     id: pone-0216012-ref016
     authors:
@@ -827,11 +840,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Glaucoma
+        isPartOf:
+          type: Periodical
+          name: J Glaucoma
         volumeNumber: 16
       issueNumber: 1
-      pageEnd: 163
-      pageStart: 159
+    pageEnd: 163
+    pageStart: 159
     title: >-
       Relationship of cerebral blood flow and central visual function in primary
       open-angle glaucoma
@@ -855,11 +870,11 @@ references:
           - B
     datePublished: '2013'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: J Glaucoma
-        volumeNumber: 22
+        type: Periodical
+        name: J Glaucoma
+      volumeNumber: 22
     title: Cerebral blood flow in glaucoma patients
   - type: Article
     id: pone-0216012-ref018
@@ -879,11 +894,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Am J Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Am J Ophthalmol
         volumeNumber: 149
       issueNumber: 5
-      pageEnd: 712
-      pageStart: 704
+    pageEnd: 712
+    pageStart: 704
     title: 'Blood pressure, perfusion pressure, and glaucoma'
   - type: Article
     id: pone-0216012-ref019
@@ -898,11 +915,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmic Epidemiol
+        isPartOf:
+          type: Periodical
+          name: Ophthalmic Epidemiol
         volumeNumber: 14
       issueNumber: 4
-      pageEnd: 172
-      pageStart: 166
+    pageEnd: 172
+    pageStart: 166
     title: Open-angle glaucoma—an epidemiologic overview
   - type: Article
     id: pone-0216012-ref020
@@ -917,11 +936,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Exp Eye Res
+        isPartOf:
+          type: Periodical
+          name: Exp Eye Res
         volumeNumber: 93
       issueNumber: 2
-      pageEnd: 132
-      pageStart: 120
+    pageEnd: 132
+    pageStart: 120
     title: >-
       A biomechanical paradigm for axonal insult within the optic nerve head in
       aging and glaucoma
@@ -963,10 +984,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Acta Ophthalmol
         volumeNumber: 89
       issueNumber: 2
-      pageEnd: 148
+    pageEnd: 148
     title: Cerebrospinal fluid pressure in ocular hypertension
   - type: Article
     id: pone-0216012-ref022
@@ -1036,10 +1059,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Acta Ophthalmol
         volumeNumber: 92
       issueNumber: 4
-      pageEnd: 266
+    pageEnd: 266
     title: Ocular perfusion pressure in glaucoma
   - type: Article
     id: pone-0216012-ref023
@@ -1079,11 +1104,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Expert Rev Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Expert Rev Ophthalmol
         volumeNumber: 12
       issueNumber: 6
-      pageEnd: 55
-      pageStart: 443
+    pageEnd: 55
+    pageStart: 443
     title: >-
       Mathematical modeling for novel treatment approaches to open-angle
       glaucoma
@@ -1112,11 +1139,10 @@ references:
           - E
     datePublished: '2008'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 227
-      pageStart: 211
-      title: Aspects of Mathematical Modelling
-    title: ''
+      type: Periodical
+      name: Aspects of Mathematical Modelling
+    pageEnd: 227
+    pageStart: 211
   - type: Article
     id: pone-0216012-ref025
     authors:
@@ -1175,11 +1201,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 55
       issueNumber: 7
-      pageEnd: 4118
-      pageStart: 4105
+    pageEnd: 4118
+    pageStart: 4105
     title: >-
       Intraocular pressure, blood pressure, and retinal blood flow
       autoregulation: a mathematical model to clarify their relationship and
@@ -1227,11 +1255,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal for Modeling in Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Journal for Modeling in Ophthalmology
         volumeNumber: 2
       issueNumber: 1
-      pageEnd: 39
-      pageStart: 29
+    pageEnd: 39
+    pageStart: 29
     title: >-
       Mathematical modeling of aqueous humor flow and intraocular pressure under
       uncertainty: towards individualized glaucoma management
@@ -1268,11 +1298,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Prog Retin Eye Res
+        isPartOf:
+          type: Periodical
+          name: Prog Retin Eye Res
         volumeNumber: 30
       issueNumber: 1
-      pageEnd: 17
-      pageStart: 1
+    pageEnd: 17
+    pageStart: 1
     title: Ciliary blood flow and aqueous humor production
   - type: Article
     id: pone-0216012-ref028
@@ -1302,11 +1334,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Math Biol
+        isPartOf:
+          type: Periodical
+          name: J Math Biol
         volumeNumber: 46
       issueNumber: 4
-      pageEnd: 383
-      pageStart: 347
+    pageEnd: 383
+    pageStart: 347
     title: A whole-body mathematical model for intracranial pressure dynamics
   - type: Article
     id: pone-0216012-ref029
@@ -1367,11 +1401,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biomech Model Mechanobiol
+        isPartOf:
+          type: Periodical
+          name: Biomech Model Mechanobiol
         volumeNumber: 14
       issueNumber: 5
-      pageEnd: 965
-      pageStart: 931
+    pageEnd: 965
+    pageStart: 931
     title: 'Mechanics of the brain: perspectives, challenges, and opportunities'
   - type: Article
     id: pone-0216012-ref030
@@ -1411,11 +1447,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Math Biol
+        isPartOf:
+          type: Periodical
+          name: J Math Biol
         volumeNumber: 59
       issueNumber: 6
-      pageEnd: 759
-      pageStart: 729
+    pageEnd: 759
+    pageStart: 729
     title: 'A mathematical model of blood, cerebrospinal fluid and brain dynamics'
   - type: Article
     id: pone-0216012-ref031
@@ -1432,11 +1470,10 @@ references:
           - K
     datePublished: '2011'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 188
-      pageStart: 169
-      title: Biomechanics of the Brain
-    title: ''
+      type: Periodical
+      name: Biomechanics of the Brain
+    pageEnd: 188
+    pageStart: 169
   - type: Article
     id: pone-0216012-ref032
     authors:
@@ -1460,11 +1497,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Croatian Medical Journal
+        isPartOf:
+          type: Periodical
+          name: Croatian Medical Journal
         volumeNumber: 55
       issueNumber: 5
-      pageEnd: 497
-      pageStart: 481
+    pageEnd: 497
+    pageStart: 481
     title: >-
       A computational model of cerebrospinal fluid production and reabsorption
       driven by Starling forces
@@ -1494,10 +1533,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 257
-      pageStart: 219
-      title: Annu Rev Fluid Mech
+      isPartOf:
+        type: Periodical
+        name: Annu Rev Fluid Mech
       volumeNumber: 48
+    pageEnd: 257
+    pageStart: 219
     title: Cerebrospinal fluid mechanics and its coupling to cerebrovascular dynamics
   - type: Article
     id: pone-0216012-ref034
@@ -1527,11 +1568,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Appl Physiol Respir Environ Exerc Physiol
+        isPartOf:
+          type: Periodical
+          name: J Appl Physiol Respir Environ Exerc Physiol
         volumeNumber: 53
       issueNumber: 6
-      pageEnd: 1503
-      pageStart: 1496
+    pageEnd: 1503
+    pageStart: 1496
     title: A Starling resistor regulates cerebral venous outflow in dogs
   - type: Article
     id: pone-0216012-ref035
@@ -1561,11 +1604,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Aviat Space Environ Med
+        isPartOf:
+          type: Periodical
+          name: Aviat Space Environ Med
         volumeNumber: 74
       issueNumber: 2
-      pageEnd: 131
-      pageStart: 125
+    pageEnd: 131
+    pageStart: 125
     title: A Starling resistor regulates cerebral venous outflow in dogs
   - type: Article
     id: pone-0216012-ref036
@@ -1604,13 +1649,13 @@ references:
           - JM
     datePublished: '2004'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: J Physiol
-        volumeNumber: 560
-      pageEnd: 327
-      pageStart: 317
+        type: Periodical
+        name: J Physiol
+      volumeNumber: 560
+    pageEnd: 327
+    pageStart: 317
     title: >-
       Human cerebral venous outflow pathway depends on posture and central
       venous pressure
@@ -1655,13 +1700,13 @@ references:
           - V
     datePublished: '2019'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: J Neurol Sci
-        volumeNumber: 40
-      pageEnd: 70
-      pageStart: 59
+        type: Periodical
+        name: J Neurol Sci
+      volumeNumber: 40
+    pageEnd: 70
+    pageStart: 59
     title: >-
       Dural sinus collapsibility, idiopathic intracranial hypertension, and the
       pathogenesis of chronic migraine
@@ -1703,11 +1748,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Clin Invest
+        isPartOf:
+          type: Periodical
+          name: J Clin Invest
         volumeNumber: 127
       issueNumber: 9
-      pageEnd: 3219
-      pageStart: 3210
+    pageEnd: 3219
+    pageStart: 3210
     title: >-
       Understanding the functions and relationships of the glymphatic system and
       meningeal lymphatics
@@ -1727,10 +1774,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 394
-      pageStart: 379
-      title: Annu Rev Pathol
+      isPartOf:
+        type: Periodical
+        name: Annu Rev Pathol
       volumeNumber: 13
+    pageEnd: 394
+    pageStart: 379
     title: >-
       The glymphatic system in central nervous system health and disease: past,
       present, and future
@@ -1777,11 +1826,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 39
       issueNumber: 8
-      pageEnd: 1428
-      pageStart: 1419
+    pageEnd: 1428
+    pageStart: 1419
     title: >-
       The correlation between cerebrospinal fluid pressure and retrolaminar
       tissue pressure
@@ -1818,11 +1869,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Math Biosci Eng
+        isPartOf:
+          type: Periodical
+          name: Math Biosci Eng
         volumeNumber: 11
       issueNumber: 3
-      pageEnd: 546
-      pageStart: 523
+    pageEnd: 546
+    pageStart: 523
     title: >-
       Effect of intraocular pressure on the hemodynamics of the central retinal
       artery: a mathematical model
@@ -1881,13 +1934,12 @@ references:
           - A
     datePublished: '2014'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 66
-      pageStart: 59
-      title: >-
+      type: Periodical
+      name: >-
         Integrated Multidisciplinary Approaches in the Study and Care of the
         Human Eye
-    title: ''
+    pageEnd: 66
+    pageStart: 59
   - type: Article
     id: pone-0216012-ref043
     authors:
@@ -1898,9 +1950,8 @@ references:
           - TJ
     datePublished: '1980'
     isPartOf:
-      type: PublicationVolume
-      title: The fluid mechanics of large blood vessels
-    title: ''
+      type: Periodical
+      name: The fluid mechanics of large blood vessels
   - type: Article
     id: pone-0216012-ref044
     authors:
@@ -1924,10 +1975,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Am J Physiol Heart Circ Physiol
+        isPartOf:
+          type: Periodical
+          name: Am J Physiol Heart Circ Physiol
         volumeNumber: 295
       issueNumber: 4
-      pageEnd: 1579
+    pageEnd: 1579
     title: >-
       Theoretical model of blood flow autoregulation: roles of myogenic,
       shear-dependent, and metabolic responses
@@ -1954,10 +2007,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Am J Physiol Heart Circ Physiol
+        isPartOf:
+          type: Periodical
+          name: Am J Physiol Heart Circ Physiol
         volumeNumber: 295
       issueNumber: 4
-      pageEnd: 15671
+    pageEnd: 15671
     title: >-
       Theoretical model of metabolic blood flow regulation: roles of ATP release
       by red blood cells and conducted responses
@@ -2004,11 +2059,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 54
       issueNumber: 8
-      pageEnd: 5593
-      pageStart: 5584
+    pageEnd: 5593
+    pageStart: 5584
     title: >-
       Theoretical analysis of vascular regulatory mechanisms contributing to
       retinal blood flow autoregulation
@@ -2050,11 +2107,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Surv Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Surv Ophthalmol
         volumeNumber: 61
       issueNumber: 2
-      pageEnd: 186
-      pageStart: 164
+    pageEnd: 186
+    pageStart: 164
     title: Autoregulation and neurovascular coupling in the optic nerve head
   - type: Article
     id: pone-0216012-ref048
@@ -2071,13 +2130,13 @@ references:
           - GO
     datePublished: '1990'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: Eye (Lond)
-        volumeNumber: 4
-      pageEnd: 325
-      pageStart: 319
+        type: Periodical
+        name: Eye (Lond)
+      volumeNumber: 4
+    pageEnd: 325
+    pageStart: 319
     title: Control of retinal and choroidal blood flow
   - type: Article
     id: pone-0216012-ref049
@@ -2097,11 +2156,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 33
       issueNumber: 8
-      pageEnd: 2410
-      pageStart: 2399
+    pageEnd: 2410
+    pageStart: 2399
     title: Autoregulation of choroidal blood flow in the rabbit
   - type: Article
     id: pone-0216012-ref050
@@ -2129,10 +2190,10 @@ references:
           - C
     datePublished: '2018'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 130
-      pageStart: 96
-      title: Prog Retin Eye Res
+      type: Periodical
+      name: Prog Retin Eye Res
+    pageEnd: 130
+    pageStart: 96
     title: Neural control of choroidal blood flow
   - type: Article
     id: pone-0216012-ref051
@@ -2192,11 +2253,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Neuroophthalmol
+        isPartOf:
+          type: Periodical
+          name: J Neuroophthalmol
         volumeNumber: 37
       issueNumber: 2
-      pageEnd: 139
-      pageStart: 133
+    pageEnd: 139
+    pageStart: 133
     title: >-
       Persistent asymmetric optic disc swelling after long-duration space
       flight: implications for pathogenesis
@@ -2223,11 +2286,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Fluid Dynam
+        isPartOf:
+          type: Periodical
+          name: Fluid Dynam
         volumeNumber: 42
       issueNumber: 5
-      pageEnd: 694
-      pageStart: 684
+    pageEnd: 694
+    pageStart: 684
     title: >-
       Dynamics of the intraocular fluid: Mathematical model and its main
       consequences
@@ -2244,11 +2309,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol
         volumeNumber: 14
       issueNumber: 4
-      pageEnd: 292
-      pageStart: 286
+    pageEnd: 292
+    pageStart: 286
     title: >-
       The effect of intraocular pressure on conventional outflow resistance in
       the enucleated human eye
@@ -2290,10 +2357,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Physiologist
+        isPartOf:
+          type: Periodical
+          name: Physiologist
         volumeNumber: 35
       issueNumber: 1
-      pageEnd: 185
+    pageEnd: 185
     title: Increased intracranial pressure in humans during simulated microgravity
   - type: Article
     id: pone-0216012-ref055
@@ -2348,16 +2417,17 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Physiol
+        isPartOf:
+          type: Periodical
+          name: J Physiol
         volumeNumber: 595
       issueNumber: 6
-      pageEnd: 2127
-      pageStart: 2115
+    pageEnd: 2127
+    pageStart: 2115
     title: Effect of gravity and microgravity on intracranial pressure
   - type: Article
     id: pone-0216012-ref056
     authors: []
-    title: ''
   - type: Article
     id: pone-0216012-ref057
     authors:
@@ -2391,11 +2461,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 37
       issueNumber: 13
-      pageEnd: 2650
-      pageStart: 2645
+    pageEnd: 2650
+    pageStart: 2645
     title: Age-related ocular blood flow changes
   - type: Article
     id: pone-0216012-ref058
@@ -2420,11 +2492,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Arch Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Arch Ophthalmol
         volumeNumber: 116
       issueNumber: 2
-      pageEnd: 154
-      pageStart: 150
+    pageEnd: 154
+    pageStart: 150
     title: Effect of aging on foveolar choroidal circulation
   - type: Article
     id: pone-0216012-ref059
@@ -2444,11 +2518,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Neurochem
+        isPartOf:
+          type: Periodical
+          name: J Neurochem
         volumeNumber: 144
       issueNumber: 5
-      pageEnd: 608
-      pageStart: 595
+    pageEnd: 608
+    pageStart: 595
     title: >-
       Cerebral blood flow in normal aging adults: cardiovascular determinants,
       clinical implications, and aerobic fitness
@@ -2480,11 +2556,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Curr Eye Res
+        isPartOf:
+          type: Periodical
+          name: Curr Eye Res
         volumeNumber: 40
       issueNumber: 2
-      pageEnd: 212
-      pageStart: 201
+    pageEnd: 212
+    pageStart: 201
     title: Gender differences in ocular blood flow
   - type: Article
     id: pone-0216012-ref061
@@ -2499,11 +2577,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmic Physiol Opt
+        isPartOf:
+          type: Periodical
+          name: Ophthalmic Physiol Opt
         volumeNumber: 17
       issueNumber: 6
-      pageEnd: 465
-      pageStart: 456
+    pageEnd: 465
+    pageStart: 456
     title: >-
       The diurnal variation of intraocular pressure in non-glaucomatous
       subjects: relevance in a clinical context
@@ -2535,11 +2615,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Cereb Blood Flow Metab
+        isPartOf:
+          type: Periodical
+          name: J Cereb Blood Flow Metab
         volumeNumber: 8
       issueNumber: 6
-      pageEnd: 789
-      pageStart: 783
+    pageEnd: 789
+    pageStart: 783
     title: Sex differences in regional cerebral blood flow
   - type: Article
     id: pone-0216012-ref063
@@ -2594,11 +2676,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ann Neurol
+        isPartOf:
+          type: Periodical
+          name: Ann Neurol
         volumeNumber: 80
       issueNumber: 2
-      pageEnd: 276
-      pageStart: 269
+    pageEnd: 276
+    pageStart: 269
     title: The pressure difference between eye and brain changes with posture
   - type: Article
     id: pone-0216012-ref064
@@ -2633,11 +2717,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Br J Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Br J Ophthalmol
         volumeNumber: 83
       issueNumber: 7
-      pageEnd: 813
-      pageStart: 809
+    pageEnd: 813
+    pageStart: 809
     title: >-
       Glaucoma patients demonstrate faulty autoregulation of ocular blood flow
       during posture change
@@ -2664,11 +2750,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 45
       issueNumber: 2
-      pageEnd: 551
-      pageStart: 546
+    pageEnd: 551
+    pageStart: 546
     title: Posture changes and subfoveal choroidal blood flow
   - type: Article
     id: pone-0216012-ref066
@@ -2700,11 +2788,10 @@ references:
           - T
     datePublished: '2005'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 181
-      pageStart: 177
-      title: Intracranial Pressure and Brain Monitoring XII
-    title: ''
+      type: Periodical
+      name: Intracranial Pressure and Brain Monitoring XII
+    pageEnd: 181
+    pageStart: 177
   - type: Article
     id: pone-0216012-ref067
     authors:
@@ -2738,11 +2825,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Surv Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Surv Ophthalmol
         volumeNumber: 53
       issueNumber: 6
-      pageEnd: 567
-      pageStart: 559
+    pageEnd: 567
+    pageStart: 559
     title: >-
       The circadian variations in systemic blood pressure, ocular perfusion
       pressure, and ocular blood flow: risk factors for glaucoma?
@@ -2769,10 +2858,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Circadian Rhythms
+        isPartOf:
+          type: Periodical
+          name: J Circadian Rhythms
         volumeNumber: 3
       issueNumber: 1
-      pageStart: 3
+    pageStart: 3
     title: Daily rhythm of cerebral blood flow velocity
   - type: Article
     id: pone-0216012-ref069
@@ -2812,11 +2903,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Invest Ophthalmol Vis Sci
+        isPartOf:
+          type: Periodical
+          name: Invest Ophthalmol Vis Sci
         volumeNumber: 43
       issueNumber: 5
-      pageEnd: 1392
-      pageStart: 1389
+    pageEnd: 1392
+    pageStart: 1389
     title: >-
       Effect of corneal thickness on intraocular pressure measurements with the
       pneumotonometer, Goldmann applanation tonometer, and Tono-Pen
@@ -2858,11 +2951,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Acta Ophthalmol
         volumeNumber: 93
       issueNumber: 1
-      pageEnd: 15
-      pageStart: 9
+    pageEnd: 15
+    pageStart: 9
     title: >-
       Update in intracranial pressure evaluation methods and translaminar
       pressure gradient role in glaucoma
@@ -2904,11 +2999,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Curr Eye Res
+        isPartOf:
+          type: Periodical
+          name: Curr Eye Res
         volumeNumber: 25
       issueNumber: 6
-      pageEnd: 345
-      pageStart: 341
+    pageEnd: 345
+    pageStart: 341
     title: >-
       Calculation of the diameter of the central retinal artery from noninvasive
       measurements in humans
@@ -2940,11 +3037,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Microvasc Res
+        isPartOf:
+          type: Periodical
+          name: Microvasc Res
         volumeNumber: 51
       issueNumber: 3
-      pageEnd: 392
-      pageStart: 378
+    pageEnd: 392
+    pageStart: 378
     title: >-
       Autoregulation in the human retinal circulation: assessment using
       isometric exercise, laser Doppler velocimetry, and computer-assisted image
@@ -2967,11 +3066,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Ophthalmology
         volumeNumber: 115
       issueNumber: 2
-      pageEnd: 252
-      pageStart: 246
+    pageEnd: 252
+    pageStart: 246
     title: >-
       Retinal blood flow response to posture change in glaucoma patients
       compared with healthy subjects
@@ -3003,11 +3104,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Ocul Pharmacol Ther
+        isPartOf:
+          type: Periodical
+          name: J Ocul Pharmacol Ther
         volumeNumber: 27
       issueNumber: 4
-      pageEnd: 352
-      pageStart: 347
+    pageEnd: 352
+    pageStart: 347
     title: >-
       Effect of brimonidine on retinal blood flow autoregulation in primary
       open-angle glaucoma
@@ -3034,11 +3137,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Br J Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Br J Ophthalmol
         volumeNumber: 80
       issueNumber: 4
-      pageEnd: 331
-      pageStart: 327
+    pageEnd: 331
+    pageStart: 327
     title: Retinal haemodynamics in patients with early diabetes mellitus
   - type: Article
     id: pone-0216012-ref076
@@ -3055,11 +3160,10 @@ references:
           - J
     datePublished: '1998'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 107
-      pageStart: 79
-      title: Glaucoma
-    title: ''
+      type: Periodical
+      name: Glaucoma
+    pageEnd: 107
+    pageStart: 79
   - type: Article
     id: pone-0216012-ref077
     authors:
@@ -3073,11 +3177,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Physiol Scand
+        isPartOf:
+          type: Periodical
+          name: Acta Physiol Scand
         volumeNumber: 22
       issueNumber: 2
-      pageEnd: 86
-      pageStart: 83
+    pageEnd: 86
+    pageStart: 83
     title: >-
       A method for determining the rate of plasma flow through the secretory
       part of the ciliary body
@@ -3094,11 +3200,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Physiol Scand
+        isPartOf:
+          type: Periodical
+          name: Acta Physiol Scand
         volumeNumber: 26
       issueNumber: 1
-      pageEnd: 69
-      pageStart: 57
+    pageEnd: 69
+    pageStart: 57
     title: >-
       Ascorbic acid as a test substance for measuring relative changes in the
       rate of plasma flow through the ciliary processes. I. The effect of
@@ -3163,11 +3271,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Curr Eye Res
+        isPartOf:
+          type: Periodical
+          name: Curr Eye Res
         volumeNumber: 39
       issueNumber: 10
-      pageEnd: 1067
-      pageStart: 1059
+    pageEnd: 1067
+    pageStart: 1059
     title: 'Choroidal blood flow decreases with age: an MRI study'
   - type: Article
     id: pone-0216012-ref080
@@ -3187,11 +3297,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Med Instrum
+        isPartOf:
+          type: Periodical
+          name: Med Instrum
         volumeNumber: 21
       issueNumber: 5
-      pageEnd: 261
-      pageStart: 255
+    pageEnd: 261
+    pageStart: 255
     title: >-
       Experiences with a new procedure for the measurement of the ophthalmic
       artery pressure: ophthalmomanometry-Doppler
@@ -3213,11 +3325,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Exp Eye Res
+        isPartOf:
+          type: Periodical
+          name: Exp Eye Res
         volumeNumber: 93
       issueNumber: 3
-      pageEnd: 298
-      pageStart: 291
+    pageEnd: 298
+    pageStart: 291
     title: Measurement of episcleral venous pressure
   - type: Article
     id: pone-0216012-ref082
@@ -3232,11 +3346,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Bull Math Biol
+        isPartOf:
+          type: Periodical
+          name: Bull Math Biol
         volumeNumber: 40
       issueNumber: 6
-      pageEnd: 837
-      pageStart: 823
+    pageEnd: 837
+    pageStart: 823
     title: A mathematical model of transmural transport of oxygen to the retina
   - type: Article
     id: pone-0216012-ref083
@@ -3261,11 +3377,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Biorheology
+        isPartOf:
+          type: Periodical
+          name: Biorheology
         volumeNumber: 11
       issueNumber: 1
-      pageEnd: 49
-      pageStart: 1
+    pageEnd: 49
+    pageStart: 1
     title: A mathematical analysis of capillary-tissue fluid exchange
   - type: Article
     id: pone-0216012-ref084
@@ -3287,11 +3405,10 @@ references:
           - AC
     datePublished: '1967'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 326
-      pageStart: 313
-      title: 'Physical Bases of Circulatory Transport: Regulation and Exchange'
-    title: ''
+      type: Periodical
+      name: 'Physical Bases of Circulatory Transport: Regulation and Exchange'
+    pageEnd: 326
+    pageStart: 313
   - type: Article
     id: pone-0216012-ref085
     authors:
@@ -3305,11 +3422,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Microvasc Res
+        isPartOf:
+          type: Periodical
+          name: Microvasc Res
         volumeNumber: 18
       issueNumber: 1
-      pageEnd: 82
-      pageStart: 48
+    pageEnd: 82
+    pageStart: 48
     title: 'Dynamics of capillary fluid exchange: a nonlinear computer simulation'
   - type: Article
     id: pone-0216012-ref086
@@ -3359,11 +3478,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Biorheol
+        isPartOf:
+          type: Periodical
+          name: J Biorheol
         volumeNumber: 23
       issueNumber: 2
-      pageEnd: 86
-      pageStart: 77
+    pageEnd: 86
+    pageStart: 77
     title: >-
       A mathematical model for the distribution of hemodynamic parameters in the
       human retinal microvascular network
@@ -3406,11 +3527,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Ophthalmology
         volumeNumber: 102
       issueNumber: 1
-      pageEnd: 60
-      pageStart: 54
+    pageEnd: 60
+    pageStart: 54
     title: >-
       Primary open-angle glaucoma, intraocular pressure, and systemic blood
       pressure in the general elderly population. The Rotterdam Study
@@ -3442,11 +3565,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Am J Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Am J Ophthalmol
         volumeNumber: 140
       issueNumber: 1
-      pageEnd: 132
-      pageStart: 131
+    pageEnd: 132
+    pageStart: 131
     title: >-
       Intraocular pressure over the clinical range of blood pressure: Blue
       Mountains eye study findings
@@ -3478,11 +3603,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Am J Ophthalmol
+        isPartOf:
+          type: Periodical
+          name: Am J Ophthalmol
         volumeNumber: 144
       issueNumber: 3
-      pageEnd: 462
-      pageStart: 461
+    pageEnd: 462
+    pageStart: 461
     title: >-
       Intraocular pressure correlated with arterial blood pressure: the Beijing
       eye study
@@ -3544,11 +3671,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Ophthalmology
+        isPartOf:
+          type: Periodical
+          name: Ophthalmology
         volumeNumber: 117
       issueNumber: 2
-      pageEnd: 266
-      pageStart: 259
+    pageEnd: 266
+    pageStart: 259
     title: 'Cerebrospinal fluid pressure in glaucoma: a prospective study'
   - type: Article
     id: pone-0216012-ref091
@@ -3561,10 +3690,12 @@ references:
     datePublished: '1963'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 782
-      pageStart: 780
-      title: Arch Ophthalmol
+      isPartOf:
+        type: Periodical
+        name: Arch Ophthalmol
       volumeNumber: 69
+    pageEnd: 782
+    pageStart: 780
     title: The uveal venous pressure
   - type: Article
     id: pone-0216012-ref092
@@ -3609,11 +3740,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Aviat Space Environ Med
+        isPartOf:
+          type: Periodical
+          name: Aviat Space Environ Med
         volumeNumber: 85
       issueNumber: 10
-      pageEnd: 992
-      pageStart: 983
+    pageEnd: 992
+    pageStart: 983
     title: Ocular outcomes evaluation in a 14-day head-down bed rest study
 title: >-
   Biofluid modeling of the coupled eye-brain system and insights into simulated

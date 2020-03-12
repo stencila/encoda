@@ -521,10 +521,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 514
-      pageStart: 512
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 15
+    pageEnd: 514
+    pageStart: 512
     title: CRISPR off-target analysis in genetically engineered rats and mice
   - type: Article
     id: bib2
@@ -547,10 +549,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 1
-      title: Journal of Reproduction and Development
+      isPartOf:
+        type: Periodical
+        name: Journal of Reproduction and Development
       volumeNumber: 65
+    pageEnd: 5
+    pageStart: 1
     title: Off- and on-target effects of genome editing in mouse embryos
   - type: Article
     id: bib3
@@ -583,10 +587,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 160
-      pageStart: 149
-      title: Behavior Genetics
+      isPartOf:
+        type: Periodical
+        name: Behavior Genetics
       volumeNumber: 26
+    pageEnd: 160
+    pageStart: 149
     title: >-
       Type I and type II error rates for quantitative trait loci (QTL) mapping
       studies using recombinant inbred mouse strains
@@ -601,10 +607,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 38
-      pageStart: 29
-      title: Behavior Genetics
+      isPartOf:
+        type: Periodical
+        name: Behavior Genetics
       volumeNumber: 28
+    pageEnd: 38
+    pageStart: 29
     title: >-
       Effect of within-strain sample size on QTL detection and mapping using
       recombinant inbred mouse strains
@@ -664,10 +672,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 458
-      pageStart: 446
-      title: Mammalian Genome
+      isPartOf:
+        type: Periodical
+        name: Mammalian Genome
       volumeNumber: 24
+    pageEnd: 458
+    pageStart: 446
     title: >-
       Genetic factors involved in risk for methamphetamine intake and
       sensitization
@@ -732,10 +742,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 20086
-      pageStart: 20081
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 106
+    pageEnd: 20086
+    pageStart: 20081
     title: >-
       The selective antagonist EPPTB reveals TAAR1-mediated regulatory
       mechanisms in dopaminergic neurons of the mesolimbic system
@@ -755,10 +767,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 791
-      pageStart: 775
-      title: Genome Research
+      isPartOf:
+        type: Periodical
+        name: Genome Research
       volumeNumber: 25
+    pageEnd: 791
+    pageStart: 775
     title: >-
       Contrasting genetic architectures in different mouse reference populations
       used for studying complex traits
@@ -838,10 +852,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1188
-      pageStart: 1181
-      title: Molecular Pharmacology
+      isPartOf:
+        type: Periodical
+        name: Molecular Pharmacology
       volumeNumber: 60
+    pageEnd: 1188
+    pageStart: 1181
     title: >-
       Amphetamine, 3,4-methylenedioxymethamphetamine, lysergic acid
       diethylamide, and metabolites of the catecholamine neurotransmitters are
@@ -872,10 +888,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 166
-      pageStart: 161
-      title: Synapse
+      isPartOf:
+        type: Periodical
+        name: Synapse
       volumeNumber: 39
+    pageEnd: 166
+    pageStart: 161
     title: >-
       Relevance of pharmacokinetic parameters in animal models of
       methamphetamine abuse
@@ -895,10 +913,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 274
-      pageStart: 269
-      title: Current Opinion in Psychiatry
+      isPartOf:
+        type: Periodical
+        name: Current Opinion in Psychiatry
       volumeNumber: 28
+    pageEnd: 274
+    pageStart: 269
     title: Global patterns of methamphetamine use
   - type: Article
     id: bib11
@@ -941,9 +961,11 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageStart: 39
-      title: Frontiers in Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Neuroscience
       volumeNumber: 9
+    pageStart: 39
     title: >-
       The trace amine-associated receptor 1 modulates methamphetamine's
       neurochemical and behavioral effects
@@ -978,10 +1000,12 @@ references:
     datePublished: '1987'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 174
-      pageStart: 163
-      title: Alcohol and Drug Research
+      isPartOf:
+        type: Periodical
+        name: Alcohol and Drug Research
       volumeNumber: 7
+    pageEnd: 174
+    pageStart: 163
     title: >-
       Genetic selection of mouse lines sensitive (cold) and resistant (hot) to
       acute ethanol hypothermia
@@ -1006,10 +1030,12 @@ references:
     datePublished: '1989'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 461
-      pageStart: 456
-      title: The Journal of Pharmacology and Experimental Therapeutics
+      isPartOf:
+        type: Periodical
+        name: The Journal of Pharmacology and Experimental Therapeutics
       volumeNumber: 249
+    pageEnd: 461
+    pageStart: 456
     title: >-
       Sensitivity and tolerance to ethanol-induced hypothermia in genetically
       selected mice
@@ -1029,10 +1055,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1099
-      pageStart: 1085
-      title: Addiction
+      isPartOf:
+        type: Periodical
+        name: Addiction
       volumeNumber: 104
+    pageEnd: 1099
+    pageStart: 1085
     title: A review of the clinical pharmacology of methamphetamine
   - type: Article
     id: bib15
@@ -1070,10 +1098,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 254
-      pageStart: 244
-      title: Neuroscience Research
+      isPartOf:
+        type: Periodical
+        name: Neuroscience Research
       volumeNumber: 55
+    pageEnd: 254
+    pageStart: 244
     title: >-
       Identification and functional significance of polymorphisms in the
       mu-opioid receptor gene (oprm) promoter of C57BL/6 and DBA/2 mice
@@ -1133,10 +1163,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 416
-      pageStart: 403
-      title: Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Neuroscience
       volumeNumber: 277
+    pageEnd: 416
+    pageStart: 403
     title: >-
       Analysis of candidate genes for morphine preference quantitative trait
       locus Mop2
@@ -1161,10 +1193,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 120
-      pageStart: 111
-      title: Behavioural Brain Research
+      isPartOf:
+        type: Periodical
+        name: Behavioural Brain Research
       volumeNumber: 272
+    pageEnd: 120
+    pageStart: 111
     title: >-
       Methamphetamine drinking microstructure in mice bred to drink high or low
       amounts of methamphetamine
@@ -1194,10 +1228,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 272
-      pageStart: 260
-      title: Mammalian Genome
+      isPartOf:
+        type: Periodical
+        name: Mammalian Genome
       volumeNumber: 29
+    pageEnd: 272
+    pageStart: 260
     title: >-
       Verification of a genetic locus for methamphetamine intake and the impact
       of morphine
@@ -1214,13 +1250,15 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2014'
+    datePublished: 2014a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 235
-      pageStart: 226
-      title: 'Genes, Brain and Behavior'
+      isPartOf:
+        type: Periodical
+        name: 'Genes, Brain and Behavior'
       volumeNumber: 13
+    pageEnd: 235
+    pageStart: 226
     title: >-
       Morphine intake and the effects of naltrexone and buprenorphine on the
       acquisition of methamphetamine intake
@@ -1237,13 +1275,15 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2014'
+    datePublished: 2014b
     isPartOf:
       type: PublicationVolume
-      pageEnd: 379
-      pageStart: 370
-      title: Addiction Biology
+      isPartOf:
+        type: Periodical
+        name: Addiction Biology
       volumeNumber: 19
+    pageEnd: 379
+    pageStart: 370
     title: >-
       Opioid sensitivity in mice selectively bred to consume or not consume
       methamphetamine
@@ -1290,13 +1330,15 @@ references:
           - Gainetdinov
         givenNames:
           - RR
-    datePublished: '2015'
+    datePublished: 2015a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 313
-      pageStart: 308
-      title: Neuropharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropharmacology
       volumeNumber: 93
+    pageEnd: 313
+    pageStart: 308
     title: >-
       Postsynaptic D2 dopamine receptor supersensitivity in the striatum of mice
       lacking TAAR1
@@ -1393,13 +1435,15 @@ references:
           - Gainetdinov
         givenNames:
           - RR
-    datePublished: '2015'
+    datePublished: 2015b
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2227
-      pageStart: 2217
-      title: Neuropsychopharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropsychopharmacology
       volumeNumber: 40
+    pageEnd: 2227
+    pageStart: 2217
     title: TAAR1 modulates cortical glutamate NMDA receptor function
   - type: Article
     id: bib23
@@ -1437,7 +1481,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Pharmacology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Pharmacology
       volumeNumber: 9
     title: >-
       Biochemical and functional characterization of the trace Amine-Associated
@@ -1488,10 +1534,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 746
-      pageStart: 742
-      title: Neuropsychopharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropsychopharmacology
       volumeNumber: 30
+    pageEnd: 746
+    pageStart: 742
     title: >-
       Confirmation of a major QTL influencing oral morphine intake in C57 and
       DBA mice using reciprocal congenic strains
@@ -1506,10 +1554,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 174
-      pageStart: 163
-      title: Methods
+      isPartOf:
+        type: Periodical
+        name: Methods
       volumeNumber: 53
+    pageEnd: 174
+    pageStart: 163
     title: >-
       Mapping quantitative traits and strategies to find quantitative trait
       genes
@@ -1549,10 +1599,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 514
-      pageStart: 510
-      title: The American Journal on Addictions
+      isPartOf:
+        type: Periodical
+        name: The American Journal on Addictions
       volumeNumber: 19
+    pageEnd: 514
+    pageStart: 510
     title: >-
       An examination of drug craving over time in abstinent methamphetamine
       users
@@ -1592,10 +1644,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 754
-      pageStart: 745
-      title: The Journal of Neuroscience
+      isPartOf:
+        type: Periodical
+        name: The Journal of Neuroscience
       volumeNumber: 17
+    pageEnd: 754
+    pageStart: 745
     title: >-
       Quantitative trait loci affecting methamphetamine responses in BXD
       recombinant inbred mouse strains
@@ -1625,10 +1679,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2184
-      pageStart: 2175
-      title: Neuropsychopharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropsychopharmacology
       volumeNumber: 40
+    pageEnd: 2184
+    pageStart: 2175
     title: >-
       Trace Amine-Associated receptor 1 regulation of methamphetamine intake and
       related traits
@@ -1656,7 +1712,9 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      title: Brain Sciences
+      isPartOf:
+        type: Periodical
+        name: Brain Sciences
       volumeNumber: 9
     title: >-
       Regional analysis of the brain transcriptome in mice bred for high and low
@@ -1686,11 +1744,10 @@ references:
           - E
     datePublished: '1994'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 188
-      pageStart: 127
-      title: 'Manipulating the Mouse Embryo: A Laboratory Manual'
-    title: ''
+      type: Periodical
+      name: 'Manipulating the Mouse Embryo: A Laboratory Manual'
+    pageEnd: 188
+    pageStart: 127
   - type: Article
     id: bib31
     authors:
@@ -1762,10 +1819,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 324
-      pageStart: 316
-      title: Annals of the New York Academy of Sciences
+      isPartOf:
+        type: Periodical
+        name: Annals of the New York Academy of Sciences
       volumeNumber: 1025
+    pageEnd: 324
+    pageStart: 316
     title: Gene polymorphisms of the mu opioid receptor in methamphetamine abusers
   - type: Article
     id: bib32
@@ -1868,10 +1927,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 188
-      pageStart: 179
-      title: The Pharmacogenomics Journal
+      isPartOf:
+        type: Periodical
+        name: The Pharmacogenomics Journal
       volumeNumber: 6
+    pageEnd: 188
+    pageStart: 179
     title: >-
       Linkage disequilibrium and association with methamphetamine
       dependence/psychosis of mu-opioid receptor gene polymorphisms
@@ -1916,7 +1977,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: PLOS Genetics
+      isPartOf:
+        type: Periodical
+        name: PLOS Genetics
       volumeNumber: 14
     title: >-
       No unexpected CRISPR-Cas9 off-target activity revealed by trio sequencing
@@ -1957,10 +2020,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 821
-      pageStart: 816
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 337
+    pageEnd: 821
+    pageStart: 816
     title: >-
       A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial
       immunity
@@ -1980,10 +2045,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 352
-      pageStart: 345
-      title: European Journal of Pharmacology
+      isPartOf:
+        type: Periodical
+        name: European Journal of Pharmacology
       volumeNumber: 761
+    pageEnd: 352
+    pageStart: 345
     title: >-
       Trace amine-associated receptor 1: a promising target for the treatment of
       psychostimulant addiction
@@ -2048,7 +2115,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Pharmacology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Pharmacology
       volumeNumber: 9
     title: Behavioral effects of a potential novel TAAR1 antagonist
   - type: Article
@@ -2062,10 +2131,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 331
-      pageStart: 323
-      title: Trends in Genetics
+      isPartOf:
+        type: Periodical
+        name: Trends in Genetics
       volumeNumber: 27
+    pageEnd: 331
+    pageStart: 323
     title: Molecular mechanisms of epistasis within and between genes
   - type: Article
     id: bib38
@@ -2103,10 +2174,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 291
-      pageStart: 283
-      title: Neuropharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropharmacology
       volumeNumber: 81
+    pageEnd: 291
+    pageStart: 283
     title: >-
       Taar1-mediated modulation of presynaptic dopaminergic neurotransmission:
       role of D2 dopamine autoreceptors
@@ -2171,10 +2244,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 956
-      pageStart: 948
-      title: Journal of Pharmacology and Experimental Therapeutics
+      isPartOf:
+        type: Periodical
+        name: Journal of Pharmacology and Experimental Therapeutics
       volumeNumber: 324
+    pageEnd: 956
+    pageStart: 948
     title: Trace amine-associated receptor 1 modulates dopaminergic activity
   - type: Article
     id: bib40
@@ -2207,10 +2282,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 892
-      pageStart: 882
-      title: The Journal of Neuroscience
+      isPartOf:
+        type: Periodical
+        name: The Journal of Neuroscience
       volumeNumber: 37
+    pageEnd: 892
+    pageStart: 882
     title: >-
       Role of TAAR1 within the subregions of the mesocorticolimbic dopaminergic
       system in Cocaine-Seeking behavior
@@ -2230,7 +2307,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Pharmacology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Pharmacology
       volumeNumber: 9
     title: 'TAAR1 in addiction: looking beyond the tip of the iceberg'
   - type: Article
@@ -2309,9 +2388,11 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageStart: 70
-      title: Frontiers in Systems Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Systems Neuroscience
       volumeNumber: 8
+    pageStart: 70
     title: >-
       Mesocorticolimbic monoamine correlates of methamphetamine sensitization
       and motivation
@@ -2411,10 +2492,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 702
-      pageStart: 689
-      title: European Journal of Neuroscience
+      isPartOf:
+        type: Periodical
+        name: European Journal of Neuroscience
       volumeNumber: 43
+    pageEnd: 702
+    pageStart: 689
     title: >-
       Prefrontal glutamate correlates of methamphetamine sensitization and
       preference
@@ -2489,9 +2572,11 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageStart: 16
-      title: Genome Medicine
+      isPartOf:
+        type: Periodical
+        name: Genome Medicine
       volumeNumber: 8
+    pageStart: 16
     title: >-
       Correction of the auditory phenotype in C57BL/6N mice via
       CRISPR/Cas9-mediated homology directed repair
@@ -2526,10 +2611,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 590
-      pageStart: 581
-      title: Physiology & Behavior
+      isPartOf:
+        type: Periodical
+        name: Physiology & Behavior
       volumeNumber: 65
+    pageEnd: 590
+    pageStart: 581
     title: >-
       Low body temperature affects associative processes in long-trace
       conditioned flavor aversion
@@ -2574,10 +2661,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 177
-      pageStart: 167
-      title: Neurobiology of Learning and Memory
+      isPartOf:
+        type: Periodical
+        name: Neurobiology of Learning and Memory
       volumeNumber: 78
+    pageEnd: 177
+    pageStart: 167
     title: >-
       Low body temperature, time dilation, and long-trace conditioned flavor
       aversion in rats
@@ -2607,10 +2696,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 120
-      pageStart: 75
-      title: Methods in Molecular Biology
+      isPartOf:
+        type: Periodical
+        name: Methods in Molecular Biology
       volumeNumber: 1488
+    pageEnd: 120
+    pageStart: 75
     title: 'GeneNetwork: a toolbox for systems genetics'
   - type: Article
     id: bib48
@@ -2628,10 +2719,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 272
-      pageStart: 255
-      title: Nature Reviews Drug Discovery
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Drug Discovery
       volumeNumber: 18
+    pageEnd: 272
+    pageStart: 255
     title: The virtuous cycle of human genetics and mouse models in drug discovery
   - type: Article
     id: bib49
@@ -2669,7 +2762,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Scientific Reports
+      isPartOf:
+        type: Periodical
+        name: Scientific Reports
       volumeNumber: 6
     title: Exome sequencing in the knockin mice generated using the CRISPR/Cas system
   - type: Article
@@ -2687,9 +2782,8 @@ references:
     authors: []
     datePublished: '2011'
     isPartOf:
-      type: PublicationVolume
-      title: Guide for the Care and Use of Laboratory Animals
-    title: ''
+      type: Periodical
+      name: Guide for the Care and Use of Laboratory Animals
   - type: Article
     id: bib53
     authors:
@@ -2716,10 +2810,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1256
-      pageStart: 1246
-      title: Addiction Biology
+      isPartOf:
+        type: Periodical
+        name: Addiction Biology
       volumeNumber: 22
+    pageEnd: 1256
+    pageStart: 1246
     title: >-
       A partial trace amine-associated receptor 1 agonist exhibits properties
       consistent with a methamphetamine substitution treatment
@@ -2769,9 +2865,11 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageStart: 993
-      title: Frontiers in Pharmacology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Pharmacology
       volumeNumber: 8
+    pageStart: 993
     title: >-
       A spontaneous mutation in Taar1 Impacts Methamphetamine-Related Traits
       Exclusively in DBA/2 Mice from a Single Vendor
@@ -2876,10 +2974,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8490
-      pageStart: 8485
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 108
+    pageEnd: 8490
+    pageStart: 8485
     title: >-
       TAAR1 activation modulates monoaminergic neurotransmission, preventing
       hyperdopaminergic and hypoglutamatergic activity
@@ -2904,7 +3004,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Pharmacology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Pharmacology
       volumeNumber: 8
     title: The case for TAAR1 as a modulator of central nervous system function
   - type: Article
@@ -2938,10 +3040,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 636
-      pageStart: 625
-      title: 'Genes, Brain and Behavior'
+      isPartOf:
+        type: Periodical
+        name: 'Genes, Brain and Behavior'
       volumeNumber: 10
+    pageEnd: 636
+    pageStart: 625
     title: >-
       Sensitivity to rewarding or aversive effects of methamphetamine determines
       methamphetamine intake
@@ -2978,13 +3082,15 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2012'
+    datePublished: 2012a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2177
-      pageStart: 2169
-      title: Neuropharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropharmacology
       volumeNumber: 62
+    pageEnd: 2177
+    pageStart: 2169
     title: >-
       A genetic animal model of differential sensitivity to methamphetamine
       reinforcement
@@ -3011,13 +3117,15 @@ references:
           - Phillips
         givenNames:
           - TJ
-    datePublished: '2012'
+    datePublished: 2012b
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1141
-      pageStart: 1134
-      title: Neuropharmacology
+      isPartOf:
+        type: Periodical
+        name: Neuropharmacology
       volumeNumber: 62
+    pageEnd: 1141
+    pageStart: 1134
     title: >-
       Profound reduction in sensitivity to the aversive effects of
       methamphetamine in mice bred for high methamphetamine intake
@@ -3067,7 +3175,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Neuroscience
       volumeNumber: 10
     title: A mouse model for Binge-Level methamphetamine use
   - type: Article
@@ -3111,7 +3221,9 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      title: 'Genes, Brain and Behavior'
+      isPartOf:
+        type: Periodical
+        name: 'Genes, Brain and Behavior'
       volumeNumber: 18
     title: >-
       Depression-like symptoms of withdrawal in a genetic mouse model of binge
@@ -3172,7 +3284,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 11
     title: >-
       Genetic polymorphisms affect mouse and human trace Amine-Associated
@@ -3218,10 +3332,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 44
-      pageStart: 35
-      title: Journal of Addictive Diseases
+      isPartOf:
+        type: Periodical
+        name: Journal of Addictive Diseases
       volumeNumber: 21
+    pageEnd: 44
+    pageStart: 35
     title: A comparison of patterns of methamphetamine and cocaine use
   - type: Article
     id: bib64
@@ -3235,10 +3351,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 90
-      pageStart: 81
-      title: Physiological Genomics
+      isPartOf:
+        type: Periodical
+        name: Physiological Genomics
       volumeNumber: 46
+    pageEnd: 90
+    pageStart: 81
     title: 'QTL mapping in outbred populations: successes and challenges'
   - type: Article
     id: bib65
@@ -3261,10 +3379,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1231
-      pageStart: 1227
-      title: Bioorganic & Medicinal Chemistry Letters
+      isPartOf:
+        type: Periodical
+        name: Bioorganic & Medicinal Chemistry Letters
       volumeNumber: 21
+    pageEnd: 1231
+    pageStart: 1227
     title: >-
       Selective antagonists of mouse trace amine-associated receptor 1 (mTAAR1):
       discovery of EPPTB (RO5212773)
@@ -3345,10 +3465,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 970
-      pageStart: 959
-      title: Biological Psychiatry
+      isPartOf:
+        type: Periodical
+        name: Biological Psychiatry
       volumeNumber: 81
+    pageEnd: 970
+    pageStart: 959
     title: >-
       Methamphetamine addiction vulnerability: the glutamate, the bad, and the
       ugly
@@ -3357,9 +3479,8 @@ references:
     authors: []
     datePublished: '2016'
     isPartOf:
-      type: PublicationVolume
-      title: World Drug Report
-    title: ''
+      type: Periodical
+      name: World Drug Report
   - type: Article
     id: bib68
     authors:
@@ -3421,10 +3542,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 771
-      pageStart: 758
-      title: 'Genes, Brain and Behavior'
+      isPartOf:
+        type: Periodical
+        name: 'Genes, Brain and Behavior'
       volumeNumber: 8
+    pageEnd: 771
+    pageStart: 758
     title: >-
       Genetically correlated effects of selective breeding for high and low
       methamphetamine consumption
@@ -3459,10 +3582,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 758
-      pageStart: 756
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 15
+    pageEnd: 758
+    pageStart: 756
     title: Mutation frequency is not increased in CRISPR-Cas9-edited mice
   - type: Article
     id: bib70
@@ -3510,10 +3635,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 639
-      pageStart: 628
-      title: 'Genes, Brain and Behavior'
+      isPartOf:
+        type: Periodical
+        name: 'Genes, Brain and Behavior'
       volumeNumber: 6
+    pageEnd: 639
+    pageStart: 628
     title: >-
       The trace Amine 1 receptor knockout mouse: an animal model with relevance
       to schizophrenia
@@ -3533,10 +3660,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 628
-      pageStart: 617
-      title: Journal of Pharmacology and Experimental Therapeutics
+      isPartOf:
+        type: Periodical
+        name: Journal of Pharmacology and Experimental Therapeutics
       volumeNumber: 325
+    pageEnd: 628
+    pageStart: 617
     title: >-
       Beta-phenylethylamine alters monoamine transporter function via trace
       amine-associated receptor 1: implication for modulatory roles of trace
@@ -3551,8 +3680,8 @@ references:
           - F
     datePublished: '2012'
     isPartOf:
-      type: PublicationVolume
-      title: 'December 12, 2012; Published at US008697359B1 (Awarded)'
+      type: Periodical
+      name: 'December 12, 2012; Published at US008697359B1 (Awarded)'
     title: Systems methods and compositions for sequence manipulation
 title:
   - type: Emphasis

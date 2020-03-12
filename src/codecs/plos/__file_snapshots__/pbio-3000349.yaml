@@ -218,10 +218,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 612
-      pageStart: 605
-      title: J Dent Res
+      isPartOf:
+        type: Periodical
+        name: J Dent Res
       volumeNumber: 95
+    pageEnd: 612
+    pageStart: 605
     title: The Emotional Brain as a Predictor and Amplifier of Chronic Pain
   - type: Article
     id: pbio-3000349-ref002
@@ -239,10 +241,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 91
-      pageStart: 474
-      title: Neuron
+      isPartOf:
+        type: Periodical
+        name: Neuron
       volumeNumber: 87
+    pageEnd: 91
+    pageStart: 474
     title: 'Nociception, Pain, Negative Moods, and Behavior Selection'
   - type: Article
     id: pbio-3000349-ref003
@@ -260,10 +264,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 90
-      pageStart: 678
-      title: J Consult Clin Psychol
+      isPartOf:
+        type: Periodical
+        name: J Consult Clin Psychol
       volumeNumber: 70
+    pageEnd: 90
+    pageStart: 678
     title: 'Psychological factors in chronic pain: evolution and revolution'
   - type: Article
     id: pbio-3000349-ref004
@@ -281,10 +287,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 235
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 136
+    pageEnd: 8
+    pageStart: 235
     title: Socioeconomic disadvantage and pain
   - type: Article
     id: pbio-3000349-ref005
@@ -321,8 +329,8 @@ references:
           - J
     datePublished: '2014'
     isPartOf:
-      type: PublicationVolume
-      title: Cochrane Database Syst Rev
+      type: Periodical
+      name: Cochrane Database Syst Rev
     title: Multidisciplinary biopsychosocial rehabilitation for chronic low back pain
   - type: Article
     id: pbio-3000349-ref006
@@ -355,10 +363,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6415
-      pageStart: 6402
-      title: World Journal of Gastroenterology
+      isPartOf:
+        type: Periodical
+        name: World Journal of Gastroenterology
       volumeNumber: 22
+    pageEnd: 6415
+    pageStart: 6402
     title: Personality traits and emotional patterns in irritable bowel syndrome
   - type: Article
     id: pbio-3000349-ref007
@@ -396,10 +406,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 232
-      pageStart: 223
-      title: Clin Pract Epidemiol Ment Health
+      isPartOf:
+        type: Periodical
+        name: Clin Pract Epidemiol Ment Health
       volumeNumber: 14
+    pageEnd: 232
+    pageStart: 223
     title: >-
       Personality Traits in Fibromyalgia (FM): Does FM Personality Exists? A
       Systematic Review
@@ -428,8 +440,8 @@ references:
           - R
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: Journal of Pain Research
+      type: Periodical
+      name: Journal of Pain Research
     title: >-
       Psychosocial predictors of posttreatment pain after nonmetastatic breast
       cancer treatment: a systematic review and meta-analysis of prospective
@@ -450,10 +462,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 182
-      pageStart: 168
-      title: Progress in Neuro-Psychopharmacology and Biological Psychiatry
+      isPartOf:
+        type: Periodical
+        name: Progress in Neuro-Psychopharmacology and Biological Psychiatry
       volumeNumber: 87
+    pageEnd: 182
+    pageStart: 168
     title: Evaluating psychosocial contributions to chronic pain outcomes
   - type: Article
     id: pbio-3000349-ref010
@@ -476,10 +490,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 67
-      pageStart: 58
-      title: Scand J Pain
+      isPartOf:
+        type: Periodical
+        name: Scand J Pain
       volumeNumber: 17
+    pageEnd: 67
+    pageStart: 58
     title: >-
       New evidence for a pain personality? A critical review of the last 120
       years of pain and personality
@@ -519,10 +535,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 64
-      pageStart: 52
-      title: Clin J Pain
+      isPartOf:
+        type: Periodical
+        name: Clin J Pain
       volumeNumber: 17
+    pageEnd: 64
+    pageStart: 52
     title: Theoretical perspectives on the relation between catastrophizing and pain
   - type: Article
     id: pbio-3000349-ref012
@@ -540,10 +558,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 332
-      pageStart: 317
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 85
+    pageEnd: 332
+    pageStart: 317
     title: >-
       Fear-avoidance and its consequences in chronic musculoskeletal pain: a
       state of the art
@@ -558,10 +578,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 27
-      pageStart: 21
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 74
+    pageEnd: 27
+    pageStart: 21
     title: >-
       Learning to live with the pain: acceptance of pain predicts adjustment in
       persons with chronic pain
@@ -576,10 +598,12 @@ references:
     datePublished: '1992'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 42
-      pageStart: 26
-      title: Psychological Assessment
+      isPartOf:
+        type: Periodical
+        name: Psychological Assessment
       volumeNumber: 4
+    pageEnd: 42
+    pageStart: 26
     title: The development of markers for the Big-Five factor structure
   - type: Article
     id: pbio-3000349-ref015
@@ -603,10 +627,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 41
-      pageStart: 234
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 107
+    pageEnd: 41
+    pageStart: 234
     title: >-
       The role of neuroticism, pain catastrophizing and pain-related fear in
       vigilance to pain: a structural equations approach
@@ -646,10 +672,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 36
-      pageStart: 1125
-      title: Psychol Med
+      isPartOf:
+        type: Periodical
+        name: Psychol Med
       volumeNumber: 40
+    pageEnd: 36
+    pageStart: 1125
     title: Neuroticism as a common dimension in the internalizing disorders
   - type: Article
     id: pbio-3000349-ref017
@@ -677,10 +705,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 821
-      pageStart: 768
-      title: Psychol Bull
+      isPartOf:
+        type: Periodical
+        name: Psychol Bull
       volumeNumber: 136
+    pageEnd: 821
+    pageStart: 768
     title: >-
       Linking “big” personality traits to anxiety, depressive, and substance use
       disorders: a meta-analysis
@@ -700,9 +730,11 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageStart: 329
-      title: Curr Pain Headache Rep
+      isPartOf:
+        type: Periodical
+        name: Curr Pain Headache Rep
       volumeNumber: 17
+    pageStart: 329
     title: >-
       Optimism and the experience of pain: benefits of seeing the glass as half
       full
@@ -727,10 +759,12 @@ references:
     datePublished: '1985'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 90
-      pageStart: 163
-      title: J Behav Med
+      isPartOf:
+        type: Periodical
+        name: J Behav Med
       volumeNumber: 8
+    pageEnd: 90
+    pageStart: 163
     title: >-
       The clinical use of mindfulness meditation for the self-regulation of
       chronic pain
@@ -755,10 +789,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 63
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 131
+    pageEnd: 9
+    pageStart: 63
     title: >-
       The role of mindfulness in a contextual cognitive-behavioral analysis of
       chronic pain-related suffering and disability
@@ -798,9 +834,11 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageStart: 6
-      title: Philos Ethics Humanit Med
+      isPartOf:
+        type: Periodical
+        name: Philos Ethics Humanit Med
       volumeNumber: 6
+    pageStart: 6
     title: >-
       Body Awareness: a phenomenological inquiry into the common ground of
       mind-body therapies
@@ -830,10 +868,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 339
-      pageStart: 329
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 80
+    pageEnd: 339
+    pageStart: 329
     title: >-
       Pain-related fear is more disabling than pain itself: evidence on the role
       of pain-related fear in chronic back pain disability
@@ -873,10 +913,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 75
-      pageStart: 3969
-      title: J Neurosci
+      isPartOf:
+        type: Periodical
+        name: J Neurosci
       volumeNumber: 34
+    pageEnd: 75
+    pageStart: 3969
     title: >-
       Enhanced medial prefrontal-default mode network functional connectivity in
       chronic pain and its association with pain rumination
@@ -916,7 +958,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: eNeuro
+      isPartOf:
+        type: Periodical
+        name: eNeuro
       volumeNumber: 1
     title: >-
       Altered Brain Structure and Function Correlate with Disease Severity and
@@ -957,10 +1001,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 692
-      title: J Pain
+      isPartOf:
+        type: Periodical
+        name: J Pain
       volumeNumber: 16
+    pageEnd: 9
+    pageStart: 692
     title: >-
       The lateral prefrontal cortex mediates the hyperalgesic effects of
       negative cognitions in chronic pain patients
@@ -995,10 +1041,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 1591
-      title: Ann Rheum Dis
+      isPartOf:
+        type: Periodical
+        name: Ann Rheum Dis
       volumeNumber: 68
+    pageEnd: 5
+    pageStart: 1591
     title: >-
       The influence of socioeconomic status on the reporting of regional and
       widespread musculoskeletal pain: results from the 1958 British Birth
@@ -1039,10 +1087,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 103
-      title: Eur J Pain
+      isPartOf:
+        type: Periodical
+        name: Eur J Pain
       volumeNumber: 15
+    pageEnd: 9
+    pageStart: 103
     title: >-
       The impact of socio-economic status on pain and the perception of
       disability due to pain
@@ -1056,13 +1106,13 @@ references:
           - JN
     datePublished: '2006'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: J Bone Joint Surg Am
-        volumeNumber: 88
-      pageEnd: 4
-      pageStart: 21
+        type: Periodical
+        name: J Bone Joint Surg Am
+      volumeNumber: 88
+    pageEnd: 4
+    pageStart: 21
     title: >-
       Lumbar disc disorders and low-back pain: socioeconomic factors and
       consequences
@@ -1102,9 +1152,11 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageStart: 3397
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 9
+    pageStart: 3397
     title: >-
       Brain and psychological determinants of placebo pill response in chronic
       pain patients
@@ -1129,7 +1181,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: Gigascience
+      isPartOf:
+        type: Periodical
+        name: Gigascience
       volumeNumber: 4
     title: >-
       Connectomics and new approaches for analyzing human brain functional
@@ -1145,10 +1199,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2245
-      pageStart: 2237
-      title: New England Journal of Medicine
+      isPartOf:
+        type: Periodical
+        name: New England Journal of Medicine
       volumeNumber: 379
+    pageEnd: 2245
+    pageStart: 2237
     title: Mapping Symptoms to Brain Networks with the Human Connectome
   - type: Article
     id: pbio-3000349-ref032
@@ -1186,10 +1242,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 518
-      pageStart: 506
-      title: Nat Protoc
+      isPartOf:
+        type: Periodical
+        name: Nat Protoc
       volumeNumber: 12
+    pageEnd: 518
+    pageStart: 506
     title: >-
       Using connectome-based predictive modeling to predict individual behavior
       from brain connectivity
@@ -1229,10 +1287,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 78
-      pageStart: 665
-      title: Neuron
+      isPartOf:
+        type: Periodical
+        name: Neuron
       volumeNumber: 72
+    pageEnd: 78
+    pageStart: 665
     title: Functional network organization of the human brain
   - type: Article
     id: pbio-3000349-ref034
@@ -1270,10 +1330,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3114
-      pageStart: 3095
-      title: Cerebral Cortex
+      isPartOf:
+        type: Periodical
+        name: Cerebral Cortex
       volumeNumber: 28
+    pageEnd: 3114
+    pageStart: 3095
     title: >-
       Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic
       Functional Connectivity MRI
@@ -1293,10 +1355,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1607
-      pageStart: 1606
-      title: Science Bulletin
+      isPartOf:
+        type: Periodical
+        name: Science Bulletin
       volumeNumber: 63
+    pageEnd: 1607
+    pageStart: 1606
     title: 'The anatomy of reliability: a must read for future human brain mapping'
   - type: Article
     id: pbio-3000349-ref036
@@ -1324,10 +1388,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 130
-      pageStart: 119
-      title: Am Psychol
+      isPartOf:
+        type: Periodical
+        name: Am Psychol
       volumeNumber: 69
+    pageEnd: 130
+    pageStart: 119
     title: 'Interdisciplinary chronic pain management: past, present, and future'
   - type: Article
     id: pbio-3000349-ref037
@@ -1345,9 +1411,11 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      title: Clin J Pain
+      isPartOf:
+        type: Periodical
+        name: Clin J Pain
       volumeNumber: 16
+    pageEnd: 5
     title: Psychological aspects of neuropathic pain
   - type: Article
     id: pbio-3000349-ref038
@@ -1365,10 +1433,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 118
-      pageStart: 105
-      title: Am Psychol
+      isPartOf:
+        type: Periodical
+        name: Am Psychol
       volumeNumber: 69
+    pageEnd: 118
+    pageStart: 105
     title: >-
       Contributions of psychology to the understanding and treatment of people
       with chronic pain: why it matters to ALL psychologists
@@ -1403,9 +1473,11 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 92
-      title: J Pain
+      isPartOf:
+        type: Periodical
+        name: J Pain
       volumeNumber: 17
+    pageEnd: 92
     title: >-
       The Role of Psychosocial Processes in the Development and Maintenance of
       Chronic Pain
@@ -1418,7 +1490,6 @@ references:
         givenNames:
           - GW
     datePublished: '1961'
-    title: ''
   - type: Article
     id: pbio-3000349-ref041
     authors:
@@ -1435,10 +1506,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 421
-      pageStart: 401
-      title: Annual Review of Psychology
+      isPartOf:
+        type: Periodical
+        name: Annual Review of Psychology
       volumeNumber: 57
+    pageEnd: 421
+    pageStart: 401
     title: Personality and the Prediction of Consequential Outcomes
   - type: Article
     id: pbio-3000349-ref042
@@ -1466,10 +1539,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 273
-      pageStart: 257
-      title: Neuron
+      isPartOf:
+        type: Periodical
+        name: Neuron
       volumeNumber: 99
+    pageEnd: 273
+    pageStart: 257
     title: >-
       Representation, Pattern Information, and Brain Signatures: From Neurons to
       Neuroimaging
@@ -1509,9 +1584,11 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageStart: 34853
-      title: Sci Rep
+      isPartOf:
+        type: Periodical
+        name: Sci Rep
       volumeNumber: 6
+    pageStart: 34853
     title: 'Global disruption of degree rank order: a hallmark of chronic pain'
   - type: Article
     id: pbio-3000349-ref044
@@ -1549,10 +1626,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 33
-      pageStart: 24
-      title: Pain
+      isPartOf:
+        type: Periodical
+        name: Pain
       volumeNumber: 154
+    pageEnd: 33
+    pageStart: 24
     title: >-
       Default mode network connectivity encodes clinical pain: an arterial spin
       labeling study
@@ -1582,7 +1661,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: PLoS ONE
+      isPartOf:
+        type: Periodical
+        name: PLoS ONE
       volumeNumber: 9
     title: >-
       Functional reorganization of the default mode network across chronic pain
@@ -1623,10 +1704,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 55
-      pageStart: 2545
-      title: Arthritis Rheum
+      isPartOf:
+        type: Periodical
+        name: Arthritis Rheum
       volumeNumber: 62
+    pageEnd: 55
+    pageStart: 2545
     title: >-
       Intrinsic brain connectivity in fibromyalgia is associated with chronic
       pain intensity
@@ -1666,10 +1749,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1119
-      pageStart: 1117
-      title: Nature Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Nature Neuroscience
       volumeNumber: 15
+    pageEnd: 1119
+    pageStart: 1117
     title: >-
       Corticostriatal functional connectivity predicts transition to chronic
       back pain
@@ -1689,10 +1774,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 12
-      pageStart: 1304
-      title: Nat Neurosci
+      isPartOf:
+        type: Periodical
+        name: Nat Neurosci
       volumeNumber: 17
+    pageEnd: 12
+    pageStart: 1304
     title: Reward and motivation in pain and pain relief
   - type: Article
     id: pbio-3000349-ref049
@@ -1730,10 +1817,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2
-      pageStart: 220
-      title: Nat Neurosci
+      isPartOf:
+        type: Periodical
+        name: Nat Neurosci
       volumeNumber: 19
+    pageEnd: 2
+    pageStart: 220
     title: >-
       The indirect pathway of the nucleus accumbens shell amplifies neuropathic
       pain
@@ -1773,10 +1862,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 42
-      pageStart: 535
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 345
+    pageEnd: 42
+    pageStart: 535
     title: >-
       Chronic pain. Decreased motivation during chronic pain requires long-term
       depression in the nucleus accumbens
@@ -1806,7 +1897,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: PLoS Biol
+      isPartOf:
+        type: Periodical
+        name: PLoS Biol
       volumeNumber: 13
     title: >-
       Distinct brain systems mediate the effects of nociceptive input and
@@ -1827,10 +1920,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 66
-      pageStart: 58
-      title: Health Psychol
+      isPartOf:
+        type: Periodical
+        name: Health Psychol
       volumeNumber: 30
+    pageEnd: 66
+    pageStart: 58
     title: >-
       Socioeconomic disparities in pain: the role of economic hardship and daily
       financial worry

@@ -311,7 +311,9 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      title: BMJ
+      isPartOf:
+        type: Periodical
+        name: BMJ
       volumeNumber: 332
     title: The cost of dichotomising continuous variables
   - type: Article
@@ -330,10 +332,12 @@ references:
     datePublished: '1948'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 291
-      pageStart: 288
-      title: Journal of Clinical Pathology
+      isPartOf:
+        type: Periodical
+        name: Journal of Clinical Pathology
       volumeNumber: 1
+    pageEnd: 291
+    pageStart: 288
     title: The error of the red cell count
   - type: Article
     id: bib3
@@ -356,7 +360,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 4
     title: >-
       Registered report: Transcriptional amplification in tumor cells with
@@ -372,10 +378,12 @@ references:
     datePublished: '1983'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 253
-      pageStart: 249
-      title: Applied Psychological Measurement
+      isPartOf:
+        type: Periodical
+        name: Applied Psychological Measurement
       volumeNumber: 7
+    pageEnd: 253
+    pageStart: 249
     title: The cost of dichotomization
   - type: Article
     id: bib5
@@ -473,10 +481,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 43201
-      pageStart: 43182
-      title: Oncotarget
+      isPartOf:
+        type: Periodical
+        name: Oncotarget
       volumeNumber: 6
+    pageEnd: 43201
+    pageStart: 43182
     title: >-
       Integrative omics reveals MYCN as a global suppressor of cellular
       signalling and enables network-based therapeutic target discovery in
@@ -517,7 +527,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 3
     title: An open investigation of the reproducibility of cancer biology research
   - type: Article
@@ -606,7 +618,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 7
     title: >-
       A Myc-driven self-reinforcing regulatory network maintains mouse embryonic
@@ -627,10 +641,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 331
-      pageStart: 328
-      title: The American Statistician
+      isPartOf:
+        type: Periodical
+        name: The American Statistician
       volumeNumber: 60
+    pageEnd: 331
+    pageStart: 328
     title: >-
       The difference between “significant” and “not significant” is not itself
       statistically significant
@@ -665,10 +681,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 12554
-      pageStart: 12543
-      title: Oncotarget
+      isPartOf:
+        type: Periodical
+        name: Oncotarget
       volumeNumber: 5
+    pageEnd: 12554
+    pageStart: 12543
     title: MYC regulates the non-coding transcriptome
   - type: Article
     id: bib10
@@ -680,8 +698,8 @@ references:
           - CHJ
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: eLife
+      type: Periodical
+      name: eLife
     title: Composing reproducible manuscripts using R Markdown
   - type: Article
     id: bib11
@@ -719,10 +737,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 482
-      pageStart: 476
-      title: British Journal of Cancer
+      isPartOf:
+        type: Periodical
+        name: British Journal of Cancer
       volumeNumber: 90
+    pageEnd: 482
+    pageStart: 476
     title: >-
       Variation in RNA expression and genomic DNA content acquired during cell
       culture
@@ -877,10 +897,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 388
-      pageStart: 384
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 525
+    pageEnd: 388
+    pageStart: 384
     title: The spliceosome is a therapeutic vulnerability in MYC-driven cancer
   - type: Article
     id: bib13
@@ -913,10 +935,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 586
-      pageStart: 575
-      title: 'over-passaged cell lines: how much more data do we need? BioTechniques'
+      isPartOf:
+        type: Periodical
+        name: 'over-passaged cell lines: how much more data do we need? BioTechniques'
       volumeNumber: 43
+    pageEnd: 586
+    pageStart: 575
     title: The costs of using unauthenticated
   - type: Article
     id: bib14
@@ -999,7 +1023,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Scientific Reports
+      isPartOf:
+        type: Periodical
+        name: Scientific Reports
       volumeNumber: 6
     title: >-
       Genetic variability in a frozen batch of MCF-7 cells invisible in routine
@@ -1055,10 +1081,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 739
-      pageStart: 733
-      title: Nature Reviews Genetics
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Genetics
       volumeNumber: 11
+    pageEnd: 739
+    pageStart: 733
     title: >-
       Tackling the widespread and critical impact of batch effects in
       high-throughput data
@@ -1122,8 +1150,8 @@ references:
           - TM
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: Open Science Framework
+      type: Periodical
+      name: Open Science Framework
     title: 'Study 48: Replication of Lin et al., 2012 (Cell)'
   - type: Article
     id: bib17
@@ -1171,10 +1199,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 67
-      pageStart: 56
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 151
+    pageEnd: 67
+    pageStart: 56
     title: Transcriptional amplification in tumor cells with elevated c-Myc
   - type: Article
     id: bib18
@@ -1233,7 +1263,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 5
     title: >-
       Different promoter affinities account for specificity in MYC-dependent
@@ -1304,10 +1336,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 79
-      pageStart: 68
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 151
+    pageEnd: 79
+    pageStart: 68
     title: >-
       c-Myc is a universal amplifier of expressed genes in lymphocytes and
       embryonic stem cells
@@ -1332,10 +1366,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 563
-      pageStart: 560
-      title: Biotechnology Progress
+      isPartOf:
+        type: Periodical
+        name: Biotechnology Progress
       volumeNumber: 7
+    pageEnd: 563
+    pageStart: 560
     title: >-
       Hemacytometer Cell Count Distributions: Implications of Non-Poisson
       Behavior
@@ -1360,10 +1396,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1107
-      pageStart: 1105
-      title: Nature Neuroscience
+      isPartOf:
+        type: Periodical
+        name: Nature Neuroscience
       volumeNumber: 14
+    pageEnd: 1107
+    pageStart: 1105
     title: >-
       Erroneous analyses of interactions in neuroscience: a problem of
       significance
@@ -1423,10 +1461,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 352
-      pageStart: 339
-      title: Molecular Cell
+      isPartOf:
+        type: Periodical
+        name: Molecular Cell
       volumeNumber: 58
+    pageEnd: 352
+    pageStart: 339
     title: >-
       Single mammalian cells compensate for differences in cellular volume and
       DNA copy number through independent global transcriptional mechanisms
@@ -1496,10 +1536,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 793
-      pageStart: 787
-      title: International Journal of Cancer
+      isPartOf:
+        type: Periodical
+        name: International Journal of Cancer
       volumeNumber: 87
+    pageEnd: 793
+    pageStart: 787
     title: Cell cycle activation by c-myc in a burkitt lymphoma model cell line
   - type: Article
     id: bib24
@@ -1512,19 +1554,20 @@ references:
     datePublished: '1959'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 667
-      pageStart: 655
-      title: Journal of the American Statistical Association
+      isPartOf:
+        type: Periodical
+        name: Journal of the American Statistical Association
       volumeNumber: 54
+    pageEnd: 667
+    pageStart: 655
     title: Remarks on zeros and ties in the wilcoxon signed rank procedures
   - type: Article
     id: bib25
     authors: []
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: R Foundation for Statistical Computing
-    title: ''
+      type: Periodical
+      name: R Foundation for Statistical Computing
   - type: Article
     id: bib26
     authors:
@@ -1541,7 +1584,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: Cold Spring Harbor Perspectives in Medicine
+      isPartOf:
+        type: Periodical
+        name: Cold Spring Harbor Perspectives in Medicine
       volumeNumber: 4
     title: Genome recognition by MYC
   - type: Article
@@ -1646,10 +1691,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 492
-      pageStart: 488
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 511
+    pageEnd: 492
+    pageStart: 488
     title: >-
       Selective transcriptional regulation by Myc in cellular growth control and
       lymphomagenesis
@@ -1704,10 +1751,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 524
-      pageStart: 520
-      title: Oncogene
+      isPartOf:
+        type: Periodical
+        name: Oncogene
       volumeNumber: 24
+    pageEnd: 524
+    pageStart: 520
     title: >-
       Dissection of transcriptional programmes in response to serum and c-Myc in
       a human B-cell line
@@ -1732,10 +1781,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 675
-      pageStart: 671
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 9
+    pageEnd: 675
+    pageStart: 671
     title: 'NIH Image to ImageJ: 25 years of image analysis'
   - type: Article
     id: bib30
@@ -1783,10 +1834,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1258
-      pageStart: 1255
-      title: Current Biology
+      isPartOf:
+        type: Periodical
+        name: Current Biology
       volumeNumber: 9
+    pageEnd: 1258
+    pageStart: 1255
     title: Control of cell growth by c-Myc in the absence of cell division
   - type: Article
     id: bib31
@@ -2120,8 +2173,8 @@ references:
           - BA
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: PsyArXiv
+      type: Periodical
+      name: PsyArXiv
     title: >-
       Many analysts, one dataset: Making transparent how variations in
       analytical choices affect results
@@ -2161,9 +2214,11 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageStart: 32249
-      title: Scientific Reports
+      isPartOf:
+        type: Periodical
+        name: Scientific Reports
       volumeNumber: 6
+    pageStart: 32249
     title: >-
       Cell types differ in global coordination of splicing and proportion of
       highly expressed genes
@@ -2218,10 +2273,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 117
-      pageStart: 103
-      title: Prevention Science
+      isPartOf:
+        type: Periodical
+        name: Prevention Science
       volumeNumber: 12
+    pageEnd: 117
+    pageStart: 103
     title: Replication in prevention science
   - type: Article
     id: bib34
@@ -2234,10 +2291,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 48
-      pageStart: 1
-      title: Journal of Statistical Software
+      isPartOf:
+        type: Periodical
+        name: Journal of Statistical Software
       volumeNumber: 36
+    pageEnd: 48
+    pageStart: 1
     title: Conducting Meta-Analyses in R with the metafor Package
   - type: Article
     id: bib35
@@ -2341,10 +2400,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 487
-      pageStart: 483
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 511
+    pageEnd: 487
+    pageStart: 483
     title: >-
       Activation and repression by oncogenic MYC shape tumour-specific gene
       expression profiles

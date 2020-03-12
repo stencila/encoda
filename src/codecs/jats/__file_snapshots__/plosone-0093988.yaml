@@ -128,15 +128,16 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 214
-      pageStart: 183
-      title: Annual Review of Sociology
+      isPartOf:
+        type: Periodical
+        name: Annual Review of Sociology
       volumeNumber: 24
+    pageEnd: 214
+    pageStart: 183
     title: 'Social dilemmas: The anatomy of cooperation'
   - type: Article
     id: pone-0093988-Axelrod1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Hardin1
     authors:
@@ -148,10 +149,12 @@ references:
     datePublished: '1968'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1248
-      pageStart: 1243
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 162
+    pageEnd: 1248
+    pageStart: 1243
     title: The tragedy of the commons
   - type: Article
     id: pone-0093988-Flood1
@@ -164,10 +167,12 @@ references:
     datePublished: '1958'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 26
-      pageStart: 5
-      title: Management Science
+      isPartOf:
+        type: Periodical
+        name: Management Science
       volumeNumber: 5
+    pageEnd: 26
+    pageStart: 5
     title: Some experimental games
   - type: Article
     id: pone-0093988-Hamilton1
@@ -185,19 +190,19 @@ references:
     datePublished: '1981'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1396
-      pageStart: 1390
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 211
+    pageEnd: 1396
+    pageStart: 1390
     title: The evolution of cooperation
   - type: Article
     id: pone-0093988-MaynardSmith1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Skyrms1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Isaac1
     authors:
@@ -214,10 +219,12 @@ references:
     datePublished: '1988'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 199
-      pageStart: 179
-      title: The Quarterly Journal of Economics
+      isPartOf:
+        type: Periodical
+        name: The Quarterly Journal of Economics
       volumeNumber: 103
+    pageEnd: 199
+    pageStart: 179
     title: >-
       Group size effects in public goods provision: The voluntary contributions
       mechanism
@@ -237,10 +244,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 140
-      pageStart: 137
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 415
+    pageEnd: 140
+    pageStart: 137
     title: Altruistic punishment in humans
   - type: Article
     id: pone-0093988-Killingback1
@@ -263,10 +272,14 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1728
-      pageStart: 1723
-      title: 'Proceedings of the Royal Society of London Series B: Biological Sciences'
+      isPartOf:
+        type: Periodical
+        name: >-
+          Proceedings of the Royal Society of London Series B: Biological
+          Sciences
       volumeNumber: 266
+    pageEnd: 1728
+    pageStart: 1723
     title: >-
       Variable investment, the continuous prisoner's dilemma, and the origin of
       cooperation
@@ -291,10 +304,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 862
-      pageStart: 859
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 306
+    pageEnd: 862
+    pageStart: 859
     title: The evolutionary origin of cooperators and defectors
   - type: Article
     id: pone-0093988-Killingback2
@@ -317,10 +332,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 3
-      title: Biological Theory
+      isPartOf:
+        type: Periodical
+        name: Biological Theory
       volumeNumber: 5
+    pageEnd: 6
+    pageStart: 3
     title: Cooperation and defection in the tragedy of the commons
   - type: Article
     id: pone-0093988-Killingback3
@@ -343,10 +360,14 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1481
-      pageStart: 1477
-      title: 'Proceedings of the Royal Society of London Series B: Biological Sciences'
+      isPartOf:
+        type: Periodical
+        name: >-
+          Proceedings of the Royal Society of London Series B: Biological
+          Sciences
       volumeNumber: 273
+    pageEnd: 1481
+    pageStart: 1477
     title: >-
       Evolution in group-structured populations can resolve the tragedy of the
       commons
@@ -366,10 +387,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4002
-      pageStart: 3999
-      title: Proceedings of the National Academy of Sciences
+      isPartOf:
+        type: Periodical
+        name: Proceedings of the National Academy of Sciences
       volumeNumber: 101
+    pageEnd: 4002
+    pageStart: 3999
     title: 'The Nash equilibrium: A perspective'
   - type: Article
     id: pone-0093988-Basu1
@@ -382,10 +405,12 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 395
-      pageStart: 391
-      title: The American Economic Review
+      isPartOf:
+        type: Periodical
+        name: The American Economic Review
       volumeNumber: 84
+    pageEnd: 395
+    pageStart: 391
     title: 'The traveler''s dilemma: Paradoxes of rationality in game theory'
   - type: Article
     id: pone-0093988-Basu2
@@ -398,10 +423,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 95
-      pageStart: 90
-      title: Scientific American Magazine
+      isPartOf:
+        type: Periodical
+        name: Scientific American Magazine
       volumeNumber: 296
+    pageEnd: 95
+    pageStart: 90
     title: The traveler's dilemma
   - type: Article
     id: pone-0093988-Goeree1
@@ -419,10 +446,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1422
-      pageStart: 1402
-      title: The American Economic Review
+      isPartOf:
+        type: Periodical
+        name: The American Economic Review
       volumeNumber: 91
+    pageEnd: 1422
+    pageStart: 1402
     title: Ten little treasures of game theory and ten intuitive contradictions
   - type: Article
     id: pone-0093988-VanHuyck1
@@ -446,10 +475,12 @@ references:
     datePublished: '1990'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 248
-      pageStart: 234
-      title: The American Economic Review
+      isPartOf:
+        type: Periodical
+        name: The American Economic Review
       volumeNumber: 80
+    pageEnd: 248
+    pageStart: 234
     title: 'Tacit coordination games, strategic uncertainty, and coordination failure'
   - type: Article
     id: pone-0093988-Capra1
@@ -477,10 +508,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 690
-      pageStart: 678
-      title: The American Economic Review
+      isPartOf:
+        type: Periodical
+        name: The American Economic Review
       volumeNumber: 89
+    pageEnd: 690
+    pageStart: 678
     title: Anomalous behavior in a traveler's dilemma?
   - type: Article
     id: pone-0093988-Goeree2
@@ -498,15 +531,16 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10567
-      pageStart: 10564
-      title: Proceedings of the National Academy of Sciences
+      isPartOf:
+        type: Periodical
+        name: Proceedings of the National Academy of Sciences
       volumeNumber: 96
+    pageEnd: 10567
+    pageStart: 10564
     title: 'Stochastic game theory: For playing games, not just for doing theory'
   - type: Article
     id: pone-0093988-Becker1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Basu3
     authors:
@@ -528,17 +562,18 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 595
-      pageStart: 575
-      title: Social Choice and Welfare
+      isPartOf:
+        type: Periodical
+        name: Social Choice and Welfare
       volumeNumber: 37
+    pageEnd: 595
+    pageStart: 575
     title: >-
       Experiments with the Travelers Dilemma: welfare, strategic choice and
       implicit collusion
   - type: Article
     id: pone-0093988-Hofbauer1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Manapat1
     authors:
@@ -565,10 +600,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 127
-      pageStart: 119
-      title: Journal of Theoretical Biology
+      isPartOf:
+        type: Periodical
+        name: Journal of Theoretical Biology
       volumeNumber: 303
+    pageEnd: 127
+    pageStart: 119
     title: Stochastic evolutionary dynamics resolve the Traveler's Dilemma
   - type: Article
     id: pone-0093988-Riehl1
@@ -581,10 +618,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1735
-      pageStart: 1728
-      title: 'Proceedings of the Royal Society B: Biological Sciences'
+      isPartOf:
+        type: Periodical
+        name: 'Proceedings of the Royal Society B: Biological Sciences'
       volumeNumber: 278
+    pageEnd: 1735
+    pageStart: 1728
     title: >-
       Living with strangers: direct benefits favour non-kin cooperation in a
       communally nesting bird
@@ -604,10 +643,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 687
-      pageStart: 679
-      title: The Wilson Journal of Ornithology
+      isPartOf:
+        type: Periodical
+        name: The Wilson Journal of Ornithology
       volumeNumber: 121
+    pageEnd: 687
+    pageStart: 679
     title: >-
       Natural history and reproductive biology of the communally breeding
       Greater (Ani Crotophaga) major at Gatún Lake, Panama
@@ -622,10 +663,12 @@ references:
     datePublished: '1983'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 528
-      pageStart: 525
-      title: The Quarterly Journal of Economics
+      isPartOf:
+        type: Periodical
+        name: The Quarterly Journal of Economics
       volumeNumber: 98
+    pageEnd: 528
+    pageStart: 525
     title: A simple rational expectations Keynes-type model
   - type: Article
     id: pone-0093988-Anderson1
@@ -648,10 +691,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 199
-      pageStart: 177
-      title: Games and Economic Behavior
+      isPartOf:
+        type: Periodical
+        name: Games and Economic Behavior
       volumeNumber: 34
+    pageEnd: 199
+    pageStart: 177
     title: >-
       Minimum-effort coordination games: Stochastic potential and logit
       equilibrium
@@ -671,10 +716,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 207
-      pageStart: 184
-      title: Games and Economic Behavior
+      isPartOf:
+        type: Periodical
+        name: Games and Economic Behavior
       volumeNumber: 74
+    pageEnd: 207
+    pageStart: 184
     title: 'Iterated regret minimization: A new solution concept'
   - type: Article
     id: pone-0093988-Capraro1
@@ -687,9 +734,11 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageStart: 72427
-      title: PLoS ONE
+      isPartOf:
+        type: Periodical
+        name: PLoS ONE
       volumeNumber: 8
+    pageStart: 72427
     title: A model of human cooperation in social dilemmas
   - type: Article
     id: pone-0093988-Capraro2
@@ -717,12 +766,14 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 158
-      pageStart: 146
-      title: >-
-        Proceedings of the 6th International Symposium in Algorithmic Game
-        Theory
+      isPartOf:
+        type: Periodical
+        name: >-
+          Proceedings of the 6th International Symposium in Algorithmic Game
+          Theory
       volumeNumber: 8146
+    pageEnd: 158
+    pageStart: 146
     title: Cooperative equilibria in iterated social dilemmas
   - type: Article
     id: pone-0093988-Li1
@@ -745,9 +796,11 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageStart: 58597
-      title: PLoS ONE
+      isPartOf:
+        type: Periodical
+        name: PLoS ONE
       volumeNumber: 8
+    pageStart: 58597
     title: Evolution of cooperation in spatial Traveler's Dilemma game
   - type: Article
     id: pone-0093988-Camerer1
@@ -770,10 +823,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 898
-      pageStart: 861
-      title: The Quarterly Journal of Economics
+      isPartOf:
+        type: Periodical
+        name: The Quarterly Journal of Economics
       volumeNumber: 119
+    pageEnd: 898
+    pageStart: 861
     title: A cognitive hierarchy model of games
   - type: Article
     id: pone-0093988-CostaGomes1
@@ -796,10 +851,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1235
-      pageStart: 1193
-      title: Econometrica
+      isPartOf:
+        type: Periodical
+        name: Econometrica
       volumeNumber: 69
+    pageEnd: 1235
+    pageStart: 1193
     title: 'Cognition and Behavior in Normal-Form Games: An Experimental Study'
   - type: Article
     id: pone-0093988-McKelvey1
@@ -817,10 +874,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 38
-      pageStart: 6
-      title: Games and Economic Behavior
+      isPartOf:
+        type: Periodical
+        name: Games and Economic Behavior
       volumeNumber: 10
+    pageEnd: 38
+    pageStart: 6
     title: Quantal response equilibria for normal form games
   - type: Article
     id: pone-0093988-Stahl1
@@ -838,19 +897,19 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 327
-      pageStart: 309
-      title: Journal of Economic Behavior and Organization
+      isPartOf:
+        type: Periodical
+        name: Journal of Economic Behavior and Organization
       volumeNumber: 25
+    pageEnd: 327
+    pageStart: 309
     title: Experimental evidence on players' models of other players
   - type: Article
     id: pone-0093988-Wright1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Tirole1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Metz1
     authors:
@@ -883,10 +942,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 231
-      pageStart: 183
-      title: Stochastic and Spatial Structures of Dynamical Systems
+      isPartOf:
+        type: Periodical
+        name: Stochastic and Spatial Structures of Dynamical Systems
       volumeNumber: 45
+    pageEnd: 231
+    pageStart: 183
     title: >-
       Adaptive dynamics, a geometrical study of the consequences of nearly
       faithful reproduction
@@ -916,10 +977,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2027
-      pageStart: 2024
-      title: Physical Review Letters
+      isPartOf:
+        type: Periodical
+        name: Physical Review Letters
       volumeNumber: 78
+    pageEnd: 2027
+    pageStart: 2024
     title: Dynamics of adaptation and evolutionary branching
   - type: Article
     id: pone-0093988-Geritz2
@@ -942,10 +1005,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 57
-      pageStart: 35
-      title: Evolutionary Ecology
+      isPartOf:
+        type: Periodical
+        name: Evolutionary Ecology
       volumeNumber: 12
+    pageEnd: 57
+    pageStart: 35
     title: >-
       Evolutionarily singular strategies and the adaptive growth and branching
       of the evolutionary tree
@@ -965,10 +1030,12 @@ references:
     datePublished: '1992'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 829
-      pageStart: 826
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 359
+    pageEnd: 829
+    pageStart: 826
     title: Evolutionary games and spatial chaos
   - type: Article
     id: pone-0093988-Killingback4
@@ -986,10 +1053,14 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1144
-      pageStart: 1135
-      title: 'Proceedings of the Royal Society of London Series B: Biological Sciences'
+      isPartOf:
+        type: Periodical
+        name: >-
+          Proceedings of the Royal Society of London Series B: Biological
+          Sciences
       volumeNumber: 263
+    pageEnd: 1144
+    pageStart: 1135
     title: 'Spatial evolutionary game theory: Hawks and Doves revisited'
   - type: Article
     id: pone-0093988-Nakamaru1
@@ -1012,10 +1083,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 81
-      pageStart: 65
-      title: Journal of Theoretical Biology
+      isPartOf:
+        type: Periodical
+        name: Journal of Theoretical Biology
       volumeNumber: 184
+    pageEnd: 81
+    pageStart: 65
     title: The evolution of cooperation in a lattice-structured population
   - type: Article
     id: pone-0093988-VanBaalen1
@@ -1034,10 +1107,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 648
-      pageStart: 631
-      title: Journal of Theoretical Biology
+      isPartOf:
+        type: Periodical
+        name: Journal of Theoretical Biology
       volumeNumber: 193
+    pageEnd: 648
+    pageStart: 631
     title: The unit of selection in viscous populations and the evolution of altruism
   - type: Article
     id: pone-0093988-Ifti1
@@ -1060,10 +1135,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 106
-      pageStart: 97
-      title: Journal of Theoretical Biology
+      isPartOf:
+        type: Periodical
+        name: Journal of Theoretical Biology
       volumeNumber: 231
+    pageEnd: 106
+    pageStart: 97
     title: >-
       Effects of neighbourhood size and connectivity on spatial Continuous
       Prisoner's Dilemma
@@ -1083,10 +1160,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 646
-      pageStart: 643
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 428
+    pageEnd: 646
+    pageStart: 643
     title: >-
       Spatial structure often inhibits the evolution of cooperation in the
       snowdrift game
@@ -1106,10 +1185,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 104
-      pageStart: 98
-      title: Physical Review Letters
+      isPartOf:
+        type: Periodical
+        name: Physical Review Letters
       volumeNumber: 95
+    pageEnd: 104
+    pageStart: 98
     title: >-
       Scale-free networks provide a unifying framework for the emergence of
       cooperation
@@ -1139,10 +1220,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 505
-      pageStart: 502
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 441
+    pageEnd: 505
+    pageStart: 502
     title: >-
       A simple rule for the evolution of cooperation on graphs and social
       networks
@@ -1162,10 +1245,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 216
-      pageStart: 97
-      title: Physics Reports
+      isPartOf:
+        type: Periodical
+        name: Physics Reports
       volumeNumber: 446
+    pageEnd: 216
+    pageStart: 97
     title: Evolutionary games on graphs
   - type: Article
     id: pone-0093988-Watts1
@@ -1183,10 +1268,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 442
-      pageStart: 440
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 393
+    pageEnd: 442
+    pageStart: 440
     title: Collective dynamics of ‘small-world’ networks
   - type: Article
     id: pone-0093988-Barabsi1
@@ -1204,10 +1291,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 512
-      pageStart: 509
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 286
+    pageEnd: 512
+    pageStart: 509
     title: Emergence of scaling in random networks
   - type: Article
     id: pone-0093988-Albert1
@@ -1225,15 +1314,16 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 97
-      pageStart: 47
-      title: Reviews of Modern Physics
+      isPartOf:
+        type: Periodical
+        name: Reviews of Modern Physics
       volumeNumber: 74
+    pageEnd: 97
+    pageStart: 47
     title: Statistical mechanics of complex networks
   - type: Article
     id: pone-0093988-Newman1
     authors: []
-    title: ''
   - type: Article
     id: pone-0093988-Dufwenberg1
     authors:
@@ -1250,10 +1340,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 22
-      pageStart: 7
-      title: International Journal of Industrial Organization
+      isPartOf:
+        type: Periodical
+        name: International Journal of Industrial Organization
       volumeNumber: 18
+    pageEnd: 22
+    pageStart: 7
     title: 'Price competition and market concentration: an experimental study'
 title: >-
   An Application of Evolutionary Game Theory to Social Dilemmas: The Traveler's

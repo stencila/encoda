@@ -168,10 +168,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 490
-      pageStart: 481
-      title: Deut Lebensm Rundsch.
+      isPartOf:
+        type: Periodical
+        name: Deut Lebensm Rundsch.
       volumeNumber: 100
+    pageEnd: 490
+    pageStart: 481
     title: Hemp food products - A problem?
   - type: Article
     id: ref-2
@@ -194,10 +196,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 372
-      pageStart: 351
-      title: Deut Lebensm Rundsch.
+      isPartOf:
+        type: Periodical
+        name: Deut Lebensm Rundsch.
       volumeNumber: 115
+    pageEnd: 372
+    pageStart: 351
     title: Hemp food products - an update.
   - type: Article
     id: ref-3
@@ -225,10 +229,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 371
-      pageStart: 367
-      title: Schweiz Z Ganzheitsmed.
+      isPartOf:
+        type: Periodical
+        name: Schweiz Z Ganzheitsmed.
       volumeNumber: 29
+    pageEnd: 371
+    pageStart: 367
     title: >-
       Wirksamkeit von Cannabidiol: Klinische Studien mit Cannabidiol und
       Cannabidiol-haltigen Extrakten.
@@ -243,10 +249,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 72
-      pageStart: 65
-      title: Med Cannabis Cannabinoids.
+      isPartOf:
+        type: Periodical
+        name: Med Cannabis Cannabinoids.
       volumeNumber: 1
+    pageEnd: 72
+    pageStart: 65
     title: The trouble with CBD oil.
   - type: Article
     id: ref-7
@@ -258,12 +266,10 @@ references:
           - J
     datePublished: '2015'
     isPartOf:
-      type: PublicationIssue
-      isPartOf:
-        type: PublicationVolume
-        title: Soft Drinks Int.
-      pageEnd: 44
-      pageStart: 42
+      type: Periodical
+      name: Soft Drinks Int.
+    pageEnd: 44
+    pageStart: 42
     title: 'Cannabis, hemp and CBDs.'
   - type: Article
     id: ref-8
@@ -286,10 +292,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 52
-      pageStart: 49
-      title: Epilepsy Behav.
+      isPartOf:
+        type: Periodical
+        name: Epilepsy Behav.
       volumeNumber: 45
+    pageEnd: 52
+    pageStart: 49
     title: >-
       Parental reporting of response to oral cannabis extracts for treatment of
       refractory epilepsy.
@@ -316,11 +324,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Epilepsia.
+        isPartOf:
+          type: Periodical
+          name: Epilepsia.
         volumeNumber: 59
       issueNumber: 8
-      pageEnd: 1548
-      pageStart: 1540
+    pageEnd: 1548
+    pageStart: 1540
     title: >-
       Long-term safety and treatment effects of cannabidiol in children and
       adults with treatment-resistant epilepsies: Expanded access program
@@ -348,11 +358,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Lancet Neurol.
+        isPartOf:
+          type: Periodical
+          name: Lancet Neurol.
         volumeNumber: 15
       issueNumber: 3
-      pageEnd: 278
-      pageStart: 270
+    pageEnd: 278
+    pageStart: 270
     title: >-
       Cannabidiol in patients with treatment-resistant epilepsy: an open-label
       interventional trial.
@@ -379,11 +391,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Cannabis Cannabinoid Res.
+        isPartOf:
+          type: Periodical
+          name: Cannabis Cannabinoid Res.
         volumeNumber: 1
       issueNumber: 1
-      pageEnd: 112
-      pageStart: 102
+    pageEnd: 112
+    pageStart: 102
     title: >-
       Identification of Psychoactive Degradants of Cannabidiol in Simulated
       Gastric and Physiological Fluid.
@@ -419,10 +433,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: EFSA J.
+        isPartOf:
+          type: Periodical
+          name: EFSA J.
         volumeNumber: 13
       issueNumber: 6
-      pageStart: 4141
+    pageStart: 4141
     title: >-
       Scientific Opinion on the risks for human health related to the presence
       of tetrahydrocannabinol (THC) in milk and other food of animal origin.
@@ -447,9 +463,11 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageStart: 8143582
-      title: J Toxicol.
+      isPartOf:
+        type: Periodical
+        name: J Toxicol.
       volumeNumber: 2018
+    pageStart: 8143582
     title: >-
       An Assessment of the Genotoxicity and Subchronic Toxicity of a
       Supercritical Fluid Extract of the Aerial Parts of Hemp.
@@ -476,11 +494,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Am Chem Soc.
+        isPartOf:
+          type: Periodical
+          name: J Am Chem Soc.
         volumeNumber: 62
       issueNumber: 9
-      pageEnd: 2405
-      pageStart: 2402
+    pageEnd: 2405
+    pageStart: 2402
     title: >-
       Structure of cannabidiol. VI. Isomerization of cannabidiol to
       tetrahydrocannabinol, a physiologically active product. Conversion of
@@ -508,11 +528,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Am Chem Soc.
+        isPartOf:
+          type: Periodical
+          name: J Am Chem Soc.
         volumeNumber: 63
       issueNumber: 8
-      pageEnd: 2213
-      pageStart: 2209
+    pageEnd: 2213
+    pageStart: 2209
     title: Structure of cannabidiol. XII. Isomerization to tetrahydrocannabinols.
   - type: Article
     id: ref-19
@@ -537,11 +559,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Forensic Toxicol.
+        isPartOf:
+          type: Periodical
+          name: Forensic Toxicol.
         volumeNumber: 25
       issueNumber: 1
-      pageEnd: 21
-      pageStart: 16
+    pageEnd: 21
+    pageStart: 16
     title: |-
       Conversion of cannabidiol to Δ
                               9-tetrahydrocannabinol and related cannabinoids in artificial gastric juice, and their pharmacological effects in mice.
@@ -563,11 +587,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: J Ind Hemp.
+        isPartOf:
+          type: Periodical
+          name: J Ind Hemp.
         volumeNumber: 10
       issueNumber: 2
-      pageEnd: 17
-      pageStart: 5
+    pageEnd: 17
+    pageStart: 5
     title: Current status of THC in German hemp food products.
   - type: Article
     id: ref-21
@@ -585,10 +611,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 826
-      pageStart: 812
-      title: Electron J Environ Agric Food Chem.
+      isPartOf:
+        type: Periodical
+        name: Electron J Environ Agric Food Chem.
       volumeNumber: 4
+    pageEnd: 826
+    pageStart: 812
     title: >-
       Analysis and toxicological evaluation of cannabinoids in hemp food
       products - a review.
@@ -603,10 +631,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 96
-      pageStart: 93
-      title: Int J Drug Policy.
+      isPartOf:
+        type: Periodical
+        name: Int J Drug Policy.
       volumeNumber: 68
+    pageEnd: 96
+    pageStart: 93
     title: 'Cannabis use in Europe: Current trends and public health concerns.'
   - type: Article
     id: ref-23
@@ -631,11 +661,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Cannabis Cannabinoid Res.
+        isPartOf:
+          type: Periodical
+          name: Cannabis Cannabinoid Res.
         volumeNumber: 2
       issueNumber: 1
-      pageEnd: 86
-      pageStart: 81
+    pageEnd: 86
+    pageStart: 81
     title: >-
       A Conversion of Oral Cannabidiol to Delta9-Tetrahydrocannabinol Seems Not
       to Occur in Humans.
@@ -662,11 +694,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Cannabis Cannabinoid Res.
+        isPartOf:
+          type: Periodical
+          name: Cannabis Cannabinoid Res.
         volumeNumber: 2
       issueNumber: 1
-      pageEnd: 4
-      pageStart: 1
+    pageEnd: 4
+    pageStart: 1
     title: >-
       Even High Doses of Oral Cannabidol Do Not Cause THC-Like Effects in
       Humans: Comment on Merrick 
@@ -676,10 +710,10 @@ references:
     authors: []
     datePublished: '2015'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 22
-      pageStart: 1
-      title: Off J Europ Union.
+      type: Periodical
+      name: Off J Europ Union.
+    pageEnd: 22
+    pageStart: 1
     title: >-
       Regulation (EU) 2015/2283 of the European Parliament and of the Council of
       25 November 2015 on novel foods, amending Regulation (EU) No 1169/2011 of
@@ -691,9 +725,9 @@ references:
     authors: []
     datePublished: '2011'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 63
-      title: Off J Europ Union.
+      type: Periodical
+      name: Off J Europ Union.
+    pageStart: 63
     title: >-
       Regulation (EU) No 1169/2011 of the European Parliament and of the Council
       of 25 October 2011 on the provision of food information to consumers,
@@ -708,10 +742,10 @@ references:
     authors: []
     datePublished: '2006'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 25
-      pageStart: 9
-      title: Off J Europ Union.
+      type: Periodical
+      name: Off J Europ Union.
+    pageEnd: 25
+    pageStart: 9
     title: >-
       Regulation (EC) No 1924/2006 of the European Parliament and of the Council
       of 20 December 2006 on nutrition and health claims made on foods.
@@ -731,9 +765,11 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageStart: 8126
-      title: Sci Rep.
+      isPartOf:
+        type: Periodical
+        name: Sci Rep.
       volumeNumber: 5
+    pageStart: 8126
     title: >-
       Comparative risk assessment of alcohol, tobacco, cannabis and other
       illicit drugs using the margin of exposure approach.
@@ -750,11 +786,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clin Pharmacokinet.
+        isPartOf:
+          type: Periodical
+          name: Clin Pharmacokinet.
         volumeNumber: 42
       issueNumber: 4
-      pageEnd: 360
-      pageStart: 327
+    pageEnd: 360
+    pageStart: 327
     title: Pharmacokinetics and pharmacodynamics of cannabinoids.
   - type: Article
     id: ref-30
@@ -774,11 +812,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Schweiz Med Wochenschr.
+        isPartOf:
+          type: Periodical
+          name: Schweiz Med Wochenschr.
         volumeNumber: 127
       issueNumber: 6
-      pageEnd: 218
-      pageStart: 214
+    pageEnd: 218
+    pageStart: 214
     title: '[Cannabis poisoning after eating salad].'
   - type: Article
     id: ref-31
@@ -811,11 +851,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: JAMA.
+        isPartOf:
+          type: Periodical
+          name: JAMA.
         volumeNumber: 318
       issueNumber: 17
-      pageEnd: 1709
-      pageStart: 1708
+    pageEnd: 1709
+    pageStart: 1708
     title: Labeling Accuracy of Cannabidiol Extracts Sold Online.
 title: >-
   Are side effects of cannabidiol (CBD) products caused by tetrahydrocannabinol

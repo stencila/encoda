@@ -151,10 +151,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 92
-      pageStart: 179
-      title: Infez Med
+      isPartOf:
+        type: Periodical
+        name: Infez Med
       volumeNumber: 22
+    pageEnd: 92
+    pageStart: 179
     title: Vector transmitted diseases and climate changes in Europe
   - type: Article
     id: pntd-0007469-ref002
@@ -217,10 +219,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 702
-      pageStart: 657
-      title: Clin Microbiol Rev
+      isPartOf:
+        type: Periodical
+        name: Clin Microbiol Rev
       volumeNumber: 26
+    pageEnd: 702
+    pageStart: 657
     title: 'Update on tick-borne rickettsioses around the world: a geographic approach'
   - type: Article
     id: pntd-0007469-ref003
@@ -238,10 +242,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 45
-      pageStart: 237
-      title: Eur J Epidemiol
+      isPartOf:
+        type: Periodical
+        name: Eur J Epidemiol
       volumeNumber: 7
+    pageEnd: 45
+    pageStart: 237
     title: Epidemiology of rickettsial diseases
   - type: Article
     id: pntd-0007469-ref004
@@ -269,10 +275,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1288
-      pageStart: 1265
-      title: Future Microbiol
+      isPartOf:
+        type: Periodical
+        name: Future Microbiol
       volumeNumber: 8
+    pageEnd: 1288
+    pageStart: 1265
     title: Recent molecular insights into rickettsial pathogenesis and immunity
   - type: Article
     id: pntd-0007469-ref005
@@ -290,7 +298,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: Lancet Glob Health
+      isPartOf:
+        type: Periodical
+        name: Lancet Glob Health
       volumeNumber: 3
     title: Rickettsioses as causes of CNS infection in southeast Asia
   - type: Article
@@ -349,9 +359,11 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageStart: 418
-      title: BMC Infect Dis
+      isPartOf:
+        type: Periodical
+        name: BMC Infect Dis
       volumeNumber: 18
+    pageStart: 418
     title: >-
       Intra-aural tick bite causing unilateral facial nerve palsy in 29 cases
       over 16 years in Kandy, Sri Lanka: is rickettsial aetiology possible?
@@ -391,9 +403,11 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageStart: 80
-      title: Pan Afr Med J
+      isPartOf:
+        type: Periodical
+        name: Pan Afr Med J
       volumeNumber: 26
+    pageStart: 80
     title: 'Rickettsiosis associated with cerebral infarction: a new case study'
   - type: Article
     id: pntd-0007469-ref008
@@ -436,10 +450,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 373
-      title: Ocul Immunol Inflamm
+      isPartOf:
+        type: Periodical
+        name: Ocul Immunol Inflamm
       volumeNumber: 22
+    pageEnd: 8
+    pageStart: 373
     title: Visual loss associated with rickettsial disease
   - type: Article
     id: pntd-0007469-ref009
@@ -487,10 +503,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 845
-      title: Microbes Infect
+      isPartOf:
+        type: Periodical
+        name: Microbes Infect
       volumeNumber: 17
+    pageEnd: 9
+    pageStart: 845
     title: Survival of rat cerebrocortical neurons after rickettsial infection
   - type: Article
     id: pntd-0007469-ref010
@@ -528,10 +546,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 32
-      pageStart: 1615
-      title: Infect Immun
+      isPartOf:
+        type: Periodical
+        name: Infect Immun
       volumeNumber: 84
+    pageEnd: 32
+    pageStart: 1615
     title: >-
       Persisting Rickettsia typhi Causes Fatal Central Nervous System
       Inflammation
@@ -551,10 +571,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 86
-      pageStart: 179
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 4
+    pageEnd: 86
+    pageStart: 179
     title: Rickettsial pathogens and their arthropod vectors
   - type: Article
     id: pntd-0007469-ref012
@@ -577,10 +599,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 40
-      pageStart: 127
-      title: Infect Dis Clin North Am
+      isPartOf:
+        type: Periodical
+        name: Infect Dis Clin North Am
       volumeNumber: 18
+    pageEnd: 40
+    pageStart: 127
     title: The history of epidemic typhus
   - type: Article
     id: pntd-0007469-ref013
@@ -592,11 +616,11 @@ references:
           - AF
     datePublished: '2007'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: Clin Infect Dis
-        volumeNumber: 45
+        type: Periodical
+        name: Clin Infect Dis
+      volumeNumber: 45
     title: Pathogenic rickettsiae as bioterrorism agents
   - type: Article
     id: pntd-0007469-ref014
@@ -619,10 +643,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 11
-      pageStart: 1
-      title: Ann N Y Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Ann N Y Acad Sci
       volumeNumber: 990
+    pageEnd: 11
+    pageStart: 1
     title: Pathogenic mechanisms of diseases caused by Rickettsia
   - type: Article
     id: pntd-0007469-ref015
@@ -645,10 +671,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 462
-      title: Ticks Tick Borne Dis
+      isPartOf:
+        type: Periodical
+        name: Ticks Tick Borne Dis
       volumeNumber: 10
+    pageEnd: 9
+    pageStart: 462
     title: Paradoxical evolution of rickettsial genomes
   - type: Article
     id: pntd-0007469-ref016
@@ -671,10 +699,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 47
-      pageStart: 323
-      title: Clin Microbiol Rev
+      isPartOf:
+        type: Periodical
+        name: Clin Microbiol Rev
       volumeNumber: 17
+    pageEnd: 47
+    pageStart: 323
     title: Invasion of the central nervous system by intracellular bacteria
   - type: Article
     id: pntd-0007469-ref017
@@ -707,10 +737,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 25
-      pageStart: 13
-      title: Neurobiol Dis
+      isPartOf:
+        type: Periodical
+        name: Neurobiol Dis
       volumeNumber: 37
+    pageEnd: 25
+    pageStart: 13
     title: Structure and function of the blood-brain barrier
   - type: Article
     id: pntd-0007469-ref018
@@ -748,10 +780,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 1781
-      title: J Med Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Med Microbiol
       volumeNumber: 62
+    pageEnd: 9
+    pageStart: 1781
     title: Pathophysiology of neonatal acute bacterial meningitis
   - type: Article
     id: pntd-0007469-ref019
@@ -764,10 +798,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 34
-      pageStart: 625
-      title: Nat Rev Microbiol
+      isPartOf:
+        type: Periodical
+        name: Nat Rev Microbiol
       volumeNumber: 6
+    pageEnd: 34
+    pageStart: 625
     title: Mechanisms of microbial traversal of the blood-brain barrier
   - type: Article
     id: pntd-0007469-ref020
@@ -795,10 +831,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 41
-      pageStart: 1537
-      title: Antimicrob Agents Chemother
+      isPartOf:
+        type: Periodical
+        name: Antimicrob Agents Chemother
       volumeNumber: 42
+    pageEnd: 41
+    pageStart: 1537
     title: In vitro susceptibilities of 27 rickettsiae to 13 antimicrobials
   - type: Article
     id: pntd-0007469-ref021
@@ -826,10 +864,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 51
-      pageStart: 2747
-      title: Antimicrob Agents Chemother
+      isPartOf:
+        type: Periodical
+        name: Antimicrob Agents Chemother
       volumeNumber: 46
+    pageEnd: 51
+    pageStart: 2747
     title: >-
       Evaluation of antibiotic susceptibilities of three Rickettsial species
       including Rickettsia felis by a quantitative PCR DNA assay
@@ -869,10 +909,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 11
-      pageStart: 409
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 33
+    pageEnd: 11
+    pageStart: 409
     title: >-
       Efficacy and safety of clarithromycin as treatment for Mediterranean
       spotted fever in children: a randomized controlled trial
@@ -907,9 +949,11 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageStart: 60
-      title: BMC Infect Dis
+      isPartOf:
+        type: Periodical
+        name: BMC Infect Dis
       volumeNumber: 6
+    pageStart: 60
     title: >-
       Mediterranean spotted fever: clinical and laboratory characteristics of
       415 Sicilian children
@@ -929,10 +973,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 101
-      pageStart: 82
-      title: Semin Neurol
+      isPartOf:
+        type: Periodical
+        name: Semin Neurol
       volumeNumber: 39
+    pageEnd: 101
+    pageStart: 82
     title: Emergency Evaluation and Management of Encephalitis and Myelitis in Adults
   - type: Article
     id: pntd-0007469-ref025
@@ -965,7 +1011,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Neurology
+      isPartOf:
+        type: Periodical
+        name: Neurology
       volumeNumber: 88
     title: 'Child Neurology: Rocky Mountain spotted fever encephalitis'
   - type: Article
@@ -984,10 +1032,12 @@ references:
     datePublished: '1988'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 915
-      title: South Med J
+      isPartOf:
+        type: Periodical
+        name: South Med J
       volumeNumber: 81
+    pageEnd: 8
+    pageStart: 915
     title: >-
       Meningoencephalitis as a major manifestation of Rocky Mountain spotted
       fever
@@ -1016,11 +1066,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 45
-      pageStart: 2035
-      title: Principles and practice of infectious diseases
+      isPartOf:
+        type: Periodical
+        name: Principles and practice of infectious diseases
       volumeNumber: 2
-    title: ''
+    pageEnd: 45
+    pageStart: 2035
   - type: Article
     id: pntd-0007469-ref028
     authors:
@@ -1066,11 +1117,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 73
-      pageStart: 1056
-      title: Harrison’s Principles of Internal medicine
+      isPartOf:
+        type: Periodical
+        name: Harrison’s Principles of Internal medicine
       volumeNumber: 1
-    title: ''
+    pageEnd: 73
+    pageStart: 1056
   - type: Article
     id: pntd-0007469-ref029
     authors:
@@ -1089,11 +1141,10 @@ references:
           - Rowland
     datePublished: '2018'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 7
-      pageStart: 125
-      title: Merritt’s Textbook of Neurology
-    title: ''
+      type: Periodical
+      name: Merritt’s Textbook of Neurology
+    pageEnd: 7
+    pageStart: 125
   - type: Article
     id: pntd-0007469-ref030
     authors:
@@ -1115,10 +1166,12 @@ references:
     datePublished: '1984'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 480
-      title: J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: J Infect Dis
       volumeNumber: 150
+    pageEnd: 8
+    pageStart: 480
     title: >-
       Rocky Mountain spotted fever: clinical, laboratory, and epidemiological
       features of 262 cases
@@ -1133,10 +1186,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 81
-      title: Indian J Pediatr
+      isPartOf:
+        type: Periodical
+        name: Indian J Pediatr
       volumeNumber: 78
+    pageEnd: 7
+    pageStart: 81
     title: Childhood rickettsiosis
   - type: Article
     id: pntd-0007469-ref032
@@ -1159,10 +1214,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 22
-      pageStart: 919
-      title: AJNR Am J Neuroradiol
+      isPartOf:
+        type: Periodical
+        name: AJNR Am J Neuroradiol
       volumeNumber: 16
+    pageEnd: 22
+    pageStart: 919
     title: 'Rocky Mountain spotted fever encephalitis: MR findings'
   - type: Article
     id: pntd-0007469-ref033
@@ -1190,10 +1247,12 @@ references:
     datePublished: '1985'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 90
-      pageStart: 1288
-      title: South Med J
+      isPartOf:
+        type: Periodical
+        name: South Med J
       volumeNumber: 78
+    pageEnd: 90
+    pageStart: 1288
     title: Neurologic complications of Rocky Mountain spotted fever
   - type: Article
     id: pntd-0007469-ref034
@@ -1221,10 +1280,12 @@ references:
     datePublished: '1988'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 287
-      title: Md Med J
+      isPartOf:
+        type: Periodical
+        name: Md Med J
       volumeNumber: 37
+    pageEnd: 8
+    pageStart: 287
     title: Deafness associated with Rocky Mountain spotted fever
   - type: Article
     id: pntd-0007469-ref035
@@ -1252,10 +1313,12 @@ references:
     datePublished: '1990'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 45
-      pageStart: 35
-      title: Medicine (Baltimore)
+      isPartOf:
+        type: Periodical
+        name: Medicine (Baltimore)
       volumeNumber: 69
+    pageEnd: 45
+    pageStart: 35
     title: >-
       Rocky Mountain spotted fever. A clinical review based on 48 confirmed
       cases, 1943–1986
@@ -1275,10 +1338,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 1122
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 20
+    pageEnd: 5
+    pageStart: 1122
     title: Long-term sequelae of Rocky Mountain spotted fever
   - type: Article
     id: pntd-0007469-ref037
@@ -1296,10 +1361,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 247
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 26
+    pageEnd: 8
+    pageStart: 247
     title: Rickettsial infections and the central nervous system
   - type: Article
     id: pntd-0007469-ref038
@@ -1314,11 +1381,10 @@ references:
           - Kissane
     datePublished: '1990'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 60
-      pageStart: 348
-      title: Anderson’s Pathology
-    title: ''
+      type: Periodical
+      name: Anderson’s Pathology
+    pageEnd: 60
+    pageStart: 348
   - type: Article
     id: pntd-0007469-ref039
     authors:
@@ -1355,10 +1421,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 40
-      pageStart: 436
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 24
+    pageEnd: 40
+    pageStart: 436
     title: Central nervous system involvement in patients with scrub typhus
   - type: Article
     id: pntd-0007469-ref040
@@ -1376,10 +1444,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 41
-      pageStart: 138
-      title: J Med Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Med Microbiol
       volumeNumber: 56
+    pageEnd: 41
+    pageStart: 138
     title: >-
       Rickettsia rickettsii infection causes apoptotic death of cultured
       cerebellar granule neurons
@@ -1394,10 +1464,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 12
-      pageStart: 801
-      title: Neurol Clin
+      isPartOf:
+        type: Periodical
+        name: Neurol Clin
       volumeNumber: 17
+    pageEnd: 12
+    pageStart: 801
     title: Central nervous system involvement in Rickettsial diseases
   - type: Article
     id: pntd-0007469-ref042
@@ -1410,10 +1482,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 72
-      pageStart: 269
-      title: Postgrad Med J
+      isPartOf:
+        type: Periodical
+        name: Postgrad Med J
       volumeNumber: 76
+    pageEnd: 72
+    pageStart: 269
     title: 'Rickettsial diseases: the typhus group of fevers—a review'
   - type: Article
     id: pntd-0007469-ref043
@@ -1451,10 +1525,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 301
-      pageStart: 293
-      title: Microb Pathog
+      isPartOf:
+        type: Periodical
+        name: Microb Pathog
       volumeNumber: 36
+    pageEnd: 301
+    pageStart: 293
     title: >-
       Selective modulation of antioxidant enzyme activities in host tissues
       during Rickettsia conorii infection
@@ -1494,10 +1570,12 @@ references:
     datePublished: '1986'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 50
-      pageStart: 845
-      title: Am J Trop Med Hyg
+      isPartOf:
+        type: Periodical
+        name: Am J Trop Med Hyg
       volumeNumber: 35
+    pageEnd: 50
+    pageStart: 845
     title: >-
       Mediterranean spotted fever: clinical, laboratory and epidemiological
       features of 199 cases
@@ -1532,10 +1610,12 @@ references:
     datePublished: '1987'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 72
-      pageStart: 669
-      title: Am J Clin Pathol
+      isPartOf:
+        type: Periodical
+        name: Am J Clin Pathol
       volumeNumber: 87
+    pageEnd: 72
+    pageStart: 669
     title: The pathology of fatal Mediterranean spotted fever
   - type: Article
     id: pntd-0007469-ref046
@@ -1573,10 +1653,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 121
-      title: Med Clin (Barc)
+      isPartOf:
+        type: Periodical
+        name: Med Clin (Barc)
       volumeNumber: 96
+    pageEnd: 5
+    pageStart: 121
     title: Mediterranean boutonneuse fever. Study of 246 cases
   - type: Article
     id: pntd-0007469-ref047
@@ -1609,10 +1691,12 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 72
-      title: Neurologia
+      isPartOf:
+        type: Periodical
+        name: Neurologia
       volumeNumber: 9
+    pageEnd: 5
+    pageStart: 72
     title: >-
       Meningoencephalitis due to Rickettsia conorii. Etiopathological, clinical
       and diagnostic aspects
@@ -1663,10 +1747,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 105
-      title: J Infect Chemother
+      isPartOf:
+        type: Periodical
+        name: J Infect Chemother
       volumeNumber: 18
+    pageEnd: 8
+    pageStart: 105
     title: >-
       Mediterranean spotted fever and encephalitis: a case report and review of
       the literature
@@ -1691,10 +1777,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 43
-      pageStart: 331
-      title: Ann N Y Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Ann N Y Acad Sci
       volumeNumber: 990
+    pageEnd: 43
+    pageStart: 331
     title: >-
       Report of eight cases of fatal and severe Mediterranean spotted fever in
       Portugal
@@ -1724,10 +1812,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 42
-      pageStart: 38
-      title: Neurologia
+      isPartOf:
+        type: Periodical
+        name: Neurologia
       volumeNumber: 14
+    pageEnd: 42
+    pageStart: 38
     title: >-
       Neurological complications of Mediterranean boutonneuse fever.
       Presentation of a case of acute encephalomeningomyelitis and review of the
@@ -1768,10 +1858,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3
-      pageStart: 341
-      title: J Med Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Med Microbiol
       volumeNumber: 55
+    pageEnd: 3
+    pageStart: 341
     title: >-
       Severe case of Mediterranean spotted fever in Greece with predominantly
       neurological features
@@ -1811,10 +1903,12 @@ references:
     datePublished: '1984'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3
-      pageStart: 51
-      title: Arch Fr Pediatr
+      isPartOf:
+        type: Periodical
+        name: Arch Fr Pediatr
       volumeNumber: 41
+    pageEnd: 3
+    pageStart: 51
     title: >-
       Mediterranean boutonneuse fever. Apropos of a fatal case in a newborn
       infant
@@ -1839,10 +1933,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 635
-      title: Arch Fr Pediatr
+      isPartOf:
+        type: Periodical
+        name: Arch Fr Pediatr
       volumeNumber: 48
+    pageEnd: 6
+    pageStart: 635
     title: >-
       Mediterranean boutonneuse fever disclosed by severe neurological
       involvement
@@ -1874,10 +1970,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 345
-      title: Clin Neurol Neurosurg
+      isPartOf:
+        type: Periodical
+        name: Clin Neurol Neurosurg
       volumeNumber: 93
+    pageEnd: 7
+    pageStart: 345
     title: Meningoencephalitis caused by Rickettsia conorii
   - type: Article
     id: pntd-0007469-ref055
@@ -1905,10 +2003,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 200
-      pageStart: 198
-      title: J Trop Pediatr
+      isPartOf:
+        type: Periodical
+        name: J Trop Pediatr
       volumeNumber: 56
+    pageEnd: 200
+    pageStart: 198
     title: Rickettsial meningoencephalitis in a child—a case report
   - type: Article
     id: pntd-0007469-ref056
@@ -1931,10 +2031,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 173
-      title: Rev Neurol (Paris)
+      isPartOf:
+        type: Periodical
+        name: Rev Neurol (Paris)
       volumeNumber: 167
+    pageEnd: 6
+    pageStart: 173
     title: Meningoencephalitis caused by Rickettsia conorii in a young infant
   - type: Article
     id: pntd-0007469-ref057
@@ -1972,10 +2074,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 521
-      title: J Med Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Med Microbiol
       volumeNumber: 58
+    pageEnd: 5
+    pageStart: 521
     title: Mediterranean spotted fever with encephalitis
   - type: Article
     id: pntd-0007469-ref058
@@ -2033,10 +2137,12 @@ references:
     datePublished: '1985'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 71
-      pageStart: 1165
-      title: Kansenshogaku Zasshi
+      isPartOf:
+        type: Periodical
+        name: Kansenshogaku Zasshi
       volumeNumber: 59
+    pageEnd: 71
+    pageStart: 1165
     title: >-
       The first report of the rickettsial infections of spotted fever group in
       Japan: three clinical cases
@@ -2061,10 +2167,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 162
-      title: Kansenshogaku Zasshi
+      isPartOf:
+        type: Periodical
+        name: Kansenshogaku Zasshi
       volumeNumber: 74
+    pageEnd: 5
+    pageStart: 162
     title: Japanese spotted fever complicated by acute respiratory failure
   - type: Article
     id: pntd-0007469-ref060
@@ -2097,10 +2205,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 250
-      pageStart: 247
-      title: J Infect Chemother
+      isPartOf:
+        type: Periodical
+        name: J Infect Chemother
       volumeNumber: 7
+    pageEnd: 250
+    pageStart: 247
     title: Japanese spotted fever associated with multiorgan failure
   - type: Article
     id: pntd-0007469-ref061
@@ -2123,10 +2233,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 523
-      title: Rinsho Hihu
+      isPartOf:
+        type: Periodical
+        name: Rinsho Hihu
       volumeNumber: 57
+    pageEnd: 6
+    pageStart: 523
     title: >-
       Nine cases of Japanese spotted fever, including 3 cases with DIC and MOF
       treated at ICU
@@ -2171,10 +2283,12 @@ references:
     datePublished: '1988'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 1192
-      title: Kansenshogaku Zasshi
+      isPartOf:
+        type: Periodical
+        name: Kansenshogaku Zasshi
       volumeNumber: 62
+    pageEnd: 6
+    pageStart: 1192
     title: A case of spotted fever with central nervous system involvement
   - type: Article
     id: pntd-0007469-ref063
@@ -2207,10 +2321,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4
-      pageStart: 812
-      title: Kansenshogaku Zasshi
+      isPartOf:
+        type: Periodical
+        name: Kansenshogaku Zasshi
       volumeNumber: 75
+    pageEnd: 4
+    pageStart: 812
     title: A patient with Japanese spotted fever complicated by meningoencephalitis
   - type: Article
     id: pntd-0007469-ref064
@@ -2238,10 +2354,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 3874
-      title: J Clin Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Clin Microbiol
       volumeNumber: 40
+    pageEnd: 6
+    pageStart: 3874
     title: >-
       Japanese spotted fever involving the central nervous system: two case
       reports and a literature review
@@ -2291,10 +2409,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 266
-      title: J Infect Chemother
+      isPartOf:
+        type: Periodical
+        name: J Infect Chemother
       volumeNumber: 8
+    pageEnd: 8
+    pageStart: 266
     title: >-
       Fulminant Japanese spotted fever definitively diagnosed by the polymerase
       chain reaction method
@@ -2349,10 +2469,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 783
-      title: Intern Med
+      isPartOf:
+        type: Periodical
+        name: Intern Med
       volumeNumber: 51
+    pageEnd: 6
+    pageStart: 783
     title: >-
       A case of Japanese spotted fever complicated with central nervous system
       involvement and multiple organ failure
@@ -2367,9 +2489,11 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageStart: 1006
-      title: Lancet
+      isPartOf:
+        type: Periodical
+        name: Lancet
       volumeNumber: 350
+    pageStart: 1006
     title: Tick-borne lymphadenopathy—a new rickettsial disease?
   - type: Article
     id: pntd-0007469-ref068
@@ -2382,10 +2506,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 54
-      pageStart: 648
-      title: Wien Klin Wochenschr
+      isPartOf:
+        type: Periodical
+        name: Wien Klin Wochenschr
       volumeNumber: 114
+    pageEnd: 54
+    pageStart: 648
     title: Tick-borne lymphadenopathy (TIBOLA)
   - type: Article
     id: pntd-0007469-ref069
@@ -2408,10 +2534,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 611
-      title: Wien Klin Wochenschr
+      isPartOf:
+        type: Periodical
+        name: Wien Klin Wochenschr
       volumeNumber: 124
+    pageEnd: 7
+    pageStart: 611
     title: >-
       Contact with horses is a risk factor for tick-borne lymphadenopathy
       (TIBOLA): a case control study
@@ -2431,10 +2559,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 719
-      pageStart: 694
-      title: Clin Microbiol Rev
+      isPartOf:
+        type: Periodical
+        name: Clin Microbiol Rev
       volumeNumber: 10
+    pageEnd: 719
+    pageStart: 694
     title: Rickettsioses as paradigms of new or emerging infectious diseases
   - type: Article
     id: pntd-0007469-ref071
@@ -2483,10 +2613,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 31
-      pageStart: 327
-      title: Clin Microbiol Infect
+      isPartOf:
+        type: Periodical
+        name: Clin Microbiol Infect
       volumeNumber: 10
+    pageEnd: 31
+    pageStart: 327
     title: >-
       Dermacentor-borne necrosis erythema and lymphadenopathy: clinical and
       epidemiological features of a new tick-borne disease
@@ -2541,10 +2673,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 14
-      pageStart: 206
-      title: Ann N Y Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Ann N Y Acad Sci
       volumeNumber: 1078
+    pageEnd: 14
+    pageStart: 206
     title: 'Rickettsia slovaca infection: DEBONEL/TIBOLA'
   - type: Article
     id: pntd-0007469-ref073
@@ -2572,10 +2706,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 20
-      pageStart: 817
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 14
+    pageEnd: 20
+    pageStart: 817
     title: >-
       Rickettsia slovaca in Dermacentor marginatus and tick-borne
       lymphadenopathy, Tuscany, Italy
@@ -2625,10 +2761,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 51
-      pageStart: 549
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 50
+    pageEnd: 51
+    pageStart: 549
     title: >-
       Scalp eschar and neck lymphadenopathy caused by Bartonella henselae after
       Tick Bite
@@ -2658,10 +2796,12 @@ references:
     datePublished: '1969'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 142
-      title: Acta Virol
+      isPartOf:
+        type: Periodical
+        name: Acta Virol
       volumeNumber: 13
+    pageEnd: 5
+    pageStart: 142
     title: >-
       Two strains of rickettsiae of Rocky Mountain spotted fever group recovered
       from Dermacentor marginatus ticks in Czechoslovakia. Results of
@@ -2697,10 +2837,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3
-      pageStart: 112
-      title: Lancet
+      isPartOf:
+        type: Periodical
+        name: Lancet
       volumeNumber: 350
+    pageEnd: 3
+    pageStart: 112
     title: A new tick-transmitted disease due to Rickettsia slovaca
   - type: Article
     id: pntd-0007469-ref077
@@ -2718,10 +2860,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 271
-      title: Ticks Tick Borne Dis
+      isPartOf:
+        type: Periodical
+        name: Ticks Tick Borne Dis
       volumeNumber: 3
+    pageEnd: 8
+    pageStart: 271
     title: Tick-borne rickettsioses in Europe
   - type: Article
     id: pntd-0007469-ref078
@@ -2759,10 +2903,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 1331
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 34
+    pageEnd: 6
+    pageStart: 1331
     title: >-
       Spotless rickettsiosis caused by Rickettsia slovaca and associated with
       Dermacentor ticks
@@ -2807,9 +2953,11 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageStart: 167
-      title: BMC Infect Dis
+      isPartOf:
+        type: Periodical
+        name: BMC Infect Dis
       volumeNumber: 11
+    pageStart: 167
     title: Tick-borne lymphadenopathy (TIBOLA) acquired in Southwestern Germany
   - type: Article
     id: pntd-0007469-ref080
@@ -2832,10 +2980,12 @@ references:
     datePublished: '1980'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 373
-      title: Folia Parasitol (Praha)
+      isPartOf:
+        type: Periodical
+        name: Folia Parasitol (Praha)
       volumeNumber: 27
+    pageEnd: 6
+    pageStart: 373
     title: First report of an infection with Rickettsia slovaca
   - type: Article
     id: pntd-0007469-ref081
@@ -2863,9 +3013,11 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageStart: 135
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 9
+    pageStart: 135
     title: 'First isolation of Rickettsia slovaca from a patient, France'
   - type: Article
     id: pntd-0007469-ref082
@@ -2908,10 +3060,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 346
-      title: Ann N Y Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Ann N Y Acad Sci
       volumeNumber: 1063
+    pageEnd: 8
+    pageStart: 346
     title: 'DEBONEL/TIBOLA: is Rickettsia slovaca the only etiological agent?'
   - type: Article
     id: pntd-0007469-ref083
@@ -2969,10 +3123,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 1635
-      title: Int J Syst Evol Microbiol
+      isPartOf:
+        type: Periodical
+        name: Int J Syst Evol Microbiol
       volumeNumber: 58
+    pageEnd: 9
+    pageStart: 1635
     title: >-
       Rickettsia raoultii sp. nov., a spotted fever group rickettsia associated
       with Dermacentor ticks in Europe and Russia
@@ -3012,10 +3168,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 1105
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 15
+    pageEnd: 8
+    pageStart: 1105
     title: Rickettsia slovaca and R. raoultii in tick-borne Rickettsioses
   - type: Article
     id: pntd-0007469-ref085
@@ -3063,10 +3221,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 602
-      title: Wien Klin Wochenschr
+      isPartOf:
+        type: Periodical
+        name: Wien Klin Wochenschr
       volumeNumber: 128
+    pageEnd: 5
+    pageStart: 602
     title: >-
       Molecular diagnosis of African tick bite fever using eschar swabs in a
       traveller returning from Tanzania
@@ -3106,10 +3266,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 194
-      title: Int J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Int J Infect Dis
       volumeNumber: 29
+    pageEnd: 6
+    pageStart: 194
     title: >-
       Rickettsia africae infection complicated with painful sacral syndrome in
       an Italian traveller returning from Zimbabwe
@@ -3159,10 +3321,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4
-      pageStart: 443
-      title: Acta Derm Venereol
+      isPartOf:
+        type: Periodical
+        name: Acta Derm Venereol
       volumeNumber: 92
+    pageEnd: 4
+    pageStart: 443
     title: Rickettsia africae infection in a Japanese traveller with many tick bites
   - type: Article
     id: pntd-0007469-ref088
@@ -3220,10 +3384,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 114
-      title: Scand J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Scand J Infect Dis
       volumeNumber: 38
+    pageEnd: 8
+    pageStart: 114
     title: Sub-acute neuropathy in patients with African tick bite fever
   - type: Article
     id: pntd-0007469-ref089
@@ -3256,10 +3422,12 @@ references:
     datePublished: '1979'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 67
-      pageStart: 357
-      title: Acta Trop0
+      isPartOf:
+        type: Periodical
+        name: Acta Trop0
       volumeNumber: 36
+    pageEnd: 67
+    pageStart: 357
     title: >-
       Ixodes ricinus: vector of a hitherto undescribed spotted fever group agent
       in Switzerland
@@ -3294,10 +3462,12 @@ references:
     datePublished: '1993'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 521
-      title: Int J Syst Bacteriol
+      isPartOf:
+        type: Periodical
+        name: Int J Syst Bacteriol
       volumeNumber: 43
+    pageEnd: 6
+    pageStart: 521
     title: >-
       Confirmation that Rickettsia helvetica sp. nov. is a distinct species of
       the spotted fever group of rickettsiae
@@ -3332,10 +3502,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 92
-      pageStart: 389
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 6
+    pageEnd: 92
+    pageStart: 389
     title: 'Evidence of Rickettsia helvetica infection in humans, eastern France'
   - type: Article
     id: pntd-0007469-ref092
@@ -3358,10 +3530,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 73
-      pageStart: 1169
-      title: Lancet
+      isPartOf:
+        type: Periodical
+        name: Lancet
       volumeNumber: 354
+    pageEnd: 73
+    pageStart: 1169
     title: >-
       Association of Rickettsia helvetica with chronic perimyocarditis in sudden
       cardiac death
@@ -3416,10 +3590,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 1042
-      title: Dtsch Med Wochenschr
+      isPartOf:
+        type: Periodical
+        name: Dtsch Med Wochenschr
       volumeNumber: 128
+    pageEnd: 7
+    pageStart: 1042
     title: >-
       Fever after a tick bite: clinical manifestations and diagnosis of acute
       tick bite-associated infections in northeastern Switzerland
@@ -3459,10 +3635,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 816
-      title: J Clin Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Clin Microbiol
       volumeNumber: 42
+    pageEnd: 8
+    pageStart: 816
     title: >-
       Aneruptive fever associated with antibodies to Rickettsia helvetica in
       Europe and Thailand
@@ -3477,10 +3655,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 82
-      pageStart: 79
-      title: J Infect
+      isPartOf:
+        type: Periodical
+        name: J Infect
       volumeNumber: 58
+    pageEnd: 82
+    pageStart: 79
     title: >-
       Septicaemia with Rickettsia helvetica in a patient with acute febrile
       illness, rash and myasthenia
@@ -3504,9 +3684,9 @@ references:
           - C
     datePublished: '2011'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 469194
-      title: Case Rep Infect Dis
+      type: Periodical
+      name: Case Rep Infect Dis
+    pageStart: 469194
     title: >-
       Coinfection with Rickettsia helvetica and Herpes Simplex Virus 2 in a
       Young Woman with Meningoencephalitis
@@ -3531,10 +3711,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2
-      pageStart: 490
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 16
+    pageEnd: 2
+    pageStart: 490
     title: 'Rickettsia helvetica in patient with meningitis, Sweden, 2006'
   - type: Article
     id: pntd-0007469-ref098
@@ -3552,10 +3734,12 @@ references:
     datePublished: '1992'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 24
-      pageStart: 213
-      title: Semin Neurol
+      isPartOf:
+        type: Periodical
+        name: Semin Neurol
       volumeNumber: 12
+    pageEnd: 24
+    pageStart: 213
     title: Rickettsial infections of the central nervous system
   - type: Article
     id: pntd-0007469-ref099
@@ -3588,10 +3772,12 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 897
-      title: Lancet
+      isPartOf:
+        type: Periodical
+        name: Lancet
       volumeNumber: 344
+    pageEnd: 8
+    pageStart: 897
     title: Fatal murine typhus from Spain
   - type: Article
     id: pntd-0007469-ref100
@@ -3610,9 +3796,11 @@ references:
     datePublished: '1945'
     isPartOf:
       type: PublicationVolume
-      pageStart: 681
-      title: Am J Pathol
+      isPartOf:
+        type: Periodical
+        name: Am J Pathol
       volumeNumber: 21
+    pageStart: 681
     title: >-
       A comparative study of the pathology of scrub tyohus (Tsutsugamushi
       disease) and other rickettsial diseases
@@ -3647,10 +3835,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 61
-      pageStart: 59
-      title: Acta Paediatr
+      isPartOf:
+        type: Periodical
+        name: Acta Paediatr
       volumeNumber: 91
+    pageEnd: 61
+    pageStart: 59
     title: Rickettsia typhi infection in childhood
   - type: Article
     id: pntd-0007469-ref102
@@ -3678,10 +3868,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 1753
-      title: Arch Intern Med
+      isPartOf:
+        type: Periodical
+        name: Arch Intern Med
       volumeNumber: 151
+    pageEnd: 7
+    pageStart: 1753
     title: Rickettsial meningitis and encephalitis
   - type: Article
     id: pntd-0007469-ref103
@@ -3699,10 +3891,12 @@ references:
     datePublished: '1977'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 21
-      pageStart: 813
-      title: J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: J Infect Dis
       volumeNumber: 136
+    pageEnd: 21
+    pageStart: 813
     title: 'Typhus fever: report of an epidemic in New York City in 1847'
   - type: Article
     id: pntd-0007469-ref104
@@ -3730,10 +3924,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 156
-      title: J Child Neurol
+      isPartOf:
+        type: Periodical
+        name: J Child Neurol
       volumeNumber: 17
+    pageEnd: 7
+    pageStart: 156
     title: Rickettsia typhi infection presenting as subacute meningitis
   - type: Article
     id: pntd-0007469-ref105
@@ -3756,10 +3952,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 70
-      pageStart: 1365
-      title: JAMA
+      isPartOf:
+        type: Periodical
+        name: JAMA
       volumeNumber: 266
+    pageEnd: 70
+    pageStart: 1365
     title: >-
       Clinical and laboratory features of murine typhus in south Texas, 1980
       through 1987
@@ -3779,10 +3977,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4
-      pageStart: 620
-      title: Am J Trop Med Hyg
+      isPartOf:
+        type: Periodical
+        name: Am J Trop Med Hyg
       volumeNumber: 92
+    pageEnd: 4
+    pageStart: 620
     title: Abducens nerve palsy and meningitis by Rickettsia typhi
   - type: Article
     id: pntd-0007469-ref107
@@ -3805,10 +4005,12 @@ references:
     datePublished: '1946'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 14
-      pageStart: 1605
-      title: Public Health Rep
+      isPartOf:
+        type: Periodical
+        name: Public Health Rep
       volumeNumber: 61
+    pageEnd: 14
+    pageStart: 1605
     title: >-
       Rickettsialpox; a newly recognized rickettsial disease; isolation of the
       etiological agent
@@ -3838,10 +4040,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 12
-      pageStart: 2
-      title: FEMS Immunol Med Microbiol
+      isPartOf:
+        type: Periodical
+        name: FEMS Immunol Med Microbiol
       volumeNumber: 49
+    pageEnd: 12
+    pageStart: 2
     title: Spotted fever rickettsioses in southern and eastern Europe
   - type: Article
     id: pntd-0007469-ref109
@@ -3884,10 +4088,12 @@ references:
     datePublished: '1981'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 72
-      pageStart: 363
-      title: Medicine (Baltimore)
+      isPartOf:
+        type: Periodical
+        name: Medicine (Baltimore)
       volumeNumber: 60
+    pageEnd: 72
+    pageStart: 363
     title: 'Rickettsialpox: report of an outbreak and a contemporary review'
   - type: Article
     id: pntd-0007469-ref110
@@ -3925,10 +4131,12 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 1612
-      title: N Engl J Med
+      isPartOf:
+        type: Periodical
+        name: N Engl J Med
       volumeNumber: 331
+    pageEnd: 7
+    pageStart: 1612
     title: 'Rickettsialpox in a New York City hospital, 1980 to 1989'
   - type: Article
     id: pntd-0007469-ref111
@@ -3956,10 +4164,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4
-      pageStart: 3022
-      title: J Clin Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Clin Microbiol
       volumeNumber: 33
+    pageEnd: 4
+    pageStart: 3022
     title: Genomic study of Rickettsia akari by pulsed-field gel electrophoresis
   - type: Article
     id: pntd-0007469-ref112
@@ -4002,10 +4212,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 20
-      pageStart: 216
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 22
+    pageEnd: 20
+    pageStart: 216
     title: >-
       Isolation of Rickettsia akari from a patient in a region where
       Mediterranean spotted fever is endemic
@@ -4043,7 +4255,9 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      title: Int J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Int J Infect Dis
       volumeNumber: 16
     title: A case of rickettsialpox in Northern Europe
   - type: Article
@@ -4062,10 +4276,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 719
-      pageStart: 694
-      title: Clin Microbiol Rev
+      isPartOf:
+        type: Periodical
+        name: Clin Microbiol Rev
       volumeNumber: 10
+    pageEnd: 719
+    pageStart: 694
     title: Rickettsioses as paradigms of new or emerging infectious diseases
   - type: Article
     id: pntd-0007469-ref115
@@ -4082,10 +4298,10 @@ references:
           - AR
     datePublished: '2014'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 144
-      pageStart: 1
-      title: Zootaxa
+      type: Periodical
+      name: Zootaxa
+    pageEnd: 144
+    pageStart: 1
     title: Ticks of Australia. The species that infest domestic animals and humans
   - type: Article
     id: pntd-0007469-ref116
@@ -4113,10 +4329,12 @@ references:
     datePublished: '1991'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 86
-      pageStart: 876
-      title: Rev Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Rev Infect Dis
       volumeNumber: 13
+    pageEnd: 86
+    pageStart: 876
     title: Spotted fever group rickettsial infections in Australia
   - type: Article
     id: pntd-0007469-ref117
@@ -4144,10 +4362,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 24
-      title: Am J Trop Med Hyg
+      isPartOf:
+        type: Periodical
+        name: Am J Trop Med Hyg
       volumeNumber: 97
+    pageEnd: 9
+    pageStart: 24
     title: >-
       Rickettsia australis and Queensland Tick Typhus: A Rickettsial Spotted
       Fever Group Infection in Australia
@@ -4179,7 +4399,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Trop Med Infect Dis
+        isPartOf:
+          type: Periodical
+          name: Trop Med Infect Dis
         volumeNumber: 2
       issueNumber: 2
     title: >-
@@ -4206,10 +4428,12 @@ references:
     datePublished: '1990'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 780
-      pageStart: 779
-      title: J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: J Infect Dis
       volumeNumber: 162
+    pageEnd: 780
+    pageStart: 779
     title: Fatal Queensland tick typhus
   - type: Article
     id: pntd-0007469-ref120
@@ -4237,10 +4461,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4
-      pageStart: 1742
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 13
+    pageEnd: 4
+    pageStart: 1742
     title: 'Severe spotted fever group rickettsiosis, Australia'
   - type: Article
     id: pntd-0007469-ref121
@@ -4263,10 +4489,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 1126
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 15
+    pageEnd: 7
+    pageStart: 1126
     title: 'Rickettsia felis infection in man, France'
   - type: Article
     id: pntd-0007469-ref122
@@ -4289,10 +4517,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 906
-      title: Scand J Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Scand J Infect Dis
       volumeNumber: 42
+    pageEnd: 9
+    pageStart: 906
     title: >-
       Rickettsia felis infection in Sweden: report of two cases with subacute
       meningitis and review of the literature
@@ -4362,10 +4592,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 4404
-      title: J Clin Microbiol
+      isPartOf:
+        type: Periodical
+        name: J Clin Microbiol
       volumeNumber: 48
+    pageEnd: 9
+    pageStart: 4404
     title: >-
       Isolation of a novel Orientia species (O. chuto sp. nov.) from a patient
       infected in Dubai
@@ -4395,10 +4627,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 91
-      pageStart: 589
-      title: Int J Syst Bacteriol
+      isPartOf:
+        type: Periodical
+        name: Int J Syst Bacteriol
       volumeNumber: 45
+    pageEnd: 91
+    pageStart: 589
     title: >-
       Classification of Rickettsia tsutsugamushi in a new genus, Orientia gen.
       nov., as Orientia tsutsugamushi comb. nov
@@ -4445,7 +4679,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Trop Med Infect Dis
+        isPartOf:
+          type: Periodical
+          name: Trop Med Infect Dis
         volumeNumber: 3
       issueNumber: 1
     title: Rickettsial Infections and Q Fever Amongst Febrile Patients in Bhutan
@@ -4475,10 +4711,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 23
-      pageStart: 19
-      title: J Assoc Physicians India
+      isPartOf:
+        type: Periodical
+        name: J Assoc Physicians India
       volumeNumber: 62
+    pageEnd: 23
+    pageStart: 19
     title: >-
       Clinical Manifestations and Complications of Scrub Typhus: A Hospital
       Based Study from North Eastern India
@@ -4553,7 +4791,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: Lancet Glob Health
+      isPartOf:
+        type: Periodical
+        name: Lancet Glob Health
       volumeNumber: 3
     title: >-
       Orientia, rickettsia, and leptospira pathogens as causes of CNS infections
@@ -4649,10 +4889,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 280
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 21
+    pageEnd: 9
+    pageStart: 280
     title: >-
       Infectious causes of encephalitis and meningoencephalitis in Thailand,
       2003–2005
@@ -4712,10 +4954,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 1414
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 23
+    pageEnd: 6
+    pageStart: 1414
     title: >-
       Scrub Typhus as a Cause of Acute Encephalitis Syndrome, Gorakhpur, Uttar
       Pradesh, India
@@ -4750,10 +4994,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 472
-      title: J Trop Pediatr
+      isPartOf:
+        type: Periodical
+        name: J Trop Pediatr
       volumeNumber: 64
+    pageEnd: 8
+    pageStart: 472
     title: >-
       Clinical Profile of Scrub Typhus Meningoencephalitis among South Indian
       Children
@@ -4778,10 +5024,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 23
-      pageStart: 1619
-      title: Neurology
+      isPartOf:
+        type: Periodical
+        name: Neurology
       volumeNumber: 48
+    pageEnd: 23
+    pageStart: 1619
     title: A case of acute monocytic ehrlichiosis with prominent neurologic signs
   - type: Article
     id: pntd-0007469-ref132
@@ -4821,11 +5069,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Pediatr Infect Dis J
+        isPartOf:
+          type: Periodical
+          name: Pediatr Infect Dis J
         volumeNumber: 18
       issueNumber: 6
-      pageEnd: 5
-      pageStart: 552
+    pageEnd: 5
+    pageStart: 552
     title: Ehrlichial meningitis with cerebrospinal fluid morulae
   - type: Article
     id: pntd-0007469-ref133
@@ -4848,10 +5098,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1
-      pageStart: 460
-      title: J AAPOS
+      isPartOf:
+        type: Periodical
+        name: J AAPOS
       volumeNumber: 14
+    pageEnd: 1
+    pageStart: 460
     title: Isolated abducens nerve palsy in a patient with scrub typhus
   - type: Article
     id: pntd-0007469-ref134
@@ -4889,10 +5141,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 60
-      pageStart: 557
-      title: Am J Trop Med Hyg
+      isPartOf:
+        type: Periodical
+        name: Am J Trop Med Hyg
       volumeNumber: 96
+    pageEnd: 60
+    pageStart: 557
     title: >-
       Successfully Managed Acute Transverse Myelitis Related to Scrub Typhus and
       Serial Image Findings
@@ -4932,10 +5186,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 920
-      title: Hum Pathol
+      isPartOf:
+        type: Periodical
+        name: Hum Pathol
       volumeNumber: 26
+    pageEnd: 5
+    pageStart: 920
     title: >-
       Ehrlichiosis mimicking thrombotic thrombocytopenic purpura. Case report
       and pathological correlation
@@ -4980,10 +5236,12 @@ references:
     datePublished: '1990'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 2251
-      title: JAMA
+      isPartOf:
+        type: Periodical
+        name: JAMA
       volumeNumber: 264
+    pageEnd: 8
+    pageStart: 2251
     title: >-
       Epidemiologic, clinical, and laboratory findings of human ehrlichiosis in
       the United States, 1988
@@ -5008,10 +5266,12 @@ references:
     datePublished: '1990'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3
-      pageStart: 1341
-      title: South Med J
+      isPartOf:
+        type: Periodical
+        name: South Med J
       volumeNumber: 83
+    pageEnd: 3
+    pageStart: 1341
     title: Neurologic abnormalities in a patient with human ehrlichiosis
   - type: Article
     id: pntd-0007469-ref138
@@ -5044,10 +5304,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 314
-      title: Clin Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Clin Infect Dis
       volumeNumber: 23
+    pageEnd: 9
+    pageStart: 314
     title: Central nervous system manifestations of human ehrlichiosis
   - type: Article
     id: pntd-0007469-ref139
@@ -5065,10 +5327,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 76
-      title: Neurohospitalist
+      isPartOf:
+        type: Periodical
+        name: Neurohospitalist
       volumeNumber: 6
+    pageEnd: 9
+    pageStart: 76
     title: >-
       Ehrlichia Meningitis Mimicking Aneurysmal Subarachnoid Hemorrhage: A Case
       Study for Medical Decision-Making Heuristics
@@ -5097,11 +5361,10 @@ references:
           - Kennedy
     datePublished: '2000'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 520
-      pageStart: 499
-      title: Infectious diseases of the nervous system
-    title: ''
+      type: Periodical
+      name: Infectious diseases of the nervous system
+    pageEnd: 520
+    pageStart: 499
   - type: Article
     id: pntd-0007469-ref141
     authors:
@@ -5118,10 +5381,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 50
-      pageStart: 47
-      title: J Neuroophthalmol
+      isPartOf:
+        type: Periodical
+        name: J Neuroophthalmol
       volumeNumber: 17
+    pageEnd: 50
+    pageStart: 47
     title: Fourth nerve palsy caused by Ehrlichia chaffeensis
   - type: Article
     id: pntd-0007469-ref142
@@ -5145,7 +5410,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: JMM Case Rep
+      isPartOf:
+        type: Periodical
+        name: JMM Case Rep
       volumeNumber: 5
     title: >-
       Ehrlichiosis presenting as severe sepsis and meningoencephalitis in an
@@ -5171,10 +5438,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3
-      pageStart: 412
-      title: Am J Ophthalmol
+      isPartOf:
+        type: Periodical
+        name: Am J Ophthalmol
       volumeNumber: 135
+    pageEnd: 3
+    pageStart: 412
     title: Ehrlichiosis optic neuritis
   - type: Article
     id: pntd-0007469-ref144
@@ -5187,10 +5456,12 @@ references:
     datePublished: '1989'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7
-      pageStart: 335
-      title: Pediatr Infect Dis J
+      isPartOf:
+        type: Periodical
+        name: Pediatr Infect Dis J
       volumeNumber: 8
+    pageEnd: 7
+    pageStart: 335
     title: Aseptic meningitis associated with Ehrlichia canis infection
   - type: Article
     id: pntd-0007469-ref145
@@ -5228,10 +5499,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 205
-      pageStart: 199
-      title: JAMA
+      isPartOf:
+        type: Periodical
+        name: JAMA
       volumeNumber: 275
+    pageEnd: 205
+    pageStart: 199
     title: Clinical and laboratory characteristics of human granulocytic ehrlichiosis
   - type: Article
     id: pntd-0007469-ref146
@@ -5259,10 +5532,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 1026
-      title: Neurology
+      isPartOf:
+        type: Periodical
+        name: Neurology
       volumeNumber: 46
+    pageEnd: 9
+    pageStart: 1026
     title: Brachial plexopathy associated with human granulocytic ehrlichiosis
   - type: Article
     id: pntd-0007469-ref147
@@ -5290,9 +5565,11 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageStart: 409
-      title: BMC Infect Dis
+      isPartOf:
+        type: Periodical
+        name: BMC Infect Dis
       volumeNumber: 18
+    pageStart: 409
     title: 'Manifestation of anaplasmosis as cerebral infarction: a case report'
   - type: Article
     id: pntd-0007469-ref148
@@ -5315,10 +5592,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 601
-      title: Int J Parasitol
+      isPartOf:
+        type: Periodical
+        name: Int J Parasitol
       volumeNumber: 36
+    pageEnd: 5
+    pageStart: 601
     title: >-
       Anaplasma phagocytophilum-infected neutrophils enhance transmigration of
       Borrelia burgdorferi across the human blood brain barrier in vitro
@@ -5357,10 +5636,10 @@ references:
           - M
     datePublished: '2018'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 6
-      pageStart: 1400
-      title: Ticks Tick Borne
+      type: Periodical
+      name: Ticks Tick Borne
+    pageEnd: 6
+    pageStart: 1400
     title: >-
       Molecular evidence and diversity of the spotted-fever group Rickettsia
       spp. in small mammals from natural, suburban and urban areas of Eastern
@@ -5406,10 +5685,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 64
-      title: Travel Med Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Travel Med Infect Dis
       volumeNumber: 26
+    pageEnd: 5
+    pageStart: 64
     title: >-
       Dogs as sentinels for distribution of spotted-fever group rickettsiae in
       Slovakia
@@ -5469,10 +5750,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 23
-      pageStart: 416
-      title: Zoonoses Public Health
+      isPartOf:
+        type: Periodical
+        name: Zoonoses Public Health
       volumeNumber: 58
+    pageEnd: 23
+    pageStart: 416
     title: >-
       Infection by spotted fever rickettsiae in people, dogs, horses and ticks
       in Londrina, Parana State, Brazil
@@ -5551,9 +5834,11 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageStart: 98
-      title: BMC Vet Res
+      isPartOf:
+        type: Periodical
+        name: BMC Vet Res
       volumeNumber: 14
+    pageStart: 98
     title: >-
       Tick- and fly-borne bacteria in ungulates: the prevalence of Anaplasma
       phagocytophilum, haemoplasmas and rickettsiae in water buffalo and deer
@@ -5609,10 +5894,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 814
-      title: Ticks Tick Borne Dis
+      isPartOf:
+        type: Periodical
+        name: Ticks Tick Borne Dis
       volumeNumber: 9
+    pageEnd: 8
+    pageStart: 814
     title: >-
       Detection and characterization of a novel spotted fever group Rickettsia
       genotype in Haemaphysalis leporispalustris from California, USA
@@ -5652,10 +5939,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 52
-      pageStart: 546
-      title: Ticks Tick Borne Dis
+      isPartOf:
+        type: Periodical
+        name: Ticks Tick Borne Dis
       volumeNumber: 10
+    pageEnd: 52
+    pageStart: 546
     title: >-
       Screening for multiple tick-borne pathogens in Ixodes ricinus ticks from
       birds in Denmark during spring and autumn migration seasons
@@ -5685,10 +5974,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 26
-      pageStart: 417
-      title: Lancet Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Lancet Infect Dis
       volumeNumber: 8
+    pageEnd: 26
+    pageStart: 417
     title: Epidemic typhus
   - type: Article
     id: pntd-0007469-ref156
@@ -5731,10 +6022,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2
-      pageStart: 171
-      title: Emerg Infect Dis
+      isPartOf:
+        type: Periodical
+        name: Emerg Infect Dis
       volumeNumber: 18
+    pageEnd: 2
+    pageStart: 171
     title: 'Brill-Zinsser disease in Moroccan man, France, 2011'
 title: Rickettsial infections of the central nervous system
 meta:

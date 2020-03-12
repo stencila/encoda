@@ -310,10 +310,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 299
-      pageStart: 285
-      title: Acta Pharmaceutica Sinica B
+      isPartOf:
+        type: Periodical
+        name: Acta Pharmaceutica Sinica B
       volumeNumber: 5
+    pageEnd: 299
+    pageStart: 285
     title: >-
       Discovery of direct inhibitors of Keap1-Nrf2 protein-protein interaction
       as potential therapeutic and preventive agents
@@ -326,7 +328,6 @@ references:
         givenNames:
           - S
     datePublished: '2010'
-    title: ''
   - type: Article
     id: bib3
     authors:
@@ -433,10 +434,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 34
-      pageStart: 25
-      title: Nature Genetics
+      isPartOf:
+        type: Periodical
+        name: Nature Genetics
       volumeNumber: 25
+    pageEnd: 34
+    pageStart: 25
     title: >-
       Gene ontology: tool for the unification of biology. The Gene Ontology
       Consortium
@@ -502,7 +505,9 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      title: Journal of Translational Medicine
+      isPartOf:
+        type: Periodical
+        name: Journal of Translational Medicine
       volumeNumber: 7
     title: >-
       Synthetic lethal RNAi screening identifies sensitizing targets for
@@ -573,10 +578,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 874
-      pageStart: 868
-      title: International Journal of Cancer
+      isPartOf:
+        type: Periodical
+        name: International Journal of Cancer
       volumeNumber: 82
+    pageEnd: 874
+    pageStart: 868
     title: >-
       Differential gene expression in colon carcinoma cells and tissues detected
       with a cDNA array
@@ -671,10 +678,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 297
-      pageStart: 287
-      title: Cancer Research
+      isPartOf:
+        type: Periodical
+        name: Cancer Research
       volumeNumber: 74
+    pageEnd: 297
+    pageStart: 287
     title: >-
       Genome-wide profiling of genetic synthetic lethality identifies CDK12 as a
       novel determinant of PARP1/2 inhibitor sensitivity
@@ -699,10 +708,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 275
-      pageStart: 261
-      title: Nature Reviews Drug Discovery
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Drug Discovery
       volumeNumber: 10
+    pageEnd: 275
+    pageStart: 261
     title: 'Targeting G-quadruplexes in gene promoters: a novel anticancer strategy?'
   - type: Article
     id: bib8
@@ -785,10 +796,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3448
-      pageStart: 3443
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 105
+    pageEnd: 3448
+    pageStart: 3443
     title: >-
       Chromatid cohesion defects may underlie chromosome instability in human
       colorectal cancers
@@ -818,7 +831,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Cold Spring Harbor Perspectives in Medicine
+      isPartOf:
+        type: Periodical
+        name: Cold Spring Harbor Perspectives in Medicine
       volumeNumber: 7
     title: >-
       The role of nuclear Receptor-Binding SET domain family histone lysine
@@ -869,10 +884,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 844
-      pageStart: 837
-      title: Nature Structural & Molecular Biology
+      isPartOf:
+        type: Periodical
+        name: Nature Structural & Molecular Biology
       volumeNumber: 19
+    pageEnd: 844
+    pageStart: 837
     title: >-
       Unraveling cell type-specific and reprogrammable human replication origin
       signatures associated with G-quadruplex consensus motifs
@@ -902,10 +919,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 186
-      pageStart: 182
-      title: Nature Chemistry
+      isPartOf:
+        type: Periodical
+        name: Nature Chemistry
       volumeNumber: 5
+    pageEnd: 186
+    pageStart: 182
     title: Quantitative visualization of DNA G-quadruplex structures in human cells
   - type: Article
     id: bib12
@@ -938,7 +957,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 9
     title: >-
       Elevated levels of G-quadruplex formation in human stomach and liver
@@ -999,10 +1020,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1093
-      pageStart: 1091
-      title: Bioinformatics
+      isPartOf:
+        type: Periodical
+        name: Bioinformatics
       volumeNumber: 25
+    pageEnd: 1093
+    pageStart: 1091
     title: >-
       ClueGO: a cytoscape plug-in to decipher functionally grouped gene ontology
       and pathway annotation networks
@@ -1027,10 +1050,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 663
-      pageStart: 661
-      title: Bioinformatics
+      isPartOf:
+        type: Periodical
+        name: Bioinformatics
       volumeNumber: 29
+    pageEnd: 663
+    pageStart: 661
     title: >-
       CluePedia cytoscape plugin: pathway insights using integrated experimental
       and in silico data
@@ -1055,10 +1080,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 780
-      pageStart: 770
-      title: Nature Reviews Genetics
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Genetics
       volumeNumber: 13
+    pageEnd: 780
+    pageStart: 770
     title: >-
       DNA secondary structures: stability and function of G-quadruplex
       structures
@@ -1088,10 +1115,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 17517
-      pageStart: 17493
-      title: International Journal of Molecular Sciences
+      isPartOf:
+        type: Periodical
+        name: International Journal of Molecular Sciences
       volumeNumber: 15
+    pageEnd: 17517
+    pageStart: 17493
     title: DNA and RNA quadruplex-binding proteins
   - type: Article
     id: bib17
@@ -1104,10 +1133,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 558
-      pageStart: 542
-      title: Nature Reviews Cancer
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Cancer
       volumeNumber: 13
+    pageEnd: 558
+    pageStart: 542
     title: DNA helicases involved in DNA repair and their roles in cancer
   - type: Article
     id: bib18
@@ -1165,10 +1196,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 917
-      pageStart: 913
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 434
+    pageEnd: 917
+    pageStart: 913
     title: >-
       Specific killing of BRCA2-deficient tumours with inhibitors of
       poly(ADP-ribose) polymerase
@@ -1188,10 +1221,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4741
-      pageStart: 4727
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 40
+    pageEnd: 4741
+    pageStart: 4727
     title: '5''-UTR RNA G-quadruplexes: translation regulation and targeting'
   - type: Article
     id: bib20
@@ -1209,7 +1244,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 9
     title: 'RNA G-quadruplexes: emerging mechanisms in disease'
   - type: Article
@@ -1248,10 +1285,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 159
-      pageStart: 153
-      title: Nature Reviews Cancer
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Cancer
       volumeNumber: 13
+    pageEnd: 159
+    pageStart: 153
     title: BAP1 and cancer
   - type: Article
     id: bib22
@@ -1269,10 +1308,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 665
-      pageStart: 654
-      title: DNA Repair
+      isPartOf:
+        type: Periodical
+        name: DNA Repair
       volumeNumber: 10
+    pageEnd: 665
+    pageStart: 654
     title: >-
       Human DHX9 helicase preferentially unwinds RNA-containing displacement
       loops (R-loops) and G-quadruplexes
@@ -1313,10 +1354,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 881
-      pageStart: 877
-      title: Nature Biotechnology
+      isPartOf:
+        type: Periodical
+        name: Nature Biotechnology
       volumeNumber: 33
+    pageEnd: 881
+    pageStart: 877
     title: >-
       High-throughput sequencing of DNA G-quadruplex structures in the human
       genome
@@ -1336,10 +1379,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 364
-      pageStart: 351
-      title: Nature Reviews Drug Discovery
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Drug Discovery
       volumeNumber: 10
+    pageEnd: 364
+    pageStart: 351
     title: Harnessing synthetic lethal interactions in anticancer drug discovery
   - type: Article
     id: bib25
@@ -1369,13 +1414,15 @@ references:
           - Dou
         givenNames:
           - QP
-    datePublished: '2011'
+    datePublished: 2011a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 253
-      pageStart: 239
-      title: Current Cancer Drug Targets
+      isPartOf:
+        type: Periodical
+        name: Current Cancer Drug Targets
       volumeNumber: 11
+    pageEnd: 253
+    pageStart: 239
     title: >-
       Bortezomib as the first proteasome inhibitor anticancer drug: current
       status and future perspectives
@@ -1432,13 +1479,15 @@ references:
           - Zhuang
         givenNames:
           - Z
-    datePublished: '2011'
+    datePublished: 2011b
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1400
-      pageStart: 1390
-      title: Chemistry & Biology
+      isPartOf:
+        type: Periodical
+        name: Chemistry & Biology
       volumeNumber: 18
+    pageEnd: 1400
+    pageStart: 1390
     title: >-
       Selective and cell-active inhibitors of the USP1/ UAF1 deubiquitinase
       complex reverse cisplatin resistance in non-small cell lung cancer cells
@@ -1483,10 +1532,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 469
-      pageStart: 465
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 558
+    pageEnd: 469
+    pageStart: 465
     title: Structural basis of G-quadruplex unfolding by the DEAH/RHA helicase DHX36
   - type: Article
     id: bib28
@@ -1549,10 +1600,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1879
-      pageStart: 1869
-      title: Journal of Medicinal Chemistry
+      isPartOf:
+        type: Periodical
+        name: Journal of Medicinal Chemistry
       volumeNumber: 59
+    pageEnd: 1879
+    pageStart: 1869
     title: >-
       A parallel synthesis approach to the identification of novel
       Diheteroarylamide-Based compounds blocking HIV replication: potential
@@ -1597,8 +1650,8 @@ references:
           - MD
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: bioRxiv
+      type: Periodical
+      name: bioRxiv
     title: >-
       Small molecule inhibitors of the human histone lysine methyltransferase
       NSD2 / WHSC1 / MMSET identified from a quantitative High-Throughput screen
@@ -1639,10 +1692,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 34634
-      pageStart: 34626
-      title: Journal of Biological Chemistry
+      isPartOf:
+        type: Periodical
+        name: Journal of Biological Chemistry
       volumeNumber: 283
+    pageEnd: 34634
+    pageStart: 34626
     title: >-
       G4 resolvase 1 binds both DNA and RNA tetramolecular quadruplex with high
       affinity and is the major source of tetramolecular quadruplex G4-DNA and
@@ -1673,10 +1728,12 @@ references:
     datePublished: '1993'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 644
-      pageStart: 640
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 363
+    pageEnd: 644
+    pageStart: 640
     title: Fusion of CHOP to a novel RNA-binding protein in human myxoid liposarcoma
   - type: Article
     id: bib32
@@ -1739,9 +1796,11 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageStart: 95
-      title: F1000Research
+      isPartOf:
+        type: Periodical
+        name: F1000Research
       volumeNumber: 3
+    pageStart: 95
     title: >-
       edgeR: a versatile tool for the analysis of shRNA-seq and CRISPR-Cas9
       genetic screens
@@ -1781,10 +1840,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3044
-      pageStart: 3036
-      title: Cell Cycle
+      isPartOf:
+        type: Periodical
+        name: Cell Cycle
       volumeNumber: 11
+    pageEnd: 3044
+    pageStart: 3036
     title: >-
       Werner syndrome protein suppresses the formation of large deletions during
       the replication of human telomeric sequences
@@ -1843,13 +1904,15 @@ references:
           - Mergny
         givenNames:
           - JL
-    datePublished: '2007'
+    datePublished: 2007a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 17352
-      pageStart: 17347
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 104
+    pageEnd: 17352
+    pageStart: 17347
     title: >-
       Reevaluation of telomerase inhibition by quadruplex ligands and their
       mechanisms of action
@@ -1882,13 +1945,15 @@ references:
           - Monchaud
         givenNames:
           - D
-    datePublished: '2007'
+    datePublished: 2007b
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1857
-      pageStart: 1856
-      title: Journal of the American Chemical Society
+      isPartOf:
+        type: Periodical
+        name: Journal of the American Chemical Society
       volumeNumber: 129
+    pageEnd: 1857
+    pageStart: 1856
     title: Highly efficient G-quadruplex recognition by bisquinolinium compounds
   - type: Article
     id: bib36
@@ -1907,7 +1972,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Molecular & Cellular Oncology
+      isPartOf:
+        type: Periodical
+        name: Molecular & Cellular Oncology
       volumeNumber: 3
     title: >-
       Point mutations in the tumor suppressor Smad4/DPC4 enhance its
@@ -1954,10 +2021,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2868
-      pageStart: 2866
-      title: Bioinformatics
+      isPartOf:
+        type: Periodical
+        name: Bioinformatics
       volumeNumber: 32
+    pageEnd: 2868
+    pageStart: 2866
     title: >-
       Combenefit: an interactive platform for the analysis and visualization of
       drug combinations
@@ -2004,7 +2073,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 12
     title: >-
       Dysregulation of H/ACA ribonucleoprotein components in chronic lymphocytic
@@ -2035,10 +2106,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 430
-      pageStart: 413
-      title: Nature Reviews Cancer
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Cancer
       volumeNumber: 16
+    pageEnd: 430
+    pageStart: 413
     title: RNA splicing factors as oncoproteins and tumour suppressors
   - type: Article
     id: bib40
@@ -2061,7 +2134,9 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      title: Expert Reviews in Molecular Medicine
+      isPartOf:
+        type: Periodical
+        name: Expert Reviews in Molecular Medicine
       volumeNumber: 13
     title: >-
       Pharmacological targets in the ubiquitin system offer new ways of treating
@@ -2142,10 +2217,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 921
-      pageStart: 917
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 434
+    pageEnd: 921
+    pageStart: 917
     title: >-
       Targeting the DNA repair defect in BRCA mutant cells as a therapeutic
       strategy
@@ -2220,7 +2297,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 44
     title: 'The pfam protein families database: towards a more sustainable future'
   - type: Article
@@ -2314,7 +2393,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 43
     title: >-
       COSMIC: exploring the world's knowledge of somatic mutations in human
@@ -2340,10 +2421,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 342
-      pageStart: 337
-      title: Gene
+      isPartOf:
+        type: Periodical
+        name: Gene
       volumeNumber: 627
+    pageEnd: 342
+    pageStart: 337
     title: Histone H3 lysine 4 methyltransferase KMT2D
   - type: Article
     id: bib45
@@ -2371,10 +2454,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1738
-      pageStart: 1733
-      title: Medical Oncology
+      isPartOf:
+        type: Periodical
+        name: Medical Oncology
       volumeNumber: 29
+    pageEnd: 1738
+    pageStart: 1733
     title: >-
       Decreased expression of Nedd4L correlates with poor prognosis in gastric
       cancer patient
@@ -2404,7 +2489,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: Molecular Cancer
+      isPartOf:
+        type: Periodical
+        name: Molecular Cancer
       volumeNumber: 12
     title: >-
       USP1 deubiquitinase: cellular functions, regulatory mechanisms and
@@ -2465,10 +2552,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7178
-      pageStart: 7161
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 39
+    pageEnd: 7178
+    pageStart: 7161
     title: G4 resolvase 1 tightly binds and unwinds unimolecular G4-DNA
   - type: Article
     id: bib48
@@ -2486,10 +2575,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 129
-      pageStart: 111
-      title: Annual Review of Pharmacology and Toxicology
+      isPartOf:
+        type: Periodical
+        name: Annual Review of Pharmacology and Toxicology
       volumeNumber: 50
+    pageEnd: 129
+    pageStart: 111
     title: 'The c-MYC NHE III(1): function and regulation'
   - type: Article
     id: bib49
@@ -2506,9 +2597,8 @@ references:
           - G
     datePublished: '2010'
     isPartOf:
-      type: PublicationVolume
-      title: "\_FASTQ/A Short-Reads Pre-Processing Tools"
-    title: ''
+      type: Periodical
+      name: "\_FASTQ/A Short-Reads Pre-Processing Tools"
   - type: Article
     id: bib50
     authors:
@@ -2630,10 +2720,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1210
-      pageStart: 1209
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 10
+    pageEnd: 1210
+    pageStart: 1209
     title: 'DGIdb: mining the druggable genome'
   - type: Article
     id: bib51
@@ -2666,7 +2758,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 9
     title: >-
       ColonyArea: an ImageJ plugin to automatically quantify colony formation in
@@ -2733,10 +2827,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 353
-      pageStart: 350
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 271
+    pageEnd: 353
+    pageStart: 350
     title: 'DPC4, a candidate tumor suppressor gene at human chromosome 18q21.1'
   - type: Article
     id: bib53
@@ -2769,7 +2865,9 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      title: BMC Research Notes
+      isPartOf:
+        type: Periodical
+        name: BMC Research Notes
       volumeNumber: 5
     title: >-
       Bisquinolinium compounds induce quadruplex-specific transcriptome changes
@@ -2841,10 +2939,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1272
-      pageStart: 1267
-      title: Nature Genetics
+      isPartOf:
+        type: Periodical
+        name: Nature Genetics
       volumeNumber: 48
+    pageEnd: 1272
+    pageStart: 1267
     title: G-quadruplex structures mark human regulatory chromatin
   - type: Article
     id: bib55
@@ -2872,10 +2972,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 78
-      pageStart: 57
-      title: Nature Reviews Drug Discovery
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Drug Discovery
       volumeNumber: 17
+    pageEnd: 78
+    pageStart: 57
     title: 'Deubiquitylating enzymes and drug discovery: emerging opportunities'
   - type: Article
     id: bib56
@@ -2928,10 +3030,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 869
-      pageStart: 860
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 42
+    pageEnd: 869
+    pageStart: 860
     title: Detection of G-quadruplex DNA in mammalian cells
   - type: Article
     id: bib57
@@ -2984,10 +3088,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 11604
-      pageStart: 11592
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 46
+    pageEnd: 11604
+    pageStart: 11592
     title: >-
       Analysis of NRAS RNA G-quadruplex binding proteins reveals DDX3X as a
       novel interactor of cellular G-quadruplex containing transcripts
@@ -3047,10 +3153,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 347
-      pageStart: 341
-      title: Nature Cell Biology
+      isPartOf:
+        type: Periodical
+        name: Nature Cell Biology
       volumeNumber: 8
+    pageEnd: 347
+    pageStart: 341
     title: Regulation of monoubiquitinated PCNA by DUB autocleavage
   - type: Article
     id: bib59
@@ -3070,13 +3178,15 @@ references:
           - Lempicki
         givenNames:
           - RA
-    datePublished: '2009'
+    datePublished: 2009a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 57
-      pageStart: 44
-      title: Nature Protocols
+      isPartOf:
+        type: Periodical
+        name: Nature Protocols
       volumeNumber: 4
+    pageEnd: 57
+    pageStart: 44
     title: >-
       Systematic and integrative analysis of large gene lists using DAVID
       bioinformatics resources
@@ -3098,13 +3208,15 @@ references:
           - Lempicki
         givenNames:
           - RA
-    datePublished: '2009'
+    datePublished: 2009b
     isPartOf:
       type: PublicationVolume
-      pageEnd: 13
-      pageStart: 1
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 37
+    pageEnd: 13
+    pageStart: 1
     title: >-
       Bioinformatics enrichment tools: paths toward the comprehensive functional
       analysis of large gene lists
@@ -3124,10 +3236,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 498
-      pageStart: 484
-      title: Cell Research
+      isPartOf:
+        type: Periodical
+        name: Cell Research
       volumeNumber: 26
+    pageEnd: 498
+    pageStart: 484
     title: >-
       Drugging the undruggables: exploring the ubiquitin system for drug
       development
@@ -3142,7 +3256,9 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      title: Chemical Society Reviews
+      isPartOf:
+        type: Periodical
+        name: Chemical Society Reviews
       volumeNumber: 37
     title: >-
       Four-stranded nucleic acids: structure, function and targeting of
@@ -3163,10 +3279,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 413
-      pageStart: 406
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 35
+    pageEnd: 413
+    pageStart: 406
     title: G-quadruplexes in promoters throughout the human genome
   - type: Article
     id: bib64
@@ -3209,10 +3327,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 601
-      pageStart: 592
-      title: Nature Genetics
+      isPartOf:
+        type: Periodical
+        name: Nature Genetics
       volumeNumber: 45
+    pageEnd: 601
+    pageStart: 592
     title: >-
       Proteomic and bioinformatic analysis of mammalian SWI/SNF complexes
       identifies extensive roles in human malignancy
@@ -3262,10 +3382,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 20698
-      pageStart: 20692
-      title: Journal of Biological Chemistry
+      isPartOf:
+        type: Periodical
+        name: Journal of Biological Chemistry
       volumeNumber: 279
+    pageEnd: 20698
+    pageStart: 20692
     title: >-
       Dbp9p, a member of the DEAD box protein family, exhibits DNA helicase
       activity
@@ -3335,10 +3457,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 807
-      pageStart: 796
-      title: Molecular Cell
+      isPartOf:
+        type: Periodical
+        name: Molecular Cell
       volumeNumber: 56
+    pageEnd: 807
+    pageStart: 796
     title: A computational algorithm to predict shRNA potency
   - type: Article
     id: bib67
@@ -3391,10 +3515,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 575
-      pageStart: 570
-      title: Nature Chemical Biology
+      isPartOf:
+        type: Periodical
+        name: Nature Chemical Biology
       volumeNumber: 3
+    pageEnd: 575
+    pageStart: 570
     title: >-
       Splicing factor SF3b as a target of the antitumor natural product
       pladienolide
@@ -3424,10 +3550,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 221
-      pageStart: 218
-      title: Nature Chemical Biology
+      isPartOf:
+        type: Periodical
+        name: Nature Chemical Biology
       volumeNumber: 3
+    pageEnd: 221
+    pageStart: 218
     title: >-
       An RNA G-quadruplex in the 5' UTR of the NRAS proto-oncogene modulates
       translation
@@ -3462,10 +3590,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 844
-      pageStart: 841
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 13
+    pageEnd: 844
+    pageStart: 841
     title: >-
       rG4-seq reveals widespread formation of G-quadruplex structures in the
       human transcriptome
@@ -3485,10 +3615,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 359
-      pageStart: 357
-      title: Nature Methods
+      isPartOf:
+        type: Periodical
+        name: Nature Methods
       volumeNumber: 9
+    pageEnd: 359
+    pageStart: 357
     title: Fast gapped-read alignment with bowtie 2
   - type: Article
     id: bib71
@@ -3517,10 +3649,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8050
-      pageStart: 8048
-      title: Chemical Communications
+      isPartOf:
+        type: Periodical
+        name: Chemical Communications
       volumeNumber: 51
+    pageEnd: 8050
+    pageStart: 8048
     title: G-quadruplex ligands exhibit differential G-tetrad selectivity
   - type: Article
     id: bib72
@@ -3543,10 +3677,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 40
-      pageStart: 32
-      title: Annals of Oncology
+      isPartOf:
+        type: Periodical
+        name: Annals of Oncology
       volumeNumber: 25
+    pageEnd: 40
+    pageStart: 32
     title: PARP inhibitors for BRCA1/2 mutation-associated and BRCA-like malignancies
   - type: Article
     id: bib73
@@ -3599,10 +3735,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3309
-      pageStart: 3300
-      title: European Journal of Cancer
+      isPartOf:
+        type: Periodical
+        name: European Journal of Cancer
       volumeNumber: 48
+    pageEnd: 3309
+    pageStart: 3300
     title: Specific-site methylation of tumour suppressor ANKRD11 in breast Cancer
   - type: Article
     id: bib74
@@ -3642,13 +3780,15 @@ references:
           - Wei
         givenNames:
           - W
-    datePublished: '2015'
+    datePublished: 2015a
     isPartOf:
       type: PublicationVolume
-      pageEnd: 60
-      pageStart: 50
-      title: Biochimica Et Biophysica Acta (BBA) - Reviews on Cancer
+      isPartOf:
+        type: Periodical
+        name: Biochimica Et Biophysica Acta (BBA) - Reviews on Cancer
       volumeNumber: 1855
+    pageEnd: 60
+    pageStart: 50
     title: Targeting the ubiquitin pathway for cancer treatment
   - type: Article
     id: bib75
@@ -3668,10 +3808,12 @@ references:
           - Wishart
         givenNames:
           - D
-    datePublished: '2015'
+    datePublished: 2015b
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 43
     title: >-
       PolySearch2: a significantly improved text-mining system for discovering
@@ -3763,10 +3905,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1270
-      pageStart: 1261
-      title: Cell Chemical Biology
+      isPartOf:
+        type: Periodical
+        name: Cell Chemical Biology
       volumeNumber: 23
+    pageEnd: 1270
+    pageStart: 1261
     title: >-
       Conformation selective antibody enables genome profiling and leads to
       discovery of parallel G-Quadruplex in human telomeres
@@ -3811,7 +3955,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Scientific Reports
+      isPartOf:
+        type: Periodical
+        name: Scientific Reports
       volumeNumber: 6
     title: >-
       An inhibitor of the Keap1-Nrf2 protein-protein interaction protects NCM460
@@ -3873,10 +4019,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 550
-      pageStart: 540
-      title: Molecular Cancer Therapeutics
+      isPartOf:
+        type: Periodical
+        name: Molecular Cancer Therapeutics
       volumeNumber: 16
+    pageEnd: 550
+    pageStart: 540
     title: >-
       The FA/BRCA pathway identified as the major predictor of cisplatin
       response in head and neck cancer by functional genomics
@@ -3891,9 +4039,8 @@ references:
           - S
     datePublished: '2019'
     isPartOf:
-      type: PublicationVolume
-      title: GitHub
-    title: ''
+      type: Periodical
+      name: GitHub
   - type: Article
     id: bib80
     authors:
@@ -3915,10 +4062,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 881
-      pageStart: 872
-      title: Trends in Pharmacological Sciences
+      isPartOf:
+        type: Periodical
+        name: Trends in Pharmacological Sciences
       volumeNumber: 37
+    pageEnd: 881
+    pageStart: 872
     title: Targeting WEE1 kinase in cancer
   - type: Article
     id: bib81
@@ -3941,10 +4090,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2021
-      pageStart: 2014
-      title: Biochimica Et Biophysica Acta (BBA) - Molecular Cell Research
+      isPartOf:
+        type: Periodical
+        name: Biochimica Et Biophysica Acta (BBA) - Molecular Cell Research
       volumeNumber: 1823
+    pageEnd: 2021
+    pageStart: 2014
     title: >-
       Ubiquitin-based anticancer therapy: carpet bombing with proteasome
       inhibitors vs surgical strikes with E1, E2, E3, or DUB inhibitors
@@ -4044,10 +4195,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2911
-      pageStart: 2881
-      title: Oncotarget
+      isPartOf:
+        type: Periodical
+        name: Oncotarget
       volumeNumber: 5
+    pageEnd: 2911
+    pageStart: 2881
     title: GSK-3 as potential target for therapeutic intervention in cancer
   - type: Article
     id: bib83
@@ -4101,10 +4254,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9643
-      pageStart: 9640
-      title: Journal of the American Chemical Society
+      isPartOf:
+        type: Periodical
+        name: Journal of the American Chemical Society
       volumeNumber: 135
+    pageEnd: 9643
+    pageStart: 9640
     title: >-
       G-quadruplex DNA as a molecular target for induced synthetic lethality in
       cancer cells
@@ -4139,10 +4294,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2006
-      pageStart: 1989
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 44
+    pageEnd: 2006
+    pageStart: 1989
     title: G-quadruplexes and helicases
   - type: Article
     id: bib85
@@ -4170,7 +4327,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Scientific Reports
+      isPartOf:
+        type: Periodical
+        name: Scientific Reports
       volumeNumber: 6
     title: >-
       G4IPDB: a database for G-quadruplex structure forming nucleic acid
@@ -4276,10 +4435,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2157
-      pageStart: 2146
-      title: International Journal of Cancer
+      isPartOf:
+        type: Periodical
+        name: International Journal of Cancer
       volumeNumber: 136
+    pageEnd: 2157
+    pageStart: 2146
     title: New therapeutic perspectives in CCDC6 deficient lung cancer cells
   - type: Article
     id: bib87
@@ -4398,10 +4559,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 542
-      pageStart: 529
-      title: Molecular Cell
+      isPartOf:
+        type: Periodical
+        name: Molecular Cell
       volumeNumber: 41
+    pageEnd: 542
+    pageStart: 529
     title: >-
       Requirement of ATM-dependent monoubiquitylation of histone H2B for timely
       repair of DNA double-strand breaks
@@ -4416,10 +4579,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1125
-      pageStart: 1118
-      title: FEBS Journal
+      isPartOf:
+        type: Periodical
+        name: FEBS Journal
       volumeNumber: 277
+    pageEnd: 1125
+    pageStart: 1118
     title: >-
       Human telomeric G-quadruplex: the current status of telomeric
       G-quadruplexes as therapeutic targets in human cancer
@@ -4434,7 +4599,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Nature Reviews Chemistry
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Chemistry
       volumeNumber: 1
     title: Quadruplex nucleic acids as targets for anticancer therapeutics
   - type: Article
@@ -4488,10 +4655,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3552
-      pageStart: 3541
-      title: Journal of Cell Science
+      isPartOf:
+        type: Periodical
+        name: Journal of Cell Science
       volumeNumber: 121
+    pageEnd: 3552
+    pageStart: 3541
     title: Identification of ANKRD11 as a p53 coactivator
   - type: Article
     id: bib91
@@ -4531,9 +4700,11 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageStart: 1886
-      title: International Journal of Molecular Sciences
+      isPartOf:
+        type: Periodical
+        name: International Journal of Molecular Sciences
       volumeNumber: 18
+    pageStart: 1886
     title: The role of PALB2 in the DNA damage response and Cancer predisposition
   - type: Article
     id: bib92
@@ -4576,10 +4747,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 339
-      pageStart: 331
-      title: Molecular Cell
+      isPartOf:
+        type: Periodical
+        name: Molecular Cell
       volumeNumber: 17
+    pageEnd: 339
+    pageStart: 331
     title: The deubiquitinating enzyme USP1 regulates the fanconi anemia pathway
   - type: Article
     id: bib93
@@ -4592,10 +4765,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 1
-      title: FEBS Letters
+      isPartOf:
+        type: Periodical
+        name: FEBS Letters
       volumeNumber: 585
+    pageEnd: 6
+    pageStart: 1
     title: >-
       Synthetic lethality: general principles, utility and detection using
       genetic screens in human cells
@@ -4640,10 +4815,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2848
-      pageStart: 2836
-      title: Oncogene
+      isPartOf:
+        type: Periodical
+        name: Oncogene
       volumeNumber: 31
+    pageEnd: 2848
+    pageStart: 2836
     title: >-
       Mutant p53 drives multinucleation and invasion through a process that is
       suppressed by ANKRD11
@@ -4723,10 +4900,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3967
-      pageStart: 3957
-      title: Oncogene
+      isPartOf:
+        type: Periodical
+        name: Oncogene
       volumeNumber: 34
+    pageEnd: 3967
+    pageStart: 3957
     title: USP37 directly deubiquitinates and stabilizes c-Myc in lung cancer
   - type: Article
     id: bib96
@@ -4824,10 +5003,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2353
-      pageStart: 2344
-      title: Molecular Cancer Therapeutics
+      isPartOf:
+        type: Periodical
+        name: Molecular Cancer Therapeutics
       volumeNumber: 9
+    pageEnd: 2353
+    pageStart: 2344
     title: >-
       Dinaciclib (SCH 727965), a novel and potent cyclin-dependent kinase
       inhibitor
@@ -4867,10 +5048,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 32
-      pageStart: 17
-      title: Mutation Research/Fundamental and Molecular Mechanisms of Mutagenesis
+      isPartOf:
+        type: Periodical
+        name: Mutation Research/Fundamental and Molecular Mechanisms of Mutagenesis
       volumeNumber: 570
+    pageEnd: 32
+    pageStart: 17
     title: >-
       Characterization of novel non-clonal intrachromosomal rearrangements
       between the H4 and PTEN genes (H4/PTEN) in human thyroid cell lines and
@@ -4891,10 +5074,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 346
-      pageStart: 334
-      title: Nature Reviews Cancer
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Cancer
       volumeNumber: 15
+    pageEnd: 346
+    pageStart: 334
     title: 'Hijacked in Cancer: the KMT2 (MLL) family of methyltransferases'
   - type: Article
     id: bib99
@@ -4912,10 +5097,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8637
-      pageStart: 8627
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 43
+    pageEnd: 8637
+    pageStart: 8627
     title: G-quadruplexes and their regulatory roles in biology
   - type: Article
     id: bib100
@@ -4953,10 +5140,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4672
-      pageStart: 4663
-      title: Cancer Research
+      isPartOf:
+        type: Periodical
+        name: Cancer Research
       volumeNumber: 77
+    pageEnd: 4672
+    pageStart: 4663
     title: >-
       WEE1 kinase inhibitor AZD1775 has preclinical efficacy in LKB1-Deficient
       Non-Small cell lung cancer
@@ -4981,10 +5170,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 140
-      pageStart: 139
-      title: Bioinformatics
+      isPartOf:
+        type: Periodical
+        name: Bioinformatics
       volumeNumber: 26
+    pageEnd: 140
+    pageStart: 139
     title: >-
       edgeR: a bioconductor package for differential expression analysis of
       digital gene expression data
@@ -5024,10 +5215,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 15759
-      pageStart: 15758
-      title: Journal of the American Chemical Society
+      isPartOf:
+        type: Periodical
+        name: Journal of the American Chemical Society
       volumeNumber: 130
+    pageEnd: 15759
+    pageStart: 15758
     title: >-
       A novel small molecule that alters shelterin integrity and triggers a
       DNA-damage response at telomeres
@@ -5087,10 +5280,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 310
-      pageStart: 301
-      title: Nature Chemical Biology
+      isPartOf:
+        type: Periodical
+        name: Nature Chemical Biology
       volumeNumber: 8
+    pageEnd: 310
+    pageStart: 301
     title: >-
       Small-molecule-induced DNA damage identifies alternative DNA structures in
       human genes
@@ -5371,10 +5566,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 337
-      pageStart: 321
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 173
+    pageEnd: 337
+    pageStart: 321
     title: Oncogenic signaling pathways in the cancer genome atlas
   - type: Article
     id: bib105
@@ -5412,10 +5609,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8577
-      pageStart: 8572
-      title: PNAS
+      isPartOf:
+        type: Periodical
+        name: PNAS
       volumeNumber: 98
+    pageEnd: 8577
+    pageStart: 8572
     title: >-
       In vitro generated antibodies specific for telomeric guanine-quadruplex
       DNA react with stylonychia lemnae macronuclei
@@ -5500,10 +5699,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2530
-      pageStart: 2527
-      title: Cancer Research
+      isPartOf:
+        type: Periodical
+        name: Cancer Research
       volumeNumber: 56
+    pageEnd: 2530
+    pageStart: 2527
     title: DPC4 gene in various tumor types
   - type: Article
     id: bib107
@@ -5526,10 +5727,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 88
-      pageStart: 69
-      title: Nature Reviews Cancer
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Cancer
       volumeNumber: 18
+    pageEnd: 88
+    pageStart: 69
     title: Ubiquitin ligases in oncogenic transformation and cancer therapy
   - type: Article
     id: bib108
@@ -5547,7 +5750,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: PLOS ONE
+      isPartOf:
+        type: Periodical
+        name: PLOS ONE
       volumeNumber: 8
     title: 'The spectrum of SWI/SNF mutations, ubiquitous in human cancers'
   - type: Article
@@ -5601,10 +5806,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2504
-      pageStart: 2498
-      title: Genome Research
+      isPartOf:
+        type: Periodical
+        name: Genome Research
       volumeNumber: 13
+    pageEnd: 2504
+    pageStart: 2498
     title: >-
       Cytoscape: a software environment for integrated models of biomolecular
       interaction networks
@@ -5709,10 +5916,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2676
-      pageStart: 2664
-      title: Genes & Development
+      isPartOf:
+        type: Periodical
+        name: Genes & Development
       volumeNumber: 22
+    pageEnd: 2676
+    pageStart: 2664
     title: >-
       The histone H2B-specific ubiquitin ligase RNF20/hBRE1 acts as a putative
       tumor suppressor through selective regulation of gene expression
@@ -5782,10 +5991,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4067
-      pageStart: 4051
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 45
+    pageEnd: 4067
+    pageStart: 4051
     title: >-
       Modulation of the splicing regulatory function of SRSF10 by a novel
       compound that impairs HIV-1 replication
@@ -5875,7 +6086,9 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      title: Genome Biology
+      isPartOf:
+        type: Periodical
+        name: Genome Biology
       volumeNumber: 12
     title: >-
       High-throughput RNA interference screening using pooled shRNA libraries
@@ -6061,10 +6274,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 736
-      pageStart: 732
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 458
+    pageEnd: 736
+    pageStart: 732
     title: An inhibitor of NEDD8-activating enzyme as a new approach to treat cancer
   - type: Article
     id: bib114
@@ -6103,10 +6318,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2123
-      pageStart: 2119
-      title: Oncogene
+      isPartOf:
+        type: Periodical
+        name: Oncogene
       volumeNumber: 25
+    pageEnd: 2123
+    pageStart: 2119
     title: Redundancy of DNA helicases in p53-mediated apoptosis
   - type: Article
     id: bib115
@@ -6175,7 +6392,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 45
     title: >-
       The STRING database in 2017: quality-controlled protein–protein
@@ -6221,10 +6440,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 350
-      pageStart: 341
-      title: Chemistry & Biology
+      isPartOf:
+        type: Periodical
+        name: Chemistry & Biology
       volumeNumber: 20
+    pageEnd: 350
+    pageStart: 341
     title: >-
       Regulation of telomere length by G-quadruplex telomere DNA- and
       TERRA-binding protein TLS/FUS
@@ -6234,7 +6455,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 45
     title: 'UniProt: the universal protein knowledgebase'
   - type: Article
@@ -6258,10 +6481,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 22
-      pageStart: 10
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 34
+    pageEnd: 22
+    pageStart: 10
     title: Ddx42p--a human DEAD box protein with RNA chaperone activities
   - type: Article
     id: bib119
@@ -6279,10 +6504,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 706
-      pageStart: 697
-      title: Trends in Genetics
+      isPartOf:
+        type: Periodical
+        name: Trends in Genetics
       volumeNumber: 32
+    pageEnd: 706
+    pageStart: 697
     title: 'G-Quadruplexes in DNA replication: a problem or a necessity?'
   - type: Article
     id: bib120
@@ -6330,10 +6557,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 38120
-      pageStart: 38117
-      title: Journal of Biological Chemistry
+      isPartOf:
+        type: Periodical
+        name: Journal of Biological Chemistry
       volumeNumber: 280
+    pageEnd: 38120
+    pageStart: 38117
     title: >-
       The DEXH protein product of the DHX36 gene is the major source of
       tetramolecular quadruplex G4-DNA resolving activity in HeLa cell lysates
@@ -6348,10 +6577,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 440
-      pageStart: 430
-      title: Nature Reviews Molecular Cell Biology
+      isPartOf:
+        type: Periodical
+        name: Nature Reviews Molecular Cell Biology
       volumeNumber: 3
+    pageEnd: 440
+    pageStart: 430
     title: 'Cellular roles of DNA topoisomerases: a molecular perspective'
   - type: Article
     id: bib122
@@ -6384,10 +6615,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2088
-      pageStart: 2075
-      title: 'Drug Design, Development and Therapy'
+      isPartOf:
+        type: Periodical
+        name: 'Drug Design, Development and Therapy'
       volumeNumber: 8
+    pageEnd: 2088
+    pageStart: 2075
     title: >-
       Bardoxolone methyl (CDDO-Me) as a therapeutic agent: an update on its
       pharmacokinetic and pharmacodynamic properties
@@ -6452,9 +6685,11 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageStart: 943
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 10
+    pageStart: 943
     title: >-
       G-quadruplex DNA drives genomic instability and represents a targetable
       molecular abnormality in ATRX-deficient malignant glioma
@@ -6504,10 +6739,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2063
-      pageStart: 2049
-      title: Journal of Clinical Investigation
+      isPartOf:
+        type: Periodical
+        name: Journal of Clinical Investigation
       volumeNumber: 123
+    pageEnd: 2063
+    pageStart: 2049
     title: >-
       Atrx deficiency induces telomere dysfunction, endocrine defects, and
       reduced life span
@@ -6527,7 +6764,9 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      title: Frontiers in Oncology
+      isPartOf:
+        type: Periodical
+        name: Frontiers in Oncology
       volumeNumber: 2
     title: >-
       The key role of ubiquitination and sumoylation in signaling and cancer: a
@@ -6568,10 +6807,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4988
-      pageStart: 4978
-      title: The EMBO Journal
+      isPartOf:
+        type: Periodical
+        name: The EMBO Journal
       volumeNumber: 21
+    pageEnd: 4988
+    pageStart: 4978
     title: >-
       Characterization of novel SF3b and 17S U2 snRNP proteins, including a
       human Prp5p homologue and an SF3b DEAD-box protein
@@ -6694,10 +6935,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 70
-      pageStart: 65
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 513
+    pageEnd: 70
+    pageStart: 65
     title: RNA G-quadruplexes cause eIF4A-dependent oncogene translation in cancer
   - type: Article
     id: bib128
@@ -6770,10 +7013,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6385
-      pageStart: 6371
-      title: Cancer Research
+      isPartOf:
+        type: Periodical
+        name: Cancer Research
       volumeNumber: 78
+    pageEnd: 6385
+    pageStart: 6371
     title: >-
       HERC2 facilitates BLM and WRN helicase complex interaction with RPA to
       suppress G-Quadruplex DNA
@@ -6793,10 +7038,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3488
-      pageStart: 3470
-      title: FEBS Journal
+      isPartOf:
+        type: Periodical
+        name: FEBS Journal
       volumeNumber: 277
+    pageEnd: 3488
+    pageStart: 3470
     title: G-quadruplex nucleic acids and human disease
   - type: Article
     id: bib130
@@ -7000,7 +7247,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 8
     title: >-
       CX-5461 is a DNA G-quadruplex stabilizer with selective lethality in
@@ -7041,7 +7290,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: PLOS Genetics
+      isPartOf:
+        type: Periodical
+        name: PLOS Genetics
       volumeNumber: 10
     title: >-
       Topoisomerase I plays a critical role in suppressing genome instability at
@@ -7062,10 +7313,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 968
-      pageStart: 951
-      title: 'Nucleosides, Nucleotides and Nucleic Acids'
+      isPartOf:
+        type: Periodical
+        name: 'Nucleosides, Nucleotides and Nucleic Acids'
       volumeNumber: 25
+    pageEnd: 968
+    pageStart: 951
     title: Structure of the biologically relevant G-Quadruplex in the c-MYC promoter
   - type: Article
     id: bib133
@@ -7108,7 +7361,9 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      title: Nucleic Acids Research
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Research
       volumeNumber: 34
     title: 'Gene3D: modelling protein structure, function and evolution'
   - type: Article
@@ -7142,10 +7397,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 256
-      pageStart: 252
-      title: Annals of Oncology
+      isPartOf:
+        type: Periodical
+        name: Annals of Oncology
       volumeNumber: 15
+    pageEnd: 256
+    pageStart: 252
     title: >-
       The clinical significance of cyclin B1 and Wee1 expression in
       non-small-cell lung cancer
@@ -7185,10 +7442,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1143
-      pageStart: 1136
-      title: Biochemical and Biophysical Research Communications
+      isPartOf:
+        type: Periodical
+        name: Biochemical and Biophysical Research Communications
       volumeNumber: 495
+    pageEnd: 1143
+    pageStart: 1136
     title: >-
       Downregulation of Nedd4L predicts poor prognosis, promotes tumor growth
       and inhibits MAPK/ERK signal pathway in hepatocellular carcinoma
@@ -7248,7 +7507,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: Nature Communications
+      isPartOf:
+        type: Periodical
+        name: Nature Communications
       volumeNumber: 5
     title: >-
       BCLAF1 and its splicing regulator SRSF10 regulate the tumorigenic
@@ -7339,10 +7600,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 460
-      pageStart: 449
-      title: Molecular Cell
+      isPartOf:
+        type: Periodical
+        name: Molecular Cell
       volumeNumber: 61
+    pageEnd: 460
+    pageStart: 449
     title: >-
       Targeting BRCA1 and BRCA2 deficiencies with G-Quadruplex-Interacting
       compounds

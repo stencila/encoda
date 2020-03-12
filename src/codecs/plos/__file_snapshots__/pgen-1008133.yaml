@@ -212,10 +212,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 405
-      pageStart: 393
-      title: Nat Rev Mol Cell Biol. Nature Publishing Group
+      isPartOf:
+        type: Periodical
+        name: Nat Rev Mol Cell Biol. Nature Publishing Group
       volumeNumber: 16
+    pageEnd: 405
+    pageStart: 393
     title: >-
       P53 in Survival, Death and Metabolic Health: a Lifeguard With a Licence To
       Kill
@@ -240,7 +242,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: Mech Dev. Elsevier
+      isPartOf:
+        type: Periodical
+        name: Mech Dev. Elsevier
       volumeNumber: 53
     title: 'Regulation and function of p53 : a perspective from Drosophila studies'
   - type: Article
@@ -259,10 +263,12 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1078
-      pageStart: 1062
-      title: Cell. Elsevier Inc.
+      isPartOf:
+        type: Periodical
+        name: Cell. Elsevier Inc.
       volumeNumber: 170
+    pageEnd: 1078
+    pageStart: 1062
     title: Putting p53 in Context
   - type: Article
     id: pgen-1008133-ref004
@@ -300,10 +306,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 60
-      pageStart: 449
-      title: Cell. Elsevier Inc.
+      isPartOf:
+        type: Periodical
+        name: Cell. Elsevier Inc.
       volumeNumber: 153
+    pageEnd: 60
+    pageStart: 449
     title: Non-cell-autonomous tumor suppression by p53
   - type: Article
     id: pgen-1008133-ref005
@@ -332,10 +340,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 11
-      pageStart: 1001
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 123
+    pageEnd: 11
+    pageStart: 1001
     title: >-
       Selective evolution of stromal mesenchyme with p53 loss in response to
       epithelial tumorigenesis
@@ -375,10 +385,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2551
-      pageStart: 2543
-      title: N Engl J Med
+      isPartOf:
+        type: Periodical
+        name: N Engl J Med
       volumeNumber: 357
+    pageEnd: 2551
+    pageStart: 2543
     title: Breast-Cancer Stromal Cells with TP53 Mutations and Nodal Metastases
   - type: Article
     id: pgen-1008133-ref007
@@ -416,10 +428,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 30
-      pageStart: 1627
-      title: Cancer Res
+      isPartOf:
+        type: Periodical
+        name: Cancer Res
       volumeNumber: 65
+    pageEnd: 30
+    pageStart: 1627
     title: >-
       Evidence for nonautonomous effect of p53 tumor suppressor in
       carcinogenesis
@@ -459,10 +473,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 667
-      pageStart: 657
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 134
+    pageEnd: 667
+    pageStart: 657
     title: Senescence of Activated Stellate Cells Limits Liver Fibrosis
   - type: Article
     id: pgen-1008133-ref009
@@ -500,10 +516,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 60
-      pageStart: 656
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 445
+    pageEnd: 60
+    pageStart: 656
     title: >-
       Senescence and tumour clearance is triggered by p53 restoration in murine
       liver carcinomas
@@ -543,9 +561,11 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageStart: 1261669
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 349
+    pageStart: 1261669
     title: >-
       Control of signaling-mediated clearance of apoptotic cells by the tumor
       suppressor p53
@@ -585,10 +605,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 16
-      pageStart: 108
-      title: Cell Death Differ
+      isPartOf:
+        type: Periodical
+        name: Cell Death Differ
       volumeNumber: 20
+    pageEnd: 16
+    pageStart: 108
     title: >-
       Drosophila p53 isoforms differentially regulate apoptosis and
       apoptosis-induced proliferation
@@ -613,10 +635,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 15
-      pageStart: 1606
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 16
+    pageEnd: 15
+    pageStart: 1606
     title: >-
       Compensatory proliferation in Drosophila imaginal discs requires
       Dronc-dependent p53 activity
@@ -636,10 +660,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 76
-      pageStart: 263
-      title: Dev Biol. Elsevier Inc.
+      isPartOf:
+        type: Periodical
+        name: Dev Biol. Elsevier Inc.
       volumeNumber: 361
+    pageEnd: 76
+    pageStart: 263
     title: >-
       Maintenance of imaginal disc plasticity and regenerative potential in
       Drosophila by p53
@@ -681,10 +707,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 483
-      pageStart: 470
-      title: Cell Metab. Elsevier Inc.
+      isPartOf:
+        type: Periodical
+        name: Cell Metab. Elsevier Inc.
       volumeNumber: 19
+    pageEnd: 483
+    pageStart: 470
     title: >-
       Supercompetitor status of drosophila Myc cells requires p53 as a Fitness
       sensor to reprogram metabolism and promote viability
@@ -713,9 +741,9 @@ references:
           - E
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      pageStart: 8
-      title: Nat Commun. Springer US
+      type: Periodical
+      name: Nat Commun. Springer US
+    pageStart: 8
     title: >-
       Chronic activation of JNK JAK/STAT and oxidative stress signalling causes
       the loser cell status
@@ -740,10 +768,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 541
-      pageStart: 528
-      title: Cell Rep
+      isPartOf:
+        type: Periodical
+        name: Cell Rep
       volumeNumber: 8
+    pageEnd: 541
+    pageStart: 528
     title: >-
       MicroRNA-Mediated Regulation of Dp53 in the Drosophila Fat Body
       Contributes to Metabolic Adaptation to Nutrient Deprivation
@@ -768,7 +798,9 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      title: PLoS Biol
+      isPartOf:
+        type: Periodical
+        name: PLoS Biol
       volumeNumber: 8
     title: >-
       A dp53-dependent mechanism involved in coordinating tissue growth in
@@ -794,10 +826,12 @@ references:
     datePublished: '1994'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10226
-      pageStart: 10222
-      title: Proc Natl Acad Sci USA
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci USA
       volumeNumber: 91
+    pageEnd: 10226
+    pageStart: 10222
     title: Cell interactions in the control of size in Drosophila wings
   - type: Article
     id: pgen-1008133-ref019
@@ -825,10 +859,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 145
-      pageStart: 135
-      title: Dev Biol
+      isPartOf:
+        type: Periodical
+        name: Dev Biol
       volumeNumber: 418
+    pageEnd: 145
+    pageStart: 135
     title: >-
       Intra-organ growth coordination in Drosophila is mediated by systemic
       ecdysone signaling
@@ -863,10 +899,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 709
-      pageStart: 703
-      title: Genetics
+      isPartOf:
+        type: Periodical
+        name: Genetics
       volumeNumber: 204
+    pageEnd: 709
+    pageStart: 703
     title: >-
       Growth Coordination During Drosophila melanogaster Imaginal Disc
       Regeneration Is Mediated by Signaling Through the Relaxin Receptor Lgr3 in
@@ -887,10 +925,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 25
-      pageStart: 318
-      title: Dev Biol. Elsevier B.V.
+      isPartOf:
+        type: Periodical
+        name: Dev Biol. Elsevier B.V.
       volumeNumber: 357
+    pageEnd: 25
+    pageStart: 318
     title: >-
       The coordination of growth among Drosophila organs in response to
       localized growth-perturbation
@@ -930,10 +970,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 18
-      pageStart: 3009
-      title: EMBO J
+      isPartOf:
+        type: Periodical
+        name: EMBO J
       volumeNumber: 21
+    pageEnd: 18
+    pageStart: 3009
     title: 'Eiger, a TNF superfamily ligand that triggers the Drosophila JNK pathway'
   - type: Article
     id: pgen-1008133-ref023
@@ -956,10 +998,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 8
-      pageStart: 1263
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 12
+    pageEnd: 8
+    pageStart: 1263
     title: >-
       Evolution of TNF signaling mechanisms: JNK-dependent apoptosis triggered
       by Eiger, the Drosophila homolog of the TNF superfamily
@@ -984,10 +1028,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 361
-      pageStart: 340
-      title: Cell Stress
+      isPartOf:
+        type: Periodical
+        name: Cell Stress
       volumeNumber: 2
+    pageEnd: 361
+    pageStart: 340
     title: >-
       Systemic signalling and local effectors in developmental stability, body
       symmetry, and size
@@ -1007,10 +1053,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10
-      pageStart: 1003
-      title: EMBO Rep. Nature Publishing Group
+      isPartOf:
+        type: Periodical
+        name: EMBO Rep. Nature Publishing Group
       volumeNumber: 12
+    pageEnd: 10
+    pageStart: 1003
     title: The interplay between morphogens and tissue growth
   - type: Article
     id: pgen-1008133-ref026
@@ -1043,10 +1091,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 93
-      pageStart: 5184
-      title: Oncogene
+      isPartOf:
+        type: Periodical
+        name: Oncogene
       volumeNumber: 26
+    pageEnd: 93
+    pageStart: 5184
     title: p53 directs focused genomic responses in Drosophila
   - type: Article
     id: pgen-1008133-ref027
@@ -1077,7 +1127,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS One
+        isPartOf:
+          type: Periodical
+          name: PLoS One
         volumeNumber: 7
       issueNumber: 5
     title: >-
@@ -1104,7 +1156,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: Elife
+      isPartOf:
+        type: Periodical
+        name: Elife
       volumeNumber: 2
     title: >-
       Apoptotic cells can induce non-autonomous apoptosis through the TNF
@@ -1130,10 +1184,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 5691
-      title: Proc Natl Acad Sci U S A
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci U S A
       volumeNumber: 94
+    pageEnd: 6
+    pageStart: 5691
     title: Developmental parameters of cell death in the wing disc of Drosophila
   - type: Article
     id: pgen-1008133-ref030
@@ -1156,7 +1212,9 @@ references:
     datePublished: '2017'
     isPartOf:
       type: PublicationVolume
-      title: Proc Natl Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci
       volumeNumber: 114
     title: Feedback amplification loop drives malignant growth in epithelial tissues
   - type: Article
@@ -1195,7 +1253,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Elife
+      isPartOf:
+        type: Periodical
+        name: Elife
       volumeNumber: 5
     title: >-
       A genome-wide resource for the analysis of protein localisation in
@@ -1240,8 +1300,8 @@ references:
           - DJ
     datePublished: '2019'
     isPartOf:
-      type: PublicationVolume
-      title: Mol Biol Cell
+      type: Periodical
+      name: Mol Biol Cell
     title: Drosophila p53 directs non-apoptotic programs in postmitotic tissue
   - type: Article
     id: pgen-1008133-ref033
@@ -1264,10 +1324,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 50
-      pageStart: 1043
-      title: Int J Dev Biol
+      isPartOf:
+        type: Periodical
+        name: Int J Dev Biol
       volumeNumber: 52
+    pageEnd: 50
+    pageStart: 1043
     title: >-
       Origin and proliferation of blastema cells during regeneration of
       Drosophila wing imaginal discs
@@ -1302,10 +1364,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 54
-      pageStart: 20549
-      title: Proc Natl Acad Sci U S A
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci U S A
       volumeNumber: 109
+    pageEnd: 54
+    pageStart: 20549
     title: >-
       Aneuploidy-induced delaminating cells drive tumorigenesis in Drosophila
       epithelia
@@ -1330,10 +1394,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1146
-      pageStart: 1139
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 16
+    pageEnd: 1146
+    pageStart: 1139
     title: >-
       Loss of cell polarity drives tumor growth and invasion through JNK
       activation in Drosophila
@@ -1353,10 +1419,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 304
-      pageStart: 5294
-      title: EMBO J
+      isPartOf:
+        type: Periodical
+        name: EMBO J
       volumeNumber: 25
+    pageEnd: 304
+    pageStart: 5294
     title: >-
       JNK- and Fos-regulated Mmp1 expression cooperates with Ras to induce
       invasive tumors in Drosophila
@@ -1396,10 +1464,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 18
-      pageStart: 1
-      title: Elife
+      isPartOf:
+        type: Periodical
+        name: Elife
       volumeNumber: 5
+    pageEnd: 18
+    pageStart: 1
     title: Localized JNK signaling regulates organ size during development
   - type: Article
     id: pgen-1008133-ref038
@@ -1437,10 +1507,12 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 27
-      pageStart: 1
-      title: Elife
+      isPartOf:
+        type: Periodical
+        name: Elife
       volumeNumber: 8
+    pageEnd: 27
+    pageStart: 1
     title: >-
       JNK-dependent cell cycle stalling in G2 promotes survival and
       senescence-like phenotypes in tissue stress
@@ -1480,10 +1552,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 486
-      pageStart: 482
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 522
+    pageEnd: 486
+    pageStart: 482
     title: >-
       The Drosophila TNF receptor Grindelwald couples loss of cell polarity and
       neoplastic growth
@@ -1508,10 +1582,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5
-      pageStart: 582
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 336
+    pageEnd: 5
+    pageStart: 582
     title: >-
       Secreted peptide Dilp8 coordinates Drosophila tissue growth with
       developmental timing
@@ -1546,10 +1622,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 82
-      pageStart: 579
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 336
+    pageEnd: 82
+    pageStart: 579
     title: >-
       Imaginal discs secrete insulin-like peptide 8 to mediate plasticity of
       growth and maturation
@@ -1579,9 +1657,11 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageStart: 13505
-      title: Nat Commun
+      isPartOf:
+        type: Periodical
+        name: Nat Commun
       volumeNumber: 7
+    pageStart: 13505
     title: >-
       The Hippo signalling pathway coordinates organ growth and limits
       developmental variability by controlling dilp8 expression
@@ -1616,7 +1696,9 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      title: Science
+      isPartOf:
+        type: Periodical
+        name: Science
       volumeNumber: 350
     title: >-
       A brain circuit that synchronizes growth and maturation revealed through
@@ -1651,10 +1733,10 @@ references:
           - P
     datePublished: '2019'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 8
-      pageStart: 1
-      title: Dev Cell
+      type: Periodical
+      name: Dev Cell
+    pageEnd: 8
+    pageStart: 1
     title: >-
       Inter-Organ Growth Coordination Is Mediated by the Xrp1-Dilp8 Axis in
       Drosophila
@@ -1689,9 +1771,11 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10
-      title: Cell Death Dis. Nature Publishing Group
+      isPartOf:
+        type: Periodical
+        name: Cell Death Dis. Nature Publishing Group
       volumeNumber: 5
+    pageEnd: 10
     title: >-
       The PERK pathway independently triggers apoptosis and a
       Rac1/Slpr/JNK/Dilp8 signaling favoring tissue homeostasis in a chronic ER
@@ -1727,10 +1811,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 36
-      pageStart: 2327
-      title: Proc Natl Acad Sci U S A
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci U S A
       volumeNumber: 112
+    pageEnd: 36
+    pageStart: 2327
     title: >-
       During Drosophila disc regeneration, JAK/STAT coordinates cell
       proliferation with Dilp8-mediated developmental delay
@@ -1750,10 +1836,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 85
-      pageStart: 76
-      title: Dev Cell
+      isPartOf:
+        type: Periodical
+        name: Dev Cell
       volumeNumber: 14
+    pageEnd: 85
+    pageStart: 76
     title: >-
       Keap1/Nrf2 signaling regulates oxidative stress tolerance and lifespan in
       Drosophila
@@ -1773,7 +1861,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 24
     title: ROS Function in Redox Signaling and Oxidative Stress
   - type: Article
@@ -1802,10 +1892,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 996
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 459
+    pageEnd: 9
+    pageStart: 996
     title: >-
       A tissue-scale gradient of hydrogen peroxide mediates rapid wound
       detection in zebrafish
@@ -1845,9 +1937,11 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageStart: 2084
-      title: Sci Rep
+      isPartOf:
+        type: Periodical
+        name: Sci Rep
       volumeNumber: 3
+    pageStart: 2084
     title: >-
       Sustained production of ROS triggers compensatory proliferation and is
       required for regeneration to proceed
@@ -1887,10 +1981,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 26
-      pageStart: 1
-      title: PLoS Genet
+      isPartOf:
+        type: Periodical
+        name: PLoS Genet
       volumeNumber: 11
+    pageEnd: 26
+    pageStart: 1
     title: >-
       ROS-Induced JNK and p38 Signaling Is Required for Unpaired Cytokine
       Activation during Drosophila Regeneration
@@ -1910,10 +2006,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 74
-      pageStart: 267
-      title: Semin Immunol. Elsevier Ltd
+      isPartOf:
+        type: Periodical
+        name: Semin Immunol. Elsevier Ltd
       volumeNumber: 26
+    pageEnd: 74
+    pageStart: 267
     title: >-
       The Drosophila TNF ortholog Eiger: emerging physiological roles and
       evolution of the TNF system
@@ -1928,10 +2026,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 584
-      pageStart: 575
-      title: Dev Dyn
+      isPartOf:
+        type: Periodical
+        name: Dev Dyn
       volumeNumber: 232
+    pageEnd: 584
+    pageStart: 575
     title: 'Dissecting JNK signaling, one KKKinase at a time'
   - type: Article
     id: pgen-1008133-ref054
@@ -1964,10 +2064,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 65
-      pageStart: 458
-      title: Dev Cell. Elsevier Ltd
+      isPartOf:
+        type: Periodical
+        name: Dev Cell. Elsevier Ltd
       volumeNumber: 16
+    pageEnd: 65
+    pageStart: 458
     title: >-
       Intrinsic tumor suppression and epithelial maintenance by endocytic
       activation of Eiger/TNF signaling in Drosophila
@@ -2007,10 +2109,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 9
-      pageStart: 2723
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 25
+    pageEnd: 9
+    pageStart: 2723
     title: >-
       Drosophila Lgr3 Couples Organ Growth with Maturation and Ensures
       Developmental Stability
@@ -2050,10 +2154,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 328
-      pageStart: 315
-      title: Dev Cell
+      isPartOf:
+        type: Periodical
+        name: Dev Cell
       volumeNumber: 20
+    pageEnd: 328
+    pageStart: 315
     title: >-
       Elimination of Oncogenic Neighbors by JNK-Mediated Engulfment in
       Drosophila
@@ -2078,10 +2184,12 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1503
-      pageStart: 1491
-      title: Cell Rep
+      isPartOf:
+        type: Periodical
+        name: Cell Rep
       volumeNumber: 23
+    pageEnd: 1503
+    pageStart: 1491
     title: >-
       Yorkie and JNK Control Tumorigenesis in Drosophila Cells with Cytokinesis
       Failure
@@ -2121,9 +2229,11 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageStart: 8732
-      title: Nat Commun
+      isPartOf:
+        type: Periodical
+        name: Nat Commun
       volumeNumber: 6
+    pageStart: 8732
     title: >-
       Dilp8 requires the neuronal relaxin receptor Lgr3 to couple growth to
       developmental timing
@@ -2148,10 +2258,12 @@ references:
     datePublished: '2010'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 21
-      pageStart: 1012
-      title: Dev Cell
+      isPartOf:
+        type: Periodical
+        name: Dev Cell
       volumeNumber: 18
+    pageEnd: 21
+    pageStart: 1012
     title: >-
       The steroid hormone ecdysone controls systemic growth by repressing dMyc
       function in Drosophila fat cells
@@ -2181,10 +2293,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1228
-      pageStart: 1219
-      title: Genetics
+      isPartOf:
+        type: Periodical
+        name: Genetics
       volumeNumber: 200
+    pageEnd: 1228
+    pageStart: 1219
     title: >-
       Nitric oxide synthase regulates growth coordination during Drosophila
       melanogaster imaginal disc regeneration
@@ -2204,10 +2318,12 @@ references:
     datePublished: '1998'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 77
-      pageStart: 269
-      title: Development
+      isPartOf:
+        type: Periodical
+        name: Development
       volumeNumber: 125
+    pageEnd: 77
+    pageStart: 269
     title: >-
       Ecdysteroid control of cell proliferation during optic lobe neurogenesis
       in the moth Manduca sexta
@@ -2247,9 +2363,11 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageStart: 12383
-      title: melanogaster. Sci Rep
+      isPartOf:
+        type: Periodical
+        name: melanogaster. Sci Rep
       volumeNumber: 5
+    pageStart: 12383
     title: >-
       Ecdysone promotes growth of imaginal discs through the regulation of Thor
       in D
@@ -2264,10 +2382,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 15
-      pageStart: 7
-      title: J Cell Biol
+      isPartOf:
+        type: Periodical
+        name: J Cell Biol
       volumeNumber: 194
+    pageEnd: 15
+    pageStart: 7
     title: Signal transduction by reactive oxygen species
   - type: Article
     id: pgen-1008133-ref064
@@ -2290,10 +2410,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 4218
-      pageStart: 4206
-      title: Development
+      isPartOf:
+        type: Periodical
+        name: Development
       volumeNumber: 141
+    pageEnd: 4218
+    pageStart: 4206
     title: Stem cells and the impact of ROS signaling
   - type: Article
     id: pgen-1008133-ref065
@@ -2311,10 +2433,12 @@ references:
     datePublished: '2009'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 41
-      pageStart: 537
-      title: Nature. Nature Publishing Group
+      isPartOf:
+        type: Periodical
+        name: Nature. Nature Publishing Group
       volumeNumber: 461
+    pageEnd: 41
+    pageStart: 537
     title: >-
       Reactive oxygen species prime Drosophila haematopoietic progenitors for
       differentiation
@@ -2334,10 +2458,12 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 78
-      pageStart: 1669
-      title: 'Antioxid Redox Signal. Mary Ann Liebert, Inc'
+      isPartOf:
+        type: Periodical
+        name: 'Antioxid Redox Signal. Mary Ann Liebert, Inc'
       volumeNumber: 15
+    pageEnd: 78
+    pageStart: 1669
     title: 'p53, oxidative stress, and aging'
   - type: Article
     id: pgen-1008133-ref067
@@ -2375,10 +2501,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 584
-      pageStart: 575
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 26
+    pageEnd: 584
+    pageStart: 575
     title: >-
       Extracellular Reactive Oxygen Species Drive Apoptosis-Induced
       Proliferation via Drosophila Macrophages
@@ -2403,10 +2531,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 92
-      pageStart: 11687
-      title: Proc Natl Acad Sci U S A
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci U S A
       volumeNumber: 93
+    pageEnd: 92
+    pageStart: 11687
     title: >-
       Cell cycling and patterned cell proliferation in the Drosophila wing
       during metamorphosis
@@ -2446,10 +2576,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 682
-      pageStart: 676
-      title: Nat Methods. Nature Publishing Group
+      isPartOf:
+        type: Periodical
+        name: Nat Methods. Nature Publishing Group
       volumeNumber: 9
+    pageEnd: 682
+    pageStart: 676
     title: 'Fiji: an open-source platform for biological-image analysis'
   - type: Article
     id: pgen-1008133-ref070
@@ -2487,10 +2619,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 31
-      pageStart: 1813
-      title: Genome Res
+      isPartOf:
+        type: Periodical
+        name: Genome Res
       volumeNumber: 22
+    pageEnd: 31
+    pageStart: 1813
     title: ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia
   - type: Article
     id: pgen-1008133-ref071
@@ -2528,10 +2662,12 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 302
-      pageStart: 290
-      title: Dev Cell
+      isPartOf:
+        type: Periodical
+        name: Dev Cell
       volumeNumber: 36
+    pageEnd: 302
+    pageStart: 290
     title: >-
       Gene Dosage Imbalance Contributes to Chromosomal Instability-Induced
       Tumorigenesis

@@ -281,10 +281,10 @@ references:
           - J
     datePublished: '2010'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 112
-      pageStart: 103
-      title: AIDS Reviews
+      type: Periodical
+      name: AIDS Reviews
+    pageEnd: 112
+    pageStart: 103
     title: >-
       Dual Role of Host Cell Factors in HIV-1 Replication: Restriction and
       Enhancement of the Viral Cycle
@@ -308,11 +308,10 @@ references:
           - M
     datePublished: '1999'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 180
-      pageStart: 127
-      title: Chemokines and Their Receptors in Lymphocyte Traffic and HIV Infection
-    title: ''
+      type: Periodical
+      name: Chemokines and Their Receptors in Lymphocyte Traffic and HIV Infection
+    pageEnd: 180
+    pageStart: 127
   - type: Article
     id: ppat-1007958-ref003
     authors:
@@ -334,10 +333,12 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 429
-      pageStart: 409
-      title: Curr Drug Targets
+      isPartOf:
+        type: Periodical
+        name: Curr Drug Targets
       volumeNumber: 4
+    pageEnd: 429
+    pageStart: 409
     title: >-
       Nuclear Import of the Pre-Integration Complex (PIC): The Achilles Heel of
       HIV?
@@ -357,10 +358,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 492
-      pageStart: 483
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 88
+    pageEnd: 492
+    pageStart: 483
     title: >-
       HIV-1 cDNA integration: Requirement of HMG I(Y) protein for function of
       preintegration complexes in vitro
@@ -400,10 +403,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1778
-      pageStart: 1767
-      title: Genes Dev
+      isPartOf:
+        type: Periodical
+        name: Genes Dev
       volumeNumber: 21
+    pageEnd: 1778
+    pageStart: 1767
     title: >-
       LEDGF/p75 functions downstream from preintegration complex formation to
       effect gene-specific HIV-1 integration
@@ -433,10 +438,10 @@ references:
           - Z
     datePublished: '2007'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 451
-      pageStart: 441
-      title: BioEssays
+      type: Periodical
+      name: BioEssays
+    pageEnd: 451
+    pageStart: 441
     title: 'Lentiviral nuclear import: A complex interplay between virus and host'
   - type: Article
     id: ppat-1007958-ref007
@@ -476,7 +481,9 @@ references:
     datePublished: '2016'
     isPartOf:
       type: PublicationVolume
-      title: Sci Rep
+      isPartOf:
+        type: Periodical
+        name: Sci Rep
       volumeNumber: 6
     title: Dynamic Oligomerization of Integrase Orchestrates HIV Nuclear Entry
   - type: Article
@@ -515,7 +522,9 @@ references:
     datePublished: '2018'
     isPartOf:
       type: PublicationVolume
-      title: Retrovirology
+      isPartOf:
+        type: Periodical
+        name: Retrovirology
       volumeNumber: 15
     title: >-
       Inhibitors of the integrase-transportin-SR2 interaction block HIV nuclear
@@ -557,8 +566,8 @@ references:
           - Z
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: J Biol Chem
+      type: Periodical
+      name: J Biol Chem
     title: N-terminal half of transportin SR2 interacts with HIV integrase
   - type: Article
     id: ppat-1007958-ref010
@@ -596,7 +605,9 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      title: PLoS Pathog
+      isPartOf:
+        type: Periodical
+        name: PLoS Pathog
       volumeNumber: 7
     title: >-
       Transportin 3 promotes a nuclear maturation step required for efficient
@@ -638,10 +649,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 5936
-      pageStart: 5931
-      title: J Virol
+      isPartOf:
+        type: Periodical
+        name: J Virol
       volumeNumber: 86
+    pageEnd: 5936
+    pageStart: 5931
     title: >-
       TNPO3 Is Required for HIV-1 Replication after Nuclear Import but prior to
       Integration and Binds the HIV-1 Core
@@ -682,7 +695,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: Retrovirology
+      isPartOf:
+        type: Periodical
+        name: Retrovirology
       volumeNumber: 10
     title: >-
       TNPO3 protects HIV-1 replication from CPSF6-mediated capsid stabilization
@@ -718,10 +733,12 @@ references:
     datePublished: '2000'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 7957
-      pageStart: 7950
-      title: J Biol Chem
+      isPartOf:
+        type: Periodical
+        name: J Biol Chem
       volumeNumber: 275
+    pageEnd: 7957
+    pageStart: 7950
     title: >-
       A human importin-β family protein, transportin-SR2, interacts with the
       phosphorylated RS domain of SR proteins
@@ -751,10 +768,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1369
-      pageStart: 1359
-      title: EMBO J
+      isPartOf:
+        type: Periodical
+        name: EMBO J
       volumeNumber: 22
+    pageEnd: 1369
+    pageStart: 1359
     title: >-
       A novel splicing regulator shares a nuclear import pathway with SR
       proteins
@@ -779,10 +798,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10159
-      pageStart: 10154
-      title: Proc Natl Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci
       volumeNumber: 98
+    pageEnd: 10159
+    pageStart: 10154
     title: Transportin-SR2 mediates nuclear import of phosphorylated SR proteins
   - type: Article
     id: ppat-1007958-ref016
@@ -805,10 +826,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1152
-      pageStart: 1145
-      title: J Cell Biol
+      isPartOf:
+        type: Periodical
+        name: J Cell Biol
       volumeNumber: 145
+    pageEnd: 1152
+    pageStart: 1145
     title: 'Transportin-SR, a nuclear import receptor for SR proteins'
   - type: Article
     id: ppat-1007958-ref017
@@ -846,10 +869,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 405
-      pageStart: 402
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 503
+    pageEnd: 405
+    pageStart: 402
     title: >-
       HIV-1 evades innate immune recognition through specific cofactor
       recruitment
@@ -889,10 +914,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10355
-      pageStart: 10345
-      title: Nucleic Acids Res
+      isPartOf:
+        type: Periodical
+        name: Nucleic Acids Res
       volumeNumber: 40
+    pageEnd: 10355
+    pageStart: 10345
     title: >-
       Dynamic regulation of HIV-1 mRNA populations analyzed by single-molecule
       enrichment and long-read sequencing
@@ -932,9 +959,11 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageStart: 18
-      title: Retrovirology
+      isPartOf:
+        type: Periodical
+        name: Retrovirology
       volumeNumber: 5
+    pageStart: 18
     title: >-
       HIV-1 infection induces changes in expression of cellular splicing factors
       that regulate alternative viral splicing and virus production in
@@ -975,10 +1004,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 37174
-      pageStart: 37159
-      title: J Biol Chem
+      isPartOf:
+        type: Periodical
+        name: J Biol Chem
       volumeNumber: 281
+    pageEnd: 37174
+    pageStart: 37159
     title: >-
       Biochemical and NMR study on the competition between proteins SC35, SRp40,
       and heterogeneous nuclear ribonucleoprotein A1 at the HIV-1 Tat exon 2
@@ -1009,7 +1040,9 @@ references:
     datePublished: '2005'
     isPartOf:
       type: PublicationVolume
-      title: Retrovirology
+      isPartOf:
+        type: Periodical
+        name: Retrovirology
       volumeNumber: 2
     title: >-
       Dual effect of the SR proteins ASF/SF2, SC35 and 9G8 on HIV-1 RNA splicing
@@ -1050,10 +1083,12 @@ references:
     datePublished: '2004'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 29973
-      pageStart: 29963
-      title: J Biol Chem
+      isPartOf:
+        type: Periodical
+        name: J Biol Chem
       volumeNumber: 279
+    pageEnd: 29973
+    pageStart: 29963
     title: >-
       Differential effects of the SR proteins 9G8, SC35, ASF/SF2, and SRp40 on
       the utilization of the A1 to A5 splicing sites of HIV-1 RNA
@@ -1093,10 +1128,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 926
-      pageStart: 921
-      title: Science (80)
+      isPartOf:
+        type: Periodical
+        name: Science (80)
       volumeNumber: 319
+    pageEnd: 926
+    pageStart: 921
     title: >-
       Identification of host proteins required for HIV infection through a
       functional genomic screen
@@ -1136,10 +1173,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 60
-      pageStart: 49
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 135
+    pageEnd: 60
+    pageStart: 49
     title: >-
       Global analysis of host-pathogen interactions that regulate early-stage
       HIV-1 replication
@@ -1180,10 +1219,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1202
-      pageStart: 1192
-      title: Curr Biol
+      isPartOf:
+        type: Periodical
+        name: Curr Biol
       volumeNumber: 18
+    pageEnd: 1202
+    pageStart: 1192
     title: Transportin-SR2 Imports HIV into the Nucleus
   - type: Article
     id: ppat-1007958-ref026
@@ -1196,10 +1237,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 1
-      title: Mol Biol Int
+      isPartOf:
+        type: Periodical
+        name: Mol Biol Int
       volumeNumber: 2012
+    pageEnd: 6
+    pageStart: 1
     title: The Role of TNPO3 in HIV-1 Replication
   - type: Article
     id: ppat-1007958-ref027
@@ -1211,10 +1254,10 @@ references:
           - K
     datePublished: '2009'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 323
-      pageStart: 314
-      title: Practical Neurology
+      type: Periodical
+      name: Practical Neurology
+    pageEnd: 323
+    pageStart: 314
     title: Diagnosis and management of the limb girdle muscular dystrophies
   - type: Article
     id: ppat-1007958-ref028
@@ -1252,10 +1295,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 454
-      pageStart: 450
-      title: Neurology
+      isPartOf:
+        type: Periodical
+        name: Neurology
       volumeNumber: 56
+    pageEnd: 454
+    pageStart: 450
     title: >-
       Autosomal dominant limb-girdle muscular dystrophy: A large kindred with
       evidence for anticipation
@@ -1295,10 +1340,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 2733
-      pageStart: 2728
-      title: Proc Natl Acad Sci
+      isPartOf:
+        type: Periodical
+        name: Proc Natl Acad Sci
       volumeNumber: 111
+    pageEnd: 2733
+    pageStart: 2728
     title: >-
       Structural basis for nuclear import of splicing factors by human
       Transportin 3
@@ -1338,10 +1385,12 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1517
-      pageStart: 1508
-      title: Brain
+      isPartOf:
+        type: Periodical
+        name: Brain
       volumeNumber: 136
+    pageEnd: 1517
+    pageStart: 1508
     title: >-
       Limb-girdle muscular dystrophy 1F is caused by a microdeletion in the
       transportin 3 gene
@@ -1383,7 +1432,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: PLoS One
+      isPartOf:
+        type: Periodical
+        name: PLoS One
       volumeNumber: 8
     title: >-
       Next-Generation Sequencing Identifies Transportin 3 as the Causative Gene
@@ -1424,10 +1475,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 726
-      pageStart: 722
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 382
+    pageEnd: 726
+    pageStart: 722
     title: >-
       Resistance to HIV-1 infection in caucasian individuals bearing mutant
       alleles of the CCR-5 chemokine receptor gene
@@ -1467,10 +1520,12 @@ references:
     datePublished: '1996'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 377
-      pageStart: 367
-      title: Cell
+      isPartOf:
+        type: Periodical
+        name: Cell
       volumeNumber: 86
+    pageEnd: 377
+    pageStart: 367
     title: >-
       Homozygous defect in HIV-1 coreceptor accounts for resistance of some
       multiply-exposed individuals to HIV-1 infection
@@ -1499,8 +1554,8 @@ references:
           - R
     datePublished: '1981'
     isPartOf:
-      type: PublicationVolume
-      title: Physiol Behav
+      type: Periodical
+      name: Physiol Behav
     title: >-
       Computerized system for measurement of force exerted within each pedal
       revolution during cycling
@@ -1520,10 +1575,12 @@ references:
     datePublished: '1963'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 590
-      pageStart: 579
-      title: J Lab Clin Med
+      isPartOf:
+        type: Periodical
+        name: J Lab Clin Med
       volumeNumber: 62
+    pageEnd: 590
+    pageStart: 579
     title: 'Glycogen, Creatine, and High Energy Phosphate in Human Muscle Disease'
   - type: Article
     id: ppat-1007958-ref036
@@ -1551,7 +1608,9 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      title: PLoS One
+      isPartOf:
+        type: Periodical
+        name: PLoS One
       volumeNumber: 3
     title: >-
       HIV-1 pre-integration complexes selectively target decondensed chromatin
@@ -1591,8 +1650,8 @@ references:
           - TL
     datePublished: '2009'
     isPartOf:
-      type: PublicationVolume
-      title: PLoS Pathogens
+      type: Periodical
+      name: PLoS Pathogens
     title: 'Host cell factors in HIV replication: Meta-analysis of genome-wide studies'
   - type: Article
     id: ppat-1007958-ref038
@@ -1609,8 +1668,8 @@ references:
           - GJ
     datePublished: '2014'
     isPartOf:
-      type: PublicationVolume
-      title: Current Opinion in Virology
+      type: Periodical
+      name: Current Opinion in Virology
     title: >-
       A model for cofactor use during HIV-1 reverse transcription and nuclear
       entry
@@ -1650,8 +1709,8 @@ references:
           - R
     datePublished: '2014'
     isPartOf:
-      type: PublicationVolume
-      title: J Biol Chem
+      type: Periodical
+      name: J Biol Chem
     title: >-
       The HIV-1 integrase mutant R263A/K264A is 2-fold defective for TRN-SR2
       binding and viral nuclear import
@@ -1691,10 +1750,12 @@ references:
     datePublished: '2012'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 34058
-      pageStart: 34044
-      title: J Biol Chem
+      isPartOf:
+        type: Periodical
+        name: J Biol Chem
       volumeNumber: 287
+    pageEnd: 34058
+    pageStart: 34044
     title: >-
       Interaction of the HIV-1 intasome with transportin 3 protein (TNPO3 or
       TRN-SR2)
@@ -1733,8 +1794,8 @@ references:
           - X
     datePublished: '2010'
     isPartOf:
-      type: PublicationVolume
-      title: J Virol
+      type: Periodical
+      name: J Virol
     title: >-
       The Requirement for Cellular Transportin 3 (TNPO3 or TRN-SR2) during
       Infection Maps to Human Immunodeficiency Virus Type 1 Capsid and Not
@@ -1754,8 +1815,8 @@ references:
           - M
     datePublished: '2004'
     isPartOf:
-      type: PublicationVolume
-      title: J Virol
+      type: Periodical
+      name: J Virol
     title: >-
       Capsid Is a Dominant Determinant of Retrovirus Infectivity in Nondividing
       Cells
@@ -1774,8 +1835,8 @@ references:
           - M
     datePublished: '2005'
     isPartOf:
-      type: PublicationVolume
-      title: PLoS Pathog
+      type: Periodical
+      name: PLoS Pathog
     title: >-
       The cell cycle independence of HIV infections is not determined by known
       karyophilic viral elements
@@ -1794,8 +1855,8 @@ references:
           - RF
     datePublished: '2017'
     isPartOf:
-      type: PublicationVolume
-      title: Nature Reviews Microbiology
+      type: Periodical
+      name: Nature Reviews Microbiology
     title: Nuclear landscape of HIV-1 infection and integration
   - type: Article
     id: ppat-1007958-ref045
@@ -1832,8 +1893,8 @@ references:
           - A
     datePublished: '2018'
     isPartOf:
-      type: PublicationVolume
-      title: Cell Host Microbe
+      type: Periodical
+      name: Cell Host Microbe
     title: >-
       Capsid-CPSF6 Interaction Licenses Nuclear HIV-1 Trafficking to Sites of
       Viral DNA Integration
@@ -1870,10 +1931,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1008
-      pageStart: 967
-      title: Physiol Rev
+      isPartOf:
+        type: Periodical
+        name: Physiol Rev
       volumeNumber: 86
+    pageEnd: 1008
+    pageStart: 967
     title: 'Nuclear Lamins: Laminopathies and Their Role in Premature Ageing'
   - type: Article
     id: ppat-1007958-ref047
@@ -1905,8 +1968,8 @@ references:
           - AT
     datePublished: '2018'
     isPartOf:
-      type: PublicationVolume
-      title: Frontiers in Physiology
+      type: Periodical
+      name: Frontiers in Physiology
     title: The pathogenesis and therapies of striated muscle laminopathies
   - type: Article
     id: ppat-1007958-ref048
@@ -1944,7 +2007,9 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      title: Front Mol Neurosci
+      isPartOf:
+        type: Periodical
+        name: Front Mol Neurosci
       volumeNumber: 6
     title: >-
       Brain pathology in myotonic dystrophy: when tauopathy meets spliceopathy
@@ -1964,10 +2029,10 @@ references:
           - R
     datePublished: '2012'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 905
-      pageStart: 891
-      title: The Lancet Neurology
+      type: Periodical
+      name: The Lancet Neurology
+    pageEnd: 905
+    pageStart: 891
     title: 'The myotonic dystrophies: Molecular, clinical, and therapeutic challenges'
   - type: Article
     id: ppat-1007958-ref050
@@ -2006,7 +2071,9 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      title: Retrovirology
+      isPartOf:
+        type: Periodical
+        name: Retrovirology
       volumeNumber: 8
     title: Interplay between HIV Entry and Transportin-SR2 Dependency
   - type: Article
@@ -2026,9 +2093,11 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      pageStart: 98
-      title: Retrovirology
+      isPartOf:
+        type: Periodical
+        name: Retrovirology
       volumeNumber: 8
+    pageStart: 98
     title: >-
       Inhibition of HIV-1 infection by TNPO3 depletion is determined by capsid
       and detectable after viral cDNA enters the nucleus
@@ -2068,7 +2137,9 @@ references:
     datePublished: '2011'
     isPartOf:
       type: PublicationVolume
-      title: PLoS Pathog
+      isPartOf:
+        type: Periodical
+        name: PLoS Pathog
       volumeNumber: 7
     title: >-
       HIV integration targeting: A pathway involving transportin-3 and the
@@ -2104,10 +2175,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1415
-      pageStart: 1413
-      title: Nat Genet
+      isPartOf:
+        type: Periodical
+        name: Nat Genet
       volumeNumber: 40
+    pageEnd: 1415
+    pageStart: 1413
     title: >-
       Deep surveying of alternative splicing complexity in the human
       transcriptome by high-throughput sequencing
@@ -2147,10 +2220,12 @@ references:
     datePublished: '2008'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 6
-      pageStart: 470
-      title: Nature
+      isPartOf:
+        type: Periodical
+        name: Nature
       volumeNumber: 456
+    pageEnd: 6
+    pageStart: 470
     title: Alternative isoform regulation in human tissue transcriptomes
   - type: Article
     id: ppat-1007958-ref055
@@ -2173,10 +2248,12 @@ references:
     datePublished: '2002'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1296
-      pageStart: 1285
-      title: Mol Cell Biol
+      isPartOf:
+        type: Periodical
+        name: Mol Cell Biol
       volumeNumber: 21
+    pageEnd: 1296
+    pageStart: 1285
     title: >-
       The CELF Family of RNA Binding Proteins Is Implicated in Cell-Specific and
       Developmentally Regulated Alternative Splicing
@@ -2200,10 +2277,10 @@ references:
           - D
     datePublished: '2010'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 452
-      pageStart: 441
-      title: RNA Biology
+      type: Periodical
+      name: RNA Biology
+    pageEnd: 452
+    pageStart: 441
     title: Alternative splicing and muscular dystrophy
   - type: Article
     id: ppat-1007958-ref057
@@ -2243,10 +2320,12 @@ references:
     datePublished: '1999'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 1588
-      pageStart: 1581
-      title: Oncogene
+      isPartOf:
+        type: Periodical
+        name: Oncogene
       volumeNumber: 18
+    pageEnd: 1588
+    pageStart: 1581
     title: Expression of IκBα in the nucleus of human peripheral blood T lymphocytes
   - type: Article
     id: ppat-1007958-ref058
@@ -2259,10 +2338,12 @@ references:
     datePublished: '1976'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 254
-      pageStart: 248
-      title: Anal Biochem
+      isPartOf:
+        type: Periodical
+        name: Anal Biochem
       volumeNumber: 72
+    pageEnd: 254
+    pageStart: 248
     title: >-
       A rapid and sensitive method for the quantitation of microgram quantities
       of protein utilizing the principle of protein-dye binding
@@ -2297,10 +2378,12 @@ references:
     datePublished: '2007'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 137
-      pageStart: 127
-      title: J Med Virol
+      isPartOf:
+        type: Periodical
+        name: J Med Virol
       volumeNumber: 79
+    pageEnd: 137
+    pageStart: 127
     title: >-
       A new strategy based on recombinant viruses as a tool for assessing drug
       susceptibility of human immunodeficiency virus type 1
@@ -2340,7 +2423,9 @@ references:
     datePublished: '2013'
     isPartOf:
       type: PublicationVolume
-      title: PLoS Pathog
+      isPartOf:
+        type: Periodical
+        name: PLoS Pathog
       volumeNumber: 9
     title: 24 Hours in the Life of HIV-1 in a T Cell Line
   - type: Article
@@ -2379,10 +2464,12 @@ references:
     datePublished: '1986'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 90
-      pageStart: 280
-      title: J Exp Med
+      isPartOf:
+        type: Periodical
+        name: J Exp Med
       volumeNumber: 164
+    pageEnd: 90
+    pageStart: 280
     title: >-
       Biological and biochemical characterization of a cloned Leu-3- cell
       surviving infection with the acquired immune deficiency syndrome
@@ -2408,10 +2495,12 @@ references:
     datePublished: '2001'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 634
-      pageStart: 631
-      title: Nat Med
+      isPartOf:
+        type: Periodical
+        name: Nat Med
       volumeNumber: 7
+    pageEnd: 634
+    pageStart: 631
     title: A quantitative assay for HIV DNA integration in vivo
   - type: Article
     id: ppat-1007958-ref063
@@ -2429,10 +2518,12 @@ references:
     datePublished: '2003'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 10124
-      pageStart: 10119
-      title: J Virol
+      isPartOf:
+        type: Periodical
+        name: J Virol
       volumeNumber: 77
+    pageEnd: 10124
+    pageStart: 10119
     title: >-
       Analysis of Early Human Immunodeficiency Virus Type 1 DNA Synthesis by Use
       of a New Sensitive Assay for Quantifying Integrated Provirus
@@ -2452,10 +2543,12 @@ references:
     datePublished: '2006'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3720
-      pageStart: 3712
-      title: J Virol
+      isPartOf:
+        type: Periodical
+        name: J Virol
       volumeNumber: 80
+    pageEnd: 3720
+    pageStart: 3712
     title: >-
       Evidence for a Functional Link between Uncoating of the Human
       Immunodeficiency Virus Type 1 Core and Nuclear Import of the Viral
@@ -2496,10 +2589,12 @@ references:
     datePublished: '2015'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 256
-      pageStart: 241
-      title: Biochem Pharmacol
+      isPartOf:
+        type: Periodical
+        name: Biochem Pharmacol
       volumeNumber: 94
+    pageEnd: 256
+    pageStart: 241
     title: >-
       Analysis of protein kinase C theta inhibitors for the control of HIV-1
       replication in human CD4+ T cells reveals an effect on retrotranscription
@@ -2540,10 +2635,12 @@ references:
     datePublished: '2014'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 3545
-      pageStart: 3531
-      title: ACS Nano
+      isPartOf:
+        type: Periodical
+        name: ACS Nano
       volumeNumber: 8
+    pageEnd: 3545
+    pageStart: 3531
     title: >-
       HIV virions as nanoscopic test tubes for probing oligomerization of the
       integrase enzyme
@@ -2578,10 +2675,12 @@ references:
     datePublished: '1997'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 875
-      pageStart: 871
-      title: Nat Biotechnol
+      isPartOf:
+        type: Periodical
+        name: Nat Biotechnol
       volumeNumber: 15
+    pageEnd: 875
+    pageStart: 871
     title: >-
       Multiply attenuated lentiviral vector achieves efficient gene delivery in
       vivo
@@ -2610,10 +2709,10 @@ references:
           - NR
     datePublished: '1995'
     isPartOf:
-      type: PublicationVolume
-      pageEnd: 44
-      pageStart: 935
-      title: Virology
+      type: Periodical
+      name: Virology
+    pageEnd: 44
+    pageStart: 935
     title: Vpr is required for efficient replication of HIV-1.pdf
   - type: Article
     id: ppat-1007958-ref069
@@ -2651,10 +2750,12 @@ references:
     datePublished: '1995'
     isPartOf:
       type: PublicationVolume
-      pageEnd: 13
-      pageStart: 6304
-      title: J Virol
+      isPartOf:
+        type: Periodical
+        name: J Virol
       volumeNumber: 69
+    pageEnd: 13
+    pageStart: 6304
     title: >-
       The human immunodeficiency virus type 1 vpr gene arrests infected T cells
       in the G2 + M phase of the cell cycle

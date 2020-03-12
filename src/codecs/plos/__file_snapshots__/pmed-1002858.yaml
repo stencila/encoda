@@ -233,13 +233,13 @@ references:
     authors: []
     datePublished: '2014'
     isPartOf:
-      type: PublicationIssue
+      type: PublicationVolume
       isPartOf:
-        type: PublicationVolume
-        title: Tropical Medicine & International Health
-        volumeNumber: 19
-      pageEnd: 131
-      pageStart: 7
+        type: Periodical
+        name: Tropical Medicine & International Health
+      volumeNumber: 19
+    pageEnd: 131
+    pageStart: 7
     title: Severe Malaria
   - type: Article
     id: pmed-1002858-ref002
@@ -279,11 +279,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet
+        isPartOf:
+          type: Periodical
+          name: The Lancet
         volumeNumber: 385
       issueNumber: 9964
-      pageEnd: 252
-      pageStart: 239
+    pageEnd: 252
+    pageStart: 239
     title: >-
       Avoiding 40% of the premature deaths in each country, 2010–30: review of
       national mortality trends to help quantify the UN Sustainable Development
@@ -326,11 +328,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet
+        isPartOf:
+          type: Periodical
+          name: The Lancet
         volumeNumber: 373
       issueNumber: 9663
-      pageEnd: 566
-      pageStart: 557
+    pageEnd: 566
+    pageStart: 557
     title: >-
       Pre-referral rectal artesunate to prevent death and disability in severe
       malaria: a placebo-controlled trial
@@ -367,11 +371,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clinical Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: Clinical Infectious Diseases
         volumeNumber: 67
       issueNumber: 7
-      pageEnd: 1062
-      pageStart: 1053
+    pageEnd: 1062
+    pageStart: 1053
     title: >-
       A Competing-Risk Approach for Modeling Length of Stay in Severe Malaria
       Patients in South-East Asia and the Implications for Planning of Hospital
@@ -409,11 +415,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet
+        isPartOf:
+          type: Periodical
+          name: The Lancet
         volumeNumber: 366
       issueNumber: 9487
-      pageEnd: 725
-      pageStart: 717
+    pageEnd: 725
+    pageStart: 717
     title: >-
       Artesunate versus quinine for treatment of severe falciparum malaria: a
       randomised trial
@@ -455,11 +463,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clinical Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: Clinical Infectious Diseases
         volumeNumber: 47
       issueNumber: 2
-      pageEnd: 157
-      pageStart: 151
+    pageEnd: 157
+    pageStart: 151
     title: >-
       The Relationship between Age and the Manifestations of and Mortality
       Associated with Severe Malaria
@@ -502,11 +512,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clinical Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: Clinical Infectious Diseases
         volumeNumber: 54
       issueNumber: 8
-      pageEnd: 1090
-      pageStart: 1080
+    pageEnd: 1090
+    pageStart: 1080
     title: >-
       Predicting the Clinical Outcome of Severe Falciparum Malaria in African
       Children: Findings From a Large Randomized Trial
@@ -538,11 +550,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Journal of Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: The Journal of Infectious Diseases
         volumeNumber: 208
       issueNumber: 2
-      pageEnd: 198
-      pageStart: 192
+    pageEnd: 198
+    pageStart: 192
     title: 'Lethal malaria: Marchiafava and Bignami were right'
   - type: Article
     id: pmed-1002858-ref009
@@ -582,10 +596,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Malaria Journal
+        isPartOf:
+          type: Periodical
+          name: Malaria Journal
         volumeNumber: 17
       issueNumber: 1
-      pageStart: 47
+    pageStart: 47
     title: 'Adjunctive therapy for severe malaria: a review and critical appraisal'
   - type: Article
     id: pmed-1002858-ref010
@@ -620,11 +636,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Trends in Parasitology
+        isPartOf:
+          type: Periodical
+          name: Trends in Parasitology
         volumeNumber: 26
       issueNumber: 1
-      pageEnd: 15
-      pageStart: 11
+    pageEnd: 15
+    pageStart: 11
     title: The murine cerebral malaria phenomenon
   - type: Article
     id: pmed-1002858-ref011
@@ -664,11 +682,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: New England Journal of Medicine
+        isPartOf:
+          type: Periodical
+          name: New England Journal of Medicine
         volumeNumber: 347
       issueNumber: 12
-      pageEnd: 902
-      pageStart: 895
+    pageEnd: 902
+    pageStart: 895
     title: >-
       Hemofiltration and peritoneal dialysis in infection-associated acute renal
       failure in Vietnam
@@ -708,7 +728,9 @@ references:
     datePublished: '2019'
     isPartOf:
       type: PublicationVolume
-      title: eLife
+      isPartOf:
+        type: Periodical
+        name: eLife
       volumeNumber: 8
     title: >-
       Collider bias and the apparent protective effect of glucose-6-phosphate
@@ -723,9 +745,8 @@ references:
           - J
     datePublished: '2009'
     isPartOf:
-      type: PublicationVolume
-      title: 'Causality: Models, Reasoning and Inference'
-    title: ''
+      type: Periodical
+      name: 'Causality: Models, Reasoning and Inference'
   - type: Article
     id: pmed-1002858-ref014
     authors:
@@ -739,10 +760,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of Educational Psychology
+        isPartOf:
+          type: Periodical
+          name: Journal of Educational Psychology
         volumeNumber: 66
       issueNumber: 5
-      pageStart: 688
+    pageStart: 688
     title: >-
       Estimating causal effects of treatments in randomized and nonrandomized
       studies
@@ -769,11 +792,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: International Journal of Epidemiology
+        isPartOf:
+          type: Periodical
+          name: International Journal of Epidemiology
         volumeNumber: 45
       issueNumber: 6
-      pageEnd: 1786
-      pageStart: 1776
+    pageEnd: 1786
+    pageStart: 1776
     title: >-
       Causality and causal inference in epidemiology: the need for a pluralistic
       approach
@@ -796,11 +821,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: International Journal of Epidemiology
+        isPartOf:
+          type: Periodical
+          name: International Journal of Epidemiology
         volumeNumber: 45
       issueNumber: 6
-      pageEnd: 1808
-      pageStart: 1787
+    pageEnd: 1808
+    pageStart: 1787
     title: >-
       The tale wagged by the DAG: broadening the scope of causal inference and
       explanation for epidemiology
@@ -817,11 +844,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of the American Statistical Association
+        isPartOf:
+          type: Periodical
+          name: Journal of the American Statistical Association
         volumeNumber: 81
       issueNumber: 396
-      pageEnd: 960
-      pageStart: 945
+    pageEnd: 960
+    pageStart: 945
     title: Statistics and causal inference
   - type: Article
     id: pmed-1002858-ref018
@@ -838,9 +867,8 @@ references:
           - J
     datePublished: '2019'
     isPartOf:
-      type: PublicationVolume
-      title: Causal Inference
-    title: ''
+      type: Periodical
+      name: Causal Inference
   - type: Article
     id: pmed-1002858-ref019
     authors:
@@ -856,9 +884,8 @@ references:
           - A
     datePublished: '1894'
     isPartOf:
-      type: PublicationVolume
-      title: On Summer-Autumnal Fever
-    title: ''
+      type: Periodical
+      name: On Summer-Autumnal Fever
   - type: Article
     id: pmed-1002858-ref020
     authors:
@@ -894,8 +921,8 @@ references:
           - LJ
     datePublished: '2009'
     isPartOf:
-      type: PublicationVolume
-      title: Critical Care Medicine
+      type: Periodical
+      name: Critical Care Medicine
     title: >-
       N-acetylcysteine as adjunctive treatment in severe malaria: A randomized,
       double-blinded placebo-controlled clinical trial
@@ -937,11 +964,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clinical Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: Clinical Infectious Diseases
         volumeNumber: 37
       issueNumber: 1
-      pageEnd: 16
-      pageStart: 7
+    pageEnd: 16
+    pageStart: 7
     title: >-
       Randomized comparison of artesunate and quinine in the treatment of severe
       falciparum malaria
@@ -983,7 +1012,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS ONE
+        isPartOf:
+          type: Periodical
+          name: PLoS ONE
         volumeNumber: 6
       issueNumber: 11
     title: >-
@@ -1028,11 +1059,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Journal of Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: The Journal of Infectious Diseases
         volumeNumber: 209
       issueNumber: 1
-      pageEnd: 129
-      pageStart: 120
+    pageEnd: 129
+    pageStart: 120
     title: >-
       Randomized controlled trial of levamisole hydrochloride as adjunctive
       therapy in severe falciparum malaria with high parasitemia
@@ -1074,11 +1107,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Clinical Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: Clinical Infectious Diseases
         volumeNumber: 67
       issueNumber: 7
-      pageEnd: 999
-      pageStart: 991
+    pageEnd: 999
+    pageStart: 991
     title: >-
       Acetaminophen as a Renoprotective Adjunctive Treatment in Patients With
       Severe and Moderately Severe Falciparum Malaria: A Randomized, Controlled,
@@ -1121,11 +1156,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet
+        isPartOf:
+          type: Periodical
+          name: The Lancet
         volumeNumber: 334
       issueNumber: 8675
-      pageEnd: 1316
-      pageStart: 1313
+    pageEnd: 1316
+    pageStart: 1313
     title: >-
       Open comparison of intramuscular chloroquine and quinine in children with
       severe chloroquine-sensitive falciparum malaria
@@ -1167,10 +1204,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Malaria Journal
+        isPartOf:
+          type: Periodical
+          name: Malaria Journal
         volumeNumber: 9
       issueNumber: 1
-      pageStart: 97
+    pageStart: 97
     title: >-
       Randomized controlled trial of artesunate or artemether in Vietnamese
       adults with severe falciparum malaria
@@ -1212,11 +1251,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: New England Journal of Medicine
+        isPartOf:
+          type: Periodical
+          name: New England Journal of Medicine
         volumeNumber: 335
       issueNumber: 2
-      pageEnd: 83
-      pageStart: 76
+    pageEnd: 83
+    pageStart: 76
     title: >-
       A controlled trial of artemether or quinine in Vietnamese adults with
       severe falciparum malaria
@@ -1258,11 +1299,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet
+        isPartOf:
+          type: Periodical
+          name: The Lancet
         volumeNumber: 376
       issueNumber: 9753
-      pageEnd: 1657
-      pageStart: 1647
+    pageEnd: 1657
+    pageStart: 1647
     title: >-
       Artesunate versus quinine in the treatment of severe falciparum malaria in
       African children (AQUAMAT): an open-label, randomised trial
@@ -1294,16 +1337,17 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of Statistical Software
+        isPartOf:
+          type: Periodical
+          name: Journal of Statistical Software
         volumeNumber: 67
       issueNumber: 1
-      pageEnd: 48
-      pageStart: 1
+    pageEnd: 48
+    pageStart: 1
     title: Fitting Linear Mixed-Effects Models Using lme4
   - type: Article
     id: pmed-1002858-ref030
     authors: []
-    title: ''
   - type: Article
     id: pmed-1002858-ref031
     authors:
@@ -1324,11 +1368,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of Statistical Software
+        isPartOf:
+          type: Periodical
+          name: Journal of Statistical Software
         volumeNumber: 43
       issueNumber: 13
-      pageEnd: 23
-      pageStart: 1
+    pageEnd: 23
+    pageStart: 1
     title: 'ipw: An R Package for Inverse Probability Weighting'
   - type: Article
     id: pmed-1002858-ref032
@@ -1343,11 +1389,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of Statistical Software
+        isPartOf:
+          type: Periodical
+          name: Journal of Statistical Software
         volumeNumber: 9
       issueNumber: 1
-      pageEnd: 19
-      pageStart: 1
+    pageEnd: 19
+    pageStart: 1
     title: Analysis of Complex Survey Samples
   - type: Article
     id: pmed-1002858-ref033
@@ -1367,11 +1415,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Statistics in Medicine
+        isPartOf:
+          type: Periodical
+          name: Statistics in Medicine
         volumeNumber: 34
       issueNumber: 28
-      pageEnd: 3679
-      pageStart: 3661
+    pageEnd: 3679
+    pageStart: 3661
     title: >-
       Moving towards best practice when using inverse probability of treatment
       weighting (IPTW) using the propensity score to estimate causal treatment
@@ -1389,11 +1439,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Blood
+        isPartOf:
+          type: Periodical
+          name: Blood
         volumeNumber: 84
       issueNumber: 11
-      pageEnd: 3636
-      pageStart: 3613
+    pageEnd: 3636
+    pageStart: 3613
     title: G6PD deficiency
   - type: Article
     id: pmed-1002858-ref035
@@ -1433,7 +1485,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: British Journal of Haematology
+        isPartOf:
+          type: Periodical
+          name: British Journal of Haematology
         volumeNumber: 150
       issueNumber: 2
     title: >-
@@ -1477,11 +1531,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Human Genetics
+        isPartOf:
+          type: Periodical
+          name: Human Genetics
         volumeNumber: 129
       issueNumber: 3
-      pageEnd: 317
-      pageStart: 307
+    pageEnd: 317
+    pageStart: 307
     title: >-
       Genetic association analysis highlights new loci that modulate
       hematological trait variation in Caucasians and African Americans
@@ -1523,7 +1579,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet Haematology
+        isPartOf:
+          type: Periodical
+          name: The Lancet Haematology
         volumeNumber: 2
       issueNumber: 10
     title: >-
@@ -1567,11 +1625,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Lancet
+        isPartOf:
+          type: Periodical
+          name: The Lancet
         volumeNumber: 378
       issueNumber: 9799
-      pageEnd: 1323
-      pageStart: 1316
+    pageEnd: 1323
+    pageStart: 1316
     title: >-
       Relation between falciparum malaria and bacteraemia in Kenyan children: a
       population-based, case-control study and a longitudinal study
@@ -1593,10 +1653,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC Medicine
+        isPartOf:
+          type: Periodical
+          name: BMC Medicine
         volumeNumber: 12
       issueNumber: 1
-      pageStart: 31
+    pageStart: 31
     title: >-
       Invasive bacterial co-infection in African children with Plasmodium
       falciparum malaria: a systematic review
@@ -1638,11 +1700,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: International Journal of Epidemiology
+        isPartOf:
+          type: Periodical
+          name: International Journal of Epidemiology
         volumeNumber: 39
       issueNumber: 2
-      pageEnd: 420
-      pageStart: 417
+    pageEnd: 420
+    pageStart: 417
     title: Illustrating bias due to conditioning on a collider
   - type: Article
     id: pmed-1002858-ref041
@@ -1682,10 +1746,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: BMC Medicine
+        isPartOf:
+          type: Periodical
+          name: BMC Medicine
         volumeNumber: 13
       issueNumber: 1
-      pageStart: 21
+    pageStart: 21
     title: >-
       Anaemia and blood transfusion in African children presenting to hospital
       with severe febrile illness
@@ -1702,10 +1768,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Malaria Journal
+        isPartOf:
+          type: Periodical
+          name: Malaria Journal
         volumeNumber: 17
       issueNumber: 1
-      pageStart: 371
+    pageStart: 371
     title: Anaemia and malaria
   - type: Article
     id: pmed-1002858-ref043
@@ -1725,11 +1793,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Annals of Internal Medicine
+        isPartOf:
+          type: Periodical
+          name: Annals of Internal Medicine
         volumeNumber: 167
       issueNumber: 4
-      pageEnd: 274
-      pageStart: 268
+    pageEnd: 274
+    pageStart: 268
     title: 'Sensitivity analysis in observational research: introducing the E-value'
   - type: Article
     id: pmed-1002858-ref044
@@ -1769,11 +1839,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Critical Care Medicine
+        isPartOf:
+          type: Periodical
+          name: Critical Care Medicine
         volumeNumber: 28
       issueNumber: 5
-      pageEnd: 1362
-      pageStart: 1353
+    pageEnd: 1362
+    pageStart: 1353
     title: >-
       Effects of dopamine and epinephrine infusions on renal hemodynamics in
       severe malaria and severe sepsis
@@ -1800,11 +1872,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Acta Tropica
+        isPartOf:
+          type: Periodical
+          name: Acta Tropica
         volumeNumber: 89
       issueNumber: 3
-      pageEnd: 317
-      pageStart: 309
+    pageEnd: 317
+    pageStart: 309
     title: >-
       Reduced microcirculatory flow in severe falciparum malaria:
       pathophysiology and electron-microscopic pathology
@@ -1847,11 +1921,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The Journal of Infectious Diseases
+        isPartOf:
+          type: Periodical
+          name: The Journal of Infectious Diseases
         volumeNumber: 197
       issueNumber: 1
-      pageEnd: 84
-      pageStart: 79
+    pageEnd: 84
+    pageStart: 79
     title: >-
       Direct In Vivo Assessment of Microcirculatory Dysfunction in Severe
       Falciparum Malaria
@@ -1893,11 +1969,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Journal of Experimental Medicine
+        isPartOf:
+          type: Periodical
+          name: Journal of Experimental Medicine
         volumeNumber: 204
       issueNumber: 11
-      pageEnd: 2704
-      pageStart: 2693
+    pageEnd: 2704
+    pageStart: 2693
     title: >-
       Impaired nitric oxide bioavailability and l-arginine–reversible
       endothelial dysfunction in adults with falciparum malaria
@@ -1934,11 +2012,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: The American Journal of Tropical Medicine and Hygiene
+        isPartOf:
+          type: Periodical
+          name: The American Journal of Tropical Medicine and Hygiene
         volumeNumber: 72
       issueNumber: 6
-      pageEnd: 665
-      pageStart: 660
+    pageEnd: 665
+    pageStart: 660
     title: >-
       Attenuation of cytoadherence of Plasmodium falciparum to microvascular
       endothelium under flow by hemodilution
@@ -1970,11 +2050,13 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Transfusion
+        isPartOf:
+          type: Periodical
+          name: Transfusion
         volumeNumber: 57
       issueNumber: 9
-      pageEnd: 2266
-      pageStart: 2257
+    pageEnd: 2266
+    pageStart: 2257
     title: Optimal hematocrit in an artificial microvascular network
   - type: Article
     id: pmed-1002858-ref050
@@ -2009,10 +2091,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Nature Genetics
+        isPartOf:
+          type: Periodical
+          name: Nature Genetics
         volumeNumber: 46
       issueNumber: 11
-      pageStart: 1197
+    pageStart: 1197
     title: Reappraisal of known malaria resistance loci in a large multicenter study
   - type: Article
     id: pmed-1002858-ref051
@@ -2052,10 +2136,12 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: Trials
+        isPartOf:
+          type: Periodical
+          name: Trials
         volumeNumber: 16
       issueNumber: 1
-      pageStart: 593
+    pageStart: 593
     title: >-
       Transfusion and Treatment of severe anaemia in African children (TRACT): a
       study protocol for a randomised controlled trial
@@ -2098,7 +2184,9 @@ references:
       type: PublicationIssue
       isPartOf:
         type: PublicationVolume
-        title: PLoS Med
+        isPartOf:
+          type: Periodical
+          name: PLoS Med
         volumeNumber: 9
       issueNumber: 8
     title: >-
