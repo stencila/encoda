@@ -907,6 +907,55 @@ function encodeAuthorsProperty(
 }
 
 /**
+ * Encode the `CreativeWork.isPartOf` property to HTML.
+ *
+ * This function is intended primarily for encoding the `isPartOf`
+ * property of works that are themselves in the `references`
+ * property of another work.
+ *
+ * It encodes the property "recursively upwards"
+ * so that the ancestor `Periodical`, `PublicationVolume` and
+ * `PublicationIssue` and `pageStart` etc nodes appear in that
+ * order. e.g. `Peptides, 32(6), 1335-1355`
+ */
+function encodeIsPartOfProperty(
+  work: stencila.CreativeWork['isPartOf'],
+  tag: keyof HTMLElementTagNameMap = 'span'
+): HTMLElement | undefined {
+  if (work === undefined) return undefined
+
+  const md = { attrs: microdata(work, 'isPartOf') }
+  if (stencila.isA('PublicationIssue', work)) {
+    const { issueNumber, isPartOf } = work
+    return h(
+      tag,
+      md,
+      encodeMaybe(issueNumber, issueNumber =>
+        h('span', microdata(issueNumber, 'issueNumber'), issueNumber)
+      ),
+      encodeIsPartOfProperty(isPartOf)
+    )
+  } else if (stencila.isA('PublicationVolume', work)) {
+    const { volumeNumber, isPartOf } = work
+    return h(
+      tag,
+      md,
+      encodeMaybe(volumeNumber, volumeNumber =>
+        h('span', microdata(volumeNumber, 'volumeNumber'), volumeNumber)
+      ),
+      encodeIsPartOfProperty(isPartOf)
+    )
+  } else if (stencila.isA('Periodical', work)) {
+    const { name } = work
+    return h(
+      tag,
+      md,
+      encodeMaybe(name, name => h('span', microdata(name, 'name'), name))
+    )
+  }
+}
+
+/**
  * Encode a `Date` node as a HTML `<time>` element.
  *
  * Note that since a `Date` is a basic, atomic https://schema.org/DataType
@@ -950,13 +999,21 @@ function encodeReferencesProperty(
       references.map(ref => {
         const md = microdata(ref, 'references', 'item')
         if (typeof ref === 'string') return h('li', md, ref)
-        const { authors = [], datePublished, title, url, publisher } = ref
+        const {
+          authors = [],
+          datePublished,
+          title,
+          url,
+          isPartOf,
+          publisher
+        } = ref
         return h(
           'li',
           { attrs: { ...md, id: ref.id } },
           encodeAuthorsProperty(authors),
           encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
           encodeTitleProperty(title, 'span'),
+          encodeIsPartOfProperty(isPartOf),
           encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
           encodePublisherProperty(publisher),
           isA('Article', ref) ? encodeImageProperty(ref) : []

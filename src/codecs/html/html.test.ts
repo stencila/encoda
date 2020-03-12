@@ -74,9 +74,6 @@ const e = async (
 const d = async (htmlString: string): Promise<stencila.Node> =>
   decode(vfile.load(htmlString))
 
-const json2html = async (name: string) =>
-  htmlCodec.dump(await jsonCodec.read(fixture(name)))
-
 test('decode', async () => {
   expect(await d(attrs.html)).toEqual(attrs.node)
   expect(await d(dt.html)).toEqual(dt.node)
@@ -86,10 +83,14 @@ describe('encode', () => {
   test('kitchen-sink', async () =>
     expect(await e(kitchenSink)).toMatchFile(snapshot('kitchen-sink.html')))
 
-  test('elife/50356', async () =>
-    expect(await json2html('article/journal/elife/50356.json')).toMatchFile(
-      snapshot('elife-50356.html')
-    ))
+  test.each([
+    ['article/journal/elife/50356.json', 'elife-50356.html'],
+    ['article/journal/plosone/0229075.json', 'plosone-0229075.html']
+  ])('%s', async (fix, snap) =>
+    expect(
+      await htmlCodec.dump(await jsonCodec.read(fixture(fix)))
+    ).toMatchFile(snapshot(snap))
+  )
 })
 
 describe.skip('encode', () => {
