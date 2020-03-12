@@ -920,11 +920,7 @@ function encodeDate(
   property?: string
 ): HTMLElement {
   const value = stencila.isA('Date', date) ? date.value : date
-  return h(
-    'time',
-    { ...microdata(value, property), datetime: value },
-    value
-  )
+  return h('time', { ...microdata(value, property), datetime: value }, value)
 }
 
 function encodeDescriptionProperty(
@@ -947,21 +943,27 @@ function encodeReferencesProperty(
 ): HTMLElement {
   return h(
     'section',
-    { [stencilaItemProp]: 'references' },
+    { attrs: microdata(references, 'references', 'array') },
     h('h2', { [stencilaItemType]: microdataItemtype('Heading') }, 'References'),
-    h('ol', references.map(encodeReference))
-  )
-}
-
-function encodeReference(
-  reference: string | stencila.CreativeWork
-): HTMLElement {
-  return typeof reference === 'string'
-    ? h('li', reference)
-    : encodeCreativeWork(reference, {
-        attrs: { id: reference.id, itemprop: 'citation' },
-        as: 'li'
+    h(
+      'ol',
+      references.map(ref => {
+        const md = microdata(ref, 'references', 'item')
+        if (typeof ref === 'string') return h('li', md, ref)
+        const { authors = [], datePublished, title, url, publisher } = ref
+        return h(
+          'li',
+          { attrs: { ...md, id: ref.id } },
+          encodeAuthorsProperty(authors),
+          encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
+          encodeTitleProperty(title, 'span'),
+          encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
+          encodePublisherProperty(publisher),
+          isA('Article', ref) ? encodeImageProperty(ref) : []
+        )
       })
+    )
+  )
 }
 
 interface CreativeWorkOptions {
