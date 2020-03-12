@@ -1508,22 +1508,13 @@ function decodeCodeBlock(elem: HTMLPreElement): stencila.CodeBlock {
 }
 
 /**
- * Encode a `stencila.CodeBlock` to a `<pre><code class="language-xxx">` element.
+ * Encode a `CodeBlock` to a `<pre class="language-xxx"><code>` element.
  *
  * If the `CodeBlock` has a `meta` property, any keys are added as attributes to
  * the `<pre>` element with a `data-` prefix.
  */
-function encodeCodeBlock(block: stencila.CodeBlock): HTMLPreElement {
-  const { text, programmingLanguage, meta = {} } = block
-  const code = encodeCodeFragment(
-    stencila.codeFragment({ text, programmingLanguage }),
-    false
-  )
-  return h(
-    'pre',
-    { attrs: { ...encodeDataAttrs(meta), ...microdata(block) } },
-    code
-  )
+function encodeCodeBlock(block: stencila.CodeBlock): HTMLElement {
+  return encodeCode(block, 'pre', h('code', { innerHTML: escape(block.text) }))
 }
 
 /**
@@ -1922,21 +1913,34 @@ function decodeCodeFragment(elem: HTMLElement): stencila.CodeFragment {
 }
 
 /**
+ * Encode a `CodeFragment` or `CodeBlock` to an element.
+ */
+function encodeCode(
+  node: stencila.CodeFragment | stencila.CodeBlock,
+  tag: keyof HTMLElementTagNameMap,
+  ...children: HTMLElement[]
+): HTMLElement {
+  const { meta = {}, programmingLanguage } = node
+  return h(
+    tag,
+    {
+      attrs: { ...microdata(node), ...encodeDataAttrs(meta) },
+      class:
+        programmingLanguage !== undefined
+          ? `language-${programmingLanguage}`
+          : undefined
+    },
+    children
+  )
+}
+
+/**
  * Encode a `stencila.CodeFragment` to a `<code>` element.
  */
-function encodeCodeFragment(
-  code: stencila.CodeFragment,
-  dataAttrs = true
-): HTMLElement {
-  return h('code', {
-    attrs: microdata(code),
-    class:
-      code.programmingLanguage !== undefined
-        ? `language-${code.programmingLanguage}`
-        : undefined,
-    innerHTML: escape(code.text),
-    ...(dataAttrs ? encodeDataAttrs(code.meta ?? {}) : {})
-  })
+function encodeCodeFragment(codeFrag: stencila.CodeFragment): HTMLElement {
+  const elem = encodeCode(codeFrag, 'code')
+  elem.innerHTML = escape(codeFrag.text)
+  return elem
 }
 
 /**
