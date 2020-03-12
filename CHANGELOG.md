@@ -1,3 +1,18 @@
+## [0.90.3](https://github.com/stencila/encoda/compare/v0.90.2...v0.90.3) (2020-03-12)
+
+
+### Bug Fixes
+
+* **Dependencies:** Upgrade schema ([460de0e](https://github.com/stencila/encoda/commit/460de0e9d9790d6d2183535aa4c2c1dae6143284))
+* **HTML:** Add encoding of Article.isPartOf in references ([b7939e3](https://github.com/stencila/encoda/commit/b7939e38163adee9fce15318bdd987e70698ff08)), closes [#455](https://github.com/stencila/encoda/issues/455)
+* **HTML:** Change order that properties of a reference are encoded ([a0521e2](https://github.com/stencila/encoda/commit/a0521e2a0542dd75548c28d3ed118b5d085ca106)), closes [#455](https://github.com/stencila/encoda/issues/455)
+* **HTML:** Encode date more concisely ([5bd2995](https://github.com/stencila/encoda/commit/5bd299589ee0662ebf9f8b4cf6aae3a4063df9ac))
+* **HTML:** Improve encding of Person names ([f685597](https://github.com/stencila/encoda/commit/f68559732cf5ecec23adf8ea09f39dc4f520bf6a)), closes [#454](https://github.com/stencila/encoda/issues/454)
+* **HTML:** remove itemtype and itemscope on inner code element of CodeBlock ([fcd05f3](https://github.com/stencila/encoda/commit/fcd05f3a35d8a66f60354c069a01a7eebb3df2fc)), closes [#434](https://github.com/stencila/encoda/issues/434)
+* **JATS:** Improve decoding of references; add fixture ([dc72a94](https://github.com/stencila/encoda/commit/dc72a94aeae766840ca9e428083deb746abb20cb))
+* **JATS:** Update encoding of functions for isPartOf property ([0888241](https://github.com/stencila/encoda/commit/08882419f68880777bf1873364e289021e8edea8))
+* **Pandoc:** Update Pandoc to 2.9.2 ([92b0ff6](https://github.com/stencila/encoda/commit/92b0ff6ff6ef0ba2e7d43e515ecf2cf55ad8e4c9))
+
 ## [0.90.2](https://github.com/stencila/encoda/compare/v0.90.1...v0.90.2) (2020-03-11)
 
 
