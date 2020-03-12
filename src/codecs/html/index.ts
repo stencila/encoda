@@ -799,8 +799,8 @@ function encodePublisherProperty(
  * Encode the `Article.title` property to HTML.
  *
  * The GSDTT requires that the `Article.headline` property be a string
- * less than 110 characters so, similarly to `Article.author.name`, a
- * headline value is calculated.
+ * less than 110 characters so, if it isn't (to long, or structured content),
+ * stringify and/or truncate it and use the* `content` attribute.
  */
 function encodeTitleProperty(
   title: stencila.Article['title'],
@@ -808,14 +808,15 @@ function encodeTitleProperty(
 ): HTMLElement | undefined {
   if (title === undefined) return undefined
 
-  const headline = truncate(TxtCodec.stringify(title), headlineMaxLength)
-
+  const content = truncate(TxtCodec.stringify(title), headlineMaxLength)
   return h(
     tag,
-    { [headline === title ? 'itemprop' : stencilaItemProp]: 'headline' },
-    headline === title
-      ? undefined
-      : h('meta', { itemprop: 'headline', content: headline }),
+    {
+      attrs: {
+        ...microdata(title, 'title'),
+        ...(content !== title ? { content } : {})
+      }
+    },
     typeof title === 'string' ? title : encodeNodes(title)
   )
 }
