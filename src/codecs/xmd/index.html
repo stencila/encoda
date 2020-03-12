@@ -44,15 +44,15 @@
         equivalent to Stencila&#39;s <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">CodeExpr</code>. They are declared using
         Markdown code spans prefixed by the language label e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-markdown" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">The answer is `r x * y`</code></pre>
+      <pre class="language-markdown" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>The answer is `r x * y`</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Inline code chunks are parsed to
         a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CodeExpr</code> with
         <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">programmingLanguage</code> and <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">text</code> properties set
         e.g.</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>{
   &quot;type&quot;: &quot;CodeExpr&quot;,
   &quot;programmingLanguage&quot;: &quot;r&quot;,
   &quot;text&quot;: &quot;x * y&quot;
@@ -64,7 +64,7 @@
           itemtype="http://schema.stenci.la/CodeFragment">CodeChunk</code>. They are declared using
         Markdown fenced code blocks with attributes starting with the language label and,
         optionally, a chunk label and other chunk options e.g.</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-markdown" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">```{r myplot, fig.width=6, fig.height=7}
+      <pre class="language-markdown" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>```{r myplot, fig.width=6, fig.height=7}
 plot(x,y)
 ```</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Here <code itemscope=""
@@ -83,7 +83,7 @@ plot(x,y)
           itemtype="http://schema.stenci.la/CodeFragment">name</code> property and other options go
         into the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">meta</code>
         property e.g.</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>{
   &quot;type&quot;: &quot;CodeChunk&quot;,
   &quot;programmingLanguage&quot;: &quot;r&quot;,
   &quot;name&quot;: &quot;myplot&quot;,

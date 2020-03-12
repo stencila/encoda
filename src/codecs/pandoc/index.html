@@ -46,9 +46,9 @@
         test Markdown or HTML snippets at the console like this (<code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">jq</code> used for ease of viewing
         output):</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">echo &#39;A &quot;quote&quot;&#39; | ./vendor/bin/pandoc --from markdown --to json | jq .blocks</code></pre>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">[
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>echo &#39;A &quot;quote&quot;&#39; | ./vendor/bin/pandoc --from markdown --to json | jq .blocks</code></pre>
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>[
 {
     &quot;t&quot;: &quot;Para&quot;,
     &quot;c&quot;: [

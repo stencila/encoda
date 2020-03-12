@@ -41,11 +41,11 @@
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">This codec is primarily targeted
         at developers. Given that it is more forgiving and it has less typing overhead, JSON5 can be
         a little more convenient than JSON for quickly testing encoding of Stencila nodes e.g</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert &quot;{type:&#39;ImageObject&#39;, contentUrl: &#39;https://example.org&#39;, text: &#39;alt&#39;, title: &#39;title&#39;}&quot; --from json5 --to html</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>stencila convert &quot;{type:&#39;ImageObject&#39;, contentUrl: &#39;https://example.org&#39;, text: &#39;alt&#39;, title: &#39;title&#39;}&quot; --from json5 --to html</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Versus using JSON:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert &#39;{&quot;type&quot;:&quot;ImageObject&quot;, &quot;contentUrl&quot;: &quot;https://example.org&quot;, &quot;text&quot;: &quot;alt&quot;, &quot;title&quot;: &quot;title&quot;}&#39; --from json --to html</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>stencila convert &#39;{&quot;type&quot;:&quot;ImageObject&quot;, &quot;contentUrl&quot;: &quot;https://example.org&quot;, &quot;text&quot;: &quot;alt&quot;, &quot;title&quot;: &quot;title&quot;}&#39; --from json --to html</code></pre>
     </article>
   </body>
 

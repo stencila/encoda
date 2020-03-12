@@ -641,13 +641,13 @@
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Serveral of the codecs in Encoda,
         deal with fetching content from a particlar publisher. For example, to get an eLife article
         and read it in Markdown:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>stencila convert https://elifesciences.org/articles/45187v2 ye-et-al-2019.md</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Some of these publisher codecs
         deal with meta data. e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to yaml</code></pre>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">type: Article
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>stencila convert &quot;Watson and Crick 1953&quot; - --from crossref --to yaml</code></pre>
+      <pre class="language-yaml" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>type: Article
 title: Genetical Implications of the Structure of Deoxyribonucleic Acid
 authors:
   - familyNames:
@@ -793,8 +793,8 @@ isPartOf:
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">stencila</code>, can lag
         behind the version in this repo. So if you want the latest functionality, install Encoda as
         a Node.js package:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm install @stencila/encoda --global</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm install @stencila/encoda --global</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="use">Use</h2>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda is intended to be used
         primarily as a library for other applications. However, it comes with a simple command line
@@ -802,20 +802,20 @@ isPartOf:
           itemtype="http://schema.stenci.la/CodeFragment">convert</code> function directly.</p>
       <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-files">Converting
         files</h3>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert notebook.ipynb notebook.docx</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert notebook.ipynb notebook.docx</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Encoda will determine the input
         and output formats based on the file extensions. You can override these using the <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--from</code> and <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">--to</code> options. e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert notebook.ipynb notebook.xml --to jats</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert notebook.ipynb notebook.xml --to jats</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also convert to more than
         one file / format (in this case the <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">--to</code> argument only applies to the
         first output file) e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert report.docx report.Rmd report.html report.jats</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert report.docx report.Rmd report.html report.jats</code></pre>
       <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="converting-folders">Converting
         folders</h3>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can decode an entire
@@ -826,21 +826,21 @@ isPartOf:
           itemtype="http://schema.stenci.la/CodeFragment">Collection</code> using the <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">dir</code> codec into a tree
         of HTML files e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert myproject myproject-published --to dir --pattern &#39;**/*.{rmd, csv}&#39;</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert myproject myproject-published --to dir --pattern &#39;**/*.{rmd, csv}&#39;</code></pre>
       <h3 itemscope="" itemtype="http://schema.stenci.la/Heading"
         id="converting-command-line-input">Converting command line input</h3>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also read content from
         the first argument. In that case, you&#39;ll need to specifying the <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">--from</code> format e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert &quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot; --from json5 paragraph.md</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert &quot;{type: &#39;Paragraph&#39;, content: [&#39;Hello world!&#39;]}&quot; --from json5 paragraph.md</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can send output to the
         console by using <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">-</code>
         as the second argument and specifying the <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">--to</code> format e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert paragraph.md - --to yaml</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert paragraph.md - --to yaml</code></pre>
       <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="creating-zip-archives">
         Creating zip archives</h3>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Use the <code itemscope=""
@@ -902,27 +902,27 @@ isPartOf:
         <a href="https://github.com/stencila/executa" itemscope=""
           itemtype="http://schema.stenci.la/Link">Executa</a> API. Register Encoda so that it can be
         discovered by other executors on your machine,</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run register</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm run register</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can then use Encoda as a
         plugin for Executa that provides additional format conversion capabilities. For example, you
         can use the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">query</code>
         REPL on a Markdown document:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx executa query CHANGELOG.md --repl</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npx executa query CHANGELOG.md --repl</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can then use the REPL to
         explore the structure of the document and do things like create summary documents from it.
         For example, lets say from some reason we wanted to create a short JATS XML file with the
         five most recent releases of this package:</p>
       <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">jmp &gt; %format jats
+        itemtype="http://schema.stenci.la/CodeBlock"><code>jmp &gt; %format jats
 jmp &gt; %dest latest-releases.jats.xml
 jmp &gt; {type: &#39;Article&#39;, content: content[? type==`Heading` &amp;&amp; depth==`1`] | [1:5]}</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Which creates the <code
           itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">latest-major-releases.jats.xml</code>
         file:</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-xml" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+      <pre class="language-xml" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
 &lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
     &lt;front&gt;
@@ -941,7 +941,7 @@ jmp &gt; {type: &#39;Article&#39;, content: content[? type==`Heading` &amp;&amp;
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can query a document in any
         format supported by Encoda. As another example, lets&#39; fetch a CSV file from Github and
         get the names of it&#39;s columns:</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
+      <pre class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>npx executa query https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv --repl
 🛈 INFO  encoda:http Fetching &quot;https://gist.githubusercontent.com/jncraton/68beb88e6027d9321373/raw/381dcf8c0d4534d420d2488b9c60b1204c9f4363/starwars.csv&quot;
 jmp &gt; columns[].name
 [
@@ -986,23 +986,23 @@ jmp &gt;</code></pre>
         most welcome! Thank you!</p>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Clone the repository and install
         a development environment:</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">git clone https://github.com/stencila/encoda.git
+      <pre class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>git clone https://github.com/stencila/encoda.git
 cd encoda
 npm install</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can manually test conversion
         using the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">ts-node</code>
         and the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">cli.ts</code>
         script:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli -- convert simple.md simple.html</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm run cli -- convert simple.md simple.html</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There is a bash script to make
         that a little shorter and more like real life usage:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">./encoda convert simple.md simple.html</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>./encoda convert simple.md simple.html</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If that is a bit slow, compile
         the Typescript to Javascript first and use <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">node</code> directly:</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run build
+      <pre class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>npm run build
 node dist/cli convert simple.md simple.html</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">If you are using VSCode, you can
         use the <a
@@ -1010,32 +1010,32 @@ node dist/cli convert simple.md simple.html</code></pre>
           itemscope="" itemtype="http://schema.stenci.la/Link">Auto Attach feature</a> to attach to
         the CLI when running the <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">cli:debug</code> NPM script:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm run cli:debug -- convert simple.gdoc simple.ipynb</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="testing">Testing</h2>
       <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-tests-locally">Running
         tests locally</h3>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Run the test suite using:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm test</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm test</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Or, run a single test file e.g.
       </p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npx jest tests/xlsx.test.ts --watch</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npx jest tests/xlsx.test.ts --watch</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To get coverage statistics:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run cover</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm run cover</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">There&#39;s also a <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Makefile</code> if you prefer
         to run tasks that way e.g.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">make lint cover</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>make lint cover</code></pre>
       <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="running-test-in-docker">
         Running test in Docker</h3>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">You can also test this package
         using with a Docker container:</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">npm run test:docker</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>npm run test:docker</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="writing-tests">Writing tests
       </h2>
       <h4 itemscope="" itemtype="http://schema.stenci.la/Heading"
@@ -1048,7 +1048,7 @@ node dist/cli convert simple.md simple.html</code></pre>
           itemtype="http://schema.stenci.la/CodeFragment">nockRecord</code> helper function for this
         with the convention of starting the fixture file with <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">nock-record-</code> e.g.</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">const stopRecording = await nockRecord(&#39;nock-record-&lt;name-of-test&gt;.json&#39;)
+      <pre class="language-ts" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>const stopRecording = await nockRecord(&#39;nock-record-&lt;name-of-test&gt;.json&#39;)
 // Do some things that connect to the interwebs
 stopRecording()</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Note that the <code itemscope=""

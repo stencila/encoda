@@ -51,10 +51,11 @@
             itemscope="" itemtype="http://schema.stenci.la/CodeFragment">orcid</code></a> codec is
         used to fetch the metadata for that person and other data in the string is ignored. For
         example,</p>
-      <pre data-import="josiah" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Miss Josiah Carbeeeerry (https://orcid.org/0000-0002-1825-0097)</code></pre>
+      <pre class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="josiah"><code>Miss Josiah Carbeeeerry (https://orcid.org/0000-0002-1825-0097)</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
-      <pre data-export="josiah" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="josiah"><code>{
   &quot;id&quot;: &quot;http://orcid.org/0000-0002-1825-0097&quot;,
   &quot;type&quot;: &quot;Person&quot;,
   &quot;url&quot;: &quot;http://library.brown.edu/about/hay/carberry.php&quot;,
@@ -91,10 +92,11 @@
           itemtype="http://schema.stenci.la/CodeFragment">http://orcid.org/</code> or <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">ORCID</code>. For example,
         this raw ORCID,</p>
-      <pre data-import="stephen" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">0000-0002-9079-593X</code></pre>
+      <pre class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="stephen"><code>0000-0002-9079-593X</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to</p>
-      <pre data-export="stephen" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="stephen"><code>{
   &quot;id&quot;: &quot;http://orcid.org/0000-0002-9079-593X&quot;,
   &quot;type&quot;: &quot;Person&quot;,
   &quot;affiliations&quot;: [
@@ -170,10 +172,11 @@
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">All of these properties are
         optional and &quot;last name first followed by comma&quot; order is also supported. For
         example,</p>
-      <pre data-import="john" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Doe, J. PhD</code></pre>
+      <pre class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="john"><code>Doe, J. PhD</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
-      <pre data-export="john" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="john"><code>{
   &quot;givenNames&quot;: [
     &quot;J.&quot;
   ],
@@ -185,10 +188,11 @@
 }</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">whereas this, more complete
         example,</p>
-      <pre data-import="jane" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Judge Jane J. Jones PhD IV (http://example.org/jones/jane) &lt;jjjj@example.org&gt;</code></pre>
+      <pre class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="jane"><code>Judge Jane J. Jones PhD IV (http://example.org/jones/jane) &lt;jjjj@example.org&gt;</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded to,</p>
-      <pre data-export="jane" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="jane"><code>{
   &quot;givenNames&quot;: [
     &quot;Jane&quot;,
     &quot;J.&quot;
@@ -212,7 +216,8 @@
           itemtype="http://schema.stenci.la/CodeFragment">affiliations</code>) will be lost. For
         example, this <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Person</code> node,</p>
-      <pre data-import="jill" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="jill"><code>{
   &quot;type&quot;: &quot;Person&quot;,
   &quot;givenNames&quot;: [&quot;Jill&quot;, &quot;J.&quot;],
   &quot;familyNames&quot;: [&quot;James&quot;],
@@ -229,8 +234,8 @@
 }</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded by the <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">person</code> codec as,</p>
-      <pre data-export="jill" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Dr Jill J. James PhD &lt;jill@example.com&gt; (http://example.com/jill)</code></pre>
+      <pre class="language-person" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="jill"><code>Dr Jill J. James PhD &lt;jill@example.com&gt; (http://example.com/jill)</code></pre>
     </article>
   </body>
 

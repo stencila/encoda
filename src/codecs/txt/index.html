@@ -58,13 +58,13 @@
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Everything else is decoded to a
         <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code>. For
         example, this plain text content (with some Unicode characters),</p>
-      <pre data-import="ex1" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Yay, plain text! 👏</code></pre>
+      <pre class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="ex1"><code>Yay, plain text! 👏</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is decoded into a <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">string</code>, encoded in <a
           href="../json5" itemscope="" itemtype="http://schema.stenci.la/Link">JSON5</a> as,</p>
-      <pre data-export="ex1" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json5" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">&#39;Yay, plain text! 👏&#39;</code></pre>
+      <pre class="language-json5" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="ex1"><code>&#39;Yay, plain text! 👏&#39;</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="encoding">Encoding</h2>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">All <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Node</code> types are encoded as plain
@@ -84,7 +84,8 @@
         following <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Article</code>
         node, encoded as <a href="../json5" itemscope=""
           itemtype="http://schema.stenci.la/Link">JSON5</a>,</p>
-      <pre data-import="ex2" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json5" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json5" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="ex2"><code>{
   type: &#39;Article&#39;,
   title: &#39;My simple article&#39;,
   authors: [
@@ -103,8 +104,8 @@
 }</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">is encoded in <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">txt</code> as,</p>
-      <pre data-export="ex2" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">My first paragraph.</code></pre>
+      <pre class="language-txt" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="ex2"><code>My first paragraph.</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="invertability">Invertability
       </h2>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""

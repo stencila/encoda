@@ -48,7 +48,7 @@
         you will see that the response contains several headers, including <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> and <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Cache-Control</code>:</p>
-      <pre itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">$ curl -is https://data.cdc.gov/api/views/bi63-dtpu/rows.csv
+      <pre class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>$ curl -is https://data.cdc.gov/api/views/bi63-dtpu/rows.csv
 
 HTTP/1.1 200 OK
 ...
@@ -62,8 +62,8 @@ Cache-Control: public, must-revalidate, max-age=21600
           itemtype="http://schema.stenci.la/CodeFragment">http</code> codec it will transparently
         work out how to decode and cache the data using those header. For example, to fetch the CDC
         data and convert it to an Excel file.</p>
-      <pre itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">encoda convert https://data.cdc.gov/api/views/bi63-dtpu/rows.csv deaths.xslx</code></pre>
+      <pre class="language-bash" itemscope=""
+        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert https://data.cdc.gov/api/views/bi63-dtpu/rows.csv deaths.xslx</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">http</code> codec is often used to <code
           itemscope="" itemtype="http://schema.stenci.la/CodeFragment">include</code> or <code

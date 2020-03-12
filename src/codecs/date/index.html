@@ -45,7 +45,8 @@
           itemtype="http://schema.stenci.la/CodeFragment">value</code> property, which may include a
         time component. For example, this <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Date</code> in 1840:</p>
-      <pre data-import="waitangi" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="waitangi"><code>{
   &quot;type&quot;: &quot;Date&quot;,
   &quot;value&quot;: &quot;1840-02-05T12:20:56.000Z&quot;
 }</code></pre>
@@ -53,18 +54,19 @@
         time component will be preserved by the <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">date</code> codec, so the above date will
         be encoded as:</p>
-      <pre data-export="waitangi" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1840-02-05T12:20:56.000Z</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="waitangi"><code>1840-02-05T12:20:56.000Z</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">However, if the time component is
         <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">T00:00:00.000Z</code>
         (i.e. midnight UTC) then it will not be encoded. For example, midnight 1 January 1990:</p>
-      <pre data-import="ny1990" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">{
+      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-import="ny1990"><code>{
   &quot;type&quot;: &quot;Date&quot;,
   &quot;value&quot;: &quot;1990-01-01T00:00:00.000Z&quot;
 }</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">will be encoded as,</p>
-      <pre data-export="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1990-01-01</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-export="ny1990"><code>1990-01-01</code></pre>
       <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="decoding">Decoding</h2>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The decoding of dates is handled
         by Javascript&#39;s <a
@@ -74,18 +76,18 @@
         allows for various date formats to be handled. For example, the above <code itemscope=""
           itemtype="http://schema.stenci.la/CodeFragment">Date</code> for midnight 1 January 1990,
         would be decoded from all of the following:</p>
-      <pre data-equals="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1990</code></pre>
-      <pre data-equals="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1990-01-01</code></pre>
-      <pre data-equals="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1990-01-01T00:00:00.000Z</code></pre>
-      <pre data-equals="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">1 January, 1990</code></pre>
-      <pre data-equals="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Jan 1 1990</code></pre>
-      <pre data-equals="ny1990" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Jan 1 1990 0:00</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-equals="ny1990"><code>1990</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-equals="ny1990"><code>1990-01-01</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-equals="ny1990"><code>1990-01-01T00:00:00.000Z</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-equals="ny1990"><code>1 January, 1990</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-equals="ny1990"><code>Jan 1 1990</code></pre>
+      <pre class="language-date" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"
+        data-equals="ny1990"><code>Jan 1 1990 0:00</code></pre>
       <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">All decoded dates are assumed to
         be for the UTC timezone. If the string can not be decoded as a date, then a warning will be
         logged and a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Date</code>
