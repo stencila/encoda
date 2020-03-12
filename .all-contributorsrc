@@ -87,6 +87,7 @@
       "profile": "http://rgaiacs.com",
       "contributions": [
         "doc"
+      ]
     },
     {
       "login": "lollopus",
@@ -96,7 +97,27 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "FAtherden-eLife",
+      "name": "FAtherden-eLife",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/43879983?v=4",
+      "profile": "https://github.com/FAtherden-eLife",
+      "contributions": [
+        "bug",
+        "design"
+      ]
+    },
+    {
+      "login": "giorgiosironi",
+      "name": "Giorgio Sironi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/160299?v=4",
+      "profile": "https://giorgiosironi.com",
+      "contributions": [
+        "review"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "commitConvention": "angular"
 }
