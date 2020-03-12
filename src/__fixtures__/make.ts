@@ -25,6 +25,11 @@ const fixtures = [
   {
     src: 'https://elifesciences.org/articles/50356',
     dest: ['article', 'journal', 'elife', '50356.json']
+  },
+  {
+    src:
+      'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0229075',
+    dest: ['article', 'journal', 'plosone', '0229075.json']
   }
 ]
 

@@ -1,0 +1,4256 @@
+{
+  "type": "Article",
+  "authors": [
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedica Molecular Medicine SL, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Trilla-Fuertes"
+      ],
+      "givenNames": [
+        "Lucía"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Urology Service, Hospital Universitario 12 de Octubre, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Miranda"
+      ],
+      "givenNames": [
+        "Natalia"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Medical Oncology Service, Hospital Universitario 12 de Octubre, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Castellano"
+      ],
+      "givenNames": [
+        "Daniel"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Molecular Oncology and Pathology Lab, Hospital Universitario La Paz-IdiPAZ, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "López-Vacas"
+      ],
+      "givenNames": [
+        "Rocío"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Medical Oncology Service, Hospital Universitario 12 de Octubre, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Clínica Internacional S.A., Lima, Perú"
+        }
+      ],
+      "familyNames": [
+        "Farfán",
+        "Tello"
+      ],
+      "givenNames": [
+        "Carlos",
+        "A."
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Medical Oncology Service, Hospital Universitario 12 de Octubre, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "de",
+        "Velasco"
+      ],
+      "givenNames": [
+        "Guillermo"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Urology Department, Clínica Universidad de Navarra, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Villacampa"
+      ],
+      "givenNames": [
+        "Felipe"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedica Molecular Medicine SL, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "López-Camacho"
+      ],
+      "givenNames": [
+        "Elena"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedica Molecular Medicine SL, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Molecular Oncology and Pathology Lab, Hospital Universitario La Paz-IdiPAZ, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Prado-Vázquez"
+      ],
+      "givenNames": [
+        "Guillermo"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedica Molecular Medicine SL, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Molecular Oncology and Pathology Lab, Hospital Universitario La Paz-IdiPAZ, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Biomedical Research Networking Center on Oncology-CIBERONC, ISCIII, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Zapater-Moros"
+      ],
+      "givenNames": [
+        "Andrea"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedical Research Networking Center on Oncology-CIBERONC, ISCIII, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Medical Oncology Service, La Paz University Hospital-IdiPAZ, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Espinosa"
+      ],
+      "givenNames": [
+        "Enrique"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedica Molecular Medicine SL, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Molecular Oncology and Pathology Lab, Hospital Universitario La Paz-IdiPAZ, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Biomedical Research Networking Center on Oncology-CIBERONC, ISCIII, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Fresno",
+        "Vara"
+      ],
+      "givenNames": [
+        "Juan",
+        "Ángel"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Medical Oncology Service, La Paz University Hospital-IdiPAZ, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Pinto"
+      ],
+      "givenNames": [
+        "Álvaro"
+      ]
+    },
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Biomedica Molecular Medicine SL, Madrid, Spain"
+        },
+        {
+          "type": "Organization",
+          "name": "Molecular Oncology and Pathology Lab, Hospital Universitario La Paz-IdiPAZ, Madrid, Spain"
+        }
+      ],
+      "familyNames": [
+        "Gámez-Pozo"
+      ],
+      "givenNames": [
+        "Angelo"
+      ]
+    }
+  ],
+  "dateAccepted": {
+    "type": "Date",
+    "value": "2020-01-28"
+  },
+  "datePublished": {
+    "type": "Date",
+    "value": "2020-02-28"
+  },
+  "dateReceived": {
+    "type": "Date",
+    "value": "2019-12-05"
+  },
+  "description": [
+    {
+      "type": "Paragraph",
+      "content": [
+        "Renal cell carcinoma comprises a variety of entities, the most common being the clear-cell, papillary and chromophobe subtypes. These subtypes are related to different clinical evolution; however, most therapies have been developed for clear-cell carcinoma and there is not a specific treatment based on different subtypes. In this study, one hundred and sixty-four paraffin samples from primary nephrectomies for localized tumors were analyzed. MiRNAs were isolated and measured by microRNA arrays. Significance Analysis of Microarrays and Consensus Cluster algorithm were used to characterize different renal subtypes. The analyses showed that chromophobe renal tumors are a homogeneous group characterized by an overexpression of miR 1229, miR 10a, miR 182, miR 1208, miR 222, miR 221, miR 891b, miR 629-5p and miR 221-5p. On the other hand, clear cell renal carcinomas presented two different groups inside this histological subtype, with differences in miRNAs that regulate focal adhesion, transcription, apoptosis and angiogenesis processes. Specifically, one of the defined groups had an overexpression of proangiogenic microRNAs miR185, miR126 and miR130a. In conclusion, differences in miRNA expression profiles between histological renal subtypes were established. In addition, clear cell renal carcinomas had different expression of proangiogenic miRNAs. With the emergence of antiangiogenic drugs, these differences could be used as therapeutic targets in the future or as a selection method for tailoring personalized treatments."
+      ]
+    }
+  ],
+  "editors": [
+    {
+      "type": "Person",
+      "affiliations": [
+        {
+          "type": "Organization",
+          "name": "Universitat des Saarlandes, GERMANY"
+        }
+      ],
+      "familyNames": [
+        "Roemer"
+      ],
+      "givenNames": [
+        "Klaus"
+      ]
+    }
+  ],
+  "fundedBy": [
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Instituto de Salud Carlos III"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "PI07/1302"
+        }
+      ]
+    },
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Ministerio de Economía y Competitividad (ES)"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "DI-15-07614"
+        }
+      ]
+    },
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Ministerio de Economía y Competitividad (ES)"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "PTQ2018-009760"
+        }
+      ]
+    },
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Consejería de Educación, Juventud y Deporte, Comunidad de Madrid (ES)"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "IND2017/BMD7783"
+        }
+      ]
+    },
+    {
+      "type": "MonetaryGrant",
+      "funders": [
+        {
+          "type": "Organization",
+          "name": "Consejería de Educación, Juventud y Deporte, Comunidad de Madrid (ES)"
+        }
+      ],
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "value": "IND2018/BMD-9262"
+        }
+      ]
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "PropertyValue",
+      "name": "doi",
+      "propertyID": "https://registry.identifiers.org/registry/doi",
+      "value": "10.1371/journal.pone.0229075"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "publisher-id",
+      "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+      "value": "PONE-D-19-33682"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "elocation-id",
+      "propertyID": "https://registry.identifiers.org/registry/elocation-id",
+      "value": "e0229075"
+    }
+  ],
+  "isPartOf": {
+    "type": "PublicationVolume",
+    "isPartOf": {
+      "type": "Periodical",
+      "identifiers": [
+        {
+          "type": "PropertyValue",
+          "name": "nlm-ta",
+          "propertyID": "https://registry.identifiers.org/registry/nlm-ta",
+          "value": "PLoS ONE"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "publisher-id",
+          "propertyID": "https://registry.identifiers.org/registry/publisher-id",
+          "value": "plos"
+        },
+        {
+          "type": "PropertyValue",
+          "name": "pmc",
+          "propertyID": "https://registry.identifiers.org/registry/pmc",
+          "value": "plosone"
+        }
+      ],
+      "issns": [
+        "1932-6203"
+      ],
+      "publisher": {
+        "type": "Organization",
+        "name": "Public Library of Science"
+      },
+      "title": "PLOS ONE"
+    },
+    "volumeNumber": "15"
+  },
+  "licenses": [
+    {
+      "type": "CreativeWork",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "content": [
+        {
+          "type": "Paragraph",
+          "content": [
+            "This is an open access article distributed under the terms of the ",
+            {
+              "type": "Link",
+              "target": "http://creativecommons.org/licenses/by/4.0/",
+              "content": [
+                "Creative Commons Attribution License"
+              ]
+            },
+            ", which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited."
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref001",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Siegel"
+          ],
+          "givenNames": [
+            "RL"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Miller"
+          ],
+          "givenNames": [
+            "KD"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Jemal"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        }
+      ],
+      "datePublished": "2019",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "CA Cancer J Clin"
+          },
+          "volumeNumber": 69
+        },
+        "issueNumber": 1
+      },
+      "pageEnd": 34,
+      "pageStart": 7,
+      "title": "Cancer statistics, 2019"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref002",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Janzen"
+          ],
+          "givenNames": [
+            "NK"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kim"
+          ],
+          "givenNames": [
+            "HL"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Figlin"
+          ],
+          "givenNames": [
+            "RA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Belldegrun"
+          ],
+          "givenNames": [
+            "AS"
+          ]
+        }
+      ],
+      "datePublished": "2003",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Urol Clin North Am"
+          },
+          "volumeNumber": 30
+        },
+        "issueNumber": 4
+      },
+      "pageEnd": 52,
+      "pageStart": 843,
+      "title": "Surveillance after radical or partial nephrectomy for localized renal cell carcinoma and management of recurrent disease"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref003",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Janowitz"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Welsh"
+          ],
+          "givenNames": [
+            "SJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zaki"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mulders"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Eisen"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        }
+      ],
+      "datePublished": "2013",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Semin Oncol"
+          },
+          "volumeNumber": 40
+        },
+        "issueNumber": 4
+      },
+      "pageEnd": 91,
+      "pageStart": 482,
+      "title": "Adjuvant therapy in renal cell carcinoma-past, present, and future"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref004",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Staehler"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Motzer"
+          ],
+          "givenNames": [
+            "RJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "George"
+          ],
+          "givenNames": [
+            "DJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pandha"
+          ],
+          "givenNames": [
+            "HS"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Donskov"
+          ],
+          "givenNames": [
+            "F"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Escudier"
+          ],
+          "givenNames": [
+            "B"
+          ]
+        }
+      ],
+      "datePublished": "2018",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Ann Oncol"
+          },
+          "volumeNumber": 29
+        },
+        "issueNumber": 10
+      },
+      "pageEnd": 104,
+      "pageStart": 2098,
+      "title": "Adjuvant sunitinib in patients with high-risk renal cell carcinoma: safety, therapy management, and patient-reported outcomes in the S-TRAC trial"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref005",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lawrence"
+          ],
+          "givenNames": [
+            "NJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Martin"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Davis"
+          ],
+          "givenNames": [
+            "ID"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Troon"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sengupta"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Hovey"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        }
+      ],
+      "datePublished": "2018",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Kidney Cancer"
+          },
+          "volumeNumber": 2
+        },
+        "issueNumber": 2
+      },
+      "pageEnd": 31,
+      "pageStart": 123,
+      "title": "What Survival Benefits are Needed to Make Adjuvant Sorafenib Worthwhile After Resection of Intermediate- or High-Risk Renal Cell Carcinoma? Clinical Investigators' Preferences in the SORCE Trial"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref006",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Motzer"
+          ],
+          "givenNames": [
+            "RJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Haas"
+          ],
+          "givenNames": [
+            "NB"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Donskov"
+          ],
+          "givenNames": [
+            "F"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gross-Goupil"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Varlamov"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kopyltsov"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        }
+      ],
+      "datePublished": "2017",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "J Clin Oncol"
+          },
+          "volumeNumber": 35
+        },
+        "issueNumber": 35
+      },
+      "pageEnd": 23,
+      "pageStart": 3916,
+      "title": "Randomized Phase III Trial of Adjuvant Pazopanib Versus Placebo After Nephrectomy in Patients With Localized or Locally Advanced Renal Cell Carcinoma"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref007",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gross-Goupil"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kwon"
+          ],
+          "givenNames": [
+            "TG"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Eto"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ye"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Miyake"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Seo"
+          ],
+          "givenNames": [
+            "SI"
+          ]
+        }
+      ],
+      "datePublished": "2018",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Ann Oncol"
+          },
+          "volumeNumber": 29
+        },
+        "issueNumber": 12
+      },
+      "pageEnd": 8,
+      "pageStart": 2371,
+      "title": "Axitinib versus placebo as an adjuvant treatment of renal cell carcinoma: results from the phase III, randomized ATLAS trial"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref008",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Moch"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Cubilla"
+          ],
+          "givenNames": [
+            "AL"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Humphrey"
+          ],
+          "givenNames": [
+            "PA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Reuter"
+          ],
+          "givenNames": [
+            "VE"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ulbright"
+          ],
+          "givenNames": [
+            "TM"
+          ]
+        }
+      ],
+      "datePublished": "2016",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Eur Urol"
+          },
+          "volumeNumber": 70
+        },
+        "issueNumber": 1
+      },
+      "pageEnd": 105,
+      "pageStart": 93,
+      "title": "The 2016 WHO Classification of Tumours of the Urinary System and Male Genital Organs-Part A: Renal, Penile, and Testicular Tumours"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref009",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ricketts"
+          ],
+          "givenNames": [
+            "CJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "De",
+            "Cubas"
+          ],
+          "givenNames": [
+            "AA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fan"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Smith"
+          ],
+          "givenNames": [
+            "CC"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lang"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Reznik"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        }
+      ],
+      "datePublished": "2018",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Cell Rep"
+          },
+          "volumeNumber": 23
+        },
+        "issueNumber": 1
+      },
+      "title": "The Cancer Genome Atlas Comprehensive Molecular Characterization of Renal Cell Carcinoma"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref010",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Linehan"
+          ],
+          "givenNames": [
+            "WM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Spellman"
+          ],
+          "givenNames": [
+            "PT"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ricketts"
+          ],
+          "givenNames": [
+            "CJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Creighton"
+          ],
+          "givenNames": [
+            "CJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fei"
+          ],
+          "givenNames": [
+            "SS"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Davis"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        }
+      ],
+      "datePublished": "2016",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "N Engl J Med"
+          },
+          "volumeNumber": 374
+        },
+        "issueNumber": 2
+      },
+      "pageEnd": 45,
+      "pageStart": 135,
+      "title": "Comprehensive Molecular Characterization of Papillary Renal-Cell Carcinoma"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref011",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "WT"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chen"
+          ],
+          "givenNames": [
+            "YQ"
+          ]
+        }
+      ],
+      "datePublished": "2014",
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "J Hematol Oncol"
+        },
+        "volumeNumber": 7
+      },
+      "pageStart": 86,
+      "title": "Circulating miRNAs in cancer: from detection to therapy"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref012",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kakimoto"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tanaka"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kamiguchi"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ochiai"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Osawa"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        }
+      ],
+      "datePublished": "2016",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "PLoS One"
+          },
+          "volumeNumber": 11
+        },
+        "issueNumber": 9
+      },
+      "title": "MicroRNA Stability in FFPE Tissue Samples: Dependence on GC Content"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref013",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Si"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zheng"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fan"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        }
+      ],
+      "datePublished": "2019",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Clin Epigenetics"
+          },
+          "volumeNumber": 11
+        },
+        "issueNumber": 1
+      },
+      "pageStart": 25,
+      "title": "The role and mechanisms of action of microRNAs in cancer drug resistance"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref014",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lee"
+          ],
+          "givenNames": [
+            "YS"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dutta"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        }
+      ],
+      "datePublished": "2009",
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Annu Rev Pathol"
+        },
+        "volumeNumber": 4
+      },
+      "pageEnd": 227,
+      "pageStart": 199,
+      "title": "MicroRNAs in cancer"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref015",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gámez-Pozo"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Berges-Soria"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Arevalillo"
+          ],
+          "givenNames": [
+            "JM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Nanni"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "López-Vacas"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Navarro"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        }
+      ],
+      "datePublished": "2015",
+      "isPartOf": {
+        "type": "Periodical",
+        "name": "Cancer Res"
+      },
+      "pageEnd": 53,
+      "pageStart": 2243,
+      "title": "Combined label-free quantitative proteomics and microRNA expression analysis of breast cancer unravel molecular differences with clinical implications"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref016",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gámez-Pozo"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Antón-Aparicio"
+          ],
+          "givenNames": [
+            "LM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bayona"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Borrega"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gallegos",
+            "Sancho"
+          ],
+          "givenNames": [
+            "MI"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "García-Domínguez"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        }
+      ],
+      "datePublished": "2012",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Neoplasia"
+          },
+          "volumeNumber": 14
+        },
+        "issueNumber": 12
+      },
+      "pageEnd": 52,
+      "pageStart": 1144,
+      "title": "MicroRNA expression profiling of peripheral blood samples predicts resistance to first-line sunitinib in advanced renal cell carcinoma patients"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref017",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "López-Romero"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "González"
+          ],
+          "givenNames": [
+            "MA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Callejas"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dopazo"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Irizarry"
+          ],
+          "givenNames": [
+            "RA"
+          ]
+        }
+      ],
+      "datePublished": "2010",
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "BMC Res Notes"
+        },
+        "volumeNumber": 3
+      },
+      "pageStart": 18,
+      "title": "Processing of Agilent microRNA array data"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref018",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Johnson"
+          ],
+          "givenNames": [
+            "WE"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Rabinovic"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        }
+      ],
+      "datePublished": "2007",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Biostatistics"
+          },
+          "volumeNumber": 8
+        },
+        "issueNumber": 1
+      },
+      "pageEnd": 27,
+      "pageStart": 118,
+      "title": "Adjusting batch effects in microarray expression data using empirical Bayes methods"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref019",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Monti"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tamayo"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mesirov"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Golub"
+          ],
+          "givenNames": [
+            "T"
+          ]
+        }
+      ],
+      "datePublished": "2003",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Machine learning"
+          },
+          "volumeNumber": 52
+        },
+        "issueNumber": 1
+      },
+      "pageEnd": 118,
+      "pageStart": 91,
+      "title": "Consensus Clustering: A Resampling-Based Method for Class Discovery and Visualization of Gene Expression Microarray Data"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref020",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Saeed"
+          ],
+          "givenNames": [
+            "AI"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sharov"
+          ],
+          "givenNames": [
+            "V"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "White"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liang"
+          ],
+          "givenNames": [
+            "W"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bhagabati"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        }
+      ],
+      "datePublished": "2003",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Biotechniques"
+          },
+          "volumeNumber": 34
+        },
+        "issueNumber": 2
+      },
+      "pageEnd": 8,
+      "pageStart": 374,
+      "title": "TM4: a free, open-source system for microarray data management and analysis"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref021",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tusher"
+          ],
+          "givenNames": [
+            "VG"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tibshirani"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chu"
+          ],
+          "givenNames": [
+            "G"
+          ]
+        }
+      ],
+      "datePublished": "2001",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Proc Natl Acad Sci U S A"
+          },
+          "volumeNumber": 98
+        },
+        "issueNumber": 9
+      },
+      "pageEnd": 21,
+      "pageStart": 5116,
+      "title": "Significance analysis of microarrays applied to the ionizing radiation response"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref022",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Dweep"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Sticht"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Pandey"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gretz"
+          ],
+          "givenNames": [
+            "N"
+          ]
+        }
+      ],
+      "datePublished": "2011",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "J Biomed Inform"
+          },
+          "volumeNumber": 44
+        },
+        "issueNumber": 5
+      },
+      "pageEnd": 47,
+      "pageStart": 839,
+      "title": "miRWalk—database: prediction of possible miRNA binding sites by \"walking\" the genes of three genomes"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref023",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chen"
+          ],
+          "givenNames": [
+            "EY"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Tan"
+          ],
+          "givenNames": [
+            "CM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kou"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Duan"
+          ],
+          "givenNames": [
+            "Q"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "Z"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Meirelles"
+          ],
+          "givenNames": [
+            "GV"
+          ]
+        }
+      ],
+      "datePublished": "2013",
+      "isPartOf": {
+        "type": "PublicationVolume",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "BMC Bioinformatics"
+        },
+        "volumeNumber": 14
+      },
+      "pageStart": 128,
+      "title": "Enrichr: interactive and collaborative HTML5 gene list enrichment analysis tool"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref024",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Silva-Santos"
+          ],
+          "givenNames": [
+            "RM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Costa-Pinheiro"
+          ],
+          "givenNames": [
+            "P"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Luis"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Antunes"
+          ],
+          "givenNames": [
+            "L"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lobo"
+          ],
+          "givenNames": [
+            "F"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Oliveira"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        }
+      ],
+      "datePublished": "2013",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Br J Cancer"
+          },
+          "volumeNumber": 109
+        },
+        "issueNumber": 10
+      },
+      "pageEnd": 53,
+      "pageStart": 2646,
+      "title": "MicroRNA profile: a promising ancillary tool for accurate renal cell tumour diagnosis"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref025",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Youssef"
+          ],
+          "givenNames": [
+            "YM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "White"
+          ],
+          "givenNames": [
+            "NM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Grigull"
+          ],
+          "givenNames": [
+            "J"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Krizova"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Samy"
+          ],
+          "givenNames": [
+            "C"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mejia-Guerrero"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        }
+      ],
+      "datePublished": "2011",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Eur Urol"
+          },
+          "volumeNumber": 59
+        },
+        "issueNumber": 5
+      },
+      "pageEnd": 30,
+      "pageStart": 721,
+      "title": "Accurate molecular classification of kidney cancer subtypes using microRNA signature"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref026",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Powers"
+          ],
+          "givenNames": [
+            "MP"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Alvarez"
+          ],
+          "givenNames": [
+            "K"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kim"
+          ],
+          "givenNames": [
+            "HJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Monzon"
+          ],
+          "givenNames": [
+            "FA"
+          ]
+        }
+      ],
+      "datePublished": "2011",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Diagn Mol Pathol"
+          },
+          "volumeNumber": 20
+        },
+        "issueNumber": 2
+      },
+      "pageEnd": 70,
+      "pageStart": 63,
+      "title": "Molecular classification of adult renal epithelial neoplasms using microRNA expression and virtual karyotyping"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref027",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ma"
+          ],
+          "givenNames": [
+            "X"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Shen"
+          ],
+          "givenNames": [
+            "D"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Li"
+          ],
+          "givenNames": [
+            "H"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lv"
+          ],
+          "givenNames": [
+            "X"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Huang"
+          ],
+          "givenNames": [
+            "Q"
+          ]
+        }
+      ],
+      "datePublished": "2015",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Urol Oncol"
+          },
+          "volumeNumber": 33
+        },
+        "issueNumber": 4
+      },
+      "title": "MicroRNA-185 inhibits cell proliferation and induces cell apoptosis by targeting VEGFA directly in von Hippel-Lindau-inactivated clear cell renal cell carcinoma"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref028",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yuan"
+          ],
+          "givenNames": [
+            "HX"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Zhang"
+          ],
+          "givenNames": [
+            "JP"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Kong"
+          ],
+          "givenNames": [
+            "WT"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Liu"
+          ],
+          "givenNames": [
+            "YJ"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lin"
+          ],
+          "givenNames": [
+            "ZM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wang"
+          ],
+          "givenNames": [
+            "WP"
+          ]
+        }
+      ],
+      "datePublished": "2014",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Tumour Biol"
+          },
+          "volumeNumber": 35
+        },
+        "issueNumber": 12
+      },
+      "pageEnd": 63,
+      "pageStart": 12757,
+      "title": "Elevated microRNA-185 is associated with high vascular endothelial growth factor receptor 2 expression levels and high microvessel density in clear cell renal cell carcinoma"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref029",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Harris"
+          ],
+          "givenNames": [
+            "TA"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yamakuchi"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Ferlito"
+          ],
+          "givenNames": [
+            "M"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mendell"
+          ],
+          "givenNames": [
+            "JT"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lowenstein"
+          ],
+          "givenNames": [
+            "CJ"
+          ]
+        }
+      ],
+      "datePublished": "2008",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Proc Natl Acad Sci U S A"
+          },
+          "volumeNumber": 105
+        },
+        "issueNumber": 5
+      },
+      "pageEnd": 21,
+      "pageStart": 1516,
+      "title": "MicroRNA-126 regulates endothelial expression of vascular cell adhesion molecule 1"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref030",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Fish"
+          ],
+          "givenNames": [
+            "JE"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Santoro"
+          ],
+          "givenNames": [
+            "MM"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Morton"
+          ],
+          "givenNames": [
+            "SU"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yu"
+          ],
+          "givenNames": [
+            "S"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Yeh"
+          ],
+          "givenNames": [
+            "RF"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Wythe"
+          ],
+          "givenNames": [
+            "JD"
+          ]
+        }
+      ],
+      "datePublished": "2008",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Dev Cell"
+          },
+          "volumeNumber": 15
+        },
+        "issueNumber": 2
+      },
+      "pageEnd": 84,
+      "pageStart": 272,
+      "title": "miR-126 regulates angiogenic signaling and vascular integrity"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref031",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Khella"
+          ],
+          "givenNames": [
+            "HW"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Scorilas"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mozes"
+          ],
+          "givenNames": [
+            "R"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Mirham"
+          ],
+          "givenNames": [
+            "L"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Lianidou"
+          ],
+          "givenNames": [
+            "E"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Krylov"
+          ],
+          "givenNames": [
+            "SN"
+          ]
+        }
+      ],
+      "datePublished": "2015",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Am J Pathol"
+          },
+          "volumeNumber": 185
+        },
+        "issueNumber": 3
+      },
+      "pageEnd": 703,
+      "pageStart": 693,
+      "title": "Low expression of miR-126 is a prognostic marker for metastatic clear cell renal cell carcinoma"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref032",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Chen"
+          ],
+          "givenNames": [
+            "Y"
+          ]
+        },
+        {
+          "type": "Person",
+          "familyNames": [
+            "Gorski"
+          ],
+          "givenNames": [
+            "DH"
+          ]
+        }
+      ],
+      "datePublished": "2008",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Blood"
+          },
+          "volumeNumber": 111
+        },
+        "issueNumber": 3
+      },
+      "pageEnd": 26,
+      "pageStart": 1217,
+      "title": "Regulation of angiogenesis through a microRNA (miR-130a) that down-regulates antiangiogenic homeobox genes GAX and HOXA5"
+    },
+    {
+      "type": "Article",
+      "id": "pone-0229075-ref033",
+      "authors": [
+        {
+          "type": "Person",
+          "familyNames": [
+            "Bex"
+          ],
+          "givenNames": [
+            "A"
+          ]
+        }
+      ],
+      "datePublished": "2017",
+      "isPartOf": {
+        "type": "PublicationIssue",
+        "isPartOf": {
+          "type": "PublicationVolume",
+          "isPartOf": {
+            "type": "Periodical",
+            "name": "Ann Oncol"
+          },
+          "volumeNumber": 28
+        },
+        "issueNumber": 4
+      },
+      "pageEnd": 4,
+      "pageStart": 682,
+      "title": "Adjuvant sunitinib in renal cell carcinoma: from evidence to recommendation"
+    }
+  ],
+  "title": "miRNA profiling in renal carcinoma suggest the existence of a group of pro-angionenic tumors in localized clear cell renal carcinoma",
+  "meta": {
+    "authorNotes": [
+      "JAFV, EE and AG-P are shareholders in Biomedica Molecular Medicine SL. LT-F, GP-V, AZ-M and EL-C are employees of Biomedica Molecular Medicine SL. GDV received personal fees from BMS; Roche, Novartis, Pfizer, MSD; Bayer, Astellas, Ipsen, Janssen, and SEOM and reports grants from Roche, Ipsen, and Pfizer. This does not alter our adherence to PLOS ONE policies on sharing data and materials."
+    ]
+  },
+  "content": [
+    {
+      "type": "Heading",
+      "id": "sec001",
+      "depth": 1,
+      "content": [
+        "Introduction"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Renal carcinoma (RC) is the sixth most common cancer in men and the eight in women, with 73,820 estimated new cases and 14,770 estimated deaths in the United States in 2019 [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref001",
+          "content": [
+            "1"
+          ]
+        },
+        "]. Two thirds of patients have localized disease and an additional 16% have locoregional disease (stage III) at diagnosis. A significant proportion of all these patients (up to 40% in stage III) will eventually relapse [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref002",
+          "content": [
+            "2"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref003",
+          "content": [
+            "3"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Antiangiogenic multi-kinase inhibitors have demonstrated significant efficacy in the metastatic setting, but have not fulfilled expectations in the adjuvant setting. Sorafenib (SORCE trial), pazopanib (PROTECT trial) and axitinib (ATLAS trial) failed to improve disease-free survival when compared with placebo, whereas sunitinib improved disease-free survival but did not impact in overall survival (STRAC trial) [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref004",
+          "content": [
+            "4"
+          ]
+        },
+        "–",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref007",
+          "content": [
+            "7"
+          ]
+        },
+        "]. As a consequence, sunitinib has been approved for adjuvant therapy by the Food and Drug Administration, but not by the European Medicines Agency and observation remains the standard of care after resection."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The current classical classification of renal carcinoma refers to subtypes that have been named on the basis of predominant cytoplasmic or architectural features, anatomic location, correlation with a specific disease background, as well as molecular alterations or familial syndromes [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref008",
+          "content": [
+            "8"
+          ]
+        },
+        "]. The Cancer Genome Atlas has made considerable efforts to molecularly characterized different neoplasms, amongst them, renal carcinoma, establishing molecular characteristics of the different histological renal subtypes [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref009",
+          "content": [
+            "9"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref010",
+          "content": [
+            "10"
+          ]
+        },
+        "]. So far, this information has not contributed to improve the personalized treatment for patients with renal cell carcinoma."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Molecular markers different from gene expression could improve our understanding of this disease. MicroRNAs are small RNA sequences which regulate different cellular processes, such as cellular proliferation, apoptosis or stem cell differentiation [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref011",
+          "content": [
+            "11"
+          ]
+        },
+        "]. They are good molecular biomarkers or even therapeutic targets, especially in clinical paraffin samples, because of their stability. [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref012",
+          "content": [
+            "12"
+          ]
+        },
+        "]. For these reasons, miRNAs may have acquired importance as biomarkers in cancer. There are several studies in which microRNAs have been related to chemotherapy resistant or to cancer prognosis and detection [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref013",
+          "content": [
+            "13"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref014",
+          "content": [
+            "14"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "The aim of this study is to determine miRNA profiles which allow us to characterize RC subtypes. Interestingly, we identified two groups of clear cell renal carcinoma (ccRCC) tumors, one of them with an overexpression of pro-angiogenic microRNAs."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec002",
+      "depth": 1,
+      "content": [
+        "Material and methods"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec003",
+      "depth": 2,
+      "content": [
+        "Samples"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "One hundred and sixty-four patients diagnosed with localized RC were recruited for this study. An observational study was carried out, where all radical and partial nephrectomies performed at Hospital Universitario 12 de Octubre in Madrid between 1999 and 2008 were included. Written informed consent was obtained from all patients. The protocol was approved by the Ethical Committee of Hospital Universitario 12 de Octubre. The evolution of these patients was obtained from clinical records."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec004",
+      "depth": 2,
+      "content": [
+        "miRNA isolation and quantification"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "396 miRNAs were measured from 164 renal formalin-fixed paraffin-embedded (FFPE) tumor samples. microRNA extraction and sample processing were done as previously described [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref015",
+          "content": [
+            "15"
+          ]
+        },
+        "]. Briefly, selected FFPE tumor specimens were cut into serial sections with a thickness of 10 μm. Total RNA was then isolated using the miRNEasy Kit (Quiagen). Purified RNA quality control for quantity and purity was assessed using an ND-1000 NanoDrop spectrophotometer (Thermo Fisher Scientific)."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec005",
+      "depth": 2,
+      "content": [
+        "MicroRNA arrays"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "MicroRNA arrays experiments were done as previously described [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref016",
+          "content": [
+            "16"
+          ]
+        },
+        "]. Briefly, samples were hybridized to Human miRNA Microarray Release 14.0, 8x15K (Agilent Technologies). MicroRNA Labeling Kit (Agilent Technologies) was used to label RNA. 100 ng of total RNA were dephosphorylated and Cyanine 3-pCp molecule was ligated to the 3´ end of each RNA molecule by using T4 RNA ligase. One hundred ng of Cy3 labeled RNA were hybridized for 20 hours at 55°C in a hybridization oven (G2545A, Agilent) set to 20 rpm in a final concentration of 1X GE Blocking Agent and 1X Hi-RPM Hybridization Buffer, according to manufacturer's instructions (miRNA Microarray System Protocol, Agilent Technologies). Arrays were washed according to manufacturer's instructions (miRNA Microarray System Protocol, Agilent Technologies), dried out using a centrifuge at 1000 rpm for 2 min and scanned at 5μm resolution on an Agilent DNA Microarray Scanner (G2565BA, Agilent Technologies) equipped with extended dynamic range (XDR) software. Images provided by the scanner were analyzed using Agilent´s software Feature Extraction version 10.7.3.1. Data were quantile normalized as previously described [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref017",
+          "content": [
+            "17"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Only miRNAs with an average intensity over the 20th percentile of the overall intensities and a detectable signal in at least 10 percent of the hybridized samples considered for further analysis. Batch effect was corrected using ComBat software [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref018",
+          "content": [
+            "18"
+          ]
+        },
+        "]. Data is available in Gene Expression Omnibus Database under the identifier GSE144082."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec006",
+      "depth": 2,
+      "content": [
+        "Consensus cluster"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Consensus cluster using R v3.2.5 and ",
+        {
+          "type": "Emphasis",
+          "content": [
+            "ConsensusClusterPlus"
+          ]
+        },
+        " package was performed to establish subgroups [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref019",
+          "content": [
+            "19"
+          ]
+        },
+        "]. Consensus cluster allows the determination of the optimum number of groups based on the similarity between expression profiles. Then, differential miRNAs expression patterns among groups was analyzed by Significance Analysis of Microarrays (SAM) with MeV 4.9 [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref020",
+          "content": [
+            "20"
+          ]
+        },
+        "]. SAM performed a t-test correcting over permutations of the number of samples [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref021",
+          "content": [
+            "21"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Targets of these differential miRNAs were searched in miRwalk database [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref022",
+          "content": [
+            "22"
+          ]
+        },
+        "]. This information was used to perform a gene ontology analysis and to establish relationship with biological functions. Gene ontology analyses were done using Enrichr webtool developed by Ma’ayan lab [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref023",
+          "content": [
+            "23"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec007",
+      "depth": 2,
+      "content": [
+        "Statistical analyses"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Statistical analyses were done using GraphPad Prism v6. All p-values were two-sided and considered statistically significant under 0.05. For survival analyses between the two groups defined in ccRCC patients, a log-rank test was used to compare the two obtained curves. Additionally, contingency analyses (Chi-squared tests) were used to establish the independence between clinical data and the new ccRCC classification. For comparisons of angiogenic microRNA expression between the two ccRCC groups, non-parametric Mann- Whitney tests were used."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec008",
+      "depth": 1,
+      "content": [
+        "Results"
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec009",
+      "depth": 2,
+      "content": [
+        "Patient cohort"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "164 renal tumor samples were studied. One hundred of these samples corresponded to clear-cell carcinomas (ccRCC), 16 to papillary tumors, and 21 chromophobe tumors. Subtype information was not available for 27 tumors. Of these 164 samples, clinical data were available for 142 patients. Twenty-three percent of the patients suffered a relapse and the median of follow-up was 54 months. The median overall survival was 57 months. Clinical characteristics of these patients were summarized in ",
+        {
+          "type": "Link",
+          "relation": "table",
+          "target": "#pone-0229075-t001",
+          "content": [
+            "Table 1"
+          ]
+        },
+        "."
+      ]
+    },
+    {
+      "type": "Table",
+      "id": "pone.0229075.t001",
+      "rows": [
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "Number of patients"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "Percentage"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Number of patients"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "142"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "100%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Age (median)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "34–83 (66)"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Gender"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Male"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "85"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "60%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Female"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "57"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "40%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "ECOG-Karnofsky"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "90–100"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "106"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "74.6%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "70–90"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "31"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "21.8%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "50–70"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "4"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "2.9%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "30–40"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "1"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "0.7%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Furhman grade"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "0"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "1"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "0.7%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "1"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "7"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "5%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "2"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "74"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "52%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "3"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "38"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "27%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "4"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "7"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "5%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                "Unknown"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "15"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "10.3%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Tumor size"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "T1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "97"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "69%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "T2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "19"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "13%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "T3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "26"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "18%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Nodal stage"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "N0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "131"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "92.3%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "N1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "5"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "3.5%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "N2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "6"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "4.2%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Nephrectomy"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            },
+            {
+              "type": "TableCell",
+              "content": []
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Radical"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "116"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "82%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Partial"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "23"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "16%"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "content": [
+                {
+                  "type": "Strong",
+                  "content": [
+                    "Unknown"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "3"
+              ]
+            },
+            {
+              "type": "TableCell",
+              "content": [
+                "2%"
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Patient characteristics.",
+      "content": []
+    },
+    {
+      "type": "Heading",
+      "id": "sec010",
+      "depth": 2,
+      "content": [
+        "Characterization of differences between histological subtypes"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "A SAM was done to characterize different miRNA expression patterns between histological groups. It was not possible to find differential miRNAs between papillary and the two other histological subtypes. SAM showed that chromophobe tumors are a very homogeneous molecular group with a higher expression of miR 1229, miR 10a, miR 182, miR 1208, miR 222, miR 221, miR 891b, miR 629-5p and miR 221-5p (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g001",
+          "content": [
+            "Fig 1"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g001",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec010",
+          "depth": 2,
+          "content": [
+            "SAM of chromophobe subtype against the rest of tumors."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "ccRCC = Clear cell renal carcinoma."
+          ]
+        }
+      ],
+      "label": "Fig 1",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "On the other hand, ccRCC tumors were split into two different groups in the SAM graph, suggesting the existence of two molecular groups in ccRCC according the miRNA expression (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g002",
+          "content": [
+            "Fig 2"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g002",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec010",
+          "depth": 2,
+          "content": [
+            "SAM of ccRCC tumors against the rest of them."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "ccRCC = Clear cell renal carcinoma."
+          ]
+        }
+      ],
+      "label": "Fig 2",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec011",
+      "depth": 2,
+      "content": [
+        "ccRCC groups’ characterization"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "With the aim of establishing these possible subgroups in ccRCC, a consensus cluster was done. Consensus cluster grouped patients by the similarity in their expression patterns and it allows the definition of the optimum number of groups, showing that two different molecular patient groups existed in ccRCC: ccRCC1 (44 patients) and ccRCC2 (56 patients) (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g003",
+          "content": [
+            "Fig 3"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g003",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec011",
+          "depth": 2,
+          "content": []
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "A."
+              ]
+            },
+            " Delta graph suggested two groups as the optimum number of groups in these subtype. ",
+            {
+              "type": "Strong",
+              "content": [
+                "B."
+              ]
+            },
+            " Tracking plot showed different sample classifications making different number of groups."
+          ]
+        }
+      ],
+      "label": "Fig 3",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Contingency analyses showed that this new ccRCC classification was independent from clinical data, such as tumor size or nodal status; i.e, there are no differences in tumor size or nodal status between these two groups (p = 0.55 and p = 0.39 respectively). However, ccRCC2 tumors had a lower Furhman grade than ccRCC1 tumors (p = 0.04)."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Moreover, a SAM established 136 differentially expressed miRNAs between these two groups (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g004",
+          "content": [
+            "Fig 4"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g004",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec011",
+          "depth": 2,
+          "content": [
+            "SAM between two ccRCC identified groups."
+          ]
+        }
+      ],
+      "label": "Fig 4",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Experimentally validated targets of these 136 miRNAs were determined using miRwalk database, and a gene ontology analysis of these genes was performed afterwards. This analysis showed that these genes were mainly related with focal adhesion, transcription, apoptosis and angiogenesis processes (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g005",
+          "content": [
+            "Fig 5"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g005",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec011",
+          "depth": 2,
+          "content": [
+            "Gene ontology of gene targets of the 136 differential miRNAs."
+          ]
+        }
+      ],
+      "label": "Fig 5",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Additionally, the two subgroups of ccRCC were associated with a different survival, although not statistically significant (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g006",
+          "content": [
+            "Fig 6"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g006",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec011",
+          "depth": 2,
+          "content": [
+            "Survival curves of the two ccRCC groups defined by Consensus cluster."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            {
+              "type": "Strong",
+              "content": [
+                "A."
+              ]
+            },
+            " Distant-relapse free survival curves of the two ccRCC groups. ",
+            {
+              "type": "Strong",
+              "content": [
+                "B."
+              ]
+            },
+            " Overall survival curves of the two ccRCC groups."
+          ]
+        }
+      ],
+      "label": "Fig 6",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec012",
+      "depth": 3,
+      "content": [
+        "New ccRCC groups had differential expression of miRNAs involved in angiogenesis"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Interestingly, the two ccRCC subgroups presented differences in expression of some miRNAs previously associated with angiogenesis. In general, ccRCC2 had more expression of miR185, miR126 and miR130a, all of them proangiogenic miRNAs (",
+        {
+          "type": "Link",
+          "relation": "fig",
+          "target": "#pone-0229075-g007",
+          "content": [
+            "Fig 7"
+          ]
+        },
+        ")."
+      ]
+    },
+    {
+      "type": "Figure",
+      "id": "pone.0229075.g007",
+      "caption": [
+        {
+          "type": "Heading",
+          "id": "sec012",
+          "depth": 3,
+          "content": [
+            "miRNAs related with angiogenesis differentialy expressed between two ccRCC groups."
+          ]
+        }
+      ],
+      "label": "Fig 7",
+      "content": [
+        {
+          "type": "ImageObject",
+          "contentUrl": "0229075.json.media",
+          "format": "image/png",
+          "meta": {
+            "inline": false,
+            "linkType": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec013",
+      "depth": 1,
+      "content": [
+        "Discussion"
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Renal-cell carcinoma comprises several histological subgroups [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref008",
+          "content": [
+            "8"
+          ]
+        },
+        "]. The Cancer Genome Atlas analyzed these histological subtypes and characterized molecular differences between them [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref009",
+          "content": [
+            "9"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref010",
+          "content": [
+            "10"
+          ]
+        },
+        "]. However, all these advances have not been translated into clinical applications yet. For this reason, further insight into the molecular biology of these tumors is still needed."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "There are previous classifications of renal histological subtypes based on miRNA signatures, although a reduce number of miRNAs were used in these analyses [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref024",
+          "content": [
+            "24"
+          ]
+        },
+        "–",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref026",
+          "content": [
+            "26"
+          ]
+        },
+        "]. In this study, 396 miRNAs were analyzed in 164 RC FFPE samples by microRNA arrays. The main advantage of the measurement of miRNAs is that they are more stable than longer RNAs or DNA in paraffin samples [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref012",
+          "content": [
+            "12"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "SAM showed differences at the miRNA expression level in chromophobe and ccRCC, but no in papillary tumors. The fact that it was not possible to define differential miRNAs in the papillary subgroup could be due to the reduced number of this type of tumors in our cohort and the intrinsic heterogeneity of this group."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "miR10-a, miR222, and miR221 have been previously described as overexpressed in chromophobe subtype, what agrees with our results [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref025",
+          "content": [
+            "25"
+          ]
+        },
+        ", ",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref026",
+          "content": [
+            "26"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Regarding ccRCC tumors, differential expression pattern analysis suggested the existence of two different groups inside this histological subtype. This was confirmed by Consensus Cluster, which defined two groups with different expression in miRNAs whose established targets are related to angiogenesis, apoptosis, transcription and focal adhesion."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Interestingly, three of the miRNAs (miR185, miR126, and miR130a) differentially expressed between our two ccRCC groups have been previously related with pro-angiogenesis processes."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Expression levels of miR185 have been correlated with tumor size, Fuhrman grade, and TNM staging. The overexpression of this miRNA inhibited proliferation and induced apoptosis [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref027",
+          "content": [
+            "27"
+          ]
+        },
+        "]. Moreover, elevated miR185 levels were associated with high vascular endothelial growth factor receptor 2 (VEGFR) expression and therefore a pro-angiogenic activity in ccRCC [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref028",
+          "content": [
+            "28"
+          ]
+        },
+        "]."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "On the other hand, miR126 inhibits the expression of vascular cell adhesion molecule 1 (VCAM1) implicated in leukocyte adherence to endothelial cells [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref029",
+          "content": [
+            "29"
+          ]
+        },
+        "]. This miRNA has a pro-angiogenic function [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref030",
+          "content": [
+            "30"
+          ]
+        },
+        "]. It is downregulated in metastatic ccRCC versus primary tumors. Its overexpression is negatively correlated with tumor size and is associated with longer distant relapse-free survival and overall survival. miR126 overexpression is also related with a reduction in cellular proliferation [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref031",
+          "content": [
+            "31"
+          ]
+        },
+        "]. According to these facts, miR126 was underexpressed in our ccRCC1 group which had a worst prognosis."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "miR130a were identified as proangiogenic miRNA due to its inhibitory effect in the anti-angiogenic homeobox GAX and HoxA5 [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref032",
+          "content": [
+            "32"
+          ]
+        },
+        "]. A relationship between this miRNA and renal carcinoma had not been previously described."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "Considering the controversial efficacy of antiangiogenic drugs in the adjuvant setting of renal-cell carcinoma [",
+        {
+          "type": "Cite",
+          "target": "pone-0229075-ref033",
+          "content": [
+            "33"
+          ]
+        },
+        "], defining a proangiogenic group may be important to select patients more likely to benefit from these treatments. In the future, a class predictor could be developed to define this pro-angiogenic group. Such a predictor should be validated in an independent cohort."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "In this work, we have characterized differences between RC histological subtypes using miRNAs and have defined two ccRCC groups with different expression of pro-angiogenic miRNAs. Differences between subtypes could be used as therapeutic targets or as a method to select patients for personalized treatments in the future."
+      ]
+    },
+    {
+      "type": "Heading",
+      "id": "sec014",
+      "depth": 1,
+      "content": [
+        "Supporting information"
+      ]
+    },
+    "S1 Table",
+    {
+      "type": "Heading",
+      "id": "sec014",
+      "depth": 1,
+      "content": [
+        "miRNAs measured in 164 renal carcinoma paraffin samples."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "(TXT)"
+      ]
+    },
+    "S2 Table",
+    {
+      "type": "Heading",
+      "id": "sec014",
+      "depth": 1,
+      "content": [
+        "136 differential miRNAs between ccRCC groups."
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "content": [
+        "(TXT)"
+      ]
+    }
+  ]
+}

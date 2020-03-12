@@ -347,11 +347,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 6,
-        "pageStart": 2,
-        "title": "European Journal of Internal Medicine",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "European Journal of Internal Medicine"
+        },
         "volumeNumber": 49
       },
+      "pageEnd": 6,
+      "pageStart": 2,
       "title": "Medical use of Cannabis and cannabinoids containing products - Regulations in Europe and north america"
     },
     {
@@ -389,7 +392,10 @@
       "datePublished": "1983",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "American Journal of Physiology-Endocrinology and Metabolism",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "American Journal of Physiology-Endocrinology and Metabolism"
+        },
         "volumeNumber": 244
       },
       "title": "Direct antigonadal activity of cannabinoids: suppression of rat granulosa cell functions"
@@ -438,7 +444,10 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "BMC Complementary and Alternative Medicine",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "BMC Complementary and Alternative Medicine"
+        },
         "volumeNumber": 19
       },
       "title": "Self-management strategies amongst Australian women with endometriosis: a national online survey"
@@ -550,11 +559,14 @@
       "datePublished": "2015",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 9721,
-        "pageStart": 9716,
-        "title": "PNAS",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PNAS"
+        },
         "volumeNumber": 112
       },
+      "pageEnd": 9721,
+      "pageStart": 9716,
       "title": "Molecular and preclinical basis to inhibit PGE2 receptors EP2 and EP4 as a novel nonsteroidal therapy for endometriosis"
     },
     {
@@ -601,11 +613,14 @@
       "datePublished": "2004",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 11098,
-        "pageStart": 11094,
-        "title": "PNAS",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PNAS"
+        },
         "volumeNumber": 101
       },
+      "pageEnd": 11098,
+      "pageStart": 11094,
       "title": "Innervation of ectopic endometrium in a rat model of endometriosis"
     },
     {
@@ -733,11 +748,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 787,
-        "pageStart": 782,
-        "title": "Nature Medicine",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature Medicine"
+        },
         "volumeNumber": 23
       },
+      "pageEnd": 787,
+      "pageStart": 782,
       "title": "A chronic low dose of Δ9-tetrahydrocannabinol (THC) restores cognitive function in old mice"
     },
     {
@@ -820,7 +838,10 @@
       "datePublished": "2015",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "Pain",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Pain"
+        },
         "volumeNumber": 156
       },
       "title": "Effect of environment on the long-term consequences of chronic pain"
@@ -889,11 +910,14 @@
       "datePublished": "2011",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 486,
-        "pageStart": 479,
-        "title": "Biological Psychiatry",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Biological Psychiatry"
+        },
         "volumeNumber": 70
       },
+      "pageEnd": 486,
+      "pageStart": 479,
       "title": "Differential role of anandamide and 2-arachidonoylglycerol in memory and anxiety-like responses"
     },
     {
@@ -976,11 +1000,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1031,
-        "pageStart": 1021,
-        "title": "Neuropsychopharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuropsychopharmacology"
+        },
         "volumeNumber": 43
       },
+      "pageEnd": 1031,
+      "pageStart": 1021,
       "title": "Hippocampal protein kinase C signaling mediates the Short-Term memory impairment induced by Delta9-Tetrahydrocannabinol"
     },
     {
@@ -1027,7 +1054,10 @@
       "datePublished": "2012",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "PLOS ONE",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PLOS ONE"
+        },
         "volumeNumber": 7
       },
       "title": "Mouse estrous cycle identification tool and images"
@@ -1094,7 +1124,10 @@
       "datePublished": "2001",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "BMJ",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "BMJ"
+        },
         "volumeNumber": 323
       },
       "title": "Are cannabinoids an effective and safe treatment option in the management of pain? A qualitative systematic review"
@@ -1161,11 +1194,14 @@
       "datePublished": "2006",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 806,
-        "pageStart": 788,
-        "title": "Neuropharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuropharmacology"
+        },
         "volumeNumber": 50
       },
+      "pageEnd": 806,
+      "pageStart": 788,
       "title": "Influence of the anabolic-androgenic steroid nandrolone on cannabinoid dependence"
     },
     {
@@ -1275,11 +1311,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 173,
-        "pageStart": 164,
-        "title": "Nature Medicine",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature Medicine"
+        },
         "volumeNumber": 23
       },
+      "pageEnd": 173,
+      "pageStart": 164,
       "title": "Loss of μ opioid receptor signaling in nociceptors, but not microglia, abrogates morphine tolerance without disrupting analgesia"
     },
     {
@@ -1344,11 +1383,14 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 281,
-        "pageStart": 276,
-        "title": "Science",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Science"
+        },
         "volumeNumber": 363
       },
+      "pageEnd": 281,
+      "pageStart": 276,
       "title": "An amygdalar neural ensemble that encodes the unpleasantness of pain"
     },
     {
@@ -1413,11 +1455,14 @@
       "datePublished": "2016",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 306,
-        "pageStart": 293,
-        "title": "Nature Reviews Neuroscience",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature Reviews Neuroscience"
+        },
         "volumeNumber": 17
       },
+      "pageEnd": 306,
+      "pageStart": 293,
       "title": "Keep off the grass? Cannabis, cognition and addiction"
     },
     {
@@ -1500,11 +1545,14 @@
       "datePublished": "2013",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 2831,
-        "pageStart": 2816,
-        "title": "Journal of Clinical Investigation",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of Clinical Investigation"
+        },
         "volumeNumber": 123
       },
+      "pageEnd": 2831,
+      "pageStart": 2816,
       "title": "Microglial activation underlies cerebellar deficits produced by repeated Cannabis exposure"
     },
     {
@@ -1552,11 +1600,14 @@
       "datePublished": "2004",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 148,
-        "pageStart": 137,
-        "title": "European Journal of Pharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "European Journal of Pharmacology"
+        },
         "volumeNumber": 491
       },
+      "pageEnd": 148,
+      "pageStart": 137,
       "title": "Pharmacological characterization of the chronic constriction injury model of neuropathic pain"
     },
     {
@@ -1621,7 +1672,10 @@
       "datePublished": "2009",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "PLOS ONE",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PLOS ONE"
+        },
         "volumeNumber": 4
       },
       "title": "Localisation and function of the endocannabinoid system in the human ovary"
@@ -1727,11 +1781,14 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 925,
-        "pageStart": 909,
-        "title": "Metabolic Brain Disease",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Metabolic Brain Disease"
+        },
         "volumeNumber": 34
       },
+      "pageEnd": 925,
+      "pageStart": 909,
       "title": "Peritoneal endometriosis induces time-related depressive- and anxiety-like alterations in female rats: involvement of hippocampal pro-oxidative and BDNF alterations"
     },
     {
@@ -1769,11 +1826,14 @@
       "datePublished": "2014",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 507,
-        "pageStart": 499,
-        "title": "Biological Psychiatry",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Biological Psychiatry"
+        },
         "volumeNumber": 75
       },
+      "pageEnd": 507,
+      "pageStart": 499,
       "title": "The hypocretin/orexin receptor-1 as a novel target to modulate cannabinoid reward"
     },
     {
@@ -1793,11 +1853,14 @@
       "datePublished": "1970",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 374,
-        "pageStart": 369,
-        "title": "Journal of Experimental Zoology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of Experimental Zoology"
+        },
         "volumeNumber": 175
       },
+      "pageEnd": 374,
+      "pageStart": 369,
       "title": "An estradiol mitotic rate inhibiting effect in the müllerian epithelium in neonatal mice"
     },
     {
@@ -1853,11 +1916,14 @@
       "datePublished": "2011",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 112,
-        "pageStart": 107,
-        "title": "Fertility and Sterility",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Fertility and Sterility"
+        },
         "volumeNumber": 96
       },
+      "pageEnd": 112,
+      "pageStart": 107,
       "title": "Quantification of the impact of endometriosis symptoms on health-related quality of life and work productivity"
     },
     {
@@ -1877,11 +1943,14 @@
       "datePublished": "2004",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 303,
-        "pageStart": 299,
-        "title": "Current Opinion in Obstetrics and Gynecology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Current Opinion in Obstetrics and Gynecology"
+        },
         "volumeNumber": 16
       },
+      "pageEnd": 303,
+      "pageStart": 299,
       "title": "The effectiveness of laparoscopic excision of endometriosis"
     },
     {
@@ -1964,11 +2033,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 10,
-        "pageStart": 1,
-        "title": "Scientific Reports",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Scientific Reports"
+        },
         "volumeNumber": 7
       },
+      "pageEnd": 10,
+      "pageStart": 1,
       "title": "EP2 receptor antagonism reduces peripheral and central hyperalgesia in a preclinical mouse model of endometriosis"
     },
     {
@@ -2024,11 +2096,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 3302,
-        "pageStart": 3289,
-        "title": "Psychopharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Psychopharmacology"
+        },
         "volumeNumber": 235
       },
+      "pageEnd": 3302,
+      "pageStart": 3289,
       "title": "Cannabidiol modulation of antinociceptive tolerance to Δ9-tetrahydrocannabinol"
     },
     {
@@ -2111,11 +2186,14 @@
       "datePublished": "2009",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1337,
-        "pageStart": 1330,
-        "title": "British Journal of Pharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "British Journal of Pharmacology"
+        },
         "volumeNumber": 158
       },
+      "pageEnd": 1337,
+      "pageStart": 1330,
       "title": "Reintoxication: the release of fat-stored Delta(9)-tetrahydrocannabinol (THC) into blood is enhanced by food deprivation or ACTH exposure"
     },
     {
@@ -2171,11 +2249,14 @@
       "datePublished": "2013",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 339,
-        "pageStart": 331,
-        "title": "European Journal of Obstetrics & Gynecology and Reproductive Biology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "European Journal of Obstetrics & Gynecology and Reproductive Biology"
+        },
         "volumeNumber": 169
       },
+      "pageEnd": 339,
+      "pageStart": 331,
       "title": "The influence of endometriosis-related symptoms on work life and work ability: a study of danish endometriosis patients in employment"
     },
     {
@@ -2222,11 +2303,14 @@
       "datePublished": "2016",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1172,
-        "pageStart": 1169,
-        "title": "Planta Medica",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Planta Medica"
+        },
         "volumeNumber": 82
       },
+      "pageEnd": 1172,
+      "pageStart": 1169,
       "title": "Effects of Delta-9-Tetrahydrocannabinol and cannabidiol on Cisplatin-Induced neuropathy in mice"
     },
     {
@@ -2264,11 +2348,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 19,
-        "pageStart": 9,
-        "title": "Pharmacology Biochemistry and Behavior",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Pharmacology Biochemistry and Behavior"
+        },
         "volumeNumber": 163
       },
+      "pageEnd": 19,
+      "pageStart": 9,
       "title": "Acute and long-term effects of Δ9-tetrahydrocannabinol on object recognition and anxiety-like activity are age- and strain-dependent in mice"
     },
     {
@@ -2342,11 +2429,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 2841,
-        "pageStart": 2832,
-        "title": "British Journal of Pharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "British Journal of Pharmacology"
+        },
         "volumeNumber": 174
       },
+      "pageEnd": 2841,
+      "pageStart": 2832,
       "title": "Single and combined effects of Δ9 -tetrahydrocannabinol and cannabidiol in a mouse model of chemotherapy-induced neuropathic pain"
     },
     {
@@ -2384,11 +2474,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 454,
-        "pageStart": 446,
-        "title": "Learning & Memory",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Learning & Memory"
+        },
         "volumeNumber": 25
       },
+      "pageEnd": 454,
+      "pageStart": 446,
       "title": "Highway to hell or magic smoke? The dose-dependence of Δ9-THC in place conditioning paradigms"
     },
     {
@@ -2492,11 +2585,14 @@
       "datePublished": "2015",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 2012,
-        "pageStart": 2001,
-        "title": "Pain",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Pain"
+        },
         "volumeNumber": 156
       },
+      "pageEnd": 2012,
+      "pageStart": 2001,
       "title": "Role of the endocannabinoid system in the emotional manifestations of osteoarthritis pain"
     },
     {
@@ -2543,11 +2639,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 452,
-        "pageStart": 447,
-        "title": "NeuroReport",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "NeuroReport"
+        },
         "volumeNumber": 29
       },
+      "pageEnd": 452,
+      "pageStart": 447,
       "title": "Sex differences in antinociceptive response to Δ-9-tetrahydrocannabinol and CP 55,940 in the mouse Formalin test"
     },
     {
@@ -2648,11 +2747,14 @@
       "datePublished": "2010",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 2970,
-        "pageStart": 2963,
-        "title": "The American Journal of Pathology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "The American Journal of Pathology"
+        },
         "volumeNumber": 177
       },
+      "pageEnd": 2970,
+      "pageStart": 2963,
       "title": "Antiproliferative effects of cannabinoid agonists on deep infiltrating endometriosis"
     },
     {
@@ -2726,11 +2828,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 359,
-        "pageStart": 349,
-        "title": "Biology of Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Biology of Reproduction"
+        },
         "volumeNumber": 99
       },
+      "pageEnd": 359,
+      "pageStart": 349,
       "title": "Endometriosis alters brain electrophysiology, gene expression and increases pain sensitization, anxiety, and depression in female mice"
     },
     {
@@ -2777,11 +2882,14 @@
       "datePublished": "2014",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1447,
-        "pageStart": 1435,
-        "title": "British Journal of Pharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "British Journal of Pharmacology"
+        },
         "volumeNumber": 171
       },
+      "pageEnd": 1447,
+      "pageStart": 1435,
       "title": "Sex-dependent long-term effects of adolescent exposure to THC and/or MDMA on neuroinflammation and serotoninergic and cannabinoid systems in rats"
     },
     {
@@ -2810,11 +2918,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 19,
-        "pageStart": 12,
-        "title": "European Journal of Internal Medicine",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "European Journal of Internal Medicine"
+        },
         "volumeNumber": 49
       },
+      "pageEnd": 19,
+      "pageStart": 12,
       "title": "Practical considerations in medical Cannabis administration and dosing"
     },
     {
@@ -2861,11 +2972,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1438,
-        "pageStart": 1432,
-        "title": "Human Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Human Reproduction"
+        },
         "volumeNumber": 32
       },
+      "pageEnd": 1438,
+      "pageStart": 1432,
       "title": "Physical pain and emotion regulation as the main predictive factors of health-related quality of life in women living with endometriosis"
     },
     {
@@ -2894,11 +3008,14 @@
       "datePublished": "2015",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 618,
-        "pageStart": 611,
-        "title": "Women's Health",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Women's Health"
+        },
         "volumeNumber": 11
       },
+      "pageEnd": 618,
+      "pageStart": 611,
       "title": "The importance of pelvic nerve fibers in endometriosis"
     },
     {
@@ -3026,11 +3143,14 @@
       "datePublished": "2011",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 836,
-        "pageStart": 827,
-        "title": "Neuropsychopharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuropsychopharmacology"
+        },
         "volumeNumber": 36
       },
+      "pageEnd": 836,
+      "pageStart": 827,
       "title": "Disruption of frontal θ coherence by Δ9-tetrahydrocannabinol is associated with positive psychotic symptoms"
     },
     {
@@ -3086,11 +3206,14 @@
       "datePublished": "2004",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 580,
-        "pageStart": 569,
-        "title": "Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Reproduction"
+        },
         "volumeNumber": 127
       },
+      "pageEnd": 580,
+      "pageStart": 569,
       "title": "Methods for quantifying follicular numbers within the mouse ovary"
     },
     {
@@ -3119,11 +3242,14 @@
       "datePublished": "1982",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 283,
-        "pageStart": 275,
-        "title": "Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Reproduction"
+        },
         "volumeNumber": 64
       },
+      "pageEnd": 283,
+      "pageStart": 275,
       "title": "Morphometric studies on ovarian follicles and corpora lutea during the oestrous cycle in the mouse"
     },
     {
@@ -3188,11 +3314,14 @@
       "datePublished": "2009",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1158,
-        "pageStart": 1152,
-        "title": "Nature Neuroscience",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature Neuroscience"
+        },
         "volumeNumber": 12
       },
+      "pageEnd": 1158,
+      "pageStart": 1152,
       "title": "Cannabinoid modulation of hippocampal long-term memory is mediated by mTOR signaling"
     },
     {
@@ -3257,11 +3386,14 @@
       "datePublished": "2013",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1343,
-        "pageStart": 1334,
-        "title": "Neuropsychopharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neuropsychopharmacology"
+        },
         "volumeNumber": 38
       },
+      "pageEnd": 1343,
+      "pageStart": 1334,
       "title": "Dissociation of the pharmacological effects of THC by mTOR blockade"
     },
     {
@@ -3290,11 +3422,14 @@
       "datePublished": "2017",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 9,
-        "pageStart": 7,
-        "title": "Nature Reviews Endocrinology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Nature Reviews Endocrinology"
+        },
         "volumeNumber": 13
       },
+      "pageEnd": 9,
+      "pageStart": 7,
       "title": "The emotional cost of contraception"
     },
     {
@@ -3350,11 +3485,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 186,
-        "pageStart": 177,
-        "title": "Neurobiology of Aging",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Neurobiology of Aging"
+        },
         "volumeNumber": 61
       },
+      "pageEnd": 186,
+      "pageStart": 177,
       "title": "Reversal of age-related cognitive impairments in mice by an extremely low dose of tetrahydrocannabinol"
     },
     {
@@ -3401,11 +3539,14 @@
       "datePublished": "2016",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1162,
-        "pageStart": 1154,
-        "title": "JAMA Psychiatry",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "JAMA Psychiatry"
+        },
         "volumeNumber": 73
       },
+      "pageEnd": 1162,
+      "pageStart": 1154,
       "title": "Association of hormonal contraception with depression"
     },
     {
@@ -3470,11 +3611,14 @@
       "datePublished": "1999",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 2950,
-        "pageStart": 2944,
-        "title": "Human Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Human Reproduction"
+        },
         "volumeNumber": 14
       },
+      "pageEnd": 2950,
+      "pageStart": 2944,
       "title": "Endometrial ability to implant in ectopic sites can be prevented by interleukin-12 in a murine model of endometriosis"
     },
     {
@@ -3603,7 +3747,10 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "BMJ Open",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "BMJ Open"
+        },
         "volumeNumber": 9
       },
       "title": "Does endometriosis affect professional life? A matched case-control study in Switzerland, Germany and Austria"
@@ -3706,11 +3853,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1954,
-        "pageStart": 1932,
-        "title": "Pain",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Pain"
+        },
         "volumeNumber": 159
       },
+      "pageEnd": 1954,
+      "pageStart": 1932,
       "title": "Cannabis and cannabinoids for the treatment of people with chronic noncancer pain conditions: a systematic review and meta-analysis of controlled and observational studies"
     },
     {
@@ -3757,11 +3907,14 @@
       "datePublished": "2006",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 787,
-        "pageStart": 782,
-        "title": "Human Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Human Reproduction"
+        },
         "volumeNumber": 21
       },
+      "pageEnd": 787,
+      "pageStart": 782,
       "title": "High density of small nerve fibres in the functional layer of the endometrium in women with endometriosis"
     },
     {
@@ -3799,11 +3952,14 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1604,
-        "pageStart": 1577,
-        "title": "Journal of Pain Research",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of Pain Research"
+        },
         "volumeNumber": 12
       },
+      "pageEnd": 1604,
+      "pageStart": 1577,
       "title": "Effectiveness and tolerability of THC:cbd oromucosal spray as add-on measure in patients with severe chronic pain: analysis of 12-week open-label real-world data provided by the german pain e-Registry]]>"
     },
     {
@@ -3949,7 +4105,10 @@
       "datePublished": "2015",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "PLOS Biology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "PLOS Biology"
+        },
         "volumeNumber": 40
       },
       "title": "Cognitive impairment induced by Delta9- tetrahydrocannabinol occurs through heteromers between cannabinoid CB 1 and serotonin 5-HT 2A receptors 1"
@@ -3989,11 +4148,14 @@
       "datePublished": "2014",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 28,
-        "pageStart": 22,
-        "title": "Drug and Alcohol Dependence",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Drug and Alcohol Dependence"
+        },
         "volumeNumber": 143
       },
+      "pageEnd": 28,
+      "pageStart": 22,
       "title": "Sex differences in antinociceptive tolerance to delta-9-tetrahydrocannabinol in the rat"
     },
     {
@@ -4031,7 +4193,10 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "Journal of Ovarian Research",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Journal of Ovarian Research"
+        },
         "volumeNumber": 12
       },
       "title": "The role of the endocannabinoid system in female reproductive tissues"
@@ -4080,11 +4245,14 @@
       "datePublished": "2009",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 834,
-        "pageStart": 827,
-        "title": "Human Reproduction",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Human Reproduction"
+        },
         "volumeNumber": 24
       },
+      "pageEnd": 834,
+      "pageStart": 827,
       "title": "Rich innervation of deep infiltrating endometriosis"
     },
     {
@@ -4131,11 +4299,14 @@
       "datePublished": "2008",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 86,
-        "pageStart": 78,
-        "title": "European Journal of Pharmacology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "European Journal of Pharmacology"
+        },
         "volumeNumber": 584
       },
+      "pageEnd": 86,
+      "pageStart": 78,
       "title": "Decreased basal endogenous opioid levels in diabetic rodents: effects on morphine and delta-9-tetrahydrocannabinoid-induced antinociception"
     },
     {
@@ -4245,11 +4416,14 @@
       "datePublished": "2018",
       "isPartOf": {
         "type": "PublicationVolume",
-        "pageEnd": 1528,
-        "pageStart": 1518,
-        "title": "Pain",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Pain"
+        },
         "volumeNumber": 159
       },
+      "pageEnd": 1528,
+      "pageStart": 1518,
       "title": "Cognitive impairment in a rat model of neuropathic pain: role of hippocampal microtubule stability"
     },
     {
@@ -4314,7 +4488,10 @@
       "datePublished": "2019",
       "isPartOf": {
         "type": "PublicationVolume",
-        "title": "Medical Radiology",
+        "isPartOf": {
+          "type": "Periodical",
+          "name": "Medical Radiology"
+        },
         "volumeNumber": 4
       },
       "title": "Endometriosis"
@@ -4765,7 +4942,7 @@
             },
             {
               "type": "MediaObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "application/xlsx"
             }
           ],
@@ -4773,7 +4950,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4818,7 +4995,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4863,7 +5040,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -4908,7 +5085,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5064,7 +5241,7 @@
         },
         {
           "type": "MediaObject",
-          "contentUrl": "",
+          "contentUrl": "50356.json.media",
           "format": "application/xlsx"
         }
       ],
@@ -5072,7 +5249,7 @@
       "content": [
         {
           "type": "ImageObject",
-          "contentUrl": "",
+          "contentUrl": "50356.json.media",
           "format": "image/jpeg",
           "meta": {
             "inline": false
@@ -5280,7 +5457,7 @@
             },
             {
               "type": "MediaObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "application/xlsx"
             }
           ],
@@ -5288,7 +5465,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5319,7 +5496,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5350,7 +5527,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5395,7 +5572,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5722,7 +5899,7 @@
             },
             {
               "type": "MediaObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "application/xlsx"
             }
           ],
@@ -5730,7 +5907,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false
@@ -5796,7 +5973,7 @@
           "content": [
             {
               "type": "ImageObject",
-              "contentUrl": "",
+              "contentUrl": "50356.json.media",
               "format": "image/jpeg",
               "meta": {
                 "inline": false

@@ -937,47 +937,35 @@ function encodeReferences(
  */
 function decodeReference(
   elem: xml.Element,
-  id?: string | null
+  ident?: string | null
 ): stencila.CreativeWork {
-  const rawAuthors = all(elem, 'name')
-  const authors = rawAuthors.length ? rawAuthors.map(decodeName) : []
-  const title = text(child(elem, 'article-title'))
-  const work = stencila.article({ authors, title })
+  const id = ident ? decodeInternalId(ident) : undefined
+  const authors = all(elem, 'name').map(decodeName)
+  const title = textOrUndefined(child(elem, 'article-title'))
+  const datePublished = textOrUndefined(child(elem, 'year'))
+  const pageStart = intOrUndefined(child(elem, 'fpage'))
+  const pageEnd = intOrUndefined(child(elem, 'lpage'))
+  const issueNumber = intOrUndefined(child(elem, 'issue'))
+  const volumeNumber = intOrUndefined(child(elem, 'volume'))
+  const periodicalName = textOrUndefined(child(elem, 'source'))
 
-  const year = child(elem, 'year')
-  if (year) {
-    const iso = attr(year, 'iso-8601-date')
-    work.datePublished = iso ?? text(year)
-    // TODO: warn that the date components apart from year are lost?
-    // Or also parse month and day
-  }
+  let isPartOf: stencila.CreativeWork | undefined
+  if (periodicalName !== undefined)
+    isPartOf = stencila.periodical({ name: periodicalName })
+  if (volumeNumber !== undefined)
+    isPartOf = stencila.publicationVolume({ volumeNumber, isPartOf })
+  if (issueNumber !== undefined)
+    isPartOf = stencila.publicationIssue({ issueNumber, isPartOf })
 
-  const source = child(elem, 'source')
-  if (source) {
-    const issueEl = child(elem, 'issue')
-    if (issueEl) {
-      work.isPartOf = stencila.publicationIssue({
-        issueNumber: intOrUndefined(child(elem, 'issue')),
-        pageStart: intOrUndefined(child(elem, 'fpage')),
-        pageEnd: intOrUndefined(child(elem, 'lpage')),
-        isPartOf: stencila.publicationVolume({
-          title: text(source),
-          volumeNumber: intOrUndefined(child(elem, 'volume'))
-        })
-      })
-    } else {
-      work.isPartOf = stencila.publicationVolume({
-        pageStart: intOrUndefined(child(elem, 'fpage')),
-        pageEnd: intOrUndefined(child(elem, 'lpage')),
-        title: text(source),
-        volumeNumber: intOrUndefined(child(elem, 'volume'))
-      })
-    }
-  }
-
-  if (id) work.id = decodeInternalId(id)
-
-  return work
+  return stencila.article({
+    id,
+    authors,
+    title,
+    datePublished,
+    pageStart,
+    pageEnd,
+    isPartOf
+  })
 }
 
 /**
