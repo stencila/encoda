@@ -165,9 +165,9 @@
             </p>
             <p>We set out to address two main questions (
                 <ext-link ext-link-type="uri" xlink:href="#fig1">Figure 1</ext-link>): 1) which human genes and cellular pathways interact with G4s and 2) what genetic backgrounds selectively lead to enhanced cell killing in the presence of G4 stabilising ligands? We employed PDS and PhenDC3 as representative G4 ligands as these are chemically and structurally dissimilar, but each shows a broad specificity for different G4 structural variants. Both ligands have been widely used as G4-targeting probes in biophysical (
-                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007</xref>; 
+                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007b</xref>; 
                 <xref rid="bib102" ref-type="bibr">Rodriguez et al., 2008</xref>) and biological studies in which they have been shown to impart transcriptional inhibition, telomere dysfunction and replication stalling (
-                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007</xref>; 
+                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007a</xref>; 
                 <xref rid="bib53" ref-type="bibr">Halder et al., 2012</xref>; 
                 <xref rid="bib84" ref-type="bibr">Mendoza et al., 2016</xref>).
             </p>
@@ -188,7 +188,7 @@
             <p>An unbiased genome-wide shRNA screen was performed in A375 human melanoma cells to globally evaluate genetic vulnerabilities to G4-ligands and to identify genes and pathways involved with G4-structures (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2A</ext-link>). For this, the pyridine-2,6-bis-quinolino-dicarboxamide derivative, PDS (
                 <xref rid="bib103" ref-type="bibr">Rodriguez et al., 2012</xref>), and bisquinolinium compound, PhenDC3 (
-                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007</xref>) were chosen (
+                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007b</xref>) were chosen (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2B</ext-link>). We used the latest generation shERWOOD-Ultramir shRNA pLMN retroviral library, comprising 132,000 shRNAs across 12 randomised pools targeting the protein coding genome, with an average of five optimised hairpins per gene (
                 <ext-link ext-link-type="uri" xlink:href="#fig2">Figure 2C</ext-link>) (
                 <xref rid="bib66" ref-type="bibr">Knott et al., 2014</xref>). A375 melanoma cells were used due to their rapid doubling, stable ploidy and success in other shRNA-dropout screens (
@@ -276,7 +276,7 @@
                 <xref rid="bib85" ref-type="bibr">Mishra et al., 2016</xref>), an additional eight sensitisers (
                 <italic>ADAR, DHX36, DNA2, FUS, MCRS1, RECQL4, SF3B3 and XRN1</italic>) were uncovered (
                 <ext-link ext-link-type="uri" xlink:href="#fig3">Figure 3E</ext-link>). Text-mining with G4 search terms using PolySearch2 on PubMed abstracts and open access full texts (see Materials and methods; 
-                <xref rid="bib75" ref-type="bibr">Liu et al., 2015</xref>) revealed a further 12 sensitisers arising from our screen including helicases (
+                <xref rid="bib75" ref-type="bibr">Liu et al., 2015b</xref>) revealed a further 12 sensitisers arising from our screen including helicases (
                 <italic>RTEL1</italic>), DDR components (
                 <italic>CHEK1, RAD17</italic>), transcriptional proteins (
                 <italic>POLR1A, CNBP</italic>) and replication factors (
@@ -607,7 +607,7 @@
                 <xref rid="bib80" ref-type="bibr">Matheson et al., 2016</xref>), and USP1 is involved in DDR regulation and is overexpressed in non-small cell lung and other cancers (reviewed in 
                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>). For our studies, we used MK1775 (AZD1775), a WEE1 kinase inhibitor that is being clinically evaluated in several cancers (
                 <xref rid="bib100" ref-type="bibr">Richer et al., 2017</xref>), and pimozide a potent USP1-targeting drug (
-                <xref rid="bib25" ref-type="bibr">Chen et al., 2011</xref>). HT1080 and A375 cells were cultured in matrix combinations of PDS with MK1775 or pimozide at concentrations surrounding the GI
+                <xref rid="bib25" ref-type="bibr">Chen et al., 2011a</xref>). HT1080 and A375 cells were cultured in matrix combinations of PDS with MK1775 or pimozide at concentrations surrounding the GI
                 <sub>50</sub> values and cell viability measured after 96 hr using an end-point ATP luminescence-based assay (CellTiter-Glo, Promega). Combenefit software (
                 <xref rid="bib37" ref-type="bibr">Di Veroli et al., 2016</xref>) was then used to calculate synergy for different treatment combinations in which the percentage growth inhibition compared to single agent controls is used to plot a 3D-dose-response surface of synergy distribution in concentration space (
                 <ext-link ext-link-type="uri" xlink:href="#fig9">Figure 9C–F</ext-link>). In HT1080 cells, synergy was found for both PDS and MK1775 or pimozide combinations (
@@ -838,7 +838,7 @@
                             <tr>Proteosome inhibitors: Bortezomib CEP187710 Carfizomib</tr>
                             <tr>Ubiquitin is emerging aschemotherapeutic target, and general proteasome inhibitors clinically are used against multiple myeloma.</tr>
                             <tr>
-                                <xref rid="bib25" ref-type="bibr">Chen et al., 2011</xref>; 
+                                <xref rid="bib25" ref-type="bibr">Chen et al., 2011a</xref>; 
                                 <xref rid="bib81" ref-type="bibr">Mattern et al., 2012</xref>; 
                                 <xref rid="bib40" ref-type="bibr">Edelmann et al., 2011</xref>
                             </tr>
@@ -887,7 +887,7 @@
                             <tr>Over-expressed inmelanoma, gastric, cervical and NSCLC; under-expressed in leukaemia and lymphoma. Pimozide is a potent USP1-targeting drug.</tr>
                             <tr>
                                 <xref rid="bib46" ref-type="bibr">García-Santisteban et al., 2013</xref>;  
-                                <xref rid="bib26" ref-type="bibr">Chen et al., 2011</xref>
+                                <xref rid="bib26" ref-type="bibr">Chen et al., 2011b</xref>
                             </tr>
                         </tr>
                         <tr>
@@ -1428,7 +1428,7 @@
                             <tr>PhenDC3</tr>
                             <tr>In-house synthesis</tr>
                             <tr>
-                                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007</xref>
+                                <xref rid="bib34" ref-type="bibr">De Cian et al., 2007a</xref>
                             </tr>
                             <tr/>
                         </tr>
@@ -1540,8 +1540,8 @@
                             <tr>Software, algorithm</tr>
                             <tr>DAVID</tr>
                             <tr>
-                                <xref rid="bib59" ref-type="bibr">Huang et al., 2009</xref>, 
-                                <xref rid="bib60" ref-type="bibr">Huang et al., 2009</xref>
+                                <xref rid="bib59" ref-type="bibr">Huang et al., 2009a</xref>, 
+                                <xref rid="bib60" ref-type="bibr">Huang et al., 2009b</xref>
                             </tr>
                             <tr>
                                 <ext-link ext-link-type="uri" xlink:href="https://david.ncifcrf.gov">https://david.ncifcrf.gov</ext-link>
@@ -1585,7 +1585,7 @@
                             <tr>Software, algorithm</tr>
                             <tr>PolySearch2</tr>
                             <tr>
-                                <xref rid="bib74" ref-type="bibr">Liu et al., 2015</xref>
+                                <xref rid="bib74" ref-type="bibr">Liu et al., 2015a</xref>
                             </tr>
                             <tr>
                                 <ext-link ext-link-type="uri" xlink:href="http://polysearch.cs.ualberta.ca/">http://polysearch.cs.ualberta.ca/</ext-link>
@@ -1642,7 +1642,7 @@
         <sec>
             <title>Determination of G4 ligand concentration for shRNA screens</title>
             <p>PDS and PhenDC3 (both synthesised in-house) (
-                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007</xref>; 
+                <xref rid="bib35" ref-type="bibr">De Cian et al., 2007b</xref>; 
                 <xref rid="bib102" ref-type="bibr">Rodriguez et al., 2008</xref>) were used as 100 mM stocks, dissolved in DMSO (Thermofisher Scientific, cat # 20688). GI
                 <sub>20</sub> values were calculated by treating A375 and HT1080 cells with serial dilutions of PDS and PhenDC3 for 96 hr and determining cell death via a CellTitre-Glo One Solution assay (Promega, cat # G8461) according to manufacturer’s protocol. Each serial dilution was replicated four times for two-cell-seeding densities (1000/1500 cells per well). For both densities, curves were plotted averaging the four replicates in Prism (GraphPad v6) using a Non-Linear regression model, ‘dose-response – inhibition’ equation [log(inhibitor) vs. normalised response – variable slope] and GI
                 <sub>20</sub> values calculated. The GI
@@ -1868,7 +1868,7 @@
             <p>Furthermore, 55 confirmed human G4-interacting proteins as defined by the G4IPB database (
                 <xref rid="bib85" ref-type="bibr">Mishra et al., 2016</xref>) (
                 <ext-link ext-link-type="uri" xlink:href="http://bsbe.iiti.ac.in/bsbe/ipdb/index.php">http://bsbe.iiti.ac.in/bsbe/ipdb/index.php</ext-link>) were also used to determine predefined G4-interacting proteins from the genome-wide shRNA screen. For this, gene entries were removed where the only G4-relationship was a predicted G4-forming sequence in the mRNA or DNA (i.e. not a direct protein interaction) or where the protein was not human. To extend the list of G4-interacting proteins, text-mining using PolySearch2 (
-                <xref rid="bib75" ref-type="bibr">Liu et al., 2015</xref>) was used. Human protein-coding gene names and G4-terms and synonyms are defined using the corresponding MeSH term id D054856 (
+                <xref rid="bib75" ref-type="bibr">Liu et al., 2015b</xref>) was used. Human protein-coding gene names and G4-terms and synonyms are defined using the corresponding MeSH term id D054856 (
                 <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/mesh/68054856">https://www.ncbi.nlm.nih.gov/mesh/68054856</ext-link>) and the thesaurus of gene names obtained from the PolySearch2 website (
                 <ext-link ext-link-type="uri" xlink:href="http://polysearch.cs.ualberta.ca/">http://polysearch.cs.ualberta.ca/</ext-link>). A relevancy score measures the strength of association between two text groups, and higher the score, the more likely terms from the two groups co-occur within the same abstract; the score also accounts for the distance between terms from the two groups. A total of 5477 pieces of text were identified in PubMed and PubMed Central where any of the G4 terms co-occur with more than 500 human gene names. Overall, this generated 526 G4-associated genes, with 54 (10%) uncovered as G4-sensitisers (
                 <ext-link ext-link-type="uri" xlink:href="https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity">https://github.com/sblab-bioinformatics/GWscreen_G4sensitivity</ext-link>), which were manually edited to 16 genes as discussed in the main text and figures.
@@ -2043,10 +2043,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Acta Pharmaceutica Sinica B</source>
                     <fpage>285</fpage>
                     <lpage>299</lpage>
                     <volume>5</volume>
+                    <source>Acta Pharmaceutica Sinica B</source>
                 </element-citation>
             </ref>
             <ref id="bib2">
@@ -2146,10 +2146,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2000">2000</year>
-                    <source>Nature Genetics</source>
                     <fpage>25</fpage>
                     <lpage>34</lpage>
                     <volume>25</volume>
+                    <source>Nature Genetics</source>
                 </element-citation>
             </ref>
             <ref id="bib4">
@@ -2202,8 +2202,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2009">2009</year>
-                    <source>Journal of Translational Medicine</source>
                     <volume>7</volume>
+                    <source>Journal of Translational Medicine</source>
                 </element-citation>
             </ref>
             <ref id="bib5">
@@ -2260,10 +2260,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1999">1999</year>
-                    <source>International Journal of Cancer</source>
                     <fpage>868</fpage>
                     <lpage>874</lpage>
                     <volume>82</volume>
+                    <source>International Journal of Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib6">
@@ -2340,10 +2340,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Cancer Research</source>
                     <fpage>287</fpage>
                     <lpage>297</lpage>
                     <volume>74</volume>
+                    <source>Cancer Research</source>
                 </element-citation>
             </ref>
             <ref id="bib7">
@@ -2364,10 +2364,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Nature Reviews Drug Discovery</source>
                     <fpage>261</fpage>
                     <lpage>275</lpage>
                     <volume>10</volume>
+                    <source>Nature Reviews Drug Discovery</source>
                 </element-citation>
             </ref>
             <ref id="bib8">
@@ -2436,10 +2436,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>PNAS</source>
                     <fpage>3443</fpage>
                     <lpage>3448</lpage>
                     <volume>105</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib9">
@@ -2464,8 +2464,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Cold Spring Harbor Perspectives in Medicine</source>
                     <volume>7</volume>
+                    <source>Cold Spring Harbor Perspectives in Medicine</source>
                 </element-citation>
             </ref>
             <ref id="bib10">
@@ -2506,10 +2506,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Nature Structural &amp; Molecular Biology</source>
                     <fpage>837</fpage>
                     <lpage>844</lpage>
                     <volume>19</volume>
+                    <source>Nature Structural &amp; Molecular Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib11">
@@ -2534,10 +2534,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Nature Chemistry</source>
                     <fpage>182</fpage>
                     <lpage>186</lpage>
                     <volume>5</volume>
+                    <source>Nature Chemistry</source>
                 </element-citation>
             </ref>
             <ref id="bib12">
@@ -2566,8 +2566,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>PLOS ONE</source>
                     <volume>9</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib13">
@@ -2616,10 +2616,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2009">2009</year>
-                    <source>Bioinformatics</source>
                     <fpage>1091</fpage>
                     <lpage>1093</lpage>
                     <volume>25</volume>
+                    <source>Bioinformatics</source>
                 </element-citation>
             </ref>
             <ref id="bib14">
@@ -2640,10 +2640,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Bioinformatics</source>
                     <fpage>661</fpage>
                     <lpage>663</lpage>
                     <volume>29</volume>
+                    <source>Bioinformatics</source>
                 </element-citation>
             </ref>
             <ref id="bib15">
@@ -2664,10 +2664,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Nature Reviews Genetics</source>
                     <fpage>770</fpage>
                     <lpage>780</lpage>
                     <volume>13</volume>
+                    <source>Nature Reviews Genetics</source>
                 </element-citation>
             </ref>
             <ref id="bib16">
@@ -2692,10 +2692,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>International Journal of Molecular Sciences</source>
                     <fpage>17493</fpage>
                     <lpage>17517</lpage>
                     <volume>15</volume>
+                    <source>International Journal of Molecular Sciences</source>
                 </element-citation>
             </ref>
             <ref id="bib17">
@@ -2708,10 +2708,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Nature Reviews Cancer</source>
                     <fpage>542</fpage>
                     <lpage>558</lpage>
                     <volume>13</volume>
+                    <source>Nature Reviews Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib18">
@@ -2760,10 +2760,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Nature</source>
                     <fpage>913</fpage>
                     <lpage>917</lpage>
                     <volume>434</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib19">
@@ -2780,10 +2780,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>4727</fpage>
                     <lpage>4741</lpage>
                     <volume>40</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib20">
@@ -2800,8 +2800,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Nucleic Acids Research</source>
                     <volume>9</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib21">
@@ -2834,10 +2834,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Nature Reviews Cancer</source>
                     <fpage>153</fpage>
                     <lpage>159</lpage>
                     <volume>13</volume>
+                    <source>Nature Reviews Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib22">
@@ -2854,10 +2854,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>DNA Repair</source>
                     <fpage>654</fpage>
                     <lpage>665</lpage>
                     <volume>10</volume>
+                    <source>DNA Repair</source>
                 </element-citation>
             </ref>
             <ref id="bib23">
@@ -2890,10 +2890,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Nature Biotechnology</source>
                     <fpage>877</fpage>
                     <lpage>881</lpage>
                     <volume>33</volume>
+                    <source>Nature Biotechnology</source>
                 </element-citation>
             </ref>
             <ref id="bib24">
@@ -2910,10 +2910,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Nature Reviews Drug Discovery</source>
                     <fpage>351</fpage>
                     <lpage>364</lpage>
                     <volume>10</volume>
+                    <source>Nature Reviews Drug Discovery</source>
                 </element-citation>
             </ref>
             <ref id="bib25">
@@ -2941,11 +2941,11 @@
                             <given-names>QP</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2011">2011</year>
-                    <source>Current Cancer Drug Targets</source>
+                    <year iso-8601-date="2011a">2011a</year>
                     <fpage>239</fpage>
                     <lpage>253</lpage>
                     <volume>11</volume>
+                    <source>Current Cancer Drug Targets</source>
                 </element-citation>
             </ref>
             <ref id="bib26">
@@ -2993,11 +2993,11 @@
                             <given-names>Z</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2011">2011</year>
-                    <source>Chemistry &amp; Biology</source>
+                    <year iso-8601-date="2011b">2011b</year>
                     <fpage>1390</fpage>
                     <lpage>1400</lpage>
                     <volume>18</volume>
+                    <source>Chemistry &amp; Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib27">
@@ -3034,10 +3034,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Nature</source>
                     <fpage>465</fpage>
                     <lpage>469</lpage>
                     <volume>558</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib28">
@@ -3090,10 +3090,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Journal of Medicinal Chemistry</source>
                     <fpage>1869</fpage>
                     <lpage>1879</lpage>
                     <volume>59</volume>
+                    <source>Journal of Medicinal Chemistry</source>
                 </element-citation>
             </ref>
             <ref id="bib29">
@@ -3163,10 +3163,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Journal of Biological Chemistry</source>
                     <fpage>34626</fpage>
                     <lpage>34634</lpage>
                     <volume>283</volume>
+                    <source>Journal of Biological Chemistry</source>
                 </element-citation>
             </ref>
             <ref id="bib31">
@@ -3191,10 +3191,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1993">1993</year>
-                    <source>Nature</source>
                     <fpage>640</fpage>
                     <lpage>644</lpage>
                     <volume>363</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib32">
@@ -3247,9 +3247,9 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>F1000Research</source>
                     <fpage>95</fpage>
                     <volume>3</volume>
+                    <source>F1000Research</source>
                 </element-citation>
             </ref>
             <ref id="bib33">
@@ -3282,10 +3282,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Cell Cycle</source>
                     <fpage>3036</fpage>
                     <lpage>3044</lpage>
                     <volume>11</volume>
+                    <source>Cell Cycle</source>
                 </element-citation>
             </ref>
             <ref id="bib34">
@@ -3333,11 +3333,11 @@
                             <given-names>JL</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2007">2007</year>
-                    <source>PNAS</source>
+                    <year iso-8601-date="2007a">2007a</year>
                     <fpage>17347</fpage>
                     <lpage>17352</lpage>
                     <volume>104</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib35">
@@ -3365,11 +3365,11 @@
                             <given-names>D</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2007">2007</year>
-                    <source>Journal of the American Chemical Society</source>
+                    <year iso-8601-date="2007b">2007b</year>
                     <fpage>1856</fpage>
                     <lpage>1857</lpage>
                     <volume>129</volume>
+                    <source>Journal of the American Chemical Society</source>
                 </element-citation>
             </ref>
             <ref id="bib36">
@@ -3386,8 +3386,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Molecular &amp; Cellular Oncology</source>
                     <volume>3</volume>
+                    <source>Molecular &amp; Cellular Oncology</source>
                 </element-citation>
             </ref>
             <ref id="bib37">
@@ -3424,10 +3424,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Bioinformatics</source>
                     <fpage>2866</fpage>
                     <lpage>2868</lpage>
                     <volume>32</volume>
+                    <source>Bioinformatics</source>
                 </element-citation>
             </ref>
             <ref id="bib38">
@@ -3464,8 +3464,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>PLOS ONE</source>
                     <volume>12</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib39">
@@ -3490,10 +3490,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Nature Reviews Cancer</source>
                     <fpage>413</fpage>
                     <lpage>430</lpage>
                     <volume>16</volume>
+                    <source>Nature Reviews Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib40">
@@ -3514,8 +3514,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Expert Reviews in Molecular Medicine</source>
                     <volume>13</volume>
+                    <source>Expert Reviews in Molecular Medicine</source>
                 </element-citation>
             </ref>
             <ref id="bib41">
@@ -3580,10 +3580,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Nature</source>
                     <fpage>917</fpage>
                     <lpage>921</lpage>
                     <volume>434</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib42">
@@ -3644,8 +3644,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Nucleic Acids Research</source>
                     <volume>44</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib43">
@@ -3722,8 +3722,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Nucleic Acids Research</source>
                     <volume>43</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib44">
@@ -3744,10 +3744,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Gene</source>
                     <fpage>337</fpage>
                     <lpage>342</lpage>
                     <volume>627</volume>
+                    <source>Gene</source>
                 </element-citation>
             </ref>
             <ref id="bib45">
@@ -3772,10 +3772,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Medical Oncology</source>
                     <fpage>1733</fpage>
                     <lpage>1738</lpage>
                     <volume>29</volume>
+                    <source>Medical Oncology</source>
                 </element-citation>
             </ref>
             <ref id="bib46">
@@ -3800,8 +3800,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Molecular Cancer</source>
                     <volume>12</volume>
+                    <source>Molecular Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib47">
@@ -3850,10 +3850,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>7161</fpage>
                     <lpage>7178</lpage>
                     <volume>39</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib48">
@@ -3870,10 +3870,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>Annual Review of Pharmacology and Toxicology</source>
                     <fpage>111</fpage>
                     <lpage>129</lpage>
                     <volume>50</volume>
+                    <source>Annual Review of Pharmacology and Toxicology</source>
                 </element-citation>
             </ref>
             <ref id="bib49">
@@ -3990,10 +3990,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Nature Methods</source>
                     <fpage>1209</fpage>
                     <lpage>1210</lpage>
                     <volume>10</volume>
+                    <source>Nature Methods</source>
                 </element-citation>
             </ref>
             <ref id="bib51">
@@ -4022,8 +4022,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>PLOS ONE</source>
                     <volume>9</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib52">
@@ -4076,10 +4076,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1996">1996</year>
-                    <source>Science</source>
                     <fpage>350</fpage>
                     <lpage>353</lpage>
                     <volume>271</volume>
+                    <source>Science</source>
                 </element-citation>
             </ref>
             <ref id="bib53">
@@ -4108,8 +4108,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>BMC Research Notes</source>
                     <volume>5</volume>
+                    <source>BMC Research Notes</source>
                 </element-citation>
             </ref>
             <ref id="bib54">
@@ -4166,10 +4166,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Nature Genetics</source>
                     <fpage>1267</fpage>
                     <lpage>1272</lpage>
                     <volume>48</volume>
+                    <source>Nature Genetics</source>
                 </element-citation>
             </ref>
             <ref id="bib55">
@@ -4194,10 +4194,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Nature Reviews Drug Discovery</source>
                     <fpage>57</fpage>
                     <lpage>78</lpage>
                     <volume>17</volume>
+                    <source>Nature Reviews Drug Discovery</source>
                 </element-citation>
             </ref>
             <ref id="bib56">
@@ -4242,10 +4242,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>860</fpage>
                     <lpage>869</lpage>
                     <volume>42</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib57">
@@ -4290,10 +4290,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>11592</fpage>
                     <lpage>11604</lpage>
                     <volume>46</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib58">
@@ -4342,10 +4342,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2006">2006</year>
-                    <source>Nature Cell Biology</source>
                     <fpage>341</fpage>
                     <lpage>347</lpage>
                     <volume>8</volume>
+                    <source>Nature Cell Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib59">
@@ -4365,11 +4365,11 @@
                             <given-names>RA</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2009">2009</year>
-                    <source>Nature Protocols</source>
+                    <year iso-8601-date="2009a">2009a</year>
                     <fpage>44</fpage>
                     <lpage>57</lpage>
                     <volume>4</volume>
+                    <source>Nature Protocols</source>
                 </element-citation>
             </ref>
             <ref id="bib60">
@@ -4389,11 +4389,11 @@
                             <given-names>RA</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2009">2009</year>
-                    <source>Nucleic Acids Research</source>
+                    <year iso-8601-date="2009b">2009b</year>
                     <fpage>1</fpage>
                     <lpage>13</lpage>
                     <volume>37</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib61">
@@ -4410,10 +4410,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Cell Research</source>
                     <fpage>484</fpage>
                     <lpage>498</lpage>
                     <volume>26</volume>
+                    <source>Cell Research</source>
                 </element-citation>
             </ref>
             <ref id="bib62">
@@ -4426,8 +4426,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Chemical Society Reviews</source>
                     <volume>37</volume>
+                    <source>Chemical Society Reviews</source>
                 </element-citation>
             </ref>
             <ref id="bib63">
@@ -4444,10 +4444,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>406</fpage>
                     <lpage>413</lpage>
                     <volume>35</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib64">
@@ -4484,10 +4484,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Nature Genetics</source>
                     <fpage>592</fpage>
                     <lpage>601</lpage>
                     <volume>45</volume>
+                    <source>Nature Genetics</source>
                 </element-citation>
             </ref>
             <ref id="bib65">
@@ -4528,10 +4528,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2004">2004</year>
-                    <source>Journal of Biological Chemistry</source>
                     <fpage>20692</fpage>
                     <lpage>20698</lpage>
                     <volume>279</volume>
+                    <source>Journal of Biological Chemistry</source>
                 </element-citation>
             </ref>
             <ref id="bib66">
@@ -4588,10 +4588,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Molecular Cell</source>
                     <fpage>796</fpage>
                     <lpage>807</lpage>
                     <volume>56</volume>
+                    <source>Molecular Cell</source>
                 </element-citation>
             </ref>
             <ref id="bib67">
@@ -4636,10 +4636,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>Nature Chemical Biology</source>
                     <fpage>570</fpage>
                     <lpage>575</lpage>
                     <volume>3</volume>
+                    <source>Nature Chemical Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib68">
@@ -4664,10 +4664,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>Nature Chemical Biology</source>
                     <fpage>218</fpage>
                     <lpage>221</lpage>
                     <volume>3</volume>
+                    <source>Nature Chemical Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib69">
@@ -4696,10 +4696,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Nature Methods</source>
                     <fpage>841</fpage>
                     <lpage>844</lpage>
                     <volume>13</volume>
+                    <source>Nature Methods</source>
                 </element-citation>
             </ref>
             <ref id="bib70">
@@ -4716,10 +4716,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Nature Methods</source>
                     <fpage>357</fpage>
                     <lpage>359</lpage>
                     <volume>9</volume>
+                    <source>Nature Methods</source>
                 </element-citation>
             </ref>
             <ref id="bib71">
@@ -4744,10 +4744,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Chemical Communications</source>
                     <fpage>8048</fpage>
                     <lpage>8050</lpage>
                     <volume>51</volume>
+                    <source>Chemical Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib72">
@@ -4768,10 +4768,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Annals of Oncology</source>
                     <fpage>32</fpage>
                     <lpage>40</lpage>
                     <volume>25</volume>
+                    <source>Annals of Oncology</source>
                 </element-citation>
             </ref>
             <ref id="bib73">
@@ -4816,10 +4816,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>European Journal of Cancer</source>
                     <fpage>3300</fpage>
                     <lpage>3309</lpage>
                     <volume>48</volume>
+                    <source>European Journal of Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib74">
@@ -4855,11 +4855,11 @@
                             <given-names>W</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2015">2015</year>
-                    <source>Biochimica Et Biophysica Acta (BBA) - Reviews on Cancer</source>
+                    <year iso-8601-date="2015a">2015a</year>
                     <fpage>50</fpage>
                     <lpage>60</lpage>
                     <volume>1855</volume>
+                    <source>Biochimica Et Biophysica Acta (BBA) - Reviews on Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib75">
@@ -4879,9 +4879,9 @@
                             <given-names>D</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2015">2015</year>
-                    <source>Nucleic Acids Research</source>
+                    <year iso-8601-date="2015b">2015b</year>
                     <volume>43</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib76">
@@ -4954,10 +4954,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Cell Chemical Biology</source>
                     <fpage>1261</fpage>
                     <lpage>1270</lpage>
                     <volume>23</volume>
+                    <source>Cell Chemical Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib77">
@@ -4994,8 +4994,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Scientific Reports</source>
                     <volume>6</volume>
+                    <source>Scientific Reports</source>
                 </element-citation>
             </ref>
             <ref id="bib78">
@@ -5040,10 +5040,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Molecular Cancer Therapeutics</source>
                     <fpage>540</fpage>
                     <lpage>550</lpage>
                     <volume>16</volume>
+                    <source>Molecular Cancer Therapeutics</source>
                 </element-citation>
             </ref>
             <ref id="bib79">
@@ -5076,10 +5076,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Trends in Pharmacological Sciences</source>
                     <fpage>872</fpage>
                     <lpage>881</lpage>
                     <volume>37</volume>
+                    <source>Trends in Pharmacological Sciences</source>
                 </element-citation>
             </ref>
             <ref id="bib81">
@@ -5100,10 +5100,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Biochimica Et Biophysica Acta (BBA) - Molecular Cell Research</source>
                     <fpage>2014</fpage>
                     <lpage>2021</lpage>
                     <volume>1823</volume>
+                    <source>Biochimica Et Biophysica Acta (BBA) - Molecular Cell Research</source>
                 </element-citation>
             </ref>
             <ref id="bib82">
@@ -5184,10 +5184,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Oncotarget</source>
                     <fpage>2881</fpage>
                     <lpage>2911</lpage>
                     <volume>5</volume>
+                    <source>Oncotarget</source>
                 </element-citation>
             </ref>
             <ref id="bib83">
@@ -5232,10 +5232,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Journal of the American Chemical Society</source>
                     <fpage>9640</fpage>
                     <lpage>9643</lpage>
                     <volume>135</volume>
+                    <source>Journal of the American Chemical Society</source>
                 </element-citation>
             </ref>
             <ref id="bib84">
@@ -5264,10 +5264,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>1989</fpage>
                     <lpage>2006</lpage>
                     <volume>44</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib85">
@@ -5292,8 +5292,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Scientific Reports</source>
                     <volume>6</volume>
+                    <source>Scientific Reports</source>
                 </element-citation>
             </ref>
             <ref id="bib86">
@@ -5378,10 +5378,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>International Journal of Cancer</source>
                     <fpage>2146</fpage>
                     <lpage>2157</lpage>
                     <volume>136</volume>
+                    <source>International Journal of Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib87">
@@ -5478,10 +5478,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Molecular Cell</source>
                     <fpage>529</fpage>
                     <lpage>542</lpage>
                     <volume>41</volume>
+                    <source>Molecular Cell</source>
                 </element-citation>
             </ref>
             <ref id="bib88">
@@ -5494,10 +5494,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>FEBS Journal</source>
                     <fpage>1118</fpage>
                     <lpage>1125</lpage>
                     <volume>277</volume>
+                    <source>FEBS Journal</source>
                 </element-citation>
             </ref>
             <ref id="bib89">
@@ -5510,8 +5510,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Nature Reviews Chemistry</source>
                     <volume>1</volume>
+                    <source>Nature Reviews Chemistry</source>
                 </element-citation>
             </ref>
             <ref id="bib90">
@@ -5556,10 +5556,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Journal of Cell Science</source>
                     <fpage>3541</fpage>
                     <lpage>3552</lpage>
                     <volume>121</volume>
+                    <source>Journal of Cell Science</source>
                 </element-citation>
             </ref>
             <ref id="bib91">
@@ -5592,9 +5592,9 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>International Journal of Molecular Sciences</source>
                     <fpage>1886</fpage>
                     <volume>18</volume>
+                    <source>International Journal of Molecular Sciences</source>
                 </element-citation>
             </ref>
             <ref id="bib92">
@@ -5631,10 +5631,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Molecular Cell</source>
                     <fpage>331</fpage>
                     <lpage>339</lpage>
                     <volume>17</volume>
+                    <source>Molecular Cell</source>
                 </element-citation>
             </ref>
             <ref id="bib93">
@@ -5647,10 +5647,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>FEBS Letters</source>
                     <fpage>1</fpage>
                     <lpage>6</lpage>
                     <volume>585</volume>
+                    <source>FEBS Letters</source>
                 </element-citation>
             </ref>
             <ref id="bib94">
@@ -5687,10 +5687,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Oncogene</source>
                     <fpage>2836</fpage>
                     <lpage>2848</lpage>
                     <volume>31</volume>
+                    <source>Oncogene</source>
                 </element-citation>
             </ref>
             <ref id="bib95">
@@ -5755,10 +5755,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Oncogene</source>
                     <fpage>3957</fpage>
                     <lpage>3967</lpage>
                     <volume>34</volume>
+                    <source>Oncogene</source>
                 </element-citation>
             </ref>
             <ref id="bib96">
@@ -5839,10 +5839,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>Molecular Cancer Therapeutics</source>
                     <fpage>2344</fpage>
                     <lpage>2353</lpage>
                     <volume>9</volume>
+                    <source>Molecular Cancer Therapeutics</source>
                 </element-citation>
             </ref>
             <ref id="bib97">
@@ -5875,10 +5875,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Mutation Research/Fundamental and Molecular Mechanisms of Mutagenesis</source>
                     <fpage>17</fpage>
                     <lpage>32</lpage>
                     <volume>570</volume>
+                    <source>Mutation Research/Fundamental and Molecular Mechanisms of Mutagenesis</source>
                 </element-citation>
             </ref>
             <ref id="bib98">
@@ -5895,10 +5895,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Nature Reviews Cancer</source>
                     <fpage>334</fpage>
                     <lpage>346</lpage>
                     <volume>15</volume>
+                    <source>Nature Reviews Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib99">
@@ -5915,10 +5915,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>8627</fpage>
                     <lpage>8637</lpage>
                     <volume>43</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib100">
@@ -5951,10 +5951,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Cancer Research</source>
                     <fpage>4663</fpage>
                     <lpage>4672</lpage>
                     <volume>77</volume>
+                    <source>Cancer Research</source>
                 </element-citation>
             </ref>
             <ref id="bib101">
@@ -5975,10 +5975,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>Bioinformatics</source>
                     <fpage>139</fpage>
                     <lpage>140</lpage>
                     <volume>26</volume>
+                    <source>Bioinformatics</source>
                 </element-citation>
             </ref>
             <ref id="bib102">
@@ -6011,10 +6011,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Journal of the American Chemical Society</source>
                     <fpage>15758</fpage>
                     <lpage>15759</lpage>
                     <volume>130</volume>
+                    <source>Journal of the American Chemical Society</source>
                 </element-citation>
             </ref>
             <ref id="bib103">
@@ -6063,10 +6063,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Nature Chemical Biology</source>
                     <fpage>301</fpage>
                     <lpage>310</lpage>
                     <volume>8</volume>
+                    <source>Nature Chemical Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib104">
@@ -6291,10 +6291,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Cell</source>
                     <fpage>321</fpage>
                     <lpage>337</lpage>
                     <volume>173</volume>
+                    <source>Cell</source>
                 </element-citation>
             </ref>
             <ref id="bib105">
@@ -6327,10 +6327,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2001">2001</year>
-                    <source>PNAS</source>
                     <fpage>8572</fpage>
                     <lpage>8577</lpage>
                     <volume>98</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib106">
@@ -6399,10 +6399,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1996">1996</year>
-                    <source>Cancer Research</source>
                     <fpage>2527</fpage>
                     <lpage>2530</lpage>
                     <volume>56</volume>
+                    <source>Cancer Research</source>
                 </element-citation>
             </ref>
             <ref id="bib107">
@@ -6423,10 +6423,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Nature Reviews Cancer</source>
                     <fpage>69</fpage>
                     <lpage>88</lpage>
                     <volume>18</volume>
+                    <source>Nature Reviews Cancer</source>
                 </element-citation>
             </ref>
             <ref id="bib108">
@@ -6443,8 +6443,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>PLOS ONE</source>
                     <volume>8</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib109">
@@ -6489,10 +6489,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2003">2003</year>
-                    <source>Genome Research</source>
                     <fpage>2498</fpage>
                     <lpage>2504</lpage>
                     <volume>13</volume>
+                    <source>Genome Research</source>
                 </element-citation>
             </ref>
             <ref id="bib110">
@@ -6577,10 +6577,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Genes &amp; Development</source>
                     <fpage>2664</fpage>
                     <lpage>2676</lpage>
                     <volume>22</volume>
+                    <source>Genes &amp; Development</source>
                 </element-citation>
             </ref>
             <ref id="bib111">
@@ -6637,10 +6637,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>4051</fpage>
                     <lpage>4067</lpage>
                     <volume>45</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib112">
@@ -6713,8 +6713,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Genome Biology</source>
                     <volume>12</volume>
+                    <source>Genome Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib113">
@@ -6863,10 +6863,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2009">2009</year>
-                    <source>Nature</source>
                     <fpage>732</fpage>
                     <lpage>736</lpage>
                     <volume>458</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib114">
@@ -6899,10 +6899,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2006">2006</year>
-                    <source>Oncogene</source>
                     <fpage>2119</fpage>
                     <lpage>2123</lpage>
                     <volume>25</volume>
+                    <source>Oncogene</source>
                 </element-citation>
             </ref>
             <ref id="bib115">
@@ -6959,8 +6959,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Nucleic Acids Research</source>
                     <volume>45</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib116">
@@ -6997,18 +6997,18 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Chemistry &amp; Biology</source>
                     <fpage>341</fpage>
                     <lpage>350</lpage>
                     <volume>20</volume>
+                    <source>Chemistry &amp; Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib117">
                 <element-citation>
                     <article-title>UniProt: the universal protein knowledgebase</article-title>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Nucleic Acids Research</source>
                     <volume>45</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib118">
@@ -7029,10 +7029,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2006">2006</year>
-                    <source>Nucleic Acids Research</source>
                     <fpage>10</fpage>
                     <lpage>22</lpage>
                     <volume>34</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib119">
@@ -7049,10 +7049,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Trends in Genetics</source>
                     <fpage>697</fpage>
                     <lpage>706</lpage>
                     <volume>32</volume>
+                    <source>Trends in Genetics</source>
                 </element-citation>
             </ref>
             <ref id="bib120">
@@ -7093,10 +7093,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Journal of Biological Chemistry</source>
                     <fpage>38117</fpage>
                     <lpage>38120</lpage>
                     <volume>280</volume>
+                    <source>Journal of Biological Chemistry</source>
                 </element-citation>
             </ref>
             <ref id="bib121">
@@ -7109,10 +7109,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2002">2002</year>
-                    <source>Nature Reviews Molecular Cell Biology</source>
                     <fpage>430</fpage>
                     <lpage>440</lpage>
                     <volume>3</volume>
+                    <source>Nature Reviews Molecular Cell Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib122">
@@ -7141,10 +7141,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Drug Design, Development and Therapy</source>
                     <fpage>2075</fpage>
                     <lpage>2088</lpage>
                     <volume>8</volume>
+                    <source>Drug Design, Development and Therapy</source>
                 </element-citation>
             </ref>
             <ref id="bib123">
@@ -7197,9 +7197,9 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2019">2019</year>
-                    <source>Nature Communications</source>
                     <fpage>943</fpage>
                     <volume>10</volume>
+                    <source>Nature Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib124">
@@ -7240,10 +7240,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Journal of Clinical Investigation</source>
                     <fpage>2049</fpage>
                     <lpage>2063</lpage>
                     <volume>123</volume>
+                    <source>Journal of Clinical Investigation</source>
                 </element-citation>
             </ref>
             <ref id="bib125">
@@ -7260,8 +7260,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Frontiers in Oncology</source>
                     <volume>2</volume>
+                    <source>Frontiers in Oncology</source>
                 </element-citation>
             </ref>
             <ref id="bib126">
@@ -7294,10 +7294,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2002">2002</year>
-                    <source>The EMBO Journal</source>
                     <fpage>4978</fpage>
                     <lpage>4988</lpage>
                     <volume>21</volume>
+                    <source>The EMBO Journal</source>
                 </element-citation>
             </ref>
             <ref id="bib127">
@@ -7394,10 +7394,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Nature</source>
                     <fpage>65</fpage>
                     <lpage>70</lpage>
                     <volume>513</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib128">
@@ -7458,10 +7458,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Cancer Research</source>
                     <fpage>6371</fpage>
                     <lpage>6385</lpage>
                     <volume>78</volume>
+                    <source>Cancer Research</source>
                 </element-citation>
             </ref>
             <ref id="bib129">
@@ -7478,10 +7478,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>FEBS Journal</source>
                     <fpage>3470</fpage>
                     <lpage>3488</lpage>
                     <volume>277</volume>
+                    <source>FEBS Journal</source>
                 </element-citation>
             </ref>
             <ref id="bib130">
@@ -7646,8 +7646,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Nature Communications</source>
                     <volume>8</volume>
+                    <source>Nature Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib131">
@@ -7680,8 +7680,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>PLOS Genetics</source>
                     <volume>10</volume>
+                    <source>PLOS Genetics</source>
                 </element-citation>
             </ref>
             <ref id="bib132">
@@ -7698,10 +7698,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2006">2006</year>
-                    <source>Nucleosides, Nucleotides and Nucleic Acids</source>
                     <fpage>951</fpage>
                     <lpage>968</lpage>
                     <volume>25</volume>
+                    <source>Nucleosides, Nucleotides and Nucleic Acids</source>
                 </element-citation>
             </ref>
             <ref id="bib133">
@@ -7738,8 +7738,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2006">2006</year>
-                    <source>Nucleic Acids Research</source>
                     <volume>34</volume>
+                    <source>Nucleic Acids Research</source>
                 </element-citation>
             </ref>
             <ref id="bib134">
@@ -7768,10 +7768,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2004">2004</year>
-                    <source>Annals of Oncology</source>
                     <fpage>252</fpage>
                     <lpage>256</lpage>
                     <volume>15</volume>
+                    <source>Annals of Oncology</source>
                 </element-citation>
             </ref>
             <ref id="bib135">
@@ -7804,10 +7804,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Biochemical and Biophysical Research Communications</source>
                     <fpage>1136</fpage>
                     <lpage>1143</lpage>
                     <volume>495</volume>
+                    <source>Biochemical and Biophysical Research Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib136">
@@ -7856,8 +7856,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Nature Communications</source>
                     <volume>5</volume>
+                    <source>Nature Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib137">
@@ -7930,10 +7930,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>Molecular Cell</source>
                     <fpage>449</fpage>
                     <lpage>460</lpage>
                     <volume>61</volume>
+                    <source>Molecular Cell</source>
                 </element-citation>
             </ref>
         </ref-list>

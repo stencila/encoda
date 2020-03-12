@@ -404,7 +404,7 @@
                         </inline-formula> as a function of the number of bouts, and associated fit (blue, 
                         <ext-link ext-link-type="uri" xlink:href="#equ41">Equation A17</ext-link>). The dotted line is the linear extrapolation of the first two data points and corresponds to the diffusive process expected for a memory-less random walk (no correlation in bout orientation). (
                         <bold>J</bold>) Orientation correlation of turning bouts (thresholded at 0.22rad) as a function of the time elapsed between those bouts. The blue line is the exponential fit. Data from this and the following figures are available at 
-                        <xref rid="bib29" ref-type="bibr">Karpenko, 2019</xref> (copy archived at 
+                        <xref rid="bib29" ref-type="bibr">Karpenko, 2019a</xref> (copy archived at 
                         <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences-publications/programs_closed-loop_phototaxis">https://github.com/elifesciences-publications/programs_closed-loop_phototaxis</ext-link>).
                     </p>
                 </caption>
@@ -3035,7 +3035,7 @@
         <sec>
             <title>Behavioral assay</title>
             <p>Closed-loop tracking and visual stimulation were performed at a mean frequency of 35 Hz, with a custom-written software (
-                <xref rid="bib30" ref-type="bibr">Karpenko, 2019</xref>; copy archived at 
+                <xref rid="bib30" ref-type="bibr">Karpenko, 2019b</xref>; copy archived at 
                 <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences-publications/Analysis_Behavioral_Phototaxis">https://github.com/elifesciences-publications/Analysis_Behavioral_Phototaxis</ext-link>) in Matlab (The MathWorks), using the PsychToolBox (PTB) version 3.0.14 add-on. Positions and orientations (heading direction) of the fish, as well as bouts characteristics, were extracted online and the illumination pattern was updated accordingly, with a maximum latency of 34 ms. Heading direction was extracted with an accuracy of + /- 0.05 rad (
                 <inline-formula>
                     <mml:math id="inf164">
@@ -3320,7 +3320,7 @@
         <sec>
             <title>Data analysis</title>
             <p>Data analysis was performed using a custom-written code in Matlab. All analysis programs and data are available at 
-                <xref rid="bib29" ref-type="bibr">Karpenko, 2019</xref>.
+                <xref rid="bib29" ref-type="bibr">Karpenko, 2019a</xref>.
             </p>
             <p>When representing the mean of one variable against another, bin edges were chosen such that each bin would encompass the same number of data points. Circular statistics analyses (mean, variance, uniformity) and circular statistics tests, namely the circular V-test of non-uniformity of data and the one-sample test for the mean angle of a circular distribution (tested on the orientation of the light virtual light source) were performed using CircStat toolbox for Matlab (
                 <xref rid="bib3" ref-type="bibr">Berens, 2009</xref>).
@@ -4069,7 +4069,7 @@
         <sec>
             <title>Numerical simulations</title>
             <p>The Markov-chain model simulations were performed using a custom-written code in MATLAB (
-                <xref rid="bib30" ref-type="bibr">Karpenko, 2019</xref>). Initial orientations and positions within the ROI were randomly sampled from, respectively, a uniform distribution and a normal distribution centered on a circle of radius 20 mm from the center of the ROI with a standard deviation of 1.3 mm (mimicking the starting points of experimental data).
+                <xref rid="bib30" ref-type="bibr">Karpenko, 2019b</xref>). Initial orientations and positions within the ROI were randomly sampled from, respectively, a uniform distribution and a normal distribution centered on a circle of radius 20 mm from the center of the ROI with a standard deviation of 1.3 mm (mimicking the starting points of experimental data).
             </p>
             <p>At each step, an angular step-size is drawn from the data: either from the turning distribution with a probability 
                 <inline-formula>
@@ -4269,10 +4269,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1974">1974</year>
-                    <source>Science</source>
                     <fpage>1292</fpage>
                     <lpage>1294</lpage>
                     <volume>184</volume>
+                    <source>Science</source>
                 </element-citation>
             </ref>
             <ref id="bib2">
@@ -4301,10 +4301,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Nature Methods</source>
                     <fpage>413</fpage>
                     <lpage>420</lpage>
                     <volume>10</volume>
+                    <source>Nature Methods</source>
                 </element-citation>
             </ref>
             <ref id="bib3">
@@ -4317,10 +4317,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2009">2009</year>
-                    <source>Journal of Statistical Software</source>
                     <fpage>128</fpage>
                     <lpage>129</lpage>
                     <volume>1</volume>
+                    <source>Journal of Statistical Software</source>
                 </element-citation>
             </ref>
             <ref id="bib4">
@@ -4337,10 +4337,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1972">1972</year>
-                    <source>Nature</source>
                     <fpage>500</fpage>
                     <lpage>504</lpage>
                     <volume>239</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib5">
@@ -4361,8 +4361,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Frontiers in Systems Neuroscience</source>
                     <volume>5</volume>
+                    <source>Frontiers in Systems Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib6">
@@ -4379,10 +4379,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>Current Biology</source>
                     <fpage>831</fpage>
                     <lpage>846</lpage>
                     <volume>25</volume>
+                    <source>Current Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib7">
@@ -4399,10 +4399,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2001">2001</year>
-                    <source>Journal of Computational Neuroscience</source>
                     <fpage>63</fpage>
                     <lpage>85</lpage>
                     <volume>11</volume>
+                    <source>Journal of Computational Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib8">
@@ -4419,10 +4419,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2000">2000</year>
-                    <source>The Journal of Experimental Biology</source>
                     <fpage>2565</fpage>
                     <lpage>2579</lpage>
                     <volume>203</volume>
+                    <source>The Journal of Experimental Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib9">
@@ -4443,10 +4443,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>Current Biology</source>
                     <fpage>381</fpage>
                     <lpage>386</lpage>
                     <volume>20</volume>
+                    <source>Current Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib10">
@@ -4463,10 +4463,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>Journal of Experimental Biology</source>
                     <fpage>2526</fpage>
                     <lpage>2539</lpage>
                     <volume>210</volume>
+                    <source>Journal of Experimental Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib11">
@@ -4483,10 +4483,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>PNAS</source>
                     <fpage>1391</fpage>
                     <lpage>1396</lpage>
                     <volume>107</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib12">
@@ -4503,10 +4503,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Frontiers in Systems Neuroscience</source>
                     <fpage>1</fpage>
                     <lpage>13</lpage>
                     <volume>8</volume>
+                    <source>Frontiers in Systems Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib13">
@@ -4555,8 +4555,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>eLife</source>
                     <volume>5</volume>
+                    <source>eLife</source>
                 </element-citation>
             </ref>
             <ref id="bib14">
@@ -4573,10 +4573,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1996">1996</year>
-                    <source>Developmental Biology</source>
                     <fpage>646</fpage>
                     <lpage>663</lpage>
                     <volume>180</volume>
+                    <source>Developmental Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib15">
@@ -4609,10 +4609,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>PNAS</source>
                     <fpage>19126</fpage>
                     <lpage>19131</lpage>
                     <volume>104</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib16">
@@ -4637,10 +4637,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>PNAS</source>
                     <fpage>6034</fpage>
                     <lpage>6039</lpage>
                     <volume>107</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib17">
@@ -4685,10 +4685,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Current Biology</source>
                     <fpage>2042</fpage>
                     <lpage>2047</lpage>
                     <volume>22</volume>
+                    <source>Current Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib19">
@@ -4709,10 +4709,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2004">2004</year>
-                    <source>Nature</source>
                     <fpage>573</fpage>
                     <lpage>578</lpage>
                     <volume>431</volume>
+                    <source>Nature</source>
                 </element-citation>
             </ref>
             <ref id="bib20">
@@ -4741,8 +4741,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1995">1995</year>
-                    <source>Behavioral and Brain Sciences</source>
                     <volume>18</volume>
+                    <source>Behavioral and Brain Sciences</source>
                 </element-citation>
             </ref>
             <ref id="bib22">
@@ -4763,8 +4763,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>PLOS ONE</source>
                     <volume>10</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib23">
@@ -4785,10 +4785,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2011">2011</year>
-                    <source>Nature Communications</source>
                     <fpage>410</fpage>
                     <lpage>441</lpage>
                     <volume>2</volume>
+                    <source>Nature Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib24">
@@ -4805,10 +4805,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>Current Opinion in Neurobiology</source>
                     <fpage>208</fpage>
                     <lpage>215</lpage>
                     <volume>22</volume>
+                    <source>Current Opinion in Neurobiology</source>
                 </element-citation>
             </ref>
             <ref id="bib25">
@@ -4833,10 +4833,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>BMC Biology</source>
                     <fpage>1</fpage>
                     <lpage>16</lpage>
                     <volume>15</volume>
+                    <source>BMC Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib26">
@@ -4877,10 +4877,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Nature Communications</source>
                     <fpage>1</fpage>
                     <lpage>16</lpage>
                     <volume>9</volume>
+                    <source>Nature Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib27">
@@ -4966,8 +4966,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>PNAS</source>
                     <volume>110</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib29">
@@ -4978,7 +4978,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2019">2019</year>
+                    <year iso-8601-date="2019a">2019a</year>
                     <source>GitLab</source>
                 </element-citation>
             </ref>
@@ -4990,7 +4990,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2019">2019</year>
+                    <year iso-8601-date="2019b">2019b</year>
                     <source>GitLab</source>
                 </element-citation>
             </ref>
@@ -5036,8 +5036,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2015">2015</year>
-                    <source>PLOS ONE</source>
                     <volume>10</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib32">
@@ -5054,10 +5054,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1975">1975</year>
-                    <source>Journal of Theoretical Biology</source>
                     <fpage>477</fpage>
                     <lpage>496</lpage>
                     <volume>50</volume>
+                    <source>Journal of Theoretical Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib33">
@@ -5074,10 +5074,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1972">1972</year>
-                    <source>PNAS</source>
                     <fpage>2509</fpage>
                     <lpage>2512</lpage>
                     <volume>69</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib34">
@@ -5098,10 +5098,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1999">1999</year>
-                    <source>Proceedings of the Royal Society of London</source>
                     <fpage>1351</fpage>
                     <lpage>1360</lpage>
                     <volume>266</volume>
+                    <source>Proceedings of the Royal Society of London</source>
                 </element-citation>
             </ref>
             <ref id="bib35">
@@ -5126,10 +5126,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>Current Biology</source>
                     <fpage>181</fpage>
                     <lpage>195</lpage>
                     <volume>28</volume>
+                    <source>Current Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib36">
@@ -5150,10 +5150,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2014">2014</year>
-                    <source>Journal of Comparative Physiology A</source>
                     <fpage>1023</fpage>
                     <lpage>1032</lpage>
                     <volume>200</volume>
+                    <source>Journal of Comparative Physiology A</source>
                 </element-citation>
             </ref>
             <ref id="bib37">
@@ -5218,10 +5218,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>International Journal of Comparative Psychology</source>
                     <fpage>351</fpage>
                     <lpage>367</lpage>
                     <volume>20</volume>
+                    <source>International Journal of Comparative Psychology</source>
                 </element-citation>
             </ref>
             <ref id="bib38">
@@ -5242,8 +5242,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2012">2012</year>
-                    <source>PLOS ONE</source>
                     <volume>7</volume>
+                    <source>PLOS ONE</source>
                 </element-citation>
             </ref>
             <ref id="bib39">
@@ -5260,10 +5260,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2007">2007</year>
-                    <source>Biophysical Journal</source>
                     <fpage>2329</fpage>
                     <lpage>2337</lpage>
                     <volume>92</volume>
+                    <source>Biophysical Journal</source>
                 </element-citation>
             </ref>
             <ref id="bib40">
@@ -5292,10 +5292,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Journal of Neuroscience</source>
                     <fpage>3369</fpage>
                     <lpage>3378</lpage>
                     <volume>25</volume>
+                    <source>Journal of Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib41">
@@ -5316,10 +5316,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2016">2016</year>
-                    <source>PNAS</source>
                     <fpage>6532</fpage>
                     <lpage>6537</lpage>
                     <volume>113</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib42">
@@ -5336,10 +5336,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2005">2005</year>
-                    <source>Visual Neuroscience</source>
                     <fpage>275</fpage>
                     <lpage>281</lpage>
                     <volume>22</volume>
+                    <source>Visual Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib43">
@@ -5376,10 +5376,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2013">2013</year>
-                    <source>Frontiers in Neural Circuits</source>
                     <fpage>1</fpage>
                     <lpage>11</lpage>
                     <volume>7</volume>
+                    <source>Frontiers in Neural Circuits</source>
                 </element-citation>
             </ref>
             <ref id="bib44">
@@ -5408,10 +5408,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2006">2006</year>
-                    <source>Journal of Neuroscience</source>
                     <fpage>13400</fpage>
                     <lpage>13410</lpage>
                     <volume>26</volume>
+                    <source>Journal of Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib45">
@@ -5436,10 +5436,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1994">1994</year>
-                    <source>Journal of Insect Behavior</source>
                     <fpage>553</fpage>
                     <lpage>567</lpage>
                     <volume>7</volume>
+                    <source>Journal of Insect Behavior</source>
                 </element-citation>
             </ref>
             <ref id="bib46">
@@ -5460,10 +5460,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1999">1999</year>
-                    <source>Brazilian Journal of Medical and Biological Research</source>
                     <fpage>1551</fpage>
                     <lpage>1553</lpage>
                     <volume>32</volume>
+                    <source>Brazilian Journal of Medical and Biological Research</source>
                 </element-citation>
             </ref>
             <ref id="bib47">
@@ -5480,10 +5480,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1996">1996</year>
-                    <source>PNAS</source>
                     <fpage>628</fpage>
                     <lpage>633</lpage>
                     <volume>93</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib48">
@@ -5500,10 +5500,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2001">2001</year>
-                    <source>Journal of Neurophysiology</source>
                     <fpage>1916</fpage>
                     <lpage>1936</lpage>
                     <volume>86</volume>
+                    <source>Journal of Neurophysiology</source>
                 </element-citation>
             </ref>
             <ref id="bib49">
@@ -5528,8 +5528,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>PLOS Computational Biology</source>
                     <volume>4</volume>
+                    <source>PLOS Computational Biology</source>
                 </element-citation>
             </ref>
             <ref id="bib50">
@@ -5570,8 +5570,8 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2018">2018</year>
-                    <source>eLife</source>
                     <volume>7</volume>
+                    <source>eLife</source>
                 </element-citation>
             </ref>
             <ref id="bib51">
@@ -5596,10 +5596,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1999">1999</year>
-                    <source>Science</source>
                     <fpage>1943</fpage>
                     <lpage>1946</lpage>
                     <volume>286</volume>
+                    <source>Science</source>
                 </element-citation>
             </ref>
             <ref id="bib52">
@@ -5616,10 +5616,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1930">1930</year>
-                    <source>Physical Review</source>
                     <fpage>823</fpage>
                     <lpage>841</lpage>
                     <volume>36</volume>
+                    <source>Physical Review</source>
                 </element-citation>
             </ref>
             <ref id="bib53">
@@ -5632,10 +5632,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2001">2001</year>
-                    <source>Trends in Neurosciences</source>
                     <fpage>455</fpage>
                     <lpage>463</lpage>
                     <volume>24</volume>
+                    <source>Trends in Neurosciences</source>
                 </element-citation>
             </ref>
             <ref id="bib54">
@@ -5648,10 +5648,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2002">2002</year>
-                    <source>Neuron</source>
                     <fpage>955</fpage>
                     <lpage>968</lpage>
                     <volume>36</volume>
+                    <source>Neuron</source>
                 </element-citation>
             </ref>
             <ref id="bib55">
@@ -5664,10 +5664,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Neuron</source>
                     <fpage>215</fpage>
                     <lpage>234</lpage>
                     <volume>60</volume>
+                    <source>Neuron</source>
                 </element-citation>
             </ref>
             <ref id="bib56">
@@ -5680,10 +5680,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="1973">1973</year>
-                    <source>PNAS</source>
                     <fpage>817</fpage>
                     <lpage>821</lpage>
                     <volume>70</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
             <ref id="bib57">
@@ -5708,10 +5708,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2008">2008</year>
-                    <source>Nature Neuroscience</source>
                     <fpage>916</fpage>
                     <lpage>922</lpage>
                     <volume>11</volume>
+                    <source>Nature Neuroscience</source>
                 </element-citation>
             </ref>
             <ref id="bib58">
@@ -5764,10 +5764,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2017">2017</year>
-                    <source>Nature Communications</source>
                     <fpage>1</fpage>
                     <lpage>12</lpage>
                     <volume>8</volume>
+                    <source>Nature Communications</source>
                 </element-citation>
             </ref>
             <ref id="bib59">
@@ -5792,10 +5792,10 @@
                         </name>
                     </person-group>
                     <year iso-8601-date="2010">2010</year>
-                    <source>PNAS</source>
                     <fpage>12846</fpage>
                     <lpage>12849</lpage>
                     <volume>107</volume>
+                    <source>PNAS</source>
                 </element-citation>
             </ref>
         </ref-list>

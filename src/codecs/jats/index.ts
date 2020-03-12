@@ -976,16 +976,16 @@ function encodeReference(
   work: stencila.CreativeWork | string,
   state: EncodeState
 ): xml.Element {
-  let citation, rid
+  let rid
   if (typeof work === 'string') {
     return elem('ref')
   } else {
     rid = work.id
-    const subElements = []
+    const children = []
 
-    const { title, authors, datePublished } = work
+    const { title, authors, datePublished, isPartOf } = work
 
-    if (title) subElements.push(elem('article-title', ...encodeNodes(title)))
+    if (title) children.push(elem('article-title', ...encodeNodes(title)))
 
     if (authors?.length) {
       const people = authors.filter(stencila.isType('Person')).map(encodeName)
@@ -1001,12 +1001,12 @@ function encodeReference(
         populateBibrContent(rid, state)
       }
 
-      subElements.push(personGroup)
+      children.push(personGroup)
     }
 
     // TODO: split date into components according to what data is set and apply to appropriate elements
     if (datePublished) {
-      subElements.push(
+      children.push(
         elem(
           'year',
           {
@@ -1020,53 +1020,31 @@ function encodeReference(
       )
     }
 
-    if (stencila.isA('PublicationIssue', work.isPartOf)) {
-      const pi = work.isPartOf
-
-      if (pi.pageStart !== undefined) {
-        subElements.push(elem('fpage', `${pi.pageStart}`))
-      }
-
-      if (pi.pageEnd !== undefined) {
-        subElements.push(elem('lpage', `${pi.pageEnd}`))
-      }
-
-      if (pi.issueNumber !== undefined) {
-        subElements.push(elem('issue', `${pi.issueNumber}`))
-      }
-
-      if (stencila.isA('PublicationVolume', pi.isPartOf)) {
-        const pv = pi.isPartOf
-
-        if (pv.title !== undefined)
-          subElements.push(elem('source', ...encodeNodes(pv.title)))
-
-        if (pv.volumeNumber !== undefined) {
-          subElements.push(elem('volume', `${pv.volumeNumber}`))
-        }
-      }
-    } else if (stencila.isA('PublicationVolume', work.isPartOf)) {
-      const pv = work.isPartOf
-
-      if (pv.title !== undefined)
-        subElements.push(elem('source', ...encodeNodes(pv.title)))
-
-      if (pv.pageStart !== undefined) {
-        subElements.push(elem('fpage', `${pv.pageStart}`))
-      }
-
-      if (pv.pageEnd !== undefined) {
-        subElements.push(elem('lpage', `${pv.pageEnd}`))
-      }
-
-      if (pv.volumeNumber !== undefined) {
-        subElements.push(elem('volume', `${pv.volumeNumber}`))
-      }
+    if (stencila.isA('Article', work)) {
+      const { pageStart, pageEnd } = work
+      if (pageStart !== undefined) children.push(elem('fpage', `${pageStart}`))
+      if (pageEnd !== undefined) children.push(elem('lpage', `${pageEnd}`))
     }
 
-    citation = elem('element-citation', null, ...subElements)
+    let parent = isPartOf
+    do {
+      if (stencila.isA('PublicationIssue', parent)) {
+        const { issueNumber } = parent
+        if (issueNumber !== undefined)
+          children.push(elem('issue', `${issueNumber}`))
+      }
+      if (stencila.isA('PublicationVolume', parent)) {
+        const { volumeNumber } = parent
+        if (volumeNumber !== undefined)
+          children.push(elem('volume', `${volumeNumber}`))
+      }
+      if (stencila.isA('Periodical', parent)) {
+        const { name } = parent
+        if (name !== undefined) children.push(elem('source', name))
+      }
+    } while ((parent = parent?.isPartOf) !== undefined)
 
-    return elem('ref', { id: rid }, citation)
+    return elem('ref', { id: rid }, elem('element-citation', null, ...children))
   }
 }
 
