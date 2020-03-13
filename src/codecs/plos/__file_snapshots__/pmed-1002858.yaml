@@ -2838,7 +2838,7 @@ content:
           - S1 Table
       - . Data merging and cleaning were performed using Stata version 14.0.
   - type: Table
-    id: pmed.1002858.t001
+    id: pmed-1002858-t001
     rows:
       - type: TableRow
         cells:
@@ -3593,11 +3593,10 @@ content:
         between age and haematocrit in children. The majority of data on young
         children are from the AQUAMAT study.
   - type: Figure
-    id: pmed.1002858.g001
+    id: pmed-1002858-g001
     caption:
       - type: Heading
-        id: sec019
-        depth: 2
+        depth: 1
         content:
           - >-
             Scatterplots of observed associations between key patient covariates
@@ -3665,11 +3664,10 @@ content:
         ratios of 4.38 (95% CI 3.75–5.12) and 4.54 (95% CI 3.07–6.71),
         respectively.
   - type: Figure
-    id: pmed.1002858.g002
+    id: pmed-1002858-g002
     caption:
       - type: Heading
-        id: sec019
-        depth: 2
+        depth: 1
         content:
           - >-
             The unadjusted associations between in-hospital mortality from
@@ -3818,11 +3816,10 @@ content:
           - Fig 3
       - ).
   - type: Figure
-    id: pmed.1002858.g003
+    id: pmed-1002858-g003
     caption:
       - type: Heading
-        id: sec020
-        depth: 2
+        depth: 1
         content:
           - >-
             The DAG used to model the determinants of mortality in severe
@@ -3919,11 +3916,10 @@ content:
           - Fig 3
       - ' the relevant arrows for the estimation of the causal effect of antimalarial treatment, but this estimate is likely to be valid, as either the treatment assignment of an artemisinin derivative versus quinine was randomised (AQUAMAT, AQ, SEAQUAMAT), or it was study dependent and the regression model adjusts for study. Therefore, under an additional assumption of no unknown confounders for treatment assignment in the observational studies, and no systematic bias in patients included in the AAV and QC study (these patients only received artemisinin derivatives and only non-artemisinin drugs, respectively), this adjusted odds ratio can also be interpreted as causal.'
   - type: Figure
-    id: pmed.1002858.g004
+    id: pmed-1002858-g004
     caption:
       - type: Heading
-        id: sec021
-        depth: 2
+        depth: 1
         content:
           - >-
             Estimated causal effects on mortality of main patient
@@ -4024,11 +4020,10 @@ content:
           - '41'
       - '].'
   - type: Figure
-    id: pmed.1002858.g005
+    id: pmed-1002858-g005
     caption:
       - type: Heading
-        id: sec022
-        depth: 2
+        depth: 1
         content:
           - >-
             Mediation analysis and possible confounders for the protective
@@ -4406,78 +4401,90 @@ content:
     depth: 1
     content:
       - Supporting information
-  - S1 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
+  - type: MediaObject
+    id: pmed-1002858-s001
+    contentUrl: ''
+    text: S1 Fig
     content:
-      - Comparison between Asian and African data.
-  - type: Paragraph
-    content:
-      - >-
-        Green diamonds (lines): point estimates (95% CI) using data from only
-        Asian patients. Blue diamonds (lines): point estimates (95% CI) using
-        data from only African patients. Black diamonds (lines): point estimates
-        (95% CI) using the whole pooled database, as shown in 
-      - type: Link
-        relation: fig
-        target: '#pmed-1002858-g004'
+      - type: Heading
+        depth: 1
         content:
-          - Fig 4
-      - .
-  - type: Paragraph
+          - Comparison between Asian and African data.
+      - type: Paragraph
+        content:
+          - >-
+            Green diamonds (lines): point estimates (95% CI) using data from
+            only Asian patients. Blue diamonds (lines): point estimates (95% CI)
+            using data from only African patients. Black diamonds (lines): point
+            estimates (95% CI) using the whole pooled database, as shown in 
+          - type: Link
+            relation: fig
+            target: '#pmed-1002858-g004'
+            content:
+              - Fig 4
+          - .
+      - type: Paragraph
+        content:
+          - (TIF)
+  - type: MediaObject
+    id: pmed-1002858-s002
+    contentUrl: ''
+    text: S2 Fig
     content:
-      - (TIF)
-  - S2 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
+      - type: Heading
+        depth: 1
+        content:
+          - Mediation analysis looking at the effect of transfusion on survival.
+      - type: Paragraph
+        content:
+          - >-
+            The forest plot shows the estimated effects on survival of main
+            patient characteristics and treatment drug used, stratified by time
+            to death and adjusted for transfusion.
+      - type: Paragraph
+        content:
+          - (TIF)
+  - type: MediaObject
+    id: pmed-1002858-s003
+    contentUrl: ''
+    text: S3 Fig
     content:
-      - Mediation analysis looking at the effect of transfusion on survival.
-  - type: Paragraph
+      - type: Heading
+        depth: 1
+        content:
+          - >-
+            Standardised differences for the major clinical variables between
+            the transfused and not-transfused children in the AQUAMAT study with
+            baseline haematocrits between 15% and 25%.
+      - type: Paragraph
+        content:
+          - >-
+            The black circles show the standardised differences for the original
+            population, and the red triangles show the standardised differences
+            for the IPW population. Standardised differences greater than 0
+            indicate higher values of that covariate in the transfused group
+            (e.g., base deficit), whereas standardised differences less than 0
+            indicate higher values in the not-transfused group (e.g., coma). The
+            vertical dashed lines show ±10% standardised difference. AQUAMAT,
+            Africa multinational quinine versus artesunate in severe-malaria
+            trial; IPW, inverse probability weighting.
+      - type: Paragraph
+        content:
+          - (TIF)
+  - type: MediaObject
+    id: pmed-1002858-s004
+    contentUrl: ''
+    text: S1 Table
     content:
-      - >-
-        The forest plot shows the estimated effects on survival of main patient
-        characteristics and treatment drug used, stratified by time to death and
-        adjusted for transfusion.
-  - type: Paragraph
-    content:
-      - (TIF)
-  - S3 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
-    content:
-      - >-
-        Standardised differences for the major clinical variables between the
-        transfused and not-transfused children in the AQUAMAT study with
-        baseline haematocrits between 15% and 25%.
-  - type: Paragraph
-    content:
-      - >-
-        The black circles show the standardised differences for the original
-        population, and the red triangles show the standardised differences for
-        the IPW population. Standardised differences greater than 0 indicate
-        higher values of that covariate in the transfused group (e.g., base
-        deficit), whereas standardised differences less than 0 indicate higher
-        values in the not-transfused group (e.g., coma). The vertical dashed
-        lines show ±10% standardised difference. AQUAMAT, Africa multinational
-        quinine versus artesunate in severe-malaria trial; IPW, inverse
-        probability weighting.
-  - type: Paragraph
-    content:
-      - (TIF)
-  - S1 Table
-  - type: Heading
-    id: sec024
-    depth: 1
-    content:
-      - Inclusion criteria for the studies used in the pooled data analysis.
-  - type: Paragraph
-    content:
-      - >-
-        HCT, haematocrit; SB, serum bilirubin; SBP, systolic blood pressure; SC,
-        serum creatinine; UO, urine output.
-  - type: Paragraph
-    content:
-      - (XLSX)
+      - type: Heading
+        depth: 1
+        content:
+          - Inclusion criteria for the studies used in the pooled data analysis.
+      - type: Paragraph
+        content:
+          - >-
+            HCT, haematocrit; SB, serum bilirubin; SBP, systolic blood pressure;
+            SC, serum creatinine; UO, urine output.
+      - type: Paragraph
+        content:
+          - (XLSX)

@@ -4002,11 +4002,10 @@ content:
         body vasculature and variations of the IOP and ICP following exposure to
         a microgravity environment.
   - type: Figure
-    id: pone.0216012.g001
+    id: pone-0216012-g001
     caption:
       - type: Heading
-        id: sec004
-        depth: 3
+        depth: 1
         content:
           - 'Network model of fluid flows in the brain and eyes ['
           - type: Cite
@@ -4473,7 +4472,7 @@ content:
         discussed in the following sections, where the brain and eye models are
         described in more detail.
   - type: Table
-    id: pone.0216012.t001
+    id: pone-0216012-t001
     rows:
       - type: TableRow
         cells:
@@ -5034,7 +5033,7 @@ content:
       law at the circuit nodes.
     content: []
   - type: Table
-    id: pone.0216012.t002
+    id: pone-0216012-t002
     rows:
       - type: TableRow
         cells:
@@ -7370,11 +7369,10 @@ content:
           - '42'
       - '].'
   - type: Figure
-    id: pone.0216012.g002
+    id: pone-0216012-g002
     caption:
       - type: Heading
-        id: sec006
-        depth: 2
+        depth: 1
         content:
           - >-
             Network model for the eye vasculature (black portion) and aqueous
@@ -7834,11 +7832,10 @@ content:
           - Fig 3
       - ' (right) and have been fitted using a second order polynomial function, shown in the figure by the green surface. Such a surface is then employed to determine the external pressure acting on the translaminar vascular segments.'
   - type: Figure
-    id: pone.0216012.g003
+    id: pone-0216012-g003
     caption:
       - type: Heading
-        id: sec007
-        depth: 3
+        depth: 1
         content: []
       - type: Paragraph
         content:
@@ -8084,7 +8081,7 @@ content:
           - Table 3
       - .
   - type: Table
-    id: pone.0216012.t003
+    id: pone-0216012-t003
     rows:
       - type: TableRow
         cells:
@@ -8708,7 +8705,7 @@ content:
           - Table 4
       - .
   - type: Table
-    id: pone.0216012.t004
+    id: pone-0216012-t004
     rows:
       - type: TableRow
         cells:
@@ -9303,7 +9300,7 @@ content:
         chair. Thus, we can assume that the reference for our model is the
         supine position.
   - type: Table
-    id: pone.0216012.t005
+    id: pone-0216012-t005
     rows:
       - type: TableRow
         cells:
@@ -11263,7 +11260,7 @@ content:
       width="1.em"/><mml:mi>i</mml:mi><mml:mo>
       =</mml:mo><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>h</mml:mi><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
   - type: Table
-    id: pone.0216012.t006
+    id: pone-0216012-t006
     rows:
       - type: TableRow
         cells:
@@ -12654,10 +12651,9 @@ content:
               - c
       - ' on earth is ≈ 25 mmHg, which may decrease to 21.7 mmHg in LHDT and to 18.7 mmHg in microgravity conditions. These reference values are indicated with dashed lines in the corresponding figures.'
   - type: Figure
-    id: pone.0216012.g004
+    id: pone-0216012-g004
     caption:
       - type: Heading
-        id: sec014
         depth: 1
         content:
           - >-
@@ -12987,10 +12983,9 @@ content:
           - crv
       - ' also collapses, blood flow in the retina starts to drop significantly.'
   - type: Figure
-    id: pone.0216012.g005
+    id: pone-0216012-g005
     caption:
       - type: Heading
-        id: sec014
         depth: 1
         content:
           - >-
@@ -13069,10 +13064,9 @@ content:
         and provide a detailed picture of pressure changes in the ocular
         circulation as a response to the LHDT experiment.
   - type: Figure
-    id: pone.0216012.g006
+    id: pone-0216012-g006
     caption:
       - type: Heading
-        id: sec014
         depth: 1
         content:
           - >-
@@ -13090,10 +13084,9 @@ content:
           inline: false
           linkType: simple
   - type: Figure
-    id: pone.0216012.g007
+    id: pone-0216012-g007
     caption:
       - type: Heading
-        id: sec014
         depth: 1
         content:
           - >-

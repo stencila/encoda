@@ -3068,11 +3068,10 @@ content:
           - Fig 1B
       - ).
   - type: Figure
-    id: ppat.1007958.g001
+    id: ppat-1007958-g001
     caption:
       - type: Heading
-        id: sec003
-        depth: 2
+        depth: 1
         content:
           - Pedigree and mutation in LGMD1F patients.
       - type: Paragraph
@@ -3106,7 +3105,7 @@ content:
           inline: false
           linkType: simple
   - type: Table
-    id: ppat.1007958.t001
+    id: ppat-1007958-t001
     rows:
       - type: TableRow
         cells:
@@ -3828,11 +3827,10 @@ content:
           - Fig 2C
       - ).
   - type: Figure
-    id: ppat.1007958.g002
+    id: ppat-1007958-g002
     caption:
       - type: Heading
-        id: sec004
-        depth: 2
+        depth: 1
         content:
           - 'Analysis of the expression of '
           - type: Emphasis
@@ -3983,11 +3981,10 @@ content:
           - Fig 3B
       - ).
   - type: Figure
-    id: ppat.1007958.g003
+    id: ppat-1007958-g003
     caption:
       - type: Heading
-        id: sec007
-        depth: 2
+        depth: 1
         content:
           - Susceptibility to HIV-1 infection of PBMCs from LGMD1F patients.
       - type: Paragraph
@@ -4100,11 +4097,10 @@ content:
         ). No significant difference in the efficiency of reverse transcription
         in PBMCs from LGMD1F patients and healthy controls was detected.
   - type: Figure
-    id: ppat.1007958.g004
+    id: ppat-1007958-g004
     caption:
       - type: Heading
-        id: sec008
-        depth: 2
+        depth: 1
         content:
           - >-
             Analysis of different steps of HIV-1 cell cycle in PBMCs from LGMD1F
@@ -4240,11 +4236,10 @@ content:
           - Fig 5C and 5D
       - ).
   - type: Figure
-    id: ppat.1007958.g005
+    id: ppat-1007958-g005
     caption:
       - type: Heading
-        id: sec009
-        depth: 2
+        depth: 1
         content:
           - >-
             The LGMD1F mutation reduces stability of cytoplasmatic HIV-1
@@ -4338,11 +4333,10 @@ content:
         was not able to rescue HIV-1 replication in these cell lines thus
         validating its role as a defective host factor impairing HIV infection.
   - type: Figure
-    id: ppat.1007958.g006
+    id: ppat-1007958-g006
     caption:
       - type: Heading
-        id: sec010
-        depth: 2
+        depth: 1
         content:
           - The LGMD1F mutation reduces HIV-1 infectivity.
       - type: Paragraph
@@ -5235,122 +5229,138 @@ content:
     depth: 1
     content:
       - Supporting information
-  - S1 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
+  - type: MediaObject
+    id: ppat-1007958-s001
+    contentUrl: ''
+    text: S1 Fig
     content:
-      - Expression of surface and activation markers.
-  - type: Paragraph
-    content:
-      - >-
-        Analysis by flow cytometry of the expression of surface markers CD4,
-        CXCR4 and CCR5 in resting PBMCs from seven LGMD1F patients and four
-        healthy controls (
-      - type: Strong
+      - type: Heading
+        depth: 1
         content:
-          - A
-      - >-
-        ) and the expression of activation markers CD25 and HLA-DR in PBMCs from
-        four LGMD1F patients and two healthy controls (
-      - type: Strong
+          - Expression of surface and activation markers.
+      - type: Paragraph
         content:
-          - B
-      - >-
-        ). Cells were stained with monoclonal antibodies conjugated with
-        fluorochromes and then analyzed in FACS Calibur cytometer (Becton
-        Dickinson Biosciences) using CellQuest software. Data are represented
-        using Graphpad Prism 7 software.
-  - type: Paragraph
-    content:
-      - (TIF)
-  - S2 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
-    content:
-      - >-
-        Representative confocal microscopy images of intracellular expression of
-        CPSF6.
-  - type: Paragraph
-    content:
-      - >-
-        PBMCs of LGMD1F patients and controls were activated for 3 days with
-        purified anti-CD3, anti-CD28 and IL-2. Intracellular expression was
-        confirmed by immunofluorescence using a monoclonal antibody against
-        CPSF6 and a secondary antibody conjugated to Alexa 488 (green). DAPI was
-        used for nuclear staining (blue). The results are representative of
-        those observed in four independent patients and four controls. Bars
-        indicate 5 μm.
-  - type: Paragraph
-    content:
-      - (TIF)
-  - S3 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
-    content:
-      - Survival of infection in vitro.
-  - type: Paragraph
-    content:
-      - >-
-        Activated PBMCs of controls and LGMD1F patients were infected with
-        NL4.3-Renilla (
-      - type: Strong
+          - >-
+            Analysis by flow cytometry of the expression of surface markers CD4,
+            CXCR4 and CCR5 in resting PBMCs from seven LGMD1F patients and four
+            healthy controls (
+          - type: Strong
+            content:
+              - A
+          - >-
+            ) and the expression of activation markers CD25 and HLA-DR in PBMCs
+            from four LGMD1F patients and two healthy controls (
+          - type: Strong
+            content:
+              - B
+          - >-
+            ). Cells were stained with monoclonal antibodies conjugated with
+            fluorochromes and then analyzed in FACS Calibur cytometer (Becton
+            Dickinson Biosciences) using CellQuest software. Data are
+            represented using Graphpad Prism 7 software.
+      - type: Paragraph
         content:
-          - A
-      - ) and NL4.3_N74D-Renilla (
-      - type: Strong
+          - (TIF)
+  - type: MediaObject
+    id: ppat-1007958-s002
+    contentUrl: ''
+    text: S2 Fig
+    content:
+      - type: Heading
+        depth: 1
         content:
-          - B
-      - >-
-        ) to follow the kinetics of viral infection. Viability in infected cells
-        were measured at 1,2,3,4 and 7 days with the CellTiter-Glo Luminescent
-        Cell Viability assay (Promega).
-  - type: Paragraph
-    content:
-      - (TIF)
-  - S4 Fig
-  - type: Heading
-    id: sec024
-    depth: 1
-    content:
-      - Validation of TNPO3 expressing cell lines.
-  - type: Paragraph
-    content:
-      - >-
-        HeLaP4 cell lines expressing endogenous TNPO3 (control shRNA and control
-        shRNA + empty vector) or depleted of TNPO3 (TNPO3 shRNA and TNPO3 shRNA
-        + empty vector) were back-complemented with lentiviral vectors encoding
-        either FLAG-TNPO3_wt (TNPO3 shRNA + TNPO3_wt) or FLAG-TNPO3_mut (TNPO3
-        shRNA + TNPO3_mut and control shRNA + TNPO3_mut). (
-      - type: Strong
+          - >-
+            Representative confocal microscopy images of intracellular
+            expression of CPSF6.
+      - type: Paragraph
         content:
-          - A
-      - >-
-        ) Expression levels were determined by western blot analysis with
-        anti-TNPO3 antibody. β-tubulin was included as a loading control. (
-      - type: Strong
+          - >-
+            PBMCs of LGMD1F patients and controls were activated for 3 days with
+            purified anti-CD3, anti-CD28 and IL-2. Intracellular expression was
+            confirmed by immunofluorescence using a monoclonal antibody against
+            CPSF6 and a secondary antibody conjugated to Alexa 488 (green). DAPI
+            was used for nuclear staining (blue). The results are representative
+            of those observed in four independent patients and four controls.
+            Bars indicate 5 μm.
+      - type: Paragraph
         content:
-          - B
-      - >-
-        ) Fluorescence microscopy images of cells stained with anti-FLAG
-        antibody (red). Scale bar: 10 μm. (
-      - type: Strong
+          - (TIF)
+  - type: MediaObject
+    id: ppat-1007958-s003
+    contentUrl: ''
+    text: S3 Fig
+    content:
+      - type: Heading
+        depth: 1
         content:
-          - C
-      - >-
-        ) The mRNA levels were determined b RT-qPCR. Error bars represent the
-        standard deviation.
-  - type: Paragraph
+          - Survival of infection in vitro.
+      - type: Paragraph
+        content:
+          - >-
+            Activated PBMCs of controls and LGMD1F patients were infected with
+            NL4.3-Renilla (
+          - type: Strong
+            content:
+              - A
+          - ) and NL4.3_N74D-Renilla (
+          - type: Strong
+            content:
+              - B
+          - >-
+            ) to follow the kinetics of viral infection. Viability in infected
+            cells were measured at 1,2,3,4 and 7 days with the CellTiter-Glo
+            Luminescent Cell Viability assay (Promega).
+      - type: Paragraph
+        content:
+          - (TIF)
+  - type: MediaObject
+    id: ppat-1007958-s004
+    contentUrl: ''
+    text: S4 Fig
     content:
-      - (TIF)
-  - S1 File
-  - type: Heading
-    id: sec024
-    depth: 1
+      - type: Heading
+        depth: 1
+        content:
+          - Validation of TNPO3 expressing cell lines.
+      - type: Paragraph
+        content:
+          - >-
+            HeLaP4 cell lines expressing endogenous TNPO3 (control shRNA and
+            control shRNA + empty vector) or depleted of TNPO3 (TNPO3 shRNA and
+            TNPO3 shRNA + empty vector) were back-complemented with lentiviral
+            vectors encoding either FLAG-TNPO3_wt (TNPO3 shRNA + TNPO3_wt) or
+            FLAG-TNPO3_mut (TNPO3 shRNA + TNPO3_mut and control shRNA +
+            TNPO3_mut). (
+          - type: Strong
+            content:
+              - A
+          - >-
+            ) Expression levels were determined by western blot analysis with
+            anti-TNPO3 antibody. β-tubulin was included as a loading control. (
+          - type: Strong
+            content:
+              - B
+          - >-
+            ) Fluorescence microscopy images of cells stained with anti-FLAG
+            antibody (red). Scale bar: 10 μm. (
+          - type: Strong
+            content:
+              - C
+          - >-
+            ) The mRNA levels were determined b RT-qPCR. Error bars represent
+            the standard deviation.
+      - type: Paragraph
+        content:
+          - (TIF)
+  - type: MediaObject
+    id: ppat-1007958-s005
+    contentUrl: ''
+    text: S1 File
     content:
-      - Materials and methods.
-  - type: Paragraph
-    content:
-      - (DOCX)
+      - type: Heading
+        depth: 1
+        content:
+          - Materials and methods.
+      - type: Paragraph
+        content:
+          - (DOCX)
