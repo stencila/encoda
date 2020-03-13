@@ -87,18 +87,10 @@ function mathJaxTypeset(elem: HTMLElement, options: unknown): void {
 }
 
 /**
- * Wait for all MathJax typesetting promises and, if there are any,
- * return the necessary CSS to insert into the page.
+ * Wait for all MathJax typesetting promises.
  */
-async function mathJaxFinish(): Promise<string | undefined> {
-  if (mathJaxPromises.length === 0) return undefined
-
-  await Promise.all(mathJaxPromises)
-
-  const result = await MathJax.typeset({ css: true })
-  const { errors, css } = result
-  if (Array.isArray(errors)) errors.map((error: string) => log.error(error))
-  return css as string
+async function mathJaxFinish(): Promise<unknown> {
+  return Promise.all(mathJaxPromises)
 }
 
 /**
@@ -264,7 +256,7 @@ export class HTMLCodec extends Codec implements Codec {
     const [name, value] = Object.entries(microdataRoot())[0]
     dom.setAttribute(name, value as string)
 
-    const mathjaxCss = await mathJaxFinish()
+    await mathJaxFinish()
 
     if (isStandalone) {
       const { title = 'Untitled' } = getArticleMetaData(node)
@@ -272,8 +264,7 @@ export class HTMLCodec extends Codec implements Codec {
         TxtCodec.stringify(title),
         [dom],
         isBundle,
-        theme,
-        mathjaxCss
+        theme
       )
     }
 
@@ -616,8 +607,7 @@ async function generateHtmlElement(
   title: string,
   body: Node[],
   isBundle: boolean,
-  theme: string,
-  css?: string
+  theme: string
 ): Promise<HTMLHtmlElement> {
   const { styles, scripts } = await getThemeAssets(theme, isBundle)
 
@@ -652,13 +642,6 @@ async function generateHtmlElement(
     )
   }
 
-  const pageCss =
-    css !== undefined
-      ? h('style', {
-          innerHTML: css
-        })
-      : undefined
-
   return h(
     'html',
     {lang: 'en'},
@@ -683,8 +666,7 @@ async function generateHtmlElement(
         src:
           'https://unpkg.com/@stencila/components@<=1/dist/stencila-components/stencila-components.js',
         type: 'text/javascript'
-      }),
-      pageCss
+      })
     ),
     h('body', body)
   )
@@ -1694,7 +1676,7 @@ function encodeListItem(
   const { content = [], isChecked, id, position, url } = listItem
   return h(
     'li',
-    { attrs: microdata(listItem, property), id: id ?? position },
+    { attrs: microdata(listItem, property), id: id ?? null },
     h('meta', { attrs: { itemprop: 'position', content: position } }),
     h('meta', { attrs: { itemprop: 'url', content: url ?? `#${position}` } }),
     isChecked === undefined
