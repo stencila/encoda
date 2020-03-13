@@ -600,12 +600,15 @@ function decodeDocument(doc: HTMLDocument): stencila.Node {
  * Generate a `<html>` element with supplied title, metadata, body content, and
  * optionally custom CSS to style the document with.
  *
+ * Conforms to https://dequeuniversity.com/rules/axe/3.5/landmark-one-main?
+ * by placing the root element in a `<main role="main">`.
+ *
  * TODO: This function needs refactoring. It only called from one location
  * and it may be better to move some of all of it there.
  */
 async function generateHtmlElement(
   title: string,
-  body: Node[],
+  root: Node[],
   isBundle: boolean,
   theme?: string
 ): Promise<HTMLHtmlElement> {
@@ -669,7 +672,7 @@ async function generateHtmlElement(
         type: 'text/javascript'
       })
     ),
-    h('body', body)
+    h('body', h('main', {attrs: {role: 'main'}}, root))
   )
 }
 
