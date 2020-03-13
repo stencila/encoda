@@ -2236,7 +2236,7 @@ content:
     id: pone-0178565-g001
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Data reduction and construction of Clusters of Co-evolving Genes
@@ -2428,7 +2428,7 @@ content:
     id: pone-0178565-g002
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Phylogenetic tree of the 73 cyanobacterial genome groups based on
@@ -2554,7 +2554,7 @@ content:
     id: pone-0178565-g003
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - Potential redundancy in the phylogenetic profiles.
       - type: Paragraph
@@ -2613,7 +2613,7 @@ content:
     id: pone-0178565-g004
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Histogram of gene conservation index (GCI) for the 23,633
@@ -3021,7 +3021,7 @@ content:
     id: pone-0178565-g005
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Overlap of conserved genes (this work) with core set proteins of Shi
@@ -4356,7 +4356,7 @@ content:
     id: pone-0178565-g006
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - Clusters of Co-evolving Genes (CCG).
       - type: Paragraph
@@ -4502,7 +4502,7 @@ content:
     text: S1 Fig
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             Histogram of gene conservation index (GCI) for the essential and
@@ -4534,7 +4534,7 @@ content:
     text: S1 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - List of the 120 cyanobacterial genomes used in the analysis.
       - type: Paragraph
@@ -4546,7 +4546,7 @@ content:
     text: S2 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - List of query organisms used while constructing the profiles.
       - type: Paragraph
@@ -4565,7 +4565,7 @@ content:
     text: S3 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             Phylogenetic profiles of 23,643 query proteins drawn from twenty
@@ -4588,7 +4588,7 @@ content:
     text: S4 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - Clusters of 120 cyanobacterial strains.
       - type: Paragraph
@@ -4612,7 +4612,7 @@ content:
     text: S5 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse
@@ -4634,7 +4634,7 @@ content:
     text: S6 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             List of genes used for PCA plot and heatmap generation to check for
@@ -4660,7 +4660,7 @@ content:
     text: S7 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             List of conserved genes in our analysis and their gene ontology
@@ -4674,7 +4674,7 @@ content:
     text: S8 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - 'Conservation level of the genes from '
           - type: Emphasis
@@ -4713,7 +4713,7 @@ content:
     text: S9 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             Conservation level of enzymes in key metabolic pathways based on
@@ -4743,7 +4743,7 @@ content:
     text: S10 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             List of genes used for PCA plot and heatmap generation to check the
@@ -4769,7 +4769,7 @@ content:
     text: S11 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - List of co-evolving genes.
       - type: Paragraph

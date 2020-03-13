@@ -3596,7 +3596,7 @@ content:
     id: pmed-1002858-g001
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Scatterplots of observed associations between key patient covariates
@@ -3667,7 +3667,7 @@ content:
     id: pmed-1002858-g002
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             The unadjusted associations between in-hospital mortality from
@@ -3819,7 +3819,7 @@ content:
     id: pmed-1002858-g003
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             The DAG used to model the determinants of mortality in severe
@@ -3919,7 +3919,7 @@ content:
     id: pmed-1002858-g004
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Estimated causal effects on mortality of main patient
@@ -4023,7 +4023,7 @@ content:
     id: pmed-1002858-g005
     caption:
       - type: Heading
-        depth: 1
+        depth: 3
         content:
           - >-
             Mediation analysis and possible confounders for the protective
@@ -4407,7 +4407,7 @@ content:
     text: S1 Fig
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - Comparison between Asian and African data.
       - type: Paragraph
@@ -4432,7 +4432,7 @@ content:
     text: S2 Fig
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - Mediation analysis looking at the effect of transfusion on survival.
       - type: Paragraph
@@ -4450,7 +4450,7 @@ content:
     text: S3 Fig
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - >-
             Standardised differences for the major clinical variables between
@@ -4477,7 +4477,7 @@ content:
     text: S1 Table
     content:
       - type: Heading
-        depth: 1
+        depth: 2
         content:
           - Inclusion criteria for the studies used in the pooled data analysis.
       - type: Paragraph
