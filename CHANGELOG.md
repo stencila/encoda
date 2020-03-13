@@ -1,3 +1,28 @@
+# [0.91.0](https://github.com/stencila/encoda/compare/v0.90.3...v0.91.0) (2020-03-13)
+
+
+### Bug Fixes
+
+* **HTML:** Add lang attribute to <html> tag ([42dda24](https://github.com/stencila/encoda/commit/42dda2429a976a231c37dfbf27595f9b7ff6837f))
+* **HTML:** Do not inject MathJax CSS into page ([c216851](https://github.com/stencila/encoda/commit/c21685173435d92dcc42e8716de68d13c2c080e4))
+* **HTML:** Ensure page has one main landmark ([202788c](https://github.com/stencila/encoda/commit/202788c269e9d7d60e671eae3a221f8b2a7a7e6d))
+* **HTML:** Improve encoding of headings ([7412caa](https://github.com/stencila/encoda/commit/7412caa6cdf02c96c7aa609fb44e41d379cf5491))
+* **HTML:** Only use h1 for article title ([d77c906](https://github.com/stencila/encoda/commit/d77c9060bef918f06b0491ef5b11f00e96734263)), closes [#443](https://github.com/stencila/encoda/issues/443)
+* **HTML:** Use a single elem for long titles ([63b2326](https://github.com/stencila/encoda/commit/63b23261d30b5e0f8b1a11ad13556bda023a4ff7))
+* **HTML:** Use spans for publisher and logo; avoid duplicate src attribute ([fcadeae](https://github.com/stencila/encoda/commit/fcadeae123f1561c7cf8e50b584bcbe2a119f07c))
+* **JATS:** Coerce to inline content instead of filtering it ([9959568](https://github.com/stencila/encoda/commit/99595685da19e13d69b9c18820d14993ae7ca352))
+* **JATS:** Decode ids of figure elements ([2173224](https://github.com/stencila/encoda/commit/21732249a3bad77f936c257997c71e93e02328db))
+* **JATS:** Decode ids of table elements ([58a4da7](https://github.com/stencila/encoda/commit/58a4da7750570b80e8d01087ae7538c2b9ba1d2a))
+* **JATS:** Explicit decoding of supplementary material elements ([3a830bc](https://github.com/stencila/encoda/commit/3a830bc955a0dccec97c91293e0e882ae6208ed4))
+* **JATS:** Fix assignment of ids and depths to figure and table titles ([bdde447](https://github.com/stencila/encoda/commit/bdde447b53ec23441a4905a0abbd5ae62a396669))
+* **JATS:** Use section + 1 level headings for figs and tables ([c5f7b8e](https://github.com/stencila/encoda/commit/c5f7b8e6933917521c239945b87666368952456c))
+
+
+### Features
+
+* **HTML:** Allow for no theme and use in tests ([9014d45](https://github.com/stencila/encoda/commit/9014d4514ff05929d6f24eff2fcc3f46038d1a47))
+* **HTML:** Encode article pagination details. ([94c7754](https://github.com/stencila/encoda/commit/94c77548b9d514e6ef4e0d5a6ee402aa2ec97727))
+
 ## [0.90.3](https://github.com/stencila/encoda/compare/v0.90.2...v0.90.3) (2020-03-12)
 
 
