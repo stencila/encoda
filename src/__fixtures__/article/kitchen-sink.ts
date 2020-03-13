@@ -1,10 +1,17 @@
-import { article } from '@stencila/schema'
+import { article, person, date } from '@stencila/schema'
 
 /**
  * An `Article` containing examples of many node types.
  */
 export default article({
   title: 'Article title',
+  authors: [
+    person({
+      givenNames: ['Jim', 'J'],
+      familyNames: ['Jones']
+    })
+  ],
+  datePublished: date({ value: '2020-03-13' }),
   content: [
     {
       type: 'Heading',

@@ -1313,13 +1313,23 @@ function decodeHeading(
 }
 
 /**
- * Encode a `stencila.Heading` to a `<h1>` etc element.
+ * Encode a `Heading` node to a `<h1>` etc element.
+ *
+ * In rare cases that there is no content in the heading, return an empty
+ * text node to avoid the 'Heading tag found with no content' accessibility error.
  */
-function encodeHeading(heading: stencila.Heading): HTMLHeadingElement {
-  const content = heading.content.map(encodeNode)
+function encodeHeading(heading: stencila.Heading): HTMLHeadingElement | Text {
+  let { id, depth, content } = heading
+
+  if (content.length === 0) return document.createTextNode('')
+
   const text = TxtCodec.stringify(heading)
-  const id = slugger.slug(text)
-  return h(`h${heading.depth}`, encodeAttrs(heading, { id }), content)
+  id = id !== undefined ? id : slugger.slug(text)
+  return h<HTMLHeadingElement>(
+    `h${depth}`,
+    { attrs: { ...microdata(heading), id } },
+    content.map(encodeNode)
+  )
 }
 
 /**
@@ -1945,17 +1955,21 @@ function decodeImage(elem: HTMLImageElement): stencila.ImageObject {
 
 /**
  * Encode a Stencila `ImageObject` to a HTML `<img>` element.
+ *
+ * Ensures that the `alt` attribute is always set (with empty string
+ * if there is no other source).
  */
 function encodeImageObject(
   image: stencila.ImageObject,
   property?: string
 ): HTMLImageElement {
-  const { contentUrl: src, title, text: alt } = image
+  const { contentUrl: src, title, text } = image
+  const titleString = title !== undefined ? TxtCodec.stringify(title) : null
   return h('img', {
     attrs: microdata(image, property),
     src,
-    title,
-    alt
+    title: titleString,
+    alt: text ?? titleString ?? property ?? ''
   })
 }
 
