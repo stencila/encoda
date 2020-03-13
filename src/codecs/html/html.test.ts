@@ -52,17 +52,12 @@ import '@testing-library/jest-dom/extend-expect'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import * as vfile from '../../util/vfile'
-import kitchenSink from '../../__fixtures__/article/kitchen-sink'
-import mathArticle from '../../__fixtures__/article/math'
-import { fixture, snapshot } from '../../__tests__/helpers'
-import { JsonCodec } from '../json'
 import { commonEncodeDefaults } from '../types'
 import { decodeHref, HTMLCodec, stencilaItemProp } from './'
 
 const doc = (innerHTML: string) =>
   new JSDOM(innerHTML).window.document.documentElement
 
-const jsonCodec = new JsonCodec()
 const htmlCodec = new HTMLCodec()
 const { encode, decode } = htmlCodec
 
@@ -77,20 +72,6 @@ const d = async (htmlString: string): Promise<stencila.Node> =>
 test('decode', async () => {
   expect(await d(attrs.html)).toEqual(attrs.node)
   expect(await d(dt.html)).toEqual(dt.node)
-})
-
-describe('encode', () => {
-  test('kitchen-sink', async () =>
-    expect(await e(kitchenSink)).toMatchFile(snapshot('kitchen-sink.html')))
-
-  test.each([
-    ['article/journal/elife/50356.json', 'elife-50356.html'],
-    ['article/journal/plosone/0229075.json', 'plosone-0229075.html']
-  ])('%s', async (fix, snap) =>
-    expect(
-      await htmlCodec.dump(await jsonCodec.read(fixture(fix)))
-    ).toMatchFile(snapshot(snap))
-  )
 })
 
 describe.skip('encode', () => {
@@ -203,11 +184,6 @@ describe('Encode & Decode CodeExpression nodes', () => {
     const c = await d(codeExpressionHTML)
     expect(c).toMatchObject(codeExpressionNode)
   })
-})
-
-describe('Encode & decode Math nodes', () => {
-  test('article/math', async () =>
-    expect(await e(mathArticle)).toMatchFile(snapshot('article-math.html')))
 })
 
 describe('Encode & Decode cite group nodes', () => {
