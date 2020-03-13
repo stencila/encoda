@@ -946,6 +946,25 @@ function encodeIsPartOfProperty(
 }
 
 /**
+ * Encode the pagination related properties of an article
+ */
+function endodePaginationProperties(
+  article: stencila.Article
+): (HTMLElement | undefined)[] {
+  const { pageStart, pageEnd, pagination } = article
+  if (pagination !== undefined)
+    return [h('span', microdata(pagination, 'pagination'), pagination)]
+  return [
+    pageStart !== undefined
+      ? h('span', microdata(pageStart, 'pageStart'), pageStart)
+      : undefined,
+    pageEnd !== undefined
+      ? h('span', microdata(pageEnd, 'pageEnd'), pageEnd)
+      : undefined
+  ]
+}
+
+/**
  * Encode a `Date` node as a HTML `<time>` element.
  *
  * Note that since a `Date` is a basic, atomic https://schema.org/DataType
@@ -1004,6 +1023,7 @@ function encodeReferencesProperty(
           encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
           encodeTitleProperty(title, 'span'),
           encodeIsPartOfProperty(isPartOf),
+          stencila.isArticle(ref) ? endodePaginationProperties(ref) : undefined,
           encodeMaybe(url, h('a', { itemprop: 'url', href: url }, url)),
           encodePublisherProperty(publisher),
           isA('Article', ref) ? encodeImageProperty(ref) : []
