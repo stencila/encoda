@@ -1303,30 +1303,46 @@ function encodeInclude(include: stencila.Include): HTMLElement {
 }
 
 /**
- * Decode a `<h1-6>` elements to a `stencila.Heading`.
+ * Decode a `<h1-6>` element to a `Heading` node.
+ *
+ * This assumes that the document uses `<h1>` for the document's
+ * title (extracted elsewhere) only and
+ *  `<h2>, <h3>,...` for level sections headings.
+ * See `encodeHeading` for rationale.
  */
 function decodeHeading(
   heading: HTMLHeadingElement,
   depth: number
 ): stencila.Heading {
-  return stencila.heading({ depth, content: decodeInlineChildNodes(heading) })
+  return stencila.heading({
+    depth: Math.max(1, depth - 1),
+    content: decodeInlineChildNodes(heading)
+  })
 }
 
 /**
- * Encode a `Heading` node to a `<h1>` etc element.
+ * Encode a `Heading` node to a `<h2>`, `<h3>` etc element.
+ *
+ * > Generally, it is a best practice to ensure that the beginning of a
+ * > page's main content starts with a h1 element, and also to ensure
+ * > that the page contains only one h1 element.
+ * > From https://dequeuniversity.com/rules/axe/3.5/page-has-heading-one
+ *
+ * This codec follows that recommendation and reserves `<h1>` for the
+ * `title` property of a document.
  *
  * In rare cases that there is no content in the heading, return an empty
  * text node to avoid the 'Heading tag found with no content' accessibility error.
  */
 function encodeHeading(heading: stencila.Heading): HTMLHeadingElement | Text {
-  let { id, depth, content } = heading
+  let { id, depth = 0, content } = heading
 
   if (content.length === 0) return document.createTextNode('')
 
   const text = TxtCodec.stringify(heading)
   id = id !== undefined ? id : slugger.slug(text)
   return h<HTMLHeadingElement>(
-    `h${depth}`,
+    `h${Math.min(depth + 1, 6)}`,
     { attrs: { ...microdata(heading), id } },
     content.map(encodeNode)
   )

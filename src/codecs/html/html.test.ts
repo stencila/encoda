@@ -635,7 +635,7 @@ test('encode add heading ids', async () => {
         depth: 1,
         content: ['One']
       })
-    ).querySelector('h1')?.id
+    ).querySelector('h2')?.id
   ).toBe('one')
 
   expect(
@@ -645,7 +645,7 @@ test('encode add heading ids', async () => {
         depth: 2,
         content: ['foo 123 $#% 🐶 bar']
       })
-    ).querySelector('h2')?.id
+    ).querySelector('h3')?.id
   ).toEqual('foo-123---bar')
 
   const headingItems = doc(
@@ -665,7 +665,7 @@ test('encode add heading ids', async () => {
         }
       ]
     })
-  ).querySelectorAll('h1')
+  ).querySelectorAll('h2')
 
   const ids: string[] = []
 
