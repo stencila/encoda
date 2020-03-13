@@ -1580,8 +1580,7 @@ function decodeTableWrap(
 ): [stencila.Table] {
   const table = stencila.table({ rows: [] })
 
-  const id = attr(elem, 'id')
-  if (id) table.id = id
+  table.id = decodeInternalId(attr(elem, 'id'))
 
   const caption = child(elem, 'caption')
   if (caption) {
