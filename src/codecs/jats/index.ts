@@ -937,9 +937,9 @@ function encodeReferences(
  */
 function decodeReference(
   elem: xml.Element,
-  ident?: string | null
+  ident: string | null
 ): stencila.CreativeWork {
-  const id = ident ? decodeInternalId(ident) : undefined
+  const id = decodeInternalId(ident)
   const authors = all(elem, 'name').map(decodeName)
   const title = textOrUndefined(child(elem, 'article-title'))
   const datePublished = textOrUndefined(child(elem, 'year'))
@@ -1431,17 +1431,14 @@ function decodeXRef(
 /**
  * Decode a JATS internal identifier.
  *
- * This function normalises ids so that if can not be confused with a URL.
+ * This function normalizes an id so that it can not be confused with a URL.
  * This is necessary for issues such as [this](https://github.com/stencila/encoda/pull/399#issuecomment-580391161)
  * where a `rid` "looked like" a URL and so was treated as such.
  * The [`rid` (reference to an identifer)](https://jats.nlm.nih.gov/archiving/tag-library/1.1/attribute/rid.html)
  * attribute is intended to be used for internal identifiers within the document.
  */
-function decodeInternalId(id: string | null): string {
-  if (id === null) {
-    log.error(`Id is null`)
-    return ''
-  }
+function decodeInternalId(id: string | null): string | undefined {
+  if (id === null) return undefined
   return id.replace(/\./g, '-')
 }
 
@@ -1469,7 +1466,7 @@ function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
   return [
     stencila.cite({
       content: decodeDefault(elem, state).filter(stencila.isInlineContent),
-      target: decodeInternalId(attr(elem, 'rid'))
+      target: decodeInternalId(attr(elem, 'rid')) ?? ''
     })
   ]
 }
@@ -1715,7 +1712,7 @@ function decodeFigure(
 
   return [
     stencila.figure({
-      id: attrOrUndefined(elem, 'id'),
+      id: decodeInternalId(attr(elem, 'id')),
       label: textOrUndefined(child(elem, 'label')),
       caption: caption?.elements?.length
         ? decodeElements(caption.elements, state)
