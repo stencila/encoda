@@ -1331,8 +1331,11 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
 /**
  * Decode a JATS section `<title>` to a Stencila `Heading`.
  *
- * Use `sectionId` and `sectionDepth` if a `<sec>`
- * is the closest ancestor. Otherwise (e.g. a figure or table title), use depth 1
+ * Use `sectionId` and `sectionDepth` if a `<sec>` is the closest ancestor.
+ * Otherwise (e.g. a figure or table title), use `sectionDepth + 1`, which
+ * implies a nested section. This is more likely to ensure conformance with
+ * the following rule if the document is encoded to HTML:
+ * https://dequeuniversity.com/rules/axe/3.5/heading-order
  */
 function decodeHeading(
   elem: xml.Element,
@@ -1340,7 +1343,9 @@ function decodeHeading(
 ): [stencila.Heading] {
   const { ancestorElem, sectionDepth, sectionId } = state
   const [depth, id] =
-    ancestorElem.name === 'sec' ? [sectionDepth, sectionId] : [1, undefined]
+    ancestorElem.name === 'sec'
+      ? [sectionDepth, sectionId]
+      : [sectionDepth + 1, undefined]
   return [
     stencila.heading({
       content: decodeInlineContent(elem.elements ?? [], state),
