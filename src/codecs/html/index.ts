@@ -672,7 +672,7 @@ async function generateHtmlElement(
         type: 'text/javascript'
       })
     ),
-    h('body', h('main', {attrs: {role: 'main'}}, root))
+    h('body', h('main', { attrs: { role: 'main' } }, root))
   )
 }
 

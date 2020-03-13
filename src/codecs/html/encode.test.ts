@@ -77,10 +77,13 @@ describe('Articles', () => {
     }
 
     // Accessibility test
-    const { issues = [] } = await pa11y(file)
+    // Rules to ignore (add rule codes here if you need to during development)
+    const ignore: string[] = []
+    const { issues = [] } = await pa11y(file, { runners: ['axe', 'htmlcs'] })
     issues.forEach((result: any) => {
       const { type, selector, code, message } = result
-      if (type === 'error') fail(`${selector}: ${code}: ${message}`)
+      if (type === 'error' && !ignore.includes(code))
+        fail(`${selector}: ${code}: ${message}`)
     })
   })
 })
