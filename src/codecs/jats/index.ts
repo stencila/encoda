@@ -18,6 +18,7 @@ import crypto from 'crypto'
 import fs from 'fs-extra'
 import { isDefined } from '../../util'
 import { ensureArticle } from '../../util/content/ensureArticle'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 import transform from '../../util/transform'
 import * as vfile from '../../util/vfile'
 /* eslint-disable import/no-duplicates */
@@ -1298,13 +1299,13 @@ function encodeNodes(
 
 /**
  * Decode and array of JATS elements, ensuring the returned
- * results are only Stencila `InlineContent` nodes.
+ * results are only `InlineContent` nodes.
  */
 function decodeInlineContent(
   elems: xml.Element[],
   state: DecodeState
 ): stencila.InlineContent[] {
-  return decodeElements(elems, state).filter(stencila.isInlineContent)
+  return ensureInlineContentArray(decodeElements(elems, state))
 }
 
 /**
@@ -1335,11 +1336,9 @@ function decodeHeading(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Heading] {
-  const {ancestorElem, sectionDepth, sectionId} = state
+  const { ancestorElem, sectionDepth, sectionId } = state
   const [depth, id] =
-    ancestorElem.name === 'sec'
-      ? [sectionDepth, sectionId]
-      : [1, undefined]
+    ancestorElem.name === 'sec' ? [sectionDepth, sectionId] : [1, undefined]
   return [
     stencila.heading({
       content: decodeInlineContent(elem.elements ?? [], state),
@@ -1465,7 +1464,7 @@ function decodeInternalId(id: string | null): string | undefined {
 function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
   return [
     stencila.link({
-      content: decodeDefault(elem, state).filter(stencila.isInlineContent),
+      content: decodeInlineContent(elem.elements ?? [], state),
       target: `#${decodeInternalId(attr(elem, 'rid'))}`,
       relation: attrOrUndefined(elem, 'ref-type')
     })
@@ -1482,7 +1481,7 @@ function decodeLink(elem: xml.Element, state: DecodeState): [stencila.Link] {
 function decodeBibr(elem: xml.Element, state: DecodeState): [stencila.Cite] {
   return [
     stencila.cite({
-      content: decodeDefault(elem, state).filter(stencila.isInlineContent),
+      content: decodeInlineContent(elem.elements ?? [], state),
       target: decodeInternalId(attr(elem, 'rid')) ?? ''
     })
   ]
@@ -1595,7 +1594,7 @@ function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Table] {
-  state = {...state, ancestorElem: elem}
+  state = { ...state, ancestorElem: elem }
 
   const table = stencila.table({ rows: [] })
 
@@ -1701,7 +1700,7 @@ function decodeFigure(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Figure] {
-  state = {...state, ancestorElem: elem}
+  state = { ...state, ancestorElem: elem }
 
   const caption = child(elem, 'caption')
 
