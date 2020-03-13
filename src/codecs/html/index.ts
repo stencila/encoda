@@ -752,13 +752,15 @@ function encodeArticle(article: stencila.Article): HTMLElement {
  *
  * The GSDTT requires an `Article` to have a `publisher` property
  * with a `name` and `logo.url`.
+ *
+ * If a publisher logo is found, insert as an image,
+ * otherwise as an invisible `meta` tag with a placeholder image.
  */
 function encodePublisherProperty(
   publisher: stencila.Article['publisher']
 ): HTMLElement {
   publisher = publisher ?? stencila.organization()
 
-  // If a publisher logo was found, insert as an image, otherwise as an invisitble `meta` tag
   const { name = 'Unknown' } = publisher
   const nameTag = isDefined(publisher.name) ? 'span' : 'meta'
 
@@ -766,7 +768,6 @@ function encodePublisherProperty(
     ? publisher.logo
     : undefined
 
-  // If a publisher logo is found, insert as an image, otherwise as an invisitble `meta` tag
   let logoTag = 'img'
   if (logo === undefined) {
     logoTag = 'meta'
@@ -777,18 +778,19 @@ function encodePublisherProperty(
     logo = stencila.imageObject({ contentUrl: logo })
 
   return h(
-    'div',
+    'span',
     encodeAttrs(publisher, { itemprop: 'publisher' }),
     h(nameTag, { itemprop: 'name', content: name }, name),
     h(
-      'div',
+      'span',
       encodeAttrs(logo, { itemprop: 'logo' }),
-      // Both `content` and `src` are necessary here
+      // Both `content` and `src` are necessary here if `logoTag`
+      // is `img`
       h(logoTag, {
         attrs: {
           itemprop: 'url',
           content: logo.contentUrl,
-          src: logo.contentUrl
+          ...(logoTag === 'img' ? { src: logo.contentUrl } : {})
         }
       })
     )
