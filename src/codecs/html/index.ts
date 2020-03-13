@@ -661,6 +661,7 @@ async function generateHtmlElement(
 
   return h(
     'html',
+    {lang: 'en'},
     h(
       'head',
       h('title', title),
