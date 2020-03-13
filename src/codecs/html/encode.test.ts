@@ -35,7 +35,13 @@ describe('Articles', () => {
       typeof article === 'string'
         ? await jsonCodec.read(fixture(article))
         : article
-    const html = await htmlCodec.dump(node, { isStandalone: true })
+    const html = await htmlCodec.dump(node, {
+      // Standalone so get complete HTML doc with <head> etc
+      isStandalone: true,
+      // No theme, to make faster and so that tests are not affected by
+      // accessibility issues in themes e.g. color contrast
+      theme: undefined
+    })
     const file = snapshot(`${name}.html`)
 
     // Regression / human inspection test.

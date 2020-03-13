@@ -607,44 +607,45 @@ async function generateHtmlElement(
   title: string,
   body: Node[],
   isBundle: boolean,
-  theme: string
+  theme?: string
 ): Promise<HTMLHtmlElement> {
-  const { styles, scripts } = await getThemeAssets(theme, isBundle)
+  let themeCss: HTMLElement[] = []
+  let themeJs: HTMLElement[] = []
+  if (theme !== undefined) {
+    const { styles, scripts } = await getThemeAssets(theme, isBundle)
+    if (isBundle) {
+      // Bundle the theme into the document
+      themeCss = styles.map(style =>
+        h('style', {
+          innerHTML: style
+        })
+      )
 
-  let themeCss
-  let themeJs
-  if (isBundle) {
-    // Bundle the theme into the document
-    themeCss = styles.map(style =>
-      h('style', {
-        innerHTML: style
-      })
-    )
+      themeJs = scripts.map(src =>
+        h('script', {
+          innerHTML: src
+        })
+      )
+    } else {
+      themeCss = styles.map(style =>
+        h('link', {
+          href: style,
+          rel: 'stylesheet'
+        })
+      )
 
-    themeJs = scripts.map(src =>
-      h('script', {
-        innerHTML: src
-      })
-    )
-  } else {
-    themeCss = styles.map(style =>
-      h('link', {
-        href: style,
-        rel: 'stylesheet'
-      })
-    )
-
-    themeJs = scripts.map(src =>
-      h('script', {
-        src: src,
-        type: 'text/javascript'
-      })
-    )
+      themeJs = scripts.map(src =>
+        h('script', {
+          src: src,
+          type: 'text/javascript'
+        })
+      )
+    }
   }
 
   return h(
     'html',
-    {lang: 'en'},
+    { lang: 'en' },
     h(
       'head',
       h('title', title),
