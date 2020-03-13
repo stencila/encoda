@@ -95,6 +95,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_jats_index_.decodestate.html#ancestorelem" class="tsd-kind-icon">ancestor<wbr>Elem</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_jats_index_.decodestate.html#article" class="tsd-kind-icon">article</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_jats_index_.decodestate.html#sectiondepth" class="tsd-kind-icon">section<wbr>Depth</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_codecs_jats_index_.decodestate.html#sectionid" class="tsd-kind-icon">section<wbr>Id</a></li>
@@ -106,18 +107,35 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="ancestorelem" class="tsd-anchor"></a>
+					<h3>ancestor<wbr>Elem</h3>
+					<div class="tsd-signature tsd-kind-icon">ancestor<wbr>Elem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/e77e1811/src/codecs/jats/index.ts#L209">src/codecs/jats/index.ts:209</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The closest ancestor element. It is up to
+								decode functions to set this, therefore not
+							necessarily the parent</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="article" class="tsd-anchor"></a>
 					<h3>article</h3>
 					<div class="tsd-signature tsd-kind-icon">article<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/08882419/src/codecs/jats/index.ts#L201">src/codecs/jats/index.ts:201</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/e77e1811/src/codecs/jats/index.ts#L202">src/codecs/jats/index.ts:202</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The current <code>&lt;article&gt;</code> element. Used for
-							getting there target of internal references.</p>
+							getting the target of internal references.</p>
 						</div>
 					</div>
 				</section>
@@ -127,7 +145,7 @@
 					<div class="tsd-signature tsd-kind-icon">section<wbr>Depth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/08882419/src/codecs/jats/index.ts#L213">src/codecs/jats/index.ts:213</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/e77e1811/src/codecs/jats/index.ts#L221">src/codecs/jats/index.ts:221</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -143,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">section<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/08882419/src/codecs/jats/index.ts#L207">src/codecs/jats/index.ts:207</a></li>
+							<li>Defined in <a href="https://github.com/stencila/encoda/blob/e77e1811/src/codecs/jats/index.ts#L215">src/codecs/jats/index.ts:215</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -173,6 +191,9 @@
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_codecs_jats_index_.decodestate.html" class="tsd-kind-icon">Decode<wbr>State</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_codecs_jats_index_.decodestate.html#ancestorelem" class="tsd-kind-icon">ancestor<wbr>Elem</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 								<a href="_codecs_jats_index_.decodestate.html#article" class="tsd-kind-icon">article</a>
 							</li>

@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
   <head>
     <title>XMD: RMarkdown and other language variants</title>
@@ -18,72 +18,72 @@
   </head>
 
   <body>
-    <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
-      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-        <meta itemprop="name" content="Unknown">
-        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-          <meta itemprop="url"
-            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-        </div>
-      </div>
-      <h1 itemprop="headline">XMD: RMarkdown and other language variants</h1>
-      <meta itemprop="image"
-        content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=XMD:%20RMarkdown%20and%20other%20language%20variants">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">&quot;XMarkdown&quot; is our name
-        for RMarkdown-like formats, that is, RMarkdown but extended to language X, where X includes
-        Python, Javascript, etc. See <a
-          href="https://bookdown.org/yihui/rmarkdown/language-engines.html" itemscope=""
-          itemtype="http://schema.stenci.la/Link">https://bookdown.org/yihui/rmarkdown/language-engines.html</a>
-      </p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">In RMarkdown, R code is embedded
-        in &quot;code chunks&quot;. There are two types of code chunks: inline and block.</p>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="inline-code-chunks">Inline
-        code chunks</h2>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">An inline code chunk is
-        equivalent to Stencila&#39;s <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CodeExpr</code>. They are declared using
-        Markdown code spans prefixed by the language label e.g.</p>
-      <pre class="language-markdown" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code>The answer is `r x * y`</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Inline code chunks are parsed to
-        a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CodeExpr</code> with
-        <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">programmingLanguage</code> and <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">text</code> properties set
-        e.g.</p>
-      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>{
+    <main role="main">
+      <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root"><span
+          itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+          <meta itemprop="name" content="Unknown"><span itemscope=""
+            itemtype="http://schema.org/ImageObject" itemprop="logo">
+            <meta itemprop="url"
+              content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+            </span></span>
+        <h1 itemprop="headline">XMD: RMarkdown and other language variants</h1>
+        <meta itemprop="image"
+          content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=XMD:%20RMarkdown%20and%20other%20language%20variants">
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">&quot;XMarkdown&quot; is our
+          name for RMarkdown-like formats, that is, RMarkdown but extended to language X, where X
+          includes Python, Javascript, etc. See <a
+            href="https://bookdown.org/yihui/rmarkdown/language-engines.html" itemscope=""
+            itemtype="http://schema.stenci.la/Link">https://bookdown.org/yihui/rmarkdown/language-engines.html</a>
+        </p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">In RMarkdown, R code is
+          embedded in &quot;code chunks&quot;. There are two types of code chunks: inline and block.
+        </p>
+        <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="inline-code-chunks">Inline
+          code chunks</h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">An inline code chunk is
+          equivalent to Stencila&#39;s <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">CodeExpr</code>. They are declared using
+          Markdown code spans prefixed by the language label e.g.</p>
+        <pre class="language-markdown" itemscope=""
+          itemtype="http://schema.stenci.la/CodeBlock"><code>The answer is `r x * y`</code></pre>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Inline code chunks are parsed
+          to a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CodeExpr</code>
+          with <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">programmingLanguage</code> and <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">text</code> properties set
+          e.g.</p>
+        <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>{
   &quot;type&quot;: &quot;CodeExpr&quot;,
   &quot;programmingLanguage&quot;: &quot;r&quot;,
   &quot;text&quot;: &quot;x * y&quot;
 }</code></pre>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="block-code-chunks">Block code
-        chunks</h2>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A block code chunks is equivalent
-        to Stencila&#39;s <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">CodeChunk</code>. They are declared using
-        Markdown fenced code blocks with attributes starting with the language label and,
-        optionally, a chunk label and other chunk options e.g.</p>
-      <pre class="language-markdown" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>```{r myplot, fig.width=6, fig.height=7}
+        <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="block-code-chunks">Block
+          code chunks</h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A block code chunks is
+          equivalent to Stencila&#39;s <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">CodeChunk</code>. They are declared
+          using Markdown fenced code blocks with attributes starting with the language label and,
+          optionally, a chunk label and other chunk options e.g.</p>
+        <pre class="language-markdown" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>```{r myplot, fig.width=6, fig.height=7}
 plot(x,y)
 ```</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Here <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">myplot</code> is the chunk label and <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">fig.width=6,
-          fig.height=7</code> are chunk options. A list of chunk options, recognized by the
-        RMarkdown rendering engine, Knitr, is available at <a
-          href="http://yihui.name/knitr/options/" itemscope=""
-          itemtype="http://schema.stenci.la/Link">http://yihui.name/knitr/options/</a>.</p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Block code chunks are decoded to
-        a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CodeChunk</code> with
-        <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">programmingLanguage</code> and <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">text</code> properties set.
-        The chunk label, if defined is used for the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">name</code> property and other options go
-        into the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">meta</code>
-        property e.g.</p>
-      <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>{
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Here <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">myplot</code> is the chunk label and
+          <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">fig.width=6,
+            fig.height=7</code> are chunk options. A list of chunk options, recognized by the
+          RMarkdown rendering engine, Knitr, is available at <a
+            href="http://yihui.name/knitr/options/" itemscope=""
+            itemtype="http://schema.stenci.la/Link">http://yihui.name/knitr/options/</a>.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">Block code chunks are decoded
+          to a <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">CodeChunk</code>
+          with <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">programmingLanguage</code> and <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">text</code> properties set.
+          The chunk label, if defined is used for the <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">name</code> property and other options
+          go into the <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">meta</code>
+          property e.g.</p>
+        <pre class="language-json" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>{
   &quot;type&quot;: &quot;CodeChunk&quot;,
   &quot;programmingLanguage&quot;: &quot;r&quot;,
   &quot;name&quot;: &quot;myplot&quot;,
@@ -93,7 +93,8 @@ plot(x,y)
   },
   &quot;text&quot;: &quot;plot(x,y)&quot;
 }</code></pre>
-    </article>
+      </article>
+    </main>
   </body>
 
 </html>

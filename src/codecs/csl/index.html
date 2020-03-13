@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
   <head>
     <title>csl CodeFragment : Citation Style Language Codec</title>
@@ -18,38 +18,39 @@
   </head>
 
   <body>
-    <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
-      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-        <meta itemprop="name" content="Unknown">
-        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-          <meta itemprop="url"
-            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-        </div>
-      </div>
-      <h1 data-itemprop="headline">
-        <meta itemprop="headline" content="csl CodeFragment : Citation Style Language Codec"><code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">csl</code>: Citation Style
-        Language Codec</h1>
-      <meta itemprop="image" content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A codec for CSL JSON. Also acts a
-        base codec for other bibliographic formats e.g. BibTeX. Based on <a
-          href="https://citation.js.org/" itemscope=""
-          itemtype="http://schema.stenci.la/Link">https://citation.js.org/</a></p>
-      <h2 itemscope="" itemtype="http://schema.stenci.la/Heading" id="develop">Develop</h2>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">styles</code> directory contains CSL
-        styles downloaded from the CSL <a href="https://github.com/citation-style-language/styles"
-          itemscope="" itemtype="http://schema.stenci.la/Link">styles Github repository</a>. These
-        styles are used by the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">pandoc</code> condec when encoding to some
-        formats e.g. <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">docx</code>.
-      </p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To download the most recent
-        versions of the styles, from the top level of this repository:</p>
-      <pre class="language-bash" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code>make -C src/codecs/csl/styles</code></pre>
-    </article>
+    <main role="main">
+      <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root"><span
+          itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+          <meta itemprop="name" content="Unknown"><span itemscope=""
+            itemtype="http://schema.org/ImageObject" itemprop="logo">
+            <meta itemprop="url"
+              content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+            </span></span>
+        <h1 itemscope="" itemtype="http://schema.stenci.la/Array" itemprop="headline"
+          content="csl CodeFragment : Citation Style Language Codec"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">csl</code>: Citation Style Language
+          Codec</h1>
+        <meta itemprop="image"
+          content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">A codec for CSL JSON. Also acts
+          a base codec for other bibliographic formats e.g. BibTeX. Based on <a
+            href="https://citation.js.org/" itemscope=""
+            itemtype="http://schema.stenci.la/Link">https://citation.js.org/</a></p>
+        <h3 itemscope="" itemtype="http://schema.stenci.la/Heading" id="develop">Develop</h3>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">styles</code> directory contains CSL
+          styles downloaded from the CSL <a href="https://github.com/citation-style-language/styles"
+            itemscope="" itemtype="http://schema.stenci.la/Link">styles Github repository</a>. These
+          styles are used by the <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">pandoc</code> condec when encoding to
+          some formats e.g. <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">docx</code>.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">To download the most recent
+          versions of the styles, from the top level of this repository:</p>
+        <pre class="language-bash" itemscope=""
+          itemtype="http://schema.stenci.la/CodeBlock"><code>make -C src/codecs/csl/styles</code></pre>
+      </article>
+    </main>
   </body>
 
 </html>

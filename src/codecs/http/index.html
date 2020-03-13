@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
   <head>
     <title>http CodeFragment : HTTP codec</title>
@@ -18,37 +18,38 @@
   </head>
 
   <body>
-    <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root">
-      <div itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
-        <meta itemprop="name" content="Unknown">
-        <div itemscope="" itemtype="http://schema.org/ImageObject" itemprop="logo">
-          <meta itemprop="url"
-            content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown"
-            src="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
-        </div>
-      </div>
-      <h1 data-itemprop="headline">
-        <meta itemprop="headline" content="http CodeFragment : HTTP codec"><code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">http</code>: HTTP codec</h1>
-      <meta itemprop="image" content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">http</code> codec is able to decode a HTTP
-        URL (a URL starting with <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">http</code> or <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">https</code>). It is a &#39;meta&#39;
-        codec in that it uses the media type of the response content, as specified in the <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> header,
-        to delegate the decoding of content to other codecs. It also maintains a cache of responses,
-        which respects the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Cache-Control</code> header, to improve
-        performance and reduce bandwidth consumption.</p>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For example if you request the
-        CSV file on the leading causes of death in the United States from the Centre for Disease
-        Control using <code itemscope="" itemtype="http://schema.stenci.la/CodeFragment">curl</code>
-        you will see that the response contains several headers, including <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> and <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">Cache-Control</code>:</p>
-      <pre class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>$ curl -is https://data.cdc.gov/api/views/bi63-dtpu/rows.csv
+    <main role="main">
+      <article itemscope="" itemtype="http://schema.org/Article" data-itemscope="root"><span
+          itemscope="" itemtype="http://schema.org/Organization" itemprop="publisher">
+          <meta itemprop="name" content="Unknown"><span itemscope=""
+            itemtype="http://schema.org/ImageObject" itemprop="logo">
+            <meta itemprop="url"
+              content="https://via.placeholder.com/600x60/dbdbdb/4a4a4a.png?text=Unknown">
+            </span></span>
+        <h1 itemscope="" itemtype="http://schema.stenci.la/Array" itemprop="headline"
+          content="http CodeFragment : HTTP codec"><code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">http</code>: HTTP codec</h1>
+        <meta itemprop="image"
+          content="https://via.placeholder.com/1200x714/dbdbdb/4a4a4a.png?text=">
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">http</code> codec is able to decode a
+          HTTP URL (a URL starting with <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">http</code> or <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">https</code>). It is a &#39;meta&#39;
+          codec in that it uses the media type of the response content, as specified in the <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> header,
+          to delegate the decoding of content to other codecs. It also maintains a cache of
+          responses, which respects the <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">Cache-Control</code> header, to improve
+          performance and reduce bandwidth consumption.</p>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">For example if you request the
+          CSV file on the leading causes of death in the United States from the Centre for Disease
+          Control using <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">curl</code> you will see that the
+          response contains several headers, including <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">Content-Type</code> and <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">Cache-Control</code>:</p>
+        <pre class="language-bash" itemscope="" itemtype="http://schema.stenci.la/CodeBlock"><code>$ curl -is https://data.cdc.gov/api/views/bi63-dtpu/rows.csv
 
 HTTP/1.1 200 OK
 ...
@@ -56,21 +57,22 @@ Content-Type: text/csv; charset=utf-8
 ...
 Cache-Control: public, must-revalidate, max-age=21600
 ...</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When you use the <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">convert</code> command with
-        an input that matches the <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">http</code> codec it will transparently
-        work out how to decode and cache the data using those header. For example, to fetch the CDC
-        data and convert it to an Excel file.</p>
-      <pre class="language-bash" itemscope=""
-        itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert https://data.cdc.gov/api/views/bi63-dtpu/rows.csv deaths.xslx</code></pre>
-      <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
-          itemtype="http://schema.stenci.la/CodeFragment">http</code> codec is often used to <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">include</code> or <code
-          itemscope="" itemtype="http://schema.stenci.la/CodeFragment">import</code> data from an
-        external source. It is a better alternative to downloading the data and importing from a
-        local file when you want the data to be up-to-date each time the dccument is executed.</p>
-    </article>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">When you use the <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">convert</code> command with
+          an input that matches the <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">http</code> codec it will transparently
+          work out how to decode and cache the data using those header. For example, to fetch the
+          CDC data and convert it to an Excel file.</p>
+        <pre class="language-bash" itemscope=""
+          itemtype="http://schema.stenci.la/CodeBlock"><code>encoda convert https://data.cdc.gov/api/views/bi63-dtpu/rows.csv deaths.xslx</code></pre>
+        <p itemscope="" itemtype="http://schema.stenci.la/Paragraph">The <code itemscope=""
+            itemtype="http://schema.stenci.la/CodeFragment">http</code> codec is often used to <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">include</code> or <code
+            itemscope="" itemtype="http://schema.stenci.la/CodeFragment">import</code> data from an
+          external source. It is a better alternative to downloading the data and importing from a
+          local file when you want the data to be up-to-date each time the dccument is executed.</p>
+      </article>
+    </main>
   </body>
 
 </html>
