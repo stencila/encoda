@@ -9325,35 +9325,35 @@ content:
                   - '3'
               - .
           - type: Paragraph
-            content:
-              - 10.7554/eLife.46793.017
-              - Figure 8—source data 1.
-          - type: Heading
-            depth: 1
-            content:
-              - Source files for western blots.
-          - type: Paragraph
-            content:
-              - (
-              - type: Strong
-                content:
-                  - A
-              - ) Full length western blots and (
-              - type: Strong
-                content:
-                  - B
-              - >-
-                ) capillary traces obtained from Compass Software (Simple
-                Western) for results shown in 
-              - type: Link
-                relation: fig
-                target: '#fig8'
-                content:
-                  - Figure 8A
-              - .
+            content: []
           - type: MediaObject
+            id: fig8sdata1
             contentUrl: elife-46793-fig8-data1-v1.pdf
-            format: application/pdf
+            text: Figure 8—source data 1.
+            content:
+              - type: Heading
+                depth: 1
+                content:
+                  - Source files for western blots.
+              - type: Paragraph
+                content:
+                  - (
+                  - type: Strong
+                    content:
+                      - A
+                  - ) Full length western blots and (
+                  - type: Strong
+                    content:
+                      - B
+                  - >-
+                    ) capillary traces obtained from Compass Software (Simple
+                    Western) for results shown in 
+                  - type: Link
+                    relation: fig
+                    target: '#fig8'
+                    content:
+                      - Figure 8A
+                  - .
         label: Figure 8.
         content:
           - type: ImageObject
@@ -9518,35 +9518,35 @@ content:
                   - J
               - ) GAR1.
           - type: Paragraph
-            content:
-              - 10.7554/eLife.46793.016
-              - Figure 8—figure supplement 3—source data 1.
-          - type: Heading
-            depth: 1
-            content:
-              - Source files for western blots.
-          - type: Paragraph
-            content:
-              - (
-              - type: Strong
-                content:
-                  - A
-              - ) Full length western blots and (
-              - type: Strong
-                content:
-                  - B
-              - >-
-                ) capillary traces obtained from Compass Software (Simple
-                Western) for results shown in 
-              - type: Link
-                relation: fig
-                target: '#fig8s3'
-                content:
-                  - Figure 8—figure supplement 3A
-              - .
+            content: []
           - type: MediaObject
+            id: fig8s3sdata1
             contentUrl: elife-46793-fig8-figsupp3-data1-v1.pdf
-            format: application/pdf
+            text: Figure 8—figure supplement 3—source data 1.
+            content:
+              - type: Heading
+                depth: 1
+                content:
+                  - Source files for western blots.
+              - type: Paragraph
+                content:
+                  - (
+                  - type: Strong
+                    content:
+                      - A
+                  - ) Full length western blots and (
+                  - type: Strong
+                    content:
+                      - B
+                  - >-
+                    ) capillary traces obtained from Compass Software (Simple
+                    Western) for results shown in 
+                  - type: Link
+                    relation: fig
+                    target: '#fig8s3'
+                    content:
+                      - Figure 8—figure supplement 3A
+                  - .
         label: Figure 8—figure supplement 3.
         content:
           - type: ImageObject
@@ -10083,35 +10083,35 @@ content:
                   - d
               - ' is calculated from five replicates (values are indicative as the model assumes saturation kinetics).'
           - type: Paragraph
-            content:
-              - 10.7554/eLife.46793.023
-              - Figure 10—source data 1.
-          - type: Heading
-            depth: 1
-            content:
-              - Source files for western blots.
-          - type: Paragraph
-            content:
-              - (
-              - type: Strong
-                content:
-                  - A
-              - ) Full-length western blots and (
-              - type: Strong
-                content:
-                  - B
-              - >-
-                ) capillary traces obtained from Compass Software (Simple
-                Western) for results shown in 
-              - type: Link
-                relation: fig
-                target: '#fig10'
-                content:
-                  - Figure 10A
-              - .
+            content: []
           - type: MediaObject
+            id: fig10sdata1
             contentUrl: elife-46793-fig10-data1-v1.pdf
-            format: application/pdf
+            text: Figure 10—source data 1.
+            content:
+              - type: Heading
+                depth: 1
+                content:
+                  - Source files for western blots.
+              - type: Paragraph
+                content:
+                  - (
+                  - type: Strong
+                    content:
+                      - A
+                  - ) Full-length western blots and (
+                  - type: Strong
+                    content:
+                      - B
+                  - >-
+                    ) capillary traces obtained from Compass Software (Simple
+                    Western) for results shown in 
+                  - type: Link
+                    relation: fig
+                    target: '#fig10'
+                    content:
+                      - Figure 10A
+                  - .
         label: Figure 10.
         content:
           - type: ImageObject

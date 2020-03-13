@@ -1176,6 +1176,8 @@ function decodeElement(elem: xml.Element, state: DecodeState): stencila.Node[] {
       return decodeFigure(elem, state)
     case 'fig-group':
       return decodeFigGroup(elem, state)
+    case 'supplementary-material':
+      return decodeSupplementaryMaterial(elem, state)
     case 'code':
       return decodeCode(elem)
     default:
@@ -1766,6 +1768,36 @@ function encodeFigure(
         ? children[0]
         : elem('alternatives', ...children)
     )
+  ]
+}
+
+/**
+ * Decode a `<supplementary-material>` element to a `MediaObject` node.
+ */
+function decodeSupplementaryMaterial(
+  elem: xml.Element,
+  state: DecodeState
+): [stencila.MediaObject] {
+  state = { ...state, ancestorElem: elem }
+
+  const id = decodeInternalId(attr(elem, 'id'))
+  const text = textOrUndefined(child(elem, 'label'))
+
+  const media = child(elem, 'media')
+  const contentUrl =
+    (media ? attr(media, 'xlink:href') : attr(elem, 'xlink:href')) ?? ''
+
+  const captionElem = child(elem, 'caption')
+  const content = captionElem?.elements?.length
+    ? decodeElements(captionElem.elements, state)
+    : undefined
+  return [
+    stencila.mediaObject({
+      id,
+      contentUrl,
+      content,
+      text
+    })
   ]
 }
 

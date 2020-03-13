@@ -4927,21 +4927,22 @@
             },
             {
               "type": "Paragraph",
-              "content": [
-                "Figure 1—source data 1."
-              ]
-            },
-            {
-              "type": "Heading",
-              "depth": 1,
-              "content": [
-                "Effects of ectopic endometrium."
-              ]
+              "content": []
             },
             {
               "type": "MediaObject",
+              "id": "fig1sdata1",
               "contentUrl": "50356.json.media",
-              "format": "application/xlsx"
+              "text": "Figure 1—source data 1.",
+              "content": [
+                {
+                  "type": "Heading",
+                  "depth": 1,
+                  "content": [
+                    "Effects of ectopic endometrium."
+                  ]
+                }
+              ]
             }
           ],
           "label": "Figure 1.",
@@ -5221,21 +5222,22 @@
         },
         {
           "type": "Paragraph",
-          "content": [
-            "Figure 2—source data 1."
-          ]
-        },
-        {
-          "type": "Heading",
-          "depth": 1,
-          "content": [
-            "Acute THC effects."
-          ]
+          "content": []
         },
         {
           "type": "MediaObject",
+          "id": "fig2sdata1",
           "contentUrl": "50356.json.media",
-          "format": "application/xlsx"
+          "text": "Figure 2—source data 1.",
+          "content": [
+            {
+              "type": "Heading",
+              "depth": 1,
+              "content": [
+                "Acute THC effects."
+              ]
+            }
+          ]
         }
       ],
       "label": "Figure 2.",
@@ -5435,21 +5437,22 @@
             },
             {
               "type": "Paragraph",
-              "content": [
-                "Figure 3—source data 1."
-              ]
-            },
-            {
-              "type": "Heading",
-              "depth": 1,
-              "content": [
-                "Effects of repeated THC on behavioral alterations."
-              ]
+              "content": []
             },
             {
               "type": "MediaObject",
+              "id": "fig3sdata1",
               "contentUrl": "50356.json.media",
-              "format": "application/xlsx"
+              "text": "Figure 3—source data 1.",
+              "content": [
+                {
+                  "type": "Heading",
+                  "depth": 1,
+                  "content": [
+                    "Effects of repeated THC on behavioral alterations."
+                  ]
+                }
+              ]
             }
           ],
           "label": "Figure 3.",
@@ -5872,21 +5875,22 @@
             },
             {
               "type": "Paragraph",
-              "content": [
-                "Figure 4—source data 1."
-              ]
-            },
-            {
-              "type": "Heading",
-              "depth": 1,
-              "content": [
-                "Effects of repeated THC on histopathological features."
-              ]
+              "content": []
             },
             {
               "type": "MediaObject",
+              "id": "fig4sdata1",
               "contentUrl": "50356.json.media",
-              "format": "application/xlsx"
+              "text": "Figure 4—source data 1.",
+              "content": [
+                {
+                  "type": "Heading",
+                  "depth": 1,
+                  "content": [
+                    "Effects of repeated THC on histopathological features."
+                  ]
+                }
+              ]
             }
           ],
           "label": "Figure 4.",

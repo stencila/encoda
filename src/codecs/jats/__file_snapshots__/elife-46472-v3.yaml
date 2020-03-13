@@ -4179,32 +4179,32 @@ content:
               - Figure 1—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.004
-          - Figure 1—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            MA consumption (mg/kg/18h) and total volume consumed (ml/18h) data
-            for male and female, control MAHDR-
-          - type: Emphasis
-            content:
-              - Taar1
-              - type: Superscript
-                content:
-                  - m1J/m1J
-          - ' and knock-in MAHDR-'
-          - type: Emphasis
-            content:
-              - Taar1
-              - type: Superscript
-                content:
-                  - +/+
-          - ' mice.'
+        content: []
       - type: MediaObject
+        id: fig1sdata1
         contentUrl: elife-46472-fig1-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 1—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                MA consumption (mg/kg/18h) and total volume consumed (ml/18h)
+                data for male and female, control MAHDR-
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - m1J/m1J
+              - ' and knock-in MAHDR-'
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - +/+
+              - ' mice.'
     label: Figure 1.
     content:
       - type: ImageObject
@@ -4386,32 +4386,32 @@ content:
               - Figure 2—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.006
-          - Figure 2—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            Core body temperature (°C) data across time for saline and 2 mg/kg
-            MA-treated male and female, control MAHDR-
-          - type: Emphasis
-            content:
-              - Taar1
-              - type: Superscript
-                content:
-                  - m1J/m1J
-          - ' and knock-in MAHDR-'
-          - type: Emphasis
-            content:
-              - Taar1
-              - type: Superscript
-                content:
-                  - +/+
-          - ' mice.'
+        content: []
       - type: MediaObject
+        id: fig2sdata1
         contentUrl: elife-46472-fig2-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 2—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                Core body temperature (°C) data across time for saline and 2
+                mg/kg MA-treated male and female, control MAHDR-
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - m1J/m1J
+              - ' and knock-in MAHDR-'
+              - type: Emphasis
+                content:
+                  - Taar1
+                  - type: Superscript
+                    content:
+                      - +/+
+              - ' mice.'
     label: Figure 2.
     content:
       - type: ImageObject
@@ -4586,26 +4586,26 @@ content:
               - Figure 3—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.008
-          - Figure 3—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            MA consumption (mg/kg/18h) and total volume consumed (ml/18h) data
-            for male and female, BXD mice, according to 
-          - type: Emphasis
-            content:
-              - Taar1
-          - ' and '
-          - type: Emphasis
-            content:
-              - Oprm1
-          - ' genotype.'
+        content: []
       - type: MediaObject
+        id: fig3sdata1
         contentUrl: elife-46472-fig3-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 3—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                MA consumption (mg/kg/18h) and total volume consumed (ml/18h)
+                data for male and female, BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 3.
     content:
       - type: ImageObject
@@ -4962,26 +4962,26 @@ content:
               - Figure 4—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.010
-          - Figure 4—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            MA consumption (mg/kg/18h) and total volume consumed (ml/18h) data
-            for male and female BXD mice, according to 
-          - type: Emphasis
-            content:
-              - Taar1
-          - ' and '
-          - type: Emphasis
-            content:
-              - Oprm1
-          - ' genotype.'
+        content: []
       - type: MediaObject
+        id: fig4sdata1
         contentUrl: elife-46472-fig4-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 4—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                MA consumption (mg/kg/18h) and total volume consumed (ml/18h)
+                data for male and female BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 4.
     content:
       - type: ImageObject
@@ -5475,26 +5475,26 @@ content:
               - Figure 5—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.013
-          - Figure 5—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            Core body temperature (°C) data across time for saline and 2 mg/kg
-            MA-treated male and female, BXD mice, according to 
-          - type: Emphasis
-            content:
-              - Taar1
-          - ' and '
-          - type: Emphasis
-            content:
-              - Oprm1
-          - ' genotype.'
+        content: []
       - type: MediaObject
+        id: fig5sdata1
         contentUrl: elife-46472-fig5-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 5—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                Core body temperature (°C) data across time for saline and 2
+                mg/kg MA-treated male and female, BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 5.
     content:
       - type: ImageObject
@@ -5815,26 +5815,26 @@ content:
               - Figure 6—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.015
-          - Figure 6—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            Core body temperature (°C) data across time for saline and 2 mg/kg
-            MA-treated male and female, BXD mice, according to 
-          - type: Emphasis
-            content:
-              - Taar1
-          - ' and '
-          - type: Emphasis
-            content:
-              - Oprm1
-          - ' genotype.'
+        content: []
       - type: MediaObject
+        id: fig6sdata1
         contentUrl: elife-46472-fig6-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 6—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                Core body temperature (°C) data across time for saline and 2
+                mg/kg MA-treated male and female, BXD mice, according to 
+              - type: Emphasis
+                content:
+                  - Taar1
+              - ' and '
+              - type: Emphasis
+                content:
+                  - Oprm1
+              - ' genotype.'
     label: Figure 6.
     content:
       - type: ImageObject
@@ -5954,19 +5954,19 @@ content:
               - Figure 7—source data 1
           - .
       - type: Paragraph
-        content:
-          - 10.7554/eLife.46472.017
-          - Figure 7—source data 1.
-      - type: Heading
-        depth: 1
-        content:
-          - >-
-            BXD means for QTL mapping of MA consumption (mg/kg/18h) from the 40
-            mg/l concentration and for QTL mapping of 2 mg/kg MA-induced body
-            temperature change.
+        content: []
       - type: MediaObject
+        id: fig7sdata1
         contentUrl: elife-46472-fig7-data1-v3.xlsx
-        format: application/xlsx
+        text: Figure 7—source data 1.
+        content:
+          - type: Heading
+            depth: 1
+            content:
+              - >-
+                BXD means for QTL mapping of MA consumption (mg/kg/18h) from the
+                40 mg/l concentration and for QTL mapping of 2 mg/kg MA-induced
+                body temperature change.
     label: Figure 7.
     content:
       - type: ImageObject

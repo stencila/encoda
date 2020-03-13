@@ -4215,34 +4215,46 @@
         "Supporting information"
       ]
     },
-    "S1 Table",
     {
-      "type": "Heading",
-      "id": "sec014",
-      "depth": 1,
+      "type": "MediaObject",
+      "id": "pone-0229075-s001",
+      "contentUrl": "0229075.json.media",
+      "text": "S1 Table",
       "content": [
-        "miRNAs measured in 164 renal carcinoma paraffin samples."
+        {
+          "type": "Heading",
+          "depth": 1,
+          "content": [
+            "miRNAs measured in 164 renal carcinoma paraffin samples."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(TXT)"
+          ]
+        }
       ]
     },
     {
-      "type": "Paragraph",
+      "type": "MediaObject",
+      "id": "pone-0229075-s002",
+      "contentUrl": "0229075.json.media",
+      "text": "S2 Table",
       "content": [
-        "(TXT)"
-      ]
-    },
-    "S2 Table",
-    {
-      "type": "Heading",
-      "id": "sec014",
-      "depth": 1,
-      "content": [
-        "136 differential miRNAs between ccRCC groups."
-      ]
-    },
-    {
-      "type": "Paragraph",
-      "content": [
-        "(TXT)"
+        {
+          "type": "Heading",
+          "depth": 1,
+          "content": [
+            "136 differential miRNAs between ccRCC groups."
+          ]
+        },
+        {
+          "type": "Paragraph",
+          "content": [
+            "(TXT)"
+          ]
+        }
       ]
     }
   ]

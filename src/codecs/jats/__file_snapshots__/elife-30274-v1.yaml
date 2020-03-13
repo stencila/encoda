@@ -2945,16 +2945,16 @@ content:
                   - 'https://osf.io/fn2y4/'
               - .
           - type: Paragraph
-            content:
-              - 10.7554/eLife.30274.006
-              - Figure 2—source data 1.
-          - type: Heading
-            depth: 1
-            content:
-              - List of Reporter CodeSets and gene expression values.
+            content: []
           - type: MediaObject
+            id: fig2sdata1
             contentUrl: elife-30274-fig2-data1-v1.csv
-            format: application/octet-stream
+            text: Figure 2—source data 1.
+            content:
+              - type: Heading
+                depth: 1
+                content:
+                  - List of Reporter CodeSets and gene expression values.
         label: Figure 2.
         content:
           - type: ImageObject

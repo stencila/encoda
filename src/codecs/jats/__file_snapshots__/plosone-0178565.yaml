@@ -4496,250 +4496,288 @@ content:
     depth: 1
     content:
       - Supporting information
-  - S1 Fig
-  - type: Heading
-    id: sec016
-    depth: 1
+  - type: MediaObject
+    id: pone-0178565-s001
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s001'
+    text: S1 Fig
     content:
-      - >-
-        Histogram of gene conservation index (GCI) for the essential and
-        non-essential genes of 
-      - type: Emphasis
+      - type: Heading
+        depth: 1
         content:
-          - S
-      - '. '
-      - type: Emphasis
+          - >-
+            Histogram of gene conservation index (GCI) for the essential and
+            non-essential genes of 
+          - type: Emphasis
+            content:
+              - S
+          - '. '
+          - type: Emphasis
+            content:
+              - elongatus
+          - ' PCC 7942.'
+      - type: Paragraph
         content:
-          - elongatus
-      - ' PCC 7942.'
-  - type: Paragraph
-    content:
-      - >-
-        Essentiality is obtained from the experimental studies of Rubin et al,
-        2015 [
-      - type: Cite
-        target: pone-0178565-ref018
+          - >-
+            Essentiality is obtained from the experimental studies of Rubin et
+            al, 2015 [
+          - type: Cite
+            target: pone-0178565-ref018
+            content:
+              - '18'
+          - '].'
+      - type: Paragraph
         content:
-          - '18'
-      - '].'
-  - type: Paragraph
+          - (TIF)
+  - type: MediaObject
+    id: pone-0178565-s002
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s002'
+    text: S1 Table
     content:
-      - (TIF)
-  - S1 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - List of the 120 cyanobacterial genomes used in the analysis.
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S2 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - List of query organisms used while constructing the profiles.
-  - type: Paragraph
-    content:
-      - >-
-        Columns C and D describe the number of proteins used to construct the
-        profiles and number of proteins present in the genome, respectively. The
-        organisms are listed in sequential order in which they were used to form
-        the profiles.
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S3 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - >-
-        Phylogenetic profiles of 23,643 query proteins drawn from twenty
-        genetically diverse cyanobacterial genomes.
-  - type: Paragraph
-    content:
-      - >-
-        Columns A-D describe the various identifiers and attributes of the query
-        proteins. Column E depicts the presence or absence of the query protein
-        in the genome of while column F provides the best hit. Likewise,
-        presence of the query proteins in 120 cyanobacterial genomes and the
-        respective best hits are presented in columns G to IJ.
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S4 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - Clusters of 120 cyanobacterial strains.
-  - type: Paragraph
-    content:
-      - >-
-        Column A denotes the name of the cyanobacteria and the thick borders
-        represents a cluster. Column B describe the cluster number. The
-        cyanobacterial strains are arranged in the order shown in 
-      - type: Link
-        relation: fig
-        target: '#pone-0178565-g002'
+      - type: Heading
+        depth: 1
         content:
-          - Fig 2
-      - ' from top to bottom.'
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S5 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - >-
-        Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse
-        cyanobacterial genomes across 73 clusters of cyanobacteria.
-  - type: Paragraph
-    content:
-      - >-
-        Columns A-D describe the various identifiers and attributes of the query
-        proteins. Columns E to BY depicts the presence or absence of the query
-        protein in the respective cluster of organisms. Column BZ denotes the
-        gene conservation index (GCI) for the profile. Columns CA to CD depict
-        if the gene is conserved in clades A to D.
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S6 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - >-
-        List of genes used for PCA plot and heatmap generation to check for
-        mutually exclusive and diverse genes.
-  - type: Paragraph
-    content:
-      - >-
-        Column A to C describes about various identifiers and attributes of the
-        genes used. Column D describes the Gene Conservation Index (GCI). All
-        the genes are color coded according to the 
-      - type: Link
-        relation: fig
-        target: '#pone-0178565-g003'
+          - List of the 120 cyanobacterial genomes used in the analysis.
+      - type: Paragraph
         content:
-          - Fig 3
-      - '. '
-  - type: Paragraph
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s003
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s003'
+    text: S2 Table
     content:
-      - (XLSX)
-  - S7 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - >-
-        List of conserved genes in our analysis and their gene ontology
-        classification.
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S8 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - 'Conservation level of the genes from '
-      - type: Emphasis
+      - type: Heading
+        depth: 1
         content:
-          - Synechococcus elongatus
-      - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
-      - type: Cite
-        target: pone-0178565-ref018
+          - List of query organisms used while constructing the profiles.
+      - type: Paragraph
         content:
-          - '18'
-      - '] and database of core proteins by Shi and Falkowski ['
-      - type: Cite
-        target: pone-0178565-ref007
+          - >-
+            Columns C and D describe the number of proteins used to construct
+            the profiles and number of proteins present in the genome,
+            respectively. The organisms are listed in sequential order in which
+            they were used to form the profiles.
+      - type: Paragraph
         content:
-          - '7'
-      - '].'
-  - type: Paragraph
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s004
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s004'
+    text: S3 Table
     content:
-      - >-
-        Column A describe the Protein UniProt IDs of query genes used in the
-        study, Column B to D describe the genes of 
-      - type: Emphasis
+      - type: Heading
+        depth: 1
         content:
-          - S
-      - '. '
-      - type: Emphasis
+          - >-
+            Phylogenetic profiles of 23,643 query proteins drawn from twenty
+            genetically diverse cyanobacterial genomes.
+      - type: Paragraph
         content:
-          - elongatus
-      - ' PCC 7942.'
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S9 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - >-
-        Conservation level of enzymes in key metabolic pathways based on reduced
-        dataset and compared with experimental results on gene essentiality by
-        Rubin et al. [
-      - type: Cite
-        target: pone-0178565-ref018
+          - >-
+            Columns A-D describe the various identifiers and attributes of the
+            query proteins. Column E depicts the presence or absence of the
+            query protein in the genome of while column F provides the best hit.
+            Likewise, presence of the query proteins in 120 cyanobacterial
+            genomes and the respective best hits are presented in columns G to
+            IJ.
+      - type: Paragraph
         content:
-          - '18'
-      - '], database of core proteins by Shi and Falkowski ['
-      - type: Cite
-        target: pone-0178565-ref007
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s005
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s005'
+    text: S4 Table
+    content:
+      - type: Heading
+        depth: 1
         content:
-          - '7'
-      - '] and structural genes by Martin et al. ['
-      - type: Cite
-        target: pone-0178565-ref035
+          - Clusters of 120 cyanobacterial strains.
+      - type: Paragraph
         content:
-          - '35'
-      - '].'
-  - type: Paragraph
-    content:
-      - (XLSX)
-  - S10 Table
-  - type: Heading
-    id: sec016
-    depth: 1
-    content:
-      - >-
-        List of genes used for PCA plot and heatmap generation to check the
-        group of co-evolving genes.
-  - type: Paragraph
-    content:
-      - >-
-        Column A to C describes various identifiers and attributes of the genes
-        used. Column D describes the Gene Conservation Index (GCI). All the
-        genes are color coded according to the 
-      - type: Link
-        relation: fig
-        target: '#pone-0178565-g006'
+          - >-
+            Column A denotes the name of the cyanobacteria and the thick borders
+            represents a cluster. Column B describe the cluster number. The
+            cyanobacterial strains are arranged in the order shown in 
+          - type: Link
+            relation: fig
+            target: '#pone-0178565-g002'
+            content:
+              - Fig 2
+          - ' from top to bottom.'
+      - type: Paragraph
         content:
-          - Fig 6
-      - .
-  - type: Paragraph
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s006
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s006'
+    text: S5 Table
     content:
-      - (XLSX)
-  - S11 Table
-  - type: Heading
-    id: sec016
-    depth: 1
+      - type: Heading
+        depth: 1
+        content:
+          - >-
+            Phylogenetic profiles of 23,643 query proteins drawn from 20 diverse
+            cyanobacterial genomes across 73 clusters of cyanobacteria.
+      - type: Paragraph
+        content:
+          - >-
+            Columns A-D describe the various identifiers and attributes of the
+            query proteins. Columns E to BY depicts the presence or absence of
+            the query protein in the respective cluster of organisms. Column BZ
+            denotes the gene conservation index (GCI) for the profile. Columns
+            CA to CD depict if the gene is conserved in clades A to D.
+      - type: Paragraph
+        content:
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s007
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s007'
+    text: S6 Table
     content:
-      - List of co-evolving genes.
-  - type: Paragraph
+      - type: Heading
+        depth: 1
+        content:
+          - >-
+            List of genes used for PCA plot and heatmap generation to check for
+            mutually exclusive and diverse genes.
+      - type: Paragraph
+        content:
+          - >-
+            Column A to C describes about various identifiers and attributes of
+            the genes used. Column D describes the Gene Conservation Index
+            (GCI). All the genes are color coded according to the 
+          - type: Link
+            relation: fig
+            target: '#pone-0178565-g003'
+            content:
+              - Fig 3
+          - '. '
+      - type: Paragraph
+        content:
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s008
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s008'
+    text: S7 Table
     content:
-      - >-
-        Column A describes the cluster number. Column B to D describes various
-        identifiers and attributes of the genes used. Column E denotes the GCI.
-  - type: Paragraph
+      - type: Heading
+        depth: 1
+        content:
+          - >-
+            List of conserved genes in our analysis and their gene ontology
+            classification.
+      - type: Paragraph
+        content:
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s009
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s009'
+    text: S8 Table
     content:
-      - (XLSX)
+      - type: Heading
+        depth: 1
+        content:
+          - 'Conservation level of the genes from '
+          - type: Emphasis
+            content:
+              - Synechococcus elongatus
+          - ' PCC 7942 based on the reduced dataset and compared with experimental results on gene essentiality by Rubin et al. ['
+          - type: Cite
+            target: pone-0178565-ref018
+            content:
+              - '18'
+          - '] and database of core proteins by Shi and Falkowski ['
+          - type: Cite
+            target: pone-0178565-ref007
+            content:
+              - '7'
+          - '].'
+      - type: Paragraph
+        content:
+          - >-
+            Column A describe the Protein UniProt IDs of query genes used in the
+            study, Column B to D describe the genes of 
+          - type: Emphasis
+            content:
+              - S
+          - '. '
+          - type: Emphasis
+            content:
+              - elongatus
+          - ' PCC 7942.'
+      - type: Paragraph
+        content:
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s010
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s010'
+    text: S9 Table
+    content:
+      - type: Heading
+        depth: 1
+        content:
+          - >-
+            Conservation level of enzymes in key metabolic pathways based on
+            reduced dataset and compared with experimental results on gene
+            essentiality by Rubin et al. [
+          - type: Cite
+            target: pone-0178565-ref018
+            content:
+              - '18'
+          - '], database of core proteins by Shi and Falkowski ['
+          - type: Cite
+            target: pone-0178565-ref007
+            content:
+              - '7'
+          - '] and structural genes by Martin et al. ['
+          - type: Cite
+            target: pone-0178565-ref035
+            content:
+              - '35'
+          - '].'
+      - type: Paragraph
+        content:
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s011
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s011'
+    text: S10 Table
+    content:
+      - type: Heading
+        depth: 1
+        content:
+          - >-
+            List of genes used for PCA plot and heatmap generation to check the
+            group of co-evolving genes.
+      - type: Paragraph
+        content:
+          - >-
+            Column A to C describes various identifiers and attributes of the
+            genes used. Column D describes the Gene Conservation Index (GCI).
+            All the genes are color coded according to the 
+          - type: Link
+            relation: fig
+            target: '#pone-0178565-g006'
+            content:
+              - Fig 6
+          - .
+      - type: Paragraph
+        content:
+          - (XLSX)
+  - type: MediaObject
+    id: pone-0178565-s012
+    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s012'
+    text: S11 Table
+    content:
+      - type: Heading
+        depth: 1
+        content:
+          - List of co-evolving genes.
+      - type: Paragraph
+        content:
+          - >-
+            Column A describes the cluster number. Column B to D describes
+            various identifiers and attributes of the genes used. Column E
+            denotes the GCI.
+      - type: Paragraph
+        content:
+          - (XLSX)
