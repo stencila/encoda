@@ -2635,8 +2635,7 @@ content:
     id: fig1
     caption:
       - type: Heading
-        id: s2-1
-        depth: 2
+        depth: 1
         content:
           - Induction of c-Myc in P493-6 cells and impact on total RNA levels.
       - type: Paragraph
@@ -2910,8 +2909,7 @@ content:
         id: fig2
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - Digital gene expression analysis.
           - type: Paragraph
@@ -2951,8 +2949,7 @@ content:
               - 10.7554/eLife.30274.006
               - Figure 2—source data 1.
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - List of Reporter CodeSets and gene expression values.
           - type: MediaObject
@@ -2969,8 +2966,7 @@ content:
         id: fig2s1
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - Logarithmic expression of genes.
           - type: Paragraph
@@ -3036,8 +3032,7 @@ content:
         id: fig2s2
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - Comparison of gene expression data as continuous.
           - type: Paragraph
@@ -4247,8 +4242,7 @@ content:
     id: fig3
     caption:
       - type: Heading
-        id: s2-4
-        depth: 2
+        depth: 1
         content:
           - Meta-analyses of each effect.
       - type: Paragraph

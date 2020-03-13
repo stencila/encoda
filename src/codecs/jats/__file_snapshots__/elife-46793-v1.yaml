@@ -7920,7 +7920,6 @@ content:
     id: fig1
     caption:
       - type: Heading
-        id: s1
         depth: 1
         content:
           - >-
@@ -8040,8 +8039,7 @@ content:
         id: fig2
         caption:
           - type: Heading
-            id: s2-1
-            depth: 2
+            depth: 1
             content:
               - >-
                 shRNA screening pipeline to uncover genetic vulnerabilities to
@@ -8089,8 +8087,7 @@ content:
         id: fig2s1
         caption:
           - type: Heading
-            id: s2-1
-            depth: 2
+            depth: 1
             content:
               - Genome-wide shRNA screen parameter optimisation.
           - type: Paragraph
@@ -8218,8 +8215,7 @@ content:
     id: fig3
     caption:
       - type: Heading
-        id: s2-1
-        depth: 2
+        depth: 1
         content:
           - >-
             Genome-wide screening in A375 cells reveals deficiencies in known
@@ -8411,8 +8407,7 @@ content:
     id: fig4
     caption:
       - type: Heading
-        id: s2-1
-        depth: 2
+        depth: 1
         content:
           - >-
             Pathways and processes showing sensitivity to G4-stabilising
@@ -8536,8 +8531,7 @@ content:
     id: fig5
     caption:
       - type: Heading
-        id: s2-2
-        depth: 2
+        depth: 1
         content:
           - >-
             Identification of cancer-associated genes whose loss promotes
@@ -8660,8 +8654,7 @@ content:
         id: fig6
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - >-
                 A custom G4 sensitiser shRNA panel reveals unique and common G4
@@ -8755,8 +8748,7 @@ content:
         id: fig6s1
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - >-
                 Focused A375 cell screening parallels findings from the
@@ -8963,8 +8955,7 @@ content:
         id: fig7
         caption:
           - type: Heading
-            id: s2-4
-            depth: 2
+            depth: 1
             content:
               - G4 sensitivities in two different cell lines.
           - type: Paragraph
@@ -9040,8 +9031,7 @@ content:
         id: fig7s1
         caption:
           - type: Heading
-            id: s2-4
-            depth: 2
+            depth: 1
             content:
               - >-
                 Focused HT1080 and A375 cell screening reveals shared PDS and
@@ -9233,8 +9223,7 @@ content:
         id: fig8
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - 'siRNA knockdowns validate '
               - type: Emphasis
@@ -9340,8 +9329,7 @@ content:
               - 10.7554/eLife.46793.017
               - Figure 8—source data 1.
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - Source files for western blots.
           - type: Paragraph
@@ -9377,8 +9365,7 @@ content:
         id: fig8s1
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - >-
                 Short-term siRNA knockdowns of four key sensitisers in HT1080
@@ -9437,8 +9424,7 @@ content:
         id: fig8s2
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - >-
                 Short-term siRNA knockdowns of four key G4-sensitisers in A375
@@ -9457,8 +9443,7 @@ content:
         id: fig8s3
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - >-
                 Short-term siRNA knockdowns validate four key sensitivities from
@@ -9537,8 +9522,7 @@ content:
               - 10.7554/eLife.46793.016
               - Figure 8—figure supplement 3—source data 1.
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - Source files for western blots.
           - type: Paragraph
@@ -9785,8 +9769,7 @@ content:
         id: fig9
         caption:
           - type: Heading
-            id: s2-6
-            depth: 2
+            depth: 1
             content:
               - >-
                 Cell death potentiation mediated by pharmacological inhibition
@@ -9860,8 +9843,7 @@ content:
         id: fig9s1
         caption:
           - type: Heading
-            id: s2-6
-            depth: 2
+            depth: 1
             content:
               - Synergy calculations for PDS with MK1775 and pimozide.
           - type: Paragraph
@@ -9897,8 +9879,7 @@ content:
         id: fig9s2
         caption:
           - type: Heading
-            id: s2-6
-            depth: 2
+            depth: 1
             content:
               - >-
                 Clonogenic cell survival assay demonstrates enhanced cell death
@@ -10038,8 +10019,7 @@ content:
         id: fig10
         caption:
           - type: Heading
-            id: s2-7
-            depth: 2
+            depth: 1
             content:
               - DDX42 is a predominantly nuclear G4-binding protein.
           - type: Paragraph
@@ -10107,8 +10087,7 @@ content:
               - 10.7554/eLife.46793.023
               - Figure 10—source data 1.
           - type: Heading
-            id: s2-7
-            depth: 2
+            depth: 1
             content:
               - Source files for western blots.
           - type: Paragraph
@@ -10144,8 +10123,7 @@ content:
         id: fig10s1
         caption:
           - type: Heading
-            id: s2-7
-            depth: 2
+            depth: 1
             content:
               - Circular dichroism spectroscopy for G4 oligonucleotides.
           - type: Paragraph

@@ -2233,11 +2233,10 @@ content:
           - Fig 1
       - ' which is used to obtain a reduced genome database.'
   - type: Figure
-    id: pone.0178565.g001
+    id: pone-0178565-g001
     caption:
       - type: Heading
-        id: sec004
-        depth: 2
+        depth: 1
         content:
           - >-
             Data reduction and construction of Clusters of Co-evolving Genes
@@ -2426,11 +2425,10 @@ content:
         ). Conservation indices for the protein profiles were computed based on
         the abridged strings.
   - type: Figure
-    id: pone.0178565.g002
+    id: pone-0178565-g002
     caption:
       - type: Heading
-        id: sec008
-        depth: 2
+        depth: 1
         content:
           - >-
             Phylogenetic tree of the 73 cyanobacterial genome groups based on
@@ -2553,11 +2551,10 @@ content:
         that have diverged significantly in the subsets of organisms and are not
         merely paralogs.
   - type: Figure
-    id: pone.0178565.g003
+    id: pone-0178565-g003
     caption:
       - type: Heading
-        id: sec009
-        depth: 2
+        depth: 1
         content:
           - Potential redundancy in the phylogenetic profiles.
       - type: Paragraph
@@ -2613,11 +2610,10 @@ content:
               - Unique; with a GCI score of < 10%.
     order: ascending
   - type: Figure
-    id: pone.0178565.g004
+    id: pone-0178565-g004
     caption:
       - type: Heading
-        id: sec010
-        depth: 2
+        depth: 1
         content:
           - >-
             Histogram of gene conservation index (GCI) for the 23,633
@@ -2667,7 +2663,7 @@ content:
           - '7'
       - '] have called this set the stable core.'
   - type: Table
-    id: pone.0178565.t001
+    id: pone-0178565-t001
     rows:
       - type: TableRow
         cells:
@@ -3022,11 +3018,10 @@ content:
         used in the three studies. Our analysis includes symbiotic strains which
         may lack some of the core metabolic genes.
   - type: Figure
-    id: pone.0178565.g005
+    id: pone-0178565-g005
     caption:
       - type: Heading
-        id: sec010
-        depth: 2
+        depth: 1
         content:
           - >-
             Overlap of conserved genes (this work) with core set proteins of Shi
@@ -3112,7 +3107,7 @@ content:
         intermediate level, around 47% of the semi-conserved genes are
         functionally annotated.
   - type: Table
-    id: pone.0178565.t002
+    id: pone-0178565-t002
     rows:
       - type: TableRow
         cells:
@@ -3314,7 +3309,7 @@ content:
         certain stress conditions that are not accounted for in the experimental
         studies on gene essentiality.
   - type: Table
-    id: pone.0178565.t003
+    id: pone-0178565-t003
     rows:
       - type: TableRow
         cells:
@@ -3448,7 +3443,7 @@ content:
           - '18'
       - '].'
   - type: Table
-    id: pone.0178565.t004
+    id: pone-0178565-t004
     rows:
       - type: TableRow
         cells:
@@ -4358,11 +4353,10 @@ content:
         clusters and further analysis on these proteins will give additional
         information about their functions.
   - type: Figure
-    id: pone.0178565.g006
+    id: pone-0178565-g006
     caption:
       - type: Heading
-        id: sec014
-        depth: 2
+        depth: 1
         content:
           - Clusters of Co-evolving Genes (CCG).
       - type: Paragraph
@@ -4396,7 +4390,7 @@ content:
           inline: false
           linkType: simple
   - type: Table
-    id: pone.0178565.t005
+    id: pone-0178565-t005
     rows:
       - type: TableRow
         cells:

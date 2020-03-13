@@ -1702,7 +1702,6 @@ content:
     id: pone-0093988-g001
     caption:
       - type: Heading
-        id: s1
         depth: 1
         content:
           - >-
@@ -4264,8 +4263,7 @@ content:
     id: pone-0093988-g002
     caption:
       - type: Heading
-        id: s3a
-        depth: 2
+        depth: 1
         content:
           - Results from simulating the TD game.
       - type: Paragraph
@@ -4589,8 +4587,7 @@ content:
     id: pone-0093988-g003
     caption:
       - type: Heading
-        id: s3b
-        depth: 2
+        depth: 1
         content:
           - Results from simulating the MEC game.
       - type: Paragraph

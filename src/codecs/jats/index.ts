@@ -196,9 +196,16 @@ async function encodePrepare(node: stencila.Node): Promise<stencila.Node> {
 interface DecodeState {
   /**
    * The current `<article>` element. Used for
-   * getting there target of internal references.
+   * getting the target of internal references.
    */
   article: xml.Element
+
+  /**
+   * The closest ancestor element. It is up to
+   * decode functions to set this, therefore not
+   * necessarily the parent
+   */
+  ancestorElem: xml.Element
 
   /**
    * The id of the current section. Used for setting the
@@ -215,6 +222,7 @@ interface DecodeState {
 
 const initialDecodeState = (article: xml.Element): DecodeState => ({
   article,
+  ancestorElem: article,
   sectionId: '',
   sectionDepth: 0
 })
@@ -1311,6 +1319,7 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
   const { sectionDepth, ...rest } = state
   return decodeDefault(elem, {
     ...rest,
+    ancestorElem: elem,
     sectionId,
     sectionDepth: sectionDepth + 1
   })
@@ -1318,16 +1327,24 @@ function decodeSection(elem: xml.Element, state: DecodeState): stencila.Node[] {
 
 /**
  * Decode a JATS section `<title>` to a Stencila `Heading`.
+ *
+ * Use `sectionId` and `sectionDepth` if a `<sec>`
+ * is the closest ancestor. Otherwise (e.g. a figure or table title), use depth 1
  */
 function decodeHeading(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Heading] {
+  const {ancestorElem, sectionDepth, sectionId} = state
+  const [depth, id] =
+    ancestorElem.name === 'sec'
+      ? [sectionDepth, sectionId]
+      : [1, undefined]
   return [
     stencila.heading({
       content: decodeInlineContent(elem.elements ?? [], state),
-      depth: state.sectionDepth,
-      id: state.sectionId
+      depth,
+      id
     })
   ]
 }
@@ -1578,6 +1595,8 @@ function decodeTableWrap(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Table] {
+  state = {...state, ancestorElem: elem}
+
   const table = stencila.table({ rows: [] })
 
   table.id = decodeInternalId(attr(elem, 'id'))
@@ -1682,6 +1701,8 @@ function decodeFigure(
   elem: xml.Element,
   state: DecodeState
 ): [stencila.Figure] {
+  state = {...state, ancestorElem: elem}
+
   const caption = child(elem, 'caption')
 
   const alternatives = child(elem, 'alternatives')

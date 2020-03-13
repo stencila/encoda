@@ -2498,8 +2498,7 @@ content:
     id: fig1
     caption:
       - type: Heading
-        id: s2-1
-        depth: 2
+        depth: 1
         content:
           - Kinematics of spontaneous navigation.
       - type: Paragraph
@@ -3244,8 +3243,7 @@ content:
         id: fig2
         caption:
           - type: Heading
-            id: s2-2
-            depth: 2
+            depth: 1
             content:
               - Contrast-driven phototaxis as a biased random walk.
           - type: Paragraph
@@ -3416,8 +3414,7 @@ content:
         id: fig2s1
         caption:
           - type: Heading
-            id: s2-2
-            depth: 2
+            depth: 1
             content:
               - >-
                 Evolution of the mean resultant vector projected on the
@@ -3440,8 +3437,7 @@ content:
         id: fig2s2
         caption:
           - type: Heading
-            id: s2-2
-            depth: 2
+            depth: 1
             content:
               - Evolution of contrast-driven bias slope with the bout index.
           - type: Paragraph
@@ -3720,8 +3716,7 @@ content:
         id: fig3
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - >-
                 Orientational phototaxis driven by modulation of the global
@@ -3873,8 +3868,7 @@ content:
         id: fig3s1
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - 'Variance of '
               - type: MathFragment
@@ -3923,8 +3917,7 @@ content:
         id: fig3s2
         caption:
           - type: Heading
-            id: s2-3
-            depth: 2
+            depth: 1
             content:
               - Control for retinal origin of klinotaxis.
           - type: Paragraph
@@ -4161,8 +4154,7 @@ content:
         id: fig4
         caption:
           - type: Heading
-            id: s2-4
-            depth: 2
+            depth: 1
             content:
               - >-
                 A Markov-chain model of phototaxis captures the observed
@@ -4215,8 +4207,7 @@ content:
         id: fig4s1
         caption:
           - type: Heading
-            id: s2-4
-            depth: 2
+            depth: 1
             content:
               - Inter-bout distance distribution.
           - type: Paragraph
@@ -4423,8 +4414,7 @@ content:
         id: fig5
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - >-
                 A neuronal model of turning bout selection captures spontaneous
@@ -4536,8 +4526,7 @@ content:
         id: fig5s1
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - Comparison of experimental and simulated trajectories.
           - type: Paragraph
@@ -4557,8 +4546,7 @@ content:
         id: fig5s2
         caption:
           - type: Heading
-            id: s2-5
-            depth: 2
+            depth: 1
             content:
               - 'Simulated trajectories with different inter-bout intervals '
               - type: MathFragment
