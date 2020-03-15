@@ -137,8 +137,7 @@ export default article({
     {
       type: 'CodeBlock',
       programmingLanguage: 'js',
-      text:
-        '// Some Javascript code\nconst inc = (n) => n + 1'
+      text: '// Some Javascript code\nconst inc = (n) => n + 1'
     },
     {
       type: 'List',
