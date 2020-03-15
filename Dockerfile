@@ -43,12 +43,11 @@ USER encoda
 COPY package*.json ./
 RUN npm install --ignore-scripts
 
-# Copy over other file and run the necessary install scripts that
-# we previously ignored.
+# Copy over other files and run the necessary install scripts that
+# were previously ignored.
 COPY tsconfig.json install.js ./
 COPY --chown=encoda:encoda src ./src
-RUN node install.js \
- && cd node_modules/puppeteer && npm install
+RUN npm install
 
 # Run the tests
 CMD npm test -- --testTimeout=120000 --forceExit
