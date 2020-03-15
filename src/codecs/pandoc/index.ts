@@ -1010,7 +1010,7 @@ function encodeString(node: string): Pandoc.Str {
  * Encode a primitive node e.g. `Boolean`, `Array` to a Pandoc `Str`.
  */
 function encodePrimitive(
-  node: null | boolean | number | Array<unknown> | Object
+  node: null | boolean | number | string | Array<unknown> | Object
 ): Pandoc.Str {
   return {
     t: 'Str',
