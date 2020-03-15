@@ -51,13 +51,8 @@ describe('encode+decode', () => {
   test('logs have expected warnings only', () => {
     expect(logMessages).toEqual([
       'Unhandled block node type when encoding: Text',
-      'csl Properties of `Article` not supported by encode: `pageEnd`, `pageStart`',
-      'csl Properties of `PublicationVolume` not supported by encode: `isPartOf`',
       'Unhandled block node type when encoding: Collection',
       'Unhandled block node type when encoding: Figure',
-      'csl:encode Unhandled isPartOf type: PublicationIssue',
-      'csl Properties of `Article` not supported by encode: `pageStart`',
-      'csl:encode Unhandled isPartOf type: Periodical',
       'Unhandled block node type when encoding: MediaObject'
     ])
   })
