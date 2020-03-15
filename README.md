@@ -370,6 +370,12 @@ Or, run a single test file e.g.
 npx jest tests/xlsx.test.ts --watch
 ```
 
+To display debug logs during testing set the environment variable `DEBUG=1`, e.g.
+
+```bash
+DEBUG=1 npm test
+```
+
 To get coverage statistics:
 
 ```bash
