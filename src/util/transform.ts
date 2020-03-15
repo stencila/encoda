@@ -21,30 +21,42 @@ import * as stencila from '@stencila/schema'
  *
  * @param node The node to transform
  * @param transformer The transforming function. Should return the transformed node.
+ * @param resurse If a node is transformed, should transformation continue in to it's children?
  */
 export default async function transform(
   node: stencila.Node,
-  transformer: (node: stencila.Node, path?: string[]) => Promise<stencila.Node>
+  transformer: (
+    node: stencila.Node,
+    parent?: stencila.Node
+  ) => Promise<stencila.Node>,
+  recurse = false
 ): Promise<stencila.Node> {
   async function walk(
     node: stencila.Node,
-    path: string[] = []
+    parent?: stencila.Node
   ): Promise<stencila.Node> {
-    const transformed = await transformer(node, path)
+    const transformed = await transformer(node, parent)
 
-    if (stencila.isPrimitive(transformed) || transformed === undefined)
+    if (
+      (transformed !== node && !recurse) ||
+      stencila.isPrimitive(transformed) ||
+      transformed === undefined
+    )
       return transformed
 
     if (Array.isArray(transformed))
       return transformed.reduce(
-        async (prev, child) => [...(await prev), await walk(child)],
+        async (prev, child) => [
+          ...(await prev),
+          await walk(child, transformed)
+        ],
         Promise.resolve([])
       )
 
     return Object.entries(transformed).reduce(
       async (prev, [key, child]) => ({
         ...(await prev),
-        [key]: await walk(child)
+        [key]: await walk(child, transformed)
       }),
       Promise.resolve({})
     )
