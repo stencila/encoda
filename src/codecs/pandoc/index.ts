@@ -183,6 +183,13 @@ export function run(
   return new Promise((resolve, reject) => {
     const child = childProcess.spawn(binary.path(), args)
 
+    // If there's an error also show the input in the debug log
+    function raise(error: Error) {
+      const pretty = JSON.stringify(JSON.parse(input.toString()), null, '  ')
+      log.debug(`${error}\n  input: ${pretty}`)
+      reject(error)
+    }
+
     let stdout = ''
     let stderr = ''
     child.stdout.on('data', data => {
@@ -195,13 +202,13 @@ export function run(
       if (stderr) {
         if (stderr.includes('[WARNING]'))
           log.warn(stderr.replace(/\[WARNING\]/, ''))
-        else return reject(new Error(stderr))
+        else return raise(new Error(stderr))
       }
       log.debug(`Pandoc success.`)
       resolve(stdout)
     })
     child.on('error', err => {
-      reject(err)
+      raise(err)
     })
 
     if (input?.length) {
@@ -212,7 +219,7 @@ export function run(
         if (err.code === 'EPIPE') {
           log.debug('Pandoc EPIPE error')
         } else {
-          reject(err)
+          raise(err)
         }
       })
 
@@ -257,13 +264,18 @@ async function decodeDocumentAsync(
 async function encodeDocumentAsync(
   node: stencila.Node
 ): Promise<stencila.Node> {
-  return transform(node, async node => {
-    if (stencila.isA('MathBlock', node)) return encodeMath(node, 'DisplayMath')
-    else if (stencila.isA('MathFragment', node))
-      return encodeMath(node, 'InlineMath')
-    else if (stencila.isA('CodeBlock', node)) return encodeCodeBlock(node)
-    else if (stencila.isA('CodeExpression', node))
-      return encodeCodeExpression(node)
+  return transform(node, async (node, parent) => {
+    switch (stencila.nodeType(node)) {
+      case 'CodeExpression':
+        return encodeCodeExpression(node as stencila.CodeExpression)
+      case 'CodeBlock':
+        return encodeCodeBlock(node as stencila.CodeBlock)
+
+      case 'MathFragment':
+        return encodeMath(node as stencila.MathFragment, 'InlineMath')
+      case 'MathBlock':
+        return encodeMath(node as stencila.MathBlock, 'DisplayMath')
+    }
     return node
   })
 }
@@ -882,6 +894,12 @@ function encodeInline(node: stencila.Node): Pandoc.Inline {
   if (Pandoc.isInline(node)) return node
 
   switch (nodeType(node)) {
+    case 'Null':
+    case 'Boolean':
+    case 'Number':
+    case 'Array':
+    case 'Object':
+      return encodePrimitive(node)
     case 'Text':
       return encodeString(node as string)
     case 'Emphasis':
@@ -985,6 +1003,18 @@ function encodeString(node: string): Pandoc.Str {
   return {
     t: 'Str',
     c: node
+  }
+}
+
+/**
+ * Encode a primitive node e.g. `Boolean`, `Array` to a Pandoc `Str`.
+ */
+function encodePrimitive(
+  node: null | boolean | number | Array<unknown> | Object
+): Pandoc.Str {
+  return {
+    t: 'Str',
+    c: TxtCodec.stringify(node)
   }
 }
 
@@ -1345,7 +1375,9 @@ function encodeImageObject(imageObject: stencila.ImageObject): Pandoc.Image {
  * This is a fallback encoding for block nodes not handled elsewhere.
  */
 function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
-  log.warn(`Unhandled node type when encoding: ${stencila.nodeType(node)}`)
+  log.warn(
+    `Unhandled block node type when encoding: ${stencila.nodeType(node)}`
+  )
   return {
     t: 'Para',
     c: []
@@ -1358,7 +1390,9 @@ function encodeFallbackBlock(node: stencila.Node): Pandoc.Para {
  * not handled elsewhere.
  */
 function encodeFallbackInline(node: stencila.Node): Pandoc.Str {
-  log.warn(`Unhandled node type when encoding: ${stencila.nodeType(node)}`)
+  log.warn(
+    `Unhandled inline node type when encoding: ${stencila.nodeType(node)}`
+  )
   return { t: 'Str', c: '' }
 }
 
