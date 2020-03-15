@@ -201,17 +201,16 @@ export const encodeCreativeWork = (
  */
 export const encodeArticle = (article: schema.Article): Csl.Data => {
   const { pageStart, pageEnd, pagination, ...rest } = article
-  const page =
-    pagination !== undefined
-      ? pagination
-      : pageEnd !== undefined && pageStart !== undefined
-      ? `${pageStart}-${pageEnd}`
-      : pageStart !== undefined
-      ? `${pageStart}`
-      : undefined
-  const csl = encodeCreativeWork(rest, 'article-journal')
+
+  let page
+  if (pagination !== undefined) page = pagination
+  else if (pageStart !== undefined) {
+    page = `${pageStart}`
+    if (pageEnd !== undefined) page += `-${pageEnd}`
+  }
+
   return {
-    ...csl,
+    ...encodeCreativeWork(rest, 'article-journal'),
     page
   }
 }
@@ -313,21 +312,36 @@ const encodeDate = (date: Date | schema.Date | string): Csl.Date => {
  * Encode the `isPartOf` property of a `CreativeWork` into properties of
  * a `Csl.Data` object.
  */
-const encodeIsPartOf = (work: schema.CreativeWork['isPartOf']): object => {
+const encodeIsPartOf = (
+  work: schema.CreativeWork['isPartOf']
+): Omit<Csl.Data, 'type' | 'id'> => {
   if (work === undefined) return {}
 
-  if (schema.isA('PublicationVolume', work)) {
-    const { title, volumeNumber: volume, pageStart, pageEnd, ...lost } = work
+  if (schema.isA('PublicationIssue', work)) {
+    const { name, title, issueNumber, isPartOf, ...lost } = work
     logWarnLossIfAny('csl', 'encode', work, lost)
 
-    let page = ''
-    if (pageStart !== undefined) page += pageStart
-    if (pageEnd !== undefined) page += `-${pageEnd}`
+    return {
+      ...(isPartOf !== undefined
+        ? encodeIsPartOf(isPartOf)
+        : encodeContainerTitle(name, title)),
+      issue: issueNumber
+    }
+  } else if (schema.isA('PublicationVolume', work)) {
+    const { name, title, volumeNumber, isPartOf, ...lost } = work
+    logWarnLossIfAny('csl', 'encode', work, lost)
 
     return {
-      'container-title': title,
-      page
+      ...(isPartOf !== undefined
+        ? encodeIsPartOf(isPartOf)
+        : encodeContainerTitle(name, title)),
+      volume: volumeNumber
     }
+  } else if (schema.isA('Periodical', work)) {
+    const { name, title, ...lost } = work
+    logWarnLossIfAny('csl', 'encode', work, lost)
+
+    return encodeContainerTitle(name, title)
   } else {
     logWarnLoss(
       'csl',
@@ -337,3 +351,18 @@ const encodeIsPartOf = (work: schema.CreativeWork['isPartOf']): object => {
     return {}
   }
 }
+
+/**
+ * Encode a CSL `container-title` property from the `name` or `title` of a `CreativeWork`.
+ */
+const encodeContainerTitle = (
+  name: schema.CreativeWork['name'],
+  title: schema.CreativeWork['title']
+): Pick<Csl.Data, 'container-title'> => ({
+  'container-title':
+    name !== undefined
+      ? name
+      : title !== undefined
+      ? TxtCodec.stringify(title)
+      : 'Untitled'
+})
