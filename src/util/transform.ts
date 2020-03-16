@@ -69,25 +69,34 @@ export default async function transform(
  */
 export function transformSync(
   node: stencila.Node,
-  transformer: (node: stencila.Node, path?: string[]) => stencila.Node
+  transformer: (
+    node: stencila.Node
+  ) => stencila.Node | undefined
 ): stencila.Node {
-  function walk(node: stencila.Node, path: string[] = []): stencila.Node {
-    const transformed = transformer(node, path)
-    if (stencila.isPrimitive(transformed) || transformed === undefined) {
+  function walk(
+    node: stencila.Node
+  ): stencila.Node | undefined {
+    const transformed = transformer(node)
+
+    if (stencila.isPrimitive(transformed) || transformed === undefined)
       return transformed
-    }
+
     if (Array.isArray(transformed)) {
-      return transformed.map((child, index) =>
-        walk(child, [...path, `${index}`])
-      )
+      return transformed.reduce((prev, child) => {
+        const trans = walk(child)
+        return trans !== undefined ? [...prev, trans] : prev
+      }, [])
     }
-    return Object.entries(transformed).reduce(
-      (prev, [key, child]) => ({
-        ...prev,
-        ...{ [key]: walk(child, [...path, key]) }
-      }),
-      {}
-    )
+
+    return Object.entries(transformed).reduce((prev, [key, child]) => {
+      const trans = walk(child)
+      return trans !== undefined
+        ? {
+            ...prev,
+            [key]: trans
+          }
+        : prev
+    }, {})
   }
-  return walk(node)
+  return walk(node) ?? node
 }
