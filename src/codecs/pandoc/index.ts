@@ -33,6 +33,7 @@ import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
 import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
 import { logWarnLossIfAny } from '../../log'
+import { ensureInlineContentArray } from '../../util/content/ensureInlineContentArray'
 
 const rpngCodec = new RpngCodec()
 const texCodec = new TexCodec()
@@ -545,10 +546,8 @@ function encodeBlock(node: stencila.BlockContent): Pandoc.Block {
       return encodeList(node)
     case 'Table':
       return encodeTable(node)
-    // @ts-ignore that `Figure` is not yet a `BlockContent` type
     case 'Figure':
       return encodeFigure(node)
-    // @ts-ignore that `Figure` is not yet a `Collection` type
     case 'Collection':
       return encodeCollection(node)
     case 'ThematicBreak':
@@ -761,13 +760,12 @@ function decodeTable(node: Pandoc.Table): stencila.Table {
  * Encode Stencila `Table` to a Pandoc `Table`.
  */
 function encodeTable(node: stencila.Table): Pandoc.Table {
-  const columnCount = node.rows[0].cells.length
+  const { title, caption } = encodeCaption(node)
 
-  const caption: Pandoc.Inline[] = []
+  const columnCount = node.rows[0].cells.length
   const aligns: { t: Pandoc.Alignment }[] = makeBy(columnCount, () => ({
     t: Pandoc.Alignment.AlignDefault
   }))
-
   const widths: number[] = makeBy(columnCount, () => 0)
 
   let head: Pandoc.TableCell[] = []
@@ -787,7 +785,7 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
   }
   return {
     t: 'Table',
-    c: [caption, aligns, widths, head, rows]
+    c: [encodeInlines([...title, ...caption]), aligns, widths, head, rows]
   }
 }
 
@@ -798,50 +796,74 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
  * for example). See:
  *   https://github.com/jgm/pandoc/issues/3177
  *   https://stackoverflow.com/questions/47613327/add-a-figure-element-in-pandoc-with-filters
+ *
+ * This encoding results in a similar structure to that used by Pandoc for tables
+ * with a `Figure Caption` custom class analogous to the `Table Caption` custom class.
  */
 function encodeFigure(node: stencila.Figure): Pandoc.Div {
-  const { content = [], label, caption = [] } = node
+  const { content = [] } = node
+  const { title, caption } = encodeCaption(node)
+  const contentDiv: Pandoc.Div = {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', 'Figure Content']]],
+      encodeBlocks(ensureBlockContentArray(content))
+    ]
+  }
+  const captionDiv: Pandoc.Div = {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', 'Figure Caption']]],
+      [
+        encodeParagraph(
+          stencila.paragraph({
+            content: [stencila.strong({ content: title }), ' ', ...caption]
+          })
+        )
+      ]
+    ]
+  }
+  return {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', 'Figure Caption']]],
+      [contentDiv, captionDiv]
+    ]
+  }
+}
+
+function encodeCaption(
+  node: stencila.Table | stencila.Figure
+): {
+  title: stencila.InlineContent[]
+  caption: stencila.InlineContent[]
+} {
+  const { label, caption = [] } = node
 
   // Headings cause the custom style in formats like DOCX to
   // be "broken up", so use them for the title, or replace
   // with strong (character style) content
   let title: stencila.InlineContent[] = []
-  const captionTransformed = transformSync(caption, node => {
-    if (stencila.isA('Heading', node)) {
-      const { content } = node
-      if (title.length === 0) {
-        title = content
-        return undefined
-      } else {
-        return stencila.strong({ content })
+  const captionTransformed = ensureInlineContentArray(
+    transformSync(caption, node => {
+      if (stencila.isA('Heading', node)) {
+        const { content } = node
+        if (title.length === 0) {
+          title = content
+          return undefined
+        } else {
+          return stencila.strong({ content })
+        }
       }
-    }
-    return node
-  })
+      return node
+    })
+  )
 
   // Prefix the title with the label
   if (label !== undefined)
     title = [label, label.endsWith('.') ? ' ' : '. ', ...title]
 
-  return {
-    t: 'Div',
-    c: [
-      ['', [], [['custom-style', 'Figure']]],
-      [
-        ...encodeBlocks(ensureBlockContentArray(content)),
-        ...(title.length > 0
-          ? [
-              encodeParagraph(
-                stencila.paragraph({
-                  content: [stencila.strong({ content: title })]
-                })
-              )
-            ]
-          : []),
-        ...encodeBlocks(ensureBlockContentArray(captionTransformed))
-      ]
-    ]
-  }
+  return { title, caption: captionTransformed }
 }
 
 /**
