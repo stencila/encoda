@@ -59,4 +59,13 @@ export class DocxCodec extends Codec implements Codec {
       useCiteproc
     })
   }
+
+  /**
+   * @override Overrides {@link Codec.preWrite} so that media files
+   * do NOT get written to a sibling folder (since they are embedded
+   * in the DOCX file).
+   */
+  public preWrite(node: stencila.Node): Promise<stencila.Node> {
+    return Promise.resolve(node)
+  }
 }

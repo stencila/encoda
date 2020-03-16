@@ -2,6 +2,7 @@ import * as stencila from '@stencila/schema'
 import * as vfile from '../util/vfile'
 import { toFiles } from '../util/media/toFiles'
 import { fromFiles } from '../util/media/fromFiles'
+import { resolveFiles } from '../util/media/resolveFiles'
 /**
  * Encoding options that are common to all codecs.
  *
@@ -202,44 +203,87 @@ export abstract class Codec<
   /**
    * Read a `stencila.Node` from a file.
    *
-   * This is a convenience method which simply
-   * reads the file into a `VFile` and passes
+   * This is a convenience method which reads the file into a `VFile`,
+   * makes any references to local files absolute, and passes
    * it to the `decode` method.
    *
-   * @param path The path of the file
+   * @param filePath The path of the file
    * @param options Decoding options
    * @returns A promise that resolves to a `stencila.Node`
    */
   public async read(
-    content: string,
+    filePath: string,
     options?: DecodeOptions
   ): Promise<stencila.Node> {
-    return this.decode(await vfile.read(content), options)
+    const node = await this.decode(await vfile.read(filePath), options)
+    return resolveFiles(node, filePath)
+  }
+
+  /**
+   * Transform a node after reading it.
+   *
+   * Makes any references to local files absolute.
+   * Derived classes may override this method to perform alternative
+   * transformations to the node, prior to writing it.
+   *
+   * @param filePath The path of the file
+   * @param options Decoding options
+   * @returns A promise that resolves to a `stencila.Node`
+   */
+  public postRead(
+    node: stencila.Node,
+    filePath: string,
+    options?: DecodeOptions
+  ): Promise<stencila.Node> {
+    return Promise.resolve(resolveFiles(node, filePath))
   }
 
   /**
    * Encode a `stencila.Node` to a file
    *
-   * This is a convenience method which simply
-   * writes the content of the `VFile` created by
+   * This is a convenience method which writes the content of the `VFile` created by
    * the `encode` method.
    *
    * @param node The `stencila.Node` to write
    * @param filePath The path of the file
-   * @returns A promise that resolves to a `string`
+   * @param options Encoding options
    */
   public async write(
     node: stencila.Node,
     filePath: string,
     options?: EncodeOptions
   ): Promise<void> {
-    const { isBundle } = { ...this.commonEncodeDefaults, ...options }
-    const transformed = isBundle
-      ? await fromFiles(node)
-      : await toFiles(node, filePath, ['data', 'file'])
     return vfile.write(
-      await this.encode(transformed, { filePath, ...options } as EncodeOptions),
+      await this.encode(await this.preWrite(node, filePath, options), {
+        filePath,
+        ...options
+      } as EncodeOptions),
       filePath
     )
+  }
+
+  /**
+   * Transform a node prior to writing it
+   *
+   * Depending on the `isBundle` encoding option,
+   * either converts media to data URIs, or copies them
+   * to a sibling folder.
+   * Derived classes may override this method to perform alternative
+   * transformations to the node, prior to writing it.
+   *
+   *
+   * @param node The `stencila.Node` to write
+   * @param filePath The path of the file
+   * @param options Encoding options
+   */
+  public preWrite(
+    node: stencila.Node,
+    filePath: string,
+    options?: EncodeOptions
+  ): Promise<stencila.Node> {
+    const { isBundle } = { ...this.commonEncodeDefaults, ...options }
+    return isBundle
+      ? fromFiles(node)
+      : toFiles(node, filePath, ['data', 'file'])
   }
 }

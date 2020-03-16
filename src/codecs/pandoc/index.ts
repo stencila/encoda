@@ -22,7 +22,7 @@ import childProcess from 'child_process'
 import { makeBy } from 'fp-ts/lib/Array'
 import tempy from 'tempy'
 import { ensureBlockContent } from '../../util/content/ensureBlockContent'
-import transform from '../../util/transform'
+import transform, { transformSync } from '../../util/transform'
 import * as vfile from '../../util/vfile'
 import { encodeCsl } from '../csl'
 import { RpngCodec } from '../rpng'
@@ -31,6 +31,8 @@ import { TxtCodec } from '../txt'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
 import { binary, citeprocBinaryPath, dataDir } from './binary'
 import * as Pandoc from './types'
+import { ensureBlockContentArray } from '../../util/content/ensureBlockContentArray'
+import { logWarnLossIfAny } from '../../log'
 
 const rpngCodec = new RpngCodec()
 const texCodec = new TexCodec()
@@ -200,9 +202,11 @@ export function run(
     })
     child.on('close', () => {
       if (stderr) {
-        if (stderr.includes('[WARNING]'))
-          log.warn(stderr.replace(/\[WARNING\]/, ''))
-        else return raise(new Error(stderr))
+        if (stderr.includes('[WARNING]')) {
+          stderr
+            .split('\n')
+            .map(line => log.warn(line.replace(/\[WARNING\] /, '')))
+        } else return raise(new Error(stderr))
       }
       log.debug(`Pandoc success.`)
       resolve(stdout)
@@ -541,6 +545,12 @@ function encodeBlock(node: stencila.BlockContent): Pandoc.Block {
       return encodeList(node)
     case 'Table':
       return encodeTable(node)
+    // @ts-ignore that `Figure` is not yet a `BlockContent` type
+    case 'Figure':
+      return encodeFigure(node)
+    // @ts-ignore that `Figure` is not yet a `Collection` type
+    case 'Collection':
+      return encodeCollection(node)
     case 'ThematicBreak':
       return encodeThematicBreak()
   }
@@ -761,36 +771,97 @@ function encodeTable(node: stencila.Table): Pandoc.Table {
   const widths: number[] = makeBy(columnCount, () => 0)
 
   let head: Pandoc.TableCell[] = []
-
   if (node.rows.length > 0) {
-    head = node.rows[0].cells.map(cell => {
-      // TODO: currently need to wrap stencila.InlineContent[] to P.Block[][]; this will change
-      return [
-        encodeParagraph({
-          type: 'Paragraph',
-          content: cell.content.filter(isInlineContent)
-        })
-      ]
-    })
+    head = node.rows[0].cells.map(cell =>
+      encodeBlocks(ensureBlockContentArray(cell.content))
+    )
   }
+
   let rows: Pandoc.TableCell[][] = []
   if (node.rows.length > 1) {
     rows = node.rows.slice(1).map((row: stencila.TableRow) => {
-      return row.cells.map((cell: stencila.TableCell) => {
-        // TODO: ditto todo item above
-        return [
-          encodeParagraph({
-            type: 'Paragraph',
-            content: cell.content.filter(isInlineContent)
-          })
-        ]
-      })
+      return row.cells.map(cell =>
+        encodeBlocks(ensureBlockContentArray(cell.content))
+      )
     })
   }
   return {
     t: 'Table',
     c: [caption, aligns, widths, head, rows]
   }
+}
+
+/**
+ * Encode a `Figure` to a Pandoc `Div` with a custom style.
+ *
+ * Note that Pandoc does not yet have a specific figure element (analogous to `Table`
+ * for example). See:
+ *   https://github.com/jgm/pandoc/issues/3177
+ *   https://stackoverflow.com/questions/47613327/add-a-figure-element-in-pandoc-with-filters
+ */
+function encodeFigure(node: stencila.Figure): Pandoc.Div {
+  const { content = [], label, caption = [] } = node
+
+  // Headings cause the custom style in formats like DOCX to
+  // be "broken up", so use them for the title, or replace
+  // with strong (character style) content
+  let title: stencila.InlineContent[] = []
+  const captionTransformed = transformSync(caption, node => {
+    if (stencila.isA('Heading', node)) {
+      const { content } = node
+      if (title.length === 0) {
+        title = content
+        return undefined
+      } else {
+        return stencila.strong({ content })
+      }
+    }
+    return node
+  })
+
+  // Prefix the title with the label
+  if (label !== undefined)
+    title = [label, label.endsWith('.') ? ' ' : '. ', ...title]
+
+  return {
+    t: 'Div',
+    c: [
+      ['', [], [['custom-style', 'Figure']]],
+      [
+        ...encodeBlocks(ensureBlockContentArray(content)),
+        ...(title.length > 0
+          ? [
+              encodeParagraph(
+                stencila.paragraph({
+                  content: [stencila.strong({ content: title })]
+                })
+              )
+            ]
+          : []),
+        ...encodeBlocks(ensureBlockContentArray(captionTransformed))
+      ]
+    ]
+  }
+}
+
+/**
+ * Encode a `Collection` to Pandoc by encoding each part.
+ */
+function encodeCollection(node: stencila.Collection): Pandoc.Div | Pandoc.Para {
+  const { parts, meta, ...lost } = node
+  logWarnLossIfAny('pandoc', 'encode', node, lost)
+
+  if (meta?.usage === 'figGroup') {
+    return {
+      t: 'Div',
+      c: [
+        ['', [], [['custom-style', 'FigureGroup']]],
+        parts.map(part => encodeFigure(part as stencila.Figure))
+      ]
+    }
+  }
+  log.warn(`Unhandled Collection with meta: ${JSON.stringify(meta)}`)
+  return encodeParagraph(stencila.paragraph({ content: [] }))
 }
 
 /**

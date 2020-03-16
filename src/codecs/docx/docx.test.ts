@@ -51,8 +51,6 @@ describe('encode+decode', () => {
   test('logs have expected warnings only', () => {
     expect(logMessages).toEqual([
       'Unhandled block node type when encoding: Text',
-      'Unhandled block node type when encoding: Collection',
-      'Unhandled block node type when encoding: Figure',
       'Unhandled block node type when encoding: MediaObject'
     ])
   })

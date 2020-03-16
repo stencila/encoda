@@ -82,16 +82,13 @@ test.each([
   'plosone-0093988',
   'plosone-0178565'
 ])('decode + encode : %s', async article => {
-
   const node = await unlinkFiles(await jats.read(fixture(article)))
 
-  expect(await yaml.dump(node)).toMatchFile(
-    snapshot(`${article}.yaml`)
-  )
+  expect(await yaml.dump(node)).toMatchFile(snapshot(`${article}.yaml`))
 
-  expect(await jats.dump(node, {
-    isStandalone: true
-  })).toMatchFile(
-    snapshot(`${article}.jats.xml`)
-  )
+  expect(
+    await jats.dump(node, {
+      isStandalone: true
+    })
+  ).toMatchFile(snapshot(`${article}.jats.xml`))
 })

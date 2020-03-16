@@ -69,13 +69,9 @@ export default async function transform(
  */
 export function transformSync(
   node: stencila.Node,
-  transformer: (
-    node: stencila.Node
-  ) => stencila.Node | undefined
+  transformer: (node: stencila.Node) => stencila.Node | undefined
 ): stencila.Node {
-  function walk(
-    node: stencila.Node
-  ): stencila.Node | undefined {
+  function walk(node: stencila.Node): stencila.Node | undefined {
     const transformed = transformer(node)
 
     if (stencila.isPrimitive(transformed) || transformed === undefined)
