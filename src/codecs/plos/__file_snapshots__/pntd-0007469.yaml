@@ -6384,6 +6384,20 @@ content:
           linkType: simple
   - type: Table
     id: pntd-0007469-t001
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - 'Geographical distribution and arthropod vectors of '
+          - type: Emphasis
+            content:
+              - Rickettsia
+          - ' and '
+          - type: Emphasis
+            content:
+              - Orientia
+          - ' species causing CNS infections.'
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -6780,10 +6794,6 @@ content:
                 target: 'https://www.ncbi.nlm.nih.gov/nuccore/NC_010793'
                 content:
                   - NC_010793
-    title: >-
-      Geographical distribution and arthropod vectors of Rickettsia and Orientia
-      species causing CNS infections.
-    content: []
   - type: Heading
     id: sec004
     depth: 1

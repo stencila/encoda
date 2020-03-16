@@ -10373,6 +10373,14 @@ content:
       - .
   - type: Table
     id: table1
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - >-
+            Possible chemotherapeutic combinations for G4-stabilising ligands
+            with clinically relevant pharmacological drugs
+    label: Table 1.
     rows:
       - type: TableRow
         cells:
@@ -10779,12 +10787,14 @@ content:
                 target: bib9
                 content:
                   - 'Bennett et al., 2017'
-    title: >-
-      Possible chemotherapeutic combinations for G4-stabilising ligands with
-      clinically relevant pharmacological drugs
-    content: []
   - type: Table
     id: table2
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - Examples of cancer-associated genetic vulnerabilities to G4 ligands.
+    label: Table 2.
     rows:
       - type: TableRow
         cells:
@@ -11152,8 +11162,6 @@ content:
                 target: bib116
                 content:
                   - 'Takahama et al., 2013'
-    title: Examples of cancer-associated genetic vulnerabilities to G4 ligands.
-    content: []
   - type: Paragraph
     content:
       - "While the custom HT1080 screen recovered 58% of sensitisers seen for each ligand in the A375 genome-wide screen, it is striking that this increases to 93% (i.e. 112 out of 121) when considering all screens irrespective of G4 ligand, suggesting remarkable consistency when comparing G4 ligand effects globally. Differences in individual ligand sensitives may arise from variances in cellular uptake and dose, for\_example, the GI20 dose of PhenDC3 is ten-fold higher for A375 compared to HT1080; G4 ligand-dependent molecular preference for G-tetrad end binding ("
@@ -11448,6 +11456,7 @@ content:
       - Materials and methods
   - type: Table
     id: keyresource
+    label: Key resources table
     rows:
       - type: TableRow
         cells:

@@ -2839,6 +2839,14 @@ content:
       - . Data merging and cleaning were performed using Stata version 14.0.
   - type: Table
     id: pmed-1002858-t001
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Key characteristics and published references for the pooled dataset
+            of severe-malaria patients.
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -3139,10 +3147,6 @@ content:
             content: []
           - type: TableCell
             content: []
-    title: >-
-      Key characteristics and published references for the pooled dataset of
-      severe-malaria patients.
-    content: []
   - type: Heading
     id: sec013
     depth: 2
