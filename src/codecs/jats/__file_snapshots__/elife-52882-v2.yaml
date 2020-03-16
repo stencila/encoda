@@ -2747,7 +2747,7 @@ content:
     label: Figure 1.
     content:
       - type: ImageObject
-        contentUrl: fig1.jpg
+        contentUrl: ''
         format: image/tiff
         meta:
           inline: false
@@ -3406,7 +3406,7 @@ content:
         label: Figure 2.
         content:
           - type: ImageObject
-            contentUrl: fig2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -3429,7 +3429,7 @@ content:
         label: Figure 2—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig2-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -3460,7 +3460,7 @@ content:
         label: Figure 2—figure supplement 2.
         content:
           - type: ImageObject
-            contentUrl: fig2-figsupp2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -3860,7 +3860,7 @@ content:
         label: Figure 3.
         content:
           - type: ImageObject
-            contentUrl: fig3.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -3909,7 +3909,7 @@ content:
         label: Figure 3—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig3-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -3952,7 +3952,7 @@ content:
         label: Figure 3—figure supplement 2.
         content:
           - type: ImageObject
-            contentUrl: fig3-figsupp2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -4199,7 +4199,7 @@ content:
         label: Figure 4.
         content:
           - type: ImageObject
-            contentUrl: fig4.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -4218,7 +4218,7 @@ content:
         label: Figure 4—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig4-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -4518,7 +4518,7 @@ content:
         label: Figure 5.
         content:
           - type: ImageObject
-            contentUrl: fig5.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -4538,7 +4538,7 @@ content:
         label: Figure 5—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig5-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -4621,7 +4621,7 @@ content:
         label: Figure 5—figure supplement 2.
         content:
           - type: ImageObject
-            contentUrl: fig5-figsupp2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false

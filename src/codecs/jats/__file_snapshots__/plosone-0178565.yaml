@@ -2250,7 +2250,7 @@ content:
     label: Fig 1
     content:
       - type: ImageObject
-        contentUrl: g001.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2455,7 +2455,7 @@ content:
     label: Fig 2
     content:
       - type: ImageObject
-        contentUrl: g002.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2569,7 +2569,7 @@ content:
     label: Fig 3
     content:
       - type: ImageObject
-        contentUrl: g003.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2626,7 +2626,7 @@ content:
     label: Fig 4
     content:
       - type: ImageObject
-        contentUrl: g004.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -3078,7 +3078,7 @@ content:
     label: Fig 5
     content:
       - type: ImageObject
-        contentUrl: g005.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -4384,7 +4384,7 @@ content:
     label: Fig 6
     content:
       - type: ImageObject
-        contentUrl: g006.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -4498,7 +4498,7 @@ content:
       - Supporting information
   - type: MediaObject
     id: pone-0178565-s001
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s001'
+    contentUrl: ''
     text: S1 Fig
     content:
       - type: Heading
@@ -4530,7 +4530,7 @@ content:
           - (TIF)
   - type: MediaObject
     id: pone-0178565-s002
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s002'
+    contentUrl: ''
     text: S1 Table
     content:
       - type: Heading
@@ -4542,7 +4542,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s003
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s003'
+    contentUrl: ''
     text: S2 Table
     content:
       - type: Heading
@@ -4561,7 +4561,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s004
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s004'
+    contentUrl: ''
     text: S3 Table
     content:
       - type: Heading
@@ -4584,7 +4584,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s005
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s005'
+    contentUrl: ''
     text: S4 Table
     content:
       - type: Heading
@@ -4608,7 +4608,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s006
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s006'
+    contentUrl: ''
     text: S5 Table
     content:
       - type: Heading
@@ -4630,7 +4630,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s007
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s007'
+    contentUrl: ''
     text: S6 Table
     content:
       - type: Heading
@@ -4656,7 +4656,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s008
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s008'
+    contentUrl: ''
     text: S7 Table
     content:
       - type: Heading
@@ -4670,7 +4670,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s009
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s009'
+    contentUrl: ''
     text: S8 Table
     content:
       - type: Heading
@@ -4709,7 +4709,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s010
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s010'
+    contentUrl: ''
     text: S9 Table
     content:
       - type: Heading
@@ -4739,7 +4739,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s011
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s011'
+    contentUrl: ''
     text: S10 Table
     content:
       - type: Heading
@@ -4765,7 +4765,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s012
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s012'
+    contentUrl: ''
     text: S11 Table
     content:
       - type: Heading

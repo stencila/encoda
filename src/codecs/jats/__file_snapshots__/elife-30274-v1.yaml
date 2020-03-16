@@ -2709,7 +2709,7 @@ content:
     label: Figure 1.
     content:
       - type: ImageObject
-        contentUrl: fig1.jpg
+        contentUrl: ''
         format: application/postscript
         meta:
           inline: false
@@ -2948,7 +2948,7 @@ content:
             content: []
           - type: MediaObject
             id: fig2sdata1
-            contentUrl: elife-30274-fig2-data1-v1.csv
+            contentUrl: ''
             text: Figure 2—source data 1.
             content:
               - type: Heading
@@ -2958,7 +2958,7 @@ content:
         label: Figure 2.
         content:
           - type: ImageObject
-            contentUrl: fig2.jpg
+            contentUrl: ''
             format: application/postscript
             meta:
               inline: false
@@ -3024,7 +3024,7 @@ content:
         label: Figure 2—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig2-figsupp1.jpg
+            contentUrl: ''
             format: application/postscript
             meta:
               inline: false
@@ -3068,7 +3068,7 @@ content:
         label: Figure 2—figure supplement 2.
         content:
           - type: ImageObject
-            contentUrl: fig2-figsupp2.jpg
+            contentUrl: ''
             format: application/postscript
             meta:
               inline: false
@@ -4328,7 +4328,7 @@ content:
     label: Figure 3.
     content:
       - type: ImageObject
-        contentUrl: fig3.jpg
+        contentUrl: ''
         format: application/postscript
         meta:
           inline: false
