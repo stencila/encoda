@@ -2893,6 +2893,16 @@
     {
       "type": "Table",
       "id": "pone-0229075-t001",
+      "caption": [
+        {
+          "type": "Heading",
+          "depth": 3,
+          "content": [
+            "Patient characteristics."
+          ]
+        }
+      ],
+      "label": "Table 1",
       "rows": [
         {
           "type": "TableRow",
@@ -3651,9 +3661,7 @@
             }
           ]
         }
-      ],
-      "title": "Patient characteristics.",
-      "content": []
+      ]
     },
     {
       "type": "Heading",

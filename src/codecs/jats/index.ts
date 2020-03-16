@@ -1603,35 +1603,33 @@ function decodeTableWrap(
 ): [stencila.Table] {
   state = { ...state, ancestorElem: elem }
 
-  const table = stencila.table({ rows: [] })
+  const cap = child(elem, 'caption')
+  const caption = cap?.elements?.length
+    ? decodeElements(cap.elements, state)
+    : undefined
 
-  table.id = decodeInternalId(attr(elem, 'id'))
-
-  const caption = child(elem, 'caption')
-  if (caption) {
-    const title = child(caption, 'title')
-    if (title) table.title = text(title)
-
-    const content = caption.elements
-      ? caption.elements.filter(child => child !== title)
-      : []
-    if (content) table.content = content
-  }
-
-  const rows = all(elem, 'tr')
-  if (rows.length) {
-    table.rows = rows.map(row => {
-      return stencila.tableRow({
-        cells: all(row, ['td', 'th']).map(cell => {
-          return stencila.tableCell({
-            content: decodeInlineContent(cell.elements ?? [], state)
+  const trs = all(elem, 'tr')
+  const rows =
+    trs.length > 0
+      ? trs.map(row => {
+          return stencila.tableRow({
+            cells: all(row, ['td', 'th']).map(cell => {
+              return stencila.tableCell({
+                content: decodeInlineContent(cell.elements ?? [], state)
+              })
+            })
           })
         })
-      })
-    })
-  }
+      : []
 
-  return [table]
+  return [
+    stencila.table({
+      id: decodeInternalId(attr(elem, 'id')),
+      label: textOrUndefined(child(elem, 'label')),
+      caption,
+      rows
+    })
+  ]
 }
 
 /**
@@ -1646,7 +1644,7 @@ function encodeTable(node: stencila.Table, state: EncodeState): [xml.Element] {
 
   const caption = elem(
     'caption',
-    node.title ? elem('title', ...encodeNodes(node.title)) : null
+    ...(node.caption ? encodeNodes(node.caption) : [])
   )
 
   const rows = node.rows.map(row => {

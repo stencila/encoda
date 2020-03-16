@@ -2233,6 +2233,12 @@ content:
       - ).
   - type: Table
     id: pone-0091296-t001
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Evidence on aggregating behaviour of study species.
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -2452,8 +2458,6 @@ content:
                 target: '#nt108'
                 content:
                   - h
-    title: Evidence on aggregating behaviour of study species.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -2537,6 +2541,14 @@ content:
       - ) increased with spawning.
   - type: Table
     id: pone-0091296-t002
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Scoring of aggregation attributes based on fisher knowledge of
+            aggregating behaviour.
+    label: Table 2
     rows:
       - type: TableRow
         cells:
@@ -2683,10 +2695,6 @@ content:
               - >-
                 2 = aggregation formation aligned with particular month or
                 season
-    title: >-
-      Scoring of aggregation attributes based on fisher knowledge of aggregating
-      behaviour.
-    content: []
   - type: Heading
     id: s2d
     depth: 2
@@ -2747,6 +2755,15 @@ content:
       - ).
   - type: Table
     id: pone-0091296-t003
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Socioeconomic indicators used in redundancy analysis (RDA) to
+            identify sources of variation in fisher knowledge of aggregating
+            behaviour.
+    label: Table 3
     rows:
       - type: TableRow
         cells:
@@ -2909,10 +2926,6 @@ content:
           - type: TableCell
             content:
               - '7'
-    title: >-
-      Socioeconomic indicators used in redundancy analysis (RDA) to identify
-      sources of variation in fisher knowledge of aggregating behaviour.
-    content: []
   - type: Heading
     id: s2e
     depth: 2
@@ -2960,6 +2973,14 @@ content:
         lacking for the study species.
   - type: Table
     id: pone-0091296-t004
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Attributes and their scoring system employed for
+            productivity-susceptibility analysis (PSA).
+    label: Table 4
     rows:
       - type: TableRow
         cells:
@@ -3158,10 +3179,6 @@ content:
                 1: Sell/barter catch in village; 2: sell/barter catch in
                 neighbouring villages; 3: sell/barter catch in provincial
                 capital markets.
-    title: >-
-      Attributes and their scoring system employed for
-      productivity-susceptibility analysis (PSA).
-    content: []
   - type: Paragraph
     content:
       - 'The four susceptibility attributes of Hobday et al. (2011) '
@@ -3856,6 +3873,14 @@ content:
           linkType: simple
   - type: Table
     id: pone-0091296-t005
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - >-
+            Variation in fisher knowledge of aggregating behaviour explained by
+            socioeconomic indicators.
+    label: Table 5
     rows:
       - type: TableRow
         cells:
@@ -4077,10 +4102,6 @@ content:
           - type: TableCell
             content:
               - '0.084'
-    title: >-
-      Variation in fisher knowledge of aggregating behaviour explained by
-      socioeconomic indicators.
-    content: []
   - type: Paragraph
     content:
       - >-

@@ -2186,6 +2186,30 @@ content:
       - .
   - type: Table
     id: T1
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - |-
+            Variable contributions in percent for 
+                                        
+          - type: Emphasis
+            content:
+              - Calotropis procera
+          - |-
+            , 
+                                        
+          - type: Emphasis
+            content:
+              - Prosopis cineraria
+          - |2-
+             and 
+                                        
+          - type: Emphasis
+            content:
+              - Ziziphus spina-christi
+          - .
+    label: 'Table 1. '
     rows:
       - type: TableRow
         cells:
@@ -2380,12 +2404,6 @@ content:
           - type: TableCell
             content:
               - '0'
-    title: |-
-      Variable contributions in percent for 
-                                  Calotropis procera, 
-                                  Prosopis cineraria and 
-                                  Ziziphus spina-christi.
-    content: []
   - type: Figure
     id: f1
     caption:

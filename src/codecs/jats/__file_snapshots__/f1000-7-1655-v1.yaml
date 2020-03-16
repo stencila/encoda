@@ -811,6 +811,12 @@ content:
       - .
   - type: Table
     id: T1
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Article-type attributes.
+    label: 'Table 1. '
     rows:
       - type: TableRow
         cells:
@@ -852,8 +858,6 @@ content:
           - type: TableCell
             content:
               - Collected Review Documents
-    title: Article-type attributes.
-    content: []
   - type: Paragraph
     content:
       - The term manuscript does not map to anything we’ve discussed.

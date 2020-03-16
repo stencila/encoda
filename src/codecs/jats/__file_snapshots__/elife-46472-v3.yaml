@@ -4991,6 +4991,19 @@ content:
           inline: false
   - type: Table
     id: table1
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - type: Emphasis
+            content:
+              - Taar1
+          - /
+          - type: Emphasis
+            content:
+              - Oprm1
+          - ' genotype combinations for the BXD strains.'
+    label: Table 1.
     rows:
       - type: TableRow
         cells:
@@ -5102,8 +5115,6 @@ content:
           - type: TableCell
             content:
               - 'BXD 178, 186, 210, 216'
-    title: Taar1/Oprm1 genotype combinations for the BXD strains.
-    content: []
   - type: Paragraph
     content:
       - For total volume consumed (
@@ -7362,6 +7373,7 @@ content:
       - Materials and methods
   - type: Table
     id: keyresource
+    label: Key resources table
     rows:
       - type: TableRow
         cells:

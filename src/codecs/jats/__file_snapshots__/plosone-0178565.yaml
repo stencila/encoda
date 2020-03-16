@@ -2664,6 +2664,12 @@ content:
       - '] have called this set the stable core.'
   - type: Table
     id: pone-0178565-t001
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - List of representatives of the conserved genes in our analysis.
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -2870,8 +2876,6 @@ content:
           - type: TableCell
             content:
               - '-'
-    title: List of representatives of the conserved genes in our analysis.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -3108,6 +3112,14 @@ content:
         functionally annotated.
   - type: Table
     id: pone-0178565-t002
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            The number of annotated and unannotated genes in the three
+            conservation categories.
+    label: Table 2
     rows:
       - type: TableRow
         cells:
@@ -3174,10 +3186,6 @@ content:
           - type: TableCell
             content:
               - '10,865'
-    title: >-
-      The number of annotated and unannotated genes in the three conservation
-      categories.
-    content: []
   - type: Heading
     id: sec012
     depth: 2
@@ -3310,6 +3318,12 @@ content:
         studies on gene essentiality.
   - type: Table
     id: pone-0178565-t003
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Essentiality of genes in each conservation category.
+    label: Table 3
     rows:
       - type: TableRow
         cells:
@@ -3352,8 +3366,6 @@ content:
           - type: TableCell
             content:
               - '88'
-    title: Essentiality of genes in each conservation category.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -3444,6 +3456,14 @@ content:
       - '].'
   - type: Table
     id: pone-0178565-t004
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - >-
+            Comparison of enzymes in central metabolic pathways with the
+            essential and conserved genes of other datasets.
+    label: Table 4
     rows:
       - type: TableRow
         cells:
@@ -4249,10 +4269,6 @@ content:
           - type: TableCell
             content:
               - '-'
-    title: >-
-      Comparison of enzymes in central metabolic pathways with the essential and
-      conserved genes of other datasets.
-    content: []
   - type: Heading
     id: sec014
     depth: 2
@@ -4391,6 +4407,17 @@ content:
           linkType: simple
   - type: Table
     id: pone-0178565-t005
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Genes in the cluster one of CCG.
+      - type: Paragraph
+        content:
+          - >-
+            Column A to C describes various identifiers and attributes of the
+            genes used. Column D describes the gene conservation index.
+    label: Table 5
     rows:
       - type: TableRow
         cells:
@@ -4462,15 +4489,6 @@ content:
           - type: TableCell
             content:
               - '15.1'
-    title: Genes in the cluster one of CCG.
-    content:
-      - type: element
-        elements:
-          - type: text
-            text: >-
-              Column A to C describes various identifiers and attributes of the
-              genes used. Column D describes the gene conservation index.
-        name: p
   - type: Heading
     id: sec015
     depth: 1

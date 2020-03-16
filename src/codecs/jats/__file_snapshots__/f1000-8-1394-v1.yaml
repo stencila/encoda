@@ -1109,6 +1109,14 @@ content:
       - ' (0.020 g NaCl + 0.032 g pepsin + 0.8 mL HCl (1 mol/L), filled up to 10 mL with water). As pure CBD was available only in methanolic solution, the final experimental setups contained 0.08 mol/L HCl and 1% methanol due to dilution.'
   - type: Table
     id: T1
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Cannabidiol (CBD) stability experiments under various storage
+            conditions.
+    label: 'Table 1. '
     rows:
       - type: TableRow
         cells:
@@ -1611,8 +1619,6 @@ content:
           - type: TableCell
             content:
               - 27%
-    title: Cannabidiol (CBD) stability experiments under various storage conditions.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -1739,6 +1745,14 @@ content:
       - .
   - type: Table
     id: T2
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Results of THC analysis in commercial products based on hemp
+            extracts from the German market (2018–2019).
+    label: 'Table 2. '
     rows:
       - type: TableRow
         cells:
@@ -2707,10 +2721,6 @@ content:
           - type: TableCell
             content:
               - '-'
-    title: >-
-      Results of THC analysis in commercial products based on hemp extracts from
-      the German market (2018–2019).
-    content: []
   - type: Heading
     id: ''
     depth: 1
