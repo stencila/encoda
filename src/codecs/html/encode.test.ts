@@ -14,11 +14,12 @@ import pa11y from 'pa11y'
 import { structuredDataTest } from 'structured-data-testing-tool'
 // @ts-ignore
 import { Article as ArticlePreset } from 'structured-data-testing-tool/presets/google/schemas/CreativeWork/Article'
+import { HTMLCodec } from '.'
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 import kitchenSinkArticle from '../../__fixtures__/article/kitchen-sink'
 import mathArticle from '../../__fixtures__/article/math'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
-import { HTMLCodec } from '.'
 
 const jsonCodec = new JsonCodec()
 const htmlCodec = new HTMLCodec()
@@ -35,7 +36,8 @@ describe('Articles', () => {
       typeof article === 'string'
         ? await jsonCodec.read(fixture(article))
         : article
-    const html = await htmlCodec.dump(node, {
+    // Unlink files to avoid dependency on which machine the test is running on
+    const html = await htmlCodec.dump(await unlinkFiles(node), {
       // Standalone so get complete HTML doc with <head> etc
       isStandalone: true,
       // No theme, to make faster and so that tests are not affected by
