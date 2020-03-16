@@ -6,13 +6,16 @@ import { TxtCodec } from '../../codecs/txt'
  * from within `BlockContent` if necessary.
  */
 export const ensureInlineContentArray = (
-  nodes: schema.Node[]
+  nodes: schema.Node | schema.Node[]
 ): schema.InlineContent[] => {
-  return nodes.reduce((prev: schema.InlineContent[], node) => {
-    return schema.isInlineContent(node)
-      ? [...prev, node]
-      : 'content' in node
-      ? [...prev, ...node.content]
-      : [...prev, TxtCodec.stringify(node)]
-  }, [])
+  return (Array.isArray(nodes) ? nodes : [nodes]).reduce(
+    (prev: schema.InlineContent[], node) => {
+      return schema.isInlineContent(node)
+        ? [...prev, node]
+        : 'content' in node
+        ? [...prev, ...node.content]
+        : [...prev, TxtCodec.stringify(node)]
+    },
+    []
+  )
 }
