@@ -48,7 +48,8 @@ RUN npm install --ignore-scripts
 COPY tsconfig.json install.js ./
 COPY --chown=encoda:encoda src ./src
 RUN node install.js \
- && cd node_modules/puppeteer && npm install
+ && (cd node_modules/puppeteer && npm install) \
+ && (cd node_modules/pa11y/node_modules/puppeteer && npm install)
 
 # Run the tests
 CMD npm test -- --testTimeout=120000 --forceExit
