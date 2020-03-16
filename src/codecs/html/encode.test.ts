@@ -78,6 +78,14 @@ describe('Articles', () => {
       } else throw error
     }
 
+    /**
+     * This following fails when in a Docker container on CI,
+     * probably due to failure of pa11y to connect to Puppeteer.
+     * So skip when in that situation.
+     * See: https://dev.azure.com/stencila/stencila/_build/results?buildId=824&view=logs&j=bdfe1ee2-0dfa-5214-b354-014a2d5aae2e&t=95f41a85-677a-5e68-afba-63ba0e2792c1&l=1091
+     */
+    if (process.env.DOCKER === 'true') return
+
     // Accessibility test
     // Rules to ignore (add rule codes here if you need to during development)
     const ignore: string[] = []

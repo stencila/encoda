@@ -52,4 +52,4 @@ RUN node install.js \
  && (cd node_modules/pa11y/node_modules/puppeteer && npm install)
 
 # Run the tests
-CMD npm test -- --testTimeout=120000 --forceExit
+CMD DOCKER=true npm test -- --testTimeout=120000 --forceExit
