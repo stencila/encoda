@@ -21,7 +21,7 @@ export async function copyFile(from: string, to: string): Promise<void> {
     log.warn(`Source file does not exist, ignoring: ${from}`)
     return
   }
-  if (from !== to) {
+  if (from === to) {
     log.warn(`Destination is the same as source, ignoring: ${from}`)
     return
   }
