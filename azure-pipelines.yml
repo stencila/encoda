@@ -80,7 +80,6 @@ jobs:
         displayName: 'Upload coverage'
 
   - job: test_docker
-    dependsOn: test
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -93,7 +92,7 @@ jobs:
         displayName: 'Run tests in Docker'
 
   - job: release
-    dependsOn: test
+    dependsOn: [test, test_docker]
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     pool:
       vmImage: ubuntu-latest
