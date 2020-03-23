@@ -10,7 +10,7 @@ const docxCodec = new DocxCodec()
 const jsonCodec = new JsonCodec()
 
 // Capture log warning messages to test against expectations
-// Note that this is just done across all fixtures
+// Note that the logs are shared across all fixtures
 const logMessages: string[] = []
 beforeAll(() => {
   addHandler(({ level, message }) => {
