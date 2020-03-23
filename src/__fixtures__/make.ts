@@ -13,9 +13,8 @@
  * This script should be rerun when the decoding codecs
  * involved are updated.
  *
- * Media files (e.g figure images) were originally removed from
- * these fixtures to reduce their size. However, this reduced their utility
- * for testing formats such as PDF and DOCX.
+ * Media files (e.g figure images) are included as part of fixtures to allow
+ * testing of formats such as PDF and DOCX.
  */
 
 import path from 'path'
