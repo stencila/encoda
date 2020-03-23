@@ -40,7 +40,7 @@ describe('encode+decode', () => {
     // Write a DOCX file for human inspection
     await docxCodec.write(node, file)
 
-    // For some, also that the file can be successfully
+    // For some articles, also test that the file can be successfully
     // read back to the original node
     if (decode) {
       const reversed = await docxCodec.read(file)
