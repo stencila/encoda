@@ -7931,7 +7931,7 @@ content:
     label: Figure 1.
     content:
       - type: ImageObject
-        contentUrl: fig1.jpg
+        contentUrl: ''
         format: image/tiff
         meta:
           inline: false
@@ -8079,7 +8079,7 @@ content:
         label: Figure 2.
         content:
           - type: ImageObject
-            contentUrl: fig2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -8119,7 +8119,7 @@ content:
         label: Figure 2—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig2-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -8296,7 +8296,7 @@ content:
     label: Figure 3.
     content:
       - type: ImageObject
-        contentUrl: fig3.jpg
+        contentUrl: ''
         format: image/tiff
         meta:
           inline: false
@@ -8438,7 +8438,7 @@ content:
     label: Figure 4.
     content:
       - type: ImageObject
-        contentUrl: fig4.jpg
+        contentUrl: ''
         format: image/tiff
         meta:
           inline: false
@@ -8570,7 +8570,7 @@ content:
     label: Figure 5.
     content:
       - type: ImageObject
-        contentUrl: fig5.jpg
+        contentUrl: ''
         format: image/tiff
         meta:
           inline: false
@@ -8740,7 +8740,7 @@ content:
         label: Figure 6.
         content:
           - type: ImageObject
-            contentUrl: fig6.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -8819,7 +8819,7 @@ content:
         label: Figure 6—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig6-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9023,7 +9023,7 @@ content:
         label: Figure 7.
         content:
           - type: ImageObject
-            contentUrl: fig7.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9103,7 +9103,7 @@ content:
         label: Figure 7—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig7-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9328,7 +9328,7 @@ content:
             content: []
           - type: MediaObject
             id: fig8sdata1
-            contentUrl: elife-46793-fig8-data1-v1.pdf
+            contentUrl: ''
             text: Figure 8—source data 1.
             content:
               - type: Heading
@@ -9357,7 +9357,7 @@ content:
         label: Figure 8.
         content:
           - type: ImageObject
-            contentUrl: fig8.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9416,7 +9416,7 @@ content:
         label: Figure 8—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig8-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9435,7 +9435,7 @@ content:
         label: Figure 8—figure supplement 2.
         content:
           - type: ImageObject
-            contentUrl: fig8-figsupp2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9521,7 +9521,7 @@ content:
             content: []
           - type: MediaObject
             id: fig8s3sdata1
-            contentUrl: elife-46793-fig8-figsupp3-data1-v1.pdf
+            contentUrl: ''
             text: Figure 8—figure supplement 3—source data 1.
             content:
               - type: Heading
@@ -9550,7 +9550,7 @@ content:
         label: Figure 8—figure supplement 3.
         content:
           - type: ImageObject
-            contentUrl: fig8-figsupp3.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9835,7 +9835,7 @@ content:
         label: Figure 9.
         content:
           - type: ImageObject
-            contentUrl: fig9.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9871,7 +9871,7 @@ content:
         label: Figure 9—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig9-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -9923,7 +9923,7 @@ content:
         label: Figure 9—figure supplement 2.
         content:
           - type: ImageObject
-            contentUrl: fig9-figsupp2.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -10086,7 +10086,7 @@ content:
             content: []
           - type: MediaObject
             id: fig10sdata1
-            contentUrl: elife-46793-fig10-data1-v1.pdf
+            contentUrl: ''
             text: Figure 10—source data 1.
             content:
               - type: Heading
@@ -10115,7 +10115,7 @@ content:
         label: Figure 10.
         content:
           - type: ImageObject
-            contentUrl: fig10.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -10144,7 +10144,7 @@ content:
         label: Figure 10—figure supplement 1.
         content:
           - type: ImageObject
-            contentUrl: fig10-figsupp1.jpg
+            contentUrl: ''
             format: image/tiff
             meta:
               inline: false
@@ -10373,6 +10373,14 @@ content:
       - .
   - type: Table
     id: table1
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - >-
+            Possible chemotherapeutic combinations for G4-stabilising ligands
+            with clinically relevant pharmacological drugs
+    label: Table 1.
     rows:
       - type: TableRow
         cells:
@@ -10779,12 +10787,14 @@ content:
                 target: bib9
                 content:
                   - 'Bennett et al., 2017'
-    title: >-
-      Possible chemotherapeutic combinations for G4-stabilising ligands with
-      clinically relevant pharmacological drugs
-    content: []
   - type: Table
     id: table2
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - Examples of cancer-associated genetic vulnerabilities to G4 ligands.
+    label: Table 2.
     rows:
       - type: TableRow
         cells:
@@ -11152,8 +11162,6 @@ content:
                 target: bib116
                 content:
                   - 'Takahama et al., 2013'
-    title: Examples of cancer-associated genetic vulnerabilities to G4 ligands.
-    content: []
   - type: Paragraph
     content:
       - "While the custom HT1080 screen recovered 58% of sensitisers seen for each ligand in the A375 genome-wide screen, it is striking that this increases to 93% (i.e. 112 out of 121) when considering all screens irrespective of G4 ligand, suggesting remarkable consistency when comparing G4 ligand effects globally. Differences in individual ligand sensitives may arise from variances in cellular uptake and dose, for\_example, the GI20 dose of PhenDC3 is ten-fold higher for A375 compared to HT1080; G4 ligand-dependent molecular preference for G-tetrad end binding ("
@@ -11448,6 +11456,7 @@ content:
       - Materials and methods
   - type: Table
     id: keyresource
+    label: Key resources table
     rows:
       - type: TableRow
         cells:

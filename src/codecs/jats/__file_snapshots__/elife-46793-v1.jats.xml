@@ -177,7 +177,7 @@
                     <title>Strategy identifying genetic vulnerabilities involved with G4 biology.</title>
                     <p>Genome-wide shRNA silencing combined with G4 structure stabilisation by small molecules identifies genes that when depleted compromise cell viability. Cells are infected with a genome-wide pool of shRNA lentiviruses targeting the protein coding genome followed by G4 ligand treatment to stabilise genomic and/or RNA G4 structures. Two general outcomes are possible: a gene is not required in a G4-dependent process so there is no effect on cell viability (left); or gene silencing results in cell death either due to loss of a direct G4 interaction (e.g. binding/unwinding) or indirectly through gene loss in a G4-dependent pathway (right). In absence of ligand, cells are viable in presence of the shRNA. Dotted boxes highlight genotypes of disease significance for possible G4-based therapies (blue) and genes and biological pathways that involve and/or interact with G4 structures (orange).</p>
                 </caption>
-                <graphic xlink:href="fig1.jpg" mimetype="image" mime-subtype="tiff"/>
+                <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
         <sec>
@@ -213,7 +213,7 @@
                             <bold>D</bold>) Overall screening approach illustrated for one library pool. Plasmids are retrovirally packaged and A375 cells are infected at multiplicity of infection (MOI) of 0.3 (30%). Following antibiotic selection, an initial time point (t0) is harvested and then cells are cultured for ‘n’ population doublings in DMSO, PDS or PhenDC3 before the final time point was harvested (tF).
                         </p>
                     </caption>
-                    <graphic xlink:href="fig2.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 2—figure supplement 1.</label>
@@ -227,7 +227,7 @@
                             <italic>XRN1</italic> following DMSO, PDS or PhenDC3 treatment after 7 and 15 population doublings.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig2-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
             <p>To understand the complete spectrum of G4 vulnerabilities, we first considered the combined set of sensitivities to PDS and PhenDC3 together. For the whole library, when individual shRNAs are considered 9509 (~7%) G4-ligand-specific hairpins (i.e. those not in DMSO) were found to be depleted (FDR ≤ 0.05; log
@@ -270,7 +270,7 @@
                         <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                     </p>
                 </caption>
-                <graphic xlink:href="fig3.jpg" mimetype="image" mime-subtype="tiff"/>
+                <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
             </fig>
             <p>We next explored further genes already implicated in G4 biology, but whose deficiency has not yet been linked with any enhanced sensitivity to G4 ligands. For genes annotated with G4-related terms in the UniprotKB, Gene Ontology (GO) and G4IPDB databases (
                 <xref rid="bib85" ref-type="bibr">Mishra et al., 2016</xref>), an additional eight sensitisers (
@@ -301,7 +301,7 @@
                         <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                     </p>
                 </caption>
-                <graphic xlink:href="fig4.jpg" mimetype="image" mime-subtype="tiff"/>
+                <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
         <sec>
@@ -335,7 +335,7 @@
                         <bold>C</bold>) Functional interaction network analysis using STRING for the 50 COSMIC proteins indicated in A and B. Clusters are shown using confidence interactions &gt; 0.4 from co-expression and experimental data. Box indicates the DDR cluster.
                     </p>
                 </caption>
-                <graphic xlink:href="fig5.jpg" mimetype="image" mime-subtype="tiff"/>
+                <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
             </fig>
         </sec>
         <sec>
@@ -372,7 +372,7 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig6.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 6—figure supplement 1.</label>
@@ -391,7 +391,7 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig6-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
             <p>We next reasoned that the robust set of 290 G4 ligand sensitiser genes above provides a suitable test bed for exploring the arising therapeutic potential for combinatorial pharmacological inhibition and G4-ligands. We therefore looked for the presence of these sensitisers genes within the druggable genome interaction database (DGIdb) (
@@ -435,7 +435,7 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp1">Supplementary file 1</ext-link>.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig7.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 7—figure supplement 1.</label>
@@ -456,7 +456,7 @@
                             <ext-link ext-link-type="uri" xlink:href="#supp2">Supplementary file 2</ext-link>.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig7-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
         </sec>
@@ -512,9 +512,9 @@
                             <ext-link ext-link-type="uri" xlink:href="#fig8s3">3</ext-link>.
                         </p>
                         <p/>
-                        <media xlink:href="elife-46793-fig8-data1-v1.pdf"/>
+                        <media xlink:href=""/>
                     </caption>
-                    <graphic xlink:href="fig8.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 8—figure supplement 1.</label>
@@ -533,7 +533,7 @@
                             <italic>GAR1</italic>.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig8-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 8—figure supplement 2.</label>
@@ -541,7 +541,7 @@
                         <title>Short-term siRNA knockdowns of four key G4-sensitisers in A375 cells show dose-dependent growth inhibition with G4-ligands.</title>
                         <p>A375 cells were transfected with targeting siRNAs (orange) against BRCA1, TOP1, DDX42 or GAR1 for 24 hr before treatment with PDS (5 μM and 10 μM), PhenDC3 (20 μM and 40 μM) or vehicle control (DMSO). For each knockdown, confluency over 144 hr was monitored and plotted against confluency of non-transfected cells (blue) and cells transfected with a non-targeting control siRNA (green). Experiments were performed in triplicate and average confluency accumulation shown (mean ± standard deviation).</p>
                     </caption>
-                    <graphic xlink:href="fig8-figsupp2.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 8—figure supplement 3.</label>
@@ -565,9 +565,9 @@
                             <bold>J</bold>) GAR1.
                         </p>
                         <p/>
-                        <media xlink:href="elife-46793-fig8-figsupp3-data1-v1.pdf"/>
+                        <media xlink:href=""/>
                     </caption>
-                    <graphic xlink:href="fig8-figsupp3.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
             <p>Mirroring the shRNA screen findings, siRNA knockdown of all four genes in HT1080 cells imparted significant increases in sensitivity with PDS or PhenDC3 compared to DMSO. Some differences between the ligands and individual gene knockdowns were noted. For 
@@ -627,7 +627,7 @@
                             <ext-link ext-link-type="uri" xlink:href="#fig9s2">2</ext-link>).
                         </p>
                     </caption>
-                    <graphic xlink:href="fig9.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 9—figure supplement 1.</label>
@@ -638,7 +638,7 @@
                             <bold>E–H</bold>) 2D BLISS synergy matrix derived from ‘control’ input. Each dose combination is given a synergy score. Blue and a high percentage indicates synergy.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig9-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 9—figure supplement 2.</label>
@@ -654,7 +654,7 @@
                             <bold>J</bold>) cells. Three biological replicates were performed.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig9-figsupp2.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
         </sec>
@@ -693,9 +693,9 @@
                             <sub>d</sub> is calculated from five replicates (values are indicative as the model assumes saturation kinetics).
                         </p>
                         <p/>
-                        <media xlink:href="elife-46793-fig10-data1-v1.pdf"/>
+                        <media xlink:href=""/>
                     </caption>
-                    <graphic xlink:href="fig10.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
                 <fig>
                     <label>Figure 10—figure supplement 1.</label>
@@ -706,7 +706,7 @@
                             <bold>B</bold>) MYC promoter DNA G4.
                         </p>
                     </caption>
-                    <graphic xlink:href="fig10-figsupp1.jpg" mimetype="image" mime-subtype="tiff"/>
+                    <graphic xlink:href="" mimetype="image" mime-subtype="tiff"/>
                 </fig>
             </fig-group>
             <p>As DDX42 is known to bind RNA, we next set out to demonstrate DDX42 affinity for a RNA-G4 structure as this has not previously been documented. For this, a G4 RNA oligonucleotide from the NRAS 5’UTR sequence, which forms a stable parallel G4 (

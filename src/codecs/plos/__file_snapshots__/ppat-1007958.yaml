@@ -3106,6 +3106,17 @@ content:
           linkType: simple
   - type: Table
     id: ppat-1007958-t001
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Clinical features of LGMD1F patients.
+      - type: Paragraph
+        content:
+          - >-
+            Twenty-three LGMD1F patients from three generations were included in
+            this study.
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -3777,15 +3788,6 @@ content:
           - type: TableCell
             content:
               - '140'
-    title: Clinical features of LGMD1F patients.
-    content:
-      - type: element
-        elements:
-          - type: text
-            text: >-
-              Twenty-three LGMD1F patients from three generations were included
-              in this study.
-        name: p
   - type: Heading
     id: sec004
     depth: 2

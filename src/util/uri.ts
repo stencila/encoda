@@ -2,12 +2,12 @@
  * @module util/uri
  */
 
-import fs from 'fs-extra'
 import mime from 'mime'
 import path from 'path'
 import tempy from 'tempy'
-import { download } from './http'
 import * as dataUri from './dataUri'
+import { download } from './http'
+import { copyFile } from './media/copyFile'
 
 /**
  * Write a URI to file
@@ -27,12 +27,8 @@ export async function toFile(
     return dataUri.toFile(uri, filePath)
   } else if (uri.startsWith('http')) {
     await download(uri, filePath)
-    return { mediaType, filePath }
   } else {
-    if ((await fs.pathExists(uri)) && uri !== filePath) {
-      await fs.ensureDir(path.dirname(filePath))
-      await fs.copyFile(uri, filePath)
-    }
-    return { mediaType, filePath }
+    await copyFile(uri, filePath)
   }
+  return { mediaType, filePath }
 }

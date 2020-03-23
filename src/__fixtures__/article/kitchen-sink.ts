@@ -101,7 +101,7 @@ export default article({
         'A paragraph with an image ',
         {
           type: 'ImageObject',
-          contentUrl: 'https://example.org/image.png',
+          contentUrl: 'https://via.placeholder.com/10',
           title: 'title',
           text: 'alt text'
         },
@@ -132,13 +132,12 @@ export default article({
     {
       type: 'CodeBlock',
       programmingLanguage: 'r',
-      text: '# Some code\nx = c(1,2)'
+      text: '# Some R code\nx <- c(1,2)'
     },
     {
       type: 'CodeBlock',
       programmingLanguage: 'js',
-      text:
-        '// Test for html character escaping. See note at https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML\n      const inc = (n) => n + 1'
+      text: '// Some Javascript code\nconst inc = (n) => n + 1'
     },
     {
       type: 'List',

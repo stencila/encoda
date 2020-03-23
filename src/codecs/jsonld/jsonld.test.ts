@@ -1,12 +1,13 @@
 import { JsonLdCodec } from '.'
 import { fixture, snapshot, nockRecord } from '../../__tests__/helpers'
 import { YamlCodec } from '../yaml'
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 
 const yaml = new YamlCodec()
 const jsonld = new JsonLdCodec()
 
 const jsonld2yaml = async (name: string) =>
-  yaml.dump(await jsonld.read(fixture(name)))
+  yaml.dump(await unlinkFiles(await jsonld.read(fixture(name))))
 
 const yaml2jsonld = async (name: string) =>
   jsonld.dump(await yaml.read(fixture(name)))

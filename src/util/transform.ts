@@ -21,30 +21,42 @@ import * as stencila from '@stencila/schema'
  *
  * @param node The node to transform
  * @param transformer The transforming function. Should return the transformed node.
+ * @param recurse If a node is transformed, should transformation be performed on its children?
  */
 export default async function transform(
   node: stencila.Node,
-  transformer: (node: stencila.Node, path?: string[]) => Promise<stencila.Node>
+  transformer: (
+    node: stencila.Node,
+    parent?: stencila.Node
+  ) => Promise<stencila.Node>,
+  recurse = false
 ): Promise<stencila.Node> {
   async function walk(
     node: stencila.Node,
-    path: string[] = []
+    parent?: stencila.Node
   ): Promise<stencila.Node> {
-    const transformed = await transformer(node, path)
+    const transformed = await transformer(node, parent)
 
-    if (stencila.isPrimitive(transformed) || transformed === undefined)
+    if (
+      (transformed !== node && !recurse) ||
+      stencila.isPrimitive(transformed) ||
+      transformed === undefined
+    )
       return transformed
 
     if (Array.isArray(transformed))
       return transformed.reduce(
-        async (prev, child) => [...(await prev), await walk(child)],
+        async (prev, child) => [
+          ...(await prev),
+          await walk(child, transformed)
+        ],
         Promise.resolve([])
       )
 
     return Object.entries(transformed).reduce(
       async (prev, [key, child]) => ({
         ...(await prev),
-        [key]: await walk(child)
+        [key]: await walk(child, transformed)
       }),
       Promise.resolve({})
     )
@@ -57,25 +69,30 @@ export default async function transform(
  */
 export function transformSync(
   node: stencila.Node,
-  transformer: (node: stencila.Node, path?: string[]) => stencila.Node
+  transformer: (node: stencila.Node) => stencila.Node | undefined
 ): stencila.Node {
-  function walk(node: stencila.Node, path: string[] = []): stencila.Node {
-    const transformed = transformer(node, path)
-    if (stencila.isPrimitive(transformed) || transformed === undefined) {
+  function walk(node: stencila.Node): stencila.Node | undefined {
+    const transformed = transformer(node)
+
+    if (stencila.isPrimitive(transformed) || transformed === undefined)
       return transformed
-    }
+
     if (Array.isArray(transformed)) {
-      return transformed.map((child, index) =>
-        walk(child, [...path, `${index}`])
-      )
+      return transformed.reduce((prev, child) => {
+        const trans = walk(child)
+        return trans !== undefined ? [...prev, trans] : prev
+      }, [])
     }
-    return Object.entries(transformed).reduce(
-      (prev, [key, child]) => ({
-        ...prev,
-        ...{ [key]: walk(child, [...path, key]) }
-      }),
-      {}
-    )
+
+    return Object.entries(transformed).reduce((prev, [key, child]) => {
+      const trans = walk(child)
+      return trans !== undefined
+        ? {
+            ...prev,
+            [key]: trans
+          }
+        : prev
+    }, {})
   }
-  return walk(node)
+  return walk(node) ?? node
 }

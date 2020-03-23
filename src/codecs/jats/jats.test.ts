@@ -8,14 +8,18 @@ import {
   mathmlFragment,
   texBlock
 } from '../../__fixtures__/math/kitchen-sink'
+import { YamlCodec } from '../yaml'
+import { unlinkFiles } from '../../util/media/unlinkFiles'
 
 const jats = new JatsCodec()
-const { sniff } = jats
+const yaml = new YamlCodec()
 
-jest.mock('crypto')
+const { sniff } = jats
 
 const fixture = (name: string) =>
   path.join(__dirname, '__fixtures__', name, 'main.jats.xml')
+
+jest.mock('crypto')
 
 test('sniff', async () => {
   expect(
@@ -43,47 +47,6 @@ test('sniff', async () => {
   expect(await sniff(path.join(__dirname, 'README.md'))).toBe(false)
 })
 
-test('decode', async () => {
-  /**
-   * Decode fixtures to YAML snapshot files (for readability)
-   */
-  const jats2yaml = async (name: string) =>
-    convert(fixture(name), undefined, { from: 'jats', to: 'yaml' })
-
-  expect(await jats2yaml('elife-30274-v1')).toMatchFile(
-    snapshot('elife-30274-v1.yaml')
-  )
-  expect(await jats2yaml('elife-46472-v3')).toMatchFile(
-    snapshot('elife-46472-v3.yaml')
-  )
-  expect(await jats2yaml('elife-46793-v1')).toMatchFile(
-    snapshot('elife-46793-v1.yaml')
-  )
-  expect(await jats2yaml('elife-52882-v2')).toMatchFile(
-    snapshot('elife-52882-v2.yaml')
-  )
-
-  expect(await jats2yaml('f1000-7-1655-v1')).toMatchFile(
-    snapshot('f1000-7-1655-v1.yaml')
-  )
-  expect(await jats2yaml('f1000-8-978-v1')).toMatchFile(
-    snapshot('f1000-8-978-v1.yaml')
-  )
-  expect(await jats2yaml('f1000-8-1394-v1')).toMatchFile(
-    snapshot('f1000-8-1394-v1.yaml')
-  )
-
-  expect(await jats2yaml('plosone-0091296')).toMatchFile(
-    snapshot('plosone-0091296.yaml')
-  )
-  expect(await jats2yaml('plosone-0093988')).toMatchFile(
-    snapshot('plosone-0093988.yaml')
-  )
-  expect(await jats2yaml('plosone-0178565')).toMatchFile(
-    snapshot('plosone-0178565.yaml')
-  )
-})
-
 describe('encode: Math', () => {
   it('encodes TeX nodes using <tex-math>', async () => {
     expect(await jats.dump(texFragment, { isStandalone: false })).toMatchFile(
@@ -107,47 +70,25 @@ describe('encode: Math', () => {
   })
 })
 
-test('decode+encode', async () => {
-  /**
-   * Round trip conversion from JATS to JATS
-   */
-  const jats2jats = async (name: string) =>
-    convert(fixture(name), undefined, {
-      from: 'jats',
-      to: 'jats',
-      encodeOptions: { isStandalone: true }
+test.each([
+  'elife-30274-v1',
+  'elife-46472-v3',
+  'elife-46793-v1',
+  'elife-52882-v2',
+  'f1000-7-1655-v1',
+  'f1000-8-978-v1',
+  'f1000-8-1394-v1',
+  'plosone-0091296',
+  'plosone-0093988',
+  'plosone-0178565'
+])('decode + encode : %s', async article => {
+  const node = await unlinkFiles(await jats.read(fixture(article)))
+
+  expect(await yaml.dump(node)).toMatchFile(snapshot(`${article}.yaml`))
+
+  expect(
+    await jats.dump(node, {
+      isStandalone: true
     })
-
-  expect(await jats2jats('elife-30274-v1')).toMatchFile(
-    snapshot('elife-30274-v1.jats.xml')
-  )
-  expect(await jats2jats('elife-46472-v3')).toMatchFile(
-    snapshot('elife-46472-v3.jats.xml')
-  )
-  expect(await jats2jats('elife-46793-v1')).toMatchFile(
-    snapshot('elife-46793-v1.jats.xml')
-  )
-  expect(await jats2jats('elife-52882-v2')).toMatchFile(
-    snapshot('elife-52882-v2.jats.xml')
-  )
-
-  expect(await jats2jats('f1000-7-1655-v1')).toMatchFile(
-    snapshot('f1000-7-1655-v1.jats.xml')
-  )
-  expect(await jats2jats('f1000-8-978-v1')).toMatchFile(
-    snapshot('f1000-8-978-v1.jats.xml')
-  )
-  expect(await jats2jats('f1000-8-1394-v1')).toMatchFile(
-    snapshot('f1000-8-1394-v1.jats.xml')
-  )
-
-  expect(await jats2jats('plosone-0091296')).toMatchFile(
-    snapshot('plosone-0091296.jats.xml')
-  )
-  expect(await jats2jats('plosone-0093988')).toMatchFile(
-    snapshot('plosone-0093988.jats.xml')
-  )
-  expect(await jats2jats('plosone-0178565')).toMatchFile(
-    snapshot('plosone-0178565.jats.xml')
-  )
+  ).toMatchFile(snapshot(`${article}.jats.xml`))
 })

@@ -4473,6 +4473,14 @@ content:
         described in more detail.
   - type: Table
     id: pone-0216012-t001
+    caption:
+      - type: Heading
+        depth: 4
+        content:
+          - >-
+            Summary of the model equations obtained by writing the Kirchhoff
+            current law at the circuit nodes.
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -5028,12 +5036,14 @@ content:
                   - type: Emphasis
                     content:
                       - Out
-    title: >-
-      Summary of the model equations obtained by writing the Kirchhoff current
-      law at the circuit nodes.
-    content: []
   - type: Table
     id: pone-0216012-t002
+    caption:
+      - type: Heading
+        depth: 4
+        content:
+          - Summary of the model balance and constitutive relations.
+    label: Table 2
     rows:
       - type: TableRow
         cells:
@@ -7100,8 +7110,6 @@ content:
                   - type: Emphasis
                     content:
                       - S
-    title: Summary of the model balance and constitutive relations.
-    content: []
   - type: Heading
     id: sec005
     depth: 2
@@ -8082,6 +8090,12 @@ content:
       - .
   - type: Table
     id: pone-0216012-t003
+    caption:
+      - type: Heading
+        depth: 4
+        content:
+          - Summary of model inputs.
+    label: Table 3
     rows:
       - type: TableRow
         cells:
@@ -8228,8 +8242,6 @@ content:
                 content:
                   - '26'
               - ']'
-    title: Summary of model inputs.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -8706,6 +8718,17 @@ content:
       - .
   - type: Table
     id: pone-0216012-t004
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - 'Conditions for simulated microgravity environment, as in ['
+          - type: Cite
+            target: pone-0216012-ref024
+            content:
+              - '24'
+          - '].'
+    label: Table 4
     rows:
       - type: TableRow
         cells:
@@ -9081,8 +9104,6 @@ content:
                       - M
                   - '2'
               - ' = 0.5'
-    title: 'Conditions for simulated microgravity environment, as in [24].'
-    content: []
   - type: Paragraph
     content:
       - 'We remark that a weakened blood/brain barrier was utilized in ['
@@ -9301,6 +9322,12 @@ content:
         supine position.
   - type: Table
     id: pone-0216012-t005
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Summary of model parameters.
+    label: Table 5
     rows:
       - type: TableRow
         cells:
@@ -10850,8 +10877,6 @@ content:
           - type: TableCell
             content:
               - this work
-    title: Summary of model parameters.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -11261,6 +11286,14 @@ content:
       =</mml:mo><mml:mi>c</mml:mi><mml:mi>l</mml:mi><mml:mo>,</mml:mo><mml:mi>c</mml:mi><mml:mi>h</mml:mi><mml:mo>.</mml:mo></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:math>
   - type: Table
     id: pone-0216012-t006
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            Baseline values for pressures and flow rates under physiological
+            condition.
+    label: Table 6
     rows:
       - type: TableRow
         cells:
@@ -12389,10 +12422,6 @@ content:
           - type: TableCell
             content:
               - '1035'
-    title: >-
-      Baseline values for pressures and flow rates under physiological
-      condition.
-    content: []
   - type: Paragraph
     content:
       - 'The value of '

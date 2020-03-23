@@ -13,13 +13,12 @@
  * This script should be rerun when the decoding codecs
  * involved are updated.
  *
- * Media files are 'unlinked' to prevent are large number
- * of files being created.
+ * Media files (e.g figure images) are included as part of fixtures to allow
+ * testing of formats such as PDF and DOCX.
  */
 
 import path from 'path'
 import { read, write } from '..'
-import { unlinkFiles } from '../util/media/unlinkFiles'
 
 const fixtures = [
   {
@@ -36,7 +35,6 @@ const fixtures = [
 Promise.all(
   fixtures.map(async ({ src, dest }) => {
     const node = await read(src)
-    const unlinked = await unlinkFiles(node)
-    await write(unlinked, path.join(__dirname, ...dest))
+    await write(node, path.join(__dirname, ...dest))
   })
 ).catch(console.log)

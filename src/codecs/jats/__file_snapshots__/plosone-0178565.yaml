@@ -2250,7 +2250,7 @@ content:
     label: Fig 1
     content:
       - type: ImageObject
-        contentUrl: g001.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2455,7 +2455,7 @@ content:
     label: Fig 2
     content:
       - type: ImageObject
-        contentUrl: g002.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2569,7 +2569,7 @@ content:
     label: Fig 3
     content:
       - type: ImageObject
-        contentUrl: g003.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2626,7 +2626,7 @@ content:
     label: Fig 4
     content:
       - type: ImageObject
-        contentUrl: g004.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -2664,6 +2664,12 @@ content:
       - '] have called this set the stable core.'
   - type: Table
     id: pone-0178565-t001
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - List of representatives of the conserved genes in our analysis.
+    label: Table 1
     rows:
       - type: TableRow
         cells:
@@ -2870,8 +2876,6 @@ content:
           - type: TableCell
             content:
               - '-'
-    title: List of representatives of the conserved genes in our analysis.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -3078,7 +3082,7 @@ content:
     label: Fig 5
     content:
       - type: ImageObject
-        contentUrl: g005.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
@@ -3108,6 +3112,14 @@ content:
         functionally annotated.
   - type: Table
     id: pone-0178565-t002
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - >-
+            The number of annotated and unannotated genes in the three
+            conservation categories.
+    label: Table 2
     rows:
       - type: TableRow
         cells:
@@ -3174,10 +3186,6 @@ content:
           - type: TableCell
             content:
               - '10,865'
-    title: >-
-      The number of annotated and unannotated genes in the three conservation
-      categories.
-    content: []
   - type: Heading
     id: sec012
     depth: 2
@@ -3310,6 +3318,12 @@ content:
         studies on gene essentiality.
   - type: Table
     id: pone-0178565-t003
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Essentiality of genes in each conservation category.
+    label: Table 3
     rows:
       - type: TableRow
         cells:
@@ -3352,8 +3366,6 @@ content:
           - type: TableCell
             content:
               - '88'
-    title: Essentiality of genes in each conservation category.
-    content: []
   - type: Paragraph
     content:
       - >-
@@ -3444,6 +3456,14 @@ content:
       - '].'
   - type: Table
     id: pone-0178565-t004
+    caption:
+      - type: Heading
+        depth: 2
+        content:
+          - >-
+            Comparison of enzymes in central metabolic pathways with the
+            essential and conserved genes of other datasets.
+    label: Table 4
     rows:
       - type: TableRow
         cells:
@@ -4249,10 +4269,6 @@ content:
           - type: TableCell
             content:
               - '-'
-    title: >-
-      Comparison of enzymes in central metabolic pathways with the essential and
-      conserved genes of other datasets.
-    content: []
   - type: Heading
     id: sec014
     depth: 2
@@ -4384,13 +4400,24 @@ content:
     label: Fig 6
     content:
       - type: ImageObject
-        contentUrl: g006.png
+        contentUrl: ''
         format: image
         meta:
           inline: false
           linkType: simple
   - type: Table
     id: pone-0178565-t005
+    caption:
+      - type: Heading
+        depth: 3
+        content:
+          - Genes in the cluster one of CCG.
+      - type: Paragraph
+        content:
+          - >-
+            Column A to C describes various identifiers and attributes of the
+            genes used. Column D describes the gene conservation index.
+    label: Table 5
     rows:
       - type: TableRow
         cells:
@@ -4462,15 +4489,6 @@ content:
           - type: TableCell
             content:
               - '15.1'
-    title: Genes in the cluster one of CCG.
-    content:
-      - type: element
-        elements:
-          - type: text
-            text: >-
-              Column A to C describes various identifiers and attributes of the
-              genes used. Column D describes the gene conservation index.
-        name: p
   - type: Heading
     id: sec015
     depth: 1
@@ -4498,7 +4516,7 @@ content:
       - Supporting information
   - type: MediaObject
     id: pone-0178565-s001
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s001'
+    contentUrl: ''
     text: S1 Fig
     content:
       - type: Heading
@@ -4530,7 +4548,7 @@ content:
           - (TIF)
   - type: MediaObject
     id: pone-0178565-s002
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s002'
+    contentUrl: ''
     text: S1 Table
     content:
       - type: Heading
@@ -4542,7 +4560,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s003
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s003'
+    contentUrl: ''
     text: S2 Table
     content:
       - type: Heading
@@ -4561,7 +4579,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s004
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s004'
+    contentUrl: ''
     text: S3 Table
     content:
       - type: Heading
@@ -4584,7 +4602,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s005
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s005'
+    contentUrl: ''
     text: S4 Table
     content:
       - type: Heading
@@ -4608,7 +4626,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s006
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s006'
+    contentUrl: ''
     text: S5 Table
     content:
       - type: Heading
@@ -4630,7 +4648,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s007
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s007'
+    contentUrl: ''
     text: S6 Table
     content:
       - type: Heading
@@ -4656,7 +4674,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s008
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s008'
+    contentUrl: ''
     text: S7 Table
     content:
       - type: Heading
@@ -4670,7 +4688,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s009
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s009'
+    contentUrl: ''
     text: S8 Table
     content:
       - type: Heading
@@ -4709,7 +4727,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s010
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s010'
+    contentUrl: ''
     text: S9 Table
     content:
       - type: Heading
@@ -4739,7 +4757,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s011
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s011'
+    contentUrl: ''
     text: S10 Table
     content:
       - type: Heading
@@ -4765,7 +4783,7 @@ content:
           - (XLSX)
   - type: MediaObject
     id: pone-0178565-s012
-    contentUrl: 'info:doi/10.1371/journal.pone.0178565.s012'
+    contentUrl: ''
     text: S11 Table
     content:
       - type: Heading

@@ -59,9 +59,13 @@ export class TxtCodec extends Codec implements Codec {
         if ('content' in node && Array.isArray(node.content))
           return node.content.map(stringify).join('')
         else
-          return Object.entries(node)
-            .map(([key, value]) => stringify(value))
-            .join(' ')
+          return Object.entries(node).reduce(
+            (prev, [key, value]) =>
+              key !== 'type'
+                ? prev + (prev !== '' ? ' ' : '') + stringify(value)
+                : prev,
+            ''
+          )
       }
       return node.toString()
     }
