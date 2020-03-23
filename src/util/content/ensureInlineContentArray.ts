@@ -13,7 +13,7 @@ export const ensureInlineContentArray = (
       return schema.isInlineContent(node)
         ? [...prev, node]
         : 'content' in node
-        ? [...prev, ...node.content]
+        ? [...prev, ...ensureInlineContentArray(node.content)]
         : [...prev, TxtCodec.stringify(node)]
     },
     []
