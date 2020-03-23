@@ -21,7 +21,7 @@ import * as stencila from '@stencila/schema'
  *
  * @param node The node to transform
  * @param transformer The transforming function. Should return the transformed node.
- * @param resurse If a node is transformed, should transformation continue in to it's children?
+ * @param recurse If a node is transformed, should transformation be performed on its children?
  */
 export default async function transform(
   node: stencila.Node,
