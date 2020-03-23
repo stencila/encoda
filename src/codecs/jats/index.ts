@@ -1604,9 +1604,10 @@ function decodeTableWrap(
   state = { ...state, ancestorElem: elem }
 
   const cap = child(elem, 'caption')
-  const caption = cap?.elements?.length
-    ? decodeElements(cap.elements, state)
-    : undefined
+  const caption =
+    cap !== null && Array.isArray(cap.elements)
+      ? decodeElements(cap.elements, state)
+      : undefined
 
   const trs = all(elem, 'tr')
   const rows =
