@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;codecs/dir/index&quot; | @stencila/encoda</title>
+	<title>&quot;util/media/resolveFiles&quot; | @stencila/encoda</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,62 +56,68 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_codecs_dir_index_.html">&quot;codecs/dir/index&quot;</a>
+					<a href="_util_media_resolvefiles_.html">&quot;util/media/resolveFiles&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;codecs/dir/index&quot;</h1>
+			<h1>Module &quot;util/media/resolveFiles&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>module</dt>
-						<dd><p>dir</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_codecs_dir_index_.dircodec.html" class="tsd-kind-icon">Dir<wbr>Codec</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_codecs_dir_index_.decodeoptions.html" class="tsd-kind-icon">Decode<wbr>Options</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-kind-icon">Encode<wbr>Options</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_codecs_dir_index_.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_util_media_resolvefiles_.html#resolvefiles" class="tsd-kind-icon">resolve<wbr>Files</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="log" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> log</h3>
-					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;encoda:dir&#x27;)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/stencila/encoda/blob/67ef423c/src/codecs/dir/index.ts#L29">src/codecs/dir/index.ts:29</a></li>
-						</ul>
-					</aside>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="resolvefiles" class="tsd-anchor"></a>
+					<h3>resolve<wbr>Files</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Files<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span>, docPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">schema.Node</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/encoda/blob/67ef423c/src/util/media/resolveFiles.ts#L17">src/util/media/resolveFiles.ts:17</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transform a <code>Node</code> by resolving links to local media resources.</p>
+								</div>
+								<p>This is used to create documents that can be converted to other formats,
+								in other locations, while not breaking those links</p>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p>unlinkFiles</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">schema.Node</span></h5>
+								</li>
+								<li>
+									<h5>docPath: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">schema.Node</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -122,23 +128,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_codecs_dir_index_.html">&quot;codecs/dir/index&quot;</a>
+						<a href="_util_media_resolvefiles_.html">&quot;util/media/resolve<wbr>Files&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_codecs_dir_index_.dircodec.html" class="tsd-kind-icon">Dir<wbr>Codec</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_codecs_dir_index_.decodeoptions.html" class="tsd-kind-icon">Decode<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_codecs_dir_index_.encodeoptions.html" class="tsd-kind-icon">Encode<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_codecs_dir_index_.html#log" class="tsd-kind-icon">log</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_util_media_resolvefiles_.html#resolvefiles" class="tsd-kind-icon">resolve<wbr>Files</a>
 					</li>
 				</ul>
 			</nav>
