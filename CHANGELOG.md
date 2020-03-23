@@ -1,3 +1,23 @@
+# [0.92.0](https://github.com/stencila/encoda/compare/v0.91.0...v0.92.0) (2020-03-23)
+
+
+### Bug Fixes
+
+* **CSL:** Add handling of PublicationIssue and Periodical ([bb29874](https://github.com/stencila/encoda/commit/bb2987440ab2d22c4f77391958041f1a88f24253))
+* **CSL:** Handle pagination properties of an article ([31d7d5e](https://github.com/stencila/encoda/commit/31d7d5ec736c86ba335f479b081a84203b81f58a))
+* **dependencies:** update asciimath2tex commit hash to c6f316f ([5878d01](https://github.com/stencila/encoda/commit/5878d01c60a12b14be9b7b5bdb5d0e043f099599))
+* **DOCX:** Encode figures and figure goups ([f915d6e](https://github.com/stencila/encoda/commit/f915d6e023f641251156991fd94912d17e1f97bb))
+* **DOCX:** Encode table captions; update template ([1cb2b11](https://github.com/stencila/encoda/commit/1cb2b119252b52fa103f65c87625ab4cde054c5a))
+* **JATS:** Use table caption property ([58f79df](https://github.com/stencila/encoda/commit/58f79df9cf2bd60c39aaf0d373d7b7ed2d55d1ff))
+* **Pandoc:** Encode primitive nodes, improve debug reporting ([e605901](https://github.com/stencila/encoda/commit/e605901fe3d26170e3de2059f0ed1c689af16f7f))
+* **Util:** Ensure inline content ([cb5bbfa](https://github.com/stencila/encoda/commit/cb5bbfa3ab252823c5a51b5907ddfa46b99d7746))
+* **Util:** Fix copyFile function ([26394d1](https://github.com/stencila/encoda/commit/26394d12fe30ea30b9d56ed5fa3388e1638ddd2c))
+
+
+### Features
+
+* **Util:** Add resolveFiles function ([70e8934](https://github.com/stencila/encoda/commit/70e893463d2e1b11f5d2bd7edcb8799d872c35e9))
+
 # [0.91.0](https://github.com/stencila/encoda/compare/v0.90.3...v0.91.0) (2020-03-13)
 
 
