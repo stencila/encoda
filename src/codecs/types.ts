@@ -272,7 +272,6 @@ export abstract class Codec<
    * Derived classes may override this method to perform alternative
    * transformations to the node, prior to writing it.
    *
-   *
    * @param node The `stencila.Node` to write
    * @param filePath The path of the file
    * @param options Encoding options
