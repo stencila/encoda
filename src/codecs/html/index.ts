@@ -709,10 +709,11 @@ const decodeArticle = (element: HTMLElement): stencila.Article => {
 function encodeArticle(article: stencila.Article): HTMLElement {
   const {
     type,
-    publisher,
     title,
     authors,
+    publisher,
     datePublished,
+    identifiers,
     description,
     content = [],
     references,
@@ -723,11 +724,12 @@ function encodeArticle(article: stencila.Article): HTMLElement {
   return h(
     'article',
     encodeAttrs(article),
-    encodePublisherProperty(publisher),
     encodeTitleProperty(title),
     encodeImageProperty(article),
     encodeMaybe(authors, authors => encodeAuthorsProperty(authors)),
+    encodePublisherProperty(publisher),
     encodeMaybe(datePublished, date => encodeDate(date, 'datePublished')),
+    encodeIdentifiersProperty(identifiers),
     encodeMaybe(description, desc => encodeDescriptionProperty(desc)),
     ...encodeNodes(content),
     encodeMaybe(references, refs => encodeReferencesProperty(refs))
@@ -962,6 +964,43 @@ function endodePaginationProperties(
       ? h('span', microdata(pageEnd, 'pageEnd'), pageEnd)
       : undefined
   ]
+}
+
+/**
+ * Encode the `identifiers` property of a `Thing` node
+ * as a HTML `<ul>` element.
+ */
+function encodeIdentifiersProperty(
+  identifiers: stencila.Thing['identifiers']
+): HTMLElement | undefined {
+  if (identifiers === undefined) return undefined
+
+  return h(
+    'ul',
+    microdata(identifiers, 'identifiers', 'array'),
+    identifiers.map(identifier => {
+      const md = microdata(identifier, 'identifiers', 'item')
+
+      if (typeof identifier === 'string')
+        return h('li', { attrs: md }, identifier)
+
+      const { name, propertyID, value, ...lost } = identifier
+      logWarnLossIfAny('html', 'encode', identifier, lost)
+
+      return h(
+        'li',
+        { attrs: md },
+        encodeMaybe(propertyID, propertyID =>
+          h('meta', {
+            ...microdata(propertyID, 'propertyID'),
+            content: propertyID
+          })
+        ),
+        encodeMaybe(name, name => h('span', microdata(name, 'name'), name)),
+        encodeMaybe(value, value => h('span', microdata(value, 'value'), value))
+      )
+    })
+  )
 }
 
 /**
