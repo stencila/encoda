@@ -1,3 +1,24 @@
+# [0.93.0](https://github.com/stencila/encoda/compare/v0.92.0...v0.93.0) (2020-03-25)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.9.3 ([2f675ef](https://github.com/stencila/encoda/commit/2f675eff38d688caf153177f016da790edf0b71b))
+* **dependencies:** update dependency @stencila/thema to ^1.15.1 ([fa6d666](https://github.com/stencila/encoda/commit/fa6d666d371dae783d02a06432bae4c838fe31db))
+* **dependencies:** update dependency fs-extra to v9 ([3502b27](https://github.com/stencila/encoda/commit/3502b27bbc44c1966529b83a4872165e328c94ea))
+* **dependencies:** update dependency got to ^10.7.0 ([5ae483a](https://github.com/stencila/encoda/commit/5ae483a3ee2b5add11c5a174c6029e0438758ac3))
+* **dependencies:** update dependency immer to ^6.0.2 ([5dfd940](https://github.com/stencila/encoda/commit/5dfd9407ff2c8ef58d3ed4be0f6c2334f4c0e677))
+* **dependencies:** update dependency json5 to ^2.1.2 ([822a437](https://github.com/stencila/encoda/commit/822a43763d41a05da6b2521a5815d4947011cdc8))
+* **dependencies:** update dependency minimist to ^1.2.5 ([eb5ab09](https://github.com/stencila/encoda/commit/eb5ab096b4051ca66c6ac075ab4019f9715f8ba8))
+* **dependencies:** update dependency remark-attr to ^0.10.0 ([56534dc](https://github.com/stencila/encoda/commit/56534dc0a6e531ba2d2f927ef5a96b4d6463f31b))
+* **dependencies:** update dependency xlsx to ^0.15.6 ([7d960af](https://github.com/stencila/encoda/commit/7d960afb57a0fb0a89508cbea762f1acf7c2c9c0))
+* **dependencies:** update remark monorepo ([2f5fd2b](https://github.com/stencila/encoda/commit/2f5fd2bc71f6b3c833676348d501ed5cd68e25f8))
+
+
+### Features
+
+* **HTML:** Encode identifiers property ([7704259](https://github.com/stencila/encoda/commit/7704259c9ac01b2c045f88264945539f575ae7b2)), closes [#413](https://github.com/stencila/encoda/issues/413)
+
 # [0.92.0](https://github.com/stencila/encoda/compare/v0.91.0...v0.92.0) (2020-03-23)
 
 
