@@ -14,7 +14,11 @@ describe('Ensures an array of inline content', () => {
 
   test('unwraps the content property', () => {
     expect(ensureInlineContentArray(para)).toEqual(para.content)
-    expect(ensureInlineContentArray([quoteBlock, 'three'])).toEqual([emph, quote, 'three'])
+    expect(ensureInlineContentArray([quoteBlock, 'three'])).toEqual([
+      emph,
+      quote,
+      'three'
+    ])
   })
 
   test('texifies block content that does not have the content property', () => {
