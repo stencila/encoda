@@ -273,8 +273,8 @@ async function encodeDocumentAsync(
     switch (stencila.nodeType(node)) {
       case 'CodeExpression':
         return encodeCodeExpression(node as stencila.CodeExpression)
-      case 'CodeBlock':
-        return encodeCodeBlock(node as stencila.CodeBlock)
+      case 'CodeChunk':
+        return encodeCodeChunk(node as stencila.CodeChunk)
 
       case 'MathFragment':
         return encodeMath(node as stencila.MathFragment, 'InlineMath')
