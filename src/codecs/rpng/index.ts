@@ -91,6 +91,15 @@ export class RpngCodec extends Codec implements Codec {
   }
 
   /**
+   * @override Overrides {@link Codec.preWrite} so that media files
+   * do NOT get written to a sibling folder (since they are embedded
+   * in the PNG file).
+   */
+  public preWrite(node: schema.Node): Promise<schema.Node> {
+    return Promise.resolve(node)
+  }
+
+  /**
    * Encode a Stencila node to a RPNG.
    *
    * @param node The Stencila node to encode
@@ -100,6 +109,14 @@ export class RpngCodec extends Codec implements Codec {
     node: schema.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
+    // Generate the PNG of the **original node**
+    // (which sill contains images) and get it as a `Buffer`
+    const png = await pngCodec.encode(node, {
+      ...options,
+      theme: 'rpng'
+    })
+    const buffer = await vfile.dump(png, 'buffer')
+
     // Special handling for nodes that already have an image as output.
     // For these, we do not want to repeat the image within a chunk
     // within the image. Instead we make it self-referencing.
@@ -123,18 +140,10 @@ export class RpngCodec extends Codec implements Codec {
       }
     }
 
+    // Insert the node as JSON-LD into a chunk
     // Bundle the node so there are no media resources
     // pointing to local files within the generated JSON-LD
     const bundled = await fromFiles(transformed)
-
-    // Generate the PNG and get it as a `Buffer`
-    const png = await pngCodec.encode(bundled, {
-      ...options,
-      theme: 'rpng'
-    })
-    const buffer = await vfile.dump(png, 'buffer')
-
-    // Insert the node as JSON-LD into a chunk
     const jsonLd = await jsonLdCodec.dump(bundled)
     const image = insert(jsonLd, buffer)
 
