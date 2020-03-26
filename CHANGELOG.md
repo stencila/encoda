@@ -1,3 +1,11 @@
+## [0.93.1](https://github.com/stencila/encoda/compare/v0.93.0...v0.93.1) (2020-03-26)
+
+
+### Bug Fixes
+
+* **Deps:** Upgrade Thema to 1.15.2 ([c9947fa](https://github.com/stencila/encoda/commit/c9947fa2a5269d7ae8ea95b0000eda1d091cbe46))
+* **PNG, RPNG:** Ensure that images etc are retained before screenshotting ([55172fb](https://github.com/stencila/encoda/commit/55172fb6daf9ca3f4c2b8bc8e4d2393346f5dc56))
+
 # [0.93.0](https://github.com/stencila/encoda/compare/v0.92.0...v0.93.0) (2020-03-25)
 
 
