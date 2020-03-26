@@ -4,10 +4,12 @@
 
 import * as schema from '@stencila/schema'
 import tempy from 'tempy'
-import { dump } from '../../index'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import { Codec, CommonDecodeOptions, CommonEncodeOptions } from '../types'
+import { HTMLCodec } from '../html'
+
+const htmlCodec = new HTMLCodec()
 
 export type DecodeOptions = CommonDecodeOptions
 
@@ -49,6 +51,15 @@ export class PngCodec extends Codec implements Codec {
   }
 
   /**
+   * @override Overrides {@link Codec.preWrite} so that media files
+   * do NOT get written to a sibling folder (since they are effectively
+   * included in the PNG file).
+   */
+  public preWrite(node: schema.Node): Promise<schema.Node> {
+    return Promise.resolve(node)
+  }
+
+  /**
    * Encode a Stencila `Node` to a PNG.
    *
    * For `ImageObject` nodes, this simply saves the `contentUrl` as a
@@ -67,7 +78,7 @@ export class PngCodec extends Codec implements Codec {
     // Standalone: so that the theme option is respected.
     // Bundle: because Puppeteer will not load local (e.g. `/tmp`) files.
     // Other options e.g. themes are passed through
-    const html = await dump(node, 'html', {
+    const html = await htmlCodec.dump(node, {
       ...options,
       isStandalone: true,
       isBundle: true
@@ -81,6 +92,7 @@ export class PngCodec extends Codec implements Codec {
         height: size.height
       })
 
+    await page.setJavaScriptEnabled(false)
     await page.setContent(html, { waitUntil: 'networkidle0' })
 
     let buffer
