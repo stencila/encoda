@@ -1,3 +1,10 @@
+## [0.93.2](https://github.com/stencila/encoda/compare/v0.93.1...v0.93.2) (2020-03-30)
+
+
+### Bug Fixes
+
+* **Pandoc:** Call encodeCodeChunk in encodeDocumentAsync ([2abd5c3](https://github.com/stencila/encoda/commit/2abd5c3d40639d9c8a92c03306477bb2e243e72c))
+
 ## [0.93.1](https://github.com/stencila/encoda/compare/v0.93.0...v0.93.1) (2020-03-26)
 
 
