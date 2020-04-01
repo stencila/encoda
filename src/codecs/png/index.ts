@@ -92,7 +92,6 @@ export class PngCodec extends Codec implements Codec {
         height: size.height
       })
 
-    await page.setJavaScriptEnabled(false)
     await page.setContent(html, { waitUntil: 'networkidle0' })
 
     let buffer
