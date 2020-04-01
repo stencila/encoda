@@ -9,9 +9,12 @@ import { dump, load } from '../..'
 import * as puppeteer from '../../util/puppeteer'
 import * as vfile from '../../util/vfile'
 import * as xml from '../../util/xml'
-import { decodeDoc as decodeXmlDoc, encodeDoc as encodeXmlDoc } from '../xml'
-import { Codec, CommonEncodeOptions } from '../types'
+import { HTMLCodec } from '../html'
 import { TxtCodec } from '../txt'
+import { Codec, CommonEncodeOptions } from '../types'
+import { decodeDoc as decodeXmlDoc, encodeDoc as encodeXmlDoc } from '../xml'
+
+const htmlCodec = new HTMLCodec()
 
 const log = getLogger('encoda:pdf')
 
@@ -72,17 +75,26 @@ export class PdfCodec extends Codec {
     node: stencila.Node,
     options: CommonEncodeOptions = this.commonEncodeDefaults
   ): Promise<vfile.VFile> => {
-    // Generate HTML that will be used to render the PDF
-    // Bundle images into HTML, otherwise Puppeteer will not
-    // load them
-    const html = await dump(node, 'html', {
+    // Generate HTML that will be used to render the PDF.
+    // Standalone: so that the theme option is respected.
+    // Bundle: because Puppeteer will not load local (e.g. `/tmp`) files.
+    // Other options e.g. themes are passed through
+    const html = await htmlCodec.dump(node, {
       ...options,
+      isStandalone: true,
       isBundle: true
     })
 
     // Render the PDF in the browser
+    // Use extra styles to hide chrome from web components
     const page = await puppeteer.page()
     await page.setContent(html, { waitUntil: 'networkidle0' })
+    await page.addStyleTag({content: `
+      stencila-code-chunk stencila-code-editor,
+      stencila-code-chunk stencila-action-menu {
+        display: none !important;
+      }
+    `})
     const buffer = await page.pdf({
       format: 'A4',
       printBackground: true,
