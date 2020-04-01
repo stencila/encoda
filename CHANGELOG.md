@@ -1,3 +1,10 @@
+## [0.93.4](https://github.com/stencila/encoda/compare/v0.93.3...v0.93.4) (2020-04-01)
+
+
+### Bug Fixes
+
+* **Pandoc:** Avoid loss of already decoded blocks ([c80fd22](https://github.com/stencila/encoda/commit/c80fd2286e4b96c48aeabea8d3310f5d91bbbb67))
+
 ## [0.93.3](https://github.com/stencila/encoda/compare/v0.93.2...v0.93.3) (2020-04-01)
 
 
