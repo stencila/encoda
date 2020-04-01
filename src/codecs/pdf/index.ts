@@ -89,12 +89,14 @@ export class PdfCodec extends Codec {
     // Use extra styles to hide chrome from web components
     const page = await puppeteer.page()
     await page.setContent(html, { waitUntil: 'networkidle0' })
-    await page.addStyleTag({content: `
+    await page.addStyleTag({
+      content: `
       stencila-code-chunk stencila-code-editor,
       stencila-code-chunk stencila-action-menu {
         display: none !important;
       }
-    `})
+    `
+    })
     const buffer = await page.pdf({
       format: 'A4',
       printBackground: true,
