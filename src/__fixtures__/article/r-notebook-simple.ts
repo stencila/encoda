@@ -19,6 +19,7 @@ export default article({
       familyNames: ['Jones']
     })
   ],
+  datePublished: '2020-04-01',
   content: [
     codeChunk({
       text: 'x <- 3.14',

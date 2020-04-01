@@ -16,8 +16,10 @@ import { structuredDataTest } from 'structured-data-testing-tool'
 import { Article as ArticlePreset } from 'structured-data-testing-tool/presets/google/schemas/CreativeWork/Article'
 import { HTMLCodec } from '.'
 import { unlinkFiles } from '../../util/media/unlinkFiles'
+import jupyterNotebookSimple from '../../__fixtures__/article/jupyter-notebook-simple'
 import kitchenSinkArticle from '../../__fixtures__/article/kitchen-sink'
 import mathArticle from '../../__fixtures__/article/math'
+import rNotebookSimple from '../../__fixtures__/article/r-notebook-simple'
 import { fixture, snapshot } from '../../__tests__/helpers'
 import { JsonCodec } from '../json'
 
@@ -27,6 +29,8 @@ const htmlCodec = new HTMLCodec()
 const articles = [
   ['kitchen-sink-article', kitchenSinkArticle, 1],
   ['math-article', mathArticle, 1],
+  ['jupyter-notebook-simple', jupyterNotebookSimple, 1],
+  ['r-notebook-simple', rNotebookSimple, 1],
   ['elife-50356', 'article/journal/elife/50356.json', 2],
   ['plosone-0229075', 'article/journal/plosone/0229075.json', 2]
 ]
@@ -40,9 +44,11 @@ describe('Articles', () => {
     const html = await htmlCodec.dump(await unlinkFiles(node), {
       // Standalone so get complete HTML doc with <head> etc
       isStandalone: true,
-      // No theme, to make faster and so that tests are not affected by
-      // accessibility issues in themes e.g. color contrast
-      theme: undefined
+      // Test with the default stencila theme. This affects accessibility
+      // tests such as `color-contrast`. We can test without a theme but
+      // still get failures on such tests and the generated snapshots files
+      // are not pleasant / realistic for visual checking by humans.
+      theme: 'stencila'
     })
     const file = snapshot(`${name}.html`)
 
@@ -88,11 +94,24 @@ describe('Articles', () => {
 
     // Accessibility test
     // Rules to ignore (add rule codes here if you need to during development)
-    const ignore: string[] = []
+    const ignoreCodes: string[] = [
+      // Skip color contrast related checks (will probably have
+      // these checks in Thema)
+      'color-contrast',
+      'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail'
+    ]
+    // Temporarily skip Web Component structure (not controlled by this repo)
+    // See https://github.com/stencila/designa/issues/37
+    const ignoreSelectorRegex = /stencila-code-chunk/
+
     const { issues = [] } = await pa11y(file, { runners: ['axe', 'htmlcs'] })
     issues.forEach((result: any) => {
       const { type, selector, code, message } = result
-      if (type === 'error' && !ignore.includes(code))
+      if (
+        type === 'error' &&
+        !ignoreSelectorRegex.test(selector) &&
+        !ignoreCodes.includes(code)
+      )
         fail(`${selector}: ${code}: ${message}`)
     })
   })

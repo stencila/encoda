@@ -1,4 +1,4 @@
-import { article, codeChunk, heading, paragraph } from '@stencila/schema'
+import { article, codeChunk, heading, paragraph, person } from '@stencila/schema'
 
 /**
  * An `Article` representing a simple Jupyter Python notebook: has
@@ -7,7 +7,12 @@ import { article, codeChunk, heading, paragraph } from '@stencila/schema'
  */
 export default article({
   title: 'Jupyter notebook title',
-  authors: [],
+  authors: [
+    person({
+      name: 'A. Jovian'
+    })
+  ],
+  datePublished: '2020-04-01',
   meta: {
     kernelspec: {
       display_name: 'Python 3',
@@ -40,6 +45,7 @@ export default article({
       meta: {
         execution_count: 4
       },
+      programmingLanguage: 'python',
       text: "greeting = 'Hello from Python'"
     }),
     heading({
@@ -53,6 +59,7 @@ export default article({
       meta: {
         execution_count: 6
       },
+      programmingLanguage: 'python',
       text: "import sys\nprint(greeting + ' ' + str(sys.version_info[0]))",
       outputs: ['Hello from Python 3']
     })

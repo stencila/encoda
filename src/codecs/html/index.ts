@@ -1614,8 +1614,6 @@ function decodeCodeChunk(chunk: HTMLElement): stencila.CodeChunk {
 function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
   const { text = '', meta = {}, programmingLanguage, outputs } = chunk
 
-  const attrs = encodeDataAttrs(meta)
-
   const codeElem = encodeCodeBlock(
     stencila.codeBlock({ text, programmingLanguage })
   )
@@ -1633,7 +1631,12 @@ function encodeCodeChunk(chunk: stencila.CodeChunk): HTMLElement {
     )
   )
 
-  return h('stencila-code-chunk', encodeAttrs(chunk), codeElem, outputsElem)
+  return h(
+    'stencila-code-chunk',
+    encodeAttrs(chunk, { ...meta, programmingLanguage }),
+    codeElem,
+    outputsElem
+  )
 }
 
 /**
