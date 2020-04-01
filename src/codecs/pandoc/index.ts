@@ -499,7 +499,7 @@ function encodeBlocks(nodes: stencila.BlockContent[]): Pandoc.Block[] {
  * Decode a Pandoc `Block` element to a Stencila `BlockContent` node.
  */
 function decodeBlock(elem: Pandoc.Block): stencila.BlockContent {
-  // Already decoded elements
+  // Already decoded elements (e.g. in `decodeDocumentAsync`)
   if (stencila.isBlockContent(elem)) return elem
 
   switch (elem.t) {
@@ -944,8 +944,11 @@ function encodeInlines(nodes: stencila.InlineContent[]): Pandoc.Inline[] {
  * Decode a Pandoc `Inline` node to a Stencila `InlineContent` node
  */
 function decodeInline(elem: Pandoc.Inline): stencila.InlineContent {
-  // Already decoded elements
-  if (stencila.isInlineContent(elem)) return elem
+  // Already decoded elements (e.g. in `decodeDocumentAsync`)
+  // Allow for blocks such as `CodeChunk` nodes which may be wrapped in
+  // a paragraph. See also `decodePara`
+  if (stencila.isInlineContent(elem) || stencila.isBlockContent(elem))
+    return elem as stencila.InlineContent
 
   switch (elem.t) {
     case 'Space':
