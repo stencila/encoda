@@ -1,3 +1,13 @@
+## [0.93.3](https://github.com/stencila/encoda/compare/v0.93.2...v0.93.3) (2020-04-01)
+
+
+### Bug Fixes
+
+* **HTML:** Encode programmingLanguage property for CodeChunks ([77e1d4b](https://github.com/stencila/encoda/commit/77e1d4b5e9f6d57c8ae5e36f372dadb1796d75bc)), closes [#505](https://github.com/stencila/encoda/issues/505)
+* **HTML:** Honour isBundle option for media files ([02ea16a](https://github.com/stencila/encoda/commit/02ea16ac61173b4c8a634c5531b8772bb3423ba5))
+* **PDF:** Do not show code chunk code ([3ba216d](https://github.com/stencila/encoda/commit/3ba216db9990f7d78beacdc6883cdcbb795d6191))
+* **PNG:** Do not disable Javascript ([33152de](https://github.com/stencila/encoda/commit/33152de890eacd2b9de44ec2c6618842954c5a60))
+
 ## [0.93.2](https://github.com/stencila/encoda/compare/v0.93.1...v0.93.2) (2020-03-30)
 
 
