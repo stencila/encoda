@@ -40,6 +40,7 @@ import { truncate } from '../../util/truncate'
 import * as vfile from '../../util/vfile'
 import { TxtCodec } from '../txt'
 import { Codec, CommonEncodeOptions } from '../types'
+import { fromFiles } from '../../util/media/fromFiles'
 
 export const stencilaItemType = 'data-itemtype'
 export const stencilaItemProp = 'data-itemprop'
@@ -245,6 +246,8 @@ export class HTMLCodec extends Codec implements Codec {
     // Reset the slugger to avoid unnecessarily adding numbers to ids
     // in order to make them unique
     slugger.reset()
+
+    if (isBundle) node = await fromFiles(node)
 
     mathJaxInit()
 
