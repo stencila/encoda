@@ -321,10 +321,10 @@ describe('encode', () => {
       ]
     }
 
-    const expected = `| A   | B                                        | C   |
-| --- | ---------------------------------------- | --- |
-| 1   | Some content split accross multiple rows | 3   |
-| 4   | Some content split accross multiple rows | 6   |`
+    const expected = `| A | B                                        | C |
+| - | ---------------------------------------- | - |
+| 1 | Some content split accross multiple rows | 3 |
+| 4 | Some content split accross multiple rows | 6 |`
 
     expect(await e(table)).toEqual(expected)
   })
@@ -432,10 +432,10 @@ No output \`a = 1 + 1\`{type=expr lang=python}
 2.  [x] Two
 3.  [ ] Three
 
-| A   | B   | C   |
-| --- | --- | --- |
-| 1   | 2   | 3   |
-| 4   | 5   | 6   |
+| A | B | C |
+| - | - | - |
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
 
 * * *
 `,

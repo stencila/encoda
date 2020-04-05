@@ -41,7 +41,7 @@ Given that this is a test fixture (used [here](https://github.com/stencila/encod
 
 # Tables
 
-| A   | B   | C   |
-| --- | --- | --- |
-| 1   | 2   | 3   |
-| 4   | 5   | 6   |
+| A | B | C |
+| - | - | - |
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
