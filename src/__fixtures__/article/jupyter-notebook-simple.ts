@@ -1,4 +1,10 @@
-import { article, codeChunk, heading, paragraph, person } from '@stencila/schema'
+import {
+  article,
+  codeChunk,
+  heading,
+  paragraph,
+  person
+} from '@stencila/schema'
 
 /**
  * An `Article` representing a simple Jupyter Python notebook: has
