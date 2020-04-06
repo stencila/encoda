@@ -1,3 +1,18 @@
+## [0.93.5](https://github.com/stencila/encoda/compare/v0.93.4...v0.93.5) (2020-04-06)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/executa to ^1.9.4 ([5d192c8](https://github.com/stencila/encoda/commit/5d192c868de5353c27ff38e2ad90b2af78309de6))
+* **dependencies:** update dependency @stencila/thema to v2 ([a168184](https://github.com/stencila/encoda/commit/a16818473572611ada1b7d0d7930979fd42026e9))
+* **dependencies:** update dependency datapackage to ^1.1.8 ([771720e](https://github.com/stencila/encoda/commit/771720e5e44a3cc2a35718a902760333a82202bb))
+* **dependencies:** update dependency immer to ^6.0.3 ([ef269be](https://github.com/stencila/encoda/commit/ef269be524af01382a350212a9a46b9646845c78))
+* **dependencies:** update dependency jsdom to ^16.2.2 ([a09a9b4](https://github.com/stencila/encoda/commit/a09a9b43b9e8129d28856a0604b470e568a5ee5d))
+* **dependencies:** update dependency unified to v9 ([9c9c091](https://github.com/stencila/encoda/commit/9c9c09168ee82aa601438a4c6e99ffead3c8eaae))
+* **dependencies:** update dependency vfile to ^4.1.0 ([34c3fe7](https://github.com/stencila/encoda/commit/34c3fe734b2b54a3d986c00192292c2f544ab63d))
+* **dependencies:** update remark monorepo to v8 ([9a975ec](https://github.com/stencila/encoda/commit/9a975ec00a49a7b82e8ecfb2522a01c05d41d9e9))
+* **Deps:** NPM audit fix ([3e82017](https://github.com/stencila/encoda/commit/3e82017fb74bd90d7ee704dcd80d80f80cf7703b))
+
 ## [0.93.4](https://github.com/stencila/encoda/compare/v0.93.3...v0.93.4) (2020-04-01)
 
 
