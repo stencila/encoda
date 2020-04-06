@@ -24,8 +24,8 @@ describe('encode', () => {
   })
 
   it('respects the theme option', async () => {
-    await png.write(kitchenSink, snapshot('kitchen-sink-elife.png'), {
-      theme: 'elife'
+    await png.write(kitchenSink, snapshot('kitchen-sink-wilmore.png'), {
+      theme: 'wilmore'
     })
   })
 
