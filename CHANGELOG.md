@@ -1,3 +1,10 @@
+## [0.93.6](https://github.com/stencila/encoda/compare/v0.93.5...v0.93.6) (2020-04-09)
+
+
+### Bug Fixes
+
+* **Deps:** Pin to Thema 2.2.1 ([4851ea7](https://github.com/stencila/encoda/commit/4851ea7e1c7a1ccc0ef35cf934f67cd7b4af7d1c))
+
 ## [0.93.5](https://github.com/stencila/encoda/compare/v0.93.4...v0.93.5) (2020-04-06)
 
 
