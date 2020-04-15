@@ -184,6 +184,29 @@ export abstract class Codec<
   }
 
   /**
+   * Transform a node prior to dumping it.
+   *
+   * Defaults to "bundling" the file i.e reading
+   * media content from files into data URIs.
+   * This default can be overridden using the `isBundle: false` option
+   * but is usually appropriate for `dump`ing to a string (cf `write` which
+   * writes to files).
+   * Derived classes may override this method to perform alternative
+   * transformations to the node, prior to dumping it.
+   *
+   * @param node The `stencila.Node` to write
+   * @param filePath The path of the file
+   * @param options Encoding options
+   */
+  public preDump(
+    node: stencila.Node,
+    options?: EncodeOptions
+  ): Promise<stencila.Node> {
+    const { isBundle = true } = { ...options }
+    return isBundle ? fromFiles(node) : Promise.resolve(node)
+  }
+
+  /**
    * Encode a `stencila.Node` to a `string`.
    *
    * This is a convenience method which simply
@@ -197,7 +220,9 @@ export abstract class Codec<
     node: stencila.Node,
     options?: EncodeOptions
   ): Promise<string> {
-    return vfile.dump(await this.encode(node, options))
+    return vfile.dump(
+      await this.encode(await this.preDump(node, options), options)
+    )
   }
 
   /**
@@ -240,6 +265,31 @@ export abstract class Codec<
   }
 
   /**
+   * Transform a node prior to writing it.
+   *
+   * Writes data URI or file system media content to a sibling folder.
+   * This default behavior can be overridden using the `isBundle: true`
+   * option, but is usually appropriate for `write`ing files (cf `dump`
+   * which bundles them.
+   * Derived classes may override this method to perform alternative
+   * transformations to the node, prior to writing it.
+   *
+   * @param node The `stencila.Node` to write
+   * @param filePath The path of the file
+   * @param options Encoding options
+   */
+  public preWrite(
+    node: stencila.Node,
+    filePath: string,
+    options?: EncodeOptions
+  ): Promise<stencila.Node> {
+    const { isBundle = false } = { ...options }
+    return isBundle
+      ? fromFiles(node)
+      : toFiles(node, filePath, ['data', 'file'])
+  }
+
+  /**
    * Encode a `stencila.Node` to a file
    *
    * This is a convenience method which writes the content of the `VFile` created by
@@ -261,29 +311,5 @@ export abstract class Codec<
       } as EncodeOptions),
       filePath
     )
-  }
-
-  /**
-   * Transform a node prior to writing it
-   *
-   * Depending on the `isBundle` encoding option,
-   * either converts media to data URIs, or copies them
-   * to a sibling folder.
-   * Derived classes may override this method to perform alternative
-   * transformations to the node, prior to writing it.
-   *
-   * @param node The `stencila.Node` to write
-   * @param filePath The path of the file
-   * @param options Encoding options
-   */
-  public preWrite(
-    node: stencila.Node,
-    filePath: string,
-    options?: EncodeOptions
-  ): Promise<stencila.Node> {
-    const { isBundle } = { ...this.commonEncodeDefaults, ...options }
-    return isBundle
-      ? fromFiles(node)
-      : toFiles(node, filePath, ['data', 'file'])
   }
 }

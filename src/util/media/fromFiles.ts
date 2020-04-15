@@ -21,7 +21,11 @@ export async function fromFiles(node: schema.Node): Promise<schema.Node> {
     async (node: schema.Node): Promise<schema.Node> => {
       if (schema.nodeIs(schema.mediaObjectTypes)(node)) {
         const { contentUrl, ...rest } = node
-        if (!contentUrl.startsWith('http') && !contentUrl.startsWith('data:')) {
+        if (
+          contentUrl !== '' &&
+          !contentUrl.startsWith('http') &&
+          !contentUrl.startsWith('data:')
+        ) {
           const data = await dataUri.fromFile(contentUrl)
           return {
             ...rest,

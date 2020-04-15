@@ -145,7 +145,10 @@ describe('convert', () => {
     const result = await convert(inp, '-', { from: 'json', to: 'json' })
 
     expect(consoleLog).toHaveBeenCalledWith(simpleThingJson)
-    expect(result).toEqual('-')
+    expect(result).toEqual(`{
+  "type": "Thing",
+  "name": "Simple thing"
+}`)
   })
 
   if (!os.type().includes('Windows'))

@@ -350,13 +350,25 @@ export async function convert(
 
   const node = await read(input, from, decodeOptions)
 
-  if (outputPaths === undefined) return dump(node, to ?? 'txt', encodeOptions)
+  if (outputPaths === undefined) outputPaths = ['-']
   else if (typeof outputPaths === 'string') outputPaths = [outputPaths]
 
   let index = 0
   const { shouldZip } = { ...commonEncodeDefaults, ...encodeOptions }
   const files: string[] = []
   for (const outputPath of outputPaths) {
+    // Explicitly deal with output to stdout indicator
+    // rather than deferring to `vfile.write` to handle it.
+    // This avoids calling `preWrite` which may create files
+    // which we don't if outputting to stdout. Instead `preDump`
+    // will get called which bundles media files etc.
+    if (outputPath === '-') {
+      const content = await dump(node, to ?? 'txt', encodeOptions)
+      console.log(content)
+      if (outputPaths.length > 0) return content
+      continue
+    }
+
     await write(node, outputPath, { format: to, ...encodeOptions })
 
     // Record files generated
