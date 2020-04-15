@@ -1,3 +1,16 @@
+## [0.93.7](https://github.com/stencila/encoda/compare/v0.93.6...v0.93.7) (2020-04-15)
+
+
+### Bug Fixes
+
+* **Convert function:** By default bundle media content when dumping ([568d18d](https://github.com/stencila/encoda/commit/568d18d231a5b444905cbb0e936796de3769eb8b))
+* **dependencies:** update dependency @stencila/thema to v2.2.6 ([eb9c23f](https://github.com/stencila/encoda/commit/eb9c23fc3ba78c4b74d477ba350a0d9d559e2a4e))
+* **dependencies:** update dependency js-beautify to ^1.11.0 ([b85f9a1](https://github.com/stencila/encoda/commit/b85f9a11121ac7448160463fbf92c950386addef))
+* **dependencies:** update dependency json5 to ^2.1.3 ([355aa41](https://github.com/stencila/encoda/commit/355aa41abfd65dda88248675d07edc9d3b8f7b2e))
+* **dependencies:** update dependency jszip to ^3.3.0 ([934f20c](https://github.com/stencila/encoda/commit/934f20c1cb9162e6e9d94d9f6a3fc8dc226a66b4))
+* **dependencies:** update dependency papaparse to ^5.2.0 ([b0f0264](https://github.com/stencila/encoda/commit/b0f0264b0d72c4b14612a86a15be58d6a5e1583b))
+* **dependencies:** update dependency remark-frontmatter to v2 ([3f19393](https://github.com/stencila/encoda/commit/3f193935ebc565ccf9cf27df0b6a4b279acab5b1))
+
 ## [0.93.6](https://github.com/stencila/encoda/compare/v0.93.5...v0.93.6) (2020-04-09)
 
 
